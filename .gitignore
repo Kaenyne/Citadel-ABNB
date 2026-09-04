@@ -1,0 +1,39 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Secrets / environment
+.env
+.env.*
+*.pem
+*.key
+
+# Office temp/lock files
+~$*
+*.tmp
+.~lock.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Large / raw data (link in data/README.md instead)
+data/raw/*
+!data/raw/.gitkeep
+*.parquet
+*.zip
+
+# Licensed terminal exports - never commit to a public repo
+*bloomberg*
+*capiq*
+*factset*
+
+# Claude Code local settings
+.claude/settings.local.json

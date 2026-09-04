@@ -1,0 +1,11 @@
+# Normalize line endings across Windows/macOS
+* text=auto
+
+# Treat Office and PDF files as binary (no diff, no line-ending mangling)
+*.xlsx binary
+*.xlsm binary
+*.pptx binary
+*.docx binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
