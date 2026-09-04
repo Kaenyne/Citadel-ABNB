@@ -1,0 +1,403 @@
+<title>NCLH Primer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#f7f8f9; --surface:#fcfdfd; --ink:#101418; --ink2:#4c555e; --muted:#828b94;
+  --grid:#e2e5e8; --axis:#c2c7cc; --border:rgba(16,20,24,.10);
+  --accent:#1c5cab; --s1:#2a78d6; --s2:#eb6834; --chipbg:#e8eef7;
+  --neg:#d03b3b; --pos:#0ca30c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1114; --surface:#171b1f; --ink:#f2f4f6; --ink2:#c0c7ce; --muted:#8b929a;
+    --grid:#2a2f34; --axis:#3a4046; --border:rgba(255,255,255,.10);
+    --accent:#5598e7; --s1:#3987e5; --s2:#d95926; --chipbg:#1e2a3a;
+    --neg:#e66767; --pos:#0ca30c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1114; --surface:#171b1f; --ink:#f2f4f6; --ink2:#c0c7ce; --muted:#8b929a;
+  --grid:#2a2f34; --axis:#3a4046; --border:rgba(255,255,255,.10);
+  --accent:#5598e7; --s1:#3987e5; --s2:#d95926; --chipbg:#1e2a3a;
+  --neg:#e66767; --pos:#0ca30c;
+}
+body{background:var(--bg); color:var(--ink); font:16px/1.5 "Source Sans 3",system-ui,sans-serif; margin:0; padding:32px 16px 48px;}
+.wrap{max-width:880px; margin:0 auto;}
+h1{font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:30px; margin:0 0 2px; letter-spacing:-.01em; text-wrap:balance;}
+h2{font-family:"Archivo",system-ui,sans-serif; font-weight:600; font-size:17px; margin:0 0 12px; letter-spacing:.01em;}
+.sub{color:var(--ink2); margin:0 0 18px; max-width:64ch;}
+.chips{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;}
+.chip{background:var(--chipbg); color:var(--accent); font-size:12.5px; font-weight:600; padding:3px 10px; border-radius:999px;}
+section{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px 22px; margin-bottom:16px;}
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:14px;}
+.tile .v{font-family:"Archivo",sans-serif; font-weight:700; font-size:22px;}
+.tile .l{font-size:12px; color:var(--muted); letter-spacing:.04em; text-transform:uppercase;}
+.tile .n{font-size:12.5px; color:var(--ink2);}
+table{border-collapse:collapse; width:100%; font-size:14.5px;}
+th{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.05em; text-align:left; font-weight:600; padding:4px 10px 6px 0; border-bottom:1px solid var(--grid);}
+td{padding:7px 10px 7px 0; border-bottom:1px solid var(--grid); vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td.num, th.num{text-align:right; font-variant-numeric:tabular-nums;}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media (max-width:640px){.cols{grid-template-columns:1fr;}}
+ul{margin:6px 0 0; padding-left:18px;}
+li{margin-bottom:5px;}
+.note{font-size:13px; color:var(--muted); margin-top:10px;}
+svg{width:100%; height:auto; display:block;}
+svg text{font-family:"Source Sans 3",system-ui,sans-serif;}
+.leg{display:flex; gap:16px; font-size:13px; color:var(--ink2); margin-bottom:6px;}
+.leg span{display:inline-flex; align-items:center; gap:6px;}
+.sw{width:10px; height:10px; border-radius:2px; display:inline-block;}
+.bull{color:var(--pos); font-weight:700;} .bear{color:var(--neg); font-weight:700;}
+.scrollx{overflow-x:auto;}
+footer{font-size:12.5px; color:var(--muted); max-width:72ch; margin:20px auto 0;}
+</style>
+
+<div class="wrap">
+<h1>Norwegian Cruise Line Holdings</h1>
+<p class="sub">NYSE: NCLH · 34 ships, ~71,400 berths across three brands. Sells cabins (68% of revenue) and onboard spend (32%). Guests pay deposits months ahead; ships are owned and debt-financed.</p>
+<div class="chips"><span class="chip">Contemporary → Luxury</span><span class="chip">#3 of the big three</span><span class="chip">57% of revenue: North America</span><span class="chip">All-unsecured debt since Sept 2025</span></div>
+
+<section>
+<div class="tiles">
+<div class="tile"><div class="l">Price</div><div class="v">$16.16</div><div class="n">Aug 31, 2026</div></div>
+<div class="tile"><div class="l">Mkt cap / EV</div><div class="v">$7.4B / $23B</div><div class="n">equity ≈ ⅓ of EV</div></div>
+<div class="tile"><div class="l">2026E EBITDA</div><div class="v">~$2.5B</div><div class="n">was ~$2.95B in March</div></div>
+<div class="tile"><div class="l">Net leverage</div><div class="v">5.3x → 6x+</div><div class="n">by YE 2026</div></div>
+<div class="tile"><div class="l">FCF (TTM)</div><div class="v">–$1.2B</div><div class="n">$3.3B ship capex</div></div>
+<div class="tile"><div class="l">Short interest</div><div class="v">15.9%</div><div class="n">of float</div></div>
+</div>
+</section>
+
+<section>
+<h2>Three brands, one company</h2>
+<div class="scrollx"><table>
+<tr><th>Brand</th><th>Segment</th><th class="num">Ships</th><th class="num">Berths*</th><th>Competes with</th></tr>
+<tr><td><b>Norwegian</b> (NCL)</td><td>Contemporary — Freestyle dining, Free at Sea bundles, Haven suites</td><td class="num">20</td><td class="num">~58k</td><td>Carnival, Royal Caribbean Intl, MSC</td></tr>
+<tr><td><b>Oceania</b></td><td>Upper-premium — food &amp; destination focus, adults-only</td><td class="num">8</td><td class="num">~8k</td><td>Viking, Celebrity, Princess</td></tr>
+<tr><td><b>Regent</b></td><td>Luxury, all-inclusive</td><td class="num">6</td><td class="num">~5k</td><td>Silversea, Seabourn</td></tr>
+</table></div>
+<p class="note">*Berth split estimated from ship capacities; NCLH reports only the 71,400 total. NCL is where the 2026 execution problems sit. Revenue by brand isn't disclosed — NCL is roughly ¾ (estimate), since luxury per-diems run 2–4x contemporary.</p>
+</section>
+
+<section>
+<h2>Do the differentiators actually matter?</h2>
+<div class="scrollx"><table>
+<tr><th>Claimed edge</th><th>Verdict</th><th>Evidence</th></tr>
+<tr><td>Freestyle dining</td><td>Retention, not acquisition</td><td>Surveys rank cost &amp; destination first; food dead last as a pick-a-line factor. Loyalists cite it; it doesn't win new customers.</td></tr>
+<tr><td><b>The Haven</b></td><td><b>Real draw</b></td><td>~20% of Prima's launch bookings at 2x+ fares; sells out months early.</td></tr>
+<tr><td>Free at Sea</td><td>Value concept, trust damaged</td><td>Bundle beats peers on price, but Nov 2025 cuts (WiFi, dining credits) drew "gimmick" backlash.</td></tr>
+<tr><td><b>Hawaii</b> (Pride of America)</td><td><b>Structurally unique</b></td><td>Only US-flagged large ship — year-round inter-island, no competitor can copy it.</td></tr>
+<tr><td>Alaska</td><td>Not differentiated</td><td>Crowded, record-capacity market; NCL competes, doesn't lead.</td></tr>
+</table></div>
+<p class="note"><b>Hardware added:</b> Aqua Slidecoaster and Indulge Food Hall (praised); go-karts (removed on Aqua to fix Prima-class deck crowding — they listen); Great Tides waterpark at Great Stirrup Cay (opened Sept 4, 2026). <b>Pipeline:</b> Norwegian Luna (now), Aura May 2027 (wellness/spa positioning), Regent Prestige Q4 2026, Oceania Sonata 2027, a 227k-GT class from 2030.</p>
+</section>
+
+<section>
+<h2>Seasonality — Q3 is the money quarter (2025 actuals)</h2>
+<div class="leg"><span><span class="sw" style="background:var(--s1)"></span>Revenue $B</span><span><span class="sw" style="background:var(--s2)"></span>Adj. EBITDA $B</span></div>
+<svg viewBox="0 0 560 250" role="img" aria-label="2025 quarterly revenue and adjusted EBITDA">
+<g stroke="var(--grid)" stroke-width="1"><line x1="40" y1="20" x2="540" y2="20"/><line x1="40" y1="80" x2="540" y2="80"/><line x1="40" y1="140" x2="540" y2="140"/></g>
+<line x1="40" y1="200" x2="540" y2="200" stroke="var(--axis)" stroke-width="1.5"/>
+<g fill="var(--muted)" font-size="11" text-anchor="end"><text x="34" y="204">0</text><text x="34" y="144">1</text><text x="34" y="84">2</text><text x="34" y="24">3</text></g>
+<g>
+<rect x="60" y="72.2" width="40" height="127.8" rx="3" fill="var(--s1)"/><rect x="104" y="173" width="40" height="27" rx="3" fill="var(--s2)"/>
+<rect x="185" y="48.8" width="40" height="151.2" rx="3" fill="var(--s1)"/><rect x="229" y="158.6" width="40" height="41.4" rx="3" fill="var(--s2)"/>
+<rect x="310" y="23.6" width="40" height="176.4" rx="3" fill="var(--s1)"/><rect x="354" y="138.8" width="40" height="61.2" rx="3" fill="var(--s2)"/>
+<rect x="435" y="65.6" width="40" height="134.4" rx="3" fill="var(--s1)"/><rect x="479" y="166.4" width="40" height="33.6" rx="3" fill="var(--s2)"/>
+</g>
+<g fill="var(--ink2)" font-size="11" text-anchor="middle">
+<text x="80" y="66">2.13</text><text x="124" y="167">0.45</text>
+<text x="205" y="43">2.52</text><text x="249" y="153">0.69</text>
+<text x="330" y="18">2.94</text><text x="374" y="133">1.02</text>
+<text x="455" y="60">2.24</text><text x="499" y="160">0.56</text>
+</g>
+<g fill="var(--ink2)" font-size="12.5" text-anchor="middle" font-weight="600">
+<text x="102" y="220">Q1</text><text x="227" y="220">Q2</text><text x="352" y="220">Q3</text><text x="477" y="220">Q4</text>
+</g>
+<g fill="var(--muted)" font-size="11" text-anchor="middle">
+<text x="102" y="237">yield $280 · 101.5%</text><text x="227" y="237">$304 · 103.9%</text><text x="352" y="237">$342 · 106.4%</text><text x="477" y="237">$276 · 101.8%</text>
+</g>
+</svg>
+<p class="note">Capacity is ~flat all year — the summer swing is price (net yield per person-day) and load. Q3 = 30% of revenue but 37% of EBITDA (fixed costs). Summer = Europe + Alaska + school holidays; winter = Caribbean. This is why 2026's guided Q3 yield of –8.9% forced the big EBITDA cut, and why summer-2027 pricing decides the turnaround.</p>
+</section>
+
+<section>
+<h2>Where the ships earn — revenue by destination, FY2025</h2>
+<svg viewBox="0 0 560 152" role="img" aria-label="FY2025 revenue by destination">
+<g font-size="13" fill="var(--ink2)">
+<text x="0" y="35">North America*</text><text x="0" y="67">Europe</text><text x="0" y="99">Asia-Pacific</text><text x="0" y="131">Other</text>
+</g>
+<g fill="var(--s1)">
+<rect x="122" y="21" width="342" height="20" rx="3"/>
+<rect x="122" y="53" width="174" height="20" rx="3"/>
+<rect x="122" y="85" width="60" height="20" rx="3"/>
+<rect x="122" y="117" width="18" height="20" rx="3"/>
+</g>
+<g font-size="12.5" fill="var(--ink2)" font-variant-numeric="tabular-nums">
+<text x="470" y="36">$5.6B · 57%</text><text x="302" y="68">$2.9B · 29%</text><text x="188" y="100">$1.0B · 10%</text><text x="146" y="132">$0.3B · 3%</text>
+</g>
+</svg>
+<p class="note">*North America includes the Caribbean, Alaska, Hawaii, Bermuda, Canada &amp; Mexico (Caribbean is the largest single group; not split out). In Q2 2026 Europe fell –15% YoY while North America rose +20% — ships pulled from the Eastern Med into the Caribbean, where peers are adding capacity too.</p>
+</section>
+
+<section>
+<h2>How full are the ships?</h2>
+<div class="cols">
+<div>
+<p style="margin:0">100% = two guests per cabin, so &gt;100% means 3rd/4th berths filled. NCLH sailed <b>103.5%</b> for 2025 — effectively zero empty rooms. The stress shows in guidance: Q4 2026 at <b>~99%</b> means real empty cabins, which is unusual.</p>
+</div>
+<div class="scrollx"><table>
+<tr><th>Operator</th><th class="num">Occupancy</th></tr>
+<tr><td>Royal Caribbean</td><td class="num">~109–111%</td></tr>
+<tr><td>Carnival</td><td class="num">~104%</td></tr>
+<tr><td>NCLH</td><td class="num">102–104%</td></tr>
+</table></div>
+</div>
+<p class="note">NCLH runs structurally lowest (more balconies/suites, adult-heavy luxury brands, fewer bunk beds) — but the 2026 gap is demand, not design.</p>
+</section>
+
+<section>
+<h2>NCLH trades on peer earnings days</h2>
+<div class="leg"><span><span class="sw" style="background:var(--s1)"></span>Peer report day (CCL/RCL)</span><span><span class="sw" style="background:var(--s2)"></span>NCLH's own report</span></div>
+<svg viewBox="0 0 640 260" role="img" aria-label="NCLH one-day stock move on cruise earnings days, Dec 2025 to Jul 2026">
+<line x1="40" y1="110" x2="630" y2="110" stroke="var(--axis)" stroke-width="1.5"/>
+<g>
+<rect x="58" y="58" width="44" height="52" rx="3" fill="var(--s1)"/>
+<rect x="130" y="28" width="44" height="82" rx="3" fill="var(--s1)"/>
+<rect x="202" y="110" width="44" height="55" rx="3" fill="var(--s1)"/>
+<rect x="274" y="92" width="44" height="18" rx="3" fill="var(--s1)"/>
+<rect x="346" y="110" width="44" height="68" rx="3" fill="var(--s2)"/>
+<rect x="418" y="96" width="44" height="14" rx="3" fill="var(--s1)"/>
+<rect x="490" y="63" width="44" height="47" rx="3" fill="var(--s1)"/>
+<rect x="562" y="110" width="44" height="78" rx="3" fill="var(--s2)"/>
+</g>
+<g font-size="12" fill="var(--ink2)" text-anchor="middle" font-weight="600">
+<text x="80" y="52">+6.5%</text><text x="152" y="22">+10.2%</text><text x="224" y="179">–6.9%</text><text x="296" y="86">+2.3%</text><text x="368" y="192">–8.6%</text><text x="440" y="90">+1.8%</text><text x="512" y="57">+5.9%</text><text x="584" y="202">–9.8%</text>
+</g>
+<g font-size="10.5" fill="var(--muted)" text-anchor="middle">
+<text x="80" y="228">Dec 19</text><text x="80" y="241">CCL beat</text>
+<text x="152" y="228">Jan 29</text><text x="152" y="241">RCL guide</text>
+<text x="224" y="228">Mar 27</text><text x="224" y="241">CCL day</text>
+<text x="296" y="228">Apr 30</text><text x="296" y="241">RCL beat</text>
+<text x="368" y="228">May 4</text><text x="368" y="241">Q1: guide cut</text>
+<text x="440" y="228">Jun 23</text><text x="440" y="241">CCL record</text>
+<text x="512" y="228">Jul 28</text><text x="512" y="241">RCL raise</text>
+<text x="584" y="228">Jul 30</text><text x="584" y="241">Q2: cut again</text>
+</g>
+</svg>
+<p class="note">One-day close-to-close moves. Average move on the six peer days: ±5.6% vs. a ~2–3% normal day — NCLH is a high-beta read-through on CCL and RCL prints, up on their good news even while its own prints go the other way. Next dates: CCL Sept 17, RCL Nov 3, NCLH Nov 4.</p>
+</section>
+
+<section>
+<h2>Its own earnings days: guidance, not EPS, moves the stock</h2>
+<svg viewBox="0 0 640 258" role="img" aria-label="NCLH one-day stock move on its own earnings days">
+<line x1="40" y1="95" x2="630" y2="95" stroke="var(--axis)" stroke-width="1.5"/>
+<g fill="var(--s2)">
+<rect x="58" y="60.3" width="44" height="34.7" rx="3"/>
+<rect x="130" y="95" width="44" height="29.2" rx="3"/>
+<rect x="202" y="95" width="44" height="42.9" rx="3"/>
+<rect x="274" y="44.4" width="44" height="50.6" rx="3"/>
+<rect x="346" y="95" width="44" height="84.2" rx="3"/>
+<rect x="418" y="95" width="44" height="57.8" rx="3"/>
+<rect x="490" y="95" width="44" height="47.3" rx="3"/>
+<rect x="562" y="95" width="44" height="53.9" rx="3"/>
+</g>
+<g font-size="12" fill="var(--ink2)" text-anchor="middle" font-weight="600">
+<text x="80" y="54">+6.3%</text><text x="152" y="138">–5.3%</text><text x="224" y="152">–7.8%</text><text x="296" y="38">+9.2%</text><text x="368" y="193">–15.3%</text><text x="440" y="167">–10.5%</text><text x="512" y="156">–8.6%</text><text x="584" y="163">–9.8%</text>
+</g>
+<g font-size="10.5" fill="var(--muted)" text-anchor="middle">
+<text x="80" y="228">Q3'24</text><text x="80" y="241">missed, raised</text>
+<text x="152" y="228">Q4'24</text><text x="152" y="241">missed</text>
+<text x="224" y="228">Q1'25</text><text x="224" y="241">beat, soft books</text>
+<text x="296" y="228">Q2'25</text><text x="296" y="241">met, reaffirmed</text>
+<text x="368" y="228">Q3'25</text><text x="368" y="241">missed</text>
+<text x="440" y="228">Q4'25</text><text x="440" y="241">missed</text>
+<text x="512" y="228">Q1'26</text><text x="512" y="241">guide cut</text>
+<text x="584" y="228">Q2'26</text><text x="584" y="241">guide cut</text>
+</g>
+</svg>
+<p class="note">Missed consensus EPS in 7 of the last 9 quarters (usually met its own guidance — different yardsticks). Regressing the day's move on the EPS surprise: R² = 0.006 (n=8) — surprise explains nothing. The Q1'25 beat fell 7.8% on booking commentary; the Q3'24 miss rose 6.3% on a raise. Bookings and guidance are the whole game. Average own-print day: –5.2%, average swing ±9%.</p>
+<p class="note"><b>Call language that maps to the move:</b> UP = "raise/reaffirm," "bookings exceed historical levels," "record bookings." DOWN = "below optimal booked position," yield guidance trimmed, occupancy prioritized over price ("dilute blended pricing," Q3'25), macro blamed then walked back. Analyst questions that precede the damage: booking-curve attribution (macro vs execution), promo intensity, 2027 credibility, deleveraging timeline.</p>
+</section>
+
+<section>
+<h2>Origins, people, expenses</h2>
+<div class="cols">
+<div>
+<ul style="font-size:14.5px; margin-top:0">
+<li>Founded <b>1966</b> in Miami (Norwegian Caribbean Line); IPO Jan 2013.</li>
+<li>One big acquisition: <b>Prestige Cruises (Oceania + Regent), Nov 2014, ~$3B</b> — how it became three brands. Peers grew the same way: Carnival is a rollup (Princess, HAL, Costa, Cunard…); Royal bought Celebrity ('97) and Silversea ('18–'20); Viking, none.</li>
+<li><b>~44,500 employees: 39,200 shipboard (88%), 5,300 shoreside</b> (FY2025 10-K). Rising with the fleet: 36.0k ('19) → 41.0k ('23) → 41.7k ('24) → 44.5k ('25). Crew grows with berths; shoreside is the cost-cut/offshoring target.</li>
+<li>No R&amp;D line — normal for cruise: innovation lives in ship capex and IT.</li>
+<li>Ships built by <b>Fincantieri (Italy) and Meyer Werft (Germany)</b>; yard slots are booked into the 2030s, so industry supply is capped — a pricing tailwind for everyone.</li>
+<li>~3M guests/yr across roughly 1,600 sailings (estimate from capacity days).</li>
+</ul>
+</div>
+<div>
+<h2 style="font-size:14px">FY2025 expenses, $B</h2>
+<svg viewBox="0 0 560 268" role="img" aria-label="FY2025 expense lines">
+<g font-size="12.5" fill="var(--ink2)">
+<text x="0" y="32">Commissions, transport</text><text x="0" y="59">Marketing, G&amp;A</text><text x="0" y="86">Payroll</text><text x="0" y="113">D&amp;A</text><text x="0" y="140">Interest, net</text><text x="0" y="167">Other cruise</text><text x="0" y="194">Onboard costs</text><text x="0" y="221">Fuel</text><text x="0" y="248">Food</text>
+</g>
+<g fill="var(--s1)">
+<rect x="170" y="19" width="370" height="18" rx="3"/>
+<rect x="170" y="46" width="322" height="18" rx="3"/>
+<rect x="170" y="73" width="291" height="18" rx="3"/>
+<rect x="170" y="100" width="225" height="18" rx="3"/>
+<rect x="170" y="127" width="198" height="18" rx="3"/>
+<rect x="170" y="154" width="160" height="18" rx="3"/>
+<rect x="170" y="181" width="143" height="18" rx="3"/>
+<rect x="170" y="208" width="141" height="18" rx="3"/>
+<rect x="170" y="235" width="67" height="18" rx="3"/>
+</g>
+<g font-size="12" fill="var(--ink2)" font-variant-numeric="tabular-nums">
+<text x="546" y="33" text-anchor="end">1.78</text><text x="498" y="60">1.55</text><text x="467" y="87">1.40</text><text x="401" y="114">1.08</text><text x="374" y="141">0.95</text><text x="336" y="168">0.77</text><text x="319" y="195">0.69</text><text x="317" y="222">0.68</text><text x="243" y="249">0.32</text>
+</g>
+</svg>
+<p class="note">Marketing/G&amp;A grew +8% in 2025 while revenue grew +3.7% — spending more to sell less; the CEO says it went to the wrong (bottom-of-funnel) end. Interest includes 2025 refi one-offs. Fuel is only ~7% of revenue.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Fleet &amp; balance sheet</h2>
+<div class="cols">
+<div>
+<h2 style="font-size:14px">Why "only" 34 ships</h2>
+<ul style="font-size:14.5px">
+<li>Ships cost $1–3B each, take 3+ years to build, and only a few shipyards exist — capacity grows ~5%/yr, industry-wide.</li>
+<li>Fleet went ~21 ships (2015, after buying Oceania/Regent) → 34 today.</li>
+<li>On order: 16 ships / ~43k berths through 2037 (+60% capacity) — steady, not fast. Capex drops ~$1B/yr from 2028.</li>
+</ul>
+</div>
+<div>
+<h2 style="font-size:14px">Debt: $15.0B, all unsecured</h2>
+<ul style="font-size:14.5px">
+<li>Cash ran $947M ('22) → $402M ('23) → $191M ('24) by design: the COVID cash buffer was burned down into debt paydown and ships; the $1.3B undrawn revolver is the buffer now.</li>
+<li>Working capital is negative because <b>customers pay first</b> — $3.65B of advance ticket sales (deferred revenue), not accounts payable. Receivables (~3% of revenue) are mostly card-processor settlement lags and tax/VAT rebates — not actually large.</li>
+<li>Sept 2025 refi: ~$3.4B raised (5.875% '31, 6.25% '33, 0.75% convert '30) retired the 2026–27 wall and <b>all secured notes</b>.</li>
+<li>Fleet now unencumbered = emergency collateral. No maturity cliff before 2030.</li>
+<li>Risk is ratio drift (&gt;6x on falling EBITDA, negative FCF), not refinancing access.</li>
+<li>Why pour cash into debt? Interest is $954M — ~10% of revenue, bigger than fuel. Every $1B repaid saves ~$60–70M/yr, and deleveraging shifts EV from creditors to the equity. (FCF is thin from ship capex, not from paydown — paydown is financing.)</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Peer multiples — EV / EBITDA (TTM)</h2>
+<svg viewBox="0 0 560 152" role="img" aria-label="EV to EBITDA versus peers">
+<g font-size="13" fill="var(--ink2)">
+<text x="0" y="35">Carnival</text><text x="0" y="67">NCLH</text><text x="0" y="99">Royal Caribbean</text><text x="0" y="131">Viking</text>
+</g>
+<g>
+<rect x="122" y="21" width="125" height="20" rx="3" fill="var(--s1)"/>
+<rect x="122" y="53" width="144" height="20" rx="3" fill="var(--s2)"/>
+<rect x="122" y="85" width="226" height="20" rx="3" fill="var(--s1)"/>
+<rect x="122" y="117" width="341" height="20" rx="3" fill="var(--s1)"/>
+</g>
+<g font-size="12.5" fill="var(--ink2)" font-variant-numeric="tabular-nums">
+<text x="253" y="36">7.8x</text><text x="272" y="68">9.0x</text><text x="354" y="100">14.1x</text><text x="469" y="132">21.3x</text>
+</g>
+</svg>
+<p class="note">Cruise stocks are valued on EV/EBITDA ($15B of debt makes P/E misleading). The market pays Royal ~14x for execution; NCLH isn't even the cheapest — Carnival is cheaper <i>and</i> currently beating. Each 1x turn on ~$2.5B EBITDA ≈ $5.40/share ≈ a third of NCLH's equity — the leverage torque, both directions.</p>
+</section>
+
+<section>
+<h2>The industry backdrop: demand is at records — this is an NCLH problem</h2>
+<div class="leg"><span><span class="sw" style="background:var(--s1)"></span>Actual</span><span><span class="sw" style="background:var(--s1); opacity:.45"></span>CLIA forecast</span></div>
+<svg viewBox="0 0 570 235" role="img" aria-label="Global cruise passengers by year, millions">
+<line x1="35" y1="190" x2="560" y2="190" stroke="var(--axis)" stroke-width="1.5"/>
+<g fill="var(--s1)">
+<rect x="45" y="65.3" width="36" height="124.7" rx="3"/>
+<rect x="96" y="165.6" width="36" height="24.4" rx="3"/>
+<rect x="147" y="169.8" width="36" height="20.2" rx="3"/>
+<rect x="198" y="104.3" width="36" height="85.7" rx="3"/>
+<rect x="249" y="59.4" width="36" height="130.6" rx="3"/>
+<rect x="300" y="44.7" width="36" height="145.3" rx="3"/>
+<rect x="351" y="33.8" width="36" height="156.2" rx="3"/>
+</g>
+<g fill="var(--s1)" opacity="0.45">
+<rect x="402" y="29.1" width="36" height="160.9" rx="3"/>
+<rect x="453" y="20.7" width="36" height="169.3" rx="3"/>
+<rect x="504" y="17" width="36" height="173" rx="3"/>
+</g>
+<g font-size="11.5" fill="var(--ink2)" text-anchor="middle" font-weight="600">
+<text x="63" y="59">29.7</text><text x="114" y="160">5.8</text><text x="369" y="28">37.2</text><text x="522" y="11">41.2</text>
+</g>
+<g font-size="10.5" fill="var(--muted)" text-anchor="middle">
+<text x="63" y="207">'19</text><text x="114" y="207">'20</text><text x="165" y="207">'21</text><text x="216" y="207">'22</text><text x="267" y="207">'23</text><text x="318" y="207">'24</text><text x="369" y="207">'25</text><text x="420" y="207">'26F</text><text x="471" y="207">'27F</text><text x="522" y="207">'28F</text>
+</g>
+<text x="35" y="228" font-size="11" fill="var(--muted)">Global cruise passengers, millions (CLIA, April 2026)</text>
+</svg>
+<p class="note">Record 37.2M cruisers in 2025 (+7.5%); ~90% say they'll cruise again; 31% were first-timers. BofA (May 2026) calls cruises the one travel category growing across <i>all</i> income groups even as overall vacation intent softens. AAA: 72% of US cruisers go to the Caribbean, 7% Alaska, 5% Mediterranean. Caribbean = volume; Europe/Alaska = price (NCLH's Q3 yield $342 vs Q1 $280). Soft spots: Northern Europe and Alaska demand, and bookings shifting closer-in industry-wide.</p>
+</section>
+
+<section>
+<h2>Who the customer is — from alt data</h2>
+<ul style="font-size:14.5px; margin-top:0">
+<li><b>Card data (BofA, Jan–Apr 2026):</b> cruise spend up ~5% in lower-income and ~10% in middle/higher-income households — the only travel category growing across all cohorts.</li>
+<li><b>ncl.com audience (Similarweb):</b> largest age bracket 45–54, 58% female (the household trip-planner), 82% US traffic; heavy cross-shopping with Royal, Celebrity and Cruise Critic.</li>
+<li><b>Passengers (AAA):</b> 65% of adult cruisers are 55+, 27% are 35–54, 7% are 18–34.</li>
+<li><b>Intent skews young (YouGov):</b> millennials lead cruise intent (40%), and 57% of Gen Z plan a cruise within 12 months (BofA) — but brand consideration ranks Royal 27%, Carnival 20%, <b>NCL 18%</b>: the growth cohort is choosing competitors.</li>
+<li>No public data exists on customer race/ethnicity at brand level; income/age by brand sits in paid card panels (Consumer Edge, Earnest, Yipit) — check a Bloomberg terminal.</li>
+</ul>
+<p class="note">The alt-data read: NCL's shopper base is older than the industry's growth demand, and its consideration trails both big peers — consistent with the marketing/top-of-funnel diagnosis.</p>
+</section>
+
+<section>
+<h2>What's broken, and the calendar</h2>
+<div class="cols">
+<div>
+<p style="margin:0 0 6px"><span class="bear">2026:</span> FY net yield guided –5% (Q3 –8.9%), EPS cut $2.38 → ~$1.50. CEO Chidsey, Jul 30 call: problems are "self-inflicted… execution issues which we can fix" — NCL priced too high too far out, underspent on demand marketing, then discounted close-in. Peers are at record prices, so it's share loss, not a cruise downturn.</p>
+<p style="margin:0"><span class="bull">The fix:</span> "base-loading" pricing, new CMO, $225M cost cuts, Great Stirrup Cay waterpark (Sept 4). H1 2027 yields still negative → back-half recovery → <b>2028 = first "normalized" year</b> (optimal booked position, no promo hangover, clean comps).</p>
+</div>
+<div class="scrollx"><table>
+<tr><th>Date</th><th>Catalyst</th></tr>
+<tr><td>Sep 4</td><td>Great Tides waterpark opens</td></tr>
+<tr><td>Sep 17</td><td>Carnival FQ3 (read-through)</td></tr>
+<tr><td>Late Oct/Nov</td><td>Q3 print — first real 2027 booking data</td></tr>
+<tr><td>Nov 3</td><td>Royal Q3 (read-through)</td></tr>
+<tr><td>Jan–Mar '27</td><td>Wave season — verdict on base-loading</td></tr>
+<tr><td>~Feb '27</td><td>2027 guidance</td></tr>
+</table></div>
+</div>
+<p class="note">Macro sensitivities: US consumer confidence (guests are mostly US-sourced), fuel (~7% of revenue in 2025; ~52% of 2026 hedged at $533/t), FX, rates on $15B debt, geopolitics (Middle East redeployment), hurricanes, health scares, and environmental/port regulation.</p>
+<p class="note"><b>Leadership churn:</b> two CEOs in three years — Harry Sommer out Feb 2026, replaced from the board by John Chidsey (ex-Subway/Burger King CEO, a brand-turnaround operator, not a cruise lifer). New CMO Lee Applbaum arrived mid-2026. The board chose marketing/brand skills over cruise experience — that <i>is</i> the diagnosis.</p>
+<p class="note"><b>Customer sentiment is the quiet risk:</b> Consumer Reports (July 2026) ranked NCL last of 19 cruise lines on satisfaction. Recurring complaints: fee creep on "Free at Sea," smaller food portions and a $5 second-entrée charge, cheaper entertainment, itinerary churn (13+ sailings canceled/rerouted around the Middle East), loyalty-program cuts. Praise persists for Freestyle dining, the Haven, specialty restaurants and Alaska/Hawaii routes. Cost cuts showing up in the product is the tension inside the turnaround.</p>
+</section>
+
+<section>
+<h2>Alt-data menu (build the edge here)</h2>
+<div class="cols">
+<div>
+<ul style="font-size:14px; margin-top:0">
+<li><b>Fare + promo scrape</b> — daily lead fares, promo depth and sold-out cabin categories for matched NCL/RCL/CCL sailings. Tests base-loading directly; sellouts proxy per-sailing load.</li>
+<li><b>Wayback Machine</b> on ncl.com deal pages — reconstructs promo history retroactively, enabling the promo-vs-stock study.</li>
+<li><b>Marketing email cadence</b> — subscribe to all three lines; count sends and discount depth weekly.</li>
+<li><b>Cruise Critic roll-call activity</b> per sailing as a booking proxy; review velocity at Great Stirrup Cay after Sept 4.</li>
+<li><b>Google Trends / Similarweb / app downloads</b> — top-of-funnel demand, the thing the CMO must fix.</li>
+</ul>
+</div>
+<div>
+<ul style="font-size:14px; margin-top:0">
+<li><b>Port statistics</b> — PortMiami, Canaveral, Everglades publish monthly cruise passenger counts; Alaska and Bahamas arrivals too. Free, official volume data.</li>
+<li><b>AIS ship tracking</b> — itinerary changes, island calls, redeployments.</li>
+<li><b>Credit signals</b> — NCLH bond prices on FINRA TRACE, borrow fees, options skew: the market's live vote on the balance sheet.</li>
+<li><b>Hiring/health</b> — LinkedIn headcount in marketing &amp; revenue management, job postings, Glassdoor trend.</li>
+<li><b>Channel checks</b> — call travel agents on NCL promo cadence and steering; Bloomberg terminal (Warrington) for card-panel data.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<h2>The call: short — the turnaround is real but late for this window</h2>
+<p style="margin:0 0 8px">The 3–12 month horizon is the decider. Management's own map says H1 2027 yields negative, 2028 the first normal year — so the window holds two likely-ugly prints (Nov 4, ~Feb) before any proof the fix works. Meanwhile too much is changing at once: new CEO (Feb '26), new CMO, new pricing model, new hardware — and <b>dead-last customer satisfaction</b> (Consumer Reports, Jul '26) in an industry where ~90% of demand is repeat/referral. Ports at records + NCLH cutting guidance = clean share-loss proof; 2027 consensus ($1.70, range $1.20–2.05) still assumes a recovery management keeps deferring. Differentiation vs. the crowd's lazy short: pitch mispriced <i>timing</i>, not a bad company — evidenced by the promo scrape, the CSAT→pricing-power link, and Caribbean supply (15 of ~21 NCLH ships there this winter, plus MSC/Disney/RCL adds).</p>
+<p style="margin:0 0 8px"><b>Short — 3 catalysts:</b> (1) Nov 4 Q3 print: Q4 guided to 99% occupancy, H1'27 negative yields formalized, booked position still below optimal; (2) wave-season discounting Jan–Mar, visible in promos before the ~Feb guide disappoints; (3) leverage &gt;6x + negative FCF → ratings action. <b>3 risks:</b> (1) squeeze — 16% SI near the low; peer prints (CCL Sept 17, RCL Nov 3) have moved NCLH +6–10% in a day; (2) the bar is on the floor — an in-line print with "2027 improving sequentially" rallies it hard from 9.5x 2027 consensus; (3) no forcing event before 2030 — self-help can land early (savings, CMO campaigns, waterpark) and ME de-escalation helps.</p>
+<p style="margin:0"><b>The long (for the record) — 3 catalysts:</b> (1) any "2027 pricing ahead" line on Nov 4 ignites the short base; (2) wave season holds price → Feb guide ≥ $1.70 consensus and the 2028 re-rate starts (markets price inflections ~2 quarters early — inside the window's back half); (3) self-help proof: savings flow-through, top-of-funnel metrics turning, waterpark monetization. <b>3 risks:</b> (1) timing — two known-bad prints first; dead money or drawdown before any payoff; (2) last-place satisfaction in a repeat-buyer industry means pricing power may not answer marketing spend; (3) &gt;6x leverage + negative FCF leaves zero room for one more guide-down.</p>
+</section>
+
+<footer>Data as of Aug 31–Sep 1, 2026. Sources: NCLH FY2025 10-K &amp; Q2 2026 10-Q (SEC), NCLH/RCL/CCL press releases and earnings calls, Sept 2025 refinancing investor deck, Yahoo Finance price history, StockAnalysis.com, TipRanks earnings history, CLIA 2026 State of the Cruise Industry, AAA 2026 cruise forecast, BofA Institute (May 2026), Consumer Reports (July 2026). Berth/brand-revenue splits, sailings count and event-study framing are estimates as noted; regression n=8. For study — not investment advice.</footer>
+</div>

@@ -1,0 +1,89 @@
+<title>Airbnb vs Air Traffic</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#f7f8f9;--surface:#fcfdfd;--ink:#101418;--ink2:#4c555e;--muted:#828b94;--grid:#e2e5e8;--axis:#c2c7cc;--border:rgba(16,20,24,.10);--accent:#1c5cab;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e1114;--surface:#171b1f;--ink:#f2f4f6;--ink2:#c0c7ce;--muted:#8b929a;--grid:#2a2f34;--axis:#3a4046;--border:rgba(255,255,255,.10);--accent:#5598e7;--s1:#3987e5;--s2:#d95926;--s3:#199e70;}}
+:root[data-theme="dark"]{--bg:#0e1114;--surface:#171b1f;--ink:#f2f4f6;--ink2:#c0c7ce;--muted:#8b929a;--grid:#2a2f34;--axis:#3a4046;--border:rgba(255,255,255,.10);--accent:#5598e7;--s1:#3987e5;--s2:#d95926;--s3:#199e70;}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 "Source Sans 3",system-ui,sans-serif;margin:0;padding:32px 16px 48px;}
+.wrap{max-width:880px;margin:0 auto;}
+h1{font-family:"Archivo",system-ui,sans-serif;font-weight:700;font-size:28px;margin:0 0 4px;letter-spacing:-.01em;}
+h2{font-family:"Archivo",system-ui,sans-serif;font-weight:600;font-size:16px;margin:0 0 10px;}
+.sub{color:var(--ink2);margin:0 0 20px;max-width:66ch;}
+section{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:16px;}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums;}
+th{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;text-align:right;font-weight:600;padding:4px 8px 6px 0;border-bottom:1px solid var(--grid);}
+th:first-child,td:first-child{text-align:left;}
+td{padding:5px 8px 5px 0;border-bottom:1px solid var(--grid);text-align:right;}
+tr:last-child td{border-bottom:none;}
+.hi{color:var(--accent);font-weight:700;}
+.note{font-size:13px;color:var(--muted);margin-top:10px;}
+svg{width:100%;height:auto;display:block;} svg text{font-family:"Source Sans 3",system-ui,sans-serif;}
+.leg{display:flex;gap:16px;font-size:13px;color:var(--ink2);margin-bottom:6px;flex-wrap:wrap;}
+.leg span{display:inline-flex;align-items:center;gap:6px;} .sw{width:14px;height:3px;border-radius:2px;display:inline-block;}
+.scrollx{overflow-x:auto;}
+footer{font-size:12.5px;color:var(--muted);max-width:72ch;margin:20px auto 0;}
+</style>
+<div class="wrap">
+<h1>Does air traffic predict Airbnb?</h1>
+<p class="sub">Quarterly year-over-year growth: US airport screenings (TSA), global international air demand (IATA RPKs) and Airbnb nights booked. Once the post-COVID normalization ends, they stop moving together.</p>
+
+<section>
+<div class="leg"><span><span class="sw" style="background:var(--s1)"></span>TSA screenings YoY (US)</span><span><span class="sw" style="background:var(--s2)"></span>IATA international RPK YoY (global)</span><span><span class="sw" style="background:var(--s3)"></span>Airbnb nights &amp; seats booked YoY</span></div>
+<svg viewBox="0 0 660 290" role="img" aria-label="YoY growth: TSA, IATA international, Airbnb nights booked, 2023Q2 to 2026Q2">
+<g stroke="var(--grid)" stroke-width="1"><line x1="50" y1="43" x2="620" y2="43"/><line x1="50" y1="89" x2="620" y2="89"/><line x1="50" y1="135" x2="620" y2="135"/><line x1="50" y1="181" x2="620" y2="181"/></g>
+<line x1="50" y1="227" x2="620" y2="227" stroke="var(--axis)" stroke-width="1.5"/>
+<g fill="var(--muted)" font-size="11" text-anchor="end"><text x="44" y="47">40%</text><text x="44" y="93">30%</text><text x="44" y="139">20%</text><text x="44" y="185">10%</text><text x="44" y="231">0%</text></g>
+<polyline fill="none" stroke="var(--s2)" stroke-width="2" stroke-linejoin="round" points="50,38.9 97.5,87.2 145,103.7 192.5,125.8 240,161.7 287.5,181 335,178.2 382.5,192 430,195.3 477.5,200.8 525,190.2 572.5,210 620,239"/>
+<polyline fill="none" stroke="var(--s1)" stroke-width="2" stroke-linejoin="round" points="50,176.9 97.5,175 145,177.8 192.5,190.2 240,196.2 287.5,207.2 335,215.5 382.5,228.8 430,229.8 477.5,222.4 525,221.5 572.5,220.1 620,230.2"/>
+<polyline fill="none" stroke="var(--s3)" stroke-width="2.5" stroke-linejoin="round" points="50,176.4 97.5,162.6 145,171.8 192.5,183.3 240,185.6 287.5,190.2 335,171.8 382.5,190.2 430,194.8 477.5,185.6 525,181 572.5,185.6 620,181"/>
+<g fill="var(--s3)"><circle cx="620" cy="181" r="4"/></g><g fill="var(--s1)"><circle cx="620" cy="230.2" r="4"/></g><g fill="var(--s2)"><circle cx="620" cy="239" r="4"/></g>
+<g font-size="11.5" fill="var(--ink2)" font-weight="600"><text x="628" y="184">+10%</text><text x="628" y="233">–1%</text><text x="628" y="246">–3%</text></g>
+<g font-size="10.5" fill="var(--muted)" text-anchor="middle">
+<text x="50" y="248">23Q2</text><text x="145" y="248">23Q4</text><text x="240" y="248">24Q2</text><text x="335" y="248">24Q4</text><text x="430" y="248">25Q2</text><text x="525" y="248">25Q4</text><text x="620" y="248">26Q2</text>
+</g>
+<text x="50" y="278" font-size="11" fill="var(--muted)">Quarterly averages of monthly YoY. Sources: TSA daily throughput (summed), IATA monthly market analysis, Airbnb shareholder letters.</text>
+</svg>
+</section>
+
+<section>
+<h2>Correlation of same-quarter YoY growth with Airbnb</h2>
+<div class="scrollx"><table>
+<tr><th>Air-traffic series</th><th>vs Nights booked<br>2023Q1–26Q2</th><th>vs Nights booked<br>2024Q1–26Q2</th><th>vs GBV<br>2024–26</th><th>vs Revenue<br>2024–26</th><th>vs Stock return<br>2024–26</th></tr>
+<tr><td>TSA screenings (US)</td><td class="hi">+0.84</td><td>+0.16</td><td>–0.17</td><td>+0.20</td><td>+0.03</td></tr>
+<tr><td>BTS US enplanements</td><td>+0.61</td><td>+0.16</td><td>–0.20</td><td>+0.23</td><td>–0.00</td></tr>
+<tr><td>IATA total RPK (global)</td><td class="hi">+0.83</td><td>+0.04</td><td>–0.37</td><td>+0.05</td><td>+0.16</td></tr>
+<tr><td>IATA international RPK</td><td class="hi">+0.86</td><td>+0.05</td><td>–0.43</td><td>–0.01</td><td>+0.16</td></tr>
+</table></div>
+<p class="note">Pearson r; n = 14 quarters (full) and 10 quarters (post-normalization). Lagging air traffic one quarter ahead of nights gives r ≈ +0.5 on the full window, driven by 2023. Quarterly <i>levels</i> don't correlate at all (r = –0.09): TSA peaks in Q3 when people fly; Airbnb nights <i>booked</i> peak in Q1 when people book.</p>
+</section>
+
+<section>
+<h2>What it means</h2>
+<p style="margin:0 0 8px">The strong full-period correlation is an artifact of 2023: everything travel-related was decelerating from post-COVID reopening at once. Strip that out and <b>air traffic has no explanatory power for Airbnb since 2024</b>. US screenings have been flat-to-down for six quarters, international air demand turned negative in Q2 2026 on the Middle East war, US inbound arrivals have fallen for most of 2025–26 — and Airbnb nights growth held 7–10% and GBV accelerated to +16–19%.</p>
+<p style="margin:0">So Airbnb is not an air-travel beta. Its growth is share gain and mix (first-time bookers, hotels, expansion markets, longer/large-group stays), not more people flying. For the pitch: don't use flight data as a demand signal — use it to show <i>decoupling</i>. The risk framing flips too: if air travel recovers in 2027, Airbnb doesn't necessarily get a tailwind; if it weakens further, the last ten quarters say Airbnb keeps growing anyway.</p>
+</section>
+
+<section>
+<h2>Underlying quarterly data (YoY %)</h2>
+<div class="scrollx"><table>
+<tr><th>Quarter</th><th>TSA</th><th>BTS</th><th>IATA total</th><th>IATA intl</th><th>ABNB nights</th><th>ABNB GBV</th><th>ABNB revenue</th><th>ABNB stock, qtr</th></tr>
+<tr><td>2023Q1</td><td>+20.4</td><td>–</td><td>+58.3</td><td>+87.5</td><td>+19</td><td>+19</td><td>+20</td><td>+45.5</td></tr>
+<tr><td>2023Q2</td><td>+10.9</td><td>+8.1</td><td>+38.6</td><td>+40.9</td><td>+11</td><td>+13</td><td>+18</td><td>+3.0</td></tr>
+<tr><td>2023Q3</td><td>+11.3</td><td>+8.2</td><td>+28.2</td><td>+30.4</td><td>+14</td><td>+17</td><td>+18</td><td>+7.1</td></tr>
+<tr><td>2023Q4</td><td>+10.7</td><td>+8.6</td><td>+28.7</td><td>+26.8</td><td>+12</td><td>+15</td><td>+17</td><td>–0.8</td></tr>
+<tr><td>2024Q1</td><td>+8.0</td><td>+6.3</td><td>+17.3</td><td>+22.0</td><td>+9.5</td><td>+12</td><td>+18</td><td>+21.2</td></tr>
+<tr><td>2024Q2</td><td>+6.7</td><td>+5.9</td><td>+10.3</td><td>+14.2</td><td>+9</td><td>+11</td><td>+11</td><td>–8.1</td></tr>
+<tr><td>2024Q3</td><td>+4.3</td><td>+3.5</td><td>+7.9</td><td>+10.0</td><td>+8</td><td>+10</td><td>+10</td><td>–16.4</td></tr>
+<tr><td>2024Q4</td><td>+2.5</td><td>+1.8</td><td>+7.9</td><td>+10.6</td><td>+12</td><td>+13</td><td>+12</td><td>+3.6</td></tr>
+<tr><td>2025Q1</td><td>–0.4</td><td>–1.7</td><td>+5.3</td><td>+7.6</td><td>+8</td><td>+7</td><td>+6</td><td>–9.1</td></tr>
+<tr><td>2025Q2</td><td>–0.6</td><td>–1.4</td><td>+5.2</td><td>+6.9</td><td>+7</td><td>+11</td><td>+13</td><td>+10.8</td></tr>
+<tr><td>2025Q3</td><td>+1.0</td><td>–0.2</td><td>+4.1</td><td>+5.7</td><td>+9</td><td>+14</td><td>+10</td><td>–8.3</td></tr>
+<tr><td>2025Q4</td><td>+1.2</td><td>–1.3</td><td>+6.0</td><td>+8.0</td><td>+10</td><td>+16</td><td>+12</td><td>+11.8</td></tr>
+<tr><td>2026Q1</td><td>+1.5</td><td>+0.2</td><td>+4.0</td><td>+3.7</td><td>+9</td><td>+19</td><td>+18</td><td>–7.0</td></tr>
+<tr><td>2026Q2</td><td>–0.7</td><td>–0.3</td><td>–2.4</td><td>–2.6</td><td>+10</td><td>+16</td><td>+17</td><td>+13.3</td></tr>
+</table></div>
+<p class="note">TSA = quarterly sum of daily checkpoint counts vs. same quarter prior year. BTS = average of monthly reported YoY (NSA; BTS lags ~3 months, so 2026Q2 is Apr–May). IATA = average of monthly YoY. ABNB figures as reported (GBV/revenue as-reported, not FX-neutral). Stock = quarter-end close to close.</p>
+</section>
+
+<footer>Data through Q2 2026 (TSA through June; BTS through May; IATA through July). Sources: tsa.gov passenger volumes; bts.gov monthly air traffic releases; IATA Air Passenger Market Analysis; Airbnb quarterly shareholder letters; Yahoo Finance. Correlations computed by the author; n is small — treat as descriptive, not statistical proof.</footer>
+</div>
