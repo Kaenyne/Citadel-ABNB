@@ -14,6 +14,7 @@ Team workspace for the **Harvard FAC x Citadel Intercollegiate Stock Pitch** - o
 | `analysis/` | Python notebooks/scripts and the charts they produce | Data lead |
 | `deck/` | Slide drafts and the final submitted deck | Deck lead |
 | `docs/` | Competition rules/rubric/timeline, meeting notes, team decisions | Everyone |
+| `theos-past-research/` | Theo's historical ABNB research, reproducibility code, and provenance manifests | Theo |
 
 Start with [`research/thesis.md`](research/thesis.md) - it is the single source of truth for the pitch. Slides and the model should follow it, not the other way around.
 

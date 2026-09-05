@@ -87,3 +87,19 @@ def test_readiness_prompt_preserves_hierarchy_sync_gate_and_quant_handoff() -> N
         "checksums.sha256",
     ):
         assert phrase in prompt
+
+
+def test_package_readme_explains_historical_research_boundary() -> None:
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+
+    for phrase in (
+        "Historical research",
+        "abnb_alt_data",
+        "abnb_forecasting",
+        "abnb_guidance",
+        "metadata-only",
+        "restricted-data-manifest.csv",
+        "omitted-data-manifest.csv",
+        "does not replace the team thesis",
+    ):
+        assert phrase.casefold() in readme.casefold()

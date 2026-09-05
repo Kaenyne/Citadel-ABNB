@@ -10,6 +10,20 @@ data and are ignored by Git. Their compact metadata index, source checksums, and
 derived fact tables may be tracked because they do not reproduce the full
 licensed text.
 
+Authorized teammates should acquire the underlying material through an approved
+institutional or private team channel, placing PDFs in `EARNING-TRANSCRIPTS/`
+and any derived full-text files only in
+`data/licensed/earnings_transcripts/clean_md/`. Do not add either directory to
+Git. Check the acquired PDFs against the tracked metadata-only inventory with:
+
+```bash
+python scripts/validate_project.py --root . --expected-transcripts 23 --metadata-only
+```
+
+`research/provenance/restricted-data-manifest.csv` records every excluded
+licensed asset with its expected checksum; the compact transcript index and
+derived facts remain the reviewable, trackable boundary.
+
 Before collecting any other dataset, record its provider, economic mechanism,
 source URL, license and collection restrictions, geographic and historical
 coverage, frequency, publication lag, revisions, cost, collection timestamp,

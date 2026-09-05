@@ -32,6 +32,32 @@ def test_local_environment_secrets_are_ignored_but_template_is_trackable() -> No
     assert not is_ignored(".env.example")
 
 
+def test_raw_and_build_outputs_are_ignored_but_review_artifacts_are_trackable() -> None:
+    for path in (
+        "outputs/global-lodging-map/raw/inside-airbnb/london.csv",
+        "outputs/reproducibility/us-europe-guidance/previews/summary.png",
+        "outputs/reproducibility/us-europe-guidance/abnb_nasdaq_history.json",
+        "outputs/reproducibility/us-europe-guidance/spy_nasdaq_history.json",
+        "research/edge-discovery/20260903T211121Z_50_source_expansion/processed/new_observations.csv",
+        "results.parquet",
+        "source-payload.zip",
+        "report.aux",
+        "report.fdb_latexmk",
+        "report.fls",
+        "report.log",
+        "report.out",
+    ):
+        assert is_ignored(path)
+
+    for path in (
+        "research/provenance/omitted-data-manifest.csv",
+        "research/provenance/restricted-data-manifest.csv",
+        "outputs/reports/abnb_macro_to_equity_ic_brief.pdf",
+        "outputs/workbooks/abnb_us_europe_guidance_comparison.xlsx",
+    ):
+        assert not is_ignored(path)
+
+
 def test_scraping_extra_declares_scrapling() -> None:
     with (ROOT / "pyproject.toml").open("rb") as handle:
         project = tomllib.load(handle)["project"]
