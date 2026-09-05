@@ -21,12 +21,21 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--expected-transcripts", type=int, default=23)
+    parser.add_argument(
+        "--metadata-only",
+        action="store_true",
+        help="validate tracked metadata without requiring licensed transcript text",
+    )
     return parser
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    findings = validate_project(args.root, args.expected_transcripts)
+    findings = validate_project(
+        args.root,
+        args.expected_transcripts,
+        require_licensed_text=not args.metadata_only,
+    )
     if findings:
         for finding in findings:
             print(f"{finding.code}: {finding.message}")

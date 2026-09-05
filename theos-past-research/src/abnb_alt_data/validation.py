@@ -85,6 +85,7 @@ def _resolve_markdown(root: Path, value: str) -> Path | None:
 def _validate_transcripts(
     root: Path,
     expected_transcript_count: int,
+    require_licensed_text: bool,
     valid_schemas: set[str],
     findings: list[ValidationFinding],
 ) -> tuple[dict[str, dict[str, str]], dict[str, set[str]]]:
@@ -129,9 +130,10 @@ def _validate_transcripts(
             )
             continue
         if not markdown_path.exists():
-            findings.append(
-                ValidationFinding("missing_markdown", f"missing {markdown_value}")
-            )
+            if require_licensed_text:
+                findings.append(
+                    ValidationFinding("missing_markdown", f"missing {markdown_value}")
+                )
             continue
         text = markdown_path.read_text(encoding="utf-8")
         if "## Management discussion" not in text or "## Question and answer" not in text:
@@ -169,6 +171,7 @@ def _validate_transcripts(
 
 def _validate_guidance(
     root: Path,
+    require_licensed_text: bool,
     valid_schemas: set[str],
     index_by_markdown: dict[str, dict[str, str]],
     turns_by_markdown: dict[str, set[str]],
@@ -179,7 +182,12 @@ def _validate_guidance(
         return
     for row_number, row in enumerate(_read_csv(root / relative), start=2):
         try:
-            validate_guidance_row(row, index_by_markdown, turns_by_markdown)
+            source_markdown = row.get("source_markdown", "")
+            turns = turns_by_markdown
+            if not require_licensed_text and source_markdown not in turns:
+                turns = dict(turns)
+                turns[source_markdown] = {row.get("source_turn_id", "")}
+            validate_guidance_row(row, index_by_markdown, turns)
         except ValueError as error:
             findings.append(
                 ValidationFinding("invalid_guidance", f"row {row_number}: {error}")
@@ -205,7 +213,14 @@ def _validate_ignore_policy(root: Path, findings: list[ValidationFinding]) -> No
 
 
 def _validate_staging(root: Path, findings: list[ValidationFinding]) -> None:
-    result = _git(root, "diff", "--cached", "--name-only", "--diff-filter=ACMR")
+    result = _git(
+        root,
+        "diff",
+        "--cached",
+        "--name-only",
+        "--relative",
+        "--diff-filter=ACMR",
+    )
     if result.returncode != 0:
         findings.append(
             ValidationFinding("git_unavailable", result.stderr.strip() or "git diff failed")
@@ -231,7 +246,9 @@ def _validate_staging(root: Path, findings: list[ValidationFinding]) -> None:
 
 
 def validate_project(
-    root: Path, expected_transcript_count: int = 23
+    root: Path,
+    expected_transcript_count: int = 23,
+    require_licensed_text: bool = True,
 ) -> list[ValidationFinding]:
     """Return every detected project-integrity issue without mutating files."""
     root = root.resolve()
@@ -239,9 +256,9 @@ def validate_project(
     _validate_agent(root, findings)
     valid_schemas = _validate_schemas(root, findings)
     index, turns = _validate_transcripts(
-        root, expected_transcript_count, valid_schemas, findings
+        root, expected_transcript_count, require_licensed_text, valid_schemas, findings
     )
-    _validate_guidance(root, valid_schemas, index, turns, findings)
+    _validate_guidance(root, require_licensed_text, valid_schemas, index, turns, findings)
     _validate_ignore_policy(root, findings)
     _validate_staging(root, findings)
     return findings

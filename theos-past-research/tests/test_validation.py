@@ -115,6 +115,32 @@ def test_validator_reports_missing_markdown_and_count_mismatch(tmp_path: Path) -
     assert "missing_markdown" in codes
 
 
+def test_metadata_only_validation_allows_absent_restricted_text(tmp_path: Path) -> None:
+    build_project(tmp_path)
+    (tmp_path / MARKDOWN).unlink()
+
+    findings = validate_project(
+        tmp_path,
+        expected_transcript_count=1,
+        require_licensed_text=False,
+    )
+
+    assert not [
+        finding
+        for finding in findings
+        if finding.code in {"missing_markdown", "invalid_guidance"}
+    ]
+    assert main(
+        [
+            "--root",
+            str(tmp_path),
+            "--expected-transcripts",
+            "1",
+            "--metadata-only",
+        ]
+    ) == 0
+
+
 def test_validator_reports_duplicate_fiscal_period(tmp_path: Path) -> None:
     row = build_project(tmp_path)
     duplicate = dict(row)
