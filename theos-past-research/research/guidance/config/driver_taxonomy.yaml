@@ -1,0 +1,70 @@
+version: 1
+issuer: ABNB
+families:
+  demand_volume:
+    description: Booking volume and demand momentum.
+    drivers:
+      nights_booked: {unit: millions, expected_direction: positive}
+      nights_booked_yoy: {unit: ratio, expected_direction: positive}
+      forward_booking_momentum: {unit: ordinal, expected_direction: positive}
+      conversion_trend: {unit: ordinal, expected_direction: positive}
+  booking_economics:
+    description: Booking value, pricing, fees, and monetization.
+    drivers:
+      gbv: {unit: USD_millions, expected_direction: positive}
+      gbv_yoy: {unit: ratio, expected_direction: positive}
+      adr: {unit: USD_per_night, expected_direction: context_dependent}
+      adr_yoy: {unit: ratio, expected_direction: context_dependent}
+      take_rate: {unit: ratio, expected_direction: positive}
+      fee_structure_change: {unit: ordinal, expected_direction: context_dependent}
+  mix:
+    description: Geographic, cross-border, urban, and stay-duration composition.
+    drivers:
+      cross_border_share: {unit: ratio, expected_direction: positive}
+      cross_border_growth: {unit: ratio, expected_direction: positive}
+      regional_mix: {unit: category, expected_direction: context_dependent}
+      urban_mix: {unit: ratio, expected_direction: context_dependent}
+      long_term_stay_mix: {unit: ratio, expected_direction: context_dependent}
+  booking_behavior:
+    description: Lead times, cancellation behavior, volatility, and booked backlog.
+    drivers:
+      booking_lead_time: {unit: days_or_ordinal, expected_direction: context_dependent}
+      cancellation_rate: {unit: ratio_or_ordinal, expected_direction: negative}
+      bookings_on_books: {unit: ratio_or_ordinal, expected_direction: positive}
+      demand_volatility: {unit: ordinal, expected_direction: negative}
+  supply:
+    description: Listing availability, supply growth, host growth, and quality.
+    drivers:
+      active_listings: {unit: millions, expected_direction: positive}
+      active_listings_yoy: {unit: ratio, expected_direction: positive}
+      listing_quality: {unit: ordinal, expected_direction: positive}
+  commercial_activity:
+    description: Marketing, promotions, investments, and product-release cadence.
+    drivers:
+      marketing_expense: {unit: USD_millions, expected_direction: context_dependent}
+      marketing_pct_revenue: {unit: ratio, expected_direction: context_dependent}
+      promotion_intensity: {unit: ordinal, expected_direction: context_dependent}
+      product_investment_intensity: {unit: ordinal, expected_direction: context_dependent}
+  external_conditions:
+    description: Currency, macroeconomic, travel-cost, and regulatory conditions.
+    drivers:
+      fx_revenue_impact: {unit: ratio, expected_direction: context_dependent}
+      dollar_index_change: {unit: ratio, expected_direction: negative}
+      consumer_confidence_change: {unit: ratio, expected_direction: positive}
+      airfare_change: {unit: ratio, expected_direction: negative}
+      regulatory_pressure: {unit: ordinal, expected_direction: negative}
+  calendar_effects:
+    description: Recurring seasonality and predeclared calendar shifts.
+    drivers:
+      target_quarter: {unit: category, expected_direction: context_dependent}
+      easter_shift: {unit: nights, expected_direction: context_dependent}
+      leap_year: {unit: binary, expected_direction: positive}
+      major_holiday_shift: {unit: nights, expected_direction: context_dependent}
+
+aliases:
+  Nights and Experiences Booked: nights_booked
+  Nights and Seats Booked: nights_booked
+  Gross Booking Value: gbv
+  average daily rate: adr
+  implied take rate: take_rate
+  cross-border nights: cross_border_growth

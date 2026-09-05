@@ -1,0 +1,139 @@
+{
+  "$defs": {
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "context_paraphrase": {
+      "title": "Context Paraphrase",
+      "type": "string"
+    },
+    "copyright_handling": {
+      "title": "Copyright Handling",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "exact_excerpt": {
+      "title": "Exact Excerpt",
+      "type": "string"
+    },
+    "excerpt_word_count": {
+      "minimum": 1,
+      "title": "Excerpt Word Count",
+      "type": "integer"
+    },
+    "extraction_method": {
+      "title": "Extraction Method",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "page_number": {
+      "anyOf": [
+        {
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Page Number"
+    },
+    "section_heading": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Section Heading"
+    },
+    "source_anchor": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Anchor"
+    },
+    "source_excerpt_id": {
+      "title": "Source Excerpt Id",
+      "type": "string"
+    },
+    "speaker": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Speaker"
+    },
+    "timecode": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Timecode"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    },
+    "verified_against_source": {
+      "title": "Verified Against Source",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "source_excerpt_id",
+    "document_id",
+    "exact_excerpt",
+    "excerpt_word_count",
+    "context_paraphrase",
+    "copyright_handling",
+    "extraction_method",
+    "verified_against_source"
+  ],
+  "title": "SourceExcerpt",
+  "type": "object"
+}

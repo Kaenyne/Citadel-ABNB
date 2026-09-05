@@ -1,0 +1,17 @@
+version: 1
+official_download_hosts:
+  - investors.airbnb.com
+  - airbnb2020ipo.q4web.com
+  - s26.q4cdn.com
+  - sec.gov
+  - www.sec.gov
+sec:
+  minimum_seconds_between_requests: 1.0
+  identifying_user_agent_required: true
+http:
+  timeout_seconds: 30
+  follow_redirects_only_to_allowed_hosts: true
+transcripts:
+  retain_complete_third_party_text: false
+  maximum_words_per_excerpt: 25
+  maximum_quoted_words_per_source_event: 100

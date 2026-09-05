@@ -1,0 +1,185 @@
+{
+  "$defs": {
+    "AccountingBasis": {
+      "enum": [
+        "GAAP",
+        "non_GAAP",
+        "operating",
+        "not_applicable"
+      ],
+      "title": "AccountingBasis",
+      "type": "string"
+    },
+    "Confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "accounting_basis": {
+      "$ref": "#/$defs/AccountingBasis"
+    },
+    "comparator_period": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9]{4}Q[1-4]$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Comparator Period"
+    },
+    "currency": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Currency"
+    },
+    "derivation_formula": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Derivation Formula"
+    },
+    "extraction_confidence": {
+      "$ref": "#/$defs/Confidence"
+    },
+    "guidance_event_id": {
+      "title": "Guidance Event Id",
+      "type": "string"
+    },
+    "guidance_item_id": {
+      "title": "Guidance Item Id",
+      "type": "string"
+    },
+    "is_company_stated": {
+      "title": "Is Company Stated",
+      "type": "boolean"
+    },
+    "measure_type": {
+      "title": "Measure Type",
+      "type": "string"
+    },
+    "metric_code": {
+      "title": "Metric Code",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "source_excerpt_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Excerpt Id"
+    },
+    "target_period": {
+      "pattern": "^[0-9]{4}Q[1-4]$",
+      "title": "Target Period",
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "value_high": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value High"
+    },
+    "value_low": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value Low"
+    },
+    "value_mid": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value Mid"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    }
+  },
+  "required": [
+    "guidance_item_id",
+    "guidance_event_id",
+    "target_period",
+    "metric_code",
+    "measure_type",
+    "unit",
+    "accounting_basis",
+    "is_company_stated",
+    "extraction_confidence"
+  ],
+  "title": "GuidanceItem",
+  "type": "object"
+}

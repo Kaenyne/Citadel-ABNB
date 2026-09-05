@@ -1,0 +1,245 @@
+{
+  "$defs": {
+    "AvailabilityClass": {
+      "enum": [
+        "public_prior",
+        "contemporaneous_management_known",
+        "management_private_proxy",
+        "post_event_ineligible"
+      ],
+      "title": "AvailabilityClass",
+      "type": "string"
+    },
+    "LeakageRisk": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "prohibited"
+      ],
+      "title": "LeakageRisk",
+      "type": "string"
+    },
+    "QualityGrade": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "title": "QualityGrade",
+      "type": "string"
+    },
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "availability_class": {
+      "$ref": "#/$defs/AvailabilityClass"
+    },
+    "derivation_formula": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Derivation Formula"
+    },
+    "direction_interpretation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Direction Interpretation"
+    },
+    "driver_code": {
+      "title": "Driver Code",
+      "type": "string"
+    },
+    "driver_family": {
+      "title": "Driver Family",
+      "type": "string"
+    },
+    "driver_observation_id": {
+      "title": "Driver Observation Id",
+      "type": "string"
+    },
+    "guidance_event_id": {
+      "title": "Guidance Event Id",
+      "type": "string"
+    },
+    "is_derived": {
+      "title": "Is Derived",
+      "type": "boolean"
+    },
+    "known_to_management_by_utc": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Known To Management By Utc"
+    },
+    "leakage_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Leakage Notes"
+    },
+    "leakage_risk": {
+      "$ref": "#/$defs/LeakageRisk"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "period_end": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Period End"
+    },
+    "period_start": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Period Start"
+    },
+    "public_available_at_utc": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Public Available At Utc"
+    },
+    "quality_grade": {
+      "$ref": "#/$defs/QualityGrade"
+    },
+    "scope_code": {
+      "title": "Scope Code",
+      "type": "string"
+    },
+    "source_excerpt_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Excerpt Id"
+    },
+    "unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unit"
+    },
+    "value_category": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value Category"
+    },
+    "value_numeric": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value Numeric"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    }
+  },
+  "required": [
+    "driver_observation_id",
+    "guidance_event_id",
+    "driver_family",
+    "driver_code",
+    "scope_code",
+    "availability_class",
+    "is_derived",
+    "quality_grade",
+    "leakage_risk"
+  ],
+  "title": "DriverObservation",
+  "type": "object"
+}

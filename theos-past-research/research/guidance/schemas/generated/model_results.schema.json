@@ -1,0 +1,182 @@
+{
+  "$defs": {
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "absolute_error": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Absolute Error"
+    },
+    "actual_target_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Actual Target Value"
+    },
+    "baseline_absolute_error": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Baseline Absolute Error"
+    },
+    "baseline_code": {
+      "title": "Baseline Code",
+      "type": "string"
+    },
+    "code_version": {
+      "title": "Code Version",
+      "type": "string"
+    },
+    "created_at_utc": {
+      "format": "date-time",
+      "title": "Created At Utc",
+      "type": "string"
+    },
+    "error_improvement": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error Improvement"
+    },
+    "feature_codes": {
+      "title": "Feature Codes",
+      "type": "string"
+    },
+    "fit_warnings": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fit Warnings"
+    },
+    "information_view": {
+      "title": "Information View",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "model_result_id": {
+      "title": "Model Result Id",
+      "type": "string"
+    },
+    "prediction": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prediction"
+    },
+    "random_seed": {
+      "title": "Random Seed",
+      "type": "integer"
+    },
+    "specification_code": {
+      "title": "Specification Code",
+      "type": "string"
+    },
+    "squared_error": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Squared Error"
+    },
+    "target_code": {
+      "title": "Target Code",
+      "type": "string"
+    },
+    "test_event_id": {
+      "title": "Test Event Id",
+      "type": "string"
+    },
+    "train_end_event_id": {
+      "title": "Train End Event Id",
+      "type": "string"
+    },
+    "train_start_event_id": {
+      "title": "Train Start Event Id",
+      "type": "string"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    }
+  },
+  "required": [
+    "model_result_id",
+    "target_code",
+    "information_view",
+    "baseline_code",
+    "specification_code",
+    "train_start_event_id",
+    "train_end_event_id",
+    "test_event_id",
+    "feature_codes",
+    "random_seed",
+    "code_version",
+    "created_at_utc"
+  ],
+  "title": "ModelResult",
+  "type": "object"
+}

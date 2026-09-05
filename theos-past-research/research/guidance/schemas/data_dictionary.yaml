@@ -1,0 +1,239 @@
+version: 1
+issuer: ABNB
+research_cutoff: "2026-09-02T23:59:59-04:00"
+
+conventions:
+  periods: "YYYYQn, where n is 1 through 4"
+  timestamps: "timezone-aware ISO-8601; UTC in canonical storage"
+  percentages: "decimal ratios; 0.10 means 10%"
+  currency: "USD unless the currency column says otherwise"
+  missing_values: "blank with value_status and missing_reason; never zero-filled"
+  derived_values: "is_company_stated=false or is_derived=true plus derivation_formula"
+  identifiers: "stable uppercase issuer prefix plus event or record semantics"
+
+common_fields:
+  value_status:
+    type: enum
+    values: [observed, missing, not_disclosed, not_applicable]
+    nullable: false
+  missing_reason:
+    type: string
+    nullable: true
+    rule: required when value_status is not observed
+
+tables:
+  guidance_events:
+    primary_key: guidance_event_id
+    description: One initial guidance release, clarification, or revision.
+    fields:
+      guidance_event_id: {type: string, nullable: false}
+      issuer_id: {type: string, nullable: false}
+      reported_period: {type: fiscal_period, nullable: false}
+      event_type: {type: enum, values: [initial, clarification, revision], nullable: false}
+      published_at_utc: {type: timestamp, nullable: false}
+      published_at_precision: {type: enum, values: [second, minute, hour, date, unknown], nullable: false}
+      release_timing: {type: enum, values: [before_open, intraday, after_close, non_trading_day, unknown], nullable: false}
+      research_cutoff_at_utc: {type: timestamp, nullable: false}
+      initial_event_id: {type: string, nullable: true}
+      is_initial_guide: {type: boolean, nullable: false}
+      primary_document_id: {type: string, nullable: true}
+      event_notes: {type: string, nullable: true}
+  guidance_items:
+    primary_key: guidance_item_id
+    description: One guided metric, horizon, and accounting basis.
+    fields:
+      guidance_item_id: {type: string, nullable: false}
+      guidance_event_id: {type: string, nullable: false, references: guidance_events.guidance_event_id}
+      target_period: {type: fiscal_period, nullable: false}
+      metric_code: {type: string, nullable: false}
+      measure_type: {type: string, nullable: false}
+      value_low: {type: float, nullable: true}
+      value_high: {type: float, nullable: true}
+      value_mid: {type: float, nullable: true}
+      unit: {type: string, nullable: false}
+      currency: {type: string, nullable: true}
+      accounting_basis: {type: enum, nullable: false}
+      is_company_stated: {type: boolean, nullable: false}
+      derivation_formula: {type: string, nullable: true}
+      comparator_period: {type: fiscal_period, nullable: true}
+      source_excerpt_id: {type: string, nullable: true, references: source_excerpts.source_excerpt_id}
+      extraction_confidence: {type: enum, values: [high, medium, low], nullable: false}
+  quarterly_actuals:
+    primary_key: actual_observation_id
+    description: One reported metric, period, basis, and scope.
+    fields:
+      actual_observation_id: {type: string, nullable: false}
+      fiscal_period: {type: fiscal_period, nullable: false}
+      metric_code: {type: string, nullable: false}
+      scope_code: {type: string, nullable: false}
+      value: {type: float, nullable: true}
+      unit: {type: string, nullable: false}
+      currency: {type: string, nullable: true}
+      accounting_basis: {type: enum, nullable: false}
+      yoy_growth_reported: {type: float, nullable: true}
+      yoy_growth_constant_currency: {type: float, nullable: true}
+      is_company_stated: {type: boolean, nullable: false}
+      derivation_formula: {type: string, nullable: true}
+      public_available_at_utc: {type: timestamp, nullable: true}
+      source_excerpt_id: {type: string, nullable: true, references: source_excerpts.source_excerpt_id}
+  consensus_snapshots:
+    primary_key: consensus_snapshot_id
+    description: One source, target, metric, statistic, and as-of estimate.
+    fields:
+      consensus_snapshot_id: {type: string, nullable: false}
+      guidance_event_id: {type: string, nullable: false, references: guidance_events.guidance_event_id}
+      target_period: {type: fiscal_period, nullable: false}
+      metric_code: {type: string, nullable: false}
+      statistic_type: {type: string, nullable: false}
+      value: {type: float, nullable: true}
+      unit: {type: string, nullable: false}
+      currency: {type: string, nullable: true}
+      analyst_count: {type: integer, nullable: true}
+      snapshot_at_utc: {type: timestamp, nullable: true}
+      snapshot_precision: {type: enum, nullable: false}
+      snapshot_age_hours: {type: float, nullable: true}
+      is_strictly_pre_event: {type: boolean, nullable: false}
+      point_in_time_verified: {type: boolean, nullable: false}
+      source_name: {type: string, nullable: false}
+      license_or_access_basis: {type: string, nullable: false}
+      source_document_id: {type: string, nullable: true, references: source_documents.document_id}
+      quality_grade: {type: enum, values: [A, B, C, D], nullable: false}
+  driver_observations:
+    primary_key: driver_observation_id
+    description: One driver, event, measurement window, and scope.
+    fields:
+      driver_observation_id: {type: string, nullable: false}
+      guidance_event_id: {type: string, nullable: false, references: guidance_events.guidance_event_id}
+      driver_family: {type: string, nullable: false}
+      driver_code: {type: string, nullable: false}
+      value_numeric: {type: float, nullable: true}
+      value_category: {type: string, nullable: true}
+      unit: {type: string, nullable: true}
+      period_start: {type: date, nullable: true}
+      period_end: {type: date, nullable: true}
+      scope_code: {type: string, nullable: false}
+      direction_interpretation: {type: string, nullable: true}
+      availability_class: {type: enum, nullable: false}
+      known_to_management_by_utc: {type: timestamp, nullable: true}
+      public_available_at_utc: {type: timestamp, nullable: true}
+      is_derived: {type: boolean, nullable: false}
+      derivation_formula: {type: string, nullable: true}
+      source_excerpt_id: {type: string, nullable: true, references: source_excerpts.source_excerpt_id}
+      quality_grade: {type: enum, values: [A, B, C, D], nullable: false}
+      leakage_risk: {type: enum, values: [low, medium, high, prohibited], nullable: false}
+      leakage_notes: {type: string, nullable: true}
+  source_documents:
+    primary_key: document_id
+    description: One source document or captured version.
+    fields:
+      document_id: {type: string, nullable: false}
+      document_type: {type: string, nullable: false}
+      title: {type: string, nullable: false}
+      publisher: {type: string, nullable: false}
+      source_url: {type: url, nullable: false}
+      canonical_url: {type: url, nullable: false}
+      fiscal_period: {type: fiscal_period, nullable: true}
+      document_date: {type: date, nullable: true}
+      published_at_utc: {type: timestamp, nullable: true}
+      sec_accession_number: {type: string, nullable: true}
+      retrieved_at_utc: {type: timestamp, nullable: true}
+      capture_method: {type: string, nullable: false}
+      mime_type: {type: string, nullable: true}
+      local_path: {type: string, nullable: true}
+      sha256: {type: hex_sha256, nullable: true}
+      rights_or_access_note: {type: string, nullable: false}
+      version_status: {type: string, nullable: false}
+      supersedes_document_id: {type: string, nullable: true}
+  source_excerpts:
+    primary_key: source_excerpt_id
+    description: One minimal, pinpointed exact passage.
+    fields:
+      source_excerpt_id: {type: string, nullable: false}
+      document_id: {type: string, nullable: false, references: source_documents.document_id}
+      page_number: {type: integer, nullable: true}
+      section_heading: {type: string, nullable: true}
+      speaker: {type: string, nullable: true}
+      timecode: {type: string, nullable: true}
+      source_anchor: {type: string, nullable: true}
+      exact_excerpt: {type: string, nullable: false}
+      excerpt_word_count: {type: integer, nullable: false}
+      context_paraphrase: {type: string, nullable: false}
+      copyright_handling: {type: string, nullable: false}
+      extraction_method: {type: string, nullable: false}
+      verified_against_source: {type: boolean, nullable: false}
+  evidence_claims:
+    primary_key: evidence_claim_id
+    description: One management claim or negative-evidence claim.
+    fields:
+      evidence_claim_id: {type: string, nullable: false}
+      guidance_event_id: {type: string, nullable: false, references: guidance_events.guidance_event_id}
+      source_excerpt_id: {type: string, nullable: false, references: source_excerpts.source_excerpt_id}
+      driver_family: {type: string, nullable: false}
+      driver_code: {type: string, nullable: false}
+      claim_type: {type: string, nullable: false}
+      evidence_stance: {type: enum, nullable: false}
+      direction: {type: string, nullable: false}
+      attribution_strength: {type: enum, nullable: false}
+      time_horizon: {type: string, nullable: false}
+      scope_code: {type: string, nullable: false}
+      quantified_value: {type: float, nullable: true}
+      quantified_unit: {type: string, nullable: true}
+      coder_confidence: {type: enum, nullable: false}
+      contradicts_claim_id: {type: string, nullable: true}
+      adjudication_note: {type: string, nullable: true}
+  market_returns:
+    primary_key: market_return_id
+    description: One event, benchmark, and return window.
+    fields:
+      market_return_id: {type: string, nullable: false}
+      guidance_event_id: {type: string, nullable: false, references: guidance_events.guidance_event_id}
+      instrument: {type: string, nullable: false}
+      benchmark: {type: string, nullable: true}
+      reaction_session_date: {type: date, nullable: false}
+      window_sessions: {type: integer, nullable: false}
+      price_adjustment: {type: string, nullable: false}
+      raw_total_return: {type: float, nullable: true}
+      benchmark_total_return: {type: float, nullable: true}
+      excess_return: {type: float, nullable: true}
+      price_source: {type: string, nullable: false}
+      source_as_of_utc: {type: timestamp, nullable: false}
+      quality_grade: {type: enum, values: [A, B, C, D], nullable: false}
+  model_results:
+    primary_key: model_result_id
+    description: One held-out target and model specification.
+    fields:
+      model_result_id: {type: string, nullable: false}
+      target_code: {type: string, nullable: false}
+      information_view: {type: string, nullable: false}
+      baseline_code: {type: string, nullable: false}
+      specification_code: {type: string, nullable: false}
+      train_start_event_id: {type: string, nullable: false}
+      train_end_event_id: {type: string, nullable: false}
+      test_event_id: {type: string, nullable: false, references: guidance_events.guidance_event_id}
+      feature_codes: {type: pipe_delimited_string, nullable: false}
+      prediction: {type: float, nullable: true}
+      actual_target_value: {type: float, nullable: true}
+      absolute_error: {type: float, nullable: true}
+      squared_error: {type: float, nullable: true}
+      baseline_absolute_error: {type: float, nullable: true}
+      error_improvement: {type: float, nullable: true}
+      fit_warnings: {type: string, nullable: true}
+      random_seed: {type: integer, nullable: false}
+      code_version: {type: string, nullable: false}
+      created_at_utc: {type: timestamp, nullable: false}
+  research_issues:
+    primary_key: research_issue_id
+    description: One data, methodology, rights, contradiction, or unresolved issue.
+    fields:
+      research_issue_id: {type: string, nullable: false}
+      issue_type: {type: string, nullable: false}
+      severity: {type: enum, values: [high, medium, low], nullable: false}
+      guidance_event_id: {type: string, nullable: true}
+      related_record_type: {type: string, nullable: true}
+      related_record_id: {type: string, nullable: true}
+      description: {type: string, nullable: false}
+      proposed_resolution: {type: string, nullable: false}
+      status: {type: enum, values: [open, resolved, accepted_limitation], nullable: false}
+      requires_user_approval: {type: boolean, nullable: false}
+      created_at_utc: {type: timestamp, nullable: false}
+      resolved_at_utc: {type: timestamp, nullable: true}

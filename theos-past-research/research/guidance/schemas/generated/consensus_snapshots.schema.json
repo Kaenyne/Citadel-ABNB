@@ -1,0 +1,190 @@
+{
+  "$defs": {
+    "QualityGrade": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "title": "QualityGrade",
+      "type": "string"
+    },
+    "TimestampPrecision": {
+      "enum": [
+        "second",
+        "minute",
+        "hour",
+        "date",
+        "unknown"
+      ],
+      "title": "TimestampPrecision",
+      "type": "string"
+    },
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "analyst_count": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Analyst Count"
+    },
+    "consensus_snapshot_id": {
+      "title": "Consensus Snapshot Id",
+      "type": "string"
+    },
+    "currency": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Currency"
+    },
+    "guidance_event_id": {
+      "title": "Guidance Event Id",
+      "type": "string"
+    },
+    "is_strictly_pre_event": {
+      "title": "Is Strictly Pre Event",
+      "type": "boolean"
+    },
+    "license_or_access_basis": {
+      "title": "License Or Access Basis",
+      "type": "string"
+    },
+    "metric_code": {
+      "title": "Metric Code",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "point_in_time_verified": {
+      "title": "Point In Time Verified",
+      "type": "boolean"
+    },
+    "quality_grade": {
+      "$ref": "#/$defs/QualityGrade"
+    },
+    "snapshot_age_hours": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Snapshot Age Hours"
+    },
+    "snapshot_at_utc": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Snapshot At Utc"
+    },
+    "snapshot_precision": {
+      "$ref": "#/$defs/TimestampPrecision"
+    },
+    "source_document_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Document Id"
+    },
+    "source_name": {
+      "title": "Source Name",
+      "type": "string"
+    },
+    "statistic_type": {
+      "title": "Statistic Type",
+      "type": "string"
+    },
+    "target_period": {
+      "pattern": "^[0-9]{4}Q[1-4]$",
+      "title": "Target Period",
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    }
+  },
+  "required": [
+    "consensus_snapshot_id",
+    "guidance_event_id",
+    "target_period",
+    "metric_code",
+    "statistic_type",
+    "unit",
+    "snapshot_precision",
+    "is_strictly_pre_event",
+    "point_in_time_verified",
+    "source_name",
+    "license_or_access_basis",
+    "quality_grade"
+  ],
+  "title": "ConsensusSnapshot",
+  "type": "object"
+}
