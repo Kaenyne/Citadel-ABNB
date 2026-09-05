@@ -2,12 +2,16 @@
 
 Inputs
   data/processed/abnb_quarterly_costlines.csv   GAAP lines incl. SBC (from abnb_costlines_from_xbrl.py)
-  data/processed/abnb_quarterly_kpis_from_study.csv  nights, GBV, ADR, take rate (from the earnings-call study)
+  data/processed/abnb_quarterly_kpis_from_study.csv  nights, GBV, ADR from the earnings-call study; cross-check only
   data/raw/letters/<Q>_*.htm   shareholder letters (8-K Ex. 99.1); downloaded from EDGAR if missing
 
-From each letter we parse (a) the SBC-by-function footnote under the income statement and
-(b) the Adjusted EBITDA reconciliation (D&A, acquisition-related impacts, lodging-tax reserves,
-restructuring, IPO stock-settlement). Cash cost per line = GAAP line minus that line's SBC.
+From each letter we parse (a) the SBC-by-function footnote under the income statement, (b) the Adjusted EBITDA
+reconciliation (D&A, acquisition-related impacts, lodging-tax reserves, restructuring, IPO stock-settlement) and
+(c) the quarter's nights, GBV and ADR from the "Business and Financial Performance" box and the quarterly summary
+table. Letter KPIs are validated against the study CSV (nights and GBV equal, implied ADR = GBV / nights within
+$0.50 of the letter ADR); the script stops if any quarter fails. The 1Q21 and 2Q21 letters have no SBC-by-function
+footnote, so those two quarters come from the 10-Q footnotes (SBC_FALLBACK).
+Cash cost per line = GAAP line minus that line's SBC.
 Identity checked per quarter: revenue - total costs + SBC + D&A + other add-backs = Adjusted EBITDA.
 
 Output: data/processed/abnb_quarterly_cost_stack_exsbc.csv
@@ -29,6 +33,14 @@ LETTERS = {
     "3Q24": "0001193125-24-253103", "4Q24": "0001193125-25-026054", "1Q25": "0001193125-25-109934",
     "2Q25": "0001193125-25-174438", "3Q25": "0001193125-25-269432", "4Q25": "0001193125-26-048670",
     "1Q26": "0001193125-26-211816", "2Q26": "0001193125-26-337928"}
+
+# SBC by function for the two quarters whose letters carry no footnote, from the 10-Q notes ($M; 10-Q figures are in
+# thousands). 1Q21: 10-Q accession 0001628280-21-010389 (ops 11,412; PD 143,715; S&M 25,901; G&A 48,457; restructuring (11);
+# total 229,474). 2Q21: 10-Q accession 0001628280-21-016979 (ops 14,236; PD 143,812; S&M 24,064; G&A 50,728; restructuring 23;
+# total 232,863). Totals exclude the restructuring line, matching the letters' footnote convention.
+SBC_FALLBACK = {
+    "1Q21": {"sbc_ops": 11.4, "sbc_pd": 143.7, "sbc_sm": 25.9, "sbc_ga": 48.5, "sbc_total_fn": 229.5},
+    "2Q21": {"sbc_ops": 14.2, "sbc_pd": 143.8, "sbc_sm": 24.1, "sbc_ga": 50.7, "sbc_total_fn": 232.8}}
 
 TOK = re.compile(r"\(\s*[\d,]+(?:\.\d+)?\s*\)|\$?\s*[\d,]+(?:\.\d+)?|—|-|[A-Za-z][A-Za-z()’',./-]*")
 
@@ -83,16 +95,40 @@ def find_row(toks, words, scale, ncols=None):
     return None
 
 
+def parse_kpis(t):
+    """Current-quarter nights (M), GBV ($B) and ADR ($) from a letter. Nights and GBV come from the KPI box on the
+    "Business and Financial Performance" page ("148.3M $27.2B Nights and Seats Booked Gross Booking Value"; the first
+    match is the quarter, a second match in Q4 letters is the full year). ADR is the last value of the quarterly summary
+    row "Gross Booking Value per Night ... (or ADR)", whose columns end with the current quarter (the 3Q25 and 4Q25
+    letters break the label after "per")."""
+    box = re.search(r"(\d+\.\d)\s*M\s+\$\s*(\d+\.\d)\s*B\s+Nights (?:and|&) (?:Experiences|Seats) Booked\s+Gross Booking Value", t)
+    adr = re.search(r"Gross Booking Value per(?: Night)?[^$]{0,80}((?:\$\s*\d{2,3}\.\d{2}\s*){2,})", t)
+    if not box or not adr:
+        return None
+    return {"nights_m": float(box.group(1)), "gbv_busd": float(box.group(2)),
+            "adr": float(re.findall(r"\d{2,3}\.\d{2}", adr.group(1))[-1])}
+
+
 def main():
     ensure_letters()
     lines = {r["quarter"]: r for r in csv.DictReader(open(os.path.join(ROOT, "data/processed/abnb_quarterly_costlines.csv")))}
     kpis = {r["quarter"]: r for r in csv.DictReader(open(os.path.join(ROOT, "data/processed/abnb_quarterly_kpis_from_study.csv")))}
     rev_to_q = {round(float(r["revenue_musd"])): q for q, r in lines.items()}
 
-    recon, sbcf = {}, {}
+    recon, sbcf, lk = {}, {}, {}
     for path in sorted(glob.glob(os.path.join(RAW, "*_*.htm"))):
         q = os.path.basename(path)[:4]
         t = letter_text(path)
+        # (c) nights, GBV, ADR for the quarter, validated against the study CSV
+        k = parse_kpis(t)
+        if k and q in kpis:
+            st = kpis[q]
+            implied = 1000 * k["gbv_busd"] / k["nights_m"]
+            ok = (abs(k["nights_m"] - float(st["nights_m"])) < 0.05 and abs(k["gbv_busd"] - float(st["gbv_b"])) < 0.05
+                  and abs(implied - k["adr"]) <= 0.50 and abs(k["adr"] - float(st["adr"])) < 0.01)
+            if not ok:
+                raise SystemExit(f"{q}: letter KPIs {k} (implied ADR {implied:.2f}) do not match the study CSV {dict(st)}")
+            lk[q] = k
         # (a) reconciliation table: columns are quarters, identified by matching the Revenue row
         m = re.search(r"Adjusted EBITDA Reconciliation", t)
         if m:
@@ -146,12 +182,19 @@ def main():
                 if found:
                     break
 
+    for q, fb in SBC_FALLBACK.items():
+        sbcf.setdefault(q, dict(fb))
+    missing = [q for q in kpis if q not in lk]
+    if missing:
+        raise SystemExit(f"letter KPI parse failed for {missing}; fix parse_kpis or fall back to the study CSV")
+    print(f"letter KPIs parsed and validated for {len(lk)} quarters (nights, GBV, ADR match the study CSV; implied ADR within $0.50)")
+
     out = []
     for q, x in lines.items():
         if q not in recon or q not in sbcf:
             continue
         g = lambda k: float(x[k]) if x[k] not in ("", None) else 0.0
-        r, s, k = recon[q], sbcf[q], kpis.get(q, {})
+        r, s, k = recon[q], sbcf[q], lk.get(q, {})
         rev = g("revenue_musd")
         cash = {"cor": g("cost_of_revenue_musd"), "ops": g("operations_and_support_musd") - (s["sbc_ops"] or 0),
                 "pd": g("product_development_musd") - (s["sbc_pd"] or 0), "sm": g("sales_and_marketing_musd") - (s["sbc_sm"] or 0),
@@ -161,8 +204,8 @@ def main():
         # Adj. EBITDA implied by the stack: revenue minus cash costs, adding back D&A (inside the lines) and other add-backs
         implied = rev - sum(cash.values()) + da + other
         adj = float(x["adjusted_ebitda_musd"]) if x["adjusted_ebitda_musd"] else r.get("adj")
-        row = {"quarter": q, "revenue_musd": rev, "nights_m": k.get("nights_m"), "gbv_busd": k.get("gbv_b"), "adr": k.get("adr"),
-               "take_rate_pct": k.get("take_rate_pct"),
+        row = {"quarter": q, "revenue_musd": rev, "nights_m": k.get("nights_m"), "gbv_busd": k.get("gbv_busd"), "adr": k.get("adr"),
+               "take_rate_pct": round(rev / (1000 * k["gbv_busd"]) * 100, 1) if k else None,
                "cor_cash": round(cash["cor"], 1), "ops_cash": round(cash["ops"], 1), "pd_cash": round(cash["pd"], 1),
                "sm_cash": round(cash["sm"], 1), "ga_cash": round(cash["ga"], 1), "restr": round(cash["restr"], 1),
                "sbc_ops": s["sbc_ops"], "sbc_pd": s["sbc_pd"], "sbc_sm": s["sbc_sm"], "sbc_ga": s["sbc_ga"], "sbc_total": g("stock_based_comp_total_musd"), "sbc_total_letter": s["sbc_total_fn"],

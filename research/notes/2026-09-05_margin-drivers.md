@@ -1,6 +1,6 @@
 # ABNB margins: what has moved them, what management says moves them, and what is guided
 
-- **Sources:** all 23 earnings-call transcripts Q4 2020 to Q2 2026 (Airbnb IR corrected transcripts for Q4 2021 and Q1 2023 onward; stockanalysis.com / Motley Fool for Q4 2020 to Q4 2022); all 23 shareholder letters (8-K Ex. 99.1); 10-Ks FY2020 to FY2025; 10-Qs Q1 2021 to Q2 2026; SEC XBRL company facts. Source IDs S22 to S25 in `research/sources/README.md`.
+- **Sources:** all 23 earnings-call transcripts Q4 2020 to Q2 2026 (Airbnb IR corrected transcripts for Q4 2021 and Q1 2023 onward; stockanalysis.com / Motley Fool for Q4 2020 to Q4 2022); all 23 shareholder letters (8-K Ex. 99.1); 10-Ks FY2020 to FY2025; 10-Qs Q1 2021 to Q2 2026; SEC XBRL company facts (ABNB, BKNG, EXPE); BEA and FRED price series. Source IDs S22 to S25 and S29 to S32 in `research/sources/README.md`.
 - **Date:** 2026-09-05
 - **Author:** Krishang Surapaneni (compiled with Claude Code). Companion dataset: `data/processed/abnb_quarterly_costlines.csv` (script `analysis/src/abnb_costlines_from_xbrl.py`). Builds on `research/airbnb_earnings_call_study.md` for KPIs and stock reactions.
 
@@ -22,6 +22,8 @@
 
 7. **On a cash basis the bridge is simple (sections 3.5, 10, 11).** From 2022 to 2025 revenue per night added 5.1 margin points (ADR ex-FX 3.7, FX 0.7, take rate 0.7) and sales and marketing took back 4.2 of them; every other cash line was within half a point, and product development has been flat at 10% to 11% of revenue in cash since 2022 (its GAAP creep is SBC). Projected bottom-up, FY2026 lands at 35.9% base (bear 35.3%, bull 37.7%) with the implied Q4 at 31.5%, and FY2027 at 36.5% base (33.8% to 39.8%). The most valuable lever management controls is support cost per night (-10% is worth about a point of margin); the most valuable one it does not is ADR ex-FX (+1 point is worth about half a point).
 
+8. **Free cash flow is converging on Adjusted EBITDA (section 12).** FCF margin fell from 40.5% in 2022 and a TTM peak of 44% in Q3 2023 to 37.7% in 2025 and 36.7% TTM, while the Adjusted EBITDA margin sat at 35%. The gap closed because Airbnb now books a full tax provision (5% of revenue since the 2023 valuation-allowance release) and because Reserve Now, Pay Later has stopped unearned fees from growing (the float added 3.3 points of revenue to cash flow in 2022 and nothing in the last four quarters). Interest income offset most of it and is now falling. SBC, 13% of revenue, is outside both measures. Model FCF at roughly 100% to 105% of Adjusted EBITDA, not the 115% to 120% of 2022. Versus Booking (section 13), Airbnb's margin gap is SBC, not operations; versus FX (section 14), a 1% dollar move is worth about a quarter point of margin.
+
 ---
 
 ## 2. Scope and method
@@ -30,7 +32,8 @@
 - Letters: the "Adjusted EBITDA", cost commentary and "Outlook" sections of all 23 letters.
 - Filings: the MD&A results-of-operations narrative for each cost line in every 10-K and 10-Q (what actually moved merchant fees, insurance, community support, payroll, marketing), the sales-and-marketing split table and employee counts from 10-Ks.
 - Numbers: GAAP cost lines from SEC XBRL (Q4 derived as FY less nine months; operations and support backed out of total costs). Adjusted EBITDA from letters. All GAAP lines include stock-based compensation, which Adjusted EBITDA excludes, so line-item percentages in sections 3.3 and 4 overstate cash cost; total SBC is shown separately.
-- Cash stack, bridge and scenarios (sections 3.5, 10, 11): SBC by function and the Adjusted EBITDA reconciliation parsed from every letter's footnotes (`analysis/src/abnb_exsbc_stack.py`), then decomposed and projected in `analysis/src/abnb_margin_bridge.py`. Nights, GBV and ADR from `data/processed/abnb_quarterly_kpis_from_study.csv`.
+- Cash stack, bridge and scenarios (sections 3.5, 10, 11): SBC by function and the Adjusted EBITDA reconciliation parsed from every letter's footnotes (`analysis/src/abnb_exsbc_stack.py`), then decomposed and projected in `analysis/src/abnb_margin_bridge.py`. Nights, GBV and ADR are parsed from each letter's KPI box and quarterly summary table and validated against `data/processed/abnb_quarterly_kpis_from_study.csv` (all 22 quarters match; implied ADR within 50 cents). SBC by function for 1Q21 and 2Q21 comes from the 10-Q footnotes, so the stack runs 1Q21 to 2Q26.
+- FCF bridge, peer comparison, FX and hotel-price monitor (sections 12 to 14 and 3.4): `analysis/src/abnb_fcf_bridge.py` (letters' reconciliation, FCF and balance-sheet tables), `analysis/src/bkng_head_to_head.py` (SEC XBRL for ABNB, BKNG, EXPE plus stated press-release and 10-K figures), `analysis/src/hotel_price_monitor.py` (FRED CPI, BEA price index, letters' ADR).
 - Caveat: speaker attribution in the 2020 to 2022 web transcripts is imperfect; quotes from those calls are attributed by content (Chesky versus Stephenson) and cross-checked against the letters.
 
 ---
@@ -92,6 +95,8 @@ Source: `data/processed/abnb_kpi_vs_category_quarterly.csv` (ADR from the shareh
 - **The 2025 to 2026 ADR tailwind was Airbnb-specific, not category inflation.** From Q2 2025 to Q1 2026 ABNB's ADR rose 3% to 9% while US hotel prices fell 2% to 3%. Part of that is FX (roughly half of revenue is non-USD and the dollar weakened) and mix, which management separates in the letters; but even the ex-FX ADR (+4% in 1H 2026) was running 5 to 6 points above hotels. This is the gap the Q2 2026 analysts asked about ("ADR vs. hotels") and it is the single biggest source of the revenue upside that funded the margin raises.
 - **Q2 2026 is the first quarter the gap closed**: hotels +4.9%, ABNB +5.3%. If hotel pricing has turned, ABNB's real ADR advantage is gone and revenue growth reverts to nights plus take rate.
 - **Share test.** ABNB nights growth has exceeded real US accommodations spending growth in every quarter since Q3 2022, by 4 to 14 points. The US lodging category is running low-single-digit real; Airbnb's growth is share, not category. The caveat is that BEA counts US-resident spend only and ABNB nights are global, so the comparison is directional.
+
+**Monthly monitor.** `data/processed/hotel_price_monitor_monthly.csv` (script `analysis/src/hotel_price_monitor.py`) carries CPI lodging away from home and the BEA hotels-and-motels price index month by month from January 2023, with ABNB's quarterly ADR growth and the ex-FX figure where the letters give it (4Q25 +6% reported, +3% ex-FX; 1Q26 +9% and +4%; 2Q26 +5% and +4%). Latest readings: hotel CPI was negative from March 2025 to February 2026 (-0.9% to -4.2%), turned positive in March 2026 (+2.5%), re-accelerated to +4.4%, +5.0% and +4.7% in April to June, and cooled to +2.8% in July. The BEA index tells the same story (+4.3%, +4.9%, +5.7% in April to June, +3.6% in July). US hotels priced ahead of Airbnb's ex-FX ADR (+4%) in Q2 2026 for the first time since Q4 2024. July is one month; if hotel pricing settles at +3%, ABNB's ADR advantage is about gone and Q3 2026 revenue growth rests on nights, FX and take rate. Check the file after each CPI release (mid-month).
 
 ---
 
@@ -261,7 +266,8 @@ Source: next-quarter revenue ranges and reported actuals from Theo's guidance da
 - Payment processing as a percent of GBV has not been disclosed since the FY2021 10-K; cost of revenue as a percent of GBV (about 2.3% in 2025) is the proxy.
 - Contribution margin of services, experiences and hotels has never been quantified; the Q&A record shows analysts asking on Q2 2024, Q3 2025 and Q2 2026 without a number.
 - Stock reactions to margin guidance are in `research/airbnb_earnings_call_study.md` section 8; the clearest margin-driven moves were Q4 2023 (floor introduced), Q3 2024 (Q4 margin guide implied 27% to 28%) and Q2 2025.
-- The 1Q21 and 2Q21 letters carry no SBC-by-function footnote (it is in the 10-Qs), so the cash stack starts in 3Q21.
+- The 1Q21 and 2Q21 letters carry no SBC-by-function footnote; the stack now takes those two quarters from the 10-Q footnotes (hardcoded in `abnb_exsbc_stack.py` with accession numbers), so the cash stack runs from 1Q21. Resolved 2026-09-05.
+- Cash taxes: the FCF bridge uses the tax provision as a proxy. Cash taxes paid (10-K) were $68M, $132M, $350M and $232M in 2022 to 2025 against provisions of $96M, -$2,690M, $683M and $626M. How fast the released deferred tax assets are used up decides when FCF conversion drops below 100% of Adjusted EBITDA.
 
 ---
 
@@ -316,3 +322,91 @@ Source: `data/processed/abnb_margin_scenarios.csv`; assumptions in the `SCEN` bl
 - **Bull is what the stack does if management stops reinvesting.** With revenue up 15% and cash costs growing 8% to 18%, margin expands about 2 points a year. This is the "at least 35.5%" language read literally as a floor with upside, and it is the case the multiple would need to see.
 - **Sensitivities on the FY2026 base** (margin points, EBITDA $M): +1 point ADR ex-FX +0.46 and +115; +1 point FX +0.47 and +117; +10 bps take rate +0.48 and +107; +1 point nights growth +0.35 and +97; support cost per night -10% +0.96 and +136; S&M cash growth +5 points -0.84 and -119. Take rate and ADR are worth roughly the same per unit of noise; the support line is the most powerful lever management actually controls.
 - **What to watch on 5 November:** Q3 margin against 49% (the guide implies 48.5% to 49.5%), S&M cash growth (a print below +25% YoY is the first sign the reinvestment cycle is easing), support cost per booking (management gave -10% and -16% in Q1 and Q2), implied take rate against 17.9%, and whether the FY floor moves to 36%.
+
+---
+
+## 12. From Adjusted EBITDA to free cash flow: why FCF margin fell while EBITDA margin did not
+
+Source: `data/processed/abnb_fcf_bridge.csv` (script `analysis/src/abnb_fcf_bridge.py`). Every line is parsed from the shareholder letters: the Adjusted EBITDA reconciliation (interest, taxes, other income), the Free Cash Flow reconciliation (cash from operations, capex, FCF) and the balance sheet (unearned fees). Cash from operations less capex ties to the letters' Free Cash Flow in all 22 quarters. The tax line is the GAAP provision, an accrual proxy for cash taxes; the deferred part lands in the residual. Quarterly rows run 1Q21 to 2Q26 with TTM columns.
+
+| $M | FY2022 | FY2023 | FY2024 | FY2025 | TTM 2Q26 |
+|---|---|---|---|---|---|
+| Adjusted EBITDA | 2,903 | 3,653 | 4,041 | 4,297 | 4,617 |
+| + Interest income | 186 | 721 | 818 | 705 | 680 |
+| - Interest expense and other (income) expense | 1 | -137 | -40 | -112 | -55 |
+| - Provision for income taxes | -96 | +2,690* | -683 | -626 | -672 |
+| + Change in unearned fees | 278 | 245 | 189 | 127 | -26 |
+| + Other working capital and non-cash items (residual) | 157 | -3,288* | 193 | 255 | 316 |
+| = Cash from operations | 3,430 | 3,884 | 4,518 | 4,646 | 4,860 |
+| - Capex | -25 | -47 | -34 | -33 | -33 |
+| = Free cash flow | 3,406 | 3,837 | 4,484 | 4,613 | 4,827 |
+| Adjusted EBITDA margin | 34.6% | 36.8% | 36.4% | 35.1% | 35.1% |
+| FCF margin | 40.5% | 38.7% | 40.4% | 37.7% | 36.7% |
+| FCF / Adjusted EBITDA | 117% | 105% | 111% | 107% | 105% |
+| Memo: cash taxes paid (10-K) | 68 | 132 | 350 | 232 | |
+| Memo: SBC, excluded from both measures | 930 | 1,120 | 1,407 | 1,592 | 1,707 |
+
+*2023 carries the Q3 2023 valuation-allowance release: a $2.7B tax benefit in the provision line and the matching non-cash deferred tax asset in the residual. Interest expense is folded into other income and expense in the 1Q24 to 4Q25 letters.
+
+- **The 44% to 37% decline is below the EBITDA line.** TTM FCF margin peaked at 44.2% in Q3 2023 and is 36.7% at Q2 2026, 7.5 points lower, while the TTM Adjusted EBITDA margin moved half a point (35.6% to 35.1%). Taxes and the residual together went from +0.4% of revenue to -2.7% (-3.1 points), the change in unearned fees from +2.6% to -0.2% (-2.8 points), and interest income from +6.6% to +5.2% (-1.4 points).
+- **Taxes: from almost nothing to 5% of revenue.** Before the valuation-allowance release Airbnb booked a token provision (1.1% of revenue in 2022). Since 2024 it books a full one (6.2% and 5.1% of revenue). Cash taxes are lower for now because the released deferred tax assets are being used ($232M paid in 2025 against a $626M provision; the $376M difference sits in the residual). As those assets run down, cash taxes converge on the provision and FCF loses another 2 to 3 points of revenue. The mid-to-high-teens effective rate management guides is a cash rate in waiting.
+- **Unearned fees: RNPL has switched the float off.** Unearned fees are service fees collected before the stay. They grew $278M in 2022 on GBV up 35%, $127M in 2025 on GBV up 12%, and fell year on year in Q2 2026 ($2,831M against $2,857M) with GBV up 16%. Reserve Now, Pay Later means the guest pays, and Airbnb collects its fee, closer to check-in, so the liability no longer grows with bookings. The 3.3 points of revenue this float added to cash flow in 2022 are gone.
+- **Interest income covered most of it and is now shrinking.** Interest on $11B to $12B of cash and investments rose from 2.2% of revenue in 2022 to 7.4% in 2024 and is 5.2% TTM as rates fall. It is not operating cash flow and it should not be capitalised at an EBITDA multiple.
+- **SBC does not enter either measure.** $1.7B of SBC (13% of revenue) is excluded from Adjusted EBITDA and is non-cash in operating cash flow, so FCF is not a "cleaner" number than Adjusted EBITDA on that count. Buybacks of $3.8B in 2025, 82% of FCF, shrank the diluted count 3.4%. For the model: FCF at 100% to 105% of Adjusted EBITDA from 2026, with the tax line as the swing, against 117% in 2022.
+
+---
+
+## 13. Head to head with Booking Holdings: the margin gap is SBC, not operations
+
+Source: `data/processed/abnb_vs_bkng_annual.csv` (script `analysis/src/bkng_head_to_head.py`). SEC XBRL company facts for ABNB, BKNG and EXPE, FY2021 to FY2025. Airbnb marketing is brand and performance marketing from the 10-K sales-and-marketing split; Booking marketing is its marketing expense line; Expedia is advertising, with total selling and marketing as a memo. Gross bookings: Airbnb from the letters, Booking from its Q4 earnings press releases ($121.3B, $150.6B, $165.6B, $186.1B for 2022 to 2025); Expedia's are not in XBRL. EBITDA proxy = operating income + D&A + SBC. Booking's reported adjusted EBITDA was $9.9B in 2025 (Q4 2025 release), 36.8% of revenue.
+
+| FY2025 | ABNB | BKNG | EXPE |
+|---|---|---|---|
+| Revenue growth | +10.3% | +13.4% | +7.6% |
+| Take rate (revenue / gross bookings) | 13.4% | 14.5% | n/a |
+| Marketing % revenue | 13.0 | 30.4 | 26.5 (total S&M 49.9) |
+| People and support lines % revenue | 37.8 cash (ops & support 10.1, product dev 10.9, G&A 8.7, field ops & policy 8.1) | 12.6 personnel, 3.2 G&A | n/a |
+| SBC % revenue | 13.0 | 2.3 | 2.7 |
+| GAAP operating margin | 20.8% | 32.8% | 12.7% |
+| EBITDA proxy margin | 34.5% | 37.4% | 21.4% |
+| Reported adjusted EBITDA margin | 35.1% | 36.8% | |
+| FCF margin | 37.7% | 33.8% | 21.1% |
+| FCF / EBITDA proxy | 109% | 90% | 99% |
+| Buybacks % FCF | 82% | 71% | 62% |
+| Diluted shares, y/y | -3.4% | -4.2% | -4.3% |
+
+Trend, EBITDA proxy margin 2021 to 2025: ABNB 24.5, 33.5, 27.0 (the 2023 tax reserve in G&A), 36.3, 34.5; BKNG 30.0, 34.9, 32.2, 36.8, 37.4. Marketing as a percent of revenue: ABNB 12.1 to 13.0; BKNG 34.7 to 30.4; EXPE 31.4 to 26.5.
+
+- **The 12-point operating margin gap is SBC.** Booking's GAAP operating margin is 32.8% against Airbnb's 20.8%. Airbnb spends 13.0% of revenue on stock compensation, Booking 2.3%, a 10.7-point difference. Add back SBC and D&A and Booking leads by 3 points (37.4% against 34.5%); on the two companies' own adjusted EBITDA definitions the gap is under 2 points (36.8% against 35.1%). Airbnb's problem versus Booking is the cost of paying people in stock, not operating efficiency.
+- **The cost mix is a mirror image.** Booking spends 30% of revenue on marketing, most of it performance marketing, and 13% on personnel. Airbnb spends 13% on marketing and about 38% of revenue in cash on people-heavy lines: support, product, G&A and the field and policy teams inside sales and marketing. Booking buys demand at the point of search; Airbnb builds it with product and brand and pays to support a two-sided marketplace. Both models land at a similar cash margin.
+- **Take rate is Booking's one structural edge.** Booking earns 14.5 cents per dollar of gross bookings, Airbnb 13.4 cents. On Airbnb's $91B of 2025 GBV, one point of take rate is about $0.9B of revenue, and because cost of revenue scales with GBV rather than revenue, most of it would fall to EBITDA (section 11: +10 bps is worth +0.48 points of margin). Booking's edge has widened every year since 2022 (14.1% to 14.5%) while Airbnb's take rate fell in 2025.
+- **Airbnb converts more of its EBITDA to cash, for now.** FCF is 109% of EBITDA proxy at Airbnb against 90% at Booking, because of the unearned-fee float, interest income on a larger cash pile relative to revenue, low cash taxes and capex of $33M against $322M. Section 12 shows the first two fading. Booking returns 71% of FCF through buybacks and shrinks its share count 4% a year; Airbnb needs 82% of FCF to shrink its count 3.4% because SBC issuance is six times larger relative to revenue.
+- **What it says about the guide.** Airbnb's 35.5% floor is already within 2 points of Booking's adjusted margin. Closing the rest is not a marketing cut, since Airbnb's marketing is already less than half of Booking's; it is take rate, SBC discipline and support cost per night. Expedia, at 21% EBITDA proxy margin with 27% of revenue in advertising and 50% in total selling and marketing, is the counter-example: the same marketing model as Booking without Booking's scale.
+
+---
+
+## 14. FX: what a dollar move does to revenue and margin
+
+Source: 10-K FY2025 note "Geographic Information" (revenue by host location) and Item 7A; shareholder letters for the non-USD share of revenue and the FX impact on growth; FY2025 cash stack from `data/processed/abnb_quarterly_cost_stack_exsbc.csv`.
+
+| | 2021 | 2022 | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|
+| Revenue, US host location $M | 2,996 | 3,890 | 4,290 | 4,640 | 4,814 |
+| Revenue, international host location $M | 2,996 | 4,509 | 5,627 | 6,462 | 7,427 |
+| International share of revenue | 50.0% | 53.7% | 56.7% | 58.2% | 60.7% |
+| Non-USD share of revenue (letters) | | about half | 46% to 58% by quarter | about half | |
+| FX impact on reported revenue growth, points | | -6 | +1 | 0 | 0 (1H26 about +3) |
+
+International revenue has grown from half to 61% of the total in four years and every incremental market is non-USD, so the exposure is rising. The letters put the non-USD share of revenue at 46% to 58% depending on the quarter, lower than the host-location share because some international stays are priced in dollars; 55% is used below. Costs are mostly USD: the 10-K says Airbnb "generally receive[s] net foreign currency amounts and therefore benefit[s] from a weakening of the U.S. dollar." Assumption for the cost side: cost of revenue (17.0% of revenue, payment processing and chargebacks) scales with GBV and so carries the same 55% non-USD share; operations and support, product development, sales and marketing and G&A are treated as USD.
+
+| USD move, FY2025 base (revenue $12,241M, Adjusted EBITDA $4,297M) | Revenue | Adjusted EBITDA | Margin |
+|---|---|---|---|
+| 1% weaker dollar | +$67M (+0.55%) | +$56M | +0.26 points |
+| 5% weaker dollar | +$337M (+2.8%) | +$279M | +1.28 points |
+| 1% stronger dollar | -$67M | -$56M | -0.26 points |
+| Range for a 50% to 61% non-USD share, per 1% | +0.50% to +0.61% | +$51M to +$62M | +0.24 to +0.29 points |
+
+- **Reconciling with section 11.** The scenario sensitivity there is +0.47 points of margin and about +$117M of EBITDA per point of FX-driven revenue growth on the FY2026 base. One point of reported revenue growth needs a dollar move of about 1.8% when 55% of revenue is non-USD, so 0.47 x 0.55 = 0.26 points per 1% move, the figure above. The two agree because both hold cost of revenue proportional to GBV and every other line in dollars: 84% of an FX revenue change drops to EBITDA.
+- **History checks out.** The 2022 dollar spike took 6 points off revenue growth, worth about 2.5 to 3 points of margin at this cost structure; 2022 margin still rose 8 points because ADR and the cost reset were larger. In the 2022 to 2025 bridge (section 10) FX contributed +0.7 points. The 2026 tailwind of about 3 points of revenue growth is worth about 1.4 points of margin in the quarters it applies, which is most of the gap between the "stable" February guide and the 35.5% August floor.
+- **Hedging limits what is realised.** Since 2025 Airbnb hedges forecasted foreign-currency revenue; every 2026 revenue guide quotes the FX tailwind "after factoring in our hedging program". The hedges cut the realised upside in a weak-dollar year and cushion the downside for a few quarters if the dollar turns, so the sensitivity above is the unhedged economics and the reported effect is smaller and lagged. The balance-sheet exposure is separate and small: a 10% adverse move on net monetary assets is about a $38M loss in other income and expense, below Adjusted EBITDA.
+- **For the model.** Treat FX as a revenue-per-night driver with 84% flow-through, not as a margin assumption of its own. A 5% dollar rally in 2027 is worth about 1.3 points of margin, roughly the whole distance between the base case and the bear case in section 11.
