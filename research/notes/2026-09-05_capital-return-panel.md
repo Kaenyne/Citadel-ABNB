@@ -1,6 +1,6 @@
 # ABNB capital return: SBC, buybacks, share count and the cannibal scorecard
 
-- **Sources:** SEC XBRL company facts for ABNB, BKNG, EXPE, META, NFLX, UBER, DASH (S33); Airbnb shareholder letters for quarterly free cash flow from 1Q23 (S23). Script `analysis/src/capital_return_panel.py` rebuilds both CSVs.
+- **Sources:** SEC XBRL company facts for ABNB, BKNG, EXPE, META, NFLX, UBER, DASH (S33); Airbnb shareholder letters for quarterly free cash flow from 1Q23 (S23). This note is S34. Script `analysis/src/capital_return_panel.py` rebuilds both CSVs.
 - **Date:** 2026-09-05
 - **Author:** Krishang Surapaneni (compiled with Claude Code). Plan-of-attack branch 4. Companion to `research/notes/2026-09-05_margin-drivers.md` (SBC is excluded from Adjusted EBITDA, so this note is where it lands).
 
