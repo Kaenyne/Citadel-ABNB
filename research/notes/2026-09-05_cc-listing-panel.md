@@ -9,7 +9,7 @@
 ## 1. Headline findings
 
 1. **No price, confirmed at scale.** 3,000 full page renders across six years and zero contain a nightly price (`structuredDisplayPrice` is null or absent in every era). The archive cannot give a pricing panel; Inside Airbnb does (`research/notes/2026-09-05_inside-airbnb-supply-panel.md`).
-2. **Listing survival is 85% to 90% a year on, and older listings die slower than in Inside Airbnb's city dumps.** Among listings the crawler re-fetched after a first successful capture, the share still returning a live page was 90% in 2022, 85% in 2023 and 2024, 88% in 2025 and 89% in 2026 (informative crawls only, section 2). By listing age: 92% at 2 to 12 months, 88% at 1 to 2 years, 86% at 2 to 3 years, 84% past three years. These are higher than Inside Airbnb's 63% to 82% year-ago retention because the crawler only re-visits pages it can still reach by link, which selects for listings that are still marketed.
+2. **Listing survival is 85% to 90% a year on, and older listings die slower than in Inside Airbnb's city dumps.** Among listings the crawler re-fetched after a first successful capture, the share still returning a live page was 90% in 2022, 85% in 2023 and 2024, and 88% in 2025 and 2026 (informative crawls only, section 2). By listing age: 92% at 2 to 12 months, 87% at 1 to 2 years, 86% at 2 to 3 years, 84% past three years. These are higher than Inside Airbnb's 63% to 82% year-ago retention because the crawler only re-visits pages it can still reach by link, which selects for listings that are still marketed.
 3. **Same-listing review velocity has been flat for five years.** On 1,487 matched pairs (median 481 days apart), listings added a mean of 15 to 27 reviews a year depending on the window, with medians of 8 to 23. The most recent window (2025 to 2026, 81 pairs) is 19 reviews a year mean, 11 median, with 6% of listings adding no review, versus 21 mean, 12 median and 13% no review in 2021 to 2022. No acceleration and no collapse in bookings per surviving listing.
 4. **The captured base has professionalised.** Superhost share of parsed captures rose from 58% (2021) to 61% (2026); entire-home share from 80% to 90%; median review count from 30 to 75. Guest Favorite, parsed reliably from 2025, is 71% of 2025 captures and 52% of 2026 captures. Hosts in 2025 to 2026 captures have a median 7 years hosting and 198 host-level reviews.
 5. **The archive's geography shifted toward North America.** North American listings were 28% of 2021 captures and 48% of 2026 captures; Europe fell from 48% to 34%. This is the crawler's reach (the 2026 US pages arrive with `utm_source=chatgpt.com`), not Airbnb's supply mix, and it is the main reason cross-year comparisons in 4 need the same-listing framing.
@@ -22,11 +22,11 @@
 | WARC records | 3,000 full renders (1,500 listings x earliest and latest capture), 0.5 to 1.0 MB HTML each | `data/raw/commoncrawl/records/<crawl>/<id>.warc.gz`, gitignored |
 | Parsed captures | 3,000 rows, 100% with review count, Superhost flag, room type and coordinates | `data/processed/cc_listing_panel.csv` |
 | Matched pairs | 1,500; 1,487 with a non-negative review delta | `data/processed/cc_matched_listings.csv`, window summary `cc_panel_summary.csv`, capture-year summary `cc_panel_by_year.csv` |
-| Survival | 48 crawls with re-fetches, 37 informative | `data/processed/cc_listing_survival.csv`, `cc_listing_survival_by_age.csv` |
+| Survival | 48 crawls with re-fetches, 36 informative | `data/processed/cc_listing_survival.csv`, `cc_listing_survival_by_age.csv` |
 
 Index rows were read straight from each crawl's cdx shards on `data.commoncrawl.org` (binary search of `cluster.idx`, then the 4 to 10 compressed blocks covering the `com,airbnb)/rooms/` key range), because the `index.commoncrawl.org` API blocked this IP after a few dozen queries. Shard rows harvested in the first pass (crawls 2021-04 to 2023-14) carry no capture timestamp; the crawl's ISO-week date stands in (`ts_from_crawl`), which is within two weeks of the truth.
 
-**Informative crawls.** From CC-MAIN-2021-17 to 2022-05 and from CC-MAIN-2025-43 to 2025-51 Airbnb answered 200 for essentially every re-fetched listing, including dead ones (zero to 39 removals against 5.5k to 19k re-fetches), so those 11 crawls carry no removal signal and are excluded from the survival series (`status_informative`, threshold 0.5%). Elsewhere removals run 1% to 16% of re-fetches (CC-MAIN-2026-04 is borderline at 0.6%), mostly 404 and 410.
+**Informative crawls.** From CC-MAIN-2021-17 to 2022-05 and from CC-MAIN-2025-43 to 2026-04 Airbnb answered 200 for essentially every re-fetched listing, including dead ones (zero to 65 removals against 5.5k to 19k re-fetches), so those 12 crawls carry no removal signal and are excluded from the survival series (`status_informative`, threshold 2% removals). Elsewhere removals run 4% to 16% of re-fetches, mostly 404 and 410.
 
 ## 3. Definitions
 
@@ -50,9 +50,9 @@ Index rows were read straight from each crawl's cdx shards on `data.commoncrawl.
 | 2023 | 5 | 63,903 | 54,187 | 9,125 | 589 | 84.8% |
 | 2024 | 10 | 99,992 | 85,598 | 13,845 | 467 | 85.6% |
 | 2025 | 9 | 91,496 | 80,163 | 10,973 | 341 | 87.6% |
-| 2026 | 8 | 92,482 | 82,428 | 9,786 | 255 | 89.1% |
+| 2026 | 7 | 81,046 | 71,082 | 9,721 | 230 | 87.7% |
 
-By age since first capture: 2 to 12 months 92.3% (85,936 re-fetches), 1 to 2 years 87.5% (171,512), 2 to 3 years 85.8% (74,456), over 3 years 84.3% (91,857). Per-crawl series and figure: `cc_listing_survival.csv`, `cc_listing_survival.png`.
+By age since first capture: 2 to 12 months 92.1% (83,812 re-fetches), 1 to 2 years 87.2% (166,527), 2 to 3 years 85.6% (73,383), over 3 years 83.8% (88,603). Per-crawl series and figure: `cc_listing_survival.csv`, `cc_listing_survival.png`.
 
 ### 4.2 Same-listing review velocity by window
 

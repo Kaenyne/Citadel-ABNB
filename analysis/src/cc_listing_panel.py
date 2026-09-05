@@ -315,7 +315,7 @@ def survival(args):
     s["crawl_date"] = s.crawl.map(crawl_date)
     s["year"] = s.crawl_date.dt.year
     # crawls where Airbnb answered 200 for everything (2021, Oct 2025 to Jan 2026) carry no removal signal
-    s["status_informative"] = (s.removed / s.refetched) >= 0.005
+    s["status_informative"] = (s.removed / s.refetched) >= 0.02
     inf = set(s.loc[s.status_informative, "crawl"])
     re_ = re_[re_.crawl.isin(inf)]
     by_age = re_.groupby(["age_bucket"], observed=True).agg(refetched=("listing_id", "size"), live=("outcome", lambda v: (v == "live").sum())).reset_index()
@@ -539,12 +539,14 @@ def figures(args):
     foot = "Source: Common Crawl CDX index and WARC records for airbnb.com/rooms pages (public archive); Citadel-ABNB analysis"
     s = pd.read_csv(PROC / "cc_listing_survival.csv", parse_dates=["crawl_date"])
     s = s[s.refetched >= 50]
+    inf, uninf = s[s.status_informative], s[~s.status_informative]
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.bar(s.crawl_date, s.survival_share * 100, width=20, color="#4C72B0")
-    ax.set_title("Listing survival: share of re-fetched listing pages still live (status 200) in each crawl", loc="left", fontweight="bold", fontsize=11)
-    ax.set_ylabel("%"); ax.grid(alpha=0.3, axis="y")
-    for d, v, n in zip(s.crawl_date, s.survival_share * 100, s.refetched):
-        ax.text(d, v + 1, f"n={n}", ha="center", fontsize=6, rotation=90)
+    ax.bar(inf.crawl_date, inf.survival_share * 100, width=22, color="#4C72B0", label="crawls with a removal signal")
+    ax.bar(uninf.crawl_date, uninf.survival_share * 100, width=22, color="none", edgecolor="#999999", hatch="///", label="Airbnb answered 200 for dead listings (excluded)")
+    ax.set_ylim(70, 101); ax.set_ylabel("% of re-fetched listings still live")
+    ax.set_title("Listing survival: share of re-fetched airbnb.com/rooms pages still live in each crawl", loc="left", fontweight="bold", fontsize=11)
+    ax.text(0.01, 0.97, f"{int(inf.refetched.median()):,} re-fetched listings per crawl (median); a re-fetch is a page first captured live at least 60 days earlier", transform=ax.transAxes, fontsize=8, va="top", color="#444444")
+    ax.legend(frameon=False, fontsize=8, loc="lower left"); ax.grid(alpha=0.3, axis="y")
     fig.text(0.01, 0.005, foot, fontsize=7, color="grey"); fig.tight_layout(); fig.savefig(FIG / "cc_listing_survival.png", dpi=150); plt.close(fig)
     m = pd.read_csv(PROC / "cc_matched_listings.csv")
     ok = m[m.review_delta.notna() & (m.review_delta >= 0)]
