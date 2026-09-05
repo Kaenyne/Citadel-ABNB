@@ -633,7 +633,14 @@ or guidance facts:
 
 ```bash
 python3 -m pytest -q
-python3 scripts/validate_project.py --root . --expected-transcripts 23
+python scripts/validate_project.py --root . --expected-transcripts 23 --metadata-only
+```
+
+To verify the licensed bodies in an approved private snapshot, run separately:
+
+```bash
+: "${ABNB_PRIVATE_INPUT_ROOT:?set to the approved licensed-input root}"
+python scripts/validate_project.py --root . --expected-transcripts 23 --private-checksums --private-input-root "$ABNB_PRIVATE_INPUT_ROOT"
 ```
 
 The validator deliberately rejects invalid guidance citations, unverified

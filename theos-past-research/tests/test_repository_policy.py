@@ -196,21 +196,30 @@ def test_all_artifact_generators_use_the_portable_pinned_runtime() -> None:
 
 def test_reaction_generator_executes_from_clean_archive(tmp_path: Path) -> None:
     archive = subprocess.run(
-        ["git", "archive", "--format=tar", "HEAD:theos-past-research"],
-        cwd=ROOT,
+        ["git", "archive", "--format=tar", "HEAD", "theos-past-research"],
+        cwd=ROOT.parent,
         check=True,
         capture_output=True,
     )
-    clean_root = tmp_path / "archive"
-    clean_root.mkdir()
+    archive_root = tmp_path / "archive"
+    archive_root.mkdir()
     with tarfile.open(fileobj=io.BytesIO(archive.stdout), mode="r:") as bundle:
-        bundle.extractall(clean_root, filter="data")
+        bundle.extractall(archive_root, filter="data")
+    clean_root = archive_root / "theos-past-research"
 
     bundled_node = (
         Path.home()
         / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
     )
     node = bundled_node if bundled_node.is_file() else Path("node")
+    bundled_artifact_tool = (
+        Path.home()
+        / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules"
+        / "@oai/artifact-tool"
+    )
+    assert bundled_artifact_tool.is_dir()
+    clean_env = os.environ.copy()
+    clean_env["ARTIFACT_TOOL_PACKAGE_ROOT"] = str(bundled_artifact_tool)
     output = tmp_path / "generated.xlsx"
     generator = (
         clean_root
@@ -222,7 +231,7 @@ def test_reaction_generator_executes_from_clean_archive(tmp_path: Path) -> None:
         check=False,
         capture_output=True,
         text=True,
-        env=os.environ.copy(),
+        env=clean_env,
         timeout=120,
     )
 
@@ -256,6 +265,42 @@ def test_reaction_generator_policy_check_rejects_unsafe_mutations() -> None:
     assert "XLSX save does not use the canonical outputPath" in violations
     assert "GUIDANCE_PANEL source row is not logical" in violations
     assert "GUIDANCE_PANEL source row uses a resolved path" in violations
+
+
+def test_active_docs_name_normalized_outputs_and_validation_modes() -> None:
+    root_readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    data_readme = (ROOT / "data/README.md").read_text(encoding="utf-8")
+    brief_readme = (ROOT / "docs/forecasting/abnb_ic_brief/README.md").read_text(
+        encoding="utf-8"
+    )
+    public_command = (
+        "python scripts/validate_project.py --root . --expected-transcripts 23 "
+        "--metadata-only"
+    )
+
+    for document in (root_readme, data_readme, brief_readme):
+        assert public_command in document
+        assert "--private-checksums" in document
+        assert "--private-input-root" in document
+
+    assert "output/pdf" not in brief_readme
+    assert "outputs/reports/abnb_macro_to_equity_ic_brief.pdf" in brief_readme
+    assert "outputs/workbooks/ABNB_edge_guidance_stock_reaction.xlsx" in brief_readme
+    assert "outputs/reproducibility/us-europe-guidance" in brief_readme
+
+
+def test_portable_workbook_build_is_fully_documented() -> None:
+    readme = (
+        ROOT / "outputs/reproducibility/us-europe-guidance/README.md"
+    ).read_text(encoding="utf-8")
+
+    assert ".node-version" in readme
+    assert "Node 24.19.0" in readme
+    assert "@oai/artifact-tool 2.8.59" in readme
+    assert "ARTIFACT_TOOL_PACKAGE_ROOT" in readme
+    assert "ABNB_WORKSPACE_NODE" in readme
+    assert "nasdaq_public_market_history.csv" in readme
+    assert "--skip-previews" in readme
 
 
 def test_scraping_extra_declares_scrapling() -> None:

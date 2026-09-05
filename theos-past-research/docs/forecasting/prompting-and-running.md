@@ -77,5 +77,12 @@ Run repository checks with:
 
 ```bash
 python3 -m pytest -q
-python3 scripts/validate_project.py --root . --expected-transcripts 23
+python scripts/validate_project.py --root . --expected-transcripts 23 --metadata-only
+```
+
+Authorized private-input verification is separate:
+
+```bash
+: "${ABNB_PRIVATE_INPUT_ROOT:?set to the approved licensed-input root}"
+python scripts/validate_project.py --root . --expected-transcripts 23 --private-checksums --private-input-root "$ABNB_PRIVATE_INPUT_ROOT"
 ```

@@ -24,8 +24,21 @@ python scripts/validate_project.py --root . --expected-transcripts 23 --metadata
 python scripts/validate_import.py
 ```
 
-The `metadata-only` validation checks the tracked inventory and checksum
-metadata without requiring licensed transcript text in Git.
+The `metadata-only` validation checks the tracked transcript index, restricted
+manifest shape, PDF/index checksum agreement, and all other public metadata. It
+does not claim to hash files that are absent from the public archive.
+
+Authorized reviewers can additionally verify every acquired PDF and cleaned
+Markdown body. Set `ABNB_PRIVATE_INPUT_ROOT` to a private directory containing
+the documented `EARNING-TRANSCRIPTS/` and
+`data/licensed/earnings_transcripts/clean_md/` layout, then run:
+
+```bash
+: "${ABNB_PRIVATE_INPUT_ROOT:?set to the approved licensed-input root}"
+python scripts/validate_project.py --root . --expected-transcripts 23 --private-checksums --private-input-root "$ABNB_PRIVATE_INPUT_ROOT"
+```
+
+Strict validation remains the default when neither mode is supplied.
 
 ## Review outputs
 
@@ -61,14 +74,17 @@ private channel, keep them in the ignored local directories documented in
 `research/provenance/omitted-data-manifest.csv` records oversized, raw,
 archive, Parquet, and machine-local artifacts excluded from the Git snapshot,
 including their logical paths, checksums, and replacement or rebuild guidance.
+`research/provenance/source-boundary-inventory.csv` reconciles every file in
+the plan-defined main and guidance source boundaries as included, intentionally
+modified, renamed, or excluded with a checksum and usable reference.
 Never add raw downloads, vendor output, local paths, credentials, or licensed
 transcript text to this package.
 
 ## Reproducing the review boundary
 
 The tracked CSV inputs and MJS script support inspection of the U.S./Europe
-guidance workbooks. The script is portable within this package: run it only
-after supplying its documented local source inputs and approved public-market
-responses beside the script. It writes any transient previews beside the script
-and those files remain untracked. Review the source-permissions CSV before
-acquiring or refreshing any input.
+guidance workbook. All policy-safe inputs, including the readiness target panel
+and normalized public-market history, are provisioned in the archive. Runtime,
+lineage, build, and temporary-output commands are documented in
+`outputs/reproducibility/us-europe-guidance/README.md`. Review the
+source-permissions CSV before acquiring or refreshing any input.
