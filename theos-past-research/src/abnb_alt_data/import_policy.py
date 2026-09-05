@@ -67,7 +67,7 @@ SECRET_NAMES = (
 SECRET_ASSIGNMENT_RE = re.compile(
     rf"(?m)^\s*(?:{'|'.join(SECRET_NAMES)})\s*=\s*(?!\s*(?:#|$))"
 )
-ABSOLUTE_PATH_MARKERS = ("/" + "Users/", "C:" + "\\Users\\")
+ABSOLUTE_PATH_MARKERS = ("/" + "Users/", "/" + "opt/", "C:" + "\\Users\\")
 
 
 def sha256_file(path: Path) -> str:

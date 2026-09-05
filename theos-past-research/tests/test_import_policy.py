@@ -47,10 +47,14 @@ def test_collect_violations_rejects_absolute_local_paths(tmp_path: Path) -> None
         project_root / "windows.txt",
         ("C:" + "\\Users\\" + "someone\\file").encode(),
     )
+    local_interpreter = write_file(
+        project_root / "validation_log.md",
+        ("/" + "opt/anaconda3/bin/python").encode(),
+    )
 
-    violations = collect_violations(project_root, [unix_path, windows_path])
+    violations = collect_violations(project_root, [unix_path, windows_path, local_interpreter])
 
-    assert len(violations) == 2
+    assert len(violations) == 3
     assert all("absolute local path" in violation for violation in violations)
 
 
