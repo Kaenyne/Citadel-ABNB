@@ -1,0 +1,10 @@
+artifact,sha256,purpose
+permission_recon_manifest.csv,85192bc96c106751739f5b4e641838f7cf34d32884726cbb0bc8dfeabab0887e,"Append-only preregistration of 31 permission-recon requests, including retry lineage notes."
+permission_recon_results.csv,9df62195946e992ed4df3807fbe15d3829b45fe56a2d868f79f3f8c9ec4dbd01,"Append-only outcomes for 30 execution rows: sandbox failures/skips and provider responses/stops."
+run_permission_recon.py,ac03998511e0bd7daee1d6372980d0abf2edc3c00341cf885a9a566254af5c8a,"Audited no-cookie permission-only GET collector with cache, rate, and stop rules."
+preflight_permission_resolution.py,2cdca226775a12eaacb74ab29465f4b570c84812712efe26eeca2922ccfebcef,"Seven exact-path ScrapeCandidate reconstructions and deterministic policy rerun; no network activity."
+permission_evidence_assessment.csv,9b7178f1f474aee3318756debcbff75a604ea17ba11aa2fccd403d47249057e4,"Source-level terms, robots, metadata, privacy/projection, vintage, and disposition evidence."
+scrape_candidate_decisions.csv,c920680bee0f347875dfed21eacfb2698b3f35efca115324851e79d05e57ef1a,"Deterministic gate output: 0 of 7 allowed."
+data_probe_manifest.csv,488278fff3c017fa1fe119fa1ce8ab66c2b95760d137c848557621f6fd5840f3,"Intentionally header-only because no source passed the permission gate."
+data_probe_decisions.csv,d1ddfbe7c0663eb31b6d812f5209409f1b4be9c2ed1b4e15b2da4371b6bc7231,"One explicit zero-request decision per retained source."
+permission_resolution_report.md,c5b994588f75540c99c3c9cad90557afa2058abc6c1da248e0a245fb8ac8513e,"Combined-ready lane report with request accounting and unchanged dispositions."

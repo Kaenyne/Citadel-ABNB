@@ -1,12 +1,23 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
+import { loadArtifactTool } from "../../../scripts/artifact_tool_runtime.mjs";
+
+const { SpreadsheetFile, Workbook } = await loadArtifactTool();
 
 const reproducibilityDir = path.dirname(fileURLToPath(import.meta.url));
 const workspace = path.resolve(reproducibilityDir, "../../..");
-const outputPath = path.join(workspace, "outputs", "workbooks", "ABNB_edge_guidance_stock_reaction.xlsx");
+const canonicalOutputPath = path.join(workspace, "outputs", "workbooks", "ABNB_edge_guidance_stock_reaction.xlsx");
 const previewDir = path.join(reproducibilityDir, "previews");
+const arguments_ = process.argv.slice(2);
+const outputFlag = arguments_.indexOf("--output");
+const outputPath = outputFlag >= 0
+  ? path.resolve(arguments_[outputFlag + 1] ?? "")
+  : canonicalOutputPath;
+const skipPreviews = arguments_.includes("--skip-previews");
+if (outputFlag >= 0 && !arguments_[outputFlag + 1]) {
+  throw new Error("--output requires a path");
+}
 
 const logicalSourcePaths = {
   guidance: "research/readiness/20260903T053309Z_abnb_readiness/target_panel.csv",
@@ -19,19 +30,17 @@ const paths = {
   transcriptIndex: path.join(workspace, logicalSourcePaths.transcriptIndex),
   edge: path.join(workspace, logicalSourcePaths.edge),
   hypothesisLedger: path.join(workspace, logicalSourcePaths.hypothesisLedger),
-  nasdaqAbnb: path.join(reproducibilityDir, "abnb_nasdaq_history.json"),
-  nasdaqSpy: path.join(reproducibilityDir, "spy_nasdaq_history.json"),
+  marketHistory: path.join(reproducibilityDir, "nasdaq_public_market_history.csv"),
 };
 
 await fs.mkdir(path.dirname(outputPath), { recursive: true });
-await fs.mkdir(previewDir, { recursive: true });
+if (!skipPreviews) await fs.mkdir(previewDir, { recursive: true });
 
-const [guidanceCsv, transcriptCsv, edgeCsv, abnbJsonText, spyJsonText] = await Promise.all([
+const [guidanceCsv, transcriptCsv, edgeCsv, marketCsv] = await Promise.all([
   fs.readFile(paths.guidance, "utf8"),
   fs.readFile(paths.transcriptIndex, "utf8"),
   fs.readFile(paths.edge, "utf8"),
-  fs.readFile(paths.nasdaqAbnb, "utf8"),
-  fs.readFile(paths.nasdaqSpy, "utf8"),
+  fs.readFile(paths.marketHistory, "utf8"),
 ]);
 
 async function csvObjects(csvText) {
@@ -44,10 +53,11 @@ async function csvObjects(csvText) {
   );
 }
 
-const [guidanceRows, transcriptRows, edgeRows] = await Promise.all([
+const [guidanceRows, transcriptRows, edgeRows, marketRows] = await Promise.all([
   csvObjects(guidanceCsv),
   csvObjects(transcriptCsv),
   csvObjects(edgeCsv),
+  csvObjects(marketCsv),
 ]);
 
 const toNumber = (value) => {
@@ -62,11 +72,6 @@ const dateOnly = (value) => {
   if (match) return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
   const d = new Date(value);
   return Number.isNaN(d.getTime()) ? null : new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
-};
-
-const nasdaqDate = (value) => {
-  const [month, day, year] = String(value).split("/").map(Number);
-  return new Date(Date.UTC(year, month - 1, day));
 };
 
 const quarterShift = (fiscalPeriod, quarters) => {
@@ -87,26 +92,17 @@ const excelCol = (n) => {
   return s;
 };
 
-const abnbPayload = JSON.parse(abnbJsonText);
-const spyPayload = JSON.parse(spyJsonText);
-const abnbMarketRows = abnbPayload?.data?.tradesTable?.rows ?? [];
-const spyMarketRows = spyPayload?.data?.tradesTable?.rows ?? [];
-if (abnbPayload?.status?.rCode !== 200 || spyPayload?.status?.rCode !== 200) {
-  throw new Error("Nasdaq historical-price request did not return status 200.");
-}
-
-const spyByDate = new Map(spyMarketRows.map((row) => [row.date, row]));
-const priceRows = abnbMarketRows.map((abnb) => {
-  const spy = spyByDate.get(abnb.date);
+const priceRows = marketRows.map((row) => {
   return {
-    date: nasdaqDate(abnb.date),
-    dateKey: abnb.date,
-    abnbClose: toNumber(abnb.close),
-    spyClose: toNumber(spy?.close),
-    abnbVolume: toNumber(abnb.volume),
-    spyVolume: toNumber(spy?.volume),
+    date: dateOnly(row.date),
+    dateKey: row.date,
+    abnbClose: toNumber(row.abnb_close),
+    spyClose: toNumber(row.spy_close),
+    abnbVolume: toNumber(row.abnb_volume),
+    spyVolume: toNumber(row.spy_volume),
   };
-}).filter((row) => row.spyClose !== null).sort((a, b) => a.date - b.date);
+}).filter((row) => row.date !== null && row.abnbClose !== null && row.spyClose !== null)
+  .sort((a, b) => a.date - b.date);
 
 const priceIndexByIso = new Map(priceRows.map((row, index) => [row.date.toISOString().slice(0, 10), index]));
 const transcriptByPeriod = new Map(transcriptRows.map((row) => [String(row.fiscal_period), row]));
@@ -780,8 +776,8 @@ const sourceRows = [
   ["EDGE_NYCOSE", "Edge data", "NYC Mayor’s Office of Special Enforcement", "Local Law 87 annual enforcement reports", "https://www.nyc.gov/site/specialenforcement/reporting-law.page", "2024 report: 2025-09-01; 2025 report: 2026-09-01", "Public official reports", "Limited historical comparison and prospective monitoring", "Only one annual report was available before any covered ABNB event."],
   ["GUIDANCE_PANEL", "Guidance", "Airbnb / SEC", "Point-in-time target panel", logicalSourcePaths.guidance, "As preserved in panel", "Public filings / investor materials", "Guidance ranges, cutoffs, and citations", "Transcript fact tables are empty; guidance is anchored to preserved SEC/Airbnb evidence."],
   ["TRANSCRIPT_INDEX", "Transcript metadata", "User-provided FactSet CallStreet files", "Transcript index", logicalSourcePaths.transcriptIndex, "Indexed 2026-09-03", "User-provided restricted", "Metadata/status only; no long transcript excerpts reproduced", "Published-at timestamps are not independently verified in the index."],
-  ["NASDAQ_ABNB", "Market data", "Nasdaq", "ABNB historical quotes", "https://www.nasdaq.com/market-activity/stocks/abnb/historical", "Retrieved 2026-09-03", "Free public historical page", "ABNB daily closes and volumes", "Unadjusted displayed closes; close-to-next-close event study only."],
-  ["NASDAQ_SPY", "Market data", "Nasdaq", "SPY historical quotes", "https://www.nasdaq.com/market-activity/etf/spy/historical", "Retrieved 2026-09-03", "Free public historical page", "SPY benchmark closes and volumes", "Simple benchmark subtraction is descriptive, not a factor model."],
+  ["NASDAQ_ABNB", "Market data", "Nasdaq", "ABNB historical quotes", "https://www.nasdaq.com/market-activity/stocks/abnb/historical", "Retrieved 2026-09-03; normalized snapshot tracked", "Free public historical page", "ABNB daily closes and volumes", "Unadjusted displayed closes; close-to-next-close event study only."],
+  ["NASDAQ_SPY", "Market data", "Nasdaq", "SPY historical quotes", "https://www.nasdaq.com/market-activity/etf/spy/historical", "Retrieved 2026-09-03; normalized snapshot tracked", "Free public historical page", "SPY benchmark closes and volumes", "Simple benchmark subtraction is descriptive, not a factor model."],
   ["HYPOTHESIS_LEDGER", "Governance", "Internal research ledger", "Frozen hypotheses and minimum-evidence gates", logicalSourcePaths.hypothesisLedger, "2026-09-03", "Local research artifact", "Eligibility and interpretation rules", "No model fitting or promotion is authorized by this workbook."],
 ];
 sources.getRange(`A3:I${sourceRows.length + 2}`).values = sourceRows;
@@ -811,10 +807,12 @@ const previewRanges = {
   "Sources": `A1:I${sourceRows.length + 2}`,
 };
 
-for (const [sheetName, range] of Object.entries(previewRanges)) {
-  const preview = await workbook.render({ sheetName, range, scale: 0.9, format: "png" });
-  const safeName = sheetName.toLowerCase().replaceAll(" ", "_");
-  await fs.writeFile(path.join(previewDir, `${safeName}.png`), new Uint8Array(await preview.arrayBuffer()));
+if (!skipPreviews) {
+  for (const [sheetName, range] of Object.entries(previewRanges)) {
+    const preview = await workbook.render({ sheetName, range, scale: 0.9, format: "png" });
+    const safeName = sheetName.toLowerCase().replaceAll(" ", "_");
+    await fs.writeFile(path.join(previewDir, `${safeName}.png`), new Uint8Array(await preview.arrayBuffer()));
+  }
 }
 
 const xlsx = await SpreadsheetFile.exportXlsx(workbook);
@@ -835,7 +833,7 @@ const formulaInspection = await workbook.inspect({
 
 console.log(JSON.stringify({
   outputPath,
-  previewDir,
+  previewDir: skipPreviews ? null : previewDir,
   guidanceEvents: guidanceEvents.length,
   numericGuidanceCount,
   edgeObservations: edgeRows.length,

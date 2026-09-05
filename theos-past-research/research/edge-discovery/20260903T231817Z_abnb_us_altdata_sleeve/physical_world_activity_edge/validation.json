@@ -1,0 +1,28 @@
+{
+  "run_id": "20260903T231817Z_abnb_us_altdata_sleeve",
+  "lane": "physical_world_activity_edge",
+  "validated_at_utc": "2026-09-03T23:34:24Z",
+  "candidate_count": 8,
+  "permission_manifest_rows": 17,
+  "permission_provider_gets": 11,
+  "permission_completed": 7,
+  "permission_provider_stops": 3,
+  "permission_other_http_error": 1,
+  "permission_not_requested_after_stop": 6,
+  "reused_permission_evidence_rows": 5,
+  "exact_path_gate_count": 8,
+  "exact_path_allowed_count": 0,
+  "new_data_probe_manifest_rows": 0,
+  "new_data_provider_gets": 0,
+  "sfo_reused_raw_files": 2,
+  "observation_rows": 384,
+  "strict_pit_eligible_rows": 0,
+  "checks": {
+    "sfo_row_count_384": true,
+    "unique_observation_ids": true,
+    "all_sfo_rows_prospective_only": true,
+    "no_allowed_data_path": true,
+    "no_abnb_outcomes_opened": true
+  },
+  "status": "PASS"
+}

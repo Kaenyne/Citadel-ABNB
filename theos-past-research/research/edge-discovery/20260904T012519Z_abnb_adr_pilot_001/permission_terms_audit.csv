@@ -1,0 +1,8 @@
+evidence_id,provider,evidence_type,url,finding,status
+ADR-PR-001,Federal Reserve Bank of St. Louis,robots,https://fred.stlouisfed.org/robots.txt,Generic agents are limited to one request per second and listed graph image/search paths are disallowed; this does not override terms.,reviewed
+ADR-PR-002,Federal Reserve Bank of St. Louis,api_terms,https://fred.stlouisfed.org/docs/api/terms_of_use.html,The official API permits governed use subject to source rights and requires a registered API key.,allowed_only_with_key_and_exact_gate
+ADR-PR-007,Federal Reserve Bank of St. Louis,website_terms,https://fred.stlouisfed.org/legal/,"Automated data mining, robots, scraping, or extraction is prohibited except as expressly allowed by the FRED API.",prohibited_for_no_key_automation
+ADR-PR-004,Federal Reserve Bank of St. Louis,robots,https://alfred.stlouisfed.org/robots.txt,Generic agents have a two-second crawl delay and the CSV path is not listed as disallowed; terms remain independently controlling.,robots_allowed_terms_prohibited
+ADR-PR-005|ADR-PR-008,Federal Reserve Bank of St. Louis,series_availability,https://alfred.stlouisfed.org/series?seid=CUUR0000SEHB02,The exact requested NSA lodging series returned HTTP 404 on both ALFRED and FRED series pages.,unavailable_exact_series
+ADR-PR-009,U.S. Bureau of Labor Statistics,api_host_robots,https://api.bls.gov/robots.txt,Exact API-host robots states User-agent: * and Disallow: /.,disallowed
+PR-BLS-001,U.S. Bureau of Labor Statistics,robots,https://www.bls.gov/robots.txt,Same-day governed reconnaissance returned terminal HTTP 403; no retry and no archive request are allowed.,host_stopped

@@ -21,20 +21,39 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--expected-transcripts", type=int, default=23)
-    parser.add_argument(
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument(
         "--metadata-only",
         action="store_true",
         help="validate tracked metadata without requiring licensed transcript text",
+    )
+    modes.add_argument(
+        "--private-checksums",
+        action="store_true",
+        help=(
+            "validate acquired private PDFs and cleaned Markdown against the "
+            "tracked index and restricted-data manifest"
+        ),
+    )
+    parser.add_argument(
+        "--private-input-root",
+        type=Path,
+        help="root containing EARNING-TRANSCRIPTS and data/licensed inputs",
     )
     return parser
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.private_input_root is not None and not args.private_checksums:
+        parser.error("--private-input-root requires --private-checksums")
     findings = validate_project(
         args.root,
         args.expected_transcripts,
         require_licensed_text=not args.metadata_only,
+        verify_private_checksums=args.private_checksums,
+        private_input_root=args.private_input_root,
     )
     if findings:
         for finding in findings:

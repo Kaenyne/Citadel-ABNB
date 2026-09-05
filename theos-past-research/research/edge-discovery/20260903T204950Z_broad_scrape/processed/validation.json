@@ -1,0 +1,23 @@
+{
+  "target_minimum_valid_observations": 100,
+  "valid_observations": 33347,
+  "rejected_observations": 1,
+  "duplicate_observation_ids": 0,
+  "distinct_sources": 9,
+  "distinct_providers": 5,
+  "source_counts": {
+    "EUROSTAT_PLATFORM_NIGHTS_COUNTRY": 3424,
+    "EUROSTAT_PLATFORM_NIGHTS_NUTS3": 2478,
+    "EUROSTAT_PLATFORM_NIGHTS_REGION": 10032,
+    "EUROSTAT_TOURISM_NIGHTS": 1628,
+    "SFO_AIR_PASSENGERS": 441,
+    "STATCAN_ACCOM_PRICE": 1440,
+    "STATCAN_TRAVELLERS": 13056,
+    "TORONTO_STR_PROGRAM": 797,
+    "UK_CAA_AIRPORT_PASSENGERS": 51
+  },
+  "raw_files": 13,
+  "passed_minimum": true,
+  "all_sources_nonempty": true,
+  "pit_warning": "Except for the current UK CAA release, rows represent current provider snapshots. Historical observation dates must not be treated as original first-availability vintages."
+}

@@ -1,0 +1,17 @@
+request_id,provider,source_id,request_purpose,outcome,http_status,raw_file,notes
+REQ-001,Eurostat,EUROSTAT_PLATFORM_NIGHTS_COUNTRY,National platform guest-night data,success,200,eurostat_tour_ce_omr.json,One bounded filtered Statistics API request
+REQ-002,Eurostat,EUROSTAT_TOURISM_NIGHTS,Monthly all-accommodation night control,success,200,eurostat_tour_occ_nim.json,One bounded filtered Statistics API request
+REQ-003,Eurostat,EUROSTAT_PLATFORM_NIGHTS_REGION,NUTS1 and NUTS2 platform guest nights,success,200,eurostat_tour_ce_omn12.json,One bounded filtered Statistics API request
+REQ-004,Eurostat,EUROSTAT_PLATFORM_NIGHTS_NUTS3,NUTS3 annual platform guest nights,success,200,eurostat_tour_ce_oan3.json,One bounded filtered Statistics API request
+REQ-005,City of Toronto,TORONTO_STR_PROGRAM,CKAN package metadata,success,200,toronto_str_package.json,Official metadata request
+REQ-006,City of Toronto,TORONTO_STR_PROGRAM,Aggregate monthly STR program observations,success,200,toronto_str_program_data.json,Official JSON download
+REQ-007,City and County of San Francisco,SFO_AIR_PASSENGERS,Aggregate airport passenger observations,success,200,sfo_air_passengers_aggregate.json,Server-side aggregate query with no airline-level identifiers
+REQ-008,City and County of San Francisco,SFO_AIR_PASSENGERS,Dataset metadata and licence,success,200,sfo_air_passengers_metadata.json,Official dataset metadata request
+REQ-009,Statistics Canada,STATCAN_ACCOM_PRICE,Web Data Service download locator,success,200,statcan_18100249_download.json,Official WDS request
+REQ-010,Statistics Canada,STATCAN_ACCOM_PRICE,Full-table ZIP download,success,200,statcan_18100249-eng.zip,Official aggregate table
+REQ-011,Statistics Canada,STATCAN_TRAVELLERS,Web Data Service download locator,success,200,statcan_24100054_download.json,Official WDS request
+REQ-012,Statistics Canada,STATCAN_TRAVELLERS,Full-table ZIP download,success,200,statcan_24100054-eng.zip,Official aggregate table
+REQ-013,UK Civil Aviation Authority,UK_CAA_AIRPORT_PASSENGERS,May 2026 terminal-passenger table,success,200,uk_caa_2026_05_table09.csv,Official CSV; attribution required and raw statistics may not be resold
+REQ-F01,Eurostat,EUROSTAT_AIR_PASSENGERS,Airport-passenger query,rejected_by_provider,413,,No payload retained; request was too broad
+REQ-F02,Ontario Data Catalogue,ONTARIO_STR_STATS,Permission reconnaissance,stopped,429,,No retry and no payload retained
+REQ-F03,Codex in-app browser,EUROSTAT_PLATFORM_NIGHTS_COUNTRY,Direct API visual inspection,blocked_locally,NA,,Browser blocked the raw API URL; approved command-line API path was used instead

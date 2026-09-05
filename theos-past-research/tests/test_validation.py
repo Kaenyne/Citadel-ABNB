@@ -1,21 +1,58 @@
 from __future__ import annotations
 
 import csv
+from hashlib import sha256
 from pathlib import Path
 import subprocess
 
+import pytest
+
+from abnb_alt_data.import_policy import MANIFEST_FIELDS
 from abnb_alt_data.schemas import CSV_SCHEMAS, TRANSCRIPT_INDEX_FIELDS, write_empty_csv
 from abnb_alt_data.validation import validate_project
 from scripts.validate_project import main
 
 
 MARKDOWN = "data/licensed/earnings_transcripts/clean_md/ABNB-2026Q2.md"
+PDF = "EARNING-TRANSCRIPTS/sample.pdf"
 
 
 def run_git(root: Path, *args: str) -> None:
     subprocess.run(
         ["git", *args], cwd=root, check=True, capture_output=True, text=True
     )
+
+
+def write_restricted_manifest(
+    root: Path,
+    *,
+    pdf_sha256: str,
+    markdown_sha256: str,
+) -> None:
+    path = root / "research/provenance/restricted-data-manifest.csv"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for asset_type, logical_path, digest in (
+        ("licensed_pdf", PDF, pdf_sha256),
+        ("licensed_markdown", MARKDOWN, markdown_sha256),
+    ):
+        rows.append(
+            {
+                "asset_type": asset_type,
+                "source_branch": "main",
+                "logical_path": logical_path,
+                "reason": "licensed_factset_callstreet_transcript",
+                "bytes": "1",
+                "sha256": digest,
+                "tracked_replacement": "research/transcripts/transcript_index.csv",
+                "rebuild_command": "Obtain through an approved private channel.",
+                "tracking_status": "excluded_restricted",
+            }
+        )
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=MANIFEST_FIELDS, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def build_project(root: Path) -> dict[str, str]:
@@ -69,6 +106,12 @@ def build_project(root: Path) -> dict[str, str]:
         writer = csv.DictWriter(handle, fieldnames=TRANSCRIPT_INDEX_FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerow(row)
+
+    write_restricted_manifest(
+        root,
+        pdf_sha256=row["source_sha256"],
+        markdown_sha256=sha256(markdown.read_bytes()).hexdigest(),
+    )
 
     (root / ".gitignore").write_text(
         "EARNING-TRANSCRIPTS/\n"
@@ -139,6 +182,101 @@ def test_metadata_only_validation_allows_absent_restricted_text(tmp_path: Path) 
             "--metadata-only",
         ]
     ) == 0
+
+
+def test_metadata_only_reports_malformed_restricted_manifest(tmp_path: Path) -> None:
+    build_project(tmp_path)
+    manifest = tmp_path / "research/provenance/restricted-data-manifest.csv"
+    manifest.write_text("wrong,header\nvalue,row\n", encoding="utf-8")
+
+    findings = validate_project(
+        tmp_path,
+        expected_transcript_count=1,
+        require_licensed_text=False,
+    )
+
+    assert "restricted_manifest" in {finding.code for finding in findings}
+
+
+def test_private_checksum_validation_reports_missing_inputs(tmp_path: Path) -> None:
+    build_project(tmp_path)
+    (tmp_path / MARKDOWN).unlink()
+
+    findings = validate_project(
+        tmp_path,
+        expected_transcript_count=1,
+        verify_private_checksums=True,
+    )
+
+    missing = [
+        finding.message
+        for finding in findings
+        if finding.code == "missing_restricted_input"
+    ]
+    assert missing == [f"missing {PDF}", f"missing {MARKDOWN}"]
+
+
+def test_private_checksum_validation_reports_mismatch(tmp_path: Path) -> None:
+    build_project(tmp_path)
+    pdf = tmp_path / PDF
+    pdf.parent.mkdir(parents=True)
+    pdf.write_bytes(b"different private PDF")
+
+    findings = validate_project(
+        tmp_path,
+        expected_transcript_count=1,
+        verify_private_checksums=True,
+    )
+
+    mismatches = [
+        finding.message
+        for finding in findings
+        if finding.code == "restricted_checksum_mismatch"
+    ]
+    assert mismatches == [f"checksum mismatch: {PDF}"]
+
+
+def test_private_checksum_validation_accepts_matching_inputs(tmp_path: Path) -> None:
+    build_project(tmp_path)
+    pdf = tmp_path / PDF
+    pdf.parent.mkdir(parents=True)
+    pdf.write_bytes(b"matching private PDF")
+    pdf_digest = sha256(pdf.read_bytes()).hexdigest()
+    markdown_digest = sha256((tmp_path / MARKDOWN).read_bytes()).hexdigest()
+
+    index = tmp_path / "research/transcripts/transcript_index.csv"
+    with index.open("r", encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    rows[0]["source_sha256"] = pdf_digest
+    with index.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=TRANSCRIPT_INDEX_FIELDS, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    write_restricted_manifest(
+        tmp_path,
+        pdf_sha256=pdf_digest,
+        markdown_sha256=markdown_digest,
+    )
+
+    assert validate_project(
+        tmp_path,
+        expected_transcript_count=1,
+        verify_private_checksums=True,
+    ) == []
+    assert main(
+        [
+            "--root",
+            str(tmp_path),
+            "--expected-transcripts",
+            "1",
+            "--private-checksums",
+        ]
+    ) == 0
+
+
+def test_validation_cli_rejects_conflicting_transcript_modes() -> None:
+    with pytest.raises(SystemExit):
+        main(["--metadata-only", "--private-checksums"])
 
 
 def test_validator_reports_duplicate_fiscal_period(tmp_path: Path) -> None:

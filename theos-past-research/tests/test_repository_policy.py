@@ -1,6 +1,10 @@
 from pathlib import Path
 import subprocess
 import tomllib
+import io
+import json
+import os
+import tarfile
 from zipfile import ZipFile
 
 
@@ -11,6 +15,14 @@ REACTION_GENERATOR = (
     / "reproducibility"
     / "us-europe-guidance"
     / "build_abnb_edge_guidance_reaction.mjs"
+)
+PORTABLE_ARTIFACT_GENERATORS = (
+    ROOT
+    / "research/forecasting/runs/20260903T224632Z_50_source_guidance_format/build_workbook.mjs",
+    ROOT
+    / "research/forecasting/runs/20260903T233712Z_us_europe_guidance_comparison/build_workbook.mjs",
+    ROOT
+    / "research/edge-discovery/20260903T062839Z_abnb_edge_discovery/supply_scarcity_web_edge/e1_disposition/build_postfreeze_replay.mjs",
 )
 
 
@@ -68,7 +80,9 @@ def test_raw_and_build_outputs_are_ignored_but_review_artifacts_are_trackable() 
 
 def test_review_workbooks_contain_no_machine_local_paths() -> None:
     workbook_dir = ROOT / "outputs/workbooks"
-    unix_marker = "/" + "Users/"
+    unix_markers = tuple(
+        "/" + prefix for prefix in ("Users/", "private/", "home/", "opt/")
+    )
     windows_marker = "C:" + "\\" + "Users" + "\\"
 
     for workbook_path in sorted(workbook_dir.glob("*.xlsx")):
@@ -78,8 +92,44 @@ def test_review_workbooks_contain_no_machine_local_paths() -> None:
                 for member in archive.infolist()
                 if member.filename.endswith((".xml", ".rels"))
             )
-        assert unix_marker not in xml_text, workbook_path.name
+        assert not any(marker in xml_text for marker in unix_markers), workbook_path.name
         assert windows_marker not in xml_text, workbook_path.name
+
+
+def test_synthetic_transcript_fixture_is_tracked_and_archived() -> None:
+    relative = "tests/fixtures/synthetic_callstreet_layout.txt"
+    tracked = subprocess.run(
+        ["git", "ls-files", "--error-unmatch", relative],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    archived = subprocess.run(
+        ["git", "archive", "--format=tar", "HEAD", relative],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+    )
+
+    assert tracked.returncode == 0, tracked.stderr
+    assert archived.returncode == 0, archived.stderr.decode(errors="replace")
+
+
+def test_required_research_snapshots_are_present() -> None:
+    required = (
+        "research/edge-discovery/20260903T211121Z_50_source_expansion/build_50_source_panel.py",
+        "research/edge-discovery/20260903T211121Z_50_source_expansion/verify_50_source_panel.py",
+        "research/edge-discovery/20260903T211121Z_50_source_expansion/processed/new_source_manifest.csv",
+        "research/readiness/20260903T053309Z_abnb_readiness/target_panel.csv",
+        "research/forecasting/runs/20260903T224632Z_50_source_guidance_format/build_guidance_inputs.py",
+        "research/forecasting/runs/20260903T224632Z_50_source_guidance_format/guidance_history.csv",
+        "research/forecasting/runs/20260903T233712Z_us_europe_guidance_comparison/build_analysis.py",
+        "research/forecasting/runs/20260903T233712Z_us_europe_guidance_comparison/guidance_enriched.csv",
+        "research/provenance/source-boundary-inventory.csv",
+    )
+
+    assert [relative for relative in required if not (ROOT / relative).is_file()] == []
 
 
 def source_rows_block(source: str) -> str:
@@ -91,7 +141,7 @@ def source_rows_block(source: str) -> str:
 def reaction_generator_policy_violations(source: str) -> list[str]:
     violations: list[str] = []
     canonical_output = (
-        'const outputPath = path.join(workspace, "outputs", "workbooks", '
+        'const canonicalOutputPath = path.join(workspace, "outputs", "workbooks", '
         '"ABNB_edge_guidance_stock_reaction.xlsx");'
     )
     if canonical_output not in source:
@@ -123,6 +173,74 @@ def test_reaction_generator_uses_tracked_output_and_logical_source_paths() -> No
     assert reaction_generator_policy_violations(source) == []
     assert unix_marker not in source
     assert windows_marker not in source
+
+
+def test_workbook_runtime_is_exactly_pinned() -> None:
+    package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
+
+    assert package["engines"]["node"] == "24.19.0"
+    assert package["peerDependencies"]["@oai/artifact-tool"] == "2.8.59"
+    assert package["peerDependenciesMeta"]["@oai/artifact-tool"]["optional"] is True
+    assert package["workbookRuntimeDependencies"]["@oai/artifact-tool"]["version"] == "2.8.59"
+    assert (ROOT / ".node-version").read_text(encoding="utf-8").strip() == "24.19.0"
+
+
+def test_all_artifact_generators_use_the_portable_pinned_runtime() -> None:
+    for generator in (REACTION_GENERATOR, *PORTABLE_ARTIFACT_GENERATORS):
+        source = generator.read_text(encoding="utf-8")
+
+        assert 'from "@oai/artifact-tool"' not in source, generator
+        assert "loadArtifactTool" in source, generator
+        assert "process.cwd()" not in source, generator
+
+
+def test_reaction_generator_executes_from_clean_archive(tmp_path: Path) -> None:
+    archive = subprocess.run(
+        ["git", "archive", "--format=tar", "HEAD:theos-past-research"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    )
+    clean_root = tmp_path / "archive"
+    clean_root.mkdir()
+    with tarfile.open(fileobj=io.BytesIO(archive.stdout), mode="r:") as bundle:
+        bundle.extractall(clean_root, filter="data")
+
+    bundled_node = (
+        Path.home()
+        / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node"
+    )
+    node = bundled_node if bundled_node.is_file() else Path("node")
+    output = tmp_path / "generated.xlsx"
+    generator = (
+        clean_root
+        / "outputs/reproducibility/us-europe-guidance/build_abnb_edge_guidance_reaction.mjs"
+    )
+    result = subprocess.run(
+        [str(node), str(generator), "--output", str(output), "--skip-previews"],
+        cwd=clean_root,
+        check=False,
+        capture_output=True,
+        text=True,
+        env=os.environ.copy(),
+        timeout=120,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert output.is_file()
+    with ZipFile(output) as workbook:
+        names = workbook.namelist()
+        xml_text = "\n".join(
+            workbook.read(name).decode("utf-8", errors="replace")
+            for name in names
+            if name.endswith((".xml", ".rels"))
+        )
+    assert "[Content_Types].xml" in names
+    assert len([name for name in names if name.startswith("xl/worksheets/sheet")]) == 9
+    local_markers = tuple(
+        "/" + prefix for prefix in ("Users/", "private/", "home/", "opt/")
+    )
+    assert not any(marker in xml_text for marker in local_markers)
 
 
 def test_reaction_generator_policy_check_rejects_unsafe_mutations() -> None:

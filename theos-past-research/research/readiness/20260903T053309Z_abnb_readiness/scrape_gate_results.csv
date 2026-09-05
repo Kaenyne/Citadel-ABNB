@@ -1,0 +1,4 @@
+audit_id,source_id,owner,allowed,reasons,intended_path,requests_per_minute,fetch_status,evidence
+SA-20260903-001,BLS_CPI_LODGING,abnb_alt_data,true,"preflight allowed; single Scrapling request refused HTTP 403; stopped without retry",/developers/api_faqs.htm,1,fetch_refused_http_403,"research/scraping_audit.csv; assess_scrape_candidate; research/readiness/20260903T053309Z_abnb_readiness/raw/bls_api_faqs_scrapling.html"
+SA-20260903-002,TSA_CHECKPOINT,abnb_alt_data,false,"terms do not clearly permit automation; robots guidance does not clearly allow intended path",/travel/passenger-volumes,1,blocked,"research/scraping_audit.csv; assess_scrape_candidate"
+SA-20260903-003,AIRBNB_IR,abnb_alt_data,false,"terms/robots unclear; Airbnb-controlled source lacks explicit automation permission",/financials/quarterly-results/default.aspx,1,blocked,"research/scraping_audit.csv; assess_scrape_candidate"

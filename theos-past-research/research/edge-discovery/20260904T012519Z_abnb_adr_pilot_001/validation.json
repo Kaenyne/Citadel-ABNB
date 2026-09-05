@@ -1,0 +1,19 @@
+{
+  "run_id": "20260904T012519Z_abnb_adr_pilot_001",
+  "validated_at_utc": "2026-09-04T01:38:00Z",
+  "status": "pass_not_testable",
+  "checks": {
+    "target_rows_23": true,
+    "yoy_comparable_rows_16": true,
+    "observations_zero_without_vintage": true,
+    "panel_rows_23": true,
+    "strict_eligible_rows_zero": true,
+    "permission_registration_precedes_requests": true,
+    "data_payload_http_gets_zero": true,
+    "no_current_snapshot_substitution": true,
+    "metrics_not_computed_at_n_zero": true,
+    "no_model_fit": true,
+    "no_forecast_promotion": true
+  },
+  "source_target_sha256": "5b52b51016535d77d942b179fc9a121fbaf613c6a7f4610ba37d6b4195dbf698"
+}

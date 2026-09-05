@@ -1,0 +1,7 @@
+# Rejected and inconclusive sources — supply/scarcity lane
+
+- **SCW-007 Hawaiʻi TAT liability by district — rejected.** It has excellent monthly vintages, printed report dates, revisions, and 1997–2026 coverage. State terms explicitly prohibit automated means and commercial use without separate written agreement. Public visibility does not cure the rights problem.
+- **SCW-001 Austin Active STR Count by Date — inconclusive.** The official story claims daily updates and displays a historical count label, but its embedded table reports a broken query or deleted/unpublished underlying dataset. No stable source ID or vintage semantics were established.
+- **SCW-008 San Diego STRO licences — historical use rejected; prospective only.** The file is active-only, repeatedly replaced, lacks an issue-date field, and contains avoidable names, phone numbers, exact addresses, and tax identifiers. Today's active list cannot be backfilled.
+- **SCW-009 Recreation.gov availability — historical use rejected; prospective permission pending.** The official RIDB API documents facility/campsite/event metadata, not reservation availability. The dynamic interface is not a historical archive, and the observed availability route is undocumented for public reuse.
+- **All remaining sources — tiny sample blocked.** Terms or robots evidence did not affirm the exact intended path, so no direct request was made.

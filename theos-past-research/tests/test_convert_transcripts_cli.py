@@ -8,7 +8,7 @@ import pytest
 from scripts.convert_transcripts import main
 
 
-FIXTURE = Path(__file__).parent / "fixtures/factset_sample.txt"
+FIXTURE = Path(__file__).parent / "fixtures/synthetic_callstreet_layout.txt"
 
 
 def make_fake_poppler(tmp_path: Path) -> tuple[Path, Path]:

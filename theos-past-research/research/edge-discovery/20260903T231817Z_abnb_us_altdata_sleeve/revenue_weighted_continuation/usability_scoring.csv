@@ -1,0 +1,9 @@
+dimension,weight_pct,score_0_to_5,weighted_points,rationale
+official_authority_and_auditability,15,5,15,Audited Form 10-K; tagged XBRL and exact SEC accession.
+target_definition_match,15,5,15,Both inputs are revenue attributed by host listing location.
+us_geographic_match,15,5,15,Exact United States revenue is disclosed.
+europe_proxy_match,15,3,9,EMEA is the closest disclosed regional proxy but is broader than EU27/Europe.
+two_sleeve_coverage,10,4,8,U.S. plus EMEA represent 77.96% of 2025 global revenue; other regions are excluded.
+temporal_stability,10,3,6,Normalized U.S. weight fell from 54.27% in 2023 to 50.45% in 2025.
+frequency_and_recency,10,2,4,Annual disclosure cannot capture quarterly mix shifts.
+historical_point_in_time_usability,10,1,2,2025 filing was accepted in February 2026 and is ex-post for earlier guidance events.

@@ -1,0 +1,7 @@
+request_id,source_id,request_class,exact_safe_url_or_path,method,registered_at_utc,credential_requirement,personal_fields,planned_cache,status
+ADR-DATA-001,BLS_CPI_LODGING,data_payload,https://api.stlouisfed.org/fred/series/observations?series_id=CUUR0000SEHB02&observation_start=2017-01-01&file_type=json,GET,2026-09-04T01:34:00Z,FRED_API_KEY,none,raw/data/ADR-DATA-001.json,registered_not_requested
+ADR-DATA-002,BLS_CPI_ALL_ITEMS_NSA,data_payload,https://api.stlouisfed.org/fred/series/observations?series_id=CPIAUCNS&observation_start=2017-01-01&file_type=json,GET,2026-09-04T01:34:00Z,FRED_API_KEY,none,raw/data/ADR-DATA-002.json,registered_not_requested
+ADR-DATA-003,BLS_CPI_LODGING,data_payload,https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CUUR0000SEHB02&cosd=2017-01-01&coed=2026-08-31,GET,2026-09-04T01:34:00Z,none,none,raw/data/ADR-DATA-003.csv,registered_not_requested
+ADR-DATA-004,BLS_CPI_ALL_ITEMS_NSA,data_payload,https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CPIAUCNS&cosd=2017-01-01&coed=2026-08-31,GET,2026-09-04T01:34:00Z,none,none,raw/data/ADR-DATA-004.csv,registered_not_requested
+ADR-DATA-005,BLS_CPI_LODGING,data_payload,https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SEHB02?startyear=2017&endyear=2026,GET,2026-09-04T01:34:00Z,none,none,raw/data/ADR-DATA-005.json,registered_not_requested
+ADR-DATA-006,BLS_CPI_LODGING,data_payload,https://www.bls.gov/news.release/archives/cpi_*.htm,GET,2026-09-04T01:34:00Z,none,none,raw/data/ADR-DATA-006-*.html,registered_not_requested

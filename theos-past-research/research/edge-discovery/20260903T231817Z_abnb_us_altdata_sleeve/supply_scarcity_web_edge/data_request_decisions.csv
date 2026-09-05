@@ -1,0 +1,6 @@
+source_id,exact_path_allowed,data_request_count,status,reason
+BLS_CPI_LODGING,false,0,not_requested,"BLS robots request returned HTTP 403; the archive index was skipped under the host-stop rule."
+CENSUS_QSS_ACCOMMODATION,false,0,not_requested,"Census API terms allow retrieval, but the exact API-host robots request returned a rejection page and the registered QSS metadata URL returned HTTP 404."
+NYC_OSE_STR_SNAPSHOTS,false,0,not_requested,"Reused same-day evidence: terms and robots remain unclear; only a unit-level current snapshot is offered."
+NOLA_STR_PERMIT_EVENTS,false,0,not_requested,"Reused same-day evidence: no automation terms, no affirmative robots allowance, and a provider CAPTCHA stop."
+SAN_DIEGO_STRO_ACTIVE,false,0,not_requested,"Reused same-day evidence: exact download-host permission is unresolved and the bulk file cannot exclude personal fields before transport."

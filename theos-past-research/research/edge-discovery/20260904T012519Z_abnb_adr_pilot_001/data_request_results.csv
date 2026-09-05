@@ -1,0 +1,7 @@
+request_id,source_id,registered_at_utc,requested_at_utc,http_status,response_bytes,sha256,cache_path,gate_allowed_at_request_time,status,reason
+ADR-DATA-001,BLS_CPI_LODGING,2026-09-04T01:34:00Z,,,0,,,false,not_requested,blocked: missing FRED_API_KEY and exact API-host robots unresolved
+ADR-DATA-002,BLS_CPI_ALL_ITEMS_NSA,2026-09-04T01:34:00Z,,,0,,,false,not_requested,blocked: missing FRED_API_KEY and exact API-host robots unresolved
+ADR-DATA-003,BLS_CPI_LODGING,2026-09-04T01:34:00Z,,,0,,,false,not_requested,blocked: website terms prohibit automated extraction and exact lodging series is unavailable
+ADR-DATA-004,BLS_CPI_ALL_ITEMS_NSA,2026-09-04T01:34:00Z,,,0,,,false,not_requested,blocked: website terms prohibit automated extraction outside the API
+ADR-DATA-005,BLS_CPI_LODGING,2026-09-04T01:34:00Z,,,0,,,false,not_requested,blocked: BLS robots host stop and current API lacks vintage evidence
+ADR-DATA-006,BLS_CPI_LODGING,2026-09-04T01:34:00Z,,,0,,,false,not_requested,blocked: BLS robots host stop; archive pages not requested

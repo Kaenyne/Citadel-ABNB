@@ -51,11 +51,49 @@ def test_collect_violations_rejects_absolute_local_paths(tmp_path: Path) -> None
         project_root / "validation_log.md",
         ("/" + "opt/anaconda3/bin/python").encode(),
     )
+    private_temp = write_file(
+        project_root / "inspection.json",
+        ("/" + "private/tmp/workbook.inspect.ndjson").encode(),
+    )
+    home_checkout = write_file(
+        project_root / "run.yaml",
+        ("/" + "home/researcher/project/input.csv").encode(),
+    )
 
-    violations = collect_violations(project_root, [unix_path, windows_path, local_interpreter])
+    violations = collect_violations(
+        project_root,
+        [unix_path, windows_path, local_interpreter, private_temp, home_checkout],
+    )
 
-    assert len(violations) == 3
+    assert len(violations) == 5
     assert all("absolute local path" in violation for violation in violations)
+
+
+def test_collect_violations_allows_url_paths_named_home(tmp_path: Path) -> None:
+    project_root = tmp_path / "project"
+    terms_url = write_file(
+        project_root / "source_manifest.csv",
+        b"url\nhttps://example.test/home/terms-of-use.page\n",
+    )
+
+    assert collect_violations(project_root, [terms_url]) == []
+
+
+def test_collect_violations_scans_xlsx_xml_for_local_paths(tmp_path: Path) -> None:
+    from zipfile import ZipFile
+
+    project_root = tmp_path / "project"
+    workbook = project_root / "review.xlsx"
+    workbook.parent.mkdir(parents=True)
+    with ZipFile(workbook, "w") as archive:
+        archive.writestr(
+            "xl/worksheets/sheet1.xml",
+            '<worksheet><c><v>/' + "private/tmp/source.csv</v></c></worksheet>",
+        )
+
+    violations = collect_violations(project_root, [workbook])
+
+    assert violations == ["review.xlsx: absolute local path in XLSX XML"]
 
 
 def test_collect_violations_rejects_nonblank_secret_assignments(tmp_path: Path) -> None:

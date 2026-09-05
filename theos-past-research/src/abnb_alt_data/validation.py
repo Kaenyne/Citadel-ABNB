@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import csv
 from dataclasses import dataclass
+import hashlib
 from pathlib import Path
 import re
 import subprocess
 import tomllib
 
+from .import_policy import MANIFEST_FIELDS
 from .leakage import validate_guidance_row
 from .schemas import CSV_SCHEMAS, validate_csv_header
 
@@ -84,6 +86,7 @@ def _resolve_markdown(root: Path, value: str) -> Path | None:
 
 def _validate_transcripts(
     root: Path,
+    licensed_input_root: Path,
     expected_transcript_count: int,
     require_licensed_text: bool,
     valid_schemas: set[str],
@@ -121,7 +124,7 @@ def _validate_transcripts(
 
         markdown_value = row.get("markdown_path", "")
         index_by_markdown[markdown_value] = row
-        markdown_path = _resolve_markdown(root, markdown_value)
+        markdown_path = _resolve_markdown(licensed_input_root, markdown_value)
         if markdown_path is None:
             findings.append(
                 ValidationFinding(
@@ -167,6 +170,120 @@ def _validate_transcripts(
                 )
             )
     return index_by_markdown, turns_by_markdown
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _validate_restricted_manifest(
+    root: Path,
+    licensed_input_root: Path,
+    index_by_markdown: dict[str, dict[str, str]],
+    verify_private_checksums: bool,
+    findings: list[ValidationFinding],
+) -> None:
+    manifest_path = root / "research/provenance/restricted-data-manifest.csv"
+    try:
+        with manifest_path.open("r", encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle)
+            if tuple(reader.fieldnames or ()) != MANIFEST_FIELDS:
+                raise ValueError(
+                    f"header={reader.fieldnames!r}; expected={list(MANIFEST_FIELDS)!r}"
+                )
+            rows = list(reader)
+    except (OSError, ValueError, csv.Error) as error:
+        findings.append(
+            ValidationFinding(
+                "restricted_manifest", f"cannot read {manifest_path}: {error}"
+            )
+        )
+        return
+
+    expected: dict[str, str | None] = {}
+    for index_row in index_by_markdown.values():
+        expected[(Path("EARNING-TRANSCRIPTS") / index_row["source_filename"]).as_posix()] = (
+            index_row.get("source_sha256", "")
+        )
+        expected[Path(index_row["markdown_path"]).as_posix()] = None
+
+    seen: dict[str, dict[str, str]] = {}
+    invalid_rows = False
+    for row_number, row in enumerate(rows, start=2):
+        logical_path = row.get("logical_path", "")
+        digest = row.get("sha256", "")
+        byte_count = row.get("bytes", "")
+        expected_type = (
+            "licensed_pdf"
+            if logical_path.startswith("EARNING-TRANSCRIPTS/")
+            else "licensed_markdown"
+        )
+        errors: list[str] = []
+        candidate = Path(logical_path)
+        if not logical_path or candidate.is_absolute() or ".." in candidate.parts:
+            errors.append("logical_path must stay within the private input root")
+        if not re.fullmatch(r"[0-9a-f]{64}", digest):
+            errors.append("sha256 must be 64 lowercase hexadecimal characters")
+        if not byte_count.isdigit():
+            errors.append("bytes must be a nonnegative integer")
+        if row.get("asset_type") != expected_type:
+            errors.append(f"asset_type must be {expected_type}")
+        if logical_path in seen:
+            errors.append("logical_path is duplicated")
+        if errors:
+            invalid_rows = True
+            findings.append(
+                ValidationFinding(
+                    "restricted_manifest",
+                    f"row {row_number} ({logical_path or '<blank>'}): {'; '.join(errors)}",
+                )
+            )
+        seen[logical_path] = row
+
+    missing_metadata = sorted(set(expected) - set(seen))
+    extra_metadata = sorted(set(seen) - set(expected))
+    if missing_metadata or extra_metadata:
+        invalid_rows = True
+        findings.append(
+            ValidationFinding(
+                "restricted_manifest",
+                f"inventory mismatch: missing={missing_metadata}; extra={extra_metadata}",
+            )
+        )
+    for logical_path, index_digest in expected.items():
+        if index_digest is None or logical_path not in seen:
+            continue
+        if seen[logical_path].get("sha256") != index_digest:
+            invalid_rows = True
+            findings.append(
+                ValidationFinding(
+                    "restricted_manifest",
+                    f"PDF checksum disagrees with transcript index: {logical_path}",
+                )
+            )
+
+    if not verify_private_checksums or invalid_rows:
+        return
+    for logical_path in sorted(expected):
+        input_path = licensed_input_root / logical_path
+        if not input_path.is_file():
+            findings.append(
+                ValidationFinding(
+                    "missing_restricted_input", f"missing {logical_path}"
+                )
+            )
+            continue
+        if _sha256(input_path) != seen[logical_path]["sha256"]:
+            findings.append(
+                ValidationFinding(
+                    "restricted_checksum_mismatch",
+                    f"checksum mismatch: {logical_path}",
+                )
+            )
 
 
 def _validate_guidance(
@@ -249,14 +366,29 @@ def validate_project(
     root: Path,
     expected_transcript_count: int = 23,
     require_licensed_text: bool = True,
+    verify_private_checksums: bool = False,
+    private_input_root: Path | None = None,
 ) -> list[ValidationFinding]:
     """Return every detected project-integrity issue without mutating files."""
     root = root.resolve()
+    licensed_input_root = (private_input_root or root).resolve()
     findings: list[ValidationFinding] = []
     _validate_agent(root, findings)
     valid_schemas = _validate_schemas(root, findings)
     index, turns = _validate_transcripts(
-        root, expected_transcript_count, require_licensed_text, valid_schemas, findings
+        root,
+        licensed_input_root,
+        expected_transcript_count,
+        require_licensed_text,
+        valid_schemas,
+        findings,
+    )
+    _validate_restricted_manifest(
+        root,
+        licensed_input_root,
+        index,
+        verify_private_checksums,
+        findings,
     )
     _validate_guidance(root, require_licensed_text, valid_schemas, index, turns, findings)
     _validate_ignore_policy(root, findings)

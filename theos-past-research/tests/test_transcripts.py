@@ -13,7 +13,7 @@ from abnb_alt_data.transcripts import (
 )
 
 
-FIXTURE = Path(__file__).parent / "fixtures/factset_sample.txt"
+FIXTURE = Path(__file__).parent / "fixtures/synthetic_callstreet_layout.txt"
 
 
 def fixture_text() -> str:

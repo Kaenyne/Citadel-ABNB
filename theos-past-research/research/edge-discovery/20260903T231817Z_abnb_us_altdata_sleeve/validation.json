@@ -1,0 +1,43 @@
+{
+  "run_id": "20260903T231817Z_abnb_us_altdata_sleeve",
+  "built_at_utc": "2026-09-03T23:42:58Z",
+  "status": "PASS_WITH_DISCLOSED_PERMISSION_MANIFEST_TIMING_EXCEPTION",
+  "source_manifest_rows": 14,
+  "permission_audit_rows": 33,
+  "permission_attempt_rows": 22,
+  "provider_permission_gets": 15,
+  "new_data_payload_gets": 0,
+  "permission_manifest_timing_violations": 8,
+  "observation_rows": 495,
+  "sfo_rows": 384,
+  "eu27_rows": 99,
+  "strict_pit_observation_rows": 0,
+  "guidance_events": 23,
+  "event_feature_rows": 161,
+  "strict_pit_feature_rows": 0,
+  "hypotheses": [
+    "H-007",
+    "H-008",
+    "H-009",
+    "H-010",
+    "H-011",
+    "H-012"
+  ],
+  "checks": {
+    "all_required_source_ids_registered": true,
+    "unique_observation_ids": true,
+    "zero_new_data_payload_gets": true,
+    "zero_strict_pit_observations": true,
+    "zero_strict_pit_features": true,
+    "guidance_event_count_23": true,
+    "fixed_feature_rows_7_per_event": true,
+    "no_pii_fields_in_observation_schema": true,
+    "permission_manifest_timing_exceptions_disclosed": true
+  },
+  "limitations": [
+    "All normalized values are current-snapshot or prospective-only; strict PIT n is zero.",
+    "Eight executed physical-lane permission-page GETs have manifest registered_at_utc later than requested_at_utc in the final lane artifacts (three FHWA and five airport rows). No data payload followed; these rows are retained and flagged, not rewritten.",
+    "PANYNJ and LAX data paths did not pass the exact gate; no airport fallback payload was requested.",
+    "Descriptive metrics are not a historical backtest and do not establish alpha or predictive power."
+  ]
+}

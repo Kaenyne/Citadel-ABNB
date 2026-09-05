@@ -6,6 +6,7 @@ import os
 import re
 from collections.abc import Iterable
 from pathlib import Path
+from zipfile import BadZipFile, ZipFile
 
 
 MANIFEST_FIELDS = (
@@ -67,7 +68,9 @@ SECRET_NAMES = (
 SECRET_ASSIGNMENT_RE = re.compile(
     rf"(?m)^\s*(?:{'|'.join(SECRET_NAMES)})\s*=\s*(?!\s*(?:#|$))"
 )
-ABSOLUTE_PATH_MARKERS = ("/" + "Users/", "/" + "opt/", "C:" + "\\Users\\")
+LOCAL_PATH_RE = re.compile(
+    r"(?<![A-Za-z0-9:/])(?:/(?:Users|private|home|opt)/|[A-Za-z]:\\Users\\)"
+)
 
 
 def sha256_file(path: Path) -> str:
@@ -186,11 +189,13 @@ def build_omitted_rows(source_root: Path, guidance_root: Path) -> list[dict[str,
                 reason="over_50_mib",
                 path=panel,
                 tracked_replacement=(
-                    "research/edge_discovery/20260903T211121Z_50_source_expansion/"
+                    "research/edge-discovery/20260903T211121Z_50_source_expansion/"
                     "processed/new_source_manifest.csv"
                 ),
                 rebuild_command=(
-                    "python research/edge_discovery/20260903T211121Z_50_source_expansion/"
+                    "Follow the acquisition commands in research/edge-discovery/"
+                    "20260903T211121Z_50_source_expansion/README.md, then run python "
+                    "research/edge-discovery/20260903T211121Z_50_source_expansion/"
                     "build_50_source_panel.py"
                 ),
                 tracking_status="excluded_oversized",
@@ -206,9 +211,35 @@ def build_omitted_rows(source_root: Path, guidance_root: Path) -> list[dict[str,
                 logical_path=logical_path,
                 reason="raw_global_lodging_download",
                 path=path,
-                tracked_replacement="outputs/reproducibility/global-lodging-map-inputs.csv",
-                rebuild_command="python scripts/build_global_lodging_map.py",
+                tracked_replacement="scripts/build_global_lodging_map.py",
+                rebuild_command=(
+                    "python scripts/build_global_lodging_map.py --output-dir "
+                    "outputs/global-lodging-map"
+                ),
                 tracking_status="excluded_raw",
+            )
+        )
+
+    for path in _source_files(source_root, ".ndjson"):
+        if not path.name.endswith(".xlsx.inspect.ndjson"):
+            continue
+        content = path.read_text(encoding="utf-8", errors="replace")
+        if not LOCAL_PATH_RE.search(content):
+            continue
+        workbook_name = path.name.removesuffix(".inspect.ndjson")
+        rows.append(
+            _manifest_row(
+                asset_type="workbook_inspection_evidence",
+                source_branch="main",
+                logical_path=path.relative_to(source_root).as_posix(),
+                reason="absolute_local_path",
+                path=path,
+                tracked_replacement=f"outputs/workbooks/{workbook_name}",
+                rebuild_command=(
+                    "Generate local inspection evidence from the tracked workbook; "
+                    "do not commit machine-local inspection output."
+                ),
+                tracking_status="excluded_machine_local",
             )
         )
 
@@ -256,11 +287,27 @@ def _text_violations(path: Path, display_path: str) -> list[str]:
         return []
     content = path.read_text(encoding="utf-8", errors="replace")
     violations: list[str] = []
-    if any(marker in content for marker in ABSOLUTE_PATH_MARKERS):
+    if LOCAL_PATH_RE.search(content):
         violations.append(f"{display_path}: absolute local path in text")
     if path.name != ".env.example" and SECRET_ASSIGNMENT_RE.search(content):
         violations.append(f"{display_path}: nonblank secret assignment in tracked text")
     return violations
+
+
+def _xlsx_violations(path: Path, display_path: str) -> list[str]:
+    if path.suffix.lower() != ".xlsx":
+        return []
+    try:
+        with ZipFile(path) as archive:
+            for member in archive.infolist():
+                if not member.filename.endswith((".xml", ".rels")):
+                    continue
+                content = archive.read(member).decode("utf-8", errors="replace")
+                if LOCAL_PATH_RE.search(content):
+                    return [f"{display_path}: absolute local path in XLSX XML"]
+    except (BadZipFile, OSError):
+        return []
+    return []
 
 
 def collect_violations(
@@ -297,4 +344,5 @@ def collect_violations(
         if path.stat().st_size > MAX_BYTES:
             violations.append(f"{display_path}: file exceeds 50 MiB import limit")
         violations.extend(_text_violations(path, display_path))
+        violations.extend(_xlsx_violations(path, display_path))
     return violations
