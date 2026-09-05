@@ -1,0 +1,412 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper,margin=0.54in,top=0.58in,bottom=0.54in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.94]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\urlstyle{same}
+\usepackage{fancyhdr}
+\DeclareMathSizes{8.35}{8.35}{6}{5}
+\DeclareMathSizes{7.15}{7.15}{5}{5}
+\DeclareMathSizes{6.80}{6.80}{5}{5}
+\DeclareMathSizes{6.75}{6.75}{5}{5}
+\DeclareMathSizes{6.65}{6.65}{5}{5}
+\DeclareMathSizes{6.55}{6.55}{5}{5}
+\DeclareMathSizes{5.75}{5.75}{5}{5}
+
+\definecolor{ICNavy}{HTML}{17365D}
+\definecolor{ICCharcoal}{HTML}{2F343B}
+\definecolor{ICGreen}{HTML}{2E7D5B}
+\definecolor{ICAmber}{HTML}{B7791F}
+\definecolor{ICRed}{HTML}{B23A48}
+\definecolor{ICLight}{HTML}{EFF3F7}
+\definecolor{ICRule}{HTML}{CCD5E0}
+\definecolor{ICMuted}{HTML}{667085}
+
+\hypersetup{colorlinks=true,urlcolor=ICNavy,linkcolor=ICNavy,pdfauthor={Institution-neutral research brief},pdftitle={ABNB: From Macro Signals to Management Guidance and Equity Reaction}}
+% Compile from the repository root or from a flat Overleaf upload.
+\IfFileExists{metrics.tex}{%
+  \graphicspath{{./}}%
+  \input{metrics.tex}%
+}{%
+  \graphicspath{{docs/forecasting/abnb_ic_brief/generated/}}%
+  \input{docs/forecasting/abnb_ic_brief/generated/metrics.tex}%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.2pt}
+\setlength{\tabcolsep}{3.5pt}
+\setlength{\headheight}{18pt}
+\renewcommand{\arraystretch}{1.14}
+\emergencystretch=2em
+\sloppy
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\scriptsize\color{ICMuted}ABNB MACRO-TO-EQUITY IC BRIEF}
+\rhead{\scriptsize\color{ICMuted}EVIDENCE CUTOFF: 03 SEP 2026}
+\cfoot{\scriptsize\color{ICMuted}\thepage\ / 8}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ICRule}\leaders\hrule height \headrulewidth\hfill}}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcommand{\status}[2]{\colorbox{#1!12}{\textcolor{#1}{\fontsize{5.6}{6.3}\selectfont\bfseries #2}}}
+\newcommand{\PageTitle}[2]{%
+  {\color{ICNavy}\fontsize{16}{18}\selectfont\bfseries #1}\hfill{\color{ICMuted}\scriptsize #2}\par
+  \vspace{2pt}{\color{ICNavy}\rule{\textwidth}{1.25pt}}\vspace{4pt}
+}
+\newcommand{\Section}[1]{\vspace{3pt}{\color{ICNavy}\bfseries\large #1}\par\vspace{1pt}}
+\newcommand{\SmallSection}[1]{{\color{ICNavy}\bfseries #1}\par}
+\newcommand{\Callout}[2]{%
+  \colorbox{#1!9}{\parbox{0.965\textwidth}{\vspace{3pt}\textcolor{#1}{\bfseries #2}\vspace{3pt}}}
+}
+\newcommand{\Step}[3]{%
+  \colorbox{ICLight}{\parbox{0.075\textwidth}{\centering\color{ICNavy}\bfseries #1}}\hspace{3pt}%
+  \parbox[t]{0.205\textwidth}{\color{ICNavy}\bfseries #2}\hspace{3pt}%
+  \parbox[t]{0.675\textwidth}{#3}\par\vspace{3.2pt}
+}
+
+\begin{document}
+\fontsize{8.35}{10.0}\selectfont
+
+% PAGE 1
+\vspace*{-3pt}
+{\color{ICNavy}\fontsize{21}{23}\selectfont\bfseries ABNB: From Macro Signals to Management Guidance and Equity Reaction}\par
+\vspace{4pt}
+{\color{ICMuted}\large An institutional research architecture, evidence audit, and reusable IC decision template}\par
+\vspace{2pt}
+{\color{ICMuted}\small Evidence available through 03 September 2026 \quad | \quad System documentation, not a live forecast}\par
+\vspace{7pt}{\color{ICNavy}\rule{\textwidth}{1.6pt}}\vspace{5pt}
+
+\Callout{ICNavy}{IC VERDICT \quad The governance and research process works. Forecast edge remains unproven; trading edge remains untested. Continue the build, but do not promote a production signal from the present retrospective evidence.}
+
+\Section{What we can claim -- and what we cannot}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.16\textwidth} p{0.12\textwidth} Y Y}
+\toprule
+\rowcolor{ICNavy!9}Edge layer & Verdict & Evidence today & IC interpretation \\
+\midrule
+Process edge & \status{ICGreen}{WORKS} & Strict point-in-time controls, rejection logs, baselines, immutable packets, checksums, and resolution plumbing. & The process makes errors diagnosable and prevents hindsight from being mislabeled as evidence. \\
+Candidate information edge & \status{ICAmber}{CANDIDATE} & A revenue-weighted travel-activity composite is strongly associated with guidance growth in a retrospective slice. & Worth underwriting prospectively; it has \StrictPitRows\ strict-PIT historical rows and is not yet a forecast feature. \\
+Forecast edge & \status{ICRed}{UNPROVEN} & No stable walk-forward residual improvement over seasonal and prior-quarter baselines has been demonstrated. & Correlation with the raw seasonal guidance level is not sufficient. \\
+Trading edge & \status{ICRed}{UNTESTED} & Direct guidance-to-return relationships are weak; comparable consensus, positioning, and implied-move history is absent. & Do not infer a stock signal from guidance direction or level alone. \\
+\bottomrule
+\end{tabularx}
+
+\Section{Decision in one line}
+\begin{tabularx}{\textwidth}{p{0.18\textwidth} Y}
+\rowcolor{ICGreen!9}\textcolor{ICGreen}{\bfseries FUND} & Point-in-time consensus history, management-policy features, and prospective travel-native data preservation. \\
+\rowcolor{ICAmber!9}\textcolor{ICAmber}{\bfseries TEST} & The residual $G_t-\widehat{G}^{\mathrm{outside}}_t$ in preregistered walk-forward folds, then compare it with consensus. \\
+\rowcolor{ICRed!9}\textcolor{ICRed}{\bfseries DO NOT TRADE YET} & Raw guidance changes, retrospective snapshots, or the $0.784$ diagnostic association. \\
+\end{tabularx}
+
+\Section{The edge hierarchy}
+\begin{center}
+\setlength{\fboxsep}{5pt}
+\colorbox{ICGreen!12}{\parbox{0.205\textwidth}{\centering\bfseries Process integrity\\\scriptsize eligibility + immutability}}
+$\rightarrow$
+\colorbox{ICAmber!12}{\parbox{0.205\textwidth}{\centering\bfseries Candidate information\\\scriptsize lawful + source-bound}}
+$\rightarrow$
+\colorbox{ICAmber!12}{\parbox{0.205\textwidth}{\centering\bfseries Forecast edge\\\scriptsize OOS residual lift}}
+$\rightarrow$
+\colorbox{ICRed!12}{\parbox{0.205\textwidth}{\centering\bfseries Trading edge\\\scriptsize net of expectations + risk}}
+\end{center}
+
+\vfill
+{\scriptsize\color{ICMuted}\textbf{Scope discipline.} This brief describes a reusable research and decision system. It does not manufacture a September 2026 forecast, claim proven alpha, or convert current snapshots into historical point-in-time observations.}
+
+\clearpage
+
+% PAGE 2
+\PageTitle{Systematic macro-to-equity waterfall}{A causal chain with explicit information clocks}
+
+\Callout{ICNavy}{The unit of work is an event packet: one target event, one offset-aware cutoff, one eligible evidence set, four linked forecasts, and a later immutable resolution.}
+
+\vspace{3pt}
+\Step{0}{Event clock}{Fix event, target metric, guided period, unit, and $as\_of\_utc$. Evidence must have verified first availability strictly before cutoff; equality fails. Retain every rejection and reason.}
+\Step{1}{Macro regime}{Classify growth, inflation, FX, rates, employment, and consumer balance-sheet conditions using vintages actually observable at cutoff. State regime uncertainty, not a single narrative.}
+\Step{2}{Travel system}{Translate macro conditions into travel \textbf{demand}, carrier/room \textbf{capacity}, market \textbf{pricing}, and regulatory \textbf{supply}. Align geography, frequency, lag, and booking-versus-stay timing.}
+\Step{3}{ABNB operating state}{Nowcast nights and experiences booked, ADR, gross booking value, take rate, revenue, and margins. Produce an operating P10/P50/P90; do not jump directly from macro to guidance.}
+\Step{4}{Management policy}{Model how management maps the operating distribution into the formal range: conservatism, range width, seasonality, known headwinds, prior cadence, and source-bound language.}
+\Step{5}{Market expectations}{Freeze contemporaneous consensus, dispersion, bank expectations, implied move, and relevant positioning. A later-restated estimate is not point-in-time consensus.}
+\Step{6}{Surprise vector}{Construct joint actual and guidance surprises for comparable metrics and periods: $\mathbf{s}_t=[s^{\mathrm{actual}}_t,\ s^{\mathrm{guide}}_t]$. Raw sequential guidance change is not a surprise.}
+\Step{7}{Market state}{Condition on valuation, factor exposures, crowding/positioning, implied volatility, macro regime, and recent price path. These variables mediate how the same surprise is priced.}
+\Step{8}{Reaction distribution}{Estimate downside/base/upside return distributions and decision thresholds, net of the implied move and benchmark. Keep the reaction forecast separate from the guidance forecast.}
+\Step{9}{Resolve and learn}{Attach reviewed actuals, issued guidance, consensus surprises, and price outcomes without changing the frozen forecast. Attribute error to economic, policy, expectations, or reaction layers.}
+
+\Section{Four linked forecasts -- four distinct error terms}
+\begin{tabularx}{\textwidth}{p{0.18\textwidth} Y Y}
+\toprule
+\rowcolor{ICNavy!9}Forecast & Output & Primary diagnostic \\
+\midrule
+Economic nowcast & Reported operating P10/P50/P90 & Did macro/travel features predict ABNB operations? \\
+Guidance policy & Formal guidance distribution and width & Did policy mapping add value beyond seasonality? \\
+Expectations & Consensus and dispersion at cutoff & Was the estimated surprise defined correctly? \\
+Reaction & Conditional stock-return distribution & Did surprise plus market state explain repricing? \\
+\bottomrule
+\end{tabularx}
+
+\vfill
+{\scriptsize\color{ICMuted}\textbf{Control principle.} An LLM-generated number never substitutes for a failed deterministic calculation. Each number must be a cited input, computed result, explicit human assumption, or signed evidence-linked adjustment with a falsifier.}
+
+\clearpage
+
+% PAGE 3
+\PageTitle{What already works}{A functioning control plane, not yet a proven signal}
+
+\begin{tabularx}{\textwidth}{C C C C}
+\rowcolor{ICNavy!9}
+\textcolor{ICNavy}{\bfseries \GuidanceEvents} & \textcolor{ICNavy}{\bfseries \NumericGuidanceEvents} & \textcolor{ICNavy}{\bfseries PIT discipline} & \textcolor{ICNavy}{\bfseries Immutable} \\
+preserved guidance events & numeric ranges & rejects retained & packet + checksums \\
+\end{tabularx}
+
+\Section{Layer scorecard -- reusable reporting interface}
+{\fontsize{6.8}{8.2}\selectfont
+\begin{tabularx}{\textwidth}{p{0.125\textwidth} p{0.19\textwidth} p{0.15\textwidth} p{0.17\textwidth} p{0.105\textwidth} Y}
+\toprule
+\rowcolor{ICNavy!9}Question & Available evidence & Baseline & Candidate edge & Current status & Next gate \\
+\midrule
+Is evidence eligible? & Availability, vintage, manifest, definition, period, unit, evidence ID; rejected rows retained. & Strict cutoff rule. & Faster lawful preservation with defensible timestamps. & \status{ICGreen}{WORKS} & Prospectively lock native releases. \\
+What is the operating state? & Guidance history; macro and travel hypothesis inventory; source-governed panel. & Seasonal and prior-quarter reference views. & Accommodation-native demand, geographic weights, capacity and price bridge. & \status{ICAmber}{PARTIAL} & Build PIT operating P10/P50/P90. \\
+What will management guide? & \GuidanceEvents\ events, \NumericGuidanceEvents\ numeric ranges, source-bound targets. & Seasonal naive, policy-adjusted level, median width, residual interval. & Historical policy language and signed adjustments. & \status{ICAmber}{MACHINERY} & Populate eligible policy features; walk forward. \\
+What did the market expect? & Interface exists; comparable PIT history does not. & Contemporaneous consensus midpoint and dispersion. & Estimate revisions and bank expectation distribution. & \status{ICRed}{GAP} & Acquire and freeze consensus history. \\
+How will the stock react? & ABNB/SPY next-close event-return panel. & Zero/benchmark return; implied move when available. & Joint surprise vector conditioned on market state. & \status{ICRed}{UNTESTED} & Assemble surprise, position and valuation history. \\
+Can learning be audited? & Frozen JSON, eligibility CSV, memo, checksums, parent links, resolution concepts. & Deterministic rehearsal. & Layer-specific error attribution and model registry. & \status{ICGreen}{WORKS} & Resolve real packets prospectively. \\
+\bottomrule
+\end{tabularx}}
+
+\Section{Operational assets already in place}
+\begin{tabularx}{\textwidth}{p{0.25\textwidth} Y}
+\textcolor{ICGreen}{\bfseries Event and target history} & Twenty-three preserved guidance events span qualitative and numeric disclosures; the builder independently recounts the panel before publication. \\
+\textcolor{ICGreen}{\bfseries Point-in-time governance} & Reference period, observation, first availability, vintage, collection, and cutoff are distinct. Ambiguous timestamps and current-snapshot backfills are rejected, not silently dropped. \\
+\textcolor{ICGreen}{\bfseries Baseline machinery} & Seasonal naive, management-policy adjustment, median range width, and residual interval concepts exist before any feature promotion. \\
+\textcolor{ICGreen}{\bfseries Packet integrity} & New run directories fail closed on overwrite; updates require new IDs and parent links; checksums make mutation visible. \\
+\textcolor{ICGreen}{\bfseries Market panel} & ABNB and SPY event windows exist for all \GuidanceEvents\ events, enabling descriptive excess-return diagnostics. \\
+\textcolor{ICGreen}{\bfseries Source governance} & Provider permissions, collection path, evidence status, rejections, and stop reasons are preserved across hypothesis work. \\
+\end{tabularx}
+
+\Callout{ICAmber}{What the rehearsal proves: workflow and control integrity. What it does not prove: forecast accuracy, backtest performance, or alpha. The fixture is synthetic and must remain labeled as such.}
+
+\clearpage
+
+% PAGE 4
+\PageTitle{Evidence and stop matrix}{Rejected, inconclusive, control-only, and prospective evidence stays visible}
+
+{\fontsize{6.65}{8.0}\selectfont
+\begin{tabularx}{\textwidth}{p{0.09\textwidth} p{0.17\textwidth} p{0.22\textwidth} p{0.12\textwidth} Y}
+\toprule
+\rowcolor{ICNavy!9}ID / sleeve & Economic mechanism & Historical evidence result & Status & Required next gate \\
+\midrule
+H-001 H.10 & Broad USD moves can affect reported growth and management framing. & Only strict-PIT historical signal. Direction: \HtenHits\ overall; \HtenEarlyHits\ early, weakening to \HtenLaterHits\ later. No walk-forward magnitude test. & \status{ICAmber}{WEAK / UNSTABLE} & Preregistered folds versus seasonal and prior-quarter baselines; test residual magnitude and regimes. \\
+H-002 ECB FX & EUR/USD translation and European demand proxy. & Economically coherent, but exact initial publication timestamps are unresolved; sensitivity timing cannot establish eligibility. & \status{ICRed}{INELIGIBLE} & Defensible historical release-time archive. \\
+H-003 BLS lodging CPI & U.S. lodging pricing can inform ADR and substitution. & Historical release timestamps/vintages not independently verified; current API values cannot be backfilled. & \status{ICRed}{INELIGIBLE} & Source-bound historical vintage calendar. \\
+H-004 WSF & Ferry activity may proxy a narrow travel corridor. & Automated path/permission gate failed; no lawful edge observations. & \status{ICRed}{STOP} & Explicit permission and decision-relevant breadth. \\
+H-005 Orange County TDT & Local transient-tax receipts can proxy lodging spend. & Collection/vintage and narrow-geography limitations prevent a comparable history. & \status{ICRed}{STOP} & Lawful vintages, wider geography, and mapped lags. \\
+H-006 NYC OSE & Enforcement can constrain legal short-term-rental supply. & Regulatory control only. The available vintage covers \OseCoveredEvents\ later events--far below a predictive regime history. & \status{ICAmber}{CONTROL ONLY} & Multiple comparable policy transitions and supply linkage. \\
+U.S./Europe & Airport activity plus European platform nights can proxy demand. & Strong retrospective level relationship; all historical rows are current-snapshot diagnostics, not strict PIT. SFO is too narrow for the U.S. sleeve. & \status{ICAmber}{PROSPECTIVE} & Archive native releases; broaden U.S. airport coverage. \\
+50-source panel & Breadth can reveal robust cross-geography activity. & Valuable hypothesis inventory, but many Eurostat products are not independent providers and snapshots cannot be retroactively promoted. & \status{ICAmber}{INVENTORY} & Predeclare features, vintages, redundancy and promotion gates. \\
+\bottomrule
+\end{tabularx}}
+
+\Section{How to read a stop}
+\begin{tabularx}{\textwidth}{p{0.17\textwidth} Y Y}
+\rowcolor{ICRed!7}\textcolor{ICRed}{\bfseries Rejected} & Fails permission, timestamp, manifest, or cutoff. & Retain row plus exact rejection reason; exclude from modeling. \\
+\rowcolor{ICAmber!7}\textcolor{ICAmber}{\bfseries Inconclusive} & Mechanism is plausible, evidence cannot decide. & Preserve hypothesis; do not score as a miss or a hit. \\
+\rowcolor{ICNavy!7}\textcolor{ICNavy}{\bfseries Control-only} & Relevant to risk/regime but lacks predictive history. & Use as a qualitative constraint, never a trained feature. \\
+\rowcolor{ICGreen!7}\textcolor{ICGreen}{\bfseries Prospective} & Can become eligible only after future releases are timestamped and archived. & Freeze now; evaluate only after enough out-of-sample events. \\
+\end{tabularx}
+
+\Callout{ICRed}{Non-negotiable: no present-day snapshot, reconstructed release time, or later-restated estimate may be represented as evidence available at a past forecast cutoff.}
+
+\vfill
+{\scriptsize\color{ICMuted}\textbf{Portfolio of failed ideas.} Preserving stops prevents repeated work, selection bias, and the quiet deletion of negative research. It is part of the process edge.}
+
+\clearpage
+
+% PAGE 5
+\PageTitle{Correlation contrast}{Strong activity-to-guidance association; weak direct guidance-to-return link}
+
+\Callout{ICRed}{\textbf{RETROSPECTIVE DIAGNOSTIC -- ZERO STRICT-PIT ROWS -- NOT ALPHA.} Revenue-weighted activity composite versus guidance YoY: Pearson $r=\CompositePearson$, Spearman $\rho=\CompositeSpearman$, $n=\CompositeN$.}
+
+\vspace{1pt}
+\includegraphics[width=\textwidth]{correlation_contrast.pdf}
+
+{\fontsize{6.8}{8.15}\selectfont
+\begin{tabularx}{\textwidth}{p{0.28\textwidth} p{0.12\textwidth} p{0.1\textwidth} Y}
+\toprule
+\rowcolor{ICNavy!9}Diagnostic & Result & Sample & Interpretation / limitation \\
+\midrule
+Revenue-weighted composite vs guidance YoY & $r=\CompositePearson$; $\rho=\CompositeSpearman$ & $n=\CompositeN$ & Strong level association, but only \CompositeLiftEqual\ Pearson above 50/50 and \CompositeLiftSfo\ above SFO; \StrictPitRows\ strict-PIT rows. \\
+Composite level vs guidance acceleration & $r=\CompositeAccelerationPearson$; $\rho=\CompositeAccelerationSpearman$ & $n=15$ & Negative relationship: the level fit does not transfer to changes in growth. \\
+Acceleration direction concordance & \DirectionConcordance & $n=15$ & Near coin-flip directional agreement. \\
+Guidance YoY vs excess return & $r=\GuidanceReturnPearson$ & $n=\GuidanceReturnN$ & Weak direct mapping from guidance growth to ABNB minus SPY next-close return. \\
+Guidance acceleration vs excess return & $r=\AccelerationReturnPearson$ & $n=\AccelerationReturnN$ & Also weak. \\
+Sequential guidance pct. change vs excess return & $r=\SequentialReturnPearson$ & $n=\SequentialReturnN$ & Seasonal quarter mix dominates raw sequential changes. Direction aligns only \DirectionAlignment\ (\DirectionAlignmentRate). \\
+\bottomrule
+\end{tabularx}}
+
+\vspace{2pt}
+\includegraphics[width=\textwidth]{guidance_vs_stock_performance.pdf}
+
+\vspace{1pt}
+\includegraphics[width=\textwidth]{event_excess_returns.pdf}
+
+\vspace{-2pt}
+{\scriptsize\color{ICMuted}\textbf{Return panel.} Across \GuidanceEvents\ events, mean ABNB return is \MeanAbnbReturn; mean excess return is \MeanExcessReturn; median excess return is \MedianExcessReturn. These unconditional summaries do not establish tradability and are visibly dominated by event dispersion.}
+
+\clearpage
+
+% PAGE 6
+\PageTitle{Where the investable edge must come from}{Forecast the residual, define the surprise, then price the state}
+
+\Section{1. Remove the easy seasonal level}
+\begin{align*}
+G_t &= \widehat{G}^{\mathrm{outside}}_t + \Delta^{\mathrm{policy}}_t + \varepsilon_t,\\[-2pt]
+\text{research target} \quad R^G_t &= G_t-\widehat{G}^{\mathrm{outside}}_t.
+\end{align*}
+The outside view includes same-guided-quarter seasonality, prior guidance, historical range width, eligible macro/travel inputs, and source-bound policy priors. Candidate features must improve the out-of-sample distribution of $R^G_t$, not merely track raw $G_t$.
+
+\Section{2. Compare like-for-like with contemporaneous expectations}
+\begin{equation*}
+s^{\mathrm{guide}}_t = \frac{\widehat{G}_t-C^{\mathrm{guide}}_t}{\mathrm{scale}(C_t)},
+\qquad
+s^{\mathrm{actual}}_t = \frac{A_t-C^{\mathrm{actual}}_t}{\mathrm{scale}(C_t)}.
+\end{equation*}
+Consensus $C_t$ must match metric, guided period, currency basis, and publication cutoff. Estimate dispersion and revision path matter because identical midpoint surprises can carry different information content.
+
+\Section{3. Price the joint surprise vector, not a single headline}
+\begin{equation*}
+\mathbf{s}_t=
+\begin{bmatrix}s^{\mathrm{actual}}_t & s^{\mathrm{guide}}_t\end{bmatrix},
+\qquad
+r^{\mathrm{excess}}_{t+1}\sim
+f\!\left(\mathbf{s}_t,\ \mathrm{positioning}_t,\ \mathrm{implied\ move}_t,\
+\mathrm{valuation}_t,\ \mathrm{macro\ regime}_t\right).
+\end{equation*}
+This structure permits beat/raise, beat/cut, miss/raise, and miss/cut states. It also acknowledges that a ``good'' guide can underperform when already priced or when valuation and macro beta dominate.
+
+\Section{4. Keep decisions downstream of distributions}
+\begin{tabularx}{\textwidth}{p{0.2\textwidth} Y Y}
+\toprule
+\rowcolor{ICNavy!9}Decision input & Required representation & Kill condition \\
+\midrule
+Operating state & P10/P50/P90 for nights, ADR, GBV, take rate, revenue, margins & No eligibility-complete bridge from evidence to operations \\
+Guidance & P10/P50/P90, expected range width, policy bridge & No OOS residual lift over named baselines \\
+Expectations & PIT midpoint, dispersion, revisions, comparability & Restated or post-cutoff consensus \\
+Reaction & Conditional downside/base/upside and benchmark excess return & Missing comparable surprise and market-state history \\
+Position & Direction, size, horizon, stop/falsifier, implied-move hurdle & Expected edge does not exceed uncertainty and execution costs \\
+\bottomrule
+\end{tabularx}
+
+\Callout{ICAmber}{Raw guidance changes are seasonally distorted. They are useful descriptive fields, but they are not substitutes for consensus surprise and should not drive a position directly.}
+
+\vfill
+{\scriptsize\color{ICMuted}\textbf{Core falsifier.} If eligible features cannot produce stable out-of-sample residual improvement after matching seasons and regimes, the information-edge thesis fails even if in-sample level correlations remain high.}
+
+\clearpage
+
+% PAGE 7
+\PageTitle{Ranked research roadmap}{Sequence the missing evidence before fitting a reaction model}
+
+{\fontsize{7.15}{8.6}\selectfont
+\begin{tabularx}{\textwidth}{p{0.045\textwidth} p{0.245\textwidth} p{0.25\textwidth} Y}
+\toprule
+\rowcolor{ICNavy!9}Rank & Workstream & Deliverable & Promotion gate \\
+\midrule
+\textbf{1} & Build point-in-time consensus and estimate-dispersion history. & Timestamped metric/period-matched consensus snapshots, revision paths, and dispersion with provenance. & Comparable availability before every event cutoff; no later-restated values. \\
+\textbf{2} & Populate source-bound management-policy features. & Structured features from eligible SEC exhibits, letters, and pre-cutoff transcripts: conservatism, cadence, range width, named headwinds, wording changes. & Definitions frozen before scoring; target-event leakage excluded. \\
+\textbf{3} & Run the preregistered H.10 walk-forward test. & Fold-by-fold residual MAE/RMSE, calibration, sign hit rate, and regime stability versus seasonal and prior-quarter baselines. & Stable out-of-sample residual improvement; not a one-regime directional count. \\
+\textbf{4} & Prospectively archive accommodation-native European releases. & Release-native files, exact first-availability timestamps, hashes, revisions, geographic mapping, and lags. & Enough eligible events to assess incremental residual value. \\
+\textbf{5} & Broaden the U.S. airport sleeve beyond SFO. & Predeclared multi-airport demand/capacity composite with population, route, and geography coverage controls. & Improvement over simple/broad baselines survives leave-one-airport-out tests. \\
+\textbf{6} & Fit a reaction model only after the upstream history exists. & Comparable actual/guidance surprises, consensus dispersion, implied move, valuation, positioning proxies, ABNB/SPY returns. & Frozen specification; honest test window; decision-relevant net edge after uncertainty. \\
+\bottomrule
+\end{tabularx}}
+
+\Section{Promotion ladder}
+\begin{center}
+\setlength{\fboxsep}{5pt}
+\colorbox{ICLight}{\parbox{0.16\textwidth}{\centering\bfseries Hypothesis\\\scriptsize mechanism + sign}}
+$\rightarrow$
+\colorbox{ICLight}{\parbox{0.16\textwidth}{\centering\bfseries Eligible data\\\scriptsize PIT + source-bound}}
+$\rightarrow$
+\colorbox{ICLight}{\parbox{0.16\textwidth}{\centering\bfseries Residual lift\\\scriptsize OOS vs baseline}}
+$\rightarrow$
+\colorbox{ICLight}{\parbox{0.16\textwidth}{\centering\bfseries Stable feature\\\scriptsize regimes + sensitivity}}
+$\rightarrow$
+\colorbox{ICLight}{\parbox{0.16\textwidth}{\centering\bfseries Decision input\\\scriptsize surprise + hurdle}}
+\end{center}
+
+\Section{Minimum evidence packet for every feature}
+\begin{tabularx}{\textwidth}{Y Y Y}
+\rowcolor{ICNavy!8}\textbf{Definition and mechanism} & \textbf{Time and provenance} & \textbf{Test and decision} \\
+Metric, unit, geography, expected sign, lag, frequency, coverage, transformations. & Reference period, first availability, revision/vintage, collection time, source ID, manifest status, checksum. & Named baseline, preregistered folds, missingness policy, stability checks, residual metric, promotion threshold, falsifier. \\
+\end{tabularx}
+
+\Section{Research resource allocation}
+\begin{tabularx}{\textwidth}{p{0.17\textwidth} Y}
+\textcolor{ICGreen}{\bfseries Highest value} & Consensus history and management-policy features close the two largest missing links between operating evidence, guidance surprise, and equity reaction. \\
+\textcolor{ICAmber}{\bfseries Medium value} & Prospective travel-native preservation creates future eligibility but cannot repair the historic sample today. \\
+\textcolor{ICRed}{\bfseries Lowest value now} & More undifferentiated scraping or a premature nonlinear reaction model increases feature count without solving vintage, comparability, or sample-size constraints. \\
+\end{tabularx}
+
+\Callout{ICNavy}{Promote a feature only after stable out-of-sample residual improvement. A high contemporaneous correlation, a plausible mechanism, or a broad source panel is not a promotion gate.}
+
+\clearpage
+
+% PAGE 8
+\PageTitle{Reusable pre-earnings IC template}{One packet from event definition to go/no-go decision}
+
+{\fontsize{6.75}{8.05}\selectfont
+\begin{tabularx}{\textwidth}{p{0.13\textwidth} p{0.35\textwidth} p{0.13\textwidth} Y}
+\toprule
+\rowcolor{ICNavy!9}Field & Required entry & Field & Required entry \\
+\midrule
+Event & Issuing quarter, event UTC, guided period, target metric/unit & Cutoff & Offset-aware $as\_of\_utc$; version, run ID, parent ID \\
+Eligible evidence & Approved manifest IDs and accepted rows; rejected rows/reasons attached & Operating P10/50/90 & Nights, ADR, GBV, take rate, revenue, margins; bridge from baseline \\
+Guidance distribution & P10/P50/P90, expected low/high, range width, policy adjustments & Consensus & PIT midpoint, dispersion, revisions, comparability and source packet \\
+Surprise vector & Actual and guide surprises for matched metrics/periods & Reaction distribution & Down/base/up excess return, horizon, benchmark, key conditionals \\
+Implied move & Options-implied hurdle and timestamp & Position & Direction, size, entry, horizon, loss budget, no-trade zone \\
+Risks & Data, model, policy, regime, crowding, valuation, execution & Falsifiers & Evidence or outcomes that invalidate the thesis before/after event \\
+\bottomrule
+\end{tabularx}}
+
+\SmallSection{Go / no-go gates}
+\begin{tabularx}{\textwidth}{p{0.17\textwidth} p{0.12\textwidth} Y}
+\rowcolor{ICNavy!8}\textbf{Gate} & \textbf{Decision} & \textbf{Required evidence} \\
+Eligibility & GO / NO-GO & Every modeled row approved, fully defined, and first available strictly before cutoff; rejects retained. \\
+Minimum sample & GO / HOLD & Preregistered minimum for the feature and test design is met; descriptive $n$ alone does not count as test folds. \\
+Baseline lift & GO / NO-GO & Stable OOS improvement in residual loss/calibration versus seasonal and prior-quarter baselines. \\
+Stability & GO / HOLD & Sign, magnitude, and error distribution survive time/regime/geography sensitivity checks. \\
+Decision relevance & TRADE / NO-TRADE & Surprise is material versus consensus dispersion and implied move after positioning, valuation, and risk. \\
+\end{tabularx}
+
+\SmallSection{Compact chronology and required stops}
+{\fontsize{6.55}{7.75}\selectfont
+\begin{tabularx}{\textwidth}{p{0.16\textwidth} Y}
+\textbf{Phase A -- readiness} & Preserved the 23-event target panel, defined strict PIT fields, replayed H.10/ECB/BLS candidates, and separated eligibility from sensitivity assumptions. \\
+\textbf{E0 -- discovery slate} & Screened the initial multi-source hypothesis inventory; exact lawful collection paths did not produce promotable historical edge observations. \\
+\textbf{E1 -- source tests} & Retained source-level outcomes, rejections, and control-only results rather than forcing a winner. \\
+\textbf{Broad scrape} & Expanded observation breadth under source governance; current snapshots remained prospective and could not be backfilled as PIT. \\
+\textbf{50-source expansion} & Added many Eurostat product views; breadth increased, provider independence and vintage eligibility did not. \\
+\textbf{U.S./Europe comparison} & Found the $r=\CompositePearson$ level diagnostic, but \StrictPitRows\ strict-PIT rows, weak acceleration behavior, and only marginal lift over simpler sleeves. \\
+\textbf{Stops enforced} & Permission, publication-time, vintage, geographic breadth, and regime-history failures stopped promotion. OSE stayed a regulatory control. \\
+\end{tabularx}}
+
+\SmallSection{Compact source notes}
+{\fontsize{5.75}{6.8}\selectfont\color{ICMuted}
+\textbf{Public anchors:} Airbnb guidance targets are source-bound to SEC exhibits and releases (\url{https://www.sec.gov/edgar/browse/?CIK=1559720}); Federal Reserve H.10 dated releases (\url{https://www.federalreserve.gov/releases/h10/}); Eurostat data browser (\url{https://ec.europa.eu/eurostat/databrowser/}); SFO Open Data (\url{https://data.sfgov.org/}).
+
+\textbf{Auditable local artifacts:} \path{outputs/01a065f3-9f9d-7c33-a034-621059cc8c6f/ABNB_edge_guidance_stock_reaction.xlsx}; \path{outputs/01a065f3-9f9d-7c33-a034-621059cc8c6f/abnb_us_europe_guidance_panel.csv}; \path{research/readiness/20260903T053309Z_abnb_readiness/cohort_2020q4_2023q2_replay.csv}; \path{research/readiness/20260903T053309Z_abnb_readiness/cohort_2023q3_2026q2_replay.csv}. Displayed statistics, source hashes, and contract checks are emitted in \path{docs/forecasting/abnb_ic_brief/generated/metrics.json}.
+}
+
+\vfill
+\Callout{ICNavy}{IC output: an auditable probability distribution, an explicit comparison with expectations, and a position only if evidence, baseline, stability, and decision-relevance gates all pass.}
+
+\end{document}

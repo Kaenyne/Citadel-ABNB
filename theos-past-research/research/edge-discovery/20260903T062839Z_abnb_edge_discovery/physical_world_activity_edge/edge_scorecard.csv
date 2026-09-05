@@ -1,0 +1,11 @@
+rank,source_id,causal_proximity_20,pit_vintage_defensibility_20,differentiation_underuse_15,geographic_scalability_15,frequency_lead_time_10,permission_license_clarity_10,operational_reliability_5,free_low_cost_5,total_100,status,scoring_note
+1,WSF_FERRY_RIDERSHIP,18,18,13,7,7,5,4,5,77,backtestable_now,"Route-level rider segments and dated quarterly PDFs are unusually close to island visitation; geographic ceiling and automation-permission gap limit score"
+2,NASA_BLACK_MARBLE_VNP46A2,8,16,15,15,10,8,3,5,80,pending_sync,"Global daily archive with granule metadata is scalable and differentiated, but activity interpretation is indirect and Earthdata authentication is required"
+3,NOAA_HMS_SMOKE,11,12,13,15,10,8,3,5,77,pending_permission,"Daily disruption coverage and explicit cadence are strong; regenerated archives and satellite-regime changes reduce strict vintage confidence"
+4,NPS_VISITOR_USE,15,10,10,14,6,8,3,5,71,pending_permission,"Direct recreation visits across 400-plus parks; preliminary values revise until annual finalization and the current API is not a vintage store"
+5,FTA_NTD_MONTHLY_RIDERSHIP,11,11,8,15,5,8,4,5,67,pending_permission,"Broad U.S. scale and fixed release schedule, but two-month lag and agency/mode rather than station detail weaken causal proximity"
+6,TFL_CYCLE_HIRE_TRIPS,14,10,11,5,9,3,4,5,61,pending_permission,"Weekly journey-level tourist-zone activity is differentiated; one-city scope and unresolved terms applicability constrain use"
+7,MELB_PED_HOURLY,16,7,14,4,8,1,3,5,58,pending_permission,"Direct dense-city activity and long hourly history; portal terms are undefined and current history lacks true publication vintages"
+8,MARINECADASTRE_AIS,13,7,15,11,3,7,1,5,62,prospective_only,"Passenger-vessel movement is highly differentiated, but the subset service is unavailable and annual bulk timing is too late or unclear for quarterly cutoffs"
+9,CDOT_CONTINUOUS_COUNTS,14,6,13,5,10,2,2,5,57,pending_permission,"Resort-ingress corridors are causally appealing; raw station QA, outages, unknown history start, and no vintage publication evidence dominate"
+10,NYC_311_TOURISM_STRESS,10,7,12,5,10,8,3,5,60,prospective_only,"Daily no-PII complaint events are novel but reflect reporting/enforcement behavior and mutable fields rather than visitor counts"

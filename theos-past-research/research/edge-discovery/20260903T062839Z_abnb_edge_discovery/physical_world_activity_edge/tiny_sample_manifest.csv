@@ -1,0 +1,11 @@
+sample_id,source_id,planned_requests,actual_requests,collection_allowed,outcome,http_status,artifact_path,sha256,collected_at_utc,reason
+TS-PW-001,WSF_FERRY_RIDERSHIP,2,0,false,not_collected_gate_denied,,,,,"Terms and robots permission were unclear"
+TS-PW-002,NPS_VISITOR_USE,2,0,false,not_collected_gate_denied,,,,,"Robots permission was unclear"
+TS-PW-003,FTA_NTD_MONTHLY_RIDERSHIP,2,0,false,not_collected_gate_denied,,,,,"Robots permission was unclear"
+TS-PW-004,NOAA_HMS_SMOKE_FIRE,2,0,false,not_collected_gate_denied,,,,,"Robots permission was unclear"
+TS-PW-005,MELBOURNE_PEDESTRIAN_COUNTS,2,0,false,not_collected_gate_denied,,,,,"Terms and robots permission were unclear"
+TS-PW-006,NYC_311_SERVICE_REQUESTS,2,0,false,not_collected_gate_denied,,,,,"Robots permission was unclear; privacy-minimizing field selection also remains mandatory"
+TS-PW-007,MARINE_CADASTRE_AIS,2,0,false,not_collected_gate_denied,,,,,"Robots permission was unclear and AccessAIS ordering was unavailable"
+TS-PW-008,NASA_BLACK_MARBLE_VNP46A2,2,0,false,not_collected_gate_denied,,,,,"Earthdata authentication was not synced and robots permission was unclear"
+TS-PW-009,CDOT_CONTINUOUS_TRAFFIC_COUNTS,2,0,false,not_collected_gate_denied,,,,,"Terms and robots permission were unclear"
+TS-PW-010,TFL_SANTANDER_CYCLE_HIRES,2,0,false,not_collected_gate_denied,,,,,"Terms and robots permission were unclear"

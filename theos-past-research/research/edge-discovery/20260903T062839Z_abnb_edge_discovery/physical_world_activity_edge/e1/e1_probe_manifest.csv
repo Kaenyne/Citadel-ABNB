@@ -1,0 +1,11 @@
+probe_id,source_id,exact_registered_url,assessment_allowed,planned_request_count,actual_request_count,outcome,http_status,content_type,cached_artifact_path,sha256,requested_at_utc,stopped_without_retry,stop_reason
+E1-PROBE-PW-001,WSF_FERRY_RIDERSHIP,https://wsdot.wa.gov/travel/washington-state-ferries/about-us/ferries-accountability-and-service-data/ridership-data,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: terms and robots ambiguous"
+E1-PROBE-PW-002,NPS_VISITOR_USE,https://irmaservices.nps.gov/v3/rest/Stats/help,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: robots ambiguous"
+E1-PROBE-PW-003,FTA_NTD_MONTHLY_RIDERSHIP,https://www.transit.dot.gov/ntd/monthly-ridership,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: robots ambiguous"
+E1-PROBE-PW-004,NOAA_HMS_SMOKE,https://www.ospo.noaa.gov/products/land/hms.html,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: robots ambiguous"
+E1-PROBE-PW-005,MELB_PED_HOURLY,https://data.melbourne.vic.gov.au/explore/dataset/pedestrian-counting-system-monthly-counts-per-hour/information/,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: terms and robots ambiguous"
+E1-PROBE-PW-006,NYC_311_TOURISM_STRESS,https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: robots ambiguous"
+E1-PROBE-PW-007,MARINECADASTRE_AIS,https://marinecadastre.gov/ais/,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: robots ambiguous; AccessAIS service previously evidenced unavailable"
+E1-PROBE-PW-008,NASA_BLACK_MARBLE_VNP46A2,https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5000/VNP46A2/,false,0,0,not_testable,,,,,,true,"Authenticated source expressly excluded; robots also ambiguous"
+E1-PROBE-PW-009,CDOT_CONTINUOUS_COUNTS,https://dtdapps.codot.gov/otis/trafficdata,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: terms and robots ambiguous"
+E1-PROBE-PW-010,TFL_CYCLE_HIRE_TRIPS,https://cycling.data.tfl.gov.uk/,false,1,0,not_testable,,,,,,true,"Pre-request gate denied: conflicting terms applicability and robots ambiguity"
