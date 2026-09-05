@@ -9,6 +9,9 @@
 | processed/abnb_edgar_quarterly_kpis.csv | SEC EDGAR XBRL companyfacts, CIK 1559720 | Theo (Claude Code) | 2026-09-05 | 20 quarterly revenue + 23 deferred-revenue points, 2020Q1-2026Q2. Public domain. Rebuild: `python analysis/src/acquisition/run_edgar_filings.py`. |
 | processed/abnb_filing_kpis.csv | ABNB 10-Q/10-K primary documents (SEC EDGAR) | Theo (Claude Code) | 2026-09-05 | 368 KPI sentences from 14 filings 2023Q1-2026Q2, tagged nights_booked/gbv/adr/rnpl, 50 carrying figures. Evidence-grade not series-grade: the clean KPI tables are HTML tables, not prose. Public domain. |
 | manifests/*.csv | Acquisition provenance for every file pulled | Theo (Claude Code) | 2026-09-05 | Append-only logs: source, URL, HTTP status, byte count, SHA-256, licence tier. Bulk data itself lives on an external volume - see below. |
+| processed/booking_curves_by_market.csv | Derived from 588M Inside Airbnb calendar rows | Theo (Claude Code) | 2026-09-05 | 600 rows: blocked-night rate by market x snapshot x horizon bucket (0-30/31-60/61-90/91-180/181-372 days ahead), 120 markets, 35 countries. Rebuild: `python analysis/src/build_booking_curves.py`. **blocked_rate is a bounded proxy - `available='f'` conflates booked, host-blocked and inactive. Never call it occupancy.** |
+| processed/booking_curve_daily.csv | Same source, daily granularity | Theo (Claude Code) | 2026-09-05 | 44,379 rows: blocked rate by market x snapshot x days_ahead (0-372). Same caveat. |
+| processed/market_summary_2026.csv | Inside Airbnb listings, 2026 vintage (incl. frozen v1, read-only) | Theo (Claude Code) | 2026-09-05 | 120 markets: listings, hosts, entire-home/multi-host/superhost/licence-disclosure shares, median asking price (native currency, no FX), availability, review flow, ratings. Rebuild: `python analysis/src/build_market_summary.py`. |
 
 `raw/` is gitignored except this log - put the actual files in the shared Drive if they're large or licensed, and record them here.
 `processed/` files should be reproducible by running something in `analysis/src/`.
@@ -20,7 +23,7 @@ external volume and are fully described by `data/manifests/`, with a SHA-256 for
 
 | Cohort | Scope | Size | Licence |
 |---|---|---|---|
-| Inside Airbnb current | 120 markets incl. **all 34 US**, listings + calendar + reviews | ~10 GB | CC BY 4.0 |
+| Inside Airbnb current | 120 markets incl. **all 34 US**, listings + calendar + reviews (calendars are 5-col: NO price) | ~10 GB | CC BY 4.0 |
 | Municipal STR registries | 25 datasets, 17 portals, 109,343 rows. Austin daily active-STR counts (527 dates); California TOT, 482 cities x 8 fiscal years | 28 MB | Open government |
 | Eurostat `tour_ce_*` | Platform-sourced guest nights/stays, 32 countries, 2018-2026 monthly, NUTS 1/2/3 + cities | 6.8 MB | Eurostat re-use |
 | FRED | 10 macro series incl. CPI lodging-away-from-home (ADR proxy) and trade-weighted USD | 1.1 MB | Public domain |
@@ -39,3 +42,17 @@ licensed content is in this public repo.
   paced retries as a source decision, logged and respected.
 - TSA passenger volumes returns 403 to non-browser clients; FRED air revenue passenger miles
   is used instead rather than spoofing a user agent.
+
+### Correction 2026-09-05: current calendars carry no price
+
+Inside Airbnb's **2026** `calendar.csv.gz` has 5 columns -
+`listing_id, date, available, minimum_nights, maximum_nights`. **There is no price column.**
+Verified across 8 markets on 3 continents. The 2019-20 legacy files had 7 columns and did
+carry price; do not generalise from them.
+
+Consequence: **realised ADR is not obtainable** from this data. `listings.price` is an
+*asking* price for a single scrape date (~76% populated, format `$1,234.56`) and must never
+be presented as ADR or reconciled to the company's reported ADR without stating the gap.
+
+What calendars DO give is a **372-day forward booking curve** per listing - see
+`processed/booking_curves_by_market.csv`.
