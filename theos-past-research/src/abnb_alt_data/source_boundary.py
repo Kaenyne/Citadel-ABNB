@@ -145,6 +145,14 @@ def _main_exclusion(relative: Path) -> tuple[str, str] | None:
 def _omission_reference(relative: Path, classification: str) -> tuple[str, str]:
     normalized = destination_path("main", relative)
     value = normalized.as_posix()
+    physical_permission_base = (
+        "research/edge-discovery/20260903T062839Z_abnb_edge_discovery/"
+        "physical_world_activity_edge/permission_resolution"
+    )
+    supply_permission_base = (
+        "research/edge-discovery/20260903T062839Z_abnb_edge_discovery/"
+        "supply_scarcity_web_edge/permission_resolution"
+    )
     if relative == PANEL:
         base = "research/edge-discovery/20260903T211121Z_50_source_expansion"
         return (
@@ -165,6 +173,27 @@ def _omission_reference(relative: Path, classification: str) -> tuple[str, str]:
         return (
             f"{base}/build_postfreeze_replay.mjs",
             f"node {base}/build_postfreeze_replay.mjs",
+        )
+    if value.startswith(f"{physical_permission_base}/cache/data_probe/"):
+        return (
+            f"{physical_permission_base}/data_probe_results.csv",
+            "Reacquisition requires explicit authorization; then run "
+            f"python {physical_permission_base}/run_data_probe.py and audit the "
+            "tracked results ledger.",
+        )
+    if value.startswith(f"{physical_permission_base}/cache/"):
+        return (
+            f"{physical_permission_base}/permission_recon_retry_results.csv",
+            "Reacquisition requires explicit authorization; then run "
+            f"python {physical_permission_base}/run_permission_recon_retry.py and "
+            "audit the tracked results ledger.",
+        )
+    if value.startswith(f"{supply_permission_base}/cache/"):
+        return (
+            f"{supply_permission_base}/permission_recon_results.csv",
+            "Reacquisition requires explicit authorization; then run "
+            f"python {supply_permission_base}/run_permission_recon.py and audit the "
+            "tracked results ledger.",
         )
     if "20260903T204950Z_broad_scrape" in value:
         base = "research/edge-discovery/20260903T204950Z_broad_scrape"
@@ -195,7 +224,9 @@ def _omission_reference(relative: Path, classification: str) -> tuple[str, str]:
         return f"{base}/postfreeze_event_replay.csv", f"node {base}/build_postfreeze_replay.mjs"
     if classification == "excluded_nonportable_metadata":
         return "research/provenance/source-boundary-inventory.csv", "No reconstruction required."
-    return "", ""
+    raise ValueError(
+        f"No omission reference for {relative.as_posix()} ({classification})"
+    )
 
 
 def _row(
