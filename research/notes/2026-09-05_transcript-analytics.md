@@ -1,6 +1,6 @@
 # ABNB earnings calls: who asks, what they ask, and what management will not put a number on
 
-- **Sources:** all 23 earnings-call transcripts Q4 2020 to Q2 2026. Official FactSet corrected transcripts from the Airbnb IR CDN for Q4 2021 and Q1 2023 to Q2 2026 (15 calls); stockanalysis.com web transcripts for Q4 2020 to Q4 2022 (8 calls). Source IDs S31 and S32 in `research/sources/README.md`. Raw text sits in `data/raw/transcripts/` (gitignored).
+- **Sources:** all 23 earnings-call transcripts Q4 2020 to Q2 2026. Official FactSet corrected transcripts from the Airbnb IR CDN for Q4 2021 and Q1 2023 to Q2 2026 (15 calls); stockanalysis.com web transcripts for Q4 2020 to Q4 2022 (8 calls). Source IDs S35 and S36 in `research/sources/README.md`. Raw text sits in `data/raw/transcripts/` (gitignored).
 - **Date:** 2026-09-05
 - **Author:** Krishang Surapaneni (compiled with Claude Code)
 - **Datasets:** `data/processed/abnb_call_roster.csv`, `abnb_call_roster_churn.csv`, `abnb_call_topics.csv`, `abnb_declined_to_quantify.csv`. All four rebuild with `python analysis/src/transcript_analytics.py`.
