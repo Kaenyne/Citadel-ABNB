@@ -3,21 +3,27 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
 
-const outputDir = path.dirname(fileURLToPath(import.meta.url));
-const workspace = path.resolve(outputDir, "../../..");
-const outputPath = path.join(outputDir, "ABNB_edge_guidance_stock_reaction.xlsx");
-const previewDir = path.join(outputDir, "previews");
+const reproducibilityDir = path.dirname(fileURLToPath(import.meta.url));
+const workspace = path.resolve(reproducibilityDir, "../../..");
+const outputPath = path.join(workspace, "outputs", "workbooks", "ABNB_edge_guidance_stock_reaction.xlsx");
+const previewDir = path.join(reproducibilityDir, "previews");
 
+const logicalSourcePaths = {
+  guidance: "research/readiness/20260903T053309Z_abnb_readiness/target_panel.csv",
+  transcriptIndex: "research/transcripts/transcript_index.csv",
+  edge: "research/edge-discovery/20260903T062839Z_abnb_edge_discovery/permission_resolution/browser_acquisition/browser_observations.csv",
+  hypothesisLedger: "research/hypothesis_ledger.csv",
+};
 const paths = {
-  guidance: path.join(workspace, "research/readiness/20260903T053309Z_abnb_readiness/target_panel.csv"),
-  transcriptIndex: path.join(workspace, "research/transcripts/transcript_index.csv"),
-  edge: path.join(workspace, "research/edge-discovery/20260903T062839Z_abnb_edge_discovery/permission_resolution/browser_acquisition/browser_observations.csv"),
-  hypothesisLedger: path.join(workspace, "research/hypothesis_ledger.csv"),
-  nasdaqAbnb: path.join(outputDir, "abnb_nasdaq_history.json"),
-  nasdaqSpy: path.join(outputDir, "spy_nasdaq_history.json"),
+  guidance: path.join(workspace, logicalSourcePaths.guidance),
+  transcriptIndex: path.join(workspace, logicalSourcePaths.transcriptIndex),
+  edge: path.join(workspace, logicalSourcePaths.edge),
+  hypothesisLedger: path.join(workspace, logicalSourcePaths.hypothesisLedger),
+  nasdaqAbnb: path.join(reproducibilityDir, "abnb_nasdaq_history.json"),
+  nasdaqSpy: path.join(reproducibilityDir, "spy_nasdaq_history.json"),
 };
 
-await fs.mkdir(outputDir, { recursive: true });
+await fs.mkdir(path.dirname(outputPath), { recursive: true });
 await fs.mkdir(previewDir, { recursive: true });
 
 const [guidanceCsv, transcriptCsv, edgeCsv, abnbJsonText, spyJsonText] = await Promise.all([
@@ -772,11 +778,11 @@ const sourceRows = [
   ["EDGE_MELBOURNE", "Edge data", "City of Melbourne", "Pedestrian counting system", "https://data.melbourne.vic.gov.au/", "2026-09-03", "Open data portal", "Prospective physical-activity monitoring", "Coverage differs by year and sensor availability."],
   ["EDGE_NYC311", "Edge data", "NYC Open Data", "311 service requests / tourism-stress aggregate", "https://data.cityofnewyork.us/", "2026-09-03", "NYC Open Data terms", "Prospective monitoring", "Current mutable data; complaints are not bookings."],
   ["EDGE_NYCOSE", "Edge data", "NYC Mayor’s Office of Special Enforcement", "Local Law 87 annual enforcement reports", "https://www.nyc.gov/site/specialenforcement/reporting-law.page", "2024 report: 2025-09-01; 2025 report: 2026-09-01", "Public official reports", "Limited historical comparison and prospective monitoring", "Only one annual report was available before any covered ABNB event."],
-  ["GUIDANCE_PANEL", "Guidance", "Airbnb / SEC", "Point-in-time target panel", paths.guidance, "As preserved in panel", "Public filings / investor materials", "Guidance ranges, cutoffs, and citations", "Transcript fact tables are empty; guidance is anchored to preserved SEC/Airbnb evidence."],
-  ["TRANSCRIPT_INDEX", "Transcript metadata", "User-provided FactSet CallStreet files", "Transcript index", paths.transcriptIndex, "Indexed 2026-09-03", "User-provided restricted", "Metadata/status only; no long transcript excerpts reproduced", "Published-at timestamps are not independently verified in the index."],
+  ["GUIDANCE_PANEL", "Guidance", "Airbnb / SEC", "Point-in-time target panel", logicalSourcePaths.guidance, "As preserved in panel", "Public filings / investor materials", "Guidance ranges, cutoffs, and citations", "Transcript fact tables are empty; guidance is anchored to preserved SEC/Airbnb evidence."],
+  ["TRANSCRIPT_INDEX", "Transcript metadata", "User-provided FactSet CallStreet files", "Transcript index", logicalSourcePaths.transcriptIndex, "Indexed 2026-09-03", "User-provided restricted", "Metadata/status only; no long transcript excerpts reproduced", "Published-at timestamps are not independently verified in the index."],
   ["NASDAQ_ABNB", "Market data", "Nasdaq", "ABNB historical quotes", "https://www.nasdaq.com/market-activity/stocks/abnb/historical", "Retrieved 2026-09-03", "Free public historical page", "ABNB daily closes and volumes", "Unadjusted displayed closes; close-to-next-close event study only."],
   ["NASDAQ_SPY", "Market data", "Nasdaq", "SPY historical quotes", "https://www.nasdaq.com/market-activity/etf/spy/historical", "Retrieved 2026-09-03", "Free public historical page", "SPY benchmark closes and volumes", "Simple benchmark subtraction is descriptive, not a factor model."],
-  ["HYPOTHESIS_LEDGER", "Governance", "Internal research ledger", "Frozen hypotheses and minimum-evidence gates", paths.hypothesisLedger, "2026-09-03", "Local research artifact", "Eligibility and interpretation rules", "No model fitting or promotion is authorized by this workbook."],
+  ["HYPOTHESIS_LEDGER", "Governance", "Internal research ledger", "Frozen hypotheses and minimum-evidence gates", logicalSourcePaths.hypothesisLedger, "2026-09-03", "Local research artifact", "Eligibility and interpretation rules", "No model fitting or promotion is authorized by this workbook."],
 ];
 sources.getRange(`A3:I${sourceRows.length + 2}`).values = sourceRows;
 bodyStyle(sources.getRange(`A3:I${sourceRows.length + 2}`));

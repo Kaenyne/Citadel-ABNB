@@ -5,6 +5,13 @@ from zipfile import ZipFile
 
 
 ROOT = Path(__file__).resolve().parents[1]
+REACTION_GENERATOR = (
+    ROOT
+    / "outputs"
+    / "reproducibility"
+    / "us-europe-guidance"
+    / "build_abnb_edge_guidance_reaction.mjs"
+)
 
 
 def is_ignored(relative_path: str) -> bool:
@@ -73,6 +80,28 @@ def test_review_workbooks_contain_no_machine_local_paths() -> None:
             )
         assert unix_marker not in xml_text, workbook_path.name
         assert windows_marker not in xml_text, workbook_path.name
+
+
+def test_reaction_generator_uses_tracked_output_and_logical_source_paths() -> None:
+    source = REACTION_GENERATOR.read_text(encoding="utf-8")
+    unix_marker = "/" + "Users/"
+    windows_marker = "C:" + "\\" + "Users" + "\\"
+
+    assert (
+        'const outputPath = path.join(workspace, "outputs", "workbooks", '
+        '"ABNB_edge_guidance_stock_reaction.xlsx");'
+    ) in source
+    for logical_path in (
+        "research/readiness/20260903T053309Z_abnb_readiness/target_panel.csv",
+        "research/transcripts/transcript_index.csv",
+        "research/hypothesis_ledger.csv",
+    ):
+        assert logical_path in source
+    assert "logicalSourcePaths.guidance" in source
+    assert "logicalSourcePaths.transcriptIndex" in source
+    assert "logicalSourcePaths.hypothesisLedger" in source
+    assert unix_marker not in source
+    assert windows_marker not in source
 
 
 def test_scraping_extra_declares_scrapling() -> None:
