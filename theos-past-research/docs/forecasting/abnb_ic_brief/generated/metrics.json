@@ -1,0 +1,70 @@
+{
+  "evidence_cutoff": "2026-09-03",
+  "inputs": [
+    {
+      "path": "outputs/workbooks/ABNB_edge_guidance_stock_reaction.xlsx",
+      "sha256": "596a635753566dbca55f0cd537db3cfc7566a4776e26388ec6e81bc9aebacc62"
+    },
+    {
+      "path": "outputs/reproducibility/us-europe-guidance/abnb_us_europe_guidance_panel.csv",
+      "sha256": "2c17976f37dd64443ee13ffd4439d5971209058944cefa04fd50eb1e2146630d"
+    },
+    {
+      "path": "research/readiness/20260903T053309Z_abnb_readiness/cohort_2020q4_2023q2_replay.csv",
+      "sha256": "8aa15ef0e4ddd5968e393b175cafa36cba25fda4bc7c220586c6297634462d1e"
+    },
+    {
+      "path": "research/readiness/20260903T053309Z_abnb_readiness/cohort_2023q3_2026q2_replay.csv",
+      "sha256": "236e7e0664588e50f7e8c3c117472da555ae34b14cbf76a1a344e75978f530e1"
+    }
+  ],
+  "metrics": {
+    "activity_to_guidance": {
+      "acceleration_n": 15,
+      "acceleration_pearson": -0.6270051347600843,
+      "acceleration_spearman": -0.5035714285714286,
+      "direction_concordance": 0.5333333333333333,
+      "direction_n": 15,
+      "n": 16,
+      "pearson": 0.7841064501675482,
+      "pearson_improvement_vs_equal_weight": 0.007526999910307031,
+      "pearson_improvement_vs_sfo": 0.002688896344831715,
+      "spearman": 0.38823529411764707,
+      "strict_pit_rows": 0
+    },
+    "controls": {
+      "ose_covered_events": 4
+    },
+    "event_returns": {
+      "mean_abnb": 0.011606376764249303,
+      "mean_excess": 0.007140911240269407,
+      "median_excess": -0.0005169803353523017,
+      "n": 23,
+      "std_excess": 0.08835275470006412
+    },
+    "guidance": {
+      "events": 23,
+      "numeric_ranges": 20
+    },
+    "guidance_to_return": {
+      "acceleration_n": 15,
+      "acceleration_pearson": 0.08244198563550548,
+      "direction_aligned": 7,
+      "direction_total": 19,
+      "sequential_pct_n": 19,
+      "sequential_pct_pearson": 0.03212270033657204,
+      "yoy_n": 16,
+      "yoy_pearson": 0.07630781495666977
+    },
+    "h10_directional": {
+      "early_hits": 3,
+      "early_total": 4,
+      "later_hits": 6,
+      "later_total": 12,
+      "total_events": 16,
+      "total_hits": 9
+    }
+  },
+  "purpose": "retrospective diagnostic and report reproducibility; not alpha",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,8 @@
+source_id,gate_allowed,probe_count,probe_status,reason
+SCW-005,false,0,not_requested,"Policy gate denied: unclear terms and robots; current workbook is unit-level rather than an aggregate historical panel."
+SCW-006,false,0,not_requested,"Policy gate denied: no affirmative automation terms or robots allowance."
+SCW-004,false,0,not_requested,"Policy gate denied: terms unresolved after 403; /api/ expressly disallowed; CAPTCHA host stop and unprojected fields."
+SCW-010,false,0,not_requested,"Policy gate denied: public/research-use statement is not automation authorization and robots is only silent."
+SCW-002,false,0,not_requested,"Policy gate denied: no automation terms, no affirmative robots allowance, CAPTCHA host stop, and dataset UID ambiguity."
+SCW-003,false,0,not_requested,"Policy gate denied: no automation terms, no affirmative robots allowance, and NOLA host stop."
+SCW-008,false,0,not_requested,"Policy gate denied: automation terms unclear, exact download-host robots unresolved, and personal fields cannot be excluded before transport."

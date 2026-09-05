@@ -1,0 +1,142 @@
+{
+  "$defs": {
+    "QualityGrade": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "title": "QualityGrade",
+      "type": "string"
+    },
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "benchmark": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Benchmark"
+    },
+    "benchmark_total_return": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Benchmark Total Return"
+    },
+    "excess_return": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Excess Return"
+    },
+    "guidance_event_id": {
+      "title": "Guidance Event Id",
+      "type": "string"
+    },
+    "instrument": {
+      "title": "Instrument",
+      "type": "string"
+    },
+    "market_return_id": {
+      "title": "Market Return Id",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "price_adjustment": {
+      "title": "Price Adjustment",
+      "type": "string"
+    },
+    "price_source": {
+      "title": "Price Source",
+      "type": "string"
+    },
+    "quality_grade": {
+      "$ref": "#/$defs/QualityGrade"
+    },
+    "raw_total_return": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Raw Total Return"
+    },
+    "reaction_session_date": {
+      "format": "date",
+      "title": "Reaction Session Date",
+      "type": "string"
+    },
+    "source_as_of_utc": {
+      "format": "date-time",
+      "title": "Source As Of Utc",
+      "type": "string"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    },
+    "window_sessions": {
+      "exclusiveMinimum": 0,
+      "title": "Window Sessions",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "market_return_id",
+    "guidance_event_id",
+    "instrument",
+    "reaction_session_date",
+    "window_sessions",
+    "price_adjustment",
+    "price_source",
+    "source_as_of_utc",
+    "quality_grade"
+  ],
+  "title": "MarketReturn",
+  "type": "object"
+}

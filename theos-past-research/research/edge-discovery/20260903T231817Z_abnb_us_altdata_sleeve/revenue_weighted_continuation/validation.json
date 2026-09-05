@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "built_at_utc": "2026-09-04T00:16:51Z",
+  "hypothesis_id": "H-012",
+  "hypothesis_version": 2,
+  "recommended_us_weight": 0.5044535261448182,
+  "recommended_europe_proxy_weight": 0.4955464738551818,
+  "weights_sum_to_one": true,
+  "weight_source_accepted_at_utc": "2026-02-12T21:04:39Z",
+  "event_rows": 23,
+  "strict_pit_rows": 0,
+  "weight_public_before_cutoff_rows": 2,
+  "diagnostic_level_n": 16,
+  "diagnostic_acceleration_n": 15,
+  "historical_usability_score_100": 74.0,
+  "checks": {
+    "event_count_23": true,
+    "strict_pit_zero": true,
+    "fixed_weights_each_row": true,
+    "prior_v1_preserved": true,
+    "sec_arithmetic_reproduced": true
+  },
+  "limitations": [
+    "EMEA is broader than Europe and EU27; it is the closest official Airbnb revenue proxy.",
+    "The 2025 weight is ex-post for all cutoffs before 2026-02-12T21:04:39Z.",
+    "Underlying SFO and Eurostat observations are current snapshots, so every composite row remains strict-PIT ineligible.",
+    "The two sleeves cover 77.96% of 2025 global revenue and omit Latin America and Asia Pacific."
+  ]
+}

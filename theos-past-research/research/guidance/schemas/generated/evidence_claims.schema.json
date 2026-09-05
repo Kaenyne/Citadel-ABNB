@@ -1,0 +1,173 @@
+{
+  "$defs": {
+    "AttributionStrength": {
+      "enum": [
+        "driver",
+        "contributor",
+        "risk",
+        "contextual_correlation",
+        "no_attribution"
+      ],
+      "title": "AttributionStrength",
+      "type": "string"
+    },
+    "Confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "EvidenceStance": {
+      "enum": [
+        "supporting",
+        "contradictory",
+        "mixed",
+        "neutral",
+        "negative_evidence"
+      ],
+      "title": "EvidenceStance",
+      "type": "string"
+    },
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "adjudication_note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Adjudication Note"
+    },
+    "attribution_strength": {
+      "$ref": "#/$defs/AttributionStrength"
+    },
+    "claim_type": {
+      "title": "Claim Type",
+      "type": "string"
+    },
+    "coder_confidence": {
+      "$ref": "#/$defs/Confidence"
+    },
+    "contradicts_claim_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Contradicts Claim Id"
+    },
+    "direction": {
+      "title": "Direction",
+      "type": "string"
+    },
+    "driver_code": {
+      "title": "Driver Code",
+      "type": "string"
+    },
+    "driver_family": {
+      "title": "Driver Family",
+      "type": "string"
+    },
+    "evidence_claim_id": {
+      "title": "Evidence Claim Id",
+      "type": "string"
+    },
+    "evidence_stance": {
+      "$ref": "#/$defs/EvidenceStance"
+    },
+    "guidance_event_id": {
+      "title": "Guidance Event Id",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "quantified_unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Quantified Unit"
+    },
+    "quantified_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Quantified Value"
+    },
+    "scope_code": {
+      "title": "Scope Code",
+      "type": "string"
+    },
+    "source_excerpt_id": {
+      "title": "Source Excerpt Id",
+      "type": "string"
+    },
+    "time_horizon": {
+      "title": "Time Horizon",
+      "type": "string"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    }
+  },
+  "required": [
+    "evidence_claim_id",
+    "guidance_event_id",
+    "source_excerpt_id",
+    "driver_family",
+    "driver_code",
+    "claim_type",
+    "evidence_stance",
+    "direction",
+    "attribution_strength",
+    "time_horizon",
+    "scope_code",
+    "coder_confidence"
+  ],
+  "title": "EvidenceClaim",
+  "type": "object"
+}

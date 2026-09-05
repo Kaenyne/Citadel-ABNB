@@ -1,0 +1,6 @@
+# Reviewed historical snapshots are byte-preserved evidence.  Some provider
+# exports intentionally contain CRLF and trailing whitespace.
+research/edge-discovery/** -text whitespace=-trailing-space,-space-before-tab,-blank-at-eof
+research/readiness/** -text whitespace=-trailing-space,-space-before-tab,-blank-at-eof
+research/forecasting/runs/** -text whitespace=-trailing-space,-space-before-tab,-blank-at-eof
+research/memos/** -text whitespace=-trailing-space,-space-before-tab,-blank-at-eof

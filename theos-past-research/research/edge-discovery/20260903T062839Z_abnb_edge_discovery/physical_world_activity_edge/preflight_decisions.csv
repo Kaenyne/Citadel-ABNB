@@ -1,0 +1,11 @@
+preflight_id,source_id,collection_allowed,decision_reasons,assessed_at_utc,next_action
+PF-PW-001,WSF_FERRY_RIDERSHIP,false,"terms do not clearly permit automation | robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; ask lead/user before automated collection or use a user-supplied export"
+PF-PW-002,NPS_VISITOR_USE,false,"robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; obtain path-specific robots evidence before a tiny API probe"
+PF-PW-003,FTA_NTD_MONTHLY_RIDERSHIP,false,"robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; obtain path-specific robots evidence before a tiny file probe"
+PF-PW-004,NOAA_HMS_SMOKE,false,"robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; obtain path-specific robots evidence before a tiny archive probe"
+PF-PW-005,MELB_PED_HOURLY,false,"terms do not clearly permit automation | robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; explicit automation permission is required because portal terms are undefined"
+PF-PW-006,NYC_311_TOURISM_STRESS,false,"robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; obtain path-specific robots evidence before SODA access"
+PF-PW-007,MARINECADASTRE_AIS,false,"robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; obtain path-specific robots evidence and service availability confirmation"
+PF-PW-008,NASA_BLACK_MARBLE_VNP46A2,false,"robots guidance does not clearly allow the intended paths | authentication is required",2026-09-03T06:35:06Z,"No request; requires approved EARTHDATA_TOKEN sync plus path-specific robots evidence"
+PF-PW-009,CDOT_CONTINUOUS_COUNTS,false,"terms do not clearly permit automation | robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; clarify automated-access terms and historical publication timing"
+PF-PW-010,TFL_CYCLE_HIRE_TRIPS,false,"terms do not clearly permit automation | robots guidance does not clearly allow the intended paths",2026-09-03T06:35:06Z,"No request; resolve applicability of conflicting website and transport-data terms"

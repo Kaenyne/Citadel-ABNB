@@ -1,0 +1,6 @@
+recon_id,http_status,collector_stop_status,reviewed_body_class,effective_permission_status,post_review_action,notes
+PR-BLS-001,403,stopped_http_403,provider_access_denied,blocked,terminal_host_stop,"No retry and no BLS archive-index or release-page request."
+PR-BLS-002,,not_requested_after_host_stop,not_requested,blocked,none,"Correctly skipped after PR-BLS-001."
+PR-CEN-001,200,completed,official_api_terms,allowed,continue_permission_only,"Terms expressly permit services to retrieve/analyze API data subject to attribution and anti-reidentification rules."
+PR-CEN-002,200,completed,provider_request_rejected_page,unclear,terminal_host_stop_after_cache_review,"The status-only collector did not recognize the 200-body rejection during execution; this was classified as an ambiguity stop during cached-body review."
+PR-CEN-003,404,completed,metadata_not_found,unavailable,no_further_requests,"This already-preregistered request was issued after PR-CEN-002 before its 200-body rejection was recognized; the 404 adds a separate exact-path availability blocker. No subsequent Census request was made."

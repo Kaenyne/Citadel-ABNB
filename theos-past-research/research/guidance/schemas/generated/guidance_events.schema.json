@@ -1,0 +1,149 @@
+{
+  "$defs": {
+    "EventType": {
+      "enum": [
+        "initial",
+        "clarification",
+        "revision"
+      ],
+      "title": "EventType",
+      "type": "string"
+    },
+    "ReleaseTiming": {
+      "enum": [
+        "before_open",
+        "intraday",
+        "after_close",
+        "non_trading_day",
+        "unknown"
+      ],
+      "title": "ReleaseTiming",
+      "type": "string"
+    },
+    "TimestampPrecision": {
+      "enum": [
+        "second",
+        "minute",
+        "hour",
+        "date",
+        "unknown"
+      ],
+      "title": "TimestampPrecision",
+      "type": "string"
+    },
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "event_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Event Notes"
+    },
+    "event_type": {
+      "$ref": "#/$defs/EventType"
+    },
+    "guidance_event_id": {
+      "title": "Guidance Event Id",
+      "type": "string"
+    },
+    "initial_event_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Initial Event Id"
+    },
+    "is_initial_guide": {
+      "title": "Is Initial Guide",
+      "type": "boolean"
+    },
+    "issuer_id": {
+      "title": "Issuer Id",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "primary_document_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Primary Document Id"
+    },
+    "published_at_precision": {
+      "$ref": "#/$defs/TimestampPrecision"
+    },
+    "published_at_utc": {
+      "format": "date-time",
+      "title": "Published At Utc",
+      "type": "string"
+    },
+    "release_timing": {
+      "$ref": "#/$defs/ReleaseTiming"
+    },
+    "reported_period": {
+      "pattern": "^[0-9]{4}Q[1-4]$",
+      "title": "Reported Period",
+      "type": "string"
+    },
+    "research_cutoff_at_utc": {
+      "format": "date-time",
+      "title": "Research Cutoff At Utc",
+      "type": "string"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    }
+  },
+  "required": [
+    "guidance_event_id",
+    "issuer_id",
+    "reported_period",
+    "event_type",
+    "published_at_utc",
+    "published_at_precision",
+    "release_timing",
+    "research_cutoff_at_utc",
+    "is_initial_guide"
+  ],
+  "title": "GuidanceEvent",
+  "type": "object"
+}

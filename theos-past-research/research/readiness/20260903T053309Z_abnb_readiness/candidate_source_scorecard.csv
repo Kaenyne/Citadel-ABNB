@@ -1,0 +1,22 @@
+overall_rank,source_id,category,ex_ante_score_100,status,decision_note
+1,FED_H10_DTWEXBGS,FX,95,selected_phase_a,Dated releases give strongest PIT audit.
+2,FRED_ALFRED_MACRO,macro/vintages,84,pending_sync,Credential candidate with real-time periods for supported series.
+3,ECB_EXR_USD_EUR,FX,83,selected_phase_a,Versions available but strict publication timestamp absent.
+4,BLS_CPI_LODGING,hotel price,76,selected_phase_a,Relevant price positioning; historical release calendar blocks strict replay.
+5,NOAA_CDO_WEATHER,weather/disruption,63,pending_sync,"Broad history, revisions not vintage-safe."
+6,EUROSTAT_PLATFORM_NIGHTS,platform demand,58,discovery_only,Relevant but latest-only revisions and platform aggregation.
+7,BEA_INTL_TRAVEL,cross-border macro,57,pending_sync,Slow lagged control.
+8,FEMA_OPENFEMA,disruption,57,discovery_only,Initial declarations useful; later amendments risk leakage.
+9,WIKIMEDIA_PAGEVIEWS,search/interest,54,discovery_only,Destination mapping and news confounds.
+10,OPEN_METEO_ERA5,weather,51,discovery_only,License/vintage constraint.
+11,EIA_JET_FUEL,airfare affordability,49,pending_sync,Indirect pass-through.
+12,NYC_STR_REGISTRATIONS,supply/regulation,47,discovery_only,Narrow geography and current-status overwrites.
+13,CENSUS_TRADE,international macro,44,pending_sync,Weak direct mechanism.
+14,TICKETMASTER_DISCOVERY,events,43,pending_sync,No historical inventory state.
+15,GDELT_EVENTS,events/disruption,42,discovery_only,Corpus drift and rights complexity.
+16,GOOGLE_ADS_KEYWORD,search demand,41,discovery_only,Access burden and no vintage snapshots.
+17,GOOGLE_TRENDS_ALPHA,search demand,39,restricted_alpha,Rolling history misses early cohort.
+18,TSA_CHECKPOINT,air travel,35,blocked_scrape,Strong mechanism but collection permission unclear.
+19,BTS_T100,air travel,35,discovery_only,Lagged and revised; control only.
+20,APP_INTELLIGENCE,engagement,30,blocked_paid,Paid and no licensed export supplied.
+21,STR_MARKET_DATA,supply/occupancy/ADR,30,blocked_paid,Strong mechanism but paid and possible backfill.

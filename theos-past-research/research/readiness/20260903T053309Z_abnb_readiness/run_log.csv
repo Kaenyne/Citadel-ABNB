@@ -1,0 +1,8 @@
+timestamp_utc,owner,action,outcome,evidence
+2026-09-03T05:33:09Z,abnb_alt_data,establish_run,PASS,research/readiness/20260903T053309Z_abnb_readiness/checkpoint.md
+2026-09-03T05:33:09Z,abnb_alt_data,project_validator,PASS,23 indexed transcripts
+2026-09-03T05:58:06Z,abnb_alt_data,fixed_no_key_collection,PASS,"62 H.10 pages; ECB and BLS API responses cached"
+2026-09-03T05:58:09Z,abnb_alt_data,scrapling_tiny_sample,REFUSED_HTTP_403,No retry or evasion attempted
+2026-09-03T06:00:21Z,guidance_2020q4_2023q2,early_replay,PASS,33 event-signal rows
+2026-09-03T06:00:41Z,guidance_2023q3_2026q2,late_replay,PASS,36 event-signal rows
+2026-09-03T06:04:45Z,abnb_alt_data,final_verification,PASS,70 tests passed; project validator passed; Phase-A artifact assertions passed

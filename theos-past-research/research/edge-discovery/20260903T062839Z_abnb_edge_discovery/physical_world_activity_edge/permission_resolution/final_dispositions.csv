@@ -1,0 +1,9 @@
+source_id,e1_disposition,permission_data_path_allowed,data_probe_count,historical_testability,decision_basis
+NASA_BLACK_MARBLE_VNP46A2,WATCH_PROSPECTIVELY,false,0,not_testable,"Authentication is blocked; robots and terms remain unresolved; any future use requires prospective granule-vintage capture"
+NOAA_HMS_SMOKE,CONTROL_ONLY,false,0,not_testable,"Environmental disruption may be a control only; permission and original daily publication vintages remain unresolved"
+WSF_FERRY_RIDERSHIP,INCONCLUSIVE,false,0,not_testable,"H-004 permission/timing failure and zero eligible events prohibit promotion"
+NPS_VISITOR_USE,WATCH_PROSPECTIVELY,false,0,not_testable,"Robots disallows access and current preliminary/revised API history lacks vintages"
+FTA_NTD_MONTHLY_RIDERSHIP,CONTROL_ONLY,false,0,not_testable,"Broad mobility control only; robots/policy resolution and release-specific vintages failed"
+MARINECADASTRE_AIS,WATCH_PROSPECTIVELY,false,0,not_testable,"Permission and release-vintage chain remain unresolved after provider stop"
+NYC_311_TOURISM_STRESS,REJECT,false,1,not_testable,"DP-PW-001 completed under a superseded robots interpretation and is preserved; corrected robots status is unclear, while mutable snapshots, semantic drift, and weak causal specificity remain disqualifying"
+MELB_PED_HOURLY,WATCH_PROSPECTIVELY,false,0,not_testable,"API path is robots-disallowed, terms are undefined, and current history is not a vintage archive"

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "compiled_observation_rows": 525,
+  "compiled_us_rows": 384,
+  "compiled_europe_rows": 141,
+  "guidance_events": 23,
+  "numeric_guidance_events": 20,
+  "yoy_comparable_guidance_events": 16,
+  "event_feature_rows": 138,
+  "strict_pit_event_rows": 0,
+  "diagnostic_feature_values": 92,
+  "guardrails": [
+    "All compiled observations are current-snapshot diagnostic/prospective data.",
+    "Assumed availability dates are conservative alignment rules, not observed historical publication timestamps.",
+    "The primary composite uses the latest point-in-time U.S./EMEA Airbnb revenue weights normalized within the two covered sleeves.",
+    "The 50/50 composite is retained only as a benchmark and was not used to tune the revenue weights.",
+    "EMEA is the closest official revenue proxy because Airbnb does not disclose Europe-only revenue.",
+    "Correlations are descriptive and were not used to select or tune features."
+  ]
+}

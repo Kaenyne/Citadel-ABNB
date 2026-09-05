@@ -1,0 +1,9 @@
+source_id,disposition,collection_outcome,source_rows,strict_pit_eligible_rows,reason
+TSA_CHECKPOINT,INCONCLUSIVE,not_collected_provider_stop,0,0,HTTP 403 on robots; no exact-path permission.
+FHWA_TVT_VMT,INCONCLUSIVE,not_collected_robots_disallowed,0,0,Workbook directory explicitly disallowed; index-only Allow does not extend to payloads.
+BTS_T100,INCONCLUSIVE,not_collected_provider_stop,0,0,Robots unresolved after 404/403; no payload.
+NPS_VISITOR_USE,INCONCLUSIVE,not_collected_robots_disallowed,0,0,Exact robots says Disallow: /.
+FTA_NTD_MONTHLY_RIDERSHIP,INCONCLUSIVE,not_collected_provider_stop,0,0,Robots request 403; permission unresolved.
+SFO_AIR_PASSENGERS,WATCH_PROSPECTIVELY,reused_governed_current_snapshot,384,0,"Useful aggregate monthly history, but all rows are current-snapshot observations unavailable for retrospective PIT testing."
+PANYNJ_AIRPORT_PARKING,INCONCLUSIVE,not_collected_permission_unclear,0,0,Neither terms nor robots affirmatively authorizes the exact automated /resource request.
+LAX_TERMINAL_PASSENGERS,INCONCLUSIVE,not_collected_provider_stop,0,0,Terms page triggered conservative stop; robots does not explicitly Allow /resource.

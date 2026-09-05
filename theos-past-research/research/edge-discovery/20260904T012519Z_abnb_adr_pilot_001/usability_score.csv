@@ -1,0 +1,13 @@
+score_type,dimension,score_0_to_5,evidence
+data_source,permission_clarity,1,FRED API terms allow API use but require a key; website automation is prohibited; BLS robots request returned 403.
+data_source,cost_and_access,3,"No paid source is needed, but the free FRED key is unsynced and the exact lodging series URL returned 404."
+data_source,historical_vintage_support,0,No lawful requested-series vintage payload was obtained.
+data_source,history_coverage,0,2017-present values were not collected because current snapshots cannot substitute for vintages.
+data_source,publication_timing,1,"BLS generally publishes CPI at 08:30 ET, but event-specific archive evidence was inaccessible under the host stop."
+data_source,schema_privacy_reproducibility,5,Aggregate national indexes contain no personal data and have stable series definitions.
+forecast_signal,economic_directness,4,Lodging prices map directly to the ADR/mix leg of nominal revenue.
+forecast_signal,lead_time,2,"Monthly CPI is a lagged realized-price measure, not a forward booking indicator."
+forecast_signal,geographic_product_alignment,2,U.S. hotel-heavy national CPI is an imperfect proxy for Airbnb's global alternative-accommodation mix.
+forecast_signal,historical_testability,0,Zero eligible events; the fixed descriptive comparison cannot be run.
+forecast_signal,confounder_stability,2,"Pandemic bases, substitution, seasonality, mix, and demand destruction can change the sign."
+forecast_signal,incremental_evidence,0,No relationship or incremental edge was tested.

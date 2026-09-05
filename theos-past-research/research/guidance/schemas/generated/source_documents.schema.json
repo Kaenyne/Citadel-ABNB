@@ -1,0 +1,195 @@
+{
+  "$defs": {
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "canonical_url": {
+      "title": "Canonical Url",
+      "type": "string"
+    },
+    "capture_method": {
+      "title": "Capture Method",
+      "type": "string"
+    },
+    "document_date": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Document Date"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "document_type": {
+      "title": "Document Type",
+      "type": "string"
+    },
+    "fiscal_period": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9]{4}Q[1-4]$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fiscal Period"
+    },
+    "local_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Local Path"
+    },
+    "mime_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Mime Type"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "published_at_utc": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Published At Utc"
+    },
+    "publisher": {
+      "title": "Publisher",
+      "type": "string"
+    },
+    "retrieved_at_utc": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Retrieved At Utc"
+    },
+    "rights_or_access_note": {
+      "title": "Rights Or Access Note",
+      "type": "string"
+    },
+    "sec_accession_number": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sec Accession Number"
+    },
+    "sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sha256"
+    },
+    "source_url": {
+      "title": "Source Url",
+      "type": "string"
+    },
+    "supersedes_document_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Supersedes Document Id"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    },
+    "version_status": {
+      "title": "Version Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "document_id",
+    "document_type",
+    "title",
+    "publisher",
+    "source_url",
+    "canonical_url",
+    "capture_method",
+    "rights_or_access_note",
+    "version_status"
+  ],
+  "title": "SourceDocument",
+  "type": "object"
+}

@@ -1,0 +1,94 @@
+{
+  "validated_at_utc": "2026-09-03T17:15:24Z",
+  "scope": {
+    "retained_source_count": 8,
+    "excluded_appendix_sources_absent": [
+      "TFL_CYCLE_HIRE_TRIPS",
+      "CDOT_CONTINUOUS_COUNTS"
+    ]
+  },
+  "permission_recon": {
+    "append_only_manifest_rows": 52,
+    "original_manifest_rows": 26,
+    "retry_manifest_rows": 26,
+    "unique_official_urls": 26,
+    "sandbox_get_attempts": 26,
+    "sandbox_dns_transport_failures": 26,
+    "escalated_provider_get_attempts": 17,
+    "provider_http_200": 14,
+    "provider_http_403": 3,
+    "provider_completed_outcomes": 13,
+    "provider_stopped_outcomes": 4,
+    "retry_rows_not_requested_after_source_stop": 9,
+    "permission_cached_body_count": 17,
+    "provider_retries_after_stop": 0
+  },
+  "exact_data_path_gate": {
+    "assessed_source_count": 8,
+    "allowed_source_count": 0,
+    "denied_source_count": 8,
+    "nyc_robots_final_status": "unclear",
+    "nyc_gate_final_allowed": false,
+    "nyc_correction_reason": "Crawl-delay and unrelated disallows do not explicitly Allow /resource; robots silence cannot be affirmative permission."
+  },
+  "data_probe": {
+    "manifest_rows": 1,
+    "request_attempts": 1,
+    "http_200": 1,
+    "cached_payload_count": 1,
+    "observed_row_count": 1,
+    "observed_schema": [
+      "request_count"
+    ],
+    "personal_fields_transported": false,
+    "final_outcome": "completed_under_superseded_interpretation",
+    "further_requests_permitted": false,
+    "payload_sha256": "c84303069da97fd855fdf52d7a7814ce717976b358f439e21136eb4ffb60714e"
+  },
+  "h004_wsf": {
+    "hypothesis_id": "H-004",
+    "event_rows": 23,
+    "eligible_events": 0,
+    "not_testable_events": 23,
+    "decision": "INCONCLUSIVE",
+    "replay_rebuilt": false,
+    "existing_replay_sha256": "909ae2397f0f156056316f3342a48e6dc953e60dc24c9494c29bae56c18a61f2"
+  },
+  "final_dispositions": {
+    "NASA_BLACK_MARBLE_VNP46A2": "WATCH_PROSPECTIVELY",
+    "NOAA_HMS_SMOKE": "CONTROL_ONLY",
+    "WSF_FERRY_RIDERSHIP": "INCONCLUSIVE",
+    "NPS_VISITOR_USE": "WATCH_PROSPECTIVELY",
+    "FTA_NTD_MONTHLY_RIDERSHIP": "CONTROL_ONLY",
+    "MARINECADASTRE_AIS": "WATCH_PROSPECTIVELY",
+    "NYC_311_TOURISM_STRESS": "REJECT",
+    "MELB_PED_HOURLY": "WATCH_PROSPECTIVELY"
+  },
+  "artifact_sha256": {
+    "permission_recon_manifest.csv": "ce16bc2e152f119057c3c3ec77d37e20f1a150bbd56e0d8b52303a10110a447c",
+    "permission_recon_results.csv": "a9fe235ea047e17fe488e189a7cc76dd4a5d3bcbf9b60aeb009383059f3a6cd7",
+    "permission_recon_retry_results.csv": "0ab94c6f3088e59f57f47429bc21cb63bc42e6e411acd3fde9ad7055a7a29867",
+    "data_path_candidates.csv": "e6683eb92bd249bb233d061e14d4c3599a217fb4d43aabd72ef541b41c2ed90f",
+    "data_path_assessments.csv": "8c6b21a592e10cdef0867e3dd983e74188cc5a8ec869eb2306f67773df556c61",
+    "data_probe_manifest.csv": "d67646c09e6108f30ffaaad92dbf4a1f9ae99694ac08a5960fb46d07068e3a22",
+    "data_probe_results.csv": "edd536ca720e65767e3047d79c91b7b73553d006afe8438f10d10ce2f7f6e176",
+    "permission_resolution_findings.csv": "e96e7d4e92294123dcb63808de68d8209d02fe2bf29b2ab59005c847537b9132",
+    "final_dispositions.csv": "28c93a12e00dff817fbfdfdc9a878f0b83042184dccdb18034a82f7404f78f0d",
+    "permission_resolution_report.md": "de93471d86c61dbca86037dd05e0251c5495a16234707b47bd76cb3b06086562"
+  },
+  "assertions": {
+    "exactly_eight_retained_sources": true,
+    "no_tfl_or_cdot_request": true,
+    "every_permission_get_preregistered": true,
+    "one_retry_per_sandbox_dns_failure": true,
+    "no_retry_after_provider_stop": true,
+    "all_cached_bodies_match_recorded_sha256": true,
+    "all_final_exact_paths_denied": true,
+    "nyc_probe_preserved_not_concealed": true,
+    "nyc_probe_labeled_superseded_interpretation": true,
+    "no_further_data_request": true,
+    "no_credentials_or_environment_values_read": true,
+    "no_personal_data_requested": true,
+    "no_abnb_outcome_test_or_model": true
+  }
+}

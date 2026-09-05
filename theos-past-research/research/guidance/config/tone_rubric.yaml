@@ -1,0 +1,28 @@
+version: 1
+overall_scale:
+  - score: -2
+    label: materially_cautious
+    definition: Multiple explicit downside warnings or a distinctly defensive forward stance.
+  - score: -1
+    label: cautious
+    definition: Risks and uncertainty outweigh constructive statements.
+  - score: 0
+    label: balanced_or_mixed
+    definition: Material positives and negatives offset or management avoids a directional stance.
+  - score: 1
+    label: constructive
+    definition: Positive forward demand or execution language outweighs identified risks.
+  - score: 2
+    label: materially_confident
+    definition: Strong, repeated confidence with limited qualification.
+dimensions:
+  demand_direction: {minimum: -2, maximum: 2}
+  uncertainty_emphasis: {minimum: 0, maximum: 2}
+  commitment_strength: {minimum: -1, maximum: 1}
+blinding:
+  hide_eventual_actual: true
+  hide_stock_returns: true
+  hide_guidance_surprise: true
+adjudication:
+  independent_passes: 2
+  disagreement_requires_reason: true

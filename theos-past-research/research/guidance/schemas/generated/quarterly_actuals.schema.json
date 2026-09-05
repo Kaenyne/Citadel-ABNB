@@ -1,0 +1,167 @@
+{
+  "$defs": {
+    "AccountingBasis": {
+      "enum": [
+        "GAAP",
+        "non_GAAP",
+        "operating",
+        "not_applicable"
+      ],
+      "title": "AccountingBasis",
+      "type": "string"
+    },
+    "ValueStatus": {
+      "enum": [
+        "observed",
+        "missing",
+        "not_disclosed",
+        "not_applicable"
+      ],
+      "title": "ValueStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "accounting_basis": {
+      "$ref": "#/$defs/AccountingBasis"
+    },
+    "actual_observation_id": {
+      "title": "Actual Observation Id",
+      "type": "string"
+    },
+    "currency": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Currency"
+    },
+    "derivation_formula": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Derivation Formula"
+    },
+    "fiscal_period": {
+      "pattern": "^[0-9]{4}Q[1-4]$",
+      "title": "Fiscal Period",
+      "type": "string"
+    },
+    "is_company_stated": {
+      "title": "Is Company Stated",
+      "type": "boolean"
+    },
+    "metric_code": {
+      "title": "Metric Code",
+      "type": "string"
+    },
+    "missing_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Missing Reason"
+    },
+    "public_available_at_utc": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Public Available At Utc"
+    },
+    "scope_code": {
+      "title": "Scope Code",
+      "type": "string"
+    },
+    "source_excerpt_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Excerpt Id"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value"
+    },
+    "value_status": {
+      "$ref": "#/$defs/ValueStatus",
+      "default": "observed"
+    },
+    "yoy_growth_constant_currency": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Yoy Growth Constant Currency"
+    },
+    "yoy_growth_reported": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Yoy Growth Reported"
+    }
+  },
+  "required": [
+    "actual_observation_id",
+    "fiscal_period",
+    "metric_code",
+    "scope_code",
+    "unit",
+    "accounting_basis",
+    "is_company_stated"
+  ],
+  "title": "QuarterlyActual",
+  "type": "object"
+}

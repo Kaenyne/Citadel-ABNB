@@ -1,0 +1,16 @@
+capability,status,evidence_path,blocker,owner,next_action
+orchestration,PASS,research/readiness/20260903T053309Z_abnb_readiness/checkpoint.md,,ABNB Research Orchestrator,Resume only after explicit credential-sync confirmation
+source_governance,PASS,research/source_registry.csv,,abnb_alt_data,Preserve append-only source decisions
+scraping_safety,PASS,research/readiness/20260903T053309Z_abnb_readiness/scrape_gate_results.csv,"Permitted BLS sample was operationally refused HTTP 403",abnb_alt_data,Do not retry or evade; APIs remain available
+api_discovery,PASS,research/readiness/20260903T053309Z_abnb_readiness/api_scorecard.csv,,abnb_alt_data,User selects credentials
+credential_safety,PASS,.env.example,,abnb_alt_data,Check presence only after user confirms sync
+transcript_grounding,PARTIAL,research/readiness/20260903T053309Z_abnb_readiness/target_panel.csv,"Canonical guidance_facts.csv remains empty and transcript availability fields remain unverified; official SEC targets provide readiness-specific ground truth",abnb_alt_data,Reconcile compact canonical transcript facts without committing licensed text
+point_in_time_alignment,PARTIAL,research/readiness/20260903T053309Z_abnb_readiness/point_in_time_feature_panel.csv,"H-002 exact timestamps absent; H-003 historical release timestamps absent",abnb_alt_data,Resolve timing evidence or retain exclusions
+preregistration,PASS,research/hypothesis_ledger.csv,,abnb_alt_data,Do not mutate H-001/H-002/H-003
+early_cohort_replay,PARTIAL,research/readiness/20260903T053309Z_abnb_readiness/cohort_2020q4_2023q2_replay.csv,"Only four seasonal-baseline events; H-002/H-003 minima fail",guidance_2020q4_2023q2,Repeat unchanged replay after credential sync
+late_cohort_replay,PASS,research/readiness/20260903T053309Z_abnb_readiness/cohort_2023q3_2026q2_replay.csv,,guidance_2023q3_2026q2,Repeat unchanged replay after credential sync
+comparison_validity,PARTIAL,research/readiness/20260903T053309Z_abnb_readiness/cohort_comparison.md,"Only H-001 is descriptively comparable; H-002/H-003 cannot be pooled",abnb_alt_data,Keep invalid comparisons separate
+negative_result_handling,PASS,research/readiness/20260903T053309Z_abnb_readiness/cohort_comparison.md,,abnb_alt_data,Carry exclusions and misses into Phase B
+reproducibility,PASS,research/readiness/20260903T053309Z_abnb_readiness/collection_provenance.csv,,abnb_alt_data,Recheck checksums before Phase B
+quant_handoff,FAIL,research/readiness/20260903T053309Z_abnb_readiness/proposed_quant_handoff.md,"Phase B credential smoke tests and second replay not complete",abnb_alt_data,Do not model yet
+

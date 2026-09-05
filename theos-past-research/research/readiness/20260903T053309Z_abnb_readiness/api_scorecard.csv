@@ -1,0 +1,19 @@
+access_group,rank_within_group,api_id,pit_vintage_25,economic_relevance_20,history_15,frequency_lag_10,license_clarity_10,free_reliability_10,geography_5,integration_5,total_100,status,decision_note
+no_key,1,FED_H10_ARCHIVE,25,20,15,10,10,8,2,5,95,selected_phase_a,Best empirical no-key source; genuine dated immutable releases.
+no_key,2,ECB_DATA_PORTAL,12,20,15,10,10,9,5,2,83,selected_phase_a,Strict timestamps absent in response; sensitivity only despite useful versions.
+no_key,3,BLS_PUBLIC_DATA_V1,12,17,15,7,10,10,2,3,76,selected_phase_a,"Final unadjusted CPI, but historical release timestamps unresolved."
+no_key,4,EUROSTAT_DISSEMINATION,2,16,15,3,10,5,4,3,58,discovery_only,Latest-only API; no versioning.
+no_key,5,OPENFEMA_V2,5,8,15,5,10,6,3,5,57,discovery_only,Useful disruption control; amendment vintages incomplete.
+no_key,6,WIKIMEDIA_PAGEVIEWS,2,12,15,6,9,3,4,3,54,discovery_only,Article-map and revision risk.
+no_key,7,OPEN_METEO_ARCHIVE,3,10,15,8,4,5,4,2,51,discovery_only,Reanalysis revisions and non-commercial free-tier constraint.
+no_key,8,NYC_SOCRATA,2,14,5,5,8,5,3,5,47,discovery_only,Strong local mechanism but narrow and status-history concerns.
+no_key,9,GDELT_2,2,10,15,10,3,0,2,0,42,discovery_only,Methodology drift and operational burden.
+credential,1,FRED_ALFRED,25,15,15,8,10,8,1,2,84,pending_sync,Best credential candidate; supported real-time periods.
+credential,2,BLS_PUBLIC_DATA_V2,12,17,15,7,10,10,2,3,76,pending_sync,Higher quota/history only; does not solve vintage timing.
+credential,3,NOAA_CDO_V2,5,13,15,9,10,8,2,1,63,pending_sync,Good event-control coverage; no true vintage API.
+credential,4,BEA_DATA_API,5,10,15,3,10,8,3,3,57,pending_sync,Slow macro control.
+credential,5,EIA_V2,4,8,15,7,10,3,1,1,49,pending_sync,Indirect airfare-cost proxy.
+credential,6,CENSUS_INTL_TRADE,3,5,15,4,10,4,1,2,44,pending_sync,Indirect ABNB mechanism and revised history.
+credential,7,TICKETMASTER_DISCOVERY,0,15,0,10,10,4,3,1,43,pending_sync,Prospective only; no historical inventory snapshots.
+credential,8,GOOGLE_ADS_API,0,17,10,5,6,1,2,0,41,discovery_only,High access burden and no historical vintages.
+credential,9,GOOGLE_TRENDS_ALPHA,0,20,5,8,3,1,2,0,39,restricted_alpha,Rolling five years and restricted alpha access.

@@ -1,0 +1,21 @@
+{
+  "request_id": "ABNB-ADR-PILOT-001",
+  "run_id": "20260904T012519Z_abnb_adr_pilot_001",
+  "frozen_at_utc": "2026-09-04T01:25:19Z",
+  "target": "ABNB next-quarter revenue guidance midpoint YoY",
+  "evidence_gap": "nominal ADR/mix input",
+  "proxy": "BLS CPI lodging away from home via FRED/ALFRED",
+  "mechanism": "higher accommodation-price growth should raise nominal revenue subject to demand effects",
+  "expected_sign": "positive",
+  "geography": "United States",
+  "required_history": "monthly 2017-present if available",
+  "availability_rule": "each observation/revision must be strictly before each guidance cutoff",
+  "primary_transformation": "NSA lodging CPI trailing-3-month YoY",
+  "control_transformation": "NSA lodging CPI trailing-3-month YoY minus NSA all-items CPI trailing-3-month YoY",
+  "target_event_count": 23,
+  "yoy_comparable_event_count": 16,
+  "no_transformation_search": true,
+  "no_learned_weights": true,
+  "no_model_fit": true,
+  "no_forecast_promotion": true
+}

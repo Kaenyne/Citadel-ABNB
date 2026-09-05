@@ -1,0 +1,7 @@
+dimension,weight,score,evidence
+Economic directness,0.2,8,Airport passengers and platform accommodation nights both map directly to travel demand and booked stays.
+Geographic representativeness,0.2,5,"Official revenue weights improve the mix, but SFO is one U.S. airport and EU27 activity is only a proxy for EMEA."
+Timeliness and frequency,0.15,6,"Monthly data are useful, but the diagnostic requires conservative 60-day and 120-day lags."
+Point-in-time integrity,0.25,0,Zero strict point-in-time event-feature rows; current snapshots cannot support a historical forecast test.
+Stability and robustness,0.1,4,Only 16 comparable events; rank correlation is modest and acceleration correlation is unstable.
+Incremental diagnostic value,0.1,2,Level-Pearson change versus 50/50 is +0.008; versus SFO alone is +0.003.

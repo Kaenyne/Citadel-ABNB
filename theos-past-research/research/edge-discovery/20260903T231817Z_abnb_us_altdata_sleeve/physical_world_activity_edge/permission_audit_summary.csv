@@ -1,0 +1,9 @@
+source_id,new_permission_manifest_rows,new_permission_gets,permission_completed,provider_stops,other_http_errors,not_requested_after_stop,reused_permission_rows,exact_gate_allowed,data_gets,summary
+TSA_CHECKPOINT,2,1,0,1,0,1,0,false,0,"Robots HTTP 403; terms request skipped after source stop"
+FHWA_TVT_VMT,3,3,3,0,0,0,0,false,0,"Robots explicitly disallows workbook directory and only allows tvt.cfm"
+BTS_T100,6,2,0,1,1,4,0,false,0,"TranStats robots 404; BTS robots 403; four remaining requests skipped"
+NPS_VISITOR_USE,0,0,0,0,0,0,4,false,0,"Same-day reused robots says Disallow: /"
+FTA_NTD_MONTHLY_RIDERSHIP,0,0,0,0,0,0,1,false,0,"Same-day reused robots response was provider HTTP 403"
+SFO_AIR_PASSENGERS,0,0,0,0,0,0,0,false,0,"No new request; canonically authorized provenance-only raw-cache reuse"
+PANYNJ_AIRPORT_PARKING,3,3,3,0,0,0,0,false,0,"OPEN-NY terms/metadata retrieved; robots has no explicit Allow for /resource and terms do not clearly authorize automation"
+LAX_TERMINAL_PASSENGERS,3,2,1,1,0,1,0,false,0,"Robots has no explicit Allow for /resource; terms page triggered conservative human-verification stop; metadata skipped"

@@ -1,0 +1,11 @@
+source_id,planned_endpoint_or_file,planned_request_count,actual_request_count,collection_utc,http_status,response_checksum,cache_path,selectors_or_fields,decision,stop_reason
+SCW-001,"Austin active STR story/underlying SODA view",2,0,,,,"aggregate date,count; exclude addresses and licence identifiers",not_collected,"gate blocked: robots unresolved; underlying query may be deleted"
+SCW-002,"/resource/en36-xvxg.json?$limit=2",1,0,,,,"permit_type,current_status,expiration_date,application_date,issue_date; exclude address/owner/operator fields",not_collected,"gate blocked: terms and robots unresolved"
+SCW-003,"/resource/uzyk-jrck.json?$limit=2",1,0,,,,"agency,case_type,hearing_date,case_established,violation_count; exclude address/incident identifiers",not_collected,"gate blocked: terms and robots unresolved"
+SCW-004,"Vancouver OpenDataSoft business-licences API limit=2 with STR filter",1,0,,,,"folderyear,status,issueddate,expireddate,businesstype,localarea,extractdate; exclude names and exact addresses",not_collected,"gate blocked: robots unresolved"
+SCW-005,"NYC OSE dated registration download",2,0,,,,"publication_date,status,borough,zip; aggregate only and do not retain address/unit/listing URL",not_collected,"gate blocked: terms and robots unresolved"
+SCW-006,"Orange County TDT index plus one dated monthly PDF",2,0,,,,"collection_month,actual_tdt,release_timestamp",not_collected,"gate blocked: exact terms URL and robots evidence unavailable"
+SCW-007,"Hawaiʻi DOTAX archive plus one dated TAT PDF",2,0,,,,"filing_period,district,tat_liability,tax_base,report_date,revision_label",not_collected,"gate blocked: terms prohibit automation and commercial use"
+SCW-008,"San Diego STRO active-licence CSV",1,0,,,,"tier,community_planning_area,date_expiration; aggregate only and exclude all contact/address/tax identifiers",not_collected,"gate blocked: robots unresolved"
+SCW-009,"Undocumented Recreation.gov availability route",1,0,,,,"facility_id,lead_date,availability_state,price_tier; no user/reservation data",not_collected,"gate blocked: no affirmative terms/robots permission and interface undocumented"
+SCW-010,"NYC OSE reports page plus one annual enforcement PDF",2,0,,,,"report_year,complaints,inspections,summonses,violations,borough",not_collected,"gate blocked: terms and robots unresolved"

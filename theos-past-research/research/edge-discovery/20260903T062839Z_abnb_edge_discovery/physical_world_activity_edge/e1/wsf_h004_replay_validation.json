@@ -1,0 +1,46 @@
+{
+  "artifact": "wsf_h004_event_replay.csv",
+  "validated_at_utc": "2026-09-03T16:01:24Z",
+  "row_count": 23,
+  "column_count": 54,
+  "unique_prediction_id_count": 23,
+  "source_id": "WSF_FERRY_RIDERSHIP",
+  "hypothesis_id": "H-004",
+  "e1_disposition": "INCONCLUSIVE",
+  "governance_correction_validated_at_utc": "2026-09-03T16:05:14Z",
+  "eligible_row_count": 0,
+  "not_testable_row_count": 23,
+  "missing_wsf_feature_row_count": 23,
+  "seasonal_baseline_comparable_count": 16,
+  "prior_quarter_baseline_comparable_count": 19,
+  "h001_comparable_join_count": 16,
+  "h001_joined_hit_count": 9,
+  "h001_joined_miss_count": 7,
+  "output_sha256": "909ae2397f0f156056316f3342a48e6dc953e60dc24c9494c29bae56c18a61f2",
+  "corrected_lane_artifact_sha256": {
+    "e1_testability_disposition.csv": "13c810f8edffc8489a97c677bdc15f9c083bd2f3ac715019838b923f703a6eb3",
+    "e1_collection_testability_report.md": "3905dea2170afb78f3f39dd7320c584fe295f7ac6b2b1484198585060c97b511",
+    "wsf_h004_replay_summary.md": "6a8f4390cb6718d35da7139688250cb7392dc312e4c3d42e4ec6844e5ce34cc0"
+  },
+  "input_sha256": {
+    "target_panel.csv": "c6b9455480ff004b0252ce26c5ccf10a1666ab3eefbf761d9902bb99b53d5ec7",
+    "cohort_2020q4_2023q2_replay.csv": "8aa15ef0e4ddd5968e393b175cafa36cba25fda4bc7c220586c6297634462d1e",
+    "cohort_2023q3_2026q2_replay.csv": "236e7e0664588e50f7e8c3c117472da555ae34b14cbf76a1a344e75978f530e1"
+  },
+  "assertions": {
+    "exactly_23_rows": true,
+    "schema_present": true,
+    "all_cutoffs_preserved": true,
+    "all_formulas_frozen_h004": true,
+    "all_expected_directions_positive": true,
+    "all_wsf_rows_ineligible": true,
+    "all_wsf_rows_explicitly_not_testable": true,
+    "wsf_disposition_inconclusive": true,
+    "no_other_disposition_changed": true,
+    "no_wsf_values_backfilled": true,
+    "h001_join_only_where_comparable": true,
+    "no_transcripts_opened": true,
+    "no_other_physical_source_tested": true,
+    "no_fitting_or_search": true
+  }
+}
