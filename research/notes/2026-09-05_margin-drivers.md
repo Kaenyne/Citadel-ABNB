@@ -20,6 +20,8 @@
 
 6. **For the model.** Q3 is a 50% to 54% margin quarter and Q1 is 14% to 20%, so quarterly margins tell you little without the same-quarter comparison. The two lines to forecast are sales and marketing as a percent of revenue (management has said core-market brand spend is a fixed amount per market, so leverage is possible but is being redeployed to new markets) and operations and support per booking (the AI lever). Cost of revenue is a GBV function (merchant fees about 2% of GBV), not a revenue function, so take-rate changes flow almost entirely to margin. ADR ex-FX remains the single most powerful and least controllable driver.
 
+7. **On a cash basis the bridge is simple (sections 3.5, 10, 11).** From 2022 to 2025 revenue per night added 5.1 margin points (ADR ex-FX 3.7, FX 0.7, take rate 0.7) and sales and marketing took back 4.2 of them; every other cash line was within half a point, and product development has been flat at 10% to 11% of revenue in cash since 2022 (its GAAP creep is SBC). Projected bottom-up, FY2026 lands at 35.9% base (bear 35.3%, bull 37.7%) with the implied Q4 at 31.5%, and FY2027 at 36.5% base (33.8% to 39.8%). The most valuable lever management controls is support cost per night (-10% is worth about a point of margin); the most valuable one it does not is ADR ex-FX (+1 point is worth about half a point).
+
 ---
 
 ## 2. Scope and method
@@ -27,7 +29,8 @@
 - Transcripts: Q1 2023 to Q2 2026 and Q4 2021 from Airbnb's own FactSet corrected transcripts (investors.airbnb.com CDN); Q4 2020 to Q4 2022 from stockanalysis.com with Motley Fool as a cross-check. Every passage mentioning margin, EBITDA, cost lines, marketing, headcount, SBC, take rate, FX or guidance was pulled with speaker tags and read: prepared remarks and full Q&A for margin questions.
 - Letters: the "Adjusted EBITDA", cost commentary and "Outlook" sections of all 23 letters.
 - Filings: the MD&A results-of-operations narrative for each cost line in every 10-K and 10-Q (what actually moved merchant fees, insurance, community support, payroll, marketing), the sales-and-marketing split table and employee counts from 10-Ks.
-- Numbers: GAAP cost lines from SEC XBRL (Q4 derived as FY less nine months; operations and support backed out of total costs). Adjusted EBITDA from letters. All GAAP lines include stock-based compensation, which Adjusted EBITDA excludes, so line-item percentages overstate cash cost; total SBC is shown separately.
+- Numbers: GAAP cost lines from SEC XBRL (Q4 derived as FY less nine months; operations and support backed out of total costs). Adjusted EBITDA from letters. All GAAP lines include stock-based compensation, which Adjusted EBITDA excludes, so line-item percentages in sections 3.3 and 4 overstate cash cost; total SBC is shown separately.
+- Cash stack, bridge and scenarios (sections 3.5, 10, 11): SBC by function and the Adjusted EBITDA reconciliation parsed from every letter's footnotes (`analysis/src/abnb_exsbc_stack.py`), then decomposed and projected in `analysis/src/abnb_margin_bridge.py`. Nights, GBV and ADR from `data/processed/abnb_quarterly_kpis_from_study.csv`.
 - Caveat: speaker attribution in the 2020 to 2022 web transcripts is imperfect; quotes from those calls are attributed by content (Chesky versus Stephenson) and cross-checked against the letters.
 
 ---
@@ -89,6 +92,29 @@ Source: `data/processed/abnb_kpi_vs_category_quarterly.csv` (ADR from the shareh
 - **The 2025 to 2026 ADR tailwind was Airbnb-specific, not category inflation.** From Q2 2025 to Q1 2026 ABNB's ADR rose 3% to 9% while US hotel prices fell 2% to 3%. Part of that is FX (roughly half of revenue is non-USD and the dollar weakened) and mix, which management separates in the letters; but even the ex-FX ADR (+4% in 1H 2026) was running 5 to 6 points above hotels. This is the gap the Q2 2026 analysts asked about ("ADR vs. hotels") and it is the single biggest source of the revenue upside that funded the margin raises.
 - **Q2 2026 is the first quarter the gap closed**: hotels +4.9%, ABNB +5.3%. If hotel pricing has turned, ABNB's real ADR advantage is gone and revenue growth reverts to nights plus take rate.
 - **Share test.** ABNB nights growth has exceeded real US accommodations spending growth in every quarter since Q3 2022, by 4 to 14 points. The US lodging category is running low-single-digit real; Airbnb's growth is share, not category. The caveat is that BEA counts US-resident spend only and ABNB nights are global, so the comparison is directional.
+
+---
+
+### 3.5 The cash cost stack: what Adjusted EBITDA actually pays for
+
+Source: `data/processed/abnb_quarterly_cost_stack_exsbc.csv` (script `analysis/src/abnb_exsbc_stack.py`). Each GAAP line less its own SBC from the letters' footnote, checked against the Adjusted EBITDA reconciliation every quarter (identity holds to within $2M except 4Q23, where the letter's quarterly SBC and the XBRL-derived Q4 differ by $20M and the $935M tax reserve sits in G&A).
+
+| FY | Cost of revenue | Ops & support | Product dev | S&M | G&A | D&A and add-backs | Adj. EBITDA margin |
+|---|---|---|---|---|---|---|---|
+| 2022 | 17.8 | 11.6 | 11.4 | 16.7 | 8.9 | +1.0 | 34.6 |
+| 2023 | 17.2 | 11.3 | 10.7 | 16.4 | 18.2* | +10.2* | 36.8 |
+| 2024 | 16.9 | 10.7 | 10.5 | 17.8 | 8.3 | +0.7 | 36.4 |
+| 2025 | 17.0 | 10.1 | 10.9 | 19.4 | 8.7 | +1.3 | 35.1 |
+
+Percent of revenue, cash basis. *2023 G&A carries about $935M of Italy withholding and lodging-tax reserves that Adjusted EBITDA adds back; ex that item G&A was about 8.8%.
+
+Same-quarter cash view, Q2: S&M 16.6% (2022), 18.1%, 19.2%, 20.6%, 22.4% (2026); operations and support 11.5%, 12.0%, 11.4%, 10.0%, 9.0%; product development 10.9%, 10.5%, 10.2%, 10.7%, 10.4%; G&A 8.9%, 8.7%, 8.8%, 7.7%, 6.2%. Product development on a cash basis has been flat for four years; the GAAP creep in that line is entirely SBC (product SBC $145M in Q2 2022 to $298M in Q2 2026, 55% to 61% of all SBC).
+
+Three things the cash view changes about the story in section 4:
+
+- **Product development is not where the money went.** Cash product spend has been 10% to 11% of revenue every year since 2022. Headcount growth shows up in SBC, which Adjusted EBITDA excludes and free cash flow does not.
+- **Operations and support is the quiet source of leverage**: cash cost per night fell from $2.48 (2022) to $2.32 (2025) and to about $2.05 in 1H 2026, before the AI agent had reached voice or most languages.
+- **Sales and marketing is the whole margin story since 2023.** Cash S&M per night rose from $3.56 (2022) to $4.46 (2025) and ran $5.05 in 1H 2026 (annualized). Every other cash line per night is flat or down.
 
 ---
 
@@ -235,3 +261,58 @@ Source: next-quarter revenue ranges and reported actuals from Theo's guidance da
 - Payment processing as a percent of GBV has not been disclosed since the FY2021 10-K; cost of revenue as a percent of GBV (about 2.3% in 2025) is the proxy.
 - Contribution margin of services, experiences and hotels has never been quantified; the Q&A record shows analysts asking on Q2 2024, Q3 2025 and Q2 2026 without a number.
 - Stock reactions to margin guidance are in `research/airbnb_earnings_call_study.md` section 8; the clearest margin-driven moves were Q4 2023 (floor introduced), Q3 2024 (Q4 margin guide implied 27% to 28%) and Q2 2025.
+- The 1Q21 and 2Q21 letters carry no SBC-by-function footnote (it is in the 10-Qs), so the cash stack starts in 3Q21.
+
+---
+
+## 10. Margin bridge: where the 2022 to 2025 margin went
+
+Source: `data/processed/abnb_margin_bridge.csv` (script `analysis/src/abnb_margin_bridge.py`). Method: each cash line is written as cost per night divided by revenue per night. The change in a line's share of revenue is split into a unit-cost effect (cost per night moved, revenue per night held) and a revenue-per-night effect (denominator moved). The revenue-per-night effect is then split log-linearly into take rate, FX and ADR ex-FX, using the reported-versus-ex-FX revenue growth in the letters (FX cost 6 points in 2022, added 1 point in 2023, nil in 2024 and 2025). Nights booked are the unit; revenue follows stays, so the per-night figures are approximate within a year and clean across years.
+
+| Component (margin points) | FY2022 to FY2025 | FY2024 to FY2025 |
+|---|---|---|
+| ADR ex-FX (revenue per night) | +3.7 | +1.9 |
+| FX (revenue per night) | +0.7 | 0.0 |
+| Take rate (revenue per night) | +0.7 | -0.8 |
+| Operations & support, cash cost per night ($2.48 to $2.32) | +0.8 | +0.5 |
+| Cost of revenue per night ($3.81 to $3.91) | -0.5 | -0.4 |
+| Product development, cash per night ($2.42 to $2.51) | -0.4 | -0.6 |
+| G&A, cash per night ($1.89 to $2.01) | -0.5 | -0.6 |
+| Sales & marketing, cash per night ($3.56 to $4.46) | -4.2 | -1.9 |
+| D&A and add-backs | +0.3 | +0.6 |
+| **Change in Adjusted EBITDA margin** | **+0.5 (34.6% to 35.1%)** | **-1.3 (36.4% to 35.1%)** |
+
+Reading it:
+
+- **Revenue per night paid for the marketing ramp.** ADR ex-FX, FX and take rate together added 5.1 points between 2022 and 2025; sales and marketing alone took back 4.2 of them. Without the ADR windfall, margin would have fallen about 3 points over the period at the same spending.
+- **The 2025 decline was take rate plus S&M.** Take rate fell 16 bps (RNPL timing, FX, incentives) for -0.8 points, and S&M cash per night rose 11% for -1.9 points. ADR ex-FX (+1.9) and support efficiency (+0.5) covered most of it.
+- **Cost of revenue is a slow leak**: cash cost per night rose from $3.81 to $3.91 because it scales with GBV, not nights, and ADR rose 6.5%. It is only a margin problem when ADR rises faster than take rate.
+- **The FY2023 to FY2025 bridge is dominated by the 2023 one-off** (G&A +9.2, add-backs -8.9, netting to +0.2) and is in the CSV but not shown here.
+
+---
+
+## 11. Scenarios: FY2026, FY2027, and the Q3 and Q4 2026 prints
+
+Source: `data/processed/abnb_margin_scenarios.csv`; assumptions in the `SCEN` block of `analysis/src/abnb_margin_bridge.py`. Bottom-up: nights, ADR ex-FX, FX, take rate, cost of revenue per GBV dollar, support cost per night, product development, S&M and G&A cash growth, add-backs at 0.9% of revenue. FY2026 first-half actuals are fixed; Q3 uses the guide midpoint ($4.73B) and Q4 is the remainder.
+
+| | Bear | Base | Bull |
+|---|---|---|---|
+| FY26 nights / ADR ex-FX / FX | +9.5% / +3% / +2% | +10% / +3.5% / +2% | +10.5% / +4% / +2.5% |
+| FY26 take rate vs 13.41% | -5 bps | flat | +5 bps |
+| FY26 support cost per night | -4% | -5% | -7% |
+| FY26 product dev / S&M / G&A cash growth | +11% / +24% / +1% | +11% / +25% / 0% | +10% / +22% / 0% |
+| **FY26 revenue growth** | +14.6% | +16.1% | +18.2% |
+| **FY26 Adj. EBITDA margin** | **35.3%** | **35.9%** | **37.7%** |
+| Q3 2026E margin (guide: "down slightly" from 50.1%) | 48.3% | 49.0% | 50.2% |
+| Q4 2026E margin implied (Q4 2025: 28.3%) | 29.4% | 31.5% | 37.5% |
+| FY27 nights / ADR ex-FX / FX | +6% / +1% / -1.5% | +9% / +3% / 0% | +10% / +3.5% / +0.5% |
+| FY27 take rate change | -15 bps | flat | +10 bps |
+| FY27 support per night / product dev / S&M / G&A | -2% / +8% / +9% / +4% | -5% / +9% / +17% / +5% | -7% / +8% / +18% / +3% |
+| **FY27 revenue growth** | +4.3% | +12.3% | +15.3% |
+| **FY27 Adj. EBITDA margin** | **33.8%** | **36.5%** | **39.8%** |
+
+- **The floor case.** If FY2026 lands exactly on the 35.5% floor with revenue up 15% to 16% and Q3 at 49%, Q4 must print 29.4% to 29.6%, roughly Q4 2025's 28.3% plus a point. The base case (35.9%) needs Q4 at 31.5%, which is what the 1H run-rate of support savings and a slower S&M growth rate in H2 (+21% versus +30% in H1) delivers. Management has beaten every floor since 2023 by 60 to 180 bps, so a 35.9% base is conservative by that history and aggressive only if the AI spend Mertz flagged is larger than the support savings.
+- **Bear is a spending problem more than a demand problem in 2026, and a demand problem in 2027.** In 2026 the bear only misses the floor (35.3%) because S&M keeps its 1H pace and incentives clip the take rate. The 2027 bear (nights +6%, ADR flat ex-FX, FX and take rate against) lands at 33.8% even with S&M growth cut to 9%, because cost of revenue and product headcount do not flex.
+- **Bull is what the stack does if management stops reinvesting.** With revenue up 15% and cash costs growing 8% to 18%, margin expands about 2 points a year. This is the "at least 35.5%" language read literally as a floor with upside, and it is the case the multiple would need to see.
+- **Sensitivities on the FY2026 base** (margin points, EBITDA $M): +1 point ADR ex-FX +0.46 and +115; +1 point FX +0.47 and +117; +10 bps take rate +0.48 and +107; +1 point nights growth +0.35 and +97; support cost per night -10% +0.96 and +136; S&M cash growth +5 points -0.84 and -119. Take rate and ADR are worth roughly the same per unit of noise; the support line is the most powerful lever management actually controls.
+- **What to watch on 5 November:** Q3 margin against 49% (the guide implies 48.5% to 49.5%), S&M cash growth (a print below +25% YoY is the first sign the reinvestment cycle is easing), support cost per booking (management gave -10% and -16% in Q1 and Q2), implied take rate against 17.9%, and whether the FY floor moves to 36%.
