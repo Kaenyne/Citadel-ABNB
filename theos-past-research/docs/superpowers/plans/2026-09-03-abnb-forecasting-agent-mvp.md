@@ -170,7 +170,7 @@ Codex project task is needed for Codex to discover a newly added custom agent.
 Run:
 
 ```bash
-python3 /Users/theomachado/.codex/skills/.system/skill-creator/scripts/quick_validate.py .codex/skills/abnb-forecasting
+python3 <CODEX_SKILLS_ROOT>/.system/skill-creator/scripts/quick_validate.py .codex/skills/abnb-forecasting
 python3 -m pytest tests/test_forecasting_agent_config.py -q
 ```
 
@@ -874,7 +874,7 @@ causes a failure, report the exact failing test and do not alter that work.
 Run:
 
 ```bash
-python3 /Users/theomachado/.codex/skills/.system/skill-creator/scripts/quick_validate.py .codex/skills/abnb-forecasting
+python3 <CODEX_SKILLS_ROOT>/.system/skill-creator/scripts/quick_validate.py .codex/skills/abnb-forecasting
 python3 scripts/validate_project.py --root . --expected-transcripts 23
 ```
 

@@ -8,7 +8,7 @@
 
 **Tech stack:** UTF-8 CSV, Markdown, Python standard library for deterministic generation and validation, repository `abnb_alt_data.scraping_policy` for request gates.
 
-**Spec:** `/Users/theomachado/.codex/attachments/4c9cb7b7-1b1d-49d3-a85a-a5d92e98ca64/pasted-text.txt`
+**Spec:** the approved pasted specification supplied with this edge-discovery task
 
 ## Global constraints
 

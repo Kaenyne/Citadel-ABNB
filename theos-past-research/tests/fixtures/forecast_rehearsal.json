@@ -1,0 +1,187 @@
+{
+  "agentic_adjustments": [
+    {
+      "amount": "20",
+      "evidence_ids": [
+        "E-before"
+      ],
+      "falsification_condition": "The synthetic feature is withdrawn.",
+      "label": "synthetic demand adjustment",
+      "rationale": "Exercises a positive signed adjustment."
+    },
+    {
+      "amount": "-10",
+      "evidence_ids": [
+        "E-before"
+      ],
+      "falsification_condition": "The policy assumption is removed.",
+      "label": "synthetic policy adjustment",
+      "rationale": "Exercises a negative signed adjustment."
+    }
+  ],
+  "alternative_data_requests": [
+    {
+      "decision_use": "Test whether a lawful operating-demand proxy would change the guidance interval.",
+      "economic_mechanism": "A reviewed demand signal could alter the operating nowcast before management sets guidance.",
+      "evidence_gap": "No reviewed forward travel-demand series is included in this synthetic packet.",
+      "expected_sign": "positive",
+      "forecast_id": "ABNB-MVP-REHEARSAL-v1",
+      "geography": "global",
+      "minimum_coverage": "At least 16 comparable quarterly cutoffs",
+      "needed_by_utc": "2026-09-04T12:00:00Z",
+      "proposed_proxy": "Reviewed point-in-time travel-demand index",
+      "request_id": "ADR-MVP-001",
+      "requested_at_utc": "2026-09-03T12:01:00Z",
+      "required_history": "2021Q1 through 2026Q2",
+      "required_lag": "Strictly available before each forecast cutoff",
+      "target": "Next-quarter revenue-guidance midpoint"
+    }
+  ],
+  "features": [
+    {
+      "availability_status": "verified",
+      "collected_at_utc": "2026-09-03T12:05:00Z",
+      "currency": "",
+      "evidence_bucket": "outside",
+      "evidence_id": "E-before",
+      "feature_definition_version": "1",
+      "feature_id": "before",
+      "first_available_at_utc": "2026-09-03T11:59:59Z",
+      "geography": "global",
+      "license_class": "synthetic_test_only",
+      "manifest_id": "M-1",
+      "metric": "synthetic_macro_index",
+      "missing_reason": "",
+      "observed_at_utc": "2026-08-31T23:59:59Z",
+      "reference_end": "2026-08-31",
+      "reference_start": "2026-08-01",
+      "revision_status": "never_revised",
+      "review_status": "approved",
+      "source_id": "S-1",
+      "transformation_id": "level",
+      "unit": "index",
+      "value": "100",
+      "value_type": "decimal",
+      "vintage_at_utc": "2026-09-03T11:59:59Z"
+    },
+    {
+      "availability_status": "verified",
+      "collected_at_utc": "2026-09-03T12:05:00Z",
+      "currency": "",
+      "evidence_bucket": "outside",
+      "evidence_id": "E-equal",
+      "feature_definition_version": "1",
+      "feature_id": "equal",
+      "first_available_at_utc": "2026-09-03T12:00:00Z",
+      "geography": "global",
+      "license_class": "synthetic_test_only",
+      "manifest_id": "M-1",
+      "metric": "synthetic_macro_index",
+      "missing_reason": "",
+      "observed_at_utc": "2026-08-31T23:59:59Z",
+      "reference_end": "2026-08-31",
+      "reference_start": "2026-08-01",
+      "revision_status": "never_revised",
+      "review_status": "approved",
+      "source_id": "S-1",
+      "transformation_id": "level",
+      "unit": "index",
+      "value": "101",
+      "value_type": "decimal",
+      "vintage_at_utc": "2026-09-03T12:00:00Z"
+    }
+  ],
+  "history": [
+    {
+      "guidance_midpoint": "2700",
+      "guided_period": "2024Q3"
+    },
+    {
+      "guidance_midpoint": "2750",
+      "guided_period": "2025Q2"
+    },
+    {
+      "guidance_midpoint": "3000",
+      "guided_period": "2025Q3"
+    }
+  ],
+  "manifests": [
+    {
+      "content_checksum": "synthetic-not-a-real-checksum",
+      "coverage_end": "2026-09-03",
+      "coverage_start": "2026-08-01",
+      "created_at_utc": "2026-09-03T10:00:00Z",
+      "dataset_id": "SYNTHETIC-MACRO",
+      "dataset_version": "1",
+      "evidence_locations": [
+        "tests/fixtures"
+      ],
+      "known_limitations": "Contains no real observations.",
+      "license_class": "synthetic_test_only",
+      "manifest_id": "M-1",
+      "permitted_uses": "software tests only",
+      "producer": "test-fixture",
+      "release_lag_rule": "synthetic fixture",
+      "review_status": "approved_for_forecasting",
+      "reviewer": "test-reviewer",
+      "row_count": 2,
+      "schema_version": "1",
+      "source_registry_ids": [
+        "S-1"
+      ],
+      "vintage_method": "synthetic fixture"
+    }
+  ],
+  "operating_nowcast": {
+    "p50": "3200",
+    "provenance": "synthetic"
+  },
+  "policy_offsets": [
+    "-100",
+    "-50",
+    "25"
+  ],
+  "range_widths": [
+    "80",
+    "100",
+    "120"
+  ],
+  "research_evidence": false,
+  "residuals": [
+    "-200",
+    "-100",
+    "0",
+    "100",
+    "200"
+  ],
+  "run": {
+    "agent_model": "gpt-5.6-sol",
+    "analyst_owner": "test-fixture",
+    "as_of_utc": "2026-09-03T12:00:00Z",
+    "code_revision": "synthetic-test",
+    "forecast_id": "ABNB-MVP-REHEARSAL-v1",
+    "forecast_version": 1,
+    "generated_at_utc": "2026-09-03T12:01:00Z",
+    "input_manifest_ids": [
+      "M-1"
+    ],
+    "issuing_fiscal_period": "2026Q2",
+    "notes": "Synthetic values for software validation only.",
+    "parent_forecast_id": "",
+    "prompt_version": "1",
+    "reasoning_effort": "xhigh",
+    "run_mode": "FORECAST",
+    "status": "workflow_rehearsal",
+    "target_event": "Synthetic Q2 2026 earnings rehearsal",
+    "target_event_at_utc": "2026-09-04T20:00:00Z",
+    "ticker": "ABNB"
+  },
+  "target": {
+    "currency": "USD",
+    "guided_period": "2026Q3",
+    "metric": "revenue_guidance_midpoint",
+    "model_stage": "guidance_policy",
+    "target_id": "ABNB-NEXT-Q-REVENUE-GUIDANCE-MIDPOINT-v1",
+    "unit": "USD millions"
+  }
+}
