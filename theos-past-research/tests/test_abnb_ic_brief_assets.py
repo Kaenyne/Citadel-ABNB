@@ -11,13 +11,14 @@ BUILDER_PATH = ROOT / "docs" / "forecasting" / "abnb_ic_brief" / "build_assets.p
 REACTION_WORKBOOK = (
     ROOT
     / "outputs"
-    / "01a065f3-9f9d-7c33-a034-621059cc8c6f"
+    / "workbooks"
     / "ABNB_edge_guidance_stock_reaction.xlsx"
 )
 ACTIVITY_PANEL = (
     ROOT
     / "outputs"
-    / "01a065f3-9f9d-7c33-a034-621059cc8c6f"
+    / "reproducibility"
+    / "us-europe-guidance"
     / "abnb_us_europe_guidance_panel.csv"
 )
 

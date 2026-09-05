@@ -40,6 +40,11 @@ The request workbook is a blank template for an approved Bloomberg request; it
 does not contain vendor-returned consensus data. Its contents are preserved
 unchanged under the neutral review filename above.
 
+The static final PDF and its figure PDFs are retained as the historical rendered
+report. Editable report sources and audit references use the normalized named
+locations above for this team checkout; the PDF and figure binaries are not
+rebuilt as part of that path normalization.
+
 ## Provenance and restricted inputs
 
 This snapshot records source `main` at

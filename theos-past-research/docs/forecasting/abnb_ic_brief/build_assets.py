@@ -549,17 +549,27 @@ def build_assets(
 
 def main() -> int:
     workspace = Path(__file__).resolve().parents[3]
-    default_run = workspace / "outputs" / "01a065f3-9f9d-7c33-a034-621059cc8c6f"
+    # Task 5 consolidates reviewable inputs in stable, named output locations.
+    default_reaction_workbook = (
+        workspace / "outputs" / "workbooks" / "ABNB_edge_guidance_stock_reaction.xlsx"
+    )
+    default_activity_panel = (
+        workspace
+        / "outputs"
+        / "reproducibility"
+        / "us-europe-guidance"
+        / "abnb_us_europe_guidance_panel.csv"
+    )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--reaction-workbook",
         type=Path,
-        default=default_run / "ABNB_edge_guidance_stock_reaction.xlsx",
+        default=default_reaction_workbook,
     )
     parser.add_argument(
         "--activity-panel",
         type=Path,
-        default=default_run / "abnb_us_europe_guidance_panel.csv",
+        default=default_activity_panel,
     )
     parser.add_argument(
         "--output-dir", type=Path, default=Path(__file__).resolve().parent / "generated"

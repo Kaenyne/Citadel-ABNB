@@ -1,6 +1,7 @@
 from pathlib import Path
 import subprocess
 import tomllib
+from zipfile import ZipFile
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,6 +57,22 @@ def test_raw_and_build_outputs_are_ignored_but_review_artifacts_are_trackable() 
         "outputs/workbooks/abnb_us_europe_guidance_comparison.xlsx",
     ):
         assert not is_ignored(path)
+
+
+def test_review_workbooks_contain_no_machine_local_paths() -> None:
+    workbook_dir = ROOT / "outputs/workbooks"
+    unix_marker = "/" + "Users/"
+    windows_marker = "C:" + "\\" + "Users" + "\\"
+
+    for workbook_path in sorted(workbook_dir.glob("*.xlsx")):
+        with ZipFile(workbook_path) as archive:
+            xml_text = "\n".join(
+                archive.read(member.filename).decode("utf-8", errors="replace")
+                for member in archive.infolist()
+                if member.filename.endswith((".xml", ".rels"))
+            )
+        assert unix_marker not in xml_text, workbook_path.name
+        assert windows_marker not in xml_text, workbook_path.name
 
 
 def test_scraping_extra_declares_scrapling() -> None:
