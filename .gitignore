@@ -27,6 +27,9 @@ desktop.ini
 # Large / raw data (link in data/README.md instead)
 data/raw/*
 !data/raw/.gitkeep
+# Small public text inputs kept in git as an exception (see data/README.md)
+!data/raw/fred/
+!data/raw/bea/
 *.parquet
 *.zip
 
