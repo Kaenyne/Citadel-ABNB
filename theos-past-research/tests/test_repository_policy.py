@@ -82,26 +82,62 @@ def test_review_workbooks_contain_no_machine_local_paths() -> None:
         assert windows_marker not in xml_text, workbook_path.name
 
 
+def source_rows_block(source: str) -> str:
+    start = source.index("const sourceRows = [")
+    end = source.index("\nsources.getRange(", start)
+    return source[start:end]
+
+
+def reaction_generator_policy_violations(source: str) -> list[str]:
+    violations: list[str] = []
+    canonical_output = (
+        'const outputPath = path.join(workspace, "outputs", "workbooks", '
+        '"ABNB_edge_guidance_stock_reaction.xlsx");'
+    )
+    if canonical_output not in source:
+        violations.append("generator output is not the canonical review workbook")
+    if "await xlsx.save(outputPath);" not in source:
+        violations.append("XLSX save does not use the canonical outputPath")
+
+    rows = source_rows_block(source)
+    for source_id, logical_name, resolved_name in (
+        ("GUIDANCE_PANEL", "guidance", "guidance"),
+        ("TRANSCRIPT_INDEX", "transcriptIndex", "transcriptIndex"),
+        ("HYPOTHESIS_LEDGER", "hypothesisLedger", "hypothesisLedger"),
+    ):
+        row_start = rows.index(f'["{source_id}"')
+        row_end = rows.index("],", row_start) + 2
+        row = rows[row_start:row_end]
+        if f"logicalSourcePaths.{logical_name}" not in row:
+            violations.append(f"{source_id} source row is not logical")
+        if f"paths.{resolved_name}" in row:
+            violations.append(f"{source_id} source row uses a resolved path")
+    return violations
+
+
 def test_reaction_generator_uses_tracked_output_and_logical_source_paths() -> None:
     source = REACTION_GENERATOR.read_text(encoding="utf-8")
     unix_marker = "/" + "Users/"
     windows_marker = "C:" + "\\" + "Users" + "\\"
 
-    assert (
-        'const outputPath = path.join(workspace, "outputs", "workbooks", '
-        '"ABNB_edge_guidance_stock_reaction.xlsx");'
-    ) in source
-    for logical_path in (
-        "research/readiness/20260903T053309Z_abnb_readiness/target_panel.csv",
-        "research/transcripts/transcript_index.csv",
-        "research/hypothesis_ledger.csv",
-    ):
-        assert logical_path in source
-    assert "logicalSourcePaths.guidance" in source
-    assert "logicalSourcePaths.transcriptIndex" in source
-    assert "logicalSourcePaths.hypothesisLedger" in source
+    assert reaction_generator_policy_violations(source) == []
     assert unix_marker not in source
     assert windows_marker not in source
+
+
+def test_reaction_generator_policy_check_rejects_unsafe_mutations() -> None:
+    source = REACTION_GENERATOR.read_text(encoding="utf-8")
+    rows = source_rows_block(source)
+    unsafe_rows = rows.replace("logicalSourcePaths.guidance", "paths.guidance", 1)
+    unsafe_source = source.replace(rows, unsafe_rows).replace(
+        "await xlsx.save(outputPath);", "await xlsx.save(previewDir);"
+    )
+
+    violations = reaction_generator_policy_violations(unsafe_source)
+
+    assert "XLSX save does not use the canonical outputPath" in violations
+    assert "GUIDANCE_PANEL source row is not logical" in violations
+    assert "GUIDANCE_PANEL source row uses a resolved path" in violations
 
 
 def test_scraping_extra_declares_scrapling() -> None:
