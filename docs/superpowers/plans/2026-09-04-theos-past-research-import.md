@@ -59,7 +59,7 @@
 - Create: `theos-past-research/uv.lock`
 
 **Interfaces:**
-- Consumes: the source `main` working tree rooted at `/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026`.
+- Consumes: the source `main` working tree rooted at `<path-to-source-research>`.
 - Produces: a nested project snapshot without licensed, oversized, raw-global, generated-output, or machine-local files.
 
 - [ ] **Step 1: Confirm source and destination identities**
@@ -70,8 +70,9 @@ Run from the team checkout:
 git branch --show-current
 git rev-parse HEAD
 git status --short
-git -C "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026" rev-parse main
-git -C "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026" rev-parse abnb-guidance-intelligence
+SOURCE_RESEARCH="<path-to-source-research>"
+git -C "$SOURCE_RESEARCH" rev-parse main
+git -C "$SOURCE_RESEARCH" rev-parse abnb-guidance-intelligence
 ```
 
 Expected: destination branch `codex/theos-past-research-import`; source SHAs exactly match the two Global Constraints; only the committed spec and this plan exist on the destination branch.
@@ -81,7 +82,7 @@ Expected: destination branch `codex/theos-past-research-import`; source SHAs exa
 Run:
 
 ```bash
-SOURCE_RESEARCH="/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026"
+SOURCE_RESEARCH="<path-to-source-research>"
 IMPORT_ROOT="$(pwd -P)/theos-past-research"
 mkdir -p "$IMPORT_ROOT"
 rsync -a \
@@ -153,13 +154,14 @@ Expected: one commit containing only `theos-past-research/` base-snapshot files.
 - Test: `theos-past-research/tests/test_guidance_leakage.py`
 
 **Interfaces:**
-- Consumes: guidance worktree at `/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026/.worktrees/abnb-guidance-intelligence`.
+- Consumes: guidance worktree at `$SOURCE_RESEARCH/.worktrees/abnb-guidance-intelligence`.
 - Produces: importable `abnb_guidance` package and guidance research rooted at `research/guidance/`.
 
 - [ ] **Step 1: Copy complementary guidance paths without collisions**
 
 ```bash
-GUIDANCE_SOURCE="/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026/.worktrees/abnb-guidance-intelligence"
+SOURCE_RESEARCH="<path-to-source-research>"
+GUIDANCE_SOURCE="$SOURCE_RESEARCH/.worktrees/abnb-guidance-intelligence"
 IMPORT_ROOT="$(pwd -P)/theos-past-research"
 cp "$GUIDANCE_SOURCE/.codex/agents/abnb_guidance_intelligence.toml" "$IMPORT_ROOT/.codex/agents/"
 rsync -a --exclude='__pycache__/' --exclude='*.py[cod]' "$GUIDANCE_SOURCE/src/abnb_guidance/" "$IMPORT_ROOT/src/abnb_guidance/"
@@ -474,9 +476,11 @@ Also reject `EARNING-TRANSCRIPTS/`, `data/licensed/earnings_transcripts/clean_md
 - [ ] **Step 6: Generate the real manifests and provenance note**
 
 ```bash
+SOURCE_RESEARCH="<path-to-source-research>"
+GUIDANCE_SOURCE="$SOURCE_RESEARCH/.worktrees/abnb-guidance-intelligence"
 .venv/bin/python scripts/build_import_manifests.py \
-  --source-root "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026" \
-  --guidance-root "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026/.worktrees/abnb-guidance-intelligence" \
+  --source-root "$SOURCE_RESEARCH" \
+  --guidance-root "$GUIDANCE_SOURCE" \
   --output-root research/provenance
 ```
 
@@ -549,7 +553,7 @@ Expected: FAIL because the new package README and expanded ignore rules do not e
 
 ```bash
 cd "$(git rev-parse --show-toplevel)"
-SOURCE_RESEARCH="/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/CAIMANES/CITADEL 2026"
+SOURCE_RESEARCH="<path-to-source-research>"
 GUIDANCE_SOURCE="$SOURCE_RESEARCH/.worktrees/abnb-guidance-intelligence"
 IMPORT_ROOT="$(pwd -P)/theos-past-research"
 mkdir -p "$IMPORT_ROOT/outputs/reports" "$IMPORT_ROOT/outputs/workbooks" "$IMPORT_ROOT/outputs/figures" "$IMPORT_ROOT/outputs/reproducibility/us-europe-guidance"
