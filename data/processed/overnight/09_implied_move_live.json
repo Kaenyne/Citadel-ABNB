@@ -1,0 +1,18 @@
+{
+  "spot": 181.94,
+  "expiry_pre": "2026-10-23",
+  "t1_years": 0.1287,
+  "atm_iv_pre_pct": 37.812146026218706,
+  "expiry_post": "2026-11-20",
+  "t2_years": 0.2053,
+  "atm_iv_post_pct": 38.138118623906266,
+  "jump_sd_flatvol_pct": 2.254710108214798,
+  "jump_sd_upper_bound_pct": 10.709282944602723,
+  "exp_abs_move_flatvol_pct": 1.7989983844307451,
+  "exp_abs_move_upper_pct": 8.544771518767961,
+  "note": "IVs are a single yfinance snapshot on strikes that are thin 60 days out; the two estimators bracket the truth. The event premium normally only appears in the last 1-2 weeks.",
+  "ledger_straddle_near_pct": 13.38,
+  "ledger_straddle_far_pct": 15.65,
+  "ledger_sqrt_time_implied_far_pct": 15.651861163923506,
+  "ledger_event_premium_pts": 0.0015910167510231332
+}

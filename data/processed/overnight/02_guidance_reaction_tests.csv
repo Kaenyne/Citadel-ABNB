@@ -1,0 +1,18 @@
+test,n,r2,loo_r2,loo_rmse,mean_rmse,coefs,t_stats,note
+day1 ~ revenue beat vs prior guide midpoint,19,0.052,-0.129,8.8,8.28,"{'const': -4.059, 'beat_pct': 1.253}","{'const': -1.06, 'beat_pct': 0.97}",the classic 'beat'
+day1 ~ raw next-Q guide vs seasonal-naive,20,0.02,-0.121,9.12,8.61,"{'const': 0.837, 'guide_vs_naive_pct': 0.25}","{'const': 0.32, 'guide_vs_naive_pct': 0.61}",
+day1 ~ cushion-aware next-Q guide surprise,15,0.011,-0.293,8.87,7.8,"{'const': -2.414, 'cushion_aware_guide_surprise_pct': 0.281}","{'const': -1.12, 'cushion_aware_guide_surprise_pct': 0.39}",guide grossed up by the walk-forward median beat
+day1 ~ beat + raw guide,19,0.07,-0.188,9.03,8.28,"{'const': -3.479, 'beat_pct': 1.415, 'guide_vs_naive_pct': 0.23}","{'const': -0.86, 'beat_pct': 1.04, 'guide_vs_naive_pct': 0.55}",
+day1 ~ beat + cushion-aware guide,15,0.156,-0.272,8.8,7.8,"{'const': -9.125, 'beat_pct': 2.913, 'cushion_aware_guide_surprise_pct': 0.602}","{'const': -1.78, 'beat_pct': 1.43, 'cushion_aware_guide_surprise_pct': 0.82}",
+day1 ~ nights acceleration (predictive-study benchmark),19,0.029,-0.096,8.67,8.28,"{'const': -0.743, 'nights_accel': 0.134}","{'const': -0.37, 'nights_accel': 0.72}",
+day1 ~ nights accel + cushion-aware guide,15,0.013,-0.671,10.09,7.8,"{'const': -2.295, 'nights_accel': 0.109, 'cushion_aware_guide_surprise_pct': 0.309}","{'const': -0.95, 'nights_accel': 0.13, 'cushion_aware_guide_surprise_pct': 0.4}",
+day1 ~ nights accel + beat,19,0.056,-0.194,9.05,8.28,"{'const': -3.484, 'nights_accel': 0.056, 'beat_pct': 1.049}","{'const': -0.77, 'nights_accel': 0.25, 'beat_pct': 0.67}",
+day1 ~ FY guide raise/cut,23,0.007,-0.21,9.31,8.47,"{'const': 0.254, 'fy_guide_action': 1.464}","{'const': 0.13, 'fy_guide_action': 0.38}",
+day1 ~ next-Q margin guide direction,17,0.0,-0.225,9.87,8.92,"{'const': 0.433, 'margin_guide_dir': 0.171}","{'const': 0.18, 'margin_guide_dir': 0.07}",
+day1 ~ change in margin guide direction,14,0.018,-0.566,10.43,8.34,"{'const': -1.664, 'margin_guide_dir_change': -1.114}","{'const': -0.7, 'margin_guide_dir_change': -0.47}",
+day1 ~ nights accel + FY guide action,19,0.051,-0.211,9.11,8.28,"{'const': -1.251, 'nights_accel': 0.124, 'fy_guide_action': 2.37}","{'const': -0.57, 'nights_accel': 0.65, 'fy_guide_action': 0.61}",
+day20 ~ FY guide raise/cut,22,0.0,-0.132,7.82,7.36,"{'const': -4.693, 'fy_guide_action': 0.216}","{'const': -2.73, 'fy_guide_action': 0.06}",
+day20 ~ change in margin guide direction,13,0.071,-0.288,8.67,7.64,"{'const': -5.456, 'margin_guide_dir_change': 2.361}","{'const': -2.42, 'margin_guide_dir_change': 0.92}",
+day20 ~ cushion-aware guide surprise,15,0.166,-0.135,7.88,7.4,"{'const': -5.322, 'cushion_aware_guide_surprise_pct': 1.015}","{'const': -2.84, 'cushion_aware_guide_surprise_pct': 1.61}",
+day5 ~ beat,19,0.031,-0.158,9.97,9.27,"{'const': -0.67, 'beat_pct': -1.08}","{'const': -0.15, 'beat_pct': -0.74}",
+day5 ~ cushion-aware guide surprise,15,0.099,-0.172,8.61,7.95,"{'const': -3.748, 'cushion_aware_guide_surprise_pct': 0.84}","{'const': -1.79, 'cushion_aware_guide_surprise_pct': 1.19}",
