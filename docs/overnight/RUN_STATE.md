@@ -31,6 +31,9 @@ Manual restart if the session is gone: open a terminal in `C:\Users\krish\citade
 | 13 | Driver model build (Excel + Python) | done | yes | 13_driver-model-build.md | |
 | 14 | Master synthesis | done | yes | 14_master-synthesis.md | |
 | 15 | Red-team verification | done | yes | 15_red-team.md | |
+| 16 | Web gap fill (Chrome) | done | yes | 16_web-gap-fill.md | 10:48 |
+| 17 | Excel COM audit of the workbook | done | yes | 17_excel-audit.md | 11:40 |
+| 18 | WS16/WS17 corrections + share-count fix | done | yes | 18_corrections-applied.md | 12:35 |
 
 ## Log
 
@@ -55,3 +58,6 @@ Manual restart if the session is gone: open a terminal in `C:\Users\krish\citade
 - 03:31 heartbeat: 01-13 and 15 done; 14 (synthesis) running since 03:29; nothing to do.
 - 03:42 WS14 finished: research/notes/overnight/14_master-synthesis.md and docs/overnight/FINAL_SUMMARY.md written. All 15 workstreams complete. Committing.
 - 03:44 Committed b4c4c59 on krish/overnight-synthesis (295 files, not pushed). Heartbeat cron deleted. Run complete.
+- 10:48 Follow-up: WS16 (web gap fill via Chrome) done: 2Q24 next-Q consensus $3.84bn (guide -3.65%, 9/9 guide-below-Street negative at 20d); Zacks ADR consensus exists (5 prints); red-team corrections 11/15 withdrawn (single-fee ~50% is in the 2Q26 call transcript); direct-booking pilot 0-15bp not -0.8pt; 12 line edits proposed for 14_master-synthesis.md. WS17 (Excel COM audit) running.
+- 11:40 WS17 (Excel COM audit) done: Excel 16.0 rebuilt the workbook, 0 error cells in 5,544, 216/216 outputs and 2,348/2,348 formula cells matching to 4.2e-15. 16 findings, 11 fixed with no number moving (the scenario selector was inert; the reverse-DCF answer was a paste). One high-severity item left open: the FY2026 share roll double-counted the 1H26 buyback.
+- 12:35 WS18 done: share-count fix applied in 13_driver_model.py and 13_excel_builder.py (FY2026 rolls the 2Q26 count on 2H26 flows only, matching the net-cash line). FY26E shares 580.3M -> 588.9M; every per-share and price output -1.45 to -1.55%; base football-field mean $162.65 -> $160.22, base EV/EBITDA lens $184 -> $181, bear mean $76, bull mean $233. Workbook regenerated and re-audited in Excel: 0 errors in 5,547 cells, 216/216 outputs, 2,349/2,349 formula cells, scenario switch 143 comparisons / 0 mismatches. WS16's 12 line edits applied to 14_master-synthesis.md plus a new section 11 "Post-run corrections"; FINAL_SUMMARY.md, 13_driver-model-build.md and model/assumptions.md renumbered. Ledger: data/processed/overnight/18_corrections_applied.csv and 18_share_fix_delta.csv. Nothing committed.

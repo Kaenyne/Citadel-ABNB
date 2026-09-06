@@ -3,7 +3,8 @@
 Called by `13_driver_model.py`. Every forecast cell in the workbook is a formula off the `Inputs`
 sheet or the `History` sheet; nothing downstream of `Inputs` is a pasted value. The three scenarios
 are all computed in full (three blocks on Revenue / Costs / Cash), and the scenario selector on
-`Inputs!$B$3` drives the headline blocks on `Valuation` and `Card_5Nov`.
+`Inputs!$B$4` (named range `Scenario`) drives the `Active` column on `Inputs`, on `Valuation`
+sections 1, 2, 3 and 4, and on `Card_5Nov`.
 
 The `Recon` sheet puts the Python mirror's value next to each workbook formula so Excel itself
 computes the difference when the file is opened.
@@ -93,14 +94,17 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     r = 1
     put(ws, r, 1, "ABNB driver model - Inputs", font=TITLE); r += 1
     put(ws, r, 1, "Overnight run 6-7 Sep 2026 (workstream 13). Yellow cells are inputs; everything "
-                  "downstream is a live formula. Sources name the workstream that supplied the value.",
-        font=SMALL); r += 2
+                  "downstream is a live formula. The other hard numbers in the file are the History "
+                  "actuals table, the external Street / Card bars (each with its vendor and date) and "
+                  "the Recon sheet's Python-mirror column. Sources name the workstream that supplied "
+                  "the value.", font=SMALL); r += 2
 
     put(ws, r, 1, "SCENARIO SELECTOR  (1 = Bear, 2 = Base, 3 = Bull)", font=H2)
     put(ws, r, 2, 2, fill=FILL_IN, font=Font(bold=True))
     SCEN_SEL = "Inputs!$B$%d" % r
-    put(ws, r, 7, "Drives the headline blocks on Valuation and Card_5Nov. All three scenarios are "
-                  "computed in full on Revenue / Costs / Cash.", font=SMALL)
+    put(ws, r, 7, "Drives the Active column here and the Active column on Valuation (sections 1-4) "
+                  "and Card_5Nov. All three scenarios are computed in full on Revenue / Costs / Cash, "
+                  "so the Bear / Base / Bull columns never move when this cell changes.", font=SMALL)
     r += 2
 
     r = section(ws, r, "A. VALUATION AND CONTROL INPUTS")
@@ -115,6 +119,11 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         for i, v in enumerate((bear, base, bull)):
             put(ws, r, 3 + i, v, fmt=fmt, fill=FILL_IN)
         put(ws, r, 6, f"=CHOOSE({SCEN_SEL},C{r},D{r},E{r})", fmt=fmt)
+        if k == "dcf_years":
+            # WS17 audit: the Valuation DCF grid is written out as exactly ten rows, so this cell
+            # documents the convention rather than resizing anything. Say so where a reader will see it.
+            src += (". LAYOUT-FIXED: the DCF grid on Valuation section 3 is ten written-out rows, so "
+                    "changing this cell does not resize the grid and has no effect on any output")
         put(ws, r, 7, src, font=SMALL)
         rv[k] = r
         r += 1
@@ -140,9 +149,16 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
                 ("nights_2028", DM.NIGHTS_2028, "y/y",
                  "WS07 lever: no regional build exists three years out"),
                 ("adr_exfx_2028", DM.ADR_EXFX_2028, "y/y", "WS07 lever"),
-                ("rev_fx_2028", tuple(DM.FX_2028[s][0] / 100 for s in DM.SCENARIOS), "pp",
-                 "WS07: no FX view three years out; zero in every case so FX does not flatter the path"),
-                ("adr_fx_2028", tuple(DM.FX_2028[s][1] / 100 for s in DM.SCENARIOS), "pp", "same"),
+                # WS17 audit fix: these two are stored as fractions and percent-formatted, unlike the
+                # quarterly FX rows in section C, which are plain percentage-point numbers divided by
+                # 100 where they are used. The unit label used to read "pp" on both, so a reader who
+                # typed 1.5 here meaning +1.5pp would have got +150%. Both are zero today.
+                ("rev_fx_2028", tuple(DM.FX_2028[s][0] / 100 for s in DM.SCENARIOS), "y/y",
+                 "WS07: no FX view three years out; zero in every case so FX does not flatter the "
+                 "path. UNIT: a fraction, percent-formatted (0.015 = +1.5pp), NOT the plain "
+                 "percentage-point number used by the quarterly FX rows in section C"),
+                ("adr_fx_2028", tuple(DM.FX_2028[s][1] / 100 for s in DM.SCENARIOS), "y/y",
+                 "same; a fraction, percent-formatted, not a percentage-point number"),
             ]:
                 put(ws, r, 1, {"nights_2028": "Total nights growth, FY2028E",
                                "adr_exfx_2028": "ADR ex-FX growth, FY2028E",
@@ -321,6 +337,7 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     anchor("1H2026 FCF ($M)", S4("fcf_musd", h1q), note="actual")
     anchor("1H2026 buybacks ($M)", S4("buybacks_musd", h1q), note="actual")
     anchor("1H2026 RSU withholding ($M)", S4("rsu_tax_withholding_musd", h1q), note="actual")
+    anchor("1H2026 SBC ($M)", S4("sbc_musd", h1q), note="actual; used by the 2H26 share roll")
     for q in ["3Q25", "4Q25", "1Q26", "2Q26"]:
         anchor(f"{q} nights (M)", f"={col(ci['nights_m'])}{qrow[q]}")
         anchor(f"{q} GBV ($M)", f"={col(ci['gbv_musd'])}{qrow[q]}")
@@ -357,7 +374,44 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
                          ("LTM adj. EBITDA ($M)", DM.LTM_EBITDA, "3Q25-2Q26"),
                          ("LTM FCF ($M)", DM.LTM_FCF, "3Q25-2Q26"),
                          ("LTM SBC ($M)", DM.LTM_SBC, "3Q25-2Q26")]:
-        put(hs, r, 1, lab); put(hs, r, 2, v, fmt=F_NUM1); put(hs, r, 3, note, font=SMALL)
+        put(hs, r, 1, lab); put(hs, r, 2, v, fmt=F_NUM1, fill=FILL_IN); put(hs, r, 3, note, font=SMALL)
+        anch[lab] = f"History!$B${r}"; r += 1
+
+    # WS17 audit fix: these eleven FY2025 actuals used to sit as bare literals inside the FY2025A
+    # memo formulas on Costs and Cash ("=161", "=-232", "=3789"...), with no source anywhere. They
+    # are anchors like everything else above, so they belong here, sourced, and referenced.
+    r += 1
+    r = section(hs, r, "FY2025 CASH-BRIDGE ANCHORS - the FY2025A memo column on Costs and Cash. "
+                       "No forecast year depends on these.", 8)
+    put(hs, r, 1, "Item", font=H1, fill=FILL_H); put(hs, r, 2, "Value", font=H1, fill=FILL_H)
+    put(hs, r, 3, "Source / formula", font=H1, fill=FILL_H); r += 1
+    BR = "data/processed/abnb_fcf_bridge.csv, sum of 1Q25-4Q25"
+    for lab, v, note in [
+        ("FY2025 D&A ($M)", 91.0, BR + " (da)"),
+        ("FY2025 D&A and other add-backs ($M)", 161.0, BR + " (da 91 + other_addbacks 70)"),
+        ("FY2025 interest income ($M)", 705.0, BR + " (interest_income)"),
+        ("FY2025 interest expense ($M)", 0.0, BR + " reports zero in every quarter of 2025; the "
+                                                  "note coupon sits inside other income/(expense) "
+                                                  "in that bridge. Memo only - the forecast years "
+                                                  "take interest expense from Inputs"),
+        ("FY2025 other income / (expense) ($M)", -112.0, BR + " (other_income_expense)"),
+        ("FY2025 cash taxes ($M)", -232.0, "WS07: FY2025 cash taxes 1.9% of revenue "
+                                           "(0.019 x $12,241M = $232M); the book tax provision was $626M"),
+        ("FY2025 change in unearned fees ($M)", 127.0, BR + " (change_unearned_fees)"),
+        ("FY2025 working-capital residual ($M)", -139.0,
+         "WS07: FY24 and FY25 both about -$140M. With the eight lines above this reproduces the "
+         "reported FY2025 FCF of $4,613M exactly"),
+        ("FY2025 capex ($M)", -33.0, BR + " (capex)"),
+    ]:
+        put(hs, r, 1, lab); put(hs, r, 2, v, fmt=F_NUM1, fill=FILL_IN); put(hs, r, 3, note, font=SMALL)
+        anch[lab] = f"History!$B${r}"; r += 1
+    for lab, cix, note in [("FY2025 buybacks ($M)", "buybacks_musd", "sum of the 2025 quarters above"),
+                           ("FY2025 RSU tax withholding ($M)", "rsu_tax_withholding_musd",
+                            "sum of the 2025 quarters above")]:
+        cl = col(ci[cix])
+        put(hs, r, 1, lab)
+        put(hs, r, 2, "=" + "+".join(f"{cl}{qrow[q]}" for q in fy25q), fmt=F_NUM1)
+        put(hs, r, 3, note, font=SMALL)
         anch[lab] = f"History!$B${r}"; r += 1
 
     HA = lambda k: anch[k]
@@ -491,7 +545,7 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
              lambda q: f"={CQ[q]}{row['gbv']}*{CQ[q]}{row['take']}*(1+{CQ[q]}{row['wedge']})",
              lambda y: (f"={HA('1H2026 revenue ($M)')}+{CQ['3Q26']}{row['core']}+{CQ['4Q26']}{row['core']}" if y == 2026 else
                         (f"=SUM({CQ['1Q27']}{row['core']}:{CQ['4Q27']}{row['core']})" if y == 2027 else
-                         f"={CFY[2028]}{row['gbv']}*({CFY[2027]}{row['take']}+{ANN(2028, 'take_bps', s)}/10000)*(1+{CFY[2028]}{row['wedge']})")),
+                         f"={CFY[2028]}{row['gbv']}*{CFY[2028]}{row['take']}*(1+{CFY[2028]}{row['wedge']})")),
              fmt=F_NUM)
         line("take_impl", "  Implied reported take rate (core revenue / GBV)", "%",
              lambda q: f"={CQ[q]}{row['core']}/{CQ[q]}{row['gbv']}",
@@ -603,7 +657,7 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         cline("cash_costs", "Total cash costs", "$M",
               "=" + "+".join(f"C{row[k]}" for k in ["cor", "ops", "pd", "bpm", "fop", "ga", "nbc", "ai"]),
               lambda y: "=" + "+".join(f"{CC[y]}{row[k]}" for k in ["cor", "ops", "pd", "bpm", "fop", "ga", "nbc", "ai"]))
-        cline("addb", "D&A and other add-backs", "$M", "=161",
+        cline("addb", "D&A and other add-backs", "$M", f"={HA('FY2025 D&A and other add-backs ($M)')}",
               lambda y: f"={CC[y]}{row['rev']}*{ANN(y, 'addback_pct', s)}", fmt=F_NUM1)
         cline("adj_unc", "  Adj. EBITDA before the WS07 38% ceiling", "$M", f"={HA('FY2025 adj. EBITDA ($M)')}",
               lambda y: f"={CC[y]}{row['rev']}-{CC[y]}{row['cash_costs']}+{CC[y]}{row['addb']}")
@@ -617,15 +671,15 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
               lambda y: f"={CC[y - 1]}{row['sbc']}*(1+{ANN(y, 'sbc_growth', s)})")
         cline("sbc_pct", "  SBC, % of revenue", "%", f"=C{row['sbc']}/C{row['rev']}",
               lambda y: f"={CC[y]}{row['sbc']}/{CC[y]}{row['rev']}", fmt=F_PCT1)
-        cline("da", "D&A", "$M", "=91",
+        cline("da", "D&A", "$M", f"={HA('FY2025 D&A ($M)')}",
               lambda y: f"={CC[y]}{row['rev']}*{ANN(y, 'da_pct', s)}", fmt=F_NUM1)
         cline("opinc", "GAAP operating income", "$M", None,
               lambda y: f"={CC[y]}{row['adj']}-{CC[y]}{row['sbc']}-{CC[y]}{row['addb']}")
         cline("opmargin", "  GAAP operating margin", "%", None,
               lambda y: f"={CC[y]}{row['opinc']}/{CC[y]}{row['rev']}", fmt=F_PCT1)
-        cline("ii", "Interest income", "$M", "=705",
+        cline("ii", "Interest income", "$M", f"={HA('FY2025 interest income ($M)')}",
               lambda y: f"={ANN(y, 'int_income', s)}", fmt=F_NUM1)
-        cline("ie", "Interest expense", "$M", "=0",
+        cline("ie", "Interest expense", "$M", f"={HA('FY2025 interest expense ($M)')}",
               lambda y: f"={ANN(y, 'int_expense', s)}", fmt=F_NUM1)
         cline("pretax", "Pre-tax income", "$M", None,
               lambda y: f"={CC[y]}{row['opinc']}+{CC[y]}{row['ii']}-{CC[y]}{row['ie']}")
@@ -646,7 +700,14 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     kr = 1
     put(ks, kr, 1, "Free cash flow, buybacks and the share-count path", font=TITLE); kr += 1
     put(ks, kr, 1, "FCF bridge from WS07. Share count: buybacks and RSU issuance at a price growing "
-                   "5% a year, 35% of SBC withheld for tax. Net cash starts at the 30 Jun 2026 actual.",
+                   "5% a year, 35% of SBC withheld for tax. Both roll-forwards start from the same 2Q26 "
+                   "actual (net cash $9,593M, 597M diluted shares) and both consume the SAME flows: for "
+                   "FY2026 only the 2H26 buyback (FY26 less the 1H26 actual $2,139M) and only 2H26 SBC "
+                   "(FY26 less the 1H26 actual $897M); FY2027 and FY2028 take the full year. WS17 finding 3 "
+                   "(the FY2026 share roll applied the FULL-YEAR buyback and SBC to a 30 Jun 2026 count, "
+                   "double-counting the 1H26 repurchase and understating FY2026E shares by 8.55M) was "
+                   "fixed by WS18 here and in 13_driver_model.py. See research/notes/overnight/"
+                   "18_corrections-applied.md.",
         font=SMALL); kr += 2
     CASH = {}
     for s in DM.SCENARIOS:
@@ -679,17 +740,19 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         cref = lambda k, y: f"Costs!${CC[y]}${C[k]}"
         kline("adj", "Adjusted EBITDA", "$M", f"={cref('adj', 2025)}".replace(CC[2025], "C"),
               lambda y: f"={cref('adj', y)}")
-        kline("ii", "+ Interest income", "$M", "=705", lambda y: f"={cref('ii', y)}", fmt=F_NUM1)
-        kline("ie", "- Interest expense", "$M", "=0", lambda y: f"=-{cref('ie', y)}", fmt=F_NUM1)
-        kline("other", "+ Other income / (expense)", "$M", "=-112",
+        kline("ii", "+ Interest income", "$M", f"={HA('FY2025 interest income ($M)')}",
+              lambda y: f"={cref('ii', y)}", fmt=F_NUM1)
+        kline("ie", "- Interest expense", "$M", f"=-{HA('FY2025 interest expense ($M)')}",
+              lambda y: f"=-{cref('ie', y)}", fmt=F_NUM1)
+        kline("other", "+ Other income / (expense)", "$M", f"={HA('FY2025 other income / (expense) ($M)')}",
               lambda y: "=0", fmt=F_NUM1)
-        kline("tax", "- Cash taxes", "$M", "=-232",
+        kline("tax", "- Cash taxes", "$M", f"={HA('FY2025 cash taxes ($M)')}",
               lambda y: f"=-{cref('rev', y)}*{ANN(y, 'cash_tax_pct', s)}", fmt=F_NUM1)
-        kline("unearn", "+ Change in unearned fees", "$M", "=127",
+        kline("unearn", "+ Change in unearned fees", "$M", f"={HA('FY2025 change in unearned fees ($M)')}",
               lambda y: f"={cref('rev', y)}*{ANN(y, 'd_unearned_pct', s)}", fmt=F_NUM1)
-        kline("wc", "+ Working-capital residual", "$M", "=-139",
+        kline("wc", "+ Working-capital residual", "$M", f"={HA('FY2025 working-capital residual ($M)')}",
               lambda y: f"={cref('rev', y)}*{ANN(y, 'wc_resid_pct', s)}", fmt=F_NUM1)
-        kline("capex", "- Capex", "$M", "=-33",
+        kline("capex", "- Capex", "$M", f"={HA('FY2025 capex ($M)')}",
               lambda y: f"=-{cref('rev', y)}*{ANN(y, 'capex_pct', s)}", fmt=F_NUM1)
         kline("fcf", "FREE CASH FLOW", "$M",
               "=" + "+".join(f"C{row[k]}" for k in ["adj", "ii", "ie", "other", "tax", "unearn", "wc", "capex"]),
@@ -706,12 +769,20 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
               lambda y: f"={CC[y]}{row['sbcfcf']}/{cref('rev', y)}", fmt=F_PCT1)
         kline("px", "Share price used for buybacks and issuance", "$", f"={VAL('price', s)}",
               lambda y: f"={VAL('price', s)}*(1+{VAL('price_growth', s)})^{y - 2026}", fmt=F_NUM2)
-        kline("bb", "Buybacks", "$M", "=3789", lambda y: f"={ANN(y, 'buybacks', s)}", fmt=F_NUM1)
-        kline("wh", "RSU tax withholding", "$M", "=561",
+        kline("bb", "Buybacks", "$M", f"={HA('FY2025 buybacks ($M)')}",
+              lambda y: f"={ANN(y, 'buybacks', s)}", fmt=F_NUM1)
+        kline("wh", "RSU tax withholding", "$M", f"={HA('FY2025 RSU tax withholding ($M)')}",
               lambda y: f"={CC[y]}{row['sbc']}*{VAL('withholding_pct', s)}", fmt=F_NUM1)
-        kline("shares", "Diluted shares, period end", "M", f"={VAL('shares_2q26', s)}",
-              lambda y: f"={CC[y - 1]}{row['shares']}-{CC[y]}{row['bb']}/{CC[y]}{row['px']}"
-                        f"+{CC[y]}{row['sbc']}/{CC[y]}{row['px']}*(1-{VAL('withholding_pct', s)})",
+        # WS18 (WS17 finding 3): FY2026 rolls the 2Q26 count on 2H26 flows only -- the same
+        # (FY26 less 1H26 actual) deltas the net-cash line below uses. FY2027/28 take the full year.
+        kline("shares", "Diluted shares, period end (FY2025A col = the 2Q26 actual)", "M",
+              f"={VAL('shares_2q26', s)}",
+              lambda y: (f"={CC[y - 1]}{row['shares']}"
+                         f"-({CC[2026]}{row['bb']}-{HA('1H2026 buybacks ($M)')})/{CC[y]}{row['px']}"
+                         f"+({CC[2026]}{row['sbc']}-{HA('1H2026 SBC ($M)')})/{CC[y]}{row['px']}"
+                         f"*(1-{VAL('withholding_pct', s)})" if y == 2026 else
+                         f"={CC[y - 1]}{row['shares']}-{CC[y]}{row['bb']}/{CC[y]}{row['px']}"
+                         f"+{CC[y]}{row['sbc']}/{CC[y]}{row['px']}*(1-{VAL('withholding_pct', s)})"),
               fmt=F_NUM1, fill=FILL_OUT)
         kline("fcfps", "FCF per share", "$", None,
               lambda y: f"={CC[y]}{row['fcf']}/{CC[y]}{row['shares']}", fmt=F_NUM2, fill=FILL_OUT)
@@ -719,7 +790,8 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
               lambda y: f"={CC[y]}{row['sbcfcf']}/{CC[y]}{row['shares']}", fmt=F_NUM2, fill=FILL_OUT)
         kline("eps", "Earnings proxy per share (net income / shares)", "$", None,
               lambda y: f"={cref('ni', y)}/{CC[y]}{row['shares']}", fmt=F_NUM2, fill=FILL_OUT)
-        kline("netcash", "Net cash ex float, period end", "$M", f"={VAL('net_cash_2q26', s)}",
+        kline("netcash", "Net cash ex float, period end (FY2025A col = the 30 Jun 2026 actual)", "$M",
+              f"={VAL('net_cash_2q26', s)}",
               lambda y: (f"=C{row['netcash']}+({CC[2026]}{row['fcf']}-{HA('1H2026 FCF ($M)')})"
                          f"-({CC[2026]}{row['bb']}-{HA('1H2026 buybacks ($M)')})"
                          f"-({CC[2026]}{row['wh']}-{HA('1H2026 RSU withholding ($M)')})" if y == 2026 else
@@ -739,10 +811,14 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     put(vs, vr, 1, "Exit multiples from WS12; cost of equity from WS09/WS12. Every price is a live "
                    "formula off Costs and Cash.", font=SMALL); vr += 2
 
+    # WS17 audit fix: column 5 on every scenario block below is an Active column driven by the
+    # Inputs!B4 selector, so the selector (and the `Scenario` named range) actually does something.
+    ACT = lambda rw: f"=CHOOSE({SCEN_SEL},B{rw},C{rw},D{rw})"
     vr = section(vs, vr, "1. FY2027E BASIS", 7)
     put(vs, vr, 1, "Item", font=H1, fill=FILL_H)
     for i, s in enumerate(DM.SCENARIOS):
         put(vs, vr, 2 + i, s, font=H1, fill=FILL_H)
+    put(vs, vr, 5, "Active (Inputs!B4)", font=H1, fill=FILL_H)
     vr += 1
     basis = {}
     for key, label, ref, fmt in [
@@ -759,6 +835,7 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         put(vs, vr, 1, label)
         for i, s in enumerate(DM.SCENARIOS):
             put(vs, vr, 2 + i, f"={ref(s)}", fmt=fmt)
+        put(vs, vr, 5, ACT(vr), fmt=fmt)
         basis[key] = vr
         vr += 1
     vr += 1
@@ -767,7 +844,8 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     put(vs, vr, 1, "Lens", font=H1, fill=FILL_H)
     for i, s in enumerate(DM.SCENARIOS):
         put(vs, vr, 2 + i, s, font=H1, fill=FILL_H)
-    put(vs, vr, 5, "Multiple source", font=H1, fill=FILL_H)
+    put(vs, vr, 5, "Active (Inputs!B4)", font=H1, fill=FILL_H)
+    put(vs, vr, 6, "Multiple source", font=H1, fill=FILL_H)
     vr += 1
     lensrow = {}
     B = lambda k, i: f"{col(2 + i)}{basis[k]}"
@@ -790,7 +868,8 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         put(vs, vr, 1, label)
         for i, s in enumerate(DM.SCENARIOS):
             put(vs, vr, 2 + i, form(i, s), fmt=F_NUM2, fill=FILL_OUT)
-        put(vs, vr, 5, src, font=SMALL)
+        put(vs, vr, 5, ACT(vr), fmt=F_NUM2, fill=FILL_OUT)
+        put(vs, vr, 6, src, font=SMALL)
         lensrow[key] = vr
         vr += 1
     vr += 1
@@ -808,16 +887,16 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         put(vs, vr, 1, t)
         for i, s in enumerate(DM.SCENARIOS):
             g0 = f"{VAL('dcf_start_growth', s)}"
-            gt = f"({g0}+({VAL('terminal_growth', s)}-{g0})*{t - 1}/9)"
+            gt = f"({g0}+({VAL('terminal_growth', s)}-{g0})*($A{vr}-1)/9)"
             prev = f"{col(2 + i)}{vr - 1}" if t > 1 else B('fcf', i)
             put(vs, vr, 2 + i, f"={prev}*(1+{gt})", fmt=F_NUM)
-            put(vs, vr, 5 + i, f"={col(2 + i)}{vr}/(1+{VAL('cost_of_equity', s)})^{t}", fmt=F_NUM)
+            put(vs, vr, 5 + i, f"={col(2 + i)}{vr}/(1+{VAL('cost_of_equity', s)})^$A{vr}", fmt=F_NUM)
         vr += 1
     put(vs, vr, 1, "Terminal value (Gordon), discounted")
     for i, s in enumerate(DM.SCENARIOS):
         put(vs, vr, 5 + i, f"={col(2 + i)}{dcf_top + 9}*(1+{VAL('terminal_growth', s)})"
                            f"/({VAL('cost_of_equity', s)}-{VAL('terminal_growth', s)})"
-                           f"/(1+{VAL('cost_of_equity', s)})^10", fmt=F_NUM)
+                           f"/(1+{VAL('cost_of_equity', s)})^$A{dcf_top + 9}", fmt=F_NUM)
     tv_row = vr
     vr += 1
     put(vs, vr, 1, "Enterprise value ($M)")
@@ -828,6 +907,8 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     put(vs, vr, 1, "DCF value per share ($)")
     for i, s in enumerate(DM.SCENARIOS):
         put(vs, vr, 2 + i, f"=({col(5 + i)}{ev_row}+{B('netcash', i)})/{B('shares', i)}", fmt=F_NUM2, fill=FILL_OUT)
+    put(vs, vr, 8, "column E on this row is the Active (Inputs!B4) selection, not a PV", font=SMALL)
+    put(vs, vr, 5, ACT(vr), fmt=F_NUM2, fill=FILL_OUT)
     lensrow["dcf"] = vr
     vr += 2
 
@@ -835,6 +916,7 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     put(vs, vr, 1, "Measure", font=H1, fill=FILL_H)
     for i, s in enumerate(DM.SCENARIOS):
         put(vs, vr, 2 + i, s, font=H1, fill=FILL_H)
+    put(vs, vr, 5, "Active (Inputs!B4)", font=H1, fill=FILL_H)
     vr += 1
     lens_keys = ["ev_ebitda", "ev_fcf", "p_sbcfcf", "p_eps", "ev_ebitda28", "dcf"]
     ff = {}
@@ -843,17 +925,20 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         for i, s in enumerate(DM.SCENARIOS):
             refs = ",".join(f"{col(2 + i)}{lensrow[k]}" for k in lens_keys)
             put(vs, vr, 2 + i, f"={fn}({refs})", fmt=F_NUM2, fill=FILL_OUT)
+        put(vs, vr, 5, ACT(vr), fmt=F_NUM2, fill=FILL_OUT)
         ff[stat] = vr
         vr += 1
     put(vs, vr, 1, "Spot price ($)")
     for i, s in enumerate(DM.SCENARIOS):
         put(vs, vr, 2 + i, f"={VAL('price', s)}", fmt=F_NUM2)
+    put(vs, vr, 5, ACT(vr), fmt=F_NUM2)
     spot_row = vr
     vr += 1
     for stat in ["Low", "High", "Mean of lenses"]:
         put(vs, vr, 1, f"Implied upside vs spot: {stat}")
         for i, s in enumerate(DM.SCENARIOS):
             put(vs, vr, 2 + i, f"={col(2 + i)}{ff[stat]}/{col(2 + i)}{spot_row}-1", fmt=F_PCT1, fill=FILL_OUT)
+        put(vs, vr, 5, f"=E{ff[stat]}/E{spot_row}-1", fmt=F_PCT1, fill=FILL_OUT)
         vr += 1
     put(vs, vr, 1, "Memo: price on the 5 Sep exit multiples (18 / 22 / 25.5x)")
     for i, s in enumerate(DM.SCENARIOS):
@@ -871,22 +956,42 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
                    "implied growth is where the value column crosses spot ($181.94).", font=SMALL)
     vr += 1
     rdcf_top = vr
+
+    def rdcf(gref, j):
+        """Value per share of a constant-growth ten-year stream plus a Gordon terminal, with the
+        growth read from the cell `gref`. j = 0 reported FCF, j = 1 SBC-adjusted."""
+        b = HA("LTM FCF ($M)") if j == 0 else f"({HA('LTM FCF ($M)')}-{HA('LTM SBC ($M)')})"
+        coe, gt = VAL("cost_of_equity", "Base"), VAL("terminal_growth", "Base")
+        # closed form of a linear fade is unwieldy in one cell; use a constant-growth annuity plus terminal
+        f10 = f"{b}*(1+{gref})^10"
+        pv = (f"{b}*(1+{gref})/({coe}-{gref})*(1-((1+{gref})/(1+{coe}))^10)"
+              f"+{f10}*(1+{gt})/({coe}-{gt})/(1+{coe})^10")
+        return f"=({pv}+{VAL('net_cash_2q26', 'Base')})/{VAL('shares_2q26', 'Base')}"
+
     for g in [0.03, 0.05, 0.07, 0.075, 0.09, 0.11, 0.13, 0.135, 0.15, 0.17]:
         put(vs, vr, 1, g, fmt=F_PCT1)
-        for j, base_lab in enumerate(["LTM FCF ($M)", "SBC-adjusted"]):
-            b = HA("LTM FCF ($M)") if j == 0 else f"({HA('LTM FCF ($M)')}-{HA('LTM SBC ($M)')})"
-            coe, gt = VAL("cost_of_equity", "Base"), VAL("terminal_growth", "Base")
-            # closed form of a linear fade is unwieldy in one cell; use a constant-growth annuity plus terminal
-            f10 = f"{b}*(1+A{vr})^10"
-            pv = (f"={b}*(1+A{vr})/({coe}-A{vr})*(1-((1+A{vr})/(1+{coe}))^10)"
-                  f"+{f10}*(1+{gt})/({coe}-{gt})/(1+{coe})^10")
-            put(vs, vr, 2 + j, f"=({pv[1:]}+{VAL('net_cash_2q26', 'Base')})/{VAL('shares_2q26', 'Base')}", fmt=F_NUM2)
+        for j in (0, 1):
+            put(vs, vr, 2 + j, rdcf(f"A{vr}", j), fmt=F_NUM2)
         vr += 1
     put(vs, vr, 1, "Solved implied 10-year growth at spot (constant growth, then terminal):", font=H2)
     base_rev = [x for x in revdcf if x["cost_of_equity_pct"] == 10.5 and x["terminal_growth_pct"] == 3.0]
     for j, x in enumerate(base_rev):
-        put(vs, vr, 2 + j, x["implied_10y_fcf_growth_pct"] / 100.0, fmt=F_PCT1)
+        put(vs, vr, 2 + j, x["implied_10y_fcf_growth_pct"] / 100.0, fmt=F_PCT1, fill=FILL_IN)
         put(vs, vr, 5 + j, x["basis"], font=SMALL)
+    solved_row = vr
+    vr += 1
+    # WS17 audit fix: the two cells above are an offline bisection, pasted in - they do not move when
+    # the cost of equity or the terminal growth on Inputs changes. This row prices the same stream at
+    # the solved growth and subtracts spot, so Excel itself says whether the paste is still current.
+    put(vs, vr, 1, "  Check: value per share at the solved growth, less spot (0.00 = still current)",
+        font=H2)
+    for j in (0, 1):
+        put(vs, vr, 2 + j,
+            "=" + rdcf(f"{col(2 + j)}{solved_row}", j)[1:] + f"-{VAL('price', 'Base')}", fmt=F_NUM2)
+    put(vs, vr, 5, "The solved cells above are yellow because they are an input, not a formula: a "
+                   "bisection run in analysis/src/overnight/13_driver_model.py. If this row stops "
+                   "reading 0.00, re-run that script - the cost of equity or the terminal growth moved.",
+        font=SMALL)
     vr += 2
 
     vr = section(vs, vr, "6. SCENARIO GRID - FY2027E revenue growth x adj. EBITDA margin x exit multiple", 12)
@@ -895,24 +1000,28 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     put(vs, vr, 1, "Revenue growth \\ margin", font=H1, fill=FILL_H)
     margins = [0.32, 0.34, 0.355, 0.365, 0.375, 0.39, 0.41]
     for i, m in enumerate(margins):
-        put(vs, vr, 2 + i, m, font=H1, fill=FILL_H, fmt=F_PCT1)
+        put(vs, vr, 2 + i, m, font=H1, fill=FILL_IN, fmt=F_PCT1)
+    grid_hdr = vr
     vr += 1
     fy26rev_base = f"Revenue!${CFY[2026]}${REV['Base']['revenue']}"
     nc = f"Cash!${CC[2027]}${CASH['Base']['netcash']}"
     sh = f"Cash!${CC[2027]}${CASH['Base']['shares']}"
+    # WS17 audit fix: each cell used to restate its own row and column heading as literals, so the
+    # axis labels and the arithmetic could drift apart. They now read the axis cells.
     for g in [0.04, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16]:
-        put(vs, vr, 1, g, fmt=F_PCT1)
+        put(vs, vr, 1, g, fmt=F_PCT1, fill=FILL_IN)
         for i, m in enumerate(margins):
             put(vs, vr, 2 + i,
-                f"=({VAL('exit_ev_ebitda', 'Base')}*{fy26rev_base}*(1+{g})*{m}+{nc})/{sh}", fmt=F_NUM2)
+                f"=({VAL('exit_ev_ebitda', 'Base')}*{fy26rev_base}*(1+$A{vr})*{col(2 + i)}${grid_hdr}"
+                f"+{nc})/{sh}", fmt=F_NUM2)
         vr += 1
 
     # ------------------------------------------------------------------ STREET
     ss = wb.create_sheet("Street")
     ss.column_dimensions["A"].width = 46
-    for i in range(2, 8):
+    for i in range(2, 7):
         ss.column_dimensions[col(i)].width = 16
-    ss.column_dimensions["H"].width = 70
+    ss.column_dimensions["G"].width = 70
     sr = 1
     put(ss, sr, 1, "Street consensus versus our base case", font=TITLE); sr += 1
     put(ss, sr, 1, "Consensus from WS04 04_current_consensus.csv (Zacks and S&P Global Market "
@@ -968,10 +1077,12 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     cd.column_dimensions["H"].width = 76
     dr = 1
     put(cd, dr, 1, "5 November 2026 card - the Q3 2026 print", font=TITLE); dr += 1
-    put(cd, dr, 1, "Model columns are live formulas off the Revenue and Costs sheets. External bars are "
-                   "constants with their source. Q3 2026 reports 5 Nov 2026 (Zacks expected date).", font=SMALL); dr += 2
+    put(cd, dr, 1, "Model columns are live formulas off the Revenue and Costs sheets; the Active "
+                   "column follows the scenario selector on Inputs!B4. External bars are constants "
+                   "with their source. Q3 2026 reports 5 Nov 2026 (Zacks expected date).", font=SMALL); dr += 2
     put(cd, dr, 1, "Line", font=H1, fill=FILL_H)
-    for i, t in enumerate(["Bear", "Base", "Bull", "Company guide", "Street / cushion bar", "Source of the bar"]):
+    for i, t in enumerate(["Bear", "Base", "Bull", "Active (Inputs!B4)", "Company guide",
+                           "Street / cushion bar", "Source of the bar"]):
         put(cd, dr, 2 + i, t, font=H1, fill=FILL_H)
     dr += 1
 
@@ -981,9 +1092,12 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         for i, s in enumerate(DM.SCENARIOS):
             if ref:
                 put(cd, dr, 2 + i, ref(s), fmt=fmt, fill=(FILL_OUT if s == "Base" else None))
-        put(cd, dr, 5, guide)
-        put(cd, dr, 6, bar)
-        put(cd, dr, 7, src, font=SMALL)
+        if ref:
+            # WS17 audit fix: the scenario selector now drives a real column on this sheet
+            put(cd, dr, 5, f"=CHOOSE({SCEN_SEL},B{dr},C{dr},D{dr})", fmt=fmt, fill=FILL_OUT)
+        put(cd, dr, 6, guide)
+        put(cd, dr, 7, bar)
+        put(cd, dr, 8, src, font=SMALL)
         dr += 1
 
     q3 = CQ["3Q26"]
@@ -1048,7 +1162,7 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     ]:
         put(cd, dr, 1, lab)
         put(cd, dr, 3, v, fmt=fmt)
-        put(cd, dr, 7, note, font=SMALL, wrap=True)
+        put(cd, dr, 8, note, font=SMALL, wrap=True)
         dr += 1
 
     # ------------------------------------------------------------------ RECON
@@ -1059,11 +1173,15 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
     rc.column_dimensions["F"].width = 40
     q = 1
     put(rc, q, 1, "Reconciliation: the Python mirror against this workbook", font=TITLE); q += 1
-    put(rc, q, 1, "LibreOffice headless is not installed on this machine and the `formulas` package is "
-                  "not available, so the workbook is recalculated instead by a purpose-built evaluator, "
-                  "analysis/src/overnight/13_xlsx_eval.py, which walks the formula graph. Column D is also "
-                  "a live Excel formula, so Excel re-checks the same thing when the file is opened. Every "
-                  "|delta| should be 0.00. Full results: data/processed/overnight/13_reconciliation.csv.",
+    put(rc, q, 1, "Column B is the Python mirror (13_driver_model.py), column C is this workbook and "
+                  "column D is a live Excel formula, so Excel re-checks the difference every time the "
+                  "file is opened. Every |delta| should be 0.00. The same 216 outputs are also checked "
+                  "outside Excel by analysis/src/overnight/13_xlsx_eval.py. Workstream 17 then rebuilt "
+                  "the file in Excel 16.0 itself (Application.CalculateFullRebuild via COM): 0 error "
+                  "cells in 5,544, no circular reference, all 216 outputs and all 2,348 formula cells "
+                  "agreeing with the mirror to better than 1e-6 relative (worst 4.2e-15). Full results: "
+                  "data/processed/overnight/13_reconciliation.csv and 17_excel_vs_python.csv; the audit "
+                  "is research/notes/overnight/17_excel-audit.md.",
         font=SMALL, wrap=True); q += 2
     put(rc, q, 1, "Item", font=H1, fill=FILL_H)
     for i, t in enumerate(["Python mirror", "Workbook cell", "Delta", "Cell reference"]):

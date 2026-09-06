@@ -3,8 +3,11 @@
 **What this is.** Every other workstream's "For the model" parameters, assembled into one model that
 runs from nights by region to a price per share, built twice so it can be checked: `model/ABNB_driver_model.xlsx`
 (eight sheets, live Excel formulas, three scenarios computed in full) and `analysis/src/overnight/13_driver_model.py`
-(the same arithmetic in Python). The workbook's 2,303 formula cells were recalculated by a purpose-built
-evaluator and every one of 216 output checks agrees with the Python mirror to 1e-6.
+(the same arithmetic in Python). The workbook's 2,349 formula cells were recalculated by a purpose-built
+evaluator and every one of 216 output checks agrees with the Python mirror to 1e-6. **Updated 7 Sep by
+WS18:** WS17 rebuilt the file in real Excel 16.0 (0 error cells, agreement to 4.2e-15) and found the
+FY2026 share-count roll-forward double-counted the 1H26 buyback; the fix is applied here and every
+per-share and price number below is the corrected one (~1.5% lower than the first build).
 
 **Compiled:** 6-7 Sep 2026, overnight run. Price used: **$181.94** (4 Sep 2026 close). Balance sheet:
 30 Jun 2026.
@@ -14,7 +17,7 @@ evaluator and every one of 216 output checks agrees with the Python mirror to 1e
 ## 1. Bottom line
 
 **1. The base case is $15.8bn of FY2027 revenue at a 35.9% adjusted EBITDA margin, and on WS12's exit
-multiples that is worth about $184 a share against a $181.94 spot.** The stock is priced for the base
+multiples that is worth about $181 a share against a $181.94 spot.** The stock is priced for the base
 case on an EBITDA lens and for the bull case on any cash-after-SBC lens. Nothing here is a call to buy.
 
 | Base case | FY2026E | FY2027E | FY2028E |
@@ -27,12 +30,12 @@ case on an EBITDA lens and for the bull case on any cash-after-SBC lens. Nothing
 | **Adjusted EBITDA ($M) / margin** | **5,158 / 36.2%** | **5,686 / 35.9%** | **6,701 / 37.3%** |
 | SBC ($M) / % of revenue | 1,787 / 12.6% | 1,965 / 12.4% | 2,122 / 11.8% |
 | GAAP operating income ($M) | 3,243 | 3,578 | 4,417 |
-| Net income ($M) / EPS ($) | 3,065 / 5.28 | 3,258 / 5.76 | 3,906 / 7.06 |
+| Net income ($M) / EPS ($) | 3,065 / 5.20 | 3,258 / 5.67 | 3,906 / 6.96 |
 | **FCF ($M) / margin** | **5,129 / 36.0%** | **5,420 / 34.2%** | **6,197 / 34.5%** |
 | SBC-adjusted FCF ($M) | 3,342 | 3,455 | 4,075 |
-| Diluted shares, period end (M) | 580.3 | 566.0 | 553.0 |
-| **FCF per share ($)** | **8.84** | **9.58** | **11.21** |
-| **SBC-adjusted FCF per share ($)** | **5.76** | **6.10** | **7.37** |
+| Diluted shares, period end (M) | 588.9 | 574.6 | 561.5 |
+| **FCF per share ($)** | **8.71** | **9.43** | **11.04** |
+| **SBC-adjusted FCF per share ($)** | **5.68** | **6.01** | **7.26** |
 | Net cash ex float ($M) | 9,383 | 10,116 | 11,570 |
 
 | Bear case | FY2026E | FY2027E | FY2028E | | Bull case | FY2026E | FY2027E | FY2028E |
@@ -40,9 +43,9 @@ case on an EBITDA lens and for the bull case on any cash-after-SBC lens. Nothing
 | Revenue ($M) | 13,933 (+13.8%) | 14,181 (+1.8%) | 14,968 (+5.5%) | | Revenue ($M) | 14,527 (+18.7%) | 17,421 (+19.9%) | 20,874 (+19.8%) |
 | Adj. EBITDA ($M) / margin | 4,812 / 34.5% | 4,027 / 28.4% | 3,812 / 25.5% | | Adj. EBITDA ($M) / margin | 5,496 / 37.8% | 6,620 / 38.0% | 7,932 / 38.0% |
 | FCF ($M) | 4,555 | 3,531 | 3,122 | | FCF ($M) | 5,660 | 6,543 | 7,593 |
-| FCF per share ($) | 7.85 | 6.17 | 5.53 | | FCF per share ($) | 9.76 | 11.63 | 13.89 |
-| SBC-adj. FCF per share ($) | 4.69 | 2.52 | 1.38 | | SBC-adj. FCF per share ($) | 6.76 | 8.35 | 10.38 |
-| EPS ($) | 4.56 | 3.07 | 2.39 | | EPS ($) | 5.95 | 7.47 | 9.46 |
+| FCF per share ($) | 7.73 | 6.08 | 5.45 | | FCF per share ($) | 9.61 | 11.45 | 13.68 |
+| SBC-adj. FCF per share ($) | 4.62 | 2.48 | 1.36 | | SBC-adj. FCF per share ($) | 6.66 | 8.23 | 10.22 |
+| EPS ($) | 4.49 | 3.02 | 2.35 | | EPS ($) | 5.87 | 7.35 | 9.32 |
 
 The bull's uncapped FY27/FY28 margins are 41.7% and 46.0%; both are cut to WS07's 38% realistic ceiling
 (BKNG's five-year EBITDA-proxy range is 30.0-37.4%). A bull that needs a 46% margin is not a bull, it
@@ -52,15 +55,15 @@ is a broken model, and saying so is more useful than printing the number.
 
 | Lens | Multiple (bear / base / bull) | Bear | **Base** | Bull |
 |---|---|---|---|---|
-| EV / adj. EBITDA | 13.5 / 16.5 / 18.5x | $110 | **$184** | $238 |
-| EV / FCF | 11.3 / 14.3 / 17.3x | $85 | **$155** | $221 |
-| P / SBC-adjusted FCF | 15 / 19.5 / 24x | $38 | **$119** | $200 |
-| P / earnings proxy | 15 / 19.5 / 24x | $46 | **$112** | $179 |
-| EV / adj. EBITDA, FY2028E | same | $105 | **$221** | $294 |
-| DCF, 10-yr fade to 3%, CoE 10.5% | - | $79 | **$185** | $285 |
-| **Football field (low / mean / high)** | | **$38 / $77 / $110** | **$112 / $163 / $221** | **$179 / $236 / $294** |
-| Implied upside vs $181.94, mean | | **-58%** | **-11%** | **+30%** |
-| *Memo: on the 5 Sep 18/22/25.5x multiples* | | *$142* | *$239* | *$320* |
+| EV / adj. EBITDA | 13.5 / 16.5 / 18.5x | $108 | **$181** | $234 |
+| EV / FCF | 11.3 / 14.3 / 17.3x | $84 | **$153** | $218 |
+| P / SBC-adjusted FCF | 15 / 19.5 / 24x | $37 | **$117** | $197 |
+| P / earnings proxy | 15 / 19.5 / 24x | $45 | **$111** | $176 |
+| EV / adj. EBITDA, FY2028E | same | $104 | **$218** | $289 |
+| DCF, 10-yr fade to 3%, CoE 10.5% | - | $78 | **$183** | $281 |
+| **Football field (low / mean / high)** | | **$37 / $76 / $108** | **$111 / $160 / $218** | **$176 / $233 / $289** |
+| Implied upside vs $181.94, mean | | **-58%** | **-12%** | **+28%** |
+| *Memo: on the 5 Sep 18/22/25.5x multiples* | | *$140* | *$235* | *$315* |
 
 **3. Reverse DCF is unchanged, and that is the point.** At 10% cost of equity and 3% terminal growth,
 $181.94 discounts **7.50%** a year FCF growth for ten years on reported FCF and **13.32%** on
@@ -78,7 +81,7 @@ debate and it has not moved in two days of work.
 | FY27 base margin | 36.5% | 35.9% | Same WS07 lever stack, less 0.38pp of AI referral cost (WS11 low case). Ex the AI line the model is at 36.3%, between WS07's 36.6% and WS05's 36.4% |
 | FY27 base FCF | $5,825M | $5,420M | The 5 Sep model set FCF = 100% of EBITDA. This one runs WS07's bridge (interest, cash taxes, unearned fees, working capital, capex), giving 95% conversion |
 | FY27 net cash | $12,358M | $10,116M | **Correction.** The earlier path did not subtract RSU tax withholding, which is roughly $0.7bn a year of real cash |
-| FY27 base price, EV/EBITDA | $248 | $184 | Bridge: -$55 from the multiple (22x to WS12's 16.5x), -$5 from lower EBITDA, -$4 from lower net cash. **The multiple is 86% of the change.** At 22x this model still gives $239 |
+| FY27 base price, EV/EBITDA | $248 | $181 | Bridge: -$55 from the multiple (22x to WS12's 16.5x), -$5 from lower EBITDA, -$4 from lower net cash, -$3 from the WS18 share-count fix. **The multiple is 82% of the change.** At 22x this model still gives $235 |
 | FY27 bear revenue / margin | +4.3% / 33.8% | +1.8% / 28.4% | The bear now stacks WS10's regional demand bear, WS05's strong-dollar path (-2.6pp on FY27 revenue), a -15bp take rate and WS11's high AI referral cost (2.28% of revenue = 2.3 margin points). Four separate tails; see "Choices made" |
 | FY27 bull margin | 39.8% | 38.0% (41.7% uncapped) | Capped at WS07's stated realistic ceiling |
 | FY28 base revenue growth | +11.0% | +13.3% | An FX artefact, not a demand call: FY27 carries a -0.6pp revenue FX drag and a -0.8pp FX timing wedge, both of which lap in FY28. See section 3 |
@@ -93,10 +96,10 @@ more AI cost, fewer shares retired than the sell side assumes.
 | 3Q26 revenue | $4,740M (Zacks, 7 est.) | $4,801M | +1.3% |
 | 4Q26 revenue | $3,200M (10 est., 3,050-3,700) | $3,145M | **-1.7%** |
 | FY26 revenue | $14,100M / $14,160M | $14,233M | +0.9% / +0.5% |
-| FY26 adj. EPS | $5.23 / $5.28 | $5.28 | +1.0% / 0.0% |
+| FY26 adj. EPS | $5.23 / $5.28 | $5.20 | -0.5% / -1.4% |
 | FY26 FCF | $5,350M (S&P Global) | $5,129M | -4.1% |
 | FY27 revenue | $15,730M / $15,760M | $15,842M | +0.7% / +0.5% |
-| FY27 adj. EPS | $6.02 / $6.14 | $5.76 | **-4.3% / -6.2%** |
+| FY27 adj. EPS | $6.02 / $6.14 | $5.67 | **-5.8% / -7.7%** |
 
 ---
 
@@ -310,10 +313,12 @@ teammate can swap it in.
 8. **No Monte Carlo.** WS07 ran 40,000 correlated draws for the path-to-40% question; this model runs
    three discrete scenarios plus a 7 x 7 x 9 deterministic grid (`13_scenario_grid.csv`, on the
    `Valuation` sheet). Probability-weighting the three cases is a synthesis decision, not a model one.
-9. **It cannot be recalculated by LibreOffice on this machine.** LibreOffice headless is not installed and
-   the `formulas` package is unavailable, so `analysis/src/overnight/13_xlsx_eval.py` was written to walk
-   the formula graph instead. It supports exactly the syntax the builder emits and raises on anything
-   else. All 2,303 formula cells evaluate; 216 named outputs match the Python mirror to 1e-6
+9. **It cannot be recalculated by LibreOffice on this machine — but it can be, and has been, in Excel.**
+   LibreOffice headless is not installed and the `formulas` package is unavailable, so
+   `analysis/src/overnight/13_xlsx_eval.py` was written to walk the formula graph instead. It supports
+   exactly the syntax the builder emits and raises on anything else. **WS17 then drove Excel 16.0 over
+   PowerShell COM and rebuilt the file for real: 0 error cells in 5,547, all 216 outputs and all 2,349
+   formula cells matching to 4.2e-15.** All 2,349 formula cells evaluate; 216 named outputs match the Python mirror to 1e-6
    (`13_reconciliation.csv`). The `Recon` sheet repeats the same check as live Excel formulas, so opening
    the file in Excel re-verifies it independently.
 
@@ -380,8 +385,9 @@ py -3.13 analysis/src/overnight/13_driver_model.py      # rebuilds every output 
 ```
 
 - `model/ABNB_driver_model.xlsx` - Inputs / History / Revenue / Costs / Cash / Valuation / Street /
-  Card_5Nov / Recon. 2,303 live formulas. Yellow = input, green = key output. Scenario selector at
-  `Inputs!$B$3`; all three scenarios are computed in full regardless.
+  Card_5Nov / Recon. 2,349 live formulas. Yellow = input, green = key output. Scenario selector at
+  `Inputs!$B$4` (the note said B3; corrected by WS17), which now drives an Active column on Valuation and
+  Card_5Nov; all three scenarios are computed in full regardless.
 - `analysis/src/overnight/13_driver_model.py` - inputs, engine, valuation, CSV outputs.
 - `analysis/src/overnight/13_excel_builder.py` - the workbook builder.
 - `analysis/src/overnight/13_xlsx_eval.py` - the formula evaluator used to verify it.

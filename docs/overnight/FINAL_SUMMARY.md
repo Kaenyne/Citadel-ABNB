@@ -6,9 +6,10 @@ exit 0). Full detail is in `research/notes/overnight/14_master-synthesis.md`.
 
 ## The headline
 
-**The base-case value fell from $248 a share to $184, and $55 of that $64 is the exit multiple — not the
-business.** The operating case moved $9 in total (−$5 EBITDA, −$4 net cash, the latter an actual
-correction: the old model never subtracted the ~$0.7bn a year of RSU tax withholding).
+**The base-case value fell from $248 a share to $181, and $55 of that $67 is the exit multiple — not the
+business.** The rest moved $12 in total (−$5 EBITDA, −$4 net cash — the old model never subtracted the
+~$0.7bn a year of RSU tax withholding — and −$3 from the FY2026 share-count fix, which had
+double-counted the 1H26 buyback). Football field: bear **$76**, base **$160**, bull **$233**.
 
 Workstream 12 attacked the exit multiple three independent ways — a time series of ABNB's own multiple
 against forward growth, a 19-name cross-section, and a fade DCF — and all three landed below the
@@ -100,8 +101,8 @@ European regulatory event has ever moved this stock.
 
 - **Read first:** `research/notes/overnight/14_master-synthesis.md` (this, in full), then
   `15_red-team.md` (what was wrong and what to fix), then `13_driver-model-build.md` (the model).
-- **The model:** `model/ABNB_driver_model.xlsx` — 9 sheets, 2,303 live formulas, 216 outputs reconciling
-  to a Python mirror; rebuild with `py -3.13 analysis/src/overnight/13_driver_model.py`. Assumptions in
+- **The model:** `model/ABNB_driver_model.xlsx` — 9 sheets, 2,349 live formulas, 216 outputs reconciling
+  to a Python mirror and to a real Excel 16.0 rebuild (0 error cells in 5,547, WS17); rebuild with `py -3.13 analysis/src/overnight/13_driver_model.py`. Assumptions in
   `model/assumptions.md`, section "Overnight run 6-7 Sep 2026".
 - **Notes:** `research/notes/overnight/01_*` to `13_*` plus `15_red-team.md` — 15 notes covering the data
   census, the KPI panel and 194-row guidance ledger, management language, consensus at all 23 prints,

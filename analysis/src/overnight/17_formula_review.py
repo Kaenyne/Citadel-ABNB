@@ -1,0 +1,204 @@
+"""Workstream 17: the curated formula review of `model/ABNB_driver_model.xlsx`.
+
+Each REVIEW row is a finding, its severity, and what was done about it. "fixed" means the fix is in
+`analysis/src/overnight/13_excel_builder.py` and the workbook was regenerated from it; every fix is
+mechanical, and the 216 reconciliation outputs plus all five `13_*.csv` files are byte-identical
+before and after. "open" means it is left for a human: either it would move the model's numbers, or
+it is an economics question rather than a mechanics one. CLEAN rows are the checks that came back
+clean, recorded so a reviewer knows they were run rather than skipped.
+
+The evidence behind every row is in
+  data/processed/overnight/17_excel_recalc_dump.csv    Excel 16.0 CalculateFullRebuild, every cell
+  data/processed/overnight/17_excel_vs_python.csv      the 216 named outputs, three ways
+  data/processed/overnight/17_all_formula_cells.csv    all 2,348 formula cells, Excel vs evaluator
+  data/processed/overnight/17_scenario_switch.csv      the selector, before and after the fix
+  data/processed/overnight/17_auto_scan.csv            the raw static scan the review is curated from
+
+WRITES  data/processed/overnight/17_formula_review.csv
+RUN     py -3.13 analysis/src/overnight/17_formula_review.py
+"""
+from __future__ import annotations
+
+import os
+
+import pandas as pd
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
+OD = lambda n: os.path.join(ROOT, "data", "processed", "overnight", n)      # noqa: E731
+
+REVIEW = [
+    # ------------------------------------------------------------------------------------- high
+    ("Inputs", "B4 (named range `Scenario`)", "control that does nothing", "high",
+     "The scenario selector drove only the 126 CHOOSE cells in the Inputs Active column (F), and no "
+     "formula anywhere in the file referenced column F. A real Excel recalc with the selector set to "
+     "1 and to 3 moved 96 and 97 cells, every one of them on Inputs; Revenue, Costs, Cash, Valuation "
+     "and Card_5Nov did not move at all - while Inputs!G4 told the reader it 'drives the headline "
+     "blocks on Valuation and Card_5Nov'.",
+     "FIXED: an Active column (column E) on Valuation sections 1, 2, 3 and 4 and on Card_5Nov, each "
+     "cell =CHOOSE(Inputs!$B$4,B,C,D). The selector now moves 135 / 136 cells (Inputs 96/97, "
+     "Valuation 22, Card_5Nov 17) and every Active cell equals the matching scenario column.",
+     "fixed"),
+    ("Valuation", "B64, C64", "pasted output that can go stale", "high",
+     "'Solved implied 10-year growth at spot' (8.51% on reported FCF, 14.42% on SBC-adjusted FCF) is "
+     "an offline bisection from 13_driver_model.py written in as a constant. The ladder above it "
+     "(B54:C63) is live off Inputs!D11/D12, so changing the cost of equity or the terminal growth "
+     "would silently leave the headline answer wrong while everything around it moved.",
+     "FIXED: the two cells are now yellow (they are an input, not a formula) and a new check row "
+     "B65/C65 prices the same stream at the solved growth and subtracts spot. It reads 0.00 today "
+     "and goes non-zero the moment the inputs move.",
+     "fixed"),
+    ("Cash", "C23/D23, C48/D48, C73/D73", "roll-forward double count", "high",
+     "The FY2026 share count starts from the 2Q26 diluted count (597M) and then applies the FULL "
+     "FY2026 buyback ($4,200M) and the FULL FY2026 SBC, while the net-cash roll-forward below it "
+     "correctly nets out the 1H26 actuals (FCF, buybacks, withholding). The 1H26 buyback is "
+     "therefore counted twice in the share count: $2,139M / $181.94 = 11.8M shares out, less 3.2M "
+     "of 1H26 issuance, so FY2026E ending shares are about 8.55M (1.5%) too low, and the error "
+     "carries into FY2027E and FY2028E. The base football-field mean would go from $162.65 to "
+     "$160.22 and all six lenses fall about 1.5%.",
+     "FIXED by WS18 on 7 Sep, in 13_excel_builder.py and 13_driver_model.py together: the FY2026 "
+     "column now reads (FY26 buybacks less History!1H2026 buybacks) and (FY26 SBC less "
+     "History!1H2026 SBC), exactly as the net-cash line does; FY2027-28 still take the full year. "
+     "FY2026E base shares 580.30M -> 588.85M and the base football-field mean $162.65 -> $160.22. "
+     "Before/after for every affected output: data/processed/overnight/18_share_fix_delta.csv.",
+     "fixed"),
+    ("Inputs", "C95:E96", "unit trap", "high",
+     "'FX effect on revenue / on ADR, FY2028E' carried the unit 'pp', the same label as the twelve "
+     "quarterly FX rows in section C - but the quarterly rows hold plain percentage-point numbers "
+     "(3 = +3pp, divided by 100 where they are used on Revenue) while these two hold a fraction and "
+     "are consumed with no divisor (Revenue!K25 = Inputs!$C$96). Typing 1.5 here meaning +1.5pp "
+     "would have applied +150%. Harmless today only because all six cells are zero.",
+     "FIXED: unit relabelled 'y/y' and the source string spells out that it is a percent-formatted "
+     "fraction, not a percentage-point number.",
+     "fixed"),
+    # ----------------------------------------------------------------------------------- medium
+    ("Costs / Cash", "C15,C16,C18,C25,C28,C29 and C7:C13,C21,C22 in all three blocks",
+     "hard-coded constant in formula", "medium",
+     "33 cells of the FY2025A memo column were bare literals inside formulas (=161, =91, =705, =0, "
+     "=-112, =-232, =127, =-139, =-33, =3789, =561) with no source anywhere in the file.",
+     "FIXED: eleven new sourced anchors at the foot of History ('FY2025 CASH-BRIDGE ANCHORS'), nine "
+     "of them yellow inputs traced to data/processed/abnb_fcf_bridge.csv and WS07, two of them "
+     "formulas summing the 2025 quarters of the History table (buybacks $3,789M, withholding $561M). "
+     "Costs and Cash reference them.",
+     "fixed"),
+    ("Valuation", "B69:H75", "hard-coded constant in formula", "medium",
+     "Every cell of the scenario grid restated its own row heading (FY27 revenue growth) and column "
+     "heading (FY27 margin) as literals, so the axis labels and the arithmetic could drift apart.",
+     "FIXED: the cells read $A{row} and {col}$68, and the axis cells are yellow.", "fixed"),
+    ("Valuation", "B27:G37", "hard-coded constant in formula", "medium",
+     "The DCF fade weight ((t-1)/9) and the discount exponent (^1 .. ^10) were written as literals "
+     "in each row, next to a column A that already holds the year number.",
+     "FIXED: both read $A{row}; the terminal value discounts by ^$A36.", "fixed"),
+    ("Revenue", "K33, K74, K115 (FY2028E core revenue)", "duplicated expression", "medium",
+     "FY2028 core revenue restated the take-rate build (=K28*(J30+Inputs!$C$72/10000)*(1+K32)) "
+     "instead of pointing at the take-rate row three lines above, so an edit to the take-rate row "
+     "would not have reached revenue.",
+     "FIXED: =K28*K30*(1+K32). Same number.", "fixed"),
+    ("Inputs", "C22:E22", "input that does nothing", "medium",
+     "'DCF fade period (years)' = 10 is referenced by no formula: the Valuation DCF is ten "
+     "written-out rows, so changing this cell has no effect on any output.",
+     "FIXED (documentation): the source string now says LAYOUT-FIXED and that the cell does not "
+     "resize the grid. A real fix needs a dynamic strip.", "fixed"),
+    ("Cash", "C23, C27 (and the other two blocks)", "mislabelled column", "medium",
+     "The column header reads FY2025A but these two rows hold 2Q26 actuals - 597M diluted shares and "
+     "$9,593M of net cash at 30 Jun 2026 - because that is where both roll-forwards start.",
+     "FIXED: the row labels say '(FY2025A col = the 2Q26 actual)' and the sheet header spells out "
+     "both anchors and the 1H26 asymmetry above.", "fixed"),
+    ("Valuation", "B50:D50", "hard-coded constant in formula", "medium",
+     "The 5 Sep memo prices hard-code the 18 / 22 / 25.5x exit multiples inside the formulas. They "
+     "are the documented alternative (Inputs section E lists them as text), so they are not wrong, "
+     "but they are the last three numeric literals left in any formula in the file.",
+     "OPEN: add a yellow 'Memo exit multiple (5 Sep set)' row to Inputs section A and point the "
+     "three cells at it.", "open"),
+    ("Valuation", "B27:G39", "valuation-date convention", "medium",
+     "The DCF strip starts from FY2027E FCF, grows it by the start-growth input to get year 1 "
+     "(= FY2028) and discounts that by one year. The enterprise value is therefore a value as of "
+     "end-FY2027 compared with a spot price of 4 Sep 2026 - roughly a 1.3-year timing gap - and "
+     "there is no mid-year convention. Identical in the Python mirror, so it is a convention, not "
+     "a bug.",
+     "OPEN: economics, not mechanics. Either discount the strip back to today or say in the note "
+     "that the DCF lens is a forward value.", "open"),
+    # -------------------------------------------------------------------------------------- low
+    ("Street / Card_5Nov", "column G", "cosmetic", "low",
+     "The 70- and 76-character-wide column was set on H while the source / vendor text sat in G, so "
+     "both source columns rendered narrow.",
+     "FIXED: the width is set on the column the text is actually in (Card_5Nov's source moved to H "
+     "when the Active column was inserted).", "fixed"),
+    ("Costs / Cash", "C29 / C8 in all three blocks", "data gap", "low",
+     "FY2025 interest expense shows as $0M because data/processed/abnb_fcf_bridge.csv reports zero "
+     "for every quarter of 2025; ABNB's 2021 note coupon sits inside other income/(expense) in that "
+     "bridge. Memo column only - the forecast years take interest expense from Inputs.",
+     "OPEN (documented): the new History anchor says so. Pull the real FY2025 interest expense from "
+     "the 10-K if the FY2025A column is ever shown to anyone.", "open"),
+    ("Revenue", "C14:H17 and the two other blocks", "annual driver used per quarter", "low",
+     "The regulatory drag is a full-year pp of nights growth but is applied to each quarter of that "
+     "year at its full annual size.",
+     "OPEN: economics (WS11's overlay), and it is the same in the Python mirror.", "open"),
+    ("History", "A5:X26", "hard number outside a yellow cell", "low",
+     "The quarterly actuals table is 507 hard numbers with a sheet-level source line but no yellow "
+     "fill, so the Inputs banner's 'yellow cells are inputs' was not the whole story.",
+     "FIXED (documentation): the banner now names the History actuals table, the external Street / "
+     "Card bars and the Recon mirror column as the other hard numbers in the file.", "fixed"),
+]
+
+CLEAN = [
+    ("(workbook)", "-", "Excel error values", "none",
+     "Excel 16.0 CalculateFullRebuild on a copy: 0 cells of 5,544 returned #REF!, #DIV/0!, #VALUE!, "
+     "#NAME?, #N/A, #NUM! or #NULL!.", "-", "clean"),
+    ("(workbook)", "-", "circular references", "none",
+     "Application.Iteration False, CalculationState xlDone, no sheet reported a CircularReference "
+     "range, status bar clear.", "-", "clean"),
+    ("Revenue", "all 45 SUM ranges", "range stops short", "none",
+     "Every SUM in the file is E:H on one row - the four 2027 quarters - and the FY2026 column adds "
+     "the 1H26 actual to 3Q26 and 4Q26 explicitly. No range stops short of its row.", "-", "clean"),
+    ("(workbook)", "-", "reference to an empty cell", "none",
+     "No single-cell reference in any of the 2,348 formulas points at an empty cell.", "-", "clean"),
+    ("Revenue / Costs / Cash", "the three scenario blocks", "block consistency", "none",
+     "After shifting each block's row offset and blinding the Inputs scenario column, the Bear, Base "
+     "and Bull blocks are identical formula for formula - 0 mismatches over every formula cell. "
+     "Valuation columns B / C / D likewise, rows 6-49.", "-", "clean"),
+    ("History", "B94:B97, B55:B58, B64:B67, B73:B76, B82:B85, B86:B89", "shares sum to 100%", "none",
+     "Seasonal share of full-year nights sums to exactly 1.000000; the four regional shares sum to "
+     "exactly 1.000000 for 3Q25, 4Q25, 1Q26, 2Q26 and FY2025.", "-", "clean"),
+    ("Valuation", "B43:D45", "football-field weights", "none",
+     "MIN / MAX / AVERAGE over exactly the six lens cells (EV/EBITDA FY27, EV/FCF FY27, P/SBC-adj "
+     "FCF, P/earnings, EV/EBITDA FY28, DCF), equal weight, matching the Python mirror's `core` set - "
+     "the SBC-adjusted DCF and the 5 Sep memo multiples are excluded from both.", "-", "clean"),
+    ("Revenue", "row 32 and its two copies", "FX timing wedge", "none",
+     "(1+revenue FX)/(1+ADR FX)-1 in all six quarterly columns and in FY2028E. Absent from the "
+     "FY2026E and FY2027E columns by construction: those revenues are sums of quarters that already "
+     "carry the wedge.", "-", "clean"),
+    ("Cash", "rows 6-14 and copies", "sign convention", "none",
+     "Interest expense, cash taxes and capex arrive negative; interest income, the change in "
+     "unearned fees and the working-capital residual arrive signed; FCF is a straight sum; "
+     "SBC-adjusted FCF = FCF - SBC; buybacks and RSU withholding reduce both net cash and the share "
+     "count.", "-", "clean"),
+    ("(workbook)", "4 named ranges", "named range targets", "none",
+     "Scenario -> Inputs!$B$4 (2), SharePrice -> Inputs!$F$8 (181.94), CostOfEquity -> Inputs!$F$11 "
+     "(0.105), ExitMultiple -> Inputs!$F$14 (16.5). All four land on the Active cell of the row "
+     "their name claims.", "-", "clean"),
+    ("Inputs", "every row with a value", "source coverage", "none",
+     "0 of the rows that carry a value are missing a source string in column G; 0 History anchors "
+     "carry a hard value without a source note.", "-", "clean"),
+    ("Recon", "D5:D220", "in-workbook reconciliation", "none",
+     "All 216 delta cells read exactly 0 after the real Excel recalculation.", "-", "clean"),
+    ("Card_5Nov", "B5:E24", "pasted values", "none",
+     "Every model cell is a live formula off Revenue or Costs; the guide and Street columns are text "
+     "or numbers with a named source, and the context block is external base rates with sources.",
+     "-", "clean"),
+]
+
+COLS = ["sheet", "cell", "issue_type", "severity", "description", "suggested_fix", "status"]
+
+
+def main():
+    rows = [dict(zip(COLS, r)) for r in REVIEW + CLEAN]
+    pd.DataFrame(rows)[COLS].to_csv(OD("17_formula_review.csv"), index=False)
+    sev = pd.Series([r["severity"] for r in rows]).value_counts().to_dict()
+    st = pd.Series([r["status"] for r in rows]).value_counts().to_dict()
+    print(f"17_formula_review.csv: {len(rows)} rows")
+    print(f"  by severity {sev}")
+    print(f"  by status   {st}")
+
+
+if __name__ == "__main__":
+    main()

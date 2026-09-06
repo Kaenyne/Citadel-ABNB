@@ -84,7 +84,16 @@ FY25["take"] = FY25["rev"] / FY25["gbv"]
 # 1H2026 actual: FY2026 = 1H26 actual + the 3Q26 and 4Q26 forecast quarters
 H1_26 = dict(rev=2678.0 + 3608.0, nights=156.2 + 148.3, gbv=29200.0 + 27200.0,
              adj=519.0 + 1261.0, fcf=1704.0 + 1253.0, buybacks=1088.0 + 1051.0,
-             withholding=140.0 + 165.0)
+             withholding=140.0 + 165.0, sbc=410.0 + 487.0)
+
+# WS18 / WS17 finding 3. The FY2026 share count and the FY2026 net-cash line both roll forward from
+# the SAME 30 Jun 2026 actuals (597.0M diluted shares, $9,593M net cash), so both must consume only
+# the 2H26 flows: FY2026 buybacks less the $2,139M already repurchased in 1H26, and FY2026 SBC less
+# the $897M already expensed in 1H26. Until WS18 the share line applied the FULL-YEAR buyback and SBC
+# to the 2Q26 count, double-counting the 1H26 repurchase net of 1H26 issuance: -8.55M shares on
+# FY2026E, carried into FY2027E and FY2028E, i.e. every per-share number ~1.5% too generous.
+# Set to False to reproduce the pre-fix (WS13 / WS17) share path; see 18_share_fix_delta.py.
+SHARE_ROLL_NETS_1H26 = True
 
 QB = {}                                    # prior-year quarters the forecast grows off
 for q in ["3Q25", "4Q25", "1Q26", "2Q26"]:
@@ -452,10 +461,18 @@ def build_annual(scen):
         sbcfcf = fcf - sbc
         px = V["price"] * (1 + V["price_growth"]) ** (yr - 2026)
         wh = sbc * V["withholding_pct"]
-        shares = shares - I["buybacks"] / px + sbc / px * (1 - V["withholding_pct"])
         d_fcf = fcf - H1_26["fcf"] if yr == 2026 else fcf
         d_bb = I["buybacks"] - H1_26["buybacks"] if yr == 2026 else I["buybacks"]
         d_wh = wh - H1_26["withholding"] if yr == 2026 else wh
+        # WS18 fix (WS17 finding 3): the share roll starts from the 2Q26 diluted count, so 2026 must
+        # consume only the 2H26 buyback and 2H26 SBC -- exactly the flows the net-cash roll below uses.
+        # Before this fix the FULL-YEAR buyback was applied to a 30 Jun 2026 count, double-counting the
+        # 1H26 repurchase ($2,139M = 11.76M shares) net of 1H26 issuance (3.20M), i.e. -8.55M shares.
+        if yr == 2026 and SHARE_ROLL_NETS_1H26:
+            bb_sh, sbc_sh = d_bb, sbc - H1_26["sbc"]
+        else:
+            bb_sh, sbc_sh = I["buybacks"], sbc
+        shares = shares - bb_sh / px + sbc_sh / px * (1 - V["withholding_pct"])
         net_cash = net_cash + d_fcf - d_bb - d_wh
         out.append(dict(
             scenario=scen, year=yr, nights=nights, nights_yoy_pct=100 * (nights / prev["nights"] - 1),

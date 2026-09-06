@@ -23,9 +23,11 @@ WS13's lever stack after the AI referral cost, not WS07's 36.6% before it).
 
 ## 0. The single most important thing in this document
 
-**The base-case price fell from $248 (5 Sep) to $184 (7 Sep), and $55 of that $64 is the exit
-multiple.** Not the operating case. The operating case moved $9 in total: -$5 of EBITDA and -$4 of
-net cash (an actual correction — the old path never subtracted RSU tax withholding, ~$0.7bn a year).
+**The base-case price fell from $248 (5 Sep) to $181 (7 Sep), and $55 of that $67 is the exit
+multiple.** Not the operating case. The rest moved $12 in total: -$5 of EBITDA, -$4 of net cash (an
+actual correction — the old path never subtracted RSU tax withholding, ~$0.7bn a year) and -$3 of share
+count (**WS18's fix to the FY2026 roll-forward, which had double-counted the 1H26 buyback**; see the
+post-run corrections section at the end of this note).
 
 WS12 triangulated the FY27 exit multiple three independent ways — a 2023-26 time series of ABNB's own
 multiple against forward growth, a 19-name cross-section, and a fade DCF — and **all three land below
@@ -34,9 +36,9 @@ highest live sell-side target on the tape ($220, Rosenblatt / DA Davidson) impli
 target ($178.96 across 46 analysts) implies **15.4x**. Nothing published anywhere supports 22x, let
 alone 25.5x.
 
-At WS13's model, WS12's multiples and a 25/50/25 weighting, the EV/EBITDA lens is worth **$179**
-(-1.6% vs spot). On the full football-field means it is **$160** (-12%). On the old multiples it is
-**$235** (+29%). *The entire difference between "ABNB is a buy" and "ABNB is fairly valued" in our own
+At WS13's model, WS12's multiples and a 25/50/25 weighting, the EV/EBITDA lens is worth **$176**
+(-3.2% vs spot). On the full football-field means it is **$157** (-14%). On the old multiples it is
+**$231** (+27%). *The entire difference between "ABNB is a buy" and "ABNB is fairly valued" in our own
 work is the exit multiple, and we now have three methods saying the low number is the right one.*
 
 **So the pitch has exactly three honest routes to upside, and it must pick one and argue it explicitly:**
@@ -102,7 +104,7 @@ Anything else is an argument that the market should pay a multiple it has never 
 |---|---|---|
 | Nights **acceleration sign** sets the day-1 reaction | 17 of 21 (predictive study); post-2022 accelerating prints +6.7% day-1 (n 5) vs decelerating −5.4% (n 9); WS04's independent sign test 7 of 9 positive, p 0.070 vs the base rate. **As a regression it fails: R² 0.032, LOO R² −0.18** | **A base rate with its n, not a model.** Standardise the definition before 5 Nov — WS01, WS04 and WS05 count "acceleration" three different ways (CONF-16) |
 | Nights vs the **StreetAccount nights consensus** drives the 20-day drift | n 18, R² 0.220, slope **+1.54 pts of 20-day excess per 1% nights beat**, HC1 t 2.46, perm p 0.053, **LOO R² +0.13**. Post-2022 (n 11): R² 0.373, slope +2.83, crosses zero at a **+1.83% nights beat**. Median nights beat in the sample is +0.58%, so the *typical* print is followed by a negative 20-day excess | The best out-of-sample reaction result in the run — but it is one of **nine** positive-LOO specs among 75, not "the only one" (WS15 correction #7). Needs two clean confirmations before it is pitchable |
-| **Guide below Street** is a risk flag | All 8 such prints had a negative 20-day excess (mean −7.95%); p 0.004 vs a coin flip but **p 0.078 vs ABNB's actual 72.7% base rate of negative 20-day excess**. Report the base-rate version | Usable as a binary flag. **Live for 5 Nov**: Zacks Q4-26 revenue is $3,200m = +15.2% y/y against an expected +11-13% guide |
+| **Guide below Street** is a risk flag | All **9** such prints had a negative 20-day excess (mean **−8.90%**); p 0.002 vs a coin flip and **p 0.057 vs ABNB's actual 72.7% base rate of negative 20-day excess**. Report the base-rate version. The ninth is 2Q24, whose −3.65% guide-vs-Street was recovered by WS16 (Reuters, 6 Aug 2024: Street $3.84bn vs a $3.70bn midpoint). Day-1 the two groups now separate at Mann-Whitney p 0.040, gap 5.5pts | Usable as a binary flag. **Live for 5 Nov**: Zacks Q4-26 revenue is $3,200m = +15.2% y/y against an expected +11-13% guide |
 | **Post-print drift** is negative and lives in the up-prints | 20 sessions after the reaction day: all prints −3.7% (t −2.16, p 0.042, negative 15 of 23); day-1-up prints **−7.1%** at 20d and **−14.8%** at 60d (negative 8 of 10); day-1-down prints −0.7% / +0.4%, i.e. zero. **Pops fade, drops do not bounce** | Real but regime-broken: from 2023 the all-print drift is −2.3% (not significant) and the last three up-prints drifted −1.4%, **+5.5%, +3.2%** |
 | Print days are **re-ratings, not estimate changes** | Across 2023-26 prints the day-1 move correlates **+0.97** with the change in the EV/NTM-revenue multiple and **+0.09** with the change in the estimate. On the nine moves ≥7%, 84% of the absolute move is multiple. 2Q26 was +17.4% on an estimate change of **−0.2%** | The most important single fact about how this stock trades |
 | **Management language** | Long-term-target / full-year framing share of prepared remarks: detrended r **+0.69** with day-1 (perm p 0.0005), +0.72 controlling for the numbers. Classic sentiment is worthless: LM net tone r **+0.08**. **948 tests, zero survive Benjamini-Hochberg at q<0.10**; best q 0.12 | Knowable only at ~17:30 ET on print day, after the letter and after the after-hours move. **Explanatory only. There is no version of this that becomes a forecast.** Put it in the pre-call checklist, never in a model |
@@ -257,7 +259,7 @@ Five candidate variables, ranked by what actually survives:
 | **Change in the EV/NTM-revenue multiple** | day 1 | corr **+0.97** with the day-1 move (2023-26). This is a description, not a predictor — but it tells you the print is a positioning event |
 | **Nights vs Street nights** | 20 days | slope +1.54 pts per 1% beat, LOO **+0.13**; crosses zero at a +1.83% beat post-2022. **The only defensible out-of-sample reaction result** |
 | **Nights acceleration sign** | day 1 | base rate: 17/21 (predictive study), 7/9 (WS04), post-2022 +6.7% vs −5.4% (WS05). Fails as a regression. **Quote it with its n; do not put a coefficient on it** |
-| **Guide midpoint below next-quarter Street** | 20 days | 8 of 8 negative, base-rate p 0.078. A binary risk flag |
+| **Guide midpoint below next-quarter Street** | 20 days | **9 of 9** negative, base-rate p **0.057**. A binary risk flag |
 | Revenue beat vs guide | day 1 | **0.37 sign hit rate.** A bigger beat is, if anything, associated with a *worse* day |
 | Consensus revenue surprise | day 1 | R² 0.097, LOO −0.17 |
 | Margin guide direction, FY guide action, cushion-aware guide surprise | day 1 and 20 | all LOO-negative (WS02, 17 tests) |
@@ -273,13 +275,13 @@ regression in an Excel model would be dressing a negative result as a feature.
 
 ## 4. The model: FY26-FY28 base / bear / bull
 
-**Bottom line: $15.8bn of FY27 revenue at a 35.9% adjusted EBITDA margin, worth about $184 a share on
+**Bottom line: $15.8bn of FY27 revenue at a 35.9% adjusted EBITDA margin, worth about $181 a share on
 WS12's multiples against a $181.94 spot. The stock is priced roughly at the base case on reported cash
 flow and above the bull case on cash flow after SBC. That gap is the whole debate and two days of work
 did not move it.**
 
-`model/ABNB_driver_model.xlsx` — 9 sheets, 2,303 live formulas, 216 outputs reconciling to the Python
-mirror to 1e-6. Rebuild with `py -3.13 analysis/src/overnight/13_driver_model.py`.
+`model/ABNB_driver_model.xlsx` — 9 sheets, 2,349 live formulas, 216 outputs reconciling to the Python
+mirror to 1e-6 and, after WS17's Excel 16.0 rebuild, to 4.2e-15 against real Excel. Rebuild with `py -3.13 analysis/src/overnight/13_driver_model.py`.
 
 ### 4.1 The base case
 
@@ -292,12 +294,12 @@ mirror to 1e-6. Rebuild with `py -3.13 analysis/src/overnight/13_driver_model.py
 | **Revenue ($M)** | **14,233 (+16.3%)** | **15,842 (+11.3%)** | **17,944 (+13.3%)** |
 | **Adj. EBITDA ($M) / margin** | **5,158 / 36.2%** | **5,686 / 35.9%** | **6,701 / 37.3%** |
 | SBC ($M) / % revenue | 1,787 / 12.6% | 1,965 / 12.4% | 2,122 / 11.8% |
-| Net income / EPS | 3,065 / $5.28 | 3,258 / $5.76 | 3,906 / $7.06 |
+| Net income / EPS | 3,065 / $5.20 | 3,258 / $5.67 | 3,906 / $6.96 |
 | **FCF ($M) / margin** | **5,129 / 36.0%** | **5,420 / 34.2%** | **6,197 / 34.5%** |
 | SBC-adjusted FCF ($M) | 3,342 | 3,455 | 4,075 |
-| Diluted shares (M) | 580.3 | 566.0 | 553.0 |
-| **FCF / share** | **$8.84** | **$9.58** | **$11.21** |
-| **SBC-adj. FCF / share** | **$5.76** | **$6.10** | **$7.37** |
+| Diluted shares (M) | 588.9 | 574.6 | 561.5 |
+| **FCF / share** | **$8.71** | **$9.43** | **$11.04** |
+| **SBC-adj. FCF / share** | **$5.68** | **$6.01** | **$7.26** |
 | Net cash ex float ($M) | 9,383 | 10,116 | 11,570 |
 
 Bear FY27 revenue **$14,181m (+1.8%)** at a **28.4%** margin; bull **$17,421m (+19.9%)** at **38.0%**
@@ -373,7 +375,7 @@ The single most important sensitivity in the model **is not a cost lever**:
 | FY27 base margin | 36.5% | **35.9%** | Same lever stack, less 0.38pp of AI referral cost |
 | FY27 base FCF | $5,825M | **$5,420M** | The old model set FCF = 100% of EBITDA; this one runs the bridge (95%) |
 | FY27 net cash | $12,358M | **$10,116M** | **Correction.** RSU tax withholding (~$0.7bn/yr) was never subtracted. Worth ~$4/share on every EV lens |
-| **FY27 base price (EV/EBITDA)** | **$248** | **$184** | **−$55 multiple, −$5 EBITDA, −$4 net cash. The multiple is 86% of the change.** At 22x this model still gives $239 |
+| **FY27 base price (EV/EBITDA)** | **$248** | **$181** | **−$55 multiple, −$5 EBITDA, −$4 net cash, −$3 share count (WS18). The multiple is 82% of the change.** At 22x this model still gives $235 |
 | FY27 bear | +4.3% / 33.8% | **+1.8% / 28.4%** | Four separate tails now stack: regional demand bear, strong-dollar path (−2.6pp), −15bp take rate, high AI referral cost |
 | FY28 base growth | +11.0% | **+13.3%** | **An FX artefact, not a demand call.** FY27 carries a −0.6pp revenue FX drag and a −0.8pp timing wedge, both of which lap |
 
@@ -381,18 +383,18 @@ The single most important sensitivity in the model **is not a cost lever**:
 
 | Lens (FY2027E unless stated) | Multiple bear/base/bull | Bear | **Base** | Bull |
 |---|---|---|---|---|
-| EV / adj. EBITDA | 13.5 / 16.5 / 18.5x | $110 | **$184** | $238 |
-| EV / FCF | 11.3 / 14.3 / 17.3x | $85 | **$155** | $221 |
-| P / SBC-adjusted FCF | 15 / 19.5 / 24x | $38 | **$119** | $200 |
-| P / earnings proxy | 15 / 19.5 / 24x | $46 | **$112** | $179 |
-| EV / adj. EBITDA on FY2028E | same | $105 | **$221** | $294 |
-| DCF, 10-yr fade to 3%, CoE 10.5% | — | $79 | **$185** | $285 |
-| **Football field (low / mean / high)** | | **$38 / $77 / $110** | **$112 / $163 / $221** | **$179 / $236 / $294** |
-| Upside vs $181.94, mean | | −58% | **−11%** | +30% |
-| *Memo at 18 / 22 / 25.5x* | | *$142* | *$239* | *$320* |
+| EV / adj. EBITDA | 13.5 / 16.5 / 18.5x | $108 | **$181** | $234 |
+| EV / FCF | 11.3 / 14.3 / 17.3x | $84 | **$153** | $218 |
+| P / SBC-adjusted FCF | 15 / 19.5 / 24x | $37 | **$117** | $197 |
+| P / earnings proxy | 15 / 19.5 / 24x | $45 | **$111** | $176 |
+| EV / adj. EBITDA on FY2028E | same | $104 | **$218** | $289 |
+| DCF, 10-yr fade to 3%, CoE 10.5% | — | $78 | **$183** | $281 |
+| **Football field (low / mean / high)** | | **$37 / $76 / $108** | **$111 / $160 / $218** | **$176 / $233 / $289** |
+| Upside vs $181.94, mean | | −58% | **−12%** | +28% |
+| *Memo at 18 / 22 / 25.5x* | | *$140* | *$235* | *$315* |
 
-**25/50/25 weighted:** $179 on the EV/EBITDA lens (−1.6%), **$160 on the football-field means (−12%)**,
-$235 at the old multiples (+29%). WS12's own grid, run on the 5 Sep scenario EBITDA, gives **$190.5 vs
+**25/50/25 weighted:** $176 on the EV/EBITDA lens (−3.2%), **$157 on the football-field means (−14%)**,
+$231 at the old multiples (+27%). WS12's own grid, run on the 5 Sep scenario EBITDA, gives **$190.5 vs
 $249.0** — same conclusion, slightly different inputs.
 
 **Reverse DCF, unchanged and that is the point.** At 10% CoE / 3% terminal, $181.94 discounts **7.50%**
@@ -407,10 +409,10 @@ on reported cash flow; above the bull case after SBC.**
 | 3Q26 revenue | $4,740M (Zacks, 7 est.) | $4,801M | +1.3% |
 | **4Q26 revenue** | **$3,200M (10 est., 3,050-3,700)** | **$3,145M** | **−1.7%** |
 | FY26 revenue | $14,100M / $14,160M | $14,233M | +0.9% / +0.5% |
-| FY26 adj. EPS | $5.23 / $5.28 | $5.28 | +1.0% / 0.0% |
+| FY26 adj. EPS | $5.23 / $5.28 | $5.20 | −0.5% / −1.4% |
 | FY26 FCF | $5,350M | $5,129M | −4.1% |
 | FY27 revenue | $15,730M / $15,760M | $15,842M | +0.7% / +0.5% |
-| **FY27 adj. EPS** | **$6.02 / $6.14** | **$5.76** | **−4.3% / −6.2%** |
+| **FY27 adj. EPS** | **$6.02 / $6.14** | **$5.67** | **−5.8% / −7.7%** |
 
 **We are above the Street on revenue and below on FY27 EPS, and that is the honest version of the pitch:
 more revenue, more SBC, more AI cost, fewer shares retired than the sell side assumes.** The 4Q26 gap is
@@ -549,7 +551,7 @@ the team can take in a Q&A.**
 | **Nights vs Street nights → 20-day drift** | n 18, LOO **+0.13** (n 11 post-2022, LOO +0.18), jackknife-stable r 0.35-0.57 | **Not yet.** 18 observations, a StreetAccount consensus quoted only when CNBC chose to quote it (an unruled-out selection channel), and it comes from a file with 97 tests. Two clean out-of-sample confirmations (5 Nov, Feb) would make it pitchable |
 | **"Short the pop"** (R2) | 20d +5.89% (t 2.34, p 0.042), 60d +12.82% (t 2.30), LOYO-stable | **No.** Five of seven winners are pre-2024 and it **lost in both 2026 prints** (−6.1% Q4'25, −2.8% Q2'26). A de-rating-era rule |
 | **May short** (R7) | 6/6, +14.4%, t 6.19, p 0.002, LOYO +13.4 to +16.6% | **No** — constructed after reading the seasonality table, and it is the same fact as the seasonal block, not independent evidence. n = 6 among 54 tests |
-| **Guide below Street** | 8/8 negative at 20d, base-rate p 0.078 | A risk flag for sizing, not a trade |
+| **Guide below Street** | **9/9** negative at 20d, base-rate p **0.057** | A risk flag for sizing, not a trade |
 | Prior-quarter S&M deleverage → next day-1 | r +0.59, n 17, LOO R² 0.24 | **Pre-registered hypothesis only.** One hit in ~60 tests, sign not pre-specified. Score it on 5 Nov |
 | Jobs-day abnormal return | +1.04% per payroll release, t 2.47, n 60 | Economically sensible for a discretionary-travel name; **log it, pre-register the next 12 releases, do not trade it** |
 
@@ -580,7 +582,7 @@ against the base rate; above ~9% it is rich.**
 ### 6.4 The honest statement
 
 *Tradeable:* the FX-to-ADR forecast as a model input; a straddle decision in late October if the implied
-move diverges from the 7.1% base rate; a "guide below Street" risk flag on position sizing.
+move diverges from the 7.1% base rate; a "guide below Street" risk flag on position sizing (9/9, mean −8.90%; WS16 re-run on `16_reaction_tests.csv`).
 
 *Pitch talking points, not trades:* the nights-drift coefficient (needs confirmation), the
 nights-acceleration base rate, the May and November seasonals, the post-print fade, the S&M-deleverage
@@ -603,16 +605,25 @@ $171.29, take rate 17.88%, margin 50.1%; 4Q25 revenue $2,778m.
 | # | Metric | **Our estimate** | Range | Street | Guide | Mechanism | What we conclude if wrong |
 |---|---|---|---|---|---|---|---|
 | 1 | **Nights & seats y/y** | **+10.2%** (147.2m) | 7.9% to 12.6% (bear 144.2m, bull 150.4m) | no published consensus; WS04 derived bar **144-146m** | "low double digit" (10-12%) | WS10 regional build (NA +7, EMEA +8, LatAm +18, APAC +17), less the RNPL/three-feature lap in NA | **Below +9%:** the 1H26 acceleration was the three-feature lap (RNPL + cancellation redesign + single fee) and FY27 nights come down 1-2pts. **Above +12%:** expansion markets are compounding faster than the regional build assumes; raise FY27 nights |
-| 2 | **ADR y/y** | **+3.8%** ($177.84) | +2.8% to +4.8% | none published (no publisher quotes an ADR consensus, ever) | "up moderately" | ex-FX run-rate ~+3.0-3.25% plus FX | **Above +5%:** the ex-FX pricing story changed — check bedroom mix before crediting price. **Below +2%:** either the dollar moved more than the fit says or mix reversed |
+| 2 | **ADR y/y** | **+3.8%** ($177.84) | +2.8% to +4.8% | **none published yet, but one will be**: Zacks quotes a 'GBV per Night and Experience Booked (ADR)' consensus 2-3 days before each print (2Q26 $181.56; 1Q26 $178.54; 4Q25 $165.52; 3Q25 $166.67; 1Q25 $170.55). ABNB has beaten it 5 of 5 by +0.5% to +4.6%. Get the Q3 number on ~2-3 Nov | "up moderately" | ex-FX run-rate ~+3.0-3.25% plus FX | **Above +5%:** the ex-FX pricing story changed — check bedroom mix before crediting price. **Below +2%:** either the dollar moved more than the fit says or mix reversed |
 | 2a | **…of which FX** | **−1.3 to +0.8pp, centred near zero** | same | — | ~3pp of *revenue* FX (a different line) | Broad-USD fit gives +0.80pp (r −0.96); **EUR/USD fit gives −1.27pp for the same quarter and has the higher in-sample r** (CONF-05). WS10's revenue-weighted spot basket is +0.32% | Outside the range → refit. This is the most mechanical item on the card and the one we most expect to be right |
 | 3 | **GBV** | **$26,185m** (~+14.3%) | $25,391-27,013m | — | "mid teens" | nights × ADR | A GBV/nights/ADR triangle that does not close means one of the three is mis-measured |
 | 4 | **Revenue** | **$4,801m (+17.2%)** | **$4,78-4,82bn is the honest card range** (WS15 CONF-04); full scenario span $4,632-4,977m | **$4,740m** (Zacks, 7 est., 4.72-4.77) | $4,690-4,770m | Four methods: WS10 bottom-up **$4,775m**; WS02 trailing-8 cushion **$4,815m**; WS04 post-2022 median beat **$4,832m**; WS08 raw backlog **~$4,590m** (~$4,720m with the RNPL add-back) | **Below $4,740m:** the first sub-Street revenue print in 23 quarters — a regime change, not a miss. **Above $4,850m:** the cushion did not shrink after all; revert to the full-history cushion |
 | 5 | **Adj. EBITDA margin** | **49.0%** | 48.3% to 50.2% | derived bar $2,300-2,400m of EBITDA | "down slightly" from 50.1% | WS07 lever stack; 9 of 10 such ceilings met, by a mean of 1.4pts | **Below 48%:** the FY 35.5% floor is at risk for the first time in four years. **Above 50%:** the FY guide goes to 36%+ and the marketing ramp is easing |
 | 6 | **Brand & performance marketing y/y** | **~+17-25%** (base needs H2 at ~+17%) | 1H26 ran **+32%** | not disclosed by the Street | none | **The single most informative line in the release.** FY26 margin = 37.0% at +17%, 36.2% at +25%, **35.5% at +31%** | **Above +28%:** the FY lands at the 35.5% floor, not 36%+. **Below +20%:** the first evidence the reinvestment cycle is easing — worth more to the margin case than any AI datapoint |
 | 7 | **Implied take rate** | assumed **17.88%** flat; **reported ~18.27%** | 17.83-17.93% assumed | — | "relatively in line y/y" | +2.2pp of FX timing sits between the two. **A reported 18.3% is consistent with completely flat monetisation** | **Do not call the single fee a success on a reported take rate near 18.3%.** A reported rate *below* 17.9% with a positive FX wedge would be genuine compression |
-| 8 | **4Q26 revenue guide** | **midpoint implying +11-13%** (our model $3,145m, +13.2%) | +8.5% to +17.5% | **$3,200m = +15.2%** (10 est., 3,050-3,700 — a 21% spread, by far the widest on the table) | none yet | **~3.4pp of the step-down from the Q3 15-17% is the FX lap, and 84% of it has already happened** | **A guide at +11-13% is arithmetic, not deceleration** — but the Street's $3,200m falls, and that is a live "guide below Street" setup (8/8 negative 20-day, base-rate p 0.078). Below +9%, or nights guided down, is the bear case |
+| 8 | **4Q26 revenue guide** | **midpoint implying +11-13%** (our model $3,145m, +13.2%) | +8.5% to +17.5% | **$3,200m = +15.2%** (10 est., 3,050-3,700 — a 21% spread, by far the widest on the table) | none yet | **~3.4pp of the step-down from the Q3 15-17% is the FX lap, and 84% of it has already happened** | **A guide at +11-13% is arithmetic, not deceleration** — but the Street's $3,200m falls, and that is a live "guide below Street" setup (**9/9** negative 20-day, base-rate p **0.057**). Below +9%, or nights guided down, is the bear case |
 | 9 | **FY26 guide changes** | revenue raised from "at least mid teens" to **high teens or a point ~16-17%**; margin floor replaced by "**approximately 36%+**" | — | FY26 $14,100-14,160m | "at least mid teens" / "at least 35.5%" | The FY guide has **only ever been raised**, and in 2024 and 2025 the raise landed at the Q3 print. 1H26 is already +17.1% | **A mere reiteration would be the first non-raise since the FY revenue guide existed** — a red flag out of proportion to its arithmetic |
 | 10 | **Likely language** | full-year framework **with a number** in prepared remarks; "expansion markets", "bedroom nights", AI support metrics; single-fee completion reaffirmed; **no FY27 guide** | — | — | — | Long-term-target share of prepared remarks: the 11 calls with any averaged **+4.0%** day-1, the 12 with none averaged **−2.7%** (sign hit rate 6/11 vs 5/12 — the *mean* separates, driven by tails) | **If the prepared section drifts into expansion-market and Experiences narrative without a full-year figure, that is the 2Q24 / 1Q23 pattern.** Any hedged 2H/2027 macro sentence — "moderation", "shorter lead times", "pressure on growth rates later in the year" — cost 8-13% in 2022, 2023, 2024 and 2025, **and did not verify in either 2024 or 2025** |
+
+**On ~2-3 Nov, pull Zacks' "Wall Street's Insights Into Key Metrics Ahead of Airbnb (ABNB) Q3
+Earnings."** It publishes the nights, ADR and GBV consensus free, two to three days before the print
+(2Q26: nights 145.44m, ADR $181.56, GBV $26.42bn). That closes the card's single biggest hole — the
+unpublished nights bar — at zero cost. Read it against WS04's derived 144-146m and expect a 1-2% vendor
+gap versus StreetAccount (Zacks had 2Q25 nights at 130.76m where WS04's StreetAccount row has 133.35m).
+ADR belongs on the card too: ABNB has beaten the published ADR consensus 5 of 5, and on n=5 the
+correlation with the day-1 move is **−0.46** — treat a large ADR beat as a mix/FX signal, not a bull
+signal. *(WS16)*
 
 ### 7.1 Expected reaction under each outcome
 
@@ -667,7 +678,7 @@ estimate. The two things that are **not** priced, and that our work can quantify
    discretionary and reverses in a downturn.
 
 **And the uncomfortable third leg the pitch must own:** on the evidence we now have, the base case is
-worth about **$184** against a **$181.94** spot. *If the recommendation is a long, the upside has to come
+worth about **$181** against a **$181.94** spot. *If the recommendation is a long, the upside has to come
 from FY27 revenue above ~$16.0bn, SBC below ~10% of revenue, or a separately priced optionality bucket —
 not from the exit multiple.*
 
@@ -708,13 +719,15 @@ not from the exit multiple.*
    beat AR(1)**; the funds-held pair is 0.59x AR(1) on one window and **1.85x on the other, from the same
    file**. The defensible version: *nothing in the alt-data layer beats AR(1) on both evaluation windows,
    and every apparent winner is either mechanical FX, not knowable before the print, or window-dependent.*
-3. **The single-fee / take-rate bull case, in all its forms.** Specifically stop saying: *"about half of
-   listings were on the single fee by 2Q26"* (not in the letter or the call — the disclosed facts are
-   "over a quarter" at 1Q26 and "entire supply base by year-end" at 2Q26); *"Reserve Now Pay Later added
+3. **The single-fee / take-rate bull case, in all its forms.** Specifically stop saying: *"Reserve Now Pay Later added
    3 points of nights growth"* (it was **three features together** — RNPL, the cancellation-policy
    redesign and the single-fee migration — and WS11 propagated the misattribution into a 3pt FY27 nights
-   haircut); *"a −0.8pt take-rate hit from the direct-booking pilot"* (the Skift article is paywalled and
-   the 6-10% range was never read from a primary source — **do not put −0.8pts in the model**); and
+   haircut); *"a −0.8pt take-rate hit from the direct-booking pilot"* — the pilot is now **verified** (Airbnb's
+   own product copy on its host community forum, 28 Aug 2026; RSU by PriceLabs, 31 Aug 2026: host fee
+   15.5% → **6% or 10%** on host-generated tracked links, invite-only, US, no newsroom post). The number
+   is wrong for a different reason: −0.8pt of a ~13.4% take rate requires **8.4% of all GBV** at the 6%
+   tier or **14.5%** at the 10% tier. **Use 0-15bp of FY27 take rate; reserve −0.8pt for a "pilot becomes
+   policy" tail**; and
    *"discount share tripled from 11% to 31% between March and August 2026"* (mislabelled — those are
    cross-city medians, not quote-weighted shares, which went 17.3% → 31.4% — and confounded by a mid-series
    scrape change: the share of quotes carrying a taxes line went 0.20% → 5.65% → 6.54% over the same dumps
@@ -735,7 +748,7 @@ disclosures", because the inputs are "over 8 million" and "over 9 million".
 | Risk | Probability | Size | Evidence |
 |---|---|---|---|
 | **The multiple does not re-rate above ~16.5x** | **~65%** — this is the base case on the evidence | The whole thesis: $55/share | Three independent methods; no live target implies >19.3x; margin does not move it and forward growth is decelerating from FY27 on the FX lap |
-| Q4 revenue guide read as demand rather than FX | **~35%** | 5-10% on the day; recoverable | 8/8 guide-below-Street prints had negative 20-day excess; the offsetting evidence is 4Q24, when the guide came in below Street and the stock rose 14.4% on the nights beat |
+| Q4 revenue guide read as demand rather than FX | **~35%** | 5-10% on the day; recoverable | **9/9** guide-below-Street prints had negative 20-day excess; the offsetting evidence is 4Q24, when the guide came in below Street and the stock rose 14.4% on the nights beat |
 | **FY27 nights disappoint on the three-feature lap** | **~30%** | 1-3pts of nights = ~$0.3-0.5bn of FY27 revenue | +3pts of Q1'26 nights and +4pts of GBV came from RNPL + cancellation redesign + single fee together; RNPL laps in the US from 3Q26. WS10 already has NA at high-single |
 | Strong-dollar path (JPM/HSBC/GS camp: EUR/USD 1.09-1.13) | **~25%** (WS05 scenario C weight is 20%, and the bank split is roughly 40/60) | **−2.6pp on FY27 revenue, ~−1.5pts of margin through the chain** | 25 bank forecasts split into two camps 15 points apart, worth 5.5pp of ADR FX |
 | SBC stays at ~13% of revenue through FY28 | **~70%** | The 14-point wedge between a 36% EBITDA margin and a 22.5% SBC-adjusted FCF margin; **on EV/NTM SBC-adjusted FCF ABNB is exactly at the peer median** | Model has SBC at 12.6 / 12.4 / 11.8%; management guides "flat to slightly down". Mitigant: buybacks fund it — diluted shares 649M (2Q24) → 597M (2Q26), −8% in two years, net cash return after SBC positive every quarter since 3Q22 |
@@ -757,11 +770,11 @@ Ranked by what it unlocks before the December pitch, per unit of effort.
 | 2 | **Re-run the options block in the last week of October**, once the 6 Nov weekly is listed | **1** | anyone | Converts "no event premium at 76dte" into an actual implied-vs-7.1%-base-rate comparison and gives the card a trade structure |
 | 3 | **Freeze and publish the prediction card (section 7) before 5 Nov, then score all nine items on 6 Nov** | **3 + 3** | Krish | The only way to learn which of tonight's work was real. Also the single most credible slide in a Q&A |
 | 4 | **Reconcile the four FY27 revenue estimates into one number with the others as an explicit range**, and update `model/assumptions.md`'s exit multiples to 13.5/16.5/18.5x with the old grid as a labelled sensitivity | **2** | Krish | Removes the deck's biggest internal inconsistency (CONF-01, CONF-13). **Do this before any slide is drawn** |
-| 5 | **Get a nights whisper for Q3-26.** No published nights consensus exists anywhere free | **2 + calls** | whoever has buy-side contacts | The only variable in the whole study with out-of-sample power (LOO +0.13 at 20 days) currently has no bar to beat |
+| 5 | **Get a nights whisper for Q3-26.** A free one publishes ~2-3 Nov: Zacks' *"Wall Street's Insights Into Key Metrics Ahead of Airbnb (ABNB) Q3 Earnings"* carries nights, ADR and GBV consensus (2Q26: nights 145.44m, ADR $181.56, GBV $26.42bn). Buy-side colour is still worth having earlier, but the bar is no longer unobtainable | **0 calls, 10 min on ~2 Nov** | whoever has buy-side contacts | The only variable in the whole study with out-of-sample power (LOO +0.13 at 20 days) currently has no bar to beat |
 | 6 | **Merge WS04's 23 rows into Theo's `consensus_snapshots.csv`** and rebuild `12_abnb_multiples_monthly.csv` on consensus instead of the guide proxy | **3** | Krish / Theo | Removes WS12's caveat C2 (the panel's forward multiple is ~1.5 turns low), sharpens the print-day decomposition, and stops the guidance dataset reporting "missing" |
 | 7 | **Monthly Inside Airbnb capture on the fixed 13 cities**, same calendar day, storing listings / `reviews_ltm` / `reviews_l30d` / blocked share at 30-90-180d / entire-home share / calendar median price | **2 + 30 min/month** | Krish | The fixed panel currently has **n = 0** usable quarters. Twelve captures give the first real y/y. **Inside Airbnb's CDN keeps ~1 year: a month missed is a month lost.** Also turns the quote-discount series into a true y/y by March 2027 |
 | 8 | **Move Theo's D190 (Bloomberg exports: 6,365 rows of consensus estimates and revisions) off the external volume**, then D142 (67.5M Inside Airbnb reviews, 120 markets) and D170 (25 municipal STR registries, 109,343 rows) | **2 + Theo's time** | Theo | D190 closes the largest single gap in the 217-row census. D142 makes review velocity a global monthly demand proxy. D170 turns "enforcement" from an assumption into a measurement |
-| 9 | **Price the optionality bucket separately** (hotels / Experiences / Services / ads), sized from WS11's scenarios, rather than adding turns to the core multiple | **4** | Krish | The only intellectually honest route from $184 to a higher number |
+| 9 | **Price the optionality bucket separately** (hotels / Experiences / Services / ads), sized from WS11's scenarios, rather than adding turns to the core multiple | **4** | Krish | The only intellectually honest route from $181 to a higher number |
 | 10 | **Standardise the "nights acceleration" definition** across WS01/04/05 and restate it as a base rate with its n | **1** | Krish | Three notes give three different counts (17/21, 9, 5) of the same fact. It is on the card; it cannot be ambiguous |
 | 11 | **Renumber `research/sources/README.md`** — S30, S32, S33, S34, S35, S36 and S37 each appear twice with different meanings | **1** | anyone | Citations of the form "(S33)" are currently ambiguous. Do it before the deck cites sources |
 | 12 | **LatAm external benchmarks** (Embratur, DATATUR, a Brazilian domestic travel indicator) and **US NTTO monthly arrivals** | **4-6** | Krish | LatAm is 15% of nights and contributed 2.96pp of 2Q26's 10.3pp with **zero external validation**. The strongest LatAm correlation in 3,446 tests is with *French* Eurostat platform nights |
@@ -803,7 +816,7 @@ target; more free-source scraping of the kind Theo's edge-discovery runs already
 | **`14_master-synthesis.md`** | **this document** |
 
 **Model** — `model/ABNB_driver_model.xlsx` (9 sheets: Inputs / History / Revenue / Costs / Cash /
-Valuation / Street / Card_5Nov / Recon; 2,303 live formulas; scenario selector at `Inputs!$B$3`);
+Valuation / Street / Card_5Nov / Recon; 2,349 live formulas; scenario selector at `Inputs!$B$4`);
 `model/assumptions.md` (section "Overnight run 6-7 Sep 2026", 30 driver rows with sources).
 
 **Scripts** — `analysis/src/overnight/`, **39 files**, each rebuilding its own outputs with `py -3.13`:
@@ -926,12 +939,21 @@ notes, per the brief.**
 - **`06_price_per_unit_panel.csv` renames Inside Airbnb's `estimated_occupancy_l365d`** to
   `mean_est_nights_booked_l365d`: **that field is estimated nights booked in the last 365 days (0-365),
   not an occupancy percentage.** Anything in the repo treating it as a percentage is wrong. *(WS06)*
-- **Do not cite the AirROI "55.9% median checkout markup" figure.** Our parse of 1.71m of Airbnb's own
-  quote responses finds no separate fee lines at all after the 2025 total-price default. *(WS06)*
+- **Characterise the AirROI "55.9% median checkout markup" correctly rather than dismissing it**
+  (AirROI, 16 Apr 2026). It is a *modelled* 3-night total — `[(market ADR × 3) + median cleaning fee]
+  × 1.14 × (1 + lodging tax)` — measured against the nightly subtotal, not observed checkouts; about 31%
+  of the markup is lodging tax and 39% is the host-set cleaning fee, neither of which Airbnb keeps; and it
+  assumes the pre-migration 14% guest service fee, which no longer applied to about half of active
+  listings by 2Q26. It is not evidence about hidden fees, and it does not contradict our parse of 1.71m
+  quote responses. *(WS06, corrected by WS16)*
 - **`11_competition_supply_overlays.py` had three defects, now fixed and re-run**: a merge-key mismatch
   nulled the BKNG/EXPE columns; the AI-cost percentage was understated **1000x**; and Inside Airbnb
   retention included partial-scope dumps (25 of 103 pairs, averaging 0.489 against 0.726 for the clean
   78 — the un-excluded means implied a supply collapse that was a city-boundary artefact). *(WS11)*
+- **WS15's corrections 11 and 15 are withdrawn**: "approximately half of our active listings are now
+  subject to the single service fee" is verbatim in the 2Q26 call (Mertz, prepared remarks,
+  `data/raw/regulatory/transcripts/2026-Q2.txt`). WS06 and WS11 were right; the figure is absent from the
+  letter only. *(WS16)*
 - **`research/sources/README.md` reuses S-numbers** — S30, S32-S37 each appear twice. *(WS01)*
 - **`theos-past-research/research/transcripts/*.csv` are empty schemas** (`guidance_facts`,
   `reported_metrics`, `management_themes` were never populated). *(WS01)*
@@ -971,18 +993,107 @@ summary statistics), WS12's print-day decomposition, and WS05's full 1,408-pair 
 
 ---
 
+## 11. Post-run corrections (WS16, WS17, WS18)
+
+*Three workstreams ran after this note was first written on 7 Sep. Their edits are already folded into
+the sections above; this section says what changed and why, so a reader of the 6 Sep version can diff.*
+
+### 11.1 Consensus and the web gaps (WS16)
+
+- **A ninth guide-below-Street print exists.** The 2Q24 next-quarter consensus was **$3,840m (LSEG, via
+  Reuters, 6 Aug 2024)** against a $3,700m guide midpoint - a **-3.65% guide-vs-Street**, the largest in
+  the sample, attached to the second-worst day-1 move (-12.3%). **Every "8/8" in this note is now "9/9",
+  mean -8.90%, base-rate p 0.057** (was 0.078). The day-1 spec strengthens (n 19, R2 0.164, HC1 t +1.82,
+  p 0.069) but **stays LOO-negative (-0.149), so the no-day-1-alpha conclusion survives**. The
+  nights-drift result is untouched.
+- **Three 2021 EPS consensus cells were also recovered, and they are a trap.** Adding them manufactures a
+  spurious negative day-1 EPS coefficient (the 2021 GAAP "misses" are IPO stock comp) and kills three of
+  WS04's nine positive-LOO specs. Composition of the nine changes: **five at 20 days, four at five days,
+  none at day 1**. The clause "every positive sits at 20 days" (red-team correction 7) is no longer true;
+  "not one is at day 1" still is.
+- **An ADR consensus does exist.** Zacks publishes a "GBV per Night and Experience Booked (ADR)"
+  consensus, recovered for five prints (1Q25 $170.55, 3Q25 $166.67, 4Q25 $165.52, 1Q26 $178.54, 2Q26
+  $181.56). ABNB has beaten it **5 of 5** by +0.5% to +4.6%; correlation with day-1 on n=5 is **-0.46**.
+  WS04's "0 / 23, no publisher quotes one, ever" is withdrawn.
+- **Red-team corrections 11 and 15 are withdrawn.** *"Approximately half of our active listings are now
+  subject to the single service fee"* is verbatim in the **2Q26 call** (Ellie Mertz, prepared remarks,
+  6 Aug 2026, `data/raw/regulatory/transcripts/2026-Q2.txt`). It is absent from the letter only, which is
+  why a letter-only check missed it. WS06 and WS11 were right.
+- **The direct-booking pilot is verified and the -0.8pt is too big.** Airbnb's own product copy (host
+  community forum, 28 Aug 2026) and RSU by PriceLabs (31 Aug 2026) give the mechanics: host fee 15.5% ->
+  **6% or 10%** on a host-generated tracked link, invite-only, US, transaction stays on Airbnb. A -0.8pt
+  hit to a ~13.4% take rate needs **8.4% of all GBV** at the 6% tier or **14.5%** at the 10% tier. **Use
+  0-15bp of FY27 take rate**; reserve -0.8pt for a "pilot becomes policy" tail.
+- **AirROI's 55.9% is a model, not a measurement.** `[(market ADR x 3) + median cleaning fee] x 1.14 x
+  (1 + lodging tax)` against the nightly subtotal. It includes lodging tax and the host's cleaning fee,
+  and it assumes the pre-migration 14% guest fee. Characterise it; do not dismiss it, and do not treat it
+  as evidence about hidden fees.
+- **Press attribution.** Re-read against contemporaneous coverage, WS03's `driver_class` should read
+  **guide 6 / KPI 2 / macro 1 / investment spend 1**, not guide 4 / KPI 4 - which *strengthens* the run's
+  claim that ABNB trades on the forward statement. **2020Q4's "margin" attribution has no contemporaneous
+  support at all**: every same-day source attributes it to the revenue and gross-bookings beat. Do not
+  use 2020Q4 as evidence that long-term margin framing moves the stock. Separately, two sell-side
+  upgrades (Baird, Goldman) landed on the morning of the +14.0% 2024Q4 move; no workstream carries
+  same-day analyst actions.
+- **Calendar.** **Chesky speaks at Goldman Sachs Communacopia + Technology on 8 Sep 2026, 6:05pm ET**,
+  public webcast - the only scheduled management appearance before the print. The **9 Sep EU proposal
+  leaked on 4 Sep** (Reuters): it devolves capping powers to *member states* in housing-shortage areas
+  subject to non-discrimination, proportionality and public-interest tests. An enabling framework, not an
+  EU-level cap, and consistent with WS11's 0.18%-of-2027-revenue expected value.
+- **For the card:** Zacks publishes nights, ADR and GBV consensus **2-3 days before each print**, so the
+  Q3-26 nights bar arrives free on ~2-3 Nov. Expect a 1-2% vendor gap to StreetAccount.
+
+### 11.2 The workbook in real Excel (WS17)
+
+Excel 16.0 was driven over PowerShell COM, the workbook rebuilt with `CalculateFullRebuild()`:
+**0 error cells in 5,547**, no circular reference, calculation state `xlDone`, **all 216 named outputs
+and all 2,349 formula cells matching the Python mirror** (worst 4.2e-15), and all 216 `Recon` delta cells
+reading exactly 0 inside Excel. The arithmetic was right. Sixteen findings on the mechanics around it -
+**eleven fixed with no number moving**, of which the two that mattered: **the scenario selector was inert**
+(126 `CHOOSE` cells on Inputs were its only consumers; Valuation and Card_5Nov now carry an Active column
+driven by `Inputs!B4`, and switching it moves 135/136 cells), and **the reverse-DCF answer was a pasted
+offline solve** (now marked as an input with a live staleness check reading 0.00). Numeric literals inside
+formulas fell from 121 cells to 3. Left open for a human: the DCF's valuation date (the strip is a value
+as of end-FY2027 against a 4 Sep 2026 spot), an Inputs row for the three 5 Sep memo multiples, FY2025
+interest expense, and whether the regulatory drag should be quarterly.
+
+### 11.3 The share-count fix (WS18)
+
+WS17's one open high-severity finding: **the FY2026 share roll double-counted the 1H26 buyback.** Both
+roll-forwards start from the 30 Jun 2026 actuals (597.0M diluted shares, $9,593M net cash), but the share
+line applied the **full-year** buyback and SBC to that count while the net-cash line correctly netted the
+1H26 actuals out of every flow. Fixed in `13_driver_model.py` and `13_excel_builder.py` together: FY2026
+now consumes only the 2H26 buyback (FY26 less the $2,139M actual) and only 2H26 SBC (FY26 less the $897M
+actual), which is exactly the convention the net-cash line uses; FY2027 and FY2028 take the full year.
+
+**FY2026E diluted shares 580.3M -> 588.9M (+8.55M, +1.47%)**, carried into FY2027E (566.0 -> 574.6) and
+FY2028E (553.0 -> 561.5). Every per-share number falls ~1.45-1.55% and every one of the six football-field
+lenses with it: **base football-field mean $162.65 -> $160.22**, base EV/EBITDA lens $184 -> $181, bear
+mean $77 -> $76, bull mean $236 -> $233. Nothing above the share line moved - revenue, margins, EBITDA,
+FCF and net cash are identical. The regenerated workbook re-passes everything: 0 Excel errors in 5,547
+cells, 216/216 outputs matching, 2,349/2,349 formula cells matching, scenario switch working (143
+comparisons, 0 mismatches). Before/after for every affected output:
+`data/processed/overnight/18_share_fix_delta.csv`; the full correction ledger:
+`18_corrections_applied.csv`; the note: `research/notes/overnight/18_corrections-applied.md`.
+
+---
+
 ## For the thesis file
 
 `research/thesis.md` is still the empty template. On tonight's evidence it should be filled as:
 
 - **Recommendation:** the operating case does not support a long at $181.94 on the evidence-based exit
-  multiple. Base $184 / football-field mean $163; 25/50/25 weighted $179 on EV/EBITDA, $160 across all
+  multiple. Base $181 / football-field mean $160; 25/50/25 weighted $176 on EV/EBITDA, $157 across all
   lenses. **Either the pitch argues FY27 revenue above ~$16.0bn, or SBC below ~10% of revenue, or a
   separately priced optionality bucket — or it is not a long.**
 - **Variant perception:** FY27's reported revenue growth is a dollar lap that is already knowable, and
   half of ADR growth is unit size rather than price.
-- **Catalysts:** 5 Nov Q3 print and Q4 guide (the FX bridge is the whole read); 9 Sep EU Affordable
-  Housing Act proposal (headline risk, 0.18% of 2027 revenue in expectation); 8-9 Dec FOMC dots (they set
+- **Catalysts:** **8 Sep: Chesky at Goldman Sachs Communacopia + Technology, 6:05pm ET, public webcast**
+  (Airbnb IR, 25 Aug 2026) — the only scheduled management appearance before the print; 5 Nov Q3 print and
+  Q4 guide (the FX bridge is the whole read); 9 Sep EU Affordable Housing Act proposal (headline risk,
+  0.18% of 2027 revenue in expectation) — **it already leaked on 4 Sep (Reuters): it devolves capping
+  powers to *member states* in housing-shortage areas subject to non-discrimination, proportionality and
+  public-interest tests, an enabling framework rather than an EU-level cap**; 8-9 Dec FOMC dots (they set
   the dollar path under our FY27 revenue FX); Feb 2027 FY27 guide.
 - **Biggest risk to the thesis, whichever way it points:** the multiple. It is 86% of everything that
   moved tonight.
