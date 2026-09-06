@@ -25,9 +25,12 @@
 import os
 import pandas as pd
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+# WS24 / audit finding A07 (6 Sep 2026): no absolute fallback; fail loudly rather than
+# silently reaching for another machine's tree.
+ROOT = os.environ.get("ABNB_ROOT") or os.path.abspath(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 if not os.path.isdir(os.path.join(ROOT, "data")):
-    ROOT = r"C:\Users\krish\citadel-abnb-overnight"
+    raise SystemExit(f"project root has no data/ directory: {ROOT} (set ABNB_ROOT)")
 DP = os.path.join(ROOT, "data", "processed")
 OUT = os.path.join(DP, "overnight")
 os.makedirs(OUT, exist_ok=True)

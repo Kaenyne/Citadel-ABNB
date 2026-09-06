@@ -1,0 +1,160 @@
+{
+  "spec_id": "ABNB-WS20-v1",
+  "frozen_at": "2026-09-06",
+  "frozen_before": {
+    "event": "ABNB Q3 2026 print",
+    "date": "2026-11-05",
+    "note": "no feature, transformation, weight or window below may be changed after this date without incrementing spec_id and re-freezing; a changed spec makes the 5 Nov observation exploratory, not prospective"
+  },
+  "written_by": "analysis/src/overnight/20_experiment_spec.py",
+  "audit_finding": "A03 (window sensitivity, multiple testing, data vintage)",
+  "primary_targets": [
+    {
+      "name": "nights_surprise_pct",
+      "definition": "100*(actual nights - Street consensus nights)/consensus",
+      "horizon": "the next ABNB print",
+      "source": "data/processed/overnight/16_reaction_panel.csv",
+      "n_available": 19,
+      "allowed_baselines": [
+        "zero",
+        "last_quarter",
+        "prior_year",
+        "ar1",
+        "expanding_mean",
+        "trailing4_mean",
+        "trailing8_mean"
+      ],
+      "baselines_not_applicable": [
+        "guide",
+        "guide_plus_cushion"
+      ],
+      "why_not": "ABNB gives no numeric nights guide; nights guidance is qualitative"
+    },
+    {
+      "name": "revenue_surprise_pct",
+      "definition": "100*(actual revenue - Street consensus revenue)/consensus",
+      "horizon": "the next ABNB print",
+      "source": "data/processed/overnight/16_reaction_panel.csv",
+      "n_available": 23,
+      "allowed_baselines": [
+        "zero",
+        "last_quarter",
+        "prior_year",
+        "ar1",
+        "expanding_mean",
+        "trailing4_mean",
+        "trailing8_mean",
+        "guide",
+        "guide_plus_cushion"
+      ]
+    },
+    {
+      "name": "open_5d_pct",
+      "definition": "ABNB minus QQQ, OPEN of the reaction session to the close of the 5th session (reaction session = 1)",
+      "horizon": "5 trading sessions after the release",
+      "source": "data/processed/overnight/20_executable_returns.csv",
+      "allowed_baselines": [
+        "zero",
+        "last_quarter",
+        "expanding_mean",
+        "trailing4_mean"
+      ]
+    },
+    {
+      "name": "open_20d_pct",
+      "definition": "same, to the close of the 20th session",
+      "horizon": "20 trading sessions after the release",
+      "source": "data/processed/overnight/20_executable_returns.csv",
+      "allowed_baselines": [
+        "zero",
+        "last_quarter",
+        "expanding_mean",
+        "trailing4_mean"
+      ]
+    }
+  ],
+  "baseline_note": "trailing4_mean and trailing8_mean are mandatory. The full expanding mean of a surprise series beginning in 2021 is dominated by the COVID-rebound surprises (+16.1%, +24.2%), so any model that is effectively an intercept shift beats it trivially. pred_sd_over_actual_sd in 20_task_summary.csv flags such models.",
+  "primary_candidate_features": [
+    {
+      "name": "f_prior_surprise",
+      "transform": "lag 1 of the same surprise",
+      "family": "autoregressive",
+      "available_at_cutoff": "the prior print"
+    },
+    {
+      "name": "f_surprise_trail4",
+      "transform": "mean of the same surprise over t-4..t-1",
+      "family": "autoregressive",
+      "available_at_cutoff": "the prior print"
+    },
+    {
+      "name": "f_guide_vs_street_lag1",
+      "transform": "guide midpoint vs Street for quarter t, as published at print t-1",
+      "family": "guidance",
+      "available_at_cutoff": "the prior print"
+    },
+    {
+      "name": "f_guide_cushion_trail4",
+      "transform": "mean revenue actual-vs-guide-midpoint over t-4..t-1",
+      "family": "guidance",
+      "available_at_cutoff": "the prior print"
+    },
+    {
+      "name": "pr_hotel_revpar_yoy_pit",
+      "transform": "mean RevPAR y/y of MAR and HLT, restricted to the peers whose report date precedes the ABNB print",
+      "family": "peer",
+      "available_at_cutoff": "1-15 days before the print, when a peer reported first"
+    },
+    {
+      "name": "bl_funds_yoy_lag1",
+      "transform": "y/y of funds held for clients at end of t-1",
+      "family": "backlog",
+      "available_at_cutoff": "10-Q filed at the prior print"
+    },
+    {
+      "name": "eu_platform_yoy_lag1",
+      "transform": "y/y of Eurostat EU27 platform nights for t-1",
+      "family": "alt-data",
+      "available_at_cutoff": "~3 months after quarter t-1 ends"
+    },
+    {
+      "name": "ia_reviews_ltm_matched_yoy",
+      "transform": "y/y of matched-listing LTM reviews across the fixed Inside Airbnb city set",
+      "family": "alt-data",
+      "available_at_cutoff": "dump date, 1-8 weeks before the print"
+    }
+  ],
+  "post_release_features": [
+    "nights_surprise_pct",
+    "revenue_surprise_pct",
+    "guide_vs_street_pct"
+  ],
+  "weights": "equal; single-feature OLS with an intercept. No feature weighting, no feature selection inside the evaluation loop, no shrinkage, no interaction terms.",
+  "min_training_size": 8,
+  "fitting_scheme": "expanding window, chronological; the fit for event t uses only events strictly earlier than t",
+  "missing_data_policy": "listwise. An event with a missing feature or a missing label is skipped, never imputed and never forward-filled. Every table reports n after filters. A quarter with no Inside Airbnb dump or no Common Crawl crawl stays missing.",
+  "evaluation_windows": {
+    "2023Q1+": "evaluated events from 2023Q1",
+    "2024Q1+": "evaluated events from 2024Q1",
+    "rule": "both windows are reported for every headline. Never pair n from one window with a ratio from another."
+  },
+  "entry_convention_for_return_targets": "OPEN of the first session after the release. The pre-release close is not transactable with knowledge of the released numbers and is reported only as 'legacy'.",
+  "decision_rule": "a feature is reported as adding value only if its walk-forward RMSE is below EVERY allowed baseline for that target, on identical events, in BOTH windows.",
+  "multiple_testing": {
+    "primary_tests_planned": "8 features x 2 surprise targets + 3 features x 2 return targets = 22 primary model/target pairs, each reported in 3 windows",
+    "note": "no p-value in this specification is corrected for multiplicity; a single surviving pair out of 22 is what one expects by chance at a 5% threshold. The out-of-sample RMSE ratio, not a p-value, is the decision rule."
+  },
+  "exploratory_ledger": {
+    "pointer": [
+      "data/processed/overnight/08_feature_tests_all.csv",
+      "data/processed/overnight/08_index_backtests.csv",
+      "data/processed/overnight/04_reaction_tests.csv",
+      "data/processed/overnight/16_reaction_tests.csv",
+      "data/processed/overnight/09_test_ledger.csv"
+    ],
+    "status": "EXPLORATORY. 598 alt-data test rows and 97 reaction specifications. Results there may be quoted as hypothesis generation only, never as validated forecasts."
+  },
+  "prospective_record": "data/processed/overnight/20_frozen_q3_2026.csv",
+  "prediction_ledger": "data/processed/overnight/20_prediction_ledger.csv",
+  "leakage_check": "data/processed/overnight/20_perturbation_check.csv"
+}

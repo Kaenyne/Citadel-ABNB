@@ -1,5 +1,28 @@
 # 15. Red-team verification of overnight workstreams 01-12
 
+> **Amended 6 Sep 2026 by workstream 19 (audit triage).** Two changes, both recorded in
+> `data/processed/overnight/19_repairs_applied.csv`: (a) the CONF-11 single-service-fee ruling is
+> **withdrawn** - "approximately half of our active listings are now subject to the single service
+> fee" is in the 2Q26 call, `data/raw/regulatory/transcripts/2026-Q2.txt` line 272, so WS06 and WS11
+> were right and this pass was wrong (WS16 caught it first); the verdict tally below is now
+> **84 confirmed, 9 wrong, 1 unsupported, 4 unverifiable**. (b) The "For the model" table below
+> skipped CONF-15; the row has been added. Nothing else in this note has been changed.
+
+> **Amended again 7 Sep 2026 by workstream 26 (audit integration).** Two claim rows re-scored as
+> **wrong** after workstreams 21 and 23 repaired the underlying work, so the verdict tally is now
+> **82 confirmed, 11 wrong, 1 unsupported, 4 unverifiable** (98 claims, unchanged). (a) WS09's
+> *"no implied event premium 60 days out (0.002 pts)"* is **withdrawn** under audit A08: the ledger
+> comparison it cited used two POST-event expiries and the old estimator recovered
+> `E x (1 - T_near/T_far)`, not `E`, so it could not detect an event premium at all; on the rebuilt
+> estimator the specifications span non-positive to 6.73% and the answer is "not identified"
+> (`research/notes/overnight/23_options-estimator-fix.md`). The 7.07% / 6.87% historical base rate in
+> the same row still stands. (b) WS11's *"year-ago retention fell 75.4% to 71.1% across seven
+> cities"* is **restated** under audit A04: the seven-city set is dominated by Austin's permanent
+> listing-count step, and ex-Austin the six-city move is **75.5% to 73.4%** with the new-listing
+> share exactly flat (`21_inside-airbnb-pair-eligibility.md`). WS11's regulatory claim was refreshed
+> to WS22's post-fix numbers and stays **confirmed**. Regenerate with
+> `py -3.13 analysis/src/overnight/15_claim_checks.py`; the integrity guard still passes.
+
 What this is: an independent re-derivation of the most consequential numbers in notes 01-12 against
 the primary sources — the shareholder letters in `data/raw/letters/`, the IR call transcripts, FRED,
 SEC-filed peer releases, and the CSVs each note cites — plus a re-run of every script in
@@ -13,7 +36,7 @@ Deliverables: `data/processed/overnight/15_claim_checks.csv` (98 rows),
 
 ## Bottom line
 
-**98 claims checked: 83 confirmed, 9 wrong, 2 unsupported, 4 unverifiable.** The run is in good shape.
+**98 claims checked: 82 confirmed, 11 wrong, 1 unsupported, 4 unverifiable** (83/9/2/4 as first written, 84/9/1/4 after the WS19 amendment; see the two amendments above). The run is in good shape.
 The statistics are, with one exception, better disciplined than the team's standards require — note 03
 runs a 948-test Benjamini-Hochberg grid and reports that nothing passes; note 12 reports the
 Durbin-Watson failure in its own headline regression; note 09 reports that its own best rule has
@@ -127,9 +150,13 @@ written.** "10.9% (Mar 2026) to 31.4% (Aug 2026)" are cross-city medians, not th
 quotes" the sentence claims — the quote-weighted shares are 17.3% → 31.4%. More seriously, the jump is
 confounded: the share of quotes carrying a taxes line runs 0.20% (May) → 0.58% (Jun) → 5.65% (Jul) →
 6.54% (Aug), and NYC swings 41.5 → 25.3 → 43.5 across the same dumps. That is a scrape/schema change,
-not a behavioural one. (2) The "about half of active listings on the single fee by 2Q26" figure is in
-neither the 2Q26 letter nor the 2Q26 call; the disclosed facts are "over a quarter" at 1Q26 and
-"begun migrating the remainder … entire supply base by year-end" at 2Q26 (CONF-11).
+not a behavioural one. (2) ~~The "about half of active listings on the single fee by 2Q26" figure is in
+neither the 2Q26 letter nor the 2Q26 call~~ **- withdrawn 6 Sep 2026.** It *is* in the 2Q26 call,
+prepared remarks: "Approximately half of our active listings are now subject to the single service
+fee" (`data/raw/regulatory/transcripts/2026-Q2.txt` line 272). It is absent from the shareholder
+letter, which is a different claim. Cite the transcript. The rest of the migration language
+("over a quarter" at 1Q26, "entire supply base by year-end" at 2Q26) is unchanged and also
+disclosed (CONF-11, now marked withdrawn).
 
 ### 07 — Ops and margin levers
 Every cost-per-night figure reproduces exactly from `07_cost_lines_per_night.csv`: revenue/night
@@ -304,6 +331,7 @@ are the values the driver model should use where two workstreams disagree; the r
 | FY27 nights haircut for the RNPL lap | **smaller than 3pts, or labelled as the full three-feature lap** | -3pts for RNPL alone | CONF-12 |
 | Exit multiple on FY27E EBITDA | **13.5 / 16.5 / 18.5x** | 18 / 22 / 25.5x | CONF-13 |
 | Regulatory drag | **EMEA/NA nights drags inside the regional build only** | nights drag AND global revenue drag | CONF-14 |
+| SBC as a share of revenue, FY25 | **state the basis**: 12.92% on the driver panel (P&L expense, 1,581/12,241); 13.1% in WS07's peer file (cash-flow add-back) | one number without a basis | CONF-15 |
 | Nights-acceleration reaction rule | **base rate with its n** | a per-point coefficient | CONF-16 |
 
 Net effect on the football field: applying CONF-13 alone moves the 25/50/25 weighted value from $249

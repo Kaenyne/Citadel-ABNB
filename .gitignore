@@ -45,3 +45,7 @@ data/raw/*
 data/external/
 # Unpacked third-party forecasting skill, local reference only
 docs/forecast-skill/
+
+# Download caches for the overnight scripts (repo-relative replacement for the session
+# scratchpad; see docs/overnight/BUILD.md). Regenerated on demand, never committed.
+data/cache/

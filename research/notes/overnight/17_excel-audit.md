@@ -2,6 +2,24 @@
 
 *Overnight run, 6-7 Sep 2026. Subject: `model/ABNB_driver_model.xlsx`, built by workstream 13.*
 
+> **Status marker added by WS24, 6 Sep 2026.** This note is a dated audit record and is left as
+> written. One of its findings has since been repaired: the FY2026 share-count double-count that
+> the bottom line below calls "the one that matters and is *not* fixed" was fixed by **WS18** the
+> same day (see the marker on finding 3, `18_corrections-applied.md`, and audit finding R01 —
+> which warns against re-applying the correction). Everything else in this note still stands.
+
+> **HISTORICAL STATE. Banner added 7 Sep 2026 by workstream 25 (audit section 17 cleanup).**
+> This note records the workbook **as it stood on 7 Sep 2026 before WS18 applied the share-count fix**,
+> and it is kept unedited so the audit trail survives. Every workbook-wide count and every per-share
+> price below is therefore pre-fix: the file had **5,544 cells and 2,348 formula cells** (now **5,547**
+> and **2,349** - WS18 added one History anchor), and the share, per-share and football-field numbers
+> quoted in the bottom line and in sections 2-4 are the pre-fix ones. **Do not quote a price or a share
+> count from this note.** Current values: `research/notes/overnight/18_corrections-applied.md`,
+> `data/processed/overnight/18_share_fix_delta.csv` and `13_valuation_summary.csv`. Finding 3 below is
+> the one WS18 fixed; the eleven mechanical fixes and the audit method are unaffected and still current.
+> The valuation-date question this note left open for a human was decided on 7 Sep by WS25: the outputs
+> are **12-month forward targets**, see `model/assumptions.md`, "Model conventions, decided 7 Sep 2026".
+
 ## Bottom line
 
 The workbook recalculates cleanly in real Excel and its arithmetic is right. Excel 16.0 opened a
@@ -87,7 +105,22 @@ same solve at a 10.0% cost of equity, and both appear in `13_valuation_summary.c
 marking the two cells as inputs and adding a live check row `B65/C65` that prices the same stream at
 the solved growth and subtracts spot. It reads **0.00** in Excel today.
 
-**3. The FY2026 share count double-counts 1H26 (OPEN).** `Cash` row 23 (and its two copies) rolls
+>
+> **SUPERSEDED BY WS18 (marker added by WS24, 6 Sep 2026).** Finding 3 below was repaired
+> after this note was written: `18_share_fix_delta.py` corrected the FY2026 roll-forward in
+> both `13_excel_builder.py` and `13_driver_model.py`, and the workbook was rebuilt. The
+> independent audit records this as R01, "resolved in OVERNIGHT", and warns explicitly
+> against re-applying the correction (that would double-count it the other way). Read the
+> paragraph below as the historical diagnosis, not as an open item; the current numbers are
+> in `research/notes/overnight/18_corrections-applied.md` and
+> `data/processed/overnight/18_share_fix_delta.csv`. The note's own "(OPEN)" labels, its
+> bottom line and its counts of fixed-vs-open findings are left as written, on purpose: this
+> is a dated audit record and rewriting it would destroy the history.
+> What WS18 did **not** do is turn the 597M anchor (2Q26 diluted *weighted-average* shares)
+> into a point-in-time fully diluted capitalisation, or replace the price-times-SBC issuance
+> proxy with an award schedule. Those remain open as audit finding A12.
+>
+**3. The FY2026 share count double-counts 1H26 (OPEN AS WRITTEN; SEE THE MARKER ABOVE).** `Cash` row 23 (and its two copies) rolls
 the share count forward as
 `= 2Q26 shares - FY26 buybacks / price + FY26 SBC / price x (1 - withholding)`,
 while the net-cash row three lines below correctly nets the 1H26 actuals out of every flow. The

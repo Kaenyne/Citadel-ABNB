@@ -40,8 +40,10 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "analysis" / "src"))
 from transcript_analytics import parse_ir, norm_firm, norm_name, DECLINE_HINT  # noqa: E402
 
-SCRATCH = Path(os.environ.get("ABNB_SCRATCH", r"C:\Users\krish\AppData\Local\Temp\claude\C--Users-krish-citadel-abnb"
-                              r"\fe93ae72-a37b-4547-991f-690c32a0f6a0\scratchpad")) / "03"
+# WS24 / audit finding A07 (6 Sep 2026): the download cache used to default to one user's
+# session scratchpad. It now defaults inside the project (git-ignored) and is still
+# overridable with ABNB_SCRATCH; the scripts re-download whatever is not cached.
+SCRATCH = Path(os.environ.get("ABNB_SCRATCH", str(ROOT / "data" / "cache"))) / "03"
 OUT = ROOT / "data" / "processed" / "overnight"
 OUT.mkdir(parents=True, exist_ok=True)
 

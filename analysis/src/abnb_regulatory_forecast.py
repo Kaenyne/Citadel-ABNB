@@ -4,6 +4,13 @@ Inputs: the regulatory research package (research/regulatory/, 32 factors, catal
 sensitivities), exposure anchors from the Inside Airbnb supply panel (city share of GBV from est_revenue_l365d),
 Eurostat platform-nights country shares, and a same-day web recency pass (see the note and research log).
 
+CORRECTED 2026-09-06 (WS22, audit finding A06 in docs/2026-09-06_audit_findings_ai_handoff.md). The event
+draws are now a single common path per Monte Carlo trial: one correlated uniform and one loss-size draw per
+event, thresholded at the 2027 and the 2030 probability, so "in force by end-2027" implies "in force by
+end-2030" (no reversal state is named anywhere in the event table). EU-TAIL is nested inside EU-AHA instead of
+merely correlated with it, and the two Barcelona branches are one ordinal ladder on a single uniform. See
+research/notes/overnight/22_regulatory-probability-fix.md and analysis/src/overnight/22_regulatory_checks.py.
+
 Each event carries: horizon probabilities (outcome by end-2027 and by end-2030), a conditional net revenue loss
 distribution (triangular: low / mode / high, as % of global revenue run-rate, net of recapture on Airbnb), and a
 correlation group. Losses are incremental to today's run-rate: NYC's 2023 loss and Spain's 2025 removals are
@@ -31,8 +38,18 @@ N = 200_000
 REV_BASE, CONTRIB, EV_EBITDA, SHARES = 15959.0, 0.70, 22.0, 567.0
 
 # ------------------------------------------------------------------------------------------------ the event table
-# p27 / p30: probability the loss-bearing outcome is in force by end-2027 / end-2030 (monotone).
-# loss: (low, mode, high) net incremental annual revenue loss, % of global revenue, once in force.
+# p27 / p30: probability the loss-bearing outcome is in force by end-2027 / end-2030. Required monotone
+#   (p30 >= p27) and interpreted CUMULATIVELY: the same uniform is thresholded at both, so a trial in which the
+#   event is in force by 2027 also has it in force by 2030. Marginal (unconditional) unless p_kind says otherwise.
+# parent: the event's occurrence set is nested inside the parent's (child implies parent). The child's p is still
+#   the MARGINAL probability; the implied conditional is p_child / p_parent (reported in the checks table).
+#   Implemented as a severity ladder on the parent's own uniform: the child fires on the most extreme parent
+#   draws, i.e. the same legislative process going further, so the child is comonotone with the parent.
+# excl: the event is the next rung DOWN from a mutually exclusive stronger branch, drawn on that branch's uniform.
+#   Its p is then CONDITIONAL on the stronger branch not occurring (p_kind="conditional"); effective
+#   unconditional probability = p * (1 - p_stronger). Guarantees zero overlap and the stated product exactly.
+# loss: (low, mode, high) net incremental annual revenue loss, % of global revenue, once in force. Drawn ONCE per
+#   trial and reused at both horizons (a path, not two independent scenarios).
 # scale30: multiplier on the loss draw at the 2030 horizon (phase-outs ramp; 1.0 = same).
 # group: correlation group. cash: one-off cash item ($M) drawn with the same event, not in run-rate loss.
 EVENTS = [
@@ -42,8 +59,8 @@ EVENTS = [
          base_rate="EU ordinary legislative procedure median about 18 months from proposal to adoption; STR data regulation took 17 months (Nov 2022 to Apr 2024); housing is a shared competence so the act is framed as enabling, not a ban",
          anchor="Skift 4 Sep 2026: 'not designed as a complete ban'; excludes primary residences (The Local, 5 Sep 2026)"),
     dict(id="EU-TAIL", factor="REG-25", event="Tail: the act is adopted with binding quantitative caps and enforced quickly across France, Spain, Italy, Portugal and the Netherlands (adds to EU-AHA)",
-         p27=0.02, p30=0.08, loss=(2.0, 3.5, 6.0), scale30=1.0, group="EU", cash=0,
-         gates="conditional on EU-AHA branch; requires Council appetite for caps against member-state competence objections",
+         p27=0.02, p30=0.08, loss=(2.0, 3.5, 6.0), scale30=1.0, group="EU", cash=0, parent="EU-AHA", p_kind="marginal",
+         gates="logically conditional on the EU-AHA branch and now implemented as such (nested inside EU-AHA). The 2%/8% are read as MARGINAL, per the p27/p30 column definition and the 2026-09-05 note's prose; the implied conditional escalation rate is 0.02/0.12 = 16.7% by 2027 and 0.08/0.45 = 17.8% by 2030. Requires Council appetite for caps against member-state competence objections",
          base_rate="no EU precedent for a binding sector cap on private lettings; fat-tailed by construction", anchor="none"),
     dict(id="ES-FINE", factor="REG-02", event="Spain's EUR64m consumer fine is upheld on the merits and paid (one-off cash; excluded from run-rate loss)",
          p27=0.55, p30=0.70, loss=(0.0, 0.0, 0.0), scale30=1.0, group="EU", cash=76,
@@ -61,7 +78,9 @@ EVENTS = [
          gates="Constitutional Court upheld the Catalan decree (Mar 2025); 2027 Barcelona municipal election (May 2027) could change the council; Catalan decree allows 5-year renewals at municipal discretion",
          base_rate="announced phase-outs of legal STR stock at city scale: NYC enforced as planned; Amsterdam/Paris tightened as planned; Portugal national reversed. Roughly half of announced European STR phase-outs survive in substantially original form 4+ years later", anchor="phase-2 matched cohort: 5,146 licence ids, $23.9m net loss = 0.20% of FY25 revenue"),
     dict(id="BCN-PARTIAL", factor="REG-22", event="Barcelona phase-out proceeds only partially (30% to 70% of licences) or with a grandfathering period past 2029",
-         p27=0.0, p30=0.55, loss=(0.05, 0.10, 0.18), scale30=1.0, group="EU", cash=0, gates="drawn only where BCN-2028 did not occur: 0.55 x (1 - 0.45) = 0.30 effective; the remaining 25% is blocked or delayed past 2030", base_rate="as above", anchor="as above"),
+         p27=0.0, p30=0.55, loss=(0.05, 0.10, 0.18), scale30=1.0, group="EU", cash=0, excl="BCN-2028", p_kind="conditional",
+         gates="one ordinal ladder with BCN-2028 on a single Barcelona uniform: full phase-out 45%, else partial with conditional probability 0.55, so the effective unconditional probability is exactly 0.55 x (1 - 0.45) = 30.25% and the remaining 24.75% is blocked or delayed past 2030. (Before the 2026-09-06 fix the partial branch used its own correlated uniform gated on the full branch, which delivered 23.05%, not the stated 30.25%.)",
+         base_rate="as above", anchor="as above"),
     dict(id="MAUI", factor="REG-23", event="Maui Bill 9 phase-out proceeds on schedule (West Maui Jan 2029) with fewer than half of the Minatoya units exempted by hotel rezoning",
          p27=0.0, p30=0.40, loss=(0.04, 0.07, 0.12), scale30=1.0, group="US", cash=0,
          gates="lawsuits filed Dec 2025 (Kaanapali Royal owners), no injunction as of mid-2026; Planning Commission recommended against hotel rezoning (Feb 2026) so rezoning needs a 2/3 council supermajority; 2031 phase for the rest of the county falls outside the 2030 horizon",
@@ -106,25 +125,53 @@ GROUP_RHO = {"EU": 0.45, "US": 0.25}
 
 
 def draw(N):
+    """One common path per trial: a single correlated uniform and a single loss-size draw per event, thresholded
+    at p27 and at p30. Returns (event frame, {horizon: {loss, cash, per_event}})."""
     ev = pd.DataFrame(EVENTS)
-    z_eu, z_us = RNG.standard_normal(N), RNG.standard_normal(N)
+    for c in ("parent", "excl", "p_kind"):
+        if c not in ev.columns:
+            ev[c] = None
+    cols = ["parent", "excl", "p_kind"]
+    ev[cols] = ev[cols].astype(object).where(ev[cols].notna(), None)
+    pmap = {r.id: (r.p27, r.p30) for r in ev.itertuples()}
+    # --- structural validation of the assumption table (fail loudly rather than silently mis-sampling)
+    for r in ev.itertuples():
+        assert r.p30 >= r.p27 - 1e-12, f"{r.id}: p30 < p27 and no reversal state is defined"
+        assert not (r.parent and r.excl), f"{r.id}: parent and excl are mutually exclusive constructions"
+        if r.parent:
+            for i in (0, 1):
+                assert pmap[r.id][i] <= pmap[r.parent][i] + 1e-12, f"{r.id}: marginal p exceeds parent {r.parent}"
+        if r.excl:
+            for i in (0, 1):
+                assert 0.0 <= pmap[r.id][i] <= 1.0, f"{r.id}: conditional p out of [0,1]"
+
+    z = {g: RNG.standard_normal(N) for g in GROUP_RHO}       # latent group factors, shared across horizons
+    U, SIZE = {}, {}
+    for r in ev.itertuples():
+        rho = GROUP_RHO[r.group]
+        U[r.id] = _norm_cdf(np.sqrt(rho) * z[r.group] + np.sqrt(1 - rho) * RNG.standard_normal(N))
+        lo, mo, hi = r.loss
+        SIZE[r.id] = RNG.triangular(lo, mo, hi, N) if hi > lo else np.zeros(N)
+
     out = {}
     for h, pcol in (("2027", "p27"), ("2030", "p30")):
+        i_h = 0 if h == "2027" else 1
         loss_total = np.zeros(N); cash_total = np.zeros(N); per_event = {}
-        for _, e in ev.iterrows():
-            rho = GROUP_RHO[e.group]; zc = z_eu if e.group == "EU" else z_us
-            u = _norm_cdf(np.sqrt(rho) * zc + np.sqrt(1 - rho) * RNG.standard_normal(N))  # correlated uniform
-            occurs = u < e[pcol]
-            lo, mo, hi = e.loss
-            size = (RNG.triangular(lo, mo, hi, N) if hi > lo else np.zeros(N)) * (e.scale30 if h == "2030" else 1.0)
-            # mutually exclusive Barcelona branches: partial only where full did not occur
-            if e.id == "BCN-PARTIAL":
-                occurs = occurs & ~per_event["BCN-2028"][0]
+        for r in ev.itertuples():
+            p = getattr(r, pcol)
+            if r.parent:                 # child fires on the parent's most extreme draws, so child implies parent
+                occurs = U[r.parent] < p
+            elif r.excl:                 # next rung down the ladder: [p_stronger, p_stronger + p*(1 - p_stronger))
+                pe = pmap[r.excl][i_h]
+                occurs = (U[r.excl] >= pe) & (U[r.excl] < pe + p * (1 - pe))
+            else:
+                occurs = U[r.id] < p
+            size = SIZE[r.id] * (r.scale30 if h == "2030" else 1.0)
             contrib = np.where(occurs, size, 0.0)
-            per_event[e.id] = (occurs, contrib)
+            per_event[r.id] = (occurs, contrib)
             loss_total += contrib
-            if e.cash:
-                cash_total += np.where(occurs, e.cash, 0.0)
+            if r.cash:
+                cash_total += np.where(occurs, r.cash, 0.0)
         out[h] = dict(loss=loss_total, cash=cash_total, per_event=per_event)
     return ev, out
 
@@ -183,6 +230,7 @@ def main():
     prof, contribs = summarise(ev, out)
     ev2 = ev.copy()
     ev2["loss_low"], ev2["loss_mode"], ev2["loss_high"] = zip(*ev2.loss); ev2 = ev2.drop(columns=["loss"])
+    ev2["p_kind"] = ev2.p_kind.where(ev2.p_kind.notna(), "marginal")
     for h in ("2027", "2030"):
         m = contribs[contribs.horizon == h].set_index("id")
         ev2[f"expected_loss_pct_{h}"] = ev2.id.map(m.expected_loss_pct); ev2[f"p_in_force_{h}"] = ev2.id.map(m.p_in_force)

@@ -1,17 +1,35 @@
 # -*- coding: utf-8 -*-
 """Writes data/processed/overnight/15_script_runs.csv.
-Reads: the scratchpad runs.tsv produced by re-running every analysis/src/overnight/*.py once
-with `py -3.13` and a 420s timeout, the per-script .err logs, and a byte-size comparison of
-data/processed/overnight against a snapshot taken before the re-run."""
-import csv, os, glob
+Reads: `runs.tsv` produced by re-running every analysis/src/overnight/*.py once with `py -3.13`
+and a 420s timeout, the per-script `.err` logs under `logs/`, and a byte-size comparison of
+data/processed/overnight against the `backup/` snapshot taken before the re-run.
 
-SC = r"C:\Users\krish\AppData\Local\Temp\claude\C--Users-krish-citadel-abnb\fe93ae72-a37b-4547-991f-690c32a0f6a0\scratchpad\15"
-OUT = r"C:\Users\krish\citadel-abnb-overnight\data\processed\overnight"
-SRC = r"C:\Users\krish\citadel-abnb-overnight\analysis\src\overnight"
+PATHS (WS24 / audit A07, applied in WS26). Every path is resolved from the repository root, which
+is derived from this file's own location. The run directory holding runs.tsv / logs / backup is
+`<root>/data/cache/15`; override the cache parent with ABNB_SCRATCH or the run directory itself
+with ABNB_RUNS_DIR. No user profile or sibling worktree is referenced.
+
+RUN   py -3.13 analysis/src/overnight/15_script_runs.py
+"""
+import csv, os, glob, sys
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
+SC = os.environ.get("ABNB_RUNS_DIR") or os.path.join(
+    os.environ.get("ABNB_SCRATCH") or os.path.join(ROOT, "data", "cache"), "15")
+OUT = os.path.join(ROOT, "data", "processed", "overnight")
+SRC = os.path.join(ROOT, "analysis", "src", "overnight")
 BAK = os.path.join(SC, "backup")
 
 runs = []
-with open(os.path.join(SC, "runs.tsv"), encoding="utf-8") as f:
+_runs_tsv = os.path.join(SC, "runs.tsv")
+if not os.path.exists(_runs_tsv):
+    sys.exit(
+        "FAIL: no run log at %s.\n"
+        "Re-run every analysis/src/overnight/*.py once with a 420s timeout and write one line per\n"
+        "script, '<script>\\t<exit code>\\t<wall seconds>', to that file; the per-script stderr to\n"
+        "<dir>/logs/<script>.err; and a copy of data/processed/overnight taken BEFORE the re-run to\n"
+        "<dir>/backup. Set ABNB_RUNS_DIR to read the log from somewhere else." % _runs_tsv)
+with open(_runs_tsv, encoding="utf-8") as f:
     for line in f:
         p = line.rstrip("\n").split("\t")
         if len(p) == 3:

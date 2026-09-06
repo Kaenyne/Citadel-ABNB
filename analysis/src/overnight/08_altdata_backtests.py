@@ -13,7 +13,7 @@ Reads (all relative to repo root):
   data/processed/cc_listing_survival.csv                    Common Crawl survival per crawl
   data/processed/hotel_price_monitor_monthly.csv            CPI lodging y/y, BEA hotel price y/y (monthly to Jul 2026)
   data/raw/bea/bea_pce_travel_monthly_2015_2026.csv         BEA hotels nominal spend
-  scratch/08/fred_*.csv                                     fresh FRED keyless pulls (DTWEXBGS, DEXUSEU, AIRRPMTSID11, ICSA, CUSR0000SEHB)
+  data/cache/08/fred_*.csv (ABNB_SCRATCH override)          FRED keyless pulls, fetched if absent (DTWEXBGS, DEXUSEU, AIRRPMTSID11, ICSA, CUSR0000SEHB)
 Writes data/processed/overnight/08_*.csv: 08_panel_quarterly (aligned quarterly panel), 08_trends_quarterly_features,
   08_feature_tests_all + per-family 08_{trends,backlog,eurostat,ia}_tests, 08_test_scoreboard (tests run / flagged /
   beat-naive by family), 08_{demand,demand_index_p22,supply,price}_index_quarterly, 08_index_backtests,
@@ -26,6 +26,7 @@ RMSE and a walk-forward from 2023Q1 with an expanding window (first fit on 2022Q
 each against naive last-quarter (y[t-1]), prior-year (y[t-4]) and an AR(1) refit on the same expanding window.
 Sign accuracy = share of walk-forward quarters where the predicted change from y[t-1] has the actual sign.
 """
+import os
 from pathlib import Path
 import warnings, itertools
 import numpy as np, pandas as pd
@@ -35,7 +36,12 @@ from scipy.optimize import nnls
 warnings.filterwarnings("ignore")
 ROOT = Path(__file__).resolve().parents[3]
 PROC = ROOT / "data/processed"; OUT = PROC / "overnight"; FIG = ROOT / "analysis/figures/overnight"
-SCR = Path(r"C:\Users\krish\AppData\Local\Temp\claude\C--Users-krish-citadel-abnb\fe93ae72-a37b-4547-991f-690c32a0f6a0\scratchpad\08")
+# FRED download cache. WS24 / audit A07 (absolute paths): this used to point at one user's session
+# scratchpad, so the macro family silently emptied on any other machine. Now a repo-relative cache
+# (gitignored), overridable with ABNB_SCRATCH, and a missing series is fetched from FRED's keyless
+# CSV endpoint rather than skipped.
+SCR = Path(os.environ.get("ABNB_SCRATCH", str(ROOT / "data" / "cache"))) / "08"
+SCR.mkdir(parents=True, exist_ok=True)
 OUT.mkdir(parents=True, exist_ok=True); FIG.mkdir(parents=True, exist_ok=True)
 WIN0, WIN1, WF0 = pd.Period("2022Q1"), pd.Period("2026Q2"), pd.Period("2023Q1")
 TARGETS = ["nights_yoy", "gbv_yoy", "adr_yoy", "rev_yoy", "na_nights_band", "emea_nights_band"]
@@ -113,7 +119,16 @@ def backlog_features():
     # value at quarter-end t, used as a feature for t+1 (shift 1 = "known at the prior print")
     F["bl_unearned_yoy_lag1"] = b["unearned_fees_musd_yoy_pct"].shift(1)
     F["bl_funds_yoy_lag1"] = b["funds_held_musd_yoy_pct"].shift(1)
-    F["bl_unearned_to_next_rev_lag1"] = b["unearned_to_next_q_revenue"].shift(1)
+    # WS19 / audit finding A01 (6 Sep 2026). The old feature was
+    #     F["bl_unearned_to_next_rev_lag1"] = b["unearned_to_next_q_revenue"].shift(1)
+    # and `unearned_to_next_q_revenue` at quarter q is unearned[q] / revenue[q+1] (built with a negative
+    # shift in analysis/src/abnb_eu_platform_and_backlog.py). Shifting the ratio forward one row makes the
+    # feature at target quarter t equal unearned[t-1] / revenue[t]: the denominator IS the target quarter's
+    # actual revenue, which is not knowable at the prior print. A lag applied after forming a ratio does not
+    # remove leakage. Replaced with the same numerator over the revenue of the quarter that had already been
+    # reported at the decision cutoff. The retrospective unearned/next-quarter-revenue ratio is deliberately
+    # NOT carried into the feature frame: every "bl_" column here is tested as a pre-print feature.
+    F["bl_unearned_to_prior_rev_lag1"] = (b["unearned_fees_musd"] / b["revenue_musd"]).shift(1)
     # seasonally adjusted: ratio of unearned fees to the *same quarter last year* is already the y/y; add the
     # ratio to trailing-4Q revenue (level-free) and its y/y
     rev = b["revenue_musd"]; F["bl_unearned_to_ttm_rev_yoy_lag1"] = yoy(b["unearned_fees_musd"] / rev.rolling(4).sum()).shift(1)
@@ -151,14 +166,31 @@ def peer_features():
     F = pd.DataFrame(index=p.index)
     for c in ["mar_revpar_yoy", "hlt_revpar_yoy", "bkng_room_nights_yoy", "expe_room_nights_yoy"]:
         F["pr_" + c] = pd.to_numeric(p[c], errors="coerce")
-    F["pr_hotel_revpar_yoy"] = F[["pr_mar_revpar_yoy", "pr_hlt_revpar_yoy"]].mean(axis=1)
+    # Point-in-time (WS20 section 8 / audit A01 family, applied by WS26): average only the peers that
+    # had ALREADY reported when ABNB printed. `<peer>_lead_days` is peer report date minus ABNB's, so a
+    # value <= 0 means the peer reported on or after ABNB and its RevPAR was not knowable. MAR reported
+    # after ABNB in 2023Q3 (-1 day) and 2025Q1 (-5), HLT in 2024Q2 (-1); those three quarters used to
+    # blend in a number that did not exist yet, while the feature registry called it "available before
+    # print". The composite is now the mean of the peers with lead_days > 0 (NaN if neither qualifies).
+    lead = {c: pd.to_numeric(p[f"{c}_lead_days"], errors="coerce") for c in ("mar", "hlt")}
+    pit = pd.DataFrame({c: F[f"pr_{c}_revpar_yoy"].where(lead[c] > 0) for c in ("mar", "hlt")})
+    F["pr_hotel_revpar_yoy"] = pit.mean(axis=1)
     F["pr_hotel_revpar_yoy_d1"] = F["pr_hotel_revpar_yoy"].diff()
+    F["pr_hotel_peers_reported_before_print"] = pit.notna().sum(axis=1)
     return F
 
 def macro_features():
     def fred(sid):
         f = SCR / f"fred_{sid}.csv"
-        if not f.exists(): return None
+        if not f.exists():                       # WS26: fetch instead of silently dropping the family
+            try:
+                import urllib.request
+                url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}"
+                f.write_bytes(urllib.request.urlopen(url, timeout=60).read())
+                print(f"  fetched FRED {sid} -> {f}")
+            except Exception as e:               # offline run: behave as before, but say so
+                print(f"  WARNING: FRED {sid} not cached and not fetchable ({e}); macro family incomplete")
+                return None
         d = pd.read_csv(f, na_values="."); d.columns = ["date", "v"]; d["date"] = pd.to_datetime(d["date"])
         return d.set_index("date")["v"].astype(float)
     F = {}
@@ -209,10 +241,18 @@ def ia_features():
     F["ia_emea_reviews_ltm_matched_yoy"] = em.groupby("q")["reviews_ltm_matched_yoy"].median() * 100
     F["ia_emea_n"] = em.groupby("q")["city"].nunique()
     # like-for-like price (supply-panel branch), year-ago pairs on one price basis
+    # WS21 (audit A04), applied by WS26. The old filter was `price_comparable` only: it stopped the 2026
+    # fee-inclusive price basis being read as inflation, but it did NOT check whether either endpoint was
+    # a partial Inside Airbnb scrape. `price_pair_eligible` is price_comparable AND pair_eligible AND
+    # >=500 matched priced entire homes. `pair_eligible_pit` is added on top because this file is a
+    # walk-forward backtest: the retrospective scope flag uses LATER scrapes, so a frozen replay may only
+    # use the trailing-window judgement. Effect: 2025Q3 goes -5.71% (3 cities) -> -8.35% (2 cities) as the
+    # partial Sep-2025 Austin dump drops; 2024Q4 stays 0.00% but on 1 city, not 2.
     l = pd.read_csv(PROC / "inside_airbnb_like_for_like.csv", parse_dates=["date_a", "date_b"])
-    l = l[(l.pair_type == "year_ago") & (l.price_comparable == True)] if "year_ago" in set(l.pair_type) else l[(l.price_comparable == True) & (l.days_apart.between(300, 430))]
+    elig = l.price_pair_eligible.astype(bool) & l.pair_eligible_pit.astype(bool)
+    l = l[(l.pair_type == "year_ago") & elig] if "year_ago" in set(l.pair_type) else l[elig & (l.days_apart.between(300, 430))]
     l["q"] = l["date_b"].dt.to_period("Q")
-    F["ia_lfl_price_yoy"] = l.groupby("q")["lfl_price_chg_median"].median() * 100
+    F["ia_lfl_price_yoy"] = l.groupby("q")["lfl_price_chg_median_clean"].median() * 100
     F["ia_lfl_price_n"] = l.groupby("q")["city"].nunique()
     F["ia_reviews_ltm_matched_yoy_d1"] = F["ia_reviews_ltm_matched_yoy"].diff()
     return F
@@ -221,6 +261,11 @@ def cc_features():
     c = pd.read_csv(PROC / "cc_listing_survival.csv", parse_dates=["crawl_date"])
     c = c[c.status_informative == True]
     q = c.groupby(c["crawl_date"].dt.to_period("Q"))["survival_share"].mean() * 100
+    # WS19 / audit finding A05 (6 Sep 2026): informative crawls do not cover every quarter, so a plain
+    # .shift(4) on the observed rows compared e.g. 2023Q4 with 2022Q3. Reindex onto a contiguous quarterly
+    # PeriodIndex first, so the difference is exactly t vs t-4 calendar quarters or missing. No imputation:
+    # a quarter with no crawl stays NaN rather than being forward-filled to manufacture a y/y.
+    q = q.reindex(pd.period_range(q.index.min(), q.index.max(), freq="Q"))
     F = pd.DataFrame({"cc_survival_pct": q}); F["cc_survival_yoy_pts"] = F["cc_survival_pct"] - F["cc_survival_pct"].shift(4)
     return F
 

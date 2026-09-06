@@ -30,6 +30,14 @@ Definitions (see research/notes/2026-09-05_inside-airbnb-supply-panel.md for the
                    quantity restricted to entire homes with minimum_nights < 30 (the listings STR rules target).
   multi-listing    calculated_host_listings_count > 1 (host has more than one listing in this city dump);
                    professional = >= 5.
+  pair_eligible    (added 7 Sep 2026, audit finding A04) both dumps of a pair are full-scope scrapes, so the pair
+                   can carry a market interpretation. Coverage is classified twice and both flags are stored:
+                   `partial_scope` (retrospective, +/- 200-day reference window, revised by later scrapes) and
+                   `partial_scope_pit` / `pair_eligible_pit` (point-in-time, reference window trailing only, so a
+                   later scrape can never change a past label - use this one for predictive replay).
+                   Ineligible pairs are kept in the CSV with an `exclusion_reason` and are null in the
+                   `retention_clean`, `matched_reviews_ltm_chg_clean` and `lfl_price_chg_median_clean` columns
+                   that the market-interpretation figures and downstream consumers read.
 """
 import argparse, concurrent.futures, datetime as dt, gzip, io, json, os, sys, time
 from pathlib import Path
@@ -309,6 +317,151 @@ def pair_row(a, b):
     return out
 
 
+# ------------------------------------------------------------------------- scope / coverage (audit finding A04)
+# WS21, 7 Sep 2026. Inside Airbnb changed the geographic scope of several Dec 2025 - May 2026 monthly dumps, so a
+# partial dump looks like a mass exit of listings. The scope flag used to be computed on snapshots only and was
+# never joined onto the two endpoints of a year-ago pair before those pairs were charted as "retention".
+SCOPE_WINDOW_DAYS = 200      # half-width of the reference window used to judge a dump's coverage
+SCOPE_LONG_DAYS = 400        # long trailing lookback for the point-in-time rule (see partial_scope_pit_long)
+SCOPE_MIN_RATIO = 0.80       # a dump under this share of the reference dump's listing count is "partial"
+SCOPE_DRIFT_WARN = 0.15      # endpoints whose coverage ratios differ by more than this get a soft warning
+MIN_MATCHED_PRICED = 500     # matched, priced, same-basis entire homes needed before a price pair is publishable
+
+
+def add_scope_flags(s):
+    """Two coverage classifications per dump, both stored.
+
+    partial_scope      RETROSPECTIVE: listings vs the largest dump of the same city within +/- SCOPE_WINDOW_DAYS.
+                       Uses later dumps, so a future scrape can change a past label. Fine for quality control,
+                       NOT usable as information known at an earlier trading cutoff.
+    partial_scope_pit  POINT-IN-TIME: same rule but the reference window is trailing only (dumps on or before this
+                       dump's own date). Never revised by later data, so predictive replay can use it.
+    partial_scope_pit_long  POINT-IN-TIME with a SCOPE_LONG_DAYS trailing lookback. Needed because a run of
+                       consecutive partial dumps hides itself from the short trailing window (Nashville Feb-May
+                       2026: five partial dumps in a row, so each looks normal next to the others). It also fires
+                       on a permanent scope reduction (Austin from Sep 2025), which is the conservative answer for
+                       a frozen prediction but is NOT evidence the market shrank.
+    scope_unverified*  fewer than two dumps in the reference window, so coverage cannot be judged either way.
+    """
+    s = s.copy()
+    s["dump_date"] = pd.to_datetime(s["dump_date"])
+    w, wl = pd.Timedelta(days=SCOPE_WINDOW_DAYS), pd.Timedelta(days=SCOPE_LONG_DAYS)
+    retro_ref, retro_n, pit_ref, pit_n, long_ref = [], [], [], [], []
+    for r in s.itertuples():
+        same = s[s.city == r.city]
+        near = same[(same.dump_date - r.dump_date).abs() <= w]
+        trail = same[(same.dump_date <= r.dump_date) & (r.dump_date - same.dump_date <= w)]
+        trail_l = same[(same.dump_date <= r.dump_date) & (r.dump_date - same.dump_date <= wl)]
+        retro_ref.append(near.listings.max()); retro_n.append(len(near))
+        pit_ref.append(trail.listings.max()); pit_n.append(len(trail))
+        long_ref.append(trail_l.listings.max())
+    s["scope_ref_listings"] = retro_ref
+    s["scope_ref_n_dumps"] = retro_n
+    s["scope_vs_peer"] = s.listings / pd.Series(retro_ref, index=s.index)
+    s["partial_scope"] = s.scope_vs_peer < SCOPE_MIN_RATIO
+    s["scope_unverified"] = s.scope_ref_n_dumps < 2
+    s["scope_ref_listings_pit"] = pit_ref
+    s["scope_ref_n_dumps_pit"] = pit_n
+    s["scope_vs_peer_pit"] = s.listings / pd.Series(pit_ref, index=s.index)
+    s["partial_scope_pit"] = s.scope_vs_peer_pit < SCOPE_MIN_RATIO
+    s["scope_unverified_pit"] = s.scope_ref_n_dumps_pit < 2
+    s["scope_vs_peer_pit_long"] = s.listings / pd.Series(long_ref, index=s.index)
+    s["partial_scope_pit_long"] = s.scope_vs_peer_pit_long < SCOPE_MIN_RATIO
+    return s
+
+
+def scope_as_of(s, city, date, as_of, window=SCOPE_WINDOW_DAYS, trailing_only=False):
+    """Coverage of dump (city, date) judged only against dumps of that city available on or before `as_of`.
+
+    Returns (ratio, n_dumps_in_window). For the later endpoint of a pair, as_of == that endpoint's own date, so
+    the window is trailing only; for the earlier endpoint the full +/- window is already in the past. With
+    trailing_only=True the window is [date - window, date] regardless of as_of (the long-lookback rule).
+    """
+    same = s[(s.city == city) & (s.dump_date <= as_of)]
+    if trailing_only:
+        same = same[(same.dump_date <= date) & ((date - same.dump_date) <= pd.Timedelta(days=window))]
+    else:
+        same = same[(same.dump_date - date).abs() <= pd.Timedelta(days=window)]
+    row = s[(s.city == city) & (s.dump_date == date)]
+    if row.empty or same.empty or not same.listings.max():
+        return np.nan, len(same)
+    return float(row.listings.iloc[0]) / float(same.listings.max()), len(same)
+
+
+def add_pair_eligibility(p, s):
+    """Attach BOTH endpoints' coverage flags to every pair, then decide eligibility. Nothing is deleted.
+
+    Adds, per pair: scope_vs_peer_a/_b and partial_scope_a/_b (retrospective), the same four on a point-in-time
+    basis judged as of date_b, pair_eligible + exclusion_reason (retrospective policy) and pair_eligible_pit +
+    exclusion_reason_pit (point-in-time policy), and *_clean copies of the three market-interpretation series
+    (retention, matched reviews LTM change, like-for-like price) that are null on an ineligible pair.
+    """
+    p = p.copy()
+    s = s.copy()
+    s["dump_date"] = pd.to_datetime(s["dump_date"])
+    for c in ("date_a", "date_b"):
+        p[c] = pd.to_datetime(p[c])
+    key = s.set_index(["city", "dump_date"])
+    cols = {}
+    for side in ("a", "b"):
+        cols[f"listings_{side}"] = [key.listings.get((c, d), np.nan) for c, d in zip(p.city, p[f"date_{side}"])]
+        cols[f"scope_vs_peer_{side}"] = [key.scope_vs_peer.get((c, d), np.nan) for c, d in zip(p.city, p[f"date_{side}"])]
+        cols[f"partial_scope_{side}"] = [bool(key.partial_scope.get((c, d), False)) for c, d in zip(p.city, p[f"date_{side}"])]
+        cols[f"scope_known_{side}"] = [(c, d) in key.index for c, d in zip(p.city, p[f"date_{side}"])]
+        pit = [scope_as_of(s, c, d, b) for c, d, b in zip(p.city, p[f"date_{side}"], p.date_b)]
+        cols[f"scope_vs_peer_{side}_pit"] = [x[0] for x in pit]
+        cols[f"scope_ref_n_{side}_pit"] = [x[1] for x in pit]
+        lng = [scope_as_of(s, c, d, b, window=SCOPE_LONG_DAYS, trailing_only=True) for c, d, b in zip(p.city, p[f"date_{side}"], p.date_b)]
+        cols[f"scope_vs_peer_{side}_pit_long"] = [x[0] for x in lng]
+    for k, v in cols.items():
+        p[k] = v
+    for side in ("a", "b"):
+        p[f"partial_scope_{side}_pit"] = p[f"scope_vs_peer_{side}_pit"] < SCOPE_MIN_RATIO
+        p[f"partial_scope_{side}_pit_long"] = p[f"scope_vs_peer_{side}_pit_long"] < SCOPE_MIN_RATIO
+        p[f"scope_unverified_{side}_pit"] = p[f"scope_ref_n_{side}_pit"] < 2
+    p["scope_drift"] = p.scope_vs_peer_b - p.scope_vs_peer_a
+    p["scope_drift_warning"] = p.scope_drift.abs() > SCOPE_DRIFT_WARN
+    # Pair-level span check: is either endpoint small relative to the largest dump of that city ANYWHERE between
+    # (and around) the two endpoint dates? Austin's listing count stepped from 15.2k to 10.5k in Sep 2025 and
+    # stayed there, so both endpoints look normal beside their own neighbours while the pair still straddles the
+    # break. This is a WARNING, not an exclusion: a permanent Inside Airbnb scope reduction and a genuine market
+    # contraction (Barcelona, NYC) are not distinguishable from listing counts alone.
+    span_ratio = []
+    for r in p.itertuples():
+        same = s[(s.city == r.city) & (s.dump_date >= r.date_a - pd.Timedelta(days=SCOPE_WINDOW_DAYS)) & (s.dump_date <= r.date_b)]
+        mx = same.listings.max() if len(same) else np.nan
+        span_ratio.append(min(r.ids_a, r.ids_b) / mx if mx and not pd.isna(mx) else np.nan)
+    p["span_min_vs_max_listings"] = span_ratio
+    p["span_step_warning"] = p.span_min_vs_max_listings < SCOPE_MIN_RATIO
+
+    def verdict(r, pit):
+        why = []
+        for side in ("a", "b"):
+            if not r[f"scope_known_{side}"]:
+                why.append(f"scope_missing_{side}")
+            elif pit:
+                if bool(r[f"partial_scope_{side}_pit"]):
+                    why.append(f"partial_scope_{side}")
+                elif bool(r[f"partial_scope_{side}_pit_long"]):
+                    why.append(f"partial_scope_{side}_long_lookback")
+                elif bool(r[f"scope_unverified_{side}_pit"]):
+                    why.append(f"coverage_unverifiable_{side}_at_cutoff")
+            elif bool(r[f"partial_scope_{side}"]):
+                why.append(f"partial_scope_{side}")
+        return (not why), ";".join(why)
+
+    for pit, ecol, rcol in ((False, "pair_eligible", "exclusion_reason"), (True, "pair_eligible_pit", "exclusion_reason_pit")):
+        v = [verdict(r, pit) for _, r in p.iterrows()]
+        p[ecol] = [x[0] for x in v]
+        p[rcol] = [x[1] for x in v]
+    # market-interpretation series: null on an ineligible pair, raw columns untouched
+    p["retention_clean"] = p.retention.where(p.pair_eligible)
+    p["matched_reviews_ltm_chg_clean"] = p.matched_reviews_ltm_chg.where(p.pair_eligible)
+    p["price_pair_eligible"] = p.pair_eligible & p.price_comparable.fillna(False).astype(bool) & p.matched_priced_entire.fillna(0).ge(MIN_MATCHED_PRICED)
+    p["lfl_price_chg_median_clean"] = p.lfl_price_chg_median.where(p.price_pair_eligible)
+    return p
+
+
 def build(args):
     m = pd.read_csv(RAW / "manifest.csv")
     m = m[m.live & m.apply(lambda r: gz_path(r.city, r.dump_date).exists(), axis=1)].sort_values(["city", "dump_date"])
@@ -345,25 +498,23 @@ def build(args):
         del dumps
     PROC.mkdir(parents=True, exist_ok=True)
     s = pd.DataFrame(snaps); p = pd.DataFrame(pairs); h = pd.DataFrame(hosts)
-    # scope flag: the Dec 2025 - May 2026 monthly dumps cover a subset of listings in several cities. A dump whose
-    # listing count is under 80% of the largest dump of the same city within +/- 200 days is marked partial_scope.
-    s["dump_date"] = pd.to_datetime(s["dump_date"])
-    ref = []
-    for r in s.itertuples():
-        w = s[(s.city == r.city) & ((s.dump_date - r.dump_date).abs() <= pd.Timedelta(days=200))]
-        ref.append(w.listings.max())
-    s["scope_vs_peer"] = s.listings / pd.Series(ref, index=s.index)
-    s["partial_scope"] = s.scope_vs_peer < 0.8
-    for df in (s, p):
-        df["date_b" if "date_b" in df else "dump_date"] = pd.to_datetime(df["date_b" if "date_b" in df else "dump_date"])
-    p["days_apart"] = (pd.to_datetime(p.date_b) - pd.to_datetime(p.date_a)).dt.days
+    # Scope flags first (the Dec 2025 - May 2026 monthlies cover a subset of listings in several cities), then join
+    # them onto BOTH endpoints of every pair and decide eligibility BEFORE anything is charted or published.
+    s = add_scope_flags(s)
+    p = add_pair_eligibility(p, s)
+    p["days_apart"] = (p.date_b - p.date_a).dt.days
     p["lfl_price_chg_annualized"] = np.expm1(np.log1p(p.lfl_price_chg_median) * 365 / p.days_apart)
     s.round(4).to_csv(PROC / "inside_airbnb_city_snapshots.csv", index=False)
     p.round(4).to_csv(PROC / "inside_airbnb_like_for_like.csv", index=False)
     h.round(4).to_csv(PROC / "inside_airbnb_host_concentration.csv", index=False)
+    ya = p[p.pair_type == "year_ago"]
     log(f"wrote {len(s)} snapshots, {len(p)} pairs, {len(h)} host rows")
-    pd.set_option("display.width", 250); pd.set_option("display.max_columns", 30)
-    print(p[p.pair_type == "year_ago"][["city", "date_a", "date_b", "matched", "retention", "price_comparable", "matched_priced_entire", "lfl_price_chg_median", "matched_reviews_ltm_chg"]].to_string(index=False))
+    log(f"year-ago pairs: {len(ya)} total, {int((~ya.pair_eligible).sum())} ineligible (retrospective), "
+        f"{int((~ya.pair_eligible_pit).sum())} ineligible (point-in-time)")
+    pd.set_option("display.width", 260); pd.set_option("display.max_columns", 40)
+    print(ya[["city", "date_a", "date_b", "matched", "retention", "pair_eligible", "exclusion_reason",
+              "pair_eligible_pit", "price_pair_eligible", "matched_priced_entire", "lfl_price_chg_median",
+              "matched_reviews_ltm_chg"]].to_string(index=False))
 
 
 # ----------------------------------------------------------------------------------------------------- figures
@@ -375,21 +526,38 @@ def figures(args):
     p = pd.read_csv(PROC / "inside_airbnb_like_for_like.csv", parse_dates=["date_a", "date_b"])
     cities = list(KNOWN_DATES)
     colors = {c: plt.cm.tab20(i / 20) for i, c in enumerate(cities)}
-    def panel(df, x, y, title, ylabel, fname, pct=True, hline=None):
-        fig, ax = plt.subplots(figsize=(10, 5.5))
+    def panel(df, x, y, title, ylabel, fname, pct=True, hline=None, excluded=None, note=None, warn=False):
+        fig, ax = plt.subplots(figsize=(10, 5.8))
         for c, g in df.groupby("city"):
-            g = g.sort_values(x)
+            g = g.sort_values(x).dropna(subset=[y])
             ax.plot(g[x], g[y] * (100 if pct else 1), marker="o", ms=3, lw=1.4, label=c, color=colors.get(c))
+            if warn and "span_step_warning" in g:
+                w = g[g.span_step_warning.fillna(False).astype(bool)]
+                if len(w):
+                    ax.scatter(w[x], w[y] * (100 if pct else 1), s=55, facecolors="none", edgecolors=colors.get(c), lw=1.3, zorder=3)
+        if excluded is not None and len(excluded):
+            e = excluded.dropna(subset=[y])
+            ax.scatter(e[x], e[y] * (100 if pct else 1), marker="x", s=22, lw=1.0, color="0.55", zorder=1,
+                       label=f"partial-scope dump: excluded ({len(e)})")
+        if warn:
+            ax.scatter([], [], s=55, facecolors="none", edgecolors="0.35", lw=1.3, label="straddles a listing-count step")
         if hline is not None:
             ax.axhline(hline, color="grey", lw=0.8, ls="--")
         ax.set_title(title, loc="left", fontsize=12, fontweight="bold"); ax.set_ylabel(ylabel); ax.grid(alpha=0.3)
-        ax.legend(ncol=3, fontsize=8, frameon=False); fig.text(0.01, 0.005, "Source: Inside Airbnb (CC-BY 4.0), listings.csv.gz dumps; Citadel-ABNB analysis", fontsize=7, color="grey")
-        fig.tight_layout(); fig.savefig(FIG / fname, dpi=150); plt.close(fig)
+        ax.legend(ncol=3, fontsize=8, frameon=False)
+        src = "Source: Inside Airbnb (CC-BY 4.0), listings.csv.gz dumps; Citadel-ABNB analysis"
+        fig.text(0.01, 0.006, src + ("\n" + note if note else ""), fontsize=7, color="grey", va="bottom")
+        fig.tight_layout(rect=(0, 0.075 if note else 0.02, 1, 1)); fig.savefig(FIG / fname, dpi=150); plt.close(fig)
     ya = p[p.pair_type == "year_ago"]
+    ok = ya[ya.pair_eligible]                       # both endpoints full-scope: comparable
+    bad = ya[~ya.pair_eligible]                     # kept in the CSV, drawn as grey crosses, never joined by a line
     full = s[~s.partial_scope]
-    panel(ya[ya.price_comparable & (ya.matched_priced_entire >= 500)], "date_b", "lfl_price_chg_median", "Like-for-like nightly price, year over year (matched entire-home listings, same price basis only)", "median same-listing price change, %", "inside_airbnb_lfl_price_yoy.png", hline=0)
-    panel(ya, "date_b", "retention", "Listing retention: share of year-ago listing ids still present", "retention, %", "inside_airbnb_retention_yoy.png")
-    panel(ya, "date_b", "matched_reviews_ltm_chg", "Same-listing reviews LTM, year over year (bookings-velocity proxy)", "matched listings, reviews LTM change %", "inside_airbnb_reviews_ltm_yoy.png", hline=0)
+    excl_note = ("Grey x: at least one dump is a partial-scope Inside Airbnb scrape (pair_eligible=False), not a market signal. Rings: both dumps full scope for their own\n"
+                 "era but the pair straddles a listing-count step (Austin from Sep 2025, Barcelona) - scope change and real contraction are not separable here.")
+    panel(ya[ya.price_pair_eligible], "date_b", "lfl_price_chg_median_clean", "Quoted nightly price, year over year, on matched entire-home listings", "median same-listing price change, %", "inside_airbnb_lfl_price_yoy.png", hline=0,
+          note="Listings present and priced in both dumps, same price basis, both dumps full scope (price_pair_eligible). Asking rate, local currency, survivors only - not a realised ADR.")
+    panel(ok, "date_b", "retention_clean", "Listing retention: share of year-ago listing ids still present (comparable pairs only)", "retention, %", "inside_airbnb_retention_yoy.png", excluded=bad.assign(retention_clean=bad.retention), note=excl_note, warn=True)
+    panel(ok, "date_b", "matched_reviews_ltm_chg_clean", "Same-listing reviews LTM, year over year (bookings-velocity proxy, comparable pairs only)", "matched listings, reviews LTM change %", "inside_airbnb_reviews_ltm_yoy.png", hline=0, excluded=bad.assign(matched_reviews_ltm_chg_clean=bad.matched_reviews_ltm_chg), note=excl_note, warn=True)
     panel(full, "dump_date", "multi_listing_share", "Multi-listing hosts: share of listings whose host has >1 listing in the city (full-scope dumps)", "share of listings, %", "inside_airbnb_multi_listing_share.png")
     panel(full, "dump_date", "superhost_share", "Superhost share of listings (full-scope dumps)", "share, %", "inside_airbnb_superhost_share.png")
     panel(full, "dump_date", "listings", "Listings per dump (full-scope dumps)", "listings", "inside_airbnb_listings.png", pct=False)

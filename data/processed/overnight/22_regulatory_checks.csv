@@ -1,0 +1,78 @@
+check,horizon,subject,kind,value,target,tolerance,passed
+1_child_without_parent,2027,"EU-TAIL without EU-AHA, share of draws",probability,0.0,0.0,0.0,True
+3_conditional_probability,2027,P(EU-TAIL | EU-AHA),probability,0.165227,0.166667,0.009607,True
+2_exclusive_overlap,2027,"BCN-PARTIAL and BCN-2028 both occur, share of draws",probability,0.0,0.0,0.0,True
+3_conditional_probability,2027,P(BCN-PARTIAL | not BCN-2028),probability,0.0,0.0,0.0,True
+3_marginal_probability,2027,P(EU-AHA) marginal,probability,0.12038,0.12,0.002907,True
+3_marginal_probability,2027,P(EU-TAIL) marginal,probability,0.01989,0.02,0.001252,True
+3_marginal_probability,2027,P(ES-FINE) marginal,probability,0.549555,0.55,0.00445,True
+3_marginal_probability,2027,P(ES-REMOVE) marginal,probability,0.349305,0.35,0.004266,True
+3_marginal_probability,2027,P(ES-REGIONS) marginal,probability,0.450215,0.45,0.00445,True
+3_marginal_probability,2027,P(BCN-2028) marginal,probability,0.0,0.0,0.0,True
+3_marginal_probability,2027,P(BCN-PARTIAL) effective = p_cond x (1 - p_BCN-2028),probability,0.0,0.0,0.0,True
+3_marginal_probability,2027,P(MAUI) marginal,probability,0.0,0.0,0.0,True
+3_marginal_probability,2027,P(PARIS-PRO) marginal,probability,0.299425,0.3,0.004099,True
+3_marginal_probability,2027,P(PARIS-COPRO) marginal,probability,0.901185,0.9,0.002683,True
+3_marginal_probability,2027,P(GR-FREEZE) marginal,probability,0.700375,0.7,0.004099,True
+3_marginal_probability,2027,P(IE-REG) marginal,probability,0.351675,0.35,0.004266,True
+3_marginal_probability,2027,P(UK-ENG) marginal,probability,0.200625,0.2,0.003578,True
+3_marginal_probability,2027,P(IT-NAT) marginal,probability,0.30016,0.3,0.004099,True
+3_marginal_probability,2027,P(PT-RETIGHT) marginal,probability,0.20165,0.2,0.003578,True
+3_marginal_probability,2027,P(NL-AMS) marginal,probability,0.30093,0.3,0.004099,True
+3_marginal_probability,2027,P(US-CITY) marginal,probability,0.30067,0.3,0.004099,True
+3_marginal_probability,2027,P(NYC-LOOSEN) marginal,probability,0.19993,0.2,0.003578,True
+3_marginal_probability,2027,P(CHI-SUIT) marginal,probability,0.401425,0.4,0.004382,True
+3_marginal_probability,2027,P(COMPLIANCE) marginal,probability,0.900305,0.9,0.002683,True
+1_child_without_parent,2030,"EU-TAIL without EU-AHA, share of draws",probability,0.0,0.0,0.0,True
+3_conditional_probability,2030,P(EU-TAIL | EU-AHA),probability,0.17797,0.177778,0.0051,True
+2_exclusive_overlap,2030,"BCN-PARTIAL and BCN-2028 both occur, share of draws",probability,0.0,0.0,0.0,True
+3_conditional_probability,2030,P(BCN-PARTIAL | not BCN-2028),probability,0.551296,0.55,0.006006,True
+3_marginal_probability,2030,P(EU-AHA) marginal,probability,0.44957,0.45,0.00445,True
+3_marginal_probability,2030,P(EU-TAIL) marginal,probability,0.08001,0.08,0.002427,True
+3_marginal_probability,2030,P(ES-FINE) marginal,probability,0.69876,0.7,0.004099,True
+3_marginal_probability,2030,P(ES-REMOVE) marginal,probability,0.54909,0.55,0.00445,True
+3_marginal_probability,2030,P(ES-REGIONS) marginal,probability,0.651505,0.65,0.004266,True
+3_marginal_probability,2030,P(BCN-2028) marginal,probability,0.451175,0.45,0.00445,True
+3_marginal_probability,2030,P(BCN-PARTIAL) effective = p_cond x (1 - p_BCN-2028),probability,0.302565,0.3025,0.004108,True
+3_marginal_probability,2030,P(MAUI) marginal,probability,0.401635,0.4,0.004382,True
+3_marginal_probability,2030,P(PARIS-PRO) marginal,probability,0.549565,0.55,0.00445,True
+3_marginal_probability,2030,P(PARIS-COPRO) marginal,probability,0.94992,0.95,0.001949,True
+3_marginal_probability,2030,P(GR-FREEZE) marginal,probability,0.80049,0.8,0.003578,True
+3_marginal_probability,2030,P(IE-REG) marginal,probability,0.55103,0.55,0.00445,True
+3_marginal_probability,2030,P(UK-ENG) marginal,probability,0.450075,0.45,0.00445,True
+3_marginal_probability,2030,P(IT-NAT) marginal,probability,0.60009,0.6,0.004382,True
+3_marginal_probability,2030,P(PT-RETIGHT) marginal,probability,0.351225,0.35,0.004266,True
+3_marginal_probability,2030,P(NL-AMS) marginal,probability,0.4999,0.5,0.004472,True
+3_marginal_probability,2030,P(US-CITY) marginal,probability,0.5482,0.55,0.00445,True
+3_marginal_probability,2030,P(NYC-LOOSEN) marginal,probability,0.350855,0.35,0.004266,True
+3_marginal_probability,2030,P(CHI-SUIT) marginal,probability,0.60052,0.6,0.004382,True
+3_marginal_probability,2030,P(COMPLIANCE) marginal,probability,0.950475,0.95,0.001949,True
+4_monotone_path,2027->2030,"EU-AHA in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"EU-TAIL in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"ES-FINE in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"ES-REMOVE in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"ES-REGIONS in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"BCN-2028 in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"BCN-PARTIAL in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"MAUI in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"PARIS-PRO in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"PARIS-COPRO in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"GR-FREEZE in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"IE-REG in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"UK-ENG in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"IT-NAT in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"PT-RETIGHT in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"NL-AMS in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"US-CITY in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"NYC-LOOSEN in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"CHI-SUIT in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"COMPLIANCE in force by 2027 but not by 2030, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"ANY event reverses, share of draws",probability,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"net loss ex NYC-LOOSEN falls from 2027 to 2030, share of draws",share,0.0,0.0,0.0,True
+4_monotone_path,2027->2030,"DIAGNOSTIC total net loss incl NYC-LOOSEN falls, share of draws",share,0.003255,,,True
+5_sensitivity_alt_nesting,2027,"revenue loss median %, independent inner gate instead of severity ladder",pct_of_revenue,0.4499,0.4499,,True
+5_sensitivity_alt_nesting,2027,"revenue loss mean %, independent inner gate instead of severity ladder",pct_of_revenue,0.7519,0.7518,,True
+5_sensitivity_alt_nesting,2027,"revenue loss p95 %, independent inner gate instead of severity ladder",pct_of_revenue,2.6984,2.6725,,True
+5_sensitivity_alt_nesting,2030,"revenue loss median %, independent inner gate instead of severity ladder",pct_of_revenue,1.6716,1.6644,,True
+5_sensitivity_alt_nesting,2030,"revenue loss mean %, independent inner gate instead of severity ladder",pct_of_revenue,2.2011,2.2026,,True
+5_sensitivity_alt_nesting,2030,"revenue loss p95 %, independent inner gate instead of severity ladder",pct_of_revenue,6.4393,6.6886,,True

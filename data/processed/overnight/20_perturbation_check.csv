@@ -1,0 +1,5 @@
+task,perturbed_after,n_predictions_checked,max_abs_pred_difference,invariant,note
+A_pre_earnings_forecast,2024Q4,68,0.0,True,"every feature and every label in quarters after the cut multiplied by -3 and given N(0,50) noise; predictions dated on or before the cut must be identical"
+B_post_release_drift,2024Q4,114,0.0,True,"every feature and every label in quarters after the cut multiplied by -3 and given N(0,50) noise; predictions dated on or before the cut must be identical"
+A_pre_earnings_forecast,2025Q2,100,0.0,True,"every feature and every label in quarters after the cut multiplied by -3 and given N(0,50) noise; predictions dated on or before the cut must be identical"
+B_post_release_drift,2025Q2,150,0.0,True,"every feature and every label in quarters after the cut multiplied by -3 and given N(0,50) noise; predictions dated on or before the cut must be identical"

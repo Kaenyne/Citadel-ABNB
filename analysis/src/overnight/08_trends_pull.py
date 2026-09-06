@@ -15,12 +15,16 @@ Design
 - If nothing can be fetched the script exits non-zero and writes the log; the note documents it.
 """
 import json, sys, time, random
+import os
 from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / "data/processed/overnight/08_trends_weekly.csv"
-SCR = Path(r"C:\Users\krish\AppData\Local\Temp\claude\C--Users-krish-citadel-abnb\fe93ae72-a37b-4547-991f-690c32a0f6a0\scratchpad\08")
+# WS24 / audit finding A07 (6 Sep 2026): the download cache used to default to one user's
+# session scratchpad. It now defaults inside the project (git-ignored) and is still
+# overridable with ABNB_SCRATCH; the scripts re-download whatever is not cached.
+SCR = Path(os.environ.get("ABNB_SCRATCH", str(ROOT / "data" / "cache"))) / "08"
 SCR.mkdir(parents=True, exist_ok=True)
 LOG = SCR / "trends_pull_log.json"
 

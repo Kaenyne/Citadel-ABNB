@@ -4,7 +4,9 @@
 runs from nights by region to a price per share, built twice so it can be checked: `model/ABNB_driver_model.xlsx`
 (eight sheets, live Excel formulas, three scenarios computed in full) and `analysis/src/overnight/13_driver_model.py`
 (the same arithmetic in Python). The workbook's 2,349 formula cells were recalculated by a purpose-built
-evaluator and every one of 216 output checks agrees with the Python mirror to 1e-6. **Updated 7 Sep by
+evaluator and every one of 216 output checks agrees with the Python mirror to 1e-6. **Conventions (WS25, 7 Sep):** the prices below are 12-month targets, not present fair values; the
+share count is a modelled proxy and the EPS line an earnings proxy - see section 1 note 2, section 5b and
+`model/assumptions.md`, "Model conventions, decided 7 Sep 2026". **Updated 7 Sep by
 WS18:** WS17 rebuilt the file in real Excel 16.0 (0 error cells, agreement to 4.2e-15) and found the
 FY2026 share-count roll-forward double-counted the 1H26 buyback; the fix is applied here and every
 per-share and price number below is the corrected one (~1.5% lower than the first build).
@@ -17,7 +19,8 @@ per-share and price number below is the corrected one (~1.5% lower than the firs
 ## 1. Bottom line
 
 **1. The base case is $15.8bn of FY2027 revenue at a 35.9% adjusted EBITDA margin, and on WS12's exit
-multiples that is worth about $181 a share against a $181.94 spot.** The stock is priced for the base
+multiples that is a 12-month target of about $181 a share (target date ~30 Sep 2027, FY2027E exit
+metrics) against a $181.94 spot - a forward target, not a present fair value.** The stock is priced for the base
 case on an EBITDA lens and for the bull case on any cash-after-SBC lens. Nothing here is a call to buy.
 
 | Base case | FY2026E | FY2027E | FY2028E |
@@ -51,7 +54,21 @@ The bull's uncapped FY27/FY28 margins are 41.7% and 46.0%; both are cut to WS07'
 (BKNG's five-year EBITDA-proxy range is 30.0-37.4%). A bull that needs a 46% margin is not a bull, it
 is a broken model, and saying so is more useful than printing the number.
 
-**2. Price per lens, on FY2027E unless stated.** Multiples from WS12; cost of equity 10.5% from WS09.
+**2. Price per lens, on FY2027E unless stated. These are 12-month targets, not present fair values.**
+Multiples from WS12; cost of equity 10.5% from WS09. **Convention (WS25 / audit finding A12, 7 Sep):**
+every price below is a forward value built on FY2027E exit metrics with FY2027E net cash and the FY2027E
+period-end share count, i.e. a value as of end-FY2027, and it is carried as a **12-month target dated
+~30 Sep 2027**. The "implied return" row is therefore a **12-month expected price return** from the
+4 Sep 2026 close, not a discount to a present value. Two consequences worth stating out loud. **First, revised 7 Sep 2026 (WS26): the
+FY2028E lens is a year later again, and it is now discounted back one year at the scenario's cost of
+equity so all six lenses sit at the same target date.** Left undiscounted it was the highest of the six
+and lifted the base football-field mean by $11.46 ($160.22 with it, $148.76 without); discounted, the
+base lens goes $217.59 -> **$196.92** and the base football-field mean $160.22 -> **$156.79**. The
+undiscounted value is kept as a labelled sensitivity row on the `Valuation` sheet and as a lens row in
+`13_valuation_summary.csv`, and is excluded from the low / high / mean. **Second, no lens adds interim
+cash flows**, which enter only through the FY2027E net-cash balance and the buyback-reduced share
+count. Per-lens metric
+year, value date and interim-flow treatment: `data/processed/overnight/25_valuation_conventions.csv`.
 
 | Lens | Multiple (bear / base / bull) | Bear | **Base** | Bull |
 |---|---|---|---|---|
@@ -59,11 +76,12 @@ is a broken model, and saying so is more useful than printing the number.
 | EV / FCF | 11.3 / 14.3 / 17.3x | $84 | **$153** | $218 |
 | P / SBC-adjusted FCF | 15 / 19.5 / 24x | $37 | **$117** | $197 |
 | P / earnings proxy | 15 / 19.5 / 24x | $45 | **$111** | $176 |
-| EV / adj. EBITDA, FY2028E | same | $104 | **$218** | $289 |
+| EV / adj. EBITDA, FY2028E, **discounted 1 yr at CoE** | same | $93 | **$197** | $262 |
 | DCF, 10-yr fade to 3%, CoE 10.5% | - | $78 | **$183** | $281 |
-| **Football field (low / mean / high)** | | **$37 / $76 / $108** | **$111 / $160 / $218** | **$176 / $233 / $289** |
-| Implied upside vs $181.94, mean | | **-58%** | **-12%** | **+28%** |
+| **Football field (low / mean / high)** | | **$37 / $74 / $108** | **$111 / $157 / $197** | **$176 / $228 / $281** |
+| Implied 12-month return vs $181.94 (4 Sep 2026), mean | | **-59%** | **-14%** | **+25%** |
 | *Memo: on the 5 Sep 18/22/25.5x multiples* | | *$140* | *$235* | *$315* |
+| *Sensitivity: FY2028E lens left UNDISCOUNTED (not in the field)* | | *$104* | *$218* | *$289* |
 
 **3. Reverse DCF is unchanged, and that is the point.** At 10% cost of equity and 3% terminal growth,
 $181.94 discounts **7.50%** a year FCF growth for ten years on reported FCF and **13.32%** on
@@ -259,6 +277,60 @@ teammate can swap it in.
 17. **The reverse DCF keeps the 5 Sep convention** (constant growth for ten years, then terminal) even
     though the forward DCF uses a linear fade, so the two notes' implied-growth numbers are comparable.
     They agree to 0.01pp.
+
+---
+
+## 5b. Conventions made explicit (WS25, 7 Sep 2026 - audit finding A12)
+
+*Added after the fact by workstream 25. Nothing here changes a number; it says what the numbers mean.
+The full statement lives in `model/assumptions.md`, "Model conventions, decided 7 Sep 2026".*
+
+**Valuation date.** Every price in section 1 is a **12-month forward target on FY2027E exit metrics**,
+adopted target date **~30 September 2027**, and the upside column is a **12-month expected price return**
+from the 4 Sep 2026 close of $181.94. It is not a present discounted fair value: `valuation()` seeds the
+DCF with FY2027 FCF, discounts the next annual flow one period, and divides FY2027 net cash and FY2027
+period-end shares into it, so the arithmetic is forward in every line. All six football-field lenses are now
+values as of end-FY2027: five are built on FY2027E metrics directly and the sixth (EV / adj. EBITDA on
+FY2028E) is discounted back one year at the cost of equity (WS26, 7 Sep 2026). Left undiscounted it was
+the highest of the six and lifted the base mean by $11.46; that version survives as a labelled
+sensitivity row. No lens adds interim
+cash flows; cash generated between the spot date and the value date enters only through the net-cash
+balance (EV lenses) or the buyback-reduced share count (the two P/ lenses and the earnings proxy). If
+anyone wants a 30 Sep 2027 answer rather than an end-FY2027 one, straight-lining net cash and shares
+three quarters of the way gives $179.44 on the base EBITDA lens against $180.88, i.e. 0.8% lower - not
+enough to restate. Per-lens table: `data/processed/overnight/25_valuation_conventions.csv`.
+
+**Share count is a proxy, and so is the EPS line.** Three labels that must travel with every per-share
+number in this note:
+
+1. The **597.0M anchor is 2Q26 diluted *weighted-average* shares** (SEC XBRL), used as a proxy for the
+   30 Jun 2026 **period-end fully diluted** count. A weighted average spans the quarter; a period-end
+   fully diluted count is a point-in-time capitalisation. The roll-forward's output is labelled
+   "period end" but inherits the anchor's basis.
+2. **SBC dollars divided by the share price is an issuance proxy**, not an award schedule. Real issuance
+   follows vesting schedules on awards granted at historical prices; none is disclosed.
+3. **The EPS line is an earnings proxy on modelled shares.** It is modelled net income over the modelled
+   period-end share count, not GAAP diluted EPS (weighted-average shares, treasury-stock method). The
+   Street comparison in section 1 note 5 is against Street *adjusted* EPS and carries the same caveat.
+
+WS18's fix removed the 1H26 double-count; it did **not** convert the anchor to a point-in-time count.
+That is a convention gap, not a live arithmetic bug - do not re-fix the share roll.
+
+**Proposed (not built): a period-end fully diluted bridge.** Anchor on the 10-Q cover-page Class A +
+Class B shares outstanding at 30 Jun 2026 (basic, point-in-time), add unvested RSUs outstanding and
+in-the-money options from the equity-incentive footnote to get a point-in-time fully diluted count, then
+roll it on a real vesting schedule - the 10-K discloses unrecognised SBC and its weighted-average
+recognition period, which pins the dollar path - instead of SBC dollars at a modelled price. Expect a
+low-single-digit-millions change in the level, i.e. under 1% on price. Worth doing before the deck; not
+worth doing to a number that is now labelled.
+
+**Two more, for completeness.** (i) The FY2025A cash-bridge memo column is not eleven disclosed lines:
+cash taxes (-$232M) is WS07's 1.9%-of-revenue estimate, the working-capital residual (-$139M) is the plug
+that makes the bridge reproduce the reported $4,613M FY2025 FCF, and the $0M interest expense is a
+*classification* - the note coupon sits inside other income/(expense) in `abnb_fcf_bridge.csv` for 2025 -
+not evidence of no borrowing cost. (ii) The `DCF fade period (years)` input is inert in Excel (the grid is
+ten written-out rows) but **live in the Python mirror**, so editing it away from 10 would break the
+216-output reconciliation. Keep it at 10 in all three scenarios.
 
 ---
 

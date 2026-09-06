@@ -4,6 +4,16 @@
 and `16_web-gap-fill.md` (twelve line edits plus new evidence). Outputs: a corrected model, a corrected
 synthesis, and a ledger of everything that moved.*
 
+> **PARTLY HISTORICAL. Banner added 7 Sep 2026 by workstream 25 (audit section 17 cleanup).**
+> The "as built (6 Sep)" columns in this note are **pre-fix values, shown deliberately** so the delta is
+> auditable; the "fixed (7 Sep)" columns are current. Read every table with that in mind and quote only
+> the fixed column. Two later decisions sit on top of this note and are **not** reflected in its wording:
+> (a) the residual weighted-average-versus-period-end share convention is **not** a recurrence of the
+> arithmetic bug fixed here - it is audit finding A12, decided as a labelling matter on 7 Sep by WS25
+> (`model/assumptions.md`, "Model conventions, decided 7 Sep 2026"), so **do not "fix" the share roll a
+> second time**; and (b) the prices this note reports are **12-month forward targets on FY2027E exit
+> metrics**, not present fair values (`data/processed/overnight/25_valuation_conventions.csv`).
+
 ## Bottom line
 
 **The FY2026 share-count roll-forward double-counted the 1H26 buyback; it is fixed in both the Python

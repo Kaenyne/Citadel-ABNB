@@ -259,10 +259,12 @@ for _q in ["1Q27", "2Q27", "3Q27", "4Q27"]:
                       "Bull": (8.0, 9.0, 19.0, 18.0)}
 
 # Regulatory nights drag, incremental pp of y/y growth in the year, median case (WS11 11_regulatory_overlay).
-# Cumulative run-rate loss vs the 2Q26 baseline: EMEA 0.36 / 1.07 / 2.07 %; NA 0.03 / 0.08 / 0.15 %.
+# Cumulative run-rate loss vs the 2Q26 baseline: EMEA 0.36 / 1.07 / 2.03 %; NA 0.03 / 0.08 / 0.15 %.
+# WS22 (audit A06) repaired the Monte Carlo's conditional dependencies on 6 Sep 2026; the cumulative
+# EMEA median drag at 2028 moved 2.07% -> 2.03%, so the FY2028 incremental drag is 0.96pp, not 1.00pp.
 REG_DRAG_PP = {2026: dict(na=0.03, emea=0.36, latam=0.0, apac=0.0),
                2027: dict(na=0.05, emea=0.71, latam=0.0, apac=0.0),
-               2028: dict(na=0.07, emea=1.00, latam=0.0, apac=0.0)}
+               2028: dict(na=0.07, emea=0.96, latam=0.0, apac=0.0)}
 
 # Quarterly ADR ex-FX growth, % (WS10 for the 2026 quarters; WS06 and WS07 agree on +2.5% base for FY27)
 ADR_EXFX_Q = {q: ({"Bear": 2.0, "Base": 3.0, "Bull": 4.0} if q in ("3Q26", "4Q26")
@@ -576,7 +578,14 @@ def valuation(annual, scen):
     px["EV / FCF, FY27E"] = (V["exit_ev_fcf"] * f27["fcf"] + f27["net_cash"]) / f27["shares_end"]
     px["P / SBC-adjusted FCF, FY27E"] = V["exit_p_sbcfcf"] * f27["sbc_adj_fcf"] / f27["shares_end"]
     px["P / earnings proxy, FY27E"] = V["exit_p_earnings"] * f27["eps"]
-    px["EV / adj. EBITDA, FY28E"] = (V["exit_ev_ebitda"] * f28["adj_ebitda"] + f28["net_cash"]) / f28["shares_end"]
+    # The FY2028E lens is a value AS OF end-FY2028; the other five sit at end-FY2027. WS25's A12 finding
+    # was that averaging them undiscounted mixed dates and lifted the base football-field mean by $11.46.
+    # Decision (WS26): discount the FY2028E lens one year at the cost of equity so all six lenses sit at
+    # the same ~30 Sep 2027 target date. The undiscounted value is kept as a labelled sensitivity row and
+    # is excluded from the football field.
+    px28_undisc = (V["exit_ev_ebitda"] * f28["adj_ebitda"] + f28["net_cash"]) / f28["shares_end"]
+    px["EV / adj. EBITDA, FY28E"] = px28_undisc / (1 + V["cost_of_equity"])
+    px["EV / adj. EBITDA, FY28E (undiscounted, value at end-FY2028; sensitivity)"] = px28_undisc
     g0 = V["dcf_start_growth"]
     ev = dcf(f27["fcf"], g0, V["dcf_years"], V["terminal_growth"], V["cost_of_equity"], V["terminal_growth"])
     px["DCF on FCF"] = (ev + f27["net_cash"]) / f27["shares_end"]
@@ -587,9 +596,10 @@ def valuation(annual, scen):
     px["EV / adj. EBITDA, FY27E (5 Sep multiples 18/22/25.5x)"] = \
         (legacy * f27["adj_ebitda"] + f27["net_cash"]) / f27["shares_end"]
     rows = [dict(scenario=scen, lens=k, price=v, upside_pct=100 * (v / V["price"] - 1)) for k, v in px.items()]
-    # the football field spans the six primary lenses; the SBC-adjusted DCF and the legacy 5 Sep
-    # multiples are shown but excluded, so the workbook and this mirror agree
-    core = {k: v for k, v in px.items() if "5 Sep" not in k and k != "DCF on SBC-adjusted FCF"}
+    # the football field spans the six primary lenses; the SBC-adjusted DCF, the legacy 5 Sep multiples
+    # and the undiscounted FY2028E sensitivity are shown but excluded, so the workbook and this mirror agree
+    core = {k: v for k, v in px.items()
+            if "5 Sep" not in k and "sensitivity" not in k and k != "DCF on SBC-adjusted FCF"}
     rows += [dict(scenario=scen, lens="Football field low", price=min(core.values()),
                   upside_pct=100 * (min(core.values()) / V["price"] - 1)),
              dict(scenario=scen, lens="Football field high", price=max(core.values()),

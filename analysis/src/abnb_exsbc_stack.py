@@ -79,6 +79,24 @@ def isnum(tk):
     return bool(re.match(r"^(\(\s*[\d,.]+\s*\)|\$?\s*[\d,.]+|—|-)$", tk))
 
 
+def header_years(toks, ncols):
+    """The footnote's column-header years, e.g. [2022, 2023, 2022, 2023] for the 4Q23 letter (three months ended
+    Dec 2022 / Dec 2023, then the two full years). Returns the run of `ncols` consecutive four-digit year tokens
+    immediately before the first function row ("Operations and support"), or None if the header cannot be read."""
+    stop = len(toks)
+    for i in range(len(toks) - 2):
+        if [w.rstrip(",").lower() for w in toks[i:i + 3]] == ["operations", "and", "support"]:
+            stop = i
+            break
+    yrs = []
+    for tk in toks[max(0, stop - ncols):stop]:
+        if re.fullmatch(r"20\d\d", tk):
+            yrs.append(int(tk))
+        else:
+            return None
+    return yrs if len(yrs) == ncols else None
+
+
 def find_row(toks, words, scale, ncols=None):
     n = len(words)
     for i in range(len(toks) - n):
@@ -172,7 +190,20 @@ def main():
                         continue
                     ncols = min(len(v) for v in fn.values())
                     tot = tot[:ncols]
-                    idx = min(range(ncols), key=lambda i2: abs(tot[i2] - target))
+                    # Column selection. Prefer the columns whose header YEAR is the quarter's own calendar year,
+                    # then take the nearest total inside that subset; fall back to nearest-total across all columns
+                    # only when the header years cannot be read. Nearest-total alone picked the wrong column for
+                    # 4Q23: the XBRL target is FY-less-9M ($270M) and |254 - 270| < |290 - 270|, so the Dec-2022
+                    # column was used where the letter's own Adjusted EBITDA reconciliation adds back the Dec-2023
+                    # column ($290M). That produced the -$36M 4Q23 identity gap (WS25 section 5c; fixed in WS26).
+                    cand = list(range(ncols))
+                    yrs = header_years(sl, ncols)
+                    if yrs:
+                        qyear = 2000 + int(q[2:])
+                        match = [i2 for i2 in cand if yrs[i2] == qyear]
+                        if match:
+                            cand = match
+                    idx = min(cand, key=lambda i2: abs(tot[i2] - target))
                     # Q4 quarters derived from XBRL (FY less 9M) differ from the letter's quarterly SBC by up to ~10%
                     if abs(tot[idx] - target) > 0.15 * target:
                         continue

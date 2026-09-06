@@ -1,18 +1,300 @@
 {
+  "method_version": 2,
+  "correction": "2026-09-06: replaced by WS23. The previous content used (a) a flat-vol jump estimate and (b) an 'upper bound' that attributed all incremental total variance to the event, and cross-checked against `abnb_options_ledger.csv`'s `event_implied_move_pct`, which was computed as sigma_near^2*T_near - sigma_far^2*T_near and equals E*(1 - T_near/T_far), not E (audit finding A08). Straddles were also summed from independently chosen nearest-strike calls and puts, and expiry choice was by proximity to a target date rather than by strict post-event eligibility.",
+  "method": "Total-variance model: sigma_i^2 * T_i = b * T_i + E * d_i, where d_i = 1 if expiry i settles strictly after the latest plausible release timestamp. Fitted by least squares over eligible ATM-IV maturities. b = annualised background variance, E = event variance (variance of the earnings log-return).",
+  "identification_requirement": "at least two post-event maturities, or at least one pre-event and one post-event maturity",
+  "assumptions": "A1 constant background variance across maturities used; A2 exactly one discrete event inside every post-event expiry and none inside pre-event expiries; A3 ATM IV proxies total expiry variance (no skew/variance-swap correction); A4 quotes contemporaneous across maturities",
+  "estimator_source": "analysis/src/abnb_options_ledger.py (schema v2)",
+  "acceptance_test": "analysis/src/overnight/23_options_estimator_test.py --dry-run (25/25 pass)",
+  "observation_datetime_utc": "2026-09-06T19:20:41",
   "spot": 181.94,
-  "expiry_pre": "2026-10-23",
-  "t1_years": 0.1287,
-  "atm_iv_pre_pct": 37.812146026218706,
-  "expiry_post": "2026-11-20",
-  "t2_years": 0.2053,
-  "atm_iv_post_pct": 38.138118623906266,
-  "jump_sd_flatvol_pct": 2.254710108214798,
-  "jump_sd_upper_bound_pct": 10.709282944602723,
-  "exp_abs_move_flatvol_pct": 1.7989983844307451,
-  "exp_abs_move_upper_pct": 8.544771518767961,
-  "note": "IVs are a single yfinance snapshot on strikes that are thin 60 days out; the two estimators bracket the truth. The event premium normally only appears in the last 1-2 weeks.",
-  "ledger_straddle_near_pct": 13.38,
-  "ledger_straddle_far_pct": 15.65,
-  "ledger_sqrt_time_implied_far_pct": 15.651861163923506,
-  "ledger_event_premium_pts": 0.0015910167510231332
+  "spot_source": "yfinance fast_info.last_price",
+  "event": {
+    "ticker": "ABNB",
+    "label": "Q3 2026",
+    "date_early": "2026-11-04",
+    "date_late": "2026-11-12",
+    "release_time_et": "after_close",
+    "confidence": "third_party_estimate",
+    "company_confirmed": false,
+    "sources": "Yahoo Finance earnings calendar 6 Sep 2026 = 2026-11-05 (single date, not a range); repo-wide working assumption 5 Nov 2026 (docs/overnight/00_BRIEF.md); historical Q3 prints 6 Nov 2025, 7 Nov 2024, 1 Nov 2023. Airbnb IR had NOT posted the date as of 6 Sep 2026 (16_news_since_5sep.csv)."
+  },
+  "post_event_weekly_6nov_listed": false,
+  "listed_post_event_expiries": [
+    "2026-11-20",
+    "2026-12-18",
+    "2027-01-15"
+  ],
+  "raw_measures_are_total_not_event": true,
+  "expiries": [
+    {
+      "expiry": "2026-09-11",
+      "event_class": "pre_event",
+      "dte_cal": 5,
+      "T_years": 0.013773,
+      "raw_atm_iv_pct": 32.215,
+      "raw_straddle_mid_pct_spot": 2.968,
+      "raw_straddle_bid_pct_spot": 2.6272,
+      "raw_straddle_ask_pct_spot": 3.3088,
+      "straddle_strike": 182.5,
+      "straddle_verified": true,
+      "quote_quality": "good",
+      "qq_flags": ""
+    },
+    {
+      "expiry": "2026-09-18",
+      "event_class": "pre_event",
+      "dte_cal": 12,
+      "T_years": 0.032952,
+      "raw_atm_iv_pct": 31.1225,
+      "raw_straddle_mid_pct_spot": 4.2734,
+      "raw_straddle_bid_pct_spot": 3.8474,
+      "raw_straddle_ask_pct_spot": 4.6994,
+      "straddle_strike": 182.5,
+      "straddle_verified": true,
+      "quote_quality": "fair",
+      "qq_flags": "stale_last_trade_gt_48h"
+    },
+    {
+      "expiry": "2026-09-25",
+      "event_class": "pre_event",
+      "dte_cal": 19,
+      "T_years": 0.05213,
+      "raw_atm_iv_pct": 35.3949,
+      "raw_straddle_mid_pct_spot": 5.3864,
+      "raw_straddle_bid_pct_spot": 4.1497,
+      "raw_straddle_ask_pct_spot": 6.6231,
+      "straddle_strike": 182.5,
+      "straddle_verified": true,
+      "quote_quality": "poor",
+      "qq_flags": "wide_spread_gt_25pct_of_mid;stale_last_trade_gt_48h"
+    },
+    {
+      "expiry": "2026-10-02",
+      "event_class": "pre_event",
+      "dte_cal": 26,
+      "T_years": 0.071308,
+      "raw_atm_iv_pct": 34.3879,
+      "raw_straddle_mid_pct_spot": 6.3208,
+      "raw_straddle_bid_pct_spot": 5.1665,
+      "raw_straddle_ask_pct_spot": 7.475,
+      "straddle_strike": 182.5,
+      "straddle_verified": true,
+      "quote_quality": "poor",
+      "qq_flags": "wide_spread_gt_25pct_of_mid;stale_last_trade_gt_48h"
+    },
+    {
+      "expiry": "2026-10-09",
+      "event_class": "pre_event",
+      "dte_cal": 33,
+      "T_years": 0.090486,
+      "raw_atm_iv_pct": 36.7407,
+      "raw_straddle_mid_pct_spot": 7.5437,
+      "raw_straddle_bid_pct_spot": 6.1284,
+      "raw_straddle_ask_pct_spot": 8.959,
+      "straddle_strike": 182.5,
+      "straddle_verified": true,
+      "quote_quality": "poor",
+      "qq_flags": "wide_spread_gt_25pct_of_mid;thin_open_interest_lt_10"
+    },
+    {
+      "expiry": "2026-10-16",
+      "event_class": "pre_event",
+      "dte_cal": 40,
+      "T_years": 0.109664,
+      "raw_atm_iv_pct": 32.7155,
+      "raw_straddle_mid_pct_spot": 8.2033,
+      "raw_straddle_bid_pct_spot": 7.6674,
+      "raw_straddle_ask_pct_spot": 8.7391,
+      "straddle_strike": 180.0,
+      "straddle_verified": true,
+      "quote_quality": "fair",
+      "qq_flags": "stale_last_trade_gt_48h"
+    },
+    {
+      "expiry": "2026-10-23",
+      "event_class": "pre_event",
+      "dte_cal": 47,
+      "T_years": 0.128842,
+      "raw_atm_iv_pct": 37.8058,
+      "raw_straddle_mid_pct_spot": 9.1101,
+      "raw_straddle_bid_pct_spot": 7.1177,
+      "raw_straddle_ask_pct_spot": 11.1026,
+      "straddle_strike": 185.0,
+      "straddle_verified": true,
+      "quote_quality": "poor",
+      "qq_flags": "wide_spread_gt_25pct_of_mid;stale_last_trade_gt_48h;thin_open_interest_lt_10;few_two_sided_strikes_lt_5"
+    },
+    {
+      "expiry": "2026-11-20",
+      "event_class": "post_event",
+      "dte_cal": 75,
+      "T_years": 0.205668,
+      "raw_atm_iv_pct": 38.1476,
+      "raw_straddle_mid_pct_spot": 13.3835,
+      "raw_straddle_bid_pct_spot": 12.9438,
+      "raw_straddle_ask_pct_spot": 13.8232,
+      "straddle_strike": 180.0,
+      "straddle_verified": true,
+      "quote_quality": "fair",
+      "qq_flags": "stale_last_trade_gt_48h"
+    },
+    {
+      "expiry": "2026-12-18",
+      "event_class": "post_event",
+      "dte_cal": 103,
+      "T_years": 0.282381,
+      "raw_atm_iv_pct": 38.6816,
+      "raw_straddle_mid_pct_spot": 15.6508,
+      "raw_straddle_bid_pct_spot": 14.9225,
+      "raw_straddle_ask_pct_spot": 16.379,
+      "straddle_strike": 180.0,
+      "straddle_verified": true,
+      "quote_quality": "fair",
+      "qq_flags": "stale_last_trade_gt_48h"
+    },
+    {
+      "expiry": "2027-01-15",
+      "event_class": "post_event",
+      "dte_cal": 131,
+      "T_years": 0.359093,
+      "raw_atm_iv_pct": 38.2208,
+      "raw_straddle_mid_pct_spot": 17.0111,
+      "raw_straddle_bid_pct_spot": 15.8019,
+      "raw_straddle_ask_pct_spot": 18.2203,
+      "straddle_strike": 180.0,
+      "straddle_verified": true,
+      "quote_quality": "fair",
+      "qq_flags": "stale_last_trade_gt_48h"
+    }
+  ],
+  "event_estimates": [
+    {
+      "spec_name": "all_eligible",
+      "status": "ok",
+      "detail": "identified",
+      "maturities_used": "2026-09-11:pre_event|2026-09-18:pre_event|2026-09-25:pre_event|2026-10-02:pre_event|2026-10-09:pre_event|2026-10-16:pre_event|2026-10-23:pre_event|2026-11-20:post_event|2026-12-18:post_event|2027-01-15:post_event",
+      "background_vol_pct": 36.209,
+      "event_var": 0.0045243,
+      "event_sd_pct": 6.726,
+      "event_exp_abs_move_pct": 5.367,
+      "event_var_sign": "positive"
+    },
+    {
+      "spec_name": "pre_plus_first_post",
+      "status": "ok",
+      "detail": "identified",
+      "maturities_used": "2026-10-23:pre_event|2026-11-20:post_event",
+      "background_vol_pct": 37.806,
+      "event_var": 0.00053393,
+      "event_sd_pct": 2.311,
+      "event_exp_abs_move_pct": 1.844,
+      "event_var_sign": "positive"
+    },
+    {
+      "spec_name": "first_two_post",
+      "status": "ok",
+      "detail": "non_positive_event_variance: the fitted term structure shows no event kink at these quotes. This is NOT evidence that the market prices no earnings premium; at this maturity it is normally thin/stale quotes or a background variance that is not constant across the maturities used.",
+      "maturities_used": "2026-11-20:post_event|2026-12-18:post_event",
+      "background_vol_pct": 40.078,
+      "event_var": -0.003106,
+      "event_sd_pct": null,
+      "event_exp_abs_move_pct": null,
+      "event_var_sign": "non_positive"
+    }
+  ],
+  "headline": {
+    "preferred_spec": null,
+    "verdict": "IDENTIFIED IN PRINCIPLE, NOT USABLE TODAY. The three specifications disagree from non-positive to 6.73% event standard deviation, and the fitted E is smaller than the noise in the pre-event ATM IV curve. Quote the raw term structure today; quote an event number only after the 6 Nov weekly lists.",
+    "event_sd_range_pct": [
+      2.311,
+      6.726
+    ],
+    "spec_pre_plus_first_post": {
+      "background_vol_pct": 37.806,
+      "event_sd_pct": 2.311,
+      "event_exp_abs_move_pct": 1.844,
+      "status": "ok"
+    },
+    "spec_all_eligible": {
+      "background_vol_pct": 36.209,
+      "event_sd_pct": 6.726,
+      "event_exp_abs_move_pct": 5.367,
+      "status": "ok"
+    },
+    "spec_first_two_post": {
+      "background_vol_pct": 40.078,
+      "event_var": -0.003106,
+      "event_sd_pct": null,
+      "event_var_sign": "non_positive",
+      "note": "both maturities contain the print; this is the pair the SUPERSEDED estimator used. Its fitted E is non-positive, which is a statement about the background term structure, not about the earnings premium."
+    }
+  },
+  "identification_diagnostics": {
+    "pre_event_atm_iv_curve_pct": [
+      32.215,
+      31.1225,
+      35.3949,
+      34.3879,
+      36.7407,
+      32.7155,
+      37.8058
+    ],
+    "pre_event_atm_iv_dispersion_pts": 6.683299999999999,
+    "pre_event_dispersion_meaning": "no scheduled event separates these weekly expiries, so this dispersion is measurement noise in the background baseline b",
+    "E_sensitivity_to_assumed_background": [
+      {
+        "assumed_background_vol_pct": 31.12,
+        "event_var": 0.01001161,
+        "event_sd_pct": 10.006,
+        "note": ""
+      },
+      {
+        "assumed_background_vol_pct": 32.22,
+        "event_var": 0.00857864,
+        "event_sd_pct": 9.262,
+        "note": ""
+      },
+      {
+        "assumed_background_vol_pct": 32.72,
+        "event_var": 0.00791083,
+        "event_sd_pct": 8.894,
+        "note": ""
+      },
+      {
+        "assumed_background_vol_pct": 34.39,
+        "event_var": 0.00560584,
+        "event_sd_pct": 7.487,
+        "note": ""
+      },
+      {
+        "assumed_background_vol_pct": 35.39,
+        "event_var": 0.00417069,
+        "event_sd_pct": 6.458,
+        "note": ""
+      },
+      {
+        "assumed_background_vol_pct": 36.74,
+        "event_var": 0.00216798,
+        "event_sd_pct": 4.656,
+        "note": ""
+      },
+      {
+        "assumed_background_vol_pct": 37.81,
+        "event_var": 0.0005274,
+        "event_sd_pct": 2.297,
+        "note": ""
+      }
+    ],
+    "conclusion": "E moves from non-positive to mid-single-digit percent across the range of background vols the pre-event weeklies themselves span. The event variance is inside the noise at this maturity."
+  },
+  "historical_base_rate_abs_day1_move_pct": 7.07,
+  "historical_base_rate_median_pct": 6.87,
+  "caveats": [
+    "The 6 Nov 2026 weekly is not listed yet; the nearest post-event expiry is 20 Nov, 15 days after the estimated print, so E also absorbs any other catalyst in that window and is estimated off a wide, thin strike grid.",
+    "Yahoo implied volatilities, single snapshot, no skew/variance-swap correction: ATM IV is a proxy for total expiry variance, not the variance swap rate.",
+    "The event date is a third-party estimate, not company-confirmed. Eligibility is robust to that uncertainty (the whole plausible window sits between the 23 Oct and 20 Nov expiries), but the identity of the event inside the 20 Nov expiry is not.",
+    "A non-positive fitted E means the term structure shows no event kink at these quotes. It is NOT evidence that the market prices no earnings premium."
+  ],
+  "rerun": "Re-run analysis/src/abnb_options_ledger.py in the week of 26-30 Oct 2026, once the 6 Nov 2026 weekly is listed. That gives a post-event expiry 1 day after the print and turns E into a usable number."
 }

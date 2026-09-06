@@ -28,7 +28,11 @@ import pandas as pd
 import statsmodels.api as sm
 from scipy import stats
 
-ROOT = r"C:\Users\krish\citadel-abnb-overnight"
+# WS24 / audit finding A07 (6 Sep 2026): resolve the project root from this file (or from
+# ABNB_ROOT, which 16_merge_and_rerun.py sets when it re-runs this script) instead of
+# hard-coding one machine's absolute path.
+ROOT = os.environ.get("ABNB_ROOT") or os.path.abspath(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 DP = os.path.join(ROOT, "data", "processed")
 OUT = os.path.join(DP, "overnight")
 

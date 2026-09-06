@@ -19,7 +19,11 @@ import csv, json, os, urllib.request
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..")
 P = lambda *a: os.path.join(ROOT, *a)
-CACHE = os.environ.get("XBRL_CACHE", r"C:\Users\krish\AppData\Local\Temp\claude\C--Users-krish-citadel-abnb\fe93ae72-a37b-4547-991f-690c32a0f6a0\scratchpad\07")
+# WS24 / audit finding A07 (6 Sep 2026): the download cache used to default to one user's
+# session scratchpad. It now defaults inside the project (git-ignored) and is still
+# overridable with ABNB_SCRATCH; the scripts re-download whatever is not cached.
+CACHE = os.environ.get("XBRL_CACHE") or os.environ.get("ABNB_SCRATCH") or P("data", "cache", "07")
+os.makedirs(CACHE, exist_ok=True)
 UA = {"User-Agent": "citadel-abnb research ksurapaneni@ufl.edu"}
 CIK = {"ABNB": 1559720, "BKNG": 1075531, "EXPE": 1324424, "TRIP": 1526520, "UBER": 1543151, "DASH": 1792789, "META": 1326801, "NFLX": 1065280, "DUOL": 1562088, "SPOT": 1639920}
 YEARS = [2021, 2022, 2023, 2024, 2025]

@@ -1113,11 +1113,44 @@ def main():
     esum.to_csv(OUT / "09_event_study_summary.csv", index=False)
 
     # ---------------- options ----------------
+    # WS23 / audit A08 (6 Sep 2026), guard added in WS26. The inline block in implied_vs_realised()
+    # is method_version 1: its `jv_upper` bounds total incremental variance rather than event
+    # variance, and its straddle cross-check used the defective ledger column. WS23 rewrote the
+    # estimator (analysis/src/abnb_options_ledger.py + 23_update_ws09_options.py) and wrote the
+    # corrected artefacts here. Re-running this script must NOT silently undo that: if the JSON on
+    # disk is method_version >= 2, the legacy block goes to a separate _legacy file and the
+    # corrected live_* columns are carried across into the rebuilt CSV untouched.
     ivr, live = implied_vs_realised(pxi, prints)
-    for k, v in live.items():
-        ivr[f"live_{k}"] = v
-    ivr.to_csv(OUT / "09_implied_vs_realised.csv", index=False)
-    (OUT / "09_implied_move_live.json").write_text(json.dumps(live, indent=2, default=str))
+    live["method_version"] = 1
+    jpath, cpath = OUT / "09_implied_move_live.json", OUT / "09_implied_vs_realised.csv"
+    corrected = None
+    if jpath.exists():
+        try:
+            _ex = json.loads(jpath.read_text(encoding="utf-8"))
+            _v = _ex.get("method_version")
+            if _v is None and ("event_estimates" in _ex or "estimator_source" in _ex):
+                _v = 2                      # WS23 schema, written before method_version existed
+            if _v is not None and int(_v) >= 2:
+                corrected = _ex
+        except Exception:
+            corrected = None
+    if corrected is not None:
+        (OUT / "09_implied_move_live_legacy.json").write_text(
+            json.dumps(live, indent=2, default=str), encoding="utf-8")
+        prev = pd.read_csv(cpath) if cpath.exists() else None
+        if prev is not None and len(prev):
+            for c in [c for c in prev.columns if c.startswith("live_")]:
+                ivr[c] = prev[c].iloc[0]
+        ivr.to_csv(cpath, index=False)
+        print("09_implied_move_live.json: NOT overwritten (method_version >= 2, the WS23 / audit-A08 "
+              "estimator). This script's legacy block was written to 09_implied_move_live_legacy.json "
+              "and the corrected live_* columns were carried into 09_implied_vs_realised.csv. To "
+              "refresh the options snapshot, run analysis/src/overnight/23_update_ws09_options.py.")
+    else:
+        for k, v in live.items():
+            ivr[f"live_{k}"] = v
+        ivr.to_csv(cpath, index=False)
+        jpath.write_text(json.dumps(live, indent=2, default=str), encoding="utf-8")
 
     # ---------------- rules ----------------
     moves = pd.read_csv(PROC / "abnb_major_moves_events.csv")

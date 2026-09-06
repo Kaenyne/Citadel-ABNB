@@ -229,28 +229,47 @@ for y in [2021, 2022, 2023, 2024, 2025]:
 sup = pd.concat([sup, pd.DataFrame(npl)], ignore_index=True)
 
 # Inside Airbnb retention: year-ago pairs, by city and end year.
-# Exclude any pair where either dump is partial-scope (Inside Airbnb changed the geographic scope of
-# several 2026 monthlies; a partial dump looks like mass churn). Flag from inside_airbnb_city_snapshots.csv.
+# WS21 (audit A04), applied by WS26: use the PUBLISHED `pair_eligible` / `exclusion_reason` columns
+# that `inside_airbnb_supply_panel.py` now writes, instead of re-deriving the join from the snapshot
+# table here. Same policy in one place; the resulting rows are identical to the hand-rolled join.
+# `span_step_warning` marks pairs that straddle a permanent listing-count step (all four 2026 Austin
+# pairs and one Barcelona pair): those are scope steps, not churn, and are reported separately.
 lfl = pd.read_csv(P("data", "processed", "inside_airbnb_like_for_like.csv"))
-snaps = pd.read_csv(P("data", "processed", "inside_airbnb_city_snapshots.csv"))
-scope = snaps.set_index(["city", "dump_date"])["partial_scope"].astype(bool).to_dict()
 ya = lfl[lfl["pair_type"] == "year_ago"].copy()
-ya["partial_a"] = [bool(scope.get((c, d), False)) for c, d in zip(ya["city"], ya["date_a"])]
-ya["partial_b"] = [bool(scope.get((c, d), False)) for c, d in zip(ya["city"], ya["date_b"])]
 n_pairs_all = len(ya)
-ya_partial = ya[ya["partial_a"] | ya["partial_b"]]
-ya = ya[~(ya["partial_a"] | ya["partial_b"])].copy()
-print(f"Inside Airbnb year-ago pairs: {n_pairs_all} total, {len(ya_partial)} dropped as partial-scope, {len(ya)} kept")
+ya_partial = ya[~ya["pair_eligible"].astype(bool)]
+ya = ya[ya["pair_eligible"].astype(bool)].copy()
+print(f"Inside Airbnb year-ago pairs: {n_pairs_all} total, {len(ya_partial)} dropped as ineligible "
+      f"(pair_eligible=False), {len(ya)} kept")
 if len(ya_partial):
     print("  dropped mean retention %.3f vs kept %.3f" % (ya_partial["retention"].mean(), ya["retention"].mean()))
+    print("  exclusion reasons: " + "; ".join(f"{k} {v}" for k, v in
+          ya_partial["exclusion_reason"].value_counts().items()))
 ya["end_year"] = ya["date_b"].str[:4].astype(int)
+ya["step"] = ya["span_step_warning"].fillna(False).astype(bool)
 ret = ya.groupby(["city", "end_year"]).agg(retention=("retention", "mean"), new_share=("new_share_b", "mean"), exits_reviewed=("exit_reviewed_ltm_share", "mean"),
                                            matched_reviews_chg=("matched_reviews_ltm_chg", "mean"), n=("retention", "size")).reset_index()
 ret_wide = ret.pivot(index="city", columns="end_year", values="retention")
+SRC_RET = ("data/processed/inside_airbnb_like_for_like.csv (pair_type=year_ago, pair_eligible=True, "
+           "mean over pairs ending in year; eligibility from inside_airbnb_supply_panel.py, WS21/A04)")
+step_cities = set(ya.loc[ya["step"], "city"])
 for _, r in ret.iterrows():
+    warn = (" SCOPE ARTEFACT: these pairs straddle a permanent listing-count step, so this is a scope "
+            "reduction, not churn - do not read it as a market exit." if r.city in step_cities and
+            bool(ya[(ya.city == r.city) & (ya.end_year == r.end_year)]["step"].any()) else "")
     sup.loc[len(sup)] = [f"{r.end_year}-12-31", f"inside_airbnb_year_ago_retention_{r.city}", round(r.retention, 3), "share",
-                         f"new-listing share {r.new_share:.2f}; exits with review LTM {r.exits_reviewed:.2f}; matched-listing reviews LTM chg {r.matched_reviews_chg:+.2f}; n pairs {int(r.n)}",
-                         "data/processed/inside_airbnb_like_for_like.csv (pair_type=year_ago, mean over pairs ending in year, partial-scope dumps excluded via inside_airbnb_city_snapshots.csv)"]
+                         f"new-listing share {r.new_share:.2f}; exits with review LTM {r.exits_reviewed:.2f}; matched-listing reviews LTM chg {r.matched_reviews_chg:+.2f}; n pairs {int(r.n)}" + warn,
+                         SRC_RET]
+# Six-city ex-Austin summary (WS21): the headline "retention is falling" number, with Austin's scope
+# step removed. Austin has no comparable year-ago pair at all until the Sep 2026 dump lands.
+both = set(ret[ret.end_year == 2025].city) & set(ret[ret.end_year == 2026].city)
+six = sorted(both - {"austin"})
+for yr in (2025, 2026):
+    sel = ya[(ya.end_year == yr) & (ya.city.isin(six))]
+    sup.loc[len(sup)] = [f"{yr}-12-31", "inside_airbnb_year_ago_retention_six_city_ex_austin",
+                         round(sel["retention"].mean(), 3), "share",
+                         f"cities {'/'.join(six)}; new-listing share {sel['new_share_b'].mean():.3f}; n pairs {len(sel)}",
+                         SRC_RET]
 # CC survival by year (informative crawls)
 cc = pd.read_csv(P("data", "processed", "cc_listing_survival.csv"))
 cci = cc[cc["status_informative"]]

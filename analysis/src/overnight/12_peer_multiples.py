@@ -35,7 +35,11 @@ import matplotlib.pyplot as plt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 P = lambda *a: os.path.join(ROOT, *a)
-S = r"C:\Users\krish\AppData\Local\Temp\claude\C--Users-krish-citadel-abnb\fe93ae72-a37b-4547-991f-690c32a0f6a0\scratchpad\12"
+# WS24 / audit finding A07 (6 Sep 2026): the download cache used to default to one user's
+# session scratchpad. It now defaults inside the project (git-ignored) and is still
+# overridable with ABNB_SCRATCH; the scripts re-download whatever is not cached.
+S = os.environ.get("ABNB_SCRATCH") or P("data", "cache", "12")
+os.makedirs(S, exist_ok=True)
 OUT = P("data", "processed", "overnight"); FIG = P("analysis", "figures", "overnight")
 AS_OF = pd.Timestamp("2026-09-04")
 

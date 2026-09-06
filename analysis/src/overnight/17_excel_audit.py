@@ -18,6 +18,7 @@ RUN   py -3.13 analysis/src/overnight/17_excel_audit.py
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import importlib.util
 import os
@@ -30,6 +31,21 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OD = lambda n: os.path.join(ROOT, "data", "processed", "overnight", n)   # noqa: E731
 XLSX = os.path.join(ROOT, "model", "ABNB_driver_model.xlsx")
+
+# WS24 / audit finding A13 (6 Sep 2026). Two tolerances, both needed, both justified:
+#   REL_TOL 1e-6  a pure relative test on numbers that live on very different scales ($M revenue,
+#                 dollars per share, fractions for margins). 1e-6 is ~9 significant figures, far
+#                 inside IEEE-754 double precision but far outside anything Excel's own evaluation
+#                 order can move: the observed worst case across all 216 named outputs is 4.2e-15.
+#   ABS_TOL 1e-6  a relative test is undefined on the Recon sheet's 216 delta cells, which are
+#                 exactly 0 by construction, and it is meaninglessly strict on any other near-zero
+#                 residual. In the workbook's units 1e-6 is one US dollar on a $-million line,
+#                 1e-4 basis points on a margin, and a hundredth of a cent per share - below the
+#                 precision of every input the model is built from.
+# A cell passes when EITHER test passes. Anything else is a material reconciliation failure and
+# sets the process exit status.
+REL_TOL = 1e-6
+ABS_TOL = 1e-6
 
 _es = importlib.util.spec_from_file_location("xe13", os.path.join(HERE, "13_xlsx_eval.py"))
 XE = importlib.util.module_from_spec(_es)
@@ -54,8 +70,8 @@ def rel(a, b):
 
 
 # ---------------------------------------------------------------------------- load the Excel dump
-def load_dump():
-    d = pd.read_csv(OD("17_excel_recalc_dump.csv"))
+def load_dump(path=None):
+    d = pd.read_csv(path or OD("17_excel_recalc_dump.csv"))
     d["formula"] = d["formula"].fillna("")
     d["value"] = d["value"].fillna("")
     val, txt = {}, {}
@@ -130,10 +146,45 @@ def python_mirror():
     return out, prices
 
 
-def main():
-    d, xval, xtxt = load_dump()
+def build_parser():
+    p = argparse.ArgumentParser(
+        description="Reconcile model/ABNB_driver_model.xlsx against a native Excel recalculation "
+                    "and the workstream-13 Python mirror. Exit 0 = the model reconciles; exit 1 = "
+                    "a material reconciliation failure (the informational static scan never sets "
+                    "the exit status).")
+    p.add_argument("--root", default=ROOT,
+                   help="project root (default: found relative to this script file)")
+    p.add_argument("--dump", default=None,
+                   help="Excel recalculation dump CSV "
+                        "(default: <root>/data/processed/overnight/17_excel_recalc_dump.csv, "
+                        "written by 17_recalc_dump.ps1)")
+    p.add_argument("--workbook", default=None,
+                   help="workbook to re-evaluate (default: <root>/model/ABNB_driver_model.xlsx)")
+    p.add_argument("--out-dir", default=None,
+                   help="where the three report CSVs go (default: <root>/data/processed/overnight)")
+    p.add_argument("--rel-tol", type=float, default=REL_TOL)
+    p.add_argument("--abs-tol", type=float, default=ABS_TOL)
+    return p
+
+
+def main(argv=None):
+    args = build_parser().parse_args(argv)
+    root = os.path.abspath(args.root)
+    od = args.out_dir or os.path.join(root, "data", "processed", "overnight")
+    os.makedirs(od, exist_ok=True)
+    OUT = lambda n: os.path.join(od, n)                                  # noqa: E731
+    IN = lambda n: os.path.join(root, "data", "processed", "overnight", n)   # noqa: E731
+    dump_path = args.dump or IN("17_excel_recalc_dump.csv")
+    xlsx = args.workbook or os.path.join(root, "model", "ABNB_driver_model.xlsx")
+    rel_tol, abs_tol = args.rel_tol, args.abs_tol
+    for p in (dump_path, xlsx, IN("13_reconciliation.csv")):
+        if not os.path.exists(p):
+            print(f"FAIL: required input missing: {p}")
+            return 2
+
+    d, xval, xtxt = load_dump(dump_path)
     pym, _prices = python_mirror()
-    ev = XE.evaluate_workbook(XLSX)
+    ev = XE.evaluate_workbook(xlsx)
     formulas = d[d.formula.str.startswith("=")]
 
     # ---------------------------------------------------------------- 1. all formula cells
@@ -148,18 +199,19 @@ def main():
         rl = rel(x, got) if isinstance(got, (int, float)) else None
         ad = (None if (x is None or not isinstance(got, (int, float))) else abs(x - got))
         # a relative test is meaningless when both sides are ~0 (the Recon delta column), so an
-        # absolute floor of 1e-6 (the workbook's unit is $M, or a fraction) counts as a match
-        ok = (rl is not None and rl <= 1e-6) or (ad is not None and ad <= 1e-6)
+        # absolute floor (see REL_TOL / ABS_TOL above) counts as a match
+        ok = (rl is not None and rl <= rel_tol) or (ad is not None and ad <= abs_tol)
         if not ok:
             mism += 1
         allrows.append(dict(sheet=r.sheet, address=r.address, formula=r.formula,
                             excel_value=x, evaluator_value=got, abs_diff=ad,
                             rel_diff=rl, pass_1e6=("yes" if ok else "no"), note=err))
-    pd.DataFrame(allrows).to_csv(OD("17_all_formula_cells.csv"), index=False)
-    print(f"[1] all formula cells: {len(allrows)} compared, {mism} outside 1e-6 relative")
+    pd.DataFrame(allrows).to_csv(OUT("17_all_formula_cells.csv"), index=False)
+    print(f"[1] all formula cells: {len(allrows)} compared, {mism} outside "
+          f"{rel_tol:g} relative / {abs_tol:g} absolute")
 
     # ---------------------------------------------------------------- 2. the 216 named outputs
-    recon = pd.read_csv(OD("13_reconciliation.csv"))
+    recon = pd.read_csv(IN("13_reconciliation.csv"))
     rows, bad = [], 0
     for r in recon.itertuples():
         sh, coord = r.cell_reference.split("!")
@@ -168,7 +220,11 @@ def main():
         e = ev.cell(sh, coord)
         p = pym[r.item]                       # full precision, re-run in process
         rl = rel(x, p)
-        ok = rl is not None and rl <= 1e-6
+        ad2 = None if x is None else abs(x - p)
+        # EITHER test passes: the relative one carries the scale-free comparison, the absolute
+        # one keeps a legitimate near-zero residual (a Recon delta cell is exactly 0) from
+        # failing a relative test that is undefined there.
+        ok = (rl is not None and rl <= rel_tol) or (ad2 is not None and ad2 <= abs_tol)
         if not ok:
             bad += 1
         rows.append(dict(output=r.item, cell_reference=r.cell_reference, excel_value=x,
@@ -177,8 +233,9 @@ def main():
                          excel_vs_evaluator_rel=rel(x, e),
                          python_value_as_written_to_13_reconciliation_csv=float(r.python_value),
                          **{"pass": "yes" if ok else "no"}))
-    pd.DataFrame(rows).to_csv(OD("17_excel_vs_python.csv"), index=False)
-    print(f"[2] named outputs: {len(rows)} compared, {bad} fail at 1e-6 relative")
+    pd.DataFrame(rows).to_csv(OUT("17_excel_vs_python.csv"), index=False)
+    print(f"[2] named outputs: {len(rows)} compared, {bad} fail at "
+          f"{rel_tol:g} relative / {abs_tol:g} absolute")
 
     # ---------------------------------------------------------------- 3. static formula review
     findings = []
@@ -251,12 +308,38 @@ def main():
                         f"row {r1} of {sh} is populated "
                         f"{get_column_letter(min(row_pop))}-{get_column_letter(max(row_pop))}", "")
 
-    pd.DataFrame(findings).to_csv(os.path.join(ROOT, "data", "processed", "overnight",
-                                               "17_auto_scan.csv"), index=False)
-    print(f"[3] auto scan: {len(findings)} raw hits -> data/processed/overnight/17_auto_scan.csv")
+    pd.DataFrame(findings).to_csv(OUT("17_auto_scan.csv"), index=False)
+    print(f"[3] auto scan (INFORMATIONAL, never sets the exit status): {len(findings)} raw "
+          f"pattern hits -> 17_auto_scan.csv")
     for k, g in pd.DataFrame(findings).groupby("issue_type"):
         print(f"      {k}: {len(g)}")
 
+    # ---------------------------------------------------------------- validation verdict
+    # WS19 / audit finding A13 (6 Sep 2026): this script used to print its mismatch counts and exit 0
+    # regardless, so "it ran" was not the same as "the model reconciles". Sections 1 and 2 are true
+    # validations and now set the exit status; section 3 is an informational static scan (hundreds of
+    # raw pattern hits are not hundreds of defects) and deliberately does not.
+    expected_outputs = len(recon)
+    failures = []
+    if bad:
+        failures.append(f"{bad} of {len(rows)} named outputs fail Excel-vs-Python at "
+                        f"{rel_tol:g} relative / {abs_tol:g} absolute")
+    if len(rows) != expected_outputs:
+        failures.append(f"compared {len(rows)} named outputs, expected {expected_outputs}")
+    if mism:
+        failures.append(f"{mism} of {len(allrows)} formula cells fail Excel-vs-evaluator at "
+                        f"{rel_tol:g} relative / {abs_tol:g} absolute")
+    missing_cells = [r["output"] for r in rows if r["excel_value"] is None]
+    if missing_cells:
+        failures.append(f"{len(missing_cells)} required output cells missing from the Excel dump: "
+                        f"{missing_cells[:5]}")
+    if failures:
+        print("\nFAIL: " + "; ".join(failures))
+        return 1
+    print(f"\nPASS: {len(rows)}/{expected_outputs} named outputs and {len(allrows)} formula cells "
+          f"reconcile; {len(findings)} informational static-scan hits")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

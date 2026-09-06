@@ -3,7 +3,30 @@
 Reads: nothing at runtime - the verification evidence is recorded inline, each row
 naming the primary file / URL that was actually opened during the red-team pass."""
 import csv, os
-OUT = r"C:\Users\krish\citadel-abnb-overnight\data\processed\overnight"
+
+# WS19 repair (6 Sep 2026): project-relative output root, and a CSV-integrity pass on write.
+# Both files are read by humans in Excel as well as by pandas, so two serialisation rules apply:
+#   1. workstream ids are written "WS05", not "05" - Excel strips the leading zero of a bare "05";
+#   2. any cell whose first character is = + - or @ is written with ONE leading space, because Excel
+#      parses such a cell as a formula. Left unguarded, Excel silently turned the claim-checks cell
+#      "+0.69 / 0.0005 / +0.72" into the number 1916.667 and "+4.0 / +2.6" into 1.538462.
+# Strip() the values if you parse the files with pandas.
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
+OUT = os.path.join(ROOT, "data", "processed", "overnight")
+
+FORMULA_LEAD = ("=", "+", "-", "@")
+
+
+def safe(v):
+    """Return a cell Excel will keep as text (see rule 2 above)."""
+    v = "" if v is None else str(v)
+    return " " + v if v[:1] in FORMULA_LEAD else v
+
+
+def ws(v):
+    """'05' -> 'WS05'; anything non-numeric (e.g. 'driver model (pre-existing)') passes through."""
+    v = str(v)
+    return "WS" + v if v.isdigit() else v
 
 C = [
 ("01","217 distinct series in the census; 176 Krish / 34 Theo / 7 nobody","217 / 176 / 34 / 7","217 rows in file","data/processed/overnight/01_data_census.csv","confirmed","Row count matches; ownership split not independently re-tallied."),
@@ -49,7 +72,7 @@ C = [
 ("06","CoStar US hotel ADR $171.74 in July 2026, +5.7% y/y, RevPAR +8.2%","171.74/+5.7/+8.2","not independently verifiable - CoStar is subscription-only; the note records a 26 Aug 2026 publication date","research/notes/overnight/06 section 1.2","unverifiable","Hand-entered external. FRED CPI lodging is +2.83% y/y in July 2026 - a materially smaller number. Do not present +5.7% as if CPI agrees."),
 ("06","CPI lodging away from home went -1.9% (Jan 2026) to +5.0% (May 2026)","-1.9 / +5.0","-1.89 / +5.03","FRED CUSR0000SEHB","confirmed",""),
 ("06","2Q26 bedroom nights +12% vs nights +10%; LTM >1bn bedroom nights; >=1.79 bedrooms/night; ADR per bedroom-night <=$103","12/10/1bn/1.786/102.87","letter: 'grew over 12%' vs nights 10%, 'more than 1 billion' LTM; 1000/560.0=1.786; 183.73/1.786=102.89","data/raw/letters/2Q26_d70413dex991.htm; abnb_driver_history_quarterly.csv","confirmed","Caveat: an LTM bedrooms-per-night ratio is applied to a single-quarter ADR. Both bounds are stated correctly as 'at least'/'at most'."),
-("06","About half of active listings were on the single 15.5% fee by 2Q26","~50% at 2Q26","1Q26 call: 'over a quarter of our active listings'. 2Q26 call: API hosts done, 'begun migrating the remainder', entire base by year-end. No ~50% figure exists.","data/raw/regulatory/transcripts/2026-Q1.json, 2026-Q2.txt; 2Q26 letter","unsupported","A reasonable interpolation, not a disclosure. See CONF-11."),
+("06","About half of active listings were on the single 15.5% fee by 2Q26","~50% at 2Q26","2Q26 call, prepared remarks: 'Approximately half of our active listings are now subject to the single service fee.' The figure is disclosed.","data/raw/regulatory/transcripts/2026-Q2.txt line 272","confirmed","WS19 correction (6 Sep 2026): originally graded 'unsupported' on the grounds that no ~50% figure existed. It does - in the call, though not in the shareholder letter. The red-team pass searched the letter and the 1Q26 call. See CONF-11, also corrected."),
 ("06","1.71m fee-inclusive quotes; separate cleaning-fee line in 0.02% of quotes, service-fee line in 0%","1.71m / 0.02% / 0%","1,707,390 quotes; quote-weighted cleaning-fee line 0.004-0.007%; service-fee line 0.000%","data/processed/overnight/06_quote_discount_panel.csv","confirmed","Cleaning-fee share is ~0.006%, not 0.02%; immaterial to the point."),
 ("06","Share of quotes carrying a discount rose from 10.9% (Mar 2026) to 31.4% (Aug 2026), higher in all 13 cities","10.9 -> 31.4","10.9 and 31.4 are CROSS-CITY MEDIANS; the quote-weighted shares are 17.3% -> 31.4%. March covers 10 cities, August 13.","06_quote_discount_panel.csv","wrong","Two problems. (1) Mislabelled - 'share of available quotes' is 17.3%, the median city is 10.9%. (2) Confounded - the share of quotes carrying a TAXES line goes 0.20% (May) -> 0.58% (Jun) -> 5.65% (Jul) -> 6.54% (Aug) and NYC swings 41.5 -> 25.3 -> 43.5, i.e. the quote schema changed mid-series. Do not slide without a matched-listing panel."),
 ("06","Hedonic: bedroom +15.1%, rating>=4.9 +9.5%, Superhost +1.0%, n=1.38m","15.1/9.5/1.0/1.38m","+15.05 / +9.50 / +1.01, n 1,375,944 on the quote_per_night basis","data/processed/overnight/06_wtp_hedonic_coefs.csv","confirmed","On the listed_nightly basis Superhost is -1.2%; the note correctly uses the quote basis and says 'do not model a Superhost premium'."),
@@ -73,7 +96,7 @@ C = [
 ("09","Up-prints drift -7.1% at 20d (t -2.58) and -14.8% at 60d (t -2.36, negative 8 of 10); down-prints -0.7% / +0.4%","as stated","-7.096 / -2.579; -14.803 / -2.362 / share_positive 0.20; -0.683 / +0.437","same","confirmed",""),
 ("09","From 2023 the all-print drift is -2.3% (t -1.15, not significant) - the fade has broken","-2.3 / -1.15","-2.316 / -1.148","same","confirmed","Honest self-limitation; keep it in the pitch."),
 ("09","May: underperformed QQQ in all six years, mean -14.5%, p 0.0016; Feb +7.7% 6 of 6 p 0.005; Nov -5.1% 5 of 5 p 0.03","as stated","-14.483 / p 0.00156 / 0 of 6 positive; +7.667 / 6 of 6 / p 0.0047; -5.054 / 0 of 5 / p 0.0273","data/processed/overnight/09_seasonality.csv (excess_QQQ)","confirmed","54 seasonal tests in the file, matching the stated scan size. May vs the BKNG/EXPE average (-6.4%, p 0.045, 6 of 6) also confirmed."),
-("09","Mean absolute day-1 earnings move 7.07% (median 6.87%); no implied event premium 60 days out (0.002 pts)","7.07/6.87/0.002","7.072; straddle ledger 13.38 near / 15.65 far, event premium 0.0016 pts","09_implied_vs_realised.csv; 09_implied_move_live.json","confirmed",""),
+("09","Mean absolute day-1 earnings move 7.07% (median 6.87%); no implied event premium 60 days out (0.002 pts)","7.07/6.87/0.002","7.072 confirmed (n 23). The 0.002-pt event premium is WITHDRAWN: the 13.38 / 15.65 comparison it cites is two POST-event expiries (20 Nov and 18 Dec 2026), and the old estimator's difference of squared vols recovers E x (1 - T_near/T_far), not E - so it cannot detect an event premium at all. On the rebuilt estimator the three identified specifications span non-positive to 6.73% event sigma, i.e. not identified; the 6 Nov 2026 weekly was not listed on 6 Sep 2026","09_implied_vs_realised.csv; 09_implied_move_live.json; 23_options_event_estimates.csv; research/notes/overnight/23_options-estimator-fix.md","wrong","Half confirmed, half withdrawn, so the row is scored WRONG. The 7.07% / 6.87% base rate stands and is the number for the 5 Nov card. The options half is withdrawn under audit A08 (WS23, 6 Sep 2026): do not quote any ABNB event-implied move, and do not read the non-positive fit as 'the market prices no event premium'. Re-run the estimator in the week of 26-30 Oct 2026, once the 6 Nov weekly lists."),
 ("09","Beta to the 10-year yield is statistically zero in every year (|t| <= 0.9)","0.0","not re-estimated","09_factor_model_by_period.csv","unverifiable","Not re-fitted in this pass."),
 ("09","Mean live price target $179.88 across 32 targets, -1.1% vs $181.94 spot","179.88 / 32","179.875 / 32 / -1.13%","09_positioning_ratings_monthly.csv last row","confirmed","WS12 reports $179.55 across 31 for the same date. See CONF-09."),
 ("09","Sell-side 49% Buy / 43% Hold / 8% Sell, 49 firms","49/43/8/49","0.4898 / 0.4286 / 0.0816 / 49","same","confirmed",""),
@@ -88,9 +111,9 @@ C = [
 ("10","Canadian trips to the US -31% mid-2025, positive from April 2026 (+1.8 / +9.9 / +5.0)","as stated","present in the benchmark file; StatCan table 24-10-0053 cited","10_bench_canada_travel_monthly.csv","confirmed","Not re-pulled from StatCan."),
 ("11","Airbnb's share of the two-player alt-accom nights pool fell 59.4% (2022) to 54.5% (2025); reversed in 1H26","59.4 -> 54.5","values in the file; BKNG Q2'26 alt-accom room nights +4% verified against the SEC-filed release (total room nights 325m, +5%)","11_alt_accom_share.csv; BKNG Q2 2026 earnings release on sec.gov","confirmed","BKNG's alt-accom MIX is a rounded 'approximately 30/33/35%' management figure, so the share LEVEL is +/-1-2pts. The note says so."),
 ("11","Nights per average active listing flat at 62.5 / 62.7 / 62.6 / 62.7 for 2022-25","62.5-62.7","arithmetic reproduces from nights / midpoint listings (6.30, 7.15, 7.85, 8.50m); 'over 8 million' (4Q24) and 'over 9 million' (4Q25) confirmed in the letters","11_supply_economics.csv; 4Q24 and 4Q25 letters","confirmed","Precision is illusory: listing levels are rounded to the nearest million, so +/-0.2 constancy sits inside the input error. It also restates a company disclosure ('active listings grew relatively in-line with Nights and Seats Booked', 4Q25 letter). Keep the conclusion, drop the decimals."),
-("11","Inside Airbnb year-ago retention fell 75.4% -> 71.1% across seven cities; gross adds 25-26% of the ending base","75.4 -> 71.1","values present in the file","11_supply_economics.csv","confirmed","Seven cities, one year-pair. Not re-derived from the dumps."),
+("11","Inside Airbnb year-ago retention fell 75.4% -> 71.1% across seven cities; gross adds 25-26% of the ending base","75.4 -> 71.1","the seven-city arithmetic reproduces, but the seven-city set includes Austin, whose four 2026 pairs straddle a permanent listing-count step (15,187 listings Jun 2025 -> ~11,000 from Sep 2025) rather than measuring churn. Ex-Austin, six cities: 75.5% -> 73.4% (-2.1 pts, n 14 and 34 pairs), gross adds flat at 25.4% -> 25.4%","11_supply_economics.csv (inside_airbnb_year_ago_retention_six_city_ex_austin); 21_pair_eligibility_delta.csv; research/notes/overnight/21_inside-airbnb-pair-eligibility.md","wrong","Restated 7 Sep 2026 under audit A04 (WS21). The direction survives at HALF the size and the new-listing share is exactly flat, not drifting up. The note and 11_supply_economics.csv now carry the ex-Austin figure and label the Austin 2026 row a scope artefact."),
 ("11","Booking disclosed AI tools drove <1% of room nights in Q2'26; mid-case AI referral cost FY28 $329m = 1.9% of revenue = 5.3% of Adj. EBITDA","329 / 1.9% / 5.3%","1.9% reproduces on a ~$17.4bn FY28 base; $329m follows from 5% of GBV x a 5% fee","11_ai_exposure_scenarios.csv","confirmed","All three legs (5% of GBV, 5% fee, 2028 timing) are assumptions, correctly labelled as such."),
-("11","Regulation: median revenue drag 0.15 / 0.45 / 0.87%, mean 0.25 / 0.75 / 1.23%, p95 0.92 / 2.74 / 3.96%; 93% European; EMEA nights -1.07% 2027, -2.07% 2028","as stated","exact match","data/processed/overnight/11_regulatory_overlay.csv","confirmed",""),
+("11","Regulation: median revenue drag 0.150 / 0.450 / 0.855%, mean 0.251 / 0.752 / 1.235%, p95 0.891 / 2.672 / 4.011%; 93% European; EMEA nights -1.07% 2027, -2.03% 2028","as stated","exact match","data/processed/overnight/11_regulatory_overlay.csv","confirmed","Restated 6-7 Sep 2026 after WS22 repaired the regulatory Monte Carlo's conditional dependencies (audit A06). The pre-fix claim read median 0.15/0.45/0.87, mean 0.25/0.75/1.23, p95 0.92/2.74/3.96 and EMEA nights -2.07% in 2028. No probability or loss range changed; only the sampler's nesting. The driver model's FY28 EMEA drag input moves 1.00pp -> 0.96pp."),
 ("11","New businesses FY28 $717m / $1,426m / $2,511m; incremental $235m / $914m / $1,987m = 1.4 / 5.4 / 11.7% of a ~$17bn base","as stated","percentages reproduce on a $17.0bn base","11_new_business_scenarios.csv","confirmed","Every FY25 base (hotels ~$290m, Experiences ~$90m, Services ~$12m) is the author's estimate; Airbnb discloses none. The note states this."),
 ("11","A 6-10% host fee pilot on host-originated direct links, announced 29 Aug 2026; scaled to 10% of nights at an 8-pt discount that is ~-0.8pts of blended take rate","6-10% / -0.8pts","the Skift page exists, dated 30 Aug 2026: 'Airbnb is offering some hosts direct booking links that come with a reduced service fee'. Body is paywalled; the 6-10% range could not be read.","https://skift.com/2026/08/29/airbnb-is-testing-lower-fees-for-hosts-who-bring-their-own-guests/","unverifiable","Existence and direction confirmed from page metadata only. -0.8pts is larger than the entire single-fee benefit and is the biggest unverified downside number in the run. Do not put it in the model until the article or an Airbnb help-centre page is read."),
 ("11","+3 pts of Q1'26 nights growth from Reserve Now Pay Later; subtract from the FY27 nights path","+3pts from RNPL","1Q26 call: RNPL + redesigned cancellation policies + single-fee migration TOGETHER delivered ~3 points of nights and ~4 points of GBV growth","data/raw/regulatory/transcripts/2026-Q1.json","wrong","Misattributes a three-feature effect to one feature, and the error propagates into a 3pt FY27 nights haircut and the +6% bear case. See CONF-12."),
@@ -117,7 +140,7 @@ CONF = [
 ("CONF-08","Cost of equity and beta","09","10.5-11.5%, beta 1.2-1.3 (SPY 2y 1.22, FF 1.32)","12","10.3%, beta 1.161 (single yfinance figure)","10.5% central, 10.0-11.5% sensitivity band","WS09 estimated beta three ways on daily data with stated windows; WS12 took one vendor number. WACC = CoE either way (net cash). At a $190 base-case value the CoE choice moves the fade DCF by roughly +/-$8-12 a share, so it is not cosmetic."),
 ("CONF-09","Mean sell-side price target, 4 Sep 2026","09","$179.88 across 32 targets","12","$179.55 across 31 targets","$178.96 across 46 (stockanalysis.com, 3 Sep 2026)","Both internal numbers come from the same yfinance/Benzinga feed with slightly different staleness filters. Both notes already cite the 46-analyst figure as a cross-check; it has the broadest coverage. All three support the same point - spot is above the mean target."),
 ("CONF-10","FY26 take rate","06","13.2-13.3%, described as 'flat vs 2025'","07","flat at 13.41% (0 bps change vs FY25)","Flat at ~13.4%","FY25 take rate is 13.41% (12,241/91,300). WS06's 13.2-13.3% is a 10-20bp decline described as flat. The 2Q26 letter guides the implied take rate 'relatively in-line year-over-year'. A 20bp error on FY27 GBV is roughly $240m of revenue."),
-("CONF-11","Single-fee migration coverage at 2Q26","06","~half of active listings","11","~50% of listings at Q2'26, cited to the Q2'26 call","Neither: 'over a quarter' at 1Q26 (disclosed), remainder in migration at 2Q26, complete by year-end","The ~50% figure appears in neither the 2Q26 letter nor the 2Q26 call transcript. Both notes state it as sourced. Replace with the disclosed language in both places."),
+("CONF-11","Single-fee migration coverage at 2Q26","06","~half of active listings","11","~50% of listings at Q2'26, cited to the Q2'26 call","NOT A CONFLICT - both notes are right: 'Approximately half of our active listings are now subject to the single service fee' (2Q26 call). Cite the call, not the letter","WITHDRAWN by WS19 on 6 Sep 2026, confirming WS16. The original ruling said the ~50% figure appeared in neither the 2Q26 letter nor the 2Q26 call transcript; it is in the call, prepared remarks, data/raw/regulatory/transcripts/2026-Q2.txt line 272. It is absent from the shareholder letter, which is a different claim. Both notes should cite the transcript. The rest of the migration language ('over a quarter' at 1Q26, entire supply base by year-end) is unchanged and also disclosed."),
 ("CONF-12","Attribution of the +3pts of Q1'26 nights growth","11","Reserve Now Pay Later alone; subtract 3pts from the FY27 nights path","06","RNPL + cancellation redesign + single-fee migration together","WS06 (three features together)","Verbatim 1Q26 call: 'we estimate these three features delivered approximately 3 points of nights booked growth and approximately 4 points of GBV growth in Q1'. WS11 uses the misattribution to justify a 3pt FY27 nights haircut and to defend a +6% bear case, so the error propagates into the model."),
 ("CONF-13","Exit multiple on FY27E EBITDA","12","13.5 / 16.5 / 18.5x","driver model (pre-existing)","18 / 22 / 25.5x","13.5 / 16.5 / 18.5x (WS12)","WS12 triangulates three independent methods (time series 14.3/17.2/19.3, cross-section 10.7/12.8/13.9, fade DCF 15.1/19.7/23.1) and all three land below the assumed set. The highest live sell-side target ($220) implies 19.3x. This one change moves the 25/50/25 weighted value from $249 (+37%) to $190 (+5%) and is the largest correction in the run."),
 ("CONF-14","Regulatory drag: where to apply it","01","Apply the drag to EMEA nights, not global revenue","11","Use the MEAN global revenue drag (0.25/0.75/1.23%) in the base case, and separately supplies EMEA/NA nights drags","Apply the EMEA/NA nights drags inside the regional build; do not also subtract the global revenue drag","WS11 supplies two forms of the same estimate. Applying both double-counts roughly 0.75% of FY27 revenue. Given WS10's regional build, WS01's instruction is the right one."),
@@ -126,14 +149,38 @@ CONF = [
 ]
 
 os.makedirs(OUT, exist_ok=True)
-with open(os.path.join(OUT, "15_claim_checks.csv"), "w", newline="", encoding="utf-8") as f:
-    w = csv.writer(f)
-    w.writerow(["workstream", "claim", "value_claimed", "value_verified", "source_checked", "verdict", "note"])
-    w.writerows(C)
-with open(os.path.join(OUT, "15_cross_note_conflicts.csv"), "w", newline="", encoding="utf-8") as f:
-    w = csv.writer(f)
-    w.writerow(["id", "parameter", "ws_a", "value_a", "ws_b", "value_b", "recommended", "reason"])
-    w.writerows(CONF)
+
+CLAIM_HDR = ["workstream", "claim", "value_claimed", "value_verified", "source_checked", "verdict", "note"]
+CONF_HDR = ["id", "parameter", "ws_a", "value_a", "ws_b", "value_b", "recommended", "reason"]
+
+claim_rows = [[safe(ws(r[0]))] + [safe(x) for x in r[1:]] for r in C]
+conf_rows = [[safe(r[0]), safe(r[1]), safe(ws(r[2])), safe(r[3]),
+              safe(ws(r[4])), safe(r[5]), safe(r[6]), safe(r[7])] for r in CONF]
+
+
+def write_csv(name, header, rows):
+    path = os.path.join(OUT, name)
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(header)
+        w.writerows(rows)
+    # integrity guard: rectangular, no embedded newline, no cell Excel would read as a formula
+    with open(path, newline="", encoding="utf-8") as f:
+        back = list(csv.reader(f))
+    assert len(back) == len(rows) + 1, "%s: wrote %d rows, read back %d" % (name, len(rows), len(back) - 1)
+    for i, r in enumerate(back):
+        assert len(r) == len(header), "%s: row %d has %d fields, header has %d" % (name, i + 1, len(r), len(header))
+        for cell in r:
+            assert "\n" not in cell and "\r" not in cell, "%s: embedded newline in row %d" % (name, i + 1)
+            assert cell[:1] not in FORMULA_LEAD, "%s: row %d starts a cell with a formula character: %r" % (name, i + 1, cell[:40])
+    print("%s: %d rows x %d columns, integrity checks passed" % (name, len(rows), len(header)))
+    return back
+
+
+write_csv("15_claim_checks.csv", CLAIM_HDR, claim_rows)
+conf_back = write_csv("15_cross_note_conflicts.csv", CONF_HDR, conf_rows)
+assert len(conf_back) - 1 == 16, "expected 16 cross-note conflicts, wrote %d" % (len(conf_back) - 1)
+assert [r[0].strip() for r in conf_back[1:]] == ["CONF-%02d" % i for i in range(1, 17)], "conflict ids are not CONF-01..CONF-16"
 
 from collections import Counter
 print("claims:", len(C), dict(Counter(r[5] for r in C)))

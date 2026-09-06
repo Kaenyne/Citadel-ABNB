@@ -228,8 +228,10 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
             put(ws, r, 1, f"FY{yr}  {DM.RLABEL[rg]}")
             put(ws, r, 2, "pp")
             put(ws, r, 3, DM.REG_DRAG_PP[yr][rg], fmt=F_NUM2, fill=FILL_IN)
-            put(ws, r, 7, "WS11 11_regulatory_overlay.csv; cumulative run-rate loss vs the 2Q26 baseline, "
-                          "differenced into a y/y growth drag. Scaled by the 'Regulatory drag multiplier' above.",
+            put(ws, r, 7, "WS11 11_regulatory_overlay.csv, regenerated after the WS22 (audit A06) conditional-"
+                          "dependency repair; cumulative run-rate loss vs the 2Q26 baseline (EMEA 0.36 / 1.07 / "
+                          "2.03%, NA 0.03 / 0.08 / 0.15%), differenced into a y/y growth drag. Scaled by the "
+                          "'Regulatory drag multiplier' above.",
                 font=SMALL)
             rd[(yr, rg)] = r
             r += 1
@@ -861,9 +863,10 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
          "same 0.75x haircut on 20/26/32x"),
         ("p_eps", "P / earnings proxy, FY2027E",
          lambda i, s: f"={VAL('exit_p_earnings', s)}*{B('eps', i)}", "same"),
-        ("ev_ebitda28", "EV / adj. EBITDA, FY2028E",
-         lambda i, s: f"=({VAL('exit_ev_ebitda', s)}*{B('ebitda28', i)}+{B('netcash28', i)})/{B('shares28', i)}",
-         "WS12 multiples on the FY28 basis"),
+        ("ev_ebitda28", "EV / adj. EBITDA, FY2028E (discounted 1 yr at the cost of equity)",
+         lambda i, s: f"=({VAL('exit_ev_ebitda', s)}*{B('ebitda28', i)}+{B('netcash28', i)})"
+                      f"/{B('shares28', i)}/(1+{VAL('cost_of_equity', s)})",
+         "WS12 multiples on the FY28 basis, discounted to the ~Sep-2027 target date"),
     ]:
         put(vs, vr, 1, label)
         for i, s in enumerate(DM.SCENARIOS):
@@ -872,6 +875,16 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
         put(vs, vr, 6, src, font=SMALL)
         lensrow[key] = vr
         vr += 1
+    # Sensitivity, NOT in the football field: the same FY2028E lens left undiscounted, i.e. a value as of
+    # end-FY2028 rather than the adopted ~30 Sep 2027 target date (WS25 A12 decision 1, WS26 step 2).
+    put(vs, vr, 1, "Sensitivity (not in the football field): EV / adj. EBITDA, FY2028E, UNDISCOUNTED "
+                   "(value as of end-FY2028)")
+    for i, s in enumerate(DM.SCENARIOS):
+        put(vs, vr, 2 + i, f"=({VAL('exit_ev_ebitda', s)}*{B('ebitda28', i)}+{B('netcash28', i)})"
+                           f"/{B('shares28', i)}", fmt=F_NUM2)
+    put(vs, vr, 5, ACT(vr), fmt=F_NUM2)
+    put(vs, vr, 6, "date-mixing sensitivity; see model/assumptions.md", font=SMALL)
+    vr += 1
     vr += 1
 
     vr = section(vs, vr, "3. DCF ON FY2027E FCF - 10-year fade to terminal growth, discounted at the cost of equity", 8)
@@ -959,13 +972,27 @@ def build_workbook(quarterly, annual, valrows, revdcf, grid, prices, ev_today):
 
     def rdcf(gref, j):
         """Value per share of a constant-growth ten-year stream plus a Gordon terminal, with the
-        growth read from the cell `gref`. j = 0 reported FCF, j = 1 SBC-adjusted."""
+        growth read from the cell `gref`. j = 0 reported FCF, j = 1 SBC-adjusted.
+
+        WS19 / audit finding A10 (6 Sep 2026). The ten-year leg used the closed-form annuity
+            b*(1+g)/(coe-g)*(1-((1+g)/(1+coe))^10)
+        which returns #DIV/0! whenever the assumed growth equals the cost of equity, even though a
+        ten-year stream has a perfectly good value there (it is 10*b). The default cost of equity of
+        10.5% misses every rung of the growth ladder, so the bug was invisible; set Inputs cost of
+        equity to 11% and the 11% rung broke. The Python mirror (13_driver_model.dcf_constant) has
+        always handled the equal-rate limit, so Excel and Python disagreed in that input region.
+
+        It is now written as the explicit ten-term discounted sum, which has no division by (coe-g)
+        at all and is continuous through equality. Only + - * / ^ and parentheses are used, so
+        13_xlsx_eval.py still evaluates it. The Gordon terminal keeps its /(coe-g_term): a terminal
+        growth at or above the discount rate is genuinely invalid under a perpetual-growth
+        formulation, and #DIV/0! there is the correct answer rather than a plausible price."""
         b = HA("LTM FCF ($M)") if j == 0 else f"({HA('LTM FCF ($M)')}-{HA('LTM SBC ($M)')})"
         coe, gt = VAL("cost_of_equity", "Base"), VAL("terminal_growth", "Base")
-        # closed form of a linear fade is unwieldy in one cell; use a constant-growth annuity plus terminal
+        q = f"((1+{gref})/(1+{coe}))"
+        finite = f"{b}*(" + "+".join(f"{q}^{k}" for k in range(1, 11)) + ")"
         f10 = f"{b}*(1+{gref})^10"
-        pv = (f"{b}*(1+{gref})/({coe}-{gref})*(1-((1+{gref})/(1+{coe}))^10)"
-              f"+{f10}*(1+{gt})/({coe}-{gt})/(1+{coe})^10")
+        pv = f"{finite}+{f10}*(1+{gt})/({coe}-{gt})/(1+{coe})^10"
         return f"=({pv}+{VAL('net_cash_2q26', 'Base')})/{VAL('shares_2q26', 'Base')}"
 
     for g in [0.03, 0.05, 0.07, 0.075, 0.09, 0.11, 0.13, 0.135, 0.15, 0.17]:
