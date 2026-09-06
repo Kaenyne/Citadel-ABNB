@@ -1,0 +1,11 @@
+family,window,n_tests,n_flagged_r05_perm05,n_evaluable_wf,n_beat_naive,n_beat_naive_and_ar1,n_beat_naive_by_20pct,best_ratio,best_feature
+backlog,"2022Q1..2026Q2, WF from 2023Q1",21,11,21,1,1,0,0.904405553244756,bl_unearned_yoy_lag1 -> nights_yoy
+backlog,"2023Q1..2026Q2, WF from 2024Q1",21,5,21,3,3,1,0.6001434572214646,bl_funds_yoy_lag1 -> rev_yoy
+component,"2022Q1..2026Q2, WF from 2023Q1",12,5,12,3,3,1,0.6901397072933874,cc_survival_yoy_pts -> nights_yoy
+component,"2023Q1..2026Q2, WF from 2024Q1",12,5,12,6,6,5,0.6372262166073025,mx_usd_yoy -> adr_yoy
+eurostat,"2022Q1..2026Q2, WF from 2023Q1",32,19,30,0,0,0,1.0273999747584568,eu_platform_yoy_lag0 -> rev_yoy
+eurostat,"2023Q1..2026Q2, WF from 2024Q1",32,9,24,1,1,0,0.9315203784253928,eu_platform_yoy_lag0 -> rev_yoy
+inside_airbnb,"2022Q1..2026Q2, WF from 2023Q1",18,0,12,4,4,0,0.8129790021024893,ia_reviews_l30d_matched_yoy -> nights_yoy
+inside_airbnb,"2023Q1..2026Q2, WF from 2024Q1",18,0,12,4,0,0,0.8129790021024893,ia_reviews_l30d_matched_yoy -> nights_yoy
+trends,"2022Q1..2026Q2, WF from 2023Q1",216,65,162,0,0,0,1.8801810612092567,tr_us_airbnb_yoy -> rev_yoy
+trends,"2023Q1..2026Q2, WF from 2024Q1",216,32,162,7,7,0,0.8362169512305367,tr_ww_airbnb_minus_hotel_yoy_d1 -> gbv_yoy

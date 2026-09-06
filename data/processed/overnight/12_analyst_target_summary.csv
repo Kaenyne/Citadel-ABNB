@@ -1,0 +1,21 @@
+metric,value,unit,detail
+firms with an action in the last 12 months,34.000,count,"yfinance/Benzinga feed via 09_analyst_actions.csv, pulled 6 Sep 2026"
+firms with a live price target,31.000,count,target > 0 on the latest action
+mean target,179.548,USD,cross-check: stockanalysis.com 3 Sep 2026 average $178.96 across 46 analysts
+median target,175.000,USD,
+high target,220.000,USD,"Rosenblatt, DA Davidson"
+low target,125.000,USD,Morgan Stanley
+high/low spread,1.760,x,220 vs 125
+dispersion (sd / mean),0.131,ratio,
+mean target vs spot $181.94,-1.315,%,spot is above the average target
+share of targets below spot,54.839,%,
+implied EV / FY27E base EBITDA at the mean target,15.355,x,"FY27E base adj. EBITDA $5.83B, net cash $12.4B, 567M shares"
+implied EV / FY27E base EBITDA at the high target,19.292,x,
+implied EV / FY27E base EBITDA at the low target,10.045,x,
+price-target revisions since the 2Q26 print (7 Aug 2026),22.000,count,"22 raises, 0 cuts"
+median revision since the 2Q26 print,12.608,%,"mean 14.1%, range 2.8% to 31.6%"
+stock move on the 2Q26 print day,17.429,%,7 Aug 2026
+rating mix: Buy,21.000,count,62% of the 34-firm book
+rating mix: Hold,11.000,count,32% of the 34-firm book
+rating mix: Sell,2.000,count,6% of the 34-firm book
+rating mix: Other,0.000,count,0% of the 34-firm book

@@ -1,0 +1,6 @@
+region,n,r,slope_pp_per_pp,intercept_pp,basket_range_pp,first_quarter,last_quarter,note
+apac,5,0.972,0.86,0.29,9.0,1Q25,1Q26,reported-ADR minus ex-FX-ADR gap regressed on the region's FX basket y/y
+emea,10,0.987,1.043,0.68,11.8,1Q24,2Q26,reported-ADR minus ex-FX-ADR gap regressed on the region's FX basket y/y
+latam,7,0.996,0.623,0.02,27.1,4Q24,2Q26,reported-ADR minus ex-FX-ADR gap regressed on the region's FX basket y/y
+na,5,0.849,3.205,2.31,1.0,4Q23,1Q25,"not identified: the NA basket moves less than 1.5pp across the sample, so the slope is noise"
+pooled,27,0.953,0.712,1.03,27.1,1Q24,4Q25,reported-ADR minus ex-FX-ADR gap regressed on the region's FX basket y/y

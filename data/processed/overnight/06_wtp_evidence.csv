@@ -1,0 +1,46 @@
+price_basis,kind,attribute,premium_pct,ci_lo_pct,ci_hi_pct,p_value,n_listing_dumps,n_city_dumps,r2,median_price_a,median_price_b
+listed_nightly,hedonic_ols,"C(room_type, Treatment(""Entire home/apt""))[T.Hotel room]",36.45,34.89,38.04,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(room_type, Treatment(""Entire home/apt""))[T.Private room]",-22.99,-23.24,-22.74,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(room_type, Treatment(""Entire home/apt""))[T.Shared room]",-42.44,-43.88,-40.96,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.lt4.5]",-5.83,-6.19,-5.46,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.4.5-4.7]",-3.09,-3.46,-2.73,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.4.8-4.9]",4.24,3.87,4.6,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.ge4.9]",13.48,13.12,13.84,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(host_band, Treatment(""single""))[T.2to4]",1.07,0.8,1.33,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(host_band, Treatment(""single""))[T.5to20]",11.96,11.61,12.3,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,"C(host_band, Treatment(""single""))[T.gt20]",9.54,9.16,9.92,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,lacc,39.39,38.93,39.85,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,bedrooms_f,19.48,19.25,19.7,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,host_is_superhost,-1.22,-1.44,-0.99,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,instant_bookable,8.89,8.64,9.13,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,licensed,-10.45,-11.56,-9.33,0.0,951134,47.0,0.3928,,
+listed_nightly,hedonic_ols,reviewed_ltm,-10.41,-10.74,-10.07,0.0,951134,47.0,0.3928,,
+listed_nightly,median_cut,room_type: entire_home vs private_room,74.03,,,,1174536,,,157.0,89.0
+listed_nightly,median_cut,superhost: superhost vs non_superhost,5.45,,,,1188414,,,150.0,143.0
+listed_nightly,median_cut,instant_book: instant_bookable vs not_instant,19.87,,,,1188414,,,155.0,140.0
+listed_nightly,median_cut,rating: rating_ge_4.9 vs rating_4.0_4.79,16.13,,,,752571,,,151.0,129.0
+listed_nightly,median_cut,host_scale: host_gt20_listings vs single_listing_host,23.83,,,,722281,,,175.0,140.0
+listed_nightly,median_cut,licence: licence_disclosed vs no_licence,-6.67,,,,1188414,,,146.0,160.0
+listed_nightly,median_cut,min_nights: min_stay_7plus vs min_stay_1_2,-19.68,,,,897039,,,121.0,146.0
+quote_per_night,hedonic_ols,"C(room_type, Treatment(""Entire home/apt""))[T.Hotel room]",6.38,4.95,7.83,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(room_type, Treatment(""Entire home/apt""))[T.Private room]",-30.0,-30.17,-29.82,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(room_type, Treatment(""Entire home/apt""))[T.Shared room]",-49.61,-50.71,-48.49,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.lt4.5]",-7.28,-7.58,-6.98,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.4.5-4.7]",-3.93,-4.23,-3.64,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.4.8-4.9]",3.68,3.39,3.98,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(rating_band, Treatment(""4.7-4.8""))[T.ge4.9]",9.5,9.22,9.79,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(host_band, Treatment(""single""))[T.2to4]",0.46,0.23,0.69,8.377e-05,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(host_band, Treatment(""single""))[T.5to20]",6.65,6.4,6.9,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,"C(host_band, Treatment(""single""))[T.gt20]",8.09,7.81,8.38,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,lacc,49.05,48.65,49.46,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,bedrooms_f,15.05,14.89,15.22,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,host_is_superhost,1.01,0.81,1.2,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,instant_bookable,0.0,0.0,0.0,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,licensed,-23.52,-23.96,-23.07,0.0,1375944,76.0,0.4593,,
+quote_per_night,hedonic_ols,reviewed_ltm,-5.52,-5.8,-5.24,0.0,1375944,76.0,0.4593,,
+quote_per_night,median_cut,room_type: entire_home vs private_room,119.7,,,,1643307,,,252.12,110.0
+quote_per_night,median_cut,superhost: superhost vs non_superhost,10.97,,,,1661548,,,248.8,205.0
+quote_per_night,median_cut,rating: rating_ge_4.9 vs rating_4.0_4.79,12.37,,,,1078006,,,235.0,205.0
+quote_per_night,median_cut,host_scale: host_gt20_listings vs single_listing_host,22.88,,,,928521,,,260.5,204.86
+quote_per_night,median_cut,licence: licence_disclosed vs no_licence,-23.43,,,,1661548,,,217.0,316.93
+quote_per_night,median_cut,min_nights: min_stay_7plus vs min_stay_1_2,-37.79,,,,1418446,,,132.74,245.65
