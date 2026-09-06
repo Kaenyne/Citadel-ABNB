@@ -40,3 +40,8 @@ data/raw/*
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Cross-branch copies used by the predictive study (populate via git show; see data/README.md)
+data/external/
+# Unpacked third-party forecasting skill, local reference only
+docs/forecast-skill/
