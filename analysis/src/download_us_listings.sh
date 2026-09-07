@@ -1,0 +1,36 @@
+mkdir -p "${1:-data/raw/insideairbnb}" && cd "${1:-data/raw/insideairbnb}" && for u in \
+  https://data.insideairbnb.com/united-states/ny/albany/2026-07-15/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/nc/asheville/2026-06-25/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/tx/austin/2026-06-22/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ma/boston/2026-06-15/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/mt/bozeman/2026-07-16/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/fl/broward-county/2026-06-29/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ma/cambridge/2026-06-29/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/il/chicago/2026-06-24/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/nv/clark-county-nv/2026-06-27/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/oh/columbus/2026-06-29/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/tx/dallas/2026-07-20/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/co/denver/2026-06-30/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/tx/fort-worth/2026-06-21/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/hi/hawaii/2026-06-21/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/nj/jersey-city/2026-06-27/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/los-angeles/2026-06-15/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/tn/nashville/2026-06-26/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/la/new-orleans/2026-06-16/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ny/new-york-city/2026-08-10/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/nj/newark/2026-06-30/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/oakland/2026-06-27/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/pacific-grove/2026-06-14/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/or/portland/2026-06-15/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ri/rhode-island/2026-06-30/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ny/rochester/2026-07-21/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/or/salem-or/2026-06-28/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/san-diego/2026-06-27/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/san-francisco/2026-06-14/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/san-mateo-county/2026-06-27/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/santa-clara-county/2026-06-28/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/ca/santa-cruz-county/2026-06-30/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/wa/seattle/2026-06-15/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/mn/twin-cities-msa/2026-06-27/data/listings.csv.gz \
+  https://data.insideairbnb.com/united-states/dc/washington-dc/2026-06-24/data/listings.csv.gz \
+; do f=$(echo $u | cut -d/ -f5-6 | tr / _)_listings.csv.gz; [ -s "$f" ] || curl -sS -L -o "$f" "$u"; echo "$f $(stat -f%z "$f")"; sleep 3; done
