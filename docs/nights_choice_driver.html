@@ -1,0 +1,208 @@
+<title>Nights Choice Driver</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#f6f8f5; --panel:#ffffff; --ink:#16201b; --ink-2:#4f5c55; --muted:#7f8b84; --rule:#d9e0db; --grid:#e6ebe7;
+  --accent:#0e6e6b; --accent-soft:#d5ebe9; --hotel:#c95a1f; --hotel-soft:#f6e1d3; --neutral-bar:#a9b3ad; --mix:#8a6fb8; --cat:#3f8fd0;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#121715; --panel:#1a211e; --ink:#eef2ef; --ink-2:#b9c3bd; --muted:#8a958e; --rule:#2c3531; --grid:#242c28;
+    --accent:#4fb8b3; --accent-soft:#1f3b39; --hotel:#f0904f; --hotel-soft:#3b2a1f; --neutral-bar:#5d6963; --mix:#b39ddb; --cat:#6fb3ee;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#121715; --panel:#1a211e; --ink:#eef2ef; --ink-2:#b9c3bd; --muted:#8a958e; --rule:#2c3531; --grid:#242c28;
+  --accent:#4fb8b3; --accent-soft:#1f3b39; --hotel:#f0904f; --hotel-soft:#3b2a1f; --neutral-bar:#5d6963; --mix:#b39ddb; --cat:#6fb3ee;
+  color-scheme:dark;
+}
+body{background:var(--ground);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding:48px 24px 80px}
+.wide{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Fraunces","Iowan Old Style",Georgia,serif;text-wrap:balance;margin:0}
+h1{font-size:42px;line-height:1.05;font-weight:700;letter-spacing:-.01em}
+h2{font-size:26px;font-weight:600;margin-top:56px;padding-top:24px;border-top:1px solid var(--rule)}
+h3{font-size:19px;font-weight:600;margin-top:28px}
+p{margin:14px 0}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.lede{font-size:20px;color:var(--ink-2);margin-top:18px}
+.formula{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:15px;background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:6px;padding:16px 20px;margin:22px 0;line-height:1.7;overflow-x:auto}
+.formula b{color:var(--accent);font-weight:500}
+figure{margin:28px 0}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.45}
+svg text{font-family:"IBM Plex Mono",ui-monospace,monospace;fill:var(--ink-2)}
+svg .grid{stroke:var(--grid);stroke-width:1}
+svg .axis{stroke:var(--rule);stroke-width:1}
+svg .lbl{font-size:12px}
+svg .val{font-size:12px;fill:var(--ink)}
+svg .legend{font-size:12px}
+svg .f-market{fill:var(--neutral-bar)} svg .f-mix{fill:var(--mix)} svg .f-cat{fill:var(--cat)} svg .f-share{fill:var(--hotel)} svg .dot{fill:var(--ink)}
+ul{padding-left:20px;margin:12px 0}
+li{margin:6px 0}
+li::marker{color:var(--accent)}
+.tbl{overflow-x:auto;margin:20px 0;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+th{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--ground)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;font-size:13.5px}
+tr:last-child td{border-bottom:0}
+tr.total td{font-weight:600;border-top:2px solid var(--rule)}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+a:hover,a:focus-visible{border-bottom-color:var(--accent);outline:none}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:18px 20px}
+.card h3{margin-top:0}
+.card.bull{border-top:3px solid var(--accent)}
+.card.bear{border-top:3px solid var(--hotel)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;padding-left:44px;position:relative;margin:14px 0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-family:"IBM Plex Mono",monospace;font-size:13px;display:flex;align-items:center;justify-content:center}
+.src{font-size:13px;color:var(--muted)}
+.foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+code{font-family:"IBM Plex Mono",monospace;font-size:13.5px;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+@media (max-width:720px){.two{grid-template-columns:1fr}h1{font-size:32px}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Citadel ABNB pitch · revenue model add-on · 7 Sep 2026</div>
+  <h1>Turning “hotel or Airbnb?” into the nights line</h1>
+  <p class="lede">The team model already does Revenue = Nights × ADR × take rate × FX. Nights is the plug. This page replaces the plug with a choice model: how many parties are in the market, how many of them would even consider a hotel, and what fraction of those pick Airbnb — by party size, moving with relative price. Everything else in the model stays where it is.</p>
+
+  <div class="formula">
+    Nights<sub>Airbnb</sub>(t) = Σ<sub>g</sub> [ <b>N<sub>g</sub>(t)</b> + <b>M<sub>g</sub>(t)</b> × <b>P<sub>g</sub>(t)</b> ]<br>
+    g = party size {solo, pair, 3–4, 5+}<br>
+    <b>N<sub>g</sub></b> = own-category Airbnb nights — guests who would <em>not</em> have used a hotel (62%, Farronato &amp; Fradkin); grows with category adoption<br>
+    <b>M<sub>g</sub></b> = hotel-contestable party-nights = hotel party-nights + the other 38% of Airbnb nights; grows with U.S. lodging demand and segment mix<br>
+    <b>P<sub>g</sub></b> = probability a contestable party picks Airbnb; &nbsp; logit P<sub>g</sub>(t) = logit P<sub>g</sub>(t−1) − β·[ln(1+ADR<sub>Airbnb</sub>) − ln(1+ADR<sub>hotel</sub>)] + product shift<br>
+    Revenue = Nights × ADR × take rate × FX &nbsp;(unchanged)
+  </div>
+
+  <h2>What the data pins down (U.S., 2025)</h2>
+  <p>Every number below comes from the party-size, stay-length and price work already in the repo, plus three new pulls: U.S. hotel room nights, the business/leisure split, and the substitution rate from the AER paper.</p>
+</div>
+<div class="wide">
+  <div class="tbl"><table>
+    <thead><tr><th>Party size</th><th class="num">Airbnb nights (mm)</th><th class="num">of which own-category</th><th class="num">of which contestable</th><th class="num">Hotel party-nights (mm)</th><th class="num">P(Airbnb | contestable)</th><th class="num">Airbnb share of all lodging</th><th class="num">Airbnb ÷ hotel price</th></tr></thead>
+    <tbody>
+      <tr><td>Solo (incl. business)</td><td class="num">35.0</td><td class="num">21.7</td><td class="num">13.3</td><td class="num">533.2</td><td class="num">2.4%</td><td class="num">6.2%</td><td class="num">0.69x</td></tr>
+      <tr><td>Pair</td><td class="num">49.5</td><td class="num">30.7</td><td class="num">18.8</td><td class="num">476.8</td><td class="num">3.8%</td><td class="num">9.4%</td><td class="num">1.22x</td></tr>
+      <tr><td>3–4</td><td class="num">42.3</td><td class="num">26.3</td><td class="num">16.1</td><td class="num">134.7</td><td class="num">10.7%</td><td class="num">23.9%</td><td class="num">0.80x</td></tr>
+      <tr><td>5+</td><td class="num">18.5</td><td class="num">11.5</td><td class="num">7.0</td><td class="num">40.4</td><td class="num">14.8%</td><td class="num">31.4%</td><td class="num">0.79x</td></tr>
+      <tr class="total"><td>Total</td><td class="num">145.4</td><td class="num">90.1</td><td class="num">55.2</td><td class="num">1,185.1</td><td class="num">4.5%</td><td class="num">10.9%</td><td class="num">—</td></tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="wrap">
+  <ul>
+    <li><strong>Airbnb is 10.9% of U.S. lodging party-nights</strong> (145M vs 1,185M hotel). Consistent with AirDNA’s “STRs ≈ 12–15% of lodging demand” once Vrbo and others are added.</li>
+    <li><strong>Share rises fivefold with party size:</strong> 6% of solo stays → 31% of 5+ stays. That is Jessie’s framing in numbers: solo/pair is a hotel market Airbnb dips into; 5+ is a market Airbnb owns a third of.</li>
+    <li><strong>Only 38% of Airbnb nights are “at risk” to hotels.</strong> The other 62% (Farronato &amp; Fradkin’s guest survey) would have stayed with friends, booked another rental, or not travelled — they grow with the category, not with hotel pricing.</li>
+    <li><strong>Pairs are the anomaly:</strong> the only segment where Airbnb costs more than the hotel (1.22x) and, unsurprisingly, the lowest contestable share after solo.</li>
+  </ul>
+
+  <h3>How the calibration is built</h3>
+  <ol class="steps">
+    <li><strong>Airbnb U.S. nights</strong> = North America 158M × 92% (U.S. is 39% of revenue, NA is 43%). Split into party sizes with the fitted booking distribution (16 / 36 / 32 / 16%) × relative stay length (solo 1.5×, pair 0.95×, 3–4 0.9×, 5+ 0.8×).</li>
+    <li><strong>Hotel party-nights</strong> = 1.3B room nights (STR, 2024; +1% for 2025) → 42% business (AHLA), 80% of it single-occupancy (Portuguese ledger) → 58% leisure split into parties with the Hawaii/Las Vegas mix (20 / 54 / 20 / 6%) and rooms per party (1 / 1 / 1.5 / 2.5).</li>
+    <li><strong>Contestable pool</strong> = hotel party-nights + 38% of Airbnb nights. <strong>P<sub>g</sub></strong> = contestable Airbnb ÷ pool.</li>
+    <li><strong>Relative price</strong> per segment from the cross-over table (Inside Airbnb medians + 14% fee vs rooms × $159 ADR).</li>
+  </ol>
+
+  <h2>What it produces</h2>
+  <p>Base case: U.S. lodging demand per CoStar/Tourism Economics (+1.7% 2026, +1.1% 2027), hotel ADR +3.1% / +1.6%, Airbnb ADR +5% then +3% (placeholder — link to the team’s ADR line), own-category growth 4% fading to 3%, mix drift toward 3+ parties, β = 2.5.</p>
+  <figure>
+    <svg viewBox="0 0 720 320" width="100%" role="img" aria-label="Stacked bars: contributions to U.S. Airbnb nights growth 2026 to 2030 from market, mix, category adoption and share; net growth 2.4 to 3.4 percent.">
+      <!-- y: 0% at 200, scale 40px per 1pt ; positive up -->
+      <line class="grid" x1="70" x2="700" y1="40" y2="40"/><text class="lbl" x="62" y="44" text-anchor="end">+4%</text>
+      <line class="grid" x1="70" x2="700" y1="80" y2="80"/><text class="lbl" x="62" y="84" text-anchor="end">+3%</text>
+      <line class="grid" x1="70" x2="700" y1="120" y2="120"/><text class="lbl" x="62" y="124" text-anchor="end">+2%</text>
+      <line class="grid" x1="70" x2="700" y1="160" y2="160"/><text class="lbl" x="62" y="164" text-anchor="end">+1%</text>
+      <line class="axis" x1="70" x2="700" y1="200" y2="200"/><text class="lbl" x="62" y="204" text-anchor="end">0%</text>
+      <line class="grid" x1="70" x2="700" y1="240" y2="240"/><text class="lbl" x="62" y="244" text-anchor="end">−1%</text>
+      <line class="grid" x1="70" x2="700" y1="280" y2="280"/><text class="lbl" x="62" y="284" text-anchor="end">−2%</text>
+      <!-- 2026: market .65 mix .86 cat 2.50 share -1.62 total 2.38 -->
+      <rect class="f-market" x="110" y="174" width="60" height="26"/><rect class="f-mix" x="110" y="139.6" width="60" height="34.4"/><rect class="f-cat" x="110" y="39.6" width="60" height="100"/><rect class="f-share" x="110" y="200" width="60" height="64.8"/>
+      <circle class="dot" cx="140" cy="104.8" r="4"/><text class="val" x="140" y="30" text-anchor="middle">+2.4%</text><text class="lbl" x="140" y="304" text-anchor="middle">2026</text>
+      <!-- 2027: .40 .88 2.56 -1.17 = 2.68 -->
+      <rect class="f-market" x="230" y="184" width="60" height="16"/><rect class="f-mix" x="230" y="148.8" width="60" height="35.2"/><rect class="f-cat" x="230" y="46.4" width="60" height="102.4"/><rect class="f-share" x="230" y="200" width="60" height="46.8"/>
+      <circle class="dot" cx="260" cy="92.8" r="4"/><text class="val" x="260" y="36" text-anchor="middle">+2.7%</text><text class="lbl" x="260" y="304" text-anchor="middle">2027</text>
+      <!-- 2028: .53 .91 2.29 -.41 = 3.33 -->
+      <rect class="f-market" x="350" y="178.8" width="60" height="21.2"/><rect class="f-mix" x="350" y="142.4" width="60" height="36.4"/><rect class="f-cat" x="350" y="50.8" width="60" height="91.6"/><rect class="f-share" x="350" y="200" width="60" height="16.4"/>
+      <circle class="dot" cx="380" cy="66.8" r="4"/><text class="val" x="380" y="40" text-anchor="middle">+3.3%</text><text class="lbl" x="380" y="304" text-anchor="middle">2028</text>
+      <!-- 2029: .52 .94 2.32 -.40 = 3.38 -->
+      <rect class="f-market" x="470" y="179.2" width="60" height="20.8"/><rect class="f-mix" x="470" y="141.6" width="60" height="37.6"/><rect class="f-cat" x="470" y="48.8" width="60" height="92.8"/><rect class="f-share" x="470" y="200" width="60" height="16"/>
+      <circle class="dot" cx="500" cy="64.8" r="4"/><text class="val" x="500" y="38" text-anchor="middle">+3.4%</text><text class="lbl" x="500" y="304" text-anchor="middle">2029</text>
+      <!-- 2030: .51 .97 2.01 -.39 = 3.09 -->
+      <rect class="f-market" x="590" y="179.6" width="60" height="20.4"/><rect class="f-mix" x="590" y="140.8" width="60" height="38.8"/><rect class="f-cat" x="590" y="60.4" width="60" height="80.4"/><rect class="f-share" x="590" y="200" width="60" height="15.6"/>
+      <circle class="dot" cx="620" cy="76.4" r="4"/><text class="val" x="620" y="50" text-anchor="middle">+3.1%</text><text class="lbl" x="620" y="304" text-anchor="middle">2030</text>
+      <!-- legend -->
+      <rect class="f-market" x="90" y="6" width="12" height="12"/><text class="legend" x="106" y="16">Market growth</text>
+      <rect class="f-mix" x="230" y="6" width="12" height="12"/><text class="legend" x="246" y="16">Mix toward 3+ parties</text>
+      <rect class="f-cat" x="420" y="6" width="12" height="12"/><text class="legend" x="436" y="16">Category adoption</text>
+      <rect class="f-share" x="590" y="6" width="12" height="12"/><text class="legend" x="606" y="16">Share (price)</text>
+    </svg>
+    <figcaption>Contributions to U.S. Airbnb nights growth, base case (percentage points; dot = net). U.S. nights 145M (2025) → 168M (2030), 3.0% CAGR. Share loss to hotels runs −1.6 pts in 2026 when Airbnb ADR outgrows hotel ADR by 1.9 pts, and −0.4 pts a year once the gap narrows to 0.5 pts. Source: <code>data/processed/choice_driver_projection.csv</code>.</figcaption>
+  </figure>
+
+  <h3>Sensitivity: 2025–30 U.S. nights CAGR</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>β \ Airbnb ADR growth minus hotel ADR growth (per year)</th><th class="num">−2 pts</th><th class="num">0</th><th class="num">+2 pts</th><th class="num">+4 pts</th></tr></thead>
+    <tbody>
+      <tr><td>β = 1.0 (low sensitivity)</td><td class="num">4.4%</td><td class="num">3.7%</td><td class="num">3.1%</td><td class="num">2.5%</td></tr>
+      <tr><td><strong>β = 2.5 (central)</strong></td><td class="num">5.5%</td><td class="num">3.7%</td><td class="num">2.2%</td><td class="num">0.9%</td></tr>
+      <tr><td>β = 4.3 (F&amp;F own-price elasticity)</td><td class="num">7.0%</td><td class="num">3.7%</td><td class="num">1.2%</td><td class="num">−0.6%</td></tr>
+    </tbody>
+  </table></div>
+  <p>Read across: every point of ADR growth Airbnb takes above hotels costs about 0.7 pts of nights growth at the central β, 1.3 pts at the high β. That is the mechanism behind the bear line “ADR is doing the work” — and it is now a slider in the model instead of an argument.</p>
+
+  <h2>Where the numbers come from</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Input</th><th class="num">Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Airbnb NA nights 2025; nights/booking 4.1; U.S. = 39% of revenue, NA $5.2B</td><td class="num">158M</td><td><a href="https://www.sec.gov/Archives/edgar/data/1559720/000155972026000004/abnb-20251231.htm">Airbnb FY2025 10-K</a></td></tr>
+      <tr><td>Airbnb party-size distribution (bookings)</td><td class="num">16 / 36 / 32 / 16%</td><td><a href="https://claude.ai/code/artifact/ebd4b51a-eb74-4c32-916f-0ffe4882dc02">Airbnb Party Size</a> (guest arrivals ÷ bookings; Airbnb “&gt;80% group trips”)</td></tr>
+      <tr><td>Solo share of nights vs bookings → relative stay length 1.5×</td><td class="num">24% vs 16%</td><td><a href="https://news.airbnb.com/airbnb-expands-safety-product-to-help-solo-travelers-as-solo-travel-surges">Airbnb Newsroom</a></td></tr>
+      <tr><td>Share of Airbnb guests who would have used a hotel</td><td class="num">38%</td><td><a href="https://andreyfradkin.com/assets/airbnb_welfare_paper.pdf">Farronato &amp; Fradkin, AER 2022</a> (62% would not switch; 87% at peak)</td></tr>
+      <tr><td>Accommodation own-price elasticity (β upper bound)</td><td class="num">−4.27</td><td>same paper (range −2.9 economy Airbnb to −8.6 luxury hotel, SF)</td></tr>
+      <tr><td>Hotel revenue effect of Airbnb, top-10 cities 2014</td><td class="num">−1.3% nights, −1.5% revenue</td><td><a href="https://www.library.hbs.edu/working-knowledge/the-airbnb-effect-cheaper-rooms-for-travelers-less-revenue-for-hotels">HBS Working Knowledge</a></td></tr>
+      <tr><td>U.S. hotel room nights sold 2024</td><td class="num">1.3B</td><td><a href="https://www.hospitalitynet.org/news/4127015.html">STR/CoStar via HospitalityNet</a></td></tr>
+      <tr><td>Business vs leisure room nights 2023</td><td class="num">439M / 605M</td><td><a href="https://www.ahla.com/sites/default/files/SOTI.2024.Final_.Draft_.v4.pdf">AHLA 2024 State of the Industry</a></td></tr>
+      <tr><td>Corporate bookings single-occupancy; leisure booking shape</td><td class="num">80%; 16 / 70 / 11 / 4%</td><td><a href="https://www.sciencedirect.com/science/article/pii/S2352340918315191">Antonio, de Almeida &amp; Nunes 2019</a></td></tr>
+      <tr><td>Hotel leisure party mix</td><td class="num">20 / 54 / 20 / 6%</td><td><a href="https://files.hawaii.gov/dbedt/economic/tourism/annual-reports/2024-annual-visitor.pdf">Hawaii DBEDT 2024</a>, <a href="https://www.statista.com/statistics/411714/party-size-of-las-vegas-visitors-us/">Las Vegas 2024</a></td></tr>
+      <tr><td>Hotel ALOS; U.S. ADR $158.67</td><td class="num">2.1 nights</td><td><a href="https://hotelbusiness.com/industry-data-trackers-see-positives-for-lodging/">Kalibri via HotelBusiness</a>; <a href="https://www.asianhospitality.com/costar-u-s-hotels-post-record-adr-revpar-in-2024/">CoStar 2024</a></td></tr>
+      <tr><td>Price ratio by party size</td><td class="num">0.69 / 1.22 / 0.80 / 0.79</td><td><a href="https://insideairbnb.com/get-the-data/">Inside Airbnb Jun-2026</a>, repo <code>party_size_cost_crossover.csv</code></td></tr>
+      <tr><td>U.S. demand +1.7% / +1.1%; hotel ADR +3.1% / +1.6% (2026 / 2027)</td><td class="num">—</td><td><a href="https://www.hospitalitynet.org/news/4133888/us-hotel-forecast-assumptions-august-2026.html">CoStar / Tourism Economics, Aug 2026</a></td></tr>
+      <tr><td>Airbnb ADR +5%, nights +10%, bedroom nights +12%</td><td class="num">Q2 2026</td><td><a href="https://howtheymake.money/en/blog/abnb-q2-2026-hotels-accelerate">Q2 2026 results</a>; <a href="https://pulse2.com/airbnb-guests-book-more-than-1-billion-bedroom-nights-in-one-year-as-group-travel-drives-growth/">Pulse2</a></td></tr>
+      <tr><td>Family nights +15%, multigenerational +35% (mix drift)</td><td class="num">H1 2024</td><td><a href="https://news.airbnb.com/how-and-where-families-are-traveling-this-thanksgiving/">Airbnb Newsroom</a></td></tr>
+      <tr><td>STR supply +4.6%, ADR +1.5%, occupancy −1% (2026)</td><td class="num">—</td><td><a href="https://www.prnewswire.com/news-releases/2026-will-be-the-best-year-to-invest-in-short-term-rentals-since-2021-new-airdna-report-finds-302643393.html">AirDNA 2026 Outlook</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Wiring it into the team model</h2>
+  <ol class="steps">
+    <li>Open <code>docs/nights_choice_driver.xlsx</code>. <strong>Inputs</strong> holds every assumption (blue) with its source; the yellow cells are the levers: β, the 38% contestable share, mix drift, and the Airbnb ADR path.</li>
+    <li>Link the <strong>Airbnb ADR growth</strong> row on Inputs to the ADR line in the revenue model, so the same ADR drives both price and share.</li>
+    <li>Replace the North America / U.S. nights growth plug with <strong>Projection!“U.S. AIRBNB NIGHTS”</strong> (or its growth row). ADR, take rate and FX stay exactly where they are; the sheet’s revenue rows are only a check (2025 U.S. revenue reproduces at $5.0B vs ~$4.8B reported, the gap being the revenue-share proxy for U.S. nights).</li>
+    <li>For EMEA / LatAm / APAC keep the team’s growth assumption for now, or repeat the calibration with that region’s hotel room nights (Eurostat has EU platform vs hotel nights — Krishang’s file).</li>
+    <li>Scenario the thesis: bear = Airbnb ADR +2–4 pts above hotels with β 2.5–4.3 (nights CAGR 1–2%); bull = ADR parity or below with mix drift +2 pts and a positive product shift (nights CAGR 4–5%).</li>
+  </ol>
+
+  <div class="two">
+    <div class="card bull"><h3>What it says for a long</h3><p>Only 38% of nights are contestable, and within that pool Airbnb’s share is 2–4% in solo/pair but 11–15% in 3+ parties — the segments growing fastest. Mix and category adoption add ~3 pts a year before any share gain, so nights compound even if hotels hold price.</p></div>
+    <div class="card bear"><h3>What it says for a short</h3><p>Airbnb ADR has outgrown hotel ADR for three years. At β = 2.5 every extra point of ADR premium growth costs 0.7 pts of nights; the current +1.9-pt gap is worth −1.6 pts, i.e. nights growth in the U.S. depends on the 62% own-category pool holding up while price pushes contestable parties back to hotels.</p></div>
+  </div>
+
+  <h2>Caveats</h2>
+  <ul>
+    <li>U.S. Airbnb nights are proxied from revenue share; a 5-pt error in the U.S. share moves every P<sub>g</sub> proportionally but not the growth decomposition.</li>
+    <li>The 38% substitution rate is from 2014 guest surveys in large cities; at peak periods it was 13%. It is the single most important lever and is deliberately exposed on Inputs.</li>
+    <li>β is a share-response, not a demand elasticity; the −4.27 is an upper bound because it includes not travelling and switching cities.</li>
+    <li>Hotel party-nights are derived, not observed: room nights are converted with the leisure party mix and rooms-per-party assumptions. STR/Kalibri party-level data would replace this.</li>
+    <li>No supply side: Airbnb listing growth (+4.6% STR supply in 2026) and regulation enter only through the product-shift lever.</li>
+  </ul>
+  <p class="foot">Repo: <code>analysis/src/choice_nights_driver.py</code> (model + sensitivity), <code>analysis/src/build_nights_driver_xlsx.py</code>, <code>docs/nights_choice_driver.xlsx</code>, <code>data/processed/choice_driver_calibration_2025.csv</code>, <code>choice_driver_projection.csv</code>, <code>choice_driver_sensitivity.csv</code>, <code>research/notes/choice_nights_driver.md</code>. Companion pages: Airbnb Party Size; party-size cross-over note; stay-length notes.</p>
+</div>

@@ -1,0 +1,8 @@
+country,platform_str_guest_nights_mm,platform_period,hotel_guest_nights_mm,hotel_period,str_share_of_guest_nights,framework,source_platform,source_hotel
+France,213.0,2025,220.2,2025,0.492,Eurostat tour_ce_omr / I551,Eurostat DDN-20260401-1,Eurostat via TradingEconomics
+Spain,189.0,2025,363.1,2024,0.342,Eurostat tour_ce_omr / I551,Eurostat DDN-20260401-1,Eurostat via TradingEconomics
+Italy,139.0,2025,288.2,2025,0.325,Eurostat tour_ce_omr / I551,Eurostat DDN-20260401-1,Eurostat via TradingEconomics
+Germany,68.0,2025,299.9,2024,0.185,Eurostat tour_ce_omr / I551,Eurostat DDN-20260401-1,Eurostat via TradingEconomics
+Greece,52.0,2025,,,,Eurostat tour_ce_omr,Eurostat DDN-20260401-1,TODO: pull I551
+United Kingdom,93.8,Jul2024-Jun2025,,,,ONS short-term lets (same 3 platforms as Eurostat),ONS bulletin Jul2024-Jun2025,TODO: no ONS hotel-nights analogue; VisitBritain/STR occupancy route
+United States,,,,,0.154,derived from choice_nights_driver.py on Eurostat guest-night basis (Airbnb-only; excl Vrbo),FY2025 10-K revenue proxy,STR/CoStar room nights x party conversion
