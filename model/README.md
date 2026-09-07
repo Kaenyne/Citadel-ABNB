@@ -13,3 +13,10 @@ History / Revenue / Costs / Cash / Valuation / Street / Card_5Nov / Recon. `ABNB
 was never created. Rebuild the workbook with `py -3.13 analysis/src/overnight/13_driver_model.py`
 rather than editing it in place if the inputs change; ad-hoc edits in Excel are fine for flexing
 assumptions but will be overwritten by the next rebuild.
+
+**Historicals only, 7 Sep 2026:** `ABNB_historicals.xlsx` (built by
+`analysis/src/abnb_historicals_workbook.py`) consolidates 1Q21 to 2Q26: KPIs, revenue-growth
+decomposition (nights / ADR ex-FX / FX / take rate), GAAP and cash cost lines, Adjusted EBITDA
+margin decomposition by line and by unit-cost vs revenue-per-night, plus an Earnings sheet with
+beat/meet/miss vs guidance and vs consensus and the stock move for all 23 prints. No forecasts.
+Blue cells are source values, black cells are formulas. Rebuild with `py -3.13 analysis/src/abnb_historicals_workbook.py`.
