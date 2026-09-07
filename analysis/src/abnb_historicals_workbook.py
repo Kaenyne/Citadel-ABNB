@@ -25,7 +25,8 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter as L
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "model" / "ABNB_historicals.xlsx"
+import os
+OUT = Path(os.environ.get("ABNB_HIST_OUT", str(ROOT / "model" / "ABNB_historicals.xlsx")))
 
 # ----------------------------------------------------------------------------- inputs
 kpi = pd.read_csv(ROOT / "data/processed/overnight/02_kpi_panel_quarterly.csv").set_index("quarter")
@@ -757,6 +758,144 @@ for i, wdt in enumerate([9, 26, 12, 11, 11, 8, 8, 8, 9, 9, 13, 9, 120], start=1)
     fs.column_dimensions[L(i)].width = wdt
 fs.freeze_panes = "A5"
 
+# ============================================================================= SHEET: Regressions
+import sys
+sys.path.insert(0, str(ROOT / "analysis/src"))
+import abnb_earnings_regressions as reg  # noqa: E402
+
+panel, results = reg.run()
+rs = wb.create_sheet("Regressions", index=2)
+rs["A1"] = "OLS of the post-print stock move on each earnings item: consensus surprise, beat dummy, and y/y growth"
+rs["A1"].font = Font(bold=True, size=13)
+rs["A2"] = ("Univariate OLS per row on the prints where both sides exist (n shown). Slope = return points per unit of the feature "
+            "(per 1% surprise, per 1% growth, per $1 of EPS surprise, or the beat-minus-not difference for a 1/0 dummy). "
+            "Two windows: all 23 prints, and 1Q23 onward (drops the 2021-22 reopening growth rates). "
+            "Values, not formulas; the pairs are listed below so any row can be re-run with LINEST. Descriptive only: no out-of-sample test.")
+rs["A2"].font = NOTE_FONT
+rs["A2"].alignment = Alignment(wrap_text=True, vertical="top")
+rs.merge_cells("A2:P2")
+rs.row_dimensions[2].height = 44
+res_cols = ["item", "feature", "horizon", "window", "n", "slope", "t", "p", "r2", "spearman", "mean_ret_if_1", "n_1",
+            "mean_ret_if_0", "n_0", "welch_p", "sign_agreement", "slope_2", "t_2", "p_2", "adj_r2"]
+res_cols = [c for c in res_cols if c in results.columns]
+labels = {"item": "Item", "feature": "Feature", "horizon": "Return horizon", "window": "Window", "n": "n", "slope": "Slope",
+          "t": "t", "p": "p", "r2": "R2", "spearman": "Spearman", "mean_ret_if_1": "Mean return if 1 (%)", "n_1": "n(1)",
+          "mean_ret_if_0": "Mean return if 0 (%)", "n_0": "n(0)", "welch_p": "Welch p (1 vs 0)",
+          "sign_agreement": "Sign agreement", "slope_2": "Slope, 2nd var", "t_2": "t, 2nd var", "p_2": "p, 2nd var", "adj_r2": "Adj. R2"}
+R0 = 4
+for j, c in enumerate(res_cols, start=1):
+    cell = rs.cell(row=R0, column=j, value=labels[c])
+    cell.font = HDR
+    cell.fill = HDR_FILL
+    cell.alignment = Alignment(wrap_text=True, vertical="center")
+rs.row_dimensions[R0].height = 30
+rr2 = R0 + 1
+for _, rec in results.iterrows():
+    for j, c in enumerate(res_cols, start=1):
+        val = v(rec[c])
+        if isinstance(val, float):
+            val = round(val, 4)
+        cell = rs.cell(row=rr2, column=j, value=val)
+        if c in ("slope", "t", "mean_ret_if_1", "mean_ret_if_0", "slope_2", "t_2"):
+            cell.number_format = '0.00;(0.00)'
+        elif c in ("p", "r2", "spearman", "welch_p", "sign_agreement", "p_2", "adj_r2"):
+            cell.number_format = '0.000'
+        if c == "p" and isinstance(val, float) and val < 0.05:
+            cell.font = BOLD
+    rr2 += 1
+for j, wdt in enumerate([24, 36, 24, 12, 5, 8, 7, 7, 7, 9, 12, 5, 12, 5, 10, 10, 10, 8, 8, 8], start=1):
+    rs.column_dimensions[L(j)].width = wdt
+rs.freeze_panes = rs.cell(row=R0 + 1, column=1)
+
+rr2 += 2
+rs.cell(row=rr2, column=1, value="Underlying pairs (one row per print; returns in %, surprises in %, EPS surprise in $)").font = BOLD
+rr2 += 1
+pcols = ["print_quarter", "print_date", "ret_1d", "exc_1d", "ret_5d", "exc_5d", "rev_surprise", "rev_beat", "rev_growth", "rev_accel_pts",
+         "eps_surprise_usd", "eps_beat", "eps_growth", "gbv_surprise", "gbv_beat", "gbv_growth", "nights_surprise", "nights_beat",
+         "nights_growth", "nights_accel_pts", "ebitda_surprise", "ebitda_beat", "ebitda_growth", "margin_change_pts", "adr_surprise",
+         "adr_growth", "take_rate_change_pts", "guide_vs_street", "guide_below_street"]
+for j, c in enumerate(pcols, start=1):
+    cell = rs.cell(row=rr2, column=j, value=c)
+    cell.font = HDR
+    cell.fill = HDR_FILL
+    cell.alignment = Alignment(wrap_text=True, vertical="center")
+rs.row_dimensions[rr2].height = 30
+rr2 += 1
+for _, rec in panel.iterrows():
+    for j, c in enumerate(pcols, start=1):
+        val = v(rec[c])
+        if isinstance(val, float):
+            val = round(val, 3)
+        cell = rs.cell(row=rr2, column=j, value=val)
+        cell.font = INPUT_FONT
+    rr2 += 1
+
+# ============================================================================= SHEET: Guidance vs move
+import abnb_guidance_reaction as gr  # noqa: E402
+
+gpanel, gres = gr.run()
+gs = wb.create_sheet("Guidance vs move", index=3)
+gs["A1"] = "Which guidance items move the stock: day-1 and 5-session moves regressed on the guidance issued at each print"
+gs["A1"].font = Font(bold=True, size=13)
+gs["A2"] = ("Features built from the guidance ledger for statements issued AT the print (next-quarter revenue range, nights / margin / ADR / take-rate "
+            "direction, full-year margin and revenue guides and their revisions). +1/0/-1 columns show the mean return when the guide was up / flat / down. "
+            "Reported-quarter beats are included at the bottom for comparison. Two windows: all prints and 1Q23 onward. Values, not formulas; pairs below.")
+gs["A2"].font = NOTE_FONT
+gs["A2"].alignment = Alignment(wrap_text=True, vertical="top")
+gs.merge_cells("A2:P2")
+gs.row_dimensions[2].height = 44
+gcols = ["item", "feature", "horizon", "window", "n", "slope", "t", "p", "r2", "spearman", "mean_if_1", "n_if_1", "mean_if_0", "n_if_0",
+         "mean_if_minus1", "n_if_minus1", "welch_p_1_vs_rest", "adj_r2", "var_1", "coef_1", "t_1", "var_2", "coef_2", "t_2", "var_3", "coef_3", "t_3"]
+gcols = [c for c in gcols if c in gres.columns]
+glabels = {"item": "Item", "feature": "Feature", "horizon": "Return horizon", "window": "Window", "n": "n", "slope": "Slope", "t": "t", "p": "p",
+           "r2": "R2", "spearman": "Spearman", "mean_if_1": "Mean if +1 / yes (%)", "n_if_1": "n", "mean_if_0": "Mean if 0 / no (%)", "n_if_0": "n",
+           "mean_if_minus1": "Mean if -1 (%)", "n_if_minus1": "n", "welch_p_1_vs_rest": "Welch p (+1 vs rest)", "adj_r2": "Adj. R2",
+           "var_1": "Var 1", "coef_1": "Coef 1", "t_1": "t 1", "var_2": "Var 2", "coef_2": "Coef 2", "t_2": "t 2", "var_3": "Var 3", "coef_3": "Coef 3", "t_3": "t 3"}
+for j, c in enumerate(gcols, start=1):
+    cell = gs.cell(row=4, column=j, value=glabels[c])
+    cell.font = HDR
+    cell.fill = HDR_FILL
+    cell.alignment = Alignment(wrap_text=True, vertical="center")
+gs.row_dimensions[4].height = 30
+rr3 = 5
+for _, rec in gres.iterrows():
+    for j, c in enumerate(gcols, start=1):
+        val = v(rec[c])
+        if isinstance(val, float):
+            val = round(val, 4)
+        cell = gs.cell(row=rr3, column=j, value=val)
+        if c in ("slope", "t", "mean_if_1", "mean_if_0", "mean_if_minus1", "coef_1", "coef_2", "coef_3", "t_1", "t_2", "t_3"):
+            cell.number_format = '0.00;(0.00)'
+        elif c in ("p", "r2", "spearman", "welch_p_1_vs_rest", "adj_r2"):
+            cell.number_format = '0.000'
+        if c == "p" and isinstance(val, float) and val < 0.05:
+            cell.font = BOLD
+    rr3 += 1
+for j, wdt in enumerate([30, 46, 24, 12, 5, 8, 7, 7, 7, 9, 12, 4, 12, 4, 12, 4, 10, 8, 18, 8, 6, 18, 8, 6, 18, 8, 6], start=1):
+    gs.column_dimensions[L(j)].width = wdt
+gs.freeze_panes = gs.cell(row=5, column=1)
+rr3 += 2
+gs.cell(row=rr3, column=1, value="Underlying pairs (one row per print; returns in %)").font = BOLD
+rr3 += 1
+gp_cols = ["print_quarter", "print_date", "ret_1d", "exc_1d", "ret_5d", "exc_5d", "nq_rev_guide_mid", "nq_rev_guide_growth", "nq_guide_accel_pts",
+           "guide_vs_street_pct", "guide_below_street", "nq_range_width_pct", "nq_nights_guide_pts", "nq_nights_dir", "nq_margin_dir", "nq_margin_guide_pts",
+           "nq_adr_dir", "nq_take_rate_dir", "nq_gbv_dir", "fy_margin_action", "fy_margin_delta_pts", "fy_margin_floor_vs_prior_fy", "fy_rev_action",
+           "fy_rev_delta_pts", "fy_rev_guide_mid", "fy_numeric_present", "fy_items_count", "new_investment_flag", "sbc_guide_pct", "rev_beat", "nights_beat"]
+for j, c in enumerate(gp_cols, start=1):
+    cell = gs.cell(row=rr3, column=j, value=c)
+    cell.font = HDR
+    cell.fill = HDR_FILL
+    cell.alignment = Alignment(wrap_text=True, vertical="center")
+gs.row_dimensions[rr3].height = 30
+rr3 += 1
+for _, rec in gpanel.iterrows():
+    for j, c in enumerate(gp_cols, start=1):
+        val = v(rec[c])
+        if isinstance(val, float):
+            val = round(val, 3)
+        gs.cell(row=rr3, column=j, value=val).font = INPUT_FONT
+    rr3 += 1
+
 # ============================================================================= SHEET 4: Sources
 ss = wb.create_sheet("Sources")
 lines = [
@@ -765,6 +904,8 @@ lines = [
     ("Cost lines, SBC by line, D&A, add-backs, FCF", "data/processed/overnight/07_cost_lines_per_night.csv: GAAP lines from XBRL (Q4 = FY less 9M), SBC-by-function footnotes from each letter, Adjusted EBITDA reconciliation from each letter. Cash line = GAAP line less that line's SBC."),
     ("Management guidance", "data/processed/overnight/02_guidance_ledger.csv (194 statements) and 02_fy_guide_revisions.csv: Outlook sections of the letters, quoted verbatim, scored against the reported actual."),
     ("Consensus at each print", "data/processed/overnight/16_consensus_at_print_merged.csv: 145 dated press/vendor quotes (Yahoo, Reuters/LSEG, StreetAccount via press, Zacks, FactSet). Vendors disagree by up to 2%; vendor kept per row. EPS basis varies (GAAP before 4Q21 and for 3Q23/4Q23 one-offs)."),
+    ("Regressions", "analysis/src/abnb_earnings_regressions.py: univariate OLS of day-1 and 5-session moves on each item's consensus surprise, beat dummy and y/y growth; results also in data/processed/abnb_earnings_regressions.csv with the pairs in abnb_earnings_regression_panel.csv."),
+    ("Guidance vs move", "analysis/src/abnb_guidance_reaction.py: OLS of day-1 and 5-session moves on the guidance issued at each print; results in data/processed/abnb_guidance_reaction_results.csv, pairs in abnb_guidance_reaction_panel.csv."),
     ("Stock moves", "data/processed/abnb_earnings_reactions.csv (close-to-close, reaction day = day after the after-close print; QQQ excess) and data/processed/overnight/20_executable_returns.csv (next-open entry: gap, open-to-close, 5 and 20 sessions)."),
     ("Definitions", "ADR = GBV / nights. Take rate = revenue / GBV (revenue at check-in, GBV at booking, so seasonal). FX effect = company-stated reported minus constant-currency growth. Adjusted EBITDA = operating income + SBC + D&A + other add-backs (company definition)."),
     ("Known data caveats", "1Q21 and 2Q22 cash stacks do not tie to Adjusted EBITDA (SBC footnote gaps). 4Q23 G&A cash includes the $928M Italy withholding settlement, added back in Adjusted EBITDA. ADR ex-FX before 4Q25 is approximate where the letter said 'roughly flat'. 2Q26 20-session move taken from the overnight WS09 note (reactions CSV predates it)."),
