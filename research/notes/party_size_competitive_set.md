@@ -4,14 +4,21 @@ Thesis (Jessie): small parties choose between a hotel and an Airbnb; large parti
 
 ## Headline
 
-| Party size | Hotel cost/night (rooms × $159 ADR) | Airbnb entire home (median + 14% fee) | Airbnb ÷ hotel | Who wins on price |
+| Party size | Hotel cost/night (rooms × $159 ADR) | Airbnb entire home (price a guest is quoted) | Airbnb ÷ hotel | Who wins on price |
 |---|---|---|---|---|
-| 1 | $159 | $110 (studio) / $65 private room | 0.69x | contestable (budget hotels compete) |
-| **2** | $159 | **$193** | **1.22x** | **hotel — the real battleground** |
-| 3 | $317 | $227 | 0.72x | Airbnb |
-| 4 | $317 | $272 | 0.86x | Airbnb (families w/ small kids can still fit 1 hotel room) |
-| 5–6 | $476 | $336–390 | 0.70–0.82x | Airbnb |
-| 7–8+ | $635 | $444–558 | 0.70–0.88x | Airbnb — and they get a shared living space + kitchen on top |
+| 1 | $159 | $86 | 0.54x | contestable (budget hotels compete) |
+| **2** | $159 | **$164** | **1.03x** | **line ball — the real battleground** |
+| 3 | $317 | $191 | 0.60x | Airbnb |
+| 4 | $317 | $227 | 0.72x | Airbnb (families w/ small kids can still fit 1 hotel room) |
+| 5–6 | $476 | $277–330 | 0.58–0.69x | Airbnb |
+| 7–8+ | $635 | $377–483 | 0.59–0.76x | Airbnb — and they get a shared living space + kitchen on top |
+
+**Corrected 7 Sep 2026.** This table previously read 0.69 / 1.22 / 0.72 / 0.86 / 0.70–0.82 / 0.70–0.88 because
+it multiplied the Jun-2026 Inside Airbnb `price` by 1.14 for the guest service fee. From the Mar-2026 dumps that
+field is already a fee-inclusive stay quote, so the fee was counted twice and every ratio was 12.3% too high. The
+couples cell is the one that changes character: Airbnb is ~3% dearer than a hotel there, not 22%, so the price gap
+that made it "the hotel's segment" is mostly an artefact. What still favours hotels for couples is the 1–2-night
+cleaning-fee penalty and check-in convenience — the argument below survives, the price evidence for it does not.
 
 - **Cross-over is 3 people.** The moment a group needs a second hotel room, an entire-home Airbnb is 14–30% cheaper *before* counting the kitchen and shared space. Large groups are captive: price and product both point to Airbnb, stay length irrelevant.
 - **At 2 people Airbnb costs ~22% more than a hotel room** (and a private room is 27% cheaper) — this is the only segment where the hotel is a live alternative, so it's where kitchen, stay length, loyalty points, and direct-booking all actually bite.
@@ -32,7 +39,8 @@ Thesis (Jessie): small parties choose between a hotel and an Airbnb; large parti
 
 ## Method & caveats
 
-- Airbnb price: listing-weighted average of city medians of `price` for active entire homes (≥1 review in last 12 months) with `accommodates` = party size; 9 cities (8 calendar cities + LA), 53k listings. ×1.14 guest service fee ("typically under 14.2%", Airbnb Help Centre). Cleaning fees excluded (not in Inside Airbnb).
+- Airbnb price: listing-weighted average of city medians of `price` for active entire homes (≥1 review in last 12 months) with `accommodates` = party size; 7 U.S. cities, 52.4k listings. **No fee is added**: on the Jun-2026 dumps `price` is `price_quote_price_per_night`, a stay quote already inclusive of the guest service fee and of cleaning amortised over the stay (verified identical across 10,321 Austin entire homes). The earlier build used 9 cities and applied ×1.14 to this same basis.
+- Because the quote basis is what a guest actually pays, it is also immune to the 13 Oct 2026 host-only fee migration: switching hosts gross up the listed rate ~14.8% and the checkout fee disappears, so the *listed* series carries a 12–18% step that is not pricing power while the *quoted* price is roughly unchanged (`host_only_fee_history_and_elasticity.md`).
 - Hotel: 2 people per room × CoStar/STR FY2024 U.S. ADR $158.67; taxes and resort fees excluded on both sides.
 - `accommodates` is capacity, not party size; couples do book 4-sleepers, so the contestable share is a range (25–50%).
 - Stay-share figures reuse the 8-city booked-run dataset (273k runs, ≤30 nights) from `kitchen_wholehome_stay_length.md`.
