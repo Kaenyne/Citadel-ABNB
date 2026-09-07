@@ -132,3 +132,7 @@ distinguishes existing management/fee/Inside Airbnb evidence from added capacity
 evidence and unresolved leads. It cannot certify private/unshared work. See the
 [operating audit](../notes/2026-09-07_hotel-funnel-audit.md), including explicit
 25-market selection and the separate 13-market sensitivity.
+
+## Housing-driven STR regulatory research (5 Sep 2026, committed 7 Sep on `krish/regulatory-db`)
+
+The [regulatory research package](../regulatory/README.md) holds 32 ranked factors, 48 source records and a 14-quarter earnings-transcript index. Its source ids use the separate `REG-S` namespace (REG-S01 to REG-S48) so they do not collide with the S-series above. Full log: [source index](../regulatory/source_index.md); [factor register](../regulatory/factor_register.md); [earnings digest](../regulatory/earnings_digest.md); [quantification](../regulatory/quantification/README.md); [phase 2 matched cohorts](../regulatory/phase2/README.md). Public raw inputs are committed under `data/raw/regulatory/`; LSEG story bodies and transcript texts stay local (see data/README.md).
