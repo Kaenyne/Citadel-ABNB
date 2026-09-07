@@ -1,0 +1,34 @@
+{
+  "snapshot_rows": 168,
+  "snapshot_markets": 13,
+  "source_flagged_partial_snapshots": 41,
+  "validated_pair_rows": 258,
+  "year_ago_pair_rows": 103,
+  "latest_year_ago_pairs": 13,
+  "latest_pairs_with_endpoint_scope_flag": 1,
+  "interval_days_min": 313,
+  "interval_days_max": 345,
+  "measured_property_churn_rate": null,
+  "destination_classification": "not_identifiable_from_aggregate_inputs",
+  "limitations": [
+    "No raw listing IDs or property crosswalk in these aggregate inputs.",
+    "No endpoint scope flag is not proof of complete or comparable coverage.",
+    "Source scope heuristic uses future snapshots; it is retrospective, not point-in-time.",
+    "Year-ago pairs are not exactly annual; no annualization or global pooling is performed.",
+    "New to this pair does not establish a property's first-ever Airbnb entry.",
+    "Rates use all observed IDs, not a verified economically active property denominator."
+  ],
+  "inputs": [
+    {
+      "commit": "620f1ee4691d06df964bd73ce84cc35e8766e4a0",
+      "path": "data/processed/inside_airbnb_like_for_like.csv",
+      "sha256": "5d3407f48f103697f333d19068277667a033e214abc4a72d22c408656ccf52d6"
+    },
+    {
+      "commit": "620f1ee4691d06df964bd73ce84cc35e8766e4a0",
+      "path": "data/processed/inside_airbnb_city_snapshots.csv",
+      "sha256": "956d489d40acc979d53a01926384847f56babdd469a28d21ccdd7ebc9f1c52f4"
+    }
+  ],
+  "method": "latest_source_year_ago_pair_per_city_with_endpoint_scope_screen"
+}

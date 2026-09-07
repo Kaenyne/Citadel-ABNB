@@ -1,0 +1,59 @@
+{
+  "purpose": "Identify Airbnb hotel production and economic contribution in a large, auditable panel; not a request for guest personal information.",
+  "status": "Requested schema; no underlying hotel booking panel has been obtained.",
+  "confirmed_market_scope": {
+    "universe": "original_listing_panel",
+    "source_file": "analysis/config/hotel_markets_13.csv",
+    "market_ids": ["austin", "barcelona", "chicago", "london", "los-angeles", "mexico-city", "nashville", "new-orleans", "new-york-city", "paris", "rome", "san-diego", "sydney"],
+    "missing_market_policy": "Retain all 13 markets and report missing data explicitly; a zero-coverage export is not zero Airbnb bookings.",
+    "geography_policy": "Preserve provider destination boundaries and reconcile to the listing-panel market before ratios or aggregation."
+  },
+  "preferred_coverage": {
+    "period": "2024-01-01 through latest available 2026 stay month, with forward bookings distinguished",
+    "unit": "One unique reservation with room counts and lifecycle records, or a hotel-month-channel aggregate with known denominator",
+    "selection": "All covered independent/boutique hotels, including zero-Airbnb-production hotels and exits; geographic and affiliation filters explicit",
+    "scale": "All eligible covered properties; effective sample size determined by unique hotels/operators and observed variance, not raw row count"
+  },
+  "identity_fields": [
+    "provider_record_id", "provider_property_id", "physical_property_match_id",
+    "operator_group_id", "country", "city", "property_type", "brand_affiliation",
+    "classification_source", "consumer_storefront", "connectivity_provider"
+  ],
+  "production_fields": [
+    "reservation_id_or_month_channel_key", "booking_date", "check_in_date", "check_out_date",
+    "cancellation_date", "reservation_status", "number_of_rooms", "number_of_nights",
+    "net_completed_room_nights", "gross_room_value", "taxes", "mandatory_fees",
+    "currency", "refund_amount", "commission_amount", "operator_payout"
+  ],
+  "inventory_fields": [
+    "airbnb_verified_activation_date", "physical_rooms", "sellable_room_nights",
+    "airbnb_offered_room_nights_including_subsequently_booked_inventory",
+    "out_of_order_rooms", "deactivation_or_inventory_withdrawal_date"
+  ],
+  "promotion_fields_if_available": [
+    "program_id", "credit_offer_rate", "eligible_booking_subtotal",
+    "credit_issued", "credit_funding_party", "credit_redeemed", "redemption_date"
+  ],
+  "receipt_panel_additions_if_applicable": [
+    "anonymous_consumer_panel_id", "consumer_origin_country", "panel_membership_start_end",
+    "receipt_type", "parent_reservation_id_for_amendments", "vendor_weight",
+    "airbnb_hotel_vs_home_classification_method", "classification_confidence"
+  ],
+  "source_metadata": [
+    "source_version", "extraction_timestamp", "measurement_period", "metric_definition",
+    "field_missing_reason", "coverage_changes", "selection_method", "weighting_method",
+    "overlap_with_other_provider_panels", "permitted_research_use"
+  ],
+  "acceptance_checks": [
+    "HotelTonight and Airbnb storefront bookings must be separable or explicitly unresolved.",
+    "Hotel owner room revenue, guest spend, GBV and Airbnb net revenue are separate metrics.",
+    "No room-night count is inferred from card transactions without stay dates and room quantities.",
+    "Deduplicate confirmations, amendments, receipts and refunds at reservation level.",
+    "A zero-night record with inconsistent stay dates must be flagged, not silently accepted or imputed.",
+    "Retain genuine zero production and distinguish it from missing source coverage.",
+    "A receipt-panel user is not a hotel; report both unique consumers and unique hotels.",
+    "Sum nights and prices only after reconciling currency, room versus guest nights and cancellation treatment.",
+    "Public registry size is not the production-panel denominator.",
+    "Only use population expansion weights when their construction and covered population are known."
+  ]
+}

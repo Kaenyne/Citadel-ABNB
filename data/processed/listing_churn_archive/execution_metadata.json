@@ -1,0 +1,118 @@
+{
+  "source": {
+    "index_url": "https://insideairbnb.com/get-the-data/",
+    "metadata_url": "https://insideairbnb.com/page-data/sq/d/3008393846.json",
+    "metadata_sha256": "dca710376031a13f2065153ca56037ba1ee837c3611322eec001e2bb9f6f8ca6",
+    "months": [
+      "2025-09",
+      "2025-12",
+      "2026-03",
+      "2026-06"
+    ],
+    "selection": "Last publicly indexed snapshot in each selected month; require September baseline and June endpoint",
+    "expected_snapshots": 478,
+    "catalogued_markets": 123,
+    "eligible_markets": 120,
+    "captured_at_utc": "2026-09-07T18:54:11.387338+00:00"
+  },
+  "python_version": "3.13.14",
+  "successful_snapshots": 478,
+  "failed_markets": [],
+  "baseline_unique_ids_before_coverage_screen": 1595159,
+  "overlapping_unique_baseline_ids_excluded": 3,
+  "nested_geography_exclusions": {
+    "dublin": "ireland"
+  },
+  "duplicate_rule": "Exclude smaller geographies with >=90% baseline-ID overlap with a larger acquired geography. Exclude residual baseline IDs present in multiple remaining geographies from all denominators.",
+  "positive_rule": "Presence anywhere in the acquired panel during the corresponding snapshot month. All positive observations retained, even partial files.",
+  "coverage_rule": "Inherited team partial flags, plus any selected snapshot below 50% of that market's largest selected snapshot. This is a diagnostic, not proof of completeness.",
+  "persistence_rule": "At least two usable negative snapshots spanning >=90 actual completion-date days; no positive in any selected month from first negative onward",
+  "sensitivity": "Exclude all March 2026 negative evidence; still retain March positives",
+  "annualized": false,
+  "geographic_sampling": "Availability-selected public Inside Airbnb markets; cities, regions, and some countries; no Airbnb-wide weighting",
+  "limitations": [
+    "September-to-June observation dates vary by market; seasonal exposure is about nine months, not one year",
+    "Nonflagged public files are not independently verified complete",
+    "Quarterly observations miss intervening pauses and returns",
+    "90-day persistence is snapshot-observed absence, not proven permanent property exit",
+    "Review-weighted results use review counts, not revenue or nights",
+    "Exact permit links are unvalidated replacement candidates",
+    "No population sale, rental, or competitor-migration share identified"
+  ],
+  "team_historical_source": {
+    "source_commit": "df833f5f3980078beef09c1327940bfa58d57acf",
+    "catalog": "data/processed/inside_airbnb_city_snapshots.csv",
+    "catalog_sha256": "efeb4c0ae7a5f6325d38b2cf3307cdef8a1a10d59549ebbf58ff2d6bd94feadd",
+    "start": "2025-09-01",
+    "selection": "all catalogued markets and dates on/after start",
+    "expected_snapshots": 132,
+    "markets": {
+      "austin": [
+        "united-states/tx/austin",
+        "United States",
+        "North America"
+      ],
+      "barcelona": [
+        "spain/catalonia/barcelona",
+        "Spain",
+        "Europe"
+      ],
+      "chicago": [
+        "united-states/il/chicago",
+        "United States",
+        "North America"
+      ],
+      "london": [
+        "united-kingdom/england/london",
+        "United Kingdom",
+        "Europe"
+      ],
+      "los-angeles": [
+        "united-states/ca/los-angeles",
+        "United States",
+        "North America"
+      ],
+      "mexico-city": [
+        "mexico/df/mexico-city",
+        "Mexico",
+        "Latin America"
+      ],
+      "nashville": [
+        "united-states/tn/nashville",
+        "United States",
+        "North America"
+      ],
+      "new-orleans": [
+        "united-states/la/new-orleans",
+        "United States",
+        "North America"
+      ],
+      "new-york-city": [
+        "united-states/ny/new-york-city",
+        "United States",
+        "North America"
+      ],
+      "paris": [
+        "france/ile-de-france/paris",
+        "France",
+        "Europe"
+      ],
+      "rome": [
+        "italy/lazio/rome",
+        "Italy",
+        "Europe"
+      ],
+      "san-diego": [
+        "united-states/ca/san-diego",
+        "United States",
+        "North America"
+      ],
+      "sydney": [
+        "australia/nsw/sydney",
+        "Australia",
+        "Asia Pacific"
+      ]
+    }
+  },
+  "team_current_manifest_sha256": "4194ff81bf258cce91f1874d6ff2f3411c3f9c2dca114d91364ad214e9da3112"
+}

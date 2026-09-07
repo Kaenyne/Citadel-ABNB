@@ -1,0 +1,144 @@
+{
+  "workstream": "original13_barcelona_rome_sydney",
+  "retrieval_date": "2026-09-07",
+  "sources": [
+    {
+      "source_id": "HOTEL-BCN",
+      "url": "https://tdbnews.barcelonaturisme.com/wp-content/uploads/2024/10/2409_Oferta-hotelera.pdf",
+      "market": "barcelona",
+      "observation_period": "2024-09",
+      "geography": "Barcelona municipality",
+      "metric": "hotel and hotel-apartment census rooms",
+      "value": 40166,
+      "unit": "rooms",
+      "raw_path": "data/raw/hotel_13_market_extension/europe_sydney/barcelona_capacity_metadata.json",
+      "overlap_status": "Existing HOTEL-BCN source reused; seven category and ten district rows newly extracted from the same report, not independent evidence.",
+      "limitations": [
+        "Provisional monthly census includes hotels and hotel-apartments; 447 establishments and 78353 beds are separate units.",
+        "No independent/boutique or Airbnb filter.",
+        "Official city property-registry landing failed and API fallback returned HTTP500; no city-wide named property frame obtained.",
+        "September 2024 is the observation date; not September 2026 stock."
+      ],
+      "raw_sha256": "ff4f55532eba4787201660fdf877dc0ad4d28f164ccbdde4722a88a84814c626"
+    },
+    {
+      "source_id": "HOTEL-ROM",
+      "url": "https://www.romaperilclima.it/wp-content/uploads/2026/03/Strategia-di-Riqualificazione-Energetica-del-Patrimonio-Immobiliare-di-Roma-Capitale_documento_ENEA_conferenza_3marzo2026_compressed.pdf",
+      "market": "rome",
+      "observation_period": "2024 year end",
+      "geography": "Roma Capitale",
+      "metric": "Alberghi hotel rooms",
+      "value": 48747,
+      "unit": "rooms",
+      "raw_path": "data/raw/hotel_funnel_audit/public/rome2024.pdf",
+      "overlap_status": "Headline HOTEL-ROM city aggregate is reused. June 2025 municipal registry property extract is new to the checked local source inventory but shares Roma Capitale data lineage; not independent city-capacity corroboration.",
+      "limitations": [
+        "Excludes separately reported 657 rooms in hotel dependencies.",
+        "No matched chain/independent classification.",
+        "Newer registry is not proven complete active supply; primary city aggregate retained pending alias/status reconciliation.",
+        "No Airbnb listings, allocation, bookings or revenue identified."
+      ],
+      "raw_sha256": "4daf53c6f003f939135f124d32d7243e7b4214e981b74a9cae323dbcdc7ea222"
+    },
+    {
+      "source_id": "HOTEL-SYD",
+      "url": "https://www.cityofsydney.nsw.gov.au/-/media/corporate/files/publications/research-and-reports/city-monitor-reports/visitor-accommodation-monitor-june-2025.pdf?download=true",
+      "market": "sydney",
+      "observation_period": "2025-06-30",
+      "geography": "City of Sydney local government area, not Greater Sydney",
+      "metric": "hotel-category stock rooms",
+      "value": 24990,
+      "unit": "rooms",
+      "raw_path": "data/raw/hotel_funnel_audit/public/sydney2025.pdf",
+      "overlap_status": "Headline HOTEL-SYD report is reused; publicly linked June 2026 development dataset is newly acquired, but completed projects can overlap existing stock and must not be added to it.",
+      "limitations": [
+        "City definition includes standard hotels, B&Bs, pubs and motels; excludes separate serviced apartment units and backpacker beds.",
+        "No complete operating-hotel property register obtained; 69 development applications are a distinct dataset.",
+        "City report explicitly does not cover Airbnb accommodation.",
+        "Independent ownership and Airbnb uptake remain unknown."
+      ],
+      "raw_sha256": "26fa51f81028d50ae3e663dfaf538faa1e0d846a05aaf0729ce1c97ab65e6d32"
+    },
+    {
+      "source_id": "HOTEL-13-ROM-REG-2025-06",
+      "source_url": "https://dati.comune.roma.it/catalog/dataset/c71fb0bc-109d-4f36-81c0-287ec9bda520/resource/9a1c0c01-0953-4436-89a8-ac286d58dc5c/download/suar2025-06.csv",
+      "observation_period": "2025-06",
+      "metric": "known registered Alberghi rooms after candidate duplicate removal",
+      "value": 49577,
+      "unit": "reported rooms",
+      "status": "calculated",
+      "raw_path": "data/raw/hotel_13_market_extension/europe_sydney/rome_registry_2025_06.csv",
+      "processed_path": "data/raw/hotel_13_market_extension/europe_sydney/rome_hotel_property_candidates.csv",
+      "limitations": [
+        "Two duplicate candidate pairs remove 19 rooms; remaining shared-address aliases unresolved.",
+        "No active/closed field; not verified current operation.",
+        "Two missing room counts remain null.",
+        "Difference versus old aggregate is not proved net new hotel growth."
+      ],
+      "raw_sha256": "6181f4447964ea4a44b48811a0bba9f32de00483b11a5cceb546d6291c151d75"
+    },
+    {
+      "source_id": "HOTEL-13-SYD-DEV-2026-06",
+      "source_url": "https://services1.arcgis.com/cNVyNtjGVZybOQWZ/arcgis/rest/services/Development_Monitoring/FeatureServer/0",
+      "observation_period": "2026-06-30",
+      "metric": "development applications with nonzero hotel-room contribution",
+      "value": 69,
+      "unit": "applications",
+      "status": "observed",
+      "raw_path": "data/raw/hotel_13_market_extension/europe_sydney/sydney_hotel_developments.json",
+      "processed_path": "data/raw/hotel_13_market_extension/europe_sydney/sydney_hotel_development_rows.csv",
+      "limitations": [
+        "Development room contributions are not total property capacities.",
+        "Completion estimates may slip; FY2026/27 is not exactly the next 12 months from September 2026.",
+        "Completed history overlaps city stock; pipeline is not currently sellable rooms or Airbnb inventory."
+      ],
+      "raw_sha256": "d0a4943735872bb6261d6abd476cf2fd3ed7ec22834e3163cc1b47dfb159bc87"
+    },
+    {
+      "source_id": "HOTEL-13-BCN-REGISTRY-ATTEMPT",
+      "url": "https://opendata-ajuntament.barcelona.cat/data/api/3/action/package_show?id=allotjaments-hotels",
+      "market": "barcelona",
+      "http_status": 500,
+      "status": "failed API fallback after public city landing failed",
+      "raw_path": "data/raw/hotel_13_market_extension/europe_sydney/barcelona_package.json",
+      "quantitative_evidence_used": false,
+      "raw_sha256": "7b9b60a5c21c6ba38928c30c5abcb4a8b42496abedbeb39dbc3a59e3a494d6e7"
+    }
+  ],
+  "overlap_check": {
+    "checked_inventory": [
+      "research/sources/hotel_funnel_audit.json",
+      "data/processed/hotel_funnel_audit/hotel_market_capacity_anchors.csv",
+      "research/",
+      "analysis/",
+      "data/raw/hotel_funnel_audit/team_review/"
+    ],
+    "existing_sources_reused": [
+      "HOTEL-BCN",
+      "HOTEL-ROM",
+      "HOTEL-SYD"
+    ],
+    "new_source_extracts": [
+      "HOTEL-13-ROM-REG-2025-06",
+      "HOTEL-13-SYD-DEV-2026-06"
+    ],
+    "scope_limit": "Local inventory and saved team review scanned; parent handles current remote-team attribution. New row extraction does not make reused lineage independent."
+  },
+  "lineage": {
+    "rome": "Municipal CKAN package -> June 2025 CSV -> strict Alberghi filter -> documented duplicate candidate clustering. Existing ENEA capacity table also attributes Roma Capitale.",
+    "sydney": "Existing city report printed p5 -> public app9956d5c0b31243f1b6eaf24de615fdaa -> webmap2309d1f850b64d8fb2e284c6f7b145de -> Development Monitoring FeatureServer/0. DateExtracted=2026-06-30, service count69 reconciles fetched69.",
+    "barcelona": "Existing public tourism-board PDF reused for city summary and category/district breakdowns. No report redistributed; property registry inaccessible after fallback."
+  },
+  "reproducibility": {
+    "fetch_script": "data/raw/hotel_13_market_extension/europe_sydney/fetch_registry_sources.py",
+    "build_script": "data/raw/hotel_13_market_extension/europe_sydney/build_property_extracts.py",
+    "original_fetch_manifests": [
+      "initial_fetch_manifest.json",
+      "followup_fetch_manifest.json",
+      "sydney_development_fetch.json"
+    ],
+    "output": "market_results.json"
+  },
+  "independent_rooms_verified": null,
+  "airbnb_booking_observations": 0
+}

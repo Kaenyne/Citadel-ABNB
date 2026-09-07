@@ -1,0 +1,160 @@
+{
+  "as_of": "2026-09-07",
+  "market": "Austin",
+  "market_list_resolution": "User selected original listing-panel 13; Austin is in analysis/config/hotel_markets_13.csv",
+  "sources": [
+    {
+      "source_id": "H13-AUS-REG",
+      "title": "Hotel, Motel, and B&B Licenses",
+      "publisher": "City of Austin Development Services",
+      "url": "https://data.austintexas.gov/Public-Safety/Hotel-Motel-and-B-B-Licenses/av8n-pmdr",
+      "dataset_id": "av8n-pmdr",
+      "raw_csv": "data/raw/hotel_13_market_extension/austin/licenses.csv",
+      "metadata_url": "https://data.austintexas.gov/api/views/av8n-pmdr.json",
+      "version": "2026-09-07T11:02:35+00:00",
+      "population": "Hotel, Motel, Bed and Breakfast operating licenses; all statuses retained in raw data",
+      "units": "source NUMBEROFUNITSROOMS; license-record capacity, not live sellable or Airbnb-allocated rooms",
+      "figures": {
+        "retrieved": "2026-09-07",
+        "source_url": "https://data.austintexas.gov/Public-Safety/Hotel-Motel-and-B-B-Licenses/av8n-pmdr",
+        "rows_updated_utc": "2026-09-07T11:02:35+00:00",
+        "geographic_scope": "City of Austin operating-license records; not metro. All source City fields say AUSTIN; boundary not independently polygon-checked.",
+        "record_unit": "operating license FOLDERID; not independently reconciled physical hotel",
+        "room_unit": "source NUMBEROFUNITSROOMS; license-record capacity, not live sellable or Airbnb-allocated rooms",
+        "total_license_records": 225,
+        "unique_license_ids": 225,
+        "distinct_raw_name_address_strings": 225,
+        "all_status_recorded_units_rooms": 30119,
+        "active_license_records": 216,
+        "active_recorded_units_rooms": 29080,
+        "status_type_summary": [
+          {
+            "status": "Active",
+            "license_type": "Bed and Breakfast",
+            "license_records": 5,
+            "recorded_units_rooms": 20
+          },
+          {
+            "status": "Active",
+            "license_type": "Hotel",
+            "license_records": 168,
+            "recorded_units_rooms": 25424
+          },
+          {
+            "status": "Active",
+            "license_type": "Motel",
+            "license_records": 43,
+            "recorded_units_rooms": 3636
+          },
+          {
+            "status": "Denied",
+            "license_type": "Hotel",
+            "license_records": 5,
+            "recorded_units_rooms": 407
+          },
+          {
+            "status": "Denied",
+            "license_type": "Motel",
+            "license_records": 1,
+            "recorded_units_rooms": 128
+          },
+          {
+            "status": "Expired",
+            "license_type": "Motel",
+            "license_records": 1,
+            "recorded_units_rooms": 142
+          },
+          {
+            "status": "Suspended",
+            "license_type": "Hotel",
+            "license_records": 2,
+            "recorded_units_rooms": 362
+          }
+        ],
+        "active_hotel_license_records_under_50_units_rooms": 15,
+        "active_hotel_license_rooms_under_50": 344,
+        "small_hotel_caveat": "Size-only subset. Includes Firehouse Hostel and Holly House HOA; not verified independent/boutique hotels.",
+        "issue_date_mode": [
+          "2025-12-31T00:00:00",
+          191
+        ],
+        "date_caveat": "ISSUEDATE is not hotel opening or Airbnb onboarding; 2025-12-31 concentration suggests administrative dates.",
+        "physical_property_count": null,
+        "independently_owned_rooms": null,
+        "boutique_rooms": null,
+        "airbnb_listed_hotels": null,
+        "airbnb_allocated_rooms": null,
+        "airbnb_bookings": null,
+        "checks": {
+          "unique_ids": true,
+          "all_positive_numeric_units_rooms": true,
+          "metadata_row_control_matches": true,
+          "status_type_totals_reconcile": true
+        }
+      },
+      "novelty": "No av8n-pmdr or registry title match found in searched visible frozen team text; main overlap audit remains authoritative"
+    },
+    {
+      "source_id": "H13-AUS-CVB",
+      "title": "Visit Austin Meeting FAQ",
+      "publisher": "Visit Austin",
+      "url": "https://www.austintexas.org/meeting-professionals/why-austin/meeting-faq/",
+      "vintage": "early 2026",
+      "retrieved": "2026-09-07",
+      "citywide_hotel_rooms_lower_threshold": 51000,
+      "downtown_hotel_rooms_lower_threshold": 15000,
+      "qualifier": "plus",
+      "geography": "Source calls this citywide and downtown; exact destination/municipal/metro boundaries unprovided",
+      "access": "Full text read via web; direct HTTP download 403",
+      "reused_from": "research/sources/hotel_funnel_audit.json source HOTEL-AUS",
+      "novelty": "Same capacity headline; newly explicit source vintage and more specific URL, not new independent evidence",
+      "limitation": "Do not add downtown to citywide, combine with registry totals, or infer registry coverage fraction"
+    },
+    {
+      "source_id": "H13-AUS-TAX",
+      "title": "Hotel Occupancy Tax FAQs",
+      "publisher": "Texas Comptroller of Public Accounts",
+      "url": "https://comptroller.texas.gov/taxes/hotel/faq.php",
+      "retrieved": "2026-09-07",
+      "use": "Exclusion rationale: tax definition includes houses/apartments/condominiums as well as hotels; no tax registration count used as hotel count",
+      "access": "Primary web text read"
+    }
+  ],
+  "inherited_team_inputs": [
+    "data/raw/hotel_expanded_research/team_review/research/notes/2026-09-05_austin-str-rnpl-hotel-factors.md",
+    "research/notes/2026-09-07_hotel-funnel-audit.md"
+  ],
+  "inherited_team_distinction": "Jessie's mydx-h5dy series counts STR licenses, not this av8n-pmdr hotel/motel/B&B registry",
+  "downloads": [
+    {
+      "url": "https://data.austintexas.gov/api/views/av8n-pmdr.json",
+      "path": "data\\raw\\hotel_13_market_extension\\austin\\licenses_metadata.json",
+      "bytes": 25124,
+      "sha256": "68a26076910e3341efe4ef14d53a7cb06e423cc1fd4292c36ea758ca997263fc",
+      "retrieved": "2026-09-07",
+      "status": 200
+    },
+    {
+      "url": "https://data.austintexas.gov/api/views/av8n-pmdr/columns.json",
+      "path": "data\\raw\\hotel_13_market_extension\\austin\\licenses_columns.json",
+      "bytes": 15749,
+      "sha256": "25fa3ee9d5eaab3eae2c31d68a7ba50d8b737d4a64a40c22f4d9899043a0789b",
+      "retrieved": "2026-09-07",
+      "status": 200
+    },
+    {
+      "url": "https://data.austintexas.gov/api/v3/views/av8n-pmdr/export.csv?accessType=DOWNLOAD",
+      "path": "data\\raw\\hotel_13_market_extension\\austin\\licenses.csv",
+      "bytes": 44529,
+      "sha256": "4d8880f24789c67ccf0cbea29b00a02719952d504ddedb3854d5c97b1cccec78",
+      "retrieved": "2026-09-07",
+      "status": 200
+    },
+    {
+      "url": "https://www.austintexas.org/meeting-professionals/why-austin/meeting-faq/",
+      "error": "403 Client Error: Forbidden for url: https://www.austintexas.org/meeting-professionals/why-austin/meeting-faq/",
+      "retrieved": "2026-09-07"
+    }
+  ],
+  "actions": "Public read/download only; no forms, outreach, purchases or earlier-output edits"
+}

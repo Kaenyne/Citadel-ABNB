@@ -1,0 +1,55 @@
+{
+  "as_of": "2026-09-07",
+  "team_revision": "e3055e627f4b7952c592939a03849f5fc32b9235",
+  "existing_public_consensus_reconstruction": {
+    "events": 23,
+    "unique_event_quarters": 23,
+    "available_fields": {
+      "cons_revenue_musd": 23,
+      "cons_eps_usd": 22,
+      "cons_adj_ebitda_musd": 8,
+      "cons_nights_m": 19,
+      "cons_gbv_busd": 13,
+      "cons_adr": 5,
+      "next_q_cons_revenue_musd": 19
+    },
+    "status": "reused team WS04/WS16; mixed public vendor coverage; not a newly acquired institutional export",
+    "sources_file": "data\\raw\\hotel_expanded_research\\team_review\\data\\processed\\overnight\\04_consensus_sources.csv",
+    "source_table": "data\\raw\\hotel_expanded_research\\team_review\\data\\processed\\overnight\\16_consensus_at_print_merged.csv",
+    "historical_events_not_multiplied_by_daily_rows": true
+  },
+  "currently_reverified_public_company_forecast": {
+    "source": "https://stockanalysis.com/stocks/abnb/forecast/",
+    "underlying_vendor": "S&P Global Market Intelligence as attributed by publisher",
+    "publisher_last_updated": "2026-09-03",
+    "accessed": "2026-09-07",
+    "fy2026_revenue_usd": 14160000000,
+    "fy2027_revenue_usd": 15760000000,
+    "fy2026_adjusted_eps_usd": 5.28,
+    "fy2027_adjusted_eps_usd": 6.14,
+    "hotel_component": null,
+    "quarterly_ntm_series": null,
+    "limitation": "Annual company-level public proxy, not Bloomberg/Refinitiv or a hotel forecast. Per-metric contributor count unverified."
+  },
+  "calendar_fy2027_materiality_scale_illustrations": [
+    {
+      "revenue_upside_pct": 0.5,
+      "required_net_revenue_usd": 78800000.0,
+      "assumed_net_revenue_per_extra_hotel_night_usd": 20,
+      "required_extra_hotel_nights_if_no_displacement": 3940000.0
+    },
+    {
+      "revenue_upside_pct": 1,
+      "required_net_revenue_usd": 157600000.0,
+      "assumed_net_revenue_per_extra_hotel_night_usd": 20,
+      "required_extra_hotel_nights_if_no_displacement": 7880000.0
+    },
+    {
+      "revenue_upside_pct": 2,
+      "required_net_revenue_usd": 315200000.0,
+      "assumed_net_revenue_per_extra_hotel_night_usd": 20,
+      "required_extra_hotel_nights_if_no_displacement": 15760000.0
+    }
+  ],
+  "illustration_limit": "$20 net revenue per night is hypothetical; annual FY2027 is not Q4 2026-Q3 2027; do not add pre-existing hotel base a second time."
+}

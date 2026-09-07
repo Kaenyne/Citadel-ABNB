@@ -1,0 +1,244 @@
+{
+  "review_date": "2026-09-07",
+  "base_main_commit": "90c826b5501342441148c5e1d7f9ed3b6b8b0d7e",
+  "disposition": "Shared research/diagnostics/scenarios; no new direct forecast input approved",
+  "unit_tests": {
+    "command": "python -m unittest discover -s analysis/tests -v",
+    "passed": 110
+  },
+  "source_modules": 30,
+  "test_modules": 13,
+  "code_register_hashes_verified": 43,
+  "existing_main_changes": {
+    "additive_readmes": [
+      "analysis/README.md",
+      "data/README.md",
+      "research/notes/README.md",
+      "research/sources/README.md"
+    ],
+    "deleted_or_replaced_other_paths": []
+  },
+  "publication_files_excluding_this_record": 198,
+  "publication_bytes_excluding_this_record": 16496926,
+  "file_types_excluding_this_record": {
+    ".md": 29,
+    ".json": 42,
+    ".csv": 80,
+    ".png": 4,
+    ".py": 43
+  },
+  "largest_new_file": {
+    "path": "data/processed/hotel_rollout_economics/france_classified_hotels_deduplicated.csv",
+    "bytes": 4498821
+  },
+  "json_csv_python_checks_passed": true,
+  "common_credential_pattern_matches": [],
+  "original_working_files_verified_against_frozen_snapshots": 192,
+  "original_file_drift": [],
+  "live_remote_heads_inspected": {
+    "refs/heads/jessie/nights-driver-v7": "fcaac9490a218ac49a755e73f750358f8fcc3c89",
+    "refs/heads/krish/blotnick-bridge": "c45ac1e6e25faf75d981176df3d4f1cb3791ab50",
+    "refs/heads/krish/earnings-guidance-regressions": "498b99eb32bcd7661a663f39be275cfa9f58db83",
+    "refs/heads/krish/nights-driver-followups": "4dacf42099a1a94c22fe179aae9b823a6b67a8b8",
+    "refs/heads/krish/regulatory-db": "13215b6ccc682e09cb90c179ad75ff649f71e19f",
+    "refs/heads/krish/synthesis-docs-crossover": "bf38500de730675cf659b9c8028afcc8bb4753c3",
+    "refs/heads/krish/unpack-delivery-notes": "8774f1c74294fa3de3cff4d88468f71a371acf91",
+    "refs/heads/main": "90c826b5501342441148c5e1d7f9ed3b6b8b0d7e",
+    "refs/heads/wollberg7/geographic-history": "211e914f341dabb2be5701812bd0ac889034284c"
+  },
+  "unique_remote_python_blobs_inspected": 264,
+  "new_path_collisions": [],
+  "identical_full_module_ast_matches": [],
+  "overlap_limit": "Code equality does not prove economic independence. Shared sources and assumptions are mapped in the audit; private/unshared work is outside scope.",
+  "replay_results": {
+    "aggregates": {
+      "trend_summary": {
+        "rows_reconciled": 84
+      },
+      "paired_comparisons": {
+        "rows_reconciled": 54
+      },
+      "persistence_summary": {
+        "rows_reconciled": 8
+      },
+      "fee_economics": {
+        "rows_reconciled": 3
+      },
+      "catalyst_scenarios": {
+        "rows_reconciled": 27
+      },
+      "hotel_mix_scenarios": {
+        "rows_reconciled": 6
+      },
+      "hotel_supply_requirements": {
+        "rows_reconciled": 4
+      },
+      "hotel_credit_sensitivity": {
+        "rows_reconciled": 5
+      },
+      "hotel_market_capacity_anchors": {
+        "rows_reconciled": 25
+      },
+      "global_hotel_tam_sensitivity": {
+        "rows_reconciled": 3
+      },
+      "official_spreadsheets": {
+        "rows_reconciled": 4
+      },
+      "hotel_registry_checks": {
+        "nyc_license_unique_ids": true,
+        "nyc_candidate_status_and_address_counts": true,
+        "france_unique_identities": true,
+        "france_room_sum": true,
+        "paris_subset_not_additional_population": true,
+        "paris_counts_and_rooms": true,
+        "singapore_counts_and_rooms": true,
+        "airbnb_pages_and_clusters": true,
+        "roomcount_links_unique": true,
+        "roomcount_link_sum": true,
+        "no_booking_or_price_observations": true
+      },
+      "verified_source_hash_pairs": 89
+    },
+    "broad_raw": {
+      "market_rates": {
+        "rows_reconciled": 476
+      },
+      "pooled_rates": {
+        "rows_reconciled": 48
+      },
+      "market_coverage": {
+        "rows_reconciled": 123
+      },
+      "snapshot_quality": {
+        "rows_reconciled": 478
+      },
+      "geographic_overlap": {
+        "rows_reconciled": 3
+      }
+    },
+    "fee_raw": {
+      "fee_raw": {
+        "captures": 692,
+        "rows": 9120,
+        "differences": []
+      }
+    },
+    "hotel_captures": {
+      "hotel_listing_panel": {
+        "rows_reconciled": 39
+      },
+      "hotel_panel_pooled": {
+        "rows_reconciled": 3
+      },
+      "hotel_taxonomy": {
+        "rows_reconciled": 78
+      },
+      "archive25/hotel_listing_panel": {
+        "rows_reconciled": 75
+      },
+      "archive25/hotel_panel_pooled": {
+        "rows_reconciled": 3
+      },
+      "archive25/hotel_taxonomy": {
+        "rows_reconciled": 160
+      }
+    },
+    "manual": {
+      "case_summary": {
+        "rows_reconciled": 4
+      },
+      "timeline": {
+        "rows_reconciled": 10
+      },
+      "destination_review": {
+        "rows_reconciled": 20
+      },
+      "destination_summary": {
+        "rows_reconciled": 7
+      }
+    },
+    "pilot": {
+      "pilot_summary": {
+        "rows": 8,
+        "differences": []
+      }
+    },
+    "recent_raw": {
+      "market_rates": {
+        "rows_reconciled": 52
+      },
+      "pooled_rates": {
+        "rows_reconciled": 4
+      },
+      "positive_source_manifest": {
+        "rows_reconciled": 162
+      },
+      "winter_reappearances": {
+        "rows_reconciled": 36
+      },
+      "winter_baseline_profiles": {
+        "rows_reconciled": 6
+      }
+    },
+    "reports_extension": {
+      "report_listing_churn": {
+        "report_reconciles": true,
+        "generated_bytes": 12921
+      },
+      "report_fee_churn": {
+        "report_reconciles": true,
+        "generated_bytes": 17429
+      },
+      "report_fee_churn_recent": {
+        "report_reconciles": true,
+        "generated_bytes": 15155
+      },
+      "report_hotel_funnel": {
+        "report_reconciles": true,
+        "generated_bytes": 29100
+      },
+      "hotel13": {
+        "tables": {
+          "airbnb_page_observations_scoped.csv": 113,
+          "airbnb_property_clusters_scoped.csv": 111,
+          "airbnb_registry_crosswalk_scoped.csv": 62,
+          "historical_independent_room_context.csv": 2,
+          "market_coverage.csv": 13,
+          "provider_coverage_request_13.csv": 13,
+          "source_overlap.csv": 201
+        },
+        "json_reconciles": true,
+        "note_reconciles": true
+      }
+    },
+    "team_raw": {
+      "market_rates": {
+        "rows_reconciled": 52
+      },
+      "pooled_rates": {
+        "rows_reconciled": 36
+      },
+      "market_coverage": {
+        "rows_reconciled": 13
+      },
+      "snapshot_quality": {
+        "rows_reconciled": 132
+      }
+    }
+  },
+  "hotel_13_verifier": {
+    "all_checks_passed": true,
+    "market_scope_rows": 13,
+    "provider_request_rows": 13,
+    "page_captures": 113,
+    "property_clusters": 111,
+    "accepted_room_matches": 26,
+    "registered_rooms_matched": 1060,
+    "recorded_source_path_hash_pairs_verified": 204,
+    "local_links_verified": 25,
+    "missing_booking_revenue_and_current_independent_room_fields_preserved": true,
+    "limitation": "Hash checks verify preserved artifacts, not source truth or statistical independence."
+  },
+  "reproduction_limit": "Full raw/extraction replay requires preserved ignored bundles; a fresh clone alone is insufficient."
+}

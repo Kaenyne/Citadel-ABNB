@@ -1,0 +1,43 @@
+{
+  "as_of": "2026-09-07",
+  "checks": {
+    "nyc_license_unique_ids": true,
+    "nyc_candidate_status_and_address_counts": true,
+    "france_unique_identities": true,
+    "france_room_sum": true,
+    "paris_subset_not_additional_population": true,
+    "paris_counts_and_rooms": true,
+    "singapore_counts_and_rooms": true,
+    "airbnb_pages_and_clusters": true,
+    "roomcount_links_unique": true,
+    "roomcount_link_sum": true,
+    "no_booking_or_price_observations": true
+  },
+  "all_checks_passed": true,
+  "source_overlap": {
+    "source_records_with_urls": 253,
+    "distinct_canonical_urls": 253,
+    "records_with_exact_team_url_matches": 13,
+    "by_workstream": {
+      "hotel_absolute_disclosure_search": {
+        "records": 80,
+        "records_with_exact_team_url_matches": 5
+      },
+      "hotel_channel_data_expansion": {
+        "records": 18,
+        "records_with_exact_team_url_matches": 5
+      },
+      "hotel_rollout_economics_expansion": {
+        "records": 155,
+        "records_with_exact_team_url_matches": 3
+      }
+    },
+    "limitation": "Exact normalized URLs only. Translations, syndications, new dates and new URLs for old claims are not independent observations. No claim about unshared work."
+  },
+  "source_artifact_path_hash_pairs_verified": 89,
+  "raw_registry_rows": 14600,
+  "actual_airbnb_hotel_transactions_obtained": 0,
+  "absolute_current_airbnb_hotel_nights_obtained": false,
+  "absolute_current_airbnb_hotel_revenue_obtained": false,
+  "causal_hotel_uplift_estimate_obtained": false
+}

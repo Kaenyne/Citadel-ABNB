@@ -1,0 +1,8 @@
+metric,count,sample_denominator,interpretation
+sale_reported,1,20,Evidence found in pilot; not an estimated population destination share
+residential_rental_reported,1,20,Evidence found in pilot; not an estimated population destination share
+unresolved,18,20,Evidence found in pilot; not an estimated population destination share
+matched_other_platform_catalog,1,20,"Subset of unresolved; matching catalog record, no verified current bookings or migration"
+candidate_other_platform_leads,3,20,Subset of unresolved; primary verification or identity incomplete
+confirmed_new_platform_migration,0,20,No new migration established; does not mean no migration occurred
+current_registry_match,8,20,"Overlapping licensing flag, not property use; includes both reported event cases"
