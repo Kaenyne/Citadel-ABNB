@@ -1,0 +1,140 @@
+{
+  "investigated_on": "2026-09-07",
+  "scope": "Targeted follow-up of four previously identified leads in the fixed 20-case San Diego pilot; not a representative destination sample",
+  "sample_identity_sha256": "7d325067a4b0bfe96d342681b0ce73aa9492b31b3341171e621b7055027a524a",
+  "rules": [
+    "Actual archive capture dates, publisher-claimed update dates, search-index observations and current observations are separate evidence types.",
+    "A missing archive record is unknown, never proof of historical platform absence.",
+    "An HTTP 200 page or booking button does not verify property availability or a completed stay.",
+    "Pre-existing advertising on another channel does not show a new platform migration after Airbnb disappearance.",
+    "Sale, rental use and channel presence are separate axes. The prior sale/rental pilot findings are not changed by this follow-up."
+  ],
+  "cases": [
+    {
+      "case_id": "SD-04",
+      "identity": "Direct page supported by identical living-room photo, distinctive title and 7-bedroom/5-bath layout; exact rental bundle unresolved. Separate Vrbo candidate has conflicting permit and tax ID.",
+      "before_state": "Direct rental advertisement archived before Airbnb exit interval; photo linkage supported using current image bytes, archived image bytes unavailable",
+      "after_state": "Direct advertisement and matching photo still retrievable; bookings unknown. Vrbo same-property identity not accepted",
+      "conclusion": "Evidence supports pre-existing direct advertising; no confirmed new migration",
+      "observations": [
+        {
+          "date": "2025-10-18",
+          "date_basis": "independent_archive_capture",
+          "channel": "direct_manager",
+          "state": "populated_rental_advertisement",
+          "finding": "Archived page has the distinctive title, 7 bedrooms and 5 bathrooms, and links older Airbnb ID 48350322. It includes the gallery URL whose current image matches the sampled Airbnb cover photo. Exact archived image retrieval returned 404, so its historical image bytes are unverified.",
+          "source_url": "https://web.archive.org/web/20251018073623/https://www.sandiegochecklist.com/product/7br-massive-beach-retreat-sleeps-26-steps-to-ocean/",
+          "raw_path": "data/raw/listing_platform_history/SD04_direct_archive.html",
+          "raw_sha256": "c7c7fbc3d559ee4a6f0e07eb40e91ecadaec9d3f49e6bc7490206c86861bd20a"
+        },
+        {
+          "date": "2026-09-07",
+          "date_basis": "current_photo_comparison",
+          "channel": "direct_manager",
+          "state": "same_living_room_photo_supported",
+          "finding": "The current direct-page image and image URL recorded in the Airbnb baseline show the identical room, camera angle, furnishings, windows and exterior view. This is supporting identity evidence, not proof of the exact seven-bedroom rental bundle or current operation.",
+          "source_url": "https://www.sandiegochecklist.com/wp-content/uploads/2022/03/a-1-1.jpg.webp",
+          "raw_path": "data/raw/listing_platform_history/SD04_direct_living.webp",
+          "raw_sha256": "de29c455213071a44e51a86d10a4cc9a3d5e74ecb537350fd756574b2df27718"
+        },
+        {
+          "date": "2025-10-05",
+          "date_basis": "publisher_claimed_update_observed_2026_09_07",
+          "channel": "vrbo_syndicated",
+          "state": "identity_conflict",
+          "finding": "Candidate Vrbo 4261004 is advertised with STR-05074L and TOT 612583; sampled Airbnb has STR-04960L and TOT 612561. Title and bedroom similarity cannot resolve that conflict. The page's update date is not an independent historical capture.",
+          "source_url": "https://agreatertown.com/san-diego-ca/7-br-apartment-vacation-rental-0002131067840"
+        }
+      ]
+    },
+    {
+      "case_id": "SD-07",
+      "identity": "Archived manager address and 3-bedroom/2-bath layout agree with the municipal unit anchor; Expedia catalog has the exact baseline STRO/TOT identifiers",
+      "before_state": "Matched property advertised by direct manager on 2025-09-08, before last Airbnb presence on 2025-09-25",
+      "after_state": "January and May archives retain title/address metadata but lack populated rental fields; March-dated JTB catalog is publisher-claimed; current booking activity unknown",
+      "conclusion": "Pre-existing direct-channel advertising established at supported property identity; post-exit operation and new migration unresolved",
+      "observations": [
+        {
+          "date": "2025-09-08",
+          "date_basis": "independent_archive_capture",
+          "channel": "direct_manager",
+          "state": "populated_matched_rental_advertisement",
+          "finding": "Santa Barbara Loft has populated property description, 3 beds, 2 baths, capacity 7, a displayed count of 9 reviews and direct booking controls. Archived address agrees with the municipal anchor. Review count is manager-displayed; stay dates and booking channel are unverified.",
+          "source_url": "https://web.archive.org/web/20250908175841/https://missionsands.com/481655/",
+          "raw_path": "data/raw/listing_platform_history/SD07_direct_before.html",
+          "raw_sha256": "c666d79fa6c971d19282e2b4e4473cfc3931acccd4ca63fd86914166b17863d3"
+        },
+        {
+          "date": "2026-01-16",
+          "date_basis": "independent_archive_capture",
+          "channel": "direct_manager",
+          "state": "metadata_present_operating_status_unknown",
+          "finding": "Same property title and address remain in archived metadata; property description, bed/bath fields and booking data are unpopulated. Could reflect capture/rendering failure or withdrawal; neither is established.",
+          "source_url": "https://web.archive.org/web/20260116210511/https://missionsands.com/481655/",
+          "raw_path": "data/raw/listing_platform_history/SD07_direct_early_after.html",
+          "raw_sha256": "26995a5552cf09ab56f7e65870b8cf1f095e8928ca7c0d021333de51d28e8bcd"
+        },
+        {
+          "date": "2026-05-17",
+          "date_basis": "independent_archive_capture",
+          "channel": "direct_manager",
+          "state": "metadata_present_operating_status_unknown",
+          "finding": "Later capture again retains property title/address metadata while rental fields are unpopulated. Does not verify bookability or continued stays.",
+          "source_url": "https://web.archive.org/web/20260517234403/https://missionsands.com/481655/",
+          "raw_path": "data/raw/listing_platform_history/SD07_direct_archive.html",
+          "raw_sha256": "6dfdd9fef4f25d00f5151e564b1c807818b6a7aa5cf5a340eec90e12f38a960d"
+        },
+        {
+          "date": "2026-03-01",
+          "date_basis": "publisher_claimed_update_observed_2026_09_07",
+          "channel": "jtb_catalog",
+          "state": "matched_address_catalog_record",
+          "finding": "JTB indexed property catalog reports this update date and the matching unit address. Direct page retrieval was unavailable; this is indexed catalog evidence, not an independently captured March offer or a completed stay.",
+          "source_url": "https://www.jtb.co.jp/ovs_htl/detail/search_detail/1213523/"
+        }
+      ]
+    },
+    {
+      "case_id": "SD-08",
+      "identity": "Title and four-bedroom/hot-tub attributes only; no verified unit-level match",
+      "before_state": "Unknown",
+      "after_state": "Aggregator catalog lead only; could be a mirror of Airbnb",
+      "conclusion": "Identity, historical channel presence and migration unresolved",
+      "observations": [
+        {
+          "date": "2026-09-07",
+          "date_basis": "current_web_observation",
+          "channel": "aggregator",
+          "state": "unverified_identity_lead",
+          "finding": "Same-title catalog lead lacks independent permit, exact unit address or verified photo linkage. No primary competing booking platform established.",
+          "source_url": "https://www.ehotelsreviews.com/spacious-4br-outdoor-kitchen-hot-tub-13778183-zh"
+        }
+      ]
+    },
+    {
+      "case_id": "SD-09",
+      "identity": "Syndicated Vrbo 4779972 advertisement matches exact STRO/TOT identifiers and one-bedroom/one-bath layout",
+      "before_state": "Publisher claims update on 2025-09-07, 18 days before last Airbnb presence; independently archived before-history unavailable",
+      "after_state": "Syndicated advertisement observed in September 2026; primary Vrbo bookability and recent stays unknown",
+      "conclusion": "Strong lead for pre-existing Vrbo cross-listing; historical date independently unverified; no confirmed new migration",
+      "observations": [
+        {
+          "date": "2025-09-07",
+          "date_basis": "publisher_claimed_update_observed_2026_09_07",
+          "channel": "vrbo_syndicated",
+          "state": "supported_identity_claimed_preexisting_advertisement",
+          "finding": "Syndicated advertisement links Vrbo 4779972 and reports this update date. Exact identifiers STR-09281L and 646310 and 1 bed/1 bath agree with the sampled Airbnb. Current page timestamp is not an independent historical capture.",
+          "source_url": "https://agreatertown.com/san-diego-ca/1-br-condo-vacation-rental-in-san-0002277079791"
+        },
+        {
+          "date": "2026-09-07",
+          "date_basis": "current_web_observation",
+          "channel": "vrbo_syndicated",
+          "state": "supported_identity_catalog_record",
+          "finding": "The same syndicated record was available through the web research tool. Raw HTTP retrieval later returned 403 and was not retried. Earlier primary Vrbo retrieval returned 429 and was not retried. Current operation remains unknown.",
+          "source_url": "https://agreatertown.com/san-diego-ca/1-br-condo-vacation-rental-in-san-0002277079791"
+        }
+      ]
+    }
+  ]
+}

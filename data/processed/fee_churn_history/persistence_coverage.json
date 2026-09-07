@@ -1,0 +1,52 @@
+[
+  {
+    "policy": "coverage_screen",
+    "cohort": "all_listings",
+    "common_markets": [
+      "albany",
+      "bozeman",
+      "brisbane",
+      "dallas",
+      "mid-north-coast",
+      "new-york-city",
+      "new-zealand",
+      "quebec-city",
+      "vancouver",
+      "vaud"
+    ],
+    "identified": true,
+    "interpretation": "An empty common panel means unidentified, not zero persistent churn"
+  },
+  {
+    "policy": "coverage_screen",
+    "cohort": "reviewed_str_homes",
+    "common_markets": [
+      "albany",
+      "bozeman",
+      "brisbane",
+      "dallas",
+      "mid-north-coast",
+      "new-york-city",
+      "new-zealand",
+      "quebec-city",
+      "vancouver",
+      "vaud"
+    ],
+    "identified": true,
+    "interpretation": "An empty common panel means unidentified, not zero persistent churn"
+  },
+  {
+    "policy": "exclude_feb_may_negatives",
+    "cohort": "all_listings",
+    "common_markets": [],
+    "identified": false,
+    "interpretation": "An empty common panel means unidentified, not zero persistent churn"
+  },
+  {
+    "policy": "exclude_feb_may_negatives",
+    "cohort": "reviewed_str_homes",
+    "common_markets": [],
+    "identified": false,
+    "interpretation": "An empty common panel means unidentified, not zero persistent churn"
+  }
+]

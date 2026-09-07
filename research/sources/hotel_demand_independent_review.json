@@ -1,0 +1,143 @@
+{
+  "as_of": "2026-09-07",
+  "purpose": "Independent feasibility review of incremental hotel demand after joining Airbnb; NYC focus",
+  "empirical_onboarding_effect_estimated": false,
+  "proprietary_data_obtained": false,
+  "sources": [
+    {
+      "id": "HD-01",
+      "url": "https://www.cloudbeds.com/articles/market-pulse/",
+      "title": "Cloudbeds / Duetto Hotel Market Pulse, Fall 2025",
+      "access": "Public full article read",
+      "period": "2025-01-01 through 2025-07-31 versus same period 2024",
+      "status": "observed",
+      "metrics": {"airbnb_room_nights_growth_pct": 4.1, "airbnb_adr_growth_pct": -2.0, "airbnb_average_stay_growth_pct": -3.4, "report_approx_properties": 20500, "report_countries": 177},
+      "limitations": "Provider-reported actual operational data. Full report population includes boutique hotels, B&Bs, vacation rentals and small chains. Airbnb-connected sample count, same-property construction, NYC coverage, onboarding dates, and HotelTonight treatment are not specified. Precedes May 2026 expansion."
+    },
+    {
+      "id": "HD-02",
+      "url": "https://myfrontdesk.cloudbeds.com/hc/en-us/articles/32179714689435-Channel-Production-Report",
+      "title": "Cloudbeds Channel Production Report",
+      "access": "Public documentation read; customer report not accessed",
+      "period": "Updated 2026-06-03",
+      "status": "observed",
+      "claim": "Report filters by service date, room type, source/subchannel and exports Excel/PDF with room nights, revenue and ADR. Property owner access is required. Room revenue includes no-show fees and manual adjustments but excludes taxes and cancellation fees."
+    },
+    {
+      "id": "HD-03",
+      "url": "https://myfrontdesk.cloudbeds.com/hc/en-us/articles/41695559811611-Cloudbeds-Reports-Hotel-Reporting-for-Operational-Financial-Revenue-Occupancy-Analysis",
+      "title": "Cloudbeds reporting catalogue",
+      "access": "Public documentation read",
+      "period": "Current as retrieved 2026-09-07",
+      "status": "observed",
+      "claim": "Available reporting includes channel performance with rooms, nights, revenue and commissions and source-filtered occupancy; features vary by account."
+    },
+    {
+      "id": "HD-04",
+      "url": "https://help.mews.com/s/article/Confirming-the-connectivity-partner-on-your-channel-extranet-in-Mews-Channel-Manager?language=en_US",
+      "title": "Mews: Confirming the connectivity partner on your channel extranet",
+      "access": "Full primary article text returned by search index; direct open returned JavaScript shell",
+      "period": "Current as retrieved 2026-09-07; revision date not identified",
+      "status": "observed",
+      "claim": "Mews Channel Manager is powered by SiteMinder. Its Airbnb connection runs through HotelTonight and needs an active HotelTonight contract/account. Airbnb account manager sets HotelTonight as connectivity provider.",
+      "limitation": "Does not establish how every PMS or a specific provider's research report labels consumer-origin bookings."
+    },
+    {
+      "id": "HD-05",
+      "url": "https://myfrontdesk.cloudbeds.com/hc/en-us/articles/51723912921243-Supported-distribution-channels-in-Cloudbeds-PMS",
+      "title": "Cloudbeds supported distribution channels",
+      "access": "Public documentation read",
+      "period": "Updated 2026-09-02",
+      "status": "observed",
+      "claim": "Directory separately lists Airbnb API, Airbnb iCal and HotelTonight. iCal syncs availability only."
+    },
+    {
+      "id": "HD-06",
+      "url": "https://www.amadeus-hospitality.com/solutions/business-intelligence/demand360/",
+      "title": "Amadeus Demand360 product specification",
+      "access": "Public documentation read; commercial data not obtained",
+      "period": "Current as retrieved 2026-09-07",
+      "status": "observed",
+      "metrics": {"provider_advertised_hotels": 44000, "forward_months": 12},
+      "claim": "Actual forward booking data and channel/segment market benchmarking are available; public page does not promise separate Airbnb storefront identification or unrestricted named-property competitor data."
+    },
+    {
+      "id": "HD-07",
+      "url": "https://str.com/sites/default/files/2019-10/aam_methodology.pdf",
+      "title": "STR Data Assessment methodology",
+      "access": "Public document text read",
+      "period": "2019 document; current contract-specific methodology requires confirmation",
+      "status": "observed",
+      "claim": "Market calculations account for non-reporting properties; not every market room-night total is directly contributed."
+    },
+    {
+      "id": "HD-08",
+      "url": "https://www.airbnb.com/help/article/1526",
+      "title": "Airbnb standards for hotels and professional hospitality businesses",
+      "access": "Public documentation read",
+      "period": "Current as retrieved 2026-09-07",
+      "status": "observed",
+      "claim": "Featured hotels have multiple room types on one property page. Legacy professional property types are broader than hotels alone."
+    },
+    {
+      "id": "HD-09",
+      "url": "https://support.airhost.co/en/articles/9115646-faq-how-to-sync-multiple-inventory-to-one-airbnb-listing-how-to-sync-by-hotel-type",
+      "title": "AirHost: multiple inventory in one Airbnb listing",
+      "access": "Public documentation read",
+      "period": "2024-04-12",
+      "status": "observed",
+      "claim": "One listing can hold multiple rooms of a hotel room type; ten-room example. Listing count is not room count."
+    },
+    {
+      "id": "HD-10",
+      "url": "https://www.airbnb.com/help/article/3612",
+      "title": "Airbnb: why calendar nights may be blocked",
+      "access": "Public documentation read",
+      "period": "Current as retrieved 2026-09-07",
+      "status": "observed",
+      "claim": "Blocking can reflect linked calendars, pending reservations, restrictions or account problems, not just booked Airbnb stays."
+    },
+    {
+      "id": "HD-11",
+      "url": "https://insideairbnb.com/data-assumptions/",
+      "title": "Inside Airbnb data assumptions",
+      "access": "Public documentation read",
+      "period": "Current as retrieved 2026-09-07",
+      "status": "observed",
+      "claim": "Occupancy model assumes 50% review rate plus average stay; no hotel-cohort validation is supplied."
+    },
+    {
+      "id": "HD-12",
+      "url": "https://www.business.nyctourism.com/press-media/press-releases/NYC-Tourism-Annual-Report-March-2026",
+      "title": "NYC Tourism 2025 annual performance",
+      "access": "Public primary release read",
+      "period": "2025; March 2026 release",
+      "status": "observed",
+      "metrics": {"occupancy_pct": 84.2, "room_nights_sold_millions": 38.1, "approx_hotel_rooms": 124000, "adr_usd": 334},
+      "limitation": "All-hotel NYC benchmarks, not independent hotels listed on Airbnb."
+    },
+    {
+      "id": "HD-13",
+      "url": "https://www.nyc.gov/site/specialenforcement/faq/faq-for-building-owners.page",
+      "title": "NYC OSE FAQ for building owners",
+      "access": "Public official documentation read",
+      "period": "Current as retrieved 2026-09-07",
+      "status": "observed",
+      "claim": "Class B approved transient occupancy differs from ordinary residential entire-unit short stays; tax class is not legal occupancy class."
+    },
+    {
+      "id": "HD-14",
+      "url": "https://www.siteminder.com/case-studies/luna-volcan/",
+      "title": "SiteMinder Luna Volcan case study",
+      "access": "Public provider case read",
+      "period": "Updated 2026-06-17",
+      "status": "observed",
+      "claim": "Several channels, pricing and metasearch strategy changed together; outcomes cannot isolate Airbnb's effect."
+    }
+  ],
+  "overlap_check": {
+    "scope": "Current local research, analysis and processed .md/.csv/.json files, targeted URL and phrase search before writing this note",
+    "new_exact_urls_not_found": ["https://www.cloudbeds.com/articles/market-pulse/", "https://myfrontdesk.cloudbeds.com/hc/en-us/articles/32179714689435-Channel-Production-Report", "https://help.mews.com/s/article/Confirming-the-connectivity-partner-on-your-channel-extranet-in-Mews-Channel-Manager?language=en_US"],
+    "limitation": "Not a full independent audit of unshared material or every archive; Inside Airbnb and NYC macro context are reused."
+  }
+}

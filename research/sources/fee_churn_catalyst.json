@@ -1,0 +1,83 @@
+{
+  "as_of": "2026-09-07",
+  "question": "Did Airbnb's single host fee increase departures, and could the effect materially change revenue or earnings?",
+  "scope": "Historical churn diagnostics and explicit materiality scenarios; no price target or claimed causal fee effect",
+  "sources": [
+    {
+      "id": "FEE-01",
+      "url": "https://www.airbnb.com/resources/hosting-homes/a/simplifying-service-fees-on-airbnb-771",
+      "published": "2026-07-07",
+      "updated": "2026-08-24",
+      "accessed": "2026-09-07",
+      "status": "observed",
+      "facts": "Remaining-host rollout: published price-adjustment deadlines September 15 outside the EEA, October 13 within the EEA or Switzerland, based on where the host lives. New fee applies to reservations made after switching. Hosts need to adjust prices to preserve payouts; early switching is possible."
+    },
+    {
+      "id": "FEE-02",
+      "url": "https://help.guesty.com/hc/en-gb/articles/9362649851037-Understanding-Airbnb-service-fees-for-hosts-and-guests",
+      "accessed": "2026-09-07",
+      "status": "observed",
+      "facts": "PMS supplier's implementation timeline: new connected hosts from August 25, 2025; existing software-connected split-fee hosts on October 27, 2025; existing 15% single-fee non-PMS hosts on December 1, 2025. The article's generic all-host language is scoped to its software-connected customer context, not all Airbnb hosts worldwide."
+    },
+    {
+      "id": "FEE-03",
+      "url": "https://s26.q4cdn.com/656283129/files/doc_financials/2025/q4/Airbnb-Q4-25-Earnings-Call-Transcript.pdf",
+      "published": "2026-02-12",
+      "accessed": "2026-09-07",
+      "status": "observed",
+      "facts": "Airbnb confirmed October 2025 migration of API-connected hosts. Management said affected guest prices declined modestly and described a positive booking contribution. The stated over-200-bp nights and roughly-300-bp GBV uplift covers three features together, not fees alone. Management's characterization is not an independent churn estimate."
+    },
+    {
+      "id": "FEE-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526337928/d70413dex991.htm",
+      "published": "2026-08-06",
+      "accessed": "2026-09-07",
+      "status": "observed",
+      "facts": "Q2 2026 letter: most PMS hosts migrated in Q4 2025; July announcement targets most remaining hosts, expected complete in 2026. Q2 revenue $3,608 million; adjusted EBITDA $1,261 million; nights and seats booked grew 10% year over year and GBV 16%. These are net business outcomes, not gross host retention measures.",
+      "revenue_usd_m": 3608,
+      "adjusted_ebitda_usd_m": 1261,
+      "nights_seats_growth_yoy": 0.10,
+      "gbv_growth_yoy": 0.16
+    },
+    {
+      "id": "FEE-05",
+      "url": "https://www.airbnb.com/help/article/1857",
+      "accessed": "2026-09-07",
+      "status": "observed",
+      "facts": "Most single-fee hosts pay 15.5%; other rates and country exceptions exist. Split fees include both host and guest charges. Host fee share is not directly comparable to company revenue divided by contemporaneous GBV."
+    },
+    {
+      "id": "FEE-06",
+      "url": "https://www.airbnb.com/help/article/4095",
+      "accessed": "2026-09-07",
+      "status": "observed",
+      "facts": "Price-adjustment tool supports non-PMS hosts, includes an option to switch fee structure before their transition, and leaves pre-existing reservations unaffected. Actual transition dates cannot be inferred from listing location alone."
+    },
+    {
+      "id": "FEE-07",
+      "url": "https://github.com/Kaenyne/Citadel-ABNB/tree/df833f5f3980078beef09c1327940bfa58d57acf",
+      "status": "observed",
+      "facts": "Pinned team snapshot catalog supplies earlier dates and partial-coverage flags. Public archive index supplies monthly dates. Download selection and per-file hashes are preserved in data/raw/fee_churn_history; underlying data Inside Airbnb, CC BY 4.0."
+    }
+  ],
+  "economic_example": {
+    "status": "calculated",
+    "old_booking_subtotal": 100,
+    "old_host_fee": 0.03,
+    "illustrative_old_guest_fee": 0.15,
+    "new_host_fee": 0.155,
+    "taxes_included": false,
+    "interpretation": "Illustrative fee incidence at a fixed booking subtotal; not a measured host price response or tax model"
+  },
+  "materiality_scenario": {
+    "status": "estimated",
+    "affected_share_of_counterfactual_booking_value": 0.5,
+    "incremental_churn_rates": [0.02, 0.05, 0.1],
+    "booking_value_recaptured_within_airbnb": [0, 0.5, 0.75],
+    "relative_lost_listing_productivity": 1,
+    "time_exposure_in_period": 1,
+    "incremental_contribution_margin": 0.7,
+    "relative_take_rate_changes": [0, 0.01, 0.02],
+    "interpretation": "Hypothetical sensitivity, not measured exposure or a forecast. Churn must be incremental to baseline and weighted for lost booking productivity. Recaptured demand is excluded from net booking loss. Relative take-rate changes are assumptions, not 12.5 percentage points of new platform revenue. Q2 financials are scale references, not a forward baseline."
+  }
+}
