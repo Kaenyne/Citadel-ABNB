@@ -179,7 +179,12 @@ def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HO
         N3 = {g: N2[g] * (1 + cat[y]) for g in SEG}
         s_cat = sum(N3[g] + M2[g] * P[g] for g in SEG)
         # step 4: share shift from relative price + product
-        P4 = {g: inv_logit(logit(P[g]) - switch_rate * dln_price + shift[g]) for g in SEG}
+        # `shift` is either {segment: logit pts} applied EVERY year (a permanent annual share gain)
+        # or {year: {segment: logit pts}} for one-off launches. A product launch is a level effect:
+        # it lifts share in the year it lands and then laps, so it belongs in the second form. The
+        # first form silently compounds a launch into perpetuity - see na_nights_reconciliation.py.
+        shift_y = shift.get(y, {}) if set(shift) & set(YEARS) else shift
+        P4 = {g: inv_logit(logit(P[g]) - switch_rate * dln_price + shift_y.get(g, 0.0)) for g in SEG}
         s_share = sum(N3[g] + M2[g] * P4[g] for g in SEG)
         M, N, P = M2, N3, P4
         rows.append({"year": y, **{f"M_{g}": M[g] for g in SEG}, **{f"P_{g}": P[g] for g in SEG},
