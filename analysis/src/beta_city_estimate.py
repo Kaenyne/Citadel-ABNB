@@ -99,7 +99,7 @@ def main():
         beta_model = eps / (CONTESTABLE * (1 - P_POOL))   # only contestable demand responds
         beta_bound = eps / (1 - P_POOL)                   # if ALL demand responded (lower bound)
         print(f"{label}: eps = {eps:.2f} (se {se:.2f}, R2 {r2:.2f})  ->  "
-              f"beta = {beta_model:.1f} (model mapping) | {beta_bound:.1f} (all-demand bound)")
+              f"switch rate = {beta_model:.1f} (model mapping) | {beta_bound:.1f} (all-demand bound)")
 
     print("\n", df.drop(columns=["adr_source"]).round(2).to_string(index=False))
     df.to_csv(OUT / "beta_city_estimate.csv", index=False)

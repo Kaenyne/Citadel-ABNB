@@ -17,9 +17,9 @@ Base-year (2025, U.S.) calibration:
 
 Projection:
   M_g(t)  = M_g(t-1) x (1 + market growth) x (1 + segment mix drift_g)
-  logit P_g(t) = logit P_g(t-1) - beta x dln(relative price_g) + product/regulation shift_g
+  logit P_g(t) = logit P_g(t-1) - SWITCH_RATE x dln(relative price_g) + product/regulation shift_g
       relative price_g = Airbnb all-in cost / hotel cost for a party of size g
-      beta = share sensitivity to relative price (central 2.5, range 1.0-4.3; see note)
+      SWITCH_RATE = share sensitivity to relative price (central 5.0, grid 2.5-10.3; see note)
   Revenue = Nights x ADR x take rate x FX  (unchanged - plug Nights into the existing model)
 
 Run:  python analysis/src/choice_nights_driver.py
@@ -59,12 +59,15 @@ ROOMS_PER_PARTY = {"solo": 1.0, "pair": 1.0, "3-4": 1.5, "5+": 2.5}
 PRICE_RATIO_2025 = {"solo": 0.69, "pair": 1.22, "3-4": 0.80, "5+": 0.79}  # Airbnb entire home (+14% fee) / hotel rooms x ADR, party_size_cost_crossover.csv
 CONTESTABLE = 0.38                # share of Airbnb guests who would have gone to a hotel absent Airbnb (F&F: 62% would not)
 
-# beta: logit share sensitivity to ln(relative price). Anchored on Farronato & Fradkin (AER 2022)
+# SWITCH RATE (called beta in the econometrics literature - renamed 7 Sep 2026 because 'beta'
+# collides with equity beta in a pitch context): the logit share sensitivity to ln(relative
+# price) - how strongly a price gap pushes contestable travelers between Airbnb and hotels.
+# Anchored on Farronato & Fradkin (AER 2022)
 # online Appendix Table E9 ("Demand Cross-Price Elasticities by Accommodation Type", p.30), which gives
 # the cross-price elasticity of Airbnb demand w.r.t. each of 6 hotel tiers. Summed across the hotel
 # tiers, a uniform +1% move in all hotel prices raises Airbnb demand by 3.72-3.85% (avg 3.76).
-# This model's analogue is  d ln(Nights_ABNB) / d ln(p_hotel) = CONTESTABLE * beta * (1 - P),
-# so reproducing F&F exactly would need beta = 3.76 / (0.38 * 0.955) = 10.3.
+# This model's analogue is  d ln(Nights_ABNB) / d ln(p_hotel) = CONTESTABLE * SWITCH_RATE * (1 - P),
+# so reproducing F&F exactly would need SWITCH_RATE = 3.76 / (0.38 * 0.955) = 10.3.
 # We discount that to a national annual figure for three reasons, all pushing the same way:
 #   1. F&F's sample is 10 dense US cities (Austin, Boston, LA, Miami, NY, Oakland, Portland, SF,
 #      San Jose, Seattle) - precisely where Airbnb/hotel overlap is highest.
@@ -72,8 +75,8 @@ CONTESTABLE = 0.38                # share of Airbnb guests who would have gone t
 #   3. Their market is a city-night in 2014; annual national aggregates smooth much of the response.
 # Central 5.0 sits roughly half way in log terms between the old unsupported 2.5 and the F&F-implied
 # 10.3. The grid below spans 2.5 (bull floor) to 10.3 (F&F-matched ceiling).
-BETA = 5.0
-BETA_GRID = [2.5, 5.0, 7.0, 10.3]
+SWITCH_RATE = 5.0
+SWITCH_RATE_GRID = [2.5, 5.0, 7.0, 10.3]
 FF_CROSS_PRICE_ELASTICITY = 3.76  # F&F Table E9, avg over the 4 Airbnb tiers, summed over 6 hotel tiers
 # Own-category (N) growth - GROUNDED 7 Sep 2026 (data/processed/category_adoption_evidence.csv):
 # inverting this model's identity on disclosed NA nights (146->154->158mm, FY23-25 10-Ks) gives
@@ -148,7 +151,7 @@ def calibrate():
     return cal
 
 
-def project(cal, beta=BETA, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HOTEL_ADR_GROWTH, mix=MIX_DRIFT,
+def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HOTEL_ADR_GROWTH, mix=MIX_DRIFT,
             mkt=MARKET_GROWTH, shift=PRODUCT_SHIFT, cat=CATEGORY_GROWTH):
     base = cal[cal.segment != "TOTAL"].set_index("segment")
     M = base.contestable_pool_mm.to_dict()
@@ -172,7 +175,7 @@ def project(cal, beta=BETA, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HOTEL_ADR_GROWTH
         N3 = {g: N2[g] * (1 + cat[y]) for g in SEG}
         s_cat = sum(N3[g] + M2[g] * P[g] for g in SEG)
         # step 4: share shift from relative price + product
-        P4 = {g: inv_logit(logit(P[g]) - beta * dln_price + shift[g]) for g in SEG}
+        P4 = {g: inv_logit(logit(P[g]) - switch_rate * dln_price + shift[g]) for g in SEG}
         s_share = sum(N3[g] + M2[g] * P4[g] for g in SEG)
         M, N, P = M2, N3, P4
         rows.append({"year": y, **{f"M_{g}": M[g] for g in SEG}, **{f"P_{g}": P[g] for g in SEG},
@@ -197,16 +200,16 @@ def main():
     # sensitivity: 2030 U.S. nights vs beta and Airbnb ADR premium growth
     # Diagnostic: what cross-price elasticity does each beta imply, vs F&F Table E9's 3.76?
     p_pool = cal.loc[cal.segment == "TOTAL", "p_airbnb_in_pool"].iloc[0]
-    print("\nbeta -> implied d ln(ABNB nights)/d ln(hotel price)   [F&F Table E9 = %.2f]" % FF_CROSS_PRICE_ELASTICITY)
-    for b in BETA_GRID:
-        print("  beta %5.2f -> %.2f" % (b, CONTESTABLE * b * (1 - p_pool)))
+    print("\nswitch rate -> implied d ln(ABNB nights)/d ln(hotel price)   [F&F Table E9 = %.2f]" % FF_CROSS_PRICE_ELASTICITY)
+    for b in SWITCH_RATE_GRID:
+        print("  switch rate %5.2f -> %.2f" % (b, CONTESTABLE * b * (1 - p_pool)))
 
     sens = []
-    for b in BETA_GRID:
+    for b in SWITCH_RATE_GRID:
         for prem in [-0.02, 0.0, 0.02, 0.04]:  # Airbnb ADR growth minus hotel ADR growth, per year
             adr = {y: HOTEL_ADR_GROWTH[y] + prem for y in YEARS[1:]}
-            d, _ = project(cal, beta=b, abnb_adr=adr)
-            sens.append({"beta": b, "abnb_adr_premium_growth": prem, "us_nights_2030_mm": d.us_nights_mm.iloc[-1],
+            d, _ = project(cal, switch_rate=b, abnb_adr=adr)
+            sens.append({"switch_rate": b, "abnb_adr_premium_growth": prem, "us_nights_2030_mm": d.us_nights_mm.iloc[-1],
                          "cagr_2025_30": (d.us_nights_mm.iloc[-1] / d.us_nights_mm.iloc[0]) ** (1 / 5) - 1,
                          "implied_cross_price_elasticity": CONTESTABLE * b * (1 - p_pool),
                          "airbnb_share_of_pool_2030": sum(d[f"M_{g}"].iloc[-1] * d[f"P_{g}"].iloc[-1] for g in SEG) / sum(d[f"M_{g}"].iloc[-1] for g in SEG)})

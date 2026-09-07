@@ -49,7 +49,7 @@ rows = [
     ("Business share of room nights", 439 / 1044, "AHLA 2024 State of the Industry: 439M business / 605M leisure (2023) — https://www.ahla.com/sites/default/files/SOTI.2024.Final_.Draft_.v4.pdf"),
     ("Corporate bookings single-occupancy share", 0.795, "Hotel Booking Demand dataset (Antonio et al. 2019), corporate segment, n=4,291 — https://www.sciencedirect.com/science/article/pii/S2352340918315191"),
     ("SHARE DYNAMICS", None, None),
-    ("Beta: share sensitivity to ln(relative price)", 5.0, "Central 5.0; grid 2.5–10.3. Anchor: F&F (AER 2022) online Appendix Table E9 — Airbnb demand rises 3.76% when all hotel prices rise 1%; model reproduces that at beta 10.3 (= 3.76/(0.38×0.955)), discounted for tier-level, 10-city, city-night scope. 2.5 = bull floor (no evidential support as a central)"),
+    ("Switch rate: Airbnb-hotel switching per % price gap", 5.0, "Central 5.0; grid 2.5–10.3. Anchor: F&F (AER 2022) online Appendix Table E9 — Airbnb demand rises 3.76% when all hotel prices rise 1%; model reproduces that at beta 10.3 (= 3.76/(0.38×0.955)), discounted for tier-level, 10-city, city-night scope. 2.5 = bull floor (no evidential support as a central)"),
     ("Rest-of-world nights growth (placeholder, team input)", 0.10, "SUPERSEDED by the Global sheet: EMEA from the measured 4-country calibration, LatAm/APAC explicit fades from disclosed +18%/+15% (choice_nights_driver_global.py)"),
 ]
 r = 4
@@ -60,11 +60,11 @@ for label, val, src in rows:
         ws.cell(r, 1).font = BOLD; ws.cell(r, 1).fill = GREY
     else:
         c = ws.cell(r, 2, val); c.font = BLUE
-        c.number_format = PCT if (isinstance(val, float) and val < 1 and "Nights per booking" not in label and "Beta" not in label) else "0.00" if "Beta" in label or "Nights per booking" in label else "#,##0.0"
+        c.number_format = PCT if (isinstance(val, float) and val < 1 and "Nights per booking" not in label and "Switch rate" not in label) else "0.00" if "Switch rate" in label or "Nights per booking" in label else "#,##0.0"
         ws.cell(r, 7, src).font = Font(name="Arial", size=9)
         addr[label] = f"Inputs!$B${r}"
     r += 1
-ws.cell(addr["Beta: share sensitivity to ln(relative price)"].split("$")[-1] and int(addr["Beta: share sensitivity to ln(relative price)"].split("$")[-1]), 2).fill = YELLOW
+ws.cell(addr["Switch rate: Airbnb-hotel switching per % price gap"].split("$")[-1] and int(addr["Switch rate: Airbnb-hotel switching per % price gap"].split("$")[-1]), 2).fill = YELLOW
 ws.cell(int(addr["Share of Airbnb guests who would have used a hotel absent Airbnb"].split("$")[-1]), 2).fill = YELLOW
 
 # segment table
@@ -179,7 +179,7 @@ for j, y in enumerate(YEARS):
     ps.cell(3, 2 + j, str(y)).font = BOLD
 yc = lambda j: get_column_letter(2 + j)          # projection column for year index j
 ic = lambda j: get_column_letter(2 + j)          # Inputs year column (same layout)
-beta = A["Beta: share sensitivity to ln(relative price)"]
+switch_rate = A["Switch rate: Airbnb-hotel switching per % price gap"]
 rp = path_row
 ADR_KEY = "Airbnb ADR growth (link to the team's ADR line)"
 HOTEL_KEY = 'Hotel ADR growth'
@@ -213,7 +213,7 @@ for g in SEG:
     ps.cell(row, 2, f"=Calibration_2025!G{cr}").font = GREEN; ps.cell(row, 2).number_format = PCT
     for j in range(1, len(YEARS)):
         prev = f"{yc(j-1)}{row}"
-        ps.cell(row, 2 + j, f"=1/(1+EXP(-(LN({prev}/(1-{prev}))-{beta}*{yc(j)}${dln_row}+Inputs!$I${sr})))").number_format = PCT
+        ps.cell(row, 2 + j, f"=1/(1+EXP(-(LN({prev}/(1-{prev}))-{switch_rate}*{yc(j)}${dln_row}+Inputs!$I${sr})))").number_format = PCT
     # nights
     row += 1; arow = row
     ps.cell(row, 1, f"Airbnb nights — {g}").font = BOLD
@@ -283,12 +283,12 @@ ss.column_dimensions["A"].width = 12
 for c in "BCDE":
     ss.column_dimensions[c].width = 22
 ss["A1"] = "Sensitivity — 2030 U.S. Airbnb nights (mm) and 2025–30 CAGR"; ss["A1"].font = H1
-ss["A2"] = "Values computed by analysis/src/choice_nights_driver.py (same model); rows = beta, columns = Airbnb ADR growth minus hotel ADR growth per year. Static output, not formulas."
+ss["A2"] = "Values computed by analysis/src/choice_nights_driver.py (same model); rows = switch rate (share sensitivity to the % price gap; called beta in the F&F paper), columns = Airbnb ADR growth minus hotel ADR growth per year. Static output, not formulas."
 ss["A2"].font = Font(name="Arial", size=9, italic=True)
 sens = pd.read_csv(ROOT / "data/processed/choice_driver_sensitivity.csv")
-piv = sens.pivot(index="beta", columns="abnb_adr_premium_growth", values="us_nights_2030_mm")
-cag = sens.pivot(index="beta", columns="abnb_adr_premium_growth", values="cagr_2025_30")
-ss["A4"] = "beta \\ ADR premium"; ss["A4"].font = BOLD
+piv = sens.pivot(index="switch_rate", columns="abnb_adr_premium_growth", values="us_nights_2030_mm")
+cag = sens.pivot(index="switch_rate", columns="abnb_adr_premium_growth", values="cagr_2025_30")
+ss["A4"] = "switch rate \\ ADR premium"; ss["A4"].font = BOLD
 for j, col in enumerate(piv.columns):
     c = ss.cell(4, 2 + j, f"{col:+.0%}/yr"); c.font = BOLD
 for i, b in enumerate(piv.index):

@@ -44,7 +44,7 @@ HOTEL_PARTY = {"solo": 0.452, "pair": 0.387, "3-4": 0.129, "5+": 0.037}
 ABNB_SIZE = {"solo": 1.0, "pair": 2.0, "3-4": 3.4, "5+": 6.4}    # mean ~2.97/booking
 HOTEL_SIZE = {"solo": 1.0, "pair": 2.0, "3-4": 3.43, "5+": 5.5}  # mean ~1.87/party
 CONTESTABLE = 0.38
-BETA = 5.0  # see choice_nights_driver.py for the F&F Table E9 derivation
+SWITCH_RATE = 5.0  # see choice_nights_driver.py for the F&F Table E9 derivation (formerly 'beta')
 
 
 def calibrate(country, platform_nights, hotel_nights, abnb_share, hotel_period="2025"):

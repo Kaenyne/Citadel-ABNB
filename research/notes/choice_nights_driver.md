@@ -46,7 +46,9 @@ Inputs: CoStar/TE demand +1.7%/+1.1% then 1.5%; hotel ADR +3.1%/+1.6% then 2.5%;
 | 7.0 | 9.5% | 3.7% | −0.0% | −2.3% |
 | 10.3 (F&F-matched) | 12.8% | 3.7% | −1.2% | −3.5% |
 
-## Beta: re-anchored 7 Sep 2026
+## Switch rate (formerly "beta"): re-anchored 7 Sep 2026
+
+*Renamed `SWITCH_RATE` in code and "Switch rate" in the workbook (7 Sep 2026): "beta" collides with equity beta in a pitch context — it is a demand parameter, not CAPM beta. The β symbol below refers to this same parameter, kept where it cross-references the F&F paper.*
 
 The old central (2.5) had no evidential support, and the −4.27 cited as its anchor is F&F's *own-price elasticity for a single accommodation tier* — a different object from a category-level share response. The right anchor is F&F online Appendix **Table E9** (Demand Cross-Price Elasticities, p.30): a uniform +1% move in all six hotel tiers raises Airbnb demand **+3.76%** (3.72–3.85 across the four Airbnb tiers; own-price −2.45 to −4.39, avg −3.46). This model's analogue is d ln(Nights)/d ln(p_hotel) = 0.38 × β × (1−P) = 0.363β, so matching E9 exactly needs **β = 10.3**. Discounts (all one-directional): tier-level vs category-level; 10 dense-city sample (Austin, Boston, LA, Miami, NY, Oakland, Portland, SF, San Jose, Seattle); 2014 city-night markets vs national annual. Central set to **5.0**, grid 2.5–10.3. Beware secondary sources quoting F&F "3.9 / 1.3" — those are Table 3 *supply* elasticities, not demand.
 

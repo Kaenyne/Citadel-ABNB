@@ -4,7 +4,7 @@ GLOBAL nights build - replaces the 10% rest-of-world plug.
 Regions (FY2025 10-K nights, mm): NA 158 (US 145.4 via the 92% revenue proxy), EMEA 215,
 LatAm 90, APAC 70; total 533.
 
-  US      - the full segment-level choice model (choice_nights_driver.py, beta 5.0, team ADR line).
+  US      - the full segment-level choice model (choice_nights_driver.py, switch rate 5.0, team ADR line).
   EMEA    - the measured 4-country calibration (choice_nights_driver_countries.py: FR/ES/IT/DE =
             128.2mm Airbnb party-nights, 60% of EMEA's 215mm) scaled to EMEA and run through the
             same M/P/N machinery in aggregate. Implied EMEA own-category growth is ~10%
@@ -39,7 +39,7 @@ EMEA_HOTEL_ADR_GROWTH = 0.025     # assumption; European hotel ADR ran +3-5% 202
 EMEA_CATEGORY_GROWTH = {2026: 0.07, 2027: 0.065, 2028: 0.06, 2029: 0.055, 2030: 0.05}
 # implied ~10% from 2024-25 EMEA history; haircut for regulation (WS11 drag) and maturity
 EMEA_MIX_UPLIFT = 0.009           # same blended mix-drift contribution the US model produces
-CONTESTABLE, BETA = us_model.CONTESTABLE, us_model.BETA
+CONTESTABLE, SWITCH_RATE = us_model.CONTESTABLE, us_model.SWITCH_RATE
 
 # ---------------- LatAm / APAC growth fades (from disclosed +18% / +15% in 2025) ----------------
 LATAM_GROWTH = {2026: 0.16, 2027: 0.14, 2028: 0.12, 2029: 0.11, 2030: 0.10}
@@ -61,7 +61,7 @@ def emea_path():
         dln = np.log(1 + us_model.ABNB_ADR_GROWTH[y]) - np.log(1 + EMEA_HOTEL_ADR_GROWTH)
         M *= (1 + EMEA_MARKET_GROWTH + EMEA_MIX_UPLIFT)
         N *= (1 + EMEA_CATEGORY_GROWTH[y] + EMEA_MIX_UPLIFT)
-        P = 1 / (1 + np.exp(-(np.log(P / (1 - P)) - BETA * dln)))
+        P = 1 / (1 + np.exp(-(np.log(P / (1 - P)) - SWITCH_RATE * dln)))
         out[y] = N + M * P
     return out
 
