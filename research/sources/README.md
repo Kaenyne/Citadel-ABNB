@@ -75,3 +75,7 @@ Log every source as you use it. Cite it in the deck by the ID.
 S46 to S65 are Jessie's sources from PR #17, renumbered on the 7 Sep 2026 merge of origin/main into krish/overnight-synthesis because they reused S2 to S21. Jessie's notes cite sources by name, not by id. Mapping in `data/processed/overnight/25_source_id_remap.csv`.
 
 Paid/licensed sources (Bloomberg, CapIQ, etc.): store the export in the shared Drive and link the Drive path here. Do not commit the raw file.
+
+## Housing-driven STR regulatory research (5 Sep 2026, committed 7 Sep on `krish/regulatory-db`)
+
+The [regulatory research package](../regulatory/README.md) holds 32 ranked factors, 48 source records and a 14-quarter earnings-transcript index. Its source ids use the separate `REG-S` namespace (REG-S01 to REG-S48) so they do not collide with the S-series above. Full log: [source index](../regulatory/source_index.md); [factor register](../regulatory/factor_register.md); [earnings digest](../regulatory/earnings_digest.md); [quantification](../regulatory/quantification/README.md); [phase 2 matched cohorts](../regulatory/phase2/README.md). Public raw inputs are committed under `data/raw/regulatory/`; LSEG story bodies and transcript texts stay local (see data/README.md).

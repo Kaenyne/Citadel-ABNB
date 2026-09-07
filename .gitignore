@@ -49,3 +49,10 @@ docs/forecast-skill/
 # Download caches for the overnight scripts (repo-relative replacement for the session
 # scratchpad; see docs/overnight/BUILD.md). Regenerated on demand, never committed.
 data/cache/
+
+# Regulatory research raw inputs are public (registries, official PDFs, Inside Airbnb and INE extracts) and kept in git
+# so the package is reproducible; licensed LSEG story bodies and transcript texts stay local
+!data/raw/regulatory/
+data/raw/regulatory/lseg/
+data/raw/regulatory/phase2/lseg/
+data/raw/regulatory/transcripts/

@@ -24,7 +24,8 @@ pyarrow                # Parquet engine for the Inside Airbnb / Common Crawl pan
 requests               # EDGAR, FRED, Eurostat, IR CDN, Inside Airbnb
 yfinance               # daily closes, peer prices, peer info/estimates (09, 10, 12, 15)
 pytrends               # 08_trends_pull (Google Trends; rate-limited, cached to disk)
-pypdf                  # PDF transcript acquisition (analysis/src/download_abnb_transcripts.py);
+pypdf                  # PDF transcript acquisition (analysis/src/download_abnb_transcripts.py) and the
+                       # regulatory pull/build scripts (pull_regulatory_quant_sources, build_regulatory_phase2);
                        # the in-tree transcript parser reads .txt produced by poppler `pdftotext
                        # -layout`, which is an external binary, not a Python package
 
@@ -34,6 +35,9 @@ pysentiment2           # 03_call_features: the Loughran-McDonald master dictiona
 
 # --- bulk extracts (Theo's acquisition layer only; not needed for the overnight build) --------
 duckdb                 # analysis/src/build_booking_curves.py, build_market_summary.py
+
+# --- regulatory news acquisition (optional; needs LSEG_APP_KEY, see data/README.md) --------------
+eikon==1.1.18          # analysis/src/pull_regulatory_documents.py (LSEG/Refinitiv headlines and story bodies)
 
 # --- notebooks (optional; no build step needs it) ----------------------------------------------
 jupyter
