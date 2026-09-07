@@ -23,6 +23,21 @@ YELLOW = PatternFill("solid", fgColor="FFFF00")
 GREY = PatternFill("solid", fgColor="EEEEEE")
 PCT, NUM, NUM1 = "0.0%", "#,##0.0", "0.000"
 
+# Take rate. NOT flat, and the flat 0.134 this sheet used to carry was a hidden assumption.
+# FY25 actual is 13.4% (revenue / GBV, Q4'25 shareholder letter). The 13 Oct 2026 move to a single
+# 15.5% host fee is mechanically ~+58bp on guest spend, invariant to demand elasticity and to how far
+# hosts re-price, because 15.5% is levied on the grossed-up price rather than 3% on the host subtotal
+# plus 14% at checkout (research/notes/host_only_fee_history_and_elasticity.md). About half of listings
+# had migrated by 2Q26 and all had by year end, so FY26 collects roughly a quarter of the step and FY27
+# the rest. Pushing the other way, management guided FY26 "relatively flat" because customer incentives
+# for Services, Experiences and hotels are booked as contra-revenue; the same note puts the no-migration
+# path at 12.9-13.1%. Holding 13.4% flat therefore assumed the migration for FY26 and then declined to
+# collect the FY27 step. Blue and yellow: override it if the team model disagrees.
+TAKE_RATE_PATH = [0.134, 0.134, 0.136, 0.136, 0.136, 0.136]
+TAKE_RATE_NOTE = ("FY2025 revenue ÷ GBV = 13.4% (Q4'25 letter). Steps to 13.6% by FY27: the single 15.5% host fee "
+                  "is ~+58bp on guest spend (~half of listings migrated by 2Q26, all by year end); FY26 is held at "
+                  "13.4% because incentives for Services/Experiences/hotels are contra-revenue and management guided "
+                  "FY26 flat. Without the migration this line would drift to 12.9-13.1%.")
 
 wb = Workbook()
 
@@ -256,9 +271,10 @@ ps.cell(row, 8, "2025 NA GBV $40.3B ÷ 158M nights = $255 (FY2025 10-K); grows w
 for j in range(1, len(YEARS)):
     ps.cell(row, 2 + j, f"={yc(j-1)}{row}*(1+Inputs!{ic(j)}{rp[ADR_KEY]})").number_format = "$#,##0"
 row += 1; take_row = row
-ps.cell(row, 1, "Take rate — team input"); ps.cell(row, 8, "FY2025 revenue ÷ GBV = 13.4% (Q4'25 shareholder letter)").font = Font(name="Arial", size=9)
-for j in range(len(YEARS)):
-    c = ps.cell(row, 2 + j, 0.134); c.font = BLUE; c.number_format = PCT; c.fill = YELLOW
+ps.cell(row, 1, "Take rate — team input (carries the host-only fee migration)")
+ps.cell(row, 8, TAKE_RATE_NOTE).font = Font(name="Arial", size=9)
+for j, v in enumerate(TAKE_RATE_PATH):
+    c = ps.cell(row, 2 + j, v); c.font = BLUE; c.number_format = PCT; c.fill = YELLOW
 row += 1; fx_row = row
 ps.cell(row, 1, "FX factor (1.00 for USD) — team input")
 for j in range(len(YEARS)):
@@ -274,7 +290,8 @@ for j in range(len(YEARS)):
     c = ps.cell(row, 2 + j, f"={yc(j)}{gbv_row}*{yc(j)}{take_row}"); c.number_format = "$#,##0"; c.font = BOLD
 row += 2
 ps.cell(row, 1, "How to wire it: replace the U.S./North-America nights growth plug in the team model with row " + str(tot_row) +
-        " (or its growth in row " + str(growth_row) + "). Keep ADR, take rate and FX where they are — this sheet only explains NIGHTS. "
+        " (or its growth in row " + str(growth_row) + "). Keep ADR and FX where they are — this sheet only explains NIGHTS. "
+        "The take-rate row is NOT a constant: it steps 13.4% → 13.6% by FY27 for the host-only fee migration, so reconcile it with the team model rather than overwriting it blind. "
         "For other regions, either repeat the calibration with that region's hotel data or apply the rest-of-world growth input.").font = Font(name="Arial", size=9, italic=True)
 ps.cell(row, 1).alignment = Alignment(wrap_text=True); ps.merge_cells(start_row=row, start_column=1, end_row=row, end_column=7); ps.row_dimensions[row].height = 48
 

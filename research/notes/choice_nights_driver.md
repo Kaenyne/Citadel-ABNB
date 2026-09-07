@@ -129,7 +129,8 @@ The party-size gradient replicates in every country (~2× per step, same shape a
 ## Wiring
 
 1. Link Inputs!"Airbnb ADR growth" to the model's ADR line (same ADR drives price and share).
-2. Replace the NA/U.S. nights growth plug with Projection!"U.S. AIRBNB NIGHTS" (or its growth row). ADR, take rate, FX untouched. Check: 2025 U.S. revenue reproduces at $5.0B vs ~$4.8B reported (U.S.-share proxy).
+2. Replace the NA/U.S. nights growth plug with Projection!"U.S. AIRBNB NIGHTS" (or its growth row). ADR and FX untouched. Check: 2025 U.S. revenue reproduces at $5.0B vs ~$4.8B reported (U.S.-share proxy).
+2b. **The take-rate row is no longer flat.** It was hardcoded at 13.4% across 2025–30, which silently assumed the host-only fee migration for FY26 and then never collected the FY27 step. It now runs 13.4% (FY25–26) → 13.6% (FY27 on), per `host_only_fee_history_and_elasticity.md`: the single 15.5% fee is ~+58bp on guest spend, invariant to demand elasticity and to how far hosts re-price; roughly a quarter lands in FY26 and the rest in FY27, against a no-migration path of 12.9–13.1%. FY26 is held at 13.4% because incentives for Services/Experiences/hotels are contra-revenue and management guided FY26 flat. Reconcile with the team model rather than overwriting it blind.
 3. Other regions: keep the team's growth for now, or recalibrate with regional hotel nights (Eurostat for EU — Krishang's file).
 4. Scenarios: bear = ADR +2–4 pts above hotels, β 5.0–10.3 → nights CAGR +0.9% to −3.5%; bull = ADR parity or below, β 2.5, mix drift +2, positive product shift → 4–6%.
 
