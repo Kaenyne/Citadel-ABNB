@@ -1,0 +1,78 @@
+target,feature,train_start,eval_window,n_events,first_event,last_event,rmse_baseline_ar1,rmse_baseline_plus_feature,rmse_naive_last_quarter,rmse_prior_year,rmse_trailing4_mean,incremental_ratio,ratio_vs_naive,feature_adds_value,block
+rev_yoy,bl_funds_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,4.0702,4.1805,4.5035,6.974,3.9641,1.0271,0.9283,False,WS08 KPI growth
+rev_yoy,bl_funds_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,4.0702,4.1805,4.5035,6.974,3.9641,1.0271,0.9283,False,WS08 KPI growth
+rev_yoy,bl_funds_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,4.2858,3.0706,4.3222,5.6297,4.2297,0.7165,0.7104,True,WS08 KPI growth
+rev_yoy,bl_unearned_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,4.0702,4.9398,4.5035,6.974,3.9641,1.2136,1.0969,False,WS08 KPI growth
+rev_yoy,bl_unearned_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,4.0702,4.9398,4.5035,6.974,3.9641,1.2136,1.0969,False,WS08 KPI growth
+rev_yoy,bl_unearned_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,4.2858,5.815,4.3222,5.6297,4.2297,1.3568,1.3454,False,WS08 KPI growth
+rev_yoy,eu_platform_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,4.0702,4.8516,4.5035,6.974,3.9641,1.192,1.0773,False,WS08 KPI growth
+rev_yoy,eu_platform_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,4.0702,4.8516,4.5035,6.974,3.9641,1.192,1.0773,False,WS08 KPI growth
+rev_yoy,eu_platform_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,4.2858,4.0697,4.3222,5.6297,4.2297,0.9496,0.9416,True,WS08 KPI growth
+rev_yoy,pr_hotel_revpar_yoy,2022Q1,2023Q1+,9,2024Q2,2026Q2,4.0702,3.6012,4.5035,6.974,3.9641,0.8848,0.7996,True,WS08 KPI growth
+rev_yoy,pr_hotel_revpar_yoy,2022Q1,2024Q1+,9,2024Q2,2026Q2,4.0702,3.6012,4.5035,6.974,3.9641,0.8848,0.7996,True,WS08 KPI growth
+rev_yoy,pr_hotel_revpar_yoy,2023Q1,2024Q1+,5,2025Q2,2026Q2,4.2858,4.1155,4.3222,5.6297,4.2297,0.9603,0.9522,True,WS08 KPI growth
+rev_yoy,pr_hotel_revpar_yoy_pit,2022Q1,2023Q1+,9,2024Q2,2026Q2,4.0702,3.6646,4.5035,6.974,3.9641,0.9003,0.8137,True,WS08 KPI growth
+rev_yoy,pr_hotel_revpar_yoy_pit,2022Q1,2024Q1+,9,2024Q2,2026Q2,4.0702,3.6646,4.5035,6.974,3.9641,0.9003,0.8137,True,WS08 KPI growth
+rev_yoy,pr_hotel_revpar_yoy_pit,2023Q1,2024Q1+,5,2025Q2,2026Q2,4.2858,4.0934,4.3222,5.6297,4.2297,0.9551,0.9471,True,WS08 KPI growth
+nights_yoy,bl_funds_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,2.7138,4.9892,2.115,2.3934,1.8867,1.8385,2.359,False,WS08 KPI growth
+nights_yoy,bl_funds_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,2.7138,4.9892,2.115,2.3934,1.8867,1.8385,2.359,False,WS08 KPI growth
+nights_yoy,bl_funds_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,1.3125,1.0682,0.9993,1.8997,1.3547,0.8138,1.0689,False,WS08 KPI growth
+nights_yoy,bl_unearned_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,2.7138,3.2291,2.115,2.3934,1.8867,1.1899,1.5268,False,WS08 KPI growth
+nights_yoy,bl_unearned_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,2.7138,3.2291,2.115,2.3934,1.8867,1.1899,1.5268,False,WS08 KPI growth
+nights_yoy,bl_unearned_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,1.3125,2.5624,0.9993,1.8997,1.3547,1.9522,2.5641,False,WS08 KPI growth
+nights_yoy,eu_platform_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,2.7138,2.6376,2.115,2.3934,1.8867,0.9719,1.2471,False,WS08 KPI growth
+nights_yoy,eu_platform_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,2.7138,2.6376,2.115,2.3934,1.8867,0.9719,1.2471,False,WS08 KPI growth
+nights_yoy,eu_platform_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,1.3125,1.3898,0.9993,1.8997,1.3547,1.0589,1.3908,False,WS08 KPI growth
+nights_yoy,pr_hotel_revpar_yoy,2022Q1,2023Q1+,9,2024Q2,2026Q2,2.7138,1.4954,2.115,2.3934,1.8867,0.5511,0.7071,True,WS08 KPI growth
+nights_yoy,pr_hotel_revpar_yoy,2022Q1,2024Q1+,9,2024Q2,2026Q2,2.7138,1.4954,2.115,2.3934,1.8867,0.5511,0.7071,True,WS08 KPI growth
+nights_yoy,pr_hotel_revpar_yoy,2023Q1,2024Q1+,5,2025Q2,2026Q2,1.3125,1.017,0.9993,1.8997,1.3547,0.7748,1.0177,False,WS08 KPI growth
+nights_yoy,pr_hotel_revpar_yoy_pit,2022Q1,2023Q1+,9,2024Q2,2026Q2,2.7138,1.5625,2.115,2.3934,1.8867,0.5758,0.7388,True,WS08 KPI growth
+nights_yoy,pr_hotel_revpar_yoy_pit,2022Q1,2024Q1+,9,2024Q2,2026Q2,2.7138,1.5625,2.115,2.3934,1.8867,0.5758,0.7388,True,WS08 KPI growth
+nights_yoy,pr_hotel_revpar_yoy_pit,2023Q1,2024Q1+,5,2025Q2,2026Q2,1.3125,1.0362,0.9993,1.8997,1.3547,0.7895,1.0369,False,WS08 KPI growth
+gbv_yoy,bl_funds_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,3.819,5.8266,3.5061,5.5989,4.0985,1.5257,1.6619,False,WS08 KPI growth
+gbv_yoy,bl_funds_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,3.819,5.8266,3.5061,5.5989,4.0985,1.5257,1.6619,False,WS08 KPI growth
+gbv_yoy,bl_funds_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,3.3297,4.5575,3.1899,6.2465,3.8553,1.3687,1.4287,False,WS08 KPI growth
+gbv_yoy,bl_unearned_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,3.819,4.425,3.5061,5.5989,4.0985,1.1587,1.2621,False,WS08 KPI growth
+gbv_yoy,bl_unearned_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,3.819,4.425,3.5061,5.5989,4.0985,1.1587,1.2621,False,WS08 KPI growth
+gbv_yoy,bl_unearned_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,3.3297,5.5083,3.1899,6.2465,3.8553,1.6543,1.7268,False,WS08 KPI growth
+gbv_yoy,eu_platform_yoy_lag1,2022Q1,2023Q1+,9,2024Q2,2026Q2,3.819,4.2445,3.5061,5.5989,4.0985,1.1114,1.2106,False,WS08 KPI growth
+gbv_yoy,eu_platform_yoy_lag1,2022Q1,2024Q1+,9,2024Q2,2026Q2,3.819,4.2445,3.5061,5.5989,4.0985,1.1114,1.2106,False,WS08 KPI growth
+gbv_yoy,eu_platform_yoy_lag1,2023Q1,2024Q1+,5,2025Q2,2026Q2,3.3297,3.3301,3.1899,6.2465,3.8553,1.0001,1.044,False,WS08 KPI growth
+gbv_yoy,pr_hotel_revpar_yoy,2022Q1,2023Q1+,9,2024Q2,2026Q2,3.819,3.9673,3.5061,5.5989,4.0985,1.0388,1.1316,False,WS08 KPI growth
+gbv_yoy,pr_hotel_revpar_yoy,2022Q1,2024Q1+,9,2024Q2,2026Q2,3.819,3.9673,3.5061,5.5989,4.0985,1.0388,1.1316,False,WS08 KPI growth
+gbv_yoy,pr_hotel_revpar_yoy,2023Q1,2024Q1+,5,2025Q2,2026Q2,3.3297,4.1913,3.1899,6.2465,3.8553,1.2588,1.3139,False,WS08 KPI growth
+gbv_yoy,pr_hotel_revpar_yoy_pit,2022Q1,2023Q1+,9,2024Q2,2026Q2,3.819,3.8053,3.5061,5.5989,4.0985,0.9964,1.0854,False,WS08 KPI growth
+gbv_yoy,pr_hotel_revpar_yoy_pit,2022Q1,2024Q1+,9,2024Q2,2026Q2,3.819,3.8053,3.5061,5.5989,4.0985,0.9964,1.0854,False,WS08 KPI growth
+gbv_yoy,pr_hotel_revpar_yoy_pit,2023Q1,2024Q1+,5,2025Q2,2026Q2,3.3297,3.9999,3.1899,6.2465,3.8553,1.2013,1.2539,False,WS08 KPI growth
+nights_surprise_pct,bl_funds_yoy_lag1,expanding from the first print,2023Q1+,7,2024Q4,2026Q2,1.7163,1.6847,1.9661,1.0079,1.334,0.9815,0.8569,False,WS20 surprise
+nights_surprise_pct,bl_funds_yoy_lag1,expanding from the first print,2024Q1+,7,2024Q4,2026Q2,1.7163,1.6847,1.9661,1.0079,1.334,0.9815,0.8569,False,WS20 surprise
+revenue_surprise_pct,bl_funds_yoy_lag1,expanding from the first print,2023Q1+,10,2024Q1,2026Q2,1.7361,1.2252,1.8505,1.7338,1.332,0.7058,0.6621,False,WS20 surprise
+revenue_surprise_pct,bl_funds_yoy_lag1,expanding from the first print,2024Q1+,10,2024Q1,2026Q2,1.7361,1.2252,1.8505,1.7338,1.332,0.7058,0.6621,False,WS20 surprise
+nights_surprise_pct,eu_platform_yoy_lag1,expanding from the first print,2023Q1+,11,2023Q3,2026Q2,1.5354,1.087,1.8241,1.2783,1.4171,0.7079,0.5959,True,WS20 surprise
+nights_surprise_pct,eu_platform_yoy_lag1,expanding from the first print,2024Q1+,9,2024Q1,2026Q2,1.5813,1.1986,1.8456,0.9916,1.2215,0.758,0.6495,False,WS20 surprise
+revenue_surprise_pct,eu_platform_yoy_lag1,expanding from the first print,2023Q1+,14,2023Q1,2026Q2,1.7442,5.1705,1.7172,1.8852,1.2494,2.9644,3.011,False,WS20 surprise
+revenue_surprise_pct,eu_platform_yoy_lag1,expanding from the first print,2024Q1+,10,2024Q1,2026Q2,1.7361,4.5489,1.8505,1.7338,1.332,2.6203,2.4582,False,WS20 surprise
+nights_surprise_pct,f_guide_cushion_trail4,expanding from the first print,2023Q1+,6,2025Q1,2026Q2,1.6754,1.3762,2.0869,0.9387,1.3341,0.8214,0.6594,False,WS20 surprise
+nights_surprise_pct,f_guide_cushion_trail4,expanding from the first print,2024Q1+,6,2025Q1,2026Q2,1.6754,1.3762,2.0869,0.9387,1.3341,0.8214,0.6594,False,WS20 surprise
+revenue_surprise_pct,f_guide_cushion_trail4,expanding from the first print,2023Q1+,9,2024Q2,2026Q2,1.7984,1.2392,1.8593,1.6405,1.2023,0.6891,0.6665,False,WS20 surprise
+revenue_surprise_pct,f_guide_cushion_trail4,expanding from the first print,2024Q1+,9,2024Q2,2026Q2,1.7984,1.2392,1.8593,1.6405,1.2023,0.6891,0.6665,False,WS20 surprise
+nights_surprise_pct,f_guide_vs_street_lag1,expanding from the first print,2023Q1+,7,2024Q4,2026Q2,1.7163,1.8548,1.9661,1.0079,1.334,1.0807,0.9434,False,WS20 surprise
+nights_surprise_pct,f_guide_vs_street_lag1,expanding from the first print,2024Q1+,7,2024Q4,2026Q2,1.7163,1.8548,1.9661,1.0079,1.334,1.0807,0.9434,False,WS20 surprise
+revenue_surprise_pct,f_guide_vs_street_lag1,expanding from the first print,2023Q1+,10,2024Q1,2026Q2,1.7361,1.2131,1.8505,1.7338,1.332,0.6988,0.6556,False,WS20 surprise
+revenue_surprise_pct,f_guide_vs_street_lag1,expanding from the first print,2024Q1+,10,2024Q1,2026Q2,1.7361,1.2131,1.8505,1.7338,1.332,0.6988,0.6556,False,WS20 surprise
+nights_surprise_pct,f_prior_surprise,expanding from the first print,2023Q1+,7,2024Q4,2026Q2,1.7163,1.5849,1.9661,1.0079,1.334,0.9234,0.8062,False,WS20 surprise
+nights_surprise_pct,f_prior_surprise,expanding from the first print,2024Q1+,7,2024Q4,2026Q2,1.7163,1.5849,1.9661,1.0079,1.334,0.9234,0.8062,False,WS20 surprise
+revenue_surprise_pct,f_prior_surprise,expanding from the first print,2023Q1+,14,2023Q1,2026Q2,1.7442,1.7442,1.7172,1.8852,1.2494,1.0,1.0157,False,WS20 surprise
+revenue_surprise_pct,f_prior_surprise,expanding from the first print,2024Q1+,10,2024Q1,2026Q2,1.7361,1.7361,1.8505,1.7338,1.332,1.0,0.9382,False,WS20 surprise
+nights_surprise_pct,f_surprise_trail4,expanding from the first print,2023Q1+,9,2024Q1,2026Q2,1.5813,1.9761,1.8456,0.9916,1.2215,1.2497,1.0707,False,WS20 surprise
+nights_surprise_pct,f_surprise_trail4,expanding from the first print,2024Q1+,9,2024Q1,2026Q2,1.5813,1.9761,1.8456,0.9916,1.2215,1.2497,1.0707,False,WS20 surprise
+revenue_surprise_pct,f_surprise_trail4,expanding from the first print,2023Q1+,13,2023Q2,2026Q2,1.7033,1.2528,1.7716,1.8288,1.2821,0.7355,0.7071,True,WS20 surprise
+revenue_surprise_pct,f_surprise_trail4,expanding from the first print,2024Q1+,10,2024Q1,2026Q2,1.7361,1.2846,1.8505,1.7338,1.332,0.7399,0.6942,False,WS20 surprise
+nights_surprise_pct,pr_hotel_revpar_yoy,expanding from the first print,2023Q1+,11,2023Q3,2026Q2,1.5354,1.6216,1.8241,1.2783,1.4171,1.0561,0.889,False,WS20 surprise
+nights_surprise_pct,pr_hotel_revpar_yoy,expanding from the first print,2024Q1+,9,2024Q1,2026Q2,1.5813,1.6741,1.8456,0.9916,1.2215,1.0587,0.9071,False,WS20 surprise
+revenue_surprise_pct,pr_hotel_revpar_yoy,expanding from the first print,2023Q1+,14,2023Q1,2026Q2,1.7442,4.0895,1.7172,1.8852,1.2494,2.3446,2.3814,False,WS20 surprise
+revenue_surprise_pct,pr_hotel_revpar_yoy,expanding from the first print,2024Q1+,10,2024Q1,2026Q2,1.7361,3.2238,1.8505,1.7338,1.332,1.857,1.7422,False,WS20 surprise
+nights_surprise_pct,pr_hotel_revpar_yoy_pit,expanding from the first print,2023Q1+,9,2024Q1,2026Q2,1.5813,1.6219,1.8456,0.9916,1.2215,1.0257,0.8788,False,WS20 surprise
+nights_surprise_pct,pr_hotel_revpar_yoy_pit,expanding from the first print,2024Q1+,9,2024Q1,2026Q2,1.5813,1.6219,1.8456,0.9916,1.2215,1.0257,0.8788,False,WS20 surprise
+revenue_surprise_pct,pr_hotel_revpar_yoy_pit,expanding from the first print,2023Q1+,12,2023Q3,2026Q2,1.769,3.6206,1.8174,1.7054,1.3022,2.0467,1.9922,False,WS20 surprise
+revenue_surprise_pct,pr_hotel_revpar_yoy_pit,expanding from the first print,2024Q1+,10,2024Q1,2026Q2,1.7361,3.164,1.8505,1.7338,1.332,1.8225,1.7098,False,WS20 surprise

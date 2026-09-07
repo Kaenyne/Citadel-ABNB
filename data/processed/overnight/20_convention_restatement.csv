@@ -1,0 +1,14 @@
+finding,convention,target,n,n_negative,share_negative,mean_pct,median_pct,base_rate_negative,base_rate_n,binom_p_vs_coin,binom_p_vs_base_rate,pearson_r,pearson_p,r2,supp_loo_r2,wf_n,wf_rmse,wf_rmse_zero,wf_rmse_expanding_mean
+guide midpoint BELOW next-quarter Street,legacy: pre-release close entry (NOT executable),legacy_1d_pct,9,7.0,0.778,-3.21,-7.09,0.522,23.0,0.0898,0.1132,,,,,,,,
+guide midpoint BELOW next-quarter Street,legacy: pre-release close entry (NOT executable),legacy_5d_pct,9,6.0,0.667,-5.64,-7.28,0.652,23.0,0.2539,0.6143,,,,,,,,
+guide midpoint BELOW next-quarter Street,legacy: pre-release close entry (NOT executable),legacy_20d_pct,9,9.0,1.0,-8.9,-9.61,0.696,23.0,0.002,0.0382,,,,,,,,
+guide midpoint BELOW next-quarter Street,executable: open of the reaction session,open_1d_pct,9,3.0,0.333,0.91,1.65,0.261,23.0,0.9102,0.4298,,,,,,,,
+guide midpoint BELOW next-quarter Street,executable: open of the reaction session,open_5d_pct,9,5.0,0.556,-1.39,-1.63,0.609,23.0,0.5,0.7513,,,,,,,,
+guide midpoint BELOW next-quarter Street,executable: open of the reaction session,open_20d_pct,9,9.0,1.0,-4.21,-4.42,0.696,23.0,0.002,0.0382,,,,,,,,
+guide midpoint BELOW next-quarter Street,executable: close of the reaction session,postclose_5d_pct,9,6.0,0.667,-2.18,-2.95,0.609,23.0,0.2539,0.5045,,,,,,,,
+guide midpoint BELOW next-quarter Street,executable: close of the reaction session,postclose_20d_pct,9,8.0,0.889,-4.84,-4.0,0.609,23.0,0.0195,0.0778,,,,,,,,
+nights surprise -> post-print drift,legacy: pre-release close entry (NOT executable),legacy_20d_pct,19,,,,,,,,,0.455,0.0504,0.2069,0.1556,11.0,8.936,9.33,10.522
+nights surprise -> post-print drift,executable: open of the reaction session,open_20d_pct,19,,,,,,,,,0.311,0.1943,0.097,-0.0159,11.0,7.303,6.785,7.579
+nights surprise -> post-print drift,executable: close of the reaction session,postclose_20d_pct,19,,,,,,,,,0.421,0.0723,0.1776,0.0929,11.0,7.086,5.953,7.846
+nights surprise -> post-print drift,legacy: pre-release close entry (NOT executable),legacy_5d_pct,19,,,,,,,,,0.091,0.7105,0.0083,-0.0883,11.0,9.376,8.645,9.449
+nights surprise -> post-print drift,executable: open of the reaction session,open_5d_pct,19,,,,,,,,,-0.095,0.6994,0.009,-0.0597,11.0,5.804,5.154,5.5

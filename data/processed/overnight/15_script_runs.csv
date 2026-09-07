@@ -1,0 +1,35 @@
+script,status,exit_code,wall_time,workstream_outputs_present,outputs_changed_on_re_run,stderr
+01_data_census.py,ok,0,1s,1,no - byte-identical to the pre-run snapshot,clean stderr
+02_guidance_analysis.py,ok,0,2s,15,no - byte-identical to the pre-run snapshot,clean stderr
+02_guidance_ledger.py,ok,0,2s,15,no - byte-identical to the pre-run snapshot,clean stderr
+02_kpi_panel.py,ok,0,1s,15,no - byte-identical to the pre-run snapshot,clean stderr
+03_call_features.py,ok,0,7s,10,no - byte-identical to the pre-run snapshot,clean stderr
+03_event_study.py,ok,0,4s,10,no - byte-identical to the pre-run snapshot,clean stderr
+03_forward_claims.py,ok,0,4s,10,no - byte-identical to the pre-run snapshot,clean stderr
+03_reaction_tests.py,ok,0,107s,10,no - byte-identical to the pre-run snapshot,"12 warning line(s), e.g. C:\Users\krish\citadel-abnb-overnight\analysis\src\overnight\03_reaction_tests.py:104: RuntimeWarning: Mean of empty slice"
+04_consensus_at_print.py,ok,0,1s,6,no - byte-identical to the pre-run snapshot,clean stderr
+04_reaction_vs_consensus.py,ok,0,49s,6,no - byte-identical to the pre-run snapshot,clean stderr
+05_macro_transmission.py,ok,0,13s,11,no - byte-identical to the pre-run snapshot,clean stderr
+06_evidence_tables.py,ok,0,1s,12,no - byte-identical to the pre-run snapshot,clean stderr
+06_price_gap.py,ok,0,2s,12,no - byte-identical to the pre-run snapshot,clean stderr
+06_quote_panel.py,ok,0,173s,12,no - byte-identical to the pre-run snapshot,clean stderr
+06_wtp_hedonics.py,ok,0,38s,12,no - byte-identical to the pre-run snapshot,clean stderr
+07_cost_lines_per_night.py,ok,0,1s,5,no - byte-identical to the pre-run snapshot,clean stderr
+07_margin_lever_model.py,ok,0,4s,5,no - byte-identical to the pre-run snapshot,clean stderr
+07_ops_initiatives.py,ok,0,1s,5,no - byte-identical to the pre-run snapshot,clean stderr
+07_peer_benchmark.py,ok,0,1s,5,no - byte-identical to the pre-run snapshot,clean stderr
+08_altdata_backtests.py,ok,0,155s,21,no - byte-identical to the pre-run snapshot,clean stderr
+08_inside_airbnb_demand.py,ok,0,9s,21,no - byte-identical to the pre-run snapshot,clean stderr
+08_trends_pull.py,ok,0,326s,21,"yes - 08_trends_weekly.csv 725,530 -> 725,533 bytes, same 12,455 rows (fresh Google Trends pull; Google rescales history on every pull)","10 warning line(s), e.g. C:\Users\krish\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pytrends\request.py:2"
+09_stock_behaviour.py,ok,0,14s,27,no - byte-identical to the pre-run snapshot,clean stderr
+10_benchmarks.py,ok,0,7s,16,no - byte-identical to the pre-run snapshot,clean stderr
+10_fetch_benchmarks.py,ok,0,12s,16,"yes - 10_regional_benchmarks.csv 7,270 -> 7,269 bytes, same 24 rows (rounding on a fresh pull)",clean stderr
+10_fetch_eurostat_latest.py,ok,0,3s,16,no - byte-identical to the pre-run snapshot,clean stderr
+10_fetch_fx.py,ok,0,31s,16,no - byte-identical to the pre-run snapshot,clean stderr
+10_fetch_xbrl_geography.py,ok,0,30s,16,"yes - 10_xbrl_revenue_geography.csv 23,831 -> 23,481 bytes, 259 -> 255 rows (fresh EDGAR companyconcept pull). WS10's derived outputs (10_regional_panel_quarterly.csv, 10_regional_forecast.csv) are byte-identical either way, so the FY25 regional shares are unaffected",clean stderr
+10_regional_forecast.py,ok,0,2s,16,no - byte-identical to the pre-run snapshot,clean stderr
+10_regional_panel.py,ok,0,3s,16,no - byte-identical to the pre-run snapshot,clean stderr
+11_competition_supply_overlays.py,ok,0,2s,9,no - byte-identical to the pre-run snapshot,clean stderr
+12_abnb_multiples_history.py,ok,0,6s,14,no - byte-identical to the pre-run snapshot,clean stderr
+12_exit_multiples_and_targets.py,ok,0,5s,14,no - byte-identical to the pre-run snapshot,clean stderr
+12_peer_multiples.py,ok,0,25s,14,no - byte-identical to the pre-run snapshot,clean stderr

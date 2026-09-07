@@ -1,0 +1,40 @@
+component,fy2019,fy2020,fy2021,fy2022,fy2023,fy2024,fy2025,fy2020_pct_rev,fy2021_pct_rev,fy2022_pct_rev,fy2023_pct_rev,fy2024_pct_rev,fy2025_pct_rev,fy2020_pct_gbv,fy2021_pct_gbv,fy2022_pct_gbv,fy2023_pct_gbv,fy2024_pct_gbv,fy2025_pct_gbv,source
+employees_dec31,,5597,6132,6811,6907,7300,8200,165.68,102.34,81.09,69.65,65.75,66.99,,,,,,,"10-K Item 1 Human Capital: 'As of December 31, YYYY, we had [approximately] N employees' (2024 and 2025 given as approximately)"
+third_party_support_workers,,,,11000,11000,11000,13000,,,130.97,110.92,99.08,106.2,,,,,,,10-K Item 1: 'global network of approximately N third-party (contingent) workers to handle the vast majority of our community support contacts'
+brand_and_performance_marketing,1140.4,478.6,723.2,1030,1208,1455,1595,14.17,12.07,12.26,12.18,13.11,13.03,,,,,,,10-K sales and marketing split table (FY2021 10-K for 2019 to 2021; each later 10-K)
+field_operations_and_policy,481.2,696.7,463.2,486,555,693,993,20.62,7.73,5.79,5.6,6.24,8.11,,,,,,,10-K sales and marketing split table
+advertising_expense_xbrl,712.6,176.0,542.0,786.0,953.0,1100.0,843.0,5.21,9.05,9.36,9.61,9.91,6.89,,,,,,,"XBRL us-gaap:AdvertisingExpense (10-K note; FY2025 value of 843 is as tagged and sits below the 1,595 brand and performance figure)"
+payment_processing_cost,,600.2,844.4,1194.1,1367.1,1506.1,1665.1,17.77,14.09,14.22,13.79,13.57,13.6,2.51,1.8,1.89,1.87,1.84,1.82,"FY2021 10-K: merchant fees and chargebacks $600.2M (2020) and $844.4M (2021), 3% and 2% of GBV. Later years accumulate the MD&A deltas: 2022 +313.9 fees +35.8 chargebacks; 2023 +163 +10; 2024 +173 -34; 2025 +188 -29. Levels after 2021 are derived, not disclosed"
+cloud_hosting_cost_delta,,,,24.9,31,26,27,,,0.3,0.31,0.23,0.22,,,,,,,"10-K MD&A cost of revenue: year-over-year increase in cloud computing / data hosting costs (level never disclosed). 1H26 10-Q: +$15M server costs, reserved-instance amortization"
+insurance_cost_delta,,,41.9,29.8,16,25,14,,0.7,0.35,0.16,0.23,0.11,,,,,,,10-K MD&A operations and support: increase in insurance costs (Host Liability Insurance premiums scale with nights). 1H26 10-Q: +$9M
+third_party_support_and_customer_relations_delta,,,,130.7,105,25,-18,,,1.56,1.06,0.23,-0.15,,,,,,,"10-K MD&A operations and support: 2022 and 2023 combine third-party community support personnel and customer relations; 2024 is customer relations only (+25); 2025 customer relations -18 (lower refunds and credits); 9M25 10-Q third-party customer service -25 (partner site optimization); 1H26 10-Q third-party -15 (AI) and customer relations +14 (make-goods, case reserves)"
+pd_payroll_delta,,,,,,288,293,,,,,2.59,2.39,,,,,,,10-K MD&A product development: increase in payroll-related expenses (headcount)
+sm_marketing_activities_delta,,,,,,294,163,,,,,2.65,1.33,,,,,,,10-K MD&A sales and marketing: increase in marketing activities; 1H26 10-Q +258 (paid growth in emerging markets and partnerships)
+sm_third_party_service_provider_delta,,,,,,26,102,,,,,0.23,0.83,,,,,,,10-K MD&A sales and marketing: consultant / third-party service provider costs (2025: product launch and supply acquisition for Experiences and Services)
+ga_non_income_taxes_delta,,,,,,-656,74,,,,,-5.91,0.6,,,,,,,10-K MD&A G&A: non-income taxes (2023 Italy withholding settlement reversed in 2024); 1H26 10-Q -38
+interest_income,,,12.7,186.4,721.0,818.0,705.0,,0.21,2.22,7.27,7.37,5.76,,,,,,,letters' Adjusted EBITDA reconciliation via abnb_fcf_bridge.csv (XBRL InvestmentIncomeNonoperating matches)
+income_tax_provision,,,51.8,95.6,-2690.0,683.0,626.0,,0.86,1.14,-27.13,6.15,5.11,,,,,,,abnb_fcf_bridge.csv (provision; 2023 includes the -$2.9B valuation allowance release)
+cash_taxes_paid,,15,17,68,132,350,232,0.44,0.28,0.81,1.33,3.15,1.9,,,,,,,XBRL IncomeTaxesPaid / IncomeTaxesPaidNet (10-K supplemental cash flow)
+current_tax_expense,268.3,-77.0,41.0,97.0,185.0,250.0,250.0,-2.28,0.68,1.15,1.87,2.25,2.04,,,,,,,XBRL CurrentIncomeTaxExpenseBenefit
+deferred_tax_expense,-5.6,-20.0,11.0,-1.0,-2875.0,433.0,376.0,-0.59,0.18,-0.01,-28.99,3.9,3.07,,,,,,,"XBRL DeferredIncomeTaxExpenseBenefit (2024 433, 2025 376: the released DTA being consumed)"
+lease_cost,,104.0,100.0,96.0,80.0,74.0,70.0,3.08,1.67,1.14,0.81,0.67,0.57,,,,,,,"XBRL LeaseCost (total lease cost, 10-K leases note)"
+purchase_obligations_dec31,,,,1068,934,719,1749,,,12.72,9.42,6.48,14.29,,,,,,,"10-K Note 13 Commitments and Contingencies, non-cancelable purchase obligations (web hosting and other) at Dec 31. XBRL PurchaseObligation carries no CY frames, so these are read from the note"
+data_hosting_commitment_total,,,,941.7,842,672,1700,,,11.21,8.49,6.05,13.89,,,,,,,"10-K Note 13: 'committed to spend an aggregate of at least $X for vendor services through YYYY' with the data-hosting provider: $941.7M through 2027 (FY2022), $842M through 2027 (FY2023), $672M through 2027 (FY2024), $1.7B through 2031 (FY2025). The 2025 step-up is committed compute that has not yet reached cost of revenue"
+defined_contribution_plan_cost,,,,,27.0,30.0,35.0,,,,0.27,0.27,0.29,,,,,,,"XBRL DefinedContributionPlanCostRecognized (401k match, a headcount proxy)"
+depreciation,,,86.0,43.0,18.0,16.0,17.0,,1.44,0.51,0.18,0.14,0.14,,,,,,,XBRL Depreciation (PP&E only; total D&A is in the letters' reconciliation)
+capex,,,25.3,24.6,47.0,34.0,33.0,,0.42,0.29,0.47,0.31,0.27,,,,,,,abnb_fcf_bridge.csv
+fcf,,,2164.4,3405.7,3837.0,4484.0,4613.0,,36.12,40.55,38.69,40.39,37.68,,,,,,,abnb_fcf_bridge.csv
+new_business_investment_guided,,,,,,,225,,,,,,1.84,,,,,,,"4Q24 letter and call: $200M to $250M in 2025 to launch and scale new businesses (refined to about $200M on the Q2 2025 call); lands in S&M field operations and product development, mostly headcount and go-to-market"
+revenue_per_employee_kusd,,603.57,977.15,1233.15,1435.79,1520.82,1492.8,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+nights_per_employee_k,,34.52,49.02,57.8,64.89,67.33,65.0,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+sbc_per_employee_kusd,,,146.62,136.54,159.26,197.12,192.8,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+employees_yoy_pct,,,9.56,11.07,1.41,5.69,12.33,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+revenue_yoy_pct,,,77.37,40.17,18.07,11.95,10.26,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+brand_perf_marketing_pct_rev,,14.17,12.07,12.26,12.18,13.11,13.03,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+field_ops_policy_pct_rev,,20.62,7.73,5.79,5.6,6.24,8.11,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+brand_perf_marketing_per_night,,2.48,2.41,2.62,2.7,2.96,2.99,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+field_ops_policy_per_night,,3.61,1.54,1.23,1.24,1.41,1.86,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+payment_processing_pct_gbv,,2.51,1.8,1.89,1.87,1.84,1.82,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+cor_cash_ex_payments_musd,,,311.6,304.9,335.9,371.9,420.9,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+interest_income_pct_fcf,,,0.59,5.47,18.79,18.24,15.28,,,,,,,,,,,,,derived from the rows above and the cash cost stack
+cash_tax_pct_provision,,,32.82,71.13,,51.24,37.06,,,,,,,,,,,,,derived from the rows above and the cash cost stack

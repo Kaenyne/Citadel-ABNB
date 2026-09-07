@@ -18,6 +18,9 @@ Team workspace for the **Harvard FAC x Citadel Intercollegiate Stock Pitch** - o
 
 Start with [`research/thesis.md`](research/thesis.md) - it is the single source of truth for the pitch. Slides and the model should follow it, not the other way around.
 
+> **Sep 2026 overnight run:** for the current model, synthesis and what changed, read [`docs/overnight/HANDOFF.md`](docs/overnight/HANDOFF.md) first.
+
+
 ## Getting started
 
 ```bash

@@ -1,10 +1,39 @@
-pandas
-numpy
-matplotlib
-openpyxl
-yfinance
+# ABNB pitch: direct runtime dependencies.
+#
+# Install into the interpreter the build actually uses (see docs/overnight/BUILD.md):
+#   py -3.13 -m pip install -r requirements.txt
+# The repo's .venv is NOT the build interpreter; it lacks most of these.
+#
+# Tidied by workstream 24 on 6 Sep 2026 (audit finding A07): this file previously repeated
+# `requests` and `statsmodels` from a union merge of two branches. Nothing was removed except the
+# duplicates; the packages below are the union of every third-party import in analysis/src/**.py,
+# checked by grepping the import statements.
+
+# --- core numeric / data ---------------------------------------------------------------------
+pandas                 # every script
+numpy                  # every script
+scipy                  # 05_macro_transmission, 04_reaction_vs_consensus, 09_stock_behaviour, ...
+statsmodels            # OLS with HC1 errors: 03/04/05/08/09 reaction and backtest scripts
+matplotlib             # all analysis/figures/** output
+
+# --- file formats ----------------------------------------------------------------------------
+openpyxl               # 13_excel_builder, 13_xlsx_eval, 17_excel_audit
+pyarrow                # Parquet engine for the Inside Airbnb / Common Crawl panels
+
+# --- data acquisition ------------------------------------------------------------------------
+requests               # EDGAR, FRED, Eurostat, IR CDN, Inside Airbnb
+yfinance               # daily closes, peer prices, peer info/estimates (09, 10, 12, 15)
+pytrends               # 08_trends_pull (Google Trends; rate-limited, cached to disk)
+pypdf                  # PDF transcript acquisition (analysis/src/download_abnb_transcripts.py);
+                       # the in-tree transcript parser reads .txt produced by poppler `pdftotext
+                       # -layout`, which is an external binary, not a Python package
+
+# --- text analytics --------------------------------------------------------------------------
+pysentiment2           # 03_call_features: the Loughran-McDonald master dictionary ships inside
+                       # this package as static/LM.csv
+
+# --- bulk extracts (Theo's acquisition layer only; not needed for the overnight build) --------
+duckdb                 # analysis/src/build_booking_curves.py, build_market_summary.py
+
+# --- notebooks (optional; no build step needs it) ----------------------------------------------
 jupyter
-duckdb
-statsmodels
-scipy
-requests

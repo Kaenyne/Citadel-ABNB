@@ -1,0 +1,56 @@
+source_workstream,file,what_changed,old_value,new_value
+WS17 finding 3,analysis/src/overnight/13_driver_model.py,"FY2026 share roll-forward now consumes only the 2H26 buyback and 2H26 SBC, matching the net-cash line; H1_26 gains an sbc key (1Q26 410 + 2Q26 487) and a documented SHARE_ROLL_NETS_1H26 flag","shares = shares - I[buybacks]/px + sbc/px*(1-withholding)","FY2026: shares = shares - (FY26 buybacks - 2139)/px + (FY26 sbc - 897)/px*(1-withholding); FY2027-28 unchanged"
+WS17 finding 3,analysis/src/overnight/13_excel_builder.py,"Cash sheet 'Diluted shares, period end' row, FY2026E column only","=C{shares}-D{bb}/D{px}+D{sbc}/D{px}*(1-withholding)","=C{shares}-(D{bb}-History!1H2026 buybacks)/D{px}+(D{sbc}-History!1H2026 SBC)/D{px}*(1-withholding)"
+WS17 finding 3,analysis/src/overnight/13_excel_builder.py,"New History anchor row so the Excel formula has a sourced 1H26 SBC to net out",none,"1H2026 SBC ($M) = 1Q26 + 2Q26 sbc_musd = 897.0"
+WS17 finding 3,analysis/src/overnight/13_excel_builder.py,"Cash sheet header note rewritten: it documented the asymmetry as a known defect","'the share count applies the FULL FY2026 buyback and SBC to the 2Q26 count ... flagged, not silently changed'","'both consume the SAME flows ... fixed by WS18 here and in 13_driver_model.py'"
+WS17 finding 3,model/ABNB_driver_model.xlsx,Regenerated from the fixed builder,"2,348 formula cells","2,349 formula cells (the new History anchor)"
+WS18,analysis/src/overnight/18_share_fix_delta.py,New script: runs the model with the flag off and on and tabulates every output that moves,n/a,73 rows written to 18_share_fix_delta.csv
+WS18 model output,data/processed/overnight/13_model_annual.csv,"FY2026E diluted shares, base (bear 580.47 / bull 580.13 move identically)",580.298 M,588.850 M
+WS18 model output,data/processed/overnight/13_model_annual.csv,FY2027E diluted shares base,566.046 M,574.598 M
+WS18 model output,data/processed/overnight/13_model_annual.csv,FY2028E diluted shares base,552.982 M,561.534 M
+WS18 model output,data/processed/overnight/13_model_annual.csv,Base FCF per share FY2026E / FY2027E / FY2028E,$8.84 / $9.58 / $11.21,$8.71 / $9.43 / $11.04
+WS18 model output,data/processed/overnight/13_model_annual.csv,Base SBC-adjusted FCF per share FY2026E / FY2027E / FY2028E,$5.76 / $6.10 / $7.37,$5.68 / $6.01 / $7.26
+WS18 model output,data/processed/overnight/13_model_annual.csv,Base earnings proxy per share FY2026E / FY2027E / FY2028E,$5.28 / $5.76 / $7.06,$5.20 / $5.67 / $6.96
+WS18 model output,data/processed/overnight/13_model_annual.csv,Bear FCF/sh and EPS FY2026-28,7.85/6.17/5.53 and 4.56/3.07/2.39,7.73/6.08/5.45 and 4.49/3.02/2.35
+WS18 model output,data/processed/overnight/13_model_annual.csv,Bull FCF/sh and EPS FY2026-28,9.76/11.63/13.89 and 5.95/7.47/9.46,9.61/11.45/13.68 and 5.87/7.35/9.32
+WS18 model output,data/processed/overnight/13_valuation_summary.csv,"Base football field low / mean / high",$112.25 / $162.65 / $220.88,$110.58 / $160.22 / $217.51
+WS18 model output,data/processed/overnight/13_valuation_summary.csv,Bear football field low / mean / high,$37.79 / $77.09 / $110.09,$37.23 / $75.95 / $108.46
+WS18 model output,data/processed/overnight/13_valuation_summary.csv,Bull football field low / mean / high,$179.17 / $236.24 / $293.61,$176.49 / $232.68 / $289.09
+WS18 model output,data/processed/overnight/13_valuation_summary.csv,"Base EV / adj. EBITDA FY27E lens (the headline price)",$183.61,$180.88
+WS18 model output,data/processed/overnight/13_valuation_summary.csv,Base DCF on FCF / on SBC-adjusted FCF,$185.35 / $124.63,$182.59 / $122.77
+WS18 model output,data/processed/overnight/13_valuation_summary.csv,"Reverse DCF (uses the 2Q26 share count, not the roll-forward)",8.51% / 14.42% at CoE 10.5%,unchanged
+WS18 model output,data/processed/overnight/13_scenario_grid.csv,"All 441 grid prices divide by FY2027E shares",e.g. +10% rev / 36.5% margin / 16.5x = $184.44,$181.70
+WS18 model output,data/processed/overnight/13_reconciliation.csv,216 checks after regeneration,"216 ok, 0 mismatches","216 ok, 0 mismatches (values updated)"
+WS18 re-run,data/processed/overnight/17_excel_recalc_dump.csv,Excel 16.0 CalculateFullRebuild on the regenerated workbook,"5,544 cells, 0 errors","5,547 cells, 0 errors"
+WS18 re-run,data/processed/overnight/17_excel_vs_python.csv,Named outputs Excel vs Python vs evaluator,"216 compared, 0 fail","216 compared, 0 fail"
+WS18 re-run,data/processed/overnight/17_all_formula_cells.csv,All formula cells Excel vs evaluator,"2,348 compared, 0 outside 1e-6","2,349 compared, 0 outside 1e-6"
+WS18 re-run,data/processed/overnight/17_scenario_switch.csv,"Selector = 1 / 2 / 3 in Excel, Active column vs the scenario column and the Python mirror","145 rows (143 after-fix + 2 pre-fix baseline), 0 mismatches","143 rows (after-fix only; the pre-fix dumps were not regenerated), 0 mismatches; 135 / 136 cells move"
+WS18,research/notes/overnight/13_driver-model-build.md,"Header, section 1 bottom line, base/bear/bull per-share tables, lens table, price bridge, Street EPS rows",$184 base; 580.3/566.0/553.0 shares; football field $112/$163/$221,$181 base; 588.9/574.6/561.5 shares; football field $111/$160/$218
+WS17,research/notes/overnight/13_driver-model-build.md,"Choice 9 and the files list: the workbook CAN be recalculated (Excel 16.0 over COM), 2,303 -> 2,349 formulas, selector is B4 not B3","'It cannot be recalculated'; 2,303 formulas; Inputs!$B$3","Excel 16.0 rebuild passes; 2,349 formulas; Inputs!$B$4"
+WS18,model/assumptions.md,"Overnight section, 'Diluted shares, period end' row plus its rationale",580 / 572 / 565M; 580 / 566 / 553M; 580 / 563 / 547M,589 / 580 / 573M; 589 / 575 / 562M; 589 / 571 / 555M
+WS18,docs/overnight/FINAL_SUMMARY.md,Headline bridge and football field,"$248 -> $184, $55 of $64, operating case $9","$248 -> $181, $55 of $67, rest $12 incl. -$3 share count; bear $76 / base $160 / bull $233"
+WS17,docs/overnight/FINAL_SUMMARY.md,Model description line,"2,303 live formulas, reconciling to a Python mirror","2,349 live formulas, reconciling to a Python mirror and a real Excel 16.0 rebuild (0 errors in 5,547)"
+WS18,research/notes/overnight/14_master-synthesis.md,"Section 0 headline bridge","$248 to $184, $55 of $64, operating case moved $9","$248 to $181, $55 of $67, the rest $12 incl. -$3 share count"
+WS18,research/notes/overnight/14_master-synthesis.md,"Section 0 and 4.5 25/50/25 weighted lenses","$179 EV/EBITDA (-1.6%), $160 football field (-12%), $235 old multiples (+29%)","$176 (-3.2%), $157 (-14%), $231 (+27%)"
+WS18,research/notes/overnight/14_master-synthesis.md,"Section 4 bottom line, 8.1 and to-do 9: base-case value per share",$184,$181
+WS18,research/notes/overnight/14_master-synthesis.md,"Section 4.1 base table: EPS, shares, FCF/sh, SBC-adj FCF/sh","$5.28/$5.76/$7.06; 580.3/566.0/553.0; $8.84/$9.58/$11.21; $5.76/$6.10/$7.37","$5.20/$5.67/$6.96; 588.9/574.6/561.5; $8.71/$9.43/$11.04; $5.68/$6.01/$7.26"
+WS18,research/notes/overnight/14_master-synthesis.md,Section 4.4 price bridge row,"$184; -$55 multiple, -$5 EBITDA, -$4 net cash; multiple is 86%; 22x gives $239","$181; adds -$3 share count; multiple is 82%; 22x gives $235"
+WS18,research/notes/overnight/14_master-synthesis.md,"Section 4.5 lens table, all six lenses plus memo and upside row","EV/EBITDA 110/184/238; football field means 77/163/236; memo 142/239/320","108/181/234; means 76/160/233; memo 140/235/315"
+WS18,research/notes/overnight/14_master-synthesis.md,"Section 4.6 vs the Street: FY26 and FY27 adjusted EPS deltas","FY26 $5.28 (+1.0%/0.0%); FY27 $5.76 (-4.3%/-6.2%)","FY26 $5.20 (-0.5%/-1.4%); FY27 $5.67 (-5.8%/-7.7%)"
+WS17,research/notes/overnight/14_master-synthesis.md,"Workbook description (section 4 and the file map)","2,303 live formulas; selector Inputs!$B$3","2,349 live formulas; selector Inputs!$B$4; Excel 16.0 rebuild agrees to 4.2e-15"
+WS18,research/notes/overnight/14_master-synthesis.md,"'For the thesis file' recommendation line","Base $184 / mean $163; weighted $179 and $160","Base $181 / mean $160; weighted $176 and $157"
+WS16 edit 1,research/notes/overnight/14_master-synthesis.md,Section 3 guide-below-Street evidence row,"8 prints, mean -7.95%, p 0.004 vs coin flip, p 0.078 vs base rate","9 prints, mean -8.90%, p 0.002, p 0.057; adds the 2Q24 source and the Mann-Whitney p 0.040"
+WS16 edit 2,research/notes/overnight/14_master-synthesis.md,Section 6.1 alpha scorecard row,"8/8 negative at 20d, base-rate p 0.078","9/9 negative at 20d, base-rate p 0.057"
+WS16 edit 3,research/notes/overnight/14_master-synthesis.md,Section 6.4 tradeable list,"a 'guide below Street' risk flag on position sizing","... (9/9, mean -8.90%; WS16 re-run on 16_reaction_tests.csv)"
+WS16 edit 4,research/notes/overnight/14_master-synthesis.md,Section 7 card ADR row Street column,"none published (no publisher quotes an ADR consensus, ever)","Zacks publishes one 2-3 days before each print; five values 1Q25-2Q26; beaten 5 of 5"
+WS16 edit 5,research/notes/overnight/14_master-synthesis.md,Section 7 card Q4 guide row,"8/8 negative 20-day, base-rate p 0.078","9/9 negative 20-day, base-rate p 0.057"
+WS16 edit 6,research/notes/overnight/14_master-synthesis.md,Section 8.3 claims to stop making,"'about half of listings were on the single fee by 2Q26' (not in the letter or the call)",clause deleted; the figure is verbatim in the 2Q26 call
+WS16 edit 7,research/notes/overnight/14_master-synthesis.md,Section 8.3 direct-booking pilot,"the Skift article is paywalled and the range was never read from a primary source; do not put -0.8pts in the model","pilot verified (15.5% -> 6% or 10%); -0.8pt needs 8.4-14.5% of GBV; use 0-15bp of FY27 take rate"
+WS16 edit 8,research/notes/overnight/14_master-synthesis.md,Section 8.4 risk register,8/8 guide-below-Street prints,9/9 guide-below-Street prints
+WS16 edit 9,research/notes/overnight/14_master-synthesis.md,Section 9 build-forward item 5,"No published nights consensus exists anywhere free; 2 + calls","Zacks key-metrics preview lands ~2-3 Nov with nights/ADR/GBV; 0 calls, 10 min"
+WS16 edit 10,research/notes/overnight/14_master-synthesis.md,Section 10.2 AirROI correction,"Do not cite the AirROI 55.9% figure","Characterise it correctly: a modelled 3-night total including lodging tax and cleaning fee on a stale 14% guest fee"
+WS16 edit 11,research/notes/overnight/14_master-synthesis.md,'For the thesis file' catalysts,"5 Nov print; 9 Sep EU proposal","adds 8 Sep Chesky at Goldman Communacopia 6:05pm ET; notes the EU draft leaked 4 Sep and devolves capping to member states"
+WS16 edit 12,research/notes/overnight/14_master-synthesis.md,Section 10.2 corrections list,none,"adds a line withdrawing red-team corrections 11 and 15 (single fee ~50% is verbatim in the 2Q26 call)"
+WS16,research/notes/overnight/14_master-synthesis.md,Section 7 card: new paragraph before 7.1,none,"pull the Zacks key-metrics preview on ~2-3 Nov; add ADR to the card (5 of 5 beats, day-1 r -0.46)"
+"WS16, WS17, WS18",research/notes/overnight/14_master-synthesis.md,New section 11 'Post-run corrections',none,"11.1 WS16 consensus/web, 11.2 WS17 Excel audit, 11.3 WS18 share fix"
+WS18,docs/overnight/RUN_STATE.md,Status table and log,rows 01-15,"rows 16, 17, 18 added as done; log lines for the three"

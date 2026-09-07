@@ -1,0 +1,126 @@
+scope,period,region,line_item,statistic,before,after,delta
+horizon,end-2027,global,"revenue loss, % of global revenue",median,0.451,0.4499,-0.0011
+horizon,end-2027,global,"compliance cost (EBITDA), % of revenue",median,0.1297,0.1297,0.0
+horizon,end-2027,global,"one-off cash, $M",median,76.0,76.0,0.0
+horizon,end-2027,global,"revenue loss, % of global revenue",mean,0.7523,0.7518,-0.0005
+horizon,end-2027,global,"compliance cost (EBITDA), % of revenue",mean,0.1261,0.1261,0.0
+horizon,end-2027,global,"one-off cash, $M",mean,49.7947,49.7947,0.0
+horizon,end-2027,global,"revenue loss, % of global revenue",p95,2.7443,2.6725,-0.0718
+horizon,end-2027,global,"compliance cost (EBITDA), % of revenue",p95,0.2121,0.2121,0.0
+horizon,end-2027,global,"one-off cash, $M",p95,96.0,96.0,0.0
+horizon,end-2030,global,"revenue loss, % of global revenue",median,1.7084,1.6644,-0.044
+horizon,end-2030,global,"compliance cost (EBITDA), % of revenue",median,0.1597,0.1597,-0.0001
+horizon,end-2030,global,"one-off cash, $M",median,76.0,76.0,0.0
+horizon,end-2030,global,"revenue loss, % of global revenue",mean,2.197,2.2026,0.0056
+horizon,end-2030,global,"compliance cost (EBITDA), % of revenue",mean,0.1596,0.1597,0.0001
+horizon,end-2030,global,"one-off cash, $M",mean,65.2641,65.1162,-0.1479
+horizon,end-2030,global,"revenue loss, % of global revenue",p95,6.3825,6.6886,0.3061
+horizon,end-2030,global,"compliance cost (EBITDA), % of revenue",p95,0.2556,0.2558,0.0001
+horizon,end-2030,global,"one-off cash, $M",p95,96.0,96.0,0.0
+overlay_year,2026,global,"revenue drag, % of global revenue",median,0.1503,0.15,-0.0004
+overlay_year,2026,EMEA,"nights drag, % of regional nights",median,0.3577,0.3569,-0.0009
+overlay_year,2026,NA,"nights drag, % of regional nights",median,0.0257,0.0257,-0.0
+overlay_year,2026,global,"revenue drag, % of global revenue",mean,0.2508,0.2506,-0.0002
+overlay_year,2026,EMEA,"nights drag, % of regional nights",mean,0.5967,0.5963,-0.0004
+overlay_year,2026,NA,"nights drag, % of regional nights",mean,0.0429,0.0429,0.0
+overlay_year,2026,global,"revenue drag, % of global revenue",p95,0.9148,0.8908,-0.0239
+overlay_year,2026,EMEA,"nights drag, % of regional nights",p95,2.1769,2.1198,-0.0571
+overlay_year,2026,NA,"nights drag, % of regional nights",p95,0.1566,0.1526,-0.004
+overlay_year,2027,global,"revenue drag, % of global revenue",median,0.451,0.4499,-0.0011
+overlay_year,2027,EMEA,"nights drag, % of regional nights",median,1.0732,1.0706,-0.0027
+overlay_year,2027,NA,"nights drag, % of regional nights",median,0.0772,0.0771,-0.0001
+overlay_year,2027,global,"revenue drag, % of global revenue",mean,0.7523,0.7518,-0.0005
+overlay_year,2027,EMEA,"nights drag, % of regional nights",mean,1.7901,1.7889,-0.0013
+overlay_year,2027,NA,"nights drag, % of regional nights",mean,0.1288,0.1288,0.0
+overlay_year,2027,global,"revenue drag, % of global revenue",p95,2.7443,2.6725,-0.0718
+overlay_year,2027,EMEA,"nights drag, % of regional nights",p95,6.5307,6.3594,-0.1713
+overlay_year,2027,NA,"nights drag, % of regional nights",p95,0.4699,0.4579,-0.012
+overlay_year,2028,global,"revenue drag, % of global revenue",median,0.8701,0.8547,-0.0154
+overlay_year,2028,EMEA,"nights drag, % of regional nights",median,2.069,2.0327,-0.0363
+overlay_year,2028,NA,"nights drag, % of regional nights",median,0.1505,0.1476,-0.0029
+overlay_year,2028,global,"revenue drag, % of global revenue",mean,1.2338,1.2354,0.0016
+overlay_year,2028,EMEA,"nights drag, % of regional nights",mean,2.9338,2.9379,0.0041
+overlay_year,2028,NA,"nights drag, % of regional nights",mean,0.2135,0.2133,-0.0001
+overlay_year,2028,global,"revenue drag, % of global revenue",p95,3.9571,4.0112,0.0541
+overlay_year,2028,EMEA,"nights drag, % of regional nights",p95,9.4091,9.5391,0.1301
+overlay_year,2028,NA,"nights drag, % of regional nights",p95,0.6846,0.6927,0.0081
+event,end-2027,EU,EU-AHA: P(in force),probability,0.1204,0.1204,0.0
+event,end-2027,EU,"EU-AHA: expected loss, % of revenue",mean,0.1842,0.1842,0.0
+event,end-2027,EU,EU-TAIL: P(in force),probability,0.0201,0.0199,-0.0002
+event,end-2027,EU,"EU-TAIL: expected loss, % of revenue",mean,0.0765,0.076,-0.0005
+event,end-2027,global,ES-FINE: P(in force),probability,0.5496,0.5496,0.0
+event,end-2027,global,"ES-FINE: expected loss, % of revenue",mean,0.0,0.0,0.0
+event,end-2027,EU,ES-REMOVE: P(in force),probability,0.3493,0.3493,0.0
+event,end-2027,EU,"ES-REMOVE: expected loss, % of revenue",mean,0.0871,0.0871,0.0
+event,end-2027,EU,ES-REGIONS: P(in force),probability,0.4502,0.4502,0.0
+event,end-2027,EU,"ES-REGIONS: expected loss, % of revenue",mean,0.0825,0.0825,0.0
+event,end-2027,EU,BCN-2028: P(in force),probability,0.0,0.0,0.0
+event,end-2027,EU,"BCN-2028: expected loss, % of revenue",mean,0.0,0.0,0.0
+event,end-2027,EU,BCN-PARTIAL: P(in force),probability,0.0,0.0,0.0
+event,end-2027,EU,"BCN-PARTIAL: expected loss, % of revenue",mean,0.0,0.0,0.0
+event,end-2027,US,MAUI: P(in force),probability,0.0,0.0,0.0
+event,end-2027,US,"MAUI: expected loss, % of revenue",mean,0.0,0.0,0.0
+event,end-2027,EU,PARIS-PRO: P(in force),probability,0.2994,0.2994,0.0
+event,end-2027,EU,"PARIS-PRO: expected loss, % of revenue",mean,0.0649,0.0649,0.0
+event,end-2027,EU,PARIS-COPRO: P(in force),probability,0.9012,0.9012,0.0
+event,end-2027,EU,"PARIS-COPRO: expected loss, % of revenue",mean,0.0301,0.0301,0.0
+event,end-2027,EU,GR-FREEZE: P(in force),probability,0.7004,0.7004,0.0
+event,end-2027,EU,"GR-FREEZE: expected loss, % of revenue",mean,0.0444,0.0444,0.0
+event,end-2027,EU,IE-REG: P(in force),probability,0.3517,0.3517,0.0
+event,end-2027,EU,"IE-REG: expected loss, % of revenue",mean,0.0305,0.0305,0.0
+event,end-2027,EU,UK-ENG: P(in force),probability,0.2006,0.2006,0.0
+event,end-2027,EU,"UK-ENG: expected loss, % of revenue",mean,0.0207,0.0207,0.0
+event,end-2027,EU,IT-NAT: P(in force),probability,0.3002,0.3002,0.0
+event,end-2027,EU,"IT-NAT: expected loss, % of revenue",mean,0.047,0.047,0.0
+event,end-2027,EU,PT-RETIGHT: P(in force),probability,0.2016,0.2016,0.0
+event,end-2027,EU,"PT-RETIGHT: expected loss, % of revenue",mean,0.0201,0.0201,0.0
+event,end-2027,EU,NL-AMS: P(in force),probability,0.3009,0.3009,0.0
+event,end-2027,EU,"NL-AMS: expected loss, % of revenue",mean,0.01,0.01,0.0
+event,end-2027,US,US-CITY: P(in force),probability,0.3007,0.3007,0.0
+event,end-2027,US,"US-CITY: expected loss, % of revenue",mean,0.0661,0.0661,0.0
+event,end-2027,US,NYC-LOOSEN: P(in force),probability,0.1999,0.1999,0.0
+event,end-2027,US,"NYC-LOOSEN: expected loss, % of revenue",mean,-0.028,-0.028,0.0
+event,end-2027,US,CHI-SUIT: P(in force),probability,0.4014,0.4014,0.0
+event,end-2027,US,"CHI-SUIT: expected loss, % of revenue",mean,0.016,0.016,0.0
+event,end-2027,global,COMPLIANCE: P(in force),probability,0.9003,0.9003,0.0
+event,end-2027,global,"COMPLIANCE: expected loss, % of revenue",mean,0.1261,0.1261,0.0
+event,end-2030,EU,EU-AHA: P(in force),probability,0.4501,0.4496,-0.0006
+event,end-2030,EU,"EU-AHA: expected loss, % of revenue",mean,0.6917,0.6889,-0.0028
+event,end-2030,EU,EU-TAIL: P(in force),probability,0.0797,0.08,0.0003
+event,end-2030,EU,"EU-TAIL: expected loss, % of revenue",mean,0.3057,0.3064,0.0007
+event,end-2030,global,ES-FINE: P(in force),probability,0.701,0.6988,-0.0022
+event,end-2030,global,"ES-FINE: expected loss, % of revenue",mean,0.0,0.0,0.0
+event,end-2030,EU,ES-REMOVE: P(in force),probability,0.5498,0.5491,-0.0007
+event,end-2030,EU,"ES-REMOVE: expected loss, % of revenue",mean,0.1649,0.1643,-0.0006
+event,end-2030,EU,ES-REGIONS: P(in force),probability,0.6496,0.6515,0.0019
+event,end-2030,EU,"ES-REGIONS: expected loss, % of revenue",mean,0.1548,0.1552,0.0004
+event,end-2030,EU,BCN-2028: P(in force),probability,0.45,0.4512,0.0012
+event,end-2030,EU,"BCN-2028: expected loss, % of revenue",mean,0.108,0.1084,0.0004
+event,end-2030,EU,BCN-PARTIAL: P(in force),probability,0.2305,0.3026,0.0721
+event,end-2030,EU,"BCN-PARTIAL: expected loss, % of revenue",mean,0.0254,0.0333,0.0079
+event,end-2030,US,MAUI: P(in force),probability,0.3995,0.4016,0.0021
+event,end-2030,US,"MAUI: expected loss, % of revenue",mean,0.0306,0.0308,0.0002
+event,end-2030,EU,PARIS-PRO: P(in force),probability,0.5496,0.5496,-0.0
+event,end-2030,EU,"PARIS-PRO: expected loss, % of revenue",mean,0.1429,0.143,0.0001
+event,end-2030,EU,PARIS-COPRO: P(in force),probability,0.9502,0.9499,-0.0003
+event,end-2030,EU,"PARIS-COPRO: expected loss, % of revenue",mean,0.0476,0.0476,-0.0
+event,end-2030,EU,GR-FREEZE: P(in force),probability,0.7993,0.8005,0.0012
+event,end-2030,EU,"GR-FREEZE: expected loss, % of revenue",mean,0.0911,0.0913,0.0001
+event,end-2030,EU,IE-REG: P(in force),probability,0.5499,0.551,0.0011
+event,end-2030,EU,"IE-REG: expected loss, % of revenue",mean,0.0476,0.0478,0.0002
+event,end-2030,EU,UK-ENG: P(in force),probability,0.4514,0.4501,-0.0014
+event,end-2030,EU,"UK-ENG: expected loss, % of revenue",mean,0.0607,0.0605,-0.0002
+event,end-2030,EU,IT-NAT: P(in force),probability,0.6006,0.6001,-0.0005
+event,end-2030,EU,"IT-NAT: expected loss, % of revenue",mean,0.1316,0.1316,0.0001
+event,end-2030,EU,PT-RETIGHT: P(in force),probability,0.3501,0.3512,0.0011
+event,end-2030,EU,"PT-RETIGHT: expected loss, % of revenue",mean,0.0421,0.0421,0.0001
+event,end-2030,EU,NL-AMS: P(in force),probability,0.4997,0.4999,0.0002
+event,end-2030,EU,"NL-AMS: expected loss, % of revenue",mean,0.02,0.02,0.0
+event,end-2030,US,US-CITY: P(in force),probability,0.5505,0.5482,-0.0023
+event,end-2030,US,"US-CITY: expected loss, % of revenue",mean,0.1573,0.1566,-0.0007
+event,end-2030,US,NYC-LOOSEN: P(in force),probability,0.35,0.3509,0.0008
+event,end-2030,US,"NYC-LOOSEN: expected loss, % of revenue",mean,-0.049,-0.0491,-0.0001
+event,end-2030,US,CHI-SUIT: P(in force),probability,0.5994,0.6005,0.0011
+event,end-2030,US,"CHI-SUIT: expected loss, % of revenue",mean,0.024,0.024,0.0
+event,end-2030,global,COMPLIANCE: P(in force),probability,0.9499,0.9505,0.0006
+event,end-2030,global,"COMPLIANCE: expected loss, % of revenue",mean,0.1596,0.1597,0.0001

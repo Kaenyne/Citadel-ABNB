@@ -1,0 +1,320 @@
+# -*- coding: utf-8 -*-
+"""Workstream 26: the change ledger for the audit-repair integration pass (7 September 2026).
+
+WHAT THIS IS
+  One row per number, file or behaviour that workstream 26 changed while folding the audit repairs
+  from workstreams 19-25 into the driver model, the alt-data backtests, the synthesis and the final
+  summary. Every before/after value below was measured during the pass by re-running the owning
+  script against a snapshot of its pre-pass outputs; nothing here is estimated.
+
+READS   nothing at runtime - the evidence is recorded inline, each row naming the file it was
+        measured in, exactly as `15_claim_checks.py` does.
+WRITES  data/processed/overnight/26_change_ledger.csv
+
+SERIALISATION (inherited from the WS19 repair of 15_claim_checks.py, audit finding K01)
+  Both this file and the claim-check files are opened in Excel as well as pandas, so any cell whose
+  first character is = + - or @ is written with ONE leading space; Excel would otherwise evaluate it
+  as a formula. Strip() the values if you parse this with pandas. The writer asserts the file is
+  rectangular, has no embedded newline and has no formula-leading cell.
+
+RUN     py -3.13 analysis/src/overnight/26_change_ledger.py
+"""
+import csv
+import os
+import sys
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
+OUT = os.path.join(ROOT, "data", "processed", "overnight")
+FORMULA_LEAD = ("=", "+", "-", "@")
+
+HDR = ["id", "audit_finding", "source_workstream", "area", "artefact", "item",
+       "before", "after", "effect", "evidence"]
+
+# id | finding | source WS | area | artefact | item | before | after | effect | evidence
+R = [
+    # ---------------------------------------------------------------- 1. cost stack (WS25 5c)
+    ("C01", "A07/WS25 5c", "WS25", "cost stack", "analysis/src/abnb_exsbc_stack.py",
+     "SBC-by-function footnote column selection",
+     "nearest total to an XBRL target that is itself FY-less-9M",
+     "prefer the column whose header YEAR matches the quarter; nearest-total only as fallback",
+     "4Q23 stopped taking the Dec-2022 column ($254M) where the letter's own Adjusted EBITDA "
+     "reconciliation adds back Dec-2023 ($290M)",
+     "new helper header_years(); data/processed/overnight/25_history_reconciliation.csv"),
+    ("C02", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 identity_gap ($M)", "-36.0", "0.0", "the gap closes exactly", "22 quarters re-parsed; only 4Q23 changed"),
+    ("C03", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 product development cash cost ($M)", "282.0", "253.0", "-29.0 (was overstated)", "same file, pd_cash"),
+    ("C04", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 G&A cash cost ($M)", "1151.0", "1142.0", "-9.0 (was overstated)", "same file, ga_cash"),
+    ("C05", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 operations & support cash cost ($M)", "255.0", "254.0", "-1.0", "same file, ops_cash"),
+    ("C06", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 sales & marketing cash cost ($M)", "388.0", "391.0", "+3.0 (was understated)", "same file, sm_cash"),
+    ("C07", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 SBC by function ops/pd/sm/ga ($M)", "16 / 150 / 36 / 52 (total 254)",
+     "17 / 179 / 33 / 61 (total 290)", "the letter's 31-Dec-2023 column", "4Q23 letter footnote, four columns"),
+    ("C08", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 cash cost % of revenue, pd / ga", "12.7% / 51.9%", "11.4% / 51.5%", "follows C03/C04", "same file"),
+    ("C09", "A07/WS25 5c", "WS26", "cost stack", "data/processed/abnb_quarterly_cost_stack_exsbc.csv",
+     "4Q23 cash cost per night, pd / ga ($)", "2.85 / 11.65", "2.56 / 11.56", "follows C03/C04", "same file"),
+    ("C10", "A07/WS25 5c", "WS26", "margin bridge", "data/processed/abnb_margin_bridge.csv",
+     "FY2023->FY2025 product development contribution (pts of margin)", "-0.68", "-0.97", "the 4Q23 base was too high",
+     "abnb_margin_bridge.py re-run"),
+    ("C11", "A07/WS25 5c", "WS26", "margin bridge", "data/processed/abnb_margin_bridge.csv",
+     "FY2023->FY2025 G&A contribution (pts of margin)", "+9.15", "+9.06", "same cause", "same"),
+    ("C12", "A07/WS25 5c", "WS26", "margin bridge", "data/processed/abnb_margin_bridge.csv",
+     "FY2023->FY2025 sales & marketing / ops & support (pts)", "-3.71 / +0.79", "-3.68 / +0.78", "same cause", "same"),
+    ("C13", "A07/WS25 5c", "WS26", "margin bridge", "data/processed/abnb_margin_bridge.csv",
+     "FY2023->FY2025 residual (identity gaps in the stack), pts", "-0.36", "0.00",
+     "the bridge now closes without a residual", "same"),
+    ("C14", "A07/WS25 5c", "WS26", "cost lines", "data/processed/overnight/07_cost_lines_per_night.csv",
+     "4Q23 brand+performance marketing ($M) and % of revenue", "2460.0 / 24.90%", "2424.0 / 24.53%",
+     "4Q23 row only", "07_cost_lines_per_night.py re-run"),
+    ("C15", "A07/WS25 5c", "WS26", "KPI panel", "data/processed/overnight/02_kpi_panel_quarterly.csv",
+     "4Q23 ex-SBC cost columns", "pd 282 / ga 1151 / ops 255 / sm 388", "pd 253 / ga 1142 / ops 254 / sm 391",
+     "4Q23 row only; adj_ebitda_margin_pct unchanged at 33.3", "02_kpi_panel.py re-run"),
+    ("C16", "A07/WS25 5c", "WS26", "driver model", "data/processed/overnight/13_model_annual.csv",
+     "every driver-model output, cost-stack fix alone", "-", "-",
+     "NO CHANGE: re-running 13_driver_model.py on the corrected 02/07 files with the pre-fix regulatory "
+     "input reproduced 13_model_annual.csv and 13_model_quarterly.csv byte-identically",
+     "isolation run, 7 Sep 2026"),
+    ("C17", "A07/WS25 5c", "WS26", "margin levers", "data/processed/overnight/07_margin_levers_fy26_fy28.csv",
+     "every lever output", "-", "-", "NO CHANGE: byte-identical after the re-run", "07_margin_lever_model.py re-run"),
+
+    # ---------------------------------------------------------------- 2. model inputs
+    ("M01", "A06", "WS22", "model input", "analysis/src/overnight/13_driver_model.py",
+     "REG_DRAG_PP[2028]['emea'], incremental pp of y/y growth", "1.00", "0.96",
+     "cumulative EMEA median drag at 2028 fell 2.07% -> 2.03% on the repaired sampler",
+     "22_regulatory_delta.csv; 11_regulatory_overlay.csv"),
+    ("M02", "A06", "WS26", "model output", "data/processed/overnight/13_model_annual.csv",
+     "FY2028E base revenue ($M)", "17943.62", "17947.14", "+3.52 (+0.02%)", "13_driver_model.py re-run"),
+    ("M03", "A06", "WS26", "model output", "data/processed/overnight/13_model_annual.csv",
+     "FY2028E base adj. EBITDA ($M) / margin", "6701.20 / 37.346%", "6703.85 / 37.353%", "+2.65", "same"),
+    ("M04", "A06", "WS26", "model output", "data/processed/overnight/13_model_annual.csv",
+     "FY2028E base FCF per share ($) / SBC-adj FCF per share ($)", "11.0363 / 7.2566", "11.0407 / 7.2610",
+     "+0.0044", "same"),
+    ("M05", "A06", "WS26", "model output", "data/processed/overnight/13_model_annual.csv",
+     "FY2028E bear revenue ($M) / bull revenue", "14967.57 / unchanged", "14970.67 / unchanged",
+     "the bull regulatory-drag multiplier is zero, so FY2028E bull is untouched", "same"),
+    ("M06", "A06", "WS26", "model output", "data/processed/overnight/13_model_annual.csv",
+     "FY2026E and FY2027E, every scenario", "-", "-", "NO CHANGE: the drag edit is FY2028 only", "same"),
+    ("M07", "A12", "WS25->WS26", "valuation convention", "analysis/src/overnight/13_driver_model.py + 13_excel_builder.py",
+     "EV / adj. EBITDA FY2028E lens", "value as of end-FY2028, averaged into the football field undiscounted",
+     "discounted one year at the scenario cost of equity, so all six lenses sit at the ~30 Sep 2027 target date",
+     "removes the date mix WS25 quantified at $11.46 of the base mean; the undiscounted value is kept as a "
+     "labelled sensitivity row on the Valuation sheet and as a lens row in 13_valuation_summary.csv",
+     "model/assumptions.md, 'Model conventions, decided 7 Sep 2026'; 25_valuation_conventions.csv"),
+    ("V01", "A12", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Base: EV / adj. EBITDA FY28E lens ($/share)", "217.51", "196.92", "-20.59 (-9.5%)", "same file"),
+    ("V02", "A12", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Bear / Bull: EV / adj. EBITDA FY28E lens ($/share)", "103.59 / 289.09", "92.95 / 262.10",
+     "-10.64 / -27.00", "same file"),
+    ("V03", "A12+A06", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Sensitivity row, FY28E lens UNDISCOUNTED ($/share, bear/base/bull)", "not present (it was the lens itself)",
+     "103.64 / 217.59 / 289.09", "the FY28 undiscounted bear and base also carry the +4bp regulatory change",
+     "same file, lens 'EV / adj. EBITDA, FY28E (undiscounted, value at end-FY2028; sensitivity)'"),
+    ("V04", "A12", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Base football field low / mean / high ($/share)", "110.58 / 160.22 / 217.51", "110.58 / 156.79 / 196.92",
+     "mean -3.43; the high is now the FY28E lens discounted, not undiscounted", "same file"),
+    ("V05", "A12", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Bear football field low / mean / high ($/share)", "37.23 / 75.95 / 108.46", "37.23 / 74.18 / 108.46",
+     "mean -1.77", "same file"),
+    ("V06", "A12", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Bull football field low / mean / high ($/share)", "176.49 / 232.68 / 289.09", "176.49 / 228.18 / 281.01",
+     "mean -4.50; the high becomes the DCF lens", "same file"),
+    ("V07", "A12", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Base football-field mean 12-month return vs $181.94", "-11.94%", "-13.83%", "-1.89pp", "same file"),
+    ("V08", "A12", "WS26", "valuation", "derived",
+     "25/50/25-weighted football-field mean ($/share)", "157", "154", "-3", "weights 0.25/0.50/0.25 on V04-V06"),
+    ("V09", "A12", "WS26", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Every FY2027E lens (EV/EBITDA, EV/FCF, P/SBC-adj FCF, P/earnings proxy, DCF)", "-", "-",
+     "NO CHANGE: base EV/EBITDA FY2027E stays $180.88, the DCF stays $182.59", "same file"),
+    ("V10", "A10", "WS19", "valuation", "data/processed/overnight/13_valuation_summary.csv",
+     "Reverse-DCF rows", "-", "-", "NO CHANGE: 7.50% / 13.32% implied 10-year FCF growth at 10% CoE / 3% g",
+     "same file; WS19 already removed the #DIV/0! at CoE = ladder growth"),
+
+    # ---------------------------------------------------------------- 3. workbook verification
+    ("X01", "A10/A13", "WS26", "workbook", "model/ABNB_driver_model.xlsx",
+     "cells dumped from real Excel 16.0 / error cells", "5547 / 0", "5553 / 0",
+     "+6 cells: the labelled FY2028E-undiscounted sensitivity row", "17_recalc_dump.ps1, exit 0"),
+    ("X02", "A13", "WS26", "workbook", "data/processed/overnight/17_excel_vs_python.csv",
+     "named outputs reconciling Excel <-> Python", "216 / 216", "216 / 216", "unchanged, and the audit exits 0",
+     "17_excel_audit.py, exit 0"),
+    ("X03", "A13", "WS26", "workbook", "data/processed/overnight/17_all_formula_cells.csv",
+     "formula cells reconciling Excel <-> evaluator", "2349 / 2349", "2353 / 2353", "+4 formula cells (the sensitivity row)",
+     "17_excel_audit.py, exit 0"),
+    ("X04", "A13", "WS26", "workbook", "data/processed/overnight/17_scenario_switch.csv",
+     "scenario comparisons / mismatches", "141 / 0", "144 / 0",
+     "+3 comparisons; the Valuation Active-column CHOOSE row for the new sensitivity row is now checked too",
+     "17_scenario_switch.py, exit 0"),
+    ("X05", "A13", "WS26", "audit script", "analysis/src/overnight/17_scenario_switch.py",
+     "Valuation lens row addresses (E19..E45)", "hard-coded in a dict",
+     "resolved from 13_reconciliation.csv's cell_reference column",
+     "the hard-coded rows produced 12 spurious mismatches the moment a row was inserted above them; a "
+     "Valuation layout change can no longer break the check",
+     "run before and after the fix: 12 mismatches -> 0"),
+    ("X06", "A13", "WS26", "workbook", "data/processed/overnight/17_auto_scan.csv",
+     "informational static-scan hits", "343", "344", "+1, the literal 1 in the discount factor; not a defect",
+     "17_excel_audit.py section 3, never sets the exit status"),
+
+    # ---------------------------------------------------------------- 4. WS08 downstream
+    ("A01", "A01 family / WS20 s8", "WS20->WS26", "alt data", "analysis/src/overnight/08_altdata_backtests.py",
+     "pr_hotel_revpar_yoy construction", "mean(MAR, HLT) unconditionally",
+     "mean of peers with lead_days > 0 only (point-in-time)",
+     "MAR reported AFTER ABNB in 2023Q3 (-1 day) and 2025Q1 (-5 days), HLT in 2024Q2 (-1 day); the feature was "
+     "not knowable at 3 of 23 prints although the registry called it available",
+     "predictive/02_peer_prints.csv lead_days; new panel column pr_hotel_peers_reported_before_print"),
+    ("A02", "A01 family", "WS26", "alt data", "data/processed/overnight/08_feature_tests_all.csv",
+     "pr_hotel_revpar_yoy -> nights_yoy, 2022Q1+ window", "n 18, r +0.9413, WF 0.836 vs naive, 0.605 vs AR(1), sign 0.714",
+     "n 17, r +0.9211, WF 0.943 vs naive, 0.698 vs AR(1), sign 0.615", "weaker, and honestly so", "same file"),
+    ("A03", "A01 family", "WS26", "alt data", "data/processed/overnight/08_feature_tests_all.csv",
+     "pr_hotel_revpar_yoy -> nights_yoy, 2023Q1+ window", "n 14, r +0.8793, WF 0.676 vs naive, 0.642 vs AR(1)",
+     "n 14, r +0.8685, WF 0.702 vs naive, 0.666 vs AR(1)", "still beats naive; still a 2023-trend artefact", "same file"),
+    ("A04", "A01 family", "WS26", "alt data", "data/processed/overnight/08_feature_tests_all.csv",
+     "pr_hotel_revpar_yoy -> adr_yoy, 2022Q1+ window", "n 18, r -0.0174, WF 1.414 vs naive",
+     "n 17, r -0.2874, WF 1.306 vs naive", "still fails", "same file"),
+    ("A05", "A04", "WS21->WS26", "alt data", "analysis/src/overnight/08_altdata_backtests.py",
+     "ia_lfl_price_yoy filter", "price_comparable only",
+     "price_pair_eligible AND pair_eligible_pit, reading lfl_price_chg_median_clean",
+     "a pair with a partial-scrape endpoint no longer enters, and the coverage judgement is trailing-only "
+     "so no later scrape can revise a frozen replay",
+     "WS21 section 7; inside_airbnb_like_for_like.csv"),
+    ("A06", "A04", "WS26", "alt data", "data/processed/overnight/08_panel_quarterly.csv",
+     "ia_lfl_price_yoy 2025Q3 (% y/y) and n cities", "-5.710 on 3 cities", "-8.350 on 2 cities",
+     "the partial Sep-2025 Austin dump drops out", "same file, ia_lfl_price_n"),
+    ("A07", "A04", "WS26", "alt data", "data/processed/overnight/08_panel_quarterly.csv",
+     "ia_lfl_price_yoy 2024Q4 n cities", "2", "1",
+     "value unchanged at 0.00%, but the Dec-2023 Paris dump (74,329 listings vs 95,885 in Jun 2024) drops",
+     "same file"),
+    ("A08", "A04", "WS26", "alt data", "data/processed/overnight/08_feature_tests_all.csv",
+     "ia_lfl_price_yoy -> adr_yoy (both windows)", "n 8, r +0.1247, WF 1.125 vs naive",
+     "n 8, r +0.0336, WF 1.178 vs naive", "already failing; still failing, and now on a legitimate series", "same file"),
+    ("A09", "A02/A03", "WS26", "alt data", "data/processed/overnight/08_test_scoreboard.csv",
+     "family totals", "598 tests, 29 beat naive, 7 by >=20%", "598 tests, 29 beat naive, 7 by >=20%",
+     "NO CHANGE: 8 of the 598 test rows moved, none across a threshold", "same file; 08_feature_tests_all.csv"),
+    ("A10", "A02/A03", "WS26", "alt data", "data/processed/overnight/08_index_backtests.csv",
+     "composite demand / supply / price indexes", "all lose to naive on every target", "all lose to naive on every target",
+     "NO CHANGE in conclusion; the demand-index z-scores shift with the PIT hotel series", "same file"),
+    ("A11", "A02/A03", "WS26", "alt data", "data/processed/overnight/08_q3_2026_nowcast.csv",
+     "3Q26 nights nowcast, demand index ex Inside Airbnb (% y/y)", "10.23", "9.95",
+     "the composite is not a forecaster either way", "same file"),
+    ("A12", "A02/A03", "WS26", "alt data", "data/processed/overnight/08_q3_2026_nowcast.csv",
+     "3Q26 nights / gbv / revenue nowcast, demand index (% y/y)", "12.07 / 15.32 / 17.03", "11.84 / 15.01 / 16.56",
+     "same", "same file"),
+    ("A13", "A02/A03", "WS26", "alt data", "data/processed/overnight/08_q3_2026_guide_reconciliation.csv",
+     "the guide reconciliation table", "-", "-",
+     "NO CHANGE in the numbers; the WORDING changes - it is consistency evidence, not a beat forecast, because "
+     "the revenue-minus-GBV gap is a chosen input",
+     "WS20 section 10; 08_altdata-index-and-backtests.md lines 28, 225, 273"),
+    ("A14", "A07", "WS24->WS26", "reproducibility", "analysis/src/overnight/08_altdata_backtests.py",
+     "FRED download cache path",
+     "a hard-coded session scratchpad under C:/Users/krish/AppData/Local/Temp",
+     "<root>/data/cache/08, overridable with ABNB_SCRATCH, and a missing series is fetched from FRED's "
+     "keyless CSV endpoint instead of silently dropping the macro family",
+     "on any other machine the macro family used to empty without an error", "docs/overnight/BUILD.md"),
+
+    # ---------------------------------------------------------------- 5. WS11
+    ("S01", "A04", "WS21->WS26", "supply", "analysis/src/overnight/11_competition_supply_overlays.py",
+     "Inside Airbnb pair filter", "a hand-rolled join of partial_scope from the snapshot table",
+     "the published pair_eligible / exclusion_reason columns, plus span_step_warning",
+     "identical rows, one policy in one place, and scope steps are now labelled",
+     "103 pairs, 25 dropped, mean retention 0.489 excluded vs 0.726 kept"),
+    ("S02", "A04", "WS26", "supply", "data/processed/overnight/11_supply_economics.csv",
+     "six-city ex-Austin year-ago retention, 2025 -> 2026", "not published (a seven-city 75.4% -> 71.1%)",
+     "0.755 -> 0.734 (n 14 and 34 pairs)",
+     "the 'retention is falling' claim survives at half the size", "new rows inside_airbnb_year_ago_retention_six_city_ex_austin"),
+    ("S03", "A04", "WS26", "supply", "data/processed/overnight/11_supply_economics.csv",
+     "six-city ex-Austin new-listing share of the ending base, 2025 -> 2026", "25.4% -> 25.8% (seven cities)",
+     "25.4% -> 25.4% (six cities)", "exactly flat, not drifting up", "same rows"),
+    ("S04", "A04", "WS26", "supply", "data/processed/overnight/11_supply_economics.csv",
+     "inside_airbnb_year_ago_retention_austin, 2026", "0.509, presented as a genuine outlier",
+     "0.509, labelled SCOPE ARTEFACT", "Austin's four 2026 pairs straddle a permanent listing-count step "
+     "(15,187 listings Jun 2025 -> ~11,000 from Sep 2025); no usable Austin pair until the Sep 2026 dump",
+     "span_step_warning on all four pairs"),
+    ("S05", "A06", "WS22->WS26", "regulation", "research/notes/overnight/11_competition-supply-and-overlays.md",
+     "P(regulatory revenue loss > 1%) by 2027 / by 2030", "19.5% / 70.7%", "18.9% / 71.0%",
+     "post-fix sampler", "22_regulatory_delta.csv"),
+    ("S06", "A06", "WS22->WS26", "regulation", "research/notes/overnight/11_competition-supply-and-overlays.md",
+     "share of 2027 variance carried by EU-AHA + the EU tail", "68% (a transcription error; the pre-fix file said 75.2%)",
+     "77.9%", "restated", "abnb_regulatory_contributions.csv"),
+    ("S07", "A06", "WS22->WS26", "regulation", "data/processed/overnight/11_regulatory_overlay.csv",
+     "median / mean / p95 revenue drag 2026 / 2027 / 2028 (%)",
+     "0.15 0.45 0.87 | 0.25 0.75 1.23 | 0.92 2.74 3.96",
+     "0.150 0.450 0.855 | 0.251 0.752 1.235 | 0.891 2.672 4.011",
+     "centre unchanged, tail reshaped", "regenerated by WS22"),
+    ("S08", "A06", "WS22->WS26", "regulation", "data/processed/overnight/11_regulatory_overlay.csv",
+     "cumulative EMEA nights drag, median, 2028 (%)", "2.07", "2.03", "the driver-model input, see M01", "same"),
+    ("S09", "A06", "WS22->WS26", "regulation", "research/notes/overnight/14_master-synthesis.md",
+     "2030 95th percentile revenue loss", "6.4% of revenue / $28.71 per share", "6.7% / $30.04",
+     "the tail is genuinely fatter once the tail cannot fire without its parent act", "22_regulatory_delta.csv"),
+
+    # ---------------------------------------------------------------- 6. WS23 / WS24 flags
+    ("F01", "A08", "WS23->WS26", "red team", "analysis/src/overnight/15_claim_checks.py",
+     "WS09 claim 'no implied event premium 60 days out (0.002 pts)'", "status confirmed",
+     "status wrong; the options half withdrawn, the 7.07% / 6.87% base rate kept",
+     "the cited 13.38 / 15.65 pair is two POST-event expiries and the old estimator recovered "
+     "E x (1 - T_near/T_far), not E",
+     "23_options-estimator-fix.md sections 1-3; 23_options_event_estimates.csv"),
+    ("F02", "A04", "WS26", "red team", "analysis/src/overnight/15_claim_checks.py",
+     "WS11 claim 'retention fell 75.4% -> 71.1% across seven cities'", "status confirmed",
+     "status wrong; restated ex-Austin as 75.5% -> 73.4%", "see S02", "21_pair_eligibility_delta.csv"),
+    ("F03", "A06", "WS26", "red team", "analysis/src/overnight/15_claim_checks.py",
+     "WS11 regulatory claim (median / mean / p95 / EMEA nights)", "0.15 0.45 0.87 | 0.25 0.75 1.23 | "
+     "0.92 2.74 3.96 | -2.07% 2028",
+     "0.150 0.450 0.855 | 0.251 0.752 1.235 | 0.891 2.672 4.011 | -2.03% 2028",
+     "stays confirmed against the regenerated file", "11_regulatory_overlay.csv"),
+    ("F04", "A08+A04", "WS26", "red team", "data/processed/overnight/15_claim_checks.csv",
+     "verdict tally across 98 claims", "84 confirmed / 9 wrong / 1 unsupported / 4 unverifiable",
+     "82 confirmed / 11 wrong / 1 unsupported / 4 unverifiable",
+     "the WS19 integrity guard still passes: 98 rows x 7 columns, no formula-leading cell",
+     "15_claim_checks.py, exit 0"),
+    ("F05", "A08", "WS23->WS26", "options", "analysis/src/overnight/09_stock_behaviour.py",
+     "writing 09_implied_move_live.json", "unconditionally overwrote the file with the legacy inline estimate",
+     "reads the file first; if method_version >= 2 (the WS23 estimator) it writes its own block to "
+     "09_implied_move_live_legacy.json, carries the corrected live_* columns into the rebuilt "
+     "09_implied_vs_realised.csv, and prints a pointer to 23_update_ws09_options.py",
+     "re-running WS09 can no longer silently undo the A08 repair",
+     "guard fixture: protected on the corrected file and on the WS23 schema, overwrites a v1 or unreadable file"),
+    ("F06", "A08", "WS26", "options", "data/processed/overnight/09_implied_move_live.json",
+     "method_version key", "absent", "2", "makes the guard explicit rather than schema-sniffed",
+     "also added to 23_update_ws09_options.py so future runs carry it"),
+    ("F07", "A07", "WS24->WS26", "reproducibility", "analysis/src/overnight/15_script_runs.py",
+     "SC / OUT / SRC paths", "three hard-coded absolute paths (a session scratchpad and two worktree paths)",
+     "all three derived from the repo root; the run directory is <root>/data/cache/15, overridable with "
+     "ABNB_RUNS_DIR or ABNB_SCRATCH, and a missing runs.tsv is a loud failure with instructions",
+     "15_script_runs.csv regenerates byte-identically", "re-run 7 Sep 2026, exit 0"),
+]
+
+
+def safe(v):
+    v = "" if v is None else str(v)
+    return " " + v if v[:1] in FORMULA_LEAD else v
+
+
+def main():
+    os.makedirs(OUT, exist_ok=True)
+    path = os.path.join(OUT, "26_change_ledger.csv")
+    rows = [[safe(x) for x in r] for r in R]
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(HDR)
+        w.writerows(rows)
+    with open(path, newline="", encoding="utf-8") as f:
+        back = list(csv.reader(f))
+    assert len(back) == len(rows) + 1, "wrote %d rows, read back %d" % (len(rows), len(back) - 1)
+    ids = [r[0].strip() for r in back[1:]]
+    assert len(ids) == len(set(ids)), "duplicate ledger ids"
+    for i, r in enumerate(back):
+        assert len(r) == len(HDR), "row %d has %d fields, header has %d" % (i, len(r), len(HDR))
+        for cell in r:
+            assert "\n" not in cell and "\r" not in cell, "embedded newline in row %d" % i
+            assert cell[:1] not in FORMULA_LEAD, "row %d starts a cell with a formula character" % i
+    print("26_change_ledger.csv: %d rows x %d columns, integrity checks passed" % (len(rows), len(HDR)))
+    from collections import Counter
+    print("by area:", dict(sorted(Counter(r[3] for r in R).items())))
+    print("rows recording NO CHANGE:", sum(1 for r in R if r[8].startswith("NO CHANGE")))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

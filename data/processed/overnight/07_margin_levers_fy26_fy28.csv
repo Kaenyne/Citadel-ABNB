@@ -1,0 +1,435 @@
+row_type,scenario,year,item,unit,value,bear,base,bull,margin_pts,evidence
+lever,Bear,FY2026E,nights,y/y growth,0.095,0.095,0.1,0.103,,1H26 actual +9.7% (304.5M vs 277.5M); 2Q26 +10%. Guide implies mid-teens revenue growth on a flat take rate
+lever,Bear,FY2026E,adr_exfx,y/y growth,0.03,0.03,0.035,0.04,,"Letters: ADR ex-FX +3% (4Q25), +4% (1Q26), +4% (2Q26). US hotel prices turned positive in 2Q26 (+4.9%), closing the gap"
+lever,Bear,FY2026E,fx,y/y effect on revenue,0.018,0.018,0.02,0.023,,"2Q26 letter: about a 3-point FX tailwind to revenue growth after hedging, expected to fade into Q4"
+lever,Bear,FY2026E,take_bps,bps change vs 13.41%,-5,-5,0,5,,Management guides the 2026 take rate flat; new-business incentives are the offset to the 15.5% single-fee rollout
+lever,Bear,FY2026E,cor_per_gbv,y/y change in cost per $ GBV,0.005,0.005,0.0,-0.005,,"2Q26 10-Q: cost of revenue +16% on GBV +16%; merchant fees +$131M and chargebacks +$25M in 1H26 with 'a slight increase in our chargeback rate', server costs +$15M"
+lever,Bear,FY2026E,ops_cpn,y/y change in cash cost per night,-0.04,-0.04,-0.05,-0.06,,"Support cost per booking -10% (1Q26) and -16% (2Q26); third-party service providers -$17M in 2Q26. Offset by payroll +$41M, customer relations +$14M, insurance +$9M in 1H26"
+lever,Bear,FY2026E,pd_cash,y/y cash growth,0.115,0.115,0.11,0.105,,"1H26 product development +11%, entirely payroll on higher average headcount (10-Q)"
+lever,Bear,FY2026E,bpm_cash,y/y growth,0.28,0.28,0.25,0.23,,"1H26 brand and performance marketing +32% ($1,091M vs $824M). The base case needs H2 at about +17% y/y (H2 2025 was $771M); the 35.5% FY floor is only breached above about +29% H2 growth, so the floor has cushion the base case does not"
+lever,Bear,FY2026E,fop_cash,y/y cash growth,0.2,0.2,0.18,0.16,,"Field operations and policy +24% in 1H26, decelerating from +43% in FY2025 as the Services and Experiences launch spend laps"
+lever,Bear,FY2026E,ga_cash,y/y cash growth,0.03,0.03,0.02,0.0,,1H26 G&A +1%: payroll +$38M offset by non-income taxes -$38M
+lever,Bear,FY2026E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,D&A plus acquisition-related add-backs; 0.9% of revenue in FY2025
+lever,Bear,FY2026E,sbc_growth,y/y growth,0.16,0.16,0.13,0.1,,"1H26 SBC $897M vs $782M, +14.7%. Management guides SBC growth below 2025 (+10%)"
+lever,Bear,FY2026E,int_income,$M,620,620,660,700,,"1H26 interest income $338M vs $363M, -7%; $12.1B of cash and short-term investments at 30 Jun 2026 against falling rates"
+lever,Bear,FY2026E,int_expense,$M,125,125,120,115,,"$2.5B senior notes issued 16 Mar 2026 at 4.40-5.25%; interest expense $37M in 2Q26, $58M in 1H26"
+lever,Bear,FY2026E,cash_tax_pct_rev,% of revenue,0.035,0.035,0.026,0.02,,FY2025 cash taxes $232M (1.9% of revenue) against a $626M provision; 1H26 provision $202M on a 17.1% effective rate. The released deferred tax assets are being consumed
+lever,Bear,FY2026E,d_unearned_pct_rev,% of revenue,-0.005,-0.005,0.0,0.005,,"Unearned fees fell y/y in 2Q26 ($2,831M vs $2,857M) as Reserve Now, Pay Later moves collection to check-in"
+attribution,Bear,FY2026E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.92,3.91 -> 4.12 $/night
+attribution,Bear,FY2026E,Operations & support per night,margin points vs prior year,,,,,0.4,2.32 -> 2.23 $/night
+attribution,Bear,FY2026E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.2,2.51 -> 2.55 $/night
+attribution,Bear,FY2026E,Brand and performance marketing,margin points vs prior year,,,,,-2.2,2.99 -> 3.50 $/night
+attribution,Bear,FY2026E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.61,1.47 -> 1.61 $/night
+attribution,Bear,FY2026E,"General and administrative, cash",margin points vs prior year,,,,,0.52,2.01 -> 1.89 $/night
+attribution,Bear,FY2026E,Revenue per night: take rate,margin points vs prior year,,,,,-0.25,13.41% -> 13.36%
+attribution,Bear,FY2026E,Revenue per night: FX,margin points vs prior year,,,,,1.21,+1.8% on revenue
+attribution,Bear,FY2026E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,2.0,+3.0% ADR ex-FX
+attribution,Bear,FY2026E,D&A and other add-backs / revenue,margin points vs prior year,,,,,-0.42,0.9% of revenue
+attribution,Bear,FY2026E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,-0.46,
+result,Bear,FY2026E,Revenue,$M,14002.11,,,,,
+result,Bear,FY2026E,Revenue growth,%,14.39,,,,,
+result,Bear,FY2026E,Nights,M,583.63,,,,,
+result,Bear,FY2026E,ADR,$,179.61,,,,,
+result,Bear,FY2026E,Take rate,%,13.36,,,,,
+result,Bear,FY2026E,Adjusted EBITDA,$M,4850.15,,,,,
+result,Bear,FY2026E,Adjusted EBITDA margin,%,34.64,,,,,
+result,Bear,FY2026E,SBC,$M,1833.96,,,,,
+result,Bear,FY2026E,SBC % revenue,%,13.1,,,,,
+result,Bear,FY2026E,GAAP operating income,$M,2890.17,,,,,
+result,Bear,FY2026E,GAAP operating margin,%,20.64,,,,,
+result,Bear,FY2026E,Interest income,$M,620,,,,,
+result,Bear,FY2026E,Interest expense,$M,125,,,,,
+result,Bear,FY2026E,Cash taxes,$M,490.07,,,,,
+result,Bear,FY2026E,Free cash flow,$M,4589.03,,,,,
+result,Bear,FY2026E,FCF margin,%,32.77,,,,,
+result,Bear,FY2026E,FCF / Adjusted EBITDA,%,94.62,,,,,
+result,Bear,FY2026E,SBC-adjusted FCF,$M,2755.07,,,,,
+result,Bear,FY2026E,SBC-adjusted FCF margin,%,19.68,,,,,
+lever,Bear,FY2027E,nights,y/y growth,0.06,0.06,0.085,0.1,,Nights have grown 8-10% every quarter since 2Q24. Bear is a 2020-style demand stall plus regulatory losses; bull is hotels and expansion markets contributing
+lever,Bear,FY2027E,adr_exfx,y/y growth,0.01,0.01,0.025,0.035,,ADR ex-FX has run +3-4%. Once US hotel pricing is positive the Airbnb-specific premium is gone and ADR reverts to mix plus inflation
+lever,Bear,FY2027E,fx,y/y effect on revenue,-0.02,-0.02,0.0,0.01,,61% of revenue is from international hosts. A 1% dollar move is worth ~0.55% of revenue; hedges lag it by a few quarters
+lever,Bear,FY2027E,take_bps,bps change,-15,-15,0,15,,"Bull: the 15.5% single fee, loyalty and sponsored listings ('on the horizon', Feb 2026). Bear: incentives for hotels, Services and Experiences"
+lever,Bear,FY2027E,cor_per_gbv,y/y change per $ GBV,0.015,0.015,0.0,-0.01,,"Payments has been flat at 1.82-1.89% of GBV since 2022. The risk is committed compute: purchase obligations $1,749M at end-2025 vs $719M at end-2024"
+lever,Bear,FY2027E,ops_cpn,y/y change per night,-0.02,-0.02,-0.05,-0.07,,AI resolution went from a third to ~45% of contacts in three quarters; voice and more languages are the stated next step. Bear assumes the easy contacts are done
+lever,Bear,FY2027E,pd_cash,y/y cash growth,0.09,0.09,0.1,0.1,,"Cash product development has been 10-11% of revenue since 2022 and grew 11% in 1H26. NOTE the bear is LOWER than the base: in a demand bear management slows hiring, it just does not slow it enough to hold the margin"
+lever,Bear,FY2027E,bpm_cash,y/y growth,0.12,0.12,0.16,0.145,,Mertz: core-market brand spend is 'effectively a fixed amount per market'. The 2026 ramp is emerging markets and partnerships. Bear cuts spend (2020 precedent: brand and performance marketing fell 58% in a demand shock) but revenue falls faster; bull spends into a strong year and still gets leverage
+lever,Bear,FY2027E,fop_cash,y/y cash growth,0.1,0.1,0.14,0.12,,"Hotels and enterprise org built out through 2026 (Rijvers, D'Amico, Fuldner). Bear slows the build; bull grows it into a bigger revenue base. Field ops grew 43% in 2025 and 24% in 1H26"
+lever,Bear,FY2027E,ga_cash,y/y cash growth,0.05,0.05,0.055,0.045,,G&A cash has grown 4-6% a year ex the 2023-2024 tax reserves; it is the most predictable line in the P&L
+lever,Bear,FY2027E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,held flat
+lever,Bear,FY2027E,sbc_growth,y/y growth,0.14,0.14,0.1,0.06,,SBC grew 10-13% a year 2023-2025. It is the whole GAAP margin gap to Booking (13.0% of revenue vs 2.3%)
+lever,Bear,FY2027E,int_income,$M,540,540,620,690,,Falling rates against a cash pile held roughly flat by buybacks at 80%+ of FCF
+lever,Bear,FY2027E,int_expense,$M,128,128,125,122,,Full year of the $2.5B notes
+lever,Bear,FY2027E,cash_tax_pct_rev,% of revenue,0.045,0.045,0.034,0.026,,Cash taxes converge on the provision (~5% of revenue) as the 2023 valuation-allowance release is consumed; $376M of it was used in 2025
+lever,Bear,FY2027E,d_unearned_pct_rev,% of revenue,-0.005,-0.005,0.0,0.003,,RNPL has switched the float off; no reason for it to restart
+attribution,Bear,FY2027E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.08,4.12 -> 4.14 $/night
+attribution,Bear,FY2027E,Operations & support per night,margin points vs prior year,,,,,0.19,2.23 -> 2.18 $/night
+attribution,Bear,FY2027E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.3,2.55 -> 2.63 $/night
+attribution,Bear,FY2027E,Brand and performance marketing,margin points vs prior year,,,,,-0.83,3.50 -> 3.70 $/night
+attribution,Bear,FY2027E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.25,1.61 -> 1.67 $/night
+attribution,Bear,FY2027E,"General and administrative, cash",margin points vs prior year,,,,,0.07,1.89 -> 1.87 $/night
+attribution,Bear,FY2027E,Revenue per night: take rate,margin points vs prior year,,,,,-0.77,13.36% -> 13.21%
+attribution,Bear,FY2027E,Revenue per night: FX,margin points vs prior year,,,,,-1.38,-2.0% on revenue
+attribution,Bear,FY2027E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,0.68,+1.0% ADR ex-FX
+attribution,Bear,FY2027E,D&A and other add-backs / revenue,margin points vs prior year,,,,,0.0,0.9% of revenue
+attribution,Bear,FY2027E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,-2.67,
+result,Bear,FY2027E,Revenue,$M,14525.87,,,,,
+result,Bear,FY2027E,Revenue growth,%,3.74,,,,,
+result,Bear,FY2027E,Nights,M,618.65,,,,,
+result,Bear,FY2027E,ADR,$,177.78,,,,,
+result,Bear,FY2027E,Take rate,%,13.21,,,,,
+result,Bear,FY2027E,Adjusted EBITDA,$M,4643.96,,,,,
+result,Bear,FY2027E,Adjusted EBITDA margin,%,31.97,,,,,
+result,Bear,FY2027E,SBC,$M,2090.71,,,,,
+result,Bear,FY2027E,SBC % revenue,%,14.39,,,,,
+result,Bear,FY2027E,GAAP operating income,$M,2422.51,,,,,
+result,Bear,FY2027E,GAAP operating margin,%,16.68,,,,,
+result,Bear,FY2027E,Interest income,$M,540,,,,,
+result,Bear,FY2027E,Interest expense,$M,128,,,,,
+result,Bear,FY2027E,Cash taxes,$M,653.66,,,,,
+result,Bear,FY2027E,Free cash flow,$M,4126.3,,,,,
+result,Bear,FY2027E,FCF margin,%,28.41,,,,,
+result,Bear,FY2027E,FCF / Adjusted EBITDA,%,88.85,,,,,
+result,Bear,FY2027E,SBC-adjusted FCF,$M,2035.59,,,,,
+result,Bear,FY2027E,SBC-adjusted FCF margin,%,14.01,,,,,
+lever,Bear,FY2028E,nights,y/y growth,0.05,0.05,0.08,0.095,,"Extrapolation, no guide. Bear is the mature-market saturation case; bull needs hotels and Experiences to be material"
+lever,Bear,FY2028E,adr_exfx,y/y growth,0.01,0.01,0.025,0.035,,Long-run: lodging price inflation plus mix
+lever,Bear,FY2028E,fx,y/y effect,0.0,0.0,0.0,0.0,,No view three years out; set to zero in every case so FX does not flatter the path
+lever,Bear,FY2028E,take_bps,bps change,-10,-10,5,20,,"Bull is the advertising / sponsored-listings case Wells Fargo models for 2027 onward, plus loyalty"
+lever,Bear,FY2028E,cor_per_gbv,y/y change per $ GBV,0.01,0.01,-0.005,-0.015,,Payments scale and hosting amortisation rolling off the 2025-2031 commitment
+lever,Bear,FY2028E,ops_cpn,y/y change per night,-0.02,-0.02,-0.05,-0.07,,Third year of AI support compounding
+lever,Bear,FY2028E,pd_cash,y/y cash growth,0.085,0.085,0.095,0.095,,Below revenue growth in the base and bull: this is the line AI engineering productivity is supposed to bend. In the bear it is above revenue growth even at 8.5%
+lever,Bear,FY2028E,bpm_cash,y/y growth,0.11,0.11,0.135,0.125,,"Expansion-market brand spend annualising. In every case marketing grows slower than in 2026 (+25%), which is the single biggest assumption in the model"
+lever,Bear,FY2028E,fop_cash,y/y cash growth,0.09,0.09,0.12,0.105,,New-business go-to-market normalising toward revenue growth. No disclosure exists to anchor this: field ops is the least forecastable line
+lever,Bear,FY2028E,ga_cash,y/y cash growth,0.05,0.05,0.05,0.04,,trend; G&A cash grew 15.7% in 2025 and about 1% in 1H26
+lever,Bear,FY2028E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,held flat
+lever,Bear,FY2028E,sbc_growth,y/y growth,0.12,0.12,0.08,0.04,,Bull is the only case in which SBC as a share of revenue falls meaningfully
+lever,Bear,FY2028E,int_income,$M,500,500,590,680,,Cash pile roughly flat; rate path unknown
+lever,Bear,FY2028E,int_expense,$M,128,128,125,122,,fixed-rate notes
+lever,Bear,FY2028E,cash_tax_pct_rev,% of revenue,0.052,0.052,0.04,0.032,,Bear is full convergence on the ~5% provision; bull assumes credits and foreign-derived income keep the cash rate below it
+lever,Bear,FY2028E,d_unearned_pct_rev,% of revenue,-0.005,-0.005,0.0,0.003,,no float growth assumed
+attribution,Bear,FY2028E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.35,4.14 -> 4.23 $/night
+attribution,Bear,FY2028E,Operations & support per night,margin points vs prior year,,,,,0.19,2.18 -> 2.14 $/night
+attribution,Bear,FY2028E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.37,2.63 -> 2.71 $/night
+attribution,Bear,FY2028E,Brand and performance marketing,margin points vs prior year,,,,,-0.9,3.70 -> 3.91 $/night
+attribution,Bear,FY2028E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.27,1.67 -> 1.73 $/night
+attribution,Bear,FY2028E,"General and administrative, cash",margin points vs prior year,,,,,0.0,1.87 -> 1.87 $/night
+attribution,Bear,FY2028E,Revenue per night: take rate,margin points vs prior year,,,,,-0.54,13.21% -> 13.11%
+attribution,Bear,FY2028E,Revenue per night: FX,margin points vs prior year,,,,,0.0,+0.0% on revenue
+attribution,Bear,FY2028E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,0.7,+1.0% ADR ex-FX
+attribution,Bear,FY2028E,D&A and other add-backs / revenue,margin points vs prior year,,,,,0.0,0.9% of revenue
+attribution,Bear,FY2028E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,-1.55,
+result,Bear,FY2028E,Revenue,$M,15288.05,,,,,
+result,Bear,FY2028E,Revenue growth,%,5.25,,,,,
+result,Bear,FY2028E,Nights,M,649.59,,,,,
+result,Bear,FY2028E,ADR,$,179.55,,,,,
+result,Bear,FY2028E,Take rate,%,13.11,,,,,
+result,Bear,FY2028E,Adjusted EBITDA,$M,4651.33,,,,,
+result,Bear,FY2028E,Adjusted EBITDA margin,%,30.42,,,,,
+result,Bear,FY2028E,SBC,$M,2341.6,,,,,
+result,Bear,FY2028E,SBC % revenue,%,15.32,,,,,
+result,Bear,FY2028E,GAAP operating income,$M,2172.14,,,,,
+result,Bear,FY2028E,GAAP operating margin,%,14.21,,,,,
+result,Bear,FY2028E,Interest income,$M,500,,,,,
+result,Bear,FY2028E,Interest expense,$M,128,,,,,
+result,Bear,FY2028E,Cash taxes,$M,794.98,,,,,
+result,Bear,FY2028E,Free cash flow,$M,3937.88,,,,,
+result,Bear,FY2028E,FCF margin,%,25.76,,,,,
+result,Bear,FY2028E,FCF / Adjusted EBITDA,%,84.66,,,,,
+result,Bear,FY2028E,SBC-adjusted FCF,$M,1596.28,,,,,
+result,Bear,FY2028E,SBC-adjusted FCF margin,%,10.44,,,,,
+lever,Base,FY2026E,nights,y/y growth,0.1,0.095,0.1,0.103,,1H26 actual +9.7% (304.5M vs 277.5M); 2Q26 +10%. Guide implies mid-teens revenue growth on a flat take rate
+lever,Base,FY2026E,adr_exfx,y/y growth,0.035,0.03,0.035,0.04,,"Letters: ADR ex-FX +3% (4Q25), +4% (1Q26), +4% (2Q26). US hotel prices turned positive in 2Q26 (+4.9%), closing the gap"
+lever,Base,FY2026E,fx,y/y effect on revenue,0.02,0.018,0.02,0.023,,"2Q26 letter: about a 3-point FX tailwind to revenue growth after hedging, expected to fade into Q4"
+lever,Base,FY2026E,take_bps,bps change vs 13.41%,0,-5,0,5,,Management guides the 2026 take rate flat; new-business incentives are the offset to the 15.5% single-fee rollout
+lever,Base,FY2026E,cor_per_gbv,y/y change in cost per $ GBV,0.0,0.005,0.0,-0.005,,"2Q26 10-Q: cost of revenue +16% on GBV +16%; merchant fees +$131M and chargebacks +$25M in 1H26 with 'a slight increase in our chargeback rate', server costs +$15M"
+lever,Base,FY2026E,ops_cpn,y/y change in cash cost per night,-0.05,-0.04,-0.05,-0.06,,"Support cost per booking -10% (1Q26) and -16% (2Q26); third-party service providers -$17M in 2Q26. Offset by payroll +$41M, customer relations +$14M, insurance +$9M in 1H26"
+lever,Base,FY2026E,pd_cash,y/y cash growth,0.11,0.115,0.11,0.105,,"1H26 product development +11%, entirely payroll on higher average headcount (10-Q)"
+lever,Base,FY2026E,bpm_cash,y/y growth,0.25,0.28,0.25,0.23,,"1H26 brand and performance marketing +32% ($1,091M vs $824M). The base case needs H2 at about +17% y/y (H2 2025 was $771M); the 35.5% FY floor is only breached above about +29% H2 growth, so the floor has cushion the base case does not"
+lever,Base,FY2026E,fop_cash,y/y cash growth,0.18,0.2,0.18,0.16,,"Field operations and policy +24% in 1H26, decelerating from +43% in FY2025 as the Services and Experiences launch spend laps"
+lever,Base,FY2026E,ga_cash,y/y cash growth,0.02,0.03,0.02,0.0,,1H26 G&A +1%: payroll +$38M offset by non-income taxes -$38M
+lever,Base,FY2026E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,D&A plus acquisition-related add-backs; 0.9% of revenue in FY2025
+lever,Base,FY2026E,sbc_growth,y/y growth,0.13,0.16,0.13,0.1,,"1H26 SBC $897M vs $782M, +14.7%. Management guides SBC growth below 2025 (+10%)"
+lever,Base,FY2026E,int_income,$M,660,620,660,700,,"1H26 interest income $338M vs $363M, -7%; $12.1B of cash and short-term investments at 30 Jun 2026 against falling rates"
+lever,Base,FY2026E,int_expense,$M,120,125,120,115,,"$2.5B senior notes issued 16 Mar 2026 at 4.40-5.25%; interest expense $37M in 2Q26, $58M in 1H26"
+lever,Base,FY2026E,cash_tax_pct_rev,% of revenue,0.026,0.035,0.026,0.02,,FY2025 cash taxes $232M (1.9% of revenue) against a $626M provision; 1H26 provision $202M on a 17.1% effective rate. The released deferred tax assets are being consumed
+lever,Base,FY2026E,d_unearned_pct_rev,% of revenue,0.0,-0.005,0.0,0.005,,"Unearned fees fell y/y in 2Q26 ($2,831M vs $2,857M) as Reserve Now, Pay Later moves collection to check-in"
+attribution,Base,FY2026E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.95,3.91 -> 4.13 $/night
+attribution,Base,FY2026E,Operations & support per night,margin points vs prior year,,,,,0.51,2.32 -> 2.20 $/night
+attribution,Base,FY2026E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.1,2.51 -> 2.53 $/night
+attribution,Base,FY2026E,Brand and performance marketing,margin points vs prior year,,,,,-1.78,2.99 -> 3.40 $/night
+attribution,Base,FY2026E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.46,1.47 -> 1.57 $/night
+attribution,Base,FY2026E,"General and administrative, cash",margin points vs prior year,,,,,0.64,2.01 -> 1.86 $/night
+attribution,Base,FY2026E,Revenue per night: take rate,margin points vs prior year,,,,,0.0,13.41% -> 13.41%
+attribution,Base,FY2026E,Revenue per night: FX,margin points vs prior year,,,,,1.32,+2.0% on revenue
+attribution,Base,FY2026E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,2.29,+3.5% ADR ex-FX
+attribution,Base,FY2026E,D&A and other add-backs / revenue,margin points vs prior year,,,,,-0.42,0.9% of revenue
+attribution,Base,FY2026E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,1.04,
+result,Base,FY2026E,Revenue,$M,14215.11,,,,,
+result,Base,FY2026E,Revenue growth,%,16.13,,,,,
+result,Base,FY2026E,Nights,M,586.3,,,,,
+result,Base,FY2026E,ADR,$,180.84,,,,,
+result,Base,FY2026E,Take rate,%,13.41,,,,,
+result,Base,FY2026E,Adjusted EBITDA,$M,5138.19,,,,,
+result,Base,FY2026E,Adjusted EBITDA margin,%,36.15,,,,,
+result,Base,FY2026E,SBC,$M,1786.53,,,,,
+result,Base,FY2026E,SBC % revenue,%,12.57,,,,,
+result,Base,FY2026E,GAAP operating income,$M,3223.72,,,,,
+result,Base,FY2026E,GAAP operating margin,%,22.68,,,,,
+result,Base,FY2026E,Interest income,$M,660,,,,,
+result,Base,FY2026E,Interest expense,$M,120,,,,,
+result,Base,FY2026E,Cash taxes,$M,369.59,,,,,
+result,Base,FY2026E,Free cash flow,$M,5109.58,,,,,
+result,Base,FY2026E,FCF margin,%,35.94,,,,,
+result,Base,FY2026E,FCF / Adjusted EBITDA,%,99.44,,,,,
+result,Base,FY2026E,SBC-adjusted FCF,$M,3323.05,,,,,
+result,Base,FY2026E,SBC-adjusted FCF margin,%,23.38,,,,,
+lever,Base,FY2027E,nights,y/y growth,0.085,0.06,0.085,0.1,,Nights have grown 8-10% every quarter since 2Q24. Bear is a 2020-style demand stall plus regulatory losses; bull is hotels and expansion markets contributing
+lever,Base,FY2027E,adr_exfx,y/y growth,0.025,0.01,0.025,0.035,,ADR ex-FX has run +3-4%. Once US hotel pricing is positive the Airbnb-specific premium is gone and ADR reverts to mix plus inflation
+lever,Base,FY2027E,fx,y/y effect on revenue,0.0,-0.02,0.0,0.01,,61% of revenue is from international hosts. A 1% dollar move is worth ~0.55% of revenue; hedges lag it by a few quarters
+lever,Base,FY2027E,take_bps,bps change,0,-15,0,15,,"Bull: the 15.5% single fee, loyalty and sponsored listings ('on the horizon', Feb 2026). Bear: incentives for hotels, Services and Experiences"
+lever,Base,FY2027E,cor_per_gbv,y/y change per $ GBV,0.0,0.015,0.0,-0.01,,"Payments has been flat at 1.82-1.89% of GBV since 2022. The risk is committed compute: purchase obligations $1,749M at end-2025 vs $719M at end-2024"
+lever,Base,FY2027E,ops_cpn,y/y change per night,-0.05,-0.02,-0.05,-0.07,,AI resolution went from a third to ~45% of contacts in three quarters; voice and more languages are the stated next step. Bear assumes the easy contacts are done
+lever,Base,FY2027E,pd_cash,y/y cash growth,0.1,0.09,0.1,0.1,,"Cash product development has been 10-11% of revenue since 2022 and grew 11% in 1H26. NOTE the bear is LOWER than the base: in a demand bear management slows hiring, it just does not slow it enough to hold the margin"
+lever,Base,FY2027E,bpm_cash,y/y growth,0.16,0.12,0.16,0.145,,Mertz: core-market brand spend is 'effectively a fixed amount per market'. The 2026 ramp is emerging markets and partnerships. Bear cuts spend (2020 precedent: brand and performance marketing fell 58% in a demand shock) but revenue falls faster; bull spends into a strong year and still gets leverage
+lever,Base,FY2027E,fop_cash,y/y cash growth,0.14,0.1,0.14,0.12,,"Hotels and enterprise org built out through 2026 (Rijvers, D'Amico, Fuldner). Bear slows the build; bull grows it into a bigger revenue base. Field ops grew 43% in 2025 and 24% in 1H26"
+lever,Base,FY2027E,ga_cash,y/y cash growth,0.055,0.05,0.055,0.045,,G&A cash has grown 4-6% a year ex the 2023-2024 tax reserves; it is the most predictable line in the P&L
+lever,Base,FY2027E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,held flat
+lever,Base,FY2027E,sbc_growth,y/y growth,0.1,0.14,0.1,0.06,,SBC grew 10-13% a year 2023-2025. It is the whole GAAP margin gap to Booking (13.0% of revenue vs 2.3%)
+lever,Base,FY2027E,int_income,$M,620,540,620,690,,Falling rates against a cash pile held roughly flat by buybacks at 80%+ of FCF
+lever,Base,FY2027E,int_expense,$M,125,128,125,122,,Full year of the $2.5B notes
+lever,Base,FY2027E,cash_tax_pct_rev,% of revenue,0.034,0.045,0.034,0.026,,Cash taxes converge on the provision (~5% of revenue) as the 2023 valuation-allowance release is consumed; $376M of it was used in 2025
+lever,Base,FY2027E,d_unearned_pct_rev,% of revenue,0.0,-0.005,0.0,0.003,,RNPL has switched the float off; no reason for it to restart
+attribution,Base,FY2027E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.43,4.13 -> 4.23 $/night
+attribution,Base,FY2027E,Operations & support per night,margin points vs prior year,,,,,0.45,2.20 -> 2.09 $/night
+attribution,Base,FY2027E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.14,2.53 -> 2.57 $/night
+attribution,Base,FY2027E,Brand and performance marketing,margin points vs prior year,,,,,-0.97,3.40 -> 3.64 $/night
+attribution,Base,FY2027E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.33,1.57 -> 1.65 $/night
+attribution,Base,FY2027E,"General and administrative, cash",margin points vs prior year,,,,,0.21,1.86 -> 1.81 $/night
+attribution,Base,FY2027E,Revenue per night: take rate,margin points vs prior year,,,,,0.0,13.41% -> 13.41%
+attribution,Base,FY2027E,Revenue per night: FX,margin points vs prior year,,,,,0.0,+0.0% on revenue
+attribution,Base,FY2027E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,1.61,+2.5% ADR ex-FX
+attribution,Base,FY2027E,D&A and other add-backs / revenue,margin points vs prior year,,,,,0.0,0.9% of revenue
+attribution,Base,FY2027E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,0.41,
+result,Base,FY2027E,Revenue,$M,15808.97,,,,,
+result,Base,FY2027E,Revenue growth,%,11.21,,,,,
+result,Base,FY2027E,Nights,M,636.14,,,,,
+result,Base,FY2027E,ADR,$,185.36,,,,,
+result,Base,FY2027E,Take rate,%,13.41,,,,,
+result,Base,FY2027E,Adjusted EBITDA,$M,5778.64,,,,,
+result,Base,FY2027E,Adjusted EBITDA margin,%,36.55,,,,,
+result,Base,FY2027E,SBC,$M,1965.18,,,,,
+result,Base,FY2027E,SBC % revenue,%,12.43,,,,,
+result,Base,FY2027E,GAAP operating income,$M,3671.18,,,,,
+result,Base,FY2027E,GAAP operating margin,%,23.22,,,,,
+result,Base,FY2027E,Interest income,$M,620,,,,,
+result,Base,FY2027E,Interest expense,$M,125,,,,,
+result,Base,FY2027E,Cash taxes,$M,537.51,,,,,
+result,Base,FY2027E,Free cash flow,$M,5514.81,,,,,
+result,Base,FY2027E,FCF margin,%,34.88,,,,,
+result,Base,FY2027E,FCF / Adjusted EBITDA,%,95.43,,,,,
+result,Base,FY2027E,SBC-adjusted FCF,$M,3549.63,,,,,
+result,Base,FY2027E,SBC-adjusted FCF margin,%,22.45,,,,,
+lever,Base,FY2028E,nights,y/y growth,0.08,0.05,0.08,0.095,,"Extrapolation, no guide. Bear is the mature-market saturation case; bull needs hotels and Experiences to be material"
+lever,Base,FY2028E,adr_exfx,y/y growth,0.025,0.01,0.025,0.035,,Long-run: lodging price inflation plus mix
+lever,Base,FY2028E,fx,y/y effect,0.0,0.0,0.0,0.0,,No view three years out; set to zero in every case so FX does not flatter the path
+lever,Base,FY2028E,take_bps,bps change,5,-10,5,20,,"Bull is the advertising / sponsored-listings case Wells Fargo models for 2027 onward, plus loyalty"
+lever,Base,FY2028E,cor_per_gbv,y/y change per $ GBV,-0.005,0.01,-0.005,-0.015,,Payments scale and hosting amortisation rolling off the 2025-2031 commitment
+lever,Base,FY2028E,ops_cpn,y/y change per night,-0.05,-0.02,-0.05,-0.07,,Third year of AI support compounding
+lever,Base,FY2028E,pd_cash,y/y cash growth,0.095,0.085,0.095,0.095,,Below revenue growth in the base and bull: this is the line AI engineering productivity is supposed to bend. In the bear it is above revenue growth even at 8.5%
+lever,Base,FY2028E,bpm_cash,y/y growth,0.135,0.11,0.135,0.125,,"Expansion-market brand spend annualising. In every case marketing grows slower than in 2026 (+25%), which is the single biggest assumption in the model"
+lever,Base,FY2028E,fop_cash,y/y cash growth,0.12,0.09,0.12,0.105,,New-business go-to-market normalising toward revenue growth. No disclosure exists to anchor this: field ops is the least forecastable line
+lever,Base,FY2028E,ga_cash,y/y cash growth,0.05,0.05,0.05,0.04,,trend; G&A cash grew 15.7% in 2025 and about 1% in 1H26
+lever,Base,FY2028E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,held flat
+lever,Base,FY2028E,sbc_growth,y/y growth,0.08,0.12,0.08,0.04,,Bull is the only case in which SBC as a share of revenue falls meaningfully
+lever,Base,FY2028E,int_income,$M,590,500,590,680,,Cash pile roughly flat; rate path unknown
+lever,Base,FY2028E,int_expense,$M,125,128,125,122,,fixed-rate notes
+lever,Base,FY2028E,cash_tax_pct_rev,% of revenue,0.04,0.052,0.04,0.032,,Bear is full convergence on the ~5% provision; bull assumes credits and foreign-derived income keep the cash rate below it
+lever,Base,FY2028E,d_unearned_pct_rev,% of revenue,0.0,-0.005,0.0,0.003,,no float growth assumed
+attribution,Base,FY2028E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.34,4.23 -> 4.32 $/night
+attribution,Base,FY2028E,Operations & support per night,margin points vs prior year,,,,,0.42,2.09 -> 1.99 $/night
+attribution,Base,FY2028E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.14,2.57 -> 2.60 $/night
+attribution,Base,FY2028E,Brand and performance marketing,margin points vs prior year,,,,,-0.75,3.64 -> 3.82 $/night
+attribution,Base,FY2028E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.25,1.65 -> 1.71 $/night
+attribution,Base,FY2028E,"General and administrative, cash",margin points vs prior year,,,,,0.2,1.81 -> 1.76 $/night
+attribution,Base,FY2028E,Revenue per night: take rate,margin points vs prior year,,,,,0.24,13.41% -> 13.46%
+attribution,Base,FY2028E,Revenue per night: FX,margin points vs prior year,,,,,0.0,+0.0% on revenue
+attribution,Base,FY2028E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,1.59,+2.5% ADR ex-FX
+attribution,Base,FY2028E,D&A and other add-backs / revenue,margin points vs prior year,,,,,-0.0,0.9% of revenue
+attribution,Base,FY2028E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,0.98,
+result,Base,FY2028E,Revenue,$M,17565.8,,,,,
+result,Base,FY2028E,Revenue growth,%,11.11,,,,,
+result,Base,FY2028E,Nights,M,687.03,,,,,
+result,Base,FY2028E,ADR,$,189.99,,,,,
+result,Base,FY2028E,Take rate,%,13.46,,,,,
+result,Base,FY2028E,Adjusted EBITDA,$M,6592.39,,,,,
+result,Base,FY2028E,Adjusted EBITDA margin,%,37.53,,,,,
+result,Base,FY2028E,SBC,$M,2122.4,,,,,
+result,Base,FY2028E,SBC % revenue,%,12.08,,,,,
+result,Base,FY2028E,GAAP operating income,$M,4311.9,,,,,
+result,Base,FY2028E,GAAP operating margin,%,24.55,,,,,
+result,Base,FY2028E,Interest income,$M,590,,,,,
+result,Base,FY2028E,Interest expense,$M,125,,,,,
+result,Base,FY2028E,Cash taxes,$M,702.63,,,,,
+result,Base,FY2028E,Free cash flow,$M,6108.84,,,,,
+result,Base,FY2028E,FCF margin,%,34.78,,,,,
+result,Base,FY2028E,FCF / Adjusted EBITDA,%,92.66,,,,,
+result,Base,FY2028E,SBC-adjusted FCF,$M,3986.44,,,,,
+result,Base,FY2028E,SBC-adjusted FCF margin,%,22.69,,,,,
+lever,Bull,FY2026E,nights,y/y growth,0.103,0.095,0.1,0.103,,1H26 actual +9.7% (304.5M vs 277.5M); 2Q26 +10%. Guide implies mid-teens revenue growth on a flat take rate
+lever,Bull,FY2026E,adr_exfx,y/y growth,0.04,0.03,0.035,0.04,,"Letters: ADR ex-FX +3% (4Q25), +4% (1Q26), +4% (2Q26). US hotel prices turned positive in 2Q26 (+4.9%), closing the gap"
+lever,Bull,FY2026E,fx,y/y effect on revenue,0.023,0.018,0.02,0.023,,"2Q26 letter: about a 3-point FX tailwind to revenue growth after hedging, expected to fade into Q4"
+lever,Bull,FY2026E,take_bps,bps change vs 13.41%,5,-5,0,5,,Management guides the 2026 take rate flat; new-business incentives are the offset to the 15.5% single-fee rollout
+lever,Bull,FY2026E,cor_per_gbv,y/y change in cost per $ GBV,-0.005,0.005,0.0,-0.005,,"2Q26 10-Q: cost of revenue +16% on GBV +16%; merchant fees +$131M and chargebacks +$25M in 1H26 with 'a slight increase in our chargeback rate', server costs +$15M"
+lever,Bull,FY2026E,ops_cpn,y/y change in cash cost per night,-0.06,-0.04,-0.05,-0.06,,"Support cost per booking -10% (1Q26) and -16% (2Q26); third-party service providers -$17M in 2Q26. Offset by payroll +$41M, customer relations +$14M, insurance +$9M in 1H26"
+lever,Bull,FY2026E,pd_cash,y/y cash growth,0.105,0.115,0.11,0.105,,"1H26 product development +11%, entirely payroll on higher average headcount (10-Q)"
+lever,Bull,FY2026E,bpm_cash,y/y growth,0.23,0.28,0.25,0.23,,"1H26 brand and performance marketing +32% ($1,091M vs $824M). The base case needs H2 at about +17% y/y (H2 2025 was $771M); the 35.5% FY floor is only breached above about +29% H2 growth, so the floor has cushion the base case does not"
+lever,Bull,FY2026E,fop_cash,y/y cash growth,0.16,0.2,0.18,0.16,,"Field operations and policy +24% in 1H26, decelerating from +43% in FY2025 as the Services and Experiences launch spend laps"
+lever,Bull,FY2026E,ga_cash,y/y cash growth,0.0,0.03,0.02,0.0,,1H26 G&A +1%: payroll +$38M offset by non-income taxes -$38M
+lever,Bull,FY2026E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,D&A plus acquisition-related add-backs; 0.9% of revenue in FY2025
+lever,Bull,FY2026E,sbc_growth,y/y growth,0.1,0.16,0.13,0.1,,"1H26 SBC $897M vs $782M, +14.7%. Management guides SBC growth below 2025 (+10%)"
+lever,Bull,FY2026E,int_income,$M,700,620,660,700,,"1H26 interest income $338M vs $363M, -7%; $12.1B of cash and short-term investments at 30 Jun 2026 against falling rates"
+lever,Bull,FY2026E,int_expense,$M,115,125,120,115,,"$2.5B senior notes issued 16 Mar 2026 at 4.40-5.25%; interest expense $37M in 2Q26, $58M in 1H26"
+lever,Bull,FY2026E,cash_tax_pct_rev,% of revenue,0.02,0.035,0.026,0.02,,FY2025 cash taxes $232M (1.9% of revenue) against a $626M provision; 1H26 provision $202M on a 17.1% effective rate. The released deferred tax assets are being consumed
+lever,Bull,FY2026E,d_unearned_pct_rev,% of revenue,0.005,-0.005,0.0,0.005,,"Unearned fees fell y/y in 2Q26 ($2,831M vs $2,857M) as Reserve Now, Pay Later moves collection to check-in"
+attribution,Bull,FY2026E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-1.0,3.91 -> 4.14 $/night
+attribution,Bull,FY2026E,Operations & support per night,margin points vs prior year,,,,,0.61,2.32 -> 2.18 $/night
+attribution,Bull,FY2026E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.02,2.51 -> 2.51 $/night
+attribution,Bull,FY2026E,Brand and performance marketing,margin points vs prior year,,,,,-1.5,2.99 -> 3.34 $/night
+attribution,Bull,FY2026E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.33,1.47 -> 1.54 $/night
+attribution,Bull,FY2026E,"General and administrative, cash",margin points vs prior year,,,,,0.82,2.01 -> 1.82 $/night
+attribution,Bull,FY2026E,Revenue per night: take rate,margin points vs prior year,,,,,0.24,13.41% -> 13.46%
+attribution,Bull,FY2026E,Revenue per night: FX,margin points vs prior year,,,,,1.49,+2.3% on revenue
+attribution,Bull,FY2026E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,2.57,+4.0% ADR ex-FX
+attribution,Bull,FY2026E,D&A and other add-backs / revenue,margin points vs prior year,,,,,-0.42,0.9% of revenue
+attribution,Bull,FY2026E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,2.46,
+result,Bull,FY2026E,Revenue,$M,14418.43,,,,,
+result,Bull,FY2026E,Revenue growth,%,17.79,,,,,
+result,Bull,FY2026E,Nights,M,587.9,,,,,
+result,Bull,FY2026E,ADR,$,182.24,,,,,
+result,Bull,FY2026E,Take rate,%,13.46,,,,,
+result,Bull,FY2026E,Adjusted EBITDA,$M,5415.77,,,,,
+result,Bull,FY2026E,Adjusted EBITDA margin,%,37.56,,,,,
+result,Bull,FY2026E,SBC,$M,1739.1,,,,,
+result,Bull,FY2026E,SBC % revenue,%,12.06,,,,,
+result,Bull,FY2026E,GAAP operating income,$M,3546.9,,,,,
+result,Bull,FY2026E,GAAP operating margin,%,24.6,,,,,
+result,Bull,FY2026E,Interest income,$M,700,,,,,
+result,Bull,FY2026E,Interest expense,$M,115,,,,,
+result,Bull,FY2026E,Cash taxes,$M,288.37,,,,,
+result,Bull,FY2026E,Free cash flow,$M,5582.63,,,,,
+result,Bull,FY2026E,FCF margin,%,38.72,,,,,
+result,Bull,FY2026E,FCF / Adjusted EBITDA,%,103.08,,,,,
+result,Bull,FY2026E,SBC-adjusted FCF,$M,3843.53,,,,,
+result,Bull,FY2026E,SBC-adjusted FCF margin,%,26.66,,,,,
+lever,Bull,FY2027E,nights,y/y growth,0.1,0.06,0.085,0.1,,Nights have grown 8-10% every quarter since 2Q24. Bear is a 2020-style demand stall plus regulatory losses; bull is hotels and expansion markets contributing
+lever,Bull,FY2027E,adr_exfx,y/y growth,0.035,0.01,0.025,0.035,,ADR ex-FX has run +3-4%. Once US hotel pricing is positive the Airbnb-specific premium is gone and ADR reverts to mix plus inflation
+lever,Bull,FY2027E,fx,y/y effect on revenue,0.01,-0.02,0.0,0.01,,61% of revenue is from international hosts. A 1% dollar move is worth ~0.55% of revenue; hedges lag it by a few quarters
+lever,Bull,FY2027E,take_bps,bps change,15,-15,0,15,,"Bull: the 15.5% single fee, loyalty and sponsored listings ('on the horizon', Feb 2026). Bear: incentives for hotels, Services and Experiences"
+lever,Bull,FY2027E,cor_per_gbv,y/y change per $ GBV,-0.01,0.015,0.0,-0.01,,"Payments has been flat at 1.82-1.89% of GBV since 2022. The risk is committed compute: purchase obligations $1,749M at end-2025 vs $719M at end-2024"
+lever,Bull,FY2027E,ops_cpn,y/y change per night,-0.07,-0.02,-0.05,-0.07,,AI resolution went from a third to ~45% of contacts in three quarters; voice and more languages are the stated next step. Bear assumes the easy contacts are done
+lever,Bull,FY2027E,pd_cash,y/y cash growth,0.1,0.09,0.1,0.1,,"Cash product development has been 10-11% of revenue since 2022 and grew 11% in 1H26. NOTE the bear is LOWER than the base: in a demand bear management slows hiring, it just does not slow it enough to hold the margin"
+lever,Bull,FY2027E,bpm_cash,y/y growth,0.145,0.12,0.16,0.145,,Mertz: core-market brand spend is 'effectively a fixed amount per market'. The 2026 ramp is emerging markets and partnerships. Bear cuts spend (2020 precedent: brand and performance marketing fell 58% in a demand shock) but revenue falls faster; bull spends into a strong year and still gets leverage
+lever,Bull,FY2027E,fop_cash,y/y cash growth,0.12,0.1,0.14,0.12,,"Hotels and enterprise org built out through 2026 (Rijvers, D'Amico, Fuldner). Bear slows the build; bull grows it into a bigger revenue base. Field ops grew 43% in 2025 and 24% in 1H26"
+lever,Bull,FY2027E,ga_cash,y/y cash growth,0.045,0.05,0.055,0.045,,G&A cash has grown 4-6% a year ex the 2023-2024 tax reserves; it is the most predictable line in the P&L
+lever,Bull,FY2027E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,held flat
+lever,Bull,FY2027E,sbc_growth,y/y growth,0.06,0.14,0.1,0.06,,SBC grew 10-13% a year 2023-2025. It is the whole GAAP margin gap to Booking (13.0% of revenue vs 2.3%)
+lever,Bull,FY2027E,int_income,$M,690,540,620,690,,Falling rates against a cash pile held roughly flat by buybacks at 80%+ of FCF
+lever,Bull,FY2027E,int_expense,$M,122,128,125,122,,Full year of the $2.5B notes
+lever,Bull,FY2027E,cash_tax_pct_rev,% of revenue,0.026,0.045,0.034,0.026,,Cash taxes converge on the provision (~5% of revenue) as the 2023 valuation-allowance release is consumed; $376M of it was used in 2025
+lever,Bull,FY2027E,d_unearned_pct_rev,% of revenue,0.003,-0.005,0.0,0.003,,RNPL has switched the float off; no reason for it to restart
+attribution,Bull,FY2027E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.59,4.14 -> 4.29 $/night
+attribution,Bull,FY2027E,Operations & support per night,margin points vs prior year,,,,,0.62,2.18 -> 2.03 $/night
+attribution,Bull,FY2027E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,-0.0,2.51 -> 2.51 $/night
+attribution,Bull,FY2027E,Brand and performance marketing,margin points vs prior year,,,,,-0.56,3.34 -> 3.47 $/night
+attribution,Bull,FY2027E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.11,1.54 -> 1.57 $/night
+attribution,Bull,FY2027E,"General and administrative, cash",margin points vs prior year,,,,,0.37,1.82 -> 1.73 $/night
+attribution,Bull,FY2027E,Revenue per night: take rate,margin points vs prior year,,,,,0.69,13.46% -> 13.61%
+attribution,Bull,FY2027E,Revenue per night: FX,margin points vs prior year,,,,,0.62,+1.0% on revenue
+attribution,Bull,FY2027E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,2.13,+3.5% ADR ex-FX
+attribution,Bull,FY2027E,D&A and other add-backs / revenue,margin points vs prior year,,,,,0.0,0.9% of revenue
+attribution,Bull,FY2027E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,3.16,
+result,Bull,FY2027E,Revenue,$M,16764.34,,,,,
+result,Bull,FY2027E,Revenue growth,%,16.27,,,,,
+result,Bull,FY2027E,Nights,M,646.69,,,,,
+result,Bull,FY2027E,ADR,$,190.51,,,,,
+result,Bull,FY2027E,Take rate,%,13.61,,,,,
+result,Bull,FY2027E,Adjusted EBITDA,$M,6827.19,,,,,
+result,Bull,FY2027E,Adjusted EBITDA margin,%,40.72,,,,,
+result,Bull,FY2027E,SBC,$M,1843.45,,,,,
+result,Bull,FY2027E,SBC % revenue,%,11.0,,,,,
+result,Bull,FY2027E,GAAP operating income,$M,4832.87,,,,,
+result,Bull,FY2027E,GAAP operating margin,%,28.83,,,,,
+result,Bull,FY2027E,Interest income,$M,690,,,,,
+result,Bull,FY2027E,Interest expense,$M,122,,,,,
+result,Bull,FY2027E,Cash taxes,$M,435.87,,,,,
+result,Bull,FY2027E,Free cash flow,$M,6774.91,,,,,
+result,Bull,FY2027E,FCF margin,%,40.41,,,,,
+result,Bull,FY2027E,FCF / Adjusted EBITDA,%,99.23,,,,,
+result,Bull,FY2027E,SBC-adjusted FCF,$M,4931.47,,,,,
+result,Bull,FY2027E,SBC-adjusted FCF margin,%,29.42,,,,,
+lever,Bull,FY2028E,nights,y/y growth,0.095,0.05,0.08,0.095,,"Extrapolation, no guide. Bear is the mature-market saturation case; bull needs hotels and Experiences to be material"
+lever,Bull,FY2028E,adr_exfx,y/y growth,0.035,0.01,0.025,0.035,,Long-run: lodging price inflation plus mix
+lever,Bull,FY2028E,fx,y/y effect,0.0,0.0,0.0,0.0,,No view three years out; set to zero in every case so FX does not flatter the path
+lever,Bull,FY2028E,take_bps,bps change,20,-10,5,20,,"Bull is the advertising / sponsored-listings case Wells Fargo models for 2027 onward, plus loyalty"
+lever,Bull,FY2028E,cor_per_gbv,y/y change per $ GBV,-0.015,0.01,-0.005,-0.015,,Payments scale and hosting amortisation rolling off the 2025-2031 commitment
+lever,Bull,FY2028E,ops_cpn,y/y change per night,-0.07,-0.02,-0.05,-0.07,,Third year of AI support compounding
+lever,Bull,FY2028E,pd_cash,y/y cash growth,0.095,0.085,0.095,0.095,,Below revenue growth in the base and bull: this is the line AI engineering productivity is supposed to bend. In the bear it is above revenue growth even at 8.5%
+lever,Bull,FY2028E,bpm_cash,y/y growth,0.125,0.11,0.135,0.125,,"Expansion-market brand spend annualising. In every case marketing grows slower than in 2026 (+25%), which is the single biggest assumption in the model"
+lever,Bull,FY2028E,fop_cash,y/y cash growth,0.105,0.09,0.12,0.105,,New-business go-to-market normalising toward revenue growth. No disclosure exists to anchor this: field ops is the least forecastable line
+lever,Bull,FY2028E,ga_cash,y/y cash growth,0.04,0.05,0.05,0.04,,trend; G&A cash grew 15.7% in 2025 and about 1% in 1H26
+lever,Bull,FY2028E,addback_pct,% of revenue,0.9,0.9,0.9,0.9,,held flat
+lever,Bull,FY2028E,sbc_growth,y/y growth,0.04,0.12,0.08,0.04,,Bull is the only case in which SBC as a share of revenue falls meaningfully
+lever,Bull,FY2028E,int_income,$M,680,500,590,680,,Cash pile roughly flat; rate path unknown
+lever,Bull,FY2028E,int_expense,$M,122,128,125,122,,fixed-rate notes
+lever,Bull,FY2028E,cash_tax_pct_rev,% of revenue,0.032,0.052,0.04,0.032,,Bear is full convergence on the ~5% provision; bull assumes credits and foreign-derived income keep the cash rate below it
+lever,Bull,FY2028E,d_unearned_pct_rev,% of revenue,0.003,-0.005,0.0,0.003,,no float growth assumed
+attribution,Bull,FY2028E,"Cost of revenue (payments, chargebacks, hosting) per $ GBV",margin points vs prior year,,,,,-0.32,4.29 -> 4.37 $/night
+attribution,Bull,FY2028E,Operations & support per night,margin points vs prior year,,,,,0.55,2.03 -> 1.89 $/night
+attribution,Bull,FY2028E,"Product development, cash (ex-SBC)",margin points vs prior year,,,,,0.0,2.51 -> 2.51 $/night
+attribution,Bull,FY2028E,Brand and performance marketing,margin points vs prior year,,,,,-0.37,3.47 -> 3.57 $/night
+attribution,Bull,FY2028E,"Field operations and policy, cash (new-business investment)",margin points vs prior year,,,,,-0.06,1.57 -> 1.58 $/night
+attribution,Bull,FY2028E,"General and administrative, cash",margin points vs prior year,,,,,0.33,1.73 -> 1.64 $/night
+attribution,Bull,FY2028E,Revenue per night: take rate,margin points vs prior year,,,,,0.85,13.61% -> 13.81%
+attribution,Bull,FY2028E,Revenue per night: FX,margin points vs prior year,,,,,0.0,+0.0% on revenue
+attribution,Bull,FY2028E,Revenue per night: ADR ex-FX,margin points vs prior year,,,,,2.02,+3.5% ADR ex-FX
+attribution,Bull,FY2028E,D&A and other add-backs / revenue,margin points vs prior year,,,,,0.0,0.9% of revenue
+attribution,Bull,FY2028E,TOTAL change in Adj. EBITDA margin,margin points vs prior year,,,,,3.01,
+result,Bull,FY2028E,Revenue,$M,19278.69,,,,,
+result,Bull,FY2028E,Revenue growth,%,15.0,,,,,
+result,Bull,FY2028E,Nights,M,708.12,,,,,
+result,Bull,FY2028E,ADR,$,197.18,,,,,
+result,Bull,FY2028E,Take rate,%,13.81,,,,,
+result,Bull,FY2028E,Adjusted EBITDA,$M,8431.16,,,,,
+result,Bull,FY2028E,Adjusted EBITDA margin,%,43.73,,,,,
+result,Bull,FY2028E,SBC,$M,1917.18,,,,,
+result,Bull,FY2028E,SBC % revenue,%,9.94,,,,,
+result,Bull,FY2028E,GAAP operating income,$M,6340.47,,,,,
+result,Bull,FY2028E,GAAP operating margin,%,32.89,,,,,
+result,Bull,FY2028E,Interest income,$M,680,,,,,
+result,Bull,FY2028E,Interest expense,$M,122,,,,,
+result,Bull,FY2028E,Cash taxes,$M,616.92,,,,,
+result,Bull,FY2028E,Free cash flow,$M,8160.18,,,,,
+result,Bull,FY2028E,FCF margin,%,42.33,,,,,
+result,Bull,FY2028E,FCF / Adjusted EBITDA,%,96.79,,,,,
+result,Bull,FY2028E,SBC-adjusted FCF,$M,6242.99,,,,,
+result,Bull,FY2028E,SBC-adjusted FCF margin,%,32.38,,,,,
+reconciliation,Bear,FY2026E,Adj. EBITDA margin vs abnb_margin_scenarios.csv,margin points,-0.66,,,,,"this model 34.6% vs existing 35.3%; revenue $14,002M vs $14,030M"
+reconciliation,Bear,FY2027E,Adj. EBITDA margin vs abnb_margin_scenarios.csv,margin points,-1.83,,,,,"this model 32.0% vs existing 33.8%; revenue $14,526M vs $14,629M"
+reconciliation,Base,FY2026E,Adj. EBITDA margin vs abnb_margin_scenarios.csv,margin points,0.25,,,,,"this model 36.1% vs existing 35.9%; revenue $14,215M vs $14,215M"
+reconciliation,Base,FY2027E,Adj. EBITDA margin vs abnb_margin_scenarios.csv,margin points,0.05,,,,,"this model 36.6% vs existing 36.5%; revenue $15,809M vs $15,959M"
+reconciliation,Bull,FY2026E,Adj. EBITDA margin vs abnb_margin_scenarios.csv,margin points,-0.14,,,,,"this model 37.6% vs existing 37.7%; revenue $14,418M vs $14,473M"
+reconciliation,Bull,FY2027E,Adj. EBITDA margin vs abnb_margin_scenarios.csv,margin points,0.92,,,,,"this model 40.7% vs existing 39.8%; revenue $16,764M vs $16,683M"
+result,Bear,Q4 2026E (implied),Adjusted EBITDA margin,%,26.5,,,,,"FY26E less 1H26 actual ($6,286M rev, $1,780M Adj. EBITDA) less Q3 at the guide midpoint ($4,700M at 48.3%); Q4 2025 printed 28.3% on revenue of $3,016M implied"
+result,Base,Q4 2026E (implied),Adjusted EBITDA margin,%,32.5,,,,,"FY26E less 1H26 actual ($6,286M rev, $1,780M Adj. EBITDA) less Q3 at the guide midpoint ($4,730M at 49.0%); Q4 2025 printed 28.3% on revenue of $3,199M implied"
+result,Bull,Q4 2026E (implied),Adjusted EBITDA margin,%,36.8,,,,,"FY26E less 1H26 actual ($6,286M rev, $1,780M Adj. EBITDA) less Q3 at the guide midpoint ($4,800M at 50.2%); Q4 2025 printed 28.3% on revenue of $3,332M implied"
+path_to_40,Monte Carlo (correlated),FY2026E,Adj. EBITDA margin distribution,%,36.13,35.17,36.14,37.06,,"40,000 draws; P(>=40%) 0.0%, P(>=38%) 0.4%, P(>=36%) 57.8%, P(<34%) 0.3%. levers share a common state with correlation 0.75 and 0.6 year-to-year persistence, so a bad demand year drags ADR, FX, take rate and spending discipline together; bear and bull are read as the 10th and 90th percentile"
+path_to_40,Monte Carlo (correlated),FY2027E,Adj. EBITDA margin distribution,%,36.5,33.61,36.6,39.26,,"40,000 draws; P(>=40%) 4.8%, P(>=38%) 25.3%, P(>=36%) 60.5%, P(<34%) 13.0%. levers share a common state with correlation 0.75 and 0.6 year-to-year persistence, so a bad demand year drags ADR, FX, take rate and spending discipline together; bear and bull are read as the 10th and 90th percentile"
+path_to_40,Monte Carlo (correlated),FY2028E,Adj. EBITDA margin distribution,%,37.42,33.3,37.56,41.33,,"40,000 draws; P(>=40%) 20.8%, P(>=38%) 44.3%, P(>=36%) 68.5%, P(<34%) 14.1%. levers share a common state with correlation 0.75 and 0.6 year-to-year persistence, so a bad demand year drags ADR, FX, take rate and spending discipline together; bear and bull are read as the 10th and 90th percentile"
+path_to_40,Monte Carlo (independent),FY2026E,Adj. EBITDA margin distribution,%,36.13,35.85,36.13,36.4,,"40,000 draws; P(>=40%) 0.0%, P(>=38%) 0.0%, P(>=36%) 72.2%, P(<34%) 0.0%. levers drawn independently (triangular on bear/base/bull). This is the wrong model - it cancels the tails - and is shown only to bound how much the correlation assumption matters"
+path_to_40,Monte Carlo (independent),FY2027E,Adj. EBITDA margin distribution,%,36.41,35.58,36.42,37.21,,"40,000 draws; P(>=40%) 0.0%, P(>=38%) 0.4%, P(>=36%) 73.8%, P(<34%) 0.0%. levers drawn independently (triangular on bear/base/bull). This is the wrong model - it cancels the tails - and is shown only to bound how much the correlation assumption matters"
+path_to_40,Monte Carlo (independent),FY2028E,Adj. EBITDA margin distribution,%,37.29,36.23,37.31,38.34,,"40,000 draws; P(>=40%) 0.0%, P(>=38%) 19.8%, P(>=36%) 93.9%, P(<34%) 0.0%. levers drawn independently (triangular on bear/base/bull). This is the wrong model - it cancels the tails - and is shown only to bound how much the correlation assumption matters"
+path_to_40,Solve,FY2028E,S&M cash growth (brand+performance and field operations together) required every year for a 40% FY2028 margin,y/y growth %,12.3,,13.5,,,every other lever held at its base value in all three years; solved by bisection. 'base' column is the base-case setting for FY2028
+path_to_40,Solve,FY2028E,Operations & support cash cost per night required every year for a 40% FY2028 margin,y/y change %,-16.4,,-5.0,,,every other lever held at its base value in all three years; solved by bisection. 'base' column is the base-case setting for FY2028
+path_to_40,Solve,FY2028E,Product development cash growth required every year for a 40% FY2028 margin,y/y growth %,0.4,,9.5,,,every other lever held at its base value in all three years; solved by bisection. 'base' column is the base-case setting for FY2028
+path_to_40,Solve,FY2028E,Take rate change per year required every year for a 40% FY2028 margin,bps per year,19.9,,5,,,every other lever held at its base value in all three years; solved by bisection. 'base' column is the base-case setting for FY2028
+path_to_40,Solve,FY2028E,Nights growth required every year for a 40% FY2028 margin,y/y growth %,11.2,,8.0,,,every other lever held at its base value in all three years; solved by bisection. 'base' column is the base-case setting for FY2028

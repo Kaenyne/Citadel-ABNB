@@ -1,0 +1,46 @@
+series,region,source,available_by_days_after_quarter_end
+eu27_platform_nights_yoy_pct,emea,"Eurostat tour_ce_omr (NGT_SP, NR)",150
+eu27_platform_domestic_yoy_pct,emea,"Eurostat tour_ce_omr (NGT_SP, NR)",150
+eu27_platform_foreign_yoy_pct,emea,"Eurostat tour_ce_omr (NGT_SP, NR)",150
+eurostat_ES_platform_nights_yoy_pct,emea,Eurostat tour_ce_omr,150
+eurostat_FR_platform_nights_yoy_pct,emea,Eurostat tour_ce_omr,150
+eurostat_IT_platform_nights_yoy_pct,emea,Eurostat tour_ce_omr,150
+eurostat_DE_platform_nights_yoy_pct,emea,Eurostat tour_ce_omr,150
+eurostat_PT_platform_nights_yoy_pct,emea,Eurostat tour_ce_omr,150
+eurostat_EL_platform_nights_yoy_pct,emea,Eurostat tour_ce_omr,150
+eurostat_NL_platform_nights_yoy_pct,emea,Eurostat tour_ce_omr,150
+eurostat_big5_platform_nights_yoy_pct,emea,"Eurostat tour_ce_omr, ES+FR+IT+DE+PT",150
+bea_inbound_foreign_travel_in_us_real_yoy_pct,na,BEA PCE monthly line 339,30
+bea_inbound_foreign_travel_in_us_nom_yoy_pct,na,BEA PCE monthly line 339,30
+bea_outbound_us_travel_real_yoy_pct,na,BEA PCE monthly line 334,30
+bea_accommodations_real_yoy_pct,na,BEA PCE monthly line 249,30
+bea_accommodations_nom_yoy_pct,na,BEA PCE monthly line 249,30
+bea_accommodations_price_yoy_pct,na,BEA PCE monthly line 249 price index,30
+bea_hotels_motels_real_yoy_pct,na,BEA PCE monthly line 250,30
+bea_air_transportation_real_yoy_pct,na,BEA PCE monthly line 207,30
+statcan_cdn_returning_from_us_yoy_pct,na,Statistics Canada table 24-10-0053,40
+statcan_cdn_returning_from_us_air_yoy_pct,na,Statistics Canada table 24-10-0053,40
+statcan_cdn_returning_from_us_land_yoy_pct,na,Statistics Canada table 24-10-0053,40
+statcan_cdn_returning_from_other_yoy_pct,na,Statistics Canada table 24-10-0053,40
+statcan_us_residents_entering_canada_yoy_pct,na,Statistics Canada table 24-10-0053,40
+mar_revpar_yoy_pct,na,"Marriott quarterly release, worldwide systemwide RevPAR",33
+hlt_revpar_yoy_pct,na,"Hilton quarterly release, systemwide comparable RevPAR",24
+bkng_room_nights_yoy_pct,global,Booking Holdings quarterly release,30
+expe_room_nights_yoy_pct,global,Expedia quarterly release,37
+jnto_japan_inbound_arrivals_yoy_pct,apac,JNTO monthly visitor arrivals,21
+trends_airbnb_us_yoy_pct,na,"Google Trends 'airbnb' weekly, stitched (workstream 8)",0
+trends_airbnb_ww_yoy_pct,global,"Google Trends 'airbnb' weekly, stitched (workstream 8)",0
+fx_eur_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_gbp_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_brl_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_mxn_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_jpy_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_aud_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_krw_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_cad_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_inr_usd_per_unit_yoy_pct,fx,"FRED daily FX, quarterly average, USD per unit",0
+fx_basket_na_yoy_pct,fx,FRED with the region weights in 10_fx_basket.csv,0
+fx_basket_emea_yoy_pct,fx,FRED with the region weights in 10_fx_basket.csv,0
+fx_basket_latam_yoy_pct,fx,FRED with the region weights in 10_fx_basket.csv,0
+fx_basket_apac_yoy_pct,fx,FRED with the region weights in 10_fx_basket.csv,0
+fx_basket_global_revenue_weighted_yoy_pct,fx,FRED with the region weights in 10_fx_basket.csv,0
