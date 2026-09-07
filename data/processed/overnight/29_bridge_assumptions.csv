@@ -1,0 +1,14 @@
+item,value,source
+3Q26 guide,"revenue $4,690-4,770m, +15-17%, ~3pp FX after hedging, nights low double-digit, GBV mid-teens","2Q26 letter and call, 6 Aug 2026 (transcript line 275)"
+3Q26 implied ex-FX growth,+12.5pp = midpoint growth +15.5 less FX +3.0,arithmetic on the guide
+3Q26 implied residual,-1.5pp = ex-FX growth less nights 11.0 less ADR ex-FX 3.0,arithmetic; the guide assumes the timing gap stays close to 2Q26's
+Revenue-FX spec,"FX pp = -0.637 + 0.413 x mean(EUR/USD y/y, two prior quarters); LOO RMSE 2.3pp","05_fx_fits.csv, eurusd_avg12, ex-2021 window, n 17; mechanism in 28_fx-hedge-disclosures.md"
+FX data,FRED DEXUSEU and DTWEXBGS through 2026-08-28; 2026Q3 is 64% observed,"fresh pull, cached in 29_fred_cache/"
+EUR/USD paths,consensus 1.16-1.18 (Reuters poll 2 Sep 2026); strong USD 1.13-1.09; weak USD 1.19-1.25,"05_macro_transmission.py PATHS, unchanged"
+Hedge memo,"-0.21 / -0.21 / -0.18 / -0.18pp for 3Q26-2Q27, already inside the after-hedge FX number",2Q26 10-Q derivatives note via 28_fx_hedge_forward.csv
+"Nights, ADR ex-FX","workstream 10 regional bottom-up bear/base/bull for 3Q26, 4Q26, FY27",10_regional_forecast.csv TOTAL rows
+Take-rate / timing residual,base = trailing-four mean -0.53pp; bear -2.0 (RNPL-era low); bull +1.0; FY27 base 0,29_residual_history.csv; take rate guided flat for 2026
+Product laps (label only),"three features ~2pt nights 4Q25, ~3pt 1Q26 (RNPL US 3Q25, merchandising 4Q25, global + cancellation + fee 1Q26)",4Q25 and 1Q26 calls; CONF-12: not RNPL alone
+World Cup,"booked 2Q26, stayed 2Q/3Q26, never sized by Airbnb; a 2Q27 comparison",1Q26 call; 05 §4.6; STR June 2027 RevPAR -0.8%
+Prior-year bases,"4Q25 $2,778m; 1Q26 $2,678m; 2Q26 $3,608m; 1H26 $6,286m; FY25 $12,241m",letters via 02_kpi_panel_quarterly.csv
+Street,"Q3 $4,740m; Q4 $3,200m (range 3,050-3,700); FY26 $14,100-14,160m; FY27 $15,730-15,760m","04_current_consensus.csv, Zacks 4 Sep / S&P Global 3 Sep 2026; comparison only"

@@ -1,0 +1,19 @@
+scenario,order,term,value_pp,kind,note
+bear,0,"3Q26 guide midpoint, reported growth",15.51,start,"2Q26 letter: $4,730m on $4,095m"
+bear,1,FX after hedging: +3.0 guided in Q3 to fitted Q4,-3.43,step,Q4 fit -0.43pp on EUR y/y of +0.50% averaged over 2Q26-3Q26; 82% of that driver is already observed; identical across FX paths
+bear,2,Nights: guide 'low double-digit' (11) to Q4 regional build,-3.98,step,"4Q26 bear 7.0% (10_regional_forecast); the step is the RNPL US lap (3Q25 launch, 4Q25 merchandising) plus a 4Q25 comp of +9.8%"
+bear,3,ADR ex-FX: 3.0 to Q4 regional build,-1.0,step,4Q26 bear ADR ex-FX 2.0%; letters ran +3 / +4 / +4% in 4Q25-2Q26
+bear,4,Take-rate / timing residual: guide-implied to Q4 assumption,-0.51,step,Q3 guide implies -1.5pp; Q4 bear -2.0pp (trailing-four mean -0.53); the least certain term - RNPL book-vs-stay timing and flat take rate
+bear,5,"4Q26 reported growth, this scenario",6.59,end,"$2,961m on 4Q25 $2,778m; Street $3,200m = +15.2%; gap to Street -7.5%"
+base,0,"3Q26 guide midpoint, reported growth",15.51,start,"2Q26 letter: $4,730m on $4,095m"
+base,1,FX after hedging: +3.0 guided in Q3 to fitted Q4,-3.43,step,Q4 fit -0.43pp on EUR y/y of +0.50% averaged over 2Q26-3Q26; 82% of that driver is already observed; identical across FX paths
+base,2,Nights: guide 'low double-digit' (11) to Q4 regional build,-1.06,step,"4Q26 base 9.9% (10_regional_forecast); the step is the RNPL US lap (3Q25 launch, 4Q25 merchandising) plus a 4Q25 comp of +9.8%"
+base,3,ADR ex-FX: 3.0 to Q4 regional build,0.0,step,4Q26 base ADR ex-FX 3.0%; letters ran +3 / +4 / +4% in 4Q25-2Q26
+base,4,Take-rate / timing residual: guide-implied to Q4 assumption,0.96,step,Q3 guide implies -1.5pp; Q4 base -0.5pp (trailing-four mean -0.53); the least certain term - RNPL book-vs-stay timing and flat take rate
+base,5,"4Q26 reported growth, this scenario",11.98,end,"$3,111m on 4Q25 $2,778m; Street $3,200m = +15.2%; gap to Street -2.8%"
+bull,0,"3Q26 guide midpoint, reported growth",15.51,start,"2Q26 letter: $4,730m on $4,095m"
+bull,1,FX after hedging: +3.0 guided in Q3 to fitted Q4,-3.43,step,Q4 fit -0.43pp on EUR y/y of +0.50% averaged over 2Q26-3Q26; 82% of that driver is already observed; identical across FX paths
+bull,2,Nights: guide 'low double-digit' (11) to Q4 regional build,1.09,step,"4Q26 bull 12.1% (10_regional_forecast); the step is the RNPL US lap (3Q25 launch, 4Q25 merchandising) plus a 4Q25 comp of +9.8%"
+bull,3,ADR ex-FX: 3.0 to Q4 regional build,1.0,step,4Q26 bull ADR ex-FX 4.0%; letters ran +3 / +4 / +4% in 4Q25-2Q26
+bull,4,Take-rate / timing residual: guide-implied to Q4 assumption,2.49,step,Q3 guide implies -1.5pp; Q4 bull +1.0pp (trailing-four mean -0.53); the least certain term - RNPL book-vs-stay timing and flat take rate
+bull,5,"4Q26 reported growth, this scenario",16.66,end,"$3,241m on 4Q25 $2,778m; Street $3,200m = +15.2%; gap to Street +1.3%"

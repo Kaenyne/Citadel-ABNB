@@ -56,3 +56,6 @@ data/cache/
 data/raw/regulatory/lseg/
 data/raw/regulatory/phase2/lseg/
 data/raw/regulatory/transcripts/
+
+# workstream 29 FRED pulls are dated per run; regenerate rather than commit
+data/processed/overnight/29_fred_cache/
