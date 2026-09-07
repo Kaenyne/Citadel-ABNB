@@ -73,7 +73,7 @@ def q1_bkng_vs_expe(ed):
 
 def q2_drift(ed, ev):
     abnb = ev[ev.ticker == "ABNB"].copy()
-    abnb["hour_et"] = abnb["acceptance_et"].str[11:13].astype(int)
+    abnb["hour_utc"] = abnb["acceptance_utc"].str[11:13].astype(int)
     px = pd.read_csv(ROOT / "data/raw/prices/peer_event_closes.csv", parse_dates=["date"]).set_index("date")
     sessions = px.index
     ar_abnb_by_date = ed.drop_duplicates("reaction_date").set_index("reaction_date")["ar_abnb"]
@@ -100,7 +100,7 @@ def q2_drift(ed, ev):
     rows = []
     clean = ed[~ed.abnb_print_same_day]
     for _, a in abnb.iterrows():
-        d, h = a["filing_date"], a["hour_et"]
+        d, h = a["filing_date"], a["hour_utc"]
         cand = sessions[sessions >= d]
         if len(cand) == 0:
             continue

@@ -4,7 +4,8 @@
 (a) Daily adjusted closes for ABNB, the travel complex and benchmarks (Yahoo Finance via yfinance)
     -> data/raw/prices/peer_event_closes.csv
 (b) Earnings-release dates and acceptance timestamps for every US filer in the set, from SEC EDGAR
-    (8-K carrying Item 2.02, "Results of Operations"). EDGAR acceptanceDateTime is Eastern.
+    (8-K carrying Item 2.02, "Results of Operations"). EDGAR acceptanceDateTime is UTC despite the field name (Hilton shifts 11:01 -> 10:02 across the
+    DST boundary, i.e. a fixed 06:01 local release), so 16:00 in it is noon ET.
     -> data/raw/peers/earnings_8k_dates.csv
 
 Run: py -3.13 analysis/src/peer_readthrough/01_fetch.py
@@ -85,7 +86,7 @@ def earnings_8ks(cik):
     for p in pages:
         for form, items, fdate, acc, accept in zip(p["form"], p["items"], p["filingDate"], p["accessionNumber"], p["acceptanceDateTime"]):
             if form == "8-K" and fdate >= "2020-11-01" and "2.02" in (items or ""):
-                rows.append(dict(filing_date=fdate, acceptance_et=accept, accession=acc, items=items))
+                rows.append(dict(filing_date=fdate, acceptance_utc=accept, accession=acc, items=items))
     return rows
 
 

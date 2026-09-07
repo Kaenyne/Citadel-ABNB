@@ -2,9 +2,9 @@
 
 *Prepared 2026-09-07. Question: analysts get Booking's and Expedia's room nights, and Marriott's and Hilton's RevPAR, days before Airbnb prints. Do they trade ABNB on it, does it fill a hole in Airbnb's own disclosure, and do competitor or industry announcements move the stock outside earnings?*
 
-*New code: `analysis/src/peer_readthrough/01_fetch.py` … `04_figure.py`. New data: `data/processed/peer_readthrough/`. Figure: `analysis/figures/peer_readthrough_abnb.png`. Builds on the existing fundamentals study in `analysis/src/predictive/02_peer_*` (peer KPIs → ABNB KPIs), which this note does not repeat except where it answers the question.*
+*New code: `analysis/src/peer_readthrough/01_fetch.py` … `05_mechanism_and_tradeability.py`. New data: `data/processed/peer_readthrough/`. Figure: `analysis/figures/peer_readthrough_abnb.png`. Builds on the existing fundamentals study in `analysis/src/predictive/02_peer_*` (peer KPIs → ABNB KPIs), which this note does not repeat except where it answers the question.*
 
-**Sample.** 17 US-listed travel companies, every earnings release Dec 2020 – Sep 2026, dated from SEC 8-K Item 2.02 filings (460 filings; the reaction day is the filing date when EDGAR accepted it before 16:00 ET, otherwise the next session). 204 distinct peer reaction days, 308 peer-day observations after dropping the days Airbnb itself reported. Abnormal return (AR) is the residual of a market model against QQQ, betas fitted on the 250 sessions ending six days before, so the estimation window never sees the event. Every |AR| test is run twice — raw, and divided by ABNB's own trailing 120-day AR volatility — because ABNB's idiosyncratic vol roughly halved between 2022 and 2026 and the raw numbers otherwise say the readthrough decayed when it did not.
+**Sample.** 17 US-listed travel companies, every earnings release Dec 2020 – Sep 2026, dated from SEC 8-K Item 2.02 filings (460 filings; the reaction day is the filing date when the EDGAR acceptance timestamp is before 16:00 UTC, i.e. a pre-market release, otherwise the next session). 204 distinct peer reaction days, 308 peer-day observations after dropping the days Airbnb itself reported. Abnormal return (AR) is the residual of a market model against QQQ, betas fitted on the 250 sessions ending six days before, so the estimation window never sees the event. Every |AR| test is run twice — raw, and divided by ABNB's own trailing 120-day AR volatility — because ABNB's idiosyncratic vol roughly halved between 2022 and 2026 and the raw numbers otherwise say the readthrough decayed when it did not.
 
 **Benchmarks to hold on to.** ABNB's mean |AR| is **1.46%** on an ordinary day and **6.74%** on its own print day (n=19). Everything below sits between those two numbers, much closer to the first.
 
@@ -57,7 +57,7 @@ Booking is noise on every measure: correlation indistinguishable from zero, a *n
 
 **The apparent contradiction is the interesting part.** Booking print days *are* more volatile than normal for ABNB (1.36×, p=0.05, §2) while carrying no directional information. ABNB gets shaken on Booking's day and then goes wherever it was going. Reading direction off Booking's tape is worse than not trading it.
 
-Why Expedia and not Booking: Expedia is the closer mix comparison — US-weighted, leisure, and it owns Vrbo, an actual alternative-accommodation business. Booking's earnings-day moves over this sample have been driven by European margin, buyback capacity and its own AI narrative, none of which maps onto Airbnb's volume story. The Third Bridge Booking piece in `research/` (30 Jul 2026, "Can AI & the Connected Trip Sustain Growth") is consistent with that reading.
+Section 8 tests why.
 
 ## 4. The readthrough is a trade, not a forecast — it does not predict Airbnb's own print
 
@@ -103,20 +103,86 @@ The largest genuinely competitor-and-industry-driven move is **3 Feb 2026, the A
 
 Everything else in the unexplained tail is macro or single-stock: rates and oil (24 Jun 2026 +5.0% on the 10-year through 4.5% and WTI −3%; 6 Dec 2021 Omicron-is-milder; 8 Mar 2022 oil reversal; 22 Sep 2022 Fed dots), index events (5 Sep 2023 S&P 500 inclusion), and analyst actions (13 Dec 2024 Barclays double-downgrade to Underweight, $135→$100).
 
-## 7. What to do with this
+## 8. Why Expedia? Because Expedia's print is industry news and Booking's is Booking news
 
-1. **Watch Expedia, not Booking, and only when Expedia's own move is large.** The setup with an edge is: Expedia prints, Expedia's abnormal move exceeds ~5%, Airbnb has not yet reported. Expect ABNB to travel ~18% of Expedia's move, same direction, ~69% of the time. On the 16 such days ABNB's mean absolute move was 2.35%, half of them above 2%.
-2. **Do not read direction off Booking.** ABNB is more volatile on Booking's day with no directional content — the worst combination. If anything, size down through it.
-3. **Do not carry the readthrough into the print.** It has no predictive relationship with Airbnb's own reaction and a mildly negative one with the revenue beat. Whatever the peers imply, Airbnb's own print resets it, and at 6.74% mean absolute move the print dwarfs everything here by a factor of four.
-4. **Ignore the hotels for the stock; keep them for the model, carefully.** Marriott and Hilton prints have zero effect on ABNB. Their RevPAR is the only public proxy for the occupancy Airbnb won't give, and it marginally beats naive on a 12-quarter sample — treat that as a sanity check on the nights forecast, not an input. (`forecast-every-quarter-independently` still applies.)
-5. **The 2026 calendar risk is the AI-agent narrative, not a competitor print.** One industry note took 7% out of the stock in a day with no company news attached. That is the event class to have a pre-formed view on before Q3 (5 Nov 2026).
+Three candidate explanations, tested in `05_mechanism_and_tradeability.py`.
+
+**Rejected: "Expedia just moves more."** Expedia's own mean |AR| on its print is 10.2% against Booking's 4.0%, and a bigger signal is mechanically easier to detect. But matching on signal size makes the gap *wider*, not narrower:
+
+| | cut | n | mean \|AR_peer\| | corr | slope | same-sign |
+|---|---|---|---|---|---|---|
+| EXPE | all prints | 14 | 10.2% | 0.81 | 0.181 | 64% |
+| EXPE | \|AR\| > 5% | 9 | 14.1% | **0.82** | 0.182 | 78% |
+| EXPE | \|AR\| > 8% | 7 | 16.0% | **0.88** | 0.180 | 86% |
+| BKNG | all prints | 18 | 4.0% | 0.01 | 0.005 | 44% |
+| BKNG | \|AR\| > 5% | 7 | 7.7% | **0.21** | 0.049 | 57% |
+
+Expedia's slope is 0.18 in all three cuts — a stable structural transmission coefficient, not an artefact. Booking's seven large prints still produce almost nothing.
+
+**Rejected: "Airbnb simply trades like Expedia."** On ordinary days ABNB's beta is **0.57 to Booking** and **0.47 to Expedia** — it co-moves *more* with Booking day to day. Whatever separates them is specific to the earnings-day information, not to general co-movement.
+
+**Confirmed: Expedia's print repriced the whole travel complex; Booking's doesn't.** Measure every other travel name's abnormal return on each reporter's day:
+
+| Reporter's day | own \|AR\| | ABNB | EXPE | MAR | HLT | TRIP | BKNG |
+|---|---|---|---|---|---|---|---|
+| **EXPE reports** | 10.2% | **0.81** | — | **0.83** | **0.78** | 0.41 | 0.54 |
+| **BKNG reports** | 4.0% | 0.01 | 0.07 | 0.31 | 0.30 | 0.24 | — |
+| MAR reports | 3.7% | 0.26 | 0.45 | — | 0.79 | −0.06 | 0.35 |
+| HLT reports | 2.5% | 0.25 | 0.40 | **0.82** | — | 0.09 | 0.25 |
+
+*(correlation of the other name's abnormal return with the reporter's, on the reporter's reaction days)*
+
+This is the answer, and it is not about Airbnb at all. When Expedia prints, **Marriott (0.83), Airbnb (0.81) and Hilton (0.78) all move with it** — the market treats an Expedia result as a statement about travel demand and reprices everything. When Booking prints, nothing moves: Expedia 0.07, Airbnb 0.01, the hotels 0.30. A big Booking move is big for Booking-specific reasons — European margin, marketing efficiency, buyback capacity, its own AI/Connected Trip narrative — and the tape treats it that way.
+
+Note the fourth row too: hotel prints are industry news *for hotels* (MAR↔HLT 0.79–0.82) but Airbnb sits outside that circle at 0.25. The market prices ABNB as a travel-demand marketplace, not as lodging supply. That is a cleaner statement of §2's null than §2 could make on its own.
+
+**One caution about the mechanism.** It is a price channel, not a KPI channel. Regressing ABNB's abnormal return on the peer's *reported room nights* rather than its stock gives nothing (BKNG room nights y/y r=0.16 p=0.52; EXPE r=−0.44 p=0.12), and — the giveaway — the peer's own stock does not respond to its own room-nights number either (all |r| < 0.36, p > 0.20). Room nights are not what moves these stocks on the day; guidance, margin and tone are. So the popular story ("analysts read Expedia's room nights and mark Airbnb") is wrong in its specifics. What actually happens is that Airbnb follows Expedia's *price*, which is responding to the whole content of the release.
+
+## 9. Is any of it tradeable?
+
+Booking and Expedia release after the close, so Airbnb reacts the next session and opens with a gap. Splitting ABNB's reaction-day abnormal return into the overnight leg (prior close → open) and the intraday leg (open → close), both QQQ-adjusted:
+
+| Cut | n | share of move in the gap | corr gap | corr intraday | slope intraday |
+|---|---|---|---|---|---|
+| EXPE, all | 14 | 39% | 0.69 (p=0.006) | 0.52 (p=0.06) | 0.097 |
+| EXPE, \|AR\|>5% | 9 | 40% | 0.69 (p=0.04) | 0.54 (p=0.14) | 0.099 |
+| BKNG, all | 18 | 44% | 0.55 (p=0.02) | −0.39 (p=0.11) | −0.151 |
+
+**The good news: ~60% of Airbnb's response is still on the table after the open.** The market does not fully reprice ABNB in the pre-market, so this is not a signal that only exists in an inaccessible session.
+
+**The bad news is the sample.** The naive rule — at the open, take ABNB in the direction of Expedia's move, exit at the close, 10bp round trip:
+
+| | n | trades/yr | mean | sd | per-trade Sharpe | annualised Sharpe | bootstrap 95% CI | P(edge > 0) |
+|---|---|---|---|---|---|---|---|---|
+| EXPE, all | 14 | 3.3 | **+0.82%** | 2.14% | 0.38 | 0.69 | −0.20 to +1.97 | 0.94 |
+| EXPE, \|AR\|>5% | 9 | 3.0 | **+1.33%** | 2.39% | 0.56 | 0.96 | −0.10 to +2.85 | 0.97 |
+
+Positive, economically sensible, and **not statistically established**: t = 1.4–1.7, and the bootstrap interval includes zero in both cuts. Gross of everything it is ~+2.7% to +4.0% a year on full notional at three trades a year. There is no way to grow this sample except by waiting — Expedia prints four times a year.
+
+**Honest verdict: not a standalone strategy; a real positioning and sizing input.**
+
+1. **Usable now, no statistics required:** holding ABNB through an Expedia print is taking an unhedged 0.18-beta bet on Expedia's result. On the nine large-Expedia-move days, ABNB's mean absolute move was 2.79%. If you don't want that exposure, the Expedia calendar is a risk date, and Expedia often reports 0–1 days ahead of Airbnb (§1), so the two risks stack.
+2. **Trading it is a marginal-edge overlay,** appropriate to size small on an existing position, not to run standalone. Requires Expedia's own abnormal move to clear ~5%, which happens roughly 1.5 times a year.
+3. **Never trade Booking's direction into ABNB.** The same rule applied to Booking has a 17% hit rate and t = −3.2 — nominally a contrarian signal, but with n=18 and no mechanism behind it (§8 says Booking's move contains no industry information), the right conclusion is "no signal, and size down through the volatility."
+4. **The natural expression is options, and we can't test it.** Buying ABNB vol into an Expedia print is the cleaner trade than a directional stake, but the Bloomberg options data in `data/raw/theo_onedrive` is pull-date anchored rather than point-in-time (`theo-onedrive-data`), so implied-vol behaviour around peer prints cannot be backtested with what we hold. Flagging as the open question rather than answering it.
+
+## 10. What to do with this
+
+1. **Watch Expedia, not Booking, and only when Expedia's own move is large.** The setup is: Expedia prints, its own abnormal move clears ~5%. Expect ABNB to travel ~18% of it in the same direction, 78% of the time; on those nine days ABNB's mean absolute move was 2.79%. Roughly 60% of that is still available after the open (§9). Size it as an overlay, not a strategy — 3 trades a year at +1.3% mean, with a bootstrap interval that includes zero.
+2. **Do not read direction off Booking.** ABNB is more volatile on Booking's day with no directional content — the worst combination. Booking's print is Booking news: nothing else in the complex moves with it either (§8). Size down through it and trade nothing.
+3. **Put Expedia's print on the calendar as an ABNB risk date,** whether or not you trade it. Holding ABNB through it is an unhedged 0.18-beta bet on Expedia's result, and Expedia often prints 0–1 days ahead of Airbnb (§1), so the two risks land in the same week.
+4. **Do not carry the readthrough into the print.** It has no predictive relationship with Airbnb's own reaction and a mildly negative one with the revenue beat. Whatever the peers imply, Airbnb's own print resets it, and at 6.74% mean absolute move the print dwarfs everything here by a factor of four.
+5. **Ignore the hotels for the stock; keep them for the model, carefully.** Marriott and Hilton prints have zero effect on ABNB. Their RevPAR is the only public proxy for the occupancy Airbnb won't give, and it marginally beats naive on a 12-quarter sample — treat that as a sanity check on the nights forecast, not an input. (`forecast-every-quarter-independently` still applies.)
+6. **The 2026 calendar risk is the AI-agent narrative, not a competitor print.** One industry note took 7% out of the stock in a day with no company news attached. That is the event class to have a pre-formed view on before Q3 (5 Nov 2026).
 
 ---
 
 ### Caveats
 
 - The Expedia result rests on 14 events. The jackknife and bootstrap are reassuring (CI 0.57–0.92) but this is not a large sample, and roughly half of it is the 2022-23 period when both stocks were far more volatile.
-- 8-K Item 2.02 acceptance timestamps are the release-timing source. A handful of releases hit the wire before the 8-K was accepted; the 16:00 ET cutoff classifies these correctly for pre-market and post-close releases but would misdate a mid-session release, of which there are none in this sample.
+- 8-K Item 2.02 acceptance timestamps are the release-timing source, and they are **UTC**, not Eastern, despite EDGAR's field naming — Hilton's shifts 11:01 → 10:02 across the DST boundary, i.e. a fixed 06:01 local release. Every release in the sample is either pre-market (10-12 UTC) or post-close (20-21 UTC), so a 16:00 UTC cutoff separates them cleanly; it would misdate a mid-session release, of which there are none.
+- The BKNG and EXPE event sets overlap on two days (2023-05-05 and 2023-11-03, when both reported into the same session). Those days appear in both per-name samples, so the two are not fully independent.
+- §9's trading rule is evaluated on the same 14 events that motivated it. There is no out-of-sample period, which is the main reason the verdict there is "not established" rather than "works".
 - Vacasa, Sonder and Despegar were dropped: no usable price history from Yahoo over the window.
 - IHG, Trip.com, MakeMyTrip and Despegar file 6-K, not 8-K, so they are absent from the earnings-date set. Trip.com in particular is a plausible readthrough for Airbnb's APAC nights and is not tested here.
 - Post-event drift (t+1…t+5) is reported in `02_peer_summary.csv` but is not stable at these sample sizes and no claim is made from it.
@@ -129,7 +195,10 @@ Everything else in the unexplained tail is macro or single-stock: rates and oil 
 | `analysis/src/peer_readthrough/02_event_study.py` | abnormal returns, per-peer tests, era-matched permutations |
 | `analysis/src/peer_readthrough/03_informativeness.py` | BKNG-vs-EXPE robustness, pre-print drift, hotel asymmetry |
 | `analysis/src/peer_readthrough/04_figure.py` | the two-panel figure |
+| `analysis/src/peer_readthrough/05_mechanism_and_tradeability.py` | why Expedia (M1-M3), gap-vs-intraday and the trading rule (T1) |
 | `data/processed/peer_readthrough/02_event_days.csv` | every peer reaction day with ABNB's move |
 | `data/processed/peer_readthrough/02_peer_summary.csv` | the full test grid |
 | `data/processed/peer_readthrough/03_ota_event_log.csv` | the readable BKNG/EXPE log, newest first |
 | `data/processed/peer_readthrough/02_abnb_top_moves.csv` | ABNB's 60 largest abnormal days, tagged |
+| `data/processed/peer_readthrough/05_m2_response_matrix.csv` | who moves on whose print day - the mechanism table |
+| `data/processed/peer_readthrough/05_t1_gap_vs_intraday.csv` | overnight vs intraday split of every OTA event |

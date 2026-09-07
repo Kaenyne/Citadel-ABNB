@@ -6,10 +6,12 @@ information the market puts into ABNB, and how much?
 
 Inputs
   data/raw/prices/peer_event_closes.csv    daily adjusted closes (01_fetch.py)
-  data/raw/peers/earnings_8k_dates.csv     8-K Item 2.02 filing dates + Eastern acceptance times (01_fetch.py)
+  data/raw/peers/earnings_8k_dates.csv     8-K Item 2.02 filing dates + UTC acceptance times (01_fetch.py)
 
 Method
-  Reaction day  = the filing date when the 8-K was accepted before 16:00 ET, otherwise the next trading day.
+  Reaction day  = the filing date when the 8-K acceptance timestamp is before 16:00 UTC (= noon ET), otherwise
+  the next trading day. Every release in the sample is either pre-market (10-12 UTC) or post-close (20-21 UTC),
+  so the cutoff separates them cleanly; it would misdate a mid-session release, of which there are none.
   Abnormal return (AR) = residual of a market model r_i = a + b*r_QQQ fitted on the 250 trading days ending
   6 sessions before the event (so the estimation window never contains the event). Days without a full
   window are dropped. The same model is applied to ABNB and to every peer.
@@ -57,11 +59,11 @@ def load():
     px = px.dropna(axis=1, how="all")
     ret = px.pct_change() * 100
     ev = pd.read_csv(ROOT / "data/raw/peers/earnings_8k_dates.csv", parse_dates=["filing_date"])
-    ev["hour_et"] = ev["acceptance_et"].str[11:13].astype(int)
+    ev["hour_utc"] = ev["acceptance_utc"].str[11:13].astype(int)
     sessions = ret.index
 
     def reaction(row):
-        d, h = row["filing_date"], row["hour_et"]
+        d, h = row["filing_date"], row["hour_utc"]
         on_or_after = sessions[sessions >= d]
         if len(on_or_after) == 0:
             return pd.NaT
@@ -71,7 +73,7 @@ def load():
         return after[0] if len(after) else pd.NaT
 
     ev["reaction_date"] = ev.apply(reaction, axis=1)
-    ev["premarket"] = ev["hour_et"] < 16
+    ev["premarket"] = ev["hour_utc"] < 16
     return ret, ev.dropna(subset=["reaction_date"])
 
 
