@@ -136,3 +136,7 @@ evidence and unresolved leads. It cannot certify private/unshared work. See the
 ## Housing-driven STR regulatory research (5 Sep 2026, committed 7 Sep on `krish/regulatory-db`)
 
 The [regulatory research package](../regulatory/README.md) holds 32 ranked factors, 48 source records and a 14-quarter earnings-transcript index. Its source ids use the separate `REG-S` namespace (REG-S01 to REG-S48) so they do not collide with the S-series above. Full log: [source index](../regulatory/source_index.md); [factor register](../regulatory/factor_register.md); [earnings digest](../regulatory/earnings_digest.md); [quantification](../regulatory/quantification/README.md); [phase 2 matched cohorts](../regulatory/phase2/README.md). Public raw inputs are committed under `data/raw/regulatory/`; LSEG story bodies and transcript texts stay local (see data/README.md).
+
+## Selected hotel panel and release review
+
+The `hotel_13_*_sources.json` ledgers preserve the selected-market extension provenance and explicit reuse. The [release audit](../../analysis/reviews/2026-09-07_churn-hotel-code-audit.md) distinguishes source observations, scenario assumptions and model-use limits, including overlap with the latest visible regulatory, guidance, nights and fee-elasticity work.

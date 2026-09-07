@@ -50,3 +50,17 @@ ledger with its random sample. These scripts use only the Python standard librar
 and winter source-composition/reappearance diagnostics. `report_fee_churn_recent.py`
 builds the [recent fee follow-up](../research/notes/2026-09-07_fee-churn-recent-followup.md).
 Latest disappearance has unequal observation windows and no mature 90-day confirmation.
+
+## Churn and hotel code review
+
+Start with the [code and model-use audit](reviews/2026-09-07_churn-hotel-code-audit.md)
+and its [per-file register](reviews/2026-09-07_churn-hotel-code-register.csv).
+The selected hotel supply scope is now the [original 13-market panel](../research/notes/2026-09-07_hotel-original-13-market-coverage.md).
+These studies support diagnostics and sensitivities; no direct forecast coefficient
+or additive hotel revenue overlay is validated. The review explains how to use them
+alongside the existing guidance, revenue, regulatory and fee-elasticity work.
+
+Use Python 3.11+ and the repository requirements. Dated report builders verify frozen
+input hashes before writing. Exact source replay requires the preserved, ignored raw
+capture/extraction bundles; a fresh clone alone is insufficient. Run new observations
+in a separate output directory or worktree so the reviewed studies remain reproducible.

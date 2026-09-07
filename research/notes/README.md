@@ -17,3 +17,5 @@ with 90-day confirmation, earlier-quarter comparisons and a financial sensitivit
 The [August follow-up](2026-09-07_fee-churn-recent-followup.md) adds the latest 13-market
 intervals, diagnoses the January capture-composition break, and distinguishes
 fee-related host decisions, reported exits and observed competitor steering.
+
+The [original 13-market hotel coverage](2026-09-07_hotel-original-13-market-coverage.md) scopes the expanded supply evidence without pooling mixed units or inventing production data. Read the [code and model-use audit](../../analysis/reviews/2026-09-07_churn-hotel-code-audit.md) before incorporating any churn or hotel sensitivity into the guidance/revenue model.
