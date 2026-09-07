@@ -18,6 +18,7 @@ from pathlib import Path
 import random
 import re
 import platform
+from research_integrity import atomic_write_csv
 
 ROOT = Path(__file__).resolve().parents[2]
 FIELDS = ["id", "name", "description", "picture_url", "host_id", "license", "room_type",
@@ -59,13 +60,13 @@ def terminal_state(observations, persistence_days=90):
     dates = [d for d, _ in observations]
     if dates != sorted(set(dates)):
         raise ValueError("Observation dates must be unique and increasing")
-    if persistence_days <= 0:
-        raise ValueError("Persistence must be positive")
+    if isinstance(persistence_days, bool) or not isinstance(persistence_days, int) or persistence_days <= 0:
+        raise ValueError("Persistence must be a positive integer number of days")
     last_present = 0
     ever_missing = False
     returned = False
     for j, (_, state) in enumerate(observations):
-        if state not in (True, False, None):
+        if state is not True and state is not False and state is not None:
             raise ValueError("Invalid observation state")
         if state is False:
             ever_missing = True
@@ -91,13 +92,7 @@ def terminal_state(observations, persistence_days=90):
 
 
 def write_csv(path, rows):
-    if not rows:
-        raise ValueError(f"Refusing an empty output without a schema: {path}")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
-        writer.writeheader()
-        writer.writerows(rows)
+    atomic_write_csv(path, rows)
 
 
 def load_snapshots(raw_dir):
@@ -161,7 +156,7 @@ def build_market(market, snapshots, policy):
             match = None
             if own is None and unique_anchor:
                 candidates = snapshot["licenses"].get(token, [])
-                if len(candidates) == 1 and compatible(listing, candidates[0]):
+                if len(candidates) == 1 and candidates[0]['id'] not in baseline and compatible(listing, candidates[0]):
                     match = candidates[0]
                     linked_state = True
                     aliases.append({"market": market, "baseline_id": identifier, "license_id": token,
@@ -248,11 +243,6 @@ def main():
             granular.extend(rows)
             if policy == "conservative":
                 all_aliases.extend(aliases)
-    write_csv(args.output_dir/"cohort_summary.csv", summary)
-    write_csv(args.output_dir/"snapshot_quality.csv", qa)
-    write_csv(args.raw_dir/"listing_outcomes.csv", granular)
-    if all_aliases:
-        write_csv(args.raw_dir/"license_alias_evidence.csv", all_aliases)
     registry_path = args.raw_dir/f"san_diego_stro_licenses_{args.registry_date}.csv"
     registry_metadata = json.loads(registry_path.with_suffix(".json").read_text(encoding="utf-8"))
     if hashlib.sha256(registry_path.read_bytes()).hexdigest() != registry_metadata["sha256"]:
@@ -277,7 +267,20 @@ def main():
                    registry_expiration=matches[0]["date_expiration"] if len(matches) == 1 else "",
                    destination="unresolved", destination_evidence_url="")
         sample[i-1] = row
-    write_csv(args.raw_dir/"destination_sample.csv", sample)
+    sample_path = args.raw_dir/'destination_sample.csv'
+    if sample_path.exists():
+        from summarize_listing_destinations import sample_identity_hash
+        with sample_path.open(encoding='utf-8-sig', newline='') as handle:
+            existing_sample = list(csv.DictReader(handle))
+        if sample_identity_hash(existing_sample) != sample_identity_hash(sample):
+            raise ValueError('The frozen reviewed sample would change; use a separate raw/output directory and evidence ledger')
+    # Validate registry and sample identity before replacing generated artifacts.
+    write_csv(args.output_dir/'cohort_summary.csv', summary)
+    write_csv(args.output_dir/'snapshot_quality.csv', qa)
+    write_csv(args.raw_dir/'listing_outcomes.csv', granular)
+    atomic_write_csv(args.raw_dir/'license_alias_evidence.csv', all_aliases,
+                     ['market','baseline_id','license_id','replacement_id','snapshot_complete','method'])
+    write_csv(sample_path, sample)
     registry_summary = {"eligible_sample_population": len(sample_population), "sample_size": len(sample),
         "sample_seed": args.seed, "sample_design": "simple random sample of conservative persistent, baseline reviewed STR entire-home IDs with unique baseline STRO license",
         "eligible_population_current_registry_match": sum(len(registry.get(r["license_id"], [])) == 1 for r in sample_population),

@@ -8,6 +8,7 @@ import csv
 import gzip
 from pathlib import Path
 import re
+from research_integrity import verify_sha256
 
 ROOT=Path(__file__).resolve().parents[2]
 PATTERN=re.compile(r"\b(?:vrbo|homeaway|abritel|fewo-direkt|expedia|houfy)\b|booking\.com",re.I)
@@ -35,8 +36,12 @@ def main():
             if r["policy"]=="exclude_feb_may_negatives" and r["status"]=="persistent_absence"
             and r["baseline_room_type"]=="Entire home/apt" and float(r["baseline_reviews_ltm"])>0
             and r["baseline_minimum_nights"] and float(r["baseline_minimum_nights"])<30}
-        assert len(outcomes)==int(metric["persistent_90"]),(market,len(outcomes),metric["persistent_90"])
+        if len(outcomes) != int(metric['persistent_90']):
+            raise ValueError(f'Outcome cohort does not reconcile: {market}')
         item=min((r for r in manifest if r["market"]==market),key=lambda r:r["snapshot_start"])
+        if item['status'] != 'ok':
+            raise ValueError(f'Baseline acquisition failed: {market}')
+        verify_sha256(ROOT/item['local_path'], item['sha256'])
         count=0
         seen=set()
         nonempty=0

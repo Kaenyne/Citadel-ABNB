@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from model_hotel_funnel import available_daily_rooms
+from research_integrity import finite_number
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / 'data/raw/hotel_funnel_audit/public'
@@ -16,8 +17,10 @@ OUT = ROOT / 'data/processed/hotel_funnel_audit'
 
 def hotel_category_sum(total, hotel_categories, excluded_categories):
     values = [total, *hotel_categories, *excluded_categories]
-    if any(not isinstance(x, (int, float)) or x < 0 for x in values):
-        raise ValueError('Missing or invalid category count')
+    for value in values:
+        finite_number(value, 'Category count', minimum=0)
+        if int(value) != value:
+            raise ValueError('Category count must be integral')
     if sum(hotel_categories) + sum(excluded_categories) != total:
         raise ValueError('Hotel and excluded categories do not reconcile to total')
     return sum(hotel_categories)

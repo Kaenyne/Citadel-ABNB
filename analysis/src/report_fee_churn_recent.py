@@ -1,9 +1,11 @@
 """Build the follow-up memo from computed aggregates and reviewed public evidence."""
 import json
 from extend_fee_churn_recent import ROOT, OUT, read
+from research_integrity import verify_frozen_report
 
 
 def main():
+    verify_frozen_report(ROOT, 'report_fee_churn_recent.py')
     pooled = read(OUT / "pooled_rates.csv")
     markets = read(OUT / "market_rates.csv")
     winter = read(OUT / "winter_reappearances.csv")
@@ -15,10 +17,11 @@ def main():
     for row in pooled:
         group = [r for r in markets if r["cohort"] == row["cohort"] and r["start_month"] == row["start_month"]]
         n, d = int(row["baseline_ids"]), int(row["missing_ids"])
-        assert len(group) == 13
-        assert sum(int(r["baseline_ids"]) for r in group) == n
-        assert sum(int(r["missing_ids"]) for r in group) == d
-        assert abs(d/n-float(row["disappearance_rate"])) < 1e-12
+        if (len(group) != 13 or n <= 0 or
+                sum(int(r["baseline_ids"]) for r in group) != n or
+                sum(int(r["missing_ids"]) for r in group) != d or
+                abs(d/n-float(row["disappearance_rate"])) >= 1e-12):
+            raise ValueError('Recent fee report market counts and pooled rates do not reconcile')
         table.append(f"| {row['start_month']} → {row['end_month']} | {'All IDs' if row['cohort']=='all_listings' else 'Reviewed short-stay homes'} | {n:,} | {d:,} | {d/n:.2%} | {row['min_vintage_gap_days']}–{row['max_vintage_gap_days']} |")
     winter_table = []
     for market in ("toronto", "vaud", "new-zealand"):
@@ -32,7 +35,7 @@ def main():
     evidence_table = [f"| {r['id']} | {r['date']} | {r['classification'].replace('_',' ')} | {r['claim']} | [Source]({r['url']}) |" for r in ledger["cases"]]
     text = f"""# Airbnb fee response: August observations and winter-spike diagnosis
 
-Prepared September 7, 2026 by Codex for the Citadel-ABNB team. Sources: existing team and Inside Airbnb captures, official fee notices, and reviewed public host accounts. All work is local, not published to GitHub.
+Prepared September 7, 2026 by Codex for the Citadel-ABNB team. Sources: existing team and Inside Airbnb captures, official fee notices, and reviewed public host accounts.
 
 **Decision:** There is direct evidence that the fee is provoking host responses, including an Airbnb listing steering visitors toward a competing platform and explicit decisions to stop hosting. We have not independently verified a completed delisting caused specifically by 15.5%, or estimated the incremental exit rate attributable to it. The earlier January spike is materially contaminated by changes in capture composition and subsequent reappearances; it should not be used as evidence of a fee-driven exodus.
 

@@ -8,22 +8,24 @@ import re
 import subprocess
 import zipfile
 import argparse
+import shutil
+from research_integrity import atomic_write_csv
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'data/processed/hotel_funnel_audit'
 RAW = ROOT / 'data/raw/hotel_funnel_audit/team_review'
-GH = Path.home() / 'AppData/Local/Programs/GitHub CLI/bin/gh.exe'
+GH = shutil.which('gh') or str(Path.home() / 'AppData/Local/Programs/GitHub CLI/bin/gh.exe')
 REPO = 'Kaenyne/Citadel-ABNB'
 
 def api(path):
-    return subprocess.check_output([str(GH), 'api', f'repos/{REPO}/{path}'])
+    return subprocess.check_output([str(GH), 'api', f'repos/{REPO}/{path}'], timeout=60)
 
 
 def refresh_sources(urls):
     from urllib.parse import urlsplit
     def normalize(url):
         u=urlsplit(url)
-        return (u.netloc.lower().removeprefix('www.'),u.path.rstrip('/').lower(),u.query)
+        return (u.netloc.lower().removeprefix('www.'),u.path.rstrip('/'),u.query)
     rows=[]
     for source in json.loads((ROOT/'research/sources/hotel_funnel_audit.json').read_text(encoding='utf-8')):
         hits=[r for r in urls if normalize(r['url'])==normalize(source['url'])]
@@ -44,7 +46,10 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
     tree = json.loads(api('git/trees/main?recursive=1'))
+    if tree.get('truncated'):
+        raise ValueError('Incomplete remote tree cannot support an overlap audit')
     rev = tree['sha']
+    expected_blobs = {x['path']:x['sha'] for x in tree['tree'] if x['type'] == 'blob'}
     paths = [x['path'] for x in tree['tree'] if x['type'] == 'blob' and
              ((x['path'].startswith('research/notes/') and x['path'].endswith('.md')) or
               x['path'] == 'research/sources/README.md' or
@@ -56,9 +61,15 @@ def main():
         import base64
         obj = json.loads(payload)
         raw = base64.b64decode(obj['content'])
+        if hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest() != expected_blobs[path]:
+            raise ValueError(f'Remote review blob failed verification: {path}')
         target = RAW / path
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes(raw)
+        if target.exists():
+            if target.read_bytes() != raw:
+                raise ValueError('Existing frozen review differs; use collect_hotel_expanded_team.py or a separate review directory')
+        else:
+            target.write_bytes(raw)
         return ('github', f'https://github.com/{REPO}/blob/{rev}/{path}', raw)
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
         documents.extend(pool.map(fetch, paths))

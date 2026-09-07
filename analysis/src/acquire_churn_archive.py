@@ -13,6 +13,7 @@ from datetime import date, datetime, timezone
 import gzip
 import hashlib
 import json
+import re
 from pathlib import Path
 import time
 import urllib.parse
@@ -20,10 +21,23 @@ import urllib.request
 
 from acquire_churn_panel import ROOT
 from execute_listing_churn import write_csv
+from research_integrity import verify_sha256
 
 MONTHS = ("2025-09", "2025-12", "2026-03", "2026-06")
 KEEP = ("id", "host_id", "room_type", "minimum_nights", "number_of_reviews_ltm",
         "license", "latitude", "longitude", "bedrooms")
+
+
+def validate_source_row(row):
+    root = urllib.parse.urlsplit(row['dataRoot'])
+    if root.scheme != 'https' or root.netloc != 'data.insideairbnb.com' or root.query or root.fragment:
+        raise ValueError('Unexpected source domain or URL components')
+    if not re.fullmatch(r'[^\W_]+(?:-[^\W_]+)*', row['link']):
+        raise ValueError('Market ID must be a safe filename component')
+    if date.fromisoformat(row['publishDate']).isoformat() != row['publishDate']:
+        raise ValueError('Snapshot date must use YYYY-MM-DD')
+    if not root.path.endswith('/') or '..' in urllib.parse.unquote(root.path).split('/'):
+        raise ValueError('Invalid source path')
 
 
 def select_snapshots(datasets):
@@ -31,6 +45,7 @@ def select_snapshots(datasets):
     for row in datasets:
         if not row["dataRoot"].startswith("https://data.insideairbnb.com/"):
             raise ValueError("Unexpected source domain")
+        validate_source_row(row)
         groups[row["link"]].append(row)
     selected, inventory = [], []
     for market, rows in sorted(groups.items()):
@@ -66,7 +81,13 @@ def inspect_capture(path, compact_path, start):
             writer.writerow({k:row[k] for k in KEEP})
     if not ids or min(dates)<date.fromisoformat(start) or (max(dates)-date.fromisoformat(start)).days>30:
         raise ValueError("Empty file or inconsistent scrape dates")
-    temporary.replace(compact_path)
+    if compact_path.exists():
+        with gzip.open(temporary, 'rb') as proposed, gzip.open(compact_path, 'rb') as existing:
+            if proposed.read() != existing.read():
+                raise ValueError('Existing compact content differs; preserve it and use a new capture directory')
+        temporary.unlink()
+    else:
+        temporary.replace(compact_path)
     with path.open("rb") as h: digest=hashlib.file_digest(h,"sha256").hexdigest()
     with compact_path.open("rb") as h: compact_digest=hashlib.file_digest(h,"sha256").hexdigest()
     return dict(rows=len(ids),snapshot_complete=max(dates).isoformat(),sha256=digest,
@@ -75,6 +96,7 @@ def inspect_capture(path, compact_path, start):
 
 
 def acquire(row, raw_dir, prior, team_counts, team_current):
+    validate_source_row(row)
     market,start=row["link"],row["publishDate"]
     url=urllib.parse.quote(row["dataRoot"]+start+"/data/listings.csv.gz",safe=":/")
     name=f"{market}_{start}_listings.csv.gz"
@@ -93,6 +115,9 @@ def acquire(row, raw_dir, prior, team_counts, team_current):
     try:
         if path.exists():
             result["acquisition"]="reused"
+            previous = prior.get((market, start))
+            if previous and previous.get('sha256'):
+                verify_sha256(path, previous['sha256'])
         else:
             time.sleep(.5)
             req=urllib.request.Request(url,headers={"User-Agent":"Citadel-ABNB listing-churn research"})

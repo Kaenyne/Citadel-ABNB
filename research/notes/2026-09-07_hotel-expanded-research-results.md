@@ -1,6 +1,6 @@
 # Airbnb hotels: expanded research results and the remaining investment test
 
-**Confirmed scope extension:** the user explicitly selected all 13 original listing-panel markets: Austin, Barcelona, Chicago, London, Los Angeles, Mexico City, Nashville, New Orleans, New York City, Paris, Rome, San Diego and Sydney. The [active market file](../../analysis/config/hotel_markets_13.csv) controls this extension; Jessica's accommodation-choice list is not the target. Existing [Austin license records](hotel-13-austin-extension.md) and [London capacity data](../../data/raw/hotel_13_market_extension/london/london_capacity_metadata.json) are reused, with the remaining markets being assembled on the same evidence fields. Counts in the original audit below precede this extension and include some out-of-scope source populations.
+**Completed 13-market extension:** the user explicitly selected all 13 original listing-panel markets: Austin, Barcelona, Chicago, London, Los Angeles, Mexico City, Nashville, New Orleans, New York City, Paris, Rome, San Diego and Sydney. The [13-market results](2026-09-07_hotel-original-13-market-coverage.md) and [coverage table](../../data/processed/hotel_13_market_panel/market_coverage.csv) now include every selected market. The [active market file](../../analysis/config/hotel_markets_13.csv) controls the scope and the terminal request. Counts in the original audit below precede this extension and include some out-of-scope source populations.
 
 **As of September 7, 2026. Three parallel research agents completed disclosure, demand-data and supply/economics audits. The parent independently checked outputs, current team overlap and the financial comparison baseline.** The investment horizon is approximately September 2026–September 2027; the terminal request uses Q4 2026–Q3 2027 as four full forecast quarters, with the partial-quarter difference to be reconciled.
 
@@ -109,7 +109,7 @@ The combined new source ledgers contain **253 URLs, 13 exact normalized URL matc
 
 ## Exact next inputs and delivery status
 
-The [Bloomberg / Refinitiv request](../../data/requests/hotel_research_bloomberg_refinitiv_request.md) is ready. In priority order:
+The [Bloomberg / Refinitiv request](../../data/requests/hotel_channel_and_consensus_request.md) is ready. In priority order:
 
 1. **Hotel-specific broker notes/models and complete management remarks**, January 2024–latest September 2026; original Jefferies June 5 model and latest update are a concrete starting point. Preserve hotel nights/revenue/fees/costs, actual-versus-estimate labels and underlying sources.
 2. **All entitled broker forecasts plus consensus** for Q3 2026–Q4 2028 and FY2026–2028, prioritizing Q4 2026–Q3 2027: revenue, adjusted EBITDA, GAAP/adjusted EPS, nights/seats, GBV and ADR, with contributor counts and dispersion. Historical fixed-period estimates/revisions from January 2024 and event snapshots back to Q4 2020 complete the expectations test. Reuse Theo's existing event request workbook.

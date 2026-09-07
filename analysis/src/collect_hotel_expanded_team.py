@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import shutil
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -21,7 +22,7 @@ REVISION = 'e3055e627f4b7952c592939a03849f5fc32b9235'
 REPOSITORY = 'Kaenyne/Citadel-ABNB'
 RAW = ROOT / 'data/raw/hotel_expanded_research'
 OUT = ROOT / 'data/processed/hotel_expanded_research'
-GH = Path.home() / 'AppData/Local/Programs/GitHub CLI/bin/gh.exe'
+GH = shutil.which('gh') or str(Path.home() / 'AppData/Local/Programs/GitHub CLI/bin/gh.exe')
 TEXT_TYPES = {'.md', '.csv', '.json', '.txt'}
 MAX_BYTES = 5_000_000
 

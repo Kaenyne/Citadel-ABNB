@@ -5,6 +5,7 @@ from pathlib import Path
 
 from acquire_churn_archive import ROOT
 from execute_listing_churn import write_csv
+from research_integrity import finite_number
 
 
 def read(path):
@@ -13,6 +14,9 @@ def read(path):
 
 
 def summarize(rows, metadata):
+    keys = [(r['panel'], r['cohort'], r['portfolio'], r['policy'], r['market'], r['start_month'], r['end_month']) for r in rows]
+    if len(keys) != len(set(keys)):
+        raise ValueError('Duplicate market/cohort/interval rows would silently replace evidence')
     output, comparisons = [], []
     specs = {
         "balanced_event": ("monthly", (("2025-09","2025-10"),("2025-10","2025-11"),("2025-11","2025-12"),("2025-12","2026-01"))),
@@ -90,6 +94,14 @@ def persistence_summary(rows, metadata):
 def economic_scenarios(ledger):
     e = ledger["economic_example"]
     old_price, old_host, new_host = e["old_booking_subtotal"], e["old_host_fee"], e["new_host_fee"]
+    finite_number(old_price, 'Booking subtotal', minimum=0)
+    if old_price == 0:
+        raise ValueError('Payout-change illustration requires a positive subtotal')
+    for label, value in [('old_host_fee', old_host), ('new_host_fee', new_host),
+                         ('illustrative_old_guest_fee', e['illustrative_old_guest_fee'])]:
+        finite_number(value, label, minimum=0, maximum=1)
+    if old_host == 1 or new_host == 1:
+        raise ValueError('Host fees must leave a positive payout for the preservation example')
     old_payout = old_price*(1-old_host)
     prices = [("old_split_fee",old_price,old_host,e["illustrative_old_guest_fee"]),
               ("single_fee_unchanged_price",old_price,new_host,0),
@@ -98,12 +110,30 @@ def economic_scenarios(ledger):
         guest_total=p*(1+gf),host_payout=p*(1-hf),platform_fee=p*(hf+gf),
         host_payout_change_pct=100*(p*(1-hf)/old_payout-1),
         interpretation="Calculated illustration excluding taxes; not observed repricing") for name,p,hf,gf in prices]
-    q2 = next(s for s in ledger["sources"] if s["id"]=="FEE-04")
+    scales = [s for s in ledger['sources'] if s['id'] == 'FEE-04']
+    if len(scales) != 1:
+        raise ValueError('Require one unambiguous Q2 reference-scale source')
+    q2 = scales[0]
+    for field in ('revenue_usd_m', 'adjusted_ebitda_usd_m'):
+        finite_number(q2[field], field, minimum=0)
+        if q2[field] == 0:
+            raise ValueError('Positive financial reference scale required')
     s = ledger["materiality_scenario"]
+    for key in ('affected_share_of_counterfactual_booking_value', 'time_exposure_in_period',
+                'incremental_contribution_margin'):
+        finite_number(s[key], key, minimum=0, maximum=1)
+    finite_number(s['relative_lost_listing_productivity'], 'Relative productivity', minimum=0)
+    for key in ('incremental_churn_rates', 'booking_value_recaptured_within_airbnb', 'relative_take_rate_changes'):
+        if not s[key]:
+            raise ValueError(f'Empty scenario grid: {key}')
+        for value in s[key]:
+            finite_number(value, key, minimum=-1 if key == 'relative_take_rate_changes' else 0,
+                          maximum=None if key == 'relative_take_rate_changes' else 1)
     scenarios = []
     for churn in s["incremental_churn_rates"]:
         for recapture in s["booking_value_recaptured_within_airbnb"]:
             loss = s["affected_share_of_counterfactual_booking_value"]*churn*s["relative_lost_listing_productivity"]*(1-recapture)*s["time_exposure_in_period"]
+            finite_number(loss, 'Net company booking-value loss', minimum=0, maximum=1)
             for take in s["relative_take_rate_changes"]:
                 revenue_change = (1-loss)*(1+take)-1
                 revenue_usd_m = q2["revenue_usd_m"]*revenue_change
@@ -112,7 +142,7 @@ def economic_scenarios(ledger):
                     demand_recapture=recapture,relative_take_rate_change=take,net_booking_value_change=-loss,
                     revenue_change=revenue_change,revenue_change_usd_m=revenue_usd_m,adjusted_ebitda_change_usd_m=ebitda_usd_m,
                     adjusted_ebitda_change=ebitda_usd_m/q2["adjusted_ebitda_usd_m"],
-                    interpretation="Hypothetical full-period sensitivity using Q2 2026 scale, not a forecast; assumed 70% incremental contribution margin"))
+                    interpretation=f"Hypothetical sensitivity using Q2 2026 scale, not a forecast; assumed {s['incremental_contribution_margin']:.0%} incremental contribution margin; exposure {s['time_exposure_in_period']}; take-rate change is company-wide and relative, not fee percentage points"))
     return economics, scenarios
 
 

@@ -9,6 +9,7 @@ import json
 import math
 from pathlib import Path
 from statistics import NormalDist
+from research_integrity import finite_number
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -16,15 +17,15 @@ ROOT = Path(__file__).resolve().parents[2]
 def hotels_per_group(relative_effect: float, residual_cv: float,
                      alpha: float = 0.05, power: float = 0.80) -> int:
     values = (relative_effect, residual_cv, alpha, power)
-    if not all(math.isfinite(v) for v in values):
-        raise ValueError('Inputs must be finite.')
+    for value in values:
+        finite_number(value, 'Statistical planning input')
     if relative_effect <= 0 or residual_cv <= 0:
         raise ValueError('Effect and residual coefficient of variation must be positive.')
     if not 0 < alpha < 1 or not 0.5 < power < 1:
         raise ValueError('Require 0<alpha<1 and 0.5<power<1.')
     normal = NormalDist()
     z = normal.inv_cdf(1-alpha/2) + normal.inv_cdf(power)
-    return math.ceil(2 * z*z * (residual_cv/relative_effect)**2)
+    return max(2, math.ceil(2 * z*z * (residual_cv/relative_effect)**2))
 
 
 def minimum_detectable_effect(n_each: int, residual_cv: float,

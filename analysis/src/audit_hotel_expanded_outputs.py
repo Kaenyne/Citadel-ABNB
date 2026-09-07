@@ -11,6 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+from research_integrity import atomic_write_csv
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'data/processed/hotel_expanded_research'
@@ -65,11 +66,6 @@ def main() -> None:
                 'novelty_note': 'Reused URL; do not call independent corroboration' if matches else
                 'No exact URL match; claim/source-family novelty still requires semantic review',
             })
-    with (OUT / 'expanded_source_overlap.csv').open('w', encoding='utf-8', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(source_rows[0]))
-        writer.writeheader()
-        writer.writerows(source_rows)
-
     coverage = json.loads((SUPPLY / 'coverage_summary.json').read_text(encoding='utf-8'))
     cross = json.loads((SUPPLY / 'crosswalk_summary.json').read_text(encoding='utf-8'))
     nyc = read_csv(SUPPLY / 'nyc_hotel_license_frame.csv')
@@ -114,7 +110,8 @@ def main() -> None:
               'absolute_current_airbnb_hotel_nights_obtained': False,
               'absolute_current_airbnb_hotel_revenue_obtained': False,
               'causal_hotel_uplift_estimate_obtained': False}
-    (OUT / 'expanded_output_audit.json').write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')
+    atomic_write_csv(OUT / 'expanded_source_overlap.csv', source_rows)
+    (OUT / 'expanded_output_audit.json').write_text(json.dumps(result, indent=2, allow_nan=False) + '\n', encoding='utf-8')
     print(json.dumps(result, indent=2))
 
 

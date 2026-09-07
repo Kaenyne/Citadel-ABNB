@@ -37,6 +37,9 @@ def reconcile(sample, evidence):
         raise ValueError("Evidence must cover the fixed sample exactly once")
     sample_map = {r["case_id"]:r for r in sample}
     for r in evidence:
+        for key in ('listing_id', 'license_id', 'first_terminal_absence', 'last_present'):
+            if key in r and r[key] != sample_map[r['case_id']].get(key):
+                raise ValueError(f'Manual evidence cannot change sample identity/timing: {key}')
         if r["finding"] not in FINDINGS:
             raise ValueError("Unsupported finding; update the documented evidence rules first")
         if r["finding"] != "unresolved":

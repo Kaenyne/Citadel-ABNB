@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
 from acquire_churn_archive import ROOT
+from research_integrity import verify_frozen_report
 
 
 def read(name):
@@ -89,6 +90,7 @@ def interval_table(rows):
 
 
 def main():
+    verify_frozen_report(ROOT, 'report_fee_churn.py')
     trends=read("trend_summary.csv")
     persistent=read("persistence_summary.csv")
     chart(trends,persistent)

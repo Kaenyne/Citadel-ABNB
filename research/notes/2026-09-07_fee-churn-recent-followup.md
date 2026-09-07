@@ -1,6 +1,6 @@
 # Airbnb fee response: August observations and winter-spike diagnosis
 
-Prepared September 7, 2026 by Codex for the Citadel-ABNB team. Sources: existing team and Inside Airbnb captures, official fee notices, and reviewed public host accounts. All work is local, not published to GitHub.
+Prepared September 7, 2026 by Codex for the Citadel-ABNB team. Sources: existing team and Inside Airbnb captures, official fee notices, and reviewed public host accounts.
 
 **Decision:** There is direct evidence that the fee is provoking host responses, including an Airbnb listing steering visitors toward a competing platform and explicit decisions to stop hosting. We have not independently verified a completed delisting caused specifically by 15.5%, or estimated the incremental exit rate attributable to it. The earlier January spike is materially contaminated by changes in capture composition and subsequent reappearances; it should not be used as evidence of a fee-driven exodus.
 

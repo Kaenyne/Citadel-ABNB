@@ -8,6 +8,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
+from research_integrity import verify_frozen_report
 
 ROOT=Path(__file__).resolve().parents[2]
 DATA=ROOT/"data/processed"
@@ -66,6 +67,7 @@ def figure(market_rows,pools,path):
 
 
 def main():
+    verify_frozen_report(ROOT, 'report_listing_churn.py')
     broad=DATA/"listing_churn_archive";team=DATA/"listing_churn_panel"
     markets=read(broad/"market_rates.csv");pools=read(broad/"pooled_rates.csv")
     meta=json.loads((broad/"execution_metadata.json").read_text(encoding="utf-8"))

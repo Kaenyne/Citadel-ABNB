@@ -12,6 +12,7 @@ import gzip
 import hashlib
 import json
 from pathlib import Path
+from research_integrity import atomic_write_csv, observed_count
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'data/processed/hotel_funnel_audit'
@@ -33,8 +34,7 @@ def complete_sum(values):
     return sum(values) if all(v is not None for v in values) else None
 
 def count(r, key):
-    value = r.get(key, '')
-    return int(float(value)) if value not in ('', None) else None
+    return observed_count(r.get(key, ''), key)
 
 def is_hotel(r, scope='strict'):
     p = r.get('property_type', '').lower()
@@ -89,7 +89,8 @@ def compare(a, b, start, scope):
     recat_in = (set(bh)&set(a))-set(ah)
     lost_ids = set(ah)-set(b)
     recat_out = (set(ah)&set(b))-set(bh)
-    assert len(bh) == len(ah)+len(added_ids)+len(recat_in)-len(lost_ids)-len(recat_out)
+    if len(bh) != len(ah)+len(added_ids)+len(recat_in)-len(lost_ids)-len(recat_out):
+        raise ValueError('Hotel listing stock-flow identity failed')
     aa, bb = aggregate(ah.values()), aggregate(bh.values())
     result = {f'baseline_{k}':v for k,v in aa.items()}
     result.update({f'endpoint_{k}':v for k,v in bb.items()})
@@ -140,8 +141,7 @@ def pool_results(results, scope):
 
 
 def write_csv(path, rows):
-    with path.open('w',encoding='utf-8',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+    atomic_write_csv(path, rows)
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)

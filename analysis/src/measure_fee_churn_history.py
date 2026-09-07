@@ -16,6 +16,7 @@ from pathlib import Path
 from acquire_churn_archive import ROOT, inspect_capture
 from measure_churn_archive import geographic_exclusions, load_compact
 from execute_listing_churn import number, write_csv
+from research_integrity import validate_selection
 
 EVENT = date(2025, 10, 27)
 COHORTS = ("all_listings", "reviewed_str_homes")
@@ -91,16 +92,21 @@ def load_inventory():
     """One immutable raw identity per market/date; compact reuse is hash checked."""
     items = {}
     for folder in ("listing_churn_panel", "listing_churn_archive", "fee_churn_history"):
-        for row in read(ROOT / f"data/raw/{folder}/download_manifest.csv"):
+        inventory_rows = read(ROOT / f"data/raw/{folder}/download_manifest.csv")
+        identities = [(r['market'], r['snapshot_start']) for r in inventory_rows]
+        if len(identities) != len(set(identities)):
+            raise ValueError(f'Duplicate capture identities in {folder}')
+        for row in inventory_rows:
             key = (row["market"], row["snapshot_start"])
             if key in items and row["status"] == "ok" and items[key]["status"] == "ok" and row["sha256"] != items[key]["sha256"]:
                 raise ValueError(f"Conflicting raw capture hashes: {key}")
-            if key not in items or row.get("compact_path"):
+            if key not in items or (row['status'] == 'ok' and (items[key]['status'] != 'ok' or row.get('compact_path'))):
                 items[key] = row
     expected = json.loads((ROOT / "data/raw/fee_churn_history/selection.json").read_text(encoding="utf-8"))
     fee_rows = read(ROOT / "data/raw/fee_churn_history/download_manifest.csv")
-    if len(fee_rows) != expected["selected_snapshots"]:
-        raise ValueError("Acquisition has not finished")
+    validate_selection(fee_rows, expected['selected_dates'])
+    if len(fee_rows) != expected['selected_snapshots']:
+        raise ValueError('Selection count disagrees with its explicit market/date list')
     catalog = {(r["city"], r["dump_date"]): r for r in read(ROOT / "data/raw/listing_churn_panel/team_snapshot_catalog.csv")}
     compact_dir = ROOT / "data/raw/fee_churn_history/compact_cache"
     compact_dir.mkdir(exist_ok=True)

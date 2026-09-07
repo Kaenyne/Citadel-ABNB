@@ -61,17 +61,22 @@ after the observation endpoint, and returns between snapshots may be missed.
 | Baseline listing IDs | 13,162 | 8,660 |
 | Original IDs absent at endpoint | 3,035 (23.06%) | 1,941 (22.41%) |
 | Original IDs present at endpoint | 10,127 | 6,719 |
-| Additional baseline IDs with supported replacement ID at endpoint | 221 | Not estimated |
+| Additional baseline IDs with supported replacement ID at endpoint | 220 | Not estimated |
 | Persistent absence, original IDs, conservative coverage | 1,197 (9.09%) | 756 (8.73%) |
 | Persistent absence, after available permit linkage, conservative coverage | **1,049 (7.97%)** | **756 (8.73%); IDs only** |
-| Pending persistence, after available linkage | 1,765 | 1,185 |
-| Persistent absence, after available linkage, team flags alone | **1,945 (14.78%)** | **1,051 (12.14%); IDs only** |
+| Pending persistence, after available linkage | 1,766 | 1,185 |
+| Persistent absence, after available linkage, team flags alone | **1,946 (14.78%)** | **1,051 (12.14%); IDs only** |
 
-San Diego reconciles as `13,162 = 10,127 original IDs + 221 supported alternative IDs
-+ 1,049 persistent absences + 1,765 pending`. Chicago reconciles as
+San Diego reconciles as `13,162 = 10,127 original IDs + 220 supported alternative IDs
++ 1,049 persistent absences + 1,766 pending`. Chicago reconciles as
 `8,660 = 6,719 original IDs + 756 persistent absences + 1,185 pending`.
-The 221 replacements are among all missing IDs, including cases that would otherwise
+The 220 replacements are among all missing IDs, including cases that would otherwise
 be pending; they should not simply be subtracted from the original persistent count.
+
+Publication audit correction (September 7): one proposed replacement was already
+present in the starting cohort under another permit. It is now excluded from
+replacement evidence. The conservative persistent count and reviewed-home sample
+are unchanged; the all-listing team-flags count rises from 1,945 to 1,946.
 
 **Interpretation:** these are endpoint prevalence measures of sustained absence from
 the observed snapshots. They are not annual first-exit probabilities, confirmed permanent

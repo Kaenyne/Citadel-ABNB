@@ -3,6 +3,7 @@ import csv
 import json
 from pathlib import Path
 from audit_hotel_funnel import REVIEW_FIELDS
+from research_integrity import verify_frozen_report
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'data/processed/hotel_funnel_audit'
@@ -41,6 +42,7 @@ def main():
     old = {r['scope']: r for r in read('hotel_panel_pooled')}
     panel = read('archive25/hotel_listing_panel')
     require_complete_review_data([*pooled.values(), *old.values(), *panel])
+    verify_frozen_report(ROOT, 'report_hotel_funnel.py')
     sources = {s['source_id']: s for s in json.loads((ROOT / 'research/sources/hotel_funnel_audit.json').read_text(encoding='utf-8'))}
     review = json.loads((DATA / 'overlap_review_metadata.json').read_text())
     capture_overlap = json.loads((DATA / 'panel_capture_overlap.json').read_text())

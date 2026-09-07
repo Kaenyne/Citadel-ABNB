@@ -7,20 +7,17 @@ import hashlib
 import json
 import math
 from pathlib import Path
+from research_integrity import finite_number, atomic_write_csv
 
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG = ROOT/'analysis/config/hotel_funnel_audit.json'
 OUT = ROOT/'data/processed/hotel_funnel_audit'
 
 def fraction(x):
-    if not math.isfinite(x) or not 0 <= x <= 1:
-        raise ValueError('Fraction must be finite and between zero and one')
-    return x
+    return finite_number(x, 'Fraction', minimum=0, maximum=1)
 
 def growth(x):
-    if not math.isfinite(x) or x < -1:
-        raise ValueError('Growth must be finite and at least -100%')
-    return x
+    return finite_number(x, 'Growth', minimum=-1)
 
 def mix_after(s, gc, gh):
     fraction(s); growth(gc); growth(gh)
@@ -28,13 +25,12 @@ def mix_after(s, gc, gh):
     return s*(1+gh)/total if total > 0 else None
 
 def nights_per_signed_property(rooms, activation, live_fraction, occupancy, channel_share):
-    if not math.isfinite(rooms) or rooms < 0:
-        raise ValueError('Rooms must be finite and nonnegative')
+    finite_number(rooms, 'Rooms', minimum=0)
     return rooms*365*math.prod(fraction(v) for v in [activation,live_fraction,occupancy,channel_share])
 
 def required_properties(nights, productivity):
-    if not math.isfinite(nights) or nights < 0 or not math.isfinite(productivity) or productivity < 0:
-        raise ValueError('Nonnegative finite inputs required')
+    finite_number(nights, 'Target nights', minimum=0)
+    finite_number(productivity, 'Property productivity', minimum=0)
     return nights/productivity if productivity else (0 if nights == 0 else None)
 
 def contribution_share(take, variable_cost, eligible, award, redemption, funding):
@@ -50,19 +46,60 @@ def validate_market_scope(anchors, selection):
 
 
 def available_daily_rooms(room_nights, days):
-    if not math.isfinite(room_nights) or room_nights < 0 or not isinstance(days, int) or not 1 <= days <= 31:
+    finite_number(room_nights, 'Available room nights', minimum=0)
+    if isinstance(days, bool) or not isinstance(days, int) or not 1 <= days <= 31:
         raise ValueError('Nonnegative room nights and a valid month length required')
     return room_nights / days
 
 def write(name, rows):
-    with (OUT/(name+'.csv')).open('w',encoding='utf-8',newline='') as f:
-        w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+    atomic_write_csv(OUT/(name+'.csv'), rows)
+
+
+def validate_config(c):
+    """Validate the full scenario before any output is replaced."""
+    a = c['assumptions']
+    growth(a['home_growth'])
+    finite_number(a['hotel_growth_multiple'], 'Hotel growth multiple', minimum=0)
+    growth(a['home_growth'] * a['hotel_growth_multiple'])
+    for key in ('rooms_per_property', 'adr_usd', 'required_revenue_usd'):
+        finite_number(a[key], key, minimum=0)
+    if a['adr_usd'] == 0 or a['hotel_take_rate'] == 0:
+        raise ValueError('A positive ADR and take rate are required for the revenue hurdle')
+    for key in ('activation_rate', 'average_fraction_of_year_live', 'physical_hotel_occupancy',
+                'airbnb_share_of_occupied_room_nights', 'hotel_take_rate', 'credit_award_rate',
+                'credit_eligible_gbv_share', 'airbnb_credit_funding_share', 'variable_cost_share_gbv'):
+        fraction(a[key])
+    for key in ('starting_hotel_shares', 'credit_redemption_scenarios'):
+        if not a[key]:
+            raise ValueError(f'Empty scenario grid: {key}')
+        for value in a[key]:
+            fraction(value)
+    finite_number(c['global']['rooms'], 'Global room stock', minimum=0)
+    fraction(c['global']['branded_room_share'])
+    for m in c['market_anchors']:
+        for key in ('hotel_rooms', 'independent_rooms'):
+            if m[key] is not None:
+                finite_number(m[key], key, minimum=0)
+        if m['independent_room_share'] is not None:
+            fraction(m['independent_room_share'])
+        if m['boutique_available_room_nights'] is not None:
+            available_daily_rooms(m['boutique_available_room_nights'], m['available_period_days'])
+
+
+def break_even_redemption(a):
+    exposure = a['credit_eligible_gbv_share'] * a['credit_award_rate'] * a['airbnb_credit_funding_share']
+    return (a['hotel_take_rate'] - a['variable_cost_share_gbv']) / exposure if exposure else None
 
 def main():
     c=json.loads(CONFIG.read_text(encoding='utf-8')); a=c['assumptions']
+    validate_config(c)
     with (ROOT/'analysis/config/hotel_markets_25.csv').open(encoding='utf-8', newline='') as f:
         selection = list(csv.DictReader(f))
     validate_market_scope(c['market_anchors'], selection)
+    for relative in ('archive25/hotel_listing_panel.csv', 'reused_capture_manifest.csv',
+                     'archive25/reused_capture_manifest.csv'):
+        if not (OUT/relative).is_file():
+            raise ValueError(f'Required prior hotel audit is missing: {relative}')
     OUT.mkdir(parents=True,exist_ok=True)
     gc=a['home_growth']; gh=gc*a['hotel_growth_multiple']
     write('hotel_mix_scenarios',[dict(starting_hotel_share=s,home_growth=gc,hotel_growth=gh,
@@ -108,8 +145,7 @@ def main():
         global_unbranded_rooms=global_keys,
         global_physical_roomnight_capacity=global_keys*365,
         starting_share_reaching_10pct_after_year=.1*(1+gc)/(.9*(1+gh)+.1*(1+gc)),
-        credit_redemption_break_even=(a['hotel_take_rate']-a['variable_cost_share_gbv'])/
-            (a['credit_eligible_gbv_share']*a['credit_award_rate']*a['airbnb_credit_funding_share']),
+        credit_redemption_break_even=break_even_redemption(a),
         known_historical_independent_room_subtotal=sum(m['independent_rooms_derived_or_reported'] or 0 for m in tam),
         city_anchors=len(tam),city_independent_anchors=sum(m['independent_rooms_derived_or_reported'] is not None for m in tam),
         limitations=['New judgment-selected 25-market sample, not a recovered team list or representative world sample','No verified boutique-eligible room census',
