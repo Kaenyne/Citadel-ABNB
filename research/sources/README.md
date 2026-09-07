@@ -51,5 +51,27 @@ Log every source as you use it. Cite it in the deck by the ID.
 | S43 | Eurostat tour_ce_omr, short-stay accommodation booked via collaborative-economy platforms (Airbnb, Booking, Expedia, TripAdvisor), nights spent by month and guest residence, EU27 and 31 countries, 2018 to Mar 2026 (experimental statistics; attribute Eurostat) | 2026-09-05 | https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tour_ce_omr ; https://ec.europa.eu/eurostat/web/experimental-statistics/collaborative-economy-platforms | European platform category growth vs Airbnb EMEA; country growth across regulatory regimes (research/notes/2026-09-05_eu-platform-and-backlog.md) |
 | S44 | SEC XBRL company facts, Airbnb: unearned fees (ContractWithCustomerLiabilityCurrent) and funds held for clients (FundsHeldForClients), quarter ends 4Q20 to 2Q26 | 2026-09-05 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001559720.json | Backlog indicators vs next-quarter revenue; RNPL break; 3Q26 funds-held read (same note). Branch note, 5 Sep 2026: what were then S32 to S34 (now S40 to S42) were on PRs #11, #12, #13 |
 | S45 | Peer earnings releases: Booking Holdings, Expedia, Marriott, Hilton 8-K Ex. 99.1, Q4 2020 to Q2 2026 (93 filings) | 2021-02 to 2026-08 | EDGAR submissions API (CIKs 1075531, 1324424, 1048286, 1585689); manifest and extracted sentences in data/processed/predictive/02_peer_sources.csv | Peer read-through tests |
+| S46 | Airbnb Q2 2026 results & shareholder letter (Jessie) | 2026-08-06 | https://news.airbnb.com/airbnb-q2-2026-financial-results/ | KPIs, guidance |
+| S47 | Airbnb quarterly shareholder letters Q1'22–Q2'26 (Jessie) | | s26.q4cdn.com/656283129/files/doc_financials/... | nights/GBV/revenue series |
+| S48 | Airbnb 10-Q/10-K revenue by region (SEC, CIK 1559720) (Jessie) | | https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001559720 | regional revenue |
+| S49 | Airbnb World Cup 2026 recap (Jessie) | 2026-08-06 | https://news.airbnb.com/record-airbnb-guest-numbers-host-earnings-at-fifa-world-cup-2026/ | event demand |
+| S50 | TSA checkpoint travel numbers (Jessie) | | https://www.tsa.gov/travel/passenger-volumes | air traffic |
+| S51 | BTS monthly U.S. airline traffic (Jessie) | | https://www.bts.gov/newsroom | air traffic |
+| S52 | IATA Air Passenger Market Analysis (Jessie) | | https://www.iata.org/en/iata-repository/publications/economic-reports/ | global/regional RPK |
+| S53 | NTTO international arrivals (Jessie) | | https://www.trade.gov/national-travel-and-tourism-office | US inbound |
+| S54 | Inside Airbnb (Jessie) | | https://insideairbnb.com/get-the-data/ | listings by country/city |
+| S55 | AirROI world ranking & city pages (Jessie) | 2026-08-08 | https://www.airroi.com/airbnb-data/world | listings by city, STR metrics |
+| S56 | StockAnalysis.com ABNB statistics/financials (Jessie) | 2026-08-31 | https://stockanalysis.com/stocks/abnb/ | valuation, financials |
+| S57 | Citadel 2026 Intercollegiate Stock Pitch Competition (Jessie) | | https://www.citadel.com/careers/investing/citadel-associate-program/apply-for-2026-intercollegiate-stock-pitch-competition/ | format, dates |
+| S58 | FRED (Federal Reserve Bank of St. Louis) macro series (Jessie) | 2026-09-05 | https://fred.stlouisfed.org | macro top-down study |
+| S59 | City of Austin, Active Short Term Rental Counts (Socrata mydx-h5dy) + STR ordinance page (Jessie) | 2026-09-05 | https://data.austintexas.gov/resource/mydx-h5dy.json ; https://www.austintexas.gov/department/short-term-rentals | Austin licence supply by type/district |
+| S60 | NYC Office of Special Enforcement annual reports; City of Vancouver open data (Jessie) | 2026-09-05 | nyc.gov/site/specialenforcement ; opendata.vancouver.ca | City-hall enforcement and licence records |
+| S61 | Farronato & Fradkin (AER 2022); Zervas, Proserpio & Byers (JMR 2017); Guttentag et al. (JTR 2018) (Jessie) | 2026-09-05 | journal pages | Airbnb-vs-hotel substitution evidence |
+| S62 | Hawaii DBEDT 2024 Annual Visitor Research Report + companion Excel (Jessie) | 2026-09-06 | https://files.hawaii.gov/dbedt/visitor/visitor-research/2024-annual-visitor.pdf ; https://files.hawaii.gov/dbedt/economic/tourism/annual-reports/2024-annual-visitor.xlsx | Accommodation choice by market, island, and visitor type; plant inventory; STR hotel performance |
+| S63 | Eurostat tourism API: tour_ce_oam, tour_ce_omr, tour_occ_ninat, tour_occ_nim, tour_cap_nat (Jessie) | 2026-09-06 | https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ | Platform vs hotel nights, hotel capacity, crowding tests |
+| S64 | NTTO Survey of International Air Travelers CY2024 (inbound results release) (Jessie) | 2026-09-06 | https://www.hotel-online.com/news/ntto-publishes-calendar-year-2024-survey-of-international-air-travelers-siat-inbound-results | Overseas-visitor accommodation and party composition |
+| S65 | Inside Airbnb detailed listings (13 markets) (Jessie) | 2026-09-06 | https://insideairbnb.com/get-the-data/ | Listing size vs demand |
+
+S46 to S65 are Jessie's sources from PR #17, renumbered on the 7 Sep 2026 merge of origin/main into krish/overnight-synthesis because they reused S2 to S21. Jessie's notes cite sources by name, not by id. Mapping in `data/processed/overnight/25_source_id_remap.csv`.
 
 Paid/licensed sources (Bloomberg, CapIQ, etc.): store the export in the shared Drive and link the Drive path here. Do not commit the raw file.
