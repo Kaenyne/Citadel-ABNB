@@ -1,0 +1,706 @@
+[
+  {
+    "id": "REG-01",
+    "tier": 1,
+    "priority": 1,
+    "jurisdiction": "United States / New York City",
+    "title": "Local Law 18: transaction verification makes existing STR limits enforceable",
+    "status": "Enforced",
+    "dates": "Enacted 2022-01-09; platform enforcement 2023-09-05; FY26 update available",
+    "rule": "Platforms must verify registration before processing covered bookings. Residential stays under 30 days generally require a permanent occupant present and no more than two paying guests. Rent-regulated and NYCHA units cannot register.",
+    "observed_evidence": "Airbnb disclosed NYC represented approximately 1% of global revenue before enforcement. OSE reports over 3,500 active approved hosts in FY26; these are registrations, not Airbnb listing counts.",
+    "abnb_implication": "Best documented case for how a city can restrict Airbnb's bookable supply through the payment/booking platform. Lost local nights may partly migrate to nearby destinations, longer stays or hotels sold by Airbnb.",
+    "limitations": "The 1% is historical gross exposure, not a measured 1% consolidated revenue loss. LL18 enforces longstanding housing rules; compliant home-sharing remains legal. City housing-benefit claims and Airbnb's claims about hotel prices are not causal estimates.",
+    "next_catalyst": "Registration renewals expected October 2026; enforcement and any enacted amendments.",
+    "source_ids": [
+      "REG-S01",
+      "REG-S02",
+      "REG-S03"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": 1
+  },
+  {
+    "id": "REG-02",
+    "tier": 1,
+    "priority": 2,
+    "jurisdiction": "Spain / national consumer enforcement",
+    "title": "Listing removals and EUR64.1m Airbnb fine",
+    "status": "Implemented enforcement; fine disputed; May 2026 surety bond suspends enforcement pending court proceedings",
+    "dates": "Removal order 2025-05-19; removals July 2025; fine December 2025; stay denied March 2026",
+    "rule": "Consumer authorities pursued missing/incorrect regional licence identifiers, misleading host identity information and failures to comply with information/removal orders.",
+    "observed_evidence": "Ministry reported 65,122 offending advertisements removed by July 2025. The December 2025 fine was EUR64,055,311. A March 2026 request to stay payment was denied, but the Q2 2026 Form 10-Q subsequently discloses a EUR70m ($80m) surety bond obtained in May 2026 to suspend enforcement pending resolution. Airbnb describes the fine at approximately EUR65m ($76m) and the potential loss as neither probable nor estimable.",
+    "abnb_implication": "Direct platform liability plus reduced bookable inventory makes this the clearest national enforcement case. Cash/legal expense and recurring supply risk require separate model lines.",
+    "limitations": "Ads are not necessarily unique productive properties. Removal orders overlap. Bond face value is not a recognized expense or proof of equal cash payment; bond premium/collateral not quantified here. Do not assume the consumer fine is automatically excluded from adjusted EBITDA.",
+    "next_catalyst": "Court resolution, bond conditions, and changes in accounting recognition or cash settlement.",
+    "source_ids": [
+      "REG-S04",
+      "REG-S05",
+      "REG-S45"
+    ],
+    "related_ids": [
+      "REG-03"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-03",
+    "tier": 1,
+    "priority": 3,
+    "jurisdiction": "Spain / national registration",
+    "title": "2025 national registration rollout; 2026 partial annulment",
+    "status": "Implemented historically; material provisions annulled",
+    "dates": "Operational rollout 2025-07-01; judgment 2026-05-19, published 2026-06-08; consolidated law updated 2026-07-18",
+    "rule": "RD1312/2024 introduced a national registration procedure and digital data gateway. The Supreme Court annulled the single-registry procedure and property/movable-register inscription requirement, including Articles 5 and 8-10 and related provisions.",
+    "observed_evidence": "The official consolidated BOE text explicitly records annulment; this changes the status of widely reported 2025 registration requirements.",
+    "abnb_implication": "Historical delistings still matter, but continuing national-register supply haircuts cannot be based on the original decree alone. Regional licensing and surviving EU reporting obligations remain distinct.",
+    "limitations": "Current replacement/implementation mechanics need further confirmation before host-level modeling. The judgment does not establish that all regional STR rules or the consumer fine were cancelled.",
+    "next_catalyst": "Replacement legislation, platform implementation notices, and any reactivation of listings.",
+    "source_ids": [
+      "REG-S06",
+      "REG-S07"
+    ],
+    "related_ids": [
+      "REG-02",
+      "REG-17"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-04",
+    "tier": 1,
+    "priority": 4,
+    "jurisdiction": "Greece / Athens districts 1, 2 and 3",
+    "title": "Freeze on first registrations; transfer-related loss of eligibility",
+    "status": "In force",
+    "dates": "2025-01-01 through 2026-12-31; Law 5313/2026 adds current transfer treatment",
+    "rule": "New first registrations are prohibited in specified central districts. Current government guidance says covered properties transferred during life are removed from the registry and cannot re-register while the restriction lasts.",
+    "observed_evidence": "Government housing portal confirms the 2026 extension and transfer restriction; minimum first-offence fine EUR20,000.",
+    "abnb_implication": "Restricts new supply and can erode incumbent supply as ownership changes. This is more consequential than a purely grandfathered new-entry freeze.",
+    "limitations": "No company-disclosed city revenue loss identified. Not an Athens-wide or Greece-wide ban on existing compliant STRs.",
+    "next_catalyst": "Year-end extension, enforcement against transfer/re-registration workarounds.",
+    "source_ids": [
+      "REG-S11"
+    ],
+    "related_ids": [
+      "REG-05",
+      "REG-20"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-05",
+    "tier": 1,
+    "priority": 12,
+    "jurisdiction": "Greece / Thessaloniki first municipal community",
+    "title": "Athens-style freeze expands to a second city",
+    "status": "In force",
+    "dates": "2026-07-01 through 2026-12-31",
+    "rule": "First-time STR registrations suspended in the first municipal community, with the government's transfer restriction applying to the covered areas.",
+    "observed_evidence": "Official housing portal confirms start/end dates and geographic boundary.",
+    "abnb_implication": "Provides evidence of domestic replication of a housing-driven restriction. Constrains future destination capacity and legal listing replacement.",
+    "limitations": "Does not eliminate all Thessaloniki supply. No quantified ABNB financial impact identified.",
+    "next_catalyst": "Extension beyond December 2026 and expansion to other districts.",
+    "source_ids": [
+      "REG-S11"
+    ],
+    "related_ids": [
+      "REG-04"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-06",
+    "tier": 1,
+    "priority": 5,
+    "jurisdiction": "Portugal / Lisbon",
+    "title": "Revised AL containment zones",
+    "status": "In force",
+    "dates": "Approved 2025-12-02; published 2025-12-05",
+    "rule": "Absolute containment applies at ratios of at least 10% AL establishments to permanent housing at municipal/parish/neighbourhood levels; relative containment at 5% to below 10%. New permissions and transfers are constrained, subject to exceptions.",
+    "observed_evidence": "Final published regulation confirms thresholds; earlier proposal used different thresholds. The final text controls. Follow-up: city reported cancellation of 6,765 registrations described as inactive because required insurance evidence was missing. This is a separate compliance-cleanup cohort, not 6,765 demonstrated productive Airbnb removals.",
+    "abnb_implication": "Limits growth in saturated neighbourhoods even after national liberalisation. Transfer restrictions and limited exceptions affect replacement supply and host property values.",
+    "limitations": "Ratios use regulatory establishments and census housing, not Airbnb active listings. Do not assume a citywide removal of all existing AL or use an earlier temporary suspension as the current rule.",
+    "next_catalyst": "Monthly ratio monitoring, containment maps, exceptions and licence transfers.",
+    "source_ids": [
+      "REG-S10",
+      "REG-S47"
+    ],
+    "related_ids": [
+      "REG-07"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-07",
+    "tier": 1,
+    "priority": 10,
+    "jurisdiction": "Portugal / national",
+    "title": "Mais Habitacao restrictions partly reversed",
+    "status": "Historical tightening followed by liberalisation",
+    "dates": "2023 housing package; Decree-Law 76/2024 published 2024-10-23",
+    "rule": "The 2023 package curtailed new AL registrations with territorial exceptions and added renewal/administrative restrictions. The 2024 decree repealed housing measures and returned stronger discretion to municipalities.",
+    "observed_evidence": "Official original package and later decree document a change in national policy direction.",
+    "abnb_implication": "Useful counterweight to a one-way regulatory bear case: national restrictions can reverse while municipal constraints persist. Model Lisbon separately from rural Portugal.",
+    "limitations": "Do not present the 2023 national registration freeze or automatic renewal regime as unchanged current law. Separate tax repeal details require their own law; not modeled here.",
+    "next_catalyst": "Municipal containment decisions and national changes to the decentralised framework.",
+    "source_ids": [
+      "REG-S08",
+      "REG-S09"
+    ],
+    "related_ids": [
+      "REG-06"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-08",
+    "tier": 1,
+    "priority": 6,
+    "jurisdiction": "France / Paris",
+    "title": "Principal-residence cap reduced from 120 to 90 days",
+    "status": "In force",
+    "dates": "2025-01-01",
+    "rule": "Main residences may be rented as tourist furnished accommodation for 90 days per year instead of 120, subject to legal exceptions. Other premises face separate authorisation rules.",
+    "observed_evidence": "City guidance confirms implementation and ongoing 90-day limit.",
+    "abnb_implication": "Reduces annual sellable nights of hosts who previously rented above 90 days; can particularly constrain peak-demand capacity and increase compliance friction.",
+    "limitations": "A 25% reduction in the legal ceiling is not a 25% reduction in Paris nights or ABNB revenue. Many hosts operate below the cap; professional licensed accommodation follows different rules.",
+    "next_catalyst": "Enforcement and separate proposals targeting multi-property operators.",
+    "source_ids": [
+      "REG-S12"
+    ],
+    "related_ids": [
+      "REG-26"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-09",
+    "tier": 1,
+    "priority": 11,
+    "jurisdiction": "Netherlands / Amsterdam selected districts",
+    "title": "15-night cap in eight central neighbourhoods",
+    "status": "In force",
+    "dates": "2026-04-01",
+    "rule": "Selected Centre and De Pijp neighbourhoods moved from 30 to 15 holiday-rental nights annually. Nights already rented before April count toward 2026's cap.",
+    "observed_evidence": "Current Dutch city guidance lists eight covered areas and directs hosts to adjust incompatible reservations. Older English page describes a proposal and is stale on status.",
+    "abnb_implication": "Restricts capacity of occasional whole-home hosts in highly visited neighbourhoods and demonstrates further tightening after earlier regulation.",
+    "limitations": "Not a citywide 15-night rule; not all B&B/hotel supply is covered. Halving the cap does not establish a halving of actual bookings.",
+    "next_catalyst": "Compliance, cancellations and any further geographic expansion.",
+    "source_ids": [
+      "REG-S13"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-10",
+    "tier": 1,
+    "priority": 7,
+    "jurisdiction": "Canada / British Columbia",
+    "title": "Principal-residence requirement and platform registry verification",
+    "status": "In force",
+    "dates": "Residence rule 2024-05-01; registry 2025-05-01",
+    "rule": "Covered communities limit STRs to a principal residence plus one secondary suite or accessory dwelling unit. Provincial registration and platform duties extend beyond the residence-rule geography, with exemptions.",
+    "observed_evidence": "January 2025 government statement described an approximately 10% decline in entire-home listings from March 2024. A newer June 2, 2026 government release reports active STR listings declining from 28,000 to just over 23,000. These are different metric/time references and neither isolates a causal Airbnb revenue loss.",
+    "abnb_implication": "Large subnational example of housing policy restricting investment-property supply and requiring platform participation.",
+    "limitations": "Government-reported listing change is not a causal estimate or ABNB-specific revenue result. Resort/exempt properties and local opt-in/out rules require address-level classification.",
+    "next_catalyst": "Registry enforcement, geographic exemptions and annual opt-in/out changes.",
+    "source_ids": [
+      "REG-S14",
+      "REG-S15",
+      "REG-S46"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-11",
+    "tier": 1,
+    "priority": 13,
+    "jurisdiction": "Canada / Montreal",
+    "title": "Seasonal restriction on principal-residence tourist rentals",
+    "status": "In force",
+    "dates": "2025-06-10 framework; commercial guidance updated 2026-01-16",
+    "rule": "In most boroughs, principal residences may host tourist rentals only June 10 through September 10. Commercial tourist homes face separate zoning and permit restrictions.",
+    "observed_evidence": "City guidance confirms seasonality and borough variation.",
+    "abnb_implication": "Restricts off-season capacity and raises compliance burden; lawful commercial inventory may partly offset the loss.",
+    "limitations": "Not a blanket ban on all Montreal Airbnb listings; commercial rules vary by borough. No ABNB-specific dollar loss established.",
+    "next_catalyst": "2026 autumn enforcement; legal commercial supply and borough changes.",
+    "source_ids": [
+      "REG-S16",
+      "REG-S17"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-12",
+    "tier": 1,
+    "priority": 8,
+    "jurisdiction": "Spain / Madrid",
+    "title": "Plan RESIDE and enforcement against illegal tourist flats",
+    "status": "In force",
+    "dates": "September 2025",
+    "rule": "City protects residential use and shifts tourist accommodation away from dispersed flats in residential buildings in the historic centre; compliant accommodation categories remain possible.",
+    "observed_evidence": "City's 2025 implementation report confirms September commencement. Q3 2025 Airbnb call names Madrid as a regulation-constrained hotel-pilot market.",
+    "abnb_implication": "Directly connects policy constraints with Airbnb's hotel strategy. Growth may require a different accommodation mix rather than simple host acquisition.",
+    "limitations": "Grandfathering, building use and geography matter. Do not translate the plan into a ban on all Madrid Airbnb supply.",
+    "next_catalyst": "Licence issuance, illegal-unit closures, and hotel-pilot conversion economics.",
+    "source_ids": [
+      "REG-S18"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-13",
+    "tier": 1,
+    "priority": 14,
+    "jurisdiction": "Spain / Malaga",
+    "title": "Citywide moratorium on new tourist homes",
+    "status": "In force",
+    "dates": "2025-08-23; maximum three years or earlier planning reform",
+    "rule": "New tourist-home registrations suspended during planning reform, following earlier restrictions in saturated neighbourhoods. July 2026 follow-up: publication on July 24 of a separate moratorium on new hotels and tourist-apartment blocks on residential land, with pipeline exceptions, further constrains replacement accommodation supply.",
+    "observed_evidence": "Municipal announcement explains legal basis; dated local reporting confirms commencement.",
+    "abnb_implication": "Caps the new-host pipeline in a popular destination and shows escalation from neighbourhood to municipal restrictions.",
+    "limitations": "Existing lawful supply is not automatically removed. Tourist apartments in dedicated buildings and hotels are distinct classifications; gross accommodation supply can still grow.",
+    "next_catalyst": "PGOU reform, category substitutions and end of suspension.",
+    "source_ids": [
+      "REG-S19",
+      "REG-S20",
+      "REG-S48"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-14",
+    "tier": 1,
+    "priority": 9,
+    "jurisdiction": "Italy / Florence",
+    "title": "Historic-centre restriction expands to surrounding zones",
+    "status": "In force",
+    "dates": "Regulation 2025-05-31; expansion approved 2026-06-04, effective 2026-06-21",
+    "rule": "New STR activities prohibited in zones A1, A3 and A4. Regulation requires five-year authorisations; lawfully operating 2024 units receive a three-year transition under the 2025 framework.",
+    "observed_evidence": "Current city portal confirms the June expansion was enacted, superseding May 2026 Reuters proposal coverage.",
+    "abnb_implication": "Expands the geographic reach of housing-driven supply constraints. End of the transition could affect incumbent supply as well as new entry.",
+    "limitations": "Do not still classify the June expansion as merely proposed. Transitional protection is not an unconditional permanent right; future reductions are not yet quantified.",
+    "next_catalyst": "Authorisation enforcement, litigation and May 2028 transition end.",
+    "source_ids": [
+      "REG-S21"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-15",
+    "tier": 1,
+    "priority": 16,
+    "jurisdiction": "Hungary / Budapest district VI (Terezvaros)",
+    "title": "District-level zero-day STR rule",
+    "status": "In force per municipal source",
+    "dates": "2026-01-01, following 2024 resident vote",
+    "rule": "District sets permitted rental days for covered private/other accommodation to zero; municipal source reports court rejection of the challenge.",
+    "observed_evidence": "City publication confirms the intended 2026 commencement and planned enforcement using resident reports and platform ads.",
+    "abnb_implication": "Clear example of resident voting translating into a restrictive local rule; useful policy-diffusion precedent.",
+    "limitations": "District VI is not all Budapest; accommodation classification matters. Current number of closures and later litigation outcome not independently quantified.",
+    "next_catalyst": "Enforcement and accommodation reclassification; other district proposals.",
+    "source_ids": [
+      "REG-S22"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-16",
+    "tier": 1,
+    "priority": 15,
+    "jurisdiction": "Spain / Canary Islands",
+    "title": "Law 6/2025 sustainable tourist use of housing",
+    "status": "Enacted; phased implementation",
+    "dates": "Law dated 2025-12-10; regional publication 2025-12-12",
+    "rule": "Regional framework ties tourist use of residential housing to planning and a sustainability/housing balance, with transitional arrangements for existing activity.",
+    "observed_evidence": "Enacted text explicitly links the framework to housing, neighbourhood life and environmental capacity.",
+    "abnb_implication": "Broadens housing-driven controls beyond individual mainland cities. Local implementation determines practical loss of new or existing supply.",
+    "limitations": "Not an immediate ban on all holiday rentals. Island-specific and transitional exceptions require granular work; no region-wide revenue haircut inferred.",
+    "next_catalyst": "Municipal planning, implementing rules and treatment of existing units.",
+    "source_ids": [
+      "REG-S23"
+    ],
+    "related_ids": [
+      "REG-30"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-17",
+    "tier": 1,
+    "priority": 17,
+    "jurisdiction": "European Union",
+    "title": "STR data-sharing regulation",
+    "status": "Applicable",
+    "dates": "2026-05-20",
+    "rule": "Regulation (EU) 2024/1028 harmonises registration/data-sharing processes where registration schemes exist, making platform activity more visible to authorities.",
+    "observed_evidence": "Commission confirms application began May 20, 2026.",
+    "abnb_implication": "Enforcement infrastructure can make local licence checks more effective and increase platform compliance costs across many markets.",
+    "limitations": "Not itself an EU-wide night cap or a ban. Avoid counting an EU infrastructure effect and the same local delistings as separate lost bookings.",
+    "next_catalyst": "Country implementation, data quality and first enforcement actions.",
+    "source_ids": [
+      "REG-S24"
+    ],
+    "related_ids": [
+      "REG-03",
+      "REG-25"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-18",
+    "tier": 1,
+    "priority": 18,
+    "jurisdiction": "Spain / communities governed by national Horizontal Property Law",
+    "title": "Neighbour approval for new tourist letting",
+    "status": "In force",
+    "dates": "2025-04-03",
+    "rule": "New covered tourist rental activity requires express approval by three-fifths of owners representing three-fifths of ownership shares. Qualifying pre-existing lawful activity is grandfathered.",
+    "observed_evidence": "Official registry decision clarifies that earlier property purchase alone is insufficient for grandfathering.",
+    "abnb_implication": "Turns neighbour opposition into a property-level barrier to new supply, independently of city quotas.",
+    "limitations": "Do not automatically apply national condominium provisions to jurisdictions with distinct civil-law regimes, including Catalonia. Tenant opposition is not the same as an owner vote.",
+    "next_catalyst": "Owner-association votes and litigation over grandfathering.",
+    "source_ids": [
+      "REG-S25"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-19",
+    "tier": 1,
+    "priority": 20,
+    "jurisdiction": "United Kingdom / Scotland",
+    "title": "Mandatory STR licences",
+    "status": "In force",
+    "dates": "Existing-host application deadline 2023-10-01; new operators require licence",
+    "rule": "Mandatory licensing across accommodation types; qualifying existing operators who applied before the deadline can continue pending a decision.",
+    "observed_evidence": "Current national guidance confirms coverage and transitional operating rights.",
+    "abnb_implication": "Compliance expense and planning/licensing decisions may constrain urban supply; useful example of neighbourhood-quality regulation.",
+    "limitations": "A licensing scheme is not itself a national numerical cap. Edinburgh planning control is a separate layer not quantified here.",
+    "next_catalyst": "Licence refusals, renewals and local planning decisions.",
+    "source_ids": [
+      "REG-S27"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-20",
+    "tier": 1,
+    "priority": 19,
+    "jurisdiction": "Greece / national",
+    "title": "STR operating and safety standards",
+    "status": "In force",
+    "dates": "2025-10-01",
+    "rule": "Law 5170/2025 and ministry circular impose accommodation standards including suitable main-use premises, light/ventilation, insurance and safety requirements.",
+    "observed_evidence": "September 2025 ministry circular sets implementation details ahead of October commencement.",
+    "abnb_implication": "Can remove unsuitable low-cost inventory or require host spending. Included because adopted in the same policy response to tourism pressure.",
+    "limitations": "Primarily safety/quality regulation: weaker direct link to gentrification than the district registration freezes. No quantified ABNB impact.",
+    "next_catalyst": "Inspections and host conversion costs.",
+    "source_ids": [
+      "REG-S26"
+    ],
+    "related_ids": [
+      "REG-04"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-21",
+    "tier": 1,
+    "priority": 21,
+    "jurisdiction": "Spain / Ibiza and Balearic destinations",
+    "title": "Illegal-supply enforcement with reported market contraction",
+    "status": "Enforcement; observed market evidence",
+    "dates": "2025 activity; Reuters report 2026-01-13",
+    "rule": "Authorities increased scrutiny of unauthorised tourist accommodation alongside broader Spanish restrictions.",
+    "observed_evidence": "Reuters cites tourism lobby Exceltur: Ibiza short-term tourist supply almost halved year on year in 2025. This is industry data, not Airbnb's own reporting.",
+    "abnb_implication": "Useful evidence that enforcement can change actual destination inventory, not just create administrative obligations.",
+    "limitations": "Do not assume the reported supply metric equals unique ABNB listings or revenue. Multi-platform overlap, methodology, broader market forces and policy overlap limit inference.",
+    "next_catalyst": "Comparable active inventory, booked nights and legal-listing retention.",
+    "source_ids": [
+      "REG-S41"
+    ],
+    "related_ids": [
+      "REG-02",
+      "REG-03"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-22",
+    "tier": 2,
+    "priority": 1,
+    "jurisdiction": "Spain / Barcelona",
+    "title": "Planned non-renewal of tourist-apartment licences in 2028",
+    "status": "Adopted policy; future phase-out",
+    "dates": "Announced 2024-06; city 2025 tourism plan reiterates 2028",
+    "rule": "City intends not to renew its 10,101 tourist-apartment licences in 2028, using the Catalan licensing framework.",
+    "observed_evidence": "Official government tourism measure restates the non-renewal objective.",
+    "abnb_implication": "Potential removal of an established entire-apartment category makes this the highest-priority future local supply cliff.",
+    "limitations": "10,101 is a city licence count, not unique ABNB listings or guaranteed lost bookings. Not an already-completed ban. Litigation, implementation and substitute accommodation matter.",
+    "next_catalyst": "2028 licence expiry, court proceedings and implementation decisions.",
+    "source_ids": [
+      "REG-S28"
+    ],
+    "related_ids": [
+      "REG-29"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-23",
+    "tier": 2,
+    "priority": 2,
+    "jurisdiction": "United States / Maui",
+    "title": "Bill 9 apartment-zone vacation-rental phase-out",
+    "status": "Signed; delayed phase-out",
+    "dates": "Signed 2025-12-15; West Maui 2029-01-01; other areas 2031-01-01",
+    "rule": "Removes covered transient vacation-rental use in apartment zoning districts. Mayor separately supports rezoning 4,519 units into new hotel categories.",
+    "observed_evidence": "County and council confirm passage, signing and revised deadlines.",
+    "abnb_implication": "Potentially material destination supply reduction after housing activism following the Lahaina disaster. Rezoning can materially reduce the net affected inventory.",
+    "limitations": "Not a ban on all Maui STRs; do not use older 2028/2030 proposal deadlines. Rezoning recommendations are not proof of completed exemptions.",
+    "next_catalyst": "Hotel rezoning, lawsuits/stays and final unit-level classification.",
+    "source_ids": [
+      "REG-S29",
+      "REG-S30"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-24",
+    "tier": 2,
+    "priority": 3,
+    "jurisdiction": "Ireland / national",
+    "title": "National STR registration launch",
+    "status": "Announced implementation schedule; future",
+    "dates": "Opens 2026-12-01; registration required by 2026-12-31",
+    "rule": "Hosts will need registration with Failte Ireland and display identifiers. Planning compliance is a separate eligibility question.",
+    "observed_evidence": "Latest government announcement replaces earlier May 2026 launch expectations.",
+    "abnb_implication": "Could expose non-compliant supply and reduce legal bookability; magnitude depends on planning treatment and enforcement.",
+    "limitations": "Registration alone does not imply a national STR ban. Commencement/legal implementation should be checked again at launch.",
+    "next_catalyst": "December launch, final rules and planning guidance.",
+    "source_ids": [
+      "REG-S31"
+    ],
+    "related_ids": [],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-25",
+    "tier": 3,
+    "priority": 1,
+    "jurisdiction": "European Union",
+    "title": "Affordable Housing Act: draft rules for housing-stress areas",
+    "status": "Draft reported; not adopted legislation",
+    "dates": "Reuters 2026-09-04; presentation expected 2026-09-09",
+    "rule": "Reported draft proposes a framework for assessing housing stress and proportionate local STR restrictions; quantitative caps and grandfathering are among options.",
+    "observed_evidence": "Reuters obtained a draft; Commission independently confirms work on an Affordable Housing Act. Parliament and member-state consideration still required.",
+    "abnb_implication": "Highest-priority near-term policy catalyst because a common framework could facilitate restrictions across multiple countries and challenge a city-diversification defence.",
+    "limitations": "No adopted EU-wide cap. Final text, scope and proportionality protections may differ from the leaked draft.",
+    "next_catalyst": "September 9 presentation; subsequent Parliament/Council negotiations.",
+    "source_ids": [
+      "REG-S32",
+      "REG-S33"
+    ],
+    "related_ids": [
+      "REG-17"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-26",
+    "tier": 3,
+    "priority": 2,
+    "jurisdiction": "France / Paris",
+    "title": "Further restrictions on professional multi-property STR operators",
+    "status": "Municipal policy ambition; passage not established",
+    "dates": "2026 city policy page",
+    "rule": "City proposes limiting tourist letting to main residences and ending permanent multi-property operations.",
+    "observed_evidence": "Official city statement expresses the desired policy direction.",
+    "abnb_implication": "Could reach commercial inventory outside the existing occasional-host night cap, increasing impact if enacted.",
+    "limitations": "Statement of intent is not proof of an operative ban. Legal powers, grandfathering and final text unconfirmed.",
+    "next_catalyst": "Draft ordinances, enabling law and adoption.",
+    "source_ids": [
+      "REG-S34"
+    ],
+    "related_ids": [
+      "REG-08"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-27",
+    "tier": 3,
+    "priority": 3,
+    "jurisdiction": "United Kingdom / England",
+    "title": "Mandatory short-term letting registration",
+    "status": "Announced/under development; commencement not verified",
+    "dates": "2023 enabling framework; current guidance 2026",
+    "rule": "Government guidance says a mandatory national registration scheme is being introduced.",
+    "observed_evidence": "Current guidance does not establish a completed operational launch in this review.",
+    "abnb_implication": "Registration may enable local monitoring and future planning restrictions; nationally scalable compliance expense.",
+    "limitations": "Do not treat a consultation or enabling power as current mandatory registration. Separate from Scotland's live scheme and London's longstanding rules.",
+    "next_catalyst": "Implementation regulations, launch date and platform obligations.",
+    "source_ids": [
+      "REG-S35"
+    ],
+    "related_ids": [
+      "REG-19"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-28",
+    "tier": 3,
+    "priority": 4,
+    "jurisdiction": "Portugal / Lisbon",
+    "title": "Housing referendum to cancel residential AL registrations",
+    "status": "Proposed referendum blocked by court",
+    "dates": "Constitutional Court judgment 1/2025",
+    "rule": "Resident initiative sought cancellation of residential AL registrations and restrictions on new registrations.",
+    "observed_evidence": "Constitutional Court found the proposed referendum unlawful under the municipal/national legal framework.",
+    "abnb_implication": "Shows organised local opposition but also a legal constraint on blanket local bans; current risk lies in lawful municipal containment or a redesigned initiative.",
+    "limitations": "Not a pending approved referendum or an enacted cancellation order. Do not add its hypothetical inventory loss to Lisbon's live restrictions.",
+    "next_catalyst": "Redesigned referendum or legislation expanding municipal powers.",
+    "source_ids": [
+      "REG-S36"
+    ],
+    "related_ids": [
+      "REG-06"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-29",
+    "tier": 4,
+    "priority": 1,
+    "jurisdiction": "Spain / Barcelona, Balearics and other cities",
+    "title": "Coordinated anti-overtourism protests",
+    "status": "Activism; linked enacted rules tracked separately",
+    "dates": "2024 protests; coordinated demonstrations 2025-06-15",
+    "rule": "Campaigners challenge housing displacement, tourist saturation and changes to neighbourhood businesses. Water-pistol actions attracted coverage.",
+    "observed_evidence": "Reuters reported coordinated demonstrations across several Spanish and Italian cities; organisers also planned Lisbon action.",
+    "abnb_implication": "Political salience and cross-city coordination may sustain tightening even where tourism revenues remain strong.",
+    "limitations": "No direct ABNB dollar impact attributed to protests. Tourism opposition also targets hotels/cruises; do not treat all activism as anti-STR legislation.",
+    "next_catalyst": "Concrete bills, electoral commitments and expansion of coalitions.",
+    "source_ids": [
+      "REG-S37",
+      "REG-S38"
+    ],
+    "related_ids": [
+      "REG-02",
+      "REG-22"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-30",
+    "tier": 4,
+    "priority": 2,
+    "jurisdiction": "Spain / Canary Islands",
+    "title": "Mass-tourism and housing protests",
+    "status": "Activism; subsequent law tracked separately",
+    "dates": "2024-04-20",
+    "rule": "Demonstrators sought limits on tourism expansion, linking holiday rentals and hotel development to local housing pressure.",
+    "observed_evidence": "Reuters reported thousands demonstrating in Tenerife.",
+    "abnb_implication": "Useful chronological link between public pressure and later regional policy attention; supports monitoring islands outside large cities.",
+    "limitations": "Temporal sequence does not establish protests caused Law 6/2025. No separate supply loss should be assigned to the protest.",
+    "next_catalyst": "Implementation politics around the regional law and renewed mobilisation.",
+    "source_ids": [
+      "REG-S39"
+    ],
+    "related_ids": [
+      "REG-16"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-31",
+    "tier": 4,
+    "priority": 3,
+    "jurisdiction": "Portugal / Lisbon and wider housing movement",
+    "title": "Housing activism and participation in Southern European mobilisation",
+    "status": "Activism; specific referendum/legal measures tracked separately",
+    "dates": "2023-2025 housing pressure; coordinated mobilisation planned June 2025",
+    "rule": "Groups link tourism-oriented accommodation to displacement and seek tighter AL restrictions.",
+    "observed_evidence": "Reuters documented planned Lisbon participation; Constitutional Court record establishes a concrete resident referendum initiative.",
+    "abnb_implication": "Pressure can persist despite national liberalisation and influence municipal containment decisions.",
+    "limitations": "Planned protest coverage is not confirmation of attendance or crowd size. Housing activism also concerns wages, construction and other housing policies.",
+    "next_catalyst": "Municipal elections/decisions, new petitions and enforceable proposals.",
+    "source_ids": [
+      "REG-S37",
+      "REG-S36"
+    ],
+    "related_ids": [
+      "REG-06",
+      "REG-07",
+      "REG-28"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  },
+  {
+    "id": "REG-32",
+    "tier": 4,
+    "priority": 4,
+    "jurisdiction": "Greece / tourism-intensive islands and Athens",
+    "title": "Resident housing and tourism-capacity pressure",
+    "status": "Social pressure; no distinct new STR bill established for this row",
+    "dates": "2024-2025 coverage",
+    "rule": "Public debate concerns worker/student housing, water/energy pressures and neighbourhood displacement in heavily visited destinations.",
+    "observed_evidence": "AP reports tourism pressure on Greek housing and resources; national and city restrictions are separately documented.",
+    "abnb_implication": "Signals potential geographic expansion of housing measures; island seasonality may intensify political pressure.",
+    "limitations": "Weaker activism evidence than Spain: this row records documented social pressure, not a verified nationwide anti-Airbnb protest movement. Cruise/day-visitor measures are not counted as STR bans.",
+    "next_catalyst": "Specific island/municipal STR proposals and resident campaigns.",
+    "source_ids": [
+      "REG-S40"
+    ],
+    "related_ids": [
+      "REG-04",
+      "REG-05"
+    ],
+    "last_verified": "2026-09-05",
+    "global_revenue_exposure_pct": null
+  }
+]
