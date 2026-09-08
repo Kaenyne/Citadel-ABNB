@@ -668,3 +668,38 @@ Pooled across 8 cities: **18.99 reviews per active listing (LTM)**.
 But `bottom_up_nights_check.py` hinted US nights might be *high*; this one suggests they look *low*. **Two checks pointing opposite ways means neither is decisive, and the level is uncertain within roughly ±25%.** That's the honest read, and better said out loud than dressed up as a validation.
 
 **What would settle it:** calibrate the review rate on a market where Airbnb's true nights are known, or buy AirDNA's modelled city-level demand.
+
+## Review rate calibrated — the bottom-up loop closes (8 Sep 2026)
+
+`analysis/src/review_rate_calibration.py` → `review_rate_calibration.csv`. The bottom-up build hinged entirely on the review rate, whose 30–72% literature range was too wide to confirm or refute anything. This pins it against **measured** data.
+
+**Method.** Eurostat's `tour_ce_omn12` publishes **STAYS** — actual bookings, reported by Airbnb/Booking/Expedia themselves — at NUTS region level. Five regions are effectively single cities and match an Inside Airbnb city almost exactly: **Vienna (AT13), Berlin (DE30), Brussels (BE10), Prague (CZ01), Madrid (ES30)**. Then:
+
+> review rate = Inside Airbnb `reviews_ltm` ÷ (Eurostat stays × Airbnb's share of the 3 platforms)
+
+This needs **no stay-length assumption** — both sides are counts of bookings.
+
+**Result**, pooled over **984,203 reviews against 3,304,396 measured stays**:
+
+| Airbnb share of 3-platform stays | Implied review rate |
+|---|---|
+| 50% | 60% |
+| **60%** | **50%** |
+| 70% | 43% |
+
+**The review rate is 43–60%, centred on 50%.** Inside Airbnb's own assumption is vindicated at a ~60% Airbnb platform share — close to the listing-share evidence (Airbnb 50–69% of Airbnb+Booking listings across FR/ES/IT/DE, before diluting for Expedia). **Both literature extremes — 30% and 72% — are ruled out.**
+
+### Closing the loop on the US
+
+At the calibrated 50%, the eight US cities produce **156 nights per active listing** against a top-down US average of **87.3**. That +78% gap is **reconcilable, not an error**:
+
+> If large urban markets are ~30% of US active listings at 156 nights, the other 70% must average **~58 nights/yr** — which is exactly what seasonal rural and vacation-home supply (Smoky Mountains, beach towns, lake houses) looks like.
+
+**The top-down nights level survives the bottom-up check** once supply mix is accounted for. That is a genuine independent validation of the level, which the earlier ±25% verdict could not deliver.
+
+### Caveats, binding one first
+
+- **Airbnb's share of 3-platform stays isn't published per city**, and the cross-city spread is wide — Vienna 36% to Berlin 67% at a 60%-share assumption. That spread is most likely variation in Airbnb's share by city (Booking is strong in continental European apartments) rather than real variation in reviewing behaviour.
+- Eurostat 2025 annual vs Inside Airbnb June-2026 LTM: ~6-month offset.
+- NUTS region vs city boundary is close for these five, not identical.
+- Calibrated on **Europe**, applied to a **US** check; reviewing behaviour may differ.

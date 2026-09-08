@@ -25,6 +25,9 @@ WHAT THIS USES INSTEAD - the review-rate estimator (Inside Airbnb's own "San Fra
 
 Review rate is the share of stays that leave a review. Inside Airbnb's published work uses 50%;
 the literature spans roughly 30-72%, so the whole range is carried rather than a point estimate.
+CALIBRATED 8 Sep 2026 (review_rate_calibration.py): against Eurostat's MEASURED platform stays for
+five European city-regions, the review rate is 43-60% and lands on 50% at a ~60% Airbnb platform
+share. Both literature extremes are ruled out. Read the rr=50% column as the central case.
 Stay length: the repo's booked-run mean is biased UP (its own source script says so - host blocks
 read as bookings; Austin 4.71 against Airbnb's disclosed North America 4.1). The disclosed 4.1 is
 therefore used as central, with the run-length mean carried as a high case.
@@ -141,8 +144,12 @@ VERDICT - the two methods do NOT reconcile at any published review rate, and the
   decisive and the level is uncertain within roughly +/-25% - which is honest, and worth saying
   out loud rather than claiming a validation.
 
-  WHAT WOULD SETTLE IT: calibrate the review rate on a market where Airbnb's true nights are known.
-  Failing that, an AirDNA subscription gives modelled city-level demand directly.
+  SETTLED, 8 Sep 2026 - see review_rate_calibration.py. Calibrated against Eurostat measured stays
+  the review rate is 43-60%, centred on 50%, so the rr=50% row is the one to read: 156 nights per
+  active listing for these eight cities against a top-down US average of 87.3. That +78% gap is
+  RECONCILABLE rather than an error: if large urban markets are ~30% of US active listings, the
+  other 70% need only average ~58 nights/yr, which is what seasonal rural and vacation-home supply
+  actually looks like. The top-down level survives the bottom-up check.
 """)
     pd.DataFrame(rows_out).to_csv(OUT / "bottom_up_nights_from_raw.csv", index=False)
     print("wrote", OUT / "bottom_up_nights_from_raw.csv")
