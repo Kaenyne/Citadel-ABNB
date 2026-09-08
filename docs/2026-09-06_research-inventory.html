@@ -1,0 +1,678 @@
+<title>ABNB Research Inventory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #F8F7F5; --panel: #FFFFFF; --ink: #1D1B1A; --ink-2: #4E4946; --muted: #7C7570;
+  --rule: #E4DFDA; --rule-strong: #CFC8C1; --accent: #C8404A; --accent-soft: #F6E3E4;
+  --code-bg: #F1EEEA; --thead: #EFEBE6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17181B; --panel: #1F2126; --ink: #ECE9E4; --ink-2: #C9C3BC; --muted: #948E87;
+    --rule: #2E3036; --rule-strong: #3E4148; --accent: #F0737A; --accent-soft: #3A2528;
+    --code-bg: #24262B; --thead: #262930;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17181B; --panel: #1F2126; --ink: #ECE9E4; --ink-2: #C9C3BC; --muted: #948E87;
+  --rule: #2E3036; --rule-strong: #3E4148; --accent: #F0737A; --accent-soft: #3A2528;
+  --code-bg: #24262B; --thead: #262930;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  font-size: 16px; line-height: 1.55; margin: 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; outline: none; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+header.masthead { border-bottom: 1px solid var(--rule); padding: 40px 32px 28px; }
+.masthead-inner { max-width: 1180px; margin: 0 auto; }
+.eyebrow { font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin: 0 0 10px; }
+h1 { font-family: "IBM Plex Sans", system-ui, sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 40px); line-height: 1.1;
+  letter-spacing: -0.015em; margin: 0 0 12px; text-wrap: balance; max-width: 22ch; }
+.byline { font-family: "IBM Plex Sans", system-ui, sans-serif; color: var(--muted); font-size: 14px; margin: 0; max-width: 70ch; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin: 24px 0 0;
+  border: 1px solid var(--rule); background: var(--panel); }
+.fact { padding: 12px 16px; border-right: 1px solid var(--rule); }
+.fact:last-child { border-right: 0; }
+.fact b { display: block; font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 22px; font-weight: 600;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.fact span { font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 12px; color: var(--muted); letter-spacing: 0.02em; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 32px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; }
+nav.toc { position: sticky; top: 24px; align-self: start; font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 13.5px; }
+nav.toc p { margin: 0 0 8px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+nav.toc ul { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--rule); }
+nav.toc li a { display: block; padding: 5px 12px; color: var(--ink-2); border-left: 2px solid transparent; margin-left: -2px; line-height: 1.3; }
+nav.toc li a:hover { color: var(--ink); border-left-color: var(--accent); text-decoration: none; }
+main { min-width: 0; }
+main > p, main > ul, main > ol { max-width: 72ch; }
+.lede { font-size: 17px; color: var(--ink-2); border-left: 3px solid var(--accent); padding-left: 16px; margin: 0 0 28px; }
+h2 { font-family: "IBM Plex Sans", system-ui, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; line-height: 1.2;
+  margin: 48px 0 14px; padding-top: 20px; border-top: 1px solid var(--rule-strong); text-wrap: balance; }
+h2:first-of-type { margin-top: 8px; }
+h3 { font-family: "IBM Plex Sans", system-ui, sans-serif; font-weight: 600; font-size: 17px; margin: 30px 0 10px; text-wrap: balance; }
+hr { display: none; }
+p { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; margin: 0 0 16px; }
+li { margin: 0 0 6px; }
+li p { margin: 0; }
+strong { font-weight: 600; color: var(--ink); }
+code { font-family: "IBM Plex Mono", ui-monospace, Consolas, monospace; font-size: 0.86em; background: var(--code-bg);
+  padding: 1px 5px; border-radius: 3px; color: var(--ink-2); }
+.tablewrap { overflow-x: auto; margin: 6px 0 22px; border: 1px solid var(--rule); background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 13.5px; line-height: 1.4;
+  font-variant-numeric: tabular-nums; }
+th { text-align: left; background: var(--thead); font-weight: 600; padding: 9px 12px; border-bottom: 1px solid var(--rule-strong);
+  white-space: nowrap; font-size: 12px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--ink-2); }
+td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; min-width: 120px; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 500; }
+td code { background: transparent; padding: 0; font-size: 0.9em; }
+footer { max-width: 1180px; margin: 0 auto; padding: 24px 32px 48px; font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--rule); }
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
+  nav.toc { position: static; }
+  nav.toc ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); border-left: 0; gap: 2px; }
+  header.masthead { padding: 28px 20px 20px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+<header class="masthead"><div class="masthead-inner">
+  <p class="eyebrow">Citadel pitch · Airbnb (ABNB) · read-only inventory</p>
+  <h1>Everything we have on ABNB, as of 6 September 2026</h1>
+  <p class="byline">Compiled by Krishang with Claude Code from the GitHub repo (main, origin/main, every open branch and worktree, Theo's archive) and Theo's OneDrive share. Every number is quoted from a note, CSV or script; conflicts are flagged with the audited figure.</p>
+  <div class="facts">
+    <div class="fact"><b>7</b><span>open PRs (#5, #8, #11–#15) plus the unpushed overnight branch</span></div>
+    <div class="fact"><b>~3,500</b><span>statistical tests run; five survivors</span></div>
+    <div class="fact"><b>$74 / $157 / $228</b><span>bear / base / bull vs $181.94 spot</span></div>
+    <div class="fact"><b>13.5 / 16.5 / 18.5x</b><span>exit EV/EBITDA now in the model (was 18 / 22 / 25.5x)</span></div>
+    <div class="fact"><b>5 Nov</b><span>Q3 print; card frozen as ABNB-WS20-v1</span></div>
+  </div>
+</div></header>
+<div class="wrap">
+  <nav class="toc"><p>Sections</p><ul><li class="l2"><a href="#1-where-things-live">1. Where things live</a></li><li class="l2"><a href="#2-data-we-hold">2. Data we hold</a></li><li class="l2"><a href="#3-models-built">3. Models built</a></li><li class="l2"><a href="#4-figures">4. Figures</a></li><li class="l2"><a href="#5-conclusions">5. Conclusions</a></li><li class="l2"><a href="#6-claims-to-stop-making-from-the-red-team-and-the-audit">6. Claims to stop making (from the red team and the audit)</a></li><li class="l2"><a href="#7-what-to-do-next">7. What to do next</a></li></ul></nav>
+  <main><p class="lede">Reading order if you have ten minutes: section 1 (where things live), section 5.1 (the thesis the overnight synthesis reached), section 6 (claims to stop making), section 7 (what to do before 5 November).</p>
+<hr />
+<h2 id="1-where-things-live">1. Where things live</h2>
+<h3 id="1-1-the-repo">1.1 The repo</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Location</th>
+<th>State</th>
+<th>What is there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>origin/main</code> (9c3dc97)</td>
+<td>canonical</td>
+<td>Theo's alt-data acquisition layer (PRs #9, #10), the pitch landscape and catalogue, management timeline, major-moves study, Third Bridge digest, the 22-quarter earnings-call study, Theo's Codex archive (<code>theos-past-research/</code>), two of Jessie's zip drops still unpacked at the root</td>
+</tr>
+<tr>
+<td>local <code>main</code></td>
+<td>5 commits behind origin; 86 untracked files</td>
+<td>Untracked: the regulatory package (<code>research/regulatory/</code>, 11 scripts, SQLite), <code>ABNB-Crossover/</code>, the options ledger, older copies of the driver-model and supply-panel outputs. The audit warns this tree holds stale, uncorrected copies; do not port fixes into it blind</td>
+</tr>
+<tr>
+<td><code>krish/overnight-synthesis</code> (worktree <code>../citadel-abnb-overnight</code>, unpushed)</td>
+<td><strong>the most complete branch</strong>: 509 files, 331,925 insertions vs origin/main</td>
+<td>Union-merges all eleven open branches, then the 6-7 Sep overnight run (workstreams 01-15), follow-ups 16-18 and audit repairs 19-26. Framed as PR #16; on merge it closes PRs #5, #8, #11-#15</td>
+</tr>
+<tr>
+<td>PRs #8, #11, #12, #13, #14, #15 (worktrees <code>../citadel-abnb-margin-gaps</code>, <code>-supply</code>, <code>-cc</code>, <code>-model</code>, <code>-eu</code>, <code>-reg</code>)</td>
+<td>open</td>
+<td>margin drivers, Inside Airbnb supply panel, Common Crawl panel, driver model v1, Eurostat/backlog, regulatory forecast</td>
+</tr>
+<tr>
+<td><code>krish/capital-return-panel</code>, <code>krish/predictive-study</code>, <code>krish/transcript-analytics</code>, <code>krish/guidance-margin-items</code></td>
+<td>local branches, no PR</td>
+<td>capital-return panel, predictive study (five sub-notes), transcript analytics, 44 margin guides added to Theo's guidance dataset</td>
+</tr>
+<tr>
+<td><code>origin/krish/plan-of-attack</code> (PR #5)</td>
+<td>open</td>
+<td>the 5 Sep plan: branch split, ten build branches, cadence to the Q3 print</td>
+</tr>
+</tbody>
+</table></div>
+<p>Merge order is forced: margin-drivers first, then driver-model, capital-return and predictive-study (they read its CSVs). Source IDs collide across branches (S32-S37 each used twice); the overnight branch renumbered them S40-S45.</p>
+<h3 id="1-2-theo-s-onedrive-share-citadel-abnb">1.2 Theo's OneDrive share ("Citadel - ABNB")</h3>
+<p>Downloaded 6 Sep to <code>data/raw/theo_onedrive/AIRBNB DATA/</code> (420 MB, gitignored). Not downloaded: <code>raw_expansion/v2_2026-09-05/</code> (2.8 GB of single-vintage Jun-Aug 2026 Inside Airbnb dumps for about 60 markets, none in our 13-city panel except London; re-downloadable from the Inside Airbnb CDN).</p>
+<p>What is unique there:
+- <strong>Bloomberg options workbook</strong> (built 4 Sep, cached values): daily implied and realised vol, put/call ratios and option volume since the IPO (1,436 rows); ATM IV term structure 30D to 12M with 90/95/105/110 moneyness; 67 monthly ATM straddles Jan 2021 to Sep 2026 (implied vs realised; average implied 10.4%, realised 10.7%; Aug 2026 implied 10.0% vs realised 33.7%); full chain on 4 Sep (1,255 contracts with IV).
+- <strong>Bloomberg long export</strong> (6,365 rows, licensed): PX_LAST and 30-day vol daily; comps for ABNB, BKNG, EXPE, H, HLT, IHG, MAR (ABNB 26.3x EV/EBITDA, 41.3x P/E, $108.9B cap on 5 Sep); target price and analyst-rating history; BEST_SALES/EBITDA/EPS by period. <strong>Caveat: the "consensus time series" is anchored to the pull date (FY1 revenue at 31 Dec 2020 reads 14,270), so it is a revision history of the FY26/Q3 26 estimates, not point-in-time consensus at each print.</strong>
+- <strong>Bloomberg FA consensus PDF</strong> (6 pages): quarterly 3Q24 to 4Q26E for revenue (3Q26E $4,743.7M, 4Q26E $3,154.0M), nights (148.9M / 134.2M), GBV, ADR, take rate, EBITDA, FCF, SBC, regional revenue and balance sheet.
+- <strong>FactSet transcripts</strong> Q4 2020, Q4 2021, Q4 2022 (not in the repo's IR archive, which starts Q1 2023) plus Q3 23, Q2 24, Q2 25.
+- Handoff docs V2/V3 and <code>A_LEVEL</code> describing Theo's 315-file, 9.2 GB, 120-market Inside Airbnb store (on his external SSD, not on the share) and the v1/v3 processed panels. <strong>17 of the 20 v3 E-series artifacts listed in the manifest (hotel nights, TSA throughput, Wikipedia pageviews, regulatory events, app engagement, listing and review fact tables) are not on the share.</strong> Only <code>market_lodging_tax.csv</code> (14 US markets, mostly annual) and <code>cohort_status.csv</code> synced.
+- V3 §0.1 corrections worth knowing: US historical Inside Airbnb dumps do return 200 for latest-2025 snapshots (17 of 17 US markets), reversing V2's "US 0%"; TSA passenger volumes now return 200.
+- A <code>.secrets/env.sh</code> with Theo's API tokens is on the share; not read; he should remove it.</p>
+<h3 id="1-3-theo-s-external-ssd-described-not-held">1.3 Theo's external SSD (described, not held)</h3>
+<p>Inside Airbnb current cohort: 120 markets, 35 countries incl. all 34 US: 982,188 listing rows, 588,120,594 calendar rows, 67,500,188 review rows. Municipal STR registries: 25 datasets, 17 portals, 109,343 rows (Austin daily active licences 527 dates; California TOT 482 cities x 8 FY). Harvard Dataverse daily STR replication files (210 MB + 370 MB). All fully described by SHA-256 in <code>data/manifests/</code>.</p>
+<hr />
+<h2 id="2-data-we-hold">2. Data we hold</h2>
+<h3 id="2-1-company-financials-and-kpis-all-rebuildable">2.1 Company financials and KPIs (all rebuildable)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Grain / coverage</th>
+<th>Where</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definitive KPI panel, 119 columns</td>
+<td>quarterly 1Q21-2Q26 (24 quarters)</td>
+<td>overnight <code>02_kpi_panel_quarterly.csv</code>; predecessors <code>abnb_quarterly_kpis_from_study.csv</code>, <code>abnb_driver_history_quarterly.csv</code></td>
+<td>nights, GBV, ADR, revenue, take rate, adj. EBITDA, SBC, cost lines, regional shares; 342 verbatim quotes re-verify</td>
+</tr>
+<tr>
+<td>GAAP cost lines from XBRL</td>
+<td>1Q20-2Q26</td>
+<td><code>abnb_quarterly_costlines.csv</code> (margin branch)</td>
+<td>Q4 = FY less 9M; ops &amp; support backed out</td>
+</tr>
+<tr>
+<td>Cash (ex-SBC) cost stack, per night and % revenue</td>
+<td>1Q21-2Q26</td>
+<td><code>abnb_quarterly_cost_stack_exsbc.csv</code>; overnight <code>07_cost_lines_per_night</code> with a brand-vs-field S&amp;M split</td>
+<td>identity holds within $2M except 4Q23</td>
+</tr>
+<tr>
+<td>Margin bridge and scenarios</td>
+<td>FY22 to FY25 bridges; bear/base/bull FY26-FY27</td>
+<td><code>abnb_margin_bridge.csv</code>, <code>abnb_margin_scenarios.csv</code></td>
+<td></td>
+</tr>
+<tr>
+<td>FCF bridge</td>
+<td>1Q21-2Q26 and FY21-FY25</td>
+<td><code>abnb_fcf_bridge.csv</code></td>
+<td>CFO less capex ties to the letters in all 22 quarters</td>
+</tr>
+<tr>
+<td>Capital return panel</td>
+<td>1Q21-2Q26</td>
+<td><code>abnb_capital_return_quarterly.csv</code>; peer scorecard <code>capital_return_scorecard_annual.csv</code> (ABNB, BKNG, EXPE, META, NFLX, UBER, DASH)</td>
+<td></td>
+</tr>
+<tr>
+<td>Backlog indicators (unearned fees, funds held)</td>
+<td>4Q20-2Q26</td>
+<td><code>abnb_backlog_indicators.csv</code> (EU branch, leakage fixed by audit A01 on overnight)</td>
+<td></td>
+</tr>
+<tr>
+<td>Regional panel, 79 columns</td>
+<td>23 quarters</td>
+<td>overnight <code>10_regional_panel.csv</code> from 766 tagged letter sentences plus XBRL geography</td>
+<td>share-weighted sum reconciles to total nights within 1.1pp</td>
+</tr>
+<tr>
+<td>ABNB vs BKNG vs EXPE annual</td>
+<td>FY21-FY25</td>
+<td><code>abnb_vs_bkng_annual.csv</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Theo's EDGAR extracts</td>
+<td>2020Q1-2026Q2</td>
+<td><code>abnb_edgar_quarterly_kpis.csv</code> (43 rows), <code>abnb_filing_kpis.csv</code> (368 KPI sentences)</td>
+<td>evidence-grade, not series-grade</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2-2-guidance-and-consensus">2.2 Guidance and consensus</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Coverage</th>
+<th>Where</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guidance ledger, 194 statements (159 scoreable)</td>
+<td>all 23 prints</td>
+<td>overnight <code>02_guidance_ledger.csv</code>; Theo's <code>guidance_items.csv</code> (100 rows, plus 44 margin guides from <code>krish/guidance-margin-items</code>)</td>
+<td>ranges, floors, points, ceilings, buckets, directional</td>
+</tr>
+<tr>
+<td>Revenue guide vs actual</td>
+<td>4Q21-3Q26</td>
+<td><code>abnb_revenue_guidance_vs_actual.csv</code></td>
+<td>19 of 19 beat the midpoint, 15 above the top</td>
+</tr>
+<tr>
+<td><strong>Consensus at all 23 prints</strong></td>
+<td>revenue 23/23, next-Q revenue 18/23, EPS 17/23, nights 18/23, GBV 12/23, EBITDA 8/23, ADR 5/23</td>
+<td>overnight <code>04_consensus_at_print.csv</code> from 145 sourced press/vendor quotes (LSEG, Refinitiv, StreetAccount, Zacks)</td>
+<td>closes the biggest hole in Theo's archive (his <code>consensus_snapshots.csv</code> is 23 rows of "missing"). Vendors spliced; keep the vendor column</td>
+</tr>
+<tr>
+<td>Current Street (3-4 Sep 2026)</td>
+<td>Q3 26 to FY27</td>
+<td>overnight <code>04_*</code>, <code>12_analyst_targets.csv</code> (466 actions, 31 live targets)</td>
+<td>Q3 revenue $4.74bn, Q4 $3.20bn (21% spread), FY27 $15.73-15.76bn; mean target $178.96, 46% Hold or worse</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2-3-stock-market-and-options">2.3 Stock, market and options</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Coverage</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daily closes ABNB and 20 tickers, Ken French factors, 466 sell-side actions, 84 short-interest settlements</td>
+<td>Dec 2020 to 4 Sep 2026</td>
+<td><code>abnb_daily_close.csv</code>; overnight WS09 outputs</td>
+</tr>
+<tr>
+<td>41 moves of 7%+ since IPO, attributed</td>
+<td></td>
+<td><code>abnb_major_moves_events.csv</code></td>
+</tr>
+<tr>
+<td>1/5/20-session reactions to all 23 prints (now on an executable next-open entry)</td>
+<td></td>
+<td><code>abnb_earnings_reactions.csv</code>; overnight <code>20_event_returns_executable.csv</code>, 391-row prediction ledger</td>
+</tr>
+<tr>
+<td>Monthly ABNB multiples, point-in-time on last-reported LTM; 19-name peer cross-section 4 Sep</td>
+<td>2021-2026</td>
+<td>overnight <code>12_abnb_multiples_monthly.csv</code>, <code>12_peer_multiples.csv</code></td>
+</tr>
+<tr>
+<td>Options ledger (Yahoo, current chains)</td>
+<td>run 5 and 6 Sep</td>
+<td><code>abnb_options_ledger.csv</code>; the Bloomberg workbook on OneDrive is the historical upgrade</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2-4-transcripts-and-language">2.4 Transcripts and language</h3>
+<ul>
+<li>23 earnings calls Q4 2020 to Q2 2026: IR-hosted FactSet PDFs for Q4 21 and Q1 23 onward, stockanalysis.com text for the rest (<code>data/raw/transcripts/</code>, gitignored). The OneDrive FactSet files add Q4 20, Q4 21, Q4 22 in corrected form.</li>
+<li>23 shareholder letters (SEC 8-K Ex. 99.1), parsed for KPIs, SBC-by-function footnotes and outlook sentences.</li>
+<li>Derived: call roster (317 analyst-call rows), churn, 14-topic mix per call, 37 hand-verified "declined to quantify" instances (<code>krish/transcript-analytics</code>); 1,677 speaker turns and 132 language features per print, 83 management claims scored for credibility (overnight WS03).</li>
+<li>Five Third Bridge expert transcripts (May-Aug 2026), digested in <code>research/notes/2026-09-05_third-bridge-transcripts.md</code>. <strong>The licensed PDFs are still tracked on origin/main under <code>research/</code> despite the sources log saying they were purged.</strong></li>
+</ul>
+<h3 id="2-5-supply-side-alternative-data">2.5 Supply-side alternative data</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>What we hold</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inside Airbnb</strong></td>
+<td>13 cities (NYC, LA, Chicago, Austin, Nashville, New Orleans, San Diego, Paris, London, Barcelona, Rome, Sydney, Mexico City), 168 dumps Dec 2022 to Aug 2026 (2.6 GB raw, gitignored); city snapshots, like-for-like pairs (now with <code>pair_eligible</code> flags), host concentration; 1.71M fee-inclusive quotes Mar-Aug 2026; hedonic panel of 2.85M listing-dumps</td>
+<td>PR #11; overnight WS06/WS08/WS21</td>
+</tr>
+<tr>
+<td><strong>Common Crawl</strong></td>
+<td>2.08M CDX rows over 50 crawls (2021-2026), 1.2M unique listing ids, 3,000 WARC renders, 1,500 matched pairs; survival by crawl and by age</td>
+<td>PR #12</td>
+</tr>
+<tr>
+<td><strong>Booking curves</strong> (Theo)</td>
+<td>blocked-night rate by market x snapshot x horizon, 120 markets, 44,379 daily rows; single Jun 2026 vintage</td>
+<td>origin/main <code>booking_curve_daily.csv</code>, <code>booking_curves_by_market.csv</code></td>
+</tr>
+<tr>
+<td><strong>Market summary 2026</strong> (Theo)</td>
+<td>120 markets: listings, hosts, entire-home / multi-host / superhost / licence shares, native-currency median price</td>
+<td>origin/main <code>market_summary_2026.csv</code></td>
+</tr>
+<tr>
+<td><strong>Austin daily active STR licences</strong> (Jessie)</td>
+<td>527 dates, by type and district</td>
+<td>in <code>citadel-abnb-austin-rnpl-hotels.zip</code> at the repo root, never unpacked</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2-6-category-macro-and-demand-data">2.6 Category, macro and demand data</h3>
+<ul>
+<li><strong>Eurostat <code>tour_ce_omr</code></strong>: EU27 + 31 countries platform nights, monthly Jan 2018 to Mar 2026 (PR #14). Theo also pulled seven other <code>tour_ce_*</code> datasets and <code>tour_occ_nim</code> hotel nights (on his SSD / v3, not synced).</li>
+<li><strong>BEA PCE travel panel</strong>: 10 series nominal/real/price, monthly 2015 to Jul 2026 (committed as an exception to the raw rule); <strong>FRED</strong>: CPI lodging, airfares, all-items, plus 16 series on the predictive branch and 28 re-pulled on overnight WS05, cached in <code>05_fred_cache/</code>.</li>
+<li><strong>FX schedule</strong>: EUR/USD and broad-dollar paths to 4Q27 with the fitted ADR-FX and revenue-FX contributions (<code>05_fx_schedule.csv</code>); regional currency baskets (WS10).</li>
+<li><strong>Peer prints</strong>: 93 8-K Ex. 99.1 releases for BKNG, EXPE, MAR, HLT parsed to KPIs with sentence and URL (predictive branch); BKNG alternative-accommodation nights derived (WS11).</li>
+<li><strong>Google Trends</strong>: 9 terms, US and worldwide, 2019 to Sep 2026 (WS08); not point-in-time (Google renormalises on every pull).</li>
+<li>Air traffic (TSA, IATA, BTS), NTTO inbound, hotel CPI/BEA price monitors, CoStar/AirDNA monthly figures quoted from public releases.</li>
+</ul>
+<h3 id="2-7-regulatory">2.7 Regulatory</h3>
+<ul>
+<li>32-factor register (REG-01 to REG-32, four tiers), 48 source records, 9-observation earnings digest, SQLite database with full-text search, per-market supply-at-risk inventory (20 Inside Airbnb snapshots, INE Spain series, RNAL, ELSTAT, Scotland, BC), identifier-matched cohorts (Barcelona 5,146 HUTB licences, Maui 3,862 unit ids across 92 parcels), Hawaii DBEDT monthly vintages, the NYC CRA guest-nights benchmark, two editable sensitivity workbooks. All untracked in the main tree (planned <code>krish/regulatory-db</code>, never opened as a PR).</li>
+<li>20-event probability table and Monte Carlo outputs (PR #15; dependency structure fixed by audit A06 on overnight).</li>
+</ul>
+<h3 id="2-8-licensed-material-never-commit">2.8 Licensed material (never commit)</h3>
+<p>Bloomberg options workbook, Bloomberg long export and PDF (OneDrive); FactSet transcripts (OneDrive); LSEG/Refinitiv story bodies (<code>data/raw/regulatory/lseg/</code>); five Third Bridge PDFs (currently tracked, must be purged); the Henry Fund PDF (link only). <code>.gitignore</code> already matches <code>*bloomberg*</code>, <code>*factset*</code>, <code>*capiq*</code>.</p>
+<h3 id="2-9-what-we-do-not-have">2.9 What we do not have</h3>
+<ul>
+<li><strong>Point-in-time consensus from a terminal</strong> (WS04's press-quote reconstruction is the stand-in; Bloomberg's pull is revision history, not point-in-time).</li>
+<li><strong>Occupancy</strong>: nothing measures it; the booking curve is a blocked-night rate.</li>
+<li><strong>Realised ADR from any free source</strong>: 2026 Inside Airbnb calendars have no price column; Common Crawl carries none in 3,000 renders.</li>
+<li>Quarterly ADR ex-FX before 4Q25 (only three letter-stated quarters), RNPL share of GBV beyond "&gt;20%", segment revenue for hotels / Experiences / Services, brand-vs-field S&amp;M before 2023, headcount and SBC per employee, cross-border / urban / long-term-stay shares after 1Q24 (all stopped while decelerating).</li>
+<li>NYC pre/post Local Law 18 Inside Airbnb dumps (403; must be requested naming 2023-06-05, 2023-10-01, 2023-11-01, 2024-01-05, 2024-03-07).</li>
+<li>Theo's v3 E-series tables, his 67.5M-review store and 25 municipal registries (on his SSD).</li>
+<li>A true vintage (ALFRED/Eurostat revision) series for any macro input; a 13F concentration history; regional MAR/HLT RevPAR; LatAm external benchmarks; a period-end fully diluted share count.</li>
+<li>Card panels, app downloads, web traffic, AirDNA listing-level exports, VIC and AlphaSense content.</li>
+</ul>
+<hr />
+<h2 id="3-models-built">3. Models built</h2>
+<h3 id="3-1-the-driver-model-overnight-ws13-supersedes-the-5-sep-python-model">3.1 The driver model (overnight WS13, supersedes the 5 Sep Python model)</h3>
+<p><code>model/ABNB_driver_model.xlsx</code>: 9 sheets, 2,353 live formulas, 216 named outputs, scenario selector on <code>Inputs!B4</code>, mirrored by <code>13_driver_model.py</code> and verified in real Excel (0 errors in 5,553 cells, 216/216 outputs and 2,353/2,353 formulas reconciling, scenario switch 144 comparisons / 0 mismatches, both audit scripts exit 0). Rebuild per <code>docs/overnight/BUILD.md</code>.</p>
+<p>Structure: regional nights build (NA/EMEA/LatAm/APAC growth less a regulatory drag) x ADR ex-FX x ADR FX x take rate, plus an FX timing wedge, a new-business line and an AI referral cost; lever-by-lever cost stack to adj. EBITDA, GAAP operating income and net income; FCF bridge with buybacks, RSU withholding and a share-count path; six valuation lenses, a DCF ladder, a reverse DCF, a 441-cell sensitivity grid and the 5 Nov card as live formulas.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Base case</th>
+<th>FY2026E</th>
+<th>FY2027E</th>
+<th>FY2028E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nights</td>
+<td>585.7M (+9.9%)</td>
+<td>637.6M (+8.9%)</td>
+<td>685.0M (+7.4%)</td>
+</tr>
+<tr>
+<td>ADR</td>
+<td>$180.32 (+5.3%)</td>
+<td>$185.18 (+2.7%)</td>
+<td>$189.81 (+2.5%)</td>
+</tr>
+<tr>
+<td>Revenue</td>
+<td>$14,233M (+16.3%)</td>
+<td>$15,842M (+11.3%)</td>
+<td>$17,947M (+13.3%)</td>
+</tr>
+<tr>
+<td>Adj. EBITDA / margin</td>
+<td>$5,158M / 36.2%</td>
+<td>$5,686M / 35.9%</td>
+<td>$6,704M / 37.35%</td>
+</tr>
+<tr>
+<td>SBC % revenue</td>
+<td>12.6%</td>
+<td>12.4%</td>
+<td>11.8%</td>
+</tr>
+<tr>
+<td>FCF / margin</td>
+<td>$5,129M / 36.0%</td>
+<td>$5,420M / 34.2%</td>
+<td>$6,197M / 34.5%</td>
+</tr>
+<tr>
+<td>Diluted shares</td>
+<td>588.9M</td>
+<td>574.6M</td>
+<td>561.5M</td>
+</tr>
+<tr>
+<td>FCF / share</td>
+<td>$8.71</td>
+<td>$9.43</td>
+<td>$11.04</td>
+</tr>
+</tbody>
+</table></div>
+<p>Scenario anchors: FY27 nights +5.5 / +8.9 / +11.7%; revenue FX −2.6 / −0.63 / +0.9pp; take rate −15 / 0 / +15 bps; margin FY27 28.4 / 35.9 / 38.0% (38% cap); cost of equity 11.5 / 10.5 / 10.3%; <strong>exit EV/EBITDA on FY27E 13.5 / 16.5 / 18.5x</strong> (was 18 / 22 / 25.5x on 5 Sep).</p>
+<p>Outputs: <strong>football field bear $74 / base $157 / bull $228</strong> against $181.94; the base EV/EBITDA lens alone is <strong>$180.88</strong>. Prices are 12-month forward targets on FY2027E exit metrics (target date ~30 Sep 2027), the FY28 lens discounted one year. Reverse DCF: $99.0bn EV needs 7.5% ten-year FCF growth on reported FCF, 13.3% on SBC-adjusted FCF (WACC 10%, terminal 3%).</p>
+<p>Known limits: no reaction function (deliberate), no FY28 regional or FX build, new businesses at an assumed 70% incremental margin, no float model, buybacks exogenous and above the $3.4bn of remaining authorisation, no Monte Carlo, share count off a weighted-average anchor.</p>
+<h3 id="3-2-the-5-sep-driver-model-pr-13-superseded">3.2 The 5 Sep driver model (PR #13, superseded)</h3>
+<p><code>abnb_driver_model.py</code>: log-additive revenue decomposition (nights / ADR ex-FX / FX / take rate), a reaction regression on 18 guided prints, bear/base/bull FY26-FY28 through four lenses, reverse DCF. Its $176 / $248 / $325 football field rested on 18 / 22 / 25.5x exit multiples that WS12 could not support; keep it only as the labelled "if the market keeps paying 2026 multiples" sensitivity.</p>
+<h3 id="3-3-margin-lever-model-pr-8-and-overnight-ws07">3.3 Margin lever model (PR #8 and overnight WS07)</h3>
+<p>Bottom-up from nights, ADR (ex-FX and FX), take rate, cost of revenue per GBV dollar, support cost per night, product-dev / brand / field-ops / G&amp;A cash growth; a 40,000-draw correlated Monte Carlo to FY28 (rho 0.75). Sensitivities on the FY26 base: +1pt ADR ex-FX +0.46 margin pts, +1pt FX +0.47, +10bps take rate +0.48, support cost per night −10% +0.96, S&amp;M cash growth +5pts −0.84. FY26 margin as a function of brand-and-performance growth: +17% → 37.0%, +25% → 36.2%, +31% → 35.5% (the floor).</p>
+<h3 id="3-4-regulatory-monte-carlo-pr-15-repaired-on-overnight">3.4 Regulatory Monte Carlo (PR #15, repaired on overnight)</h3>
+<p>20 events with horizon probabilities, triangular conditional losses, Gaussian copula (rho 0.45 EU, 0.25 US), 200,000 draws; EU tail now nested inside its parent, Barcelona as one ordinal ladder, one correlated path per trial. Translates to EBITDA at 70% contribution and value per share at 22x.</p>
+<h3 id="3-5-test-harnesses-no-alpha-found-but-the-negatives-are-the-result">3.5 Test harnesses (no alpha found, but the negatives are the result)</h3>
+<ul>
+<li>Reaction function: 97 tests on consensus surprises (WS04), 189 + 180 tests on print features (predictive 04), 17 on the guide ledger (WS02), 948 on call language (WS03), 218 on stock behaviour (WS09), 195 temporal-validation specs with executable entries and a frozen spec <code>ABNB-WS20-v1</code> (WS20).</li>
+<li>Nowcasts: 890 macro pairs (predictive 03), 1,408 (WS05), 598 alt-data feature tests + 42 index backtests with expanding-window walk-forwards against naive / prior-year / AR(1) (WS08), 255 peer read-through cells (predictive 02), 3,446 regional correlations (WS10).</li>
+<li>Valuation: 77 tests on what moves the multiple (WS12).</li>
+<li>Others: transcript parser (<code>transcript_analytics.py</code>, 652 lines), options event-variance estimator (rewritten by A08, currently unidentified), pitch scorecard (37 calls), Inside Airbnb and Common Crawl panel builders, Eurostat/backlog builder, acquisition layer (<code>analysis/src/acquisition/</code>, Theo).</li>
+</ul>
+<hr />
+<h2 id="4-figures">4. Figures</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Files</th>
+<th>What they show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driver model v1 (PR #13)</td>
+<td><code>abnb_revenue_decomposition.png</code>, <code>abnb_reaction_function.png</code>, <code>abnb_football_field.png</code></td>
+<td>growth split into nights / ADR ex-FX / FX / take rate; the near-zero fit of day-one return on the beat; the superseded $176/$248/$325 field</td>
+</tr>
+<tr>
+<td>Inside Airbnb (PR #11), 8</td>
+<td><code>inside_airbnb_lfl_price_yoy</code>, <code>_retention_yoy</code>, <code>_reviews_ltm_yoy</code>, <code>_reviews_ltm_level</code>, <code>_multi_listing_share</code>, <code>_superhost_share</code>, <code>_listings</code>, <code>_entire_home_share</code></td>
+<td>13-city small multiples; retention and reviews-yoy panels need the <code>pair_eligible</code> fix applied before use</td>
+</tr>
+<tr>
+<td>Common Crawl (PR #12), 3</td>
+<td><code>cc_listing_survival</code>, <code>cc_review_velocity</code>, <code>cc_professionalisation</code></td>
+<td>review velocity is the usable slide exhibit</td>
+</tr>
+<tr>
+<td>Eurostat / backlog (PR #14), 3</td>
+<td><code>eurostat_platform_vs_abnb_emea</code>, <code>eurostat_platform_country_growth</code>, <code>abnb_backlog_indicators</code></td>
+<td>category vs ABNB EMEA; regulated countries at the bottom; the RNPL break in unearned fees</td>
+</tr>
+<tr>
+<td>Regulatory (PR #15)</td>
+<td><code>abnb_regulatory_profile.png</code></td>
+<td>loss distribution 2027 vs 2030 and expected loss by event</td>
+</tr>
+<tr>
+<td>Stock reactions (PR #6)</td>
+<td><code>abnb_major_moves.png</code></td>
+<td>closes since IPO annotated with 41 moves of 7%+</td>
+</tr>
+<tr>
+<td>Overnight, 24</td>
+<td><code>02_guidance_cushion</code>, <code>03_theme_timeline</code>, <code>03_feature_vs_reaction</code>, <code>03_event_study</code>, <code>05_fx_mechanism</code>, <code>05_macro_vs_nights</code>, <code>05_sensitivity_bars</code>, <code>08_indexes_vs_kpis</code>, <code>09_rolling_betas</code>, <code>09_variance_decomposition</code>, <code>09_earnings_drift</code>, <code>09_seasonality</code>, <code>09_rules_backtest</code>, <code>09_positioning</code>, <code>10_regional_nights_growth</code>, <code>10_regional_revenue_mix</code>, <code>10_regional_forecast</code>, <code>11_alt_accom_growth</code>, <code>12_abnb_multiples_history</code>, <code>12_abnb_multiple_drivers</code>, <code>12_abnb_lens_tracking</code>, <code>12_exit_multiple_evidence</code>, <code>12_analyst_targets</code>, <code>12_peer_crosssection</code></td>
+<td>the deck-grade set; <code>12_exit_multiple_evidence</code> and <code>11_alt_accom_growth</code> carry the thesis</td>
+</tr>
+<tr>
+<td>Jessie's Austin drop, 3</td>
+<td><code>05_austin_daily_active_str</code>, <code>06_austin_str_by_type</code>, <code>07_austin_str_by_district</code></td>
+<td>licences 2,268 → 2,920 (+29% in 18 months), owner-occupied types shrinking, Type 2 +78%</td>
+</tr>
+<tr>
+<td>Bloomberg ALTD screenshot (OneDrive)</td>
+<td></td>
+<td>app time, downloads, web visits, observed sales monthly y/y 2017-2026</td>
+</tr>
+</tbody>
+</table></div>
+<p>No figures are committed on the margin, capital-return, predictive or transcript-analytics branches (table-based notes).</p>
+<hr />
+<h2 id="5-conclusions">5. Conclusions</h2>
+<h3 id="5-1-the-thesis-the-overnight-synthesis-reached">5.1 The thesis the overnight synthesis reached</h3>
+<p><strong>The stock is priced at the base case, and the prior "buy" case was an exit multiple no evidence supports.</strong> The base 12-month target fell from $248 (5 Sep) to $181 (7 Sep); $55 of the $67 is the multiple, the rest is a net-cash correction (RSU withholding was never subtracted), a share-count double-count and small EBITDA changes. WS12 attacked the exit multiple three ways (ABNB's own multiple vs forward growth 2023-26, a 19-name cross-section, a fade DCF) and all three land below 18 / 22 / 25.5x; recommended 13.5 / 16.5 / 18.5x. The highest live sell-side target ($220) implies 19.3x on FY27E, the mean ($178.96) 15.4x, the whole tape 10.1-19.3x.</p>
+<p><strong>Growth is the only fundamental that has moved this multiple</strong>: +0.48 turns of EV/EBITDA per point of forward revenue growth (t 8.3 in levels, +0.49 t 5.6 in 12-month changes); margin moves it zero (t 0.3). Print days are re-ratings: 71% of the absolute move is multiple (84% on moves of 7%+); 2Q26's +17.4% came with an estimate change of −0.2%.</p>
+<p><strong>Once SBC is charged the market pays ABNB nothing for being ABNB</strong>: EV/NTM SBC-adjusted FCF 27.3x vs a peer median of 27.2x. The seven-turn gap between a 19.7x reported-FCF DCF and a 12.7x SBC-adjusted one (~$70 a share) is the SBC debate.</p>
+<p>A long therefore has three honest routes to upside and must pick one: (1) FY27 revenue above ~$16.0bn (model $15.84bn, Street $15.73-15.76bn); (2) SBC below ~10% of revenue (it is 12.9%); (3) a separately named and sized optionality bucket (WS11: $235M / $914M / $1,987M = 1.4% / 5.4% / 11.7% of FY28 revenue).</p>
+<p><strong>The variant perception</strong>: the market is arguing about whether the 2026 nights re-acceleration is real. It is, and it is priced (13.3x forward EBITDA in Nov 2025 to 18.2x). Not priced: (a) the dateable FY27 dollar lap, and (b) that half of ADR growth is a bigger unit, not a higher price (Bedroom Nights Booked +12% vs nights +10% in 2Q26, implying at least 1.786 bedrooms per night and at most $102.87 per bedroom-night vs $172 for a US hotel room).</p>
+<p><code>research/thesis.md</code> is still the empty template; the synthesis supplies the text.</p>
+<h3 id="5-2-what-predicts-what-about-3-500-tests-five-survivors">5.2 What predicts what (about 3,500 tests; five survivors)</h3>
+<ol>
+<li><strong>The dollar forecasts the FX part of ADR</strong>: <code>ADR FX (pp) = 0.52 − 0.715 x broad USD y/y</code> (r −0.96) or <code>−0.61 + 0.460 x EUR/USD y/y</code> (r +0.99), walk-forward RMSE 0.44x naive, sign right 8 of 10. The only genuine out-of-sample forecast the team owns.</li>
+<li><strong>Guide midpoint plus trailing cushion forecasts the revenue level</strong> (MAE 1.1%; 19 of 19 above the midpoint, 15 of 19 above the top; cushion trailing-8 median +1.79%). It is the worst baseline for the surprise vs Street.</li>
+<li><strong>Revenue FX lags spot by one to two quarters</strong> (revenue recognised at check-in): <code>revenue FX = −0.640 + 0.413 x mean(EUR/USD y/y at t−1, t−2)</code>, r +0.80, predicts +2.19pp for 3Q26 vs management's +3.0pp. <strong>4Q26 is −0.4pp under all three dollar paths, 84% already determined: a ~3.4pp mechanical step-down in reported growth with no demand change.</strong> 3Q27 prints the slowest revenue growth of the path (+9.9%) on unchanged nights (+8.9%).</li>
+<li><strong>"Guide below Street" is a binary risk flag</strong>: 9 of 9 such prints negative at 20 days, mean −4.21% on an executable entry, base-rate p 0.038 (n 9, exploratory). The day-1 half of the rule collapses on an executable entry.</li>
+<li><strong>BKNG room-night acceleration is a coincident check</strong> (r +0.91 with total nights, +0.88 EMEA, n 7) and prints ~8 days earlier.</li>
+</ol>
+<p>Everything else fails: nothing predicts the day-one move (every day-1 spec has negative LOO R² across four independent studies; 73% of the historical day-1 "signal" is the overnight gap); the beat is a constant (22 of 23 vs consensus, 19 of 19 vs guide); Google Trends (0 of 162 beat naive); Eurostat as a nowcast (150-day lag, lead correlation −0.11); the Inside Airbnb panel as built (n = 0 usable year-ago quarters on the fixed 13 cities; listings y/y 3.6x worse than naive); macro (Michigan sentiment vs nights r −0.05; every nights-level hit is the 2023 normalisation); management tone (948 tests, zero survive BH); peer read-across; short interest; analyst actions outside print weeks; all three composite alt-data indexes (lose to "same as last quarter"). Funds held for clients is window-dependent (0.60x AR(1) from 2023Q1, 1.85x from 2022Q1) and confounded by RNPL. Air traffic stopped predicting nights in 2024 (TSA vs nights +0.84 → +0.16). The oil vs North America revenue relationship was tested and marked spurious.</p>
+<p>Nights acceleration sets the sign of the day-1 move (15 of 19 to 17 of 21 depending on definition; margin met + nights accelerating averaged +5.0%, margin met + decelerating −2.1%), but only as a sign rule known at the print.</p>
+<h3 id="5-3-kpi-and-operating-facts">5.3 KPI and operating facts</h3>
+<ul>
+<li>Nights +7-10% for ten straight quarters (2Q26 148.3M, +10%); reported revenue +17-18% in 1H26, ~3pts FX; ex-FX +13% in 2Q26. Decomposition 2Q26: nights 10.6pts, ADR ex-FX 1.6, FX 4.0, take rate +0.7.</li>
+<li>The 2025-26 re-acceleration is three product changes (RNPL, cancellation redesign, single fee: ~2-3pts nights, ~3-4pts GBV), not AI. RNPL &gt;20% of GBV, ~70% adoption of eligible, +1pt cancellations, laps US 3Q26 and global 1Q27.</li>
+<li>Take rate 13.2-13.3% flat y/y, LTM −31bps, guided flat; seasonal path 9.2 / 13.2 / 17.9 / 13.6%; single 15.5% host fee on ~50% of listings, all by year-end (worth +40-45bps fully migrated, not 200-300bps); the 29 Aug 6-10% host-fee pilot is worth 0-15bp of FY27 take rate. Three of five experts say the OTA take rate is at a ceiling ("Airbnb and the rest have set a plateau").</li>
+<li>Regional: NA 29% of nights / 42% of revenue (US 39.3% of revenue vs 50.0% in 2021); LatAm + APAC 31% of nights and delivered 52% of 2Q26 growth; NA was an inbound shock (BEA foreign travel in the US −9.9% in 3Q25, Canadians returning −31%) now reversing; NA revenue +3.0% (3Q25) → +15.8% (2Q26).</li>
+<li>Share: Airbnb's nights growth is ~5x AirDNA US category demand (+2.0%); BKNG's alternative-accommodation premium over its own total went +6pts (3Q24) to −1pt (2Q26), alt-accom +4% vs Airbnb +10.3%. Airbnb is 41.5% of Phocuswright's $219.9bn 2025 global STR pool; the base case needs 51.5% by 2028.</li>
+<li>Supply is endogenous: nights per active listing 62.5-62.7 for four years while listings went 6.6M → 9.0M. Inside Airbnb: same-listing prices fell 1-11% through 2025 in every clean pair (reported ADR growth is mix and FX); churn 20-30% a year, corrected six-city retention 75.5% → 73.4% ex-Austin; 55-81% of listings belong to multi-listing hosts and the share rose in all 13 cities; largest host 908 entire homes in NYC. Common Crawl: survival 85-90% a year, review velocity flat five years, no price in any era.</li>
+<li>Category: EU27 platform nights +11.4% (2025), +9.7% (1Q26); Airbnb EMEA grows with the category once FX is removed (corr 0.81); regulated markets are the slow ones (Spain +6.5%, Portugal +4.9% in 1Q26 vs Italy +14.7%, Germany +14.9%). US real accommodations spend +1.8% with prices +3.4% (Jul 2026): the US category is price, not volume.</li>
+<li>Hotels: the price gap has closed; US hotel ADR $171.74 (+5.7%) in Jul 2026 vs Airbnb ex-FX ADR +4%; luxury RevPAR +17.7% vs economy +3.6%. Hedonics: Superhost premium +1.0% (a myth of the raw data), each bedroom +15.1%, rating ≥4.9 +9.5%.</li>
+<li>Backlog: unearned fees explained next-quarter revenue with R² 0.96 through 2Q25, then RNPL broke it (−0.9% y/y vs revenue +16.5%). Funds held +10.5% at 2Q26 fits revenue +12.0% against a +14.5-16.5% guide; not a miss call, the RNPL confound is the size of the gap.</li>
+<li>Macro: volume is macro-insensitive since 2024; reported growth is FX-sensitive (broad USD vs ADR r −0.99; EMEA revenue ~0.8pts per 1% EUR/USD); rates matter through ~$120M pre-tax per 100bp on the cash pile and the multiple, not demand; rates beta 0.0.</li>
+</ul>
+<h3 id="5-4-margins-cash-and-capital-return">5.4 Margins, cash and capital return</h3>
+<ul>
+<li>Adj. EBITDA margin −5% (2019) → 35-37% (2022-25); FY26 floor 35.5%. Four things built it: a permanent marketing reset (24% of revenue in 2019 → 12-13%), a fixed-cost reset, variable-cost work, and an ADR windfall. Since Q4 2023 management guides a floor, not a target, and every floor since 2023 has been beaten by 60-180bps.</li>
+<li>FY22 → FY25 bridge: revenue per night +5.1pts (ADR ex-FX +3.7), S&amp;M −4.2, net +0.5. FY25 → FY26: ADR ex-FX +2.29, FX +1.32, brand and performance −1.78; if ADR ex-FX and FX go to zero the base is a 2.5pt decline, not a 1pt gain.</li>
+<li>Cash S&amp;M is 85% of the rise in cost per night since 2Q22 ($2.08 of $2.44); 2025 was field ops +43%, 1H26 is brand and performance +32% (media, reversible). Cash product development flat at 10-11% for four years; the GAAP creep is SBC. Ops &amp; support cash per night $2.48 (2022) → ~$2.05 (1H26), the one working AI lever (+0.39 margin pts a year, not 2). Non-cancelable purchase obligations $719M → $1,749M and the hosting commitment to "at least $1.7bn through 2031" settle the Chesky/Mertz AI-spend dispute in Mertz's favour.</li>
+<li>Path to 40% by FY28: P ≈ 21% (Monte Carlo p10/median/p90 33.3 / 37.6 / 41.3); treat 38% as the realistic ceiling.</li>
+<li>FCF margin 44.2% (3Q23 TTM) → 36.7% (2Q26 TTM), entirely below the EBITDA line: cash taxes converging on the provision, the RNPL-killed float, fading interest income. FCF / adj. EBITDA 117% (FY22) → 105% TTM; model 100-105%.</li>
+<li>vs BKNG: the 12pt GAAP operating-margin gap is SBC (13.0% vs 2.3%); adjusted margins are within 2pts; SBC-adjusted FCF margin 24.6% vs 31.5% flips the ranking. Take rate (14.5% vs 13.4%) is BKNG's one structural edge.</li>
+<li>Capital return: FY25 SBC $1.6B = 13.1% of revenue and 34.7% of FCF; buybacks + withholding $4.35B = 94% of FCF but net return after SBC 59.6% (BKNG 70%, NFLX 93%); $1.4B buys 1% of share count; FCF +35.5% but FCF/share +47.9% 2022-25; diluted count 649M (2Q24) → 597M (2Q26). Heaviest SBC load in the peer set. $3.4bn of authorisation left in Aug 2026.</li>
+<li>FX: 55% of revenue non-USD; 1% weaker dollar = +$67M revenue, +$56M EBITDA, +0.26 margin pts.</li>
+</ul>
+<h3 id="5-5-regulatory">5.5 Regulatory</h3>
+<ul>
+<li>Incremental net revenue loss beyond the 2Q26 run-rate: median 0.45% (end-2027), 0.855% (2028), 1.7% (2030); mean 0.75% / 1.24% / 2.2%; P95 2.7% / 4.0% / 6.7%; P(&gt;1%) 18.9% by 2027, 71.0% by 2030; 93% European. Median EBITDA hit $72M (2027) / $218M (2030) = $2.8 / $8.4 a share at 22x; 2030 P95 $30.04 a share. <strong>Regulation is a 1-2% growth tax on Europe with an 8% tail, not an existential risk.</strong></li>
+<li>One event carries the tail: the EU Affordable Housing Act (45% in force with enforcement by 2030) is 33% of 2030 variance alone, 78% with its binding-caps tail; remove it and the median falls to 1.2%. Re-run after the 9 Sep 2026 proposal text (repricing rules in the note).</li>
+<li>What the Street prices (NYC-style enforcement spreading, Barcelona 2028) contributes a median 0.3%. NYC is a small upside (20% chance of LL18 loosening by 2027). The Spanish EUR64m fine is one-off cash, not run-rate.</li>
+<li>Measured cohorts: Barcelona 5,146 matched HUTB licences (do not reconcile to the announced 10,101) → $23.9M / 0.20% of FY25 revenue; Maui 3,862 unit ids → $18.0M / 0.15%; NYC guest-nights −56.1% (6.56M → 2.88M), the right benchmark rather than the −83% listing count; Spain INE tourist dwellings −10.7% y/y (Madrid −28.9%, Barcelona −14.1%). No jurisdiction-level revenue loss exists anywhere in filings or transcripts.</li>
+<li>No dated European regulatory event has ever moved the stock outside a 2-sigma band; every quarter since NYC enforcement met or beat its revenue guide (which cannot establish absorption).</li>
+</ul>
+<h3 id="5-6-stock-behaviour-and-positioning">5.6 Stock behaviour and positioning</h3>
+<ul>
+<li>41 moves of 7%+ since IPO: 20 macro, 11 earnings, 9 company, 1 industry. Six of eleven 7%+ earnings moves were down days on beats. Mean absolute day-1 move 7.07%, median 6.87%; 10 of 23 prints ≥8%, 5 of 23 ≤1.1%.</li>
+<li>Post-print drift: +1..+20 −3.7% (t −2.16, negative 15 of 23); up-prints fade (−7.1% at 20d, −14.8% at 60d), down-prints do not bounce. From 2023 the drift is −2.3% and not significant; the last three up-prints drifted −1.4%, +5.5%, +3.2%.</li>
+<li>Factor decay: beta to QQQ 1.28 (2022) → 0.91 (2026), to hotels 1.24 → 0.45; persistent negative momentum loading (−0.77 in 2026); idiosyncratic share 64%. 2026 YTD +34pts = QQQ +14.2, consumer-orthogonal −12.9, alpha +32.7 (the Q2 print alone +17.4%).</li>
+<li>Seasonality (n 5-6, found among 54 tests): May −14.5% excess (0 of 6), February +7.7% (6 of 6), November −5.1% (0 of 5).</li>
+<li>Analyst actions are a print echo (PT raises +2.94% overall, −0.20% ex-print-week). Short interest 2.17%, a three-year low. Spot $181.94 is above the mean target $178.96; 55% of targets sit below spot; 46% of ratings Hold or worse; 22 raises and 0 cuts since the 2Q26 print. The asymmetry has flipped versus the last two prints.</li>
+<li>Sell side: 21 Buy / 11 Hold / 2 Sell; targets $125 (Morgan Stanley) to $220 (Rosenblatt, DA Davidson). Every Buy is an EBITDA lens that holds or expands; every Sell is a cash-after-SBC lens. The $125-$220 range is a multiple debate on a consensual ~10-12% growth path.</li>
+<li>Pitch scorecard: framings built on nights acceleration won (6 of 7, +25.3pts vs QQQ); all 7 holds scored zero; take-rate-expansion bulls were wrong on the KPI and unpunished.</li>
+</ul>
+<h3 id="5-7-management-calls-and-experts">5.7 Management, calls and experts</h3>
+<ul>
+<li>2026 C-suite turnover wave hired from Booking (x2), Viator, Uber and Meta AI; CBO Rijvers 1 Sep 2026, Stephenson leaves end-2026; inaugural IG ratings and a $2.5B bond in Mar 2026 (stock −5%); insider flow one-way (Gebbia ~$71M, Blecharczyk ~$13M+ sold), no open-market buying in 12 months; Chesky founded an outside AI lab (Jun 2026). No management change ever moved the stock 3%.</li>
+<li>Calls: analysts per call 15.0 (2022) → 11.5 (2026), questions 36 → 22, no new house since 2024; prepared remarks doubled from 3Q25. Analysts ask regulation at 4.9x the prepared-remark rate, marketing 2.8x, take rate 2.3x; management leads on margin and capital return. 37 declined quantifications; the four that matter (Experiences economics, hotels economics, AI spend, long-term margin) have never had a number. Management credibility 62% overall (Stephenson 74%, Mertz 63%, Chesky 42%; multi-year claims 26%; pricing/ADR claims 0 of 7). Sell-side tone tracks the second derivative of nights growth, not the level.</li>
+<li>Experts (Third Bridge): supplier power sits with property managers; fee stack on a $100 night is Airbnb ~15%, manager 20-25% plus guest fees, owner keeps ~$60-65; European managers pay 15-17% and see commissions as a plateau; AI-native bookings ~3% in 12-24 months with no EBITDA impact, the exposure being Airbnb's ~90% direct traffic; Booking's Genius members drive high-50s to low-60s % of room nights; US ~2M professionally managed rentals across ~20,000 firms; India ~$1.2B/yr, "a narrative, not a number".</li>
+<li>Theo's IC brief verdict: "Forecast edge remains unproven; trading edge remains untested"; every hypothesis H-001 to H-012 ended weak, ineligible, inconclusive or watch; his <code>model_results.csv</code> is empty.</li>
+</ul>
+<hr />
+<h2 id="6-claims-to-stop-making-from-the-red-team-and-the-audit">6. Claims to stop making (from the red team and the audit)</h2>
+<ul>
+<li>18 / 22 / 25.5x exit multiples; use 13.5 / 16.5 / 18.5x and show the old grid as a labelled sensitivity.</li>
+<li>"Zero of 233 alt-data features beat AR(1)"; the file has 598 rows and 52 beat AR(1). Say: nothing beats AR(1) on both windows and every apparent winner is mechanical FX, not knowable before the print, or window-dependent.</li>
+<li>"RNPL added 3 points of nights" (three features together); "a −0.8pt direct-booking hit" (0-15bp); the discount-share series (schema change, not behaviour).</li>
+<li>The seven-city retention fall 75.4% → 71.1% and the Paris 33% / Nashville 44% / Chicago 40% "supply exit" figures (partial-scrape artefacts).</li>
+<li>Any ABNB event-implied move until the 6 Nov weekly lists; the options estimator is currently unidentified.</li>
+<li>"Unearned fees R² 0.96" as a forecast (in-sample; walk-forward 1.85x AR(1)).</li>
+<li>"The only out-of-sample signal in 97 tests" (nine at 20 days, none at day 1); "nights per listing 62.5-62.7 for four years" (say flat within rounding).</li>
+<li>"Mean 20-session excess −4.7% across 22 prints" (−3.6% across 23 with the 2Q26 window complete); ABNB never had a significant rates beta.</li>
+<li>Inside Airbnb <code>estimated_occupancy_l365d</code> is estimated nights booked (0-365), not a percentage; <code>blocked_rate</code> is not occupancy; XBRL <code>AdvertisingExpense</code> ($843M) is not the brand-and-performance line ($1,595M).</li>
+</ul>
+<p>Open defects: the pre-7 Sep notes still carry some of the above; <code>16_web-gap-fill.md</code> quotes stale EPS rows; permutation p-values in <code>04_reaction_vs_consensus.py</code> are order-dependent; four workbook items remain open (memo multiples hard-coded, FY25 interest expense $0, quarterly regulatory drag); the build graph has not been run end to end in a clean checkout.</p>
+<hr />
+<h2 id="7-what-to-do-next">7. What to do next</h2>
+<h3 id="7-1-before-anything-else-the-run-s-own-list">7.1 Before anything else (the run's own list)</h3>
+<ol>
+<li>Update <code>model/assumptions.md</code> to 13.5 / 16.5 / 18.5x with the old grid as a labelled sensitivity.</li>
+<li>Refresh <code>05_fx_schedule.csv</code> weekly (one FRED pull); add the Airbnb-weighted 22-currency basket. Locks the 4Q26 and 1Q27 revenue-FX numbers.</li>
+<li>Freeze and publish the 5 Nov prediction card (spec <code>ABNB-WS20-v1</code>, do not change <code>spec_id</code>), score all items on 6 Nov.</li>
+<li>Start the monthly Inside Airbnb capture on the fixed 13 cities; the CDN keeps about a year and every month missed cannot be recovered.</li>
+</ol>
+<h3 id="7-2-ranked-build-forward">7.2 Ranked build-forward</h3>
+<p>Re-run the options ledger in the week of 26-30 Oct once the 6 Nov weekly lists; reconcile the four FY27 revenue estimates into one number; pull the Zacks key-metrics preview 2-3 Nov (nights, ADR, GBV consensus); merge WS04's 23 consensus rows into Theo's <code>consensus_snapshots.csv</code> and rebuild the multiples panel on consensus; get Theo's Bloomberg export, review store and municipal registries off his SSD (and the 17 missing v3 artifacts onto the share); price the optionality bucket separately; standardise the nights-acceleration definition; LatAm external benchmarks; log funds-held and unearned-fee balances the day each 10-Q posts; MAR/HLT regional RevPAR; 13F concentration history; weekly Trends capture with the pull date stamped (insurance only).</p>
+<p>Explicitly do not build: a broader composite demand index, Trends share-of-search, Eurostat as a nowcast, Inside Airbnb listed prices, Common Crawl as a demand series, more free-source scraping of the kind Theo's runs exhausted.</p>
+<h3 id="7-3-housekeeping">7.3 Housekeeping</h3>
+<ul>
+<li>Merge the overnight branch (PR #16), close #5, #8, #11-#15, remove the nine worktrees; do not port fixes into the main tree's stale copies.</li>
+<li>Open the regulatory-db PR (the package is untracked in main); add Theo's five municipal registry sources.</li>
+<li>Purge the five Third Bridge PDFs from git history and link Drive; merge the duplicate <code>citadel-abnb-files 2/</code> folder; unpack Jessie's two zips.</li>
+<li>Request NYC pre/post-LL18 dumps from Inside Airbnb; ask Theo to remove <code>.secrets/env.sh</code> from the share.</li>
+<li>Fill <code>research/thesis.md</code>, <code>docs/TIMELINE.md</code> and the top of <code>model/assumptions.md</code> (all still templates).</li>
+</ul>
+<h3 id="7-4-the-5-november-prediction-card-pre-registered">7.4 The 5 November prediction card (pre-registered)</h3>
+<p>Guide: revenue $4,690-4,770M (+15-17%, ~3pp FX after hedging), nights low double digits, GBV mid-teens, margin down slightly from 50.1%, FY26 revenue at least mid teens, margin at least 35.5%. Street: revenue $4,740M, EPS $2.87, Q4 revenue $3,200M.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Our estimate</th>
+<th>Bar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nights &amp; seats y/y</td>
+<td>+10.2% (147.2M), range 7.9-12.6%</td>
+<td>~144-146M derived</td>
+</tr>
+<tr>
+<td>ADR y/y</td>
+<td>+3.8% ($177.84), of which FX −1.3 to +0.8pp</td>
+<td>Zacks ADR consensus 2-3 days before</td>
+</tr>
+<tr>
+<td>GBV</td>
+<td>$26,185M (+14.3%)</td>
+<td>"mid teens"</td>
+</tr>
+<tr>
+<td>Revenue</td>
+<td>$4,801M (+17.2%), honest range $4.78-4.82bn</td>
+<td>Street $4,740M; frozen surprise +1.37% → $4,805M</td>
+</tr>
+<tr>
+<td>Adj. EBITDA margin</td>
+<td>49.0% (48.3-50.2%)</td>
+<td>9 of 10 ceilings met</td>
+</tr>
+<tr>
+<td>Brand &amp; performance marketing y/y</td>
+<td>+17-25% (1H26 +32%)</td>
+<td>the single most informative line: FY margin 37.0% at +17%, 35.5% at +31%</td>
+</tr>
+<tr>
+<td>Implied take rate</td>
+<td>17.88% flat; reported ~18.27%</td>
+<td>+2.2pp of FX timing between the two</td>
+</tr>
+<tr>
+<td>4Q26 revenue guide</td>
+<td>midpoint +11-13% (model $3,145M)</td>
+<td>Street $3,200M = +15.2%, a live "guide below Street" setup</td>
+</tr>
+<tr>
+<td>FY26 guide</td>
+<td>revenue to high teens; margin "approximately 36%+"</td>
+<td>the FY guide has only ever been raised</td>
+</tr>
+</tbody>
+</table></div>
+<p>Expected reaction: nights ≥+11% with Q4 nights guided at or above the Q3 rate → +5 to +10%; nights +10% with Q4 revenue +11-13% and FX quantified → −2 to +5% (likeliest); the same guide without FX quantified → −5 to −10% (the specific risk of this print); nights guided below Q3 or "moderation" language → −8 to −13%. One turn of EV/NTM EBITDA = $9.11 = 5.0%; a Q4 guide implying &gt;18% growth is worth ~2 turns ≈ $20.</p>
+<h3 id="7-5-dated-calendar">7.5 Dated calendar</h3>
+<p>9 Sep EU Affordable Housing Act text (re-run the regulatory model) · Oct NYC registration renewals · 21 Oct HLT, ~28 Oct BKNG, ~3 Nov MAR print · 26-30 Oct options ledger · 2-3 Nov Zacks preview · <strong>5 Nov Q3 print</strong> · 1 Dec Ireland register · 31 Dec Greek freeze decision · Feb 2027 FY27 margin floor · 31 Mar 2027 EU first readings, Chicago rulings · May 2027 Barcelona election · Nov 2028 Barcelona licence expiry · Jan 2029 / 2031 Maui phases.</p></main>
+</div>
+<footer>Source file: <code>docs/2026-09-06_research-inventory.md</code> in the citadel-abnb repo. Licensed material (Bloomberg, FactSet, Third Bridge, LSEG) is referenced, never reproduced.</footer>
