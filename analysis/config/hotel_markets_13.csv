@@ -1,0 +1,14 @@
+market,market_label,country,selection_status,selection_source,geography_rule
+austin,Austin,United States,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; retain Austin despite listing-growth exclusion
+barcelona,Barcelona,Spain,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; do not mix city and province
+chicago,Chicago,United States,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; CBD is a subset of city
+london,London,United Kingdom,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; City of London is a subset of Greater London
+los-angeles,Los Angeles,United States,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; city county and destination region differ
+mexico-city,Mexico City,Mexico,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; Ciudad de Mexico and Estado de Mexico differ
+nashville,Nashville,United States,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; Davidson County and MSA differ
+new-orleans,New Orleans,United States,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; downtown is a subset of city
+new-york-city,New York City,United States,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; five-borough city and CoStar market definitions require reconciliation
+paris,Paris,France,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; municipality and Greater Paris differ
+rome,Rome,Italy,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; Roma Capitale and metropolitan area differ
+san-diego,San Diego,United States,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; city and county differ
+sydney,Sydney,Australia,user_selected_original_listing_panel,data/processed/listing_churn_panel/market_coverage.csv,Preserve each hotel source boundary; City of Sydney LGA and Greater Sydney differ

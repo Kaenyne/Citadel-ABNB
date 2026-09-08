@@ -1,0 +1,260 @@
+{
+  "investigated_on": "2026-09-07",
+  "scope": "20 fixed random cases drawn before web investigation from 208 eligible San Diego conservative persistent-absence listing IDs",
+  "protocol": "Search baseline listing title and/or exact permit; check current municipal registry; search exact registry address when available; follow relevant leads to property or platform pages. Record event dates independently of access dates. Never interpret no search result as a negative property-use observation.",
+  "limitations": "Public-web pilot, not an exhaustive deed/MLS or cross-platform census. Search indexes and pages can be stale. No current booking availability was verified. Historical presence on other platforms was not exhaustively measured, so no competitive migration is confirmed. Property sale and property use are separate axes. Case URLs are provenance; raw addresses, contact details and listing records remain in ignored storage.",
+  "cases": [
+    {
+      "case_id": "SD-01",
+      "finding": "residential_rental_reported",
+      "event_date": "2026-02-03",
+      "sale_event": "not_established",
+      "use_evidence": "Residential rental listing reported rented; lease duration and subsequent occupancy unverified",
+      "identity": "supported",
+      "match_basis": "Exact unique municipal permit maps to the advertised unit address; 3 bedrooms and 2 bathrooms agree; registry coordinates within 3m of baseline",
+      "other_platform_evidence": "none_established",
+      "timing": "First qualifying snapshot absence 2026-01-23; rental advertised 2026-01-24 and reported rented 2026-02-03",
+      "sources": [
+        "https://www.rereader.com/rentals/2307-Meade-Ave-San-Diego-CA-92116-427221294",
+        "https://www.zillow.com/homedetails/2307-Meade-Ave-San-Diego-CA-92104/2054746633_zpid/"
+      ],
+      "caveat": "MLS-syndicated reported status, not executed lease inspection; do not label confirmed 12-month conversion"
+    },
+    {
+      "case_id": "SD-02",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "No sufficient property-specific evidence found",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-03",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Old Airbnb result only",
+      "identity": "original_listing_id",
+      "other_platform_evidence": "none_established",
+      "sources": [
+        "https://www.airbnb.ae/rooms/19199935"
+      ],
+      "caveat": "Search crawl approximately 1.2 years old; cannot establish a current return"
+    },
+    {
+      "case_id": "SD-04",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Candidate direct vacation-rental advertisement and Vrbo lead",
+      "identity": "candidate",
+      "match_basis": "Exact distinctive title; matching 7 bedrooms and 5 bathrooms; similar Mission Beach description. No exact unit or photo match verified",
+      "other_platform_evidence": "candidate_direct_and_vrbo",
+      "sources": [
+        "https://www.sandiegochecklist.com/product/7br-massive-beach-retreat-sleeps-26-steps-to-ocean/",
+        "https://agreatertown.com/san-diego-ca/7-br-apartment-vacation-rental-0002131067840",
+        "https://www.vrbo.com/4261004"
+      ],
+      "caveat": "Direct page links a different old Airbnb ID absent from both baseline and endpoint files; Vrbo retrieval unavailable. Listing creation and current bookability unverified; not confirmed migration"
+    },
+    {
+      "case_id": "SD-05",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Old same-ID Airbnb result only",
+      "identity": "original_listing_id",
+      "other_platform_evidence": "none_established",
+      "sources": [
+        "https://www.airbnb.com.sv/rooms/957210761433552889"
+      ],
+      "caveat": "Search crawl approximately 8 months old; current return unverified"
+    },
+    {
+      "case_id": "SD-06",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "No sufficient property-specific evidence found",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-07",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Matched Expedia vacation-rental catalog record and direct-manager page; current operation unverified",
+      "identity": "supported",
+      "match_basis": "Exact STRO and TOT identifiers; registry address matches Expedia; both have 3 bedrooms; registry location within 90m of baseline",
+      "other_platform_evidence": "matched_catalog_record",
+      "sources": [
+        "https://www.expedia.com.hk/en/San-Diego-Hotels-Santa-Barbara-Loft.h112381138.Hotel-Information",
+        "https://missionsands.com/481655/",
+        "https://www.jtb.co.jp/ovs_htl/detail/search_detail/1213523/"
+      ],
+      "caveat": "Expedia search/open return conflicting crawl ages; JTB record says updated 2026-03-01; direct page did not expose populated availability and direct fetch returned HTTP 500. Could be pre-existing cross-listing, not a newly acquired Expedia property"
+    },
+    {
+      "case_id": "SD-08",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Third-party vacation-rental page with same title",
+      "identity": "candidate",
+      "match_basis": "Title and 4-bedroom hot-tub description agree; no verified permit, address or photo match",
+      "other_platform_evidence": "candidate_aggregator",
+      "sources": [
+        "https://www.ehotelsreviews.com/spacious-4br-outdoor-kitchen-hot-tub-13778183-zh"
+      ],
+      "caveat": "No primary booking platform verification; aggregator presence is only a lead"
+    },
+    {
+      "case_id": "SD-09",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Strong Vrbo lead from syndicated listing with matching permit and tax ID",
+      "identity": "supported_lead",
+      "match_basis": "Exact STRO and TOT identifiers; 1 bedroom and 1 bathroom agree; distinctive description agrees",
+      "other_platform_evidence": "candidate_vrbo",
+      "sources": [
+        "https://agreatertown.com/san-diego-ca/1-br-condo-vacation-rental-in-san-0002277079791",
+        "https://www.vrbo.com/4779972",
+        "https://www.airbnb.co.uk/rooms/21678138"
+      ],
+      "caveat": "Primary Vrbo request returned HTTP 429; no retry. Airbnb text already says offered on other platforms, so pre-existing multi-homing is plausible. Current operation and new migration unverified"
+    },
+    {
+      "case_id": "SD-10",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Similar-title Vrbo and long-term rental results do not establish same unit",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": [
+        "https://www.vrbo.com/en-gb/p4828178vb",
+        "https://www.apartmentlist.com/ca/san-diego/charming-south-park-studio-in-historic-victorian"
+      ],
+      "caveat": "Long-term listing address differs from municipal anchor; Vrbo title is generic and its description differs. Neither accepted as destination"
+    },
+    {
+      "case_id": "SD-11",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Current license and property-record leads only; no dated post-absence event established",
+      "identity": "registry_anchor_only",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-12",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "No sufficient property-specific evidence found",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-13",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Film-studio business found at same street address; rentable unit not resolved",
+      "identity": "building_only_rejected",
+      "other_platform_evidence": "none_established",
+      "sources": [
+        "https://revstudios.com/equipment-for-rent/",
+        "https://www.tagvenue.com/us/rooms/san-diego/43382/rev-studios/the-studio"
+      ],
+      "caveat": "Same building does not prove the Airbnb loft became a film studio; no conversion assigned"
+    },
+    {
+      "case_id": "SD-14",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "No sufficient property-specific evidence found",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-15",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "No sufficient property-specific evidence found",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-16",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "No sufficient property-specific evidence found",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-17",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "No sufficient property-specific evidence found",
+      "identity": "unresolved",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-18",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Old aggregator record points back to Airbnb; no independent current platform observation",
+      "identity": "candidate",
+      "other_platform_evidence": "none_established",
+      "sources": [
+        "https://www.cozycozy.com/us/coronado-lodges"
+      ],
+      "caveat": "Aggregator result crawled approximately 11 months ago and is not new-channel evidence"
+    },
+    {
+      "case_id": "SD-19",
+      "finding": "unresolved",
+      "event_date": "",
+      "sale_event": "not_established",
+      "use_evidence": "Current license only; no sufficient dated post-absence event found",
+      "identity": "registry_anchor_only",
+      "other_platform_evidence": "none_established",
+      "sources": []
+    },
+    {
+      "case_id": "SD-20",
+      "finding": "sale_reported",
+      "event_date": "2026-07-30",
+      "sale_event": "mls_reported_closed",
+      "use_evidence": "Post-sale property use unknown",
+      "identity": "supported",
+      "match_basis": "Exact unique STRO license maps to sale address; 2 bedrooms and 1 bathroom agree; registry coordinates within 120m of baseline",
+      "other_platform_evidence": "none_established",
+      "timing": "First qualifying snapshot absence 2025-12-12; sale reported 2026-07-30, more than seven months later",
+      "sources": [
+        "https://www.redfin.com/CA/San-Diego/3540-Quimby-St-92106/home/5346170",
+        "https://www.sdlookup.com/Closings-92106-Point-Loma"
+      ],
+      "caveat": "MLS-reported sale, not independent deed verification. Sale timing does not establish the cause of delisting or owner occupation; active registry entry may lag a transaction"
+    }
+  ],
+  "sample_identity_sha256": "7d325067a4b0bfe96d342681b0ce73aa9492b31b3341171e621b7055027a524a"
+}

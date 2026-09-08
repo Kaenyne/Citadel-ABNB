@@ -1,5 +1,14 @@
 # Data
 
+Listing churn audit (2026-09-06): `processed/listing_churn_existing_data_audit.csv`
+and `.json` reconstruct ID absence from the team's supply-panel aggregates at commit
+`620f1ee4691d06df964bd73ce84cc35e8766e4a0`. Source: Inside Airbnb (CC BY 4.0), via
+the team's `krish/inside-airbnb-supply` branch. The JSON records exact input hashes.
+Rebuild with `python analysis/src/audit_listing_churn_inputs.py --source-rev 620f1ee4691d06df964bd73ce84cc35e8766e4a0 --output-dir data/processed`.
+These are interval ID-disappearance diagnostics, **not** property churn or destination
+estimates; blank outcome fields mean unknown. See the
+[framework](../research/notes/2026-09-06_listing-churn-and-destinations-framework.md).
+
 | File | Source | Pulled by | Date | Notes |
 |---|---|---|---|---|
 | processed/abnb_daily_close.csv | Yahoo Finance daily closes (ABNB), via yfinance | Krish (Claude Code) | 2026-09-05 | Date, Close, 10 Dec 2020 to 4 Sep 2026 (1,440 sessions). Input to the major-moves screen. |
@@ -43,6 +52,8 @@
 | processed/abnb_declined_to_quantify.csv | Same transcripts, hand-read | Krish (Claude Code) | 2026-09-05 | 37 analyst requests for a number that management declined or answered qualitatively: quarter, analyst, firm, ask, verbatim excerpt (<= 300 chars), speaker, category. Rule-based candidates then manual review; the kept list is the `DECLINED` table in the script and every excerpt is verified against the transcript at build time. |
 | processed/inside_airbnb_city_snapshots.csv, inside_airbnb_like_for_like.csv, inside_airbnb_host_concentration.csv | Inside Airbnb `listings.csv.gz` dumps (CC-BY 4.0): 13 cities, 168 dumps Dec 2022 to Aug 2026, discovered from Wayback captures of the get-the-data page plus daily CDN probes (manifest `data/raw/inside_airbnb/manifest.csv`; raw 2.6 GB gitignored) | Krish (Claude Code) | 2026-09-05 | Per-dump city metrics with `price_basis` and `partial_scope` flags (the 2026 dumps switched price to a fee-inclusive stay quote and the Dec 2025 to May 2026 monthlies are partial); matched-listing pairs, sequential and year-ago (retention, same-listing price change on one price basis, reviews LTM change, exit/add mix); top-25 hosts per city. Rebuild: `py -3.13 analysis/src/inside_airbnb_supply_panel.py all` (needs pyarrow). Write-up: research/notes/2026-09-05_inside-airbnb-supply-panel.md. Complements Theo's current-dump cohort below. |
 | processed/overnight/*.csv (191 files at 7 Sep 2026; the 19-25 repair workstreams were still writing - recount before quoting), 05_fred_cache/, 09_implied_move_live.json | Overnight run 6-7 Sep 2026, workstreams 01-18 plus 25; each file is rebuilt by the same-numbered script in `analysis/src/overnight/` (56 scripts at 7 Sep) | Krish (Claude Code, overnight agents) | 2026-09-06/07 | One folder per workstream prefix. Provenance for each file is in that workstream's note, `research/notes/overnight/NN_*.md` (21 notes at 7 Sep). Model outputs `13_model_quarterly.csv`, `13_model_annual.csv`, `13_valuation_summary.csv`, `13_scenario_grid.csv`, `13_reconciliation.csv` carry the driver model; read `model/assumptions.md` section "Overnight run 6-7 Sep 2026" and its WS25 conventions block before quoting any valuation number. Figures: `analysis/figures/overnight/` (24 PNGs). |
+| processed/overnight/27_regional_bucket_check.csv, 27_nights_band.csv | 10_regional_panel_quarterly.csv, 02_kpi_panel_quarterly.csv (XBRL regional revenue, regional reported ADR, take rate, FX pts) | Krish (Claude Code) | 2026-09-07 | Which end of each regional nights bucket 4Q24-2Q26 (revenue-over-ADR cross-check, constrained to reported total) and the FY27 nights band from the +/-1pp bucket width. Rebuild: `py -3.13 analysis/src/overnight/27_regional_bucket_check.py`. See research/notes/overnight/27_regional-bucket-check.md. |
+| processed/overnight/28_fx_hedge_disclosures.csv, 28_fx_hedge_tests.csv, 28_fx_hedge_forward.csv | 10-Q/10-K derivative notes 1Q23-2Q26 (EDGAR, hand-extracted sentences in the script), XBRL companyfacts OCI on cash flow hedges, 02_kpi_panel_quarterly.csv, 10_fx_quarterly.csv | Krish (Claude Code) | 2026-09-07 | Designated and non-designated notional, AOCI, realised hedge gains/losses reclassified to revenue and their pp effect on revenue growth, gross FX ex hedge, lag fits, and the forward hedge drag from the next-12-month disclosure. Rebuild: `py -3.13 analysis/src/overnight/28_fx_hedge_disclosures.py`. See research/notes/overnight/28_fx-hedge-disclosures.md. |
 | processed/tsa_checkpoint_monthly.csv | TSA daily checkpoint counts, summed to months (tsa.gov/travel/passenger-volumes) | Jessie (via Claude) | 2026-09-04 | 2022-01→2026-06; sums verified vs TSA annual totals |
 | processed/bts_us_airline_passengers_monthly.csv | BTS monthly U.S. Airline Traffic Data releases | Jessie (via Claude) | 2026-09-04 | 2022 SA, 2023+ NSA — level break |
 | processed/iata_rpk_yoy_monthly.csv | IATA Air Passenger Market Analysis (global RPK YoY) | Jessie (via Claude) | 2026-09-04 | 2023-01→2026-07 |
@@ -72,6 +83,11 @@
 | processed/eurostat_crowding_tests_by_country_2024.csv | derived | Jessie (Claude) | 2026-09-06 | Per country: Spearman(platform share, hotel occupancy) over 12 months; share in 3 busiest vs 3 quietest hotel months. |
 | processed/abnb_size_demand_pooled.csv, _pooled_us_only.csv, _by_market.csv, _5plus_by_market.csv, abnb_size_regression.csv | Inside Airbnb detailed listings, 13 markets (snapshots 2026-06-14..07-16), CC BY 4.0 | Jessie (Claude) | 2026-09-06 | Listing size (accommodates / bedrooms) vs share of bookings, guest-stays and estimated revenue; OLS with market FE. Raw files are gitignored: fetch with `analysis/src/download_us_listings.sh`, then `python analysis/src/listing_size_demand.py`. |
 | processed/abnb_forward_bookings_by_size.csv, abnb_forward_bookings_pooled.csv | Inside Airbnb calendar + listings, 7 markets (Jun–Jul 2026) | Jessie (Claude) | 2026-09-06 | Forward-booking pickup (next 30 nights net of host-block baseline) by guest-capacity bucket; nights and guest-nights share vs listing share. Rebuild: `python analysis/src/calendar_forward_bookings_by_size.py`. |
+| processed/hawaii_party_size_annual.csv, _annual_wide.csv, _annual_raw_vintages.csv | Hawaii DBEDT Annual Visitor Research Report Excel tables 2000–2024 (2003 missing; 1999 from the 2000 report's prior-year column) | Krish (Claude Code) | 2026-09-07 | Avg party size, visitors in parties of 1 / 2 / 3+, derived party shares and 3+ party size, statewide stay length, for hotel-only / condo-only / timeshare-only / rental-house-only / B&B-only visitors (rental house from 2013), all air visitors and MMAs (to 2015; the summary and MMA tables dropped the party-size block from the 2016 report), family / first-time / repeat. `_raw_vintages` keeps both the original and the revised (next-year) print. Raw workbooks gitignored in `raw/hawaii_dbedt/` (Cloudflare blocks curl; pull via the browser). Rebuild: `py -3.13 analysis/src/hawaii_party_size_series.py`. |
+| processed/abnb_party_size_reviews_quarterly.csv; _market_quarter_shard*.csv; _v2_by_bucket_year.csv, _v2_decomposition.csv, _v2_global_month.csv, _v2_seasonal_index.csv, _v2_by_language_year.csv, _v2_*_shard*.csv | Inside Airbnb `reviews.csv.gz` + `listings.csv.gz` for all 123 published markets (snapshots Jun–Jul 2026, CC BY 4.0; one snapshot holds every review since 2009), 74m reviews, gitignored under `raw/inside_airbnb_reviews/` with `reviews_manifest.csv` | Krish (Claude Code) | 2026-09-08 | Airbnb party composition from review text (solo / couple / family with kids / friends-group, en/es/fr/it/de/pt), explicit head-counts, capacity of the listing reviewed; global + NA/EMEA/LatAm/APAC quarterly (raw and fixed-2019 market weights), by capacity bucket × room type, monthly, by language. Validated against Hawaii DBEDT rental-house party size (r 0.96–0.99). Rebuild: `abnb_party_size_reviews.py --shard i n` then `_aggregate.py`; `_v2.py --shard i n` then `_v2_aggregate.py` (≈2 h each, 6 shards, ~1.3 GB RAM per shard). |
+| processed/abnb_party_size_disclosures.csv, abnb_newsroom_party_mentions.csv | Airbnb letters, calls, 10-K, S-1, newsroom (sitemap crawl of 986 posts, raw HTML gitignored in `raw/abnb_newsroom/`) | Krish (Claude Code) | 2026-09-08 | Dated Airbnb statements on guests per booking, group / family / solo shares, bedroom nights (28 curated rows); 989 numeric sentences from 296 newsroom posts 2017–2026. Rebuild crawl: `abnb_newsroom_party_mentions.py`. |
+| processed/booking_515k_guest_type_monthly.csv, booking_rectour24_guest_type_by_type_month.csv, _by_country_type.csv, hotel_party_size_portugal_quarterly.csv, party_size_benchmarks.csv | Booking.com 515K Europe hotel reviews 2015–17 (Kaggle/HF mirror), Booking.com RecTour24 accommodation reviews 2023 (HF `Booking-com/accommodation-reviews`, **CC BY-SA 4.0 non-commercial**), Portugal hotel ledger (TidyTuesday mirror), LVCVA, NTTO; raw gitignored in `raw/booking/` | Krish (Claude Code) | 2026-09-08 | Hotel / apartment / holiday-home party composition comparators: declared traveller type by month (515k), by accommodation type × month × country (RecTour24), adults+children per hotel booking quarterly (Portugal); `party_size_benchmarks.csv` stacks every non-Airbnb series (Hawaii, Portugal, Las Vegas, NTTO) in one long table. Rebuild: `booking_party_composition.py`, `party_size_benchmarks.py`. |
+| processed/hawaii_party_size_monthly.csv, _monthly_raw.csv, _monthly_final_raw.csv | DBEDT monthly Visitor Highlights xlsx (Jan 2025–Jul 2026 from dbedt.hawaii.gov; Jan 2014–Jan 2025 and the 2013–2023 annual-by-month `YYYY-highlights` files from the Wayback Machine, `raw/hawaii_dbedt/monthly_legacy/download_plan.csv` lists timestamp + URL) | Krish (Claude Code) | 2026-09-07 | Monthly avg party size for all air visitors, domestic and international flights, Jan 2013–Jul 2026 (Mar/Apr 2026 releases lack the table), with visitors and accommodation counts (hotel only, condo only, timeshare only, rental house from Dec 2015, B&B, friends/relatives...). `provenance` says whether a month is the final annual-highlights value, the preliminary monthly print, or the prior-year column of the next year's print (2021, 2024–26). Market sheets (US West/East, Japan, Canada) in `_monthly_raw`. Same rebuild script. |
 
 `raw/transcripts/` (gitignored) holds the 23 call transcripts used by `analysis/src/transcript_analytics.py`: `ir/<q>Q<yy>.pdf` and `.txt` from https://s26.q4cdn.com/656283129/files/doc_financials/{yyyy}/q{n}/Airbnb-Q{n}-{yy}-Earnings-Call-Transcript.pdf (Q1 2023 onward, plus the Q4 2021 corrected transcript), and `sa/<q>Q<yy>.txt` saved from https://stockanalysis.com/stocks/abnb/transcripts/ (Q4 2020 to Q4 2022). Pulled 2026-09-05 by Krish. Re-download from those URLs if the folder is empty; fool.com rate-limits scripted access, do not use it.
 
@@ -129,3 +145,105 @@ What calendars DO give is a **372-day forward booking curve** per listing - see
 - `eurostat_eu27_platform_nights_monthly.csv` — Krishang's `eurostat_platform_nights_monthly.csv` (branch `krish/eu-platform-backlog`) has the same series for every country.
 - `inside_airbnb_current_listing_counts.csv` — derivable from the `row_count` column of Theo's `data/manifests/inside_airbnb_download_log.csv`.
 - Raw inputs (Inside Airbnb listings.csv.gz, DBEDT xlsx, Eurostat JSON, FRED txt) — gitignored under `data/raw/`; every processed file names the script that rebuilds it.
+
+### Executed listing churn pilot, 2026-09-07
+
+Results: [execution memo](../research/notes/2026-09-07_listing-churn-execution.md).
+`processed/listing_churn_execution/` contains cohort counts and rates, snapshot quality,
+source hashes, execution metadata and a fixed 20-case destination evidence ledger.
+The source is team commit `df833f5f3980078beef09c1327940bfa58d57acf`; 21 public Inside
+Airbnb raw snapshots were reacquired with exact count reconciliation. They cover San
+Diego and Chicago from September 2025 through August 2026. Inside Airbnb data: CC BY 4.0.
+
+`raw/listing_churn_execution/` contains ignored raw captures, acquisition manifests,
+the dated San Diego STRO register, full listing outcomes, license linkage records and
+the private case-to-unit mapping. Keep this local folder for exact replay: historical
+snapshot URLs may retire and the municipal register URL serves current state only.
+No licensed vendor bulk export was used. Public property pages supplied short factual
+case findings, not a redistributed MLS/property-description dataset.
+
+The rates measure sustained snapshot absence, not definitive annual property churn.
+Destination unknowns are explicit; platform catalog presence is not proof of migration.
+
+### Broad listing churn execution, 2026-09-07
+
+The [broad execution memo](../research/notes/2026-09-07_listing-churn-broad-panel.md)
+supersedes the two-market pilot for headline rates. `processed/listing_churn_panel/`
+reproduces the full 13-market historical team inventory from commit
+`df833f5f3980078beef09c1327940bfa58d57acf`. Its 132 raw listing snapshots were all
+reacquired and reconciled exactly to the team's row counts.
+
+`processed/listing_churn_archive/` extends the analysis using publicly indexed
+September 2025, December 2025, March 2026 and June 2026 listing snapshots. The dated
+public index is `manifests/inside_airbnb_archive_index_2026-09-07.json`, captured from
+the public data page's archive metadata. The output includes actual dates, row counts,
+hashes, country/region rates, geography overlaps, exclusions and persistence sensitivity.
+See the memo for final included counts rather than treating every acquisition as eligible.
+
+Source: [Inside Airbnb](https://insideairbnb.com/get-the-data/), CC BY 4.0. The raw gzip
+captures and compact analysis extracts are in ignored `raw/listing_churn_panel/` and
+`raw/listing_churn_archive/`; some captures are reused from the earlier pilot folder.
+The acquisition manifests record the resolved relative path and checksum. Scripts in
+`analysis/src/` reproduce acquisition, measurement and reporting without vendor data.
+The resulting broad panel is availability-selected, not a random sample of Airbnb.
+
+### Listing platform history, 2026-09-07
+
+[Before/after investigation](../research/notes/2026-09-07_listing-platform-history.md).
+`processed/listing_platform_history/` contains the ten-market description screen,
+eight-URL public archive query logs and index, four-case summary and dated evidence
+table. The reviewed input is `research/sources/listing_platform_history.json`.
+`raw/listing_platform_history/` retains ignored API responses, four inspected archive
+HTML captures, current direct-page HTML, three comparison images, checksums and
+retrieval failures. Archive sources are Internet Archive; property-page and photo
+URLs are individually recorded. Retrieved on 2026-09-07. No bulk licensed competitor
+data was acquired. Current photo matching and archive metadata do not verify
+bookings, historical channel absence or a population migration rate.
+
+### Fee-related churn time series, 2026-09-07
+
+[Analysis and reproduction](../research/notes/2026-09-07_fee-churn-catalyst.md).
+`raw/fee_churn_history/` retains the selected-date manifest, 132 newly downloaded
+Inside Airbnb listing captures, reused-capture paths and compact caches. All 203
+selected snapshots passed acquisition and applicable count/hash reconciliation;
+24 earlier team snapshots extend pre-September-2025 history. Selection uses the
+dated public archive index and the pinned team catalog, not guessed snapshot dates.
+New raw download size is approximately 1.02 GB. Inside Airbnb data: CC BY 4.0.
+
+`processed/fee_churn_history/` contains 692-capture quality metadata, rolling interval
+rates, common-market tables, 90-day confirmation and its coverage limits, explicit
+fee arithmetic and hypothetical financial scenarios. The source/assumption input is
+`research/sources/fee_churn_catalyst.json`. Neither PMS status nor actual fee treatment
+is observed. Failed/partial captures do not become negative listing observations;
+unidentified persistence remains unknown. The 2026 broad-rollout deadlines occur
+after the history's observed endpoints.
+
+## Hotel funnel audit (2026-09-07)
+
+[Outputs and limitations](processed/hotel_funnel_audit/README.md). The explicitly
+selected 25-market scope has 24 comparable listing pairs; Austin remains excluded.
+The original 13-market panel is a separate sensitivity. Both views reuse 64 unique
+existing capture hashes (76 references); no new Inside Airbnb download. Ignored
+`data/raw/hotel_funnel_audit/` stores the 67 reviewed GitHub main documents and public
+PDF/spreadsheet verification files. Capacity estimates preserve source geography,
+vintage and unknown independent shares. No raw licensed hotel inventory was acquired.
+
+## Regulatory research package (committed 7 Sep 2026 on `krish/regulatory-db`)
+
+Built 5 Sep 2026 (Krish with Codex and Claude Code). Start with [research/regulatory/README.md](../research/regulatory/README.md); the Monte Carlo above (`abnb_regulatory_*.csv`) sits on top of this package.
+
+| File | Source | Pulled by | Date | Notes |
+|---|---|---|---|---|
+| processed/abnb_regulatory.sqlite | Curated official laws, court decisions, government guidance, news and ABNB transcript metadata (`research/regulatory/*.json`) plus the quantification and phase 2 tables | Krish (Codex) | 2026-09-05 | 32 factors, 48 source records, 14 transcript records, 9 earnings observations, FTS5 index; plus market inventory, factor exposures, supply history, guidance history, scenarios, Barcelona (15,406) and Maui (12,687) listing crosswalks, 104 Maui parcels, Hawaii monthly/YTD vintages, NYC benchmark. Derived research and metadata only, no licensed text. Rebuild: `build_regulatory_database.py`, then `build_regulatory_quantification.py`, then `build_regulatory_phase2.py`. |
+| raw/regulatory/quantification/*_listings.csv (20 markets) | Inside Airbnb June to Aug 2026 snapshots (CC BY 4.0), URLs in `quantify_regulatory_supply.py` | Krish (Codex) | 2026-09-05 | Public listing-level extracts, kept in git as an exception to the raw rule because the Inside Airbnb CDN keeps only about a year. 126 MB with the INE and SEC files below. |
+| raw/regulatory/quantification/ine_municipal.csv, ine_national.csv, greece_2025.pdf, abnb_2025_10k.pdf, abnb_2026q2_10q.html | INE Spain tourist-dwelling experimental statistics, ELSTAT, EDGAR | Krish (Codex) | 2026-09-05 | Supply denominators and guidance evidence for `research/regulatory/quantification/`. `workbook_build/` holds rendered QA of the two workbooks. |
+| raw/regulatory/phase2/ | Barcelona open-data HUTB datastore, Maui County Minatoya list (mirror), Maui Resolutions 26-110/26-111 and the 26-129 GIS layer, Hawaii DBEDT vacation-rental workbooks Jan 2025 to Jul 2026, CRA NYC report | Krish (Codex) | 2026-09-05 | Public registry and performance inputs for the identifier-matched cohorts. `download_manifest.json` records URLs, checksums and failures. `barcelona_registry_2026q1.zip` is excluded by the global `*.zip` rule; its contents are `barcelona_registry_current.csv`. Rebuild: `pull_regulatory_phase2.py`. |
+| raw/regulatory/documents/ | Spain, Portugal, Greece and Florence official pages (REG-S07, S10, S11, S21) | Krish (Codex) | 2026-09-05 | Four saved official pages. |
+| outputs/regulatory-20260905/*.xlsx | Built from `research/regulatory/quantification/` and `phase2/` by the two `build_regulatory_*_workbook.mjs` scripts | Krish (Codex) | 2026-09-05 | Exposure inventory workbook (6 tabs) and matched-cohort sensitivity workbook (6 tabs, 18 scenarios). The `.inspect.ndjson` files are the render QA. |
+| raw/regulatory/lseg/, raw/regulatory/transcripts/ | LSEG/Refinitiv story bodies and headline rows; company-hosted transcript PDFs plus one Motley Fool fallback | Krish (Codex) | 2026-09-05 | **Not committed** (licensed, or redistribution not cleared). Local only; `research/regulatory/transcript_manifest.json` records hashes and provenance so the archive can be rebuilt with `complete_regulatory_archive.py` and `pull_regulatory_documents.py` (needs `LSEG_APP_KEY`). |
+| processed/abnb_earnings_regressions.csv, abnb_earnings_regression_panel.csv | overnight KPI panel, consensus-at-print, earnings reactions, daily prices | Krish (Claude Code) | 2026-09-07 | OLS of day-1 and 5-session moves (raw and excess vs QQQ) on each earnings item's consensus surprise, beat dummy and y/y growth; two windows (all 23 prints, 1Q23 onward). Descriptive, no out-of-sample test. Rebuild with `py -3.13 analysis/src/abnb_earnings_regressions.py`. Also on the Regressions sheet of `model/ABNB_historicals.xlsx`. |
+| processed/abnb_guidance_reaction_results.csv, abnb_guidance_reaction_panel.csv | overnight guidance ledger, consensus-at-print, earnings reactions | Krish (Claude Code) | 2026-09-07 | Same regressions on the guidance issued at each print: next-quarter revenue guide vs Street and vs reported growth, nights / margin / ADR / take-rate direction, FY margin and revenue guide revisions. Rebuild with `py -3.13 analysis/src/abnb_guidance_reaction.py`. Also on the Guidance vs move sheet of the workbook. |
+
+## Reviewed churn and hotel release
+
+The [code/model-use audit](../analysis/reviews/2026-09-07_churn-hotel-code-audit.md) records validation, input limits and overlap rules. The [selected 13-market table](processed/hotel_13_market_panel/market_coverage.csv) retains missing hotel bookings/revenue and mixed source units. Its source extraction bundles remain under ignored raw storage; exact replay needs the preserved captures. The [channel and consensus request](requests/hotel_channel_and_consensus_request.md) is authored guidance, not a licensed export.

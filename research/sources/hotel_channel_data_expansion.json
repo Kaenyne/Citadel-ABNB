@@ -1,0 +1,818 @@
+{
+  "as_of": "2026-09-07",
+  "scope": "Provider/channel production and receipt-data feasibility; no market expansion",
+  "absolute_airbnb_hotel_nights_obtained": false,
+  "absolute_airbnb_hotel_revenue_obtained": false,
+  "causal_hotel_uplift_estimate_obtained": false,
+  "new_customer_transaction_rows_obtained": 0,
+  "airbnb_specific_numeric_observations": 7,
+  "airbnb_specific_source_families": 4,
+  "airbnb_specific_breakdown": {
+    "HCE01": 3,
+    "HCE02": 1,
+    "HCE03": 1,
+    "HCE04": 1,
+    "HCE12": 1
+  },
+  "effective_independent_hotel_count": null,
+  "sources": [
+    {
+      "id": "HCE01",
+      "title": "Cloudbeds/Duetto Hotel Market Pulse Fall 2025",
+      "url": "https://www.cloudbeds.com/articles/market-pulse/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "cloudbeds_operational_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Airbnb room-night growth",
+          "value": 4.1,
+          "unit": "percent YoY",
+          "period": "2025-01-01/2025-07-31 versus same 2024 period"
+        },
+        {
+          "metric": "Airbnb ADR growth",
+          "value": -2.0,
+          "unit": "percent YoY"
+        },
+        {
+          "metric": "Airbnb average-length-of-stay growth",
+          "value": -3.4,
+          "unit": "percent YoY"
+        },
+        {
+          "metric": "Full report lodging properties",
+          "value": 20500,
+          "qualifier": "approximately",
+          "unit": "properties"
+        },
+        {
+          "metric": "Full report countries",
+          "value": 177,
+          "unit": "countries"
+        }
+      ],
+      "limitations": [
+        "Hotels, B&Bs, vacation rentals and small chains mixed",
+        "Airbnb cohort count and constant-property methodology not disclosed",
+        "No absolute Airbnb nights or revenue",
+        "Not post-2026 adoption evidence"
+      ],
+      "published": "2025-11-12",
+      "reused_from": "research/sources/hotel_demand_independent_review.json"
+    },
+    {
+      "id": "HCE02",
+      "title": "HOTREC/HES-SO European Hotel Distribution Study 2024",
+      "url": "https://www.hotrec.eu/media/static/files/import/all_news_2024_2024_21/hotrec-distribution-study-2024.pdf",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "hotrec_hesso_2024_survey",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Airbnb relative OTA share",
+          "value": 1.0,
+          "unit": "percent of OTA overnight share, unweighted property survey",
+          "period": "2023",
+          "page": 104
+        },
+        {
+          "metric": "Full sample properties",
+          "value": 3089,
+          "unit": "properties"
+        },
+        {
+          "metric": "Individual responses",
+          "value": 2537,
+          "unit": "responses"
+        },
+        {
+          "metric": "Properties represented through chain submissions",
+          "value": 552,
+          "unit": "properties"
+        },
+        {
+          "metric": "OTA table sample label",
+          "value": 2068,
+          "unit": "observations",
+          "page": 104
+        },
+        {
+          "metric": "Historical chart 2023 sample label",
+          "value": 1950,
+          "unit": "observations",
+          "page": 104
+        }
+      ],
+      "limitations": [
+        "Airbnb-specific response n unresolved",
+        "Unweighted means cannot be multiplied by country nights",
+        "Survey, not reservation ledger",
+        "No matched adoption cohort or outcome variance"
+      ],
+      "raw": "hotrec_2024.pdf",
+      "visual_check": "hotrec_p104.png"
+    },
+    {
+      "id": "HCE03",
+      "title": "SiteMinder Hotel Booking Trends 2026 France",
+      "url": "https://www.siteminder.com/fr/actualite/hotel-booking-trends-france-2026/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "siteminder_2025_reservation_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Airbnb revenue channel rank France",
+          "value": 9,
+          "unit": "rank among top 12",
+          "period": "2025"
+        }
+      ],
+      "limitations": [
+        "No share or absolute country/channel production",
+        "Country cohort n unpublished"
+      ],
+      "published": "2026-02-03"
+    },
+    {
+      "id": "HCE04",
+      "title": "SiteMinder Hotel Booking Trends 2026 Spain",
+      "url": "https://www.siteminder.com/es/noticias/hotel-booking-trends-2026/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "siteminder_2025_reservation_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Airbnb revenue channel rank Spain",
+          "value": 10,
+          "unit": "rank among top 12",
+          "period": "2025"
+        },
+        {
+          "metric": "Provider annual reservations headline",
+          "value": 130000000,
+          "qualifier": "more than",
+          "unit": "reservations/year",
+          "period": "as reported February 2026"
+        },
+        {
+          "metric": "Provider annual room nights headline",
+          "value": 250000000,
+          "qualifier": "more than",
+          "unit": "room nights/year"
+        },
+        {
+          "metric": "Provider annual customer revenue headline",
+          "value": 55000000000,
+          "qualifier": "more than",
+          "unit": "USD/year"
+        }
+      ],
+      "limitations": [
+        "Global platform headlines are not country or Airbnb totals",
+        "Do not infer revenue share from ranks"
+      ],
+      "published": "2026-02-04"
+    },
+    {
+      "id": "HCE05",
+      "title": "SiteMinder current Hotel Booking Trends landing",
+      "url": "https://www.siteminder.com/hotel-booking-trends/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "siteminder_2025_reservation_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Current annual reservations headline",
+          "value": 140000000,
+          "qualifier": "more than",
+          "unit": "reservations/year"
+        },
+        {
+          "metric": "Report destinations",
+          "value": 20,
+          "unit": "destinations"
+        }
+      ],
+      "limitations": [
+        "Changed headline vintage from February's 130m",
+        "Same source family as France/Spain, not independent replication",
+        "No absolute Airbnb hotel production"
+      ],
+      "access": "Web-readable; raw requests 403"
+    },
+    {
+      "id": "HCE06",
+      "title": "Cloudbeds State of Independent Hotels 2026",
+      "url": "https://storage.pardot.com/308041/1779362169jbGBzz6J/The_State_of_Independent_Hotels_2026.pdf",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "cloudbeds_operational_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Report bookings analyzed",
+          "value": 90000000,
+          "unit": "bookings",
+          "page": 5
+        },
+        {
+          "metric": "Countries",
+          "value": 180,
+          "unit": "countries",
+          "page": 5
+        },
+        {
+          "metric": "OTA booking share",
+          "value": 61.3,
+          "unit": "percent",
+          "period": "2024",
+          "page": 17
+        },
+        {
+          "metric": "OTA booking share",
+          "value": 63.4,
+          "unit": "percent",
+          "period": "2025",
+          "page": 17
+        }
+      ],
+      "limitations": [
+        "No Airbnb string or Airbnb-specific production in full 40-page extracted report",
+        "Headline total not reconciled by year/channel/property",
+        "Potential overlap with HCE01"
+      ],
+      "raw": "cloudbeds_2026_report.pdf"
+    },
+    {
+      "id": "HCE07",
+      "title": "Measurable AI Hong Kong travel receipt analysis",
+      "url": "https://blog.measurable.ai/2026/08/05/mainland-china-overtakes-japan-hong-kong-travel-data/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "measurable_consumer_email_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Booking receipts analyzed",
+          "value": 200000,
+          "qualifier": "approximately",
+          "unit": "receipts across six platforms",
+          "period": "2019-2026"
+        },
+        {
+          "metric": "Platforms named",
+          "value": 6,
+          "unit": "platforms",
+          "members": [
+            "Agoda",
+            "Trip.com",
+            "Booking.com",
+            "Expedia",
+            "Klook",
+            "Airbnb"
+          ]
+        }
+      ],
+      "limitations": [
+        "Hong Kong is consumer origin; destinations vary",
+        "Airbnb subset and unique hotel/consumer counts missing",
+        "Trips consolidate multiple bookings",
+        "No hotel/home classification protocol or HotelTonight split",
+        "Cancellation/refund coverage not disclosed"
+      ],
+      "published": "2026-08-05",
+      "raw": "measurable_travel_article.html"
+    },
+    {
+      "id": "HCE08",
+      "title": "Measurable AI generic travel catalog and Agoda dictionary",
+      "url": "https://datarade.ai/data-products/transactional-e-receipt-data-hotel-travel-hospitality-measurable-ai",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "measurable_consumer_email_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Provider inbox headline",
+          "value": 5000000,
+          "qualifier": "approximately",
+          "unit": "email inboxes, all industries"
+        },
+        {
+          "metric": "Country coverage prose",
+          "value": 23,
+          "qualifier": "plus",
+          "unit": "countries"
+        },
+        {
+          "metric": "Country list count",
+          "value": 48,
+          "unit": "countries"
+        },
+        {
+          "metric": "Example night count",
+          "value": 0,
+          "unit": "numOfNights",
+          "note": "Displayed Agoda check-out minus check-in is 86400 seconds"
+        }
+      ],
+      "limitations": [
+        "Vendor-authored marketplace listing; schema example is Agoda, not Airbnb",
+        "Masked preview is not usable raw observations",
+        "hotelId blank in example",
+        "Cancellation emails advertised, refund completeness unverified",
+        "23+/48 origin/destination ambiguity"
+      ],
+      "source_type_override": "vendor-authored marketplace",
+      "fields": [
+        "receiptId",
+        "accountEmailId",
+        "primaryKey",
+        "updateTime",
+        "orderType",
+        "totalPrice",
+        "totalPriceUSD",
+        "totalCharged",
+        "totalChargedUSD",
+        "currency",
+        "countryCode",
+        "checkInTime",
+        "checkOutTime",
+        "hotel",
+        "hotelId",
+        "hotelAddress",
+        "hotelLat",
+        "hotelLon",
+        "numOfGuests",
+        "numOfRooms",
+        "numOfNights",
+        "roomType",
+        "priceItems",
+        "rawHotelName"
+      ]
+    },
+    {
+      "id": "HCE09",
+      "title": "Measurable AI 2024Q1 coverage",
+      "url": "https://file.measurable.ai/coverage.pdf",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "measurable_consumer_email_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Airbnb columns checked",
+          "value": 22,
+          "unit": "country columns out of 26",
+          "page": 11,
+          "method": "manual visual count"
+        }
+      ],
+      "limitations": [
+        "Historical presence, not sample depth",
+        "Bloomberg footnote p13 belongs to in-app-purchase column; not proof of Airbnb distribution",
+        "Not project market scope"
+      ],
+      "raw": "measurable_coverage.pdf",
+      "visual_checks": [
+        "measurable_coverage_p11.png",
+        "measurable_coverage_p13.png"
+      ],
+      "airbnb_checked_columns": [
+        "HK",
+        "TW",
+        "SG",
+        "ID",
+        "TH",
+        "MY",
+        "PH",
+        "VN",
+        "JP",
+        "IN",
+        "US",
+        "CA",
+        "BR",
+        "MX",
+        "AR",
+        "CO",
+        "CL",
+        "TR",
+        "SA",
+        "AE",
+        "EG",
+        "ZA"
+      ]
+    },
+    {
+      "id": "HCE10",
+      "title": "Measurable AI introduction",
+      "url": "https://file.measurable.ai/introduction.pdf",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "measurable_consumer_email_panel",
+      "source_type": "primary",
+      "observations": [],
+      "limitations": [
+        "Provider-wide deliverables only; no Airbnb-specific raw sample",
+        "Other-industry receipt examples irrelevant and not reproduced"
+      ],
+      "raw": "measurable_introduction.pdf",
+      "advertised_delivery": "Weekly granular and aggregate; order IDs, hashed account IDs, geography"
+    },
+    {
+      "id": "HCE11",
+      "title": "Candidate Databricks SAMPLE Airbnb receipt listing",
+      "url": "https://marketplace.databricks.com/details/443917ec-8334-4e4b-b43c-3bc62bb56b8c/Measurable-AI_-SAMPLE-Airbnb-Transactional-E-receipt-Data-Hotel-Travel-Hospitality",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "measurable_consumer_email_panel",
+      "source_type": "primary",
+      "observations": [],
+      "limitations": [
+        "Candidate title/free status from secondary catalog; raw sample not obtained",
+        "Public response was JS app shell without dataset fields",
+        "No browser available, no signup or request"
+      ],
+      "raw": "measurable_databricks.html",
+      "access": "unverified sample availability",
+      "discovery_url": "https://altdata.wiki/wiki/datasets/measurable-ai-sample-airbnb-transactional-e-receipt-data-hotel-travel"
+    },
+    {
+      "id": "HCE12",
+      "title": "D-EDGE Hotel Distribution and Pandemic",
+      "url": "https://www.d-edge.com/hotel-distribution-and-the-pandemic-the-travel-chessboard/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "dedge_hotel_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "European hotels",
+          "value": 3442,
+          "unit": "hotels"
+        },
+        {
+          "metric": "APAC hotels excluding China",
+          "value": 438,
+          "unit": "hotels"
+        },
+        {
+          "metric": "Airbnb channel market share growth",
+          "value": 20,
+          "unit": "times over five years"
+        }
+      ],
+      "limitations": [
+        "Published July 2021; historical pandemic mix",
+        "No absolute Airbnb production extracted",
+        "Chart image requests 403"
+      ],
+      "published": "2021-07-13"
+    },
+    {
+      "id": "HCE13",
+      "title": "D-EDGE 2026 EMEA/APAC release",
+      "url": "https://www.d-edge.com/2026-hotel-distribution-report-emea-apac/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "dedge_hotel_panel",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Report hotels",
+          "value": 2000,
+          "qualifier": "more than",
+          "unit": "hotels",
+          "period": "2022-2025"
+        },
+        {
+          "metric": "EMEA landing hotels",
+          "value": 1500,
+          "qualifier": "plus",
+          "unit": "hotels"
+        }
+      ],
+      "limitations": [
+        "Full report behind contact form; no submission",
+        "No verified Airbnb breakdown",
+        "Regional report and release are same source family"
+      ],
+      "published": "2026-07-01",
+      "landing_urls": [
+        "https://solutions.d-edge.com/EMEA/HDR_download",
+        "https://solutions.d-edge.com/apac/HDR_download"
+      ],
+      "access": "public JS landing content read; form not submitted"
+    },
+    {
+      "id": "HCE14",
+      "title": "HEDNA/RateGain/NYU State of Distribution 2025",
+      "url": "https://www.hedna.org/wp-content/uploads/2025/08/The-State-of-Distribution-Report-2025.pdf",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "hedna_rategain_2025_survey",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Brands responding",
+          "value": 700,
+          "qualifier": "plus",
+          "unit": "brands"
+        },
+        {
+          "metric": "Properties represented",
+          "value": 21000,
+          "qualifier": "plus",
+          "unit": "properties"
+        },
+        {
+          "metric": "Cities",
+          "value": 310,
+          "unit": "cities"
+        },
+        {
+          "metric": "Independent respondents",
+          "value": 36,
+          "unit": "percent of respondents"
+        }
+      ],
+      "limitations": [
+        "Survey not hotel reservation ledger",
+        "No Airbnb references in 56-page web-extracted PDF",
+        "Represented properties not independent respondents",
+        "Independents defined fewer than seven properties in one country"
+      ],
+      "access": "Web PDF read; direct raw download 403"
+    },
+    {
+      "id": "HCE15",
+      "title": "Cloudbeds Channel Production Report",
+      "url": "https://myfrontdesk.cloudbeds.com/hc/en-us/articles/32179714689435-Channel-Production-Report",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "cloudbeds_operational_panel",
+      "source_type": "primary",
+      "observations": [],
+      "limitations": [
+        "Customer-authorized reports, no cross-customer research extract obtained",
+        "Room revenue accounting adjustments require reconciliation"
+      ],
+      "available_fields": [
+        "stay/service date",
+        "source",
+        "subchannel",
+        "room nights",
+        "room revenue",
+        "ADR"
+      ],
+      "reused_from": "research/sources/hotel_demand_independent_review.json"
+    },
+    {
+      "id": "HCE16",
+      "title": "Mews channel connectivity instructions",
+      "url": "https://help.mews.com/s/article/Confirming-the-connectivity-partner-on-your-channel-extranet-in-Mews-Channel-Manager?language=en_US",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "mews_siteminder_routing",
+      "source_type": "primary",
+      "observations": [],
+      "limitations": [
+        "Airbnb connection through HotelTonight; originating storefront needs reconciliation",
+        "Potential provider overlap; not another independent cohort"
+      ],
+      "reused_from": "research/sources/hotel_demand_independent_review.json"
+    },
+    {
+      "id": "HCE17",
+      "title": "Amadeus Demand360",
+      "url": "https://www.amadeus-hospitality.com/solutions/business-intelligence/demand360/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "amadeus_demand360_contributors",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Contributing hotels headline",
+          "value": 44000,
+          "qualifier": "plus",
+          "unit": "hotels"
+        },
+        {
+          "metric": "Forward window",
+          "value": 12,
+          "unit": "months"
+        }
+      ],
+      "limitations": [
+        "Commercial benchmark; Airbnb subchannel/export not verified",
+        "No user entitlement confirmed",
+        "Possible Cloudbeds overlap via integration"
+      ],
+      "integration_url": "https://connect.amadeus-hospitality.com/demand360-cloudbeds-integration",
+      "reused_from": "research/sources/hotel_demand_independent_review.json"
+    },
+    {
+      "id": "HCE18",
+      "title": "SiteMinder Luna Volcan case",
+      "url": "https://www.siteminder.com/case-studies/luna-volcan/",
+      "retrieved": "2026-09-07",
+      "underlying_source_group": "siteminder_luna_volcan_case",
+      "source_type": "primary",
+      "observations": [
+        {
+          "metric": "Property rooms",
+          "value": 30,
+          "unit": "rooms"
+        },
+        {
+          "metric": "Reported room-revenue growth",
+          "value": 363.7,
+          "unit": "percent YoY"
+        },
+        {
+          "metric": "Parenthetical room revenue",
+          "value": 68532,
+          "unit": "USD",
+          "role": "level-versus-change wording unresolved"
+        },
+        {
+          "metric": "Reported room-night growth",
+          "value": 404.3,
+          "unit": "percent YoY"
+        },
+        {
+          "metric": "Parenthetical room nights",
+          "value": 237,
+          "unit": "room nights",
+          "role": "level-versus-change wording unresolved"
+        },
+        {
+          "metric": "Parenthetical confirmed reservations",
+          "value": 130,
+          "unit": "bookings",
+          "role": "level-versus-change wording unresolved"
+        },
+        {
+          "metric": "ADR decrease",
+          "value": 8,
+          "unit": "percent"
+        },
+        {
+          "metric": "Reported ADR",
+          "value": 289,
+          "unit": "USD"
+        }
+      ],
+      "limitations": [
+        "First year on SiteMinder; exact comparison dates not given",
+        "Airbnb plus multiple new channels and paid metasearch/pricing changes",
+        "Cannot attribute reported performance to Airbnb",
+        "No all-channel capacity reconciliation"
+      ],
+      "updated": "2026-06-17",
+      "reused_from": "research/sources/hotel_demand_independent_review.json"
+    }
+  ],
+  "raw_downloads": [
+    {
+      "id": "cloudbeds_2026",
+      "requested_url": "https://go.pardot.com/l/308041/2026-03-24/2gdsh2/308041/1774437154ZSazZZzO/The_State_of_Independent_Hotels_2026.pdf",
+      "final_url": "https://go.pardot.com/l/308041/2026-03-24/2gdsh2/308041/1774437154ZSazZZzO/The_State_of_Independent_Hotels_2026.pdf",
+      "status": 200,
+      "bytes": 952,
+      "sha256": "f0f263b8aeb7f8847da2927479dc53420543ee87eccb8878d221a26cadfe3c6e",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\cloudbeds_2026.html",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "dedge_2024",
+      "requested_url": "https://www.d-edge.com/wp-content/uploads/2024/04/Hotel-Distribution-Report-2024-EN.pdf",
+      "error": "403 Client Error: Forbidden for url: https://www.d-edge.com/wp-content/uploads/2024/04/Hotel-Distribution-Report-2024-EN.pdf",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "siteminder_2026",
+      "requested_url": "https://www.siteminder.com/hotel-booking-trends/",
+      "error": "403 Client Error: Forbidden for url: https://www.siteminder.com/hotel-booking-trends/",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "cloudbeds_2026_report",
+      "requested_url": "https://storage.pardot.com/308041/1779362169jbGBzz6J/The_State_of_Independent_Hotels_2026.pdf",
+      "final_url": "https://storage.pardot.com/308041/1779362169jbGBzz6J/The_State_of_Independent_Hotels_2026.pdf",
+      "status": 200,
+      "bytes": 21828233,
+      "sha256": "a5036d54bcdc70924c9db56afd0c291d9e9ce8d14f75d81c312d0544f5c8fb92",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\cloudbeds_2026_report.pdf",
+      "retrieved": "2026-09-07",
+      "pages": 40
+    },
+    {
+      "id": "hotrec_2024",
+      "requested_url": "https://www.hotrec.eu/media/static/files/import/all_news_2024_2024_21/hotrec-distribution-study-2024.pdf",
+      "final_url": "https://www.hotrec.eu/media/static/files/import/all_news_2024_2024_21/hotrec-distribution-study-2024.pdf",
+      "status": 200,
+      "bytes": 3109151,
+      "sha256": "49ecc856d773d650e9c89a0e879c48b93fb88eafa45bc3153730b9608533cfcc",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\hotrec_2024.pdf",
+      "retrieved": "2026-09-07",
+      "pages": 176
+    },
+    {
+      "id": "dedge_2026_europe_landing",
+      "requested_url": "https://solutions.d-edge.com/EMEA/HDR_download",
+      "final_url": "https://solutions.d-edge.com/EMEA/HDR_download",
+      "status": 200,
+      "bytes": 5331,
+      "sha256": "1a88750ad746c1cd999cc54ac2074f87fa78f1b1d1d56d77e5dcb0637ff8e418",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\dedge_2026_europe_landing.html",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "dedge_2026_asia_landing",
+      "requested_url": "https://solutions.d-edge.com/apac/HDR_download",
+      "final_url": "https://solutions.d-edge.com/apac/HDR_download",
+      "status": 200,
+      "bytes": 5331,
+      "sha256": "1a88750ad746c1cd999cc54ac2074f87fa78f1b1d1d56d77e5dcb0637ff8e418",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\dedge_2026_asia_landing.html",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "dedge_2021_share",
+      "requested_url": "https://www.d-edge.com/wp-content/uploads/2021/07/OTAS-MARKET-SHARE-1.jpg",
+      "error": "403 Client Error: Forbidden for url: https://www.d-edge.com/wp-content/uploads/2021/07/OTAS-MARKET-SHARE-1.jpg",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "measurable_sample_landing",
+      "requested_url": "https://altdata.wiki/wiki/datasets/measurable-ai-sample-airbnb-transactional-e-receipt-data-hotel-travel",
+      "final_url": "https://altdata.wiki/wiki/datasets/measurable-ai-sample-airbnb-transactional-e-receipt-data-hotel-travel",
+      "status": 200,
+      "bytes": 48988,
+      "sha256": "7cbb066cc790937f2a09a26481d2a0bf2fb74a4be0e18b85dd972f79654ea40e",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\measurable_sample_landing.html",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "hedna_2025",
+      "requested_url": "https://www.hedna.org/wp-content/uploads/2025/08/The-State-of-Distribution-Report-2025.pdf",
+      "error": "403 Client Error: Forbidden for url: https://www.hedna.org/wp-content/uploads/2025/08/The-State-of-Distribution-Report-2025.pdf",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "dedge_2026_bundle",
+      "requested_url": "https://solutions.d-edge.com/assets/index-CI1E1hXc.js",
+      "final_url": "https://solutions.d-edge.com/assets/index-CI1E1hXc.js",
+      "status": 200,
+      "bytes": 2748842,
+      "sha256": "81ee423253b9178a1512baae32d8e9f783febb4f618c69ddeafdcb685d85fb4b",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\dedge_2026_bundle.html",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "measurable_databricks",
+      "requested_url": "https://marketplace.databricks.com/details/443917ec-8334-4e4b-b43c-3bc62bb56b8c/Measurable-AI_-SAMPLE-Airbnb-Transactional-E-receipt-Data-Hotel-Travel-Hospitality",
+      "final_url": "https://marketplace.databricks.com/details/443917ec-8334-4e4b-b43c-3bc62bb56b8c/Measurable-AI_-SAMPLE-Airbnb-Transactional-E-receipt-Data-Hotel-Travel-Hospitality",
+      "status": 200,
+      "bytes": 60660,
+      "sha256": "93299a42ada7f9f4a3104cb572c391cc112a71f2f0ae48e4f02651338a18bb7d",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\measurable_databricks.html",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "measurable_coverage",
+      "requested_url": "https://file.measurable.ai/coverage.pdf",
+      "final_url": "https://file.measurable.ai/coverage.pdf",
+      "status": 200,
+      "bytes": 645956,
+      "sha256": "953bc0e2d640f117f62740020b6b5a8d3af3738e539b8ff991ef25ebd7a2eee5",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\measurable_coverage.pdf",
+      "retrieved": "2026-09-07",
+      "pages": 13
+    },
+    {
+      "id": "measurable_introduction",
+      "requested_url": "https://file.measurable.ai/introduction.pdf",
+      "final_url": "https://file.measurable.ai/introduction.pdf",
+      "status": 200,
+      "bytes": 8192989,
+      "sha256": "7f8dc7df42562f3a682deaf82eee4f3155ce7c4896b9193f4f1938b5c3b8a61a",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\measurable_introduction.pdf",
+      "retrieved": "2026-09-07",
+      "pages": 31
+    },
+    {
+      "id": "measurable_travel_article",
+      "requested_url": "https://blog.measurable.ai/2026/08/05/mainland-china-overtakes-japan-hong-kong-travel-data/",
+      "final_url": "https://blog.measurable.ai/2026/08/05/mainland-china-overtakes-japan-hong-kong-travel-data/",
+      "status": 200,
+      "bytes": 79658,
+      "sha256": "c80570983f5aa94074ec24eab0b6a63760af1b414b770bf8048c07f20b73dc3f",
+      "path": "C:\\Users\\wille\\OneDrive\\Desktop\\Citadel - ABNB\\data\\raw\\hotel_channel_data_expansion\\measurable_travel_article.html",
+      "retrieved": "2026-09-07"
+    },
+    {
+      "id": "measurable_airbnb_catalog",
+      "requested_url": "https://datarade.ai/data-products/airbnb-transactional-e-receipt-data-hotel-travel-hospitality-measurable-ai",
+      "error": "403 Client Error: Forbidden for url: https://datarade.ai/data-products/airbnb-transactional-e-receipt-data-hotel-travel-hospitality-measurable-ai",
+      "retrieved": "2026-09-07"
+    }
+  ],
+  "safeguards": [
+    "No contact, signup, forms or purchases",
+    "Do not sum source populations",
+    "Reused sources are not additional replications",
+    "Hotel revenue is not Airbnb revenue",
+    "Raw HTML success does not imply dataset access"
+  ]
+}

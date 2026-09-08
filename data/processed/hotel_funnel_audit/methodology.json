@@ -1,0 +1,22 @@
+{
+  "as_of": "2026-09-07",
+  "source": "Inside Airbnb CC BY 4.0, existing team captures",
+  "panel": "historical13",
+  "selection": "Original historical 13-market sample",
+  "selection_sha256": null,
+  "cross_market_duplicate_hotel_ids": 0,
+  "snapshot_files_read": 26,
+  "new_raw_downloads": 0,
+  "manifest_sha256": "64f3c7984fd79a3bd00be1efeda32e99eaa846e468b8c2dff0d52c876c33099c",
+  "strict_definition": "property_type Hotel, Boutique hotel, or room in either",
+  "broad_definition": "strict OR room_type Hotel room; includes B&B/serviced apartments",
+  "limits": [
+    "No verified independence, property deduplication, room inventory, booked nights, causal incrementality or 2026 new hotel product coverage",
+    "First and last observed snapshots; unequal dates and no annualization or seasonal adjustment",
+    "Austin excluded from pooled changes under existing team partial-scope flags",
+    "Endpoint-new IDs may be re-listings, not newly recruited hotels",
+    "Review counts are unconverted proxies; incomplete totals and their growth/means stay unknown (blank CSV cells)",
+    "Observed review subtotals and missing-listing counts are separate; missingness propagates into pooled and retained-ID results",
+    "Pooled unique_host_ids is sum of city counts, not globally deduplicated hosts"
+  ]
+}

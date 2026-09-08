@@ -1,0 +1,5 @@
+market,source_id,period,metric,value,unit,calculation,file,sha256
+madrid,HOTEL-MAD,2026-07,hotel_rooms_estimated_open,39656,rooms,sum hotel star columns D:G; total C minus hostal H:I,madrid_rooms_2026.xlsx,1ef7bd8db2267ce4caa3fd0901bf348c4e762a4c56fef43d7a0ae39094555325
+buenos-aires,HOTEL-BUE,2026-03,boutique_establishments,44,establishments,sheet 2026 H6,buenos_rooms.xlsx,8b7bf6dced746aae3a3f99eefca26e891e6216f75f41969fe65bbd84be410326
+buenos-aires,HOTEL-BUE,2026-03,boutique_available_room_nights,34348,available_room_nights_in_month,sheet 2026 H7; rooms multiplied by days open,buenos_rooms.xlsx,8b7bf6dced746aae3a3f99eefca26e891e6216f75f41969fe65bbd84be410326
+buenos-aires,HOTEL-BUE,2026-03,boutique_average_daily_available_rooms,1108.0,average_daily_available_rooms_not_physical_keys,H7 / 31 calendar days; not a physical room census,buenos_rooms.xlsx,8b7bf6dced746aae3a3f99eefca26e891e6216f75f41969fe65bbd84be410326

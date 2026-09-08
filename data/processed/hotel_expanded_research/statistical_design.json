@@ -1,0 +1,98 @@
+{
+  "status": "illustrative_design_not_observed_data_or_achieved_power",
+  "method": "Normal approximation for two equal independent groups; hotel-level residual outcome is the analysis unit.",
+  "design_assumptions": [
+    "equal residual variances",
+    "independent hotels after common shocks are addressed",
+    "one pre-specified primary test",
+    "no nonresponse or measurement error inflation",
+    "no causal identification supplied by the power calculation"
+  ],
+  "requirements": [
+    "Reestimate variance on valid production data.",
+    "Cluster repeated observations by hotel and account for shared operator/city/date shocks.",
+    "Use matching/weights and retain exits; more observations cannot remove selection bias.",
+    "Specify a financially meaningful minimum effect before inspecting outcomes.",
+    "For staggered adoption, use a cohort-aware design; simulate power for that design.",
+    "Population registry counts do not require a significance test; classification and coverage are the uncertainties.",
+    "Daily forecasts and many broker estimates do not create more independent company earnings events."
+  ],
+  "planning_grid": [
+    {
+      "assumed_residual_cv": 0.5,
+      "target_relative_effect": 0.05,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 1570,
+      "total_independent_hotels": 3140
+    },
+    {
+      "assumed_residual_cv": 0.5,
+      "target_relative_effect": 0.1,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 393,
+      "total_independent_hotels": 786
+    },
+    {
+      "assumed_residual_cv": 0.5,
+      "target_relative_effect": 0.2,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 99,
+      "total_independent_hotels": 198
+    },
+    {
+      "assumed_residual_cv": 1.0,
+      "target_relative_effect": 0.05,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 6280,
+      "total_independent_hotels": 12560
+    },
+    {
+      "assumed_residual_cv": 1.0,
+      "target_relative_effect": 0.1,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 1570,
+      "total_independent_hotels": 3140
+    },
+    {
+      "assumed_residual_cv": 1.0,
+      "target_relative_effect": 0.2,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 393,
+      "total_independent_hotels": 786
+    },
+    {
+      "assumed_residual_cv": 1.5,
+      "target_relative_effect": 0.05,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 14128,
+      "total_independent_hotels": 28256
+    },
+    {
+      "assumed_residual_cv": 1.5,
+      "target_relative_effect": 0.1,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 3532,
+      "total_independent_hotels": 7064
+    },
+    {
+      "assumed_residual_cv": 1.5,
+      "target_relative_effect": 0.2,
+      "alpha_two_sided": 0.05,
+      "target_power": 0.8,
+      "independent_hotels_per_group": 883,
+      "total_independent_hotels": 1766
+    }
+  ],
+  "sources": [
+    "https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm",
+    "https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm"
+  ]
+}

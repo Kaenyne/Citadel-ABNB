@@ -1,0 +1,548 @@
+[
+  {
+    "market": "austin",
+    "source_id": "H13-AUS-REG",
+    "source_url": "https://data.austintexas.gov/Public-Safety/Hotel-Motel-and-B-B-Licenses/av8n-pmdr",
+    "observation_period": "2026-09-07T11:02:35+00:00",
+    "geography": "City of Austin operating-license records; not metro. All source City fields say AUSTIN; boundary not independently polygon-checked.",
+    "metric": "Recorded capacity of active hotel/motel/B&B licenses",
+    "value": 29080,
+    "unit": "licensed rooms/units",
+    "status": "calculated",
+    "property_records_obtained": 216,
+    "property_record_definition": "active operating-license rows, not deduplicated physical hotels",
+    "independent_rooms": null,
+    "limitations": "Includes motel/B&B/hostel/HOA categories; all-hotel city/metro completeness and independence unverified.",
+    "overlap_status": "New hotel-license frame; separate from Jessie STR licenses; earlier Visit Austin headline not added.",
+    "raw_path": "data/raw/hotel_13_market_extension/austin/licenses.csv",
+    "observations": [
+      {
+        "metric": "Active Hotel-classified license capacity",
+        "value": 25424,
+        "unit": "licensed rooms/units",
+        "records": 168
+      }
+    ]
+  },
+  {
+    "market": "barcelona",
+    "source_id": "HOTEL-BCN",
+    "source_url": "https://tdbnews.barcelonaturisme.com/wp-content/uploads/2024/10/2409_Oferta-hotelera.pdf",
+    "observation_period": "2024-09",
+    "geography": "Barcelona municipality",
+    "metric": "hotel and hotel-apartment census rooms",
+    "value": 40166,
+    "unit": "rooms",
+    "status": "observed",
+    "property_records_obtained": 0,
+    "independent_rooms": null,
+    "limitations": [
+      "Provisional monthly census includes hotels and hotel-apartments; 447 establishments and 78353 beds are separate units.",
+      "No independent/boutique or Airbnb filter.",
+      "Official city property-registry landing failed and API fallback returned HTTP500; no city-wide named property frame obtained.",
+      "September 2024 is the observation date; not September 2026 stock."
+    ],
+    "overlap_status": "Existing HOTEL-BCN source reused; seven category and ten district rows newly extracted from the same report, not independent evidence.",
+    "raw_path": "data/raw/hotel_13_market_extension/europe_sydney/barcelona_capacity_metadata.json",
+    "alternate_observations": [
+      {
+        "metric": "establishments",
+        "value": 447,
+        "unit": "establishments",
+        "status": "observed"
+      },
+      {
+        "metric": "beds",
+        "value": 78353,
+        "unit": "beds",
+        "status": "observed"
+      },
+      {
+        "metric": "capacity_breakdown_rows",
+        "value": 17,
+        "unit": "category/district rows",
+        "status": "calculated",
+        "path": "data/raw/hotel_13_market_extension/europe_sydney/barcelona_capacity_breakdowns.csv",
+        "do_not_sum": "Two overlapping partitions of the same city stock, not 17 property observations"
+      }
+    ]
+  },
+  {
+    "market": "chicago",
+    "source_id": "H13-CHI-LICENSES",
+    "source_url": "https://data.cityofchicago.org/resource/uupf-x98q.json?$where=upper(business_activity)%20like%20%27%25HOTEL%25%27%20OR%20upper(license_description)%20like%20%27%25HOTEL%25%27&$limit=50000",
+    "observation_period": "Snapshot2026-09-07; source updated2026-09-06",
+    "geography": "City of Chicago licensed business addresses",
+    "metric": "current_hotel_activity_account_site_pairs",
+    "value": 214,
+    "unit": "licensed account-site pairs",
+    "status": "calculated",
+    "property_records_obtained": 215,
+    "property_record_definition": "current-term hotel license rows; not215 physical hotels",
+    "independent_rooms": null,
+    "hotel_rooms": null,
+    "limitations": [
+      "Hotel business activity676 means seven or more sleeping rooms; room capacity is not a dataset field.",
+      "226 returned active-view rows include11 future-start license terms. Current-term filter yields215 license numbers,214 account-site pairs,209 exact addresses. These units are not interchangeable.",
+      "An account-site can combine multiple brands; separate accounts can share addresses. No physical-property census or operational availability is inferred.",
+      "No verified ownership/brand independence or boutique flag; no Airbnb matching, allocation or booking inference.",
+      "The historical Hotel license code1370 returned1402 terms ending by2015 and was excluded from current supply; modern hotel records use Regulated Business License activity676."
+    ],
+    "overlap_status": "not found in other accessible research source/memo files by exact-URL scan; independent discovery claim limited to this repository",
+    "raw_path": "data/raw/hotel_13_market_extension/us_west_chicago/chicago_current_hotel_activities.json",
+    "property_frame_path": "data/raw/hotel_13_market_extension/us_west_chicago/chicago_current_hotel_license_frame.csv",
+    "observations": [
+      {
+        "metric": "raw_hotel_activity_license_rows",
+        "value": 226,
+        "unit": "license-term rows"
+      },
+      {
+        "metric": "current_term_hotel_licenses",
+        "value": 215,
+        "unit": "license numbers"
+      },
+      {
+        "metric": "current_account_site_pairs",
+        "value": 214,
+        "unit": "account-site pairs"
+      },
+      {
+        "metric": "current_exact_addresses",
+        "value": 209,
+        "unit": "exact address strings"
+      },
+      {
+        "source_id": "H13-CHI-2024-CBD",
+        "metric": "hotel_rooms",
+        "value": 44000,
+        "qualifier": "nearly",
+        "geography": "Central Business District",
+        "observation_period": "2024-03-06",
+        "status": "observed",
+        "unit": "rooms"
+      }
+    ]
+  },
+  {
+    "market": "london",
+    "source_id": "HOTEL-13-LON-GLA-2026",
+    "source_url": "https://www.london.gov.uk/sites/default/files/2026-07/Visitor%20Accommodation%20in%20London%20-%202026%20report.pdf",
+    "observation_period": "Q1 2025",
+    "geography": "Greater London: 32 London boroughs plus City of London, 33 areas total",
+    "metric": "Serviced accommodation inventory",
+    "value": 174384,
+    "unit": "serviced rooms",
+    "status": "observed",
+    "property_records_obtained": 0,
+    "property_record_definition": "33 borough aggregates at two periods; no named-property records",
+    "independent_rooms": null,
+    "limitations": "Includes B&Bs, guest houses, apart-hotels and hostels; July 2026 publication is not a 2026 observation.",
+    "overlap_status": "Refinement of existing HOTEL-LON source, same GLA/CoStar Q1 2025 serviced-room lineage. Not independent corroboration or new 2026 inventory growth.",
+    "raw_path": "data/raw/hotel_13_market_extension/london/gla_2026_report.pdf",
+    "observations": [
+      {
+        "metric": "Serviced accommodation Q1 2019",
+        "value": 160115,
+        "unit": "serviced rooms"
+      }
+    ]
+  },
+  {
+    "market": "los-angeles",
+    "source_id": "H13-LA-TMD-DIRECTORY",
+    "source_url": "https://www.discoverlosangeles.com/tmd",
+    "observation_period": "Undated profile/directory facts retrieved2026-09-07",
+    "geography": "City of Los Angeles Tourism Marketing District:50+room lodging subset",
+    "metric": "sum_reported_total_rooms_in_directory_subset",
+    "value": 35501,
+    "qualifier": "sum for 172 of 173 directory profiles; not citywide",
+    "unit": "reported profile rooms",
+    "status": "calculated",
+    "property_records_obtained": 173,
+    "property_record_definition": "distinct TMD directory hotel profile URLs",
+    "profiles_with_rooms": 172,
+    "independent_rooms": null,
+    "hotel_rooms_citywide": null,
+    "limitations": [
+      "Official TMD directory subset, not all City of Los Angeles hotels; July2024 district plan applies to public-occupancy lodging with50+rooms in city boundaries. Smaller boutique hotels are structurally omitted.",
+      "173 distinct directory URLs;172 explicit Total Rooms fields; Bonnie Lee Inn missing. Rooms are undated profile facts retrieved2026-09-07, not audited current operating capacity.",
+      "35,501 is the arithmetic sum of reported profile fields. Three shared-address brand pairs are retained; physical room overlap has not been independently reconciled.",
+      "Postal address place names differ from municipal jurisdiction. City membership follows the TMD directory/plan, not a naive Los Angeles postal-name filter.",
+      "No verified independent/boutique classification, Airbnb eligibility, contracted allocation, availability or booking inference."
+    ],
+    "overlap_status": "not found in other accessible research source/memo files by exact-URL scan; independent discovery claim limited to this repository",
+    "raw_path": "data/raw/hotel_13_market_extension/us_west_chicago/la_tmd.html",
+    "property_frame_path": "data/raw/hotel_13_market_extension/us_west_chicago/la_tmd_property_frame.csv",
+    "observations": [
+      {
+        "metric": "directory_profile_records",
+        "value": 173,
+        "unit": "distinct hotel profile URLs"
+      },
+      {
+        "metric": "profiles_with_explicit_rooms",
+        "value": 172,
+        "unit": "hotel profile records"
+      },
+      {
+        "metric": "sum_reported_total_rooms",
+        "value": 35501,
+        "unit": "reported profile rooms",
+        "status": "calculated"
+      },
+      {
+        "source_id": "H13-LA-REGIONAL-GUIDE",
+        "metric": "guest_rooms_and_suites",
+        "value": 115000,
+        "qualifier": "more than",
+        "geography": "Los Angeles destination region; boundary unspecified",
+        "observation_period": "2025guide uploaded2026-01",
+        "status": "observed",
+        "unit": "rooms and suites"
+      }
+    ]
+  },
+  {
+    "market": "mexico-city",
+    "source_id": "H13-MEX-SECTUR-2025",
+    "source_url": "https://www.congresocdmx.gob.mx/media/documentos/b5c1ff207166ed571562c1cc60deeb9dcc220e83.pdf",
+    "observation_period": "2025-09-30",
+    "geography": "Ciudad de México",
+    "metric": "Reported hotel-room capacity",
+    "value": 62279,
+    "unit": "rooms",
+    "status": "observed",
+    "property_records_obtained": 0,
+    "property_record_definition": "No property-level rows obtained. 850 hotels is a reported aggregate, not 850 downloaded property records.",
+    "independent_rooms": null,
+    "limitations": [
+      "No source identifies boutique eligibility, chain/franchise affiliation or independent-room totals.",
+      "Supply and licenses do not measure Airbnb listings, activated inventory, room allocation, bookings or incremental hotel demand.",
+      "850 is an agency aggregate, not 850 downloaded property records.",
+      "Same stock appears in category, borough and headline tables; do not sum those populations.",
+      "Source discloses catalog refresh; historical count increases include previously uncounted hotels. Earlier years not directly comparable.",
+      "Direct CDMX open-data registry and Secretariat files timed out. Congress-hosted PDF was downloaded; no property-level room registry obtained.",
+      "Replaces inherited 66,000 search-snippet capacity. Other unverified official-index statements 62,280/62,729 conflict; not averaged or used as additional stock."
+    ],
+    "overlap_status": "No document hash-token match in frozen team URL inventory. Upgrade to inherited HOTEL-MEX search-only lead from same public tourism source family; do not add both stock counts.",
+    "raw_path": "data/raw/hotel_13_market_extension/south_mexico/mexico_tourism_congress_2025.pdf",
+    "alternate_observations": [
+      {
+        "metric": "Reported hotels",
+        "value": 850,
+        "unit": "hotels",
+        "status": "observed",
+        "observation_period": "2025-09-30",
+        "geography": "Ciudad de México",
+        "source_id": "H13-MEX-SECTUR-2025"
+      },
+      {
+        "metric": "Borough and star category breakdowns",
+        "path": "data/raw/hotel_13_market_extension/south_mexico/mexico_capacity_tables.json",
+        "note": "Aggregate bins; independence and boutique status unknown."
+      }
+    ]
+  },
+  {
+    "market": "nashville",
+    "source_id": "H13-BNA-CVB-2025",
+    "source_url": "https://www.visitmusiccity.com/about/statistics",
+    "observation_period": "page updated 2025-09-19; precise stock date unspecified",
+    "geography": "Davidson County (Nashville metropolitan government); not 14-county MSA",
+    "metric": "Reported hotel-room capacity",
+    "value": 42156,
+    "unit": "rooms",
+    "status": "observed",
+    "property_records_obtained": 0,
+    "property_record_definition": "No property-level operating hotel registry obtained. Capacity is an agency aggregate.",
+    "independent_rooms": null,
+    "limitations": [
+      "No source identifies boutique eligibility, chain/franchise affiliation or independent-room totals.",
+      "Supply and licenses do not measure Airbnb listings, activated inventory, room allocation, bookings or incremental hotel demand.",
+      "Reused undated-stock county number on September 2025 page; no complete hotel operating registry downloaded. Inspection portal returned 403."
+    ],
+    "overlap_status": "Reused inherited HOTEL-BNA capacity observation, not new independent evidence.",
+    "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nashville_statistics_web_reader.txt",
+    "alternate_observations": [
+      {
+        "source_id": "H13-BNA-METRO-2026",
+        "observation_period": "2025-12",
+        "geography": "Nashville MSA",
+        "hotel_count": 528,
+        "rooms": 61358,
+        "status": "observed",
+        "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nashville_dec2025_official.pdf",
+        "note": "MSA context only; not substituted into county anchor. 2015–2024 history in capacity_history.json."
+      }
+    ]
+  },
+  {
+    "market": "new-orleans",
+    "source_id": "H13-MSY-CPC-2025",
+    "source_url": "https://nola.gov/nola/media/City-Planning/Major%20Projects/Inclusionary%20Housing%20Study/10-29-2025-ALL-TransientLodgingStudyReport.pdf",
+    "observation_period": "2025-03",
+    "geography": "City of New Orleans",
+    "metric": "Reported hotel/motel licenses",
+    "value": 220,
+    "unit": "licenses",
+    "status": "observed",
+    "property_records_obtained": 262,
+    "property_record_definition": "Historical 2024 business records under hotel/motel category, NOT unique hotels; separate source H13-MSY-REVENUE-2024. 243 distinct exact address strings. No room field.",
+    "independent_rooms": null,
+    "limitations": [
+      "No source identifies boutique eligibility, chain/franchise affiliation or independent-room totals.",
+      "Supply and licenses do not measure Airbnb listings, activated inventory, room allocation, bookings or incremental hotel demand.",
+      "Room anchor is rounded, partial-area and not matched to citywide business rows.",
+      "Downloaded CSV has 391 lodging business rows, of which 262 hotel/motel rows map to 243 exact addresses; duplicates include operator changes, dual brands and bar/garage registrations. No unique physical-hotel total inferred.",
+      "CSV last rows update July 16, 2024. Monthly refresh label does not make it current; no rooms field.",
+      "Newer March 2025 study uses another city administrative system; differences cannot establish exits or supply change."
+    ],
+    "overlap_status": "No report filename match in frozen visible team URL inventory. Different city administrative system from Revenue CSV; not additive hotels.",
+    "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nola_transient_lodging_study.pdf",
+    "alternate_observations": [
+      {
+        "source_id": "H13-MSY-REVENUE-2024",
+        "observation_period": "2024-07-16T21:43:02+00:00",
+        "geography": "City of New Orleans",
+        "metric": "Hotel/motel business rows",
+        "value": 262,
+        "unit": "business records",
+        "status": "calculated",
+        "rooms": null,
+        "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nola_licenses.csv"
+      },
+      {
+        "source_id": "H13-MSY-CPC-2025",
+        "observation_period": "2025-03",
+        "geography": "City of New Orleans",
+        "hotel_and_traveler_accommodation_licenses": 223,
+        "bed_and_breakfast_licenses": 109,
+        "rooms": null,
+        "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nola_transient_lodging_study.pdf",
+        "note": "Use detailed table 2; main narrative loosely labels broad 223 as hotels/motels."
+      },
+      {
+        "source_id": "H13-MSY-CVB-PARTIAL",
+        "source_url": "https://www.neworleans.com/meeting-planners/",
+        "observation_period": "undated page retrieved 2026-09-07",
+        "geography": "Within 2.5 miles of downtown New Orleans; partial area only",
+        "metric": "Reported partial-area hotel-room capacity",
+        "value": 26000,
+        "unit": "rooms",
+        "status": "observed",
+        "qualifier": "Rounded 26,000 on meeting-planners page; inherited /hotels/ page says more than 26,000 downtown. Neither is citywide.",
+        "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nola_capacity_web_reader.txt",
+        "overlap_status": "Same publisher and capacity assertion as inherited HOTEL-MSY; this page clarifies geography. Do not count as independent confirmation."
+      }
+    ]
+  },
+  {
+    "market": "new-york-city",
+    "source_id": "HRE-NYC-LICENSE",
+    "source_url": "https://data.cityofnewyork.us/Business/Issued-Licenses/w7w3-xahh",
+    "observation_period": "Source updated 2026-08-20; status filter 2026-09-07",
+    "geography": "NYC hotel operating-license records; five boroughs",
+    "metric": "Active/Ready-for-Renewal candidate licenses",
+    "value": 785,
+    "unit": "license records",
+    "status": "calculated",
+    "property_records_obtained": 785,
+    "property_record_definition": "785 candidate licenses / 761 address clusters; not 785 proven physical hotels",
+    "independent_rooms": null,
+    "limitations": "No room-count field; active/renewal status is not evidence of Airbnb operation or booking production.",
+    "overlap_status": "Reused earlier hotel rollout registry; historical CoStar independence anchor kept separately.",
+    "raw_path": "data/raw/hotel_rollout_economics/nyc_query_1.json",
+    "observations": [
+      {
+        "metric": "Candidate address clusters",
+        "value": 761,
+        "unit": "address clusters"
+      }
+    ]
+  },
+  {
+    "market": "paris",
+    "source_id": "HRE-FR-CLASSIFIED",
+    "source_url": "https://www.data.gouv.fr/datasets/hebergements-touristiques-classes-en-france",
+    "observation_period": "Classification export retrieved 2026-09-07",
+    "geography": "Paris municipality, postcodes 75001–75020 and 75116",
+    "metric": "Classified-hotel registered capacity",
+    "value": 85815,
+    "unit": "rooms",
+    "status": "calculated",
+    "property_records_obtained": 1589,
+    "property_record_definition": "classified-hotel name/address identities",
+    "independent_rooms": null,
+    "limitations": "Classified hotels only; chain affiliation and operating/Airbnb status unverified; unclassified stock excluded.",
+    "overlap_status": "Reused Paris subset of France; France national total excluded from selected market panel.",
+    "raw_path": "data/raw/hotel_rollout_economics/france_classified_accommodation.csv",
+    "observations": [
+      {
+        "metric": "Classified hotels with fewer than 50 rooms",
+        "value": 1172,
+        "unit": "properties",
+        "rooms": 37301,
+        "independence_verified": false
+      }
+    ]
+  },
+  {
+    "market": "rome",
+    "source_id": "HOTEL-ROM",
+    "source_url": "https://www.romaperilclima.it/wp-content/uploads/2026/03/Strategia-di-Riqualificazione-Energetica-del-Patrimonio-Immobiliare-di-Roma-Capitale_documento_ENEA_conferenza_3marzo2026_compressed.pdf",
+    "observation_period": "2024 year end",
+    "geography": "Roma Capitale",
+    "metric": "Alberghi hotel rooms",
+    "value": 48747,
+    "unit": "rooms",
+    "status": "observed",
+    "property_records_obtained": 1006,
+    "property_records_basis": "Candidate clusters from a separate June 2025 registry, not verified unique physical properties or the basis of the 2024 aggregate",
+    "independent_rooms": null,
+    "limitations": [
+      "Excludes separately reported 657 rooms in hotel dependencies.",
+      "No matched chain/independent classification.",
+      "Newer registry is not proven complete active supply; primary city aggregate retained pending alias/status reconciliation.",
+      "No Airbnb listings, allocation, bookings or revenue identified."
+    ],
+    "overlap_status": "Headline HOTEL-ROM city aggregate is reused. June 2025 municipal registry property extract is new to the checked local source inventory but shares Roma Capitale data lineage; not independent city-capacity corroboration.",
+    "raw_path": "data/raw/hotel_funnel_audit/public/rome2024.pdf",
+    "alternate_observations": [
+      {
+        "source_id": "HOTEL-13-ROM-REG-2025-06",
+        "source_url": "https://dati.comune.roma.it/catalog/dataset/c71fb0bc-109d-4f36-81c0-287ec9bda520/resource/9a1c0c01-0953-4436-89a8-ac286d58dc5c/download/suar2025-06.csv",
+        "observation_period": "2025-06",
+        "metric": "known registered Alberghi rooms after candidate duplicate removal",
+        "value": 49577,
+        "unit": "reported rooms",
+        "status": "calculated",
+        "raw_registry_records": 1008,
+        "raw_rooms_sum": 49596,
+        "candidate_properties": 1006,
+        "candidate_properties_with_known_rooms": 1004,
+        "candidate_properties_missing_rooms": 2,
+        "unique_normalized_addresses": 897,
+        "excluded_dependencies": {
+          "records": 80,
+          "rooms": 657
+        },
+        "raw_path": "data/raw/hotel_13_market_extension/europe_sydney/rome_registry_2025_06.csv",
+        "processed_path": "data/raw/hotel_13_market_extension/europe_sydney/rome_hotel_property_candidates.csv",
+        "limitations": [
+          "Two duplicate candidate pairs remove 19 rooms; remaining shared-address aliases unresolved.",
+          "No active/closed field; not verified current operation.",
+          "Two missing room counts remain null.",
+          "Difference versus old aggregate is not proved net new hotel growth."
+        ]
+      }
+    ]
+  },
+  {
+    "market": "san-diego",
+    "source_id": "H13-SD-FASTFACTS",
+    "source_url": "https://www.sandiego.org/about/san-diego-tourism-fast-facts",
+    "observation_period": "Fact sheet2026-04-30; infrastructure stock date unspecified",
+    "geography": "City of San Diego",
+    "metric": "reported_city_hotel_rooms",
+    "value": 40158,
+    "unit": "rooms",
+    "status": "observed",
+    "property_records_obtained": 0,
+    "property_record_definition": "No reconciled hotel property register obtained; tax accounts below are candidates only",
+    "candidate_tax_account_records_obtained": 52,
+    "independent_rooms": null,
+    "limitations": [
+      "City room count is40158; county68954 and downtown14878 are nested or broader scopes and must not be added.",
+      "Fact sheet dated2026-04-30 does not provide a separate infrastructure census date; not a September2026 hotel-by-hotel count.",
+      "681 includes hotels, motels, bed-and-breakfasts and casino hotels in regional infrastructure; it is not a City of San Diego hotel-only property count.",
+      "Tax-account file has59419 active business records;52 are coded72111 hotel/motel and524 use721 accommodation-prefix codes. These are not additional hotels: corporate addresses, combined products and classification gaps prevent a census interpretation.",
+      "Independent rooms, boutique rooms, Airbnb supply and Airbnb hotel nights remain unobserved."
+    ],
+    "overlap_status": "reused/reverified HOTEL-SAN in research/sources/hotel_funnel_audit.json; not a new independent discovery",
+    "raw_path": "data/raw/hotel_13_market_extension/us_west_chicago/sd_fastfacts_web_evidence.json",
+    "candidate_frame_path": "data/raw/hotel_13_market_extension/us_west_chicago/sd_hotel_motel_tax_account_candidates.csv",
+    "observations": [
+      {
+        "metric": "hotel_rooms",
+        "value": 40158,
+        "unit": "rooms"
+      },
+      {
+        "metric": "county_hotel_rooms",
+        "value": 68954,
+        "unit": "rooms",
+        "geography": "San Diego County"
+      },
+      {
+        "metric": "downtown_hotel_rooms",
+        "value": 14878,
+        "unit": "rooms",
+        "geography": "Downtown San Diego"
+      }
+    ]
+  },
+  {
+    "market": "sydney",
+    "source_id": "HOTEL-SYD",
+    "source_url": "https://www.cityofsydney.nsw.gov.au/-/media/corporate/files/publications/research-and-reports/city-monitor-reports/visitor-accommodation-monitor-june-2025.pdf?download=true",
+    "observation_period": "2025-06-30",
+    "geography": "City of Sydney local government area, not Greater Sydney",
+    "metric": "hotel-category stock rooms",
+    "value": 24990,
+    "unit": "rooms",
+    "status": "observed",
+    "property_records_obtained": 0,
+    "independent_rooms": null,
+    "limitations": [
+      "City definition includes standard hotels, B&Bs, pubs and motels; excludes separate serviced apartment units and backpacker beds.",
+      "No complete operating-hotel property register obtained; 69 development applications are a distinct dataset.",
+      "City report explicitly does not cover Airbnb accommodation.",
+      "Independent ownership and Airbnb uptake remain unknown."
+    ],
+    "overlap_status": "Headline HOTEL-SYD report is reused; publicly linked June 2026 development dataset is newly acquired, but completed projects can overlap existing stock and must not be added to it.",
+    "raw_path": "data/raw/hotel_funnel_audit/public/sydney2025.pdf",
+    "alternate_observations": [
+      {
+        "source_id": "HOTEL-13-SYD-DEV-2026-06",
+        "source_url": "https://services1.arcgis.com/cNVyNtjGVZybOQWZ/arcgis/rest/services/Development_Monitoring/FeatureServer/0",
+        "observation_period": "2026-06-30",
+        "metric": "development applications with nonzero hotel-room contribution",
+        "value": 69,
+        "unit": "applications",
+        "status": "observed",
+        "unique_addresses": 67,
+        "pipeline_by_status": {
+          "Lodged": {
+            "applications": 2,
+            "hotel_room_deltas": 90
+          },
+          "Approved": {
+            "applications": 33,
+            "hotel_room_deltas": 4430
+          },
+          "Construction Commenced": {
+            "applications": 13,
+            "hotel_room_deltas": 2102
+          }
+        },
+        "completed_historical_applications": {
+          "applications": 21,
+          "hotel_room_deltas": 1889
+        },
+        "expected_fy_2026_27": {
+          "applications": 26,
+          "hotel_room_deltas": 2670,
+          "status": "estimated timing; reported development quantities"
+        },
+        "raw_path": "data/raw/hotel_13_market_extension/europe_sydney/sydney_hotel_developments.json",
+        "processed_path": "data/raw/hotel_13_market_extension/europe_sydney/sydney_hotel_development_rows.csv",
+        "limitations": [
+          "Development room contributions are not total property capacities.",
+          "Completion estimates may slip; FY2026/27 is not exactly the next 12 months from September 2026.",
+          "Completed history overlaps city stock; pipeline is not currently sellable rooms or Airbnb inventory."
+        ]
+      }
+    ]
+  }
+]

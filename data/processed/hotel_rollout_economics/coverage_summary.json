@@ -1,0 +1,68 @@
+{
+  "as_of": "2026-09-07",
+  "nyc": {
+    "license_rows": 826,
+    "status_counts": {
+      "Active": 420,
+      "Surrendered": 25,
+      "Failed to Renew": 6,
+      "Voided": 7,
+      "Ready for Renewal": 365,
+      "Suspended": 3
+    },
+    "current_status_candidates": 785,
+    "candidate_address_clusters": 761,
+    "multi_license_candidate_addresses": 23,
+    "borough_candidates": {
+      "Manhattan": 462,
+      "Bronx": 51,
+      "Brooklyn": 113,
+      "Queens": 150,
+      "Staten Island": 8,
+      "": 1
+    }
+  },
+  "france": {
+    "all_accommodation_rows": 21434,
+    "hotel_rows": 13306,
+    "hotel_rooms": 606632,
+    "missing_rooms": 0,
+    "name_address_unique": 13302,
+    "address_clusters": 13011,
+    "paris_hotel_rows": 1589,
+    "paris_rooms": 85815,
+    "paris_name_address_unique": 1589,
+    "paris_size_bands": {
+      "100+": 143,
+      "1-49": 1172,
+      "50-99": 274
+    },
+    "hotel_rooms_deduplicated": 606429,
+    "classification_duplicate_rows": 4
+  },
+  "singapore": {
+    "hotel_rows": 468,
+    "rooms": 74597,
+    "missing_rooms": 0,
+    "zero_room_rows": 0,
+    "name_postal_unique": 468
+  },
+  "airbnb_pages": {
+    "discovered_unique_urls": 145,
+    "parsed_pages": 143,
+    "hotel_property_pages": 143,
+    "identity_clusters": 141,
+    "city_counts": {
+      "New York City": 54,
+      "Paris": 33,
+      "Singapore": 18,
+      "London": 12,
+      "Madrid": 12,
+      "Rome": 12
+    },
+    "actual_booking_observations": 0,
+    "price_quotes_collected": 0,
+    "numeric_commission_contracts": 0,
+    "selection": "search-index convenience discovery; not probability sample"
+  }
+}

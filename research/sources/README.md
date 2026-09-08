@@ -75,3 +75,68 @@ Log every source as you use it. Cite it in the deck by the ID.
 S46 to S65 are Jessie's sources from PR #17, renumbered on the 7 Sep 2026 merge of origin/main into krish/overnight-synthesis because they reused S2 to S21. Jessie's notes cite sources by name, not by id. Mapping in `data/processed/overnight/25_source_id_remap.csv`.
 
 Paid/licensed sources (Bloomberg, CapIQ, etc.): store the export in the shared Drive and link the Drive path here. Do not commit the raw file.
+
+## Listing churn framework (checked 2026-09-06)
+
+| ID | Source | Date | Link / location | Used for |
+|---|---|---|---|---|
+| S-CHURN-01 | Inside Airbnb, Data Assumptions | Accessed 2026-09-06 | https://insideairbnb.com/data-assumptions/ | Snapshot interpretation, displaced locations, booked versus blocked calendar ambiguity. |
+| S-CHURN-02 | Airbnb, Unlist or remove your home listing | Accessed 2026-09-06 | https://www.airbnb.com/help/article/476 | Temporary/indefinite unlisting and relisting mean disappearance is not permanent exit. |
+| S-CHURN-03 | AirDNA, How AirDNA Identifies Duplicate Listings | Published 2023-07-28; accessed 2026-09-06 | https://enterprise-help.airdna.co/en/articles/8185678-how-airdna-identifies-duplicate-listings | Cross-platform property matching uses proximity and multiple attributes; methodology reference, no AirDNA data acquired. |
+| S-CHURN-04 | AirDNA, Property Performance Data | Accessed 2026-09-06 | https://enterprise-help.airdna.co/en/articles/8185673-property-performance-data | Activity definition; booking-versus-blocked and channel-attribution limitations. |
+| S-CHURN-05 | Boston Assessing, Property Data and Information | Accessed 2026-09-06 | https://www.boston.gov/departments/assessing/property-data-and-information | Example official property/parcel and sales resources; no property transactions acquired. |
+| S-CHURN-06 | Team Inside Airbnb supply panel | Commit 620f1ee4691d06df964bd73ce84cc35e8766e4a0 | https://github.com/Kaenyne/Citadel-ABNB/tree/620f1ee4691d06df964bd73ce84cc35e8766e4a0 | Aggregate audit: 168 snapshots, 13 markets, 41 partial-scope flags; 258 pair rows. Underlying data: Inside Airbnb, CC BY 4.0; aggregate producer: team supply branch. |
+| S-CHURN-07 | Team Common Crawl listing panel | Commit 7eb638ee7e8653a605eee70a1764f392cc1245d8 | https://github.com/Kaenyne/Citadel-ABNB/blob/7eb638ee7e8653a605eee70a1764f392cc1245d8/research/notes/2026-09-05_cc-listing-panel.md | Audit of conditional re-fetch survival, varying follow-up, and outcome-selected crawl filters; not a population annual churn estimate. |
+
+## Executed listing churn pilot (2026-09-07)
+
+| ID | Source | Date | Link / location | Used for |
+|---|---|---|---|---|
+| S-CHURN-08 | Updated team Inside Airbnb snapshot catalog | Commit df833f5f3980078beef09c1327940bfa58d57acf | https://github.com/Kaenyne/Citadel-ABNB/blob/df833f5f3980078beef09c1327940bfa58d57acf/data/processed/inside_airbnb_city_snapshots.csv | Select 21 actual San Diego/Chicago raw snapshots and reconcile every row count. Per-file public URLs and hashes in data/processed/listing_churn_execution/snapshot_quality.csv. |
+| S-CHURN-09 | Inside Airbnb data dictionary | Accessed 2026-09-07 | https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit?usp=sharing | Actual scrape timing and interpretation of previous-scrape discovery source as reconfirmed listings. |
+| S-CHURN-10 | San Diego current STRO register | Captured 2026-09-07; 8,441 rows | https://data.sandiego.gov/datasets/stro-licenses/ ; https://seshat.datasd.org/stro_licenses/stro_licenses_datasd.csv | Permit-to-unit anchor and licensing flags. Dated raw capture and checksum retained locally; not a property-use or sale classifier. |
+| S-CHURN-11 | Dated property-specific public evidence | Investigated 2026-09-07 | data/processed/listing_churn_execution/destination_evidence.json | Source URLs, factual sale/rental events, cross-platform leads, identity anchors and rejected matches for all 20 cases. No confirmed migration share inferred. |
+
+## Broad listing churn execution (2026-09-07)
+
+| ID | Source | Date | Link / location | Used for |
+|---|---|---|---|---|
+| S-CHURN-12 | Full team Inside Airbnb historical inventory | Commit df833f5f3980078beef09c1327940bfa58d57acf | https://github.com/Kaenyne/Citadel-ABNB/blob/df833f5f3980078beef09c1327940bfa58d57acf/data/processed/inside_airbnb_city_snapshots.csv | Reacquire all 132 catalogued September-2025-onward observations across 13 markets; every row count reconciles. Aggregates and hashes in data/processed/listing_churn_panel/. |
+| S-CHURN-13 | Inside Airbnb public quarterly archive and published index metadata | Captured 2026-09-07 | https://insideairbnb.com/get-the-data/ ; https://insideairbnb.com/page-data/sq/d/3008393846.json ; data/manifests/inside_airbnb_archive_index_2026-09-07.json | Date selection for the broad September/December/March/June panel. Exact public metadata capture retained; no guessed dates. Data licensed CC BY 4.0. |
+| S-CHURN-14 | Team current-file acquisition manifest | Existing team manifest, checked 2026-09-07 | data/manifests/inside_airbnb_download_log.csv | Independently reconcile reacquired matching public endpoints to recorded counts and SHA-256 values. Other public historical dates are newly acquired expansion data. |
+
+## Listing platform history (2026-09-07)
+
+| ID | Source | Date | Link / location | Used for |
+|---|---|---|---|---|
+| S-CHURN-15 | Airbnb company facts | Page updated May 2026; accessed 2026-09-07 | https://news.airbnb.com/about-us | 9 million+ active listings worldwide; distinct date/definition from our cohort. |
+| S-CHURN-16 | Internet Archive availability and CDX APIs | Queried 2026-09-07 | https://archive.org/help/wayback_api.php ; https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server ; data/processed/listing_platform_history/ | Actual capture dates for eight fixed URLs. Missing archive results are unknown, not historical listing absence. |
+| S-CHURN-17 | Reviewed property-specific platform histories | Reviewed 2026-09-07 | research/sources/listing_platform_history.json | Four archived HTML inspections; SD-04 photo match and conflicting Vrbo permit; SD-07 pre-existing direct offer; SD-09 publisher-claimed pre-existing Vrbo lead. Unknown operating states preserved. |
+
+## Fee-related churn catalyst (2026-09-07)
+
+The [FEE source and scenario ledger](fee_churn_catalyst.json) records Airbnb's current
+host notice and price-adjustment mechanics, Guesty's 2025 rollout timeline, Airbnb's
+Q4 2025 call and Q2 2026 SEC-filed letter, and pinned team/public listing sources.
+The [executed study](../notes/2026-09-07_fee-churn-catalyst.md) distinguishes observed
+ID disappearance, repeated absence, unknown fee treatment and financial scenarios.
+The September 15/October 13, 2026 deadlines are prospective as of this analysis.
+
+## Hotel funnel audit (2026-09-07; defined 25-market sample)
+
+The [dedicated HOTEL source ledger](hotel_funnel_audit.json) records 31 sources,
+vintages, definitions, access limits and reuse dispositions. Its separate ID
+namespace avoids collisions with the team's existing ledger. The
+[overlap register](../../data/processed/hotel_funnel_audit/public_source_overlap.csv)
+distinguishes existing management/fee/Inside Airbnb evidence from added capacity
+evidence and unresolved leads. It cannot certify private/unshared work. See the
+[operating audit](../notes/2026-09-07_hotel-funnel-audit.md), including explicit
+25-market selection and the separate 13-market sensitivity.
+
+## Housing-driven STR regulatory research (5 Sep 2026, committed 7 Sep on `krish/regulatory-db`)
+
+The [regulatory research package](../regulatory/README.md) holds 32 ranked factors, 48 source records and a 14-quarter earnings-transcript index. Its source ids use the separate `REG-S` namespace (REG-S01 to REG-S48) so they do not collide with the S-series above. Full log: [source index](../regulatory/source_index.md); [factor register](../regulatory/factor_register.md); [earnings digest](../regulatory/earnings_digest.md); [quantification](../regulatory/quantification/README.md); [phase 2 matched cohorts](../regulatory/phase2/README.md). Public raw inputs are committed under `data/raw/regulatory/`; LSEG story bodies and transcript texts stay local (see data/README.md).
+
+## Selected hotel panel and release review
+
+The `hotel_13_*_sources.json` ledgers preserve the selected-market extension provenance and explicit reuse. The [release audit](../../analysis/reviews/2026-09-07_churn-hotel-code-audit.md) distinguishes source observations, scenario assumptions and model-use limits, including overlap with the latest visible regulatory, guidance, nights and fee-elasticity work.

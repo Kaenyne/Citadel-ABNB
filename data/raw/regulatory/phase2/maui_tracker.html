@@ -1,0 +1,407 @@
+<title>Minatoya Rezoning Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F5F4EF; --surface:#FFFFFF; --surface-2:#FBFAF7;
+  --ink:#0D1526; --ink-2:#41495A; --ink-3:#727C8E;
+  --line:#DFDCD2; --line-2:#EBE8E0;
+  --navy:#012169; --navy-soft:#1B3B87; --pale:#BECAD7;
+  --r110:#A67C0C; --r110-bg:#FBF3DC;
+  --r111:#B0552A; --r111-bg:#FAEBE1;
+  --r129:#2F6595; --r129-bg:#E4EEF6;
+  --r130:#43714D; --r130-bg:#E5EFE6;
+  --none:#6E7787; --none-bg:#ECEBE6;
+  --shadow:0 1px 2px rgba(13,21,38,.05),0 8px 24px -14px rgba(13,21,38,.22);
+  --focus:#012169;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1319; --surface:#161C24; --surface-2:#1B222B;
+    --ink:#EEF1F5; --ink-2:#B2BBC8; --ink-3:#828D9C;
+    --line:#2A323C; --line-2:#222A33;
+    --navy:#8FA9DE; --navy-soft:#A8BEEB; --pale:#3E5570;
+    --r110:#DDB552; --r110-bg:#332B15;
+    --r111:#E08A5C; --r111-bg:#33211A;
+    --r129:#79AEDC; --r129-bg:#16283A;
+    --r130:#82B58E; --r130-bg:#1A2C1E;
+    --none:#939DAC; --none-bg:#232A33;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -14px rgba(0,0,0,.8);
+    --focus:#8FA9DE;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1319; --surface:#161C24; --surface-2:#1B222B;
+  --ink:#EEF1F5; --ink-2:#B2BBC8; --ink-3:#828D9C;
+  --line:#2A323C; --line-2:#222A33;
+  --navy:#8FA9DE; --navy-soft:#A8BEEB; --pale:#3E5570;
+  --r110:#DDB552; --r110-bg:#332B15;
+  --r111:#E08A5C; --r111-bg:#33211A;
+  --r129:#79AEDC; --r129-bg:#16283A;
+  --r130:#82B58E; --r130-bg:#1A2C1E;
+  --none:#939DAC; --none-bg:#232A33;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -14px rgba(0,0,0,.8);
+  --focus:#8FA9DE;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:1px solid var(--line); background:var(--surface)}
+.masthead .wrap{display:flex; flex-direction:column; gap:18px; padding-top:34px; padding-bottom:28px}
+.eyebrow{
+  font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--navy); display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+.eyebrow::after{content:""; flex:1; height:1px; background:var(--line); min-width:20px}
+h1{
+  font-family:Newsreader,Georgia,"Times New Roman",serif;
+  font-weight:500; font-size:clamp(2rem,5vw,3.1rem); line-height:1.06;
+  margin:0; letter-spacing:-.015em; text-wrap:balance;
+}
+h1 em{font-style:italic; color:var(--navy)}
+.standfirst{
+  font-family:Newsreader,Georgia,serif; font-size:clamp(1.02rem,2vw,1.2rem);
+  line-height:1.5; color:var(--ink-2); max-width:62ch; margin:0;
+}
+.meta-row{
+  display:flex; flex-wrap:wrap; gap:8px 22px; align-items:baseline;
+  font-size:12.5px; color:var(--ink-3);
+}
+.meta-row b{color:var(--ink-2); font-weight:600}
+
+/* ---------- stat cards ---------- */
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
+  gap:10px; margin:26px 0 0;
+}
+.stat{
+  appearance:none; text-align:left; cursor:pointer; font:inherit;
+  background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  padding:14px 15px 13px; display:flex; flex-direction:column; gap:3px;
+  border-top:3px solid var(--sc,var(--none)); transition:border-color .12s,box-shadow .12s,transform .12s;
+}
+.stat:hover{box-shadow:var(--shadow); transform:translateY(-1px)}
+.stat:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.stat[aria-pressed="true"]{border-color:var(--sc); box-shadow:inset 0 0 0 1px var(--sc)}
+.stat-label{
+  font-size:10.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--sc,var(--ink-3));
+}
+.stat-num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:1.85rem; font-weight:500;
+  line-height:1.05; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:var(--ink);
+}
+.stat-sub{font-size:11.5px; color:var(--ink-3); line-height:1.35}
+
+/* ---------- pipeline ---------- */
+.pipeline{margin:30px 0 0; border-top:1px solid var(--line); padding-top:22px}
+.sec-label{
+  font-size:10.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 14px;
+}
+.steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:2px; list-style:none; margin:0; padding:0}
+.steps li{
+  background:var(--surface-2); border:1px solid var(--line-2); padding:12px 14px;
+  display:flex; flex-direction:column; gap:4px; position:relative;
+}
+.step-n{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600;
+  color:var(--navy); letter-spacing:.05em;
+}
+.step-t{font-size:13.5px; font-weight:600; line-height:1.3}
+.step-d{font-size:12px; color:var(--ink-3); line-height:1.4}
+
+/* ---------- controls ---------- */
+.controls{
+  position:sticky; top:0; z-index:20; background:var(--ground);
+  border-bottom:1px solid var(--line); padding:12px 0 12px; margin-top:34px;
+}
+.controls .wrap{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.search{
+  flex:1 1 240px; min-width:0; position:relative; display:flex; align-items:center;
+}
+.search svg{position:absolute; left:11px; width:15px; height:15px; color:var(--ink-3); pointer-events:none}
+input[type="search"]{
+  width:100%; font:inherit; font-size:14px; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  padding:9px 12px 9px 33px; -webkit-appearance:none;
+}
+input[type="search"]::placeholder{color:var(--ink-3)}
+input[type="search"]:focus-visible{outline:2px solid var(--focus); outline-offset:-1px; border-color:var(--focus)}
+select{
+  font:inherit; font-size:13.5px; color:var(--ink); background:var(--surface);
+  border:1px solid var(--line); border-radius:3px; padding:9px 10px; cursor:pointer;
+}
+select:focus-visible{outline:2px solid var(--focus); outline-offset:-1px}
+.count{
+  font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; white-space:nowrap; margin-left:auto;
+}
+.reset{
+  font:inherit; font-size:12.5px; font-weight:600; color:var(--navy); background:none;
+  border:0; padding:6px 4px; cursor:pointer; text-decoration:underline; text-underline-offset:3px;
+}
+.reset:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+/* ---------- table ---------- */
+.table-shell{
+  background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  margin:20px 0 0; overflow-x:auto;
+}
+table{border-collapse:collapse; width:100%; min-width:860px}
+thead th{
+  position:sticky; top:0; background:var(--surface); z-index:2;
+  text-align:left; font-size:10.5px; font-weight:700; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--ink-3); padding:11px 14px;
+  border-bottom:1px solid var(--line); white-space:nowrap;
+}
+thead th.sortable{cursor:pointer; user-select:none}
+thead th.sortable:hover{color:var(--navy)}
+thead th.sortable:focus-visible{outline:2px solid var(--focus); outline-offset:-2px}
+thead th .arrow{opacity:.35; font-size:9px; margin-left:3px}
+thead th[aria-sort] .arrow{opacity:1; color:var(--navy)}
+tbody td{padding:11px 14px; border-bottom:1px solid var(--line-2); vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--surface-2)}
+.prop{font-weight:600; font-size:14.5px; line-height:1.3}
+.addr{font-size:12.5px; color:var(--ink-3); line-height:1.35}
+.area{font-size:12.5px; color:var(--ink-2); white-space:nowrap}
+.zone{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--ink-2); white-space:nowrap}
+.zone .to{color:var(--ink-3); padding:0 3px}
+.zone b{color:var(--navy); font-weight:600}
+.units{
+  font-family:"IBM Plex Mono",monospace; font-size:14px; font-variant-numeric:tabular-nums;
+  text-align:right; white-space:nowrap;
+}
+.units .dash{color:var(--ink-3)}
+.chips{display:flex; flex-wrap:wrap; gap:4px}
+.chip{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; font-weight:600;
+  padding:2px 7px; border-radius:2px; white-space:nowrap;
+  color:var(--cc); background:var(--cb); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--cc) 30%,transparent);
+}
+.stage{font-size:12px; color:var(--ink-2); line-height:1.35; max-width:20ch}
+.r110{--cc:var(--r110); --cb:var(--r110-bg)}
+.r111{--cc:var(--r111); --cb:var(--r111-bg)}
+.r129{--cc:var(--r129); --cb:var(--r129-bg)}
+.r130{--cc:var(--r130); --cb:var(--r130-bg)}
+.rnone{--cc:var(--none); --cb:var(--none-bg)}
+.empty{padding:44px 16px; text-align:center; color:var(--ink-3); font-size:14px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line); margin-top:44px; padding:28px 0 60px; background:var(--surface)}
+.card{
+  background:var(--surface-2); border:1px solid var(--line-2); border-left:3px solid var(--navy);
+  padding:16px 18px; border-radius:2px; margin-bottom:22px;
+}
+.card p{margin:0 0 8px; font-size:13.5px; color:var(--ink-2); line-height:1.55; max-width:70ch}
+.card p:last-child{margin:0}
+.card strong{color:var(--ink)}
+.sig{display:flex; flex-wrap:wrap; gap:6px 18px; align-items:baseline}
+.sig .name{font-family:Newsreader,Georgia,serif; font-size:1.35rem; font-weight:500; color:var(--ink)}
+.sig .role{font-size:12.5px; color:var(--ink-3); line-height:1.5}
+.disclaimer{font-size:11.5px; color:var(--ink-3); line-height:1.6; max-width:78ch; margin:16px 0 0}
+
+@media (max-width:640px){
+  .masthead .wrap{padding-top:26px}
+  .steps{grid-template-columns:1fr}
+  .count{margin-left:0; width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+@media print{
+  .controls,.stats,.pipeline{display:none}
+  body{background:#fff}
+  .table-shell{border:0; overflow:visible}
+  table{min-width:0; font-size:10px}
+}
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Maui County Council &middot; Bill 9 Implementation</div>
+    <h1>Minatoya Rezoning <em>Tracker</em></h1>
+    <p class="standfirst">Every property on the Minatoya list, which rezoning resolution it sits in, and how far that resolution has actually travelled. Compiled from public County Council records and updated as each one moves.</p>
+    <div class="meta-row">
+      <span>Source data updated <b id="asof">July 31, 2026</b></span>
+      <span><b>105</b> properties &middot; <b>7,167</b> units on the list</span>
+      <span><b>4,633</b> units currently proposed for rezoning</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats" id="stats"></div>
+
+  <section class="pipeline">
+    <h2 class="sec-label">How a property moves</h2>
+    <ol class="steps">
+      <li><span class="step-n">STEP 1</span><span class="step-t">Housing &amp; Land Use Committee</span><span class="step-d">Committee takes testimony, amends, and votes whether to send the resolution forward.</span></li>
+      <li><span class="step-n">STEP 2</span><span class="step-t">Full County Council</span><span class="step-d">The whole Council votes on the resolution as it left committee.</span></li>
+      <li><span class="step-n">STEP 3</span><span class="step-t">Planning Commissions</span><span class="step-d">Referred out for review and recommendation — a 120-day window.</span></li>
+      <li><span class="step-n">STEP 4</span><span class="step-t">Back to Council</span><span class="step-d">Returns with the Commissions' recommendations for final action.</span></li>
+    </ol>
+  </section>
+</div>
+
+<div class="controls">
+  <div class="wrap">
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input type="search" id="q" placeholder="Search a building or address…" aria-label="Search by building name or address">
+    </label>
+    <select id="fres" aria-label="Filter by resolution">
+      <option value="">All resolutions</option>
+      <option value="26-110">26-110 — passed Council</option>
+      <option value="26-111">26-111 — passed Council</option>
+      <option value="26-129">26-129 — before committee</option>
+      <option value="26-130">26-130 — before committee</option>
+      <option value="__none">Not yet in a resolution</option>
+    </select>
+    <select id="farea" aria-label="Filter by area"><option value="">All areas</option></select>
+    <button class="reset" id="reset" type="button">Clear</button>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="table-shell">
+    <table>
+      <thead>
+        <tr>
+          <th class="sortable" data-k="name" tabindex="0" role="button">Property <span class="arrow">▲</span></th>
+          <th>Area</th>
+          <th>Zoning</th>
+          <th class="sortable" data-k="units" tabindex="0" role="button" style="text-align:right">Units <span class="arrow">▲</span></th>
+          <th>Resolution</th>
+          <th>Where it stands</th>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>No property matches those filters.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="card">
+      <p><strong>What this is.</strong> The Minatoya list identifies apartment-zoned properties that have operated as transient vacation rentals. The County Council is now moving those properties through rezoning resolutions, in batches. Which resolution a building lands in determines how far along it is — and right now that ranges from already through the full Council to not proposed at all.</p>
+      <p><strong>What this is not.</strong> Nothing here predicts how any resolution will end. These are pending legislative actions and they can be amended, deferred, or defeated at any stage.</p>
+    </div>
+    <div class="sig">
+      <span class="name">Keri Nicholson, R(B)</span>
+      <span class="role">REALTOR® Broker &middot; Global Luxury Specialist<br>Coldwell Banker Island Properties, Kapalua &middot; License RB-24151</span>
+    </div>
+    <p class="disclaimer">Compiled by Keri Nicholson from public Maui County Council records. Zoning designations, unit counts, and resolution assignments reflect the source spreadsheet as of the date shown above and are provided for general information only. Maui County records are the source of record — verify current status with the County before relying on any entry here for a real estate decision. This page is not legal advice and is not an offer to buy or sell property.</p>
+  </div>
+</footer>
+
+<script>
+const DATA = [["1178 Uluniu Rd","1178 Uluniu Rd","Kihei","A1","H-3",1,1,1,"26-110"],["1194 Uluniu Rd","1194 Uluniu Rd","Kihei","A1","H-3",2,2,2,"26-110"],["1440 Halama St","1440 Halama St","Kihei","A1","H-3",1,1,1,"26-110"],["1444 Halama St","1444 Halama St","Kihei","A1","H-3",4,4,4,"26-110"],["1470 Halama St","1470 Halama St","Kihei","A1","H-3",1,1,1,"26-110"],["2131 Ili'ili Rd","2131 Ili'ili Rd","Kihei","A1","H-3",1,1,1,"26-110"],["Aloha Villas","1338 Uluniu Rd","Kihei","A1","H-3",4,null,4,"26-110"],["Grand Champions","155 Wailea Ike Pl","Wailea","A2",null,188,188,null,null],["Hale Ili'ili","2172 Ili'ili Rd","Kihei","A1",null,4,null,null,null],["Hale Kaanapali","45 Kai Ala Dr","Kaanapali","A2/H/OS","H-4",258,258,258,"26-110"],["Hale Kai I","3691 Lower Honoapiilani","Honokowai","A2","H-4",40,40,40,"26-129"],["Hale Kai O'Kihei","1310 Uluniu Rd","Kihei","A1",null,59,null,null,null],["Hale Kamaole","2737 S Kihei Rd","Kihei","A1/A2",null,188,188,null,null],["Hale Mahialani","7 Kaiau Pl","Kihei","A1",null,7,null,null,null],["Hale Mahina Beach","3875 Lower Honoapiilani","Honokowai","A2","H-4",53,53,53,"26-110"],["Hale Ono Loa","3823 Lower Honoapiilani","Honokowai","A2","H-4",67,67,67,"26-129"],["Haleakala Shores","2619 S Kihei Rd","Kihei","A2",null,76,null,null,null],["Hana Kai-Maui","4865 Uakea Rd","Hana","A1","H-3",19,19,19,"26-111"],["Hono Kai","280 Hauoli St","Maalaea","A1","H-3",46,46,46,"26-110"],["Hono Kai (A2 portion)","280 Hauoli St","Maalaea","A2","H-4",null,null,null,"26-110"],["Hono Koa","3801 Lower Honoapiilani","Honokowai","A2","H-4",28,28,28,"26-110"],["Honokowai Palms","3666 Lower Honoapiilani","Honokowai","A2",null,30,null,null,null],["Hoyochi Nikko","3901 Lower Honoapiilani","Honokowai","A1","H-3",17,null,17,"26-129"],["Indo Lotus Beach House","2216 S Kihei Rd","Kihei","A1","H-3",1,1,1,"26-110"],["Island Sands","150 Hauoli St","Maalaea","A2","H-4",83,83,83,"26-129"],["Kaanapali Royal","2560 Kekaa Dr","Kaanapali","A2","H-4",105,105,105,"26-110"],["Kahana Outrigger","4521 Lower Honoapiilani","Kahana","A1","H-3",8,8,8,"26-110"],["Kahana Outrigger","4521 Lower Honoapiilani","Kahana","A1","H-3",4,null,4,"26-110"],["Kahana Outrigger","4521 Lower Honoapiilani","Kahana","A1","H-3",4,4,4,"26-110"],["Kahana Reef","4471 Lower Honoapiilani","Kahana","A2","H-4",88,null,88,"26-129"],["Kahana Village","4531 Lower Honoapiilani","Kahana","A1","H-3",42,null,42,"26-110"],["Kalama Terrace","35 Walaka St","Kihei","A2",null,61,null,null,null],["Kaleialoha","3785 Lower Honoapiilani","Honokowai","A2","H-4",67,null,67,"26-129"],["Kamaole One","2230 S Kihei Rd","Kihei","A1","H-3",12,null,12,"26-129"],["Kamaole Sands","2695 S Kihei Rd","Kihei","A2","H-4",440,440,440,"26-111"],["Kanai A Nalu","250 Hauoli St","Maalaea","A2","H-4",80,null,80,"26-110"],["Kanoe Apts","2050 Kanoe St","Kihei","A-1",null,18,null,null,null],["Kapalua Bay Villas","500 Bay Dr","Kapalua","A2",null,141,141,null,null],["Kapalua Golf Villas","500 Kapalua Dr","Kapalua","A2/AG/OS/GC",null,186,null,null,null],["Kapu Townhouse","69 Kapu Pl","Kihei","A1","H-3",2,2,2,"26-110"],["Kauhale Makai","938 S Kihei Rd","Kihei","A2","H-4",169,null,169,"26-110"],["Keawakapu","2895 S Kihei Rd","Kihei","A1",null,18,null,null,null],["Kenani Kai","50 Keouhi Pl","Kihei","A-1",null,120,null,null,null],["Kihei Villa","2135 S Kihei Rd","Kihei","A2",null,24,null,null,null],["Kihei Bay Surf","715 S Kihei Rd","Kihei","A1","H-3",118,118,118,"26-129"],["Kihei Bay Vista","679 S Kihei Rd","Kihei","A1","H-3",60,60,60,"26-129"],["Kihei Cove","2181 Ili'ili Rd","Kihei","A1",null,6,null,null,null],["Kihei Garden Estates","1299 Uluniu Rd","Kihei","A1",null,84,null,null,null],["Kihei Parkshore","2037 S Kihei Rd","Kihei","A1","H-3",16,null,16,"26-129"],["Kihei Resort","777 S Kihei Rd","Kihei","A1","H-3",64,null,64,"26-129"],["Koa Resort II","811 S Kihei Rd","Kihei","A1",null,54,null,null,null],["Kuau Plaza","777 Hana Hwy","Paia","A2","H-4",30,null,30,"26-110"],["Kuleana","3959 Lower Honoapiilani","Honokowai","A1","H-3",18,18,18,"26-110"],["Kuleana","3959 Lower Honoapiilani","Honokowai","A1","H-3",100,100,100,"26-110"],["Lahaina Beach Club","3711 Lower Honoapiilani","Honokowai","A2","H-4",12,12,12,"26-110"],["Lahaina Roads","1403 Front St","Lahaina","A2","H-4",41,null,41,"26-129"],["Lauloa Maalaea","100 Hauoli St","Maalaea","A2","H-4",47,47,47,"26-110"],["Leilani Kai","1228 Uluniu Rd","Kihei","A1",null,9,null,null,null],["Leinaala","998 S Kihei Rd","Kihei","A2",null,24,null,null,null],["Lihikai Apts","2173 Ili'ili Rd","Kihei","A1",null,8,null,null,null],["Lokelani","3833 Lower Honoapiilani","Honokowai","A2","H-4",36,36,36,"26-129"],["Luana Kai","940 S Kihei Rd","Kihei","A2","H-4",113,null,113,"26-111"],["Maalaea Banyans","190 Hauoli St","Maalaea","A2",null,78,null,78,"26-129"],["Maalaea Kai","70 Hauoli St","Maalaea","A2","H-4",79,79,79,"26-110 & 26-129"],["Mahina Surf","4057 Lower Honoapiilani","Honokowai","A1","H-3",44,null,44,"26-111"],["Mahinahina Beach","4007 Lower Honoapiilani","Honokowai","A1",null,32,null,null,null],["Makani A Kai","300 Hauoli St","Maalaea","A1","H-3",24,null,24,"26-129"],["Makani Sands","3765 Lower Honoapiilani","Honokowai","A2","H-4",30,null,30,"26-129"],["Maui Eldorado","2661 Kekaa Dr","Kaanapali","A2","H-4",205,205,205,"26-111"],["Maui Hill","2881 S Kihei Rd","Kihei","A1","H-3",140,140,140,"26-110"],["Maui Kamaole","2777 S Kihei Rd","Kihei","A1",null,28,28,null,null],["Maui Kamaole II","2777 S Kihei Rd","Kihei","A1",null,48,48,null,null],["Maui Kamaole III","2777 S Kihei Rd","Kihei","A1",null,240,240,null,null],["Maui Parkshore","2653 S Kihei Rd","Kihei","A2",null,64,null,null,null],["Maui Sands I","3559 Lower Honoapiilani","Honokowai","A2","H-4",56,null,56,"26-110"],["Maui Sands II","3559 Lower Honoapiilani","Honokowai","A2","H-4",20,20,20,"26-110"],["Maui Schooner","980 S Kihei Rd","Kihei","A2","H-4",58,58,58,"26-110"],["Maui Sunset","1032 S Kihei Rd","Kihei","A2","H-4",225,225,225,"26-110"],["Maui Vista","2191 S Kihei Rd","Kihei","A2",null,280,280,null,null],["Milowai-Maalaea","50 Hauoli St","Maalaea","A2/M1","H-4",42,42,42,"26-110"],["Moana Villa","1158 Uluniu Rd","Kihei","A1","H-3",1,1,1,"26-110"],["My Waii Beach Cottage","2128 Ili'ili Rd","Kihei","A1","H-3",1,1,1,"26-110"],["Noelani","4095 Lower Honoapiilani","Kahana","A2","H-4",50,null,50,"26-129"],["Nohonani","3723 Lower Honoapiilani","Honokowai","A2","H-4",28,null,28,"26-129"],["Pacific Shores","2219 S Kihei Rd","Kihei","A2",null,136,null,null,null],["Paki Maui I & II","3601 Lower Honoapiilani","Honokowai","A2","H-4",80,80,80,"26-110"],["Paki Maui III","3615 Lower Honoapiilani","Honokowai","A2","H-4",28,28,28,"26-110"],["The Palms at Wailea I","3200 Wailea Alanui Dr","Wailea","A1","H-3",150,150,150,"26-111"],["Papakea","3543 Lower Honoapiilani","Honokowai","A2/H2","H-4",364,364,364,"26-111"],["Pikake","3701 Lower Honoapiilani","Honokowai","A2","H-4",12,12,12,"26-129"],["Polynesian Shores","3975 Lower Honoapiilani","Kahana","A1","H-3",52,null,52,"26-129"],["Punahoa Beach Apts","2142 Ili'ili Rd","Kihei","A1",null,15,null,null,null],["Puunoa Beach Estates","45 Kai Pali Pl","Lahaina","A1","H-3",10,null,10,"26-129"],["Shores of Maui","2075 S Kihei Rd","Kihei","A1","H-3",50,null,50,"26-129"],["The Ridge (Kapalua)","100 Ridge Road","Kapalua","A2/PK-4",null,161,null,null,null],["The Spinnaker","760 Wainee St","Lahaina","A-1",null,57,null,null,null],["Wailea Ekahi I","3300 Wailea Alanui Dr","Wailea","A1/BR/OS/PU","H-3",100,100,100,"26-111"],["Wailea Ekahi II","3300 Wailea Alanui Dr","Wailea","A1","H-3",92,92,92,"26-111"],["Wailea Ekahi III","3300 Wailea Alanui Dr","Wailea","A1/H1/OS/PU","H-3",104,104,104,"26-111"],["Wailea Ekolu","10 Wailea Ekolu Pl","Wailea","A1/OS","H-3",148,148,148,"26-111"],["Wailea Inn","2141 Ili'ili Rd","Kihei","A1","H-3",6,null,6,"26-110"],["Waiohuli Beach Duplex","64 W Lipoa St","Kihei","A1","H-3",2,2,2,"26-110"],["Waiohuli Beach Hale","49 W Lipoa St","Kihei","A1/PU","H-3",52,null,52,"26-129"],["Waipuilani","1002 S Kihei Rd","Kihei","A2",null,42,null,null,null],["Wavecrest","7142 Kamehameha V Hwy","Molokai","A2/Interim",null,126,null,null,null],["10 Walaka Street","10 Walaka Street","Kihei",null,"H-4",null,null,null,"26-130"],["Makai Sunset Inn","1411 Front Street","Lahaina",null,"H-4",null,null,null,"26-130"],["Makai Sunset Inn","1415 Front Street","Lahaina",null,"H-4",null,null,null,"26-130"]];
+const RES_META = {
+  "26-110":{cls:"r110", stage:"Passed full Council. At the Planning Commissions."},
+  "26-111":{cls:"r111", stage:"Passed full Council. At the Planning Commissions."},
+  "26-129":{cls:"r129", stage:"Before the Housing &amp; Land Use Committee."},
+  "26-130":{cls:"r130", stage:"Before the Housing &amp; Land Use Committee."}
+};
+const rows = DATA.map(r=>({
+  name:r[0], addr:r[1], area:r[2], zone:r[3], newzone:r[4],
+  units:r[5], resUnits:r[7],
+  res:r[8] ? r[8].split(" & ") : []
+}));
+
+const $ = s=>document.querySelector(s);
+const tb=$("#tb"), q=$("#q"), fres=$("#fres"), farea=$("#farea"), cnt=$("#count"), empty=$("#empty");
+let sortK="name", sortDir=1;
+
+// area filter options
+[...new Set(rows.map(r=>r.area))].sort().forEach(a=>{
+  const o=document.createElement("option"); o.value=a; o.textContent=a; farea.append(o);
+});
+
+// summary cards
+const CARDS=[
+  {k:"26-110", label:"Res. 26-110", sub:"Passed full Council", c:"var(--r110)"},
+  {k:"26-111", label:"Res. 26-111", sub:"Passed full Council", c:"var(--r111)"},
+  {k:"26-129", label:"Res. 26-129", sub:"Before committee", c:"var(--r129)"},
+  {k:"26-130", label:"Res. 26-130", sub:"Before committee", c:"var(--r130)"},
+  {k:"__none", label:"No resolution", sub:"Not yet proposed", c:"var(--none)"}
+];
+$("#stats").innerHTML = CARDS.map(c=>{
+  const m = c.k==="__none" ? rows.filter(r=>!r.res.length) : rows.filter(r=>r.res.includes(c.k));
+  const u = m.reduce((s,r)=>s+(r.resUnits||0),0);
+  const uTxt = u ? u.toLocaleString()+" units" : m.reduce((s,r)=>s+(r.units||0),0).toLocaleString()+" units on list";
+  return `<button class="stat" style="--sc:${c.c}" data-k="${c.k}" aria-pressed="false">
+    <span class="stat-label">${c.label}</span>
+    <span class="stat-num">${m.length}</span>
+    <span class="stat-sub">${c.sub}<br>${uTxt}</span></button>`;
+}).join("");
+
+function render(){
+  const term=q.value.trim().toLowerCase(), fr=fres.value, fa=farea.value;
+  let list=rows.filter(r=>{
+    if(term && !(r.name.toLowerCase().includes(term)||r.addr.toLowerCase().includes(term))) return false;
+    if(fa && r.area!==fa) return false;
+    if(fr==="__none" && r.res.length) return false;
+    if(fr && fr!=="__none" && !r.res.includes(fr)) return false;
+    return true;
+  });
+  list.sort((a,b)=> sortK==="units"
+    ? ((a.units??-1)-(b.units??-1))*sortDir
+    : a.name.localeCompare(b.name)*sortDir);
+
+  tb.innerHTML=list.map(r=>{
+    const chips = r.res.length
+      ? r.res.map(x=>`<span class="chip ${RES_META[x].cls}">${x}</span>`).join("")
+      : `<span class="chip rnone">none yet</span>`;
+    const stage = r.res.length
+      ? [...new Set(r.res.map(x=>RES_META[x].stage))].join(" Also ")
+      : "Not included in a resolution to date.";
+    const zone = r.newzone
+      ? `${r.zone||"—"}<span class="to">→</span><b>${r.newzone}</b>`
+      : (r.zone||"—");
+    const units = r.units==null ? `<span class="dash">—</span>` : r.units.toLocaleString();
+    return `<tr>
+      <td><div class="prop">${r.name}</div><div class="addr">${r.addr}</div></td>
+      <td class="area">${r.area}</td>
+      <td class="zone">${zone}</td>
+      <td class="units">${units}</td>
+      <td><div class="chips">${chips}</div></td>
+      <td class="stage">${stage}</td>
+    </tr>`;
+  }).join("");
+
+  const u=list.reduce((s,r)=>s+(r.units||0),0);
+  cnt.textContent=`${list.length} of ${rows.length} properties · ${u.toLocaleString()} units`;
+  empty.hidden = list.length>0;
+  document.querySelectorAll(".stat").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.k===fr)));
+}
+
+q.addEventListener("input",render);
+fres.addEventListener("change",render);
+farea.addEventListener("change",render);
+$("#reset").addEventListener("click",()=>{q.value="";fres.value="";farea.value="";render()});
+document.querySelectorAll(".stat").forEach(b=>b.addEventListener("click",()=>{
+  fres.value = fres.value===b.dataset.k ? "" : b.dataset.k; render();
+}));
+document.querySelectorAll("th.sortable").forEach(th=>{
+  const go=()=>{
+    const k=th.dataset.k;
+    if(sortK===k) sortDir*=-1; else {sortK=k; sortDir = k==="units" ? -1 : 1;}
+    document.querySelectorAll("th.sortable").forEach(o=>o.removeAttribute("aria-sort"));
+    th.setAttribute("aria-sort", sortDir===1?"ascending":"descending");
+    th.querySelector(".arrow").textContent = sortDir===1?"▲":"▼";
+    render();
+  };
+  th.addEventListener("click",go);
+  th.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});
+});
+render();
+</script>
