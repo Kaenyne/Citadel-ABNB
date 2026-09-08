@@ -1,0 +1,69 @@
+profile,scenario,shock,unit,scope,year,margin_pts,adj_ebitda_delta_musd,revenue_delta_musd,baseline_margin_pct,evidence
+base,base,+1pt nights growth,%,shock in every year FY26-FY28,FY2026E,0.207,53.7,68.7,35.25,workstream-29 nights path shifted by a point in every quarter and FY28
+base,base,+1pt nights growth,%,shock in every year FY26-FY28,FY2027E,0.549,167.0,219.7,35.94,workstream-29 nights path shifted by a point in every quarter and FY28
+base,base,+1pt nights growth,%,shock in every year FY26-FY28,FY2028E,0.882,307.7,404.5,36.94,workstream-29 nights path shifted by a point in every quarter and FY28
+base,base,+1pt nights growth,%,shock in FY2028 only,FY2028E,0.344,119.4,158.6,36.94,workstream-29 nights path shifted by a point in every quarter and FY28
+base,base,+1pt ADR ex-FX,%,shock in every year FY26-FY28,FY2026E,0.247,59.4,68.7,35.25,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+base,base,+1pt ADR ex-FX,%,shock in every year FY26-FY28,FY2027E,0.665,185.5,219.7,35.94,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+base,base,+1pt ADR ex-FX,%,shock in every year FY26-FY28,FY2028E,1.062,339.9,404.5,36.94,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+base,base,+1pt ADR ex-FX,%,shock in FY2028 only,FY2028E,0.417,132.4,158.6,36.94,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+base,base,+1pt FX on revenue,%,shock in every year FY26-FY28,FY2026E,0.247,59.4,68.7,35.25,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+base,base,+1pt FX on revenue,%,shock in every year FY26-FY28,FY2027E,0.665,185.5,219.7,35.94,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+base,base,+1pt FX on revenue,%,shock in every year FY26-FY28,FY2028E,1.062,339.9,404.5,36.94,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+base,base,+1pt FX on revenue,%,shock in FY2028 only,FY2028E,0.417,132.4,158.6,36.94,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+base,base,+10bp take rate,bps,shock in every year FY26-FY28,FY2026E,0.229,50.0,49.6,35.25,10bp added to revenue over GBV; no cost line moves
+base,base,+10bp take rate,bps,shock in every year FY26-FY28,FY2027E,0.707,175.4,173.9,35.94,10bp added to revenue over GBV; no cost line moves
+base,base,+10bp take rate,bps,shock in every year FY26-FY28,FY2028E,0.693,193.8,192.1,36.94,10bp added to revenue over GBV; no cost line moves
+base,base,+10bp take rate,bps,shock in FY2028 only,FY2028E,0.472,131.6,130.4,36.94,10bp added to revenue over GBV; no cost line moves
+base,base,-10% support cost per night,%,shock in every year FY26-FY28,FY2026E,0.96,136.0,0.0,35.25,operations and support per-night target cut by 10 points in every year
+base,base,-10% support cost per night,%,shock in every year FY26-FY28,FY2027E,1.71,270.3,0.0,35.94,operations and support per-night target cut by 10 points in every year
+base,base,-10% support cost per night,%,shock in every year FY26-FY28,FY2028E,2.262,396.5,0.0,36.94,operations and support per-night target cut by 10 points in every year
+base,base,-10% support cost per night,%,shock in FY2028 only,FY2028E,0.838,146.9,0.0,36.94,operations and support per-night target cut by 10 points in every year
+base,base,+5pt brand marketing growth,%,shock in every year FY26-FY28,FY2026E,-0.563,-79.8,0.0,35.25,brand and performance marketing growth target raised 5 points in every year
+base,base,+5pt brand marketing growth,%,shock in every year FY26-FY28,FY2027E,-1.246,-197.0,0.0,35.94,brand and performance marketing growth target raised 5 points in every year
+base,base,+5pt brand marketing growth,%,shock in every year FY26-FY28,FY2028E,-1.979,-346.9,0.0,36.94,brand and performance marketing growth target raised 5 points in every year
+base,base,+5pt brand marketing growth,%,shock in FY2028 only,FY2028E,-0.664,-116.5,0.0,36.94,brand and performance marketing growth target raised 5 points in every year
+base,base,+1pt nights share to LatAm/APAC,pt of share,shock in every year FY26-FY28,FY2026E,-0.196,-46.8,-54.2,35.25,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+base,base,+1pt nights share to LatAm/APAC,pt of share,shock in every year FY26-FY28,FY2027E,-0.534,-145.3,-172.2,35.94,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+base,base,+1pt nights share to LatAm/APAC,pt of share,shock in every year FY26-FY28,FY2028E,-0.86,-264.3,-314.5,36.94,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+base,base,+1pt nights share to LatAm/APAC,pt of share,shock in FY2028 only,FY2028E,-0.334,-104.3,-125.0,36.94,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+management,base,+1pt nights growth,%,shock in every year FY26-FY28,FY2026E,0.205,53.8,68.7,35.82,workstream-29 nights path shifted by a point in every quarter and FY28
+management,base,+1pt nights growth,%,shock in every year FY26-FY28,FY2027E,0.549,168.0,219.7,36.46,workstream-29 nights path shifted by a point in every quarter and FY28
+management,base,+1pt nights growth,%,shock in every year FY26-FY28,FY2028E,0.888,310.3,404.5,37.36,workstream-29 nights path shifted by a point in every quarter and FY28
+management,base,+1pt nights growth,%,shock in FY2028 only,FY2028E,0.346,120.5,158.6,37.36,workstream-29 nights path shifted by a point in every quarter and FY28
+management,base,+1pt ADR ex-FX,%,shock in every year FY26-FY28,FY2026E,0.245,59.5,68.7,35.82,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+management,base,+1pt ADR ex-FX,%,shock in every year FY26-FY28,FY2027E,0.662,186.2,219.7,36.46,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+management,base,+1pt ADR ex-FX,%,shock in every year FY26-FY28,FY2028E,1.064,341.9,404.5,37.36,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+management,base,+1pt ADR ex-FX,%,shock in FY2028 only,FY2028E,0.418,133.2,158.6,37.36,"ADR ex-FX shifted by a point; flows to GBV and revenue, and to cost of revenue through GBV"
+management,base,+1pt FX on revenue,%,shock in every year FY26-FY28,FY2026E,0.245,59.5,68.7,35.82,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+management,base,+1pt FX on revenue,%,shock in every year FY26-FY28,FY2027E,0.662,186.2,219.7,36.46,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+management,base,+1pt FX on revenue,%,shock in every year FY26-FY28,FY2028E,1.064,341.9,404.5,37.36,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+management,base,+1pt FX on revenue,%,shock in FY2028 only,FY2028E,0.418,133.2,158.6,37.36,"FX points on revenue shifted by one; costs are treated as USD except cost of revenue, which follows GBV"
+management,base,+10bp take rate,bps,shock in every year FY26-FY28,FY2026E,0.227,50.0,49.6,35.82,10bp added to revenue over GBV; no cost line moves
+management,base,+10bp take rate,bps,shock in every year FY26-FY28,FY2027E,0.701,175.4,173.9,36.46,10bp added to revenue over GBV; no cost line moves
+management,base,+10bp take rate,bps,shock in every year FY26-FY28,FY2028E,0.689,193.8,192.1,37.36,10bp added to revenue over GBV; no cost line moves
+management,base,+10bp take rate,bps,shock in FY2028 only,FY2028E,0.469,131.6,130.4,37.36,10bp added to revenue over GBV; no cost line moves
+management,base,-10% support cost per night,%,shock in every year FY26-FY28,FY2026E,0.96,136.0,0.0,35.82,operations and support per-night target cut by 10 points in every year
+management,base,-10% support cost per night,%,shock in every year FY26-FY28,FY2027E,1.696,268.0,0.0,36.46,operations and support per-night target cut by 10 points in every year
+management,base,-10% support cost per night,%,shock in every year FY26-FY28,FY2028E,2.229,390.7,0.0,37.36,operations and support per-night target cut by 10 points in every year
+management,base,-10% support cost per night,%,shock in FY2028 only,FY2028E,0.825,144.6,0.0,37.36,operations and support per-night target cut by 10 points in every year
+management,base,+5pt brand marketing growth,%,shock in every year FY26-FY28,FY2026E,-0.563,-79.8,0.0,35.82,brand and performance marketing growth target raised 5 points in every year
+management,base,+5pt brand marketing growth,%,shock in every year FY26-FY28,FY2027E,-1.241,-196.2,0.0,36.46,brand and performance marketing growth target raised 5 points in every year
+management,base,+5pt brand marketing growth,%,shock in every year FY26-FY28,FY2028E,-1.986,-348.1,0.0,37.36,brand and performance marketing growth target raised 5 points in every year
+management,base,+5pt brand marketing growth,%,shock in FY2028 only,FY2028E,-0.66,-115.6,0.0,37.36,brand and performance marketing growth target raised 5 points in every year
+management,base,+1pt nights share to LatAm/APAC,pt of share,shock in every year FY26-FY28,FY2026E,-0.195,-46.9,-54.2,35.82,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+management,base,+1pt nights share to LatAm/APAC,pt of share,shock in every year FY26-FY28,FY2027E,-0.532,-145.9,-172.2,36.46,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+management,base,+1pt nights share to LatAm/APAC,pt of share,shock in every year FY26-FY28,FY2028E,-0.862,-265.9,-314.5,37.36,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+management,base,+1pt nights share to LatAm/APAC,pt of share,shock in FY2028 only,FY2028E,-0.335,-105.0,-125.0,37.36,"1 point of nights share out of NA (regional ADR index 1.42) into LatAm and APAC (nights-weighted index 0.632, 10_regional_panel_quarterly.csv); read as a -0.79% hit to blended ADR"
+base,base,cost of revenue GBV elasticity 1.00 -> 0.96,elasticity,applies to every year FY26-FY28,FY2026E,0.103,14.5,0.0,35.25,leave-one-year-out low for the cost-of-revenue elasticity to GBV (31b_line_elasticities.csv)
+base,base,cost of revenue GBV elasticity 1.00 -> 0.96,elasticity,applies to every year FY26-FY28,FY2027E,0.18,28.4,0.0,35.94,leave-one-year-out low for the cost-of-revenue elasticity to GBV (31b_line_elasticities.csv)
+base,base,cost of revenue GBV elasticity 1.00 -> 0.96,elasticity,applies to every year FY26-FY28,FY2028E,0.249,43.6,0.0,36.94,leave-one-year-out low for the cost-of-revenue elasticity to GBV (31b_line_elasticities.csv)
+base,base,cost of revenue GBV elasticity 1.00 -> 1.11,elasticity,applies to every year FY26-FY28,FY2026E,-0.285,-40.4,0.0,35.25,leave-one-year-out high for the cost-of-revenue elasticity to GBV
+base,base,cost of revenue GBV elasticity 1.00 -> 1.11,elasticity,applies to every year FY26-FY28,FY2027E,-0.504,-79.7,0.0,35.94,leave-one-year-out high for the cost-of-revenue elasticity to GBV
+base,base,cost of revenue GBV elasticity 1.00 -> 1.11,elasticity,applies to every year FY26-FY28,FY2028E,-0.703,-123.2,0.0,36.94,leave-one-year-out high for the cost-of-revenue elasticity to GBV
+base,base,support nights elasticity 1.00 -> 0.41,elasticity,applies to every year FY26-FY28,FY2026E,0.5,70.8,0.0,35.25,"leave-one-year-out low for the operations-and-support elasticity to nights; the unrestricted point estimate is 1.39 and the LOO range is 0.41 to 1.66, so this line is the least identified in the model"
+base,base,support nights elasticity 1.00 -> 0.41,elasticity,applies to every year FY26-FY28,FY2027E,0.878,138.7,0.0,35.94,"leave-one-year-out low for the operations-and-support elasticity to nights; the unrestricted point estimate is 1.39 and the LOO range is 0.41 to 1.66, so this line is the least identified in the model"
+base,base,support nights elasticity 1.00 -> 0.41,elasticity,applies to every year FY26-FY28,FY2028E,1.135,199.0,0.0,36.94,"leave-one-year-out low for the operations-and-support elasticity to nights; the unrestricted point estimate is 1.39 and the LOO range is 0.41 to 1.66, so this line is the least identified in the model"
+base,base,support nights elasticity 1.00 -> 1.66,elasticity,applies to every year FY26-FY28,FY2026E,-0.593,-84.1,0.0,35.25,leave-one-year-out high for the operations-and-support elasticity to nights
+base,base,support nights elasticity 1.00 -> 1.66,elasticity,applies to every year FY26-FY28,FY2027E,-1.106,-174.8,0.0,35.94,leave-one-year-out high for the operations-and-support elasticity to nights
+base,base,support nights elasticity 1.00 -> 1.66,elasticity,applies to every year FY26-FY28,FY2028E,-1.499,-262.8,0.0,36.94,leave-one-year-out high for the operations-and-support elasticity to nights
