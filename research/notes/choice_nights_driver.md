@@ -588,3 +588,42 @@ They separately adjust lost-nights estimates down by **70% (NYC)** and 60–62% 
 ## Brazil hotel side — still not found
 
 IBGE's *Pesquisa de Serviços de Hospedagem* (SIDRA tables 3435, 6517, 6518) publishes **capacity only** — establishments, housing units, beds — for capitals and metropolitan regions. No guest-nights or occupancy series. The FOHB chain panel remains the only demand-side read (occupancy +2.1%, ADR +10.5% in FY25), and it is a 583-hotel urban-chain sample, not a census. **Brazil remains the largest unmeasured piece of the fastest-growing region.**
+
+## Bottom-up fact-check of the top-down level (8 Sep 2026)
+
+`analysis/src/bottom_up_nights_check.py` → `bottom_up_nights_check.csv`. The U.S. nights level rests on one unvalidated chain — disclosed NA total × a revenue-share proxy — so this tests it from the supply side using `nights = listings × 365 × availability × occupancy`.
+
+**The trap worth naming first:** AirDNA's occupancy is booked ÷ **available** nights, not booked ÷ 365. A naive `2.25mm × 365 × 55%` gives **452mm U.S. nights — more than Airbnb's entire global total of 533mm**. The availability term does most of the work and nobody publishes it cleanly.
+
+**Test 1 — what availability does the top-down number imply?**
+
+2.25mm U.S. listings × 365 = 821mm listing-days. Top-down 138.4mm nights = **16.9% of all calendar days**.
+
+| AirDNA occupancy | Implied availability | Nights offered/listing |
+|---|---|---|
+| 50% | 33.7% | 123 |
+| 55% | 30.6% | 112 |
+| 60% | 28.1% | 103 |
+
+**Plausible.** A mix of professional hosts (near year-round) and casual hosts (a few weeks) lands exactly there. The level is not contradicted by the supply base.
+
+**Test 2 — nights per listing** (needs no availability term, so it's the cleaner check):
+
+| | Nights/listing/yr |
+|---|---|
+| Global @ 8.0mm listings | 66.6 |
+| Global @ 9.5mm listings | 56.1 |
+| **U.S. @ 2.25mm** | **61.5** |
+
+Inside the range, but at the **low end** — and that is mildly uncomfortable, because U.S. supply skews whole-home and professional and should be *more* utilised than a global mix heavy in private rooms and casual hosts. Held the other way, 67–85 nights/listing would imply **1.63–2.07mm** U.S. listings rather than 2.25mm.
+
+**Verdict: not contradicted, not confirmed.** Both tests place the top-down level inside a plausible band, but every input carries wide uncertainty (global listing counts vary 8.0–9.5mm by source; availability is unpublished). This is a sanity check that the level is not absurd, not a validation of the specific number. The residual tension in Test 2 leans **the same way the revenue reconciliation did** — if anything U.S. nights are high relative to the supply base, which is consistent with the `US_ADR_PREMIUM` correction already applied.
+
+### Why this isn't the strong version, and what would be
+
+Inside Airbnb calendars would give a genuinely independent build, but the repo's extract can't support it:
+
+- A "booked run" there is a contiguous unavailable block **capped at 30 nights** to strip host blocks. That makes mean run length usable but total booked nights **systematically undercounted** — every run over 30 nights is dropped.
+- The calendars are **365-day forward snapshots**, so far-dated months look empty simply because those bookings haven't happened yet.
+
+Together these give ~**9.7% implied occupancy** across the eight cities against AirDNA's ~55% — about one eighth. The fix is to recompute from raw `calendar.csv.gz` using only a near window (0–30 days out, where booking is largely complete) with no 30-night cap, then correct for residual pickup. `data/raw` is gitignored and the gz files aren't on this machine, so that's a follow-up.
