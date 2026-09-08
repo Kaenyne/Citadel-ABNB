@@ -23,6 +23,22 @@ YELLOW = PatternFill("solid", fgColor="FFFF00")
 GREY = PatternFill("solid", fgColor="EEEEEE")
 PCT, NUM, NUM1 = "0.0%", "#,##0.0", "0.000"
 
+# Take rate. NOT flat, and the flat 0.134 this sheet used to carry was a hidden assumption.
+# FY25 actual is 13.4% (revenue / GBV, Q4'25 shareholder letter). The 13 Oct 2026 move to a single
+# 15.5% host fee is mechanically ~+58bp on guest spend, invariant to demand elasticity and to how far
+# hosts re-price, because 15.5% is levied on the grossed-up price rather than 3% on the host subtotal
+# plus 14% at checkout (research/notes/host_only_fee_history_and_elasticity.md). About half of listings
+# had migrated by 2Q26 and all had by year end, so FY26 collects roughly a quarter of the step and FY27
+# the rest. Pushing the other way, management guided FY26 "relatively flat" because customer incentives
+# for Services, Experiences and hotels are booked as contra-revenue; the same note puts the no-migration
+# path at 12.9-13.1%. Holding 13.4% flat therefore assumed the migration for FY26 and then declined to
+# collect the FY27 step. Blue and yellow: override it if the team model disagrees.
+TAKE_RATE_PATH = [0.134, 0.134, 0.136, 0.136, 0.136, 0.136]
+TAKE_RATE_NOTE = ("FY2025 revenue ÷ GBV = 13.4% (Q4'25 letter). Steps to 13.6% by FY27: the single 15.5% host fee "
+                  "is ~+58bp on guest spend (~half of listings migrated by 2Q26, all by year end); FY26 is held at "
+                  "13.4% because incentives for Services/Experiences/hotels are contra-revenue and management guided "
+                  "FY26 flat. Without the migration this line would drift to 12.9-13.1%.")
+
 wb = Workbook()
 
 # ------------------------------------------------------------------ Inputs
@@ -76,10 +92,10 @@ for j, h in enumerate(seg_hdr):
     c = ws.cell(r, 1 + j, h); c.font = BOLD; c.alignment = Alignment(wrap_text=True)
 ws.row_dimensions[r].height = 42
 seg_vals = {
-    "solo": [0.16, 1.5, 0.20, 0.7, 1.0, 0.69, -0.01, 0.0],
-    "pair": [0.358, 0.95, 0.54, 1.0, 1.0, 1.22, 0.0, 0.0],
-    "3-4": [0.323, 0.9, 0.20, 1.0, 1.5, 0.80, 0.02, 0.0],
-    "5+": [0.159, 0.8, 0.06, 1.0, 2.5, 0.79, 0.04, 0.0],
+    "solo": [0.16, 1.5, 0.20, 0.7, 1.0, 0.54, -0.01, 0.0],
+    "pair": [0.358, 0.95, 0.54, 1.0, 1.0, 1.03, 0.0, 0.0],
+    "3-4": [0.323, 0.9, 0.20, 1.0, 1.5, 0.69, 0.02, 0.0],
+    "5+": [0.159, 0.8, 0.06, 1.0, 2.5, 0.71, 0.04, 0.0],
 }
 seg_row = {}
 for g in SEG:
@@ -94,7 +110,7 @@ r += 1
 ws.cell(r, 1, "Sources: booking share = fitted party-size distribution (research/party_size_distribution.md; anchors: guest arrivals ÷ bookings 2.97, Airbnb '>80% of bookings are group trips'). "
         "Relative stay length: solo = 24% of nights ÷ 16% of bookings (Airbnb 2022); others from Inside Airbnb booked-run lengths by capacity. "
         "Hotel leisure party share = mean of Hawaii DBEDT 2024 hotel-only (Table 43) and Las Vegas Visitor Profile 2024. Relative nights: Portuguese ledger (solo 2.5 vs 3.6). "
-        "Rooms per party: 2 people/room, families with small kids 1.5. Price ratio: party_size_cost_crossover.csv (Inside Airbnb Jun-2026 medians +14% fee vs rooms × $158.67 ADR). "
+        "Rooms per party: 2 people/room, families with small kids 1.5. Price ratio: party_size_cost_crossover.csv - the Jun-2026 Inside Airbnb `price` is a stay quote that ALREADY includes the guest service fee and amortised cleaning, so no fee is added (corrected 7 Sep 2026; the earlier 0.69/1.22/0.80/0.79 counted the 14% fee twice) vs rooms × $158.67 ADR. Descriptive - no formula reads this column. "
         "Mix drift: Airbnb family nights +15% vs total +8–10% (Airbnb Oct 2024); bedroom nights +12% vs nights +10% (Q2 2026).").font = Font(name="Arial", size=9, italic=True)
 ws.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top"); ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=9); ws.row_dimensions[r].height = 70
 
@@ -255,9 +271,10 @@ ps.cell(row, 8, "2025 NA GBV $40.3B ÷ 158M nights = $255 (FY2025 10-K); grows w
 for j in range(1, len(YEARS)):
     ps.cell(row, 2 + j, f"={yc(j-1)}{row}*(1+Inputs!{ic(j)}{rp[ADR_KEY]})").number_format = "$#,##0"
 row += 1; take_row = row
-ps.cell(row, 1, "Take rate — team input"); ps.cell(row, 8, "FY2025 revenue ÷ GBV = 13.4% (Q4'25 shareholder letter)").font = Font(name="Arial", size=9)
-for j in range(len(YEARS)):
-    c = ps.cell(row, 2 + j, 0.134); c.font = BLUE; c.number_format = PCT; c.fill = YELLOW
+ps.cell(row, 1, "Take rate — team input (carries the host-only fee migration)")
+ps.cell(row, 8, TAKE_RATE_NOTE).font = Font(name="Arial", size=9)
+for j, v in enumerate(TAKE_RATE_PATH):
+    c = ps.cell(row, 2 + j, v); c.font = BLUE; c.number_format = PCT; c.fill = YELLOW
 row += 1; fx_row = row
 ps.cell(row, 1, "FX factor (1.00 for USD) — team input")
 for j in range(len(YEARS)):
@@ -273,7 +290,8 @@ for j in range(len(YEARS)):
     c = ps.cell(row, 2 + j, f"={yc(j)}{gbv_row}*{yc(j)}{take_row}"); c.number_format = "$#,##0"; c.font = BOLD
 row += 2
 ps.cell(row, 1, "How to wire it: replace the U.S./North-America nights growth plug in the team model with row " + str(tot_row) +
-        " (or its growth in row " + str(growth_row) + "). Keep ADR, take rate and FX where they are — this sheet only explains NIGHTS. "
+        " (or its growth in row " + str(growth_row) + "). Keep ADR and FX where they are — this sheet only explains NIGHTS. "
+        "The take-rate row is NOT a constant: it steps 13.4% → 13.6% by FY27 for the host-only fee migration, so reconcile it with the team model rather than overwriting it blind. "
         "For other regions, either repeat the calibration with that region's hotel data or apply the rest-of-world growth input.").font = Font(name="Arial", size=9, italic=True)
 ps.cell(row, 1).alignment = Alignment(wrap_text=True); ps.merge_cells(start_row=row, start_column=1, end_row=row, end_column=7); ps.row_dimensions[row].height = 48
 

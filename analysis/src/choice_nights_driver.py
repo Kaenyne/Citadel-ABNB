@@ -56,7 +56,11 @@ LEIS_PARTY = {"solo": 0.20, "pair": 0.54, "3-4": 0.20, "5+": 0.06}     # leisure
 LEIS_NIGHTS_REL = {"solo": 0.7, "pair": 1.0, "3-4": 1.0, "5+": 1.0}    # Portuguese ledger: solo 2.5 vs 3.6 nights
 ROOMS_PER_PARTY = {"solo": 1.0, "pair": 1.0, "3-4": 1.5, "5+": 2.5}
 
-PRICE_RATIO_2025 = {"solo": 0.69, "pair": 1.22, "3-4": 0.80, "5+": 0.79}  # Airbnb entire home (+14% fee) / hotel rooms x ADR, party_size_cost_crossover.csv
+# Descriptive only - carried into the calibration output for context; no equation reads it.
+# Corrected 7 Sep 2026: the Jun-2026 Inside Airbnb `price` is already a fee-inclusive stay quote,
+# so the old values had the 14% guest fee counted twice and were 12.3% too high
+# (0.69 / 1.22 / 0.80 / 0.79). See analysis/src/party_size_crossover.py.
+PRICE_RATIO_2025 = {"solo": 0.54, "pair": 1.03, "3-4": 0.69, "5+": 0.71}  # guest-quoted Airbnb / hotel rooms x ADR, party_size_cost_crossover.csv
 CONTESTABLE = 0.38                # share of Airbnb guests who would have gone to a hotel absent Airbnb (F&F: 62% would not)
 
 # SWITCH RATE (called beta in the econometrics literature - renamed 7 Sep 2026 because 'beta'
@@ -175,7 +179,12 @@ def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HO
         N3 = {g: N2[g] * (1 + cat[y]) for g in SEG}
         s_cat = sum(N3[g] + M2[g] * P[g] for g in SEG)
         # step 4: share shift from relative price + product
-        P4 = {g: inv_logit(logit(P[g]) - switch_rate * dln_price + shift[g]) for g in SEG}
+        # `shift` is either {segment: logit pts} applied EVERY year (a permanent annual share gain)
+        # or {year: {segment: logit pts}} for one-off launches. A product launch is a level effect:
+        # it lifts share in the year it lands and then laps, so it belongs in the second form. The
+        # first form silently compounds a launch into perpetuity - see na_nights_reconciliation.py.
+        shift_y = shift.get(y, {}) if set(shift) & set(YEARS) else shift
+        P4 = {g: inv_logit(logit(P[g]) - switch_rate * dln_price + shift_y.get(g, 0.0)) for g in SEG}
         s_share = sum(N3[g] + M2[g] * P4[g] for g in SEG)
         M, N, P = M2, N3, P4
         rows.append({"year": y, **{f"M_{g}": M[g] for g in SEG}, **{f"P_{g}": P[g] for g in SEG},

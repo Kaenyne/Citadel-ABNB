@@ -11,7 +11,10 @@ Design (what could be measured, not what would be ideal):
     ln( booked_nights_c / active_listings_c ) = a - eps * ln( P_abnb,c / ADR_hotel,c )
   - LHS: Airbnb demand per active listing (utilisation), from the repo calendar extract -
     booked runs x mean run length, per active listing. Same snapshot window for all cities.
-  - RHS: 4-person entire home median price x 1.14 service fee vs the city hotel ADR.
+  - RHS: 4-person entire home median price vs the city hotel ADR. NOTE (7 Sep 2026): this applied a
+    x1.14 service fee to a dump whose `price` is already a fee-inclusive stay quote. Because the
+    factor is the same for every city it is absorbed by the intercept of a log regression, so the
+    null result below is unaffected; the level of the relative-price term was 14% too high.
   - eps maps to beta via the model's structure: only the contestable 38% of Airbnb demand responds
     to the relative price, so d ln(total nights)/d ln(relprice) = -CONTESTABLE * beta * (1-P),
     i.e. beta = eps / 0.363. If instead ALL Airbnb demand responded, beta = eps / 0.955 (bound).

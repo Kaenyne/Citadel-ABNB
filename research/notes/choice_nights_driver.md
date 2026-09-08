@@ -16,15 +16,43 @@ Team model: Revenue = Nights × ADR × take rate × FX, Nights is a plug. Replac
 
 | Party | Airbnb nights | own-cat. | contestable | Hotel party-nights | P(Airbnb \| pool) | Airbnb share of all lodging | Airbnb ÷ hotel price |
 |---|---|---|---|---|---|---|---|
-| Solo (incl. business) | 35.0 | 21.7 | 13.3 | 533.2 | 2.4% | 6.2% | 0.69x |
-| Pair | 49.5 | 30.7 | 18.8 | 476.8 | 3.8% | 9.4% | 1.22x |
-| 3–4 | 42.3 | 26.3 | 16.1 | 134.7 | 10.7% | 23.9% | 0.80x |
-| 5+ | 18.5 | 11.5 | 7.0 | 40.4 | 14.8% | 31.4% | 0.79x |
+| Solo (incl. business) | 35.0 | 21.7 | 13.3 | 533.2 | 2.4% | 6.2% | 0.54x |
+| Pair | 49.5 | 30.7 | 18.8 | 476.8 | 3.8% | 9.4% | 1.03x |
+| 3–4 | 42.3 | 26.3 | 16.1 | 134.7 | 10.7% | 23.9% | 0.69x |
+| 5+ | 18.5 | 11.5 | 7.0 | 40.4 | 14.8% | 31.4% | 0.71x |
 | Total | 145.4 | 90.1 | 55.2 | 1,185.1 | 4.5% | 10.9% | — |
 
 - Airbnb U.S. nights = NA 158M × 92% (U.S. = 39% of revenue vs NA 43%, FY2025 10-K) split by fitted party distribution (16/36/32/16%) × relative stay length (1.5/0.95/0.9/0.8).
 - Hotel party-nights = 1.3B room nights (STR 2024, +1%) → 42% business (AHLA 439M/605M), 80% single-occupancy (Portuguese ledger) → leisure parties 20/54/20/6% (Hawaii + Vegas) with rooms per party 1/1/1.5/2.5.
 - Airbnb = 10.9% of U.S. lodging party-nights; share rises 6% → 31% from solo to 5+.
+
+### Price column corrected, 7 Sep 2026 (the guest fee was counted twice)
+
+The price ratios previously read 0.69 / 1.22 / 0.80 / 0.79. They were built by taking the Jun-2026
+Inside Airbnb `price` and multiplying by 1.14 for the guest service fee — but Inside Airbnb changed
+what `price` means. Through the Sep-2025 dumps it is the host's listed nightly rate (fee excluded);
+from the Mar-2026 dumps it *is* `price_quote_price_per_night`, a real stay quote already inclusive of
+the service fee and of cleaning amortised over the stay. Verified: in `austin_2026-06-22` the two
+columns are identical across 10,321 entire homes. So the fee was added to a price that already had
+it, and every ratio was 12.3% too high (= 1 − 1/1.14).
+
+`analysis/src/party_size_crossover.py` now detects the basis per dump and applies the fee only on the
+listed basis. On 7 U.S. cities and 52.4k active entire homes the corrected ratios are **0.54 / 1.03 /
+0.69 / 0.71**. Nothing in the projection moves: the price-ratio column is descriptive and no formula
+reads it (verified against the workbook — column G of the Inputs segment table has zero references).
+
+What does move is the story. The pair segment goes from Airbnb being **22% more expensive** than a
+hotel to **3% more expensive** — roughly parity. `party_size_competitive_set.md` called that segment
+"the real battleground" on the strength of the 1.22x; at 1.03x the price disadvantage that framing
+rested on is mostly gone, and what is left for hotels in the couples segment is the 1–2-night
+cleaning-fee penalty and check-in convenience, not the nightly rate.
+
+Two known asymmetries remain, both flagged in the figure: the quote basis includes cleaning while the
+hotel side is bare ADR with no taxes or resort fees, and a FY2024 hotel ADR is being compared to 2026
+Airbnb prices. Both push the ratio up, so 0.54 / 1.03 / 0.69 / 0.71 is still a ceiling.
+
+Same defect, no consequence: `beta_city_estimate.py` applied the same ×1.14 to the same basis. The
+factor is common to every city, so a log regression absorbs it in the intercept and the null stands.
 
 ## Base-case projection (U.S.) — beta 5.0, team ADR line (rebased twice 7 Sep 2026)
 
@@ -101,7 +129,8 @@ The party-size gradient replicates in every country (~2× per step, same shape a
 ## Wiring
 
 1. Link Inputs!"Airbnb ADR growth" to the model's ADR line (same ADR drives price and share).
-2. Replace the NA/U.S. nights growth plug with Projection!"U.S. AIRBNB NIGHTS" (or its growth row). ADR, take rate, FX untouched. Check: 2025 U.S. revenue reproduces at $5.0B vs ~$4.8B reported (U.S.-share proxy).
+2. Replace the NA/U.S. nights growth plug with Projection!"U.S. AIRBNB NIGHTS" (or its growth row). ADR and FX untouched. Check: 2025 U.S. revenue reproduces at $5.0B vs ~$4.8B reported (U.S.-share proxy).
+2b. **The take-rate row is no longer flat.** It was hardcoded at 13.4% across 2025–30, which silently assumed the host-only fee migration for FY26 and then never collected the FY27 step. It now runs 13.4% (FY25–26) → 13.6% (FY27 on), per `host_only_fee_history_and_elasticity.md`: the single 15.5% fee is ~+58bp on guest spend, invariant to demand elasticity and to how far hosts re-price; roughly a quarter lands in FY26 and the rest in FY27, against a no-migration path of 12.9–13.1%. FY26 is held at 13.4% because incentives for Services/Experiences/hotels are contra-revenue and management guided FY26 flat. Reconcile with the team model rather than overwriting it blind.
 3. Other regions: keep the team's growth for now, or recalibrate with regional hotel nights (Eurostat for EU — Krishang's file).
 4. Scenarios: bear = ADR +2–4 pts above hotels, β 5.0–10.3 → nights CAGR +0.9% to −3.5%; bull = ADR parity or below, β 2.5, mix drift +2, positive product shift → 4–6%.
 
