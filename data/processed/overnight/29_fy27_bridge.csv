@@ -1,0 +1,19 @@
+scenario,order,term,value_pp,kind,note
+bear,0,"FY26 reported growth, this scenario",13.38,start,"1H26 actual $6,286m + 3Q26 bear $4,632m + 4Q26 bear $2,961m = $13,879m on FY25 $12,241m; Street $14,100-14,160m"
+bear,1,FX after hedging: FY26 stated points to FY27 path,-5.39,step,"FY26 +2.7pp (0 / +3 / +4 / +3 stated, Q4 fitted) to FY27 -2.6pp on the strong_usd path; hedge memo about -0.2pp a quarter inside it"
+bear,2,Nights: FY26 to FY27 regional build,-3.68,step,"FY26 9.5% to FY27 bear 5.8% (10_regional_forecast), phased heavier in 1H27 for the global three-feature and World Cup laps"
+bear,3,ADR ex-FX,-2.0,step,FY26 3.0% to FY27 1.0%; hotel CPI re-accelerated in 2Q26 and the 2025-26 Airbnb-specific ADR premium is closing
+bear,4,Take-rate / timing residual,0.86,step,FY26 implied -1.9pp (RNPL timing plus FY26 revenue beats) to FY27 -1.0pp; take rate modelled flat
+bear,5,"FY27 reported growth, this scenario",3.17,end,"$14,318m; Street $15,730-15,760m (+11.3-11.5% on its own FY26); regional note FY27 bear +4.9% with FX at -2pp"
+base,0,"FY26 reported growth, this scenario",15.74,start,"1H26 actual $6,286m + 3Q26 base $4,771m + 4Q26 base $3,111m = $14,168m on FY25 $12,241m; Street $14,100-14,160m"
+base,1,FX after hedging: FY26 stated points to FY27 path,-3.36,step,"FY26 +2.7pp (0 / +3 / +4 / +3 stated, Q4 fitted) to FY27 -0.6pp on the consensus path; hedge memo about -0.2pp a quarter inside it"
+base,2,Nights: FY26 to FY27 regional build,-0.83,step,"FY26 10.0% to FY27 base 9.2% (10_regional_forecast), phased heavier in 1H27 for the global three-feature and World Cup laps"
+base,3,ADR ex-FX,-0.5,step,FY26 3.5% to FY27 3.0%; hotel CPI re-accelerated in 2Q26 and the 2025-26 Airbnb-specific ADR premium is closing
+base,4,Take-rate / timing residual,0.5,step,FY26 implied -0.5pp (RNPL timing plus FY26 revenue beats) to FY27 +0.0pp; take rate modelled flat
+base,5,"FY27 reported growth, this scenario",11.55,end,"$15,804m; Street $15,730-15,760m (+11.3-11.5% on its own FY26); regional note FY27 base +12.4% with FX at 0pp"
+bull,0,"FY26 reported growth, this scenario",18.11,start,"1H26 actual $6,286m + 3Q26 bull $4,931m + 4Q26 bull $3,241m = $14,458m on FY25 $12,241m; Street $14,100-14,160m"
+bull,1,FX after hedging: FY26 stated points to FY27 path,-1.79,step,"FY26 +2.7pp (0 / +3 / +4 / +3 stated, Q4 fitted) to FY27 +0.9pp on the weak_usd path; hedge memo about -0.2pp a quarter inside it"
+bull,2,Nights: FY26 to FY27 regional build,1.21,step,"FY26 10.3% to FY27 bull 11.5% (10_regional_forecast), phased heavier in 1H27 for the global three-feature and World Cup laps"
+bull,3,ADR ex-FX,0.0,step,FY26 4.0% to FY27 4.0%; hotel CPI re-accelerated in 2Q26 and the 2025-26 Airbnb-specific ADR premium is closing
+bull,4,Take-rate / timing residual,-0.57,step,FY26 implied +1.1pp (RNPL timing plus FY26 revenue beats) to FY27 +0.5pp; take rate modelled flat
+bull,5,"FY27 reported growth, this scenario",16.96,end,"$16,910m; Street $15,730-15,760m (+11.3-11.5% on its own FY26); regional note FY27 bull +16.9% with FX at +1pp"
