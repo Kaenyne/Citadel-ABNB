@@ -393,3 +393,67 @@ The thesis should lean on the level gap, which is well-evidenced, and treat the 
 Contribution to the 36.3% five-year total: LatAm +13.7pp (37.7% of all growth), EMEA +9.2pp (25.2%), APAC +9.0pp (24.8%), North America +4.5pp (12.3%).
 
 **The confidence gradient runs backwards to the growth.** North America is the full segment choice model; EMEA is calibrated on measured Eurostat platform and hotel nights for FR/ES/IT/DE and scaled. **LatAm and APAC are growth fades off disclosed 2025 rates with no hotel-side data and no choice model at all — yet they are 30% of 2025 nights and 62% of the 2025–30 growth.** That is the least evidenced part of the forecast and the first place to spend more research.
+
+## Regional models on region-specific data (8 Sep 2026)
+
+`analysis/src/choice_nights_driver_regional.py` → `choice_driver_regional_detail.csv`. Nights are now built the same way ADR is — one calibration per Airbnb reporting segment — so the two multiply region by region without a mix error.
+
+**The regions are not variants of one market.** 2025 anchors, all from the FY2025 10-K regional table:
+
+| | Nights | ADR | Stay length | 2025 nights growth | GBV check |
+|---|---|---|---|---|---|
+| North America | 158.0 | **$255.03** | 4.1 (flat since 2023) | +2.6% | $40.29bn |
+| EMEA | 215.0 | $158.89 | 3.8 (**−14%** since 2020) | +7.0% | $34.16bn |
+| LatAm | 90.0 | **$94.91** | 3.6 (**−18%**, falling fastest) | +18.4% | $8.54bn |
+| APAC | 70.0 | $118.20 | 3.3 (**+18%**, the only riser) | +14.8% | $8.27bn |
+
+ADR spans 2.7×, stay length moves in opposite directions, and nights growth spans 2.6% to 18.4%. A single global path cannot represent that.
+
+### Output
+
+| | 2025 | 2030 | CAGR | Share |
+|---|---|---|---|---|
+| North America | 158.0 | 175.5 | **+2.13%** | 29.6% → 24.5% |
+| EMEA | 215.0 | 264.3 | **+4.22%** | 40.3% → 36.9% |
+| LatAm | 90.0 | 154.7 | **+11.44%** | 16.9% → 21.6% |
+| APAC | 70.0 | 122.5 | **+11.84%** | 13.1% → 17.1% |
+| **Total** | **533.0** | **717.1** | **+6.11%** | |
+
+### The finding that matters most
+
+**The confidence gradient runs backwards to the growth.**
+
+| Region | Evidence base | Share of 2025–30 growth |
+|---|---|---|
+| North America | Full choice model — STR room nights, AHLA business split, Hawaii/Vegas party mix, CoStar forecasts | 9.5% |
+| EMEA | Measured Eurostat platform + hotel nights (FR/ES/IT/DE), Spain INE party size by accommodation | 26.8% |
+| LatAm | **No hotel-side data. Growth model only.** | 35.2% |
+| APAC | **No hotel-side data. Growth model only.** | 28.5% |
+
+**64% of all forecast growth comes from the two regions where we have no hotel-side data and no calibrated share.** All the analytical effort so far — the switch rate, the contestable share, the party-size work, the NYC validation — sits on the 36% that grows slowest. That is the single largest research gap in the nights work, and the first place to spend the next hour.
+
+What *is* region-specific for LatAm/APAC even without a hotel side: disclosed nights growth, ADR level and growth, and stay-length direction (LatAm −2.7%/yr vs APAC +0.6%/yr). Japan's minpaku law also caps a property at 180 nights/yr and lets municipalities zero it out, so APAC supply has a legal ceiling the other regions lack.
+
+**Flagged as provisional:** regional ADR here is GBV ÷ nights from the 10-K, which **includes FX**, while the share equation wants ex-FX. Replace `ABNB_ADR` with the team's regional ex-FX line when it lands. Only NA and EMEA have a hotel ADR comparator, so only those two run a price-driven share term at all.
+
+## Source pulls attempted 8 Sep 2026 — outcomes
+
+| Source | Outcome |
+|---|---|
+| **Spain INE ETR** | ✅ 129 monthly microdata files, free, 2015–2026 — the one open trip-level microdata source |
+| **VisitBritain GBTS** | ✅ 28k weighted trip records, children × accommodation |
+| **TripAdvisor Content API** | ⚠️ **Actionable, needs you.** 5,000 free calls/month, `trip_types` breakdown (business/couples/family/solo) per property, covers hotels *and* rentals. Requires account signup + a credit card for overage — a billing commitment I shouldn't make on your behalf. Best remaining source by far: one instrument, both accommodation types, many markets. |
+| **Germany FUR Reiseanalyse** | ❌ Commercial study (~8,000 respondents/yr since 1970). Only selected summary publications are free; the cross-tab is in the paid product. |
+| **France INSEE SDT** | ⚠️ Aggregate tables free on INSEE/data.gouv (accommodation and party published as separate marginals). Trip-level detail files are on **Progedo/ADISP**, which needs an account and a stated research purpose. |
+| **Netherlands CBS** | ❌ Open OData API works and needs no key, but the cross-tab doesn't exist: accommodation tables (71080ned, 84368NED) have no party dimension, and the party-size table (71337ned) crosses party against *trip purpose*, not accommodation. |
+| **US states** | ❌ Colorado's Longwoods PDF link is dead; Texas publishes person-days rather than party size; Virginia's portal has lodging volumes, not party composition. No free state-level cross-tab found. |
+
+### How to request the Statistics Canada NTS cross-tab
+
+The public tables carry party size and accommodation type only as separate marginals; the cross-tab is a custom tabulation. Route:
+
+1. **Email `tourism@statcan.gc.ca`** — this is the address StatCan's own NTS documentation directs users to, and the fastest route for a straightforward cross-tab.
+2. Ask specifically for: *National Travel Survey, person-trips and person-nights by **type of accommodation** × **size of travel party**, domestic overnight trips, annual, 2016–2025.* Naming the survey, both variables, the unit, and the year range avoids a scoping round-trip.
+3. Custom tabulations are **cost-recoverable** — expect a quote first. Simple cross-tabs are usually modest; ask for the estimate before approving.
+4. Free alternative if the quote is unattractive: the **NTS Public Use Microdata File**, which carries both variables at record level. It's distributed through the Data Liberation Initiative (free at any DLI-member university) or purchasable directly. If anyone on the team has a university affiliation, that's the zero-cost path.
+5. Turnaround is typically a few weeks, so start it now if it's wanted for the deck rather than after.
