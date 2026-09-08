@@ -12,9 +12,14 @@ Scripts `analysis/src/adr/01`-`08`; outputs `data/processed/adr/`.
    measurable from the 10-K and is a persistent, *accelerating* drag. Unit size and
    like-for-like price are, on public data, close to unidentified — and the decomposition
    now says so explicitly instead of hiding it in a residual.
-2. **The unexplained line is the finding.** In 2025 it is **+3.97pp against an ADR move of
-   +3.02%** — larger than the whole move. 2024 is +0.95pp (58% of the move). We can explain
-   FX and geography; we cannot explain the rest from public data.
+2. **The decomposition reconciles, after an audit corrected two method errors.** The first
+   version carried an "unexplained" line of 19-131% of the ADR move. That was mostly
+   artefact: FX had been re-derived from regional baskets instead of taken from the letters
+   (wrong by 1.33pp in 2022), and a hotel price benchmark with r~0 against ABNB ADR ex-FX had
+   been subtracted as a component (it absorbed 6.73pp in 2022 purely because hotel prices
+   were inflating post-COVID). Corrected, the within-region term reconciles to the
+   independently built 10-K regional panel within **0.03, 0.30 and -0.13pp** in 2023-2025.
+   Audit: `analysis/src/adr/10_audit_decomposition.py`, `10_audit.csv`.
 3. **The consensus reading of the bedroom-nights disclosure -- including our own WS06 --
    maps a +2pp bedroom-night wedge onto +2pp of ADR. That mapping is wrong.** ADR responds to
    bedroom count with a local elasticity of **0.23**, stable across both panels (0.2289 on 12
@@ -91,21 +96,36 @@ unexplained line, which is the point.
 | pp of ADR y/y | 2022 | 2023 | 2024 | 2025 |
 |---|---|---|---|---|
 | **ADR y/y** | **+2.68** | **+2.15** | **+1.64** | **+3.02** |
-| Geographic mix | −2.75 | −1.08 | −1.24 | **−1.58** |
-| FX | −3.84 | +0.85 | −0.22 | +1.06 |
-| Length of stay | +0.26 | +0.62 | +0.21 | +0.04 |
-| Unit-size mix | n/a | n/a | +0.44 | −0.25 |
-| Like-for-like price (measured) | +6.73 | +2.21 | +1.61 | −0.10 |
+| Geographic mix (4-region) | −2.75 | −1.08 | −1.24 | **−1.58** |
+| FX (disclosed, GBV-weighted) | −5.17 | +0.18 | −0.45 | +1.30 |
 | Interaction | −0.39 | −0.05 | −0.11 | −0.11 |
-| **UNEXPLAINED** | **+2.67** | **−0.40** | **+0.95** | **+3.97** |
-| unexplained as % of the move | 100% | 19% | 58% | **131%** |
+| **= Within-region ADR ex-FX** | **+10.99** | **+3.10** | **+3.44** | **+3.41** |
+| — of which length of stay | +0.26 | +0.62 | +0.21 | +0.04 |
+| — of which unit-size mix | n/a | n/a | +0.44 | −0.25 |
+| — of which **pricing + sub-regional mix** | +10.73 | +2.48 | +2.80 | **+3.62** |
 
-Confidence: 2021 not estimable; 2022-23 low (no size measurement, price low); 2024 low (size
-rests on one city); 2025 medium.
+**Reconciliation, the check the first version lacked.** The within-region term is compared
+against the nights-weighted regional ADR ex-FX built independently from the 10-K in `03`:
 
-**Read this as a measurement statement, not a discovery.** The unexplained line is large
-because no external benchmark tracks Airbnb's pricing (section 4.3), not because something
-inexplicable is happening.
+| | 2022 | 2023 | 2024 | 2025 |
+|---|---|---|---|---|
+| within-region (identity) | +10.99 | +3.10 | +3.44 | +3.41 |
+| independent regional build | +9.76 | +3.07 | +3.15 | +3.54 |
+| **gap** | +1.23 | **+0.03** | **+0.30** | **−0.13** |
+
+2023-2025 agree to within a third of a point from two constructions that share no
+intermediate step. 2022 is flagged low — the FX reconstruction is weakest in the high-
+dispersion COVID window.
+
+**The last line is jointly unidentified, not unexplained.** Airbnb discloses no
+country-level ADR, so within-region pricing cannot be separated from sub-regional (country)
+mix. That term is not noise: expansion-market origin nights have grown ~2x core for ten
+consecutive quarters and those markets are lower-ADR, so it carries a real negative mix
+component that a four-region decomposition cannot see.
+
+**The hotel price benchmark is a comparator, never a component.** Subtracting a series with
+r~0 against the target injects variance rather than explaining it. It is retained in the CSV
+as `hotel_price_comparator_pp` for context only.
 
 ---
 

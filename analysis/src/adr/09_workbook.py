@@ -84,7 +84,7 @@ def build():
     for k, v in [
         ("Owner", "Krish. Built 7-8 Sep 2026 with Claude Code."),
         ("Source note", "research/notes/2026-09-07_adr-decomposition.md"),
-        ("Scripts", "analysis/src/adr/01-09; data in data/processed/adr/"),
+        ("Scripts", "analysis/src/adr/01-10; data in data/processed/adr/. 10 is the audit."),
         ("Rebuild", "py -3.13 analysis/src/adr/09_workbook.py"),
     ]:
         ws.write(r, 1, k, F["h2"]); ws.write(r, 2, v, F["txt"]); r += 1
@@ -114,9 +114,10 @@ def build():
         ("1_History", "Quarterly ADR 1Q19-2Q26: level, reported y/y, FX contribution, ex-FX. "
                       "Ex-FX is disclosed from 2Q22 and reconstructed before that (validated "
                       "r 0.988, raw RMSE 0.68pp). 1Q20-2Q21 are flagged do-not-calibrate."),
-        ("2_Decomposition", "Annual four-way split with an explicit UNEXPLAINED line. Price is "
-                            "measured externally rather than used as the plug, so the terms do "
-                            "not sum to zero by construction - the gap is the point."),
+        ("2_Decomposition", "Annual split into geographic mix, FX, interaction and "
+                            "within-region ADR ex-FX, with the last broken down as far as "
+                            "disclosure allows. REVISED 8 Sep after an audit; it now "
+                            "reconciles to the independent 10-K regional panel within 0.3pp."),
         ("3_Regional", "Regional ADR levels and ex-FX growth from the 10-K, plus nights shares "
                        "and the convergence table."),
         ("4_Drivers", "Forecastability scorecard: for each term, how it behaves, whether it can "
@@ -129,12 +130,15 @@ def build():
 
     r += 1
     ws.write(r, 1, "Health warning", F["h2"])
-    ws.write(r, 2, "Like-for-like price is NOT measurable from public data post-reopening. "
-                   "Every external benchmark (CPI lodging, BEA hotels, MAR/HLT RevPAR) has "
-                   "Bonferroni p=1.000 against ABNB ADR ex-FX on 2023Q1+. The unexplained line "
-                   "of +3.97pp in 2025 measures that ignorance; it is not a discovery. Do not "
-                   "build a price forecast on a hotel index.", F["txt"])
-    ws.set_row(r, 60)
+    ws.write(r, 2, "Within-region pricing cannot be separated from SUB-REGIONAL (country) "
+                   "mix, because Airbnb discloses no country-level ADR. The two are carried "
+                   "as one jointly-unidentified term of ~+2.5 to +3.6pp. It is not noise: "
+                   "expansion markets grow ~2x core and are lower-ADR, so it contains a real "
+                   "negative mix component. Separately: every external price benchmark (CPI "
+                   "lodging, BEA hotels, MAR/HLT RevPAR) has Bonferroni p=1.000 against ABNB "
+                   "ADR ex-FX on 2023Q1+, so do NOT build a price forecast on a hotel index.",
+             F["txt"])
+    ws.set_row(r, 72)
 
     # ======================= 1. HISTORY =======================================
     ws = wb.add_worksheet("1_History")
@@ -169,8 +173,13 @@ def build():
     ws = wb.add_worksheet("2_Decomposition")
     ws.set_column("A:A", 42); ws.set_column("B:E", 12); ws.set_column("F:F", 60)
     ws.write("A1", "Annual ADR decomposition (pp of ADR y/y)", F["h1"])
-    ws.write("A2", "Price is measured externally, not plugged. The UNEXPLAINED line is the "
-                   "honest residual.", F["note"])
+    ws.write("A2", "REVISED 8 Sep after an audit. The first version carried a large "
+                   "'unexplained' line that was mostly two method errors: FX was re-derived "
+                   "instead of taken from the letters (wrong by 1.33pp in 2022), and a hotel "
+                   "price proxy with r~0 against ABNB ADR was subtracted as a component. "
+                   "Corrected, the decomposition reconciles to the independent regional "
+                   "panel within 0.3pp.", F["note"])
+    ws.set_row(1, 46)
     years = dec.year.tolist()
     ws.write(3, 0, "Term", F["hdr"])
     for i, y in enumerate(years):
@@ -181,26 +190,39 @@ def build():
     rows = [
         ("ADR y/y, reported", "adr_yoy_pct", True,
          "What actually printed."),
-        ("Geographic mix", "geo_mix_pp", False,
+        ("Geographic mix (4-region)", "geo_mix_pp", False,
          "Nights shifting to lower-ADR regions. Negative every year and getting worse."),
-        ("FX", "of_which_fx_pp", False,
-         "Mechanical. Fitted 0.52 - 0.72 x broad USD y/y, r 0.96."),
-        ("Length of stay", "of_which_los_pp", False,
-         "Bounded, not fitted - the panel could not identify an elasticity."),
-        ("Unit-size mix", "size_mix_pp", False,
-         "Bedrooms and capacity per booked night, 29 markets. NA/EMEA only."),
-        ("Like-for-like price (measured)", "price_measured_pp", False,
-         "External benchmarks, GBV-weighted. No demonstrated power post-2023."),
+        ("FX", "fx_pp", False,
+         "DISCLOSED in the letters, GBV-weighted - not re-derived. Forecast with "
+         "0.52 - 0.72 x broad USD y/y, r 0.96."),
         ("Interaction", "interaction_pp", False,
          "Mix x rate cross-term. Small."),
-        ("UNEXPLAINED", "unexplained_pp", True,
-         "What the decomposition cannot account for. This is a measurement statement."),
-        ("  as % of the ADR move", "pct_of_move_unexplained", False, ""),
+        ("= Within-region ADR ex-FX", "within_region_exfx_pp", True,
+         "The residual of the identity. RECONCILES to the independent 10-K regional panel "
+         "within 0.3pp in 2023-25 - see the check below."),
+        ("   of which length of stay", "of_which_los_pp", False,
+         "Bounded, not fitted - the panel could not identify an elasticity."),
+        ("   of which unit-size mix", "size_mix_pp", False,
+         "Bedrooms and capacity per booked night, 29 markets. NA/EMEA only."),
+        ("   of which pricing + SUB-REGIONAL MIX", "pricing_and_subregional_mix_pp", True,
+         "JOINTLY UNIDENTIFIED. Airbnb discloses no country-level ADR, so within-region "
+         "pricing cannot be separated from country mix. Not noise: expansion markets grow "
+         "~2x core and are lower-ADR, so this carries a real negative mix term."),
+        ("", None, False, ""),
+        ("Memo: independent regional ex-FX", "regional_exfx_independent_pp", False,
+         "Nights-weighted regional ADR ex-FX built separately from the 10-K."),
+        ("Memo: reconciliation gap", "reconciliation_gap_pp", False,
+         "Within-region term less the independent build. 2023-25: +0.03, +0.30, -0.13pp."),
+        ("Memo: hotel price comparator", "hotel_price_comparator_pp", False,
+         "COMPARATOR ONLY, never a component. Hotel benchmarks have r~0 with ABNB ADR "
+         "ex-FX post-2023, so subtracting one would inject variance, not explain it."),
     ]
     r = 4
     for label, col, bold, how in rows:
         ws.write(r, 0, label, F["bold"] if bold else F["body"])
         for i, y in enumerate(years):
+            if col is None:
+                continue
             v = dec.loc[dec.year == y, col]
             v = None if v.empty or pd.isna(v.values[0]) else float(v.values[0])
             ws.write(r, 1 + i, v, F["boldn"] if bold else F["num"])
