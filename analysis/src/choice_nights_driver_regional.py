@@ -19,17 +19,23 @@ EVIDENCE AVAILABLE PER REGION - the confidence gradient runs BACKWARDS to the gr
                   now also measured, from Spain's INE ETR microdata (11 years). Airbnb side:
                   disclosed nights, 10-K stay length (4.4 -> 3.8, the steepest decline of any region).
 
-  LATIN AMERICA   NO hotel-side data. Growth model only. What IS region-specific: disclosed nights
+  LATIN AMERICA   Hotel side now PARTLY evidenced (latam_apac_hotel_evidence.py): Mexico's DATATUR
+                  publishes average occupied rooms and occupancy, giving 170.4mm room-nights in
+                  2025, +6.5%. Still no party-size-by-accommodation anywhere in the region, so no
+                  P(Airbnb | contestable) can be calibrated - a market-growth anchor, not a model. What IS region-specific: disclosed nights
                   (+18.4% in 2025), ADR $94.91 (+1.7%, the weakest of the four), and stay length
                   falling fastest (-2.7%/yr, 4.4 -> 3.6 since 2020).
 
-  ASIA PACIFIC    NO hotel-side data. Growth model only. Region-specific: disclosed nights (+14.8%),
+  ASIA PACIFIC    Hotel side now PARTLY evidenced: Japan's JTA Overnight Travel Statistics give
+                  653.48mm guest-nights in 2025, -0.8% y/y (domestic -3.8%, international +8.2%).
+                  Same limit as LatAm - a market-growth anchor, not a calibrated share. Region-specific: disclosed nights (+14.8%),
                   ADR $118.20 (+1.2%), and the ONLY region where stay length is RISING (2.8 -> 3.3,
                   +18% since 2020). Japan's minpaku law caps a property at 180 nights/yr and lets
                   municipalities zero it out, so APAC supply has a legal ceiling the others lack.
 
-  => LatAm + APAC are 30% of 2025 nights and ~62% of 2025-30 growth on NO hotel-side evidence.
-     That is the single largest research gap in the nights work.
+  => LatAm + APAC are 30% of 2025 nights and ~62% of 2025-30 growth. They now have a hotel-side
+     market anchor each (Mexico, Japan) but still no calibrated share. Brazil, China, India, Korea
+     and Australia remain unpulled; Brazil matters most, being LatAm's largest Airbnb market.
 
 ADR: regional ADR = regional GBV / regional nights from the FY2025 10-K regional table. This
 INCLUDES FX, whereas the share equation wants an ex-FX comparison. Regional ex-FX paths should
@@ -72,8 +78,19 @@ CATEGORY = {
 # EMEA implied +10.3% is haircut to 8.5% for the WS11 regulatory drag; LatAm 27.3% and APAC 21.3%
 # are haircut hard because a first-year implied rate off one year of data is not a trend.
 
-# ---- Lodging-market growth for the contestable pool (only NA and EMEA have a measured pool)
-MARKET = {"north_america": 0.015, "emea": 0.020, "latam": 0.030, "apac": 0.035}
+# ---- Lodging-market growth for the contestable pool.
+# NA and EMEA come from measured pools (CoStar/STR; Eurostat). LatAm and APAC were pure guesses
+# until 8 Sep 2026, when latam_apac_hotel_evidence.py found the first hotel-side observations:
+#   Mexico hotel room-nights +6.5% in 2025 (DATATUR: 438,624 -> 466,958 avg occupied rooms)
+#   Japan  hotel guest-nights -0.8% in 2025 (JTA: 653.48mm, domestic -3.8%, international +8.2%)
+# The two point in OPPOSITE directions and both away from the old guesses (3.0% / 3.5%):
+#   LatAm  raised 3.0% -> 5.0%. Mexico says 6.5%, haircut because Mexico is not LatAm and one
+#          year is not a trend. More market growth makes the LatAm path MORE robust: less of its
+#          +18.4% has to be share gain.
+#   APAC   cut 3.5% -> 1.0%. Japan's hotel nights FELL. If Japan is representative, essentially
+#          ALL of APAC's +14.8% is share gain against a flat market - the most fragile position
+#          in the model, and the reason APAC's fade is steepest below.
+MARKET = {"north_america": 0.015, "emea": 0.020, "latam": 0.050, "apac": 0.010}
 
 # ---- ADR paths. NA/EMEA hotel comparators are real forecasts; LatAm/APAC have none.
 ABNB_ADR = {  # PROVISIONAL - replace with the team's regional ex-FX line when it lands
@@ -122,8 +139,8 @@ def main():
     print("\nCAGR 2025-30, share of nights, and what each region is built on")
     basis = {"north_america": "full choice model (STR/AHLA/CoStar hotel side)",
              "emea": "measured Eurostat platform+hotel, Spain INE party size",
-             "latam": "GROWTH MODEL ONLY - no hotel-side data",
-             "apac": "GROWTH MODEL ONLY - no hotel-side data"}
+             "latam": "growth model + Mexico DATATUR market anchor (+6.5%)",
+             "apac": "growth model + Japan JTA market anchor (-0.8%)"}
     rows = []
     for r in list(ANCHOR) + ["total"]:
         s = df.set_index("year")[r]
@@ -144,7 +161,8 @@ def main():
         print(f"  {r:14s} {part * 100:5.1f}%")
         if r in ("latam", "apac"):
             evid += part
-    print(f"  => {evid * 100:.0f}% of all growth comes from the two regions with NO hotel-side data.")
+    print(f"  => {evid * 100:.0f}% of all growth comes from the two regions with a market anchor")
+    print("     but no calibrated share. Brazil is the highest-value remaining pull.")
 
     print("\nGBV CROSS-CHECK (nights x ADR, 2025) - ties to the disclosed regional table")
     for r in ANCHOR:

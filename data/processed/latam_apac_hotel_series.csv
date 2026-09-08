@@ -1,0 +1,9 @@
+region,country,metric,unit,y2023,y2024,y2025,source
+latam,Mexico,avg occupied rooms,rooms,419768.0,438624.0,466958.0,DATATUR/SECTUR Turismo en Cifras Dec-2025
+latam,Mexico,hotel occupancy,%,0.522,0.514,0.541,DATATUR/SECTUR
+latam,Mexico,hotel room-nights,mm,153.21532,160.09776,170.43967,derived: avg occupied rooms x 365
+latam,Mexico,arrivals to hotel rooms,mm,,,89.8,DATATUR/SECTUR (67.6 domestic + 22.2 intl)
+apac,Japan,total guest-nights,mm,,658.75,653.48,"JTA Overnight Travel Statistics, 2025 preliminary annual"
+apac,Japan,domestic guest-nights,mm,,494.3970893970894,475.61,JTA
+apac,Japan,international guest-nights,mm,,164.39001848428836,177.87,JTA
+apac,Japan,all-type occupancy,%,,,0.618,"JTA (ryokan 38.4, resort 56.9, business 75.3, city 74.2)"

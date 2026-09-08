@@ -457,3 +457,43 @@ The public tables carry party size and accommodation type only as separate margi
 3. Custom tabulations are **cost-recoverable** — expect a quote first. Simple cross-tabs are usually modest; ask for the estimate before approving.
 4. Free alternative if the quote is unattractive: the **NTS Public Use Microdata File**, which carries both variables at record level. It's distributed through the Data Liberation Initiative (free at any DLI-member university) or purchasable directly. If anyone on the team has a university affiliation, that's the zero-cost path.
 5. Turnaround is typically a few weeks, so start it now if it's wanted for the deck rather than after.
+
+## LatAm / APAC hotel-side evidence (8 Sep 2026) — the biggest gap, partly closed
+
+`analysis/src/latam_apac_hotel_evidence.py` → `latam_apac_hotel_evidence.csv`, `latam_apac_hotel_series.csv`.
+
+Two national statistical offices publish free, usable hotel-side series:
+
+**Mexico — DATATUR / SECTUR, *Turismo en Cifras*, Dec-2025**
+
+| | 2023 | 2024 | 2025 |
+|---|---|---|---|
+| Average occupied rooms | 419,768 | 438,624 | **466,958** (+6.5%) |
+| National occupancy | 52.2% | 51.4% | 54.1% |
+| Implied room-nights | 153.2mm | 160.1mm | **170.4mm** |
+
+Plus 89.8mm arrivals to hotel rooms in 2025 (67.6mm domestic / 22.2mm international) → **1.90 nights per arrival**.
+
+**Japan — JTA Overnight Travel Statistics, 2025 preliminary annual**
+
+Total guest-nights **653.48mm, −0.8% y/y** (domestic 475.61mm, −3.8%; international 177.87mm, +8.2%). Occupancy by type: ryokan 38.4%, resort 56.9%, business 75.3%, city 74.2%; all types 61.8%.
+
+### Why this matters more than it looks
+
+The regional model's contestable-pool growth for these two regions was a **pure guess** (3.0% / 3.5%). These are the first observations against it, and they point in **opposite directions**:
+
+| | Hotel-side proxy | Observed | Old model | Airbnb 2025 | Airbnb − market |
+|---|---|---|---|---|---|
+| LatAm | Mexico room-nights | **+6.5%** | +3.0% | +18.4% | +11.9pp |
+| APAC | Japan guest-nights | **−0.8%** | +3.5% | +14.8% | +15.6pp |
+
+- **LatAm raised 3.0% → 5.0%.** The market is growing roughly twice as fast as assumed, so *less* of Airbnb's +18.4% has to be share gain. This makes the LatAm path **more** robust, not less.
+- **APAC cut 3.5% → 1.0%.** Japan's hotel nights *fell*. If Japan is representative, essentially **all** of APAC's +14.8% is share gain against a flat market — the most fragile position in the model, and the reason APAC now carries the steepest fade.
+
+Updated regional output: NA +2.13%, EMEA +4.22%, **LatAm +11.97%**, **APAC +11.15%**, total +6.11% CAGR.
+
+### What is still missing
+
+Neither country publishes party size by accommodation type, so **P(Airbnb | contestable) still cannot be calibrated outside NA and EMEA** — these are market-growth anchors, not choice models. Mexico is not LatAm and Japan is not APAC. **Brazil is the highest-value remaining pull** (LatAm's largest Airbnb market; IBGE publishes capacity via SIDRA but no clean guest-nights series), followed by China, India, Korea and Australia — all unpulled.
+
+Units differ and must not be added: Mexico publishes **room**-nights, Japan publishes **guest**-nights.
