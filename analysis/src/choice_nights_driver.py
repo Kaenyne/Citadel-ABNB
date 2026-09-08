@@ -141,6 +141,19 @@ MARKET_GROWTH = {2026: 0.017, 2027: 0.011, 2028: 0.015, 2029: 0.015, 2030: 0.015
 # previous setup was flattering the forecast by drifting the whole contestable pool at Airbnb's rate.
 # The composition story behind it: couples 50% -> 25% and families 31% -> 46% (2012-2025), with the
 # size rise coming from guests booking BIGGER HOMES rather than the same homes hosting bigger groups.
+#
+# GENERALISATION TEST 8 Sep 2026 (analysis/src/party_size_rental_vs_hotel.py):
+#   LEVEL gap validated hard - Booking rectour24 (1.63m stays, 2023) shows rental parties larger
+#   than hotel parties in 39 of 40 countries, mean 1.131x, paired t = 10.2.
+#   TREND divergence (the 2.35x that sets these two vectors' RATIO) is still Hawaii-only. No second
+#   long-horizon source found: TRA / VisitBritain / StatCan collect party size and accommodation
+#   type but publish separate marginals, cross-tab only in microdata.
+#   CAUTION: the gap is WEAKEST WHERE THIS MODEL NEEDS IT. The U.S. ranks 33/40 at 1.051x vs the
+#   1.131x mean (Hawaii 1.080x, also below). Either Booking's thin U.S. whole-home sample understates
+#   it (2,165 reviews, aparthotel-skewed), or the U.S. mix tailwind is genuinely weaker than global
+#   and MIX_DRIFT_ABNB should be cut further. Unresolved - treat +0.62%/yr as the optimistic end.
+#   Counter-signal: UK solo overnight trips 28% in 2024, +4pp vs 2022 (VisitBritain) - rising solo
+#   travel pushes mean party size the other way in at least one large market.
 MIX_DRIFT_ABNB = {"solo": -0.0063, "pair": 0.0, "3-4": 0.0127, "5+": 0.0253}    # implies +0.62%/yr
 MIX_DRIFT_HOTEL = {"solo": -0.0027, "pair": 0.0, "3-4": 0.0054, "5+": 0.0107}   # implies +0.26%/yr
 MIX_DRIFT = MIX_DRIFT_ABNB   # back-compat alias; project() takes both explicitly

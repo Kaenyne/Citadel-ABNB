@@ -291,3 +291,36 @@ Rental parties drift **2.35× faster**. Calibration: the *level* from Krish's gl
 **Combined effect: 2030 U.S. nights 171.1 → 159.3mm, CAGR +3.31% → +2.84%.** Global 533 → 726mm, FY26 +6.6% (vs the team's WS13 base +9.9%).
 
 **3. The Airbnb ADR path is flagged PROVISIONAL.** It currently points at the WS13 overnight base, not the team's final ADR line, which is still outstanding. This is the largest swing factor left — and note the switch rate only bites when an ADR gap opens (5.0 → 10.3 costs just 2.1% at parity), so **the ADR line, not the switch rate, decides the bear case.** Re-point `ABNB_ADR_GROWTH` when it lands.
+
+## Beyond Hawaii: how far does the rental-vs-hotel party gap generalise? (8 Sep 2026)
+
+`analysis/src/party_size_rental_vs_hotel.py` → `party_size_rental_vs_hotel_by_country.csv`. The split mix-drift rests on one number — Hawaii's 2.35× rental-vs-hotel growth ratio — so this tests it against every other source available. **The two claims have very different evidence.**
+
+### Level gap: strongly validated, 40 countries
+
+Booking.com rectour24 (1.63m stays, 2023), whole-home analogues (Holiday home / Villa / Chalet / Country house / Apartment) vs Hotel, ≥500 reviews each side:
+
+- **Rental parties larger in 39 of 40 countries** · mean gap **+0.35 people (1.131×)** · paired **t = 10.2**
+- Only exception: Thailand (0.929×)
+- Widest: Switzerland 1.310×, Iceland 1.258×, Czechia 1.253×, Ireland 1.231×, Japan 1.213×
+
+### Trend divergence: still one market
+
+Hawaii DBEDT remains the only source observing both types on the same instrument over a long horizon (rental +0.80%/yr vs hotel +0.34%/yr, 2013–24). What I tried and why each failed:
+
+- **Booking 515k** (Europe hotels, 2015-08→2017-08): 25 months, ~2 summers, so month dummies and a trend aren't jointly identified. Returns +3.9%/yr — not credible next to Hawaii's +0.34%; treated as noise, not a contradiction.
+- **rectour24**: single year, speaks only to the level.
+- **Tourism Research Australia / VisitBritain GBTS / Statistics Canada NTS**: all three collect party size *and* accommodation type but publish separate marginals — the cross-tab appears to sit in microdata (PUMF / data request). **That's the next pull if this needs hardening.**
+
+### The caveat that matters most
+
+**The gap is weakest exactly where the model needs it.** The U.S. ranks **33rd of 40 at 1.051×** against a 1.131× mean; Hawaii (1.080×) is also below the mean. Two readings, both worth stating:
+
+1. Booking's U.S. whole-home sample is thin and unrepresentative — 2,165 reviews vs 134,537 hotel, skewed to aparthotel/extended-stay rather than the detached homes Airbnb sells. On that read the U.S. figure is understated.
+2. If it isn't understated, **the U.S. mix tailwind is genuinely weaker than the global number implies** and `MIX_DRIFT_ABNB` should be cut below +0.62%/yr.
+
+Unresolved. Treat +0.62%/yr as the optimistic end of the U.S. range.
+
+**Counter-signal:** VisitBritain reports UK solo overnight trips at **28% in 2024, +3pp on 2023 and +4pp on 2022**. Rising solo travel pushes mean party size down and is a genuine offset in at least one large market.
+
+**Licence:** rectour24 is CC BY-SA 4.0, **non-commercial**. Fine for internal validation; it must not be reproduced in anything client-facing.
