@@ -87,15 +87,15 @@ ws.cell(int(addr["Share of Airbnb guests who would have used a hotel absent Airb
 r += 1
 ws.cell(r, 1, "SEGMENT INPUTS (party size)").font = BOLD; ws.cell(r, 1).fill = GREY
 r += 1
-seg_hdr = ["Segment", "Airbnb booking share", "Airbnb relative stay length", "Hotel leisure party share", "Hotel leisure relative nights", "Hotel rooms per party", "Price ratio 2025 (Airbnb ÷ hotel)", "Mix drift / yr", "Product shift (logit pts/yr)"]
+seg_hdr = ["Segment", "Airbnb booking share", "Airbnb relative stay length", "Hotel leisure party share", "Hotel leisure relative nights", "Hotel rooms per party", "Price ratio 2025 (Airbnb ÷ hotel)", "Mix drift / yr — Airbnb pool", "Mix drift / yr — hotel pool", "Product shift (logit pts/yr)"]
 for j, h in enumerate(seg_hdr):
     c = ws.cell(r, 1 + j, h); c.font = BOLD; c.alignment = Alignment(wrap_text=True)
 ws.row_dimensions[r].height = 42
 seg_vals = {
-    "solo": [0.16, 1.5, 0.20, 0.7, 1.0, 0.54, -0.01, 0.0],
-    "pair": [0.358, 0.95, 0.54, 1.0, 1.0, 1.03, 0.0, 0.0],
-    "3-4": [0.323, 0.9, 0.20, 1.0, 1.5, 0.69, 0.02, 0.0],
-    "5+": [0.159, 0.8, 0.06, 1.0, 2.5, 0.71, 0.04, 0.0],
+    "solo": [0.16, 1.5, 0.20, 0.7, 1.0, 0.54, -0.0063, -0.0027, 0.0],
+    "pair": [0.358, 0.95, 0.54, 1.0, 1.0, 1.03, 0.0, 0.0, 0.0],
+    "3-4": [0.323, 0.9, 0.20, 1.0, 1.5, 0.69, 0.0127, 0.0054, 0.0],
+    "5+": [0.159, 0.8, 0.06, 1.0, 2.5, 0.71, 0.0253, 0.0107, 0.0],
 }
 seg_row = {}
 for g in SEG:
@@ -105,14 +105,14 @@ for g in SEG:
     for j, v in enumerate(seg_vals[g]):
         c = ws.cell(r, 2 + j, v); c.font = BLUE
         c.number_format = PCT if j in (0, 2, 6) else "0.00"
-    ws.cell(r, 8).fill = YELLOW
+    ws.cell(r, 8).fill = YELLOW; ws.cell(r, 9).fill = YELLOW
 r += 1
 ws.cell(r, 1, "Sources: booking share = fitted party-size distribution (research/party_size_distribution.md; anchors: guest arrivals ÷ bookings 2.97, Airbnb '>80% of bookings are group trips'). "
         "Relative stay length: solo = 24% of nights ÷ 16% of bookings (Airbnb 2022); others from Inside Airbnb booked-run lengths by capacity. "
         "Hotel leisure party share = mean of Hawaii DBEDT 2024 hotel-only (Table 43) and Las Vegas Visitor Profile 2024. Relative nights: Portuguese ledger (solo 2.5 vs 3.6). "
         "Rooms per party: 2 people/room, families with small kids 1.5. Price ratio: party_size_cost_crossover.csv - the Jun-2026 Inside Airbnb `price` is a stay quote that ALREADY includes the guest service fee and amortised cleaning, so no fee is added (corrected 7 Sep 2026; the earlier 0.69/1.22/0.80/0.79 counted the 14% fee twice) vs rooms × $158.67 ADR. Descriptive - no formula reads this column. "
-        "Mix drift: Airbnb family nights +15% vs total +8–10% (Airbnb Oct 2024); bedroom nights +12% vs nights +10% (Q2 2026).").font = Font(name="Arial", size=9, italic=True)
-ws.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top"); ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=9); ws.row_dimensions[r].height = 70
+        "Mix drift SPLIT 8 Sep 2026 into two vectors (was one applied to both pools). Airbnb pool implies mean party size +0.62%/yr, from the Inside Airbnb review-text proxy (74m reviews, 123 markets, 2018-25); hotel pool +0.26%/yr, from the Hawaii DBEDT ratio (rental 2.28->2.49 = +0.80%/yr vs hotel 2.22->2.30 = +0.34%/yr, 2013-24 - the only source observing both in one market). The old single vector implied +0.98%/yr for both and flattered the forecast.").font = Font(name="Arial", size=9, italic=True)
+ws.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top"); ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10); ws.row_dimensions[r].height = 70
 
 # year paths
 r += 2

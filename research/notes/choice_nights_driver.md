@@ -266,3 +266,28 @@ A +0.6–0.9%/yr trend is ~+4.4% over seven years — exactly at the edge of wha
 - `PRODUCT_SHIFT` all zero — regulation and product enter nowhere, despite LL18 giving a measured magnitude.
 - `CONTESTABLE = 0.38` — 2014 San Francisco survey, still the single most load-bearing input.
 - Group/meetings (~25% of hotel nights, contracted, non-contestable) still sit inside the leisure pool.
+
+## Model edited on Krish's data, 8 Sep 2026
+
+**1. `US_ADR_PREMIUM` set to 1.05.** Clears the revenue reconciliation ($4.97bn modelled vs $4.76bn reported). **U.S. nights 145.4 → 138.4mm.** Every level scales ~−4.8%; the growth decomposition is unchanged. NA-ex-US rises to 19.6mm in the global build, so global 2025 still ties to the disclosed 533mm.
+
+**2. Mix drift split into two vectors.** One vector was previously applied to *both* pools, assuming Airbnb and hotel parties grow at the same rate. Hawaii DBEDT is the only source observing both in one market and says they don't:
+
+| 2013 → 2024 | | |
+|---|---|---|
+| Rental house | 2.28 → 2.49 | **+0.80%/yr** |
+| Hotel | 2.22 → 2.30 | **+0.34%/yr** |
+
+Rental parties drift **2.35× faster**. Calibration: the *level* from Krish's global review proxy (+0.62%/yr, 2018–25, the window after the mention rate stabilised at ~6%); the *relative* rate from the Hawaii ratio → hotel +0.26%/yr.
+
+| | solo | pair | 3–4 | 5+ | implied mean party growth |
+|---|---|---|---|---|---|
+| Old (both pools) | −0.010 | 0 | 0.020 | 0.040 | +0.98%/yr |
+| `MIX_DRIFT_ABNB` (→ N) | −0.0063 | 0 | 0.0127 | 0.0253 | **+0.62%/yr** |
+| `MIX_DRIFT_HOTEL` (→ M) | −0.0027 | 0 | 0.0054 | 0.0107 | **+0.26%/yr** |
+
+**The previous setup was flattering the forecast** by drifting the whole contestable pool at Airbnb's rate. Mix contribution falls from ~0.9pp to ~0.45pp/yr.
+
+**Combined effect: 2030 U.S. nights 171.1 → 159.3mm, CAGR +3.31% → +2.84%.** Global 533 → 726mm, FY26 +6.6% (vs the team's WS13 base +9.9%).
+
+**3. The Airbnb ADR path is flagged PROVISIONAL.** It currently points at the WS13 overnight base, not the team's final ADR line, which is still outstanding. This is the largest swing factor left — and note the switch rate only bites when an ADR gap opens (5.0 → 10.3 costs just 2.1% at parity), so **the ADR line, not the switch rate, decides the bear case.** Re-point `ABNB_ADR_GROWTH` when it lands.

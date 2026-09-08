@@ -49,7 +49,8 @@ US_SHARE_OF_NA = 0.92             # U.S. = 39% of revenue ($4.76B) / NA revenue 
 # calibration is ~4% too big. US_ADR_PREMIUM below makes the correction one number instead of a
 # footnote. It is left at 1.00 (status quo) so no published figure moves silently; set it to ~1.05
 # to clear the reconciliation. Levels scale; the GROWTH decomposition is unaffected either way.
-US_ADR_PREMIUM = 1.00             # U.S. ADR / NA blended ADR. 1.00 = status quo; ~1.05 clears the gap.
+US_ADR_PREMIUM = 1.05             # SET 8 Sep 2026 (was 1.00): clears the reconciliation.
+                                  # U.S. nights 145.4 -> 138.4mm. Levels scale ~-4.8%; growth unaffected.
 NPB_NA = 4.1                      # NOT USED by this model (kept as the documented NA stay-length
                                   # level; the live lever is STAY_LENGTH below). FY2025 10-K.
 BOOK_SHARE = {"solo": 0.16, "pair": 0.358, "3-4": 0.323, "5+": 0.159}   # fitted party-size distribution
@@ -127,18 +128,25 @@ STAY_LENGTH_BULL = {2025: 4.1, 2026: 4.14, 2027: 4.18, 2028: 4.22, 2029: 4.27, 2
 # Market / price paths (edit these)
 YEARS = [2025, 2026, 2027, 2028, 2029, 2030]
 MARKET_GROWTH = {2026: 0.017, 2027: 0.011, 2028: 0.015, 2029: 0.015, 2030: 0.015}   # CoStar/TE U.S. demand +1.7% 2026, +1.1% 2027; 1.5% thereafter (assumption)
-MIX_DRIFT = {"solo": -0.01, "pair": 0.0, "3-4": 0.02, "5+": 0.04}   # family nights +15% vs Airbnb +8-10%; bedroom nights +12% vs nights +10%
-# VALIDATED 8 Sep 2026 against two independent series: this vector implies mean party size growing
-# +0.98%/yr, against +0.62%/yr (Airbnb review-text proxy 2018-25, 74m reviews / 123 markets) and
-# +0.80%/yr (Hawaii DBEDT rental-house observed, 2.28 -> 2.49, 2013-2024). So it is ~1.2x the
-# observed rate - modestly aggressive but the right order of magnitude, not the 4x I feared before
-# the review series existed. Note Hawaii HOTEL parties also drift up (+0.34%/yr), and this model
-# applies the same drift vector to both pools, which is conservative: the observed Airbnb-vs-hotel
-# divergence (0.80 vs 0.34) is larger than modelled.
-# Cohort support for MIX_DRIFT (Alchemer 2026, n=1,014): planned lodging next 12 months is
-# "mostly rentals" 37% vs "mostly hotels" 29% for under-30s, but 11% vs 64% for 61+.
-# Cohort replacement therefore pushes the contestable pool toward rental-leaning, larger parties;
-# the same survey cautions the young cohort is fickle (39% "very likely" to rebook).
+# MIX DRIFT - SPLIT INTO TWO VECTORS 8 Sep 2026, calibrated on Krish's party-size series (PR #33).
+# Until now one vector was applied to BOTH pools, which assumed Airbnb and hotel parties grow at the
+# same rate. They do not. Hawaii DBEDT is the only source observing both in the same market:
+#   rental house 2.28 -> 2.49 (+0.80%/yr)   hotel 2.22 -> 2.30 (+0.34%/yr)   2013-2024
+# i.e. rental-type parties drift 2.35x faster than hotel parties.
+# Anchoring: the LEVEL comes from the global review proxy (abnb_party_size_reviews_quarterly.csv,
+# 74m reviews / 123 markets, +0.62%/yr 2018-25 - the window after the mention rate stabilised at ~6%);
+# the RELATIVE rate comes from the Hawaii ratio, giving the hotel side +0.26%/yr.
+# The old single vector implied +0.98%/yr for both, so this cuts the Airbnb side by ~a third and the
+# hotel side by ~three quarters. Net effect is a LOWER mix contribution to nights growth - the
+# previous setup was flattering the forecast by drifting the whole contestable pool at Airbnb's rate.
+# The composition story behind it: couples 50% -> 25% and families 31% -> 46% (2012-2025), with the
+# size rise coming from guests booking BIGGER HOMES rather than the same homes hosting bigger groups.
+MIX_DRIFT_ABNB = {"solo": -0.0063, "pair": 0.0, "3-4": 0.0127, "5+": 0.0253}    # implies +0.62%/yr
+MIX_DRIFT_HOTEL = {"solo": -0.0027, "pair": 0.0, "3-4": 0.0054, "5+": 0.0107}   # implies +0.26%/yr
+MIX_DRIFT = MIX_DRIFT_ABNB   # back-compat alias; project() takes both explicitly
+# M (the contestable pool) is ~96% hotel party-nights, so it takes the hotel vector; N (own-category
+# Airbnb) takes the Airbnb vector. Cohort support (Alchemer 2026, n=1,014): under-30s plan "mostly
+# rentals" 37% vs "mostly hotels" 29%; 61+ are 11% vs 64%. Cohort replacement pushes the same way.
 HOTEL_ADR_GROWTH = {2026: 0.031, 2027: 0.016, 2028: 0.025, 2029: 0.025, 2030: 0.025}  # CoStar/TE
 # Airbnb ADR - WIRED TO THE TEAM MODEL 7 Sep 2026 (model/assumptions.md, overnight WS13 base case):
 # ADR ex-FX +3.0% 2H26 (1H26 actual +4% -> FY26 blends ~+3.5%), FY27/FY28 +2.5%; held at +2.5%
@@ -197,7 +205,7 @@ def calibrate():
     return cal
 
 
-def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HOTEL_ADR_GROWTH, mix=MIX_DRIFT,
+def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HOTEL_ADR_GROWTH, mix_abnb=MIX_DRIFT_ABNB, mix_hotel=MIX_DRIFT_HOTEL,
             mkt=MARKET_GROWTH, shift=PRODUCT_SHIFT, cat=CATEGORY_GROWTH, stay=STAY_LENGTH):
     base = cal[cal.segment != "TOTAL"].set_index("segment")
     M = base.contestable_pool_mm.to_dict()
@@ -218,8 +226,8 @@ def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HO
         M1 = {g: M[g] * (1 + mkt[y]) for g in SEG}
         s_market = sum(N[g] + M1[g] * P[g] for g in SEG)
         # step 2: segment mix drift (both pools)
-        M2 = {g: M1[g] * (1 + mix[g]) for g in SEG}
-        N2 = {g: N[g] * (1 + mix[g]) for g in SEG}
+        M2 = {g: M1[g] * (1 + mix_hotel[g]) for g in SEG}   # pool is ~96% hotel
+        N2 = {g: N[g] * (1 + mix_abnb[g]) for g in SEG}
         s_mix = sum(N2[g] + M2[g] * P[g] for g in SEG)
         # step 3: category adoption on own-category nights
         N3 = {g: N2[g] * (1 + cat[y]) for g in SEG}
