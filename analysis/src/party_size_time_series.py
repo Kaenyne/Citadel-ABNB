@@ -6,14 +6,31 @@ Method: Airbnb discloses CUMULATIVE guest arrivals at milestones (400M Aug-2018,
 in the filings. Differencing consecutive milestones and dividing by bookings made in the same
 window gives average people per booking for that window - a genuine, non-overlapping time series.
 
-HEADLINE (7 Sep 2026): average party size is FLAT at ~2.95-3.0 for seven years, and the most
-recent window (Oct-2024 -> Dec-2025) is 2.92 - slightly BELOW the long-run mean. There is no
-evidence in Airbnb's own disclosures that the average booking is carrying more people over time.
+PROVENANCE (Airbnb IPO'd Dec-2020; the pre-IPO inputs are still primary sources):
+  - Nights booked 2017/2018/2019 (185.8 / 250.3 / 326.9mm): the S-1 (Nov-2020), which discloses
+    three years of pre-IPO history as any IPO filing must. SEC-filed.
+  - Arrivals 400mm (Aug-2018) and 500mm (Mar-2019): Airbnb Newsroom press releases issued while
+    private. NOT audited, NOT SEC-filed - marketing announcements.
+  - 825mm (Sep-2020): S-1, quoted as "over 825 million" - a FLOOR.
+  - 1bn (Oct-2021) and 2bn (Oct-2024): Newsroom. The 2-billionth arrival is the most precise point
+    in the series - Airbnb identified the specific guests, so it is a dated event, not a rounding.
+  - 2.5bn (Dec-2025): FY2025 10-K, "over 2.5 billion" - a FLOOR, and the weakest link below.
+
+HEADLINE (7 Sep 2026, CORRECTED): the LEVEL is ~2.95 people per booking and is well supported.
+The six long windows that do NOT depend on the 2025 figure - i.e. those anchored on the precise
+2-billionth-arrival event - span 2.81-3.05 with a mean of 2.953.
+
+There is NO RELIABLE TREND in this data, and an earlier draft of this script overclaimed one.
+"Over 2.5 billion" is a floor: if the true cumulative figure is 2.55bn rather than 2.50bn, the
+final window moves from 2.93 to 3.22 and every window ending Dec-2025 rises ~0.15. A ~4% error in
+one rounded 10-K disclosure flips the conclusion from "party size falling ~4%" to "rising ~5%".
+So: the level is ~2.95; the direction is NOT MEASURABLE with the milestones Airbnb publishes.
 
 This matters because it contradicts the natural reading of the group-travel narrative. Reconciling
 the two:
   - Bedroom Nights Booked +12% y/y vs Nights +10% (Q2-2026) => bedrooms per stay rising ~1.8%/yr
-  - Guests per booking flat  => GUESTS PER BEDROOM IS FALLING ~1.8%/yr
+  - Guests per booking showing no measurable trend => guests per bedroom probably falling,
+    but this rests on the level being stable rather than on a measured decline
   - i.e. the same size group is booking MORE SPACE, not more people per booking.
   - Consistent with Inside Airbnb: guests fill only ~half of listed capacity.
   - Also consistent with a POLARISING distribution at a constant mean: solo travel rising
@@ -74,9 +91,16 @@ def main():
     w_new = df[(df.start == "2021-10-15") & (df.end == "2025-12-31")].iloc[0]
     marg = ((w_new.guest_arrivals_mm - w_old.guest_arrivals_mm) /
             (w_new.bookings_mm - w_old.bookings_mm))
-    print(f"\nMarginal party size, Oct-2024 -> Dec-2025 (differencing two long windows): {marg:.2f}")
-    print(f"  vs the Oct-2021 -> Oct-2024 window at {w_old.guests_per_booking:.2f} "
-          f"=> {(marg / w_old.guests_per_booking - 1) * 100:+.1f}% - flat to slightly DOWN, not up.")
+    print(f"\nMarginal party size, Oct-2024 -> Dec-2025: {marg:.2f} AT EXACTLY 2.5bn cumulative.")
+    print("  But the 10-K says 'over 2.5 billion'. Sensitivity to that floor:")
+    dbk = w_new.bookings_mm - w_old.bookings_mm
+    for cum in (2500, 2550, 2600):
+        print(f"    cumulative {cum/1000:.2f}bn -> {(cum - 2000) / dbk:.2f} people/booking")
+    print("  => the DIRECTION is not identified. Only the level (~2.95) is.")
+    clean = df[(df.years >= MIN_INTERPRETABLE_YEARS) & (df.end != "2025-12-31")]
+    print(f"\nWindows immune to the 2025 floor (long, ending Oct-2024 or earlier), n={len(clean)}: "
+          f"mean {clean.guests_per_booking.mean():.3f}, range {clean.guests_per_booking.min():.2f}"
+          f"-{clean.guests_per_booking.max():.2f}  <- the defensible result")
 
     bpn = BEDROOM_NIGHTS_TTM_Q2_26 / NIGHTS_TTM_Q2_26
     drift = (1 + BEDROOM_NIGHTS_GROWTH) / (1 + NIGHTS_GROWTH) - 1
