@@ -24,8 +24,17 @@ SEG = ["solo", "pair", "3-4", "5+"]
 # platform_nights: Eurostat guest-nights via 3 platforms, mm (DDN-20260401-1).
 # hotel_nights: Eurostat I551 guest-nights, mm (via TradingEconomics mirrors); note period.
 # abnb_share: Airbnb share of STR listings (myDataValue Jul/Aug-2026; France = AirDNA count).
-#   Listing share proxies the nights share - flagged, not measured. France is the outlier (69%);
-#   elsewhere supply splits ~50/50 with Booking.
+#   Listing share proxies the nights share - flagged, not measured. VALIDATED 7 Sep 2026 by direct
+#   fetch of each country page (exact counts, Airbnb snapshot 2026-07-07 / Booking 2026-06-17):
+#     France  802,763 / 360,653 -> Airbnb 69.0%   (Airbnb stronghold)
+#     Spain   234,413 / 238,087 -> Airbnb 49.6%   (Booking ahead by 3,674 - the ONLY one)
+#     Italy   454,258 / 395,275 -> Airbnb 53.5%
+#     Germany 241,989 / 228,579 -> Airbnb 51.4%
+#   NOTE: Vrbo is NOT in this dataset, so all four shares are Airbnb-vs-Booking only and overstate
+#   Airbnb's true share of ALL platform nights. Booking's STR supply also skews professionally
+#   managed / higher occupancy, so its NIGHTS share likely exceeds its listing share - i.e. these
+#   numbers are an UPPER bound on Airbnb's nights share. See emea_nowcast.py: Airbnb has undergrown
+#   the EU platform aggregate two years running, which is consistent with that bias.
 COUNTRIES = {
     "France":  {"platform_nights": 213.0, "hotel_nights": 220.2, "hotel_period": "2025", "abnb_share": 0.69},
     "Spain":   {"platform_nights": 189.0, "hotel_nights": 363.1, "hotel_period": "2024", "abnb_share": 0.50},

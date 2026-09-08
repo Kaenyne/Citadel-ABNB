@@ -122,3 +122,51 @@ The party-size gradient replicates in every country (~2× per step, same shape a
 - **Rest-of-world plug replaced.** `analysis/src/choice_nights_driver_global.py` → `choice_driver_global_projection.csv` + **Global** sheet: US (full model) + EMEA (4-country calibration scaled to 215mm, category 7%→5% vs ~10% implied) + NA-ex-US (tracks US) + LatAm/APAC explicit fades from +18%/+15%. Global: 533 → 743mm by 2030.
 - **Team ADR line wired** (`model/assumptions.md`, WS13 base, ex-FX): FY26 ~+3.5%, FY27/28 +2.5%. Replaces the +5%/+3% placeholder and narrows the ADR gap → US 2030 nights **171.1mm (3.3% CAGR)** — higher than the old base despite beta doubling to 5.0. The bear mechanism runs entirely through the ADR gap, and the team's base case has almost none.
 - **Reconciliation vs team model:** WS13 base total nights FY26 +9.9 / FY27 +8.9 / FY28 +7.4%; this build +7.1 / +7.2 / +7.1%. The gap is nearly all North America — the choice model says NA at the team's pace needs share gains or category adoption above the 2025 exit rate.
+
+## 7 Sep 2026 (validation pass): three corrections to earlier claims
+
+**1. "Booking is winning European STR supply" — WRONG, retracted.** Verified by direct fetch of each country page (Airbnb snapshot 2026-07-07 / Booking 2026-06-17):
+
+| | Airbnb | Booking | Airbnb share |
+|---|---|---|---|
+| France | 802,763 | 360,653 | **69.0%** |
+| Spain | 234,413 | 238,087 | 49.6% |
+| Italy | 454,258 | 395,275 | 53.5% |
+| Germany | 241,989 | 228,579 | 51.4% |
+
+Airbnb *leads* in three of four; Booking leads only in Spain, by 3,674 listings (1.5%). The correct statement is "France is an Airbnb stronghold; elsewhere the two are at parity." Vrbo is absent from this dataset, so every share is Airbnb-vs-Booking only and is an **upper bound** on Airbnb's share of all platform supply.
+
+**The defensible version of the claim is in nights, not listings** — see `emea_nowcast.py`: Airbnb EMEA grew +7.0% in 2025 against an EU platform market of +11.5%, undergrowing by 4.5pp (and by 11.5pp in 2024, though that year is contaminated by Tripadvisor's exit).
+
+**2. The Eurostat "nowcast edge" — WRONG, retracted.** Eurostat's country-level platform series had reached only Q1-2026 as of Sep-2026; Airbnb reported Q1-2026 in May-2026 and Q2-2026 on 13 Aug. **Eurostat lags Airbnb by ~4 months and cannot front-run a print.** What it does give: an official-statistics read on Airbnb's share trend, and country detail Airbnb never discloses (it reports one EMEA aggregate).
+
+**3. France 31% is denominator-dependent and should be quoted as a range.** Hotels (I551, 220.2mm guest-nights) are only **47% of French tourist-accommodation capacity**. France is Europe's camping superpower — 154mm camping nights in 2025, 37.2% of all EU camping — plus ~97.5mm holiday/short-stay (I552) nights:
+
+| Denominator | Airbnb share |
+|---|---|
+| Hotels only (as published) | 29.6% |
+| + camping | 22.6% |
+| + camping + holiday/short-stay | 19.7% |
+| joint stress (Airbnb 55% of platform + full denominator) | **16.4%** |
+
+I552 overlaps Airbnb's own supply, so the full-denominator figure double-counts — the honest range is **~20-30%, not a point estimate of 31%**. Every correction pushes the same way: down. France is still the highest-share market in the set, but the gap to Spain/Italy is narrower than the headline implies.
+
+## Party size over time — the mix thesis needs restating
+
+`analysis/src/party_size_time_series.py` → `airbnb_party_size_time_series.csv`. Differencing Airbnb's cumulative guest-arrival milestones against bookings in the same window gives a genuine non-overlapping series:
+
+| Window | Years | Guests/booking |
+|---|---|---|
+| Aug-18 → Mar-19 | 0.6 | 2.33 |
+| Mar-19 → Sep-20 | 1.5 | 3.22 |
+| Sep-20 → Oct-21 | 1.0 | 2.52 |
+| Oct-21 → Oct-24 | 3.0 | **3.05** |
+| Oct-24 → Dec-25 | 1.2 | **2.92** |
+
+Windows under ~2.5yr are dominated by the arrival-vs-booking lead-time mismatch (hence 2.33 next to 3.22). The ten long windows (≥2.5yr) span 2.81–3.05, mean **2.96**.
+
+**Average party size has been flat at ~2.95–3.0 for seven years, and the most recent period is slightly DOWN (-4.1% vs the prior window).** There is no evidence in Airbnb's own disclosures that the average booking carries more people over time.
+
+Reconciling with the group-travel narrative (multigenerational travel 47% of travellers in 2026, +17% vs 2024; 4+ bedroom homes the fastest-growing category; Bedroom Nights +12% vs Nights +10%): bedrooms per stay is rising ~1.8%/yr while guests per booking is flat, so **guests per bedroom is falling ~1.8%/yr — the same size group is booking more space.** Consistent with Inside Airbnb (guests fill ~half of listed capacity). Also consistent with a *polarising* distribution at a constant mean: solo travel rising (~25% of Airbnb guests travel solo) and multigenerational rising, hollowing the middle.
+
+**Implication for the pitch: "group travel" shows up in ADR, not in nights.** That is bullish for revenue per booking and bearish-to-neutral for the nights line — closer to the bear thesis than the bull one. The model's MIX_DRIFT (5+ at +4%/yr) is defensible only as a *distribution-widening* assumption, not as rising mean party size; it should be re-derived, and the 5+ drift is a candidate to cut.
