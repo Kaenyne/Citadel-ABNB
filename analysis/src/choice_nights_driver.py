@@ -68,6 +68,17 @@ HOTEL_ALOS = 2.1                          # NOT USED - hotel nights enter as roo
                                           # ROOMS_PER_PARTY, so ALOS never enters. Kalibri Labs. Kept for reference.
 LEIS_PARTY = {"solo": 0.20, "pair": 0.54, "3-4": 0.20, "5+": 0.06}     # leisure hotel parties: mean of Hawaii hotel-only & Las Vegas 2024
 LEIS_NIGHTS_REL = {"solo": 0.7, "pair": 1.0, "3-4": 1.0, "5+": 1.0}    # Portuguese ledger: solo 2.5 vs 3.6 nights
+# ROOMS_PER_PARTY - was the top unsourced input; now has TWO checks (8 Sep 2026), both supportive.
+# It implies leisure guests-per-occupied-room of 2.00 (pair), 2.27 (3-4) and 2.20 (5+).
+#  1. JAPAN, computed from two official sources: JTA total guest-nights 653.48mm in 2025 divided by
+#     room-nights (MHLW stock 1.44mm rooms x 365 x JTA occupancy 61.8% = 325mm) = 2.01 guests per
+#     occupied room. That is a BLENDED figure including business travel, which drags it down, so
+#     the leisure-only value implied here (2.2-2.3) sits correctly above it.
+#  2. The hotel industry's "double occupancy factor": ~1.2 for business hotels, ~1.5 spa,
+#     1.8-2.5 for holiday hotels. This vector's leisure implication (2.0-2.27) sits mid-range of
+#     the holiday band, which is the right band since business is added separately at 1 room/party.
+# Still not a US-specific measurement - no US source publishes guests per occupied room - but it is
+# no longer uncited, and both checks say the level is right rather than convenient.
 ROOMS_PER_PARTY = {"solo": 1.0, "pair": 1.0, "3-4": 1.5, "5+": 2.5}
 
 # Descriptive only - carried into the calibration output for context; no equation reads it.
@@ -76,6 +87,18 @@ ROOMS_PER_PARTY = {"solo": 1.0, "pair": 1.0, "3-4": 1.5, "5+": 2.5}
 # (0.69 / 1.22 / 0.80 / 0.79). See analysis/src/party_size_crossover.py.
 PRICE_RATIO_2025 = {"solo": 0.54, "pair": 1.03, "3-4": 0.69, "5+": 0.71}  # guest-quoted Airbnb / hotel rooms x ADR, party_size_cost_crossover.csv
 CONTESTABLE = 0.38                # share of Airbnb guests who would have gone to a hotel absent Airbnb (F&F: 62% would not)
+# CHALLENGED 8 Sep 2026, and the challenge deserves to be carried. Airbnb's own commissioned
+# economists (Charles River Associates, "The Cost of STR Restrictions", Dec-2024) analysed the same
+# NYC LL18 event this model validates against and concluded the OPPOSITE: "Limited substitution
+# from STRs to hotels is supported by hotel occupancy data, which shows no material increase in NYC
+# hotel occupancy rates following LL18." They separately adjust their lost-nights estimates down by
+# 70% (NYC) / 60-62% (Boston, New Orleans, Philadelphia) for substitution to alternative
+# accommodation generally - so their view is that displaced guests substituted, just not to hotels.
+# The disagreement is entirely about whether NYC hotels were CAPACITY-CONSTRAINED. They were at
+# ~84% occupancy, so the EJPE 2025 diff-in-diff reading - that the shift showed up in PRICE
+# (ADR +$14-19) rather than in occupancy - is the more coherent one, and it is the reading this
+# model reproduces. But note the NYC validation is contested by a party with sight of Airbnb's own
+# data, and do not present it as uncontested.
 
 # SWITCH RATE (called beta in the econometrics literature - renamed 7 Sep 2026 because 'beta'
 # collides with equity beta in a pitch context): the logit share sensitivity to ln(relative

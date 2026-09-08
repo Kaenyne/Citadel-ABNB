@@ -527,3 +527,64 @@ Updated regional output: NA +2.13%, EMEA +4.22%, **LatAm +11.97%**, **APAC +11.4
 3. **Coverage bias runs one way everywhere.** Official surveys count registered establishments and systematically exclude the small-operator segment Airbnb competes with, so hotel-side growth measured this way likely **understates** total lodging demand.
 
 Brazil still lacks a clean national guest-nights series (IBGE publishes capacity via SIDRA) — the highest-value single remaining pull in LatAm.
+
+## Is the model bottom-up or top-down? — correcting my own description (8 Sep 2026)
+
+**It is top-down, and I described it wrongly earlier.** When I reconciled against the team model I called this "the bottom-up build." That was sloppy and worth fixing, because the distinction matters for how much independent validation it provides.
+
+What actually goes in:
+
+| Step | Source | Direction |
+|---|---|---|
+| U.S. hotel room nights (1.3bn) | STR/CoStar national aggregate | **top-down** |
+| Business/leisure split (42/58) | AHLA national aggregate | **top-down** |
+| Leisure party mix (20/54/20/6) | Hawaii + Vegas surveys, applied nationally | **top-down** |
+| Rooms per party | assumption, now checked against Japan | assumption |
+| Airbnb U.S. nights | disclosed NA total × a revenue-share proxy | **top-down** |
+| Forward years | growth rates applied to those aggregates | **top-down** |
+
+So it is a **market-sizing / share model with a party-size decomposition** — top-down throughout. Nothing is built up from units.
+
+A genuinely bottom-up nights model would be `listings × availability × occupancy × stay length`, which is what AirDNA does. **We have the ingredients and do not use them**: Inside Airbnb gives listings, booked run lengths and active-listing counts for 8–13 U.S. cities. Building that would be a real independent check on the *level* — currently the level rests entirely on the 10-K regional table and the revenue-share proxy, which is exactly the input the audit found to be ~4% too high. That is the most valuable unbuilt piece in the nights work after the LatAm/APAC share calibration.
+
+## Party size across 122 world cities — the divergence question, answered per city
+
+`analysis/src/party_size_divergence_by_city.py` → `party_size_trend_by_market.csv`. Uses Krish's per-market review panel (no new pull): 122 markets, 36 countries, ≥400 stated compositions/year, ≥8 years, log-linear trend with a t-stat per market.
+
+| Region | n | Mean | Median | Significant (t>2) | Positive |
+|---|---|---|---|---|---|
+| **North America** | 42 | **+0.66%** | +0.71% | **52%** | **81%** |
+| EMEA | 57 | −0.01% | +0.02% | 12% | 51% |
+| LatAm | 7 | +0.26% | +0.17% | 14% | 57% |
+| APAC | 16 | −0.19% | −0.10% | 19% | 38% |
+| **All** | 122 | +0.21% | +0.12% | 27% | 60% |
+
+**Two conclusions, pulling opposite ways:**
+
+1. **The U.S. model's mix drift is validated.** `MIX_DRIFT_ABNB` implies +0.62%/yr; North America's 42 markets average **+0.66%/yr**, with half individually significant and 81% positive. Independent cut of the data, close agreement.
+2. **The global "+0.62%" was really a North America number.** EMEA is flat (−0.01%, only 12% significant) — which **independently corroborates the Spain INE microdata**, two different instruments reaching the same answer. APAC is flat to slightly negative.
+
+Dispersion is the other headline: **sd 0.73%/yr**, from Salem OR +3.8% to Singapore −2.8%. Anglo markets lead (US +0.67, Canada +0.60, UK +0.52); continental Europe is flat to negative (Italy −0.08, France −0.05, Switzerland −0.27). "Party sizes are rising" is a North American fact, not a global one.
+
+## ROOMS_PER_PARTY — was the top unsourced input, now has two supportive checks
+
+It implies leisure guests-per-occupied-room of 2.00 (pair), 2.27 (3–4), 2.20 (5+).
+
+1. **Japan, computed from two official sources:** JTA total guest-nights 653.48mm ÷ room-nights (MHLW stock 1.44mm rooms × 365 × JTA occupancy 61.8% = 325mm) = **2.01 guests per occupied room**. That is a *blended* figure including business travel, so the leisure-only implication here (2.2–2.3) correctly sits above it.
+2. **Industry "double occupancy factor":** ~1.2 business hotels, ~1.5 spa, **1.8–2.5 holiday hotels**. The vector's leisure implication sits mid-range of the holiday band — the right band, since business is added separately at 1 room/party.
+
+Still not a U.S.-specific measurement (no U.S. source publishes guests per occupied room), but no longer uncited, and both checks say the level is right rather than convenient.
+
+## CONTESTABLE = 0.38 — challenged, and the challenge should be carried
+
+No newer substitution survey exists; F&F's 2014 figure is still the only direct estimate. But **Airbnb's own commissioned economists reach the opposite conclusion from the NYC event this model validates against**. Charles River Associates, *The Cost of STR Restrictions* (Dec-2024):
+
+> "Limited substitution from STRs to hotels is supported by hotel occupancy data, which shows no material increase in NYC hotel occupancy rates following LL18."
+
+They separately adjust lost-nights estimates down by **70% (NYC)** and 60–62% (Boston, New Orleans, Philadelphia) for substitution to alternative accommodation *generally* — so their view is that displaced guests did substitute, just not to hotels.
+
+**The disagreement is entirely about whether NYC hotels were capacity-constrained.** At ~84% occupancy the EJPE 2025 reading — that the shift appeared in **price** (ADR +$14–19) rather than occupancy — is the more coherent one, and it is what this model reproduces. But the NYC validation is contested by a party with sight of Airbnb's own data, and **should not be presented as uncontested.**
+
+## Brazil hotel side — still not found
+
+IBGE's *Pesquisa de Serviços de Hospedagem* (SIDRA tables 3435, 6517, 6518) publishes **capacity only** — establishments, housing units, beds — for capitals and metropolitan regions. No guest-nights or occupancy series. The FOHB chain panel remains the only demand-side read (occupancy +2.1%, ADR +10.5% in FY25), and it is a 583-hotel urban-chain sample, not a census. **Brazil remains the largest unmeasured piece of the fastest-growing region.**
