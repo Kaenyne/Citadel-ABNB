@@ -1,7 +1,7 @@
 # ADR: history, reconstruction, and what actually drives it
 
 Krish with Claude Code, 7 Sep 2026. Branch `krish/adr-decomposition`.
-Scripts `analysis/src/adr/01`-`07`; outputs `data/processed/adr/`.
+Scripts `analysis/src/adr/01`-`08`; outputs `data/processed/adr/`.
 
 ---
 
@@ -15,20 +15,32 @@ Scripts `analysis/src/adr/01`-`07`; outputs `data/processed/adr/`.
 2. **The unexplained line is the finding.** In 2025 it is **+3.97pp against an ADR move of
    +3.02%** — larger than the whole move. 2024 is +0.95pp (58% of the move). We can explain
    FX and geography; we cannot explain the rest from public data.
-3. **Management's "about half of ADR growth is bedroom mix" does not survive its own
-   arithmetic.** Priced through the hedonic coefficients, Airbnb's *own* disclosed +2pp
-   bedroom-night wedge is worth about **+1.26pp of ADR**, not +2pp, because ADR responds to
-   bedrooms with an elasticity well below one. Our independent measurement of the same window
-   gives a +1.41pp wedge worth **+0.89pp of ADR**. Against ex-FX ADR growth of +4%, unit-size
-   mix is roughly **a fifth to a quarter of the move, not a half**.
+3. **The consensus reading of the bedroom-nights disclosure -- including our own WS06 --
+   maps a +2pp bedroom-night wedge onto +2pp of ADR. That mapping is wrong.** ADR responds to
+   bedroom count with a local elasticity of **0.23**, stable across both panels (0.2289 on 12
+   urban markets, 0.2312 on 29): the average booked listing has 1.65 bedrooms, so one more is
+   +61% of bedroom count but only **+15.05%** of price on Airbnb's own quote data. Our direct
+   measurement of both size channels on 29 markets gives **+0.63pp of ADR**. Against ex-FX ADR
+   growth of +4%, unit-size mix is roughly **a sixth of the move, not a half**.
+   **Do not scale by the ADR-per-wedge ratio** -- it is 0.629 on the 12-market panel and 0.913
+   on the 29-market one, because capacity and bedroom growth are not proportional across
+   samples. Use the structural elasticity or the direct measurement, never the sample ratio.
 4. **The size-mix story is a North America and Europe phenomenon, and Airbnb's growth is not.**
-   2Q26 window: NA +1.97pp, EMEA +1.56pp, APAC +0.29pp, LatAm −0.06pp. Nights growth is
-   concentrated in LatAm and APAC, where we measure essentially no size wedge. Geographic mix
-   and size mix pull against each other, which is why blended ADR moves so little.
-5. **Geographic mix has been negative every year since 2021 and is getting worse**: −0.5,
+   Now on 29 markets (was 12): NA +1.97pp, EMEA +1.56pp, **APAC +0.08pp (15 markets, was
+   Sydney alone), LatAm −0.89pp (4 markets, was Mexico City alone)**. Nights growth is
+   concentrated in LatAm and APAC, where the size wedge is nil or negative. Geographic mix and
+   size mix pull against each other, which is why blended ADR moves so little. Enlarging the
+   panel **cut the global wedge roughly in half** (+1.41pp → +0.69pp; ADR +0.89 → +0.63pp), so
+   the panel now supports *less* of the disclosed ≥+2pp, not more.
+5. **The obvious explanation for that gap has been tested and rejected.** The natural defence of
+   the disclosure is that our dense-urban panel misses non-urban family stock where the size
+   shift happens. It does not: non-urban markets show a **smaller** wedge (+0.30pp on 9 markets,
+   capacity actually **−0.14% y/y**) than urban (+0.87pp on 20). The urban panel was biased
+   **up**, not down.
+6. **Geographic mix has been negative every year since 2021 and is getting worse**: −0.5,
    −2.8, −1.1, −1.2, **−1.6pp**. Every region's ADR grew faster than the blend. Anyone reading
    blended ADR ex-FX as a pricing signal is under-reading like-for-like pricing in all four regions.
-6. **Two errors in existing merged work were found and are corrected here** (section 5).
+7. **Two errors in existing merged work were found and are corrected here** (section 5).
 
 ---
 
@@ -41,7 +53,7 @@ Scripts `analysis/src/adr/01`-`07`; outputs `data/processed/adr/`.
 | ADR ex-FX, quarterly | 2Q22 (disclosed) | **1Q20** (9 reconstructed + 17 disclosed) | same |
 | Regional ADR levels, annual | none | **2020-2025**, from 10-K | `01_regional_annual.csv` |
 | Regional ADR, quarterly | none | **1Q21-2Q26**, basis-flagged | `04_regional_quarterly.csv` |
-| Unit-size mix | one disclosed point | **196-dump panel, 41 markets** | `05_size_mix_panel.csv` |
+| Unit-size mix | one disclosed point | **298-dump panel, 29 paired markets** | `05_`, `08_size_mix_*` |
 | Like-for-like price | residual plug | **externally measured + error line** | `06_measured_price_quarterly.csv` |
 
 ---
@@ -146,12 +158,8 @@ unit-size mix is ~a fifth to a quarter of the move — not "about half".
 about 91% is booking volume reallocating onto bigger *existing* homes. That is demand behaviour,
 which is management's stated mechanism, not the listing base drifting bigger.
 
-**Regional, and this cuts against the story:** NA +1.97pp, EMEA +1.56pp, APAC +0.29pp,
-LatAm −0.06pp. **Caveat that matters: LatAm rests on Mexico City alone and APAC on Sydney
-alone.** Only NA (7 cities) and EMEA (3) are properly sampled. The direction is corroborated
-independently by the OneDrive levels — LatAm is the smallest-unit region on both the OneDrive
-and repo panels — but the regional *wedge* is one city per growth region and should be
-presented as indicative.
+**Regional — extended to 29 markets (section 4.2a).** The one-city-per-growth-region caveat
+is gone.
 
 **The artifact that nearly wrecked it, and is a warning for any future Inside Airbnb work:**
 the `bedrooms` field's population is not stable and shifts twice inside the test window, almost
@@ -161,6 +169,61 @@ change as a size trend and returns **+1.44pp of ADR contribution against +0.89pp
 coverage-robust measure. Rejected and recorded. The gate (drop dumps below 80% whole-home
 coverage, drop pairs with >10pp coverage drift) excluded Barcelona, which had been producing a
 spurious −6.9pp wedge.
+
+### 4.2a Extending the panel into LatAm and APAC
+
+`08_size_mix_latam_apac.py` (imports 05's functions directly, so the two builds cannot
+diverge), `08_size_mix_extended_*.csv`, `08_acquisition_log.csv`.
+
+2,553 ranged-GET probes against the Inside Airbnb CDN found 130 live dumps and 1,697 gone;
+118 downloaded, 12 taken from the OneDrive pull. **17 of 21 new markets paired.** Retention is
+patchy rather than a clean cutoff, and the get-the-data page *lags* the CDN — every target
+market has July and August 2026 dumps the page does not list, found by daily date probing, and
+those rescued Melbourne.
+
+Not obtainable: **são-paulo, bogotá** (Inside Airbnb only added them in 2026; no 2025 dump
+exists), **hong-kong** (whole-home `bedrooms` coverage 78.7-78.8%, below the 80% floor),
+**buenos-aires** (coverage drift 99.9% → 85.7%, over the 10pp limit).
+
+| 2Q26 window | 05 baseline | extended |
+|---|---|---|
+| NA | +1.97pp wedge / +1.36pp ADR, 7 cities | unchanged |
+| EMEA | +1.56pp / +0.90pp, 3 cities | unchanged |
+| **APAC** | +0.29pp / +0.40pp, **Sydney alone** | **+0.08pp / +0.32pp, 15 markets, 41 pairs** |
+| **LatAm** | −0.06pp / +0.25pp, **Mexico City alone** | **−0.89pp / +0.23pp, 4 markets, 13 pairs** |
+| **Panel** | +1.41pp / +0.89pp, 12 markets | **+0.69pp / +0.63pp, 29 markets, 87 pairs** |
+
+**The finding holds and strengthens.** Size mix is a NA/EMEA phenomenon; in the regions
+carrying 52% of Airbnb's nights growth the wedge is nil (APAC) or negative (LatAm). And the
+enlarged panel *halves* the global wedge, so Inside Airbnb now supports **less** of the
+disclosed ≥+2pp than the urban-only panel did.
+
+**Urban vs non-urban: the suspicion is refuted with the sign reversed.**
+
+| | markets | wedge | capacity y/y | ADR |
+|---|---|---|---|---|
+| urban | 20 | +0.87pp | +1.43% | +0.73pp |
+| non-urban | 9 | +0.30pp | **−0.14%** | +0.08pp |
+
+The natural defence of the disclosure — that a dense-urban panel misses non-urban family stock —
+is wrong. Eight Australian regional/coastal markets give +0.21pp against APAC urban +0.75pp,
+with capacity per booked night actually falling. **The urban panel was biased up, not down.**
+
+Robustness: market-unweighted LatAm +0.19pp / APAC +0.29pp; capacity-only with the bedrooms
+gate relaxed (so Hong Kong and Buenos Aires re-enter) gives the same ranking — NA +0.83pp,
+EMEA +0.68pp, APAC +0.56pp, LatAm +0.22pp. Scope flags move nothing (APAC +0.08 → −0.05pp
+ignoring them), and no 2Q26 pair is scope-unverified. The recomputed `partial_scope` flag
+reproduces WS21's on 168/168 repo dumps.
+
+**The `bedrooms` metadata artefact fires harder outside the West.** Private-room population
+falls from 0.86-0.99 (2025) to 0.22-0.51 (2026) in *every* new market (Tokyo 0.956 → 0.452,
+Buenos Aires 0.994 → 0.277, Singapore 0.885 → 0.432). The rejected `bedrooms_f` variant would
+have printed APAC +0.67pp and LatAm +0.72pp instead of +0.32 / +0.23 — two to three times too
+high. Pinning private rooms at one bedroom is what neutralises it.
+
+One outlier to know: **Singapore −5.84pp** on nights −18% (3,659 → 3,097 listings), scope ratio
+0.98 — a real contraction consistent with Singapore's STR rules, not a scrape artefact. The
+APAC median market wedge is +0.43pp, so it does not drive the regional conclusion.
 
 ### 4.3 Like-for-like price — measured, and the measurement fails
 
@@ -240,8 +303,8 @@ anything — but nobody should quote a LOS number as measured.
 | Parameter | Value | Confidence |
 |---|---|---|
 | Geographic mix drag, FY27 | −1.5 to −1.8pp, worsening with LatAm/APAC share | **High** — 10-K disclosed |
-| Unit-size mix contribution to ADR | +0.9pp measured (2Q26 window); ~+1.3pp on Airbnb's own disclosed wedge | Medium |
-| Size mix in LatAm/APAC | ~0 | Low — one city per region |
+| Unit-size mix contribution to ADR | **+0.63pp** measured (2Q26, 29 markets) | Medium |
+| Size mix in LatAm/APAC | ~0 to negative | **Medium** — 19 markets |
 | Like-for-like price | **not measurable** from external data post-2023 | — |
 | LOS contribution | −0.1 to +0.2pp | Low, bounded not fitted |
 | FX contribution | mechanical, `0.52 − 0.72 × broad USD y/y` | **High** |
@@ -260,8 +323,9 @@ disappears, treat that the way we treat the other two.
 1. **Monthly Inside Airbnb capture, starting now.** The CDN keeps about a year, so every missed
    month is unrecoverable, and the size panel only has a credible annual series for 2026 (51
    pairs, 12 cities) against 2025 (11 pairs, 4 cities) and 2024 (3 pairs, 1 city).
-2. **Extend the size panel into LatAm and APAC.** The regional finding that matters most —
-   that size mix is absent where the growth is — rests on one city per region.
+2. **Pair são-paulo and bogotá from 2027.** Inside Airbnb only added them in 2026, so the first
+   y/y becomes possible next year; Hong Kong and Buenos Aires need a `bedrooms`-independent
+   measure (capacity-only already works for them).
 3. **Backfill AirDNA US STR ADR.** The only same-asset-class price benchmark; four months exist.
 4. **Model the single-fee repricing artifact.** Migration completed 15 Sep / 13 Oct 2026, inside
    the quarters being forecast; if hosts reprice to hold payout, listed prices rise ~14.8% for
