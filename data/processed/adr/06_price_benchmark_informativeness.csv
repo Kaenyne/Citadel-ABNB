@@ -1,0 +1,65 @@
+target,benchmark,window,n,pearson_r,p,spearman_r,n_tests_for_target,p_bonferroni,verdict
+ABNB ADR ex-FX y/y,CPI lodging away from home (US),full sample,20,0.755,0.0001,0.541,32,0.003,INFORMATIVE (survives multiple testing)
+ABNB ADR ex-FX y/y,CPI lodging away from home (US),2023Q1+ (post-reopening),14,0.048,0.8711,-0.057,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,CPI lodging away from home (US),2024Q1+ (both legs measured),10,0.352,0.3182,0.152,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,CPI lodging away from home (US),"2023Q1+, benchmark lagged 1Q",14,-0.501,0.0677,-0.523,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR ex-FX y/y,BEA hotels-and-motels price (US),full sample,20,0.749,0.0001,0.517,32,0.003,INFORMATIVE (survives multiple testing)
+ABNB ADR ex-FX y/y,BEA hotels-and-motels price (US),2023Q1+ (post-reopening),14,0.011,0.9715,-0.127,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,BEA hotels-and-motels price (US),2024Q1+ (both legs measured),10,0.272,0.4478,0.0,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,BEA hotels-and-motels price (US),"2023Q1+, benchmark lagged 1Q",14,-0.528,0.0524,-0.594,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR ex-FX y/y,US matched-item vote (CPI+BEA avg),full sample,20,0.752,0.0001,0.531,32,0.003,INFORMATIVE (survives multiple testing)
+ABNB ADR ex-FX y/y,US matched-item vote (CPI+BEA avg),2023Q1+ (post-reopening),14,0.028,0.9256,-0.086,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,US matched-item vote (CPI+BEA avg),2024Q1+ (both legs measured),10,0.31,0.3832,0.088,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,US matched-item vote (CPI+BEA avg),"2023Q1+, benchmark lagged 1Q",14,-0.517,0.0584,-0.535,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR ex-FX y/y,MAR+HLT worldwide ccy-neutral RevPAR,full sample,20,0.872,0.0,0.646,32,0.0,INFORMATIVE (survives multiple testing)
+ABNB ADR ex-FX y/y,MAR+HLT worldwide ccy-neutral RevPAR,2023Q1+ (post-reopening),14,0.125,0.6706,-0.025,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,MAR+HLT worldwide ccy-neutral RevPAR,2024Q1+ (both legs measured),10,0.401,0.251,0.404,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,MAR+HLT worldwide ccy-neutral RevPAR,"2023Q1+, benchmark lagged 1Q",14,-0.096,0.744,-0.41,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,MAR worldwide comparable RevPAR,full sample,20,0.87,0.0,0.621,32,0.0,INFORMATIVE (survives multiple testing)
+ABNB ADR ex-FX y/y,MAR worldwide comparable RevPAR,2023Q1+ (post-reopening),14,0.101,0.7313,-0.099,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,MAR worldwide comparable RevPAR,2024Q1+ (both legs measured),10,0.226,0.531,0.247,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,MAR worldwide comparable RevPAR,"2023Q1+, benchmark lagged 1Q",14,-0.093,0.7523,-0.382,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,HLT system-wide comparable RevPAR,full sample,20,0.873,0.0,0.666,32,0.0,INFORMATIVE (survives multiple testing)
+ABNB ADR ex-FX y/y,HLT system-wide comparable RevPAR,2023Q1+ (post-reopening),14,0.151,0.6073,0.066,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,HLT system-wide comparable RevPAR,2024Q1+ (both legs measured),10,0.531,0.1141,0.602,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,HLT system-wide comparable RevPAR,"2023Q1+, benchmark lagged 1Q",14,-0.099,0.7351,-0.328,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,This study's measured price (GBV-weighted composite),full sample,18,0.502,0.0336,0.431,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR ex-FX y/y,This study's measured price (GBV-weighted composite),2023Q1+ (post-reopening),14,0.31,0.2801,0.263,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,This study's measured price (GBV-weighted composite),2024Q1+ (both legs measured),10,0.397,0.2556,0.341,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,This study's measured price (GBV-weighted composite),"2023Q1+, benchmark lagged 1Q",14,-0.469,0.0904,-0.476,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR ex-FX y/y,Inside Airbnb US price per bedroom y/y,full sample,5,0.495,0.3963,0.564,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,Inside Airbnb US price per bedroom y/y,2023Q1+ (post-reopening),5,0.495,0.3963,0.564,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,Inside Airbnb US price per bedroom y/y,2024Q1+ (both legs measured),5,0.495,0.3963,0.564,32,1.0,NOT informative
+ABNB ADR ex-FX y/y,Inside Airbnb US price per bedroom y/y,"2023Q1+, benchmark lagged 1Q",4,0.693,0.3065,0.738,32,1.0,NOT informative
+ABNB ADR reported y/y,CPI lodging away from home (US),full sample,18,-0.024,0.9256,-0.187,32,1.0,NOT informative
+ABNB ADR reported y/y,CPI lodging away from home (US),2023Q1+ (post-reopening),14,-0.276,0.3401,-0.367,32,1.0,NOT informative
+ABNB ADR reported y/y,CPI lodging away from home (US),2024Q1+ (both legs measured),10,-0.052,0.8869,-0.297,32,1.0,NOT informative
+ABNB ADR reported y/y,CPI lodging away from home (US),"2023Q1+, benchmark lagged 1Q",14,-0.504,0.0659,-0.547,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR reported y/y,BEA hotels-and-motels price (US),full sample,18,-0.052,0.8384,-0.249,32,1.0,NOT informative
+ABNB ADR reported y/y,BEA hotels-and-motels price (US),2023Q1+ (post-reopening),14,-0.35,0.2198,-0.468,32,1.0,NOT informative
+ABNB ADR reported y/y,BEA hotels-and-motels price (US),2024Q1+ (both legs measured),10,-0.186,0.6076,-0.515,32,1.0,NOT informative
+ABNB ADR reported y/y,BEA hotels-and-motels price (US),"2023Q1+, benchmark lagged 1Q",14,-0.536,0.0484,-0.644,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR reported y/y,US matched-item vote (CPI+BEA avg),full sample,18,-0.039,0.8781,-0.203,32,1.0,NOT informative
+ABNB ADR reported y/y,US matched-item vote (CPI+BEA avg),2023Q1+ (post-reopening),14,-0.317,0.2697,-0.393,32,1.0,NOT informative
+ABNB ADR reported y/y,US matched-item vote (CPI+BEA avg),2024Q1+ (both legs measured),10,-0.125,0.7301,-0.358,32,1.0,NOT informative
+ABNB ADR reported y/y,US matched-item vote (CPI+BEA avg),"2023Q1+, benchmark lagged 1Q",14,-0.522,0.0553,-0.574,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR reported y/y,MAR+HLT worldwide ccy-neutral RevPAR,full sample,18,-0.017,0.9452,-0.199,32,1.0,NOT informative
+ABNB ADR reported y/y,MAR+HLT worldwide ccy-neutral RevPAR,2023Q1+ (post-reopening),14,-0.375,0.187,-0.424,32,1.0,NOT informative
+ABNB ADR reported y/y,MAR+HLT worldwide ccy-neutral RevPAR,2024Q1+ (both legs measured),10,-0.135,0.7101,-0.261,32,1.0,NOT informative
+ABNB ADR reported y/y,MAR+HLT worldwide ccy-neutral RevPAR,"2023Q1+, benchmark lagged 1Q",14,-0.424,0.1311,-0.538,32,1.0,NOT informative
+ABNB ADR reported y/y,MAR worldwide comparable RevPAR,full sample,18,-0.019,0.9411,-0.232,32,1.0,NOT informative
+ABNB ADR reported y/y,MAR worldwide comparable RevPAR,2023Q1+ (post-reopening),14,-0.391,0.1669,-0.473,32,1.0,NOT informative
+ABNB ADR reported y/y,MAR worldwide comparable RevPAR,2024Q1+ (both legs measured),10,-0.274,0.443,-0.365,32,1.0,NOT informative
+ABNB ADR reported y/y,MAR worldwide comparable RevPAR,"2023Q1+, benchmark lagged 1Q",14,-0.425,0.1294,-0.565,32,1.0,NOT informative
+ABNB ADR reported y/y,HLT system-wide comparable RevPAR,full sample,18,-0.016,0.9502,-0.131,32,1.0,NOT informative
+ABNB ADR reported y/y,HLT system-wide comparable RevPAR,2023Q1+ (post-reopening),14,-0.356,0.2116,-0.277,32,1.0,NOT informative
+ABNB ADR reported y/y,HLT system-wide comparable RevPAR,2024Q1+ (both legs measured),10,-0.012,0.9744,0.018,32,1.0,NOT informative
+ABNB ADR reported y/y,HLT system-wide comparable RevPAR,"2023Q1+, benchmark lagged 1Q",14,-0.422,0.1333,-0.451,32,1.0,NOT informative
+ABNB ADR reported y/y,This study's measured price (GBV-weighted composite),full sample,18,-0.003,0.9916,-0.209,32,1.0,NOT informative
+ABNB ADR reported y/y,This study's measured price (GBV-weighted composite),2023Q1+ (post-reopening),14,-0.234,0.4212,-0.345,32,1.0,NOT informative
+ABNB ADR reported y/y,This study's measured price (GBV-weighted composite),2024Q1+ (both legs measured),10,-0.135,0.7096,-0.236,32,1.0,NOT informative
+ABNB ADR reported y/y,This study's measured price (GBV-weighted composite),"2023Q1+, benchmark lagged 1Q",14,-0.685,0.0068,-0.622,32,0.218,NOT informative -- raw p<0.10 but dies under multiple testing
+ABNB ADR reported y/y,Inside Airbnb US price per bedroom y/y,full sample,5,0.32,0.5991,0.6,32,1.0,NOT informative
+ABNB ADR reported y/y,Inside Airbnb US price per bedroom y/y,2023Q1+ (post-reopening),5,0.32,0.5991,0.6,32,1.0,NOT informative
+ABNB ADR reported y/y,Inside Airbnb US price per bedroom y/y,2024Q1+ (both legs measured),5,0.32,0.5991,0.6,32,1.0,NOT informative
+ABNB ADR reported y/y,Inside Airbnb US price per bedroom y/y,"2023Q1+, benchmark lagged 1Q",4,0.912,0.0883,0.4,32,1.0,NOT informative -- raw p<0.10 but dies under multiple testing
