@@ -39,7 +39,19 @@ SEG = ["solo", "pair", "3-4", "5+"]
 # ---------------- Inputs (every number sourced in research/notes/choice_nights_driver.md) ----------------
 NA_NIGHTS_2025 = 158.0            # mm, Airbnb FY2025 10-K regional table
 US_SHARE_OF_NA = 0.92             # U.S. = 39% of revenue ($4.76B) / NA revenue $5.196B, FY2025 10-K
-NPB_NA = 4.1                      # nights per booking, North America, FY2025 10-K
+# CAUTION (audit, 8 Sep 2026): this is a REVENUE share used as a NIGHTS share. That is exact only if
+# revenue per night (= ADR x take rate) is identical in the U.S. and in Canada/Mexico. It is not:
+# Mexico is a materially cheaper market, so U.S. ADR sits ABOVE the NA blend and the U.S. nights
+# share must sit BELOW the U.S. revenue share. The model's own reconciliation shows it:
+#   145.4mm U.S. nights x $255 NA ADR (FY25 regional GBV/nights) x 13.4% take = $4.97bn
+#   vs $4.76bn of reported U.S. revenue  ->  the model OVERSTATES U.S. revenue by 4.4%.
+# Read as a nights error that is ~145.4 -> ~139mm, i.e. the whole Airbnb side of the U.S.
+# calibration is ~4% too big. US_ADR_PREMIUM below makes the correction one number instead of a
+# footnote. It is left at 1.00 (status quo) so no published figure moves silently; set it to ~1.05
+# to clear the reconciliation. Levels scale; the GROWTH decomposition is unaffected either way.
+US_ADR_PREMIUM = 1.00             # U.S. ADR / NA blended ADR. 1.00 = status quo; ~1.05 clears the gap.
+NPB_NA = 4.1                      # NOT USED by this model (kept as the documented NA stay-length
+                                  # level; the live lever is STAY_LENGTH below). FY2025 10-K.
 BOOK_SHARE = {"solo": 0.16, "pair": 0.358, "3-4": 0.323, "5+": 0.159}   # fitted party-size distribution
 REL_LEN = {"solo": 1.5, "pair": 0.95, "3-4": 0.9, "5+": 0.8}            # relative stay length (solo 24% nights / 16% bookings; Inside Airbnb by capacity)
 
@@ -51,7 +63,8 @@ BUSINESS_SHARE = 439 / (439 + 605)        # AHLA 2024 SOTI, 2023 room nights
 # Base-year P_g self-corrects (contestable Airbnb is pinned), but market growth and mix drift are
 # then applied to a pool ~25% of which cannot switch. Fix = a third, inert "group" bucket.
 CORP_SOLO = 0.795                         # corporate bookings single-occupancy (Portuguese ledger)
-HOTEL_ALOS = 2.1                          # Kalibri Labs
+HOTEL_ALOS = 2.1                          # NOT USED - hotel nights enter as room-nights, converted by
+                                          # ROOMS_PER_PARTY, so ALOS never enters. Kalibri Labs. Kept for reference.
 LEIS_PARTY = {"solo": 0.20, "pair": 0.54, "3-4": 0.20, "5+": 0.06}     # leisure hotel parties: mean of Hawaii hotel-only & Las Vegas 2024
 LEIS_NIGHTS_REL = {"solo": 0.7, "pair": 1.0, "3-4": 1.0, "5+": 1.0}    # Portuguese ledger: solo 2.5 vs 3.6 nights
 ROOMS_PER_PARTY = {"solo": 1.0, "pair": 1.0, "3-4": 1.5, "5+": 2.5}
@@ -115,6 +128,13 @@ STAY_LENGTH_BULL = {2025: 4.1, 2026: 4.14, 2027: 4.18, 2028: 4.22, 2029: 4.27, 2
 YEARS = [2025, 2026, 2027, 2028, 2029, 2030]
 MARKET_GROWTH = {2026: 0.017, 2027: 0.011, 2028: 0.015, 2029: 0.015, 2030: 0.015}   # CoStar/TE U.S. demand +1.7% 2026, +1.1% 2027; 1.5% thereafter (assumption)
 MIX_DRIFT = {"solo": -0.01, "pair": 0.0, "3-4": 0.02, "5+": 0.04}   # family nights +15% vs Airbnb +8-10%; bedroom nights +12% vs nights +10%
+# VALIDATED 8 Sep 2026 against two independent series: this vector implies mean party size growing
+# +0.98%/yr, against +0.62%/yr (Airbnb review-text proxy 2018-25, 74m reviews / 123 markets) and
+# +0.80%/yr (Hawaii DBEDT rental-house observed, 2.28 -> 2.49, 2013-2024). So it is ~1.2x the
+# observed rate - modestly aggressive but the right order of magnitude, not the 4x I feared before
+# the review series existed. Note Hawaii HOTEL parties also drift up (+0.34%/yr), and this model
+# applies the same drift vector to both pools, which is conservative: the observed Airbnb-vs-hotel
+# divergence (0.80 vs 0.34) is larger than modelled.
 # Cohort support for MIX_DRIFT (Alchemer 2026, n=1,014): planned lodging next 12 months is
 # "mostly rentals" 37% vs "mostly hotels" 29% for under-30s, but 11% vs 64% for 61+.
 # Cohort replacement therefore pushes the contestable pool toward rental-leaning, larger parties;
@@ -146,7 +166,7 @@ def inv_logit(x):
 
 
 def calibrate():
-    us_nights = NA_NIGHTS_2025 * US_SHARE_OF_NA
+    us_nights = NA_NIGHTS_2025 * US_SHARE_OF_NA / US_ADR_PREMIUM
     w = {g: BOOK_SHARE[g] * REL_LEN[g] for g in SEG}
     tot = sum(w.values())
     abnb = {g: us_nights * w[g] / tot for g in SEG}
@@ -241,6 +261,13 @@ def main():
     df.merge(dec, on="year", how="left").to_csv(OUT / "choice_driver_projection.csv", index=False)
 
     # sensitivity: 2030 U.S. nights vs beta and Airbnb ADR premium growth
+    print("\nStay-length scenarios (2030 nights, CAGR) - the largest single lever in the model:")
+    for lbl, sl in [("bull +1%/yr", STAY_LENGTH_BULL), ("base flat 4.1", STAY_LENGTH),
+                    ("bear -2%/yr (the EMEA/LatAm pattern reaching NA)", STAY_LENGTH_BEAR)]:
+        dd, _ = project(cal, stay=sl)
+        n = dd.us_nights_mm.iloc[-1]
+        print("  %-48s %6.1fmm  %+.2f%%" % (lbl, n, ((n / dd.us_nights_mm.iloc[0]) ** 0.2 - 1) * 100))
+
     # Diagnostic: what cross-price elasticity does each beta imply, vs F&F Table E9's 3.76?
     p_pool = cal.loc[cal.segment == "TOTAL", "p_airbnb_in_pool"].iloc[0]
     print("\nswitch rate -> implied d ln(ABNB nights)/d ln(hotel price)   [F&F Table E9 = %.2f]" % FF_CROSS_PRICE_ELASTICITY)

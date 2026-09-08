@@ -227,3 +227,42 @@ The global −2%/yr drag cost **~58mm nights in 2025 (10.8% of the year's total)
 **Caveat, and it cuts both ways:** the 2020–22 plateau at 4.1–4.4 was COVID long-stay inflation, so part of the global fall is normalisation rather than deterioration — and normalisation is self-limiting. Against 2019 (US reservation panel, 3.7 nights) today's level is not obviously abnormal. What argues structural: the decline has run three full years past reopening and is concentrated in the two largest Western regions. The lever exists so this can be argued explicitly rather than assumed away.
 
 **Workbook:** "Stay length, nights per booking (NA)" is now a yellow lever row on Inputs. Note this required a builder fix — the year-path writer hardcoded a "—" in the 2025 column and percent-formatted every row, which would have rendered 4.1 as "410.0%"; level rows are now handled separately.
+
+## Full model audit, 8 Sep 2026 (with Krish's party-size series merged)
+
+**What Krish's series is** (`abnb_party_size_reviews_quarterly.csv`, PR #33): party composition parsed from **Inside Airbnb review text** — 74m reviews, 123 markets, 35 countries, quarterly 2011Q1–2026Q2, global + 4 regions, with fixed-2019 market weights so new cities can't masquerade as a trend. Reviews that state who travelled (solo / couple / family / friends-group; 6–13% of reviews, ~2% give a head-count) are converted to an implied party size. Validated against Hawaii DBEDT rental-house party size at **r = 0.96–0.99** for direction; the *level* is biased high (~3.5 vs 2.5 observed) because couples under-state and families over-state. It is an index of composition, not a calibrated level.
+
+**It resolves my open question — and it does not contradict the milestone work.**
+
+| Source | Party-size trend |
+|---|---|
+| Krish review proxy, 2018–25 (post mention-rate stabilisation) | **+0.62%/yr** |
+| Krish review proxy, 2012–25 | +0.88%/yr |
+| Hawaii DBEDT rental house, observed, 2013–24 (2.28 → 2.49) | **+0.80%/yr** |
+| My guest-arrival milestone method | flat; noise band ±4% |
+
+A +0.6–0.9%/yr trend is ~+4.4% over seven years — exactly at the edge of what the milestone method can resolve. So "no trend detectable" (mine) and "+0.8%/yr" (his) are **consistent**; his method simply has the resolution mine lacks. My earlier phrasing ("no evidence party size is rising") was too strong and is corrected: **party size is rising, slowly.** Composition is families replacing couples (couple share 50% → 25%, family 31% → 46%, 2012 → 2025), and the size rise is a *capacity-mix* story — guests booking bigger homes — while within any given home size parties got slightly smaller.
+
+### Audit findings
+
+**1. `MIX_DRIFT` is validated — the flag I raised is cleared.** The vector implies mean party size growing **+0.98%/yr** vs +0.62% (reviews) and +0.80% (Hawaii observed). ~1.2x observed: modestly aggressive, right order of magnitude. Also note Hawaii *hotel* parties drift up too (+0.34%/yr) and the model applies the same vector to both pools, which is **conservative** — the observed Airbnb-vs-hotel divergence (0.80 vs 0.34) is wider than modelled.
+
+**2. US nights are ~4% too high, and the model's own reconciliation says so.** `US_SHARE_OF_NA = 0.92` is a *revenue* share used as a *nights* share — exact only if revenue per night is identical in the US and Canada/Mexico. It isn't (Mexico is materially cheaper), so US ADR sits above the NA blend and the US nights share must sit below the US revenue share. 145.4mm × $255 NA ADR × 13.4% = **$4.97bn vs $4.76bn reported, +4.4%**. Implied US nights ≈ **139mm, not 145.4mm**. Added `US_ADR_PREMIUM` as an explicit lever (left at 1.00 so nothing moves silently; 1.05 clears the gap → 138.4mm). Levels scale; the growth decomposition is unaffected.
+
+**3. The switch rate is now nearly inert in the base case.** With the team's ex-FX ADR path (near hotel parity), moving it 5.0 → 10.3 costs only **−2.1%** of 2030 nights. It only bites when an ADR gap opens. **The bear case has to be argued through ADR, not through the switch rate** — worth knowing before defending 5.0 in a meeting.
+
+**4. Lever ranking (2030 nights, US):** stay length −2%/yr **−9.5%** · category growth −1pt −3.1% · mix drift halved −2.3% · switch rate 10.3 −2.1% · market growth −0.5pt −0.8%. Stay length, added yesterday, is now the largest single lever.
+
+**5. Checks that passed:** hotel party-nights reconvert to the input room-nights exactly (760.9 vs 760.9); the five-term growth decomposition sums to published growth to 0.00e+00; **workbook and script agree on every input** (13 scalars, 3 year-paths, 4×5 segment table).
+
+**6. Dead code annotated:** `NPB_NA` and `HOTEL_ALOS` are declared with sources but never referenced — now labelled NOT USED rather than left looking load-bearing (hotel nights enter as room-nights via `ROOMS_PER_PARTY`, so ALOS never enters). `STAY_LENGTH_BEAR/BULL` are now wired into `main()` output.
+
+### Still unsourced / still assumed (unchanged, and now the top of the list)
+
+- **`ROOMS_PER_PARTY` (1/1/1.5/2.5) has no citation anywhere** and sets the hotel denominator. Highest-priority gap.
+- `LEIS_NIGHTS_REL` — Portuguese ledger applied to US leisure.
+- Market growth and hotel ADR beyond 2027 — past CoStar's forecast horizon.
+- `CATEGORY_GROWTH` entry rate is grounded; the *fade* to 3% is judgment.
+- `PRODUCT_SHIFT` all zero — regulation and product enter nowhere, despite LL18 giving a measured magnitude.
+- `CONTESTABLE = 0.38` — 2014 San Francisco survey, still the single most load-bearing input.
+- Group/meetings (~25% of hotel nights, contracted, non-contestable) still sit inside the leisure pool.
