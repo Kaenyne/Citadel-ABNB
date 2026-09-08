@@ -159,6 +159,26 @@ MARKET_GROWTH = {2026: 0.017, 2027: 0.011, 2028: 0.015, 2029: 0.015, 2030: 0.015
 #   and MIX_DRIFT_ABNB should be cut further. Unresolved - treat +0.62%/yr as the optimistic end.
 #   Counter-signal: UK solo overnight trips 28% in 2024, +4pp vs 2022 (VisitBritain) - rising solo
 #   travel pushes mean party size the other way in at least one large market.
+#
+# VERDICT AFTER SPAIN (8 Sep 2026, ine_spain_party_size.py) - THE DIVERGENCE IS NOT SUPPORTED.
+# Spain's INE Encuesta de Turismo de Residentes is the strongest instrument available: official,
+# weighted, trip-level microdata, 11 full years, real party size (household members on trip), with
+# hotel and whole-home rental separately coded. It says:
+#     LEVEL   rental/hotel = 1.167x, stable, range 1.09-1.22 across 12 years -> a FOURTH
+#             independent confirmation of the level gap (with Hawaii, 40-country Booking, UK).
+#     TREND   the rental/hotel ratio is FLAT: log-linear +0.04%/yr, se 0.35, t = +0.12.
+#             Both sides also FELL slightly in level (rental -0.17%/yr, hotel -0.21%/yr) - the
+#             opposite of Hawaii, where both rose.
+# Scoreboard on the divergence that sets MIX_DRIFT_ABNB / MIX_DRIFT_HOTEL apart:
+#     Hawaii  FOR      (2.31x, 11 years, observed)
+#     Spain   AGAINST  (flat, 11 years, weighted microdata, larger sample)
+#     UK      AGAINST  (gap narrower in 2024 than 2022, 3 years)
+# One market for, two against, and the strongest dataset is one of the two against. The 2.35x split
+# below is therefore NOT an established fact and should be run as a sensitivity, not a base case.
+# Impact of the alternatives on 2030 U.S. nights: both vectors at the Airbnb rate 160.2mm (+0.6%);
+# both at the hotel rate 157.6mm (-1.1%); MIX DRIFT OFF ENTIRELY - the Spain/UK reading - 155.7mm
+# (-2.2%, CAGR 2.84% -> 2.38%). Kept at the split for continuity with the published deck; a reviewer
+# who takes the Spain evidence at face value should zero both vectors.
 MIX_DRIFT_ABNB = {"solo": -0.0063, "pair": 0.0, "3-4": 0.0127, "5+": 0.0253}    # implies +0.62%/yr
 MIX_DRIFT_HOTEL = {"solo": -0.0027, "pair": 0.0, "3-4": 0.0054, "5+": 0.0107}   # implies +0.26%/yr
 MIX_DRIFT = MIX_DRIFT_ABNB   # back-compat alias; project() takes both explicitly

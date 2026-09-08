@@ -96,10 +96,39 @@ def main():
                      "latam": latam[y], "apac": apac[y], "global_nights_mm": total})
     df = pd.DataFrame(rows).round(1)
     df["global_growth"] = pd.Series([np.nan] + list(np.diff(df.global_nights_mm) / df.global_nights_mm[:-1].values)).round(4)
-    print(df.to_string(index=False))
-    print("\nTeam model (assumptions.md WS13 base): total nights FY26 +9.9%, FY27 +8.9%, FY28 +7.4%")
-    print("This build:                              FY26 %+.1f%%, FY27 %+.1f%%, FY28 %+.1f%%"
-          % tuple(df.global_growth.iloc[1:4] * 100))
+
+    # ---- Regional view on Airbnb's own reporting segments (NA / EMEA / LatAm / APAC) ----
+    reg = pd.DataFrame({"year": df.year,
+                        "north_america": df.us + df.na_ex_us,
+                        "emea": df.emea, "latam": df.latam, "apac": df.apac})
+    reg["total"] = reg[["north_america", "emea", "latam", "apac"]].sum(axis=1)
+    REGS = ["north_america", "emea", "latam", "apac"]
+    print("\nREGIONAL NIGHTS (mm) - Airbnb's reporting segments")
+    print(reg.round(1).to_string(index=False))
+    gr = reg.set_index("year")[REGS + ["total"]].pct_change()
+    print("\nGROWTH")
+    print((gr * 100).round(1).to_string())
+    print("\nCAGR 2025-2030 and share of total nights")
+    for r in REGS + ["total"]:
+        s = reg.set_index("year")[r]
+        c = (s.loc[2030] / s.loc[2025]) ** 0.2 - 1
+        sh0 = s.loc[2025] / reg.set_index("year").total.loc[2025]
+        sh1 = s.loc[2030] / reg.set_index("year").total.loc[2030]
+        print(f"  {r:14s} {c * 100:+5.2f}%/yr   share {sh0 * 100:4.1f}% -> {sh1 * 100:4.1f}%")
+    print("\nCONTRIBUTION to global growth (pp of the total, 2025-2030)")
+    tot0, tot1 = reg.set_index("year").total.loc[2025], reg.set_index("year").total.loc[2030]
+    for r in REGS:
+        s = reg.set_index("year")[r]
+        print(f"  {r:14s} {(s.loc[2030] - s.loc[2025]) / tot0 * 100:+5.1f}pp of the "
+              f"{(tot1 / tot0 - 1) * 100:.1f}% total   ({(s.loc[2030] - s.loc[2025]) / (tot1 - tot0) * 100:4.1f}% of the growth)")
+    print("\nHOW EACH REGION IS BUILT")
+    print("  north_america  full segment choice model (US) + Canada/Mexico tracking it")
+    print("  emea           4-country Eurostat calibration scaled, own category/ADR/stay-length path")
+    print("  latam / apac   growth fades from disclosed 2025 rates - NOT choice models (no hotel-side")
+    print("                 data pulled yet). They are the least evidenced 30% of the forecast.")
+    reg.round(2).to_csv(OUT / "choice_driver_regional_projection.csv", index=False)
+    print("\nwrote", OUT / "choice_driver_regional_projection.csv")
+
     df.to_csv(OUT / "choice_driver_global_projection.csv", index=False)
     print("\nwrote", OUT / "choice_driver_global_projection.csv")
 

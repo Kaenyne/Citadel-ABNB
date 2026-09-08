@@ -51,10 +51,15 @@ TWO CLAIMS, VERY DIFFERENT EVIDENCE:
   for solo / 2 / 3-4 / 5-9 / 10+). Rising solo travel pushes mean party size DOWN and is a genuine
   offset to the family-mix story, in a large market, from a primary source.
 
-  NET READ AFTER THE THREE PULLS: the LEVEL gap now has three independent confirmations (Hawaii,
-  40-country Booking cross-section, UK trip survey). The TREND divergence still has exactly one
-  supporting market (Hawaii) and one market that does not support it (UK). The model's 2.35x
-  mix-drift ratio should be treated as the optimistic case, not as an established fact.
+  NET READ AFTER FOUR SOURCES (see also ine_spain_party_size.py):
+    LEVEL gap - FOUR independent confirmations: Hawaii (observed), 40-country Booking cross-section
+      (39/40, t = 10.2), UK trip survey (1.5x on children), Spain INE (1.167x, stable 12 years).
+      This is now solid and can be leaned on.
+    TREND divergence - ONE market for, TWO against. Hawaii says rental parties drift 2.31x faster;
+      Spain's 11 years of weighted microdata say the ratio is FLAT (t = +0.12) and both sides
+      slightly FELL; the UK gap is narrower in 2024 than 2022. The strongest single dataset (Spain)
+      is one of the two against. The model's 2.35x split is NOT established - run it as a
+      sensitivity. Zeroing mix drift entirely costs 2.2% of 2030 U.S. nights (CAGR 2.84 -> 2.38%).
 
 THE CAVEAT THAT MATTERS MOST FOR THIS MODEL: the gap is weakest where we need it. The U.S. ranks
 33rd of 40 at 1.051x against a 1.131x mean, and Hawaii (1.080x) is also below the mean. So the

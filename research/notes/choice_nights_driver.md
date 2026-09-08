@@ -353,3 +353,43 @@ Share of GB overnight trips including a child, weighted:
 - **Trend divergence: one market for (Hawaii), one market against (UK).** The model's 2.35× mix-drift ratio is annotated in the code as **the optimistic case, not an established fact**.
 
 The thesis should lean on the level gap, which is well-evidenced, and treat the widening as a hypothesis rather than a finding.
+
+## Spain INE microdata — the fourth source, and it settles the divergence question (8 Sep 2026)
+
+`analysis/src/ine_spain_party_size.py` → `ine_spain_party_size_by_accommodation.csv`. **129 monthly microdata files, 2015–2026, free from INE**, weighted trip records with `MIEMV` (household members on the trip = party size) and `ALOJAPRIN` coding hotel (1) separately from whole-home rental (3). This is the strongest instrument in the set: official, weighted, 11 full years, both accommodation types, real party size.
+
+*(Two gotchas for anyone re-running it: the month in the URL is **not zero-padded** (`datos_9_23.zip`), and INE writes decimals with a **comma** — without `decimal=","` the weight column parses as text, every weight becomes NaN and the sample silently vanishes.)*
+
+| | Rental ÷ hotel |
+|---|---|
+| Level, mean across 12 years | **1.167×** (range 1.09–1.22, stable) |
+| Trend in the ratio, 2015–2025 | **+0.04%/yr, se 0.35, t = +0.12 → flat** |
+| Level change | rental −0.17%/yr, hotel −0.21%/yr — **both fell**, opposite to Hawaii |
+
+### The divergence scoreboard is now 1 for, 2 against
+
+| Market | Years | Verdict on rental parties growing faster |
+|---|---|---|
+| Hawaii | 11 | **FOR** — 2.31× |
+| **Spain** | **11** | **AGAINST** — ratio flat, t = 0.12 |
+| UK | 3 | AGAINST — gap narrower in 2024 than 2022 |
+
+**The strongest dataset is one of the two against.** The model's split mix-drift (`MIX_DRIFT_ABNB` +0.62%/yr vs `MIX_DRIFT_HOTEL` +0.26%/yr) is therefore **not an established fact** and is annotated as such in the code. Impact of the alternatives on 2030 U.S. nights: both vectors at the Airbnb rate 160.2mm (+0.6%); both at the hotel rate 157.6mm (−1.1%); **mix drift off entirely — the Spain/UK reading — 155.7mm (−2.2%, CAGR 2.84% → 2.38%)**. Left at the split for continuity; a reviewer who takes Spain at face value should zero both.
+
+**What survives, and it is the more important half:** the level gap now has **four independent confirmations** — Hawaii, the 40-country Booking cross-section, the UK trip survey, and Spain. Rentals genuinely serve larger, more family-weighted parties everywhere it can be measured. The thesis should lean on that structural fact and treat the widening as an open question.
+
+## Regional breakdown (8 Sep 2026)
+
+`choice_driver_regional_projection.csv` and a new block on the workbook's **Global** sheet.
+
+| mm nights | 2025 | 2030 | CAGR | Share 2025 → 2030 |
+|---|---|---|---|---|
+| North America | 158.0 | 181.8 | **+2.85%** | 29.6% → 25.0% |
+| EMEA | 215.0 | 263.8 | **+4.18%** | 40.3% → 36.3% |
+| LatAm | 90.0 | 162.8 | **+12.59%** | 16.9% → 22.4% |
+| APAC | 70.0 | 117.9 | **+10.99%** | 13.1% → 16.2% |
+| **Total** | **533.0** | **726.3** | **+6.38%** | |
+
+Contribution to the 36.3% five-year total: LatAm +13.7pp (37.7% of all growth), EMEA +9.2pp (25.2%), APAC +9.0pp (24.8%), North America +4.5pp (12.3%).
+
+**The confidence gradient runs backwards to the growth.** North America is the full segment choice model; EMEA is calibrated on measured Eurostat platform and hotel nights for FR/ES/IT/DE and scaled. **LatAm and APAC are growth fades off disclosed 2025 rates with no hotel-side data and no choice model at all — yet they are 30% of 2025 nights and 62% of the 2025–30 growth.** That is the least evidenced part of the forecast and the first place to spend more research.

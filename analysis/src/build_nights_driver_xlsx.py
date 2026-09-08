@@ -387,6 +387,31 @@ for i, (_, r) in enumerate(glob.iterrows()):
     if pd.notna(r["global_growth"]):
         gs.cell(rr, 8, float(r["global_growth"])).number_format = PCT
 rr = 5 + len(glob) + 1
+# regional block on the Global sheet
+reg = pd.read_csv(ROOT / "data/processed/choice_driver_regional_projection.csv")
+rr0 = 5 + len(glob) + 2
+gs.cell(rr0, 1, "BY AIRBNB REPORTING SEGMENT (mm nights)").font = BOLD
+for j, h in enumerate(["Year", "North America", "EMEA", "LatAm", "APAC", "Total"]):
+    gs.cell(rr0 + 1, 1 + j, h).font = BOLD
+for i, (_, r) in enumerate(reg.iterrows()):
+    gs.cell(rr0 + 2 + i, 1, int(r["year"])).font = BOLD
+    for j, c in enumerate(["north_america", "emea", "latam", "apac", "total"]):
+        gs.cell(rr0 + 2 + i, 2 + j, round(float(r[c]), 1)).number_format = NUM
+rr1 = rr0 + 2 + len(reg)
+gs.cell(rr1, 1, "CAGR 2025-30").font = BOLD
+for j, (c, v) in enumerate([("north_america", 0.0285), ("emea", 0.0418), ("latam", 0.1259),
+                            ("apac", 0.1099), ("total", 0.0638)]):
+    gs.cell(rr1, 2 + j, v).number_format = PCT
+rr = rr1 + 2
+gs.cell(rr, 1, "Confidence differs sharply by region. North America is the full segment choice model; EMEA is "
+               "calibrated on measured Eurostat platform and hotel nights for FR/ES/IT/DE and scaled. LatAm and "
+               "APAC are growth fades off disclosed 2025 rates with NO hotel-side data and no choice model - yet "
+               "they are 30% of 2025 nights and 62% of the 2025-30 growth. That is the least evidenced part of "
+               "the forecast and the first place to spend more research.")
+gs.cell(rr, 1).font = Font(name="Arial", size=9, italic=True)
+gs.cell(rr, 1).alignment = Alignment(wrap_text=True); gs.merge_cells(start_row=rr, start_column=1, end_row=rr, end_column=8)
+gs.row_dimensions[rr].height = 58
+rr += 2
 gs.cell(rr, 1, "Reconciliation: team model WS13 base has total nights FY26 +9.9%, FY27 +8.9%, FY28 +7.4%; this build "
                "runs +7.1% / +7.2% / +7.1%. The gap is almost entirely North America (team 2H26 NA +7-8% vs this model's "
                "US +3.3% for 2026) — the choice model says NA growth at that pace needs share gains or category adoption "
