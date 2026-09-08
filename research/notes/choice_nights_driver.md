@@ -324,3 +324,32 @@ Unresolved. Treat +0.62%/yr as the optimistic end of the U.S. range.
 **Counter-signal:** VisitBritain reports UK solo overnight trips at **28% in 2024, +3pp on 2023 and +4pp on 2022**. Rising solo travel pushes mean party size down and is a genuine offset in at least one large market.
 
 **Licence:** rectour24 is CC BY-SA 4.0, **non-commercial**. Fine for internal validation; it must not be reproduced in anything client-facing.
+
+## TRA / VisitBritain / StatCan pulled (8 Sep 2026)
+
+| Source | Outcome |
+|---|---|
+| **Tourism Research Australia** | ❌ The party-size × accommodation cross-tab exists only in **TRA Online, a paid subscriber portal**. Also note the National Visitor Survey ended Dec-2024 and is replaced by Domestic Tourism Statistics from Jan-2025, so any TRA series breaks there regardless. |
+| **Statistics Canada NTS** | ❌ Public tables carry party size and accommodation type as **separate marginals**; StatCan's own guidance is to email tourism@statcan.gc.ca for the cross-tab. Not obtainable without a data request. |
+| **VisitBritain GBTS** | ✅ **Partial success.** The 2022–24 pivot workbook contains 28k weighted trip-level records with `Main Accommodation Type` × `Children on trip`. No party-size field, but children-on-trip is the sharper family measure — and the thesis is about families. → `data/processed/gbts_children_by_accommodation.csv` |
+
+### What the UK data says
+
+Share of GB overnight trips including a child, weighted:
+
+| Year | Commercial property rental | Serviced accommodation | Gap | Ratio |
+|---|---|---|---|---|
+| 2022 | 37.7% | 25.3% | 12.4pp | 1.49× |
+| 2023 | 39.2% | 23.9% | 15.3pp | 1.64× |
+| 2024 | 33.7% | 22.3% | 11.4pp | 1.51× |
+
+**LEVEL: confirmed, and more sharply than the Booking cross-section** — UK rental trips are ~1.5× more likely to include children than hotel trips, in a second market on a single instrument.
+
+**TREND: not confirmed.** The gap widened then narrowed and ends **1.0pp lower in 2024 than 2022**. Both categories' family share fell in 2024, consistent with VisitBritain's separate finding that solo trips rose to 28% (+4pp vs 2022; full distribution 28 / 35 / 24 / 9 / 3% for solo / 2 / 3–4 / 5–9 / 10+). Three years, one a COVID-recovery year — this can't refute Hawaii, but it doesn't support the divergence either.
+
+### Net read after all three pulls
+
+- **Level gap: three independent confirmations** — Hawaii (observed), 40-country Booking cross-section (39/40, t = 10.2), UK trip survey (1.5×). This is now solid.
+- **Trend divergence: one market for (Hawaii), one market against (UK).** The model's 2.35× mix-drift ratio is annotated in the code as **the optimistic case, not an established fact**.
+
+The thesis should lean on the level gap, which is well-evidenced, and treat the widening as a hypothesis rather than a finding.

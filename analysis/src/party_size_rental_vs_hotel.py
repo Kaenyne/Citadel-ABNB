@@ -21,13 +21,40 @@ TWO CLAIMS, VERY DIFFERENT EVIDENCE:
         dummies and a trend are not jointly identified. It returns +3.9%/yr, which is not
         credible next to Hawaii's +0.34%/yr - treated as noise, not as a contradiction.
       - rectour24 is a single year (2023) - it can only speak to the level.
-      - Tourism Research Australia, VisitBritain GBTS and Statistics Canada's NTS all collect
-        party size AND accommodation type, but publish them as separate marginals; the cross-tab
-        appears to live only in microdata (PUMF / data request). That is the next pull.
+      - PULLED 8 Sep 2026, all three:
+        * Tourism Research Australia - the party-size x accommodation cross-tab is only in
+          TRA Online, a PAID SUBSCRIBER portal. Not accessible. (Also note the National Visitor
+          Survey ended Dec-2024 and is replaced by Domestic Tourism Statistics from Jan-2025,
+          so any TRA series breaks there anyway.)
+        * Statistics Canada NTS - public tables carry party size and accommodation type as
+          separate marginals; StatCan's own guidance is to email tourism@statcan.gc.ca for the
+          cross-tab. Not obtainable without a data request.
+        * VisitBritain GBTS - SUCCESS, partially. The 2022-24 pivot workbook has trip-level
+          records with "Main Accommodation Type" x "Children on trip", weighted. No party-size
+          field, but children-on-trip is the sharper family measure and the thesis is about
+          families. Results in gbts_children_by_accommodation.csv and below.
+
+  WHAT THE UK DATA SAYS (share of overnight trips including a child, weighted, GB):
+        year   commercial property rental   serviced accommodation   gap      ratio
+        2022              37.7%                    25.3%            12.4pp    1.49x
+        2023              39.2%                    23.9%            15.3pp    1.64x
+        2024              33.7%                    22.3%            11.4pp    1.51x
+    LEVEL: confirmed, and more sharply than rectour24 - UK rental trips are ~1.5x more likely to
+    include children than hotel trips, in a second market on a single instrument.
+    TREND: NOT confirmed. The gap widened then narrowed and is 1.0pp LOWER in 2024 than 2022.
+    Both categories' family share FELL in 2024, consistent with VisitBritain's separate finding
+    that solo trips rose to 28% (+4pp vs 2022). Three years, one of them a COVID-recovery year,
+    so this cannot refute Hawaii - but it does not support the divergence either.
 
   A COUNTER-SIGNAL worth carrying: VisitBritain reports UK solo overnight trips at 28% in 2024,
-  +3pp on 2023 and +4pp on 2022. Rising solo travel pushes mean party size DOWN and is a genuine
-  offset to the family-mix story, in at least one large market.
+  +3pp on 2023 and +4pp on 2022 (GB Tourist 2024 report, p41; full distribution 28 / 35 / 24 / 9 / 3%
+  for solo / 2 / 3-4 / 5-9 / 10+). Rising solo travel pushes mean party size DOWN and is a genuine
+  offset to the family-mix story, in a large market, from a primary source.
+
+  NET READ AFTER THE THREE PULLS: the LEVEL gap now has three independent confirmations (Hawaii,
+  40-country Booking cross-section, UK trip survey). The TREND divergence still has exactly one
+  supporting market (Hawaii) and one market that does not support it (UK). The model's 2.35x
+  mix-drift ratio should be treated as the optimistic case, not as an established fact.
 
 THE CAVEAT THAT MATTERS MOST FOR THIS MODEL: the gap is weakest where we need it. The U.S. ranks
 33rd of 40 at 1.051x against a 1.131x mean, and Hawaii (1.080x) is also below the mean. So the
@@ -97,6 +124,17 @@ def main():
     print(f"  => rental drifts {ratio:.2f}x faster. THIS IS THE MODEL'S MIX-DRIFT RATIO, n=1 market.")
     print("  No second long-horizon source found; TRA / VisitBritain / StatCan hold the cross-tab")
     print("  only in microdata. Counter-signal: UK solo overnight trips 28% in 2024, +4pp vs 2022.")
+
+    uk = pd.read_csv(OUT / "gbts_children_by_accommodation.csv")
+    uk = uk[uk.acc.isin(["Commercial property rental", "Serviced accomodation"])]
+    up = uk.pivot(index="Year", columns="acc", values="share_with_children")
+    up["gap_pp"] = (up["Commercial property rental"] - up["Serviced accomodation"]) * 100
+    up["ratio"] = up["Commercial property rental"] / up["Serviced accomodation"]
+    print("\nUK GBTS - share of overnight trips including a child, by accommodation type:")
+    print((up[["Commercial property rental", "Serviced accomodation"]] * 100).round(1).to_string())
+    print(up[["gap_pp", "ratio"]].round(3).to_string())
+    print(f"  LEVEL confirmed ({up.ratio.mean():.2f}x mean). TREND not confirmed: gap "
+          f"{up.gap_pp.loc[2022]:.1f}pp (2022) -> {up.gap_pp.loc[2024]:.1f}pp (2024).")
 
     m.round(4).to_csv(OUT / "party_size_rental_vs_hotel_by_country.csv")
     print("\nwrote", OUT / "party_size_rental_vs_hotel_by_country.csv")

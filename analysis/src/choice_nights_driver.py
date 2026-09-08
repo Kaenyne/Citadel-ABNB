@@ -145,9 +145,14 @@ MARKET_GROWTH = {2026: 0.017, 2027: 0.011, 2028: 0.015, 2029: 0.015, 2030: 0.015
 # GENERALISATION TEST 8 Sep 2026 (analysis/src/party_size_rental_vs_hotel.py):
 #   LEVEL gap validated hard - Booking rectour24 (1.63m stays, 2023) shows rental parties larger
 #   than hotel parties in 39 of 40 countries, mean 1.131x, paired t = 10.2.
-#   TREND divergence (the 2.35x that sets these two vectors' RATIO) is still Hawaii-only. No second
-#   long-horizon source found: TRA / VisitBritain / StatCan collect party size and accommodation
-#   type but publish separate marginals, cross-tab only in microdata.
+#   TREND divergence (the 2.35x that sets these two vectors' RATIO) is NOT confirmed elsewhere.
+#   All three national surveys were pulled 8 Sep 2026: TRA is behind a paid portal (and its NVS
+#   ends Dec-2024); StatCan publishes only marginals and directs cross-tab requests to email;
+#   VisitBritain GBTS DID yield a trip-level cross-tab, and it confirms the LEVEL (UK rental trips
+#   are ~1.5x more likely to include a child than hotel trips, 2022-24) but NOT the divergence -
+#   the gap is 12.4pp in 2022, 15.3pp in 2023 and 11.4pp in 2024, i.e. narrower at the end.
+#   So: level gap now has three independent confirmations; the trend has one market for and one
+#   against. Treat the 2.35x ratio as the OPTIMISTIC case, not an established fact.
 #   CAUTION: the gap is WEAKEST WHERE THIS MODEL NEEDS IT. The U.S. ranks 33/40 at 1.051x vs the
 #   1.131x mean (Hawaii 1.080x, also below). Either Booking's thin U.S. whole-home sample understates
 #   it (2,165 reviews, aparthotel-skewed), or the U.S. mix tailwind is genuinely weaker than global
