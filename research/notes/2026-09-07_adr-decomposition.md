@@ -1,0 +1,280 @@
+# ADR: history, reconstruction, and what actually drives it
+
+Krish with Claude Code, 7 Sep 2026. Branch `krish/adr-decomposition`.
+Scripts `analysis/src/adr/01`-`07`; outputs `data/processed/adr/`.
+
+---
+
+## 0. Bottom line
+
+1. **Reported ADR growth is three things, and only one of them is measurable with confidence.**
+   FX is mechanical and now reconstructed back to 1Q20 with validated error. Geographic mix is
+   measurable from the 10-K and is a persistent, *accelerating* drag. Unit size and
+   like-for-like price are, on public data, close to unidentified — and the decomposition
+   now says so explicitly instead of hiding it in a residual.
+2. **The unexplained line is the finding.** In 2025 it is **+3.97pp against an ADR move of
+   +3.02%** — larger than the whole move. 2024 is +0.95pp (58% of the move). We can explain
+   FX and geography; we cannot explain the rest from public data.
+3. **Management's "about half of ADR growth is bedroom mix" does not survive its own
+   arithmetic.** Priced through the hedonic coefficients, Airbnb's *own* disclosed +2pp
+   bedroom-night wedge is worth about **+1.26pp of ADR**, not +2pp, because ADR responds to
+   bedrooms with an elasticity well below one. Our independent measurement of the same window
+   gives a +1.41pp wedge worth **+0.89pp of ADR**. Against ex-FX ADR growth of +4%, unit-size
+   mix is roughly **a fifth to a quarter of the move, not a half**.
+4. **The size-mix story is a North America and Europe phenomenon, and Airbnb's growth is not.**
+   2Q26 window: NA +1.97pp, EMEA +1.56pp, APAC +0.29pp, LatAm −0.06pp. Nights growth is
+   concentrated in LatAm and APAC, where we measure essentially no size wedge. Geographic mix
+   and size mix pull against each other, which is why blended ADR moves so little.
+5. **Geographic mix has been negative every year since 2021 and is getting worse**: −0.5,
+   −2.8, −1.1, −1.2, **−1.6pp**. Every region's ADR grew faster than the blend. Anyone reading
+   blended ADR ex-FX as a pricing signal is under-reading like-for-like pricing in all four regions.
+6. **Two errors in existing merged work were found and are corrected here** (section 5).
+
+---
+
+## 1. What is now in hand
+
+| Series | Was | Now | Where |
+|---|---|---|---|
+| ADR level, quarterly | 3Q20 | **1Q19** | `02b_adr_history_extended.csv` |
+| ADR y/y, quarterly | 3Q21 | **1Q20** | same |
+| ADR ex-FX, quarterly | 2Q22 (disclosed) | **1Q20** (9 reconstructed + 17 disclosed) | same |
+| Regional ADR levels, annual | none | **2020-2025**, from 10-K | `01_regional_annual.csv` |
+| Regional ADR, quarterly | none | **1Q21-2Q26**, basis-flagged | `04_regional_quarterly.csv` |
+| Unit-size mix | one disclosed point | **196-dump panel, 41 markets** | `05_size_mix_panel.csv` |
+| Like-for-like price | residual plug | **externally measured + error line** | `06_measured_price_quarterly.csv` |
+
+---
+
+## 2. The FX reconstruction
+
+The letters give ex-FX ADR only from 2Q22. A GBV-weighted regional currency basket with WS10's
+regional pass-throughs reproduces the disclosed FX effect on the 17 known quarters at
+**r 0.988, raw (unfitted) RMSE 0.68pp, calibration slope 1.10**, against 3.29pp for assuming
+zero; leave-one-out 0.56pp. Slope near one means the construction is right in *level*, not
+merely correlated — the calibration only improves RMSE to 0.50pp, so the result does not lean
+on the fit.
+
+| | 1Q20 | 2Q20 | 3Q20 | 4Q20 | 1Q21 | 2Q21 | 3Q21 | 4Q21 | 1Q22 |
+|---|---|---|---|---|---|---|---|---|---|
+| ADR reported y/y | −3.2 | −2.5 | +15.6 | +13.3 | +34.9 | +41.4 | +14.8 | +20.4 | +5.2 |
+| FX contribution | −2.2 | −2.9 | +0.3 | +1.2 | +3.0 | +4.9 | +1.2 | −1.4 | −2.7 |
+| **ADR ex-FX** | **−1.0** | **+0.3** | **+15.3** | **+12.0** | **+31.9** | **+36.5** | **+13.6** | **+21.8** | **+7.9** |
+
+Independent check: the reconstructed 1Q22 (+7.9%) runs continuously into the disclosed 2Q22
+(+7.0%). Nothing was fitted to make that happen.
+
+**1Q20-2Q21 carry `usable_for_calibration = False`.** 2Q20 nights fell 67% and 2Q21 rose 197%;
+an ex-FX ADR there is arithmetically fine and economically meaningless, because the move is a
+collapse and rebound in geographic, urban/rural and stay-length mix, not pricing. Do not fit
+anything on those quarters.
+
+---
+
+## 3. The decomposition
+
+`07_full_decomposition.csv`. Terms sum to the ADR move by construction *except* the
+unexplained line, which is the point.
+
+| pp of ADR y/y | 2022 | 2023 | 2024 | 2025 |
+|---|---|---|---|---|
+| **ADR y/y** | **+2.68** | **+2.15** | **+1.64** | **+3.02** |
+| Geographic mix | −2.75 | −1.08 | −1.24 | **−1.58** |
+| FX | −3.84 | +0.85 | −0.22 | +1.06 |
+| Length of stay | +0.26 | +0.62 | +0.21 | +0.04 |
+| Unit-size mix | n/a | n/a | +0.44 | −0.25 |
+| Like-for-like price (measured) | +6.73 | +2.21 | +1.61 | −0.10 |
+| Interaction | −0.39 | −0.05 | −0.11 | −0.11 |
+| **UNEXPLAINED** | **+2.67** | **−0.40** | **+0.95** | **+3.97** |
+| unexplained as % of the move | 100% | 19% | 58% | **131%** |
+
+Confidence: 2021 not estimable; 2022-23 low (no size measurement, price low); 2024 low (size
+rests on one city); 2025 medium.
+
+**Read this as a measurement statement, not a discovery.** The unexplained line is large
+because no external benchmark tracks Airbnb's pricing (section 4.3), not because something
+inexplicable is happening.
+
+---
+
+## 4. The terms
+
+### 4.1 Geographic mix — the solid one
+
+From the 10-K "Geographic Mix" tables, 2020-2025, which give regional nights, GBV and revenue,
+and *name* regional ADR outright through FY2022. Computed ADR matches company-stated ADR to
+within 0.25% for 2020-21; the drift to 1.7% from 2022 is fully explained by the switch to
+whole-million nights rounding (`01_adr_disclosure_check.csv`).
+
+| Regional ADR | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|---|
+| NA | $174 | $222 | $240 | $239 | $246 | $255 |
+| EMEA | $98 | $124 | $128 | $140 | $148 | $159 |
+| LatAm | $76 | $95 | $93 | $95 | $93 | $95 |
+| APAC | $86 | $110 | $117 | $118 | $117 | $118 |
+| **Global** | **$124** | **$156** | **$160** | **$164** | **$166** | **$171** |
+
+NA nights share fell 39.1% → 29.6% while LatAm + APAC went 25.9% → 30.0%. Every region's ADR
+rose more than the blend. That wedge is the mix drag, and it is compounding.
+
+### 4.2 Unit-size mix — corroborated, and smaller than management implies
+
+Built from 196 Inside Airbnb dumps: the repo's 13 cities for time depth plus 28 OneDrive
+markets across 14 countries for breadth. Listings are weighted by `estimated_occupancy_l365d`
+(**estimated nights booked in the last 365 days, a count — not an occupancy percentage**), which
+converts a supply-side size distribution into an approximation of a booked one.
+
+2Q26 disclosure window, 39 pairs across 12 markets, ~81m estimated nights:
+
+| Measure | Result |
+|---|---|
+| Size wedge (bedroom-nights growth less nights growth) | **+1.41pp** vs Airbnb's disclosed ≥+2pp |
+| capacity per booked night | +1.63pp |
+| whole-home complete cases, zero imputation | +1.24pp |
+| **ADR contribution** | **+0.89pp** (+0.32 bedrooms, +0.56 capacity) |
+| 3Q26 (22 pairs) | +1.46pp — the wedge persists past the reported quarter |
+
+Three independent size measures agree. The panel is dense-urban, and Airbnb's size growth is
+concentrated in non-urban family stock the panel does not cover, so a somewhat smaller wedge in
+cities is the expected direction of bias. **Call the disclosure corroborated.**
+
+**But the conversion to ADR is where management's framing breaks.** Priced through the same
+hedonics, Airbnb's own +2pp wedge is worth ~+1.26pp of ADR. Against +4% ex-FX ADR growth,
+unit-size mix is ~a fifth to a quarter of the move — not "about half".
+
+**Within vs between:** +1.33pp of the +1.47pp total comes from listings present in both dumps —
+about 91% is booking volume reallocating onto bigger *existing* homes. That is demand behaviour,
+which is management's stated mechanism, not the listing base drifting bigger.
+
+**Regional, and this cuts against the story:** NA +1.97pp, EMEA +1.56pp, APAC +0.29pp,
+LatAm −0.06pp. **Caveat that matters: LatAm rests on Mexico City alone and APAC on Sydney
+alone.** Only NA (7 cities) and EMEA (3) are properly sampled. The direction is corroborated
+independently by the OneDrive levels — LatAm is the smallest-unit region on both the OneDrive
+and repo panels — but the regional *wedge* is one city per growth region and should be
+presented as indicative.
+
+**The artifact that nearly wrecked it, and is a warning for any future Inside Airbnb work:**
+the `bedrooms` field's population is not stable and shifts twice inside the test window, almost
+entirely on private rooms (London 99.9% populated Jan 2026 → 15% Aug 2026). The hedonic's native
+`bedrooms_f` falls back to `round(accommodates/2)` on missing values, so it reads the metadata
+change as a size trend and returns **+1.44pp of ADR contribution against +0.89pp** on a
+coverage-robust measure. Rejected and recorded. The gate (drop dumps below 80% whole-home
+coverage, drop pairs with >10pp coverage drift) excluded Barcelona, which had been producing a
+spurious −6.9pp wedge.
+
+### 4.3 Like-for-like price — measured, and the measurement fails
+
+Definition: constant-currency change in the nightly price of a fixed bundle. Two legs — a US
+matched-item leg (CPI lodging + BEA hotels price) and a worldwide same-store constant-currency
+leg (MAR + HLT comparable RevPAR) — **weighted by GBV share, not nights share**, because a
+region's price change reaches group ADR through GBV share (NA is 30% of nights but 44% of GBV).
+
+The informativeness test is the result:
+
+| vs ABNB ADR ex-FX | full sample (n=20) | 2023Q1+ (n=14) |
+|---|---|---|
+| CPI lodging | +0.755 *** | +0.05 (p=1.00) |
+| BEA hotels price | +0.749 *** | +0.01 (p=1.00) |
+| MAR + HLT RevPAR | +0.87 | +0.13 (p=1.00) |
+
+**No external benchmark tracks Airbnb's own pricing post-reopening.** The full-sample
+correlations are 2021-22 reopening co-movement — the same trap the predictive study found for
+nights. CPI and BEA correlate at r = +0.999, so they are one vote, not two.
+
+MAR+HLT worldwide comparable constant-currency RevPAR is the best-matched benchmark *on
+construction* (only series matching ABNB on both geography and currency, and it prints 1-8 days
+before ABNB), but it has no demonstrated power. **AirDNA US STR ADR is the one worth
+backfilling** — the only same-asset-class series — but only four months exist.
+
+Rejected: Inside Airbnb like-for-like prices (r +0.32, p 0.60, n=5; one city in 4Q25; basis
+break; discontinued after Sep 2025); Airbnb's own 1BR-vs-hotel comparison (3 points,
+discontinued, no methodology); quote discount penetration (no year-ago comparison, and the rise
+is contaminated by a taxes-line schema change, 0.2% → 6.5%).
+
+### 4.4 Length of stay — bounded, not fitted
+
+A LOS elasticity fitted on the regional panel is **NOT IDENTIFIED**: t = 1.82, and the sign
+flips from +0.64 to −0.40 depending on whether APAC is dropped (APAC's ALOS jumping 2.7 → 3.2 in
+2022 carries the whole fit). Recorded in `03_los_elasticity.csv` and rejected. An externally
+bounded value from Airbnb's host discount structure (−0.15, band −0.25 to −0.05) is used
+instead. The term is small in every year (+0.04 to +0.62pp), so this choice does not drive
+anything — but nobody should quote a LOS number as measured.
+
+---
+
+## 5. Corrections to existing work
+
+1. **WS10's regional ADR index has LatAm and APAC swapped.** It uses LatAm 0.68 / APAC 0.59;
+   the 10-K gives 0.554 / 0.690 (2025) and 0.561 / 0.703 (2024). LatAm's ADR is *below* APAC's.
+   WS10's estimated quarterly nights shares were calibrated on that index and inherit it:
+
+   | 2025 nights share | WS10 estimate | 10-K disclosed | error |
+   |---|---|---|---|
+   | LatAm | 13.6% | **16.9%** | −3.3pp (−20% relative) |
+   | APAC | 15.8% | **13.1%** | +2.7pp (+21% relative) |
+   | NA | 31.1% | 29.6% | +1.5pp |
+   | EMEA | 39.5% | 40.3% | −0.8pp |
+
+   These shares are **disclosed annually in the 10-K and did not need estimating.** The error
+   propagates to the regional nights build, the FY27 bridge (WS29) and the driver model, and it
+   understates the weight of the fastest-growing region by a fifth. Shares are rebuilt here by
+   RAS against 10-K annual nights and disclosed quarterly totals, touching no ADR.
+
+2. **The KPI panel's regional ADR disclosure map is incomplete.** From the 23 raw letters: EMEA
+   reported ADR y/y starts **1Q23** (not 2Q23); LatAm and APAC start **4Q24** (not 1Q25). Also,
+   the 4Q23-3Q24 NA/EMEA constant-currency figures are stated "excluding FX **and mix shift**" —
+   they are *not* ex-FX and must not be used as such. Carried as a separate metric.
+
+3. **The October 2025 CPI gap is live in `06_price_gap_series.csv`.** It averages the monthly
+   *index*, printing 4Q25 CPI lodging at −1.59%; rebuilt as a mean of month-matched y/y over
+   available months it is **−2.54%**. This affects the hotel price monitor, not just this build.
+
+4. WS10's FX pass-throughs **survive** an independent test on the 21 quarters giving both
+   reported and ex-FX regional ADR: EMEA 1.07 (assumed 1.04), LatAm 0.63 (0.62), APAC 0.82
+   (0.86). NA remains not identified and is carried at 1.0, which moves nothing.
+
+---
+
+## 6. For the model and the 5 Nov card
+
+| Parameter | Value | Confidence |
+|---|---|---|
+| Geographic mix drag, FY27 | −1.5 to −1.8pp, worsening with LatAm/APAC share | **High** — 10-K disclosed |
+| Unit-size mix contribution to ADR | +0.9pp measured (2Q26 window); ~+1.3pp on Airbnb's own disclosed wedge | Medium |
+| Size mix in LatAm/APAC | ~0 | Low — one city per region |
+| Like-for-like price | **not measurable** from external data post-2023 | — |
+| LOS contribution | −0.1 to +0.2pp | Low, bounded not fitted |
+| FX contribution | mechanical, `0.52 − 0.72 × broad USD y/y` | **High** |
+
+**What to watch on 5 November.** Does Airbnb repeat the Bedroom Nights Booked disclosure? It is
+the single input that makes the size half of ADR checkable, it has exactly one data point, and
+the company has form for dropping metrics that stop flattering the story — it discontinued the
+1BR-vs-hotel comparison after 4Q23 and the long-term-stay share after 1Q24. If bedroom-night
+growth converges toward nights growth, the durable half of the ADR story is gone. If the metric
+disappears, treat that the way we treat the other two.
+
+---
+
+## 7. What to build next
+
+1. **Monthly Inside Airbnb capture, starting now.** The CDN keeps about a year, so every missed
+   month is unrecoverable, and the size panel only has a credible annual series for 2026 (51
+   pairs, 12 cities) against 2025 (11 pairs, 4 cities) and 2024 (3 pairs, 1 city).
+2. **Extend the size panel into LatAm and APAC.** The regional finding that matters most —
+   that size mix is absent where the growth is — rests on one city per region.
+3. **Backfill AirDNA US STR ADR.** The only same-asset-class price benchmark; four months exist.
+4. **Model the single-fee repricing artifact.** Migration completed 15 Sep / 13 Oct 2026, inside
+   the quarters being forecast; if hosts reprice to hold payout, listed prices rise ~14.8% for
+   the migrating cohort and flow into ADR. Not represented in the model.
+
+## Files
+
+| File | Contents |
+|---|---|
+| `01_regional_annual.csv` | Regional nights/GBV/revenue/ADR/ALOS, 2020-2025, from 10-K |
+| `02_fx_backcast.csv`, `02b_adr_history_extended.csv` | FX reconstruction and the 1Q19+ ADR history |
+| `03_annual_decomposition.csv`, `03_los_elasticity.csv` | Annual decomposition; the rejected LOS fit |
+| `04_regional_quarterly.csv`, `04_reconciliation.csv` | Quarterly regional panel, basis-flagged, and its reconciliation |
+| `05_size_mix_panel.csv`, `05_size_mix_summary.csv`, `05_size_evidence.csv` | Size-mix panel, 196 dumps, 41 markets |
+| `06_measured_price_quarterly.csv`, `06_price_benchmark_informativeness.csv` | Measured price and the benchmark tests |
+| `07_full_decomposition.csv` | The assembled decomposition with the unexplained line |
