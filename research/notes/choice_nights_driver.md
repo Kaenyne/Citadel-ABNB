@@ -627,3 +627,44 @@ Inside Airbnb calendars would give a genuinely independent build, but the repo's
 - The calendars are **365-day forward snapshots**, so far-dated months look empty simply because those bookings haven't happened yet.
 
 Together these give ~**9.7% implied occupancy** across the eight cities against AirDNA's ~55% — about one eighth. The fix is to recompute from raw `calendar.csv.gz` using only a near window (0–30 days out, where booking is largely complete) with no 30-night cap, then correct for residual pickup. `data/raw` is gitignored and the gz files aren't on this machine, so that's a follow-up.
+
+## Bottom-up from raw Inside Airbnb — recomputed (8 Sep 2026)
+
+`analysis/src/bottom_up_nights_from_raw.py` → `bottom_up_nights_from_raw.csv`. Downloaded raw `listings.csv.gz` and `calendar.csv.gz` for all 8 cities (June-2026 snapshots, 92MB, in gitignored `data/raw/inside_airbnb/`).
+
+### The calendar cannot do it, and here is the proof
+
+Inside Airbnb marks `available = f` for booked **and** host-blocked **and** not-yet-opened nights. The Austin horizon profile (share unavailable, by days from the 2026-06-22 snapshot):
+
+| 0–7d | 7–30d | 30–60d | 60–90d | 90–120d | 120–180d | 180–240d | 240–300d | 300–366d |
+|---|---|---|---|---|---|---|---|---|
+| 61.3% | 42.8% | 32.8% | **27.4%** | 34.5% | 31.9% | 35.2% | 40.9% | 47.3% |
+
+Unavailability bottoms around 60–90 days and then **rises again**. That rise isn't bookings — it's hosts whose calendars aren't open that far out. So "near minus far" doesn't identify bookings either, because far-horizon unavailability is dominated by closed calendars. **Any occupancy read straight off the calendar is uninterpretable** — which is also why the repo's earlier extract implied 9.7% occupancy against AirDNA's 55%.
+
+### What was used instead
+
+The review-rate estimator (Inside Airbnb's own "San Francisco model"): `bookings = reviews_ltm / review_rate`, `nights = bookings × stay length`. Two corrections were needed before any comparison was meaningful:
+
+1. **Basis.** Top-down 61.5 is per *all* listings; the bottom-up is per *active* listing. Active is **70.4%** of all across these cities, so the comparable top-down figure is **87.3** nights/active listing. Comparing to 61.5 would have overstated the gap by 42%.
+2. **Stay length.** The repo's booked-run mean is biased up (its own source script says so — Austin 4.71 vs Airbnb's disclosed NA 4.1). The disclosed **4.1** is central.
+
+### Result
+
+Pooled across 8 cities: **18.99 reviews per active listing (LTM)**.
+
+| Review rate | Bottom-up nights/active listing | vs top-down 87.3 |
+|---|---|---|
+| 72% (literature high) | 108 | **+24%** |
+| 50% (Inside Airbnb's own) | 156 | +78% |
+| 30% (literature low) | 260 | +197% |
+
+**The implied review rate that would reconcile the two exactly is 89% — above the top of the published range.**
+
+### Verdict
+
+**The top-down level is not refuted, and this leans the opposite way to the earlier supply-side check.** These are eight large urban markets — professionally hosted, better utilised — and they *should* sit above a national average that includes rural and seasonal supply. At a 72% review rate the implied urban premium is +24%, entirely credible. At 50% it's +78%, large but arguable. At 30% it's +197%, which is not credible — **so a 30% review rate can be ruled out**, which is itself a useful narrowing.
+
+But `bottom_up_nights_check.py` hinted US nights might be *high*; this one suggests they look *low*. **Two checks pointing opposite ways means neither is decisive, and the level is uncertain within roughly ±25%.** That's the honest read, and better said out loud than dressed up as a validation.
+
+**What would settle it:** calibrate the review rate on a market where Airbnb's true nights are known, or buy AirDNA's modelled city-level demand.
