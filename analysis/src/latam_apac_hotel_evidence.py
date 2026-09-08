@@ -142,17 +142,20 @@ def main():
                      "abnb_less_market_pp": round((a - g) * 100, 1)})
 
     print("""
-READ:
-  LatAm - the lodging market is growing ~2x faster than the model assumes (6.5% vs 3.0%), so part
-          of Airbnb's +18.4% is a rising tide rather than share gain. Raising MARKET['latam'] is
-          supported; it makes the LatAm path slightly MORE robust, not less.
-  APAC  - Japan's hotel nights FELL 0.8% while Airbnb APAC grew 14.8%. If Japan is representative,
-          the model's +3.5% market growth is too generous and essentially ALL of APAC's growth is
-          share gain against a flat market. That is the more fragile of the two positions and
-          argues for a faster fade.
-  Both  - these are market-growth anchors only. Neither country publishes party size by
-          accommodation type, so P(Airbnb | contestable) still cannot be calibrated outside
-          NA and EMEA.
+READ (after all seven markets, not just the two Tier-1 ones):
+  LatAm - the market is growing ~2x faster than the model originally assumed (Mexico +6.5%,
+          Brazil implying +4-5%), so part of Airbnb's +18.4% is a rising tide rather than share
+          gain. MARKET['latam'] raised 3.0% -> 5.0%. This makes the LatAm path MORE robust.
+  APAC  - Japan's hotel nights FELL 0.8%, and a Japan-only read would have cut market growth to
+          ~1.0%. That would have been a trap: Korea's inbound rose 15.2%, India's occupancy is
+          rising, Australia is roughly flat, and China's falling star-rated occupancy barely
+          matters because Airbnb exited domestic China in 2022. MARKET['apac'] set to 2.0%.
+          APAC growth is still mostly share gain against a near-flat market - the more fragile
+          of the two regions, and why it carries the steeper fade.
+  All   - market-growth anchors ONLY. Not one of the seven markets publishes party size by
+          accommodation type, so P(Airbnb | contestable) remains uncalibrated outside NA and EMEA.
+          Coverage bias runs one way everywhere (registered establishments only), so these
+          hotel-side rates likely UNDERSTATE total lodging demand growth.
 """)
     pd.DataFrame(rows).to_csv(OUT / "latam_apac_hotel_evidence.csv", index=False)
     df.to_csv(OUT / "latam_apac_hotel_series.csv", index=False)
