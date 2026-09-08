@@ -89,6 +89,28 @@ FF_CROSS_PRICE_ELASTICITY = 3.76  # F&F Table E9, avg over the 4 Airbnb tiers, s
 # EMEA's implied rate is ~10% - see choice_nights_driver_global.py.
 CATEGORY_GROWTH = {2026: 0.04, 2027: 0.04, 2028: 0.035, 2029: 0.035, 2030: 0.03}
 
+# ---- STAY LENGTH (nights per booking) - made an EXPLICIT lever 8 Sep 2026 ----
+# The model's demand machinery (N, M, P) is denominated in party-NIGHTS, so a change in trip
+# INTENSITY was previously invisible: it could only enter by silently contaminating the category
+# and market growth terms. It is now a separate multiplicative index, so it can be argued with.
+#
+# What the disclosures actually say (nights per booking, FY20-FY25 10-K MD&A "Geographic Mix"):
+#   North America  4.4  4.3  4.2  4.1  4.1  4.1   <- FLAT for three years
+#   EMEA           4.4  4.4  4.2  3.9  3.8  3.8   <- -14%
+#   Latin America  4.4  4.3  4.2  3.9  3.7  3.6   <- -18%
+#   Asia Pacific   2.8  2.7  3.2  3.3  3.3  3.3   <- +18%, the only region rising
+#   Global         4.1  4.1  4.1  3.9  3.8  3.7   <- -2.0%/yr; cost ~58mm nights in 2025 (10.8%)
+#
+# So the global -2%/yr drag is NOT a U.S. phenomenon. NA has been flat at 4.1 since 2023, which is
+# why the U.S. BASE CASE CARRIES NO DRAG. The decline is EMEA/LatAm (see choice_nights_driver_global.py).
+# Caveat both ways: the 4.1-4.4 plateau of 2020-22 was COVID long-stay inflation, so part of the
+# global fall is normalisation rather than deterioration - and normalisation is self-limiting.
+# Against 2019 (US reservation panel, 3.7 nights) today's level is not obviously abnormal.
+# Bear case = the EMEA/LatAm pattern arrives in NA; bull = mix toward longer stays reverses it.
+STAY_LENGTH = {2025: 4.1, 2026: 4.1, 2027: 4.1, 2028: 4.1, 2029: 4.1, 2030: 4.1}
+STAY_LENGTH_BEAR = {2025: 4.1, 2026: 4.02, 2027: 3.94, 2028: 3.86, 2029: 3.78, 2030: 3.71}  # -2%/yr
+STAY_LENGTH_BULL = {2025: 4.1, 2026: 4.14, 2027: 4.18, 2028: 4.22, 2029: 4.27, 2030: 4.31}  # +1%/yr
+
 # Market / price paths (edit these)
 YEARS = [2025, 2026, 2027, 2028, 2029, 2030]
 MARKET_GROWTH = {2026: 0.017, 2027: 0.011, 2028: 0.015, 2029: 0.015, 2030: 0.015}   # CoStar/TE U.S. demand +1.7% 2026, +1.1% 2027; 1.5% thereafter (assumption)
@@ -156,14 +178,18 @@ def calibrate():
 
 
 def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HOTEL_ADR_GROWTH, mix=MIX_DRIFT,
-            mkt=MARKET_GROWTH, shift=PRODUCT_SHIFT, cat=CATEGORY_GROWTH):
+            mkt=MARKET_GROWTH, shift=PRODUCT_SHIFT, cat=CATEGORY_GROWTH, stay=STAY_LENGTH):
     base = cal[cal.segment != "TOTAL"].set_index("segment")
     M = base.contestable_pool_mm.to_dict()
     P = base.p_airbnb_in_pool.to_dict()
     N = base.airbnb_own_category_mm.to_dict()
+    # Demand machinery runs at CONSTANT 2025 stay length; the stay-length index is applied on top,
+    # so nights = (trip demand at 2025 intensity) x (stay length / stay length 2025).
+    sl = lambda y: stay[y] / stay[YEARS[0]]
     tot = lambda: sum(N[g] + M[g] * P[g] for g in SEG)
     rows = [{"year": 2025, **{f"M_{g}": M[g] for g in SEG}, **{f"P_{g}": P[g] for g in SEG},
-             **{f"N_{g}": N[g] for g in SEG}, "us_nights_mm": tot()}]
+             **{f"N_{g}": N[g] for g in SEG}, "stay_length": stay[YEARS[0]],
+             "us_nights_mm": tot() * sl(YEARS[0])}]
     dec = []
     for y in YEARS[1:]:
         prev = tot()
@@ -181,12 +207,20 @@ def project(cal, switch_rate=SWITCH_RATE, abnb_adr=ABNB_ADR_GROWTH, hotel_adr=HO
         # step 4: share shift from relative price + product
         P4 = {g: inv_logit(logit(P[g]) - switch_rate * dln_price + shift[g]) for g in SEG}
         s_share = sum(N3[g] + M2[g] * P4[g] for g in SEG)
+        # step 5: stay length (trip intensity) - scales nights, does not touch the share competition
+        s_stay = s_share * sl(y)
         M, N, P = M2, N3, P4
         rows.append({"year": y, **{f"M_{g}": M[g] for g in SEG}, **{f"P_{g}": P[g] for g in SEG},
-                     **{f"N_{g}": N[g] for g in SEG}, "us_nights_mm": s_share})
-        dec.append({"year": y, "market_pts": s_market / prev - 1, "mix_pts": (s_mix - s_market) / prev,
-                    "category_pts": (s_cat - s_mix) / prev, "share_pts": (s_share - s_cat) / prev,
-                    "total": s_share / prev - 1})
+                     **{f"N_{g}": N[g] for g in SEG}, "stay_length": stay[y], "us_nights_mm": s_stay})
+        # Decomposition: steps 1-4 are measured at LAST year's stay length, so they divide by `prev`;
+        # step 5 is the incremental effect of the stay-length change. The five sum to `total` exactly.
+        sl_prev = sl(YEARS[YEARS.index(y) - 1])
+        prev_sl = prev * sl_prev
+        dec.append({"year": y, "market_pts": (s_market - prev) / prev,
+                    "mix_pts": (s_mix - s_market) / prev, "category_pts": (s_cat - s_mix) / prev,
+                    "share_pts": (s_share - s_cat) / prev,
+                    "stay_length_pts": s_share * (sl(y) - sl_prev) / prev_sl,
+                    "total": s_stay / prev_sl - 1})
     df = pd.DataFrame(rows)
     df["us_nights_growth"] = df.us_nights_mm.pct_change()
     return df, pd.DataFrame(dec)

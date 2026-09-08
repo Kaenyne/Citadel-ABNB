@@ -126,6 +126,7 @@ paths = [
     ("U.S. lodging demand growth (hotel-contestable pool)", [None, 0.017, 0.011, 0.015, 0.015, 0.015], "CoStar/Tourism Economics Aug-2026: demand +1.7% 2026, +1.1% 2027 — https://www.hospitalitynet.org/news/4133888/us-hotel-forecast-assumptions-august-2026.html; 1.5% after = assumption"),
     ("Hotel ADR growth", [None, 0.031, 0.016, 0.025, 0.025, 0.025], "CoStar/TE: ADR +3.1% 2026, +1.6% 2027 (+2.1% ex World Cup); 2.5% after = assumption"),
     ("Airbnb ADR growth (link to the team's ADR line)", [None, 0.035, 0.025, 0.025, 0.025, 0.025], "WIRED to model/assumptions.md WS13 base, ex-FX: 2H26 +3.0% (FY26 blends ~+3.5%), FY27/28 +2.5%, held after. Ex-FX is the right basis for the US share equation. Bear +2.0% / bull +4.0% 2H26"),
+    ("Stay length, nights per booking (NA)", [4.1, 4.1, 4.1, 4.1, 4.1, 4.1], "EXPLICIT LEVER added 8 Sep 2026. FY20-25 10-Ks: NA 4.4/4.3/4.2/4.1/4.1/4.1 - FLAT since 2023, so the U.S. base carries no drag. Global fell 4.1->3.7 (-2.0%/yr, ~58mm nights forgone in 2025) but that is EMEA (4.4->3.8) and LatAm (4.4->3.6); APAC rose 2.8->3.3. Bear = the EMEA pattern reaches NA (-2%/yr -> 2030 nights 154.8mm, CAGR +1.3%); bull = +1%/yr (179.8mm, +4.4%). Caveat: the 2020-22 plateau was COVID long-stay inflation, so part of the global fall is self-limiting normalisation"),
     ("Own-category nights growth (category adoption)", [None, 0.04, 0.04, 0.035, 0.035, 0.03], "GROUNDED: inverting the model on disclosed NA nights (146/154/158mm FY23-25) implies own-category growth 7.9% (2024) -> 4.5% (2025); 4% entry = observed 2025 exit rate, fade extends the observed deceleration. category_adoption_evidence.csv"),
 ]
 path_row = {}
@@ -133,12 +134,18 @@ for label, vals, src in paths:
     r += 1
     path_row[label] = r
     ws.cell(r, 1, label)
+    # Growth-rate rows have no 2025 value and format as %; the stay-length row is a LEVEL in nights
+    # and does have a 2025 value, so it must not be blanked or percent-formatted.
+    is_level = "Stay length" in label
     for j, v in enumerate(vals):
         if v is not None:
-            c = ws.cell(r, 2 + j, v); c.font = BLUE; c.number_format = PCT
-    ws.cell(r, 2).value = "—"
+            c = ws.cell(r, 2 + j, v); c.font = BLUE
+            c.number_format = "0.00" if is_level else PCT
+    if not is_level:
+        ws.cell(r, 2).value = "—"
     ws.cell(r, 8, src).font = Font(name="Arial", size=9)
 ws.cell(path_row["Airbnb ADR growth (link to the team's ADR line)"], 1).fill = YELLOW
+ws.cell(path_row["Stay length, nights per booking (NA)"], 1).fill = YELLOW
 
 # ------------------------------------------------------------------ Calibration_2025
 cs = wb.create_sheet("Calibration_2025")

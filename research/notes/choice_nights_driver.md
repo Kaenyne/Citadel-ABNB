@@ -203,3 +203,27 @@ Provenance note (Airbnb IPO'd Dec-2020, so the pre-IPO inputs deserve scrutiny):
 Reconciling with the group-travel narrative (multigenerational travel 47% of travellers in 2026, +17% vs 2024; 4+ bedroom homes the fastest-growing category; Bedroom Nights +12% vs Nights +10%): bedrooms per stay is rising ~1.8%/yr while guests per booking shows no trend, so **guests per bedroom is probably falling ~1.8%/yr — the same size group booking more space** (this rests on the stable level, not on a measured decline). Consistent with Inside Airbnb (guests fill ~half of listed capacity). Also consistent with a *polarising* distribution at a constant mean: solo travel rising (~25% of Airbnb guests travel solo) and multigenerational rising, hollowing the middle.
 
 **Implication for the pitch: "group travel" shows up in ADR, not in nights.** That is bullish for revenue per booking and bearish-to-neutral for the nights line — closer to the bear thesis than the bull one. The model's MIX_DRIFT (5+ at +4%/yr) is defensible only as a *distribution-widening* assumption, not as rising mean party size; it should be re-derived, and the 5+ drift is a candidate to cut.
+
+## Stay length made an explicit lever (8 Sep 2026)
+
+The model's machinery (N, M, P) is denominated in party-**nights**, so trip **intensity** had no home: a change in nights per booking could only enter by silently contaminating the category- and market-growth terms. It is now a separate multiplicative index in `choice_nights_driver.py` (`STAY_LENGTH`, with `_BEAR` / `_BULL` paths), applied after the share step, and a fifth term in the growth decomposition.
+
+**Nights per booking, FY20–FY25 10-K MD&A:**
+
+| | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | Δ |
+|---|---|---|---|---|---|---|---|
+| North America | 4.4 | 4.3 | 4.2 | 4.1 | 4.1 | 4.1 | −7%, **flat since 2023** |
+| EMEA | 4.4 | 4.4 | 4.2 | 3.9 | 3.8 | 3.8 | −14% |
+| Latin America | 4.4 | 4.3 | 4.2 | 3.9 | 3.7 | 3.6 | −18% |
+| Asia Pacific | 2.8 | 2.7 | 3.2 | 3.3 | 3.3 | 3.3 | **+18%** |
+| Global | 4.1 | 4.1 | 4.1 | 3.9 | 3.8 | 3.7 | −2.0%/yr |
+
+The global −2%/yr drag cost **~58mm nights in 2025 (10.8% of the year's total)** — but it is *not* a U.S. phenomenon. NA has held 4.1 for three years, so **the U.S. base case carries no drag**; the decline is EMEA/LatAm, and APAC is rising.
+
+**U.S. sensitivity (2030 nights, CAGR):** base flat 4.1 → 171.1mm, +3.31% · bear −2%/yr → **154.8mm, +1.27%** · bull +1%/yr → 179.8mm, +4.35%. A stay-length assumption is worth ~±1.5pts of CAGR — comparable to the switch rate, and previously invisible.
+
+**EMEA** now carries its own path in `choice_nights_driver_global.py` (`EMEA_STAY_LENGTH`, 3.80 → 3.63, fading the recent −2.6%/yr to −1.0%/yr on the view that the COVID long-stay unwind is mostly done). Global nights: **533 → 730mm by 2030, FY26 +6.7%** (was +7.1% before the lever), vs the team's WS13 base of +9.9%.
+
+**Caveat, and it cuts both ways:** the 2020–22 plateau at 4.1–4.4 was COVID long-stay inflation, so part of the global fall is normalisation rather than deterioration — and normalisation is self-limiting. Against 2019 (US reservation panel, 3.7 nights) today's level is not obviously abnormal. What argues structural: the decline has run three full years past reopening and is concentrated in the two largest Western regions. The lever exists so this can be argued explicitly rather than assumed away.
+
+**Workbook:** "Stay length, nights per booking (NA)" is now a yellow lever row on Inputs. Note this required a builder fix — the year-path writer hardcoded a "—" in the 2025 column and percent-formatted every row, which would have rendered 4.1 as "410.0%"; level rows are now handled separately.

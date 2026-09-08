@@ -5,6 +5,7 @@ Regions (FY2025 10-K nights, mm): NA 158 (US 145.4 via the 92% revenue proxy), E
 LatAm 90, APAC 70; total 533.
 
   US      - the full segment-level choice model (choice_nights_driver.py, switch rate 5.0, team ADR line).
+            Stay length is an explicit lever there and is FLAT in the base (NA held 4.1 since 2023).
   EMEA    - the measured 4-country calibration (choice_nights_driver_countries.py: FR/ES/IT/DE =
             128.2mm Airbnb party-nights, 60% of EMEA's 215mm) scaled to EMEA and run through the
             same M/P/N machinery in aggregate. Implied EMEA own-category growth is ~10%
@@ -39,6 +40,12 @@ EMEA_HOTEL_ADR_GROWTH = 0.025     # assumption; European hotel ADR ran +3-5% 202
 EMEA_CATEGORY_GROWTH = {2026: 0.07, 2027: 0.065, 2028: 0.06, 2029: 0.055, 2030: 0.05}
 # implied ~10% from 2024-25 EMEA history; haircut for regulation (WS11 drag) and maturity
 EMEA_MIX_UPLIFT = 0.009           # same blended mix-drift contribution the US model produces
+# EMEA STAY LENGTH - the explicit intensity lever. This is where the global -2%/yr drag lives:
+# EMEA nights per booking fell 4.4 -> 3.8 (-14%) FY20-FY25 while NA held flat at 4.1 since 2023.
+# Base fades the recent -2.6%/yr to -1.0%/yr on the view that the COVID long-stay unwind is mostly
+# done; a flat path is the bull and continued -2%/yr the bear. LatAm (4.4 -> 3.6, -18%) has the same
+# pattern and is inside its growth fade below rather than modelled separately.
+EMEA_STAY_LENGTH = {2025: 3.80, 2026: 3.76, 2027: 3.73, 2028: 3.70, 2029: 3.66, 2030: 3.63}
 CONTESTABLE, SWITCH_RATE = us_model.CONTESTABLE, us_model.SWITCH_RATE
 
 # ---------------- LatAm / APAC growth fades (from disclosed +18% / +15% in 2025) ----------------
@@ -57,12 +64,13 @@ def emea_path():
     M = CONTESTABLE * EMEA_NIGHTS + h4 * scale
     P = (CONTESTABLE * EMEA_NIGHTS) / M
     out = {2025: EMEA_NIGHTS}
+    sl0 = EMEA_STAY_LENGTH[2025]
     for y in YEARS[1:]:
         dln = np.log(1 + us_model.ABNB_ADR_GROWTH[y]) - np.log(1 + EMEA_HOTEL_ADR_GROWTH)
         M *= (1 + EMEA_MARKET_GROWTH + EMEA_MIX_UPLIFT)
         N *= (1 + EMEA_CATEGORY_GROWTH[y] + EMEA_MIX_UPLIFT)
         P = 1 / (1 + np.exp(-(np.log(P / (1 - P)) - SWITCH_RATE * dln)))
-        out[y] = N + M * P
+        out[y] = (N + M * P) * EMEA_STAY_LENGTH[y] / sl0   # explicit trip-intensity lever
     return out
 
 
