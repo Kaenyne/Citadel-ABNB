@@ -28,7 +28,10 @@ EVIDENCE AVAILABLE PER REGION - the confidence gradient runs BACKWARDS to the gr
 
   ASIA PACIFIC    Hotel side now PARTLY evidenced: Japan's JTA Overnight Travel Statistics give
                   653.48mm guest-nights in 2025, -0.8% y/y (domestic -3.8%, international +8.2%).
-                  Same limit as LatAm - a market-growth anchor, not a calibrated share. Region-specific: disclosed nights (+14.8%),
+                  Same limit as LatAm - a market-growth anchor, not a calibrated share. Japan is
+                  not APAC though: Korea (+15.2% inbound), India (occupancy rising) and Australia
+                  (flat) all point higher, and China barely matters since Airbnb exited domestic
+                  China in 2022. Region-specific: disclosed nights (+14.8%),
                   ADR $118.20 (+1.2%), and the ONLY region where stay length is RISING (2.8 -> 3.3,
                   +18% since 2020). Japan's minpaku law caps a property at 180 nights/yr and lets
                   municipalities zero it out, so APAC supply has a legal ceiling the others lack.
@@ -87,10 +90,12 @@ CATEGORY = {
 #   LatAm  raised 3.0% -> 5.0%. Mexico says 6.5%, haircut because Mexico is not LatAm and one
 #          year is not a trend. More market growth makes the LatAm path MORE robust: less of its
 #          +18.4% has to be share gain.
-#   APAC   cut 3.5% -> 1.0%. Japan's hotel nights FELL. If Japan is representative, essentially
-#          ALL of APAC's +14.8% is share gain against a flat market - the most fragile position
-#          in the model, and the reason APAC's fade is steepest below.
-MARKET = {"north_america": 0.015, "emea": 0.020, "latam": 0.050, "apac": 0.010}
+#   APAC   cut 3.5% -> 2.0%. Japan's hotel nights fell 0.8%, but five-market evidence says Japan
+#          is NOT representative: Korea inbound +15.2%, India occupancy rising, Australia roughly
+#          flat, and China's falling star-rated occupancy is nearly irrelevant because Airbnb
+#          exited domestic China in 2022. APAC growth is still mostly share gain - just not
+#          entirely, as a Japan-only read implied.
+MARKET = {"north_america": 0.015, "emea": 0.020, "latam": 0.050, "apac": 0.020}
 
 # ---- ADR paths. NA/EMEA hotel comparators are real forecasts; LatAm/APAC have none.
 ABNB_ADR = {  # PROVISIONAL - replace with the team's regional ex-FX line when it lands

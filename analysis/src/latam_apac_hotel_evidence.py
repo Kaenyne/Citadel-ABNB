@@ -6,7 +6,9 @@ and LatAm/APAC as pure growth models, because neither had ANY hotel-side data. T
 are ~30% of 2025 nights and ~64% of 2025-30 growth, so the least evidenced part of the forecast
 was also the largest. This script pulls what free official statistics do exist.
 
-WHAT WAS FOUND - two national statistical offices publish usable hotel-side series:
+SEVEN MARKETS PULLED. Quality varies enormously - read the tier before using a number.
+
+  TIER 1, national census or near-census, usable directly:
 
   MEXICO (DATATUR / SECTUR, "Turismo en Cifras", Dec-2025 edition)
     Average occupied rooms   419,768 (2023) -> 438,624 (2024) -> 466,958 (2025), +6.5% in 2025
@@ -29,18 +31,58 @@ in OPPOSITE directions:
     Mexico hotel room-nights   +6.5% (2025)  vs  Airbnb LatAm nights +18.4%  -> Airbnb +11.9pp
     Japan hotel guest-nights   -0.8% (2025)  vs  Airbnb APAC nights  +14.8%  -> Airbnb +15.6pp
 
-So the LatAm lodging market is growing roughly twice as fast as assumed, while the APAC market
-(on Japan's evidence) is FLAT TO SHRINKING rather than growing 3.5%. Both regions' Airbnb growth is
-therefore share gain far more than market growth - which is a much more fragile basis for a
-five-year forecast than a rising tide, and argues for faster fades in both.
+So the LatAm lodging market is growing roughly twice as fast as assumed, while Japan's is flat to
+shrinking. But Japan alone would have been a trap: the Tier-2 markets below show Korea, India and
+Australia all firmer, so APAC settles at ~2.0% rather than the ~1.0% a Japan-only read implied.
+Either way both regions' Airbnb growth is far more share gain than rising tide, which is a more
+fragile basis for a five-year forecast and is why both carry fades.
+
+  TIER 2, partial or sample-based - directional only:
+
+  BRAZIL (FOHB / HotelInvest monthly panel, FY2025)
+    Occupancy +2.1% y/y, ADR +10.5%, RevPAR +12.8%; urban occupancy 60.8% in 2024.
+    Panel of 583 chain hotels / ~91,000 rooms - NOT a national census, and skewed to urban chains.
+    Occupancy is a RATE, so room-nights growth = supply growth + occupancy growth; with Brazilian
+    supply running low-single-digit, room-nights are plausibly +4-5%, i.e. broadly consistent
+    with Mexico's +6.5% rather than contradicting it.
+
+  CHINA (Ministry of Culture and Tourism, 2025 Statistical Bulletin)
+    7,586 star-rated hotels at end-2025; average occupancy 49.2% (2024) -> 46.8% (2025), -4.9%.
+    Domestic trips 6.522bn, +16.2%; domestic tourism spend 6.30tn yuan, +9.5%.
+    ** Largely IRRELEVANT to the model: Airbnb shut its domestic China business in July 2022. **
+    China enters Airbnb's APAC only through outbound travellers. Also note the tension in the
+    Chinese data itself - trips +16.2% while star-rated occupancy fell - which says Chinese
+    travellers are moving away from star-rated hotels, not that travel is weak.
+
+  KOREA (KTO; Colliers Korea hotel market report, 2025)
+    Inbound visitors +15.2%; Seoul occupancy 80.8% (Aug) and 81.6% (Sep); Seoul-Incheon ADR
+    ~KRW 296,000 in September, +14.6% y/y. City-level, inbound-led - strong but not a national
+    room-nights series.
+
+  INDIA (FHRAI / ICRA)
+    National hotel occupancy 67.5% in FY2024 (from ~66% in FY2023); premium segment guided
+    70-72% FY25 -> 72-74% FY26 with revenue +6-9%. Occupancy RISING.
+
+  AUSTRALIA (Tourism Research Australia / ABS Survey of Tourist Accommodation)
+    418mm domestic visitor nights in 2025, of which 91mm business. SERIES BREAK: the National
+    Visitor Survey ended Dec-2024 and Domestic Tourism Statistics (DoTS) replaces it from
+    Jan-2025, so 2024->2025 is not a clean comparison. ABS STA covers establishments with 15+
+    rooms only, missing exactly the small-operator segment Airbnb competes with.
 
 LIMITS, stated plainly:
-  - Mexico is not LatAm and Japan is not APAC. Brazil is LatAm's largest Airbnb market and IBGE
-    publishes capacity (establishments, units, beds via SIDRA) but not a clean guest-nights series;
-    Japan is APAC's most measured market but China, India, Korea and Australia are all unpulled.
-  - Neither country gives party size by accommodation type, so no P(Airbnb | contestable) can be
-    calibrated. These are market-growth anchors, not choice models.
-  - Units differ: Mexico publishes ROOM-nights, Japan publishes GUEST-nights. Do not add them.
+  - NOT ONE of these seven markets publishes party size by accommodation type. So P(Airbnb |
+    contestable) still cannot be calibrated outside NA and EMEA - every figure here is a
+    market-GROWTH anchor, not a choice model. That gap is unchanged by this pull.
+  - Units are not comparable across markets: Mexico publishes ROOM-nights, Japan GUEST-nights,
+    Brazil an occupancy RATE on a chain panel, China an occupancy rate on star-rated hotels only,
+    Australia visitor nights on 15+ room establishments. Never add them; use each only for its own
+    market's growth rate.
+  - Coverage bias runs one way everywhere: official accommodation surveys count registered
+    establishments (China star-rated only, Australia 15+ rooms, Brazil chains), which systematically
+    excludes the small-operator segment Airbnb actually competes with. Hotel-side growth measured
+    this way is likely UNDERSTATED as a measure of total lodging demand.
+  - Brazil still lacks a clean national guest-nights series; IBGE publishes capacity via SIDRA.
+    That remains the highest-value single pull left in LatAm.
 
 Run:  python analysis/src/latam_apac_hotel_evidence.py
 Out:  data/processed/latam_apac_hotel_evidence.csv
@@ -75,8 +117,8 @@ ROWS = [
 
 # Airbnb's own disclosed regional nights growth, FY2025 10-K regional table
 ABNB_2025_GROWTH = {"latam": 0.184, "apac": 0.148}
-# What choice_nights_driver_regional.py currently assumes for contestable-pool growth
-MODEL_MARKET = {"latam": 0.030, "apac": 0.035}
+# What choice_nights_driver_regional.py assumes for contestable-pool growth (post-revision)
+MODEL_MARKET = {"latam": 0.050, "apac": 0.020}   # updated 8 Sep 2026 on the evidence below
 
 
 def main():

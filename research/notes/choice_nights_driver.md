@@ -497,3 +497,33 @@ Updated regional output: NA +2.13%, EMEA +4.22%, **LatAm +11.97%**, **APAC +11.1
 Neither country publishes party size by accommodation type, so **P(Airbnb | contestable) still cannot be calibrated outside NA and EMEA** — these are market-growth anchors, not choice models. Mexico is not LatAm and Japan is not APAC. **Brazil is the highest-value remaining pull** (LatAm's largest Airbnb market; IBGE publishes capacity via SIDRA but no clean guest-nights series), followed by China, India, Korea and Australia — all unpulled.
 
 Units differ and must not be added: Mexico publishes **room**-nights, Japan publishes **guest**-nights.
+
+## Five more markets pulled: Brazil, China, India, Korea, Australia (8 Sep 2026)
+
+Seven markets now in `latam_apac_hotel_evidence.py`, in two tiers.
+
+**Tier 1 — national census, usable directly:** Mexico (DATATUR) and Japan (JTA), as above.
+
+**Tier 2 — partial or sample-based, directional only:**
+
+| Market | What it says | Why it's Tier 2 |
+|---|---|---|
+| **Brazil** | Occupancy +2.1%, ADR +10.5%, RevPAR +12.8% (FY25); urban occupancy 60.8% (2024) | FOHB panel of 583 chain hotels / ~91k rooms — not a census, urban-chain skewed. Occupancy is a *rate*, so room-nights ≈ supply + occupancy growth → plausibly **+4–5%**, consistent with Mexico |
+| **China** | 7,586 star-rated hotels; occupancy 49.2% → **46.8%** (−4.9%); domestic trips 6.522bn (+16.2%) | **Largely irrelevant — Airbnb exited domestic China in July 2022.** Enters only via outbound travellers. Note the internal tension: trips +16.2% while star-rated occupancy fell, i.e. Chinese travellers moving *away* from star-rated hotels |
+| **Korea** | Inbound +15.2%; Seoul occupancy 80.8–81.6%; ADR +14.6% | City-level, inbound-led; no national room-nights series |
+| **India** | Occupancy 67.5% FY24 (from ~66%); premium 70–72% → 72–74% FY26 | Occupancy **rising**; FHRAI/ICRA industry estimates, not official statistics |
+| **Australia** | 418mm domestic visitor nights 2025 (91mm business) | **Series break** — NVS ended Dec-2024, DoTS replaces it Jan-2025. ABS survey covers 15+ room establishments only |
+
+### This changed the APAC call — Japan alone was a trap
+
+My first read cut APAC market growth to **1.0%** on Japan's −0.8%. The other four markets say Japan is not representative: Korea inbound +15.2%, India occupancy rising, Australia roughly flat, and China nearly irrelevant. **APAC revised to 2.0%.** LatAm stays at 5.0% — Brazil's implied +4–5% corroborates Mexico's +6.5% rather than contradicting it.
+
+Updated regional output: NA +2.13%, EMEA +4.22%, **LatAm +11.97%**, **APAC +11.42%**, total **+6.15%** CAGR.
+
+### Three limits that apply to all seven
+
+1. **None of the seven publishes party size by accommodation type.** P(Airbnb | contestable) still cannot be calibrated outside NA and EMEA. Every figure here is a market-*growth* anchor, not a choice model.
+2. **Units are not comparable** — Mexico room-nights, Japan guest-nights, Brazil an occupancy rate on a chain panel, China star-rated only, Australia 15+ room establishments. Never add them.
+3. **Coverage bias runs one way everywhere.** Official surveys count registered establishments and systematically exclude the small-operator segment Airbnb competes with, so hotel-side growth measured this way likely **understates** total lodging demand.
+
+Brazil still lacks a clean national guest-nights series (IBGE publishes capacity via SIDRA) — the highest-value single remaining pull in LatAm.
