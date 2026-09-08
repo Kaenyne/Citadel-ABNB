@@ -703,3 +703,25 @@ At the calibrated 50%, the eight US cities produce **156 nights per active listi
 - Eurostat 2025 annual vs Inside Airbnb June-2026 LTM: ~6-month offset.
 - NUTS region vs city boundary is close for these five, not identical.
 - Calibrated on **Europe**, applied to a **US** check; reviewing behaviour may differ.
+
+## Validation wired into the model and workbook (8 Sep 2026)
+
+**No parameter changed** — the supply-side work validates the *level* rather than producing a better point estimate, so nothing was silently moved. What changed is what the model records about its own confidence.
+
+**In `choice_nights_driver.py`:** `US_ADR_PREMIUM` now carries the full validation chain — the review rate pinned at 43–60% against Eurostat measured stays, then 156 vs 87.3 nights per active listing reconciling through supply mix. With the explicit warning that the two supply-side checks *bracket* rather than pin the level, so **138.4mm should not be quoted to three significant figures**.
+
+**New `Validation` sheet in the workbook** (7 sheets now). One row per independent check, with an explicit verdict — including the ones that did *not* come out clean:
+
+| What was tested | Model value | Check gave | Verdict |
+|---|---|---|---|
+| U.S. nights level (supply side) | 138.4mm | 156 vs 87.3 n/listing | **HELD** |
+| Airbnb review rate | input to the check | 43–60%, centred 50% | **PINNED** |
+| U.S. revenue reconciliation | `US_ADR_PREMIUM` 1.05 | $4.97bn vs $4.76bn at 1.00 | **CORRECTED** |
+| Switch rate anchor | 5.0 (grid 2.5–10.3) | 10.3 reproduces F&F exactly | **HELD** |
+| Substitution share | `CONTESTABLE` 0.38 | NYC ADR +4.7–6.3% observed | **CONTESTED** |
+| Rooms per party | 1 / 1 / 1.5 / 2.5 | 2.01 guests/room (Japan) | **HELD** |
+| Mix drift (party size) | +0.62%/yr Airbnb side | NA +0.66%/yr | **HELD FOR NA ONLY** |
+| Party-size divergence | rental drifts 2.35× hotel | 1 market for, 2 against | **NOT ESTABLISHED** |
+| Party-size LEVEL gap | rentals host larger parties | 1.13–1.55×, 4 sources | **HELD** |
+
+The point of putting the contested and unestablished rows on the same sheet as the held ones is that a reviewer sees the weak joints without having to dig for them. Two rows deserve reading before the model is presented: **`CONTESTABLE` is contested by Airbnb's own economists**, and the **2.35× mix-drift divergence is not established** — the level gap is, the widening isn't.

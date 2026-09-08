@@ -56,7 +56,7 @@ ws["A2"].font = Font(name="Arial", size=9, italic=True)
 rows = [
     ("AIRBNB 2025 (U.S.)", None, None),
     ("Airbnb North America nights 2025 (mm)", 158.0, "Airbnb FY2025 10-K, MD&A regional table — https://www.sec.gov/Archives/edgar/data/1559720/000155972026000004/abnb-20251231.htm"),
-    ("U.S. share of North America (revenue proxy)", 0.92, "U.S. = 39% of FY2025 revenue ($4.76B of $12.2B; 61% non-U.S. per 10-K) ÷ NA revenue $5.196B"),
+    ("U.S. share of North America (revenue proxy)", 0.92, "U.S. = 39% of FY2025 revenue ($4.76B of $12.2B) ÷ NA revenue $5.196B. A REVENUE share used as a NIGHTS share — exact only if revenue per night matches in the U.S. vs Canada/Mexico. It does not, so the U.S. ADR premium below corrects it. Resulting level is now supply-side validated — see the Validation sheet"),
     ("Nights per booking, North America", 4.1, "Airbnb FY2025 10-K"),
     ("Share of Airbnb guests who would have used a hotel absent Airbnb", 0.38, "Farronato & Fradkin (AER 2022): 62% would NOT have switched to a hotel — https://andreyfradkin.com/assets/airbnb_welfare_paper.pdf"),
     ("HOTELS 2025 (U.S.)", None, None),
@@ -419,6 +419,48 @@ gs.cell(rr, 1, "Reconciliation: team model WS13 base has total nights FY26 +9.9%
 gs.cell(rr, 1).font = Font(name="Arial", size=9, italic=True)
 gs.cell(rr, 1).alignment = Alignment(wrap_text=True); gs.merge_cells(start_row=rr, start_column=1, end_row=rr, end_column=8)
 gs.row_dimensions[rr].height = 46
+
+# ------------------------------------------------------------------ Validation (python output)
+vs = wb.create_sheet("Validation")
+vs.column_dimensions["A"].width = 34
+for c in "BCDE":
+    vs.column_dimensions[c].width = 15
+vs.column_dimensions["F"].width = 78
+vs["A1"] = "Independent checks on the model — what has been tested, and what survived"; vs["A1"].font = H1
+vs["A2"] = ("Every row is a check run against data outside the model. 'Held' means the model's value survived; "
+            "'contested' means a credible source disagrees and the disagreement is unresolved.")
+vs["A2"].font = Font(name="Arial", size=9, italic=True)
+vs["A2"].alignment = Alignment(wrap_text=True); vs.merge_cells("A2:F2"); vs.row_dimensions[2].height = 28
+vhdr = ["What was tested", "Model value", "Check gave", "Verdict", "Evidence"]
+for j, h in enumerate(vhdr):
+    vs.cell(4, 1 + j, h).font = BOLD
+VROWS = [
+    ("U.S. nights level (supply side)", "138.4mm", "156 vs 87.3 n/listing", "HELD",
+     "Bottom-up from raw Inside Airbnb across 8 cities at a calibrated 50% review rate gives 156 nights per active listing vs 87.3 implied nationally. The +78% gap is supply MIX: at ~30% large-urban, the other 70% need only ~58 nights/yr, which is seasonal rural/vacation-home supply. bottom_up_nights_from_raw.py"),
+    ("Airbnb review rate", "n/a (input to the check)", "43-60%, centred 50%", "PINNED",
+     "984,203 Inside Airbnb reviews against 3,304,396 Eurostat MEASURED platform stays for Vienna/Berlin/Brussels/Prague/Madrid. Rules out both literature extremes (30%, 72%). review_rate_calibration.py"),
+    ("U.S. revenue reconciliation", "US_ADR_PREMIUM 1.05", "$4.97bn vs $4.76bn at 1.00", "CORRECTED",
+     "A revenue share was being used as a nights share. Setting the premium to 1.05 clears it and moves U.S. nights 145.4 -> 138.4mm. Levels scale; growth is unaffected."),
+    ("Switch rate anchor", "5.0 (grid 2.5-10.3)", "10.3 reproduces F&F exactly", "HELD",
+     "F&F (AER 2022) Appendix Table E9: a uniform +1% on all hotel prices lifts Airbnb demand 3.76%. Discounted from 10.3 for tier-level, 10-city, 2014 scope. Note it is near-inert at the team's near-parity ADR path."),
+    ("Substitution share", "CONTESTABLE 0.38", "NYC ADR +4.7-6.3% observed", "CONTESTED",
+     "The model predicted +4.0-6.5% hotel ADR from LL18 and the EJPE 2025 diff-in-diff measured +4.7-6.3%. BUT Airbnb's own economists (CRA, Dec-2024) read the same event as 'limited substitution to hotels'. The disagreement is whether NYC hotels were capacity-constrained. Do not present as uncontested."),
+    ("Rooms per party", "1 / 1 / 1.5 / 2.5", "2.01 guests/room (Japan)", "HELD",
+     "Implies leisure guests-per-occupied-room of 2.0-2.27. Japan gives 2.01 blended (JTA guest-nights / MHLW room stock x occupancy), and the industry double-occupancy factor for holiday hotels is 1.8-2.5. Was the top uncited input."),
+    ("Mix drift (party size)", "+0.62%/yr Airbnb side", "NA +0.66%/yr", "HELD FOR NA ONLY",
+     "122 markets / 36 countries: North America +0.66%/yr with 52% of markets significant. But EMEA is FLAT (-0.01%), corroborated independently by Spain's INE microdata. The global +0.62% was really a North America number - do not carry it into EMEA or APAC."),
+    ("Party-size divergence", "rental drifts 2.35x hotel", "1 market for, 2 against", "NOT ESTABLISHED",
+     "Hawaii supports it over 11 years. Spain's INE microdata says the rental/hotel ratio is FLAT (t=+0.12) over 11 years and the UK gap narrowed 2022-24. The strongest dataset is one of the two against. Treat as the optimistic case."),
+    ("Party-size LEVEL gap", "rentals host larger parties", "1.13-1.55x, 4 sources", "HELD",
+     "Booking rectour24 39/40 countries (t=10.2), Spain INE 1.167x stable over 12 years, UK GBTS 1.5x on family share, Hawaii 1.08x. This is the solid half of the party-size story."),
+]
+for i, (what, mv, got, verdict, ev) in enumerate(VROWS):
+    r_ = 5 + i
+    vs.cell(r_, 1, what); vs.cell(r_, 2, mv); vs.cell(r_, 3, got)
+    c = vs.cell(r_, 4, verdict); c.font = BOLD
+    vs.cell(r_, 5, ev).alignment = Alignment(wrap_text=True, vertical="top")
+    vs.row_dimensions[r_].height = 56
+vs.column_dimensions["E"].width = 96
 
 for sh in wb.worksheets:
     for rowc in sh.iter_rows():

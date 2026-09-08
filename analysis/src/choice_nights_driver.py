@@ -51,6 +51,21 @@ US_SHARE_OF_NA = 0.92             # U.S. = 39% of revenue ($4.76B) / NA revenue 
 # to clear the reconciliation. Levels scale; the GROWTH decomposition is unaffected either way.
 US_ADR_PREMIUM = 1.05             # SET 8 Sep 2026 (was 1.00): clears the reconciliation.
                                   # U.S. nights 145.4 -> 138.4mm. Levels scale ~-4.8%; growth unaffected.
+# LEVEL VALIDATED FROM THE SUPPLY SIDE, 8 Sep 2026. The resulting 138.4mm was, until now, the output
+# of a single unchecked chain (disclosed NA nights x a revenue-share proxy). It has now been tested
+# bottom-up and it holds:
+#   - review_rate_calibration.py pins the Airbnb review rate at 43-60% (centred 50%) against
+#     Eurostat's MEASURED platform stays for five European city-regions - 984,203 reviews against
+#     3,304,396 reported bookings. Both literature extremes (30%, 72%) are ruled out, which
+#     collapses the 2.4x uncertainty that previously made any bottom-up check inconclusive.
+#   - bottom_up_nights_from_raw.py then gives 156 nights per active listing across 8 U.S. cities
+#     at that 50% rate, against 87.3 implied nationally by this model (138.4mm / 2.25mm listings /
+#     70.4% active share). The +78% gap is supply MIX, not error: at ~30% of U.S. active listings
+#     being large-urban, the other 70% need average only ~58 nights/yr, which is what seasonal
+#     rural and vacation-home supply looks like.
+# So the level is no longer asserted from a revenue proxy alone. It is not, however, a point
+# estimate: the two supply-side checks bracket rather than pin it, so do not quote 138.4mm to
+# three significant figures.
 NPB_NA = 4.1                      # NOT USED by this model (kept as the documented NA stay-length
                                   # level; the live lever is STAY_LENGTH below). FY2025 10-K.
 BOOK_SHARE = {"solo": 0.16, "pair": 0.358, "3-4": 0.323, "5+": 0.159}   # fitted party-size distribution
