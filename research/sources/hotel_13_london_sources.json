@@ -1,0 +1,61 @@
+{
+  "workstream": "hotel_13_market_extension_london",
+  "retrieval_date": "2026-09-07",
+  "scope_status": "User selected original listing-panel 13; London is in analysis/config/hotel_markets_13.csv",
+  "sources": [
+    {
+      "source_id": "HOTEL-13-LON-GLA-2026",
+      "title": "Visitor Accommodation in London: Post-pandemic recovery and supply-demand forecasts to 2050",
+      "publisher": "Greater London Authority / GLA Economics",
+      "publication_date": "2026-07",
+      "url": "https://www.london.gov.uk/sites/default/files/2026-07/Visitor%20Accommodation%20in%20London%20-%202026%20report.pdf",
+      "source_type": "primary government report using CoStar inventory",
+      "http_status": 200,
+      "raw_path": "data/raw/hotel_13_market_extension/london/gla_2026_report.pdf",
+      "fetch_metadata_path": "data/raw/hotel_13_market_extension/london/gla_2026_fetch.json",
+      "source_pages_printed": [5, 13, 14, 28, 29],
+      "source_pages_pdf_1based": [7, 15, 16, 30, 31],
+      "observation_periods": ["Q1 2019", "Q1 2025"],
+      "geography": "Greater London, 33 areas: 32 boroughs and City of London",
+      "metric": "serviced accommodation inventory rooms",
+      "values": {"q1_2019": 160115, "q1_2025": 174384, "absolute_change": 14269, "reported_pct_change": 8.9},
+      "definition": "Hotels, bed-and-breakfasts, guest houses, apart-hotels and hostels",
+      "extract_path": "data/raw/hotel_13_market_extension/london/london_serviced_capacity_observations.csv",
+      "quality_metadata_path": "data/raw/hotel_13_market_extension/london/london_capacity_metadata.json",
+      "coverage": {"borough_areas": 33, "periods": 2, "borough_period_capacity_observations": 66, "parent_total_rows": 1, "named_property_records": 0, "airbnb_bookings": 0},
+      "reconciliation": "Both borough sums equal published London totals exactly",
+      "overlap_status": "New exact source-table extraction, same underlying Q1 2025 GLA/CoStar lineage as existing HOTEL-LON; refinement only, not an independent dataset or new capacity period",
+      "limitation": "No independent/boutique affiliation filter; no Airbnb identifiers, inventory allocation, demand attribution or realized economics. Forecast-table 2025 baseline differs (174471); excluded."
+    },
+    {
+      "source_id": "HOTEL-LON",
+      "title": "A snapshot of tourist accommodation in London",
+      "publisher": "Greater London Authority / GLA Economics",
+      "publication_date": "2025-09-25",
+      "url": "https://data.london.gov.uk/blog/a-snapshot-of-tourist-accommodation-in-london/",
+      "http_status": 200,
+      "raw_path": "data/raw/hotel_13_market_extension/london/existing_gla_capacity.html",
+      "observation_period": "Q1 2025",
+      "metric": "serviced accommodation rooms",
+      "value_rounded": 174000,
+      "overlap_status": "Already present in research/sources/hotel_funnel_audit.json, analysis/config/hotel_funnel_audit.json and existing capacity anchors; explicitly reused, not counted as new evidence",
+      "lineage": "GLA Economics / CoStar, same period and broad supply definition as July 2026 report"
+    },
+    {
+      "source_id": "HOTEL-13-LON-GLA-2026-LANDING",
+      "url": "https://www.london.gov.uk/programmes-strategies/business-and-economy/business-and-economy-publications/visitor-accommodation-london-post-pandemic-recovery-and-supply-demand-forecasts-2050",
+      "http_status": 403,
+      "raw_path": "data/raw/hotel_13_market_extension/london/gla_2026_report_page.html",
+      "status": "Landing page blocked; official linked PDF separately obtained successfully",
+      "quantitative_evidence_used": false
+    },
+    {
+      "source_id": "HOTEL-13-LON-LINK-DISCOVERY",
+      "url": "https://hotelhunt.co.uk/guides/london-visitors-hotel-review/",
+      "http_status": 200,
+      "raw_path": "data/raw/hotel_13_market_extension/london/secondary_link_discovery.html",
+      "role": "Discovery of official GLA PDF URL only",
+      "quantitative_evidence_used": false
+    }
+  ]
+}

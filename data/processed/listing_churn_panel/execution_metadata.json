@@ -1,0 +1,96 @@
+{
+  "source": {
+    "source_commit": "df833f5f3980078beef09c1327940bfa58d57acf",
+    "catalog": "data/processed/inside_airbnb_city_snapshots.csv",
+    "catalog_sha256": "efeb4c0ae7a5f6325d38b2cf3307cdef8a1a10d59549ebbf58ff2d6bd94feadd",
+    "start": "2025-09-01",
+    "selection": "all catalogued markets and dates on/after start",
+    "expected_snapshots": 132,
+    "markets": {
+      "austin": [
+        "united-states/tx/austin",
+        "United States",
+        "North America"
+      ],
+      "barcelona": [
+        "spain/catalonia/barcelona",
+        "Spain",
+        "Europe"
+      ],
+      "chicago": [
+        "united-states/il/chicago",
+        "United States",
+        "North America"
+      ],
+      "london": [
+        "united-kingdom/england/london",
+        "United Kingdom",
+        "Europe"
+      ],
+      "los-angeles": [
+        "united-states/ca/los-angeles",
+        "United States",
+        "North America"
+      ],
+      "mexico-city": [
+        "mexico/df/mexico-city",
+        "Mexico",
+        "Latin America"
+      ],
+      "nashville": [
+        "united-states/tn/nashville",
+        "United States",
+        "North America"
+      ],
+      "new-orleans": [
+        "united-states/la/new-orleans",
+        "United States",
+        "North America"
+      ],
+      "new-york-city": [
+        "united-states/ny/new-york-city",
+        "United States",
+        "North America"
+      ],
+      "paris": [
+        "france/ile-de-france/paris",
+        "France",
+        "Europe"
+      ],
+      "rome": [
+        "italy/lazio/rome",
+        "Italy",
+        "Europe"
+      ],
+      "san-diego": [
+        "united-states/ca/san-diego",
+        "United States",
+        "North America"
+      ],
+      "sydney": [
+        "australia/nsw/sydney",
+        "Australia",
+        "Asia Pacific"
+      ]
+    }
+  },
+  "python_version": "3.13.14",
+  "acquired_snapshots": 132,
+  "cross_market_baseline_duplicate_ids": 0,
+  "universe": "team-selected historical Inside Airbnb city panel; not a probability sample of Airbnb",
+  "pooling": "sum of event IDs divided by sum of baseline IDs; separate equal-market and leave-one-market-out sensitivity",
+  "persistence_days": 90,
+  "annualized": false,
+  "candidate_identity": "unique exact full permit; equal room type and nonmissing bedroom count; <=300m; replacement ID not in baseline; unvalidated linkage",
+  "policies": {
+    "team_flags": "Unknown negative evidence in source-flagged partial snapshots; retain all positives",
+    "exclude_feb_may_negatives": "Additional blanket February-May 2026 negative-evidence exclusion; sensitivity only, not validated collection-error classification"
+  },
+  "limitations": [
+    "Unequal autumn-to-summer intervals; no annualization",
+    "Nonflagged coverage is not guaranteed",
+    "Repeated partial periods can make persistent exits unidentifiable; no zero-filled rates",
+    "Replacement candidates are not verified property identities",
+    "No population destination shares established"
+  ]
+}

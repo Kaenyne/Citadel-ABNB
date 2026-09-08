@@ -1,0 +1,285 @@
+<title>Airbnb Party Size</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#f6f8f5; --panel:#ffffff; --ink:#16201b; --ink-2:#4f5c55; --muted:#7f8b84; --rule:#d9e0db; --grid:#e6ebe7;
+  --accent:#0e6e6b; --accent-soft:#d5ebe9; --hotel:#c95a1f; --hotel-soft:#f6e1d3; --neutral-bar:#a9b3ad;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#121715; --panel:#1a211e; --ink:#eef2ef; --ink-2:#b9c3bd; --muted:#8a958e; --rule:#2c3531; --grid:#242c28;
+    --accent:#4fb8b3; --accent-soft:#1f3b39; --hotel:#f0904f; --hotel-soft:#3b2a1f; --neutral-bar:#5d6963;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#121715; --panel:#1a211e; --ink:#eef2ef; --ink-2:#b9c3bd; --muted:#8a958e; --rule:#2c3531; --grid:#242c28;
+  --accent:#4fb8b3; --accent-soft:#1f3b39; --hotel:#f0904f; --hotel-soft:#3b2a1f; --neutral-bar:#5d6963;
+  color-scheme:dark;
+}
+body{background:var(--ground);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.55;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+.wide{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Fraunces","Iowan Old Style",Georgia,serif;text-wrap:balance;margin:0}
+h1{font-size:44px;line-height:1.05;font-weight:700;letter-spacing:-.01em}
+h2{font-size:26px;font-weight:600;margin-top:56px;padding-top:24px;border-top:1px solid var(--rule)}
+h3{font-size:19px;font-weight:600;margin-top:28px}
+p{margin:14px 0}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.lede{font-size:20px;color:var(--ink-2);margin-top:18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:32px 0}
+.stat{padding:18px 20px;background:var(--panel);border-right:1px solid var(--rule)}
+.stat:last-child{border-right:0}
+.stat .v{font-family:"Fraunces",Georgia,serif;font-size:36px;font-weight:600;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.stat .l{font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.35}
+.stat .s{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);margin-top:8px}
+figure{margin:28px 0}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.45}
+svg text{font-family:"IBM Plex Mono",ui-monospace,monospace;fill:var(--ink-2)}
+svg .grid{stroke:var(--grid);stroke-width:1}
+svg .axis{stroke:var(--rule);stroke-width:1}
+svg .bar{fill:var(--accent)}
+svg .bar-hotel{fill:var(--hotel)}
+svg .bar-neutral{fill:var(--neutral-bar)}
+svg .whisker{stroke:var(--ink-2);stroke-width:1.2}
+svg .lbl{font-size:12px}
+svg .val{font-size:12px;fill:var(--ink)}
+svg .legend{font-size:12px}
+ul{padding-left:20px;margin:12px 0}
+li{margin:6px 0}
+li::marker{color:var(--accent)}
+.tbl{overflow-x:auto;margin:20px 0;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+th{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--ground)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;font-size:13.5px}
+tr:last-child td{border-bottom:0}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft)}
+a:hover,a:focus-visible{border-bottom-color:var(--accent);outline:none}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:6px;padding:14px 18px;margin:24px 0;font-size:15.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:18px 20px}
+.card h3{margin-top:0}
+.card.bull{border-top:3px solid var(--accent)}
+.card.bear{border-top:3px solid var(--hotel)}
+.src{font-size:13px;color:var(--muted)}
+.foot{margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+code{font-family:"IBM Plex Mono",monospace;font-size:13.5px;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+@media (max-width:720px){.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--rule)}.two{grid-template-columns:1fr}h1{font-size:34px}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Citadel ABNB pitch · alt-data workstream · 6 Sep 2026</div>
+  <h1>How many people stay in an Airbnb?</h1>
+  <p class="lede">Airbnb never publishes guests per booking. Three independent disclosures pin it anyway: the mean is about <strong>3.0 people per stay</strong>, roughly <strong>one in six stays is solo</strong>, and half of all stays are parties of three or more — the size at which a hotel needs a second room. Hotels are the mirror image: <strong>~1.8 people per stay</strong>, close to half of stays solo, fewer than one in five with three or more.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">2.97</div><div class="l">guests per booking, 2018–2025</div><div class="s">guest arrivals ÷ bookings</div></div>
+    <div class="stat"><div class="v">84%</div><div class="l">of bookings are group trips (2+ people)</div><div class="s">Airbnb: “more than 80%”</div></div>
+    <div class="stat"><div class="v">48%</div><div class="l">of stays are parties of 3+</div><div class="s">fitted; Hawaii rentals 33%</div></div>
+  </div>
+
+  <h2>The distribution</h2>
+  <p>People per stay, share of Airbnb bookings. Bars are the central fit; whiskers span a mean of 2.7–3.1 and a solo share of 13–19%.</p>
+  <figure>
+    <svg viewBox="0 0 720 330" width="100%" role="img" aria-label="Bar chart: share of Airbnb bookings by party size. 1 person 16%, 2 people 36%, 3 people 21%, 4 people 12%, 5 people 7%, 6 people 4%, 7 people 2%, 8 or more 3%.">
+      <!-- scale: y = 290 - pct*6 (0..45%) ; x: 8 bars, band 78, start 70 -->
+      <line class="grid" x1="60" x2="700" y1="290" y2="290"/>
+      <line class="grid" x1="60" x2="700" y1="230" y2="230"/><text class="lbl" x="52" y="234" text-anchor="end">10%</text>
+      <line class="grid" x1="60" x2="700" y1="170" y2="170"/><text class="lbl" x="52" y="174" text-anchor="end">20%</text>
+      <line class="grid" x1="60" x2="700" y1="110" y2="110"/><text class="lbl" x="52" y="114" text-anchor="end">30%</text>
+      <line class="grid" x1="60" x2="700" y1="50" y2="50"/><text class="lbl" x="52" y="54" text-anchor="end">40%</text>
+      <text class="lbl" x="52" y="294" text-anchor="end">0%</text>
+      <!-- bars: central 16,36,21,12,7,4,2,3 ; low(19,2.7)=19,39,20,10,5,2.6,1.3,1.6 ; high(13,3.1)=13,33,21,13.6,8.7,5.5,3.5,5.4 -->
+      <g>
+        <rect class="bar" x="85" y="194" width="48" height="96" rx="3"/><line class="whisker" x1="109" x2="109" y1="176" y2="212"/><text class="val" x="109" y="166" text-anchor="middle">16%</text><text class="lbl" x="109" y="312" text-anchor="middle">1</text>
+        <rect class="bar" x="163" y="74" width="48" height="216" rx="3"/><line class="whisker" x1="187" x2="187" y1="56" y2="74"/><text class="val" x="187" y="46" text-anchor="middle">36%</text><text class="lbl" x="187" y="312" text-anchor="middle">2</text>
+        <rect class="bar" x="241" y="164" width="48" height="126" rx="3"/><line class="whisker" x1="265" x2="265" y1="164" y2="170"/><text class="val" x="265" y="152" text-anchor="middle">21%</text><text class="lbl" x="265" y="312" text-anchor="middle">3</text>
+        <rect class="bar" x="319" y="218" width="48" height="72" rx="3"/><line class="whisker" x1="343" x2="343" y1="216" y2="226"/><text class="val" x="343" y="198" text-anchor="middle">12%</text><text class="lbl" x="343" y="312" text-anchor="middle">4</text>
+        <rect class="bar" x="397" y="248" width="48" height="42" rx="3"/><line class="whisker" x1="421" x2="421" y1="247" y2="257"/><text class="val" x="421" y="228" text-anchor="middle">7%</text><text class="lbl" x="421" y="312" text-anchor="middle">5</text>
+        <rect class="bar" x="475" y="266" width="48" height="24" rx="3"/><line class="whisker" x1="499" x2="499" y1="265" y2="273"/><text class="val" x="499" y="247" text-anchor="middle">4%</text><text class="lbl" x="499" y="312" text-anchor="middle">6</text>
+        <rect class="bar" x="553" y="278" width="48" height="12" rx="3"/><line class="whisker" x1="577" x2="577" y1="275" y2="281"/><text class="val" x="577" y="259" text-anchor="middle">2%</text><text class="lbl" x="577" y="312" text-anchor="middle">7</text>
+        <rect class="bar" x="631" y="272" width="48" height="18" rx="3"/><line class="whisker" x1="655" x2="655" y1="269" y2="280"/><text class="val" x="655" y="248" text-anchor="middle">3%</text><text class="lbl" x="655" y="312" text-anchor="middle">8+</text>
+      </g>
+      <line class="axis" x1="60" x2="700" y1="290" y2="290"/>
+      <text class="lbl" x="380" y="328" text-anchor="middle">people per stay</text>
+    </svg>
+    <figcaption>Maximum-entropy fit: solo share fixed at 16%, sizes 2–8+ follow a shifted geometric chosen so the mean equals 2.97. Implied: mean 3.0, P(3+) 48%, P(4+) 28%, P(5+) 16%. Method and anchors below; CSV in <code>data/processed/airbnb_party_size_distribution.csv</code>.</figcaption>
+  </figure>
+
+  <h2>Three anchors that pin it</h2>
+
+  <h3>1 · The mean: guest arrivals ÷ bookings ≈ 2.9–3.0</h3>
+  <p>Airbnb counts every person who checks in as a “guest arrival” and reports cumulative milestones. Bookings are nights booked ÷ average nights per booking (both from the 10-K). Divide the arrivals added between milestones by the bookings made in the same window and you get people per booking. Every window longer than 2½ years lands between 2.8 and 3.05.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Window</th><th class="num">Guest arrivals added (mm)</th><th class="num">Bookings (mm)</th><th class="num">People / booking</th></tr></thead>
+    <tbody>
+      <tr><td>Aug 2018 (400M) → Oct 2021 (1B)</td><td class="num">600</td><td class="num">213</td><td class="num">2.81</td></tr>
+      <tr><td>Mar 2019 (500M) → Oct 2021 (1B)</td><td class="num">500</td><td class="num">171</td><td class="num">2.93</td></tr>
+      <tr><td>Sep 2020 (825M) → Oct 2024 (2B)</td><td class="num">1,175</td><td class="num">397</td><td class="num">2.96</td></tr>
+      <tr><td>Oct 2021 (1B) → Oct 2024 (2B)</td><td class="num">1,000</td><td class="num">328</td><td class="num">3.05</td></tr>
+      <tr><td>Oct 2021 (1B) → Dec 2025 (2.5B)</td><td class="num">1,500</td><td class="num">499</td><td class="num">3.01</td></tr>
+      <tr><td>Aug 2018 (400M) → Dec 2025 (2.5B)</td><td class="num">2,100</td><td class="num">712</td><td class="num">2.95</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">Milestones: 400M (Aug 26 2018) and 500M (Mar 27 2019) from Airbnb Newsroom; 825M from the S-1 (as of Sep 30 2020); 1B (Oct 2021) and 2B (Oct 2024) from the 2-billionth-guest post; “over 2.5 billion” from the FY2025 10-K. Nights booked 2017–2025 from the S-1 and 10-Ks; nights per booking 3.7–4.1 from the 10-Ks (3.8 assumed for 2017–19). Short windows (under 2 years) swing 2.3–3.2 because arrivals lag bookings by the booking lead time.</p>
+  <p>Cross-check: Airbnb’s new <em>Bedroom Nights Booked</em> metric passed 1 billion in the twelve months to Q2 2026 against roughly 560 million nights booked — about 1.8 bedrooms per stay. At 1.6 people per bedroom that is again ≈ 2.9 people.</p>
+
+  <h3>2 · The solo share: under 20% of bookings, ~24% of nights</h3>
+  <ul>
+    <li>“More than 80% of bookings on Airbnb are group trips” — Airbnb 2024 Summer Release. So solo stays are at most a fifth of bookings; the fit uses 16%.</li>
+    <li>“Almost a quarter of nights booked worldwide on Airbnb in 2022 were by guests traveling on their own,” and about half of those nights were long-term (28+) stays — Airbnb Newsroom, 2023. Solo travellers stay roughly 1.5× longer, which is exactly why 16% of bookings can be 24% of nights.</li>
+    <li>Solo travellers and millennials are the most likely to book a private room; over 80% of private-room stays were under $100/night (Airbnb 2023 Summer Release).</li>
+  </ul>
+
+  <h3>3 · The shape: rental parties run bigger than hotel parties</h3>
+  <p>Hawaii’s state visitor survey is the only public dataset that reports party size by accommodation type. Rental-house parties are 8% larger than hotel parties, one-third are 3+ (vs 29% for hotels), and they stay 2.2 days longer.</p>
+  <figure>
+    <svg viewBox="0 0 720 300" width="100%" role="img" aria-label="Grouped bars: share of parties that are 1, 2, or 3+ people for Airbnb fitted, Hawaii rental-house visitors, and Hawaii hotel visitors.">
+      <!-- y = 260 - pct*4 (0..60%) -->
+      <line class="grid" x1="60" x2="700" y1="260" y2="260"/>
+      <line class="grid" x1="60" x2="700" y1="180" y2="180"/><text class="lbl" x="52" y="184" text-anchor="end">20%</text>
+      <line class="grid" x1="60" x2="700" y1="100" y2="100"/><text class="lbl" x="52" y="104" text-anchor="end">40%</text>
+      <line class="grid" x1="60" x2="700" y1="20" y2="20"/><text class="lbl" x="52" y="24" text-anchor="end">60%</text>
+      <text class="lbl" x="52" y="264" text-anchor="end">0%</text>
+      <!-- group 1 (one person): airbnb 16, rental 29.2, hotel 28.8 -->
+      <rect class="bar" x="110" y="196" width="40" height="64" rx="3"/><text class="val" x="130" y="188" text-anchor="middle">16%</text>
+      <rect class="bar-hotel" x="154" y="143" width="40" height="117" rx="3"/><text class="val" x="174" y="135" text-anchor="middle">29%</text>
+      <rect class="bar-neutral" x="198" y="145" width="40" height="115" rx="3"/><text class="val" x="218" y="137" text-anchor="middle">29%</text>
+      <text class="lbl" x="174" y="284" text-anchor="middle">1 person</text>
+      <!-- group 2 (two): airbnb 35.8, rental 37.3, hotel 42.5 -->
+      <rect class="bar" x="310" y="117" width="40" height="143" rx="3"/><text class="val" x="330" y="109" text-anchor="middle">36%</text>
+      <rect class="bar-hotel" x="354" y="111" width="40" height="149" rx="3"/><text class="val" x="374" y="103" text-anchor="middle">37%</text>
+      <rect class="bar-neutral" x="398" y="90" width="40" height="170" rx="3"/><text class="val" x="418" y="82" text-anchor="middle">43%</text>
+      <text class="lbl" x="374" y="284" text-anchor="middle">2 people</text>
+      <!-- group 3 (3+): airbnb 48.2, rental 33.5, hotel 28.7 -->
+      <rect class="bar" x="510" y="67" width="40" height="193" rx="3"/><text class="val" x="530" y="59" text-anchor="middle">48%</text>
+      <rect class="bar-hotel" x="554" y="126" width="40" height="134" rx="3"/><text class="val" x="574" y="118" text-anchor="middle">33%</text>
+      <rect class="bar-neutral" x="598" y="145" width="40" height="115" rx="3"/><text class="val" x="618" y="137" text-anchor="middle">29%</text>
+      <text class="lbl" x="574" y="284" text-anchor="middle">3+ people</text>
+      <line class="axis" x1="60" x2="700" y1="260" y2="260"/>
+      <!-- legend -->
+      <rect class="bar" x="470" y="6" width="12" height="12" rx="2"/><text class="legend" x="488" y="16">Airbnb, fitted (global)</text>
+      <rect class="bar-hotel" x="470" y="24" width="12" height="12" rx="2"/><text class="legend" x="488" y="34">Hawaii rental-house visitors</text>
+      <rect class="bar-neutral" x="470" y="42" width="12" height="12" rx="2"/><text class="legend" x="488" y="52">Hawaii hotel visitors</text>
+    </svg>
+    <figcaption>Hawaii DBEDT, 2024 Annual Visitor Research Report, Tables 43 and 46. The report gives visitors by party bucket; parties = visitors ÷ party size (3+ average solved from the reported mean). Rental house: avg party 2.49, 9.5 days. Hotel: 2.30, 7.3 days. Condo: 2.44, 10.2 days. Hawaii is a couples market, so its 3+ share is a floor for Airbnb globally, not the level.</figcaption>
+  </figure>
+
+
+  <h2>Hotels: the same distribution</h2>
+  <p>Hotels sell rooms, not homes, so there are two honest ways to count. <em>Per room-booking</em> is the transactions lens (a family of five is two bookings). <em>Per travel party</em> is the choice lens — the group that decided between a hotel and an Airbnb. Airbnb’s number is both at once, because one listing holds the whole party.</p>
+  <figure>
+    <svg viewBox="0 0 720 300" width="100%" role="img" aria-label="Grouped bars comparing share of stays by party size: Airbnb versus U.S. hotels per travel party and per room booking.">
+      <line class="grid" x1="60" x2="700" y1="260" y2="260"/>
+      <line class="grid" x1="60" x2="700" y1="180" y2="180"/><text class="lbl" x="52" y="184" text-anchor="end">20%</text>
+      <line class="grid" x1="60" x2="700" y1="100" y2="100"/><text class="lbl" x="52" y="104" text-anchor="end">40%</text>
+      <line class="grid" x1="60" x2="700" y1="20" y2="20"/><text class="lbl" x="52" y="24" text-anchor="end">60%</text>
+      <text class="lbl" x="52" y="264" text-anchor="end">0%</text>
+      <!-- y = 260 - pct*4 ; groups centred 124,252,380,508,636 ; bars 34 wide at -36/0/+36 -->
+      <!-- 1 person: airbnb 16 / hotel party 45 / hotel room 42 -->
+      <rect class="bar" x="71" y="196" width="34" height="64" rx="3"/><text class="val" x="88" y="188" text-anchor="middle">16%</text>
+      <rect class="bar-hotel" x="107" y="80" width="34" height="180" rx="3"/><text class="val" x="124" y="72" text-anchor="middle">45%</text>
+      <rect class="bar-neutral" x="143" y="92" width="34" height="168" rx="3"/><text class="val" x="160" y="84" text-anchor="middle">42%</text>
+      <text class="lbl" x="124" y="284" text-anchor="middle">1</text>
+      <!-- 2: 36 / 39 / 48 -->
+      <rect class="bar" x="199" y="116" width="34" height="144" rx="3"/><text class="val" x="216" y="108" text-anchor="middle">36%</text>
+      <rect class="bar-hotel" x="235" y="104" width="34" height="156" rx="3"/><text class="val" x="252" y="96" text-anchor="middle">39%</text>
+      <rect class="bar-neutral" x="271" y="68" width="34" height="192" rx="3"/><text class="val" x="288" y="60" text-anchor="middle">48%</text>
+      <text class="lbl" x="252" y="284" text-anchor="middle">2</text>
+      <!-- 3: 21 / 7 / 7 -->
+      <rect class="bar" x="327" y="176" width="34" height="84" rx="3"/><text class="val" x="344" y="168" text-anchor="middle">21%</text>
+      <rect class="bar-hotel" x="363" y="232" width="34" height="28" rx="3"/><text class="val" x="380" y="224" text-anchor="middle">7%</text>
+      <rect class="bar-neutral" x="399" y="232" width="34" height="28" rx="3"/><text class="val" x="416" y="224" text-anchor="middle">7%</text>
+      <text class="lbl" x="380" y="284" text-anchor="middle">3</text>
+      <!-- 4: 12 / 6 / 2 -->
+      <rect class="bar" x="455" y="212" width="34" height="48" rx="3"/><text class="val" x="472" y="204" text-anchor="middle">12%</text>
+      <rect class="bar-hotel" x="491" y="236" width="34" height="24" rx="3"/><text class="val" x="508" y="228" text-anchor="middle">6%</text>
+      <rect class="bar-neutral" x="527" y="252" width="34" height="8" rx="3"/><text class="val" x="544" y="244" text-anchor="middle">2%</text>
+      <text class="lbl" x="508" y="284" text-anchor="middle">4</text>
+      <!-- 5+: 16 / 4 / 0 -->
+      <rect class="bar" x="583" y="196" width="34" height="64" rx="3"/><text class="val" x="600" y="188" text-anchor="middle">16%</text>
+      <rect class="bar-hotel" x="619" y="244" width="34" height="16" rx="3"/><text class="val" x="636" y="236" text-anchor="middle">4%</text>
+      <rect class="bar-neutral" x="655" y="259" width="34" height="1" rx="0"/><text class="val" x="672" y="251" text-anchor="middle">0%</text>
+      <text class="lbl" x="636" y="284" text-anchor="middle">5+</text>
+      <line class="axis" x1="60" x2="700" y1="260" y2="260"/>
+      <rect class="bar" x="440" y="6" width="12" height="12" rx="2"/><text class="legend" x="458" y="16">Airbnb, per booking (fitted)</text>
+      <rect class="bar-hotel" x="440" y="24" width="12" height="12" rx="2"/><text class="legend" x="458" y="34">U.S. hotel, per travel party (est.)</text>
+      <rect class="bar-neutral" x="440" y="42" width="12" height="12" rx="2"/><text class="legend" x="458" y="52">U.S. hotel, per room-booking (est.)</text>
+    </svg>
+    <figcaption>People per stay, share of stays. Airbnb: fitted distribution above (5+ pooled). Hotel per travel party: business share of U.S. room nights (42%, AHLA 2023) × the corporate booking shape + leisure share × the average of Hawaii hotel-only and Las Vegas 2024 visitor surveys. Hotel per room-booking: same business weight × corporate shape + leisure weight × leisure booking shape from 75,011 completed reservations at two Portuguese hotels. CSV: <code>data/processed/hotel_party_size_distribution.csv</code>.</figcaption>
+  </figure>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Hotel series</th><th class="num">1</th><th class="num">2</th><th class="num">3</th><th class="num">4</th><th class="num">5+</th><th class="num">Mean</th><th class="num">3+</th></tr></thead>
+    <tbody>
+      <tr><td><strong>U.S. hotel, per travel party (est.)</strong></td><td class="num">45%</td><td class="num">39%</td><td class="num">7%</td><td class="num">6%</td><td class="num">4%</td><td class="num">1.87</td><td class="num">17%</td></tr>
+      <tr><td><strong>U.S. hotel, per room-booking (est.)</strong></td><td class="num">42%</td><td class="num">48%</td><td class="num">7%</td><td class="num">2%</td><td class="num">0%</td><td class="num">1.69</td><td class="num">9%</td></tr>
+      <tr><td>Portugal city + resort hotel, all completed bookings (2015–17)</td><td class="num">21%</td><td class="num">66%</td><td class="num">10%</td><td class="num">3%</td><td class="num">0%</td><td class="num">1.94</td><td class="num">13%</td></tr>
+      <tr><td>— corporate segment</td><td class="num">80%</td><td class="num">19%</td><td class="num">2%</td><td class="num">0%</td><td class="num">0%</td><td class="num">1.22</td><td class="num">2%</td></tr>
+      <tr><td>— leisure segments (online/offline TA, direct)</td><td class="num">16%</td><td class="num">70%</td><td class="num">11%</td><td class="num">4%</td><td class="num">0%</td><td class="num">2.04</td><td class="num">15%</td></tr>
+      <tr><td>Hawaii hotel-only visitors, 2024 (parties)</td><td class="num">29%</td><td class="num">43%</td><td class="num" colspan="3">29% (3+)</td><td class="num">2.30</td><td class="num">29%</td></tr>
+      <tr><td>Las Vegas visitors, 2024 (parties)</td><td class="num">12%</td><td class="num">64%</td><td class="num">11%</td><td class="num">9%</td><td class="num">6%</td><td class="num">2.42</td><td class="num">26%</td></tr>
+      <tr><td><strong>Airbnb, per booking (fitted)</strong></td><td class="num">16%</td><td class="num">36%</td><td class="num">21%</td><td class="num">12%</td><td class="num">16%</td><td class="num">2.97</td><td class="num">48%</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><strong>Solo is the hotel’s core, not Airbnb’s.</strong> Business travel is 42% of U.S. room nights (439M of 1,044M in 2023, AHLA) and corporate bookings are 80% single-occupancy in the Portuguese ledger, so roughly 45% of U.S. hotel stays are one person versus 16% on Airbnb. That is the 2.1-night average stay in one number.</li>
+    <li><strong>Hotels almost never host 4+ in a room.</strong> 3% of bookings have four people and 0.1% five or more; parties of 5+ that do stay in hotels split across rooms (Vegas: 6% of parties are 5+, Hawaii 3+ parties average 4.0 people). On Airbnb 16% of bookings are 5+ under one roof.</li>
+    <li><strong>Even leisure-only hotel markets are couple markets.</strong> Hawaii hotel parties: 43% pairs; Las Vegas: 64% pairs; Portuguese leisure bookings: 70% pairs. Airbnb’s pair share (36%) is the lowest of the set because both tails — solo long-stays and groups — are fatter.</li>
+    <li>Hotel guests per room rise with the trip: Portuguese solo stays average 2.5 nights, pairs 3.6, threes 3.7 — the same “bigger party, not longer” pattern as Airbnb once you pass two people.</li>
+  </ul>
+  <p class="src">Sources: Hotel Booking Demand datasets — Antonio, de Almeida &amp; Nunes, <em>Data in Brief</em> 22 (2019) 41–49, via the TidyTuesday mirror (119,390 reservations; completed stays used); AHLA 2024 State of the Industry (2023 room nights: leisure 605M, business 439M); Hawaii DBEDT 2024 Annual Visitor Research Report, Table 43; Las Vegas Visitor Profile 2024 via Statista (n = 5,418). U.S. estimates assume business room-bookings share the corporate booking shape and that business and leisure parties are equally likely per stay.</p>
+
+  <h2>Capacity is not party size</h2>
+  <p>From the June-2026 Inside Airbnb calendars (8 U.S. cities, 273k booked stays): 13% of stays are private rooms, 12% entire homes sleeping 1–2, 23% sleeping 3–4, 20% sleeping 5–6 and <strong>33% sleeping 7+</strong>. Set against the fitted distribution (16% of parties are 5+), guests fill roughly half of listed capacity — a family of four books the six-sleeper. That gap is the product: space is the amenity, not just beds. It also means <code>accommodates</code> in listing data is an upper bound on party size, never an estimate of it.</p>
+
+  <div class="two">
+    <div class="card bull"><h3>Bull read</h3><p>Half of Airbnb’s stays are parties of 3+, which is the cross-over where an entire home beats the cost of two hotel rooms (see the party-size note). Group and family demand is compounding faster than the platform: family nights +15% y/y, multigenerational +35% (H1 2024), bedroom nights +12% vs total nights +10% (Q2 2026), 4+ bedroom homes the fastest-growing category.</p></div>
+    <div class="card bear"><h3>Bear read</h3><p>Fewer than 10% of group trips add a co-traveller to the reservation, so Airbnb knows one person per group — weak data for loyalty and personalisation, and the other 2 people are equally reachable by hotels. The 16% solo and 36% couple segments (half of bookings) are the contestable ones, and couples are where a hotel room is 20% cheaper.</p></div>
+  </div>
+
+  <h2>Caveats</h2>
+  <ul>
+    <li>The distribution is a fit to anchors, not a disclosed histogram. The mean and the solo share are firm; the split between 3, 4, 5+ is the least certain part and is where a card-panel or Airbnb guest-count dataset would help most.</li>
+    <li>Guest arrivals are counted at check-in and bookings at reservation; over long windows the lead-time lag washes out, over short windows it doesn’t (hence 2.3–3.2 in sub-2-year windows).</li>
+    <li>Hawaii parties are self-reported immediate travel parties of air visitors; two families sharing one rental house appear as two parties.</li>
+    <li>Regional mix matters: North America books 4.1 nights and the biggest homes; APAC books 3.3 nights and mostly small units, so a North-America-only distribution would sit right of the global one.</li>
+  </ul>
+
+  <h2>Every data point</h2>
+</div>
+<div class="wide">
+  <div class="tbl"><table>
+    <thead><tr><th>Metric</th><th class="num">Value</th><th>Scope · period</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Cumulative guest arrivals</td><td class="num">400M</td><td>Global · Aug 26 2018</td><td><a href="https://news.airbnb.com/airbnb-surpasses-400-million-guest-arrival-milestone/">Airbnb Newsroom</a> — also 3.5M guests in-house on one night</td></tr>
+      <tr><td>Cumulative guest arrivals</td><td class="num">500M</td><td>Global · Mar 27 2019</td><td><a href="https://news.airbnb.com/airbnb-celebrates-half-a-billion-guest-arrivals/">Airbnb Newsroom</a> — “three guests check in every half-second”</td></tr>
+      <tr><td>Cumulative guest arrivals</td><td class="num">825M</td><td>Global · Sep 30 2020</td><td><a href="https://www.sec.gov/Archives/edgar/data/1559720/000119312520294801/d81668ds1.htm">Airbnb S-1</a></td></tr>
+      <tr><td>Cumulative guest arrivals</td><td class="num">1B / 2B</td><td>Global · Oct 2021 / Oct 2024</td><td><a href="https://news.airbnb.com/the-power-of-2-meet-the-couple-marking-our-2-billionth-guest-arrival/">Airbnb Newsroom</a> — 2-billionth trip was a 12-person household</td></tr>
+      <tr><td>Cumulative guest arrivals</td><td class="num">2.5B+</td><td>Global · FY2025</td><td><a href="https://www.sec.gov/Archives/edgar/data/1559720/000155972026000004/abnb-20251231.htm">Airbnb FY2025 10-K</a></td></tr>
+      <tr><td>Nights &amp; experiences booked</td><td class="num">185.8 / 250.3 / 326.9M</td><td>Global · 2017 / 2018 / 2019</td><td><a href="https://www.sec.gov/Archives/edgar/data/1559720/000119312520294801/d81668ds1.htm">Airbnb S-1</a>; 2020–25 in the 10-Ks (533M in 2025)</td></tr>
+      <tr><td>Average nights per booking</td><td class="num">3.7</td><td>Global · 2025 (4.1 in 2020–22)</td><td><a href="https://www.sec.gov/Archives/edgar/data/1559720/000155972026000004/abnb-20251231.htm">Airbnb FY2025 10-K</a>, MD&amp;A “Geographic Mix”</td></tr>
+      <tr><td>Bookings that are group trips</td><td class="num">&gt;80%</td><td>Global · 2024</td><td><a href="https://news.airbnb.com/airbnb-2024-summer-release-highlights/">Airbnb 2024 Summer Release</a> — &lt;10% of group trips add a co-traveller</td></tr>
+      <tr><td>Solo travellers’ share of nights</td><td class="num">~24%</td><td>Global · 2022</td><td><a href="https://news.airbnb.com/airbnb-expands-safety-product-to-help-solo-travelers-as-solo-travel-surges">Airbnb Newsroom</a> — solo +33% y/y; ~half of solo nights long-term</td></tr>
+      <tr><td>Family travel share of nights</td><td class="num">~20%</td><td>Global · H1 2024</td><td><a href="https://news.airbnb.com/how-and-where-families-are-traveling-this-thanksgiving/">Airbnb Newsroom</a> — +15% y/y; multigenerational +35%; 20% of Thanksgiving family bookings 10+ guests; ~40% of US listings 3+ bedrooms</td></tr>
+      <tr><td>Bedroom Nights Booked</td><td class="num">&gt;1B</td><td>Global · TTM Q2 2026</td><td><a href="https://pulse2.com/airbnb-guests-book-more-than-1-billion-bedroom-nights-in-one-year-as-group-travel-drives-growth/">Q2 2026 results (Pulse2)</a>; <a href="https://www.fool.com/earnings/call-transcripts/2026/08/13/airbnb-abnb-q2-2026-earnings-call-transcript/">earnings call</a> — +12% vs nights +10%; 4+ bedroom homes fastest-growing</td></tr>
+      <tr><td>Private-room stays under $100/night</td><td class="num">&gt;80%</td><td>Global · 2022</td><td><a href="https://news.airbnb.com/airbnb-2023-summer-release-highlights/">Airbnb 2023 Summer Release</a> — solo travellers most likely to book a room</td></tr>
+      <tr><td>Rental-house parties 1 / 2 / 3+</td><td class="num">29 / 37 / 33%</td><td>Hawaii · 2024 · avg 2.49 · 9.5 days</td><td><a href="https://files.hawaii.gov/dbedt/economic/tourism/annual-reports/2024-annual-visitor.pdf">Hawaii DBEDT 2024, Table 46</a></td></tr>
+      <tr><td>Hotel parties 1 / 2 / 3+</td><td class="num">29 / 43 / 29%</td><td>Hawaii · 2024 · avg 2.30 · 7.3 days</td><td><a href="https://files.hawaii.gov/dbedt/economic/tourism/annual-reports/2024-annual-visitor.pdf">Hawaii DBEDT 2024, Table 43</a></td></tr>
+      <tr><td>Condo / timeshare / B&amp;B avg party</td><td class="num">2.44 / 2.42 / 2.12</td><td>Hawaii · 2024</td><td><a href="https://files.hawaii.gov/dbedt/economic/tourism/annual-reports/2024-annual-visitor.pdf">Hawaii DBEDT 2024, Tables 44, 45, 47</a></td></tr>
+      <tr><td>Booked stays by listing capacity</td><td class="num">13 / 12 / 23 / 20 / 33%</td><td>8 U.S. cities · Jun 2026 · room / 1–2 / 3–4 / 5–6 / 7+</td><td><a href="https://insideairbnb.com/get-the-data/">Inside Airbnb</a>, team calendar analysis</td></tr>
+      <tr><td>Hotel guests per booking (real reservations)</td><td class="num">1.94 (21 / 66 / 10 / 3 / 0%)</td><td>Portugal, 2 hotels · 2015–17 · 75k completed stays</td><td><a href="https://www.sciencedirect.com/science/article/pii/S2352340918315191">Antonio, de Almeida &amp; Nunes 2019</a>; data via <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-02-11">TidyTuesday</a> — corporate 1.22, leisure 2.04</td></tr>
+      <tr><td>U.S. hotel room nights, business vs leisure</td><td class="num">439M vs 605M</td><td>U.S. · 2023</td><td><a href="https://www.ahla.com/sites/default/files/SOTI.2024.Final_.Draft_.v4.pdf">AHLA 2024 State of the Industry</a> — business 42% of room nights</td></tr>
+      <tr><td>Business travel share of hotel room revenue</td><td class="num">52.5% → 43.6%</td><td>U.S. · 2019 → 2022</td><td><a href="https://www.businesstravelnews.com/Lodging/AHLA-Business-Travel-Share-of-US-Hotel-Revenue-Down-Sharply-from-19">AHLA via BTN</a></td></tr>
+      <tr><td>Las Vegas visitor party size 1 / 2 / 3 / 4 / 5+</td><td class="num">12 / 64 / 11 / 9 / 6%</td><td>Las Vegas · 2024 · n = 5,418</td><td><a href="https://www.statista.com/statistics/411714/party-size-of-las-vegas-visitors-us/">LVCVA Visitor Profile via Statista</a></td></tr>
+      <tr><td>U.S. hotel average length of stay</td><td class="num">~2.1 nights</td><td>U.S. · post-2020</td><td><a href="https://hotelbusiness.com/industry-data-trackers-see-positives-for-lodging/">Kalibri Labs via HotelBusiness</a></td></tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="wrap">
+  <p class="foot">Repo files: <code>data/processed/airbnb_party_size_distribution.csv</code>, <code>airbnb_party_size_evidence.csv</code>, <code>airbnb_guests_per_booking_windows.csv</code>, <code>hawaii_party_size_by_accommodation_2024.csv</code>, <code>hotel_party_size_distribution.csv</code> · <code>analysis/src/party_size_distribution.py</code>, <code>hotel_party_size.py</code> · <code>research/notes/party_size_distribution.md</code>. Companion notes: stay length (Airbnb 3.7 vs hotels 2.1 nights), kitchen/whole-home effect, party-size price cross-over.</p>
+</div>

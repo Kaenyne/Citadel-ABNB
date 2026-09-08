@@ -1,0 +1,31 @@
+{
+  "source": {
+    "commit": "df833f5f3980078beef09c1327940bfa58d57acf",
+    "catalog_path": "data/processed/inside_airbnb_city_snapshots.csv",
+    "catalog_sha256": "efeb4c0ae7a5f6325d38b2cf3307cdef8a1a10d59549ebbf58ff2d6bd94feadd",
+    "markets": [
+      "san-diego",
+      "chicago"
+    ],
+    "start": "2025-09-01"
+  },
+  "python_version": "3.13.14",
+  "registry_capture": {
+    "url": "https://seshat.datasd.org/stro_licenses/stro_licenses_datasd.csv",
+    "sha256": "cd215d97ce97b4dede90e48d1ff036aad2fceda5f7f931686273783fdae3aaaf",
+    "rows": 8441,
+    "retrieved_date": "2026-09-07"
+  },
+  "persistence_days": 90,
+  "geographic_match_radius_m": 300,
+  "conservative_policy": "No negative evidence from February-May 2026; keep all positive observations, including partial snapshots",
+  "registry": {
+    "eligible_sample_population": 208,
+    "sample_size": 20,
+    "sample_seed": 20260907,
+    "sample_design": "simple random sample of conservative persistent, baseline reviewed STR entire-home IDs with unique baseline STRO license",
+    "eligible_population_current_registry_match": 80,
+    "sample_current_registry_match": 8,
+    "registry_interpretation": "Current licensing evidence only; does not prove operation, platform, sale or long-term rental"
+  }
+}

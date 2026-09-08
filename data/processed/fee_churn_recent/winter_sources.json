@@ -1,0 +1,142 @@
+[
+  {
+    "market": "toronto",
+    "baseline_sha256": "2f44b79fc40975c69216d01b5271e15b26c521025fe1682f08c133cc57aeb028",
+    "baseline_url": "https://data.insideairbnb.com/canada/on/toronto/2025-12-12/data/listings.csv.gz",
+    "baseline_scrape_date_counts": {
+      "2025-12-13": 13192,
+      "2025-12-12": 8410
+    },
+    "first_missing_sha256": "4b0e11f2922d8ca0bee62779d992107d25c1092bb504e3e6192ebb1945e0d212",
+    "first_missing_url": "https://data.insideairbnb.com/canada/on/toronto/2026-01-16/data/listings.csv.gz",
+    "first_missing_source_counts": {
+      "city scrape": 15776
+    },
+    "followups": [
+      {
+        "vintage": "2026-02-17",
+        "sha256": "77afe780e9fc2896611ffed04a3d74f7a090395ae6edf5f60a2799fc882d4178",
+        "url": "https://data.insideairbnb.com/canada/on/toronto/2026-02-17/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-03-19",
+        "sha256": "344a596fef35bbf885c477d1b21fc34b7b90f93b446da8e935db248817a57bde",
+        "url": "https://data.insideairbnb.com/canada/on/toronto/2026-03-19/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-04-18",
+        "sha256": "0e851f2f63e999b12575ca47dc39d0a507213910a600189df3f8157310842e62",
+        "url": "https://data.insideairbnb.com/canada/on/toronto/2026-04-18/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-05-23",
+        "sha256": "1cef47fdd722b2a3af02d60cbc8ba35c407284e8ca128f0edce93cbf63c6fc30",
+        "url": "https://data.insideairbnb.com/canada/on/toronto/2026-05-23/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-06-15",
+        "sha256": "175b9d6efa701837ef768a5f71256f845dc92c80bf67cbe071d8e3830a8fb9cc",
+        "url": "https://data.insideairbnb.com/canada/on/toronto/2026-06-15/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-07-14",
+        "sha256": "19368bdb30b2cd0eca3cda208d2e45cf2622aa7fcbb7e3a0ce3f0f7d07121cbb",
+        "url": "https://data.insideairbnb.com/canada/on/toronto/2026-07-14/data/listings.csv.gz"
+      }
+    ]
+  },
+  {
+    "market": "vaud",
+    "baseline_sha256": "91cb9ac6448146392c8cdedad08cb1998c884096ce3f225d165c17d8d4f0bc71",
+    "baseline_url": "https://data.insideairbnb.com/switzerland/vd/vaud/2025-12-11/data/listings.csv.gz",
+    "baseline_scrape_date_counts": {
+      "2025-12-11": 3637,
+      "2025-12-12": 1882
+    },
+    "first_missing_sha256": "e7f5253cadb1ad0c5928d2a6c45cbbcea4e665da8b8b45d2cbf997d754fed4f4",
+    "first_missing_url": "https://data.insideairbnb.com/switzerland/vd/vaud/2026-01-15/data/listings.csv.gz",
+    "first_missing_source_counts": {
+      "city scrape": 3851
+    },
+    "followups": [
+      {
+        "vintage": "2026-02-13",
+        "sha256": "9a0bd74428c2c19d8734da16d4428497ff93c239b7f4369107257b0a26756df1",
+        "url": "https://data.insideairbnb.com/switzerland/vd/vaud/2026-02-13/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-03-16",
+        "sha256": "ed9bf51e477b7eb1a80d352f75fa79f891907fc3e0c8b4bc3a91458bcf607ff5",
+        "url": "https://data.insideairbnb.com/switzerland/vd/vaud/2026-03-16/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-04-14",
+        "sha256": "9e133e7e929d2e74cca9fc74c166b2a9b23fc9bc991c227d98f50b35498686bd",
+        "url": "https://data.insideairbnb.com/switzerland/vd/vaud/2026-04-14/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-05-23",
+        "sha256": "aed643cfec71d5711ba0585b3dea19102ba01b990235bf1ad9409fd9b802aed9",
+        "url": "https://data.insideairbnb.com/switzerland/vd/vaud/2026-05-23/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-06-15",
+        "sha256": "7a9ef94d9534c959feed32942aa772e1a4159b176a756da14a34c92fc6194b6b",
+        "url": "https://data.insideairbnb.com/switzerland/vd/vaud/2026-06-15/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-07-12",
+        "sha256": "6096bb4e7dce09f90addfe644738a5852374d6695a1ac19d0ad664d5b06adce3",
+        "url": "https://data.insideairbnb.com/switzerland/vd/vaud/2026-07-12/data/listings.csv.gz"
+      }
+    ]
+  },
+  {
+    "market": "new-zealand",
+    "baseline_sha256": "ff69b66e4fd19719c513bf17b6b1772220c37e171071e1c162d1e8cf28f00b46",
+    "baseline_url": "https://data.insideairbnb.com/new-zealand/2025-12-11/data/listings.csv.gz",
+    "baseline_scrape_date_counts": {
+      "2025-12-11": 7457,
+      "2025-12-12": 18098,
+      "2025-12-13": 24339,
+      "2025-12-28": 5
+    },
+    "first_missing_sha256": "0ab0c1ff4c902a949f7f69c958c1f045dcf47118dd601214ec150bc335765db4",
+    "first_missing_url": "https://data.insideairbnb.com/new-zealand/2026-01-16/data/listings.csv.gz",
+    "first_missing_source_counts": {
+      "country scrape": 46819
+    },
+    "followups": [
+      {
+        "vintage": "2026-02-13",
+        "sha256": "9fbdb903a1b8eb9ca302f8b2b5a45a4e6150dd6d65d0e07a70509a17793e4e39",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-02-13/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-03-17",
+        "sha256": "7980609efb50cfbf8fb236c43b08c8f8a26c360a3deb197ba40e4fad2b855eab",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-03-17/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-04-16",
+        "sha256": "ab7a6daa95ab5e647756e05f08910155ea6393f0bb618aba88ec1543ff673e5b",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-04-16/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-05-23",
+        "sha256": "349eba46eed251bc3b6f2c9a1e18de9e81b3ba2fc3f63ff24b3cc1119947f0af",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-05-23/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-06-19",
+        "sha256": "4c5e67e3992ae0eaa161c4a3a6a212f177b765cec4136d6120efb7bdfda2b382",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-06-19/data/listings.csv.gz"
+      },
+      {
+        "vintage": "2026-07-12",
+        "sha256": "e956b756bb0126e0a6adab9739401f64e6dc20b8d8a91b244491ca7341d75b29",
+        "url": "https://data.insideairbnb.com/new-zealand/2026-07-12/data/listings.csv.gz"
+      }
+    ]
+  }
+]

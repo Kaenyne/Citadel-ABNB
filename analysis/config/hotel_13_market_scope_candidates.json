@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-09-07",
+  "requested_scope_size": 13,
+  "status": "resolved_by_explicit_user_instruction",
+  "selected_universe": "original_listing_panel",
+  "reason": "The user explicitly selected the original listing-panel markets on September 7, 2026.",
+  "active_scope_file": "analysis/config/hotel_markets_13.csv",
+  "selection_instruction": "i want the lsisting paenl ones",
+  "candidate_universes": [
+    {
+      "id": "original_listing_panel",
+      "source": "data/processed/listing_churn_panel/market_coverage.csv",
+      "source_definition": "Exact 13 market IDs in the original historical listing panel, including Austin despite its listing-comparison exclusion.",
+      "markets": [
+        "austin", "barcelona", "chicago", "london", "los-angeles",
+        "mexico-city", "nashville", "new-orleans", "new-york-city",
+        "paris", "rome", "san-diego", "sydney"
+      ]
+    },
+    {
+      "id": "jessie_accommodation_choice_panel",
+      "source": "citadel-abnb-jessie-all.zip::jessie-final/research/notes/2026-09-06_airbnb-vs-hotel-choice-data.md",
+      "source_definition": "Exact named markets in section 3; normalized IDs are labels, not verified geographic boundaries.",
+      "markets": [
+        "austin", "twin-cities", "bozeman", "london", "manchester",
+        "bristol", "edinburgh", "milan", "bergamo", "puglia", "sicily",
+        "menorca", "stockholm"
+      ]
+    }
+  ],
+  "common_markets": ["austin", "london"],
+  "rules": [
+    "No union of the two lists will be presented as a 13-market panel.",
+    "Preserve source geography and hotel/property/room definitions for every numerical observation.",
+    "Inside Airbnb listing IDs and reviews are not hotel booking outcomes.",
+    "A market with missing hotel data remains in the chosen panel with a missing status; do not silently drop it.",
+    "National, metro and city figures are not interchangeable or additive.",
+    "Previously acquired market context is reused and attributed rather than counted as new independent evidence."
+  ]
+}

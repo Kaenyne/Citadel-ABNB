@@ -1,0 +1,14 @@
+metric,value,period,source,note
+airbnb_nights_na_mm,146,2023,FY2023 10-K regional table,
+airbnb_nights_na_mm,154,2024,FY2024 10-K regional table,+5.5% y/y
+airbnb_nights_na_mm,158,2025,FY2025 10-K regional table,+2.6% y/y
+airbnb_nights_emea_mm,187 -> 201 -> 215,2023-2025,10-K regional tables,+7.5% then +7.0%
+airbnb_nights_latam_mm,64 -> 76 -> 90,2023-2025,10-K regional tables,+19% then +18%
+airbnb_nights_apac_mm,51 -> 61 -> 70,2023-2025,10-K regional tables,+20% then +15%
+implied_us_category_growth,7.9%,2024,derived: (g_NA - 0.38 x contestable growth ~+1.5%) / 0.62,model identity; see note
+implied_us_category_growth,4.5%,2025,derived: contestable growth ~-0.5% (flat hotel demand + ADR-gap share loss),matches the model's 4% entry assumption
+implied_emea_category_growth,~10%,2024-2025,derived: EMEA market ~+2%,supports higher EMEA category growth than US
+solo_share_of_nights,~24%,2022,Airbnb Newsroom,~half long-term (28+) stays - own-category heavy
+guest_arrivals_cumulative,2.0B -> 2.5B+,Oct 2024 -> Dec 2025,Airbnb Newsroom / FY2025 10-K,+500M arrivals in ~14 months
+first_time_bookers_growth,+11%,FY2025-1H26,team model assumptions.md (mgmt disclosure),bull support for category adoption persisting
+expansion_markets_growth,~2x core,2025-2026,team model assumptions.md (mgmt),

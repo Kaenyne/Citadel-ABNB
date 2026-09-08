@@ -1,0 +1,107 @@
+{
+  "as_of": "2026-09-07",
+  "scope": [
+    "Nashville",
+    "New Orleans",
+    "Mexico City"
+  ],
+  "overlap_screen": {
+    "inventory_path": "data/processed/hotel_expanded_research/team_source_urls.csv",
+    "inventory_sha256": "d5fbb4d58117b48ce8b55b90163390abfbcd6b21f2531c1353a8fe35056115b5",
+    "url_rows": 3323,
+    "method": "Case-insensitive distinctive URL/dataset-ID fragments plus inherited source-ledger attribution. Does not establish novelty against private unshared research."
+  },
+  "sources": [
+    {
+      "source_id": "H13-BNA-CVB-2025",
+      "title": "Nashville Convention and Visitors Corp: Statistics & Facts",
+      "url": "https://www.visitmusiccity.com/about/statistics",
+      "observation_period": "page updated 2025-09-19; stock as-of not separately specified",
+      "status": "observed",
+      "access": "Full page via web reader; direct HTTP download returned 403",
+      "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nashville_statistics_web_reader.txt",
+      "evidence": "42,156 Davidson County hotel rooms; 60,933 MSA hotel rooms.",
+      "source_family": "Nashville Convention and Visitors Corp",
+      "overlap_status": "Reused inherited HOTEL-BNA capacity observation, not new independent evidence.",
+      "team_matches": [
+        {
+          "location": "research/notes/2026-09-07_hotel-funnel-audit.md",
+          "url": "https://www.visitmusiccity.com/about/statistics"
+        },
+        {
+          "location": "research/sources/hotel_funnel_audit.json",
+          "url": "https://www.visitmusiccity.com/about/statistics"
+        }
+      ]
+    },
+    {
+      "source_id": "H13-BNA-METRO-2026",
+      "title": "Metro Nashville and Davidson County RS2026-1772 Exhibit F: Form of Preliminary Official Statement, appendix B-54",
+      "url": "https://nashville.legistar.com/View.ashx?GUID=CE2707E4-F3CA-4921-A1FD-DE9A7073BF27&ID=15150231&M=F",
+      "observation_period": "2025-12; preliminary statement form dated March [6], 2026",
+      "status": "observed",
+      "access": "Downloaded PDF; p118 visually verified",
+      "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nashville_dec2025_official.pdf",
+      "evidence": "528 MSA hotels offering 61,358 rooms as of December 2025; MSA hotel/motel room and occupancy history 2015-2024.",
+      "source_family": "Nashville Convention and Visitors Corp; municipal republication",
+      "overlap_status": "New retrieved document and newer MSA vintage; same underlying CVB source family as inherited HOTEL-BNA. No URL fragment match in frozen inventory.",
+      "team_matches": []
+    },
+    {
+      "source_id": "H13-MSY-REVENUE-2024",
+      "title": "City of New Orleans Bureau of Revenue: Hotels Motels BBs (ns2v-hzec)",
+      "url": "https://data.nola.gov/d/ns2v-hzec",
+      "download_url": "https://data.nola.gov/api/views/ns2v-hzec/rows.csv?accessType=DOWNLOAD",
+      "metadata_url": "https://data.nola.gov/api/views/ns2v-hzec.json",
+      "observation_period": "2024-07-16T21:43:02+00:00",
+      "status": "calculated",
+      "access": "Complete public CSV and metadata downloaded",
+      "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nola_licenses.csv",
+      "evidence": "391 lodging business records, 262 under hotel/motel business type, 1 casino hotel, 113 B&B-category rows, 12 rooming/boarding, 3 other traveler accommodation. No rooms field. Only 243 exact addresses among 262 hotel/motel rows.",
+      "source_family": "New Orleans Bureau of Revenue business-license data",
+      "overlap_status": "No dataset-ID match in frozen visible team URL inventory; bounded new source screen only.",
+      "team_matches": []
+    },
+    {
+      "source_id": "H13-MSY-CPC-2025",
+      "title": "New Orleans City Planning Commission: Transient Lodging Study, final report revised October 28, 2025; appendix A table2",
+      "url": "https://nola.gov/nola/media/City-Planning/Major%20Projects/Inclusionary%20Housing%20Study/10-29-2025-ALL-TransientLodgingStudyReport.pdf",
+      "observation_period": "2025-03",
+      "status": "observed",
+      "access": "Downloaded PDF; p137/table 2 visually verified",
+      "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nola_transient_lodging_study.pdf",
+      "evidence": "220 hotel/motel licenses  + 3 traveler accommodation  = 223; 109 B&B licenses. Table sourced to STR Administration permit records; footnote distinguishes Bureau of Revenue categories/method.",
+      "source_family": "New Orleans STR Administration records summarized by CPC/Desire Line",
+      "overlap_status": "No report filename match in frozen visible team URL inventory. Different city administrative system from Revenue CSV; not additive hotels.",
+      "team_matches": []
+    },
+    {
+      "source_id": "H13-MSY-CVB-PARTIAL",
+      "title": "New Orleans & Company meeting planners: Why Choose New Orleans",
+      "url": "https://www.neworleans.com/meeting-planners/",
+      "observation_period": "undated current page retrieved 2026-09-07",
+      "status": "observed",
+      "access": "Full primary destination page via web reader",
+      "raw_path": "data/raw/hotel_13_market_extension/south_mexico/nola_capacity_web_reader.txt",
+      "evidence": "26,000 hotel rooms within 2.5 miles of downtown; rounded destination-marketing count. Not citywide room census.",
+      "source_family": "New Orleans & Company",
+      "overlap_status": "Same publisher and capacity assertion as inherited HOTEL-MSY; this page clarifies geography. Do not count as independent confirmation.",
+      "team_matches": []
+    },
+    {
+      "source_id": "H13-MEX-SECTUR-2025",
+      "title": "Secretaría de Turismo CDMX: Primer Informe 2024-2025, official Congress copy; tables 1/8 and Cuadro 1",
+      "url": "https://www.congresocdmx.gob.mx/media/documentos/b5c1ff207166ed571562c1cc60deeb9dcc220e83.pdf",
+      "equivalent_source_url": "https://www.turismo.cdmx.gob.mx/storage/app/media/info_25/comparecencia/Glosa%20Primer%20informe%202025%20S%20Turismo_Final.pdf",
+      "observation_period": "2025-09-30",
+      "publication_period": "Congress document dated 2025-10-30",
+      "status": "observed",
+      "access": "Congress PDF downloaded; p251 and p264 visually verified; direct Secretariat server timed out",
+      "raw_path": "data/raw/hotel_13_market_extension/south_mexico/mexico_tourism_congress_2025.pdf",
+      "evidence": "850 hotels and 62,279 rooms at September 2025 close, full 15-borough table reconciles.2019–September 2025 history has a catalog-comparability break explicitly disclosed in footnote.",
+      "source_family": "Secretaría de Turismo CDMX; Congress hosts same agency report",
+      "overlap_status": "No document hash-token match in frozen team URL inventory. Upgrade to inherited HOTEL-MEX search-only lead from same public tourism source family; do not add both stock counts.",
+      "team_matches": []
+    }
+  ]
+}

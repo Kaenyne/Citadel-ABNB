@@ -1,0 +1,5 @@
+cut,n,share_of_move_in_gap,mean_abs_gap,mean_abs_intraday,corr_gap,p_gap,slope_gap,corr_intraday,p_intraday,slope_intraday,hit_rate,mean_pnl_pct,sd_pnl_pct,t_stat
+"EXPE, all",14,0.39,1.08,1.67,0.689,0.0064,0.08,0.515,0.0597,0.097,0.64,0.82,2.141,1.43
+"EXPE, |AR_peer|>5%",9,0.4,1.37,2.06,0.694,0.038,0.079,0.536,0.1369,0.099,0.67,1.331,2.392,1.67
+"BKNG, all",18,0.44,1.24,1.57,0.549,0.0183,0.15,-0.387,0.113,-0.151,0.17,-1.283,1.679,-3.24
+"BKNG+EXPE, |AR_peer|>5%",16,0.47,1.47,1.66,0.679,0.0038,0.096,0.308,0.2462,0.061,0.44,0.245,2.386,0.41

@@ -53,7 +53,9 @@ moved this multiple: +0.48 turns per point of forward revenue growth. Margin mov
   Revenue is recognised at check-in, so the FX effect on the revenue line arrives late. That means the
   Q4 2026 FX contribution is already **84% determined today**, at about −0.4 percentage points, against
   about +3 points in Q3. **The Q4 revenue guide will step down roughly 3 points on arithmetic alone, with
-  no change in demand.** Have that bridge built before 5 November, not after.
+  no change in demand.** Have that bridge built before 5 November, not after. *(Built 7 Sep 2026, workstream 29:
+  `research/notes/overnight/29_q4-fy27-bridge.md`; re-run `py -3.13 analysis/src/overnight/29_q4_fy27_bridge.py` weekly,
+  it re-pulls FRED.)*
 - **No reaction result survives once the return starts at the first executable price.** The
   nights-versus-Street-nights to 20-day drift looked like the run's one out-of-sample reaction result, but
   its 20-day window began at the **pre-release close** -- a price nobody can transact on the released
