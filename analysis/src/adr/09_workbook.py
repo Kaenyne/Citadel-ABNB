@@ -38,11 +38,13 @@ def load():
     hist = hist.sort_values("quarter", key=lambda s: s.map(qkey))
     dec = pd.read_csv(f"{OUT}/07_full_decomposition.csv")
     ann = pd.read_csv(f"{OUT}/03_regional_annual_fx.csv")
-    return hist, dec, ann
+    size_fc = pd.read_csv(f"{OUT}/13_party_size_adr_forecast.csv")
+    size_fc = size_fc[size_fc.region.eq("global_nights_weighted")]
+    return hist, dec, ann, size_fc
 
 
 def build():
-    hist, dec, ann = load()
+    hist, dec, ann, size_fc = load()
     os.makedirs("model", exist_ok=True)
     wb = xlsxwriter.Workbook(XLSX)
 
@@ -84,7 +86,7 @@ def build():
     for k, v in [
         ("Owner", "Krish. Built 7-8 Sep 2026 with Claude Code."),
         ("Source note", "research/notes/2026-09-07_adr-decomposition.md"),
-        ("Scripts", "analysis/src/adr/01-10; data in data/processed/adr/. 10 is the audit."),
+        ("Scripts", "analysis/src/adr/01-14; data in data/processed/adr/. 10 is the audit, 11-12 the quote tests, 13 party size, 14a-c length of stay."),
         ("Rebuild", "py -3.13 analysis/src/adr/09_workbook.py"),
     ]:
         ws.write(r, 1, k, F["h2"]); ws.write(r, 2, v, F["txt"]); r += 1
@@ -197,7 +199,7 @@ def build():
          "0.52 - 0.72 x broad USD y/y, r 0.96."),
         ("Interaction", "interaction_pp", False,
          "Mix x rate cross-term. Small."),
-        ("= Within-region ADR ex-FX", "within_region_exfx_pp", True,
+        ("Within Region ADR ex-FX", "within_region_exfx_pp", True,
          "The residual of the identity. RECONCILES to the independent 10-K regional panel "
          "within 0.3pp in 2023-25 - see the check below."),
         ("   of which length of stay", "of_which_los_pp", False,
@@ -318,16 +320,25 @@ def build():
          "Carry ONE number with a band (base ~3.0-3.5%, bear ~2%, bull ~4%) rather than four "
          "regional forecasts. Revisit if the spread re-widens - that would be the signal that "
          "a region has decoupled."),
-        ("Unit-size mix", "LOW-MED", F["mid"],
-         "Small and NA/EMEA-only: +0.63pp of ADR on 29 markets, with APAC +0.08pp and "
-         "LatAm -0.89pp. Decaying as the mix shift matures.",
-         "Track it from the quarterly Inside Airbnb capture, and watch whether Airbnb keeps "
-         "disclosing Bedroom Nights Booked. Treat as a component of the regional pricing "
-         "number, not a separate forecast line."),
-        ("Length of stay", "LOW", F["bad"],
-         "Small in every year (+0.04 to +0.62pp). ALOS drifting down 4.1 -> 3.7 since 2022.",
-         "Do not forecast separately. The elasticity is not identifiable from disclosed data "
-         "(fitted value flipped sign across regions and was rejected). Bounded at -0.15."),
+        ("Unit-size mix (party size)", "MEDIUM", F["mid"],
+         "Steady and structural: booked capacity per stay +1.2-1.6% a year globally since "
+         "2022 (NA +2.5-3%, EMEA +0.5-1%, APAC +1-1.5%, LatAm ~0), worth +0.7-0.9pp of ADR "
+         "at elasticity 0.59. Does not explain quarter-to-quarter ADR variance (r ~0 vs "
+         "ex-FX); it is a level term, not a timing signal.",
+         "13_party_size_adr.py: capacity of the reviewed listing, 123 markets, 15 years, by "
+         "region. Drive it off the team's people-per-booking forecast at constant fill "
+         "(d ln capacity = d ln party size), regionally. Bear = mix shift matured (the "
+         "sleeps-5+ share stalled at 25-27% in 2025-26)."),
+        ("Length-of-stay mix", "MEDIUM", F["mid"],
+         "Bucket mix term, replaces the rejected elasticity. Per-night price at 7-27 nights "
+         "is 0.97x and at 28+ is 0.85x an under-7 stay (host + platform discounts, 139 quote "
+         "dumps, stable across regions). The 28+ share of nights fell 21% (2021) -> ~13-15% "
+         "(2025-26), about -2pp a year, corroborated by two sources (ALOS identity; "
+         "calendar runs Sep-25 -> Aug-26). Worth +0.16, +0.33, +0.34, +0.35pp in 2022-25.",
+         "14a/b/c_los_*.py. Term = sum over buckets of d(nights share) x (price ratio - 1). "
+         "Base: 28+ share keeps falling ~2pp a year -> +0.3pp. Bear: shares stabilise -> 0. "
+         "Bull: LatAm-style -3pp -> +0.45pp. The same bucket shares give ALOS for the nights "
+         "model; do not forecast ALOS separately."),
         ("Like-for-like price", "NOT\nFORECASTABLE", F["bad"],
          "No external series tracks it post-reopening. CPI lodging r=+0.05, BEA r=+0.01, "
          "MAR/HLT r=+0.13 on 2023Q1+, all Bonferroni p=1.000.",
@@ -356,11 +367,28 @@ def build():
     ws.write(3, 4, "Basis", F["hdr"])
 
     # inputs
+    sz = {c: float(size_fc[size_fc.case.eq(c)].size_term_pp.iloc[0]) for c in ("bear", "base", "bull")}
     inputs = [
         ("Broad USD y/y, % (FY27 avg)", [3.0, 0.0, -3.0],
          "Consensus / forward curve. 3Q26 QTD was -0.4%."),
-        ("Regional ADR ex-FX, % (converged)", [2.0, 3.25, 4.0],
-         "2025 nights-weighted was +3.54%; regional spread only 1.5pp."),
+        ("Regional pricing + sub-regional mix, % (ex unit size, ex LOS)", [1.5, 2.2, 2.55],
+         "2025 within-region ex-FX was +3.5% nights-weighted, of which ~0.7pp was unit-size "
+         "mix and ~0.35pp length-of-stay mix (rows below). Not measurable externally: a rate "
+         "with a band, not a forecast."),
+        ("Length-of-stay mix, pp", [0.0, 0.3, 0.45],
+         "14a/b/c_los_*: 28+ nights share falling ~2pp a year into shorter stays, at per-night "
+         "ratios 0.97 (7-27n) and 0.85 (28+). Ran +0.16, +0.33, +0.34, +0.35pp in 2022-25. "
+         "Bear = bucket shares stabilise; bull = LatAm-style -3pp a year."),
+        ("Unit-size mix via party size, pp", [round(sz["bear"], 2), round(sz["base"], 2), round(sz["bull"], 2)],
+         "13_party_size_adr: booked-capacity growth by region (Inside Airbnb reviews, 123 "
+         "markets, fixed 2019 weights) x price elasticity 0.59, nights-weighted on 10-K 2025 "
+         "shares. Base = trailing 8-quarter capacity growth; bear = mix shift matured; bull = "
+         "recent peak. To drive off a people-per-booking forecast: d ln capacity = d ln party "
+         "size at constant fill."),
+        ("Fee migration reprice, pp", [-0.5, 0.5, 1.5],
+         "ADR is gross of the guest fee, so the single-fee move is +0.7% on the migrated cohort "
+         "if hosts hold payout, -12.3% if they do not, +3.8% if they over-reprice. Prints reject "
+         "no-reprice (1H26 NA accelerated). Applies to 4Q26-3Q27 y/y."),
         ("Geographic mix drag, pp", [-2.0, -1.7, -1.2],
          "Ran -1.1, -1.2, -1.6pp in 2023-25. Drive off the regional nights build."),
         ("Interaction, pp", [-0.15, -0.10, -0.05],
@@ -372,10 +400,10 @@ def build():
         for i, v in enumerate(vals):
             ws.write_number(r, 1 + i, v, F["inp"])
         ws.write(r, 4, basis, F["txt"])
-        ws.set_row(r, 26)
+        ws.set_row(r, 40)
         r += 1
 
-    usd_r, price_r, mix_r, int_r = 5, 6, 7, 8  # 1-indexed Excel rows
+    usd_r, price_r, los_r, size_r, fee_r, mix_r, int_r = 5, 6, 7, 8, 9, 10, 11  # 1-indexed Excel rows
 
     r += 1
     ws.write(r, 0, "FX contribution, pp  = 0.52 - 0.72 x USD y/y", F["bold"])
@@ -386,9 +414,9 @@ def build():
     fx_r = r + 1
     r += 2
 
-    ws.write(r, 0, "ADR ex-FX y/y, %  = regional pricing + mix + interaction", F["bold"])
+    ws.write(r, 0, "ADR ex-FX y/y, %  = pricing + LOS mix + unit size + fee + geo mix + interaction", F["bold"])
     for i, col in enumerate("BCD"):
-        ws.write_formula(r, 1 + i, f"={col}{price_r}+{col}{mix_r}+{col}{int_r}", F["out"])
+        ws.write_formula(r, 1 + i, f"={col}{price_r}+{col}{los_r}+{col}{size_r}+{col}{fee_r}+{col}{mix_r}+{col}{int_r}", F["out"])
     ws.write(r, 4, "This is what the letters would report as ex-FX ADR. Note it is 1.5-1.8pp "
                    "BELOW the regional pricing number - that gap is geographic mix.", F["txt"])
     ws.set_row(r, 30)
