@@ -40,11 +40,13 @@ def load():
     ann = pd.read_csv(f"{OUT}/03_regional_annual_fx.csv")
     size_fc = pd.read_csv(f"{OUT}/13_party_size_adr_forecast.csv")
     size_fc = size_fc[size_fc.region.eq("global_nights_weighted")]
-    return hist, dec, ann, size_fc
+    seats = pd.read_csv(f"{OUT}/15_seats_dilution_annual.csv")
+    seats = seats[seats.year.eq(2027)].set_index("case_adr").dilution_drag_pp
+    return hist, dec, ann, size_fc, seats
 
 
 def build():
-    hist, dec, ann, size_fc = load()
+    hist, dec, ann, size_fc, seats = load()
     os.makedirs("model", exist_ok=True)
     wb = xlsxwriter.Workbook(XLSX)
 
@@ -86,7 +88,7 @@ def build():
     for k, v in [
         ("Owner", "Krish. Built 7-8 Sep 2026 with Claude Code."),
         ("Source note", "research/notes/2026-09-07_adr-decomposition.md"),
-        ("Scripts", "analysis/src/adr/01-14; data in data/processed/adr/. 10 is the audit, 11-12 the quote tests, 13 party size, 14a-c length of stay."),
+        ("Scripts", "analysis/src/adr/01-15; data in data/processed/adr/. 10 is the audit, 11-12 the quote tests, 13 party size, 14a-c length of stay, 15 seats dilution."),
         ("Rebuild", "py -3.13 analysis/src/adr/09_workbook.py"),
     ]:
         ws.write(r, 1, k, F["h2"]); ws.write(r, 2, v, F["txt"]); r += 1
@@ -339,6 +341,17 @@ def build():
          "Base: 28+ share keeps falling ~2pp a year -> +0.3pp. Bear: shares stabilise -> 0. "
          "Bull: LatAm-style -3pp -> +0.45pp. The same bucket shares give ALOS for the nights "
          "model; do not forecast ALOS separately."),
+        ("New-business mix (seats + hotels)", "MEDIUM", F["mid"],
+         "Denominator effect: ADR = GBV / Nights AND Seats. Experiences seats (~0.43x a home "
+         "night), Services seats (~0.69x) and hotel nights (~0.81x) dilute reported ADR as "
+         "their share rises. FY25 ~-0.18pp (mostly hotels); base FY26 -0.48, FY27 -0.57pp; "
+         "business-bull FY27 -1.05pp. Regional ADR is on the same basis, so it hits the "
+         "regional figures too.",
+         "15_seats_dilution.py, driven by 11_new_business_scenarios. Volumes are undisclosed; "
+         "the soft input is GBV per seat ($75 experiences, $120 services; FY27 base drag "
+         "-0.3 to -1.0pp across the grid). Tie the case to the revenue build's new-business "
+         "case so ADR and revenue move together. A reader who sees ADR decelerate and calls "
+         "it pricing weakness is wrong if this is the cause."),
         ("Like-for-like price", "NOT\nFORECASTABLE", F["bad"],
          "No external series tracks it post-reopening. CPI lodging r=+0.05, BEA r=+0.01, "
          "MAR/HLT r=+0.13 on 2023Q1+, all Bonferroni p=1.000.",
@@ -391,6 +404,13 @@ def build():
          "no-reprice (1H26 NA accelerated). Applies to 4Q26-3Q27 y/y."),
         ("Geographic mix drag, pp", [-2.0, -1.7, -1.2],
          "Ran -1.1, -1.2, -1.6pp in 2023-25. Drive off the regional nights build."),
+        ("New-business mix (seats + hotels), pp",
+         [round(float(seats["bear"]), 2), round(float(seats["base"]), 2), round(float(seats["bull"]), 2)],
+         "15_seats_dilution: ADR = GBV / Nights AND Seats, so Experiences and Services seats "
+         "(~0.43x and ~0.69x a home night) and hotel nights (~0.81x) dilute reported ADR as "
+         "their share of the denominator rises. Scenario build off 11_new_business_scenarios "
+         "(volumes are not disclosed): FY25 -0.18pp, FY27 base -0.57pp. Bear ADR = bull "
+         "business case. Ticket per seat is the soft assumption ($75 / $120)."),
         ("Interaction, pp", [-0.15, -0.10, -0.05],
          "Has been -0.05 to -0.11pp since 2023."),
     ]
@@ -403,7 +423,7 @@ def build():
         ws.set_row(r, 40)
         r += 1
 
-    usd_r, price_r, los_r, size_r, fee_r, mix_r, int_r = 5, 6, 7, 8, 9, 10, 11  # 1-indexed Excel rows
+    usd_r, price_r, los_r, size_r, fee_r, mix_r, nb_r, int_r = 5, 6, 7, 8, 9, 10, 11, 12  # 1-indexed Excel rows
 
     r += 1
     ws.write(r, 0, "FX contribution, pp  = 0.52 - 0.72 x USD y/y", F["bold"])
@@ -414,9 +434,9 @@ def build():
     fx_r = r + 1
     r += 2
 
-    ws.write(r, 0, "ADR ex-FX y/y, %  = pricing + LOS mix + unit size + fee + geo mix + interaction", F["bold"])
+    ws.write(r, 0, "ADR ex-FX y/y, %  = pricing + LOS mix + unit size + fee + geo mix + new-business mix + interaction", F["bold"])
     for i, col in enumerate("BCD"):
-        ws.write_formula(r, 1 + i, f"={col}{price_r}+{col}{los_r}+{col}{size_r}+{col}{fee_r}+{col}{mix_r}+{col}{int_r}", F["out"])
+        ws.write_formula(r, 1 + i, f"={col}{price_r}+{col}{los_r}+{col}{size_r}+{col}{fee_r}+{col}{mix_r}+{col}{nb_r}+{col}{int_r}", F["out"])
     ws.write(r, 4, "This is what the letters would report as ex-FX ADR. Note it is 1.5-1.8pp "
                    "BELOW the regional pricing number - that gap is geographic mix.", F["txt"])
     ws.set_row(r, 30)
