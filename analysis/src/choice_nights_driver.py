@@ -169,6 +169,15 @@ CATEGORY_GROWTH = {2026: 0.04, 2027: 0.04, 2028: 0.035, 2029: 0.035, 2030: 0.03}
 # global fall is normalisation rather than deterioration - and normalisation is self-limiting.
 # Against 2019 (US reservation panel, 3.7 nights) today's level is not obviously abnormal.
 # Bear case = the EMEA/LatAm pattern arrives in NA; bull = mix toward longer stays reverses it.
+#
+# EXTERNALLY CORROBORATED 9 Sep 2026 (stay_length_inventory.py). Eurostat tour_ce_omn12 carries
+# stays, nights-rented-out and guest-nights, so dividing them gives MEASURED stay length on
+# 85.4mm European bookings: EU27 3.77 nights/booking against Airbnb's disclosed EMEA 3.80 (-0.9%).
+# The same source also confirms the party-size level used elsewhere in this model: EU27 measures
+# 2.96 guests per night against the fitted 2.97 (-0.4%). Both within 1%.
+# Three independent sources also agree that rental stays run materially longer than hotel stays -
+# Spain INE 1.40x, UK GBTS 1.52x, Hawaii DBEDT 1.29x - and that the RENTAL side is falling in all
+# three while hotels hold flat, which is the same asymmetry the regional STAY_DRIFT encodes.
 STAY_LENGTH = {2025: 4.1, 2026: 4.1, 2027: 4.1, 2028: 4.1, 2029: 4.1, 2030: 4.1}
 STAY_LENGTH_BEAR = {2025: 4.1, 2026: 4.02, 2027: 3.94, 2028: 3.86, 2029: 3.78, 2030: 3.71}  # -2%/yr
 STAY_LENGTH_BULL = {2025: 4.1, 2026: 4.14, 2027: 4.18, 2028: 4.22, 2029: 4.27, 2030: 4.31}  # +1%/yr
