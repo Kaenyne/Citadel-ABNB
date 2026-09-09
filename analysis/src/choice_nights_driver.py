@@ -81,7 +81,17 @@ BUSINESS_SHARE = 439 / (439 + 605)        # AHLA 2024 SOTI, 2023 room nights
 CORP_SOLO = 0.795                         # corporate bookings single-occupancy (Portuguese ledger)
 HOTEL_ALOS = 2.1                          # NOT USED - hotel nights enter as room-nights, converted by
                                           # ROOMS_PER_PARTY, so ALOS never enters. Kalibri Labs. Kept for reference.
-LEIS_PARTY = {"solo": 0.20, "pair": 0.54, "3-4": 0.20, "5+": 0.06}     # leisure hotel parties: mean of Hawaii hotel-only & Las Vegas 2024
+# Leisure hotel party mix: mean of Hawaii hotel-only and Las Vegas 2024 - both US, both resort
+# markets, which is the standing criticism of this input.
+# THIRD MARKET ADDED AS A CHECK 8 Sep 2026: Spain's INE ETR microdata gives a leisure-only hotel
+# party mix of 20 / 34 / 42 / 4 (mean 2.57, n=7,633 weighted trips, 2022-26) - far fewer pairs and
+# far more 3-4 parties than the Hawaii/Vegas 20 / 54 / 20 / 6. NOT swapped in, because transplanting
+# a European mix into a US model is the same error the Portuguese ledger already commits here.
+# Carried instead as a robustness check, and the model survives it: total Airbnb share of US lodging
+# moves only 10.5% -> 10.8%. What DOES move is the segment split (3-4 from 23.0% -> 13.2%, 5+ from
+# 30.4% -> 41.2%), so the segment gradient is more fragile than the total. A genuinely US
+# non-resort leisure party mix remains the missing input.
+LEIS_PARTY = {"solo": 0.20, "pair": 0.54, "3-4": 0.20, "5+": 0.06}
 LEIS_NIGHTS_REL = {"solo": 0.7, "pair": 1.0, "3-4": 1.0, "5+": 1.0}    # Portuguese ledger: solo 2.5 vs 3.6 nights
 # ROOMS_PER_PARTY - was the top unsourced input; now has TWO checks (8 Sep 2026), both supportive.
 # It implies leisure guests-per-occupied-room of 2.00 (pair), 2.27 (3-4) and 2.20 (5+).
