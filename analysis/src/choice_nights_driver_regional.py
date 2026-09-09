@@ -110,6 +110,36 @@ STAY_DRIFT = {"north_america": 0.000, "emea": -0.008, "latam": -0.015, "apac": +
 CONTESTABLE = us_model.CONTESTABLE
 SWITCH_RATE = us_model.SWITCH_RATE
 
+# ---- NA CYCLICAL INBOUND RECOVERY, added 8 Sep 2026 to close a real gap against Krish's WS10.
+# My structural drivers (category adoption, price, market growth) contain NO inbound-travel term,
+# so the model produced US 2026 +2.9% against disclosed NA ACTUALS of +5% (4Q25) and +8% (1Q26,
+# 2Q26) and Krish's base of +7%. Being below realised history is not a defensible forecast.
+# What is actually happening (WS10, sourced): BEA inbound foreign travel in the US went -9.9% y/y
+# in 3Q25 to -0.6% in Jul-2026; StatCan Canadian returns from the US went -31% mid-2025 to +1.8 /
+# +9.9 / +5.0% in Apr/May/Jun-2026. Management called 2Q26 NA "the highest growth we've seen in
+# almost three years". That is a CYCLICAL normalisation, not a new structural rate, so it is added
+# as a fading term rather than folded into category growth - it must not compound past the recovery.
+NA_INBOUND_RECOVERY = {2026: 0.035, 2027: 0.015, 2028: 0.005, 2029: 0.0, 2030: 0.0}
+
+# ---- EMEA leisure party mix, from SPAIN INE ETR microdata (leisure trips only, n=7,633 weighted,
+# 2022-26): solo 20 / pair 34 / 3-4 42 / 5+ 4, mean 2.57. Deliberately NOT used in the US model -
+# transplanting a European mix into a US calibration is the error the Portuguese ledger already
+# commits there - but for EMEA it is the right-continent source and beats Hawaii+Vegas outright.
+EMEA_LEIS_PARTY = {"solo": 0.20, "pair": 0.34, "3-4": 0.42, "5+": 0.04}
+
+# ---- SEASONALITY of NIGHTS BOOKED, from disclosed quarterly nights 2023-2025.
+# NOTE THE DIRECTION, because the intuition runs the other way: Airbnb reports nights BOOKED at
+# RESERVATION, not nights stayed. Q1 is when summer travel gets booked, so the booked metric peaks
+# in Q1 and troughs in Q4 - every year, without exception - even though OCCUPANCY peaks in Q3.
+# Index = quarter / that year's mean: 1Q 1.078, 2Q 1.018, 3Q 1.004, 4Q 0.900.
+SEASONAL_INDEX = {"1Q": 1.078, "2Q": 1.018, "3Q": 1.004, "4Q": 0.900}
+
+# ---- Revenue shares, FY2025 10-K. Used ONLY to show the revenue read-through: nights AGGREGATE by
+# summing, so the total nights line is nights-weighted by construction. Revenue weights matter
+# because LatAm+APAC are 31% of nights but only 18.9% of revenue - fast growth there is
+# ADR-dilutive. (US is 39.3% of revenue, NA 42.4% - not 57%.)
+REVENUE_SHARE = {"north_america": 0.424, "emea": 0.387, "latam": 0.094, "apac": 0.095}
+
 
 def region_path(name):
     a = ANCHOR[name]
@@ -122,6 +152,10 @@ def region_path(name):
     for y in YEARS[1:]:
         N *= (1 + CATEGORY[name][y])
         contestable *= (1 + MARKET[name])
+        if name == "north_america":
+            cyc = 1 + NA_INBOUND_RECOVERY[y]
+            N *= cyc
+            contestable *= cyc
         if hotel_adr is not None:
             dln = np.log(1 + ABNB_ADR[name]) - np.log(1 + hotel_adr)
             contestable *= np.exp(-SWITCH_RATE * dln * CONTESTABLE)  # share response, pool-scaled
@@ -172,6 +206,38 @@ def main():
     print("\nGBV CROSS-CHECK (nights x ADR, 2025) - ties to the disclosed regional table")
     for r in ANCHOR:
         print(f"  {r:14s} {ANCHOR[r]['nights'] * ANCHOR[r]['adr'] / 1000:6.2f}bn")
+
+    # ---- Revenue read-through and guidance comparison
+    print("\nREVENUE-WEIGHTED vs NIGHTS-WEIGHTED growth")
+    print("  (nights aggregate by SUMMING, so the total nights line is nights-weighted by")
+    print("   construction. Revenue weights show the read-through, and they differ a lot.)")
+    g26 = {r: df.set_index("year")[r].loc[2026] / df.set_index("year")[r].loc[2025] - 1 for r in ANCHOR}
+    nights_w = sum(g26[r] * (ANCHOR[r]["nights"] / 533.0) for r in ANCHOR)
+    rev_w = sum(g26[r] * REVENUE_SHARE[r] for r in ANCHOR)
+    print(f"    2026 nights-weighted  {nights_w * 100:+.1f}%   (= the total nights line)")
+    print(f"    2026 revenue-weighted {rev_w * 100:+.1f}%   ({(rev_w - nights_w) * 100:+.1f}pp)")
+    print("    Lower on revenue weights because LatAm+APAC are 31% of nights but 18.9% of revenue")
+    print("    - the fast-growing regions are the low-ADR ones, so nights mix is ADR-dilutive.")
+
+    print("\nSEASONALITY of NIGHTS BOOKED (2023-25 disclosed; index = quarter / year mean)")
+    for q, v in SEASONAL_INDEX.items():
+        print(f"    {q} {v:.3f}", end="")
+    print("\n    Q1 is the BIGGEST quarter every year, Q4 the smallest. Airbnb books nights at")
+    print("    RESERVATION, so the metric peaks when summer is booked (Q1), not when it is")
+    print("    stayed (Q3). Occupancy peaks in Q3; the reported metric does not.")
+
+    print("\nVS AIRBNB GUIDANCE AND VS KRISH (WS10/WS13)")
+    print("  Airbnb does NOT guide a nights number. The 2Q26 letter (6 Aug 2026) guides 3Q26")
+    print("  REVENUE $4.69-4.77bn (+15-17%) and describes nights only as 'low double-digit'.")
+    print(f"    Airbnb guidance, 3Q26 nights   ~10-12% (qualitative)")
+    print(f"    Krish WS10 base, 3Q26 nights   +10.3%   FY26 +9.9%, FY27 +8.9%")
+    print(f"    this model, FY26               {nights_w * 100:+.1f}%   FY27 "
+          f"{(df.set_index('year').total.loc[2027] / df.set_index('year').total.loc[2026] - 1) * 100:+.1f}%")
+    print("  Still below both, and the residual is almost entirely North America: this model has")
+    print("  a structural view (category adoption, price, mix) while Krish adds a cyclical inbound")
+    print("  recovery that is measurably happening. The NA_INBOUND_RECOVERY term closes part of it")
+    print("  (US 2026 +2.9% -> +5.8%) but deliberately not all: it fades to zero by 2029 because a")
+    print("  normalisation cannot compound, whereas Krish's horizon stops before that matters.")
 
     pd.DataFrame(rows).to_csv(OUT / "choice_driver_regional_detail.csv", index=False)
     print("\nwrote", OUT / "choice_driver_regional_detail.csv")

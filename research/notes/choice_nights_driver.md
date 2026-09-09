@@ -725,3 +725,55 @@ At the calibrated 50%, the eight US cities produce **156 nights per active listi
 | Party-size LEVEL gap | rentals host larger parties | 1.13–1.55×, 4 sources | **HELD** |
 
 The point of putting the contested and unestablished rows on the same sheet as the held ones is that a reviewer sees the weak joints without having to dig for them. Two rows deserve reading before the model is presented: **`CONTESTABLE` is contested by Airbnb's own economists**, and the **2.35× mix-drift divergence is not established** — the level gap is, the widening isn't.
+
+## Model improvements + reconciliation to guidance and to Krish (8 Sep 2026)
+
+### Three corrections of fact, first
+
+1. **The US is 39.3% of revenue, not 57%** (North America 42.4%; the US was 50.0% back in 2021, per WS10 off the FY2025 10-K). Regional revenue shares now in the model: NA 42.4 / EMEA 38.7 / LatAm 9.4 / APAC 9.5%.
+2. **Airbnb does not guide a nights number.** The 2Q26 letter (6 Aug 2026) guides 3Q26 **revenue** of $4.69–4.77bn (+15–17%, including ~3pp FX after hedging) and describes nights only qualitatively as **"low double-digit"** growth. There is no published nights forecast to compare against — only that phrase.
+3. **The reported metric is nights BOOKED, not nights occupied.** Those are different questions: a night booked in Q1 is often stayed in Q3.
+
+### Seasonality — the intuition runs backwards
+
+Disclosed quarterly nights booked (mm):
+
+| | Q1 | Q2 | Q3 | Q4 |
+|---|---|---|---|---|
+| 2023 | 121.1 | 115.1 | 113.2 | 98.8 |
+| 2024 | 132.6 | 125.1 | 122.8 | 111.0 |
+| 2025 | 143.1 | 134.4 | 133.6 | 121.9 |
+| **Index** | **1.078** | 1.018 | 1.004 | **0.900** |
+
+**Q1 is the biggest quarter every year and Q4 the smallest** — no exceptions in three years. Because nights are counted at *reservation*, the metric peaks when summer travel is **booked** (Q1), not when it is **stayed** (Q3). Occupancy does peak in Q3; the reported metric doesn't. Seasonality also cancels in y/y comparisons, so it matters for quarterly levels, not for the growth rates being compared.
+
+### Spain used for EMEA, not for the US
+
+`EMEA_LEIS_PARTY = 20 / 34 / 42 / 4` (Spain INE ETR, leisure only, n=7,633 weighted, mean 2.57). Right continent for EMEA and beats Hawaii+Vegas outright there; deliberately **not** used in the US model, where transplanting a European mix would repeat the Portuguese-ledger error.
+
+### The NA gap — a real weakness in my model, partly closed
+
+My structural drivers contain **no inbound-travel term**, which produced US 2026 at **+2.9%** against disclosed NA **actuals** of +5% (4Q25) and +8% (1Q26, 2Q26). Forecasting below realised history is not defensible.
+
+What's actually happening (WS10, sourced): BEA inbound foreign travel in the US went **−9.9% y/y in 3Q25 to −0.6% in Jul-2026**; StatCan Canadian returns from the US went **−31% mid-2025 to +1.8 / +9.9 / +5.0%** in Apr/May/Jun-2026. Management called 2Q26 NA "the highest growth we've seen in almost three years."
+
+Added `NA_INBOUND_RECOVERY` = 3.5% (2026), 1.5% (2027), 0.5% (2028), 0 thereafter — as a **fading cyclical** term, not folded into category growth, because a normalisation must not compound. US 2026 goes **+2.9% → +5.8%**.
+
+### Where the three forecasts now sit
+
+| | 3Q26 nights | FY26 | FY27 |
+|---|---|---|---|
+| Airbnb guidance | "low double-digit" (~10–12%) | — | — |
+| Krish WS10/WS13 base | +10.3% | +9.9% | +8.9% |
+| **This model** | — | **+7.9%** | **+6.9%** |
+
+Still below both, and **the residual is almost entirely North America.** The two models answer different questions: Krish's is a near-term cyclical forecast with a measured inbound mechanism and a reconciliation test (reproduces reported total nights within 1.1pp every quarter since 4Q22); mine is a medium-term structural view of category adoption, price and mix. Mine has never been backtested. On FY26 specifically I would weight his more heavily.
+
+### Revenue weighting
+
+Nights aggregate by **summing**, so the total nights line is nights-weighted by construction. Revenue weights are now reported alongside as the read-through:
+
+- 2026 nights-weighted **+7.9%**
+- 2026 revenue-weighted **+7.0%** (−0.9pp)
+
+Lower because **LatAm + APAC are 31% of nights but only 18.9% of revenue** — the fast-growing regions are the low-ADR ones, so nights mix is ADR-dilutive. That gap is a standing feature of the forecast, not a rounding artefact.
