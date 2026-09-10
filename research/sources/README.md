@@ -2,6 +2,19 @@
 
 Log every source as you use it. Cite it in the deck by the ID.
 
+RNPL research package (2026-09-10): [handoff](../../docs/RNPL_HANDOFF.md),
+[sourced rollout/forecast audit](../../outputs/rnpl-audit-20260910/research-pass.md),
+and [calendar pilot](../../outputs/rnpl-calendar-pilot-20260910/pilot-report.md).
+The audit links each public disclosure, including the distinction between official
+filings and Q2 call mirrors. Per-market pilot JSONs record all 15 Inside Airbnb
+source URLs, byte sizes, and SHA-256 hashes (CC BY 4.0). Calculations use S2's
+published Q3/Q4 2025 nights denominators. The original bridge's small public FRED
+inputs are `data/raw/fred/DTWEXBGS.csv` and `DEXUSEU.csv` (September 10 vintage;
+https://fred.stlouisfed.org/series/DTWEXBGS and https://fred.stlouisfed.org/series/DEXUSEU).
+RNPL exposures and cancellation hazards in the sensitivity tables are explicitly
+assumed, not sourced observations. No raw calendar or licensed terminal data is
+included in this research publication.
+
 **IDs renumbered 7 Sep 2026 (WS25).** The union merge of the branch READMEs reused S30 and S32-S37 for two different sources each. The later of each colliding pair is now S40-S45 and the exact-duplicate second S30 row (FRED/BLS CPI) was merged into the first; no source was dropped. Mapping: `data/processed/overnight/25_source_id_remap.csv`. A citation written before 7 Sep 2026 as (S32)-(S37) may mean either member of its pair - check the remap before quoting it.
 
 | ID | Source | Date | Link / location | Used for |
