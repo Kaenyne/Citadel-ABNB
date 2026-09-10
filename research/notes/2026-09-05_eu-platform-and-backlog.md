@@ -1,7 +1,7 @@
 # Building on Theo's acquisition layer: the European platform category (Eurostat) and the bookings backlog (XBRL)
 
 **What this is:** two builds on top of Theo's PR #10 (alt-data acquisition, manifests, handoff doc). His handoff names both: T6.5 (deseasonalise and benchmark against the Eurostat platform series, then "state the edge or state that there isn't one") and the deferred-revenue trap (unearned fees stopped tracking bookings when Reserve Now Pay Later launched). Theo's bulk files sit on his external drive, so both series were re-pulled from the public APIs and cached under `data/raw/` (gitignored); everything here reproduces from `analysis/src/abnb_eu_platform_and_backlog.py`.
-**Compiled:** 2026-09-05. Author: Krishang, with Claude Code. Outputs: `data/processed/eurostat_platform_nights_monthly.csv`, `eurostat_platform_nights_quarterly.csv`, `eurostat_platform_nights_by_country.csv`, `abnb_backlog_indicators.csv`; figures `analysis/figures/eurostat_platform_vs_abnb_emea.png`, `eurostat_platform_country_growth.png`, `abnb_backlog_indicators.png`.
+**Compiled:** 2026-09-05. Author: Krishang, with Claude Code. Outputs: `data/processed/eurostat_platform_nights_monthly.csv`, `eurostat_platform_nights_quarterly.csv`, `eurostat_platform_nights_by_country.csv`, `abnb_backlog_indicators.csv`, `abnb_backlog_conversion_annual.csv`; figures `analysis/figures/eurostat_platform_vs_abnb_emea.png`, `eurostat_platform_country_growth.png`, `abnb_backlog_indicators.png`.
 **Sources:** Eurostat `tour_ce_omr` (experimental statistics: nights at short-stay accommodation booked through Airbnb, Booking, Expedia and TripAdvisor, supplied by the platforms; monthly Jan 2018 to Mar 2026, EU27 and 31 countries; attribute Eurostat). SEC XBRL company facts for Airbnb (`ContractWithCustomerLiabilityCurrent`, `FundsHeldForClients`). Airbnb geographic revenue from the 10-Q R-pages (Jessie's `citadel-abnb-files 2/data/processed/airbnb_regional_revenue_quarterly.csv`). Theo's handoff for the Q3 2026 consensus ($4,744M) and FY2026 consensus ($14,162M).
 
 ---
@@ -56,6 +56,32 @@ Country detail (14 largest markets) in `eurostat_platform_nights_by_country.csv`
 | 2Q26 | 2,831, -0.9% | 12,224, +10.5% | +16.5% | guide +14.5% to +16.5% | 2.5% | **11.5%** |
 
 Unearned fees are guest service fees collected at booking and recognised at check-in (about 0.7x the next quarter's revenue). Funds held for clients are guest payments held for hosts until check-in; they scale with booked GBV that has been paid for, which is why RNPL (payment deferred to a scheduled date near the stay) depresses both. Funds held was less affected through 1Q26 because RNPL sits mostly in bookings inside the payment window by quarter end; the 2Q26 reading is the first where the confound is large enough to matter.
+
+### 3b. Backlog conversion rate (added 2026-09-10, Jessie with Claude Code)
+
+Airbnb does not disclose a conversion rate. Every 10-K from FY2020 to FY2025 says unearned fees "are not considered contract balances" under ASC 606 because they are refundable on cancellation, so there is no "revenue recognised from the opening balance" figure and no RPO (S66). It is derived here from the unearned-fees roll-forward (columns `backlog_conversion_pct`, `opening_backlog_to_revenue` in `abnb_backlog_indicators.csv`; annual in `abnb_backlog_conversion_annual.csv`):
+
+- **Conversion** = revenue / (opening unearned fees + net fees booked in the period) = revenue / (revenue + closing unearned fees): the share of the fee pool that turned into revenue rather than carrying forward.
+- **Opening backlog to revenue** = opening unearned fees / the period's revenue: how much of the quarter was on the books going in.
+
+| Conversion | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 |
+|---|---|---|---|---|---|---|
+| Q1 | 48.4% | 46.3% | 45.6% | 46.8% | 45.5% | **49.5%** |
+| Q2 | 47.4% | 51.5% | 51.4% | 51.2% | 52.0% | **56.0%** |
+| Q3 | 71.5% | 70.3% | 69.8% | 69.3% | 69.2% | |
+| Q4 | 62.9% | 61.7% | 60.9% | 60.5% | 61.4% | |
+| Full year | 86.9% | 87.7% | 87.4% | 87.3% | 87.5% | |
+
+| Opening backlog / revenue | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 |
+|---|---|---|---|---|---|---|
+| Q1 | 0.46x | 0.60x | 0.65x | 0.67x | 0.71x | 0.65x |
+| Q2 | 0.71x | 0.83x | 0.87x | 0.89x | 0.88x | **0.76x** |
+| Q3 | 0.66x | 0.69x | 0.69x | 0.70x | 0.70x | |
+| Q4 | 0.58x | 0.64x | 0.66x | 0.67x | 0.66x | |
+
+From 2022 to 2025 conversion was a seasonal constant: about 46% in Q1 and 51-52% in Q2 (bookings pile up), about 69-70% in Q3 (check-in peak), about 61-62% in Q4, within about 2 points year to year for each season; about 12-13% of each year's fee pool rolls into the next year. 2021 is distorted by the COVID recovery (1H21 opening backlog was thin). 2026 breaks the pattern: Q1 +4.0 points y/y, Q2 +4.0 points, and Q2 opening coverage 0.76x against 0.88x. Stays are not being consumed faster; under RNPL the fee is collected close to check-in, so less of it ever sits on the balance sheet. This is the same break as the growth-rate fit above, seen from the level side, and it means conversion from 3Q25 on is not comparable with the history.
+
+Caveats: net of cancellations (refunded fees leave the pool without becoming revenue); unearned fees hold only fees collected, so pay-less-upfront understated the backlog before RNPL; revenue also carries incentives (contra-revenue) and small non-fee items.
 
 ## 4. What to do with this
 

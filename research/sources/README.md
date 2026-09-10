@@ -71,6 +71,7 @@ Log every source as you use it. Cite it in the deck by the ID.
 | S63 | Eurostat tourism API: tour_ce_oam, tour_ce_omr, tour_occ_ninat, tour_occ_nim, tour_cap_nat (Jessie) | 2026-09-06 | https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ | Platform vs hotel nights, hotel capacity, crowding tests |
 | S64 | NTTO Survey of International Air Travelers CY2024 (inbound results release) (Jessie) | 2026-09-06 | https://www.hotel-online.com/news/ntto-publishes-calendar-year-2024-survey-of-international-air-travelers-siat-inbound-results | Overseas-visitor accommodation and party composition |
 | S65 | Inside Airbnb detailed listings (13 markets) (Jessie) | 2026-09-06 | https://insideairbnb.com/get-the-data/ | Listing size vs demand |
+| S66 | Airbnb 10-K FY2020 to FY2025, revenue recognition note: unearned fees "are not considered contract balances" under ASC 606 because they are refundable on cancellation, so no revenue-from-opening-balance or RPO disclosure (Jessie) | 2026-09-10 | https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001559720&type=10-K | Why backlog conversion is derived from the unearned-fees roll-forward (S44) rather than disclosed (research/notes/2026-09-05_eu-platform-and-backlog.md section 3b) |
 
 S46 to S65 are Jessie's sources from PR #17, renumbered on the 7 Sep 2026 merge of origin/main into krish/overnight-synthesis because they reused S2 to S21. Jessie's notes cite sources by name, not by id. Mapping in `data/processed/overnight/25_source_id_remap.csv`.
 
