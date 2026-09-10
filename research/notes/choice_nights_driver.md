@@ -151,3 +151,50 @@ The party-size gradient replicates in every country (~2× per step, same shape a
 - **Rest-of-world plug replaced.** `analysis/src/choice_nights_driver_global.py` → `choice_driver_global_projection.csv` + **Global** sheet: US (full model) + EMEA (4-country calibration scaled to 215mm, category 7%→5% vs ~10% implied) + NA-ex-US (tracks US) + LatAm/APAC explicit fades from +18%/+15%. Global: 533 → 743mm by 2030.
 - **Team ADR line wired** (`model/assumptions.md`, WS13 base, ex-FX): FY26 ~+3.5%, FY27/28 +2.5%. Replaces the +5%/+3% placeholder and narrows the ADR gap → US 2030 nights **171.1mm (3.3% CAGR)** — higher than the old base despite beta doubling to 5.0. The bear mechanism runs entirely through the ADR gap, and the team's base case has almost none.
 - **Reconciliation vs team model:** WS13 base total nights FY26 +9.9 / FY27 +8.9 / FY28 +7.4%; this build +7.1 / +7.2 / +7.1%. The gap is nearly all North America — the choice model says NA at the team's pace needs share gains or category adoption above the 2025 exit rate.
+
+## Simplified nights model — hotels out, RNPL and cancellations in (10 Sep 2026)
+
+`analysis/src/nights_simple.py` → `nights_simple.csv`. **This replaces `choice_nights_driver.py` for forecasting.** The old model had ~15 inputs, most of them about hotels; this has three drivers, all disclosed or management-quantified.
+
+### Why the hotel machinery came out
+
+It didn't move the answer. At the team's near-parity ADR path, moving the switch rate 5.0 → 10.3 changed 2030 nights by **2.1%**. And the reconciliation work found that **neither the switch rate nor the contestable share could close the gap to the team's path at *any* value** — because with Airbnb ADR growing in line with hotels there's no relative-price signal for share to respond to.
+
+The hotel comparison is a **good thesis point** (Airbnb takes 6% of solo lodging but 31% of 5+ parties, confirmed in four datasets). It is not a forecasting mechanism. Keeping it in the model meant carrying a contestable share, rooms per party, two leisure party mixes, a switch rate and a hotel room-night base — six assumptions earning nothing.
+
+### The model
+
+> **Nights(t) = Base(t) × (1 + L(t)) × (1 − C(t)) / (1 − C(0))**
+
+| Driver | Value | Source |
+|---|---|---|
+| **Base** — underlying demand | **+7.5%/yr** | Disclosed nights growth *before* US RNPL: +7.92% (1Q25), +7.43% (2Q25). Observed, not fitted |
+| **L(t)** — product bundle level uplift | 2.0% → 3.0%, then flat | Management sized it: ~2pts nights (4Q25 call), ~3pts (1Q26). Laps 3Q26 / 4Q26 / 1Q27 |
+| **C(t)** — cancellation rate | 16.5% → 19.6% | Nights are reported **net of cancellations**. RNPL took the platform rate ~16% → ~17% |
+
+Cancellations decompose exactly as you framed it: `C = (1−s)·c_base + s·c_rnpl`, with **RNPL share rising** *and* **the cohort's own cancel rate rising** (zero-due-at-booking selects progressively more marginal bookers as it scales). `c_base` is pinned at the pre-RNPL 16%, and `c_rnpl` is **derived** from the observed aggregate rather than assumed — at s=50%, a 17% aggregate implies 18%.
+
+### Output
+
+| Year | Underlying | Feature | Cancel | **Total** |
+|---|---|---|---|---|
+| 2026 | +7.50% | +0.98% | −0.60% | **+7.90%** |
+| 2027 | +7.50% | **0.00%** | −0.90% | **+6.52%** |
+| 2028 | +7.50% | 0.00% | −0.88% | +6.56% |
+| 2030 | +7.50% | 0.00% | −0.65% | +6.80% |
+
+**The whole model is one asymmetry: a one-off level gain against a permanent, compounding drag.** 2026 is the last year the bundle contributes anything; after the laps it adds exactly zero to the growth rate while the cancellation rate it created keeps climbing. Cumulative cancellation drag 2025→2030 is **−3.7% of nights**.
+
+### ADR is now downstream
+
+ADR = GBV ÷ nights, both dated at booking — it *follows* the mix of nights booked. RNPL's own disclosed channels are mix channels ("a slightly nicer listing", shift to 4+ bedroom homes), so the feature that lifts nights also lifts ADR. Management sized the same bundle at **~3pts of nights and ~4pts of GBV** — **the 1pt wedge is the ADR mix effect**, and it laps on the same schedule. ADR is reported as an output, never fed in.
+
+### The only two assumptions left
+
+| Scenario | 2030 cancel rate | 2030 nights | Cumulative drag |
+|---|---|---|---|
+| RNPL stalls at 50%, cohort flat | 17.0% | 768.1mm | −0.6% |
+| **Base** | 19.6% | **744.3mm** | −3.7% |
+| RNPL to 95%, cohort to 22% | 21.7% | 724.6mm | −6.2% |
+
+Everything else is disclosed. **Versus 2026 at +7.9%:** Airbnb guides 3Q26 nights at 10–12% (mid 11%) and Krish has FY26 +9.9%, so this is still below both — but the disagreement is now about *one* thing (whether the bundle is worth more than 3pts) rather than about fifteen.

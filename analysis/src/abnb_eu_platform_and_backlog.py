@@ -20,7 +20,8 @@ Outputs (data/processed/):
   eurostat_platform_nights_monthly.csv     EU27 and country nights, monthly, with y/y
   eurostat_platform_nights_quarterly.csv   EU27 quarterly nights, y/y, next to Airbnb EMEA revenue y/y and total nights y/y
   eurostat_platform_nights_by_country.csv  2019 to 2025 annual nights and growth by country, plus latest quarter
-  abnb_backlog_indicators.csv              quarterly unearned fees, funds held, y/y, next-quarter revenue and fit
+  abnb_backlog_indicators.csv              quarterly unearned fees, funds held, y/y, next-quarter revenue and fit, backlog conversion
+  abnb_backlog_conversion_annual.csv       calendar-year revenue / (revenue + year-end unearned fees)
 Figures (analysis/figures/): eurostat_platform_vs_abnb_emea.png, eurostat_platform_country_growth.png, abnb_backlog_indicators.png
 Run: py -3.13 analysis/src/abnb_eu_platform_and_backlog.py
 """
@@ -159,6 +160,14 @@ def backlog():
     b["next_q_revenue_musd"] = b.revenue_musd.shift(-1)
     b["next_q_revenue_yoy_pct"] = b.revenue_musd_yoy_pct.shift(-1)
     b["unearned_to_next_q_revenue"] = b.unearned_fees_musd / b.next_q_revenue_musd
+    # backlog conversion: Airbnb discloses no revenue-from-opening-balance figure (10-K: unearned fees "are not
+    # considered contract balances" under ASC 606, being refundable on cancellation), so derive it from the roll-forward.
+    # Net fees booked = revenue + closing - opening balance (net of cancellations); conversion = revenue as a share of
+    # opening backlog plus net fees booked, i.e. revenue / (revenue + closing unearned fees).
+    b["opening_unearned_fees_musd"] = b.unearned_fees_musd.shift(1)
+    b["net_fees_booked_musd"] = b.revenue_musd + b.unearned_fees_musd - b.opening_unearned_fees_musd
+    b["backlog_conversion_pct"] = b.revenue_musd / (b.opening_unearned_fees_musd + b.net_fees_booked_musd) * 100
+    b["opening_backlog_to_revenue"] = b.opening_unearned_fees_musd / b.revenue_musd
     b["rnpl_era"] = b.quarter.map(lambda q: (int(q[2:]), int(q[0])) >= (25, 3))
     b["unearned_tag"], b["funds_tag"] = tag_u, tag_f
     # fit: next-quarter revenue y/y on unearned-fees y/y, pre-RNPL quarters with a full year of history
@@ -172,6 +181,15 @@ def backlog():
     stats2 = dict(n=int(m2.nobs), r2=m2.rsquared, const=m2.params["const"], slope=m2.params["funds_held_musd_yoy_pct"], t_slope=m2.tvalues["funds_held_musd_yoy_pct"], p_slope=m2.pvalues["funds_held_musd_yoy_pct"])
     b["fitted_next_q_revenue_yoy_funds_pct"] = m2.params["const"] + m2.params["funds_held_musd_yoy_pct"] * b.funds_held_musd_yoy_pct
     return b, stats, stats2
+
+
+def backlog_conversion_annual(b):
+    """Calendar years with four reported quarters: revenue / (revenue + year-end unearned fees)."""
+    y = b.assign(year=b.quarter_end.dt.year).groupby("year").agg(quarters=("revenue_musd", "count"), revenue_musd=("revenue_musd", "sum"),
+                                                                 year_end_unearned_fees_musd=("unearned_fees_musd", "last"))
+    y = y[y.quarters == 4].drop(columns="quarters")
+    y["backlog_conversion_pct"] = y.revenue_musd / (y.revenue_musd + y.year_end_unearned_fees_musd) * 100
+    return y.reset_index()
 
 
 # ------------------------------------------------------------------------------------------- figures
@@ -220,6 +238,8 @@ def main():
     cmp_.round(2).to_csv(PROC / "eurostat_platform_nights_quarterly.csv", index=False)
     ctry.round(2).to_csv(PROC / "eurostat_platform_nights_by_country.csv", index=False)
     b.round(3).to_csv(PROC / "abnb_backlog_indicators.csv", index=False)
+    conv = backlog_conversion_annual(b)
+    conv.round(2).to_csv(PROC / "abnb_backlog_conversion_annual.csv", index=False)
     figures(m, cmp_, ctry, b)
     pd.set_option("display.width", 250); pd.set_option("display.max_columns", 30)
     log(f"Eurostat: months {m.index.min():%Y-%m} to {m.index.max():%Y-%m}; last EU27 y/y {m.eu27_yoy_pct.dropna().iloc[-1]:.1f}%")
@@ -228,6 +248,8 @@ def main():
     log(ctry.head(16).round(1).to_string(index=False))
     log(b[["quarter", "unearned_fees_musd", "unearned_fees_musd_yoy_pct", "funds_held_musd", "funds_held_musd_yoy_pct", "revenue_musd_yoy_pct", "next_q_revenue_yoy_pct", "fitted_next_q_revenue_yoy_pct", "rnpl_gap_pts", "unearned_to_next_q_revenue"]].round(1).to_string(index=False))
     log(f"fit unearned: {st}"); log(f"fit funds held: {st2}")
+    log(b[["quarter", "opening_unearned_fees_musd", "revenue_musd", "unearned_fees_musd", "net_fees_booked_musd", "backlog_conversion_pct", "opening_backlog_to_revenue"]].round(2).to_string(index=False))
+    log(conv.round(1).to_string(index=False))
 
 
 if __name__ == "__main__":
