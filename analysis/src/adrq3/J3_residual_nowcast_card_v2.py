@@ -122,10 +122,10 @@ if os.path.exists(IFILE):
     cols = {c.lower(): c for c in I.columns}
     tcol = next((cols[c] for c in cols if c in ("term", "component", "name")), None)
     qcol = next((cols[c] for c in cols if c in ("quarter", "period", "target_quarter")), None)
-    pcol = next((cols[c] for c in cols if c in ("point_pp", "point", "pp", "value_pp", "term_pp", "central_pp")), None)
+    pcol = next((cols[c] for c in cols if c in ("adr_contribution_pp", "point_pp", "point", "pp", "value_pp", "term_pp", "central_pp")), None)
     lcol = next((cols[c] for c in cols if c in ("lo_pp", "low_pp", "lo", "low")), None)
     hcol = next((cols[c] for c in cols if c in ("hi_pp", "high_pp", "hi", "high")), None)
-    ALIAS = {"geo": "geographic_mix", "geographic_mix": "geographic_mix", "geo_mix": "geographic_mix", "geo_mix_pp": "geographic_mix",
+    ALIAS = {"unit_size_party_size": "unit_size_party", "geo": "geographic_mix", "geographic_mix": "geographic_mix", "geo_mix": "geographic_mix", "geo_mix_pp": "geographic_mix",
              "unit_size": "unit_size_party", "unit_size_party": "unit_size_party", "party_size": "unit_size_party", "size": "unit_size_party",
              "unit_size_pp": "unit_size_party", "los": "length_of_stay_mix", "los_mix": "length_of_stay_mix", "length_of_stay_mix": "length_of_stay_mix",
              "los_mix_pp": "length_of_stay_mix"}
@@ -134,7 +134,11 @@ if os.path.exists(IFILE):
         for _, r in I.iterrows():
             key = ALIAS.get(str(r[tcol]).strip().lower())
             q = str(r[qcol]).strip() if qcol else "3Q26"
-            q = {"2026Q3": "3Q26", "2026Q4": "4Q26"}.get(q, q)
+            # I's file carries comparison rows (2Q26, 3Q25, H card, WS-C ...); only the
+            # measured 3Q26-to-date rows are inputs.
+            if qcol and q not in ("3Q26_to_date", "3Q26", "2026Q3", "4Q26", "2026Q4"):
+                continue
+            q = {"2026Q3": "3Q26", "2026Q4": "4Q26", "3Q26_to_date": "3Q26"}.get(q, q)
             if key and q in mix:
                 lo = float(r[lcol]) if lcol and pd.notna(r[lcol]) else float(r[pcol])
                 hi = float(r[hcol]) if hcol and pd.notna(r[hcol]) else float(r[pcol])
