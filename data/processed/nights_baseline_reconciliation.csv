@@ -1,0 +1,15 @@
+model,source,q3_yoy_pct,q4_yoy_pct,q3_nights_mm,q4_nights_mm,fy26_nights_mm,fy26_yoy_pct,h2_yoy_pct,note
+"WS10 regional build, base",data/processed/overnight/10_regional_forecast.csv,10.29,9.94,147.3,134.0,585.9,9.92,10.12,NA 7/EMEA 8/LatAm 18/APAC 17; no explicit RNPL lap; says World Cup gives no lift to 3Q26 booked nights
+WS10 bear,same,7.97,7.02,144.2,130.5,579.2,8.67,7.52,
+WS10 bull,same,12.44,9.94,150.2,134.0,588.7,10.46,11.25,
+Team frozen 5-Nov card (WS13/14),data/processed/overnight/20_frozen_q3_2026.csv,10.2,,147.2,,,,,"147.2mm; band 7.9-12.6. This is the number PR #32 labels ""consensus""; WS14 says no public nights consensus was found"
+"PR #32 NA-lap model, base",origin/krish/nights-quarterly nights_quarterly_total.csv,9.89,8.9,146.8,132.7,584.1,9.58,9.42,"RNPL fitted +2.4 pts, fee+cancellation +2.3 pts, laps 3Q26 and 4Q26 in NA; ex-NA unchanged from WS10"
+PR #32 bear,same,9.89,8.62,146.8,132.4,583.7,9.52,9.28,
+PR #32 bull,same,10.23,8.9,147.3,132.7,584.5,9.67,9.6,
+"H1-H2 bridge, pattern only",data/processed/h2_bridge/h2_bridge_2026_projection.csv,9.49,10.62,146.3,134.8,585.6,9.87,10.03,"2023-25 seasonal transition applied to 2026 H1; no lap, no event"
+"Bridge, no lap + World Cup 0.5",h2_bridge_nights_scenarios.csv,9.99,10.62,146.9,134.8,586.3,10.0,10.29,
+"Bridge, half lap",same,8.49,8.12,144.9,131.8,581.2,9.05,8.31,-1.5/-2.5 total-level overlay; unfitted
+"Bridge, full lap",same,6.99,7.62,142.9,131.2,578.6,8.56,7.29,-3/-3; unfitted
+Naive carry-forward of 2Q26,panel,10.34,10.34,147.4,134.5,586.4,10.02,10.34,
+Jessie nights_simple (annual),origin/jessie/backlog-conversion nights_simple.csv,,,,,575.1,7.9,5.91,"FY26 +7.9% is annual; with H1 actual +9.7% it implies H2 +5.9%, below every quarterly model and the guide"
+Management guide 3Q26,2Q26 letter,10.0,,147.0,,,,,"""low double digits"" mapped to >=10; not a company range"
