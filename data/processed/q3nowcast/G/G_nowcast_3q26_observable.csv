@@ -1,0 +1,15 @@
+feature,target,window,x_3q26,pred_3q26,naive_3q26,note,insample_resid_sd,wf_ratio_vs_naive,wf_n,knowable
+ntto_overseas_qtd1m,nights_m_yoy_pct,2023Q1..2026Q2,-7.022403187473792,9.17284962327044,10.342,in-sample fit on full window,1.845130604588626,0.7429262430524233,10.0,yes (Sep prelim mid-Oct 2026)
+ntto_weurope_qtd1m,nights_m_yoy_pct,2023Q1..2026Q2,-10.472842885034384,9.404084251518066,10.342,in-sample fit on full window,2.005582797205905,0.7807456776624102,10.0,yes (Sep prelim mid-Oct 2026)
+es_hotel_nights_foreign_qtd1m,nights_m_yoy_pct,2023Q1..2026Q2,1.063163717507054,9.137846298471066,10.342,in-sample fit on full window,1.699526846421493,0.8388781563746206,10.0,tight (INE Sep release ~3 Nov 2026)
+es_frontur_tourists_qtd1m,nights_m_yoy_pct,2023Q1..2026Q2,4.644325885549794,9.334166217207159,10.342,in-sample fit on full window,1.686578112667977,0.8588676343591788,10.0,tight (INE Sep release ~3 Nov 2026)
+es_hotel_travellers_qtd1m,nights_m_yoy_pct,2023Q1..2026Q2,1.3184192407809991,9.48973610953371,10.342,in-sample fit on full window,1.8148643337191628,0.8774572610475078,10.0,tight (INE Sep release ~3 Nov 2026)
+es_hotel_nights_qtd1m,nights_m_yoy_pct,2023Q1..2026Q2,0.3331932518175762,9.283631853390677,10.342,in-sample fit on full window,1.7958501669044415,0.8843749336987866,10.0,tight (INE Sep release ~3 Nov 2026)
+es_frontur_visitors_qtd1m,nights_m_yoy_pct,2023Q1..2026Q2,1.9608437172606852,8.690625399767915,10.342,in-sample fit on full window,1.8139033249160337,0.9024547681353938,10.0,tight (INE Sep release ~3 Nov 2026)
+ntto_overseas_qtd1m,nights_m_yoy_pct,2022Q1..2026Q2,-7.022403187473792,9.181183443546958,10.342,in-sample fit on full window,1.7729947480235821,0.9025240587839365,11.0,yes (Sep prelim mid-Oct 2026)
+tsa_qtd72,nights_m_yoy_pct,2023Q1..2026Q2,-2.6505882405362446,7.454974740112368,10.342,in-sample fit on full window,1.6056298210684612,0.9235746245505312,10.0,"yes (daily, zero lag)"
+cpi_lodging_sa_qtd,nights_m_yoy_pct,2023Q1..2026Q2,3.0028936626870895,11.908707654000793,10.342,in-sample fit on full window,1.9915303467652035,0.9557787919030644,9.0,yes (Sep CPI 13 Oct 2026)
+cpi_lodging_nsa_qtd,nights_m_yoy_pct,2023Q1..2026Q2,3.111520086060504,11.960547724816537,10.342,in-sample fit on full window,1.9952224366118885,0.9759949496469468,9.0,yes (Sep CPI 13 Oct 2026)
+ntto_overseas_qtd1m,revenue_musd_yoy_pct,2022Q1..2026Q2,-7.022403187473792,12.669072064463547,16.537,in-sample fit on full window,3.41778258357922,0.995036063585327,11.0,yes (Sep prelim mid-Oct 2026)
+tsa_qtd72,nights_m_yoy_pct,2022Q1..2026Q2,-2.6505882405362446,6.753002886433512,10.342,in-sample fit on full window,3.233663858904933,0.9960589191802018,14.0,"yes (daily, zero lag)"
+tsa_qtd72,revenue_musd_yoy_pct,2023Q1..2026Q2,-2.6505882405362446,10.840532176261572,16.537,in-sample fit on full window,3.473995368375854,0.9974191931023418,10.0,"yes (daily, zero lag)"
