@@ -89,7 +89,7 @@ def window_stats(runs, wdf, a0, a1):
     r = r[r.len <= CAP]
     if wdf is not None:
         r = r.join(wdf, on="listing_id", how="left")
-        r = r[r.active.fillna(False)]
+        r = r[r.active.eq(True)]
     else:
         r = r.assign(w=np.nan)
     r = r.assign(b=np.select([r.len < 7, r.len < 28], ["lt7", "n7_27"], "ge28"))

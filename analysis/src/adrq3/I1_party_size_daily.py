@@ -49,7 +49,9 @@ def inventory():
     geo = pd.read_csv(WT / "data/processed/q3nowcast/E_aug/market_geo.csv")
     rows = []
     for mk in geo.market_key:
-        fs = sorted(glob.glob(str(RAW / f"{mk}_*_reviews.csv.gz")))
+        # exact market match: "ireland_*" must not pick up "ireland_leinster_dublin_*"
+        fs = [f for f in glob.glob(str(RAW / f"{mk}_*_reviews.csv.gz"))
+              if re.fullmatch(re.escape(mk) + r"_\d{4}-\d{2}-\d{2}_reviews\.csv\.gz", os.path.basename(f))]
         ds = sorted(re.search(r"_(\d{4}-\d{2}-\d{2})_reviews", f).group(1) for f in fs)
         if not ds:
             continue
@@ -57,7 +59,8 @@ def inventory():
         lt = pd.Timestamp(late)
         olds = [d for d in ds if 300 <= (lt - pd.Timestamp(d)).days <= 430]
         old = olds[-1] if olds else ""
-        ls = sorted(glob.glob(str(RAW / f"{mk}_*_listings.csv.gz")))
+        ls = sorted(f for f in glob.glob(str(RAW / f"{mk}_*_listings.csv.gz"))
+                    if re.fullmatch(re.escape(mk) + r"_\d{4}-\d{2}-\d{2}_listings\.csv\.gz", os.path.basename(f)))
         rows.append(dict(market_key=mk, region=geo.set_index("market_key").region[mk],
                          vintage_late=late, vintage_old=old, listings_file=ls[-1] if ls else ""))
     inv = pd.DataFrame(rows)
