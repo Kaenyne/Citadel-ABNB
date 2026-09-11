@@ -1,6 +1,6 @@
 # Overnight run 11-12 Sep 2026: synthesis
 
-- **Date:** 2026-09-12. **Author:** Krishang Surapaneni (compiled with Claude Code).
+- **Date:** 2026-09-11 (an earlier draft said 12 Sep). **Author:** Krishang Surapaneni (compiled with Claude Code).
 - **Branch:** `krish/overnight-2026-09-11` (worktree `../citadel-abnb-overnight2`), commits 9e6df17 (A), 90b7c73 (B), 7e1243e (C), b823005 (D). Not pushed. Nothing in the live model or on main was changed.
 - **Read next:** the four notes under `research/notes/overnight2/`. Shared brief: `docs/overnight2/BRIEF.md`.
 
