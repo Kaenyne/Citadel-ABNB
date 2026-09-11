@@ -1,0 +1,10 @@
+source,status,detail
+CCI for CAN,no data,absent from both OECD dataflows
+CCI for ARG,no data,absent from both OECD dataflows
+CCI for CRI,filled from HHDASH CCICP,123 monthly observations
+CCI for CHE,filled from HHDASH CCICP,123 monthly observations
+CCI for ZAF,no data,absent from both OECD dataflows
+CCI for IND,no data,absent from both OECD dataflows
+CCI for NZL,filled from HHDASH CCICP,123 monthly observations
+"OECD DSD_PRICES@DF_PRICES_ALL (CPI by COICOP, travel price term)",404 on the key tried,not pursued further inside the time budget; US CPI lodging and airfare already sit in data/processed/overnight/05_macro_quarterly_panel.csv
+"World Bank ST.INT.XPND.CD (international tourism expenditure, origin weights)",returns null for 2021-2024,too stale to weight 2026 origin nights; weights built in C3 instead
