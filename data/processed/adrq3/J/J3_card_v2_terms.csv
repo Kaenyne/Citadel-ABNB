@@ -1,0 +1,15 @@
+quarter,term,lo_pp,point_pp,hi_pp,in_point,source,label
+3Q26,like_for_like_pricing_residual,2.398286815004551,4.6149576635846685,4.84932637648649,True,J3 rule persistence; band mean-reversion (2023-25 mean) to 2Q26 value,"assumed, anchored on measured residuals"
+3Q26,geographic_mix,-1.5709104332839452,-1.428426033774555,-0.9353181922914344,True,workstream I I_mix_terms_3q26.csv (3 term rows read); 4Q26 carries I's 3Q26 terms,measured (I) or sourced (H)
+3Q26,unit_size_party,0.5298648963065857,0.796671778749512,0.9984702536410068,True,workstream I I_mix_terms_3q26.csv (3 term rows read); 4Q26 carries I's 3Q26 terms,measured (I) or descriptive (H)
+3Q26,length_of_stay_mix,-0.0810737620689109,0.0562640964166838,0.2887059735483112,True,workstream I I_mix_terms_3q26.csv (3 term rows read); 4Q26 carries I's 3Q26 terms,measured (I) or descriptive (H)
+3Q26,new_business_seats,-0.750306831909886,-0.4825701517057523,-0.2262429488181783,True,"H, 15_seats_dilution_quarterly",assumed
+3Q26,interaction,-0.15,-0.1,-0.05,True,"H, 07 interaction",descriptive
+3Q26,memo_fee_migration_increment_H,-0.3,0.16,0.85,False,"H card table 2.3; not added, residual embeds migrated-cohort reprice",assumed
+4Q26,like_for_like_pricing_residual,2.398286815004551,4.6149576635846685,4.84932637648649,True,J3 rule persistence; band mean-reversion (2023-25 mean) to 2Q26 value,"assumed, anchored on measured residuals"
+4Q26,geographic_mix,-1.5709104332839452,-1.428426033774555,-0.9353181922914344,True,workstream I I_mix_terms_3q26.csv (3 term rows read); 4Q26 carries I's 3Q26 terms,measured (I) or sourced (H)
+4Q26,unit_size_party,0.5298648963065857,0.796671778749512,0.9984702536410068,True,workstream I I_mix_terms_3q26.csv (3 term rows read); 4Q26 carries I's 3Q26 terms,measured (I) or descriptive (H)
+4Q26,length_of_stay_mix,-0.0810737620689109,0.0562640964166838,0.2887059735483112,True,workstream I I_mix_terms_3q26.csv (3 term rows read); 4Q26 carries I's 3Q26 terms,measured (I) or descriptive (H)
+4Q26,new_business_seats,-0.750306831909886,-0.4825701517057523,-0.2262429488181783,True,"H, 15_seats_dilution_quarterly",assumed
+4Q26,interaction,-0.15,-0.1,-0.05,True,"H, 07 interaction",descriptive
+4Q26,memo_fee_migration_increment_H,-0.5,0.26,1.42,False,"H card table 2.3; not added, residual embeds migrated-cohort reprice",assumed

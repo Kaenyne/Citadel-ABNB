@@ -1,0 +1,6 @@
+check,n,max_abs_diff_pp,quarters,mean_diff_pp,rmse_pp,r,refreshed_mean_pp,series13_mean_pp,values
+H unit_size_pp equals 13 global size_term_pp (identity),14,0.0,,,,,,,
+"refreshed Aug-2026 dumps (I1b within-vintage, fixed-2019) vs 13 series (Jun/Jul-2026 dumps): size term pp",12,,3Q23..2Q26,-0.001739297231743676,0.06203446365975173,0.9733389277245823,0.7191483915342118,0.7208876887659555,
+refreshed vs 13: booked-capacity y/y pct,12,,3Q23..2Q26,-0.002881058780094629,0.10482984065098931,0.9733389277245825,,,
+"14c global occupancy-weighted 28+ nights share by snapshot (descriptive, n=5, not backtestable)",5,,,,,,,,2025-09-15:0.174 2025-12-15:0.167 2026-03-15:0.168 2026-06-15:0.169 2026-08-20:0.155
+"I2b LOS mix term by year/window/weighting (global, pp)",8,,,,,,,,2026-aug-calendar_sep-occ:-0.07 | 2026-aug-calendar_sep-unw:+0.03 | 2026-aug-lead_matched-occ:+0.03 | 2026-aug-lead_matched-unw:+0.08 | 2026-jun-calendar_q3-occ:-0.08 | 2026-jun-calendar_q3-unw:+0.12 | 2026-jun-lead_matched-occ:+0.26 | 2026-jun-lead_matched-unw:+0.29
