@@ -50,7 +50,12 @@ def parse_name(fn):
         return None
     parts = stem.split("_")
     date, segs = parts[-1], parts[:-1]
-    return "/".join(segs), "_".join(segs), date, kind
+    key = "_".join(segs)
+    # Local filenames are ASCII, but some CDN paths carry diacritics; a wrong path 403s on every probe.
+    return PATH_FIX.get(key, "/".join(segs)), key, date, kind
+
+
+PATH_FIX = {"japan_kanto_tokyo": "japan/kantō/tokyo"}
 
 
 def local_inventory():
