@@ -1,0 +1,15 @@
+quarter,term,lo_pp,point_pp,hi_pp,in_point,source,label
+3Q26,like_for_like_pricing_residual,2.398286815004551,4.6149576635846685,4.84932637648649,True,J3 rule persistence; band mean-reversion (2023-25 mean) to 2Q26 value,"assumed, anchored on measured residuals"
+3Q26,geographic_mix,-1.64,-1.19,-1.04,True,H card inputs (I_mix_terms_3q26.csv not present when J3 ran),measured (I) or sourced (H)
+3Q26,unit_size_party,0.0,0.74,0.98,True,H card inputs (I_mix_terms_3q26.csv not present when J3 ran),measured (I) or descriptive (H)
+3Q26,length_of_stay_mix,0.0,0.3,0.45,True,H card inputs (I_mix_terms_3q26.csv not present when J3 ran),measured (I) or descriptive (H)
+3Q26,new_business_seats,-0.750306831909886,-0.4825701517057523,-0.2262429488181783,True,"H, 15_seats_dilution_quarterly",assumed
+3Q26,interaction,-0.15,-0.1,-0.05,True,"H, 07 interaction",descriptive
+3Q26,memo_fee_migration_increment_H,-0.3,0.16,0.85,False,"H card table 2.3; not added, residual embeds migrated-cohort reprice",assumed
+4Q26,like_for_like_pricing_residual,2.398286815004551,4.6149576635846685,4.84932637648649,True,J3 rule persistence; band mean-reversion (2023-25 mean) to 2Q26 value,"assumed, anchored on measured residuals"
+4Q26,geographic_mix,-1.65,-1.19,-1.02,True,H card inputs (I_mix_terms_3q26.csv not present when J3 ran),measured (I) or sourced (H)
+4Q26,unit_size_party,0.0,0.74,0.98,True,H card inputs (I_mix_terms_3q26.csv not present when J3 ran),measured (I) or descriptive (H)
+4Q26,length_of_stay_mix,0.0,0.3,0.45,True,H card inputs (I_mix_terms_3q26.csv not present when J3 ran),measured (I) or descriptive (H)
+4Q26,new_business_seats,-0.750306831909886,-0.4825701517057523,-0.2262429488181783,True,"H, 15_seats_dilution_quarterly",assumed
+4Q26,interaction,-0.15,-0.1,-0.05,True,"H, 07 interaction",descriptive
+4Q26,memo_fee_migration_increment_H,-0.5,0.26,1.42,False,"H card table 2.3; not added, residual embeds migrated-cohort reprice",assumed
