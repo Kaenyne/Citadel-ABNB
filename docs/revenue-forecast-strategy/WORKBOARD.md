@@ -28,6 +28,7 @@ Status values: `open` · `claimed` · `in-progress` · `blocked (reason)` · `do
 | WP-E2 | Thesis E — BKNG / EXPE deferred merchant bookings kernel | Jessie | open (after E1) | — | — | — | 2026-09-11 | `05_backtests/ALPHA_E_OTA.md` |
 | WP-I | Memo v1 (direction committed, kernel → composition → flip rule; one chart, one table) | Writer | blocked (WP-H) | — | — | — | 2026-09-11 | `deck/drafts/memo_v1.md` |
 | WP-J | Re-score + refresh `SCOREBOARD_v3.md` after new registrations; verify loop | any | open (recurring) | — | — | — | 2026-09-11 | `05_backtests/SCOREBOARD_v3.md` |
+| FXSWAP | H1/H2 bridge FX lines swapped to the adopted estimators (ADR v3 midpoint for ADR FX; fx_lag_v2 kernel +1.0pp for 4Q26 revenue FX); rejected constructions kept as comparison columns | Krish | done | Krish (Claude) | krish/fx-line-swap | 2026-09-12 | 2026-09-12 | `analysis/src/h1_to_h2_bridge_v2.py`, `data/processed/h2_bridge_v2/`, `05_backtests/FXSWAP_h2_bridge_kernel_fx.md` |
 | WP-K | Ingest the September Inside Airbnb batch (+ unlisted Aug 2026 batch, 86 markets); refresh reviews index and party-size series | Theo | blocked (batch not out) | — | — | — | 2026-09-11 | manifests; refreshed E / I outputs |
 | WP-L | Airbnb policy monitor (RNPL, fees, cancellation) — weekly fetch + diff, dated log | Theo | open (small) | — | — | — | 2026-09-11 | `data/manifests/policy_monitor.log` |
 | WP-M | Consensus re-stamp weekly + 2–3 Nov (Zacks nights/ADR/GBV) | Theo | open (recurring) | — | — | — | 2026-09-11 | vintage register rows |
