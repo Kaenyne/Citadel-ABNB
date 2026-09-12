@@ -9,7 +9,7 @@ files.
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/optimal_mix/run.py
+python analysis/src/forecast_methods/optimal_mix/run.py
 ```
 
 Exit code 0. Idempotent: it overwrites only its own outputs under

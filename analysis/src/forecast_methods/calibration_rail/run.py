@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """calibration-rail entry point. Rebuilds every output of this package end to end.
 
-  /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/calibration_rail/run.py
+  python analysis/src/forecast_methods/calibration_rail/run.py
 
 Steps (each is idempotent and writes progressively, so a crash mid-run still leaves
 whatever ran before it):

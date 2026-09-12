@@ -20,10 +20,11 @@ shifts the calendar six months (Melbourne month m -> northern ((m+5) mod 12)+1),
 whole quarters onto whole quarters and preserves position-within-quarter.
 """
 import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ROOT = "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB"
+ROOT = os.environ.get("CITADEL_ABNB_PARENT", str(Path(__file__).resolve().parents[5]))  # parent of the repo folder (holds "Theo Data"); portable
 OUT = os.path.join(ROOT, "Citadel-ABNB/data/processed/forecast_methods/kernel_leadtime_v2")
 MAXL = 460
 MLEN = {1: 31, 2: 28.25, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}

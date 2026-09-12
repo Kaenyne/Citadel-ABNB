@@ -9,7 +9,7 @@ Do not invent a second format. If the harness lacks something you need, write a
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/run.py
+python analysis/src/forecast_methods/harness/run.py
 ```
 
 Rebuilds `calendar.csv`, `targets.csv`, the five baseline registry files, and the
@@ -19,7 +19,7 @@ and never touches another package's registry files.
 Score only (after other packages have registered):
 
 ```bash
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/score.py
+python analysis/src/forecast_methods/harness/score.py
 ```
 
 ## What the harness gives you
@@ -204,7 +204,7 @@ Outputs: `scoreboard.csv` and `scoreboard.md` in
 ## 7. Tests
 
 ```bash
-/Users/theomachado/.venvs/citadel-abnb/bin/python -m pytest analysis/src/forecast_methods/harness/tests -q
+python -m pytest analysis/src/forecast_methods/harness/tests -q
 ```
 
 Covers the validator, the scorer on a toy example with a known answer, and the PIT rule

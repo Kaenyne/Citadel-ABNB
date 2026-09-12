@@ -3,7 +3,7 @@
 fee-takerate -- entry point.  Rebuilds every output of the package.
 
     cd "<repo root>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/fee_takerate/run.py
+    python analysis/src/forecast_methods/fee_takerate/run.py
 
 Writes progressively: every stage is flushed to disk before the next one starts, so a
 crash leaves the completed stages behind.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """COPY THIS. Minimal example of registering a package's forecasts with the harness.
 
-  /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/EXAMPLE.py
+  python analysis/src/forecast_methods/harness/EXAMPLE.py
 
 It writes nothing: it builds a frame, validates it, prints it, and stops. Delete the
 `dry_run` guard at the bottom and call `register(df)` from your own package's run.py.

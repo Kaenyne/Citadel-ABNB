@@ -2,7 +2,7 @@
 """guidance-policy -- entry point. Rebuilds every output of the package.
 
   cd "<repo>"
-  /Users/theomachado/.venvs/citadel-abnb/bin/python \
+  python \
       analysis/src/forecast_methods/guidance_policy/run.py
 
 Writes progressively: every section writes its CSVs before the next one starts, so a

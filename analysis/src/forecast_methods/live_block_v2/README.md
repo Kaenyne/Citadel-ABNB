@@ -11,7 +11,7 @@ Task B1. Fixes RED_TEAM.md **F3**: three mutually inconsistent live 3Q26 take ra
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/live_block_v2/run.py
+python analysis/src/forecast_methods/live_block_v2/run.py
 ```
 
 ## Files

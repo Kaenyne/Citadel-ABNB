@@ -8,7 +8,7 @@ referee, not a lens: the deliverable is whether the interval is honest at n≈20
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/calibration_rail/run.py
+python analysis/src/forecast_methods/calibration_rail/run.py
 ```
 
 Exit code 0 on success (1 if any step failed; the steps that ran before a failure

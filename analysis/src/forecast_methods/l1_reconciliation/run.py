@@ -1,7 +1,7 @@
 """l1-reconciliation entry point.  Rebuilds everything.  Exit code 0 on success.
 
     cd "<repo>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/l1_reconciliation/run.py
 
 NUMERAIRE HEADER: this package hands REPORTED ADR (GBV / units).  It does NOT

@@ -1,0 +1,5 @@
+schedule,fy27_nights_yoy_pct,status,source,note,delta_vs_b3_pp,implied_gbv_growth_pct,delta_gbv_vs_b3_pp
+none (B3 v2 as published),9.455783080492042,derived,"l1_fy27_regional_scenario_driver.csv; flat regional y/y, no lap term",NA +6.0 / EMEA +7.0 / LatAm +16.0 / APAC +15.0 applied flat to 4Q27,0.0,11.511083548921764,-2.1316282072803006e-14
+NA-only bundle lap (PR #32),8.2,derived,git show origin/krish/nights-quarterly:research/notes/nights_quarterly.md,US RNPL anniversary from 3Q26; bundle contribution removed from the NA cells,-1.2557830804920425,10.231720064718353,-1.279363484203433
+global bundle lap (PR #32),6.4,derived,git show origin/krish/nights-quarterly:research/notes/nights_quarterly.md,global RNPL anniversary from 1Q27 (17 Feb 2026 rollout) on top of the US lap,-3.0557830804920414,8.397920655138936,-3.1131628937828495
+29-bridge FY27 walk,9.2,derived,research/notes/overnight/29_q4-fy27-bridge.md,Krish's FY27 walk; sits between B3 and the NA-only lap,-0.25578308049204246,11.250497514484703,-0.2605860344370825

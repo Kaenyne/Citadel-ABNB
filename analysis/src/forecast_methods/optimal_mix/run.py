@@ -20,7 +20,7 @@ beats the best single candidate on BOTH windows; otherwise the best single metho
 the mix and that is what gets written.
 
 Run:
-  /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/optimal_mix/run.py
+  python analysis/src/forecast_methods/optimal_mix/run.py
 """
 from __future__ import annotations
 

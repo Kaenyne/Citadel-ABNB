@@ -1,6 +1,6 @@
 """L0 constraint spine — entry point. Rebuilds all three files and runs the test suite.
 
-    /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/L0/run.py
+    python analysis/src/forecast_methods/L0/run.py
 
 Writes progressively: file 1 is on disk and asserted before file 2 starts, so a crash in a
 later stage still leaves the earlier stages' outputs and their diagnostics.

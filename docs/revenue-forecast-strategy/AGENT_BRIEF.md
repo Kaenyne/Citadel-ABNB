@@ -130,6 +130,18 @@ Same as E1 on deferred merchant bookings. Optional; only if E1 transfers.
 ### WP-G1 · LSEG estimates history → vintage register (Theo lane · after WP-G0, human)
 Once Theo has registered for LSEG Workspace and granted the browser extension site access: export estimates history (revenue by fiscal period, monthly statistics dates, 2021–today) for ABNB, NCLH, BKNG, EXPE; save under `data/raw/consensus/lseg/` (licensed — off git, manifest only); run `analysis/src/forecast_methods/L0/consensus_history_loader.py` (append-only, backup first). **Pass line:** the register gains vintage-stamped rows at every historical guide date; the 6 Aug 2026 Q3 value matches LSEG $4,610M.
 
+### WP-X · Regional kernel and origin–destination FX exposure (Krish lane · 3–5 days · free data + internet)
+**Why.** The kernel, the FX layer and the Q4 step decomposition were built on consolidated GBV and one judgement-weighted currency basket.
+FX is regional (currency of each booking — origin currency on the guest-fee side, destination currency on the host side; pass-through EMEA 1.04 /
+LatAm 0.62 / APAC 0.86), and recognition lag may differ by region. Symptom: fitted gross FX scale 0.95 vs the disclosed 0.56 non-USD share (B4).
+**Do.** Annual regional λ_r from the 10-K tables; quarterly λ_{r,s} against the 72 exact regional revenue cells with L1's regional GBV intervals;
+an origin × destination nights matrix from NTTO / Eurostat / JNTO / INE / DATATUR plus the cross-border share and the reviewer-locale proxy;
+`exposure.csv` in the R-engine format (separate GBV and revenue currency shares per geography-quarter; the single-fee migration shifts exposure
+toward destination currencies); regional recompute of the FX carried through the kernel, the observed-share triple and the Q4 step; Krish's
+WS-B purchasing-power demand channel as a labelled scenario. Full brief: `docs/thesis-kernel-topdown/lane1/X_REGIONAL_KERNEL_OD_FX.md`.
+**Pass line.** Regional build sums to consolidated revenue within 0.3 % every quarter; measured weights move the gross FX scale toward 0.56;
+the regional 3Q26 FX is reported beside management's ~+3.0pp with the difference attributed by region.
+
 ### WP-H · Direction and target reconciliation (human · this weekend)
 Inputs: `docs/overnight/FINAL_SUMMARY.md` (football field $154–157 base), `deck/drafts/memo_v0_2026-09-11.md` (branch analogues $170–185 / $140–152 / $205–215), `B3_*` (FY27 band), `docs/overnight2/SYNTHESIS.md` (ex-NA lap). Output: one line in the card — LONG / SHORT, target, three branch prices with probabilities — and `05_backtests/H_DIRECTION_DECISION.md` with the reasoning. An agent may prepare the side-by-side table; a human signs it.
 
@@ -212,3 +224,11 @@ captures `~/abnb_ia_capture/` (outside the repo) with manifests in `data/manifes
 - 11 Sep: `06_quote_line_items.csv` is not fee-inclusive (service fee, cleaning fee, taxes null).
 - 11 Sep: calendar "booking curves" (blocked rate by horizon) are U-shaped past ~90 days — they measure blocks, not bookings.
 - 11 Sep: K1 reads unearned fees as FX-clean and funds payable as FX-confounded, the reverse of Theo's RNPL note — open (WP-F, D-06).
+- 11 Sep (late): Theo flagged that the kernel and FX layers are CONSOLIDATED while FX acts regionally (origin/destination currencies,
+  regional pass-through). B4's FX numbers and the Q4 step decomposition are therefore consolidated approximations until WP-X reports;
+  K0 must expose a regional-ready interface. Added WP-X and `lane1/X_REGIONAL_KERNEL_OD_FX.md`.
+- 11 Sep (evening) — two deliberate exceptions to "copy, never overwrite", both code-only, no data or result changed:
+  (a) portability: `kernel_leadtime_v2/K2_*` ROOT and `red_team/rt_*` REPO now derive from the file location (env override
+  `CITADEL_ABNB_PARENT`), `red_team/run.py` uses `sys.executable`, and machine-specific interpreter paths in docstrings/READMEs became
+  `python`; (b) `L0/test_l0.py`: two assertions updated to accept A1's 11 Sep register appends (S&P FY27 relay 15,770; QUARANTINED rows
+  with a stated reason). Verified in a fresh shallow clone: harness 27/27, kernel acceptance PASS on 12 cells, scorer exit 0.

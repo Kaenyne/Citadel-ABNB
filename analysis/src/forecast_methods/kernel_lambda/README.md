@@ -10,13 +10,13 @@ Revenue_q  =  lambda_{s(q)} * [ w * GBV_{q-1} + (1-w) * GBV_{q-2} ]      w = 2/3
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/kernel_lambda/run.py
+python analysis/src/forecast_methods/kernel_lambda/run.py
 ```
 
 Exit code 0 rebuilds every output. Then score:
 
 ```bash
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/score.py
+python analysis/src/forecast_methods/harness/score.py
 ```
 
 ## Files

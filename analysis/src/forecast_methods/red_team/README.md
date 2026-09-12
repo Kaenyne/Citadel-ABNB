@@ -5,7 +5,7 @@ These scripts import **no package code** on purpose.
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/red_team/run.py
+python analysis/src/forecast_methods/red_team/run.py
 ```
 
 * `rt_recompute.py` — rebuilds all 200 harness scoreboard cells from the 57 registry CSVs

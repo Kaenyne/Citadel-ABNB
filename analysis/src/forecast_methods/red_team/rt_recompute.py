@@ -2,7 +2,7 @@
 No harness imports. Pure pandas."""
 import pandas as pd, numpy as np, glob, os, json
 from pathlib import Path
-REPO = Path("/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB")
+REPO = Path(__file__).resolve().parents[4]  # repo root; portable
 REG = REPO/"data/processed/forecast_methods/registry"
 H = REPO/"data/processed/forecast_methods/harness"
 tg = pd.read_csv(H/"targets.csv")

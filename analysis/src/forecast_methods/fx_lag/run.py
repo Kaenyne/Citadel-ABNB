@@ -1,7 +1,7 @@
 """fx_lag / run.py -- entry point. Rebuilds every output. Exit code 0 on success.
 
     cd "<repo>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/fx_lag/run.py
+    python analysis/src/forecast_methods/fx_lag/run.py
 """
 from __future__ import annotations
 

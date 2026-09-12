@@ -19,10 +19,11 @@ stays from Nov-16 (W>=299) observe the distribution out past three quarters.  We
 the Lynden-Bell / Efron-Petrosian NPMLE and inverse-probability weights w = 1/F(W).
 """
 import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ROOT = "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB"
+ROOT = os.environ.get("CITADEL_ABNB_PARENT", str(Path(__file__).resolve().parents[5]))  # parent of the repo folder (holds "Theo Data"); portable
 OUT = os.path.join(ROOT, "Citadel-ABNB/data/processed/forecast_methods/kernel_leadtime_v2")
 A0, B0 = pd.Timestamp("2015-09-01"), pd.Timestamp("2016-02-05")
 WIN_LO, WIN_HI = pd.Timestamp("2016-03-01"), pd.Timestamp("2017-02-28")   # exactly 12 months

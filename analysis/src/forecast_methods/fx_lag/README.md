@@ -4,7 +4,7 @@ Run (rebuilds every output, exit code 0):
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/fx_lag/run.py
+python analysis/src/forecast_methods/fx_lag/run.py
 ```
 
 Runtime ~25 s. All paths resolve from `__file__`, so the script also runs from

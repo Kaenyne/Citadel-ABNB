@@ -8,7 +8,7 @@ re-parse `10_xbrl_revenue_geography.csv`, `10_regional_panel_quarterly.csv`,
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/L0/run.py
+python analysis/src/forecast_methods/L0/run.py
 ```
 
 Exit code 0 means all three files rebuilt, every hard assertion held and all 20 tests passed.
@@ -18,7 +18,7 @@ is on disk and asserted before file 2 starts.
 Tests only:
 
 ```bash
-/Users/theomachado/.venvs/citadel-abnb/bin/python -m pytest "analysis/src/forecast_methods/L0/test_l0.py" -q
+python -m pytest "analysis/src/forecast_methods/L0/test_l0.py" -q
 ```
 
 (`pytest` was not in the venv; it was installed. `run.py` falls back to calling the test

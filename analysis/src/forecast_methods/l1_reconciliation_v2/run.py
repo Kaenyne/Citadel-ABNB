@@ -1,7 +1,7 @@
 """l1-reconciliation-v2 entry point -- task B3, the FY27 decomposition rebuild.
 
     cd "<repo>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/l1_reconciliation_v2/run.py
 
 EXPLORATORY.  Nothing here is a scored object: the harness has no annual slot and

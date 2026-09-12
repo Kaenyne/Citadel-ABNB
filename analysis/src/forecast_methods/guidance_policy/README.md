@@ -8,7 +8,7 @@ distribution, the nights bucket words, and the 9/9 guide-below-Street rule.
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/guidance_policy/run.py
+python analysis/src/forecast_methods/guidance_policy/run.py
 ```
 
 Exit code 0 on success. Rebuilds every CSV under
@@ -18,7 +18,7 @@ Writes progressively: each section writes its outputs before the next runs.
 Then re-score:
 
 ```bash
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/score.py
+python analysis/src/forecast_methods/harness/score.py
 ```
 
 ## Files

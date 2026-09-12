@@ -6,7 +6,7 @@ programme's OWN combined 3Q26 GBV forecast, and publishes the 5 Nov 2026 4Q26 gu
 midpoint as a DISTRIBUTION over a GBV grid with vendor-stamped Street anchors.
 
     cd "<repo>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/guidance_policy_v2/run.py
 
 COPY-NEVER-OVERWRITE.  Nothing under guidance_policy/, kernel_lambda/,
