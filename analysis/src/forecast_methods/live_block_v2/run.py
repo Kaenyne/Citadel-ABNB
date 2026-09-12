@@ -15,7 +15,7 @@ It does not run harness/score.py.
 
 Run:
   cd "<repo>"
-  /Users/theomachado/.venvs/citadel-abnb/bin/python \
+  python \
       analysis/src/forecast_methods/live_block_v2/run.py
 """
 from __future__ import annotations

@@ -1,7 +1,7 @@
 """pytest suite for the L0 constraint spine.
 
 Run:
-  /Users/theomachado/.venvs/citadel-abnb/bin/python -m pytest \
+  python -m pytest \
       "analysis/src/forecast_methods/L0/test_l0.py" -q
 """
 from __future__ import annotations

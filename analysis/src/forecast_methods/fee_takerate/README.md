@@ -9,13 +9,13 @@ theta, and the printed take rate as an OUTPUT.
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/fee_takerate/run.py
+python analysis/src/forecast_methods/fee_takerate/run.py
 ```
 
 Exit code 0. Rebuilds everything, writes progressively, re-runnable. Then score:
 
 ```bash
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/score.py
+python analysis/src/forecast_methods/harness/score.py
 ```
 
 ## Files

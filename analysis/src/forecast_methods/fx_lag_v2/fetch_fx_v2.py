@@ -17,7 +17,7 @@ CHANGES vs the original (and nothing else):
      the note can state exactly how far the refresh reaches.
 
 Run:
-  /Users/theomachado/.venvs/citadel-abnb/bin/python \
+  python \
       analysis/src/forecast_methods/fx_lag_v2/fetch_fx_v2.py
 """
 import datetime as dt

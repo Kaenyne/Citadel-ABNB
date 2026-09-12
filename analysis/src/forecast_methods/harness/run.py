@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Rebuild the whole harness: spine, windows, baselines, scoreboard.
 
-  /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/run.py
+  python analysis/src/forecast_methods/harness/run.py
 """
 from __future__ import annotations
 

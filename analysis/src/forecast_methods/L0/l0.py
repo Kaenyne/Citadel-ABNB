@@ -39,7 +39,7 @@ def _read(path: Path) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(
             f"{path.name} is missing. Build Layer 0 first:\n"
-            f"  /Users/theomachado/.venvs/citadel-abnb/bin/python "
+            f"  python "
             f"analysis/src/forecast_methods/L0/run.py")
     return pd.read_csv(path, comment="#")
 

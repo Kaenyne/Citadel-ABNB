@@ -17,10 +17,11 @@ Two checks:
      matter, against the analytic kernel built in step 4.
 """
 import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ROOT = "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB"
+ROOT = os.environ.get("CITADEL_ABNB_PARENT", str(Path(__file__).resolve().parents[5]))  # parent of the repo folder (holds "Theo Data"); portable
 OUT = os.path.join(ROOT, "Citadel-ABNB/data/processed/forecast_methods/kernel_leadtime_v2")
 
 df = pd.read_parquet(os.path.join(OUT, "K2_reservations_weighted.parquet"))

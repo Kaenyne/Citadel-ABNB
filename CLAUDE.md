@@ -33,7 +33,7 @@ made of — not a revenue number.
 ## Environment
 
 - Repo path contains spaces and an apostrophe — always double-quote it in shell.
-- Python: `/Users/theomachado/.venvs/citadel-abnb/bin/python` (pandas 3, statsmodels, scipy, pymc, duckdb, pyarrow,
+- Python: `python` (pandas 3, statsmodels, scipy, pymc, duckdb, pyarrow,
   scikit-learn, lightgbm). Run scripts from the repo root; resolve paths with `pathlib` relative to the file.
 - Large raw stores (Inside Airbnb calendars/reviews) are outside the repo (`~/abnb_ia_capture/`); query with DuckDB.
 - Every package has a `run.py` that rebuilds it end to end with exit code 0, and a `README.md` with the command.

@@ -1,6 +1,6 @@
 """kernel_phi_v2 — entry point.  Run from the repo root:
 
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/kernel_phi_v2/run.py
 
 Writes every table to data/processed/forecast_methods/kernel_phi_v2/.

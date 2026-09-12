@@ -1,6 +1,6 @@
 """Tests for the harness: validator, scorer, PIT rule, conformal arithmetic.
 
-  /Users/theomachado/.venvs/citadel-abnb/bin/python -m pytest \
+  python -m pytest \
       analysis/src/forecast_methods/harness/tests -q
 """
 from __future__ import annotations

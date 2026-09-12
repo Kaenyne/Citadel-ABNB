@@ -8,7 +8,7 @@ raw, non-circular series only).
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/tracker_backlog/run.py
+python analysis/src/forecast_methods/tracker_backlog/run.py
 ```
 
 Exit code 0 on success. Steps run in order (circularity test first, per the standing

@@ -1,9 +1,9 @@
 """fx_lag_v2 / run.py -- entry point for the B4 FX exhibit.  Exit code 0 on success.
 
     cd "<repo>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/fx_lag_v2/fetch_fx_v2.py       # refresh first
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/fx_lag_v2/run.py
 
 Writes ONLY to data/processed/forecast_methods/fx_lag_v2/ and to the two NEW

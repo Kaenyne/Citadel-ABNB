@@ -8,10 +8,11 @@ Source: Harvard Dataverse doi:10.7910/DVN/1XPDEU ("To Airbnb: A Question of Reve
 Read with DuckDB, never fully into pandas. Output: one row per reservation.
 """
 import os
+from pathlib import Path
 import duckdb
 import pandas as pd
 
-ROOT = "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB"
+ROOT = os.environ.get("CITADEL_ABNB_PARENT", str(Path(__file__).resolve().parents[5]))  # parent of the repo folder (holds "Theo Data"); portable
 SRC = os.path.join(ROOT, "Theo Data/raw_expansion/v2_2026-09-05/harvard_dataverse/doi10.7910_DVN_1XPDEU")
 OUT = os.path.join(ROOT, "Citadel-ABNB/data/processed/forecast_methods/kernel_leadtime_v2")
 os.makedirs(OUT, exist_ok=True)

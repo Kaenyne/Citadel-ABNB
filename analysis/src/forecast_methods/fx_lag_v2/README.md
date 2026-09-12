@@ -9,8 +9,8 @@ is read for output or written to.** Outputs go to
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/fx_lag_v2/fetch_fx_v2.py
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/fx_lag_v2/run.py
+python analysis/src/forecast_methods/fx_lag_v2/fetch_fx_v2.py
+python analysis/src/forecast_methods/fx_lag_v2/run.py
 ```
 
 `harness/score.py` is NOT run by this package.

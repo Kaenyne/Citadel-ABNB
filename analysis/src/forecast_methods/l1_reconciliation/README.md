@@ -8,7 +8,7 @@ cells, plus the FY27 named decomposition.
 
 ```bash
 cd "/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB"
-/Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/l1_reconciliation/run.py
+python analysis/src/forecast_methods/l1_reconciliation/run.py
 ```
 
 Rebuilds everything under `data/processed/forecast_methods/l1_reconciliation/` and

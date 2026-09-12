@@ -2,7 +2,7 @@
 """tracker-backlog entry point. Rebuilds everything; writes outputs progressively so a
 crash still leaves partial results. Exit code 0 on success.
 
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/tracker_backlog/run.py
 
 Order matters: circularity (T1) MUST run first per the standing instruction, even

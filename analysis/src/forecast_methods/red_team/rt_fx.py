@@ -2,7 +2,7 @@
 import pandas as pd, numpy as np
 from pathlib import Path
 from scipy import stats, optimize
-REPO=Path("/Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB")
+REPO = Path(__file__).resolve().parents[4]  # repo root; portable
 O=REPO/"data/processed/overnight"
 
 d=pd.read_csv(O/"10_fx_daily.csv", parse_dates=["date"])

@@ -2,7 +2,7 @@
 """kernel-lambda entry point.  Rebuilds every output of the package.
 
     cd "<repo>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/forecast_methods/kernel_lambda/run.py
 
 Writes progressively: every stage flushes its CSV before the next stage starts,

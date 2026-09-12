@@ -2,7 +2,7 @@
 """Scorer: registry -> full metric block -> scoreboard.csv + scoreboard.md.
 
 Run:
-  /Users/theomachado/.venvs/citadel-abnb/bin/python analysis/src/forecast_methods/harness/score.py
+  python analysis/src/forecast_methods/harness/score.py
 """
 from __future__ import annotations
 
