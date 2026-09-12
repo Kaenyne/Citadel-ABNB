@@ -212,3 +212,8 @@ captures `~/abnb_ia_capture/` (outside the repo) with manifests in `data/manifes
 - 11 Sep: `06_quote_line_items.csv` is not fee-inclusive (service fee, cleaning fee, taxes null).
 - 11 Sep: calendar "booking curves" (blocked rate by horizon) are U-shaped past ~90 days — they measure blocks, not bookings.
 - 11 Sep: K1 reads unearned fees as FX-clean and funds payable as FX-confounded, the reverse of Theo's RNPL note — open (WP-F, D-06).
+- 11 Sep (evening) — two deliberate exceptions to "copy, never overwrite", both code-only, no data or result changed:
+  (a) portability: `kernel_leadtime_v2/K2_*` ROOT and `red_team/rt_*` REPO now derive from the file location (env override
+  `CITADEL_ABNB_PARENT`), `red_team/run.py` uses `sys.executable`, and machine-specific interpreter paths in docstrings/READMEs became
+  `python`; (b) `L0/test_l0.py`: two assertions updated to accept A1's 11 Sep register appends (S&P FY27 relay 15,770; QUARANTINED rows
+  with a stated reason). Verified in a fresh shallow clone: harness 27/27, kernel acceptance PASS on 12 cells, scorer exit 0.

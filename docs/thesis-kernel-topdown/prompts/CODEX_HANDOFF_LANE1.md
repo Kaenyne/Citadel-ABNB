@@ -61,15 +61,17 @@ independent packages; never for K0 or for the final close.
 before results and end with a verdict of pass / fail / underpowered. If the note is missing the pass line, mixes consensus vintages, or
 reports a hit-rate without cell counts and a Wilson interval, fix A before continuing.
 
-**Subagent map after Gate 2 (parallel, one package each, own folder, own registry method name):**
-- `sub-B`  → B′ term structure (spec: `WP-B_term_structure.md` + `LANE1_ORCHESTRATION.md` §Phase 1 B′)
-- `sub-V`  → valuation reconciliation page (spec: `LANE1_ORCHESTRATION.md` §Phase 1 V)
-- `sub-D`  → λ card rows (spec: `WP-D_lambda_card.md`)
-- `sub-R`  → regional reconciliation refresh, new folder `l1_reconciliation_v3/` (spec: `LANE1_ORCHESTRATION.md` §Phase 1 R); needs internet
-             for NTTO / Eurostat pulls — if the sandbox has no network, skip R and say so
-- `sub-C3` → ledger features aimed at booked GBV and the residual R (spec: `WP-C3_gbv_features.md`, ledger features only)
-Each subagent: reads only the files its spec names; writes its note with the §7 template; registers through the harness; does not run
-`score.py` (you run it once at the close).
+**Subagent map after Gate 2 (parallel, one package each, own folder, own registry method name).** Each subagent is handed EXACTLY ONE
+brief from `docs/thesis-kernel-topdown/lane1/` — the brief contains its task, pass line, outputs, the files it may read, and the rules:
+- `sub-B`  → `lane1/B_TERM_STRUCTURE.md`
+- `sub-V`  → `lane1/V_VALUATION_RECONCILIATION.md` (needs internet for `yfinance`)
+- `sub-D`  → `lane1/D_LAMBDA_CARD.md`
+- `sub-R`  → `lane1/R_REGIONAL_REFRESH.md` (needs internet for NTTO / Eurostat pulls — if the sandbox has no network, skip R and say so)
+- `sub-C3` → `lane1/C3_GBV_FEATURES.md`
+K0 uses `lane1/K0_KERNEL_ENGINE.md` and A uses `lane1/A_GUIDE_SURPRISE.md` (you run K0 yourself; A is the first, solitary subagent).
+Each subagent reads only the files its brief names; writes its note with the template in the brief; registers through the harness;
+does not run `score.py` (you run it once at the close, following `lane1/CLOSE.md`). Refuters each get `lane1/REFUTER.md` with
+PACKAGE, CLAIM and LENS filled in.
 
 **Refuters (after the packages finish; three per headline claim from A, B′, R, V; each a separate subagent, reading only the package note,
 its registry files and the raw inputs):** lens 1 vintage / point-in-time (construct a splice or look-ahead that reproduces the result);
