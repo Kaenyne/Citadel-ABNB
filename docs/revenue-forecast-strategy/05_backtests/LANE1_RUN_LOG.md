@@ -147,3 +147,73 @@ Public-data mode: FRED/NTTO/Eurostat/yfinance online with tool-level network aut
 The pre-existing `.venv` referenced an inaccessible Microsoft Store Python 3.13 executable. It was recreated using bundled Python 3.12.14. Installation command: `.venv/Scripts/python.exe -m pip install -r requirements.txt pymc arviz scikit-learn pyarrow linearmodels lightgbm duckdb yfinance pytest`.
 
 The sandbox denied writes to `.git/FETCH_HEAD` and PyPI network access. Fetch, branch creation and dependency installation required tool-level approval. No credentials were read or entered. No licensed service was contacted. Unrelated untracked workspace files were preserved.
+
+## Gate 1 — STOP
+
+The K0 pass line was written before execution in `K0_KERNEL_ENGINE.md`. The first module pytest command returned exit code 1; Gate 1 is not green. Per the user's STOP condition, no test was changed or rerun to bypass this result, and no downstream analytical work was started.
+
+```text
+COMMAND: python -m pytest analysis/src/forecast_methods/kernel_engine_v1/tests -q
+..................F............................                          [100%]
+================================== FAILURES ===================================
+________________ test_acceptance_twelve_exact_accounting_cells ________________
+
+    def test_acceptance_twelve_exact_accounting_cells():
+        expected={"2024Q1":13.034,"2025Q1":12.325,"2026Q1":12.612,
+                  "2024Q2":13.449,"2025Q2":13.946,"2026Q2":13.736,
+                  "2023Q3":17.391,"2024Q3":17.145,"2025Q3":17.182,
+                  "2023Q4":11.946,"2024Q4":12.117,"2025Q4":12.026}
+        got=E.lambda_table(AS_OF).set_index("quarter").lambda_pct
+        for quarter,value in expected.items():
+>           assert round(float(got[quarter]),2)==round(value,2)
+E           assert 12.33 == 12.32
+E            +  where 12.33 = round(12.325497287522605, 2)
+E            +    where 12.325497287522605 = float(np.float64(12.325497287522605))
+E            +  and   12.32 = round(12.325, 2)
+
+analysis\src\forecast_methods\kernel_engine_v1\tests\test_engine.py:45: AssertionError
+============================== warnings summary ===============================
+analysis/src/forecast_methods/kernel_engine_v1/tests/test_engine.py: 69 warnings
+  C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\kernel_engine_v1\engine.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+    f["print_date"] = f.quarter.map(_calendar())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED analysis/src/forecast_methods/kernel_engine_v1/tests/test_engine.py::test_acceptance_twelve_exact_accounting_cells
+1 failed, 46 passed, 69 warnings in 6.85s
+```
+
+The defect is in the new acceptance comparator: it separately rounds a full-precision computed value and a three-decimal published reference. For 2025Q1, `round(12.325497287522605, 2)` is `12.33`, whereas `round(12.325, 2)` is `12.32`. The existing frozen runner uses a different, three-decimal tolerance comparison and passed. This does not establish a revenue/GBV arithmetic error, but the required new-module pytest is failing, so Gate 1 fails. The test and implementation remain as executed for audit. No live default was frozen from a results run; `run.py` and its runtime acceptance remain unexecuted.
+
+Post-failure preservation check (not a retry of Gate 1):
+
+```text
+COMMAND: python -m pytest analysis/src/forecast_methods/harness/tests analysis/src/forecast_methods/L0 -q
+...............................................                          [100%]
+47 passed in 11.60s
+```
+
+No previously tracked source, data, package note, harness file or L0 file was altered; only the explicitly requested workboard and this new run log changed. New K0 source, tests and documentation are unvalidated and must not be used as an accepted kernel.
+
+## Checkpoints and totals at the STOP
+
+- Shared repository: `https://github.com/Kaenyne/Citadel-ABNB.git`.
+- Base: `b1dcdf91f77156b4cdbcf9a334db9b04cab30135`, merged PR #48.
+- Preflight checkpoint: `7ce13286b4c86ba445a20a58f1eba7173eb7a96a`, pushed to `origin/codex/lane1-full` and independently verified with `git ls-remote`.
+- Gate 1: failed; no accepted K0 package.
+- Gate 2: not started. A verdict and all three A refuters: not run.
+- B, V, D, R, C3, X: not spawned. X verdict and FX conclusion change: not assessed; B4 is not superseded by this run.
+- Refuters: 0. Proposed or surviving memo claims: 0.
+- Subagents spawned: 0. Gate failure occurred before spawning was authorized.
+- Scorer and final analytical close: not run because Gate 1 STOP applies.
+- GitHub CLI: unavailable; no PR has been created. Use the shared repository's compare link if a review of this blocked checkpoint is desired.
+- Tokens: exact usage unavailable from this runtime; no estimate reported as a measurement.
+- Start: 2026-09-12 13:28:32 UTC. STOP accounting timestamp: 2026-09-12 21:39:25 UTC. Elapsed wall time: 8h 10m 53s, including tool-approval waits. Preservation/push time is recorded separately below.
+
+## RESUME
+
+Resume only after the user responds to the Gate 1 STOP. Resolve the acceptance-test rounding boundary against the brief's stated precision, retaining this failed test output as evidence. Then rerun and independently assess the entire Gate 1 contract, including a full K0 entry-point run under 60 seconds and the frozen 47-test suite, before spawning A. Review the unvalidated module's scenario, timestamp and regional limitations before promoting it. Do not silently convert the preflight runner's successful acceptance check into a Gate 1 pass.
+
+## Preservation checkpoint
+
+Failure artifacts prepared at 2026-09-12 21:49:39 UTC. Elapsed since start: 8:21:07 (includes approval waits). Only the failed implementation, its evidence and blocked-status documentation are staged; no analytical work resumed after the STOP.
