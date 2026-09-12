@@ -11,20 +11,21 @@ Status values: `open` · `claimed` · `in-progress` · `blocked (reason)` · `do
 
 | WP | Title | Lane | Status | Owner / agent | Branch | Started | Last update | Output |
 |---|---|---|---|---|---|---|---|---|
-| WP-X | Regional kernel + origin–destination FX exposure matrix (R-engine `exposure.csv`); regional recompute of the FX carried through the kernel — supersedes the consolidated basket | Krish (O–D travel analysis) | open — Krish planning; Codex may build the data layer | — | — | — | 2026-09-11 | `regional_kernel_v1/`, `05_backtests/X_REGIONAL_KERNEL_OD_FX.md` |
-| WP-K0 | Kernel engine module `kernel_engine_v1/` (PIT λ, kernel guide, term structure, control chart) — spine for Lane 1 | Krish | claimed · Codex (Lane 1 core) | Codex | codex/lane1-core | — | 2026-09-11 | `05_backtests/K0_KERNEL_ENGINE.md` |
-| WP-V | Valuation reconciliation page for decision WP-H (+0.48 turns/pt → FY27 band → price band vs football field vs branch analogues) | Krish | claimed · Codex (Lane 1 core) | Codex | codex/lane1-core | — | 2026-09-11 | `05_backtests/V_VALUATION_RECONCILIATION.md` |
+| WP-X | Regional kernel + origin–destination FX exposure matrix (R-engine `exposure.csv`); regional recompute of the FX carried through the kernel — supersedes the consolidated basket | Krish (O–D travel analysis) | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | `regional_kernel_v1/`, `05_backtests/X_REGIONAL_KERNEL_OD_FX.md` |
+| WP-R | Regional refresh using public arrivals and regional revenue inputs | Krish | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | `05_backtests/R_REGIONAL_REFRESH.md` |
+| WP-K0 | Kernel engine module `kernel_engine_v1/` (PIT λ, kernel guide, term structure, control chart) — spine for Lane 1 | Krish | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | `05_backtests/K0_KERNEL_ENGINE.md` |
+| WP-V | Valuation reconciliation page for decision WP-H (+0.48 turns/pt → FY27 band → price band vs football field vs branch analogues) | Krish | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | `05_backtests/V_VALUATION_RECONCILIATION.md` |
 | WP-H | Direction + target reconciliation (football field vs branch analogues; adopt ex-NA lap?) | all | **human** | Theo · Krish · Jessie | — | — | 2026-09-11 | one line in the card + `05_backtests/H_DIRECTION_DECISION.md` |
 | WP-G0 | LSEG Workspace self-registration via UF | Theo | **human** | Theo | — | — | 2026-09-11 | login works at workspace.refinitiv.com/web |
 | WP-G1 | LSEG estimates history export → vintage register (ABNB, NCLH, BKNG, EXPE) | Theo | blocked (WP-G0) | — | — | — | 2026-09-11 | `L0/consensus_history_loader.py` run; register rows |
-| WP-A | Thesis A backtest — kernel guide vs Street at 14 guide dates, executable returns | Krish | claimed · Codex (Lane 1 core) | Codex | codex/lane1-core | — | 2026-09-11 | `05_backtests/ALPHA_A_GUIDE_SURPRISE.md` |
+| WP-A | Thesis A backtest — kernel guide vs Street at 14 guide dates, executable returns | Krish | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | `05_backtests/ALPHA_A_GUIDE_SURPRISE.md` |
 | WP-F | Wire RNPL as a variable (u, L, re-based nights, λ chart, funds-payable score line) + FX-confound check | Theo | open | — | — | — | 2026-09-11 | `rnpl_v2/`, `05_backtests/ALPHA_F_RNPL.md` |
 | WP-E1 | Thesis E — NCLH advance-ticket-sales kernel | Jessie | open | — | — | — | 2026-09-11 | `05_backtests/ALPHA_E_NCLH.md` |
-| WP-B | Thesis B′ — kernel term structure vs FY-guide revisions (free-data variant; FY consensus after WP-G1) | Krish | claimed · Codex (Lane 1 core) | Codex | codex/lane1-core | — | 2026-09-11 | `05_backtests/ALPHA_B_TERM_STRUCTURE.md` |
+| WP-B | Thesis B′ — kernel term structure vs FY-guide revisions (free-data variant; FY consensus after WP-G1) | Krish | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | `05_backtests/ALPHA_B_TERM_STRUCTURE.md` |
 | WP-C1 | Calendar pickup ≤ 90 days from consecutive Inside Airbnb dumps → booked-GBV feature | Theo | blocked (September dumps, mid/late Sep) | — | — | — | 2026-09-11 | `pickup_v1/`, `05_backtests/ALPHA_C1_PICKUP.md` |
 | WP-C2 | Macro / arrivals pulls (NTTO, Eurostat, JNTO, INE, DATATUR, ISTAT, STR weekly, CPI) → covariates | Theo | open | — | — | — | 2026-09-11 | `data/processed/forecast_methods/macro_pulls/` + manifest |
-| WP-C3 | Retarget the 598 alt-data features + stays index at booked GBV and at the residual R | Krish | blocked (WP-C1) | — | — | — | 2026-09-11 | `05_backtests/ALPHA_C3_GBV_FEATURES.md` |
-| WP-D | λ control chart + backlog split into the pre-registration card (items F1–F4) | Krish | claimed · Codex (Lane 1 core) | Codex | codex/lane1-core | — | 2026-09-11 | card rows |
+| WP-C3 | Retarget the 598 alt-data features + stays index at booked GBV and at the residual R | Krish | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | `05_backtests/ALPHA_C3_GBV_FEATURES.md` |
+| WP-D | λ control chart + backlog split into the pre-registration card (items F1–F4) | Krish | claimed | Codex / Lane 1 parent | codex/lane1-full | 2026-09-12 | 2026-09-12 | card rows |
 | WP-E2 | Thesis E — BKNG / EXPE deferred merchant bookings kernel | Jessie | open (after E1) | — | — | — | 2026-09-11 | `05_backtests/ALPHA_E_OTA.md` |
 | WP-I | Memo v1 (direction committed, kernel → composition → flip rule; one chart, one table) | Writer | blocked (WP-H) | — | — | — | 2026-09-11 | `deck/drafts/memo_v1.md` |
 | WP-J | Re-score + refresh `SCOREBOARD_v3.md` after new registrations; verify loop | any | open (recurring) | — | — | — | 2026-09-11 | `05_backtests/SCOREBOARD_v3.md` |
