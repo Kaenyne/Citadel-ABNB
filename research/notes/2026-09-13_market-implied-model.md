@@ -127,43 +127,47 @@ The table says three things. The price, the Street, the team's base and the opti
 
 ## 10. Is the market positioned for an accelerating 3Q26? The positioning card
 
-Krish's question after the run: the reverse DCF is meant to show that the market is positioned for the opposite of the team's 3Q26 and 4Q26. Workstream E (`analysis/src/reverse_dcf/E_positioning_card.py`, outputs `data/processed/reverse_dcf/E/`) answers it in three tables, and the honest answer is split: **on nights, yes; on revenue and valuation, no.**
+Krish's question after the run: the reverse DCF is meant to show that the market is positioned for the opposite of the team's 3Q26 and 4Q26. Workstream E (`analysis/src/reverse_dcf/E_positioning_card.py`, outputs `data/processed/reverse_dcf/E/`, audited in `audit_E.md`: pass with fixes, applied) answers it in three tables. The honest answer is split: **on nights the Street's bar is positioned for acceleration and the price carries most of it; on revenue and valuation the price is within 1 to 3% of the team's own path.** And the bar is not an independent market view: it is management's guide.
 
-**1. The Street's nights bar has implied acceleration only three times in 15 scored prints, and 5 Nov is the fourth.** At every print with a nights consensus, compare the growth the Street's bar implies with the just-printed rate (MEASURED, `E_street_sign_history.csv`, 0.25pt dead band):
+**1. The Street's nights bar has implied acceleration only three times in 16 scored prints, and 5 Nov is the fourth.** At every print with a nights consensus, compare the growth the Street's bar implies (bar over the year-ago quarter) with the just-printed rate, 0.25pt dead band (MEASURED, `E_street_sign_history.csv`; the bar series is spliced across StreetAccount, LSEG, Zacks and Bloomberg):
 
 | Street's bar positioned for | Prints | Printed acceleration | Printed deceleration | Mean day-1 excess return |
 |---|---|---|---|---|
 | acceleration (4Q21, 3Q23, 4Q24) | 3 | 3 | 0 | +4.2% |
-| flat (3Q21, 3Q25) | 2 | 1 | 0 | +6.8% |
+| flat (3Q25) | 1 | 1 | 0 | +0.6% |
 | deceleration | 12 | 2 (4Q25 +4.4%, 2Q26 +16.3%) | 8 | +0.4% |
 | **3Q26E: 148.9m = +11.45% vs 2Q26 +10.34%** | **acceleration, +1.1pt** | | | |
 
-The Street normally sets its bar below the printed rate (management guides that way), so the big up days came when a decelerating bar met an accelerating print (2Q26, 4Q25, 4Q24). This time the bar itself is an acceleration, the first since 4Q24. There is no print in the sample where an accelerating bar met a decelerating print, so the reaction to that combination is unobserved; the sign rule (section 5) is the closest evidence. The Street's 4Q26 bar (134.2m, +10.1%) is a deceleration against its own 3Q26 bar but an acceleration against 4Q25's +9.8%.
+The big up days came when a decelerating bar met an accelerating print (2Q26, 4Q25, 4Q24). This time the bar itself is an acceleration, the first since 4Q24 (and 4Q21 is a reopening comp; post-3Q22 the count is 2 of 13). No print in the sample pairs an accelerating bar with a decelerating print, so that reaction is unobserved; the sign rule (section 5) is the closest evidence.
 
-**2. The price pays for the team's revenue path, not for acceleration.** Scaling the team's own bridge (WS30 base: 3Q26 nights +10.3%, 4Q26 +9.9%, 1H27 +8.2%) by a uniform nights uplift until NTM revenue matches the price-implied NTM (`E_price_implied_2h26_path.csv`):
+**The bar is the guide.** In the 13 scored prints where management gave a next-quarter nights guide, the Street's bar carried the same sign as the guide in 12 (`E_guide_vs_street_sign.csv`). Both accelerating guides (3Q23, 4Q24) were met, and there is one soft downside miss in 13 (1Q25: guided "stable", printed 0.4pt lower). The 3Q26 bar sits in the upper half of management's "low double-digit" bucket (midpoint 11.0, itself +0.7pt on 2Q26). So the team's call is not a bet against Street positioning; it is a bet on the first downside miss of a management nights guide in the sample. That is what a sceptical judge will say first, and the slide should say it before the judge does.
 
-| Path | NTM revenue | NTM growth | Uplift vs team (pts of nights) | Implied 3Q26 nights | Sign vs 2Q26 | Implied 4Q26 revenue |
-|---|---|---|---|---|---|---|
-| price-implied, guide-proxy units | $14,860m | 12.9% | 0.0 | +10.3% (147.3m) | flat | $3,116m |
-| price-implied, realised units | $14,680m | 11.6% | -1.3 | +9.0% (145.6m) | deceleration | $3,078m |
-| Street (Bloomberg 2H26 + Street FY27 H1 share) | $14,876m | 13.0% | +0.1 | +10.4% | flat | $3,119m |
-| management delivered | $15,004m | 14.0% | +1.0 | +11.3% (148.7m) | acceleration | $3,146m |
-| team base (WS29/30) | $14,863m | 12.95% | 0.0 | +10.3% | flat | $3,116m |
+**2. What nights rate the price carries.** Shift the team's own bridge by a uniform nights uplift until NTM revenue matches the price-implied NTM, using the bridge's additive convention (revenue y/y = nights + ADR ex-FX + FX + residual, as in WS30's file) on both team baselines (`E_price_implied_2h26_path.csv`; MEASURED on the solve, JUDGEMENT on the bridge and the uplift shape):
 
-The price-implied NTM revenue is the team's bridge to within $2m (JUDGEMENT on the bridge structure; MEASURED on the solve). The price-implied 4Q26 revenue ($3,116m) is the team's $3,111m and sits below the Bloomberg $3,154m and Zacks $3,200m consensus. So a print on the team's path is not an estimate cut for the market; the revenue guide has a 3pp FX tailwind and a timing residual that swamp a 1.5-point nights gap. The revenue-based reverse DCF cannot carry the positioning claim; the nights bar and the reaction asymmetry carry it.
+| Team bridge | Price-implied NTM (units) | Gap vs team NTM | Uplift (pts of nights) | Implied 3Q26 nights | Sign vs 2Q26 +10.34% | Gap to Street bar 11.45% | Implied 4Q26 revenue |
+|---|---|---|---|---|---|---|---|
+| WS30 pnl (3Q26 10.3 / 4Q26 9.9) | 12.9% (guide-proxy) | +$42m | +0.3 (uniform) / +0.6 (2H26 only) | 10.6% / 10.9% | marginal acceleration | -0.8 / -0.6 | $3,120m / $3,128m |
+| 10 Sep pivot (3Q26 9.9 / 4Q26 8.9) | 12.9% (guide-proxy) | +$87m | +0.7 / +1.3 | 10.6% / 11.2% | flat / acceleration | -0.9 / -0.3 | $3,101m / $3,118m |
+| either | 11.6% (realised units, bias removed; unstable) | -$93 to -138m | -0.7 to -2.0 | 8.3 to 9.2% | deceleration | -2.2 to -3.2 | $3,045 to 3,082m |
+| Street path (Bloomberg 2H26 + 1H27 at Street FY27) | 13.0 to 13.4% | +$57 to 152m | +0.4 to +2.2 | 10.7 to 12.1% | acceleration | -0.8 to +0.7 | $3,104 to 3,155m |
+| management delivered | 14.0% | +$186 to 231m | +1.4 to +3.4 | 11.7 to 13.3% | acceleration | +0.2 to +1.8 | $3,131 to 3,187m |
 
-**3. The repricing ladder for 5 Nov** (`E_repricing_ladder.csv`): fundamental repricing through the joint solve (the market re-anchors NTM growth to the printed path, same units as it prices today) plus the sign-rule reaction (S1, n 14 and n 16), against the options-implied 9.5% sd.
+Read plainly: in the units the regression was fitted on, the price carries a 3Q26 nights rate of about 10.6 to 11.2%, between the team's path and the Street's bar and closer to the bar (0.3 to 0.9pt below it); in realised units it carries 8.3 to 9.2%, below the team. On every proxy-unit convention the price-implied 4Q26 revenue ($3,100 to 3,134m) sits below the Bloomberg $3,154m and Zacks $3,200m consensus. The first finding (the price is within 1 to 3% of the team's revenue path) is robust; the sign the price carries for 3Q26 is not identified, because it straddles the dead band across defensible conventions.
 
-| Outcome on 5 Nov | NTM growth | Joint-solve price | Fundamental | Sign rule | Combined |
-|---|---|---|---|---|---|
-| Street path prints (3Q26 +11.45%, 4Q26 at Street) | 13.0% | $170.7 | +0.3% | +2.7 to +5.2% | +3.0 to +5.5% |
-| Management delivered prints (3Q26 +11.5%, 4Q26 $3,130m) | 14.0% | $175.5 | +3.1% | +2.7 to +5.2% | +5.8 to +8.3% |
-| Team base prints (3Q26 +10.3% bridge / +9.9% baseline, 4Q26 $3,111m) | 12.95% | $170.3 | +0.1% | -4.0 to -6.1% | -4.0 to -6.1% |
-| Team base with the ex-NA lap (3Q26 +9.9%, 4Q26 +8.1%) | 12.5% | $168.3 | -1.1% | -4.0 to -6.1% | -5.1 to -7.2% |
+**3. The repricing ladder for 5 Nov** (`E_repricing_ladder.csv`). The fundamental column is the joint-solve repricing if the market re-anchors NTM growth to the printed path (same units as it prices today; the realised-units alternative is $6 to 7 higher in every row and is shown in the CSV). The sign-rule column (S1, post-2022 n 14 and n 16) is a total day-1 excess return that already contains whatever estimate effect there was, so the two columns are alternatives, not addends.
 
-If the path is read in realised units (the fitted line is in guide-proxy units, 1.37pp higher), every joint-solve price is $6 to 7 higher, which is A's finding that in realised units the price already sits below the Street.
+| Outcome on 5 Nov | NTM growth | Joint-solve price | Fundamental repricing | Sign rule (history of the day) |
+|---|---|---|---|---|
+| Street path prints (3Q26 +11.45%, 4Q26 $3,177m) | 13.0 to 13.4% | $170.7 to 172.6 | +0.3 to +1.4% | +2.7 to +5.2% |
+| Management delivered prints (3Q26 +11.5%, 4Q26 $3,130m) | 14.0% | $175.5 | +3.1% | +2.7 to +5.2% |
+| Team pnl bridge prints (3Q26 +10.3%, 4Q26 +9.9%) | 12.6% | $168.7 | -0.9% | -4.0 to -6.1% |
+| Team pivot baseline prints (3Q26 +9.9%, 4Q26 +8.9%) | 12.3% | $167.0 | -1.9% | -4.0 to -6.1% |
+| Pivot baseline with the ex-NA lap (4Q26 +8.1%, 1H27 unchanged) | 12.1% | $166.2 | -2.3% | -4.0 to -6.1% |
+| Same, with the lap also taking 0.8pt off 1H27 | 11.7% | $164.4 | -3.4% | -4.0 to -6.1% |
 
-**What the card supports for the pitch.** The market is positioned for an accelerating 3Q26 nights print: the Street's bar says so, it has been that way only three times before, short interest is in its bottom decile, three houses raised into the 8-10 Sep fall, and the options market carries no extra event premium. The team's case is a flat-to-decelerating print, and the historical reaction to that sign is -4 to -6% on the day (conditional; -2 to -3.5% unconditional under the nowcast band). What the card does not support is a valuation gap: on revenue the price is the team's number, so the trade is the print reaction and the multiple, not an estimate revision. With the nowcast band's roughly one-in-five chance of acceleration, the probability-weighted expectation is about -2 to -3%, a quarter to a third of the options-implied dispersion. That is the honest size of the edge.
+The fundamental level is uncertain by about $7 to 15 (the units choice; A found the proxy bias unstable), but the differences between rows are robust: the team's path is worth 1 to 5% less than the Street's on the multiple-growth line, and the Street's path is worth about what the stock trades at.
+
+**What the card supports for the pitch.** The Street's nights bar is positioned for acceleration (only the fourth such bar in 16 prints), the price carries most of that bar in the units it is priced in, short interest is in its bottom decile, three houses raised targets into the 8-10 Sep fall, and the options market carries no extra event premium. The team's case is a flat-to-decelerating print, and the historical reaction to that sign is -4 to -6% on the day (conditional; -2 to -3.5% unconditional under the nowcast band). What the card does not support is a valuation gap: the price is within 1 to 3% of the team's own revenue path, so the trade is the print reaction and the multiple, not an estimate revision; and because the bar is the guide, the pitch is a call that management misses a nights guide to the downside for the first time in the sample, and it should be framed as exactly that.
 
 ## 8. What this can and cannot say
 
@@ -178,5 +182,5 @@ If the path is read in realised units (the fitted line is in guide-proxy units, 
 - `model/ABNB_market_implied.xlsx`: Cover, Inputs, Market_Implied, Cases, Print_5Nov, SellSide, Options, Comparison, Recon.
 - `analysis/src/reverse_dcf/market_implied_model.py` (builder); workstreams `A_*.py`, `B_*.py`, `C_*.py`, `D_*.py`, `E_positioning_card.py`.
 - `data/processed/reverse_dcf/market/`: `market_implied_by_price.csv`, `market_implied_cases.csv`, `market_implied_print_scenarios.csv`, `market_implied_comparison.csv`, `market_implied_recon.csv`, `market_implied_params.json`.
-- `data/processed/reverse_dcf/A/` (23 files), `B/` (31), `C/` (19), `D/` (20), `E/` (4: Street sign history and summary, price-implied 2H26 path, repricing ladder), `audit/` (5 findings CSVs).
+- `data/processed/reverse_dcf/A/` (23 files), `B/` (31), `C/` (19), `D/` (20), `E/` (5: Street sign history and summary, guide-vs-bar sign, price-implied 2H26 path, repricing ladder), `audit/` (6 findings CSVs).
 - Notes: `research/notes/reverse_dcf/A_joint-solve.md`, `B_options-implied.md`, `C_reaction-function.md`, `D_sell-side-dispersion.md`, `audit_A.md` to `audit_D.md`; run brief and state under `docs/reverse_dcf/`.
