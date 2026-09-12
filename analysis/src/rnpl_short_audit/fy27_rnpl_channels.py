@@ -1,7 +1,7 @@
 """rnpl-short-audit: what B3's FY27 driver base actually embeds, and where RNPL enters.
 
     cd "<repo root>"
-    /Users/theomachado/.venvs/citadel-abnb/bin/python \
+    python \
         analysis/src/rnpl_short_audit/fy27_rnpl_channels.py
 
 READ-ONLY on every existing artefact.  Writes ONLY to

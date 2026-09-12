@@ -29,7 +29,7 @@ Tags:        every output column is tagged measured / derived / assumed in
 
 Read-only on every input. Writes only data/processed/rnpl_short_audit/qog_momentum_*.csv.
 
-Run:  /Users/theomachado/.venvs/citadel-abnb/bin/python \
+Run:  python \
         analysis/src/rnpl_short_audit/qog_momentum_reversal.py
 """
 
