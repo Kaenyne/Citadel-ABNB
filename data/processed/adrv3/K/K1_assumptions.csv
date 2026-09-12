@@ -1,0 +1,19 @@
+parameter,central,low,high,label,source
+"pre-existing single-fee listing share, NA",0.03,0.01,0.05,assumed,"host-only fee voluntary only in US/Canada (exempt from the Dec 2020 mandate), 06_fee_timeline.csv and host_only_fee_history note section 1"
+"pre-existing single-fee listing share, EMEA",0.2,0.1,0.28,assumed,Dec 2020 mandate for software-connected hosts in most countries; PMS share of European supply not disclosed
+"pre-existing single-fee listing share, LatAm",0.08,0.04,0.12,assumed,"Mexico, Argentina, Uruguay exempt from the Dec 2020 mandate; rest of the region covered"
+"pre-existing single-fee listing share, APAC",0.15,0.08,0.22,assumed,"Australia mandatory from Nov 2020 (trade press), Taiwan exempt"
+"tranche-1 migrants (split PMS hosts), NA listing share",0.3,0.22,0.36,"assumed, calibrated",set so the blended share reaches the disclosed 'over a quarter' (27%) at the 7 May 2026 call; US professional-manager share of supply not disclosed
+"tranche-1 migrants, EMEA listing share",0.02,0.01,0.04,assumed,residual split-fee PMS hosts after the 2020 mandate
+"tranche-1 migrants, LatAm listing share",0.1,0.06,0.14,assumed,"Mexico, Argentina, Uruguay PMS hosts (exempt in 2020)"
+"tranche-1 migrants, APAC listing share",0.01,0.005,0.02,assumed,Taiwan PMS hosts (exempt in 2020)
+"new software-connected hosts defaulting to the single fee, blended pp per quarter from 3Q25",0.004,0.002,0.008,assumed,Guesty notice: from 25 Aug 2025 new PMS-connected hosts default to the single fee (fee-churn catalyst note)
+fraction of 4Q25 bookings confirmed after the 27 Oct 2025 tranche-1 date,0.717391304347826,0.717391304347826,0.717391304347826,"sourced date, descriptive arithmetic",27 Oct to 31 Dec is 66 of 92 days; fee applies by booking confirmation date (host notice via fee-churn note)
+single-fee listing share at the 7 May 2026 call,0.27,0.26,0.3,"sourced (over a quarter, D041)",1Q26 call via stockanalysis mirror
+single-fee listing share at the 6 Aug 2026 call,0.5,0.45,0.55,"sourced (approximately half, D047)",2Q26 call via stockanalysis mirror
+tranche-2 monthly path: total single-fee share at end of Apr/May/Jun/Jul/Aug/Sep/Oct/Nov/Dec 2026,27/27/36/45/52/75/92/98/100,26/26/32/40/47/65/85/95/100,30/32/42/52/60/85/96/100/100,"assumed, anchored","flat to the 7 May call, UK 22 Jun step, ramp to the 15 Sep non-EEA deadline, 13 Oct EEA/CH deadline, complete by year-end (2Q26 letter, host notice)"
+EMEA tranche-2 share of its eventual migration reached by end-Sep 2026,0.55,0.45,0.7,assumed,EEA/CH deadline 13 Oct vs 15 Sep elsewhere; UK-resident hosts 22 Jun
+"nights per listing, tranche-1 (PMS) cohort relative to average",1.3,1.0,1.6,assumed,professionally managed listings run higher occupancy and availability; no disclosure
+"nights per listing, tranche-2 cohort relative to average",1.0,1.0,1.0,assumed,the remainder of the base
+"nights per listing, pre-existing single-fee cohort relative to average",1.3,1.0,1.6,assumed,same as tranche 1: software-connected
+"tranche-1 migrants (split PMS hosts), NA listing share, calibrated per variant",0.3186,0.1658,0.4615,"assumed, calibrated",solved so the blended 1Q26 quarter-average total single-fee listing share is 0.26 (call: over a quarter on 7 May 2026)
