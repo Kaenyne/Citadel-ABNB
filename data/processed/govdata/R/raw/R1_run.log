@@ -1,0 +1,91 @@
+19:06:37 probe mexico_datatur
+19:06:39   [mexico_datatur] 200 53566B reached
+19:06:39   done mexico_datatur in 2s
+19:06:39 probe mexico_banxico_inegi
+19:06:40   [mexico_banxico_sie] 200 27902B html; periods seen 0; sample 
+19:06:41   [mexico_banxico_sie] 400 146B non-html; periods seen 0; sample 
+19:06:52   [mexico_inpc_hotel] 404 14347B ckan: 
+19:06:52   done mexico_banxico_inegi in 13s
+19:06:52 probe mexico_upm
+19:06:52   [mexico_upm_boletin] SSLError 0B HTTPSConnectionPool(host='portales.segob.gob.mx', port=443): Max retries exceeded with url: /es/PoliticaMigratoria/Cuadr
+19:06:53   [mexico_upm_boletin] ConnectionError 0B HTTPConnectionPool(host='www.politicamigratoria.gob.mx', port=80): Max retries exceeded with url: /es/PoliticaMigratoria
+19:06:53   [mexico_upm_boletin] none 0B no snapshot (Expecting value: line 1 column 1 (char 0))
+19:06:53   done mexico_upm in 1s
+19:06:53 probe korea
+19:06:55   [korea_kto_datalab] 200 595396B final url https://datalab.visitkorea.or.kr/datalab/portal/main/getMainForm.do; '2026' occurrences 88
+19:06:58   [korea_kto_datalab] 200 117431B final url https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1655; '2026' occurrences 1
+19:07:03   [korea_kto_datalab] 200 37402B final url https://knto.or.kr/eng/index; '2026' occurrences 0
+19:07:03   done korea in 10s
+19:07:03 probe greece
+19:07:04   [greece_bank_of_greece] 403 470B blocked
+19:07:04   [greece_bank_of_greece] 403 420B blocked
+19:07:04   [greece_hcaa] 403 410B blocked
+19:07:06   [greece_hcaa] 403 6000B blocked
+19:07:06   done greece in 3s
+19:07:06 probe eurostat_bop
+19:07:07   [eurostat_bop_c6_m_travel] 200 8329B no rows parsed
+19:07:07   done eurostat_bop in 2s
+19:07:07 probe minpaku
+19:07:08   [japan_mlit_minpaku] 200 27064B 0 pdf links; first []
+19:07:09   [japan_mlit_minpaku] 404 234B 0 pdf links
+19:07:10   [japan_mlit_minpaku] 404 234B 0 pdf links
+19:07:10   done minpaku in 2s
+19:07:10 probe bts_fred
+19:07:29   [bts_t100_fred_rpm] ConnectionError 0B ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', Non
+19:08:30   [bts_t100_fred_rpm] ReadTimeout 0B HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)
+19:09:30   [bts_t100_fred_rpm] ReadTimeout 0B HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)
+19:10:30   [bts_t100_fred_rpm] ReadTimeout 0B HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)
+19:10:32   [bts_t100_fred_rpm] 200 51B socrata MTS keys with air: []
+19:10:32   done bts_fred in 202s
+19:10:32 probe india
+19:10:36   [india_mot_fta] 200 7300B 0 file links; sample []
+19:10:38   [india_mot_fta] 200 7299B 0 file links; sample []
+19:10:39   [india_mot_fta] 200 7303B 0 file links; sample []
+19:10:39   done india in 7s
+19:10:39 probe lvcva
+19:10:40   [lvcva_adr] 200 227121B reached with browser UA
+19:10:40   [lvcva_adr] none 0B no snapshot (Expecting value: line 1 column 1 (char 0))
+19:10:40   done lvcva in 1s
+19:10:40 probe singapore_hk
+19:10:41   [singapore_stb_arr] 200 5434B titles ['Historical Rainfall across Singapore (2020)', "Total Employees' Trade Union Membership", 'MP08 Mapsheet Major Road Name-CA', 'RP CE
+19:10:41   [singapore_stb_arr] 404 2B titles []
+19:10:43   [hongkong_hktb_arr] 404 2528B 'hotel' occurrences 0
+19:10:45   [hongkong_hktb_arr] 200 1555B 'hotel' occurrences 0
+19:10:45   done singapore_hk in 5s
+19:10:45 probe eurostat_cp11203
+19:10:47   [eurostat_hicp_cp11203] 200 28860B CP11203 RCH_A; last by geo {"AT": "2026-07", "BE": "2026-07", "CZ": "2026-07", "DE": "2026-07", "EA": "2026-07", "ES": "2026-07", "EU27_2020
+19:10:47   done eurostat_cp11203 in 2s
+19:10:47 probe ine_portugal
+19:10:59   [portugal_ine_alojamento_local] 200 515869B 0 indicators; tourism-like 0: 
+19:10:59   [portugal_ine_alojamento_local] 200 0B regex fallback hits ['0009183', '0012088']
+19:10:59   done ine_portugal in 12s
+19:10:59 probe croatia
+19:11:00   [croatia_evisitor_htz] 404 875B 0 file links, tourism-like 0; []
+19:11:01   [croatia_evisitor_htz] 404 875B 0 file links, tourism-like 0; []
+19:11:01   done croatia in 2s
+19:11:01 probe ons_stl
+19:11:02   [ons_stl_pilot] 200 17340B None /peoplepopulationandcommunity/housing/bulletins/shorttermletsthroughonlinecollaborativeeconomyplatformsuk/yeartoquarter2aprtojune2024 ;
+19:11:03   [ons_stl_pilot] 200 93646B uris ['/peoplepopulationandcommunity/housing/bulletins/shorttermletsthroughonlinecollaborativeeconomyplatformsuk/yeartoquarter2aprtojune2024
+19:11:03   done ons_stl in 2s
+19:11:03 probe texas_hot
+19:11:03   [texas_hot] 200 109965B Local Hotel Occupancy Tax (HOT) Data (vmy5-jctb, 2024-03-01); Local Hotel Occupancy Tax Reporting 2024 (ifh4-9tpn, 2025-03-12); Local Hotel 
+19:11:03   done texas_hot in 1s
+19:11:03 probe bcb
+19:11:05   [bcb_sgs_travel] 200 5534B code 22701: 139 rows, last 2026-07, last value -8110.4, mean -3867.2
+19:11:06   [bcb_sgs_travel] 200 5561B code 22702: 139 rows, last 2026-07, last value 43929.2, mean 28644.0
+19:11:08   [bcb_sgs_travel] 200 5561B code 22703: 139 rows, last 2026-07, last value 52039.6, mean 32511.2
+19:11:09   [bcb_sgs_travel] 200 4910B code 23071: 132 rows, last 2025-12, last value 88.0, mean 72.5
+19:11:10   [bcb_sgs_travel] 200 4945B code 23072: 132 rows, last 2025-12, last value 95.0, mean 100.4
+19:11:12   [bcb_sgs_travel] 200 5281B code 23073: 132 rows, last 2025-12, last value 68292.9, mean 46141.4
+19:11:13   [bcb_sgs_travel] 200 5432B code 22885: 139 rows, last 2026-07, last value 7460.5, mean 5643.5
+19:11:15   [bcb_sgs_travel] 200 5521B code 22886: 139 rows, last 2026-07, last value 14877.4, mean 12222.5
+19:11:15   done bcb in 12s
+19:11:15 probe bea_trade
+19:11:15   [us_monthly_travel_trade] 404 35932B not available
+19:11:16   [us_monthly_travel_trade] 200 373422B xlsx saved; parsed in R2
+19:11:17   [us_monthly_travel_trade] 200 251073B xlsx saved; parsed in R2
+19:11:17   done bea_trade in 3s
+19:11:17 probe airports
+19:11:19   [airport_authority_traffic] 200 998760B 2 file links; ['/content/dam/heathrow/web/common/documents/company/investor/reports-and-presentations/traffic-statistics/2026/aug_2026_traff
+19:11:20   [airport_authority_traffic] 404 5468B 0 file links; []
+19:11:20   done airports in 2s
