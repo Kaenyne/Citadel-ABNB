@@ -1,0 +1,68 @@
+{
+  "scope": "PR40 head 0324cace7172db757280988888f64f0d27c877f7",
+  "lower_bound_error": {
+    "minimum_share_implied": 0.37101714285714305,
+    "rows": [
+      {
+        "bundle_4q25_pp": 2.05,
+        "passes_disclosed_lower_bound": true,
+        "code_consistency_flag": "yes",
+        "selected_q4_growth_pct": 8.2
+      },
+      {
+        "bundle_4q25_pp": 2.23,
+        "passes_disclosed_lower_bound": true,
+        "code_consistency_flag": "yes",
+        "selected_q4_growth_pct": 8.03
+      },
+      {
+        "bundle_4q25_pp": 2.58,
+        "passes_disclosed_lower_bound": true,
+        "code_consistency_flag": "no, implies a 4Q25 bundle of 2.6 to 3.1 points against management's 'over 200 basis points'",
+        "selected_q4_growth_pct": 7.68
+      },
+      {
+        "bundle_4q25_pp": 3.1,
+        "passes_disclosed_lower_bound": true,
+        "code_consistency_flag": "no, implies a 4Q25 bundle of 2.6 to 3.1 points against management's 'over 200 basis points'",
+        "selected_q4_growth_pct": 7.15
+      }
+    ]
+  },
+  "cancellation_signal_counterexample": {
+    "lost_nights": 10.0,
+    "cancelled_adr": 125.0,
+    "starting_blended_adr": 100.0,
+    "ending_blended_adr": 97.22222222222223,
+    "nights_growth_pct": -9.999999999999998,
+    "gbv_growth_pct": -12.5,
+    "gbv_minus_nights_growth_pp": -2.5000000000000018
+  },
+  "quarter_parser": {
+    "4Q19_bad_key": 8039,
+    "1Q20_bad_key": 8000,
+    "wrong_comparisons": [
+      {
+        "quarter": "1Q19",
+        "prior_quarter_used": "2Q23",
+        "yoy_change_pp": 6.0
+      },
+      {
+        "quarter": "2Q19",
+        "prior_quarter_used": "3Q23",
+        "yoy_change_pp": 5.0
+      },
+      {
+        "quarter": "3Q19",
+        "prior_quarter_used": "4Q23",
+        "yoy_change_pp": 4.0
+      },
+      {
+        "quarter": "4Q19",
+        "prior_quarter_used": "1Q24",
+        "yoy_change_pp": 1.0
+      }
+    ]
+  },
+  "reference_engine_max_reconciliation_error_mm": 2.842170943040401e-14
+}
