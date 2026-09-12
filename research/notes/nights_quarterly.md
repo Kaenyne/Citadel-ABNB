@@ -61,7 +61,7 @@ closest thing to an unobstructed read on underlying NA demand in the whole horiz
 | Model, bundle laps everywhere from 1Q27 | +9.9% | +8.9% | **+6.4%** |
 | *WS10 base* | *+10.3%* | *+9.9%* | *+9.2%* |
 
-**3Q26: model +9.89% (146.8mm) against a 10–12% guide and consensus of +10.2% (147.2mm).**
+**3Q26: model +9.89% (146.8mm) against a 10–12% guide and the team's own frozen 5-Nov card of +10.2% (147.2mm).** (Relabelled 12 Sep: the 10.2% was previously called "consensus"; it is the WS13/14 frozen card, and no public nights consensus exists — see `data/processed/nights_baseline_reconciliation.csv`.)
 
 That is essentially in line, and it revises the framing from the reconciliation note. The 5 Nov print
 is unlikely to miss on 3Q26 nights — and given the guide has been beaten 19 of 19 times, the base rate

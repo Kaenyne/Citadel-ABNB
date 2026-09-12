@@ -39,7 +39,7 @@ quarter by quarter. It then decays as each feature leaves its Y/Y window.
 
 Run:  py -3.13 analysis/src/nights_quarterly.py
 Out:  data/processed/nights_quarterly_na.csv      NA build, fitted product term and the lap
-      data/processed/nights_quarterly_total.csv   total nights vs WS10, the guide and consensus
+      data/processed/nights_quarterly_total.csv   total nights vs WS10, the guide and the team's frozen 5-Nov card
 """
 from __future__ import annotations
 
@@ -76,7 +76,7 @@ IN_WINDOW = {
 WS10_NA = {"3Q26": 7.0, "4Q26": 7.0, "1Q27": 6.0, "2Q27": 6.0, "3Q27": 6.0, "4Q27": 6.0}
 WS10_TOTAL = {"3Q26": 10.29, "4Q26": 9.94, "1Q27": 9.15, "2Q27": 9.15, "3Q27": 9.15, "4Q27": 9.15}
 GUIDE_3Q26 = (10.0, 12.0)      # "low double digit" nights, Q2'26 release
-CONSENSUS_3Q26 = 10.2          # 147.2mm, WS14 master synthesis
+TEAM_CARD_3Q26 = 10.2          # 147.2mm, the team's own frozen 5-Nov card (WS13/14, 20_frozen_q3_2026.csv). NOT a public consensus: none exists for nights (nights_baseline_reconciliation.csv)
 
 PRIOR_NIGHTS = {"3Q26": 133.6, "4Q26": 121.9, "1Q27": 156.2, "2Q27": 148.3}   # 02_kpi_panel_quarterly
 NA_SHARE = {"3Q26": 0.288, "4Q26": 0.282, "1Q27": 0.266, "2Q27": 0.266, "3Q27": 0.266, "4Q27": 0.266}
@@ -193,7 +193,7 @@ def main():
     print("\n=== The 5 Nov card ===")
     print(f"  3Q26 model {b.loc['3Q26'].model_total_nights_yoy_pct:+.2f}% "
           f"({b.loc['3Q26'].nights_mm:.1f}mm)   guide {GUIDE_3Q26[0]:.0f}-{GUIDE_3Q26[1]:.0f}%   "
-          f"consensus {CONSENSUS_3Q26:+.1f}% (147.2mm)")
+          f"team frozen card {TEAM_CARD_3Q26:+.1f}% (147.2mm; no public nights consensus exists)")
     print(f"  4Q26 model {b.loc['4Q26'].model_total_nights_yoy_pct:+.2f}% "
           f"({b.loc['4Q26'].nights_mm:.1f}mm)   WS10 {WS10_TOTAL['4Q26']:+.2f}%   "
           "<- the guide given on 5 Nov, and the trade")
