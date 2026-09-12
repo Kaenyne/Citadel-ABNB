@@ -1,0 +1,18 @@
+spec,sample,actual_ret_1d_cc_excess_pct,fitted_pct,residual_pct,inputs
+M1_accel_sign+guide_dir_code,ex_reopening,16.256840829448272,4.46,11.8,nights_accel_sign=1.00; guide_dir_code=1.00
+M2_M1+revenue_surprise,ex_reopening,16.256840829448272,3.82,12.44,nights_accel_sign=1.00; guide_dir_code=1.00; revenue_surprise_pct=0.78
+M3_accel_pts+guide_dir_pts,ex_reopening,16.256840829448272,-0.07,16.33,nights_yoy_accel_pts=1.19; guide_dir_pts=0.70
+M4_M3+revenue_surprise,ex_reopening,16.256840829448272,-0.62,16.87,nights_yoy_accel_pts=1.19; guide_dir_pts=0.70; revenue_surprise_pct=0.78
+M5_M2+eps+fy_raised,ex_reopening,16.256840829448272,5.12,11.14,nights_accel_sign=1.00; guide_dir_code=1.00; revenue_surprise_pct=0.78; eps_surprise_bps_px=7.91; fy_raised=1.00
+M6_posthoc_accel_sign+guide_vs_street,ex_reopening,16.256840829448272,7.35,8.9,nights_accel_sign=1.00; guide_vs_street_pct=2.60
+M7_posthoc_M6+guide_dir_code,ex_reopening,16.256840829448272,6.97,9.29,nights_accel_sign=1.00; guide_vs_street_pct=2.60; guide_dir_code=1.00
+M8_posthoc_M6+revenue_surprise,ex_reopening,16.256840829448272,7.4,8.85,nights_accel_sign=1.00; guide_vs_street_pct=2.60; revenue_surprise_pct=0.78
+M1_accel_sign+guide_dir_code (fit excludes 2Q26),ex_reopening,16.256840829448272,-3.34,19.6,b_nights_accel_sign=1.68; b_guide_dir_code=-1.88; const=-3.14
+M2_M1+revenue_surprise (fit excludes 2Q26),ex_reopening,16.256840829448272,-5.2,21.45,b_nights_accel_sign=1.87; b_guide_dir_code=-2.08; b_revenue_surprise_pct=1.79; const=-6.39
+M3_accel_pts+guide_dir_pts (fit excludes 2Q26),ex_reopening,16.256840829448272,-5.14,21.4,b_nights_yoy_accel_pts=-0.28; b_guide_dir_pts=-0.97; const=-4.13
+M4_M3+revenue_surprise (fit excludes 2Q26),ex_reopening,16.256840829448272,-7.03,23.29,b_nights_yoy_accel_pts=-0.20; b_guide_dir_pts=-1.12; b_revenue_surprise_pct=1.77; const=-7.40
+M5_M2+eps+fy_raised (fit excludes 2Q26),ex_reopening,16.256840829448272,-5.54,21.8,b_nights_accel_sign=2.39; b_guide_dir_code=-2.01; b_revenue_surprise_pct=2.24; b_eps_surprise_bps_px=-0.13; b_fy_raised=-0.99; const=-5.69
+M6_posthoc_accel_sign+guide_vs_street (fit excludes 2Q26),ex_reopening,16.256840829448272,4.9,11.36,b_nights_accel_sign=2.86; b_guide_vs_street_pct=1.78; const=-2.59
+M7_posthoc_M6+guide_dir_code (fit excludes 2Q26),ex_reopening,16.256840829448272,0.38,15.87,b_nights_accel_sign=2.42; b_guide_vs_street_pct=1.86; b_guide_dir_code=-2.58; const=-4.29
+M8_posthoc_M6+revenue_surprise (fit excludes 2Q26),ex_reopening,16.256840829448272,4.18,12.07,b_nights_accel_sign=2.90; b_guide_vs_street_pct=1.70; b_revenue_surprise_pct=0.61; const=-3.62
+decomposition (WS12),,16.256840829448272,,,"raw +17.4%; gap 8.6%; open-to-close excess 7.7%; NTM revenue estimate change -0.2%; EV/NTM revenue multiple change 19.7%; nights +10.3% (accel +1.2pts, surprise +2.0%); revenue surprise +0.8%; EPS surprise +9.6%; guide accelerating (+0.7pts); guide vs Street +2.6%; FY raised 1"

@@ -1,0 +1,19 @@
+block,item,value,unit,detail,label,source
+short interest,"latest short interest, % of shares out",2.172370439189189,%,"12.86m shares, settlement 2026-08-14; series mean 2.84%, min 1.74%, max 5.44% over 84 settlements Feb 2023 - Aug 2026",MEASURED,09_positioning_short_interest.csv (MarketBeat/Nasdaq)
+short interest,percentile of latest reading in its own history,10.714285714285714,pctile,lower = less short interest than usual,MEASURED,same
+short interest,days to cover (latest SI / 20d avg volume),,days,not in the file; not computed,,
+short interest,correlation of SI level with fwd 3m excess return,0.153,r,"n 78, p 0.18; change in SI r -0.08 (1m), +0.04 (3m): none detectable in-sample at n 77-82",MEASURED,09_positioning_tests.csv
+options,"put/call open interest, 2026-11-20 expiry",1.107,ratio,put/call volume 2.98; 25-delta skew -0.51 vol pts (put IV minus call IV); ATM IV 38.1%; straddle 13.38% of spot; run 2026-09-06,MEASURED,data/processed/abnb_options_ledger.csv (Yahoo chain 6 Sep 2026)
+options,"put/call open interest, 2026-12-18 expiry",1.101,ratio,put/call volume 1.21; 25-delta skew -2.35 vol pts (put IV minus call IV); ATM IV 38.7%; straddle 15.65% of spot; run 2026-09-06,MEASURED,data/processed/abnb_options_ledger.csv (Yahoo chain 6 Sep 2026)
+options,"put/call open interest, 2027-01-15 expiry",0.904,ratio,put/call volume 0.31; 25-delta skew +0.37 vol pts (put IV minus call IV); ATM IV 38.2%; straddle 17.01% of spot; run 2026-09-06,MEASURED,data/processed/abnb_options_ledger.csv (Yahoo chain 6 Sep 2026)
+ratings,"Hold-or-worse share, S&P Global 46 analysts (3 Sep 2026)",45.65217391304348,%,21 Strong Buy / 4 Buy / 18 Hold / 1 Sell / 2 Strong Sell; stockanalysis.com 3 Sep 2026,ANCHOR,"04_current_consensus.csv, 12 note s.5"
+ratings,"Hold-or-worse share, yfinance recommendations current month",42.22222222222222,%,5 SB / 21 B / 16 H / 2 S / 1 SS = 45; three months ago 5/19/18/2/0,MEASURED,D_yf_recommendations.csv (pulled 12 Sep 2026)
+ratings,"Hold-or-worse share, feed firms with an action in 365 days (12 Sep 2026)",37.142857142857146,%,"22 Buy / 11 Hold / 2 Sell of 35 (Goldman counted as Sell per feed; 1 fewer Sell, 1 more Hold if corrected)",MEASURED,D_analyst_actions_2026-09-12.csv
+ratings,"Hold-or-worse share, the 32 firms with a live target (12 Sep 2026)",31.25,%,22 Buy / 8 Hold / 2 Sell (feed) or 22 / 9 / 1 (Goldman corrected); either way 10 of 32,MEASURED,D_live_targets_2026-09-12.csv
+ratings,"Buy share, 24-month rating panel (09 convention), 11 Sep 2026",59.45945945945946,%,37 firms rated in the last 24 months; Hold-or-worse 40.5%; 4 Sep 2026 09 note: 49% Buy / 43% Hold / 8% Sell on 49 firms,MEASURED,D_target_panel_daily.csv
+ratings,Buy share vs forward 3m excess return,0.128,r,"n 66, p 0.30; 3m change in Buy share vs fwd 1m r -0.24 p 0.05, n 65 (contrarian-signed; in-sample, no out-of-sample test)",MEASURED,09_positioning_tests.csv
+targets,"mean live target vs $170.19 (premium), 11 Sep 2026",6.8291306139414365,%,"mean $181.81 on 32 targets (365-day window); yfinance 12 Sep mean $182.13, median $185; S&P 3 Sep $178.96; MarketBeat 11 Sep $179.97",MEASURED,D_target_panel_daily.csv; D_yf_analyst_price_targets.csv
+targets,"PT premium vs forward 3m excess, quarterly non-overlapping from 2023",0.225,r,"n 13, p 0.46; the full-sample r +0.51 is 2021-22 mean reversion in disguise (09 note s.9); in-sample only",MEASURED,09_positioning_tests.csv
+institutional,"institutional holders (13F, 30 Jun 2026)",2210.0,count,"single fintel.io snapshot; no quarterly history, so no change-in-ownership series exists in the files",MEASURED,09_institutional_snapshot.csv
+institutional,institutions increasing / decreasing (2Q26 filings),1.1538461538461535,ratio,"1,020 buyers vs 884 sellers; top-10 holders 33.2% of disclosed shares",MEASURED,same
+institutional,"shares reported long by institutions, % of basic shares (589.6m)",79.53426950474898,%,468.9m / 589.6m basic (15 Jul 2026),MEASURED,same; BRIEF share count
