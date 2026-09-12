@@ -59,6 +59,8 @@ Claim your package in `docs/revenue-forecast-strategy/WORKBOARD.md` before start
 - `03_NUMBERS_CHEATSHEET.md` — every number a contributor may quote, with its source note.
 - `04_DATA_MAP.md` — per package: the exact files it reads, whether they are in git, and how to fetch what is not.
 - `prompts/` — one paste-ready prompt per package (rules included, pass line pre-registered).
+- **`prompts/CODEX_LANE1_FULL_PROMPT.md` — the single prompt that runs all of Lane 1 end to end with subagents (gated, refuted, one PR).**
+  `prompts/CODEX_HANDOFF_LANE1.md` is the smaller CORE variant; `lane1/` holds the per-subagent briefs both prompts hand out.
 
 Visual explainers (open in a browser): `../revenue-forecast-strategy/10_KERNEL_EXPLAINED.html` (start here),
 `11_FINAL_PLAN.html`, `12_DATA_AND_QUANT_PLAN.html`, `08_THESIS_MAP.html`. Long-form: `../revenue-forecast-strategy/07_MORNING_REPORT.md`

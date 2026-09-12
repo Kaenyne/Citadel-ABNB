@@ -1,4 +1,6 @@
-# Lane 1 — per-agent briefs (kernel, guide, valuation)
+# Lane 1 — per-agent briefs (kernel, guide, valuation, regional FX)
+
+**Parent prompt that runs this whole lane:** `../prompts/CODEX_LANE1_FULL_PROMPT.md` (FULL) or `../prompts/CODEX_HANDOFF_LANE1.md` (CORE).
 
 One file per agent role. A subagent gets exactly one of these files plus the two shared references it names
 (`03_NUMBERS_CHEATSHEET.md`, `harness/README.md`). The parent agent runs `K0` and `CLOSE` itself; everything else may be a subagent.
