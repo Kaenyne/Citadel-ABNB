@@ -167,7 +167,26 @@ Read plainly: in the units the regression was fitted on, the price carries a 3Q2
 
 The fundamental level is uncertain by about $7 to 15 (the units choice; A found the proxy bias unstable), but the differences between rows are robust: the team's path is worth 1 to 5% less than the Street's on the multiple-growth line, and the Street's path is worth about what the stock trades at.
 
-**What the card supports for the pitch.** The Street's nights bar is positioned for acceleration (only the fourth such bar in 16 prints), the price carries most of that bar in the units it is priced in, short interest is in its bottom decile, three houses raised targets into the 8-10 Sep fall, and the options market carries no extra event premium. The team's case is a flat-to-decelerating print, and the historical reaction to that sign is -4 to -6% on the day (conditional; -2 to -3.5% unconditional under the nowcast band). What the card does not support is a valuation gap: the price is within 1 to 3% of the team's own revenue path, so the trade is the print reaction and the multiple, not an estimate revision; and because the bar is the guide, the pitch is a call that management misses a nights guide to the downside for the first time in the sample, and it should be framed as exactly that.
+**4. The whole Street distribution, not just the mean (Bloomberg MODL, 12 Sep 2026, from Krish's terminal; `E_street_distribution_vs_team.csv`).** Growth on the letter bases (3Q25 nights 133.6m, GBV $22,892m; 4Q25 nights 121.9m, GBV $20,400m).
+
+| 3Q26 | Estimates | Low | Mean | High | Team | Team's position |
+|---|---|---|---|---|---|---|
+| Nights | 28 | 147m, +10.0% | 149m, +11.5% | 151m, +13.0% | 146.8m, +9.9% | below the lowest estimate |
+| GBV | 28 | $25,992m, +13.5% | $26,375m, +15.2% | $26,723m, +16.7% | about $25.9bn, +13.1% | at or below the lowest |
+| ADR | 26 | $173.71, +1.4% | $177.06, +3.4% | $179.12, +4.6% | $176.9, +3.3% | inside, near the mean |
+| Take rate | 28 | 17.82% | 18.00% | 18.44% | about 18.4% | inside, near the top |
+
+| 4Q26 | Estimates | Low | Mean | High | Team | Team's position |
+|---|---|---|---|---|---|---|
+| Nights | 28 | 130m, +6.6% | 134m, +9.9% | 136m, +11.6% | 132.7m, +8.9% (131.8m, +8.1% with the ex-NA lap) | inside, lower half |
+| GBV | 28 | $22,177m, +8.7% | $23,003m, +12.8% | $23,565m, +15.5% | about $23.1bn, +13.2% | inside, near the mean |
+| ADR | 25 | $167.79, +0.2% | $171.33, +2.3% | $174.21, +4.0% | $174.1, +3.9% | inside, at the top |
+| Revenue | 37 | $3,052m, +9.9% | $3,157m, +13.6% | $3,223m, +16.0% | $3,111m, +12.0% | inside, lower third |
+| EPS | 29 | $0.67 | $0.87 | $1.36 | $0.81 | inside, lower third |
+
+This is the cleanest positioning fact in the card. For 3Q26, not one of 28 analysts models a deceleration: the lowest nights estimate is 2Q26's rate, and the team's 146.8m sits below the entire range while the team's ADR sits on the consensus, so the whole disagreement is nights, not price. For 4Q26 the range is wide enough that the team's base sits inside it, in the lower half, so the 4Q26 argument is a guide-below-consensus argument, not a below-the-range argument. The Bloomberg Earnings Estimates Graph (`E_street_nights_estimate_path.csv`, read off the image) shows the mechanism: the 3Q26 bar went from about 145.4m before the 6 Aug print to about 148.5m after it, a 2.1% lift that matches the 2Q26 beat (148.3m printed against a 145.44m bar), and has drifted to 148.96m since; the 4Q26 bar rose 1.1% on the print. The Street carried the beat forward one for one, which is what workstream D found for targets and what the 12-of-13 guide match in table 1 implies.
+
+**What the card supports for the pitch.** The Street's nights bar is positioned for acceleration (only the fourth such bar in 16 prints), every one of the 28 estimates behind it is at or above 2Q26's rate and the team's 3Q26 nights sit below the lowest of them, the price carries most of that bar in the units it is priced in, short interest is in its bottom decile, three houses raised targets into the 8-10 Sep fall, and the options market carries no extra event premium. The team's case is a flat-to-decelerating print, and the historical reaction to that sign is -4 to -6% on the day (conditional; -2 to -3.5% unconditional under the nowcast band). What the card does not support is a valuation gap: the price is within 1 to 3% of the team's own revenue path, so the trade is the print reaction and the multiple, not an estimate revision; and because the bar is the guide, the pitch is a call that management misses a nights guide to the downside for the first time in the sample, and it should be framed as exactly that.
 
 ## 8. What this can and cannot say
 
@@ -182,5 +201,5 @@ The fundamental level is uncertain by about $7 to 15 (the units choice; A found 
 - `model/ABNB_market_implied.xlsx`: Cover, Inputs, Market_Implied, Cases, Print_5Nov, SellSide, Options, Comparison, Recon.
 - `analysis/src/reverse_dcf/market_implied_model.py` (builder); workstreams `A_*.py`, `B_*.py`, `C_*.py`, `D_*.py`, `E_positioning_card.py`.
 - `data/processed/reverse_dcf/market/`: `market_implied_by_price.csv`, `market_implied_cases.csv`, `market_implied_print_scenarios.csv`, `market_implied_comparison.csv`, `market_implied_recon.csv`, `market_implied_params.json`.
-- `data/processed/reverse_dcf/A/` (23 files), `B/` (31), `C/` (19), `D/` (20), `E/` (5: Street sign history and summary, guide-vs-bar sign, price-implied 2H26 path, repricing ladder), `audit/` (6 findings CSVs).
+- `data/processed/reverse_dcf/A/` (23 files), `B/` (31), `C/` (19), `D/` (20), `E/` (7: Street sign history and summary, guide-vs-bar sign, price-implied 2H26 path, repricing ladder, Bloomberg MODL distribution vs team, EEG nights-estimate path), `audit/` (6 findings CSVs).
 - Notes: `research/notes/reverse_dcf/A_joint-solve.md`, `B_options-implied.md`, `C_reaction-function.md`, `D_sell-side-dispersion.md`, `audit_A.md` to `audit_D.md`; run brief and state under `docs/reverse_dcf/`.

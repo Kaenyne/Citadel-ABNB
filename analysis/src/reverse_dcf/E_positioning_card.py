@@ -175,6 +175,48 @@ for label, ntm, sg in ladder_in:
                        options_event_sd_pct=EVENT_SD))
 ladder = pd.DataFrame(ladder); ladder.round(3).to_csv(os.path.join(OUT, "E_repricing_ladder.csv"), index=False)
 
+# ---------------------------------------------------------------- 4. Street estimate DISTRIBUTION vs the team (Bloomberg MODL / EEG, 12 Sep 2026)
+# Values read from Krish's Bloomberg MODL screenshots (12 Sep 2026); n = number of estimates; team values from docs/q3nowcast/SYNTHESIS.md,
+# research/notes/adrv3 card v3 and the WS29 bridge.  ANCHOR: 3Q25 nights 133.6m, GBV $22,892m, ADR $171.29; 4Q25 nights 121.9m, GBV $20,400m, ADR $167.51.
+MODL = [
+    # quarter, metric, low, mean, high, n, prior-year actual, team value, team source
+    ("3Q26", "nights_m", 147.0, 149.0, 151.0, 28, 133.6, 146.8, "team baseline +9.9% (docs/q3nowcast/SYNTHESIS.md; reviews index 9.5-10.0, band 8.5-11.0)"),
+    ("3Q26", "gbv_musd", 25992.0, 26375.0, 26723.0, 28, 22892.0, 25900.0, "team: 146.8m x $176.8 (H note); WS-B FX schedule"),
+    ("3Q26", "adr_usd", 173.71, 177.06, 179.12, 26, 171.29, 176.9, "ADR card v3 +3.3% (docs/adrv3); H note +3.2% $176.8"),
+    ("3Q26", "take_rate_pct", 17.82, 18.00, 18.44, 28, 17.88, 18.4, "team 3Q26 revenue $4,771m / GBV ~$25.9bn"),
+    ("4Q26", "nights_m", 130.0, 134.0, 136.0, 28, 121.9, 132.7, "team baseline +8.9% (8.0-8.2% if the ex-NA lap is adopted: 131.7-131.9m)"),
+    ("4Q26", "gbv_musd", 22177.0, 23003.0, 23565.0, 28, 20400.0, 23100.0, "team: 132.7m x $174.1 (ADR card v2/v3 4Q26 +3.8-3.9%)"),
+    ("4Q26", "adr_usd", 167.79, 171.33, 174.21, 25, 167.51, 174.1, "ADR card v3 4Q26 +3.8%"),
+    ("4Q26", "take_rate_pct", 13.60, 13.76, 14.00, 28, 13.62, 13.5, "team 4Q26 revenue $3,111m / GBV ~$23.1bn"),
+    ("4Q26", "revenue_musd", 3052.0, 3157.0, 3223.0, 37, 2778.0, 3111.0, "WS29 bridge base; ex-NA lap $3,055-3,102m"),
+    ("4Q26", "eps_usd", 0.67, 0.87, 1.36, 29, 0.56, 0.81, "WS30 base"),
+]
+mrows = []
+for qq, m, lo, mean, hi, n, py, team, src in MODL:
+    growth = lambda v: (v / py - 1) * 100 if m not in ("take_rate_pct",) else v - py
+    pos = "below the lowest estimate" if team < lo else ("above the highest estimate" if team > hi else "inside the range")
+    pct = (team - lo) / (hi - lo) * 100 if hi > lo else np.nan
+    mrows.append(dict(quarter=qq, metric=m, n_estimates=n, street_low=lo, street_mean=mean, street_high=hi, prior_year_actual=py,
+                      street_low_growth=growth(lo), street_mean_growth=growth(mean), street_high_growth=growth(hi),
+                      team_value=team, team_growth=growth(team), team_position=pos, team_position_pct_of_range=pct, team_source=src,
+                      source="Bloomberg MODL, Standard Consensus, screenshot 12 Sep 2026 (Krish); values read off the image"))
+modl = pd.DataFrame(mrows); modl.round(3).to_csv(os.path.join(OUT, "E_street_distribution_vs_team.csv"), index=False)
+# EEG: consensus nights path over time (read off the Earnings Estimates Graph, 12 Sep 2026); pre/post the 6 Aug 2026 print
+eeg = pd.DataFrame([
+    dict(period="3Q26", date="2026-05 (post 1Q26 print)", cons_nights_m=145.5, note="EEG, read off the image, +/-0.3m"),
+    dict(period="3Q26", date="2026-08-05 (pre 2Q26 print)", cons_nights_m=145.4, note="EEG"),
+    dict(period="3Q26", date="2026-08-07 (post 2Q26 print)", cons_nights_m=148.5, note="EEG; jump of ~2.1% on the print; 2Q26 printed 148.3m vs a 145.44m bar (+2.0%)"),
+    dict(period="3Q26", date="2026-09-12", cons_nights_m=148.96, note="EEG legend value"),
+    dict(period="4Q26", date="2026-05 (post 1Q26 print)", cons_nights_m=132.4, note="EEG"),
+    dict(period="4Q26", date="2026-08-05 (pre 2Q26 print)", cons_nights_m=132.4, note="EEG"),
+    dict(period="4Q26", date="2026-08-07 (post 2Q26 print)", cons_nights_m=133.9, note="EEG; +1.1% on the print"),
+    dict(period="4Q26", date="2026-09-12", cons_nights_m=134.22, note="EEG legend value"),
+])
+eeg["implied_growth_pct"] = np.where(eeg.period == "3Q26", (eeg.cons_nights_m / 133.6 - 1) * 100, (eeg.cons_nights_m / 121.9 - 1) * 100)
+eeg.round(3).to_csv(os.path.join(OUT, "E_street_nights_estimate_path.csv"), index=False)
+print(); print(modl[["quarter", "metric", "n_estimates", "street_low_growth", "street_mean_growth", "street_high_growth", "team_growth", "team_position"]].round(2).to_string())
+print(); print(eeg.round(2).to_string())
+
 pd.set_option("display.width", 260); pd.set_option("display.max_columns", 40); pd.set_option("display.max_colwidth", 70)
 print(hist_out[["print", "prior_quarter_growth_pct", "street_implied_growth_pct", "street_positioned_for", "printed", "day1_excess_pct", "mgmt_guide_direction_for_this_quarter", "street_sign_matches_guide", "guide_downside_miss"]].round(2).to_string())
 print(); print(summ.round(2).to_string()); print(guide_stats); print()
