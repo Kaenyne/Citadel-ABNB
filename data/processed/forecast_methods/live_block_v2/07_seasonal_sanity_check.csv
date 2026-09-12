@@ -1,0 +1,26 @@
+item,value,unit
+3Q25 printed take rate (revenue / same-quarter GBV),17.88,pct
+pre-registered flip line,18.1,pct
+flip line as y/y change vs 3Q25,22.00000000000024,bp
+reconciled 3Q26 printed take rate,18.13989765837428,pct
+reconciled as y/y change vs 3Q25,25.98976583742818,bp
+3Q23 printed take rate,18.562841530054644,pct
+3Q24 printed take rate,18.567164179104477,pct
+"2Q26 printed take rate (the seasonal contrast: bookings land in 1Q/2Q, revenue is recognised at check-in in 3Q)",13.26,pct
+revenue y/y REQUIRED to clear 18.10 at the combined GBV,17.364361778670066,pct
+reconciled revenue y/y,17.609279609279625,pct
+reconciled GBV y/y,15.937833624454157,pct
+revenue y/y minus GBV y/y needed (multiplicative),1.2304250559284302,pct
+"lambda_Q3 mean 2023-25 (kernel, LAGGED GBV base)",17.239361851242432,pct
+lambda_Q3 sd 2023-25,0.13238880643441048,pp
+3Q26 lagged-to-same-quarter GBV base ratio,1.0496012985888232,x
+"lambda_Q3 CONVERTED to a printed 3Q26 take rate (lambda x base ratio, no fee step)",18.094456585906677,pct
+"kernel revenue 4,804.0 / combined GBV -- the same thing, directly",18.094456585906677,pct
+WHERE THE TEST BITES: revenue needed to clear 18.10 at the combined GBV,4805.507265900001,musd
+  ... vs the TOP of management's own 3Q26 guide range,4770.0,musd
+  ... vs the guide midpoint,4730.0,musd
+  ... required print as a % of the guide midpoint,1.5963481162790893,pct
+guide midpoint / combined GBV (what a no-cushion print would show),17.81560098920503,pct
+guide TOP / combined GBV,17.966261462686678,pct
+WHERE THE TEST BITES: GBV at which the reconciled point equals 18.10,26608.287292817677,musd
+  ... as a % move in GBV from the combined point,0.2204290517915819,pct

@@ -1,0 +1,2 @@
+spec,n,n_nonzero_x,slope_bps_per_unit_share,stderr,t_stat,p_ols,p_permutation_4000,r2,intercept_bps,caveat
+d_take_bps ~ d_rev_migrated_share,20,2,-105.67371589003086,448.45884765669535,-0.23563748701179893,0.8163741689796501,0.7295,0.0030752373695850776,21.67511088217087,only 2 of 20 quarters carry a non-zero migrated share; the OLS p-value is not interpretable at this n and the permutation p is reported instead

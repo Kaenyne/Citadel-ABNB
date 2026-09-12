@@ -1,0 +1,598 @@
+{
+  "generated": "2026-09-11",
+  "generated_by": "scorekeeper; harness score.py run 2026-09-11, exit 0",
+  "provenance": "every value read from a registry file or a package CSV; see SCOREBOARD.md section 5",
+  "street_anchors": [
+    {
+      "period": "2026Q3",
+      "metric": "revenue_musd",
+      "value": 4740.0,
+      "vendor": "Zacks",
+      "as_of": "2026-09-04",
+      "n_estimates": 7
+    },
+    {
+      "period": "2026Q3",
+      "metric": "revenue_musd",
+      "value": 4610.0,
+      "vendor": "LSEG",
+      "as_of": "2026-08-06",
+      "n_estimates": null,
+      "note": "pre-guide Street; the ONLY value admissible as the 6-Aug Street"
+    },
+    {
+      "period": "2026Q4",
+      "metric": "revenue_musd",
+      "value": 3200.0,
+      "vendor": "Zacks",
+      "as_of": "2026-09-04",
+      "n_estimates": 10,
+      "note": "median about 3150; one 3700 outlier"
+    },
+    {
+      "period": "2026Q4",
+      "metric": "revenue_musd",
+      "value": 3158.0,
+      "vendor": "Alpha Vantage 36-analyst panel",
+      "as_of": "2026-09-11",
+      "n_estimates": 36
+    },
+    {
+      "period": "FY2026",
+      "metric": "revenue_musd",
+      "value": 14100.0,
+      "vendor": "Zacks",
+      "as_of": "2026-09-04",
+      "n_estimates": 8
+    },
+    {
+      "period": "FY2026",
+      "metric": "revenue_musd",
+      "value": 14155.0,
+      "vendor": "Alpha Vantage",
+      "as_of": "2026-09-11",
+      "n_estimates": 43
+    },
+    {
+      "period": "FY2026",
+      "metric": "revenue_musd",
+      "value": 14160.0,
+      "vendor": "S&P Global MI",
+      "as_of": "2026-09-03",
+      "n_estimates": 43
+    },
+    {
+      "period": "FY2027",
+      "metric": "revenue_musd",
+      "value_lo": 15730.0,
+      "value_hi": 15760.0,
+      "midpoint": 15745.0,
+      "vendor": "Zacks",
+      "as_of": "2026-09-04"
+    }
+  ],
+  "consensus_internal_inconsistency_musd": 126.0,
+  "q3_2026": {
+    "guide_range_musd": [
+      4690.0,
+      4770.0
+    ],
+    "guide_mid_musd": 4730.0,
+    "guide_issued": "2026-08-06",
+    "kernel_print_PIT": {
+      "point": 4804.0,
+      "q10": 4707.3,
+      "q90": 4902.8,
+      "sd": 76.9,
+      "n_params": 5,
+      "basis": "base 2/3 x 27200 + 1/3 x 29200 = 27867; lambda_Q3 17.239 pct; no GBV forecast required"
+    },
+    "kernel_print_full_sample": {
+      "point": 4832.4,
+      "sd": 148.9
+    },
+    "guide_plus_mean_cushion_musd": 4817.8,
+    "frozen_card_designated_print_musd": 4805.1,
+    "frozen_card_basis": "+1.374 pct revenue surprise (trailing-4 baseline) on the Zacks 4740 bar; 1-sd band +0.46 to +2.29 pp",
+    "spread_kernel_vs_frozen_musd": 1.1,
+    "take_rate_pre_registration_threshold_pct": 18.1,
+    "take_rate_central_gbv26300_theta_central": {
+      "take_rate_pct": 18.397,
+      "p_ge_18_10": 0.775,
+      "p_le_17_88": 0.095
+    },
+    "fx_pp_output_spot_held": 1.2
+  },
+  "q4_2026": {
+    "lambda_q4_pct": 12.0298,
+    "cushion_pct": 1.8567,
+    "predictive_sd_pp": 3.031,
+    "predictive_sd_note": "measured 3.03 pp, not the 2.6 pp in the decisions document; conditions on a GIVEN GBV_3Q26 so convolve with the GBV distribution",
+    "grid_central_26300": [
+      {
+        "gbv_3q26_musd": 26300.0,
+        "fee_step": "none",
+        "print_musd": 3199.9,
+        "guide_mid_musd": 3141.6,
+        "guide_lo_musd": 3115.2,
+        "guide_hi_musd": 3168.0,
+        "p_guide_below_zacks_3200": 0.73,
+        "p_guide_below_av36_3158": 0.568
+      },
+      {
+        "gbv_3q26_musd": 26300.0,
+        "fee_step": "half_weight",
+        "print_musd": 3239.9,
+        "guide_mid_musd": 3180.9,
+        "guide_lo_musd": 3154.1,
+        "guide_hi_musd": 3207.6,
+        "p_guide_below_zacks_3200": 0.579,
+        "p_guide_below_av36_3158": 0.406
+      },
+      {
+        "gbv_3q26_musd": 26300.0,
+        "fee_step": "full_weight",
+        "print_musd": 3279.9,
+        "guide_mid_musd": 3220.1,
+        "guide_lo_musd": 3193.1,
+        "guide_hi_musd": 3247.2,
+        "p_guide_below_zacks_3200": 0.418,
+        "p_guide_below_av36_3158": 0.262
+      }
+    ],
+    "grid_span_gbv_25900_to_27000": {
+      "print_musd_min": 3167.8,
+      "print_musd_max": 3337.5,
+      "guide_mid_musd_min": 3110.1,
+      "guide_mid_musd_max": 3276.6
+    },
+    "probabilities_guide_below_anchor": [
+      {
+        "anchor_musd": 3200.0,
+        "vendor": "Zacks",
+        "as_of": "2026-09-04",
+        "p_no_fee": 0.73,
+        "p_half_fee": 0.579,
+        "p_full_fee": 0.418,
+        "p_min_over_grid": 0.22,
+        "p_max_over_grid": 0.83
+      },
+      {
+        "anchor_musd": 3158.0,
+        "vendor": "Alpha Vantage (aggregated sell-side panel)",
+        "as_of": "2026-09-11",
+        "p_no_fee": 0.568,
+        "p_half_fee": 0.406,
+        "p_full_fee": 0.262,
+        "p_min_over_grid": 0.116,
+        "p_max_over_grid": 0.694
+      }
+    ],
+    "fee_step_recomputed_from_primitives": [
+      {
+        "theta_case": "lo",
+        "label": "11.5 pp modal jump",
+        "full_step_pct": 0.555,
+        "half_step_pct": 0.278,
+        "print_no_step_musd": 3200.0,
+        "print_half_step_musd": 3208.9,
+        "guide_mid_half_step_musd": 3150.3
+      },
+      {
+        "theta_case": "central",
+        "label": "theta 0.833 (Austin)",
+        "full_step_pct": 1.137,
+        "half_step_pct": 0.568,
+        "print_no_step_musd": 3200.0,
+        "print_half_step_musd": 3218.2,
+        "guide_mid_half_step_musd": 3159.4
+      },
+      {
+        "theta_case": "hi",
+        "label": "theta = 1 UPPER BOUND",
+        "full_step_pct": 2.96,
+        "half_step_pct": 1.48,
+        "print_no_step_musd": 3200.0,
+        "print_half_step_musd": 3247.4,
+        "guide_mid_half_step_musd": 3188.1
+      }
+    ],
+    "architect_implied_full_step_pct": 2.5,
+    "quoted_range_endpoints": {
+      "no_step": {
+        "print_musd": 3200.0,
+        "guide_mid_musd": 3141.4
+      },
+      "central_theta_half_step": {
+        "print_musd": 3218.2,
+        "guide_mid_musd": 3159.4
+      },
+      "excluded_full_step_central": {
+        "print_musd": 3236.4,
+        "guide_mid_musd": 3177.3
+      }
+    },
+    "kernel_live_4q26_PIT": {
+      "point": 3199.9,
+      "sd": 51.2,
+      "note": "conditions on GBV_3Q26 = 26300; sd 51 musd is NOT the 4Q26 predictive sd"
+    },
+    "fx_pp_output_spot_held": 0.7
+  },
+  "fy2027": {
+    "revenue_musd_by_kernel_weight": {
+      "0.33": 15720.3,
+      "0.5": 15779.5,
+      "0.667": 15837.6
+    },
+    "growth_pct_by_kernel_weight": {
+      "0.33": 9.179,
+      "0.5": 10.355,
+      "0.667": 11.523
+    },
+    "published_w": 0.6667,
+    "published_revenue_musd": 15837.6,
+    "published_growth_pct": 11.523,
+    "kernel_weight_sensitivity_musd": 117.3,
+    "kernel_weight_sensitivity_pct_of_revenue": 0.741,
+    "kernel_weight_sensitivity_pp_of_growth": 2.343,
+    "vs_street_midpoint_pct": 0.59,
+    "decomposition_pp": [
+      {
+        "line": "volume: na nights",
+        "pp": 2.345,
+        "owner": "l1-reconciliation",
+        "basis": "estimated"
+      },
+      {
+        "line": "volume: emea nights",
+        "pp": 2.905,
+        "owner": "l1-reconciliation",
+        "basis": "estimated"
+      },
+      {
+        "line": "volume: latam nights",
+        "pp": 1.6,
+        "owner": "l1-reconciliation",
+        "basis": "estimated"
+      },
+      {
+        "line": "volume: apac nights",
+        "pp": 1.414,
+        "owner": "l1-reconciliation",
+        "basis": "estimated"
+      },
+      {
+        "line": "price: within-region ADR ex-FX (l-f-l + sub-regional mix, unsplit)",
+        "pp": 3.0,
+        "owner": "l1-reconciliation",
+        "basis": "estimated"
+      },
+      {
+        "line": "geographic mix (OUTPUT of the share identity)",
+        "pp": -1.09,
+        "owner": "l1-reconciliation",
+        "basis": "output"
+      },
+      {
+        "line": "unit size and LOS (bedroom elasticity 0.23)",
+        "pp": 0.382,
+        "owner": "l1-reconciliation",
+        "basis": "estimated"
+      },
+      {
+        "line": "seats and hotel dilution (OUTPUT of N = home + hotel + seats)",
+        "pp": 0.0,
+        "owner": "l1-reconciliation",
+        "basis": "output"
+      },
+      {
+        "line": "booking-date FX carried through Phi",
+        "pp": 0.0,
+        "owner": "l1-reconciliation",
+        "basis": "estimated"
+      },
+      {
+        "line": "fee / take-rate mechanism (half weight)",
+        "pp": 0.9,
+        "owner": "fee-takerate / kernel-lambda",
+        "basis": "assumed_not_rebuilt_tonight"
+      },
+      {
+        "line": "new lines",
+        "pp": 0.2,
+        "owner": "fee-takerate / kernel-lambda",
+        "basis": "assumed_not_rebuilt_tonight"
+      },
+      {
+        "line": "regulation",
+        "pp": -0.3,
+        "owner": "fee-takerate / kernel-lambda",
+        "basis": "assumed_not_rebuilt_tonight"
+      },
+      {
+        "line": "hedge (dollars, added ONCE by kernel-lambda)",
+        "pp": 0.0,
+        "owner": "fee-takerate / kernel-lambda",
+        "basis": "assumed_not_rebuilt_tonight"
+      },
+      {
+        "line": "kernel timing (revenue is a convolution of LAGGED GBV)",
+        "pp": 0.167,
+        "owner": "kernel-lambda",
+        "basis": "identity"
+      }
+    ],
+    "decomposition_total_pp": 11.523,
+    "fx_annualisation_pp": {
+      "spot_held": {
+        "revenue_weighted_average_pp": 0.2,
+        "simple_average_pp": 0.2
+      },
+      "usd_minus_1sd_weak_usd": {
+        "revenue_weighted_average_pp": 2.3,
+        "simple_average_pp": 2.3
+      },
+      "usd_plus_1sd_strong_usd": {
+        "revenue_weighted_average_pp": -2.0,
+        "simple_average_pp": -1.9
+      }
+    },
+    "fx_annualisation_note": "FY27 FX is the revenue-weighted AVERAGE of four quarterly y/y contributions; the SUM is meaningless",
+    "warning": "the registry files l1-reconciliation__fy27_revenue.csv and __fy27_growth.csv hold ONE 2026Q3 row each (4804.0 musd, +17.31 pct). They are NOT FY27. Use l1_fy27_revenue_grid.csv."
+  },
+  "fx_lag_answer": {
+    "object_a_gross_ex_hedge": {
+      "a0": 0.538,
+      "a1": 0.4135,
+      "a2": 0.0,
+      "scale": 0.9515,
+      "w0": 0.5654,
+      "w1": 0.4346,
+      "w2": 0.0,
+      "effective_lag_q": 0.4346,
+      "effective_lag_95_cs": [
+        0.029,
+        0.923
+      ],
+      "scale_95_cs": [
+        0.625,
+        1.325
+      ],
+      "disclosed_share_0_56_in_cs": false,
+      "sigma": 0.8783,
+      "n": 14,
+      "n_params": 4
+    },
+    "h0_tests_gross_ex_hedge": {
+      "architect_phi_x_0.56": {
+        "lr": 16.762,
+        "df": 3,
+        "p": 0.0008,
+        "rejected": true
+      },
+      "theo_pure_lag2_x_0.56": {
+        "lr": 24.725,
+        "df": 3,
+        "p": 0.0,
+        "rejected": true
+      },
+      "contemporaneous_x_0.56": {
+        "lr": 12.274,
+        "df": 3,
+        "p": 0.0065,
+        "rejected": true
+      },
+      "pure_lag1_x_0.56": {
+        "lr": 12.937,
+        "df": 3,
+        "p": 0.0048,
+        "rejected": true
+      }
+    },
+    "h0_tests_stated_after_hedge": {
+      "architect_phi_x_0.56": {
+        "p": 0.0168,
+        "rejected": true
+      },
+      "theo_pure_lag2_x_0.56": {
+        "p": 0.0004,
+        "rejected": true
+      },
+      "contemporaneous_x_0.56": {
+        "p": 0.0575,
+        "rejected": false
+      },
+      "pure_lag1_x_0.56": {
+        "p": 0.0693,
+        "rejected": false
+      }
+    },
+    "verdict": "the two-quarter lead is rejected on both series and is the worst-fitting restriction tested; the architect 1.33-quarter Phi x 0.56 is also rejected; what survives is a mean lag of about 0 to 1 quarter, point 0.435, 95 pct CS 0.029 to 0.923",
+    "four_way_reconciliation_4q26_pp": {
+      "repo 05_fx_schedule revenue_fx_fit_pp": -0.4,
+      "repo 29_q4_fy27_bridge FX step": -3.4,
+      "M6 memo forward schedule": 0.4,
+      "guide-anchored (back out from management's stated Q3 FX assumption)": 2.6,
+      "kernel-implied (this package, Object-A weights on the rebuilt basket)": 0.7
+    },
+    "reconciliation_spread_pp": 6.0,
+    "reconciliation_spread_musd_on_4q26": 167.0,
+    "determined_shares": [
+      {
+        "as_of": "2026-08-06",
+        "target_quarter": "3Q26",
+        "w0_basis": "lo_of_CS",
+        "fx_determined_share": 0.9105,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-08-06",
+        "target_quarter": "3Q26",
+        "w0_basis": "point_estimate",
+        "fx_determined_share": 0.6558,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-08-06",
+        "target_quarter": "3Q26",
+        "w0_basis": "hi_of_CS",
+        "fx_determined_share": 0.4083,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-09-11",
+        "target_quarter": "3Q26",
+        "w0_basis": "lo_of_CS",
+        "fx_determined_share": 0.968,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-09-11",
+        "target_quarter": "3Q26",
+        "w0_basis": "point_estimate",
+        "fx_determined_share": 0.8771,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-09-11",
+        "target_quarter": "3Q26",
+        "w0_basis": "hi_of_CS",
+        "fx_determined_share": 0.7887,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-10-02",
+        "target_quarter": "4Q26",
+        "w0_basis": "lo_of_CS",
+        "fx_determined_share": 0.8546,
+        "volume_determined_share": 0.3333
+      },
+      {
+        "as_of": "2026-10-02",
+        "target_quarter": "4Q26",
+        "w0_basis": "point_estimate",
+        "fx_determined_share": 0.4407,
+        "volume_determined_share": 0.3333
+      },
+      {
+        "as_of": "2026-10-02",
+        "target_quarter": "4Q26",
+        "w0_basis": "hi_of_CS",
+        "fx_determined_share": 0.0386,
+        "volume_determined_share": 0.3333
+      },
+      {
+        "as_of": "2026-10-23",
+        "target_quarter": "4Q26",
+        "w0_basis": "lo_of_CS",
+        "fx_determined_share": 0.8882,
+        "volume_determined_share": 0.3333
+      },
+      {
+        "as_of": "2026-10-23",
+        "target_quarter": "4Q26",
+        "w0_basis": "point_estimate",
+        "fx_determined_share": 0.5698,
+        "volume_determined_share": 0.3333
+      },
+      {
+        "as_of": "2026-10-23",
+        "target_quarter": "4Q26",
+        "w0_basis": "hi_of_CS",
+        "fx_determined_share": 0.2604,
+        "volume_determined_share": 0.3333
+      },
+      {
+        "as_of": "2026-11-05",
+        "target_quarter": "4Q26",
+        "w0_basis": "lo_of_CS",
+        "fx_determined_share": 0.9089,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-11-05",
+        "target_quarter": "4Q26",
+        "w0_basis": "point_estimate",
+        "fx_determined_share": 0.6497,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2026-11-05",
+        "target_quarter": "4Q26",
+        "w0_basis": "hi_of_CS",
+        "fx_determined_share": 0.3978,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2027-02-11",
+        "target_quarter": "1Q27",
+        "w0_basis": "lo_of_CS",
+        "fx_determined_share": 0.92,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2027-02-11",
+        "target_quarter": "1Q27",
+        "w0_basis": "point_estimate",
+        "fx_determined_share": 0.6922,
+        "volume_determined_share": 1.0
+      },
+      {
+        "as_of": "2027-02-11",
+        "target_quarter": "1Q27",
+        "w0_basis": "hi_of_CS",
+        "fx_determined_share": 0.4708,
+        "volume_determined_share": 1.0
+      }
+    ],
+    "forward_schedule_spot_held_pp": {
+      "3Q26": {
+        "point": 1.2,
+        "lo": 0.0,
+        "hi": 2.3
+      },
+      "4Q26": {
+        "point": 0.7,
+        "lo": -0.4,
+        "hi": 1.8
+      },
+      "1Q27": {
+        "point": 0.5,
+        "lo": -0.7,
+        "hi": 1.6
+      },
+      "2Q27": {
+        "point": 0.1,
+        "lo": -1.1,
+        "hi": 1.2
+      },
+      "3Q27": {
+        "point": 0.2,
+        "lo": -1.0,
+        "hi": 1.3
+      },
+      "4Q27": {
+        "point": 0.1,
+        "lo": -1.0,
+        "hi": 1.2
+      }
+    },
+    "caveats": [
+      "no additive FX pp is ever applied to revenue; the pp is an OUTPUT of the kernel arithmetic",
+      "fitted basket scale 0.95 vs disclosed non-USD revenue share 0.56: judgemental currency weights understate exposure by roughly 70 pct",
+      "FRED daily FX ends 2026-08-28; nothing here is genuinely as of 2026-09-11",
+      "H2 covers only 10 of 14 W1 quarters, so its W1 and W2 rows are the same ten quarters"
+    ]
+  },
+  "unscorable_live_objects": [
+    "fee-takerate__take_rate_mechanism",
+    "fx-lag__live_fx_schedule",
+    "guidance-policy__q4_2026_guide_mid",
+    "guidance-policy__q4_2026_print",
+    "kernel-lambda__live_3q26_print",
+    "kernel-lambda__live_4q26_print",
+    "l1-reconciliation__fy27_revenue",
+    "l1-reconciliation__fy27_growth"
+  ]
+}

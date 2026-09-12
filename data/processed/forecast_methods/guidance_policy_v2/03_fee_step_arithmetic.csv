@@ -1,0 +1,5 @@
+arithmetic,step_pct,print_at_gbv26300_musd,source
+"primitives, theta=0.83, HALF step (CHOSEN)",0.5543137894768463,3217.662465603213,"uplift(theta) x Phi-weighted migrated REVENUE share 2026Q4, carried at half weight per 00_IMPLEMENTATION_DECISIONS section 7.2"
+"primitives, theta=0.83, FULL step (sensitivity)",1.1086275789536926,3235.400090249532,"same, no half-weight haircut"
+"architect HALF weight (v1 exhibit, REJECTED)",1.25,3239.9239014688546,flat +1.25% = half of an ASSUMED +2.50% full step; not derived from theta or from the migrated share
+"architect FULL weight (v1 exhibit, REJECTED)",2.5,3279.9229619808157,flat +2.50%

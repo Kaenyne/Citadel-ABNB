@@ -1,0 +1,6 @@
+path,quarter,basket_lag0_pct,basket_lag1_pct,basket_lag2_pct,revenue_fx_pp,revenue_fx_pp_lo,revenue_fx_pp_hi,note,basket_sd_of_qoq_change_pp,forward_curve_available,reason,sd
+spot_held,4Q26,0.97,0.492,2.189,0.7,-0.4,1.8,spot held constant from 2026-08-28 (last FRED obs); +/-1sd = +/-5% parallel shift in the held spot,2.02,False,harness windows.csv admits only 2026Q3 as LIVE,0.8783
+spot_held,1Q27,0.1,0.97,0.492,0.5,-0.7,1.6,spot held constant from 2026-08-28 (last FRED obs); +/-1sd = +/-5% parallel shift in the held spot,2.02,False,harness windows.csv admits only 2026Q3 as LIVE,0.8783
+spot_held,2Q27,0.026,0.1,0.97,0.1,-1.1,1.2,spot held constant from 2026-08-28 (last FRED obs); +/-1sd = +/-5% parallel shift in the held spot,2.02,False,harness windows.csv admits only 2026Q3 as LIVE,0.8783
+spot_held,3Q27,0.279,0.026,0.1,0.2,-1.0,1.3,spot held constant from 2026-08-28 (last FRED obs); +/-1sd = +/-5% parallel shift in the held spot,2.02,False,harness windows.csv admits only 2026Q3 as LIVE,0.8783
+spot_held,4Q27,0.0,0.279,0.026,0.1,-1.0,1.2,spot held constant from 2026-08-28 (last FRED obs); +/-1sd = +/-5% parallel shift in the held spot,2.02,False,harness windows.csv admits only 2026Q3 as LIVE,0.8783

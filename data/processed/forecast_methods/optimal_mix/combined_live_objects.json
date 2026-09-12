@@ -1,0 +1,705 @@
+{
+  "generated": "2026-09-11",
+  "package": "optimal-mix",
+  "street_anchors_vintage_stamped": {
+    "zacks_q4_2026_musd": 3200.0,
+    "zacks_q4_2026_as_of": "2026-09-04",
+    "zacks_q4_2026_n_est": 10,
+    "av36_q4_2026_musd": 3158.0,
+    "av36_q4_2026_as_of": "2026-09-11",
+    "av36_q4_2026_n_est": 36,
+    "zacks_fy27_lo_musd": 15730.0,
+    "zacks_fy27_hi_musd": 15760.0,
+    "zacks_fy27_as_of": "2026-09-04",
+    "zacks_fy26_lo_musd": 14100.0,
+    "zacks_fy26_hi_musd": 14160.0,
+    "lseg_q3_2026_preguide_musd": 4610.0,
+    "lseg_q3_2026_as_of": "2026-08-06",
+    "zacks_q3_2026_musd": 4740.0
+  },
+  "objects": {
+    "print_3Q26_revenue_musd": {
+      "what": "3Q26 revenue PRINT (the quarter is guided; guide 4,690-4,770; the print lands ~5 Nov 2026, after the finals)",
+      "scheme_used": "bma_logscore",
+      "mix_beats_best_single_both_windows": false,
+      "note_if_not": "the winner rule failed, so the number below is the combination anyway but is reported as a tie with the best single method (guidance-policy print_from_guide / baselines guide_cushion)",
+      "point_musd": 4816.1,
+      "mixture_sd_musd": 48.0,
+      "q10_musd": 4754.7,
+      "q90_musd": 4877.6,
+      "conformal_80_interval_musd": [
+        4756.7,
+        4875.6
+      ],
+      "conformal": {
+        "n_residuals": 14,
+        "qhat": 59.47458506799512,
+        "caveat": "EXCHANGEABILITY VIOLATED: residuals are a time-ordered non-exchangeable sequence (expanding-window refits, a trending target, and a regime change at the 2022 reopening); conformal coverage here is descriptive, not a guarantee.",
+        "n_cal": 8,
+        "k": 8,
+        "attainable_lo": 0.8888888888888888,
+        "attainable_hi": 1.0,
+        "nominal_requested": 0.8,
+        "note": "at n_cal=8, alpha=0.2 the attainable coverage band is [0.889,1.000]; there is NO 80% guarantee at this n"
+      },
+      "vs_street_lseg_preguide_4610_musd": 206.1,
+      "vs_zacks_4740_musd_as_of_2026_09_04": 76.1,
+      "carried_weights": [
+        {
+          "pool_candidate": "baselines|ar1|ar1|revenue_musd",
+          "live_carrier": "baselines|ar1",
+          "weight": 2.21986597278739e-16,
+          "point": 4728.068901770738,
+          "sd": 161.2181366262252
+        },
+        {
+          "pool_candidate": "baselines|guide_cushion|guide_cushion|revenue_musd",
+          "live_carrier": "baselines|guide_cushion",
+          "weight": 0.5366316394349542,
+          "point": 4814.690225759178,
+          "sd": 47.52702006989534
+        },
+        {
+          "pool_candidate": "baselines|naive|naive|revenue_musd",
+          "live_carrier": "baselines|naive",
+          "weight": 1.2269246084431143e-07,
+          "point": 4772.209302325581,
+          "sd": 174.91597173524022
+        },
+        {
+          "pool_candidate": "baselines|street|street|revenue_musd",
+          "live_carrier": "baselines|street",
+          "weight": 5.197775169435054e-07,
+          "point": 4610.0,
+          "sd": 133.52363332647644
+        },
+        {
+          "pool_candidate": "baselines|trailing4|trailing4|revenue_musd",
+          "live_carrier": "baselines|trailing4",
+          "weight": 1.6341261001701082e-26,
+          "point": 4669.8356571996965,
+          "sd": 189.5785699491705
+        },
+        {
+          "pool_candidate": "guidance-policy|print_from_guide|guide_mid*(1+c_mean8)",
+          "live_carrier": "guidance-policy|print_from_guide",
+          "weight": 0.4633454635420568,
+          "point": 4817.8239468939755,
+          "sd": 48.409474718235174
+        },
+        {
+          "pool_candidate": "guidance-policy|print_kernel_policy|kernel(w=2/3,k=3)",
+          "live_carrier": "guidance-policy|print_kernel_policy",
+          "weight": 1.9490948211560525e-06,
+          "point": 4804.035502546224,
+          "sd": 176.7677095995448
+        },
+        {
+          "pool_candidate": "kernel-lambda|revenue_level_next_q_ex_covid|kernel|w=0.6667|season_mean|h0|est_from_2022Q1",
+          "live_carrier": "kernel-lambda|live_3q26_print",
+          "weight": 2.249823038610018e-06,
+          "point": 4804.035502546224,
+          "sd": 76.86634782312919
+        },
+        {
+          "pool_candidate": "kernel-lambda|revenue_level_next_q_last3_ex_covid|kernel|w=0.6667|season_mean_last3|h0|est_from_2022Q1",
+          "live_carrier": "kernel-lambda|live_3q26_print",
+          "weight": 3.088983165384147e-06,
+          "point": 4804.035502546224,
+          "sd": 76.86634782312919
+        },
+        {
+          "pool_candidate": "kernel-lambda|revenue_level_next_q_last3|kernel|w=0.6667|season_mean_last3|h0",
+          "live_carrier": "kernel-lambda|live_3q26_print",
+          "weight": 9.651372597620348e-06,
+          "point": 4804.035502546224,
+          "sd": 76.86634782312919
+        },
+        {
+          "pool_candidate": "kernel-lambda|revenue_level_next_q_w033|kernel|w=0.33|season_mean|h0",
+          "live_carrier": "kernel-lambda|live_3q26_print",
+          "weight": 1.0663672064682645e-08,
+          "point": 4804.035502546224,
+          "sd": 76.86634782312919
+        },
+        {
+          "pool_candidate": "kernel-lambda|revenue_level_next_q_w038|kernel|w=0.38|season_mean|h0",
+          "live_carrier": "kernel-lambda|live_3q26_print",
+          "weight": 3.136666349480307e-08,
+          "point": 4804.035502546224,
+          "sd": 76.86634782312919
+        },
+        {
+          "pool_candidate": "kernel-lambda|revenue_level_next_q|kernel|w=0.6667|season_mean|h0",
+          "live_carrier": "kernel-lambda|live_3q26_print",
+          "weight": 5.172795227948464e-06,
+          "point": 4804.035502546224,
+          "sd": 76.86634782312919
+        }
+      ],
+      "weight_coverage_of_pool": 1.0
+    },
+    "live_3Q26_take_rate_pct": {
+      "scheme_used": "inv_mse",
+      "mix_beats_best_single_both_windows": false,
+      "point": 17.8065,
+      "mixture_sd": 0.4424,
+      "q10": 17.2396,
+      "q90": 18.3735,
+      "conformal": {
+        "n_residuals": 14,
+        "qhat": 0.6837742988025859,
+        "caveat": "EXCHANGEABILITY VIOLATED: residuals are a time-ordered non-exchangeable sequence (expanding-window refits, a trending target, and a regime change at the 2022 reopening); conformal coverage here is descriptive, not a guarantee.",
+        "n_cal": 8,
+        "k": 8,
+        "attainable_lo": 0.8888888888888888,
+        "attainable_hi": 1.0,
+        "nominal_requested": 0.8,
+        "note": "at n_cal=8, alpha=0.2 the attainable coverage band is [0.889,1.000]; there is NO 80% guarantee at this n"
+      },
+      "pool": "repaired",
+      "weight_coverage_of_pool": 1.0,
+      "STATUS": "OK",
+      "carried_weights": [
+        {
+          "pool_candidate": "fee-takerate|take_rate_kernel|kernel_lambda_season_w23",
+          "weight": 0.34006808061219224,
+          "point": 18.231609082371637
+        },
+        {
+          "pool_candidate": "fee-takerate|take_rate_lastyear|tau_lag4_plus_drift",
+          "weight": 0.6599319193878078,
+          "point": 17.5875
+        }
+      ],
+      "pre_registered_threshold_pct": 18.1,
+      "p_clears_18_10": 0.254,
+      "threshold_note": "the frozen 3Q26 pre-registration is >= 18.10 pct if the fee migration is flowing; the combination puts the posterior probability of clearing it well below a half, which is the power of the test made visible"
+    },
+    "live_3Q26_nights_yoy": {
+      "scheme_used": "bma_logscore",
+      "mix_beats_best_single_both_windows": false,
+      "point": 10.3423,
+      "mixture_sd": 2.2442,
+      "q10": 7.4663,
+      "q90": 13.2183,
+      "conformal": {
+        "n_residuals": 14,
+        "qhat": 3.2631652808819887,
+        "caveat": "EXCHANGEABILITY VIOLATED: residuals are a time-ordered non-exchangeable sequence (expanding-window refits, a trending target, and a regime change at the 2022 reopening); conformal coverage here is descriptive, not a guarantee.",
+        "n_cal": 8,
+        "k": 8,
+        "attainable_lo": 0.8888888888888888,
+        "attainable_hi": 1.0,
+        "nominal_requested": 0.8,
+        "note": "at n_cal=8, alpha=0.2 the attainable coverage band is [0.889,1.000]; there is NO 80% guarantee at this n"
+      },
+      "pool": "all",
+      "weight_coverage_of_pool": 0.0,
+      "STATUS": "NOT USABLE: the winning weights sit almost entirely on pool members that registered no LIVE 2026Q3 row, so the number below is a renormalisation onto the leftovers and is NOT the mix",
+      "carried_weights": [
+        {
+          "pool_candidate": "calibration-rail|ref_ar1|ref_ar1|nights_yoy|harness_fn_direct_call",
+          "weight": 1.1507894799505456e-96,
+          "point": 11.452527263270008
+        },
+        {
+          "pool_candidate": "calibration-rail|ref_naive|ref_naive|nights_yoy|harness_fn_direct_call",
+          "weight": 2.3980259885545037e-11,
+          "point": 10.342261904761909
+        },
+        {
+          "pool_candidate": "calibration-rail|ref_trailing4|ref_trailing4|nights_yoy|harness_fn_direct_call",
+          "weight": 1.81221502156403e-70,
+          "point": 9.527826863630407
+        }
+      ]
+    },
+    "live_3Q26_adr_yoy": {
+      "scheme_used": "stack_ls",
+      "mix_beats_best_single_both_windows": false,
+      "point": 5.2668,
+      "mixture_sd": 2.1175,
+      "q10": 2.5531,
+      "q90": 7.9804,
+      "conformal": {
+        "n_residuals": 14,
+        "qhat": 4.323390371969988,
+        "caveat": "EXCHANGEABILITY VIOLATED: residuals are a time-ordered non-exchangeable sequence (expanding-window refits, a trending target, and a regime change at the 2022 reopening); conformal coverage here is descriptive, not a guarantee.",
+        "n_cal": 8,
+        "k": 8,
+        "attainable_lo": 0.8888888888888888,
+        "attainable_hi": 1.0,
+        "nominal_requested": 0.8,
+        "note": "at n_cal=8, alpha=0.2 the attainable coverage band is [0.889,1.000]; there is NO 80% guarantee at this n"
+      },
+      "pool": "all",
+      "weight_coverage_of_pool": 1.0,
+      "STATUS": "OK",
+      "carried_weights": [
+        {
+          "pool_candidate": "calibration-rail|ref_ar1|ref_ar1|adr_yoy|harness_fn_direct_call",
+          "weight": 0.036323023147970354,
+          "point": 4.345847808995114
+        },
+        {
+          "pool_candidate": "calibration-rail|ref_naive|ref_naive|adr_yoy|harness_fn_direct_call",
+          "weight": 0.9636769768519968,
+          "point": 5.30146721687299
+        },
+        {
+          "pool_candidate": "calibration-rail|ref_trailing4|ref_trailing4|adr_yoy|harness_fn_direct_call",
+          "weight": 3.2795601194341715e-14,
+          "point": 6.235714871158076
+        }
+      ]
+    },
+    "live_3Q26_gbv_yoy": {
+      "scheme_used": "stack_shrunk",
+      "mix_beats_best_single_both_windows": false,
+      "point": 15.9378,
+      "mixture_sd": 3.6394,
+      "q10": 11.2738,
+      "q90": 20.6018,
+      "conformal": {
+        "n_residuals": 14,
+        "qhat": 6.574259911879365,
+        "caveat": "EXCHANGEABILITY VIOLATED: residuals are a time-ordered non-exchangeable sequence (expanding-window refits, a trending target, and a regime change at the 2022 reopening); conformal coverage here is descriptive, not a guarantee.",
+        "n_cal": 8,
+        "k": 8,
+        "attainable_lo": 0.8888888888888888,
+        "attainable_hi": 1.0,
+        "nominal_requested": 0.8,
+        "note": "at n_cal=8, alpha=0.2 the attainable coverage band is [0.889,1.000]; there is NO 80% guarantee at this n"
+      },
+      "pool": "all",
+      "weight_coverage_of_pool": 1.0,
+      "STATUS": "OK",
+      "carried_weights": [
+        {
+          "pool_candidate": "calibration-rail|ref_ar1|ref_ar1|gbv_yoy|harness_fn_direct_call",
+          "weight": 0.16666666666666666,
+          "point": 16.45632899452395
+        },
+        {
+          "pool_candidate": "calibration-rail|ref_naive|ref_naive|gbv_yoy|harness_fn_direct_call",
+          "weight": 0.6666666666666666,
+          "point": 15.74468085106382
+        },
+        {
+          "pool_candidate": "calibration-rail|ref_trailing4|ref_trailing4|gbv_yoy|harness_fn_direct_call",
+          "weight": 0.16666666666666666,
+          "point": 16.191948372062242
+        }
+      ]
+    },
+    "live_3Q26_nights_m": {
+      "scheme_used": "top3_inv_mse",
+      "mix_beats_best_single_both_windows": false,
+      "point": 147.3764,
+      "mixture_sd": 3.0774,
+      "q10": 143.4326,
+      "q90": 151.3202,
+      "conformal": {
+        "n_residuals": 14,
+        "qhat": 5.587050937670284,
+        "caveat": "EXCHANGEABILITY VIOLATED: residuals are a time-ordered non-exchangeable sequence (expanding-window refits, a trending target, and a regime change at the 2022 reopening); conformal coverage here is descriptive, not a guarantee.",
+        "n_cal": 8,
+        "k": 8,
+        "attainable_lo": 0.8888888888888888,
+        "attainable_hi": 1.0,
+        "nominal_requested": 0.8,
+        "note": "at n_cal=8, alpha=0.2 the attainable coverage band is [0.889,1.000]; there is NO 80% guarantee at this n"
+      },
+      "pool": "all",
+      "weight_coverage_of_pool": 1.0,
+      "STATUS": "OK",
+      "carried_weights": [
+        {
+          "pool_candidate": "baselines|ar1|ar1|nights_m",
+          "weight": 0.12805694916060106,
+          "point": 148.90057642372872
+        },
+        {
+          "pool_candidate": "baselines|naive|naive|nights_m",
+          "weight": 0.6598058499209625,
+          "point": 147.41726190476192
+        },
+        {
+          "pool_candidate": "baselines|trailing4|trailing4|nights_m",
+          "weight": 0.21213720091843655,
+          "point": 146.32917668981025
+        }
+      ]
+    },
+    "live_3Q26_gbv_musd": {
+      "scheme_used": "stack_shrunk",
+      "mix_beats_best_single_both_windows": false,
+      "point": 26549.7639,
+      "mixture_sd": 853.209,
+      "q10": 25456.3325,
+      "q90": 27643.1952,
+      "conformal": {
+        "n_residuals": 14,
+        "qhat": 1505.5055198203772,
+        "caveat": "EXCHANGEABILITY VIOLATED: residuals are a time-ordered non-exchangeable sequence (expanding-window refits, a trending target, and a regime change at the 2022 reopening); conformal coverage here is descriptive, not a guarantee.",
+        "n_cal": 8,
+        "k": 8,
+        "attainable_lo": 0.8888888888888888,
+        "attainable_hi": 1.0,
+        "nominal_requested": 0.8,
+        "note": "at n_cal=8, alpha=0.2 the attainable coverage band is [0.889,1.000]; there is NO 80% guarantee at this n"
+      },
+      "pool": "all",
+      "weight_coverage_of_pool": 1.0,
+      "STATUS": "OK",
+      "carried_weights": [
+        {
+          "pool_candidate": "baselines|ar1|ar1|gbv_musd",
+          "weight": 0.16666666666666666,
+          "point": 26668.499339745988
+        },
+        {
+          "pool_candidate": "baselines|naive|naive|gbv_musd",
+          "weight": 0.6666666666666666,
+          "point": 26505.531914893618
+        },
+        {
+          "pool_candidate": "baselines|trailing4|trailing4|gbv_musd",
+          "weight": 0.16666666666666666,
+          "point": 26607.956177202253
+        }
+      ]
+    },
+    "guide_mid_4Q26_on_5Nov2026": {
+      "what": "the revenue guide midpoint management gives on 5 Nov 2026 for 4Q26",
+      "uncertainty_source": "optimal-mix no-guide pool, scheme top3_inv_mse, RMSE in percent of level on W1 (the wider of W1/W2 is used)",
+      "predictive_sd_pct": 2.73,
+      "central_gbv_3Q26_musd": 26300,
+      "central_cases": [
+        {
+          "spec": "gbv26300|fee_none",
+          "print_musd": 3199.9,
+          "guide_mid_musd": 3141.6,
+          "guide_sd_musd": 85.8,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3115.0,
+          "guide_range_hi_musd": 3168.0,
+          "p_guide_below_zacks_3200": 0.752,
+          "p_guide_below_av36_3158": 0.576
+        },
+        {
+          "spec": "gbv26300|fee_half_weight",
+          "print_musd": 3239.9,
+          "guide_mid_musd": 3180.9,
+          "guide_sd_musd": 86.9,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3154.0,
+          "guide_range_hi_musd": 3208.0,
+          "p_guide_below_zacks_3200": 0.587,
+          "p_guide_below_av36_3158": 0.396
+        },
+        {
+          "spec": "gbv26300|fee_full_weight",
+          "print_musd": 3279.9,
+          "guide_mid_musd": 3220.1,
+          "guide_sd_musd": 88.0,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3193.0,
+          "guide_range_hi_musd": 3248.0,
+          "p_guide_below_zacks_3200": 0.409,
+          "p_guide_below_av36_3158": 0.24
+        }
+      ],
+      "full_grid": [
+        {
+          "spec": "gbv25900|fee_none",
+          "print_musd": 3167.8,
+          "guide_mid_musd": 3110.1,
+          "guide_sd_musd": 85.0,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3084.0,
+          "guide_range_hi_musd": 3137.0,
+          "p_guide_below_zacks_3200": 0.855,
+          "p_guide_below_av36_3158": 0.714
+        },
+        {
+          "spec": "gbv25900|fee_half_weight",
+          "print_musd": 3207.4,
+          "guide_mid_musd": 3149.0,
+          "guide_sd_musd": 86.0,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3122.0,
+          "guide_range_hi_musd": 3176.0,
+          "p_guide_below_zacks_3200": 0.723,
+          "p_guide_below_av36_3158": 0.542
+        },
+        {
+          "spec": "gbv25900|fee_full_weight",
+          "print_musd": 3247.0,
+          "guide_mid_musd": 3187.9,
+          "guide_sd_musd": 87.1,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3161.0,
+          "guide_range_hi_musd": 3215.0,
+          "p_guide_below_zacks_3200": 0.555,
+          "p_guide_below_av36_3158": 0.366
+        },
+        {
+          "spec": "gbv26185|fee_none",
+          "print_musd": 3190.7,
+          "guide_mid_musd": 3132.5,
+          "guide_sd_musd": 85.6,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3106.0,
+          "guide_range_hi_musd": 3159.0,
+          "p_guide_below_zacks_3200": 0.785,
+          "p_guide_below_av36_3158": 0.617
+        },
+        {
+          "spec": "gbv26185|fee_half_weight",
+          "print_musd": 3230.6,
+          "guide_mid_musd": 3171.7,
+          "guide_sd_musd": 86.7,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3145.0,
+          "guide_range_hi_musd": 3199.0,
+          "p_guide_below_zacks_3200": 0.628,
+          "p_guide_below_av36_3158": 0.437
+        },
+        {
+          "spec": "gbv26185|fee_full_weight",
+          "print_musd": 3270.5,
+          "guide_mid_musd": 3210.9,
+          "guide_sd_musd": 87.7,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3184.0,
+          "guide_range_hi_musd": 3238.0,
+          "p_guide_below_zacks_3200": 0.451,
+          "p_guide_below_av36_3158": 0.273
+        },
+        {
+          "spec": "gbv26300|fee_none",
+          "print_musd": 3199.9,
+          "guide_mid_musd": 3141.6,
+          "guide_sd_musd": 85.8,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3115.0,
+          "guide_range_hi_musd": 3168.0,
+          "p_guide_below_zacks_3200": 0.752,
+          "p_guide_below_av36_3158": 0.576
+        },
+        {
+          "spec": "gbv26300|fee_half_weight",
+          "print_musd": 3239.9,
+          "guide_mid_musd": 3180.9,
+          "guide_sd_musd": 86.9,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3154.0,
+          "guide_range_hi_musd": 3208.0,
+          "p_guide_below_zacks_3200": 0.587,
+          "p_guide_below_av36_3158": 0.396
+        },
+        {
+          "spec": "gbv26300|fee_full_weight",
+          "print_musd": 3279.9,
+          "guide_mid_musd": 3220.1,
+          "guide_sd_musd": 88.0,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3193.0,
+          "guide_range_hi_musd": 3248.0,
+          "p_guide_below_zacks_3200": 0.409,
+          "p_guide_below_av36_3158": 0.24
+        },
+        {
+          "spec": "gbv26600|fee_none",
+          "print_musd": 3224.0,
+          "guide_mid_musd": 3165.2,
+          "guide_sd_musd": 86.5,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3138.0,
+          "guide_range_hi_musd": 3192.0,
+          "p_guide_below_zacks_3200": 0.656,
+          "p_guide_below_av36_3158": 0.467
+        },
+        {
+          "spec": "gbv26600|fee_half_weight",
+          "print_musd": 3264.3,
+          "guide_mid_musd": 3204.8,
+          "guide_sd_musd": 87.6,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3178.0,
+          "guide_range_hi_musd": 3232.0,
+          "p_guide_below_zacks_3200": 0.478,
+          "p_guide_below_av36_3158": 0.297
+        },
+        {
+          "spec": "gbv26600|fee_full_weight",
+          "print_musd": 3304.6,
+          "guide_mid_musd": 3244.3,
+          "guide_sd_musd": 88.6,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3217.0,
+          "guide_range_hi_musd": 3272.0,
+          "p_guide_below_zacks_3200": 0.308,
+          "p_guide_below_av36_3158": 0.165
+        },
+        {
+          "spec": "gbv27000|fee_none",
+          "print_musd": 3256.1,
+          "guide_mid_musd": 3196.7,
+          "guide_sd_musd": 87.3,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3170.0,
+          "guide_range_hi_musd": 3224.0,
+          "p_guide_below_zacks_3200": 0.515,
+          "p_guide_below_av36_3158": 0.329
+        },
+        {
+          "spec": "gbv27000|fee_half_weight",
+          "print_musd": 3296.8,
+          "guide_mid_musd": 3236.7,
+          "guide_sd_musd": 88.4,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3209.0,
+          "guide_range_hi_musd": 3264.0,
+          "p_guide_below_zacks_3200": 0.339,
+          "p_guide_below_av36_3158": 0.187
+        },
+        {
+          "spec": "gbv27000|fee_full_weight",
+          "print_musd": 3337.5,
+          "guide_mid_musd": 3276.6,
+          "guide_sd_musd": 89.5,
+          "guide_sd_pct": 2.73,
+          "guide_range_lo_musd": 3249.0,
+          "guide_range_hi_musd": 3304.0,
+          "p_guide_below_zacks_3200": 0.196,
+          "p_guide_below_av36_3158": 0.093
+        }
+      ],
+      "headline": "no fee step and half-weight fee step bracket the answer; the full-weight case is excluded because fee-takerate measures theta below 1 and the migrated-cohort GBV falls",
+      "kernel_lambda_live_4q26_print_musd": 3199.9248409568936,
+      "consensus_disagrees_with_itself_musd": 126.0,
+      "say_first": "consensus disagrees with itself by 126 musd -- Zacks' own quarterly sum 14,226 against its own FY26 14,100 -- which is larger than our edge"
+    },
+    "FY27": {
+      "what": "FY27 revenue and the Feb-2027 FY27 guide",
+      "fy27_revenue_musd_kernel_w_two_thirds": 15837.6,
+      "fy27_revenue_musd_kernel_w_050": 15779.5,
+      "fy27_revenue_musd_kernel_w_033": 15720.3,
+      "fy27_growth_pct": 11.52,
+      "kernel_weight_sensitivity_musd": 117.3,
+      "kernel_weight_sensitivity_growth_pp": 2.34,
+      "street_fy27_musd_range": [
+        15730.0,
+        15760.0
+      ],
+      "street_as_of": "2026-09-04",
+      "vs_street_pct": 0.59,
+      "street_implied_fy27_growth_pct": 11.43,
+      "our_growth_minus_street_growth_pp": 0.09,
+      "decomposition_one_owner_per_line": [
+        {
+          "line": "volume: na nights",
+          "pp": 2.34,
+          "owner": "l1-reconciliation",
+          "basis": "estimated"
+        },
+        {
+          "line": "volume: emea nights",
+          "pp": 2.9,
+          "owner": "l1-reconciliation",
+          "basis": "estimated"
+        },
+        {
+          "line": "volume: latam nights",
+          "pp": 1.6,
+          "owner": "l1-reconciliation",
+          "basis": "estimated"
+        },
+        {
+          "line": "volume: apac nights",
+          "pp": 1.41,
+          "owner": "l1-reconciliation",
+          "basis": "estimated"
+        },
+        {
+          "line": "price: within-region ADR ex-FX (l-f-l + sub-regional mix, unsplit)",
+          "pp": 3.0,
+          "owner": "l1-reconciliation",
+          "basis": "estimated"
+        },
+        {
+          "line": "geographic mix (OUTPUT of the share identity)",
+          "pp": -1.09,
+          "owner": "l1-reconciliation",
+          "basis": "output"
+        },
+        {
+          "line": "unit size and LOS (bedroom elasticity 0.23)",
+          "pp": 0.38,
+          "owner": "l1-reconciliation",
+          "basis": "estimated"
+        },
+        {
+          "line": "seats and hotel dilution (OUTPUT of N = home + hotel + seats)",
+          "pp": 0.0,
+          "owner": "l1-reconciliation",
+          "basis": "output"
+        },
+        {
+          "line": "booking-date FX carried through Phi",
+          "pp": 0.0,
+          "owner": "l1-reconciliation",
+          "basis": "estimated"
+        },
+        {
+          "line": "fee / take-rate mechanism (half weight)",
+          "pp": 0.9,
+          "owner": "fee-takerate / kernel-lambda",
+          "basis": "assumed_not_rebuilt_tonight"
+        },
+        {
+          "line": "new lines",
+          "pp": 0.2,
+          "owner": "fee-takerate / kernel-lambda",
+          "basis": "assumed_not_rebuilt_tonight"
+        },
+        {
+          "line": "regulation",
+          "pp": -0.3,
+          "owner": "fee-takerate / kernel-lambda",
+          "basis": "assumed_not_rebuilt_tonight"
+        },
+        {
+          "line": "hedge (dollars, added ONCE by kernel-lambda)",
+          "pp": 0.0,
+          "owner": "fee-takerate / kernel-lambda",
+          "basis": "assumed_not_rebuilt_tonight"
+        },
+        {
+          "line": "kernel timing (revenue is a convolution of LAGGED GBV)",
+          "pp": 0.17,
+          "owner": "kernel-lambda",
+          "basis": "identity"
+        }
+      ],
+      "fx_term_from_fx_lag_pp": 0.2,
+      "fx_term_note": "fx-lag: FY27 FX is the revenue-weighted AVERAGE of the four quarterly y/y contributions, +0.2pp on spot held; the sum 0.9 is meaningless. Inside the decomposition the booking-date FX line stays 0.0 because it is already in the lagged GBV base; +0.2pp is the stated-series reading, not a second subtraction",
+      "fee_line_delta_from_fee_takerate_pp": -0.3135,
+      "fee_line_note": "fee-takerate at central theta 0.833 makes the +0.9pp half-weight fee line 0.31pp too generous",
+      "feb_2027_fy27_guide_note": "ABNB does not guide FY revenue as a point; the Feb-2027 call gives a 1Q27 revenue range plus qualitative FY colour. The comparable object is the 1Q27 guide midpoint, carried in l1_unregistered_fy27_revenue.csv",
+      "say_in_first_200_words": "our FY27 is +0.59% against the Street, inside the kernel's own walk-forward error, so the variant view is compositional and about the guide, not the level"
+    },
+    "forward_multiple_implication": {
+      "rule": "+0.48 EV/EBITDA turns per point of forward revenue growth, applied ONCE",
+      "applied_to": "our FY27 growth minus the Street-implied FY27 growth",
+      "growth_edge_pp": 0.09,
+      "ev_ebitda_turns": 0.045,
+      "kernel_weight_sensitivity_turns": 1.125,
+      "interpretation": "this is an IMPLICATION, not a price target. The honest reading is that the kernel-weight indeterminacy (w in 0.33 to 0.667) is worth roughly 25x more multiple than our level edge over the Street, which is why the pitch is about the GUIDE and the composition, not about the FY27 level",
+      "not_applied_twice": "the turn factor is applied once, to the growth delta only"
+    }
+  }
+}

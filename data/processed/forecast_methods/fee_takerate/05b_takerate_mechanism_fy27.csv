@@ -1,0 +1,28 @@
+mechanism,case,fy27_bps,source,ltm_take_base_pct
+single_fee_migration,lo,23.368157746706142,fee_schedule.fee(); share path from 06_fee_timeline.csv letters,13.198595787362086
+single_fee_migration,central,23.737421657494416,fee_schedule.fee(); share path from 06_fee_timeline.csv letters,13.198595787362086
+single_fee_migration,hi,27.941480547156388,fee_schedule.fee(); share path from 06_fee_timeline.csv letters,13.198595787362086
+fx_cross_currency_service_fee,lo,0.0,currency-conversion fee on cross-currency bookings; not separately disclosed; band judgemental,13.198595787362086
+fx_cross_currency_service_fee,central,2.0,currency-conversion fee on cross-currency bookings; not separately disclosed; band judgemental,13.198595787362086
+fx_cross_currency_service_fee,hi,5.0,currency-conversion fee on cross-currency bookings; not separately disclosed; band judgemental,13.198595787362086
+hotels_dilution_11pct_take,lo,-3.0,2026 Summer Release boutique/independent hotels at ~11 % take; assumed 0.3-0.8 % of FY27 GBV,13.198595787362086
+hotels_dilution_11pct_take,central,-2.0,2026 Summer Release boutique/independent hotels at ~11 % take; assumed 0.3-0.8 % of FY27 GBV,13.198595787362086
+hotels_dilution_11pct_take,hi,-1.0,2026 Summer Release boutique/independent hotels at ~11 % take; assumed 0.3-0.8 % of FY27 GBV,13.198595787362086
+experiences_20pct_take,lo,1.0,Experiences at ~20 % take on ~0.3-0.7 % of GBV,13.198595787362086
+experiences_20pct_take,central,2.0,Experiences at ~20 % take on ~0.3-0.7 % of GBV,13.198595787362086
+experiences_20pct_take,hi,4.0,Experiences at ~20 % take on ~0.3-0.7 % of GBV,13.198595787362086
+services_15pct_take,lo,-1.0,"Services at ~15 % take, i.e. at the blended single-fee rate; ~neutral by construction",13.198595787362086
+services_15pct_take,central,0.0,"Services at ~15 % take, i.e. at the blended single-fee rate; ~neutral by construction",13.198595787362086
+services_15pct_take,hi,1.0,"Services at ~15 % take, i.e. at the blended single-fee rate; ~neutral by construction",13.198595787362086
+ads_outside_gbv,lo,0.0,"sponsored listings add revenue with no GBV, so they raise the printed ratio; not disclosed",13.198595787362086
+ads_outside_gbv,central,2.0,"sponsored listings add revenue with no GBV, so they raise the printed ratio; not disclosed",13.198595787362086
+ads_outside_gbv,hi,5.0,"sponsored listings add revenue with no GBV, so they raise the printed ratio; not disclosed",13.198595787362086
+rnpl_timing_not_take,lo,0.0,"reserve-now-pay-later is a RECOGNITION timing effect; zero by construction, flagged not modelled",13.198595787362086
+rnpl_timing_not_take,central,0.0,"reserve-now-pay-later is a RECOGNITION timing effect; zero by construction, flagged not modelled",13.198595787362086
+rnpl_timing_not_take,hi,0.0,"reserve-now-pay-later is a RECOGNITION timing effect; zero by construction, flagged not modelled",13.198595787362086
+direct_link_pilot_6_10pct,lo,-15.0,6-10 % direct-link pilot; 0 to 15 bp of FY27 take rate. The -0.8 pt figure elsewhere is STRUCK,13.198595787362086
+direct_link_pilot_6_10pct,central,-5.0,6-10 % direct-link pilot; 0 to 15 bp of FY27 take rate. The -0.8 pt figure elsewhere is STRUCK,13.198595787362086
+direct_link_pilot_6_10pct,hi,0.0,6-10 % direct-link pilot; 0 to 15 bp of FY27 take rate. The -0.8 pt figure elsewhere is STRUCK,13.198595787362086
+TOTAL,central,22.737421657494416,,13.198595787362086
+TOTAL,hi,41.94148054715639,,13.198595787362086
+TOTAL,lo,5.368157746706142,,13.198595787362086

@@ -1,0 +1,283 @@
+<title>ABNB Final Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F4F6; --card:#FFFFFF; --ink:#0B1218; --ink-2:#22303C; --muted:#3F4F5C; --line:#B9C4CE;
+  --red:#C8102E; --red-ink:#A50E24; --blue:#2F63A8; --blue-ink:#1F4E8C; --green:#0F6B3F; --amber:#B7791F; --axis:#5C6B78;
+  --tint-red:#FCE3E5; --tint-blue:#E1EAF6; --tint-green:#DCF0E5; --tint-amber:#FBEFD6; --tint-grey:#E8EDF1;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:66rem;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:28px 96px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:clamp(30px,4.4vw,44px);line-height:1.08;margin:6px 0 10px;letter-spacing:-.01em;text-wrap:balance}
+.dek{font-size:18px;color:var(--ink-2);max-width:68ch;margin:0 0 26px}
+section{margin:44px 0 0}
+h2{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:clamp(22px,2.8vw,28px);line-height:1.2;margin:0 0 4px;text-wrap:balance}
+h2 .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;color:var(--red-ink);letter-spacing:.08em;margin-right:10px;vertical-align:middle}
+.claim{color:var(--ink-2);font-size:16px;margin:0 0 12px;max-width:72ch}
+figure{margin:0;padding:18px 18px 12px;background:var(--card);border:1px solid var(--line)}
+figure svg{display:block;width:100%;height:auto;color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif}
+figure svg .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+figcaption{margin-top:12px;font-size:15.5px;color:var(--ink-2);max-width:80ch;line-height:1.5}
+figcaption b{color:var(--ink)}
+.eq{background:var(--card);border:1px solid var(--line);padding:16px 20px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:14.5px;line-height:1.7;overflow-x:auto;margin:12px 0 0}
+.eq .c{color:var(--muted)}
+.eq .r{color:var(--red-ink);font-weight:600}
+.chip{display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:2px;border:1px solid;white-space:nowrap;margin-right:4px}
+.chip.red{color:var(--red-ink);background:var(--tint-red);border-color:var(--red)}
+.chip.blue{color:var(--blue-ink);background:var(--tint-blue);border-color:var(--blue)}
+.chip.green{color:var(--green);background:var(--tint-green);border-color:var(--green)}
+.chip.amber{color:var(--amber);background:var(--tint-amber);border-color:var(--amber)}
+.chip.grey{color:var(--ink-2);background:var(--tint-grey);border-color:var(--line)}
+.table-wrap{overflow-x:auto;margin:12px 0 0;border:1px solid var(--line);background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--tint-grey)}
+tbody tr:last-child td{border-bottom:0}
+td.k{font-weight:600;white-space:nowrap}
+tr.f td{background:var(--tint-red)}
+.one{margin:44px 0 0;padding:22px 24px;background:var(--card);border-left:6px solid var(--red);font-family:"IBM Plex Serif",Georgia,serif;font-size:20px;line-height:1.4}
+.one small{display:block;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:14.5px;color:var(--ink-2);margin-top:10px;line-height:1.5}
+footer{margin-top:50px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+</style>
+
+<div class="wrap">
+<div class="eyebrow">Citadel-ABNB · final plan · 11 Sep 2026 · prelim memo due 2 Oct · finals 22–24 Oct · Q3 print 5 Nov</div>
+<h1>The plan: from booked GBV to a price view, with RNPL in the loop</h1>
+<p class="dek">Five pictures. The chain the pitch runs on, where RNPL enters it, what the pitch says, where each alpha sits, and the work between now and the print.</p>
+
+<!-- ============ 1 CHAIN WITH RNPL ============ -->
+<section>
+<h2><span class="n">1</span>The chain — and the three places RNPL touches it</h2>
+<p class="claim">Reserve Now, Pay Later is ~21% of GBV. The guest books with no cash down, so bookings and nights show up in the KPIs before any money does, and they cancel more often.</p>
+<figure>
+<svg viewBox="0 0 1120 470" role="img" aria-label="A left-to-right chain from booked GBV through the kernel to revenue, guide, Street gap, multiple and price, with an RNPL box above it sending three arrows down: it inflates booked GBV and nights, it leaks from the kernel through cancellations, and it laps in the third quarter of 2026 and first quarter of 2027. Below the chain, labels mark where each alpha thesis sits.">
+  <defs><marker id="p1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+  <marker id="p1r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--red)"/></marker></defs>
+  <!-- RNPL box -->
+  <rect x="330" y="22" width="460" height="64" fill="var(--tint-red)" stroke="var(--red)" stroke-width="2.5"/>
+  <text x="560" y="49" font-size="18" font-weight="600" text-anchor="middle" style="fill:var(--red-ink)">RNPL — Reserve Now, Pay Later</text>
+  <text x="560" y="71" font-size="14" text-anchor="middle">~21% of GBV · no cash at booking · "higher cancellation rates" (2Q26 10-Q)</text>
+  <!-- chain boxes y=230 h=74 -->
+  <g stroke="currentColor" stroke-width="1.6" fill="var(--card)">
+    <rect x="20" y="230" width="160" height="74"/>
+    <rect x="228" y="230" width="140" height="74"/>
+    <rect x="416" y="230" width="140" height="74"/>
+    <rect x="604" y="230" width="130" height="74"/>
+    <rect x="782" y="230" width="140" height="74" stroke="var(--blue)" stroke-width="2"/>
+    <rect x="970" y="230" width="130" height="74"/>
+  </g>
+  <g font-size="16" font-weight="600" text-anchor="middle">
+    <text x="100" y="262">Booked GBV</text><text x="100" y="284" font-size="13" font-weight="400">printed each quarter</text>
+    <text x="298" y="262">Kernel λ</text><text x="298" y="284" font-size="13" font-weight="400">⅔ / ⅓ · 0.17pp range</text>
+    <text x="486" y="262">Revenue</text><text x="486" y="284" font-size="13" font-weight="400">converted, not forecast</text>
+    <text x="669" y="262">Guide</text><text x="669" y="284" font-size="13" font-weight="400">÷ (1 + 1.86 %)</text>
+    <text x="852" y="262" style="fill:var(--blue-ink)">Street gap</text><text x="852" y="284" font-size="13" font-weight="400">vendor-stamped</text>
+    <text x="1035" y="262">Multiple</text><text x="1035" y="284" font-size="13" font-weight="400">+0.48 turns / pt</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.6" marker-end="url(#p1)" fill="none">
+    <line x1="180" y1="267" x2="228" y2="267"/><line x1="368" y1="267" x2="416" y2="267"/><line x1="556" y1="267" x2="604" y2="267"/><line x1="734" y1="267" x2="782" y2="267"/><line x1="922" y1="267" x2="970" y2="267"/>
+  </g>
+  <!-- RNPL arrows down -->
+  <g stroke="var(--red)" stroke-width="2" marker-end="url(#p1r)" fill="none">
+    <path d="M400,86 C300,120 140,150 100,228"/>
+    <path d="M540,86 C480,130 330,160 298,228"/>
+    <path d="M720,86 C760,130 700,170 669,228"/>
+  </g>
+  <!-- RNPL effect labels -->
+  <g font-size="13.5">
+    <text x="24" y="120" font-weight="600" style="fill:var(--red-ink)">1 · Inflates GBV and nights</text>
+    <text x="24" y="139">bundle worth +3 pts nights / +4 pts GBV (1Q26)</text>
+    <text x="24" y="157">unpaid share of backlog: +2.0 → +8.1 → +9.7pp</text>
+    <text x="24" y="175">re-based nights: 3Q26 +9.3 %, 4Q26 +7.6 %</text>
+    <text x="330" y="135" font-weight="600" style="fill:var(--red-ink)">2 · Leaks from the kernel</text>
+    <text x="330" y="154">cancels before check-in: −0.2 to −1.4 % of the carried base</text>
+    <text x="330" y="172">= −$8M to −$67M on 3Q26 revenue</text>
+    <text x="330" y="190">λ control: Q3 &lt; 17.09 % warn · &lt; 16.93 % escalate</text>
+    <text x="690" y="120" font-weight="600" style="fill:var(--red-ink)">3 · Laps in the guide</text>
+    <text x="690" y="139">US launch 3Q25 → lapped 3Q26 (pays the tail)</text>
+    <text x="690" y="157">UK / APAC / CA Feb–Mar 26 → lapped 1Q27</text>
+    <text x="690" y="175">Q4 nights word "high single digit" is the tell</text>
+  </g>
+  <!-- alpha labels below -->
+  <line x1="20" y1="330" x2="1100" y2="330" stroke="var(--axis)" stroke-dasharray="4 4"/>
+  <text x="20" y="352" font-size="12.5" class="mono" style="fill:var(--muted)">WHERE EACH ALPHA SITS</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="30" y="365" width="140" height="44" fill="var(--tint-green)" stroke="var(--green)"/><text x="100" y="384" font-weight="600" style="fill:var(--green)">C · GBV nowcast</text><text x="100" y="401" font-size="12">97 % of the variance</text>
+    <rect x="228" y="365" width="140" height="44" fill="var(--tint-red)" stroke="var(--red)"/><text x="298" y="384" font-weight="600" style="fill:var(--red-ink)">D / F · λ &amp; RNPL</text><text x="298" y="401" font-size="12">monitor + short bias</text>
+    <rect x="604" y="365" width="130" height="44" fill="var(--tint-green)" stroke="var(--green)"/><text x="669" y="384" font-weight="600" style="fill:var(--green)">A · guide surprise</text><text x="669" y="401" font-size="12">into each print</text>
+    <rect x="782" y="365" width="140" height="44" fill="var(--tint-blue)" stroke="var(--blue)"/><text x="852" y="384" font-weight="600" style="fill:var(--blue-ink)">B · term structure</text><text x="852" y="401" font-size="12">1–3 month drift</text>
+    <rect x="960" y="365" width="150" height="44" fill="var(--tint-amber)" stroke="var(--amber)"/><text x="1035" y="384" font-weight="600" style="fill:var(--amber)">THE PITCH</text><text x="1035" y="401" font-size="12">18x pays for arithmetic</text>
+  </g>
+  <text x="560" y="450" font-size="14" text-anchor="middle">E · the same chain on NCLH / BKNG / EXPE proves it is a method, not an Airbnb coincidence</text>
+</svg>
+<figcaption><b>Read it left to right:</b> printed bookings become revenue through a ratio that barely moves, the guide is that revenue over a shrinking cushion, and the stock moves on the gap between the guide and what the Street expected. <b>RNPL bends the chain three times:</b> it puts bookings and nights into the KPIs before cash arrives, it removes some of them before check-in, and its launch dates set when the comparisons get hard. The Street's models see the first effect as demand and miss the other two.</figcaption>
+</figure>
+
+<div class="eq">
+<span class="c"># RNPL as a variable — how it enters the model</span><br>
+GBV_reported(q)  = GBV_paid(q) + <span class="r">GBV_unpaid_RNPL(q)</span>                     <span class="c"># unpaid share u = 6–16 % of the backlog ($1.6–4.7bn; 7–19M live unpaid nights at 30 Jun 26)</span><br>
+Backlog(q)       = unearned_fees + funds_payable  <span class="c">(paid)</span>  + <span class="r">U(q)</span>  <span class="c">(unpaid)</span>   <span class="c"># excess unpaid share vs pre-RNPL norm: +2.0 (4Q25) → +8.1 (1Q26) → +9.7pp (2Q26)</span><br>
+Revenue(q)       = c_s · Σ_k φ_k · GBV(q−k) · (1 − <span class="r">L(q)</span>)               <span class="c"># L = s_RNPL × Δcancel ≈ 0.2–1.4 % → −$8M to −$67M on 3Q26</span><br>
+Nights_reported  = Nights_underlying + <span class="r">pull-forward</span> − <span class="r">cancellation tail</span>       <span class="c"># 3Q26 +9.3 % (band 8.8–9.8) vs team +9.9 %; 4Q26 +7.6 % vs +8.9 %</span><br>
+λ_Q3(2026)       = Revenue_3Q26 ÷ $27,867M                                    <span class="c"># &lt; 17.09 % (rev &lt; $4,761M) warning · &lt; 16.93 % ($4,719M) escalate</span><br>
+Score on 5 Nov   : funds_payable y/y (+5 to +11 % = deferral on schedule) · stated cancellation language · bundle figure restated?<br>
+<span class="c"># open check: K1 reads the 10-K as unearned fees FX-clean / funds payable FX-confounded — verify before either goes on the card</span>
+</div>
+</section>
+
+<!-- ============ 2 RNPL EVIDENCE ============ -->
+<section>
+<h2><span class="n">2</span>The RNPL footprint is already in the balance sheet</h2>
+<p class="claim">Two pictures from Airbnb's own numbers: the growing share of the backlog that has not been paid for, and how little of next quarter's revenue is actually paid when the quarter starts.</p>
+<figure>
+<svg viewBox="0 0 980 320" role="img" aria-label="Left: bars showing the excess unpaid share of Airbnb's booking backlog rising from 2.0 points in fourth quarter 2025 to 8.1 in first quarter 2026 and 9.7 in second quarter 2026. Right: stacked bars for third and fourth quarter revenue split into paid, booked but unpaid, and not yet booked.">
+  <!-- left: excess unpaid share -->
+  <text x="40" y="34" font-size="16" font-weight="600">Excess unpaid share of the backlog (pp vs pre-RNPL norm)</text>
+  <line x1="60" y1="260" x2="440" y2="260" stroke="var(--axis)" stroke-width="1.5"/>
+  <rect x="90" y="230" width="80" height="30" fill="var(--red)"/><text x="130" y="220" font-size="16" font-weight="600" text-anchor="middle" class="mono">+2.0</text><text x="130" y="282" font-size="14" text-anchor="middle">4Q25</text>
+  <rect x="210" y="138" width="80" height="122" fill="var(--red)"/><text x="250" y="128" font-size="16" font-weight="600" text-anchor="middle" class="mono">+8.1</text><text x="250" y="282" font-size="14" text-anchor="middle">1Q26</text>
+  <rect x="330" y="114" width="80" height="146" fill="var(--red)"/><text x="370" y="104" font-size="16" font-weight="600" text-anchor="middle" class="mono">+9.7</text><text x="370" y="282" font-size="14" text-anchor="middle">2Q26</text>
+  <text x="250" y="308" font-size="13" text-anchor="middle">inside the solved range u = 6–16 % · the bookings are counted; the cash is not there yet</text>
+  <!-- right: paid / unpaid / not yet booked -->
+  <text x="720" y="34" font-size="16" font-weight="600" text-anchor="middle">Next quarter's revenue, at quarter start</text>
+  <!-- Q3 bar: paid 35 / unpaid 32.4 / not booked 32.6 ; total 200px from y=60 to 260 -->
+  <rect x="560" y="60" width="110" height="65" fill="var(--tint-grey)" stroke="var(--axis)" stroke-dasharray="5 4"/>
+  <rect x="560" y="125" width="110" height="65" fill="var(--tint-red)" stroke="var(--red)"/>
+  <rect x="560" y="190" width="110" height="70" fill="var(--green)"/>
+  <text x="615" y="282" font-size="14" text-anchor="middle" font-weight="600">Q3</text>
+  <!-- Q4 bar: paid 30.3 / unpaid 27.4 / not booked 42.3 -->
+  <rect x="770" y="60" width="110" height="85" fill="var(--tint-grey)" stroke="var(--axis)" stroke-dasharray="5 4"/>
+  <rect x="770" y="145" width="110" height="55" fill="var(--tint-red)" stroke="var(--red)"/>
+  <rect x="770" y="200" width="110" height="60" fill="var(--green)"/>
+  <text x="825" y="282" font-size="14" text-anchor="middle" font-weight="600">Q4</text>
+  <!-- labels -->
+  <g font-size="13.5">
+    <text x="615" y="97" text-anchor="middle">not yet booked 33 %</text>
+    <text x="615" y="162" text-anchor="middle" style="fill:var(--red-ink)">booked, unpaid 32 %</text>
+    <text x="615" y="230" text-anchor="middle" fill="#fff" font-weight="600">paid 35 %</text>
+    <text x="825" y="107" text-anchor="middle">not yet booked 42 %</text>
+    <text x="825" y="177" text-anchor="middle" style="fill:var(--red-ink)">booked, unpaid 27 %</text>
+    <text x="825" y="235" text-anchor="middle" fill="#fff" font-weight="600">paid 30 %</text>
+  </g>
+  <text x="720" y="308" font-size="13" text-anchor="middle">the red band is where RNPL lives — bookings the KPIs already count</text>
+</svg>
+<figcaption><b>Left:</b> since RNPL scaled, the part of the backlog with no cash behind it has grown by ~10 points. <b>Right:</b> going into a quarter, only 30–35% of its revenue is paid; roughly the same again is booked but unpaid; 33–42% hasn't been booked at all. <b>Why it is an alpha:</b> the Street counts the red band as demand and as take-rate upside; the ledger says it cancels more and that 3Q26 is the quarter that laps the US launch and pays the tail.</figcaption>
+</figure>
+</section>
+
+<!-- ============ 3 THE PITCH ============ -->
+<section>
+<h2><span class="n">3</span>What the pitch says</h2>
+<p class="claim">Recommended direction: <b>short</b>, pending the team's valuation reconciliation. The multiple went 13.3x → 18.2x on a re-acceleration story; the ledger says FY27 growth is ~10% for mechanical reasons.</p>
+<figure>
+<svg viewBox="0 0 980 360" role="img" aria-label="A price ladder from 130 to 230 dollars with spot at 182, the base target at 157, a bear band at 140 to 152 and a bull band at 205 to 215, each with a probability; beside it a timeline of three catalysts with the tells to watch at each.">
+  <!-- ladder axis x=120 -->
+  <line x1="120" y1="40" x2="120" y2="300" stroke="var(--axis)" stroke-width="1.5"/>
+  <g font-size="12" class="mono" text-anchor="end">
+    <text x="112" y="304">$130</text><text x="112" y="256">$150</text><text x="112" y="208">$170</text><text x="112" y="160">$190</text><text x="112" y="112">$210</text><text x="112" y="64">$230</text>
+  </g>
+  <g stroke="var(--axis)"><line x1="116" y1="300" x2="124" y2="300"/><line x1="116" y1="252" x2="124" y2="252"/><line x1="116" y1="204" x2="124" y2="204"/><line x1="116" y1="156" x2="124" y2="156"/><line x1="116" y1="108" x2="124" y2="108"/><line x1="116" y1="60" x2="124" y2="60"/></g>
+  <!-- bull band 205-215 -> y = 300-(p-130)*2.4 : 215->96, 205->120 -->
+  <rect x="130" y="96" width="220" height="24" fill="var(--tint-green)" stroke="var(--green)"/>
+  <text x="240" y="113" font-size="14" text-anchor="middle" style="fill:var(--green)" font-weight="600">bull $205–215 · P 0.35 · +15 %</text>
+  <!-- spot 182 -> y=175.2 -->
+  <line x1="130" y1="175" x2="350" y2="175" stroke="currentColor" stroke-width="2.5"/>
+  <text x="240" y="168" font-size="15" text-anchor="middle" font-weight="600">spot $182 (4 Sep)</text>
+  <!-- base 157 -> y=235.2 -->
+  <line x1="130" y1="235" x2="350" y2="235" stroke="var(--red)" stroke-width="3"/>
+  <text x="240" y="228" font-size="15" text-anchor="middle" font-weight="600" style="fill:var(--red-ink)">base target $157 · −14 %</text>
+  <!-- bear band 140-152 -> 152->247, 140->276 -->
+  <rect x="130" y="247" width="220" height="29" fill="var(--tint-red)" stroke="var(--red)"/>
+  <text x="240" y="266" font-size="14" text-anchor="middle" style="fill:var(--red-ink)" font-weight="600">bear $140–152 · P 0.30 · −20 %</text>
+  <text x="240" y="330" font-size="13" text-anchor="middle">base P 0.35 · football field 13.5 / 16.5 / 18.5x · EV ≈ −5 % to −8 % vs spot</text>
+  <text x="240" y="348" font-size="13" text-anchor="middle">to reconcile: memo v0's $170–185 "base" was an event-move analogue, not a value</text>
+  <!-- catalyst timeline -->
+  <line x1="430" y1="90" x2="950" y2="90" stroke="var(--axis)" stroke-width="2"/>
+  <g fill="var(--red)"><circle cx="470" cy="90" r="9"/><circle cx="690" cy="90" r="9"/><circle cx="910" cy="90" r="9"/></g>
+  <g font-size="16" font-weight="600" text-anchor="middle">
+    <text x="470" y="66">5 Nov 2026</text><text x="690" y="66">Feb 2027</text><text x="910" y="66">May 2027</text>
+  </g>
+  <g font-size="13" text-anchor="middle">
+    <text x="470" y="120">Q3 print + Q4 guide</text>
+    <text x="470" y="142" font-weight="600">tells</text>
+    <text x="470" y="160">λ_Q3 vs 17.09 / 16.93 %</text>
+    <text x="470" y="177">take rate vs 18.10 % — read with GBV</text>
+    <text x="470" y="194">Q4 nights: "low double" or "high single"</text>
+    <text x="470" y="211">funds payable y/y · cancellation words</text>
+    <text x="470" y="228">stated FX: +3 → kernel · 0/+1 → short lag</text>
+    <text x="690" y="120">Q4 print + 1Q27 guide</text>
+    <text x="690" y="142" font-weight="600">tells</text>
+    <text x="690" y="160">1Q27 guide vs kernel (⅓ printed)</text>
+    <text x="690" y="177">global RNPL lap begins</text>
+    <text x="690" y="194">FY27 colour vs +9.2–11.5 % band</text>
+    <text x="690" y="211">take-rate path after 13 Oct migration</text>
+    <text x="910" y="120">Q1 print + 2Q27 guide</text>
+    <text x="910" y="142" font-weight="600">tells</text>
+    <text x="910" y="160">λ_Q1 with the full RNPL lap</text>
+    <text x="910" y="177">FY27 consensus revision</text>
+    <text x="910" y="194">multiple vs 13.5–18.5x band</text>
+  </g>
+  <rect x="430" y="255" width="520" height="80" fill="var(--tint-amber)" stroke="var(--amber)"/>
+  <text x="690" y="279" font-size="14" font-weight="600" text-anchor="middle" style="fill:var(--amber)">FLIP RULE — written into the memo</text>
+  <text x="690" y="300" font-size="13.5" text-anchor="middle">cover and go long if 3Q26 take rate ≥ 18.10 % on GBV ≥ $26.3bn AND Q4 nights guided "low double digit"</text>
+  <text x="690" y="320" font-size="13.5" text-anchor="middle">add if λ_Q3 &lt; 16.93 % or Q4 nights "high single digit" — the RNPL tail showing up</text>
+</svg>
+<figcaption><b>Direction:</b> short from $182 to a $157 base, because an 18x multiple is paying for growth the ledger already shows decelerating. <b>Honesty built in:</b> the bull branch is real (P 0.35) and its trigger is written down; the take-rate tell must be read together with GBV, since a lower booking view mechanically prints a higher take rate. <b>RNPL's role:</b> it is the reason the bear branch exists and the reason the 3Q26 and 1Q27 comparisons are hard.</figcaption>
+</figure>
+</section>
+
+<!-- ============ 4 ALPHA MAP ============ -->
+<section>
+<h2><span class="n">4</span>The six alphas, separated</h2>
+<p class="claim">Different information sets, so they don't double count. F is RNPL, now a thesis of its own rather than a footnote to D.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>Thesis</th><th>Information it uses</th><th>Pays when</th><th>Test status</th><th>Pass line (pre-registered)</th><th>Effort</th></tr></thead>
+<tbody>
+<tr><td class="k">A</td><td>Guide surprise — kernel guide vs Street</td><td>printed GBV, cushion, vendor-stamped consensus at print</td><td>into each print · days</td><td><span class="chip amber">untested</span></td><td>sign hit-rate ≥ 70 % on |S| &gt; 1pp, both windows</td><td>1 day</td></tr>
+<tr><td class="k">B</td><td>Term structure — kernel FY vs FY consensus</td><td>kernel q+1 / q+2 ranges, FY consensus history</td><td>between prints · 1–3 months</td><td><span class="chip amber">untested</span></td><td>predicts 60-day revision sign ≥ 70 %; corr &gt; 0.4</td><td>2 days</td></tr>
+<tr><td class="k">C</td><td>Booked-GBV nowcast</td><td>calendar pickup ≤ 90 days, RNPL-corrected unearned fees, NTTO, stays index on the residual</td><td>before the print · weeks</td><td><span class="chip grey">ledger part done</span> alt data pending Sep dumps</td><td>beats the ledger baseline on GBV, both windows, stable sign</td><td>2–4 weeks</td></tr>
+<tr><td class="k">D</td><td>λ monitor</td><td>λ by season vs band; backlog split</td><td>when conversion breaks · risk</td><td><span class="chip green">rule set</span></td><td>false-alarm rate only; 5 Nov thresholds fixed</td><td>done</td></tr>
+<tr><td class="k">E</td><td>Generalisation — NCLH / BKNG / EXPE</td><td>advance ticket sales, deferred merchant bookings</td><td>any time · a second ticker</td><td><span class="chip amber">untested</span></td><td>λ range &lt; 0.5pp and guide hit-rate ≥ 65 % on one name</td><td>3–5 days / name</td></tr>
+<tr class="f"><td class="k">F</td><td><b>RNPL — the market counts unpaid bookings as demand</b></td><td>paid vs unpaid backlog, funds payable, cancellation language, launch/lap dates, re-based nights</td><td>3Q26 lap (5 Nov) and 1Q27 lap (Feb–May) · short bias</td><td><span class="chip red">one episode</span> — evidence, not a backtest</td><td>excess unpaid share keeps rising AND λ_Q3 &lt; 17.09 % or Q4 nights "high single digit"; refuted if funds payable +5–11 % and λ inside band</td><td>1–2 days to wire; scores on 5 Nov</td></tr>
+</tbody>
+</table>
+</div>
+<p class="claim" style="margin-top:12px"><b>Why F is an alpha and not just a risk:</b> the setup already happened — reported GBV and nights ran ~4 points ahead of the paid backlog from 3Q25, the multiple expanded from 13.3x to 18.2x on that growth, and the 10-Q now says those bookings cancel more. Only one launch cycle exists, so F cannot be backtested like A or B; it is pre-registered instead, with the exact prints that would confirm or refute it.</p>
+</section>
+
+<!-- ============ 5 WORK PLAN ============ -->
+<section>
+<h2><span class="n">5</span>The work between now and the print</h2>
+<p class="claim">Ordered by what the memo needs first. Everything is copy-never-overwrite; agents can run the tests, humans make the three calls.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>When</th><th>Decision / task</th><th>Who</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td class="k">Sat–Sun 12–13 Sep</td><td><b>Decide the direction.</b> Reconcile the football field ($154–157) with the branch analogues; adopt or reject the ex-NA lap (Q4 nights 8.0–8.2 %); pick the 3Q26 GBV block for the card</td><td>Theo · Krish · Jessie</td><td>one line in the card: SHORT / LONG, target, three branch prices</td></tr>
+<tr><td class="k">Sun–Mon</td><td><b>Wire RNPL into the model as a variable</b> (equations above): unpaid share u, leakage L, re-based nights, λ control chart, funds-payable score line; resolve the FX-confound question on unearned fees vs funds payable</td><td>agent + Theo review</td><td>rnpl_v2 package · card items F1–F4</td></tr>
+<tr><td class="k">Mon 14 Sep</td><td><b>Thesis A backtest</b> (kernel guide vs consensus, 14 dates, executable returns) — decides whether the memo may claim an expectations edge</td><td>agent</td><td>ALPHA_A.md · hit-rate table</td></tr>
+<tr><td class="k">Mon–Wed</td><td><b>Thesis E on NCLH</b> (advance ticket sales kernel) — the "it's a method" exhibit</td><td>agent</td><td>ALPHA_E_NCLH.md · λ table</td></tr>
+<tr><td class="k">Mon · Tue · Thu</td><td>Fee-deadline price captures (14 / 16 / 18 Sep) · Inside Airbnb daily capture keeps running · consensus re-stamp</td><td>launchd · Theo</td><td>θ panel · manifests</td></tr>
+<tr><td class="k">Wed 17 Sep</td><td><b>Memo v1</b> — direction committed, kernel paragraph, composition paragraph, RNPL as the bear engine, flip rule, one chart, one table</td><td>Writer</td><td>deck/drafts/memo_v1.md</td></tr>
+<tr><td class="k">Fri 19 Sep</td><td>Dry-run Q&amp;A on the memo; Thesis B if A passed</td><td>team · agent</td><td>attack list answered</td></tr>
+<tr><td class="k">26 Sep</td><td><b>Freeze the card</b> ABNB-INT-v1 with the v2 numbers and the RNPL lines</td><td>team sign-off</td><td>frozen card</td></tr>
+<tr><td class="k">2 Oct</td><td>Prelim submission (2-page memo + model)</td><td>Writer</td><td>PDF + xlsx</td></tr>
+<tr><td class="k">5–21 Oct</td><td>Finals prep: Thesis C with September dumps; E on BKNG; kernel explainer as the one appendix figure</td><td>team</td><td>finals deck</td></tr>
+<tr><td class="k">5 Nov</td><td>Score the card: λ, take rate with GBV, Q4 nights word, funds payable, stated FX, bundle figure</td><td>team</td><td>6 Nov score sheet</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<div class="one">
+The pitch in one line: Airbnb's growth is largely already booked, part of it isn't paid for, and the market is paying 18x for the part that is arithmetic.
+<small>RNPL is the variable that makes the bear branch real (unpaid share +10 points, higher cancellations, laps in 3Q26 and 1Q27) and the alpha that the 5 Nov print scores first. The kernel is what lets us say which numbers are already determined — and therefore which ones the multiple should not be paying for.</small>
+</div>
+
+<footer>Sources: 05_backtests/K1_KERNEL_WEIGHTS_AND_BACKLOG.md · K2_KERNEL_FROM_LEAD_TIMES.md · B1–B4 · PREREG_ABNB-INT-v1.md · research/notes/2026-09-11_rnpl-balance-sheet-and-q3-bridge.md · overnight2/D · docs/overnight/FINAL_SUMMARY.md. Research, not investment advice.</footer>
+</div>

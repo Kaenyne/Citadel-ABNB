@@ -1,0 +1,179 @@
+{
+  "package": "L0-spine",
+  "built_at_local_date": "2026-09-11",
+  "file1_exact_regional_revenue": {
+    "geo_members": {
+      "country:FR": 8,
+      "country:US": 35,
+      "srt:AsiaPacificMember": 45,
+      "srt:LatinAmericaMember": 45,
+      "srt:NorthAmericaMember": 45,
+      "us-gaap:EMEAMember": 45,
+      "us-gaap:NonUsMember": 35
+    },
+    "other_axis_rows_excluded": 78,
+    "three_month_rows_all_axes": 116,
+    "three_month_regional_rows_before_dedup": 88,
+    "three_month_regional_rows_after_dedup": 56,
+    "annual_regional_cells": 20,
+    "q4_totals": {
+      "4Q22": 1902.0,
+      "4Q23": 2218.0,
+      "4Q24": 2480.0,
+      "4Q25": 2778.0
+    },
+    "reconciliation_max_abs_diff_musd": 0.0,
+    "reconciliation_quarters": 18,
+    "S1_within_40pct_of_own_q3_pass": 11,
+    "S1_fail_cells": [
+      {
+        "quarter": "4Q22",
+        "region": "emea",
+        "q4_over_q3": 0.4402
+      },
+      {
+        "quarter": "4Q23",
+        "region": "emea",
+        "q4_over_q3": 0.4455
+      },
+      {
+        "quarter": "4Q24",
+        "region": "emea",
+        "q4_over_q3": 0.46
+      },
+      {
+        "quarter": "4Q25",
+        "region": "emea",
+        "q4_over_q3": 0.4723
+      },
+      {
+        "quarter": "4Q25",
+        "region": "latam",
+        "q4_over_q3": 1.4936
+      }
+    ],
+    "S2_within_15pct_of_region_mean_pass": 16,
+    "crosscheck_vs_10_regional_revenue_xbrl_max_abs_musd": 0.0,
+    "crosscheck_cells": 72
+  },
+  "file2_interval_observations": {
+    "counts": {
+      "B1_bucket_cells": 28,
+      "B2_derived_cells_excluded": 14,
+      "B3_numeric_rounding_cells": 22,
+      "B4_adr_integers": 68,
+      "B5_annual_nights_cells": 24,
+      "B6_guide_ranges_total": 20,
+      "B6_guide_ranges_scoreable": 19,
+      "B7_bucket_words_total": 10,
+      "B7_bucket_words_scoreable": 5,
+      "rows_total": 186,
+      "rows_included": 172
+    },
+    "counts_vs_architect": {
+      "B1_bucket_cells": {
+        "got": 28,
+        "architect": 28,
+        "match": true
+      },
+      "B2_derived_cells_excluded": {
+        "got": 14,
+        "architect": 14,
+        "match": true
+      },
+      "B3_numeric_rounding_cells": {
+        "got": 22,
+        "architect": 22,
+        "match": true
+      },
+      "B4_adr_integers": {
+        "got": 68,
+        "architect": 68,
+        "match": true
+      },
+      "B5_annual_nights_cells": {
+        "got": 24,
+        "architect": 24,
+        "match": true
+      },
+      "B6_guide_ranges_scoreable": {
+        "got": 19,
+        "architect": 19,
+        "match": true
+      },
+      "B7_bucket_words_scoreable": {
+        "got": 5,
+        "architect": 5,
+        "match": true
+      }
+    },
+    "derived_split": {
+      "na": 8,
+      "emea": 6
+    },
+    "midpoint_bias_mean_pp": 0.1689,
+    "midpoint_bias_last2_mean_pp": 0.9092,
+    "midpoint_bias_n": 7
+  },
+  "file3_vintage_register": {
+    "lineage_register_left_untouched": "data/processed/overnight/20_vintage_register.csv",
+    "next_q_values_present_only_in_merged_file": [
+      "2024Q2"
+    ],
+    "rows_total": 127,
+    "rows_by_role": {
+      "at_print": 85,
+      "current": 22,
+      "pre_guide": 20
+    },
+    "rows_pit_usable": 124,
+    "vintage_unknown_rows": 3,
+    "vendors": {
+      "vendor_not_recorded": 62,
+      "LSEG": 24,
+      "Refinitiv": 14,
+      "Zacks": 8,
+      "S&P Global Market Intelligence": 6,
+      "Alpha Vantage (aggregated sell-side panel)": 4,
+      "CNBC unattributed": 2,
+      "S&P Global / Visible Alpha via StockStory": 2,
+      "Yahoo/unattributed": 1,
+      "": 1,
+      "StreetAccount": 1,
+      "S&P Global / TipRanks": 1,
+      "derived": 1
+    },
+    "preguide_3q26": {
+      "vendor": "LSEG",
+      "value_musd": 4610.0,
+      "as_of": "2026-08-06"
+    },
+    "q4_26_anchor_spread_musd": 42.0
+  },
+  "loader_smoke": {
+    "exact_rows": 72,
+    "interval_rows_default": 172,
+    "interval_rows_with_derived": 186,
+    "vintage_rows": 127,
+    "pre_guide_3Q26": {
+      "vendor": "LSEG",
+      "period": "2026Q3",
+      "value": 4610.0,
+      "as_of_timestamp": "2026-08-06",
+      "source_path": "data/processed/overnight/16_consensus_at_print_merged.csv"
+    },
+    "pit_consensus_revenue_2026Q4_as_of_2026_09_12": {
+      "vendor": "Alpha Vantage (aggregated sell-side panel)",
+      "period": "2026Q4",
+      "metric": "revenue",
+      "value": 3158.0,
+      "unit": "musd",
+      "n_estimates": 36.0,
+      "as_of_timestamp": "2026-09-11",
+      "url": "http://www.alphavantage.co",
+      "role": "current",
+      "source_path": "docs/revenue-forecast-strategy/01_ground-truth/04_recent_facts.md"
+    }
+  },
+  "pytest_exit_code": 0
+}
