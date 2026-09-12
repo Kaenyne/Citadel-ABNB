@@ -1,0 +1,33 @@
+method,price_point,label,pct_vs_spot,p_above,p_below
+lognormal_atm_iv_12m_interp,150.0,bear tape,-11.9,0.588,0.412
+lognormal_atm_iv_12m_interp,165.0,p25 target,-3.0,0.493,0.507
+lognormal_atm_iv_12m_interp,170.19,price,-0.0,0.462,0.538
+lognormal_atm_iv_12m_interp,179.5,mean target,5.5,0.409,0.591
+lognormal_atm_iv_12m_interp,185.0,median yfinance target,8.7,0.379,0.621
+lognormal_atm_iv_12m_interp,197.5,p75 target,16.0,0.318,0.682
+lognormal_atm_iv_12m_interp,220.0,top target,29.3,0.228,0.772
+lognormal_atm_iv_12m_interp,125.0,below $125,-26.6,0.753,0.247
+lognormal_atm_iv_sep27_direct,150.0,bear tape,-11.9,0.592,0.408
+lognormal_atm_iv_sep27_direct,165.0,p25 target,-3.0,0.497,0.503
+lognormal_atm_iv_sep27_direct,170.19,price,-0.0,0.465,0.535
+lognormal_atm_iv_sep27_direct,179.5,mean target,5.5,0.412,0.588
+lognormal_atm_iv_sep27_direct,185.0,median yfinance target,8.7,0.382,0.618
+lognormal_atm_iv_sep27_direct,197.5,p75 target,16.0,0.321,0.679
+lognormal_atm_iv_sep27_direct,220.0,top target,29.3,0.23,0.77
+lognormal_atm_iv_sep27_direct,125.0,below $125,-26.6,0.757,0.243
+two_sided_lognormal_10pct_wings,150.0,bear tape,-11.9,0.584,0.416
+two_sided_lognormal_10pct_wings,165.0,p25 target,-3.0,0.49,0.51
+two_sided_lognormal_10pct_wings,170.19,price,-0.0,0.459,0.541
+two_sided_lognormal_10pct_wings,179.5,mean target,5.5,0.41,0.59
+two_sided_lognormal_10pct_wings,185.0,median yfinance target,8.7,0.38,0.62
+two_sided_lognormal_10pct_wings,197.5,p75 target,16.0,0.318,0.682
+two_sided_lognormal_10pct_wings,220.0,top target,29.3,0.226,0.774
+two_sided_lognormal_10pct_wings,125.0,below $125,-26.6,0.747,0.253
+skew_adjusted_rnd_smile_interp,150.0,bear tape,-11.9,0.599,0.401
+skew_adjusted_rnd_smile_interp,165.0,p25 target,-3.0,0.51,0.49
+skew_adjusted_rnd_smile_interp,170.19,price,-0.0,0.48,0.52
+skew_adjusted_rnd_smile_interp,179.5,mean target,5.5,0.428,0.572
+skew_adjusted_rnd_smile_interp,185.0,median yfinance target,8.7,0.399,0.601
+skew_adjusted_rnd_smile_interp,197.5,p75 target,16.0,0.336,0.664
+skew_adjusted_rnd_smile_interp,220.0,top target,29.3,0.239,0.761
+skew_adjusted_rnd_smile_interp,125.0,below $125,-26.6,0.743,0.257

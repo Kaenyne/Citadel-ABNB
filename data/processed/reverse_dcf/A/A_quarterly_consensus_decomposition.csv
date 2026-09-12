@@ -1,0 +1,11 @@
+quarter,street_revenue_musd,street_revenue_growth_pct,street_nights_m,street_nights_growth_pct,brief_nights_growth_pct,street_gbv_musd,street_gbv_growth_pct,brief_gbv_growth_pct,nights_x_adr_musd,street_adr_usd,street_adr_reported_growth_pct,brief_adr_growth_pct,adr_fx_pp_assumed,street_adr_exfx_growth_pct,revenue_fx_pp_assumed,street_implied_take_rate_pct,prior_year_take_rate_pct,street_take_rate_change_rel_pct,street_take_rate_change_bp,exact_identity_check_nights_plus_adr_plus_take_pct,mgmt_decomp_nights_plus_adrexfx_plus_fx_pct,timing_takerate_residual_pp,street_ebitda_musd,street_ebitda_margin_pct,street_eps_usd,revenue_at_flat_take_rate_musd,street_revenue_minus_flat_take_rate_musd,case_stated_residual_pp,case_stated_residual_convention
+3Q26,4744.0,15.85,148.9,11.45,11.1,26350.0,15.11,15.1,26355.0,177.0,3.3,3.3,0.3,2.99,3.0,18.004,17.888,0.65,12.0,15.87,18.23,-2.03,2360.0,49.7,2.875,4714.0,30.0,,
+4Q26,3177.0,14.36,134.2,10.09,10.1,23000.0,12.75,12.7,22988.0,171.3,2.36,2.3,-0.4,2.77,-0.4,13.813,13.618,1.43,20.0,14.31,12.69,1.47,915.0,28.8,0.835,3132.0,45.0,,
+3Q26 Delivered (mgmt),4815.14,17.59,,11.5,,,,,,,,,,3.5,3.0,,,,,,18.86,-1.08,,,,,,-1.108,management model multiplicative timing term
+4Q26 Delivered (mgmt),3130.163,12.68,,10.5,,,,,,,,,,3.0,-0.4,,,,,,13.36,-0.6,,,,,,-0.6,management model multiplicative timing term
+3Q26 Literal (mgmt),4730.0,15.51,,10.0,,,,,,,,,,3.0,3.0,,,,,,16.7,-1.03,,,,,,-1.052,management model multiplicative timing term
+4Q26 Literal (mgmt),3061.15,10.19,,8.5,,,,,,,,,,2.5,-0.4,,,,,,10.77,-0.52,,,,,,-0.517,management model multiplicative timing term
+3Q26 Ambition (mgmt),4882.182,19.22,,12.5,,,,,,,,,,4.0,3.0,,,,,,20.51,-1.07,,,,,,-1.1,management model multiplicative timing term
+4Q26 Ambition (mgmt),3188.055,14.76,,12.0,,,,,,,,,,3.5,-0.4,,,,,,15.46,-0.6,,,,,,-0.6,management model multiplicative timing term
+3Q26 Team base (WS29),4771.0,16.51,,9.9,,,,,,,,,,3.5,3.0,,,,,,17.16,-0.56,,,,,,-0.5,WS29 arithmetic sum (nights + ADR + FX + residual)
+4Q26 Team base (WS29),3111.0,11.99,,8.9,,,,,,,,,,3.0,-0.4,,,,,,11.72,0.24,,,,,,-0.5,WS29 arithmetic sum (nights + ADR + FX + residual)

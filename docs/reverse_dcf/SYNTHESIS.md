@@ -1,0 +1,41 @@
+# Reverse DCF run, 12-13 Sep 2026: synthesis
+
+- **Author:** Krishang Surapaneni (compiled with Claude Code). **Branch:** `krish/reverse-dcf` (worktree `../citadel-abnb-reversedcf`), on top of PR #49 (management-implied model).
+- **Read next:** `research/notes/2026-09-13_market-implied-model.md` (the market half), `research/notes/2026-09-12_management-implied-model.md` (the management half), then the four workstream notes and their audits under `research/notes/reverse_dcf/`.
+- **Workbooks:** `model/ABNB_management_implied.xlsx`, `model/ABNB_market_implied.xlsx`. Both formula-driven, Excel-recalculated, reconciled to Python mirrors.
+
+## 1. The answer
+
+**Management is pricing in FY27 revenue of $16.0bn (+12.6%), nights +10%, a 36.2% margin and $6.08 of EPS, if its guide is delivered the way it always has been. The market at $170.19 is pricing in FY27 revenue of $15.7 to 15.9bn (+10.4 to +11.5%), nights +8 to +9%, EBITDA $5.7bn at 16x, i.e. the Street and the team's base case, about $5 below management's delivered case. The sell-side mean target ($182) is management's delivered case at 16 to 17x. The options market centres its 12-month distribution on the price (lognormal median $164, interquartile $126 to $214) and prices the 5 Nov print at a 9.5% standard deviation, half a point above ABNB's realised print history.**
+
+The three views agree on FY27 revenue within a point. They differ on the multiple (the price pays 16x, the tape 17x, the team's own football field 13.5 to 18.5x) and on the 3Q26 print: the Street and the options market assume an accelerating nights print (consensus 148.9m, +11.45%); the team's nowcast is a deceleration (+9.5 to 10.0%). On the only print reaction that has any statistical support (a sign rule on printed nights acceleration, post-2022 n 14: accelerating +6%, decelerating -5.6%, 8 of 9 decelerating prints since 3Q22 negative on excess returns), the team's base case implies a -4 to -6% day conditional on deceleration, -2 to -3.5% unconditionally, against an options-implied dispersion of 9.5%.
+
+## 2. What each workstream found (after audit and repair)
+
+| WS | Question | Result | Audit |
+|---|---|---|---|
+| Management model (12 Sep) | what management's words are worth | Literal $174, Delivered $182, Ambition $196 at mid multiples; Street FY27 = Delivered exactly; the FY26 floor bites in 4Q26 (>= $3.06bn, margin >= 28.6%) | self-reconciled |
+| A joint solve | the growth the price pays for, multiple endogenous | NTM growth 12.9% (band 11.5 to 14.3) at $170.19 on EV/NTM EBITDA = 12.53 + 0.40 x growth (t 3.1, R2 0.23, ~16 independent obs); FY27 +10.4 to +11.5% by mapping; fixed-multiple hold agrees at the price, absurd in the tails; a point of nights is worth $4.80 on the joint solve, $1.50 on a fixed multiple; reverse DCF needs 4.6% FCF growth (16% SBC-adjusted) | pass with fixes: direct FY27 mapping dropped as mis-specified; delta-method band replaces slope-only band; realised-units reading (about 1pp lower) added; tails relabelled JUDGEMENT |
+| B options | 5 Nov implied move, skew, 12-month distribution | event sd 9.5% (8.5 to 10.5), expected absolute move 7.6%; 20 Nov straddle 13.5% is a 70-day upper bound; 25-delta risk reversal -3.5 vol pts, ordinary; 12M lognormal p25/p50/p75 $126/$164/$214; P(above $179.5) 0.41 to 0.43 risk-neutral; realised print rms 8.9% raw / 8.5% excess; the 8-10 Sep fall did not re-price the print | pass with fixes: return series was QQQ-excess not raw (decelerating split 3 up / 8 down raw, 1 / 10 excess); a Bloomberg-reconstructible column dropped; lognormal made the headline over the skew RND |
+| C reaction function | what moves the stock on the print; what is priced | printed nights acceleration sign: post-2022 +6.0 vs -5.6% (Fisher p 0.007), no slope; guide direction vs printed rate not detectable; guide vs Street +1.4 to +1.9% per 1% (fragile); revenue/EPS/EBITDA surprise: nothing; priced print = accelerating 3Q26 with a 4Q26 guide at or just below Street; team base conditional -4 to -6%, unconditional -2 to -3.5%; decelerating prints gap -5.3% and bounce +1.7% intraday | pass with fixes: framed as a re-test of the predictive study, not multiplicity-robust (no pre-stated spec clears Holm); S1 headline, S2 illustrative; conditional vs unconditional made explicit; both return conventions quoted |
+| D sell-side | what the tape implies | 32 targets, mean $182 = 17.1x delivered EBITDA (16.1x FY27-end basis); p25 $165 = 15.3x, p75 $200 = 18.9x; held at 16.5x the tape needs FY27 growth +5 to +29% (nobody forecasts that); Zacks estimate range = nights +2.9 to +11.8%; consensus nights 1 to 2pts below management; three raises during the 8-10 Sep fall, no cuts | pass with fixes: "targets chase up not down" reversed (symmetric, 1-2 month lag; a $5-7 cut in the mean target is the base case); Bernstein's 25.5x is a P/E (40% above management's EPS); feed has 96 chain breaks; decomposition relabelled JUDGEMENT |
+
+## 3. Decisions taken in the run
+
+1. Joint solve is primary (Krish's first choice; audit A concurs), on its native NTM basis; the fixed-multiple hold is the cross-check at the price only. FY27 is quoted as a range across mappings, never a point.
+2. Nights are a residual of revenue at ADR +3%, FX -0.6pp, take flat (JUDGEMENT, one for one). The only direct nights consensus is Bloomberg's 3Q26/4Q26 bars.
+3. Options: straddle and skew only, as Krish asked; a Breeden-Litzenberger check was run and rejected for tails (negative mass); lognormal quartiles are the headline.
+4. The reaction function's content is the sign of the nights-acceleration effect, not its size; S2's magnitudes are illustrative.
+5. Price points reported: $150 / $165 / $170.19 / $179.5 / $185 / $197.5 / $220 plus the options quartiles $125.5 / $163.8 / $213.9.
+
+## 4. For the pitch
+
+- The differentiated claim is not a different FY27; it is a different 3Q26 print and 4Q26 guide, and the market is positioned for the opposite (accelerating print priced; options at their ordinary premium; sell-side raising into the drawdown; short interest in its bottom decile).
+- The "what is priced" slide is section 7 of the market note: one table, management vs market vs team, with the options probability and the expected print reaction beside each row.
+- The honest caveats belong on the slide: 16 independent observations behind the multiple-growth slope; 14 prints behind the sign rule; risk-neutral probabilities are not forecasts.
+
+## 5. Open items
+
+- Re-pull the options chain in the last week of September (a 6 Nov weekly would identify the event variance cleanly) and re-score after the September Inside Airbnb dumps narrow the nowcast band.
+- The synthesis audit (`research/notes/reverse_dcf/audit_synthesis.md`) is the last gate before the numbers go on a slide.
+- Licensed material: B's Bloomberg-derived CSVs carry fits and ratios only; the audit confirmed no raw levels remain after the repair.
