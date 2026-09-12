@@ -18,7 +18,11 @@ Build `analysis/src/forecast_methods/kernel_engine_v1/` with `README.md`, `engin
 4. Uncertainty: block bootstrap of within-season λ residuals ⊕ cushion sd; conformal-lite band from walk-forward residuals (state n_cal). Return 50/80.
 5. `term_structure(as_of)` — q+1 (both GBVs printed) and q+2 (GBV_{q+1} from the ledger nowcast: RNPL-corrected unearned-fees growth per K1, interval carried).
 6. `control_chart(as_of)` — seasonal mean ± 2 within-season sd; the 5 Nov rule (λ_Q3 = revenue ÷ $27,867M; < 17.09% warn; < 16.93% escalate); historical false-alarm count.
-7. `run.py` prints the acceptance table and writes `data/processed/forecast_methods/kernel_engine_v1/lambda_table.csv`, `term_structure_<as_of>.csv`, `control_chart.csv`.
+7. **Regional-ready interface (required, even though Lane 1 runs consolidated first):** every function must accept an optional per-region GBV
+   frame (columns quarter, region, gbv_usd_booking_dated) and, when given, compute per-region kernels with per-region λ and return the
+   consolidated sum; with no regional frame it behaves exactly as above. Package X (`X_REGIONAL_KERNEL_OD_FX.md`) will supply that frame.
+   Do NOT implement regional λ estimation here — only the interface and the summation.
+8. `run.py` prints the acceptance table and writes `data/processed/forecast_methods/kernel_engine_v1/lambda_table.csv`, `term_structure_<as_of>.csv`, `control_chart.csv`.
 
 ## Pass line (pre-registered)
 The 12-cell λ table reproduces to 2 decimals (Q3 17.391 / 17.145 / 17.182; Q4 11.946 / 12.117 / 12.026 for 2023–2025); `pytest` green,

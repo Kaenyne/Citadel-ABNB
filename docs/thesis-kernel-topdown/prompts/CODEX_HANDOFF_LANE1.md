@@ -68,12 +68,14 @@ brief from `docs/thesis-kernel-topdown/lane1/` — the brief contains its task, 
 - `sub-D`  → `lane1/D_LAMBDA_CARD.md`
 - `sub-R`  → `lane1/R_REGIONAL_REFRESH.md` (needs internet for NTTO / Eurostat pulls — if the sandbox has no network, skip R and say so)
 - `sub-C3` → `lane1/C3_GBV_FEATURES.md`
+- `sub-X`  → `lane1/X_REGIONAL_KERNEL_OD_FX.md` (regional kernel + origin–destination FX exposure; needs internet for arrivals pulls;
+             its FX recompute supersedes B4's consolidated numbers if it reports a different 3Q26 / 4Q26 FX)
 K0 uses `lane1/K0_KERNEL_ENGINE.md` and A uses `lane1/A_GUIDE_SURPRISE.md` (you run K0 yourself; A is the first, solitary subagent).
 Each subagent reads only the files its brief names; writes its note with the template in the brief; registers through the harness;
 does not run `score.py` (you run it once at the close, following `lane1/CLOSE.md`). Refuters each get `lane1/REFUTER.md` with
 PACKAGE, CLAIM and LENS filled in.
 
-**Refuters (after the packages finish; three per headline claim from A, B′, R, V; each a separate subagent, reading only the package note,
+**Refuters (after the packages finish; three per headline claim from A, B′, R, V, X; each a separate subagent, reading only the package note,
 its registry files and the raw inputs):** lens 1 vintage / point-in-time (construct a splice or look-ahead that reproduces the result);
 lens 2 power and multiple comparisons (count specs tried; recompute the interval); lens 3 economic mechanism (is the effect the kernel
 or something else). Majority rules per claim; write `05_backtests/REFUTE_<pkg>.md` with the three verdicts and the attacks.

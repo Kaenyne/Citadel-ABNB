@@ -11,6 +11,7 @@ Status values: `open` · `claimed` · `in-progress` · `blocked (reason)` · `do
 
 | WP | Title | Lane | Status | Owner / agent | Branch | Started | Last update | Output |
 |---|---|---|---|---|---|---|---|---|
+| WP-X | Regional kernel + origin–destination FX exposure matrix (R-engine `exposure.csv`); regional recompute of the FX carried through the kernel — supersedes the consolidated basket | Krish (O–D travel analysis) | open — Krish planning; Codex may build the data layer | — | — | — | 2026-09-11 | `regional_kernel_v1/`, `05_backtests/X_REGIONAL_KERNEL_OD_FX.md` |
 | WP-K0 | Kernel engine module `kernel_engine_v1/` (PIT λ, kernel guide, term structure, control chart) — spine for Lane 1 | Krish | claimed · Codex (Lane 1 core) | Codex | codex/lane1-core | — | 2026-09-11 | `05_backtests/K0_KERNEL_ENGINE.md` |
 | WP-V | Valuation reconciliation page for decision WP-H (+0.48 turns/pt → FY27 band → price band vs football field vs branch analogues) | Krish | claimed · Codex (Lane 1 core) | Codex | codex/lane1-core | — | 2026-09-11 | `05_backtests/V_VALUATION_RECONCILIATION.md` |
 | WP-H | Direction + target reconciliation (football field vs branch analogues; adopt ex-NA lap?) | all | **human** | Theo · Krish · Jessie | — | — | 2026-09-11 | one line in the card + `05_backtests/H_DIRECTION_DECISION.md` |

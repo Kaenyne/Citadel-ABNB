@@ -7,7 +7,7 @@ One file per agent role. A subagent gets exactly one of these files plus the two
 
 ```
 K0 (parent)  ── Gate 1: λ table to 2dp, pytest green ──►  A (subagent, alone)  ── Gate 2: clean note ──►
-   parallel subagents: B′ · V · D · R (needs internet) · C3
+   parallel subagents: B′ · V · D · R (needs internet) · C3 · X (regional kernel + O–D FX exposure; needs internet)
    then refuters: 3 per headline claim (vintage / power / mechanism) for A, B′, R, V   [CORE: 1 refuter on A]
    then CLOSE (parent): score → memo-ready claims → workboard → one PR
 ```
@@ -21,10 +21,15 @@ K0 (parent)  ── Gate 1: λ table to 2dp, pytest green ──►  A (subagent
 | `D_LAMBDA_CARD.md` | mid | no | 0.1M |
 | `R_REGIONAL_REFRESH.md` | strong | yes (arrivals pulls) | 0.4M |
 | `C3_GBV_FEATURES.md` | strong | no | 0.35M |
+| `X_REGIONAL_KERNEL_OD_FX.md` | strong | yes (arrivals pulls) | 0.5M |
 | `REFUTER.md` (× 1 in CORE, × 12 in FULL) | strong | no | 0.2M each |
 | `CLOSE.md` | mid | no | 0.15M |
 
-CORE ≈ 2M tokens: K0 · A · B′ · V · D · one refuter on A · CLOSE. FULL ≈ 7–8M: everything above.
+CORE ≈ 2M tokens: K0 · A · B′ · V · D · one refuter on A · CLOSE. FULL ≈ 7.5–8.5M: everything above.
+
+**Why X exists:** the consolidated build applies FX through one judgement-weighted basket; FX is regional (currency of each booking, pass-through by region),
+so the FX carried through the kernel, the observed-share triple and the Q4 step decomposition all inherit the regional error. X builds the regional kernel
+and the origin–destination exposure matrix the R FX engine expects; B4's numbers stand as the consolidated approximation until X reports.
 
 ## Environment (portable)
 
