@@ -211,3 +211,13 @@ quarter       point  guide_mid_musd               status
 }
 
 The complete module tests were run before starting A. Full source v1 is unchanged; v2 is the selected dependency.
+
+## Checkpoint and baseline scorer
+
+Gate 1 checkpoint 801feaf pushed successfully to origin/codex/lane1-full at shared Kaenyne/Citadel-ABNB. A spawned alone from the version-corrected single brief. Frozen scorer executed unchanged in a SHA-256-verified temporary copy: exit 0, 19.46 seconds, 4,109 registry rows, 69 objects, 276 score groups. All 276 fresh RMSE groups match frozen scoreboard.csv (zero changed). Baseline leaders for PIT revenue: optimal-mix / mix_revenue_musd_parsimonious W1, RMSE 33.884250 at n=14; optimal-mix / mix_revenue_musd_all W2, RMSE 33.922215 at n=10. These frozen baseline forecasts may include same-day information and are not a strict pre-guide alpha comparison. Receipt: data/processed/forecast_methods/lane1_control_v2/before-a/receipt.json.
+
+## Gate 2 parent review — passed (clean negative)
+
+A note first paragraph says underpowered; its pass line was inspected on disk before its run. W1 0/14 and W2 0/10 signals, zero |S|>1pp cells, Wilson/hit-rate/permutation/slope/return estimates explicitly undefined at n=0. Consensus rows and exclusions retain vendor, timestamp, register ID; September values appear only in the dated live scenario. Supplied reactions have zero open_* columns, and no close return was substituted. K0 v2 imported directly, lambda not re-derived. Figure visually inspected: strict empty sample and 11 post-letter points clearly separated. Note includes all three baselines, 1/5/20-day conditional counts and honest unregistered status. No send-back required. A unit suite 12 passed; rebuild exit 0. Frozen harness/L0 after A: 47 passed in 5.10s. Gate 2 therefore permits the independent tail. No historical edge claim admitted.
+
+Original package brief copies change only K0 dependency and execution routing. Six packages will be launched with one brief each, in two batches because runtime permits only three children. X has first priority. Scorer already ran and no A registration changed the registry.
