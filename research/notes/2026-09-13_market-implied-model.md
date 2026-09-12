@@ -6,9 +6,9 @@ Price used: $170.19, the 11 Sep 2026 close. Every number below is one of ANCHOR 
 
 ## 1. Bottom line
 
-1. **At $170.19 the market is paying for the Street and the team's base case, not for management's guide.** The joint solve (the multiple endogenous to growth, workstream A) identifies next-twelve-month revenue growth of **12.9%** (fitted-line band about 11.5 to 14.3; MEASURED, in the guide-proxy units the regression was fitted on, which run about a point above realised growth). Mapped to FY27 that is **revenue $15.7 to 15.9bn, +10.4 to +11.5%** (JUDGEMENT on the mapping), **adj. EBITDA $5.7bn at a 36.2% margin, EV/FY27 EBITDA 16.0 to 16.2x**, and **nights growth of +8 to +9%** at ADR ex-FX +3%, FX -0.6pp and a flat take rate. Management's delivered case is $16.0bn, +12.6%, nights +10%; the Street is $15.75bn; the team's base is $15.8bn. In realised units the price sits on the Street, with management's delivered case about $5 above it.
+1. **At $170.19 the market is paying for the Street and the team's base case, not for management's guide.** The joint solve (the multiple endogenous to growth, workstream A) identifies next-twelve-month revenue growth of **12.9%** (fitted-line band about 11.5 to 14.3; MEASURED, in the guide-proxy units the regression was fitted on, which run about a point above realised growth). Mapped to FY27 that is **revenue $15.7 to 15.9bn, +10.4 to +11.5%** (JUDGEMENT on the mapping), **adj. EBITDA $5.7bn at a 36.2% margin, EV/FY27 EBITDA 16.0 to 16.2x**, and **nights growth of +8 to +9%** at ADR ex-FX +3%, FX -0.6pp and a flat take rate. Management's delivered case is $16.0bn, +12.6%, nights +10%; the Street is $15.75bn; the team's base is $15.8bn. In realised units (about a point lower) the price sits between management's literal case and the Street, with the delivered case about $5 above it.
 
-2. **The tape and the options market bracket the same answer.** The mean sell-side target ($179.5 to 182) is management's delivered case on the joint solve ($175) or 16.1 to 17.1x on that case's EBITDA (workstream D). The options market's 12-month risk-neutral median is $164 (lognormal; interquartile $126 to $214), i.e. the price itself within noise, and puts a risk-neutral 0.41 to 0.43 on the stock being above the mean target in a year. Nothing in the price, the tape or the options surface is ahead of management; the disagreement is about the multiple, not the operating numbers.
+2. **The tape and the options market bracket the same answer.** The mean sell-side target ($179.5 to 182) is management's delivered case on the joint solve ($175) or 16.1 to 17.1x on that case's EBITDA (workstream D). The options market's 12-month risk-neutral median is $164 (lognormal; interquartile $126 to $214), i.e. the price itself within noise, and puts a risk-neutral 0.41 (lognormal; 0.43 skew-adjusted) on the stock being above the mean target in a year. Nothing in the price, the tape or the options surface is ahead of management; the disagreement is about the multiple, not the operating numbers.
 
 3. **The range.** Each price point implies a different FY27 operating case. At $150 (bear tape) the joint solve needs FY27 revenue growth of about 7% and nights under 5%. At $165 (p25 target, and roughly the options median) it needs the Street. At $185 (median target) it needs management's delivered case plus two points. At $197.5 (p75 target) it needs management's ambition case (nights +14%). At $220 (top target) it needs nights growth of about 18% or a 19.5x multiple on the ambition numbers. The tails are mapping-dependent (JUDGEMENT): at $150 the FY27 growth reads 1.4 / 7.2 / 10.2% across the three mappings, at $220 16 / 21 / 31%.
 
@@ -28,18 +28,18 @@ Joint solve, spec A, FY27 on the management-delivered FY26 base ($14,231m) at a 
 
 | Price | What it is | Implied NTM growth | FY27 revenue growth, proportional / chained | FY27 EBITDA ($bn) | FY27 nights growth | Implied EV / FY27 EBITDA | Nearest case | Options P(above) |
 |---|---|---|---|---|---|---|---|---|
-| $125.5 | options 12M p25 | 3.0% | 1.6% / -10% | 5.2 | -1% | 12.3x | team bear ($14.3bn) | 0.74 |
-| $150 | bear tape | 8.6% | 7.2% / 1.4% | 5.5 | 4.7% | 14.5x | below management literal | 0.60 |
-| $163.8 | options 12M p50 | 11.6% | 10.2% / 7.6% | 5.7 | 7.6% | 15.6x | Street | 0.52 |
-| $165 | p25 target | 11.8% | 10.4% / 8.1% | 5.7 | 7.9% | 15.6x | Street ($15.75bn) | 0.51 |
-| **$170.19** | **price, 11 Sep** | **12.9%** | **11.5% / 10.4%** | **5.7** | **8.9% / 7.8%** | **16.0x** | **team base to Street** | **0.48** |
-| $179.5 | mean target | 14.8% | 13.4% / 14.4% | 5.8 | 10.8% | 16.7x | management delivered (+12.6%) | 0.43 |
-| $185 | median target | 15.9% | 14.5% / 16.7% | 5.9 | 11.9% | 17.1x | delivered +2pp | 0.40 |
-| $197.5 | p75 target | 18.4% | 17.0% / 21.9% | 6.0 | 14.3% | 18.0x | management ambition (+18.0%) | 0.34 |
-| $213.9 | options 12M p75 | 21.5% | 20.1% / 28.4% | 6.2 | 17.3% | 19.1x | above ambition | 0.26 |
-| $220 | top target | 22.7% | 21.2% / 30.8% | 6.2 | 18.4% | 19.5x | above ambition | 0.24 |
+| $125.5 | options 12M p25 | 3.0% | 1.6% / -10% | 5.2 | -1% | 12.5x | team bear ($14.3bn) | 0.75 |
+| $150 | bear tape | 8.6% | 7.2% / 1.4% | 5.5 | 4.7% | 14.5x | below management literal | 0.59 |
+| $163.8 | options 12M p50 | 11.6% | 10.2% / 7.6% | 5.7 | 7.6% | 15.5x | Street | 0.50 |
+| $165 | p25 target | 11.8% | 10.4% / 8.1% | 5.7 | 7.9% | 15.6x | Street ($15.75bn) | 0.49 |
+| **$170.19** | **price, 11 Sep** | **12.9%** | **11.5% / 10.4%** | **5.7** | **8.9% / 7.8%** | **16.0x** | **team base to Street** | **0.46** |
+| $179.5 | mean target (brief) | 14.8% | 13.4% / 14.4% | 5.8 | 10.8% | 16.7x | management delivered (+12.6%) | 0.41 |
+| $185 | median target | 15.9% | 14.5% / 16.7% | 5.9 | 11.9% | 17.1x | delivered +2pp | 0.38 |
+| $197.5 | p75 target | 18.4% | 17.0% / 21.9% | 6.0 | 14.3% | 18.0x | management ambition (+18.0%) | 0.32 |
+| $213.9 | options 12M p75 | 21.5% | 20.1% / 28.4% | 6.2 | 17.3% | 19.1x | above ambition | 0.25 |
+| $220 | top target | 22.7% | 21.2% / 30.8% | 6.2 | 18.4% | 19.5x | above ambition | 0.23 |
 
-The same solve run backwards prices the cases: management literal $162, Street $166, team base $168, management delivered $175, management ambition $203, team bull $207, team bear $121. At a fixed 16.5x on each case's own EBITDA: literal $169, delivered $176, ambition $188, Street $174, team base $175, team bear $137, team bull $209. One point of FY27 nights is worth about $4.80 a share (2.8%) on the joint solve and about $1.50 on a fixed multiple, because on the joint solve the multiple moves with the growth.
+The same solve run backwards prices the cases: management literal $162, Street $166, team base $168, management delivered $175, management ambition $203, team bull $207, team bear $121. At a fixed 16.5x on each case's own EBITDA: literal $169, delivered $176, ambition $188, Street $174, team base $175, team bear $137, team bull $209. One point of FY27 nights is worth about $4.90 a share (2.9%; $4.80 per point of revenue) on the joint solve and about $1.50 on a fixed multiple, because on the joint solve the multiple moves with the growth.
 
 Reverse DCF at each price (10-year fade to 3%, WACC 10%, on the delivered case's FY27 FCF of $5.94bn; sensitivities in `A_reverse_dcf.csv`): the FY28 starting growth required is 0.6% at $150, 3.6% at $165, 4.6% at $170.19, 6.3% at $179.5, 9.3% at $197.5, 12.6% at $220; on SBC-adjusted FCF ($4.0bn) 12%, 15%, 16%, 18%, 21%, 24%.
 
@@ -67,7 +67,7 @@ Workstream C's panel (23 prints 4Q20-2Q26, QQQ-excess close-to-close day-1 retur
 
 | Finding | Result | Status |
 |---|---|---|
-| Printed nights acceleration, sign | post-2022 (n 14): accelerating +6.0% (6 of 6 positive on excess), decelerating -5.6% (0 of 8 positive on excess, 2 of 8 on raw); Fisher p 0.007 between buckets; coefficient +5.7% per unit sign, HC1 t 2.7, leave-one-out R2 +0.28, permutation p 0.017. On the pre-stated n 16 sample (3Q22 on): +3.4 vs -3.6, t 1.4, LOO -0.02, perm 0.16 | MEASURED; a re-test of the predictive study on the same prints, not multiplicity-robust (Holm threshold 0.0029 across 17 pre-stated specs, best p 0.040) |
+| Printed nights acceleration, sign | post-2022 (n 14): accelerating +6.0% (4 of 5 positive on excess; one flat), decelerating -5.6% (0 of 8 positive on excess, 2 of 8 on raw); Fisher p 0.007 between buckets; coefficient +5.7% per unit sign, HC1 t 2.7, leave-one-out R2 +0.28, permutation p 0.017. On the pre-stated n 16 sample (3Q22 on): +3.4 vs -3.6, t 1.4, LOO -0.02, perm 0.16 | MEASURED; a re-test of the predictive study on the same prints, not multiplicity-robust (Holm threshold 0.0029 across 17 pre-stated specs, best p 0.040) |
 | Acceleration in points | no coefficient (Spearman 0.38, p 0.19 at n 14); a threshold, not a slope | MEASURED |
 | Next-quarter guide direction vs the printed rate | not detectable: 3 accelerating guides in 16, 11 decelerating by construction | MEASURED (power) |
 | Next-quarter revenue guide vs Street | +1.9% return per 1% above Street (t 2.2, LOO R2 +0.15) on n 16 and +1.4% (t 2.4, LOO +0.15) on n 19 with the low-confidence 4Q21 point clipped; fails on n 14; drop 2Q24 and it vanishes | MEASURED, fragile |
@@ -79,16 +79,16 @@ Expected day-1 excess return by scenario (S1 sign rule, conditional on the print
 | Scenario | 3Q26 nights | 4Q26 revenue guide | S1 sign rule | S2 (illustrative) |
 |---|---|---|---|---|
 | Team base (WS29/30): 3Q26 +9.9%, 4Q26 $3,111m | decelerating | -1.4% vs Street | **-6.1%** (n 14) / -4.0% (n 16) | -8.5% (Zacks comparator: -11.5%) |
-| Team base with the ex-NA lap (4Q26 $3,055m) | decelerating | -3.1% | -6.1% | -12.2% |
-| Q3 nowcast central (+9.75%) | decelerating | -1.5% | -6.1% | -8.8% |
+| Team base with the ex-NA lap (4Q26 8.1%, $3,102m at the team's 0.38%/pt elasticity) | decelerating | -1.7% | -6.1% | -9.2% |
+| Q3 nowcast central (+9.75%, 4Q26 $3,121m) | decelerating | -1.0% | -6.1% | -7.9% |
 | Street (Bloomberg FA): +11.1%, $3,154m | accelerating | 0.0% | +5.2% | +2.0% (Zacks comparator: -1.0%) |
 | Management delivered: +11.5%, $3,130m | accelerating | -0.8% | +5.2% | +0.4% (Zacks: -2.5%) |
 | Flat print: 3Q26 = 2Q26 rate, guide at Street | flat | 0.0% | -0.5% | -1.9% |
 | 2Q26 replay: accelerating print, guide +2.6% vs Street | accelerating | +2.6% | +5.2% | +7.4% |
 
-Unconditionally, with the team's nowcast band (8.5 to 11.0) placing 13 to 21% of its mass above the 10.6% acceleration threshold, the S1 expectation for the team's case is -1.9% (n 16) to -3.5% (n 14). The realised-move range around the conditional expectation (plus or minus 1.28 residual standard deviations) is about -15% to +7%. The options market's 9.5% event sd is the dispersion around any of these expectations, not a substitute for them. The residual standard deviation of the reaction function is 7.3 points, so the sign is the claim, not the size.
+Unconditionally, with the team's nowcast band (8.5 to 11.0) placing 13 to 21% of its mass above the 10.6% acceleration threshold, the S1 expectation for the team's case is -1.9% (n 16) to -3.5% (n 14). The realised-move range around the conditional expectation (plus or minus 1.28 residual standard deviations) is about -15% to +7%. The options market's 9.5% event sd is the dispersion around any of these expectations, not a substitute for them. The residual standard deviation of the reaction function is 6.9 to 8.8 points (S1) and 7.3 (S2), so the sign is the claim, not the size.
 
-What is "priced": an accelerating 3Q26 (nights above about 10.6%) with a 4Q26 revenue guide at or just below the Street's $3,154 to 3,200m. That is also the Street's own forecast and management's delivered case. The team's base case is a decelerating print with a guide 1 to 3% below the Street, which on the sign rule has produced a negative day in 8 of 8 post-2022 cases on excess returns (6 of 8 on raw) and 8 of 9 since 3Q22 (6 of 9 raw).
+What is "priced": an accelerating 3Q26 (nights above about 10.6%) with a 4Q26 revenue guide at or just below the Street's $3,154 to 3,200m. That is also the Street's own forecast and management's delivered case. The team's base case is a decelerating print with a guide 1 to 3% below the Street, for which the post-2022 base rate is 0 of 8 positive days on excess returns (2 of 8 on raw) and 1 of 9 since 3Q22 (3 of 9 raw).
 
 ## 6. The sell-side tape
 
@@ -96,10 +96,10 @@ What is "priced": an accelerating 3Q26 (nights above about 10.6%) with a 4Q26 re
 
 | Tape level | Target | Implied EV / FY27 delivered EBITDA (spot / FY27-end basis) | At 16.5x: FY27 revenue, growth | FY27 nights at 16.5x | Joint-solve FY27 growth |
 |---|---|---|---|---|---|
-| min | $125 | 11.2x / 10.5x | $10.9bn, -23% | -25% | about 0% |
+| min | $125 | 11.2x / 10.5x | $10.9bn, -23% | -25% | about +1.5% |
 | p25 | $165 | 15.3x / 14.4x | $14.9bn, +4.6% | +2.2% | +10.4% |
 | price | $170.19 | 15.9x / 14.9x | $15.4bn, +8.2% | +5.7% | +11.5% |
-| mean | $182 | 17.1x / 16.1x | $16.6bn, +16.4% | +13.7% | +14.0% |
+| mean | $181.8 | 17.1x / 16.1x | $16.6bn, +16.4% | +13.7% | +13.9% |
 | p75 | $200 | 18.9x / 17.8x | $18.4bn, +29% | +26% | +17.5% |
 | max | $220 | 21.0x / 19.8x | $20.4bn, +43% | +40% | +21.2% |
 
@@ -111,19 +111,19 @@ FY27E on the delivered FY26 base; nights at ADR +3%, FX -0.6pp, take rate flat (
 
 | Who | Price / target | FY27 revenue growth | FY27 revenue | FY27 adj. EBITDA | FY27 nights growth | EV / FY27 EBITDA | Options P(above) | Expected 5 Nov day-1 move (S1, conditional) |
 |---|---|---|---|---|---|---|---|---|
-| Market, current price (joint solve) | $170.19 | 10.4 to 11.5% | $15.7 to 15.9bn | $5.7bn | 8 to 9% | 16.0x | 0.48 | priced for an accelerating print |
-| Market, current price (fixed 16.5x) | $170.19 | 8.2% | $15.4bn | $5.6bn | 5.7% | 16.5x | 0.48 | |
-| Options 12M median | $164 | 10.2% | $15.7bn | $5.7bn | 7.6% | 15.6x | 0.52 | |
-| Sell-side mean target | $182 | 14.0% | $16.2bn | $5.9bn | 11.3% | 16.8x | 0.41 | |
-| Management literal | $162 (joint) / $169 (16.5x) | 9.8% | $15.6bn | $5.5bn | 7.3% | 15.7x | 0.53 | |
-| Management delivered | $175 / $176 | 12.6% | $16.0bn | $5.8bn | 10.0% | 16.4x | 0.45 | +5.2% |
-| Management ambition | $203 / $188 | 18.0% | $16.8bn | $6.2bn | 15.2% | 17.9x | 0.31 | |
-| Street | $166 / $174 | 10.6% | $15.75bn | $5.7bn | 8.1% | 15.7x | 0.50 | +5.2% |
-| Team base (WS29/30) | $168 / $175 | 11.0% | $15.8bn | $5.8bn | 8.5% | 15.8x | 0.49 | **-6.1%** |
-| Team bear (WS29) | $121 / $137 | 0.6% | $14.3bn | $4.4bn | -1.7% | 14.4x | 0.75 | |
-| Team bull (WS29) | $207 / $209 | 18.8% | $16.9bn | $7.0bn | 16.1% | 16.3x | 0.29 | |
+| Market, current price (joint solve) | $170.19 | 10.4 to 11.5% | $15.7 to 15.9bn | $5.7bn | 8 to 9% | 16.0x | 0.46 | priced for an accelerating print |
+| Market, current price (fixed 16.5x) | $170.19 | 8.2% | $15.4bn | $5.6bn | 5.7% | 16.5x | 0.46 | |
+| Options 12M median | $164 | 10.2% | $15.7bn | $5.7bn | 7.6% | 15.5x | 0.50 | |
+| Sell-side mean target (brief $179.5; 12 Sep tape $181.8 reads 13.9%, 16.9x) | $179.5 | 13.4% | $16.1bn | $5.8bn | 10.8% | 16.7x | 0.41 | |
+| Management literal | $162 (joint) / $169 (16.5x) | 9.8% | $15.6bn | $5.5bn | 7.3% | 15.7x | 0.50 | |
+| Management delivered | $175 / $176 | 12.6% | $16.0bn | $5.8bn | 10.0% | 16.4x | 0.43 | +5.2% |
+| Management ambition | $203 / $188 | 18.0% | $16.8bn | $6.2bn | 15.2% | 17.9x | 0.30 | |
+| Street | $166 / $174 | 10.6% | $15.75bn | $5.7bn | 8.1% | 15.7x | 0.48 | +5.2% |
+| Team base (WS29/30) | $168 / $175 | 11.0% | $15.8bn | $5.8bn | 8.5% | 15.8x | 0.47 | **-6.1%** |
+| Team bear (WS29) | $121 / $137 | 0.6% | $14.3bn | $4.4bn | -1.7% | 14.4x | 0.76 | |
+| Team bull (WS29) | $207 / $209 | 18.8% | $16.9bn | $7.0bn | 16.1% | 16.3x | 0.28 | |
 
-The table says three things. The price, the Street, the team's base and the options median all sit within a point of each other on FY27 revenue growth (10 to 11.5%) and within $5 of each other on value. Management's delivered case is the sell-side mean, $5 to 12 above the price. The team's disagreement with the market is not about FY27 revenue (it is the same number); it is about the 3Q26 print (decelerating vs the accelerating print the Street and the options market assume) and the 4Q26 guide (below the Street), which is where the trade pivot note already put it.
+The table says three things. The price, the Street, the team's base and the options median all sit within about a point of each other on FY27 revenue growth (10 to 11.5%) and within $6 of each other on value; management's delivered case is 1 to 2 points above them and is the sell-side mean, $5 to 12 above the price. The team's disagreement with the market is not about FY27 revenue (it is the same number); it is about the 3Q26 print (decelerating vs the accelerating print the Street and the options market assume) and the 4Q26 guide (below the Street), which is where the trade pivot note already put it.
 
 ## 8. What this can and cannot say
 

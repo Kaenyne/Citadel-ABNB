@@ -20,6 +20,7 @@ Method (Krish's decisions, docs/reverse_dcf/BRIEF.md):
 from __future__ import annotations
 
 import os
+import re
 import json
 import numpy as np
 import pandas as pd
@@ -80,10 +81,12 @@ D_PCT = pd.read_csv(P("data", "processed", "reverse_dcf", "D", "D_tape_percentil
 D_EST = pd.read_csv(P("data", "processed", "reverse_dcf", "D", "D_estimate_dispersion.csv"))
 
 def bval(k):
+    """B_headline values may be strings like '9.5 (8.5-10.5)'; take the leading number."""
     try:
         return float(B_HEAD[k])
     except Exception:
-        return np.nan
+        m = re.match(r"\s*(-?\d+(?:\.\d+)?)", str(B_HEAD.get(k, "")))
+        return float(m.group(1)) if m else np.nan
 
 EVENT_SD = bval("event_sd_central_pct")
 EVENT_ABS = bval("event_exp_abs_move_central_pct")
@@ -157,7 +160,7 @@ def market_rows():
         rows.append(dict(price=price, label=label, ev=ev, g_ntm=g_ntm, g_ntm_lo=min(g_lo, g_hi), g_ntm_hi=max(g_lo, g_hi), m_ntm=m_ntm, g27_prop=g27p, g27_direct=g27d,
                          rev27=rev27, ebitda27=ebitda27, eps27=eps27, ev_fy27_ebitda=ev / ebitda27, nights27_prop=n27p, nights27_direct=n27d,
                          g27_fixed=g_fixed, nights27_fixed=nights_from_growth(g_fixed),
-                         p_above_12m=interp_p_above(price, "p_above_12m_skew_rnd"), p_above_20nov=interp_p_above(price, "p_above_20nov_rnd"),
+                         p_above_12m=interp_p_above(price, "p_above_12m_lognormal"), p_above_20nov=interp_p_above(price, "p_above_20nov_rnd"),
                          rdcf_reported=rd_rep, rdcf_sbc=rd_sbc))
     return pd.DataFrame(rows)
 
@@ -180,7 +183,7 @@ def case_rows():
         pf = (MULT_MID * FY26_BASE * (1 + g27 / 100) * MARGIN / 100 + NET_CASH) / SHARES
         pf_own = (MULT_MID * ebitda + NET_CASH) / SHARES
         rows.append(dict(case=name, fy27_growth=g27, fy27_ebitda_own=ebitda, price_joint=pj, upside_joint=(pj / PRICE - 1) * 100, price_fixed_16_5=pf, price_fixed_own_ebitda=pf_own,
-                         nights27=nights_from_growth(g27), p_above_12m=interp_p_above(pj, "p_above_12m_skew_rnd")))
+                         nights27=nights_from_growth(g27), p_above_12m=interp_p_above(pj, "p_above_12m_lognormal")))
     return pd.DataFrame(rows)
 
 
@@ -192,8 +195,8 @@ def reaction(spec, sign, gvs):
 PRINT_SCEN = [
     # name, 3Q26 nights %, 4Q26 revenue guide midpoint $M
     ("Team base (WS29/30)", 9.9, 3111.0),
-    ("Team base, ex-NA lap adopted", 9.9, 3055.0),
-    ("Q3 nowcast central (reviews index), 4Q26 at team revenue", 9.75, 3107.0),
+    ("Team base, ex-NA lap adopted (4Q26 8.1%, team elasticity)", 9.9, 3102.0),
+    ("Q3 nowcast central (reviews index), 4Q26 at team revenue", 9.75, 3121.0),
     ("Street (Bloomberg FA 4 Sep)", 11.1, 3154.0),
     ("Management delivered", 11.5, 3130.0),
     ("Flat print: 3Q26 = 2Q26 rate, guide at Street", 10.34, 3154.0),
@@ -301,7 +304,7 @@ def build(mkt, cases, prt):
     cols = ["Price ($)", "Label", "Market cap ($M)", "EV ($M)", "Implied NTM revenue growth (%)", "NTM growth, fitted-line band low (%)", "NTM growth, fitted-line band high (%)", "Implied EV/NTM EBITDA (x)",
             "FY27 growth, proportional (%)", "FY27 growth, chained through Street 2H26 (%)", "FY27 revenue, proportional ($M)", "FY27 adj. EBITDA ($M)", "FY27 GAAP EPS ($)", "Implied EV/FY27 EBITDA (x)",
             "FY27 nights growth, proportional (%)", "FY27 nights growth, chained (%)", "Fixed 16.5x: FY27 growth (%)", "Fixed 16.5x: nights (%)",
-            "P(price above this in 12M, options RN)", "P(above at 20 Nov, options RN)", "Reverse DCF FY28 growth, reported FCF (%)", "Reverse DCF, SBC-adj FCF (%)"]
+            "P(price above this in 12M, options RN, lognormal)", "P(above at 20 Nov, options RN)", "Reverse DCF FY28 growth, reported FCF (%)", "Reverse DCF, SBC-adj FCF (%)"]
     hdr(wm, 4, cols)
     r0 = 5
     for i, row in mkt.iterrows():
@@ -345,7 +348,7 @@ def build(mkt, cases, prt):
     wc = wb.create_sheet("Cases")
     wc["A1"] = "What each case is worth on the market's own pricing rule, and the options-implied probability of getting there"; wc["A1"].font = Font(bold=True, size=13)
     wc["A2"] = "Joint-solve price = ((a + b g_ntm) x LTM revenue x (1 + g_ntm/100) x LTM margin + net cash) / shares with g_ntm = FY27 growth + spread. Fixed = 16.5x on the case's revenue at 36.2% (and on its own EBITDA)."; wc["A2"].font = GREY
-    hdr(wc, 4, ["Case", "FY27 revenue growth on FY26 Delivered base (%)", "FY27 EBITDA, case's own ($M)", "Price on the joint solve ($)", "Upside vs price (%)", "Price at 16.5x, case revenue at 36.2% ($)", "Price at 16.5x, case's own EBITDA ($)", "Implied FY27 nights growth (%)", "P(above joint-solve price in 12M, options RN)"])
+    hdr(wc, 4, ["Case", "FY27 revenue growth on FY26 Delivered base (%)", "FY27 EBITDA, case's own ($M)", "Price on the joint solve ($)", "Upside vs price (%)", "Price at 16.5x, case revenue at 36.2% ($)", "Price at 16.5x, case's own EBITDA ($)", "Implied FY27 nights growth (%)", "P(above joint-solve price in 12M, options RN, lognormal)"])
     for i, row in cases.iterrows():
         r = 5 + i
         wc.cell(row=r, column=1, value=row.case)
@@ -461,7 +464,7 @@ def build(mkt, cases, prt):
     # ---------------- Comparison
     wq = wb.create_sheet("Comparison")
     wq["A1"] = "What is priced, by whom (FY27E, on the FY26 Delivered base; nights at ADR +3%, FX -0.6pp, take rate flat)"; wq["A1"].font = Font(bold=True, size=13)
-    hdr(wq, 3, ["Who / what", "Price ($)", "FY27 revenue growth (%)", "FY27 revenue ($M)", "FY27 adj. EBITDA ($M)", "FY27 nights growth (%)", "Implied EV / FY27 EBITDA (x)", "P(price above this in 12M, options RN)", "Expected 5 Nov day-1 reaction, S1 sign rule, conditional (%)", "Source"])
+    hdr(wq, 3, ["Who / what", "Price ($)", "FY27 revenue growth (%)", "FY27 revenue ($M)", "FY27 adj. EBITDA ($M)", "FY27 nights growth (%)", "Implied EV / FY27 EBITDA (x)", "P(price above this in 12M, options RN, lognormal)", "Expected 5 Nov day-1 reaction, S1 sign rule, conditional (%)", "Source"])
     pr = MROW[round(PRICE, 2)]
     rows = []
     rows.append(("Market: current price (joint solve, proportional mapping)", f"=Market_Implied!A{pr}", f"=Market_Implied!I{pr}", f"=Market_Implied!K{pr}", f"=Market_Implied!L{pr}", f"=Market_Implied!O{pr}", f"=Market_Implied!N{pr}", f"=Market_Implied!S{pr}", None, "A"))

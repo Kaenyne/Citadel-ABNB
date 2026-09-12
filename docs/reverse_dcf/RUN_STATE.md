@@ -21,5 +21,5 @@ Started 12 Sep 2026 (late evening) after the management-implied model (PR #49). 
 | audits A-D | DONE, all four PASS WITH FIXES, no blockers | A: drop direct FY27 mapping, delta-method band, quote FY27 10.4-11.5% at price, units caveat. B: return series was QQQ-excess (raw decel split 3/8 not 1/10), lognormal quartiles $126/$164/$214 headline, drop a Bloomberg-reconstructible column. C: sign rule is a re-test not multiplicity-robust, S1 headline, team-base -4 to -8.5% is conditional on deceleration (unconditional -2 to -2.5%), gap/intraday split. D: "chase up not down" wrong (symmetric), Bernstein 25.5x is P/E, feed coverage gaps, relabel decomposition JUDGEMENT |
 | repairs A-D | DONE (all four authors applied their audits; synthesis rebuilt on the repaired CSVs) | |
 | synthesis | DONE: workbook + research/notes/2026-09-13_market-implied-model.md + docs/reverse_dcf/SYNTHESIS.md | at $170.19: FY27 growth 9.5-11.5% (direct / proportional), nights 7-9%, EBITDA $5.6-5.7bn, 16x; mean target = Delivered; options 12M p25/p50/p75 $124/$167/$217; team base case implies -6 to -9% on 5 Nov
-| synthesis audit | running | |
-| commit / PR | pending | |
+| synthesis audit | DONE: pass with fixes, no blockers; 6 material fixes applied (event-sd input parsing, lognormal P(above), retired guide numbers, drifted figures) | |
+| commit / PR | checkpoint 2a07337 pushed; final commit after the synthesis-audit fixes; PR #49 description updated to cover both halves | |
