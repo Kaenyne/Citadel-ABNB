@@ -22,4 +22,4 @@ Started 12 Sep 2026 (late evening) after the management-implied model (PR #49). 
 | repairs A-D | DONE (all four authors applied their audits; synthesis rebuilt on the repaired CSVs) | |
 | synthesis | DONE: workbook + research/notes/2026-09-13_market-implied-model.md + docs/reverse_dcf/SYNTHESIS.md | at $170.19: FY27 growth 9.5-11.5% (direct / proportional), nights 7-9%, EBITDA $5.6-5.7bn, 16x; mean target = Delivered; options 12M p25/p50/p75 $124/$167/$217; team base case implies -6 to -9% on 5 Nov
 | synthesis audit | DONE: pass with fixes, no blockers; 6 material fixes applied (event-sd input parsing, lognormal P(above), retired guide numbers, drifted figures) | |
-| commit / PR | checkpoint 2a07337 pushed; final commit after the synthesis-audit fixes; PR #49 description updated to cover both halves | |
+| commit / PR | DONE: 2a07337 (workstreams + audits + repairs), ed7d6dd (synthesis-audit fixes); pushed; PR #49 retitled and described for both halves | |
