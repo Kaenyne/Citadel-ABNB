@@ -1,0 +1,318 @@
+<title>The Kernel, Explained</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF; --card:#FFFFFF; --ink:#0B1218; --ink-2:#22303C; --muted:#3F4F5C; --line:#B9C4CE;
+  --accent:#B3121F; --accent-fill:#C8102E; --good:#0F6B3F; --crit:#B3121F; --slate:#1F4E8C; --slate-fill:#2F63A8;
+  --tint-red:#FCE3E5; --tint-blue:#E1EAF6; --tint-green:#DCF0E5; --tint-grey:#E8EDF1; --axis:#5C6B78;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#F2F4F6;color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:64rem;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:28px 96px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:clamp(30px,4.4vw,44px);line-height:1.08;margin:6px 0 10px;letter-spacing:-.01em;text-wrap:balance}
+.dek{font-size:18px;color:var(--ink-2);max-width:66ch;margin:0 0 26px}
+section{margin:44px 0 0}
+h2{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:clamp(22px,2.8vw,28px);line-height:1.2;margin:0 0 4px;text-wrap:balance}
+h2 .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;color:var(--accent);letter-spacing:.08em;margin-right:10px;vertical-align:middle}
+.claim{color:var(--ink-2);font-size:16px;margin:0 0 12px;max-width:70ch}
+figure{margin:0;padding:18px 18px 12px;background:var(--card);border:1px solid var(--line)}
+figure svg{display:block;width:100%;height:auto;color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif}
+figure svg .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+figcaption{margin-top:12px;font-size:15.5px;color:var(--ink-2);max-width:78ch;line-height:1.5}
+figcaption b{color:var(--ink)}
+.street{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.one{margin:48px 0 0;padding:22px 24px;background:var(--card);border-left:6px solid var(--accent-fill);font-family:"IBM Plex Serif",Georgia,serif;font-size:21px;line-height:1.4}
+.one small{display:block;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:14.5px;color:var(--ink-2);margin-top:10px;line-height:1.5}
+footer{margin-top:50px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+</style>
+
+<div class="wrap">
+<div class="eyebrow">Citadel-ABNB · the recognition kernel · 11 Sep 2026</div>
+<h1>Airbnb's revenue isn't forecast. It's converted.</h1>
+<p class="dek">Six pictures. Each one shows a piece of the mechanism, and where the Street's model looks the other way.</p>
+
+<!-- ============ 1 ============ -->
+<section>
+<h2><span class="n">1</span>A stay is paid for long before it happens</h2>
+<p class="claim">Airbnb records the booking (GBV) when the guest books. It records <em>revenue</em> when the guest checks in — often one or two quarters later.</p>
+<figure>
+<svg viewBox="0 0 980 330" role="img" aria-label="Timeline from April to December showing bookings made in earlier months becoming stays and revenue in the fourth quarter; a stacked bar shows that about two thirds of fourth-quarter revenue was already booked before the quarter began.">
+  <defs><marker id="k1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>
+  <marker id="k1a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent-fill)"/></marker>
+  <marker id="k1s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--slate-fill)"/></marker>
+  <marker id="k1c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <!-- quarter boxes -->
+  <g font-size="15" text-anchor="middle">
+    <rect x="60" y="248" width="213" height="34" fill="none" stroke="currentColor"/><text x="166" y="271">Q2 · Apr–Jun</text>
+    <rect x="273" y="248" width="213" height="34" fill="none" stroke="currentColor"/><text x="379" y="271">Q3 · Jul–Sep</text>
+    <rect x="486" y="248" width="213" height="34" fill="none" stroke="var(--accent-fill)" stroke-width="2"/><text x="592" y="271" font-weight="600" style="fill:var(--accent)">Q4 · Oct–Dec  (revenue lands here)</text>
+  </g>
+  <line x1="60" y1="228" x2="699" y2="228" stroke="var(--axis)" stroke-width="1.5"/>
+  <g font-size="13" text-anchor="middle">
+    <text x="95" y="244">Apr</text><text x="166" y="244">May</text><text x="237" y="244">Jun</text><text x="308" y="244">Jul</text><text x="379" y="244">Aug</text><text x="450" y="244">Sep</text><text x="521" y="244">Oct</text><text x="592" y="244">Nov</text><text x="663" y="244">Dec</text>
+  </g>
+  <!-- bookings from two quarters earlier (slate) -->
+  <g fill="none" stroke="var(--slate-fill)" stroke-width="2">
+    <path d="M150,224 Q335,90 520,224" marker-end="url(#k1s)"/>
+    <path d="M225,224 Q395,110 565,224" marker-end="url(#k1s)"/>
+  </g>
+  <!-- bookings from last quarter (accent) -->
+  <g fill="none" stroke="var(--accent-fill)" stroke-width="2.2">
+    <path d="M300,224 Q410,140 520,224" marker-end="url(#k1a)"/>
+    <path d="M355,224 Q470,125 585,224" marker-end="url(#k1a)"/>
+    <path d="M425,224 Q535,120 645,224" marker-end="url(#k1a)"/>
+    <path d="M455,224 Q485,180 512,224" marker-end="url(#k1a)"/>
+  </g>
+  <!-- in-quarter bookings (dashed) -->
+  <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="5 4">
+    <path d="M505,224 Q535,185 568,224" marker-end="url(#k1c)"/>
+    <path d="M575,224 Q615,185 655,224" marker-end="url(#k1c)"/>
+  </g>
+  <!-- booking dots -->
+  <g fill="var(--slate-fill)"><circle cx="150" cy="228" r="5"/><circle cx="225" cy="228" r="5"/></g>
+  <g fill="var(--accent-fill)"><circle cx="300" cy="228" r="5"/><circle cx="355" cy="228" r="5"/><circle cx="425" cy="228" r="5"/><circle cx="455" cy="228" r="5"/></g>
+  <g fill="currentColor"><circle cx="505" cy="228" r="5"/><circle cx="575" cy="228" r="5"/></g>
+  <text x="150" y="212" font-size="14" text-anchor="middle">booked (GBV)</text>
+  <text x="600" y="72" font-size="14" text-anchor="middle">stay = revenue recognised</text>
+  <!-- legend -->
+  <g font-size="14">
+    <line x1="60" y1="310" x2="90" y2="310" stroke="var(--slate-fill)" stroke-width="3"/><text x="98" y="314">booked two quarters earlier</text>
+    <line x1="300" y1="310" x2="330" y2="310" stroke="var(--accent-fill)" stroke-width="3"/><text x="338" y="314">booked last quarter</text>
+    <line x1="500" y1="310" x2="530" y2="310" stroke="currentColor" stroke-width="2" stroke-dasharray="5 4"/><text x="538" y="314">booked during the quarter</text>
+  </g>
+  <!-- stacked bar -->
+  <text x="850" y="30" font-size="15" font-weight="600" text-anchor="middle">Q4 revenue, by when it was booked</text>
+  <rect x="790" y="44" width="120" height="80" fill="var(--tint-grey)" stroke="var(--axis)" stroke-dasharray="5 4"/>
+  <rect x="790" y="124" width="120" height="116" fill="var(--accent-fill)"/>
+  <text x="850" y="76" font-size="15" text-anchor="middle">booked during Q4</text>
+  <text x="850" y="98" font-size="14" text-anchor="middle" class="mono">≈ 40% (35–45%)</text>
+  <text x="850" y="168" font-size="15" font-weight="600" text-anchor="middle" fill="#fff">already booked</text>
+  <text x="850" y="188" font-size="15" font-weight="600" text-anchor="middle" fill="#fff">before Q4 begins</text>
+  <text x="850" y="212" font-size="16" text-anchor="middle" fill="#fff" class="mono">≈ 60% (55–65%)</text>
+</svg>
+<figcaption><b>What the picture says:</b> by the time a quarter starts, roughly 55–65% of the revenue it will report is already booked (about 35% of it already paid); of that pre-booked part, ~70% was booked in the previous quarter and ~30% earlier — which is where the ⅔ / ⅓ weights come from. Airbnb publishes those bookings every quarter as GBV. <b>What the Street does with this:</b> nothing — sell-side models forecast Q4 revenue as nights × ADR × take rate, as if the quarter were a blank page.</figcaption>
+</figure>
+</section>
+
+<!-- ============ 2 ============ -->
+<section>
+<h2><span class="n">2</span>The conversion ratio barely moves</h2>
+<p class="claim">Divide each quarter's revenue by the bookings printed in the two quarters before it (⅔ last quarter, ⅓ the one before). Call it λ. Here it is for the last three years.</p>
+<figure>
+<svg viewBox="0 0 980 270" role="img" aria-label="Two dot plots showing the conversion ratio lambda for third quarters, 17.39, 17.15 and 17.18 percent, and for fourth quarters, 11.95, 12.12 and 12.03 percent, across 2023 to 2025, with ranges of 0.25 and 0.17 percentage points.">
+  <!-- Q3 row -->
+  <text x="40" y="86" font-size="17" font-weight="600">λ · Q3</text>
+  <line x1="200" y1="80" x2="900" y2="80" stroke="var(--axis)" stroke-width="1.5"/>
+  <g font-size="13" text-anchor="middle" class="mono">
+    <line x1="200" y1="74" x2="200" y2="86" stroke="currentColor"/><text x="200" y="104">16.5%</text>
+    <line x1="433" y1="74" x2="433" y2="86" stroke="currentColor"/><text x="433" y="104">17.0%</text>
+    <line x1="667" y1="74" x2="667" y2="86" stroke="currentColor"/><text x="667" y="104">17.5%</text>
+    <line x1="900" y1="74" x2="900" y2="86" stroke="currentColor"/><text x="900" y="104">18.0%</text>
+  </g>
+  <g fill="var(--accent-fill)"><circle cx="615" cy="80" r="8"/><circle cx="503" cy="80" r="8"/><circle cx="517" cy="80" r="8"/></g>
+  <g font-size="14" text-anchor="middle" class="mono">
+    <text x="615" y="60">2023 · 17.39</text><text x="470" y="60">2024 · 17.15</text><text x="560" y="42">2025 · 17.18</text>
+  </g>
+  <path d="M503,118 L503,126 L615,126 L615,118" fill="none" stroke="currentColor"/>
+  <text x="559" y="142" font-size="14" text-anchor="middle" font-weight="600">range 0.25pp</text>
+  <!-- Q4 row -->
+  <text x="40" y="196" font-size="17" font-weight="600">λ · Q4</text>
+  <line x1="200" y1="190" x2="900" y2="190" stroke="var(--axis)" stroke-width="1.5"/>
+  <g font-size="13" text-anchor="middle" class="mono">
+    <line x1="200" y1="184" x2="200" y2="196" stroke="currentColor"/><text x="200" y="214">11.0%</text>
+    <line x1="375" y1="184" x2="375" y2="196" stroke="currentColor"/><text x="375" y="214">11.5%</text>
+    <line x1="550" y1="184" x2="550" y2="196" stroke="currentColor"/><text x="550" y="214">12.0%</text>
+    <line x1="725" y1="184" x2="725" y2="196" stroke="currentColor"/><text x="725" y="214">12.5%</text>
+    <line x1="900" y1="184" x2="900" y2="196" stroke="currentColor"/><text x="900" y="214">13.0%</text>
+  </g>
+  <g fill="var(--accent-fill)"><circle cx="532" cy="190" r="8"/><circle cx="592" cy="190" r="8"/><circle cx="560" cy="190" r="8"/></g>
+  <g font-size="14" text-anchor="middle" class="mono">
+    <text x="510" y="170">2023 · 11.95</text><text x="620" y="170">2024 · 12.12</text><text x="562" y="152">2025 · 12.03</text>
+  </g>
+  <path d="M532,228 L532,236 L592,236 L592,228" fill="none" stroke="currentColor"/>
+  <text x="562" y="252" font-size="14" text-anchor="middle" font-weight="600">range 0.17pp</text>
+  <text x="900" y="252" font-size="14" text-anchor="end">2023 weak dollar · 2024 strong dollar · 2025 weak dollar</text>
+</svg>
+<figcaption><b>What the picture says:</b> across three years with very different dollar paths, the Q4 ratio moved 0.17 percentage points. It reproduces to two decimals from the public KPI panel. <b>Why it matters:</b> if the ratio is that stable and the bookings are already printed, next quarter's revenue is mostly arithmetic before the quarter starts.</figcaption>
+</figure>
+</section>
+
+<!-- ============ 3 ============ -->
+<section>
+<h2><span class="n">3</span>Two ways to get to the same number</h2>
+<p class="claim">Side by side: how a sell-side model reaches its Q4 estimate, and how the kernel does.</p>
+<figure>
+<svg viewBox="0 0 1000 470" role="img" aria-label="Left panel: the Street multiplies a nights forecast, an ADR forecast and a take-rate assumption, each uncertain, to reach a revenue estimate and a guide expectation that misses the real guide by 2.5 points. Right panel: the kernel multiplies printed GBV by a stable ratio, divides by the cushion, and reaches the guide with 1.1 points of error.">
+  <defs><marker id="k3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <!-- left panel -->
+  <rect x="20" y="20" width="470" height="410" fill="none" stroke="var(--slate-fill)" stroke-dasharray="6 4"/>
+  <text x="255" y="50" font-size="16" text-anchor="middle" class="mono" style="fill:var(--slate)" letter-spacing="1">THE STREET</text>
+  <g stroke="currentColor" fill="none" stroke-width="1.3">
+    <rect x="50" y="80" width="210" height="46"/><rect x="50" y="146" width="210" height="46"/><rect x="50" y="212" width="210" height="46"/>
+  </g>
+  <g font-size="16" font-weight="600" text-anchor="middle">
+    <text x="155" y="109">Nights forecast</text><text x="155" y="175">ADR forecast</text><text x="155" y="241">Take-rate assumption</text>
+  </g>
+  <g font-size="23" text-anchor="middle"><text x="155" y="142">×</text><text x="155" y="208">×</text></g>
+  <!-- uncertainty whiskers -->
+  <g stroke="var(--slate-fill)" stroke-width="2.5">
+    <line x1="290" y1="103" x2="460" y2="103"/><line x1="290" y1="96" x2="290" y2="110"/><line x1="460" y1="96" x2="460" y2="110"/>
+    <line x1="305" y1="169" x2="445" y2="169"/><line x1="305" y1="162" x2="305" y2="176"/><line x1="445" y1="162" x2="445" y2="176"/>
+    <line x1="330" y1="235" x2="420" y2="235"/><line x1="330" y1="228" x2="330" y2="242"/><line x1="420" y1="228" x2="420" y2="242"/>
+  </g>
+  <g font-size="13" text-anchor="middle" style="fill:var(--slate)">
+    <text x="375" y="91">forecast · does not beat naive</text><text x="375" y="157">forecast · ties naive</text><text x="375" y="223">assumed</text>
+  </g>
+  <line x1="155" y1="258" x2="155" y2="292" stroke="currentColor" stroke-width="1.3" marker-end="url(#k3)"/>
+  <rect x="50" y="294" width="210" height="46" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  <text x="155" y="323" font-size="16" font-weight="600" text-anchor="middle">Revenue estimate</text>
+  <line x1="155" y1="340" x2="155" y2="374" stroke="currentColor" stroke-width="1.3" marker-end="url(#k3)"/>
+  <rect x="50" y="376" width="210" height="46" fill="none" stroke="var(--slate-fill)" stroke-width="2"/>
+  <text x="155" y="405" font-size="16" font-weight="600" text-anchor="middle">Q4 guide expectation</text>
+  <text x="375" y="395" font-size="15" text-anchor="middle" style="fill:var(--crit)" font-weight="600">misses the real guide</text>
+  <text x="375" y="414" font-size="15" text-anchor="middle" style="fill:var(--crit)" font-weight="600">by sd 2.5pp</text>
+  <!-- right panel -->
+  <rect x="510" y="20" width="470" height="410" fill="none" stroke="var(--accent-fill)" stroke-width="2"/>
+  <text x="745" y="50" font-size="16" text-anchor="middle" class="mono" style="fill:var(--accent)" letter-spacing="1">THE KERNEL</text>
+  <rect x="540" y="80" width="260" height="58" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  <text x="670" y="104" font-size="16" font-weight="600" text-anchor="middle">Printed GBV</text>
+  <text x="670" y="124" font-size="14" text-anchor="middle">⅔ last quarter + ⅓ the one before</text>
+  <text x="890" y="112" font-size="14" text-anchor="middle" style="fill:var(--good)" font-weight="600">known · already</text>
+  <text x="890" y="128" font-size="14" text-anchor="middle" style="fill:var(--good)" font-weight="600">published</text>
+  <text x="670" y="164" font-size="23" text-anchor="middle">×</text>
+  <rect x="540" y="176" width="260" height="46" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  <text x="670" y="205" font-size="16" font-weight="600" text-anchor="middle">λ · Q4 = 12.0%</text>
+  <text x="890" y="196" font-size="14" text-anchor="middle" style="fill:var(--good)" font-weight="600">range 0.17pp</text>
+  <text x="890" y="212" font-size="14" text-anchor="middle" style="fill:var(--good)" font-weight="600">over 3 years</text>
+  <line x1="670" y1="222" x2="670" y2="256" stroke="currentColor" stroke-width="1.3" marker-end="url(#k3)"/>
+  <rect x="540" y="258" width="260" height="46" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  <text x="670" y="287" font-size="16" font-weight="600" text-anchor="middle">Revenue</text>
+  <line x1="670" y1="304" x2="670" y2="338" stroke="currentColor" stroke-width="1.3" marker-end="url(#k3)"/>
+  <text x="700" y="326" font-size="14">÷ (1 + 1.86% cushion)</text>
+  <rect x="540" y="340" width="260" height="46" fill="none" stroke="var(--accent-fill)" stroke-width="2"/>
+  <text x="670" y="369" font-size="16" font-weight="600" text-anchor="middle">Q4 guide</text>
+  <text x="890" y="358" font-size="14" text-anchor="middle" style="fill:var(--good)" font-weight="600">print vs guide</text>
+  <text x="890" y="374" font-size="14" text-anchor="middle" style="fill:var(--good)" font-weight="600">sd 1.1pp</text>
+  <text x="745" y="416" font-size="14" text-anchor="middle">7 free parameters · reruns in seconds · every number public</text>
+  <!-- bottom line -->
+  <text x="500" y="458" font-size="17" text-anchor="middle" font-weight="600">The Street forecasts three uncertain things. The kernel reads one number that is already printed.</text>
+</svg>
+<figcaption><b>What the picture says:</b> the Street's guide expectation is built from three forecasts, two of which don't beat a naive rule; its error against the real guide is more than twice the error of the guide against the print. <b>The gap they leave:</b> Airbnb's own guide is closer to arithmetic than the Street's models are to Airbnb's guide.</figcaption>
+</figure>
+</section>
+
+<!-- ============ 4 ============ -->
+<section>
+<h2><span class="n">4</span>The Q4 "slowdown" is the dollar, carried through the kernel</h2>
+<p class="claim">Growth in the bookings base falls from Q3 to Q4. Here is why, in two pieces.</p>
+<figure>
+<svg viewBox="0 0 960 330" role="img" aria-label="Waterfall from third-quarter lagged GBV growth of 16.9 percent, minus 2.0 points of booking-date FX carried through the kernel, plus 0.4 points ex-FX, to fourth-quarter growth of 15.2 percent.">
+  <defs><marker id="k4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <line x1="60" y1="270" x2="920" y2="270" stroke="var(--axis)" stroke-width="1.5"/>
+  <text x="40" y="274" font-size="13" text-anchor="end" class="mono">0%</text>
+  <!-- Q3 bar -->
+  <rect x="110" y="101" width="130" height="169" fill="#AEBBC7"/>
+  <text x="175" y="90" font-size="16" font-weight="600" text-anchor="middle" class="mono">+16.9%</text>
+  <text x="175" y="292" font-size="15" text-anchor="middle">Q3 booked-base growth</text>
+  <!-- FX drop -->
+  <line x1="240" y1="101" x2="320" y2="101" stroke="var(--axis)" stroke-dasharray="4 3"/>
+  <rect x="320" y="101" width="130" height="20" fill="var(--crit)"/>
+  <text x="385" y="90" font-size="16" font-weight="600" text-anchor="middle" class="mono" style="fill:var(--crit)">−2.0pp</text>
+  <text x="385" y="292" font-size="15" text-anchor="middle">booking-date FX</text>
+  <text x="385" y="310" font-size="14" text-anchor="middle">already observed · an output</text>
+  <!-- ex-FX -->
+  <line x1="450" y1="121" x2="530" y2="121" stroke="var(--axis)" stroke-dasharray="4 3"/>
+  <rect x="530" y="117" width="130" height="4" fill="var(--good)"/>
+  <text x="595" y="106" font-size="16" font-weight="600" text-anchor="middle" class="mono" style="fill:var(--good)">+0.4pp</text>
+  <text x="595" y="292" font-size="15" text-anchor="middle">ex-FX demand</text>
+  <text x="595" y="310" font-size="14" text-anchor="middle">flat to slightly up</text>
+  <!-- Q4 bar -->
+  <line x1="660" y1="117" x2="740" y2="117" stroke="var(--axis)" stroke-dasharray="4 3"/>
+  <rect x="740" y="118" width="130" height="152" fill="var(--accent-fill)"/>
+  <text x="805" y="107" font-size="16" font-weight="600" text-anchor="middle" class="mono">+15.2%</text>
+  <text x="805" y="292" font-size="15" text-anchor="middle">Q4 booked-base growth</text>
+  <!-- annotations -->
+  <text x="385" y="40" font-size="15" text-anchor="middle" style="fill:var(--slate)" class="mono" letter-spacing=".5">STREET READS THIS AS "DEMAND IS SLOWING"</text>
+  <line x1="385" y1="48" x2="385" y2="92" stroke="var(--slate-fill)" stroke-width="1.5" marker-end="url(#k4)"/>
+  <text x="805" y="40" font-size="15" text-anchor="middle" style="fill:var(--accent)" class="mono" letter-spacing=".5">KERNEL: THE DOLLAR, PRICED WHEN BOOKED</text>
+</svg>
+<figcaption><b>What the picture says:</b> almost the entire Q3→Q4 deceleration is currency that was fixed when the bookings were made — it's already inside the printed GBV. Demand ex-FX is flat. <b>The Street's error, twice over:</b> it reads the step as demand, and many models then subtract an FX adjustment on top — counting the same dollar move twice (the old −3.4pp bridge did exactly this).</figcaption>
+</figure>
+</section>
+
+<!-- ============ 5 ============ -->
+<section>
+<h2><span class="n">5</span>So where should the forecasting effort go?</h2>
+<p class="claim">Revenue = λ × GBV. One factor is nearly constant. The other carries all the uncertainty.</p>
+<figure>
+<svg viewBox="0 0 960 310" role="img" aria-label="A large box for booked GBV with 3.2 percent uncertainty, a small box for lambda with 0.6 percent uncertainty, an arrow to revenue, and a bar showing that 97 percent of revenue forecast variance comes from GBV and 3 percent from lambda.">
+  <defs><marker id="k5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <rect x="60" y="50" width="330" height="170" fill="var(--tint-red)" stroke="var(--accent-fill)" stroke-width="2"/>
+  <text x="225" y="115" font-size="23" font-weight="600" text-anchor="middle">Booked GBV</text>
+  <text x="225" y="145" font-size="16" text-anchor="middle">uncertain · sd ≈ 3.2%  (≈ $850M)</text>
+  <text x="225" y="170" font-size="15" text-anchor="middle">this is where alt data can work</text>
+  <text x="430" y="143" font-size="29" text-anchor="middle">×</text>
+  <rect x="470" y="112" width="120" height="50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <text x="530" y="134" font-size="18" font-weight="600" text-anchor="middle">λ</text>
+  <text x="530" y="153" font-size="13" text-anchor="middle">sd ≈ 0.6%</text>
+  <line x1="600" y1="137" x2="680" y2="137" stroke="currentColor" stroke-width="1.5" marker-end="url(#k5)"/>
+  <rect x="690" y="97" width="210" height="80" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="795" y="130" font-size="21" font-weight="600" text-anchor="middle">Revenue</text>
+  <text x="795" y="156" font-size="14" text-anchor="middle">take rate · seasonality · FX already inside</text>
+  <!-- variance bar -->
+  <text x="60" y="255" font-size="15" font-weight="600">Share of revenue-forecast uncertainty</text>
+  <rect x="60" y="264" width="815" height="22" fill="var(--accent-fill)"/>
+  <rect x="875" y="264" width="25" height="22" fill="var(--slate-fill)"/>
+  <text x="467" y="280" font-size="15" font-weight="600" text-anchor="middle" fill="#fff">GBV ≈ 97%</text>
+  <text x="887" y="302" font-size="13" text-anchor="middle" class="mono">λ 3%</text>
+</svg>
+<figcaption><b>What the picture says:</b> about 97% of what you don't know about next quarter's revenue is "how much did they book" — not take rate, not seasonality, not FX. <b>Why the team's 3,500 alt-data tests failed:</b> they aimed at nights and revenue growth, which mix bookings with recognition timing and currency. Aim the same data at booked GBV and let the kernel do the rest.</figcaption>
+</figure>
+</section>
+
+<!-- ============ 6 ============ -->
+<section>
+<h2><span class="n">6</span>What 5 November actually resolves</h2>
+<p class="claim">Revenue is pinned by the guide and the kernel. So the printed "take rate" is just revenue ÷ GBV — and it moves with whichever GBV view is right.</p>
+<figure>
+<svg viewBox="0 0 960 320" role="img" aria-label="A fixed revenue band of 4.80 to 4.82 billion dollars above a take-rate axis from 17.5 to 19 percent with the 18.10 flip line; three GBV views map to take rates of 18.14, 18.34 and 18.53 percent with probabilities 0.53, 0.69 and 0.82 of clearing the line.">
+  <rect x="80" y="40" width="800" height="44" fill="var(--tint-green)" stroke="var(--good)" stroke-width="2"/>
+  <text x="480" y="68" font-size="17" font-weight="600" text-anchor="middle">3Q26 revenue ≈ $4.80–4.82bn — pinned (kernel, guide × cushion and every source agree within 0.3%)</text>
+  <text x="480" y="112" font-size="15" text-anchor="middle">↓  divide by the GBV you believe  ↓</text>
+  <!-- axis -->
+  <line x1="200" y1="230" x2="900" y2="230" stroke="var(--axis)" stroke-width="1.5"/>
+  <g font-size="13" text-anchor="middle" class="mono">
+    <line x1="200" y1="224" x2="200" y2="236" stroke="currentColor"/><text x="200" y="254">17.5%</text>
+    <line x1="433" y1="224" x2="433" y2="236" stroke="currentColor"/><text x="433" y="254">18.0%</text>
+    <line x1="667" y1="224" x2="667" y2="236" stroke="currentColor"/><text x="667" y="254">18.5%</text>
+    <line x1="900" y1="224" x2="900" y2="236" stroke="currentColor"/><text x="900" y="254">19.0%</text>
+  </g>
+  <text x="60" y="235" font-size="15" font-weight="600">printed take rate</text>
+  <!-- flip line -->
+  <line x1="480" y1="130" x2="480" y2="238" stroke="var(--accent-fill)" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="480" y="278" font-size="15" font-weight="600" text-anchor="middle" style="fill:var(--accent)">flip line 18.10%</text>
+  <!-- dots -->
+  <g fill="currentColor"><circle cx="498" cy="230" r="8"/><circle cx="591" cy="230" r="8"/><circle cx="680" cy="230" r="8"/></g>
+  <g font-size="14">
+    <text x="498" y="150" text-anchor="middle">our GBV $26.55bn</text><text x="498" y="168" text-anchor="middle" class="mono">→ 18.14% · P 0.53</text>
+    <line x1="498" y1="176" x2="498" y2="218" stroke="var(--axis)"/>
+    <text x="591" y="190" text-anchor="middle">frozen card $26.19bn</text><text x="591" y="208" text-anchor="middle" class="mono">→ 18.34% · P 0.69</text>
+    <text x="700" y="150" text-anchor="middle">Krish GBV $25.9bn</text><text x="700" y="168" text-anchor="middle" class="mono">→ 18.53% · P 0.82</text>
+    <line x1="680" y1="176" x2="680" y2="218" stroke="var(--axis)"/>
+  </g>
+  <text x="480" y="308" font-size="15" text-anchor="middle">the lower your booking view, the higher the printed take rate — the "hinge" is a GBV question, not a pricing question</text>
+</svg>
+<figcaption><b>What the picture says:</b> the take-rate threshold everyone is watching on 5 November cannot be read as pricing power. With revenue already pinned, a print above 18.10% mostly means bookings came in <em>lower</em> than the higher GBV views — which is the opposite of how the Street will headline it. <b>Use:</b> pre-register the pair (which GBV view, which take rate) and say in advance what each print would mean.</figcaption>
+</figure>
+</section>
+
+<div class="one">
+Airbnb tells you more than half of next quarter's revenue every time it prints GBV; the ratio that turns bookings into revenue hasn't moved in three years; the Street forecasts the quarter as if neither fact existed.
+<small>Where the work goes next: nowcast booked GBV (calendar pickup, stays index, arrivals), watch λ for drift as RNPL cancellations rise, and screen each quarter for gaps between the kernel-implied guide and consensus. Where it doesn't go: take-rate levers, seasonality models, FX as an input.</small>
+</div>
+
+<footer>Sources: 05_backtests/kernel-lambda.md · B4_FX_EXHIBIT.md · B1_TAKE_RATE_RECONCILIATION.md · PREREG_ABNB-INT-v1.md · 04_synthesis/00_INTEGRATED_SYSTEM.md. Research, not investment advice.</footer>
+</div>

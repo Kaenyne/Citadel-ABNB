@@ -1,0 +1,15 @@
+line,pp,owner,basis,note,cumulative_pp
+volume: na nights,2.3447338156791795,l1-reconciliation,estimated,nights y/y +6.0%,2.3447338156791795
+volume: emea nights,2.9047434273548225,l1-reconciliation,estimated,nights y/y +7.0%,5.249477243034002
+volume: latam nights,1.599926547409811,l1-reconciliation,estimated,nights y/y +16.0%,6.849403790443813
+volume: apac nights,1.4137841211307218,l1-reconciliation,estimated,nights y/y +15.0%,8.263187911574535
+"price: within-region ADR ex-FX (l-f-l + sub-regional mix, unsplit)",3.000000000000011,l1-reconciliation,estimated,reported as the identified SUM; the +2.9pp l-f-l/sub-mix split is a 2-d ridge and is NOT split,11.263187911574546
+geographic mix (OUTPUT of the share identity),-1.0895679838501362,l1-reconciliation,output,"share-weighted identity; no calibration plug, no index bias",10.17361992772441
+unit size and LOS (bedroom elasticity 0.23),0.38180000000000003,l1-reconciliation,estimated,bedroom-nights wedge +1.66pp x elasticity 0.23; the +2pp Street mapping is NOT used; n=1 disclosed quarters,10.55541992772441
+seats and hotel dilution (OUTPUT of N = home + hotel + seats),0.0,l1-reconciliation,output,"nets out of GBV: dilution moves reported ADR and units in opposite directions, GBV is unchanged. 2026 reported-ADR drag -3.52pp",10.55541992772441
+booking-date FX carried through Phi,0.0,l1-reconciliation,estimated,already inside the lagged USD GBV base; NOT added to revenue a second time,10.55541992772441
+fee / take-rate mechanism (half weight),0.9,fee-takerate / kernel-lambda,assumed_not_rebuilt_tonight,carried as a fixed input per the decisions document,11.45541992772441
+new lines,0.2,fee-takerate / kernel-lambda,assumed_not_rebuilt_tonight,carried as a fixed input per the decisions document,11.65541992772441
+regulation,-0.3,fee-takerate / kernel-lambda,assumed_not_rebuilt_tonight,carried as a fixed input per the decisions document,11.355419927724409
+"hedge (dollars, added ONCE by kernel-lambda)",0.0,fee-takerate / kernel-lambda,assumed_not_rebuilt_tonight,carried as a fixed input per the decisions document,11.355419927724409
+kernel timing (revenue is a convolution of LAGGED GBV),0.16740106691767132,kernel-lambda,identity,"GBV growth minus revenue growth from the 2/3-1/3 lag; an identity, not a residual  | FY27 revenue growth = +11.52%",11.52282099464208

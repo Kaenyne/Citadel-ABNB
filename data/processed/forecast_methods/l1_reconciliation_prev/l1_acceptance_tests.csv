@@ -1,0 +1,10 @@
+test,passed,detail
+A1: reproduce all 72 filed regional revenue cells,True,"72/72 exact, max |resid| = 2.27e-13 $M"
+A2: every clean annual regional nights cell inside +/-0.5M,True,16/16 inside; max overshoot beyond the band = 0.0008 M nights
+A3: regional nights sum to printed Nights-and-Seats exactly,True,max |sum_r n_r - N| = 2.84e-14 M over 18 quarters
+A4: blended ADR equals share-weighted regional ADR (mix is an OUTPUT),True,max |sum_r s_r ADR_r - GBV/N| = 5.68e-14 USD
+A5: regional GBV sums to printed GBV,True,max |sum_r GBV_r - GBV| = 3.64e-12 $M
+A6: reproduce the architect's seasonal lambda table (2023-2026 means),True,"Q1 12.694 vs 12.612 (d=+0.082pp, n=4); Q2 13.714 vs 13.736 (d=-0.022pp, n=4); Q3 17.239 vs 17.182 (d=+0.057pp, n=3); Q4 12.030 vs 12.026 (d=+0.004pp, n=3)"
+A7: reproduce the note's geographic-mix drag 2023-2025,True,2023 -1.22 vs -1.08 (d -0.14pp); 2024 -1.13 vs -1.24 (d +0.11pp); 2025 -1.48 vs -1.58 (d +0.10pp)  n=3
+A8: reproduce the note's within-region ex-FX ADR term 2023-2025,False,2023 +2.60 vs +3.10 (d -0.50pp); 2024 +2.01 vs +3.44 (d -1.43pp); 2025 +3.13 vs +3.41 (d -0.28pp)  n=3
+A9: FY27 within 1 percent of the Street midpoint,True,"l1 15,838 vs Street mid 15,745 (+0.59%), n=1"

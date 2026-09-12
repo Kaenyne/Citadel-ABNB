@@ -1,0 +1,8 @@
+layer,parameter,count,estimator,value
+guidance policy,"c (trailing-8 cushion, mean)",1,"trailing-8 empirical mean of actual/guide_mid - 1, block bootstrap",1.8567%
+guidance policy,kappa (at-print Street over guide mid),1,"LSEG-only pairs, n=12",+0.6040% (sd 0.300pp)
+guidance policy TOTAL,c + kappa,2,against 19 scoreable guides and 19 interval-censored ranges,ratio 2/38 = 0.053
+"kernel (owned by kernel-lambda, consumed here)",4 seasonal lambda + 1 lag weight w,5,"trailing-3 same-season mean; w fixed at 2/3, NOT fitted",lambda_Q4 = 12.030%
+combined object guide_mid_next_q,5 kernel + c,6,"n_params published on every registry row; kappa is NOT in this object's point or q50 (it feeds only the informational at-print consensus column), so the count is 6, not 7",
+LIVE objects q4_2026_guide_mid / q4_2026_print,5 kernel + c,6,c enters the guide point directly and the print only through the predictive sd; kappa in neither,
+NOT parameterised,the guide-vs-Street gap,0,DERIVED as (1+kappa)/(1+c) - 1; never separately fitted,

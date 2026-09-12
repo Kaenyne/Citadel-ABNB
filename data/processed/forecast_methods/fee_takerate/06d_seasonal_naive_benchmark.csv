@@ -1,0 +1,3 @@
+benchmark,window,n,rmse,mae,bias,bias_convention,note
+seasonal_naive_tr[q-4],W1,14,0.3251373336211727,0.2442857142857144,-0.014285714285714235,forecast minus actual,"y[q-4] on take_rate_pct, built locally; harness baseline_naive_seasonal returns 0.0 on this metric because it is classified growth-like. NOT the harness ratio denominator"
+seasonal_naive_tr[q-4],W2,10,0.31783643592263017,0.23600000000000013,0.08600000000000012,forecast minus actual,"y[q-4] on take_rate_pct, built locally; harness baseline_naive_seasonal returns 0.0 on this metric because it is classified growth-like. NOT the harness ratio denominator"

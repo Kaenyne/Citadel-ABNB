@@ -187,3 +187,27 @@ it a bug.
 no reaction feature survived leave-one-out, so none is in the workbook); long-term stays, Airbnb for Work
 and RNPL float as separate revenue lines (WS11 could not size them); a balance sheet below net cash;
 anything past FY2028.
+
+---
+
+## L1 boundary rule (added by package `l1-reconciliation`, 11 Sep 2026)
+
+**Exactly ONE object crosses the L1 boundary onward: GBV in USD, booking-dated, one
+number per quarter** (`data/processed/forecast_methods/l1_reconciliation/l1_gbv_spine_quarterly.csv`).
+
+Nights, ADR, regional mix, unit size, LOS, seats and regulation do **not** cross the
+boundary. They are internal to the reconciliation, where they are identified only
+jointly and only up to the disclosed intervals. Any downstream package that wants a
+nights or ADR number must state that it is taking an L1 *internal* quantity and
+carry the L1 interval with it.
+
+**Numeraire.** `l1-reconciliation` hands **reported ADR** (GBV in reported USD over
+Nights-and-Seats). It does **not** de-gross-up the fee migration and it does not
+hand host payout per night. The single de-gross-up equation lives in `fee-takerate`
+and only there.
+
+**Outputs, not inputs.** Under the L1 reparameterisation, geographic mix, seats and
+hotel dilution, and the blended-ADR index are arithmetic *outputs* of the share and
+denominator identities. The −0.41pp regional calibration plug and the +0.19pp
+current-weighting index bias are retired: softmax shares sum to one by construction
+and the blend is the share-weighted sum by construction.

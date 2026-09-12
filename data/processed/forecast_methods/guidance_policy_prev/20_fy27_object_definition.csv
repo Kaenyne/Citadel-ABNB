@@ -1,0 +1,12 @@
+line,pp,owner,status
+volume ex-FX,8.6,not built tonight,assumed input
+within-region price ex-FX,3.5,not built tonight,assumed input; +2.9pp of it is unidentified
+geographic mix,-1.5,identity output,identity
+seats and hotel dilution,-0.5,identity output,identity
+booking-date FX,-0.4,fx-lag,assumed input
+fee step (half weight),0.9,fee-takerate,fee-takerate must report the delta vs +0.9 explicitly
+new lines,0.2,not built tonight,assumed input
+regulation,-0.3,not built tonight,assumed input
+TOTAL FY27 revenue growth,10.5,sum,placeholder
+"OBJECT DEFINITION: the Feb-2027 FY27 GUIDE is the FY27 print divided by (1 + c), with c the trailing-8 cushion as of Feb 2027; FY27 print is the sum of four quarterly kernel objects. Guide and print differ by ~1.86%.",,guidance-policy,definition
+"NOTE: FY27 Street is 15,730M (Zacks 13 est 2026-09-04) / 15,760M (S&P MI 2026-09-03) / 15,758M (Alpha Vantage 44 est 2026-09-11). Say in the first 200 words that our FY27 is within 1% of consensus.",,memo,instruction

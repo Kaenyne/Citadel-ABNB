@@ -1,0 +1,35 @@
+task,target,model,n,pit_mean,pit_edge_frac,crps_mean,mae,pit_ks_p,calibration_read
+A_pre_earnings_forecast,nights_surprise_pct,eu_platform_yoy_lag1,8,0.2953399302489874,0.375,7.03139392224921,1.036375,0.05689774440600903,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,pr_hotel_revpar_yoy,8,0.7008197064336453,0.5,8.833891118835849,1.422775,0.0006460957333063277,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,f_surprise_trail4,6,0.8137363456852201,0.3333333333333333,11.004784103467756,1.4613833333333333,0.0037722908093278406,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,pr_hotel_revpar_yoy_pit,6,0.5792581430355069,0.16666666666666666,9.820655101383787,1.2386333333333333,0.06558641975308642,roughly calibrated on this small sample
+A_pre_earnings_forecast,nights_surprise_pct,bl_funds_yoy_lag1,4,0.6088781384070497,0.25,13.53362119120741,1.4917,0.27302559088565503,roughly calibrated on this small sample
+A_pre_earnings_forecast,nights_surprise_pct,f_guide_vs_street_lag1,4,0.7627580991685009,0.25,13.360001852819785,1.6556,0.0078125,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,f_prior_surprise,4,0.5146252183621278,0.25,12.618445672254762,1.5733750000000002,0.18000806130919525,roughly calibrated on this small sample
+A_pre_earnings_forecast,nights_surprise_pct,f_guide_cushion_trail4,3,0.47510940400589075,0.3333333333333333,11.942841967700593,1.6685666666666668,,roughly calibrated on this small sample
+A_pre_earnings_forecast,revenue_surprise_pct,eu_platform_yoy_lag1,12,0.0,1.0,6.8283574659914175,4.742816666666667,0.0,OVERCONFIDENT (>50% of actuals outside the ladder)
+A_pre_earnings_forecast,revenue_surprise_pct,f_prior_surprise,11,-0.25110897817089656,0.09090909090909091,10.820804187433838,1.2851181818181818,7.451960851958326e-05,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,pr_hotel_revpar_yoy,11,-0.6752261895757345,0.45454545454545453,10.279521886250533,3.0543909090909094,0.0,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,f_surprise_trail4,10,-0.07545596082415007,0.1,11.069524521827775,1.17055,0.00777741,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,pr_hotel_revpar_yoy_pit,9,-0.6587198715062071,0.4444444444444444,11.659328948287344,3.0091555555555556,0.0,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,bl_funds_yoy_lag1,7,-0.03659590782644701,0.0,11.514130803186205,0.8115,0.02989720473748663,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,f_guide_vs_street_lag1,7,-0.18051716606620644,0.0,10.959013916747589,0.7701142857142858,0.00445039885926725,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,f_guide_cushion_trail4,6,-0.31465188505192865,0.16666666666666666,7.399306703262186,0.9099166666666667,0.0037722908093278493,BIASED (PIT mean far from 0.5)
+B_post_release_drift,legacy_20d_pct,revenue_surprise_pct,12,0.31471612789453446,0.25,70.41969164070926,8.311675,0.10873897814796862,roughly calibrated on this small sample
+B_post_release_drift,legacy_20d_pct,guide_vs_street_pct,8,0.5178589290153481,0.25,86.3519299596823,8.44365,0.16157627105712902,roughly calibrated on this small sample
+B_post_release_drift,legacy_20d_pct,nights_surprise_pct,8,0.12885103433678796,0.25,60.7253950120949,6.273925,0.009157861537068764,BIASED (PIT mean far from 0.5)
+B_post_release_drift,legacy_5d_pct,revenue_surprise_pct,12,0.2646184511685729,0.08333333333333333,82.84435674549134,7.602116666666666,0.002680251656056024,BIASED (PIT mean far from 0.5)
+B_post_release_drift,legacy_5d_pct,guide_vs_street_pct,8,0.5053479976470617,0.375,75.05216576759354,8.9256875,0.0973645346242542,roughly calibrated on this small sample
+B_post_release_drift,legacy_5d_pct,nights_surprise_pct,8,0.24599315302578156,0.375,61.13281964361816,8.5057625,0.16157627105712902,BIASED (PIT mean far from 0.5)
+B_post_release_drift,open_20d_pct,revenue_surprise_pct,12,0.2396293093941085,0.16666666666666666,54.417002798172945,5.258916666666667,0.10873897814796862,BIASED (PIT mean far from 0.5)
+B_post_release_drift,open_20d_pct,guide_vs_street_pct,8,0.20289338184919703,0.125,66.36521480232851,5.6154875,0.18258700390266025,BIASED (PIT mean far from 0.5)
+B_post_release_drift,open_20d_pct,nights_surprise_pct,8,0.013030044954533082,0.125,60.411106750999124,4.965574999999999,0.0037831395457923944,BIASED (PIT mean far from 0.5)
+B_post_release_drift,open_5d_pct,revenue_surprise_pct,12,0.2463756261212564,0.08333333333333333,34.56451249662506,4.3369,0.021146765625423725,BIASED (PIT mean far from 0.5)
+B_post_release_drift,open_5d_pct,guide_vs_street_pct,8,0.23703852520542085,0.125,37.18978212726565,4.8441875,0.16157627105712902,BIASED (PIT mean far from 0.5)
+B_post_release_drift,open_5d_pct,nights_surprise_pct,8,0.3933328449754221,0.125,41.64354954914831,4.9792749999999995,0.0779853922245698,roughly calibrated on this small sample
+B_post_release_drift,postclose_20d_pct,revenue_surprise_pct,12,0.42592679663128324,0.16666666666666666,60.85783719494159,5.71675,0.021146765625423725,roughly calibrated on this small sample
+B_post_release_drift,postclose_20d_pct,guide_vs_street_pct,8,0.3028401153170491,0.0,68.87563800867296,5.6194875,0.16349005554009255,roughly calibrated on this small sample
+B_post_release_drift,postclose_20d_pct,nights_surprise_pct,8,0.3608462325406552,0.125,60.40801345852471,4.7536249999999995,0.4414803248977598,roughly calibrated on this small sample
+B_post_release_drift,postclose_5d_pct,revenue_surprise_pct,12,0.5683506104855852,0.16666666666666666,30.903958081260978,3.9579,0.0002075902628892031,roughly calibrated on this small sample
+B_post_release_drift,postclose_5d_pct,guide_vs_street_pct,8,0.3325527649981711,0.125,40.01878074200878,4.67645,0.20485978098006574,roughly calibrated on this small sample
+B_post_release_drift,postclose_5d_pct,nights_surprise_pct,8,0.6848148684694059,0.125,36.241340217490354,5.154999999999999,3.62396240234375e-05,roughly calibrated on this small sample

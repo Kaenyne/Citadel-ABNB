@@ -1,0 +1,4 @@
+item,columns,detail,l0_basis_values,l0_restated_rows,severity,resolution
+training_feature_basket_lags_not_vintage_stamped,"b_lag1,b_lag2,b_lag3,eur_lag1,eur_lag2,adrfx_lag1,adrfx_lag2",baskets.regional_revenue_weights() uses the current-vintage L0 regional revenue split with no knowable_from filter; the target quarter's own lag-0 basket (pit_fx.regional_shares_asof) IS filtered,"back_out,filed",0,low: FRED spot never revises and L0 carries no restated rows,"documented, not fixed"
+gross_ex_hedge_target_is_non_PIT_structural,gross_fx_ex_hedge_pp,"built from 10-Q hedge reclassification filed AFTER the guide date; used for the structural Object-A fit only, never registered",,0,"labelled, not a leak",every registered object uses the PIT-clean stated letter series
+daily_FRED_FX_ends_2026-08-28,"b_lag0 (live), forward schedule",nothing in this package is genuinely as of 2026-09-11,,0,medium for the LIVE objects,stated everywhere
