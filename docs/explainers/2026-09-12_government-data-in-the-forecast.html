@@ -116,7 +116,7 @@ tr.hl td{background:var(--surface-2)}
   <h2>The answer in three sentences</h2>
   <div class="callout">
     <p><b>Government data is the corroboration layer, never an input to the point estimates.</b> The nights baseline comes from Airbnb's own disclosed quarters and the product-bundle lap; the ADR card comes from a term-by-term decomposition measured on Inside Airbnb review data. Every official series was then tested against those same disclosed numbers, and the ones that passed are used to check direction, region by region, not to set the forecast.</p>
-    <p><b>Two families passed the out-of-sample bar on both test windows,</b> US inbound arrivals for nights and Portugal's accommodation inflation for European ADR, and both are treated as statistical correlates rather than mechanisms. Roughly twenty others pass only on the short window, which is the signature of the post-pandemic normalisation, not of prediction.</p>
+    <p><b>One family passed the out-of-sample bar on every window with a pre-print reading,</b> US inbound arrivals for nights, and it is treated as a statistical correlate rather than a mechanism. Three others pass on all windows but only against a regional bucket that management discloses as a two- or three-value step, so they fit stability rather than movement. Roughly twenty pass only on the short window, which is the signature of the post-pandemic normalisation, not of prediction. A reviewer pass audited all 73 verdicts: 58 upheld, 11 reclassified, 4 overturned, and the conclusion stood.</p>
     <p><b>Right now the official readings agree with the cards:</b> a stack of 23 observable series puts 3Q26 nights at a median +9.6% against the team's +9.9%, European accommodation prices are holding while North American lodging prices decelerate, and nothing official argues the ADR residual is about to collapse.</p>
   </div>
 </section>
@@ -155,7 +155,9 @@ tr.hl td{background:var(--surface-2)}
       <table>
         <tr><th>Series</th><th class="r">Short / long</th><th>Verdict</th><th>Use</th></tr>
         <tr class="hl"><td>NTTO I-94 arrivals to the US, by world region</td><td class="r n">0.72 / 0.76</td><td><span class="chip m">survivor</span></td><td>NA inbound leg, correlate not mechanism</td></tr>
-        <tr><td>ANAC Brazil air passengers</td><td class="r n">0.79 / 0.75</td><td><span class="chip m">survivor</span></td><td>LatAm bucket only, one-quarter lag</td></tr>
+        <tr><td>ANAC Brazil air passengers</td><td class="r n">0.79 / 0.75</td><td><span class="chip m">survivor</span></td><td>LatAm bucket only, one-quarter lag; bucket is a step</td></tr>
+        <tr><td>Brazil central bank travel account</td><td class="r n">0.80 / 0.79</td><td><span class="chip m">survivor</span></td><td>LatAm bucket, same step caveat; outbound spend slowed to +3.7% in July from +23% in 2Q26</td></tr>
+        <tr><td>Portugal INE nights, local accommodation</td><td class="r n">0.79 / 0.79</td><td><span class="chip m">survivor</span></td><td>EMEA bucket, step caveat; flash lands 30 days after month-end, so September arrives before the print</td></tr>
         <tr><td>Hotel RevPAR, Marriott and Hilton</td><td class="r n">0.67 / n.a.</td><td><span class="chip s">corroboration</span></td><td>Company data, not official; direction on nights</td></tr>
         <tr><td>StatCan border indicator, daily</td><td class="r n">0.66 / 3.29</td><td><span class="chip a">short window</span></td><td>NA cross-border direction, reaches August</td></tr>
         <tr><td>JNTO arrivals, JTA guest nights</td><td class="r n">0.68 / 9.5+</td><td><span class="chip a">short window</span></td><td>APAC direction</td></tr>
@@ -163,8 +165,10 @@ tr.hl td{background:var(--surface-2)}
         <tr><td>TSA checkpoint throughput</td><td class="r n">0.92 / 0.98</td><td><span class="chip d">fails</span></td><td>Direction only; counts connections and business</td></tr>
         <tr><td>Spain INE tourist-apartment nights</td><td class="r n">1.2 to 1.7</td><td><span class="chip s">corroboration</span></td><td>Same asset class as Airbnb; EMEA read</td></tr>
         <tr><td>Hawaii DBEDT vacation rentals</td><td class="r n">history from 2024</td><td><span class="chip s">corroboration</span></td><td>Demand, supply, occupancy, ADR for one state</td></tr>
-        <tr><td>Eurostat short-stay accommodation nights</td><td class="r n">0.79 / 0.77</td><td><span class="chip d">no coverage</span></td><td>June today; Jul to Aug lands 27 Oct</td></tr>
-        <tr><td>Census Quarterly Services Survey, lodging</td><td class="r n">0.77 / 0.76</td><td><span class="chip d">no coverage</span></td><td>3Q26 lands 19 Nov; FY27 view</td></tr>
+        <tr><td>Eurostat short-stay accommodation nights</td><td class="r n">0.79 / 0.77</td><td><span class="chip s">corroboration</span></td><td>June today; July lands about 20 Oct, August after the print. Best regional fit in either survey on EMEA</td></tr>
+        <tr><td>Census Quarterly Services Survey, lodging</td><td class="r n">0.77 / 0.76</td><td><span class="chip d">no coverage</span></td><td>3Q26 lands 19 Nov; the most robust fit anywhere, FY27 view</td></tr>
+        <tr><td>Mexico DATATUR hotel occupancy</td><td class="r n">history too short</td><td><span class="chip s">corroboration</span></td><td>Reachable on retry; June rooms occupied -2.0%</td></tr>
+        <tr><td>UK ONS platform short-term lets</td><td class="r n">n.a.</td><td><span class="chip d">no coverage</span></td><td>Airbnb, Booking, Expedia nights to Dec 2025, +9 to +12% in 2H25; six-month lag, FY27 view</td></tr>
         <tr><td>OECD consumer panel, 29 countries</td><td class="r n">wrong sign</td><td><span class="chip d">fails</span></td><td>Regional split forecast rejected</td></tr>
       </table>
     </div>
@@ -172,7 +176,7 @@ tr.hl td{background:var(--surface-2)}
       <h3>Price series, target ADR and the residual</h3>
       <table>
         <tr><th>Series</th><th class="r">Short / long</th><th>Verdict</th><th>Use</th></tr>
-        <tr class="hl"><td>Eurostat HICP accommodation, Portugal</td><td class="r n">0.79 / 0.90</td><td><span class="chip m">survivor</span></td><td>EMEA ex-FX; flat-slope fit, read as stability</td></tr>
+        <tr><td>Eurostat HICP accommodation, Portugal</td><td class="r n">0.79 / 1.04</td><td><span class="chip a">short window</span></td><td>EMEA ex-FX; passed the long window only when it was scored from 2024. Dropped by the reviewer</td></tr>
         <tr><td>Euro-area HICP accommodation</td><td class="r n">0.91 / n.a.</td><td><span class="chip a">marginal</span></td><td>EMEA read next to the letter</td></tr>
         <tr><td>BEA travel export price index</td><td class="r n">0.82 / fails</td><td><span class="chip a">short window</span></td><td>Residual corroboration, 29 Oct</td></tr>
         <tr><td>BLS CPI lodging away from home</td><td class="r n">0.72 / 1.32</td><td><span class="chip a">short window</span></td><td>NA price direction; fading +4.9 to +3.1</td></tr>
@@ -181,7 +185,7 @@ tr.hl td{background:var(--surface-2)}
         <tr><td>ONS, Japan, Australia, NZ, Canada, Brazil CPI accommodation</td><td class="r n">0.76 to 1.29</td><td><span class="chip a">short window</span></td><td>Regional price direction</td></tr>
         <tr><td>Hawaii vacation-rental ADR</td><td class="r n">1.08</td><td><span class="chip s">corroboration</span></td><td>Two basis breaks; +14.5% on the new basis</td></tr>
         <tr><td>Eurostat services PPI, accommodation</td><td class="r n">0.68 / 0.78</td><td><span class="chip d">no coverage</span></td><td>3Q26 lands in December</td></tr>
-        <tr><td>Lodging-tax and registry counts</td><td class="r n">n.a.</td><td><span class="chip d">wrong class</span></td><td>Supply signals, under review</td></tr>
+        <tr><td>Lodging-tax and registry counts</td><td class="r n">n.a.</td><td><span class="chip d">wrong class</span></td><td>Supply signals for the new-listing supply lead, not price</td></tr>
       </table>
     </div>
   </div>
@@ -255,12 +259,15 @@ tr.hl td{background:var(--surface-2)}
         <tr><td class="n">~23 Sep</td><td>Spain INE tourist apartments, August</td><td>EMEA nights direction before the freeze</td></tr>
         <tr><td class="n">~25 Sep</td><td>Hawaii DBEDT vacation rentals, August</td><td>NA demand and rental ADR before the freeze</td></tr>
         <tr><td class="n">30 Sep</td><td>Euro-area HICP flash, September</td><td>EMEA accommodation price</td></tr>
+        <tr><td class="n">~25 Sep</td><td>Brazil central bank travel account, August</td><td>LatAm outbound spend</td></tr>
+        <tr><td class="n">~30 Sep</td><td>Portugal INE nights flash, August</td><td>EMEA same-class nights</td></tr>
         <tr><td class="n">~10 Oct</td><td>StatCan border indicator, September</td><td>Closes the NA quarter</td></tr>
         <tr><td class="n">13 Oct</td><td>US CPI, September</td><td>Closes lodging CPI for the quarter</td></tr>
         <tr><td class="n">mid Oct</td><td>NTTO arrivals, September preliminary</td><td>Closes the one nights survivor for 3Q26</td></tr>
+        <tr><td class="n">~20 Oct</td><td>Eurostat short-stay nights, July</td><td>EMEA nights, same asset class; August lands after the print</td></tr>
         <tr class="hl"><td class="n">20 Oct</td><td>Re-score the prediction card</td><td>All quarter-complete reads in hand</td></tr>
-        <tr><td class="n">27 Oct</td><td>Eurostat short-stay nights, July and August</td><td>EMEA nights, same asset class</td></tr>
-        <tr><td class="n">29 Oct</td><td>BEA travel exports price, 3Q advance</td><td>Residual corroboration</td></tr>
+        <tr><td class="n">29 Oct</td><td>BEA travel exports price, 3Q advance</td><td>Residual corroboration only</td></tr>
+        <tr><td class="n">~31 Oct</td><td>Portugal INE nights flash, September</td><td>Closes the EMEA same-class read</td></tr>
         <tr><td class="n">5 Nov</td><td>Airbnb 3Q26 print</td><td>Scores everything above</td></tr>
         <tr><td class="n">19 Nov</td><td>Census lodging revenue, 3Q26</td><td>FY27 view only</td></tr>
       </table>
@@ -273,13 +280,13 @@ tr.hl td{background:var(--surface-2)}
   <ol class="tight">
     <li><b>Asset class.</b> Most official series count hotel nights, airline passengers or border crossings. Airbnb's KPI is a platform night in a private home. The few same-class series, Spain's tourist apartments, EU short-stay accommodation and Hawaii rentals, are either one market or arrive after the quarter closes.</li>
     <li><b>Stayed versus booked.</b> Official series measure travel that happened. Airbnb reports bookings made in the quarter, including bookings for stays months later. That lead-time gap is three to eight weeks on average and is where the product bundle acts.</li>
-    <li><b>The short-window trap.</b> Six of fourteen families beat naive on the window from 2023 and none on the window from 2022. Everything decelerated together as travel normalised, so a series can look predictive on fourteen observations without predicting anything.</li>
+    <li><b>The short-window trap.</b> Six of fourteen families beat naive on the window from 2023 and none on the window from 2022. Everything decelerated together as travel normalised, so a series can look predictive on fourteen observations without predicting anything. The reviewer made this concrete: on a window from 2024, the target's own expanding mean beats naive on nights at 0.62, and every short-window survivor loses to that mean.</li>
     <li><b>The residual is not a price index.</b> The unobserved ADR term is Airbnb's like-for-like pricing plus sub-regional mix plus the fee reprice. Accommodation CPI tracks hotel-weighted prices. The best of 164 tests against the residual was 1.03 times naive. The one thing that would identify it is a management split of the bundle's ADR contribution by feature.</li>
   </ol>
   <p class="note">The honest sentence for a teammate: the official data tells us the direction of the quarter by region and confirms nothing is wildly off, and it cannot tighten the bands, because it is less precise than the disclosed quarters it would replace.</p>
 </section>
 
-<p class="foot">Sources: G external sources note and scoreboard (q3nowcast), V and P survey notes and candidate tables (govdata), J proxy tests (adrq3), C consumer panel and 10 regional decomposition (overnight, overnight2), ADR v3 synthesis. The reviewer pass on the V and P eliminations was running when this page was written and will be folded in.</p>
+<p class="foot">Sources: G external sources note and scoreboard (q3nowcast), V and P survey notes and candidate tables, R review of eliminations (govdata, PR #50 and follow-up), J proxy tests (adrq3), C consumer panel and 10 regional decomposition (overnight, overnight2), ADR v3 synthesis. Release dates marked with a tilde are inferred from observed publication lags.</p>
 </div>
 
 <script>
@@ -291,7 +298,9 @@ tr.hl td{background:var(--surface-2)}
   var rows=[
     {n:'NTTO US inbound arrivals',s:0.72,l:0.76,t:'nights'},
     {n:'ANAC Brazil air passengers',s:0.79,l:0.75,t:'LatAm nights'},
-    {n:'Portugal HICP accommodation',s:0.79,l:0.90,t:'EMEA ex-FX ADR'},
+    {n:'Brazil central bank travel account',s:0.80,l:0.79,t:'LatAm nights'},
+    {n:'Portugal INE local accommodation nights',s:0.79,l:0.79,t:'EMEA nights'},
+    {n:'Portugal HICP accommodation',s:0.79,l:1.04,t:'EMEA ex-FX ADR'},
     {n:'StatCan border indicator',s:0.66,l:3.29,t:'nights'},
     {n:'JNTO arrivals',s:0.68,l:62.6,t:'nights'},
     {n:'ABS Australia arrivals',s:0.79,l:3.06,t:'nights'},
