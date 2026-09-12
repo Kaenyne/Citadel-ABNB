@@ -1,0 +1,15 @@
+check,n_compared,max_abs_diff_pp,mean_abs_diff_pp,worst_print,n_prints_over_0p01pp,note
+day-1 excess vs 20_executable_returns.legacy_1d_pct,23,0.0,0.0,2020Q4,0,same convention - must be exact
+gap excess vs 20_executable_returns.gap_excess_pct,23,0.0,0.0,2023Q3,0,same convention - must be exact
+executable 5d vs 20_executable_returns.open_5d_pct,23,0.0,0.0,2024Q2,0,same convention - must be exact
+executable 20d vs 20_executable_returns.open_20d_pct,23,0.0,0.0,2022Q2,0,same convention - must be exact
+day-1 excess vs 04_reaction_panel.excess_1d_pct,23,0.043159,0.021899,2026Q2,19,04 stores the same number rounded to 0.1pp
+day-1 excess vs 09_earnings_drift.day1_excess_pct (DIFFERENT convention),23,2.515829,0.643414,2022Q4,21,09 uses an anchored cumulative-product spread path on adjusted closes; expect a gap
+drift 20d vs 09_earnings_drift (DIFFERENT convention),23,4.311567,1.058143,2022Q4,21,same reason
+drift 60d vs 09_earnings_drift (DIFFERENT convention),22,8.857697,2.172526,2022Q4,22,same reason
+run-up 20d vs 09_earnings_drift,23,3.4e-05,1.3e-05,2024Q4,0,the run-up node coincides on the two conventions
+WS09 REPLICATION: day-1 on 09's own convention,23,0.0,0.0,2024Q1,0,must be exact
+WS09 REPLICATION: drift 5d on 09's own convention,23,0.0,0.0,2025Q3,0,must be exact
+WS09 REPLICATION: drift 20d on 09's own convention,23,2.873916,0.124953,2026Q1,1,exact except 2026Q1 - see the 25 May 2026 note
+WS09 REPLICATION: drift 60d on 09's own convention,22,1.281313,0.058241,2026Q1,1,exact except 2026Q1 - see the 25 May 2026 note
+"DISCREPANCY FOUND: 09_prices_daily.csv carries an all-NaN row for 2026-05-25 (Memorial Day, a market holiday). 20_prices_ohlc.csv correctly omits it.",1,,,2026Q1,1,"It is the only print whose +20 and +60 windows span that date, so it is the only print where WS09's event-time clock is shifted by one session. WS09 drift_20d 2026Q1 = -6.26%; on a clean session index it is -3.39% on WS09's own convention and -5.67% on the holding-period convention used here. Nothing in WS09's published aggregates moves materially (one print of 23), but the 2026Q1 row should not be quoted on its own from 09_earnings_drift_by_print.csv."

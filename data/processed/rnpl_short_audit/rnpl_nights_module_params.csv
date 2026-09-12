@@ -1,0 +1,26 @@
+parameter,value,evidence_status,source
+reported nights 1Q24-2Q26,disclosed quarterly series,measured,data/processed/overnight/02_kpi_panel_quarterly.csv; Airbnb quarterly summaries
+reference growth 3Q26 / 4Q26,+9.89% / +8.90%,derived (team baseline),research/notes/2026-09-10_nights-baseline-reconciliation.md s1.4; = PR #32 base
+reference growth 1Q27-4Q27,+8.17% each,derived (team model),"origin/krish/nights-quarterly data/processed/nights_quarterly_total.csv, base, exna_lap=False"
+RNPL GBV share 1Q26,roughly 20%,measured,"1Q26 shareholder letter, ledger D031 (official)"
+RNPL GBV share 2Q26,"over 20%, used at 21%",measured (lower bound),"2Q26 call, ledger D043 -- stockanalysis.com mirror, not the official IR PDF"
+RNPL GBV share 3Q25 / 4Q25,2.5-6% / 7-12%,assumed,no 2025 quarterly share has ever been disclosed. The 4Q25 'over 70% adoption by eligible bookings' figure is eligible-GBV based and cannot be used here (D022)
+RNPL GBV share 3Q26 onward,21-27%,assumed,direction supported by the July 2026 eligibility expansion (D044)
+RNPL / non-RNPL ADR ratio,1.33x,derived,1Q26 ~4pts GBV on ~3pts nights = 4/3 marginal ADR (D032); 4Q25 gives 3/2. Relabelled from ASSUMED by research/notes/2026-09-11_rnpl-balance-sheet-and-q3-bridge.md s1.7
+GBV share -> nights share,p = s/(r(1-s)+s),derived,research/notes/2026-09-10_rnpl-conversion-framework.md s3
+baseline cancellation rate,16% of booked nights,"measured, unit of account unstated","4Q25 call, ledger D018: 'an average of maybe 16% cancellation rate historically'. No base period, no denominator, not stated per night / per booking / per dollar"
+incremental RNPL propensity delta,+2 / +4 / +6 pp,assumed,+6.0 is management-IMPLIED: the whole 1.0pt rise in the platform rate (D017/D018) attributed to RNPL at the 1Q26 nights share. The 2Q26 Strict-to-Firm migration (D048) alone makes that unsafe. NEVER measured
+mean booking-to-check-in lead time,2.2 months (1.8-3.0),derived,"Little's Law on the unearned-fee pool: opening unearned fees / quarterly revenue 0.66-0.88x for pre-RNPL 2025, from origin/jessie/backlog-conversion"
+lead-time distribution shape,"shifted geometric, whole months",assumed,Airbnb has never published a lead-time distribution; only the mean is anchored
+RNPL lead-time uplift u,0 / 7 / 15%,"direction measured, magnitude assumed","lengthening disclosed every print from 3Q25 (D010, D016, D039, D045). The only quantified lead-time move on record is -7% in April 2025, PRE-RNPL (D011)"
+excess recognised in the stay month,85%,"window measured, split assumed","payment due 'shortly before the end of the free cancellation period' (D002); that window is 24h/5d/14d (D012, D060). AUDITED: worth 0.001 growth pts -- inert"
+baseline cancels in the booking month,25%,"mechanism measured, magnitude assumed",24-hour grace period for bookings 7+ days ahead (D012). AUDITED: worth 0.000 pts -- inert
+same-quarter rebooking offset,0 / 25 / 50%,"mechanism measured, magnitude assumed","D002, D046. The calendar pilot's 32-44% reclosure is a descriptive lead, NOT a measured rebooking rate. AUDITED: the single widest assumption, +/-0.31 pts on 3Q26"
+NA share of total nights,28.8%,measured,data/processed/overnight/02_kpi_panel_quarterly.csv na_share_of_nights_pct
+PR #32 fitted product terms,RNPL +2.40 / fee+cancel +2.29 pts of NA nights,"derived (team model, not disclosure)","origin/krish/nights-quarterly. Two free parameters fitted on four WS10 NA estimates; identification by launch timing, cannot be error-bounded"
+ex-NA fee + cancellation lap,0.70-0.88 pts of total nights,derived,"October-December 2025 global dates (D024, D060) plus the 40-50% ex-NA bundle split pinned out of sample by the 4Q25 'over 200bp' disclosure (D014)"
+ex-NA RNPL lap,0.87-1.05 pts of total nights,derived,residual of management's ~3.0 global points (D032) after the NA and ex-NA fee legs
+ex-NA 1Q27 partial-lap fraction,5.5/13 of the quarter,measured (dates),"17 Feb worldwide; UK 18 Feb, AU/APAC 23 Feb, Canada 4 Mar (D025-D029)"
+July 2026 expansion,+0.10 to +0.30 pts,assumed,expansion of eligible booking types is disclosed (D044); the types are unnamed and the size has never been quantified. The largest unquantified OFFSET to the 3Q26 lap
+US partial-lap correction,0 to +0.34 pts,assumed (dates conflict),3Q25 call says 'beginning of Q3'; the newsroom announcement is 14 August 2025. Cuts AGAINST the short thesis and is kept on the record for that reason
+-3.4pp FX step / '82% determined' / +4.05% fee uplift / the 9/9 drift rule / 'half of ADR is unit size' / the '+10.2% consensus',not used,WITHDRAWN,"Do not quote as live. The '+10.2% consensus' is the team's own frozen 5 Nov card (WS13/WS14), per research/notes/2026-09-10_nights-baseline-reconciliation.md s1.2"
