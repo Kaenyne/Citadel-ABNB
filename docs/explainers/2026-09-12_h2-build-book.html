@@ -1,0 +1,685 @@
+<title>ABNB H2 Build Book</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,500;100,700;100,800;125,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#e9edf1;
+  --ink:#141a22; --ink-2:#3e4956; --muted:#66717d; --rule:#d5dbe2; --rule-2:#c2cad3;
+  --accent:#2a78d6; --accent-ink:#1b5aa6;
+  --measured:#1a9e6f; --assumed:#8a7fe0; --unobs:#e0475b; --sourced:#2a78d6;
+  --measured-bg:#dff5ea; --assumed-bg:#ebe8fb; --unobs-bg:#fde3e6; --sourced-bg:#dfeafb;
+  --grid:#e3e8ed; --tip-bg:#141a22; --tip-ink:#f3f5f7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#10141a; --surface:#181e26; --surface-2:#212934;
+    --ink:#eef2f5; --ink-2:#c4ccd4; --muted:#98a3ae; --rule:#2c3541; --rule-2:#3a4552;
+    --accent:#4a90e2; --accent-ink:#7fb3f0;
+    --measured:#22b07e; --assumed:#9a90ec; --unobs:#ef5f70; --sourced:#4a90e2;
+    --measured-bg:#123b2e; --assumed-bg:#2a2650; --unobs-bg:#4a1f26; --sourced-bg:#1a2f4a;
+    --grid:#28313c; --tip-bg:#eef2f5; --tip-ink:#10141a;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#10141a; --surface:#181e26; --surface-2:#212934;
+  --ink:#eef2f5; --ink-2:#c4ccd4; --muted:#98a3ae; --rule:#2c3541; --rule-2:#3a4552;
+  --accent:#4a90e2; --accent-ink:#7fb3f0;
+  --measured:#22b07e; --assumed:#9a90ec; --unobs:#ef5f70; --sourced:#4a90e2;
+  --measured-bg:#123b2e; --assumed-bg:#2a2650; --unobs-bg:#4a1f26; --sourced-bg:#1a2f4a;
+  --grid:#28313c; --tip-bg:#eef2f5; --tip-ink:#10141a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;padding-inline:clamp(16px,3vw,40px);padding-block:0 60px}
+.num{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:"Archivo","Public Sans",system-ui,sans-serif;text-wrap:balance;margin:0}
+a{color:var(--accent-ink)}
+p{margin:0 0 10px;max-width:68ch}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;margin-inline:calc(-1*clamp(16px,3vw,40px));padding-inline:clamp(16px,3vw,40px)}
+.bar .name{font-family:"Archivo";font-weight:800;font-stretch:125%;letter-spacing:.02em;font-size:14px;text-transform:uppercase}
+.bar .pos{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px}
+.bar .pos kbd{font-family:"JetBrains Mono";font-size:11px;border:1px solid var(--rule-2);border-radius:4px;padding:1px 5px;color:var(--ink-2)}
+.dots{display:flex;gap:5px}
+.dots a{width:8px;height:8px;border-radius:50%;background:var(--rule-2);display:block}
+.dots a.on{background:var(--accent)}
+
+/* slides */
+.deck{max-width:1120px;margin:0 auto}
+.slide{padding-block:44px 40px;border-bottom:1px solid var(--rule);scroll-margin-top:52px}
+.slide:last-child{border-bottom:0}
+.eyebrow{display:flex;align-items:baseline;gap:12px;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.eyebrow .n{font-family:"JetBrains Mono";font-weight:600;color:var(--accent-ink)}
+.slide h2{font-size:clamp(24px,3vw,34px);font-weight:800;font-stretch:100%;line-height:1.12;margin-bottom:10px;max-width:24ch}
+.lede{font-size:16.5px;color:var(--ink-2);max-width:66ch;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;align-items:start}
+.grid.even{grid-template-columns:1fr 1fr}
+@media (max-width:820px){ .grid,.grid.even{grid-template-columns:1fr} }
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px}
+.panel h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
+.stack{display:flex;flex-direction:column;gap:14px}
+ul.tight{margin:0;padding-left:18px}
+ul.tight li{margin-bottom:6px}
+ul.tight li b{font-weight:600}
+
+/* chips */
+.chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border-radius:3px;padding:1px 6px;vertical-align:middle;line-height:1.5}
+.chip.m{background:var(--measured-bg);color:var(--measured)}
+.chip.a{background:var(--assumed-bg);color:var(--assumed)}
+.chip.u{background:var(--unobs-bg);color:var(--unobs)}
+.chip.s{background:var(--sourced-bg);color:var(--sourced)}
+.chip.d{background:var(--surface-2);color:var(--ink-2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:12.5px;color:var(--ink-2);align-items:center}
+
+/* tables */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;border-bottom:1px solid var(--rule-2)}
+td.r,th.r{text-align:right}
+td.num,.num td{font-family:"JetBrains Mono";font-variant-numeric:tabular-nums}
+tr.hl td{background:var(--surface-2);font-weight:600}
+tr.total td{border-top:2px solid var(--rule-2);font-weight:600}
+td small,.note{color:var(--muted);font-size:12px}
+.note{display:block;margin-top:8px;max-width:70ch}
+
+/* hero tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+@media (max-width:820px){ .tiles{grid-template-columns:1fr} }
+.tile{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px}
+.tile .k{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.tile .v{font-family:"Archivo";font-weight:800;font-size:34px;line-height:1.05;margin:6px 0 4px;font-variant-numeric:tabular-nums}
+.tile .s{font-size:12.5px;color:var(--ink-2)}
+.cover h1{font-size:clamp(34px,5.5vw,62px);font-weight:800;font-stretch:125%;line-height:1;letter-spacing:-.01em;max-width:14ch}
+.cover .sub{font-size:17px;color:var(--ink-2);max-width:60ch;margin-top:14px}
+.cover .meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:12.5px;color:var(--muted);margin-top:14px}
+
+/* identity chain */
+.chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px;margin:10px 0 14px}
+@media (max-width:820px){ .chain{grid-template-columns:1fr;gap:6px} .chain .op{text-align:center} }
+.chain .box{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:12px 14px}
+.chain .box .t{font-family:"Archivo";font-weight:700;font-size:16px}
+.chain .box .d{font-size:12.5px;color:var(--muted);margin-top:3px}
+.chain .op{font-family:"JetBrains Mono";font-size:20px;color:var(--muted)}
+
+/* charts */
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 14px 10px;position:relative}
+.fig .cap{font-size:12.5px;color:var(--muted);margin-top:6px}
+.fig svg{width:100%;height:auto;display:block;font-family:"Public Sans",system-ui,sans-serif}
+.fig .ax{stroke:var(--rule-2);stroke-width:1}
+.fig .gridl{stroke:var(--grid);stroke-width:1}
+.fig text{fill:var(--ink-2);font-size:11px}
+.fig text.lab{font-family:"JetBrains Mono";font-variant-numeric:tabular-nums;fill:var(--ink)}
+.fig text.mut{fill:var(--muted)}
+.tip{position:absolute;pointer-events:none;background:var(--tip-bg);color:var(--tip-ink);font-size:12px;padding:6px 8px;border-radius:4px;max-width:240px;line-height:1.35;opacity:0;transition:opacity .12s;z-index:3}
+.tip b{font-family:"JetBrains Mono"}
+.hit{fill:transparent;cursor:default}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule-2);margin-left:6px}
+.tl li{position:relative;padding:0 0 14px 18px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--sourced);border:2px solid var(--surface)}
+.tl li.f::before{background:var(--assumed)}
+.tl .d{font-family:"JetBrains Mono";font-size:12px;color:var(--muted)}
+.tl .t{font-weight:600}
+.tl .x{font-size:13px;color:var(--ink-2)}
+
+/* scoring list */
+.score{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:13.5px}
+.score .q{font-family:"JetBrains Mono";font-size:12.5px;color:var(--accent-ink);white-space:nowrap}
+.foot{font-size:12.5px;color:var(--muted);max-width:80ch}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="bar">
+  <div class="name">ABNB H2 Build Book</div>
+  <div class="pos"><span id="counter">1 / 12</span><nav class="dots" id="dots" aria-label="Slides"></nav><span><kbd>←</kbd> <kbd>→</kbd></span></div>
+</div>
+
+<main class="deck">
+
+<!-- 1 COVER -->
+<section class="slide cover" id="s1">
+  <div class="eyebrow"><span class="n">01</span><span>Cover</span></div>
+  <h1>How the second-half numbers are built</h1>
+  <p class="sub">Nights, ADR, revenue and the RNPL effects for 3Q26 and 4Q26. Every figure is traced to the note and file that produced it, and every line is labelled measured, sourced, assumed or unobserved.</p>
+  <div class="meta"><span>As of 12 September 2026</span><span>Pitch due 2 October</span><span>3Q26 print 5 November</span><span>Branches: main, krish/adr-v3 (PR #46)</span></div>
+  <div class="tiles">
+    <div class="tile"><div class="k">3Q26 revenue</div><div class="v num">$4.80bn</div><div class="s">Lagged-GBV conversion. Guide $4.69 to 4.77bn, consensus $4.74bn.</div></div>
+    <div class="tile"><div class="k">3Q26 nights</div><div class="v num">+9.9%</div><div class="s">146.8mm, band 8.5 to 10.3. Reviews index says 9.5 to 10.0.</div></div>
+    <div class="tile"><div class="k">3Q26 ADR</div><div class="v num">$177.2</div><div class="s">+3.4% y/y, band $174.8 to 179.6. One line is unobserved.</div></div>
+  </div>
+</section>
+
+<!-- 2 CHAIN -->
+<section class="slide" id="s2">
+  <div class="eyebrow"><span class="n">02</span><span>The chain</span></div>
+  <h2>Revenue is booked value times a take rate, and booked value is nights times price</h2>
+  <p class="lede">Two identities carry everything. The second one has a lag in it, because Airbnb recognises revenue at check-in, not at booking.</p>
+  <div class="chain">
+    <div class="box"><div class="t">Nights and seats booked</div><div class="d">Transaction-period KPI. Cancellations reduce the quarter they occur in.</div></div>
+    <div class="op">×</div>
+    <div class="box"><div class="t">ADR</div><div class="d">Gross booking value per night, including fees. Reported in dollars, so FX is inside it.</div></div>
+    <div class="op">=</div>
+    <div class="box"><div class="t">GBV</div><div class="d">Gross booking value in the quarter booked.</div></div>
+  </div>
+  <div class="chain" style="grid-template-columns:1fr auto 1fr auto 1fr">
+    <div class="box"><div class="t">Lagged GBV</div><div class="d">Two thirds of last quarter's GBV plus one third of the quarter before.</div></div>
+    <div class="op">×</div>
+    <div class="box"><div class="t">Conversion</div><div class="d">17.1 to 17.4% in Q3, 11.9 to 12.1% in Q4, stable for three years.</div></div>
+    <div class="op">=</div>
+    <div class="box"><div class="t">Revenue</div><div class="d">The line the guide and consensus are quoted on.</div></div>
+  </div>
+  <div class="grid even">
+    <div class="panel">
+      <h3>Where each piece comes from</h3>
+      <ul class="tight">
+        <li><b>Nights</b> from a quarterly model of the H1 run rate plus the product-bundle lap, cross-checked by an alternative-data index built from review dates.</li>
+        <li><b>ADR</b> from a seven-term decomposition. Three terms are measured from the same review data, two are assumed, one is a dated mechanics line, and one is unobserved.</li>
+        <li><b>FX</b> from a fitted translation of the euro and regional currency baskets.</li>
+        <li><b>Revenue</b> from lagged GBV, not from same-quarter GBV, because of recognition timing.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>The labels used on every slide</h3>
+      <div class="legend">
+        <span><span class="chip m">measured</span> computed from data we hold, with a backtest</span>
+        <span><span class="chip s">sourced</span> a disclosed figure or date, quoted</span>
+        <span><span class="chip a">assumed</span> a parameter carried from an earlier study or a stated rule</span>
+        <span><span class="chip u">unobserved</span> nothing public measures it; the forecast rests on it</span>
+        <span><span class="chip d">comparison</span> shown next to the number, never an input</span>
+      </div>
+      <span class="note">Consensus is always a comparison column. The team forecasts each quarter independently.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3 NIGHTS 3Q26 -->
+<section class="slide" id="s3">
+  <div class="eyebrow"><span class="n">03</span><span>Nights, 3Q26</span></div>
+  <h2>Every model lands between 9.5 and 10.3 before the lap, and the baseline is 9.9</h2>
+  <p class="lede">The models disagree about the size and timing of the product-bundle lap, not about underlying demand. The guide of "low double digits" sits at the top of the cluster.</p>
+  <div class="grid">
+    <div class="stack">
+      <div class="panel">
+        <h3>How 9.9% was chosen</h3>
+        <ul class="tight">
+          <li><b>Point:</b> the PR #32 model, built on the four disclosed 2025 to 2026 quarters with fitted product terms. RNPL +2.4 points and fee plus cancellation redesign +2.3 points, lapped in North America only. <span class="chip a">assumed</span></li>
+          <li><b>Band low, 8.5:</b> the H1-to-H2 bridge's half-lap scenario. <b>Band high, 10.3:</b> the WS10 regional build with no lap.</li>
+          <li><b>H1 2026 run rate:</b> 9.2% and 10.3%, so the H1 mean is 9.7%. The seasonal H1-to-Q3 transition over 2023 to 2025 is -0.3 points. <span class="chip s">sourced</span></li>
+          <li><b>Q3 lap cost:</b> about 0.4 points of total nights, from NA going 7 to 5.6 at a 28.8% share.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>The pre-registered threshold</h3>
+        <p>At or above <b class="num">10.5%</b> is the surprise. <b class="num">10.0%</b> or below is the pattern. A deceleration against 2Q26's 10.3% is the base case in every model except the naive carry.</p>
+      </div>
+    </div>
+    <div class="fig" id="figNights">
+      <h3 style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px">3Q26 nights y/y by model, percent</h3>
+      <div class="tip" id="tipNights"></div>
+      <div class="cap">Dots are point estimates. Bars are the bands each source states. Shaded strip is the guide, "low double digits" read as 10 to 12. Source: nights_baseline_reconciliation.csv, E note.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 REVIEWS INDEX -->
+<section class="slide" id="s4">
+  <div class="eyebrow"><span class="n">04</span><span>Nights, the alternative-data check</span></div>
+  <h2>A stays index built from review dates beats a naive forecast out of sample</h2>
+  <p class="lede">Reviews are posted 0 to 14 days after check-out, so their dates are a stay-date series. Counting them across 123 Inside Airbnb markets gives a quantity index that maps onto reported nights.</p>
+  <div class="grid even">
+    <div class="panel">
+      <h3>Construction, in order</h3>
+      <ul class="tight">
+        <li><b>Count</b> reviews by listing and month in 363 dumps, review dates 2018 to 17 August 2026.</li>
+        <li><b>Correct survivorship.</b> A review month counted in a dump one year later holds 15 to 16% fewer reviews, because listings delist and take their reviews with them. A y/y inside one dump therefore runs about 20 points too high. Comparing the 2026 dump against the market's own 2025 dump removes it. <span class="chip m">measured</span></li>
+        <li><b>Map to nights.</b> OLS of nights y/y on the index over 14 quarters, slope 0.32 nights-points per index-point, r 0.86.</li>
+        <li><b>Backtest.</b> Walk-forward RMSE 1.48 points against 2.16 for naive last quarter, a ratio of 0.68, across a family of 2,560 cells at 0.65 to 0.75.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="tbl panel">
+        <h3>3Q26 to date, vintage-matched stays y/y</h3>
+        <table>
+          <tr><th>Window</th><th class="r">Global</th><th class="r">NA</th><th class="r">EMEA</th><th class="r">LatAm</th><th class="r">APAC</th></tr>
+          <tr class="num"><td>July</td><td class="r">+3.8</td><td class="r">+4.3</td><td class="r">+1.1</td><td class="r">+20.6</td><td class="r">+3.8</td></tr>
+          <tr class="num"><td>August to date</td><td class="r">+8.2</td><td class="r">+7.6</td><td class="r">+0.3</td><td class="r">+44.2</td><td class="r">+7.4</td></tr>
+          <tr class="num hl"><td>Quarter to date</td><td class="r">+5.2</td><td class="r">+6.9</td><td class="r">+0.9</td><td class="r">+27.5</td><td class="r">+10.0</td></tr>
+          <tr class="num"><td>2Q26, same build</td><td class="r">+4.3</td><td colspan="4"></td></tr>
+        </table>
+        <span class="note">APAC quarter-to-date is the August refresh figure used by the ADR geographic term. The within-vintage read of the same window is +25.9, which is the 20.7 point wedge.</span>
+      </div>
+      <div class="panel">
+        <h3>What it says</h3>
+        <p>Mapped through the slope: <b class="num">+9.5 to +10.0%</b> nights, band 8.6 to 11.5 on the headline row and <b class="num">8.5 to 11.0</b> across seven constructions. No acceleration from 2Q26. The band cannot narrow below about 2.5 points because reviews see stays, and the KPI counts bookings, including bookings for later quarters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 NIGHTS 4Q26 -->
+<section class="slide" id="s5">
+  <div class="eyebrow"><span class="n">05</span><span>Nights, 4Q26</span></div>
+  <h2>4Q26 is a lap question: 8.1% if the October 2025 features lap globally, 8.9% if only in North America</h2>
+  <p class="lede">The cancellation redesign and the first single-fee tranche are dated global from October 2025 in the letters. The team's earlier model lapped them in North America only.</p>
+  <div class="grid even">
+    <div class="tbl panel">
+      <h3>The two cases</h3>
+      <table>
+        <tr><th></th><th class="r">Case B, global lap</th><th class="r">Case A, NA only</th></tr>
+        <tr class="num"><td>4Q26 nights y/y</td><td class="r">+8.1% (8.0 to 8.2)</td><td class="r">+8.86%</td></tr>
+        <tr class="num"><td>Nights, millions</td><td class="r">131.8</td><td class="r">132.7</td></tr>
+        <tr class="num"><td>Ex-NA lap, points</td><td class="r">-0.70 to -0.88</td><td class="r">0</td></tr>
+        <tr class="num"><td>Revenue at card ADR</td><td class="r">$3,134mm</td><td class="r">$3,155mm</td></tr>
+        <tr><td>Status</td><td>Adopted baseline</td><td>Top of the band</td></tr>
+      </table>
+      <span class="note">Case B rests on sourced letter dates plus one assumed split: the fee and cancellation legs are 40 to 50% of the ex-NA bundle, pinned by reproducing the 4Q25 "over 200 basis points" disclosure. 4Q25 base 121.9mm.</span>
+    </div>
+    <div class="stack">
+      <div class="panel">
+        <h3>Why the revenue gap is small</h3>
+        <p>A full point of 4Q26 nights is about <b class="num">$29mm</b> of revenue at this ADR, so the 0.9mm gap between the cases is <b class="num">$21mm</b>. Both cases sit above the anticipated guide arithmetic of $3,050 to 3,100mm and below the Zacks consensus of $3,200mm. The lap is a growth-rate question, not a revenue-dollar question.</p>
+      </div>
+      <div class="panel">
+        <h3>What settles it on 5 November</h3>
+        <p>Not the 4Q guide, which sits inside the inconclusive 7.6 to 9.4% band for both cases. The disclosure that separates them is whether management repeats a quantified bundle contribution for 3Q26: at or below <b class="num">1.5</b> points points to case B, at or above <b class="num">2.5</b> to case A.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 ADR DECOMPOSITION -->
+<section class="slide" id="s6">
+  <div class="eyebrow"><span class="n">06</span><span>ADR, the decomposition</span></div>
+  <h2>3Q26 ADR is seven terms plus FX, and one of the seven is unobserved</h2>
+  <p class="lede">Ex-FX ADR growth is built term by term. The three mix terms are measured on the same review data as the nights index. The like-for-like pricing residual is what management calls price appreciation, and nothing public measures it.</p>
+  <div class="grid">
+    <div class="tbl panel">
+      <h3>Card v3, 3Q26, points of ADR y/y</h3>
+      <table>
+        <tr><th>Term</th><th class="r">Point</th><th class="r">Band</th><th>Label</th></tr>
+        <tr class="num"><td>Pricing residual, last quarter's value</td><td class="r">+4.85</td><td class="r">2.40 to 4.85</td><td><span class="chip u">unobserved</span></td></tr>
+        <tr class="num"><td>Geographic mix</td><td class="r">-1.43</td><td class="r">-1.57 to -0.94</td><td><span class="chip m">measured</span></td></tr>
+        <tr class="num"><td>Party size</td><td class="r">+0.80</td><td class="r">+0.53 to +1.00</td><td><span class="chip m">measured</span></td></tr>
+        <tr class="num"><td>Length of stay</td><td class="r">+0.06</td><td class="r">-0.08 to +0.29</td><td><span class="chip m">measured</span></td></tr>
+        <tr class="num"><td>New business dilution</td><td class="r">-0.48</td><td class="r">-0.75 to -0.23</td><td><span class="chip a">assumed</span></td></tr>
+        <tr class="num"><td>Interaction</td><td class="r">-0.10</td><td class="r">-0.15 to -0.05</td><td><span class="chip d">descriptive</span></td></tr>
+        <tr class="num"><td>Fee-migration mechanics</td><td class="r">+0.17</td><td class="r">0.00 to +0.93</td><td><span class="chip a">assumed</span></td></tr>
+        <tr class="num total"><td>Ex-FX ADR</td><td class="r">+3.86</td><td class="r">+2.5 to +5.3</td><td></td></tr>
+        <tr class="num"><td>FX, midpoint estimator</td><td class="r">-0.43</td><td class="r">-1.12 to +0.26</td><td><span class="chip m">measured</span></td></tr>
+        <tr class="num total"><td>Reported ADR y/y</td><td class="r">+3.43%</td><td class="r">+2.0 to +4.8</td><td></td></tr>
+        <tr class="num total"><td>ADR, dollars, on 3Q25 $171.29</td><td class="r">$177.17</td><td class="r">$174.8 to 179.6</td><td></td></tr>
+      </table>
+      <span class="note">Without the fee-migration line, the pre-registered result on its own: ex-FX +3.69, reported +3.26%, $176.88. 4Q26 on the same terms: +4.22%, $174.57, band $172.2 to 177.0; without the line +3.84%, $173.94.</span>
+    </div>
+    <div class="fig" id="figWater">
+      <h3 style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px">3Q26 ADR y/y, walk from zero to reported, points</h3>
+      <div class="tip" id="tipWater"></div>
+      <div class="cap">Coral is the unobserved residual. Green terms are measured from 2.05mm reviews and 34 calendar markets. Violet terms are assumed. Blue is FX. Source: adr_card_v3.csv.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 RESIDUAL -->
+<section class="slide" id="s7">
+  <div class="eyebrow"><span class="n">07</span><span>ADR, the residual and the test</span></div>
+  <h2>The residual stepped up in 2026, the rule carries it, and the risk is one-sided</h2>
+  <p class="lede">The residual ran 0.8 to 3.7 points from 2023 to 2025 and 4.4 and 4.9 in the first half of 2026. The forecast rule is "next quarter's residual is this quarter's". It passed a pre-registered test, by a small margin, and three attempts to explain the step all failed.</p>
+  <div class="grid">
+    <div class="fig" id="figRes">
+      <h3 style="font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px">Like-for-like pricing residual, points of ex-FX ADR y/y</h3>
+      <div class="tip" id="tipRes"></div>
+      <div class="cap">Solid line is the reconstructed history 1Q23 to 2Q26. Hollow point is the 3Q26 rule value. Dashed line is the 2023 to 2025 mean, the mean-reversion case. Source: adr_history_components.csv, K4 scenarios.</div>
+    </div>
+    <div class="stack">
+      <div class="tbl panel">
+        <h3>The out-of-sample test, 1Q24 to 2Q26</h3>
+        <table>
+          <tr><th>Target</th><th class="r">Ratio vs naive</th><th class="r">Jackknife max</th><th>Verdict</th></tr>
+          <tr class="num"><td>Reported dollar ADR, euro-fit FX</td><td class="r">0.916 / 0.905</td><td class="r">0.989</td><td>pass</td></tr>
+          <tr class="num"><td>Reported dollar ADR, basket FX</td><td class="r">0.876 / 0.871</td><td class="r">0.924</td><td>pass</td></tr>
+          <tr class="num"><td>Whole-point ex-FX, as the letter states it</td><td class="r">0.985 / 1.080</td><td class="r">1.18</td><td>no better than naive</td></tr>
+        </table>
+        <span class="note">Two windows, n 10 and n 9. The rule was the best line in the v2 sensitivity table and was pre-registered on 11 September before the new harness ran. The binding margin is 0.011.</span>
+      </div>
+      <div class="tbl panel">
+        <h3>Three explanations tried, none is the residual</h3>
+        <table>
+          <tr><th>Route</th><th>Result</th></tr>
+          <tr><td>Fee-migration reprice</td><td>About 5% of the step at the mechanics. Fitted coefficient 16 times the mechanics, collinear with RNPL and a 2026 dummy.</td></tr>
+          <tr><td>Regional proxies</td><td>Worse than the blended rule on every check. NA lodging CPI fits read the 2026 jump as a fall.</td></tr>
+          <tr><td>New-listing composition</td><td>New listings are priced 2 to 6% below incumbents and losing share. Term is +0.05 points.</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>The downside case</h3>
+        <p>If the residual reverts to <b class="num">2.40</b> instead of holding at 4.85, 3Q26 reported ADR is about <b class="num">+1.0%</b> ($173.0) instead of +3.4%. That is 2.45 points of ADR, $616mm of 3Q26 GBV and $110mm of revenue. Nothing measured points the other way. Carry it as a scenario, not a tail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 FX -->
+<section class="slide" id="s8">
+  <div class="eyebrow"><span class="n">08</span><span>ADR, the FX line</span></div>
+  <h2>FX on ADR is fitted, not disclosed, and the estimator choice is worth 1.4 points</h2>
+  <p class="lede">The disclosed FX effect is only known at the print. Two estimators translate currency moves into ADR points, they disagree by era, and the midpoint beats both.</p>
+  <div class="grid even">
+    <div class="tbl panel">
+      <h3>Backtest against the disclosed FX effect, RMSE in points</h3>
+      <table>
+        <tr><th>Estimator</th><th class="r">2Q22 to 2Q26</th><th class="r">1Q24 to 2Q26</th><th>Where it wins</th></tr>
+        <tr class="num"><td>Euro fit</td><td class="r">0.458</td><td class="r">0.455</td><td>2022 broad-dollar surge</td></tr>
+        <tr class="num"><td>Regional baskets</td><td class="r">0.535</td><td class="r">0.416</td><td>2024 to 2026 regional divergence</td></tr>
+        <tr class="num hl"><td>Midpoint, named</td><td class="r">0.406</td><td class="r">0.332</td><td>Both eras</td></tr>
+      </table>
+    </div>
+    <div class="tbl panel">
+      <h3>FX effect on ADR, points, 3Q26 and 4Q26</h3>
+      <table>
+        <tr><th>Estimator</th><th class="r">3Q26</th><th class="r">4Q26</th><th class="r">3Q26 reported ADR</th></tr>
+        <tr class="num"><td>Euro fit</td><td class="r">-1.12</td><td class="r">-0.66</td><td class="r">+2.7%</td></tr>
+        <tr class="num"><td>Regional baskets</td><td class="r">+0.26</td><td class="r">+0.97</td><td class="r">+4.1%</td></tr>
+        <tr class="num hl"><td>Midpoint, in the card</td><td class="r">-0.43</td><td class="r">+0.15</td><td class="r">+3.4%</td></tr>
+      </table>
+      <span class="note">4Q26 uses a flat spot rate from the forward. The two single estimators span 1.4 points of reported ADR, the largest controllable uncertainty on the line. The 5 November print scores all three against the disclosed effect.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 9 REVENUE -->
+<section class="slide" id="s9">
+  <div class="eyebrow"><span class="n">09</span><span>Revenue</span></div>
+  <h2>Revenue is pinned by bookings already made, so the Q3 print is not the risk</h2>
+  <p class="lede">Revenue is recognised at check-in. Third-quarter revenue is mostly first- and second-quarter bookings, which are known. The conversion of lagged GBV to revenue has been stable for three years.</p>
+  <div class="grid">
+    <div class="tbl panel">
+      <h3>Revenue targets, lagged-GBV conversion</h3>
+      <table>
+        <tr><th></th><th class="r">3Q26</th><th class="r">4Q26</th></tr>
+        <tr class="num"><td>Lagged GBV, $bn</td><td class="r">27.87</td><td class="r">26.32</td></tr>
+        <tr class="num"><td>Conversion</td><td class="r">17.1 to 17.4%</td><td class="r">11.9 to 12.1%</td></tr>
+        <tr class="num hl"><td>Revenue, $mm</td><td class="r">4,804</td><td class="r">3,166</td></tr>
+        <tr class="num"><td>Range, $mm</td><td class="r">4,778 to 4,846</td><td class="r">3,144 to 3,189</td></tr>
+        <tr class="num"><td>y/y</td><td class="r">+17.3%</td><td class="r">+14.0%</td></tr>
+        <tr class="num"><td>Guide</td><td class="r">4,690 to 4,770</td><td class="r">not yet</td></tr>
+        <tr class="num"><td>Zacks consensus</td><td class="r">4,740</td><td class="r">3,200</td></tr>
+        <tr class="num"><td>Implied November guide midpoint</td><td class="r"></td><td class="r">3,047 to 3,070</td></tr>
+      </table>
+      <span class="note">3Q26 lagged GBV is two thirds of 2Q26's $27.2bn plus one third of 1Q26's $29.2bn. 4Q26 assumes 3Q26 GBV +13%. FY26 on these numbers is $14.26bn, +16.5%, against "at least mid-teens" and $14.10 to 14.16bn consensus. Q3 actuals have beaten the midpoint by 1.3% on average, 19 of 19; Q4 by 3.2%.</span>
+    </div>
+    <div class="stack">
+      <div class="tbl panel">
+        <h3>The same-quarter cross-check, from the ADR card</h3>
+        <table>
+          <tr><th></th><th class="r">3Q26</th><th class="r">4Q26, case B</th></tr>
+          <tr class="num"><td>Nights, mm</td><td class="r">146.8</td><td class="r">131.8</td></tr>
+          <tr class="num"><td>ADR, $</td><td class="r">177.17</td><td class="r">174.57</td></tr>
+          <tr class="num"><td>GBV, $bn</td><td class="r">26.0</td><td class="r">23.0</td></tr>
+          <tr class="num"><td>Same-quarter take rate</td><td class="r">17.88%</td><td class="r">13.62%</td></tr>
+          <tr class="num"><td>Revenue, $mm</td><td class="r">4,650</td><td class="r">3,134</td></tr>
+        </table>
+        <span class="note">This convention applies the prior year's same-quarter take rate to same-quarter GBV. It is for sizing ADR sensitivities, not for the revenue target, because it ignores the recognition lag. The lagged-GBV number above is the target.</span>
+      </div>
+      <div class="tbl panel">
+        <h3>Sensitivities</h3>
+        <table>
+          <tr><th>One point of</th><th class="r">GBV</th><th class="r">Revenue</th></tr>
+          <tr class="num"><td>3Q26 ADR ($1.71)</td><td class="r">$259mm</td><td class="r">$46mm</td></tr>
+          <tr class="num"><td>4Q26 ADR ($1.68)</td><td class="r">$221mm</td><td class="r">$30mm</td></tr>
+          <tr class="num"><td>4Q26 nights</td><td class="r"></td><td class="r">$29mm</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 RNPL TIMELINE -->
+<section class="slide" id="s10">
+  <div class="eyebrow"><span class="n">10</span><span>RNPL, the record</span></div>
+  <h2>Reserve Now Pay Later is one of three products in a bundle, and the bundle laps on three dates</h2>
+  <p class="lede">Management has never split the bundle's contribution by feature. The dates below are what the letters, calls and newsroom posts establish. Sourced items are blue, forward anniversaries are violet.</p>
+  <div class="grid even">
+    <ul class="tl">
+      <li><div class="d">Aug 2025</div><div class="t">RNPL launches in the United States</div><div class="x">$0 upfront, payment due shortly before the free-cancellation window closes. US guests, US domestic stays, flexible or moderate policies. About 70% take-up among guests offered it.</div></li>
+      <li><div class="d">Oct to Dec 2025</div><div class="t">Cancellation redesign and single fee, global</div><div class="x">New Limited policy with free cancellation to 14 days before check-in. Host-only service fee of 15.5%: property managers from October, most single-fee hosts from December.</div></li>
+      <li><div class="d">12 Feb 2026, 4Q25 call</div><div class="t">"Over 200 basis points of nights, roughly 300 of GBV" from the three features</div><div class="x">Over 70% adoption on eligible GBV. The first quantified bundle figure.</div></li>
+      <li><div class="d">17 Feb to 4 Mar 2026</div><div class="t">RNPL goes worldwide</div><div class="x">United Kingdom 18 February, Australia and Asia Pacific 23 February, Canada 4 March. Excluded by payment currency: BRL, INR, TRY. So the 2025 cohort was United States only, and the ex-NA anniversary is 1Q27.</div></li>
+      <li><div class="d">7 May 2026, 1Q26 letter</div><div class="t">"About 3 points of nights, 4 points of GBV"; RNPL is roughly 20% of GBV booked</div><div class="x">Over 25% of listings on the single fee. Unearned fees will be lower in Q1 and Q2 and higher in Q3.</div></li>
+      <li><div class="d">6 Aug 2026, 2Q26 letter</div><div class="t">The bundle figure is dropped</div><div class="x">RNPL over 20% of GBV, about 50% of listings on the single fee, eligible booking types expanded in July. Implied take rate 13.2%, moved by booking-versus-stay timing.</div></li>
+    </ul>
+    <ul class="tl">
+      <li class="f"><div class="d">15 Sep and 13 Oct 2026</div><div class="t">Fee tranche 2 deadlines</div><div class="x">Non-EEA hosts, then EEA and Switzerland. Three to four times the size of tranche 1. The migrated share of nights rises through 4Q26 rather than lapping.</div></li>
+      <li class="f"><div class="d">4Q26</div><div class="t">The October 2025 features anniversary</div><div class="x">Cancellation redesign and fee tranche 1 lap everywhere. This is the 0.70 to 0.88 point ex-NA lap in the 4Q26 nights case, and the roughly 1 point 4Q25 bundle contribution to ADR laps with it.</div></li>
+      <li class="f"><div class="d">1Q27</div><div class="t">The ex-NA RNPL anniversary, partial quarter</div><div class="x">Go-lives landed in the last five to six weeks of 1Q26, so the full lap arrives from 2Q27.</div></li>
+      <li class="f"><div class="d">4Q27</div><div class="t">The fee reprice leaves the ADR y/y</div><div class="x">Migrated share y/y: +12.5 points in 4Q25, +21.5 in 2Q26, +46 in 3Q26, +75 in 4Q26, back to zero in 4Q27.</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11 RNPL EFFECTS -->
+<section class="slide" id="s11">
+  <div class="eyebrow"><span class="n">11</span><span>RNPL, the effects</span></div>
+  <h2>The lap is two to fifteen times the cancellation drag, and the ADR effect runs on a later clock</h2>
+  <p class="lede">The original bridge overlaid a 1.5 to 3 point RNPL haircut as a scenario. The ledger and the cohort arithmetic replace that with dated, sized effects on each line.</p>
+  <div class="grid even">
+    <div class="tbl panel">
+      <h3>On nights</h3>
+      <table>
+        <tr><th>Effect</th><th class="r">Size, points of y/y</th><th>Label</th></tr>
+        <tr class="num"><td>NA bundle level lap, by 4Q26</td><td class="r">-1.35</td><td><span class="chip a">assumed</span></td></tr>
+        <tr class="num"><td>Ex-NA lap of the Oct 2025 features, 4Q26</td><td class="r">-0.70 to -0.88</td><td><span class="chip a">assumed</span></td></tr>
+        <tr class="num"><td>Cancellation drag, 3Q26, across 2,025 cells</td><td class="r">-0.10 to -1.37</td><td><span class="chip a">assumed</span></td></tr>
+        <tr class="num"><td>Central cell at +1 / +4 / +6 points propensity</td><td class="r">-0.15 / -0.62 / -0.93</td><td><span class="chip a">assumed</span></td></tr>
+        <tr><td>Calendar reopening, 34 markets</td><td class="r">no signature</td><td><span class="chip m">measured</span></td></tr>
+      </table>
+      <span class="note">The drag is small because it laps too: the 2025 base already carries US RNPL cancellations from 3Q25. Payment falls due just before the free-cancellation window closes, so 46% of the excess cancellations recognised in 3Q26 come from bookings made in earlier quarters, 49% in 4Q26.</span>
+    </div>
+    <div class="stack">
+      <div class="tbl panel">
+        <h3>On ADR</h3>
+        <table>
+          <tr><th>Effect</th><th class="r">Size, points</th><th>Label</th></tr>
+          <tr class="num"><td>Bundle contribution, 4Q25 and 1Q26, GBV minus nights gap</td><td class="r">about +1.0</td><td><span class="chip s">sourced</span></td></tr>
+          <tr class="num"><td>Fee reprice on the migrated cohort, 4Q25 to 2Q26</td><td class="r">+0.09 to +0.15</td><td><span class="chip a">assumed</span></td></tr>
+          <tr class="num"><td>Fee-migration line in card v3, 3Q26 / 4Q26</td><td class="r">+0.17 / +0.37</td><td><span class="chip a">assumed</span></td></tr>
+          <tr class="num"><td>RNPL mix into larger entire homes</td><td class="r">not measured</td><td><span class="chip u">unobserved</span></td></tr>
+        </table>
+        <span class="note">The 1H26 residual step of 2.0 to 2.5 points is about half bundle by management's own arithmetic. The fee is the smaller part of that half. The rest of the step is unexplained.</span>
+      </div>
+      <div class="tbl panel">
+        <h3>On revenue timing and the backlog</h3>
+        <table>
+          <tr><th>Indicator</th><th class="r">2026</th><th class="r">2022 to 2025 norm</th></tr>
+          <tr class="num"><td>Backlog conversion, Q1</td><td class="r">49.5%</td><td class="r">45.5%</td></tr>
+          <tr class="num"><td>Backlog conversion, Q2</td><td class="r">56.0%</td><td class="r">52.0%</td></tr>
+          <tr class="num"><td>Unearned fees y/y, 1Q26 / 2Q26</td><td class="r">+0.4% / -0.9%</td><td class="r">GBV +19.2% / +15.7%</td></tr>
+        </table>
+        <span class="note">Conversion is revenue over revenue plus closing unearned fees. RNPL keeps fees out of the unearned pool until near check-in, so the reported backlog understates booked business. It says nothing about demand. Management's one dated forward claim: unearned fees higher y/y in 3Q26.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 SCORING -->
+<section class="slide" id="s12">
+  <div class="eyebrow"><span class="n">12</span><span>5 November</span></div>
+  <h2>What the print settles, line by line</h2>
+  <p class="lede">The score sheet takes the printed numbers as arguments and extends every backtest by one quarter. These are the reads it makes.</p>
+  <div class="grid even">
+    <div class="panel">
+      <h3>Reads</h3>
+      <div class="score">
+        <span class="q">Nights</span><span>Inside 8.5 to 11.0 keeps the reviews index. At or above 10.5 is the pre-registered surprise. Regional buckets check E's split.</span>
+        <span class="q">ADR</span><span>Against $177.2 and the $174.8 to 179.6 band, card v2, the H card and naive. All three FX estimators against the disclosed effect.</span>
+        <span class="q">Residual</span><span>Solved from the printed ex-FX and the measured mix. Near 5.0 keeps the rule and the 3.1 to 5.2 4Q26 band. 3.9 to 4.1 says the lap arithmetic is the better description. Below 3.6 is the mean-reversion case and retires the rule for 4Q26.</span>
+        <span class="q">Bundle</span><span>A restated contribution at or below 1.5 points supports the global-lap 4Q26 baseline; at or above 2.5 supports the NA-only case.</span>
+        <span class="q">Backlog</span><span>Unearned fees up y/y in Q3, as the 1Q26 letter predicted, or not.</span>
+        <span class="q">Q4 guide</span><span>Revenue midpoint against $3,050 to 3,100mm; nights against the 7.6 to 9.4% inconclusive band.</span>
+      </div>
+      <span class="note">The eleventh-quarter verdict on the ADR rule is decided by the FX estimator's error as much as by the pricing error. A print exactly at the card's point passes by 0.003.</span>
+    </div>
+    <div class="tbl panel">
+      <h3>Source map</h3>
+      <table>
+        <tr><th>Slide</th><th>Note</th><th>Files</th></tr>
+        <tr><td>03, 05</td><td>Nights baseline reconciliation, 10 Sep; N decision memos</td><td>nights_baseline_reconciliation.csv, N2_q4_lap_cases.csv</td></tr>
+        <tr><td>04</td><td>E reviews stays index, August refresh</td><td>data/processed/q3nowcast/E_aug/</td></tr>
+        <tr><td>06, 07</td><td>ADR v3 synthesis; I mix terms; J residual; S harness; K, L, M</td><td>data/processed/adrv3/P/adr_card_v3.csv, H/adr_history_components.csv</td></tr>
+        <tr><td>08</td><td>B FX relative strength; N memo 1</td><td>B_adr_fx_estimator_backtest.csv</td></tr>
+        <tr><td>09</td><td>H1-to-H2 bridge, 10 Sep</td><td>h2_bridge_revenue_dollars.csv</td></tr>
+        <tr><td>10, 11</td><td>D RNPL statement ledger; RNPL handoff; K</td><td>rnpl_statement_ledger.csv, D1_rnpl_cohort_scenarios.csv</td></tr>
+        <tr><td>12</td><td>P score sheet</td><td>analysis/src/adrv3/P2_score_sheet.py</td></tr>
+      </table>
+      <p class="foot" style="margin-top:10px">Branches: main through PR #44, krish/adr-v3 as PR #46. Model freeze the week of 21 September after the September Inside Airbnb dumps are folded in.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var cs = getComputedStyle(document.documentElement);
+  function tok(n){ return cs.getPropertyValue(n).trim(); }
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var dots = document.getElementById('dots'), counter = document.getElementById('counter');
+  slides.forEach(function(s,i){ var a=document.createElement('a'); a.href='#'+s.id; a.setAttribute('aria-label','Slide '+(i+1)); dots.appendChild(a); });
+  var cur = 0;
+  function setCur(i){ cur=i; counter.textContent=(i+1)+' / '+slides.length; Array.prototype.forEach.call(dots.children,function(d,j){ d.classList.toggle('on',j===i); }); }
+  setCur(0);
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) setCur(slides.indexOf(e.target)); }); },{rootMargin:'-40% 0px -55% 0px'});
+    slides.forEach(function(s){ io.observe(s); });
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+    var n=null;
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key==='j') n=Math.min(cur+1,slides.length-1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key==='k') n=Math.max(cur-1,0);
+    if(n!==null){ e.preventDefault(); slides[n].scrollIntoView({block:'start'}); setCur(n); }
+  });
+
+  var NS='http://www.w3.org/2000/svg';
+  function el(t,a,txt){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); if(txt!=null) e.textContent=txt; return e; }
+  function tipOn(fig,tip,html,evt){ tip.innerHTML=html; tip.style.opacity=1; var r=fig.getBoundingClientRect(); var x=evt.clientX-r.left+12, y=evt.clientY-r.top+12; if(x+250>r.width) x=evt.clientX-r.left-250; tip.style.left=x+'px'; tip.style.top=y+'px'; }
+  function tipOff(tip){ tip.style.opacity=0; }
+  function fmt(v,d){ return (v>0?'+':'')+v.toFixed(d==null?2:d); }
+
+  /* ---------- Waterfall ---------- */
+  (function(){
+    var fig=document.getElementById('figWater'), tip=document.getElementById('tipWater');
+    var terms=[
+      {n:'Residual',v:4.85,c:'unobs',d:'Like-for-like pricing residual, last quarter\'s value. Unobserved.'},
+      {n:'Geo mix',v:-1.43,c:'measured',d:'Geographic mix from the reviews regional split. Measured.'},
+      {n:'Party size',v:0.80,c:'measured',d:'Booked capacity +1.35% y/y times elasticity 0.59. Measured.'},
+      {n:'LOS',v:0.06,c:'measured',d:'Length-of-stay mix from blocked runs. Measured, unvalidated.'},
+      {n:'New biz',v:-0.48,c:'assumed',d:'Seats and hotels dilution. Assumed.'},
+      {n:'Interact.',v:-0.10,c:'assumed',d:'Interaction term. Descriptive.'},
+      {n:'Fee line',v:0.17,c:'assumed',d:'Fee-migration mechanics, coefficient imposed. Assumed.'},
+      {n:'Ex-FX',v:3.86,c:'total',d:'Ex-FX ADR y/y, sum of the seven terms.'},
+      {n:'FX',v:-0.43,c:'sourced',d:'Midpoint of the euro fit (-1.12) and the baskets (+0.26).'},
+      {n:'Reported',v:3.43,c:'total',d:'Reported ADR y/y: $177.17 on 3Q25 $171.29.'}
+    ];
+    var W=640,H=300,L=42,R=12,T=14,B=44, pw=W-L-R, ph=H-T-B, vmax=5.5;
+    function y(v){ return T+ph-(v/vmax)*ph; }
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Waterfall of 3Q26 ADR terms'});
+    for(var g=0; g<=5; g++){ svg.appendChild(el('line',{x1:L,x2:W-R,y1:y(g),y2:y(g),'class':'gridl'})); svg.appendChild(el('text',{x:L-6,y:y(g)+4,'text-anchor':'end','class':'lab'},g.toFixed(0))); }
+    svg.appendChild(el('line',{x1:L,x2:W-R,y1:y(0),y2:y(0),'class':'ax'}));
+    var n=terms.length, slot=pw/n, bw=slot*0.62, run=0;
+    var col={unobs:tok('--unobs'),measured:tok('--measured'),assumed:tok('--assumed'),sourced:tok('--sourced'),total:tok('--ink-2')};
+    terms.forEach(function(t,i){
+      var x=L+i*slot+(slot-bw)/2, a,b;
+      if(t.c==='total'){ a=0; b=t.v; run=t.v; } else { a=run; b=run+t.v; run=b; }
+      var top=Math.min(a,b), bot=Math.max(a,b), h=Math.max(1.5, y(top)-y(bot));
+      var rect=el('rect',{x:x,y:y(bot),width:bw,height:h,rx:3,ry:3,fill:col[t.c],opacity:t.c==='total'?0.55:0.92});
+      svg.appendChild(rect);
+      if(t.c!=='total' && i<n-1){ var nx=L+(i+1)*slot+(slot-bw)/2; svg.appendChild(el('line',{x1:x+bw,x2:nx,y1:y(b),y2:y(b),stroke:tok('--rule-2'),'stroke-dasharray':'2 3'})); }
+      var lbl = t.c==='total' ? fmt(t.v) : fmt(t.v);
+      svg.appendChild(el('text',{x:x+bw/2,y:y(bot)-5,'text-anchor':'middle','class':'lab'},lbl));
+      svg.appendChild(el('text',{x:x+bw/2,y:H-B+16,'text-anchor':'middle','class':'mut'},t.n));
+      var hit=el('rect',{x:L+i*slot,y:T,width:slot,height:ph,'class':'hit'});
+      hit.addEventListener('mousemove',function(e){ tipOn(fig,tip,'<b>'+t.n+' '+fmt(t.v)+'</b><br>'+t.d,e); });
+      hit.addEventListener('mouseleave',function(){ tipOff(tip); });
+      svg.appendChild(hit);
+    });
+    svg.appendChild(el('text',{x:L,y:H-6,'class':'mut'},'points of y/y'));
+    fig.insertBefore(svg,tip);
+  })();
+
+  /* ---------- Residual line ---------- */
+  (function(){
+    var fig=document.getElementById('figRes'), tip=document.getElementById('tipRes');
+    var q=['1Q23','2Q23','3Q23','4Q23','1Q24','2Q24','3Q24','4Q24','1Q25','2Q25','3Q25','4Q25','1Q26','2Q26'];
+    var v=[3.48,2.47,1.01,0.83,2.26,3.23,2.08,2.76,2.23,1.91,2.82,3.70,4.38,4.85];
+    var mean=2.40;
+    var W=640,H=280,L=36,R=16,T=16,B=36, pw=W-L-R, ph=H-T-B, vmax=6, n=q.length+1;
+    function x(i){ return L+(i+0.5)*(pw/n); } function y(val){ return T+ph-(val/vmax)*ph; }
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Pricing residual history'});
+    for(var g=0; g<=6; g++){ svg.appendChild(el('line',{x1:L,x2:W-R,y1:y(g),y2:y(g),'class':'gridl'})); svg.appendChild(el('text',{x:L-6,y:y(g)+4,'text-anchor':'end','class':'lab'},g.toFixed(0))); }
+    svg.appendChild(el('line',{x1:L,x2:W-R,y1:y(0),y2:y(0),'class':'ax'}));
+    svg.appendChild(el('line',{x1:L,x2:W-R,y1:y(mean),y2:y(mean),stroke:tok('--unobs'),'stroke-dasharray':'5 4','stroke-width':1.5,opacity:0.8}));
+    svg.appendChild(el('text',{x:W-R,y:y(mean)-5,'text-anchor':'end','class':'mut'},'2023 to 2025 mean 2.40'));
+    var d=''; v.forEach(function(val,i){ d+=(i?'L':'M')+x(i).toFixed(1)+' '+y(val).toFixed(1)+' '; });
+    svg.appendChild(el('path',{d:d,fill:'none',stroke:tok('--unobs'),'stroke-width':2,'stroke-linejoin':'round'}));
+    v.forEach(function(val,i){
+      var c=el('circle',{cx:x(i),cy:y(val),r:(i===v.length-1?5:3.5),fill:tok('--unobs'),stroke:tok('--surface'),'stroke-width':2});
+      svg.appendChild(c);
+      if(i%2===0||i===v.length-1) svg.appendChild(el('text',{x:x(i),y:H-B+16,'text-anchor':'middle','class':'mut'},q[i]));
+      var hit=el('rect',{x:x(i)-pw/n/2,y:T,width:pw/n,height:ph,'class':'hit'});
+      hit.addEventListener('mousemove',function(e){ tipOn(fig,tip,'<b>'+q[i]+' '+val.toFixed(2)+'</b><br>Reconstructed residual, points of ex-FX ADR y/y',e); });
+      hit.addEventListener('mouseleave',function(){ tipOff(tip); });
+      svg.appendChild(hit);
+    });
+    svg.appendChild(el('text',{x:x(13),y:y(4.85)-10,'text-anchor':'middle','class':'lab'},'4.85'));
+    var i3=14;
+    svg.appendChild(el('line',{x1:x(13),x2:x(i3),y1:y(4.85),y2:y(4.85),stroke:tok('--unobs'),'stroke-dasharray':'3 3','stroke-width':1.5}));
+    svg.appendChild(el('circle',{cx:x(i3),cy:y(4.85),r:5,fill:tok('--surface'),stroke:tok('--unobs'),'stroke-width':2}));
+    svg.appendChild(el('text',{x:x(i3),y:H-B+16,'text-anchor':'middle','class':'mut'},'3Q26'));
+    svg.appendChild(el('text',{x:x(i3),y:y(4.85)-10,'text-anchor':'middle','class':'lab'},'rule'));
+    var hit3=el('rect',{x:x(i3)-pw/n/2,y:T,width:pw/n,height:ph,'class':'hit'});
+    hit3.addEventListener('mousemove',function(e){ tipOn(fig,tip,'<b>3Q26 rule 4.85</b><br>Last quarter\'s residual carried. Downside case 2.40; K lap scenarios for 4Q26 run 3.06 to 5.22.',e); });
+    hit3.addEventListener('mouseleave',function(){ tipOff(tip); });
+    svg.appendChild(hit3);
+    fig.insertBefore(svg,tip);
+  })();
+
+  /* ---------- Nights model dot plot ---------- */
+  (function(){
+    var fig=document.getElementById('figNights'), tip=document.getElementById('tipNights');
+    var rows=[
+      {n:'Naive carry of 2Q26',v:10.34,d:'Comparison column.'},
+      {n:'WS10 regional build',v:10.29,lo:7.97,hi:12.44,d:'NA 7, EMEA 8, LatAm 18, APAC 17. No explicit lap. Bear to bull.'},
+      {n:'Bridge, no lap + World Cup',v:9.99,d:'2023 to 2025 seasonal transition plus 0.5 for July World Cup bookings.'},
+      {n:'Team baseline (PR #32)',v:9.89,lo:8.5,hi:10.3,hl:true,d:'146.8mm. Fitted product terms, NA-only lap. Band: bridge half-lap to WS10.'},
+      {n:'Reviews stays index',v:9.5,lo:8.5,hi:11.0,d:'Alternative data, beats naive 0.68x. Headline row +10.0, band 8.6 to 11.5.'},
+      {n:'Bridge, pattern only',v:9.49,lo:8.49,hi:10.86,d:'H1 mean 9.7 plus the -0.3 point transition. Range of the transition.'},
+      {n:'External stack, 12 survivors',v:9.2,lo:6.8,hi:12.0,d:'Hotel RevPAR, NTTO arrivals and others, in-sample median.'},
+      {n:'Bridge, half lap',v:8.49,d:'-1.5 point RNPL overlay, unfitted. Bear case.'}
+    ];
+    var W=640, rowH=30, L=196, R=16, T=26, B=30, H=T+rows.length*rowH+B, pw=W-L-R, vmin=6, vmax=13;
+    function x(v){ return L+(v-vmin)/(vmax-vmin)*pw; }
+    var svg=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'3Q26 nights forecasts by model'});
+    svg.appendChild(el('rect',{x:x(10),y:T-8,width:x(12)-x(10),height:rows.length*rowH+8,fill:tok('--sourced'),opacity:0.10}));
+    svg.appendChild(el('text',{x:x(11),y:T-12,'text-anchor':'middle','class':'mut'},'guide: low double digits'));
+    for(var g=vmin; g<=vmax; g++){ svg.appendChild(el('line',{x1:x(g),x2:x(g),y1:T-8,y2:T+rows.length*rowH,'class':'gridl'})); svg.appendChild(el('text',{x:x(g),y:H-8,'text-anchor':'middle','class':'lab'},g.toFixed(0))); }
+    rows.forEach(function(r,i){
+      var cy=T+i*rowH+rowH/2, c=r.hl?tok('--accent'):tok('--ink-2');
+      svg.appendChild(el('text',{x:L-10,y:cy+4,'text-anchor':'end','class':r.hl?'lab':''},r.n));
+      if(r.lo!=null){ svg.appendChild(el('line',{x1:x(r.lo),x2:x(r.hi),y1:cy,y2:cy,stroke:c,'stroke-width':r.hl?4:2.5,opacity:0.35,'stroke-linecap':'round'})); }
+      svg.appendChild(el('circle',{cx:x(r.v),cy:cy,r:r.hl?6:5,fill:c,stroke:tok('--surface'),'stroke-width':2}));
+      svg.appendChild(el('text',{x:x(r.v)+(r.hi&&r.hi>r.v+0.6?0:0)+10,y:cy+4,'class':'lab'},r.v.toFixed(1)));
+      var hit=el('rect',{x:0,y:cy-rowH/2,width:W,height:rowH,'class':'hit'});
+      hit.addEventListener('mousemove',function(e){ tipOn(fig,tip,'<b>'+r.n+' '+r.v.toFixed(2)+'%</b><br>'+r.d,e); });
+      hit.addEventListener('mouseleave',function(){ tipOff(tip); });
+      svg.appendChild(hit);
+    });
+    fig.insertBefore(svg,tip);
+  })();
+})();
+</script>
