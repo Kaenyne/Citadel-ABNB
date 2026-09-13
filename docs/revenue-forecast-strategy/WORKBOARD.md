@@ -2,7 +2,7 @@
 
 ## Lane 2 resumed — 13 Sep 2026
 
-Codex parent completed **Gate 1 and Gate 2** on `codex/lane2-full`. A2 research verdict PARTIAL: W1 11 evaluable / 7 of 8 high-signal hits; W2 9 / 6 of 7; no established trade edge; 48 registry rows including two LIVE Q4 rows. See [A2 review](05_backtests/A2_GATE_REVIEW.md) and [active run log](05_backtests/LANE2_RUN_LOG_v2.md). All A2/B2/F/C2/M packages are complete and integration repairs verified. A2 vintage and power refuters both SURVIVED the exact limited claim; seven refuter verdicts remain pending. L skipped (not sanctioned). Frozen tests and both scorer checks remain green, with all original protected files unchanged. Original STOP section below is historical.
+Codex parent completed **Gate 1 and Gate 2** on `codex/lane2-full`. All A2/B2/F/C2/M packages are complete and pushed. All nine refuters completed: A2, F and B2 each have vintage/power/mechanism SURVIVED for the exact qualified sentence, with 68 explicit attacks total. Research verdicts remain A2 PARTIAL, F PARTIAL, B2 FAIL, C2 PARTIAL/FAIL, M integrity PASS/coverage PARTIAL. See [A2 review](05_backtests/A2_GATE_REVIEW.md), [LIVE score sheet](05_backtests/LANE2_LIVE_SCORE_SHEET.md) and [active run log](05_backtests/LANE2_RUN_LOG_v2.md). B2's final timestamp boundary repair is rebuilding; CLOSE follows. L skipped (not sanctioned). Frozen tests and both scorer checks remain green, with all original protected files unchanged. Original STOP section below is historical.
 
 ## Lane 2 execution status — 13 Sep 2026
 

@@ -1,0 +1,156 @@
+{
+  "windows": {
+    "W1": {
+      "n": 8,
+      "hits": 7,
+      "hit_rate": 0.875,
+      "wilson95": [
+        0.5291118177871464,
+        0.9775825085499433
+      ],
+      "exact_fixed_label_permutation_p": 0.07142857142857142,
+      "iid_binomial_p_vs_half": 0.03515625,
+      "signal_positive_n": 5,
+      "actual_positive_n": 4,
+      "binomial_power_reference": {
+        "null_hit_rate": 0.5,
+        "alpha": 0.05,
+        "target_power": 0.8,
+        "critical_hits": 7,
+        "actual_null_size": 0.03515625,
+        "power_at_true_hit_rate_70pct": 0.2552983299999999,
+        "minimum_detectable_true_hit_rate": 0.8956271735938673,
+        "minimum_detectable_improvement_pp": 39.56271735938673,
+        "p_vs_70pct_even_if_all_hit": 0.05764800999999997
+      },
+      "returns": {
+        "n": 8,
+        "signed_mean_pp": -0.30767985383700214,
+        "sample_sd_pp": 6.591952904471195,
+        "sample_se_pp": 2.3306073000069696,
+        "iid_student_t_90_ci": [
+          -4.723198581296792,
+          4.1078388736227875
+        ],
+        "iid_one_sided_positive_mean_p": 0.5506573299538169,
+        "alpha": 0.05,
+        "target_power": 0.8,
+        "iid_normal_mde_pp": 6.447958849072541,
+        "iid_normal_mde_in_sample_sd": 0.9781560855355952,
+        "iid_normal_power_at_positive_2pp_mean": 0.19272969058669498,
+        "leave_one_out_mean_range_pp": [
+          -1.8718035977032623,
+          1.3367346325053704
+        ],
+        "leave_one_out_positive_count": 3
+      }
+    },
+    "W2": {
+      "n": 7,
+      "hits": 6,
+      "hit_rate": 0.8571428571428571,
+      "wilson95": [
+        0.4868721707256811,
+        0.9743203756552565
+      ],
+      "exact_fixed_label_permutation_p": 0.14285714285714285,
+      "iid_binomial_p_vs_half": 0.0625,
+      "signal_positive_n": 5,
+      "actual_positive_n": 4,
+      "binomial_power_reference": {
+        "null_hit_rate": 0.5,
+        "alpha": 0.05,
+        "target_power": 0.8,
+        "critical_hits": 7,
+        "actual_null_size": 0.0078125,
+        "power_at_true_hit_rate_70pct": 0.08235429999999996,
+        "minimum_detectable_true_hit_rate": 0.9686250859269737,
+        "minimum_detectable_improvement_pp": 46.862508592697374,
+        "p_vs_70pct_even_if_all_hit": 0.08235429999999996
+      },
+      "returns": {
+        "n": 7,
+        "signed_mean_pp": -0.9833468154591628,
+        "sample_sd_pp": 6.814340937241731,
+        "sample_se_pp": 2.5755787812497744,
+        "iid_student_t_90_ci": [
+          -5.988160714097364,
+          4.021467083179039
+        ],
+        "iid_one_sided_positive_mean_p": 0.6421158815698116,
+        "alpha": 0.05,
+        "target_power": 0.8,
+        "iid_normal_mde_pp": 7.268539407500236,
+        "iid_normal_mde_in_sample_sd": 1.0666533234015663,
+        "iid_normal_power_at_positive_2pp_mean": 0.17023024020045377,
+        "leave_one_out_mean_range_pp": [
+          -2.9207690102401593,
+          0.8225255916699115
+        ],
+        "leave_one_out_positive_count": 1
+      }
+    }
+  },
+  "nesting": {
+    "W2_subset_W1": true,
+    "unique_high_signal_events": 8,
+    "W1_only_high_signal_events": [
+      "2023Q4"
+    ]
+  },
+  "specification_inventory": {
+    "reported_return_cells": 864,
+    "nonempty_return_cells": 592,
+    "return_cell_dimensions": {
+      "variant": [
+        "default",
+        "ex_covid",
+        "full_sample"
+      ],
+      "window": [
+        "W1",
+        "W2",
+        "extension"
+      ],
+      "strategy": [
+        "guide_gap_only",
+        "kernel",
+        "previous_surprise_sign",
+        "zero"
+      ],
+      "subset": [
+        "abs_signal_gt1",
+        "all"
+      ],
+      "side": [
+        "direction_adjusted",
+        "negative",
+        "positive"
+      ],
+      "horizon": [
+        1,
+        5,
+        20,
+        60
+      ]
+    },
+    "primary_window_kernel_pooled_return_cells": 48,
+    "primary_window_kernel_pooled_high_signal_cells": 24,
+    "sign_and_gap_summary_rows": 9,
+    "control_rows": 45,
+    "ridge_prediction_rows": 19,
+    "new_threshold_stress_return_cells": 72,
+    "default_ex_covid_signals_identical": true
+  },
+  "inputs_sha256": {
+    "data/processed/forecast_methods/alpha_a2/cells.csv": "dfa9af8370069e110dc9eead389ebba5efda39c78c24628ff7d4272d3b5ae615",
+    "data/processed/forecast_methods/registry/alpha-a2__guide_mid_next_q.csv": "0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0",
+    "data/processed/forecast_methods/returns_v1/earnings_reactions_open_v1.csv": "11347775f5190c3496a7533d65f55ad8738e43df94ed9494b77697589a149c02",
+    "data/processed/forecast_methods/alpha_a2/statistics.csv": "31ed19c5bcf803808fe52e435d98a4c0f01e535441ea21282dd125ac248c7de8",
+    "data/processed/forecast_methods/alpha_a2/conditional_returns.csv": "42ca0c890c2ff6af93ed17e29288c65776a60bcfe388e394c994279dd6befd1f",
+    "data/processed/forecast_methods/alpha_a2/controls.csv": "76277d4b32c54c8688fbbe02081513d28277818779d3f8ab37bb98c61fe25750",
+    "data/processed/forecast_methods/alpha_a2/ridge_expanding.csv": "84f0e35602e1863e995fd9269be2b9a09bb882eb5432b1c2d9766844a70bbe00",
+    "analysis/src/forecast_methods/alpha_a2/run.py": "7e29236dd1522ab41f6f33b5d7a7ef7e1d0d1894aae44df7b7671da3e8b8e496"
+  },
+  "runtime_seconds": 0.23798989999340847
+}
