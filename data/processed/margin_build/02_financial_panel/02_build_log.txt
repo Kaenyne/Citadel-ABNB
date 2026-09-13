@@ -1,0 +1,49 @@
+WS02 financial panel build log
+
+Warnings:
+ - 2Q22 letter: FCF reconciliation columns dropped (CFO + capex != FCF): [('4Q21', -0.1)]
+ - 3Q22 letter: FCF reconciliation columns dropped (CFO + capex != FCF): [('4Q21', -0.1)]
+ - 2Q24 letter: Adjusted EBITDA reconciliation table could not be parsed (other letters cover these quarters)
+ - 2Q24 letter: FCF reconciliation columns dropped (CFO + capex != FCF): [('1Q22', 12.0)]
+ - 3Q24 letter: Adjusted EBITDA reconciliation columns dropped (identity fails): [('2Q22', -89.0)]
+ - 4Q24 letter: Adjusted EBITDA reconciliation table could not be parsed (other letters cover these quarters)
+ - 1Q26 letter: Adjusted EBITDA reconciliation columns dropped (identity fails): [('2Q25', 5.0)]
+
+Quarters: 34 (1Q18 to 2Q26)
+Coverage (non-null quarters):
+revenue                 34
+adj_ebitda_reported     34
+sbc_ops                 33
+da                      34
+fcf_reported            34
+nights_m                30
+interest_expense        33
+change_funds_payable    26
+
+Rebuild gap |max| 1Q21-2Q26: 0.973
+Rebuild gap |max| all: 0.973
+
+Annual sum-of-quarters checks (|max| per line):
+  revenue: 0.000
+  cor_gaap: 0.000
+  ops_gaap: 0.317
+  pd_gaap: 0.000
+  sm_gaap: 0.000
+  ga_gaap: 0.000
+  restr_gaap: 0.317
+  op_income: 0.000
+  net_income: 0.000
+  sbc_total_is: 20.000
+  sbc_ops: 266.000
+  sbc_pd: 290.000
+  sbc_sm: 479.000
+  sbc_ga: 231.000
+  da: 0.162
+  sbc_recon: 0.453
+  lodging_tax_reserves: 0.426
+  adj_ebitda_reported: 0.260
+  cfo: 10.273
+  capex: 0.452
+  fcf_reported: 2588.000
+  tax_provision: 0.300
+  interest_income: 0.000

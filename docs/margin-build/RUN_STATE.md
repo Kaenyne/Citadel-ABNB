@@ -35,11 +35,11 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 01 | Repo census of margin-relevant inputs | fable | - | done | 23:55 | notes/01_input_census.md | 00:15 |
 | 02 | Financial panel: every P&L, add-back, below-EBITDA and FCF line, quarterly and annual, with seasonality | fable | - | running | 23:55 | notes/02_financial_panel.md | 23:55 |
 | 03 | Point-in-time consensus for EBITDA/EPS/FCF/cost lines (LSEG + Bloomberg), surprise history | fable | - | done | 23:55 | notes/03_consensus_pit.md | 00:20 |
-| 04 | External / alt-data signals for each cost line (archives, third-party public, macro) | fable | - | running | 23:55 | notes/04_alt_signals.md | 23:55 |
+| 04 | External / alt-data signals for each cost line (archives, third-party public, macro) | fable | - | done | 23:55 | notes/04_alt_signals.md | 00:35 |
 | 05 | Management statements v2 (all events incl. conferences) and 5 Nov guide-language pattern | fable | - | running | 00:15 | notes/05_mgmt_statements_v2.md | 00:15 |
 | 06 | FY27 quarterly revenue path v2: audit and fix PR #32 lap on real quarters, reconcile to bridge v3 exit and WS29 | fable | - | running | 00:20 | notes/06_fy27_path_v2.md | 00:20 |
 | 06v | Independent check of 06 (arithmetic, PIT, reconciliation); writes corrections into 06's folder as `_v2b` if needed | fable | 06 | pending | | notes/06v_fy27_path_check.md | |
-| 10 | Margin harness: targets panel, baselines, recency-weighted scorer, registry (imports frozen harness calendar/validator) | fable | 02, 03 | pending | | notes/10_harness_margin.md | |
+| 10 | Margin harness: targets panel, baselines, recency-weighted scorer, registry (imports frozen harness calendar/validator) | fable | 02, 03 | running | 00:35 | notes/10_harness_margin.md | 00:35 |
 | M1 | Driver-based cost lines v2 (per-unit costs on nights, GBV, ADR, regional mix, seats, FX), PIT refits | fable | 10, 01 | pending | | notes/M1_driver_lines.md | |
 | M2 | Time-series and ratio methods (seasonal margin, incremental margin, % of revenue with drift) + baselines | fable | 10 | pending | | notes/M2_margin_ts.md | |
 | M3 | Guidance-policy model: FY floor + cushion, Q4-implied margin, language pattern; forecasts the guide and the actual given the guide | fable | 10, 05 | pending | | notes/M3_guide_policy_margin.md | |
@@ -56,6 +56,8 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | fable + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 00:35 WS04 done (58 series, 1,146 tests; survivors: 3m T-bill -> interest income r 0.83 n 18, rule 0.86 x T-bill x earning base; Trends category share -> S&M per night r -0.64 n 18; careers postings vs PD r 0.9 but n 6-7; all else fails). WS10 harness launched on fallback panel, will switch to WS02 when it lands.
 
 - 14 Sep 00:20 WS03 done (LSEG daily PIT consensus 2021-2026, 22/22 prints; Street under-called margin 21/22, W1 +1.82pt, W2 +1.70pt, last four +0.43pt; flow-through beta 0.57 weak; Street anchors on FY floor; 3Q26 cons EBITDA $2,361.5M / 49.78%, FY26 35.62%, FY27 36.45%; Bloomberg file pull-date anchored). WS06 launched.
 
