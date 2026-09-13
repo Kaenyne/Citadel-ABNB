@@ -1,0 +1,9 @@
+status,claim,reason_or_scope,n
+allowed,"The audited descriptive model has four seasonal conversion rates and one shared bounded lag coefficient, fitted jointly to 22 quarters.",fullsample calibration,22
+allowed,The free-weight chronological RMSE hurdle is FAIL against an identically fitted fixed benchmark on W1/W2; production adoption remains pending.,chronological validation,14
+allowed,"Once management has supplied a guide, guide-plus-cushion is an advantaged revenue benchmark; this test does not establish guide-surprise alpha.",information-set distinction,14
+forbidden,The fitted lag coefficient is the percentage of bookings or revenue recognized one quarter later.,reduced-form coefficients do not identify booking cohorts,22
+forbidden,A high in-sample R-squared or close actual/fitted plot establishes forecasting skill.,descriptive fit is not prospective validation,22
+forbidden,The estimated seasonal conversion rate is Airbnb's commission take rate.,lagged GBV conversion differs from contemporaneous accounting ratio,22
+forbidden,All future revenue is already booked; the two lag weights are measured probabilities.,"current-quarter booking flow omitted, not proven zero",22
+forbidden,The free-weight or newly fitted all22 fixed-OLS calibration is automatically the team's production kernel.,L4/team adoption is separate from validation,22

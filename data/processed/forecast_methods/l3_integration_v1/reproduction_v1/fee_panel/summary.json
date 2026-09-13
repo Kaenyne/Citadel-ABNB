@@ -1,0 +1,35 @@
+{
+  "information_date": "2026-09-13",
+  "implementation": "complete",
+  "research": "partial_future_captures",
+  "price_basis": "listed_price_only",
+  "w1_n": 0,
+  "w2_n": 0,
+  "captures": 0,
+  "waves": {
+    "sep": {
+      "status": "blocked_future_or_missing_captures",
+      "n": 0,
+      "missing_dates": [
+        "2026-09-14",
+        "2026-09-16",
+        "2026-09-18"
+      ]
+    },
+    "oct": {
+      "status": "blocked_future_or_missing_captures",
+      "n": 0,
+      "missing_dates": [
+        "2026-10-12",
+        "2026-10-14",
+        "2026-10-16"
+      ]
+    }
+  },
+  "dry_run": {
+    "n_rows": 225,
+    "n_listings": 207,
+    "residence_known_rows": 6,
+    "source": "frozen_2026-09-11_diagnostic_not_a_wave"
+  }
+}

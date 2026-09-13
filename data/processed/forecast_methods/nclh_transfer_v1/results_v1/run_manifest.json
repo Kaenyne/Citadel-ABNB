@@ -1,0 +1,102 @@
+{
+  "inputs": [
+    {
+      "path": "data/processed/forecast_methods/nclh_transfer_v1/inputs_v3/extraction_candidates.csv",
+      "sha256": "7c68d1593cc1cc0cde4c481fd3db8bdf6c46d571c06c67a701ac63f2ba8044b0"
+    },
+    {
+      "path": "data/processed/forecast_methods/nclh_transfer_v1/inputs_v3/fetch_errors.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "data/processed/forecast_methods/nclh_transfer_v1/inputs_v3/guidance_inventory.csv",
+      "sha256": "6dd8448ab35f436f4187451e093e97c82a460f379225f0b9a83cc4189c7355a1"
+    },
+    {
+      "path": "data/processed/forecast_methods/nclh_transfer_v1/inputs_v3/observations.csv",
+      "sha256": "410e7b9146f260cf8b49e9a655b123af8d1dea8e8200989518f4304f031a3e9e"
+    },
+    {
+      "path": "data/processed/forecast_methods/nclh_transfer_v1/inputs_v3/source_manifest.json",
+      "sha256": "ec70e3316e7cb420b3243e3fbb1da27e3e64edfb869726b5b9cede163d020856"
+    },
+    {
+      "path": "docs/revenue-forecast-strategy/05_backtests/L3_NCLH_PREREG_v1.md",
+      "sha256": "39bae70e25115ca6b4c87181cb66d1dd265f30193d004cb57747801c6015d2eb"
+    },
+    {
+      "path": "data/processed/forecast_methods/kernel_lambda/01_lambda_table.csv",
+      "sha256": "ee33775b08679b15498056e7d6763efc6f8714e5c5bceacabd22898dbefdbfd9"
+    },
+    {
+      "path": "analysis/src/forecast_methods/nclh_transfer_v1/fetch.py",
+      "sha256": "b55027f8507572449983b66c5545fef340ed96e87a92669a68a877106fd6878c"
+    },
+    {
+      "path": "analysis/src/forecast_methods/nclh_transfer_v1/run.py",
+      "sha256": "bb2eeb695acef03f535f52a2fe6a9894ab0fd07df38a620f04e56c4ae681b5a9"
+    },
+    {
+      "path": "analysis/src/forecast_methods/nclh_transfer_v1/test_nclh.py",
+      "sha256": "8330b946ca88a0ebdf7f0d6bd5696a3b3429c83c668ece653ebaac6213e582ef"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "coefficients.csv",
+      "sha256": "d5bdee0c4903b92d9963dcb066af28642d2e33fe4065805391fa5e2c703e50bd"
+    },
+    {
+      "path": "exclusions.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "l4_evidence.csv",
+      "sha256": "48b06f5e3b5ecae5e8bb8ec7fab07ad287c6345268e630a9ce6c54b92d3533cd"
+    },
+    {
+      "path": "lambda_comparison.png",
+      "sha256": "dc740f5c0b82a6ab9f1fce2f22a4e21fd9cabf7e7c17d55053d73a782df6ec7f"
+    },
+    {
+      "path": "lambda_values.csv",
+      "sha256": "f5b740bf440ebe833cfcd2ca78f6f647337345d13a6dfd2265f6bf8e31e3d4b2"
+    },
+    {
+      "path": "panel.csv",
+      "sha256": "0e4b36d6e531e5c3fac971f77badd7984ed64f4bc8b54fb8ef1bae4574647a4f"
+    },
+    {
+      "path": "predictions.csv",
+      "sha256": "2041218bed0f31b1664aca61114f5dbcee5c990dbead22c665c286e27365e9bb"
+    },
+    {
+      "path": "scores.csv",
+      "sha256": "01d10f048e905c6482ed20744e78b63980f04ab9f2f539f7c1bf514912870578"
+    },
+    {
+      "path": "stability.csv",
+      "sha256": "005cd24a4dff1006989afc26c55826ef785ffc6c9b9f5d4130d752dba9be3962"
+    },
+    {
+      "path": "verdict.json",
+      "sha256": "2c5e2e516b8a479f62eac7d1837061cee53a05b7dd706040316843fff42bc83f"
+    }
+  ],
+  "as_of_date": "2026-09-13",
+  "research_verdict": {
+    "passenger_ticket_revenue_usd_m": {
+      "stability": "FAIL",
+      "forecast_both_windows": "FAIL",
+      "guide_surprise": "UNAVAILABLE_metric_matched_guidance_and_consensus",
+      "kernel_transfer": "FAIL"
+    },
+    "total_revenue_usd_m": {
+      "stability": "FAIL",
+      "forecast_both_windows": "FAIL",
+      "guide_surprise": "UNAVAILABLE_metric_matched_guidance_and_consensus",
+      "kernel_transfer": "FAIL"
+    }
+  },
+  "raw_source_storage": "temporary cache; manifests only in Git"
+}

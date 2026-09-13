@@ -1,0 +1,68 @@
+[
+  {
+    "label": "cohort_fx_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\cohort_fx_v2\\tests\" -q",
+    "exit_code": 0,
+    "seconds": 4.811999999976251
+  },
+  {
+    "label": "fee_panel_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\fee_panel_v1\\test_fee_panel.py\" -q",
+    "exit_code": 0,
+    "seconds": 11.5
+  },
+  {
+    "label": "adr_hotel_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_adr_hotel_v1\\test_audit.py\" -q",
+    "exit_code": 0,
+    "seconds": 2.6880000000237487
+  },
+  {
+    "label": "nclh_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\nclh_transfer_v1\\test_nclh.py\" -q",
+    "exit_code": 0,
+    "seconds": 3.98499999998603
+  },
+  {
+    "label": "bundle_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_integration_v1\\test_bundle.py\" -q",
+    "exit_code": 0,
+    "seconds": 4.0310000000172295
+  },
+  {
+    "label": "conversion_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\conversion_validation_v1\" -q",
+    "exit_code": 0,
+    "seconds": 4.936999999976251
+  },
+  {
+    "label": "cohort_fx",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\cohort_fx_v2\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_integration_v1\\reproduction_v1\\cohort_fx\" --fx-bundle \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\FX_ENGINE_SESSION_BUNDLE\"",
+    "exit_code": 0,
+    "seconds": 64.14100000000326
+  },
+  {
+    "label": "fee_panel",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\fee_panel_v1\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_integration_v1\\reproduction_v1\\fee_panel\"",
+    "exit_code": 0,
+    "seconds": 3.9369999999762513
+  },
+  {
+    "label": "adr_hotel",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_adr_hotel_v1\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_integration_v1\\reproduction_v1\\adr_hotel\"",
+    "exit_code": 0,
+    "seconds": 5.829000000027008
+  },
+  {
+    "label": "nclh",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\nclh_transfer_v1\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_integration_v1\\reproduction_v1\\nclh\"",
+    "exit_code": 0,
+    "seconds": 5.35899999999674
+  },
+  {
+    "label": "conversion",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\conversion_validation_v1\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_integration_v1\\reproduction_v1\\conversion\"",
+    "exit_code": 0,
+    "seconds": 33.56199999997625
+  }
+]
