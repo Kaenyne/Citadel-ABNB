@@ -43,6 +43,7 @@ OUT_SCOREBOARD = OUT_DIR / "scoreboard_margin.csv"
 OUT_SCOREBOARD_MD = OUT_DIR / "scoreboard_margin.md"
 OUT_BY_QUARTER = OUT_DIR / "scoreboard_by_quarter.csv"
 OUT_BASELINE_TABLE = OUT_DIR / "baseline_scoreboard_summary.md"
+OUT_HARDEST = OUT_DIR / "hardest_baseline_by_target.csv"
 
 BASELINE_METHOD = "baselines-margin"
 

@@ -251,6 +251,49 @@ def scoreboard_md(sb: pd.DataFrame, title="Margin harness scoreboard") -> str:
     return "\n".join(lines)
 
 
+_SUMMARY_TARGETS = ["adj_ebitda_margin_pct", "adj_ebitda_musd", "cor_cash_musd", "ops_cash_musd", "pd_cash_musd",
+                    "sm_cash_musd", "ga_cash_musd", "cor_cash_pct_rev", "ops_cash_pct_rev", "pd_cash_pct_rev",
+                    "sm_cash_pct_rev", "ga_cash_pct_rev", "cor_cash_per_night", "ops_cash_per_night",
+                    "pd_cash_per_night", "sm_cash_per_night", "ga_cash_per_night", "sbc_musd", "sbc_pct_rev",
+                    "da_musd", "op_income_musd", "op_margin_pct", "net_income_musd", "eps_diluted", "fcf_musd",
+                    "fcf_margin_pct", "interest_income_musd", "tax_rate_pct", "diluted_shares_m"]
+
+
+def hardest_baseline_table(sb: pd.DataFrame) -> pd.DataFrame:
+    """Per (target, window, horizon): the baseline object with the lowest MAE, equal- and
+    recency-weighted, from the PIT replay of `baselines-margin`; the seasonal-naive MAE alongside."""
+    b = sb[(sb["method"] == P.BASELINE_METHOD) & (sb["prior_basis"] == "PIT")]
+    rows = []
+    for (t, w, h), g in b[b["target"].isin(_SUMMARY_TARGETS)].groupby(["target", "window", "horizon_q"]):
+        ew = g.sort_values("mae").iloc[0]
+        rw = g.sort_values("rw_mae").iloc[0]
+        sn = g[g["object"] == PRIMARY_BASELINE]
+        rows.append({"target": t, "window": w, "horizon_q": int(h), "n": int(ew["n"]),
+                     "hardest_ew": ew["object"], "mae_ew": ew["mae"],
+                     "hardest_rw": rw["object"], "rw_mae": rw["rw_mae"],
+                     "seasonal_naive_mae_ew": float(sn["mae"].iloc[0]) if len(sn) else np.nan,
+                     "seasonal_naive_mae_rw": float(sn["rw_mae"].iloc[0]) if len(sn) else np.nan,
+                     "weightings_agree": ew["object"] == rw["object"]})
+    out = pd.DataFrame(rows)
+    out["target"] = pd.Categorical(out["target"], _SUMMARY_TARGETS)
+    return out.sort_values(["target", "window", "horizon_q"]).reset_index(drop=True)
+
+
+def hardest_baseline_md(hb: pd.DataFrame) -> str:
+    lines = ["# Which baseline is hardest to beat (method `baselines-margin`, PIT replay)", "",
+             "Lowest MAE per target / window / horizon, equal-weighted (ew) and recency-weighted "
+             "(rw, half-life 4 quarters anchored at 2026Q2). `seasonal_naive` MAE shown for scale. "
+             "Units: the target's own (pp for %, USD m for _musd, USD/night for _per_night).", "",
+             "| target | window | h | n | hardest (ew) | MAE ew | hardest (rw) | MAE rw | naive ew | naive rw | agree |",
+             "|---|---|---|---|---|---|---|---|---|---|---|"]
+    for _, r in hb.iterrows():
+        lines.append(f"| {r['target']} | {r['window']} | {r['horizon_q']} | {r['n']} | {r['hardest_ew']} | "
+                     f"{_fmt(r['mae_ew'], 3)} | {r['hardest_rw']} | {_fmt(r['rw_mae'], 3)} | "
+                     f"{_fmt(r['seasonal_naive_mae_ew'], 3)} | {_fmt(r['seasonal_naive_mae_rw'], 3)} | "
+                     f"{'yes' if r['weightings_agree'] else 'NO'} |")
+    return "\n".join(lines) + "\n"
+
+
 def main(verbose: bool = True) -> int:
     P.ensure_dirs()
     reg = load_registry()
@@ -260,6 +303,10 @@ def main(verbose: bool = True) -> int:
     sb.to_csv(P.OUT_SCOREBOARD, index=False)
     by_q.to_csv(P.OUT_BY_QUARTER, index=False)
     P.OUT_SCOREBOARD_MD.write_text(scoreboard_md(sb), encoding="utf-8")
+    if len(sb):
+        hb = hardest_baseline_table(sb)
+        hb.to_csv(P.OUT_HARDEST, index=False)
+        P.OUT_BASELINE_TABLE.write_text(hardest_baseline_md(hb), encoding="utf-8")
     print(f"scoreboard: {len(sb)} rows -> {P.OUT_SCOREBOARD.name}, {P.OUT_SCOREBOARD_MD.name}; "
           f"by_quarter: {len(by_q)} rows -> {P.OUT_BY_QUARTER.name}")
     if verbose and len(sb):

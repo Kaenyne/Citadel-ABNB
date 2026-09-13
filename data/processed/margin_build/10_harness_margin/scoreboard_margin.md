@@ -22,14 +22,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | trailing4 | W1 | 0 | full_sample | 14 | 9.48 | 8.49 | 12.10 | 0.64 | 1.21 | 4.236 | 4.440 | 5.953 | 6.82 | 0.64 | 2 | False | False |
 | baselines-margin | street | W1 | 1 | PIT | 13 | 1.64 | 1.25 | 2.17 | -0.66 | -0.34 | 0.698 | 0.647 | 1.000 | 1.46 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 2.35 | 1.93 | 2.95 | -0.57 | -0.03 | 1.000 | 1.000 | 1.432 | 2.12 | 1.00 | 1 | False | False |
-| baselines-margin | q_guide_implied | W1 | 1 | PIT | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 0 | False | False |
+| baselines-margin | q_guide_implied | W1 | 1 | PIT | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 1 | False | False |
 | baselines-margin | guide_implied | W1 | 1 | PIT | 10 | 3.15 | 2.38 | 3.92 | -2.45 | -1.95 | 1.388 | 1.195 | 2.029 | 2.31 | 0.80 | 4 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 3.91 | 3.43 | 4.52 | 0.14 | -0.43 | 1.665 | 1.773 | 2.384 | 2.94 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W1 | 1 | PIT | 13 | 8.91 | 8.54 | 11.62 | -0.73 | 0.97 | 3.789 | 4.418 | 5.426 | 6.44 | 0.92 | 2 | False | False |
 | baselines-margin | street | W1 | 1 | full_sample | 13 | 1.64 | 1.25 | 2.17 | -0.66 | -0.34 | 0.698 | 0.647 | 1.000 | 1.53 | 1.00 | 1 | True | True |
 | baselines-margin | guide_implied | W1 | 1 | full_sample | 10 | 2.02 | 1.74 | 2.52 | -1.98 | -1.68 | 0.892 | 0.872 | 1.303 | 1.43 | 0.90 | 4 | True | True |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 2.35 | 1.93 | 2.95 | -0.57 | -0.03 | 1.000 | 1.000 | 1.432 | 2.10 | 1.00 | 1 | False | False |
-| baselines-margin | q_guide_implied | W1 | 1 | full_sample | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 0 | False | False |
+| baselines-margin | q_guide_implied | W1 | 1 | full_sample | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.47 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 3.91 | 3.43 | 4.52 | 0.14 | -0.43 | 1.665 | 1.773 | 2.384 | 2.76 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W1 | 1 | full_sample | 13 | 8.91 | 8.54 | 11.62 | -0.73 | 0.97 | 3.789 | 4.418 | 5.426 | 6.51 | 0.77 | 2 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 2.48 | 1.96 | 3.06 | -0.68 | -0.05 | 1.000 | 1.000 |  | 1.94 | 1.00 | 1 | False | False |
@@ -55,13 +55,13 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | street | W2 | 1 | PIT | 9 | 0.99 | 0.97 | 1.21 | 0.28 | 0.03 | 0.629 | 0.605 | 1.000 | 1.18 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 1.58 | 1.60 | 1.72 | 0.81 | 0.51 | 1.000 | 1.000 | 1.590 | 1.69 | 1.00 | 1 | False | False |
 | baselines-margin | guide_implied | W2 | 1 | PIT | 7 | 2.14 | 1.99 | 2.59 | -1.79 | -1.69 | 1.276 | 1.139 | 1.941 | 1.56 | 1.00 | 4 | False | False |
-| baselines-margin | q_guide_implied | W2 | 1 | PIT | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 0 | False | False |
+| baselines-margin | q_guide_implied | W2 | 1 | PIT | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 3.50 | 3.27 | 4.16 | 1.09 | -0.16 | 2.220 | 2.040 | 3.529 | 2.63 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W2 | 1 | PIT | 9 | 8.59 | 8.37 | 10.98 | 0.51 | 1.38 | 5.442 | 5.229 | 8.651 | 6.20 | 1.00 | 2 | False | False |
 | baselines-margin | street | W2 | 1 | full_sample | 9 | 0.99 | 0.97 | 1.21 | 0.28 | 0.03 | 0.629 | 0.605 | 1.000 | 1.30 | 1.00 | 1 | True | True |
 | baselines-margin | guide_implied | W2 | 1 | full_sample | 7 | 1.55 | 1.56 | 2.05 | -1.49 | -1.49 | 0.924 | 0.889 | 1.406 | 1.21 | 1.00 | 4 | True | True |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 1.58 | 1.60 | 1.72 | 0.81 | 0.51 | 1.000 | 1.000 | 1.590 | 1.81 | 1.00 | 1 | False | False |
-| baselines-margin | q_guide_implied | W2 | 1 | full_sample | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 0 | False | False |
+| baselines-margin | q_guide_implied | W2 | 1 | full_sample | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.47 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 3.50 | 3.27 | 4.16 | 1.09 | -0.16 | 2.220 | 2.040 | 3.529 | 2.61 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W2 | 1 | full_sample | 9 | 8.59 | 8.37 | 10.98 | 0.51 | 1.38 | 5.442 | 5.229 | 8.651 | 6.18 | 0.78 | 2 | False | False |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 1.72 | 1.66 | 1.82 | 0.86 | 0.52 | 1.000 | 1.000 |  | 1.52 | 1.00 | 1 | False | False |
@@ -78,28 +78,28 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baselines-margin | q_guide_implied | W1 | 0 | PIT | 14 | 63.17 | 58.04 | 75.91 | -2.91 | 7.29 | 0.512 | 0.500 | 0.968 | 55.01 | 0.86 | 1 | True | True |
-| baselines-margin | street | W1 | 0 | PIT | 14 | 65.28 | 62.31 | 77.76 | -51.33 | -53.74 | 0.529 | 0.537 | 1.000 | 42.92 | 0.86 | 1 | True | True |
+| baselines-margin | street | W1 | 0 | PIT | 14 | 65.28 | 62.31 | 77.76 | -51.33 | -53.74 | 0.529 | 0.537 | 1.000 | 49.85 | 0.93 | 1 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 103.36 | 93.49 | 118.54 | -3.21 | -20.32 | 0.837 | 0.806 | 1.583 | 76.17 | 1.00 | 1 | True | True |
 | baselines-margin | guide_implied | W1 | 0 | PIT | 14 | 104.34 | 87.30 | 125.38 | -104.34 | -87.30 | 0.845 | 0.753 | 1.598 | 186.40 | 0.79 | 4 | True | True |
-| baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 123.43 | 115.99 | 157.20 | -122.43 | -114.97 | 1.000 | 1.000 | 1.891 | 85.94 | 0.79 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 123.43 | 115.99 | 157.20 | -122.43 | -114.97 | 1.000 | 1.000 | 1.891 | 137.86 | 0.93 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 271.62 | 252.70 | 365.51 | -41.75 | -15.55 | 2.201 | 2.179 | 4.161 | 195.07 | 0.86 | 3 | False | False |
 | baselines-margin | q_guide_implied | W1 | 0 | full_sample | 14 | 64.24 | 58.27 | 78.43 | -2.00 | 10.65 | 0.520 | 0.502 | 0.984 | 52.42 | 0.86 | 1 | True | True |
-| baselines-margin | street | W1 | 0 | full_sample | 14 | 65.28 | 62.31 | 77.76 | -51.33 | -53.74 | 0.529 | 0.537 | 1.000 | 43.45 | 0.93 | 1 | True | True |
+| baselines-margin | street | W1 | 0 | full_sample | 14 | 65.28 | 62.31 | 77.76 | -51.33 | -53.74 | 0.529 | 0.537 | 1.000 | 50.41 | 0.93 | 1 | True | True |
 | baselines-margin | guide_implied | W1 | 0 | full_sample | 14 | 68.71 | 71.95 | 78.98 | -56.78 | -67.97 | 0.557 | 0.620 | 1.053 | 162.24 | 1.00 | 4 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 103.36 | 93.49 | 118.54 | -3.21 | -20.32 | 0.837 | 0.806 | 1.583 | 74.84 | 0.93 | 1 | True | True |
-| baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 123.43 | 115.99 | 157.20 | -122.43 | -114.97 | 1.000 | 1.000 | 1.891 | 86.56 | 0.79 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 123.43 | 115.99 | 157.20 | -122.43 | -114.97 | 1.000 | 1.000 | 1.891 | 130.45 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | full_sample | 14 | 271.52 | 251.99 | 366.10 | -40.71 | -12.13 | 2.200 | 2.172 | 4.159 | 195.29 | 0.86 | 3 | False | False |
-| baselines-margin | street | W1 | 1 | PIT | 13 | 65.50 | 57.93 | 79.45 | -33.41 | -30.46 | 0.502 | 0.493 | 1.000 | 45.87 | 0.85 | 1 | True | True |
-| baselines-margin | q_guide_implied | W1 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.24 | 1.00 | 0 | False | False |
+| baselines-margin | street | W1 | 1 | PIT | 13 | 65.50 | 57.93 | 79.45 | -33.41 | -30.46 | 0.502 | 0.493 | 1.000 | 68.99 | 1.00 | 1 | True | True |
+| baselines-margin | q_guide_implied | W1 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 46.78 | 1.00 | 1 | False | False |
 | baselines-margin | guide_implied | W1 | 1 | PIT | 10 | 103.36 | 93.07 | 113.91 | -46.11 | -60.82 | 0.726 | 0.718 | 1.547 | 75.43 | 0.80 | 4 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 129.08 | 118.15 | 154.39 | -8.77 | -23.41 | 0.990 | 1.005 | 1.971 | 102.89 | 1.00 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 130.38 | 117.54 | 162.87 | -129.31 | -116.50 | 1.000 | 1.000 | 1.991 | 89.69 | 0.77 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 130.38 | 117.54 | 162.87 | -129.31 | -116.50 | 1.000 | 1.000 | 1.991 | 162.43 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 269.07 | 265.14 | 368.74 | -68.72 | -34.94 | 2.064 | 2.256 | 4.108 | 190.76 | 0.85 | 3 | False | False |
 | baselines-margin | guide_implied | W1 | 1 | full_sample | 10 | 54.87 | 65.65 | 70.48 | -47.30 | -61.22 | 0.385 | 0.506 | 0.822 | 44.45 | 1.00 | 4 | True | True |
-| baselines-margin | street | W1 | 1 | full_sample | 13 | 65.50 | 57.93 | 79.45 | -33.41 | -30.46 | 0.502 | 0.493 | 1.000 | 46.40 | 0.92 | 1 | True | True |
-| baselines-margin | q_guide_implied | W1 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.24 | 1.00 | 0 | False | False |
+| baselines-margin | street | W1 | 1 | full_sample | 13 | 65.50 | 57.93 | 79.45 | -33.41 | -30.46 | 0.502 | 0.493 | 1.000 | 65.95 | 0.92 | 1 | True | True |
+| baselines-margin | q_guide_implied | W1 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.00 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 129.08 | 118.15 | 154.39 | -8.77 | -23.41 | 0.990 | 1.005 | 1.971 | 95.85 | 0.92 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 130.38 | 117.54 | 162.87 | -129.31 | -116.50 | 1.000 | 1.000 | 1.991 | 90.47 | 0.77 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 130.38 | 117.54 | 162.87 | -129.31 | -116.50 | 1.000 | 1.000 | 1.991 | 137.89 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | full_sample | 13 | 269.07 | 265.14 | 368.74 | -68.72 | -34.94 | 2.064 | 2.256 | 4.108 | 193.88 | 0.77 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 114.58 | 91.41 | 140.10 | -2.25 | -8.01 | 0.866 | 0.776 |  | 94.57 | 0.83 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 132.25 | 117.76 | 166.63 | -131.08 | -116.69 | 1.000 | 1.000 |  | 172.80 | 1.00 | 1 | False | False |
@@ -109,28 +109,28 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 114.58 | 91.41 | 140.10 | -2.25 | -8.01 | 0.866 | 0.776 |  | 86.57 | 0.92 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 132.25 | 117.76 | 166.63 | -131.08 | -116.69 | 1.000 | 1.000 |  | 140.51 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 284.02 | 263.98 | 375.45 | -69.09 | -28.56 | 2.148 | 2.242 |  | 204.03 | 1.00 | 3 | False | False |
-| baselines-margin | street | W2 | 0 | PIT | 10 | 58.12 | 59.32 | 63.67 | -42.48 | -50.77 | 0.594 | 0.557 | 1.000 | 37.20 | 0.90 | 1 | True | True |
+| baselines-margin | street | W2 | 0 | PIT | 10 | 58.12 | 59.32 | 63.67 | -42.48 | -50.77 | 0.594 | 0.557 | 1.000 | 47.73 | 0.90 | 1 | True | True |
 | baselines-margin | q_guide_implied | W2 | 0 | PIT | 10 | 61.72 | 55.99 | 70.85 | 16.36 | 14.98 | 0.631 | 0.526 | 1.062 | 55.04 | 0.90 | 1 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 81.80 | 86.19 | 88.38 | 1.40 | -20.76 | 0.836 | 0.810 | 1.407 | 66.46 | 1.00 | 1 | True | True |
 | baselines-margin | guide_implied | W2 | 0 | PIT | 10 | 96.69 | 84.50 | 118.50 | -96.69 | -84.50 | 0.989 | 0.794 | 1.664 | 201.81 | 0.90 | 4 | True | True |
-| baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 97.80 | 106.41 | 117.15 | -96.40 | -105.27 | 1.000 | 1.000 | 1.683 | 67.44 | 0.90 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 97.80 | 106.41 | 117.15 | -96.40 | -105.27 | 1.000 | 1.000 | 1.683 | 118.12 | 0.90 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 264.77 | 249.38 | 345.41 | -6.87 | 0.25 | 2.707 | 2.344 | 4.556 | 187.80 | 1.00 | 3 | False | False |
-| baselines-margin | street | W2 | 0 | full_sample | 10 | 58.12 | 59.32 | 63.67 | -42.48 | -50.77 | 0.594 | 0.557 | 1.000 | 36.62 | 1.00 | 1 | True | True |
+| baselines-margin | street | W2 | 0 | full_sample | 10 | 58.12 | 59.32 | 63.67 | -42.48 | -50.77 | 0.594 | 0.557 | 1.000 | 49.31 | 0.90 | 1 | True | True |
 | baselines-margin | q_guide_implied | W2 | 0 | full_sample | 10 | 62.04 | 55.88 | 72.72 | 19.47 | 19.21 | 0.634 | 0.525 | 1.068 | 51.32 | 0.90 | 1 | True | True |
 | baselines-margin | guide_implied | W2 | 0 | full_sample | 10 | 67.34 | 71.53 | 76.63 | -63.72 | -69.78 | 0.689 | 0.672 | 1.159 | 165.21 | 1.00 | 4 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 81.80 | 86.19 | 88.38 | 1.40 | -20.76 | 0.836 | 0.810 | 1.407 | 66.35 | 1.00 | 1 | True | True |
-| baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 97.80 | 106.41 | 117.15 | -96.40 | -105.27 | 1.000 | 1.000 | 1.683 | 66.06 | 0.90 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 97.80 | 106.41 | 117.15 | -96.40 | -105.27 | 1.000 | 1.000 | 1.683 | 129.42 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | full_sample | 10 | 264.04 | 248.39 | 344.75 | -3.86 | 4.44 | 2.700 | 2.334 | 4.543 | 186.60 | 1.00 | 3 | False | False |
-| baselines-margin | street | W2 | 1 | PIT | 9 | 46.74 | 50.82 | 54.54 | -0.39 | -19.69 | 0.515 | 0.488 | 1.000 | 36.40 | 0.89 | 1 | True | True |
-| baselines-margin | q_guide_implied | W2 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.24 | 1.00 | 0 | False | False |
+| baselines-margin | street | W2 | 1 | PIT | 9 | 46.74 | 50.82 | 54.54 | -0.39 | -19.69 | 0.515 | 0.488 | 1.000 | 61.99 | 1.00 | 1 | True | True |
+| baselines-margin | q_guide_implied | W2 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 46.78 | 1.00 | 1 | False | False |
 | baselines-margin | guide_implied | W2 | 1 | PIT | 7 | 88.43 | 87.38 | 101.22 | -41.52 | -61.01 | 0.876 | 0.756 | 1.792 | 65.87 | 1.00 | 4 | True | True |
-| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 90.67 | 104.06 | 111.05 | -89.11 | -102.87 | 1.000 | 1.000 | 1.940 | 65.10 | 0.89 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 90.67 | 104.06 | 111.05 | -89.11 | -102.87 | 1.000 | 1.000 | 1.940 | 142.62 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 103.33 | 108.41 | 118.19 | 8.22 | -22.55 | 1.140 | 1.042 | 2.211 | 94.08 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | PIT | 9 | 272.00 | 265.55 | 356.25 | -41.59 | -27.04 | 3.000 | 2.552 | 5.820 | 190.82 | 0.89 | 3 | False | False |
-| baselines-margin | street | W2 | 1 | full_sample | 9 | 46.74 | 50.82 | 54.54 | -0.39 | -19.69 | 0.515 | 0.488 | 1.000 | 36.58 | 1.00 | 1 | True | True |
+| baselines-margin | street | W2 | 1 | full_sample | 9 | 46.74 | 50.82 | 54.54 | -0.39 | -19.69 | 0.515 | 0.488 | 1.000 | 61.06 | 1.00 | 1 | True | True |
 | baselines-margin | guide_implied | W2 | 1 | full_sample | 7 | 51.90 | 65.68 | 68.07 | -42.30 | -61.00 | 0.514 | 0.568 | 1.052 | 44.93 | 1.00 | 4 | True | True |
-| baselines-margin | q_guide_implied | W2 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.24 | 1.00 | 0 | False | False |
-| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 90.67 | 104.06 | 111.05 | -89.11 | -102.87 | 1.000 | 1.000 | 1.940 | 62.46 | 0.89 | 1 | False | False |
+| baselines-margin | q_guide_implied | W2 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.00 | 1.00 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 90.67 | 104.06 | 111.05 | -89.11 | -102.87 | 1.000 | 1.000 | 1.940 | 133.00 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 103.33 | 108.41 | 118.19 | 8.22 | -22.55 | 1.140 | 1.042 | 2.211 | 86.49 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | full_sample | 9 | 272.00 | 265.55 | 356.25 | -41.59 | -27.04 | 3.000 | 2.552 | 5.820 | 190.93 | 0.78 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 77.00 | 74.33 | 86.76 | 16.00 | -9.06 | 0.831 | 0.704 |  | 84.82 | 1.00 | 1 | True | True |
@@ -593,29 +593,29 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 4.71 | 5.03 | 5.84 | -0.00 | -0.80 | 0.868 | 1.026 |  | 3.76 | 0.93 | 1 | True | False |
-| baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 5.43 | 4.91 | 6.30 | -0.57 | 0.23 | 1.000 | 1.000 |  | 3.65 | 0.71 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 4.71 | 5.03 | 5.84 | -0.00 | -0.80 | 0.868 | 1.026 |  | 4.37 | 0.93 | 1 | True | False |
-| baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 5.43 | 4.91 | 6.30 | -0.57 | 0.23 | 1.000 | 1.000 |  | 3.58 | 0.79 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 5.85 | 5.00 | 6.54 | -0.62 | 0.23 | 1.000 | 1.000 |  | 3.93 | 0.69 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 4.71 | 5.03 | 5.84 | -0.00 | -0.80 | 0.868 | 1.026 |  | 3.43 | 0.57 | 1 | True | False |
+| baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 5.43 | 4.91 | 6.30 | -0.57 | 0.23 | 1.000 | 1.000 |  | 3.83 | 0.57 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 4.71 | 5.03 | 5.84 | -0.00 | -0.80 | 0.868 | 1.026 |  | 3.30 | 0.71 | 1 | True | False |
+| baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 5.43 | 4.91 | 6.30 | -0.57 | 0.23 | 1.000 | 1.000 |  | 3.58 | 0.64 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 5.85 | 5.00 | 6.54 | -0.62 | 0.23 | 1.000 | 1.000 |  | 4.25 | 0.54 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 7.85 | 8.25 | 9.18 | 0.31 | -0.17 | 1.342 | 1.651 |  | 5.65 | 0.54 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 5.85 | 5.00 | 6.54 | -0.62 | 0.23 | 1.000 | 1.000 |  | 3.78 | 0.77 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 5.85 | 5.00 | 6.54 | -0.62 | 0.23 | 1.000 | 1.000 |  | 3.75 | 0.62 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 7.85 | 8.25 | 9.18 | 0.31 | -0.17 | 1.342 | 1.651 |  | 5.21 | 0.85 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 6.00 | 5.02 | 6.71 | -0.33 | 0.33 | 1.000 | 1.000 |  | 4.01 | 0.75 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 6.00 | 5.02 | 6.71 | -0.33 | 0.33 | 1.000 | 1.000 |  | 4.41 | 0.50 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 9.25 | 8.28 | 10.90 | 0.92 | 0.49 | 1.542 | 1.650 |  | 7.35 | 0.42 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 6.00 | 5.02 | 6.71 | -0.33 | 0.33 | 1.000 | 1.000 |  | 3.90 | 0.75 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 6.00 | 5.02 | 6.71 | -0.33 | 0.33 | 1.000 | 1.000 |  | 3.86 | 0.58 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 9.25 | 8.28 | 10.90 | 0.92 | 0.49 | 1.542 | 1.650 |  | 6.26 | 0.75 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 5.30 | 5.25 | 6.49 | 0.50 | -0.73 | 0.981 | 1.101 |  | 4.28 | 0.90 | 1 | True | False |
-| baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 5.40 | 4.77 | 6.15 | 1.40 | 0.92 | 1.000 | 1.000 |  | 3.48 | 0.90 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 5.30 | 5.25 | 6.49 | 0.50 | -0.73 | 0.981 | 1.101 |  | 4.59 | 0.90 | 1 | True | False |
-| baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 5.40 | 4.77 | 6.15 | 1.40 | 0.92 | 1.000 | 1.000 |  | 3.43 | 0.90 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 5.11 | 4.63 | 5.91 | 2.44 | 1.29 | 1.000 | 1.000 |  | 3.24 | 1.00 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 5.30 | 5.25 | 6.49 | 0.50 | -0.73 | 0.981 | 1.101 |  | 3.91 | 0.60 | 1 | True | False |
+| baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 5.40 | 4.77 | 6.15 | 1.40 | 0.92 | 1.000 | 1.000 |  | 3.64 | 0.70 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 5.30 | 5.25 | 6.49 | 0.50 | -0.73 | 0.981 | 1.101 |  | 3.76 | 0.60 | 1 | True | False |
+| baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 5.40 | 4.77 | 6.15 | 1.40 | 0.92 | 1.000 | 1.000 |  | 3.50 | 0.70 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 5.11 | 4.63 | 5.91 | 2.44 | 1.29 | 1.000 | 1.000 |  | 3.54 | 0.78 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 9.67 | 8.86 | 10.48 | 1.89 | 0.21 | 1.891 | 1.912 |  | 6.76 | 0.56 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 5.11 | 4.63 | 5.91 | 2.44 | 1.29 | 1.000 | 1.000 |  | 3.19 | 1.00 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 5.11 | 4.63 | 5.91 | 2.44 | 1.29 | 1.000 | 1.000 |  | 3.33 | 0.78 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 9.67 | 8.86 | 10.48 | 1.89 | 0.21 | 1.891 | 1.912 |  | 6.19 | 0.78 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 5.62 | 4.82 | 6.25 | 2.62 | 1.31 | 1.000 | 1.000 |  | 3.43 | 1.00 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 5.62 | 4.82 | 6.25 | 2.62 | 1.31 | 1.000 | 1.000 |  | 3.85 | 0.62 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 10.38 | 8.46 | 12.27 | 2.38 | 0.71 | 1.844 | 1.754 |  | 8.21 | 0.62 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 5.62 | 4.82 | 6.25 | 2.62 | 1.31 | 1.000 | 1.000 |  | 3.40 | 1.00 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 5.62 | 4.82 | 6.25 | 2.62 | 1.31 | 1.000 | 1.000 |  | 3.55 | 0.75 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 10.38 | 8.46 | 12.27 | 2.38 | 0.71 | 1.844 | 1.754 |  | 7.20 | 0.62 | 1 | False | False |
 
 ## target: `cfo_musd`
@@ -626,26 +626,26 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 374.86 | 331.85 | 430.22 | -15.29 | -41.50 | 1.587 | 1.631 |  | 245.84 | 0.79 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 236.14 | 203.43 | 267.91 | -102.14 | -96.41 | 1.000 | 1.000 |  | 153.79 | 0.71 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 374.86 | 331.85 | 430.22 | -15.29 | -41.50 | 1.587 | 1.631 |  | 243.15 | 0.79 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 224.69 | 200.03 | 256.70 | -80.38 | -91.01 | 1.000 | 1.000 |  | 314.05 | 0.85 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 284.92 | 296.58 | 348.22 | 19.38 | -7.37 | 1.268 | 1.483 |  | 234.60 | 0.77 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 224.69 | 200.03 | 256.70 | -80.38 | -91.01 | 1.000 | 1.000 |  | 404.07 | 0.92 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 284.92 | 296.58 | 348.22 | 19.38 | -7.37 | 1.268 | 1.483 |  | 233.00 | 0.77 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 210.00 | 143.01 | 285.99 | 25.00 | -1.88 | 0.896 | 0.708 |  | 177.72 | 0.75 | 1 | True | True |
-| baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 234.42 | 202.13 | 265.36 | -78.08 | -90.63 | 1.000 | 1.000 |  | 300.50 | 0.83 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 210.00 | 143.01 | 285.99 | 25.00 | -1.88 | 0.896 | 0.708 |  | 172.85 | 0.83 | 1 | True | True |
-| baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 234.42 | 202.13 | 265.36 | -78.08 | -90.63 | 1.000 | 1.000 |  | 423.19 | 0.92 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 224.69 | 200.03 | 256.70 | -80.38 | -91.01 | 1.000 | 1.000 |  | 151.39 | 0.69 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 284.92 | 296.58 | 348.22 | 19.38 | -7.37 | 1.268 | 1.483 |  | 199.22 | 0.69 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 224.69 | 200.03 | 256.70 | -80.38 | -91.01 | 1.000 | 1.000 |  | 147.16 | 0.77 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 284.92 | 296.58 | 348.22 | 19.38 | -7.37 | 1.268 | 1.483 |  | 195.73 | 0.69 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 210.00 | 143.01 | 285.99 | 25.00 | -1.88 | 0.896 | 0.708 |  | 158.67 | 0.83 | 1 | True | True |
+| baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 234.42 | 202.13 | 265.36 | -78.08 | -90.63 | 1.000 | 1.000 |  | 157.09 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 210.00 | 143.01 | 285.99 | 25.00 | -1.88 | 0.896 | 0.708 |  | 152.23 | 0.92 | 1 | True | True |
+| baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 234.42 | 202.13 | 265.36 | -78.08 | -90.63 | 1.000 | 1.000 |  | 153.06 | 0.67 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 205.20 | 190.80 | 235.52 | -97.60 | -99.62 | 1.000 | 1.000 |  | 134.78 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 365.30 | 321.34 | 421.78 | -69.50 | -65.20 | 1.780 | 1.684 |  | 241.84 | 0.80 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 205.20 | 190.80 | 235.52 | -97.60 | -99.62 | 1.000 | 1.000 |  | 135.88 | 0.90 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 365.30 | 321.34 | 421.78 | -69.50 | -65.20 | 1.780 | 1.684 |  | 239.99 | 0.80 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 190.67 | 184.65 | 221.56 | -71.11 | -89.61 | 1.000 | 1.000 |  | 362.70 | 0.89 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 346.67 | 315.51 | 382.44 | -30.89 | -27.54 | 1.818 | 1.709 |  | 258.93 | 0.78 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 190.67 | 184.65 | 221.56 | -71.11 | -89.61 | 1.000 | 1.000 |  | 414.27 | 0.89 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 346.67 | 315.51 | 382.44 | -30.89 | -27.54 | 1.818 | 1.709 |  | 245.96 | 0.78 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 126.00 | 106.80 | 152.84 | -24.50 | -24.24 | 0.640 | 0.571 |  | 129.03 | 0.88 | 1 | True | True |
-| baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 196.75 | 186.91 | 229.57 | -62.25 | -86.83 | 1.000 | 1.000 |  | 350.49 | 0.88 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 126.00 | 106.80 | 152.84 | -24.50 | -24.24 | 0.640 | 0.571 |  | 120.66 | 0.88 | 1 | True | True |
-| baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 196.75 | 186.91 | 229.57 | -62.25 | -86.83 | 1.000 | 1.000 |  | 434.51 | 0.88 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 190.67 | 184.65 | 221.56 | -71.11 | -89.61 | 1.000 | 1.000 |  | 129.68 | 0.89 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 346.67 | 315.51 | 382.44 | -30.89 | -27.54 | 1.818 | 1.709 |  | 223.35 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 190.67 | 184.65 | 221.56 | -71.11 | -89.61 | 1.000 | 1.000 |  | 127.50 | 0.89 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 346.67 | 315.51 | 382.44 | -30.89 | -27.54 | 1.818 | 1.709 |  | 220.12 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 126.00 | 106.80 | 152.84 | -24.50 | -24.24 | 0.640 | 0.571 |  | 111.24 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 196.75 | 186.91 | 229.57 | -62.25 | -86.83 | 1.000 | 1.000 |  | 132.10 | 0.88 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 126.00 | 106.80 | 152.84 | -24.50 | -24.24 | 0.640 | 0.571 |  | 99.34 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 196.75 | 186.91 | 229.57 | -62.25 | -86.83 | 1.000 | 1.000 |  | 131.23 | 0.88 | 1 | False | False |
 
 ## target: `cor_cash_musd`
 
@@ -733,40 +733,40 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 3.36 | 3.07 | 4.73 | -0.93 | 0.79 | 0.485 | 0.569 |  | 2.68 | 0.86 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 3.36 | 3.07 | 4.73 | -0.93 | 0.79 | 0.485 | 0.569 |  | 2.99 | 0.86 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 6.02 | 5.50 | 7.08 | 1.64 | 1.71 | 0.868 | 1.021 |  | 4.68 | 0.57 | 3 | True | False |
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 6.93 | 5.39 | 8.50 | -0.21 | -1.45 | 1.000 | 1.000 |  | 5.07 | 0.57 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 3.36 | 3.07 | 4.73 | -0.93 | 0.79 | 0.485 | 0.569 |  | 2.59 | 0.86 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 3.36 | 3.07 | 4.73 | -0.93 | 0.79 | 0.485 | 0.569 |  | 2.84 | 0.86 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W1 | 0 | full_sample | 14 | 6.00 | 5.52 | 7.08 | 1.66 | 1.78 | 0.866 | 1.023 |  | 4.06 | 0.79 | 3 | True | False |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 6.93 | 5.39 | 8.50 | -0.21 | -1.45 | 1.000 | 1.000 |  | 4.56 | 0.79 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 6.00 | 5.58 | 8.08 | -2.15 | 1.54 | 0.987 | 1.083 |  | 4.69 | 0.77 | 1 | True | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 6.00 | 5.58 | 8.08 | -2.15 | 1.54 | 0.987 | 1.083 |  | 5.25 | 0.77 | 1 | True | False |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 6.08 | 5.16 | 7.27 | -1.62 | -1.82 | 1.000 | 1.000 |  | 4.54 | 0.54 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 7.16 | 6.08 | 9.25 | 1.85 | 1.27 | 1.178 | 1.179 |  | 5.81 | 0.54 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 6.00 | 5.58 | 8.08 | -2.15 | 1.54 | 0.987 | 1.083 |  | 4.42 | 0.85 | 1 | True | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 6.00 | 5.58 | 8.08 | -2.15 | 1.54 | 0.987 | 1.083 |  | 5.06 | 0.77 | 1 | True | False |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 6.08 | 5.16 | 7.27 | -1.62 | -1.82 | 1.000 | 1.000 |  | 4.07 | 0.77 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | full_sample | 13 | 7.16 | 6.08 | 9.25 | 1.85 | 1.27 | 1.178 | 1.179 |  | 4.92 | 0.69 | 3 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 5.17 | 4.89 | 5.76 | -3.17 | -2.24 | 1.000 | 1.000 |  | 3.89 | 0.50 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | PIT | 12 | 6.99 | 6.18 | 10.57 | 1.23 | 0.46 | 1.352 | 1.264 |  | 5.62 | 0.67 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 9.00 | 8.01 | 11.06 | -3.83 | 1.62 | 1.742 | 1.639 |  | 7.06 | 0.75 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 9.00 | 8.01 | 11.06 | -3.83 | 1.62 | 1.742 | 1.639 |  | 8.84 | 0.67 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 5.17 | 4.89 | 5.76 | -3.17 | -2.24 | 1.000 | 1.000 |  | 3.56 | 0.83 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 6.99 | 6.18 | 10.57 | 1.23 | 0.46 | 1.352 | 1.264 |  | 5.08 | 0.75 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 9.00 | 8.01 | 11.06 | -3.83 | 1.62 | 1.742 | 1.639 |  | 6.23 | 0.83 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 2.50 | 2.74 | 3.21 | 0.70 | 1.50 | 0.463 | 0.553 |  | 2.08 | 0.90 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 9.00 | 8.01 | 11.06 | -3.83 | 1.62 | 1.742 | 1.639 |  | 8.04 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 2.50 | 2.74 | 3.21 | 0.70 | 1.50 | 0.463 | 0.553 |  | 2.20 | 1.00 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 5.03 | 5.21 | 6.35 | 0.02 | 1.38 | 0.932 | 1.053 |  | 3.75 | 0.80 | 3 | True | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 5.40 | 4.95 | 6.03 | -4.00 | -2.43 | 1.000 | 1.000 |  | 3.80 | 0.70 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 2.50 | 2.74 | 3.21 | 0.70 | 1.50 | 0.463 | 0.553 |  | 1.95 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 2.50 | 2.74 | 3.21 | 0.70 | 1.50 | 0.463 | 0.553 |  | 2.00 | 1.00 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W2 | 0 | full_sample | 10 | 5.05 | 5.23 | 6.39 | 0.09 | 1.48 | 0.934 | 1.056 |  | 3.66 | 0.80 | 3 | True | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 5.40 | 4.95 | 6.03 | -4.00 | -2.43 | 1.000 | 1.000 |  | 3.76 | 0.80 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 4.11 | 4.89 | 4.89 | 1.44 | 3.18 | 0.725 | 0.971 |  | 3.32 | 0.89 | 1 | True | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 4.11 | 4.89 | 4.89 | 1.44 | 3.18 | 0.725 | 0.971 |  | 3.31 | 1.00 | 1 | True | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | PIT | 9 | 5.34 | 5.56 | 6.65 | -0.52 | 0.74 | 0.943 | 1.105 |  | 4.21 | 0.78 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 5.67 | 5.03 | 6.28 | -4.11 | -2.40 | 1.000 | 1.000 |  | 4.16 | 0.67 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 4.11 | 4.89 | 4.89 | 1.44 | 3.18 | 0.725 | 0.971 |  | 3.05 | 1.00 | 1 | True | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 4.11 | 4.89 | 4.89 | 1.44 | 3.18 | 0.725 | 0.971 |  | 3.06 | 1.00 | 1 | True | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | full_sample | 9 | 5.34 | 5.56 | 6.65 | -0.52 | 0.74 | 0.943 | 1.105 |  | 4.05 | 0.78 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 5.67 | 5.03 | 6.28 | -4.11 | -2.40 | 1.000 | 1.000 |  | 3.97 | 0.78 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 5.62 | 6.76 | 6.92 | 2.12 | 4.48 | 0.978 | 1.343 |  | 4.60 | 1.00 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 5.62 | 6.76 | 6.92 | 2.12 | 4.48 | 0.978 | 1.343 |  | 5.86 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 5.75 | 5.03 | 6.42 | -4.00 | -2.26 | 1.000 | 1.000 |  | 4.36 | 0.75 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | PIT | 8 | 6.18 | 6.08 | 7.13 | -1.72 | -0.33 | 1.075 | 1.207 |  | 4.59 | 0.75 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 5.62 | 6.76 | 6.92 | 2.12 | 4.48 | 0.978 | 1.343 |  | 4.23 | 1.00 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 5.62 | 6.76 | 6.92 | 2.12 | 4.48 | 0.978 | 1.343 |  | 5.24 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 5.75 | 5.03 | 6.42 | -4.00 | -2.26 | 1.000 | 1.000 |  | 4.10 | 0.75 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | full_sample | 8 | 6.18 | 6.08 | 7.13 | -1.72 | -0.33 | 1.075 | 1.207 |  | 4.49 | 0.75 | 3 | False | False |
 
@@ -809,32 +809,32 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 234.57 | 201.89 | 266.84 | -101.57 | -96.64 | 1.000 | 1.000 | 0.594 | 153.16 | 0.79 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 372.14 | 328.07 | 428.94 | -15.29 | -40.70 | 1.586 | 1.625 | 0.942 | 242.21 | 0.79 | 1 | False | False |
 | baselines-margin | street | W1 | 0 | full_sample | 14 | 395.05 | 431.37 | 507.03 | -131.65 | -183.39 | 1.684 | 2.137 | 1.000 | 280.03 | 0.86 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 223.00 | 198.47 | 255.50 | -79.77 | -91.25 | 1.000 | 1.000 | 0.457 | 377.07 | 0.85 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 285.38 | 295.52 | 348.01 | 19.08 | -7.21 | 1.280 | 1.489 | 0.585 | 238.76 | 0.77 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 223.00 | 198.47 | 255.50 | -79.77 | -91.25 | 1.000 | 1.000 | 0.457 | 150.49 | 0.69 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 285.38 | 295.52 | 348.01 | 19.08 | -7.21 | 1.280 | 1.489 | 0.585 | 199.43 | 0.69 | 1 | False | False |
 | baselines-margin | street | W1 | 1 | PIT | 13 | 487.95 | 554.83 | 664.44 | -144.40 | -198.50 | 2.188 | 2.796 | 1.000 | 361.18 | 0.85 | 1 | False | False |
-| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 223.00 | 198.47 | 255.50 | -79.77 | -91.25 | 1.000 | 1.000 | 0.457 | 528.25 | 0.92 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 285.38 | 295.52 | 348.01 | 19.08 | -7.21 | 1.280 | 1.489 | 0.585 | 238.85 | 0.77 | 1 | False | False |
+| baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 223.00 | 198.47 | 255.50 | -79.77 | -91.25 | 1.000 | 1.000 | 0.457 | 146.35 | 0.77 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 285.38 | 295.52 | 348.01 | 19.08 | -7.21 | 1.280 | 1.489 | 0.585 | 196.07 | 0.69 | 1 | False | False |
 | baselines-margin | street | W1 | 1 | full_sample | 13 | 487.95 | 554.83 | 664.44 | -144.40 | -198.50 | 2.188 | 2.796 | 1.000 | 360.20 | 0.85 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 211.08 | 143.47 | 287.21 | 24.08 | -2.37 | 0.906 | 0.715 |  | 178.59 | 0.75 | 1 | True | True |
-| baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 232.92 | 200.61 | 264.23 | -77.75 | -90.96 | 1.000 | 1.000 |  | 355.93 | 0.83 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 211.08 | 143.47 | 287.21 | 24.08 | -2.37 | 0.906 | 0.715 |  | 173.63 | 0.83 | 1 | True | True |
-| baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 232.92 | 200.61 | 264.23 | -77.75 | -90.96 | 1.000 | 1.000 |  | 554.22 | 0.92 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 211.08 | 143.47 | 287.21 | 24.08 | -2.37 | 0.906 | 0.715 |  | 159.13 | 0.83 | 1 | True | True |
+| baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 232.92 | 200.61 | 264.23 | -77.75 | -90.96 | 1.000 | 1.000 |  | 156.15 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 211.08 | 143.47 | 287.21 | 24.08 | -2.37 | 0.906 | 0.715 |  | 152.35 | 0.92 | 1 | True | True |
+| baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 232.92 | 200.61 | 264.23 | -77.75 | -90.96 | 1.000 | 1.000 |  | 152.32 | 0.67 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 203.40 | 189.14 | 233.80 | -99.00 | -100.54 | 1.000 | 1.000 | 0.530 | 133.76 | 0.90 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 361.20 | 317.12 | 419.70 | -70.00 | -64.48 | 1.776 | 1.677 | 0.941 | 240.24 | 0.80 | 1 | False | False |
 | baselines-margin | street | W2 | 0 | PIT | 10 | 383.92 | 433.03 | 507.11 | -118.80 | -193.84 | 1.888 | 2.289 | 1.000 | 280.74 | 0.90 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 203.40 | 189.14 | 233.80 | -99.00 | -100.54 | 1.000 | 1.000 | 0.530 | 134.93 | 0.90 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 361.20 | 317.12 | 419.70 | -70.00 | -64.48 | 1.776 | 1.677 | 0.941 | 238.43 | 0.80 | 1 | False | False |
 | baselines-margin | street | W2 | 0 | full_sample | 10 | 383.92 | 433.03 | 507.11 | -118.80 | -193.84 | 1.888 | 2.289 | 1.000 | 278.43 | 0.90 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 189.56 | 183.26 | 220.87 | -73.56 | -90.91 | 1.000 | 1.000 | 0.438 | 453.48 | 0.89 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 345.89 | 313.89 | 381.36 | -32.78 | -27.76 | 1.825 | 1.713 | 0.800 | 264.17 | 0.78 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 189.56 | 183.26 | 220.87 | -73.56 | -90.91 | 1.000 | 1.000 | 0.438 | 129.17 | 0.89 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 345.89 | 313.89 | 381.36 | -32.78 | -27.76 | 1.825 | 1.713 | 0.800 | 222.97 | 0.67 | 1 | False | False |
 | baselines-margin | street | W2 | 1 | PIT | 9 | 432.44 | 535.61 | 601.85 | -108.83 | -181.81 | 2.281 | 2.923 | 1.000 | 324.47 | 0.89 | 1 | False | False |
-| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 189.56 | 183.26 | 220.87 | -73.56 | -90.91 | 1.000 | 1.000 | 0.438 | 542.43 | 0.89 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 345.89 | 313.89 | 381.36 | -32.78 | -27.76 | 1.825 | 1.713 | 0.800 | 251.66 | 0.78 | 1 | False | False |
+| baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 189.56 | 183.26 | 220.87 | -73.56 | -90.91 | 1.000 | 1.000 | 0.438 | 126.99 | 0.89 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 345.89 | 313.89 | 381.36 | -32.78 | -27.76 | 1.825 | 1.713 | 0.800 | 219.91 | 0.67 | 1 | False | False |
 | baselines-margin | street | W2 | 1 | full_sample | 9 | 432.44 | 535.61 | 601.85 | -108.83 | -181.81 | 2.281 | 2.923 | 1.000 | 323.46 | 0.89 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 128.88 | 107.86 | 154.10 | -26.88 | -24.96 | 0.660 | 0.582 |  | 130.24 | 0.88 | 1 | True | True |
-| baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 195.38 | 185.40 | 228.74 | -64.88 | -88.14 | 1.000 | 1.000 |  | 433.82 | 0.88 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 128.88 | 107.86 | 154.10 | -26.88 | -24.96 | 0.660 | 0.582 |  | 121.52 | 0.88 | 1 | True | True |
-| baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 195.38 | 185.40 | 228.74 | -64.88 | -88.14 | 1.000 | 1.000 |  | 569.68 | 0.88 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 128.88 | 107.86 | 154.10 | -26.88 | -24.96 | 0.660 | 0.582 |  | 112.11 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 195.38 | 185.40 | 228.74 | -64.88 | -88.14 | 1.000 | 1.000 |  | 131.45 | 0.88 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 128.88 | 107.86 | 154.10 | -26.88 | -24.96 | 0.660 | 0.582 |  | 100.08 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 195.38 | 185.40 | 228.74 | -64.88 | -88.14 | 1.000 | 1.000 |  | 130.77 | 0.88 | 1 | False | False |
 
 ## target: `ga_cash_ex_reserves_musd`
 
@@ -883,40 +883,40 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 162.81 | 117.35 | 361.71 | -22.10 | 8.10 | 1.000 | 1.000 |  | 157.16 | 0.86 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 189.90 | 139.70 | 310.71 | 30.26 | 45.53 | 1.166 | 1.190 |  | 180.63 | 0.93 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 294.65 | 238.91 | 502.40 | 4.30 | 1.84 | 1.810 | 2.036 |  | 282.43 | 0.71 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 294.65 | 238.91 | 502.40 | 4.30 | 1.84 | 1.810 | 2.036 |  | 219.79 | 0.93 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 162.81 | 117.35 | 361.71 | -22.10 | 8.10 | 1.000 | 1.000 |  | 147.14 | 0.93 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | full_sample | 14 | 190.11 | 140.25 | 310.75 | 30.46 | 46.38 | 1.168 | 1.195 |  | 163.83 | 0.93 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 294.65 | 238.91 | 502.40 | 4.30 | 1.84 | 1.810 | 2.036 |  | 268.92 | 0.71 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 294.65 | 238.91 | 502.40 | 4.30 | 1.84 | 1.810 | 2.036 |  | 218.18 | 0.86 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 173.14 | 119.01 | 375.28 | -21.60 | 8.78 | 1.000 | 1.000 |  | 169.28 | 0.69 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 212.87 | 155.59 | 330.68 | 41.62 | 56.18 | 1.230 | 1.307 |  | 197.92 | 0.92 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 323.43 | 272.03 | 525.87 | 6.98 | 1.63 | 1.868 | 2.286 |  | 291.92 | 0.69 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 323.43 | 272.03 | 525.87 | 6.98 | 1.63 | 1.868 | 2.286 |  | 240.50 | 0.92 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 173.14 | 119.01 | 375.28 | -21.60 | 8.78 | 1.000 | 1.000 |  | 155.48 | 0.92 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | full_sample | 13 | 212.87 | 155.59 | 330.68 | 41.62 | 56.18 | 1.230 | 1.307 |  | 179.50 | 0.92 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 323.43 | 272.03 | 525.87 | 6.98 | 1.63 | 1.868 | 2.286 |  | 285.36 | 0.69 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 323.43 | 272.03 | 525.87 | 6.98 | 1.63 | 1.868 | 2.286 |  | 236.14 | 0.85 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 185.14 | 121.06 | 390.52 | -20.97 | 9.65 | 1.000 | 1.000 |  | 181.21 | 0.67 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | PIT | 12 | 232.07 | 170.22 | 346.91 | 47.71 | 70.39 | 1.253 | 1.406 |  | 212.23 | 0.83 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 336.19 | 273.53 | 546.52 | -3.09 | -33.01 | 1.816 | 2.260 |  | 305.82 | 0.58 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 336.19 | 273.53 | 546.52 | -3.09 | -33.01 | 1.816 | 2.260 |  | 251.72 | 0.92 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 185.14 | 121.06 | 390.52 | -20.97 | 9.65 | 1.000 | 1.000 |  | 164.85 | 0.92 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 232.07 | 170.22 | 346.91 | 47.71 | 70.39 | 1.253 | 1.406 |  | 190.96 | 0.92 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 336.19 | 273.53 | 546.52 | -3.09 | -33.01 | 1.816 | 2.260 |  | 297.49 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 336.19 | 273.53 | 546.52 | -3.09 | -33.01 | 1.816 | 2.260 |  | 245.18 | 0.83 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 122.80 | 95.02 | 307.75 | 74.20 | 43.90 | 1.000 | 1.000 |  | 120.93 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 161.45 | 119.85 | 216.62 | 129.84 | 80.48 | 1.315 | 1.261 |  | 154.35 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 319.60 | 233.24 | 524.78 | 95.00 | 32.56 | 2.603 | 2.455 |  | 305.35 | 0.70 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 319.60 | 233.24 | 524.78 | 95.00 | 32.56 | 2.603 | 2.455 |  | 217.90 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 122.80 | 95.02 | 307.75 | 74.20 | 43.90 | 1.000 | 1.000 |  | 109.41 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | full_sample | 10 | 161.86 | 120.52 | 216.66 | 130.59 | 81.55 | 1.318 | 1.268 |  | 129.20 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 319.60 | 233.24 | 524.78 | 95.00 | 32.56 | 2.603 | 2.455 |  | 283.95 | 0.70 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 319.60 | 233.24 | 524.78 | 95.00 | 32.56 | 2.603 | 2.455 |  | 216.90 | 0.90 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 132.44 | 97.52 | 324.17 | 86.44 | 47.28 | 1.000 | 1.000 |  | 130.59 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | PIT | 9 | 188.57 | 138.68 | 244.42 | 156.12 | 95.35 | 1.424 | 1.422 |  | 175.79 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 358.89 | 273.75 | 554.53 | 109.78 | 33.71 | 2.710 | 2.807 |  | 318.35 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 358.89 | 273.75 | 554.53 | 109.78 | 33.71 | 2.710 | 2.807 |  | 244.26 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 132.44 | 97.52 | 324.17 | 86.44 | 47.28 | 1.000 | 1.000 |  | 116.32 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | full_sample | 9 | 188.57 | 138.68 | 244.42 | 156.12 | 95.35 | 1.424 | 1.422 |  | 145.72 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 358.89 | 273.75 | 554.53 | 109.78 | 33.71 | 2.710 | 2.807 |  | 305.78 | 0.67 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 358.89 | 273.75 | 554.53 | 109.78 | 33.71 | 2.710 | 2.807 |  | 236.32 | 0.89 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 145.88 | 101.37 | 343.73 | 100.38 | 51.12 | 1.000 | 1.000 |  | 144.89 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | PIT | 8 | 212.37 | 157.68 | 266.38 | 177.05 | 114.07 | 1.456 | 1.555 |  | 193.06 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 385.00 | 282.85 | 586.95 | 107.00 | -5.49 | 2.639 | 2.790 |  | 342.74 | 0.62 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 385.00 | 282.85 | 586.95 | 107.00 | -5.49 | 2.639 | 2.790 |  | 262.04 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 145.88 | 101.37 | 343.73 | 100.38 | 51.12 | 1.000 | 1.000 |  | 124.71 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | full_sample | 8 | 212.37 | 157.68 | 266.38 | 177.05 | 114.07 | 1.456 | 1.555 |  | 157.84 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 385.00 | 282.85 | 586.95 | 107.00 | -5.49 | 2.639 | 2.790 |  | 326.97 | 0.62 | 1 | False | False |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 385.00 | 282.85 | 586.95 | 107.00 | -5.49 | 2.639 | 2.790 |  | 249.54 | 0.88 | 1 | False | False |
 
 ## target: `ga_cash_per_night`
 
@@ -1395,40 +1395,40 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 11.64 | 10.56 | 13.47 | -2.50 | -2.20 | 0.210 | 0.193 |  | 193.11 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 11.64 | 10.56 | 13.47 | -2.50 | -2.20 | 0.210 | 0.193 |  | 20.33 | 1.00 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 55.06 | 51.69 | 69.95 | -0.15 | -1.39 | 0.992 | 0.944 |  | 37.74 | 0.93 | 3 | True | True |
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 55.50 | 54.77 | 57.24 | -55.50 | -54.77 | 1.000 | 1.000 |  | 36.16 | 0.57 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 11.64 | 10.56 | 13.47 | -2.50 | -2.20 | 0.210 | 0.193 |  | 195.58 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 11.64 | 10.56 | 13.47 | -2.50 | -2.20 | 0.210 | 0.193 |  | 20.47 | 1.00 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W1 | 0 | full_sample | 14 | 54.93 | 51.67 | 69.88 | 0.31 | 0.01 | 0.990 | 0.943 |  | 37.83 | 1.00 | 3 | True | True |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 55.50 | 54.77 | 57.24 | -55.50 | -54.77 | 1.000 | 1.000 |  | 34.54 | 1.00 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 18.00 | 17.42 | 22.03 | -3.23 | -2.26 | 0.320 | 0.317 |  | 164.51 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 18.00 | 17.42 | 22.03 | -3.23 | -2.26 | 0.320 | 0.317 |  | 21.13 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 56.31 | 54.95 | 58.07 | -56.31 | -54.95 | 1.000 | 1.000 |  | 39.24 | 0.15 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 58.32 | 57.31 | 70.85 | -1.73 | -10.10 | 1.036 | 1.043 |  | 40.17 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 18.00 | 17.42 | 22.03 | -3.23 | -2.26 | 0.320 | 0.317 |  | 138.44 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 18.00 | 17.42 | 22.03 | -3.23 | -2.26 | 0.320 | 0.317 |  | 17.42 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 56.31 | 54.95 | 58.07 | -56.31 | -54.95 | 1.000 | 1.000 |  | 39.99 | 0.23 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | full_sample | 13 | 58.32 | 57.31 | 70.85 | -1.73 | -10.10 | 1.036 | 1.043 |  | 40.52 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 22.50 | 23.34 | 25.34 | -2.33 | -0.12 | 0.400 | 0.425 |  | 205.65 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 22.50 | 23.34 | 25.34 | -2.33 | -0.12 | 0.400 | 0.425 |  | 22.40 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 56.25 | 54.90 | 58.16 | -56.25 | -54.90 | 1.000 | 1.000 |  | 44.45 | 0.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | PIT | 12 | 66.19 | 63.56 | 75.98 | -3.63 | -14.09 | 1.177 | 1.158 |  | 43.44 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 22.50 | 23.34 | 25.34 | -2.33 | -0.12 | 0.400 | 0.425 |  | 143.56 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 22.50 | 23.34 | 25.34 | -2.33 | -0.12 | 0.400 | 0.425 |  | 17.88 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 56.25 | 54.90 | 58.16 | -56.25 | -54.90 | 1.000 | 1.000 |  | 44.33 | 0.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 66.19 | 63.56 | 75.98 | -3.63 | -14.09 | 1.177 | 1.158 |  | 43.74 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 11.30 | 10.37 | 13.52 | -2.70 | -2.49 | 0.193 | 0.186 |  | 127.43 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 11.30 | 10.37 | 13.52 | -2.70 | -2.49 | 0.193 | 0.186 |  | 16.83 | 1.00 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 57.59 | 51.79 | 72.21 | -4.72 | -2.99 | 0.981 | 0.931 |  | 38.50 | 0.90 | 3 | True | True |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 58.70 | 55.63 | 60.49 | -58.70 | -55.63 | 1.000 | 1.000 |  | 37.74 | 0.40 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 11.30 | 10.37 | 13.52 | -2.70 | -2.49 | 0.193 | 0.186 |  | 195.50 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 11.30 | 10.37 | 13.52 | -2.70 | -2.49 | 0.193 | 0.186 |  | 21.92 | 1.00 | 1 | True | True |
 | baselines-margin | pct_rev_last4 | W2 | 0 | full_sample | 10 | 57.49 | 51.81 | 72.57 | -3.50 | -1.29 | 0.979 | 0.931 |  | 39.78 | 1.00 | 3 | True | True |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 58.70 | 55.63 | 60.49 | -58.70 | -55.63 | 1.000 | 1.000 |  | 37.08 | 1.00 | 1 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 19.33 | 17.93 | 23.50 | -2.67 | -2.24 | 0.327 | 0.322 |  | 125.52 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 19.33 | 17.93 | 23.50 | -2.67 | -2.24 | 0.327 | 0.322 |  | 19.40 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 59.11 | 55.66 | 61.07 | -59.11 | -55.66 | 1.000 | 1.000 |  | 42.12 | 0.11 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | PIT | 9 | 63.26 | 58.62 | 73.81 | -7.55 | -12.14 | 1.070 | 1.053 |  | 42.27 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 19.33 | 17.93 | 23.50 | -2.67 | -2.24 | 0.327 | 0.322 |  | 138.78 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 19.33 | 17.93 | 23.50 | -2.67 | -2.24 | 0.327 | 0.322 |  | 18.97 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 59.11 | 55.66 | 61.07 | -59.11 | -55.66 | 1.000 | 1.000 |  | 41.57 | 0.33 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | full_sample | 9 | 63.26 | 58.62 | 73.81 | -7.55 | -12.14 | 1.070 | 1.053 |  | 43.16 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 26.12 | 24.66 | 28.21 | 1.38 | 1.57 | 0.460 | 0.453 |  | 167.96 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 26.12 | 24.66 | 28.21 | 1.38 | 1.57 | 0.460 | 0.453 |  | 22.64 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 56.75 | 54.48 | 58.61 | -56.75 | -54.48 | 1.000 | 1.000 |  | 43.77 | 0.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | PIT | 8 | 70.41 | 65.37 | 78.55 | -8.29 | -15.66 | 1.241 | 1.200 |  | 45.06 | 1.00 | 3 | False | False |
-| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 26.12 | 24.66 | 28.21 | 1.38 | 1.57 | 0.460 | 0.453 |  | 144.47 | 1.00 | 1 | True | True |
+| baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 26.12 | 24.66 | 28.21 | 1.38 | 1.57 | 0.460 | 0.453 |  | 19.98 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 56.75 | 54.48 | 58.61 | -56.75 | -54.48 | 1.000 | 1.000 |  | 43.75 | 0.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | full_sample | 8 | 70.41 | 65.37 | 78.55 | -8.29 | -15.66 | 1.241 | 1.200 |  | 45.80 | 1.00 | 3 | False | False |
 

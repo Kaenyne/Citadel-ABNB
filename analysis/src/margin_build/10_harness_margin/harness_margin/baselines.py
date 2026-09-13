@@ -65,6 +65,11 @@ RATIO_METRICS = [m for m in TARGET_METRICS if UNITS[m][0] in ("%", "pp", "USD/ni
 LEVEL_METRICS = [m for m in TARGET_METRICS if m not in RATIO_METRICS]     # USD m, m, USD/share
 COST_LEVEL_METRICS = [f"{ln}_cash_musd" for ln in LINES] + \
     ["ga_cash_ex_reserves_musd", "total_cash_costs_musd", "sbc_musd", "da_musd", "adj_ebitda_musd"]
+# level metrics whose errors are scored RELATIVELY (strictly positive, scale with the business);
+# every other level metric (operating / net income, FCF, tax, pre-tax, CFO, capex, EPS) crosses zero
+# or is small and is scored additively in its own units.
+RELATIVE_METRICS = set(COST_LEVEL_METRICS) | {"revenue_musd", "nights_m", "gbv_musd", "diluted_shares_m",
+                                              "interest_income_musd"}
 
 VINTAGES_ALL = list(W.GUIDE_DATES_ALL) + [TODAY]
 VINTAGES_REGISTERED = list(W.GUIDE_DATES_W1) + [W.GUIDE_DATE_LIVE, TODAY]
@@ -481,24 +486,38 @@ def build_grid(targets=None) -> pd.DataFrame:
 
 
 # ----------------------------------------------------------------------------- quantiles
+def _pool(grp: pd.DataFrame, relative: bool):
+    """Sorted (errs, print_dates) of the realised PIT-replay rows of one (object, target, horizon)."""
+    pool = grp[(grp["prior_basis"] == "PIT") & grp["actual"].notna() & grp["target_print_date"].notna()]
+    if relative:
+        pool = pool[(pool["point"] > 0) & (pool["actual"] > 0)]
+    errs = (pool["rel_err"] if relative else pool["err"]).to_numpy(dtype=float)
+    pdates = pool["target_print_date"].to_numpy()
+    order = np.argsort(pool["quarter"].to_numpy())
+    return errs[order], pdates[order]
+
+
 def _attach_quantiles(g: pd.DataFrame) -> pd.DataFrame:
     """Walk-forward residual sd per (object, target, horizon): PIT uses errors of quarters printed
-    before the vintage (last 12); full_sample uses every realised error."""
+    before the vintage (last 12); full_sample uses every realised error. Horizons with no realised
+    pool of their own (LIVE h = 3..5) borrow the deepest backtested horizon's pool (labelled)."""
     g = g.copy()
-    for c in _QCOLS + ["sd", "sigma_n", "sigma_kind"]:
+    for c in _QCOLS + ["sd", "sigma_n"]:
         g[c] = np.nan
     g["sigma_kind"] = ""
+    pools = {}
     for (obj, tgt, h), grp in g.groupby(["object", "target", "horizon_q"]):
-        # the realised pool (PIT replay rows carry the same points as full_sample for most objects;
-        # use the PIT rows as the error pool so that pct_rev/guide_implied pools are PIT too)
-        pool = grp[(grp["prior_basis"] == "PIT") & grp["actual"].notna() & grp["target_print_date"].notna()]
-        relative = (tgt in LEVEL_METRICS and len(pool) > 0
-                    and (pool["point"] > 0).all() and (pool["actual"] > 0).all())
-        errs = (pool["rel_err"] if relative else pool["err"]).to_numpy(dtype=float)
-        pdates = pool["target_print_date"].to_numpy()
-        pq = pool["quarter"].to_numpy()
-        order = np.argsort(pq)
-        errs, pdates, pq = errs[order], pdates[order], pq[order]
+        pools[(obj, tgt, h)] = _pool(grp, tgt in RELATIVE_METRICS)
+    for (obj, tgt, h), grp in g.groupby(["object", "target", "horizon_q"]):
+        relative = tgt in RELATIVE_METRICS
+        errs, pdates = pools[(obj, tgt, h)]
+        borrowed = ""
+        if len(errs) < MIN_RESID:
+            for hb in range(int(h) - 1, -1, -1):
+                e2, p2 = pools.get((obj, tgt, hb), (np.array([]), np.array([])))
+                if len(e2) >= MIN_RESID:
+                    errs, pdates, borrowed = e2, p2, f"_borrowed_h{hb}"
+                    break
         full_sd = float(np.std(errs, ddof=1)) if len(errs) >= MIN_RESID else np.nan
         for i in grp.index:
             vd = g.at[i, "vintage_date"]
@@ -510,7 +529,7 @@ def _attach_quantiles(g: pd.DataFrame) -> pd.DataFrame:
                 e = errs[m][-RESID_MAX_N:]
                 sd = float(np.std(e, ddof=1)) if len(e) >= MIN_RESID else np.nan
                 n = int(len(e))
-            kind = "relative" if relative else "additive"
+            kind = ("relative" if relative else "additive") + borrowed
             if not np.isfinite(sd) or sd <= 0:
                 sd = FALLBACK_SIGMA_REL if relative else FALLBACK_SIGMA_PP
                 kind += "_fallback"

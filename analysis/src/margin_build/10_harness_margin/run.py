@@ -65,7 +65,7 @@ def main() -> int:
 
     print("\n[5/6] baselines -> registry")
     frames, grid = build_all_baselines(t, verbose=True)
-    grid.to_csv(P.OUT_BASELINE_GRID, index=False)
+    grid.drop(columns=["notes"]).to_csv(P.OUT_BASELINE_GRID, index=False)   # notes live in the registry
     for obj, df in frames.items():
         register(df, quiet=False)
     # pass line: every object covers all 14 W1 and 10 W2 guide dates for adj EBITDA margin at h=0
