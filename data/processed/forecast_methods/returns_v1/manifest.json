@@ -1,0 +1,19 @@
+{
+  "source": "Yahoo Finance daily bars via yfinance (public, no login)",
+  "yfinance_version": "1.7.0",
+  "retrieved_at_utc": "2026-09-13T06:07:17+00:00",
+  "tickers": [
+    "ABNB",
+    "QQQ"
+  ],
+  "start": "2020-12-01",
+  "auto_adjust": false,
+  "rows": {
+    "ABNB": 1444,
+    "QQQ": 1451
+  },
+  "first_date": "2020-12-01",
+  "last_date": "2026-09-11",
+  "file": "ohlc_daily.csv",
+  "sha256": "5b03005c30b1793e2d146e6a76fc352ecee56b7fbaf0e9f737bd479652b7a253"
+}
