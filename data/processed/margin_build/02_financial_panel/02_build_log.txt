@@ -48,3 +48,9 @@ Annual sum-of-quarters checks (|max| per line):
   tax_provision: 0.413
   interest_income: 0.552
   fcf_latest_vintage: 10.725
+
+PASS LINE (pre-registered):
+  1. Adjusted EBITDA rebuilt from lines within $2M of reported, every quarter 1Q21-2Q26 (n 22): PASS (max |gap| 0.973 at 3Q21; 20 of 22 within $0.5M)
+  2. Annual sums within $5M of the 10-K, FY2018-FY2025 (n 8): P&L, SBC, D&A, add-backs, Adjusted EBITDA, tax, interest income, capex: PASS (max |gap| 1.008); CFO/FCF: FAIL (max |gap| 110.897; FY2019 10.7, FY2020 -110.9 = the 2022 cash-flow re-presentation; against the re-presented FY2020 CFO the gap is 0.629)
+  3. Every sourced cell has a provenance row: PASS (0 quarterly cells without a row; 3066 provenance rows; identity/ratio columns are derived in place and excluded)
+  Letter vs XBRL rule: letter reconciliation wins for non-GAAP items, XBRL for GAAP lines; 29 quarters have >= 2 letter vintages.

@@ -36,7 +36,7 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 02 | Financial panel: every P&L, add-back, below-EBITDA and FCF line, quarterly and annual, with seasonality | fable | - | running (relaunched 04:20) | 23:55 | notes/02_financial_panel.md | 04:20 |
 | 03 | Point-in-time consensus for EBITDA/EPS/FCF/cost lines (LSEG + Bloomberg), surprise history | fable | - | done | 23:55 | notes/03_consensus_pit.md | 00:20 |
 | 04 | External / alt-data signals for each cost line (archives, third-party public, macro) | fable | - | done | 23:55 | notes/04_alt_signals.md | 00:35 |
-| 05 | Management statements v2 (all events incl. conferences) and 5 Nov guide-language pattern | fable | - | running (relaunched 04:20) | 00:15 | notes/05_mgmt_statements_v2.md | 04:20 |
+| 05 | Management statements v2 (all events incl. conferences) and 5 Nov guide-language pattern | fable | - | done | 00:15 | notes/05_mgmt_statements_v2.md | 04:30 |
 | 06 | FY27 quarterly revenue path v2: audit and fix PR #32 lap on real quarters, reconcile to bridge v3 exit and WS29 | fable | - | running (relaunched 04:20) | 00:20 | notes/06_fy27_path_v2.md | 04:20 |
 | 06v | Independent check of 06 (arithmetic, PIT, reconciliation); writes corrections into 06's folder as `_v2b` if needed | fable | 06 | pending | | notes/06v_fy27_path_check.md | |
 | 10 | Margin harness: targets panel, baselines, recency-weighted scorer, registry (imports frozen harness calendar/validator) | fable | 02, 03 | running (relaunched 04:20) | 00:35 | notes/10_harness_margin.md | 04:20 |
@@ -56,6 +56,8 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | fable + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 04:30 WS05 done (377 statements, 183 new, 155 from 31 non-earnings events; November rule: numeric floor -> 'approximately floor+50bp'; 5 Nov prior: approx 36% (0.45), 35.5% held (0.35), at least 36% (0.15); Q4 print beats sentence-implied Q4 by 0.7-4.3pt n 3; margin_total kept 85% n 55).
 
 - 14 Sep 01:24 USAGE LIMIT hit (session limit, reset 3:50am ET): WS02, WS05, WS06, WS10 agents killed mid-work (WS02 had all CSVs but no note; 05/06 only run.py stubs; 10 only targets.csv). Heartbeats queued.
 - 14 Sep 04:20 Limit reset; all four relaunched with RESUME prefixes.

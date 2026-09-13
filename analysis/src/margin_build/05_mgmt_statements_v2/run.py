@@ -258,7 +258,7 @@ NEW = [
   "medium", "kept", "FY2024 adj. EBITDA margin 36.40% vs 36.84% FY2023: -44bp, i.e. modest compression as guided. Known 13 Feb 2025.",
   "FY24 margin down modestly on reinvestment", "reinvestment_rule"),
  ("V008", "conf:BERN24", "Ellie Mertz", "sm_field", "FY2025+", "multi-year", "-", "no", "", "",
-  "now is the time where we really begin reinvesting in them to make them scaled over time. We did a bit of a pause in terms of those adjacency investments.",
+  "now is the time where we really begin reinvesting in them to make them scaled over time",
   "medium", "kept", "FY2025 field-operations cash cost +43% ($693m -> $993m, 10-K FY2025); 4Q24 letter sized new-business investment at $200-250m. Known 12 Feb 2026.",
   "adjacency (new business) investment restarts", "new_business_investment"),
  ("V009", "conf:BERN24", "Ellie Mertz", "sm_perf", "FY2024", "full-year", "-", "no", "", "",
@@ -270,7 +270,7 @@ NEW = [
   "medium", "partly", "FCF margin FY2023 41.2%, FY2024 40.6%; FY2025 fell below 40% (abnb_fcf_bridge.csv, FY2025 row). The claim held for the year it was made and slipped the next.",
   "FCF margin >40%", "fcf"),
  ("V011", "conf:GS24", "Ellie Mertz", "margin_total", "FY2024", "full-year", "-", "no", "", "",
-  "the intent with the guidance for the current year in terms of pulling back a bit on the the margins, was to invest in short, medium, and long-term levers for growth",
+  "intent with the guidance for the current year in terms of pulling back a bit on the the margins, was to invest in short, medium, and long-term levers for growth",
   "medium", "kept", "FY2024 margin -44bp y/y with S&M % of revenue +157bp; the pull-back was real and smaller than the floor allowed. Known 13 Feb 2025.",
   "FY24 margin pull-back is deliberate reinvestment", "reinvestment_rule"),
  ("V012", "conf:GS24", "Ellie Mertz", "sm_field", "FY2025", "full-year", "-", "no", "", "",
@@ -290,7 +290,7 @@ NEW = [
   "medium", "kept", "Capex $33m FY2025, 0.3% of revenue (abnb_capital_return / 10-K); $21m 1H26.",
   "capital-light new businesses", "capex"),
  ("V016", "conf:GS25", "Brian Chesky", "sm_brand", "structural", "structural", "-", "no", "", "",
-  "You got to localize the marketing. We're doing a lot of localized marketing.",
+  "You got to localize the marketing.",
   "medium", "kept", "16 local campaigns in 1Q26 alone (S193); expansion-market marketing is the stated driver of the 1H26 S&M increase (10-Q 2Q26).",
   "localized marketing in expansion markets", "expansion_markets"),
  ("V017", "conf:GS26", "Brian Chesky", "margin_total", "FY2026", "structural", "0", "yes", 35, "pct adj. EBITDA margin",
@@ -609,7 +609,7 @@ FY_SENTENCE = {
  "2Q25": ("FY2025", "...to deliver a full-year Adjusted EBITDA Margin of at least 34.5%", "floor", 34.5, 4020, 4100,
           "Adjusted EBITDA Margin during Q3 2025 will be lower than in Q3 2024", "ceiling_yoy", 0.0, "", ""),
  "3Q25": ("FY2025", "For the full-year 2025, we now expect to deliver an Adjusted EBITDA Margin of approximately 35%", "approx", 35.0, 2660, 2720,
-          "We expect Adjusted EBITDA in Q4 2025 to be flat-to-down slightly on a year-over-year basis and for Adjusted EBITDA Margin to decline", "ceiling_yoy", 0.0,
+          "We expect Adjusted EBITDA in Q4 2025 to be flat- to-down slightly on a year-over-year basis and for Adjusted EBITDA Margin to decline", "ceiling_yoy", 0.0,  # "flat- to-down": letter PDF hyphenation, kept verbatim
           "As we look forward to 2026, we are focused on maintaining strong margins while continuing to invest in growth initiatives (letter, S133); OBBBA cuts the ETR from 2026 (S134)", "S133;S134;S136"),
  "4Q25": ("FY2026", "For 2026, we expect our Adjusted EBITDA Margin to be stable year-over-year", "point_yoy", 0.0, 2590, 2630,
           "We expect Adjusted EBITDA Margin to be approximately flat year-over-year", "point_yoy", 0.0, "", ""),
@@ -664,7 +664,7 @@ def pattern_rows(panel):
             "next_q_margin_guide_level_pct": (qlvl if qtyp in ("floor", "ceiling", "point") else (None if nq_ly_margin is None else round(nq_ly_margin + qlvl, 2))),
             "next_q_actual_revenue_musd": nq_rev, "next_q_actual_margin_pct": None if nq_margin is None else round(nq_margin, 2),
             "next_q_ly_margin_pct": None if nq_ly_margin is None else round(nq_ly_margin, 2),
-            "implied_fy_revenue_musd": None, "implied_q4_adj_ebitda_musd": None, "implied_q4_margin_pct": None,
+            "implied_fy_revenue_musd": None, "implied_q4_adj_ebitda_musd": None, "implied_q4_margin_pct": None, "implied_q4_margin_source": "",
             "q4_actual_minus_implied_pts": None, "actual_fy_margin_pct": None if actual_fy is None else round(actual_fy, 2),
             "actual_minus_guide_bp": None if (actual_fy is None or level is None) else round(100 * (actual_fy - level), 0),
             "first_fy_plus1_statement": fy1, "fy_plus1_statement_ids": fy1_ids,
@@ -674,8 +674,15 @@ def pattern_rows(panel):
             imp_q4_e = level / 100 * imp_rev - ytd_e
             imp_q4_m = 100 * imp_q4_e / ((rl + rh) / 2)
             r.update({"implied_fy_revenue_musd": round(imp_rev, 1), "implied_q4_adj_ebitda_musd": round(imp_q4_e, 1),
-                      "implied_q4_margin_pct": round(imp_q4_m, 2),
+                      "implied_q4_margin_pct": round(imp_q4_m, 2), "implied_q4_margin_source": "FY sentence minus 9M actual, over the Q4 revenue guide mid",
                       "q4_actual_minus_implied_pts": None if nq_margin is None else round(nq_margin - imp_q4_m, 2)})
+        elif qn == 3 and r["next_q_margin_guide_level_pct"] is not None:
+            # 3Q21 and 3Q22: no full-year number was given; the Q4 sentence itself is the floor (3Q21: Q4 y/y expansion > Q3's
+            # +11.9 pts on a -2.4% base; 3Q22: "in-line to modestly higher than last year's 22%")
+            q4l = r["next_q_margin_guide_level_pct"]
+            r.update({"implied_fy_revenue_musd": round(ytd_rev + (rl + rh) / 2, 1), "implied_q4_adj_ebitda_musd": round(q4l / 100 * (rl + rh) / 2, 1),
+                      "implied_q4_margin_pct": round(q4l, 2), "implied_q4_margin_source": f"Q4 sentence ({qtyp}); no FY number given",
+                      "q4_actual_minus_implied_pts": None if nq_margin is None else round(nq_margin - q4l, 2)})
         rows.append(r)
     return rows, fy_margin
 
@@ -814,7 +821,9 @@ def main():
     add("beat vs numeric FY floor (bp, one obs per FY: FY24, FY25)", feb_floor, "actual_minus_guide_bp")
     add("beat vs November point/approx (bp): FY23, FY24, FY25", closed[closed.is_november & closed.fy_sentence_type.isin(["approx", "approx_yoy"])], "actual_minus_guide_bp")
     add("beat vs February qualitative y/y guide (bp): FY22 'in-line', FY23 'maintain'", closed[closed.fy_sentence_type == "point_yoy"].drop_duplicates("fy_target"), "actual_minus_guide_bp")
-    add("Q4 actual minus implied-by-November-sentence (pts): FY23, FY24, FY25", closed[closed.is_november & closed.implied_q4_margin_pct.notna()], "q4_actual_minus_implied_pts")
+    add("Q4 actual minus implied-by-November-FY-sentence (pts): FY23, FY24, FY25", closed[closed.is_november & closed.implied_q4_margin_source.str.startswith("FY")], "q4_actual_minus_implied_pts")
+    add("Q4 actual minus November Q4-sentence floor (pts): FY21, FY22 (no FY number those years)", closed[closed.is_november & closed.implied_q4_margin_source.str.startswith("Q4")], "q4_actual_minus_implied_pts")
+    add("Q4 actual minus November-implied Q4 margin (pts), all five Novembers", closed[closed.is_november & closed.implied_q4_margin_pct.notna()], "q4_actual_minus_implied_pts")
     add("YTD (9M) margin y/y at the November print (pts), all Novembers", pdf[pdf.is_november], "ytd_margin_yoy_pts")
     pd.DataFrame(stats).to_csv(OUT / "05_guide_language_stats.csv", index=False, encoding="utf-8")
     print("wrote 05_guide_language_stats.csv")
@@ -862,11 +871,17 @@ def main():
     new = df[df.origin != "31a"]
     non_earn = new[~new.event_type.isin(["earnings_call", "letter"])]
     novs = pdf[pdf.is_november & (pdf.fy_target >= "FY2021")]
-    nov_ok = novs[novs.fy_sentence_type != "none"].implied_q4_margin_pct.notna().all()
+    nov_ok = novs.implied_q4_margin_pct.notna().all() and novs.q4_actual_minus_implied_pts.notna().all()
     print(f"\nPASS LINE: new dated statements {len(new)} (>=40: {'ok' if len(new) >= 40 else 'FAIL'}); "
           f"from non-earnings events {len(non_earn)} across {non_earn.event.nunique()} events (>=6: {'ok' if len(non_earn) >= 6 else 'FAIL'}); "
-          f"November rows {len(novs)} ({', '.join(novs.print)}), implied Q4 computed wherever a FY number existed: {'ok' if nov_ok else 'FAIL'}; "
-          f"3Q21/3Q22 had no FY margin number to invert (recorded as type 'none')")
+          f"November rows {len(novs)} ({', '.join(novs.print)}), implied Q4 margin computed and checked against the actual for all: {'ok' if nov_ok else 'FAIL'} "
+          f"(3Q21/3Q22 from the Q4 sentence: no FY number was given those years; 3Q23-3Q25 from the FY sentence)")
+    # the pattern table's sentences must also be exact substrings of the letter (or, failing that, the call transcript)
+    for tag, row in FY_SENTENCE.items():
+        for label, sent in (("FY", row[1]), ("Q", row[6])):
+            s2 = norm(sent.replace("...", "").strip())
+            if s2 and s2 not in docs[f"letter:{tag}"]["text"] and s2 not in docs.get(f"call:{tag}", {}).get("text", ""):
+                failures.append((f"pattern:{tag}:{label}", f"letter:{tag}", sent[:80]))
     print("by event_type (all rows):", dict(Counter(df.event_type)))
     print("by line (all rows):", dict(Counter(df.line)))
     if failures:

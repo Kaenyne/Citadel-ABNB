@@ -464,6 +464,11 @@ REG = REG[REG["quarter"].astype(str).str.match(r"^\dQ\d\d$")].set_index("quarter
 BS_4Q19 = {"cash_and_equivalents": 2013.547, "short_term_investments": 1060.726, "restricted_cash": 0.115,
            "funds_held_on_behalf": 3145.457, "unearned_fees_balance": 674.788, "long_term_debt_noncurrent": 0.0,
            "long_term_debt_current": 0.0}
+NPB = pd.read_csv(ROOT / "data/processed/airbnb_nights_per_booking.csv")
+NPB = NPB[NPB["avg_nights_per_booking"].notna()]
+ALOS_GLOBAL = {int(y): float(v) for y, v in zip(NPB[NPB["region"] == "Global"]["year"], NPB[NPB["region"] == "Global"]["avg_nights_per_booking"])}
+ALOS_SRC = {int(y): s for y, s in zip(NPB[NPB["region"] == "Global"]["year"], NPB[NPB["region"] == "Global"]["source"])}
+ALOS_REGION = {(int(y), reg): float(v) for y, reg, v in zip(NPB["year"], NPB["region"], NPB["avg_nights_per_booking"])}
 
 rows = []
 for q in QUARTERS:
@@ -710,6 +715,18 @@ for r in rows:
             if not pd.isna(v):
                 r["rev_" + reg] = float(v)
                 prov(q, "rev_" + reg, float(v), "repo_regional_panel", f"data/processed/overnight/10_regional_revenue_xbrl.csv ({REG.loc[q, 'basis']}; XBRL srt:StatementGeographicalAxis)")
+    # nights per booking (ALOS): the per-booking <-> per-night converter (WS01 mechanism note). Disclosed once a year in the
+    # 10-K MD&A geographic-mix paragraph (FY2020-FY2025, global and by region); the FY value is applied to each quarter of
+    # that year, and the latest FY (2025) is carried into 2026 (flagged in the provenance detail). Nothing quarterly exists.
+    yy = r["year"]
+    alos_y = yy if yy in ALOS_GLOBAL else (max(ALOS_GLOBAL) if yy > max(ALOS_GLOBAL) else None)
+    if alos_y is not None:
+        r["nights_per_booking_fy"] = ALOS_GLOBAL[alos_y]
+        prov(q, "nights_per_booking_fy", ALOS_GLOBAL[alos_y], "repo_nights_per_booking",
+             f"data/processed/airbnb_nights_per_booking.csv, Global FY{alos_y} ({ALOS_SRC[alos_y]}); annual value applied to the quarter" + (" (latest FY carried forward)" if alos_y != yy else ""))
+        if r.get("nights_m"):
+            r["bookings_est_m"] = round(r["nights_m"] / ALOS_GLOBAL[alos_y], 2)
+            prov(q, "bookings_est_m", r["bookings_est_m"], "derived", "nights_m / nights_per_booking_fy (bookings are never disclosed; this is the converter)")
 
 # derived per-quarter metrics
 for r in rows:
@@ -738,6 +755,11 @@ for r in rows:
                 r[line + "_cash_per_night_usd"] = round(r[line + "_cash"] / r["nights_m"], 3)
         if r.get("adj_ebitda_reported") is not None:
             r["adj_ebitda_per_night_usd"] = round(r["adj_ebitda_reported"] / r["nights_m"], 3)
+        if r.get("bookings_est_m"):
+            r["revenue_per_booking_usd"] = round(rev / r["bookings_est_m"], 3)
+            for line in ("cor", "ops"):
+                if r.get(line + "_cash") is not None:
+                    r[line + "_cash_per_booking_usd"] = round(r[line + "_cash"] / r["bookings_est_m"], 3)
     if r.get("gbv_busd") and rev:
         r["take_rate_pct"] = round(100 * rev / (1000 * r["gbv_busd"]), 3)
         if r.get("cor_cash") is not None:
@@ -787,6 +809,7 @@ COLS = ["year", "qn", "period_end", "pre_ipo", "revenue", "cor_gaap", "ops_gaap"
         "cash_and_equivalents", "short_term_investments", "restricted_cash", "cash_and_investments_total", "funds_held_on_behalf",
         "unearned_fees_balance", "long_term_debt_noncurrent", "long_term_debt_current", "long_term_debt_total",
         "nights_m", "gbv_busd", "adr_usd", "revenue_per_night_usd", "take_rate_pct", "cor_cash_pct_gbv",
+        "nights_per_booking_fy", "bookings_est_m", "revenue_per_booking_usd", "cor_cash_per_booking_usd", "ops_cash_per_booking_usd",
         "cor_gaap_pct_rev", "ops_gaap_pct_rev", "pd_gaap_pct_rev", "sm_gaap_pct_rev", "ga_gaap_pct_rev", "sbc_pct_rev",
         "cor_cash_pct_rev", "ops_cash_pct_rev", "pd_cash_pct_rev", "sm_cash_pct_rev", "ga_cash_pct_rev",
         "cor_cash_per_night_usd", "ops_cash_per_night_usd", "pd_cash_per_night_usd", "sm_cash_per_night_usd", "ga_cash_per_night_usd", "adj_ebitda_per_night_usd",
@@ -801,7 +824,6 @@ for c in COLS:
         P[c] = np.nan
 P = P[COLS]
 P.to_csv(OUT / "02_panel_quarterly.csv", float_format="%.3f")
-pd.DataFrame(PROV).to_csv(OUT / "02_panel_provenance.csv", index=False)
 V = pd.DataFrame(VINT)
 V = V[V["period"].str.match(r"^\dQ\d\d$")]
 V["vintage_order"] = V["letter"].map(lambda s: -1 if s == "424B4" else qorder(s))
@@ -920,14 +942,47 @@ for y in YEARS:
         s = 0.0 if sk is None else a.get(sk)
         if g is not None and s is not None:
             puta(line + "_cash", g - s, "derived", f"{line}_gaap minus {sk or 'nothing'}")
+    if a.get("ga_cash") is not None and a.get("lodging_tax_reserves") is not None:
+        puta("ga_cash_ex_lodging", a["ga_cash"] - a["lodging_tax_reserves"], "derived", "ga_cash minus the lodging/withholding/transactional tax add-back (the reserves sit in GAAP G&A per the 10-K and are added back to Adjusted EBITDA)")
+    if all(a.get(k) is not None for k in ("cor_cash", "ops_cash", "pd_cash", "sm_cash", "ga_cash")):
+        puta("total_cash_costs", sum(a[k] for k in ("cor_cash", "ops_cash", "pd_cash", "sm_cash", "ga_cash")), "derived", "sum of the five cash lines")
+    if a.get("adj_ebitda_reported") is not None:
+        puta("other_addbacks_total", (a.get("ipo_settlement") or 0.0) + (a.get("acq_impacts") or 0.0) + (a.get("lodging_tax_reserves") or 0.0), "derived", "IPO stock-settlement + acquisition-related impacts + lodging/withholding/transactional tax add-backs (restructuring kept separate in restr_recon)")
+        if a.get("revenue"):
+            puta("adj_cost_total", a["revenue"] - a["adj_ebitda_reported"], "derived", "revenue minus Adjusted EBITDA (every cost Adjusted EBITDA bears)")
     # KPIs annual: sum of quarterly nights / GBV; ADR = GBV/nights
     qs = P[P["year"] == y]
+    # interest expense FY2025: not tagged in XBRL and folded into other expense in the 10-K; the 2Q26 letter re-presents all four quarters
+    if a.get("interest_expense") is None and "interest_expense" in qs and qs["interest_expense"].notna().sum() == 4:
+        puta("interest_expense", qs["interest_expense"].sum(), "derived", "sum of the four quarters (2Q26 letter reconciliation re-presents interest expense separately); the 10-K folds it into other income (expense), net")
+        if a.get("nonop_ex_interest_income") is not None:
+            puta("other_income_expense", a["nonop_ex_interest_income"] + a["interest_expense"], "derived", "nonop + interest expense (sum of quarters)")
+            a["other_includes_interest_expense"] = False
+    # nights per booking (ALOS) from the 10-K MD&A geographic-mix paragraph, via data/processed/airbnb_nights_per_booking.csv
+    if y in ALOS_GLOBAL:
+        puta("nights_per_booking", ALOS_GLOBAL[y], "repo_nights_per_booking", f"data/processed/airbnb_nights_per_booking.csv, Global ({ALOS_SRC[y]})")
+        for reg, key in (("North America", "na"), ("EMEA", "emea"), ("Latin America", "latam"), ("Asia Pacific", "apac")):
+            if (y, reg) in ALOS_REGION:
+                puta("nights_per_booking_" + key, ALOS_REGION[(y, reg)], "repo_nights_per_booking", f"data/processed/airbnb_nights_per_booking.csv, {reg} FY{y} (10-K FY{y} MD&A)")
     if qs["nights_m"].notna().sum() == 4:
         a["nights_m"] = round(qs["nights_m"].sum(), 1)
         a["gbv_busd"] = round(qs["gbv_busd"].sum(), 1)
     if a.get("nights_m") and a.get("gbv_busd"):
         a["adr_usd"] = round(1000 * a["gbv_busd"] / a["nights_m"], 2)
         a["take_rate_pct"] = round(100 * a["revenue"] / (1000 * a["gbv_busd"]), 3) if a.get("revenue") else None
+        if a.get("revenue"):
+            a["revenue_per_night_usd"] = round(a["revenue"] / a["nights_m"], 3)
+        if a.get("cor_cash") is not None:
+            a["cor_cash_pct_gbv"] = round(100 * a["cor_cash"] / (1000 * a["gbv_busd"]), 3)
+        for line in ("cor", "ops", "pd", "sm", "ga"):
+            if a.get(line + "_cash") is not None:
+                a[line + "_cash_per_night_usd"] = round(a[line + "_cash"] / a["nights_m"], 3)
+        if a.get("nights_per_booking"):
+            a["bookings_est_m"] = round(a["nights_m"] / a["nights_per_booking"], 1)
+            prov(f"FY{y}", "bookings_est_m", a["bookings_est_m"], "derived", "nights_m / nights_per_booking (bookings are never disclosed)")
+            for line in ("cor", "ops"):
+                if a.get(line + "_cash") is not None:
+                    a[line + "_cash_per_booking_usd"] = round(a[line + "_cash"] / a["bookings_est_m"], 3)
     if a.get("revenue"):
         if a.get("adj_ebitda_reported") is not None:
             a["adj_ebitda_margin_pct"] = round(100 * a["adj_ebitda_reported"] / a["revenue"], 2)
@@ -955,6 +1010,7 @@ for y in YEARS:
     arows.append(a)
 A = pd.DataFrame(arows).set_index("year")
 A.to_csv(OUT / "02_panel_annual.csv", float_format="%.3f")
+pd.DataFrame(PROV).to_csv(OUT / "02_panel_provenance.csv", index=False)     # quarterly and FY rows (written after both panels)
 
 # =============================================================================================== 7. seasonality
 srows = []
@@ -1133,6 +1189,32 @@ with open(OUT / "02_build_log.txt", "w", encoding="utf-8") as f:
     f.write("\nAnnual sum-of-quarters checks (|max| per line):\n")
     for c in [c for c in A.columns if c.startswith("soq_minus_annual__")]:
         f.write(f"  {c[18:]}: {A[c].abs().max():.3f}\n")
+    # ---- pre-registered pass line (docs/margin-build/prompts/02_financial_panel.md)
+    f.write("\nPASS LINE (pre-registered):\n")
+    win = [q for q in P.index if qorder(q) >= qorder("1Q21")]
+    gaps = P.loc[win, "rebuild_gap"]
+    t1 = gaps.notna().all() and (gaps.abs() <= 2.0).all()
+    f.write(f"  1. Adjusted EBITDA rebuilt from lines within $2M of reported, every quarter 1Q21-2Q26 (n {len(win)}): "
+            f"{'PASS' if t1 else 'FAIL'} (max |gap| {gaps.abs().max():.3f} at {gaps.abs().idxmax()}; {(gaps.abs() <= 0.5).sum()} of {len(win)} within $0.5M)\n")
+    pl_lines = ["revenue", "cor_gaap", "ops_gaap", "pd_gaap", "sm_gaap", "ga_gaap", "restr_gaap", "op_income", "net_income", "sbc_total_is", "sbc_ops",
+                "sbc_pd", "sbc_sm", "sbc_ga", "da", "sbc_recon", "lodging_tax_reserves", "adj_ebitda_reported", "tax_provision", "interest_income", "capex"]
+    pl_max = max(A["soq_minus_annual__" + c].abs().max() for c in pl_lines if "soq_minus_annual__" + c in A)
+    cf_max = max(A["soq_minus_annual__" + c].abs().max() for c in ("cfo", "fcf_reported") if "soq_minus_annual__" + c in A)
+    cf_rep = A["soq_minus_annual__fcf_latest_vintage"].abs()
+    f.write(f"  2. Annual sums within $5M of the 10-K, FY2018-FY2025 (n {len(A)}): P&L, SBC, D&A, add-backs, Adjusted EBITDA, tax, interest income, capex: "
+            f"{'PASS' if pl_max <= 5 else 'FAIL'} (max |gap| {pl_max:.3f}); CFO/FCF: {'PASS' if cf_max <= 5 else 'FAIL'} (max |gap| {cf_max:.3f}; FY2019 {A.loc[2019, 'soq_minus_annual__fcf_reported']:.1f}, "
+            f"FY2020 {A.loc[2020, 'soq_minus_annual__fcf_reported']:.1f} = the 2022 cash-flow re-presentation; against the re-presented FY2020 CFO the gap is {cf_rep.loc[2020]:.3f})\n")
+    prov_keys = {(p["period"], p["line"]) for p in PROV}
+    derived_suffix = ("_pct", "_pct_rev", "_yoy_pct", "_yoy_pp", "_per_night_usd", "_per_booking_usd", "_restated", "_pct_gbv")
+    meta = {"year", "qn", "period_end", "pre_ipo", "recon_n_vintages", "recon_latest_letter", "other_includes_interest_expense", "cfo_restated",
+            "adj_ebitda_reported_restated", "restatement_notes", "adj_ebitda_rebuilt", "rebuild_gap", "other_addbacks_total", "total_cash_costs",
+            "ga_cash_ex_lodging", "adj_cost_total", "sbc_footnote_minus_recon", "fcf_check_gap", "sbc_total_xbrl", "long_term_debt_total",
+            "take_rate_pct", "revenue_per_night_usd", "effective_tax_rate_pct", "revenue_per_booking_usd"}
+    missing = [(q, c) for q, row in P.iterrows() for c, v in row.items()
+               if c not in meta and not c.endswith(derived_suffix) and not pd.isna(v) and (q, c) not in prov_keys]
+    f.write(f"  3. Every sourced cell has a provenance row: {'PASS' if not missing else 'FAIL'} ({len(missing)} quarterly cells without a row; "
+            f"{len(PROV)} provenance rows; identity/ratio columns are derived in place and excluded)\n")
+    f.write(f"  Letter vs XBRL rule: letter reconciliation wins for non-GAAP items, XBRL for GAAP lines; {int((P['recon_n_vintages'] >= 2).sum())} quarters have >= 2 letter vintages.\n")
 
 fig_ok = True
 try:

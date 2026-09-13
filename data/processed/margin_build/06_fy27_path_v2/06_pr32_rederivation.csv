@@ -1,0 +1,21 @@
+object,pr32_value,rederived,diff,note
+PR32 NA base 3Q26,5.6,5.6,0.0,underlying + in-window product (RNPL window 3Q25-2Q26; t1+cancel 4Q25-3Q26)
+PR32 NA base 4Q26,3.31,3.31,0.0,underlying + in-window product (RNPL window 3Q25-2Q26; t1+cancel 4Q25-3Q26)
+PR32 NA base 1Q27,2.31,2.31,0.0,underlying + in-window product (RNPL window 3Q25-2Q26; t1+cancel 4Q25-3Q26)
+PR32 NA base 2Q27,2.31,2.31,0.0,underlying + in-window product (RNPL window 3Q25-2Q26; t1+cancel 4Q25-3Q26)
+PR32 NA base 3Q27,2.31,2.31,0.0,underlying + in-window product (RNPL window 3Q25-2Q26; t1+cancel 4Q25-3Q26)
+PR32 NA base 4Q27,2.31,2.31,0.0,underlying + in-window product (RNPL window 3Q25-2Q26; t1+cancel 4Q25-3Q26)
+PR32 total base 3Q26 exna_lap=False,9.89,9.89,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 4Q26 exna_lap=False,8.9,8.9,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 1Q27 exna_lap=False,8.17,8.17,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 2Q27 exna_lap=False,8.17,8.17,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 3Q27 exna_lap=False,8.17,8.17,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 4Q27 exna_lap=False,8.17,8.17,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 3Q26 exna_lap=True,9.89,9.89,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 4Q26 exna_lap=True,8.9,8.9,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 1Q27 exna_lap=True,6.42,6.42,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 2Q27 exna_lap=True,6.42,6.42,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 3Q27 exna_lap=True,6.42,6.42,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+PR32 total base 4Q27 exna_lap=True,6.42,6.42,0.0,"WS10 total + s x (NA - WS10 NA) + ex-NA lap; s = 0.266 in 2027 (forecast-year share, see finding 3)"
+"PR32 FY27 nights level, base, exna_lap=False",,631.8,,FY27 sum 631.8mm = 8.17% on PR #32's own FY26 584.1mm; PR #32 left 3Q27/4Q27 levels blank
+"PR32 FY27 nights level, base, exna_lap=True",,621.6,,FY27 sum 621.6mm = 6.42% on PR #32's own FY26 584.1mm; PR #32 left 3Q27/4Q27 levels blank

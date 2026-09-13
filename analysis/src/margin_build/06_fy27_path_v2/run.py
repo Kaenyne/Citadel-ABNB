@@ -367,10 +367,24 @@ def add(q, scen, **kw):
         lines.append({"quarter": q, "scenario": scen, "line": k, "value": v})
 
 
+# GBV convention (bridge v3 / h1_to_h2_bridge_v3.py line 423, 508): GBV_q = GBV_{q-4} x (1 + nights y/y) x (1 + reported ADR y/y),
+# i.e. y/y rates compounded on the PRINTED prior-year GBV. nights x ADR / 1000 differs from it by the rounding of the printed
+# $0.1bn GBV (0.07% in 3Q26, h2_bridge_v3_card_check.csv); the gap is carried as a memo line, never silently absorbed.
+A("gbv_convention", "GBV_q = GBV_{q-4} x (1 + nights y/y) x (1 + reported ADR y/y)", "rule",
+  "bridge v3 convention (analysis/src/h1_to_h2_bridge_v3.py, lines 423 and 508); adopting it is what makes 3Q26/4Q26 revenue reproduce $4,804.0M / $3,178.1M to the dollar", False)
+INT06 = {"registered_take_rate_pct": 18.14, "registered_revenue_musd": 4816.1, "registered_gbv_musd": 26549.8, "flip_gbv_musd": 26608.3,
+         "flip_revenue_musd": 4805.5, "support_threshold_pct": 18.10, "sd_pp": 0.4628, "prior_year_printed_pct": 17.882}
+A("int06_take_rate_asymmetry", json.dumps(INT06), "pct / $M",
+  "PREREG_ABNB-INT-v1.md INT-06/INT-07 and s.1.3: printed take rate = revenue / same-quarter GBV; revenue is near-fixed by guide x cushion (sd 1.0%) while GBV carries sd 3.2%, so the printed take rate moves INVERSELY with the GBV print; P(>=18.10) = Phi((tau-18.10)/(0.4628 x 26549.8/GBV))", False)
+import math  # noqa: E402
+
+
+def norm_cdf(z: float) -> float:
+    return 0.5 * (1 + math.erf(z / math.sqrt(2)))
+
 levels = {}   # (q, scen) -> dict
 for scen in SCEN:
     N = dict(hist.nights_m); ADR = dict(hist.adr_usd); G = dict(hist.gbv_busd); REV = dict(hist.revenue_musd)
-    src = {}
     for q in Q26H2:
         b = BR[q]
         n_yoy = {"base": b["nights_yoy"], "bear": b["nights_lo"], "bull": b["nights_hi"]}[scen]
@@ -379,13 +393,13 @@ for scen in SCEN:
         py = prev_year(q)
         N[q] = N[py] * (1 + n_yoy / 100)
         ADR[q] = ADR[py] * (1 + (a_ex + a_fx) / 100)
-        G[q] = N[q] * ADR[q] / 1000
+        G[q] = G[py] * (1 + n_yoy / 100) * (1 + (a_ex + a_fx) / 100)
         lag = (2 / 3) * G[prev_q(q)] + (1 / 3) * G[prev_q(prev_q(q))]
         REV[q] = LAM.loc[qnum(q), "mean"] * lag * 1000
         if scen == "base":
-            assert abs(REV[q] - b["revenue"]) < 0.5, (q, REV[q], b["revenue"])
+            assert abs(REV[q] - b["revenue"]) < 0.01, (q, REV[q], b["revenue"])
             card = b3card[(b3card.quarter == q)].set_index("object").bridge
-            assert abs(N[q] - card["nights, mm"]) < 0.02 and abs(ADR[q] - card["ADR $"]) < 0.02
+            assert abs(N[q] - card["nights, mm"]) < 0.02 and abs(ADR[q] - card["ADR $"]) < 0.02 and abs(G[q] - card["GBV, $bn"]) < 1e-6
         levels[(q, scen)] = dict(nights_yoy=n_yoy, adr_exfx=a_ex, fx_adr=a_fx, adr_rep=a_ex + a_fx, nights=N[q], adr=ADR[q], gbv=G[q],
                                  rev=REV[q], lag=lag, fx_rev=b["fx_rev"], rev_lo=LAM.loc[qnum(q), "min"] * lag * 1000, rev_hi=LAM.loc[qnum(q), "max"] * lag * 1000,
                                  source="bridge v3 " + ("adopted" if scen == "base" else "band " + ("lo" if scen == "bear" else "hi")))
@@ -395,13 +409,15 @@ for scen in SCEN:
         py = prev_year(q)
         N[q] = N[py] * (1 + nb.total_nights_yoy_pct / 100)
         ADR[q] = ADR[py] * (1 + ab.adr_reported_yoy_pct / 100)
-        G[q] = N[q] * ADR[q] / 1000
+        G[q] = G[py] * (1 + nb.total_nights_yoy_pct / 100) * (1 + ab.adr_reported_yoy_pct / 100)
         lag = (2 / 3) * G[prev_q(q)] + (1 / 3) * G[prev_q(prev_q(q))]
         REV[q] = LAM.loc[qnum(q), "mean"] * lag * 1000
         levels[(q, scen)] = dict(nights_yoy=nb.total_nights_yoy_pct, adr_exfx=ab.adr_exfx_yoy_pct, fx_adr=ab.fx_pts_adr, adr_rep=ab.adr_reported_yoy_pct,
                                  nights=N[q], adr=ADR[q], gbv=G[q], rev=REV[q], lag=lag, fx_rev=rev_fx_pts(q, scen),
                                  rev_lo=LAM.loc[qnum(q), "min"] * lag * 1000, rev_hi=LAM.loc[qnum(q), "max"] * lag * 1000, source="06 v2 build")
-    # FY28 continuation, base only: nights y/y = 4Q27 base rate held; residual continues the AR(1); K = 0; mix held; FX 0
+    # FY28 continuation, base only (FLAGGED): nights y/y = 4Q27 base rate held; residual continues the AR(1); K = 0 (migration complete);
+    # mix held; FX 0 (spot held, all y/y lapped). Neither B3 nor the reverse DCF states an FY28 revenue growth rate (the reverse DCF
+    # solves for FY28 FCF growth); WS07's FY2028 lever (nights +8.0 / ADR ex-FX +2.5, base) is shown as a comparison row, not used.
     if scen == "base":
         rr = resid["base"]["4Q27"]
         for q in ["1Q28", "2Q28", "3Q28", "4Q28"]:
@@ -409,12 +425,15 @@ for scen in SCEN:
             py = prev_year(q)
             n_yoy = levels[("4Q27", "base")]["nights_yoy"]
             a_ex = rr + MIX27
-            N[q] = N[py] * (1 + n_yoy / 100); ADR[q] = ADR[py] * (1 + a_ex / 100); G[q] = N[q] * ADR[q] / 1000
+            N[q] = N[py] * (1 + n_yoy / 100); ADR[q] = ADR[py] * (1 + a_ex / 100)
+            G[q] = G[py] * (1 + n_yoy / 100) * (1 + a_ex / 100)
             lag = (2 / 3) * G[prev_q(q)] + (1 / 3) * G[prev_q(prev_q(q))]
             REV[q] = LAM.loc[qnum(q), "mean"] * lag * 1000
             levels[(q, scen)] = dict(nights_yoy=n_yoy, adr_exfx=a_ex, fx_adr=0.0, adr_rep=a_ex, nights=N[q], adr=ADR[q], gbv=G[q], rev=REV[q], lag=lag,
-                                     fx_rev=0.0, rev_lo=np.nan, rev_hi=np.nan, source="FY28 continuation (flagged)")
+                                     fx_rev=0.0, rev_lo=np.nan, rev_hi=np.nan, source="FY28 continuation (flagged: 4Q27 exit held, AR(1) residual, mix held, FX 0)")
     levels[("hist", scen)] = (N, ADR, G, REV)
+A("fy28_continuation_rule", "nights y/y = 4Q27 base rate held; ADR ex-FX = AR(1) residual + 2027 mix; K 0; FX 0", "rule",
+  "judgement; no FY28 revenue growth rate exists in B3 or the reverse DCF (which solves FY28 FCF growth 4.6% reported / 16% SBC-adjusted); WS07 FY2028 base lever nights +8.0 / ADR ex-FX +2.5 shown as comparison (07_margin_levers_fy26_fy28.csv)", True)
 
 # long path file
 rows = []
@@ -434,7 +453,18 @@ for (q, scen), L in levels.items():
          "revenue_conversion_lo_musd": L["rev_lo"], "revenue_conversion_hi_musd": L["rev_hi"],
          "take_rate_printed_pct": tr, "take_rate_prior_year_pct": tr_py, "take_rate_change_pts": tr - tr_py,
          "revenue_alt_same_q_take_rate_musd": rev_alt, "fx_pts_revenue_memo": L["fx_rev"],
-         "revenue_exfx_yoy_memo_pct": rev_yoy - L["fx_rev"]}
+         "revenue_exfx_yoy_memo_pct": rev_yoy - L["fx_rev"],
+         "gbv_identity_gap_pct": (L["nights"] * L["adr"] / 1000 / L["gbv"] - 1) * 100}
+    if q == "3Q26":
+        # INT-06 asymmetry: the revenue object is guide x cushion ($4,816.1M, sd 1.0%); the printed take rate is that dollar
+        # divided by whatever GBV prints (sd 3.2%), so a LOWER GBV (bear) prints a HIGHER take rate. Shown at this scenario's GBV.
+        g_m = L["gbv"] * 1000
+        sd = INT06["sd_pp"] * INT06["registered_gbv_musd"] / g_m
+        d.update({"take_rate_int06_at_registered_revenue_pct": INT06["registered_revenue_musd"] / g_m * 100,
+                  "take_rate_int06_at_kernel_revenue_pct": L["rev"] / g_m * 100,
+                  "take_rate_int06_p_ge_18p10": 1 - norm_cdf((INT06["support_threshold_pct"] - INT06["registered_revenue_musd"] / g_m * 100) / sd),
+                  "take_rate_int06_registered_pct": INT06["registered_take_rate_pct"],
+                  "take_rate_int06_flip_gbv_busd": INT06["flip_gbv_musd"] / 1000})
     for k, v in d.items():
         rows.append({"quarter": q, "scenario": scen, "line": k, "value": round(float(v), 4) if pd.notna(v) else np.nan, "source": L["source"]})
 path_long = pd.DataFrame(rows)
@@ -551,9 +581,26 @@ for _, r in cons[cons.period.isin(["FY27"])].iterrows():
                        "basis": f"as of {r.as_of_row_date}; n {r.revenue_n if pd.notna(r.revenue_n) else 'n/a'}; obs {r.revenue_obs_date if pd.notna(r.revenue_obs_date) else 'n/a'}; COMPARISON ONLY"})
 cqs = cq[cq.quarter.isin(Q27)]
 comp_a.append({"source": "consensus FY27, LSEG sum of four quarters", "fy27_revenue_musd": round(float(cqs.revenue_mean_musd.sum()), 1), "fy27_growth_pct": np.nan, "fy27_nights_yoy_pct": np.nan, "fy27_adr_yoy_pct": np.nan, "basis": "quarterly panels are thinner (n 19-21) than the annual (n 44); COMPARISON ONLY"})
-comp_a.append({"source": "reverse DCF: market / Street path", "fy27_revenue_musd": 15800.0, "fy27_growth_pct": 11.0, "fy27_nights_yoy_pct": 8.5, "fy27_adr_yoy_pct": 3.0, "basis": "docs/reverse_dcf/SYNTHESIS.md s.7 (price implies $15.7-15.9bn, nights 8-9% as a residual at ADR +3, FX -0.6); COMPARISON ONLY"})
-comp_a.append({"source": "reverse DCF: management delivered", "fy27_revenue_musd": 16025.0, "fy27_growth_pct": 12.6, "fy27_nights_yoy_pct": 10.0, "fy27_adr_yoy_pct": 3.0, "basis": "2026-09-12_management-implied-model.md (guide + historical cushion, exit rate held); COMPARISON ONLY"})
+comp_a.append({"source": "reverse DCF: market / Street path (midpoints)", "fy27_revenue_musd": 15800.0, "fy27_growth_pct": 10.95, "fy27_nights_yoy_pct": 8.5, "fy27_adr_yoy_pct": 3.0, "basis": "docs/reverse_dcf/SYNTHESIS.md s.1 (price implies $15.7-15.9bn, +10.4 to +11.5%) and s.2 item 2 (nights 8-9% as a residual at ADR +3, FX -0.6, JUDGEMENT); midpoints shown; COMPARISON ONLY"})
+comp_a.append({"source": "reverse DCF: management delivered", "fy27_revenue_musd": 16025.0, "fy27_growth_pct": 12.6, "fy27_nights_yoy_pct": 10.0, "fy27_adr_yoy_pct": 3.0, "basis": "research/notes/2026-09-12_management-implied-model.md, Delivered row (guide + historical cushion, FY26 exit rate held: nights +10.0, ADR +3.0, rev $16,025m); COMPARISON ONLY"})
 comp_annual = pd.DataFrame(comp_a)
+
+# FY28 continuation comparison (flagged; base only)
+fy28 = annual[(annual.period == "FY28") & (annual.scenario == "base")].iloc[0]
+fy27b = annual[(annual.period == "FY27") & (annual.scenario == "base")].iloc[0]
+lev07 = pd.read_csv(ROOT / "data/processed/overnight/07_margin_levers_fy26_fy28.csv")
+l07 = lev07[(lev07.row_type == "lever") & (lev07.year == "FY2028E") & (lev07.item.isin(["nights", "adr_exfx"]))].drop_duplicates("item").set_index("item")
+n07, a07 = float(l07.loc["nights", "base"]) * 100, float(l07.loc["adr_exfx", "base"]) * 100
+c28 = cq[cq.quarter == "FY28"]
+comp_28 = pd.DataFrame([
+    {"source": "06 v2 FY28 continuation (FLAGGED)", "fy28_revenue_musd": round(fy28.revenue_musd, 1), "fy28_growth_pct": round(fy28.revenue_musd_yoy_pct, 2),
+     "fy28_nights_yoy_pct": round(fy28.nights_mm_yoy_pct, 2), "fy28_adr_yoy_pct": round(fy28.adr_usd_yoy_pct, 2), "basis": "4Q27 base exit held; AR(1) residual + 2027 mix; K 0; FX 0; kernel w=2/3"},
+    {"source": "WS07 FY2028E base lever, applied to the v2 FY27 base", "fy28_revenue_musd": np.nan, "fy28_growth_pct": round(((1 + n07 / 100) * (1 + a07 / 100) - 1) * 100, 2),
+     "fy28_nights_yoy_pct": n07, "fy28_adr_yoy_pct": a07, "basis": "07_margin_levers_fy26_fy28.csv (extrapolation, no guide); GBV growth shown as the revenue proxy (flat take rate, FX 0); COMPARISON ONLY"},
+    {"source": "consensus FY28, LSEG", "fy28_revenue_musd": round(float(c28.revenue_mean_musd.iloc[0]), 1) if len(c28) else np.nan,
+     "fy28_growth_pct": round((float(c28.revenue_mean_musd.iloc[0]) / float(cq[cq.quarter == "FY27"].revenue_mean_musd.iloc[0]) - 1) * 100, 2) if len(c28) else np.nan,
+     "fy28_nights_yoy_pct": np.nan, "fy28_adr_yoy_pct": np.nan, "basis": f"LSEG FY3 as of {c28.revenue_obs_date.iloc[0] if len(c28) else 'n/a'}, n {int(c28.revenue_n.iloc[0]) if len(c28) else 'n/a'}; growth on LSEG's own FY27; COMPARISON ONLY"},
+])
 
 # ----------------------------------------------------------------------------------------------
 # 7. Seasonal check and pass line
@@ -589,6 +636,7 @@ nights_build.to_csv(OUT / "06_nights_build.csv", index=False)
 adr_build.to_csv(OUT / "06_adr_build.csv", index=False)
 comp_q.to_csv(OUT / "06_comparison_quarterly.csv", index=False)
 comp_annual.to_csv(OUT / "06_comparison_annual.csv", index=False)
+comp_28.to_csv(OUT / "06_comparison_fy28.csv", index=False)
 seasonal.to_csv(OUT / "06_seasonal_check.csv", index=False)
 pl.to_csv(OUT / "06_pass_line.csv", index=False)
 lam_df.assign(qn=lam_df.qn).to_csv(OUT / "06_kernel_lambda_history.csv", index=False)

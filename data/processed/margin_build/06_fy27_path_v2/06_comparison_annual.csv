@@ -1,0 +1,17 @@
+source,fy27_revenue_musd,fy27_growth_pct,fy27_nights_yoy_pct,fy27_adr_yoy_pct,basis
+06 v2 base,15828.6,10.94,6.64,2.72,kernel w=2/3 on the v2 path; growth on own FY26 14268
+06 v2 bear,14948.3,5.17,3.64,-0.33,own FY26 14214 (bridge band lows)
+06 v2 bull,16570.7,15.73,9.18,5.09,own FY26 14318 (bridge band highs)
+"PR #32 base, NA-only lap",,,8.17,,level sum re-derived here (PR #32 left 3Q27/4Q27 blank); note quotes +8.2 uniform rate
+"PR #32 base, bundle laps everywhere",,,6.42,,same; note quotes +6.4
+WS29 bear,14318.0,3.17,5.8,,29_fy27_bridge.csv; FX line rejected by B4 (double subtraction); nights = WS10 with no lap
+WS29 base,15804.0,11.55,9.2,,29_fy27_bridge.csv; FX line rejected by B4 (double subtraction); nights = WS10 with no lap
+WS29 bull,16910.0,16.96,11.5,,29_fy27_bridge.csv; FX line rejected by B4 (double subtraction); nights = WS10 with no lap
+"B3 / l1-reconciliation-v2, w=0.33",15720.3,9.18,,,EXPLORATORY; band +9.18 to +11.52 is the quotable object; growth on its own FY26 14399
+"B3 / l1-reconciliation-v2, w=0.50",15779.5,10.35,,,EXPLORATORY; band +9.18 to +11.52 is the quotable object; growth on its own FY26 14299
+"B3 / l1-reconciliation-v2, w=0.67",15837.6,11.52,9.46,1.88,EXPLORATORY; band +9.18 to +11.52 is the quotable object; growth on its own FY26 14201
+"consensus FY27, LSEG",15819.3,,,,as of 2026-09-11; n 44.0; obs 2026-09-08; COMPARISON ONLY
+"consensus FY27, Bloomberg BEST (pull 2026-09-05, obs_date label 2026-09-30)",15760.2,,,,as of 2026-09-05 (pull date; series label 2026-09-30); n n/a; obs n/a; COMPARISON ONLY
+"consensus FY27, LSEG sum of four quarters",15846.1,,,,quarterly panels are thinner (n 19-21) than the annual (n 44); COMPARISON ONLY
+reverse DCF: market / Street path (midpoints),15800.0,10.95,8.5,3.0,"docs/reverse_dcf/SYNTHESIS.md s.1 (price implies $15.7-15.9bn, +10.4 to +11.5%) and s.2 item 2 (nights 8-9% as a residual at ADR +3, FX -0.6, JUDGEMENT); midpoints shown; COMPARISON ONLY"
+reverse DCF: management delivered,16025.0,12.6,10.0,3.0,"research/notes/2026-09-12_management-implied-model.md, Delivered row (guide + historical cushion, FY26 exit rate held: nights +10.0, ADR +3.0, rev $16,025m); COMPARISON ONLY"
