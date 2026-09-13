@@ -1,0 +1,14 @@
+{
+  "features": [
+    "rnpl_corrected_unearned",
+    "funds_growth",
+    "gbv_momentum",
+    "ntto_arrivals",
+    "reviews_stays",
+    "hotel_revpar",
+    "calendar_pickup"
+  ],
+  "min_train": 4,
+  "pass_line": "A feature earns a place only if it beats the ledger baseline (RNPL-corrected unearned fees) on GBV on BOTH windows with a stable coefficient sign. Report everything that did not, with ratios.",
+  "note_sha256_before_results": "e15b2c5b6bdc379b2c404abe937f6fa1d00cc0d0e17934c0f3db9a4444e059c7"
+}

@@ -1,0 +1,36 @@
+{
+  "verdict": "underpowered",
+  "annual_measured_cells": 24,
+  "annual_ratio_max_error_pp": 1.7763568394002505e-15,
+  "quarterly_exact_cells": 72,
+  "reconstructed_cells": 72,
+  "reconciliation_quarters": 18,
+  "max_reconciliation_error_pct": 0.0,
+  "measured_airbnb_od_cells": 0,
+  "pit_w1_cells": 0,
+  "pit_w2_cells": 0,
+  "b4_superseded": false,
+  "rscript_available": false,
+  "runtime_seconds": 22.794854899984784,
+  "proposed_memo_sentence": "The regional FX reconstruction does not yet justify replacing B4: no measured Airbnb origin\u2013destination currency matrix is identified, and the current reconstruction has 0/14 W1 and 0/10 W2 point-in-time guide observations."
+}
+ guest_fee_share quarter  revenue_scenario_musd  gross_fx_contribution_pp  after_hedge_fx_contribution_pp
+        0.000000  2026Q3            4754.681582                  3.591691                        3.381691
+        0.000000  2026Q4            3248.302648                  1.669897                        1.459897
+        0.500000  2026Q3            4754.681582                  3.878589                        3.668589
+        0.500000  2026Q4            3248.302648                  1.789933                        1.579933
+        0.824561  2026Q3            4754.681582                  4.057363                        3.847363
+        0.824561  2026Q4            3248.302648                  1.862502                        1.652502
+   scale  scale_ci_lo  scale_ci_hi    sd_pp  n  n_params                                            beta       nll                                                                         ci_basis  ci_hits_upper_grid  guest_fee_share window                driver_basis  mean_assumed_non_usd_share                                                                             basis
+0.528449        0.400        0.675 0.950916 14         4   [0.2714947708945793, 0.2569542155309089, 0.0] 19.788608 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.000000     W1           nonUSD_normalized                    0.562857 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.930758        0.700        1.200 0.976127 14         4  [0.46267911244127824, 0.4680786798117195, 0.0] 20.124863 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.000000     W1 USD_inclusive_comparable_B4                    0.562857 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.446399        0.325        0.600 0.763151 10         4  [0.18838618751696612, 0.2580124540763811, 0.0] 12.162528 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.000000     W2           nonUSD_normalized                    0.570780 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.780683        0.560        1.050 0.746303 10         4 [0.31853019231456664, 0.46215282069301084, 0.0] 11.971050 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.000000     W2 USD_inclusive_comparable_B4                    0.570780 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.535060        0.400        0.700 1.004091 14         4  [0.2861537096621474, 0.24890581695968758, 0.0] 20.490008 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.500000     W1           nonUSD_normalized                    0.606122 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.878623        0.650        1.150 1.016734 14         4   [0.4602614710418813, 0.4183619897967435, 0.0] 20.651680 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.500000     W1 USD_inclusive_comparable_B4                    0.606122 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.446857        0.325        0.600 0.845087 10         4  [0.2164738231914188, 0.23038347120542374, 0.0] 13.067292 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.500000     W2           nonUSD_normalized                    0.612168 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.731120        0.500        1.000 0.830037 10         4   [0.3470836325167624, 0.3840359180159058, 0.0] 12.907041 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.500000     W2 USD_inclusive_comparable_B4                    0.612168 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.534372        0.400        0.700 1.053753 14         4 [0.29336020950092606, 0.24101162511026755, 0.0] 21.115637 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.824561     W1           nonUSD_normalized                    0.634207 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.839563        0.625        1.125 1.062202 14         4  [0.4542334493880358, 0.38532994093497264, 0.0] 21.219335 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.824561     W1 USD_inclusive_comparable_B4                    0.634207 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.442504        0.300        0.600 0.906303 10         4 [0.23158282117282097, 0.21092135101115103, 0.0] 13.697254 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.824561     W2           nonUSD_normalized                    0.639034 retrospective; current weights on past outcomes; NOT historical forecast accuracy
+0.693696        0.475        0.950 0.894953 10         4 [0.35788319612086733, 0.33581234686156514, 0.0] 13.582958 95% profile likelihood grid; retrospective; not exposure-measurement uncertainty               False         0.824561     W2 USD_inclusive_comparable_B4                    0.639034 retrospective; current weights on past outcomes; NOT historical forecast accuracy

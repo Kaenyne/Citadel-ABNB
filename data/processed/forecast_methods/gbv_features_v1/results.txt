@@ -1,0 +1,33 @@
+No features promoted. Required RNPL-adjusted ledger baseline: no baseline exists on W1 or W2.
+
+Every ratio below is a separate raw-unearned-fees diagnostic; it cannot satisfy the pass line.
+
+                feature  target window  n     rmse  raw_ledger_diagnostic_n  raw_ledger_diagnostic_ratio  stable_sign
+rnpl_corrected_unearned gbv_yoy     W1  0      NaN                        0                          NaN        False
+rnpl_corrected_unearned gbv_yoy     W2  0      NaN                        0                          NaN        False
+rnpl_corrected_unearned  R_musd     W1  0      NaN                        0                          NaN        False
+rnpl_corrected_unearned  R_musd     W2  0      NaN                        0                          NaN        False
+           funds_growth gbv_yoy     W1  3   6.4651                        3                       3.1371        False
+           funds_growth gbv_yoy     W2  3   6.4651                        3                       3.1371        False
+           funds_growth  R_musd     W1  3 118.6228                        3                       0.6077        False
+           funds_growth  R_musd     W2  3 118.6228                        3                       0.6077        False
+           gbv_momentum gbv_yoy     W1 13   9.5767                        3                       1.5444        False
+           gbv_momentum gbv_yoy     W2 10   5.5577                        3                       1.5444         True
+           gbv_momentum  R_musd     W1 13 283.2193                        3                       0.9067        False
+           gbv_momentum  R_musd     W2 10 264.2953                        3                       0.9067         True
+          ntto_arrivals gbv_yoy     W1  0      NaN                        0                          NaN        False
+          ntto_arrivals gbv_yoy     W2  0      NaN                        0                          NaN        False
+          ntto_arrivals  R_musd     W1  0      NaN                        0                          NaN        False
+          ntto_arrivals  R_musd     W2  0      NaN                        0                          NaN        False
+          reviews_stays gbv_yoy     W1  0      NaN                        0                          NaN        False
+          reviews_stays gbv_yoy     W2  0      NaN                        0                          NaN        False
+          reviews_stays  R_musd     W1  0      NaN                        0                          NaN        False
+          reviews_stays  R_musd     W2  0      NaN                        0                          NaN        False
+           hotel_revpar gbv_yoy     W1 14   5.7119                        3                       3.7089         True
+           hotel_revpar gbv_yoy     W2 10   5.0861                        3                       3.7089         True
+           hotel_revpar  R_musd     W1 14 264.2065                        3                       0.7625         True
+           hotel_revpar  R_musd     W2 10 242.4810                        3                       0.7625         True
+        calendar_pickup gbv_yoy     W1  0      NaN                        0                          NaN        False
+        calendar_pickup gbv_yoy     W2  0      NaN                        0                          NaN        False
+        calendar_pickup  R_musd     W1  0      NaN                        0                          NaN        False
+        calendar_pickup  R_musd     W2  0      NaN                        0                          NaN        False
