@@ -1,0 +1,34 @@
+{
+  "calendar": {
+    "path": "data\\processed\\forecast_methods\\harness\\calendar.csv",
+    "sha256": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2"
+  },
+  "targets": {
+    "path": "data\\processed\\forecast_methods\\harness\\targets.csv",
+    "sha256": "6b7e98b22f1064b1b79d2899790e21f45f745aefb3ebe7a1016cfb213e4ee4d2"
+  },
+  "vintages": {
+    "path": "data\\processed\\forecast_methods\\L0\\L0_vintage_register.csv",
+    "sha256": "199904b04ee4286644b7d2c36f5f9f53f401ff2e2c4ae908ab099125f2de727d"
+  },
+  "fy": {
+    "path": "data\\processed\\overnight\\02_fy_guide_revisions.csv",
+    "sha256": "eabcd118fc428559cee78ad63090c2015f53cf29fd9e268e7754fbbc136776fd"
+  },
+  "guidance": {
+    "path": "data\\processed\\overnight\\02_guidance_ledger.csv",
+    "sha256": "c1a2b34330dc6655c549cbe7cab66adabcaaffcffc4441c833c726714d8267f2"
+  },
+  "consensus": {
+    "path": "data\\processed\\overnight\\16_consensus_at_print_merged.csv",
+    "sha256": "b4f19f66cac431b31cdc6c5e7ae31d63527ac5f0de517d7e6f70148f9e8d961d"
+  },
+  "returns": {
+    "path": "data\\processed\\forecast_methods\\returns_v1\\earnings_reactions_open_v1.csv",
+    "sha256": "11347775f5190c3496a7533d65f55ad8738e43df94ed9494b77697589a149c02"
+  },
+  "kernel": {
+    "path": "analysis\\src\\forecast_methods\\kernel_engine_v2\\engine.py",
+    "sha256": "328431c5f9379e6d4ae7e9c5d01212ee1bcd550b02c3c9783b85851e3e9a3279"
+  }
+}

@@ -1,0 +1,13 @@
+2026-09-13; agent sub-F; codex/lane2-full
+python -m pytest analysis/src/forecast_methods/rnpl_v2/tests -q
+Final result: exit 0; 12 passed in 1.34s pytest time; 2.31s wall time.
+
+python analysis/src/forecast_methods/rnpl_v2/run.py --as-of 2026-09-13 --register
+Result: exit 0; 8.98s wall time; registered 12 LIVE rows to rnpl-v2__revenue_next_q.csv.
+
+python analysis/src/forecast_methods/rnpl_v2/run.py --as-of 2026-09-13
+Final evidence-enabled rebuild: exit 0; 5.21s wall time; six exact primary-filing sentences verified;
+six scenario rows; 12 registry-preview rows; zero historical rows; excess headline acceptance false.
+
+Visual inspection: lambda_control_chart.png opened and checked for readable labels and seasonal panels.
+Scorers/frozen tests: not run by sub-F; parent owns CLOSE checks.

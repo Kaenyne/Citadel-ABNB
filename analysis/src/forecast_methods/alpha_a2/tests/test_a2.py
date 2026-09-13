@@ -111,3 +111,36 @@ def test_cushion_conditional_quantiles_are_ordered_and_auditable():
     assert q["q05"] > 100*1.02/1.03 and q["q95"] < 100*1.02/1.01
     with pytest.raises(ValueError):
         a.cushion_only_quantiles(100, [0])
+
+
+def live_row(register_id, stamp, vendor="Yahoo Finance (LSEG family)", **overrides):
+    return dict(period="2026Q4", role="current", metric="revenue", value=3161.,
+                as_of_timestamp=stamp, pit_usable=True, vendor_attributed=True,
+                vendor=vendor, register_id=register_id, **overrides)
+
+
+def test_live_mixed_date_and_utc_captures_use_actual_time():
+    rows = pd.DataFrame([
+        live_row("alpha_old", "2026-09-11", "Alpha Vantage (aggregated sell-side panel)"),
+        live_row("same_day", "2026-09-13T15:20Z"),
+        live_row("future_same_day", "2026-09-13T18:00:00Z"),
+        live_row("future_date", "2026-09-14"),
+        live_row("zacks_date", "2026-09-13", "Zacks"),
+        live_row("sp_full_utc", "2026-09-13T15:10:22Z", "S&P Global Market Intelligence"),
+    ])
+    chosen = a.select_live_consensus(rows, "2026-09-13T17:15:00Z")
+    assert set(chosen.register_id) == {"same_day", "zacks_date", "sp_full_utc"}
+    before_capture = a.select_live_consensus(rows, "2026-09-13T15:00:00Z")
+    assert set(before_capture.register_id) == {"alpha_old", "zacks_date"}
+
+
+def test_live_offset_ordering_and_cutoff_boundary():
+    rows = pd.DataFrame([
+        live_row("same_instant_z", "2026-09-13T16:00:00Z"),
+        live_row("newer_offset", "2026-09-13T12:30:00-04:00"),
+        live_row("future_one_second", "2026-09-13T16:30:01Z"),
+        live_row("invalid_stamp", "not-a-date"),
+    ])
+    chosen = a.select_live_consensus(rows, "2026-09-13T16:30:00Z")
+    assert chosen.register_id.tolist() == ["newer_offset"]
+    assert chosen.stamp_utc.iloc[0] == pd.Timestamp("2026-09-13T16:30:00Z")

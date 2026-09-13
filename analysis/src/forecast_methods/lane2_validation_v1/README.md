@@ -13,3 +13,14 @@ The wrapper calls the actual existing frozen and FORMAT 1.1 scorer `main()` func
 Every original scoreboard row must remain present. Text, booleans, integers, keys and missingness match exactly; floating metrics differ by strictly less than 1e-9 absolute, with zero relative tolerance, following the committed FORMAT 1.1 equivalence test. Frozen file hashes must match before/after, including on failures. New method rows are allowed after packages register, but old rows cannot disappear. Original failure receipts remain in LANE2_RUN_LOG.md; the correction and preregistration are in LANE2_RUN_LOG_v2.md.
 
 Outputs: per-stage scorer CSVs/Markdown/stdout, test receipts, rebuilt returns, frozen-file SHA-256 manifests and summary.json. A failed run preserves an explicit FAIL summary. Use a new stage name to preserve an earlier stage's outputs.
+
+Independent read-only package audits (from the same repository root):
+
+```sh
+python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_a2.py
+python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_f.py
+python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_b2.py --run data/processed/forecast_methods/alpha_b2/run_20260913T170857_364592Z
+python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_lane.py --backup data/processed/forecast_methods/L0/backups/L0_vintage_register_20260913T151840Z.csv --stage integration_recheck
+```
+
+The A2/B2 checks recompute source-linked guide values, consensus revisions, sample statistics and executable return cells. F recomputes stock from raw GBV and frozen phi plus six scenario identities. The lane audit enforces M's byte-preserving append, compares its backup with pre-lane Git content under Git's CRLF/LF normalization, validates LIVE rows with the existing API, and exports both the full LIVE inventory and FORMAT 1.1 subset. These checks establish reproducibility and data handling; they do not turn failed research hypotheses into passes.

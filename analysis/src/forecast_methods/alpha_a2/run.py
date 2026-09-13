@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -311,26 +312,42 @@ def evaluate(cells):
     return pd.DataFrame(statistics), pd.DataFrame(returns), pd.DataFrame(controls), pd.DataFrame(ridge)
 
 
-def live_scenarios(register):
+def select_live_consensus(register, as_of_utc):
+    """Select latest usable current panels through an actual UTC instant.
+
+    Date-only source stamps represent the start of their stated UTC date for
+    ordering. Explicit timestamps preserve time and offsets; future captures
+    are excluded before panel deduplication.
+    """
+    cutoff = pd.Timestamp(as_of_utc)
+    if pd.isna(cutoff):
+        raise ValueError("Live consensus selection requires a valid cutoff")
+    cutoff = cutoff.tz_localize("UTC") if cutoff.tzinfo is None else cutoff.tz_convert("UTC")
+    rows = register[(register.role=="current") & (register.period=="2026Q4") & (register.metric=="revenue")].copy()
+    rows = rows[rows.pit_usable.map(truth) & rows.vendor_attributed.map(truth)]
+    rows["stamp_utc"] = pd.to_datetime(rows.as_of_timestamp, format="mixed", utc=True, errors="coerce")
+    rows = rows[rows.stamp_utc.notna() & (rows.stamp_utc <= cutoff)]
+    family = lambda v: "LSEG-family" if "Alpha Vantage" in v or "Yahoo" in v or "LSEG" in v else "S&P" if "S&P" in v else "Zacks" if "Zacks" in v else v
+    rows["vendor_family"] = rows.vendor.map(family)
+    rows["preference"] = rows.vendor.str.contains("Alpha Vantage").astype(int)
+    chosen = rows.sort_values(["stamp_utc", "preference", "register_id"]).groupby("vendor_family", sort=True).tail(1)
+    return chosen[chosen.vendor_family.isin(["LSEG-family", "S&P", "Zacks"])].copy()
+
+
+def live_scenarios(register, as_of_utc=None):
+    cutoff = pd.Timestamp(as_of_utc if as_of_utc is not None else datetime.now(timezone.utc))
+    chosen = select_live_consensus(register, cutoff)
     term = K.term_structure(str(RUN_DATE))
     f = term[term.quarter == "2026Q4"].iloc[0]
     if f.status != "conditional_scenario":
         raise ValueError("Expected explicitly conditional Q4 live scenario")
-    rows = register[(register.role=="current") & (register.period=="2026Q4") & (register.metric=="revenue")].copy()
-    rows = rows[rows.pit_usable.map(truth) & rows.vendor_attributed.map(truth)]
-    rows = rows[pd.to_datetime(rows.as_of_timestamp) <= pd.Timestamp(RUN_DATE)]
-    family = lambda v: "LSEG-family" if "Alpha Vantage" in v or "Yahoo" in v or "LSEG" in v else "S&P" if "S&P" in v else "Zacks" if "Zacks" in v else v
-    rows["vendor_family"] = rows.vendor.map(family)
-    rows["preference"] = rows.vendor.str.contains("Alpha Vantage").astype(int)
-    chosen = rows.sort_values(["as_of_timestamp", "preference"]).groupby("vendor_family", sort=True).tail(1)
-    chosen = chosen[chosen.vendor_family.isin(["LSEG-family", "S&P", "Zacks"])]
     out = []
     for r in chosen.itertuples():
         row = dict(quarter="2026Q4", vintage_date=str(RUN_DATE), event_date="2026-11-05", scenario=True,
                    vendor_family=r.vendor_family, street_vendor=r.vendor, street_as_of=r.as_of_timestamp,
                    register_id=r.register_id, consensus_musd=r.value, kernel_guide_musd=f.guide_mid_musd,
                    signal_pct=100*(f.guide_mid_musd/r.value-1), n_train=int(f.n_train),
-                   status=f.status, caveat=f.caveat)
+                   status=f.status, caveat=f.caveat, comparison_as_of_utc=cutoff.isoformat())
         for q in QCOLS:
             row[q] = f.get("guide_"+q, np.nan)
         out.append(row)
@@ -399,6 +416,7 @@ def reconcile(cells, data):
 
 def run(register=True):
     start = time.perf_counter()
+    run_started_utc = datetime.now(timezone.utc).isoformat()
     OUT.mkdir(parents=True, exist_ok=True)
     data = {key:pd.read_csv(ROOT/path, comment="#") for key,path in INPUTS.items() if path.endswith(".csv")}
     cells, fixed_variant = build_cells(data)
@@ -406,7 +424,7 @@ def run(register=True):
     stats, returns, controls, ridge = evaluate(cells)
     for frame, name in ((stats,"statistics"),(returns,"conditional_returns"),(controls,"controls"),(ridge,"ridge_expanding")):
         frame.to_csv(OUT/(name+".csv"), index=False)
-    live = live_scenarios(data["vintages"])
+    live = live_scenarios(data["vintages"], as_of_utc=run_started_utc)
     live.to_csv(OUT/"live_november_guide_scenario.csv", index=False)
     reconcile(cells, data).to_csv(OUT/"lane1_reconciliation.csv", index=False)
     make_figure(cells)
@@ -415,7 +433,7 @@ def run(register=True):
     clean.to_csv(OUT/"registry_preview.csv", index=False)
     registry_path = R.register(reg) if register else None
     hashes = {p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in INPUTS.values()}
-    audit = dict(run_date=str(RUN_DATE), seed=SEED, runtime_seconds=time.perf_counter()-start,
+    audit = dict(run_date=str(RUN_DATE), run_started_utc=run_started_utc, seed=SEED, runtime_seconds=time.perf_counter()-start,
                  fixed_full_sample_variant=fixed_variant, register_rows=len(reg),
                  registry_path=str(registry_path), inputs_sha256=hashes,
                  notes="Only PIT default enters verdict; full_sample uses retrospective variant choice with PIT coefficients; scorers owned by parent")

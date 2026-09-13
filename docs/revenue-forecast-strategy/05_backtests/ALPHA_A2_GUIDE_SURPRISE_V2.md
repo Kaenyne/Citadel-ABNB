@@ -27,6 +27,8 @@ python analysis/src/forecast_methods/alpha_a2/run.py
 
 The initial 13 tests passed, exit 0, 1.75 seconds. The final reviewed **14 tests passed**, exit 0, 2.27 seconds. The complete reviewed rebuild and registration exited **0 in 25.741 seconds**, creating 48 rows under the new method `alpha-a2__guide_mid_next_q`. The first successful build took 23.770 seconds; the provenance-output build took 24.611 seconds; both receipts remain preserved. The first rebuild failed at registration because K0 returned null quantiles for one-observation lambda histories; that failure is preserved in `run_receipt_initial.txt`. The local adapter correction and its limits are explained below. Final receipts are `test_receipt_reviewed.txt`, `run_receipt_reviewed.txt` and `audit.json`; the latter hashes every package input, including K0's own dependencies. Neither scorer was run by this subagent; the parent owns CLOSE and both scorer receipts.
 
+After M appended new current consensus, the integration rebuild exposed a mixed-timestamp parser bug. The final integration fix passes **16 tests**, exit 0, 2.29 seconds, and rebuilds/registers in **21.170 seconds**, exit 0. Its receipts are `test_receipt_after_m.txt`, `run_receipt_after_m.txt`, `after_m_rebuild_comparison.json` and the refreshed `audit.json`. Historical statistics and registry bytes are unchanged; the current LSEG-family comparison is updated below. The initial evidence is preserved in a dated copy.
+
 All kernel estimates come from imported `kernel_engine_v2.engine`. No lambda formula was independently estimated. Calls use `as_of=d+1 calendar day` and check `knowable_from<=d`, then register the historical vintage as `d`. The full-sample replay fixes the **ewm** variant selected on the full available history but refits lambda and cushion using each historical information set. Its specification choice is retrospective and never enters the verdict. The separate ex-COVID replay happens to equal the nested default at every historical origin in this sample.
 
 ## Results — PIT default
@@ -115,11 +117,11 @@ The forecast vintage is **2026-09-13**, for the Q4 guide expected on 5 November.
 
 | Independent panel (one observation each, n=1) | Vendor and stamp | Consensus (USD m) | S = K/C−1 |
 |---|---|---:|---:|
-| LSEG family | Alpha Vantage aggregated sell-side; 2026-09-11 | 3,158 | +0.0072% |
+| LSEG family | Yahoo Finance (LSEG family); 2026-09-13T15:20Z | 3,161.02149 | −0.0883742% |
 | S&P | S&P Global Market Intelligence via StockAnalysis; 2026-09-10 | 3,160 | −0.0561% |
 | Zacks | Zacks; 2026-09-11 | 3,200 | −1.3054% |
 
-Yahoo is the same LSEG family and is not counted again. Exact register IDs and stamps are in `live_november_guide_scenario.csv`. The model's guide dollars are independent of the consensus denominator, so the registry has one live row per replay rather than three copies of the same forecast. The live comparison crosses the 1pp signal cutoff only against Zacks; the historical trade test does not validate trading that scenario.
+The current comparison uses information captured through **2026-09-13T17:16:21.504563Z**, the actual UTC start of the integration rebuild. The newer Yahoo observation replaces Alpha Vantage's 2026-09-11 $3,158 million comparison (+0.0072%); both belong to the same LSEG family and are counted once. The new source is `CU-2026Q4-revenue-Yahoo-20260913T1520Z`, captured by M at 15:20:58Z and registered with the minute stamp 15:20Z. Exact register IDs and stamps are in `live_november_guide_scenario.csv`. The model's guide dollars are independent of the consensus denominator, so the registry has one live row per replay rather than three copies of the same forecast. The live comparison crosses the 1pp signal cutoff only against Zacks; the historical trade test does not validate trading that scenario.
 
 ## What failed or could not be done
 
@@ -136,6 +138,16 @@ Parameter count: the historical point has one target-season lambda and one trail
 Suggested memo sentence: **“At letter-close vintages, the kernel agrees with the guide-gap sign in 7/8 W1 and 6/7 W2 cases with |S|>1pp, but the executable next-open 20-day return test does not establish a trading edge.”**
 
 The economical conclusion is a partially supported mechanism and an unproven trade. The pass-control sign condition is too weak to establish favorable direction when the starting correlation is negative. No return alpha, causal effect, before-release forecast performance, adopted direction or target price follows from this package. The next empirical improvement is genuinely pre-release GBV availability and a larger independent vintage sample, not relaxation of the existing exclusions.
+
+## Integration fix after M — mixed current timestamps
+
+M's authorized register append introduced UTC-minute timestamps alongside older date-only timestamps. The parent's preserved failure receipt is `data/processed/forecast_methods/lane2_validation_v1/a2_after_m_failure.txt`: pandas inferred a date-only parser and rejected `2026-09-13T15:20Z`. The old midnight cutoff would also have excluded valid same-day captures even if parsing succeeded.
+
+The live selector now explicitly parses mixed timestamps in UTC, sorts actual normalized instants, excludes captures after the actual UTC run-start cutoff, then selects the newest observation within each independent vendor family. Date-only stamps are ordered at the start of their stated UTC date. The cutoff is recorded in both the live table and audit. Focused tests cover date-only/full UTC coexistence, same-day inclusion, same-day and next-day future exclusions, offset ordering, an exact cutoff boundary and invalid timestamps. Historical selection and all backtest logic are unchanged.
+
+Before rebuilding, 19 existing evidence files, including the live table, original note, audit, history tables and registry, were copied into `data/processed/forecast_methods/alpha_a2/pre_m_refresh_20260913T171409Z/`, with a SHA-256 manifest. The stable L0 register contains 171 rows. After the fix, the LSEG-family denominator changes from **$3,158m (Alpha Vantage, Sep 11)** to **$3,161.02149m (Yahoo, Sep 13 15:20Z)**, moving S from **+0.007218571615%** to **−0.088374201733%**. The $3,158.227962m kernel guide, S&P comparison and Zacks comparison are unchanged.
+
+The historical cells, statistics, conditional returns, controls, ridge forecasts, Lane-1 reconciliation and registry preview are all byte-for-byte identical to the saved evidence. The **48-row registry is byte-for-byte unchanged**, SHA-256 `0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0`. The exact proposed memo sentence is unchanged. `after_m_rebuild_comparison.json` records these checks and both live tables. Neither scorer was run during this fix.
 
 ## RESUME
 

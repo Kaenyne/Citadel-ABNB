@@ -1,0 +1,21 @@
+C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\alpha_a2\run.py:434: UserWarning: !  COVERAGE: alpha-a2/guide_mid_next_q guide_mid W1 PIT covers 12 quarters, expected 14.
+  registry_path = R.register(reg) if register else None
+!  COVERAGE: alpha-a2/guide_mid_next_q guide_mid W1 PIT covers 12 quarters, expected 14.
+registered   48 rows -> alpha-a2__guide_mid_next_q.csv
+variant window  n_candidates  n_consensus  n_kernel  n_evaluable  n_high  n_scored  n_ambiguous  hits  hit_rate  wilson95_lo  wilson95_hi  permutation_p  corr_signal_gap  corr95_lo  corr95_hi  n_finite_corr_draws  n_return20  signed_return20_mean  signed_return20_90lo  signed_return20_90hi  n_pass_control  control_raw_corr  pass_partial_corr control_status  condition1  condition2  condition3  condition3_numerical_sign_kept  condition3_status  n_pass_control_vendor_unrecorded verdict
+default     W1            14           13        12           11       8         8            0     7  0.875000     0.529112     0.977583         0.0687         0.676803  -0.229511   0.911421                 2000           8             -0.307680             -3.706978              3.423700               6         -0.069129          -0.538118      available        True       False       False                            True provenance_limited                                 6 partial
+default     W2            10            9        10            9       7         7            0     6  0.857143     0.486872     0.974320         0.1428         0.654747  -0.415799   0.915643                 2000           7             -0.983347             -4.228847              2.452963               6         -0.069129          -0.538118      available        True       False       False                            True provenance_limited                                 6 partial
+vendor_family      street_as_of  consensus_musd  kernel_guide_musd  signal_pct
+          S&P        2026-09-10      3160.00000        3158.227962   -0.056077
+        Zacks        2026-09-11      3200.00000        3158.227962   -1.305376
+  LSEG-family 2026-09-13T15:20Z      3161.02149        3158.227962   -0.088374
+{
+  "run_date": "2026-09-13",
+  "run_started_utc": "2026-09-13T17:16:21.504563+00:00",
+  "seed": 20260913,
+  "runtime_seconds": 21.170214400044642,
+  "fixed_full_sample_variant": "ewm",
+  "register_rows": 48,
+  "registry_path": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\processed\\forecast_methods\\registry\\alpha-a2__guide_mid_next_q.csv",
+  "notes": "Only PIT default enters verdict; full_sample uses retrospective variant choice with PIT coefficients; scorers owned by parent"
+}
