@@ -38,14 +38,14 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 04 | External / alt-data signals for each cost line (archives, third-party public, macro) | fable | - | done | 23:55 | notes/04_alt_signals.md | 00:35 |
 | 05 | Management statements v2 (all events incl. conferences) and 5 Nov guide-language pattern | fable | - | done | 00:15 | notes/05_mgmt_statements_v2.md | 04:30 |
 | 06 | FY27 quarterly revenue path v2: audit and fix PR #32 lap on real quarters, reconcile to bridge v3 exit and WS29 | fable | - | done | 00:20 | notes/06_fy27_path_v2.md | 04:45 |
-| 06v | Independent check of 06 (arithmetic, PIT, reconciliation); writes corrections into 06's folder as `_v2b` if needed | fable | 06 | running | 04:45 | notes/06v_fy27_path_check.md | 04:45 |
+| 06v | Independent check of 06 (arithmetic, PIT, reconciliation); writes corrections into 06's folder as `_v2b` if needed | fable | 06 | done | 04:45 | notes/06v_fy27_path_check.md | 05:35 |
 | 10 | Margin harness: targets panel, baselines, recency-weighted scorer, registry (imports frozen harness calendar/validator) | fable | 02, 03 | done | 00:35 | notes/10_harness_margin.md | 05:15 |
 | M1 | Driver-based cost lines v2 (per-unit costs on nights, GBV, ADR, regional mix, seats, FX), PIT refits | fable | 10, 01 | running | 05:15 | notes/M1_driver_lines.md | 05:15 |
 | M2 | Time-series and ratio methods (seasonal margin, incremental margin, % of revenue with drift) + baselines | fable | 10 | running | 05:15 | notes/M2_margin_ts.md | 05:15 |
 | M3 | Guidance-policy model: FY floor + cushion, Q4-implied margin, language pattern; forecasts the guide and the actual given the guide | fable | 10, 05 | pending | | notes/M3_guide_policy_margin.md | |
 | M4 | Alt-data-augmented line model (headcount, ads, support, payments, rates), incremental value vs M1 | fable | 10, 04, M1 | pending | | notes/M4_alt_augmented.md | |
 | M5 | Consensus-anchored model: Street EBITDA at guide date + systematic bias and revenue-surprise flow-through | fable | 10, 03 | pending | | notes/M5_street_bias.md | |
-| M6 | Cycle and cost-flex model: cost response to growth deceleration; scenario engine over bear/base/bull revenue paths | fable | 10, 06v | pending | | notes/M6_cycle_flex.md | |
+| M6 | Cycle and cost-flex model: cost response to growth deceleration; scenario engine over bear/base/bull revenue paths | fable | 10, 06v | running | 05:35 | notes/M6_cycle_flex.md | 05:35 |
 | M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | fable | 10 | running | 05:15 | notes/M7_below_ebitda.md | 05:15 |
 | 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | fable | M1-M7 | pending | | notes/20_scoreboard.md | |
 | 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | fable | M1-M7 | pending | | notes/21_red_team.md | |
@@ -56,6 +56,8 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | fable + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 05:35 WS06v done: PASS WITH CORRECTIONS (independent FY27 $15,797M +10.71% vs WS06 $15,829M; all diffs are named judgement calls; one MEDIUM fix: 3Q26 bear/bull revenue was base in all scenarios -> v2b sets $4,755M/$4,878M). Margin model reads 06_fy27_path_v2/06_revenue_path_3q26_4q27_v2b.csv (copied in by orchestrator). Open decision for Krish: stacked ex-NA deceleration (base) vs no-2027-lap (+11.9%). M6 launched.
 
 - 14 Sep 05:15 WS10 done (margin harness; 7 baselines x 14/10 dates; seasonal naive MAE 2.24/1.96pp; Street hardest 1.59/1.31pp, bias -1.2pp, only object surviving both windows; quarterly-sentence direction rule 13/14 right, flagged for a method; LIVE vintage 2026-09-11). Stage 2 launched: M1, M2, M7 (06v still running).
 

@@ -1,0 +1,1131 @@
+vintage_date,object,spec_id,prior_basis,params
+2021-11-04,yoy_margin_change,k4_rw,PIT,delta=58.39; n_params=2
+2021-11-04,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2021-11-04,yoy_margin_change,k2_rw,PIT,delta=68.11; n_params=2
+2021-11-04,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2021-11-04,yoy_margin_change,k4_ew,PIT,delta=59.99; n_params=2
+2021-11-04,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2021-11-04,yoy_margin_change,k2_ew,PIT,delta=73.43; n_params=2
+2021-11-04,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2021-11-04,yoy_margin_change,k4_rw_shrink50,PIT,delta=29.2; n_params=3
+2021-11-04,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2021-11-04,incremental_margin,k4_rw,PIT,m=0.6448; n_params=2
+2021-11-04,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2021-11-04,incremental_margin,k8_rw,PIT,m=0.6448; n_params=2
+2021-11-04,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2021-11-04,incremental_margin,k4_ew,PIT,m=0.6425; n_params=2
+2021-11-04,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2021-11-04,incremental_margin,k8_ew,PIT,m=0.6425; n_params=2
+2021-11-04,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2021-11-04,incremental_margin,k8_median,PIT,m=0.6425; n_params=2
+2021-11-04,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2021-11-04,incremental_margin,k4_rw_revknown,PIT,m=0.6448; n_params=2
+2021-11-04,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2021-11-04,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-10.99, ops:-13.79, pd:-17.19, sm:-6.174, ga:-12.2}; n_params=6"
+2021-11-04,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2021-11-04,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-11.14, ops:-14.12, pd:-17.23, sm:-7.208, ga:-12.17}; n_params=6"
+2021-11-04,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2021-11-04,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-10.99, ops:-13.79, pd:-17.19, sm:-6.174, ga:-12.2}; n_params=6"
+2021-11-04,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2021-11-04,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2021-11-04,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2021-11-04,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-10.99, ops:-13.79, pd:-17.19, sm:-6.174, ga:-12.2}; n_params=6"
+2021-11-04,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2021-11-04,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.1543, ops:-0.2706, pd:-0.3195, sm:0.1801, ga:-0.3609}; n_params=6"
+2021-11-04,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2021-11-04,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.1698, ops:-0.2906, pd:-0.323, sm:0.106, ga:-0.3605}; n_params=6"
+2021-11-04,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2021-11-04,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.1543, ops:-0.2706, pd:-0.3195, sm:0.1801, ga:-0.3609}; n_params=6"
+2021-11-04,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2021-11-04,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2021-11-04,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2021-11-04,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.1543, ops:-0.2706, pd:-0.3195, sm:0.1801, ga:-0.3609}; n_params=6"
+2021-11-04,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2021-11-04,q_sentence_direction,k_fit_rw,PIT,k=nan; pool_n=0; n_params=1
+2021-11-04,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2021-11-04,q_sentence_direction,k_fit_ew,PIT,k=nan; pool_n=0; n_params=1
+2021-11-04,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2021-11-04,q_sentence_direction,k_fit_median,PIT,k=nan; pool_n=0; n_params=1
+2021-11-04,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2021-11-04,q_sentence_direction,k_abs_rw,PIT,k=58.39; pool_n=3; n_params=1
+2021-11-04,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2022-02-15,yoy_margin_change,k4_rw,PIT,delta=47.49; n_params=2
+2022-02-15,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2022-02-15,yoy_margin_change,k2_rw,PIT,delta=18.52; n_params=2
+2022-02-15,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2022-02-15,yoy_margin_change,k4_ew,PIT,delta=51.02; n_params=2
+2022-02-15,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2022-02-15,yoy_margin_change,k2_ew,PIT,delta=17.99; n_params=2
+2022-02-15,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2022-02-15,yoy_margin_change,k4_rw_shrink50,PIT,delta=23.74; n_params=3
+2022-02-15,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2022-02-15,incremental_margin,k4_rw,PIT,m=0.5978; n_params=2
+2022-02-15,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2022-02-15,incremental_margin,k8_rw,PIT,m=0.5978; n_params=2
+2022-02-15,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2022-02-15,incremental_margin,k4_ew,PIT,m=0.6033; n_params=2
+2022-02-15,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2022-02-15,incremental_margin,k8_ew,PIT,m=0.6033; n_params=2
+2022-02-15,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2022-02-15,incremental_margin,k8_median,PIT,m=0.615; n_params=2
+2022-02-15,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2022-02-15,incremental_margin,k4_rw_revknown,PIT,m=0.5978; n_params=2
+2022-02-15,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2022-02-15,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-9.123, ops:-11.95, pd:-15.87, sm:-5.121, ga:-12.52}; n_params=6"
+2022-02-15,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-02-15,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-9.635, ops:-12.59, pd:-16.18, sm:-6.123, ga:-12.42}; n_params=6"
+2022-02-15,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2022-02-15,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-9.123, ops:-11.95, pd:-15.87, sm:-5.121, ga:-12.52}; n_params=6"
+2022-02-15,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2022-02-15,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-02-15,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-02-15,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-9.123, ops:-11.95, pd:-15.87, sm:-5.121, ga:-12.52}; n_params=6"
+2022-02-15,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-02-15,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.1407, ops:-0.2751, pd:-0.3402, sm:0.1199, ga:-0.4085}; n_params=6"
+2022-02-15,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-02-15,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.1552, ops:-0.2891, pd:-0.3384, sm:0.07721, ga:-0.3979}; n_params=6"
+2022-02-15,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2022-02-15,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.1407, ops:-0.2751, pd:-0.3402, sm:0.1199, ga:-0.4085}; n_params=6"
+2022-02-15,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2022-02-15,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-02-15,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-02-15,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.1407, ops:-0.2751, pd:-0.3402, sm:0.1199, ga:-0.4085}; n_params=6"
+2022-02-15,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-02-15,q_sentence_direction,k_fit_rw,PIT,k=nan; pool_n=0; n_params=1
+2022-02-15,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2022-02-15,q_sentence_direction,k_fit_ew,PIT,k=nan; pool_n=0; n_params=1
+2022-02-15,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2022-02-15,q_sentence_direction,k_fit_median,PIT,k=nan; pool_n=0; n_params=1
+2022-02-15,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2022-02-15,q_sentence_direction,k_abs_rw,PIT,k=47.49; pool_n=4; n_params=1
+2022-02-15,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2022-02-15,sarima_margin,margin_aicc,PIT,margin=None; n_params=0
+2022-02-15,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2022-02-15,sarima_margin,lines_aicc,PIT,cor=None; ops=None; pd=None; sm=None; ga=None; n_params=0
+2022-02-15,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2022-05-03,yoy_margin_change,k4_rw,PIT,delta=41.6; n_params=2
+2022-05-03,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2022-05-03,yoy_margin_change,k2_rw,PIT,delta=22.85; n_params=2
+2022-05-03,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2022-05-03,yoy_margin_change,k4_ew,PIT,delta=48.19; n_params=2
+2022-05-03,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2022-05-03,yoy_margin_change,k2_ew,PIT,delta=22.95; n_params=2
+2022-05-03,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2022-05-03,yoy_margin_change,k4_rw_shrink50,PIT,delta=20.8; n_params=3
+2022-05-03,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2022-05-03,incremental_margin,k4_rw,PIT,m=0.5547; n_params=2
+2022-05-03,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2022-05-03,incremental_margin,k8_rw,PIT,m=0.5547; n_params=2
+2022-05-03,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2022-05-03,incremental_margin,k4_ew,PIT,m=0.5681; n_params=2
+2022-05-03,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2022-05-03,incremental_margin,k8_ew,PIT,m=0.5681; n_params=2
+2022-05-03,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2022-05-03,incremental_margin,k8_median,PIT,m=0.5701; n_params=2
+2022-05-03,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2022-05-03,incremental_margin,k4_rw_revknown,PIT,m=0.5547; n_params=2
+2022-05-03,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2022-05-03,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-8.472, ops:-10.57, pd:-15.51, sm:-2.543, ga:-11.47}; n_params=6"
+2022-05-03,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-05-03,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-9.726, ops:-12.17, pd:-17.47, sm:-2.981, ga:-12.71}; n_params=6"
+2022-05-03,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2022-05-03,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-7.899, ops:-10.03, pd:-13.84, sm:-4.122, ga:-10.39}; n_params=6"
+2022-05-03,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2022-05-03,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-05-03,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-05-03,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-8.472, ops:-10.57, pd:-15.51, sm:-2.543, ga:-11.47}; n_params=6"
+2022-05-03,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-05-03,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.1207, ops:-0.2463, pd:-0.3518, sm:0.169, ga:-0.3848}; n_params=6"
+2022-05-03,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-05-03,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.1336, ops:-0.2632, pd:-0.3679, sm:0.1834, ga:-0.4006}; n_params=6"
+2022-05-03,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2022-05-03,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.1299, ops:-0.2539, pd:-0.3279, sm:0.08803, ga:-0.3648}; n_params=6"
+2022-05-03,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2022-05-03,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-05-03,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-05-03,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.1207, ops:-0.2463, pd:-0.3518, sm:0.169, ga:-0.3848}; n_params=6"
+2022-05-03,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-05-03,q_sentence_direction,k_fit_rw,PIT,k=nan; pool_n=0; n_params=1
+2022-05-03,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2022-05-03,q_sentence_direction,k_fit_ew,PIT,k=nan; pool_n=0; n_params=1
+2022-05-03,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2022-05-03,q_sentence_direction,k_fit_median,PIT,k=nan; pool_n=0; n_params=1
+2022-05-03,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2022-05-03,q_sentence_direction,k_abs_rw,PIT,k=40.43; pool_n=5; n_params=1
+2022-05-03,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2022-05-03,sarima_margin,margin_aicc,PIT,margin=None; n_params=0
+2022-05-03,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2022-05-03,sarima_margin,lines_aicc,PIT,cor=None; ops=None; pd=None; sm=None; ga=None; n_params=0
+2022-05-03,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2022-08-02,yoy_margin_change,k4_rw,PIT,delta=19.06; n_params=2
+2022-08-02,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2022-08-02,yoy_margin_change,k2_rw,PIT,delta=19.44; n_params=2
+2022-08-02,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2022-08-02,yoy_margin_change,k4_ew,PIT,delta=18.8; n_params=2
+2022-08-02,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2022-08-02,yoy_margin_change,k2_ew,PIT,delta=19.62; n_params=2
+2022-08-02,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2022-08-02,yoy_margin_change,k4_rw_shrink50,PIT,delta=9.528; n_params=3
+2022-08-02,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2022-08-02,incremental_margin,k4_rw,PIT,m=0.5726; n_params=2
+2022-08-02,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2022-08-02,incremental_margin,k8_rw,PIT,m=0.5785; n_params=2
+2022-08-02,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2022-08-02,incremental_margin,k4_ew,PIT,m=0.5746; n_params=2
+2022-08-02,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2022-08-02,incremental_margin,k8_ew,PIT,m=0.5827; n_params=2
+2022-08-02,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2022-08-02,incremental_margin,k8_median,PIT,m=0.615; n_params=2
+2022-08-02,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2022-08-02,incremental_margin,k4_rw_revknown,PIT,m=0.5726; n_params=2
+2022-08-02,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2022-08-02,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-4.089, ops:-4.581, pd:-7.552, sm:-2.01, ga:-6.481}; n_params=6"
+2022-08-02,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-08-02,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-4.078, ops:-4.643, pd:-7.718, sm:-1.483, ga:-6.812}; n_params=6"
+2022-08-02,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2022-08-02,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-6.819, ops:-8.308, pd:-11.54, sm:-4.384, ga:-8.748}; n_params=6"
+2022-08-02,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2022-08-02,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-08-02,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-08-02,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-4.089, ops:-4.581, pd:-7.552, sm:-2.01, ga:-6.481}; n_params=6"
+2022-08-02,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-08-02,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.02064, ops:-0.1138, pd:-0.226, sm:0.148, ga:-0.2672}; n_params=6"
+2022-08-02,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-08-02,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.02204, ops:-0.1161, pd:-0.232, sm:0.2019, ga:-0.2842}; n_params=6"
+2022-08-02,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2022-08-02,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.0827, ops:-0.1919, pd:-0.2729, sm:0.05717, ga:-0.3024}; n_params=6"
+2022-08-02,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2022-08-02,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-08-02,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-08-02,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.02064, ops:-0.1138, pd:-0.226, sm:0.148, ga:-0.2672}; n_params=6"
+2022-08-02,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-08-02,q_sentence_direction,k_fit_rw,PIT,k=17.46; pool_n=1; n_params=1
+2022-08-02,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2022-08-02,q_sentence_direction,k_fit_ew,PIT,k=17.46; pool_n=1; n_params=1
+2022-08-02,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2022-08-02,q_sentence_direction,k_fit_median,PIT,k=17.46; pool_n=1; n_params=1
+2022-08-02,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2022-08-02,q_sentence_direction,k_abs_rw,PIT,k=34.78; pool_n=6; n_params=1
+2022-08-02,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2022-08-02,sarima_margin,margin_aicc,PIT,margin=None; n_params=0
+2022-08-02,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2022-08-02,sarima_margin,lines_aicc,PIT,cor=None; ops=None; pd=None; sm=None; ga=None; n_params=0
+2022-08-02,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2022-11-01,yoy_margin_change,k4_rw,PIT,delta=14.55; n_params=2
+2022-11-01,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2022-11-01,yoy_margin_change,k2_rw,PIT,delta=8.686; n_params=2
+2022-11-01,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2022-11-01,yoy_margin_change,k4_ew,PIT,delta=16.17; n_params=2
+2022-11-01,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2022-11-01,yoy_margin_change,k2_ew,PIT,delta=9.384; n_params=2
+2022-11-01,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2022-11-01,yoy_margin_change,k4_rw_shrink50,PIT,delta=7.276; n_params=3
+2022-11-01,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2022-11-01,incremental_margin,k4_rw,PIT,m=0.5501; n_params=2
+2022-11-01,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2022-11-01,incremental_margin,k8_rw,PIT,m=0.5715; n_params=2
+2022-11-01,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2022-11-01,incremental_margin,k4_ew,PIT,m=0.5447; n_params=2
+2022-11-01,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2022-11-01,incremental_margin,k8_ew,PIT,m=0.5773; n_params=2
+2022-11-01,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2022-11-01,incremental_margin,k8_median,PIT,m=0.5826; n_params=2
+2022-11-01,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2022-11-01,incremental_margin,k4_rw_revknown,PIT,m=0.5501; n_params=2
+2022-11-01,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2022-11-01,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-2.965, ops:-3.537, pd:-6.07, sm:-2.129, ga:-4.895}; n_params=6"
+2022-11-01,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-11-01,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-3.331, ops:-4.072, pd:-6.891, sm:-2.277, ga:-5.68}; n_params=6"
+2022-11-01,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2022-11-01,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-5.279, ops:-6.496, pd:-9.276, sm:-3.296, ga:-7.004}; n_params=6"
+2022-11-01,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2022-11-01,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-11-01,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-11-01,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-2.965, ops:-3.537, pd:-6.07, sm:-2.129, ga:-4.895}; n_params=6"
+2022-11-01,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2022-11-01,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.01806, ops:-0.0995, pd:-0.2105, sm:0.01042, ga:-0.2194}; n_params=6"
+2022-11-01,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-11-01,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.03044, ops:-0.1216, pd:-0.2302, sm:0.00605, ga:-0.2468}; n_params=6"
+2022-11-01,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2022-11-01,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.05736, ops:-0.1489, pd:-0.242, sm:0.05938, ga:-0.2603}; n_params=6"
+2022-11-01,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2022-11-01,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-11-01,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2022-11-01,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.01806, ops:-0.0995, pd:-0.2105, sm:0.01042, ga:-0.2194}; n_params=6"
+2022-11-01,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2022-11-01,q_sentence_direction,k_fit_rw,PIT,k=7.269; pool_n=2; n_params=1
+2022-11-01,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2022-11-01,q_sentence_direction,k_fit_ew,PIT,k=8.08; pool_n=2; n_params=1
+2022-11-01,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2022-11-01,q_sentence_direction,k_fit_median,PIT,k=8.08; pool_n=2; n_params=1
+2022-11-01,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2022-11-01,q_sentence_direction,k_abs_rw,PIT,k=27.2; pool_n=7; n_params=1
+2022-11-01,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2022-11-01,sarima_margin,margin_aicc,PIT,margin=None; n_params=0
+2022-11-01,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2022-11-01,sarima_margin,lines_aicc,PIT,cor=None; ops=None; pd=None; sm=None; ga=None; n_params=0
+2022-11-01,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2023-02-14,yoy_margin_change,k4_rw,PIT,delta=9.951; n_params=2
+2023-02-14,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2023-02-14,yoy_margin_change,k2_rw,PIT,delta=3.243; n_params=2
+2023-02-14,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2023-02-14,yoy_margin_change,k4_ew,PIT,delta=11.36; n_params=2
+2023-02-14,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2023-02-14,yoy_margin_change,k2_ew,PIT,delta=3.089; n_params=2
+2023-02-14,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2023-02-14,yoy_margin_change,k4_rw_shrink50,PIT,delta=4.975; n_params=3
+2023-02-14,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2023-02-14,incremental_margin,k4_rw,PIT,m=0.5279; n_params=2
+2023-02-14,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2023-02-14,incremental_margin,k8_rw,PIT,m=0.5481; n_params=2
+2023-02-14,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2023-02-14,incremental_margin,k4_ew,PIT,m=0.5305; n_params=2
+2023-02-14,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2023-02-14,incremental_margin,k8_ew,PIT,m=0.5617; n_params=2
+2023-02-14,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2023-02-14,incremental_margin,k8_median,PIT,m=0.5503; n_params=2
+2023-02-14,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2023-02-14,incremental_margin,k4_rw_revknown,PIT,m=0.5279; n_params=2
+2023-02-14,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2023-02-14,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-2.041, ops:-2.075, pd:-3.877, sm:-1.847, ga:-1.94}; n_params=6"
+2023-02-14,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-02-14,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-2.334, ops:-2.367, pd:-4.296, sm:-1.964, ga:-2.321}; n_params=6"
+2023-02-14,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2023-02-14,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-4.402, ops:-5.365, pd:-7.874, sm:-2.938, ga:-5.466}; n_params=6"
+2023-02-14,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2023-02-14,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-02-14,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-02-14,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-2.041, ops:-2.075, pd:-3.877, sm:-1.847, ga:-1.94}; n_params=6"
+2023-02-14,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-02-14,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.006474, ops:-0.05538, pd:-0.161, sm:-0.00432, ga:-0.08493}; n_params=6"
+2023-02-14,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-02-14,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.009672, ops:-0.06378, pd:-0.1695, sm:-0.003084, ga:-0.1048}; n_params=6"
+2023-02-14,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2023-02-14,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.0512, ops:-0.1286, pd:-0.2207, sm:0.03709, ga:-0.1928}; n_params=6"
+2023-02-14,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2023-02-14,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-02-14,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-02-14,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.006474, ops:-0.05538, pd:-0.161, sm:-0.00432, ga:-0.08493}; n_params=6"
+2023-02-14,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-02-14,q_sentence_direction,k_fit_rw,PIT,k=6.329; pool_n=3; n_params=1
+2023-02-14,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2023-02-14,q_sentence_direction,k_fit_ew,PIT,k=7.011; pool_n=3; n_params=1
+2023-02-14,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2023-02-14,q_sentence_direction,k_fit_median,PIT,k=4.873; pool_n=3; n_params=1
+2023-02-14,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2023-02-14,q_sentence_direction,k_abs_rw,PIT,k=22.46; pool_n=8; n_params=1
+2023-02-14,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2023-02-14,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=24.1; n_params=2"
+2023-02-14,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2023-02-14,sarima_margin,lines_aicc,PIT,"cor=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-5.0; ops=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-6.3; pd=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-8.0; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-4.0; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-3.9; n_params=10"
+2023-02-14,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2023-05-09,yoy_margin_change,k4_rw,PIT,delta=4.659; n_params=2
+2023-05-09,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2023-05-09,yoy_margin_change,k2_rw,PIT,delta=1.811; n_params=2
+2023-05-09,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2023-05-09,yoy_margin_change,k4_ew,PIT,delta=5.719; n_params=2
+2023-05-09,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2023-05-09,yoy_margin_change,k2_ew,PIT,delta=2.054; n_params=2
+2023-05-09,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2023-05-09,yoy_margin_change,k4_rw_shrink50,PIT,delta=2.329; n_params=3
+2023-05-09,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2023-05-09,incremental_margin,k4_rw,PIT,m=0.4044; n_params=2
+2023-05-09,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2023-05-09,incremental_margin,k8_rw,PIT,m=0.4545; n_params=2
+2023-05-09,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2023-05-09,incremental_margin,k4_ew,PIT,m=0.4416; n_params=2
+2023-05-09,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2023-05-09,incremental_margin,k8_ew,PIT,m=0.5048; n_params=2
+2023-05-09,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2023-05-09,incremental_margin,k8_median,PIT,m=0.5377; n_params=2
+2023-05-09,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2023-05-09,incremental_margin,k4_rw_revknown,PIT,m=0.4044; n_params=2
+2023-05-09,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2023-05-09,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-1.13, ops:-0.9505, pd:-2.334, sm:-0.751, ga:-1.061}; n_params=6"
+2023-05-09,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-05-09,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-1.29, ops:-1.124, pd:-2.507, sm:-1.149, ga:-1.277}; n_params=6"
+2023-05-09,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2023-05-09,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-3.577, ops:-4.157, pd:-6.727, sm:-1.348, ga:-4.531}; n_params=6"
+2023-05-09,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2023-05-09,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-05-09,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-05-09,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-1.13, ops:-0.9505, pd:-2.334, sm:-0.751, ga:-1.061}; n_params=6"
+2023-05-09,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-05-09,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.009121, ops:-0.009645, pd:-0.1099, sm:0.02763, ga:-0.04396}; n_params=6"
+2023-05-09,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-05-09,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.01444, ops:-0.01004, pd:-0.1126, sm:0.021, ga:-0.05203}; n_params=6"
+2023-05-09,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2023-05-09,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.03415, ops:-0.08854, pd:-0.1906, sm:0.07475, ga:-0.1576}; n_params=6"
+2023-05-09,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2023-05-09,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-05-09,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-05-09,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.009121, ops:-0.009645, pd:-0.1099, sm:0.02763, ga:-0.04396}; n_params=6"
+2023-05-09,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-05-09,q_sentence_direction,k_fit_rw,PIT,k=4.558; pool_n=4; n_params=1
+2023-05-09,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2023-05-09,q_sentence_direction,k_fit_ew,PIT,k=5.449; pool_n=4; n_params=1
+2023-05-09,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2023-05-09,q_sentence_direction,k_fit_median,PIT,k=2.819; pool_n=4; n_params=1
+2023-05-09,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2023-05-09,q_sentence_direction,k_abs_rw,PIT,k=17.3; pool_n=8; n_params=1
+2023-05-09,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2023-05-09,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=6.0; n_params=3"
+2023-05-09,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2023-05-09,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-10.3; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-8.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-10.4; sm=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-7.4; ga=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-6.2; n_params=15"
+2023-05-09,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2023-08-03,yoy_margin_change,k4_rw,PIT,delta=0.8778; n_params=2
+2023-08-03,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2023-08-03,yoy_margin_change,k2_rw,PIT,delta=-0.7948; n_params=2
+2023-08-03,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2023-08-03,yoy_margin_change,k4_ew,PIT,delta=1.148; n_params=2
+2023-08-03,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2023-08-03,yoy_margin_change,k2_ew,PIT,delta=-0.7924; n_params=2
+2023-08-03,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2023-08-03,yoy_margin_change,k4_rw_shrink50,PIT,delta=0.4389; n_params=3
+2023-08-03,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2023-08-03,incremental_margin,k4_rw,PIT,m=0.3285; n_params=2
+2023-08-03,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2023-08-03,incremental_margin,k8_rw,PIT,m=0.4099; n_params=2
+2023-08-03,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2023-08-03,incremental_margin,k4_ew,PIT,m=0.3524; n_params=2
+2023-08-03,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2023-08-03,incremental_margin,k8_ew,PIT,m=0.4635; n_params=2
+2023-08-03,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2023-08-03,incremental_margin,k8_median,PIT,m=0.4966; n_params=2
+2023-08-03,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2023-08-03,incremental_margin,k4_rw_revknown,PIT,m=0.3285; n_params=2
+2023-08-03,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2023-08-03,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.7571, ops:-0.1491, pd:-1.398, sm:0.6668, ga:-0.3058}; n_params=6"
+2023-08-03,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-08-03,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.6998, ops:-0.2327, pd:-1.503, sm:0.5194, ga:-0.3517}; n_params=6"
+2023-08-03,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2023-08-03,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-1.868, ops:-1.626, pd:-3.45, sm:-0.2254, ga:-2.364}; n_params=6"
+2023-08-03,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2023-08-03,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-08-03,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-08-03,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.7571, ops:-0.1491, pd:-1.398, sm:0.6668, ga:-0.3058}; n_params=6"
+2023-08-03,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-08-03,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.002887, ops:0.02781, pd:-0.0701, sm:0.07969, ga:0.000391}; n_params=6"
+2023-08-03,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-08-03,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.001577, ops:0.01843, pd:-0.08197, sm:0.07003, ga:-0.008768}; n_params=6"
+2023-08-03,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2023-08-03,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.008804, ops:-0.01939, pd:-0.1221, sm:0.1024, ga:-0.08882}; n_params=6"
+2023-08-03,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2023-08-03,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-08-03,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-08-03,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.002887, ops:0.02781, pd:-0.0701, sm:0.07969, ga:0.000391}; n_params=6"
+2023-08-03,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-08-03,q_sentence_direction,k_fit_rw,PIT,k=3.532; pool_n=5; n_params=1
+2023-08-03,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2023-08-03,q_sentence_direction,k_fit_ew,PIT,k=4.523; pool_n=5; n_params=1
+2023-08-03,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2023-08-03,q_sentence_direction,k_fit_median,PIT,k=0.82; pool_n=5; n_params=1
+2023-08-03,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2023-08-03,q_sentence_direction,k_abs_rw,PIT,k=7.558; pool_n=8; n_params=1
+2023-08-03,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2023-08-03,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=-6.1; n_params=3"
+2023-08-03,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2023-08-03,sarima_margin,lines_aicc,PIT,"cor=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=-10.7; ops=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=-15.9; pd=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=-16.8; sm=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=-14.6; ga=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=-13.6; n_params=15"
+2023-08-03,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2023-11-01,yoy_margin_change,k4_rw,PIT,delta=1.637; n_params=2
+2023-11-01,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2023-11-01,yoy_margin_change,k2_rw,PIT,delta=1.514; n_params=2
+2023-11-01,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2023-11-01,yoy_margin_change,k4_ew,PIT,delta=1.691; n_params=2
+2023-11-01,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2023-11-01,yoy_margin_change,k2_ew,PIT,delta=1.328; n_params=2
+2023-11-01,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2023-11-01,yoy_margin_change,k4_rw_shrink50,PIT,delta=0.8183; n_params=3
+2023-11-01,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2023-11-01,incremental_margin,k4_rw,PIT,m=0.4227; n_params=2
+2023-11-01,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2023-11-01,incremental_margin,k8_rw,PIT,m=0.4652; n_params=2
+2023-11-01,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2023-11-01,incremental_margin,k4_ew,PIT,m=0.3987; n_params=2
+2023-11-01,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2023-11-01,incremental_margin,k8_ew,PIT,m=0.4717; n_params=2
+2023-11-01,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2023-11-01,incremental_margin,k8_median,PIT,m=0.4966; n_params=2
+2023-11-01,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2023-11-01,incremental_margin,k4_rw_revknown,PIT,m=0.4227; n_params=2
+2023-11-01,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2023-11-01,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.7596, ops:-0.2675, pd:-1.185, sm:0.02603, ga:-0.1996}; n_params=6"
+2023-11-01,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-11-01,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.7942, ops:-0.3062, pd:-1.318, sm:0.04666, ga:-0.1759}; n_params=6"
+2023-11-01,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2023-11-01,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-1.495, ops:-1.357, pd:-2.813, sm:-0.6922, ga:-1.765}; n_params=6"
+2023-11-01,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2023-11-01,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-11-01,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-11-01,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.7596, ops:-0.2675, pd:-1.185, sm:0.02603, ga:-0.1996}; n_params=6"
+2023-11-01,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2023-11-01,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.004605, ops:0.0145, pd:-0.05851, sm:0.02898, ga:0.01276}; n_params=6"
+2023-11-01,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-11-01,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.006938, ops:0.01168, pd:-0.06459, sm:0.03179, ga:0.01553}; n_params=6"
+2023-11-01,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2023-11-01,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.009088, ops:-0.0235, pd:-0.1092, sm:0.0228, ga:-0.06464}; n_params=6"
+2023-11-01,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2023-11-01,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-11-01,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2023-11-01,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.004605, ops:0.0145, pd:-0.05851, sm:0.02898, ga:0.01276}; n_params=6"
+2023-11-01,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2023-11-01,q_sentence_direction,k_fit_rw,PIT,k=3.518; pool_n=6; n_params=1
+2023-11-01,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2023-11-01,q_sentence_direction,k_fit_ew,PIT,k=4.349; pool_n=6; n_params=1
+2023-11-01,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2023-11-01,q_sentence_direction,k_fit_median,PIT,k=2.148; pool_n=6; n_params=1
+2023-11-01,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2023-11-01,q_sentence_direction,k_abs_rw,PIT,k=6.464; pool_n=8; n_params=1
+2023-11-01,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2023-11-01,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=-14.6; n_params=3"
+2023-11-01,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2023-11-01,sarima_margin,lines_aicc,PIT,"cor=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-8.0; ops=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-11.5; pd=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-16.4; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-4.3; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-11.1; n_params=10"
+2023-11-01,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2024-02-13,yoy_margin_change,k4_rw,PIT,delta=2.723; n_params=2
+2024-02-13,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2024-02-13,yoy_margin_change,k2_rw,PIT,delta=5.211; n_params=2
+2024-02-13,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2024-02-13,yoy_margin_change,k4_ew,PIT,delta=2.14; n_params=2
+2024-02-13,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2024-02-13,yoy_margin_change,k2_ew,PIT,delta=5.073; n_params=2
+2024-02-13,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2024-02-13,yoy_margin_change,k4_rw_shrink50,PIT,delta=1.362; n_params=3
+2024-02-13,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2024-02-13,incremental_margin,k4_rw,PIT,m=0.5146; n_params=2
+2024-02-13,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2024-02-13,incremental_margin,k8_rw,PIT,m=0.519; n_params=2
+2024-02-13,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2024-02-13,incremental_margin,k4_ew,PIT,m=0.4652; n_params=2
+2024-02-13,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2024-02-13,incremental_margin,k8_ew,PIT,m=0.4978; n_params=2
+2024-02-13,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2024-02-13,incremental_margin,k8_median,PIT,m=0.5092; n_params=2
+2024-02-13,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2024-02-13,incremental_margin,k4_rw_revknown,PIT,m=0.5146; n_params=2
+2024-02-13,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2024-02-13,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.7198, ops:-0.4609, pd:-1.108, sm:-0.3359, ga:-0.4923}; n_params=6"
+2024-02-13,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-02-13,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.7149, ops:-0.3458, pd:-1.072, sm:-0.03312, ga:-0.4615}; n_params=6"
+2024-02-13,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2024-02-13,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-1.16, ops:-0.9989, pd:-2.031, sm:-0.8395, ga:-0.9749}; n_params=6"
+2024-02-13,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2024-02-13,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-02-13,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-02-13,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.7198, ops:-0.4609, pd:-1.108, sm:-0.3359, ga:-0.4923}; n_params=6"
+2024-02-13,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-02-13,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.001394, ops:-0.0005846, pd:-0.0562, sm:0.01201, ga:-0.01396}; n_params=6"
+2024-02-13,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-02-13,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.00145, ops:0.008322, pd:-0.05235, sm:0.02779, ga:-0.0111}; n_params=6"
+2024-02-13,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2024-02-13,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.003087, ops:-0.01885, pd:-0.09114, sm:0.006568, ga:-0.03762}; n_params=6"
+2024-02-13,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2024-02-13,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-02-13,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-02-13,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.001394, ops:-0.0005846, pd:-0.0562, sm:0.01201, ga:-0.01396}; n_params=6"
+2024-02-13,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-02-13,q_sentence_direction,k_fit_rw,PIT,k=4.232; pool_n=7; n_params=1
+2024-02-13,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2024-02-13,q_sentence_direction,k_fit_ew,PIT,k=4.68; pool_n=7; n_params=1
+2024-02-13,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2024-02-13,q_sentence_direction,k_fit_median,PIT,k=3.476; pool_n=7; n_params=1
+2024-02-13,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2024-02-13,q_sentence_direction,k_abs_rw,PIT,k=5.571; pool_n=8; n_params=1
+2024-02-13,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2024-02-13,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=-3.8; n_params=3"
+2024-02-13,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2024-02-13,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-14.2; ops=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-11.6; pd=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-19.0; sm=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=-9.5; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-14.2; n_params=12"
+2024-02-13,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2024-05-08,yoy_margin_change,k4_rw,PIT,delta=4.125; n_params=2
+2024-05-08,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2024-05-08,yoy_margin_change,k2_rw,PIT,delta=5.971; n_params=2
+2024-05-08,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2024-05-08,yoy_margin_change,k4_ew,PIT,delta=3.677; n_params=2
+2024-05-08,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2024-05-08,yoy_margin_change,k2_ew,PIT,delta=6.026; n_params=2
+2024-05-08,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2024-05-08,yoy_margin_change,k4_rw_shrink50,PIT,delta=2.062; n_params=3
+2024-05-08,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2024-05-08,incremental_margin,k4_rw,PIT,m=0.5748; n_params=2
+2024-05-08,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2024-05-08,incremental_margin,k8_rw,PIT,m=0.518; n_params=2
+2024-05-08,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2024-05-08,incremental_margin,k4_ew,PIT,m=0.5635; n_params=2
+2024-05-08,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2024-05-08,incremental_margin,k8_ew,PIT,m=0.5025; n_params=2
+2024-05-08,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2024-05-08,incremental_margin,k8_median,PIT,m=0.5251; n_params=2
+2024-05-08,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2024-05-08,incremental_margin,k4_rw_revknown,PIT,m=0.5748; n_params=2
+2024-05-08,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2024-05-08,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.888, ops:-1.112, pd:-1.155, sm:-0.8361, ga:-0.3501}; n_params=6"
+2024-05-08,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-05-08,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.876, ops:-0.9177, pd:-1.081, sm:-0.6905, ga:-0.3373}; n_params=6"
+2024-05-08,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2024-05-08,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.9687, ops:-1.058, pd:-1.548, sm:-0.8077, ga:-0.5872}; n_params=6"
+2024-05-08,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2024-05-08,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-05-08,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-05-08,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.888, ops:-1.112, pd:-1.155, sm:-0.8361, ga:-0.3501}; n_params=6"
+2024-05-08,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-05-08,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.007317, ops:-0.0319, pd:-0.04372, sm:0.005827, ga:0.01546}; n_params=6"
+2024-05-08,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-05-08,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.005831, ops:-0.0185, pd:-0.04112, sm:0.01191, ga:0.01507}; n_params=6"
+2024-05-08,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2024-05-08,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.007918, ops:-0.02448, pd:-0.06579, sm:0.01309, ga:-0.004349}; n_params=6"
+2024-05-08,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2024-05-08,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-05-08,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-05-08,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.007317, ops:-0.0319, pd:-0.04372, sm:0.005827, ga:0.01546}; n_params=6"
+2024-05-08,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-05-08,q_sentence_direction,k_fit_rw,PIT,k=4.476; pool_n=8; n_params=1
+2024-05-08,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2024-05-08,q_sentence_direction,k_fit_ew,PIT,k=4.768; pool_n=8; n_params=1
+2024-05-08,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2024-05-08,q_sentence_direction,k_fit_median,PIT,k=4.175; pool_n=8; n_params=1
+2024-05-08,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2024-05-08,q_sentence_direction,k_abs_rw,PIT,k=4.672; pool_n=8; n_params=1
+2024-05-08,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2024-05-08,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=-8.2; n_params=3"
+2024-05-08,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2024-05-08,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-21.2; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-12.0; pd=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-24.4; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-9.4; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-18.7; n_params=12"
+2024-05-08,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2024-08-06,yoy_margin_change,k4_rw,PIT,delta=3.459; n_params=2
+2024-08-06,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2024-08-06,yoy_margin_change,k2_rw,PIT,delta=2.221; n_params=2
+2024-08-06,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2024-08-06,yoy_margin_change,k4_ew,PIT,delta=3.773; n_params=2
+2024-08-06,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2024-08-06,yoy_margin_change,k2_ew,PIT,delta=2.472; n_params=2
+2024-08-06,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2024-08-06,yoy_margin_change,k4_rw_shrink50,PIT,delta=1.73; n_params=3
+2024-08-06,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2024-08-06,incremental_margin,k4_rw,PIT,m=0.5285; n_params=2
+2024-08-06,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2024-08-06,incremental_margin,k8_rw,PIT,m=0.4619; n_params=2
+2024-08-06,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2024-08-06,incremental_margin,k4_ew,PIT,m=0.5634; n_params=2
+2024-08-06,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2024-08-06,incremental_margin,k8_ew,PIT,m=0.4579; n_params=2
+2024-08-06,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2024-08-06,incremental_margin,k8_median,PIT,m=0.4841; n_params=2
+2024-08-06,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2024-08-06,incremental_margin,k4_rw_revknown,PIT,m=0.5285; n_params=2
+2024-08-06,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2024-08-06,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.2387, ops:-1.2, pd:-0.985, sm:-0.6019, ga:-0.2951}; n_params=6"
+2024-08-06,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-08-06,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.3332, ops:-1.19, pd:-1.033, sm:-0.7969, ga:-0.3359}; n_params=6"
+2024-08-06,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2024-08-06,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.4115, ops:-0.8495, pd:-1.123, sm:-0.179, ga:-0.2987}; n_params=6"
+2024-08-06,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2024-08-06,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-08-06,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-08-06,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.2387, ops:-1.2, pd:-0.985, sm:-0.6019, ga:-0.2951}; n_params=6"
+2024-08-06,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-08-06,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.03123, ops:-0.05434, pd:-0.04254, sm:0.0043, ga:0.008486}; n_params=6"
+2024-08-06,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-08-06,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.02582, ops:-0.0541, pd:-0.04789, sm:-0.008402, ga:0.003807}; n_params=6"
+2024-08-06,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2024-08-06,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.01986, ops:-0.02696, pd:-0.05172, sm:0.02943, ga:0.005788}; n_params=6"
+2024-08-06,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2024-08-06,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-08-06,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-08-06,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.03123, ops:-0.05434, pd:-0.04254, sm:0.0043, ga:0.008486}; n_params=6"
+2024-08-06,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-08-06,q_sentence_direction,k_fit_rw,PIT,k=3.663; pool_n=9; n_params=1
+2024-08-06,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2024-08-06,q_sentence_direction,k_fit_ew,PIT,k=4.287; pool_n=9; n_params=1
+2024-08-06,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2024-08-06,q_sentence_direction,k_fit_median,PIT,k=3.476; pool_n=9; n_params=1
+2024-08-06,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2024-08-06,q_sentence_direction,k_abs_rw,PIT,k=3.095; pool_n=8; n_params=1
+2024-08-06,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2024-08-06,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=21.5; n_params=3"
+2024-08-06,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2024-08-06,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-25.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-16.4; pd=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-29.7; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-12.8; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-22.9; n_params=12"
+2024-08-06,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2024-11-07,yoy_margin_change,k4_rw,PIT,delta=1.871; n_params=2
+2024-11-07,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2024-11-07,yoy_margin_change,k2_rw,PIT,delta=-1.028; n_params=2
+2024-11-07,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2024-11-07,yoy_margin_change,k4_ew,PIT,delta=2.523; n_params=2
+2024-11-07,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2024-11-07,yoy_margin_change,k2_ew,PIT,delta=-0.981; n_params=2
+2024-11-07,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2024-11-07,yoy_margin_change,k4_rw_shrink50,PIT,delta=0.9355; n_params=3
+2024-11-07,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2024-11-07,incremental_margin,k4_rw,PIT,m=0.5285; n_params=2
+2024-11-07,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2024-11-07,incremental_margin,k8_rw,PIT,m=0.4619; n_params=2
+2024-11-07,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2024-11-07,incremental_margin,k4_ew,PIT,m=0.5634; n_params=2
+2024-11-07,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2024-11-07,incremental_margin,k8_ew,PIT,m=0.4579; n_params=2
+2024-11-07,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2024-11-07,incremental_margin,k8_median,PIT,m=0.4841; n_params=2
+2024-11-07,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2024-11-07,incremental_margin,k4_rw_revknown,PIT,m=0.5285; n_params=2
+2024-11-07,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2024-11-07,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.4726, ops:-0.7557, pd:-0.4797, sm:0.2777, ga:-0.2955}; n_params=6"
+2024-11-07,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-11-07,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.4973, ops:-0.9167, pd:-0.6588, sm:0.002587, ga:-0.3304}; n_params=6"
+2024-11-07,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2024-11-07,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.5683, ops:-0.5929, pd:-0.7148, sm:0.1938, ga:-0.2635}; n_params=6"
+2024-11-07,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2024-11-07,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-11-07,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-11-07,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.4726, ops:-0.7557, pd:-0.4797, sm:0.2777, ga:-0.2955}; n_params=6"
+2024-11-07,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2024-11-07,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.003987, ops:-0.01889, pd:0.01009, sm:0.0725, ga:-0.003088}; n_params=6"
+2024-11-07,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-11-07,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.00735, ops:-0.02944, pd:-0.003521, sm:0.05647, ga:-0.001842}; n_params=6"
+2024-11-07,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2024-11-07,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.001123, ops:-0.007764, pd:-0.01278, sm:0.058, ga:0.002193}; n_params=6"
+2024-11-07,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2024-11-07,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-11-07,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2024-11-07,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.003987, ops:-0.01889, pd:0.01009, sm:0.0725, ga:-0.003088}; n_params=6"
+2024-11-07,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2024-11-07,q_sentence_direction,k_fit_rw,PIT,k=3.249; pool_n=10; n_params=1
+2024-11-07,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2024-11-07,q_sentence_direction,k_fit_ew,PIT,k=4.011; pool_n=10; n_params=1
+2024-11-07,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2024-11-07,q_sentence_direction,k_fit_median,PIT,k=2.5; pool_n=10; n_params=1
+2024-11-07,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2024-11-07,q_sentence_direction,k_abs_rw,PIT,k=2.857; pool_n=8; n_params=1
+2024-11-07,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2024-11-07,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=25.6; n_params=3"
+2024-11-07,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2024-11-07,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-21.5; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-19.0; pd=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-27.3; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-15.5; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-24.5; n_params=12"
+2024-11-07,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2025-02-13,yoy_margin_change,k4_rw,PIT,delta=-0.2599; n_params=2
+2025-02-13,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2025-02-13,yoy_margin_change,k2_rw,PIT,delta=-2.014; n_params=2
+2025-02-13,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2025-02-13,yoy_margin_change,k4_ew,PIT,delta=0.2487; n_params=2
+2025-02-13,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2025-02-13,yoy_margin_change,k2_ew,PIT,delta=-1.975; n_params=2
+2025-02-13,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2025-02-13,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.1299; n_params=3
+2025-02-13,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2025-02-13,incremental_margin,k4_rw,PIT,m=0.3456; n_params=2
+2025-02-13,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2025-02-13,incremental_margin,k8_rw,PIT,m=0.3703; n_params=2
+2025-02-13,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2025-02-13,incremental_margin,k4_ew,PIT,m=0.4053; n_params=2
+2025-02-13,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2025-02-13,incremental_margin,k8_ew,PIT,m=0.402; n_params=2
+2025-02-13,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2025-02-13,incremental_margin,k8_median,PIT,m=0.3762; n_params=2
+2025-02-13,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2025-02-13,incremental_margin,k4_rw_revknown,PIT,m=0.3456; n_params=2
+2025-02-13,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2025-02-13,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.2963, ops:-0.6686, pd:0.1613, sm:1.359, ga:-0.2331}; n_params=6"
+2025-02-13,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-02-13,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.3146, ops:-0.7772, pd:-0.004615, sm:1.128, ga:-0.2062}; n_params=6"
+2025-02-13,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2025-02-13,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.4374, ops:-0.5993, pd:-0.2619, sm:0.7943, ga:-0.3195}; n_params=6"
+2025-02-13,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2025-02-13,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-02-13,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-02-13,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.2963, ops:-0.6686, pd:0.1613, sm:1.359, ga:-0.2331}; n_params=6"
+2025-02-13,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-02-13,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.001109, ops:-0.02796, pd:0.04763, sm:0.1155, ga:-0.009692}; n_params=6"
+2025-02-13,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-02-13,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.006384, ops:-0.03056, pd:0.03885, sm:0.107, ga:-0.001332}; n_params=6"
+2025-02-13,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2025-02-13,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.0002746, ops:-0.01883, pd:0.01302, sm:0.081, ga:-0.01111}; n_params=6"
+2025-02-13,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2025-02-13,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-02-13,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-02-13,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.001109, ops:-0.02796, pd:0.04763, sm:0.1155, ga:-0.009692}; n_params=6"
+2025-02-13,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-02-13,q_sentence_direction,k_fit_rw,PIT,k=3.095; pool_n=11; n_params=1
+2025-02-13,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2025-02-13,q_sentence_direction,k_fit_ew,PIT,k=3.867; pool_n=11; n_params=1
+2025-02-13,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2025-02-13,q_sentence_direction,k_fit_median,PIT,k=2.426; pool_n=11; n_params=1
+2025-02-13,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2025-02-13,q_sentence_direction,k_abs_rw,PIT,k=2.659; pool_n=8; n_params=1
+2025-02-13,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2025-02-13,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=48.8; n_params=3"
+2025-02-13,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2025-02-13,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-25.0; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-21.0; pd=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-27.6; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-18.1; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-27.8; n_params=12"
+2025-02-13,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2025-05-01,yoy_margin_change,k4_rw,PIT,delta=-1.533; n_params=2
+2025-05-01,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2025-05-01,yoy_margin_change,k2_rw,PIT,delta=-1.891; n_params=2
+2025-05-01,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2025-05-01,yoy_margin_change,k4_ew,PIT,delta=-1.457; n_params=2
+2025-05-01,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2025-05-01,yoy_margin_change,k2_ew,PIT,delta=-1.934; n_params=2
+2025-05-01,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2025-05-01,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.7667; n_params=3
+2025-05-01,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2025-05-01,incremental_margin,k4_rw,PIT,m=0.3456; n_params=2
+2025-05-01,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2025-05-01,incremental_margin,k8_rw,PIT,m=0.3703; n_params=2
+2025-05-01,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2025-05-01,incremental_margin,k4_ew,PIT,m=0.4053; n_params=2
+2025-05-01,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2025-05-01,incremental_margin,k8_ew,PIT,m=0.402; n_params=2
+2025-05-01,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2025-05-01,incremental_margin,k8_median,PIT,m=0.3762; n_params=2
+2025-05-01,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2025-05-01,incremental_margin,k4_rw_revknown,PIT,m=0.3456; n_params=2
+2025-05-01,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2025-05-01,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.1127, ops:-0.2033, pd:0.779, sm:1.431, ga:-0.2023}; n_params=6"
+2025-05-01,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-05-01,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.06575, ops:-0.2117, pd:0.6718, sm:1.461, ga:-0.1993}; n_params=6"
+2025-05-01,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2025-05-01,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.3711, ops:-0.5064, pd:0.1343, sm:0.6756, ga:-0.2516}; n_params=6"
+2025-05-01,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2025-05-01,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-05-01,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-05-01,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.1127, ops:-0.2033, pd:0.779, sm:1.431, ga:-0.2023}; n_params=6"
+2025-05-01,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-05-01,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.0103, ops:-0.01478, pd:0.06912, sm:0.09256, ga:-0.02618}; n_params=6"
+2025-05-01,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-05-01,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.00547, ops:-0.01243, pd:0.06453, sm:0.09886, ga:-0.02378}; n_params=6"
+2025-05-01,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2025-05-01,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.004428, ops:-0.02049, pd:0.03151, sm:0.06365, ga:-0.0123}; n_params=6"
+2025-05-01,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2025-05-01,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-05-01,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-05-01,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.0103, ops:-0.01478, pd:0.06912, sm:0.09256, ga:-0.02618}; n_params=6"
+2025-05-01,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-05-01,q_sentence_direction,k_fit_rw,PIT,k=2.795; pool_n=12; n_params=1
+2025-05-01,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2025-05-01,q_sentence_direction,k_fit_ew,PIT,k=3.665; pool_n=12; n_params=1
+2025-05-01,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2025-05-01,q_sentence_direction,k_fit_median,PIT,k=1.975; pool_n=12; n_params=1
+2025-05-01,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2025-05-01,q_sentence_direction,k_abs_rw,PIT,k=2.501; pool_n=8; n_params=1
+2025-05-01,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2025-05-01,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=45.9; n_params=3"
+2025-05-01,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2025-05-01,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-28.4; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-25.3; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-31.1; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-20.1; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-30.7; n_params=13"
+2025-05-01,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2025-08-06,yoy_margin_change,k4_rw,PIT,delta=-0.8519; n_params=2
+2025-08-06,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2025-08-06,yoy_margin_change,k2_rw,PIT,delta=-0.03021; n_params=2
+2025-08-06,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2025-08-06,yoy_margin_change,k4_ew,PIT,delta=-1.059; n_params=2
+2025-08-06,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2025-08-06,yoy_margin_change,k2_ew,PIT,delta=-0.1424; n_params=2
+2025-08-06,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2025-08-06,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.426; n_params=3
+2025-08-06,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2025-08-06,incremental_margin,k4_rw,PIT,m=0.3248; n_params=2
+2025-08-06,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2025-08-06,incremental_margin,k8_rw,PIT,m=0.3812; n_params=2
+2025-08-06,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2025-08-06,incremental_margin,k4_ew,PIT,m=0.3288; n_params=2
+2025-08-06,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2025-08-06,incremental_margin,k8_ew,PIT,m=0.397; n_params=2
+2025-08-06,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2025-08-06,incremental_margin,k8_median,PIT,m=0.3562; n_params=2
+2025-08-06,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2025-08-06,incremental_margin,k4_rw_revknown,PIT,m=0.3248; n_params=2
+2025-08-06,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2025-08-06,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.5254, ops:-0.5403, pd:0.859, sm:1.5, ga:-0.463}; n_params=6"
+2025-08-06,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-08-06,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.5319, ops:-0.4306, pd:0.8668, sm:1.561, ga:-0.4281}; n_params=6"
+2025-08-06,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2025-08-06,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.4298, ops:-0.7601, pd:0.2443, sm:0.7993, ga:-0.407}; n_params=6"
+2025-08-06,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2025-08-06,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-08-06,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-08-06,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.5254, ops:-0.5403, pd:0.859, sm:1.5, ga:-0.463}; n_params=6"
+2025-08-06,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-08-06,per_night_seasonal,g_k4_rw,PIT,"growth{cor:-0.02079, ops:-0.0343, pd:0.09151, sm:0.1064, ga:-0.04424}; n_params=6"
+2025-08-06,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-08-06,per_night_seasonal,g_k4_ew,PIT,"growth{cor:-0.02471, ops:-0.0258, pd:0.0919, sm:0.1116, ga:-0.04333}; n_params=6"
+2025-08-06,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2025-08-06,per_night_seasonal,g_k8_rw,PIT,"growth{cor:-0.003452, ops:-0.04098, pd:0.04683, sm:0.07239, ga:-0.02666}; n_params=6"
+2025-08-06,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2025-08-06,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-08-06,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-08-06,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:-0.02079, ops:-0.0343, pd:0.09151, sm:0.1064, ga:-0.04424}; n_params=6"
+2025-08-06,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-08-06,q_sentence_direction,k_fit_rw,PIT,k=2.092; pool_n=13; n_params=1
+2025-08-06,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2025-08-06,q_sentence_direction,k_fit_ew,PIT,k=3.294; pool_n=13; n_params=1
+2025-08-06,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2025-08-06,q_sentence_direction,k_fit_median,PIT,k=1.524; pool_n=13; n_params=1
+2025-08-06,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2025-08-06,q_sentence_direction,k_abs_rw,PIT,k=2.304; pool_n=8; n_params=1
+2025-08-06,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2025-08-06,sarima_margin,margin_aicc,PIT,"margin=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=80.1; n_params=3"
+2025-08-06,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2025-08-06,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-32.9; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-27.5; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-35.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-23.3; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-31.7; n_params=13"
+2025-08-06,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2025-11-06,yoy_margin_change,k4_rw,PIT,delta=-1.231; n_params=2
+2025-11-06,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2025-11-06,yoy_margin_change,k2_rw,PIT,delta=-0.7647; n_params=2
+2025-11-06,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2025-11-06,yoy_margin_change,k4_ew,PIT,delta=-1.273; n_params=2
+2025-11-06,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2025-11-06,yoy_margin_change,k2_ew,PIT,delta=-0.6119; n_params=2
+2025-11-06,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2025-11-06,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.6156; n_params=3
+2025-11-06,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2025-11-06,incremental_margin,k4_rw,PIT,m=0.3248; n_params=2
+2025-11-06,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2025-11-06,incremental_margin,k8_rw,PIT,m=0.3812; n_params=2
+2025-11-06,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2025-11-06,incremental_margin,k4_ew,PIT,m=0.3288; n_params=2
+2025-11-06,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2025-11-06,incremental_margin,k8_ew,PIT,m=0.397; n_params=2
+2025-11-06,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2025-11-06,incremental_margin,k8_median,PIT,m=0.3562; n_params=2
+2025-11-06,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2025-11-06,incremental_margin,k4_rw_revknown,PIT,m=0.3248; n_params=2
+2025-11-06,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2025-11-06,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:0.02687, ops:-0.8266, pd:0.6926, sm:1.516, ga:-0.132}; n_params=6"
+2025-11-06,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-11-06,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.03213, ops:-0.7851, pd:0.7565, sm:1.545, ga:-0.186}; n_params=6"
+2025-11-06,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2025-11-06,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.1396, ops:-0.803, pd:0.3018, sm:1.103, ga:-0.1865}; n_params=6"
+2025-11-06,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2025-11-06,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-11-06,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-11-06,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:0.02687, ops:-0.8266, pd:0.6926, sm:1.516, ga:-0.132}; n_params=6"
+2025-11-06,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2025-11-06,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.02015, ops:-0.06905, pd:0.07241, sm:0.107, ga:0.009166}; n_params=6"
+2025-11-06,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-11-06,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.01312, ops:-0.06611, pd:0.0745, sm:0.1037, ga:-0.001693}; n_params=6"
+2025-11-06,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2025-11-06,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.01476, ops:-0.05233, pd:0.05164, sm:0.09548, ga:0.005081}; n_params=6"
+2025-11-06,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2025-11-06,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-11-06,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2025-11-06,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.02015, ops:-0.06905, pd:0.07241, sm:0.107, ga:0.009166}; n_params=6"
+2025-11-06,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2025-11-06,q_sentence_direction,k_fit_rw,PIT,k=2.142; pool_n=14; n_params=1
+2025-11-06,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2025-11-06,q_sentence_direction,k_fit_ew,PIT,k=3.229; pool_n=14; n_params=1
+2025-11-06,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2025-11-06,q_sentence_direction,k_fit_median,PIT,k=1.952; pool_n=14; n_params=1
+2025-11-06,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2025-11-06,q_sentence_direction,k_abs_rw,PIT,k=2.258; pool_n=8; n_params=1
+2025-11-06,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2025-11-06,sarima_margin,margin_aicc,PIT,"margin=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=85.1; n_params=3"
+2025-11-06,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2025-11-06,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-35.0; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-31.5; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-39.7; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-26.4; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.1; n_params=13"
+2025-11-06,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2026-02-12,yoy_margin_change,k4_rw,PIT,delta=-1.462; n_params=2
+2026-02-12,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2026-02-12,yoy_margin_change,k2_rw,PIT,delta=-2.474; n_params=2
+2026-02-12,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2026-02-12,yoy_margin_change,k4_ew,PIT,delta=-1.304; n_params=2
+2026-02-12,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2026-02-12,yoy_margin_change,k2_ew,PIT,delta=-2.466; n_params=2
+2026-02-12,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2026-02-12,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.7308; n_params=3
+2026-02-12,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2026-02-12,incremental_margin,k4_rw,PIT,m=0.2051; n_params=2
+2026-02-12,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2026-02-12,incremental_margin,k8_rw,PIT,m=0.3039; n_params=2
+2026-02-12,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2026-02-12,incremental_margin,k4_ew,PIT,m=0.2214; n_params=2
+2026-02-12,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2026-02-12,incremental_margin,k8_ew,PIT,m=0.3925; n_params=2
+2026-02-12,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2026-02-12,incremental_margin,k8_median,PIT,m=0.3562; n_params=2
+2026-02-12,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2026-02-12,incremental_margin,k4_rw_revknown,PIT,m=0.2051; n_params=2
+2026-02-12,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2026-02-12,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:0.1373, ops:-0.5027, pd:0.3451, sm:1.688, ga:0.01961}; n_params=6"
+2026-02-12,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-02-12,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:0.06987, ops:-0.5381, pd:0.4536, sm:1.548, ga:-0.03338}; n_params=6"
+2026-02-12,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2026-02-12,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.007235, ops:-0.558, pd:0.2838, sm:1.578, ga:-0.06462}; n_params=6"
+2026-02-12,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2026-02-12,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-02-12,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-02-12,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:0.1373, ops:-0.5027, pd:0.3451, sm:1.688, ga:0.01961}; n_params=6"
+2026-02-12,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-02-12,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.03083, ops:-0.03361, pd:0.04772, sm:0.1155, ga:0.02898}; n_params=6"
+2026-02-12,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-02-12,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.02531, ops:-0.03798, pd:0.05458, sm:0.1062, ga:0.02085}; n_params=6"
+2026-02-12,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2026-02-12,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.02092, ops:-0.03173, pd:0.04769, sm:0.1155, ga:0.01609}; n_params=6"
+2026-02-12,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2026-02-12,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-02-12,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-02-12,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.03083, ops:-0.03361, pd:0.04772, sm:0.1155, ga:0.02898}; n_params=6"
+2026-02-12,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-02-12,q_sentence_direction,k_fit_rw,PIT,k=2.213; pool_n=15; n_params=1
+2026-02-12,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2026-02-12,q_sentence_direction,k_fit_ew,PIT,k=3.183; pool_n=15; n_params=1
+2026-02-12,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2026-02-12,q_sentence_direction,k_fit_median,PIT,k=2.38; pool_n=15; n_params=1
+2026-02-12,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2026-02-12,q_sentence_direction,k_abs_rw,PIT,k=2.087; pool_n=8; n_params=1
+2026-02-12,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2026-02-12,sarima_margin,margin_aicc,PIT,"margin=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=89.5; n_params=3"
+2026-02-12,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2026-02-12,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-39.3; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-32.0; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-44.0; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-29.2; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-36.8; n_params=13"
+2026-02-12,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2026-05-07,yoy_margin_change,k4_rw,PIT,delta=-0.6733; n_params=2
+2026-05-07,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2026-05-07,yoy_margin_change,k2_rw,PIT,delta=-0.6087; n_params=2
+2026-05-07,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2026-05-07,yoy_margin_change,k4_ew,PIT,delta=-0.6876; n_params=2
+2026-05-07,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2026-05-07,yoy_margin_change,k2_ew,PIT,delta=-0.7634; n_params=2
+2026-05-07,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2026-05-07,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.3367; n_params=3
+2026-05-07,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2026-05-07,incremental_margin,k4_rw,PIT,m=0.213; n_params=2
+2026-05-07,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2026-05-07,incremental_margin,k8_rw,PIT,m=0.2908; n_params=2
+2026-05-07,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2026-05-07,incremental_margin,k4_ew,PIT,m=0.2132; n_params=2
+2026-05-07,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2026-05-07,incremental_margin,k8_ew,PIT,m=0.3883; n_params=2
+2026-05-07,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2026-05-07,incremental_margin,k8_median,PIT,m=0.3561; n_params=2
+2026-05-07,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2026-05-07,incremental_margin,k4_rw_revknown,PIT,m=0.213; n_params=2
+2026-05-07,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2026-05-07,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:-0.04586, ops:-0.7947, pd:-0.2007, sm:2.344, ga:-0.5787}; n_params=6"
+2026-05-07,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-05-07,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:-0.03963, ops:-0.8296, pd:-0.09935, sm:2.214, ga:-0.4925}; n_params=6"
+2026-05-07,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2026-05-07,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.06813, ops:-0.5976, pd:0.1258, sm:2.04, ga:-0.4532}; n_params=6"
+2026-05-07,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2026-05-07,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-05-07,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-05-07,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:-0.04586, ops:-0.7947, pd:-0.2007, sm:2.344, ga:-0.5787}; n_params=6"
+2026-05-07,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-05-07,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.04614, ops:-0.0325, pd:0.03262, sm:0.1692, ga:-0.009739}; n_params=6"
+2026-05-07,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-05-07,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.04409, ops:-0.03911, pd:0.03868, sm:0.1623, ga:-0.003009}; n_params=6"
+2026-05-07,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2026-05-07,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.02733, ops:-0.02659, pd:0.04479, sm:0.1437, ga:-0.01522}; n_params=6"
+2026-05-07,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2026-05-07,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-05-07,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-05-07,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.04614, ops:-0.0325, pd:0.03262, sm:0.1692, ga:-0.009739}; n_params=6"
+2026-05-07,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-05-07,q_sentence_direction,k_fit_rw,PIT,k=2.213; pool_n=15; n_params=1
+2026-05-07,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2026-05-07,q_sentence_direction,k_fit_ew,PIT,k=3.183; pool_n=15; n_params=1
+2026-05-07,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2026-05-07,q_sentence_direction,k_fit_median,PIT,k=2.38; pool_n=15; n_params=1
+2026-05-07,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2026-05-07,q_sentence_direction,k_abs_rw,PIT,k=1.687; pool_n=8; n_params=1
+2026-05-07,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2026-05-07,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 0, 0)x(0, 1, 1, 4)c aicc=69.3; n_params=3"
+2026-05-07,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2026-05-07,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-43.6; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-35.2; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-48.7; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-30.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-35.4; n_params=13"
+2026-05-07,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2026-08-06,yoy_margin_change,k4_rw,PIT,delta=-0.3487; n_params=2
+2026-08-06,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2026-08-06,yoy_margin_change,k2_rw,PIT,delta=1.154; n_params=2
+2026-08-06,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2026-08-06,yoy_margin_change,k4_ew,PIT,delta=-0.6612; n_params=2
+2026-08-06,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2026-08-06,yoy_margin_change,k2_ew,PIT,delta=1.144; n_params=2
+2026-08-06,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2026-08-06,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.1743; n_params=3
+2026-08-06,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2026-08-06,incremental_margin,k4_rw,PIT,m=0.2956; n_params=2
+2026-08-06,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2026-08-06,incremental_margin,k8_rw,PIT,m=0.3079; n_params=2
+2026-08-06,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2026-08-06,incremental_margin,k4_ew,PIT,m=0.2939; n_params=2
+2026-08-06,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2026-08-06,incremental_margin,k8_ew,PIT,m=0.3496; n_params=2
+2026-08-06,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2026-08-06,incremental_margin,k8_median,PIT,m=0.3549; n_params=2
+2026-08-06,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2026-08-06,incremental_margin,k4_rw_revknown,PIT,m=0.2956; n_params=2
+2026-08-06,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2026-08-06,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-08-06,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-08-06,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2026-08-06,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2026-08-06,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2026-08-06,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2026-08-06,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-08-06,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-08-06,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-08-06,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-08-06,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-08-06,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-08-06,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2026-08-06,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2026-08-06,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2026-08-06,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2026-08-06,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-08-06,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-08-06,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-08-06,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-08-06,q_sentence_direction,k_fit_rw,PIT,k=2.027; pool_n=16; n_params=1
+2026-08-06,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2026-08-06,q_sentence_direction,k_fit_ew,PIT,k=3.063; pool_n=16; n_params=1
+2026-08-06,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2026-08-06,q_sentence_direction,k_fit_median,PIT,k=1.952; pool_n=16; n_params=1
+2026-08-06,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2026-08-06,q_sentence_direction,k_abs_rw,PIT,k=1.663; pool_n=8; n_params=1
+2026-08-06,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2026-08-06,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2026-08-06,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2026-08-06,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2026-08-06,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2026-09-11,yoy_margin_change,k4_rw,PIT,delta=-0.3487; n_params=2
+2026-09-11,yoy_margin_change,k4_rw,full_sample,delta=-0.3487; n_params=2
+2026-09-11,yoy_margin_change,k2_rw,PIT,delta=1.154; n_params=2
+2026-09-11,yoy_margin_change,k2_rw,full_sample,delta=1.154; n_params=2
+2026-09-11,yoy_margin_change,k4_ew,PIT,delta=-0.6612; n_params=2
+2026-09-11,yoy_margin_change,k4_ew,full_sample,delta=-0.6612; n_params=2
+2026-09-11,yoy_margin_change,k2_ew,PIT,delta=1.144; n_params=2
+2026-09-11,yoy_margin_change,k2_ew,full_sample,delta=1.144; n_params=2
+2026-09-11,yoy_margin_change,k4_rw_shrink50,PIT,delta=-0.1743; n_params=3
+2026-09-11,yoy_margin_change,k4_rw_shrink50,full_sample,delta=-0.1743; n_params=3
+2026-09-11,incremental_margin,k4_rw,PIT,m=0.2956; n_params=2
+2026-09-11,incremental_margin,k4_rw,full_sample,m=0.2956; n_params=2
+2026-09-11,incremental_margin,k8_rw,PIT,m=0.3079; n_params=2
+2026-09-11,incremental_margin,k8_rw,full_sample,m=0.3079; n_params=2
+2026-09-11,incremental_margin,k4_ew,PIT,m=0.2939; n_params=2
+2026-09-11,incremental_margin,k4_ew,full_sample,m=0.2939; n_params=2
+2026-09-11,incremental_margin,k8_ew,PIT,m=0.3496; n_params=2
+2026-09-11,incremental_margin,k8_ew,full_sample,m=0.3496; n_params=2
+2026-09-11,incremental_margin,k8_median,PIT,m=0.3549; n_params=2
+2026-09-11,incremental_margin,k8_median,full_sample,m=0.3549; n_params=2
+2026-09-11,incremental_margin,k4_rw_revknown,PIT,m=0.2956; n_params=2
+2026-09-11,incremental_margin,k4_rw_revknown,full_sample,m=0.2956; n_params=2
+2026-09-11,pct_rev_seasonal,drift_k4_rw,PIT,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-09-11,pct_rev_seasonal,drift_k4_rw,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-09-11,pct_rev_seasonal,drift_k4_ew,PIT,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2026-09-11,pct_rev_seasonal,drift_k4_ew,full_sample,"drift{cor:0.1643, ops:-0.7252, pd:-0.3062, sm:2.288, ga:-0.6586}; n_params=6"
+2026-09-11,pct_rev_seasonal,drift_k8_rw,PIT,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2026-09-11,pct_rev_seasonal,drift_k8_rw,full_sample,"drift{cor:-0.1172, ops:-0.6904, pd:0.05153, sm:2.031, ga:-0.7178}; n_params=6"
+2026-09-11,pct_rev_seasonal,nodrift,PIT,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-09-11,pct_rev_seasonal,nodrift,full_sample,"drift{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-09-11,pct_rev_seasonal,drift_k4_rw_revknown,PIT,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-09-11,pct_rev_seasonal,drift_k4_rw_revknown,full_sample,"drift{cor:0.08695, ops:-0.7654, pd:-0.3522, sm:2.297, ga:-0.8452}; n_params=6"
+2026-09-11,per_night_seasonal,g_k4_rw,PIT,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-09-11,per_night_seasonal,g_k4_rw,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-09-11,per_night_seasonal,g_k4_ew,PIT,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2026-09-11,per_night_seasonal,g_k4_ew,full_sample,"growth{cor:0.05755, ops:-0.03127, pd:0.0196, sm:0.1667, ga:-0.02685}; n_params=6"
+2026-09-11,per_night_seasonal,g_k8_rw,PIT,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2026-09-11,per_night_seasonal,g_k8_rw,full_sample,"growth{cor:0.03043, ops:-0.03192, pd:0.04324, sm:0.1477, ga:-0.04696}; n_params=6"
+2026-09-11,per_night_seasonal,nogrowth,PIT,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-09-11,per_night_seasonal,nogrowth,full_sample,"growth{cor:0, ops:0, pd:0, sm:0, ga:0}; n_params=1"
+2026-09-11,per_night_seasonal,g_k4_rw_nightsknown,PIT,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-09-11,per_night_seasonal,g_k4_rw_nightsknown,full_sample,"growth{cor:0.05604, ops:-0.03072, pd:0.0191, sm:0.1683, ga:-0.04832}; n_params=6"
+2026-09-11,q_sentence_direction,k_fit_rw,PIT,k=2.027; pool_n=16; n_params=1
+2026-09-11,q_sentence_direction,k_fit_rw,full_sample,k=2.027; pool_n=16; n_params=1
+2026-09-11,q_sentence_direction,k_fit_ew,PIT,k=3.063; pool_n=16; n_params=1
+2026-09-11,q_sentence_direction,k_fit_ew,full_sample,k=3.063; pool_n=16; n_params=1
+2026-09-11,q_sentence_direction,k_fit_median,PIT,k=1.952; pool_n=16; n_params=1
+2026-09-11,q_sentence_direction,k_fit_median,full_sample,k=1.952; pool_n=16; n_params=1
+2026-09-11,q_sentence_direction,k_abs_rw,PIT,k=1.663; pool_n=8; n_params=1
+2026-09-11,q_sentence_direction,k_abs_rw,full_sample,k=1.663; pool_n=8; n_params=1
+2026-09-11,sarima_margin,margin_aicc,PIT,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2026-09-11,sarima_margin,margin_aicc,full_sample,"margin=SARIMA(0, 1, 1)x(0, 1, 1, 4)n aicc=61.4; n_params=3"
+2026-09-11,sarima_margin,lines_aicc,PIT,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"
+2026-09-11,sarima_margin,lines_aicc,full_sample,"cor=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-47.8; ops=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-38.9; pd=SARIMA(1, 0, 0)x(0, 1, 0, 4)c aicc=-53.2; sm=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.6; ga=SARIMA(0, 0, 0)x(0, 1, 0, 4)c aicc=-33.5; n_params=13"

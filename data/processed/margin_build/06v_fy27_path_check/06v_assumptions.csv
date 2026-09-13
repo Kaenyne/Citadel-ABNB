@@ -1,0 +1,51 @@
+name,value,unit,source,is_judgement
+bridge_v3_3Q26_nights_yoy_pct,9.89,%,h2_bridge_v3_rebased_lines.csv,False
+bridge_v3_3Q26_adr_exfx_pct,3.86,%,h2_bridge_v3_rebased_lines.csv,False
+bridge_v3_3Q26_fx_adr_pp,-0.43,pp,h2_bridge_fx.csv fx_pts_adr_adopted (ADR v3 midpoint),False
+bridge_v3_3Q26_revenue_musd,4804.035502546225,$M,h2_bridge_revenue_dollars.csv (GBV-lag kernel route),False
+bridge_v3_3Q26_fx_revenue_pp,3.0,pp,h2_bridge_v3_fx_line.csv,False
+bridge_v3_4Q26_nights_yoy_pct,8.12,%,h2_bridge_v3_rebased_lines.csv,False
+bridge_v3_4Q26_adr_exfx_pct,4.07,%,h2_bridge_v3_rebased_lines.csv,False
+bridge_v3_4Q26_fx_adr_pp,0.15,pp,h2_bridge_fx.csv fx_pts_adr_adopted (ADR v3 midpoint),False
+bridge_v3_4Q26_revenue_musd,3178.107848266214,$M,h2_bridge_revenue_dollars.csv (GBV-lag kernel route),False
+bridge_v3_4Q26_fx_revenue_pp,0.98,pp,h2_bridge_v3_fx_line.csv,False
+lambda_Q1,0.126938,revenue / lagged GBV,"02_kpi_panel_quarterly.csv, mean over n=4 (B3 convention: Q1,Q2 through 2026; Q3,Q4 2023-25)",False
+lambda_Q2,0.137136,revenue / lagged GBV,"02_kpi_panel_quarterly.csv, mean over n=4 (B3 convention: Q1,Q2 through 2026; Q3,Q4 2023-25)",False
+lambda_Q3,0.172394,revenue / lagged GBV,"02_kpi_panel_quarterly.csv, mean over n=3 (B3 convention: Q1,Q2 through 2026; Q3,Q4 2023-25)",False
+lambda_Q4,0.120298,revenue / lagged GBV,"02_kpi_panel_quarterly.csv, mean over n=3 (B3 convention: Q1,Q2 through 2026; Q3,Q4 2023-25)",False
+ws10_fy27_total_base_pct,9.15,%,10_regional_forecast.csv TOTAL FY27 base (share-weighted 9.55 - 0.41 calibration),False
+ws10_fy27_total_bear_pct,5.82,%,10_regional_forecast.csv (comparison only; demand axis not used in my scenarios),False
+ws10_fy27_total_bull_pct,11.48,%,10_regional_forecast.csv (comparison only),False
+ws10_fy27_na_base_pct,6.0,%,10_regional_forecast.csv na FY27 base,False
+na_share_2027,0.266,share,10_regional_forecast.csv nights_share_est_pct na FY27,False
+na_underlying_2027_pts,2.31,pts,"nights_quarterly_na.csv underlying_pts 2027 (choice model, PR #32)",False
+na_underlying_2026_pts,3.31,pts,nights_quarterly_na.csv underlying_pts 2026,False
+na_product_peak_1h26_pts,4.69,pts of NA nights,PR #32 fit: RNPL 2.40 (3Q25) + t1/cancel 2.29 (1Q26 step),False
+mgmt_global_bundle_pts_1q26,3.0,pts of total nights,"1Q26 call (Mertz), via PR #32 GLOBAL_PRODUCT_PTS",False
+exna_bundle_pts_of_exna,2.388,pts of ex-NA nights,(3.0 - s x 4.69)/(1-s) at s=0.266 (PR #32 total_path),False
+exna_bundle_pts_of_total,1.752,pts of total nights,x (1-s); equals PR #32's -1.75 exna_lap,False
+exna_fee_cancel_share_of_exna_bundle,0.45,share,WS-D D1_exna_4q26_gap.csv: pinned 40-50% by the 4Q25 'over 200bp'; midpoint as N memo 2 / bridge v3,True
+exna_rnpl_1q27_lap_fraction,0.4231,share of quarter,"WS-D point 2: ex-NA go-lives in the last 5-6 of 13 weeks of 1Q26 (UK 18 Feb, AU/APAC 23 Feb, CA 4 Mar); midpoint 5.5/13",True
+bear_tranche2_nights_cost_pts,-1.0,pts of total nights (1Q-3Q27),"PR #32 bear (-1 NA at payout-neutral re-pricing, host_only_fee_history_and_elasticity -0.3 to -1.4%); applied GLOBALLY here because tranche 2 (13 Oct 2026) is global",True
+bull_new_lever_share_of_old_bundle,0.5,share,PR #32 bull: a new lever half the old bundle's size for FY27; applied to NA (2.35 NA pts) and ex-NA (1.19 ex-NA pts) here,True
+residual_2023_25_mean_pp,2.4,pp,ADR v3 synthesis section 3 / P1 terms lo band (2.398),False
+mgmt_bundle_adr_contribution_pp,1.0,pp of ADR,"ADR v3 synthesis: ~1pp of ADR from the bundle in 4Q25 and 1Q26 by the letters' GBV-minus-nights gap (D014, D032)",False
+adr_geo_mix_pp,-1.428426033774555,pp,"P1_card_v3_terms.csv (3Q26 measured, carried)",False
+adr_party_pp,0.796671778749512,pp,P1_card_v3_terms.csv,False
+adr_los_pp,0.0562640964166838,pp,P1_card_v3_terms.csv,False
+adr_interaction_pp,-0.1,pp,P1_card_v3_terms.csv,False
+adr_k_line_pp_1q_3q27,0.3745,pp,P1_card_v3_terms.csv 4Q26 K line (0.3745) carried while the y/y migrated share is still rising; 0 in 4Q27 (K: falls out of the y/y in 4Q27),True
+adr_seats_2027_pp,-0.5650781766808444,pp,15_seats_dilution_quarterly.csv base 2027 (-0.565 vs -0.483 in 2026),False
+adr_residual_rule_base,4.85 -> 4.35 (1Q27) -> 3.85 (2Q27+),pp,"judgement: the ~1pp bundle ADR contribution laps with the ex-NA RNPL anniversary (half 1Q27, full 2Q27); rest of the residual persists (v3 last_q)",True
+adr_residual_rule_bear,linear 4.85 -> 2.40 over 1Q27-4Q27,pp,ADR v3 synthesis section 4 point 2: carry mean reversion as the downside,True
+adr_residual_rule_bull,4.85 held,pp,v3 last_q persistence,True
+adr_fx_eur_fit,"(-0.5687, 0.4512)","intercept, slope on EUR/USD y/y",B4_application_3q26_4q26.py (05_fx_fits ex21 n17),False
+adr_fx_baskets,GBV-share x pass-through x destination-basket y/y,,B4_application_3q26_4q26.py DEST_BASKET / PASSTHROUGH / GBV_SHARE_2025,False
+fx_spot_held_from,2026-09-04,date,B_fx_meta.json latest_fred_fx_observation,False
+rev_fx_phi_scale,0.851,,"fx_lag_v2 Phi (0, 2/3, 1/3) x 0.851 (B4 adopted reading C)",False
+rev_fx_2027_source,"fx_lag_v2/23b_fy27_annualisation_v2.csv, spec phi_scale_0.851, rows spot_held / usd_weak_+1sd / usd_strong_-1sd",pp by quarter,kernel output read directly (0.93/0.62/0.31/0.38 spot held); never added to revenue,False
+fy28_nights_yoy_pct,7.0,%,"judgement: clean comp, LatAm/APAC decay continues (WS10 direction), no new lever; reverse DCF market-implied 8-9 for FY27",True
+fy28_adr_reported_yoy_pct,2.0,%,judgement: residual at its 2023-25 mean 2.40 + carried mix -1.2 + seats -0.62 (15_seats 2028) + K 0 + FX 0 (spot held) ~ 0.6; rounded up to 2.0 for the 4Q27 exit 2.6,True
+fy28_take_rate_change_pts,0.0,pts,judgement: take rate flat (management 'in line' language 2025-26),True
+v2b_3q26_revenue_bear_musd,4755.0,$M,PREREG_ABNB-INT-v1.md INT-01 80% band low (B1 registered block),False
+v2b_3q26_revenue_bull_musd,4878.0,$M,PREREG_ABNB-INT-v1.md INT-01 80% band high,False

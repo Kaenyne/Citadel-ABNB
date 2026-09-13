@@ -1,0 +1,15 @@
+check,passed,detail
+sum_of_quarters_equals_FY27_base,True,15796.97 vs 15796.97
+sum_of_quarters_equals_FY27_bear,True,15521.56 vs 15521.56
+sum_of_quarters_equals_FY27_bull,True,16197.58 vs 16197.58
+sum_of_quarters_equals_FY27_base_fx_usd_strong,True,15514.69 vs 15514.69
+sum_of_quarters_equals_FY27_base_fx_usd_weak,True,16078.30 vs 16078.30
+sum_of_quarters_equals_FY27_base_no_exna_lap_2027,True,15964.30 vs 15964.30
+seasonal_shares_2027_within_2023_25_range_pm_0.5pp,True,"quarter  share_2023  share_2024  share_2025  share_2026_path  share_2027_base  inside_2023_25_range_pm_0.5pp
+     Q1      0.2702      0.2698      0.2685           0.2679           0.2689                           True
+     Q2      0.2568      0.2545      0.2522           0.2543           0.2540                           True
+     Q3      0.2526      0.2498      0.2507           0.2518           0.2514                           True
+     Q4      0.2204      0.2258      0.2287           0.2260           0.2257                           True"
+1Q27_nights_within_2pts_of_4Q26_exit,True,"step -1.15 pts: WS10 FY27-vs-4Q26 base step -0.79, NA delta change +0.06, ex-NA RNPL partial lap -0.41"
+FY27_base_revenue_growth_inside_B3_band_9.2_11.5,True,10.71%
+4Q26_base_rows_equal_bridge_v3,True,"asserted in the build (nights, ADR $, GBV to 0.02; revenue and FX carried verbatim)"
