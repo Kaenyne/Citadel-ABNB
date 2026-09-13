@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL_REPAIRED",
+  "phase": "pre-publication index byte audit",
+  "error": "Git's initial normalization retained LF index bytes for newly generated CRLF files; changing attributes without explicit renormalization did not refresh all cached entries. The first whitespace check also treated preserved CR characters as trailing whitespace.",
+  "correction": "Scoped exact-byte attributes for new L4 files, whitespace=cr-at-eol, followed by git add --renormalize on only new L4 paths. No model, forecast or pre-existing research file was edited.",
+  "followup": "review_staging.py independently compares every new branch index blob with its working bytes and captures a bounded whitespace report."
+}
