@@ -44,8 +44,8 @@ FIG.mkdir(parents=True, exist_ok=True)
 
 MB = REPO / "data" / "processed" / "margin_build"
 WS06_DIR = MB / "06_fy27_path_v2"
-WS06_WIDE = WS06_DIR / "06_revenue_path_wide_v2b.csv" if (WS06_DIR / "06_revenue_path_wide_v2b.csv").exists() \
-    else WS06_DIR / "06_revenue_path_wide.csv"
+WS06_LONG_V2B = WS06_DIR / "06_revenue_path_3q26_4q27_v2b.csv"      # WS06v checker output (long format), preferred
+WS06_WIDE = WS06_LONG_V2B if WS06_LONG_V2B.exists() else WS06_DIR / "06_revenue_path_wide.csv"
 WS06_CONS27 = WS06_DIR / "06_consensus_quarterly_2027.csv"
 WS03_CURRENT = MB / "03_consensus_pit" / "03_current_consensus.csv"
 WS04_PANEL = MB / "04_alt_signals" / "04_signal_panel_quarterly.csv"
@@ -277,6 +277,8 @@ def oracle_drivers(q: str) -> dict | None:
 
 def load_ws06() -> pd.DataFrame:
     w = pd.read_csv(WS06_WIDE)
+    if "line" in w.columns:      # the long v2b file: pivot to wide
+        w = w.pivot_table(index=["quarter", "scenario"], columns="line", values="value").reset_index()
     w["quarter"] = w["quarter"].map(Q.canon)
     w["gbv"] = w["gbv_busd"] * 1000.0
     w = w.rename(columns={"revenue_musd": "revenue", "nights_mm": "nights"})

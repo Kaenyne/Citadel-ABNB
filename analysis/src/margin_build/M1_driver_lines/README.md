@@ -15,8 +15,9 @@ The script imports the margin harness (`analysis/src/margin_build/10_harness_mar
 the calendar, the frozen revenue leg, the window rule, the validator and the recency weights. It never modifies anything
 outside its own folders and the two `driver-lines__*.csv` registry files.
 
-Revenue path for LIVE: `data/processed/margin_build/06_fy27_path_v2/06_revenue_path_wide_v2b.csv` if present, else
-`06_revenue_path_wide.csv` (the file used is printed on the first line and stored in `M1_driver_lines_build.json`).
+Revenue path for LIVE: `data/processed/margin_build/06_fy27_path_v2/06_revenue_path_3q26_4q27_v2b.csv` (WS06v's long-format
+file, pivoted to wide in `load_ws06`) if present, else `06_revenue_path_wide.csv` (the file used is printed on the first line and
+stored in `M1_driver_lines_build.json`). Last build 2026-09-13 04:58 used the v2b file.
 
 ## Outputs (`data/processed/margin_build/M1_driver_lines/`)
 

@@ -42,6 +42,7 @@ ZQ = dict(q05=-1.6448536269514722, q10=-1.2815515655446004, q25=-0.6744897501960
 QCOLS = list(ZQ)
 LIVE_IE_MUSD = 37.0          # 2Q26 printed interest expense on the March 2026 notes (10-Q 2Q26), run-rate
 LIVE_ETR = {2026: 18.0, 2027: 17.5, 2028: 17.5}   # WS05 S157 (FY26 high teens), S148 (long-term mid-to-high teens)
+OTHER_CF_DISCRETE_CUT = 1000.0   # |CFO residual| above this is a discrete non-cash item (3Q23 VA release), excluded from the pool
 FY28_MARGIN_NOTE = "FY28 adj EBITDA = FY27 margin of the same source x FY28 base revenue (flat margin, labelled)"
 
 # ----------------------------------------------------------------------------------------------- helpers
@@ -206,7 +207,7 @@ class M7:
                 continue
             rows.append(ii / (r / 100.0 * avgb / 4.0))
         rows = rows[-8:]
-        return (wmean(rows, weighting) if rows else np.nan), len(rows)
+        return (wmean(rows, weighting) if rows else 1.0), len(rows)     # no post-ZIRP quarter yet: beta 1.0 (labelled n 0)
 
     def gbv_growth_last(self, h: pd.DataFrame) -> float:
         q = h.index[-1]
@@ -308,7 +309,16 @@ class M7:
             r = g[g["object"] == obj]
             if len(r) and np.isfinite(r["point"].iloc[0]):
                 return float(r["point"].iloc[0]), obj
-        return np.nan, "none"
+        # not in the grid (h >= 3 at a guide date): the drift rule on the PIT history, chained if q-4 is unknown
+        h = self.hist(vd)
+        y = h["adj_ebitda_reported"].dropna()
+        last, last4 = y.index[-1], shift(y.index[-1], -4)
+        drift = float(y.loc[last] - y.loc[last4]) if last4 in y.index else 0.0
+        def val(qq):
+            if qq in y.index:
+                return float(y.loc[qq])
+            return val(shift(qq, -4)) + drift
+        return val(canon(q)), "seasonal_naive_drift_direct"
 
     # ---- working capital
     def wc_swing(self, h, col, q, growth_fn):
@@ -321,8 +331,17 @@ class M7:
         return ratio * gbv_fn(q)
 
     def other_cf(self, h, weighting):
-        r = (h["cfo"] - h["net_income"] - h["da"] - h["sbc_total_is"] - h["change_unearned_fees"] - h["change_funds_payable"]).dropna()
+        """CFO - NI - D&A - SBC - change in unearned fees. Funds payable is NOT subtracted: its change is offset one-for-one
+        by the change in funds receivable / held on behalf of customers (panel change_funds_receivable_xbrl = -change_funds_payable),
+        so it nets to ~0 inside CFO (correction to the pre-registration, see note)."""
+        r = (h["cfo"] - h["net_income"] - h["da"] - h["sbc_total_is"] - h["change_unearned_fees"]).dropna()
+        r = r[r.abs() <= OTHER_CF_DISCRETE_CUT]      # 3Q23: -$2,464m = the non-cash valuation-allowance release inside NI (excluded, see note)
         return wmean(r.iloc[-8:], weighting), r
+
+    def other_cf_seasonal(self, h, q, weighting):
+        _, r = self.other_cf(h, weighting)
+        same = [r.loc[t] for t in r.index if qoy(t) == qoy(q)][-3:]
+        return wmean(same, weighting)
 
     def capex(self, h, weighting):
         return wmean(h["capex"].dropna().iloc[-4:], weighting)
@@ -357,7 +376,9 @@ class M7:
         # SBC
         g_sbc = self.fit_sbc_growth(fit_h, weighting)
         sbc = self.sbc(h, q, g_sbc)
-        out.update(sbc_growth=g_sbc, sbc_musd=sbc)
+        s_ = fit_h["sbc_total_is"].dropna()
+        g_last = float(s_.iloc[-1] / s_.loc[shift(s_.index[-1], -4)] - 1.0) if shift(s_.index[-1], -4) in s_.index else g_sbc
+        out.update(sbc_growth=g_sbc, sbc_musd=sbc, sbc_growth_last=g_last, sbc_musd_yoy_last=self.sbc(h, q, g_last))
         # D&A
         da = self.da(fit_h if prior_basis == "full_sample" else h, weighting)
         da_last = self.da(h, weighting, "last_value")
@@ -410,11 +431,13 @@ class M7:
         fh_prev = float(h.at[qm1, "funds_held_on_behalf"]) if qm1 in h.index else self.wc_balance_ratio(h, "funds_held_on_behalf", qm1, gbv_fn, weighting)
         duf_b, dfp_b = uf_bal - uf_prev, fh_bal - fh_prev
         oth_cf, _ = self.other_cf(fit_h if prior_basis == "full_sample" else h, weighting)
+        oth_cf_s = self.other_cf_seasonal(fit_h if prior_basis == "full_sample" else h, q, weighting)
         cpx = self.capex(h, weighting)
-        out.update(duf_swing=duf_s, dfp_swing=dfp_s, duf_balance=duf_b, dfp_balance=dfp_b, other_cf_musd=oth_cf, capex_musd=cpx)
-        for wc_tag, duf, dfp in [("swing", duf_s, dfp_s), ("balance", duf_b, dfp_b)]:
+        out.update(duf_swing=duf_s, dfp_swing_memo=dfp_s, duf_balance=duf_b, dfp_balance_memo=dfp_b, other_cf_musd=oth_cf,
+                   other_cf_seasonal_musd=oth_cf_s, capex_musd=cpx)
+        for wc_tag, duf, oth in [("swing", duf_s, oth_cf), ("balance", duf_b, oth_cf), ("seasonal", duf_s, oth_cf_s)]:
             for e_tag in ["pit", "known"]:
-                cfo = out[f"net_income_{e_tag}"] + da + sbc + duf + dfp + oth_cf
+                cfo = out[f"net_income_{e_tag}"] + da + sbc + duf + oth
                 out[f"cfo_{wc_tag}_{e_tag}"] = cfo
                 out[f"fcf_{wc_tag}_{e_tag}"] = cfo - cpx
                 out[f"fcf_margin_{wc_tag}_{e_tag}"] = 100.0 * (cfo - cpx) / rev if rev else np.nan
@@ -427,6 +450,7 @@ SPECS = [
     ("interest_income", "interest_income_musd", "rate_x_base", "interest_income_musd", True, 2),
     ("sbc", "sbc_musd", "yoy", "sbc_musd", True, 2),
     ("sbc", "sbc_pct_rev", "yoy", "sbc_pct_rev", False, 2),
+    ("sbc", "sbc_musd", "yoy_last", "sbc_musd_yoy_last", True, 1),
     ("da", "da_musd", "mean4", "da_musd", True, 2),
     ("da", "da_musd", "last_value", "da_last_value", True, 1),
     ("tax", "tax_rate_pct", "guide_or_ttm", "tax_rate_pct", False, 2),
@@ -445,11 +469,15 @@ SPECS = [
     ("eps", "tax_provision_musd", "ebitda_known", "tax_provision_known", False, 6),
     ("fcf", "fcf_musd", "swing_x_gbv", "fcf_swing_pit", False, 3),
     ("fcf", "fcf_musd", "swing_x_gbv_ebitda_known", "fcf_swing_known", False, 3),
-    ("fcf", "fcf_musd", "balance_ratio", "fcf_balance_pit", False, 7),
+    ("fcf", "fcf_musd", "balance_ratio", "fcf_balance_pit", False, 5),
+    ("fcf", "fcf_musd", "swing_x_gbv_seasonal_other", "fcf_seasonal_pit", False, 3),
+    ("fcf", "fcf_musd", "swing_x_gbv_seasonal_other_ebitda_known", "fcf_seasonal_known", False, 3),
+    ("fcf", "cfo_musd", "swing_x_gbv_seasonal_other", "cfo_seasonal_pit", False, 3),
+    ("fcf", "fcf_margin_pct", "swing_x_gbv_seasonal_other", "fcf_margin_seasonal_pit", False, 3),
     ("fcf", "cfo_musd", "swing_x_gbv", "cfo_swing_pit", False, 3),
-    ("fcf", "cfo_musd", "balance_ratio", "cfo_balance_pit", False, 7),
+    ("fcf", "cfo_musd", "balance_ratio", "cfo_balance_pit", False, 5),
     ("fcf", "fcf_margin_pct", "swing_x_gbv", "fcf_margin_swing_pit", False, 3),
-    ("fcf", "fcf_margin_pct", "balance_ratio", "fcf_margin_balance_pit", False, 7),
+    ("fcf", "fcf_margin_pct", "balance_ratio", "fcf_margin_balance_pit", False, 5),
     ("fcf", "capex_musd", "mean4", "capex_musd", True, 2),
 ]
 FALLBACK_SD = {"eps_diluted": 0.30, "tax_rate_pct": 8.0, "sbc_pct_rev": 1.0, "fcf_margin_pct": 8.0}
@@ -548,7 +576,8 @@ def _note(obj, spec, f):
     if obj == "interest_income":
         return f"beta {f['beta']:.3f} (n {f['beta_n']}); tbill_hat {f['tbill_hat']:.2f}; avg base {f['avg_base']:.0f}"
     if obj == "sbc":
-        return f"y/y growth {100 * f['sbc_growth']:.1f}% on SBC[q-4]"
+        return (f"y/y growth {100 * f['sbc_growth']:.1f}% on SBC[q-4]" if spec != "yoy_last"
+                else f"last y/y growth {100 * f['sbc_growth_last']:.1f}% on SBC[q-4]")
     if obj == "da":
         return f"D&A rule {spec}"
     if obj == "tax":
@@ -560,7 +589,7 @@ def _note(obj, spec, f):
         return (f"EBITDA {f['ebitda_pit']:.0f} from {f['ebitda_pit_src']}" if spec == "ebitda_pit" else "EBITDA actual (below-line error only)") + \
             f"; ETR {f['tax_rate_pct']:.1f}; IE {f['interest_expense_musd']:.0f}; other {f['other_income_musd']:.0f}; shares {f['diluted_shares_m']:.0f}"
     if obj == "fcf":
-        return f"NI from {'EBITDA actual' if 'known' in spec else f['ebitda_pit_src']}; wc {'balance ratio' if 'balance' in spec else 'swing x GBV'}; other_cf {f['other_cf_musd']:.0f}; capex {f['capex_musd']:.0f}; rev leg {f['revenue_leg_kind']}"
+        return f"NI from {'EBITDA actual' if 'known' in spec else f['ebitda_pit_src']}; wc {'balance ratio' if 'balance' in spec else 'swing x GBV'}; other_cf {(f['other_cf_seasonal_musd'] if 'seasonal' in spec else f['other_cf_musd']):.0f}{' (seasonal)' if 'seasonal' in spec else ''}; capex {f['capex_musd']:.0f}; rev leg {f['revenue_leg_kind']}"
     return spec
 
 
@@ -672,7 +701,7 @@ def build_live(m: M7, reg: pd.DataFrame):
                                       op_income_musd=a["op_income"], interest_income_musd=a["interest_income"], interest_expense_musd=a["interest_expense"],
                                       other_income_musd=a["other_income_expense"], pretax_income_musd=a["pretax_income"], tax_provision_musd=a["tax_provision"],
                                       net_income_musd=a["net_income"], diluted_shares_m=a["shares_diluted_m"], cfo_musd=a["cfo"], capex_musd=a["capex"], fcf_musd=a["fcf_reported"],
-                                      is_actual=1))
+                                      fcf_seasonal_other_musd=a["fcf_reported"], is_actual=1))
                 elif q in g.index:
                     parts.append(dict(g.loc[q].to_dict(), is_actual=0))
             if len(parts) < 4:
@@ -681,8 +710,9 @@ def build_live(m: M7, reg: pd.DataFrame):
             tot = s.drop(columns=["is_actual"]).select_dtypes("number").sum(numeric_only=True)
             row = dict(period=f"FY{year}", ebitda_source=src_key, scenario=scen, n_actual_quarters=int(s["is_actual"].sum()))
             for k in ["revenue_musd", "adj_ebitda_musd", "da_musd", "sbc_musd", "op_income_musd", "interest_income_musd", "interest_expense_musd",
-                      "other_income_musd", "pretax_income_musd", "tax_provision_musd", "net_income_musd", "cfo_musd", "capex_musd", "fcf_musd"]:
-                row[k] = float(tot[k])
+                      "other_income_musd", "pretax_income_musd", "tax_provision_musd", "net_income_musd", "cfo_musd", "capex_musd", "fcf_musd",
+                      "fcf_seasonal_other_musd"]:
+                row[k] = float(tot[k]) if k in tot else np.nan
             row["diluted_shares_m"] = float(s["diluted_shares_m"].mean())
             row["adj_ebitda_margin_pct"] = 100 * row["adj_ebitda_musd"] / row["revenue_musd"]
             row["op_margin_pct"] = 100 * row["op_income_musd"] / row["revenue_musd"]
@@ -690,6 +720,7 @@ def build_live(m: M7, reg: pd.DataFrame):
             row["eps_diluted"] = row["net_income_musd"] / row["diluted_shares_m"]
             row["eps_sum_of_quarters"] = float(s["eps_diluted"].sum()) if "eps_diluted" in s else np.nan
             row["fcf_margin_pct"] = 100 * row["fcf_musd"] / row["revenue_musd"]
+            row["fcf_margin_seasonal_other_pct"] = 100 * row["fcf_seasonal_other_musd"] / row["revenue_musd"]
             row["sbc_pct_rev"] = 100 * row["sbc_musd"] / row["revenue_musd"]
             p = f"FY{str(year)[2:]}"
             if p in street.index:
@@ -716,8 +747,9 @@ def _live_row(f: dict, q: str, src_key: str, scen: str, path: dict) -> dict:
              net_income_musd=f["net_income_pit"], diluted_shares_m=f["diluted_shares_structural_m"], diluted_shares_delta_rule_m=f["diluted_shares_m"],
              buyback_musd_q=f["st_buyback_musd_q"], price_used=f["st_price"], issuance_m_q=f["st_issuance_m"],
              eps_diluted=f["net_income_pit"] / f["diluted_shares_structural_m"], eps_delta_rule=f["eps_pit"],
-             duf_musd=f["duf_swing"], dfp_musd=f["dfp_swing"], other_cf_musd=f["other_cf_musd"],
+             duf_musd=f["duf_swing"], dfp_memo_musd=f["dfp_swing_memo"], other_cf_musd=f["other_cf_musd"], other_cf_seasonal_musd=f["other_cf_seasonal_musd"],
              cfo_musd=f["cfo_swing_pit"], capex_musd=f["capex_musd"], fcf_musd=f["fcf_swing_pit"], fcf_margin_pct=f["fcf_margin_swing_pit"],
+             cfo_seasonal_other_musd=f["cfo_seasonal_pit"], fcf_seasonal_other_musd=f["fcf_seasonal_pit"], fcf_margin_seasonal_other_pct=f["fcf_margin_seasonal_pit"],
              fcf_balance_ratio_musd=f["fcf_balance_pit"], revenue_path_source=path["source"])
     p = f"{q[-1]}Q{q[2:4]}"
     if p in street.index:
@@ -773,12 +805,16 @@ def fy_fcf_test(raw: pd.DataFrame, m: M7) -> pd.DataFrame:
             # extend to h=3 for the test (the grid holds h<=2 at guide dates): compute directly
             f3 = m.forecast(vd, f"{year}Q4", "rw", "PIT"); f3["horizon_q"] = 3
             g = pd.concat([g, pd.DataFrame([f3])], ignore_index=True)
-        fc_swing = float(g["fcf_swing_pit"].sum()); fc_bal = float(g["fcf_balance_pit"].sum()); fc_known = float(g["fcf_swing_known"].sum())
+        fc_swing = float(g["fcf_swing_pit"].sum(skipna=False)); fc_bal = float(g["fcf_balance_pit"].sum(skipna=False))
+        fc_known = float(g["fcf_swing_known"].sum(skipna=False)); fc_seas = float(g["fcf_seasonal_pit"].sum(skipna=False))
         act = float(ann.at[str(year), "sum"]) if (str(year) in ann.index and ann.at[str(year), "count"] == 4) else np.nan
         naive = float(ann.at[str(year - 1), "sum"]) if str(year - 1) in ann.index else np.nan
-        rows.append(dict(fy=year, vintage_date=vd, fcf_hat_swing=fc_swing, fcf_hat_balance=fc_bal, fcf_hat_swing_ebitda_known=fc_known,
-                         seasonal_naive=naive, actual=act, err_swing=fc_swing - act, err_balance=fc_bal - act, err_known=fc_known - act,
-                         err_naive=naive - act, swing_beats_naive=abs(fc_swing - act) < abs(naive - act) if np.isfinite(act) else np.nan))
+        rows.append(dict(fy=year, vintage_date=vd, fcf_hat_swing=fc_swing, fcf_hat_seasonal_other=fc_seas, fcf_hat_balance=fc_bal,
+                         fcf_hat_swing_ebitda_known=fc_known, seasonal_naive=naive, actual=act, err_swing=fc_swing - act, err_seasonal=fc_seas - act,
+                         err_balance=fc_bal - act, err_known=fc_known - act, err_naive=naive - act,
+                         swing_beats_naive=abs(fc_swing - act) < abs(naive - act) if np.isfinite(act) else np.nan,
+                         seasonal_beats_naive=abs(fc_seas - act) < abs(naive - act) if np.isfinite(act) else np.nan,
+                         ebitda_pit_src=";".join(sorted(set(g["ebitda_pit_src"].astype(str))))))
     d = pd.DataFrame(rows)
     d.to_csv(OUT / "M7_fy_fcf_test.csv", index=False)
     return d
@@ -811,7 +847,8 @@ def parameter_sheet(m: M7, live: pd.DataFrame, base_key: str, srcs: dict) -> pd.
         ("diluted_shares_delta_m_q", f["st_delta"], "m per quarter = -buyback/price + issuance", "this note"),
         ("diluted_shares_2q26", float(p.at["2026Q2", "shares_diluted_m"]), "m weighted-average diluted (basic 592; A+B outstanding 589.6m at 15 Jul 2026; 9.2m Class H excluded)", "2Q26 10-Q cover and EPS note"),
         ("wc_rule", "change in unearned fees and in funds payable = same quarter last year x (1 + GBV y/y from the path)", "USD m", "this note (0 fitted parameters)"),
-        ("other_cf_musd_q", f["other_cf_musd"], "USD m per quarter (recency-weighted mean of last 8 residuals: CFO - NI - D&A - SBC - dUF - dFP)", "WS02 cash-flow lines"),
+        ("other_cf_musd_q", f["other_cf_musd"], "USD m per quarter (recency-weighted mean of last 8 residuals: CFO - NI - D&A - SBC - dUF; funds payable nets against funds receivable)", "WS02 cash-flow lines"),
+        ("other_cf_seasonal_3q26", f["other_cf_seasonal_musd"], "USD m (same-quarter residual, recency-weighted mean of the last 3 years; variant)", "WS02 cash-flow lines"),
         ("capex_musd_q", f["capex_musd"], "USD m per quarter (recency-weighted last-4 mean)", "WS02 capex"),
         ("adj_ebitda_source_live", srcs[base_key]["label"], "USD m by quarter", "registry"),
         ("fy28_ebitda_rule", FY28_MARGIN_NOTE, "", "this note"),

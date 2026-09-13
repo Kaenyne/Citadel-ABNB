@@ -1735,89 +1735,113 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 7.65 | 7.32 | 9.82 | 1.73 | 2.22 | 1.000 | 1.000 |  | 6.26 | 0.93 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 11.26 | 10.31 | 13.23 | -2.31 | -0.20 | 1.472 | 1.407 |  | 7.76 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 11.44 | 10.50 | 13.64 | -2.70 | 0.37 | 1.496 | 1.434 |  | 7.89 | 0.86 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 12.02 | 11.30 | 16.00 | 3.49 | 2.29 | 1.572 | 1.543 |  | 8.98 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 12.14 | 11.33 | 16.04 | 3.13 | 2.02 | 1.587 | 1.547 |  | 9.05 | 0.79 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 13.81 | 13.86 | 16.46 | -0.31 | -1.19 | 1.807 | 1.893 |  | 10.29 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 13.83 | 13.76 | 17.10 | -5.33 | 1.28 | 1.809 | 1.879 |  | 9.82 | 0.79 | 5 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 14.10 | 14.32 | 16.45 | -5.28 | 0.46 | 1.844 | 1.955 |  | 9.59 | 0.79 | 5 | False | False |
 | baselines-margin | trailing4 | W1 | 0 | PIT | 14 | 20.50 | 16.90 | 25.75 | -0.89 | -0.19 | 2.681 | 2.307 |  | 14.83 | 0.79 | 2 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 77.55 | 75.41 | 91.26 | 24.97 | 28.89 | 10.143 | 10.298 |  | 55.18 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 80.51 | 84.81 | 93.82 | 19.58 | 35.63 | 10.530 | 11.582 |  | 57.45 | 0.57 | 7 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 80.80 | 78.47 | 97.44 | 27.33 | 31.78 | 10.567 | 10.716 |  | 58.99 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 83.85 | 88.23 | 100.00 | 22.33 | 38.94 | 10.966 | 12.048 |  | 61.12 | 0.57 | 7 | False | False |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 7.65 | 7.32 | 9.82 | 1.73 | 2.22 | 1.000 | 1.000 |  | 6.00 | 0.93 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 9.06 | 8.40 | 11.74 | 0.12 | 0.86 | 1.185 | 1.147 |  | 6.63 | 0.79 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 10.18 | 9.41 | 13.53 | -0.57 | 0.35 | 1.331 | 1.285 |  | 7.59 | 0.79 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 10.63 | 8.95 | 12.40 | 3.19 | 3.83 | 1.390 | 1.222 |  | 7.04 | 0.93 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 10.74 | 9.09 | 12.58 | 3.57 | 4.19 | 1.405 | 1.241 |  | 7.11 | 0.93 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 11.85 | 11.47 | 13.63 | 0.55 | 4.72 | 1.550 | 1.566 |  | 7.71 | 0.71 | 5 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 11.92 | 11.54 | 13.74 | 0.58 | 4.83 | 1.560 | 1.575 |  | 7.77 | 0.71 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 13.81 | 13.86 | 16.46 | -0.31 | -1.19 | 1.807 | 1.893 |  | 9.80 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W1 | 0 | full_sample | 14 | 20.50 | 16.90 | 25.75 | -0.89 | -0.19 | 2.681 | 2.307 |  | 14.53 | 0.71 | 2 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 75.05 | 71.80 | 86.35 | 16.03 | 17.15 | 9.816 | 9.806 |  | 49.72 | 0.93 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 76.46 | 78.54 | 88.73 | 10.97 | 24.24 | 10.000 | 10.725 |  | 50.95 | 0.93 | 7 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 80.51 | 76.44 | 93.90 | 33.65 | 33.48 | 10.530 | 10.439 |  | 53.31 | 1.00 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 80.99 | 83.57 | 94.73 | 28.20 | 40.15 | 10.593 | 11.412 |  | 54.26 | 0.93 | 7 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 7.64 | 7.32 | 9.97 | 2.45 | 2.40 | 1.000 | 1.000 |  | 5.66 | 0.77 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 9.84 | 9.25 | 11.64 | -1.24 | -0.07 | 1.288 | 1.264 |  | 6.62 | 0.77 | 5 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 10.21 | 9.23 | 12.70 | -1.34 | -0.45 | 1.336 | 1.262 |  | 7.11 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 10.82 | 9.87 | 12.76 | -1.58 | 0.55 | 1.415 | 1.349 |  | 7.54 | 0.85 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 11.19 | 11.48 | 13.94 | 1.39 | 1.39 | 1.464 | 1.570 |  | 9.14 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 11.21 | 9.94 | 13.58 | -1.68 | 0.22 | 1.467 | 1.358 |  | 7.89 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 13.37 | 12.78 | 17.13 | 3.78 | 2.65 | 1.750 | 1.747 |  | 9.58 | 0.77 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 13.39 | 12.79 | 17.01 | 3.27 | 2.33 | 1.752 | 1.748 |  | 9.40 | 0.69 | 3 | False | False |
 | baselines-margin | trailing4 | W1 | 1 | PIT | 13 | 19.07 | 17.49 | 23.58 | 2.91 | 1.48 | 2.495 | 2.391 |  | 13.51 | 0.77 | 2 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 76.13 | 79.96 | 89.32 | 16.71 | 30.71 | 9.962 | 10.930 |  | 54.80 | 0.62 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 76.70 | 79.70 | 90.51 | 17.03 | 27.07 | 10.038 | 10.895 |  | 55.54 | 0.62 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 84.61 | 89.22 | 96.06 | 18.39 | 34.14 | 11.072 | 12.195 |  | 59.42 | 0.69 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 85.04 | 88.67 | 96.96 | 18.60 | 30.57 | 11.128 | 12.121 |  | 60.04 | 0.62 | 3 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 7.64 | 7.32 | 9.97 | 2.45 | 2.40 | 1.000 | 1.000 |  | 5.55 | 0.77 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 7.86 | 8.18 | 9.94 | 4.56 | 4.96 | 1.028 | 1.118 |  | 5.54 | 0.92 | 5 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 7.94 | 8.35 | 10.03 | 4.95 | 5.40 | 1.039 | 1.142 |  | 5.60 | 0.92 | 5 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 8.52 | 8.45 | 10.97 | 4.46 | 4.62 | 1.115 | 1.155 |  | 6.11 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 8.69 | 8.67 | 11.20 | 4.85 | 5.02 | 1.137 | 1.185 |  | 6.24 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 10.06 | 9.75 | 12.35 | 0.49 | 1.44 | 1.316 | 1.332 |  | 7.01 | 0.77 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 11.19 | 11.48 | 13.94 | 1.39 | 1.39 | 1.464 | 1.570 |  | 8.34 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 11.44 | 10.86 | 14.19 | -0.25 | 0.94 | 1.497 | 1.484 |  | 8.03 | 0.77 | 3 | False | False |
 | baselines-margin | trailing4 | W1 | 1 | full_sample | 13 | 19.07 | 17.49 | 23.58 | 2.91 | 1.48 | 2.495 | 2.391 |  | 13.31 | 0.77 | 2 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 72.45 | 73.29 | 84.62 | 8.91 | 20.18 | 9.481 | 10.018 |  | 48.68 | 0.92 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 72.88 | 72.74 | 85.77 | 9.12 | 16.62 | 9.537 | 9.944 |  | 49.22 | 0.85 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 75.11 | 77.06 | 90.03 | 25.72 | 36.67 | 9.829 | 10.534 |  | 50.92 | 0.92 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 76.74 | 77.22 | 91.46 | 26.04 | 33.03 | 10.042 | 10.555 |  | 51.80 | 0.85 | 3 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 8.15 | 7.45 | 10.37 | 2.52 | 2.42 | 1.000 | 1.000 |  | 5.76 | 0.75 | 1 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 8.39 | 7.65 | 11.34 | -1.35 | -1.43 | 1.030 | 1.027 |  | 6.67 | 0.75 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 8.68 | 7.12 | 12.38 | -1.34 | -1.81 | 1.065 | 0.956 |  | 7.13 | 0.75 | 3 | False | True |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 9.46 | 8.52 | 11.89 | -1.27 | -0.30 | 1.161 | 1.144 |  | 7.02 | 0.75 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 9.69 | 8.24 | 12.19 | 1.35 | 1.13 | 1.190 | 1.107 |  | 7.43 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 10.02 | 8.61 | 12.90 | -1.28 | -0.64 | 1.230 | 1.157 |  | 7.52 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 12.87 | 12.12 | 16.70 | 3.55 | 2.46 | 1.581 | 1.628 |  | 9.31 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 12.94 | 12.13 | 16.76 | 4.07 | 2.77 | 1.589 | 1.629 |  | 9.41 | 0.75 | 3 | False | False |
 | baselines-margin | trailing4 | W1 | 2 | PIT | 12 | 20.31 | 18.02 | 24.55 | 2.82 | 1.60 | 2.493 | 2.421 |  | 13.58 | 0.83 | 2 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 72.41 | 74.89 | 81.37 | 10.58 | 22.72 | 8.890 | 10.059 |  | 51.36 | 0.58 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 72.69 | 75.67 | 80.86 | 11.22 | 26.70 | 8.924 | 10.163 |  | 51.78 | 0.58 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 74.20 | 75.65 | 86.10 | 11.30 | 22.23 | 9.110 | 10.160 |  | 54.13 | 0.50 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 74.37 | 76.14 | 85.22 | 11.84 | 26.31 | 9.130 | 10.226 |  | 54.41 | 0.58 | 7 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 8.15 | 7.45 | 10.37 | 2.52 | 2.42 | 1.000 | 1.000 |  | 5.79 | 0.75 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 9.69 | 8.24 | 12.19 | 1.35 | 1.13 | 1.190 | 1.107 |  | 6.97 | 0.92 | 1 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 10.06 | 9.36 | 12.28 | 1.26 | 1.78 | 1.235 | 1.257 |  | 7.03 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 10.14 | 9.44 | 11.93 | 4.94 | 5.23 | 1.245 | 1.267 |  | 6.76 | 0.92 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 10.27 | 9.66 | 12.04 | 5.33 | 5.68 | 1.261 | 1.297 |  | 6.80 | 0.92 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 10.67 | 9.55 | 12.84 | 4.93 | 4.89 | 1.310 | 1.283 |  | 7.19 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 10.79 | 9.74 | 13.05 | 5.33 | 5.30 | 1.325 | 1.308 |  | 7.30 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 11.44 | 10.45 | 14.07 | 0.49 | 1.30 | 1.405 | 1.403 |  | 8.05 | 0.83 | 3 | False | False |
 | baselines-margin | trailing4 | W1 | 2 | full_sample | 12 | 20.31 | 18.02 | 24.55 | 2.82 | 1.60 | 2.493 | 2.421 |  | 13.95 | 0.75 | 2 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 72.98 | 72.04 | 84.75 | 4.97 | 14.58 | 8.960 | 9.676 |  | 48.44 | 0.92 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 73.26 | 72.82 | 83.76 | 5.61 | 18.56 | 8.995 | 9.780 |  | 47.91 | 0.92 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 75.03 | 76.39 | 88.71 | 22.20 | 34.99 | 9.211 | 10.260 |  | 49.90 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 76.11 | 76.38 | 89.84 | 21.66 | 30.92 | 9.345 | 10.259 |  | 50.50 | 0.75 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 7.05 | 7.01 | 8.85 | 1.38 | 1.98 | 1.000 | 1.000 |  | 5.48 | 0.90 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 10.84 | 10.66 | 13.80 | 0.41 | 1.11 | 1.536 | 1.519 |  | 7.94 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 11.02 | 10.72 | 14.41 | -0.10 | 0.84 | 1.562 | 1.528 |  | 8.23 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 11.08 | 10.10 | 13.58 | -4.41 | -0.62 | 1.570 | 1.440 |  | 7.83 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 12.04 | 10.60 | 14.60 | -3.72 | 0.41 | 1.707 | 1.512 |  | 8.41 | 0.90 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 14.15 | 13.83 | 16.87 | -2.55 | -2.10 | 2.006 | 1.971 |  | 9.78 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 14.63 | 14.06 | 18.40 | -4.60 | 2.14 | 2.074 | 2.004 |  | 10.44 | 0.90 | 5 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 14.94 | 14.62 | 17.70 | -5.61 | 0.88 | 2.118 | 2.084 |  | 10.27 | 0.90 | 5 | False | False |
 | baselines-margin | trailing4 | W2 | 0 | PIT | 10 | 18.34 | 15.90 | 23.03 | -2.92 | -1.26 | 2.600 | 2.267 |  | 13.02 | 0.90 | 2 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 77.49 | 75.94 | 91.87 | 26.15 | 30.92 | 10.984 | 10.827 |  | 52.41 | 0.60 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 80.46 | 78.95 | 98.13 | 29.63 | 34.25 | 11.406 | 11.257 |  | 55.87 | 0.60 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 80.67 | 85.78 | 94.58 | 26.58 | 40.57 | 11.435 | 12.230 |  | 54.81 | 0.60 | 7 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 83.96 | 89.23 | 100.80 | 30.84 | 44.41 | 11.901 | 12.722 |  | 58.16 | 0.60 | 7 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 7.05 | 7.01 | 8.85 | 1.38 | 1.98 | 1.000 | 1.000 |  | 5.64 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 7.52 | 7.74 | 9.55 | -0.58 | 0.66 | 1.066 | 1.103 |  | 5.67 | 0.90 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 8.42 | 8.04 | 9.29 | 2.10 | 3.39 | 1.193 | 1.146 |  | 5.73 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 8.47 | 8.17 | 9.36 | 2.50 | 3.75 | 1.201 | 1.165 |  | 5.75 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 8.52 | 8.69 | 11.23 | -1.12 | 0.21 | 1.207 | 1.239 |  | 6.55 | 0.90 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 9.97 | 10.88 | 11.82 | 1.21 | 5.11 | 1.414 | 1.551 |  | 6.68 | 0.80 | 5 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 10.01 | 10.95 | 11.91 | 1.29 | 5.24 | 1.419 | 1.561 |  | 6.73 | 0.80 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 14.15 | 13.83 | 16.87 | -2.55 | -2.10 | 2.006 | 1.971 |  | 9.91 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W2 | 0 | full_sample | 10 | 18.34 | 15.90 | 23.03 | -2.92 | -1.26 | 2.600 | 2.267 |  | 12.92 | 0.80 | 2 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 75.48 | 72.19 | 87.00 | 16.94 | 18.70 | 10.700 | 10.292 |  | 50.26 | 0.90 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 76.66 | 79.11 | 88.85 | 18.11 | 28.79 | 10.868 | 11.279 |  | 50.95 | 1.00 | 7 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 80.07 | 76.74 | 94.11 | 33.62 | 34.67 | 11.350 | 10.942 |  | 53.48 | 1.00 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 81.96 | 84.80 | 95.37 | 34.00 | 44.24 | 11.618 | 12.091 |  | 54.63 | 0.90 | 7 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 7.60 | 7.22 | 9.30 | 1.77 | 2.16 | 1.000 | 1.000 |  | 5.32 | 0.78 | 1 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 8.34 | 8.64 | 10.07 | -3.14 | -0.35 | 1.097 | 1.197 |  | 5.65 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 8.53 | 8.51 | 10.84 | -3.62 | -0.91 | 1.123 | 1.178 |  | 6.10 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 8.81 | 8.95 | 10.02 | -2.30 | 0.84 | 1.160 | 1.240 |  | 5.85 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 9.09 | 8.93 | 10.70 | -2.71 | 0.34 | 1.197 | 1.237 |  | 6.20 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 12.15 | 12.11 | 15.09 | -0.85 | 0.86 | 1.599 | 1.677 |  | 8.58 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 12.57 | 12.26 | 15.64 | -1.22 | 0.63 | 1.655 | 1.698 |  | 8.84 | 0.78 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 13.20 | 12.06 | 15.27 | -0.95 | 0.63 | 1.737 | 1.671 |  | 8.97 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W2 | 1 | PIT | 9 | 16.44 | 16.09 | 19.58 | 2.59 | 1.56 | 2.163 | 2.228 |  | 11.57 | 0.89 | 2 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 75.52 | 79.91 | 88.13 | 16.71 | 31.47 | 9.939 | 11.068 |  | 49.79 | 0.78 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 77.11 | 79.89 | 90.45 | 14.17 | 26.53 | 10.148 | 11.067 |  | 50.97 | 0.78 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 85.00 | 89.60 | 96.58 | 19.97 | 35.68 | 11.187 | 12.411 |  | 54.79 | 0.78 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 86.35 | 89.26 | 98.47 | 17.41 | 30.87 | 11.364 | 12.364 |  | 55.87 | 0.67 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 6.98 | 7.96 | 8.24 | 3.71 | 4.72 | 0.919 | 1.103 |  | 4.82 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 7.09 | 8.15 | 8.43 | 4.19 | 5.18 | 0.933 | 1.129 |  | 4.89 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 7.51 | 8.12 | 8.76 | 3.29 | 4.22 | 0.988 | 1.125 |  | 5.19 | 1.00 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 7.60 | 7.22 | 9.30 | 1.77 | 2.16 | 1.000 | 1.000 |  | 5.25 | 0.78 | 1 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 7.68 | 8.33 | 8.96 | 3.71 | 4.62 | 1.010 | 1.154 |  | 5.31 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 8.88 | 9.28 | 11.14 | -0.55 | 1.03 | 1.168 | 1.286 |  | 6.42 | 0.78 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 10.08 | 10.31 | 12.86 | -1.19 | 0.57 | 1.326 | 1.429 |  | 7.38 | 0.89 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 13.20 | 12.06 | 15.27 | -0.95 | 0.63 | 1.737 | 1.671 |  | 8.96 | 1.00 | 1 | False | False |
 | baselines-margin | trailing4 | W2 | 1 | full_sample | 9 | 16.44 | 16.09 | 19.58 | 2.59 | 1.56 | 2.163 | 2.228 |  | 11.36 | 0.89 | 2 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 70.22 | 72.24 | 81.41 | 8.67 | 20.41 | 9.242 | 10.007 |  | 47.14 | 1.00 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 71.57 | 71.90 | 84.08 | 6.11 | 15.61 | 9.419 | 9.959 |  | 48.52 | 0.89 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 72.70 | 76.04 | 86.37 | 24.79 | 36.59 | 9.569 | 10.533 |  | 49.13 | 1.00 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 74.27 | 76.00 | 88.84 | 22.25 | 31.65 | 9.775 | 10.528 |  | 50.61 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 6.93 | 6.36 | 9.72 | -4.21 | -2.74 | 0.831 | 0.846 |  | 5.75 | 0.88 | 3 | False | True |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 7.01 | 7.11 | 9.37 | -3.71 | -2.15 | 0.841 | 0.947 |  | 5.55 | 0.88 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 8.16 | 7.98 | 9.74 | -2.55 | -0.40 | 0.979 | 1.063 |  | 5.78 | 0.88 | 5 | False | False |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 8.33 | 7.51 | 9.85 | 2.21 | 2.36 | 1.000 | 1.000 |  | 5.56 | 0.75 | 1 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 8.41 | 7.92 | 10.18 | -3.00 | -0.93 | 1.010 | 1.054 |  | 6.07 | 1.00 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 9.16 | 7.96 | 10.28 | -0.89 | 0.38 | 1.099 | 1.059 |  | 6.72 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 12.56 | 11.92 | 15.23 | -0.24 | 1.12 | 1.507 | 1.587 |  | 8.60 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 13.02 | 12.09 | 15.78 | -0.60 | 0.91 | 1.563 | 1.610 |  | 8.83 | 0.88 | 3 | False | False |
 | baselines-margin | trailing4 | W2 | 2 | PIT | 8 | 17.85 | 16.83 | 20.34 | 2.62 | 1.60 | 2.142 | 2.241 |  | 11.82 | 1.00 | 2 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 76.53 | 77.70 | 83.32 | 12.11 | 27.73 | 9.184 | 10.344 |  | 48.47 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 77.05 | 77.60 | 86.49 | 11.63 | 26.73 | 9.247 | 10.331 |  | 50.11 | 0.62 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 77.38 | 77.03 | 85.05 | 8.39 | 22.24 | 9.287 | 10.256 |  | 49.46 | 0.62 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 78.11 | 77.26 | 88.73 | 7.82 | 21.03 | 9.374 | 10.286 |  | 51.13 | 0.50 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 8.04 | 8.56 | 9.04 | 4.41 | 5.04 | 0.965 | 1.140 |  | 5.46 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 8.23 | 8.81 | 9.26 | 4.88 | 5.51 | 0.988 | 1.173 |  | 5.54 | 1.00 | 5 | False | False |
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 8.33 | 7.51 | 9.85 | 2.21 | 2.36 | 1.000 | 1.000 |  | 5.57 | 0.75 | 1 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 8.38 | 8.57 | 9.49 | 3.96 | 4.51 | 1.005 | 1.141 |  | 5.68 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 8.50 | 8.77 | 9.72 | 4.38 | 4.91 | 1.020 | 1.168 |  | 5.80 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 8.85 | 8.99 | 11.09 | 0.43 | 1.44 | 1.062 | 1.196 |  | 6.44 | 0.88 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 9.16 | 7.96 | 10.28 | -0.89 | 0.38 | 1.099 | 1.059 |  | 6.19 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 10.23 | 10.08 | 12.89 | -0.28 | 0.98 | 1.228 | 1.342 |  | 7.46 | 0.88 | 3 | False | False |
 | baselines-margin | trailing4 | W2 | 2 | full_sample | 8 | 17.85 | 16.83 | 20.34 | 2.62 | 1.60 | 2.142 | 2.241 |  | 11.78 | 0.88 | 2 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 74.83 | 73.69 | 84.57 | 5.67 | 18.72 | 8.981 | 9.811 |  | 48.42 | 0.88 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 75.69 | 73.03 | 87.24 | 1.95 | 13.23 | 9.084 | 9.723 |  | 49.95 | 0.88 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 75.73 | 76.86 | 89.09 | 21.78 | 34.95 | 9.089 | 10.233 |  | 50.10 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 76.80 | 76.52 | 91.37 | 17.97 | 29.25 | 9.216 | 10.188 |  | 51.31 | 0.75 | 3 | False | False |
 
 ## target: `adj_ebitda_margin_yoy_pp`
 
@@ -1959,77 +1983,101 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 236.14 | 203.43 | 267.91 | -102.14 | -96.41 | 1.000 | 1.000 |  | 154.15 | 0.79 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 304.51 | 299.12 | 364.27 | -77.66 | -22.65 | 1.290 | 1.470 |  | 217.74 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 308.26 | 303.04 | 363.10 | -77.97 | 0.93 | 1.305 | 1.490 |  | 214.99 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 349.04 | 347.49 | 478.58 | 25.32 | -3.65 | 1.478 | 1.708 |  | 272.46 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 354.77 | 349.87 | 491.53 | 12.64 | -12.63 | 1.502 | 1.720 |  | 278.64 | 0.71 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 374.86 | 331.85 | 430.22 | -15.29 | -41.50 | 1.587 | 1.631 |  | 245.84 | 0.79 | 1 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,226.39 | 2,306.22 | 2,696.45 | 275.28 | 510.54 | 9.428 | 11.337 |  | 1,583.14 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,314.09 | 2,385.02 | 2,859.10 | 299.40 | 551.35 | 9.800 | 11.724 |  | 1,684.83 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,355.36 | 2,625.21 | 2,859.17 | 172.29 | 779.89 | 9.974 | 12.905 |  | 1,705.94 | 0.64 | 7 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,446.73 | 2,713.62 | 3,016.18 | 207.56 | 832.32 | 10.361 | 13.339 |  | 1,800.42 | 0.57 | 7 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 379.43 | 415.29 | 457.93 | -128.93 | 52.78 | 1.607 | 2.041 |  | 267.60 | 0.64 | 5 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 390.44 | 434.64 | 455.33 | -136.96 | 22.74 | 1.653 | 2.137 |  | 269.57 | 0.64 | 5 | False | False |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 236.14 | 203.43 | 267.91 | -102.14 | -96.41 | 1.000 | 1.000 |  | 153.79 | 0.71 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 274.03 | 262.15 | 373.00 | -44.56 | -18.05 | 1.160 | 1.289 |  | 206.34 | 0.86 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 281.98 | 257.29 | 318.41 | 73.42 | 97.55 | 1.194 | 1.265 |  | 182.32 | 0.93 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 284.37 | 261.01 | 321.57 | 84.01 | 108.18 | 1.204 | 1.283 |  | 183.85 | 0.93 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 314.49 | 299.14 | 444.69 | -74.07 | -41.88 | 1.332 | 1.470 |  | 244.37 | 0.79 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 320.25 | 347.54 | 369.26 | 22.46 | 149.40 | 1.356 | 1.708 |  | 210.02 | 0.71 | 5 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 321.26 | 349.42 | 370.61 | 24.72 | 153.58 | 1.360 | 1.718 |  | 210.72 | 0.71 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 374.86 | 331.85 | 430.22 | -15.29 | -41.50 | 1.587 | 1.631 |  | 243.15 | 0.79 | 1 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,173.55 | 2,208.13 | 2,626.27 | 34.46 | 175.43 | 9.204 | 10.855 |  | 1,480.00 | 0.79 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,260.77 | 2,454.32 | 2,773.44 | -57.38 | 456.40 | 9.574 | 12.065 |  | 1,564.63 | 0.79 | 7 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,272.46 | 2,318.09 | 2,672.79 | 508.69 | 649.70 | 9.623 | 11.395 |  | 1,502.98 | 0.79 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,343.53 | 2,580.33 | 2,800.26 | 405.69 | 919.05 | 9.924 | 12.684 |  | 1,583.04 | 0.71 | 7 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 224.69 | 200.03 | 256.70 | -80.38 | -91.01 | 1.000 | 1.000 |  | 151.39 | 0.69 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 259.66 | 248.31 | 325.83 | -59.26 | -44.77 | 1.156 | 1.241 |  | 179.95 | 0.77 | 5 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 266.76 | 241.42 | 347.26 | -68.72 | -62.89 | 1.187 | 1.207 |  | 191.08 | 0.69 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 279.17 | 258.29 | 333.23 | -62.12 | -22.85 | 1.242 | 1.291 |  | 191.32 | 0.69 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 284.92 | 296.58 | 348.22 | 19.38 | -7.37 | 1.268 | 1.483 |  | 199.22 | 0.69 | 1 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,266.94 | 2,391.77 | 2,693.55 | 123.11 | 575.88 | 10.089 | 11.957 |  | 1,637.57 | 0.62 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,289.65 | 2,381.42 | 2,750.82 | 104.29 | 427.28 | 10.190 | 11.905 |  | 1,671.40 | 0.62 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,501.26 | 2,654.00 | 2,872.14 | 168.49 | 671.71 | 11.132 | 13.268 |  | 1,762.25 | 0.62 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,518.63 | 2,634.04 | 2,916.64 | 148.94 | 527.96 | 11.209 | 13.168 |  | 1,791.66 | 0.62 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 289.09 | 256.31 | 351.13 | -70.77 | -39.11 | 1.287 | 1.281 |  | 199.88 | 0.62 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 382.81 | 383.09 | 506.21 | 23.56 | -22.94 | 1.704 | 1.915 |  | 273.99 | 0.77 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 387.45 | 385.73 | 515.19 | 7.86 | -33.06 | 1.724 | 1.928 |  | 277.90 | 0.77 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 216.44 | 222.53 | 270.90 | 103.87 | 101.55 | 0.963 | 1.112 |  | 151.45 | 0.85 | 5 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 223.08 | 217.01 | 288.59 | 95.23 | 85.30 | 0.993 | 1.085 |  | 160.91 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 223.85 | 232.15 | 272.80 | 115.60 | 114.95 | 0.996 | 1.161 |  | 153.56 | 0.85 | 5 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 224.69 | 200.03 | 256.70 | -80.38 | -91.01 | 1.000 | 1.000 |  | 147.16 | 0.77 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 227.41 | 223.17 | 292.51 | 106.15 | 96.83 | 1.012 | 1.116 |  | 163.47 | 0.85 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 284.92 | 296.58 | 348.22 | 19.38 | -7.37 | 1.268 | 1.483 |  | 195.73 | 0.69 | 1 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,169.49 | 2,204.74 | 2,610.17 | -98.05 | 267.20 | 9.655 | 11.022 |  | 1,482.50 | 0.77 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,186.86 | 2,184.79 | 2,668.61 | -117.60 | 123.45 | 9.733 | 10.922 |  | 1,511.49 | 0.77 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,209.90 | 2,290.72 | 2,626.03 | 375.78 | 747.22 | 9.835 | 11.452 |  | 1,482.12 | 0.92 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,256.33 | 2,288.43 | 2,689.04 | 356.96 | 598.62 | 10.042 | 11.440 |  | 1,511.02 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 289.73 | 291.08 | 378.42 | -45.10 | -35.69 | 1.289 | 1.455 |  | 211.91 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 337.46 | 330.03 | 452.73 | -77.44 | -59.28 | 1.502 | 1.650 |  | 251.53 | 0.85 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 210.00 | 143.01 | 285.99 | 25.00 | -1.88 | 0.896 | 0.708 |  | 158.67 | 0.83 | 1 | True | True |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 224.76 | 222.82 | 319.75 | -49.14 | -69.06 | 0.959 | 1.102 |  | 187.40 | 0.83 | 5 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 234.42 | 202.13 | 265.36 | -78.08 | -90.63 | 1.000 | 1.000 |  | 157.09 | 0.67 | 1 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,228.29 | 2,330.06 | 2,561.76 | -2.35 | 506.54 | 9.506 | 11.528 |  | 1,593.43 | 0.58 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,228.75 | 2,307.66 | 2,606.65 | -44.89 | 352.60 | 9.508 | 11.417 |  | 1,595.35 | 0.58 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,273.01 | 2,337.30 | 2,675.42 | -26.51 | 453.87 | 9.696 | 11.564 |  | 1,661.88 | 0.58 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,279.16 | 2,324.65 | 2,738.18 | -68.35 | 294.82 | 9.723 | 11.501 |  | 1,667.24 | 0.58 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 237.15 | 228.13 | 319.84 | -51.16 | -40.02 | 1.012 | 1.129 |  | 187.97 | 0.83 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 238.27 | 212.01 | 339.89 | -55.89 | -86.64 | 1.016 | 1.049 |  | 198.70 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 250.36 | 220.51 | 342.09 | -57.34 | -55.76 | 1.068 | 1.091 |  | 200.39 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 388.80 | 381.08 | 511.84 | 44.54 | -9.96 | 1.659 | 1.885 |  | 290.70 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 392.86 | 383.66 | 520.57 | 28.93 | -19.54 | 1.676 | 1.898 |  | 295.17 | 0.75 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 210.00 | 143.01 | 285.99 | 25.00 | -1.88 | 0.896 | 0.708 |  | 152.23 | 0.92 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 234.42 | 202.13 | 265.36 | -78.08 | -90.63 | 1.000 | 1.000 |  | 153.06 | 0.67 | 1 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,250.80 | 2,237.10 | 2,684.77 | -215.80 | 210.15 | 9.602 | 11.068 |  | 1,520.92 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,251.27 | 2,214.70 | 2,749.64 | -258.34 | 56.21 | 9.604 | 10.957 |  | 1,551.14 | 0.83 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,262.36 | 2,315.99 | 2,681.45 | 258.00 | 690.41 | 9.651 | 11.458 |  | 1,511.41 | 0.92 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,297.16 | 2,314.39 | 2,748.90 | 216.16 | 531.36 | 9.799 | 11.450 |  | 1,544.60 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 274.93 | 252.75 | 322.91 | 131.61 | 119.13 | 1.173 | 1.250 |  | 183.17 | 0.92 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 275.06 | 242.12 | 339.43 | 125.43 | 103.38 | 1.173 | 1.198 |  | 190.01 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 280.82 | 248.85 | 344.99 | 136.29 | 114.90 | 1.198 | 1.231 |  | 193.41 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 283.04 | 262.71 | 327.06 | 143.04 | 132.48 | 1.207 | 1.300 |  | 186.29 | 0.83 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 308.86 | 294.60 | 379.97 | -11.24 | -16.16 | 1.318 | 1.458 |  | 215.82 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 359.48 | 334.39 | 454.26 | -46.54 | -40.37 | 1.533 | 1.654 |  | 256.36 | 0.92 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 205.20 | 190.80 | 235.52 | -97.60 | -99.62 | 1.000 | 1.000 |  | 134.78 | 1.00 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 311.92 | 298.95 | 383.13 | -127.85 | -31.28 | 1.520 | 1.567 |  | 224.20 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 332.88 | 309.47 | 388.97 | -101.49 | 3.53 | 1.622 | 1.622 |  | 229.30 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 344.79 | 340.81 | 485.07 | -59.72 | -34.03 | 1.680 | 1.786 |  | 272.25 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 354.21 | 344.38 | 510.02 | -76.58 | -43.19 | 1.726 | 1.805 |  | 285.22 | 0.80 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 365.30 | 321.34 | 421.78 | -69.50 | -65.20 | 1.780 | 1.684 |  | 241.84 | 0.80 | 1 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,331.52 | 2,355.18 | 2,839.48 | 345.85 | 583.30 | 11.362 | 12.344 |  | 1,626.78 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,413.09 | 2,431.93 | 3,003.78 | 400.10 | 635.59 | 11.760 | 12.746 |  | 1,722.28 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,458.25 | 2,686.52 | 2,964.49 | 415.17 | 940.53 | 11.980 | 14.080 |  | 1,718.10 | 0.70 | 7 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,548.39 | 2,774.63 | 3,116.21 | 490.48 | 1,006.93 | 12.419 | 14.542 |  | 1,803.41 | 0.60 | 7 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 414.20 | 429.47 | 496.63 | -107.62 | 78.20 | 2.018 | 2.251 |  | 290.12 | 0.70 | 5 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 429.92 | 450.28 | 496.19 | -142.36 | 37.18 | 2.095 | 2.360 |  | 295.45 | 0.70 | 5 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 205.20 | 190.80 | 235.52 | -97.60 | -99.62 | 1.000 | 1.000 |  | 135.88 | 0.90 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 241.76 | 240.42 | 267.75 | 57.13 | 91.74 | 1.178 | 1.260 |  | 155.80 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 242.43 | 248.07 | 336.04 | -53.37 | -19.06 | 1.181 | 1.300 |  | 186.05 | 0.90 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 243.37 | 244.08 | 269.81 | 68.69 | 102.50 | 1.186 | 1.279 |  | 156.74 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 280.53 | 283.55 | 405.95 | -79.49 | -41.23 | 1.367 | 1.486 |  | 222.67 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 291.95 | 341.17 | 351.07 | 51.00 | 166.41 | 1.423 | 1.788 |  | 197.43 | 0.80 | 5 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 292.72 | 343.24 | 353.33 | 54.18 | 170.96 | 1.427 | 1.799 |  | 198.71 | 0.80 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 365.30 | 321.34 | 421.78 | -69.50 | -65.20 | 1.780 | 1.684 |  | 239.99 | 0.80 | 1 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,281.38 | 2,249.51 | 2,751.61 | 87.43 | 231.26 | 11.118 | 11.790 |  | 1,561.02 | 0.80 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,353.09 | 2,500.95 | 2,839.16 | 177.81 | 602.61 | 11.467 | 13.108 |  | 1,612.22 | 0.80 | 7 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,375.45 | 2,364.57 | 2,806.18 | 562.62 | 705.66 | 11.576 | 12.393 |  | 1,580.34 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,467.90 | 2,649.06 | 2,903.85 | 631.94 | 1,062.88 | 12.027 | 13.884 |  | 1,652.03 | 0.70 | 7 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 190.67 | 184.65 | 221.56 | -71.11 | -89.61 | 1.000 | 1.000 |  | 129.68 | 0.89 | 1 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 229.75 | 237.01 | 317.24 | -117.98 | -57.13 | 1.205 | 1.284 |  | 169.27 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 231.91 | 226.45 | 333.28 | -137.44 | -80.20 | 1.216 | 1.226 |  | 179.29 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 239.50 | 240.37 | 300.69 | -93.53 | -21.99 | 1.256 | 1.302 |  | 168.68 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 246.78 | 235.70 | 315.72 | -110.64 | -42.49 | 1.294 | 1.276 |  | 177.92 | 0.89 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 346.67 | 315.51 | 382.44 | -30.89 | -27.54 | 1.818 | 1.709 |  | 223.35 | 0.67 | 1 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,333.97 | 2,427.83 | 2,755.28 | 154.45 | 619.32 | 12.241 | 13.148 |  | 1,566.27 | 0.67 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,395.25 | 2,425.69 | 2,870.81 | 42.50 | 428.16 | 12.562 | 13.137 |  | 1,627.93 | 0.67 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,603.18 | 2,705.38 | 2,972.18 | 239.36 | 735.61 | 13.653 | 14.651 |  | 1,702.99 | 0.67 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,654.33 | 2,691.64 | 3,067.43 | 129.74 | 551.02 | 13.921 | 14.577 |  | 1,757.20 | 0.67 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 386.72 | 380.01 | 522.97 | -107.57 | -73.42 | 2.028 | 2.058 |  | 286.87 | 0.78 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 402.33 | 386.11 | 545.63 | -122.30 | -82.04 | 2.110 | 2.091 |  | 301.72 | 0.78 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 190.67 | 184.65 | 221.56 | -71.11 | -89.61 | 1.000 | 1.000 |  | 127.50 | 0.89 | 1 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 201.48 | 210.15 | 259.53 | 69.43 | 75.09 | 1.057 | 1.138 |  | 147.76 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 201.87 | 219.93 | 253.23 | 86.53 | 95.59 | 1.059 | 1.191 |  | 143.93 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 206.60 | 216.54 | 263.27 | 81.57 | 86.90 | 1.084 | 1.173 |  | 150.04 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 213.15 | 230.84 | 257.32 | 101.03 | 109.97 | 1.118 | 1.250 |  | 147.03 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 276.04 | 286.14 | 370.70 | -72.53 | -47.71 | 1.448 | 1.550 |  | 207.39 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 320.35 | 323.40 | 444.10 | -102.35 | -70.26 | 1.680 | 1.751 |  | 245.70 | 0.89 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 346.67 | 315.51 | 382.44 | -30.89 | -27.54 | 1.818 | 1.709 |  | 220.12 | 0.67 | 1 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,192.99 | 2,213.14 | 2,631.47 | -81.36 | 291.98 | 11.502 | 11.985 |  | 1,492.54 | 0.78 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,236.96 | 2,304.86 | 2,646.63 | 396.75 | 773.99 | 11.732 | 12.482 |  | 1,496.29 | 0.89 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,244.14 | 2,199.40 | 2,757.72 | -190.97 | 107.39 | 11.770 | 11.911 |  | 1,563.08 | 0.78 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,296.31 | 2,300.25 | 2,765.54 | 284.80 | 582.83 | 12.044 | 12.457 |  | 1,549.78 | 0.89 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 126.00 | 106.80 | 152.84 | -24.50 | -24.24 | 0.640 | 0.571 |  | 111.24 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 196.75 | 186.91 | 229.57 | -62.25 | -86.83 | 1.000 | 1.000 |  | 132.10 | 0.88 | 1 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,423.55 | 2,426.73 | 2,735.10 | 16.96 | 539.98 | 12.318 | 12.983 |  | 1,589.34 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,438.96 | 2,419.23 | 2,829.67 | -38.34 | 469.81 | 12.396 | 12.943 |  | 1,638.40 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,464.69 | 2,408.11 | 2,838.55 | -129.88 | 334.94 | 12.527 | 12.884 |  | 1,644.76 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,489.03 | 2,411.73 | 2,959.18 | -190.53 | 256.60 | 12.651 | 12.903 |  | 1,701.59 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 205.49 | 215.70 | 313.04 | -129.26 | -98.00 | 1.044 | 1.154 |  | 172.18 | 0.88 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 213.07 | 199.83 | 320.39 | -149.27 | -121.47 | 1.083 | 1.069 |  | 178.18 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 228.86 | 225.40 | 309.62 | -100.27 | -51.07 | 1.163 | 1.206 |  | 171.66 | 0.88 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 233.66 | 212.03 | 320.91 | -118.10 | -72.03 | 1.188 | 1.134 |  | 179.77 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 417.36 | 388.66 | 535.90 | -96.51 | -66.92 | 2.121 | 2.079 |  | 296.90 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 434.61 | 395.44 | 557.88 | -111.28 | -74.97 | 2.209 | 2.116 |  | 310.77 | 0.75 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 126.00 | 106.80 | 152.84 | -24.50 | -24.24 | 0.640 | 0.571 |  | 99.34 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 196.75 | 186.91 | 229.57 | -62.25 | -86.83 | 1.000 | 1.000 |  | 131.23 | 0.88 | 1 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,366.59 | 2,368.09 | 2,796.69 | 250.08 | 696.11 | 12.028 | 12.669 |  | 1,579.49 | 0.88 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,374.92 | 2,296.92 | 2,808.19 | -231.10 | 212.45 | 12.071 | 12.289 |  | 1,595.07 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,416.07 | 2,278.30 | 2,948.72 | -377.94 | 7.42 | 12.280 | 12.189 |  | 1,672.27 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,416.65 | 2,360.59 | 2,926.98 | 97.89 | 482.90 | 12.283 | 12.629 |  | 1,643.82 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 220.26 | 215.91 | 275.48 | 88.69 | 84.20 | 1.119 | 1.155 |  | 159.35 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 226.73 | 223.04 | 280.48 | 100.89 | 96.05 | 1.152 | 1.193 |  | 162.36 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 231.53 | 231.31 | 268.69 | 106.52 | 105.16 | 1.177 | 1.238 |  | 158.38 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 242.74 | 242.47 | 273.87 | 120.90 | 119.52 | 1.234 | 1.297 |  | 161.94 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 289.67 | 289.06 | 376.73 | -47.98 | -35.34 | 1.472 | 1.546 |  | 212.56 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 340.92 | 329.23 | 452.72 | -81.95 | -59.22 | 1.733 | 1.761 |  | 254.17 | 0.88 | 3 | False | False |
 
 ## target: `cor_cash_musd`
 
@@ -2560,109 +2608,157 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 234.57 | 201.89 | 266.84 | -101.57 | -96.64 | 1.000 | 1.000 | 0.594 | 153.34 | 0.71 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 306.06 | 300.93 | 364.88 | -77.11 | -22.06 | 1.305 | 1.491 | 0.775 | 218.08 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 310.01 | 305.14 | 363.65 | -77.41 | 1.66 | 1.322 | 1.511 | 0.785 | 215.23 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 318.61 | 319.19 | 379.71 | -73.27 | -27.16 | 1.358 | 1.581 | 0.807 | 223.27 | 0.57 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 322.57 | 323.40 | 367.51 | -73.58 | -3.44 | 1.375 | 1.602 | 0.817 | 215.87 | 0.64 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 348.63 | 345.53 | 480.31 | 25.87 | -3.05 | 1.486 | 1.711 | 0.883 | 273.01 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 354.31 | 347.90 | 493.39 | 13.20 | -11.90 | 1.510 | 1.723 | 0.897 | 279.19 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 362.03 | 354.43 | 520.31 | 29.71 | -8.15 | 1.543 | 1.756 | 0.916 | 290.29 | 0.79 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 367.71 | 356.81 | 532.44 | 17.04 | -17.00 | 1.568 | 1.767 | 0.931 | 296.94 | 0.79 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 372.14 | 328.07 | 428.94 | -15.29 | -40.70 | 1.586 | 1.625 | 0.942 | 244.75 | 0.79 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 379.34 | 415.93 | 458.81 | -128.37 | 53.52 | 1.617 | 2.060 | 0.960 | 268.02 | 0.64 | 5 | False | False |
+| below-ebitda | fcf | W1 | 0 | PIT | 14 | 391.57 | 435.79 | 456.18 | -136.40 | 23.34 | 1.669 | 2.159 | 0.991 | 270.08 | 0.64 | 5 | False | False |
 | baselines-margin | street | W1 | 0 | PIT | 14 | 395.05 | 431.37 | 507.03 | -131.65 | -183.39 | 1.684 | 2.137 | 1.000 | 281.95 | 0.86 | 1 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,227.26 | 2,308.53 | 2,697.28 | 275.84 | 511.14 | 9.495 | 11.435 | 5.638 | 1,583.49 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,238.93 | 2,336.72 | 2,719.80 | 279.68 | 506.04 | 9.545 | 11.574 | 5.667 | 1,594.76 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,314.11 | 2,386.24 | 2,859.83 | 299.96 | 552.08 | 9.865 | 11.820 | 5.858 | 1,684.98 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,314.57 | 2,398.78 | 2,880.91 | 303.80 | 546.98 | 9.867 | 11.882 | 5.859 | 1,693.45 | 0.64 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,355.67 | 2,626.53 | 2,860.08 | 172.84 | 780.48 | 10.042 | 13.010 | 5.963 | 1,706.35 | 0.64 | 7 | False | False |
-| below-ebitda | fcf | W1 | 0 | PIT | 14 | 2,447.00 | 2,715.05 | 3,017.01 | 208.12 | 833.05 | 10.432 | 13.448 | 6.194 | 1,800.85 | 0.57 | 7 | False | False |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 234.57 | 201.89 | 266.84 | -101.57 | -96.64 | 1.000 | 1.000 | 0.594 | 153.16 | 0.79 | 1 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 274.23 | 260.62 | 373.35 | -44.00 | -17.32 | 1.169 | 1.291 | 0.694 | 206.42 | 0.86 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 276.73 | 265.42 | 397.26 | -40.16 | -22.42 | 1.180 | 1.315 | 0.701 | 217.64 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 282.86 | 258.86 | 319.24 | 73.98 | 98.28 | 1.206 | 1.282 | 0.716 | 182.79 | 0.93 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 285.14 | 262.37 | 322.28 | 84.57 | 108.78 | 1.216 | 1.300 | 0.722 | 184.25 | 0.93 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 292.80 | 275.52 | 339.29 | 77.81 | 93.18 | 1.248 | 1.365 | 0.741 | 190.43 | 0.86 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 295.08 | 279.04 | 342.44 | 88.41 | 103.68 | 1.258 | 1.382 | 0.747 | 192.10 | 0.86 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 314.58 | 297.51 | 444.98 | -73.52 | -41.28 | 1.341 | 1.474 | 0.796 | 244.54 | 0.79 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 317.54 | 301.61 | 468.11 | -69.68 | -46.38 | 1.354 | 1.494 | 0.804 | 254.87 | 0.71 | 3 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 321.13 | 349.11 | 370.53 | 23.02 | 150.13 | 1.369 | 1.729 | 0.813 | 210.64 | 0.71 | 5 | False | False |
+| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 322.03 | 350.78 | 371.67 | 25.27 | 154.18 | 1.373 | 1.737 | 0.815 | 211.25 | 0.71 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 372.14 | 328.07 | 428.94 | -15.29 | -40.70 | 1.586 | 1.625 | 0.942 | 242.21 | 0.79 | 1 | False | False |
 | baselines-margin | street | W1 | 0 | full_sample | 14 | 395.05 | 431.37 | 507.03 | -131.65 | -183.39 | 1.684 | 2.137 | 1.000 | 280.03 | 0.86 | 1 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,174.40 | 2,210.56 | 2,627.09 | 35.02 | 176.17 | 9.270 | 10.949 | 5.504 | 1,480.29 | 0.79 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,186.08 | 2,238.76 | 2,650.45 | 38.86 | 171.06 | 9.319 | 11.089 | 5.534 | 1,490.63 | 0.79 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,261.62 | 2,456.75 | 2,774.39 | -56.82 | 457.13 | 9.642 | 12.169 | 5.725 | 1,565.19 | 0.79 | 7 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,274.41 | 2,320.85 | 2,673.67 | 509.24 | 650.30 | 9.696 | 11.496 | 5.757 | 1,503.81 | 0.79 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,305.49 | 2,357.43 | 2,697.32 | 513.08 | 645.20 | 9.829 | 11.677 | 5.836 | 1,520.23 | 0.79 | 3 | False | False |
-| below-ebitda | fcf | W1 | 0 | full_sample | 14 | 2,343.84 | 2,581.65 | 2,801.22 | 406.24 | 919.65 | 9.992 | 12.787 | 5.933 | 1,583.38 | 0.71 | 7 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 223.00 | 198.47 | 255.50 | -79.77 | -91.25 | 1.000 | 1.000 | 0.457 | 150.49 | 0.69 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 260.97 | 249.51 | 327.56 | -58.57 | -44.43 | 1.170 | 1.257 | 0.535 | 180.92 | 0.77 | 5 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 268.76 | 243.42 | 348.95 | -68.03 | -62.55 | 1.205 | 1.227 | 0.551 | 191.89 | 0.69 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 281.19 | 260.29 | 334.87 | -61.47 | -22.49 | 1.261 | 1.312 | 0.576 | 192.40 | 0.69 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 285.38 | 295.52 | 348.01 | 19.08 | -7.21 | 1.280 | 1.489 | 0.585 | 199.43 | 0.69 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 291.11 | 258.31 | 352.72 | -70.11 | -38.74 | 1.305 | 1.302 | 0.597 | 200.85 | 0.69 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 337.36 | 292.94 | 412.68 | -66.52 | -49.29 | 1.513 | 1.476 | 0.691 | 249.35 | 0.62 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 359.46 | 307.62 | 419.93 | -68.61 | -25.47 | 1.612 | 1.550 | 0.737 | 259.02 | 0.62 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 382.89 | 381.21 | 508.03 | 24.25 | -22.61 | 1.717 | 1.921 | 0.785 | 275.12 | 0.77 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 387.64 | 383.90 | 517.16 | 8.51 | -32.70 | 1.738 | 1.934 | 0.794 | 279.06 | 0.77 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 389.16 | 358.90 | 534.62 | 25.75 | -9.35 | 1.745 | 1.808 | 0.798 | 302.90 | 0.62 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | PIT | 13 | 393.03 | 361.07 | 546.17 | 10.01 | -19.43 | 1.762 | 1.819 | 0.805 | 307.91 | 0.69 | 3 | False | False |
 | baselines-margin | street | W1 | 1 | PIT | 13 | 487.95 | 554.83 | 664.44 | -144.40 | -198.50 | 2.188 | 2.796 | 1.000 | 361.18 | 0.85 | 1 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,267.63 | 2,393.56 | 2,694.21 | 123.81 | 576.22 | 10.169 | 12.060 | 4.647 | 1,637.92 | 0.62 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,291.49 | 2,383.69 | 2,751.49 | 104.98 | 427.62 | 10.276 | 12.011 | 4.696 | 1,672.02 | 0.62 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,321.83 | 2,414.55 | 2,767.35 | 106.48 | 440.88 | 10.412 | 12.166 | 4.758 | 1,690.25 | 0.62 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,502.02 | 2,655.98 | 2,872.94 | 169.14 | 672.08 | 11.220 | 13.383 | 5.128 | 1,762.79 | 0.62 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,519.39 | 2,636.03 | 2,917.44 | 149.59 | 528.32 | 11.298 | 13.282 | 5.163 | 1,792.32 | 0.62 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | PIT | 13 | 2,527.64 | 2,657.86 | 2,933.03 | 151.09 | 541.59 | 11.335 | 13.392 | 5.180 | 1,809.25 | 0.62 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 215.78 | 222.46 | 271.78 | 104.52 | 101.92 | 0.968 | 1.121 | 0.442 | 151.82 | 0.85 | 5 | False | False |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 223.00 | 198.47 | 255.50 | -79.77 | -91.25 | 1.000 | 1.000 | 0.457 | 146.35 | 0.77 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 223.19 | 232.02 | 273.66 | 116.29 | 115.28 | 1.001 | 1.169 | 0.457 | 153.75 | 0.85 | 5 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 224.24 | 218.27 | 289.46 | 95.88 | 85.66 | 1.006 | 1.100 | 0.460 | 161.61 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 228.26 | 224.07 | 293.39 | 106.84 | 97.17 | 1.024 | 1.129 | 0.468 | 164.14 | 0.85 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | full_sample | 13 | 285.38 | 295.52 | 348.01 | 19.08 | -7.21 | 1.280 | 1.489 | 0.585 | 196.07 | 0.69 | 1 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 289.92 | 289.25 | 378.62 | -44.45 | -35.32 | 1.300 | 1.457 | 0.594 | 212.02 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 295.31 | 266.42 | 409.24 | -42.95 | -22.05 | 1.324 | 1.342 | 0.605 | 226.36 | 0.77 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 297.02 | 271.36 | 343.57 | 97.38 | 98.93 | 1.332 | 1.367 | 0.609 | 194.47 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 298.51 | 275.78 | 346.39 | 108.34 | 110.43 | 1.339 | 1.390 | 0.612 | 196.00 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 337.11 | 328.03 | 452.87 | -76.74 | -58.94 | 1.512 | 1.653 | 0.691 | 251.49 | 0.85 | 3 | False | False |
+| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 340.63 | 304.67 | 484.23 | -75.24 | -45.68 | 1.527 | 1.535 | 0.698 | 266.24 | 0.77 | 3 | False | False |
 | baselines-margin | street | W1 | 1 | full_sample | 13 | 487.95 | 554.83 | 664.44 | -144.40 | -198.50 | 2.188 | 2.796 | 1.000 | 360.20 | 0.85 | 1 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,170.25 | 2,206.72 | 2,610.77 | -97.40 | 267.57 | 9.732 | 11.119 | 4.448 | 1,482.68 | 0.77 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,187.62 | 2,186.77 | 2,669.22 | -116.95 | 123.81 | 9.810 | 11.018 | 4.483 | 1,511.67 | 0.77 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,195.87 | 2,208.61 | 2,682.10 | -115.45 | 137.08 | 9.847 | 11.128 | 4.500 | 1,513.96 | 0.77 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,211.60 | 2,292.31 | 2,626.65 | 376.47 | 747.55 | 9.917 | 11.550 | 4.532 | 1,482.75 | 0.92 | 7 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,258.52 | 2,290.84 | 2,689.67 | 357.65 | 598.95 | 10.128 | 11.543 | 4.629 | 1,511.65 | 0.92 | 3 | False | False |
-| below-ebitda | fcf | W1 | 1 | full_sample | 13 | 2,288.86 | 2,321.70 | 2,702.64 | 359.15 | 612.21 | 10.264 | 11.698 | 4.691 | 1,518.01 | 0.85 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 211.08 | 143.47 | 287.21 | 24.08 | -2.37 | 0.906 | 0.715 |  | 159.13 | 0.83 | 1 | True | True |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 226.24 | 225.61 | 322.48 | -48.46 | -68.91 | 0.971 | 1.125 |  | 188.64 | 0.83 | 5 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 232.92 | 200.61 | 264.23 | -77.75 | -90.96 | 1.000 | 1.000 |  | 156.15 | 0.67 | 1 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,228.66 | 2,331.51 | 2,562.57 | -1.73 | 506.66 | 9.569 | 11.622 |  | 1,593.18 | 0.58 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,229.13 | 2,309.11 | 2,607.48 | -44.27 | 352.72 | 9.571 | 11.510 |  | 1,595.23 | 0.58 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,249.26 | 2,327.43 | 2,668.19 | -99.17 | 331.36 | 9.657 | 11.602 |  | 1,633.89 | 0.58 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,273.28 | 2,338.71 | 2,675.99 | -25.83 | 454.02 | 9.760 | 11.658 |  | 1,661.51 | 0.58 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,279.43 | 2,326.06 | 2,738.78 | -67.66 | 294.97 | 9.786 | 11.595 |  | 1,666.85 | 0.58 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | PIT | 12 | 2,308.55 | 2,347.85 | 2,799.12 | -122.56 | 273.62 | 9.912 | 11.703 |  | 1,709.58 | 0.58 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 239.83 | 231.64 | 322.79 | -50.55 | -39.90 | 1.030 | 1.155 |  | 189.66 | 0.83 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 239.88 | 214.99 | 342.63 | -55.20 | -86.49 | 1.030 | 1.072 |  | 200.10 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 251.22 | 221.76 | 344.97 | -56.72 | -55.65 | 1.079 | 1.105 |  | 201.72 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 309.85 | 272.47 | 408.54 | -110.10 | -107.85 | 1.330 | 1.358 |  | 240.48 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 347.08 | 292.04 | 431.57 | -111.62 | -77.00 | 1.490 | 1.456 |  | 260.23 | 0.67 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 388.24 | 379.01 | 513.62 | 45.23 | -9.81 | 1.667 | 1.889 |  | 291.23 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 393.75 | 382.04 | 522.36 | 29.55 | -19.42 | 1.691 | 1.904 |  | 296.02 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 415.80 | 375.88 | 567.29 | -9.67 | -31.16 | 1.785 | 1.874 |  | 321.70 | 0.67 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | PIT | 12 | 418.21 | 377.90 | 579.26 | -25.35 | -40.78 | 1.796 | 1.884 |  | 327.07 | 0.67 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | full_sample | 12 | 211.08 | 143.47 | 287.21 | 24.08 | -2.37 | 0.906 | 0.715 |  | 152.35 | 0.92 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 232.92 | 200.61 | 264.23 | -77.75 | -90.96 | 1.000 | 1.000 |  | 152.32 | 0.67 | 1 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,251.18 | 2,238.55 | 2,685.09 | -215.18 | 210.27 | 9.665 | 11.159 |  | 1,520.97 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,251.65 | 2,216.15 | 2,749.99 | -257.72 | 56.33 | 9.667 | 11.047 |  | 1,551.34 | 0.83 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,264.43 | 2,318.08 | 2,681.82 | 258.68 | 690.56 | 9.722 | 11.555 |  | 1,512.15 | 0.92 | 7 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,271.78 | 2,234.48 | 2,811.20 | -312.62 | 34.97 | 9.754 | 11.138 |  | 1,582.34 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,299.22 | 2,316.49 | 2,749.31 | 216.84 | 531.51 | 9.871 | 11.547 |  | 1,545.09 | 0.92 | 3 | False | False |
-| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 2,335.77 | 2,341.15 | 2,801.35 | 161.95 | 510.16 | 10.028 | 11.670 |  | 1,575.38 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 273.19 | 252.13 | 323.22 | 132.22 | 119.25 | 1.173 | 1.257 |  | 183.09 | 0.92 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 274.15 | 242.25 | 339.85 | 126.05 | 103.50 | 1.177 | 1.208 |  | 190.20 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 279.97 | 249.07 | 345.50 | 136.98 | 115.06 | 1.202 | 1.242 |  | 193.70 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 281.39 | 262.20 | 327.42 | 143.72 | 132.64 | 1.208 | 1.307 |  | 186.22 | 0.83 | 5 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 307.22 | 292.01 | 379.86 | -10.63 | -16.04 | 1.319 | 1.456 |  | 215.67 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 315.01 | 277.55 | 365.98 | 71.15 | 82.15 | 1.352 | 1.384 |  | 207.04 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 318.42 | 282.80 | 370.32 | 82.08 | 93.70 | 1.367 | 1.410 |  | 209.65 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 326.69 | 285.16 | 445.63 | -65.53 | -37.40 | 1.403 | 1.421 |  | 247.19 | 0.83 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 357.79 | 331.80 | 454.21 | -45.85 | -40.22 | 1.536 | 1.654 |  | 256.21 | 0.92 | 3 | False | False |
+| below-ebitda | fcf | W1 | 2 | full_sample | 12 | 377.26 | 324.95 | 527.64 | -100.75 | -61.58 | 1.620 | 1.620 |  | 291.49 | 0.75 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 203.40 | 189.14 | 233.80 | -99.00 | -100.54 | 1.000 | 1.000 | 0.530 | 133.76 | 0.90 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 313.82 | 300.86 | 383.86 | -128.85 | -31.16 | 1.543 | 1.591 | 0.817 | 224.81 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 325.03 | 318.59 | 397.87 | -141.86 | -43.02 | 1.598 | 1.684 | 0.847 | 230.00 | 0.70 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 335.09 | 311.70 | 390.08 | -102.38 | 3.83 | 1.647 | 1.648 | 0.873 | 230.10 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 343.99 | 338.54 | 486.37 | -60.72 | -33.91 | 1.691 | 1.790 | 0.896 | 272.58 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 346.29 | 329.44 | 397.51 | -115.40 | -8.03 | 1.703 | 1.742 | 0.902 | 235.61 | 0.70 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 353.40 | 342.13 | 511.64 | -77.47 | -42.89 | 1.737 | 1.809 | 0.921 | 285.61 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 359.62 | 346.57 | 521.59 | -73.74 | -45.77 | 1.768 | 1.832 | 0.937 | 289.30 | 0.80 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 361.20 | 317.12 | 419.70 | -70.00 | -64.48 | 1.776 | 1.677 | 0.941 | 240.24 | 0.80 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 369.03 | 350.17 | 546.42 | -90.49 | -54.76 | 1.814 | 1.851 | 0.961 | 302.60 | 0.80 | 3 | False | False |
 | baselines-margin | street | W2 | 0 | PIT | 10 | 383.92 | 433.03 | 507.11 | -118.80 | -193.84 | 1.888 | 2.289 | 1.000 | 280.74 | 0.90 | 1 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,334.02 | 2,358.15 | 2,841.45 | 344.85 | 583.43 | 11.475 | 12.467 | 6.079 | 1,628.08 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,374.40 | 2,396.82 | 2,883.27 | 331.83 | 571.57 | 11.674 | 12.672 | 6.185 | 1,656.01 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,414.35 | 2,433.68 | 3,005.65 | 399.20 | 635.89 | 11.870 | 12.867 | 6.289 | 1,723.28 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,439.04 | 2,455.02 | 3,045.82 | 386.19 | 624.02 | 11.991 | 12.980 | 6.353 | 1,747.29 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,459.95 | 2,688.39 | 2,966.95 | 414.17 | 940.65 | 12.094 | 14.213 | 6.407 | 1,719.60 | 0.70 | 7 | False | False |
-| below-ebitda | fcf | W2 | 0 | PIT | 10 | 2,550.00 | 2,776.62 | 3,118.59 | 489.58 | 1,007.23 | 12.537 | 14.680 | 6.642 | 1,804.92 | 0.60 | 7 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 415.22 | 430.56 | 498.59 | -108.51 | 78.50 | 2.041 | 2.276 | 1.082 | 291.47 | 0.70 | 5 | False | False |
+| below-ebitda | fcf | W2 | 0 | PIT | 10 | 431.22 | 451.45 | 497.80 | -143.36 | 37.31 | 2.120 | 2.387 | 1.123 | 296.60 | 0.70 | 5 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 203.40 | 189.14 | 233.80 | -99.00 | -100.54 | 1.000 | 1.000 | 0.530 | 134.93 | 0.90 | 1 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 242.55 | 246.29 | 337.15 | -54.27 | -18.76 | 1.192 | 1.302 | 0.632 | 186.41 | 0.90 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 242.75 | 242.07 | 268.15 | 56.23 | 92.04 | 1.193 | 1.280 | 0.632 | 156.09 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 242.78 | 249.75 | 368.43 | -67.28 | -30.62 | 1.194 | 1.320 | 0.632 | 199.86 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 244.17 | 245.48 | 269.82 | 67.69 | 102.62 | 1.200 | 1.298 | 0.636 | 156.87 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 250.29 | 258.04 | 276.47 | 43.22 | 80.18 | 1.231 | 1.364 | 0.652 | 159.06 | 0.90 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 251.72 | 261.45 | 277.48 | 54.68 | 90.76 | 1.238 | 1.382 | 0.656 | 160.10 | 0.90 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 280.13 | 284.10 | 439.98 | -93.51 | -52.97 | 1.377 | 1.502 | 0.730 | 236.48 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 280.43 | 281.65 | 407.10 | -80.49 | -41.11 | 1.379 | 1.489 | 0.730 | 223.14 | 0.80 | 3 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 292.94 | 342.82 | 352.92 | 50.10 | 166.71 | 1.440 | 1.812 | 0.763 | 198.30 | 0.80 | 5 | False | False |
+| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 293.52 | 344.64 | 354.80 | 53.18 | 171.08 | 1.443 | 1.822 | 0.765 | 199.41 | 0.80 | 5 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 361.20 | 317.12 | 419.70 | -70.00 | -64.48 | 1.776 | 1.677 | 0.941 | 238.43 | 0.80 | 1 | False | False |
 | baselines-margin | street | W2 | 0 | full_sample | 10 | 383.92 | 433.03 | 507.11 | -118.80 | -193.84 | 1.888 | 2.289 | 1.000 | 278.43 | 0.90 | 1 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,283.80 | 2,252.60 | 2,753.69 | 86.53 | 231.56 | 11.228 | 11.909 | 5.949 | 1,562.20 | 0.80 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,324.19 | 2,291.27 | 2,797.68 | 73.52 | 219.70 | 11.427 | 12.114 | 6.054 | 1,587.82 | 0.80 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,355.51 | 2,504.04 | 2,841.80 | 176.91 | 602.91 | 11.581 | 13.239 | 6.135 | 1,613.88 | 0.80 | 7 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,377.95 | 2,367.54 | 2,808.02 | 561.62 | 705.78 | 11.691 | 12.517 | 6.194 | 1,581.66 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,418.34 | 2,406.22 | 2,849.00 | 548.61 | 693.92 | 11.890 | 12.722 | 6.299 | 1,607.98 | 0.70 | 3 | False | False |
-| below-ebitda | fcf | W2 | 0 | full_sample | 10 | 2,469.60 | 2,650.94 | 2,906.20 | 630.94 | 1,063.00 | 12.142 | 14.015 | 6.433 | 1,653.29 | 0.70 | 7 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 189.56 | 183.26 | 220.87 | -73.56 | -90.91 | 1.000 | 1.000 | 0.438 | 129.17 | 0.89 | 1 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 231.72 | 238.41 | 318.89 | -119.84 | -57.62 | 1.222 | 1.301 | 0.536 | 170.41 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 234.88 | 228.76 | 334.71 | -139.30 | -80.69 | 1.239 | 1.248 | 0.543 | 180.44 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 242.46 | 242.65 | 302.66 | -95.35 | -22.40 | 1.279 | 1.324 | 0.561 | 170.20 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 249.75 | 237.99 | 317.43 | -112.45 | -42.91 | 1.318 | 1.299 | 0.578 | 179.17 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 271.01 | 265.26 | 358.70 | -132.68 | -62.31 | 1.430 | 1.447 | 0.627 | 198.80 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 285.52 | 274.26 | 338.24 | -105.83 | -24.52 | 1.506 | 1.497 | 0.660 | 191.29 | 0.89 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 345.89 | 313.89 | 381.36 | -32.78 | -27.76 | 1.825 | 1.713 | 0.800 | 222.97 | 0.67 | 1 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 375.01 | 349.04 | 539.68 | -102.81 | -55.53 | 1.978 | 1.905 | 0.867 | 298.03 | 0.78 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 385.91 | 377.54 | 523.53 | -109.43 | -73.91 | 2.036 | 2.060 | 0.892 | 287.29 | 0.78 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 389.59 | 354.64 | 565.95 | -117.50 | -64.07 | 2.055 | 1.935 | 0.901 | 313.54 | 0.78 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | PIT | 9 | 401.77 | 383.72 | 546.61 | -124.12 | -82.45 | 2.120 | 2.094 | 0.929 | 302.25 | 0.78 | 3 | False | False |
 | baselines-margin | street | W2 | 1 | PIT | 9 | 432.44 | 535.61 | 601.85 | -108.83 | -181.81 | 2.281 | 2.923 | 1.000 | 324.47 | 0.89 | 1 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,336.22 | 2,430.21 | 2,756.99 | 152.59 | 618.83 | 12.325 | 13.261 | 5.402 | 1,567.34 | 0.67 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,397.50 | 2,428.07 | 2,872.28 | 40.64 | 427.67 | 12.648 | 13.249 | 5.544 | 1,628.97 | 0.67 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,421.36 | 2,459.82 | 2,890.39 | 47.26 | 446.06 | 12.774 | 13.422 | 5.599 | 1,643.90 | 0.67 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,605.58 | 2,708.00 | 2,974.18 | 237.54 | 735.19 | 13.746 | 14.776 | 6.025 | 1,704.38 | 0.67 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,656.74 | 2,694.26 | 3,069.21 | 127.93 | 550.60 | 14.016 | 14.701 | 6.144 | 1,758.77 | 0.67 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | PIT | 9 | 2,680.60 | 2,726.00 | 3,087.45 | 134.55 | 568.99 | 14.142 | 14.875 | 6.199 | 1,779.48 | 0.67 | 3 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 189.56 | 183.26 | 220.87 | -73.56 | -90.91 | 1.000 | 1.000 | 0.438 | 126.99 | 0.89 | 1 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 200.07 | 219.54 | 252.82 | 84.72 | 95.18 | 1.055 | 1.198 | 0.463 | 143.58 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 202.33 | 211.26 | 258.93 | 67.62 | 74.67 | 1.067 | 1.153 | 0.468 | 147.84 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 206.91 | 217.22 | 262.54 | 79.71 | 86.41 | 1.092 | 1.185 | 0.478 | 149.96 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 211.29 | 230.35 | 256.76 | 99.17 | 109.48 | 1.115 | 1.257 | 0.489 | 146.41 | 0.89 | 5 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 255.47 | 255.99 | 280.40 | 74.24 | 93.06 | 1.348 | 1.397 | 0.591 | 164.57 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 259.59 | 261.59 | 283.94 | 86.33 | 104.79 | 1.369 | 1.427 | 0.600 | 167.08 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 263.31 | 254.66 | 378.24 | -67.72 | -29.74 | 1.389 | 1.390 | 0.609 | 208.70 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 275.49 | 283.75 | 370.97 | -74.34 | -48.13 | 1.453 | 1.548 | 0.637 | 207.49 | 0.89 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 307.36 | 291.85 | 454.85 | -97.59 | -52.36 | 1.621 | 1.593 | 0.711 | 248.64 | 0.78 | 3 | False | False |
+| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 319.54 | 320.93 | 444.57 | -104.21 | -70.75 | 1.686 | 1.751 | 0.739 | 245.71 | 0.89 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 345.89 | 313.89 | 381.36 | -32.78 | -27.76 | 1.825 | 1.713 | 0.800 | 219.91 | 0.67 | 1 | False | False |
 | baselines-margin | street | W2 | 1 | full_sample | 9 | 432.44 | 535.61 | 601.85 | -108.83 | -181.81 | 2.281 | 2.923 | 1.000 | 323.46 | 0.89 | 1 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,195.39 | 2,215.75 | 2,633.41 | -83.17 | 291.56 | 11.582 | 12.090 | 5.077 | 1,493.52 | 0.78 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,238.49 | 2,306.32 | 2,648.02 | 394.89 | 773.50 | 11.809 | 12.585 | 5.176 | 1,497.16 | 0.89 | 7 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,246.54 | 2,202.01 | 2,759.38 | -192.78 | 106.98 | 11.852 | 12.015 | 5.195 | 1,564.06 | 0.78 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,270.41 | 2,233.76 | 2,775.63 | -186.16 | 125.36 | 11.978 | 12.189 | 5.250 | 1,571.67 | 0.78 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,298.56 | 2,302.63 | 2,766.69 | 282.94 | 582.34 | 12.126 | 12.565 | 5.315 | 1,550.63 | 0.89 | 3 | False | False |
-| below-ebitda | fcf | W2 | 1 | full_sample | 9 | 2,322.42 | 2,334.38 | 2,784.02 | 289.56 | 600.73 | 12.252 | 12.738 | 5.371 | 1,558.97 | 0.78 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 128.88 | 107.86 | 154.10 | -26.88 | -24.96 | 0.660 | 0.582 |  | 112.11 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 195.38 | 185.40 | 228.74 | -64.88 | -88.14 | 1.000 | 1.000 |  | 131.45 | 0.88 | 1 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,425.95 | 2,428.91 | 2,737.17 | 14.91 | 539.27 | 12.417 | 13.101 |  | 1,590.74 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,441.15 | 2,421.33 | 2,831.31 | -40.41 | 469.09 | 12.495 | 13.060 |  | 1,639.61 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,467.10 | 2,410.28 | 2,840.41 | -131.94 | 334.23 | 12.627 | 13.000 |  | 1,646.34 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,491.21 | 2,413.83 | 2,960.61 | -192.59 | 255.87 | 12.751 | 13.020 |  | 1,702.62 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,502.67 | 2,438.82 | 2,896.19 | -163.86 | 326.65 | 12.810 | 13.154 |  | 1,688.64 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | PIT | 8 | 2,526.79 | 2,442.36 | 3,014.01 | -224.52 | 248.30 | 12.933 | 13.173 |  | 1,739.57 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 208.49 | 219.21 | 315.68 | -131.32 | -98.73 | 1.067 | 1.182 |  | 173.45 | 0.88 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 216.25 | 203.56 | 322.82 | -151.33 | -122.19 | 1.107 | 1.098 |  | 179.70 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 233.18 | 229.56 | 312.51 | -102.33 | -51.79 | 1.194 | 1.238 |  | 173.50 | 0.88 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 235.26 | 213.55 | 323.56 | -120.15 | -72.74 | 1.204 | 1.152 |  | 181.10 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 285.73 | 262.68 | 391.07 | -183.26 | -129.76 | 1.462 | 1.417 |  | 215.58 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 304.00 | 270.82 | 401.88 | -152.08 | -80.32 | 1.556 | 1.461 |  | 222.23 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 415.61 | 385.90 | 536.24 | -98.57 | -67.64 | 2.127 | 2.081 |  | 296.53 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 432.97 | 392.68 | 558.46 | -113.33 | -75.68 | 2.216 | 2.118 |  | 310.41 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 437.70 | 382.00 | 595.36 | -130.50 | -75.22 | 2.240 | 2.060 |  | 328.47 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | PIT | 8 | 455.06 | 388.79 | 622.88 | -145.26 | -83.26 | 2.329 | 2.097 |  | 345.58 | 0.75 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 128.88 | 107.86 | 154.10 | -26.88 | -24.96 | 0.660 | 0.582 |  | 100.08 | 1.00 | 1 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 195.38 | 185.40 | 228.74 | -64.88 | -88.14 | 1.000 | 1.000 |  | 130.77 | 0.88 | 1 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,368.77 | 2,370.19 | 2,797.84 | 248.01 | 695.39 | 12.124 | 12.784 |  | 1,580.45 | 0.88 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,377.33 | 2,299.10 | 2,809.78 | -233.15 | 211.74 | 12.168 | 12.401 |  | 1,595.92 | 0.75 | 7 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,418.47 | 2,280.48 | 2,950.09 | -379.99 | 6.70 | 12.379 | 12.300 |  | 1,673.13 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,418.84 | 2,362.69 | 2,927.93 | 95.83 | 482.18 | 12.380 | 12.744 |  | 1,644.41 | 0.88 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,454.05 | 2,309.01 | 3,002.02 | -411.92 | -0.88 | 12.561 | 12.454 |  | 1,701.08 | 0.75 | 3 | False | False |
-| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 2,454.41 | 2,391.22 | 2,975.11 | 63.90 | 474.60 | 12.563 | 12.898 |  | 1,668.81 | 0.75 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 219.71 | 216.35 | 274.64 | 86.64 | 83.49 | 1.125 | 1.167 |  | 159.15 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 226.24 | 223.55 | 279.64 | 98.83 | 95.33 | 1.158 | 1.206 |  | 162.07 | 1.00 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 229.75 | 230.86 | 268.00 | 104.47 | 104.44 | 1.176 | 1.245 |  | 157.76 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 241.06 | 242.13 | 273.20 | 118.84 | 118.79 | 1.234 | 1.306 |  | 161.34 | 1.00 | 5 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 273.90 | 261.62 | 308.43 | 54.71 | 75.91 | 1.402 | 1.411 |  | 178.87 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 276.81 | 267.00 | 311.38 | 66.90 | 87.76 | 1.417 | 1.440 |  | 180.93 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 288.03 | 286.31 | 376.51 | -50.04 | -36.06 | 1.474 | 1.544 |  | 212.44 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 310.12 | 282.42 | 422.86 | -81.96 | -43.63 | 1.587 | 1.523 |  | 235.36 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 339.17 | 326.47 | 452.94 | -84.01 | -59.95 | 1.736 | 1.761 |  | 254.05 | 0.88 | 3 | False | False |
+| below-ebitda | fcf | W2 | 2 | full_sample | 8 | 361.26 | 322.58 | 505.45 | -115.93 | -67.52 | 1.849 | 1.740 |  | 280.05 | 0.75 | 3 | False | False |
 
 ## target: `ga_cash_ex_reserves_musd`
 
