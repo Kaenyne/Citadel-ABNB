@@ -1,0 +1,28 @@
+COMMAND: .venv/Scripts/python.exe -X utf8 analysis/src/forecast_methods/alpha_a2/run.py --no-register
+Exit 1. Parent integration check after M append; no registry write.
+Traceback (most recent call last):
+  File "C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\alpha_a2\run.py", line 433, in <module>
+    raise SystemExit(run(not args.no_register))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\alpha_a2\run.py", line 409, in run
+    live = live_scenarios(data["vintages"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\alpha_a2\run.py", line 321, in live_scenarios
+    rows = rows[pd.to_datetime(rows.as_of_timestamp) <= pd.Timestamp(RUN_DATE)]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\.venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 1040, in to_datetime
+    values = convert_listlike(arg._values, format)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\.venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\.venv\Lib\site-packages\pandas\core\tools\datetimes.py", line 470, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/strptime.pyx", line 563, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 511, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 621, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "T15:20Z". You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.

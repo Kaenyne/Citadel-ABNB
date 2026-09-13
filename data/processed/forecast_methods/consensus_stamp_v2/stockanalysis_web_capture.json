@@ -1,0 +1,17 @@
+{
+  "url": "https://stockanalysis.com/stocks/abnb/forecast/",
+  "vendor": "S&P Global Market Intelligence via StockAnalysis",
+  "capture_method": "web.run public page text, annual financial forecast table and summary tiles; manual fact transcription",
+  "capture_date_utc": "2026-09-13",
+  "capture_window_utc": "15:18-15:23",
+  "vendor_stated_last_updated": "2026-09-10",
+  "vendor_stated_last_checked": "2026-09-10",
+  "observations": [
+    {"period": "FY2026", "metric": "revenue", "value": 14160.0, "unit": "musd", "n_estimates": 43, "n_basis": "No. Analysts row in FY2026 financial forecast column; vendor does not print metric-specific n", "high": 14300.0, "low": 13800.0, "admitted": true},
+    {"period": "FY2026", "metric": "eps_adj", "value": 5.3, "unit": "usd", "n_estimates": 43, "n_basis": "No. Analysts row in FY2026 financial forecast column; vendor does not print metric-specific n", "high": 5.91, "low": 5.0, "admitted": true},
+    {"period": "FY2027", "metric": "revenue", "value": 15770.0, "unit": "musd", "n_estimates": null, "admitted": false, "reason": "Summary tile visible; FY2027 detail and analyst count require upgrade"},
+    {"period": "FY2027", "metric": "eps_adj", "value": 6.17, "unit": "usd", "n_estimates": null, "admitted": false, "reason": "Summary tile visible; FY2027 detail and analyst count require upgrade"}
+  ],
+  "unavailable": ["Q3 2026 quarterly table", "Q4 2026 quarterly table", "Q1 2027", "FY2028", "adjusted EBITDA", "nights", "ADR", "GBV"],
+  "basis_note": "Page explicitly labels EPS and forward PE as non-GAAP adjusted. Financial forecasts are attributed to S&P Global; TipRanks supplies individual analyst data. No paywalled values were accessed."
+}

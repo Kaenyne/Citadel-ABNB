@@ -1,0 +1,157 @@
+{
+  "endpoints": [
+    {
+      "quarter": "2025Q4",
+      "n_recent": 1,
+      "n_norm": 3,
+      "excess_unpaid_pp_recomputed": 1.9691138259797292
+    },
+    {
+      "quarter": "2026Q1",
+      "n_recent": 1,
+      "n_norm": 4,
+      "excess_unpaid_pp_recomputed": 8.047784019288606
+    },
+    {
+      "quarter": "2026Q2",
+      "n_recent": 1,
+      "n_norm": 4,
+      "excess_unpaid_pp_recomputed": 9.705898803719615
+    }
+  ],
+  "endpoint_increase_pp": 7.736784977739886,
+  "D1_grid_n": 2025,
+  "D1_axis_counts": {
+    "share_path": 5,
+    "adr_ratio": 3,
+    "delta_scenario": 5,
+    "lead_time": 3,
+    "lead_uplift": 3,
+    "rebook_offset": 3
+  },
+  "grid_ranges": {
+    "2026Q3": {
+      "rows": 2025,
+      "unique_L_rounded_12dp": 37,
+      "min_L": 0.0,
+      "max_L": 0.014998218738867121
+    },
+    "2026Q4": {
+      "rows": 2025,
+      "unique_L_rounded_12dp": 37,
+      "min_L": 0.0,
+      "max_L": 0.01619799919589433
+    }
+  },
+  "central_q4": {
+    "raw_nights_share": 0.1929,
+    "derived_gbv_share": 0.23003172028906008,
+    "delta_pp": 4.0,
+    "L": 0.009201268811562403,
+    "pure_kernel_musd": 3214.7757508938016,
+    "stress_musd": 3185.1957350409357,
+    "loss_musd": 29.580015852865927,
+    "all_D1_grid_revenue_min_musd": 3162.702815865843,
+    "all_D1_grid_revenue_max_musd": 3214.7757508938016
+  },
+  "registry": {
+    "n_rows": 12,
+    "windows": [
+      "LIVE"
+    ],
+    "replay_labels": [
+      "PIT",
+      "full_sample"
+    ],
+    "n_spec_quarter": 6,
+    "historical_W1": 0,
+    "historical_W2": 0,
+    "n_unique_quarter_point": 3
+  },
+  "alarm_quarters": [
+    "2025Q1",
+    "2026Q1",
+    "2025Q2",
+    "2026Q2",
+    "2025Q3",
+    "2025Q4"
+  ],
+  "alarm_intervals": [
+    {
+      "label": "pre-RNPL alarms W1 and W2 same cells",
+      "n": 2,
+      "k": 1,
+      "rate_pct": 50.0,
+      "wilson_95_pct": [
+        9.453120573423075,
+        90.54687942657694
+      ]
+    },
+    {
+      "label": "all chronological alarms W1 and W2 same cells",
+      "n": 6,
+      "k": 1,
+      "rate_pct": 16.666666666666668,
+      "wilson_95_pct": [
+        3.0053369748306635,
+        56.35028221864702
+      ]
+    },
+    {
+      "label": "fixed Q3 rule W1 retrospective",
+      "n": 3,
+      "k": 0,
+      "rate_pct": 0.0,
+      "wilson_95_pct": [
+        0,
+        56.14970317550454
+      ]
+    },
+    {
+      "label": "fixed Q3 rule W2 subset",
+      "n": 2,
+      "k": 0,
+      "rate_pct": 0.0,
+      "wilson_95_pct": [
+        0,
+        65.76197724933468
+      ]
+    }
+  ],
+  "MDE_design": [
+    {
+      "n": 2,
+      "null_p": 0.05,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "rejection_count_at_least": 2,
+      "actual_size": 0.0025000000000000005,
+      "minimum_detectable_p": 0.894427190999916,
+      "minimum_increase_pp": 84.44271909999159,
+      "power_at_9pct_p": 0.0081
+    },
+    {
+      "n": 3,
+      "null_p": 0.05,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "rejection_count_at_least": 2,
+      "actual_size": 0.007250000000000001,
+      "minimum_detectable_p": 0.7128592745832596,
+      "minimum_increase_pp": 66.28592745832596,
+      "power_at_9pct_p": 0.022842
+    },
+    {
+      "n": 6,
+      "null_p": 0.05,
+      "alpha": 0.05,
+      "target_power": 0.8,
+      "rejection_count_at_least": 2,
+      "actual_size": 0.032773828124999994,
+      "minimum_detectable_p": 0.42244752484627207,
+      "minimum_increase_pp": 37.244752484627206,
+      "power_at_9pct_p": 0.09515338960499999
+    }
+  ],
+  "limits": "No sampling model for excess share or stress; alarm MDE is an illustrative independent Bernoulli design."
+}

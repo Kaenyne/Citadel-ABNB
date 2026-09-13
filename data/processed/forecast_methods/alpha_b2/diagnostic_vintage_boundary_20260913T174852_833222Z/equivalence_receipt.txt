@@ -1,0 +1,53 @@
+{
+  "reference_run": "data\\processed\\forecast_methods\\alpha_b2\\run_20260913T171654_499731Z",
+  "rebuild_run": "data\\processed\\forecast_methods\\alpha_b2\\run_20260913T175201_016865Z",
+  "research_and_preview": {
+    "cells": {
+      "byte_identical": true,
+      "sha256": "13e676ec2899867d5f2d9d4f179cd4f93277be16d0cd5b2713dced41cc05a8fd"
+    },
+    "historical_term_structure": {
+      "byte_identical": true,
+      "sha256": "4405481c205506f16239a3a6077e0980ba60cf7a2ce049a774e826e487bc9393"
+    },
+    "statistics": {
+      "byte_identical": true,
+      "sha256": "0809e2df96e1e9b21443c1d419fe262eff79382740c194500a80eaa378dd4c42"
+    },
+    "revision_baselines": {
+      "byte_identical": true,
+      "sha256": "78f84999a388407a181b99ca92087ac68c90059dff2d7469b9c1d129911bb281"
+    },
+    "return_statistics": {
+      "byte_identical": true,
+      "sha256": "44c7a49beb08624dc1d7c5a3a9b5f416ea315b218611394b9d602da9f9de96a4"
+    },
+    "live_term_structure": {
+      "byte_identical": true,
+      "sha256": "6eb4b44e54ed26602d6cdc9b0bf291e8635977cf0a2e88bad917933323595383"
+    },
+    "current_consensus_comparisons": {
+      "byte_identical": true,
+      "sha256": "3f2375a358df638e299969376f0567a27cd4e4ba452515c6637ab4e395a5f3c1"
+    },
+    "registry_candidate": {
+      "byte_identical": true,
+      "sha256": "0d4af211865f50913a1b704c7e9711f3f6a036b0f31c765542eabb6cad727c21"
+    }
+  },
+  "current_registry_byte_identical_to_expanded_preview": true,
+  "current_registry_sha256": "7a66db57458e244cda443486caa78cae3f8a4080cc5afd0aebd1427a9fa17172",
+  "preserved_reference_registry_preregistration_files": 14,
+  "kernel_transitive_input_hashes": {
+    "kernel_kpi_panel": {
+      "path": "data\\processed\\overnight\\02_kpi_panel_quarterly.csv",
+      "sha256": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac"
+    },
+    "kernel_cushions": {
+      "path": "data\\processed\\overnight\\02_guidance_cushion_series.csv",
+      "sha256": "0140b2763604826c3b59dfde2ef90c186c8bb2c2c95de4b9e7c758eea54ce578"
+    }
+  },
+  "registry_write": false,
+  "scorer_run": false
+}

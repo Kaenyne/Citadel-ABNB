@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\alpha_a2\run.py", line 409, in <module>
+    raise SystemExit(run(not args.no_register))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\alpha_a2\run.py", line 390, in run
+    clean = R.validate_registry_frame(reg)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\analysis\src\forecast_methods\harness_v1_1\registry.py", line 139, in validate_registry_frame
+    raise RegistryError(f"required column {c} has nulls")
+harness_v1_1.registry.RegistryError: required column q50 has nulls

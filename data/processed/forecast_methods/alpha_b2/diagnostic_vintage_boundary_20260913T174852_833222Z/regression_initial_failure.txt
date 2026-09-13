@@ -1,0 +1,343 @@
+FFFFFFFFFFFFFF.....F                                                     [100%]
+================================== FAILURES ===================================
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T17:00:00-04:00-pre_guide] _
+
+role = 'pre_guide', letter_day = '2026-08-06'
+stamp = '2026-08-06T17:00:00-04:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed            as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T17:00:00-04:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T17:00:00-04:00-at_print] _
+
+role = 'at_print', letter_day = '2026-08-06'
+stamp = '2026-08-06T17:00:00-04:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed            as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T17:00:00-04:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'at_print', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T16:00:00-04:00-pre_guide] _
+
+role = 'pre_guide', letter_day = '2026-08-06'
+stamp = '2026-08-06T16:00:00-04:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed            as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T16:00:00-04:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T16:00:00-04:00-at_print] _
+
+role = 'at_print', letter_day = '2026-08-06'
+stamp = '2026-08-06T16:00:00-04:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed            as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T16:00:00-04:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'at_print', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00Z-pre_guide] _
+
+role = 'pre_guide', letter_day = '2026-08-06', stamp = '2026-08-06T20:00:00Z'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed       as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T20:00:00Z\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00Z-at_print] _
+
+role = 'at_print', letter_day = '2026-08-06', stamp = '2026-08-06T20:00:00Z'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed       as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T20:00:00Z\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'at_print', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00.000001Z-pre_guide] _
+
+role = 'pre_guide', letter_day = '2026-08-06'
+stamp = '2026-08-06T20:00:00.000001Z'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed              as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T20:00:00.000001Z\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00.000001Z-at_print] _
+
+role = 'at_print', letter_day = '2026-08-06'
+stamp = '2026-08-06T20:00:00.000001Z'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed              as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T20:00:00.000001Z\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'at_print', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T10:00:00-pre_guide] _
+
+role = 'pre_guide', letter_day = '2026-08-06', stamp = '2026-08-06T10:00:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed      as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T10:00:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T10:00:00-at_print] _
+
+role = 'at_print', letter_day = '2026-08-06', stamp = '2026-08-06T10:00:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed      as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T10:00:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'at_print', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T00:00:00-pre_guide] _
+
+role = 'pre_guide', letter_day = '2026-08-06', stamp = '2026-08-06T00:00:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed      as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T00:00:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T00:00:00-at_print] _
+
+role = 'at_print', letter_day = '2026-08-06', stamp = '2026-08-06T00:00:00'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed      as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T00:00:00\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'at_print', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-02-12-2026-02-12T21:00:00Z-pre_guide] _
+
+role = 'pre_guide', letter_day = '2026-02-12', stamp = '2026-02-12T21:00:00Z'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed       as_of_timestamp\n0   candidate   LSEG  ...              True  2026-02-12T21:00:00Z\n\n[1 rows x 9 columns], '2026Q3', '2026-02-12', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+_ test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-02-12-2026-02-12T21:00:00Z-at_print] _
+
+role = 'at_print', letter_day = '2026-02-12', stamp = '2026-02-12T21:00:00Z'
+
+    @pytest.mark.parametrize("role", ["pre_guide", "at_print"])
+    @pytest.mark.parametrize("letter_day,stamp", [
+        ("2026-08-06", "2026-08-06T17:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T16:00:00-04:00"),
+        ("2026-08-06", "2026-08-06T20:00:00Z"),
+        ("2026-08-06", "2026-08-06T20:00:00.000001Z"),
+        ("2026-08-06", "2026-08-06T10:00:00"),
+        ("2026-08-06", "2026-08-06T00:00:00"),
+        ("2026-02-12", "2026-02-12T21:00:00Z"),
+    ])
+    def test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive(role, letter_day, stamp):
+        candidates = pd.DataFrame([row(stamp, role)])
+>       assert B.admissible_consensus(candidates, "2026Q3", letter_day, role, exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed       as_of_timestamp\n0   candidate   LSEG  ...              True  2026-02-12T21:00:00Z\n\n[1 rows x 9 columns], '2026Q3', '2026-02-12', 'at_print', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:34: AssertionError
+______ test_exact_day_uses_new_york_calendar_day_for_explicit_timestamp _______
+
+    def test_exact_day_uses_new_york_calendar_day_for_explicit_timestamp():
+        candidates = pd.DataFrame([row("2026-08-06T00:30:00Z")])  # August 5 in New York.
+>       assert B.admissible_consensus(candidates, "2026Q3", "2026-08-06", "pre_guide", exact_day=True) is None
+E       AssertionError: assert {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} is None
+E        +  where {'register_id': 'candidate', 'vendor': 'LSEG', 'period': '2026Q3', 'metric': 'revenue', ...} = <function admissible_consensus at 0x0000025FFFC23880>(  register_id vendor  ... vendor_attributed       as_of_timestamp\n0   candidate   LSEG  ...              True  2026-08-06T00:30:00Z\n\n[1 rows x 9 columns], '2026Q3', '2026-08-06', 'pre_guide', exact_day=True)
+E        +    where <function admissible_consensus at 0x0000025FFFC23880> = B.admissible_consensus
+
+analysis\src\forecast_methods\alpha_b2\tests\test_historical_timestamp_boundary.py:57: AssertionError
+=========================== short test summary info ===========================
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T17:00:00-04:00-pre_guide]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T17:00:00-04:00-at_print]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T16:00:00-04:00-pre_guide]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T16:00:00-04:00-at_print]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00Z-pre_guide]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00Z-at_print]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00.000001Z-pre_guide]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T20:00:00.000001Z-at_print]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T10:00:00-pre_guide]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T10:00:00-at_print]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T00:00:00-pre_guide]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-08-06-2026-08-06T00:00:00-at_print]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-02-12-2026-02-12T21:00:00Z-pre_guide]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_historical_explicit_boundary_rejects_postclose_exactclose_and_naive[2026-02-12-2026-02-12T21:00:00Z-at_print]
+FAILED analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py::test_exact_day_uses_new_york_calendar_day_for_explicit_timestamp
+15 failed, 5 passed in 1.96s

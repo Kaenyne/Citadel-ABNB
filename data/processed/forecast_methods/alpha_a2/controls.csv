@@ -1,0 +1,46 @@
+variant,window,controls,n,raw_corr_same_sample,partial_corr,sign_kept,status,control_columns,n_gbv_vendor_unrecorded,vendor_provenance
+default,W1,gbv,6,-0.06912917909182484,-0.4634046026457539,True,available,gbv_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+default,W1,guide_gap,11,0.01563853647400472,-0.39210775788712765,False,available,actual_gap_pct,0,named_vendors_or_no_GBV_control
+default,W1,revenue,11,0.01563853647400472,0.0619433805061818,True,available,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+default,W1,gbv_and_guide_gap,6,-0.06912917909182484,-0.5381184902358227,True,available,gbv_surprise_pct|actual_gap_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+default,W1,all_three,6,-0.06912917909182484,-0.47364602509850656,True,available,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+default,W2,gbv,6,-0.06912917909182484,-0.4634046026457539,True,available,gbv_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+default,W2,guide_gap,9,-0.05154814792586559,-0.4410066319143244,True,available,actual_gap_pct,0,named_vendors_or_no_GBV_control
+default,W2,revenue,9,-0.05154814792586559,0.003069545419566359,False,available,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+default,W2,gbv_and_guide_gap,6,-0.06912917909182484,-0.5381184902358227,True,available,gbv_surprise_pct|actual_gap_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+default,W2,all_three,6,-0.06912917909182484,-0.47364602509850656,True,available,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+default,extension,gbv,0,,,False,insufficient_complete_cases,gbv_surprise_pct,0,named_vendors_or_no_GBV_control
+default,extension,guide_gap,0,,,False,insufficient_complete_cases,actual_gap_pct,0,named_vendors_or_no_GBV_control
+default,extension,revenue,0,,,False,insufficient_complete_cases,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+default,extension,gbv_and_guide_gap,0,,,False,insufficient_complete_cases,gbv_surprise_pct|actual_gap_pct,0,named_vendors_or_no_GBV_control
+default,extension,all_three,0,,,False,insufficient_complete_cases,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+ex_covid,W1,gbv,6,-0.06912917909182484,-0.4634046026457539,True,available,gbv_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+ex_covid,W1,guide_gap,11,0.01563853647400472,-0.39210775788712765,False,available,actual_gap_pct,0,named_vendors_or_no_GBV_control
+ex_covid,W1,revenue,11,0.01563853647400472,0.0619433805061818,True,available,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+ex_covid,W1,gbv_and_guide_gap,6,-0.06912917909182484,-0.5381184902358227,True,available,gbv_surprise_pct|actual_gap_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+ex_covid,W1,all_three,6,-0.06912917909182484,-0.47364602509850656,True,available,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+ex_covid,W2,gbv,6,-0.06912917909182484,-0.4634046026457539,True,available,gbv_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+ex_covid,W2,guide_gap,9,-0.05154814792586559,-0.4410066319143244,True,available,actual_gap_pct,0,named_vendors_or_no_GBV_control
+ex_covid,W2,revenue,9,-0.05154814792586559,0.003069545419566359,False,available,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+ex_covid,W2,gbv_and_guide_gap,6,-0.06912917909182484,-0.5381184902358227,True,available,gbv_surprise_pct|actual_gap_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+ex_covid,W2,all_three,6,-0.06912917909182484,-0.47364602509850656,True,available,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+ex_covid,extension,gbv,0,,,False,insufficient_complete_cases,gbv_surprise_pct,0,named_vendors_or_no_GBV_control
+ex_covid,extension,guide_gap,0,,,False,insufficient_complete_cases,actual_gap_pct,0,named_vendors_or_no_GBV_control
+ex_covid,extension,revenue,0,,,False,insufficient_complete_cases,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+ex_covid,extension,gbv_and_guide_gap,0,,,False,insufficient_complete_cases,gbv_surprise_pct|actual_gap_pct,0,named_vendors_or_no_GBV_control
+ex_covid,extension,all_three,0,,,False,insufficient_complete_cases,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+full_sample,W1,gbv,7,-0.169776446362566,-0.5243162058363579,True,available,gbv_surprise_pct,7,L0 usable/attributed flags; GBV vendor name unrecorded
+full_sample,W1,guide_gap,13,-0.2506888610355396,-0.22828417563878814,True,available,actual_gap_pct,0,named_vendors_or_no_GBV_control
+full_sample,W1,revenue,13,-0.2506888610355396,-0.18453496075057058,True,available,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+full_sample,W1,gbv_and_guide_gap,7,-0.169776446362566,-0.7281854421364761,True,available,gbv_surprise_pct|actual_gap_pct,7,L0 usable/attributed flags; GBV vendor name unrecorded
+full_sample,W1,all_three,7,-0.169776446362566,-0.6442659566525437,True,available,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,7,L0 usable/attributed flags; GBV vendor name unrecorded
+full_sample,W2,gbv,6,-0.17293261032278684,-0.5663920935634821,True,available,gbv_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+full_sample,W2,guide_gap,9,-0.026583534759696614,-0.33584029107870983,True,available,actual_gap_pct,0,named_vendors_or_no_GBV_control
+full_sample,W2,revenue,9,-0.026583534759696614,0.05975650581696028,False,available,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+full_sample,W2,gbv_and_guide_gap,6,-0.17293261032278684,-0.6865599514124772,True,available,gbv_surprise_pct|actual_gap_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+full_sample,W2,all_three,6,-0.17293261032278684,-0.6485782231859099,True,available,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,6,L0 usable/attributed flags; GBV vendor name unrecorded
+full_sample,extension,gbv,0,,,False,insufficient_complete_cases,gbv_surprise_pct,0,named_vendors_or_no_GBV_control
+full_sample,extension,guide_gap,2,,,False,insufficient_complete_cases,actual_gap_pct,0,named_vendors_or_no_GBV_control
+full_sample,extension,revenue,2,,,False,insufficient_complete_cases,revenue_surprise_pct,0,named_vendors_or_no_GBV_control
+full_sample,extension,gbv_and_guide_gap,0,,,False,insufficient_complete_cases,gbv_surprise_pct|actual_gap_pct,0,named_vendors_or_no_GBV_control
+full_sample,extension,all_three,0,,,False,insufficient_complete_cases,gbv_surprise_pct|actual_gap_pct|revenue_surprise_pct,0,named_vendors_or_no_GBV_control
