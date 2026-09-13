@@ -34,10 +34,10 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 |---|---|---|---|---|---|---|---|
 | 01 | Repo census of margin-relevant inputs | fable | - | done | 23:55 | notes/01_input_census.md | 00:15 |
 | 02 | Financial panel: every P&L, add-back, below-EBITDA and FCF line, quarterly and annual, with seasonality | fable | - | running | 23:55 | notes/02_financial_panel.md | 23:55 |
-| 03 | Point-in-time consensus for EBITDA/EPS/FCF/cost lines (LSEG + Bloomberg), surprise history | fable | - | running | 23:55 | notes/03_consensus_pit.md | 23:55 |
+| 03 | Point-in-time consensus for EBITDA/EPS/FCF/cost lines (LSEG + Bloomberg), surprise history | fable | - | done | 23:55 | notes/03_consensus_pit.md | 00:20 |
 | 04 | External / alt-data signals for each cost line (archives, third-party public, macro) | fable | - | running | 23:55 | notes/04_alt_signals.md | 23:55 |
 | 05 | Management statements v2 (all events incl. conferences) and 5 Nov guide-language pattern | fable | - | running | 00:15 | notes/05_mgmt_statements_v2.md | 00:15 |
-| 06 | FY27 quarterly revenue path v2: audit and fix PR #32 lap on real quarters, reconcile to bridge v3 exit and WS29 | fable | - | pending | | notes/06_fy27_path_v2.md | |
+| 06 | FY27 quarterly revenue path v2: audit and fix PR #32 lap on real quarters, reconcile to bridge v3 exit and WS29 | fable | - | running | 00:20 | notes/06_fy27_path_v2.md | 00:20 |
 | 06v | Independent check of 06 (arithmetic, PIT, reconciliation); writes corrections into 06's folder as `_v2b` if needed | fable | 06 | pending | | notes/06v_fy27_path_check.md | |
 | 10 | Margin harness: targets panel, baselines, recency-weighted scorer, registry (imports frozen harness calendar/validator) | fable | 02, 03 | pending | | notes/10_harness_margin.md | |
 | M1 | Driver-based cost lines v2 (per-unit costs on nights, GBV, ADR, regional mix, seats, FX), PIT refits | fable | 10, 01 | pending | | notes/M1_driver_lines.md | |
@@ -56,6 +56,8 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | fable + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 00:20 WS03 done (LSEG daily PIT consensus 2021-2026, 22/22 prints; Street under-called margin 21/22, W1 +1.82pt, W2 +1.70pt, last four +0.43pt; flow-through beta 0.57 weak; Street anchors on FY floor; 3Q26 cons EBITDA $2,361.5M / 49.78%, FY26 35.62%, FY27 36.45%; Bloomberg file pull-date anchored). WS06 launched.
 
 - 14 Sep 00:15 WS01 done (123-row census, 26 gaps, top-10 unused inputs: interest income = balances x DTB3, 10-Q MD&A deltas, lagged S&M deleverage, regional-mix line, hosting commitments...). WS05 launched.
 

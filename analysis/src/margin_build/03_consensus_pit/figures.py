@@ -60,8 +60,7 @@ def fig_margin_surprise():
     ax.legend(loc="upper left", fontsize=8, frameon=False)
     style(ax)
     fig.text(0.01, 0.005, "Source: LSEG Workspace TR.EBITDAMean / TR.RevenueMean stamped one trading day before each print (WS03, pulled 13 Sep 2026); "
-                          "actuals from shareholder letters (abnb_quarterly_cost_stack_exsbc.csv);
-guide-implied from 02_guidance_ledger.csv. "
+                          "actuals from shareholder letters (abnb_quarterly_cost_stack_exsbc.csv);\nguide-implied from 02_guidance_ledger.csv. "
                           "Bars: grey = 2021-22, blue = W1 only, amber = W1 and W2.", fontsize=7, color=MUTED)
     fig.tight_layout(rect=(0, 0.035, 1, 1))
     fig.savefig(FIG / "03_consensus_pit_margin_surprise.png", dpi=160)

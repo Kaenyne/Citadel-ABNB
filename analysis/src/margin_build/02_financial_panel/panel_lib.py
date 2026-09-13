@@ -439,9 +439,10 @@ def letter_cash_flow(text):
 
 # --------------------------------------------------------------------------------------------- KPI summary table
 def letter_kpis(text, letter_q):
-    """Quarterly nights (M), GBV ($B) and ADR ($) from the letter's quarterly summary table, mapped to quarters
-    with the year/quarter header printed after the table ('2019 2021 2022 Q1 Q2 Q3 Q4 Q1 ... Q1'). Used for the
-    1Q19-2Q20 quarters (1Q21 and 4Q21 letters); later quarters come from the repo KPI panel."""
+    """Quarterly nights (M), GBV ($B) and ADR ($) from the letter's quarterly summary table. The year/quarter header
+    printed after the table ('2019 2021 2022 Q1 Q2 ... Q1') is used when it covers every value; otherwise the values
+    are taken as the contiguous run of quarters ending at letter_q (the caller validates the overlap with the repo
+    KPI panel and discards the table if it does not match)."""
     out = {}
     best = None
     for m in re.finditer(r"Nights and (?:Experiences|Seats) Booked\s+((?:\d+\.\d\s*M\s+){4,})", text):
@@ -455,23 +456,34 @@ def letter_kpis(text, letter_q):
     g = re.search(r"Gross Booking Value\s+((?:\$\s*\d+\.\d\s*B\s+){2,})", seg)
     a = re.search(r"(?:or ADR\)|Experience Booked)\s+((?:\$\s*\d{2,3}\.\d{2}\s*){2,})", seg)
     h = re.search(r"((?:20\d\d\s+){1,5})((?:Q\d\s+){2,})", seg)
-    if not (g and h):
+    if not g:
         return out
     gbv = [float(x) for x in re.findall(r"\d+\.\d", g.group(1))]
     adr = [float(x) for x in re.findall(r"\d{2,3}\.\d{2}", a.group(1))] if a else []
-    years = [int(y) for y in re.findall(r"20\d\d", h.group(1))]
-    qs = [int(x[1]) for x in re.findall(r"Q\d", h.group(2))]
     k = len(nights)
-    if len(gbv) != k or len(qs) != k:
+    if len(gbv) != k:
         return out
-    labels, yi, last = [], 0, 0
-    for qn in qs:
-        if qn <= last:
-            yi += 1
-        labels.append(qlabel(years[min(yi, len(years) - 1)], qn))
-        last = qn
+    labels = []
+    qs = [int(x[1]) for x in re.findall(r"Q\d", h.group(2))] if h else []
+    if h and len(qs) == k:
+        years = [int(y) for y in re.findall(r"20\d\d", h.group(1))]
+        yi, last = 0, 0
+        for qn in qs:
+            if qn <= last:
+                yi += 1
+            labels.append(qlabel(years[min(yi, len(years) - 1)], qn))
+            last = qn
+        method = "header"
+    else:
+        q = letter_q
+        for _ in range(k):
+            labels.append(q)
+            q = prev_q(q)
+        labels = labels[::-1]
+        method = "contiguous"
     for i, qq in enumerate(labels):
-        out[qq] = {"nights_m": float(nights[i]), "gbv_busd": gbv[i], "adr_usd": adr[i] if len(adr) == k else None}
+        out[qq] = {"nights_m": float(nights[i]), "gbv_busd": gbv[i], "adr_usd": adr[i] if len(adr) == k else None,
+                   "method": method}
     return out
 
 
