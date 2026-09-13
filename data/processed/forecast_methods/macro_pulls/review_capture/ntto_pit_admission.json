@@ -1,0 +1,9 @@
+{
+  "W1_required": 14,
+  "W2_required": 10,
+  "W1_admitted": 0,
+  "W2_admitted": 0,
+  "verdict": "FAIL: retrospective descriptive replay only; no historical PIT forecast registered",
+  "n_params": 2,
+  "explanation": "The original 0.72-0.74 was on y/y growth using current-quarter features. Guide-date availability and historical revisions are not established. Level scoring changes the error weights; the frozen naive uses its own vintage slice."
+}

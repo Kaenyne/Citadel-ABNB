@@ -144,3 +144,22 @@ def test_live_offset_ordering_and_cutoff_boundary():
     chosen = a.select_live_consensus(rows, "2026-09-13T16:30:00Z")
     assert chosen.register_id.tolist() == ["newer_offset"]
     assert chosen.stamp_utc.iloc[0] == pd.Timestamp("2026-09-13T16:30:00Z")
+
+
+@pytest.mark.parametrize("stamp,date,expected", [
+    ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+    ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+    ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+    ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+    ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+    ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+    ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+    ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+    ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+    ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+    ("2025-02-13", "2025-02-13", "available"),
+    ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+])
+def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+    _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+    assert reason == expected

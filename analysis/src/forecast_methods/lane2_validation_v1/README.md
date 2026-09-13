@@ -19,6 +19,7 @@ Independent read-only package audits (from the same repository root):
 ```sh
 python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_a2.py
 python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_f.py
+python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_c2.py
 python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_b2.py --run data/processed/forecast_methods/alpha_b2/run_20260913T170857_364592Z
 python -X utf8 analysis/src/forecast_methods/lane2_validation_v1/review_lane.py --backup data/processed/forecast_methods/L0/backups/L0_vintage_register_20260913T151840Z.csv --stage integration_recheck
 ```

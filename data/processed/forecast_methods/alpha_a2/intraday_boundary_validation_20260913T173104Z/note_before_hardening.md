@@ -149,23 +149,6 @@ Before rebuilding, 19 existing evidence files, including the live table, origina
 
 The historical cells, statistics, conditional returns, controls, ridge forecasts, Lane-1 reconciliation and registry preview are all byte-for-byte identical to the saved evidence. The **48-row registry is byte-for-byte unchanged**, SHA-256 `0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0`. The exact proposed memo sentence is unchanged. `after_m_rebuild_comparison.json` records these checks and both live tables. Neither scorer was run during this fix.
 
-## Historical intraday boundary hardening — vintage refuter follow-up
-
-The independent vintage refuter reproduced the historical result but found that the selector accepted a synthetic `2025-02-13T23:59:00` consensus by discarding its time. No actual historical denominator exercises this path: their admitted stamps are date-only. The finding and independent reconstruction remain preserved in `REFUTE_A2_vintage.md`.
-
-The A2 selector now distinguishes the two cases explicitly. Date-only records retain CONVENTION's morning-of-print interpretation and are admitted on the letter date, subject to the original role, vendor and usability checks. Explicit intraday stamps must identify a timezone and fall **strictly before 16:00 America/New_York on the letter day**. Exact-close, post-close and timezone-naive intraday stamps are rejected with explicit reasons. UTC offsets are converted to New York instants, including the EST/EDT seasonal change; a different source-calendar date does not override the actual instant.
-
-Before the repair, the 12 new boundary cases yielded **10 failures and 2 passes**, exit 1, 1.74 seconds. That full receipt is preserved as `intraday_boundary_validation_20260913T173104Z/test_receipt_initial_failure.txt`. After the bounded repair, the complete suite passes **28 tests**, exit 0, 1.57 seconds. The final tests cover the refuter's timezone-naive 23:59 attack, naive morning timestamps, just-before/exactly-at/after-close boundaries, UTC and numeric-offset equivalence, summer/winter New York time and unchanged same-day date-only admission.
-
-To avoid rewriting the files being read by the mechanism refuter, the rebuilt outputs were written to a new isolated directory with no registry mutation:
-
-```text
-python -m pytest analysis/src/forecast_methods/alpha_a2/tests -q
-python analysis/src/forecast_methods/alpha_a2/run.py --no-register --output-dir data/processed/forecast_methods/alpha_a2/intraday_boundary_validation_20260913T173104Z
-```
-
-The isolated rebuild exited **0 in 16.137 seconds**. `validation_comparison.json` proves all 21 previously saved output/registry hashes remain unchanged. Seven historical CSVs in the new snapshot—cells, statistics, conditional returns, controls, ridge forecasts, Lane-1 reconciliation and registry preview—are byte-for-byte identical to the existing results. The new 48-row registry preview also matches the existing registry bytes, SHA-256 `0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0`. Live sources and numerical comparisons are unchanged; only the isolated snapshot's actual comparison cutoff advances to its new run-start time. The exact proposed memo sentence is unchanged. Neither scorer was run, and no existing result or registry file was rewritten during this hardening.
-
 ## RESUME
 
 Parent should run both scorers, review the 48 registered rows and the expected W1 coverage warning, and send this completed package to the three Gate-2 refuters. Preserve the 2024Q3 consensus quarantine, the two undefined PIT lambda origins, the distinction between retrospective variant selection and PIT coefficients, and the four conditional cushion-only ladders. The registered verdict is partial; only the narrow sign-association statement is defensible, with no established executable expectations edge. All rebuild commands, source hashes, exact per-date inputs, controls, baselines and failure receipts are in the new alpha_a2 folders; no additional data acquisition or human decision is required to close this package.

@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 import time
 import warnings
@@ -43,6 +44,27 @@ def truth(x):
     return str(x).strip().lower() == "true"
 
 
+def historical_stamp_status(value, guide_date):
+    """Date-only pre-letter convention; explicit instants must precede NY close."""
+    if pd.isna(value):
+        return "missing_timestamp"
+    raw = str(value).strip()
+    try:
+        stamp = pd.Timestamp(raw)
+    except (TypeError, ValueError):
+        return "missing_timestamp"
+    if pd.isna(stamp):
+        return "missing_timestamp"
+    letter_day = pd.Timestamp(guide_date).date()
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        # CONVENTION: date-only historical rows represent morning-of-print.
+        return "available" if stamp.date() <= letter_day else "timestamp_after_origin"
+    if stamp.tzinfo is None:
+        return "ambiguous_intraday_timezone"
+    cutoff = pd.Timestamp(f"{letter_day} 16:00:00", tz="America/New_York")
+    return "available" if stamp.tz_convert("America/New_York") < cutoff else "timestamp_at_or_after_market_close"
+
+
 def valid_consensus(register, quarter, date, role="pre_guide", metric="revenue", attributed=True):
     """Return audited source row even when unusable; never override quarantine."""
     rows = register[(register.period == quarter) & (register.role == role) & (register.metric == metric)].copy()
@@ -50,14 +72,13 @@ def valid_consensus(register, quarter, date, role="pre_guide", metric="revenue",
         return None, "no_registered_row"
     if role != "current" and len(rows) != 1:
         raise ValueError(f"Ambiguous historical source: {quarter} {role} {metric}")
-    rows["stamp"] = pd.to_datetime(rows.as_of_timestamp, errors="coerce")
+    rows["stamp"] = pd.to_datetime(rows.as_of_timestamp, format="mixed", utc=True, errors="coerce")
     row = rows.sort_values("stamp", na_position="first").iloc[-1]
     if not truth(row.pit_usable):
         return row, "pit_usable_false: " + str(row.note)
-    if pd.isna(row.stamp):
-        return row, "missing_timestamp"
-    if row.stamp.normalize() > pd.Timestamp(date).normalize():
-        return row, "timestamp_after_origin"
+    timing = historical_stamp_status(row.as_of_timestamp, date)
+    if timing != "available":
+        return row, timing
     if role == "current":
         return row, "current_not_historical"
     if attributed and not truth(row.vendor_attributed):
@@ -384,7 +405,7 @@ def registry_rows(cells, live, fixed_variant):
     return pd.DataFrame(out)
 
 
-def make_figure(cells):
+def make_figure(cells, output_dir=OUT):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -400,7 +421,7 @@ def make_figure(cells):
         ax.set(xlabel="Kernel guide / pre-guide Street − 1 (%)", ylabel=label)
         ax.spines[["top", "right"]].set_visible(False)
     fig.suptitle(f"A2: guide-close PIT signal, W1 n={len(e)}; gray band |S| ≤ 1pp", fontsize=12)
-    fig.savefig(OUT / "signal_gap_returns.png", dpi=180)
+    fig.savefig(output_dir / "signal_gap_returns.png", dpi=180)
     plt.close(fig)
 
 
@@ -414,30 +435,31 @@ def reconcile(cells, data):
     return out
 
 
-def run(register=True):
+def run(register=True, output_dir=None):
     start = time.perf_counter()
     run_started_utc = datetime.now(timezone.utc).isoformat()
-    OUT.mkdir(parents=True, exist_ok=True)
+    output = Path(output_dir) if output_dir is not None else OUT
+    output.mkdir(parents=True, exist_ok=True)
     data = {key:pd.read_csv(ROOT/path, comment="#") for key,path in INPUTS.items() if path.endswith(".csv")}
     cells, fixed_variant = build_cells(data)
-    cells.to_csv(OUT/"cells.csv", index=False)
+    cells.to_csv(output/"cells.csv", index=False)
     stats, returns, controls, ridge = evaluate(cells)
     for frame, name in ((stats,"statistics"),(returns,"conditional_returns"),(controls,"controls"),(ridge,"ridge_expanding")):
-        frame.to_csv(OUT/(name+".csv"), index=False)
+        frame.to_csv(output/(name+".csv"), index=False)
     live = live_scenarios(data["vintages"], as_of_utc=run_started_utc)
-    live.to_csv(OUT/"live_november_guide_scenario.csv", index=False)
-    reconcile(cells, data).to_csv(OUT/"lane1_reconciliation.csv", index=False)
-    make_figure(cells)
+    live.to_csv(output/"live_november_guide_scenario.csv", index=False)
+    reconcile(cells, data).to_csv(output/"lane1_reconciliation.csv", index=False)
+    make_figure(cells, output)
     reg = registry_rows(cells, live, fixed_variant)
     clean = R.validate_registry_frame(reg)
-    clean.to_csv(OUT/"registry_preview.csv", index=False)
+    clean.to_csv(output/"registry_preview.csv", index=False)
     registry_path = R.register(reg) if register else None
     hashes = {p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in INPUTS.values()}
     audit = dict(run_date=str(RUN_DATE), run_started_utc=run_started_utc, seed=SEED, runtime_seconds=time.perf_counter()-start,
                  fixed_full_sample_variant=fixed_variant, register_rows=len(reg),
                  registry_path=str(registry_path), inputs_sha256=hashes,
                  notes="Only PIT default enters verdict; full_sample uses retrospective variant choice with PIT coefficients; scorers owned by parent")
-    (OUT/"audit.json").write_text(json.dumps(audit, indent=2), encoding="utf-8")
+    (output/"audit.json").write_text(json.dumps(audit, indent=2), encoding="utf-8")
     print(stats[(stats.variant=="default") & stats.window.isin(["W1","W2"])].to_string(index=False))
     print(live[["vendor_family","street_as_of","consensus_musd","kernel_guide_musd","signal_pct"]].to_string(index=False))
     print(json.dumps({k:v for k,v in audit.items() if k!="inputs_sha256"}, indent=2))
@@ -447,5 +469,6 @@ def run(register=True):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-register", action="store_true")
+    parser.add_argument("--output-dir", type=Path, help="Optional isolated output directory for validation")
     args = parser.parse_args()
-    raise SystemExit(run(not args.no_register))
+    raise SystemExit(run(not args.no_register, args.output_dir))

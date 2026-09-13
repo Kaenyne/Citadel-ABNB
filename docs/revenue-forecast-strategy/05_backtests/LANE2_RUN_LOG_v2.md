@@ -57,3 +57,25 @@ F supplied its exact proposed memo sentence and clarified active versus elapsed 
 `run.py --stage after_repairs --tests` exits 0: 47 frozen /37 FORMAT 1.1 /8 returns /63 kernel tests, both scorers 4,218 rows and 284 scores, original276 rows and81 protected hashes unchanged. `review_lane.py --stage after_repairs` exits 0: append invariants, all18 LIVE rows and horizon units valid. The new [LIVE score sheet](LANE2_LIVE_SCORE_SHEET.md) lists nine scenarios with both replay labels. No new method beats its historical baseline: A2 guide_mid has no baseline; B2 PIT RMSE ratios are 4.374× W1 and 4.283× W2. No new eligible leader warrants SCOREBOARD_v3.md.
 
 This additional checkpoint preserves the completed A2/F/B2/M work and integration repairs while C2 runs. The all-package checkpoint and nine refuters still follow; nothing is promoted in advance.
+
+Checkpoint `cc79a40` pushed successfully. To keep the queue full, two refuters began on these committed package artifacts while C2 completed its independent capture; no early claim was promoted, and the all-package checkpoint remains due after C2.
+
+## Refuter ledger (all exact proposed sentences; partial is not survived)
+
+| Package | Lens | Verdict | Explicit attacks | Finding |
+|---|---|---|---:|---|
+| A2 | vintage | SURVIVED | 9 | Independent clipped-input reconstruction matches 7/8 and6/7; no future data needed. Synthetic same-day23:59 consensus exposes a historical selector defect; current date-only data do not exercise it. Routed to A2 author for hardening without changing the historical result. |
+| A2 | power | SURVIVED | 7 | Eight unique high-signal events; W2 reuses seven. Exact permutation p=.07143/.14286; IID reference 80%-power return MDE +6.448/+7.269pp. The sentence is descriptive and does not prove an absent edge. |
+| A2 | mechanism | SURVIVED | 6 | Counts and 22 raw OHLC return legs reproduce. Guide-gap correlation falls .626236→.000585 after GBV-surprise control on the same six unknown-vendor cases; this is a limited confound diagnostic. All three fixed hedge choices retain negative mean returns and zero-crossing intervals. |
+
+A2 now has three SURVIVED votes for its exact limited sentence. The six F/B2 lenses remain pending. Every final note must contain at least five explicit attacks. The synthetic timestamp receipt remains intact; the implementation repair is a separate follow-up rather than a rewritten refuter verdict.
+
+## All packages returned — 2026-09-13 17:35 UTC
+
+C2 delivers `macro_pulls/review_capture/`: 35,124 normalized rows across14 source records,124 rows with verified release dates,0 historical PIT admissions. Nine tests pass; the agent's offline rebuild exactly reproduces three NTTO analysis CSVs. Parent's independent `review_c2.py` also passes: all14 source hashes, row counts, finite values, unique keys, release/retrieval chronology and two level-RMSE ratios checked. Corrected NTTO total-full levels: W1 1.032389× naive(n14), W2 .677116×(n10); this fails both-window acceptance. The old cache omitted Jan–Sep2022 and used row shifts across the gap. DATATUR contains700 traveler-count rows distinguished from monetary rows by Level03; the initial missing-value adapter rejection was fixed once and retained. BLS supplies103 exact-series CPI rows; a4-row dated CoStar excerpt is a static fallback. FRED timed out; automatic CoStar refresh and JNTO edition discovery remain incomplete. No forecast was registered. C2 is PARTIAL infrastructure /FAIL research line, not a fabricated PIT pass.
+
+A2's intraday selector is now hardened: explicit times require a timezone and must precede16:00 America/New_York on the letter day. Exact-close, late and ambiguous naive times are rejected; date-only morning-of-print rows remain admissible. Initial10 failing boundary cases are preserved. Final28 tests pass; isolated no-registration rebuild exits0 in16.137s. All21 existing output/registry files remain untouched; seven rebuilt historical CSVs and48-row registry preview are byte-identical. Snapshot: `alpha_a2/intraday_boundary_validation_20260913T173104Z/`. The vintage refuter's original finding remains a valid pre-fix receipt, and its exact-claim verdict is unchanged.
+
+All five requested research/data packages have returned. L skipped: not sanctioned. The all-package checkpoint includes C2 and this boundary repair; the remaining refuter queue continues independently on unchanged empirical tables.
+
+Staged-file review: only this lane's source, normalized public data, notes and retained receipts. No environment, bytecode, licensed export or unrelated working file is staged. The only full diff-whitespace findings are pytest formatting in the preserved initial A2 failure receipt; the receipt is intentionally retained verbatim. Source and documentation whitespace checks pass.
