@@ -44,3 +44,18 @@ def test_new_method_only_allowed_explicitly():
 def test_numeric_infinity_rejected():
     b=frame(); b.loc[0,'rmse']=np.inf
     with pytest.raises(AssertionError): module.compare_frames(frame(),b)
+
+
+def test_existing_snapshot_rejected_before_any_work(tmp_path, monkeypatch):
+    saved = tmp_path / 'existing'
+    saved.mkdir()
+    receipt = saved / 'summary.json'
+    receipt.write_bytes(b'original receipt\n')
+    monkeypatch.setattr(module, 'OUT', tmp_path)
+    monkeypatch.setattr(module.sys, 'argv', ['run.py', '--stage', 'existing'])
+    def forbidden():
+        pytest.fail('frozen hashes or scorers must not run for an existing stage')
+    monkeypatch.setattr(module, 'frozen_hashes', forbidden)
+    with pytest.raises(FileExistsError):
+        module.main()
+    assert receipt.read_bytes() == b'original receipt\n'

@@ -130,25 +130,6 @@ There is also a timing limitation in the hypothesis itself: S1 is available afte
 
 “The point-in-time kernel correctly signed next-quarter consensus revisions in 5/9 strong-signal cases in W1 and 4/7 in W2, below the pre-registered 70% threshold, while mean signal-aligned 20- and 60-day executable excess returns were negative in both windows.”
 
-## Final vintage-boundary and manifest repair
-
-The independent vintage refuter reproduced the exact headline but found that a synthetic `2026-08-06T17:00:00-04:00` historical `pre_guide` timestamp was accepted. It was not present in the empirical inputs. The original source, README, tests and result note were preserved under `data/processed/forecast_methods/alpha_b2/diagnostic_vintage_boundary_20260913T174852_833222Z/before/`, with hashes in `snapshot_manifest.json`. Before repairing the code, the new regression produced **15 failed / 5 passed** tests (exit 1, 1.96s); the full output remains in `regression_initial_failure.txt`.
-
-Historical date-only `YYYY-MM-DD` rows remain authorized under CONVENTION. Explicit intraday timestamps must now carry a timezone and fall strictly before 16:00 America/New_York on the letter day. Exact close, post-close and naive intraday stamps are refused. `exact_day` is evaluated in New York; explicit timestamps are sorted by their actual UTC instant. A date-only row uses New York midnight only as a deterministic ordering convention, not as a measured intraday source time. The previous naive-morning test fixture was made timezone-explicit. The repair also inspected the imported kernel's reads and added `02_kpi_panel_quarterly.csv` and `02_guidance_cushion_series.csv` to the captured input manifest.
-
-Exact commands, from the repository root:
-
-```text
-.venv\Scripts\python.exe -m pytest analysis/src/forecast_methods/alpha_b2/tests/test_historical_timestamp_boundary.py -q
-.venv\Scripts\python.exe -m pytest analysis/src/forecast_methods/alpha_b2/tests -q
-.venv\Scripts\python.exe analysis/src/forecast_methods/alpha_b2/run.py --no-register
-.venv\Scripts\python.exe data/processed/forecast_methods/alpha_b2/diagnostic_vintage_boundary_20260913T174852_833222Z/verify_equivalence.py
-```
-
-The first command is the preserved pre-fix failure; after one repair, all **44 package tests passed** (exit 0, 2.64s). The isolated rebuild exited 0 in **11.98s**, producing `run_20260913T175201_016865Z/` with candidate-only status. The equivalence script exited 0 in **1.08s**. Receipts are `package_tests_after_fix.txt`, `rebuild_no_register_receipt.txt` and `equivalence_receipt.txt` in the diagnostic directory.
-
-All **seven research CSVs and `registry_candidate.csv` are byte-identical** to `run_20260913T171654_499731Z/`. Expanding the candidate into the documented optional FORMAT columns and marker produces `registry_preview_FORMAT_1_1.csv`, byte-identical to the current registry (SHA-256 `7a66db57458e244cda443486caa78cae3f8a4080cc5afd0aebd1427a9fa17172`). The check also preserves all 14 recorded reference-run, registry and original-preregistration hashes. New manifest hashes for the actual kernel dependencies are KPI `c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac` and cushion `0140b2763604826c3b59dfde2ef90c186c8bb2c2c95de4b9e7c758eea54ce578`; `equivalence_verification.json` records the comparisons. No existing empirical run, registry, original pass line or exact proposed memo sentence changed. No scorer ran during this repair.
-
 ## RESUME
 
-The registered empirical reference remains `run_20260913T171654_499731Z/`; the repaired source and complete dependency manifest rebuild to byte-identical research files in candidate-only `run_20260913T175201_016865Z/`. Read the preserved vintage-boundary diagnostic and equivalence receipts before resuming. The parent owns scorer checks and the workboard link; keep the current arithmetic levels out of headline forecasting. Any next B version should preregister a seasonal GBV anchor, distinguish consensus changes already implied by the announced guide from subsequent drift, and obtain attributed q+2/FY consensus histories before claiming a term-structure edge. Preserve the source timestamps, sparse FY results, failed original tests and unchanged FAIL conclusion.
+Use the metadata-corrected run directory `run_20260913T171654_499731Z/` and retained receipts; preserve this failed result and the original registry snapshot. The parent should rerun its scorer checks after the metadata correction, update B2's workboard link to this result note, and keep the current arithmetic levels out of headline forecasting. Any next B version should preregister a seasonal GBV anchor, distinguish consensus changes already implied by the announced guide from subsequent drift, and obtain attributed q+2/FY consensus histories before claiming a term-structure edge. The existing source timestamps and sparse FY results must remain visible.

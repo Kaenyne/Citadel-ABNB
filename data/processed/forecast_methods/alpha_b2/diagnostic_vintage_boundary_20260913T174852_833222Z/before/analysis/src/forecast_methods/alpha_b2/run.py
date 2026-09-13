@@ -11,7 +11,6 @@ import hashlib
 import io
 import json
 from pathlib import Path
-import re
 import sys
 import time
 
@@ -39,8 +38,6 @@ INPUTS = {
     "consensus": ROOT / "data/processed/overnight/16_consensus_at_print_merged.csv",
     "returns": DATA / "returns_v1/earnings_reactions_open_v1.csv",
     "kernel": ROOT / "analysis/src/forecast_methods/kernel_engine_v2/engine.py",
-    "kernel_kpi_panel": ROOT / "data/processed/overnight/02_kpi_panel_quarterly.csv",
-    "kernel_cushions": ROOT / "data/processed/overnight/02_guidance_cushion_series.csv",
 }
 
 
@@ -64,54 +61,20 @@ def truth(series):
     return series.astype(str).str.lower().eq("true")
 
 
-def historical_consensus_stamp(value, letter_day, *, exact_day=False):
-    """Return an admissible UTC sorting instant, or NaT.
-
-    CONVENTION date-only rows represent sanctioned pre-letter observations.
-    Midnight New York is a deterministic sorting anchor for those rows only;
-    it is not an asserted source time. Explicit intraday timestamps require
-    their own timezone and must be strictly before the letter day's 16:00 ET.
-    """
-    if pd.isna(value):
-        return pd.NaT
-    raw = str(value).strip()
-    try:
-        stamp = pd.Timestamp(raw)
-    except (TypeError, ValueError):
-        return pd.NaT
-    if pd.isna(stamp):
-        return pd.NaT
-    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
-        local = stamp.tz_localize("America/New_York")
-    elif stamp.tzinfo is None:
-        return pd.NaT
-    else:
-        local = stamp.tz_convert("America/New_York")
-    event = day(letter_day).tz_localize("America/New_York")
-    close = event + pd.Timedelta(hours=16)
-    if local >= close or (exact_day and local.date() != event.date()):
-        return pd.NaT
-    return local.tz_convert("UTC")
-
-
 def admissible_consensus(vintages, period, as_of, role, *, exact_day=False):
     """Select only attributed, PIT-usable revenue in the requested role."""
     if role not in ("pre_guide", "at_print", "current"):
         raise ValueError("Unsupported consensus role")
     v = vintages.copy()
+    stamps = pd.to_datetime(v.as_of_timestamp, errors="coerce", utc=True, format="mixed").dt.tz_localize(None)
+    cutoff = day(as_of) + pd.Timedelta(days=1)
     mask = (v.period.eq(period) & v.metric.eq("revenue") & v.role.eq(role)
             & truth(v.pit_usable) & truth(v.vendor_attributed)
-            & pd.to_numeric(v.value, errors="coerce").gt(0))
+            & pd.to_numeric(v.value, errors="coerce").gt(0) & stamps.lt(cutoff))
+    if exact_day:
+        mask &= stamps.dt.normalize().eq(day(as_of))
     if role == "current":
-        stamps = pd.to_datetime(v.as_of_timestamp, errors="coerce", utc=True, format="mixed")
-        cutoff = day(as_of).tz_localize("UTC") + pd.Timedelta(days=1)
-        mask &= stamps.lt(cutoff) & stamps.le(pd.Timestamp.now(tz="UTC"))
-        if exact_day:
-            mask &= stamps.dt.normalize().eq(day(as_of).tz_localize("UTC"))
-    else:
-        stamps = pd.to_datetime(v.as_of_timestamp.map(
-            lambda value: historical_consensus_stamp(value, as_of, exact_day=exact_day)), utc=True)
-        mask &= stamps.notna()
+        mask &= stamps.le(pd.Timestamp.now(tz="UTC").tz_localize(None))
     v = v.loc[mask].copy()
     if v.empty:
         return None

@@ -1,0 +1,36 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______________ test_existing_snapshot_rejected_before_any_work _______________
+
+tmp_path = WindowsPath('C:/Users/wille/AppData/Local/Temp/pytest-of-wille/pytest-62/test_existing_snapshot_rejecte0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000281EBB55E20>
+
+    def test_existing_snapshot_rejected_before_any_work(tmp_path, monkeypatch):
+        saved = tmp_path / 'existing'
+        saved.mkdir()
+        receipt = saved / 'summary.json'
+        receipt.write_bytes(b'original receipt\n')
+        monkeypatch.setattr(module, 'OUT', tmp_path)
+        monkeypatch.setattr(module.sys, 'argv', ['run.py', '--stage', 'existing'])
+        def forbidden():
+            pytest.fail('frozen hashes or scorers must not run for an existing stage')
+        monkeypatch.setattr(module, 'frozen_hashes', forbidden)
+        with pytest.raises(FileExistsError):
+>           module.main()
+
+analysis\src\forecast_methods\lane2_validation_v1\tests\test_comparison.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\lane2_validation_v1\run.py:169: in main
+    before = frozen_hashes()
+             ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def forbidden():
+>       pytest.fail('frozen hashes or scorers must not run for an existing stage')
+E       Failed: frozen hashes or scorers must not run for an existing stage
+
+analysis\src\forecast_methods\lane2_validation_v1\tests\test_comparison.py:57: Failed
+=========================== short test summary info ===========================
+FAILED analysis/src/forecast_methods/lane2_validation_v1/tests/test_comparison.py::test_existing_snapshot_rejected_before_any_work
+1 failed in 0.93s
+

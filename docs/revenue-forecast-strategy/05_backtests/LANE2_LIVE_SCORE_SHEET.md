@@ -14,7 +14,7 @@ Recorded 13 September 2026 through FORMAT 1.1. Eighteen registry rows represent 
 | rnpl-v2 / revenue_next_q | theo | revenue_musd | 2026Q3 | 2026-09-13 | 4,766.049428 | PIT, full_sample |
 | rnpl-v2 / revenue_next_q | theo | revenue_musd | 2026Q4 | 2026-09-13 | 3,203.184582 | PIT, full_sample |
 
-Full row inventory: `data/processed/forecast_methods/lane2_validation_v1/after_repairs/live_format_1_1_rows.csv`; authoritative rows remain in the three named files under `data/processed/forecast_methods/registry/`.
+Final CLOSE row inventory: `data/processed/forecast_methods/lane2_validation_v1/close/live_format_1_1_rows.csv`; authoritative rows remain in the three named files under `data/processed/forecast_methods/registry/`. The prior `after_repairs/` inventory is retained unchanged.
 
 A2 targets the November Q4 guide midpoint and uses the existing conditional Q3 GBV ledger scenario. Its kernel point remains $3,158.227962M; the fresh Yahoo/LSEG comparison is $3,161.02149M, captured 2026-09-13 15:20 UTC (n=36), giving S=-0.088374%. S&P $3,160M (2026-09-10) and Zacks $3,200M (2026-09-11) retain their older stamps.
 

@@ -76,7 +76,7 @@ def frozen_hashes():
 
 def scorer(module, destination):
     mod = importlib.import_module(module + '.score')
-    destination.mkdir(parents=True, exist_ok=True)
+    destination.mkdir(parents=True, exist_ok=False)
     fields = {'OUT_SCOREBOARD': destination/'scoreboard.csv',
               'OUT_SCOREBOARD_MD': destination/'scoreboard.md',
               'OUT_CONFORMAL_GRID': destination/'conformal_attainable_grid.csv'}
@@ -165,7 +165,7 @@ def main():
     if not re.fullmatch('[a-z0-9_]+', args.stage):
         raise ValueError('stage must be a simple lowercase slug')
     destination = OUT/args.stage
-    destination.mkdir(parents=True, exist_ok=True)
+    destination.mkdir(parents=True, exist_ok=False)
     before = frozen_hashes()
     baseline_hash_file = OUT/'gate1/frozen_hashes_before.json'
     if args.stage != 'gate1':

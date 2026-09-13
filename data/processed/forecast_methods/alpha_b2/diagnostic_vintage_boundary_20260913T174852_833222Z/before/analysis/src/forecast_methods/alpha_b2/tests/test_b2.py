@@ -29,7 +29,7 @@ def test_consensus_bad_or_future_rows_excluded(changes):
 
 
 def test_same_day_morning_is_admissible():
-    rows = pd.DataFrame([vintage(as_of_timestamp="2024-08-06T10:00:00-04:00")])
+    rows = pd.DataFrame([vintage(as_of_timestamp="2024-08-06T10:00:00")])
     assert B.admissible_consensus(rows, "2024Q3", "2024-08-06", "pre_guide")["value"] == 100
 
 
