@@ -33,7 +33,7 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | WS | Topic | Model | Depends on | Status | Launched | Note path | Last update |
 |---|---|---|---|---|---|---|---|
 | 01 | Repo census of margin-relevant inputs | fable | - | done | 23:55 | notes/01_input_census.md | 00:15 |
-| 02 | Financial panel: every P&L, add-back, below-EBITDA and FCF line, quarterly and annual, with seasonality | fable | - | running (relaunched 04:20) | 23:55 | notes/02_financial_panel.md | 04:20 |
+| 02 | Financial panel: every P&L, add-back, below-EBITDA and FCF line, quarterly and annual, with seasonality | fable | - | done | 23:55 | notes/02_financial_panel.md | 04:50 |
 | 03 | Point-in-time consensus for EBITDA/EPS/FCF/cost lines (LSEG + Bloomberg), surprise history | fable | - | done | 23:55 | notes/03_consensus_pit.md | 00:20 |
 | 04 | External / alt-data signals for each cost line (archives, third-party public, macro) | fable | - | done | 23:55 | notes/04_alt_signals.md | 00:35 |
 | 05 | Management statements v2 (all events incl. conferences) and 5 Nov guide-language pattern | fable | - | done | 00:15 | notes/05_mgmt_statements_v2.md | 04:30 |
@@ -56,6 +56,8 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | fable + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 04:50 WS02 done (34-quarter x 145-column panel, 3,066 provenance rows; adj EBITDA rebuilt within $0.97M all 22 quarters; seasonality mechanical except Q1; G&A ex-lodging series; ops cash per booking $10.74 -> $8.06; correction: repo Q4 SBC totals wrong in three panels). Brief corrected: venv python lacks scipy/statsmodels/sklearn; all modelling on py -3.13.
 
 - 14 Sep 04:45 WS06 done (FY27 revenue base $15,829M +10.94%, bear +5.2%, bull +15.7%; nights +6.6% vs B3 +9.5; front-loaded quarters 1Q27 +14.0% to 4Q27 +9.1%; 8 audit findings on PR #32, two HIGH: no FY27 levels, lap placement inconsistent with bridge v3). WS06v launched.
 

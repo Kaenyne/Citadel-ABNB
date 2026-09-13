@@ -37,10 +37,11 @@ Never modify an existing file outside `docs/margin-build/`, `analysis/src/margin
 
 ## Python
 
-- `python` (repo venv, 3.11): pandas 3, numpy, scipy, statsmodels, scikit-learn, lightgbm, pymc, duckdb, pyarrow.
-  Use it for all modelling. It has NO openpyxl, lseg-data, yfinance, pytrends, matplotlib (verified 14 Sep 00:20: openpyxl missing; write xlsx with `py -3.13`).
-- `py -3.13`: pandas 2.3, lseg-data 2.1.1, yfinance, pytrends, matplotlib, pypdf, openpyxl, requests. Use it for LSEG pulls,
-  Google Trends, prices, and figures.
+- **CORRECTION 14 Sep 04:50 (verified by import):** the repo venv `python` (3.11) has ONLY pandas 3.0 and numpy. It has NO scipy,
+  statsmodels, scikit-learn, lightgbm, pymc, duckdb, pyarrow, openpyxl, matplotlib, lseg-data. **Use `py -3.13` for all modelling**:
+  pandas 2.3, numpy, scipy 1.17, statsmodels 0.14.6, scikit-learn 1.9, pyarrow, openpyxl, matplotlib, lseg-data, yfinance, pytrends, requests.
+  Neither interpreter has lightgbm, pymc, duckdb or linearmodels; do not plan on them. Write scripts so `py -3.13 path/to/run.py` works;
+  state the interpreter in each README. (Earlier text in CLAUDE.md about the venv is out of date for this machine.)
 - **LSEG / Refinitiv (Workspace desktop is open and logged in; app key in env `LSEG_APP_KEY`):**
   ```python
   import os, lseg.data as ld

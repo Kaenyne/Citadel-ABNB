@@ -1,5 +1,7 @@
 # Common rules for every method workstream (M1-M7)
 
+**Interpreter: `py -3.13` for everything** (the venv `python` lacks scipy/statsmodels/sklearn; see the brief's correction). Write `run.py` to run under `py -3.13`.
+
 Read `docs/margin-build/00_BRIEF.md`, then `analysis/src/margin_build/10_harness_margin/README.md`, then your own prompt.
 
 1. **Pre-register** in your note, before any fit: the objects you will register, the target metrics, the pass line (e.g. "beats seasonal_naive
