@@ -1,0 +1,182 @@
+{
+  "checked_at_utc": "2026-09-13T01:46:30.335834+00:00",
+  "refuters": 15,
+  "explicit_attacks": 112,
+  "minimum_attacks": 7,
+  "admitted_exact_claims": [
+    "A",
+    "B",
+    "V",
+    "X"
+  ],
+  "excluded_exact_claims": [
+    "R"
+  ],
+  "rows": [
+    {
+      "package": "A",
+      "lens": "vintage",
+      "agent": "ref_a_vintage",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_A_vintage.md",
+      "note_sha256": "a1ff1f785fcfaba5dc35bf10a38a6f1072b48034387b67d51283bc639006d98c",
+      "claim": "The supplied Lane-1 data do not establish a pre-guide expectations edge: the strict point-in-time test has 0 eligible signals across 14 W1 and 10 W2 guide dates.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "A",
+      "lens": "power",
+      "agent": "ref_a_power",
+      "verdict": "survived",
+      "explicit_attacks": 8,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_A_power.md",
+      "note_sha256": "9a4c0bf072e945c23e6a0a4ddb2bd8988e3dc88e015306be4e0c32743fac4833",
+      "claim": "The supplied Lane-1 data do not establish a pre-guide expectations edge: the strict point-in-time test has 0 eligible signals across 14 W1 and 10 W2 guide dates.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "A",
+      "lens": "mechanism",
+      "agent": "ref_a_mechanism",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_A_mechanism.md",
+      "note_sha256": "c4485af18d664158827d3a7f366e110a764aed9c193dd1eb5cb93c13df6e71a6",
+      "claim": "The supplied Lane-1 data do not establish a pre-guide expectations edge: the strict point-in-time test has 0 eligible signals across 14 W1 and 10 W2 guide dates.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "X",
+      "lens": "vintage",
+      "agent": "ref_x_vintage",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_X_vintage.md",
+      "note_sha256": "4f151abd1a4989b363cfd753e516aa613dba23b4d202b1724f0ed42fb41f3089",
+      "claim": "The regional FX reconstruction does not yet justify replacing B4: no measured Airbnb origin–destination currency matrix is identified, and the current reconstruction has 0/14 W1 and 0/10 W2 point-in-time guide observations.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "X",
+      "lens": "power",
+      "agent": "ref_x_power",
+      "verdict": "survived",
+      "explicit_attacks": 8,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_X_power.md",
+      "note_sha256": "c382d452affa213e9b9a776f863235d5fee73e692c778c5f74a3342c6efd9acd",
+      "claim": "The regional FX reconstruction does not yet justify replacing B4: no measured Airbnb origin–destination currency matrix is identified, and the current reconstruction has 0/14 W1 and 0/10 W2 point-in-time guide observations.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "X",
+      "lens": "mechanism",
+      "agent": "ref_a_power",
+      "verdict": "survived",
+      "explicit_attacks": 9,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_X_mechanism.md",
+      "note_sha256": "37650546c5a7dca7ac17a876cc36b981a7192f8c2542fd5b4e94de72cafe8539",
+      "claim": "The regional FX reconstruction does not yet justify replacing B4: no measured Airbnb origin–destination currency matrix is identified, and the current reconstruction has 0/14 W1 and 0/10 W2 point-in-time guide observations.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "V",
+      "lens": "vintage",
+      "agent": "ref_x_vintage",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_V_vintage.md",
+      "note_sha256": "1aae5e7cfccf2f4b7826476ac56d11a5cf86ba476efe753e805b06d85e635c98",
+      "claim": "Using the final FY27 base model, 16.5x adjusted EBITDA implies a $180.88 12-month target, while the existing six-lens base football-field mean is $156.79; these are different valuation objects.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "V",
+      "lens": "power",
+      "agent": "ref_x_power",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_V_power.md",
+      "note_sha256": "dc8701a71ff43b7679d510984c776e64d02879a5167fd012510a3461d772aa39",
+      "claim": "Using the final FY27 base model, 16.5x adjusted EBITDA implies a $180.88 12-month target, while the existing six-lens base football-field mean is $156.79; these are different valuation objects.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "V",
+      "lens": "mechanism",
+      "agent": "ref_a_power",
+      "verdict": "survived",
+      "explicit_attacks": 8,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_V_mechanism.md",
+      "note_sha256": "4c5ca06f0c275477889af31ebf4278c3259c9d93a1cb49674474296eb74d0fc7",
+      "claim": "Using the final FY27 base model, 16.5x adjusted EBITDA implies a $180.88 12-month target, while the existing six-lens base football-field mean is $156.79; these are different valuation objects.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "R",
+      "lens": "vintage",
+      "agent": "ref_x_vintage",
+      "verdict": "partial",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_R_vintage.md",
+      "note_sha256": "d331a41fe28e8bfb604359237435ba3800023395a0ee0721d80c6e0f48d73973",
+      "claim": "The full-sample regional refresh matches all 72 filed revenue cells but leaves a 1.39pp gap in 2024 ex-FX ADR attribution, so its FY27 composition remains conditional.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "R",
+      "lens": "power",
+      "agent": "ref_x_power",
+      "verdict": "partial",
+      "explicit_attacks": 8,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_R_power.md",
+      "note_sha256": "1b5e659ad7972181a1dc91d496966ea7e93b6e0cc97f740c2933cb88320ac84b",
+      "claim": "The full-sample regional refresh matches all 72 filed revenue cells but leaves a 1.39pp gap in 2024 ex-FX ADR attribution, so its FY27 composition remains conditional.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "R",
+      "lens": "mechanism",
+      "agent": "ref_a_power",
+      "verdict": "partial",
+      "explicit_attacks": 8,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_R_mechanism.md",
+      "note_sha256": "f12680bc33bc80c367e7a5e0eb9660723236212b00b984a74142ab8edf1e6cba",
+      "claim": "The full-sample regional refresh matches all 72 filed revenue cells but leaves a 1.39pp gap in 2024 ex-FX ADR attribution, so its FY27 composition remains conditional.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "B",
+      "lens": "vintage",
+      "agent": "ref_x_vintage",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_B_vintage.md",
+      "note_sha256": "1f6e0844a9b6019dc294584cb1c86bd6f7dfb875fa1d185adc8ce6f8a5fdb711",
+      "claim": "At strict pre-guide dates, the supplied data yield zero eligible FY-guide-revision tests in W1 (0/14) and W2 (0/10), so the live kernel–consensus gap is a conditional scenario, not validated revision alpha.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "B",
+      "lens": "power",
+      "agent": "ref_x_power",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_B_power.md",
+      "note_sha256": "b6da3878fb135e9a0d3fa4d52790168ad047cd93eae10e8c215f4710f23457ac",
+      "claim": "At strict pre-guide dates, the supplied data yield zero eligible FY-guide-revision tests in W1 (0/14) and W2 (0/10), so the live kernel–consensus gap is a conditional scenario, not validated revision alpha.",
+      "tokens": "unavailable"
+    },
+    {
+      "package": "B",
+      "lens": "mechanism",
+      "agent": "ref_b_mechanism",
+      "verdict": "survived",
+      "explicit_attacks": 7,
+      "note": "docs/revenue-forecast-strategy/05_backtests/REFUTE_B_mechanism.md",
+      "note_sha256": "e1f768a718c99e78f9638ac3aa8041c0d3426867b026ec8ef9964a9d80c4495f",
+      "claim": "At strict pre-guide dates, the supplied data yield zero eligible FY-guide-revision tests in W1 (0/14) and W2 (0/10), so the live kernel–consensus gap is a conditional scenario, not validated revision alpha.",
+      "tokens": "unavailable"
+    }
+  ]
+}

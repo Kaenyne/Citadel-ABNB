@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-09-13T01:42:58.260609+00:00",
+  "command": [
+    "analysis/src/forecast_methods/l1_reconciliation_v3/run.py",
+    "--bootstrap",
+    "40"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 90.77783860004274,
+  "copied_file_hashes": 391,
+  "bootstrap_retained": 40,
+  "g2_exact_cells": 72,
+  "g2_max_error_musd": 2.2737367544323206e-13,
+  "comparisons": {
+    "annual_adr_residuals.csv": "numerically unchanged",
+    "fy27_attribution.csv": "numerically unchanged",
+    "fy27_kernel_band.csv": "numerically unchanged",
+    "regional_panel_v3.csv": "numerically unchanged",
+    "regional_adr_intervals.csv": "numerically unchanged",
+    "anchor_sensitivity.csv": "numerically unchanged",
+    "window_summary.csv": "numerically unchanged"
+  },
+  "registry_status": {
+    "status": "UNREGISTERED_LOCAL_CANDIDATE",
+    "rows": 12,
+    "shared_registry_files_written": 0,
+    "analysis_input_cutoff": "2026-09-12",
+    "reconstruction_created_at_utc": "2026-09-13T01:42:57.875475+00:00",
+    "reason": "Frozen harness does not admit this reconstruction's actual date. An earlier date must not be used as a format slot. Parent must obtain a suitable dated schema before registration."
+  },
+  "isolated_temp_copy": true,
+  "original_input_and_source_hashes_unchanged": true
+}
