@@ -4,7 +4,7 @@
 
 | Package | Owner | Status | Scope |
 |---|---|---|---|
-| L4 control and integration | parent | baseline complete | 14 new LIVE rows; both scorers pass; all 284 old scores and 3,911 starting tracked files unchanged; reviewable branch publication |
+| L4 control and integration | parent | baseline complete; publication awaiting permission | 14 new LIVE rows; both scorers pass; all 284 old scores and 3,911 starting tracked files unchanged; local commit complete, public push rejected by automatic approval review |
 | L4 revenue and guide | reconciliation subagent | implementation complete; L3 pending | Snapshot v1; 36 tests; exact legacy attribution; no competing RNPL or conversion estimate |
 | L4 financial model | model subagent | complete for baseline review | Snapshot v4 workbook; legacy valuations reproduced; 84 internal and 91 parent export ties; renderer teardown limitation documented |
 | L4 evidence review | committed_evidence_audit + independent reconciliation reviewer | complete | Committed L1/L2 provenance checked; independent final accounting/content review; wording findings resolved |
