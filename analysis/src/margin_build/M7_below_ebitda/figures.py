@@ -65,9 +65,9 @@ def fig_eps_bridge():
         ax.text(i, run + v + (35 if v >= 0 else -35), f"{v:+,.0f}" if i else f"{v:,.0f}", ha="center", va="bottom" if v >= 0 else "top", color=INK, fontsize=8)
         run += v
     ax.bar(len(steps), run, color=BLUE, width=0.6, edgecolor="white", linewidth=2)
-    ax.text(len(steps), run + 35, f"{run:,.0f}\n= ${r['eps_diluted']:.2f} / {r['diluted_shares_m']:.0f}M sh", ha="center", va="bottom", color=INK, fontsize=8)
+    ax.text(len(steps), run + 35, f"{run:,.0f}\n= \\${r['eps_diluted']:.2f} / {r['diluted_shares_m']:.0f}M sh", ha="center", va="bottom", color=INK, fontsize=8)
     ax.set_xticks(range(len(steps) + 1)); ax.set_xticklabels([s[0] for s in steps] + ["Net income"], rotation=20, ha="right")
-    style(ax, f"3Q26 EPS bridge on the {r['ebitda_source']} adj. EBITDA base: ${r['eps_diluted']:.2f} vs Street ${r['street_eps']:.2f} (LSEG, 11 Sep 2026)", "USD m")
+    style(ax, f"3Q26 EPS bridge on the {r['ebitda_source']} adj. EBITDA base: EPS \\${r['eps_diluted']:.2f} vs Street \\${r['street_eps']:.2f} (LSEG, 11 Sep 2026)", "USD m")
     ax.set_ylim(0, r["adj_ebitda_musd"] * 1.15)
     fig.tight_layout(); fig.savefig(OUT / "M7_below_ebitda_eps_bridge_3q26.png"); plt.close(fig)
 
@@ -84,8 +84,9 @@ def fig_fcf_backtest():
     ax.plot(x, a["point"], color=RUST, lw=2, ls="--", label="M7 main: swing x GBV, trailing 'other' (h=0)")
     ax.plot(x, b["point"], color=BLUE, lw=2, ls="--", label="M7 variant: seasonal 'other' (h=0)")
     ax.set_xticks(x); ax.set_xticklabels(qs, rotation=90)
-    style(ax, "Quarterly FCF at h=0, W1 (n 14): neither M7 spec beats the seasonal naive; the 'other' working-capital line is the swing", "USD m")
-    ax.legend(frameon=False, fontsize=8, loc="upper right")
+    style(ax, "Quarterly FCF at h=0, W1 (n 14): neither M7 spec beats the seasonal naive", "USD m")
+    ax.set_ylim(0, 2900)
+    ax.legend(frameon=False, fontsize=8, loc="upper left", ncol=2)
     fig.tight_layout(); fig.savefig(OUT / "M7_below_ebitda_fcf_backtest.png"); plt.close(fig)
 
 

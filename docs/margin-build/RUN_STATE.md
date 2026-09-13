@@ -10,7 +10,7 @@ the run after a usage-limit pause, a crash, or a new session. Update the status 
 2. For each workstream below with status not `done`: if its note `docs/margin-build/notes/<NN_slug>.md` exists and ends with a
    "For the model" section, mark it `done`. Otherwise, if no agent is running on it (ListAgents; or file mtimes under
    `data/processed/margin_build/<NN_slug>/` older than 40 min), relaunch it with `Agent` (subagent_type general-purpose,
-   **model fable** unless the table says opus) using its prompt file `docs/margin-build/prompts/<NN>_*.md`, prefixed with
+   **model opus** (Krish's instruction 14 Sep 14:45, after the Fable limit; the table's model column is superseded)) using its prompt file `docs/margin-build/prompts/<NN>_*.md`, prefixed with
    `RESUME: check your output folder first and continue from what is on disk.` Pass the prompt file's full text as the prompt.
 3. **Concurrency cap: at most 4 subagents running at once.** Respect stage order and the dependencies column.
 4. After every stage completes: `git add` the margin_build folders (`docs/margin-build`, `analysis/src/margin_build`,
@@ -42,20 +42,23 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 10 | Margin harness: targets panel, baselines, recency-weighted scorer, registry (imports frozen harness calendar/validator) | fable | 02, 03 | done | 00:35 | notes/10_harness_margin.md | 05:15 |
 | M1 | Driver-based cost lines v2 (per-unit costs on nights, GBV, ADR, regional mix, seats, FX), PIT refits | fable | 10, 01 | done | 05:15 | notes/M1_driver_lines.md | 05:50 |
 | M2 | Time-series and ratio methods (seasonal margin, incremental margin, % of revenue with drift) + baselines | fable | 10 | done | 05:15 | notes/M2_margin_ts.md | 06:05 |
-| M3 | Guidance-policy model: FY floor + cushion, Q4-implied margin, language pattern; forecasts the guide and the actual given the guide | fable | 10, 05 | running | 06:05 | notes/M3_guide_policy_margin.md | 06:05 |
-| M4 | Alt-data-augmented line model (headcount, ads, support, payments, rates), incremental value vs M1 | fable | 10, 04, M1 | running | 05:50 | notes/M4_alt_augmented.md | 05:50 |
+| M3 | Guidance-policy model: FY floor + cushion, Q4-implied margin, language pattern; forecasts the guide and the actual given the guide | opus | 10, 05 | running (relaunched 14:45 on opus) | 06:05 | notes/M3_guide_policy_margin.md | 14:45 |
+| M4 | Alt-data-augmented line model (headcount, ads, support, payments, rates), incremental value vs M1 | opus | 10, 04, M1 | running (relaunched 14:45 on opus) | 05:50 | notes/M4_alt_augmented.md | 14:45 |
 | M5 | Consensus-anchored model: Street EBITDA at guide date + systematic bias and revenue-surprise flow-through | fable | 10, 03 | pending | | notes/M5_street_bias.md | |
-| M6 | Cycle and cost-flex model: cost response to growth deceleration; scenario engine over bear/base/bull revenue paths | fable | 10, 06v | running | 05:35 | notes/M6_cycle_flex.md | 05:35 |
-| M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | fable | 10 | running | 05:15 | notes/M7_below_ebitda.md | 05:15 |
-| 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | fable | M1-M7 | pending | | notes/20_scoreboard.md | |
-| 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | fable | M1-M7 | pending | | notes/21_red_team.md | |
+| M6 | Cycle and cost-flex model: cost response to growth deceleration; scenario engine over bear/base/bull revenue paths | opus | 10, 06v | running (relaunched 14:45 on opus) | 05:35 | notes/M6_cycle_flex.md | 14:45 |
+| M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | opus | 10 | running (relaunched 14:45 on opus) | 05:15 | notes/M7_below_ebitda.md | 14:45 |
+| 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | pending | | notes/20_scoreboard.md | |
+| 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | pending | | notes/21_red_team.md | |
 | 22 | Discussion round: orchestrator sends 20+21 to each method agent for rebuttal/adjustment; collected in DISCUSSION.md | orchestrator | 20, 21 | pending | | DISCUSSION.md | |
-| 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | fable | 22 | pending | | SYNTHESIS.md | |
+| 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | pending | | SYNTHESIS.md | |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | pending | | audit/CODEX_ASTRA_AUDIT.md | |
-| 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | fable | 30 | pending | | audit/AUDIT_RESPONSE.md | |
-| 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | fable + orchestrator | 31 | pending | | MORNING_REPORT.md | |
+| 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | pending | | audit/AUDIT_RESPONSE.md | |
+| 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep ~06:10 FABLE LIMIT reached (separate from the 5-hour window): M3, M4, M6, M7 killed. M3 had nothing on disk; M4 run.py + pre-registration only; M6 and M7 had code, outputs, registry files and pre-registration notes but no results write-up.
+- 14 Sep 14:45 Krish (awake): 'move what you can to opus'. All four relaunched on Opus with RESUME prefixes; every remaining stage (20, 21, 23, 31, 32) switched to Opus. Heartbeat cron recreated as cf29b46b with the Opus instruction.
 
 - 14 Sep 06:05 M2 done (7 objects, 29 specs; drift/ratio objects FAIL vs naive; q_sentence_direction|k_fit_rw passes: 2.07/1.64pp, rw 1.53/1.38, ratio 0.92/0.84; best in EBITDA $ and beats Street there; nothing beats Street on margin PIT; LIVE 3Q26 sentence rule 48.1% $2,309M vs Street 49.8%, naive-with-drift 51.35%). M3 launched.
 

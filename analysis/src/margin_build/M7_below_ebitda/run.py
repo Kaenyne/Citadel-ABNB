@@ -482,6 +482,10 @@ SPECS = [
 ]
 FALLBACK_SD = {"eps_diluted": 0.30, "tax_rate_pct": 8.0, "sbc_pct_rev": 1.0, "fcf_margin_pct": 8.0}
 FALLBACK_REL = 0.15
+# quarters with a discrete tax / reserve item that no below-the-line model forecasts: excluded from the residual POOLS of the
+# tax-dependent targets only (the points and errors stay scored; the bands are for ordinary quarters)
+DISCRETE_QUARTERS = {"2023Q3": "valuation-allowance release -$2,695m", "2023Q4": "Italian lodging-tax reserve $931m in GAAP G&A"}
+DISCRETE_TARGETS = {"eps_diluted", "net_income_musd", "pretax_income_musd", "tax_provision_musd", "tax_rate_pct", "op_income_musd"}
 
 
 def attach_quantiles(reg: pd.DataFrame, errs: pd.DataFrame, T: pd.DataFrame) -> pd.DataFrame:
@@ -494,6 +498,8 @@ def attach_quantiles(reg: pd.DataFrame, errs: pd.DataFrame, T: pd.DataFrame) -> 
         h_pool = min(int(r.horizon_q), 2)
         e = errs[(errs["object"] == r.object) & (errs["target"] == r.target) & (errs["spec_id"] == r.spec_id)
                  & (errs["prior_basis"] == r.prior_basis) & (errs["horizon_q"] == h_pool)]
+        if r.target in DISCRETE_TARGETS:
+            e = e[~e["quarter"].isin(DISCRETE_QUARTERS)]
         if r.prior_basis == "PIT":
             e = e[e["target_print"].map(lambda d: pd.notna(d) and d <= r.vintage_date)].sort_values("quarter").iloc[-RESID_MAX_N:]
         vals = e["rel_err"] if r.relative else e["err"]
@@ -510,7 +516,7 @@ def attach_quantiles(reg: pd.DataFrame, errs: pd.DataFrame, T: pd.DataFrame) -> 
         for k, z in ZQ.items():
             d[k] = r.point * (1.0 + z * sd) if r.relative else r.point + z * sd
         d["sd"] = r.point * sd if r.relative else sd
-        d["notes"] = f"{r.notes}; sigma {kind}"
+        d["notes"] = f"{r.notes}; sigma {kind}" + ("; pool ex 2023Q3/2023Q4 discrete items" if r.target in DISCRETE_TARGETS else "")
         out.append(d)
     return pd.DataFrame(out)
 
@@ -701,7 +707,7 @@ def build_live(m: M7, reg: pd.DataFrame):
                                       op_income_musd=a["op_income"], interest_income_musd=a["interest_income"], interest_expense_musd=a["interest_expense"],
                                       other_income_musd=a["other_income_expense"], pretax_income_musd=a["pretax_income"], tax_provision_musd=a["tax_provision"],
                                       net_income_musd=a["net_income"], diluted_shares_m=a["shares_diluted_m"], cfo_musd=a["cfo"], capex_musd=a["capex"], fcf_musd=a["fcf_reported"],
-                                      fcf_seasonal_other_musd=a["fcf_reported"], is_actual=1))
+                                      fcf_seasonal_other_musd=a["fcf_reported"], eps_diluted=a["eps_diluted"], is_actual=1))
                 elif q in g.index:
                     parts.append(dict(g.loc[q].to_dict(), is_actual=0))
             if len(parts) < 4:
@@ -897,6 +903,11 @@ def main():
         f"EPS decomposition rows: {len(dec)}", f"FY FCF test rows: {len(fyt)}", f"LIVE rows: {len(live)}; annual rows: {len(ann)}",
         f"scoreboard rows for {METHOD}: {len(sb)}", f"run at {dt.datetime.now().isoformat(timespec='seconds')}"]), encoding="utf-8")
     print("\n".join(m.log))
+    try:
+        import subprocess
+        subprocess.run([sys.executable, str(HERE / "figures.py")], check=True, cwd=str(REPO))
+    except Exception as ex:      # figures are non-fatal
+        print("figures failed:", ex)
     print("done")
 
 
