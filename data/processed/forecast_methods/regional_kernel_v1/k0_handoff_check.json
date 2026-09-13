@@ -1,0 +1,43 @@
+{
+  "quarter": "2026Q3",
+  "point": 4754.681582203633,
+  "q05": 4641.8267459667395,
+  "q10": 4666.607293873238,
+  "q25": 4707.766692526984,
+  "q50": 4753.101955748179,
+  "q75": 4798.288042763996,
+  "q90": 4841.78431943152,
+  "q95": 4869.139214748303,
+  "base_musd": 27866.666666666668,
+  "regions": [
+    {
+      "region": "apac",
+      "base_musd": 2470.5267885512153,
+      "lambda_pct": 13.490606879708512,
+      "point": 333.289056901332
+    },
+    {
+      "region": "emea",
+      "base_musd": 10722.85829191717,
+      "lambda_pct": 21.167754741190556,
+      "point": 2269.788344478441
+    },
+    {
+      "region": "latam",
+      "base_musd": 2775.4806083172466,
+      "lambda_pct": 10.886362321143633,
+      "point": 302.1488751744968
+    },
+    {
+      "region": "na",
+      "base_musd": 11897.800977881036,
+      "lambda_pct": 15.54451372222185,
+      "point": 1849.4553056493633
+    }
+  ],
+  "n_train": 16,
+  "variant": "supplied_regional",
+  "uncertainty_status": "Perfect-positive-correlation regional Gaussian sensitivity when sd supplied; otherwise unavailable",
+  "as_of": "2026-09-13",
+  "knowable_from": "2026-09-12"
+}

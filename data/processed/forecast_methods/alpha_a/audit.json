@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-09-12",
+  "input_hashes": {
+    "data/processed/overnight/02_guidance_ledger.csv": "c1a2b34330dc6655c549cbe7cab66adabcaaffcffc4441c833c726714d8267f2",
+    "data/processed/forecast_methods/L0/L0_vintage_register.csv": "c6402930b7e785a5c24829c6e124023525d3a4be64f33f41ad0ef394cb5af3de",
+    "data/processed/abnb_earnings_reactions.csv": "45f368e6f10150a481929f199fc1d430a52d6f40e9dd6f5485b661ffa6448b87"
+  },
+  "reaction_columns": [
+    "quarter",
+    "reaction_date",
+    "abnb_1d_pct",
+    "qqq_1d_pct",
+    "excess_1d_pct",
+    "abnb_5d_pct",
+    "qqq_5d_pct",
+    "excess_5d_pct",
+    "abnb_20d_pct",
+    "qqq_20d_pct",
+    "excess_20d_pct"
+  ],
+  "open_columns": [],
+  "historical_dates": 19,
+  "extension_dates": 5,
+  "post_letter_diagnostic_n": 11,
+  "imported_kernel": "kernel_engine_v2.engine",
+  "prereg_note": "docs/revenue-forecast-strategy/05_backtests/ALPHA_A_GUIDE_SURPRISE.md",
+  "parameter_count": {
+    "kernel_season": 1,
+    "trailing_cushion": 1,
+    "ridge_intercept_and_slope": 2,
+    "fixed_kernel_weights": 0,
+    "fixed_ridge_penalty": 0
+  },
+  "elapsed_seconds": 22.462
+}

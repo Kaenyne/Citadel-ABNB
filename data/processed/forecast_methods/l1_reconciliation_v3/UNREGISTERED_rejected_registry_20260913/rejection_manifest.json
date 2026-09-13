@@ -1,0 +1,22 @@
+{
+  "preserved_at_utc": "2026-09-13T00:47:59.310978+00:00",
+  "authorization": "Parent explicitly instructed preservation then removal of exactly these two new uncommitted R registry files.",
+  "files": [
+    {
+      "original_registry_path": "data\\processed\\forecast_methods\\registry\\l1-reconciliation-v3__fy27_revenue.csv",
+      "preserved_path": "data\\processed\\forecast_methods\\l1_reconciliation_v3\\UNREGISTERED_rejected_registry_20260913\\l1-reconciliation-v3__fy27_revenue.csv",
+      "sha256": "9a6f1de5959dcf9856d32a9a5607b2fe9a5ddb051d93c766109dd4fecc317973",
+      "rows": 6,
+      "status": "UNREGISTERED_REJECTED",
+      "reason": "False vintage: later reconstruction assigned 2026-09-11 as a format slot. Full-sample label does not repair the inaccurate date."
+    },
+    {
+      "original_registry_path": "data\\processed\\forecast_methods\\registry\\l1-reconciliation-v3__fy27_growth.csv",
+      "preserved_path": "data\\processed\\forecast_methods\\l1_reconciliation_v3\\UNREGISTERED_rejected_registry_20260913\\l1-reconciliation-v3__fy27_growth.csv",
+      "sha256": "173c6fa33c4414edf37f326cef85349f563239e026f5d4b95c67dd6d086f6d93",
+      "rows": 6,
+      "status": "UNREGISTERED_REJECTED",
+      "reason": "False vintage: later reconstruction assigned 2026-09-11 as a format slot. Full-sample label does not repair the inaccurate date."
+    }
+  ]
+}

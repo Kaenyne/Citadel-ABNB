@@ -1,0 +1,26 @@
+provider,period,destination,origin,origin_region,currency,visitors_or_nights,publication_date,availability_basis,url,note
+NTTO,2025,US,Canada,na,CAD,16019000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,2025 actual visitors; not Airbnb nights
+NTTO,2025,US,Mexico,latam,MXN,17980000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,Mexico assigned LatAm as explicit analytical geography convention
+NTTO,2025,US,France Germany Italy,emea,EUR,4543000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,aggregated three country counts
+NTTO,2025,US,United Kingdom,emea,GBP,4058000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,2025 actual visitors
+NTTO,2025,US,Brazil,latam,BRL,1917000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,2025 actual visitors
+NTTO,2025,US,India,apac,INR,2061000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,2025 actual visitors
+NTTO,2025,US,Australia,apac,AUD,959000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,2025 actual visitors
+NTTO,2025,US,South Korea,apac,KRW,1647000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,2025 actual visitors
+NTTO,2025,US,Japan,apac,JPY,1967000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,2025 actual visitors
+NTTO,2025,US,China,apac,UNRESOLVED,1562000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,CNY absent supplied FX cache; not silently treated as USD
+NTTO,2025,US,Other,UNRESOLVED,UNRESOLVED,15575000,2026-06-01,conservative month-end after May URL; report dated April,https://www.trade.gov/sites/default/files/2026-05/NTTO-Spring-Forecast-2026.pdf,residual to total 68288000
+JNTO,2026-07,Japan,US Canada,na,UNRESOLVED,342200,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION; origin region counts by nationality not residence
+JNTO_CCY,2026-07,Japan,US,na,USD,286200,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION; currency proxy
+JNTO_CCY,2026-07,Japan,Canada,na,CAD,56000,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION; currency proxy
+JNTO,2026-07,Japan,Mexico,latam,MXN,23100,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION
+JNTO,2026-07,Japan,Europe Middle East,emea,UNRESOLVED,236800,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION; includes Russia Nordics and Middle East
+JNTO_CCY,2026-07,Japan,France Germany Italy Spain,emea,EUR,133700,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION; four country sum
+JNTO_CCY,2026-07,Japan,United Kingdom,emea,GBP,41500,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION
+JNTO,2026-07,Japan,Asia Pacific,apac,UNRESOLVED,2671900,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION; 12 published origins combined
+JNTO_CCY,2026-07,Japan,South Korea,apac,KRW,894700,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION
+JNTO_CCY,2026-07,Japan,India,apac,INR,20300,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION
+JNTO_CCY,2026-07,Japan,Australia,apac,AUD,49800,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION
+JNTO,2026-07,Japan,Other,UNRESOLVED,UNRESOLVED,168100,2026-08-19,dated press release,https://www.jnto.go.jp/en/news/20260819.pdf,JAPAN NATIONAL TOURISM ORGANIZATION; residual origin
+EUROSTAT,2025,EU27,DOM,emea,UNRESOLVED,359907621,2026-07-02,API updated timestamp 2026-07-02T11:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tour_ce_omr?geo=EU27_2020&time=2025&indic_to=NGT_SP&unit=NR,platform nights; domestic foreign distinction does not identify origin currency
+EUROSTAT,2025,EU27,FOR,UNRESOLVED,UNRESOLVED,591704241,2026-07-02,API updated timestamp 2026-07-02T11:00:00+0200,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tour_ce_omr?geo=EU27_2020&time=2025&indic_to=NGT_SP&unit=NR,includes intra-European international nights
