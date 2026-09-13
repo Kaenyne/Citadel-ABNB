@@ -13,7 +13,7 @@ Quarters: 34 (1Q18 to 2Q26)
 Coverage (non-null quarters):
 revenue                 34
 adj_ebitda_reported     34
-sbc_ops                 33
+sbc_ops                 34
 da                      34
 fcf_reported            34
 nights_m                30
@@ -24,26 +24,27 @@ Rebuild gap |max| 1Q21-2Q26: 0.973
 Rebuild gap |max| all: 0.973
 
 Annual sum-of-quarters checks (|max| per line):
-  revenue: 0.000
-  cor_gaap: 0.000
-  ops_gaap: 0.317
-  pd_gaap: 0.000
-  sm_gaap: 0.000
-  ga_gaap: 0.000
-  restr_gaap: 0.317
-  op_income: 0.000
-  net_income: 0.000
-  sbc_total_is: 20.000
-  sbc_ops: 266.000
-  sbc_pd: 290.000
-  sbc_sm: 479.000
-  sbc_ga: 231.000
-  da: 0.162
-  sbc_recon: 0.453
+  revenue: 0.454
+  cor_gaap: 0.167
+  ops_gaap: 0.819
+  pd_gaap: 0.159
+  sm_gaap: 0.384
+  ga_gaap: 1.008
+  restr_gaap: 0.049
+  op_income: 0.317
+  net_income: 0.337
+  sbc_total_is: 0.392
+  sbc_ops: 0.556
+  sbc_pd: 0.287
+  sbc_sm: 0.229
+  sbc_ga: 0.344
+  da: 0.300
+  sbc_recon: 0.500
   lodging_tax_reserves: 0.426
-  adj_ebitda_reported: 0.260
+  adj_ebitda_reported: 0.400
   cfo: 10.273
-  capex: 0.452
-  fcf_reported: 2588.000
-  tax_provision: 0.300
-  interest_income: 0.000
+  capex: 0.800
+  fcf_reported: 110.897
+  tax_provision: 0.413
+  interest_income: 0.552
+  fcf_latest_vintage: 10.725

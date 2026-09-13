@@ -1,0 +1,43 @@
+metric,unit,definition
+revenue_musd,USD m,revenue
+nights_m,m,nights and seats booked
+gbv_musd,USD m,gross booking value
+adj_ebitda_musd,USD m,adjusted EBITDA as reported in the letter
+adj_ebitda_margin_pct,%,100 * adj EBITDA / revenue
+cor_cash_musd,USD m,cost of revenue ex SBC
+ops_cash_musd,USD m,operations and support ex SBC
+pd_cash_musd,USD m,product development ex SBC
+sm_cash_musd,USD m,sales and marketing ex SBC
+ga_cash_musd,USD m,general and administrative ex SBC (includes 4Q23 lodging-tax reserve)
+ga_cash_ex_reserves_musd,USD m,G&A ex SBC ex lodging-tax reserves
+total_cash_costs_musd,USD m,revenue - adj EBITDA (identity)
+sbc_musd,USD m,stock-based compensation add-back
+da_musd,USD m,depreciation and amortisation
+op_income_musd,USD m,GAAP income from operations
+op_margin_pct,%,100 * op income / revenue
+net_income_musd,USD m,GAAP net income
+eps_diluted,USD/share,GAAP diluted EPS (fallback: net income / diluted shares where not reported)
+fcf_musd,USD m,free cash flow as reported (CFO - capex)
+fcf_margin_pct,%,100 * FCF / revenue
+interest_income_musd,USD m,interest income
+tax_rate_pct,%,100 * tax provision / pretax income (can be wild in small-pretax quarters)
+tax_provision_musd,USD m,income tax provision (benefit negative)
+pretax_income_musd,USD m,income before taxes
+diluted_shares_m,m,weighted-average diluted shares
+cfo_musd,USD m,cash from operations
+capex_musd,USD m,purchases of property and equipment
+adj_ebitda_margin_yoy_pp,pp,margin minus same quarter last year
+cor_cash_pct_rev,%,100 * cor_cash_musd / revenue
+cor_cash_per_night,USD/night,cor_cash_musd / nights_m
+ops_cash_pct_rev,%,100 * ops_cash_musd / revenue
+ops_cash_per_night,USD/night,ops_cash_musd / nights_m
+pd_cash_pct_rev,%,100 * pd_cash_musd / revenue
+pd_cash_per_night,USD/night,pd_cash_musd / nights_m
+sm_cash_pct_rev,%,100 * sm_cash_musd / revenue
+sm_cash_per_night,USD/night,sm_cash_musd / nights_m
+ga_cash_pct_rev,%,100 * ga_cash_musd / revenue
+ga_cash_per_night,USD/night,ga_cash_musd / nights_m
+total_cash_costs_pct_rev,%,100 * total_cash_costs_musd / revenue
+sbc_pct_rev,%,100 * sbc / revenue
+adj_ebitda_per_night,USD/night,adj EBITDA / nights_m
+revenue_per_night,USD/night,revenue / nights_m

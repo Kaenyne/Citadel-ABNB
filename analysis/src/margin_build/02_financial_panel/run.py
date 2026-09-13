@@ -77,8 +77,8 @@ XQ = {  # line -> (concept, sign)
 XQ_SHARES = {"shares_diluted_m": "WeightedAverageNumberOfDilutedSharesOutstanding",
              "shares_basic_m": "WeightedAverageNumberOfSharesOutstandingBasic"}
 XQ_EPS = {"eps_diluted": "IncomeLossFromContinuingOperationsPerDilutedShare", "eps_basic": "IncomeLossFromContinuingOperationsPerBasicShare"}
-XYTD = {"cfo": "NetCashProvidedByUsedInOperatingActivities", "capex_xbrl": "PaymentsToAcquirePropertyPlantAndEquipment",
-        "change_unearned_fees": "IncreaseDecreaseInDeferredRevenue", "change_funds_payable_xbrl": "IncreaseDecreaseInClientFundsHeld",
+XYTD = {"cfo_xbrl": "NetCashProvidedByUsedInOperatingActivities", "capex_xbrl": "PaymentsToAcquirePropertyPlantAndEquipment",
+        "change_unearned_fees": "IncreaseDecreaseInDeferredRevenue", "change_funds_receivable_xbrl": "IncreaseDecreaseInClientFundsHeld",
         "rsu_tax_withholding": "PaymentsRelatedToTaxWithholdingForShareBasedCompensation", "income_taxes_paid": "IncomeTaxesPaid",
         "da_cashflow": "OtherDepreciationAndAmortization", "sbc_cashflow": "ShareBasedCompensation",
         "buybacks_cash": "PaymentsForRepurchaseOfCommonStock"}
@@ -92,7 +92,7 @@ for line, (concept, sign) in XQ.items():
     d = F.quarterly(concept)
     xq[line] = {q: (sign * v[0], v[1], sign * v[2], v[3]) for q, v in d.items()}
 for line, concept in XQ_SHARES.items():
-    xq[line] = {q: (v[0], v[1], v[2], v[3]) for q, v in F.quarterly(concept, unit="shares", scale=1e-6).items()}
+    xq[line] = {q: (v[0], v[1], v[2], v[3]) for q, v in F.quarterly(concept, unit="shares", scale=1e-6, allow_derived=False).items()}
 for line, concept in XQ_EPS.items():
     d = {}
     latest, first = F.duration_series(concept, "USD/shares")
@@ -108,6 +108,7 @@ for q in xq["total_costs"]:
         v = xq["total_costs"][q][0] - sum(xq[k][q][0] for k in ("cor_gaap", "pd_gaap", "sm_gaap", "ga_gaap")) - r
         xq["ops_gaap"][q] = (v, "xbrl: CostsAndExpenses less CostOfRevenue, R&D, S&M, G&A, RestructuringCharges (no us-gaap element for operations and support)", v, "")
 xytd = {line: F.ytd(concept) for line, concept in XYTD.items()}
+xq_cf = {line: F.quarterly(concept) for line, concept in XYTD.items()}
 xinst = {line: F.instants(concept) for line, concept in XINST.items()}
 xa = {line: F.annual(concept) for line, (concept, sign) in XQ.items()}
 for line, (concept, sign) in XQ.items():
@@ -151,7 +152,7 @@ def de_cumulate(ytd_map):
 letters = sorted((ROOT / "data/raw/letters").glob("*_*.htm"), key=lambda p: qorder(p.name[:4]))
 LET = {}  # letter quarter -> parsed pieces
 rev_x = {q: v[0] for q, v in xq["revenue"].items()}
-cfo_ytd_latest = {q: v[0] for q, v in xytd["cfo"].items()}
+cfo_ytd_latest = {q: v[0] for q, v in xytd["cfo_xbrl"].items()}
 cfo_ytd_first = {}
 lat, fst = F.duration_series("NetCashProvidedByUsedInOperatingActivities")
 for (s, e), (v, filed, form) in fst.items():
@@ -232,11 +233,18 @@ SBCQ = {}
 
 
 def pick_sbc(cands, target_total, target_alt=None):
+    tol = 0.6 + 0.001 * abs(target_total)
     for cand in cands:
         tot = cand["sbc_total"]
         for i, v in enumerate(tot):
-            if abs(v - target_total) < 0.6:
-                return {k: (cand[k][i] if cand.get(k) else None) for k in cand}, i
+            if abs(v - target_total) < tol:
+                got = {k: (cand[k][i] if cand.get(k) else None) for k in cand}
+                parts = [got.get(k) for k in ("sbc_ops", "sbc_pd", "sbc_sm", "sbc_ga")]
+                if any(x is None for x in parts):
+                    continue
+                if abs(sum(parts) + (got.get("sbc_restr") or 0.0) - v) > 2.5 or any(x > v + 0.6 for x in parts):
+                    continue        # rows read from the income statement itself (1Q24 letter layout), not the footnote
+                return got, i
     return None, None
 
 
@@ -305,15 +313,43 @@ if q424_fcf:
         fcf_v.setdefault(c, []).append({"letter": "424B4", "src": SRC424, "vals": vals})
         for k, v in vals.items():
             VINT.append({"period": c, "line": "fcf_" + k, "value": v, "letter": "424B4", "method": q424_fcf[2]})
-# rebuild RECON/FCF including the 424B4 as the earliest vintage
+# rebuild RECON/FCF including the 424B4 as the earliest vintage. "latest" = the latest letter's value, except that
+# when an earlier letter printed the same number in thousands (the letters switched to millions in 1Q22) and it
+# agrees with the latest within $0.6M, the thousands figure is kept for precision.
 RECON, FCF = {}, {}
 order = lambda d: (-1 if d["letter"] == "424B4" else qorder(d["letter"]))
+
+
+def precise_latest(vs):
+    """The latest vintage, unless an earlier letter printed the whole column in thousands and every item agrees
+    with the latest within $0.6M: then that earlier column is used in full (never mixed item by item, so the
+    NI-to-EBITDA identity stays exact within the chosen vintage)."""
+    latest = vs[-1]
+    lv = latest["vals"]
+    for e in reversed(vs[:-1]):
+        ev = e["vals"]
+        if not any(v is not None and abs(v - round(v)) > 1e-9 for v in ev.values()):
+            continue                      # not a thousands-precision column
+        ok = True
+        for k, v in lv.items():
+            a = 0.0 if v is None else v
+            b = 0.0 if ev.get(k) is None else ev[k]
+            if abs(a - b) > 0.6:
+                ok = False
+                break
+        if ok:
+            out = dict(e)
+            out["src"] = e["src"] + f" (thousands-precision column agreeing with the {latest['letter']} letter)"
+            return out
+    return latest
+
+
 for q, vs in recon_v.items():
     vs = sorted(vs, key=order)
-    RECON[q] = {"latest": vs[-1], "first": vs[0], "n": len(vs), "all": vs}
+    RECON[q] = {"latest": precise_latest(vs), "first": vs[0], "n": len(vs), "all": vs}
 for q, vs in fcf_v.items():
     vs = sorted(vs, key=order)
-    FCF[q] = {"latest": vs[-1], "first": vs[0], "n": len(vs), "all": vs}
+    FCF[q] = {"latest": precise_latest(vs), "first": vs[0], "n": len(vs), "all": vs}
 
 # annual 2015-2019 from the 424B4 (FY2018 used; the rest are context)
 a424 = {}
@@ -380,7 +416,8 @@ for fy in range(2020, 2026):
     k2 = t.find("Purchases of property and equipment")
     seg3 = t[k2 - 900:k2 + 500]
     fscale = 1e-3 if "in thousands" in seg3 else 1.0
-    d["fcf"] = {k: tenk_row(seg3, rx, len(ryears), scale=fscale) for k, rx in FCF_ROWS}
+    TENK_FCF_ROWS = [("cfo", r"\| Net cash provided by (?:\(used in\) )?operating activities \|"), ("capex", r"\| Purchases of property and equipment \|"), ("fcf", r"\| (?:Free Cash Flow|FCF) \|")]
+    d["fcf"] = {k: tenk_row(seg3, rx, len(ryears), scale=fscale) for k, rx in TENK_FCF_ROWS}
     # headcount, hosting commitment
     m = re.search(r"As of December 31, (20\d\d), we had (?:approximately )?([\d,]+) employees", t)
     d["headcount"] = (int(m.group(1)), int(m.group(2).replace(",", ""))) if m else None
@@ -464,6 +501,8 @@ for q in QUARTERS:
                 prov(q, line, is424[line], "424B4", SRC424 + " quarterly table (cross-check)")
         elif line in is424:
             put(line, is424[line], "424B4", SRC424 + " quarterly consolidated statements of operations (in thousands)")
+    if r.get("restr_gaap") is None and qorder(q) >= qorder("1Q23"):
+        put("restr_gaap", 0.0, "derived", "no restructuring line in the income statement (XBRL RestructuringCharges not tagged after FY2024)")
     if "other_income_expense" in is424 and q not in xq["pretax_income"]:
         put("other_income_expense", is424["other_income_expense"], "424B4", SRC424 + " quarterly table")
     # --- non-GAAP reconciliation (letters, latest vintage; 424B4 for 2018)
@@ -510,6 +549,11 @@ for q in QUARTERS:
     for line in ("shares_diluted_m", "shares_basic_m", "eps_diluted", "eps_basic"):
         if q in xq[line]:
             put(line, xq[line][q][0], "xbrl", xq[line][q][1])
+    if q[0] == "4" and q in LET and LET[q]["is"] and LET[q]["is_cols"]["cy"] is not None:
+        Lq, ci = LET[q]["is"], LET[q]["is_cols"]["cy"]
+        for line, k in (("eps_diluted", "eps_diluted"), ("eps_basic", "eps_basic"), ("shares_diluted_m", "shares_diluted"), ("shares_basic_m", "shares_basic")):
+            if r.get(line) is None and Lq["rows"].get(k):
+                put(line, Lq["rows"][k][ci], "letter", f"{LET[q]['src']} statement of operations, three months ended Dec 31 column (weighted averages are not additive, so no XBRL FY-less-9M derivation)")
     if q == "4Q19":
         L = LET["4Q20"]
         if L["is"] and L["is"]["rows"].get("eps_diluted"):
@@ -537,8 +581,10 @@ for q in QUARTERS:
         for k in ("sbc_ops", "sbc_pd", "sbc_sm", "sbc_ga", "sbc_restr", "sbc_total"):
             v = q424_sbc[1][k][i] if q424_sbc[1].get(k) is not None else 0.0
             put(k if k != "sbc_total" else "sbc_total_footnote", v, "424B4", SRC424 + " quarterly SBC-by-function table (in thousands)")
-    if r.get("sbc_total_is") is None and r.get("sbc_total_footnote") is not None:
-        put("sbc_total_is", r["sbc_total_footnote"], "letter/424B4", "income statement footnote total (XBRL AllocatedShareBasedCompensationExpense not available)")
+    if r.get("sbc_total_is") is not None:
+        r["sbc_total_xbrl"] = r["sbc_total_is"]
+    if r.get("sbc_total_footnote") is not None:
+        put("sbc_total_is", r["sbc_total_footnote"], "letter/424B4/10-Q", "income statement footnote total (the FY2024-25 10-Ks tag AllocatedShareBasedCompensationExpense only as a rounded $1.4B/$1.6B, so XBRL FY-less-9M is unreliable for Q4; sbc_total_xbrl keeps the XBRL derivation)")
     # --- cash cost lines
     for line, sk in (("cor", None), ("ops", "sbc_ops"), ("pd", "sbc_pd"), ("sm", "sbc_sm"), ("ga", "sbc_ga")):
         g = r.get(line + "_gaap")
@@ -558,15 +604,16 @@ for q in QUARTERS:
             r["cfo_restated"] = True
             r.setdefault("restatement_notes", []).append(f"cfo: first {fc['first']['vals']['cfo']:.1f} ({fc['first']['letter']}) -> latest {v['cfo']:.1f} ({fc['latest']['letter']})")
     # --- cash-flow YTD lines (XBRL, de-cumulated)
-    for line in ("cfo", "capex_xbrl", "change_unearned_fees", "change_funds_payable_xbrl", "rsu_tax_withholding", "income_taxes_paid", "da_cashflow", "sbc_cashflow", "buybacks_cash"):
-        dq = de_cumulate(xytd[line])
-        if q in dq:
-            v, det = dq[q]
-            if line == "capex_xbrl":
-                v = -v
+    for line in ("cfo_xbrl", "capex_xbrl", "change_unearned_fees", "change_funds_receivable_xbrl", "rsu_tax_withholding", "income_taxes_paid", "da_cashflow", "sbc_cashflow", "buybacks_cash"):
+        if q in xq_cf[line]:
+            v, det, fv, ff = xq_cf[line][q]
             put(line, v, "xbrl", det)
-    if r.get("cfo") is None and r.get("cfo_letter") is not None:
-        put("cfo", r["cfo_letter"], "letter", "letter FCF reconciliation (XBRL YTD not available)")
+    # CFO: the letters' FCF tables are the consistent quarterly series (the 2022 filings re-presented 2020-2021 CFO;
+    # companyfacts holds only the original 9M comparatives, so an XBRL FY-less-9M mixes presentations for 4Q20/4Q21)
+    if r.get("cfo_letter") is not None:
+        put("cfo", r["cfo_letter"], "letter", "letter FCF reconciliation, latest vintage (cfo_xbrl carries the companyfacts derivation)")
+    elif r.get("cfo_xbrl") is not None:
+        put("cfo", r["cfo_xbrl"], "xbrl", "companyfacts derivation")
     if q in xq["buybacks"]:
         put("buybacks", xq["buybacks"][q][0], "xbrl", xq["buybacks"][q][1])
     elif r.get("buybacks_cash") is not None:
@@ -589,36 +636,39 @@ for q in QUARTERS:
                 v = cf[chosen].get(k)
                 if v:
                     LET[q].setdefault("cf_ytd", {})[k] = v[colidx]
+                    if colidx == 1 and cf["n"] == 2:
+                        LET[q].setdefault("cf_ytd_py", {})[k] = v[0]     # prior-year YTD column, as re-presented
         else:
             warn(f"{q} letter: cash-flow statement column could not be matched to XBRL CFO")
     rows.append(r)
 
-# de-cumulate the letter cash-flow YTD lines
+# de-cumulate the letter cash-flow YTD lines. YTD(q) comes from q's own letter (current-year column) or, for 2020,
+# from the prior-year column of the letter one year later (the 2021 letters re-present 2020 under the new layout).
+def ytd_value(q, k):
+    L = LET.get(q)
+    if L and "cf_ytd" in L and k in L["cf_ytd"]:
+        return L["cf_ytd"][k], f"{L['src']} cash-flow statement YTD"
+    nq = qlabel(2000 + int(q[2:4]) + 1, int(q[0]))
+    L2 = LET.get(nq)
+    if L2 and "cf_ytd_py" in L2 and k in L2["cf_ytd_py"]:
+        return L2["cf_ytd_py"][k], f"{L2['src']} cash-flow statement, prior-year YTD column"
+    return None, None
+
+
 for r in rows:
     q = r["quarter"]
-    L = LET.get(q)
-    if not L or "cf_ytd" not in L:
-        continue
     for k, line in (("cf_funds_payable", "change_funds_payable"), ("cf_unearned", "change_unearned_fees_letter"), ("cf_da", "da_cashflow_letter"), ("cf_buybacks", "buybacks_letter"), ("cf_rsu_tax", "rsu_tax_letter")):
-        if k not in L["cf_ytd"]:
+        v, det = ytd_value(q, k)
+        if v is None:
             continue
-        v = L["cf_ytd"][k]
-        det = f"{L['src']} cash-flow statement YTD"
         if q[0] != "1":
-            p = prev_q(q)
-            if p in LET and "cf_ytd" in LET[p] and k in LET[p]["cf_ytd"]:
-                v = v - LET[p]["cf_ytd"][k]
-                det += f" less {p} letter YTD"
-            else:
+            pv, pdet = ytd_value(prev_q(q), k)
+            if pv is None:
                 continue
+            v = v - pv
+            det += f" less {prev_q(q)} YTD"
         r[line] = round(v, 3)
         prov(q, line, v, "letter", det)
-    if r.get("change_funds_payable") is None and r.get("change_funds_payable_xbrl") is not None:
-        r["change_funds_payable"] = r["change_funds_payable_xbrl"]
-for r in rows:
-    if r.get("change_funds_payable") is None and r.get("change_funds_payable_xbrl") is not None:
-        r["change_funds_payable"] = r["change_funds_payable_xbrl"]
-        prov(r["quarter"], "change_funds_payable", r["change_funds_payable_xbrl"], "xbrl", "IncreaseDecreaseInClientFundsHeld de-cumulated (sign as filed: cash-flow effect)")
 
 # balance sheet, KPIs, regional revenue
 kpi_letter = {}
@@ -706,6 +756,10 @@ for r in rows:
         # cash-cost identity: adj EBITDA = revenue - cash lines - (restr_gaap - restr_recon) + other add-backs + (sbc_recon - sbc_by_line_total)
     if all(r.get(k) is not None for k in ("cor_cash", "ops_cash", "pd_cash", "sm_cash", "ga_cash")):
         r["total_cash_costs"] = round(r["cor_cash"] + r["ops_cash"] + r["pd_cash"] + r["sm_cash"] + r["ga_cash"], 3)
+    if r.get("ga_cash") is not None and r.get("lodging_tax_reserves") is not None:
+        r["ga_cash_ex_lodging"] = round(r["ga_cash"] - r["lodging_tax_reserves"], 3)   # lodging/withholding tax reserves sit in G&A (10-K)
+    if r.get("revenue") is not None and r.get("adj_ebitda_reported") is not None:
+        r["adj_cost_total"] = round(r["revenue"] - r["adj_ebitda_reported"], 3)          # every cost that Adjusted EBITDA bears
     if r.get("sbc_recon") is not None and r.get("sbc_total_footnote") is not None:
         r["sbc_footnote_minus_recon"] = round(r["sbc_total_footnote"] - r["sbc_recon"], 3)
     if r.get("cfo") is not None and r.get("capex") is not None and r.get("fcf_reported") is not None:
@@ -724,12 +778,12 @@ P["adj_ebitda_margin_yoy_pp"] = (P["adj_ebitda_margin_pct"] - P["adj_ebitda_marg
 COLS = ["year", "qn", "period_end", "pre_ipo", "revenue", "cor_gaap", "ops_gaap", "pd_gaap", "sm_gaap", "ga_gaap", "restr_gaap", "total_costs",
         "op_income", "interest_income", "interest_expense", "other_income_expense", "nonop_ex_interest_income", "pretax_income", "tax_provision",
         "net_income", "eps_basic", "eps_diluted", "shares_basic_m", "shares_diluted_m", "effective_tax_rate_pct",
-        "sbc_ops", "sbc_pd", "sbc_sm", "sbc_ga", "sbc_restr", "sbc_total_footnote", "sbc_total_is", "sbc_recon", "sbc_footnote_minus_recon",
-        "cor_cash", "ops_cash", "pd_cash", "sm_cash", "ga_cash", "total_cash_costs",
+        "sbc_ops", "sbc_pd", "sbc_sm", "sbc_ga", "sbc_restr", "sbc_total_footnote", "sbc_total_is", "sbc_total_xbrl", "sbc_recon", "sbc_footnote_minus_recon",
+        "cor_cash", "ops_cash", "pd_cash", "sm_cash", "ga_cash", "ga_cash_ex_lodging", "total_cash_costs", "adj_cost_total",
         "da", "ipo_settlement", "acq_impacts", "lodging_tax_reserves", "restr_recon", "other_addbacks_total",
         "adj_ebitda_reported", "adj_ebitda_rebuilt", "rebuild_gap", "adj_ebitda_margin_pct", "op_margin_pct", "net_margin_pct",
-        "cfo", "cfo_letter", "capex", "capex_xbrl", "fcf_reported", "fcf_check_gap", "fcf_margin_pct", "change_unearned_fees", "change_unearned_fees_letter",
-        "change_funds_payable", "da_cashflow", "sbc_cashflow", "buybacks", "buybacks_cash", "rsu_tax_withholding", "income_taxes_paid",
+        "cfo", "cfo_xbrl", "capex", "capex_xbrl", "fcf_reported", "fcf_check_gap", "fcf_margin_pct", "change_unearned_fees", "change_unearned_fees_letter",
+        "change_funds_payable", "change_funds_receivable_xbrl", "da_cashflow", "sbc_cashflow", "buybacks", "buybacks_cash", "rsu_tax_withholding", "income_taxes_paid",
         "cash_and_equivalents", "short_term_investments", "restricted_cash", "cash_and_investments_total", "funds_held_on_behalf",
         "unearned_fees_balance", "long_term_debt_noncurrent", "long_term_debt_current", "long_term_debt_total",
         "nights_m", "gbv_busd", "adr_usd", "revenue_per_night_usd", "take_rate_pct", "cor_cash_pct_gbv",
@@ -802,6 +856,9 @@ for y in YEARS:
                 puta(k, v[i] if v else 0.0, "10-K", d["src"] + f" SBC by function note, {y} column")
             puta("sbc_total_footnote", d["sbc"]["sbc_total"][i], "10-K", d["src"] + f" SBC by function note, {y} column")
             break
+    if a.get("sbc_total_footnote") is not None:
+        a["sbc_total_xbrl"] = a.get("sbc_total_is")
+        puta("sbc_total_is", a["sbc_total_footnote"], "10-K", "SBC by function note total (XBRL AllocatedShareBasedCompensationExpense is tagged as a rounded $1.1B/$1.4B/$1.6B in the FY2024-25 10-Ks)")
     # Adjusted EBITDA reconciliation from the 10-K (latest 10-K containing the year); FY2018 from FY2020 10-K
     for fy in sorted(TENK, reverse=True):
         d = TENK[fy]
@@ -833,6 +890,10 @@ for y in YEARS:
             break
     if a.get("cfo") is None and a.get("cfo_10k") is not None:
         puta("cfo", a["cfo_10k"], "10-K", "FCF reconciliation")
+    if a.get("cfo") is not None and a.get("capex") is not None:
+        puta("fcf_latest_vintage", a["cfo"] - a["capex"], "derived", "latest-vintage CFO (XBRL) less capex; differs from fcf_reported for 2019-2020 because the 2022-23 filings re-presented CFO")
+    if a.get("restr_gaap") is None and y >= 2023:
+        a["restr_gaap"] = 0.0
     for fy, d in TENK.items():
         if d.get("headcount") and d["headcount"][0] == y:
             puta("headcount_dec31", d["headcount"][1], "10-K", d["src"] + " Human Capital section")
@@ -889,6 +950,8 @@ for y in YEARS:
                  "sbc_ops", "sbc_pd", "sbc_sm", "sbc_ga", "da", "sbc_recon", "lodging_tax_reserves", "adj_ebitda_reported", "cfo", "capex", "fcf_reported", "tax_provision", "interest_income"):
         if line in qs and qs[line].notna().sum() == 4 and a.get(line) is not None:
             a["soq_minus_annual__" + line] = round(qs[line].sum() - a[line], 3)
+    if a.get("fcf_latest_vintage") is not None and qs["fcf_reported"].notna().sum() == 4:
+        a["soq_minus_annual__fcf_latest_vintage"] = round(qs["fcf_reported"].sum() - a["fcf_latest_vintage"], 3)
     arows.append(a)
 A = pd.DataFrame(arows).set_index("year")
 A.to_csv(OUT / "02_panel_annual.csv", float_format="%.3f")
@@ -897,7 +960,7 @@ A.to_csv(OUT / "02_panel_annual.csv", float_format="%.3f")
 srows = []
 LINES_S = [("revenue", "revenue"), ("adj_ebitda_reported", "adj_ebitda"), ("cor_gaap", "cor_gaap"), ("ops_gaap", "ops_gaap"), ("pd_gaap", "pd_gaap"),
            ("sm_gaap", "sm_gaap"), ("ga_gaap", "ga_gaap"), ("cor_cash", "cor_cash"), ("ops_cash", "ops_cash"), ("pd_cash", "pd_cash"),
-           ("sm_cash", "sm_cash"), ("ga_cash", "ga_cash"), ("total_cash_costs", "total_cash_costs"), ("sbc_total_is", "sbc"), ("da", "da"),
+           ("sm_cash", "sm_cash"), ("ga_cash", "ga_cash"), ("ga_cash_ex_lodging", "ga_cash_ex_lodging"), ("total_cash_costs", "total_cash_costs"), ("adj_cost_total", "adj_cost_total"), ("sbc_total_is", "sbc"), ("da", "da"),
            ("nights_m", "nights"), ("gbv_busd", "gbv"), ("fcf_reported", "fcf"), ("cfo", "cfo"), ("interest_income", "interest_income"), ("tax_provision", "tax_provision")]
 for y in YEARS:
     qs = P[P["year"] == y]
@@ -905,7 +968,7 @@ for y in YEARS:
         continue
     fy_rev = qs["revenue"].sum()
     fy_nights = qs["nights_m"].sum() if qs["nights_m"].notna().all() else np.nan
-    fy_cash = qs["total_cash_costs"].sum() if qs["total_cash_costs"].notna().all() else np.nan
+    fy_cash = qs["adj_cost_total"].sum() if qs["adj_cost_total"].notna().all() else np.nan
     for col, name in LINES_S:
         if col not in qs or qs[col].isna().any():
             continue
@@ -919,9 +982,8 @@ for y in YEARS:
                  "q_share_of_fy_nights_pct": round(100 * qs.loc[q, "nights_m"] / fy_nights, 2) if not pd.isna(fy_nights) else np.nan}
             # mechanical vs discretionary: what the quarter's margin would be if every cash cost line were flat across the year
             if name == "adj_ebitda" and not pd.isna(fy_cash):
-                flat_cost = fy_cash / 4
-                add = (qs.loc[q, "adj_ebitda_reported"] - (qs.loc[q, "revenue"] - qs.loc[q, "total_cash_costs"]))  # add-backs/other items in the quarter
-                mech = 100 * (qs.loc[q, "revenue"] - flat_cost + add) / qs.loc[q, "revenue"]
+                flat_cost = fy_cash / 4       # the FY cost that Adjusted EBITDA bears, spread evenly over the four quarters
+                mech = 100 * (qs.loc[q, "revenue"] - flat_cost) / qs.loc[q, "revenue"]
                 s["margin_actual_pct"] = round(100 * v / qs.loc[q, "revenue"], 2)
                 s["margin_if_costs_flat_pct"] = round(mech, 2)
                 s["margin_discretionary_timing_pp"] = round(s["margin_actual_pct"] - mech, 2)
@@ -973,8 +1035,8 @@ for name, df, pairs in MAPS:
             if pd.isna(mv) or pd.isna(tv):
                 continue
             tv = float(tv)
-            if name == "abnb_fcf_bridge.csv" and their_col in ("interest_expense", "capex"):
-                tv = -tv          # that panel stores expense and capex as negatives
+            if name == "abnb_fcf_bridge.csv" and their_col in ("interest_expense", "capex", "tax_provision"):
+                tv = -tv          # that panel stores expense, tax and capex as negatives
             if name == "overnight/02_kpi_panel_quarterly.csv" and their_col == "capex_musd":
                 tv = abs(tv)
             d = round(float(mv) - tv, 3)
@@ -982,6 +1044,20 @@ for name, df, pairs in MAPS:
             if abs(d) > 1.0:
                 if (q, mine_col) in first_vintage and abs(first_vintage[(q, mine_col)] - tv) <= 1.0:
                     expl = f"vintage: existing panel carries the first-reported value {tv:.1f}; latest filing restates it to {mv:.1f}"
+                elif mine_col == "other_addbacks_total" and abs(tv - (float(mv) + (P.loc[q, "restr_recon"] or 0.0))) <= 1.5:
+                    expl = "definition: existing panel folds restructuring charges into other add-backs; mine keeps restructuring separate (restr_recon)"
+                elif mine_col == "sbc_total_is" and q[0] == "4" and abs(tv - round(tv, -1)) < 0.01:
+                    expl = "CORRECTION: existing panel derived Q4 SBC as FY less 9M with a proxy-statement (DEF 14A) FY value rounded to $100M; the 10-K/letter value is used here"
+                elif mine_col == "interest_expense" and tv == 0.0:
+                    expl = "vintage: interest expense was folded into other income (expense) in the 2024-25 filings; the 2Q26 letter re-presents it separately"
+                elif mine_col in ("cfo", "fcf_reported") and qorder(q) <= qorder("4Q22"):
+                    expl = "vintage: 2020-2022 CFO/FCF re-presented in the 2022-23 filings (funds-related cash-flow layout); mine is the latest letter vintage, existing panel the first-reported"
+                elif mine_col == "shares_diluted_m" and q[0] == "4":
+                    expl = "Q4 weighted-average shares from the 4Q letter statement of operations"
+                elif mine_col == "other_addbacks_total" and isinstance(P.loc[q, "restatement_notes"], str) and ("lodging" in P.loc[q, "restatement_notes"] or "acq" in P.loc[q, "restatement_notes"]):
+                    expl = f"vintage: lodging-tax/acquisition add-backs re-presented in later letters ({P.loc[q, 'restatement_notes']})"
+                elif q[0] == "4" and abs(d) < 1.5:
+                    expl = "precision: existing panel pairs a later 10-K's FY value rounded to millions with a 9M value in thousands"
                 elif mine_col == "interest_expense" and P.loc[q, "other_includes_interest_expense"] is True:
                     expl = "definition: interest expense not separately disclosed in the original filing"
                 elif mine_col == "other_income_expense":

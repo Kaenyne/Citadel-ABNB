@@ -111,6 +111,32 @@ def numbers_in(seg):
 
 
 # --------------------------------------------------------------------------------------------- XBRL
+FORMS = ("10-K", "10-Q", "10-K/A", "10-Q/A")
+
+
+def _precision(v):
+    """Significant digits of the tagged value: 3,001,948,000 -> 7; 3,003,000,000 -> 4; 1,100,000,000 -> 2."""
+    v = abs(int(round(v)))
+    return len(str(v).rstrip("0")) if v else 0
+
+
+def best_vintage(vints):
+    """vints: [(filed, val, form, fy)]. The latest filing decides the value (if that filing tags the same period
+    twice, e.g. an exact MD&A figure and a rounded note figure, the more precise one wins); among earlier filings
+    that agree with it within $0.6M the most precise one is returned (later 10-Ks round to millions).
+    Returns (value, filed_of_latest, first_value, first_filed, restated_flag)."""
+    vints = sorted(vints, key=lambda x: (x[0], _precision(x[1])))
+    lf = vints[-1][0]
+    lv = max([x for x in vints if x[0] == lf], key=lambda x: _precision(x[1]))[1]
+    ff, fv = vints[0][0], vints[0][1]
+    # a later 10-K may tag only a rounded narrative figure ("$1.1 billion" of SBC): treat an exact earlier fact
+    # within 2% as the same number, not a restatement
+    tol = 600_000 if abs(lv) % 100_000_000 else max(600_000, 0.02 * abs(lv))
+    cands = [(_precision(v), f, v) for f, v, _, _ in vints if abs(v - lv) <= tol]
+    best = max(cands, key=lambda x: (x[0], x[1]))
+    return best[2], lf, fv, ff, abs(fv - best[2]) > 600_000
+
+
 class Facts:
     def __init__(self, path):
         self.us = json.load(open(path))["facts"]["us-gaap"]
@@ -121,18 +147,23 @@ class Facts:
             return []
         if unit is None:
             unit = list(c["units"].keys())[0]
-        return c["units"][unit]
+        return [f for f in c["units"][unit] if f.get("form") in FORMS]
 
-    def duration_series(self, concept, unit=None):
-        latest, first = {}, {}
+    def vintages(self, concept, unit=None):
+        out = {}
         for f in self.obs(concept, unit):
             if "start" not in f:
                 continue
-            k = (f["start"], f["end"])
-            if k not in latest or f["filed"] > latest[k][1]:
-                latest[k] = (f["val"], f["filed"], f["form"])
-            if k not in first or f["filed"] < first[k][1]:
-                first[k] = (f["val"], f["filed"], f["form"])
+            out.setdefault((f["start"], f["end"]), []).append((f["filed"], f["val"], f["form"], f.get("fy")))
+        return out
+
+    def duration_series(self, concept, unit=None):
+        """Compatibility: {(start,end): (val, filed, form)} latest and first."""
+        latest, first = {}, {}
+        for k, vs in self.vintages(concept, unit).items():
+            vs = sorted(vs)
+            latest[k] = (vs[-1][1], vs[-1][0], vs[-1][2])
+            first[k] = (vs[0][1], vs[0][0], vs[0][2])
         return latest, first
 
     def instant_series(self, concept, unit=None):
@@ -140,59 +171,70 @@ class Facts:
         for f in self.obs(concept, unit):
             if "start" in f:
                 continue
-            k = f["end"]
-            if k not in latest or f["filed"] > latest[k][1]:
-                latest[k] = (f["val"], f["filed"], f["form"])
-        return latest
+            latest.setdefault(f["end"], []).append((f["filed"], f["val"], f["form"], f.get("fy")))
+        return {k: (best_vintage(v)[0], sorted(v)[-1][0], sorted(v)[-1][2]) for k, v in latest.items()}
 
-    def quarterly(self, concept, unit=None, scale=1e-6):
-        """Discrete quarters: direct 3-month facts first, else YTD differences (Q4 = FY - 9M).
-        Returns {q: (value, detail, first_value, first_filed)}."""
-        latest, first = self.duration_series(concept, unit)
+    @staticmethod
+    def _pair(a_v, b_v):
+        """Pick (FY, 9M)-style pairs from filings of the same fiscal year (companyfacts 'fy' field) so that a derived
+        quarter never mixes an original and a re-presented layout: the FY2021 10-K (fy 2021) pairs with the 3Q21 10-Q
+        (fy 2021); the FY2022 10-K's restated 2021 column (fy 2022) pairs with the 3Q22 10-Q's restated 9M21 comparative
+        (fy 2022). The latest fiscal year with both sides wins. Returns (a, b, note)."""
+        fys = sorted({x[3] for x in a_v if x[3]} & {x[3] for x in b_v if x[3]}, reverse=True)
+        for fy in fys:
+            va = max([x for x in a_v if x[3] == fy], key=lambda x: (x[0], _precision(x[1])))
+            vb = max([x for x in b_v if x[3] == fy], key=lambda x: (x[0], _precision(x[1])))
+            return (va[1], va[0], va[2]), (vb[1], vb[0], vb[2]), f"{va[2]} filed {va[0]} less {vb[2]} filed {vb[0]} (both fy{fy} filings)"
+        fa, va, forma, _ = sorted(a_v)[0]
+        fb, vb, formb, _ = sorted(b_v)[0]
+        return (va, fa, forma), (vb, fb, formb), f"{forma} filed {fa} less {formb} filed {fb} (original filings, no common fiscal year)"
+
+    def quarterly(self, concept, unit=None, scale=1e-6, allow_derived=True):
+        """Discrete quarters. Direct 3-month facts first (best vintage); otherwise YTD differences paired by filing
+        year (Q4 = FY - 9M etc.). Returns {q: (value, detail, first_value, first_filed)}."""
+        V = self.vintages(concept, unit)
         out = {}
-        years = sorted({int(e[:4]) for _, e in latest})
+        years = sorted({int(e[:4]) for _, e in V})
         for y in years:
             bounds = {1: (f"{y}-01-01", f"{y}-03-31"), 2: (f"{y}-04-01", f"{y}-06-30"),
                       3: (f"{y}-07-01", f"{y}-09-30"), 4: (f"{y}-10-01", f"{y}-12-31")}
             ytd = {1: (f"{y}-01-01", f"{y}-03-31"), 2: (f"{y}-01-01", f"{y}-06-30"),
                    3: (f"{y}-01-01", f"{y}-09-30"), 4: (f"{y}-01-01", f"{y}-12-31")}
             for q in (1, 2, 3, 4):
-                if bounds[q] in latest:
-                    v, filed, form = latest[bounds[q]]
-                    fv = first.get(bounds[q], (v, filed, form))
-                    out[qlabel(y, q)] = (v * scale, f"xbrl:{concept} 3M to {bounds[q][1]} {form} filed {filed}",
-                                         fv[0] * scale, fv[1])
-                elif q > 1 and ytd[q] in latest and ytd[q - 1] in latest:
-                    a, b = latest[ytd[q]], latest[ytd[q - 1]]
-                    fa, fb = first.get(ytd[q], a), first.get(ytd[q - 1], b)
-                    out[qlabel(y, q)] = ((a[0] - b[0]) * scale,
-                                         f"xbrl:{concept} YTD {ytd[q][1]} ({a[2]} filed {a[1]}) less YTD {ytd[q-1][1]} ({b[2]} filed {b[1]})",
-                                         (fa[0] - fb[0]) * scale, max(fa[1], fb[1]))
+                if bounds[q] in V:
+                    v, lf, fv, ff, rest = best_vintage(V[bounds[q]])
+                    out[qlabel(y, q)] = (v * scale, f"xbrl:{concept} 3M to {bounds[q][1]} (latest filing {lf}" + (", restated" if rest else "") + ")", fv * scale, ff)
+                elif q == 1 and ytd[1] in V:
+                    v, lf, fv, ff, rest = best_vintage(V[ytd[1]])
+                    out[qlabel(y, q)] = (v * scale, f"xbrl:{concept} YTD to {ytd[1][1]} (latest filing {lf})", fv * scale, ff)
+                elif allow_derived and q > 1 and ytd[q] in V and ytd[q - 1] in V:
+                    (va, fa, forma), (vb, fb, formb), note = self._pair(V[ytd[q]], V[ytd[q - 1]])
+                    o_a, o_b = sorted(V[ytd[q]])[0][1], sorted(V[ytd[q - 1]])[0][1]
+                    out[qlabel(y, q)] = ((va - vb) * scale, f"xbrl:{concept} YTD {ytd[q][1]} less YTD {ytd[q-1][1]} ({note})",
+                                         (o_a - o_b) * scale, max(sorted(V[ytd[q]])[0][0], sorted(V[ytd[q - 1]])[0][0]))
         return out
 
     def ytd(self, concept, unit=None, scale=1e-6):
-        """Year-to-date values keyed by the quarter they end in (cash-flow statement lines)."""
-        latest, first = self.duration_series(concept, unit)
         out = {}
-        for (s, e), (v, filed, form) in latest.items():
+        for (s, e), vs in self.vintages(concept, unit).items():
             if s.endswith("-01-01") and s[:4] == e[:4] and e[5:] in ("03-31", "06-30", "09-30", "12-31"):
-                out[q_of_end(e)] = (v * scale, f"xbrl:{concept} YTD to {e} {form} filed {filed}")
+                v, lf, fv, ff, rest = best_vintage(vs)
+                out[q_of_end(e)] = (v * scale, f"xbrl:{concept} YTD to {e} (latest filing {lf})")
         return out
 
     def annual(self, concept, unit=None, scale=1e-6):
-        latest, first = self.duration_series(concept, unit)
         out = {}
-        for (s, e), (v, filed, form) in latest.items():
+        for (s, e), vs in self.vintages(concept, unit).items():
             if s.endswith("-01-01") and e.endswith("-12-31") and s[:4] == e[:4]:
-                fv = first[(s, e)]
-                out[int(e[:4])] = (v * scale, f"xbrl:{concept} FY{e[:4]} {form} filed {filed}", fv[0] * scale, fv[1])
+                v, lf, fv, ff, rest = best_vintage(vs)
+                out[int(e[:4])] = (v * scale, f"xbrl:{concept} FY{e[:4]} (latest filing {lf}" + (", restated" if rest else "") + ")", fv * scale, ff)
         return out
 
     def instants(self, concept, unit=None, scale=1e-6):
         out = {}
         for end, (v, filed, form) in self.instant_series(concept, unit).items():
             if end[5:] in ("03-31", "06-30", "09-30", "12-31"):
-                out[q_of_end(end)] = (v * scale, f"xbrl:{concept} as of {end} {form} filed {filed}")
+                out[q_of_end(end)] = (v * scale, f"xbrl:{concept} as of {end} ({form} filed {filed})")
         return out
 
 
@@ -493,13 +535,13 @@ def tenk_row(text, label_re, ncols, start=0, scale=1.0):
     if not m:
         return None
     seg = text[start + m.end(): start + m.end() + 800]
+    cells = seg.split("|")
+    cells[0] = re.sub(r"\(\d\)", " ", cells[0])          # footnote marker inside the label cell
     vals, skipped = [], 0
-    for cell in seg.split("|"):
+    for cell in cells:
         c = cell.strip().replace("$", "").strip()
         if c == "":
             continue
-        if re.fullmatch(r"\(\d\)", c) and not vals:
-            continue                                   # footnote marker "(1)" after the label
         if re.fullmatch(r"\(?[\d,]+(?:\.\d+)?\)?|-", c):
             vals.append(pnum(c) * scale)
             if len(vals) == ncols:
