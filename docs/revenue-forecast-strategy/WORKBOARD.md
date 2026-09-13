@@ -1,5 +1,13 @@
 # WORKBOARD — claim before you start, update when you stop
 
+## Lane 2 resumed — 13 Sep 2026
+
+Codex parent completed the H11/RET audit correction on `codex/lane2-full`: **Gate 1 PASS**. Tests 47/37/8/63, both scorer exits 0, 276 original rows numerically identical under the committed 1e-9 criterion, 23 executable events, 81 frozen file hashes unchanged. New runner and receipts: [LANE2_RUN_LOG_v2.md](05_backtests/LANE2_RUN_LOG_v2.md). Original STOP receipts below remain historical. A2 is now claimed for Gate 2; all other packages remain pending.
+
+## Lane 2 execution status — 13 Sep 2026
+
+Codex parent on `codex/lane2-full`: **blocked at 0b/Gate 1**. Required files 55/55; tests 47 frozen, 37 FORMAT 1.1, 8 returns, 63 kernel all passed; kernel acceptance PASS 12/12. The frozen scorer exited 0 (4,109 registry / 276 scoreboard rows) but regenerated a Git-different `harness/scoreboard.csv`, triggering the mandatory STOP. Maximum RMSE drift 9.09e-13; this is not treated as a pass. WP-H11/WP-RET verification is incomplete; A2, B2, F, C2, M, L and all refuters were not started in this run. Earlier kit claims below remain historical scheduling records. See [Lane 2 run log and receipts](05_backtests/LANE2_RUN_LOG.md). No checkpoint push or PR because Gate 1 did not pass.
+
 External contributors: the paste-ready prompt for each WP is in `docs/thesis-kernel-topdown/prompts/`; setup in `02_SETUP.md`.
 
 One row per work package (IDs and specs in `AGENT_BRIEF.md` §5). To claim: set `status=claimed`, put your
