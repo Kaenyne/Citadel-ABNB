@@ -2,7 +2,7 @@
 
 ## Lane 2 resumed — 13 Sep 2026
 
-Codex parent completed the H11/RET audit correction on `codex/lane2-full`: **Gate 1 PASS**. Tests 47/37/8/63, both scorer exits 0, 276 original rows numerically identical under the committed 1e-9 criterion, 23 executable events, 81 frozen file hashes unchanged. New runner and receipts: [LANE2_RUN_LOG_v2.md](05_backtests/LANE2_RUN_LOG_v2.md). Original STOP receipts below remain historical. A2 is now claimed for Gate 2; all other packages remain pending.
+Codex parent completed **Gate 1 and Gate 2** on `codex/lane2-full`. A2 research verdict PARTIAL: W1 11 evaluable / 7 of 8 high-signal hits; W2 9 / 6 of 7; no established trade edge; 48 registry rows including two LIVE Q4 rows. See [A2 review](05_backtests/A2_GATE_REVIEW.md) and [active run log](05_backtests/LANE2_RUN_LOG_v2.md). F/B2/M now claimed for execution; C2 queued; L skipped (not sanctioned). Frozen tests and both scorer checks remain green, with all original protected files unchanged. Original STOP section below is historical.
 
 ## Lane 2 execution status — 13 Sep 2026
 

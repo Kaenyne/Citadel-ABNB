@@ -28,4 +28,6 @@ The resumed gate changes output handling and applies the existing test tolerance
 
 ## RESUME
 
-Complete the above gate and record receipts here. Only after it passes, checkpoint and launch the single A2 agent with its exact brief. Preserve original failure evidence and all existing package files.
+Gate 1 checkpoint `a825542` pushed and remote hash verified. A2 ran alone with exactly its brief. Gate 2 now PASS after one final-review correction; research verdict PARTIAL. Parent independently audited 14 candidate rows, 12 K0 estimates, 56 return cells, Wilson intervals and control residualization. W1 11/14 evaluable, 7/8 hits; W2 9/10, 6/7 hits. Signed 20-day returns -0.308pp / -0.983pp; both intervals cross zero. Joint control n=6 in both windows has unknown vendors and is provenance-limited. Two LIVE Q4 rows at 2026-09-13; 48 A2 registry rows total. Both scorers after reviewed registration exit 0, 4,157 rows / 280 scores, all 276 old rows and 81 protected hashes unchanged. Details: [A2_GATE_REVIEW.md](A2_GATE_REVIEW.md).
+
+Next: checkpoint Gate 2; run F/B2/M in parallel, C2 as a slot frees, then three refuters per A2/B2/F. L skipped: not sanctioned (`SANCTIONED_BY_THEO: no`). CLOSE uses the new snapshot runner and its preregistration, preserving every prior result.

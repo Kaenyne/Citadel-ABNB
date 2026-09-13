@@ -167,6 +167,15 @@ def main():
     destination = OUT/args.stage
     destination.mkdir(parents=True, exist_ok=True)
     before = frozen_hashes()
+    baseline_hash_file = OUT/'gate1/frozen_hashes_before.json'
+    if args.stage != 'gate1':
+        if not baseline_hash_file.exists():
+            raise AssertionError('Gate 1 frozen-file baseline is required before later stages')
+        trusted_hashes = json.loads(baseline_hash_file.read_text(encoding='utf-8'))
+        if before != trusted_hashes:
+            changed = sorted(k for k in set(before) | set(trusted_hashes)
+                             if before.get(k) != trusted_hashes.get(k))
+            raise AssertionError(f'frozen files changed since Gate 1: {changed}')
     summary = {'stage': args.stage, 'started_at_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
                'source': 'unmodified existing scorer main functions; output destinations only redirected',
                'absolute_tolerance': ATOL, 'relative_tolerance': 0}
