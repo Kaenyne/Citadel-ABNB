@@ -1,0 +1,635 @@
+{
+  "n_prints": 22,
+  "first": "2021Q1",
+  "last": "2026Q2",
+  "all": {
+    "n": 22,
+    "margin_surprise_mean_pts_ew": 5.235313347373093,
+    "margin_surprise_sd_pts_ew": 9.298413061773712,
+    "margin_surprise_mean_pts_rw": 1.8103298963378114,
+    "margin_surprise_sd_pts_rw": 3.386355123253107,
+    "ebitda_surprise_mean_pct_ew": 42.08435287310087,
+    "ebitda_surprise_sd_pct_ew": 94.12402825853765,
+    "ebitda_surprise_mean_pct_rw": 11.760622256157546,
+    "ebitda_surprise_mean_musd_ew": 94.36032272727272,
+    "revenue_surprise_mean_pct_ew": 3.430762579166144,
+    "revenue_surprise_sd_pct_ew": 5.122876714581567,
+    "share_ebitda_beats": 1.0,
+    "share_margin_beats": 0.9545454545454546,
+    "mean_abs_margin_surprise_pts": 5.24161879887792,
+    "median_margin_surprise_pts": 2.537842799468983
+  },
+  "W1_2023Q1_2026Q2": {
+    "n": 14,
+    "margin_surprise_mean_pts_ew": 1.8231653843785358,
+    "margin_surprise_sd_pts_ew": 1.4067135277329397,
+    "margin_surprise_mean_pts_rw": 1.3615589948842315,
+    "margin_surprise_sd_pts_rw": 1.2711735696326056,
+    "ebitda_surprise_mean_pct_ew": 8.91900902979113,
+    "ebitda_surprise_sd_pct_ew": 8.109191084938805,
+    "ebitda_surprise_mean_pct_rw": 7.151920616432405,
+    "ebitda_surprise_mean_musd_ew": 60.26563928571428,
+    "revenue_surprise_mean_pct_ew": 1.6578868803417053,
+    "revenue_surprise_sd_pct_ew": 1.1111713178165716,
+    "share_ebitda_beats": 1.0,
+    "share_margin_beats": 0.9285714285714286,
+    "mean_abs_margin_surprise_pts": 1.8330739510289789,
+    "median_margin_surprise_pts": 1.9284224873232638
+  },
+  "W2_2024Q1_2026Q2": {
+    "n": 10,
+    "margin_surprise_mean_pts_ew": 1.7048081233184653,
+    "margin_surprise_sd_pts_ew": 1.4113204351311288,
+    "margin_surprise_mean_pts_rw": 1.257713591987183,
+    "margin_surprise_sd_pts_rw": 1.2371525769776444,
+    "ebitda_surprise_mean_pct_ew": 9.180546746562655,
+    "ebitda_surprise_sd_pct_ew": 9.018750201652523,
+    "ebitda_surprise_mean_pct_rw": 6.956177695022539,
+    "ebitda_surprise_mean_musd_ew": 56.91554699999999,
+    "revenue_surprise_mean_pct_ew": 1.5766977909627335,
+    "revenue_surprise_sd_pct_ew": 1.2300390437154851,
+    "share_ebitda_beats": 1.0,
+    "share_margin_beats": 1.0,
+    "mean_abs_margin_surprise_pts": 1.7048081233184653,
+    "median_margin_surprise_pts": 1.3745550475588448
+  },
+  "by_quarter_of_year": {
+    "Q1": {
+      "n": 6,
+      "margin_surprise_mean_pts_ew": 10.191325268039332,
+      "margin_surprise_sd_pts_ew": 16.961739950567242,
+      "margin_surprise_mean_pts_rw": 2.5419579661355804,
+      "margin_surprise_sd_pts_rw": 6.12255084859517,
+      "ebitda_surprise_mean_pct_ew": 57.59508951675078,
+      "ebitda_surprise_sd_pct_ew": 79.82753913616449,
+      "ebitda_surprise_mean_pct_rw": 19.28461585327126,
+      "ebitda_surprise_mean_musd_ew": 107.89164166666666,
+      "revenue_surprise_mean_pct_ew": 6.089270347238391,
+      "revenue_surprise_sd_pct_ew": 8.945326853382268,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 0.8333333333333334,
+      "mean_abs_margin_surprise_pts": 10.214445256890366,
+      "median_margin_surprise_pts": 3.1247957066707217
+    },
+    "Q2": {
+      "n": 6,
+      "margin_surprise_mean_pts_ew": 4.135630314975783,
+      "margin_surprise_sd_pts_ew": 4.659370450195786,
+      "margin_surprise_mean_pts_rw": 1.4349238485228357,
+      "margin_surprise_sd_pts_rw": 1.9565704826777135,
+      "ebitda_surprise_mean_pct_ew": 76.48885646238236,
+      "ebitda_surprise_sd_pct_ew": 164.73594846135686,
+      "ebitda_surprise_mean_pct_rw": 11.670498532907562,
+      "ebitda_surprise_mean_musd_ew": 86.86404666666665,
+      "revenue_surprise_mean_pct_ew": 2.0192265287846465,
+      "revenue_surprise_sd_pct_ew": 2.339810186588009,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 4.135630314975783,
+      "median_margin_surprise_pts": 2.2905582761463315
+    },
+    "Q3": {
+      "n": 5,
+      "margin_surprise_mean_pts_ew": 3.1631932197729453,
+      "margin_surprise_sd_pts_ew": 3.573809411489748,
+      "margin_surprise_mean_pts_rw": 1.3822997993122192,
+      "margin_surprise_sd_pts_rw": 2.020016571023838,
+      "ebitda_surprise_mean_pct_ew": 10.15358890471987,
+      "ebitda_surprise_sd_pct_ew": 13.868877742073963,
+      "ebitda_surprise_mean_pct_rw": 3.7993305466351983,
+      "ebitda_surprise_mean_musd_ew": 110.72921800000002,
+      "revenue_surprise_mean_pct_ew": 2.4399849858318605,
+      "revenue_surprise_sd_pct_ew": 3.761161441597739,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 3.1631932197729453,
+      "median_margin_surprise_pts": 2.1546370097788454
+    },
+    "Q4": {
+      "n": 5,
+      "margin_surprise_mean_pts_ew": 2.6798388090505263,
+      "margin_surprise_sd_pts_ew": 1.4816513581664257,
+      "margin_surprise_mean_pts_rw": 1.8256356792390944,
+      "margin_surprise_sd_pts_rw": 1.9452593938411638,
+      "ebitda_surprise_mean_pct_ew": 14.11682856196413,
+      "ebitda_surprise_sd_pct_ew": 6.528064402799171,
+      "ebitda_surprise_mean_pct_rw": 9.492851186221374,
+      "ebitda_surprise_mean_musd_ew": 70.749376,
+      "revenue_surprise_mean_pct_ew": 2.92517411127153,
+      "revenue_surprise_sd_pct_ew": 1.2768158320714131,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 2.6798388090505263,
+      "median_margin_surprise_pts": 3.242340986649115
+    }
+  },
+  "by_year": {
+    "2021": {
+      "n": 4,
+      "margin_surprise_mean_pts_ew": 17.22017012676553,
+      "margin_surprise_sd_pts_ew": 18.37311983775908,
+      "margin_surprise_mean_pts_rw": 14.564671285363056,
+      "margin_surprise_sd_pts_rw": 17.03263145995185,
+      "ebitda_surprise_mean_pct_ew": 137.63629052822137,
+      "ebitda_surprise_sd_pct_ew": 185.26894289654862,
+      "ebitda_surprise_mean_pct_rw": 124.1869961080588,
+      "ebitda_surprise_mean_musd_ew": 204.02802000000003,
+      "revenue_surprise_mean_pct_ew": 11.198810814390049,
+      "revenue_surprise_sd_pct_ew": 8.786621347067593,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 17.22017012676553,
+      "median_margin_surprise_pts": 11.113964832655618
+    },
+    "2022": {
+      "n": 4,
+      "margin_surprise_mean_pts_ew": 5.192974438461607,
+      "margin_surprise_sd_pts_ew": 3.6367452589784963,
+      "margin_surprise_mean_pts_rw": 4.69014372266287,
+      "margin_surprise_sd_pts_rw": 3.402711684097244,
+      "ebitda_surprise_mean_pct_ew": 62.6111186695644,
+      "ebitda_surprise_sd_pct_ew": 97.65949722536011,
+      "ebitda_surprise_mean_pct_rw": 50.613045872043365,
+      "ebitda_surprise_mean_musd_ew": 104.02401750000001,
+      "revenue_surprise_mean_pct_ew": 1.867779289827776,
+      "revenue_surprise_sd_pct_ew": 1.66440383038471,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 5.192974438461607,
+      "median_margin_surprise_pts": 4.477551994305635
+    },
+    "2023": {
+      "n": 4,
+      "margin_surprise_mean_pts_ew": 2.119058537028711,
+      "margin_surprise_sd_pts_ew": 1.5607940884074731,
+      "margin_surprise_mean_pts_rw": 2.3287448064269705,
+      "margin_surprise_sd_pts_rw": 1.465098318536399,
+      "ebitda_surprise_mean_pct_ew": 8.265164737862321,
+      "ebitda_surprise_sd_pct_ew": 6.3359286263105306,
+      "ebitda_surprise_mean_pct_rw": 8.97501312718359,
+      "ebitda_surprise_mean_musd_ew": 68.64087,
+      "revenue_surprise_mean_pct_ew": 1.8608596037891356,
+      "revenue_surprise_sd_pct_ew": 0.8570198827370217,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 0.75,
+      "mean_abs_margin_surprise_pts": 2.1537385203052617,
+      "median_margin_surprise_pts": 2.516772798601913
+    },
+    "2024": {
+      "n": 4,
+      "margin_surprise_mean_pts_ew": 2.8288574159218602,
+      "margin_surprise_sd_pts_ew": 1.3719348961660731,
+      "margin_surprise_mean_pts_rw": 2.8693660214223065,
+      "margin_surprise_sd_pts_rw": 1.3316924889690251,
+      "ebitda_surprise_mean_pct_ew": 14.00264319654477,
+      "ebitda_surprise_sd_pct_ew": 12.157413132556142,
+      "ebitda_surprise_mean_pct_rw": 13.359939224815257,
+      "ebitda_surprise_mean_musd_ew": 85.04888249999999,
+      "revenue_surprise_mean_pct_ew": 1.7894137925774443,
+      "revenue_surprise_sd_pct_ew": 1.7494021778236284,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 2.8288574159218602,
+      "median_margin_surprise_pts": 3.1594814487613476
+    },
+    "2025": {
+      "n": 4,
+      "margin_surprise_mean_pts_ew": 1.0673147809695909,
+      "margin_surprise_sd_pts_ew": 1.1057083326804038,
+      "margin_surprise_mean_pts_rw": 0.897602226561976,
+      "margin_surprise_sd_pts_rw": 1.0697615287311757,
+      "ebitda_surprise_mean_pct_ew": 6.483876863423909,
+      "ebitda_surprise_sd_pct_ew": 6.321160632477035,
+      "ebitda_surprise_mean_pct_rw": 5.597326570056026,
+      "ebitda_surprise_mean_musd_ew": 40.402724999999975,
+      "revenue_surprise_mean_pct_ew": 1.3268921591413823,
+      "revenue_surprise_sd_pct_ew": 0.9749996335513065,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 1.0673147809695909,
+      "median_margin_surprise_pts": 0.9297448099592049
+    },
+    "2026": {
+      "n": 2,
+      "margin_surprise_mean_pts_ew": 0.7316962228094255,
+      "margin_surprise_sd_pts_ew": 0.19648834557610226,
+      "margin_surprise_mean_pts_rw": 0.7196881749308414,
+      "margin_surprise_sd_pts_rw": 0.19575311879897353,
+      "ebitda_surprise_mean_pct_ew": 4.929693612875919,
+      "ebitda_surprise_sd_pct_ew": 3.243967338308043,
+      "ebitda_surprise_mean_pct_rw": 4.731444118735419,
+      "ebitda_surprise_mean_musd_ew": 33.67452000000003,
+      "revenue_surprise_mean_pct_ew": 1.650877051376015,
+      "revenue_surprise_sd_pct_ew": 1.0687650427018374,
+      "share_ebitda_beats": 1.0,
+      "share_margin_beats": 1.0,
+      "mean_abs_margin_surprise_pts": 0.7316962228094255,
+      "median_margin_surprise_pts": 0.7316962228094255
+    }
+  },
+  "flowthrough_musd_all": {
+    "n": 22,
+    "alpha": 19.82702375603385,
+    "beta": 1.3250946125321212,
+    "se_beta": 0.22535826158221742,
+    "t_beta": 5.879946904226039,
+    "r2": 0.633523614934271
+  },
+  "flowthrough_musd_all_rw": {
+    "n": 22,
+    "alpha": 22.560784342002748,
+    "beta": 0.7273560952659074,
+    "se_beta": 0.3198746098122301,
+    "t_beta": 2.2738788042379277,
+    "r2": 0.20541982553344773
+  },
+  "flowthrough_musd_W1": {
+    "n": 14,
+    "alpha": 36.353228970744304,
+    "beta": 0.5714795713396014,
+    "se_beta": 0.411598638143858,
+    "t_beta": 1.3884389266124426,
+    "r2": 0.1384115095131081
+  },
+  "flowthrough_musd_W2": {
+    "n": 10,
+    "alpha": 39.21512595488071,
+    "beta": 0.4276220519088762,
+    "se_beta": 0.4468427084601721,
+    "t_beta": 0.9569856323323913,
+    "r2": 0.10271868951618546
+  },
+  "flowthrough_pct_all": {
+    "n": 22,
+    "alpha": 23.218163809781732,
+    "beta": 5.499124065852612,
+    "se_beta": 3.9200568161337874,
+    "t_beta": 1.4028174395891033,
+    "r2": 0.08958057248379214
+  },
+  "flowthrough_pct_W1": {
+    "n": 14,
+    "alpha": 0.5184514680783258,
+    "beta": 5.06702698556935,
+    "se_beta": 1.516142018002309,
+    "t_beta": 3.3420530038773935,
+    "r2": 0.4820736693844566
+  },
+  "flowthrough_pct_W2": {
+    "n": 10,
+    "alpha": 1.194791079043678,
+    "beta": 5.064861328081691,
+    "se_beta": 1.8743879928133922,
+    "t_beta": 2.702141364275124,
+    "r2": 0.4771777621208405
+  },
+  "margin_pts_on_rev_pct_all": {
+    "n": 22,
+    "alpha": -0.6755109193920598,
+    "beta": 1.7228893373909295,
+    "se_beta": 0.12770179689927832,
+    "t_beta": 13.49150426403018,
+    "r2": 0.9010002378139028
+  },
+  "margin_pts_on_rev_pct_W1": {
+    "n": 14,
+    "alpha": 0.8045834673131076,
+    "beta": 0.6143856551030124,
+    "se_beta": 0.31953343123734335,
+    "t_beta": 1.9227586068972495,
+    "r2": 0.23552274350887636
+  },
+  "margin_pts_on_rev_pct_W2": {
+    "n": 10,
+    "alpha": 0.8538267585263214,
+    "beta": 0.5397238263856092,
+    "se_beta": 0.3579762154926115,
+    "t_beta": 1.5077086214873092,
+    "r2": 0.2212736579486939
+  },
+  "implied_incremental_margin_on_surprise": {
+    "n": 20,
+    "median_pct": 161.81544012996494,
+    "mean_pct": 183.47745609036096,
+    "iqr_pct": [
+      94.90317265472837,
+      195.05510966235494
+    ],
+    "n_W2": 9,
+    "median_pct_W2": 118.9904367225102
+  },
+  "street_revision_incremental_margin_guide_to_print": {
+    "n": 17,
+    "median_pct": 47.37240829068607,
+    "mean_pct": 79.46886381145208,
+    "iqr_pct": [
+      33.272926416896205,
+      109.43309484814596
+    ]
+  },
+  "actual_yoy_incremental_margin": {
+    "n": 18,
+    "median_pct": 39.796525186567166,
+    "mean_pct": 36.77510923129111
+  },
+  "margin_error_autocorr": {
+    "n": 22,
+    "lag1": 0.25990527810446734,
+    "lag4": 0.14649767650039908,
+    "sign_persistence_lag1": 0.9047619047619048,
+    "sign_persistence_lag4": 0.8888888888888888,
+    "lag1_W2": 0.31372024411199967,
+    "lag4_W2": -0.2060465408778937,
+    "approx_se_under_null": 0.21320071635561041
+  },
+  "ebitda_pct_error_autocorr": {
+    "lag1": 0.11922799566958872,
+    "lag4": 0.03097099347211702
+  },
+  "street_vs_guide_implied": {
+    "n": 17,
+    "mean_street_minus_guide_pts": -0.7552151461390944,
+    "mean_actual_minus_guide_pts": 1.3759469412778234,
+    "share_actual_above_guide_implied": 0.5882352941176471,
+    "share_street_above_guide_implied": 0.47058823529411764,
+    "rows": [
+      {
+        "print_quarter": "2022Q2",
+        "guide_implied_type": "floor:yoy_pts(+10.0 on 16.3)",
+        "guide_implied_margin_pct": 26.3,
+        "street_margin_pct": 28.08,
+        "actual_margin_pct": 33.79
+      },
+      {
+        "print_quarter": "2022Q3",
+        "guide_implied_type": "ceiling:margin_pct",
+        "guide_implied_margin_pct": 49.0,
+        "street_margin_pct": 48.77,
+        "actual_margin_pct": 50.52
+      },
+      {
+        "print_quarter": "2022Q4",
+        "guide_implied_type": "floor:margin_pct",
+        "guide_implied_margin_pct": 22.0,
+        "street_margin_pct": 23.36,
+        "actual_margin_pct": 26.6
+      },
+      {
+        "print_quarter": "2023Q1",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 15.2)",
+        "guide_implied_margin_pct": 15.2,
+        "street_margin_pct": 14.48,
+        "actual_margin_pct": 14.41
+      },
+      {
+        "print_quarter": "2023Q2",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 33.8)",
+        "guide_implied_margin_pct": 33.8,
+        "street_margin_pct": 30.09,
+        "actual_margin_pct": 32.97
+      },
+      {
+        "print_quarter": "2023Q3",
+        "guide_implied_type": "floor:yoy_pts(+0.0 on 50.5)",
+        "guide_implied_margin_pct": 50.5,
+        "street_margin_pct": 51.83,
+        "actual_margin_pct": 53.99
+      },
+      {
+        "print_quarter": "2023Q4",
+        "guide_implied_type": "floor:yoy_pts(+0.0 on 26.6)",
+        "guide_implied_margin_pct": 26.6,
+        "street_margin_pct": 29.76,
+        "actual_margin_pct": 33.27
+      },
+      {
+        "print_quarter": "2024Q1",
+        "guide_implied_type": "floor:yoy_pts(+0.0 on 14.4)",
+        "guide_implied_margin_pct": 14.4,
+        "street_margin_pct": 15.85,
+        "actual_margin_pct": 19.79
+      },
+      {
+        "print_quarter": "2024Q2",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 33.0)",
+        "guide_implied_margin_pct": 33.0,
+        "street_margin_pct": 31.49,
+        "actual_margin_pct": 32.53
+      },
+      {
+        "print_quarter": "2024Q3",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 54.0)",
+        "guide_implied_margin_pct": 54.0,
+        "street_margin_pct": 50.01,
+        "actual_margin_pct": 52.47
+      },
+      {
+        "print_quarter": "2024Q4",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 33.3)",
+        "guide_implied_margin_pct": 33.3,
+        "street_margin_pct": 26.98,
+        "actual_margin_pct": 30.85
+      },
+      {
+        "print_quarter": "2025Q1",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 19.8)",
+        "guide_implied_margin_pct": 19.8,
+        "street_margin_pct": 16.05,
+        "actual_margin_pct": 18.35
+      },
+      {
+        "print_quarter": "2025Q2",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 32.5)",
+        "guide_implied_margin_pct": 32.5,
+        "street_margin_pct": 31.99,
+        "actual_margin_pct": 33.69
+      },
+      {
+        "print_quarter": "2025Q3",
+        "guide_implied_type": "floor:usd_m/4060 guide mid",
+        "guide_implied_margin_pct": 49.26,
+        "street_margin_pct": 49.98,
+        "actual_margin_pct": 50.09
+      },
+      {
+        "print_quarter": "2025Q4",
+        "guide_implied_type": "ceiling:yoy_pts(+0.0 on 30.8)",
+        "guide_implied_margin_pct": 30.8,
+        "street_margin_pct": 28.14,
+        "actual_margin_pct": 28.29
+      },
+      {
+        "print_quarter": "2026Q1",
+        "guide_implied_type": "point:yoy_pts(+0.0 on 18.4)",
+        "guide_implied_margin_pct": 18.4,
+        "street_margin_pct": 18.51,
+        "actual_margin_pct": 19.38
+      },
+      {
+        "print_quarter": "2026Q2",
+        "guide_implied_type": "floor:yoy_pts(+0.0 on 33.7)",
+        "guide_implied_margin_pct": 33.7,
+        "street_margin_pct": 34.36,
+        "actual_margin_pct": 34.95
+      }
+    ]
+  },
+  "fy_floor_anchoring": {
+    "n_guide_events": 10,
+    "mean_gap_post_guide_5td_pts": 0.4916767227942124,
+    "share_within_0p5pt_of_floor": 0.8,
+    "share_within_1pt_of_floor": 0.8,
+    "actual_minus_floor_pts": {
+      "FY2024": 1.3999999999999986,
+      "FY2025": 0.6000000000000014
+    },
+    "rows": [
+      {
+        "fy": "FY2024",
+        "guide_date": "2024-02-13",
+        "floor_pct": 35.0,
+        "cons_margin_pct": 36.36,
+        "gap_to_floor_pts": 1.36,
+        "n_est": 40
+      },
+      {
+        "fy": "FY2024",
+        "guide_date": "2024-05-08",
+        "floor_pct": 35.0,
+        "cons_margin_pct": 36.24,
+        "gap_to_floor_pts": 1.24,
+        "n_est": 42
+      },
+      {
+        "fy": "FY2024",
+        "guide_date": "2024-08-06",
+        "floor_pct": 35.0,
+        "cons_margin_pct": 35.44,
+        "gap_to_floor_pts": 0.44,
+        "n_est": 41
+      },
+      {
+        "fy": "FY2024",
+        "guide_date": "2024-11-07",
+        "floor_pct": 35.5,
+        "cons_margin_pct": 35.55,
+        "gap_to_floor_pts": 0.05,
+        "n_est": 43
+      },
+      {
+        "fy": "FY2025",
+        "guide_date": "2025-02-13",
+        "floor_pct": 34.5,
+        "cons_margin_pct": 34.91,
+        "gap_to_floor_pts": 0.41,
+        "n_est": 43
+      },
+      {
+        "fy": "FY2025",
+        "guide_date": "2025-05-01",
+        "floor_pct": 34.5,
+        "cons_margin_pct": 34.83,
+        "gap_to_floor_pts": 0.33,
+        "n_est": 43
+      },
+      {
+        "fy": "FY2025",
+        "guide_date": "2025-08-06",
+        "floor_pct": 34.5,
+        "cons_margin_pct": 34.97,
+        "gap_to_floor_pts": 0.47,
+        "n_est": 43
+      },
+      {
+        "fy": "FY2025",
+        "guide_date": "2025-11-06",
+        "floor_pct": 35.0,
+        "cons_margin_pct": 35.1,
+        "gap_to_floor_pts": 0.1,
+        "n_est": 43
+      },
+      {
+        "fy": "FY2026",
+        "guide_date": "2026-05-07",
+        "floor_pct": 35.0,
+        "cons_margin_pct": 35.41,
+        "gap_to_floor_pts": 0.41,
+        "n_est": 42
+      },
+      {
+        "fy": "FY2026",
+        "guide_date": "2026-08-06",
+        "floor_pct": 35.5,
+        "cons_margin_pct": 35.61,
+        "gap_to_floor_pts": 0.11,
+        "n_est": 43
+      }
+    ]
+  },
+  "revision_paths_quarters": {
+    "n": 20,
+    "median_guide_jump_5td_pct": 1.5502846487054245,
+    "median_drift_post_guide_to_print_pct": 0.12870078103890403,
+    "mean_drift_post_guide_to_print_pct": 0.06606635820598727,
+    "share_drift_negative": 0.35,
+    "median_total_drift_pct": 2.2119096284933693,
+    "median_margin_change_guide_to_print_pts": 0.3374072168210489,
+    "median_n_trading_days": 63.5
+  },
+  "revision_paths_fy": [
+    {
+      "target_quarter": "FY2021",
+      "ebitda_pre_guide_musd": 31.17,
+      "ebitda_at_print_musd": 1507.98,
+      "total_drift_pct": 4738.64,
+      "margin_pre_guide_pct": 0.69,
+      "margin_at_print_pct": 25.59,
+      "lseg_actual_ebitda_musd": 1593.41
+    },
+    {
+      "target_quarter": "FY2022",
+      "ebitda_pre_guide_musd": 1842.94,
+      "ebitda_at_print_musd": 2824.43,
+      "total_drift_pct": 53.26,
+      "margin_pre_guide_pct": 25.28,
+      "margin_at_print_pct": 33.8,
+      "lseg_actual_ebitda_musd": 2903.0
+    },
+    {
+      "target_quarter": "FY2023",
+      "ebitda_pre_guide_musd": 3157.76,
+      "ebitda_at_print_musd": 3556.62,
+      "total_drift_pct": 12.63,
+      "margin_pre_guide_pct": 33.65,
+      "margin_at_print_pct": 36.09,
+      "lseg_actual_ebitda_musd": 3700.0
+    },
+    {
+      "target_quarter": "FY2024",
+      "ebitda_pre_guide_musd": 4043.6,
+      "ebitda_at_print_musd": 3927.82,
+      "total_drift_pct": -2.86,
+      "margin_pre_guide_pct": 36.6,
+      "margin_at_print_pct": 35.58,
+      "lseg_actual_ebitda_musd": 4041.0
+    },
+    {
+      "target_quarter": "FY2025",
+      "ebitda_pre_guide_musd": 4186.07,
+      "ebitda_at_print_musd": 4277.3,
+      "total_drift_pct": 2.18,
+      "margin_pre_guide_pct": 34.46,
+      "margin_at_print_pct": 35.14,
+      "lseg_actual_ebitda_musd": 4297.0
+    },
+    {
+      "target_quarter": "FY2026",
+      "ebitda_pre_guide_musd": 4751.57,
+      "ebitda_at_print_musd": 5053.72,
+      "total_drift_pct": 6.36,
+      "margin_pre_guide_pct": 35.41,
+      "margin_at_print_pct": 35.62,
+      "lseg_actual_ebitda_musd": NaN
+    }
+  ]
+}

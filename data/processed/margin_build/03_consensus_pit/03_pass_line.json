@@ -1,0 +1,18 @@
+{
+  "prints_1Q21_2Q26": 22,
+  "with_consensus": 22,
+  "fresh_le_7d": 21,
+  "pass_fresh_ge_18": true,
+  "repo16_rows_compared": 7,
+  "within_3pct": 7,
+  "pass_agree": true,
+  "disagreements": [],
+  "max_staleness_days": 9.0,
+  "stale_rows": [
+    {
+      "print_quarter": "2026Q1",
+      "cons_ebitda_obs_date": "2026-04-27",
+      "cons_ebitda_staleness_days": 9
+    }
+  ]
+}
