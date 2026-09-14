@@ -1,0 +1,13 @@
+item,value,unit,band80,vs,note
+3Q26 adj EBITDA margin,49.93993908638773,%,47.86 - 52.02,Street 49.78%,"combination stack_clip, h=0; bias-corrected on the last 5 PIT errors -> 50.21%, which the 'down slightly' sentence caps at 50.09%"
+3Q26 adj EBITDA,2399.132402388442,USD m,2299 - 2499,"Street 2362 (n 36, sd 20.0)","margin x bridge v3 revenue 4,804"
+"3Q26 beat vs Street, $",37.610612388442405,USD m,,,"M5 flow-through arithmetic: 0.464 x (4,804 - 4,744) + 16 = +$44M"
+P(3Q26 adj EBITDA beats Street),0.7654418391009807,probability,,,Gaussian on the conformal sd; the 80% band contains the Street
+P(3Q26 margin beats Street margin),0.5402861765589382,probability,,,same
+3Q26 EPS (GAAP diluted),2.8789064125062396,USD,2.74 - 3.02,Street 2.85,"M7 bridge, ETR 18.0%, 591.7m shares; $0.001386 of EPS per $M of EBITDA"
+4Q26 adj EBITDA margin,28.897437,%,,Street 28.90%,"h=1 rule: the Street is unbeaten; combination 29.04%, M3 sentence path 29.90%"
+FY26 adj EBITDA margin,35.72661108582304,%,,"floor 35.5%, Street 35.62%","1H26 actual + 3Q26 combination + 4Q26 Street, on bridge v3 revenue"
+FY26 adj EBITDA,5097.524101685529,USD m,,"Street 5,053.7",
+5 Nov FY26 margin sentence (forecast),36.0,%,,,"M3: the November sentence has been the numeric floor + 50bp, exact 2 of 2; p ~0.45-0.50. 'Approximately 36%'"
+4Q26 margin implied by the 36.0% sentence at our 3Q26,30.12481897598181,%,,Street 28.90%,M3 budget identity: 1pp of FY26 = 4.49pp of 4Q26; 1pp of 3Q26 = -1.51pp of 4Q26
+FY27 adj EBITDA margin (SCENARIO),34.64189810715067,%,,Street 36.45%,"h>=2 fails its test; this is a spending scenario, not a forecast"

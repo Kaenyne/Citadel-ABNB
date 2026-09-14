@@ -50,12 +50,37 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | done | 23:00 | notes/20_scoreboard.md | 00:35 |
 | 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | done | 22:30 | notes/21_red_team.md | 23:55 |
 | 22 | Discussion round: three Opus agents (A: M1/M4/M6, B: M2/M3, C: M5/M7/10) answer the red team now and the scoreboard when it lands; orchestrator concatenates discussion/group_*.md into DISCUSSION.md and re-runs score.py once | opus | 21 (+20 for part 2) | done | 00:15 | DISCUSSION.md | 01:50 |
-| 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | running | 01:50 | SYNTHESIS.md | 01:50 |
+| 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | done | 01:50 | SYNTHESIS.md + notes/23_triangulate.md | 05:35 |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | pending | | audit/CODEX_ASTRA_AUDIT.md | |
 | 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | pending | | audit/AUDIT_RESPONSE.md | |
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 15 Sep 05:35 **WS23 DONE.** `final-margin__combined` registered (1,152 rows, 4 pre-registered specs, PIT + full_sample,
+  W1/W2/LIVE); `score.py` re-run once, exit 0; `analysis/src/margin_build/23_final_model/run.py` rebuilds everything end to end
+  (exit 0, ~4 min). **PRIMARY PASS LINE MET**: `stack_clip` (six-member leave-future-out inverse-MAE blend, lambda 0.5 fixed a
+  priori, plus a zero-parameter management-sentence clip) beats `seasonal_naive` on `adj_ebitda_margin_pct` at h=0 AND h=1 in both
+  windows and both weightings -- h=0 MAE 1.126pp W1 (0.504x naive, 0.708x Street, NW(1) t -3.60 p 0.0003, better in 11 of 14,
+  sign p 0.0032) and 0.788pp W2 (0.402x, 0.601x, t -3.84 p 0.0001, 9 of 10, sign p 0.011), on 2 declared parameters (52 inherited).
+  In DOLLARS the four `final-margin` specs take the top four places at h=0 in both windows ($39.7M / $30.9M, 0.61x / 0.53x Street,
+  sign p 0.090 / 0.011) ahead of M5 flow-through's $42.8M / $33.8M. **TWO FAILURES, both reported**: the pre-registered secondary
+  test fails at h=1 (1.196x / 1.285x the raw Street) so 4Q26 is quoted from the Street, and h=2 fails in W2 (1.024x naive) so 2027
+  is a labelled scenario. Hindsight share 0.019 / -0.059. CARD: **3Q26 49.94% / $2,399M** vs Street 49.78% / $2,361.5M (80% band
+  $2,299-2,499M, conformal qhat 2.08pp on the 2024Q1+ errors, P(beat) 0.77, EPS $2.88 vs $2.845); the beat is DOLLARS, not margin
+  (at Street revenue it is worth $8M). Clip does not bind at LIVE; the bias-corrected point (50.21%) would be capped at 50.085%, so
+  both routes land 49.9-50.1%. **4Q26 28.90% / $918M (Street)**, combination 29.04%, M3 sentence path 29.90%. **FY26 35.73% /
+  $5,098M**, +0.23pp over the 35.5% floor, which breaks on a 2H26 revenue miss of only 0.63% held / 0.94% flexed ($50-75M).
+  **5 Nov sentence forecast "approximately 36%", which needs 4Q26 of 30.1% vs Street 28.9% (+$39M) -- the contestable number.**
+  **FY27 SCENARIO 34.64% / $5,483M vs Street 36.45% / $5,766M (-$283M); incremental margin 24.7% vs Street's implied 43.7%; the
+  whole gap is S&M at 23.6% of FY27 revenue.** 3Q26 line stack: S&M $790M +35% y/y, CoR $617M +12.5%, Ops $365M +6.4%, PD $382M
+  +14.8%, G&A $283M +10.0% (the weakest number: 1H26 G&A ran -5.4% y/y). Street-independent variant (no consensus input anywhere)
+  prints 49.88% and runs at 0.61-0.63x the naive. Leave-one-out: the two M5 objects are the accuracy (+0.08-0.09pp each if dropped);
+  Street, M3 and FAMILY_A are insurance and each costs 0.02-0.04pp. Workbook `model/ABNB_margin_model.xlsx` (9 sheets) opens.
+  OPEN FOR WS30/31: (1) the WS22 group C `revenue_leg_live.csv` harness patch is still unwritten -- every package's LIVE dollar row
+  except WS23's sits on the naive leg; (2) WS31b's 4Q26 profile (24.7-25.9%) contradicts this build, the Street and the guide
+  arithmetic, and is still the incumbent repo margin model; (3) there is no h=1 object with an edge and the 5 Nov trade is
+  structurally h=1 on 4Q26.
 
 - 15 Sep 01:50 WS22 done: three group files assembled into DISCUSSION.md; score.py and 20_scoreboard/run.py re-run once (exit 0). 3Q26 converges on the 50.09% ceiling (49.4-50.1%); M5 dollar flow-through, M3 allocation and M6 cost-of-revenue slope survive significance; nov_sentence_pin registered (4Q26 29.9%). WS23 triangulation launched (Opus).
 
