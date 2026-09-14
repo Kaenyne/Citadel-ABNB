@@ -55,3 +55,4 @@ Status values: `open` · `claimed` · `in-progress` · `blocked (reason)` · `do
 | D1 | Scoreboard v2 narrative; hand-off message | `05_backtests/SCOREBOARD_v2.md`, `HANDOFF_MESSAGE_2026-09-11.md` |
 | K1 | Kernel weights from the ledger; paid/unpaid/not-booked split; RNPL leakage; conditional ranges | `05_backtests/K1_KERNEL_WEIGHTS_AND_BACKLOG.md` |
 | K2 | Kernel weights from booking lead times (Melbourne STR 2014–17) | `05_backtests/K2_KERNEL_FROM_LEAD_TIMES.md` |
+| C2-daio | EUROCONTROL daio flights as an EMEA nights feature: short-window survivor (0.82 / 0.83 on 1Q23+, 1.12 / 1.19 on 1Q22+), duplicate of avia_paoc on history (r 0.99), live 3Q26 qtd75 eu40 +3.0 % vs 2Q26 +1.2 %; no EMEA harness target, nothing registered | `05_backtests/C2_eurocontrol-daio.md` |
