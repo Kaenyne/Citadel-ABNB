@@ -1,0 +1,7 @@
+2026-09-13T17:49:53Z. Corrected diagnostic run exited 0.
+Command: .venv\Scripts\python.exe analysis/src/forecast_methods/refute_b2_mechanism/run.py
+Tool wall time: 1.7810935 seconds. Script analytical elapsed: 0.2278591 seconds.
+Outputs: data/processed/forecast_methods/refute_b2_mechanism/run_20260913T174953_724563Z/
+Assertions passed: source IDs/values, roles, attribution, timestamps, S1/revision arithmetic, unique joins, guide midpoint reconciliation, executable return cells, exact proposed claim.
+Non-fatal warnings: installed pandas deprecates DataFrame.set_index(verify_integrity=True).
+No source mutation, forecast registration, scorer invocation, or frozen test run.

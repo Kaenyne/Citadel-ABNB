@@ -25,6 +25,9 @@ made of — not a revenue number.
 3. **Pre-register the pass line before running the test.** A failed test is written up, not deleted.
 4. **Register forecasts through the harness format** (`analysis/src/forecast_methods/harness/README.md`,
    FORMAT 1.0, authoritative). Re-run `harness/score.py` after every registration.
+   LIVE rows dated after 2026-09-11 and 2026Q4+ targets register through `analysis/src/forecast_methods/harness_v1_1/`
+   (FORMAT 1.1: same validator and scores for W1/W2, same registry; only the live date rule differs) — then run both scorers.
+   Point-in-time wording for guide-date vintages and morning-of-print consensus: `docs/thesis-kernel-topdown/lane2/CONVENTION.md`.
 5. **Never commit to `main`.** Branch (`<name>/<topic>`), PR, one teammate reviews (see `CONTRIBUTING.md`).
    Never commit licensed data (Bloomberg workbooks, Third Bridge PDFs, LSEG exports) or raw stores; manifests only.
 6. **Do not scrape beyond the sanctioned sources** (Inside Airbnb dumps; the fee-panel search-page capture

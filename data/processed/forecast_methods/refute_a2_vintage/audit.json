@@ -1,0 +1,32 @@
+{
+  "runtime_seconds": 16.36459690000629,
+  "exact_claim_verdict": "SURVIVED",
+  "max_point_difference_musd": 4.547473508864641e-13,
+  "max_signal_difference_pp": 2.220446049250313e-16,
+  "historical_registry_rows": 46,
+  "pit_registry_rows": 22,
+  "live_registry_rows": 2,
+  "synthetic_postclose_status": "available",
+  "synthetic_caveat": "Date normalization accepts a deliberately late same-day timestamp; no actual historical denominator has an intraday stamp.",
+  "shared_input_hashes_match_a2": {
+    "data/processed/forecast_methods/harness/calendar.csv": true,
+    "data/processed/forecast_methods/harness/targets.csv": true,
+    "data/processed/forecast_methods/L0/L0_vintage_register.csv": true,
+    "data/processed/forecast_methods/returns_v1/earnings_reactions_open_v1.csv": true,
+    "data/processed/overnight/02_kpi_panel_quarterly.csv": true,
+    "data/processed/overnight/02_guidance_cushion_series.csv": true
+  },
+  "input_sha256": {
+    "data/processed/forecast_methods/harness/calendar.csv": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "data/processed/forecast_methods/harness/targets.csv": "6b7e98b22f1064b1b79d2899790e21f45f745aefb3ebe7a1016cfb213e4ee4d2",
+    "data/processed/overnight/02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "data/processed/overnight/02_guidance_cushion_series.csv": "0140b2763604826c3b59dfde2ef90c186c8bb2c2c95de4b9e7c758eea54ce578",
+    "data/processed/forecast_methods/L0/L0_vintage_register.csv": "199904b04ee4286644b7d2c36f5f9f53f401ff2e2c4ae908ab099125f2de727d",
+    "data/processed/forecast_methods/returns_v1/earnings_reactions_open_v1.csv": "11347775f5190c3496a7533d65f55ad8738e43df94ed9494b77697589a149c02",
+    "data/processed/forecast_methods/alpha_a2/cells.csv": "dfa9af8370069e110dc9eead389ebba5efda39c78c24628ff7d4272d3b5ae615",
+    "data/processed/forecast_methods/registry/alpha-a2__guide_mid_next_q.csv": "0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0"
+  },
+  "n_params_added": 0,
+  "scorers_run": false,
+  "forecasts_registered": false
+}

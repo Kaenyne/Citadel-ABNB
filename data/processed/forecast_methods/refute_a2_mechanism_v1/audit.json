@@ -1,0 +1,17 @@
+{
+  "run_utc": "2026-09-13T17:35:00.578773+00:00",
+  "elapsed_seconds": 0.5804156999802217,
+  "input_sha256": {
+    "data/processed/forecast_methods/alpha_a2/cells.csv": "dfa9af8370069e110dc9eead389ebba5efda39c78c24628ff7d4272d3b5ae615",
+    "data/processed/forecast_methods/L0/L0_vintage_register.csv": "199904b04ee4286644b7d2c36f5f9f53f401ff2e2c4ae908ab099125f2de727d",
+    "data/processed/overnight/02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "data/processed/overnight/02_guidance_ledger.csv": "c1a2b34330dc6655c549cbe7cab66adabcaaffcffc4441c833c726714d8267f2",
+    "data/processed/forecast_methods/returns_v1/earnings_reactions_open_v1.csv": "11347775f5190c3496a7533d65f55ad8738e43df94ed9494b77697589a149c02",
+    "data/processed/forecast_methods/returns_v1/ohlc_daily.csv": "a94c35e2c70f5bc9ce4b5bd85343fed199ac1e941b94d287bb3ee7780b799286",
+    "data/processed/forecast_methods/registry/alpha-a2__guide_mid_next_q.csv": "0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0"
+  },
+  "assertions": "11 source-reconstructed signals/gaps/GBV controls agree; 22 raw 20-bar OHLC returns agree; each beta has 252 strictly pre-event days",
+  "registered_rows": 0,
+  "scorers_run": false,
+  "note": "Exploratory mechanism diagnostics only. K0 points are read from registered PIT W1 output. No re-fit of lambda."
+}

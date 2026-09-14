@@ -1,0 +1,20 @@
+{
+  "as_of": "2026-09-13",
+  "verdict": "SURVIVED",
+  "stock_max_abs_difference_pp": 1.0658141036401503e-14,
+  "q4_lambda_pct": 12.040366938470582,
+  "q4_lambda_n": 5,
+  "q4_pure_revenue_musd": 3214.7757508938016,
+  "q4_implied_gbv_share": 0.23003172028906008,
+  "q4_leakage_fraction": 0.009201268811562403,
+  "q4_stress_revenue_musd": 3185.1957350409357,
+  "q4_gross_loss_musd": 29.580015852865927,
+  "w1_historical_scenario_n": 0,
+  "w2_historical_scenario_n": 0,
+  "routing": {
+    "constant_total_fee_payer_change_uf_delta": 0.0,
+    "equation": "UF = host_fee + guest_fee; d(host_fee) = -d(guest_fee) implies d(UF) = 0",
+    "interpretation": "Pure payer migration cannot create unpaid share. Total fee yield and exposure may change."
+  },
+  "runtime_seconds": 0.20977270003641024
+}

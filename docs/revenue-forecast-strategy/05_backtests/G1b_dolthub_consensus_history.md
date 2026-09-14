@@ -223,6 +223,11 @@ Partial. `nclh_pull.py` paged `select * from sales_estimate where act_symbol='NC
 
 File: `data/processed/forecast_methods/L0_dolthub_v2/dolthub_sales_estimate_NCLH.csv`, 1,500 rows, 375 weekly snapshots, 2017-10-27 to 2025-02-02, four slots per snapshot, no duplicate (date, period) keys, no missing consensus, 16 gaps longer than a week (max 14 days). Missing: every snapshot after 2025-02-02 (about 85 Sundays, roughly 340 rows) which covers the 2025 and 2026 NCLH guides WP-E1 will want most. Pull log: `dolthub_sales_estimate_NCLH.pull_log.json`. Not appended to the register (ABNB-only). To finish: re-run the same query at offsets 1500 and 2000 after the rate limit clears (an hour was enough for the catalogue lane), or run `nclh_pull.py` with its start offset changed to 1500; the file is safe to overwrite since it is a plain pull, not a register.
 
+
+### Merge note (14 Sep 2026, after Lane 2 landed on main)
+
+Codex Lane 2 (PR #55, merged to main on 13 Sep) appended 10 rows of its own to the register (Yahoo and S&P Global `current` stamps dated 2026-09-13T15:20Z to 15:23Z, register 161 to 172 rows). Merging main into this branch conflicted on the append-only tail; resolution: take main's 172-row file and re-run `run.py --append` (idempotent, dedupes on register_id), giving 1,331 rows, 0 duplicate ids, 20 of 20 frozen tests passing, all hard-rule checks holding, and main's file a byte prefix of the merged file. The 2026-09-14 backup predates Lane 2's rows; the byte-identical-prefix invariant now holds against main's version rather than the backup.
+
 ## What failed or could not be done, and why
 
 1. T0 attempt 1 returned zero AS OF rows for all three snapshots: the query took the first commit of the day, which is the `rank_score` commit that precedes the `sales_estimate` commit by seconds. Written up as inconclusive above; attempt 2 located commits by message and passed. Both JSON logs are kept.

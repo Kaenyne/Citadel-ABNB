@@ -1,0 +1,7 @@
+window,rule,sample,n,alarms,rate
+W1,K0 chronological plus/minus 2sd,pre_RNPL_empirical_false_alarm,2,1,0.5
+W1,K0 chronological plus/minus 2sd,all_history_alarm_not_known_false,6,1,0.16666666666666666
+W2,K0 chronological plus/minus 2sd,pre_RNPL_empirical_false_alarm,2,1,0.5
+W2,K0 chronological plus/minus 2sd,all_history_alarm_not_known_false,6,1,0.16666666666666666
+descriptive,fixed Q3 card warn_or_escalate below 17.09,retrospective_same_cells_helped_set_thresholds,3,0,0.0
+descriptive,fixed Q3 card escalate below 16.93,retrospective_same_cells_helped_set_thresholds,3,0,0.0

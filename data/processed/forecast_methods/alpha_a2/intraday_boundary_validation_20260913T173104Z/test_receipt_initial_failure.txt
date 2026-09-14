@@ -1,0 +1,338 @@
+FFFFFFFFFF..                                                             [100%]
+================================== FAILURES ===================================
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T23:59:00-2025-02-13-ambiguous_intraday_timezone] _
+
+stamp = '2025-02-13T23:59:00', date = '2025-02-13'
+expected = 'ambiguous_intraday_timezone'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+        _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+>       assert reason == expected
+E       AssertionError: assert 'available' == 'ambiguous_intraday_timezone'
+E         
+E         - ambiguous_intraday_timezone
+E         + available
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:165: AssertionError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T09:00:00-2025-02-13-ambiguous_intraday_timezone] _
+
+stamp = '2025-02-13T09:00:00', date = '2025-02-13'
+expected = 'ambiguous_intraday_timezone'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+        _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+>       assert reason == expected
+E       AssertionError: assert 'available' == 'ambiguous_intraday_timezone'
+E         
+E         - ambiguous_intraday_timezone
+E         + available
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:165: AssertionError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T15:59:59-05:00-2025-02-13-available] _
+
+stamp = '2025-02-13T15:59:59-05:00', date = '2025-02-13', expected = 'available'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T16:00:00-05:00-2025-02-13-timestamp_at_or_after_market_close] _
+
+stamp = '2025-02-13T16:00:00-05:00', date = '2025-02-13'
+expected = 'timestamp_at_or_after_market_close'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T23:59:00-05:00-2025-02-13-timestamp_at_or_after_market_close] _
+
+stamp = '2025-02-13T23:59:00-05:00', date = '2025-02-13'
+expected = 'timestamp_at_or_after_market_close'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T20:59:59Z-2025-02-13-available] _
+
+stamp = '2025-02-13T20:59:59Z', date = '2025-02-13', expected = 'available'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T21:00:00Z-2025-02-13-timestamp_at_or_after_market_close] _
+
+stamp = '2025-02-13T21:00:00Z', date = '2025-02-13'
+expected = 'timestamp_at_or_after_market_close'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-05-01T19:59:59Z-2025-05-01-available] _
+
+stamp = '2025-05-01T19:59:59Z', date = '2025-05-01', expected = 'available'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-05-01T20:00:00Z-2025-05-01-timestamp_at_or_after_market_close] _
+
+stamp = '2025-05-01T20:00:00Z', date = '2025-05-01'
+expected = 'timestamp_at_or_after_market_close'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+_ test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-14T05:59:59+09:00-2025-02-13-available] _
+
+stamp = '2025-02-14T05:59:59+09:00', date = '2025-02-13', expected = 'available'
+
+    @pytest.mark.parametrize("stamp,date,expected", [
+        ("2025-02-13T23:59:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T09:00:00", "2025-02-13", "ambiguous_intraday_timezone"),
+        ("2025-02-13T15:59:59-05:00", "2025-02-13", "available"),
+        ("2025-02-13T16:00:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T23:59:00-05:00", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-02-13T20:59:59Z", "2025-02-13", "available"),
+        ("2025-02-13T21:00:00Z", "2025-02-13", "timestamp_at_or_after_market_close"),
+        ("2025-05-01T19:59:59Z", "2025-05-01", "available"),
+        ("2025-05-01T20:00:00Z", "2025-05-01", "timestamp_at_or_after_market_close"),
+        ("2025-02-14T05:59:59+09:00", "2025-02-13", "available"),
+        ("2025-02-13", "2025-02-13", "available"),
+        ("2025-02-14", "2025-02-13", "timestamp_after_origin"),
+    ])
+    def test_historical_intraday_boundary_requires_zone_and_preclose(stamp, date, expected):
+>       _, reason = a.valid_consensus(register_row(as_of_timestamp=stamp), "2024Q1", date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+analysis\src\forecast_methods\alpha_a2\tests\test_a2.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+analysis\src\forecast_methods\alpha_a2\run.py:59: in valid_consensus
+    if row.stamp.normalize() > pd.Timestamp(date).normalize():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   ???
+E   TypeError: Cannot compare tz-naive and tz-aware timestamps
+
+pandas/_libs/tslibs/timestamps.pyx:502: TypeError
+=========================== short test summary info ===========================
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T23:59:00-2025-02-13-ambiguous_intraday_timezone]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T09:00:00-2025-02-13-ambiguous_intraday_timezone]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T15:59:59-05:00-2025-02-13-available]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T16:00:00-05:00-2025-02-13-timestamp_at_or_after_market_close]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T23:59:00-05:00-2025-02-13-timestamp_at_or_after_market_close]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T20:59:59Z-2025-02-13-available]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-13T21:00:00Z-2025-02-13-timestamp_at_or_after_market_close]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-05-01T19:59:59Z-2025-05-01-available]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-05-01T20:00:00Z-2025-05-01-timestamp_at_or_after_market_close]
+FAILED analysis/src/forecast_methods/alpha_a2/tests/test_a2.py::test_historical_intraday_boundary_requires_zone_and_preclose[2025-02-14T05:59:59+09:00-2025-02-13-available]
+10 failed, 2 passed, 16 deselected in 1.74s

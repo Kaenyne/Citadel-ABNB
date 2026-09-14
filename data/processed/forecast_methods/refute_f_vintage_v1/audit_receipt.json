@@ -1,0 +1,41 @@
+{
+  "audit_date": "2026-09-13",
+  "audit_basis": "independent arithmetic; no package run functions imported",
+  "max_stock_error_musd": 9.094947017729282e-13,
+  "max_excess_error_pp": 2.220446049250313e-14,
+  "endpoints": [
+    {
+      "quarter": "2025Q4",
+      "norm_n": 3,
+      "excess_unpaid_pp": 1.9691138259797347
+    },
+    {
+      "quarter": "2026Q1",
+      "norm_n": 4,
+      "excess_unpaid_pp": 8.047784019288601
+    },
+    {
+      "quarter": "2026Q2",
+      "norm_n": 4,
+      "excess_unpaid_pp": 9.705898803719625
+    }
+  ],
+  "future_denominator_max_share_error": 2.220446049250313e-16,
+  "lambda_variant": "ewm",
+  "lambda_q4_pct": 12.040366938470585,
+  "lambda_q4_training_n": 5,
+  "q3_declared_conditional_adr_usd": 180.14452661192303,
+  "q3_nights_m": 146.82639999999998,
+  "q3_gbv_musd": 26449.97232213285,
+  "q4_base_musd": 26699.981548088566,
+  "q4_pure_revenue_musd": 3214.7757508938025,
+  "q4_gbv_share": 0.23003172028906008,
+  "q4_gross_leakage": 0.009201268811562403,
+  "q4_stress_revenue_musd": 3185.1957350409366,
+  "live_registry_n": 12,
+  "historical_W1_n": 0,
+  "historical_W2_n": 0,
+  "stress_difference_musd": 29.580015852865927,
+  "elapsed_seconds": 0.19099639996420592,
+  "result": "ARITHMETIC_AND_LIVE_VINTAGES_PASS"
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "series": "ntto",
+    "url": "https://www.trade.gov/sites/default/files/2024-06/Monthly%20Arrivals%202000%20to%20Present%20%E2%80%93%20Country%20of%20Residence%20%28COR%29_1.xlsx",
+    "retrieved_at": "2026-09-13T00:29:50.630434+00:00",
+    "vintage_basis": "current_revised_download; not historical release",
+    "raw_retained": false,
+    "http_status": 200,
+    "bytes": 1473973,
+    "sha256": "5d8691b5d7254740ccd87f4ac4c807f4277b37e45205b00ef8550494bc92a2e4",
+    "coverage": "All source countries to US; arrivals by country of residence; aggregate proxy excludes domestic and non-US NA",
+    "normalized_rows": 66
+  },
+  {
+    "series": "jnto",
+    "url": "https://www.jnto.go.jp/statistics/data/_files/20260819_1615-5.xlsx",
+    "retrieved_at": "2026-09-13T00:29:50.630434+00:00",
+    "vintage_basis": "current_revised_download; not historical release",
+    "raw_retained": false,
+    "http_status": 200,
+    "bytes": 445006,
+    "sha256": "6cc4fadb0f32536d0365c49cb4ad8bfc0f493de06a5560beeffa43e4332435ce",
+    "coverage": "Japan inbound all origins; excludes domestic Japan and rest of APAC",
+    "normalized_rows": 67
+  },
+  {
+    "series": "datatur",
+    "url": "https://datatur.sectur.gob.mx/Documentoscompartidos/cuentaviajeros/BD_CuentaViajeros_descarga.zip",
+    "retrieved_at": "2026-09-13T00:29:50.630434+00:00",
+    "vintage_basis": "current_revised_download; not historical release",
+    "raw_retained": false,
+    "http_status": 200,
+    "bytes": 110881,
+    "sha256": "72da29777d809bb19cbe9d9a453be6b4b286ea15a53e3bb00737083edabfdfbb",
+    "tipo_values": [
+      "Egresos",
+      "Ingresos"
+    ],
+    "rejected_reason": "Downloaded Cuenta de Viajeros workbook reports monetary receipts/expenses; no verified count-unit series admitted",
+    "normalized_rows": 0
+  },
+  {
+    "series": "eurostat_ES",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tour_occ_nim?lang=en&geo=ES&unit=NR&c_resid=FOR&nace_r2=I551-I553&sinceTimePeriod=2021-01",
+    "retrieved_at": "2026-09-13T00:29:50.630434+00:00",
+    "vintage_basis": "current_revised_download; not historical release",
+    "raw_retained": false,
+    "http_status": 200,
+    "bytes": 5971,
+    "sha256": "754f3c70f69744d6c36f23cb6c48f93f3a9064cb65454c5c715da12a06535681",
+    "api_updated": "2026-09-11T23:00:00+0200",
+    "coverage": "Nonresident accommodation nights; destination-specific proxy, not ABNB bookings or visitor arrivals",
+    "normalized_rows": 66
+  },
+  {
+    "series": "eurostat_FR",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tour_occ_nim?lang=en&geo=FR&unit=NR&c_resid=FOR&nace_r2=I551-I553&sinceTimePeriod=2021-01",
+    "retrieved_at": "2026-09-13T00:29:50.630434+00:00",
+    "vintage_basis": "current_revised_download; not historical release",
+    "raw_retained": false,
+    "http_status": 200,
+    "bytes": 6009,
+    "sha256": "1a514ef68e202d375dc7749dff4ea8e2350d291b9dd9a71cd9754d8a07d4a952",
+    "api_updated": "2026-09-11T23:00:00+0200",
+    "coverage": "Nonresident accommodation nights; destination-specific proxy, not ABNB bookings or visitor arrivals",
+    "normalized_rows": 66
+  },
+  {
+    "series": "eurostat_IT",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tour_occ_nim?lang=en&geo=IT&unit=NR&c_resid=FOR&nace_r2=I551-I553&sinceTimePeriod=2021-01",
+    "retrieved_at": "2026-09-13T00:29:50.630434+00:00",
+    "vintage_basis": "current_revised_download; not historical release",
+    "raw_retained": false,
+    "http_status": 200,
+    "bytes": 5954,
+    "sha256": "53d3a7d1bd881359b4fbe8c994d252b42e94b083f31c51266f2f8533dcb35d5c",
+    "api_updated": "2026-09-11T23:00:00+0200",
+    "coverage": "Nonresident accommodation nights; destination-specific proxy, not ABNB bookings or visitor arrivals",
+    "normalized_rows": 66
+  },
+  {
+    "series": "eurostat_DE",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tour_occ_nim?lang=en&geo=DE&unit=NR&c_resid=FOR&nace_r2=I551-I553&sinceTimePeriod=2021-01",
+    "retrieved_at": "2026-09-13T00:29:50.630434+00:00",
+    "vintage_basis": "current_revised_download; not historical release",
+    "raw_retained": false,
+    "http_status": 200,
+    "bytes": 5914,
+    "sha256": "d2af07ddf19dd9eddd2e85a4c6c76509896392b84605d305455e420a4ab94c3a",
+    "api_updated": "2026-09-11T23:00:00+0200",
+    "coverage": "Nonresident accommodation nights; destination-specific proxy, not ABNB bookings or visitor arrivals",
+    "normalized_rows": 66
+  },
+  {
+    "series": "Australia_ABS",
+    "url": "https://www.abs.gov.au/statistics/industry/tourism-and-transport/overseas-arrivals-and-departures-australia",
+    "normalized_rows": 0,
+    "rejected_reason": "Not pulled; JNTO is not treated as a full APAC proxy"
+  },
+  {
+    "series": "Brazil",
+    "url": "https://www.gov.br/turismo/pt-br/assuntos/dados-e-fatos",
+    "normalized_rows": 0,
+    "rejected_reason": "No dated monthly count series integrated in this run; Latin America remains without an arrivals coefficient"
+  }
+]
