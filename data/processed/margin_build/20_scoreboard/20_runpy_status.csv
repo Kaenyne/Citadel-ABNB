@@ -1,0 +1,20 @@
+sequence,package,script,exit_code,runtime_s,started_utc,log
+WS20 relaunch (concurrent with the stalled first WS20 shell),10_harness_margin,analysis/src/margin_build/10_harness_margin/run.py,0.0,81.0,2026-09-14T03:38:08Z,log_10_harness_margin.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),M1_driver_lines,analysis/src/margin_build/M1_driver_lines/run.py,127.0,20.0,2026-09-14T03:39:29Z,log_M1_driver_lines.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),M2_margin_ts,analysis/src/margin_build/M2_margin_ts/run.py,0.0,94.0,2026-09-14T03:39:50Z,log_M2_margin_ts.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),M3_guide_policy_margin,analysis/src/margin_build/M3_guide_policy_margin/run.py,0.0,11.0,2026-09-14T03:41:24Z,log_M3_guide_policy_margin.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),M4_alt_augmented,analysis/src/margin_build/M4_alt_augmented/run.py,0.0,159.0,2026-09-14T03:41:35Z,log_M4_alt_augmented.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),M5_street_bias,analysis/src/margin_build/M5_street_bias/run.py,0.0,33.0,2026-09-14T03:44:14Z,log_M5_street_bias.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),M6_cycle_flex,analysis/src/margin_build/M6_cycle_flex/run.py,0.0,199.0,2026-09-14T03:44:47Z,log_M6_cycle_flex.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),M7_below_ebitda,analysis/src/margin_build/M7_below_ebitda/run.py,0.0,175.0,2026-09-14T03:48:06Z,log_M7_below_ebitda.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),score,analysis/src/margin_build/10_harness_margin/score.py,0.0,83.0,2026-09-14T03:51:01Z,log_score.txt
+WS20 relaunch (concurrent with the stalled first WS20 shell),DONE_ALL,,,,,
+first WS20 shell (still running when the relaunch started),10_harness_margin,analysis/src/margin_build/10_harness_margin/run.py,0.0,2531.0,,
+first WS20 shell (still running when the relaunch started),M1_driver_lines,analysis/src/margin_build/M1_driver_lines/run.py,0.0,69.0,,
+first WS20 shell (still running when the relaunch started),M2_margin_ts,analysis/src/margin_build/M2_margin_ts/run.py,0.0,93.0,,
+first WS20 shell (still running when the relaunch started),M3_guide_policy_margin,analysis/src/margin_build/M3_guide_policy_margin/run.py,0.0,14.0,,
+first WS20 shell (still running when the relaunch started),M4_alt_augmented,analysis/src/margin_build/M4_alt_augmented/run.py,0.0,144.0,,
+first WS20 shell (still running when the relaunch started),M5_street_bias,analysis/src/margin_build/M5_street_bias/run.py,0.0,35.0,,
+first WS20 shell (still running when the relaunch started),M6_cycle_flex,analysis/src/margin_build/M6_cycle_flex/run.py,0.0,147.0,,
+first WS20 shell (still running when the relaunch started),M7_below_ebitda,analysis/src/margin_build/M7_below_ebitda/run.py,0.0,226.0,,
+"WS20 final, alone, from clean",score,analysis/src/margin_build/10_harness_margin/score.py,0.0,141.0,2026-09-14T03:56Z,score_clean_final.log

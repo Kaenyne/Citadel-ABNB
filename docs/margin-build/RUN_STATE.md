@@ -47,7 +47,7 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | M5 | Consensus-anchored model: Street EBITDA at guide date + systematic bias and revenue-surprise flow-through | opus | 10, 03 | done | 22:30 | notes/M5_street_bias.md | 23:55 |
 | M6 | Cycle and cost-flex model: cost response to growth deceleration; scenario engine over bear/base/bull revenue paths | opus | 10, 06v | done | 05:35 | notes/M6_cycle_flex.md | 15:05 |
 | M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | opus | 10 | done | 05:15 | notes/M7_below_ebitda.md | 15:05 |
-| 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | running (relaunched 23:20 after a stream stall) | 23:00 | notes/20_scoreboard.md | 23:20 |
+| 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | done | 23:00 | notes/20_scoreboard.md | 00:35 |
 | 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | done | 22:30 | notes/21_red_team.md | 23:55 |
 | 22 | Discussion round: three Opus agents (A: M1/M4/M6, B: M2/M3, C: M5/M7/10) answer the red team now and the scoreboard when it lands; orchestrator concatenates discussion/group_*.md into DISCUSSION.md and re-runs score.py once | opus | 21 (+20 for part 2) | running | 00:15 | DISCUSSION.md | 00:15 |
 | 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | pending | | SYNTHESIS.md | |
@@ -56,6 +56,33 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 00:35 WS20 DONE (relaunch). All seven method `run.py` plus the harness rebuild exit 0 (runtimes 11-226 s;
+  `data/processed/margin_build/20_scoreboard/20_runpy_status.csv`); `score.py` re-run alone from clean, exit 0, 141 s.
+  **Incident:** the first WS20 session's shell was still alive and running the same sequence, so two ran concurrently
+  for ~12 min; in the relaunch sequence `M1_driver_lines/run.py` returned exit 127 where it shells out to `score.py`
+  (a collision, not an M1 defect - the other sequence's M1 returned 0 and M1's registry files are intact). Every table
+  was rebuilt from the clean re-score. **Lesson for the run: method packages invoke `score.py` internally, so two
+  agents must never run method packages at the same time.**
+  Results: M5 `dispersion_conditioned` is first in all four h=0 margin cells (W1 1.33 eq / 0.82 rw; **W2 0.74 / 0.62**
+  vs Street 1.59 / 1.31 - ratios 0.57-0.67) and is the only family that beats Street at h=0; at h=1 **nothing beats
+  the raw Street**; at h=2 nothing survives both windows on the margin. Error correlations say there are only ~3
+  independent views (M1/M4/M6/M2-SARIMA r 0.93-1.00; M5 family r 0.85-0.92; M3 r 0.02-0.20 against everything).
+  M4's warning CONFIRMED: 11 of 25 line-level objects that beat the naive on the lines are at or worse than naive on
+  the margin, and the best-lines object (M4 `best1_rw`, 0.549x) is 1.101x naive on the margin. Registered quantiles
+  are unusable (mean 80% coverage 0.91-1.00 vs nominal 0.80). **Recommended to WS23 (leave-future-out):** 60% M5
+  `dispersion_conditioned|rw_hl4_med` + 20% M3 `actual_given_guide|rw_hl4_pin` + 20% driver family, MAE 0.99pp full /
+  1.10 first half / 0.88 second half, beating Street in every split (0.76 / 0.70 / 0.84x). LIVE 3Q26 combination
+  **50.39%**, method median 50.19% / $2,406M vs LSEG 49.78% / $2,361.5M; 4Q26 methods 28.64% vs Street 28.90%;
+  FY27 methods $5,566M vs Street $5,766M (-3.5%). Two items need an owner: the LIVE revenue leg for 4Q26/FY27 is the
+  harness naive rule ($75M above bridge v3 for 4Q26, +5.6% vs Street for FY27), and WS31b's 4Q26 margin profile
+  (24.7-25.9%) contradicts every method and the Street. 13 numbered open questions for WS22 in section 11 of the note.
+- 14 Sep 00:10 WS20 caveat: the WS22 discussion round started re-registering methods (M3 23:54, M1 23:55, M2 23:56,
+  M4 00:01, M6 00:03) while WS20 was writing up. The WS20 board reflects the registry as scored at 03:55 UTC. M1
+  dropping `e_revknown_rw` and M4 adding the knowable-from gate are exactly what WS20 section 0 rule 2 and open
+  question 13 asked for, and WS20 excluded every oracle spec from every ranking already, so no conclusion changes.
+  **After WS22 finishes, refresh the board with `py -3.13 analysis/src/margin_build/10_harness_margin/score.py`
+  then `py -3.13 analysis/src/margin_build/20_scoreboard/run.py` (~60 s, exit 0) with no method package running.**
 
 - 15 Sep 00:15 WS21 red team done and committed (890afeb): 27 findings (2 critical, 14 major), all PIT rules pass mechanically, but survives_both_windows is ~30% free and only M5's dollar flow-through beats the Street at p<0.05. Discussion round launched early as three Opus agents (prompt 22_discussion.md) so it overlaps WS20; original method agents are not addressable after the session change.
 

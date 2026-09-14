@@ -2,8 +2,8 @@
 
 Pre-registered ranking rules (fixed before reading any table, see note section 2):
   R1 PIT replay only.
-  R2 Oracle specs (spec_id containing 'revknown' / 'nightsknown') are DIAGNOSTIC, not
-     forecasts: they substitute the realised revenue / nights. Excluded from headline
+  R2 Oracle specs (spec_id containing 'revknown' / 'nightsknown' / 'ebitda_known') are DIAGNOSTIC, not
+     forecasts: they substitute the realised revenue / nights / EBITDA. Excluded from headline
      rankings, reported separately.
   R3 Minimum n: 8 in W1, 6 in W2. Thinner cells are listed as 'thin' and never ranked.
   R4 Rank on MAE. Ties broken by n_params (fewer wins).
@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[4]
 OUT = ROOT / "data" / "processed" / "margin_build" / "20_scoreboard"
 DOCS = ROOT / "docs" / "margin-build" / "notes"
 
-ORACLE = "revknown|nightsknown"
+ORACLE = "revknown|nightsknown|ebitda_known"
 MIN_N = {"W1": 8, "W2": 6}
 LINES = ["cor_cash_musd", "ops_cash_musd", "pd_cash_musd", "sm_cash_musd",
          "ga_cash_ex_reserves_musd", "total_cash_costs_musd"]
