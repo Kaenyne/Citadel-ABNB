@@ -47,8 +47,8 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | M5 | Consensus-anchored model: Street EBITDA at guide date + systematic bias and revenue-surprise flow-through | opus | 10, 03 | done | 22:30 | notes/M5_street_bias.md | 23:55 |
 | M6 | Cycle and cost-flex model: cost response to growth deceleration; scenario engine over bear/base/bull revenue paths | opus | 10, 06v | done | 05:35 | notes/M6_cycle_flex.md | 15:05 |
 | M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | opus | 10 | done | 05:15 | notes/M7_below_ebitda.md | 15:05 |
-| 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | pending | | notes/20_scoreboard.md | |
-| 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | running (M5 concurrent; audits it last) | 22:30 | notes/21_red_team.md | 22:30 |
+| 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | running (relaunched 23:20 after a stream stall) | 23:00 | notes/20_scoreboard.md | 23:20 |
+| 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | done | 22:30 | notes/21_red_team.md | 23:55 |
 | 22 | Discussion round: orchestrator sends 20+21 to each method agent for rebuttal/adjustment; collected in DISCUSSION.md | orchestrator | 20, 21 | pending | | DISCUSSION.md | |
 | 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | pending | | SYNTHESIS.md | |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | pending | | audit/CODEX_ASTRA_AUDIT.md | |
@@ -56,6 +56,32 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 23:55 WS21 red team DONE (M1-M7 + M5 + harness; 10 reproducible checks under
+  `analysis/src/margin_build/21_red_team/checks/`, `run.py` exit 0 in ~50 s; 27 findings in
+  `data/processed/margin_build/21_red_team/21_findings.csv`: 2 critical, 14 major, 7 minor, 4 pass, 14 affect ranking).
+  PASSES: all 8 mechanical PIT rules clean on 32 registry files / 87,628 rows (no input dated after its vintage, no
+  street_as_of after its vintage, no already-printed quarter, no window or horizon mismatch); no kill-list number, no
+  "close to known", no licensed row in a tracked path; full `run.py` replay of 10/M1/M2/M3/M4/M6/M7 + score.py all exit 0
+  with 7 of 181 processed files changed, all of them build-stamp JSONs or the scoreboard M5 grew.
+  CRITICAL: `survives_both_windows` is ~30% free at n 14/10 (sign-flip null 22.1 expected survivors vs 25 observed,
+  P 0.39) and NO method built from ABNB's own history beats seasonal naive on margin at any conventional level
+  (largest W1 |t| 0.83; all 9 significant cell-windows are W2-only and 7 of them are M5).
+  MAJOR: 7 oracle specs (`*revknown*`, `*nightsknown*`) registered as prior_basis=PIT and one of them tops the survivor
+  table; M1 `d_steps_rw` uses WS04 step dummies without the knowable_from gate at 7 of 14 W1 vintages (real PIT break);
+  M3's two passing specs are post-hoc on its own pre-registration text and its W1 win is entirely 2023Q4; M2's sentence
+  rule direction flips only 3 times in W1; intervals OVER-cover (mean cov80 0.95 vs 0.80) so M7's tax under-coverage
+  claim is withdrawn; M1/M4/M6 put 3Q26 at 51.2-51.6% against a 50.09% ceiling sentence; M3's registered LIVE 4Q26
+  34.51% is above every historical Q4. M5 AUDITED: its $ flow-through object is the one result in the run that
+  survives an adversarial test (W2 ratio 0.581 vs Street, t -2.71 p 0.007, 9/10 quarters; W1 11/14, sign p 0.029),
+  its margin claim does not (t -0.57 / -1.46), its dispersion regression is p 0.005 only on the sample its own
+  pre-registration excludes (p 0.052 on 2022Q1+), and its LIVE +0.41pt 3Q26 beat is the 0.5 clip floor, which binds in
+  21 of 39 backtest vintages. A 9-item kill-list addendum is proposed at the end of the note. WS20 and WS22 should read
+  the note's RESUME section first.
+
+- 14 Sep 23:20 WS20 first launch stalled (stream watchdog, no output on disk); relaunched on Opus with RESUME prefix.
+
+- 14 Sep 23:00 M5 committed; first method to beat Street at h=0 (dispersion_conditioned 1.33/0.74pp vs 1.59/1.31; flowthrough $43/$34M vs $65/$58M); h=1 fails; 3Q26 $2,412M / 50.19%, P(beat) 0.64; quantiles unusable. WS20 scoreboard launched (Opus).
 
 - 14 Sep 23:55 M5 done (street-bias: three objects `street_plus_bias`, `street_plus_flowthrough`, `dispersion_conditioned`,
   6 specs x 2 replays each, 1,296 rows per object registered; scorer re-run, 288 scoreboard rows; run.py exit 0).

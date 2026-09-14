@@ -35,6 +35,7 @@ CHECKS = [
     ("check_07_survivor_placebo.py", "sign-flip null for survives_both_windows"),
     ("check_08_reproducibility_inputs.py", "can each run.py rebuild from a clean checkout"),
     ("check_09_m1_step_dummy_leak.py", "M1 d_steps_rw step dummies are not gated by knowable_from"),
+    ("check_10_m5_street_bias.py", "M5: is the Street beat distinguishable, and what drives the LIVE call"),
 ]
 
 

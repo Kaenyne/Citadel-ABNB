@@ -1,0 +1,11 @@
+check,exit_code,seconds,what
+check_01_registry_pit_rules.py,0,2.3,"mechanical PIT rules over every registry file"
+check_02_skill_significance.py,0,22.7,"paired-loss significance of every margin survivor"
+check_03_sentence_rule_information.py,0,1.4,"information in M2's sentence rule; where M3's pin win comes from"
+check_04_killlist_and_licence.py,0,7.5,"kill-list phrases, banned language, licensed-data exposure"
+check_05_live_coherence.py,0,1.4,"economic sense of the LIVE margin paths"
+check_06_lines_vs_margin_and_coverage.py,0,2.0,"line claims re-scored on the margin; interval calibration"
+check_07_survivor_placebo.py,0,9.8,"sign-flip null for survives_both_windows"
+check_08_reproducibility_inputs.py,0,0.3,"can each run.py rebuild from a clean checkout"
+check_09_m1_step_dummy_leak.py,0,0.9,"M1 d_steps_rw step dummies are not gated by knowable_from"
+check_10_m5_street_bias.py,0,2.4,"M5: is the Street beat distinguishable, and what drives the LIVE call"

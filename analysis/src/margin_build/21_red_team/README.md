@@ -8,7 +8,7 @@ registry, the scoreboard and the method code and writes findings.
 
 ```
 cd "C:\Users\krish\citadel-abnb-margins"
-py -3.13 analysis/src/margin_build/21_red_team/run.py            # all nine checks, ~3 min, exit 0
+py -3.13 analysis/src/margin_build/21_red_team/run.py            # all ten checks, ~50 s, exit 0
 py -3.13 analysis/src/margin_build/21_red_team/checks/check_07_survivor_placebo.py   # any check alone
 ```
 
@@ -29,6 +29,7 @@ methods were in when they were audited rather than against a later re-score.
 | `check_07_survivor_placebo.py` | sign-flip null distribution of the number of `survives_both_windows` cells — how free the flag is |
 | `check_08_reproducibility_inputs.py` | which packages' `run.py` depend on gitignored raw inputs with no re-pull fallback |
 | `check_09_m1_step_dummy_leak.py` | the vintages at which M1's `d_steps_rw` uses a step dummy that was not yet knowable |
+| `check_10_m5_street_bias.py` | M5 vs the raw Street baseline with paired tests; the dispersion regression on both samples; how often the dispersion clip binds |
 
 ## Outputs
 
