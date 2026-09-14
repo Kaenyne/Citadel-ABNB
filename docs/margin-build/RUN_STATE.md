@@ -51,11 +51,15 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | done | 22:30 | notes/21_red_team.md | 23:55 |
 | 22 | Discussion round: three Opus agents (A: M1/M4/M6, B: M2/M3, C: M5/M7/10) answer the red team now and the scoreboard when it lands; orchestrator concatenates discussion/group_*.md into DISCUSSION.md and re-runs score.py once | opus | 21 (+20 for part 2) | done | 00:15 | DISCUSSION.md | 01:50 |
 | 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | done | 01:50 | SYNTHESIS.md + notes/23_triangulate.md | 05:35 |
-| 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | pending | | audit/CODEX_ASTRA_AUDIT.md | |
-| 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | pending | | audit/AUDIT_RESPONSE.md | |
+| 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | done | 02:30 | audit/CODEX_ASTRA_AUDIT.md | 02:55 |
+| 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | running | 02:55 | audit/AUDIT_RESPONSE.md | 02:55 |
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 15 Sep 02:55 Codex astra audit done (18 findings: 1 critical = h=1/h=2 calibration pools not print-date gated, h=0 unchanged; 12 major incl. cost stack not summing on display, add-back mismatch between cost and GAAP bridges, P(beat) 77% from a different object than the band (68.5% band-consistent), scenario P&L at constant margin, EPS bands EBITDA-only, FCF not re-derived from NI, consensus provenance missing in the final registry, n_params/n_train semantics, post-selection overstatement, 'attained coverage' wording, floor treated as a point, 'no cost dial' overclaim; 5 minor). Verdict: not ready to quote until fixed; h=0 point reproduces. WS31 apply-audit launched (Opus).
+
+- 15 Sep 02:30 WS23 committed (final-margin__combined stack_clip 1.126/0.788pp h=0, p 0.0003/0.0001; h=1 fails vs Street; 3Q26 49.94%/$2,399M P(beat) 0.77; FY26 35.73%; 5 Nov 'approximately 36%'; FY27 34.64% vs Street 36.45%). Codex astra audit launched (stage 30, read-only, background).
 
 - 15 Sep 05:35 **WS23 DONE.** `final-margin__combined` registered (1,152 rows, 4 pre-registered specs, PIT + full_sample,
   W1/W2/LIVE); `score.py` re-run once, exit 0; `analysis/src/margin_build/23_final_model/run.py` rebuilds everything end to end
