@@ -53,9 +53,31 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | done | 01:50 | SYNTHESIS.md + notes/23_triangulate.md | 05:35 |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | done | 02:30 | audit/CODEX_ASTRA_AUDIT.md | 02:55 |
 | 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | done | 02:55 | audit/AUDIT_RESPONSE.md | 05:55 |
-| 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
+| 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | done (agent part; commit/push/PR remain with the orchestrator) | 03:55 | MORNING_REPORT.md | 05:20 |
 
 ## Log
+
+- 15 Sep 05:20 **WS32 DONE (agent part).** Four deliverables written, no code run, no registry touched, no git command issued.
+  (1) `docs/margin-build/MORNING_REPORT.md` — the ten-minute report, sections (a)-(j): the view in eight lines, the model in one
+  paragraph, the h=0/h=1/h=2 backtest table for both objects and both windows with p-values and quarters-better, the alt-data
+  verdict, cyclicality, the 5 Nov card and the budget identity, the audit disposition, a reading order, **eight numbered decisions
+  for Krish**, and a run log naming the two usage-limit pauses, the Fable limit, the WS20 stall, the switch to Opus and the one real
+  incident (two WS20 sessions running method packages concurrently). (2) `docs/explainers/margin_build_2026-09-14.html` — the
+  shareable page in house style (self-contained, inline CSS, light/dark via prefers-color-scheme, phone-width, **five static inline
+  SVG charts** drawn from the CSVs: the 2022-27 margin path, 3Q26 line growth, S&M share of revenue, h=0 MAE against both baselines,
+  and the macro-sensitivity bars; no scripts, no matplotlib). (3) `docs/revenue-forecast-strategy/WORKBOARD.md` — 22 new rows under a
+  "Margin build run" heading plus a "Done (14 Sep 2026)" block of 12 results; **appended only, existing rows byte-identical (diffed
+  against a copy taken before the append)**. (4) `docs/margin-build/notes/README.md` — the file map: every note, script folder, data
+  folder, manifest, figure set and the workbook, one line each, plus the reading order and four rules for the next agent.
+  Every number in all four files was read from a named CSV. **One stale number found while writing, not in the audit:**
+  `SYNTHESIS.md` §3 still says FY27 S&M is $3,740M / 23.6% of revenue; the post-audit `23_lines_quarterly.csv` says **$3,721M /
+  23.5%** (the finding-03 add-back fix lowered every forecast S&M quarter and that sentence was not re-derived). The argument is
+  unchanged - FY25 19.4% -> FY26 21.4% -> FY27 23.5% - but quote the CSV. Logged in the morning report §g, in the WORKBOARD open
+  items and in the RESUME. **Remaining for the orchestrator: `git add` the margin_build folders plus `docs/explainers/` and
+  `docs/revenue-forecast-strategy/WORKBOARD.md`, verify nothing licensed is staged, commit, push, open the draft PR, publish the
+  artifact.**
+
+- 15 Sep 03:55 WS31 committed (all 18 findings accepted, 17 fixed, 16b deferred; h=0 unchanged; adopted dollar object registered: $30.7M/$25.8M MAE, 14/14 and 10/10 vs Street; band $2,337-2,462M, P(beat) 0.779; S&M 3Q26 $781M +33.5%; FY27 bear/bull 32.15/36.53%). WS32 morning report launched (Opus).
 
 - 15 Sep 05:55 WS31 done (audit applied in full: 17 findings fixed, 1 part-deferred, 0 rejected; `AUDIT_RESPONSE.md` + SYNTHESIS §11 + an
   appended "Audit response" in notes/23_triangulate.md). CRITICAL 01 fixed and replayed: both calibration pools (member errors for the

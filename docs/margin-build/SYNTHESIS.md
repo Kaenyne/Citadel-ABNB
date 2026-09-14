@@ -367,7 +367,7 @@ and EBITDA sd on annual rows (WS31 audit 14). The EBITDA sds quoted in the table
 | Street's implied incremental margin | 38.8% | **43.7%** |
 
 FY26 and the Street agree. **FY27 is a 19pp disagreement about incremental margin**, and it is
-entirely a statement about sales & marketing: on our path FY27 S&M is $3,740M, **23.6% of revenue**,
+entirely a statement about sales & marketing: on our path FY27 S&M is $3,721M, **23.5% of revenue**,
 against 21.5% in FY26 and 19.4% in FY25. The Street's FY27 requires the ramp to stop. That is a
 spending decision, and the company has given no FY27 margin guidance — WS05 found no FY27 margin
 hint in any letter or call.
@@ -493,7 +493,7 @@ of the actual**, and a **tested price reaction**. Only the first is on this page
 2. **FY26 adjusted EBITDA margin 35.73%, cushion over the floor +0.23pp, break-even on a
    0.6-0.9% 2H26 revenue miss** — the guide is tighter than it looks.
 3. **FY27 adjusted EBITDA $5,483M / 34.6% margin against a Street $5,766M / 36.45%, an incremental
-   margin of 24.7% against 43.7%** — labelled a spending scenario, and the reason is S&M at 23.6%
+   margin of 24.7% against 43.7%** — labelled a spending scenario, and the reason is S&M at 23.5%
    of revenue.
 
 ---
@@ -571,7 +571,7 @@ index, the calendar pace, the ADR card), not the margin side.
 | "The FY26 'at least 35.5%' floor breaks on a 2H26 revenue shortfall of 0.6-0.9%, about $50-75M." | `23_fy26_floor_breakeven.csv` |
 | "1pp of the FY26 margin sentence is 4.49pp of 4Q26 margin. At 'approximately 36%' and our Q3, 4Q26 has to be 30.1% against a Street 28.9%; at an unchanged 'at least 35.5%' the identity gives only 4Q26 ≥ ~27.6%, which our own 28.9% already clears." | `23_card_budget_identity.csv`; M3 note |
 | "The November sentence rule — numeric floor plus 50bp — has been exact 2 of 2." | `docs/margin-build/notes/M3_guide_policy_margin.md`; `05_mgmt_statements_v2/05_nov2026_scenarios.csv` |
-| "FY27 incremental margin 24.7% against the Street's implied 43.7%, and the whole gap is S&M at 23.6% of revenue." | `23_forecast_annual.csv`, `23_vs_consensus.csv`, `23_lines_quarterly.csv` |
+| "FY27 incremental margin 24.7% against the Street's implied 43.7%, and the whole gap is S&M at 23.5% of revenue." | `23_forecast_annual.csv`, `23_vs_consensus.csv`, `23_lines_quarterly.csv` |
 | "We cannot measure a cost dial at Airbnb: total opex elasticity to revenue 0.14 with t 0.47, n 18 — SE 0.30, 95% interval roughly −0.44 to +0.72, which does not exclude BKNG's 0.61, TRIP's 0.63 or EXPE's 0.44. Imprecise, not zero; the model uses M6's cash-cost elasticity 0.364 on a different cost definition." | `M6_cycle_flex_peer_k.csv`; WS31 audit 13 |
 | "Cost of revenue is the only cost line anywhere in this build that beats a drift baseline: k 0.56, 0.65x / 0.68x, t −3.57 / −2.67, p 0.0004 / 0.008, better in 13 of 14 and 9 of 10." | `M6_cycle_flex_k_table.csv`; `22_discussion_group_A/groupA_paired_vs_drift.csv` |
 | "Flexing costs recovers only 30-40% of a revenue miss, and the response is asymmetric — k_down < k_up for operations, S&M and total cash costs at p < 0.02." | M6 note; `23_macro_sensitivity.csv` |
@@ -627,7 +627,9 @@ Consensus, Seasonality, Weights, Card).
 
 ---
 
-## 11. Post-audit changes (WS31, 14 Sep 2026)
+## 11. Post-audit changes
+
+- 15 Sep 04:35 (orchestrator, after WS32's check): FY27 S&M restated $3,740M / 23.6% -> $3,721M / 23.5% in §3, §9 and the quotable list, re-derived from `23_lines_quarterly.csv` after finding 03's add-back fix; argument unchanged. (WS31, 14 Sep 2026)
 
 Applied from `docs/margin-build/audit/CODEX_ASTRA_AUDIT.md`; triage in
 `docs/margin-build/audit/AUDIT_RESPONSE.md`. Rebuild:
