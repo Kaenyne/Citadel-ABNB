@@ -1,0 +1,59 @@
+{
+  "slug": "M5_street_bias",
+  "method": "street-bias",
+  "written_utc_before_any_fit": "2026-09-13",
+  "objects": [
+    "street_plus_bias",
+    "street_plus_flowthrough",
+    "dispersion_conditioned"
+  ],
+  "targets": [
+    "adj_ebitda_musd",
+    "adj_ebitda_margin_pct"
+  ],
+  "pass_line": "Each object must beat the raw baselines-margin__street object on MAE for BOTH adj_ebitda_musd and adj_ebitda_margin_pct, at h=0 AND h=1, in W1 AND W2, on BOTH weightings (equal mae and rw_mae), PIT replay, matched quarters. An object failing any cell fails the pass line and is written up as a failure, not deleted.",
+  "secondary_tests": [
+    "Ljung-Box Q(4) on the h=0 margin surprise series (n<=22): power is low; reported, not a gate.",
+    "Quarter-of-year seasonality of the surprise: pooled OLS F-test on quarter dummies; the seasonal bias variant is used ONLY if p<0.10 on the W2-era sample. Default expectation: fails, pooled bias is used.",
+    "FY-floor anchoring: Street FY margin at each guide date vs the FY floor in force (replication of WS03 with the harness guide table).",
+    "Dispersion regression: |margin surprise| and margin surprise on ebitda_sd/ebitda_mean at the vintage."
+  ],
+  "parameters_fixed_before_fitting": {
+    "half_life_quarters": 4,
+    "kappa_bias_shrink_effective_obs": 2.0,
+    "flowthrough_prior_m0": 0.45,
+    "kappa_flowthrough_effective_obs": 4.0,
+    "dispersion_ratio_cap": [
+      0.5,
+      2.0
+    ],
+    "resid_pool_max_n": 12,
+    "resid_pool_min_n": 3,
+    "fallback_sigma_rel": 0.1,
+    "fallback_sigma_pp": 3.0,
+    "estimation_pool_first_quarter": "2022Q1",
+    "estimation_pool_rationale": "2021 is the COVID re-opening regime: the Street had a -50.7% margin estimate for 1Q21 and the realised surprise was +44.0 pt (WS03 surprise table). Averaging that into a 2024 bias is not a point-in-time judgement about the same object. Pool starts at 2022Q1. Sensitivity spec rw_hl4_from21 keeps 2021 and is registered alongside."
+  },
+  "n_params_declared": {
+    "street_plus_bias": 2,
+    "street_plus_flowthrough": 5,
+    "dispersion_conditioned": 4
+  },
+  "spec_ids": [
+    "rw_hl4",
+    "ew",
+    "rw_hl4_usd",
+    "ew_usd",
+    "rw_hl4_med",
+    "rw_hl4_from21"
+  ],
+  "notes": "Street quarterly consensus exists at h=0 and h=1 only (WS03 roles guided_q_pre_guide / next_q_pre_guide). Backtest horizons are therefore h=0 and h=1; no h=2 row can be built. LIVE 1Q27-4Q27 Street is derived by allocating the FY27 consensus across quarters with the harness PIT seasonal EBITDA shares (spec_id suffix _fyalloc, documented, never used in a scored backtest cell).",
+  "spec_notes": {
+    "rw_hl4": "primary: exponential weights half-life 4 q, shrunk mean; % bias for the $ target, pt bias for margin",
+    "ew": "equal weights variant",
+    "rw_hl4_usd": "additive $ bias for adj_ebitda_musd instead of multiplicative %",
+    "ew_usd": "equal-weighted additive $ bias",
+    "rw_hl4_med": "recency-weighted MEDIAN surprise instead of the mean (robust to the 2021-22 tail), same shrinkage",
+    "rw_hl4_from21": "primary rule but the estimation pool starts at 2021Q1"
+  }
+}

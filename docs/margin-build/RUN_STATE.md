@@ -44,11 +44,11 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | M2 | Time-series and ratio methods (seasonal margin, incremental margin, % of revenue with drift) + baselines | fable | 10 | done | 05:15 | notes/M2_margin_ts.md | 06:05 |
 | M3 | Guidance-policy model: FY floor + cushion, Q4-implied margin, language pattern; forecasts the guide and the actual given the guide | opus | 10, 05 | done | 06:05 | notes/M3_guide_policy_margin.md | 15:55 |
 | M4 | Alt-data-augmented line model (headcount, ads, support, payments, rates), incremental value vs M1 | opus | 10, 04, M1 | done | 05:50 | notes/M4_alt_augmented.md | 15:25 |
-| M5 | Consensus-anchored model: Street EBITDA at guide date + systematic bias and revenue-surprise flow-through | fable | 10, 03 | pending | | notes/M5_street_bias.md | |
+| M5 | Consensus-anchored model: Street EBITDA at guide date + systematic bias and revenue-surprise flow-through | opus | 10, 03 | done | 22:30 | notes/M5_street_bias.md | 23:55 |
 | M6 | Cycle and cost-flex model: cost response to growth deceleration; scenario engine over bear/base/bull revenue paths | opus | 10, 06v | done | 05:35 | notes/M6_cycle_flex.md | 15:05 |
 | M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | opus | 10 | done | 05:15 | notes/M7_below_ebitda.md | 15:05 |
 | 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | pending | | notes/20_scoreboard.md | |
-| 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | pending | | notes/21_red_team.md | |
+| 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | running (M5 concurrent; audits it last) | 22:30 | notes/21_red_team.md | 22:30 |
 | 22 | Discussion round: orchestrator sends 20+21 to each method agent for rebuttal/adjustment; collected in DISCUSSION.md | orchestrator | 20, 21 | pending | | DISCUSSION.md | |
 | 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | pending | | SYNTHESIS.md | |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | pending | | audit/CODEX_ASTRA_AUDIT.md | |
@@ -56,6 +56,34 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 14 Sep 23:55 M5 done (street-bias: three objects `street_plus_bias`, `street_plus_flowthrough`, `dispersion_conditioned`,
+  6 specs x 2 replays each, 1,296 rows per object registered; scorer re-run, 288 scoreboard rows; run.py exit 0).
+  **PRE-REGISTERED PASS LINE FAILS for all 18 object-spec pairs** — every failure is at h=1, where the pre-guide next-quarter
+  Street error has W2 mean +0.21pt against sd 1.94 (snr 0.11) and flips sign by era, so any bias correction adds noise
+  (ratios 1.05-4.10). **At h=0 the Street is beaten decisively and this is the first method in the run to do it:**
+  `dispersion_conditioned|rw_hl4` margin MAE 1.33pp W1 / **0.74pp W2** (Street 1.59/1.31), ratios 0.835/0.567, rw 0.656/0.557;
+  `street_plus_flowthrough|rw_hl4` EBITDA $ MAE $43.1m W1 / **$33.8m W2** (Street 65.3/58.1), ratios 0.660/0.581, rw 0.545/0.524;
+  four (object, spec) pairs pass all four h=0 cells, all with survives_both_windows AND rw_survives_both_windows = yes, and all
+  clear seasonal_naive 0.35-0.78x. KEY MECHANISM: analyst dispersion works — margin surprise on EBITDA sd/mean slope +28.3pt per
+  unit (se 8.8, p 0.005, n 19), and 3Q26 dispersion is the lowest in the sample (0.0085 vs rw reference 0.0497, ratio clipped at
+  the pre-registered 0.5 floor), which is why the call is a SMALL beat. Seasonality of the surprise fails the pre-registered gate
+  (ANOVA p 0.73 from 2022, p 0.43 in W2). Pre-registered 2022Q1 pool start validated: the `rw_hl4_from21` sensitivity is worse
+  everywhere; equal weights (`ew`) are worse than doing nothing on margin — recency weighting is what makes this work.
+  SUPPLEMENTARY (non-registrable, stamp fails the PIT rule): today's 4Q26 Street is a POST-guide number, and the post-guide h=1
+  consensus under-calls margin by +1.11pt W2 (n 10, sd 1.61, 9/10 beats; last 8 +0.88, sd 0.73, 8/8) vs +0.21pt pre-guide —
+  direction only, the correction beats raw on $ (0.85/0.85) but not on margin (1.30/1.12). CARD: 3Q26 adj EBITDA **$2,412m /
+  50.19%** (4-spec composite; range 2,384-2,436 and 50.03-50.30) vs Street $2,361.5m / 49.78% = **+$51m / +0.41pt, P(beat) 0.64**
+  (bear 0.57 / bull 0.73); re-run from the 6 Aug pre-guide vintage gives $2,390m, so the dollar call is $2,390-2,412m either way.
+  FY26 35.92% on revenue $14,268m vs Street 35.62% and the ">=35.5%" floor. 4Q26 $932m / 29.16% is **NOT validated** (h=1) — quote
+  a tilt, not a number. FY-floor anchoring confirmed and extended: consensus sits +0.37pt above the floor, 12/15 within 0.5pt.
+  CAVEAT for WS20/21: M5's quantiles are useless (cov80 = 1.00 in every cell, CRPS worse than raw Street) — points only.
+  CORRECTION to WS03: the lag-1 autocorrelation of the h=0 margin surprise, demeaned over the same 22 quarters, is 0.496
+  (Ljung-Box Q(1) 6.18, p 0.013), not 0.26; WS03's conclusion (no exploitable AR) still holds — the structure is the downward
+  trend in the size of the beat. Cross-method: M5 3Q26 50.2% sits between M1 51.6% and M2 48.1% and is the only one anchored to
+  a published number.
+
+- 14 Sep 22:25 Session resumed after Krish's re-login; M3, M4, M6, M7 all done on Opus (committed 5bd8fb5). M5 launched (Opus); WS21 red team launched (Opus) auditing M1-M4/M6/M7 now and M5 when it lands. WS20 scoreboard waits for M5.
 
 - 14 Sep ~06:10 FABLE LIMIT reached (separate from the 5-hour window): M3, M4, M6, M7 killed. M3 had nothing on disk; M4 run.py + pre-registration only; M6 and M7 had code, outputs, registry files and pre-registration notes but no results write-up.
 - 14 Sep 14:45 Krish (awake): 'move what you can to opus'. All four relaunched on Opus with RESUME prefixes; every remaining stage (20, 21, 23, 31, 32) switched to Opus. Heartbeat cron recreated as cf29b46b with the Opus instruction.
