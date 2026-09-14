@@ -1,0 +1,119 @@
+[
+ {
+  "key": "github:numbeo/numbeo-sql-importer",
+  "url": "https://github.com/numbeo/numbeo-sql-importer",
+  "name": "numbeo-sql-importer",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Numbeo org repo ('Numbeo API Example \u2013 Retrieve Cost of Living for a City'); importer that loads Numbeo API responses into SQL. No bulk dataset committed \u2014 requires a paid Numbeo API key to pull data.",
+  "why_useful": "This is the official/authorized path into Numbeo's data (via their paid API, not scraping), which sidesteps the ToS concern the repo rules flag for direct scraping of crowdsourced travel sites \u2014 worth flagging to a human as the 'ask for budget' option instead of an ad hoc scraper.",
+  "potential": "medium",
+  "size_hint": "small importer script",
+  "time_coverage": "n/a (live API)",
+  "geography": "global, Numbeo's ~9000+ city coverage",
+  "license": "unspecified",
+  "last_activity": "2026-07-22",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "This is the official/authorized path into Numbeo's data (via their paid API, not scraping), which sidesteps the ToS concern the repo rules flag for direct scraping of crowdsourced travel sites \u2014 worth flagging to a human as the 'ask for budget' option instead of an ad hoc scraper.",
+   "Confirms Numbeo has an official (paid) API path with structured city cost-of-living data; relevant if the team ever licenses Numbeo data directly rather than scraping."
+  ]
+ },
+ {
+  "key": "github:garyscorner/neworleansstr",
+  "url": "https://github.com/GarysCorner/NewORleansSTR",
+  "name": "GarysCorner/NewORleansSTR",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Jupyter notebook (STRMaps.ipynb) that pulls New Orleans's 'Short-Term Rental Licenses' dataset from the city's open-data portal (data.nola.gov) and renders it as an interactive folium/Leaflet map of active STR license status. No historical snapshots committed \u2014 reads the live current portal export. 3 stars, updated 5 Aug 2026 (active).",
+  "why_useful": "New Orleans is not in our current municipal-registry list (Austin, Barcelona, Maui, NYC, California TOT cities); this notebook is a working, recently-updated method for pulling that city's STR license registry directly from its Socrata-style open-data portal \u2014 cheap to adapt into our own point-in-time puller.",
+  "potential": "medium",
+  "license": "none declared",
+  "last_activity": "2026-08-05",
+  "geography": "New Orleans, LA",
+  "time_coverage": "current snapshot only (no history committed)",
+  "size_hint": "notebook + generated HTML map, no bulk data file",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "Municipal STR registries panel (Austin/Barcelona/Maui/NYC/California) \u2014 adds a new city, not a duplicate",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "New Orleans is not in our current municipal-registry list (Austin, Barcelona, Maui, NYC, California TOT cities); this notebook is a working, recently-updated method for pulling that city's STR license registry directly from its Socrata-style open-data portal \u2014 cheap to adapt into our own point-in-time puller."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/vancouver-regulations",
+  "url": "https://github.com/UPGo-McGill/vancouver-regulations",
+  "name": "UPGo-McGill/vancouver-regulations",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Analysis of STR host compliance with Vancouver's 2018 STR licensing regulations. Committed data/raffle.csv (~7.7 MB) \u2014 appears to be the output of the raffle geocoding method applied to Vancouver STR listings, i.e. a listing-level (or listing-day-level) dataset with assigned neighbourhood/geography and likely licence-compliance flags.",
+  "why_useful": "Directly on-point for gap #12 (STR ordinance/registration trackers) for Vancouver, one of the cities named in that gap list.",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Directly on-point for gap #12 (STR ordinance/registration trackers) for Vancouver, one of the cities named in that gap list.",
+   "A concrete point-in-time compliance dataset for a real STR ordinance (Vancouver 2018) \u2014 useful as a case study or calibration set for regulatory-impact modelling (gap #12), and shows what a raffle-processed listing file looks like in practice."
+  ]
+ },
+ {
+  "key": "github:pirshtuk/fbi",
+  "url": "https://github.com/Pirshtuk/fbi",
+  "name": "fbi",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A client library for the FBI's Crime Data Explorer API, exposing UCR (Uniform Crime Reporting) and NIBRS (National Incident-Based Reporting System) crime data by agency/city/state. Last updated 2024-03-11.",
+  "why_useful": "A one-command pull method for US city-level crime statistics, which is one of this theme's three named data types (crime by city). Crime trends by city could be tested as a local demand-shock proxy for STR bookings in specific US metros (Austin, New Orleans, Chicago -- all in our 13-city panel).",
+  "potential": "medium",
+  "time_coverage": "pulls whatever history the FBI Crime Data Explorer API exposes (UCR historically back to 1960 at state level, NIBRS more recent and more granular by agency)",
+  "geography": "US, by FBI-reporting agency/city/state",
+  "size_hint": "small client library, no committed data",
+  "license": "unstated",
+  "last_activity": "2024-03-11",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "A one-command pull method for US city-level crime statistics, which is one of this theme's three named data types (crime by city). Crime trends by city could be tested as a local demand-shock proxy for STR bookings in specific US metros (Austin, New Orleans, Chicago -- all in our 13-city panel)."
+  ]
+ },
+ {
+  "key": "github:cyanheads/fbi-crime-mcp-server",
+  "url": "https://github.com/cyanheads/fbi-crime-mcp-server",
+  "name": "fbi-crime-mcp-server",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An MCP server wrapping the FBI Crime Data Explorer API -- UCR crime estimates, NIBRS incident breakdowns, hate crimes, arrests, human trafficking stats. 1 star, updated 2026-08-21 (actively maintained, most recent of the FBI-API clients found).",
+  "why_useful": "Same underlying source as the Pirshtuk/fbi client (US city/agency-level crime data) but more recently maintained and packaged as an MCP tool, which could be plugged directly into an agent pipeline for pulling city crime series without writing scraper code.",
+  "potential": "medium",
+  "time_coverage": "whatever the FBI Crime Data Explorer API exposes",
+  "geography": "US, by FBI-reporting agency/city/state",
+  "size_hint": "small, no committed data (live API wrapper)",
+  "license": "unstated",
+  "last_activity": "2026-08-21",
+  "gap_targets": [],
+  "duplicate_of_holding": "same underlying FBI CDE API as Pirshtuk/fbi",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "Same underlying source as the Pirshtuk/fbi client (US city/agency-level crime data) but more recently maintained and packaged as an MCP tool, which could be plugged directly into an agent pipeline for pulling city crime series without writing scraper code."
+  ]
+ }
+]

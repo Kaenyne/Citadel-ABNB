@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:jxcksonli/airbnb-australia-price-analysis",
+  "url": "https://github.com/jxcksonli/airbnb-australia-price-analysis",
+  "name": "airbnb-australia-price-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'Exploring what drives Airbnb pricing and occupancy across Sydney and Melbourne using Kaggle datasets' \u2014 last updated 2026-03-12, i.e. a fairly recent repo. Explicitly Kaggle-sourced (likely Inside-Airbnb-derived Sydney/Melbourne listings), not a new primary dataset.",
+  "why_useful": "Sydney is already in our 13-city Inside Airbnb panel; Melbourne is not, so if this repo's Kaggle dataset carries a Melbourne listings/calendar snapshot with a vintage date we don't already have, it would be a marginal addition. Not confirmed as more than a repackaged Kaggle/Inside-Airbnb pull with a notebook wrapper \u2014 falls close to the 'exclude generic Kaggle re-analysis' rule, kept at low potential only because it explicitly covers Melbourne, which we lack.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Sydney and Melbourne, Australia",
+  "time_coverage": "unknown, not verified (recent repo, underlying Kaggle dataset vintage unconfirmed)",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-03-12",
+  "duplicate_of_holding": "Likely duplicates a standard Inside Airbnb Sydney/Melbourne Kaggle mirror; Sydney portion duplicates our existing Inside Airbnb Sydney holding",
+  "hits": 1,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)"
+  ],
+  "why_all": [
+   "Sydney is already in our 13-city Inside Airbnb panel; Melbourne is not, so if this repo's Kaggle dataset carries a Melbourne listings/calendar snapshot with a vintage date we don't already have, it would be a marginal addition. Not confirmed as more than a repackaged Kaggle/Inside-Airbnb pull with a notebook wrapper \u2014 falls close to the 'exclude generic Kaggle re-analysis' rule, kept at low potential only because it explicitly covers Melbourne, which we lack."
+  ]
+ },
+ {
+  "key": "github:lifei96/airbnb-superhosts-crawler-with-data-analyzer",
+  "url": "https://github.com/lifei96/Airbnb-superhosts-crawler-with-data-analyzer",
+  "name": "Airbnb-superhosts-crawler-with-data-analyzer",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A 2018 crawler + analyzer targeting Airbnb superhost profile pages to study superhost behavior patterns (not committed as a bulk dataset; it is a scraper of airbnb.com, which our rules mark as a method to catalogue and NOT run).",
+  "why_useful": "Only concrete GitHub method found aimed specifically at superhost-status data collection off Airbnb itself; illustrates the shape of a possible future scrape target (superhost badges/portfolio pages) but is stale (2018) and would need a human ToS decision to ever run.",
+  "potential": "low",
+  "size_hint": "small scraper + analyzer scripts, unclear if any sample data is committed",
+  "time_coverage": "2018 snapshot",
+  "geography": "unspecified (whatever markets were crawled in 2018)",
+  "license": "MIT",
+  "last_activity": "2018-10-14",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Only concrete GitHub method found aimed specifically at superhost-status data collection off Airbnb itself; illustrates the shape of a possible future scrape target (superhost badges/portfolio pages) but is stale (2018) and would need a human ToS decision to ever run."
+  ]
+ },
+ {
+  "key": "github:rit-kalra/sql-toronto-str-analysis",
+  "url": "https://github.com/rit-kalra/sql-toronto-str-analysis",
+  "name": "rit-kalra/sql-toronto-str-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "SQL-based analysis of Toronto's Airbnb market covering supply concentration, commercial host operations, licence compliance, and occupancy dynamics (student project, presumably built on Inside-Airbnb-style Toronto data).",
+  "why_useful": "A small worked example of multi-listing/commercial-host classification queries on Toronto listings, a city not in our current 13-city Inside Airbnb panel.",
+  "potential": "low",
+  "geography": "Toronto, Canada",
+  "time_coverage": "not specified",
+  "size_hint": "SQL scripts, unclear if data committed",
+  "license": "not specified",
+  "last_activity": "May 2026 (per search result)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   1
+  ],
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "A small worked example of multi-listing/commercial-host classification queries on Toronto listings, a city not in our current 13-city Inside Airbnb panel."
+  ]
+ },
+ {
+  "key": "github:kingdavid9999/airbnb-capetown-tableau-dashboard",
+  "url": "https://github.com/KingDavid9999/airbnb-capetown-tableau-dashboard",
+  "name": "KingDavid9999/airbnb-capetown-tableau-dashboard",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tableau dashboard project analyzing Airbnb host commercialization in Cape Town, comparing 'Power Hosts' (5+ listings, i.e. multi-listing operators) to individual hosts.",
+  "why_useful": "Cape Town / South Africa is outside our current geography set; a Power-Host (5+ listing) threshold classification applied there could indicate an underlying Cape Town listings pull worth checking for a committed CSV.",
+  "potential": "low",
+  "geography": "Cape Town, South Africa",
+  "time_coverage": "not specified",
+  "size_hint": "Tableau workbook",
+  "license": "not specified",
+  "last_activity": "July 2026 (per search result)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   1
+  ],
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Cape Town / South Africa is outside our current geography set; a Power-Host (5+ listing) threshold classification applied there could indicate an underlying Cape Town listings pull worth checking for a committed CSV."
+  ]
+ },
+ {
+  "key": "github:getyourguide/partner-api-spec",
+  "url": "https://github.com/getyourguide/partner-api-spec",
+  "name": "getyourguide/partner-api-spec",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official OpenAPI 3.0 specification for GetYourGuide's Partner API (booking, availability, pricing, activity catalogue endpoints), maintained by GetYourGuide itself. Apache-2.0, updated 11 Sep 2026 (actively maintained). No data committed -- it's a machine-readable contract for a partner-gated API, so pulling real activity/booking volume data requires a partner account/API key (not a public open pull).",
+  "why_useful": "If the team ever wanted a legitimate, ToS-compliant path to GetYourGuide activity/pricing/availability data as an Airbnb-Experiences-adjacent demand proxy (gap 9/20, adjacent supply), this is the correct machine-readable starting point rather than scraping. Low usefulness without a partner key, but it is real and current.",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-11",
+  "geography": "global",
+  "time_coverage": "current API surface only, not historical",
+  "size_hint": "OpenAPI YAML/JSON spec files, small (<1MB)",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "If the team ever wanted a legitimate, ToS-compliant path to GetYourGuide activity/pricing/availability data as an Airbnb-Experiences-adjacent demand proxy (gap 9/20, adjacent supply), this is the correct machine-readable starting point rather than scraping. Low usefulness without a partner key, but it is real and current."
+  ]
+ }
+]

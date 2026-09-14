@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:pipeworx-io/mcp-abs-au",
+  "url": "https://github.com/pipeworx-io/mcp-abs-au",
+  "name": "mcp-abs-au",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server wrapping the Australian Bureau of Statistics Data API. 0 stars, MIT, updated 13 Sep 2026 (brand new).",
+  "why_useful": "Newest ABS client found; could be plugged into an agent-driven pull of Australian tourism/travel or consumption series for gap #7, though unproven (0 stars, day-old).",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "ABS Data API catalogue",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "duplicate use case of ABS_SDMX-JSON_API",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Newest ABS client found; could be plugged into an agent-driven pull of Australian tourism/travel or consumption series for gap #7, though unproven (0 stars, day-old)."
+  ]
+ },
+ {
+  "key": "github:volfpeter/uspto-patent-citation-graph",
+  "url": "https://github.com/volfpeter/uspto-patent-citation-graph",
+  "name": "volfpeter/uspto-patent-citation-graph",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool (MIT, 16 stars, updated Aug 2026) that downloads patent citation data on-demand from USPTO's PatentsView API and caches it in a local SQL database (SQLite) plus in-memory graph for fast repeat queries. No data pre-committed \u2014 pulls per-query.",
+  "why_useful": "Same patent-monitoring gap (#15) as above but with a caching/graph layer that would let a team build a citation-network view of Airbnb's (or a competitor's) patent portfolio without repeated API hits.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "USPTO patent record, varies",
+  "size_hint": "tool only, DB built on first run",
+  "license": "MIT",
+  "last_activity": "2026-08-20",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Same patent-monitoring gap (#15) as above but with a caching/graph layer that would let a team build a citation-network view of Airbnb's (or a competitor's) patent portfolio without repeated API hits.",
+   "Marginal for ABNB specifically (citation-network analysis is more an R&D-intensity tool for hardware/tech firms); listed for completeness under the patent-client theme."
+  ]
+ },
+ {
+  "key": "github:spinov001-art/patent-api-toolkit",
+  "url": "https://github.com/spinov001-art/patent-api-toolkit",
+  "name": "spinov001-art/patent-api-toolkit",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit (no stars yet, very new) advertised as searching 8M+ US patents via the free, keyless USPTO PatentsView API for patent research/competitive intelligence.",
+  "why_useful": "Another keyless PatentsView wrapper for gap #15; low-maturity repo so treat as a fallback option, not primary.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "USPTO patents, current",
+  "size_hint": "small toolkit repo",
+  "license": "unclear",
+  "last_activity": "recent (2026)",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Another keyless PatentsView wrapper for gap #15; low-maturity repo so treat as a fallback option, not primary."
+  ]
+ },
+ {
+  "key": "github:jenniferyao968/nlihc",
+  "url": "https://github.com/JenniferYao968/NLIHC",
+  "name": "JenniferYao968/NLIHC",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Legislative-data extraction pipeline using the LegiScan API scoped to housing-policy bills (built with/for National Low Income Housing Coalition framing), not STR-specific but housing-regulation adjacent.",
+  "why_useful": "Adjacent to gap #13 (long-term rental/housing crossover) and gap #12; a housing-bill extraction pipeline could be re-pointed at STR-specific keywords with modest effort.",
+  "potential": "low",
+  "geography": "USA (states, via LegiScan)",
+  "time_coverage": "current LegiScan coverage",
+  "size_hint": "pipeline only, unclear if any extracted bill data is committed",
+  "license": "none declared",
+  "last_activity": "2026-04-14",
+  "gap_targets": [
+   12,
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Adjacent to gap #13 (long-term rental/housing crossover) and gap #12; a housing-bill extraction pipeline could be re-pointed at STR-specific keywords with modest effort."
+  ]
+ },
+ {
+  "key": "github:chalkbeat/legiscan-client",
+  "url": "https://github.com/Chalkbeat/legiscan-client",
+  "name": "Chalkbeat/legiscan-client",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js client for the LegiScan API, built by a newsroom (Chalkbeat) for tracking legislation generically (education-focused newsroom use, but the client itself is generic).",
+  "why_useful": "Another maintained, generic LegiScan client (JS ecosystem) that could pull STR-bill keyword searches; redundant with pylegiscan/legiscan-mcp above for a Python-first pipeline.",
+  "potential": "low",
+  "geography": "USA (all states + Congress)",
+  "time_coverage": "current LegiScan coverage",
+  "size_hint": "API client only",
+  "license": "GPL-3.0",
+  "last_activity": "2026-04-16",
+  "duplicate_of_holding": "functionally duplicates pylegiscan/legiscan-mcp above",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Another maintained, generic LegiScan client (JS ecosystem) that could pull STR-bill keyword searches; redundant with pylegiscan/legiscan-mcp above for a Python-first pipeline."
+  ]
+ }
+]

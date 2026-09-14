@@ -1,0 +1,155 @@
+[
+ {
+  "key": "github:rochiecuevas/shared_accommodations",
+  "url": "https://github.com/rochiecuevas/shared_accommodations",
+  "name": "rochiecuevas/shared_accommodations",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSVs analyzing San Francisco housing vs. short-term rentals: SF City Performance Scorecard hotel-rate data (Jul 2004-May 2018), Zillow long-term rental rates (Nov 2010-Sep 2018), DataSF home-price/assessment data (2007-2016, not uploaded due to GitHub size limits, downloadable from DataSF instead), and Inside Airbnb peer-to-peer short-term-rental rates (May 2015-Dec 2017). No 311/complaints/enforcement data; explicitly notes only 3 data points exist for the STR series, limiting granularity.",
+  "why_useful": "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023) for San Francisco with an 8-9 year old vintage we do not otherwise have on the CDN.",
+  "potential": "high",
+  "geography": "San Francisco, CA",
+  "time_coverage": "May 2015 - Dec 2017",
+  "size_hint": "28 raw CSVs + 1 consolidated summary CSV",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023) for San Francisco with an 8-9 year old vintage we do not otherwise have on the CDN.",
+   "Small but genuinely historical, committed Inside Airbnb-derived series for San Francisco spanning May 2015-Dec 2017 \u2014 years pre-dating our 13-city panel (Dec 2022+) and off the current CDN. Also a free SF hotel-rate time series back to 2004 (peer/lodging benchmark) and a Zillow SF rent series (housing gap #13).",
+   "Off-theme (no complaints data) but a small, real committed SF housing-vs-STR dataset with an older Inside Airbnb slice (2015-2017) than our current holdings for that city; low value given only 3 STR data points."
+  ]
+ },
+ {
+  "key": "github:rsanjabi/short-term-rentals-warehouse",
+  "url": "https://github.com/rsanjabi/short-term-rentals-warehouse",
+  "name": "short-term-rentals-warehouse",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "dbt/Snowflake data-warehouse project (create_warehouse.sql, extract.py, kaggle_data.py, listings.py, load.py) that stitches together Inside Airbnb listing data (CC0), a Kaggle world-cities-population dataset, and a Kaggle cost-of-living-index dataset into a star schema, described as covering 'over 35 million records from 2015-2020' across global cities, with Metabase dashboards on top. 68 commits, 2 open PRs. No committed CSV/parquet data files were visible in the directory listing seen (extract.py presumably pulls from Inside Airbnb's own CDN/URLs at run time) \u2014 since Inside Airbnb's CDN no longer serves 2015-2020 vintages, re-running this pipeline today would likely NOT reproduce the historical 2015-2020 coverage the README claims unless the author's original run captured URLs that are since gone.",
+  "why_useful": "If the extract.py source URLs or any cached intermediate files still resolve to older Inside Airbnb dump snapshots (worth a follow-up check), this could be a lead on gap #1 (pre-2023 Inside Airbnb dumps archived somewhere). As-is it is a pipeline definition, not a data cache, so treat as medium-low until verified whether it holds/points to actual archived dumps.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "global cities (Inside Airbnb coverage as of ~2020)",
+  "time_coverage": "claimed 2015-2020",
+  "size_hint": "claimed 35M+ records (in Snowflake, not committed to repo)",
+  "license": "underlying data CC0; repo license not confirmed",
+  "last_activity": "not shown (68 commits total)",
+  "duplicate_of_holding": "possible overlap/superset of our 13-city Inside Airbnb panel if the 2015-2020 vintages are real and recoverable",
+  "hits": 9,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data",
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism",
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies",
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "If the extract.py source URLs or any cached intermediate files still resolve to older Inside Airbnb dump snapshots (worth a follow-up check), this could be a lead on gap #1 (pre-2023 Inside Airbnb dumps archived somewhere). As-is it is a pipeline definition, not a data cache, so treat as medium-low until verified whether it holds/points to actual archived dumps.",
+   "Not new data (Airbnb-only, and our Inside Airbnb holdings already run 2022-2026) but the DBT pipeline pattern plus the two Kaggle joins (world-city population, cost-of-living index) could be reusable methodology for normalizing/joining STR panels to macro city context.",
+   "Potential source of pre-2023 Inside Airbnb history (2015-2020), which is explicitly gap #1 (HIGH value) since the team's own IA panel starts Dec 2022 and the CDN no longer serves dumps older than ~1 year. Needs verification of exactly which cities/vintages are embedded in the warehouse's raw extracts vs. re-derived tables.",
+   "If functional, would extend our Inside Airbnb panel (currently Dec 2022+) back to 2015, closing gap #1 (historical/archived Inside Airbnb dumps) and giving pre-COVID STR supply baselines.",
+   "A reusable pipeline pattern for joining Inside Airbnb supply data with city-level cost-of-living/population context globally; the 2015-2020 claim suggests it may reach further back than our current dump coverage, worth checking its actual Inside Airbnb pull dates if pursued.",
+   "If the underlying 2015-2020 raw Inside Airbnb dumps are actually retrievable from this repo/its history, it could plug gap #1 (historical Inside Airbnb dumps pre-2023, now off the CDN) for multiple cities beyond our 13-city panel.",
+   "Directly targets gap #1: this pipeline claims to reach back to Inside Airbnb data from 2015-2020, i.e. years now off the official CDN (which keeps ~1 year). If the extract.py logic or any cached intermediate output can be recovered, it could backfill our pre-2023 Inside Airbnb gap across many cities, not just the ones we hold.",
+   "Off-theme for 311/enforcement specifically (found while searching short-term-rental topic), but flagged since it claims a much larger historical Inside Airbnb pull (2015-2020, 35M records) than what we currently hold \u2014 could be relevant to gap #1 (historical Inside Airbnb archives) even though it stores no data itself, only a reproducible pull method.",
+   "Illustrates a reusable Inside-Airbnb-to-warehouse pipeline pattern, but does not itself supply the pre-2023 archived dumps we are missing (gap #1) since it scrapes the live page, not a historical mirror."
+  ]
+ },
+ {
+  "key": "github:johnbalvin/pyairbnb",
+  "url": "https://github.com/johnbalvin/pyairbnb",
+  "name": "pyairbnb (johnbalvin)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python client (149 stars, updated 8 Sep 2026 -- actively maintained) wrapping Airbnb's internal search/PDP APIs, no login needed. Functions: search_all()/search_all_from_url() (listings with price, availability dates, reviews count/rating, host details, amenities, cancellation policy), get_details() (per-listing prices/available dates/reviews/host), get_price() (nightly price for a given check-in/check-out), get_calendar() (month-level availability/price calendar per listing), get_reviews() (review text+metadata), get_listings_from_user()/get_host_details() (host's other listings), experience_search()/experience_search_by_place_id() (Airbnb Experiences), get_markets()/get_places_ids() (place-id lookup for city/region search boxes). Accepts lat/long bounding boxes for map search. No data committed -- code only.",
+  "why_useful": "Most complete open client for exactly the fields the desk cannot get from Inside Airbnb after May 2025 (live nightly PRICE and CALENDAR availability by listing), which is gap #2 (realised ADR/occupancy) and the 2026-calendar no-price gap noted in what-we-hold. Catalogue as METHOD ONLY -- running it against airbnb.com is the ToS decision CLAUDE.md reserves for a human; do not execute.",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "geography": "global (any Airbnb market via search params)",
+  "time_coverage": "live/current only, no historical archive",
+  "size_hint": "code repo, no data files",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "high",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Most complete open client for exactly the fields the desk cannot get from Inside Airbnb after May 2025 (live nightly PRICE and CALENDAR availability by listing), which is gap #2 (realised ADR/occupancy) and the 2026-calendar no-price gap noted in what-we-hold. Catalogue as METHOD ONLY -- running it against airbnb.com is the ToS decision CLAUDE.md reserves for a human; do not execute.",
+   "Most actively maintained, highest-star pure-Python Airbnb client found. If a human decides scraping Airbnb search/calendar pages is in scope, this is the reference implementation for pulling nightly price and calendar-availability fields at scale (relevant to gap #2, realised ADR/occupancy) and for search-result counts as a nights/supply proxy. Method only, not data."
+  ]
+ },
+ {
+  "key": "github:zxol/airbnbapi",
+  "url": "https://github.com/zxol/airbnbapi",
+  "name": "airbnbapi (zxol)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "227-star, 53-fork Node.js wrapper around Airbnb's private mobile-app API (MIT, 107 commits). Exposes: property search with filters, public+private listing detail, host summaries/active listings, public calendar/pricing AND private calendar management (reservations, blocked days, dynamic pricing per date), guest/host user info, messaging threads, review submission, and batch reservation retrieval (host-side, needs auth token).",
+  "why_useful": "Highest-star Airbnb API client found in this sweep; documents the richest field set (including host-side reservation/calendar internals) of any repo surveyed, useful as a reference for what fields Airbnb's own app exposes even if never run \u2014 e.g. confirms per-date dynamic pricing and blocked-day calendar fields exist server-side, which bears on how realised ADR/occupancy could in principle be reconstructed (gap #2).",
+  "potential": "high",
+  "geography": "global",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "last updated ~Dec 2022 per topic listing",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Highest-star Airbnb API client found in this sweep; documents the richest field set (including host-side reservation/calendar internals) of any repo surveyed, useful as a reference for what fields Airbnb's own app exposes even if never run \u2014 e.g. confirms per-date dynamic pricing and blocked-day calendar fields exist server-side, which bears on how realised ADR/occupancy could in principle be reconstructed (gap #2)."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/airbnb-scraper",
+  "url": "https://github.com/omkarcloud/airbnb-scraper",
+  "name": "airbnb-scraper (omkarcloud)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Recently active repo (updated ~22 days before scout date; 5 stars, 4 commits) providing an API-style scraper covering 67 country domains. Fields: listing type/capacity/bedrooms/beds/baths, live nightly rate with breakdown (base, discounts, fees), real-time availability for given dates, host profile (superhost status, response rate, years hosting), amenities by category, review ratings incl. category sub-scores (cleanliness, accuracy, etc.), coordinates/address/place IDs, photos with captions, house rules/cancellation policy/sleeping arrangements. Extensive sample JSON responses in the README (documentation examples, not a committed dataset).",
+  "why_useful": "Most field-rich single-listing schema found in this sweep (includes category-level review sub-scores and full cancellation-policy text, relevant to the RNPL/cancellation-distribution gap #3 if reconstructable from cancellation-policy metadata) and is one of the most recently updated repos surveyed.",
+  "potential": "high",
+  "geography": "global, 67 country sites",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a (sample JSON in README only)",
+  "license": "check repo (not stated in fetch)",
+  "last_activity": "~Aug 2026 (\u224822 days before 2026-09-14)",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Most field-rich single-listing schema found in this sweep (includes category-level review sub-scores and full cancellation-policy text, relevant to the RNPL/cancellation-distribution gap #3 if reconstructable from cancellation-policy metadata) and is one of the most recently updated repos surveyed.",
+   "Same category as above \u2014 a method for asking-price/availability capture, not a held dataset; scraping airbnb.com directly is out of the sanctioned scope per repo rules."
+  ]
+ }
+]

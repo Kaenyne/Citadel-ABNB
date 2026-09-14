@@ -1,0 +1,133 @@
+[
+ {
+  "key": "other:https://huggingface.co/datasets/eloukas/edgar-corpus",
+  "url": "https://huggingface.co/datasets/eloukas/edgar-corpus",
+  "name": "EDGAR-CORPUS (companion dataset to edgar-crawler)",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "https://huggingface.co/datasets/eloukas/edgar-corpus and Zenodo mirror: 1993-2020 annual-report (10-K) text, ~176,289 train + validation/test splits (~220k total filings), fields = filename/CIK/year plus 23 structured sections (Item 1 through 9B incl. 1A/1B/7A/9A/9B), 40.7GB total, per-year configs available (year_1993...year_2020).",
+  "why_useful": "Large pre-extracted MD&A/risk-factor text corpus across all EDGAR filers (would include BKNG/EXPE/MAR/HLT annual reports pre-2021) for building a management-tone or peer-commentary time series without re-scraping EDGAR.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "none directly; complements EDGAR-CORPUS entry above",
+  "geography": "US SEC registrants",
+  "time_coverage": "1993-2020",
+  "size_hint": "40.7GB, ~220k filings",
+  "license": "stated on HF page (research use)",
+  "last_activity": "dataset released alongside 2021 paper, cited through 2025",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Large pre-extracted MD&A/risk-factor text corpus across all EDGAR filers (would include BKNG/EXPE/MAR/HLT annual reports pre-2021) for building a management-tone or peer-commentary time series without re-scraping EDGAR."
+  ]
+ },
+ {
+  "key": "github:edouardswiac/python-edgar",
+  "url": "https://github.com/edouardswiac/python-edgar",
+  "name": "python-edgar",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Stitches EDGAR quarterly full-index files (company name, CIK, filing date, form type, URL) into one master index spanning 1993-present; zero dependencies, MIT, 48 commits (last visible activity ~2018, since forked/maintained by others).",
+  "why_useful": "Lightweight way to build a master filing-date index for BKNG/EXPE/MAR/HLT/ABNB (all form types, all years) to drive point-in-time filing-date joins for the vintage register.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "none; complements sec-cik-mapper and sec-edgar-downloader",
+  "geography": "US SEC registrants",
+  "time_coverage": "1993-present (index only)",
+  "size_hint": "index-only, small",
+  "license": "MIT",
+  "last_activity": "~2018 per shown commits, small/stable utility",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Lightweight way to build a master filing-date index for BKNG/EXPE/MAR/HLT/ABNB (all form types, all years) to drive point-in-time filing-date joins for the vintage register."
+  ]
+ },
+ {
+  "key": "github:jadchaar/sec-edgar-downloader",
+  "url": "https://github.com/jadchaar/sec-edgar-downloader",
+  "name": "sec-edgar-downloader",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package to bulk-download any SEC filing type (8-K, 10-K, 10-Q, 13F, DEF 14A, S-1, SC 13D/G, 300+ types) by ticker or CIK; no bundled data, pulls live from EDGAR. MIT, 212 commits.",
+  "why_useful": "Straightforward bulk downloader to grab every 8-K/10-Q for BKNG/EXPE/MAR/HLT for a peer-print KPI extraction pipeline.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "overlaps edgartools/datamule/python-edgar functionally; include for completeness/reliability comparison",
+  "geography": "US SEC registrants",
+  "time_coverage": "full EDGAR history",
+  "size_hint": "n/a, client only",
+  "license": "MIT",
+  "last_activity": "212 commits, maintained",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Straightforward bulk downloader to grab every 8-K/10-Q for BKNG/EXPE/MAR/HLT for a peer-print KPI extraction pipeline."
+  ]
+ },
+ {
+  "key": "github:janlukasschroeder/sec-api-python",
+  "url": "https://github.com/janlukasschroeder/sec-api-python",
+  "name": "sec-api-python (sec-api.io SDK)",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python SDK for the sec-api.io service: full-text search over filings from 2001+, XBRL-to-JSON converter for full US GAAP taxonomy (income statement/balance sheet/cash flow), covers 20M+ EDGAR filings/100M+ exhibits since 1993. MIT license for the client; underlying API requires a free API key (rate-limited free tier) or paid plan for volume.",
+  "why_useful": "Full-text search across all peer 8-Ks/10-Qs (e.g. searching 'RevPAR' or 'nights booked' phrases in filings 2001+) would be a fast way to build a peer KPI-mention index; the free tier may be enough for spot pulls without becoming a paid dependency (CLAUDE.md forbids paid keys as data source, so flag as method-only, do not adopt for the harness).",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   15
+  ],
+  "duplicate_of_holding": "none",
+  "geography": "US SEC registrants",
+  "time_coverage": "1993-present (filings), full-text search 2001-present",
+  "size_hint": "n/a, hosted API",
+  "license": "MIT (client); underlying API has free-tier + paid",
+  "last_activity": "45 commits shown",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Full-text search across all peer 8-Ks/10-Qs (e.g. searching 'RevPAR' or 'nights booked' phrases in filings 2001+) would be a fast way to build a peer KPI-mention index; the free tier may be enough for spot pulls without becoming a paid dependency (CLAUDE.md forbids paid keys as data source, so flag as method-only, do not adopt for the harness)."
+  ]
+ },
+ {
+  "key": "github:john-friedman/datamule-python",
+  "url": "https://github.com/john-friedman/datamule-python",
+  "name": "datamule-python",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package for bulk SEC filing retrieval (10-K, Form 4, etc.) by ticker; free tier rate-limited to ~5 req/s directly against EDGAR, optional paid 'datamule' hosted archive ($1/100k downloads) for higher throughput. MIT, 673 commits, 557 stars.",
+  "why_useful": "Alternative bulk-download client for building the peer 8-K/10-Q corpus at scale without hitting SEC's own rate limits as hard; free-tier path stays within our paid-key-free rule.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "overlaps sec-edgar-downloader/edgartools",
+  "geography": "US SEC registrants",
+  "time_coverage": "full EDGAR history",
+  "size_hint": "n/a, client only",
+  "license": "MIT (client); paid tier optional, not required",
+  "last_activity": "673 commits, active, 557 stars",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Alternative bulk-download client for building the peer 8-K/10-Q corpus at scale without hitting SEC's own rate limits as hard; free-tier path stays within our paid-key-free rule."
+  ]
+ }
+]

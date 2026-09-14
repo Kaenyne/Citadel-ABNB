@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:quantconnect/lean",
+  "url": "https://github.com/QuantConnect/Lean",
+  "name": "QuantConnect Lean",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Open-source algo-trading engine with a committed Data/option/usa/{daily,hour,minute,universes} sample-data tree (small sample tickers, zip-of-CSV format `YYYYMMDD_tickType_optionType.zip`) used for local backtests, plus a paid QuantConnect Data Explorer for full historical US options chains. The free sample is a handful of tickers/dates for testing, not a broad historical panel.",
+  "why_useful": "Could serve as a template/format for point-in-time option-chain storage if the team ever builds its own ABNB options history; the sample data itself is too thin (few tickers) to use directly for ABNB implied-move backtests.",
+  "potential": "low",
+  "size_hint": "sample only, unknown exact row count",
+  "time_coverage": "unspecified, likely recent test dates",
+  "geography": "US listed options",
+  "license": "Apache-2.0 (Lean engine)",
+  "last_activity": "actively maintained (large, frequently-updated repo)",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Could serve as a template/format for point-in-time option-chain storage if the team ever builds its own ABNB options history; the sample data itself is too thin (few tickers) to use directly for ABNB implied-move backtests."
+  ]
+ },
+ {
+  "key": "github:gammagrid/gammagrid",
+  "url": "https://github.com/gammagrid/gammagrid",
+  "name": "GammaGrid",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source dashboard (AGPL-3.0, 64 stars) computing dealer gamma exposure (GEX), max pain, open interest and an in-house-computed IV surface for a user's US-listed options watchlist, pulling from yfinance on a schedule; explicitly stores no historical dataset \u2014 users accumulate their own local history (~214 bytes/contract per snapshot) going forward only.",
+  "why_useful": "Could be pointed at ABNB now and run through 5 Nov to build a homemade options-positioning/IV-surface time series into the print, but produces no retrospective history and duplicates the already-held Yahoo current-chain source.",
+  "potential": "low",
+  "size_hint": "no committed data; per-snapshot local accumulation only",
+  "time_coverage": "forward-only from whenever it is run",
+  "geography": "US-listed options only (SPX/VIX index options excluded)",
+  "license": "AGPL-3.0",
+  "last_activity": "62 commits",
+  "duplicate_of_holding": "Yahoo current options chain already held",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Could be pointed at ABNB now and run through 5 Nov to build a homemade options-positioning/IV-surface time series into the print, but produces no retrospective history and duplicates the already-held Yahoo current-chain source."
+  ]
+ },
+ {
+  "key": "github:anthonybradford/optionmatrix",
+  "url": "https://github.com/AnthonyBradford/optionmatrix",
+  "name": "OptionMatrix",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GTK-based financial derivatives calculator implementing 171+ pricing models (Black-Scholes and many variants) for computing option prices, implied vol and greeks; 251 stars.",
+  "why_useful": "Pure pricing/IV-calculation utility, not a data source; only marginally relevant as a fallback IV calculator if the team needs an offline pricer.",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "unspecified in fetched content",
+  "last_activity": "unspecified",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Pure pricing/IV-calculation utility, not a data source; only marginally relevant as a fallback IV calculator if the team needs an offline pricer."
+  ]
+ },
+ {
+  "key": "github:sfl666/option_tools",
+  "url": "https://github.com/sfl666/option_tools",
+  "name": "option_tools",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit computing implied and historical volatility surfaces and greeks for Chinese ETF options (50ETF, CSI 300 ETF options), commodity and index options via Sina Finance data APIs; no committed historical data files, only sample plot images.",
+  "why_useful": "Not US/ABNB relevant and no persisted dataset; noted only as a method pattern for building IV-surface visualizations, low value for this pitch.",
+  "potential": "low",
+  "size_hint": "code + sample images only",
+  "time_coverage": "n/a",
+  "geography": "China (Shanghai/Shenzhen exchange options)",
+  "license": "unspecified",
+  "last_activity": "33 commits total",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Not US/ABNB relevant and no persisted dataset; noted only as a method pattern for building IV-surface visualizations, low value for this pitch."
+  ]
+ },
+ {
+  "key": "github:marcdemers/py_vollib_vectorized",
+  "url": "https://github.com/marcdemers/py_vollib_vectorized",
+  "name": "py_vollib_vectorized",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Vectorized (numpy/pandas) implementation of py_vollib for computing implied volatility and greeks over full option chains at once; 161 stars.",
+  "why_useful": "Utility for fast IV/greeks computation if the team assembles its own ABNB option-chain snapshots into a dataframe; not a data source itself.",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "unspecified in fetched content",
+  "last_activity": "unspecified",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Utility for fast IV/greeks computation if the team assembles its own ABNB option-chain snapshots into a dataframe; not a data source itself."
+  ]
+ }
+]

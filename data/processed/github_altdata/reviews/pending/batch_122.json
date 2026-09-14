@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:allan34kirwa/customer-segmentation-usa-eda-",
+  "url": "https://github.com/Allan34Kirwa/Customer-Segmentation-USA-EDA-",
+  "name": "Customer-Segmentation-USA-EDA-",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "EDA repo built on the Federal Reserve's Survey of Consumer Finances (SCF) microdata - household income, debt, and asset holdings by demographic group; the SCF itself is the Fed's public source, this repo is a worked example pointing to/using it.",
+  "why_useful": "SCF is a genuine primary source for US household debt/asset composition by income tercile - useful as a slower-moving benchmark for consumer leverage capacity around travel spend, though this specific repo is a low-value student EDA wrapper rather than a data mirror.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "SCF survey years (triennial, Fed source)",
+  "size_hint": "N/A (analysis notebook, not a mirror)",
+  "license": "unspecified",
+  "last_activity": "2024-04-05",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "SCF is a genuine primary source for US household debt/asset composition by income tercile - useful as a slower-moving benchmark for consumer leverage capacity around travel spend, though this specific repo is a low-value student EDA wrapper rather than a data mirror."
+  ]
+ },
+ {
+  "key": "github:jayzin07/get_inpc",
+  "url": "https://github.com/jayzin07/GET_INPC",
+  "name": "GET_INPC",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script pulling Brazil's INPC (consumer price index) series from the IBGE API and writing to a database. 0 stars, updated Jul 2026.",
+  "why_useful": "Narrow but concrete: a working script for Brazilian CPI pull, useful for FX/consumer-strength regional split (gap #6/#7) if IBGE macro is wanted alongside BCB.",
+  "potential": "low",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "geography": "Brazil",
+  "time_coverage": "current INPC series",
+  "size_hint": "single script",
+  "license": "none stated",
+  "last_activity": "2026-07-09",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Narrow but concrete: a working script for Brazilian CPI pull, useful for FX/consumer-strength regional split (gap #6/#7) if IBGE macro is wanted alongside BCB."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-estat-japan",
+  "url": "https://github.com/pipeworx-io/mcp-estat-japan",
+  "name": "pipeworx-io/mcp-estat-japan",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An MCP (Model Context Protocol) server wrapping Japan's e-Stat government statistics API, described as 'e-Stat (Japan) MCP \u2014 government statistics'. e-Stat hosts Japan's CPI series including the accommodation/hotel-lodging component; this is a generic client, not a stored dataset, and appears extremely new (0 stars, created/updated 2026-09-13, one day before this scout ran).",
+  "why_useful": "Could provide programmatic access to Japan CPI accommodation data, which we do not otherwise hold, if it in fact proxies the e-Stat CPI endpoints \u2014 but the repo is unvetted, brand-new, and generic (covers all e-Stat tables, not CPI-specific).",
+  "potential": "low",
+  "duplicate_of_holding": "no \u2014 we hold no Japan CPI series",
+  "geography": "Japan (national)",
+  "time_coverage": "N/A (live API access, not stored data)",
+  "size_hint": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-09-13 (created same week as this scout)",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Could provide programmatic access to Japan CPI accommodation data, which we do not otherwise hold, if it in fact proxies the e-Stat CPI endpoints \u2014 but the repo is unvetted, brand-new, and generic (covers all e-Stat tables, not CPI-specific)."
+  ]
+ },
+ {
+  "key": "github:andre-dussing/european-public-data-pipeline",
+  "url": "https://github.com/andre-dussing/european-public-data-pipeline",
+  "name": "andre-dussing/european-public-data-pipeline",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A hybrid Azure data-engineering demo pipeline (Bronze -> Silver -> Quality -> SQL Gold layers) that ingests Eurostat HICP data end-to-end into a SQL warehouse. Appears to be a portfolio/demo project rather than a maintained data source; category-level (accommodation) granularity not confirmed.",
+  "why_useful": "Marginal \u2014 mainly useful as a reference pipeline pattern for ingesting Eurostat HICP, not as a data source itself; 0 stars, likely a learning project.",
+  "potential": "low",
+  "duplicate_of_holding": "duplicates euro-area HICP accommodation holding in substance if it surfaces category detail; unconfirmed",
+  "geography": "EU",
+  "time_coverage": "unconfirmed",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2026-02-17",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Marginal \u2014 mainly useful as a reference pipeline pattern for ingesting Eurostat HICP, not as a data source itself; 0 stars, likely a learning project."
+  ]
+ },
+ {
+  "key": "github:bdecon/bls",
+  "url": "https://github.com/bdecon/bls",
+  "name": "bls (Python BLS API client)",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client for the official BLS Public Data API (`get_series()`), takes one or more BLS series IDs and returns the pulled data; supports the free registered-key higher-quota tier. Generic \u2014 any CPI series ID (e.g. CUUR0000SEHB 'Lodging away from home', CUUR0000SEHC 'Owners' equivalent rent' or other CUxx series) is retrievable, not just a fixed headline number.",
+  "why_useful": "A maintained, minimal client for pulling the exact BLS CPI lodging-away-from-home series (and any other detailed CPI/PPI item) with a specific vintage timestamp from the API response, supporting the point-in-time register rule; also usable for PPI Traveler Accommodation.",
+  "potential": "low",
+  "license": "not confirmed",
+  "last_activity": "described as under active/rapid development, no exact date in excerpt",
+  "geography": "US",
+  "time_coverage": "whatever BLS series covers (CPI lodging since ~1997/1998 for the detailed item)",
+  "size_hint": "library only",
+  "gap_targets": [],
+  "duplicate_of_holding": "We already hold BLS CPI via FRED; this is just an alternate direct-API client, not new data",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "A maintained, minimal client for pulling the exact BLS CPI lodging-away-from-home series (and any other detailed CPI/PPI item) with a specific vintage timestamp from the API response, supporting the point-in-time register rule; also usable for PPI Traveler Accommodation."
+  ]
+ }
+]

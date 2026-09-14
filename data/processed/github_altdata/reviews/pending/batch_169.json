@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:patentsview/patentsview-evaluation",
+  "url": "https://github.com/PatentsView/PatentsView-Evaluation",
+  "name": "PatentsView-Evaluation",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official PatentsView repo benchmarking/evaluating the entity-disambiguation algorithms (assignee/inventor deduplication) underlying the PatentsView database. 16 stars.",
+  "why_useful": "Marginal -- documents data-quality caveats for anyone using PatentsView assignee data (e.g. how reliably 'Airbnb, Inc.' filings are deduplicated), useful context rather than a data source itself.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "US",
+  "time_coverage": "n/a (methodology repo)",
+  "size_hint": "small",
+  "license": "not stated",
+  "last_activity": "16 stars, low activity",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Marginal -- documents data-quality caveats for anyone using PatentsView assignee data (e.g. how reliably 'Airbnb, Inc.' filings are deduplicated), useful context rather than a data source itself."
+  ]
+ },
+ {
+  "key": "github:sslmate/certspotter",
+  "url": "https://github.com/SSLMate/certspotter",
+  "name": "certspotter",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go-based lightweight Certificate Transparency log monitor (1.2k stars) that watches CT logs and alerts on new certificates for configured domains.",
+  "why_useful": "Same product-launch-detection use case as certstream-python/crt.sh above (new Airbnb subdomain = new product/microsite), implemented as a standalone monitoring daemon rather than a library -- an alternative if a always-on watcher is preferred over a Python script.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "overlaps CaliDog/certstream-python and PaulSec/crt.sh for the same use case",
+  "geography": "global",
+  "time_coverage": "real-time forward-looking",
+  "size_hint": "single Go binary",
+  "license": "not confirmed (check on use)",
+  "last_activity": "1.2k stars",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Same product-launch-detection use case as certstream-python/crt.sh above (new Airbnb subdomain = new product/microsite), implemented as a standalone monitoring daemon rather than a library -- an alternative if a always-on watcher is preferred over a Python script."
+  ]
+ },
+ {
+  "key": "github:unapibageek/ctfr",
+  "url": "https://github.com/UnaPibaGeek/ctfr",
+  "name": "ctfr",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tool for enumerating HTTPS subdomains of a target by querying Certificate Transparency logs (crt.sh backend). 2.1k stars.",
+  "why_useful": "One more implementation of the same CT-log subdomain-enumeration idea; lower marginal value once crt.sh wrapper + sublert + certspotter are already catalogued, but very popular/well-maintained so worth a line.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "duplicates the CT-monitoring capability of PaulSec/crt.sh, sublert, certspotter",
+  "geography": "global",
+  "time_coverage": "point-in-time snapshot query, not continuous",
+  "size_hint": "single script",
+  "license": "not confirmed",
+  "last_activity": "2.1k stars",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "One more implementation of the same CT-log subdomain-enumeration idea; lower marginal value once crt.sh wrapper + sublert + certspotter are already catalogued, but very popular/well-maintained so worth a line."
+  ]
+ },
+ {
+  "key": "github:topics/pushshift",
+  "url": "https://github.com/topics/pushshift",
+  "name": "GitHub topic: pushshift (index page, not a single repo)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated GitHub topic listing 15 repos tagged 'pushshift', including arctic_shift, redd-archiver, redarc, timesearch, arctic_shift_ui (web UI companion to arctic_shift), reveddit (reviews removed/deleted reddit content via Pushshift), redditsfinder (archives a user's post history via Pushshift), rreddit (R package for Reddit data), archive.observer (an AskHistorians-specific archive viewer built in Rust).",
+  "why_useful": "Index of adjacent Pushshift-ecosystem tools beyond the ones catalogued individually here; reveddit and redditsfinder in particular could recover deleted/removed r/AirBnBHosts complaint threads that would otherwise be invisible to a live scrape.",
+  "potential": "low",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "n/a, index page",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "n/a",
+  "last_activity": "n/a",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "Index of adjacent Pushshift-ecosystem tools beyond the ones catalogued individually here; reveddit and redditsfinder in particular could recover deleted/removed r/AirBnBHosts complaint threads that would otherwise be invisible to a live scrape."
+  ]
+ },
+ {
+  "key": "github:yihongt/hgarn",
+  "url": "https://github.com/YihongT/HGARN",
+  "name": "HGARN (Hierarchical Graph Attention Recurrent Network for human mobility prediction)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "IEEE TITS 2024 paper code (25 stars, Python) for next-location prediction; trains/evaluates on the canonical Yang et al. 'NYC and Tokyo Check-in Dataset' (Foursquare-derived, TSMC2014), pointing readers to https://sites.google.com/site/yangdingqi/home/foursquare-dataset for the raw data rather than committing it.",
+  "why_useful": "Confirms and links the standard, widely-used Foursquare NYC/Tokyo check-in dataset (with a working non-GitHub host) plus a modern (2024) modeling method that could be repurposed to score destination popularity/visit-sequence shifts as a mobility proxy.",
+  "potential": "low",
+  "geography": "NYC, Tokyo",
+  "time_coverage": "original Foursquare TSMC2014 dataset vintage (~2012-2013)",
+  "size_hint": "code only; dataset itself is the standard ~227k (NYC) / ~573k (Tokyo) checkin files",
+  "license": "not confirmed",
+  "last_activity": "2025-01-19",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins"
+  ],
+  "why_all": [
+   "Confirms and links the standard, widely-used Foursquare NYC/Tokyo check-in dataset (with a working non-GitHub host) plus a modern (2024) modeling method that could be repurposed to score destination popularity/visit-sequence shifts as a mobility proxy."
+  ]
+ }
+]

@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:jordanlyall/wc26-mcp",
+  "url": "https://github.com/jordanlyall/wc26-mcp",
+  "name": "wc26-mcp",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server / AI-tool wrapper with '18 tools covering matches, teams, venues, city guides, fan zones, visa info, head-to-head records' for the 2026 World Cup; works with Claude/ChatGPT/Cursor/Telegram. Likely backed by committed or fetched reference data on host cities and fan zones, not confirmed via directory listing.",
+  "why_useful": "If the underlying data files (city guides, venue/fan-zone locations) are committed rather than live-fetched, this could add host-city-level detail (fan zones, visa/logistics) beyond just match schedule -- relevant to gauging incremental visitor friction/ease by host market.",
+  "potential": "low",
+  "geography": "US, Canada, Mexico",
+  "time_coverage": "2026 tournament",
+  "size_hint": "not confirmed",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "If the underlying data files (city guides, venue/fan-zone locations) are committed rather than live-fetched, this could add host-city-level detail (fan zones, visa/logistics) beyond just match schedule -- relevant to gauging incremental visitor friction/ease by host market."
+  ]
+ },
+ {
+  "key": "github:sulynajimsj/events-scraper",
+  "url": "https://github.com/sulynajimsj/events-scraper",
+  "name": "events-scraper",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "'A Python PIP package to fetch events using Ticketmaster API.' MIT license, small (2 stars). No committed data; a thin client requiring a Ticketmaster Discovery API key (free-tier available) to pull concert/event listings by city/date.",
+  "why_useful": "Lightweight, pip-installable Ticketmaster client that could be used to build a concert/event-density-by-city calendar as a demand-shock proxy for specific STR markets, complementing PredictHQ; low priority since it is a thin wrapper with no unique value over calling the Ticketmaster API directly.",
+  "potential": "low",
+  "geography": "wherever Ticketmaster operates (US-heavy, some international)",
+  "time_coverage": "current/forward-looking via API only",
+  "size_hint": "small pip package",
+  "license": "MIT",
+  "last_activity": "2024-10-09",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Lightweight, pip-installable Ticketmaster client that could be used to build a concert/event-density-by-city calendar as a demand-shock proxy for specific STR markets, complementing PredictHQ; low priority since it is a thin wrapper with no unique value over calling the Ticketmaster API directly."
+  ]
+ },
+ {
+  "key": "github:rgriff23/olympic_history",
+  "url": "https://github.com/rgriff23/Olympic_history",
+  "name": "rgriff23/Olympic_history",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R scripts and compiled tabular data of Olympic athlete/event history 1896-2016, scraped from sports-reference.com; underlies the well-known Kaggle '120 years of Olympic history' dataset.",
+  "why_useful": "Historical Olympics host-city/year reference (useful for base-rating how past Games moved host-city travel demand), but athlete/medal-level detail is not directly a travel-demand series and the dataset stops at 2016 (does not cover Tokyo 2020, Paris 2024, or Milano-Cortina 2026).",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global (host cities/countries 1896-2016)",
+  "time_coverage": "1896-2016",
+  "license": "not confirmed (data originally scraped, redistributed for research use)",
+  "last_activity": "not confirmed exact date",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Historical Olympics host-city/year reference (useful for base-rating how past Games moved host-city travel demand), but athlete/medal-level detail is not directly a travel-demand series and the dataset stops at 2016 (does not cover Tokyo 2020, Paris 2024, or Milano-Cortina 2026)."
+  ]
+ },
+ {
+  "key": "github:arread/census-fema-tornadoes",
+  "url": "https://github.com/arread/census-fema-tornadoes",
+  "name": "census-fema-tornadoes",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed how-to repo for pulling and integrating tornado-track data with FEMA disaster declarations and Census geography. Small project (0 stars), updated 9 Sep 2025.",
+  "why_useful": "A worked example of joining disaster declarations to census geography, a pattern reusable for mapping any FEMA-declared hurricane/wildfire county to nearby Inside Airbnb / STR markets for gap 11.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "license": "MIT",
+  "last_activity": "2025-09-09",
+  "size_hint": "small, code/tutorial scale",
+  "geography": "US",
+  "time_coverage": "unspecified",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A worked example of joining disaster declarations to census geography, a pattern reusable for mapping any FEMA-declared hurricane/wildfire county to nearby Inside Airbnb / STR markets for gap 11."
+  ]
+ },
+ {
+  "key": "github:bntdeep/natural-disasters-csv-agent",
+  "url": "https://github.com/bntdeep/Natural-Disasters-CSV-Agent",
+  "name": "Natural-Disasters-CSV-Agent",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Natural-language chatbot (FastMCP server + LangChain ReAct agent) built over what its description calls 'the EM-DAT disasters dataset (1900-2021)' as a CSV, answering questions with Plotly charts/HTML/tables. Updated 21 Jun 2026, not yet verified via directory listing whether the full CSV is committed vs. fetched.",
+  "why_useful": "If the underlying CSV is committed, it is a long-run (1900-2021) global EM-DAT extract, i.e. older/longer than a typical fresh EM-DAT pull, useful background for gap 11 tourism-shock base rates by country/decade.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "license": "none listed",
+  "last_activity": "2026-06-21",
+  "size_hint": "unverified, described as full EM-DAT 1900-2021 CSV",
+  "geography": "global",
+  "time_coverage": "1900-2021 (per description, unverified)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "If the underlying CSV is committed, it is a long-run (1900-2021) global EM-DAT extract, i.e. older/longer than a typical fresh EM-DAT pull, useful background for gap 11 tourism-shock base rates by country/decade."
+  ]
+ }
+]

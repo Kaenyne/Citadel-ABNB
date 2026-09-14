@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:aldomann/hurdat-hadisst-data",
+  "url": "https://github.com/aldomann/hurdat-hadisst-data",
+  "name": "hurdat-hadisst-data",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R package bundling a unified, cleaned dataset merging NOAA HURDAT2 tropical-cyclone tracks/intensity with HadISST1 sea-surface-temperature data for the North Atlantic and Northeast Pacific basins. Data + R/ code + data-raw/ + processed data/ folders, GPL-3.0, 2 stars (small, academic thesis project) but the underlying HURDAT2 source is NOAA-official and goes back to 1851 (Atlantic) / 1949 (E. Pacific).",
+  "why_useful": "Hurricane-season event/shock data for Florida, Gulf Coast, and Caribbean STR markets \u2014 feeds cancellation/RNPL and regional-mix disruption modeling around the Q3/Q4 guide window (gap #11 events and shocks).",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "North Atlantic and NE Pacific basins",
+  "time_coverage": "HURDAT2 source back to 1851/1949; package itself thesis-scoped, may be a subset",
+  "size_hint": "small R package with bundled CSV/RData",
+  "license": "GPL-3.0",
+  "last_activity": "low activity, 11 commits total, exact date not surfaced",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Hurricane-season event/shock data for Florida, Gulf Coast, and Caribbean STR markets \u2014 feeds cancellation/RNPL and regional-mix disruption modeling around the Q3/Q4 guide window (gap #11 events and shocks)."
+  ]
+ },
+ {
+  "key": "github:tylerx404/world-cup-2026-schedule-calendar",
+  "url": "https://github.com/Tylerx404/World-Cup-2026-Schedule-Calendar",
+  "name": "World-Cup-2026-Schedule-Calendar",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Interactive FIFA World Cup 2026 fixture list (64 matches, 16 host cities across US/Canada/Mexico, Jun-Jul 2026) with an auto-updating WebCal/iCal subscription feed -- machine-readable match dates/venues, MIT licensed.",
+  "why_useful": "Gives exact match dates and host-city assignments (several overlap ABNB's top-13 Inside Airbnb markets: LA, NYC metro via nearby, Mexico City) to build city-level demand-shock dummies for the 3Q26 nights nowcast and regional mix during the World Cup window already inside the current data panel.",
+  "potential": "medium",
+  "size_hint": "small, single ICS/schedule feed",
+  "geography": "US, Canada, Mexico host cities",
+  "time_coverage": "Jun-Jul 2026",
+  "license": "MIT",
+  "last_activity": "2026-08-15",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Gives exact match dates and host-city assignments (several overlap ABNB's top-13 Inside Airbnb markets: LA, NYC metro via nearby, Mexico City) to build city-level demand-shock dummies for the 3Q26 nights nowcast and regional mix during the World Cup window already inside the current data panel."
+  ]
+ },
+ {
+  "key": "github:bigelowlab/hurdat2",
+  "url": "https://github.com/BigelowLab/hurdat2",
+  "name": "hurdat2",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "R package to read and analyze NOAA's HURDAT2 Atlantic/East-Pacific hurricane best-track dataset (storm name, date/time, lat/lon, max wind, pressure, category, for every storm since 1851/1949) directly from the NHC text feed into tidy tables.",
+  "why_useful": "Landfall dates/locations/intensity for Q3/Q4 hurricane season (peak Aug-Oct, inside the pitch's forecast quarters) let the team build Florida/Caribbean/Gulf-market booking-disruption and cancellation dummies, and back-test past hurricane quarters against Inside-Airbnb-covered markets (New Orleans is in the 13-city panel).",
+  "potential": "medium",
+  "size_hint": "small package, pulls a public text feed (no committed data), full historical span",
+  "geography": "Atlantic and East Pacific basins",
+  "time_coverage": "1851-present (updated each season)",
+  "license": "MIT",
+  "last_activity": "2026-08-12",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Landfall dates/locations/intensity for Q3/Q4 hurricane season (peak Aug-Oct, inside the pitch's forecast quarters) let the team build Florida/Caribbean/Gulf-market booking-disruption and cancellation dummies, and back-test past hurricane quarters against Inside-Airbnb-covered markets (New Orleans is in the 13-city panel)."
+  ]
+ },
+ {
+  "key": "github:gunnargriffith/nationalparkannualattendance",
+  "url": "https://github.com/gunnargriffith/NationalParkAnnualAttendance",
+  "name": "NationalParkAnnualAttendance",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Group project (BYU Stat 386) combining the National Parks API with a scraper ('parks_scraper.ipynb', 'nationalparksdata' package) that builds an annual-attendance dataset; includes EDA/analysis notebooks and a Streamlit app. Exact file/row counts not visible from README alone.",
+  "why_useful": "A working scrape method against NPS annual attendance figures (a public, non-Airbnb source) that could be re-run for a longer or more current series than what we hold; secondary/lower confidence versus national-parks-bi since data extent is unconfirmed from the README.",
+  "potential": "low",
+  "geography": "US National Parks",
+  "time_coverage": "annual, extent unclear",
+  "size_hint": "unclear, notebooks + scraped CSV/JSON",
+  "license": "not stated",
+  "last_activity": "2026-04-22",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "A working scrape method against NPS annual attendance figures (a public, non-Airbnb source) that could be re-run for a longer or more current series than what we hold; secondary/lower confidence versus national-parks-bi since data extent is unconfirmed from the README."
+  ]
+ },
+ {
+  "key": "github:hai-ling-c/time-series-forecasting-of-visitation-in-skiing-resorts",
+  "url": "https://github.com/hai-ling-c/Time-Series-Forecasting-of-Visitation-in-Skiing-Resorts",
+  "name": "Time-Series-Forecasting-of-Visitation-in-Skiing-Resorts",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Datathon project (Australian inter-university) forecasting 2026 visitor-days for 9 Australian ski resorts using Exponential Smoothing, ARIMA and RNN models; also computes a skier-satisfaction index. Underlying visitation data for the 9 resorts is part of the repo (datathon-supplied).",
+  "why_useful": "One of very few public repos with an actual ski-resort visitation time series (not just US, but a genuine destination-demand dataset with methods for forecasting a seasonal leisure-travel series); low direct relevance to ABNB's US/EU markets but the modeling approach (ARIMA/ETS/RNN on visitor-days) is transferable and the raw resort data is real.",
+  "potential": "low",
+  "geography": "Australia, 9 ski resorts",
+  "time_coverage": "multi-year historical, forecast target 2026",
+  "size_hint": "small, 9-resort panel",
+  "license": "not stated",
+  "last_activity": "2025-09-02",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "One of very few public repos with an actual ski-resort visitation time series (not just US, but a genuine destination-demand dataset with methods for forecasting a seasonal leisure-travel series); low direct relevance to ABNB's US/EU markets but the modeling approach (ARIMA/ETS/RNN on visitor-days) is transferable and the raw resort data is real."
+  ]
+ }
+]

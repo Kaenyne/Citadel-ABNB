@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:matthew-davis/fcdo-travel-map",
+  "url": "https://github.com/matthew-davis/fcdo-travel-map",
+  "name": "fcdo-travel-map",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A visualization/map front-end over FCDO travel advice data ('a map of all FCDO travel advice'), updated 2026-09-13. Likely pulls the same underlying FCDO source as the repo above but may have its own data snapshot committed.",
+  "why_useful": "Second, independently-built FCDO client; worth checking for a committed data snapshot if the gavinmorrison repo's method needs cross-validation.",
+  "potential": "low",
+  "time_coverage": "current snapshot only, unconfirmed",
+  "geography": "global via FCDO",
+  "size_hint": "unknown",
+  "license": "unstated",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "overlaps gavinmorrison/fcdo-travel-advice (same source, different client)",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "Second, independently-built FCDO client; worth checking for a committed data snapshot if the gavinmorrison repo's method needs cross-validation."
+  ]
+ },
+ {
+  "key": "github:predicthq/sdk-js",
+  "url": "https://github.com/predicthq/sdk-js",
+  "name": "predicthq/sdk-js",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "JavaScript/Node client (MIT, 8 stars, updated Jan 2026) for the same PredictHQ Events API described above (conferences, expos, festivals, concerts, sports, holidays, severe weather).",
+  "why_useful": "Same PredictHQ event/MICE calendar access as the Python SDK, for teams preferring a JS pipeline; same paid-tier caveat.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "forward-looking event calendar",
+  "size_hint": "API client, no bundled data",
+  "license": "MIT",
+  "last_activity": "2026-01-25",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "duplicate of predicthq/sdk-py's data source, different language binding",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Same PredictHQ event/MICE calendar access as the Python SDK, for teams preferring a JS pipeline; same paid-tier caveat."
+  ]
+ },
+ {
+  "key": "github:predicthq/api-specs",
+  "url": "https://github.com/predicthq/api-specs",
+  "name": "predicthq/api-specs",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "OpenAPI specification files (MIT) enumerating the full PredictHQ API schema, including the 'conferences' and 'expos' event categories, field definitions, and rank/attendance fields.",
+  "why_useful": "Confirms exactly which MICE-relevant fields (conference/expo category, predicted attendance, phq-rank) are queryable via PredictHQ before committing to build a pull -- useful as a schema reference, not itself a dataset.",
+  "potential": "low",
+  "geography": "n/a (schema only)",
+  "time_coverage": "n/a",
+  "size_hint": "spec files only",
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Confirms exactly which MICE-relevant fields (conference/expo category, predicted attendance, phq-rank) are queryable via PredictHQ before committing to build a pull -- useful as a schema reference, not itself a dataset."
+  ]
+ },
+ {
+  "key": "github:carlclabot96-ux/skywatch",
+  "url": "https://github.com/carlclabot96-ux/skywatch",
+  "name": "carlclabot96-ux/skywatch",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small personal repo describing a 'real-time private jet tracker using ADS-B data'. No stars, unclear if data is committed vs. just a live tracker script; likely thin/individual project.",
+  "why_useful": "Private/business-jet ADS-B tracking is a plausible high-end corporate-travel volume proxy (business jet movements as a leading indicator of executive/corporate travel intensity), a category with essentially no other GitHub presence found in this sweep. Flagged for the idea, not for this specific repo's maturity.",
+  "potential": "low",
+  "geography": "unclear, likely global ADS-B coverage",
+  "time_coverage": "real-time only, no evident historical archive",
+  "size_hint": "unknown, likely small/thin",
+  "license": "none declared",
+  "last_activity": "2026-01-27",
+  "gap_targets": [
+   10,
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Private/business-jet ADS-B tracking is a plausible high-end corporate-travel volume proxy (business jet movements as a leading indicator of executive/corporate travel intensity), a category with essentially no other GitHub presence found in this sweep. Flagged for the idea, not for this specific repo's maturity."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-predicthq",
+  "url": "https://github.com/pipeworx-io/mcp-predicthq",
+  "name": "pipeworx-io/mcp-predicthq",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP (Model Context Protocol) server wrapping the PredictHQ Events API for use inside an LLM agent workflow \u2014 same underlying event categories as above (conferences, concerts, sports, community, school holidays).",
+  "why_useful": "A ready client if the team ever gets a PredictHQ key; would let an agent query event density/impact by city and date range for the events/shocks gap.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "Global",
+  "time_coverage": "Live",
+  "size_hint": "Small code repo, MIT license",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "A ready client if the team ever gets a PredictHQ key; would let an agent query event density/impact by city and date range for the events/shocks gap."
+  ]
+ }
+]

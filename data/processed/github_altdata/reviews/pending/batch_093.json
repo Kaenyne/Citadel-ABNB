@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:tarang-tj/wa-housing-homelessness",
+  "url": "https://github.com/tarang-tj/wa-housing-homelessness",
+  "name": "wa-housing-homelessness",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "R analysis of rising rent costs vs homelessness in Washington State 2015-2024, built on Zillow ZORI and HUD Point-in-Time (PIT) homelessness counts. Pushed 17 Jul 2026.",
+  "why_useful": "Rare multi-year (2015-2024) state-level panel combining ZORI with an independent HUD series; the underlying merged CSV, if committed, would be a decadal WA rent time series.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2026-07-17",
+  "geography": "Washington State",
+  "time_coverage": "2015-2024",
+  "hits": 2,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Rare multi-year (2015-2024) state-level panel combining ZORI with an independent HUD series; the underlying merged CSV, if committed, would be a decadal WA rent time series.",
+   "State-level, decade-long (2015-2024) rent-burden/housing-stress panel built from two public sources (ZORI + HUD PIT); marginal for ABNB directly but is a real multi-year time series construction pattern for rent-cost pressure that could proxy long-term-rental cost competition against STR conversion incentives."
+  ]
+ },
+ {
+  "key": "github:laurabarredaagusti/idealista_data_extraction",
+  "url": "https://github.com/laurabarredaagusti/idealista_data_extraction",
+  "name": "idealista_data_extraction",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Repo explicitly states it contains 'both the datasets and the extraction files' for Idealista (API + web scraping, Python). Geography/time span not confirmed without cloning.",
+  "why_useful": "A second committed Idealista dataset + method; worth checking depth against idealista18 for a longer or different-city panel.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Spain (assumed)",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-06-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "A second committed Idealista dataset + method; worth checking depth against idealista18 for a longer or different-city panel."
+  ]
+ },
+ {
+  "key": "github:david-carrasco/scrapy-idealista",
+  "url": "https://github.com/David-Carrasco/Scrapy-Idealista",
+  "name": "Scrapy-Idealista",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapy-based scraper for idealista.com real estate site (sale + rental listings), 185 stars, actively updated Aug 2026, GPL-2.0.",
+  "why_useful": "Most-starred, actively maintained Idealista scraper; a working method to pull LTR pricing for Spain if the team ever wants a live long-term-rental comparator series.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Spain",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "GPL-2.0",
+  "last_activity": "2026-08-28",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Most-starred, actively maintained Idealista scraper; a working method to pull LTR pricing for Spain if the team ever wants a live long-term-rental comparator series."
+  ]
+ },
+ {
+  "key": "github:martapanc/idealista-immobiliare-scraper",
+  "url": "https://github.com/martapanc/Idealista-Immobiliare-Scraper",
+  "name": "Idealista-Immobiliare-Scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper covering both Idealista (Spain/Italy/Portugal) and Immobiliare.it (Italy) for-sale/rental listings.",
+  "why_useful": "One of the few repos bridging two of the requested sites (Idealista + Immobiliare); extends the acquisition-method coverage to Italy.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Spain, Italy, Portugal",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "none declared",
+  "last_activity": "2026-08-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "One of the few repos bridging two of the requested sites (Idealista + Immobiliare); extends the acquisition-method coverage to Italy."
+  ]
+ },
+ {
+  "key": "github:toby-p/rightmove_webscraper.py",
+  "url": "https://github.com/toby-p/rightmove_webscraper.py",
+  "name": "rightmove_webscraper.py",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python class returning up to 1,050 live Rightmove.co.uk listings (price, property type, address, bedrooms, postcode, agent) per search as a pandas DataFrame. No committed dataset. MIT license, 282 stars, 119 forks, 83 commits. Repo itself flags that Rightmove's ToS prohibits scraping.",
+  "why_useful": "Turnkey method for pulling UK long-term-rental/for-sale asking prices by postcode/region \u2014 useful as a UK housing-cost comparator or host-economics proxy.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "United Kingdom",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-08-30",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Turnkey method for pulling UK long-term-rental/for-sale asking prices by postcode/region \u2014 useful as a UK housing-cost comparator or host-economics proxy.",
+   "Simple one-command live pull of UK asking rents/sale prices by postcode/region for LTR supply-economics work (gap 13); ToS caveat means any use is a human terms-of-service call per repo CLAUDE.md rule 6."
+  ]
+ }
+]

@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:lukas113/rent_prediction",
+  "url": "https://github.com/Lukas113/Rent_Prediction",
+  "name": "Rent_Prediction",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Data retrieval of Swiss rental properties from Immoscout24, with cleaning/analysis and both a regression model and a from-scratch neural network for rent estimation.",
+  "why_useful": "Second Swiss Immoscout24 rental pull method; corroborates hamedrazavi repo above for a Switzerland LTR proxy.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Switzerland",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2024-08-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Second Swiss Immoscout24 rental pull method; corroborates hamedrazavi repo above for a Switzerland LTR proxy."
+  ]
+ },
+ {
+  "key": "github:luminati-io/zillow-dataset-samples",
+  "url": "https://github.com/luminati-io/Zillow-dataset-samples",
+  "name": "Zillow-dataset-samples",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Sample of 1,000+ Zillow listings extracted via the Bright Data scraping API, committed as a demo dataset (for-sale/for-rent listing attributes, images, prices).",
+  "why_useful": "Small demo only (1k rows, marketing sample for a paid scraping service), but confirms Bright Data's Zillow scraper output schema if the team ever wants to replicate a pull.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "United States (unspecified markets)",
+  "time_coverage": "current snapshot only",
+  "size_hint": "~1,000 listings",
+  "license": "none declared",
+  "last_activity": "2026-03-23",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Small demo only (1k rows, marketing sample for a paid scraping service), but confirms Bright Data's Zillow scraper output schema if the team ever wants to replicate a pull."
+  ]
+ },
+ {
+  "key": "github:nickirk/immo",
+  "url": "https://github.com/nickirk/immo",
+  "name": "immo",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Bot monitoring immoscout24.de and wg-gesucht.de for new German flat listings and auto-applying.",
+  "why_useful": "Live-monitoring method covering two German rental portals at once (Immoscout24 + WG-Gesucht); marginal beyond ImmoSpider/immoscraper above, but wg-gesucht adds shared-flat/room-rental coverage not seen elsewhere.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany",
+  "time_coverage": "N/A (live bot)",
+  "size_hint": "N/A",
+  "license": "GPL-3.0",
+  "last_activity": "2026-09-03",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Live-monitoring method covering two German rental portals at once (Immoscout24 + WG-Gesucht); marginal beyond ImmoSpider/immoscraper above, but wg-gesucht adds shared-flat/room-rental coverage not seen elsewhere."
+  ]
+ },
+ {
+  "key": "github:anthonybloomer/zoopla",
+  "url": "https://github.com/AnthonyBloomer/zoopla",
+  "name": "zoopla (Python wrapper)",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Thin Python wrapper around the (now largely defunct/restricted) Zoopla API, described as giving access to '27m homes, over 1m sale and rental listings, and 15 years of sold price data' when the API was open. No data committed; 89 stars, only 5 commits.",
+  "why_useful": "Low value now since Zoopla closed most of its public API; kept for completeness as a UK rental-data acquisition method if API access is restored.",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "N/A",
+  "geography": "United Kingdom",
+  "license": "unspecified on repo page",
+  "last_activity": "unclear, low commit count suggests stale",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Low value now since Zoopla closed most of its public API; kept for completeness as a UK rental-data acquisition method if API access is restored."
+  ]
+ },
+ {
+  "key": "github:civillizard/saudi-real-estate-data",
+  "url": "https://github.com/civillizard/Saudi-Real-Estate-Data",
+  "name": "Saudi-Real-Estate-Data",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "4.93M real-estate transactions from Saudi Ministry of Justice (MOJ) and REGA, 2018-2025, covering sales, mortgages, seizures AND rentals across 13 regions of Saudi Arabia. Jupyter Notebook repo, 10 stars, last updated ~22 May 2026.",
+  "why_useful": "A large, multi-year, government-sourced committed rental+sales transaction dataset outside the US/EU (APAC/MENA gap adjacent); could proxy Gulf-region housing/rental cost trends relevant to a fast-growing ABNB market (Saudi/Gulf tourism), though not a direct STR proxy.",
+  "potential": "low",
+  "size_hint": "4.93M rows",
+  "time_coverage": "2018-2025",
+  "geography": "Saudi Arabia, 13 regions",
+  "license": "not stated in summary; verify on repo",
+  "last_activity": "22 May 2026",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "A large, multi-year, government-sourced committed rental+sales transaction dataset outside the US/EU (APAC/MENA gap adjacent); could proxy Gulf-region housing/rental cost trends relevant to a fast-growing ABNB market (Saudi/Gulf tourism), though not a direct STR proxy."
+  ]
+ }
+]

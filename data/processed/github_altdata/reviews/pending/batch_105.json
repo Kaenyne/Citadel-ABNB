@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:pro100chok/apartments-com-listings-scraper-python",
+  "url": "https://github.com/PRO100CHOK/apartments-com-listings-scraper-python",
+  "name": "apartments-com-listings-scraper-python",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper for Apartments.com claiming '90+ property details & manager emails' and an 'Akamai bypass'; no committed data, 0 stars, last updated 16 May 2026.",
+  "why_useful": "One-command pull of US multifamily rental listings for host-supply-economics work (gap 13); low maturity/no track record, and the explicit anti-bot-bypass framing raises a ToS flag per rule 6.",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "N/A (live)",
+  "geography": "United States",
+  "license": "unspecified",
+  "last_activity": "16 May 2026",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "One-command pull of US multifamily rental listings for host-supply-economics work (gap 13); low maturity/no track record, and the explicit anti-bot-bypass framing raises a ToS flag per rule 6."
+  ]
+ },
+ {
+  "key": "github:geshan/domain-scraper",
+  "url": "https://github.com/geshan/domain-scraper",
+  "name": "domain-scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js scraper for domain.com.au rental listings with Docker support and CSV export; 15 stars, last updated 20 Jul 2026. No committed historical data.",
+  "why_useful": "One-command pull of Australian rental asking prices; could support APAC housing/LTR-supply comparisons (touches gaps 7 and 13 indirectly).",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "N/A (live)",
+  "geography": "Australia",
+  "license": "unspecified",
+  "last_activity": "20 Jul 2026",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "One-command pull of Australian rental asking prices; could support APAC housing/LTR-supply comparisons (touches gaps 7 and 13 indirectly)."
+  ]
+ },
+ {
+  "key": "github:topics/seloger",
+  "url": "https://github.com/topics/seloger (api-immo-scrapper-leboncoin-pap)",
+  "name": "api-immo-scrapper-leboncoin-pap",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapy-based API scraping SeLoger, LeBonCoin and PAP (three major French property/classifieds sites) for listings; 72 stars. No committed dataset seen from topic listing; exact owner/repo path not resolved in this pass (topic-page summary only).",
+  "why_useful": "Broadest French LTR listing source combining 3 sites in one tool; useful for France host-supply-economics work (gap 13). Needs a direct repo verification to confirm data_kind and license (not done this pass -- flag for follow-up).",
+  "potential": "low",
+  "size_hint": "unknown, code repo",
+  "time_coverage": "N/A",
+  "geography": "France",
+  "license": "unverified",
+  "last_activity": "unverified (seen only via topic page, not direct repo fetch)",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Broadest French LTR listing source combining 3 sites in one tool; useful for France host-supply-economics work (gap 13). Needs a direct repo verification to confirm data_kind and license (not done this pass -- flag for follow-up)."
+  ]
+ },
+ {
+  "key": "github:selimb/aptscraper",
+  "url": "https://github.com/selimb/aptscraper",
+  "name": "aptscraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Multi-platform scraper pulling live apartment listings from Kijiji and Craigslist (Canada/US classifieds). 0 stars, last updated 14 Sep 2024. No committed data.",
+  "why_useful": "One of the few tools found still explicitly targeting Craigslist rentals (most Craigslist-topic repos are generic classifieds scrapers, not rental-specific); could be adapted for a point-in-time Craigslist rental-ask panel in US/Canada metros (gap 13). Stale (no 2025-26 commits).",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "N/A (live)",
+  "geography": "United States, Canada",
+  "license": "unspecified",
+  "last_activity": "14 Sep 2024",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "One of the few tools found still explicitly targeting Craigslist rentals (most Craigslist-topic repos are generic classifieds scrapers, not rental-specific); could be adapted for a point-in-time Craigslist rental-ask panel in US/Canada metros (gap 13). Stale (no 2025-26 commits)."
+  ]
+ },
+ {
+  "key": "github:brightcatdata/brightcat-overview",
+  "url": "https://github.com/BrightCatData/BrightCat-Overview",
+  "name": "BrightCat-Overview",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Overview repo for a commercial data product tracking '5.8M+ residential and 297K+ commercial properties weekly since 2014' including rentals, sold, and pre-mover data, delivered via Snowflake Marketplace and an MCP connector -- not a GitHub-hosted dataset itself, just a pointer/marketing repo. 0 stars, last updated 16 Apr 2026.",
+  "why_useful": "If Snowflake Marketplace access is free/low-cost this could be a very large long-run (2014+) US property/rental panel, but it is a paid commercial product behind Snowflake, not an open dataset -- flagging only as a pointer for a human to evaluate cost.",
+  "potential": "low",
+  "size_hint": "5.8M residential + 297K commercial properties, weekly since 2014 (per vendor claim, unverified)",
+  "time_coverage": "2014-present (claimed)",
+  "geography": "United States (implied, unconfirmed)",
+  "license": "commercial/paid (Snowflake Marketplace)",
+  "last_activity": "16 Apr 2026",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "If Snowflake Marketplace access is free/low-cost this could be a very large long-run (2014+) US property/rental panel, but it is a paid commercial product behind Snowflake, not an open dataset -- flagging only as a pointer for a human to evaluate cost."
+  ]
+ }
+]

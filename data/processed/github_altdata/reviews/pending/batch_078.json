@@ -1,0 +1,136 @@
+[
+ {
+  "key": "other:https://opensource.foursquare.com/os-places",
+  "url": "https://opensource.foursquare.com/os-places/",
+  "name": "Foursquare Open Source Places (fsq-os-places)",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Foursquare's open global POI dataset: 100M+ POIs, 200+ countries/territories, 1000+ place categories (Foursquare's taxonomy includes a 'Hotel'/'Lodging' branch), 20+ core attributes (name, address, lat/lon, category, chain flags). Hosted on Foursquare's own site / HuggingFace / cloud storage (Parquet), refreshed periodically (monthly-ish cadence per Foursquare's public statements); no dedicated GitHub data repo found (searched fsq-os-places / foursquare-os-places, both 404), so treat GitHub only as a discovery pointer to the external host.",
+  "why_useful": "A second independent global hotel/lodging POI census (cross-check against Overture places) with a documented 'Hotel' category, letting the team build/validate a hotel-count-by-city supply series and check counts against known chain unit disclosures.",
+  "potential": "medium",
+  "gap_targets": [
+   8
+  ],
+  "geography": "global",
+  "time_coverage": "periodic full-dataset refreshes, no long history of vintages published",
+  "size_hint": "100M+ POIs total (lodging category a small subset)",
+  "license": "Foursquare open data licence (check terms; free for commercial+non-commercial per their announcement)",
+  "last_activity": "active as of 2026",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "A second independent global hotel/lodging POI census (cross-check against Overture places) with a documented 'Hotel' category, letting the team build/validate a hotel-count-by-city supply series and check counts against known chain unit disclosures."
+  ]
+ },
+ {
+  "key": "other:https://github.com/whosonfirst-data",
+  "url": "https://github.com/whosonfirst-data",
+  "name": "whosonfirst-data (org, e.g. whosonfirst-data-venue-us-ca)",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Mapzen-originated open gazetteer, 823+ per-country/state git repos of GeoJSON 'venue' records (a placetype that includes hotels), sourced partly via a historical Foursquare data partnership. Example: whosonfirst-data-venue-us-ca (691 commits) holds California venue GeoJSON records. Because every record edit is a git commit, the commit history itself is a de facto point-in-time log of when a venue (hotel) appeared/closed/moved \u2014 unusual for POI data.",
+  "why_useful": "A git-versioned historical venue gazetteer that plausibly includes US/global hotels going back to ~2015-2017 is a genuine point-in-time hotel-POI source (gap #4 + #8 combined), unlike Overture/Foursquare which only publish current snapshots.",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   4
+  ],
+  "geography": "global, split by country then US by state",
+  "time_coverage": "~2015-2017 onward per commit history; project itself looks dormant (mapzen.com is defunct) with the newest visible activity as late as Aug 2026 in some repos, so still receiving occasional automated updates",
+  "size_hint": "823+ repos; per-state venue repo sizes not confirmed, likely thousands of records each",
+  "license": "check LICENSE.md per repo (historically CC0-ish for WOF admin data; venue data licence terms vary by contributor)",
+  "last_activity": "mixed; some repos updated as recently as Aug 2026, overall project largely dormant since Mapzen's 2017 shutdown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "A git-versioned historical venue gazetteer that plausibly includes US/global hotels going back to ~2015-2017 is a genuine point-in-time hotel-POI source (gap #4 + #8 combined), unlike Overture/Foursquare which only publish current snapshots."
+  ]
+ },
+ {
+  "key": "github:hrecht/censusapi",
+  "url": "https://github.com/hrecht/censusapi",
+  "name": "hrecht/censusapi",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (186 stars, CRAN + GitHub) giving lightweight access to 1,500+ US Census Bureau API endpoints via `getCensus()`/`listCensusApis()`/`listCensusMetadata()`. Endpoint list is generic (ACS, SAIPE, SAHIE, international trade, economic time series) but because it hits Census's full API catalog by URL/dataset code, it can reach County Business Patterns (CBP) and Quarterly Services Survey/Services Annual Survey endpoints (NAICS 721 accommodation establishment counts, employment, receipts) even though the README doesn't name CBP/QSS explicitly.",
+  "why_useful": "A ready client for pulling NAICS 721 (accommodation) establishment counts/employment/payroll by county from Census CBP/QSS/SAS \u2014 exactly the 'lodging census' tooling the theme asks for \u2014 without hand-rolling Census API calls.",
+  "potential": "medium",
+  "gap_targets": [
+   8
+  ],
+  "geography": "US, county-level",
+  "time_coverage": "whatever vintages Census publishes for CBP (annual, ~2-year lag) / QSS (quarterly)",
+  "size_hint": "n/a (generic API client)",
+  "license": "MIT/CC0 (CRAN package norms; verify)",
+  "last_activity": "active, 257 commits",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "A ready client for pulling NAICS 721 (accommodation) establishment counts/employment/payroll by county from Census CBP/QSS/SAS \u2014 exactly the 'lodging census' tooling the theme asks for \u2014 without hand-rolling Census API calls.",
+   "Broadest-coverage Census client found (1,500+ endpoints beyond just ACS), useful if the team wants Census Bureau series beyond ACS (e.g. Business Formation Statistics, Household Pulse Survey) for consumer-strength or housing-supply proxies."
+  ]
+ },
+ {
+  "key": "github:nebildivay/ontario-hotel-performance-analysis",
+  "url": "https://github.com/NebilDivay/Ontario-Hotel-Performance-Analysis",
+  "name": "Ontario-Hotel-Performance-Analysis",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Monthly Occupancy %, ADR, and RevPAR for hotels across Ontario, Canada regions/cities (Greater Toronto Area, North Western Ontario, etc.), Feb 2023-Dec 2025, sourced from the Ontario Open Data Portal (originally separate monthly Excel sheets, cleaned into a Power BI model). Repo holds a Datasets folder, a Hotel Performance Report.pbix, and a PDF report. MIT licensed.",
+  "why_useful": "A real government-sourced, regional hotel RevPAR/ADR/occupancy series for a non-US market (Canada) at sub-national geography, which is more granular than the MAR/HLT RevPAR-from-releases we already hold and touches gap #8 (hotel supply/demand, regional RevPAR) and gap #7 (regional travel volume outside US/EU, Canada StatCan-adjacent). Read-across to short-term-rental competition and Canadian travel demand for ABNB.",
+  "potential": "medium",
+  "geography": "Ontario, Canada (regional/city breakdown)",
+  "time_coverage": "Feb 2023 - Dec 2025, monthly",
+  "size_hint": "Unspecified row count; monthly panel across multiple Ontario regions/cities over ~3 years (small, tens to low hundreds of rows)",
+  "license": "MIT",
+  "last_activity": "not confirmed exactly; recent (2026 based on data coverage through Dec 2025)",
+  "gap_targets": [
+   7,
+   8
+  ],
+  "duplicate_of_holding": "Extends but does not duplicate the MAR/HLT RevPAR-from-releases we hold (that is company-level, this is Canadian regional/government-sourced)",
+  "hits": 1,
+  "themes": [
+   "Hotel chain and REIT public datasets: loyalty program sizes, unit counts, Marriott/Hilton/Hyatt pipelines, hotel REIT portfolio RevPAR by market from filings"
+  ],
+  "why_all": [
+   "A real government-sourced, regional hotel RevPAR/ADR/occupancy series for a non-US market (Canada) at sub-national geography, which is more granular than the MAR/HLT RevPAR-from-releases we already hold and touches gap #8 (hotel supply/demand, regional RevPAR) and gap #7 (regional travel volume outside US/EU, Canada StatCan-adjacent). Read-across to short-term-rental competition and Canadian travel demand for ABNB."
+  ]
+ },
+ {
+  "key": "github:natnaelsolomon0101-sketch/tx-hotel-heatmap",
+  "url": "https://github.com/natnaelsolomon0101-sketch/tx-hotel-heatmap",
+  "name": "tx-hotel-heatmap",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "TypeScript pipeline (scripts/build-data.ts) that parses Texas Comptroller hotel-occupancy-tax filings (data/hotels.csv: taxpayer, location, room count, reported revenue) at the INDIVIDUAL HOTEL level, plus data/periods/ holding per-period Comptroller files across multiple quarters, computing trailing-12-month RevPAR (revenue / rooms / 365) and ADR/occupancy per property; outputs a geocoded GeoJSON (public/hotels.geojson) bucketed by RevPAR percentile for a Next.js/Mapbox heatmap. Texas-only, county/city granularity via geocoding, updated 2026-07-22.",
+  "why_useful": "Fills gap #8 (state-level hotel occupancy/lodging-tax data, individual-property RevPAR) with a real government administrative source (Texas Comptroller occupancy tax) at finer-than-market granularity, and demonstrates a repeatable pull/parse method that could be adapted to other states (Nevada, Florida bed tax) named explicitly in the same gap.",
+  "potential": "medium",
+  "gap_targets": [
+   8
+  ],
+  "geography": "Texas, USA (state + county/city via geocoding)",
+  "time_coverage": "Multiple historical quarterly/monthly Comptroller filing periods through ~2026 (exact start year not stated in README excerpt)",
+  "size_hint": "One CSV of TX hotel filings + a periods/ directory of historical per-period files; individual-hotel row grain, likely thousands of properties statewide",
+  "license": "not stated",
+  "last_activity": "2026-07-22",
+  "duplicate_of_holding": "Distinct from held Hawaii DBEDT / municipal STR registries and California TOT panel \u2014 this is Texas hotel (not STR) occupancy-tax data with property-level RevPAR, which we do not currently hold for Texas",
+  "hits": 1,
+  "themes": [
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves"
+  ],
+  "why_all": [
+   "Fills gap #8 (state-level hotel occupancy/lodging-tax data, individual-property RevPAR) with a real government administrative source (Texas Comptroller occupancy tax) at finer-than-market granularity, and demonstrates a repeatable pull/parse method that could be adapted to other states (Nevada, Florida bed tax) named explicitly in the same gap."
+  ]
+ }
+]

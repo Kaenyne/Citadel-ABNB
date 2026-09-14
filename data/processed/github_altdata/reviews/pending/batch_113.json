@@ -1,0 +1,139 @@
+[
+ {
+  "key": "github:dr-leo/pandasdmx",
+  "url": "https://github.com/dr-leo/pandaSDMX",
+  "name": "pandaSDMX",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python SDMX 2.1 client (Apache 2.0, 134 stars, 928 commits) that queries and parses SDMX-ML/SDMX-JSON from any SDMX-compliant statistical agency (documented providers include World Bank, ILO, BIS, ECB, Eurostat, OECD, UNICEF, UN) and returns pandas objects. Several LatAm/APAC national statistical offices (e.g. DANE Colombia, some ABS Australia collections, and OECD's country tourism tables which include Mexico, Chile, Korea, Japan, Australia, India as OECD/G20 members) expose SDMX endpoints reachable through this same client, though not all are pre-registered as named 'agencies' in the library -- would need per-agency endpoint config.",
+  "why_useful": "General-purpose acquisition method for Eurostat/ONS series beyond what's already held (tour_ce_omr platform nights); does not itself expose vintages/revisions explicitly, but is the standard way to programmatically pull ONS/Eurostat series (including revision-relevant series like GDP, consumer spend, tourism) for building our own vintage archive going forward by re-pulling on a schedule.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   6
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "active, 928 commits, 134 stars",
+  "geography": "EU/UK/global (SDMX providers)",
+  "time_coverage": "provider-dependent",
+  "size_hint": "library only",
+  "hits": 5,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "General-purpose acquisition method for Eurostat/ONS series beyond what's already held (tour_ce_omr platform nights); does not itself expose vintages/revisions explicitly, but is the standard way to programmatically pull ONS/Eurostat series (including revision-relevant series like GDP, consumer spend, tourism) for building our own vintage archive going forward by re-pulling on a schedule.",
+   "General-purpose acquisition method spanning several numbered-gap countries (7) at once via OECD's SDMX tourism/consumer tables (which include non-EU OECD members: Mexico, Chile, Colombia, Korea, Japan, Australia) rather than one country-specific client each.",
+   "A maintained, general SDMX client is the most reliable free way to programmatically pull point-in-time-labeled Eurostat HICP-accommodation series (and OECD/ECB price series) rather than scraping the Eurostat web UI; supports building a proper vendor+timestamp vintage register per repo rule #2.",
+   "One client can pull Eurostat platform-tourism tables, ECB series (FX, rates, sentiment), and OECD tourism/consumer-confidence tables through a single, scriptable SDMX interface \u2014 useful as generic tooling for the OECD/ECB/Eurostat legs of this theme rather than a dataset itself.",
+   "A generic, well-maintained path to BIS effective exchange rates, IMF BOP travel-services credits, and OECD/Eurostat series that are otherwise only reachable one-off; could be the backbone for building a point-in-time macro-vintage puller (our gap #4) rather than relying on pull-date-anchored snapshots."
+  ]
+ },
+ {
+  "key": "github:us-bea/beaapi",
+  "url": "https://github.com/us-bea/beaapi",
+  "name": "us-bea/beaapi",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official BEA-maintained Python package (69 stars, CC0-1.0, updated 10 Sep 2026) for pulling BEA API tables (NIPA, including PCE by category \u2014 e.g. PCE: Foreign travel, PCE: Air transportation, PCE: Accommodations \u2014 and regional/state personal income). No data committed; live pull, requires free BEA API key (not paid).",
+  "why_useful": "Official client for the BEA PCE travel/accommodation subcomponents CONTEXT.md already lists holding a 'BEA PCE travel panel' \u2014 this is likely the underlying tool or an equivalent, useful to confirm/replace an ad hoc BEA pull and to get PCE line items at finer granularity (e.g. state personal income by quarter) than a generic panel.",
+  "potential": "medium",
+  "gap_targets": [
+   6
+  ],
+  "geography": "US national + state/regional (BEA regional accounts)",
+  "time_coverage": "BEA NIPA history, generally 1929-present annual, 1947-present quarterly for national accounts",
+  "size_hint": "n/a (API client)",
+  "license": "CC0-1.0",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "Overlaps with existing BEA PCE travel panel; flagged because it is the maintainer-official client and adds state/regional PCE granularity not confirmed in current holding",
+  "hits": 2,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Official client for the BEA PCE travel/accommodation subcomponents CONTEXT.md already lists holding a 'BEA PCE travel panel' \u2014 this is likely the underlying tool or an equivalent, useful to confirm/replace an ad hoc BEA pull and to get PCE line items at finer granularity (e.g. state personal income by quarter) than a generic panel.",
+   "Official, well-throttled client for pulling PCE services / travel-related NIPA line items programmatically and repeatably for the PCE travel panel already held; useful for extending or re-verifying that panel with fresh vintages."
+  ]
+ },
+ {
+  "key": "github:pegeler/unemployment",
+  "url": "https://github.com/pegeler/unemployment",
+  "name": "pegeler/unemployment (LAUS annual averages)",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R package bundling BLS Local Area Unemployment Statistics (LAUS) annual averages 1990-2017 as a data.frame: 90,088 rows x 9 columns (LAUS code, state/county FIPS, county name, year, labor force, employment, unemployment level, unemployment rate) at county/metro-area level.",
+  "why_useful": "Fills the 'unemployment by metro' curated-panel ask directly: county-level history back to 1990 committed as data, no API key needed, usable as a regional consumer-strength control for NA nights/ADR.",
+  "potential": "medium",
+  "geography": "US counties/metro areas",
+  "time_coverage": "1990-2017 annual",
+  "license": "unspecified (BLS public data)",
+  "last_activity": "8 commits, small/mature repo",
+  "size_hint": "90k rows",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Fills the 'unemployment by metro' curated-panel ask directly: county-level history back to 1990 committed as data, no API key needed, usable as a regional consumer-strength control for NA nights/ADR."
+  ]
+ },
+ {
+  "key": "github:keberwein/blscraper",
+  "url": "https://github.com/keberwein/blscrapeR",
+  "name": "blscrapeR",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package/API client wrapping the BLS API: state- and metro-area unemployment (LAUS) via county_fips()/quick_unemp_rate(), CPI/inflation adjustment functions using CPI data from 1947 onward (inflation_adjust()), quick_employed_level(), quick_laborForce_rate(); CRAN package, 381 commits, actively maintained.",
+  "why_useful": "One-command pull for metro unemployment and long-run CPI (1947+) matching the theme's 'unemployment by metro' and 'CPI' asks; more turnkey than raw BLS API for regional consumer-strength splits (NA/EMEA proxy via US metro cuts).",
+  "potential": "medium",
+  "geography": "US national/state/metro",
+  "time_coverage": "CPI from 1947; unemployment current + historical via API",
+  "license": "present in repo (not itemized)",
+  "last_activity": "381 commits, marked Active",
+  "size_hint": "N/A (API client)",
+  "gap_targets": [],
+  "duplicate_of_holding": "overlaps our existing BLS CPI holding; adds LAUS metro convenience layer",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "One-command pull for metro unemployment and long-run CPI (1947+) matching the theme's 'unemployment by metro' and 'CPI' asks; more turnkey than raw BLS API for regional consumer-strength splits (NA/EMEA proxy via US metro cuts)."
+  ]
+ },
+ {
+  "key": "github:arturbeg/google_trends_consumption_prediction",
+  "url": "https://github.com/arturbeg/google_trends_consumption_prediction",
+  "name": "google_trends_consumption_prediction",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Research repo (40 stars, updated Jul 2025) comparing a Kernel-PCA Google Trends consumption indicator against the Conference Board Consumer Confidence Index and the University of Michigan Consumer Sentiment Index as predictors of US real PCE. No raw survey series committed as files, but the code pulls/uses UMich CSI and Conference Board CCI series and documents the construction and an in-sample/out-of-sample nowcasting comparison methodology (kernel PCA on Google Trends categories vs. survey indices, AR baseline).",
+  "why_useful": "Gap 17 (nowcasting methods, anchored/constructed Google Trends). We already found raw Google Trends fails naive tests (0/162) on our own construction; this repo's kernel-PCA re-weighting of a consumption-relevant Trends basket, benchmarked explicitly against UMich/Conference Board, is a different construction worth stealing the method from rather than the conclusion. Low direct data value (no files), moderate method value.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "not stated in repo card; consumption/CCI/CSI history depends on FRED vintage used",
+  "size_hint": "code repo, no large data files",
+  "license": "none declared",
+  "last_activity": "2025-07-30",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "We already hold UMich/Conference Board via general macro sources and have tested raw Google Trends (failed); this is a re-weighted Trends construction, not a duplicate of the failed test.",
+  "hits": 2,
+  "themes": [
+   "Consumer sentiment and surveys: UMich, Conference Board, NY Fed SCE, EU consumer confidence, travel-intent surveys (Longwoods, Destination Analysts, MMGY) scraped",
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Gap 17 (nowcasting methods, anchored/constructed Google Trends). We already found raw Google Trends fails naive tests (0/162) on our own construction; this repo's kernel-PCA re-weighting of a consumption-relevant Trends basket, benchmarked explicitly against UMich/Conference Board, is a different construction worth stealing the method from rather than the conclusion. Low direct data value (no files), moderate method value.",
+   "Speaks to gap #6 (consumer spend panels) via a Trends-based consumption proxy method with a published comparison against the exact survey indices (Michigan, Conference Board) already in our OECD consumer-confidence holding \u2014 a candidate cross-check even though our own generic Trends tests failed, since this targets consumption specifically via kernel PCA rather than raw levels."
+  ]
+ }
+]

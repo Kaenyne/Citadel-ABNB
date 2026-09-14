@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:asifmehdiyev/booking_time_series_modelling",
+  "url": "https://github.com/Asifmehdiyev/Booking_Time_Series_Modelling",
+  "name": "Asifmehdiyev/Booking_Time_Series_Modelling",
+  "category": "competitor_ota",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repo doing time-series analysis/forecasting on what it calls a 'Booking com dataset'. Contents not verified (0 stars) \u2014 could be the well-known Portugal hotel-booking-demand dataset (which we already hold per CONTEXT.md) rather than anything new; flagged only for completeness.",
+  "why_useful": "Possible duplicate of the Antonio/Almeida/Nunes Portugal hotel-booking demand dataset we already hold; not independently verified as new.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "unverified",
+  "time_coverage": "unverified",
+  "size_hint": "unverified",
+  "license": "unspecified",
+  "last_activity": "2023-06-19",
+  "duplicate_of_holding": "likely the Portugal hotel-booking-demand dataset already held",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "Possible duplicate of the Antonio/Almeida/Nunes Portugal hotel-booking demand dataset we already hold; not independently verified as new."
+  ]
+ },
+ {
+  "key": "github:stayapi/booking-com-review-scraper",
+  "url": "https://github.com/stayapi/booking-com-review-scraper",
+  "name": "stayapi/booking-com-review-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small (2-commit) MIT-licensed client wrapping the third-party 'StayAPI' REST service to pull Booking.com guest reviews (guest name/country/traveler type, review title, positive/negative text, score, room type, nights stayed, dates, partner replies) and export to CSV/JSON (16-column flattened CSV shown in the README). Requires signing up for StayAPI (50 free test requests); not a self-contained scraper.",
+  "why_useful": "Illustrates an available field schema (including 'nights stayed' per review) for Booking.com reviews, but is a thin wrapper around a paid third-party API rather than an independent data source or committed dataset.",
+  "size_hint": "Trivial codebase, no data committed",
+  "time_coverage": "N/A (live pull via paid API)",
+  "geography": "Global",
+  "license": "MIT (wrapper code); underlying API is a commercial/paid service",
+  "last_activity": "Not captured precisely; very low-traffic repo",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "Illustrates an available field schema (including 'nights stayed' per review) for Booking.com reviews, but is a thin wrapper around a paid third-party API rather than an independent data source or committed dataset."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/brightdata/booking.com-listings",
+  "url": "https://huggingface.co/datasets/BrightData/Booking.com-Listings",
+  "name": "BrightData/Booking.com-Listings",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A tiny (13-row) sample dataset published by BrightData (a commercial scraping-as-a-service vendor) demonstrating their Booking.com listings scrape output; appears to be a marketing sample rather than a usable dataset.",
+  "why_useful": "Only useful as a pointer to BrightData's paid Booking.com scraping product/schema, not as data itself.",
+  "size_hint": "13 rows",
+  "time_coverage": "Snapshot, date not stated",
+  "geography": "Not stated",
+  "license": "Not stated (commercial vendor sample)",
+  "last_activity": "Last updated 12 May 2025 on HuggingFace",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "Only useful as a pointer to BrightData's paid Booking.com scraping product/schema, not as data itself."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/c/expedia-hotel-recommendations",
+  "url": "https://www.kaggle.com/c/expedia-hotel-recommendations",
+  "name": "Expedia Hotel Recommendations (Kaggle 2016)",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "~37M rows of Expedia search/click/booking logs (2013-2014), fields: user location, search destination, check-in/out dates, is_package, is_booking, hotel_cluster (100 clusters), hotel_country/market. Dozens of GitHub repos (mandalsubhajit/Kaggle--Expedia-Hotel-Recommendations, 26 stars; gouravshenoy/ExpediaHotelRecommendation, 7 stars; ~40 more found) contain only modeling notebooks \u2014 none redistribute the raw CSVs (Kaggle competition rules forbid it), so a Kaggle account/API key is required to pull the actual data. External host: kaggle.com/c/expedia-hotel-recommendations.",
+  "why_useful": "Real Expedia booking-intent data with dates/destinations could inform seasonality/destination-mix patterns for gap 9 (competitor OTA volumes) and lead-time structure for gap 3 (RNPL), but the data is stale (2013-14), pre-dates current STR competitive dynamics, and requires manual Kaggle download \u2014 GitHub itself holds no data, only unusable duplicate solution code.",
+  "potential": "low",
+  "gap_targets": [
+   9,
+   3
+  ],
+  "duplicate_of_holding": "",
+  "license": "mixed (repos mostly no license; underlying Kaggle data has competition-specific terms)",
+  "geography": "global (destination country/market codes)",
+  "time_coverage": "2013-2014 search logs",
+  "size_hint": "~37M interaction rows in original Kaggle files; GitHub repos themselves are code-only (few KB)",
+  "last_activity": "most recently updated fork 2025-12-03 (mandalsubhajit); original competition data unchanged since 2015",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Real Expedia booking-intent data with dates/destinations could inform seasonality/destination-mix patterns for gap 9 (competitor OTA volumes) and lead-time structure for gap 3 (RNPL), but the data is stale (2013-14), pre-dates current STR competitive dynamics, and requires manual Kaggle download \u2014 GitHub itself holds no data, only unusable duplicate solution code."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/c/expedia-personalized-sort",
+  "url": "https://www.kaggle.com/c/expedia-personalized-sort",
+  "name": "Personalize Expedia Hotel Searches - ICDM 2013",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "ICDM 2013 Data Mining Cup Expedia dataset: hotel search impression logs with property price, star rating, review score, location score, promotion flag, and click/booking labels, ~10M search-result rows across ~1000 destinations. Repos found (igorpejic/personalize_expedia_hotel_searches_2013, 7 stars \u2014 code-only, requires user-supplied train.csv/test.csv path; gxanth/Learning-to-rank-with-Expedia, MIT; jlin-vt/expedia2013; 5 more near-duplicate solution repos) hold only ranking-model code (LightGBM/XGBoost learning-to-rank scripts), not the raw data.",
+  "why_useful": "If ever obtained, gives granular hotel price/rating/promo fields that could sanity-check OTA pricing-competition dynamics (gap 9) and search-to-book funnel structure analogous to Airbnb's; but again 2013-vintage, Kaggle-gated, and no GitHub mirror actually carries the CSVs.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "license": "mixed, mostly none; gxanth/Learning-to-rank-with-Expedia is MIT (code only)",
+  "geography": "global (worldwide destinations, mostly Europe/US)",
+  "time_coverage": "2013 search sessions",
+  "size_hint": "~10M rows in original files; GitHub repos are code-only",
+  "last_activity": "igorpejic repo updated 2025-03-14; gxanth updated 2025-11-21",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "If ever obtained, gives granular hotel price/rating/promo fields that could sanity-check OTA pricing-competition dynamics (gap 9) and search-to-book funnel structure analogous to Airbnb's; but again 2013-vintage, Kaggle-gated, and no GitHub mirror actually carries the CSVs."
+  ]
+ }
+]

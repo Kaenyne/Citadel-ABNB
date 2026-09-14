@@ -1,0 +1,145 @@
+[
+ {
+  "key": "github:overturemaps/data",
+  "url": "https://github.com/OvertureMaps/data",
+  "name": "OvertureMaps/data",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Root repo/pointer for the Overture Maps Foundation open dataset: six themes (addresses, base, buildings, divisions, places, transportation) released as cloud-native GeoParquet on S3/Azure, monthly-ish releases since mid-2023 (STAC catalog tracks each release). The 'places' theme includes global POIs with a category taxonomy (accommodation/lodging/hotel/motel/hostel categories, brand, confidence score, lat/lon, open/close dates in later releases) built from Meta, Microsoft, TomTom, Esri and community contributions. Not committed as files in-repo; pulled via `overturemaps` CLI or DuckDB spatial extension (one command: `overturemaps download --type=place --bbox=... `).",
+  "why_useful": "A repeatable, versioned pull of global hotel/lodging POI counts and locations by release date is a direct, non-Airbnb proxy for hotel-supply growth or contraction by market \u2014 fills gap 8 (hotel supply/demand) and gap 20 (geospatial POI). Because releases are dated snapshots, diffing releases gives a point-in-time hotel-count series per city/country that could be compared against ABNB listing growth in the same markets.",
+  "potential": "high",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Monthly-ish releases since ~July 2023, ongoing",
+  "size_hint": "Places theme alone is 100M+ POIs globally (multi-GB per release); filterable by bbox/category before download",
+  "license": "MIT (schema is CC-BY-4.0)",
+  "last_activity": "Active, updated 2026-09-10",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "A repeatable, versioned pull of global hotel/lodging POI counts and locations by release date is a direct, non-Airbnb proxy for hotel-supply growth or contraction by market \u2014 fills gap 8 (hotel supply/demand) and gap 20 (geospatial POI). Because releases are dated snapshots, diffing releases gives a point-in-time hotel-count series per city/country that could be compared against ABNB listing growth in the same markets.",
+   "Global, monthly-versioned hotel/lodging POI counts by geography could proxy hotel supply growth (gap #8) and give a competitor-supply denominator alongside Inside Airbnb STR counts; monthly releases are effectively point-in-time vintages (gap #4).",
+   "Global, monthly-refreshed, free POI dataset that lets you count/geolocate hotels, motels, resorts, campgrounds, and short-term-rental-adjacent lodging categories by city over time -- addresses gap #8 (hotel supply proxy from maps) and #20 (geotagged tourism POIs) if used as a supply-count time series across releases (data goes back to first Overture release ~2023, monthly cadence gives a de facto vintage series).",
+   "Confirms release cadence and access pattern for pulling historical Overture Places snapshots (point-in-time hotel/lodging POI counts) referenced by overturemaps-py above."
+  ]
+ },
+ {
+  "key": "github:activeconclusion/covid19_mobility",
+  "url": "https://github.com/ActiveConclusion/COVID19_mobility",
+  "name": "COVID19_mobility",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Aggregated, committed CSV/XLSX/ZIP mobility archive combining four sources: Google Community Mobility Reports (retail/recreation, grocery/pharmacy, parks, transit, workplaces, residential, country+sub-region+county level), Apple Mobility Trends (directions-request volume vs 13-Jan-2020 baseline, country/region/city), Waze driven-km percent change (country and some city level), and TomTom congestion rankings. Google span through 15-Oct-2022, Apple through 14-Apr-2022, Waze through mid-2022, TomTom continuing at time of archive. MIT license. Repo is archived/no longer updated (sources discontinued) but the historical CSVs remain committed.",
+  "why_useful": "Marginal: covers 2020-2022 mobility only (all four source programs have since been discontinued/archived by their publishers), so it is a historical archive rather than a live indicator, but it is the only committed multi-source mobility mirror found and could still backfill a 2020-22 travel-mobility panel if ever needed for a longer backtest window.",
+  "potential": "high",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "license": "unknown (check repo)",
+  "last_activity": "inactive since mobility programs ended (~2022)",
+  "geography": "global, country/region level",
+  "time_coverage": "2020-2022",
+  "size_hint": "moderate CSV set",
+  "hits": 4,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Marginal: covers 2020-2022 mobility only (all four source programs have since been discontinued/archived by their publishers), so it is a historical archive rather than a live indicator, but it is the only committed multi-source mobility mirror found and could still backfill a 2020-22 travel-mobility panel if ever needed for a longer backtest window.",
+   "This is exactly the kind of consumer-mobility/travel-demand proxy series useful for reconstructing 2020-2022 travel disruption and recovery baselines relevant to STR/hotel demand cyclicality; also a ready single source for four different mobility indices instead of re-scraping each vendor. Google's own hosted CSV disappeared after the report shut down, so a committed mirror is the only easy way to get the full multi-year daily series now (fills a version of gap #5/#8 travel-demand context, pre-ABNB-scale IPO period baseline).",
+   "Single mirror of both Google and Apple's own mobility-report CSVs (the raw category/place-type mobility deltas), which are gone from Google/Apple's own sites now; a longer, city/country-level baseline for travel-mobility shocks and a template for what fields exist (retail&recreation, transit, workplaces, residential) that could be re-anchored against 2026 alt-data. Relevant to gap #5 (engagement/mobility proxies) and #11 (event/shock studies).",
+   "The archived 2020-2022 mobility indices are a historical baseline for how sharply region-level 'away from home' mobility swings correlate with STR nights, which could calibrate elasticities for future shock events (gap #11) even though official Google/Apple mobility reporting ended in 2022; the repo format could also be repointed at any successor mobility-report source if one appears."
+  ]
+ },
+ {
+  "key": "github:cruiseresearchgroup/massive-steps",
+  "url": "https://github.com/cruiseresearchgroup/Massive-STEPS",
+  "name": "Massive-STEPS",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "Global-scale POI check-in trajectories for 15 cities across 10 countries (Beijing, Shanghai, Istanbul, Jakarta, Bandung, Palembang, Tangerang, Kuwait City, Melbourne, Sydney, Moscow, New York, Petaling Jaya, Sao Paulo, Tokyo). ~2.63M check-ins total, 133k+ users, 620k+ POIs, drawn from the 2013 and 2018 Semantic Trails Dataset (Foursquare-sourced) plus Foursquare Open Source Places. Preprocessed city-level splits hosted on Hugging Face Datasets; repo has Python preprocessing scripts and benchmark code (next-POI-prediction models). Apache-2.0 license, active repo (README references 2024-2025 work).",
+  "why_useful": "A genuinely global, multi-city geotagged check-in panel including tourism-heavy cities (Sydney, Istanbul, Sao Paulo, Tokyo, NYC) that could proxy cross-border travel share, visitor mix, or destination popularity shifts over 2013-2018 -- speaks to gap #20 (party size / group travel / cross-border share proxies via geotagged tourism datasets) and loosely to gap #5 (engagement/popularity proxies). Not point-in-time and dated (2013/2018), so only useful as a historical base-rate / methodology reference, not a live nowcast input.",
+  "potential": "high",
+  "geography": "15 cities, 10 countries (Asia, Europe, Middle East, Oceania, Americas)",
+  "time_coverage": "2013 and 2018 (Semantic Trails Dataset vintages)",
+  "size_hint": "~2.63M check-ins, 133k+ users, 620k+ POIs",
+  "license": "Apache-2.0",
+  "last_activity": "2024-2025 (active, per README/paper arXiv reference)",
+  "gap_targets": [
+   20,
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins"
+  ],
+  "why_all": [
+   "A genuinely global, multi-city geotagged check-in panel including tourism-heavy cities (Sydney, Istanbul, Sao Paulo, Tokyo, NYC) that could proxy cross-border travel share, visitor mix, or destination popularity shifts over 2013-2018 -- speaks to gap #20 (party size / group travel / cross-border share proxies via geotagged tourism datasets) and loosely to gap #5 (engagement/popularity proxies). Not point-in-time and dated (2013/2018), so only useful as a historical base-rate / methodology reference, not a live nowcast input."
+  ]
+ },
+ {
+  "key": "github:geods/covid19usflows",
+  "url": "https://github.com/GeoDS/COVID19USFlows",
+  "name": "COVID19USFlows (GeoDS Lab, UW-Madison)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Daily origin-destination population flow CSVs derived from SafeGraph mobile-location trajectories, at census-tract, county, and state scale for the entire US, Jan 2019 through at least Apr 2021 (pre-pandemic baseline included). Tract-level files split into 20 parts per date for size. Published alongside a Scientific Data (2020) paper; MIT licensed; includes Python download/merge utilities. Split across multiple linked GitHub repos due to size limits.",
+  "why_useful": "A genuine SafeGraph-derived mobility flow dataset committed to GitHub (not just a licensed sample) with county- and state-level granularity and a 2019 pre-pandemic baseline year \u2014 directly useful for calibrating a travel-mobility-to-nights elasticity model, and for testing whether short-term-rental demand co-moves with general population flow shocks (hurricanes, events). Fills part of gap #5/#11 and is a concrete method template (SafeGraph flow construction) relevant to gap #17 (methods/nowcasting with mixed-frequency mobility data).",
+  "geography": "United States, tract/county/state",
+  "time_coverage": "2019-01-01 through 2021-04 (approx)",
+  "size_hint": "Large multi-file CSV set; tract-level split into 20 files per date across the calendar range",
+  "license": "MIT",
+  "last_activity": "actively cited research repo; NSF-funded (BCS-2027375)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5,
+   11,
+   17
+  ],
+  "potential": "high",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "A genuine SafeGraph-derived mobility flow dataset committed to GitHub (not just a licensed sample) with county- and state-level granularity and a 2019 pre-pandemic baseline year \u2014 directly useful for calibrating a travel-mobility-to-nights elasticity model, and for testing whether short-term-rental demand co-moves with general population flow shocks (hurricanes, events). Fills part of gap #5/#11 and is a concrete method template (SafeGraph flow construction) relevant to gap #17 (methods/nowcasting with mixed-frequency mobility data)."
+  ]
+ },
+ {
+  "key": "github:ropensci/osmextract",
+  "url": "https://github.com/ropensci/osmextract",
+  "name": "ropensci/osmextract",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "rOpenSci R package (GPL-3.0, 196 stars, updated 10 Sep 2026) to download and import OpenStreetMap data from Geofabrik and other providers (bbbike, openstreetmap.fr) directly into R as sf objects, with built-in place-name matching to find the right regional extract.",
+  "why_useful": "Well-maintained, peer-reviewed R client for pulling Geofabrik/OSM regional PBF extracts, from which tourism=hotel/guest_house/apartment/chalet/motel tags can be filtered to build an OSM-based hotel/STR-supply proxy by city/country over time (re-runnable against historical Geofabrik daily diffs for a point-in-time-ish series).",
+  "why_useful_2": "",
+  "potential": "high",
+  "geography": "global (whatever Geofabrik/bbbike offer, i.e. most countries and many sub-national regions)",
+  "time_coverage": "current OSM snapshot at run time; Geofabrik keeps some historical daily/monthly extracts for a limited window",
+  "size_hint": "package code; downloaded extracts range MB-GB per region",
+  "license": "GPL-3.0",
+  "last_activity": "2026-09-10",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Well-maintained, peer-reviewed R client for pulling Geofabrik/OSM regional PBF extracts, from which tourism=hotel/guest_house/apartment/chalet/motel tags can be filtered to build an OSM-based hotel/STR-supply proxy by city/country over time (re-runnable against historical Geofabrik daily diffs for a point-in-time-ish series)."
+  ]
+ }
+]

@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:dangiyash/hack-the-future-2025-iit",
+  "url": "https://github.com/dangiyash/hack-the-future-2025-iit",
+  "name": "Mospi Legacy Data Extraction Tool",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Hackathon tool ('Mospi Legacy Data Extraction Tool') to extract, digitize, and process historical datasets from India's Ministry of Statistics and Programme Implementation (MoSPI); includes a user guide in the README. 2 stars, updated Mar 2026.",
+  "why_useful": "Directly targets the stated gap-7 need for an India MOSPI client, specifically for legacy (pre-digital) datasets that are otherwise hard to access; quality is hackathon-grade so treat as a lead to verify, not a turnkey tool.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "India",
+  "time_coverage": "MoSPI legacy datasets (vintage unspecified)",
+  "size_hint": "small hackathon project",
+  "license": "none stated",
+  "last_activity": "2026-03-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Directly targets the stated gap-7 need for an India MOSPI client, specifically for legacy (pre-digital) datasets that are otherwise hard to access; quality is hackathon-grade so treat as a lead to verify, not a turnkey tool."
+  ]
+ },
+ {
+  "key": "github:vigna/webgraph",
+  "url": "https://github.com/vigna/webgraph",
+  "name": "webgraph (LAW / vigna)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The core WebGraph framework (Java) for compressing and analyzing large web graphs and computing rank measures (PageRank, harmonic centrality) \u2014 the underlying library that Common Crawl's cc-webgraph and the LAW group's Common Crawl host-rank releases are built on. No data committed, just the compression/ranking library.",
+  "why_useful": "Foundational dependency for anyone wanting to reproduce or verify Common Crawl host-graph rank numbers rather than a data source itself; low direct value beyond method provenance.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "library code only",
+  "license": "unspecified in fetch (check repo, historically LGPL/Apache dual)",
+  "last_activity": "89 stars, appears maintained",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Foundational dependency for anyone wanting to reproduce or verify Common Crawl host-graph rank numbers rather than a data source itself; low direct value beyond method provenance."
+  ]
+ },
+ {
+  "key": "github:flutn/influenza-wikipedia-dataset",
+  "url": "https://github.com/fluTN/influenza-wikipedia-dataset",
+  "name": "influenza-wikipedia-dataset",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed dataset (4 stars) pairing influenza incidence surveillance data with Wikipedia pagecounts/pageviews for disease-related articles, built for infodemiology/nowcasting research.",
+  "why_useful": "Not travel-relevant directly, but it is a concrete, committed example of the exact methodology pattern (pageviews as a leading/coincident indicator for a real-world demand series, validated against ground truth) that the team could replicate for tourism articles \u2014 useful as a methods reference for gap #17 (nowcasting with mixed-frequency data) even though the topic is epidemiology.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "not specified (likely Italy/EU given fluTN org name)",
+  "time_coverage": "not specified",
+  "size_hint": "small, dataset + analysis",
+  "license": "none declared",
+  "last_activity": "2025-10-21",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Not travel-relevant directly, but it is a concrete, committed example of the exact methodology pattern (pageviews as a leading/coincident indicator for a real-world demand series, validated against ground truth) that the team could replicate for tourism articles \u2014 useful as a methods reference for gap #17 (nowcasting with mixed-frequency data) even though the topic is epidemiology.",
+   "Off-theme (health, not travel) but a concrete precedent/template repo for 'Wikipedia pageviews of a topic committed alongside a real-world outcome series for nowcasting' - the exact data-shape a tourism-demand version of this project would need to produce; worth knowing as a methods reference rather than a direct data source."
+  ]
+ },
+ {
+  "key": "github:generalmills/pytrends",
+  "url": "https://github.com/GeneralMills/pytrends",
+  "name": "pytrends",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The original, most widely used unofficial Python client for Google Trends (interest over time, by region, related topics/queries, realtime/trending searches, top charts). 3.7k stars, 889 forks, 635 commits, 136 open issues. Archived/read-only by the owner on 17 Apr 2025 \u2014 no longer maintained.",
+  "why_useful": "This is almost certainly the tool already behind our '9 terms, NOT point-in-time' Google Trends holding, so it is a duplicate of what we already use operationally rather than a new find \u2014 flagged for completeness and because it is the base layer several of the other candidates below (gtab, longtrends, GoogleTrends-Scraper) build on to fix the point-in-time / long-history problems pytrends alone has.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "2004-present (subject to Google's resampling window)",
+  "size_hint": "library",
+  "license": "Custom (permissive, 'Other')",
+  "last_activity": "2026-09-11",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "Google Trends (9 terms) already held per CONTEXT.md \u2014 pytrends is presumably the client used to pull it",
+  "hits": 2,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "This is almost certainly the tool already behind our '9 terms, NOT point-in-time' Google Trends holding, so it is a duplicate of what we already use operationally rather than a new find \u2014 flagged for completeness and because it is the base layer several of the other candidates below (gtab, longtrends, GoogleTrends-Scraper) build on to fix the point-in-time / long-history problems pytrends alone has.",
+   "This is almost certainly the tool underlying our existing 9-term Trends pull (already tested and found not to beat naive). Flagging mainly because it is now archived \u2014 any new Trends work should move to a maintained fork (trendspyg, pytrends-modern) or the anchored gtab method rather than pytrends itself."
+  ]
+ },
+ {
+  "key": "github:qztseng/google-trends-daily",
+  "url": "https://github.com/qztseng/google-trends-daily",
+  "name": "google-trends-daily",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GPL-3.0 Python tool (50 stars) to reconstruct daily Google Trends data over extended periods via overlapping-window stitching, one of the earlier/well-known implementations of this pattern.",
+  "why_useful": "Third independent implementation of the daily-reconstruction pattern; useful as a cross-check against longtrends/GoogleTrends-Scraper outputs for the same keyword set (methodological triangulation on gap #17).",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "daily, multi-year reconstruction",
+  "size_hint": "library",
+  "license": "GPL-3.0",
+  "last_activity": "2025-08-16",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Third independent implementation of the daily-reconstruction pattern; useful as a cross-check against longtrends/GoogleTrends-Scraper outputs for the same keyword set (methodological triangulation on gap #17)."
+  ]
+ }
+]

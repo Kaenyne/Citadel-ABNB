@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:yashmasalge/air_traffic_passenger_statistics",
+  "url": "https://github.com/yashmasalge/Air_traffic_Passenger_Statistics",
+  "name": "yashmasalge/Air_traffic_Passenger_Statistics",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV (Air_Traffic_Passenger_Statistics.csv) of San Francisco International Airport's official open-data release: monthly passenger counts by airline, terminal, and geographic region (domestic/international), used here for a K-means clustering exercise. Small, single-airport, unclear date range (SFO's public portal version runs ~2005-present).",
+  "why_useful": "SFO is a decent West-Coast leisure/business proxy and the source (SFO open data portal) also publishes similar CSVs for enplanements by region \u2014 a template for pulling comparable structured monthly airport traffic that could stand in for regional US travel demand feeding Airbnb NA nights.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "San Francisco, USA",
+  "time_coverage": "Monthly, range unclear from repo (likely subset of SFO's 2005-present portal history)",
+  "size_hint": "Single CSV, small",
+  "license": "unspecified",
+  "last_activity": "2022-07-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an airline network planner who knows capacity, schedule, far"
+  ],
+  "why_all": [
+   "SFO is a decent West-Coast leisure/business proxy and the source (SFO open data portal) also publishes similar CSVs for enplanements by region \u2014 a template for pulling comparable structured monthly airport traffic that could stand in for regional US travel demand feeding Airbnb NA nights."
+  ]
+ },
+ {
+  "key": "github:zsszabo86/satrday-challenge",
+  "url": "https://github.com/zsszabo86/SatRday-Challenge",
+  "name": "zsszabo86/SatRday-Challenge",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Hungarian Central Statistical Office data on monthly passengers and available seats to/from Budapest Ferenc Liszt International Airport by origin country, 2007-2012, used for a ticket-sales-efficiency analysis.",
+  "why_useful": "Old and narrow (pre-2013, one airport) but demonstrates a national-stats-office source (KSH) for scheduled seat capacity by origin country \u2014 a template for CEE regional air-capacity data that could flesh out EMEA regional mix; low direct value given the date range predates ABNB's operating history.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Budapest, Hungary",
+  "time_coverage": "2007-2012 (monthly)",
+  "size_hint": "Small dataset",
+  "license": "unspecified",
+  "last_activity": "2016-10-31",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an airline network planner who knows capacity, schedule, far"
+  ],
+  "why_all": [
+   "Old and narrow (pre-2013, one airport) but demonstrates a national-stats-office source (KSH) for scheduled seat capacity by origin country \u2014 a template for CEE regional air-capacity data that could flesh out EMEA regional mix; low direct value given the date range predates ABNB's operating history."
+  ]
+ },
+ {
+  "key": "github:bhavanaeh/skyscan",
+  "url": "https://github.com/bhavanaeh/SkyScan",
+  "name": "bhavanaeh/SkyScan",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small real-time/historical flight-tracking web app built on the OpenSky Network API (\"SkyScan USA\"); wraps live and historical flight data but does not itself ship a stored dataset.",
+  "why_useful": "Another thin OpenSky wrapper; marginal beyond the official client, included for completeness since it demonstrates a US-specific filtering pattern that could be reused for regional flight-density queries.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "USA",
+  "time_coverage": "Real-time + some historical via OpenSky",
+  "size_hint": "App/code, no data files",
+  "license": "unspecified",
+  "last_activity": "2024-10-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an airline network planner who knows capacity, schedule, far"
+  ],
+  "why_all": [
+   "Another thin OpenSky wrapper; marginal beyond the official client, included for completeness since it demonstrates a US-specific filtering pattern that could be reused for regional flight-density queries."
+  ]
+ },
+ {
+  "key": "github:miguelgonzalezalvarez/web-flight-delay-tracker",
+  "url": "https://github.com/MiguelGonzalezAlvarez/Web-Flight-Delay-Tracker",
+  "name": "MiguelGonzalezAlvarez/Web-Flight-Delay-Tracker",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Real-time flight-delay prediction/tracking app for 35+ Spanish airports using OpenSky Network API live data plus an AI delay-risk model; no historical data files committed.",
+  "why_useful": "Marginal; illustrates OpenSky filtering scoped to Spanish airports (useful if the team ever wants Spain-specific air-capacity context for the Barcelona Inside Airbnb market), but ships no data of its own.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Spain",
+  "time_coverage": "Real-time only",
+  "size_hint": "App/code, no data files",
+  "license": "unspecified",
+  "last_activity": "2026-04-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an airline network planner who knows capacity, schedule, far"
+  ],
+  "why_all": [
+   "Marginal; illustrates OpenSky filtering scoped to Spanish airports (useful if the team ever wants Spain-specific air-capacity context for the Barcelona Inside Airbnb market), but ships no data of its own."
+  ]
+ },
+ {
+  "key": "github:banool/recreation-gov-campsite-checker",
+  "url": "https://github.com/banool/recreation-gov-campsite-checker",
+  "name": "banool/recreation-gov-campsite-checker",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "364-star Apache-2.0 scraper that checks recreation.gov for campsite availability across US federal campgrounds.",
+  "why_useful": "Same outdoor-lodging-demand kernel-analogue rationale as camply; higher star count signals a well-trodden, stable API surface if this thread is ever pursued.",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-25",
+  "geography": "US",
+  "time_coverage": "real-time only",
+  "size_hint": "code only",
+  "gap_targets": [
+   18
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Same outdoor-lodging-demand kernel-analogue rationale as camply; higher star count signals a well-trodden, stable API surface if this thread is ever pursued."
+  ]
+ }
+]

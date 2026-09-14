@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:opencamp-hq/cli",
+  "url": "https://github.com/opencamp-hq/cli",
+  "name": "opencamp-hq/cli",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed CLI that queries the recreation.gov API for real-time federal campground/campsite availability, with polling + email alerts. No stored historical data \u2014 live query tool only. 22 stars, updated 9 Jul 2026 (active).",
+  "why_useful": "Federal campground/national-park booking is a leisure book-ahead demand pool adjacent to Airbnb's rural/nature-destination nights; a live availability-pull method could be repurposed to build a point-in-time camping-demand series as a leisure-travel cross-check, though it stores nothing itself today.",
+  "potential": "low",
+  "geography": "US (federal lands)",
+  "time_coverage": "real-time only, no history stored",
+  "size_hint": "code repo, no data files",
+  "license": "MIT",
+  "last_activity": "2026-07-09",
+  "gap_targets": [
+   17
+  ],
+  "hits": 2,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage",
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Federal campground/national-park booking is a leisure book-ahead demand pool adjacent to Airbnb's rural/nature-destination nights; a live availability-pull method could be repurposed to build a point-in-time camping-demand series as a leisure-travel cross-check, though it stores nothing itself today.",
+   "Minor duplicate-purpose tool to the above; noted for completeness of the RIDB access-method cluster."
+  ]
+ },
+ {
+  "key": "github:ships/ridb",
+  "url": "https://github.com/ships/ridb",
+  "name": "ships/ridb",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Generated Rust client for the Recreation Information Database (RIDB), the federal government's single API for recreational facilities, campsites, activities and events on federal land nationwide. Boilerplate client code + OpenAPI spec, no bundled data.",
+  "why_useful": "RIDB is a free, government-run, machine-pullable dataset of federal recreation facility metadata and (via related endpoints) availability \u2014 a ready-made acquisition path for a national outdoor-leisure-demand time series, an unexplored proxy for the same discretionary-travel dollar Airbnb competes for.",
+  "potential": "low",
+  "geography": "US (federal lands, nationwide)",
+  "time_coverage": "live API, no history in repo",
+  "size_hint": "small code repo",
+  "license": "AGPL-3.0",
+  "last_activity": "2024-04-18 (repo last commit; RIDB API itself is current)",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage"
+  ],
+  "why_all": [
+   "RIDB is a free, government-run, machine-pullable dataset of federal recreation facility metadata and (via related endpoints) availability \u2014 a ready-made acquisition path for a national outdoor-leisure-demand time series, an unexplored proxy for the same discretionary-travel dollar Airbnb competes for."
+  ]
+ },
+ {
+  "key": "github:jamalmansuri/campsiterecon",
+  "url": "https://github.com/JamalMansuri/campsiterecon",
+  "name": "JamalMansuri/campsiterecon",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Uses the recreation.gov API to check campsite and backcountry permit availability; includes a skill.md for LLM-agent integration. Updated 28 May 2026 (recent, unverified beyond gh metadata).",
+  "why_useful": "Same recreation.gov acquisition angle as opencamp-hq/cli, more recently maintained; the permit-availability angle (backcountry) is a finer-grained slice of federal outdoor demand not covered by the CLI above.",
+  "potential": "low",
+  "geography": "US (federal lands)",
+  "time_coverage": "real-time only",
+  "size_hint": "small code repo",
+  "license": "unspecified",
+  "last_activity": "2026-05-28",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage"
+  ],
+  "why_all": [
+   "Same recreation.gov acquisition angle as opencamp-hq/cli, more recently maintained; the permit-availability angle (backcountry) is a finer-grained slice of federal outdoor demand not covered by the CLI above."
+  ]
+ },
+ {
+  "key": "github:mollypanderson/campsite-availability-scanner",
+  "url": "https://github.com/mollypanderson/campsite-availability-scanner",
+  "name": "mollypanderson/campsite-availability-scanner",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Slack chatbot + backend service polling the recreation.gov API to monitor and alert on campsite and backcountry-permit availability. MIT, updated 15 Apr 2026.",
+  "why_useful": "A third independent recreation.gov acquisition method (Slack-bot pattern) confirming the API surface is stable and actively used by multiple independent developers as of mid-2026 \u2014 useful if the team ever wants to build a point-in-time camping-availability panel.",
+  "potential": "low",
+  "geography": "US (federal lands)",
+  "time_coverage": "real-time only",
+  "size_hint": "small code repo",
+  "license": "MIT",
+  "last_activity": "2026-04-15",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage"
+  ],
+  "why_all": [
+   "A third independent recreation.gov acquisition method (Slack-bot pattern) confirming the API surface is stable and actively used by multiple independent developers as of mid-2026 \u2014 useful if the team ever wants to build a point-in-time camping-availability panel."
+  ]
+ },
+ {
+  "key": "github:daharder/reservation_checker",
+  "url": "https://github.com/DAHarder/reservation_checker",
+  "name": "DAHarder/reservation_checker",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small script that hits the recreation.gov API for reservation data on specific dates. Updated 5 Jan 2026.",
+  "why_useful": "Fourth independent recreation.gov client found; not itself a dataset, but corroborates the API is a live, free, well-trodden acquisition path for federal-campground demand if the team wants a camping-adjacent leisure-travel proxy.",
+  "potential": "low",
+  "geography": "US (federal lands)",
+  "time_coverage": "real-time only",
+  "size_hint": "small script",
+  "license": "unspecified",
+  "last_activity": "2026-01-05",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage"
+  ],
+  "why_all": [
+   "Fourth independent recreation.gov client found; not itself a dataset, but corroborates the API is a live, free, well-trodden acquisition path for federal-campground demand if the team wants a camping-adjacent leisure-travel proxy."
+  ]
+ }
+]

@@ -1,0 +1,121 @@
+[
+ {
+  "key": "github:vacationc0der/breezeway",
+  "url": "https://github.com/vacationC0DER/breezeway",
+  "name": "breezeway",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automated ETL syncing Breezeway API data (properties with photos, reservations with guest details, tasks, people, supplies, tags) into PostgreSQL for ~2,000 properties, ~3,500 reservations, ~15,000 tasks on average across 8 vacation-rental regions (one operator's private portfolio). No data committed to the repo itself \u2014 code/schema only.",
+  "why_useful": "Possible ETL pattern for Breezeway ops data if it turns out to include sample exports, but unverified and most likely another account-specific integration script rather than a dataset.",
+  "potential": "low",
+  "license": "",
+  "last_activity": "2026-07-11",
+  "geography": "not specified",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, not inspected",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Possible ETL pattern for Breezeway ops data if it turns out to include sample exports, but unverified and most likely another account-specific integration script rather than a dataset.",
+   "Shows the shape of real STR turnover/task data one operator manages (scale: thousands of properties/tasks) but it is a private company's operational pipeline, not a public dataset, and requires their own Breezeway credentials to run."
+  ]
+ },
+ {
+  "key": "github:pfzevallos/hostturn-ops",
+  "url": "https://github.com/pfzevallos/hostturn-ops",
+  "name": "hostturn-ops",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Breezeway + Twilio integration for cleaning-ops automation (notifications/scheduling), no data.",
+  "why_useful": "Ops automation only, not a data source.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2026-08-31",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "code only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Ops automation only, not a data source."
+  ]
+ },
+ {
+  "key": "github:tykeal/homeassistant-rental-control",
+  "url": "https://github.com/tykeal/homeassistant-rental-control",
+  "name": "homeassistant-rental-control",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Home Assistant integration that ingests ICS calendars from rental platforms (Airbnb, VRBO, etc.), tracks guest occupancy via a state machine, and auto-generates smart-lock door codes (key-exchange automation) via Keymaster. Test fixtures include sample ICS calendar files; no production data committed.",
+  "why_useful": "A generic, reusable method for pulling a given listing's booking calendar (check-in/out dates) as ICS from Airbnb/VRBO \u2014 same underlying mechanism as the calendar files Inside Airbnb captures, but per-listing and requires the host's own private ICS URL, so not a route to market-wide data. The key-exchange/door-code angle is a real STR-supply-service touchpoint but generates no dataset.",
+  "potential": "low",
+  "license": "unspecified (check repo)",
+  "last_activity": "recent (active per changelog)",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "code + test fixtures only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "A generic, reusable method for pulling a given listing's booking calendar (check-in/out dates) as ICS from Airbnb/VRBO \u2014 same underlying mechanism as the calendar files Inside Airbnb captures, but per-listing and requires the host's own private ICS URL, so not a route to market-wide data. The key-exchange/door-code angle is a real STR-supply-service touchpoint but generates no dataset."
+  ]
+ },
+ {
+  "key": "github:lkilpatrick/openstr",
+  "url": "https://github.com/lkilpatrick/OpenSTR",
+  "name": "OpenSTR",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hosted cleaning-management platform for STR hosts: scheduling, checklists, before/after photo evidence, supply tracking, Airbnb iCal sync, network-aware mobile app. Node/Express + React + Flutter + Postgres. Only demo/seed data (fake properties, rooms, tasks); no real datasets. 3 stars, GPL-3.0, last activity ~Apr 2026.",
+  "why_useful": "Open-source alternative to Turno/Properly showing the data model (task/checklist/photo schema) an STR turnover system would use, but ships no real data and each deployment is single-operator.",
+  "potential": "low",
+  "license": "GPL-3.0",
+  "last_activity": "2026-04",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "demo/seed data only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Open-source alternative to Turno/Properly showing the data model (task/checklist/photo schema) an STR turnover system would use, but ships no real data and each deployment is single-operator."
+  ]
+ },
+ {
+  "key": "github:gribadan/renttools.io",
+  "url": "https://github.com/Gribadan/RentTools.io",
+  "name": "RentTools.io",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source free property manager for STR hosts: calendar sync across Airbnb/Booking.com/Vrbo/iCal, cleaning-schedule automation, passport-data OCR extraction (Gemini), performance reporting with occupancy/ADR/revenue metrics. Booking data stored in a hosted SQLite instance, not committed to repo. 23 stars, 689 commits.",
+  "why_useful": "Notable because it computes occupancy/ADR/revenue reporting across multiple booking platforms per property \u2014 again a per-operator tool, not a public dataset, but the most actively maintained (23 stars) of the open-source PMS/turnover tools found.",
+  "potential": "low",
+  "license": "unspecified (check repo)",
+  "last_activity": "recent (689 commits, active per repo page)",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "no committed data",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Notable because it computes occupancy/ADR/revenue reporting across multiple booking platforms per property \u2014 again a per-operator tool, not a public dataset, but the most actively maintained (23 stars) of the open-source PMS/turnover tools found.",
+   "Shows the exact iCal-export mechanics (Airbnb and Booking.com both expose per-listing .ics export URLs) that any small-scale, ToS-compliant occupancy-proxy build would use; also a candidate 'better mousetrap' if the project ever wanted to invite cooperating hosts to contribute their own calendar exports for a bottom-up occupancy panel."
+  ]
+ }
+]

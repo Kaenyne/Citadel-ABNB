@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:bernardorosalesromero3-web/airbnb-in-mexico-city",
+  "url": "https://github.com/bernardorosalesromero3-web/Airbnb-in-Mexico-City",
+  "name": "Airbnb-in-Mexico-City (bernardorosalesromero3-web)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis of Airbnb CDMX listings (2023 vintage per description) focused on geographic distribution, price structure, commercial-host proliferation, and housing-market pressure tied to the gentrification debate. Framing is explicitly regulatory/gentrification-adjacent, but data source appears to be the standard Inside Airbnb Mexico City export we already hold; 0 stars.",
+  "why_useful": "The framing (commercial-host share, gentrification pressure) is closer to a regulatory angle than a pure pricing notebook, but without a distinct or older dataset it likely duplicates data we already hold for Mexico City.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Mexico City, Mexico",
+  "time_coverage": "2023",
+  "size_hint": "unconfirmed, notebook-scale",
+  "license": "unspecified",
+  "last_activity": "unconfirmed (recent, appears 2023-2026 range)",
+  "duplicate_of_holding": "likely duplicates our held Inside Airbnb Mexico City vintages",
+  "hits": 1,
+  "themes": [
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "The framing (commercial-host share, gentrification pressure) is closer to a regulatory angle than a pure pricing notebook, but without a distinct or older dataset it likely duplicates data we already hold for Mexico City."
+  ]
+ },
+ {
+  "key": "github:rithikh321/market-analysis",
+  "url": "https://github.com/rithikh321/market-analysis",
+  "name": "rithikh321/market-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Tokyo Airbnb market analysis (Python, SQL, statistical testing) on neighborhood pricing trends and Superhost value; likely built on an Inside Airbnb Tokyo snapshot committed to the repo (unverified snapshot date).",
+  "why_useful": "Possible additional Tokyo listings snapshot; needs a directory check to confirm data files and vintage before relying on it.",
+  "potential": "low",
+  "geography": "Tokyo, Japan",
+  "time_coverage": "unverified",
+  "size_hint": "unverified",
+  "license": "gpl-3.0",
+  "last_activity": "2026-08-03",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "Likely overlaps current Inside Airbnb Tokyo cohort; flagged only for the possibility of an older vintage.",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Possible additional Tokyo listings snapshot; needs a directory check to confirm data files and vintage before relying on it."
+  ]
+ },
+ {
+  "key": "github:aris-30/tokyo-airbnb-dashboard",
+  "url": "https://github.com/aris-30/tokyo-airbnb-dashboard",
+  "name": "aris-30/tokyo-airbnb-dashboard",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Cleaning and analysis of 25,000+ Tokyo Airbnb listings in Python with an interactive Tableau dashboard; likely a single recent Inside Airbnb Tokyo snapshot (~25k listings, larger than typical single-month Tokyo dumps, vintage unverified).",
+  "why_useful": "Possible larger/denser Tokyo listings snapshot than our current holdings; low priority without vintage confirmation.",
+  "potential": "low",
+  "geography": "Tokyo, Japan",
+  "time_coverage": "unverified",
+  "size_hint": "25,000+ listings claimed",
+  "license": "unknown",
+  "last_activity": "2026-06-24",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "Likely overlaps current Inside Airbnb Tokyo data unless vintage predates our coverage.",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Possible larger/denser Tokyo listings snapshot than our current holdings; low priority without vintage confirmation."
+  ]
+ },
+ {
+  "key": "github:daben/m2851-prac1",
+  "url": "https://github.com/daben/m2851-prac1",
+  "name": "daben/m2851-prac1",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "\"Bali Airbnb\" academic practice repo (course assignment, 6 stars); likely contains a Bali listings dataset used for a data-analysis exercise (unverified file contents/vintage).",
+  "why_useful": "Bali/Indonesia is a market with essentially no coverage in our current 13-city + 120-market Inside Airbnb panels per CONTEXT.md; any real Bali listings snapshot, even a small course dataset, is incrementally useful for APAC/Indonesia coverage.",
+  "potential": "low",
+  "geography": "Bali, Indonesia",
+  "time_coverage": "unverified",
+  "size_hint": "unverified",
+  "license": "other (unspecified terms)",
+  "last_activity": "2025-02-04",
+  "gap_targets": [
+   1,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Bali/Indonesia is a market with essentially no coverage in our current 13-city + 120-market Inside Airbnb panels per CONTEXT.md; any real Bali listings snapshot, even a small course dataset, is incrementally useful for APAC/Indonesia coverage."
+  ]
+ },
+ {
+  "key": "github:samiulhoda/bali-airbnb-analysis",
+  "url": "https://github.com/samiulhoda/bali-airbnb-analysis",
+  "name": "samiulhoda/bali-airbnb-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Power BI dashboard analyzing Bali Airbnb market trends and revenue drivers; presumably built on a Bali listings/revenue extract (vintage and row count unverified).",
+  "why_useful": "Another possible Bali listings source in an APAC market we have essentially no coverage of; needs a file check to confirm real underlying data vs. a synthetic/demo dataset.",
+  "potential": "low",
+  "geography": "Bali, Indonesia",
+  "time_coverage": "unverified",
+  "size_hint": "unverified",
+  "license": "unknown",
+  "last_activity": "2026-03-30",
+  "gap_targets": [
+   1,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Another possible Bali listings source in an APAC market we have essentially no coverage of; needs a file check to confirm real underlying data vs. a synthetic/demo dataset."
+  ]
+ }
+]

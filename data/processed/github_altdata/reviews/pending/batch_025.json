@@ -1,0 +1,112 @@
+[
+ {
+  "key": "github:api-evangelist/housetrip",
+  "url": "https://github.com/api-evangelist/housetrip",
+  "name": "housetrip (API Evangelist profile)",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "API Evangelist profile of the now-defunct HouseTrip (London-based vacation-rental marketplace, acquired/shut down years ago) \u2014 documents its historical public API surface, no live data.",
+  "why_useful": "Marginal: HouseTrip is defunct so its API is not pullable; historical interest only for STR-competitor landscape context (gap #9), not actionable data.",
+  "potential": "low",
+  "geography": "Europe",
+  "time_coverage": "historical (pre-shutdown API only)",
+  "size_hint": "small",
+  "license": "unclear",
+  "last_activity": "unknown, likely stale",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Marginal: HouseTrip is defunct so its API is not pullable; historical interest only for STR-competitor landscape context (gap #9), not actionable data."
+  ]
+ },
+ {
+  "key": "github:garthlan-byte/supplier-api-dashboard",
+  "url": "https://github.com/garthlan-byte/supplier-api-dashboard",
+  "name": "supplier-api-dashboard",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "'Klook Supplier API Capability Dashboard (static)', 0 stars, last commit 2026-04-23. Appears to be a static dashboard summarizing what Klook's supplier-side API can do (for tour operators/suppliers listing on Klook), not consumer-side activity data.",
+  "why_useful": "Marginal \u2014 supplier-facing tooling reference, not a data source for demand or pricing; flag only because it is Klook-adjacent and recently touched.",
+  "potential": "low",
+  "geography": "APAC (Klook)",
+  "time_coverage": "n/a",
+  "size_hint": "small, static site",
+  "license": "unclear",
+  "last_activity": "2026-04-23",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Marginal \u2014 supplier-facing tooling reference, not a data source for demand or pricing; flag only because it is Klook-adjacent and recently touched."
+  ]
+ },
+ {
+  "key": "github:k2r-krn/tourism-chatbot-getyourguide",
+  "url": "https://github.com/K2R-krn/tourism-chatbot-getyourguide",
+  "name": "tourism-chatbot-getyourguide",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Chatbot project (1 star, last commit 2025-07-22) that combines BeautifulSoup/Selenium scraping of GetYourGuide tourism data with LangChain/OpenAI for conversational Q&A. Scraping is a means to feed the chatbot, not a standalone dataset.",
+  "why_useful": "Very marginal \u2014 no persisted dataset described, scraping logic buried inside a chatbot app; would need code inspection to extract the scraping piece.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unclear",
+  "last_activity": "2025-07-22",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Very marginal \u2014 no persisted dataset described, scraping logic buried inside a chatbot app; would need code inspection to extract the scraping piece."
+  ]
+ },
+ {
+  "key": "github:expediagroup/rapid-java-sdk",
+  "url": "https://github.com/expediagroup/rapid-java-sdk",
+  "name": "rapid-java-sdk",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Expedia Group open-source Kotlin/Java SDK (Apache-2.0) for the Rapid API (formerly EPS - Expedia Partner Solutions), which since Expedia's platform unification exposes lodging supply/rates across Expedia's Brand Expedia, Hotels.com, Vrbo and other properties through one partner API. This is a client library, not data; Rapid API access requires an Expedia Partner Solutions/affiliate contract and API key (not free/self-serve), so it is a documented pull method only if the team can obtain partner credentials.",
+  "why_useful": "The most authoritative possible pointer to Expedia Group's actual vacation-rental (Vrbo) supply/pricing feed (gap #9), directly from Expedia Group's own GitHub org - but practically gated behind a partner agreement, so not usable without a business relationship the team likely does not have.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "The most authoritative possible pointer to Expedia Group's actual vacation-rental (Vrbo) supply/pricing feed (gap #9), directly from Expedia Group's own GitHub org - but practically gated behind a partner agreement, so not usable without a business relationship the team likely does not have."
+  ]
+ },
+ {
+  "key": "github:webrenew/channex-mcp",
+  "url": "https://github.com/webrenew/channex-mcp",
+  "name": "channex-mcp",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server wrapping the Channex channel-manager API (properties, room_types, rate_plans) which syncs inventory/rates across many OTAs including Vrbo, Booking.com and Airbnb for property managers. Found via github.com/topics/short-term-rental (5 stars); not independently verified in depth.",
+  "why_useful": "A channel-manager-side integration point that could in principle expose cross-platform (including Vrbo) rate-plan data if the operator has a Channex account, but this is host-side tooling requiring the team to control listings - not a public dataset.",
+  "potential": "low",
+  "hits": 2,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "A channel-manager-side integration point that could in principle expose cross-platform (including Vrbo) rate-plan data if the operator has a Channex account, but this is host-side tooling requiring the team to control listings - not a public dataset.",
+   "Channex sits between many small PMs and every major OTA at once; its rate-plan/ARI (availability-rate-inventory) objects are the same data a host pushes to Airbnb, so the schema shows what a cross-OTA comp/rate panel would need to look like. Requires the operator's own Channex credentials; no public data."
+  ]
+ }
+]

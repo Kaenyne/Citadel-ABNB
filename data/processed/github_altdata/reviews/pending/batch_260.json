@@ -1,0 +1,111 @@
+[
+ {
+  "key": "other:https://github.com/expediagroup",
+  "url": "https://github.com/ExpediaGroup",
+  "name": "ExpediaGroup GitHub org (general)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Expedia Group's official GitHub org publishes engineering OSS (e.g. the deprecated service-client-statsd plugin found in search) but, from this search, no vacation-rental supply/listing/ADR datasets \u2014 Expedia's public repos are infra/tooling (GraphQL federation, streaming libs, service clients), not travel-metric data exports.",
+  "why_useful": "Confirms Expedia Group does not appear to publish open vacation-rental supply or booking-volume data on GitHub; worth noting as a negative result so future scouts don't re-check the org expecting a data dump.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "N/A",
+  "license": "varies (mostly apache-2.0)",
+  "last_activity": "ongoing org, individual repos vary",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Confirms Expedia Group does not appear to publish open vacation-rental supply or booking-volume data on GitHub; worth noting as a negative result so future scouts don't re-check the org expecting a data dump."
+  ]
+ },
+ {
+  "key": "github:byteer228eaglepro/vrbo-main-link-scraper",
+  "url": "https://github.com/byteer228eaglepro/vrbo-main-link-scraper",
+  "name": "vrbo-main-link-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Commercial-flavored (\"Bitbash\") lightweight Vrbo link/ID extractor outputting JSON {listing_url, property_id, location, title, scraped_at}; claims 1,200 links/minute, 98%+ success. Single commit, no license specified, 0 stars, sample JSON in README only (one record).",
+  "why_useful": "Only gives listing IDs/URLs, not price/amenity data - a discovery step, not a supply/price panel by itself. Low value unless paired with a detail scraper like Edioff/vrbo-scraper.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Only gives listing IDs/URLs, not price/amenity data - a discovery step, not a supply/price panel by itself. Low value unless paired with a detail scraper like Edioff/vrbo-scraper."
+  ]
+ },
+ {
+  "key": "github:markswendsen-code/mcp-vrbo",
+  "url": "https://github.com/markswendsen-code/mcp-vrbo",
+  "name": "mcp-vrbo",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP (Model Context Protocol) server letting an AI agent book/search Vrbo vacation rentals; found via github.com/topics/vrbo listing. Not independently verified in depth (budget-constrained) - appears to be an agent-tooling wrapper, likely around a paid or scraped backend, not a data store.",
+  "why_useful": "Possible live-query method for current Vrbo pricing/availability if it works without paid keys, but role is agent tooling, not a dataset; would need a follow-up fetch to confirm backend and licensing.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Possible live-query method for current Vrbo pricing/availability if it works without paid keys, but role is agent tooling, not a dataset; would need a follow-up fetch to confirm backend and licensing."
+  ]
+ },
+ {
+  "key": "github:aswanisol/berlin-airbnb-housing-affordability-analysis",
+  "url": "https://github.com/AswaniSol/Berlin-Airbnb-Housing-Affordability-Analysis",
+  "name": "Berlin-Airbnb-Housing-Affordability-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Excel + Python + SQL + Tableau analysis of Berlin Airbnb listings (presumably Inside Airbnb Berlin dump) to identify affordable neighbourhoods and key price drivers (room type, availability, amenities).",
+  "why_useful": "Confirms Berlin Inside Airbnb listing data has been used for an affordability angle; no new data beyond what Inside Airbnb already publishes and we already hold a broader panel, so this is a duplicate of an existing holding rather than new source material.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "Berlin, Germany",
+  "time_coverage": "unspecified Inside Airbnb Berlin vintage",
+  "size_hint": "0 stars, notebook-style analysis",
+  "license": "unknown",
+  "last_activity": "2026-01-24",
+  "duplicate_of_holding": "Inside Airbnb (we hold a 13-city + 120-market panel; Berlin not currently in our named city list, so a Berlin-specific Inside Airbnb pull could be a minor gap-filler, but this repo itself is only an analysis notebook, not a data cache)",
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Confirms Berlin Inside Airbnb listing data has been used for an affordability angle; no new data beyond what Inside Airbnb already publishes and we already hold a broader panel, so this is a duplicate of an existing holding rather than new source material."
+  ]
+ },
+ {
+  "key": "github:darshitjayswal1/ai-tech-layoffs-2026",
+  "url": "https://github.com/darshitjayswal1/ai-tech-layoffs-2026",
+  "name": "ai-tech-layoffs-2026",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Power BI + SQL analysis of 920K+ layoffs, 2020-2026, sourced from layoffs.fyi, framed around the 2026 AI-driven layoff wave and an 'AI-washing' angle.",
+  "why_useful": "Extends the layoffs.fyi compilation into 2026 (later than the other candidates here), which matters since the pitch's operating window runs through the Nov 2026 print; worth checking whether Airbnb rows are present and whether the underlying data file is committed vs. Power BI-only.",
+  "potential": "low",
+  "license": "not specified",
+  "last_activity": "2026-06-05",
+  "geography": "global tech sector",
+  "time_coverage": "2020-2026",
+  "size_hint": "920K+ layoffs (likely aggregate headcount, not row count)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "overlaps evgeniimatveev/layoffs-tracker and Dishu296 CSV; only worth it if it has a later end date confirmed",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Extends the layoffs.fyi compilation into 2026 (later than the other candidates here), which matters since the pitch's operating window runs through the Nov 2026 print; worth checking whether Airbnb rows are present and whether the underlying data file is committed vs. Power BI-only."
+  ]
+ }
+]

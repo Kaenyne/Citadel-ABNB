@@ -1,0 +1,159 @@
+[
+ {
+  "key": "github:api-evangelist/airdna",
+  "url": "https://github.com/api-evangelist/airdna",
+  "name": "airdna (API Evangelist profile)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Not a data repo \u2014 a third-party documentation/OpenAPI profile of the commercial AirDNA Enterprise API (market metrics, STR listing data, comparable-property sets, Rentalizer revenue estimates, occupancy/ADR/RevPAR/booking-lead-time/length-of-stay time series across 10M+ listings, 120k+ markets). Contains an OpenAPI spec, APIs.yml, Postman/Open API collections, and pricing/rate-limit metadata; explicitly 'no software, no data' \u2014 a map of what AirDNA's paid API exposes, not the data itself. Points to https://www.airdna.co (paid).",
+  "why_useful": "Confirms exactly which realised-occupancy/ADR/booking-lead-time fields AirDNA sells (gap #2 and #3 candidate vendor), which is useful for scoping a potential paid-data ask, but yields nothing free or committed; low direct research value on its own.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "geography": "global (per AirDNA's coverage claims)",
+  "time_coverage": "current (live API, not historical archive)",
+  "size_hint": "small spec/doc repo, no data",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 12,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats",
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks",
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets",
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves",
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Confirms exactly which realised-occupancy/ADR/booking-lead-time fields AirDNA sells (gap #2 and #3 candidate vendor), which is useful for scoping a potential paid-data ask, but yields nothing free or committed; low direct research value on its own.",
+   "Confirms what fields a paid AirDNA export would carry (occupancy, ADR, RevPAR, booking lead time) which matches gap #2/#3 targets, but this repo itself is only a documentation mirror with no data or free access route.",
+   "Useful only as a map of what fields/endpoints AirDNA's paid API exposes, in case the team pursues a trial/paid key later; no data to pull today.",
+   "Useful map of exactly which AirDNA fields (occupancy, ADR, RevPAR, booking lead time, length of stay) are available programmatically, if the team ever gets legitimate API access; not itself usable without a paid key.",
+   "Gap 2 (realised ADR/occupancy for STRs) -- confirms AirDNA's API shape as a reference even though access itself is paid.",
+   "Useful only as a map of what AirDNA's paid API actually exposes, in case the team later licenses it for gap #2; adds no data itself.",
+   "Useful only as a map of what AirDNA's paid API exposes (field names for market-level occupancy/ADR/RevPAR), which could inform what to ask a licensed vendor for; holds no data itself.",
+   "Confirms the field list AirDNA sells (useful if the team ever budgets for a paid AirDNA sample) but is not itself a usable free dataset for gap #2 (realized ADR/occupancy).",
+   "Useful only as a map of what AirDNA's paid API exposes (market-level occupancy/ADR/revenue metrics across 120,000+ markets) in case the team ever evaluates a paid AirDNA subscription or needs to know what fields such a feed would contain.",
+   "Useful as a map of what AirDNA's API can return (in case the team later gets access), but contains zero actual data and is off our assigned theme (turnover/cleaning); noted for the record only.",
+   "Confirms what fields a Key-Data/AirDNA-style realised-ADR/occupancy feed would contain (gap 2) if the team later licenses it, but has zero actual data and no free sample export.",
+   "Useful as a map of what AirDNA's paid API actually exposes (relevant to gap #2) if the team ever gets a licensed key; not itself a dataset and not LatAm-specific."
+  ]
+ },
+ {
+  "key": "github:tuanchris/airbnb_victoria",
+  "url": "https://github.com/tuanchris/airbnb_victoria",
+  "name": "airbnb_victoria",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Inside Airbnb pull for a 'Victoria' market (city name unconfirmed as Melbourne/Victoria AU vs. Victoria BC/Victoria TX from the fetched README alone) with the standard three files committed/generated: listings.csv (all listing features), calendar.csv (daily calendar/availability per listing), reviews.csv (detailed reviews). Analysis in pandas/plotnine/sklearn.",
+  "why_useful": "One more single-city Inside Airbnb calendar+reviews snapshot; only worth flagging if the vintage is older or the city sits outside our current 13+120-market coverage \u2014 needs a follow-up city/date confirmation before treating as new coverage.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Victoria (city/region unconfirmed \u2014 possibly Melbourne, Australia)",
+  "time_coverage": "unspecified Inside Airbnb vintage",
+  "size_hint": "3 CSVs, single-city",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "possible duplicate of existing Inside Airbnb holdings if same city/vintage as what we already hold",
+  "hits": 1,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "One more single-city Inside Airbnb calendar+reviews snapshot; only worth flagging if the vintage is older or the city sits outside our current 13+120-market coverage \u2014 needs a follow-up city/date confirmation before treating as new coverage."
+  ]
+ },
+ {
+  "key": "other:https://researchdata.gla.ac.uk/1904",
+  "url": "https://researchdata.gla.ac.uk/1904/",
+  "name": "Airbnb daily listings/calendars (UBDC)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Related UBDC data-repository record for daily Airbnb listings/calendars (companion/earlier record to 2056); same daily-scrape lineage.",
+  "why_useful": "Second UBDC data record worth checking for looser access terms or a different (possibly earlier/broader) date range than 2056.",
+  "potential": "low",
+  "license": "unknown, likely same restricted terms as 2056",
+  "last_activity": "unknown",
+  "geography": "UK",
+  "time_coverage": "unknown, not fetched in detail",
+  "size_hint": "unknown",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "same UBDC lineage as researchdata.gla.ac.uk/2056",
+  "hits": 1,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "Second UBDC data record worth checking for looser access terms or a different (possibly earlier/broader) date range than 2056."
+  ]
+ },
+ {
+  "key": "github:timkahn/guess_the_address",
+  "url": "https://github.com/TimKahn/Guess_the_Address",
+  "name": "Guess_the_Address",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Metis data-science capstone (7 stars, last active 2025). Uses 'AirDNA proprietary data' for Denver (avg. 833 properties within 500m circles around listings), VRBO/HomeAway data scraped/provided by AirDNA, and Denver Tax Assessor records, fuzzy-matched to ~429 linked records; goal is predicting a listing's true street address from AirDNA-anonymized data. Repo root has README, model/, munge/, scrape/, visualize/ folders but NO data/ directory and a .gitignore -- the underlying AirDNA/VRBO CSVs are not committed, confirmed via `gh api contents/`. Entire-home Denver listings only.",
+  "why_useful": "Documents concretely what an AirDNA Denver export contains (fields, granularity, ~833-listing single-market size) and a working method (fuzzy match to tax-assessor records) for de-anonymizing/cross-referencing STR data, but ships no reusable data -- addresses gap #2 only as a description of the shape of AirDNA data, not as a source.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2025-07-21",
+  "geography": "Denver, CO",
+  "time_coverage": "unspecified single snapshot, ~2018-2019 era project",
+  "size_hint": "no data files committed; code only",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Documents concretely what an AirDNA Denver export contains (fields, granularity, ~833-listing single-market size) and a working method (fuzzy match to tax-assessor records) for de-anonymizing/cross-referencing STR data, but ships no reusable data -- addresses gap #2 only as a description of the shape of AirDNA data, not as a source."
+  ]
+ },
+ {
+  "key": "github:wallacepreston/rental-averages",
+  "url": "https://github.com/wallacepreston/rental-averages",
+  "name": "rental-averages",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small MIT-licensed app (2023) that 'processes data from AirDNA to output a mean average of occupancy and ADR.' README does not show a committed sample CSV; appears to be a calculator/processor expecting the user to supply their own AirDNA export.",
+  "why_useful": "Shows the exact metric pairing (occupancy + ADR) AirDNA exports carry and a ready-made aggregation method, but no data of its own -- would only help if paired with an actual export.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2023-08-24",
+  "geography": "unspecified (user-supplied AirDNA market)",
+  "time_coverage": "unspecified",
+  "size_hint": "code only, no data files evident",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks",
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets",
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves"
+  ],
+  "why_all": [
+   "Shows the exact metric pairing (occupancy + ADR) AirDNA exports carry and a ready-made aggregation method, but no data of its own -- would only help if paired with an actual export.",
+   "Shows the shape of an AirDNA-derived occupancy/ADR aggregator; not usable without an AirDNA subscription, and unverified whether any sample output is committed.",
+   "Same pattern \u2014 a processing script for AirDNA output, not a dataset; relevant only if we already had our own AirDNA pull to run it on. Marginal.",
+   "Marginal: shows the shape of an AirDNA export (occupancy/ADR fields) that would matter for gap 2, but has no data and depends on a paid subscription."
+  ]
+ }
+]

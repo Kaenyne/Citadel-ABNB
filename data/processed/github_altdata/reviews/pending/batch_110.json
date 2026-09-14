@@ -1,0 +1,145 @@
+[
+ {
+  "key": "github:hxyue1/craigslistrentscraper",
+  "url": "https://github.com/hxyue1/CraigsListRentScraper",
+  "name": "CraigsListRentScraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scripts to scrape and analyse Craigslist rental listings; smaller/older sibling of the other Craigslist scrapers above, no committed data.",
+  "why_useful": "Redundant with zhichensha's scraper but simpler codebase if a lighter-weight starting point is wanted for a one-city pilot.",
+  "potential": "low",
+  "duplicate_of_holding": "overlaps zhichensha/craigslist_rental_listing_scraper and other CL scrapers found",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Redundant with zhichensha's scraper but simpler codebase if a lighter-weight starting point is wanted for a one-city pilot."
+  ]
+ },
+ {
+  "key": "github:zo3i/chinadigitalnomadvisalist",
+  "url": "https://github.com/Zo3i/ChinaDigitalNomadVisaList",
+  "name": "Zo3i/ChinaDigitalNomadVisaList",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Small, stale (last updated 2023, 0 stars) MIT list of China-related digital-nomad visa options.",
+  "why_useful": "Same gap-16 thread as RemoteAI-Nomads but narrower and unmaintained; flagged only for completeness \u2014 RemoteAI-Nomads above is the better version of this idea.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2023-06-09",
+  "geography": "China-focused",
+  "time_coverage": "single snapshot",
+  "size_hint": "small markdown file",
+  "gap_targets": [
+   16
+  ],
+  "duplicate_of_holding": "RemoteAI-Nomads (longer, more current version of the same idea)",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Same gap-16 thread as RemoteAI-Nomads but narrower and unmaintained; flagged only for completeness \u2014 RemoteAI-Nomads above is the better version of this idea."
+  ]
+ },
+ {
+  "key": "github:opportunityinsights/economictracker",
+  "url": "https://github.com/OpportunityInsights/EconomicTracker",
+  "name": "OpportunityInsights/EconomicTracker",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "The official 'Track the Recovery' repo (Chetty/Friedman/Hendren/Stepner/team, Harvard/Opportunity Insights). data/ folder has committed CSVs at National/State/County/City x Daily/Monthly granularity for Affinity Solutions credit/debit card spending ('Affinity - National - Daily.csv', 'Affinity - State - Daily.csv', 'Affinity - County - Daily.csv', 'Affinity - City - Daily.csv', plus Monthly variants, and 'Affinity Income Shares' / 'Affinity Industry Composition' breakout files by income quartile and industry, back to Jan 2020 with a 2019 pre-period baseline index). Repo also bundles other Track-the-Recovery series (Womply small-business revenue/open, Burning Glass job postings, Zillow rent) in the same data/ tree per its data dictionary, 1,892+ commits, actively updated. Docs include a Data Dictionary (md + PDF), Data Documentation (source/processing notes), and a Data Revisions log (evidence of point-in-time-ish revision tracking, worth checking for vintage use). Data is a public good; must credit provider + cite the paper (https://opportunityinsights.org / tracktherecovery.org), no resale/redistribution to third parties as raw data.",
+  "why_useful": "Directly targets gap #6 (public consumer-spend panels; the gap list explicitly names 'OpenTable seated diners' alongside this exact project) and doubles as a leisure/restaurant/entertainment demand proxy (Affinity card-spend 'Arts & Entertainment' and 'Restaurants & Hotels' categories, Womply restaurant revenue, Google Mobility 'retail & recreation') that could nowcast US regional consumer leisure strength feeding into ABNB nights/ADR by region. Caveat: series thin out after 2023, so utility is mostly historical/backtest, not current nowcasting \u2014 flag for the team to check the live tracktherecovery.org site vs. this repo's freshness before relying on it for 2026 quarters.",
+  "geography": "US (city/county/state/national)",
+  "time_coverage": "2020-01 to ~2023-06 for most series (repo itself last pushed 2026-09-12; unclear if data files still update)",
+  "size_hint": "48 CSV/CSV.GZ files in data/, multi-MB each",
+  "license": "none declared (custom attribution terms in README)",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "Overlaps loosely with held BEA PCE travel panel and OECD consumer confidence, but this is higher-frequency (weekly/daily) and county-level, and is the specific project the gap list names \u2014 worth a closer look even though OpenTable itself is gone from it.",
+  "potential": "high",
+  "hits": 10,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data",
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data",
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)",
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa",
+   "wildcard: a payments and consumer-credit analyst who knows public card",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Directly targets gap #6 (public consumer-spend panels; the gap list explicitly names 'OpenTable seated diners' alongside this exact project) and doubles as a leisure/restaurant/entertainment demand proxy (Affinity card-spend 'Arts & Entertainment' and 'Restaurants & Hotels' categories, Womply restaurant revenue, Google Mobility 'retail & recreation') that could nowcast US regional consumer leisure strength feeding into ABNB nights/ADR by region. Caveat: series thin out after 2023, so utility is mostly historical/backtest, not current nowcasting \u2014 flag for the team to check the live tracktherecovery.org site vs. this repo's freshness before relying on it for 2026 quarters.",
+   "Directly targets numbered gap #6 (public consumer-spend panels) and is exactly the named dataset (Affinity card spend). The 'Accommodation and Food Service' category series and county/metro-level granularity could proxy US regional travel/leisure consumer strength ahead of ABNB print dates, and the top/bottom income-quartile split speaks to who is still traveling. Caveat: series appears to stop around 2022-2023 based on tracker's known winddown, so it may not cover 2025-2026 guide-relevant quarters \u2014 needs verification of last data date before use.",
+   "Directly targets gap #6 (public consumer-spend panels, explicitly named in the gap list). Daily/county-level card spend by industry (leisure & hospitality / entertainment / accommodation likely broken out via the industry-composition files) is a US consumer-strength nowcast input finer-grained than BEA PCE travel or FRED CPI, and could proxy discretionary/travel spend swings ahead of ABNB's North America nights print. The Data Revisions log is worth checking against rule #2 (point-in-time) before use.",
+   "This is the exact repo named in gap #6 (Opportunity Insights Economic Tracker card spend). County-level, high-frequency US consumer spending is a plausible near-term proxy for domestic short-term-rental demand and general consumer strength feeding ABNB's NA segment.",
+   "Directly named in CONTEXT.md gap #6 ('Opportunity Insights Economic Tracker card spend'); a real, freely licensed, granular (county) consumer-spend panel that reads on discretionary/travel spending, useful as a high-frequency consumer-strength cross-check for nights/ADR regional splits.",
+   "Directly fills numbered gap 6 (public consumer card-spend panels) \u2014 the Affinity Solutions series is a real credit/debit card transaction index with an accommodation/food-services category cut at daily/weekly grain down to city level; could proxy US travel/lodging spend momentum ahead of ABNB's NA nights print, and the repo pulls are one-command (git clone / raw CSV fetch) so it's point-in-time-able by commit history.",
+   "Directly named in CONTEXT.md gap #6 (\"Opportunity Insights Economic Tracker card spend\") as a HIGH-value target; confirms the data is on GitHub with committed CSVs at county/industry granularity including travel-adjacent spend categories (accommodation, recreation, transit) that could proxy US regional travel/leisure demand strength feeding ABNB North America nights.",
+   "CONTEXT already lists 'Opportunity Insights Economic Tracker card spend' as held, but this is the actual repo, actively updated in Sep 2026, with county- and income-quartile-level granularity (finer than a single national series) \u2014 useful for a leisure-vs-necessity or high-income-traveler spend cut that could lead ABNB's higher-income guest base ahead of national retail-sales prints.",
+   "This is the exact 'Opportunity Insights Economic Tracker card spend' source named as a HIGH-value gap-6 target in CONTEXT.md \u2014 the GitHub repo is the actual pull mechanism (raw CSVs + codebook) rather than just the website, and its travel/restaurant spend-by-county series is a plausible near-real-time regional consumer-strength nowcast input for NA nights/ADR.",
+   "Exact hit on the CONTEXT.md gap #6 target (Opportunity Insights Economic Tracker card spend) -- gives a free, granular (county x income-quartile), reasonably current US consumer discretionary-spend series that can proxy travel/leisure demand strength ahead of Airbnb's US/NA nights and ADR quarters."
+  ]
+ },
+ {
+  "key": "github:nicolaswoloszko/oecd-weekly-tracker",
+  "url": "https://github.com/NicolasWoloszko/OECD-Weekly-Tracker",
+  "name": "OECD-Weekly-Tracker",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official OECD Weekly Tracker of GDP growth repo (author is the OECD economist behind the tracker). Data/ folder holds committed Excel and CSV files: weekly_tracker.csv (1.57MB), weekly_tracker_level.csv (6.47MB), weekly_tracker_yoy.csv, plus matching .xlsx versions, monthly_tracker*.xlsx (5 variants), quarterly_tracker*.xlsx (4 variants), and a Weekly_Tracker_Excel.xlsx human-readable book. Covers ~46 OECD/G20 countries, weekly frequency built from a Google-Trends panel via ML model (consumption, labour, housing, trade, industrial activity, sentiment signals), back to pre-2020 with continuous updates (repo pushed as recently as 28 Aug 2026). No explicit license file found.",
+  "why_useful": "Directly the named theme item (OECD Weekly Tracker). A weekly, cross-country GDP-growth nowcast built from Google Trends could proxy travel-adjacent consumer demand/labor conditions in ABNB's key geographies (EMEA, LatAm, APAC) at higher frequency than Eurostat tour_ce_omr (addresses gap #4 mixed-frequency/nowcasting methods and partially gap #6 consumer spend panels); git history of the CSVs could be mined for a point-in-time vintage series, which is explicitly on the missing-gaps list (#4).",
+  "potential": "high",
+  "gap_targets": [
+   4,
+   6,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "size_hint": "~1.5-6.5MB per weekly CSV; ~20 files total, low tens of MB overall",
+  "time_coverage": "pre-2020 to present (updated Aug 2026), weekly",
+  "geography": "46 OECD/G20 countries",
+  "license": "none declared",
+  "last_activity": "2026-08-28",
+  "hits": 1,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index"
+  ],
+  "why_all": [
+   "Directly the named theme item (OECD Weekly Tracker). A weekly, cross-country GDP-growth nowcast built from Google Trends could proxy travel-adjacent consumer demand/labor conditions in ABNB's key geographies (EMEA, LatAm, APAC) at higher frequency than Eurostat tour_ce_omr (addresses gap #4 mixed-frequency/nowcasting methods and partially gap #6 consumer spend panels); git history of the CSVs could be mined for a point-in-time vintage series, which is explicitly on the missing-gaps list (#4)."
+  ]
+ },
+ {
+  "key": "github:cfpb/consumer-credit-trends-data",
+  "url": "https://github.com/cfpb/consumer-credit-trends-data",
+  "name": "cfpb/consumer-credit-trends-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official CFPB repo backing the 'Consumer Credit Trends' site. Committed CSV files (plus JSON used by cfpb-chart-builder) split into four market folders: auto-loans, credit-cards, mortgages, student-loans. Each market has origination counts and dollar volumes, YoY % changes, state-level annual changes, and demographic cuts (borrower age, credit score tier, neighborhood income). Many series indexed to Jan-2009 baseline; monthly cadence; updated as recently as 2 Sep 2026 per repo activity. No stars/license metadata surfaced but repo is under the official cfpb GitHub org (public-domain CC0 pattern used by other cfpb repos).",
+  "why_useful": "Direct, free, monthly, point-in-time-able proxy for US consumer credit health (credit-card originations/credit tightness) \u2014 feeds the 'consumer strength' driver in the ABNB nights/ADR model and is a genuine Fed/CFPB-adjacent consumer credit series (gap area: consumer credit/BNPL theme; adjacent to gap #6 consumer spend panels). Credit-card credit tightness and delinquisyncratic segments could be tested as a leading indicator for discretionary travel spend.",
+  "potential": "high",
+  "license": "unknown (cfpb org typically CC0-1.0)",
+  "last_activity": "~2026-09-02 (recent)",
+  "geography": "US (state-level detail available)",
+  "time_coverage": "index base Jan 2009 to present, monthly",
+  "size_hint": "multiple CSV/JSON files across 4 market folders, unknown total row count",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Direct, free, monthly, point-in-time-able proxy for US consumer credit health (credit-card originations/credit tightness) \u2014 feeds the 'consumer strength' driver in the ABNB nights/ADR model and is a genuine Fed/CFPB-adjacent consumer credit series (gap area: consumer credit/BNPL theme; adjacent to gap #6 consumer spend panels). Credit-card credit tightness and delinquisyncratic segments could be tested as a leading indicator for discretionary travel spend."
+  ]
+ }
+]

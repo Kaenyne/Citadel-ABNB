@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:tayedzac/short-term-rental-registrations",
+  "url": "https://github.com/tayedzac/short-term-rental-registrations",
+  "name": "short-term-rental-registrations",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Toronto Open Data STR-registration analysis with inputs/outputs/scripts folders, examining which of Toronto's 25 wards have the most registered STR units and the tenant/landlord implications.",
+  "why_useful": "A third independent Toronto registry-derived dataset/analysis, useful as a cross-check against the git-scrape repo and the UPGo-McGill Toronto reports; ward-level granularity is a finer geographic cut than the other two.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "license": "not stated",
+  "last_activity": "2023-02-04",
+  "geography": "Toronto, Canada (ward-level)",
+  "time_coverage": "single pull, early 2023",
+  "size_hint": "small, CSV-based",
+  "hits": 1,
+  "themes": [
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "A third independent Toronto registry-derived dataset/analysis, useful as a cross-check against the git-scrape repo and the UPGo-McGill Toronto reports; ward-level granularity is a finer geographic cut than the other two."
+  ]
+ },
+ {
+  "key": "github:akaszynski/keepa",
+  "url": "https://github.com/akaszynski/keepa",
+  "name": "keepa (Python client)",
+  "category": "retail_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client library (Apache-2.0, 227 commits, active) wrapping the Keepa API to pull per-ASIN Amazon price history, sales-rank (BSR) history, offer/buy-box history, and current listing details; includes async support and matplotlib plotting of history series. No data committed \u2014 it is a method to acquire time-series price/rank history, but requires a PAID Keepa subscription and API key to actually pull data.",
+  "why_useful": "Amazon sales-rank history is the closest real-world analogue to nowcasting a platform's unit volume from a public/paid third-party index (like AirDNA for STRs, gap #2). Even though it needs a paid key, the repo is a template for how such point-in-time rank/price panels are structured and queried, and the wrapper pattern (ASIN -> time series of rank+price) is directly reusable if the team ever gets a comparable STR-panel API.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   17
+  ],
+  "time_coverage": "however far back a Keepa subscription's history buffer extends (years, per Keepa's own limits)",
+  "geography": "Amazon marketplaces (US and others depending on subscription)",
+  "license": "Apache-2.0",
+  "last_activity": "active (227 commits, workflow/CI present; exact date not surfaced)",
+  "size_hint": "code only, no committed data",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Amazon sales-rank history is the closest real-world analogue to nowcasting a platform's unit volume from a public/paid third-party index (like AirDNA for STRs, gap #2). Even though it needs a paid key, the repo is a template for how such point-in-time rank/price panels are structured and queried, and the wrapper pattern (ASIN -> time series of rank+price) is directly reusable if the team ever gets a comparable STR-panel API."
+  ]
+ },
+ {
+  "key": "github:arthurheitmann/arctic_shift",
+  "url": "https://github.com/ArthurHeitmann/arctic_shift",
+  "name": "arctic_shift",
+  "category": "social_text_news",
+  "data_kind": "both",
+  "what_it_holds": "Reddit archive/mirror project with three access paths: large bulk dumps (.zst/.zst_blocks/.jsonl/.json, organized by subreddit via GitHub releases and external download links), a public API for ad-hoc queries, and a web UI (arctic_shift_ui, companion repo) for pulling a specific user's or subreddit's history on demand. Actively maintained (76 commits), post-dates the 2023 Pushshift API shutdown and is the closest thing to a working successor. Would need to be pointed at r/airbnb, r/AirBnBHosts and r/travel specifically to pull subreddit-level history back to those subs' creation.",
+  "why_useful": "Gap #14 (Reddit text/social for host/guest sentiment, complaint volume, cancellation/RNPL chatter). This is the main living successor to Pushshift after its 2023 API shutdown -- gives a genuinely current, queryable route to pull r/airbnb, r/AirBnBHosts, r/travel post/comment history (volume, sentiment, keyword trends) rather than a frozen historical dump, which is exactly the kind of point-in-time-extendable text source the team lacks.",
+  "potential": "high",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "full Reddit corpus (submissions+comments, all public subreddits); bulk dumps are multi-TB, filterable to any subreddit",
+  "time_coverage": "Reddit's full history through present (actively updated)",
+  "geography": "global (Reddit, English-language dominant)",
+  "license": "none declared",
+  "last_activity": "2026-09-14",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Gap #14 (Reddit text/social for host/guest sentiment, complaint volume, cancellation/RNPL chatter). This is the main living successor to Pushshift after its 2023 API shutdown -- gives a genuinely current, queryable route to pull r/airbnb, r/AirBnBHosts, r/travel post/comment history (volume, sentiment, keyword trends) rather than a frozen historical dump, which is exactly the kind of point-in-time-extendable text source the team lacks.",
+   "Fills gap 14 (Reddit text/social) directly: this is a live, working way to pull full historical r/airbnb / r/AirBnBHosts / r/travel post+comment history (post volume as engagement proxy, text for host-sentiment/regulation-chatter/RNPL-complaint mining) after Pushshift's official API died in 2023.",
+   "Gives point-in-time host- and guest-community discussion volume/sentiment (host complaints about bookings/cancellations, RNPL chatter, regulation reactions, price complaints) as a leading qualitative read on nights/ADR/RNPL themes that the team has not yet tried at the Reddit-comment-volume level (distinct from web-search-based Google Trends, which already failed)."
+  ]
+ },
+ {
+  "key": "github:watchful1/pushshiftdumps",
+  "url": "https://github.com/Watchful1/PushshiftDumps",
+  "name": "PushshiftDumps",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python scripts (single-file processor, folder batch-processor, multiprocess filter-and-export tool) for reading the pre-shutdown Pushshift .zst dump files and filtering by subreddit/keyword/date, exporting matches to text and recompressing. The actual dumps (all subreddits, historical, up to the 2023 API shutdown) are pointed to via Academic Torrents (https://academictorrents.com/details/30dee5f0406da7a353aff6a8caa2d54fd01f2ca1). 507 stars, MIT license, updated 13 Sep 2026.",
+  "why_useful": "Gap #14. Gives a working, well-used (507-star) toolchain to extract r/airbnb, r/AirBnBHosts, r/travel post/comment history from the canonical historical Pushshift archive (through ~2023) via torrent, complementing arctic_shift's live coverage with the frozen historical base period.",
+  "potential": "high",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "points to full historical Pushshift dump set (multi-TB) via Academic Torrents; scripts themselves are small",
+  "time_coverage": "Reddit history through ~2023 (Pushshift API shutdown)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "Gap #14. Gives a working, well-used (507-star) toolchain to extract r/airbnb, r/AirBnBHosts, r/travel post/comment history from the canonical historical Pushshift archive (through ~2023) via torrent, complementing arctic_shift's live coverage with the frozen historical base period.",
+   "Standard tooling to extract r/airbnb, r/AirBnBHosts, r/travel (and any STR-regulation subreddits) out of the full historical Pushshift torrent set \u2014 the torrent itself (external, Academic Torrents) is the actual data; this repo is the practical way to filter it to the subs we care about without loading everything into memory."
+  ]
+ },
+ {
+  "key": "github:alex9smith/gdelt-doc-api",
+  "url": "https://github.com/alex9smith/gdelt-doc-api",
+  "name": "gdelt-doc-api",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed, actively maintained (updated 11 Sep 2026) Python client for the GDELT 2.0 Doc API. Returns article-level search results, timeline volume, and timeline tone for any keyword/date-range query (e.g. 'Airbnb', 'short-term rental', 'vacation rental regulation') at daily granularity back to 2017. No committed dataset -- it is a live pull tool, but queries are date-bounded so a historical/point-in-time news-volume or tone series for Airbnb-relevant terms could be reconstructed after the fact.",
+  "why_useful": "Directly addresses gap 14 (text/social -> GDELT) and partially gap 17 (nowcasting methods): a clean, current way to build a daily news-volume/sentiment index around Airbnb, STR regulation, or competitor mentions to test as a leading indicator for demand or regulatory shocks.",
+  "potential": "high",
+  "geography": "global",
+  "time_coverage": "2017-present (GDELT 2.0 coverage), queryable any date range",
+  "size_hint": "no committed data; live API client",
+  "license": "MIT",
+  "last_activity": "2026-09-11",
+  "gap_targets": [
+   14,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Directly addresses gap 14 (text/social -> GDELT) and partially gap 17 (nowcasting methods): a clean, current way to build a daily news-volume/sentiment index around Airbnb, STR regulation, or competitor mentions to test as a leading indicator for demand or regulatory shocks.",
+   "Cheapest way to build a keyword-filtered news-volume/tone timeline for 'Airbnb', 'short-term rental ban', specific city STR ordinances, or travel-industry terms without BigQuery quota; a genuinely lighter-weight alternative to full GDELT for a student team."
+  ]
+ }
+]

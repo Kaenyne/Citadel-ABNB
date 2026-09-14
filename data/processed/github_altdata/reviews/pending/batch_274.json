@@ -1,0 +1,148 @@
+[
+ {
+  "key": "github:euctrl-pru/daio",
+  "url": "https://github.com/euctrl-pru/daio",
+  "name": "euctrl-pru/daio",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV and Parquet files (daio_2019.csv ... daio_2026.csv, plus .parquet equivalents) of DAILY flight counts by EUROCONTROL Member State: departures, arrivals, internal, overflight, circular flights, and combined DAIO/dep+arr totals, by UTC date and country name, 2019 through 2026 (present-day, via update_data.sh automation).",
+  "why_useful": "Country-level daily European air traffic (departures/arrivals) is a real-time-ish proxy for cross-border travel demand into ABNB's largest ex-US markets (Spain, France, Italy, UK, Germany) -- useful for nowcasting European nights/ADR ahead of guide dates (gap: international travel volume proxies).",
+  "potential": "high",
+  "geography": "Europe (EUROCONTROL member states, country level)",
+  "time_coverage": "~2019-present, daily",
+  "size_hint": "not stated; likely a few thousand rows (country x day)",
+  "license": "unknown - check repo LICENSE",
+  "last_activity": "unknown, active org (2026 repos present in org)",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Country-level daily European air traffic (departures/arrivals) is a real-time-ish proxy for cross-border travel demand into ABNB's largest ex-US markets (Spain, France, Italy, UK, Germany) -- useful for nowcasting European nights/ADR ahead of guide dates (gap: international travel volume proxies).",
+   "A daily, country-level European flight-volume series is a real-time-ish proxy for cross-border air travel activity feeding short-haul European trip demand (nights bookings in EU markets); daily granularity through the current year is unusually fresh for a committed GitHub dataset and could nowcast intra-quarter European travel momentum ahead of Eurostat's lagged passenger releases."
+  ]
+ },
+ {
+  "key": "github:ropengov/eurostat",
+  "url": "https://github.com/rOpenGov/eurostat",
+  "name": "eurostat (rOpenGov)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (part of rOpenGov, 1400+ commits, actively maintained, CRAN-published) providing a client for the Eurostat REST/SDMX API: search, download, and cache any Eurostat table by its dataset code, including the collaborative-economy accommodation tables Eurostat produced from the Airbnb/Booking/Expedia/TripAdvisor data-sharing pilot (e.g. tour_ce_omr, tour_ce_omn12 \u2014 the same series noted as already held in CONTEXT.md). No data files committed to the repo itself; it is a reproducible pull method, and Eurostat's bulk-download files carry release/vintage timestamps, so this could support a point-in-time re-pull of the platform-nights series rather than a single static CSV.",
+  "why_useful": "Gives a maintained, one-command route to official EU-wide air passenger transport statistics (a leading indicator of European travel demand / cross-border trip volume) at quarterly granularity back to 1993 - directly usable as a European travel-volume regressor for ABNB's EMEA nights, addressing the travel_volume_transport gap with a much longer, cleaner history than any single-airport scraper.",
+  "potential": "high",
+  "time_coverage": "1993-2026 (quarterly, with normal Eurostat 1-2 quarter reporting lag)",
+  "geography": "EU27 + EEA + UK/Switzerland, country-level (some sub-national/airport breakdowns exist in the underlying avia_ dataset family)",
+  "size_hint": "avia_paoc ~2.6M values, avia_paocc ~11.6M values (full table incl. all countries/years)",
+  "license": "Eurostat open data (attribution required)",
+  "last_activity": "actively maintained rOpenGov package, data refreshes live from Eurostat",
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)",
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Gives a maintained, one-command route to official EU-wide air passenger transport statistics (a leading indicator of European travel demand / cross-border trip volume) at quarterly granularity back to 1993 - directly usable as a European travel-volume regressor for ABNB's EMEA nights, addressing the travel_volume_transport gap with a much longer, cleaner history than any single-airport scraper.",
+   "Well-tested, widely cited (rOpenGov ecosystem) generic Eurostat client; could be used to build a point-in-time tour_occ / tour_ce puller in R as an alternative to a hand-rolled pull, and to grab longer historical vintages of the same series we already hold.",
+   "Mature, well-maintained alternative acquisition path for Eurostat series (including tourism/travel and consumer indicators) beyond the single tour_ce_omr series already held; does not appear to expose vintages/revisions explicitly but is a solid pull tool for expanding Eurostat coverage.",
+   "Same underlying data as our held tour_ce_omr series but a one-call method to also pull sub-national (NUTS2) EU tourism/accommodation series and vintage/revision metadata -- addresses gap 4 (point-in-time macro vintages) and could give EMEA regional granularity finer than what we hold.",
+   "Turns the Eurostat collaborative-economy series (gap area: point-in-time platform tourism data) into a scriptable, repeatable pull, and could be adapted to fetch the vintage/revision history of tour_ce_omr for gap #4 (point-in-time macro/consensus vintages) instead of a one-off static pull."
+  ]
+ },
+ {
+  "key": "github:mattcowgill/readabs",
+  "url": "https://github.com/MattCowgill/readabs",
+  "name": "readabs (R)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (111 stars, 28 forks, 387 commits) that downloads, imports and tidies Australian Bureau of Statistics time series -- both discrete data-cube downloads and the ABS API. Ships convenience wrappers read_cpi(), read_awe() (average weekly earnings), job-mobility, weekly payrolls, and labour-force gross-flows readers; general read_abs_series()/read_abs() cover any ABS catalogue number, which includes ABS Overseas Arrivals and Departures and Tourism Satellite Account tables. Listed in the community 'Awesome Official Statistics Software' list. No data committed.",
+  "why_useful": "Direct, maintained, one-command route to the Australia ABS overseas arrivals series named explicitly in this theme (gap #7 APAC), avoiding manual ABS spreadsheet wrangling; monthly granularity, decades of history available from ABS.",
+  "potential": "high",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "ABS series back to the 1990s, monthly, updated monthly by ABS",
+  "size_hint": "library",
+  "license": "MIT",
+  "last_activity": "2026-09-07 (very active)",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Direct, maintained, one-command route to the Australia ABS overseas arrivals series named explicitly in this theme (gap #7 APAC), avoiding manual ABS spreadsheet wrangling; monthly granularity, decades of history available from ABS.",
+   "Gap #7 (APAC -- Australia ABS/TRA named explicitly). ABS publishes Overseas Arrivals & Departures (monthly, by country of origin/purpose of travel) and short-term visitor/departure counts; this is the most mature, actively maintained client found for pulling that series to build an Australia travel-volume proxy.",
+   "Only credible free route to Australia's CPI accommodation/domestic-holiday-travel component found; general ABS reader is reusable for other ABS series (tourism satellite account, international arrivals) too."
+  ]
+ },
+ {
+  "key": "github:ondata/opensdmx",
+  "url": "https://github.com/ondata/opensdmx",
+  "name": "ondata/opensdmx",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python CLI + library for any SDMX 2.1 REST API, with named support for Eurostat, ISTAT, OECD, ECB and World Bank. Since Eurostat's tour_occ_* / tour_ce_* series and ISTAT's turismo tables are both published over SDMX, this is a single client that could pull tour_occ (nights spent, arrivals by NUTS2, monthly) and ISTAT tourism tables (Movimento dei clienti) without writing bespoke scrapers. 52 stars, actively updated (2026-09-14), MIT.",
+  "why_useful": "Fills gap of a machine-pullable route to Eurostat tour_occ/tour_ce and ISTAT turismo at finer (NUTS2/monthly) grain than the tour_ce_omr platform-nights series we already hold; also reaches OECD tourism tables in one client. Relevant to gaps #5/#7/#17 (broad international stats via one SDMX client).",
+  "potential": "high",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "size_hint": "unknown; active CLI+library repo",
+  "geography": "EU (Eurostat/ISTAT), OECD member countries",
+  "time_coverage": "as published by source SDMX endpoints",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Fills gap of a machine-pullable route to Eurostat tour_occ/tour_ce and ISTAT turismo at finer (NUTS2/monthly) grain than the tour_ce_omr platform-nights series we already hold; also reaches OECD tourism tables in one client. Relevant to gaps #5/#7/#17 (broad international stats via one SDMX client).",
+   "Single tool that can pull Eurostat tour_occ/tour_ce AND Italy's ISTAT tourism tables (arrivals/presences by region, 'Movimento dei clienti negli esercizi ricettivi') from one client \u2014 useful for building a repeatable, versioned (saved-query) point-in-time puller across two of our target agencies at once.",
+   "A single generic tool that reaches the whole theme's target agencies (Eurostat platform nights, OECD tourism/consumer-confidence tables, ECB statistical series for FX/rates papers) without needing a separate client per agency -- directly useful for pulling OECD platform-economy or tourism satellite-account tables and ECB series referenced in ECB working papers on the sharing economy.",
+   "Discovery layer for finding which national tourism/statistics agencies expose SDMX data at all \u2014 useful as a first pass before hand-wiring per-country pulls (complements gap #17's Socrata/CKAN-discovery idea, applied to SDMX)."
+  ]
+ },
+ {
+  "key": "github:eurostat/pyrostat",
+  "url": "https://github.com/eurostat/pyrostat",
+  "name": "eurostat/pyrostat",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Eurostat Python API (in development since 2017, ~56 commits) for querying/searching/downloading any Eurostat database table via the REST/JSON web services and bulk-download facility, incl. RAMON metadata code lists. No tourism-specific dataset bundled, but tour_occ_* / tour_ce_* codes are pullable generically. EUPL-1.1 license.",
+  "why_useful": "Authoritative, maintained client for pulling any Eurostat dataset code including tour_occ_ninat/tour_occ_arm/tour_ce_omn at whatever grain is published (country/NUTS2, monthly) \u2014 a one-command route to a finer-grained European tourism series than the platform-nights series already held.",
+  "potential": "high",
+  "gap_targets": [
+   7
+  ],
+  "license": "EUPL-1.1",
+  "last_activity": "2026-03-27",
+  "size_hint": "library, no bundled data",
+  "geography": "EU/EFTA",
+  "time_coverage": "as published (Eurostat tour_occ back to ~1990s for some series, monthly)",
+  "duplicate_of_holding": "We hold Eurostat tour_ce_omr platform nights only; this reaches the broader tour_occ/tour_ce family (occupancy, arrivals, NUTS2) not yet pulled",
+  "hits": 3,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Authoritative, maintained client for pulling any Eurostat dataset code including tour_occ_ninat/tour_occ_arm/tour_ce_omn at whatever grain is published (country/NUTS2, monthly) \u2014 a one-command route to a finer-grained European tourism series than the platform-nights series already held.",
+   "Direct, official-org-maintained way to pull Eurostat's monthly tour_occ (occupancy, nights spent) and tour_ce (demand) tables programmatically and point-in-time (vintage snapshots possible via repeated pulls), addressing the 150-day-lag limitation noted for our existing tour_ce_omr pull by making refresh trivial. Complements gap 4/17 (nowcasting, vintages).",
+   "Python-native (matches repo's pandas/duckdb stack) route to the same Eurostat platform-tourism and accommodation tables, and to non-tourism Eurostat series (HICP, consumer confidence) already partly held from other sources."
+  ]
+ }
+]

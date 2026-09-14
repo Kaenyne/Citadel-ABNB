@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:lorainemg/sensortower-scraper",
+  "url": "https://github.com/lorainemg/sensortower-scraper",
+  "name": "sensortower-scraper",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper (no listed license, 1 star, last commit Feb 2025) of the public app.sensortower.com pages to collect download-estimate statistics for Android and iOS apps -- i.e. it reads Sensor Tower's free public app-detail pages rather than calling their paid API.",
+  "why_useful": "Directly targets our gap #5 wish-list item 'AppFigures/Sensor Tower/data.ai open samples' -- if Sensor Tower's public pages still expose download estimates for Airbnb/Booking/Expedia without a paid key, this is a free route to third-party download-estimate numbers (Sensor Tower's own modeled downloads, not just store rank). Small, unmaintained repo -- would need testing/adapting and a ToS check before any run (per repo rules, scraping decision left to a human).",
+  "potential": "medium",
+  "geography": "global (per Sensor Tower's own country breakdowns)",
+  "time_coverage": "current snapshot only; unmaintained since Feb 2025",
+  "size_hint": "small script, no committed data",
+  "license": "none listed",
+  "last_activity": "2025-02-09",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Directly targets our gap #5 wish-list item 'AppFigures/Sensor Tower/data.ai open samples' -- if Sensor Tower's public pages still expose download estimates for Airbnb/Booking/Expedia without a paid key, this is a free route to third-party download-estimate numbers (Sensor Tower's own modeled downloads, not just store rank). Small, unmaintained repo -- would need testing/adapting and a ToS check before any run (per repo rules, scraping decision left to a human)."
+  ]
+ },
+ {
+  "key": "github:meyusufdemirci/app-store-operator",
+  "url": "https://github.com/meyusufdemirci/app-store-operator",
+  "name": "app-store-operator",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server (MIT, 3 stars, updated 25 Jul 2026) billed as 'Free App Store competitive intelligence for Claude -- rival downloads, revenue, and ASO keywords... no subscription.' Wraps public App Store data sources to estimate downloads/revenue/keyword rank for any app, framed for use by an LLM agent.",
+  "why_useful": "If it genuinely derives download/revenue estimates from free public signals (as advertised) rather than a paid Sensor Tower/data.ai feed, it is a zero-cost way to get modeled download/revenue numbers for Airbnb's app and travel competitors; needs verification of its actual data source before relying on it, and is very small/unverified (3 stars).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "snapshot only",
+  "size_hint": "small MCP server",
+  "license": "MIT",
+  "last_activity": "2026-07-25",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "If it genuinely derives download/revenue estimates from free public signals (as advertised) rather than a paid Sensor Tower/data.ai feed, it is a zero-cost way to get modeled download/revenue numbers for Airbnb's app and travel competitors; needs verification of its actual data source before relying on it, and is very small/unverified (3 stars)."
+  ]
+ },
+ {
+  "key": "github:gauthamp10/google-playstore-dataset",
+  "url": "https://github.com/gauthamp10/Google-Playstore-Dataset",
+  "name": "Google-Playstore-Dataset",
+  "category": "web_app_engagement",
+  "data_kind": "both",
+  "what_it_holds": "GitHub backup of a Kaggle dataset: 2.3 million Google Play apps x 24 attributes (installs band, rating, rating count, price, category, developer, size, content rating, etc.), collected June 2021, stored as split Part*.csv files to be reassembled; MIT license. Primary/updated copy lives on Kaggle at kaggle.com/gauthamp10/google-playstore-apps (which the author says receives newer refreshes than the GitHub mirror).",
+  "why_useful": "A full-market snapshot that would include Airbnb's Play Store install-band/rating/review-count as of mid-2021; if multiple dated Kaggle versions of this dataset exist they could be strung into a coarse multi-year install-band/rating panel (gap 5). Single GitHub snapshot alone is not a time series.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "June 2021 snapshot (GitHub copy); Kaggle host may have later versions",
+  "license": "MIT",
+  "last_activity": "static since ~2021 on GitHub; Kaggle side reportedly updated",
+  "size_hint": "2.3M rows, multi-part CSV, likely several hundred MB uncompressed",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "A full-market snapshot that would include Airbnb's Play Store install-band/rating/review-count as of mid-2021; if multiple dated Kaggle versions of this dataset exist they could be strung into a coarse multi-year install-band/rating panel (gap 5). Single GitHub snapshot alone is not a time series."
+  ]
+ },
+ {
+  "key": "github:gauthamp10/apple-appstore-apps",
+  "url": "https://github.com/gauthamp10/apple-appstore-apps",
+  "name": "apple-appstore-apps",
+  "category": "web_app_engagement",
+  "data_kind": "both",
+  "what_it_holds": "GitHub backup of a Kaggle dataset: ~1.2 million iOS apps x 21 attributes (rating, price, developer, version, genre, etc.), collected October 2021 via Scrapy on cloud VMs, CC BY 4.0 licensed. Kaggle host: kaggle.com/gauthamp10/apple-appstore-apps.",
+  "why_useful": "Companion iOS-side snapshot to the Play Store dataset above; would carry Airbnb's App Store rating/review-count metadata as of Oct 2021 for a historical anchor point (gap 5).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "October 2021 snapshot",
+  "license": "CC BY 4.0",
+  "last_activity": "static since ~2021 on GitHub",
+  "size_hint": "1.2M rows",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Companion iOS-side snapshot to the Play Store dataset above; would carry Airbnb's App Store rating/review-count metadata as of Oct 2021 for a historical anchor point (gap 5)."
+  ]
+ },
+ {
+  "key": "github:data-scrape/google-play-scraper",
+  "url": "https://github.com/data-scrape/google-play-scraper",
+  "name": "data-scrape/google-play-scraper",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Another Google Play scraping tool advertised as extracting app information, ratings, reviews, and 'rankings data' specifically (one of the few descriptions that explicitly claims ranking extraction, not just app metadata).",
+  "why_useful": "If it genuinely exposes category rank (not just installs/ratings) it would be more directly useful for gap 5 than the more common metadata-only scrapers; worth a closer look/verification before use.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "current only",
+  "license": "not confirmed (not individually fetched)",
+  "last_activity": "not confirmed",
+  "size_hint": "code only",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "If it genuinely exposes category rank (not just installs/ratings) it would be more directly useful for gap 5 than the more common metadata-only scrapers; worth a closer look/verification before use."
+  ]
+ }
+]

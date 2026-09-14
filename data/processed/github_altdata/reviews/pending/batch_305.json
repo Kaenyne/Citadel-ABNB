@@ -1,0 +1,123 @@
+[
+ {
+  "key": "github:assaf-tamir/nyc-tlc-hvfhv-data-pipeline",
+  "url": "https://github.com/assaf-tamir/nyc-tlc-hvfhv-data-pipeline",
+  "name": "nyc-tlc-hvfhv-data-pipeline",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/DuckDB/GeoPandas/Streamlit pipeline built specifically on NYC TLC's High-Volume For-Hire-Vehicle (Uber/Lyft/Via/Juno) trip-record dataset, described as analyzing 'millions of rideshare trips'.",
+  "why_useful": "A second, independent pipeline confirming the official TLC HVFHV rideshare dataset (distinct table from yellow/green taxi) is easily machine-pullable; useful if the team wants ride-hail-specific volumes (as opposed to taxi) split out for airport/ground-travel demand reads.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "New York City",
+  "time_coverage": "not specified in listing; TLC HVFHV data runs 2019-present",
+  "size_hint": "millions of rows (external TLC source)",
+  "license": "public NYC TLC data",
+  "last_activity": "recent (2026 topic listing)",
+  "duplicate_of_holding": "overlaps with toddwschneider/nyc-taxi-data's FHV coverage, but isolates the HVFHV table specifically",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "A second, independent pipeline confirming the official TLC HVFHV rideshare dataset (distinct table from yellow/green taxi) is easily machine-pullable; useful if the team wants ride-hail-specific volumes (as opposed to taxi) split out for airport/ground-travel demand reads."
+  ]
+ },
+ {
+  "key": "github:piemadd/amtrak",
+  "url": "https://github.com/piemadd/amtrak",
+  "name": "amtrak (amtrak.js / amtraker)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "NPM/JS client for the community api.amtraker.com API: live Amtrak train GPS positions, speed/heading, station metadata, and planned vs. actual arrival/departure (real-time only, no history stored in the repo).",
+  "why_useful": "Could support a rolling on-time-performance / delay-frequency scrape as a service-quality or disruption proxy for Amtrak, complementing piemadd/amtrak-data's monthly financial tables with finer-grained (per-train) timing data, but requires building the historical archive yourself.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "United States (Amtrak network)",
+  "time_coverage": "live/current only, ODbL-licensed data",
+  "size_hint": "n/a (API client, code only)",
+  "license": "Open Data Commons Attribution License (data); repo code licence separate",
+  "last_activity": "active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Could support a rolling on-time-performance / delay-frequency scrape as a service-quality or disruption proxy for Amtrak, complementing piemadd/amtrak-data's monthly financial tables with finer-grained (per-train) timing data, but requires building the historical archive yourself."
+  ]
+ },
+ {
+  "key": "github:toddwschneider/nyc-citibike-data",
+  "url": "https://github.com/toddwschneider/nyc-citibike-data",
+  "name": "nyc-citibike-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts to download and analyze NYC Citi Bike system trip data (bike-share) and load into PostgreSQL, from Citi Bike's own public trip-history exports.",
+  "why_useful": "Tangential ground-mobility/local-tourism-activity proxy (bike-share usage correlates with short-trip/tourist foot traffic in NYC); marginal fit to the rail/rideshare theme but a real, maintained dataset method worth noting for completeness.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "New York City",
+  "time_coverage": "2013-present",
+  "size_hint": "tens of millions of trip rows (external)",
+  "license": "public Citi Bike data",
+  "last_activity": "companion repo to nyc-taxi-data, periodically maintained",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Tangential ground-mobility/local-tourism-activity proxy (bike-share usage correlates with short-trip/tourist foot traffic in NYC); marginal fit to the rail/rideshare theme but a real, maintained dataset method worth noting for completeness."
+  ]
+ },
+ {
+  "key": "github:mujjjtaba/north-america-border-crossing-dashboard",
+  "url": "https://github.com/Mujjjtaba/north-america-border-crossing-dashboard",
+  "name": "north-america-border-crossing-dashboard",
+  "category": "travel_volume_transport",
+  "duplicate_of_holding": "same underlying data.gov BTS Border Crossing Entry Data series as AlexBogden/canadian-border-crossings-analysis above, packaged only as a Power BI file rather than raw CSV",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "dashboard.pbix (Power BI file, hosted on Google Drive due to size) built on the data.gov 'Border Crossing Entry Data' series, covering US-Canada and US-Mexico borders 1996-2025 by state/port; MIT license; 2 commits",
+  "why_useful": "Confirms the BTS Border Crossing Entry Data series (1996-2025, both US-Canada and US-Mexico, state/port level) as a public, easily citable source, though this particular repo does not commit the raw CSV itself (only a Power BI binary on Google Drive) so it's lower priority than the AlexBogden repo above.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "not confirmed (academic project repo)",
+  "geography": "US-Canada and US-Mexico borders, all states",
+  "time_coverage": "1996-2025",
+  "size_hint": "Power BI file, not sized",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Confirms the BTS Border Crossing Entry Data series (1996-2025, both US-Canada and US-Mexico, state/port level) as a public, easily citable source, though this particular repo does not commit the raw CSV itself (only a Power BI binary on Google Drive) so it's lower priority than the AlexBogden repo above."
+  ]
+ },
+ {
+  "key": "github:nakordoni/api",
+  "url": "https://github.com/nakordoni/api",
+  "name": "nakordoni developer API docs",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "OpenAPI spec + code samples for nakordoni.eu's commercial API: real-time and historical border-queue lengths/wait estimates at European (mostly Ukraine-EU and intra-EU) truck/car checkpoints, ML 24h/7d queue forecasts, hourly/daily historical stats per checkpoint, plus adjacent European fuel-price, POI, road-condition and toll data; sourced from national road authorities, TomTom/HERE, crowd reports; free-tier requires email registration; last touched 2026-09-13",
+  "why_useful": "A live, queryable proxy for European land-border friction/congestion (crossing wait times) that could stand in for cross-border travel intensity in EMEA, complementing Schengen visa-issuance stats; only useful as a 'method' pointer since actual queue data lives behind their API, not committed to the repo.",
+  "potential": "low",
+  "license": "not stated",
+  "last_activity": "2026-09-13",
+  "geography": "Europe, primarily Ukraine-EU and intra-EU checkpoints",
+  "time_coverage": "live + historical stats per checkpoint (span not specified)",
+  "size_hint": "API service, no committed dataset",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "A live, queryable proxy for European land-border friction/congestion (crossing wait times) that could stand in for cross-border travel intensity in EMEA, complementing Schengen visa-issuance stats; only useful as a 'method' pointer since actual queue data lives behind their API, not committed to the repo."
+  ]
+ }
+]

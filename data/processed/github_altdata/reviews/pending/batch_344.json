@@ -1,0 +1,130 @@
+[
+ {
+  "key": "other:https://majestic.com/reports/majestic-million",
+  "url": "https://majestic.com/reports/majestic-million",
+  "name": "Majestic Million (top 1M domains by referring subnets)",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Freely downloadable CSV (~80MB, CC BY 3.0 licensed) of the top 1 million root domains ranked by referring subnets/IPs, regenerated daily from Majestic's own crawl/link index; columns include GlobalRank, TLD, RefSubNets, RefIPs, rank deltas. Hosted at majestic.com/reports/majestic-million, not on GitHub itself, though community GitHub mirrors of historical snapshots exist sporadically (not verified this pass).",
+  "why_useful": "A free, dated, backlink-based domain-authority ranking that could track airbnb.com vs vrbo.com/booking.com/expedia.com over time if snapshots are saved daily going forward (gap 19 adjacent: backlink/authority as an engagement proxy). No historical archive by default \u2014 would need our own daily pull starting now.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "daily snapshot only (no historical archive without self-collection)",
+  "size_hint": "~80MB CSV per snapshot",
+  "license": "CC BY 3.0",
+  "last_activity": "regenerated daily",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "A free, dated, backlink-based domain-authority ranking that could track airbnb.com vs vrbo.com/booking.com/expedia.com over time if snapshots are saved daily going forward (gap 19 adjacent: backlink/authority as an engagement proxy). No historical archive by default \u2014 would need our own daily pull starting now."
+  ]
+ },
+ {
+  "key": "github:rearc-data/google-covid-19-community-mobility-reports",
+  "url": "https://github.com/rearc-data/google-covid-19-community-mobility-reports",
+  "name": "google-covid-19-community-mobility-reports",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Rearc's automation/metadata wrapper distributing Google's COVID-19 Community Mobility Reports via AWS Data Exchange; repo itself has ~9 commits and does not commit the CSVs, just pipeline/metadata pointing at the AWS Data Exchange listing (external host).",
+  "why_useful": "Confirms an auto-refreshing distribution channel existed (daily cadence claimed) but the actual bytes live on AWS Data Exchange, not GitHub, and the source report itself is discontinued \u2014 lower value than ActiveConclusion's committed CSVs.",
+  "potential": "low",
+  "geography": "Global (per Google mobility report structure)",
+  "time_coverage": "Unclear / tied to defunct Google report",
+  "size_hint": "Metadata/pipeline only, ~9 commits",
+  "license": "unspecified",
+  "last_activity": "2021-05-27",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "Same underlying Google mobility data as ActiveConclusion/COVID19_mobility, but without committed data",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Confirms an auto-refreshing distribution channel existed (daily cadence claimed) but the actual bytes live on AWS Data Exchange, not GitHub, and the source report itself is discontinued \u2014 lower value than ActiveConclusion's committed CSVs."
+  ]
+ },
+ {
+  "key": "github:rearc-data/apple-maps-mobility-trends-covid-19",
+  "url": "https://github.com/rearc-data/apple-maps-mobility-trends-covid-19",
+  "name": "apple-maps-mobility-trends-covid-19",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Rearc's AWS Data Exchange distribution wrapper for Apple's COVID-19 Mobility Trends Reports (directions-request volume vs 13-Jan-2020 baseline, country/region + major metro city). No CSVs committed in-repo; ~9 commits, points to AWS Data Exchange listing.",
+  "why_useful": "Same Apple mobility series as ActiveConclusion mirror; only useful if the AWS Data Exchange listing itself carries a longer/fresher series than the GitHub mirrors, which is unconfirmed.",
+  "potential": "low",
+  "geography": "Global, country/region + major metro cities",
+  "time_coverage": "From 13-Jan-2020, end date unclear",
+  "size_hint": "Metadata/pipeline only",
+  "license": "unspecified",
+  "last_activity": "2021-02-22",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "Same underlying Apple mobility data as ActiveConclusion/COVID19_mobility",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Same Apple mobility series as ActiveConclusion mirror; only useful if the AWS Data Exchange listing itself carries a longer/fresher series than the GitHub mirrors, which is unconfirmed."
+  ]
+ },
+ {
+  "key": "github:quantconnect/lean.datasource.quiverquant",
+  "name": "QuantConnect/Lean.DataSource.QuiverQuant",
+  "url": "https://github.com/QuantConnect/Lean.DataSource.QuiverQuant",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "QuantConnect's official LEAN integration/connector for Quiver Quantitative's alternative-data feed (congressional trading, WSB sentiment, Wikipedia pageview trends, Twitter followers, insider/lobbying data). Code defines the data schema and pulls live from Quiver's (paid) API into LEAN backtests; no historical data committed. Sibling repos: Lean.DataSource.QuiverQuantCongressTrading, ...WallStreetBets, ...Wikipedia, ...TwitterFollowers (all last pushed 2023-2026, low stars 0-7).",
+  "why_useful": "Quiver's actual datasets (Congress trading, WSB sentiment, Wikipedia pageviews) are not travel-demand series and don't map to a numbered gap directly, though the Wikipedia-pageviews sibling repo (Lean.DataSource.QuiverQuantWikipedia) is a possible ABNB-pageviews engagement proxy (gap 5) if the API were free, which it is not for bulk history.",
+  "potential": "low",
+  "size_hint": "code only, no data",
+  "time_coverage": "n/a",
+  "geography": "US-centric (congress/13F)",
+  "license": "none declared",
+  "last_activity": "2026-06-19",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Quiver's actual datasets (Congress trading, WSB sentiment, Wikipedia pageviews) are not travel-demand series and don't map to a numbered gap directly, though the Wikipedia-pageviews sibling repo (Lean.DataSource.QuiverQuantWikipedia) is a possible ABNB-pageviews engagement proxy (gap 5) if the API were free, which it is not for bulk history.",
+   "Quiver's Wikipedia-pageview and social-sentiment feeds could proxy engagement/brand-interest trends for ABNB or peers (gap #5) if paired with a Quiver API key; the connector code documents exact field schemas even without data access."
+  ]
+ },
+ {
+  "key": "github:quantconnect/lean.datasource.quiverquantwikipedia",
+  "name": "QuantConnect/Lean.DataSource.QuiverQuantWikipedia",
+  "url": "https://github.com/QuantConnect/Lean.DataSource.QuiverQuantWikipedia",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Example implementation pulling QuiverQuant's Wikipedia pageview dataset (per-ticker Wikipedia page pageviews) via QuantConnect's paid data marketplace. No historical CSV committed.",
+  "why_useful": "Wikipedia pageviews for the ABNB article could be an engagement/awareness proxy (gap 5); however this repo is only a connector to a paid feed, not a free source \u2014 Wikipedia's own pageviews API (wikimedia REST API) is free and better suited, and this repo is not that.",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "none declared",
+  "last_activity": "2026-06-18",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Wikipedia pageviews for the ABNB article could be an engagement/awareness proxy (gap 5); however this repo is only a connector to a paid feed, not a free source \u2014 Wikipedia's own pageviews API (wikimedia REST API) is free and better suited, and this repo is not that."
+  ]
+ }
+]

@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:pianocrocodile/ubermovementdata",
+  "url": "https://github.com/PianoCrocodile/UberMovementData",
+  "name": "UberMovementData",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automation script that downloaded daily cross-sectional Uber travel-time datasets from the Uber Movement website plus a cleaner/merger that reconstructs a time series from the aggregated averages; example range shown is Jan-Mar 2020. Uber discontinued the Uber Movement public site in April 2023, so this pull method is now dead against the live source, though it documents the schema for anyone who already has a Movement export.",
+  "why_useful": "IMPORTANT CAVEAT: Uber shut down the Uber Movement public service in mid-2023, so this scraper now targets a dead endpoint and cannot be re-run; only pre-2023 archived pulls (if the author kept any, unconfirmed) would still exist. Ground-mobility travel-time indices were never a strong ABNB proxy candidate anyway; flag as a documented dead end.",
+  "potential": "low",
+  "geography": "varies by city (unspecified in README)",
+  "time_coverage": "pre-2023 (service since discontinued)",
+  "size_hint": "scraper + cleaner scripts, data volume unconfirmed",
+  "license": "none declared",
+  "last_activity": "2023-10-23",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi",
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "IMPORTANT CAVEAT: Uber shut down the Uber Movement public service in mid-2023, so this scraper now targets a dead endpoint and cannot be re-run; only pre-2023 archived pulls (if the author kept any, unconfirmed) would still exist. Ground-mobility travel-time indices were never a strong ABNB proxy candidate anyway; flag as a documented dead end.",
+   "Would have been a rideshare/city-mobility volume proxy (gap 10, transport capacity) if still live; now only useful as a schema/parsing reference for any archived Uber Movement CSV exports someone already holds.",
+   "Uber Movement was shut down in 2023, so the scraper itself is very likely dead against the live site; only useful as a map of what fields/cities Uber Movement used to expose and as a possible starting point if any Wayback-archived Uber Movement CSVs exist elsewhere. Marginal."
+  ]
+ },
+ {
+  "key": "github:syedmisbah/uber-movement-bangalore-dataset",
+  "url": "https://github.com/syedmisbah/Uber-movement-bangalore-dataset",
+  "name": "Uber-movement-bangalore-dataset",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Uber Movement travel-time dataset for Bangalore (city-level speed/travel-time by zone pair), pre-2023 vintage (service discontinued since).",
+  "why_useful": "Real committed data, but wrong geography for the ABNB panel (Bangalore is not one of the 13-city or 123-market Inside Airbnb panels) and travel-time data doesn't map cleanly to lodging demand; low relevance.",
+  "potential": "low",
+  "geography": "Bangalore, India",
+  "time_coverage": "pre-2023 (exact months unconfirmed)",
+  "size_hint": "unconfirmed, likely one or more CSV/JSON exports",
+  "license": "GPL-3.0",
+  "last_activity": "2026-03-07",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Real committed data, but wrong geography for the ABNB panel (Bangalore is not one of the 13-city or 123-market Inside Airbnb panels) and travel-time data doesn't map cleanly to lodging demand; low relevance."
+  ]
+ },
+ {
+  "key": "github:codspire/chicago-taxi-trips-analysis",
+  "url": "https://github.com/codspire/chicago-taxi-trips-analysis",
+  "name": "chicago-taxi-trips-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Analysis pipeline (AWS EMR/Spark/Zeppelin/Superset) built on the City of Chicago's official Taxi Trips open dataset (data.cityofchicago.org), which itself covers taxi AND transportation-network-provider (rideshare) trips by community area from 2013 to present. Repo itself holds no committed rows; it is a pointer/method against the city's public API.",
+  "why_useful": "Chicago is one of the 13 Inside Airbnb panel cities; the underlying City of Chicago Taxi/TNP Trips dataset (linked from this and dozens of similar repos) is a genuinely useful free, granular, long-running ground-transport volume series for that market, even though this specific repo is boilerplate ETL with no unique value beyond confirming the source and query pattern.",
+  "potential": "low",
+  "geography": "Chicago, IL",
+  "time_coverage": "dataset (external) 2013-present; repo itself from 2023",
+  "size_hint": "external dataset is hundreds of millions of rows; repo has no committed data",
+  "license": "Apache-2.0",
+  "last_activity": "2023-09-06",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Chicago is one of the 13 Inside Airbnb panel cities; the underlying City of Chicago Taxi/TNP Trips dataset (linked from this and dozens of similar repos) is a genuinely useful free, granular, long-running ground-transport volume series for that market, even though this specific repo is boilerplate ETL with no unique value beyond confirming the source and query pattern."
+  ]
+ },
+ {
+  "key": "github:robertmccormick7954/railhead-demo",
+  "url": "https://github.com/robertmccormick7954/railhead-demo",
+  "name": "railhead-demo",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "White-label rail-booking demo app that ingests real Amtrak GTFS static schedule data (routes/stops/timetables) with simulated fares/tickets layered on top.",
+  "why_useful": "Confirms Amtrak publishes a static GTFS feed (schedules/frequency, not ridership or fares) usable for a service-frequency proxy; the booking/fare layer in this repo is entirely simulated so it adds no real pricing data.",
+  "potential": "low",
+  "geography": "USA (Amtrak network)",
+  "time_coverage": "current schedule snapshot only",
+  "size_hint": "GTFS static feed size (~tens of MB), no ridership data",
+  "license": "none declared",
+  "last_activity": "2026-08-07",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Confirms Amtrak publishes a static GTFS feed (schedules/frequency, not ridership or fares) usable for a service-frequency proxy; the booking/fare layer in this repo is entirely simulated so it adds no real pricing data."
+  ]
+ },
+ {
+  "key": "github:planarnetwork/eurostar2gtfs",
+  "url": "https://github.com/planarnetwork/eurostar2gtfs",
+  "name": "eurostar2gtfs",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "TypeScript tool that converts the published Eurostar timetable into a standard GTFS feed (routes, trips, stop times, calendar).",
+  "why_useful": "Gives a machine-readable Eurostar schedule/frequency/capacity series (cross-Channel rail capacity) as a minor complement to gap #10's rail coverage; schedule-only, not ridership, so lower standalone value.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "UK-France-Belgium-Netherlands (Eurostar network)",
+  "time_coverage": "current timetable only, no history committed",
+  "size_hint": "small, single GTFS feed",
+  "license": "not stated in listing",
+  "last_activity": "Feb 2025",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Gives a machine-readable Eurostar schedule/frequency/capacity series (cross-Channel rail capacity) as a minor complement to gap #10's rail coverage; schedule-only, not ridership, so lower standalone value."
+  ]
+ }
+]

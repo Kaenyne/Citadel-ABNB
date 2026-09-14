@@ -1,0 +1,120 @@
+[
+ {
+  "key": "github:philipperemy/fx-1-minute-data",
+  "url": "https://github.com/philipperemy/FX-1-Minute-Data",
+  "name": "philipperemy/FX-1-Minute-Data",
+  "category": "fx_rates",
+  "data_kind": "both",
+  "what_it_holds": "Apache-2.0 repo (683 stars, updated 10 Sep 2026) titled HISTDATA: a simple downloader/API plus multi-year committed sample data for 1-minute (and tick-level) historical FX pairs, crude oil, and stock indices, sourced from HistData.com.",
+  "why_useful": "We currently hold only FX 'schedules' per CONTEXT.md; this is a finer-grained (1-minute), multi-year, easy one-command-pull historical FX series that could sharpen intra-quarter FX-mix timing for the ADR ex-FX/FX split, more granular than daily FRED FX series already held.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-10",
+  "geography": "major FX pairs (global)",
+  "time_coverage": "multi-year historical, 1-minute bars, up to date per README",
+  "size_hint": "downloader + example data; full history pulled via included tool (potentially large)",
+  "duplicate_of_holding": "extends the FX schedules already held to intraday/1-minute granularity",
+  "hits": 1,
+  "themes": [
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "We currently hold only FX 'schedules' per CONTEXT.md; this is a finer-grained (1-minute), multi-year, easy one-command-pull historical FX series that could sharpen intra-quarter FX-mix timing for the ADR ex-FX/FX split, more granular than daily FRED FX series already held."
+  ]
+ },
+ {
+  "key": "github:cyanheads/exchange-rates-mcp-server",
+  "url": "https://github.com/cyanheads/exchange-rates-mcp-server",
+  "name": "cyanheads/exchange-rates-mcp-server",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server (STDIO/HTTP) for currency conversion, FX rates, and querying historical ECB exchange-rate data. Apache-2.0. Actively updated (12 Sep 2026).",
+  "why_useful": "Alternative machine-callable historical ECB FX puller (could be dropped into an agent tool chain instead of hand-rolling XML parsing); marginal beyond the plain client above but notable as a maintained, typed access layer with explicit 'historical' query support.",
+  "potential": "low",
+  "geography": "ECB reference rates",
+  "time_coverage": "historical ECB range (1999-present per ECB feed)",
+  "size_hint": "code only",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "Overlaps with AllRates-Today client above; flagged as an alternative tool, not new data.",
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Alternative machine-callable historical ECB FX puller (could be dropped into an agent tool chain instead of hand-rolling XML parsing); marginal beyond the plain client above but notable as a maintained, typed access layer with explicit 'historical' query support."
+  ]
+ },
+ {
+  "key": "github:dillonsnyman1/fx-exposure-hedging-dashboard",
+  "url": "https://github.com/dillonsnyman1/fx-exposure-hedging-dashboard",
+  "name": "dillonsnyman1/fx-exposure-hedging-dashboard",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Dashboard/tool that calculates FX portfolio exposure, models forward hedging via covered interest rate parity, computes currency-level VaR and hedge effectiveness. No committed historical dataset found (student/portfolio project, 0 stars, updated Jul 2026); needs its own rate inputs.",
+  "why_useful": "Could serve as a template/regression method for estimating how much of ABNB's revenue/EBITDA translation exposure to EUR/GBP/etc. is hedge-able or historically has moved with spot, i.e. an FX-exposure regression tool as hinted in the task's keywords. Not a data source itself.",
+  "potential": "low",
+  "geography": "n/a (generic FX portfolio tool)",
+  "time_coverage": "n/a",
+  "size_hint": "small codebase",
+  "license": "none stated",
+  "last_activity": "2026-07-22",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Could serve as a template/regression method for estimating how much of ABNB's revenue/EBITDA translation exposure to EUR/GBP/etc. is hedge-able or historically has moved with spot, i.e. an FX-exposure regression tool as hinted in the task's keywords. Not a data source itself."
+  ]
+ },
+ {
+  "key": "github:yalerong/fx-hedge-lab",
+  "url": "https://github.com/yalerong/FX-Hedge-Lab",
+  "name": "yalerong/FX-Hedge-Lab",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "'Local FX exposure, hedging, scenario PnL, and backtesting workbench' \u2014 a methods/tooling repo (0 stars, updated 5 Sep 2026, no license stated). No dataset confirmed committed; likely a scenario-modeling scaffold.",
+  "why_useful": "Same family as the FX exposure/hedging tooling keyword hint; potentially adaptable as a scenario-PnL framework for stress-testing ABNB's FX translation sensitivity (EUR/GBP mix, per the FX-line-swap bridge work already in our repo) but is a generic tool, not ABNB- or travel-specific data.",
+  "potential": "low",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "unknown, small",
+  "license": "none stated",
+  "last_activity": "2026-09-05",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Same family as the FX exposure/hedging tooling keyword hint; potentially adaptable as a scenario-PnL framework for stress-testing ABNB's FX translation sensitivity (EUR/GBP mix, per the FX-line-swap bridge work already in our repo) but is a generic tool, not ABNB- or travel-specific data."
+  ]
+ },
+ {
+  "key": "github:greven/forex",
+  "url": "https://github.com/greven/forex",
+  "name": "greven/forex",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Elixir library for ECB exchange rates, MIT licensed, actively updated (10 Sep 2026). Wraps the same ECB daily feed as other clients; no separate stored dataset.",
+  "why_useful": "Marginal alternative client to the ECB feed; listed for completeness of the 'method' landscape, not because it adds new data beyond what ECB itself and other clients already expose.",
+  "potential": "low",
+  "geography": "Eurozone reference rates",
+  "time_coverage": "ECB's published range",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "Duplicate of AllRates-Today client in function; different language binding only.",
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Marginal alternative client to the ECB feed; listed for completeness of the 'method' landscape, not because it adds new data beyond what ECB itself and other clients already expose."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:msweta02/ae-cfpb-complaint-benchmarking",
+  "url": "https://github.com/msweta02/ae-cfpb-complaint-benchmarking",
+  "name": "ae-cfpb-complaint-benchmarking",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "dbt/Snowflake project benchmarking consumer complaints across 10 major US banks using the full CFPB database (cited at 16.9M rows) sourced via BigQuery's public `bigquery-public-data.cfpb_complaints` dataset; pipeline code is committed, the 16.9M-row table itself lives on BigQuery (Google-hosted mirror of the CFPB DB, updated regularly).",
+  "why_useful": "Confirms and documents the existing free, queryable BigQuery mirror of the full national CFPB complaint database (`bigquery-public-data.cfpb_complaints`) with a ready-made dbt transformation layer as a template; that BigQuery table is itself the more directly useful object (queryable with a free-tier GCP account, no scraping) for extracting BNPL-lender or travel/lodging-refund complaint slices.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "CFPB DB inception (~2011) to present, refreshed periodically",
+  "size_hint": "16.9M rows (external BigQuery table)",
+  "license": "unspecified pipeline code; underlying data is public-domain US government",
+  "last_activity": "2026-08-11",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Confirms and documents the existing free, queryable BigQuery mirror of the full national CFPB complaint database (`bigquery-public-data.cfpb_complaints`) with a ready-made dbt transformation layer as a template; that BigQuery table is itself the more directly useful object (queryable with a free-tier GCP account, no scraping) for extracting BNPL-lender or travel/lodging-refund complaint slices."
+  ]
+ },
+ {
+  "key": "github:open-geodata/br_ibge_api",
+  "url": "https://github.com/open-geodata/br_ibge_api",
+  "name": "br_ibge_api",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client for IBGE's (Brazilian Institute of Geography and Statistics) open data API \u2014 consumes IBGE's 'Servi\u00e7o de Dados' (municipality, geography, and statistical series endpoints). 7 stars, MIT, updated Jul 2025.",
+  "why_useful": "Gives a one-command pull path for Brazilian macro/demographic series feeding gap #7 (Brazil IBGE regional travel/macro read for LatAm demand) and could support the ADR/nights regional-mix work for Brazil.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Brazil",
+  "time_coverage": "current IBGE catalogue (varies by series)",
+  "size_hint": "small library",
+  "license": "MIT",
+  "last_activity": "2025-07-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gives a one-command pull path for Brazilian macro/demographic series feeding gap #7 (Brazil IBGE regional travel/macro read for LatAm demand) and could support the ADR/nights regional-mix work for Brazil."
+  ]
+ },
+ {
+  "key": "github:yutannihilation/estatapi",
+  "url": "https://github.com/yutannihilation/estatapi",
+  "name": "estatapi",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package client for Japan's e-Stat API (\u653f\u5e9c\u7d71\u8a08\u306e\u7dcf\u5408\u7a93\u53e3), the government statistics portal covering CPI, tourism, consumption, demographics. 23 stars, actively updated Mar 2026, listed on CRAN-adjacent ecosystem.",
+  "why_useful": "Most mature/highest-starred e-Stat client found; enables pulling Japanese travel/consumption/CPI series for APAC regional macro read (gap #7), and Japan is a disclosed ABNB region proxy market.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "full e-Stat catalogue (decades for many series)",
+  "size_hint": "small R package",
+  "license": "other",
+  "last_activity": "2026-03-23",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Most mature/highest-starred e-Stat client found; enables pulling Japanese travel/consumption/CPI series for APAC regional macro read (gap #7), and Japan is a disclosed ABNB region proxy market."
+  ]
+ },
+ {
+  "key": "github:ajtgjmdjp/estat-mcp",
+  "url": "https://github.com/ajtgjmdjp/estat-mcp",
+  "name": "estat-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "e-Stat API client plus an MCP server wrapper for Japanese government statistics. 10 stars, Apache-2.0, updated 13 Sep 2026 (very fresh).",
+  "why_useful": "Actively maintained alternative Japan macro-stats client; MCP wrapper means it could be plugged into an agent workflow for repeated e-Stat pulls (tourism/consumption nowcasting for APAC gap #7).",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "e-Stat catalogue",
+  "size_hint": "small",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "duplicate use case of estatapi",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Actively maintained alternative Japan macro-stats client; MCP wrapper means it could be plugged into an agent workflow for repeated e-Stat pulls (tourism/consumption nowcasting for APAC gap #7)."
+  ]
+ },
+ {
+  "key": "github:dayoooun/korea-stats-mcp",
+  "url": "https://github.com/Dayoooun/korea-stats-mcp",
+  "name": "korea-stats-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server for querying Korea's KOSIS (Korean Statistical Information Service) national statistics in natural language; published as npm package @kimdayoun/korea-stats-mcp. 16 stars, MIT, updated 10 Sep 2026.",
+  "why_useful": "Most-starred, freshest KOSIS client found; gives programmatic access to Korean tourism/consumption/employment/housing series for APAC regional macro (gap #7).",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "South Korea",
+  "time_coverage": "full KOSIS catalogue",
+  "size_hint": "small MCP server",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Most-starred, freshest KOSIS client found; gives programmatic access to Korean tourism/consumption/employment/housing series for APAC regional macro (gap #7)."
+  ]
+ }
+]

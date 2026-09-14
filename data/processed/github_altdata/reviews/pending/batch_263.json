@@ -1,0 +1,100 @@
+[
+ {
+  "key": "github:fjj040806/abnb-deep-learning-volatility",
+  "url": "https://github.com/Fjj040806/ABNB-Deep-Learning-Volatility",
+  "name": "ABNB-Deep-Learning-Volatility",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A deep-learning volatility-forecasting project for ABNB stock that uses (with a Hugging Face fallback loader) the \"nateraw/airbnb-stock-price-2\" Hugging Face dataset for historical ABNB share-price data.",
+  "why_useful": "Low incremental value \u2014 we already hold daily ABNB prices; only worth a line because it points at a specific, named Hugging Face dataset (nateraw/airbnb-stock-price-2) in case that dataset has a longer or differently-cleaned history than our current source.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "N/A",
+  "time_coverage": "unconfirmed",
+  "size_hint": "unconfirmed",
+  "license": "unconfirmed",
+  "last_activity": "unconfirmed",
+  "duplicate_of_holding": "Duplicates our existing daily ABNB price series",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Low incremental value \u2014 we already hold daily ABNB prices; only worth a line because it points at a specific, named Hugging Face dataset (nateraw/airbnb-stock-price-2) in case that dataset has a longer or differently-cleaned history than our current source."
+  ]
+ },
+ {
+  "key": "github:data-scrape/airbnb-scraper",
+  "url": "https://github.com/data-scrape/airbnb-scraper",
+  "name": "data-scrape/airbnb-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small MIT-licensed script to scrape Airbnb listings, prices, reviews and host data. No committed dataset, minimal activity (1 star).",
+  "why_useful": "Marginal \u2014 another airbnb.com direct scraper, out-of-scope to run per repo rules; catalogued for completeness only.",
+  "potential": "low",
+  "license": "mit",
+  "last_activity": "2026-08-18",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "tiny script repo",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Marginal \u2014 another airbnb.com direct scraper, out-of-scope to run per repo rules; catalogued for completeness only."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/halifax-analysis",
+  "url": "https://github.com/UPGo-McGill/halifax-analysis",
+  "name": "UPGo-McGill/halifax-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "McGill UPGo STR market report/analysis for Halifax, Nova Scotia (2 stars, updated as recently as 2025 per org metadata).",
+  "why_useful": "Smaller secondary Canadian market STR study; fills out a broader Canadian STR supply picture beyond Toronto/Montreal.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Smaller secondary Canadian market STR study; fills out a broader Canadian STR supply picture beyond Toronto/Montreal."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/whitehorse-analysis",
+  "url": "https://github.com/UPGo-McGill/whitehorse-analysis",
+  "name": "UPGo-McGill/whitehorse-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "MIT-licensed McGill UPGo report on STR activity in Whitehorse, Yukon.",
+  "why_useful": "Niche small-market STR study; low direct relevance to ABNB's financial KPIs but a genuine data/analysis artifact.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Niche small-market STR study; low direct relevance to ABNB's financial KPIs but a genuine data/analysis artifact."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/caribbean-analysis",
+  "url": "https://github.com/UPGo-McGill/caribbean-analysis",
+  "name": "UPGo-McGill/caribbean-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "MIT-licensed McGill UPGo analysis prepared for a presentation on Caribbean STR markets.",
+  "why_useful": "Touches gap #7-adjacent territory (regional travel/STR volume outside the US/EU core), Caribbean STR supply not covered elsewhere in our holdings.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Touches gap #7-adjacent territory (regional travel/STR volume outside the US/EU core), Caribbean STR supply not covered elsewhere in our holdings."
+  ]
+ }
+]

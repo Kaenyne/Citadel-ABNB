@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:vacanza/python-holidays",
+  "url": "https://github.com/vacanza/python-holidays",
+  "name": "python-holidays (vacanza, formerly dr-prodigy/python-holidays)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The canonical Python 'holidays' package: programmatic, offline public/bank/school holiday calendars for 100+ countries and many subdivisions, actively maintained (multiple confirmed forks/mirrors seen updated through 2026, e.g. a Sep 2026 l10n-migrator fork and a Rust port 'holidays-rs' both referencing it). MIT license.",
+  "why_useful": "Directly fills gap #20 (holiday calendars by country): gives a clean, versionable, no-API-key way to generate country-level holiday-date panels to control for local demand seasonality (long weekends, national holidays) across ABNB's NA/EMEA/LatAm/APAC regional splits and around the World Cup window.",
+  "potential": "high",
+  "geography": "100+ countries",
+  "time_coverage": "historical and forward-dated (rules-based, not vintage-limited)",
+  "size_hint": "Python package, not a static file dump",
+  "license": "MIT",
+  "last_activity": "2026 (actively maintained; several dependent forks updated Sep 2026)",
+  "gap_targets": [
+   20
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Directly fills gap #20 (holiday calendars by country): gives a clean, versionable, no-API-key way to generate country-level holiday-date panels to control for local demand seasonality (long weekends, national holidays) across ABNB's NA/EMEA/LatAm/APAC regional splits and around the World Cup window."
+  ]
+ },
+ {
+  "key": "github:predicthq/sdk-py",
+  "url": "https://github.com/predicthq/sdk-py",
+  "name": "sdk-py",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official MIT-licensed Python client (27 stars, 341 commits, updated 5 May 2026) for the PredictHQ Events/Demand-Intelligence API. Endpoints: Events (concerts, festivals, sports, conferences, public + school holidays, severe weather, term/academic dates, community events, disasters) globally, ranked by predicted attendance/impact; Places; Features (pre-aggregated demand-forecast features by location/date, e.g. a 'PHQ Rank' or attendance sum per day per area); Broadcasts (TV viewership tied to events); polygon/radius impact-area queries. This is the exact event-demand feed that vacation-rental dynamic-pricing engines (PriceLabs, Wheelhouse, Beyond Pricing all cite PredictHQ as a data partner) plug into to move nightly rates around demand shocks. No data files are committed; it is a live-API pull (free tier exists but usage-limited).",
+  "why_useful": "Standard, well-documented client for pulling a global multi-category event calendar (concerts/conferences/sports) with impact/attendance scores by location -- the general-purpose tool for the whole 'events and shocks' gap (#11), not just World Cup. Method only, not a dataset; a human would need to register for a key.",
+  "potential": "high",
+  "geography": "global",
+  "time_coverage": "current + forward-looking via API (no vintage/historical bulk export)",
+  "size_hint": "SDK code only",
+  "license": "MIT",
+  "last_activity": "2026-05-05",
+  "gap_targets": [
+   11
+  ],
+  "hits": 4,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Standard, well-documented client for pulling a global multi-category event calendar (concerts/conferences/sports) with impact/attendance scores by location -- the general-purpose tool for the whole 'events and shocks' gap (#11), not just World Cup. Method only, not a dataset; a human would need to register for a key.",
+   "Would be the mechanical route to a global events-and-impact feed (concerts, conferences, sports, public holidays, severe weather) PredictHQ sells, matching the 'PredictHQ samples' keyword in the theme, but is gated behind a paid API key that the project rules say not to use (no paid keys) \u2014 catalogued as a method only, not actionable without a licence.",
+   "Fills gap #11 (events and shocks) and the MICE/conference-calendar keyword directly -- a per-city, per-week conference/expo signal is exactly the kind of business-travel demand proxy the theme is chasing, though it is a paid-tiered acquisition method rather than a free static dataset.",
+   "Maps directly onto CONTEXT.md gap #11 (events/shocks: FIFA World Cup 2026, concerts, conferences) and #17 (event-study/nowcasting methods). A PredictHQ 'Features' pull by market (NA/EMEA/LatAm/APAC metros) around the 3Q26 World Cup window or major-market festival calendars could be turned into an independent, point-in-time event-density regressor for nights/ADR that is not derived from Airbnb data itself."
+  ]
+ },
+ {
+  "key": "github:openfootball/world-cup.json",
+  "url": "https://github.com/openfootball/world-cup.json",
+  "name": "openfootball/world-cup.json",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Match schedules (dates, kickoff times, teams, venues, group assignments, scores) for FIFA World Cups from 1930 through 2026, organized in year-labeled JSON files; description explicitly lists 'Canada/USA/Mexico 2026'. Public-domain dedication, files fetchable directly via raw GitHub URLs (no API key), so the 2026 match calendar (dates and host cities, June-July 2026, inside 3Q26) can be pulled as a one-command JSON fetch.",
+  "why_useful": "Directly fills gap #11 (FIFA World Cup 2026 schedule/host-city data) with the exact match dates/venues needed to build a 3Q26 host-city demand-shock calendar for the North America nights forecast.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "geography": "US/Canada/Mexico (2026 tournament); global historically",
+  "time_coverage": "1930-2026",
+  "license": "public domain",
+  "last_activity": "not confirmed exact date; actively maintained per description",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Directly fills gap #11 (FIFA World Cup 2026 schedule/host-city data) with the exact match dates/venues needed to build a 3Q26 host-city demand-shock calendar for the North America nights forecast."
+  ]
+ },
+ {
+  "key": "github:vacanza/holidays",
+  "url": "https://github.com/vacanza/holidays",
+  "name": "vacanza/holidays (Python `holidays` package)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library computing government-designated public/bank/school/religious holidays on the fly for 250 country codes plus subdivisions (states/provinces) and 20+ financial-market calendars (ISO 10383 MICs); not a static file but a deterministic calendar engine, multi-language holiday names, ~4,066 commits, MIT license, 1.9k stars.",
+  "why_useful": "Gives a machine-pullable, per-country/per-subdivision holiday calendar (long weekends, school holidays) to build controls for seasonality and demand shocks in the nights/ADR forecast across all ABNB regions (NA/EMEA/LatAm/APAC), addressing the 'holiday calendars by country' part of gap #11.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global, 250 countries",
+  "time_coverage": "computed for any year, historical and future",
+  "license": "MIT",
+  "last_activity": "active (dev branch 4,066 commits)",
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Gives a machine-pullable, per-country/per-subdivision holiday calendar (long weekends, school holidays) to build controls for seasonality and demand shocks in the nights/ADR forecast across all ABNB regions (NA/EMEA/LatAm/APAC), addressing the 'holiday calendars by country' part of gap #11.",
+   "Precise, code-verifiable public-holiday calendars by country and subdivision are a direct input to seasonal demand and party-size modeling (idea #20 in CONTEXT.md gap list touches length-of-stay/seasonality) and to building holiday-adjusted nights nowcasts across all of ABNB's regional splits (NA/EMEA/LatAm/APAC), not just the US."
+  ]
+ },
+ {
+  "key": "github:andreiosiptsov/disasters",
+  "url": "https://github.com/andreiosiptsov/disasters",
+  "name": "disasters (Measuring Economic Disruption from Climate Disasters)",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Replication package for paper measuring selection into the EM-DAT disaster record against MODIS burned-area and IBTrACS (hurricane) wind-field data. Repo holds bundled data as split archives (Climate_damage_full.bundle.part00/01, Climate_damage_repo.tar.gz.part00/01) plus code; README describes a 1,174-row register linking every number in the paper to its source (EM-DAT entry, MODIS burned area, IBTrACS wind fields, separating entry/monetisation/magnitude margins). No stars yet, updated 24 Aug 2026.",
+  "why_useful": "Directly usable for gap 11 (hurricanes/wildfires as tourism shocks) and gap 17 (methods/event-study/replication packages): gives a rigorous, sourced EM-DAT-vs-satellite cross-walk that could be adapted to flag disaster severity for ABNB-relevant markets (Maui, LA, Gulf Coast, Caribbean) rather than relying on raw EM-DAT counts alone.",
+  "potential": "high",
+  "gap_targets": [
+   11,
+   17
+  ],
+  "license": "not specified in listing",
+  "last_activity": "2026-08-24",
+  "size_hint": "multi-part bundle + tar.gz archives (exact size unknown, split into parts suggesting >100MB)",
+  "geography": "global",
+  "time_coverage": "not fully specified; EM-DAT/IBTrACS/MODIS overlap era (~2000s-2020s)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Directly usable for gap 11 (hurricanes/wildfires as tourism shocks) and gap 17 (methods/event-study/replication packages): gives a rigorous, sourced EM-DAT-vs-satellite cross-walk that could be adapted to flag disaster severity for ABNB-relevant markets (Maui, LA, Gulf Coast, Caribbean) rather than relying on raw EM-DAT counts alone.",
+   "A ready-made, point-in-time-conscious linkage of EM-DAT (global disaster event records: type, country, date, deaths, damages) to MODIS/IBTrACS -- gives the team a vetted way to pull EM-DAT-quality disaster events (wildfires, storms, floods) by country/date for building an events-and-shocks regressor without re-deriving the EM-DAT extract from scratch, and models exactly the kind of selection/measurement bias (what gets recorded vs. not) that matters if disaster counts are used as a KPI driver."
+  ]
+ }
+]

@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:vacasa/python-vacasa-connect-sdk",
+  "url": "https://github.com/Vacasa/python-vacasa-connect-sdk",
+  "name": "python-vacasa-connect-sdk",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official-looking Python SDK published under the Vacasa GitHub org for the connect.vacasa.com API (units/properties, reviews, generic GET endpoints). Confirmed via README: requires OIDC client-id/secret/scope credentials tied to a Vacasa owner/partner account \u2014 this is private property-management data, not a public dataset. 1 star, updated 2026-07-22 (actively maintained).",
+  "why_useful": "Confirms Vacasa's API surface (units, reviews) exists and is documented, useful if the team ever gets partner/owner access, but as-is it cannot be pulled without credentials, so it does not satisfy the 'public source' cataloguing bar.",
+  "potential": "low",
+  "geography": "US (Vacasa's markets)",
+  "time_coverage": "n/a \u2014 live API, no historical archive implied",
+  "size_hint": "small SDK repo",
+  "license": "MIT (code license; underlying API access is gated separately)",
+  "last_activity": "2026-07-22",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hostelworld, Hipcamp, Outdoorsy, RVshare, Sonder, Vacasa, Inspirato, Marriott Homes & Villas, Plum Guide, onefinestay, Flatio, Blueground datasets or filings parsers"
+  ],
+  "why_all": [
+   "Confirms Vacasa's API surface (units, reviews) exists and is documented, useful if the team ever gets partner/owner access, but as-is it cannot be pulled without credentials, so it does not satisfy the 'public source' cataloguing bar."
+  ]
+ },
+ {
+  "key": "github:samspade21/vacasa-ha",
+  "url": "https://github.com/samspade21/vacasa-ha",
+  "name": "vacasa-ha",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Home Assistant custom integration exposing a Vacasa owner's own booking calendar and sensors (occupied/vacant, upcoming bookings) inside a smart-home dashboard. Requires the user's own Vacasa owner login; single-property scope by design, not a market-wide dataset. Updated 2026-07-08.",
+  "why_useful": "Shows Vacasa exposes a booking-calendar API per property, but scope is one owner's one property at a time and needs credentials \u2014 not usable as a market-level dataset.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "n/a",
+  "size_hint": "small integration repo",
+  "license": "MIT",
+  "last_activity": "2026-07-08",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Hostelworld, Hipcamp, Outdoorsy, RVshare, Sonder, Vacasa, Inspirato, Marriott Homes & Villas, Plum Guide, onefinestay, Flatio, Blueground datasets or filings parsers"
+  ],
+  "why_all": [
+   "Shows Vacasa exposes a booking-calendar API per property, but scope is one owner's one property at a time and needs credentials \u2014 not usable as a market-level dataset."
+  ]
+ },
+ {
+  "key": "github:mauriziofd/recsys-challenge-2019-trivago",
+  "url": "https://github.com/MaurizioFD/recsys-challenge-2019-trivago",
+  "name": "MaurizioFD/recsys-challenge-2019-trivago",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Politecnico di Milano team's full solution code/notebooks for the RecSys Challenge 2019 (Policloud8), including preprocessing scripts that read the trivago dataset (train.csv/test.csv/item_metadata.csv style files) in full/local/small (100k-row) modes. No raw data committed (dataset must still be obtained from trivago), but the preprocessing code documents the exact schema (impression lists + parallel price lists per clickout, per-country feature importance table referencing UK/US/DE/FR/IT etc.).",
+  "why_useful": "Turns the trivago metasearch dataset into something immediately usable \u2014 schema, cleaning, feature engineering already written \u2014 if the team decides to pull the underlying trivago data as an ex-Airbnb hotel-pricing comparator.",
+  "potential": "low",
+  "geography": "Europe + a handful of other trivago markets",
+  "time_coverage": "2018 challenge data",
+  "size_hint": "n/a (code only)",
+  "license": "unspecified in fetched README",
+  "last_activity": "2019",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels"
+  ],
+  "why_all": [
+   "Turns the trivago metasearch dataset into something immediately usable \u2014 schema, cleaning, feature engineering already written \u2014 if the team decides to pull the underlying trivago data as an ex-Airbnb hotel-pricing comparator."
+  ]
+ },
+ {
+  "key": "github:trivago/recsys-challenge-2019-data-exploration",
+  "url": "https://github.com/trivago/recsys-challenge-2019-data-exploration",
+  "name": "trivago/recsys-challenge-2019-data-exploration",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official trivago repo with R code reproducing the plots from the RecSys Challenge 2019 dataset paper \u2014 temporal patterns and action-type frequencies (search, filter, clickout, interaction with image/rating/info) over the challenge period.",
+  "why_useful": "Confirms the dataset's temporal/behavioral structure (official source) and gives ready-made exploratory code, useful if the team pulls the trivago dataset for the metasearch-pricing comparator described above.",
+  "potential": "low",
+  "geography": "same as RecSys 2019 dataset",
+  "time_coverage": "2018",
+  "size_hint": "n/a (analysis code only)",
+  "license": "unspecified",
+  "last_activity": "2019 era",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels"
+  ],
+  "why_all": [
+   "Confirms the dataset's temporal/behavioral structure (official source) and gives ready-made exploratory code, useful if the team pulls the trivago dataset for the metasearch-pricing comparator described above."
+  ]
+ },
+ {
+  "key": "github:google/hotel-ads-etl-tool",
+  "url": "https://github.com/google/hotel-ads-etl-tool",
+  "name": "google/hotel-ads-etl-tool",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official (but explicitly deprecated/unmaintained) Google repo: a Python + Apache Beam/Dataflow ETL pipeline that pulls 'Hotel Ads API Reports' (Google Hotel Ads performance data: impressions, clicks, bookings by property) into BigQuery. Requires OAuth2 credentials tied to an active Google Hotel Ads / Hotel Center partner account plus a GCP project (Cloud Storage, BigQuery, Dataflow enabled). 9 stars, 7 forks, Python 93.9%/Shell 6.1%.",
+  "why_useful": "The most directly on-theme repo found (literally 'hotel ads etl'), and shows what fields the Hotel Ads API historically exposed, but it is gated behind a partner-only Google Hotel Ads account (a hotel/OTA advertiser login), which the team does not have and which is out of scope to acquire. Useful mainly as documentation of what a real Google Hotel Ads price/bid panel looks like, not as a pullable public dataset.",
+  "potential": "low",
+  "geography": "global (Hotel Ads advertiser-scoped)",
+  "time_coverage": "n/a (live API tool, now deprecated)",
+  "size_hint": "n/a",
+  "license": "Apache-2.0 (typical for google org repos; not independently confirmed)",
+  "last_activity": "marked deprecated/unmaintained in README",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels"
+  ],
+  "why_all": [
+   "The most directly on-theme repo found (literally 'hotel ads etl'), and shows what fields the Hotel Ads API historically exposed, but it is gated behind a partner-only Google Hotel Ads account (a hotel/OTA advertiser login), which the team does not have and which is out of scope to acquire. Useful mainly as documentation of what a real Google Hotel Ads price/bid panel looks like, not as a pullable public dataset."
+  ]
+ }
+]

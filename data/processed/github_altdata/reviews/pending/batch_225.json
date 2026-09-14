@@ -1,0 +1,119 @@
+[
+ {
+  "key": "github:phernando82/numbeo_api_cost_of_living",
+  "url": "https://github.com/Phernando82/numbeo_api_cost_of_living",
+  "name": "numbeo_api_cost_of_living",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapy-based scraper + Flask REST API + SQLite store for 12 cost-of-living indicators per city (meals, transport, utilities, internet, rent) scraped from Numbeo's public pages; JWT auth layer. No committed dataset, MIT license, 28 commits, marked 'under development'.",
+  "why_useful": "Most-starred/likely most-maintained unofficial Numbeo client if the team ever gets ToS clearance to build a recurring cost-of-living/affordability panel.",
+  "potential": "low",
+  "size_hint": "small client library",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "unspecified",
+  "last_activity": "2026-08-11",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "Most-starred/likely most-maintained unofficial Numbeo client if the team ever gets ToS clearance to build a recurring cost-of-living/affordability panel.",
+   "Another reusable Numbeo scraper with a persistence layer already built (SQLite), which is closer to a repeatable point-in-time capture pipeline than a one-shot script."
+  ]
+ },
+ {
+  "key": "github:thomascharbonnel/expatistan",
+  "url": "https://github.com/thomascharbonnel/expatistan",
+  "name": "expatistan",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby API client for Expatistan's cost-of-living comparison data (Numbeo's main crowdsourced competitor). No committed dataset. MIT license, low activity (last updated 2019).",
+  "why_useful": "Only Expatistan-specific repo found; gives a second crowdsourced cost-of-living source (city-pair comparisons) distinct from Numbeo, useful for cross-checking any affordability index built from Numbeo alone.",
+  "potential": "low",
+  "size_hint": "small client library",
+  "time_coverage": "n/a",
+  "geography": "global (Expatistan cities)",
+  "license": "MIT",
+  "last_activity": "2019-01-31",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "Only Expatistan-specific repo found; gives a second crowdsourced cost-of-living source (city-pair comparisons) distinct from Numbeo, useful for cross-checking any affordability index built from Numbeo alone."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/data-analysis-tools-bureau-of-justice-statistics",
+  "url": "https://github.com/api-evangelist/data-analysis-tools-bureau-of-justice-statistics",
+  "name": "data-analysis-tools-bureau-of-justice-statistics",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "An independent third-party profile/catalog of the Bureau of Justice Statistics (BJS) public API surface and its data-analysis tools, maintained by 'API Evangelist' as part of a broader series cataloguing US government APIs. Updated 2026-09-12 (very recent). Points to the BJS API itself rather than committing data.",
+  "why_useful": "BJS runs the National Crime Victimization Survey and other crime/safety series with different (survey-based, victimization-rate) methodology than FBI UCR/NIBRS -- a useful complement if crime-as-demand-shock work needs a victimization-rate cross-check by region.",
+  "potential": "low",
+  "time_coverage": "points to BJS's own historical API coverage, not itself a dataset",
+  "geography": "US",
+  "size_hint": "small, catalog/pointer repo",
+  "license": "unstated",
+  "last_activity": "2026-09-12",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "BJS runs the National Crime Victimization Survey and other crime/safety series with different (survey-based, victimization-rate) methodology than FBI UCR/NIBRS -- a useful complement if crime-as-demand-shock work needs a victimization-rate cross-check by region."
+  ]
+ },
+ {
+  "key": "github:hackforla/311-data",
+  "url": "https://github.com/hackforla/311-data",
+  "name": "hackforla/311-data",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Hack for LA civic-tech project ingesting the full MyLA311 service-request feed (all LA complaint types, includes the STR/short-term-rental enforcement category as one of many) via the LA Socrata API; project states CSV and parquet snapshots are also mirrored at huggingface.co (external host, exact dataset name/size not confirmed by page content). No Airbnb-specific filtering or documentation in the repo itself.",
+  "why_useful": "LA is one of the three target cities (MyLA311). This is the most substantial, actively-maintained pipeline/mirror for LA's full 311 feed found; a team member would still need to filter to the STR/illegal-rental complaint category themselves to build the enforcement-activity proxy for gap area (311/STR enforcement) \u2014 not itself an Airbnb-labeled dataset.",
+  "potential": "low",
+  "geography": "Los Angeles",
+  "time_coverage": "ongoing (current MyLA311 feed)",
+  "license": "unknown (not confirmed)",
+  "size_hint": "full city 311 feed, size unconfirmed",
+  "last_activity": "unknown (not confirmed via this fetch)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "LA is one of the three target cities (MyLA311). This is the most substantial, actively-maintained pipeline/mirror for LA's full 311 feed found; a team member would still need to filter to the STR/illegal-rental complaint category themselves to build the enforcement-activity proxy for gap area (311/STR enforcement) \u2014 not itself an Airbnb-labeled dataset."
+  ]
+ },
+ {
+  "key": "github:ishitakapoor7/311derful",
+  "url": "https://github.com/ishitakapoor7/311derful",
+  "name": "ishitakapoor7/311derful",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Generic NYC 311 ETL tool pulling Socrata dataset erm2-nwe9 ('311 Service Requests from 2020 to Present', 22,145,244 rows, Jan 2020-Aug 2026) plus community-district boundaries (5crt-au7u); caches monthly gzipped CSVs into DuckDB. No Airbnb/STR filtering built in, but the underlying feed includes NYC's 'Illegal Home Sharing/Vacation Rental' complaint type handled by the Office of Special Enforcement, so this is a ready one-command pull method that could be filtered post-hoc.",
+  "why_useful": "Point-in-time-capable, current (through Aug 2026), full-complaint-type NYC 311 pull method; fills the acquisition-method half of gap area on 311 enforcement proxies for NYC even though the repo itself does no STR-specific work.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "Jan 2020 - Aug 2026",
+  "license": "unknown",
+  "size_hint": "22.1M rows (all complaint types), cached monthly",
+  "last_activity": "recent (data through Aug 2026 implies active maintenance)",
+  "duplicate_of_holding": "Partially overlaps NYC OSE registry already held (item 34, municipal STR registries) but this is the raw 311 complaint stream, a different data type",
+  "hits": 1,
+  "themes": [
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Point-in-time-capable, current (through Aug 2026), full-complaint-type NYC 311 pull method; fills the acquisition-method half of gap area on 311 enforcement proxies for NYC even though the repo itself does no STR-specific work."
+  ]
+ }
+]

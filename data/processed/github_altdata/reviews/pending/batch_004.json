@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:defeat-beta/defeatbeta-api",
+  "url": "https://github.com/defeat-beta/defeatbeta-api",
+  "name": "defeatbeta-api",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Open-source Python alternative to Yahoo Finance APIs, backed by DuckDB queries over Hugging Face-hosted datasets (defeat-beta org). Provides valuation ratios, profitability metrics, SEC filings, EARNINGS CALL TRANSCRIPTS, and news, with optional LLM-based call analysis and an MCP server/Claude skill integration. Apache-2.0, 747 stars, 60 forks, 914 commits, actively maintained (Windows needs WSL/Docker).",
+  "why_useful": "A live, no-API-key, one-command pull for earnings-call transcripts (and financials) across broad ticker coverage via DuckDB over a Hugging Face dataset \u2014 a candidate machine-pullable ABNB (and peer BKNG/EXPE/MAR/HLT) transcript source that is actively maintained, unlike most one-off scrapers.",
+  "potential": "high",
+  "geography": "US-listed equities (broad coverage, exact ticker count not confirmed)",
+  "time_coverage": "not confirmed; appears to track available filings/transcripts historically",
+  "size_hint": "hosted as Hugging Face dataset(s) queried via DuckDB; size not stated",
+  "license": "Apache-2.0",
+  "last_activity": "914 commits on main, actively maintained as of search date",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A live, no-API-key, one-command pull for earnings-call transcripts (and financials) across broad ticker coverage via DuckDB over a Hugging Face dataset \u2014 a candidate machine-pullable ABNB (and peer BKNG/EXPE/MAR/HLT) transcript source that is actively maintained, unlike most one-off scrapers."
+  ]
+ },
+ {
+  "key": "github:nlpaueb/edgar-crawler",
+  "url": "https://github.com/nlpaueb/edgar-crawler",
+  "name": "edgar-crawler / EDGAR-CORPUS",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Toolkit to download 10-K/10-Q/8-K filings and parse them into structured JSON by item section; companion released datasets EDGAR-CORPUS (huggingface.co/datasets/eloukas/edgar-corpus, 1993-2020, ~220k 10-K filings split train/val/test, 23 extracted item sections per filing, 40.7GB) and EDGAR-W2V (Word2Vec embeddings on Zenodo). GPLv3, presented at WWW 2025, 95 commits, active.",
+  "why_useful": "Off-theme for pure earnings-call transcripts but directly serves gap #15 (SEC EDGAR full-text/XBRL tooling) and can pull ABNB's own and peers' 8-Ks/10-Qs (guidance language, MD&A) as a companion text corpus to call transcripts for a combined management-language dataset.",
+  "potential": "high",
+  "geography": "US-listed companies",
+  "time_coverage": "configurable, default 2023; full EDGAR-CORPUS covers many years of annual reports",
+  "size_hint": "EDGAR-CORPUS: 6B+ tokens",
+  "license": "GPL-3.0",
+  "last_activity": "95 commits, 2025 publication",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "team already holds all ABNB letters/transcripts/XBRL since IPO; this is a general-purpose puller, useful mainly for peer-company text at scale",
+  "hits": 2,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora",
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Off-theme for pure earnings-call transcripts but directly serves gap #15 (SEC EDGAR full-text/XBRL tooling) and can pull ABNB's own and peers' 8-Ks/10-Qs (guidance language, MD&A) as a companion text corpus to call transcripts for a combined management-language dataset.",
+   "Gives a ready parser for 8-K text (management commentary, KPI tables) across any peer (BKNG/EXPE/MAR/HLT) with section-level structure, useful for building a comparable-KPI extraction pipeline; EDGAR-CORPUS itself is a large pre-built text corpus for tone/NLP work spanning management-statement history well before our current IPO-forward pull."
+  ]
+ },
+ {
+  "key": "github:hansjoergw/sec-fincancial-statement-data-set",
+  "url": "https://github.com/HansjoergW/sec-fincancial-statement-data-set",
+  "name": "secfsdstools (SEC Financial Statement Data Set tools)",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tools that pull SEC's official quarterly 'Financial Statement Data Sets' (num/sub/tag/pre CSV zips from sec.gov, ~500,000+ filings since 2010, 120M+ data points, 2GB+ of zips by 2023) and convert to local parquet with standardization/filtering utilities for cross-company/cross-year comparison. Apache-2.0, 654 commits.",
+  "why_useful": "Gives point-in-time, as-filed line-item financial statement data (not restated) for every SEC filer including BKNG/EXPE/MAR/HLT since 2010 in one pull, directly useful for a peer financial-statement panel and for point-in-time XBRL-tag-level figures (occupancy/RevPAR footnote tags where tagged).",
+  "potential": "high",
+  "gap_targets": [
+   4,
+   15
+  ],
+  "duplicate_of_holding": "extends our XBRL-since-IPO ABNB-only pull to full peer set and to standardized point-in-time quarterly vintages",
+  "geography": "US SEC registrants",
+  "time_coverage": "~2010-present, quarterly",
+  "size_hint": "120M+ data points, 2GB+ raw zips (source), local parquet output",
+  "license": "Apache-2.0",
+  "last_activity": "654 commits, described as maintained through 2023+ features (daily-update support v2.4.0)",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Gives point-in-time, as-filed line-item financial statement data (not restated) for every SEC filer including BKNG/EXPE/MAR/HLT since 2010 in one pull, directly useful for a peer financial-statement panel and for point-in-time XBRL-tag-level figures (occupancy/RevPAR footnote tags where tagged)."
+  ]
+ },
+ {
+  "key": "github:talsan/ishares",
+  "url": "https://github.com/talsan/ishares",
+  "name": "talsan/ishares",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package that scrapes iShares.com daily ETF holdings-history CSVs (per-fund, per-date constituent weights/shares) for every iShares fund, with optional AWS S3 + Athena integration for building a historical archive; README + README_Quant.md document the pull format. Not a static dataset itself but a repeatable one-command method to build a point-in-time ETF-holdings-history table (would need ABNB tickers e.g. IWF, IJR-style large/mid growth funds filtered post-run).",
+  "why_useful": "Could be run to build a genuine point-in-time series of ABNB's weight/shares inside iShares ETFs over time (institutional-ownership proxy, gap 15), which is otherwise only in licensed 13F/consensus data; also useful for peer OTAs/hotel ETF weight tracking.",
+  "potential": "high",
+  "geography": "US (iShares funds, global underlying)",
+  "time_coverage": "daily snapshots from whenever run against iShares.com; no long history bundled in repo (must be run repeatedly to accrue vintages)",
+  "size_hint": "code repo only (~6.6KB README); output size depends on run duration",
+  "license": "none declared",
+  "last_activity": "2026-07-14",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 2,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Could be run to build a genuine point-in-time series of ABNB's weight/shares inside iShares ETFs over time (institutional-ownership proxy, gap 15), which is otherwise only in licensed 13F/consensus data; also useful for peer OTAs/hotel ETF weight tracking.",
+   "A working, long-history (2006-) method to pull ETF-level holdings/weights over time -- useful for tracking passive-fund exposure to ABNB or travel/consumer-discretionary ETFs (basket concentration, flow-implied ownership changes) as an institutional-positioning proxy; addresses gap #15 and adjacent to markets/positioning gaps."
+  ]
+ },
+ {
+  "key": "github:secdatabase/sec-xbrl-financial-statement-dataset",
+  "url": "https://github.com/secdatabase/SEC-XBRL-Financial-Statement-Dataset",
+  "name": "SEC-XBRL-Financial-Statement-Dataset",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "GitHub repo holds only SQL scripts (7 Athena table DDLs) and docs; the actual data is Parquet files in s3://dataset.secdatabase.com/sec_financial_statements/parquet/, covering Jan 2009\u2013Sep 2020, ~12,600 companies, 239,700 annual/quarterly reports, 192.5M data points, 20GB+ compressed \u2014 full text and numeric XBRL financial-statement data (would include NCLH/CCL/RCL line items such as advance ticket sales / customer deposits for that window). 37 commits, no license stated.",
+  "why_useful": "A bulk, queryable (Athena/Redshift Spectrum) historical XBRL financial-statement corpus stopping in 2020 \u2014 could backfill pre-2023 cruise-line advance-ticket-sales and deferred-revenue history as a book-ahead analogue baseline (gap #18) and as a general point-in-time financial-statement source (gap #4), though it requires AWS access and does not cover 2021-2026.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   18
+  ],
+  "time_coverage": "2009-01 to 2020-09",
+  "geography": "US SEC filers",
+  "size_hint": "20GB+ Parquet, 192.5M data points, 12,600 companies",
+  "license": "not stated",
+  "last_activity": "37 commits total, exact date not shown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "A bulk, queryable (Athena/Redshift Spectrum) historical XBRL financial-statement corpus stopping in 2020 \u2014 could backfill pre-2023 cruise-line advance-ticket-sales and deferred-revenue history as a book-ahead analogue baseline (gap #18) and as a general point-in-time financial-statement source (gap #4), though it requires AWS access and does not cover 2021-2026."
+  ]
+ }
+]

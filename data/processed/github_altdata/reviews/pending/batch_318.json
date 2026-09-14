@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:scolakemei/kenya-tourism-forecasting",
+  "url": "https://github.com/scolakemei/Kenya-tourism-forecasting",
+  "name": "Kenya-tourism-forecasting",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Comparison of ARIMA, SARIMA, Prophet and Holt-Winters on international tourist arrivals to Kenya; presumably a small committed arrivals CSV (likely sourced from Kenya national bureau of statistics or UNWTO), not verified in detail.",
+  "why_useful": "Africa is essentially absent from our current regional-volume holdings; if the underlying arrivals series is genuine it is a rare African tourism time series on GitHub.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Kenya",
+  "time_coverage": "not confirmed",
+  "size_hint": "small, unverified",
+  "license": "unspecified",
+  "last_activity": "2026-06-18",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "Africa is essentially absent from our current regional-volume holdings; if the underlying arrivals series is genuine it is a rare African tourism time series on GitHub."
+  ]
+ },
+ {
+  "key": "github:valentinajk/uk-tourism-forecasting-ai-prophet",
+  "url": "https://github.com/valentinajk/UK-Tourism-Forecasting-AI-Prophet",
+  "name": "UK-Tourism-Forecasting-AI-Prophet",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Facebook Prophet model forecasting yearly UK tourist arrivals using 'real Kaggle data' (likely ONS/VisitBritain international-visitor series repackaged on Kaggle).",
+  "why_useful": "A UK arrivals series is adjacent to our existing Eurostat/EU coverage; only worth a look if the Kaggle source file is actually committed rather than downloaded at runtime (not verified).",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "United Kingdom",
+  "time_coverage": "not confirmed",
+  "size_hint": "small",
+  "license": "unspecified",
+  "last_activity": "2026-02-13",
+  "duplicate_of_holding": "partial overlap with existing Eurostat/EU tourism coverage",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "A UK arrivals series is adjacent to our existing Eurostat/EU coverage; only worth a look if the Kaggle source file is actually committed rather than downloaded at runtime (not verified)."
+  ]
+ },
+ {
+  "key": "github:dilomcfly/tourism-forecasting",
+  "url": "https://github.com/DILOmcfly/tourism-forecasting",
+  "name": "tourism-forecasting (Zermatt)",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'Zermatt Tourism Demand Forecaster' \u2014 time-series analysis for Alpine tourism (Switzerland), 96 months of data including a COVID-impact period, delivered as a Streamlit app.",
+  "why_useful": "Niche single-destination (Zermatt, Swiss Alps) monthly tourism series with explicit COVID break marked \u2014 potentially useful as a small case study of demand-shock recovery patterns analogous to travel-shock scenarios (gap 11), but very narrow geography.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "Zermatt, Switzerland",
+  "time_coverage": "96 months (~8 years), includes COVID period",
+  "size_hint": "small",
+  "license": "unspecified",
+  "last_activity": "2026-02-01",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "Niche single-destination (Zermatt, Swiss Alps) monthly tourism series with explicit COVID break marked \u2014 potentially useful as a small case study of demand-shock recovery patterns analogous to travel-shock scenarios (gap 11), but very narrow geography."
+  ]
+ },
+ {
+  "key": "github:samjohnparr/ph_tourism_deep_learning",
+  "url": "https://github.com/samjohnparr/PH_Tourism_Deep_Learning",
+  "name": "PH_Tourism_Deep_Learning",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Data and R scripts for 'Tourism Demand Forecasting in the Philippines Using Deep Learning Models' \u2014 an academic-style replication package for a Philippines tourist-arrivals forecasting study.",
+  "why_useful": "APAC market (Philippines) tourist-arrivals series not currently in our holdings, packaged as an academic replication set (data + code), which fits the 'academic replication package' category explicitly called out as in-scope.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Philippines",
+  "time_coverage": "not confirmed",
+  "size_hint": "small-moderate (R data + scripts)",
+  "license": "unspecified",
+  "last_activity": "2024-02-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "APAC market (Philippines) tourist-arrivals series not currently in our holdings, packaged as an academic replication set (data + code), which fits the 'academic replication package' category explicitly called out as in-scope."
+  ]
+ },
+ {
+  "key": "github:sfc-gh-jasvestis/aws-thailand-tourism-demand-forecast",
+  "url": "https://github.com/sfc-gh-jasvestis/aws-thailand-tourism-demand-forecast",
+  "name": "aws-thailand-tourism-demand-forecast",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "'ML.FORECAST predicts arrivals from 20 source markets' for Thailand tourism, framed as an AWS/Snowflake demo (enabling capacity planning, marketing spend allocation). Likely a vendor demo notebook with sample or synthetic data rather than a real bulk Thailand tourism-authority dataset; not independently verified.",
+  "why_useful": "If the underlying arrivals-by-source-market data is real (rather than synthetic demo data), Thailand is a significant APAC tourism market and source-market breakdowns would be a genuinely new granularity (gap 7); flagged low-confidence pending verification.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Thailand, 20 source markets",
+  "time_coverage": "unconfirmed",
+  "size_hint": "unconfirmed, vendor-demo scale",
+  "license": "other/unspecified",
+  "last_activity": "2026-09-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "If the underlying arrivals-by-source-market data is real (rather than synthetic demo data), Thailand is a significant APAC tourism market and source-market breakdowns would be a genuinely new granularity (gap 7); flagged low-confidence pending verification."
+  ]
+ }
+]

@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:upgo-mcgill/ontario-report-2024",
+  "url": "https://github.com/UPGo-McGill/ontario-report-2024",
+  "name": "ontario-report-2024",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R-code repo (MIT licensed) for a 2024 report on Ontario short-term-rental / housing conditions, plausibly covering Toronto STR registration alongside province-wide analysis; contents not fully readable via unauthenticated fetch in this pass.",
+  "why_useful": "Complements the Toronto STR registry mirrors (RamVasuthevan, TOHS-tool-rbc) with an academic province-wide analytical layer; worth checking for CMHC-linked occupancy/ADR figures for Ontario STR markets (gap #2).",
+  "potential": "low",
+  "gap_targets": [
+   12,
+   2
+  ],
+  "geography": "Ontario, Canada (incl. Toronto)",
+  "time_coverage": "2024 report vintage",
+  "size_hint": "small code repo",
+  "license": "MIT",
+  "last_activity": "2024",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)"
+  ],
+  "why_all": [
+   "Complements the Toronto STR registry mirrors (RamVasuthevan, TOHS-tool-rbc) with an academic province-wide analytical layer; worth checking for CMHC-linked occupancy/ADR figures for Ontario STR markets (gap #2)."
+  ]
+ },
+ {
+  "key": "github:daniil-oliynyk/toronto-short-term-rentals-mapping",
+  "url": "https://github.com/daniil-oliynyk/Toronto-Short-Term-Rentals-Mapping",
+  "name": "Toronto-Short-Term-Rentals-Mapping",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A NextJS + Mapbox web app (paired with a separate backend repo daniil-oliynyk/Toronto-STR-API) that displays all registered short-term rentals in the City of Toronto, i.e. a live front-end over the Toronto STR registry API.",
+  "why_useful": "Confirms Toronto publishes a queryable STR-registration API (not just a CSV download); the paired Toronto-STR-API backend repo may show the exact API endpoint/schema used, useful for building our own point-in-time puller if the CSV-based mirrors above prove insufficient.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Toronto, Canada",
+  "time_coverage": "current-state API pass-through, not historical",
+  "size_hint": "web app code, no bulk data files",
+  "license": "unconfirmed",
+  "last_activity": "recently updated (Jun 2026)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)"
+  ],
+  "why_all": [
+   "Confirms Toronto publishes a queryable STR-registration API (not just a CSV download); the paired Toronto-STR-API backend repo may show the exact API endpoint/schema used, useful for building our own point-in-time puller if the CSV-based mirrors above prove insufficient."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/datasets/james14850/toronto-short-term-rent",
+  "url": "https://www.kaggle.com/datasets/james14850/toronto-short-term-rent",
+  "name": "toronto_short_term_rent (Kaggle)",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Kaggle dataset titled 'toronto_short_term_rent'; page metadata only confirms the title/topic \u2014 exact source (STR registration vs. Airbnb listing scrape), date range, and row count were not retrievable via unauthenticated fetch in this pass.",
+  "why_useful": "Possible additional Toronto STR dataset outside GitHub; flagged for follow-up (needs a Kaggle account/login to inspect columns) rather than confirmed value.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Toronto, Canada",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unknown (Kaggle dataset licence terms apply)",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)"
+  ],
+  "why_all": [
+   "Possible additional Toronto STR dataset outside GitHub; flagged for follow-up (needs a Kaggle account/login to inspect columns) rather than confirmed value."
+  ]
+ },
+ {
+  "key": "github:lucasros98/dac7-validator",
+  "url": "https://github.com/lucasros98/dac7-validator",
+  "name": "dac7-validator",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "TypeScript validator/CLI for OECD DPI / EU DAC7 XML platform-reporting schemas (the XSD structure platforms like Airbnb use to file seller income/nights data with EU tax authorities). No aggregate statistics or actual filings, but documents the exact fields (gross amount paid, number of transactions, property nights, address) that DAC7 filings must contain -- useful as a schema reference if we ever chase national tax-authority aggregate DAC7 publications.",
+  "why_useful": "Gap 12 (EU DAC7 platform reporting statistics): shows what fields exist in the underlying filings even though no repo here holds published aggregates.",
+  "potential": "low",
+  "size_hint": "small code repo, no data files",
+  "time_coverage": "n/a (schema for 2023+ DAC7 reporting years)",
+  "geography": "EU-wide (OECD DPI / DAC7 schema)",
+  "license": "MIT",
+  "last_activity": "2026-05-14",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Gap 12 (EU DAC7 platform reporting statistics): shows what fields exist in the underlying filings even though no repo here holds published aggregates."
+  ]
+ },
+ {
+  "key": "github:tyclipso/dac7_reporter",
+  "url": "https://github.com/tyclipso/dac7_reporter",
+  "name": "dac7_reporter",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Application to submit signed DAC7 report files to a national DIP (Digital Platform) API. Compliance tooling for platforms filing seller/host income reports, not a statistics dataset.",
+  "why_useful": "Same schema-reference value as dac7-validator; confirms DAC7 filings carry host-level gross-income and nights fields that in aggregate (if a tax authority ever publishes summary stats) would proxy host earnings.",
+  "potential": "low",
+  "size_hint": "small code repo, no data files",
+  "time_coverage": "n/a",
+  "geography": "EU (unspecified member state DIP API)",
+  "license": "EUPL-1.2",
+  "last_activity": "2025-12-12",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Same schema-reference value as dac7-validator; confirms DAC7 filings carry host-level gross-income and nights fields that in aggregate (if a tax authority ever publishes summary stats) would proxy host earnings."
+  ]
+ }
+]

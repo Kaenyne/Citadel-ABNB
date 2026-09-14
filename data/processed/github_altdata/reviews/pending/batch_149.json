@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:commoncrawl/cc-index-table",
+  "url": "https://github.com/commoncrawl/cc-index-table",
+  "name": "cc-index-table",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official tooling to build/query the Common Crawl columnar (Parquet/ORC) URL index. Includes CCIndex2Table, CCIndexExport, CCIndexWarcExport (Java), Docker support, and example SQL for AWS Athena / SparkSQL / Hive covering domain, language, MIME-type and content queries across the full crawl archive (not just one host). Apache-2.0.",
+  "why_useful": "Lets us re-run the airbnb.com CDX capture at much larger scale/lower cost via serverless Athena SQL instead of the raw CDX API, and could be pointed at competitor domains (booking.com, vrbo.com, expedia.com, vacasa.com) to build comparable historical URL-presence panels for gap 9 (competitor supply) cheaply.",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   1
+  ],
+  "time_coverage": "2008-present (whichever monthly crawls indexed)",
+  "geography": "global",
+  "size_hint": "tool; underlying columnar index is multi-TB on S3 (public, requester-pays for compute only)",
+  "license": "Apache-2.0",
+  "last_activity": "active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Lets us re-run the airbnb.com CDX capture at much larger scale/lower cost via serverless Athena SQL instead of the raw CDX API, and could be pointed at competitor domains (booking.com, vrbo.com, expedia.com, vacasa.com) to build comparable historical URL-presence panels for gap 9 (competitor supply) cheaply."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cc-pyspark",
+  "url": "https://github.com/commoncrawl/cc-pyspark",
+  "name": "cc-pyspark",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Example PySpark jobs to process CC WARC/WAT/WET at scale: HTML tag frequency, server identification, IP extraction, word/doc frequency, link extraction and web-graph construction, plus SQL querying of the columnar index. MIT license, 157 commits, Python 3.9+/Spark 3.2+.",
+  "why_useful": "Base framework for any large-scale reprocessing of Common Crawl WARC data touching travel sites (e.g., extracting hotel/listing counts, price mentions, or link graphs to competitor sites) beyond the single-host capture we already have.",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   5
+  ],
+  "time_coverage": "n/a (tooling)",
+  "geography": "n/a",
+  "size_hint": "tool",
+  "license": "MIT",
+  "last_activity": "active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Base framework for any large-scale reprocessing of Common Crawl WARC data touching travel sites (e.g., extracting hotel/listing counts, price mentions, or link graphs to competitor sites) beyond the single-host capture we already have."
+  ]
+ },
+ {
+  "key": "github:afeld/sodapy",
+  "url": "https://github.com/afeld/sodapy",
+  "name": "sodapy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The canonical Python client for the Socrata Open Data API (430 stars, MIT, updated Aug 2026). No data of its own, but is the standard method for pulling any Socrata-hosted portal programmatically \u2014 this is the underlying transport for NYC Open Data, LA GeoHub/data.lacity.org, Austin's open data portal, Chicago data portal, SF DataSF, Seattle, and many state portals, most of which carry STR registration/licence datasets.",
+  "why_useful": "Directly the tool named in CONTEXT.md gap 17 (\"Socrata/CKAN open-data discovery clients to find STR datasets across cities\"). Enables systematic re-pulls / longer-history queries against the municipal STR registries the team already holds (Austin, NYC OSE, etc.) and could reach additional Socrata cities not yet scraped.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   12
+  ],
+  "duplicate_of_holding": "we already hold Austin/Barcelona/Maui/NYC OSE/California TOT STR registries; sodapy is the acquisition method that could extend or refresh those, not new data itself",
+  "geography": "US city/state portals generally",
+  "time_coverage": "n/a (live API client)",
+  "size_hint": "library only, no bundled data",
+  "license": "MIT",
+  "last_activity": "2026-08-17",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "Directly the tool named in CONTEXT.md gap 17 (\"Socrata/CKAN open-data discovery clients to find STR datasets across cities\"). Enables systematic re-pulls / longer-history queries against the municipal STR registries the team already holds (Austin, NYC OSE, etc.) and could reach additional Socrata cities not yet scraped."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/andreabozzo/ceres-open-data-index",
+  "url": "https://huggingface.co/datasets/AndreaBozzo/ceres-open-data-index",
+  "name": "ceres-open-data-index (Ceres companion dataset)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Parquet snapshot(s) of the Ceres harvester's normalized metadata index across 300+ open-data portals (see Ceres repo above); hosted on Hugging Face, ~8.24MB, last updated ~26 days before 14 Sep 2026 (i.e. mid-Aug 2026).",
+  "why_useful": "A ready-made, already-harvested index (no need to run the crawler) that can be filtered offline for dataset titles/tags matching STR, short-term rental, tourism, lodging-tax, or vacation-rental across many jurisdictions \u2014 a shortcut to gaps 8, 9, 12.",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   8,
+   9
+  ],
+  "license": "see HF dataset card (not confirmed)",
+  "last_activity": "~mid-Aug 2026",
+  "geography": "global",
+  "time_coverage": "current snapshot only, not vintaged",
+  "size_hint": "~8.24MB",
+  "duplicate_of_holding": "companion artifact of the Ceres GitHub repo above",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A ready-made, already-harvested index (no need to run the crawler) that can be filtered offline for dataset titles/tags matching STR, short-term rental, tourism, lodging-tax, or vacation-rental across many jurisdictions \u2014 a shortcut to gaps 8, 9, 12."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-opendatasoft",
+  "url": "https://github.com/pipeworx-io/mcp-opendatasoft",
+  "name": "mcp-opendatasoft",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server / generic client for the ~3,000 public OpenDataSoft portal instances (e.g. public.opendatasoft.com, data.paris.fr, data.economie.gouv.fr). Tools for dataset search, metadata retrieval, SQL-style record queries, and facet exploration. MIT license, small (6 commits).",
+  "why_useful": "OpenDataSoft powers many European city and tourism-board portals; a generic query client makes it tractable to pull STR/tourism datasets from EU cities named in gaps 7 and 12 (Amsterdam, Berlin, Vienna, Lisbon, France) without hand-building per-city API calls.",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "recent (repo young, 6 commits)",
+  "geography": "Europe-heavy (France govt, plus ~3000 global instances)",
+  "time_coverage": "n/a (live query tool)",
+  "size_hint": "n/a (client code only)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "OpenDataSoft powers many European city and tourism-board portals; a generic query client makes it tractable to pull STR/tourism datasets from EU cities named in gaps 7 and 12 (Amsterdam, Berlin, Vienna, Lisbon, France) without hand-building per-city API calls."
+  ]
+ }
+]

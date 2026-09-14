@@ -1,0 +1,125 @@
+[
+ {
+  "key": "github:halmonlui/airbnb-api",
+  "url": "https://github.com/HalmonLui/airbnb-api",
+  "name": "airbnb-api (HalmonLui)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT Flask/BeautifulSoup/Selenium unofficial API wrapper (15 stars, updated Mar 2026) that exposes Airbnb search-results-page data as a local REST API -- i.e. it re-serves scraped listing/price/availability fields through your own endpoint rather than a library call.",
+  "why_useful": "Different architecture (self-hosted REST proxy) than the direct-library wrappers; useful reference if the team ever wants a service layer instead of a script, but same underlying fields as pyairbnb.",
+  "license": "MIT",
+  "last_activity": "2026-03-18",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [],
+  "duplicate_of_holding": "duplicates pyairbnb-class field coverage via a different interface",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Different architecture (self-hosted REST proxy) than the direct-library wrappers; useful reference if the team ever wants a service layer instead of a script, but same underlying fields as pyairbnb."
+  ]
+ },
+ {
+  "key": "github:jverneuer/tsairbnb",
+  "url": "https://github.com/jverneuer/tsairbnb",
+  "name": "tsairbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT TypeScript reimplementation of pyairbnb (updated Jul 2026, brand-new) with TLS impersonation, parser fallbacks, and serverless deployment -- built for resilience against Airbnb's anti-bot measures. Same field surface as pyairbnb (JSON HTTP wrapper).",
+  "why_useful": "Most recently updated client in the sweep; documents the current anti-scraping countermeasures (TLS impersonation needed), which is itself useful context for why 2026 search-page scraping is getting harder / more ToS-fraught.",
+  "license": "MIT",
+  "last_activity": "2026-07-29",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "duplicates pyairbnb field coverage in TypeScript",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Most recently updated client in the sweep; documents the current anti-scraping countermeasures (TLS impersonation needed), which is itself useful context for why 2026 search-page scraping is getting harder / more ToS-fraught."
+  ]
+ },
+ {
+  "key": "github:petrpatek/airbnb-scraper",
+  "url": "https://github.com/petrpatek/airbnb-scraper",
+  "name": "airbnb-scraper (petrpatek, Apify public actor)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Public Apify actor source (11 stars) for scraping Airbnb homes; older (last updated Apr 2024) but was one of the original open Apify Airbnb actors many forks derive from (including dtrungtin's and trivikrama-madhusudhana's above).",
+  "why_useful": "Lineage/reference only -- superseded by newer forks; kept for provenance.",
+  "license": "not specified",
+  "last_activity": "2024-04-15",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [],
+  "duplicate_of_holding": "ancestor of dtrungtin/actor-airbnb-scraper and other Apify forks listed here",
+  "potential": "low",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Lineage/reference only -- superseded by newer forks; kept for provenance.",
+   "Second independent Apify-based Airbnb actor; low marginal value once dtrungtin/actor-airbnb-scraper and omkarcloud/airbnb-scraper are catalogued, but confirms the field set (price, availability, reviews, host) is consistent across independent implementations."
+  ]
+ },
+ {
+  "key": "github:toniprada/airbnb-scraper",
+  "url": "https://github.com/toniprada/airbnb-scraper",
+  "name": "airbnb-scraper (toniprada) \u2014 user profiles",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small, old repo (8 stars, updated Jan 2017) that downloads Airbnb user/host profile pages rather than listings.",
+  "why_useful": "Niche and stale (2017); host-profile scraping could theoretically feed a host-growth/supply proxy but the tool itself is unmaintained and pre-dates Airbnb's current API/anti-bot posture. Catalogued for completeness only.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a",
+  "license": "unspecified",
+  "last_activity": "Jan 2017 (stale)",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Niche and stale (2017); host-profile scraping could theoretically feed a host-growth/supply proxy but the tool itself is unmaintained and pre-dates Airbnb's current API/anti-bot posture. Catalogued for completeness only."
+  ]
+ },
+ {
+  "key": "github:kailu3/airbnb-scraper",
+  "url": "https://github.com/kailu3/airbnb-scraper",
+  "name": "airbnb-scraper (kailu3)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "26-star Scrapy + ScrapySplash spider (Python, last updated Nov 2019).",
+  "why_useful": "Old (2019) and likely broken against current Airbnb anti-bot measures given its age relative to the newer scrapers above; low incremental value beyond confirming the same basic field set (listing/search) existed in this form years ago.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a",
+  "license": "unspecified",
+  "last_activity": "Nov 2019 (stale)",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Old (2019) and likely broken against current Airbnb anti-bot measures given its age relative to the newer scrapers above; low incremental value beyond confirming the same basic field set (listing/search) existed in this form years ago."
+  ]
+ }
+]

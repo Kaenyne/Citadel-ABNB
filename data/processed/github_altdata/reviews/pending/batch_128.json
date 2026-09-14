@@ -1,0 +1,125 @@
+[
+ {
+  "key": "github:rodafa/vesta-rental-index",
+  "url": "https://github.com/rodafa/vesta-rental-index",
+  "name": "vesta-rental-index",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Very new repo (updated 2026-09-13, 1 star) named 'Vesta Rental Index'; gh search returned no description beyond the name, so scope/data-commit status unverified. Flagged for a follow-up look rather than confirmed content.",
+  "why_useful": "Recency (created/updated the day before this scout ran) makes it worth a human glance in case it is a new rent-index build with committed data; unverified.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, not inspected beyond search metadata",
+  "license": "unknown",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing and rent inflation nowcasts (Zillow observed rent, Apartment List, Fed rent nowcasts), new-tenant rent index, shelter CPI nowcasting repos"
+  ],
+  "why_all": [
+   "Recency (created/updated the day before this scout ran) makes it worth a human glance in case it is a new rent-index build with committed data; unverified."
+  ]
+ },
+ {
+  "key": "github:dcnarch/rentpricepredict",
+  "url": "https://github.com/dcnarch/RentPricePredict",
+  "name": "RentPricePredict",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "ML model for predicting rental prices trained on Zillow's public ZORI data; again points back to the same publicly-downloadable Zillow source rather than adding new proprietary data.",
+  "why_useful": "Marginal \u2014 modeling exercise over an already-public series; no new data.",
+  "potential": "low",
+  "geography": "US metros (ZORI coverage)",
+  "time_coverage": "ZORI history, monthly",
+  "size_hint": "small, notebook-scale",
+  "license": "unspecified",
+  "last_activity": "2026-08-31",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing and rent inflation nowcasts (Zillow observed rent, Apartment List, Fed rent nowcasts), new-tenant rent index, shelter CPI nowcasting repos"
+  ],
+  "why_all": [
+   "Marginal \u2014 modeling exercise over an already-public series; no new data."
+  ]
+ },
+ {
+  "key": "github:panasenco/rentmap",
+  "url": "https://github.com/panasenco/rentmap",
+  "name": "rentmap",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Python visualization of Zillow Rent Index data (map-based); again sources from Zillow's public download, no independent dataset.",
+  "why_useful": "Marginal visualization tool only.",
+  "potential": "low",
+  "geography": "US (Zillow coverage)",
+  "time_coverage": "unspecified",
+  "size_hint": "small",
+  "license": "unspecified",
+  "last_activity": "2026-08-31",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing and rent inflation nowcasts (Zillow observed rent, Apartment List, Fed rent nowcasts), new-tenant rent index, shelter CPI nowcasting repos"
+  ],
+  "why_all": [
+   "Marginal visualization tool only."
+  ]
+ },
+ {
+  "key": "github:mietenwatch/mw-mietspiegel-api",
+  "url": "https://github.com/mietenwatch/mw-mietspiegel-api",
+  "name": "mw-mietspiegel-api",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0 licensed API for Berlin's official Mietspiegel (rent index/comparative local rent), returning Wohnlage (residential-status classification) and comparative rent for Berlin addresses for the 2017/2019 editions. Actively-flavored municipal rent-benchmark API, Germany-specific.",
+  "why_useful": "Only relevant if the pitch needs a European (Berlin) rent-cost benchmark for cross-market ADR/rent-substitution analysis; not US and narrow in scope, but is a real, structured, licensed dataset+API rather than a toy notebook.",
+  "potential": "low",
+  "geography": "Berlin, Germany",
+  "time_coverage": "2017 and 2019 Mietspiegel editions",
+  "size_hint": "API-served lookup tables, not a bulk file",
+  "license": "Apache-2.0",
+  "last_activity": "2025-08-07",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing and rent inflation nowcasts (Zillow observed rent, Apartment List, Fed rent nowcasts), new-tenant rent index, shelter CPI nowcasting repos"
+  ],
+  "why_all": [
+   "Only relevant if the pitch needs a European (Berlin) rent-cost benchmark for cross-market ADR/rent-substitution analysis; not US and narrow in scope, but is a real, structured, licensed dataset+API rather than a toy notebook."
+  ]
+ },
+ {
+  "key": "github:dchlseo/eia-data",
+  "url": "https://github.com/dchlseo/eia-data",
+  "name": "dchlseo/eia-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Lightweight Python utility wrapping the U.S. EIA API's /petroleum/pri/spt route. Currently implemented: Kerosene-type jet fuel spot price (EPJK) plus crude, diesel, heating oil, gasoline, propane \u2014 returns a tidy pandas DataFrame (date, product code/name, price, unit) with CSV export. 8 commits, license unspecified, recent (Sep 2026) activity.",
+  "why_useful": "Jet fuel spot price is a fast-moving, freely available cost input to airfares; airfare inflation/deflation is a substitution variable for STR demand and a component of BLS CPI airfares already held \u2014 this is a lighter-weight, more current alternative puller than scraping EIA's own site directly, useful for a leading-indicator airfare-cost overlay on travel demand.",
+  "potential": "low",
+  "gap_targets": [
+   10,
+   6
+  ],
+  "geography": "USA (EIA petroleum spot markets)",
+  "time_coverage": "EIA API history (typically 1990s-present for petroleum spot prices)",
+  "size_hint": "API wrapper, not a static dump",
+  "license": "unspecified",
+  "last_activity": "2026-09-03",
+  "duplicate_of_holding": "Overlaps with FRED airfare/CPI series already held; adds jet-fuel-specific cost input not currently in the FRED panel",
+  "hits": 1,
+  "themes": [
+   "wildcard: an airline network planner who knows capacity, schedule, far"
+  ],
+  "why_all": [
+   "Jet fuel spot price is a fast-moving, freely available cost input to airfares; airfare inflation/deflation is a substitution variable for STR demand and a component of BLS CPI airfares already held \u2014 this is a lighter-weight, more current alternative puller than scraping EIA's own site directly, useful for a leading-indicator airfare-cost overlay on travel demand."
+  ]
+ }
+]

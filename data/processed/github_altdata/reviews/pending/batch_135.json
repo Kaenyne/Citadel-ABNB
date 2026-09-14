@@ -1,0 +1,149 @@
+[
+ {
+  "key": "github:mortada/fredapi",
+  "url": "https://github.com/mortada/fredapi",
+  "name": "fredapi",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (1657 stars, Apache-2.0, updated 13 Sep 2026) wrapping BOTH FRED and ALFRED. Confirmed via README: get_series_first_release(), get_series_as_of_date(), get_series_all_releases(), get_series_vintage_dates() \u2014 full point-in-time/vintage retrieval for any FRED series (CPI lodging away from home, CPI airline fares, Univ. Michigan consumer sentiment (UMCSENT), PCE services, metro-level unemployment via LAUS series, etc.). No data files committed; it is a live-pull method against the free FRED API (no key cost beyond a free registration).",
+  "why_useful": "The most mature, actively-maintained Python tool for exactly the point-in-time macro discipline the repo's rules require (rule 2: refit at guide dates, vendor+timestamp per value). Could backstop or replace ad hoc FRED pulls currently in data/processed with proper vintage-as-of-date retrieval for any macro series used as a nowcast input (CPI lodging, PCE travel, etc.).",
+  "potential": "high",
+  "gap_targets": [
+   4
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-13 (still receiving commits/stars activity)",
+  "geography": "US (FRED)",
+  "time_coverage": "Full FRED/ALFRED vintage history per series",
+  "size_hint": "small Python library",
+  "hits": 6,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)",
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "The most mature, actively-maintained Python tool for exactly the point-in-time macro discipline the repo's rules require (rule 2: refit at guide dates, vendor+timestamp per value). Could backstop or replace ad hoc FRED pulls currently in data/processed with proper vintage-as-of-date retrieval for any macro series used as a nowcast input (CPI lodging, PCE travel, etc.).",
+   "Directly implements gap #4 (ALFRED-style macro vintages). Would let us pull point-in-time versions of the ~40 FRED series (CPI lodging, airfares) and BEA/consumer-confidence-adjacent series already in the CONTEXT inventory, so every macro input to the model can be refit at the guide date rather than using today's revised values (the CLAUDE.md point-in-time rule).",
+   "Directly answers gap #4 (point-in-time / vintage macro series, ALFRED-style). CONTEXT.md says the team already holds ~40 FRED series but does not say they are vintage-aware; this library lets every FRED input in the model (CPI lodging, airfares, sentiment) be refit at each historical guide date instead of using today's revised values, which is exactly the point-in-time rule (Rule 2) the repo's own CLAUDE.md enforces for consensus data and should extend to macro inputs too.",
+   "Directly supports gap #4 (ALFRED-style macro vintages / point-in-time series) since it exposes ALFRED's real-time revision history, not just the latest print, for any of the ~40 FRED series already tracked (CPI, PCE, sentiment).",
+   "Directly serves the point-in-time/vintage rule (repo rule #2) and gap 4 (ALFRED-style macro vintages) -- lets us pull the broad trade-weighted dollar index or any FX series exactly as it was known on a given guide date, rather than the revised/current value.",
+   "CONTEXT gap #4 explicitly wants 'ALFRED-style macro vintages'; this is the standard client for exactly that (CPI, PCE, etc. as-reported-then vs as-revised-now), useful for building a genuinely point-in-time consumer-strength or macro control panel to test against nights, rather than the current-vintage-only FRED series the team already holds."
+  ]
+ },
+ {
+  "key": "github:akamhy/waybackpy",
+  "url": "https://github.com/akamhy/waybackpy",
+  "name": "waybackpy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library + CLI wrapping the Internet Archive Wayback Machine SavePageNow, CDX Server, and Availability APIs. No committed data; pip-installable, ~500 commits, MIT licensed, actively maintained with Docker image. Would let us pull CDX listings of every archived snapshot of a given airbnb.com, airdna.co, or mashvisor.com URL and fetch specific dated captures.",
+  "why_useful": "Point-in-time retrieval of archived airbnb.com and competitor pages (pricing pages, city landing pages, IR pages) by exact date \u2014 useful for vintage/point-in-time captures (gap 4/17) beyond our current Common Crawl-only WARC renders.",
+  "potential": "high",
+  "geography": "global",
+  "time_coverage": "Wayback Machine coverage, 1996-present",
+  "size_hint": "tooling only",
+  "license": "MIT",
+  "last_activity": "active, CI/CD present",
+  "duplicate_of_holding": "complements our existing Common Crawl WARC renders (3,000) with Wayback-specific point-in-time capture",
+  "hits": 6,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients",
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Point-in-time retrieval of archived airbnb.com and competitor pages (pricing pages, city landing pages, IR pages) by exact date \u2014 useful for vintage/point-in-time captures (gap 4/17) beyond our current Common Crawl-only WARC renders.",
+   "Gives a scriptable way to reconstruct point-in-time history of Airbnb's help center, newsroom, app-store listing page, or trademark/press pages via Wayback captures -- useful for the release-notes/help-center diff workstream and for point-in-time discipline generally (gap #4, #17).",
+   "Directly the 'Wayback Machine tooling' item in gap #17 -- could retrieve archived Skift/PhocusWire articles, archived airbnb.com pages, or archived AirDNA market pages (gap #2) that are no longer live, without violating current-site ToS.",
+   "Could be pointed at archived airbnb.com search/city pages, archived AirDNA/Mashvisor market-stat pages, or archived Inside Airbnb download pages to reconstruct a point-in-time history of listing counts, ADR estimates, or occupancy claims that are no longer live -- directly useful for point-in-time discipline (rule 2) if a human decides this is within the sanctioned-scraping boundary (rule 6). This is a tool, not a dataset, so it does not by itself close a gap; it would need a follow-up scrape job against specific historical URLs, which per CLAUDE.md rule 6 requires a human go/no-ahead before touching airbnb.com even via an archive.",
+   "Directly answers gap #17 (Wayback Machine tooling). Could be pointed at historical insideairbnb.com pages (their CDN only keeps ~1yr per our notes) or at archived AirDNA/Mashvisor market-stat pages to recover realised-occupancy/ADR claims from past years (gap #2) that are otherwise gone.",
+   "Directly matches CONTEXT gap #17's explicit call for 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' \u2014 this is the standard, well-supported tool to pull historical renders of pages that are no longer live (old AirDNA city sample pages, old Airbnb help-center/press pages, historical STR-ordinance pages)."
+  ]
+ },
+ {
+  "key": "github:edgi-govdata-archiving/web-monitoring",
+  "url": "https://github.com/edgi-govdata-archiving/web-monitoring",
+  "name": "web-monitoring (EDGI)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Umbrella org/repo for the Environmental Data & Governance Initiative's web-monitoring toolkit: a PostgreSQL-backed DB (web-monitoring-db), automated crawlers/diffing service (web-monitoring-processing), and a React diff-viewer UI. Tracks page snapshots + change metadata + human annotations across thousands-to-tens-of-thousands of monitored government pages, with Internet Archive integration for point-in-time capture. 123 commits on the umbrella repo, GPLv3 code / CC-BY-SA-4.0 docs.",
+  "why_useful": "This is exactly the architecture needed for gap #15/#17: a help-center or product-page change monitor with point-in-time snapshots and structured diffs. Could be repointed at Airbnb's help center, newsroom, or app-release pages to detect policy/feature changes and product launches with timestamped versions -- point-in-time by construction, which fits rule #2 discipline.",
+  "potential": "high",
+  "gap_targets": [
+   15,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "geography": "US (built for .gov sites, but generic)",
+  "time_coverage": "ongoing, active project",
+  "size_hint": "8 sub-repos; DB of snapshots not itself on GitHub (self-hosted)",
+  "license": "GPLv3 (code), CC-BY-SA-4.0 (docs)",
+  "last_activity": "active as of fetch; exact date not surfaced",
+  "hits": 2,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients",
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "This is exactly the architecture needed for gap #15/#17: a help-center or product-page change monitor with point-in-time snapshots and structured diffs. Could be repointed at Airbnb's help center, newsroom, or app-release pages to detect policy/feature changes and product launches with timestamped versions -- point-in-time by construction, which fits rule #2 discipline.",
+   "A ready-made change-detection pipeline (not just raw snapshot download) that could be pointed at STR-regulation pages (city ordinance sites, gap 12) or AirDNA/competitor pricing pages to flag exactly when content changed between archive captures, cutting manual point-in-time diff work."
+  ]
+ },
+ {
+  "key": "github:lemairejean-baptiste/eventstudy",
+  "url": "https://github.com/LemaireJean-Baptiste/eventstudy",
+  "name": "eventstudy (LemaireJean-Baptiste)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package (69 stars, last updated Dec 2023) for financial event-study computation: single-event and multiple-event abnormal-return and CAR calculations against a market-model benchmark, significance testing. No bundled dataset -- takes user-supplied returns. Also on PyPI as `eventstudy`.",
+  "why_useful": "Directly usable to run a rigorous event study around the 5 Nov 2026 ABNB print (and past 23 prints) for CAR/abnormal-return significance testing -- addresses gap #17 (event-study packages).",
+  "potential": "high",
+  "geography": "N/A",
+  "time_coverage": "N/A (methodology only)",
+  "size_hint": "small library",
+  "license": "unspecified in README excerpt (check LICENSE file)",
+  "last_activity": "Dec 22, 2023",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Directly usable to run a rigorous event study around the 5 Nov 2026 ABNB print (and past 23 prints) for CAR/abnormal-return significance testing -- addresses gap #17 (event-study packages)."
+  ]
+ },
+ {
+  "key": "github:pydata/pandas-datareader",
+  "url": "https://github.com/pydata/pandas-datareader",
+  "name": "pandas-datareader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Widely-used Python library (934+ commits) with a built-in FamaFrenchReader that pulls Ken French factor portfolios (3-factor, 5-factor, momentum, industry portfolios) directly from Dartmouth's data library in one line (`pdr.famafrench.FamaFrenchReader(...).read()`), plus FRED, World Bank, OECD, Eurostat, Bank of Canada readers.",
+  "why_useful": "One-command, always-current pull of Ken French factors for building ABNB factor loadings / risk-adjusted event-study returns -- exactly what 'Ken French factor loaders' in the theme asks for, and we already hold static Ken French factors per CONTEXT.md, so this is the live-refresh method for keeping that series current.",
+  "potential": "high",
+  "geography": "N/A",
+  "time_coverage": "full Ken French library history via live pull",
+  "size_hint": "library only; data pulled on demand",
+  "license": "BSD-3",
+  "last_activity": "active (16 open PRs at check time)",
+  "duplicate_of_holding": "We already hold Ken French factors (static); this is a maintained pull method, not a new file.",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "One-command, always-current pull of Ken French factors for building ABNB factor loadings / risk-adjusted event-study returns -- exactly what 'Ken French factor loaders' in the theme asks for, and we already hold static Ken French factors per CONTEXT.md, so this is the live-refresh method for keeping that series current."
+  ]
+ }
+]

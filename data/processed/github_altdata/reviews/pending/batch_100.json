@@ -1,0 +1,139 @@
+[
+ {
+  "key": "github:upgo-mcgill/mtl_landlords",
+  "url": "https://github.com/UPGo-McGill/mtl_landlords",
+  "name": "mtl_landlords",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper (scraper/, captcha_solver/, notebooks/, session_handling/) to pull Montreal landlord/property data, apparently from the municipal property-tax roll ('matricule' numbers \u2014 download_matricule_nrs.py, scrape_batch.py). Includes htmls/ and data/ folders (contents not enumerated here).",
+  "why_useful": "Adjacent housing-supply tooling (non-Airbnb site) that could help separate STR host commercial-operator concentration from long-term-rental landlord activity in Montreal, tangential to gap #13 (STR/LTR crossover) and #9 (supply concentration).",
+  "potential": "low",
+  "gap_targets": [
+   13,
+   9
+  ],
+  "geography": "Montreal, Canada",
+  "time_coverage": "unknown",
+  "size_hint": "scraper code, no data files confirmed",
+  "license": "unconfirmed",
+  "last_activity": "unconfirmed",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Adjacent housing-supply tooling (non-Airbnb site) that could help separate STR host commercial-operator concentration from long-term-rental landlord activity in Montreal, tangential to gap #13 (STR/LTR crossover) and #9 (supply concentration).",
+   "Marginal: landlord-concentration data could feed a housing-supply angle for STR<->LTR crossover, but it targets a non-Airbnb municipal/registry site and is scraper-only (no committed data).",
+   "A working scraper (non-Airbnb site \u2014 Montreal municipal property registry) for landlord/ownership records, which could support housing-supply/STR-conversion analysis if ever run; flagged as method only per the no-scraping rule."
+  ]
+ },
+ {
+  "key": "other:https://github.com/(topic:short-term-rental) short-term rentals warehouse",
+  "url": "https://github.com/(topic:short-term-rental) Short-Term Rentals Warehouse",
+  "name": "Short-Term Rentals Warehouse",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Described via GitHub topic page as a pipeline/warehouse/visualization project (Snowflake + dbt) investigating Airbnb's impact on housing; 15 stars. Could not confirm exact owner/URL or whether raw data is committed vs. only a dbt transformation pipeline over externally-supplied data before hitting rate limits.",
+  "why_useful": "If it ships a runnable dbt pipeline against a public housing/STR data source, it could be a reusable ETL pattern for combining STR supply with housing data (gap #13 STR<->LTR crossover); needs a follow-up direct fetch to confirm the exact repo and its data source.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "If it ships a runnable dbt pipeline against a public housing/STR data source, it could be a reusable ETL pattern for combining STR supply with housing data (gap #13 STR<->LTR crossover); needs a follow-up direct fetch to confirm the exact repo and its data source."
+  ]
+ },
+ {
+  "key": "other:https://github.com/(topic:short-term-rental) shared accommodations (san francisco)",
+  "url": "https://github.com/(topic:short-term-rental) Shared Accommodations (San Francisco)",
+  "name": "Shared Accommodations",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/pandas analysis of peer-to-peer rental effects on San Francisco's housing market, 10 stars. Exact owner/URL and whether source data is committed (vs. pointing to Inside Airbnb, which we already hold for other cities but not necessarily this exact SF cut) unverified before rate limiting hit.",
+  "why_useful": "Possible SF-specific STR-vs-housing dataset/analysis; SF is not in our current 13-city Inside Airbnb panel, so if it commits its own SF data extract that would be a genuinely new city.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "San Francisco, US",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "possibly derived from Inside Airbnb (which we hold for other cities, not confirmed for SF)",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Possible SF-specific STR-vs-housing dataset/analysis; SF is not in our current 13-city Inside Airbnb panel, so if it commits its own SF data extract that would be a genuinely new city."
+  ]
+ },
+ {
+  "key": "github:jackboyce/fmr-map",
+  "url": "https://github.com/jackboyce/fmr-map",
+  "name": "fmr-map",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Interactive choropleth map of HUD Fair Market Rent by geography (small hobby repo, 0 stars, last updated Aug 2026); likely bundles a processed HUD FMR GeoJSON/CSV to drive the map but not directory-confirmed.",
+  "why_useful": "A small, recent, actively-touched HUD FMR visualization -- if it bundles a static FMR-by-county file for the map, that's a ready join key set (FIPS/FMR area codes) we could reuse instead of re-deriving HUD's own area definitions.",
+  "potential": "low",
+  "geography": "US, HUD FMR areas",
+  "time_coverage": "current HUD FMR vintage (unspecified year)",
+  "size_hint": "unknown, small hobby repo",
+  "license": "unknown",
+  "last_activity": "2026-08-31",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "A small, recent, actively-touched HUD FMR visualization -- if it bundles a static FMR-by-county file for the map, that's a ready join key set (FIPS/FMR area codes) we could reuse instead of re-deriving HUD's own area definitions.",
+   "A recently maintained FMR visualization repo often carries a clean, joinable FMR-by-geography table as its data layer.",
+   "Front-end example of visualizing HUD FMR geographically; possibly embeds a static FMR extract worth checking for a ready-made county-level FMR CSV, but unverified (not inspected beyond listing) and likely thin."
+  ]
+ },
+ {
+  "key": "github:andrewzhang615-star/housing_affordability_analysis",
+  "url": "https://github.com/andrewzhang615-star/Housing_Affordability_Analysis",
+  "name": "Housing_Affordability_Analysis",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis of rent-to-income affordability across US counties, evidently HUD-FMR-adjacent per its sibling repos from the same account family (e.g. Zoning-and-Rent-Burdens). Pushed 7 Jan 2026.",
+  "why_useful": "Another county-level HUD FMR + affordability build; marginal unless it commits a clean county panel we can reuse directly.",
+  "potential": "low",
+  "geography": "US counties",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, not inspected",
+  "license": "unknown",
+  "last_activity": "2026-01-07",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Another county-level HUD FMR + affordability build; marginal unless it commits a clean county panel we can reuse directly.",
+   "County-level affordability ratio series, if committed as data, is a directly usable host/renter-economics cut.",
+   "Another county-level rent-burden construction on public HUD data; could be adapted to flag counties with tightest/loosest rent burden trends for the STR<->LTR housing-supply-economics angle (gap #13).",
+   "n/a"
+  ]
+ }
+]

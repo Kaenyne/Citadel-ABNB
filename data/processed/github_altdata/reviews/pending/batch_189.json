@@ -1,0 +1,121 @@
+[
+ {
+  "key": "github:airbnb/chronon",
+  "url": "https://github.com/airbnb/chronon",
+  "name": "airbnb/chronon",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Airbnb's open-sourced feature-serving/ML data platform (actively maintained, pushed as recently as 11 Sep 2026). Infra code only (Scala/Python for feature pipelines, online/offline joins) \u2014 no Airbnb business data, KPI history, or datasets shipped. Confirms Airbnb's ML infra is public but its data is not.",
+  "why_useful": "Closest thing to 'public pipelines built on Airbnb-internal-style data' in the org, but it is a generic ML feature-store framework other companies also use; no ABNB-specific figures inside.",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-11",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "active infra repo, no data files",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Closest thing to 'public pipelines built on Airbnb-internal-style data' in the org, but it is a generic ML feature-store framework other companies also use; no ABNB-specific figures inside."
+  ]
+ },
+ {
+  "key": "github:airbnb/aerosolve",
+  "url": "https://github.com/airbnb/aerosolve",
+  "name": "airbnb/aerosolve",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Airbnb's older (2015-era) open-sourced ML library, originally built for internal pricing/personalization models (per Airbnb eng blog history). Code and toy example data only, no real listing/pricing data; largely dormant now.",
+  "why_useful": "Historical artifact of Airbnb's internal pricing-ML tooling; confirms no real price/demand data was ever released alongside it.",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09 (repo touched, code unchanged in substance)",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "small lib + toy datasets",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Historical artifact of Airbnb's internal pricing-ML tooling; confirms no real price/demand data was ever released alongside it."
+  ]
+ },
+ {
+  "key": "github:airbnb/airpal",
+  "url": "https://github.com/airbnb/airpal",
+  "name": "airbnb/airpal",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Web UI for PrestoDB that Airbnb built for internal analysts to query its Hive/Presto warehouse. Pure query-tool code, no data, effectively unmaintained (description only, last real feature work years ago).",
+  "why_useful": "Shows what Airbnb analysts used to query internal data; no data itself. Marginal.",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-09",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "tool codebase only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Shows what Airbnb analysts used to query internal data; no data itself. Marginal."
+  ]
+ },
+ {
+  "key": "github:airbnb/reair",
+  "url": "https://github.com/airbnb/reair",
+  "name": "airbnb/reair",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Hive table/partition replication tooling open-sourced by Airbnb data infra team. No data, infra utility only.",
+  "why_useful": "Confirms Airbnb's data-infra open source is pipeline plumbing, not data.",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-20",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "small tool repo",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Confirms Airbnb's data-infra open source is pipeline plumbing, not data."
+  ]
+ },
+ {
+  "key": "github:joshua-bailey/nfp-nowcast",
+  "url": "https://github.com/joshua-bailey/nfp-nowcast",
+  "name": "nfp-nowcast",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Six-model ensemble US nonfarm payrolls nowcast, described as 'true-vintage backtested' with a QCEW revision estimate component. Full README/data-file detail could not be fetched (page returned a summary card only), so contents beyond the description are unconfirmed.",
+  "why_useful": "Another QCEW-vintage-aware nowcasting method (gap #4/#17); worth a closer look if the labour theme needs a template for reconstructing point-in-time BLS employment vintages, but unverified beyond the repo description.",
+  "potential": "low",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "license": "unknown",
+  "geography": "US, national",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, could not confirm data files",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Another QCEW-vintage-aware nowcasting method (gap #4/#17); worth a closer look if the labour theme needs a template for reconstructing point-in-time BLS employment vintages, but unverified beyond the repo description."
+  ]
+ }
+]

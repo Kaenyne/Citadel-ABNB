@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:sarumaj/local-flight-map",
+  "url": "https://github.com/sarumaj/local-flight-map",
+  "name": "local-flight-map",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open air-traffic map application combining ADS-B Exchange and OpenSky Network data feeds for local/regional flight tracking. MIT licensed, 1 star, updated Sep 2026 (actively maintained).",
+  "why_useful": "Combines both major free flight-tracking sources (ADS-B Exchange + OpenSky) in one client, which could be a starting point for a lightweight airport-departure-count scraper if the team wanted a point-in-time capacity series; marginal on its own since it's built for live map display, not data export.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Configurable/local (whatever region the user points it at)",
+  "time_coverage": "Live/current only",
+  "size_hint": "Small application, no committed dataset",
+  "license": "MIT",
+  "last_activity": "2026-09-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Combines both major free flight-tracking sources (ADS-B Exchange + OpenSky) in one client, which could be a starting point for a lightweight airport-departure-count scraper if the team wanted a point-in-time capacity series; marginal on its own since it's built for live map display, not data export."
+  ]
+ },
+ {
+  "key": "github:adsbexchange/feedclient",
+  "url": "https://github.com/ADSBexchange/feedclient",
+  "name": "feedclient",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official ADS-B Exchange feeder client (feeds an existing readsb/dump1090/piaware receiver INTO ADS-B Exchange), 102 stars, MIT license, actively updated (Sep 2026).",
+  "why_useful": "Not a data-pull tool -- it's for contributing ground-station data TO ADS-B Exchange, so it does not help acquire flight data for the pitch. Flagged only because it is the highest-starred, most-maintained repo in the ADS-B Exchange ecosystem and confirms the network is alive and growing (context for evaluating other ADS-B Exchange client repos above).",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Global network",
+  "time_coverage": "N/A (feeder, not a dataset)",
+  "size_hint": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Not a data-pull tool -- it's for contributing ground-station data TO ADS-B Exchange, so it does not help acquire flight data for the pitch. Flagged only because it is the highest-starred, most-maintained repo in the ADS-B Exchange ecosystem and confirms the network is alive and growing (context for evaluating other ADS-B Exchange client repos above)."
+  ]
+ },
+ {
+  "key": "github:zutrixpog/fr24scraper",
+  "url": "https://github.com/ZutrixPog/fr24scraper",
+  "name": "fr24scraper",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Realtime FlightRadar24 scraper, 0 stars, updated Sep 2026 (very new/unproven).",
+  "why_useful": "A candidate method for pulling FlightRadar24 route/schedule data if ADS-B Exchange/OpenSky prove insufficient, but it is unmaintained/unproven (0 stars, brand new) and scraping FlightRadar24 directly likely runs into the same terms-of-service question flagged for Airbnb scraping -- would need a human ToS call before any use.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Global (FlightRadar24 coverage)",
+  "time_coverage": "Live/current only",
+  "size_hint": "Small scraper script, no committed data",
+  "license": "unspecified",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "A candidate method for pulling FlightRadar24 route/schedule data if ADS-B Exchange/OpenSky prove insufficient, but it is unmaintained/unproven (0 stars, brand new) and scraping FlightRadar24 directly likely runs into the same terms-of-service question flagged for Airbnb scraping -- would need a human ToS call before any use."
+  ]
+ },
+ {
+  "key": "github:davidmegginson/ourairports-data",
+  "url": "https://github.com/davidmegginson/ourairports-data",
+  "name": "ourairports-data",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Daily-updated mirror of OurAirports.com: airports.csv, airport-frequencies.csv, runways.csv, navaids.csv, countries.csv, regions.csv -- global airport reference (86,013 airport rows per a citing repo). 1,757 commits, updated daily via automated pull.",
+  "why_useful": "A live, daily-refreshed, public-domain airport reference table (more complete/current than OpenFlights' static airports.dat) useful as a join key for any flight-schedule or ADS-B work keyed to IATA/ICAO codes across Airbnb-relevant gateway cities.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "6 CSVs, ~86k airport rows plus runway/navaid detail",
+  "time_coverage": "current snapshot, updated daily",
+  "geography": "global",
+  "license": "Unlicense (public domain)",
+  "last_activity": "actively maintained, daily automated updates, 1,757 commits",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "A live, daily-refreshed, public-domain airport reference table (more complete/current than OpenFlights' static airports.dat) useful as a join key for any flight-schedule or ADS-B work keyed to IATA/ICAO codes across Airbnb-relevant gateway cities."
+  ]
+ },
+ {
+  "key": "github:mborsetti/airportsdata",
+  "url": "https://github.com/mborsetti/airportsdata",
+  "name": "airportsdata",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "28,298 airport/landing-strip/seaplane-base entries with ICAO/IATA codes, coordinates, timezone, elevation; fork of mwgg/Airports, cross-validated against AIPs/ARINC/IATA/ch-aviation. Distributed as CSV plus a PyPI package.",
+  "why_useful": "Another free, actively maintained (199 commits) global airport reference with timezone data -- marginal incremental value over OurAirports/OpenFlights but easy to use as a Python package for any flight-data join work.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "overlaps openflights/airports.dat and ourairports-data/airports.csv",
+  "size_hint": "28,298 rows",
+  "time_coverage": "current snapshot",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "199 commits, actively maintained",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Another free, actively maintained (199 commits) global airport reference with timezone data -- marginal incremental value over OurAirports/OpenFlights but easy to use as a Python package for any flight-data join work."
+  ]
+ }
+]

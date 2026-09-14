@@ -1,0 +1,704 @@
+[
+ {
+  "key": "github:pydata/pandas-datareader",
+  "url": "https://github.com/pydata/pandas-datareader",
+  "name": "pandas-datareader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Widely-used Python library (934+ commits) with a built-in FamaFrenchReader that pulls Ken French factor portfolios (3-factor, 5-factor, momentum, industry portfolios) directly from Dartmouth's data library in one line (`pdr.famafrench.FamaFrenchReader(...).read()`), plus FRED, World Bank, OECD, Eurostat, Bank of Canada readers.",
+  "why_useful": "One-command, always-current pull of Ken French factors for building ABNB factor loadings / risk-adjusted event-study returns -- exactly what 'Ken French factor loaders' in the theme asks for, and we already hold static Ken French factors per CONTEXT.md, so this is the live-refresh method for keeping that series current.",
+  "potential": "high",
+  "geography": "N/A",
+  "time_coverage": "full Ken French library history via live pull",
+  "size_hint": "library only; data pulled on demand",
+  "license": "BSD-3",
+  "last_activity": "active (16 open PRs at check time)",
+  "duplicate_of_holding": "We already hold Ken French factors (static); this is a maintained pull method, not a new file.",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "One-command, always-current pull of Ken French factors for building ABNB factor loadings / risk-adjusted event-study returns -- exactly what 'Ken French factor loaders' in the theme asks for, and we already hold static Ken French factors per CONTEXT.md, so this is the live-refresh method for keeping that series current."
+  ]
+ },
+ {
+  "key": "github:patmyron/forecasting",
+  "url": "https://github.com/PatMyron/forecasting",
+  "name": "forecasting",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Git-scraping repo (GitHub Actions workflows commit periodic snapshots) tracking forecasting/prediction-market state over time across at least five platforms with per-platform folders: Kalshi, Manifold Markets, Metaculus, Polymarket, ForecastEx. Small repo (8 stars, 1 fork, 54 commits); no license or description text was visible.",
+  "why_useful": "Because it is git-scraped, each commit is a genuine point-in-time snapshot recoverable via `git log`/`git show` on the tracked files \u2014 directly matches the point-in-time/vintage-series gap (#4) for prediction-market-implied probabilities on earnings, elections, or macro releases, without needing to run a scraper against a live API. Could plausibly include ABNB-relevant contracts (earnings surprise markets, CPI, Fed decisions used as macro backdrop) as of each snapshot date.",
+  "geography": "Global (platform-dependent)",
+  "time_coverage": "Since first workflow run; span not confirmed from fetched content (54 total commits, so likely a shorter/thinner history)",
+  "size_hint": "Small repo; likely markdown/JSON/CSV snapshot files per run",
+  "license": "unknown (not shown)",
+  "last_activity": "54 commits on main; date not shown",
+  "potential": "high",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Because it is git-scraped, each commit is a genuine point-in-time snapshot recoverable via `git log`/`git show` on the tracked files \u2014 directly matches the point-in-time/vintage-series gap (#4) for prediction-market-implied probabilities on earnings, elections, or macro releases, without needing to run a scraper against a live API. Could plausibly include ABNB-relevant contracts (earnings surprise markets, CPI, Fed decisions used as macro backdrop) as of each snapshot date."
+  ]
+ },
+ {
+  "key": "github:htenkanen/pyrosm",
+  "url": "https://github.com/HTenkanen/pyrosm",
+  "name": "pyrosm",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (MIT, 438 stars, ~1,065 commits, Cython-accelerated) that parses OSM .osm.pbf extracts (e.g. Geofabrik regional dumps) directly into GeoPandas GeoDataFrames. Supports custom tag filters (including Overpass-style filters, so `tourism=hotel`/`tourism=guest_house` etc.) plus roads, buildings, land use, and boundaries. v0.10+ adds an out-of-core streaming engine for continental-scale files.",
+  "why_useful": "Fastest available method to bulk-extract tourism/hotel POIs from Geofabrik country/region extracts for many cities at once, rather than one-by-one Overpass queries \u2014 directly serves the 'counting STR/hotel supply from maps' half of this theme.",
+  "potential": "high",
+  "geography": "Global (wherever Geofabrik/OSM extracts exist)",
+  "time_coverage": "Current OSM snapshot at pull time (historical PBF snapshots available separately from Geofabrik's internal history server, not this tool)",
+  "license": "MIT",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Fastest available method to bulk-extract tourism/hotel POIs from Geofabrik country/region extracts for many cities at once, rather than one-by-one Overpass queries \u2014 directly serves the 'counting STR/hotel supply from maps' half of this theme."
+  ]
+ },
+ {
+  "key": "github:dhopp1/nowcasting_benchmark",
+  "url": "https://github.com/dhopp1/nowcasting_benchmark",
+  "name": "nowcasting_benchmark",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Replication code (R and Python notebooks) for 17 nowcasting/forecasting methods run head-to-head: ARMA, Bayesian VAR, DFM, MIDAS, MF-VAR, midasml (econometric); decision trees, elastic net, gradient boost, LSTM, MLP, OLS, RF, ridge/lasso, XGBoost, DeepVAR (ML). Uses FRED-sourced US macro series to nowcast quarterly US GDP, Q1 2002-Q3 2022 (shortened 2005-2010 demo notebooks for runtime). 35 commits, MIT license.",
+  "why_useful": "A ready reference implementation and honest performance comparison across every mixed-frequency method named in gap #17 (MIDAS, DFM, bridge-style MF-VAR, midasml) \u2014 useful to pick and validate the estimation approach for an ABNB KPI nowcast before committing engineering time to one method.",
+  "potential": "high",
+  "gap_targets": [
+   17
+  ],
+  "geography": "US (methodology demo)",
+  "time_coverage": "2002-2022 (FRED demo series)",
+  "size_hint": "64 stars, notebooks",
+  "license": "MIT",
+  "last_activity": "2026-08-05",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "A ready reference implementation and honest performance comparison across every mixed-frequency method named in gap #17 (MIDAS, DFM, bridge-style MF-VAR, midasml) \u2014 useful to pick and validate the estimation approach for an ABNB KPI nowcast before committing engineering time to one method.",
+   "Directly on-theme: gives runnable code (not just theory) for MIDAS, DFM, MF-VAR, bridge-style comparisons against ML baselines on a mixed-frequency macro target -- a template that could be repointed at ABNB KPI mixed-frequency nowcasting (nights/GBV target with monthly/weekly high-frequency indicators), addressing gap #17."
+  ]
+ },
+ {
+  "key": "github:sermetpekin/nowcasting-dfm",
+  "url": "https://github.com/SermetPekin/nowcasting-dfm",
+  "name": "nowcasting-dfm",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Python DFM nowcasting package extending the FRBNY (New York Fed) DFM framework, with a 'Pseudo-Real-Time Synthesizer' (sp_vintage_generator.py) that reconstructs historical ragged-edge/vintage data matrices and maps real release-calendar timing (e.g. 'first Friday of month') to avoid look-ahead bias in backtests; Numba acceleration, Kalman news decomposition, Plotly dashboards. Ships FRED-sourced US macro example series and two spec files (Spec_US_example.xls, Spec_FredMD_2026-07.xlsx). 115 commits, BSD-3-Clause.",
+  "why_useful": "The vintage/ragged-edge synthesizer is exactly the point-in-time machinery gap #4 asks for (reconstructing what was known as-of a date) and directly usable as a harness for mixed-frequency KPI nowcasting with correct release timing -- more mechanically relevant than most MIDAS/DFM repos found.",
+  "potential": "high",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "size_hint": "115 commits, includes FRED-MD spec file dated 2026-07",
+  "time_coverage": "uses current FRED-MD vintages (spec file dated Jul 2026)",
+  "geography": "US (FRED-MD)",
+  "license": "BSD-3-Clause",
+  "last_activity": "spec file dated 2026-07 suggests recent activity",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "The vintage/ragged-edge synthesizer is exactly the point-in-time machinery gap #4 asks for (reconstructing what was known as-of a date) and directly usable as a harness for mixed-frequency KPI nowcasting with correct release timing -- more mechanically relevant than most MIDAS/DFM repos found."
+  ]
+ },
+ {
+  "key": "github:marcburri/bridgr",
+  "url": "https://github.com/marcburri/bridgr",
+  "name": "bridgr",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "R package explicitly for classical bridge-equation and MIDAS-style nowcasting: automated frequency alignment (seconds to years), indicator forecasting/aggregation (expalmon, beta weighting), prediction intervals. Ships two example datasets: gdp (quarterly GDP) and baro (monthly business-barometer indicator). 189 commits, MIT license, actively maintained (last update Aug 2026 per topic listing).",
+  "why_useful": "Purpose-built, current (2026) implementation of bridge equations -- the exact method named in the theme -- with a working monthly-indicator-to-quarterly-target example (barometer survey to GDP) structurally identical to a monthly alt-data indicator bridging to ABNB's quarterly nights/GBV.",
+  "potential": "high",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "189 commits, 2 bundled example datasets",
+  "time_coverage": "n/a (package, not a fixed dataset)",
+  "geography": "generic/methodological (Swiss author, barometer example likely European)",
+  "license": "MIT",
+  "last_activity": "2026-08-22",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Purpose-built, current (2026) implementation of bridge equations -- the exact method named in the theme -- with a working monthly-indicator-to-quarterly-target example (barometer survey to GDP) structurally identical to a monthly alt-data indicator bridging to ABNB's quarterly nights/GBV."
+  ]
+ },
+ {
+  "key": "github:cocrawler/cdx_toolkit",
+  "url": "https://github.com/cocrawler/cdx_toolkit",
+  "name": "cdx_toolkit",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library + `cdxt` CLI that unifies querying Common Crawl's per-crawl CDX indices AND the Internet Archive Wayback Machine CDX API behind one interface. Can iterate captures across all Common Crawl monthly crawls for a URL/domain pattern, do size estimation, and pull matching WARC records to local WARC/JSONL/CSV. Apache-2.0, 287 commits, actively maintained.",
+  "why_useful": "We already hold a Common Crawl CDX index over airbnb.com (2.08M rows); this tool would let us extend the same CDX-query workflow to the Wayback Machine's own (larger, longer-history) CDX index for airbnb.com, AirDNA, Mashvisor or insideairbnb.com without hand-rolling API calls, and pull matching WARC pages for gaps #1/#2.",
+  "potential": "high",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "unspecified, beta but actively maintained per README",
+  "geography": "global",
+  "time_coverage": "Common Crawl (2008-present) + full Wayback CDX depth",
+  "size_hint": "library only",
+  "duplicate_of_holding": "extends our existing Common Crawl CDX holding to the Wayback Machine index",
+  "hits": 2,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "We already hold a Common Crawl CDX index over airbnb.com (2.08M rows); this tool would let us extend the same CDX-query workflow to the Wayback Machine's own (larger, longer-history) CDX index for airbnb.com, AirDNA, Mashvisor or insideairbnb.com without hand-rolling API calls, and pull matching WARC pages for gaps #1/#2.",
+   "This is the direct successor/complement to the CDX capture already in hand (2.08M rows over airbnb.com, 50 crawls). Using cdx_toolkit against the Wayback CDX API (not just CC) would let us pull historical archived airbnb.com and AirDNA market pages point-in-time (gap 17, and supports gap 1/2 by finding old cached listing/price pages) without any new scraping infrastructure -- it is a public, ToS-neutral archive read, not a live site scrape."
+  ]
+ },
+ {
+  "key": "github:andreabozzo/ceres",
+  "url": "https://github.com/AndreaBozzo/Ceres",
+  "name": "Ceres",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Rust 'harvest-first' toolkit that syncs metadata from 300+ open-data portals (CKAN e.g. dati.comune.milano.it, DCAT/udata e.g. data.gouv.fr, DCAT-SPARQL e.g. data.europa.eu, Socrata e.g. data.cityofnewyork.us, OpenDataSoft e.g. opendata.paris.fr, ArcGIS Hub e.g. opendata.dc.gov, OGC/CSW, STAC, SDMX) into a normalized PostgreSQL catalog (2M+ datasets indexed), with reproducible Parquet snapshots published to Hugging Face (dataset AndreaBozzo/ceres-open-data-index, ~8.24MB, updated ~26 days ago) and optional semantic search via pgvector/Ollama/Gemini/OpenAI. Apache-2.0, 13 stars/4 forks/280 commits, actively developed Sep 2026.",
+  "why_useful": "Directly answers the theme's core need \u2014 a working cross-portal discovery layer spanning exactly the Socrata/CKAN/OpenDataSoft/ArcGIS/DCAT universe named in CONTEXT.md gap #17 (Socrata/CKAN open-data discovery clients to find STR datasets across cities) and gap #12 (STR ordinance/registration datasets across many named cities). Its own metadata index (or the HF Parquet snapshot) could be queried offline to locate STR registries, tourism-board portals, or municipal lodging-tax data for the 20+ specific cities/countries in gaps 7, 8, 9, 12 without hitting live portals one at a time.",
+  "potential": "high",
+  "gap_targets": [
+   17,
+   12,
+   7,
+   8
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "active, Sep 2026 (280 commits)",
+  "geography": "global (300+ portals: US, EU, Italy, France, etc.)",
+  "time_coverage": "current metadata snapshot, incremental sync",
+  "size_hint": "2M+ datasets indexed; HF Parquet snapshot ~8.24MB",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "Directly answers the theme's core need \u2014 a working cross-portal discovery layer spanning exactly the Socrata/CKAN/OpenDataSoft/ArcGIS/DCAT universe named in CONTEXT.md gap #17 (Socrata/CKAN open-data discovery clients to find STR datasets across cities) and gap #12 (STR ordinance/registration datasets across many named cities). Its own metadata index (or the HF Parquet snapshot) could be queried offline to locate STR registries, tourism-board portals, or municipal lodging-tax data for the 20+ specific cities/countries in gaps 7, 8, 9, 12 without hitting live portals one at a time."
+  ]
+ },
+ {
+  "key": "github:ellisp/tcomp-r-package",
+  "url": "https://github.com/ellisp/Tcomp-r-package",
+  "name": "Tcomp-r-package",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R package (`Tcomp`, installable via devtools::install_github) that ships the full dataset from the 2011 Tourism Forecasting Competition (Athanasopoulos, Hyndman, Song & Wu, Int'l J. Forecasting 2011): 1,311 time series of tourism-related indicators (visitor numbers, occupancy-adjacent series) across yearly, quarterly ($M1..$M...) and monthly ($M4 etc.) frequencies, stored as R Mcomp/Mdata objects (list `tourism`) rather than CSV. GPL-3.0, 6 stars, last updated 2025-03-20 (actively maintained wrapper around a fixed historical competition dataset).",
+  "why_useful": "This is the canonical academic tourism-forecasting benchmark dataset (real submitted tourism arrivals/demand series across many countries) \u2014 directly answers the theme's core ask. Useful less as an ABNB predictor and more as a methods testbed: it is the standard corpus for validating hierarchical/reconciliation and ensemble forecasting techniques (gap 17, methods) that the team could apply to nights/ADR quarterly forecasting.",
+  "potential": "high",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Global (many countries, unspecified per-series in metadata)",
+  "time_coverage": "Pre-2010 tourism series (submitted for the 2010 competition), multiple frequencies",
+  "size_hint": "1,311 series, small (R package, likely a few MB)",
+  "license": "GPL-3.0",
+  "last_activity": "2025-03-20",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "This is the canonical academic tourism-forecasting benchmark dataset (real submitted tourism arrivals/demand series across many countries) \u2014 directly answers the theme's core ask. Useful less as an ABNB predictor and more as a methods testbed: it is the standard corpus for validating hierarchical/reconciliation and ensemble forecasting techniques (gap 17, methods) that the team could apply to nights/ADR quarterly forecasting.",
+   "This is the actual academic tourism-forecasting benchmark (not the well-known Kaggle Airbnb NYC file) with 1,311 real tourism series and both training/holdout splits used for point forecast accuracy competitions \u2014 directly on-theme for evaluating our own nights/ADR forecasting methodology against an established out-of-sample discipline (gap #17, methods: nowcasting/backtesting rigor), though the series themselves are generic tourism (arrivals/occupancy), not ABNB-specific."
+  ]
+ },
+ {
+  "key": "github:nycdb/nycdb",
+  "url": "https://github.com/nycdb/nycdb",
+  "name": "nycdb/nycdb",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python program that downloads, processes, and loads 40+ NYC public housing/property datasets into a single PostgreSQL database in one command: PLUTO (parcel-level land use, ~857k lots), DOB job filings/complaints/violations/vacate orders/certificates of occupancy, HPD violations/registrations/litigations/complaints, DOF Rolling Sales and Tax Lien Sales, ACRIS (deeds and mortgage documents), Evictions, ECB Violations, Property Address Directory, rodent inspections, subsidized-housing database, corporate/ownership records. 796 commits, code AGPLv3, prebuilt database files CC BY-NC-SA 4.0.",
+  "why_useful": "Not Airbnb data itself, but a ready-made, one-command acquisition method for NYC housing/regulatory context (gap #13 housing/host-supply economics; possibly a path to NYC OSE short-term-rental registration counts if/when that dataset is added to its source list) -- useful as tooling to pull city registries around the LL18 period rather than as a direct Inside-Airbnb substitute.",
+  "potential": "high",
+  "gap_targets": [
+   12,
+   13
+  ],
+  "geography": "New York City",
+  "time_coverage": "current + historical NYC open-data extracts, varies by dataset",
+  "size_hint": "n/a (pulls from NYC Open Data at run time)",
+  "license": "check repo (open source)",
+  "last_activity": "actively maintained as of recent GitHub search",
+  "duplicate_of_holding": "We already hold the NYC OSE STR registry directly per CONTEXT.md; nycdb is a broader general-purpose NYC housing-data puller, not a duplicate of that specific dataset.",
+  "hits": 3,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Not Airbnb data itself, but a ready-made, one-command acquisition method for NYC housing/regulatory context (gap #13 housing/host-supply economics; possibly a path to NYC OSE short-term-rental registration counts if/when that dataset is added to its source list) -- useful as tooling to pull city registries around the LL18 period rather than as a direct Inside-Airbnb substitute.",
+   "Directly fills gap 13 (long-term rental/housing supply economics) and touches NYC PLUTO/ACRIS specifically named in the theme; a one-command ingest of parcel, permit, ownership, sales and rent-registration data for the largest ABNB metro, letting the team build NYC host-supply/LTR-STR crossover series without hand-scraping NYC Open Data endpoints one by one.",
+   "Rent Stabilization Unit Counts by building/year is the closest free proxy to 'STR share of housing stock' logic in reverse (regulated long-term supply vs. STR conversion pressure) for NYC, one of our 13 Inside Airbnb panel cities; evictions + HPD violations give a rent-burden/housing-distress proxy at building/tract level to pair with STR registry data (gap #13, also touches #8/#12 municipal registries we already hold for NYC OSE)."
+  ]
+ },
+ {
+  "key": "other:https://github.com/upgo-mcgill",
+  "url": "https://github.com/UPGo-McGill",
+  "name": "UPGo-McGill (org: bc-report-2024, ontario-report-2024, citq-rapport-2024, cmhc-rent-2023, cmhc-transitions-2024, mtr-paper-2023, montreal-finance-2022, mtl_landlords, herongate)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "McGill University's Urban Politics and Governance lab (David Wachsmuth) \u2014 a running program of STR regulatory-compliance research with individual repos per report: bc-report-2022/2023-summer/2024 (British Columbia provincial STR registry law), toronto-report and toronto-report-2023 ('Analysis of Toronto's STR registration system', regulatory-compliance section, data/ folder, MIT), vancouver-analysis, ottawa-2021 (OLT ordinance hearing), pec-2021 (Prince Edward County), la-report-2021, montreal-finance-2022, str-ltr-mtl-analysis (STR units returning to the long-term rental market \u2014 a direct STR<->LTR crossover dataset, gap #13), citq-rapport-2024 (Quebec's CITQ STR licence-number system), commercial-operators, deceptive_str_operations ('Max's SRP' \u2014 detecting fraudulent/deceptive STR listings), and the strr R package itself (functions strr_FREH \u2014 frequently-rented entire-home listings, strr_ghost \u2014 ghost-hostel clusters, strr_multi \u2014 commercial multi-listing operators; built for AirDNA-format inputs, not raw data).",
+  "why_useful": "If the CITQ and CMHC repos do commit data, this would be a genuine Canadian STR-registration and rent-panel dataset relevant to gap #12 (STR ordinance/registration trackers -- Quebec CITQ named explicitly there) and gap #7/#13 (Canada StatCan-adjacent, housing/rent panels). Flagging as a cluster worth a deeper look by whichever agent owns the regulatory-tracker or Canada-volume gap.",
+  "potential": "high",
+  "geography": "Canada (Quebec, BC, Ontario, Montreal)",
+  "time_coverage": "2022-2024 report vintages",
+  "license": "MIT (confirmed on citq-rapport-2024)",
+  "size_hint": "Unconfirmed -- needs a follow-up file-tree check",
+  "last_activity": "2024 (active org)",
+  "gap_targets": [
+   12,
+   7,
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews",
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "If the CITQ and CMHC repos do commit data, this would be a genuine Canadian STR-registration and rent-panel dataset relevant to gap #12 (STR ordinance/registration trackers -- Quebec CITQ named explicitly there) and gap #7/#13 (Canada StatCan-adjacent, housing/rent panels). Flagging as a cluster worth a deeper look by whichever agent owns the regulatory-tracker or Canada-volume gap.",
+   "This is the one research group publicly building analysis pipelines exactly over Quebec CITQ and BC provincial STR registration data (gap #12) and Canadian STR commercial-operator/ghost-hostel detection (relevant to gap #9 supply and #2 realized occupancy proxies); their published PDF reports (linked from repos, e.g. via CMHC/McGill) may contain registry-level counts and trends even where the raw data itself is not redistributable, and the strr R package methodology (FREH, ghost-hostel, commercial-operator classification) is reusable on any listing-level panel we already hold (e.g. Inside Airbnb Canadian coverage) as an acquisition/classification method.",
+   "This is one of very few active research groups publishing recurring, city-level commercial/multi-listing host concentration numbers -- a proxy for professional-host share of STR supply outside the US, useful context for gap #12 (STR ordinance trackers/registration data) and the multi-listing host theme generally, even without a clean data file to pull.",
+   "Confirms UPGo is a real, active (some repos updated 2025-2026) academic STR-research lab exactly matching the theme brief, but their underlying data (AirDNA) is licensed, not open, so the org's value to us is methodology and report structure (ghost-hotel detection, commercial-operator flags, CMHC housing-transition linkage) rather than a data source. Individually flagged repos above are the highest-signal subset; the rest are lower-value variants of the same code pattern.",
+   "This is a full academic pipeline for exactly the regulator/compliance lens the persona is tracking: registration-compliance rates, delisting after enforcement, commercial-operator and ghost-hostel classification, and STR<->long-term-rental crossover, across multiple Canadian and one US (LA) jurisdiction, with report-specific data/ folders and reusable R tooling. Feeds gap #12 (registration datasets, regulatory trackers) and gap #13 (STR<->LTR crossover) directly, and the strr package's FREH/ghost-hostel classifiers are a reusable method for identifying quasi-commercial (non-Airbnb-branded) STR supply that competes with or supplies Airbnb's own inventory."
+  ]
+ },
+ {
+  "key": "github:ramvasuthevan/city-of-toronto-short-term-rentals-registration",
+  "url": "https://github.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration",
+  "name": "RamVasuthevan/city-of-toronto-short-term-rentals-registration",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Git-scraping repo (Simon-Willison-style) that pulls the City of Toronto open-data portal's official 'Short Term Rentals Registrations' CSV (short-term-rental-registrations-data.csv) every day at UTC midnight and commits it. Active as of 13 Sep 2026 (last updated 2026-09-13). Because it commits a fresh CSV daily, the git commit history itself is a genuine point-in-time vintage series of Toronto's STR registration list (registration IDs/status/addresses per the city schema) going back to whenever the repo started running. Has a LICENSE file (type not confirmed) and a short README describing the git-scraping method.",
+  "why_useful": "Not one of our twelve named US cities, but it is a live, actively-updated, point-in-time (dated-snapshot) municipal STR-registration mirror using the git-scraping pattern gap #17 asks for (Socrata/CKAN discovery + archive tooling); the technique is directly reusable for Austin/Denver/Seattle/etc. Socrata portals.",
+  "potential": "high",
+  "geography": "Toronto, Canada",
+  "time_coverage": "ongoing daily snapshots, current as of 13 Sep 2026",
+  "size_hint": "one dated data file per day, size unspecified",
+  "license": "other (per repo metadata)",
+  "last_activity": "2026-09-13 (updated today)",
+  "gap_targets": [
+   4,
+   12,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Not one of our twelve named US cities, but it is a live, actively-updated, point-in-time (dated-snapshot) municipal STR-registration mirror using the git-scraping pattern gap #17 asks for (Socrata/CKAN discovery + archive tooling); the technique is directly reusable for Austin/Denver/Seattle/etc. Socrata portals.",
+   "Gives a genuine day-by-day point-in-time STR registration panel for a major North American market (Toronto) via git-log archaeology \u2014 directly answers gap #4 (point-in-time vintages) and gap #12 (city STR registration datasets, Toronto named explicitly) even though Toronto isn't in our existing 25-dataset municipal STR list.",
+   "Toronto is a named target in gap #12 (city registration datasets: Toronto, Vancouver, Montreal/Quebec CITQ...). This is not just a one-time dump but a running, dated, point-in-time capture of the actual regulator's registry \u2014 directly usable to build a Toronto STR active-listing/registration count time series without needing to scrape the city ourselves (satisfies rule 2's point-in-time requirement and rule 6's sanctioned-sources constraint, since the underlying pull is of a government open-data portal, not airbnb.com).",
+   "Directly fills gap #12 (city STR registration datasets: Toronto, Vancouver, Montreal/Quebec CITQ) with a genuinely point-in-time series (each git commit = a dated snapshot of registered-listing counts), which is rare \u2014 most municipal STR registries (including our existing Austin/Barcelona/Maui/NYC/CA holdings) are single current-state pulls, not vintaged. Toronto active-registration counts are a legal-supply proxy for a top-10 ABNB market.",
+   "A daily, point-in-time count of legally registered Toronto STR units is a regulatory-supply proxy for one of Airbnb's regional mix components (Canada/NA) and directly serves CONTEXT.md gap #12 (city registration datasets) with something better than a one-shot snapshot \u2014 the git log gives vintages for free, addressing the point-in-time requirement in CLAUDE.md rule 2."
+  ]
+ },
+ {
+  "key": "github:centraldedados/alojamento_local",
+  "url": "https://github.com/centraldedados/alojamento_local",
+  "name": "centraldedados/alojamento_local",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper (fetch_rnal.py, fetch_rnal_setup.py, using Splinter/RoboBrowser) for Portugal's Registo Nacional do Alojamento Local (RNAL), the national short-term-rental licence registry. Covers all 308 Portuguese municipalities; supports selective scraping by municipality range. Includes a municipal reference table (Concelhos_CAOP2018.csv, CAOP 2018 codes). No data is pre-committed to the repo -- running the script produces one CSV per municipality (Down_<DICO>_<NOME>.csv), split into time-period parts for large cities (Lisbon, Porto). 12 commits, 3 stars, 6 watchers; license and last-commit date not visible from the README fetch.",
+  "why_useful": "Directly targets numbered gap 12 (STR registration/city registration datasets -- explicitly names Lisbon RNAL). RNAL is the closest thing to a full-market STR supply census for Portugal (active listing counts, addresses/parishes, licence dates by municipality), which is not otherwise in our municipal-registry holdings (Austin, Barcelona HUTB, Maui, NYC OSE, California TOT). A working, already-built scraper against a live government portal (not airbnb.com) means point-in-time supply counts for a full EU country could be pulled without violating the airbnb.com scraping restriction -- worth a human call on whether to actually run it.",
+  "potential": "high",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Portugal (national, all 308 municipalities, incl. Lisbon/Porto)",
+  "time_coverage": "Current registry snapshot at time of run (not historical/vintage; would need repeated runs for a time series)",
+  "size_hint": "Method only, no committed data; output size scales with RNAL registry (Lisbon/Porto require multi-part downloads implying tens of thousands of listings nationally)",
+  "license": "not visible from README fetch",
+  "last_activity": "not visible from README fetch (12 commits total)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "Directly targets numbered gap 12 (STR registration/city registration datasets -- explicitly names Lisbon RNAL). RNAL is the closest thing to a full-market STR supply census for Portugal (active listing counts, addresses/parishes, licence dates by municipality), which is not otherwise in our municipal-registry holdings (Austin, Barcelona HUTB, Maui, NYC OSE, California TOT). A working, already-built scraper against a live government portal (not airbnb.com) means point-in-time supply counts for a full EU country could be pulled without violating the airbnb.com scraping restriction -- worth a human call on whether to actually run it."
+  ]
+ },
+ {
+  "key": "github:inquilinato-cadiz/mapa",
+  "url": "https://github.com/Inquilinato-Cadiz/mapa",
+  "name": "Inquilinato-Cadiz/mapa",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Astro/Leaflet static site with committed data pulled from OpenRTA, the Andalusian regional tourism registry (Registro de Turismo de Andaluc\u00eda), CC BY 4.0, refreshed monthly via GitHub Actions. Files: public/data/municipios/<slug>.geojson (per-municipality tourist-dwelling points, filtered to 'vivienda de uso tur\u00edstico' and 'apartamento tur\u00edstico' categories, contact info stripped, reprojected EPSG:25830->WGS84), src/data/municipios.json (index), src/data/stats.json (aggregate stats), plus a cadastral large-owner layer (fincas-cadiz.geojson / fincas.json). Covers all 45 municipalities of C\u00e1diz province.",
+  "why_useful": "A live, automatically-refreshed, geolocated STR-registry dataset for a full Spanish province beyond Barcelona (which we already hold via HUTB) -- fills gap 12 with finer city coverage in Spain and demonstrates OpenRTA as a pullable regional source that could be extended to other Andalusian provinces (M\u00e1laga/Costa del Sol, Granada, Seville) for a party of the EMEA STR-supply picture.",
+  "potential": "high",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Spain, C\u00e1diz province, Andalusia (45 municipalities)",
+  "time_coverage": "Monthly automated snapshots going forward from repo creation; not clear how far back history is retained in git history of the geojson files",
+  "size_hint": "45 municipality geojson files + 2 aggregate JSON files, per-listing point data with property type",
+  "license": "CC BY 4.0 for the underlying OpenRTA data; repo code license not confirmed",
+  "last_activity": "updated 2026-09-08 (recent, active monthly refresh)",
+  "duplicate_of_holding": "Adjacent to our existing Barcelona HUTB holding but a different Spanish region/registry (Andalusia OpenRTA vs Barcelona HUTB) -- not a duplicate",
+  "hits": 2,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "A live, automatically-refreshed, geolocated STR-registry dataset for a full Spanish province beyond Barcelona (which we already hold via HUTB) -- fills gap 12 with finer city coverage in Spain and demonstrates OpenRTA as a pullable regional source that could be extended to other Andalusian provinces (M\u00e1laga/Costa del Sol, Granada, Seville) for a party of the EMEA STR-supply picture.",
+   "A live, machine-pullable, daily-updated registry of licensed short-term rentals for an entire Spanish province (Andaluc\u00eda coastal tourism market), joined to cadastral ownership data \u2014 directly extends gap 12 (city registration datasets) beyond the Barcelona HUTB/municipal set we already hold, and the underlying OpenRTA API (Junta de Andaluc\u00eda) plausibly covers all of Andaluc\u00eda (M\u00e1laga, Sevilla, Granada, etc.), not just C\u00e1diz."
+  ]
+ },
+ {
+  "key": "github:mogenshobolth/eu-visa-policy",
+  "url": "https://github.com/mogenshobolth/eu-visa-policy",
+  "name": "eu-visa-policy",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "visitor-visa-statistics.csv: EU/Schengen short-stay visitor visa applications, issuances and refusals by member state, 2005-2022, built from the Council Document Register (2005-2008) and the EU Migration and Home Affairs Commission website (2009-2022); World Bank income/region classification joined on for country grouping; 88 commits; Python build scripts (program.py, geography.py, create-output-datasets.py); core dataset also mirrored on Kaggle",
+  "why_useful": "This is actual Schengen visa-statistics time series (applications/issued/refused by country, 2005-2022) \u2014 directly answers the theme's core ask and nothing like it is in our current holdings (gap 7/12 adjacent: cross-border demand and regulation). Could proxy inbound EU short-stay demand trend and correlate with EMEA nights.",
+  "potential": "high",
+  "license": "not stated in README (check repo root for LICENSE file before use)",
+  "last_activity": "not confirmed via fetch; 88 commits, appears mature/complete project",
+  "geography": "EU/Schengen member states",
+  "time_coverage": "2005-2022",
+  "size_hint": "one core CSV + derived aggregate CSVs; row count not confirmed",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "This is actual Schengen visa-statistics time series (applications/issued/refused by country, 2005-2022) \u2014 directly answers the theme's core ask and nothing like it is in our current holdings (gap 7/12 adjacent: cross-border demand and regulation). Could proxy inbound EU short-stay demand trend and correlate with EMEA nights."
+  ]
+ },
+ {
+  "key": "github:polina-postnikova/digital-nomad-research",
+  "url": "https://github.com/polina-postnikova/Digital-Nomad-Research",
+  "name": "Digital-Nomad-Research",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Academic replication package for digital-nomad-visa policy adoption. Processed dataset DigitalNomadDataset.xlsx with two sheets: tourism_and_macroeconomic_data (2,464 country-year rows: GDP, unemployment, tourism expenditure and GDP share, tourism employment, business/total tourism arrivals, internet usage, inflation, FX rate, price-level index) and policy_data (33 confirmed digital-nomad-visa adopter countries: adoption timing, permit duration, income requirements, visa fees, tax treatment, remote-work eligibility). Also ships intermediate LLM-audit files (LLM_Stage1.xlsx, LLM_Stage2.xlsx, Audit_Stage1_Stage2.csv) documenting a 190-jurisdiction screening process. Applies TWFE and a Callaway-Sant'Anna-style group-time DID estimator to the policy adoption. MIT license (code); underlying World Bank/UN Tourism data retain their own licences. Last substantive update 2026-08-09.",
+  "why_useful": "Directly fills gap 16 (digital-nomad visa dataset) with a genuine policy panel plus a much broader 190-country tourism/macro panel that could substitute or cross-check for LatAm/APAC travel-volume gaps (gap 7).",
+  "potential": "high",
+  "gap_targets": [
+   16,
+   7
+  ],
+  "geography": "33 countries (visa policy) / 190 countries (macro-tourism panel)",
+  "time_coverage": "multi-year panel (years not fully specified in README summary)",
+  "size_hint": "one xlsx, 2,464 rows in macro panel + 33 policy records",
+  "license": "MIT (code); third-party data retains original licence",
+  "last_activity": "active, 94 commits on main",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)",
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Directly fills gap 16 (digital-nomad visa dataset) with a genuine policy panel plus a much broader 190-country tourism/macro panel that could substitute or cross-check for LatAm/APAC travel-volume gaps (gap 7).",
+   "A research-grade (causal-inference-ready) digital-nomad-visa panel \u2014 complements the 0brien18 dataset above for gap 16, and the DiD code itself is a reusable method for event-study style analysis of policy shocks (also relevant to gap 12 STR-regulation event studies methodologically).",
+   "Directly addresses gap 16 (remote-work/long-stay demand, digital-nomad visa datasets) with an actual policy-adoption panel and a country-year tourism/macro panel across 190 countries -- usable to test whether digital-nomad-visa adoption correlates with long-stay booking demand in ABNB's addressable markets, and the event-study/DID method itself is reusable for other ABNB-adjacent policy shocks (e.g. STR ordinances).",
+   "Directly targets gap #16 (remote-work/long-stay demand) with a pre-built causal-inference template (Callaway-Sant'Anna) we already use elsewhere in the repo (margin/regulatory work) \u2014 visa-adoption events are testable against Airbnb's long-stay night share by region."
+  ]
+ },
+ {
+  "key": "github:0brien18/global-emigration-dataset",
+  "url": "https://github.com/0brien18/global-emigration-dataset",
+  "name": "global-emigration-dataset",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "9 committed CSVs: easiest-countries-2026.csv, digital-nomad-visas-2026.csv (income requirements per programme), visa-processing-times-2026.csv, immigration-pathways-by-category-2026.csv, visa-thresholds-global-2026.csv, cost-of-living-global-2026.csv, salary-by-profession-global-2026.csv, quality-of-life-global-2026.csv, data-dictionary.csv. Covers 190+ countries, 2,500+ visa/residency pathways, sourced from a third-party site (WhereToEmigrate.io), July 2026 snapshot, CC BY 4.0, only 2 commits.",
+  "why_useful": "Broad digital-nomad-visa and cost-of-living cross-country dataset (gap 16); the cost-of-living-global-2026.csv could proxy destination attractiveness/affordability shifts relevant to nights mix, though provenance (a single third-party site scrape) and only 2 commits warrant caution.",
+  "potential": "high",
+  "gap_targets": [
+   16
+  ],
+  "geography": "190+ countries",
+  "time_coverage": "single July 2026 snapshot, claimed quarterly refresh",
+  "size_hint": "9 CSVs, 2,500+ pathway rows",
+  "license": "CC BY 4.0",
+  "last_activity": "2 commits, 2026",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)",
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Broad digital-nomad-visa and cost-of-living cross-country dataset (gap 16); the cost-of-living-global-2026.csv could proxy destination attractiveness/affordability shifts relevant to nights mix, though provenance (a single third-party site scrape) and only 2 commits warrant caution.",
+   "Directly fills gap 16 (remote-work/long-stay demand, digital-nomad visa datasets) with a structured, country-level digital-nomad-visa panel that could proxy long-stay demand growth markets for Airbnb.",
+   "A broader, non-academic companion to the Digital-Nomad-Research package for gap 16 -- gives income thresholds and processing times per digital-nomad program, which is the input needed to model how easy/attractive long-stay remote-work travel is into a given country, a plausible driver of ABNB's long-stay/EMEA-APAC nights mix.",
+   "Broader superset of the nomad-visa idea (gap #16); mostly redundant with the two more focused datasets above but wider country coverage could fill APAC/LatAm gaps they miss."
+  ]
+ },
+ {
+  "key": "github:markphamm/local_warehouse_pipeline",
+  "url": "https://github.com/MarkPhamm/local_warehouse_pipeline",
+  "name": "MarkPhamm/local_warehouse_pipeline",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A local-first ELT pipeline (dlt + PyArrow extraction, DuckDB + dbt transform, Prefect orchestration, Visivo dashboards) that pulls CFPB consumer-complaint data live from the CFPB complaints API. Users configure target companies and start dates in src/cfg/config.py; staged data lands as daily Parquet files under landing/cfpb_complaints/YYYY_MM_DD/, one file per company per day, supporting incremental and historical backfills. MIT-licensed, updated 27 Jun 2026, 11 stars.",
+  "why_useful": "A ready-made, working, non-Airbnb-site method to pull CFPB complaint records filtered to a target company \u2014 pointed at 'Airbnb, Inc.' as the configured company this becomes exactly the sanctioned CFPB-complaints-about-Airbnb dataset the theme asks for (refund/cancellation complaint counts and text as a service-friction proxy), without scraping airbnb.com itself.",
+  "potential": "high",
+  "license": "MIT",
+  "last_activity": "2026-06-27",
+  "geography": "US",
+  "time_coverage": "configurable start date to present, daily granularity",
+  "size_hint": "pipeline code, not a static dataset; output scales with configured pull window",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "A ready-made, working, non-Airbnb-site method to pull CFPB complaint records filtered to a target company \u2014 pointed at 'Airbnb, Inc.' as the configured company this becomes exactly the sanctioned CFPB-complaints-about-Airbnb dataset the theme asks for (refund/cancellation complaint counts and text as a service-friction proxy), without scraping airbnb.com itself."
+  ]
+ },
+ {
+  "key": "github:thisiszaq/nowcasting-mexico",
+  "url": "https://github.com/thisisZAQ/nowcasting-mexico",
+  "name": "nowcasting-mexico",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reproducible Snakemake pipeline nowcasting Mexican IGAE (economic-activity index) 2018-2024 using Banxico API series (exchange rate, CETES, M1, credit), INEGI flat files (industrial production, retail sales, unemployment), Google Trends (7 keywords) and Google Mobility (2020-2022). Implements AR(4), MIDAS, DFM, LASSO, Ridge, Random Forest with pseudo-out-of-sample evaluation, R+Python, Zenodo DOI 10.5281/zenodo.20563443 for the writeup. No committed data files, but automated pull scripts for all sources.",
+  "why_useful": "Directly answers gap #17 (nowcasting with mixed-frequency data, MIDAS/DFM) applied to Mexican macro activity, which is a LatAm demand proxy for ABNB's Mexico City market; the code pattern (Banxico pull + Trends + mobility + MIDAS) is reusable for a Mexico travel-demand nowcast.",
+  "potential": "high",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "geography": "Mexico",
+  "time_coverage": "not stated in listing, IGAE monthly series",
+  "size_hint": "small repo, code + replication package",
+  "license": "other (custom, check Zenodo terms)",
+  "last_activity": "2026-07-14",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Directly answers gap #17 (nowcasting with mixed-frequency data, MIDAS/DFM) applied to Mexican macro activity, which is a LatAm demand proxy for ABNB's Mexico City market; the code pattern (Banxico pull + Trends + mobility + MIDAS) is reusable for a Mexico travel-demand nowcast.",
+   "Fills gap #7 (LatAm regional travel/economic volume \u2014 Mexico specifically) via a live Banxico API client plus a full MIDAS/DFM nowcasting toolkit (also relevant to gap #17's 'nowcasting with mixed-frequency data' ask), reusable as a template even if the Google Trends leg alone is weak.",
+   "Direct template for gap #7 (LatAm regional travel/consumer volume, esp. Mexico DATATUR/INEGI-adjacent) and gap #17 (mixed-frequency nowcasting methods incl. MIDAS/DFM combined with Google Trends and mobility data) \u2014 could be adapted to nowcast ABNB LatAm nights using Mexico macro + Trends + mobility as regressors, and the MIDAS/DFM code is directly reusable methodology."
+  ]
+ },
+ {
+  "key": "github:openstates/openstates-scrapers",
+  "url": "https://github.com/openstates/openstates-scrapers",
+  "name": "openstates-scrapers",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open States project's scraper codebase (22,236 commits, GPL-3.0, actively maintained) covering bills and votes for all 50 US state legislatures, feeding the Open States API/bulk data. Not itself a committed bill-text dataset here, but the live method to pull every state-level short-term-rental bill (registration caps, tax changes, statewide preemption fights) with bill status history.",
+  "why_useful": "A much larger and more actively maintained alternative to pylegiscan for a US state-level STR-ordinance/bill tracker (gap #12): openstates.org's own bulk data/API (not scraped by us) could be queried for 'short-term rental' bills across all 50 states with full text and status history.",
+  "potential": "high",
+  "license": "GPL-3.0",
+  "last_activity": "very active, 22,236 commits total on repo",
+  "geography": "all US states",
+  "time_coverage": "varies by state, generally multi-year current-session coverage via openstates.org bulk data",
+  "size_hint": "large scraper codebase; actual bill data lives on openstates.org, not committed in this repo",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers",
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "A much larger and more actively maintained alternative to pylegiscan for a US state-level STR-ordinance/bill tracker (gap #12): openstates.org's own bulk data/API (not scraped by us) could be queried for 'short-term rental' bills across all 50 states with full text and status history.",
+   "Fills gap #12 (STR ordinance/legislation trackers) at the state level across all 50 states, complementing city-level Legistar coverage; state preemption laws are a first-order driver of city STR caps that affect Airbnb US supply."
+  ]
+ },
+ {
+  "key": "github:js-fitz/str-monitor",
+  "url": "https://github.com/js-fitz/STR-Monitor",
+  "name": "js-fitz/STR-Monitor",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Multi-file panel for monitoring Boston's 2019 Short-Term Rental Ordinance: airbnb.csv (23 merged Inside Airbnb scrapes, 124,730 rows x 31 cols, Jan 2017-Nov 2019, listing IDs/prices/host info/license status), STRE.csv (city STR public registry keyed by SAM_ID, 396,462 rows x 16 cols, registration status + violation counts, downloaded Feb 2020), STR_apps.csv (2,127 rows x 25 cols, internal STR license-application tracker from Boston's Dept of Innovation & Technology, license numbers/status/issue dates), SAMREF.csv (396,462 rows x 43 cols, address/GPS reference), bari_props_2019.csv (174,074 rows x 94 cols, Boston Area Research Initiative property assessment/land-use/owner-occupancy data), and padmapper.csv (917,948 rows x 6 cols, 87 merged scrapes of long-term rental asking prices, Jan 2016-Mar 2020).",
+  "why_useful": "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023 \u2014 Boston 2015-2019 vintage we do not hold) and gap #12 (city STR registration/ordinance enforcement dataset). Also touches gap #13 (Padmapper long-term-rental listings for STR/LTR host-supply crossover). A real natural experiment (ordinance date, enforcement date, before/after listing counts) that could anchor an elasticity estimate for regulation impact on supply.",
+  "potential": "high",
+  "geography": "Boston, MA",
+  "time_coverage": "2015-2019 (listings); ordinance enacted June 2018, enforced Jan-Dec 2019",
+  "size_hint": "124,730 listing rows; 917,948 LTR rows; 174,074 parcels; 396,462 addresses",
+  "license": "none declared",
+  "last_activity": "2020-05-25",
+  "gap_targets": [
+   1,
+   12,
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation",
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023 \u2014 Boston 2015-2019 vintage we do not hold) and gap #12 (city STR registration/ordinance enforcement dataset). Also touches gap #13 (Padmapper long-term-rental listings for STR/LTR host-supply crossover). A real natural experiment (ordinance date, enforcement date, before/after listing counts) that could anchor an elasticity estimate for regulation impact on supply.",
+   "A full worked example of matching a city STR license registry + enforcement/violation counts + application pipeline to Inside Airbnb listings and long-term rental comps around a real STR ordinance (owner-occupancy requirement, per-night fines). Directly analogous to the HOA/condo STR-ban and municipal-registration angle in the theme; the STRE/STR_apps registry design is a template for building a similar panel for other cities (e.g., Barcelona/Amsterdam/Paris licensing) even though the data itself is Boston-only and stops in 2020."
+  ]
+ },
+ {
+  "key": "github:datanews/illegal-hotel-inspections",
+  "url": "https://github.com/datanews/illegal-hotel-inspections",
+  "name": "datanews/illegal-hotel-inspections",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "inspections.csv, one row per inspection, 2,684 inspection records (~2,491 after excluding 193 unrelated reports) from NYC Mayor's Office of Special Enforcement (OSE), obtained via FOIL/FOIA request by WNYC. Fields cover property details, inspection rationale, and identified violations for illegal short-term-rental activity. Date range October 2013 through April 2015. Originated as Word docs, converted to HTML, parsed to CSV.",
+  "why_useful": "Direct hit on the NYC OSE enforcement keyword hint in the theme brief; a rare committed, structured extract of actual OSE inspection/violation records rather than a news summary. Old vintage (2013-2015, pre-Local Law 18) limits direct use for a 2026 forecast, but it is a template for what an OSE FOIL pull looks like and could be combined with a fresher FOIL request if the team wants a current NYC enforcement proxy for STR supply suppression.",
+  "potential": "high",
+  "geography": "New York City",
+  "time_coverage": "Oct 2013 - Apr 2015",
+  "size_hint": "~2,684 rows, single CSV",
+  "license": "none listed",
+  "last_activity": "2017-07-21",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "Direct hit on the NYC OSE enforcement keyword hint in the theme brief; a rare committed, structured extract of actual OSE inspection/violation records rather than a news summary. Old vintage (2013-2015, pre-Local Law 18) limits direct use for a 2026 forecast, but it is a template for what an OSE FOIL pull looks like and could be combined with a fresher FOIL request if the team wants a current NYC enforcement proxy for STR supply suppression.",
+   "Direct historical NYC OSE enforcement microdata (this scout's core target and gap #12 regulatory tracker). Pre-dates our held NYC OSE dataset and could extend the enforcement-intensity time series further back (2013-15), useful as a base-period comparator for post-Local-Law-18 enforcement intensity."
+  ]
+ },
+ {
+  "key": "github:jastephan63/str-regulation-housing",
+  "url": "https://github.com/jastephan63/str-regulation-housing",
+  "name": "str-regulation-housing",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "ETH Zurich master's thesis (2024) replication package, 'Regulatory Repercussions: how municipal short-term rental regulation affects US housing costs'. Two committed CSVs: regulatory_data.csv (131 US cities across 44 states, coded municipal STR-ordinance 'prohibitiveness scores' 0.5-5.0 covering hosted vs. unhosted rental rules and enforcement mechanisms) and longitudinal_data.csv (2,431 city-month panel rows, 24 California cities, 2015-2023, combining prohibitiveness scores with rental costs, property values, and demographic/economic covariates). Codebooks included; raw ordinance PDFs and MAXQDA project not included but coded results are. MIT licensed.",
+  "why_useful": "Strong direct hit on gap #12 (STR ordinance tracker / city registration datasets, US-wide with a quantified prohibitiveness score across 131 cities/44 states) and gap #13 (STR-housing-cost crossover panel, CA cities 2015-2023) -- a genuinely new, committed, structured dataset outside anything we currently hold.",
+  "potential": "high",
+  "gap_targets": [
+   12,
+   13
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-05",
+  "geography": "United States (131 cities/44 states regulatory panel; 24 California cities longitudinal panel)",
+  "time_coverage": "2015-2023 (longitudinal panel); regulatory panel is current as coded (2024 thesis)",
+  "size_hint": "2 CSVs + codebooks, thesis-scale (thousands of rows)",
+  "duplicate_of_holding": "not a duplicate; new to our regulatory event database (32 factors) -- longer time span and quantified score, worth cross-checking against our existing 32-factor database for overlap/extension",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Strong direct hit on gap #12 (STR ordinance tracker / city registration datasets, US-wide with a quantified prohibitiveness score across 131 cities/44 states) and gap #13 (STR-housing-cost crossover panel, CA cities 2015-2023) -- a genuinely new, committed, structured dataset outside anything we currently hold.",
+   "A directly usable, longer (2015-2023) and methodologically rigorous companion to gap #12/#13 (STR-ordinance-to-housing-cost pass-through); the prohibitiveness score is a continuous alternative to the letter-grade regulatory classifications we currently score as \u00b10.5 intervals, and the DiD template is reusable for any of our own city-ban events."
+  ]
+ },
+ {
+  "key": "github:george88b/str-regulation-data",
+  "url": "https://github.com/george88b/str-regulation-data",
+  "name": "str-regulation-data (STR Rule Watch)",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Human-verified US short-term-rental regulation dataset, 176 markets (116 cities, 10 counties, all 50 states). CSV one-row-per-market summary plus JSON per-market records with permit requirements/fees, occupancy rules, stay-length limits, lodging taxes, an 8-level regulatory-status categorical (allowed_no_permit -> banned), verbatim source-quote evidence and last-verified dates. CC-BY-4.0, updated 2026-07-30, live counterpart at shortrentalrules.com.",
+  "why_useful": "Finer-grained and more current than our 32-factor regulatory event database and the ~25-dataset municipal registry panel (gap #12); a clean cross-sectional status variable for the 4Q26 regional-mix and North America nights bridge, and a candidate control set for any city-level STR natural-experiment work.",
+  "potential": "high",
+  "geography": "US, 176 markets",
+  "time_coverage": "current snapshot, dated verification fields back several years per market",
+  "license": "CC-BY-4.0",
+  "last_activity": "2026-07-30",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Finer-grained and more current than our 32-factor regulatory event database and the ~25-dataset municipal registry panel (gap #12); a clean cross-sectional status variable for the 4Q26 regional-mix and North America nights bridge, and a candidate control set for any city-level STR natural-experiment work."
+  ]
+ },
+ {
+  "key": "github:arthurheitmann/arctic_shift",
+  "url": "https://github.com/ArthurHeitmann/arctic_shift",
+  "name": "arctic_shift",
+  "category": "social_text_news",
+  "data_kind": "both",
+  "what_it_holds": "Reddit archive/mirror project with three access paths: large bulk dumps (.zst/.zst_blocks/.jsonl/.json, organized by subreddit via GitHub releases and external download links), a public API for ad-hoc queries, and a web UI (arctic_shift_ui, companion repo) for pulling a specific user's or subreddit's history on demand. Actively maintained (76 commits), post-dates the 2023 Pushshift API shutdown and is the closest thing to a working successor. Would need to be pointed at r/airbnb, r/AirBnBHosts and r/travel specifically to pull subreddit-level history back to those subs' creation.",
+  "why_useful": "Gap #14 (Reddit text/social for host/guest sentiment, complaint volume, cancellation/RNPL chatter). This is the main living successor to Pushshift after its 2023 API shutdown -- gives a genuinely current, queryable route to pull r/airbnb, r/AirBnBHosts, r/travel post/comment history (volume, sentiment, keyword trends) rather than a frozen historical dump, which is exactly the kind of point-in-time-extendable text source the team lacks.",
+  "potential": "high",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "full Reddit corpus (submissions+comments, all public subreddits); bulk dumps are multi-TB, filterable to any subreddit",
+  "time_coverage": "Reddit's full history through present (actively updated)",
+  "geography": "global (Reddit, English-language dominant)",
+  "license": "none declared",
+  "last_activity": "2026-09-14",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Gap #14 (Reddit text/social for host/guest sentiment, complaint volume, cancellation/RNPL chatter). This is the main living successor to Pushshift after its 2023 API shutdown -- gives a genuinely current, queryable route to pull r/airbnb, r/AirBnBHosts, r/travel post/comment history (volume, sentiment, keyword trends) rather than a frozen historical dump, which is exactly the kind of point-in-time-extendable text source the team lacks.",
+   "Fills gap 14 (Reddit text/social) directly: this is a live, working way to pull full historical r/airbnb / r/AirBnBHosts / r/travel post+comment history (post volume as engagement proxy, text for host-sentiment/regulation-chatter/RNPL-complaint mining) after Pushshift's official API died in 2023.",
+   "Gives point-in-time host- and guest-community discussion volume/sentiment (host complaints about bookings/cancellations, RNPL chatter, regulation reactions, price complaints) as a leading qualitative read on nights/ADR/RNPL themes that the team has not yet tried at the Reddit-comment-volume level (distinct from web-search-based Google Trends, which already failed)."
+  ]
+ }
+]

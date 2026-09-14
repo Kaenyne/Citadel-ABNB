@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:e1quem/peadreplication",
+  "url": "https://github.com/e1quem/PEADReplication",
+  "name": "PEADReplication",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Academic-style replication and out-of-sample extension of Bernard & Thomas (1989) PEAD, with notebooks (notebooks_OOS, notebooks_sample), a write-up PDF, and papers/ folder; confirmed via directory listing that the committed data/ folder is empty (only a .DS_Store) \u2014 the pipeline is WRDS-dependent and ships no usable data.",
+  "why_useful": "Well-documented replication methodology for PEAD if the team wants to reproduce SUE-decile drift tests, but contributes no free data of its own.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "size_hint": "no committed data (data/ dir empty)",
+  "time_coverage": "unknown",
+  "geography": "US",
+  "license": "MIT",
+  "last_activity": "2026-07-20",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Well-documented replication methodology for PEAD if the team wants to reproduce SUE-decile drift tests, but contributes no free data of its own."
+  ]
+ },
+ {
+  "key": "github:gabbocg/pead",
+  "url": "https://github.com/gabbocg/pead",
+  "name": "pead (SUE construction pipeline, R)",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An R pipeline to construct standardized earnings surprises (SUEs) for U.S. equities via WRDS.",
+  "why_useful": "Reference methodology for building SUE series if the team ever gets WRDS/IBES access; ships no committed data itself.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "size_hint": "small R package, WRDS-dependent",
+  "time_coverage": "unknown",
+  "geography": "US",
+  "license": "unspecified",
+  "last_activity": "2026-05-19",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Reference methodology for building SUE series if the team ever gets WRDS/IBES access; ships no committed data itself."
+  ]
+ },
+ {
+  "key": "github:tripuramgeetanjali/earnings-surprise-drift",
+  "url": "https://github.com/tripuramgeetanjali/earnings-surprise-drift",
+  "name": "earnings-surprise-drift",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python repo (0 stars) describing itself as an 'FTSE earnings-surprise tracker and post-earnings drift event study' -- a UK-market PEAD replication.",
+  "why_useful": "Low direct relevance (FTSE, not US/ABNB peers) but a complete, self-contained earnings-surprise + drift pipeline that could be re-pointed at US tickers; marginal value as a second template alongside the aarushisingh470 repo.",
+  "potential": "low",
+  "geography": "UK (FTSE)",
+  "time_coverage": "unspecified",
+  "size_hint": "small repo, unverified row counts",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Low direct relevance (FTSE, not US/ABNB peers) but a complete, self-contained earnings-surprise + drift pipeline that could be re-pointed at US tickers; marginal value as a second template alongside the aarushisingh470 repo."
+  ]
+ },
+ {
+  "key": "other:https://zenodo.org/search?q=gy%c3%b3di%20airbnb%20covid",
+  "url": "https://zenodo.org/search?q=Gy%C3%B3di%20airbnb%20covid",
+  "name": "Gy\u00f3di (2021) \"Airbnb and hotels during COVID-19\" + \"Spatial Patterns of Airbnb Offers, Hotels and Attractions\" (Zenodo supplementary materials)",
+  "category": "academic_replication",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Zenodo-hosted supplementary materials for two Krist\u00f3f Gy\u00f3di papers: one comparing Airbnb vs hotel pricing/supply flexibility across nine European cities Jan 2018-Sep 2020 (COVID shock), the other on spatial clustering of Airbnb offers vs hotels/attractions across multiple cities. The COVID record itself only has a PDF attached (no raw CSV); the spatial-patterns record is titled '...Supplementary Materials' and may carry data files not confirmed here.",
+  "why_useful": "The COVID paper's 2018-2020 European city-level Airbnb/hotel supply-and-price series would predate and extend our current European coverage if the underlying data (not just the PDF) can be tracked down from the author; flagged for a human to check the actual Zenodo file list before relying on it.",
+  "potential": "low",
+  "geography": "nine European cities",
+  "time_coverage": "Jan 2018 - Sep 2020",
+  "size_hint": "PDF only confirmed (1.2MB); data files unconfirmed",
+  "license": "CC-BY-NC-4.0",
+  "last_activity": "2021 / 2023",
+  "gap_targets": [
+   1,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "The COVID paper's 2018-2020 European city-level Airbnb/hotel supply-and-price series would predate and extend our current European coverage if the underlying data (not just the PDF) can be tracked down from the author; flagged for a human to check the actual Zenodo file list before relying on it."
+  ]
+ },
+ {
+  "key": "github:vgreg/earnings_news_jar",
+  "url": "https://github.com/vgreg/earnings_news_jar",
+  "name": "earnings_news_jar",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code (59% Python, 41% Jupyter Notebook) accompanying the paper \"How Is Earnings News Transmitted to Stock Prices?\" \u2014 an academic replication package studying earnings-announcement information transmission, not company-specific but a methods reference for event-study construction around earnings prints.",
+  "why_useful": "Relevant to gap #17 (event-study packages, earnings-implied-move estimators) as a citable academic methodology repo, though it is general-market rather than travel/OTA-specific.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "N/A",
+  "time_coverage": "unconfirmed",
+  "size_hint": "unconfirmed",
+  "license": "unconfirmed",
+  "last_activity": "unconfirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Relevant to gap #17 (event-study packages, earnings-implied-move estimators) as a citable academic methodology repo, though it is general-market rather than travel/OTA-specific."
+  ]
+ }
+]

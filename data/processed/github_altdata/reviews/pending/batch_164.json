@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:venkatavarshinic/bnpl-project",
+  "url": "https://github.com/VenkataVarshiniC/BNPL-project",
+  "name": "VenkataVarshiniC/BNPL-project",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A BNPL default-modeling project framed around a single question a company like Klarna/Affirm would ask (transaction fees vs default losses). Updated 13 Sep 2026, 0 stars, no license. Likely uses a synthetic or Kaggle-style loan dataset rather than real Klarna/Affirm disclosures \u2014 not confirmed without deeper inspection.",
+  "why_useful": "Low-confidence lead; flagged for completeness under the BNPL keyword but unlikely to carry real, usable Klarna/Affirm public statistics without further checking file contents.",
+  "potential": "low",
+  "license": "none listed",
+  "last_activity": "2026-09-13",
+  "geography": "unclear",
+  "time_coverage": "unclear",
+  "size_hint": "unclear",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Low-confidence lead; flagged for completeness under the BNPL keyword but unlikely to carry real, usable Klarna/Affirm public statistics without further checking file contents."
+  ]
+ },
+ {
+  "key": "github:lmkirvan/cfpb.api",
+  "url": "https://github.com/lmkirvan/cfpb.api",
+  "name": "cfpb.api",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (also forked/maintained at riddlet/cfpb.api) that wraps the CFPB public Consumer Complaint Database API for programmatic querying/filtering by product, company, state, date.",
+  "why_useful": "Alternative-language client for the same official complaint database; useful if the team's pipeline is R-based, and as a cross-check implementation against the Python downloader above.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "live API (2011-present)",
+  "size_hint": "tool only",
+  "license": "unspecified",
+  "last_activity": "2025-02-18 (riddlet fork)",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Alternative-language client for the same official complaint database; useful if the team's pipeline is R-based, and as a cross-check implementation against the Python downloader above."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-cfpb",
+  "url": "https://github.com/pipeworx-io/mcp-cfpb",
+  "name": "mcp-cfpb",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An MCP (Model Context Protocol) server wrapping the free, no-auth CFPB Consumer Financial Protection Bureau complaint database API, exposing search/query tools an LLM agent can call directly.",
+  "why_useful": "Would let an agent query live CFPB complaint counts/trends (e.g. 'Money transfer' or 'Credit card/Prepaid card' complaints mentioning specific BNPL lenders) on demand without hand-rolling API calls; very fresh (13 Sep 2026), so still active.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "live",
+  "size_hint": "tool only",
+  "license": "unspecified",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Would let an agent query live CFPB complaint counts/trends (e.g. 'Money transfer' or 'Credit card/Prepaid card' complaints mentioning specific BNPL lenders) on demand without hand-rolling API calls; very fresh (13 Sep 2026), so still active."
+  ]
+ },
+ {
+  "key": "github:abdoujamiinq/better-business-bureau-bbb-complaint-scraper",
+  "url": "https://github.com/abdoujamiinq/better-business-bureau-bbb-complaint-scraper",
+  "name": "better-business-bureau-bbb-complaint-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A scraper targeting Better Business Bureau (BBB) complaint pages to extract complaint text/metadata for a given company.",
+  "why_useful": "Method only (no committed data) that could, if run against Airbnb's or a BNPL provider's BBB profile, produce a complaint-volume/complaint-text time series; per the rules this is catalogued as a method and left unrun (BBB scraping is a terms-of-service call for a human).",
+  "potential": "low",
+  "geography": "US (BBB)",
+  "time_coverage": "N/A - scraper, not a dataset",
+  "size_hint": "N/A",
+  "license": "unspecified",
+  "last_activity": "2025-12-12",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Method only (no committed data) that could, if run against Airbnb's or a BNPL provider's BBB profile, produce a complaint-volume/complaint-text time series; per the rules this is catalogued as a method and left unrun (BBB scraping is a terms-of-service call for a human)."
+  ]
+ },
+ {
+  "key": "github:aresheelamechn/bulk-bbb",
+  "url": "https://github.com/aresheelamechn/bulk-bbb",
+  "name": "bulk-bbb",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Bulk BBB reviews/complaints extractor tool (scraper), generic across companies.",
+  "why_useful": "Same class as above: a reusable BBB scraping method that could be pointed at Airbnb or Affirm/Klarna if a human clears the terms-of-service question; not run here.",
+  "potential": "low",
+  "geography": "US (BBB)",
+  "time_coverage": "N/A",
+  "size_hint": "N/A",
+  "license": "unspecified",
+  "last_activity": "2025-12-05",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Same class as above: a reusable BBB scraping method that could be pointed at Airbnb or Affirm/Klarna if a human clears the terms-of-service question; not run here."
+  ]
+ }
+]

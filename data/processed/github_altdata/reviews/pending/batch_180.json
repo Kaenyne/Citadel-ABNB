@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:rakeshks7/macro-nowcast-dfm",
+  "url": "https://github.com/Rakeshks7/macro-nowcast-dfm",
+  "name": "macro-nowcast-dfm",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"Production-ready\" GDP nowcasting engine combining Mixed-Frequency Dynamic Factor Models (labelled MIDAS in the description, effectively DFM+MIDAS hybrid) and Kalman filtering to extract real-time macro health signals; small repo (3 stars).",
+  "why_useful": "Small but on-theme MIDAS/DFM/Kalman-filter engine (gap #17) that could be inspected for a compact, dependency-light implementation to adapt for an ABNB consumer-strength nowcast.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "3 stars",
+  "license": "MIT",
+  "last_activity": "2026-08-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Small but on-theme MIDAS/DFM/Kalman-filter engine (gap #17) that could be inspected for a compact, dependency-light implementation to adapt for an ABNB consumer-strength nowcast."
+  ]
+ },
+ {
+  "key": "github:theov07/gdp_forecasting_with_midas_regressions",
+  "url": "https://github.com/theov07/GDP_Forecasting_With_MIDAS_Regressions",
+  "name": "GDP_Forecasting_With_MIDAS_Regressions",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Student/academic project forecasting GDP with MIDAS regressions using mixed-frequency macro indicators; includes data-prep, estimation, and evaluation code (2 stars).",
+  "why_useful": "Small, readable MIDAS-in-Python worked example (gap #17); useful mainly as a teaching reference for implementing MIDAS weighting schemes (Almon lag etc.) rather than as a reusable package.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "2 stars",
+  "license": "unspecified",
+  "last_activity": "2026-05-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Small, readable MIDAS-in-Python worked example (gap #17); useful mainly as a teaching reference for implementing MIDAS weighting schemes (Almon lag etc.) rather than as a reusable package."
+  ]
+ },
+ {
+  "key": "github:stefhooy/midas_capstone",
+  "url": "https://github.com/stefhooy/midas_capstone",
+  "name": "midas_capstone",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "IE University capstone (2026) comparing MIDAS vs ARIMAX for forecasting US Consumer Energy CPI using weekly WTI oil futures data as the high-frequency indicator; includes CLM-SS (a novel MIDAS variant), LASSO-MIDAS, Kernel U-MIDAS, XGBoost and LSTM benchmarks.",
+  "why_useful": "A recent (2026), reasonably rigorous academic comparison of several MIDAS variants against ML benchmarks on a real macro series (gap #17); the CLM-SS/LASSO-MIDAS/Kernel U-MIDAS code could be repurposed to mix weekly consumer/FX indicators into a quarterly ABNB KPI nowcast.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "US",
+  "time_coverage": "not stated (weekly WTI-based, presumably multi-year)",
+  "size_hint": "0 stars, new repo",
+  "license": "unspecified",
+  "last_activity": "2026-07-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "A recent (2026), reasonably rigorous academic comparison of several MIDAS variants against ML benchmarks on a real macro series (gap #17); the CLM-SS/LASSO-MIDAS/Kernel U-MIDAS code could be repurposed to mix weekly consumer/FX indicators into a quarterly ABNB KPI nowcast."
+  ]
+ },
+ {
+  "key": "github:viczommers/midas-nowcast",
+  "url": "https://github.com/viczommers/MIDAS-Nowcast",
+  "name": "MIDAS-Nowcast",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Near-real-time forecasting of UK household savings using MIDAS regressions on mixed-frequency UK data (savings ratio target, higher-frequency indicators).",
+  "why_useful": "On-theme MIDAS implementation (gap #17); UK household savings is a consumer-strength proxy loosely analogous to the OECD/consumer-confidence work already held, though geography (UK) is outside the team's core NA/APAC/LatAm focus.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "UK",
+  "time_coverage": "not stated",
+  "size_hint": "3 stars",
+  "license": "unspecified",
+  "last_activity": "2025-07-19",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "On-theme MIDAS implementation (gap #17); UK household savings is a consumer-strength proxy loosely analogous to the OECD/consumer-confidence work already held, though geography (UK) is outside the team's core NA/APAC/LatAm focus."
+  ]
+ },
+ {
+  "key": "github:cacoleman16/tsecon",
+  "url": "https://github.com/cacoleman16/tsecon",
+  "name": "tsecon",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "High-performance time-series econometrics library, Rust core with a Python-first API; markets itself as \"validated estimators, a 15-chapter guide, and honest inference by default\" \u2014 general econometric toolkit (not nowcasting-specific per se, but came up under the nowcasting search and covers mixed-frequency-adjacent estimators).",
+  "why_useful": "General-purpose, fast time-series econometrics engine that could underlie custom bridge-equation/MIDAS estimation for ABNB KPIs if existing pure-Python tools (statsmodels) are too slow for repeated point-in-time refits across W1/W2 windows.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "84 stars",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "General-purpose, fast time-series econometrics engine that could underlie custom bridge-equation/MIDAS estimation for ABNB KPIs if existing pure-Python tools (statsmodels) are too slow for repeated point-in-time refits across W1/W2 windows."
+  ]
+ }
+]

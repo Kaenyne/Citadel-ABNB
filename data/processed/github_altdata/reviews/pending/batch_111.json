@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:ruralinnovation/cori.data.qcew",
+  "url": "https://github.com/ruralinnovation/cori.data.qcew",
+  "name": "cori.data.qcew",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (Community Opportunity and Resilience Index project) wrapping the BLS QCEW API/S3 mirror. get_sector_employment()/get_sector_wages() pull county- (~3,100 counties) and state-level employment and average pay for 11 BLS supersectors including 'Leisure and Hospitality' (NAICS 71-72), 1990-present. Snapshots are tagged with a vintage label (e.g. vintage_2025) with a _LATEST pointer on S3 -- i.e. genuinely point-in-time/vintaged QCEW data, not just a live pull. MIT-licensed, 26 commits, last touched within recent weeks.",
+  "why_useful": "Direct match to the theme (BLS QCEW leisure & hospitality) and, unusually, ships vintage tags rather than only current-vintage data -- relevant to CONTEXT.md gap #4 (point-in-time macro vintages). Could give county-level hotel/restaurant wage and headcount trends for STR-heavy metros (feeds a hospitality labor-cost proxy for ABNB host/competitor cost pressure, and a leisure/hospitality employment series as a demand-side leading indicator).",
+  "potential": "high",
+  "gap_targets": [
+   4,
+   8
+  ],
+  "license": "MIT",
+  "geography": "US, county + state",
+  "time_coverage": "1990-present, vintage-tagged snapshots",
+  "size_hint": "package + S3-hosted vintage data (not committed as flat files in the repo)",
+  "last_activity": "recent (2026, exact date not confirmed)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Direct match to the theme (BLS QCEW leisure & hospitality) and, unusually, ships vintage tags rather than only current-vintage data -- relevant to CONTEXT.md gap #4 (point-in-time macro vintages). Could give county-level hotel/restaurant wage and headcount trends for STR-heavy metros (feeds a hospitality labor-cost proxy for ABNB host/competitor cost pressure, and a leisure/hospitality employment series as a demand-side leading indicator)."
+  ]
+ },
+ {
+  "key": "github:hanlulong/openecon-data",
+  "url": "https://github.com/hanlulong/openecon-data",
+  "name": "hanlulong/openecon-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server / web UI indexing 330K+ economic indicators across 11 providers in one query surface: FRED, World Bank, IMF, Eurostat, UN Comtrade, BIS, Statistics Canada, OECD, ExchangeRate-API, CoinGecko, ChinaMacro. Not a vintage/point-in-time store -- pulls current values on request.",
+  "why_useful": "A single tool to pull Eurostat tourism series alongside IMF/World Bank macro series for cross-checking European consumer strength and travel demand context; broader than tourism-specific but reaches the same Eurostat tour_occ/tour_ce codes plus IMF/World Bank travel-services trade data.",
+  "potential": "medium",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "license": "unspecified (marked Other)",
+  "last_activity": "2026-09-13",
+  "geography": "Global, incl. Eurostat/EU",
+  "time_coverage": "as published by underlying sources",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "A single tool to pull Eurostat tourism series alongside IMF/World Bank macro series for cross-checking European consumer strength and travel demand context; broader than tourism-specific but reaches the same Eurostat tour_occ/tour_ce codes plus IMF/World Bank travel-services trade data.",
+   "One integration point that reaches IMF's tourism/travel-services balance-of-payments series and Eurostat tables together -- could shortcut building separate IMF and Eurostat pulls for the country-level travel-demand and platform-tourism gaps (7, 6).",
+   "One-stop discovery layer to quickly check whether a BIS REER series, an IMF BOP travel line, or a UN Comtrade cross-border series exists before writing a bespoke puller for each source; useful for triage even though it is not point-in-time."
+  ]
+ },
+ {
+  "key": "github:inseefrlab/pynsee",
+  "url": "https://github.com/InseeFrLab/pynsee",
+  "name": "InseeFrLab/pynsee",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official INSEE lab Python package (1,900 commits, MIT) with 'quick access to more than 150,000 macroeconomic series' plus local data and SIRENE company registry, from INSEE and IGN APIs. No tourism-specific dataset called out in the README, but INSEE's macro series catalogue includes hotel/tourist-accommodation occupancy ('fr\u00e9quentation touristique') series reachable through the same generic series-code interface.",
+  "why_useful": "If France-specific tourist accommodation occupancy or consumer-spend-adjacent series are wanted for the EMEA regional split, this is the maintained, official client rather than scraping insee.fr; also usable for the France leg of gap 6 (consumer spend panels).",
+  "potential": "medium",
+  "geography": "France",
+  "time_coverage": "current INSEE catalogue depth",
+  "size_hint": "library only",
+  "license": "MIT",
+  "last_activity": "active (1,900 commits)",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "If France-specific tourist accommodation occupancy or consumer-spend-adjacent series are wanted for the EMEA regional split, this is the maintained, official client rather than scraping insee.fr; also usable for the France leg of gap 6 (consumer spend panels)."
+  ]
+ },
+ {
+  "key": "github:aeturrell/real-time-data",
+  "url": "https://github.com/aeturrell/real-time-data",
+  "name": "aeturrell/real-time-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Repo that scrapes/aggregates real-time UK ONS datasets AND their revision histories ('revision triangles') into tidy Parquet files, config-driven (config.toml lists included series), GitHub-Actions-automated weekly updates. MIT license, 14 commits so far. Exact series list/time coverage not visible from README alone \u2014 needs a config.toml check.",
+  "why_useful": "This is exactly the ALFRED-style point-in-time vintage tooling gap 4 calls out, but for UK data instead of US: if ONS travel/tourism or consumer-card-spend series are in its config, it gives ready-made vintage (as-first-published vs revised) series for the EMEA regional model without building vintage capture from scratch.",
+  "potential": "medium",
+  "geography": "UK (ONS)",
+  "time_coverage": "ongoing weekly capture, historical depth per ONS series",
+  "size_hint": "Parquet files, config-driven, small repo (14 commits)",
+  "license": "MIT",
+  "last_activity": "active, weekly automation implied",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "This is exactly the ALFRED-style point-in-time vintage tooling gap 4 calls out, but for UK data instead of US: if ONS travel/tourism or consumer-card-spend series are in its config, it gives ready-made vintage (as-first-published vs revised) series for the EMEA regional model without building vintage capture from scratch."
+  ]
+ },
+ {
+  "key": "github:datasets/oil-prices",
+  "url": "https://github.com/datasets/oil-prices",
+  "name": "oil-prices (Frictionless Data / datasets org)",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Data package + pipeline script (oil_prices_flow.py, dataflows library) that rebuilds Brent (from 20 May 1987) and WTI Cushing OK (from 2 Jan 1986) spot crude prices at annual/monthly/weekly/daily frequency, sourced from the EIA API. Long-running, well-maintained 'datasets' GitHub org, public domain.",
+  "why_useful": "Crude oil price is the upstream driver of retail gasoline/diesel prices and airfare fuel surcharges; a long, clean, well-documented daily/weekly crude series is a useful macro input for a driving-cost or airfare-cost proxy even though it is one step removed from pump prices.",
+  "potential": "medium",
+  "geography": "global benchmark (Brent, WTI)",
+  "time_coverage": "1986/1987 - present, daily/weekly/monthly/annual",
+  "size_hint": "small CSVs, thousands of daily rows over ~39 years",
+  "license": "Public domain (US govt data) / PDDL for the wrapper",
+  "last_activity": "long-running frictionlessdata/datasets org repo, periodically updated",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "distinct from what we hold (we have FRED CPI/airfares, not this raw Brent/WTI spot series)",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Crude oil price is the upstream driver of retail gasoline/diesel prices and airfare fuel surcharges; a long, clean, well-documented daily/weekly crude series is a useful macro input for a driving-cost or airfare-cost proxy even though it is one step removed from pump prices."
+  ]
+ }
+]

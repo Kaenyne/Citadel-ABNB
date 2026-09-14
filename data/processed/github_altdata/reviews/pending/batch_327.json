@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:samuelepa/turo-scraper",
+  "url": "https://github.com/SamuelEpa/turo-scraper",
+  "name": "SamuelEpa/turo-scraper",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small, unstarred scraper of Turo (peer-to-peer car rental) listings/prices. Two near-identical sibling repos exist (ConnerZhao/turo-scraper, jacob-petterle/turo-scraper), all low-activity personal projects, no committed data.",
+  "why_useful": "Turo is a same-sharing-economy, same-regulatory-fight adjacent marketplace (car rental instead of lodging); a listing-density/price scraper here could in principle proxy local leisure-travel intensity in a market the way STR listing density does, and Turo faces parallel airport/city ordinance fights that sometimes bundle with STR rules. Weak: no maintained repo, no data files, thin evidence this reads on Airbnb KPIs.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2025-08-10 (most recent of the three)",
+  "geography": "unspecified (Turo is US/Canada/UK/France)",
+  "time_coverage": "none, scraper only",
+  "size_hint": "code only",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Turo is a same-sharing-economy, same-regulatory-fight adjacent marketplace (car rental instead of lodging); a listing-density/price scraper here could in principle proxy local leisure-travel intensity in a market the way STR listing density does, and Turo faces parallel airport/city ordinance fights that sometimes bundle with STR rules. Weak: no maintained repo, no data files, thin evidence this reads on Airbnb KPIs."
+  ]
+ },
+ {
+  "key": "github:clemred/getaround-api",
+  "url": "https://github.com/clemred/Getaround-api",
+  "name": "clemred/Getaround-api",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "One of several near-identical student bootcamp (Jedha-style) projects using a fixed, small Getaround (European car-sharing) rental-delay/pricing CSV dataset for an ML price-prediction exercise. Several forks/clones exist (YoussefMrbt/Getaround_api, tryph0n/getaround_api, Rodelinexavier/GETAROUNDML_API, loft897/getaround-api) all sharing the same underlying dataset.",
+  "why_useful": "Getaround is a European car-sharing marketplace; a committed dataset of rental durations/delays/pricing is a genuine data file (not just a method), but it is a fixed teaching snapshot (small, dated, no update cadence) rather than a live or point-in-time series \u2014 thin value.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2026-09-03 (most recent fork)",
+  "geography": "Europe (Getaround/Drivy legacy markets)",
+  "time_coverage": "single static snapshot, span unclear",
+  "size_hint": "one small CSV per project",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Getaround is a European car-sharing marketplace; a committed dataset of rental durations/delays/pricing is a genuine data file (not just a method), but it is a fixed teaching snapshot (small, dated, no update cadence) rather than a live or point-in-time series \u2014 thin value."
+  ]
+ },
+ {
+  "key": "github:oliversherouse/wbdata",
+  "url": "https://github.com/OliverSherouse/wbdata",
+  "name": "OliverSherouse/wbdata",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python equivalent of the WDI package (212 stars, GPL-2.0) -- same World Bank indicator catalogue (tourism arrivals/receipts, remittances, FX reserves, current-account balance) accessible from Python/pandas directly.",
+  "why_useful": "Same value as WDI above but in Python, which fits the repo's existing pandas/duckdb tooling better than an R dependency.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "annual, historical",
+  "size_hint": "n/a (API wrapper)",
+  "license": "GPL-2.0",
+  "last_activity": "2026-08-16",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "same underlying World Bank API as vincentarelbundock/WDI, different language binding",
+  "hits": 1,
+  "themes": [
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Same value as WDI above but in Python, which fits the repo's existing pandas/duckdb tooling better than an R dependency."
+  ]
+ },
+ {
+  "key": "github:mwouts/world_bank_data",
+  "url": "https://github.com/mwouts/world_bank_data",
+  "name": "mwouts/world_bank_data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Another Python World Bank API wrapper (144 stars, MIT) with a pandas-friendly interface to the same indicator set (tourism, remittances, reserves, current account).",
+  "why_useful": "Third option for the same World Bank tourism/remittance/reserves data; MIT-licensed, worth noting as an alternative if wbdata's GPL-2.0 is a concern.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "annual, historical",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "2026-04-04",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "same underlying World Bank API as the two entries above",
+  "hits": 1,
+  "themes": [
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Third option for the same World Bank tourism/remittance/reserves data; MIT-licensed, worth noting as an alternative if wbdata's GPL-2.0 is a concern."
+  ]
+ },
+ {
+  "key": "github:[topic]/flight-delay",
+  "url": "https://github.com/[topic]/flight-delay (DOT-BTS-based repos, e.g. \"Airline Flight Delay Intelligence\", \"US Flight Delay Diagnosis\")",
+  "name": "DOT BTS on-time-performance derivative projects (multiple)",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Several student/analyst projects hold static extracts of the US DOT BTS On-Time Performance dataset (millions of US domestic flights, airline, airport, delay cause, cancellation flag) -- one explicitly 6.2M+ flights/14 airlines/628 airports, another 745K flights with weather features.",
+  "why_useful": "Flight cancellation/delay rates by airport and date (especially around storms/strikes) are a plausible leading proxy for travel disruption that could depress or reschedule STR bookings in the same markets/weeks -- gap #10 explicitly names BTS T-100/DB1B; these repos hold ready-cleaned subsets that avoid a fresh BTS pull, though none appear point-in-time or updated live.",
+  "potential": "low",
+  "size_hint": "medium, several-hundred-thousand to multi-million row CSVs",
+  "geography": "United States (domestic flights)",
+  "time_coverage": "varies by project, generally recent historical years, static snapshot",
+  "license": "varies, mostly unspecified",
+  "last_activity": "varies",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Flight cancellation/delay rates by airport and date (especially around storms/strikes) are a plausible leading proxy for travel disruption that could depress or reschedule STR bookings in the same markets/weeks -- gap #10 explicitly names BTS T-100/DB1B; these repos hold ready-cleaned subsets that avoid a fresh BTS pull, though none appear point-in-time or updated live."
+  ]
+ }
+]

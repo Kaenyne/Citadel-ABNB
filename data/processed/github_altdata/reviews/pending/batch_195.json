@@ -1,0 +1,126 @@
+[
+ {
+  "key": "github:suslovanton/ota-market-equilibrium-and-drift",
+  "url": "https://github.com/SuslovAnton/ota-market-equilibrium-and-drift",
+  "name": "ota-market-equilibrium-and-drift",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"Detection Engine\" using Log-CUSUM to detect drift in RevPAR and Room-Nights weeks before quarterly targets are hit; appears to be a statistical-monitoring method demo, not a data feed. No confirmed committed hotel data; needs a contents check.",
+  "why_useful": "If it ships any sample RevPAR/room-nights series alongside the detection method, it would be a small but real time series for gap #8; the CUSUM drift-detection method itself could also be reused as a nowcasting technique (gap #17).",
+  "potential": "low",
+  "geography": "unspecified",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown, not verified",
+  "license": "unspecified",
+  "last_activity": "2026-03-23",
+  "gap_targets": [
+   8,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR supply from CoStar/CBRE/JLL/Cushman public reports scraped; real-estate broker STR reports with data"
+  ],
+  "why_all": [
+   "If it ships any sample RevPAR/room-nights series alongside the detection method, it would be a small but real time series for gap #8; the CUSUM drift-detection method itself could also be reused as a nowcasting technique (gap #17)."
+  ]
+ },
+ {
+  "key": "github:topics/short-term-rental",
+  "url": "https://github.com/topics/short-term-rental",
+  "name": "GitHub topic: short-term-rental (survey page, not a single repo)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Topic-tag listing surfacing STR-adjacent repos: Kamra-PMS (open-source hotel/STR property-management system), RentTools.io (Airbnb/Booking.com calendar sync tool), several Airbnb-scraper and MCP-agent projects (HasData/airbnb-mcp, everythingscraper/airbnb-scraper claiming occupancy/ADR/RevPAR extraction via Apify), and rochiecuevas/shared_accommodations (San Francisco peer-to-peer rental housing-market impact analysis). No committed multi-city European STR dataset found among the ~20 repos surveyed.",
+  "why_useful": "Confirms the current landscape of STR tooling repos is dominated by generic commercial scrapers/PMS software rather than city-specific European STR datasets; the everythingscraper/airbnb-scraper (claims ADR/RevPAR/occupancy extraction) is the only entry that, if it worked and were run against non-prohibited sources, would speak to gap #2 (realised ADR/occupancy) -- but it scrapes airbnb.com directly, which is out of scope for us to run.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "Global, generic",
+  "time_coverage": "N/A (live tools, not historical datasets)",
+  "size_hint": "N/A",
+  "license": "varies by repo",
+  "last_activity": "varies; topic page reflects current top repos as of Sep 2026",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "Confirms the current landscape of STR tooling repos is dominated by generic commercial scrapers/PMS software rather than city-specific European STR datasets; the everythingscraper/airbnb-scraper (claims ADR/RevPAR/occupancy extraction) is the only entry that, if it worked and were run against non-prohibited sources, would speak to gap #2 (realised ADR/occupancy) -- but it scrapes airbnb.com directly, which is out of scope for us to run."
+  ]
+ },
+ {
+  "key": "github:hucodelab/airbnb_webscraping",
+  "url": "https://github.com/hucodelab/airbnb_webscraping",
+  "name": "airbnb_webscraping (hucodelab)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A small scraper described as performing 'web scraping of airbnb in Sao Paulo - BR'. 1 star, last updated 2022-06-25. Method/tooling repo, not a stored dataset; not run per CLAUDE.md rule 6 (scraping airbnb.com directly is a terms-of-service decision for a human).",
+  "why_useful": "Illustrates that Sao Paulo listing-level scraping code exists publicly, but it scrapes airbnb.com directly, which is outside our sanctioned-source list; catalogued as a method only, left unrun.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "Sao Paulo, Brazil",
+  "time_coverage": "n/a (scraper, not a dataset)",
+  "size_hint": "small script repo",
+  "license": "none declared",
+  "last_activity": "2022-06-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Illustrates that Sao Paulo listing-level scraping code exists publicly, but it scrapes airbnb.com directly, which is outside our sanctioned-source list; catalogued as a method only, left unrun."
+  ]
+ },
+ {
+  "key": "github:zachporreca/safegraph_did_piecewise_likelihood_mle",
+  "url": "https://github.com/zachporreca/safegraph_DiD_piecewise_likelihood_MLE",
+  "name": "zachporreca/safegraph_DiD_piecewise_likelihood_MLE",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Julia script (1 star, no license stated) implementing a difference-in-differences / piecewise-likelihood MLE estimator specifically built to handle the censoring and truncation quirks of publicly released SafeGraph Patterns data.",
+  "why_useful": "If the team ever gets hold of any POI-visit panel (SafeGraph, Advan, or a municipal foot-traffic dataset) with similar top/bottom-coding, this is a directly reusable estimator rather than a from-scratch build.",
+  "geography": "n/a (methodology)",
+  "time_coverage": "n/a",
+  "size_hint": "single script",
+  "license": "none stated",
+  "last_activity": "2024-03-27",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "If the team ever gets hold of any POI-visit panel (SafeGraph, Advan, or a municipal foot-traffic dataset) with similar top/bottom-coding, this is a directly reusable estimator rather than a from-scratch build."
+  ]
+ },
+ {
+  "key": "github:mypaperdata/texas-nightlights-economic-activity",
+  "url": "https://github.com/mypaperdata/Texas-Nightlights-Economic-Activity",
+  "name": "Texas-Nightlights-Economic-Activity",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code pipeline (Google Earth Engine + deep learning) pulling VIIRS nighttime-lights imagery as a proxy for sub-state local economic activity in Texas.",
+  "why_useful": "A smaller, state-level template for the same nighttime-lights-as-tourism-proxy idea, worth checking as an alternative extraction method to the global one above, e.g. around Austin/Hill Country STR clusters already in our Inside Airbnb panel.",
+  "potential": "low",
+  "geography": "Texas, US",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "A smaller, state-level template for the same nighttime-lights-as-tourism-proxy idea, worth checking as an alternative extraction method to the global one above, e.g. around Austin/Hill Country STR clusters already in our Inside Airbnb panel."
+  ]
+ }
+]

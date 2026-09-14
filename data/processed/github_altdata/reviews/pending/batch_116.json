@@ -1,0 +1,106 @@
+[
+ {
+  "key": "github:eighty6orel/eighty6-restaurant-labor-reproduction",
+  "url": "https://github.com/eighty6orel/eighty6-restaurant-labor-reproduction",
+  "name": "eighty6-restaurant-labor-reproduction",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Reproduction package for restaurant wage-share research papers. Pulls BLS QCEW API data (via eighty6data.com) for restaurants (NAICS 7225), full-service (722511), limited-service (722513/722514/722515), and private all-industry wage bills, 2014Q1-2024Q1 (2014-2025 with a paid Pro plan), covering 2,538 US counties plus national and top-100 CBSA aggregates. Ships offline fixtures for 8 sample counties, expected/headlines.json with canonical numbers+tolerances for validation, and a rebuilt minimum-wage history (from Vaghul-Zipperer v1.4.0 + DOL sources). MIT-licensed.",
+  "why_useful": "A ready-made, academically-anchored restaurant/food-service labor-cost series (wages, minimum-wage history) at county and CBSA granularity -- a direct proxy for hospitality-adjacent labor cost inflation that could feed an Airbnb host cost / margin-pressure narrative, and the minimum-wage history file is a useful standalone dataset.",
+  "potential": "medium",
+  "gap_targets": [
+   8
+  ],
+  "license": "MIT",
+  "geography": "US, county + CBSA + national",
+  "time_coverage": "2014Q1-2024Q1 (free), extendable to 2025 with paid API key",
+  "size_hint": "small repo (fixtures + JSON), full data requires live API pull, some tiers paid",
+  "last_activity": "2026-08-21",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A ready-made, academically-anchored restaurant/food-service labor-cost series (wages, minimum-wage history) at county and CBSA granularity -- a direct proxy for hospitality-adjacent labor cost inflation that could feed an Airbnb host cost / margin-pressure narrative, and the minimum-wage history file is a useful standalone dataset."
+  ]
+ },
+ {
+  "key": "github:armollica/qcew-data",
+  "url": "https://github.com/armollica/qcew-data",
+  "name": "qcew-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "download-data.sh + import-data.py: downloads BLS QCEW annual CSVs 1990-2015 (25 years, ~36.4 GB uncompressed) at county/MSA/state/national level, all NAICS industries incl. NAICS 72 (Accommodation & Food Services) and NAICS 71/72/812 leisure-adjacent sectors, and loads them into a Postgres/SQLAlchemy database. No data committed, pull-only.",
+  "why_useful": "A one-command pull path for county- and MSA-level QCEW employment/wage counts for the accommodation/food-services supersector, which is the closest public proxy for Airbnb-adjacent hospitality labour cost and headcount trends (STR cleaning/maintenance labour cost inputs, margin cost-line context). Not in our current holdings (we hold FRED/BLS CPI series but no QCEW industry-level puller).",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A one-command pull path for county- and MSA-level QCEW employment/wage counts for the accommodation/food-services supersector, which is the closest public proxy for Airbnb-adjacent hospitality labour cost and headcount trends (STR cleaning/maintenance labour cost inputs, margin cost-line context). Not in our current holdings (we hold FRED/BLS CPI series but no QCEW industry-level puller)."
+  ]
+ },
+ {
+  "key": "github:eloualiche/entrydatar",
+  "url": "https://github.com/eloualiche/entrydatar",
+  "name": "entrydatar",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (10 stars, 117 commits) that downloads and aggregates U.S. firm-entry statistics: QCEW establishment-level entry data 1975-2016 (NAICS 1990-2016, SIC 1975-2000), Business Employment Dynamics (BED) establishment entry at 3-digit NAICS 1992Q3-2015Q1, and County Business Patterns (CBP) annual county employment. Includes vignettes for Bartik-shock construction.",
+  "why_useful": "Gives establishment entry/exit rates by industry (including accommodation/food services, NAICS 72) at the county level over four decades \u2014 a possible proxy for hospitality-sector business formation/closure cycles that could contextualize STR/hotel supply growth alongside labour-cost pressure. Longer time span than anything we hold on hospitality establishment counts.",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Gives establishment entry/exit rates by industry (including accommodation/food services, NAICS 72) at the county level over four decades \u2014 a possible proxy for hospitality-sector business formation/closure cycles that could contextualize STR/hotel supply growth alongside labour-cost pressure. Longer time span than anything we hold on hospitality establishment counts."
+  ]
+ },
+ {
+  "key": "github:traviscyronek/bls_download",
+  "url": "https://github.com/traviscyronek/bls_download",
+  "name": "bls_download",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python wrapper (20 commits) for the BLS Public Data API v2.0: labstat_download.py pulls any LABSTAT series by Series ID (handles the 50-series/10-sec and 20-year API constraints), qcew_download.py retrieves QCEW files, cps_download_v2.py pulls monthly CPS basic files from NBER. Generic \u2014 not restricted to any industry, so it can pull CES leisure & hospitality employment (SUAB series) and average-hourly-earnings series for NAICS 70-72 as well as QCEW industry detail. No data committed, requires free BLS API key (not a paid key).",
+  "why_useful": "A ready-made, no-cost API client that could pull CES leisure & hospitality employment/wage series and QCEW industry detail on a point-in-time-friendly cadence (each pull is a snapshot), which would let the team build its own hospitality labour-cost/headcount time series to feed the margin model's COGS/opex assumptions.",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A ready-made, no-cost API client that could pull CES leisure & hospitality employment/wage series and QCEW industry detail on a point-in-time-friendly cadence (each pull is a snapshot), which would let the team build its own hospitality labour-cost/headcount time series to feed the margin model's COGS/opex assumptions."
+  ]
+ },
+ {
+  "key": "github:jessesiminitz/remittance-update",
+  "url": "https://github.com/jessesiminitz/remittance-update",
+  "name": "remittance-update",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Reconstructed World Bank/KNOMAD bilateral remittance matrix extended through 2025 (KNOMAD's official matrix stops at 2021). data/output/ has bilateral_matrix_2000_2025.parquet + .csv (corridor-level flows, country pairs), country_received_2000_2025.csv, country_sent_2000_2025.csv, yearly_summary_2000_2025.csv, plus a validation comparison to the official 2021 matrix (0.963 correlation, recovers 93.3% of total flows). Built from UN DESA International Migrant Stock (2020/2024 revisions) + World Bank WDI GNI-per-capita and remittance inflow/outflow totals via WDI API; gaps filled by interpolation/extrapolation capped at +/-20% CAGR, normalized to reported country totals. ~9.3K bilateral cells in 2024 vs ~12.3K earlier years (fewer migrant-stock pairs in later years). Updated 15 days ago (active). Global country coverage, annual 2000-2025.",
+  "why_useful": "Fills numbered gap #6 (consumer spend / cross-border capacity proxy): remittance flows are a standard proxy for diaspora travel and cross-border consumer strength, and this is a maintained, methodologically transparent, point-in-time-labeled (annual vintage) global bilateral series extending past the official KNOMAD 2021 cutoff into 2025 \u2014 useful as a regional (LatAm/APAC/EMEA) demand-strength cross-check for ABNB's regional nights/ADR splits.",
+  "potential": "medium",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "geography": "Global, bilateral country pairs",
+  "time_coverage": "2000-2025 annual (2025 largely extrapolated)",
+  "size_hint": "~9-12K bilateral cells/year x 25 years, parquet + csv",
+  "license": "not stated in README",
+  "last_activity": "~15 days before 2026-09-14 (active)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "Fills numbered gap #6 (consumer spend / cross-border capacity proxy): remittance flows are a standard proxy for diaspora travel and cross-border consumer strength, and this is a maintained, methodologically transparent, point-in-time-labeled (annual vintage) global bilateral series extending past the official KNOMAD 2021 cutoff into 2025 \u2014 useful as a regional (LatAm/APAC/EMEA) demand-strength cross-check for ABNB's regional nights/ADR splits."
+  ]
+ }
+]

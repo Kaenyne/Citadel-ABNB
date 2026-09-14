@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:adsblol/vrs-standing-data",
+  "url": "https://github.com/adsblol/vrs-standing-data",
+  "name": "vrs-standing-data",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Route/airline/airport 'standing data' from the Virtual Radar Server project -- per-callsign route lookups (JSON, e.g. routes/IT/ITY110.json) plus consolidated CSV files for routes and airports, served via GitHub Pages and refreshed hourly (CC0-1.0, 25 commits).",
+  "why_useful": "A free, hourly-refreshed callsign-to-route lookup table; useful as a join layer for any ADS-B-derived flight counting work but does not itself carry capacity or volume figures.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "small; per-callsign JSON + CSV route/airport tables",
+  "time_coverage": "current snapshot, hourly refresh",
+  "geography": "global",
+  "license": "CC0-1.0",
+  "last_activity": "25 commits, hourly automated updates",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "A free, hourly-refreshed callsign-to-route lookup table; useful as a join layer for any ADS-B-derived flight counting work but does not itself carry capacity or volume figures."
+  ]
+ },
+ {
+  "key": "github:strausbergautomationworks/filedroutesdb",
+  "url": "https://github.com/StrausbergAutomationWorks/FiledRoutesDB",
+  "name": "FiledRoutesDB",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Planned dataset of filed flight-plan route pairs (callsign to origin/destination, US air traffic system only) intended to be rebuilt weekly from FAA data, excluding LADD-listed aircraft. As of this check the repo explicitly states 'Nothing is published yet. This repository holds no data' pending FAA clarification on redistribution terms. MIT licensed, 2 commits.",
+  "why_useful": "Not usable today -- flagged only because if/when published it would be a free weekly US route-pair dataset; worth a re-check in a future sweep, not actionable now.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "none published yet",
+  "time_coverage": "n/a (unpublished)",
+  "geography": "United States",
+  "license": "MIT",
+  "last_activity": "2 commits, pre-launch",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Not usable today -- flagged only because if/when published it would be a free weekly US route-pair dataset; worth a re-check in a future sweep, not actionable now."
+  ]
+ },
+ {
+  "key": "github:adwitiyashukla/flightdelay-dbt-warehouse",
+  "url": "https://github.com/adwitiyashukla/flightdelay-dbt-warehouse",
+  "name": "flightdelay-dbt-warehouse",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A dbt/DuckDB dimensional warehouse built on the classic nycflights13 dataset (336,776 NYC-area departures in calendar 2013 from EWR/JFK/LGA) plus OurAirports (86,013 rows) and OpenFlights (6,162 airline rows) as dimension sources.",
+  "why_useful": "Low incremental value -- nycflights13 is a single US market, single year (2013), already-stale teaching dataset; flagged only because it packages OurAirports+OpenFlights joins cleanly, which the other two entries above already cover better.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "OurAirports and OpenFlights entries above; nycflights13 itself is too old/narrow to be useful",
+  "size_hint": "336,776 fact rows, single year, 3 airports",
+  "time_coverage": "calendar year 2013 only",
+  "geography": "New York City area (EWR/JFK/LGA) only",
+  "license": "not stated",
+  "last_activity": "not surfaced",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Low incremental value -- nycflights13 is a single US market, single year (2013), already-stale teaching dataset; flagged only because it packages OurAirports+OpenFlights joins cleanly, which the other two entries above already cover better."
+  ]
+ },
+ {
+  "key": "github:euctrl-pru/opdi",
+  "url": "https://github.com/euctrl-pru/OPDI",
+  "name": "euctrl-pru/OPDI (Open Performance Data Initiative)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python ETL pipeline (9 stages) pulling raw ADS-B state vectors from OpenSky Network S3, aircraft metadata, and OurAirports reference data; generates H3 geospatial reference grids; exports to parquet/CSV.gz on Azure Iceberg/S3. No committed processed datasets themselves; official EUROCONTROL org repo tied to opdi-portal (public data initiative).",
+  "why_useful": "Method to reconstruct flight-level European air traffic (route, airport pairs) from raw ADS-B if a real point-in-time European travel-demand series is needed; heavier lift than a stored dataset but a credible, non-terms-of-service-violating pipeline.",
+  "potential": "low",
+  "geography": "Europe / global via OpenSky",
+  "time_coverage": "unspecified, likely 2020s-present per OpenSky availability",
+  "size_hint": "pipeline code only, no data committed (references a ~35GB external OSM extract not tracked)",
+  "license": "unknown",
+  "last_activity": "active org",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Method to reconstruct flight-level European air traffic (route, airport pairs) from raw ADS-B if a real point-in-time European travel-demand series is needed; heavier lift than a stored dataset but a credible, non-terms-of-service-violating pipeline.",
+   "Could be used to derive flight-count-by-airport time series as an alternate traffic proxy, but requires running the pipeline against OpenSky's raw archive (heavy compute, no committed output dataset) - a method, not a ready dataset; lower immediate usefulness than daio or eurostat."
+  ]
+ },
+ {
+  "key": "github:euctrl-pru/data-app_website",
+  "url": "https://github.com/euctrl-pru/data-app_website",
+  "name": "euctrl-pru/data-app_website",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Website/front-end for the official EUROCONTROL 'Data App' (dashboard at eurocontrol.int/dashboard) -- points to EUROCONTROL's own hosted traffic/statistics dashboards rather than storing data in-repo.",
+  "why_useful": "Confirms EUROCONTROL's own public Data App (traffic counts, delay stats by state/airport) as an external source; not itself a dataset but documents the sanctioned public data surface for European air traffic, worth a manual pull if European travel-volume proxy is prioritized.",
+  "potential": "low",
+  "geography": "Europe",
+  "time_coverage": "unknown",
+  "size_hint": "website code only",
+  "license": "unknown",
+  "last_activity": "2026-04-02 (per search result)",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Confirms EUROCONTROL's own public Data App (traffic counts, delay stats by state/airport) as an external source; not itself a dataset but documents the sanctioned public data surface for European air traffic, worth a manual pull if European travel-volume proxy is prioritized."
+  ]
+ }
+]

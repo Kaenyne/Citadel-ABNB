@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:mpartain1/airdna-chatbot",
+  "url": "https://github.com/mpartain1/airdna-chatbot",
+  "name": "airdna-chatbot",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "FastAPI + Next.js chatbot that queries AirDNA's (paid, proprietary) data via natural language; no committed dataset, README unreachable/empty, 0 stars, last updated 2025-07-15. Would require an AirDNA subscription to get any realised ADR/occupancy numbers, which contradicts our 'no paid API keys' rule.",
+  "why_useful": "Only hit anywhere close to gap #2 (realised ADR/occupancy for STRs); flags that AirDNA access requires a paid key, confirming this route is closed on GitHub without a subscription.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "size_hint": "no data files, thin wrapper repo",
+  "time_coverage": "n/a",
+  "geography": "n/a (whatever AirDNA covers)",
+  "license": "none declared",
+  "last_activity": "2025-07-15",
+  "hits": 2,
+  "themes": [
+   "Airbnb cancellation, refund and Reserve-Now-Pay-Later related datasets; STR booking lead-time and cancellation-rate data from any platform or PMS",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "Only hit anywhere close to gap #2 (realised ADR/occupancy for STRs); flags that AirDNA access requires a paid key, confirming this route is closed on GitHub without a subscription.",
+   "Marginal \u2014 confirms AirDNA as an API-backed vendor but offers no free/committed data and needs a paid key, so not directly actionable under 'never use paid API keys'."
+  ]
+ },
+ {
+  "key": "github:everythingscraper/str-analytics-python-client",
+  "url": "https://github.com/everythingscraper/str-analytics-python-client",
+  "name": "STR Analytics Python Client (exact repo path unverified \u2014 found via GitHub topic listing, not directly fetched)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Described (via topic-page summary) as a Python client computing occupancy, ADR, and RevPAR with 12-month rolling calendars 'from Airbnb data' \u2014 likely a wrapper around scraped/derived Airbnb calendar data rather than a PMS product. Could not verify exact owner/URL or confirm committed data before hitting GitHub search rate limits (429, 1hr cooldown) mid-session.",
+  "why_useful": "If it is what it claims \u2014 a generic occupancy/ADR/RevPAR calculator over calendar data \u2014 it could be reusable methodology on top of Inside Airbnb calendars we already hold (gap: turning raw calendars into occupancy/ADR/RevPAR consistently). Needs verification; flagged as unverified lead.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "possibly overlaps our own Inside Airbnb calendar/reviews processing",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "If it is what it claims \u2014 a generic occupancy/ADR/RevPAR calculator over calendar data \u2014 it could be reusable methodology on top of Inside Airbnb calendars we already hold (gap: turning raw calendars into occupancy/ADR/RevPAR consistently). Needs verification; flagged as unverified lead."
+  ]
+ },
+ {
+  "key": "github:townofchapelhill/hospitality-python",
+  "url": "https://github.com/townofchapelhill/hospitality-python",
+  "name": "hospitality-python",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Municipal (Chapel Hill, NC) internal repo with two scripts: extract-airbnb-properties.py (uses the unofficial nderkach/airbnb-python API client) and extract-vrbo-properties.py (basic screen-scraping of Vrbo listing pages), aggregating output into a single CSV of short-term rental listings with lat/long for the town. Marked 'internal use only - experimental'; authors note data quality is low and manual cleanup is required.",
+  "why_useful": "One of very few public repos that actually attempts a Vrbo listing pull (gap #9, competitor/adjacent supply). Method only, not usable as-is (low quality, unofficial API, would need running against live sites which is a ToS question), but demonstrates the closest thing to a Vrbo scraper with a real, if small, municipal use case (Chapel Hill).",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "Chapel Hill, NC",
+  "time_coverage": "unknown / one-off pull, no dated vintages",
+  "size_hint": "small municipal CSV, unspecified row count",
+  "license": "none declared",
+  "last_activity": "2025-02-28",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "One of very few public repos that actually attempts a Vrbo listing pull (gap #9, competitor/adjacent supply). Method only, not usable as-is (low quality, unofficial API, would need running against live sites which is a ToS question), but demonstrates the closest thing to a Vrbo scraper with a real, if small, municipal use case (Chapel Hill)."
+  ]
+ },
+ {
+  "key": "github:webmalc/booking-sites-parser",
+  "url": "https://github.com/webmalc/booking-sites-parser",
+  "name": "booking-sites-parser",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0 Python CLI parser (28 commits, 3 stars) for Booking.com, Homeaway.com and Airbnb.com listing pages; installable as `booking-sites-parser` package, run via `python -m booking_sites_parser <url>`. No data fields documented in README beyond usage examples; no data files committed; has a /tests directory.",
+  "why_useful": "A generic multi-site (incl. Homeaway) listing parser could in principle be pointed at Vrbo/Expedia vacation-rental pages to pull price/amenity fields, addressing gap #9, but it is unmaintained tooling with no data attached and unclear scope; scraping would also be a ToS decision.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "N/A (generic)",
+  "time_coverage": "N/A",
+  "size_hint": "code only, no data",
+  "license": "apache-2.0",
+  "last_activity": "2024-08-19",
+  "hits": 2,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "A generic multi-site (incl. Homeaway) listing parser could in principle be pointed at Vrbo/Expedia vacation-rental pages to pull price/amenity fields, addressing gap #9, but it is unmaintained tooling with no data attached and unclear scope; scraping would also be a ToS decision.",
+   "One tool covering three relevant platforms (Homeaway + Booking.com + Airbnb) in one schema, which would ease cross-platform supply comparisons under gap #9 if it still works against current site markup (unclear given age/inactivity)."
+  ]
+ },
+ {
+  "key": "github:shulil-261/vrbo-extractor-4-0",
+  "url": "https://github.com/shulil-261/vrbo-extractor-4-0",
+  "name": "vrbo-extractor-4-0",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Described as a 'comprehensive VRBO listings and reviews scraper'; no data files visible in the search result, code/tooling repo only, very recent and unstarred.",
+  "why_useful": "Another candidate Vrbo scraping method (listings + reviews) for gap #9 if scraping is later authorized; unverified maturity.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "unknown, likely code only",
+  "license": "mit",
+  "last_activity": "2025-11-10",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Another candidate Vrbo scraping method (listings + reviews) for gap #9 if scraping is later authorized; unverified maturity."
+  ]
+ }
+]

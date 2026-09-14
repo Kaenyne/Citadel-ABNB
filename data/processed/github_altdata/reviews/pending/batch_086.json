@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:cgq666/chinese-text-sentiment-classification-dataset",
+  "url": "https://github.com/cgq666/Chinese-text-sentiment-classification-dataset",
+  "name": "cgq666/Chinese-text-sentiment-classification-dataset",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Small committed dataset combining a JD.com e-commerce sentiment corpus and a Ctrip (China's largest OTA) hotel-reviews dataset for Chinese sentiment classification; 4 stars, no visible dates confirmed (README not deeply inspected). Likely a static labeled-sentiment sample rather than a full crawl with timestamps.",
+  "why_useful": "Ctrip is the dominant China travel platform; any Chinese hotel-review data helps proxy China/APAC lodging demand where public alt-data is thin (gap #7 APAC regional volume), but the dataset looks small and probably lacks per-review dates needed for a velocity series \u2014 flagged for someone to verify the fields before relying on it.",
+  "potential": "low",
+  "license": "unspecified",
+  "size_hint": "small (exact row count unknown, not deeply inspected)",
+  "time_coverage": "unknown",
+  "geography": "China (Ctrip)",
+  "last_activity": "2024-12-30",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Ctrip is the dominant China travel platform; any Chinese hotel-review data helps proxy China/APAC lodging demand where public alt-data is thin (gap #7 APAC regional volume), but the dataset looks small and probably lacks per-review dates needed for a velocity series \u2014 flagged for someone to verify the fields before relying on it."
+  ]
+ },
+ {
+  "key": "github:lagrinisamira83/lsahr_dataset",
+  "url": "https://github.com/lagrinisamira83/LSAHR_dataset",
+  "name": "lagrinisamira83/LSAHR_dataset",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "\"Large-Scale Arabic Hotel Review Dataset for Personalized Recommendation\" \u2014 an academic dataset of Arabic-language hotel reviews (source platform and date coverage not confirmed by inspection; repo updated Jun 2026, custom/other licence).",
+  "why_useful": "Potential MENA-region hotel-demand text source, a geography with almost no coverage in our current holdings; value depends entirely on whether reviews carry dates and which platform/cities are covered, which was not verified.",
+  "potential": "low",
+  "license": "other/custom",
+  "size_hint": "unknown, not inspected",
+  "time_coverage": "unknown",
+  "geography": "MENA / Arabic-speaking markets (unconfirmed which cities)",
+  "last_activity": "2026-06-07",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Potential MENA-region hotel-demand text source, a geography with almost no coverage in our current holdings; value depends entirely on whether reviews carry dates and which platform/cities are covered, which was not verified."
+  ]
+ },
+ {
+  "key": "github:wow4er/tripadvisor-reviews-scraper",
+  "url": "https://github.com/wow4er/tripadvisor-reviews-scraper",
+  "name": "tripadvisor-reviews-scraper (wow4er)",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reverse-engineered pure-HTTP TripAdvisor review scraper (mimics Android app / Pixel device fingerprint, no browser). MIT license, updated 2026-08-22.",
+  "why_useful": "Actively maintained (as of Aug 2026) low-footprint method for pulling current TripAdvisor reviews with dates -- could refresh a review-velocity series post-2020 where HotelRec stops.",
+  "potential": "low",
+  "geography": "Global",
+  "time_coverage": "Live pull, current",
+  "size_hint": "N/A (method only)",
+  "license": "MIT",
+  "last_activity": "2026-08-22",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Actively maintained (as of Aug 2026) low-footprint method for pulling current TripAdvisor reviews with dates -- could refresh a review-velocity series post-2020 where HotelRec stops."
+  ]
+ },
+ {
+  "key": "github:scrapingbee/google-reviews-scraper",
+  "url": "https://github.com/ScrapingBee/google-reviews-scraper",
+  "name": "google-reviews-scraper (ScrapingBee)",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "596-star scalable scraper for Google Maps ratings, review text and business insights.",
+  "why_useful": "Second working Google-review-pull implementation (redundant with omkarcloud's) for the same review-velocity use case; higher-star / commercially backed so likely better maintained.",
+  "potential": "low",
+  "geography": "Global",
+  "time_coverage": "Live pull only",
+  "size_hint": "N/A (method only)",
+  "license": "unspecified (check repo)",
+  "last_activity": "actively maintained (commercial vendor repo)",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "overlaps omkarcloud/google-maps-reviews-scraper",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Second working Google-review-pull implementation (redundant with omkarcloud's) for the same review-velocity use case; higher-star / commercially backed so likely better maintained."
+  ]
+ },
+ {
+  "key": "github:marcus-ao/datafinitihotelreviews",
+  "url": "https://github.com/marcus-ao/DatafinitiHotelReviews",
+  "name": "DatafinitiHotelReviews",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Points to the Datafiniti Hotel Reviews Kaggle dataset (https://www.kaggle.com/datasets/datafiniti/hotel-reviews) -- ~35k US hotel reviews with dates, used to build a RAG/fine-tuning knowledge base; repo itself is a pipeline, not the raw CSV.",
+  "why_useful": "Points at a smaller, US-focused, dated hotel review dataset (Datafiniti) as an alternative/cross-check source to HotelRec and Kaggle's existing Booking.com 515k set we already hold; marginal incremental value.",
+  "potential": "low",
+  "geography": "United States",
+  "time_coverage": "unspecified (Datafiniti crawl vintage, likely 2016-2019)",
+  "size_hint": "~35k reviews (Datafiniti's published size) via Kaggle",
+  "license": "Kaggle dataset terms (check upstream)",
+  "last_activity": "repo updated 2026-06-08",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "similar in kind to the Booking.com 515k Kaggle set and Portugal hotel-booking dataset we already hold; smaller and US-only",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Points at a smaller, US-focused, dated hotel review dataset (Datafiniti) as an alternative/cross-check source to HotelRec and Kaggle's existing Booking.com 515k set we already hold; marginal incremental value."
+  ]
+ }
+]

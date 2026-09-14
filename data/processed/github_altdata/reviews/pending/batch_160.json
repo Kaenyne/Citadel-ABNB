@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:derhuerst/db-rest",
+  "url": "https://github.com/derhuerst/db-rest",
+  "name": "db-rest",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A live REST API wrapper (now built on db-vendo-client after DB's HAFAS API was retired) exposing Deutsche Bahn station search, timetable, and journey-planning data at v6.db.transport.rest.",
+  "why_useful": "A lightweight live-query method for current DB schedules/stations if a point-in-time snapshot approach (repeated pulls) were wanted; no historical store of its own, so lower value than piebro/deutsche-bahn-data for backtesting.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Germany",
+  "time_coverage": "live/current only",
+  "size_hint": "n/a (API wrapper)",
+  "license": "MIT",
+  "last_activity": "actively maintained",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "A lightweight live-query method for current DB schedules/stations if a point-in-time snapshot approach (repeated pulls) were wanted; no historical store of its own, so lower value than piebro/deutsche-bahn-data for backtesting."
+  ]
+ },
+ {
+  "key": "github:rand-net/visa-cli",
+  "url": "https://github.com/rand-net/visa-cli",
+  "name": "rand-net/visa-cli",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "24-star Python CLI tool (updated 13 Sep 2026, MIT) that queries the ilyankou/passport-index-dataset to look up visa requirements between any two countries; a thin client, not a new dataset.",
+  "why_useful": "Confirms the ilyankou dataset is actively used/maintained (recency signal); the CLI itself has no independent data value beyond that pointer.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "size_hint": "small script",
+  "time_coverage": "n/a (tool)",
+  "geography": "global",
+  "gap_targets": [],
+  "duplicate_of_holding": "wraps ilyankou/passport-index-dataset",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Confirms the ilyankou dataset is actively used/maintained (recency signal); the CLI itself has no independent data value beyond that pointer."
+  ]
+ },
+ {
+  "key": "github:jimmytwei/gasbuddy-mcp-price-tracker",
+  "url": "https://github.com/jimmytwei/gasbuddy-mcp-price-tracker",
+  "name": "gasbuddy-mcp-price-tracker",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An MCP (Model Context Protocol) server (1 star, updated 22 Apr 2026, MIT) that lets an LLM tool-call gasbuddy.com for cheapest station prices by city/zip; no stored data.",
+  "why_useful": "Marginal: shows another live-query path into GasBuddy but adds nothing over py-gasbuddy for building a time series; flagged mainly for completeness under 'methods/tooling'.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "MIT",
+  "last_activity": "2026-04-22",
+  "geography": "US (per city/zip)",
+  "time_coverage": "live only",
+  "size_hint": "tiny",
+  "duplicate_of_holding": "same source as py-gasbuddy above",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Marginal: shows another live-query path into GasBuddy but adds nothing over py-gasbuddy for building a time series; flagged mainly for completeness under 'methods/tooling'."
+  ]
+ },
+ {
+  "key": "github:sosedoff/opentable",
+  "url": "https://github.com/sosedoff/opentable",
+  "name": "sosedoff/opentable",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby client wrapping OpenTable's (unofficial) restaurant-search and reservation-availability endpoints; 142 stars, updated 2026-08-15, no data committed, license 'other' (check terms before use).",
+  "why_useful": "A live client for pulling current OpenTable restaurant availability/booking data (a real-time seated-diners/leisure-demand proxy, gap #6) rather than a historical panel; would need to be run going forward to build a time series, and ToS for automated pulls from OpenTable is a human call per repo rules.",
+  "geography": "wherever OpenTable operates (US/UK/etc.)",
+  "time_coverage": "live only, no historical data",
+  "size_hint": "small code repo, no data",
+  "license": "other (unspecified terms)",
+  "last_activity": "2026-08-15",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "A live client for pulling current OpenTable restaurant availability/booking data (a real-time seated-diners/leisure-demand proxy, gap #6) rather than a historical panel; would need to be run going forward to build a time series, and ToS for automated pulls from OpenTable is a human call per repo rules."
+  ]
+ },
+ {
+  "key": "github:omarshahine/restaurant-cli",
+  "url": "https://github.com/omarshahine/restaurant-cli",
+  "name": "omarshahine/restaurant-cli",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pluggable CLI/agent-skill for booking restaurant reservations across Resy, OpenTable, Tock, SevenRooms from one codebase; 8 stars, MIT, updated 2026-09-02.",
+  "why_useful": "Marginal: built for booking, not data collection, but the same API-plugin layer could in principle be adapted to poll availability across multiple reservation platforms as a leisure-demand proxy; flagged as a low-confidence lead only.",
+  "geography": "wherever these platforms operate",
+  "time_coverage": "live only",
+  "size_hint": "small code repo",
+  "license": "MIT",
+  "last_activity": "2026-09-02",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "Marginal: built for booking, not data collection, but the same API-plugin layer could in principle be adapted to poll availability across multiple reservation platforms as a leisure-demand proxy; flagged as a low-confidence lead only."
+  ]
+ }
+]

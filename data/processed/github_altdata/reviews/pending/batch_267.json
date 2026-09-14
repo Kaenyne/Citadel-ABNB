@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:yihoon-j/airbnb_hedonic_pricing",
+  "url": "https://github.com/Yihoon-J/airbnb_hedonic_pricing",
+  "name": "airbnb_hedonic_pricing",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSVs: a listings file enriched with distance-to-nearest-subway-station (geocoded) and pororo_scoring.csv (Korean NLP sentiment scores computed over listing reviews). Hedonic feature set includes guest capacity, bed count, bathrooms, average rating, review volume, superhost status, ID verification, host response rate, deposit/cleaning fee, security camera, washer, free parking, photo count, plus the review-sentiment score and subway distance as location/quality proxies.",
+  "why_useful": "A working example of turning review text into a quantitative listing-quality feature (sentiment score) combined with a hedonic regression -- directly relevant methodology for isolating a 'listing quality' or superhost premium net of location, which our mix-decomposition / ADR work needs a comparable technique for, even though the city (Seoul) is not one we track.",
+  "potential": "low",
+  "gap_targets": [],
+  "size_hint": "small, single-city snapshot, unknown row count, 0 stars",
+  "time_coverage": "unknown, appears to be a single scrape (repo last updated Dec 2022)",
+  "geography": "Seoul, South Korea",
+  "last_activity": "2022-12-18",
+  "license": "none declared",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "A working example of turning review text into a quantitative listing-quality feature (sentiment score) combined with a hedonic regression -- directly relevant methodology for isolating a 'listing quality' or superhost premium net of location, which our mix-decomposition / ADR work needs a comparable technique for, even though the city (Seoul) is not one we track.",
+   "Seoul/Korea is not in our 13-city Inside Airbnb panel and not covered by our APAC gap list explicitly, but adds an APAC hedonic-pricing data point; unclear if data is committed vs description-only."
+  ]
+ },
+ {
+  "key": "github:inmira/airbnb-price-determinants-in-milan",
+  "url": "https://github.com/inmira/Airbnb-Price-Determinants-in-Milan",
+  "name": "Airbnb-Price-Determinants-in-Milan",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Price-determinants study of Airbnb listings in Milan (details not confirmed beyond title; presumed Inside Airbnb Milan snapshot with hedonic-style regression).",
+  "why_useful": "Milan is not one of our 13 tracked Inside Airbnb cities; a committed listings snapshot (vintage unconfirmed, repo updated Dec 2025) gives a possible additional EU data point for cross-city hedonic/mix checks at effectively no acquisition cost.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "size_hint": "single compressed listings CSV, single city",
+  "time_coverage": "unknown vintage, repo updated 2025-12-27",
+  "geography": "Milan, Italy",
+  "last_activity": "2025-12-27",
+  "license": "none declared",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "Milan is not one of our 13 tracked Inside Airbnb cities; a committed listings snapshot (vintage unconfirmed, repo updated Dec 2025) gives a possible additional EU data point for cross-city hedonic/mix checks at effectively no acquisition cost.",
+   "Milan is outside our 13-city panel; another EU geography data point for cross-market hedonic comparison."
+  ]
+ },
+ {
+  "key": "github:cankayauniversity/ceng-407-408-2020-2021-airbnb-price-determinants",
+  "url": "https://github.com/CankayaUniversity/ceng-407-408-2020-2021-Airbnb-Price-Determinants",
+  "name": "ceng-407-408-2020-2021-Airbnb-Price-Determinants",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A university capstone project titled 'Airbnb Price Determinants'; not inspected for committed data files (budget-limited) \u2014 flagged only as a possible additional hedonic-methods repo, unconfirmed whether real data is committed.",
+  "why_useful": "Unconfirmed; listed for completeness in case a follow-up scout wants to check contents.",
+  "potential": "low",
+  "gap_targets": [],
+  "size_hint": "unknown",
+  "time_coverage": "unknown",
+  "geography": "unknown",
+  "last_activity": "2023-09-12",
+  "license": "none declared",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "Unconfirmed; listed for completeness in case a follow-up scout wants to check contents.",
+   "Possible additional price-determinants dataset/model; flagged for completeness but unverified content depth."
+  ]
+ },
+ {
+  "key": "github:juliearcn/airbnb-barcelona-price-analysis",
+  "url": "https://github.com/juliearcn/airbnb-barcelona-price-analysis",
+  "name": "airbnb-barcelona-price-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Exploratory data analysis of Airbnb pricing determinants in Barcelona; not inspected for committed data (Barcelona is already in our 13-city panel, so value depends entirely on whether it has a vintage/timeframe we lack).",
+  "why_useful": "Only useful if it holds an older/different-vintage Barcelona snapshot than our existing panel; not confirmed.",
+  "potential": "low",
+  "gap_targets": [],
+  "size_hint": "unknown",
+  "time_coverage": "unknown",
+  "geography": "Barcelona, Spain (already held)",
+  "last_activity": "2026-02-28",
+  "license": "none declared",
+  "duplicate_of_holding": "Barcelona is already in our 13-city Inside Airbnb panel; only worth pulling if vintage differs",
+  "hits": 1,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "Only useful if it holds an older/different-vintage Barcelona snapshot than our existing panel; not confirmed."
+  ]
+ },
+ {
+  "key": "github:husainalalawi/airbnb-host-professionalization",
+  "url": "https://github.com/husainalalawi/airbnb-host-professionalization",
+  "name": "airbnb-host-professionalization",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single-snapshot San Diego Inside Airbnb listings.csv.gz plus a course-project notebook (STAT4710) doing PCA and k-means clustering to classify hosts into home-sharers vs. commercial/professional operators. No multi-year panel, no README detail on vintage date. 0 stars, updated Apr 2026.",
+  "why_useful": "On-theme (professionalisation classification of Airbnb hosts) but appears to be a single cross-sectional snapshot rather than a longitudinal/multi-year compiled panel, so it adds a method (host-professionalisation clustering approach) more than new data \u2014 we already hold San Diego is not in our 13-city Inside Airbnb panel, so the snapshot itself has marginal incremental value, but the clustering methodology for host professionalisation could be replicated on our own multi-year San Diego-adjacent or other-city dumps.",
+  "potential": "low",
+  "license": "none declared",
+  "last_activity": "2026-04-30",
+  "geography": "San Diego, CA",
+  "time_coverage": "single snapshot, date unconfirmed",
+  "size_hint": "one listings.csv.gz (compressed, size unconfirmed) + one notebook",
+  "gap_targets": [],
+  "duplicate_of_holding": "We hold San Diego in the 13-city Inside Airbnb panel already; this single snapshot is likely subsumed, but the host-professionalisation clustering method is not something we've applied.",
+  "hits": 2,
+  "themes": [
+   "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)"
+  ],
+  "why_all": [
+   "On-theme (professionalisation classification of Airbnb hosts) but appears to be a single cross-sectional snapshot rather than a longitudinal/multi-year compiled panel, so it adds a method (host-professionalisation clustering approach) more than new data \u2014 we already hold San Diego is not in our 13-city Inside Airbnb panel, so the snapshot itself has marginal incremental value, but the clustering methodology for host professionalisation could be replicated on our own multi-year San Diego-adjacent or other-city dumps.",
+   "A reusable, already-implemented host-professionalisation clustering method (PCA + K-means on listing/host features) that could be re-run on our own broader Inside Airbnb panel rather than being useful for its data alone."
+  ]
+ }
+]

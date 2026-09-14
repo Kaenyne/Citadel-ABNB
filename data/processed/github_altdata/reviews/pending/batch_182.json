@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:internetarchive/cdx-summary",
+  "url": "https://github.com/internetarchive/cdx-summary",
+  "name": "cdx-summary (cdxsummary)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool (pip: cdxsummary; 100 stars, 125 commits, AGPL-3.0) that summarizes a CDX file (local, remote, gz/bz2, or a live Wayback CDX Server query / Petabox item): capture counts, unique URLs/hosts, MIME/status distributions, year/month breakdowns, top hosts, sample memento URLs.",
+  "why_useful": "Quick reconnaissance layer before a full crawl \u2014 could scope how many archived captures exist for airbnb.com press/newsroom paths, insideairbnb.com, or airdna.co/mashvisor.com by year before committing to a full waybackpack/downloader pull.",
+  "potential": "low",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "AGPL-3.0",
+  "last_activity": "unspecified, active (1 open issue/PR, 125 commits)",
+  "geography": "global",
+  "time_coverage": "matches whatever CDX index is queried",
+  "size_hint": "tool only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Quick reconnaissance layer before a full crawl \u2014 could scope how many archived captures exist for airbnb.com press/newsroom paths, insideairbnb.com, or airdna.co/mashvisor.com by year before committing to a full waybackpack/downloader pull."
+  ]
+ },
+ {
+  "key": "github:tomnomnom/waybackurls",
+  "url": "https://github.com/tomnomnom/waybackurls",
+  "name": "waybackurls",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Go tool (4.6k stars) that lists every URL the Wayback Machine has archived for a given domain (pipe domains in, get URLs out).",
+  "why_useful": "Simpler single-purpose alternative to gau for the same URL-discovery use case against AirDNA/Mashvisor/Inside Airbnb domains.",
+  "potential": "low",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "unspecified in fetched content (commonly MIT upstream)",
+  "last_activity": "unspecified",
+  "geography": "global",
+  "time_coverage": "full Wayback CDX depth for the domain",
+  "size_hint": "tool only",
+  "duplicate_of_holding": "overlaps gau above",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Simpler single-purpose alternative to gau for the same URL-discovery use case against AirDNA/Mashvisor/Inside Airbnb domains."
+  ]
+ },
+ {
+  "key": "github:helgeho/archivespark",
+  "url": "https://github.com/helgeho/ArchiveSpark",
+  "name": "ArchiveSpark",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache Spark framework (Internet Archive-authored, MIT, 162 stars, 154 commits) for large-scale filtering/extraction/derivation over web-archive collections (WARC/CDX), including direct access to Wayback Machine holdings; outputs to JSON while preserving data lineage.",
+  "why_useful": "If a large-scale pull of archived Airbnb/AirDNA/Inside-Airbnb pages across many years and thousands of URLs is ever attempted, this is the scale-appropriate processing layer (vs. one-off scripts) \u2014 same use case as our existing Common Crawl WARC renders (3,000 already pulled) but for Wayback's index.",
+  "potential": "low",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "unspecified, versioned to 3.0 with recent namespace updates",
+  "geography": "global",
+  "time_coverage": "matches whatever archive collection is targeted",
+  "size_hint": "framework, no bundled data",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "If a large-scale pull of archived Airbnb/AirDNA/Inside-Airbnb pages across many years and thousands of URLs is ever attempted, this is the scale-appropriate processing layer (vs. one-off scripts) \u2014 same use case as our existing Common Crawl WARC renders (3,000 already pulled) but for Wayback's index."
+  ]
+ },
+ {
+  "key": "github:oduwsdl/ipwb",
+  "url": "https://github.com/oduwsdl/ipwb",
+  "name": "ipwb (InterPlanetary Wayback)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed project (1,622 commits) that converts WARC files to IPFS-distributed archives and replays them; includes only small sample WARC files for testing, no real datasets.",
+  "why_useful": "Marginal for our purposes \u2014 a decentralized-storage/replay layer, not an acquisition method for new data. Flagged for completeness under 'Wayback tooling' but not directly actionable.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "unspecified, ongoing (154 open issues)",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "size_hint": "sample WARC files only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Marginal for our purposes \u2014 a decentralized-storage/replay layer, not an acquisition method for new data. Flagged for completeness under 'Wayback tooling' but not directly actionable."
+  ]
+ },
+ {
+  "key": "github:oduwsdl/archivenow",
+  "url": "https://github.com/oduwsdl/archivenow",
+  "name": "archivenow",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed tool (434 stars, 186 commits) to push a live URL into multiple public archives at once (Internet Archive, Archive.today, Perma.cc, Megalodon.jp) via CLI, Python library, web service, or Docker; can also produce local WARC files.",
+  "why_useful": "Forward-looking companion to the retrieval tools above: could be used going forward to proactively archive AirDNA/Mashvisor market pages or Airbnb newsroom/investor pages on a schedule so future point-in-time snapshots exist (addresses the point-in-time rule in our own CLAUDE.md, not retroactive data).",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "last noted feature change January 2021 (removed WebCite/Archive.st)",
+  "geography": "global",
+  "time_coverage": "prospective only (captures made from now on)",
+  "size_hint": "tool only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Forward-looking companion to the retrieval tools above: could be used going forward to proactively archive AirDNA/Mashvisor market pages or Airbnb newsroom/investor pages on a schedule so future point-in-time snapshots exist (addresses the point-in-time rule in our own CLAUDE.md, not retroactive data)."
+  ]
+ }
+]

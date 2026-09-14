@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:kamra-pms/kamra-pms",
+  "url": "https://github.com/Kamra-PMS/kamra-pms",
+  "name": "Kamra PMS",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source hotel/STR property-management system (Frappe framework): front desk, booking engine, billing/tax, housekeeping management, POS, WhatsApp integration, MCP tools for AI-agent-driven bookings/audits. No datasets committed. AGPL-3.0, 34 stars, 18 forks, 352 commits.",
+  "why_useful": "Housekeeping/turnover workflow module exists but this is deployment software, not a data source; only relevant if a hotel/STR operator using Kamra agreed to share exports.",
+  "potential": "low",
+  "license": "AGPL-3.0",
+  "last_activity": "active (352 commits on develop)",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "no committed data",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Housekeeping/turnover workflow module exists but this is deployment software, not a data source; only relevant if a hotel/STR operator using Kamra agreed to share exports."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/mews-systems",
+  "url": "https://github.com/api-evangelist/mews-systems",
+  "name": "mews-systems",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Independent profile/documentation of the public API surface for Mews, a cloud PMS/RM platform used by 15,000+ hospitality properties (reservations, distribution, revenue management). Descriptive only; no committed booking-pace or OTB data, and Mews's actual reservation data is per-property/private, not exposed publicly.",
+  "why_useful": "Marginal reference for what fields a PMS-level OTB/pickup feed would carry, but there is no accessible aggregate dataset behind it for a public researcher.",
+  "potential": "low",
+  "license": "",
+  "last_activity": "2026-09-12",
+  "size_hint": "documentation only",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "gap_targets": [
+   2,
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves"
+  ],
+  "why_all": [
+   "Marginal reference for what fields a PMS-level OTB/pickup feed would carry, but there is no accessible aggregate dataset behind it for a public researcher."
+  ]
+ },
+ {
+  "key": "github:brdx88/hotel_booking_demand_eda",
+  "url": "https://github.com/brdx88/hotel_booking_demand_EDA",
+  "name": "hotel_booking_demand_EDA",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Exploratory data analysis notebook over the well-known Antonio/Almeida/Nunes Portugal hotel-booking-demand dataset (two hotels, ~119k bookings, 2015-2017, lead time and cancellation fields), focused on cancellation-rate trends driven by OTA sales tactics.",
+  "why_useful": "This is the same Portugal hotel-booking-demand dataset CONTEXT.md already lists as held; flagging only because its lead-time/cancellation-rate framing lines up with gap 3 (booking lead time / cancellation-rate distributions), in case the specific cancellation cut is useful.",
+  "potential": "low",
+  "license": "",
+  "last_activity": "2022-02-26",
+  "size_hint": "single dataset + notebook, ~119k rows",
+  "geography": "Portugal (2 hotels)",
+  "time_coverage": "2015-2017",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "Portugal hotel-booking-demand dataset (Antonio/Almeida/Nunes) already held per CONTEXT.md",
+  "hits": 1,
+  "themes": [
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves"
+  ],
+  "why_all": [
+   "This is the same Portugal hotel-booking-demand dataset CONTEXT.md already lists as held; flagging only because its lead-time/cancellation-rate framing lines up with gap 3 (booking lead time / cancellation-rate distributions), in case the specific cancellation cut is useful."
+  ]
+ },
+ {
+  "key": "github:lucasclopes/predicting_hotel_cancellation_rate",
+  "url": "https://github.com/Lucasclopes/Predicting_Hotel_Cancellation_Rate",
+  "name": "Predicting_Hotel_Cancellation_Rate",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Notebook/pipeline predicting hotel demand and cancellation likelihood from 'reservations on-the-books' for a hotel chain; explicitly frames the on-the-books / pickup forecasting problem management-consulting style. Likely built on the same public Antonio/Almeida/Nunes Portugal hotel-booking dataset (H1/H2, ~2015-2017) already held, rather than new raw data.",
+  "why_useful": "Illustrative of the on-the-books forecasting method / cancellation-rate framing relevant to the RNPL (reserve-now-pay-later) cancellation thesis (gap #3), though it appears to reuse a dataset we already hold rather than add new data.",
+  "potential": "low",
+  "gap_targets": [
+   3
+  ],
+  "geography": "Unspecified hotel chain (likely Portugal, same as held Antonio dataset)",
+  "time_coverage": "Unclear, small repo, last commit 2022-09-12",
+  "size_hint": "Single notebook/script, no large committed dataset apparent",
+  "license": "none specified",
+  "last_activity": "2022-09-12",
+  "duplicate_of_holding": "Likely duplicate of already-held Portugal hotel-booking-demand dataset (Antonio/Almeida/Nunes); flagged only for the on-the-books/cancellation framing, not new data",
+  "hits": 1,
+  "themes": [
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves"
+  ],
+  "why_all": [
+   "Illustrative of the on-the-books forecasting method / cancellation-rate framing relevant to the RNPL (reserve-now-pay-later) cancellation thesis (gap #3), though it appears to reuse a dataset we already hold rather than add new data."
+  ]
+ },
+ {
+  "key": "github:junsii/hotel-hedonic-pricing-model-project",
+  "url": "https://github.com/Junsii/Hotel-Hedonic-Pricing-Model-Project",
+  "name": "Hotel-Hedonic-Pricing-Model-Project",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Repo with hotel_bookings.csv, a Hotel_Pricing_Model.ipynb notebook, and a 'Hotel Hedonic Pricing Analysis.pdf' report; hotel_bookings.csv is a very common filename matching the widely-used Portugal (Algarve/Lisbon) hotel-booking-demand dataset (Antonio/Almeida/Nunes) we already hold.",
+  "why_useful": "Could be a hotel-side analogue to our Airbnb hedonic work (room-type/amenity/star-rating premia), useful as a cross-check methodology or if it carries a hotel-rate dataset we do not have.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "size_hint": "unknown",
+  "time_coverage": "unknown",
+  "geography": "unknown",
+  "last_activity": "2026-07-13",
+  "license": "none declared",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "Could be a hotel-side analogue to our Airbnb hedonic work (room-type/amenity/star-rating premia), useful as a cross-check methodology or if it carries a hotel-rate dataset we do not have.",
+   "Likely duplicate of the Portugal hotel-booking-demand dataset already in our holdings, but committed as a fresh hedonic-pricing regression writeup (PDF report) that could be read for methodology even if the underlying data is not new."
+  ]
+ }
+]

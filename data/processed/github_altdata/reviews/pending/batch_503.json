@@ -1,0 +1,737 @@
+[
+ {
+  "key": "github:watchful1/pushshiftdumps",
+  "url": "https://github.com/Watchful1/PushshiftDumps",
+  "name": "PushshiftDumps",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python scripts (single-file processor, folder batch-processor, multiprocess filter-and-export tool) for reading the pre-shutdown Pushshift .zst dump files and filtering by subreddit/keyword/date, exporting matches to text and recompressing. The actual dumps (all subreddits, historical, up to the 2023 API shutdown) are pointed to via Academic Torrents (https://academictorrents.com/details/30dee5f0406da7a353aff6a8caa2d54fd01f2ca1). 507 stars, MIT license, updated 13 Sep 2026.",
+  "why_useful": "Gap #14. Gives a working, well-used (507-star) toolchain to extract r/airbnb, r/AirBnBHosts, r/travel post/comment history from the canonical historical Pushshift archive (through ~2023) via torrent, complementing arctic_shift's live coverage with the frozen historical base period.",
+  "potential": "high",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "points to full historical Pushshift dump set (multi-TB) via Academic Torrents; scripts themselves are small",
+  "time_coverage": "Reddit history through ~2023 (Pushshift API shutdown)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "Gap #14. Gives a working, well-used (507-star) toolchain to extract r/airbnb, r/AirBnBHosts, r/travel post/comment history from the canonical historical Pushshift archive (through ~2023) via torrent, complementing arctic_shift's live coverage with the frozen historical base period.",
+   "Standard tooling to extract r/airbnb, r/AirBnBHosts, r/travel (and any STR-regulation subreddits) out of the full historical Pushshift torrent set \u2014 the torrent itself (external, Academic Torrents) is the actual data; this repo is the practical way to filter it to the subs we care about without loading everything into memory."
+  ]
+ },
+ {
+  "key": "github:alex9smith/gdelt-doc-api",
+  "url": "https://github.com/alex9smith/gdelt-doc-api",
+  "name": "gdelt-doc-api",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed, actively maintained (updated 11 Sep 2026) Python client for the GDELT 2.0 Doc API. Returns article-level search results, timeline volume, and timeline tone for any keyword/date-range query (e.g. 'Airbnb', 'short-term rental', 'vacation rental regulation') at daily granularity back to 2017. No committed dataset -- it is a live pull tool, but queries are date-bounded so a historical/point-in-time news-volume or tone series for Airbnb-relevant terms could be reconstructed after the fact.",
+  "why_useful": "Directly addresses gap 14 (text/social -> GDELT) and partially gap 17 (nowcasting methods): a clean, current way to build a daily news-volume/sentiment index around Airbnb, STR regulation, or competitor mentions to test as a leading indicator for demand or regulatory shocks.",
+  "potential": "high",
+  "geography": "global",
+  "time_coverage": "2017-present (GDELT 2.0 coverage), queryable any date range",
+  "size_hint": "no committed data; live API client",
+  "license": "MIT",
+  "last_activity": "2026-09-11",
+  "gap_targets": [
+   14,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Directly addresses gap 14 (text/social -> GDELT) and partially gap 17 (nowcasting methods): a clean, current way to build a daily news-volume/sentiment index around Airbnb, STR regulation, or competitor mentions to test as a leading indicator for demand or regulatory shocks.",
+   "Cheapest way to build a keyword-filtered news-volume/tone timeline for 'Airbnb', 'short-term rental ban', specific city STR ordinances, or travel-industry terms without BigQuery quota; a genuinely lighter-weight alternative to full GDELT for a student team."
+  ]
+ },
+ {
+  "key": "github:tomslee/airbnb-data-collection",
+  "url": "https://github.com/tomslee/airbnb-data-collection",
+  "name": "tomslee/airbnb-data-collection",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Tom Slee's original Airbnb scraper (Python 3 + PostgreSQL/PostGIS), predecessor to Inside Airbnb. 488 stars, 184 forks, 250 commits, last substantive activity ~2019 (MIT license, no longer maintained by author). The repo itself has no committed CSVs (schema/scraper only), but it was used to run quarterly-ish 'surveys' of listings across dozens of cities from 2014-07 to ~2017 (one example city shows 18 survey snapshots May 2014-Jul 2017). The author's own site (tomslee.net/airbnb-data-collection-get-the-data) hosts the resulting CSV exports by year (2014, 2015, 2016, 2017) as a direct download, and several Kaggle mirrors of 'Tom Slee Airbnb data' exist. Combined with the code here, this is a fully reproducible listing-level, multi-year, multi-city panel that predates Inside Airbnb's own coverage.",
+  "why_useful": "Directly fills gap #1 (historical/archived STR dumps pre-2023) with a source 5-8+ years older than our current earliest coverage; also a second, independent scrape methodology (not Inside Airbnb's own tool) so could crosscheck listing-count/price levels for 2015-2017 in cities we still care about (e.g. NYC, LA, Paris, London, Barcelona).",
+  "potential": "high",
+  "license": "unspecified in README",
+  "last_activity": "archived/no longer maintained per author (author announcement 2017; repo still on GitHub)",
+  "geography": "dozens of global cities (bounding-box + city surveys)",
+  "time_coverage": "2014-2017",
+  "size_hint": "code repo is small; bulk data lives externally on tomslee.net, size unknown, described as 'get the data' bulk downloads",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 15,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews",
+   "Airbnb cancellation, refund and Reserve-Now-Pay-Later related datasets; STR booking lead-time and cancellation-rate data from any platform or PMS",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers",
+   "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)",
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (historical/archived STR dumps pre-2023) with a source 5-8+ years older than our current earliest coverage; also a second, independent scrape methodology (not Inside Airbnb's own tool) so could crosscheck listing-count/price levels for 2015-2017 in cities we still care about (e.g. NYC, LA, Paris, London, Barcelona).",
+   "This is an independent, methodologically different (survey/scrape, not Inside Airbnb's pipeline) historical Airbnb listings panel reaching back to 2014-2015 \u2014 older than anything Inside Airbnb itself now serves on its CDN, and older than our held panel (Dec 2022+). Directly targets gap #1 (pre-2023 historical dumps) with an even deeper history; also relevant as a second, independent cross-check on any Inside Airbnb-based occupancy/price reconstruction.",
+   "Historically this project produced some of the earliest (pre-2015) multi-city Airbnb listing snapshots referenced in academic literature, potentially including NYC, but no such historical CSVs are committed in the current repo -- would require finding an archived release or a fork with data. Flagged as a method only; it scrapes airbnb.com directly, which is outside our sanctioned-source rule and should not be run without a human ToS decision.",
+   "Named author's original historical city-level Airbnb scrapes (2014-2017, dozens of cities, pre-dating Inside Airbnb's own coverage) are a known historical dataset in the STR-data literature; this repo is the associated tooling, not the data itself \u2014 worth checking Tom Slee's personal site/blog (airbnbdata.com, now defunct per other search hits) or Wayback Machine for the actual archived CSVs it produced, which would fill gap #1 for years before Inside Airbnb existed.",
+   "This is the single most cited pre-2015 / pre-Inside-Airbnb historical Airbnb snapshot archive that predates our current 13-city panel (Dec-2022 onward) by 6-8 years, directly answering the HIGH-value gap #1 (historical/archived Inside Airbnb-era dumps). Each survey snapshot carries a reviews-count field per listing that can be turned into an older review-accrual/stays proxy series for the same cities we already track.",
+   "If the associated tomslee.net archive is still live, this is a pre-2015 Airbnb listing/price panel that predates Inside Airbnb's earliest coverage -- would directly fill gap #1 (historical dumps pre-2023, here pre-2015). Worth a follow-up check of tomslee.net directly since the repo itself has no committed data.",
+   "Directly targets gap #1 (historical/archived Airbnb dumps pre-2023): this is the oldest known systematic Airbnb listings archive (2014-2016), predating Inside Airbnb, and could plug part of the pre-2023 hole even though it lacks calendar/availability fields (listings + review counts only, useful for review-rate occupancy proxies back to 2014).",
+   "Fills gap #1 (historical/archived Airbnb dumps older than what Inside Airbnb's CDN retains) -- covers 2013-2017, years for which we have no Inside Airbnb coverage at all. Also relevant to gap #2 (historical listing/price snapshots) as a point-in-time series of city-level surveys, several years earlier than our current panel start (Dec 2022).",
+   "If Tom Slee's own historic data dumps (2015-2017, many world cities) survive anywhere (his old site or a mirror), they would be an independent pre-2023 Airbnb listings source, addressing gap #1 (historical Inside-Airbnb-era coverage) \u2014 but this GitHub repo itself is only the scraper method, is unmaintained since 2019, and running it against airbnb.com is out of policy for us per repo rules (non-sanctioned scrape target).",
+   "Historically the source many rent-burden/STR-density academic papers used for pre-2015 Inside-Airbnb-era listing counts; flagged only as a method/provenance reference, not for re-running (scrapes airbnb.com directly, which is a terms-of-service decision outside this catalogue's remit per our own repo rules).",
+   "Historically this scraper generated some of the earliest publicly-shared Airbnb listing snapshots (predating Inside Airbnb, some cities back to ~2014-2015); forks or users of this tool sometimes published resulting CSVs elsewhere (Kaggle/Zenodo) \u2014 worth a targeted follow-up search for 'airbnb-data-collection' output dumps. As a live method it scrapes airbnb.com directly, which per our rules is a ToS decision for a human, not to be run.",
+   "Documents the method/schema used for the earliest known independent Airbnb listing archives (2015-2017), which is the vintage gap #1 explicitly wants filled; useful as a pointer to go find Slee's actual historical CSV dumps (hosted on his now-defunct site / mirrors) rather than as a runnable scraper today, and per repo rules any live scrape of airbnb.com is a ToS call for a human anyway.",
+   "This is the tool that produced some of the only pre-2015/pre-Inside-Airbnb-era STR listings snapshots that exist anywhere; if any fork or mirror of the author's actual output data surfaced elsewhere it would fill gap #1 (historical/archived dumps pre-2023). As shipped here it is code only, and it scrapes airbnb.com directly, which is a ToS decision for a human per repo rules \u2014 catalogued as method, not run.",
+   "Directly fills gap #1 (historical/archived listing dumps pre-2023 \u2014 here pre-2015 through 2017, years off the Inside Airbnb CDN entirely) with real listing IDs trackable across surveys for survival/churn work, across a broader city set than our current 13-city panel.",
+   "Historical precedent for pre-Inside-Airbnb multi-city Airbnb census methodology; the original Tom Slee survey outputs (not in this repo) covered some European cities circa 2015-16, which would sit inside gap #1 (archives older than Inside Airbnb's ~1yr CDN window) if located separately. As shipped, this is a live-scrape method against airbnb.com itself and out of scope to run under our rules -- catalogue only."
+  ]
+ },
+ {
+  "key": "github:chicagoboothml/data___insideairbnb",
+  "url": "https://github.com/ChicagoBoothML/DATA___InsideAirBnB",
+  "name": "ChicagoBoothML/DATA___InsideAirBnB",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Full Inside Airbnb per-city dumps committed directly to the repo for ~30 cities (Amsterdam, Austin, Barcelona, Berlin, Boston, Chicago, London, LA, Madrid, Melbourne, Montreal, Nashville, New Orleans, New York City, Oakland, Paris, Portland, San Diego, San Francisco, Santa Cruz, Seattle, Sydney, Toronto, Trentino, Venice, Vienna, Washington DC, etc). NYC folder contains listings.csv (4.7MB), listings.csv.gz (24MB), calendar.csv.gz (29.6MB), reviews.csv (6.8MB), reviews.csv.gz (62MB), neighbourhoods.csv, neighbourhoods.geojson -- a single full-scope vintage per city, no date in filenames. Repo created/pushed Dec 2015 (confirmed via repo metadata: created_at 2015-12-02, pushed_at 2015-12-03), so this is a ~2015 Inside Airbnb vintage, NOT the 2023-2024 Local Law 18 window. No license file (license: null).",
+  "why_useful": "Multiple cities we already hold (NYC, LA, Chicago, Austin, Nashville, New Orleans, San Diego, Paris, London, Barcelona, Sydney) plus many we don't (Boston, SF, Seattle, DC, Amsterdam, Berlin, Madrid, Melbourne, Montreal, Toronto, Vienna, Venice) at what looks like an early (pre-2023, likely 2016-17) vintage \u2014 directly targets gap #1 (historical Inside Airbnb dumps pre-2023) if the snapshot date is confirmed older than our earliest (Dec 2022) coverage.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "30 cities, US + Europe + Australia",
+  "time_coverage": "Likely single snapshot circa 2016-2017 (unconfirmed exact date)",
+  "size_hint": "unknown; per-city listings/calendar/reviews CSVs",
+  "license": "unspecified in visible README",
+  "last_activity": "unknown (30 commits total, dates not surfaced)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Multiple cities we already hold (NYC, LA, Chicago, Austin, Nashville, New Orleans, San Diego, Paris, London, Barcelona, Sydney) plus many we don't (Boston, SF, Seattle, DC, Amsterdam, Berlin, Madrid, Melbourne, Montreal, Toronto, Vienna, Venice) at what looks like an early (pre-2023, likely 2016-17) vintage \u2014 directly targets gap #1 (historical Inside Airbnb dumps pre-2023) if the snapshot date is confirmed older than our earliest (Dec 2022) coverage.",
+   "Not the target LL18 window, but it IS a genuine full-scope committed historical Inside Airbnb dump (listings+calendar+reviews) from ~2015 for NYC and 29 other cities -- older than anything on the current Inside Airbnb CDN and older than what we hold (Dec 2022+). Addresses gap #1 (historical/archived Inside Airbnb dumps, pre-2023) as an 'older, longer' data point even though it misses the specific LL18 window; useful as a pre-period baseline for a 'listings before any STR regulation wave' comparison across many of our 13-city panel members (NYC, LA, Chicago, Austin, Nashville, New Orleans, San Diego, Paris, London, Barcelona, Sydney)."
+  ]
+ },
+ {
+  "key": "github:urbanbigdatacentre/ubdc-airbnb",
+  "url": "https://github.com/urbanbigdatacentre/ubdc-airbnb",
+  "name": "urbanbigdatacentre/ubdc-airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Containerized, continuously-run scraper (Docker + Django/Celery) that has been collecting DAILY snapshots since 2020 of Airbnb listing property characteristics, booking calendars (day-by-day availability), booking policies, host info, and guest reviews for user-defined geographic areas. Method published/validated in PLOS One 2024 (Enhancing our understanding of short-term rental activity: a daily scrape-based approach for Airbnb listings, PMC10849255) which derives occupancy indicators from calendar-state changes. The actual accumulated dataset (30 UK/Scotland TTWAs, monthly estimates Jun-2021 to Dec-2023) is restricted to UBDC staff (researchdata.gla.ac.uk/2056) but the full scraping/estimation codebase is public on GitHub, so the method (daily calendar-diff -> occupancy/review-count series) is directly reusable against any market.",
+  "why_useful": "A working, actively-documented (peer-reviewed) daily-calendar-scrape methodology for STR occupancy/availability reconstruction (relevant to gap #2, realised occupancy) and a template for a from-scratch calendar-based occupancy indicator, even though the underlying UK dataset itself is gated. Also directly scrapes airbnb.com, so per repo rules this is catalogued as method only and must not be run without a human ToS decision.",
+  "potential": "high",
+  "gap_targets": [
+   2
+  ],
+  "geography": "Scotland (30 TTWAs) + 10 other UK TTWAs",
+  "time_coverage": "Daily since 2020; published analysis June 2021-Dec 2023",
+  "size_hint": "unknown (restricted dataset)",
+  "license": "unspecified repo license; data access restricted to UBDC staff",
+  "last_activity": "active research infrastructure as of the PLOS ONE 2024 publication",
+  "duplicate_of_holding": "",
+  "hits": 6,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "A working, actively-documented (peer-reviewed) daily-calendar-scrape methodology for STR occupancy/availability reconstruction (relevant to gap #2, realised occupancy) and a template for a from-scratch calendar-based occupancy indicator, even though the underlying UK dataset itself is gated. Also directly scrapes airbnb.com, so per repo rules this is catalogued as method only and must not be run without a human ToS decision.",
+   "If the associated Glasgow research-data deposit (external, non-GitHub) holds pre-built daily-since-2020 calendar/booking data across many cities, it would be a strong candidate for realized occupancy/booking-lead-time proxies (gaps 2, 3). Flagging the METHOD only, per repo instructions: scraper directly hits airbnb.com \u2014 CLAUDE.md rule 6 says any scrape beyond Inside Airbnb/the sanctioned fee-panel is a ToS decision for a human; do not run this.",
+   "This is the most rigorous public implementation of exactly the method needed for gap #2 (realised occupancy for STRs from a free/buildable source) and this theme's review-count-as-stays-proxy angle: it operationalizes daily calendar diffing plus review accrual into an occupancy indicator, peer-reviewed, with a working codebase we could point at any of our 123 Inside-Airbnb markets if we wanted independent validation of our own stays index methodology.",
+   "Longest-running, still-live daily Airbnb scrape we've found (since 2020, UK-focused), directly targeting reviews/bookings as a stays proxy -- fills gap #1/#2 in kind, but the actual data output is access-restricted so only the method is usable, and it scrapes airbnb.com directly (ToS question, flagged per repo rule 6, not run).",
+   "Directly addresses gap #2 (realised occupancy for STRs) and #17 (methods) with a working, non-review-based occupancy/cancellation-estimation pipeline (calendar-diff method) that is an alternative to the Inside Airbnb San Francisco model already in use; also relevant to gap #3 (booking lead time / cancellation, RNPL thesis) since the companion paper explicitly studies cancellation trends via calendar tracking.",
+   "A peer-reviewed, published methodology for turning raw Airbnb calendar scrapes into occupancy/activity-level indicators without an AirDNA subscription -- directly relevant to gap #2 as an alternative construction method, and cross-relevant to the team's own Inside-Airbnb calendar work. NOTE: running this against airbnb.com is a scraping decision the CLAUDE.md rules reserve for a human (rule 6) -- catalogue only, do not run."
+  ]
+ },
+ {
+  "key": "github:tracey-sneed/new-york-airbnb-listings-2024",
+  "url": "https://github.com/Tracey-Sneed/New-York-Airbnb-Listings-2024",
+  "name": "New-York-Airbnb-Listings-2024",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV `new_york_listings_2024.csv` \u2014 NYC Airbnb listings as of 5 Jan 2024, sourced from Kaggle (vrindakallu/new-york-dataset). This snapshot date falls squarely inside the missing 2023-06\u21922024-03 Local Law 18 window (post-enforcement, ~4 months after the 5 Sep 2023 registration deadline). Data loaded into a SQLite3 db and visualized in Power BI (.pbix template also in repo). 24 commits, no license stated.",
+  "why_useful": "Directly fills gap #1 (NYC dumps 2023-06\u21922024-03 missing from Inside Airbnb's CDN) with an actual point-in-time NYC listings snapshot from inside that window; can be cross-checked against the pre/post LL18 listing-count collapse (22,246\u21924,000) the team already knows about.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "New York City",
+  "time_coverage": "single snapshot, 2024-01-05",
+  "size_hint": "unspecified row count, single CSV + SQLite db",
+  "license": "none stated",
+  "last_activity": "unspecified (24 commits)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (NYC dumps 2023-06\u21922024-03 missing from Inside Airbnb's CDN) with an actual point-in-time NYC listings snapshot from inside that window; can be cross-checked against the pre/post LL18 listing-count collapse (22,246\u21924,000) the team already knows about."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/datasets/vrindakallu/new-york-dataset",
+  "url": "https://www.kaggle.com/datasets/vrindakallu/new-york-dataset",
+  "name": "New York Airbnb Open Data 2024 (Kaggle)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Original Kaggle source for the same 5 Jan 2024 NYC Airbnb listings snapshot mirrored into the Tracey-Sneed GitHub repo above; https://www.kaggle.com/datasets/vrindakallu/new-york-dataset",
+  "why_useful": "Same value as the GitHub mirror (fills the LL18-window NYC gap); listed separately since it's the canonical host and may carry more metadata/columns than the GitHub copy.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "New York City",
+  "time_coverage": "single snapshot, 2024-01-05",
+  "size_hint": "unknown",
+  "license": "Kaggle dataset license (unspecified)",
+  "last_activity": "",
+  "duplicate_of_holding": "same data as Tracey-Sneed/New-York-Airbnb-Listings-2024 candidate above",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Same value as the GitHub mirror (fills the LL18-window NYC gap); listed separately since it's the canonical host and may carry more metadata/columns than the GitHub copy."
+  ]
+ },
+ {
+  "key": "github:silent-j/airbnb-data-analysis",
+  "url": "https://github.com/silent-j/Airbnb-Data-Analysis",
+  "name": "silent-j/Airbnb-Data-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Six committed CSVs (in datasets.zip) for three Spanish cities: barcelona_list.csv, madrid_list.csv, valencia_list.csv (listing/property features) plus barcelona_cal.csv, madrid_cal.csv, valencia_cal.csv (calendar: listing id x date x availability x PRICE for the 12 months forward from Sep 2019). Downloaded directly from insideairbnb.com on 2019-09-18.",
+  "why_useful": "A pre-2023 Inside Airbnb calendar snapshot WITH price data for Madrid/Valencia (not in our 13-city panel) and an older Barcelona vintage than we hold; directly fills gap 1 (historical/archived Inside Airbnb dumps pre-2023) and is one of the few sources with realized forward calendar pricing from that era.",
+  "potential": "high",
+  "gap_targets": [
+   1,
+   2
+  ],
+  "geography": "Barcelona, Madrid, Valencia (Spain)",
+  "time_coverage": "Snapshot taken 18 Sep 2019; calendar covers ~Sep 2019-Oct 2020 forward-looking",
+  "size_hint": "6 CSVs, city listing counts each likely 10k-20k rows (typical Inside Airbnb city size at that date) plus 365-day calendar per listing",
+  "license": "unknown (check repo LICENSE)",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "Older/finer than our held Inside Airbnb 13-city panel (Dec-2022 onward) and older than our 2024-25 calendar vintages; Madrid/Valencia are new geographies for us.",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "A pre-2023 Inside Airbnb calendar snapshot WITH price data for Madrid/Valencia (not in our 13-city panel) and an older Barcelona vintage than we hold; directly fills gap 1 (historical/archived Inside Airbnb dumps pre-2023) and is one of the few sources with realized forward calendar pricing from that era."
+  ]
+ },
+ {
+  "key": "github:edmondodriscoll/airbnb_occupancy",
+  "url": "https://github.com/edmondodriscoll/AirBnB_Occupancy",
+  "name": "AirBnB_Occupancy",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Implements the classic 'San Francisco Budget & Legislative Analyst's Office' review-based occupancy methodology (review rate 30.5%-72%, midpoint 50%, used to convert Inside Airbnb review counts into estimated bookings, x avg length-of-stay per city, capped at 70% occupancy) and proposes a refinement: filters to multi-listing hosts (20+ properties), 365-day-available, Instant-Book-enabled listings (calendar more likely accurate), then scrapes Airbnb's live calendar API for a subset to validate/calibrate against the review-based estimate. Built on Inside Airbnb listings+reviews as the base dataset. No large committed data files found (methodology/code repo, some scraped calendar snapshots for validation).",
+  "why_useful": "Directly the 'San Francisco model' / review-to-booking-ratio occupancy estimator named in the theme; addresses gap #2 (realised occupancy for STRs from a free source) \u2014 gives a concrete, reproducible formula (review rate x ALOS, city-level) we could re-run on our own 123-market Inside Airbnb panel to get an independent occupancy/nights proxy, and the Instant-Book calendar-accuracy filter is a usable refinement for cross-checking Inside Airbnb calendar-derived occupancy.",
+  "potential": "high",
+  "gap_targets": [
+   2
+  ],
+  "geography": "Not city-specific in the base method; validation touches at least one city (methodology generalizable to any Inside Airbnb market)",
+  "time_coverage": "Not specified (uses whatever Inside Airbnb vintage is pulled)",
+  "size_hint": "small code repo, methodology + some scraped validation data",
+  "license": "unspecified",
+  "last_activity": "unknown (not confirmed via API)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "Directly the 'San Francisco model' / review-to-booking-ratio occupancy estimator named in the theme; addresses gap #2 (realised occupancy for STRs from a free source) \u2014 gives a concrete, reproducible formula (review rate x ALOS, city-level) we could re-run on our own 123-market Inside Airbnb panel to get an independent occupancy/nights proxy, and the Instant-Book calendar-accuracy filter is a usable refinement for cross-checking Inside Airbnb calendar-derived occupancy.",
+   "A clean, inspectable open-source reimplementation of the exact review-rate occupancy methodology already used by Inside Airbnb (which we already lean on) plus an independent calendar-based cross-check idea for calibrating that ratio \u2014 useful for validating/adjusting our own occupancy assumptions (gap #2)."
+  ]
+ },
+ {
+  "key": "github:rochiecuevas/shared_accommodations",
+  "url": "https://github.com/rochiecuevas/shared_accommodations",
+  "name": "rochiecuevas/shared_accommodations",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSVs analyzing San Francisco housing vs. short-term rentals: SF City Performance Scorecard hotel-rate data (Jul 2004-May 2018), Zillow long-term rental rates (Nov 2010-Sep 2018), DataSF home-price/assessment data (2007-2016, not uploaded due to GitHub size limits, downloadable from DataSF instead), and Inside Airbnb peer-to-peer short-term-rental rates (May 2015-Dec 2017). No 311/complaints/enforcement data; explicitly notes only 3 data points exist for the STR series, limiting granularity.",
+  "why_useful": "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023) for San Francisco with an 8-9 year old vintage we do not otherwise have on the CDN.",
+  "potential": "high",
+  "geography": "San Francisco, CA",
+  "time_coverage": "May 2015 - Dec 2017",
+  "size_hint": "28 raw CSVs + 1 consolidated summary CSV",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023) for San Francisco with an 8-9 year old vintage we do not otherwise have on the CDN.",
+   "Small but genuinely historical, committed Inside Airbnb-derived series for San Francisco spanning May 2015-Dec 2017 \u2014 years pre-dating our 13-city panel (Dec 2022+) and off the current CDN. Also a free SF hotel-rate time series back to 2004 (peer/lodging benchmark) and a Zillow SF rent series (housing gap #13).",
+   "Off-theme (no complaints data) but a small, real committed SF housing-vs-STR dataset with an older Inside Airbnb slice (2015-2017) than our current holdings for that city; low value given only 3 STR data points."
+  ]
+ },
+ {
+  "key": "github:rsanjabi/short-term-rentals-warehouse",
+  "url": "https://github.com/rsanjabi/short-term-rentals-warehouse",
+  "name": "short-term-rentals-warehouse",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "dbt/Snowflake data-warehouse project (create_warehouse.sql, extract.py, kaggle_data.py, listings.py, load.py) that stitches together Inside Airbnb listing data (CC0), a Kaggle world-cities-population dataset, and a Kaggle cost-of-living-index dataset into a star schema, described as covering 'over 35 million records from 2015-2020' across global cities, with Metabase dashboards on top. 68 commits, 2 open PRs. No committed CSV/parquet data files were visible in the directory listing seen (extract.py presumably pulls from Inside Airbnb's own CDN/URLs at run time) \u2014 since Inside Airbnb's CDN no longer serves 2015-2020 vintages, re-running this pipeline today would likely NOT reproduce the historical 2015-2020 coverage the README claims unless the author's original run captured URLs that are since gone.",
+  "why_useful": "If the extract.py source URLs or any cached intermediate files still resolve to older Inside Airbnb dump snapshots (worth a follow-up check), this could be a lead on gap #1 (pre-2023 Inside Airbnb dumps archived somewhere). As-is it is a pipeline definition, not a data cache, so treat as medium-low until verified whether it holds/points to actual archived dumps.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "global cities (Inside Airbnb coverage as of ~2020)",
+  "time_coverage": "claimed 2015-2020",
+  "size_hint": "claimed 35M+ records (in Snowflake, not committed to repo)",
+  "license": "underlying data CC0; repo license not confirmed",
+  "last_activity": "not shown (68 commits total)",
+  "duplicate_of_holding": "possible overlap/superset of our 13-city Inside Airbnb panel if the 2015-2020 vintages are real and recoverable",
+  "hits": 9,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data",
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism",
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies",
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "If the extract.py source URLs or any cached intermediate files still resolve to older Inside Airbnb dump snapshots (worth a follow-up check), this could be a lead on gap #1 (pre-2023 Inside Airbnb dumps archived somewhere). As-is it is a pipeline definition, not a data cache, so treat as medium-low until verified whether it holds/points to actual archived dumps.",
+   "Not new data (Airbnb-only, and our Inside Airbnb holdings already run 2022-2026) but the DBT pipeline pattern plus the two Kaggle joins (world-city population, cost-of-living index) could be reusable methodology for normalizing/joining STR panels to macro city context.",
+   "Potential source of pre-2023 Inside Airbnb history (2015-2020), which is explicitly gap #1 (HIGH value) since the team's own IA panel starts Dec 2022 and the CDN no longer serves dumps older than ~1 year. Needs verification of exactly which cities/vintages are embedded in the warehouse's raw extracts vs. re-derived tables.",
+   "If functional, would extend our Inside Airbnb panel (currently Dec 2022+) back to 2015, closing gap #1 (historical/archived Inside Airbnb dumps) and giving pre-COVID STR supply baselines.",
+   "A reusable pipeline pattern for joining Inside Airbnb supply data with city-level cost-of-living/population context globally; the 2015-2020 claim suggests it may reach further back than our current dump coverage, worth checking its actual Inside Airbnb pull dates if pursued.",
+   "If the underlying 2015-2020 raw Inside Airbnb dumps are actually retrievable from this repo/its history, it could plug gap #1 (historical Inside Airbnb dumps pre-2023, now off the CDN) for multiple cities beyond our 13-city panel.",
+   "Directly targets gap #1: this pipeline claims to reach back to Inside Airbnb data from 2015-2020, i.e. years now off the official CDN (which keeps ~1 year). If the extract.py logic or any cached intermediate output can be recovered, it could backfill our pre-2023 Inside Airbnb gap across many cities, not just the ones we hold.",
+   "Off-theme for 311/enforcement specifically (found while searching short-term-rental topic), but flagged since it claims a much larger historical Inside Airbnb pull (2015-2020, 35M records) than what we currently hold \u2014 could be relevant to gap #1 (historical Inside Airbnb archives) even though it stores no data itself, only a reproducible pull method.",
+   "Illustrates a reusable Inside-Airbnb-to-warehouse pipeline pattern, but does not itself supply the pre-2023 archived dumps we are missing (gap #1) since it scrapes the live page, not a historical mirror."
+  ]
+ },
+ {
+  "key": "github:johnbalvin/pyairbnb",
+  "url": "https://github.com/johnbalvin/pyairbnb",
+  "name": "pyairbnb (johnbalvin)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python client (149 stars, updated 8 Sep 2026 -- actively maintained) wrapping Airbnb's internal search/PDP APIs, no login needed. Functions: search_all()/search_all_from_url() (listings with price, availability dates, reviews count/rating, host details, amenities, cancellation policy), get_details() (per-listing prices/available dates/reviews/host), get_price() (nightly price for a given check-in/check-out), get_calendar() (month-level availability/price calendar per listing), get_reviews() (review text+metadata), get_listings_from_user()/get_host_details() (host's other listings), experience_search()/experience_search_by_place_id() (Airbnb Experiences), get_markets()/get_places_ids() (place-id lookup for city/region search boxes). Accepts lat/long bounding boxes for map search. No data committed -- code only.",
+  "why_useful": "Most complete open client for exactly the fields the desk cannot get from Inside Airbnb after May 2025 (live nightly PRICE and CALENDAR availability by listing), which is gap #2 (realised ADR/occupancy) and the 2026-calendar no-price gap noted in what-we-hold. Catalogue as METHOD ONLY -- running it against airbnb.com is the ToS decision CLAUDE.md reserves for a human; do not execute.",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "geography": "global (any Airbnb market via search params)",
+  "time_coverage": "live/current only, no historical archive",
+  "size_hint": "code repo, no data files",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "high",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Most complete open client for exactly the fields the desk cannot get from Inside Airbnb after May 2025 (live nightly PRICE and CALENDAR availability by listing), which is gap #2 (realised ADR/occupancy) and the 2026-calendar no-price gap noted in what-we-hold. Catalogue as METHOD ONLY -- running it against airbnb.com is the ToS decision CLAUDE.md reserves for a human; do not execute.",
+   "Most actively maintained, highest-star pure-Python Airbnb client found. If a human decides scraping Airbnb search/calendar pages is in scope, this is the reference implementation for pulling nightly price and calendar-availability fields at scale (relevant to gap #2, realised ADR/occupancy) and for search-result counts as a nights/supply proxy. Method only, not data."
+  ]
+ },
+ {
+  "key": "github:zxol/airbnbapi",
+  "url": "https://github.com/zxol/airbnbapi",
+  "name": "airbnbapi (zxol)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "227-star, 53-fork Node.js wrapper around Airbnb's private mobile-app API (MIT, 107 commits). Exposes: property search with filters, public+private listing detail, host summaries/active listings, public calendar/pricing AND private calendar management (reservations, blocked days, dynamic pricing per date), guest/host user info, messaging threads, review submission, and batch reservation retrieval (host-side, needs auth token).",
+  "why_useful": "Highest-star Airbnb API client found in this sweep; documents the richest field set (including host-side reservation/calendar internals) of any repo surveyed, useful as a reference for what fields Airbnb's own app exposes even if never run \u2014 e.g. confirms per-date dynamic pricing and blocked-day calendar fields exist server-side, which bears on how realised ADR/occupancy could in principle be reconstructed (gap #2).",
+  "potential": "high",
+  "geography": "global",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "last updated ~Dec 2022 per topic listing",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Highest-star Airbnb API client found in this sweep; documents the richest field set (including host-side reservation/calendar internals) of any repo surveyed, useful as a reference for what fields Airbnb's own app exposes even if never run \u2014 e.g. confirms per-date dynamic pricing and blocked-day calendar fields exist server-side, which bears on how realised ADR/occupancy could in principle be reconstructed (gap #2)."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/airbnb-scraper",
+  "url": "https://github.com/omkarcloud/airbnb-scraper",
+  "name": "airbnb-scraper (omkarcloud)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Recently active repo (updated ~22 days before scout date; 5 stars, 4 commits) providing an API-style scraper covering 67 country domains. Fields: listing type/capacity/bedrooms/beds/baths, live nightly rate with breakdown (base, discounts, fees), real-time availability for given dates, host profile (superhost status, response rate, years hosting), amenities by category, review ratings incl. category sub-scores (cleanliness, accuracy, etc.), coordinates/address/place IDs, photos with captions, house rules/cancellation policy/sleeping arrangements. Extensive sample JSON responses in the README (documentation examples, not a committed dataset).",
+  "why_useful": "Most field-rich single-listing schema found in this sweep (includes category-level review sub-scores and full cancellation-policy text, relevant to the RNPL/cancellation-distribution gap #3 if reconstructable from cancellation-policy metadata) and is one of the most recently updated repos surveyed.",
+  "potential": "high",
+  "geography": "global, 67 country sites",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a (sample JSON in README only)",
+  "license": "check repo (not stated in fetch)",
+  "last_activity": "~Aug 2026 (\u224822 days before 2026-09-14)",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Most field-rich single-listing schema found in this sweep (includes category-level review sub-scores and full cancellation-policy text, relevant to the RNPL/cancellation-distribution gap #3 if reconstructable from cancellation-policy metadata) and is one of the most recently updated repos surveyed.",
+   "Same category as above \u2014 a method for asking-price/availability capture, not a held dataset; scraping airbnb.com directly is out of the sanctioned scope per repo rules."
+  ]
+ },
+ {
+  "key": "github:apventureengine/warn-act-notices",
+  "url": "https://github.com/APVentureEngine/warn-act-notices",
+  "name": "warn-act-notices",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Normalized US WARN Act mass-layoff/plant-closure notice archive, 1988-present, 61,309+ records as of 13 Sep 2026, covering 48 states (excludes AR, NH, WY which don't publish company-level notices). CSV and JSON, per-state files under data/by-state/, plus monthly/yearly time-series, employer rollups, RSS/ics calendar exports. Fields: employer name, canonical normalized employer name, location, employees affected, notice date, effective date, notice type (layoff/closure), state. Auto-updated daily (15 consecutive daily commits Aug30-Sep13 2026 observed). Built on Apache-2.0 biglocalnews/warn-scraper (Stanford Big Local News) as the underlying collector; this repo's own data is CC BY 4.0.",
+  "why_useful": "Direct, company-name-searchable, point-in-time-stamped (daily commits) layoff-notice history that should contain Airbnb's California WARN filings from the 2020 mass layoff (~1,900 employees) and any later reductions \u2014 a real, dated headcount-shock signal (gap #14, corporate footprint) rather than a scraped estimate. Also usable as a macro/consumer-labor-market cross-check independent of ABNB.",
+  "potential": "high",
+  "geography": "US, 48 states",
+  "time_coverage": "1988-present, updated daily",
+  "size_hint": "61,309+ notices, multiple CSV/JSON files",
+  "license": "CC BY 4.0 (data), Apache-2.0 (underlying scraper it builds on)",
+  "last_activity": "13 Sep 2026 (daily automated commits)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Direct, company-name-searchable, point-in-time-stamped (daily commits) layoff-notice history that should contain Airbnb's California WARN filings from the 2020 mass layoff (~1,900 employees) and any later reductions \u2014 a real, dated headcount-shock signal (gap #14, corporate footprint) rather than a scraped estimate. Also usable as a macro/consumer-labor-market cross-check independent of ABNB."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/vancouver-analysis",
+  "url": "https://github.com/UPGo-McGill/vancouver-analysis",
+  "name": "vancouver-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Full bookdown report repo (00-executive_summary.Rmd ... 05-references.Rmd) plus a committed data/ folder: data/cmhc/ has CMHC annual rental-market-survey workbooks (annual_avg_rent_2015-2019.xlsx, annual_units_2015-2019.xlsx ~1.1MB each, annual_vacancy_2015-2019.xlsx ~1.5MB each, plus condensed van_avg_rent.csv, van_units.csv, van_vacancy.csv) by Vancouver neighbourhood; data/shapefiles/ has CMHC_NBHD_2016 neighbourhood boundary shapefile (16MB .shp), a Vancouver business-licences shapefile (85MB .dbf \u2014 city business licence registry, likely including STR operator licences), a local-area-boundary shapefile, and a rapid-transit-station point shapefile; plus a van_scrape.Rdata (Airbnb/STR scrape snapshot). Covers 'regulatory impacts' and 'COVID returning listings' analysis, 2015-2020ish.",
+  "why_useful": "Committed CMHC rental vacancy/rent/unit-count tables by Vancouver neighbourhood (2015-2019) are exactly the free, public LTR housing-economics panel named in gap #13 (STR<->LTR crossover), and the business-licence shapefile is a real municipal STR-adjacent registry (gap #12) with geographic boundaries attached.",
+  "potential": "high",
+  "gap_targets": [
+   12,
+   13
+  ],
+  "time_coverage": "2015-2020 (CMHC tables); business licence shapefile vintage unclear",
+  "geography": "Vancouver, BC, Canada (city + neighbourhood level)",
+  "size_hint": "~227 MB repo (dominated by the 85MB business-licences.dbf and 16MB neighbourhood shapefile)",
+  "license": "mit",
+  "last_activity": "2021-04-23",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Committed CMHC rental vacancy/rent/unit-count tables by Vancouver neighbourhood (2015-2019) are exactly the free, public LTR housing-economics panel named in gap #13 (STR<->LTR crossover), and the business-licence shapefile is a real municipal STR-adjacent registry (gap #12) with geographic boundaries attached."
+  ]
+ },
+ {
+  "key": "github:asunamasuda/tokyo_airbnb",
+  "url": "https://github.com/AsunaMasuda/Tokyo_Airbnb",
+  "name": "AsunaMasuda/Tokyo_Airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Three committed CSV files of Inside Airbnb Tokyo data covering Sep 2019-Aug 2020 (listings/calendar/reviews vintage, per README), plus an ipynb doing random-forest price prediction. Exact row counts not stated in README.",
+  "why_useful": "Pre-2023 Inside Airbnb Tokyo vintage \u2014 our held Inside Airbnb panel only goes back to Dec 2022 and the 120-market Jun-2026 cohort is current-only. This is a genuine historical archive for a market we don't otherwise have pre-2023 for.",
+  "potential": "high",
+  "geography": "Tokyo, Japan",
+  "time_coverage": "Sep 2019 - Aug 2020",
+  "size_hint": "3 CSV files (listings/calendar/reviews scale)",
+  "license": "unknown",
+  "last_activity": "2021-05-02",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Pre-2023 Inside Airbnb Tokyo vintage \u2014 our held Inside Airbnb panel only goes back to Dec 2022 and the 120-market Jun-2026 cohort is current-only. This is a genuine historical archive for a market we don't otherwise have pre-2023 for."
+  ]
+ },
+ {
+  "key": "github:jacksonium/hongkongairbnb",
+  "url": "https://github.com/jacksonium/hongkongairbnb",
+  "name": "jacksonium/hongkongairbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Six committed CSV files: Inside Airbnb calendar, listings, and reviews data for Hong Kong, snapshotted Nov 2019 and Nov 2020 (two full vintages).",
+  "why_useful": "Pre-2023 Hong Kong Inside Airbnb vintage, a market and time window we don't currently hold; useful as a historical anchor for HK STR supply/pricing before regulation tightened.",
+  "potential": "high",
+  "geography": "Hong Kong",
+  "time_coverage": "Nov 2019, Nov 2020",
+  "size_hint": "6 CSV files across two snapshot dates",
+  "license": "unknown",
+  "last_activity": "2021-02-01",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Pre-2023 Hong Kong Inside Airbnb vintage, a market and time window we don't currently hold; useful as a historical anchor for HK STR supply/pricing before regulation tightened."
+  ]
+ },
+ {
+  "key": "github:ropensci/skynet",
+  "url": "https://github.com/ropensci/skynet",
+  "name": "ropensci/skynet",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Peer-reviewed rOpenSci R package with import_db1b() and import_t100() functions that parse raw BTS DB1B (Coupon/Ticket) and T-100 segment CSVs downloaded from transtats.bts.gov into tidy data frames, plus make_net_dir() to build directed air-transport networks (city-pair traffic, fares) with statistical edge filtering. Includes a convert_raw() helper to compress raw files to needed variables. Topics tagged: bts, transtats, rita, t100, db1b, bureau-of-transport-statistics. Does not fetch On-Time Performance data. No raw data committed (BYO download from BTS website); this is a tidying/network-construction method, not a stored dataset.",
+  "why_useful": "Directly targets gap #10 (airline capacity/traffic as a travel-demand kernel analogue for ABNB nights) \u2014 a maintained, peer-reviewed method for turning raw BTS T-100 (city-pair capacity/seats/departures) and DB1B (fare/itinerary) files into usable panels, saving the team from writing a T-100/DB1B parser from scratch.",
+  "potential": "high",
+  "geography": "US domestic + international segments touching the US (BTS scope)",
+  "time_coverage": "Whatever vintage of T-100/DB1B the user downloads from BTS (historical archive back to 1990s available at source)",
+  "size_hint": "Method only, no committed data; T-100/DB1B source files are large (DB1B ~GB-scale per quarter)",
+  "license": "rOpenSci package, GPL-family typical (license file present, not read in full)",
+  "last_activity": "Last updated 2024-09-12 per GitHub topic page",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   10
+  ],
+  "hits": 4,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers",
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route",
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Directly targets gap #10 (airline capacity/traffic as a travel-demand kernel analogue for ABNB nights) \u2014 a maintained, peer-reviewed method for turning raw BTS T-100 (city-pair capacity/seats/departures) and DB1B (fare/itinerary) files into usable panels, saving the team from writing a T-100/DB1B parser from scratch.",
+   "T-100 is the closest thing to genuine 'airline seat capacity by route' public data (monthly, by carrier, domestic+international, free from BTS); this package is a ready-made, tested pipeline for turning it into route-network capacity series that could proxy inbound/outbound travel capacity to Airbnb-relevant markets (esp. US gateway cities, and international routes feeding APAC/LatAm markets).",
+   "DB1B/T-100 are the exact 'airline capacity and traffic' data named in gap 10; this is a maintained, peer-reviewed one-command pull method for a large, free, official US domestic fare/traffic dataset spanning 1990s-present, directly usable as a travel-volume/pricing proxy.",
+   "DB1B/T100 is the authoritative US domestic airfare + passenger-volume + route-network dataset (gap 10: airline capacity/traffic) and could proxy long-haul/US travel demand and average realized fares by O&D market as a consumer-travel-spend cross-check; this package removes most of the BTS data-wrangling pain."
+  ]
+ },
+ {
+  "key": "other:https://opensky-network.org/datasets/covid-19",
+  "url": "https://opensky-network.org/datasets/covid-19/",
+  "name": "OpenSky Network COVID-19 flight dataset",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Daily global flight-level records (callsign, ICAO24, origin/destination airport where inferable, first/last-seen times, altitude profile) crowdsourced from 2,500+ ADS-B ground receivers, published by the OpenSky Network / Eurocontrol PRU academic team, coverage from 1 Jan 2019 to present, updated continuously; documented in Strohmeier et al. 2021, Earth System Science Data, DOI 10.5194/essd-13-357-2021. Not a GitHub-committed dataset -- served via an S3-style bucket browser at opensky-network.org, free for research use with attribution. GitHub repos that consume it (e.g. siddharth271101/Covid-19-and-Aviation-Industry, a Spark/EMR pipeline joining it to JHU CSSE COVID case counts, MIT licence, 29 commits) show the pull method.",
+  "why_useful": "This is essentially a global daily flight-volume series since 2019 -- a genuine travel-demand proxy usable for gap #10 (airline/rail/road capacity and traffic) and cross-checkable against nights/ADR seasonality and COVID-era base effects; far larger and more current than TSA throughput (already tried and found weak since 2024) because it is global, not US-security-line-only.",
+  "potential": "high",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "multi-TB raw, but aggregatable to daily flight counts per country/airport; ~7 years of daily data",
+  "time_coverage": "2019-01-01 to present, continuously updated",
+  "geography": "global",
+  "license": "free for research/education with attribution; not a standard OSS licence",
+  "last_activity": "actively updated (ongoing academic project)",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "This is essentially a global daily flight-volume series since 2019 -- a genuine travel-demand proxy usable for gap #10 (airline/rail/road capacity and traffic) and cross-checkable against nights/ADR seasonality and COVID-era base effects; far larger and more current than TSA throughput (already tried and found weak since 2024) because it is global, not US-security-line-only."
+  ]
+ },
+ {
+  "key": "github:euctrl-pru/daio",
+  "url": "https://github.com/euctrl-pru/daio",
+  "name": "euctrl-pru/daio",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV and Parquet files (daio_2019.csv ... daio_2026.csv, plus .parquet equivalents) of DAILY flight counts by EUROCONTROL Member State: departures, arrivals, internal, overflight, circular flights, and combined DAIO/dep+arr totals, by UTC date and country name, 2019 through 2026 (present-day, via update_data.sh automation).",
+  "why_useful": "Country-level daily European air traffic (departures/arrivals) is a real-time-ish proxy for cross-border travel demand into ABNB's largest ex-US markets (Spain, France, Italy, UK, Germany) -- useful for nowcasting European nights/ADR ahead of guide dates (gap: international travel volume proxies).",
+  "potential": "high",
+  "geography": "Europe (EUROCONTROL member states, country level)",
+  "time_coverage": "~2019-present, daily",
+  "size_hint": "not stated; likely a few thousand rows (country x day)",
+  "license": "unknown - check repo LICENSE",
+  "last_activity": "unknown, active org (2026 repos present in org)",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Country-level daily European air traffic (departures/arrivals) is a real-time-ish proxy for cross-border travel demand into ABNB's largest ex-US markets (Spain, France, Italy, UK, Germany) -- useful for nowcasting European nights/ADR ahead of guide dates (gap: international travel volume proxies).",
+   "A daily, country-level European flight-volume series is a real-time-ish proxy for cross-border air travel activity feeding short-haul European trip demand (nights bookings in EU markets); daily granularity through the current year is unusually fresh for a committed GitHub dataset and could nowcast intra-quarter European travel momentum ahead of Eurostat's lagged passenger releases."
+  ]
+ },
+ {
+  "key": "github:ropengov/eurostat",
+  "url": "https://github.com/rOpenGov/eurostat",
+  "name": "eurostat (rOpenGov)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (part of rOpenGov, 1400+ commits, actively maintained, CRAN-published) providing a client for the Eurostat REST/SDMX API: search, download, and cache any Eurostat table by its dataset code, including the collaborative-economy accommodation tables Eurostat produced from the Airbnb/Booking/Expedia/TripAdvisor data-sharing pilot (e.g. tour_ce_omr, tour_ce_omn12 \u2014 the same series noted as already held in CONTEXT.md). No data files committed to the repo itself; it is a reproducible pull method, and Eurostat's bulk-download files carry release/vintage timestamps, so this could support a point-in-time re-pull of the platform-nights series rather than a single static CSV.",
+  "why_useful": "Gives a maintained, one-command route to official EU-wide air passenger transport statistics (a leading indicator of European travel demand / cross-border trip volume) at quarterly granularity back to 1993 - directly usable as a European travel-volume regressor for ABNB's EMEA nights, addressing the travel_volume_transport gap with a much longer, cleaner history than any single-airport scraper.",
+  "potential": "high",
+  "time_coverage": "1993-2026 (quarterly, with normal Eurostat 1-2 quarter reporting lag)",
+  "geography": "EU27 + EEA + UK/Switzerland, country-level (some sub-national/airport breakdowns exist in the underlying avia_ dataset family)",
+  "size_hint": "avia_paoc ~2.6M values, avia_paocc ~11.6M values (full table incl. all countries/years)",
+  "license": "Eurostat open data (attribution required)",
+  "last_activity": "actively maintained rOpenGov package, data refreshes live from Eurostat",
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)",
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Gives a maintained, one-command route to official EU-wide air passenger transport statistics (a leading indicator of European travel demand / cross-border trip volume) at quarterly granularity back to 1993 - directly usable as a European travel-volume regressor for ABNB's EMEA nights, addressing the travel_volume_transport gap with a much longer, cleaner history than any single-airport scraper.",
+   "Well-tested, widely cited (rOpenGov ecosystem) generic Eurostat client; could be used to build a point-in-time tour_occ / tour_ce puller in R as an alternative to a hand-rolled pull, and to grab longer historical vintages of the same series we already hold.",
+   "Mature, well-maintained alternative acquisition path for Eurostat series (including tourism/travel and consumer indicators) beyond the single tour_ce_omr series already held; does not appear to expose vintages/revisions explicitly but is a solid pull tool for expanding Eurostat coverage.",
+   "Same underlying data as our held tour_ce_omr series but a one-call method to also pull sub-national (NUTS2) EU tourism/accommodation series and vintage/revision metadata -- addresses gap 4 (point-in-time macro vintages) and could give EMEA regional granularity finer than what we hold.",
+   "Turns the Eurostat collaborative-economy series (gap area: point-in-time platform tourism data) into a scriptable, repeatable pull, and could be adapted to fetch the vintage/revision history of tour_ce_omr for gap #4 (point-in-time macro/consensus vintages) instead of a one-off static pull."
+  ]
+ },
+ {
+  "key": "github:mattcowgill/readabs",
+  "url": "https://github.com/MattCowgill/readabs",
+  "name": "readabs (R)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (111 stars, 28 forks, 387 commits) that downloads, imports and tidies Australian Bureau of Statistics time series -- both discrete data-cube downloads and the ABS API. Ships convenience wrappers read_cpi(), read_awe() (average weekly earnings), job-mobility, weekly payrolls, and labour-force gross-flows readers; general read_abs_series()/read_abs() cover any ABS catalogue number, which includes ABS Overseas Arrivals and Departures and Tourism Satellite Account tables. Listed in the community 'Awesome Official Statistics Software' list. No data committed.",
+  "why_useful": "Direct, maintained, one-command route to the Australia ABS overseas arrivals series named explicitly in this theme (gap #7 APAC), avoiding manual ABS spreadsheet wrangling; monthly granularity, decades of history available from ABS.",
+  "potential": "high",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "ABS series back to the 1990s, monthly, updated monthly by ABS",
+  "size_hint": "library",
+  "license": "MIT",
+  "last_activity": "2026-09-07 (very active)",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Direct, maintained, one-command route to the Australia ABS overseas arrivals series named explicitly in this theme (gap #7 APAC), avoiding manual ABS spreadsheet wrangling; monthly granularity, decades of history available from ABS.",
+   "Gap #7 (APAC -- Australia ABS/TRA named explicitly). ABS publishes Overseas Arrivals & Departures (monthly, by country of origin/purpose of travel) and short-term visitor/departure counts; this is the most mature, actively maintained client found for pulling that series to build an Australia travel-volume proxy.",
+   "Only credible free route to Australia's CPI accommodation/domestic-holiday-travel component found; general ABS reader is reusable for other ABS series (tourism satellite account, international arrivals) too."
+  ]
+ },
+ {
+  "key": "github:ondata/opensdmx",
+  "url": "https://github.com/ondata/opensdmx",
+  "name": "ondata/opensdmx",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python CLI + library for any SDMX 2.1 REST API, with named support for Eurostat, ISTAT, OECD, ECB and World Bank. Since Eurostat's tour_occ_* / tour_ce_* series and ISTAT's turismo tables are both published over SDMX, this is a single client that could pull tour_occ (nights spent, arrivals by NUTS2, monthly) and ISTAT tourism tables (Movimento dei clienti) without writing bespoke scrapers. 52 stars, actively updated (2026-09-14), MIT.",
+  "why_useful": "Fills gap of a machine-pullable route to Eurostat tour_occ/tour_ce and ISTAT turismo at finer (NUTS2/monthly) grain than the tour_ce_omr platform-nights series we already hold; also reaches OECD tourism tables in one client. Relevant to gaps #5/#7/#17 (broad international stats via one SDMX client).",
+  "potential": "high",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "size_hint": "unknown; active CLI+library repo",
+  "geography": "EU (Eurostat/ISTAT), OECD member countries",
+  "time_coverage": "as published by source SDMX endpoints",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Fills gap of a machine-pullable route to Eurostat tour_occ/tour_ce and ISTAT turismo at finer (NUTS2/monthly) grain than the tour_ce_omr platform-nights series we already hold; also reaches OECD tourism tables in one client. Relevant to gaps #5/#7/#17 (broad international stats via one SDMX client).",
+   "Single tool that can pull Eurostat tour_occ/tour_ce AND Italy's ISTAT tourism tables (arrivals/presences by region, 'Movimento dei clienti negli esercizi ricettivi') from one client \u2014 useful for building a repeatable, versioned (saved-query) point-in-time puller across two of our target agencies at once.",
+   "A single generic tool that reaches the whole theme's target agencies (Eurostat platform nights, OECD tourism/consumer-confidence tables, ECB statistical series for FX/rates papers) without needing a separate client per agency -- directly useful for pulling OECD platform-economy or tourism satellite-account tables and ECB series referenced in ECB working papers on the sharing economy.",
+   "Discovery layer for finding which national tourism/statistics agencies expose SDMX data at all \u2014 useful as a first pass before hand-wiring per-country pulls (complements gap #17's Socrata/CKAN-discovery idea, applied to SDMX)."
+  ]
+ },
+ {
+  "key": "github:eurostat/pyrostat",
+  "url": "https://github.com/eurostat/pyrostat",
+  "name": "eurostat/pyrostat",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Eurostat Python API (in development since 2017, ~56 commits) for querying/searching/downloading any Eurostat database table via the REST/JSON web services and bulk-download facility, incl. RAMON metadata code lists. No tourism-specific dataset bundled, but tour_occ_* / tour_ce_* codes are pullable generically. EUPL-1.1 license.",
+  "why_useful": "Authoritative, maintained client for pulling any Eurostat dataset code including tour_occ_ninat/tour_occ_arm/tour_ce_omn at whatever grain is published (country/NUTS2, monthly) \u2014 a one-command route to a finer-grained European tourism series than the platform-nights series already held.",
+  "potential": "high",
+  "gap_targets": [
+   7
+  ],
+  "license": "EUPL-1.1",
+  "last_activity": "2026-03-27",
+  "size_hint": "library, no bundled data",
+  "geography": "EU/EFTA",
+  "time_coverage": "as published (Eurostat tour_occ back to ~1990s for some series, monthly)",
+  "duplicate_of_holding": "We hold Eurostat tour_ce_omr platform nights only; this reaches the broader tour_occ/tour_ce family (occupancy, arrivals, NUTS2) not yet pulled",
+  "hits": 3,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Authoritative, maintained client for pulling any Eurostat dataset code including tour_occ_ninat/tour_occ_arm/tour_ce_omn at whatever grain is published (country/NUTS2, monthly) \u2014 a one-command route to a finer-grained European tourism series than the platform-nights series already held.",
+   "Direct, official-org-maintained way to pull Eurostat's monthly tour_occ (occupancy, nights spent) and tour_ce (demand) tables programmatically and point-in-time (vintage snapshots possible via repeated pulls), addressing the 150-day-lag limitation noted for our existing tour_ce_omr pull by making refresh trivial. Complements gap 4/17 (nowcasting, vintages).",
+   "Python-native (matches repo's pandas/duckdb stack) route to the same Eurostat platform-tourism and accommodation tables, and to non-tourism Eurostat series (HICP, consumer confidence) already partly held from other sources."
+  ]
+ }
+]

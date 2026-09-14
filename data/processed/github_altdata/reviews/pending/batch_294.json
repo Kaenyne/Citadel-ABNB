@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:api-evangelist/norwegian-cruise-line",
+  "url": "https://github.com/api-evangelist/norwegian-cruise-line",
+  "name": "norwegian-cruise-line (API Evangelist profile)",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Independent third-party documentation profile of NCLH's public API surface (apis.yml/OpenAPI metadata, screenshots, security notes). Explicitly finds 'No public developer portal or external API offering has been identified for Norwegian Cruise Line Holdings' \u2014 GDS/travel-agent integrations only. No pricing, schedule, or operational data. 32 commits, last modified 2026-05-16.",
+  "why_useful": "Confirms there is no public NCLH API to scrape/pull \u2014 useful negative result to record so nobody re-investigates this path, but holds no usable data itself.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "size_hint": "documentation only",
+  "license": "not specified",
+  "last_activity": "2026-05-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Confirms there is no public NCLH API to scrape/pull \u2014 useful negative result to record so nobody re-investigates this path, but holds no usable data itself."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/royal-caribbean",
+  "url": "https://github.com/api-evangelist/royal-caribbean",
+  "name": "royal-caribbean (API Evangelist profile)",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Same API Evangelist third-party profile format as the NCLH repo, covering Royal Caribbean Group (Royal Caribbean International, Celebrity Cruises, Silversea). Documentation/metadata only, no committed operational data. Last updated September 2026.",
+  "why_useful": "Companion profile to the NCLH/Carnival ones; worth a one-line catalogue entry but no usable data found.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "size_hint": "documentation only",
+  "license": "not specified",
+  "last_activity": "September 2026",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Companion profile to the NCLH/Carnival ones; worth a one-line catalogue entry but no usable data found."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/carnival-corporation",
+  "url": "https://github.com/api-evangelist/carnival-corporation",
+  "name": "carnival-corporation (API Evangelist profile)",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Same API Evangelist format covering Carnival Corporation's eight cruise brands (Carnival, Princess, Holland America, etc.), including notes on OceanMedallion wearable platform and loyalty apps. Documentation/metadata only (apis.yml), no pricing/schedule data. Created 2026-05-05, last modified 2026-05-16.",
+  "why_useful": "Confirms no public developer API surface for Carnival brands either; catalogue value only as a negative result / pointer to the OceanMedallion app ecosystem for future method ideas (app-store review mining, gap #14).",
+  "potential": "low",
+  "gap_targets": [
+   14,
+   18
+  ],
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "size_hint": "documentation only",
+  "license": "not specified",
+  "last_activity": "2026-05-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Confirms no public developer API surface for Carnival brands either; catalogue value only as a negative result / pointer to the OceanMedallion app ecosystem for future method ideas (app-store review mining, gap #14)."
+  ]
+ },
+ {
+  "key": "github:tg12/phantomtide",
+  "url": "https://github.com/tg12/phantomtide",
+  "name": "phantomtide",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Global maritime intelligence platform for real-time vessel tracking, AIS data analysis, sanctions monitoring, shipping routes and port activity. 124 stars. Generic AIS-based tool, not cruise-specific; data comes from live AIS feeds, not a committed dataset.",
+  "why_useful": "Could in theory be adapted to track specific cruise-ship IMO numbers for port-call frequency/dwell time as a very indirect capacity-utilization proxy, but it is a general OSINT maritime-intelligence tool with no cruise-specific data or documentation, and likely depends on paid AIS feeds for full coverage.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "live/real-time only",
+  "geography": "global",
+  "size_hint": "n/a \u2014 platform/tool",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Could in theory be adapted to track specific cruise-ship IMO numbers for port-call frequency/dwell time as a very indirect capacity-utilization proxy, but it is a general OSINT maritime-intelligence tool with no cruise-specific data or documentation, and likely depends on paid AIS feeds for full coverage."
+  ]
+ },
+ {
+  "key": "github:mikelor/tsathroughput-data",
+  "url": "https://github.com/mikelor/TsaThroughput-Data",
+  "name": "mikelor/TsaThroughput-Data",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Companion data-lake repo (Apache-2.0, 9 commits) storing TSA Checkpoint Throughput files pulled and shaped by the paired mikelor/tsathroughput scraper/processing repo; has a /data folder. Exact date range and format not confirmed without a directory listing.",
+  "why_useful": "A committed, licensed (Apache-2.0) TSA data mirror plus a paired open-source acquisition tool \u2014 lower confidence than kw468's repo on scope but the license is a plus for reuse.",
+  "potential": "low",
+  "duplicate_of_holding": "TSA throughput, unclear vintage/date range",
+  "gap_targets": [
+   10
+  ],
+  "geography": "US",
+  "time_coverage": "unknown",
+  "size_hint": "small, /data folder",
+  "license": "Apache-2.0",
+  "last_activity": "2022-08-02",
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "A committed, licensed (Apache-2.0) TSA data mirror plus a paired open-source acquisition tool \u2014 lower confidence than kw468's repo on scope but the license is a plus for reuse."
+  ]
+ }
+]

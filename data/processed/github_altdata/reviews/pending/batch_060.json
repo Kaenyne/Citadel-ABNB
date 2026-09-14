@@ -1,0 +1,147 @@
+[
+ {
+  "key": "github:mashvisor/us-neighborhoods-boundaries",
+  "url": "https://github.com/mashvisor/us-neighborhoods-boundaries",
+  "name": "mashvisor/us-neighborhoods-boundaries",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "GeoJSON/CSV neighborhood-boundary shapefiles derived from Zillow's discontinued Neighborhood Boundaries dataset, covering 42 US states; committed conversion output, CC0 licence.",
+  "why_useful": "Not rental-performance data, but a committed, ready-to-use neighborhood-boundary geodataset (42 states) useful for joining any city-level STR/ADR series to consistent neighborhood polygons -- infrastructure for gap #2/#13 style work, not itself a KPI series.",
+  "potential": "medium",
+  "geography": "USA, 42 states",
+  "time_coverage": "unknown vintage of Zillow boundaries",
+  "size_hint": "GeoJSON + CSV, state-level files",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "Not rental-performance data, but a committed, ready-to-use neighborhood-boundary geodataset (42 states) useful for joining any city-level STR/ADR series to consistent neighborhood polygons -- infrastructure for gap #2/#13 style work, not itself a KPI series.",
+   "US neighbourhood polygons are the join layer needed to aggregate Inside Airbnb listing lat/lon or STR registry addresses up to a consistent geography for cross-city comparison; Zillow's original file is no longer distributed so this mirror has standalone value."
+  ]
+ },
+ {
+  "key": "github:overturemaps/schema",
+  "url": "https://github.com/OvertureMaps/schema",
+  "name": "OvertureMaps/schema",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Schema definitions (CC-BY-4.0, 212 stars, 1,595 commits) for all Overture themes including the `theme-places` package, which defines the category taxonomy used to classify POIs (would include accommodation/lodging/tourism categories, though exact list not extracted from this fetch \u2014 see docs.overturemaps.org for the full category tree).",
+  "why_useful": "Needed alongside OvertureMaps/data to write a correct category filter for hotel/lodging extraction; not standalone data but the map key that makes the pull usable.",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Current schema, versioned",
+  "size_hint": "Schema/docs only, no data",
+  "license": "CC-BY-4.0",
+  "last_activity": "Active, updated 2026-09-11",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Needed alongside OvertureMaps/data to write a correct category filter for hotel/lodging extraction; not standalone data but the map key that makes the pull usable.",
+   "Needed to correctly filter OvertureMaps/data for lodging/accommodation categories when building a hotel/STR supply-count series.",
+   "Needed to write a category filter (e.g. 'lodging', 'hotel', 'bed_and_breakfast') against overturemaps-py pulls; without the schema, category-based hotel counting from Overture isn't reproducible."
+  ]
+ },
+ {
+  "key": "github:healthyregions/overture-poi-extract",
+  "url": "https://github.com/healthyregions/overture-poi-extract",
+  "name": "healthyregions/overture-poi-extract",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CC0-1.0 Python/DuckDB/GeoPandas/Click CLI script that queries Overture's Places theme and exports GeoJSON/Shapefile/PMTiles extracts for any US bbox, with pre-made category-collection groupings (a category CSV covering lodging-adjacent categories among others). No data committed -- run-it-yourself extractor. Built for an SDOH place-data discovery app but generic.",
+  "why_useful": "Lowers the effort to turn OvertureMaps/data into a usable hotel-POI-by-city extract; CC0 licensed so no reuse friction.",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global (user-selected bbox)",
+  "time_coverage": "Whatever Overture release is current when run",
+  "size_hint": "Small script, no committed data",
+  "license": "CC0-1.0",
+  "last_activity": "2026-04-23",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Lowers the effort to turn OvertureMaps/data into a usable hotel-POI-by-city extract; CC0 licensed so no reuse friction.",
+   "A ready one-command extractor for pulling lodging/hotel POI counts by geography from Overture without hand-rolling DuckDB queries -- directly operationalizes gap #8 (hotel supply from maps)."
+  ]
+ },
+ {
+  "key": "github:yharby/overturemapsdownloader",
+  "url": "https://github.com/yharby/OvertureMapsDownloader",
+  "name": "yharby/OvertureMapsDownloader",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "103-star tool using DuckDB, Dask and GDAL/OGR to extract/filter Overture Maps Parquet data (including the places theme) into more usable formats, an alternative/complementary path to overturemaps-py for bulk or DuckDB-native pulls.",
+  "why_useful": "Alternative, more general-purpose puller for the same hotel-POI-by-release data as OvertureMaps/data; useful if the official CLI's bbox/format options are insufficient.",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Current Overture releases",
+  "size_hint": "Tooling only",
+  "license": "Other (check terms)",
+  "last_activity": "2026-05-22",
+  "duplicate_of_holding": "OvertureMaps/data (same underlying source, different puller)",
+  "hits": 3,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Alternative, more general-purpose puller for the same hotel-POI-by-release data as OvertureMaps/data; useful if the official CLI's bbox/format options are insufficient.",
+   "Same hotel-POI supply-tracking use case as OvertureMaps/data but with a DuckDB-native workflow, which matches the team's existing DuckDB tooling for Inside Airbnb.",
+   "Alternative maintained downloader for Overture Places if the World Bank/healthyregions tools don't fit; same use case (lodging POI counts by city/region)."
+  ]
+ },
+ {
+  "key": "github:overturemaps/stac",
+  "url": "https://github.com/OvertureMaps/stac",
+  "name": "OvertureMaps/stac",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Generates STAC (SpatioTemporal Asset Catalog) manifest files cataloguing every dated Overture Maps release, giving a machine-readable index of release dates back to the dataset's start.",
+  "why_useful": "Gives the exact list of release timestamps needed to build a point-in-time hotel-POI-count time series (one count per release date) rather than only the latest snapshot \u2014 relevant to the point-in-time rule this project enforces.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   8,
+   20
+  ],
+  "geography": "Global (index only)",
+  "time_coverage": "All Overture releases to date",
+  "size_hint": "Manifest/index files, small",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "Gives the exact list of release timestamps needed to build a point-in-time hotel-POI-count time series (one count per release date) rather than only the latest snapshot \u2014 relevant to the point-in-time rule this project enforces."
+  ]
+ }
+]

@@ -1,0 +1,620 @@
+[
+ {
+  "key": "github:arturbeg/google_trends_consumption_prediction",
+  "url": "https://github.com/arturbeg/google_trends_consumption_prediction",
+  "name": "google_trends_consumption_prediction",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Research repo (40 stars, updated Jul 2025) comparing a Kernel-PCA Google Trends consumption indicator against the Conference Board Consumer Confidence Index and the University of Michigan Consumer Sentiment Index as predictors of US real PCE. No raw survey series committed as files, but the code pulls/uses UMich CSI and Conference Board CCI series and documents the construction and an in-sample/out-of-sample nowcasting comparison methodology (kernel PCA on Google Trends categories vs. survey indices, AR baseline).",
+  "why_useful": "Gap 17 (nowcasting methods, anchored/constructed Google Trends). We already found raw Google Trends fails naive tests (0/162) on our own construction; this repo's kernel-PCA re-weighting of a consumption-relevant Trends basket, benchmarked explicitly against UMich/Conference Board, is a different construction worth stealing the method from rather than the conclusion. Low direct data value (no files), moderate method value.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "not stated in repo card; consumption/CCI/CSI history depends on FRED vintage used",
+  "size_hint": "code repo, no large data files",
+  "license": "none declared",
+  "last_activity": "2025-07-30",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "We already hold UMich/Conference Board via general macro sources and have tested raw Google Trends (failed); this is a re-weighted Trends construction, not a duplicate of the failed test.",
+  "hits": 2,
+  "themes": [
+   "Consumer sentiment and surveys: UMich, Conference Board, NY Fed SCE, EU consumer confidence, travel-intent surveys (Longwoods, Destination Analysts, MMGY) scraped",
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Gap 17 (nowcasting methods, anchored/constructed Google Trends). We already found raw Google Trends fails naive tests (0/162) on our own construction; this repo's kernel-PCA re-weighting of a consumption-relevant Trends basket, benchmarked explicitly against UMich/Conference Board, is a different construction worth stealing the method from rather than the conclusion. Low direct data value (no files), moderate method value.",
+   "Speaks to gap #6 (consumer spend panels) via a Trends-based consumption proxy method with a published comparison against the exact survey indices (Michigan, Conference Board) already in our OECD consumer-confidence holding \u2014 a candidate cross-check even though our own generic Trends tests failed, since this targets consumption specifically via kernel PCA rather than raw levels."
+  ]
+ },
+ {
+  "key": "github:bisolaanalytics/global-debt",
+  "url": "https://github.com/BisolaAnalytics/Global-Debt",
+  "name": "Global-Debt",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed IMF Global Debt Database extract: unbalanced panel of 190 advanced/emerging/low-income economies, annual government/corporate/household/external debt as % of GDP, 1950-2022 (columns: country, debt-category/inflation indicator, annual percentages).",
+  "why_useful": "Household-debt-to-GDP by country is a cross-country consumer-leverage/credit-stress proxy that could feed the regional consumer-strength split (NA/EMEA/LatAm/APAC) the model already tracks; longer history (to 1950) than anything currently held on consumer credit.",
+  "potential": "medium",
+  "geography": "190 countries (global)",
+  "time_coverage": "1950-2022 annual",
+  "size_hint": "single cross-country panel CSV, IMF-sourced",
+  "license": "unspecified (source is IMF, generally open)",
+  "last_activity": "2025-12-04",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Household-debt-to-GDP by country is a cross-country consumer-leverage/credit-stress proxy that could feed the regional consumer-strength split (NA/EMEA/LatAm/APAC) the model already tracks; longer history (to 1950) than anything currently held on consumer credit."
+  ]
+ },
+ {
+  "key": "github:rogeriosprf/japan-cpi-tracker",
+  "url": "https://github.com/rogeriosprf/japan-cpi-tracker",
+  "name": "japan-cpi-tracker",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end pipeline (ingest -> transform/validate -> compute MoM/YoY -> SQLite -> Streamlit dashboard) for Japan's regional CPI using the official e-Stat API. README does not confirm coverage of the lodging/hotel-charges CPI item specifically, but the e-Stat regional CPI tables it pulls from do carry item-level detail (including the 'lodging fees' sub-item) that the pipeline's ingestion logic could be pointed at.",
+  "why_useful": "Regional (prefecture-level) CPI granularity could feed a Japan consumer-strength regional split, finer than national CPI.",
+  "potential": "medium",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "geography": "Japan (regional/prefecture)",
+  "time_coverage": "not stated",
+  "size_hint": "small pipeline + dashboard",
+  "license": "none stated",
+  "last_activity": "2026-08-26",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Regional (prefecture-level) CPI granularity could feed a Japan consumer-strength regional split, finer than national CPI.",
+   "General, actively-updated (2026-08-26) e-Stat CPI ingestion method for Japan \u2014 a starting point to pull Japan's CPI lodging-fee item by region rather than only the national headline, which is otherwise hard to source without a Japanese-language e-Stat query."
+  ]
+ },
+ {
+  "key": "github:alantaranti/sidrapy",
+  "url": "https://github.com/AlanTaranti/sidrapy",
+  "name": "sidrapy",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (MIT, 82 stars, 199 commits, active through at least 2022) for IBGE's SIDRA API. sidrapy.get_table() pulls any SIDRA table by code -- includes tourism/hospitality, PNAD labor, IPCA inflation, industrial production series for Brazil, at whatever frequency/geography IBGE publishes (national, state, municipal). No data committed; it is a live-pull method, so point-in-time care is needed at query time.",
+  "why_useful": "Gap #7 (LatAm regional travel volume outside US/EU) -- Brazil is the largest LatAm ABNB market; IBGE SIDRA carries hotel/tourism establishment surveys (PMS - Pesquisa Mensal de Servicos, including hospedagem) and consumer indicators that could proxy Brazil travel demand.",
+  "potential": "medium",
+  "geography": "Brazil (national/state/municipal)",
+  "time_coverage": "varies by SIDRA table, many series 1990s-present",
+  "license": "MIT",
+  "last_activity": "active per PyPI (docs at sidrapy.readthedocs.io), commit history through ~2022+",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #7 (LatAm regional travel volume outside US/EU) -- Brazil is the largest LatAm ABNB market; IBGE SIDRA carries hotel/tourism establishment surveys (PMS - Pesquisa Mensal de Servicos, including hospedagem) and consumer indicators that could proxy Brazil travel demand."
+  ]
+ },
+ {
+  "key": "github:wilsonfreitas/python-bcb",
+  "url": "https://github.com/wilsonfreitas/python-bcb",
+  "name": "python-bcb",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (MIT, 127 stars, 22 forks, 235 commits, recent activity/CI visible) for Banco Central do Brasil open-data APIs: SGS time series (many series from 1980s/90s), PTAX daily FX bulletins, and crucially the FOCUS bulletin market-expectations OData endpoint -- Brazil's official weekly consensus survey of analyst forecasts for GDP, inflation, FX, Selic etc. Also real-estate financing (SBPE) and bank-level IFDATA.",
+  "why_useful": "Gap #4 (point-in-time historical analyst-consensus snapshots) -- the FOCUS bulletin is a genuine vintage-carrying consensus series (published weekly with as-of dates), a rare real point-in-time macro-expectations dataset, distinct from Bloomberg/FactSet ABNB consensus but useful as a template/comparator and for Brazil-specific FX/GDP nowcasting inputs to the LatAm regional split.",
+  "potential": "medium",
+  "geography": "Brazil",
+  "time_coverage": "SGS series from 1980s/90s to present; FOCUS bulletin weekly, several years of history",
+  "license": "MIT",
+  "last_activity": "recent (CI workflows visible in repo)",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #4 (point-in-time historical analyst-consensus snapshots) -- the FOCUS bulletin is a genuine vintage-carrying consensus series (published weekly with as-of dates), a rare real point-in-time macro-expectations dataset, distinct from Bloomberg/FactSet ABNB consensus but useful as a template/comparator and for Brazil-specific FX/GDP nowcasting inputs to the LatAm regional split."
+  ]
+ },
+ {
+  "key": "github:eflores89/inegir",
+  "url": "https://github.com/eflores89/inegiR",
+  "name": "inegiR",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (53 stars, 15 forks) wrapping INEGI's Banco de Indicadores API v2.0. Functions prefixed inind_/incat_ pull GDP, unemployment and other national indicators at annual/quarterly/monthly/biweekly frequency with batch download and catalog/code lookup. Was on CRAN but archived 2026-06-01 for unaddressed issues (note: this is a currently-live compatibility problem per its own README, not a data absence) -- current working version must be installed from GitHub, not CRAN.",
+  "why_useful": "Gap #7 (Mexico regional macro) -- broadest indicator coverage of the INEGI candidates found (GDP, employment, and INEGI also publishes hotel-occupancy/tourism series reachable by indicator code through this same API), but flag the CRAN-archive/compatibility caveat before use.",
+  "potential": "medium",
+  "geography": "Mexico",
+  "time_coverage": "varies by indicator; INEGI series often 1990s/2000s-present",
+  "license": "not fully specified (open source, GitHub-hosted after CRAN archival)",
+  "last_activity": "CRAN archived 2026-06-01; GitHub version described as a substantial v3 rewrite for INEGI API compatibility",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #7 (Mexico regional macro) -- broadest indicator coverage of the INEGI candidates found (GDP, employment, and INEGI also publishes hotel-occupancy/tourism series reachable by indicator code through this same API), but flag the CRAN-archive/compatibility caveat before use."
+  ]
+ },
+ {
+  "key": "github:well-living/jpy-datareader",
+  "url": "https://github.com/well-living/jpy-datareader",
+  "name": "jpy-datareader",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package (MIT, 26 stars, requires Python >=3.12) providing pandas-DataReader-style remote access to Japan's e-Stat portal: keyword search across statistics tables, metadata retrieval, automatic pagination past 100k rows, filtering by region/time/classification. Covers population/households, labor/wages, agriculture-forestry-fisheries fields explicitly in docs; e-Stat itself also hosts Japan Tourism Statistics / Survey of Overnight Travel Statistics tables reachable the same way. No data committed, code only.",
+  "why_useful": "Gap #7 (APAC regional travel volume -- Japan named explicitly). e-Stat is the underlying source for Japan overnight-stay/accommodation survey data (a JNTO-adjacent official series); this client makes it machine-pullable instead of manual portal downloads.",
+  "potential": "medium",
+  "geography": "Japan",
+  "time_coverage": "varies by e-Stat table",
+  "license": "MIT",
+  "last_activity": "current (requires Python 3.12+, recently built)",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #7 (APAC regional travel volume -- Japan named explicitly). e-Stat is the underlying source for Japan overnight-stay/accommodation survey data (a JNTO-adjacent official series); this client makes it machine-pullable instead of manual portal downloads."
+  ]
+ },
+ {
+  "key": "github:eurostat/hicp",
+  "url": "https://github.com/eurostat/hicp",
+  "name": "eurostat/hicp",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Eurostat R package (data.table-based, ~84 commits, 3 stars) providing functions to pull HICP price indices AND item weights from Eurostat's public database at any COICOP level, including the accommodation/restaurants-and-hotels aggregates and the finer 'accommodation services' class. Not a static dataset \u2014 a live API client maintained by Eurostat itself, so country x COICOP x month panels are one function call away.",
+  "why_useful": "We already hold euro-area HICP accommodation, but this is the maintained official tool (vs. a one-off pull) \u2014 lets the team refresh/extend country-level HICP accommodation and restaurants/hotels series easily, including point-in-time re-pulls (gap #4). Duplicate of what we hold in substance but materially better tooling.",
+  "potential": "medium",
+  "duplicate_of_holding": "euro-area HICP accommodation (already held), but this is the maintained upstream access method rather than a static pull",
+  "geography": "EU/EA, country-level",
+  "time_coverage": "Full Eurostat HICP history via API (typically 1996/2000-present depending on country)",
+  "size_hint": "N/A (API client, not stored data)",
+  "license": "unspecified in fetched README (Eurostat GitHub org)",
+  "last_activity": "actively maintained (84 commits; recent per repo page)",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "We already hold euro-area HICP accommodation, but this is the maintained official tool (vs. a one-off pull) \u2014 lets the team refresh/extend country-level HICP accommodation and restaurants/hotels series easily, including point-in-time re-pulls (gap #4). Duplicate of what we hold in substance but materially better tooling."
+  ]
+ },
+ {
+  "key": "github:sabers13/eurostat-hicp",
+  "url": "https://github.com/sabers13/Eurostat-HICP",
+  "name": "sabers13/Eurostat-HICP",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Repo explicitly described as 'Inflation trends (EU, country, COICOP) with YoY/MoM, weights, drilldowns' \u2014 i.e. a build that ingests Eurostat HICP by COICOP category (which includes accommodation services / restaurants-hotels) with weights and country drilldowns.",
+  "why_useful": "If it commits the COICOP-level output (not just code), it's a ready-made country x category HICP panel that could isolate accommodation services inflation by country, finer than the aggregate euro-area series we hold.",
+  "potential": "medium",
+  "duplicate_of_holding": "possibly duplicates euro-area HICP accommodation holding at coarser level; finer COICOP/country drilldown would be new",
+  "geography": "EU, country-level",
+  "time_coverage": "not confirmed (need repo inspection)",
+  "size_hint": "unknown; 0 stars, small project",
+  "license": "unspecified",
+  "last_activity": "2025-10-16",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "If it commits the COICOP-level output (not just code), it's a ready-made country x category HICP panel that could isolate accommodation services inflation by country, finer than the aggregate euro-area series we hold."
+  ]
+ },
+ {
+  "key": "github:paluigi-moltis/hicp-weights-downloader",
+  "url": "https://github.com/paluigi-moltis/hicp-weights-downloader",
+  "name": "paluigi-moltis/hicp-weights-downloader",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script pulling Eurostat's HICP item-weight tables (dataset prc_hicp_inw or similar) via the Eurostat API into a Parquet file `hicp_weights.parquet`, plus a committed `coicop18.csv` ECOICOP v2 classification mapping. Covers EU + EA aggregates and all 27 EU member states, annual weights from the total index down to the most granular published level (e.g. CP0111A), including the accommodation-services / restaurants-and-hotels branch. No pre-downloaded weight data is committed; the classification CSV is.",
+  "why_useful": "Useful complement if the team needs accommodation-services expenditure weights by country/year to weight or decompose HICP moves \u2014 a narrow but concrete gap-filler for point-in-time HICP construction (gap #4).",
+  "potential": "medium",
+  "duplicate_of_holding": "no direct duplicate; weights are a different quantity than the HICP accommodation index we hold",
+  "geography": "EU/EA, country-level",
+  "time_coverage": "annual, full Eurostat HICP weights history",
+  "size_hint": "small parquet output (not yet confirmed committed to repo)",
+  "license": "unspecified",
+  "last_activity": "2026-04-13",
+  "gap_targets": [
+   4
+  ],
+  "hits": 2,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Useful complement if the team needs accommodation-services expenditure weights by country/year to weight or decompose HICP moves \u2014 a narrow but concrete gap-filler for point-in-time HICP construction (gap #4).",
+   "Gives the exact COICOP weight of 'accommodation services' inside each country's HICP basket, letting the team re-weight or decompose Eurostat HICP-accommodation moves by country rather than treating the euro-area print as one number \u2014 useful for the EMEA regional ADR/pricing bridge and for understanding why HICP-accommodation swings differ from Airbnb's EMEA mix."
+  ]
+ },
+ {
+  "key": "github:agscott/australiancpi",
+  "url": "https://github.com/agscott/AustralianCPI",
+  "name": "agscott/AustralianCPI",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "R project (CC0-1.0 licensed) that pulls the quarterly Australian CPI via the ABS API (script `1 ReadABS_API.R`), stores a processed `CPI.RData`, and renders an RMarkdown report (example output `Australian CPI 2023-Q2.html`). ABS CPI publishes a 'Domestic holiday travel and accommodation' expenditure class, so this pipeline is a plausible one-command route to that subcomponent, though the specific breakdown committed in CPI.RData was not confirmed by README alone.",
+  "why_useful": "Directly targets the theme's 'Australia CPI accommodation' ask; CC0 license and a working ABS-API pull script make it easy to adapt/re-run for the accommodation/domestic-travel expenditure class specifically, which we do not otherwise hold.",
+  "potential": "medium",
+  "duplicate_of_holding": "no \u2014 we hold no Australia CPI series currently",
+  "geography": "Australia (national, ABS)",
+  "time_coverage": "at least through 2023-Q2 per the committed HTML report; API pull could extend further",
+  "size_hint": "single CPI.RData file + one HTML report; small",
+  "license": "CC0-1.0",
+  "last_activity": "2023-08-23 (last commit)",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Directly targets the theme's 'Australia CPI accommodation' ask; CC0 license and a working ABS-API pull script make it easy to adapt/re-run for the accommodation/domestic-travel expenditure class specifically, which we do not otherwise hold."
+  ]
+ },
+ {
+  "key": "github:eighty6orel/eighty6-restaurant-labor-reproduction",
+  "url": "https://github.com/eighty6orel/eighty6-restaurant-labor-reproduction",
+  "name": "eighty6-restaurant-labor-reproduction",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Reproduction package for restaurant wage-share research papers. Pulls BLS QCEW API data (via eighty6data.com) for restaurants (NAICS 7225), full-service (722511), limited-service (722513/722514/722515), and private all-industry wage bills, 2014Q1-2024Q1 (2014-2025 with a paid Pro plan), covering 2,538 US counties plus national and top-100 CBSA aggregates. Ships offline fixtures for 8 sample counties, expected/headlines.json with canonical numbers+tolerances for validation, and a rebuilt minimum-wage history (from Vaghul-Zipperer v1.4.0 + DOL sources). MIT-licensed.",
+  "why_useful": "A ready-made, academically-anchored restaurant/food-service labor-cost series (wages, minimum-wage history) at county and CBSA granularity -- a direct proxy for hospitality-adjacent labor cost inflation that could feed an Airbnb host cost / margin-pressure narrative, and the minimum-wage history file is a useful standalone dataset.",
+  "potential": "medium",
+  "gap_targets": [
+   8
+  ],
+  "license": "MIT",
+  "geography": "US, county + CBSA + national",
+  "time_coverage": "2014Q1-2024Q1 (free), extendable to 2025 with paid API key",
+  "size_hint": "small repo (fixtures + JSON), full data requires live API pull, some tiers paid",
+  "last_activity": "2026-08-21",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A ready-made, academically-anchored restaurant/food-service labor-cost series (wages, minimum-wage history) at county and CBSA granularity -- a direct proxy for hospitality-adjacent labor cost inflation that could feed an Airbnb host cost / margin-pressure narrative, and the minimum-wage history file is a useful standalone dataset."
+  ]
+ },
+ {
+  "key": "github:armollica/qcew-data",
+  "url": "https://github.com/armollica/qcew-data",
+  "name": "qcew-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "download-data.sh + import-data.py: downloads BLS QCEW annual CSVs 1990-2015 (25 years, ~36.4 GB uncompressed) at county/MSA/state/national level, all NAICS industries incl. NAICS 72 (Accommodation & Food Services) and NAICS 71/72/812 leisure-adjacent sectors, and loads them into a Postgres/SQLAlchemy database. No data committed, pull-only.",
+  "why_useful": "A one-command pull path for county- and MSA-level QCEW employment/wage counts for the accommodation/food-services supersector, which is the closest public proxy for Airbnb-adjacent hospitality labour cost and headcount trends (STR cleaning/maintenance labour cost inputs, margin cost-line context). Not in our current holdings (we hold FRED/BLS CPI series but no QCEW industry-level puller).",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A one-command pull path for county- and MSA-level QCEW employment/wage counts for the accommodation/food-services supersector, which is the closest public proxy for Airbnb-adjacent hospitality labour cost and headcount trends (STR cleaning/maintenance labour cost inputs, margin cost-line context). Not in our current holdings (we hold FRED/BLS CPI series but no QCEW industry-level puller)."
+  ]
+ },
+ {
+  "key": "github:eloualiche/entrydatar",
+  "url": "https://github.com/eloualiche/entrydatar",
+  "name": "entrydatar",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (10 stars, 117 commits) that downloads and aggregates U.S. firm-entry statistics: QCEW establishment-level entry data 1975-2016 (NAICS 1990-2016, SIC 1975-2000), Business Employment Dynamics (BED) establishment entry at 3-digit NAICS 1992Q3-2015Q1, and County Business Patterns (CBP) annual county employment. Includes vignettes for Bartik-shock construction.",
+  "why_useful": "Gives establishment entry/exit rates by industry (including accommodation/food services, NAICS 72) at the county level over four decades \u2014 a possible proxy for hospitality-sector business formation/closure cycles that could contextualize STR/hotel supply growth alongside labour-cost pressure. Longer time span than anything we hold on hospitality establishment counts.",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Gives establishment entry/exit rates by industry (including accommodation/food services, NAICS 72) at the county level over four decades \u2014 a possible proxy for hospitality-sector business formation/closure cycles that could contextualize STR/hotel supply growth alongside labour-cost pressure. Longer time span than anything we hold on hospitality establishment counts."
+  ]
+ },
+ {
+  "key": "github:traviscyronek/bls_download",
+  "url": "https://github.com/traviscyronek/bls_download",
+  "name": "bls_download",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python wrapper (20 commits) for the BLS Public Data API v2.0: labstat_download.py pulls any LABSTAT series by Series ID (handles the 50-series/10-sec and 20-year API constraints), qcew_download.py retrieves QCEW files, cps_download_v2.py pulls monthly CPS basic files from NBER. Generic \u2014 not restricted to any industry, so it can pull CES leisure & hospitality employment (SUAB series) and average-hourly-earnings series for NAICS 70-72 as well as QCEW industry detail. No data committed, requires free BLS API key (not a paid key).",
+  "why_useful": "A ready-made, no-cost API client that could pull CES leisure & hospitality employment/wage series and QCEW industry detail on a point-in-time-friendly cadence (each pull is a snapshot), which would let the team build its own hospitality labour-cost/headcount time series to feed the margin model's COGS/opex assumptions.",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A ready-made, no-cost API client that could pull CES leisure & hospitality employment/wage series and QCEW industry detail on a point-in-time-friendly cadence (each pull is a snapshot), which would let the team build its own hospitality labour-cost/headcount time series to feed the margin model's COGS/opex assumptions."
+  ]
+ },
+ {
+  "key": "github:jessesiminitz/remittance-update",
+  "url": "https://github.com/jessesiminitz/remittance-update",
+  "name": "remittance-update",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Reconstructed World Bank/KNOMAD bilateral remittance matrix extended through 2025 (KNOMAD's official matrix stops at 2021). data/output/ has bilateral_matrix_2000_2025.parquet + .csv (corridor-level flows, country pairs), country_received_2000_2025.csv, country_sent_2000_2025.csv, yearly_summary_2000_2025.csv, plus a validation comparison to the official 2021 matrix (0.963 correlation, recovers 93.3% of total flows). Built from UN DESA International Migrant Stock (2020/2024 revisions) + World Bank WDI GNI-per-capita and remittance inflow/outflow totals via WDI API; gaps filled by interpolation/extrapolation capped at +/-20% CAGR, normalized to reported country totals. ~9.3K bilateral cells in 2024 vs ~12.3K earlier years (fewer migrant-stock pairs in later years). Updated 15 days ago (active). Global country coverage, annual 2000-2025.",
+  "why_useful": "Fills numbered gap #6 (consumer spend / cross-border capacity proxy): remittance flows are a standard proxy for diaspora travel and cross-border consumer strength, and this is a maintained, methodologically transparent, point-in-time-labeled (annual vintage) global bilateral series extending past the official KNOMAD 2021 cutoff into 2025 \u2014 useful as a regional (LatAm/APAC/EMEA) demand-strength cross-check for ABNB's regional nights/ADR splits.",
+  "potential": "medium",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "geography": "Global, bilateral country pairs",
+  "time_coverage": "2000-2025 annual (2025 largely extrapolated)",
+  "size_hint": "~9-12K bilateral cells/year x 25 years, parquet + csv",
+  "license": "not stated in README",
+  "last_activity": "~15 days before 2026-09-14 (active)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "Fills numbered gap #6 (consumer spend / cross-border capacity proxy): remittance flows are a standard proxy for diaspora travel and cross-border consumer strength, and this is a maintained, methodologically transparent, point-in-time-labeled (annual vintage) global bilateral series extending past the official KNOMAD 2021 cutoff into 2025 \u2014 useful as a regional (LatAm/APAC/EMEA) demand-strength cross-check for ABNB's regional nights/ADR splits."
+  ]
+ },
+ {
+  "key": "github:qianwens17/zori",
+  "url": "https://github.com/qianwens17/ZORI",
+  "name": "ZORI",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Small personal repo working with Zillow's own publicly-downloadable Zillow Observed Rent Index (ZORI) CSVs (metro/zip-level, smoothed and seasonally adjusted, monthly, 2015+, direct from zillow.com/research/data). Repo itself likely just re-hosts or notebooks against the same public Zillow file already available directly from Zillow (no scrape needed), so treat the primary source (Zillow Research data page) as the actual holding.",
+  "why_useful": "ZORI is the standard high-frequency, city-level asking-rent series used to proxy shelter-cost pressure on consumers/hosts; useful as a macro backdrop control for ABNB nights/ADR regressions, but obtainable directly from Zillow without this repo.",
+  "potential": "medium",
+  "geography": "US, ~500 metros + national + state",
+  "time_coverage": "2015-present, monthly",
+  "size_hint": "Zillow's public ZORI CSV, several MB",
+  "license": "unspecified (data itself is Zillow's, publicly downloadable, non-commercial redistribution terms apply)",
+  "last_activity": "2025-12-15",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing and rent inflation nowcasts (Zillow observed rent, Apartment List, Fed rent nowcasts), new-tenant rent index, shelter CPI nowcasting repos"
+  ],
+  "why_all": [
+   "ZORI is the standard high-frequency, city-level asking-rent series used to proxy shelter-cost pressure on consumers/hosts; useful as a macro backdrop control for ABNB nights/ADR regressions, but obtainable directly from Zillow without this repo."
+  ]
+ },
+ {
+  "key": "github:worldbank/remittancepricesworldwide",
+  "url": "https://github.com/worldbank/RemittancePricesWorldwide",
+  "name": "worldbank/RemittancePricesWorldwide",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "World Bank's official repo mirroring the Remittance Prices Worldwide database (cost of sending remittances between country corridors). Content details (formats, exact time span) not confirmed beyond the repo landing page \u2014 README/data files need a follow-up pull; page shows a single initial commit as of Nov 2024.",
+  "why_useful": "Remittance cost/flow data is a proxy for cross-border consumer purchasing power and outbound travel propensity in LatAm/APAC corridors \u2014 could support regional mix (LatAm/APAC) reads that CONTEXT.md gap #7 flags as thin; needs a closer look to confirm it is more than a stub.",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7
+  ],
+  "geography": "global, country-corridor pairs",
+  "time_coverage": "unconfirmed \u2014 likely 2011-present per the public RPW series, needs verification inside the repo",
+  "size_hint": "unconfirmed, appears to be a small/stub repo (1 commit)",
+  "license": "not declared on the repo page",
+  "last_activity": "2024-11-11",
+  "hits": 1,
+  "themes": [
+   "wildcard: a payments and consumer-credit analyst who knows public card"
+  ],
+  "why_all": [
+   "Remittance cost/flow data is a proxy for cross-border consumer purchasing power and outbound travel propensity in LatAm/APAC corridors \u2014 could support regional mix (LatAm/APAC) reads that CONTEXT.md gap #7 flags as thin; needs a closer look to confirm it is more than a stub."
+  ]
+ },
+ {
+  "key": "github:kovagent/shortkit",
+  "url": "https://github.com/kovagent/shortkit",
+  "name": "kovagent/shortkit",
+  "category": "markets_options_positioning",
+  "data_kind": "both",
+  "what_it_holds": "Rust crate/tool bundling US short-sale volume and FINRA short-interest data as parquet files, with a nightly-refresh mechanism and no API keys required (per description). Repo is small (has CHANGELOG.md, .github workflow) so likely thin, but the described data product is exactly FINRA short interest by ticker over time.",
+  "why_useful": "If the bundled parquet actually carries multi-year FINRA short-interest history for ABNB and comparable tickers, it would give a free, non-licensed, point-in-time-able short-interest series to complement the options/short-interest data we already hold in-house (check whether it's finer-grained/free vs. what we already pay for).",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "nightly refresh going forward; historical depth unclear without deeper inspection",
+  "size_hint": "small repo + parquet artifacts (size unconfirmed)",
+  "license": "other/custom",
+  "last_activity": "2026-09-11",
+  "duplicate_of_holding": "partially duplicates existing short-interest data already held, but may be free/finer-grained/more current",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "If the bundled parquet actually carries multi-year FINRA short-interest history for ABNB and comparable tickers, it would give a free, non-licensed, point-in-time-able short-interest series to complement the options/short-interest data we already hold in-house (check whether it's finer-grained/free vs. what we already pay for)."
+  ]
+ },
+ {
+  "key": "github:jarod-wingfield/fama-french-and-hou-xue-zhang-factors-replication",
+  "url": "https://github.com/Jarod-Wingfield/Fama-French-and-Hou-Xue-Zhang-Factors-Replication",
+  "name": "Fama-French and Hou-Xue-Zhang Factors Replication",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Factors_monthly.csv and Factor_sharpe_ratios.csv in /master: replicated Fama-French 6-factor and Hou-Xue-Zhang q-factor monthly series, 1971-2024 (per repo README, though authors note earlier years constrained by missing accounting data for q-factors). Built from CRSP/Compustat/CCM (WRDS) but output CSVs are committed and usable without WRDS access; also includes benchmark comparison files vs Ken French library and global-q.org.",
+  "why_useful": "Extends what we already hold (plain Ken French 3/5-factor series) with q-factor model loadings and a longer monthly panel; useful as an alternative risk model for an ABNB earnings-day event study / CAR calculation, and a free cross-check against the Ken French numbers we already pull. Not a numbered gap but directly on-theme (Ken French factor loader + broader factor set).",
+  "potential": "medium",
+  "duplicate_of_holding": "Overlaps our existing Ken French factors holding but adds q-factors and a committed CSV rather than a live pull",
+  "size_hint": "2 CSV files, monthly, 1971-2024 (~650 rows)",
+  "time_coverage": "1971-2024",
+  "geography": "US equities",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Extends what we already hold (plain Ken French 3/5-factor series) with q-factor model loadings and a longer monthly panel; useful as an alternative risk model for an ABNB earnings-day event study / CAR calculation, and a free cross-check against the Ken French numbers we already pull. Not a numbered gap but directly on-theme (Ken French factor loader + broader factor set)."
+  ]
+ },
+ {
+  "key": "github:dylan-jeon/earnings-surprise-analysis",
+  "url": "https://github.com/dylan-jeon/earnings-surprise-analysis",
+  "name": "earnings-surprise-analysis (PEAD event study)",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PEAD/earnings-surprise event study described as covering 499 S&P 500 companies, 2015-2026, testing for increasing market efficiency; method and (likely) intermediate CAR/surprise output, not independently verified for committed raw data files.",
+  "why_useful": "If the underlying earnings-surprise series (SUE) are committed rather than WRDS-pulled, this would be a broad, recent (through 2026) cross-sectional earnings-surprise dataset relevant to gap #4 (historical consensus/surprise snapshots) and #17 (PEAD replication). Needs a closer look (not verified with directory listing) before relying on it.",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "size_hint": "unverified \u2014 499 companies implied",
+  "time_coverage": "2015-2026 (claimed)",
+  "geography": "US (S&P 500)",
+  "license": "unspecified",
+  "last_activity": "2026-07-08",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "If the underlying earnings-surprise series (SUE) are committed rather than WRDS-pulled, this would be a broad, recent (through 2026) cross-sectional earnings-surprise dataset relevant to gap #4 (historical consensus/surprise snapshots) and #17 (PEAD replication). Needs a closer look (not verified with directory listing) before relying on it."
+  ]
+ },
+ {
+  "key": "github:manja316/polymarket-historical-data",
+  "url": "https://github.com/manja316/polymarket-historical-data",
+  "name": "polymarket-historical-data (manja316)",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Claims 13,964 Polymarket markets, 10.8M price records, $11.7B+ volume as a historical price/volume archive; description does not confirm file format (likely CSV/SQLite) or whether earnings/travel/regulation category markets are tagged separately \u2014 needs a directory listing to confirm real committed files vs. a thin wrapper.",
+  "why_useful": "A broad Polymarket price history would let us pull any historical ABNB-earnings-move or travel/regulation-event contracts (e.g. FIFA World Cup timing, Fed/CPI prints, government shutdown, tourism-tax votes) as point-in-time implied-probability series \u2014 relevant to gap 4 (point-in-time vintages) and gap 11/12 (events, regulation).",
+  "potential": "medium",
+  "size_hint": "10.8M rows across 13,964 markets (per README claim, unverified)",
+  "time_coverage": "unspecified, likely 2024-2026 (Polymarket's active era)",
+  "geography": "global (crypto-native prediction market, mostly US/global political and sports events)",
+  "license": "none declared",
+  "last_activity": "2026-05-29",
+  "gap_targets": [
+   4,
+   11,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "A broad Polymarket price history would let us pull any historical ABNB-earnings-move or travel/regulation-event contracts (e.g. FIFA World Cup timing, Fed/CPI prints, government shutdown, tourism-tax votes) as point-in-time implied-probability series \u2014 relevant to gap 4 (point-in-time vintages) and gap 11/12 (events, regulation)."
+  ]
+ },
+ {
+  "key": "github:luciferforge/polymarket-historical-data",
+  "url": "https://github.com/LuciferForge/polymarket-historical-data",
+  "name": "polymarket-historical-data (LuciferForge)",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "18.6M price snapshots across 22,410 markets at 15-min resolution over a 92-day window (Mar-Jun 2026), distributed as SQLite; free sample plus a paid/full dataset link.",
+  "why_useful": "High-frequency, multi-market Polymarket snapshot archive covering spring 2026 \u2014 could contain any ABNB-earnings or macro/regulation contracts active in that window; MIT licensed sample is directly pullable without scraping.",
+  "potential": "medium",
+  "size_hint": "18.6M snapshots, SQLite db",
+  "time_coverage": "Mar-Jun 2026 (92 days)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-07-05",
+  "gap_targets": [
+   4,
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "High-frequency, multi-market Polymarket snapshot archive covering spring 2026 \u2014 could contain any ABNB-earnings or macro/regulation contracts active in that window; MIT licensed sample is directly pullable without scraping."
+  ]
+ },
+ {
+  "key": "github:ndelventhal/cot_reports",
+  "url": "https://github.com/NDelventhal/cot_reports",
+  "name": "NDelventhal/cot_reports",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (`cot_hist`, `cot_year`, `cot_all`) that pulls CFTC Commitments of Traders reports -- Legacy, Disaggregated, Traders-in-Financial-Futures formats -- from 1986 to present, including FX futures positioning (tagged 'foreign-exchange').",
+  "why_useful": "Speculative FX futures positioning (EUR, GBP, JPY, MXN, BRL, AUD) is a standard macro-strategist proxy for risk sentiment and carry-trade crowding; extreme positioning has historically preceded EM currency stress that could compress ABNB's EMEA/LatAm ADR-in-USD and outbound demand.",
+  "potential": "medium",
+  "geography": "US-regulated futures markets, but covers major and EM-adjacent currency futures",
+  "time_coverage": "1986-present, weekly",
+  "size_hint": "moderate (multi-decade weekly CSVs)",
+  "license": "MIT",
+  "last_activity": "unspecified, 25 commits, appears active",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Speculative FX futures positioning (EUR, GBP, JPY, MXN, BRL, AUD) is a standard macro-strategist proxy for risk sentiment and carry-trade crowding; extreme positioning has historically preceded EM currency stress that could compress ABNB's EMEA/LatAm ADR-in-USD and outbound demand."
+  ]
+ },
+ {
+  "key": "github:toddwschneider/sec-13f-filings",
+  "url": "https://github.com/toddwschneider/sec-13f-filings",
+  "name": "toddwschneider/sec-13f-filings",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby on Rails app (MIT, 438 stars) with a schema (thirteen_fs / holdings / aggregate_holdings tables) and scripts that import and parse SEC 13F XML filings from 2014 onward for any manager CIK you specify; the live instance (13f.info) already tracks large holders such as Berkshire Hathaway quarterly. No CUSIP-ticker mapping bundled (licensing), but the parser and schema are complete.",
+  "why_useful": "Turns raw 13F XML into a queryable holdings-history database -- lets us build ABNB institutional-ownership concentration/turnover history (fund entries/exits, hedge fund vs long-only mix) as a positioning read ahead of the Q4 guide, complementing the options-chain and short-interest data already held.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "geography": "US filers",
+  "time_coverage": "2014-present",
+  "license": "MIT",
+  "size_hint": "app + schema, no bundled data (pulls from EDGAR)",
+  "last_activity": "2026-08-26",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Turns raw 13F XML into a queryable holdings-history database -- lets us build ABNB institutional-ownership concentration/turnover history (fund entries/exits, hedge fund vs long-only mix) as a positioning read ahead of the Q4 guide, complementing the options-chain and short-interest data already held."
+  ]
+ }
+]

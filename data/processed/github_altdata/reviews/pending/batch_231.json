@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:lukeslp/us-attention-data",
+  "url": "https://github.com/lukeslp/us-attention-data",
+  "name": "us-attention-data",
+  "category": "social_text_news",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Cross-platform 'attention tracking' dataset combining Wikipedia pageviews, GDELT events, and Google Trends, described as covering 2025 weekly data.",
+  "why_useful": "If it includes travel/tourism/company-topic pageview series with committed CSVs, it's a ready-made multi-source attention panel; GDELT + pageviews + Trends together could triangulate consumer/travel sentiment shifts (gap #14/#5), though team's own testing found Trends-as-pulled fails, so value hinges on the pageviews component specifically. Not verified further (only description read, not repo contents).",
+  "potential": "low",
+  "gap_targets": [
+   5,
+   14
+  ],
+  "geography": "US-focused ('us-attention-data')",
+  "time_coverage": "2025, weekly",
+  "size_hint": "unknown, not inspected",
+  "license": "MIT",
+  "last_activity": "2026-07-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "If it includes travel/tourism/company-topic pageview series with committed CSVs, it's a ready-made multi-source attention panel; GDELT + pageviews + Trends together could triangulate consumer/travel sentiment shifts (gap #14/#5), though team's own testing found Trends-as-pulled fails, so value hinges on the pageviews component specifically. Not verified further (only description read, not repo contents)."
+  ]
+ },
+ {
+  "key": "github:pushshift/api",
+  "url": "https://github.com/pushshift/api",
+  "name": "pushshift/api",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Documentation repo for the (now largely defunct/restricted) Pushshift API for searching Reddit comments/submissions by subreddit, author, date, keyword, with aggregation endpoints; historical archives referenced at files.pushshift.io. No explicit license, 32 commits, examples reference 2017-era usage -- signals the project is stale post-2023 Reddit API changes.",
+  "why_useful": "Historical reference only; the public API it documents was shut down in 2023 so it is not directly usable to pull fresh r/airbnb data, but is useful context for anyone trying to use cached/mirrored Pushshift-format data or evaluating other tools that claim Pushshift compatibility.",
+  "potential": "low",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "n/a, documentation only",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "not specified in fetched content",
+  "last_activity": "32 commits, API itself defunct since 2023",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets",
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Historical reference only; the public API it documents was shut down in 2023 so it is not directly usable to pull fresh r/airbnb data, but is useful context for anyone trying to use cached/mirrored Pushshift-format data or evaluating other tools that claim Pushshift compatibility.",
+   "Would be the natural route to r/airbnb, r/AirBnBHosts, r/travel historical dumps (gap #14), but current access is unreliable/restricted since Reddit's 2023 API clampdown -- flag as a lead to verify access, not a working method as of now."
+  ]
+ },
+ {
+  "key": "github:mattpodolak/pmaw",
+  "url": "https://github.com/mattpodolak/pmaw",
+  "name": "pmaw (Pushshift Multithread API Wrapper)",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python wrapper (78 commits) for multithreaded, rate-limited querying of the Pushshift API for Reddit comments/submissions, with optional PRAW enrichment for live metadata.",
+  "why_useful": "Would be the fastest way to bulk-pull r/airbnb/r/AirBnBHosts/r/travel history if pointed at a working Pushshift-compatible endpoint (e.g. a community mirror), but the original api.pushshift.io backend it targets is defunct since 2023, so it needs a live-compatible endpoint to be useful now.",
+  "potential": "low",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "n/a, tooling only",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "MIT",
+  "last_activity": "78 commits, unspecified date; underlying API dead since 2023",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "Would be the fastest way to bulk-pull r/airbnb/r/AirBnBHosts/r/travel history if pointed at a working Pushshift-compatible endpoint (e.g. a community mirror), but the original api.pushshift.io backend it targets is defunct since 2023, so it needs a live-compatible endpoint to be useful now."
+  ]
+ },
+ {
+  "key": "github:umbrae/reddit-top-2.5-million",
+  "url": "https://github.com/umbrae/reddit-top-2.5-million",
+  "name": "reddit-top-2.5-million",
+  "category": "social_text_news",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV files (one per subreddit, ~2,500 subreddits) each holding the top ~1,000 all-time posts (title, score, etc.) as of a single pull between 15-20 Aug 2013 \u2014 roughly 2.5M rows total across all subreddits. 628 stars, 36 commits, static since 2013.",
+  "why_useful": "If r/airbnb existed by Aug 2013 (Airbnb itself was young then, subreddit likely small or not yet created), this would be a rare point-in-time historical snapshot of top posts; more useful as a template/precedent for 'top posts by subreddit' style datasets than as ABNB-specific data given how early and static the snapshot is.",
+  "potential": "low",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "~2.5M rows across 2,500 CSV files",
+  "time_coverage": "single snapshot, Aug 2013, all-time top posts as of then",
+  "geography": "n/a",
+  "license": "has a LICENSE file, terms not detailed in fetched content",
+  "last_activity": "36 commits, static since 2013",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "If r/airbnb existed by Aug 2013 (Airbnb itself was young then, subreddit likely small or not yet created), this would be a rare point-in-time historical snapshot of top posts; more useful as a template/precedent for 'top posts by subreddit' style datasets than as ABNB-specific data given how early and static the snapshot is."
+  ]
+ },
+ {
+  "key": "github:rbozydar/py-gdelt",
+  "url": "https://github.com/RBozydar/py-gdelt",
+  "name": "py-gdelt",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small (4-star) but recently updated (8 Sep 2026) MIT-licensed comprehensive Python client covering GDELT Events, GKG, and Doc API endpoints in one package.",
+  "why_useful": "Alternative/backup GDELT client if gdelt-doc-api or gdeltPyR prove insufficient; actively developed as of this week.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "GDELT full history",
+  "size_hint": "no committed data; client library",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "overlaps alex9smith/gdelt-doc-api and linwoodc3/gdeltPyR functionality",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Alternative/backup GDELT client if gdelt-doc-api or gdeltPyR prove insufficient; actively developed as of this week."
+  ]
+ }
+]

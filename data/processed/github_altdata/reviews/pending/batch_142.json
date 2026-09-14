@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:cran/hicp",
+  "url": "https://github.com/cran/hicp",
+  "name": "hicp (CRAN mirror)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Read-only GitHub mirror of the CRAN R package 'hicp' \u2014 tools to access and compute Harmonised Index of Consumer Prices data (price indices and weights) from Eurostat's public database, implementing methodology from Eurostat's 2024 HICP Methodological Manual. Built on data.table; ships functions (documented in the package vignette, not fully visible here) for aggregating/decomposing HICP series.",
+  "why_useful": "An official-methodology R toolkit for pulling and re-aggregating Eurostat HICP series (including the accommodation-services / restaurants-hotels COICOP branch) with correct chain-linking, better than ad hoc pulls of the published index \u2014 useful if the team wants a defensible, reproducible EMEA accommodation-price series.",
+  "potential": "medium",
+  "license": "R package license (CRAN, likely GPL \u2014 not confirmed)",
+  "last_activity": "package current as of CRAN mirror sync, references 2024 manual",
+  "geography": "EU/EA",
+  "time_coverage": "whatever Eurostat HICP history covers (HICP monthly since 1996 varies by country)",
+  "size_hint": "R package source, no large committed data",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "An official-methodology R toolkit for pulling and re-aggregating Eurostat HICP series (including the accommodation-services / restaurants-hotels COICOP branch) with correct chain-linking, better than ad hoc pulls of the published index \u2014 useful if the team wants a defensible, reproducible EMEA accommodation-price series."
+  ]
+ },
+ {
+  "key": "github:jasonliaiagent/attention-flow",
+  "url": "https://github.com/jasonliaiagent/attention-flow",
+  "name": "attention-flow",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Active research repo (MIT, 73 commits, daily CI) using daily Wikipedia pageviews as a free 'market attention' proxy for ~34 entities/39 edges across four 2020-2026 economic-narrative graphs (AI buildout, GLP-1, EV/battery, COVID). Caches raw pageview pulls under data/raw/, trains a GRU+graph-attention network to forecast one-week-ahead 'attention shocks', and publishes live graded forecast-accuracy JSON (data.json, track.json) via a running demo.",
+  "why_useful": "Not itself a tourism dataset, but a live, working, actively-updated methodological template for exactly the technique Gap 5/17 wants: turning free Wikipedia pageviews into a leading demand-attention signal with a public accuracy scoreboard and a graph/GNN structure that could be re-pointed at Airbnb/BKNG/EXPE/hotel-chain and destination-city Wikipedia pages instead of AI/pharma/EV entities.",
+  "potential": "medium",
+  "gap_targets": [
+   5,
+   17
+  ],
+  "geography": "not geographic (entity/company graph, not destinations)",
+  "time_coverage": "2020-2026, daily, live-updating",
+  "size_hint": "~34 entities x daily pageviews since 2020, plus trained GNN checkpoints",
+  "license": "MIT",
+  "last_activity": "actively updated (daily CI as of query date)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Not itself a tourism dataset, but a live, working, actively-updated methodological template for exactly the technique Gap 5/17 wants: turning free Wikipedia pageviews into a leading demand-attention signal with a public accuracy scoreboard and a graph/GNN structure that could be re-pointed at Airbnb/BKNG/EXPE/hotel-chain and destination-city Wikipedia pages instead of AI/pharma/EV entities."
+  ]
+ },
+ {
+  "key": "github:mikedbjones/longtrends",
+  "url": "https://github.com/mikedbjones/longtrends",
+  "name": "longtrends",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python package (16 stars, updated 5 Jun 2026) specifically built to download and stitch together LONG-TERM Google Trends series \u2014 overlapping-window rescaling to overcome Google's short per-request lookback and resampling instability, producing one continuous multi-year daily/weekly index per keyword.",
+  "why_useful": "Same problem class as gtab (comparability of Trends magnitudes over long windows) but via overlapping-window rescaling rather than anchor-bank calibration; a second, independent method to try for gap #4/#17 if gtab's anchor approach has issues, and useful for reconstructing a longer historical Trends series for travel/Airbnb-adjacent terms than our current 9-term pull.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "as long as Google Trends itself goes back (2004+), reconstructed",
+  "size_hint": "library",
+  "license": "MIT",
+  "last_activity": "2026-06-05",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Same problem class as gtab (comparability of Trends magnitudes over long windows) but via overlapping-window rescaling rather than anchor-bank calibration; a second, independent method to try for gap #4/#17 if gtab's anchor approach has issues, and useful for reconstructing a longer historical Trends series for travel/Airbnb-adjacent terms than our current 9-term pull.",
+   "Cheap, minimal-dependency way to get a longer, internally-consistent history for any travel/ABNB-adjacent search term (gap #4: historical/point-in-time trends), complementary to gtab (which calibrates absolute level rather than just stitching length)."
+  ]
+ },
+ {
+  "key": "github:dballinari/googletrends-scraper",
+  "url": "https://github.com/dballinari/GoogleTrends-Scraper",
+  "name": "GoogleTrends-Scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python implementation (226 stars, updated 2 Sep 2026) for scraping DAILY Google Trends data over long time periods by chaining overlapping weekly/monthly pulls and rescaling \u2014 same genre as longtrends, more actively maintained and higher-starred.",
+  "why_useful": "Alternative, more popular long-history daily Trends reconstruction method; relevant to gap #4 (historical Trends with pull dates, if run and logged repeatedly) and gap #17 (mixed-frequency nowcasting inputs need daily rather than weekly granularity).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "daily reconstruction over multi-year spans",
+  "size_hint": "library",
+  "license": "unspecified in listing",
+  "last_activity": "2026-09-02",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Alternative, more popular long-history daily Trends reconstruction method; relevant to gap #4 (historical Trends with pull dates, if run and logged repeatedly) and gap #17 (mixed-frequency nowcasting inputs need daily rather than weekly granularity)."
+  ]
+ },
+ {
+  "key": "github:flack0x/trendspyg",
+  "url": "https://github.com/flack0x/trendspyg",
+  "name": "trendspyg",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained Python library + CLI (successor-style to pytrends, now that pytrends is archived) for interest-over-time, interest-by-region, related queries, and multi-property (YouTube/News/Images/Shopping) Trends data. New in v1.3.0: opt-in local SQLite archiving so repeated fetches build a self-owned historical/point-in-time snapshot store going forward (cannot backfill past data Google no longer serves). MIT license, v1.8.0, 50 stars/7 forks, active development.",
+  "why_useful": "Google periodically breaks the endpoints pytrends scrapes; having a maintained alternative reduces operational risk for the weekly Trends re-pull mentioned in team memory notes. No new data, purely a resilience/tooling candidate.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "n/a (client)",
+  "size_hint": "library",
+  "license": "MIT",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "functional duplicate of pytrends, actively maintained fallback",
+  "hits": 2,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Google periodically breaks the endpoints pytrends scrapes; having a maintained alternative reduces operational risk for the weekly Trends re-pull mentioned in team memory notes. No new data, purely a resilience/tooling candidate.",
+   "Practical tool for building a going-forward point-in-time Trends vintage register (gap #4) cheaply, and a maintained replacement now that the original pytrends is archived/read-only."
+  ]
+ }
+]

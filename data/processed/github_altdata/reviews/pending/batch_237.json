@@ -1,0 +1,139 @@
+[
+ {
+  "key": "github:joeydejager/inside-airbnb-data",
+  "url": "https://github.com/JoeyDeJager/inside-airbnb-data",
+  "name": "JoeyDeJager/inside-airbnb-data",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "CC0-licensed repo (created Jan 2015) with a 'new-york-city' data directory; root has only LICENSE + README so the actual CSVs sit inside that subfolder (not enumerated here \u2014 a directory listing of new-york-city/ would confirm file names/sizes). Given the creation date, likely holds a very early (2014-2015 era) NYC Inside Airbnb snapshot.",
+  "why_useful": "If the new-york-city folder holds an actual 2014-2015 listings/calendar dump, it would be one of the oldest NYC vintages available anywhere on GitHub, directly relevant to gap #1's NYC pre-Local-Law-18 hole (though this predates even that window).",
+  "potential": "medium",
+  "license": "CC0-1.0",
+  "last_activity": "2015-01-20 (stale, unmaintained)",
+  "geography": "New York City",
+  "time_coverage": "circa 2014-2015 (unconfirmed, needs directory listing to verify)",
+  "size_hint": "small, single city, contents not fully verified",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)"
+  ],
+  "why_all": [
+   "If the new-york-city folder holds an actual 2014-2015 listings/calendar dump, it would be one of the oldest NYC vintages available anywhere on GitHub, directly relevant to gap #1's NYC pre-Local-Law-18 hole (though this predates even that window)."
+  ]
+ },
+ {
+  "key": "github:tmasjc/airbnb-market-data",
+  "url": "https://github.com/tmasjc/airbnb-market-data",
+  "name": "tmasjc/airbnb-market-data",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Repo ships pre-loaded listings.csv data for Berlin and Vienna (Vienna snapshots spanning roughly March-September 2017, ~1.1-1.3MB each) sourced from Inside Airbnb, plus a command-line downloader that can pull listings.csv for dozens of additional Inside Airbnb metro areas (amsterdam, antwerp, asheville, athens, austin, barcelona, boston, brussels, chicago, copenhagen, denver, and more per the tool's help text). 43 commits.",
+  "why_useful": "Committed 2017-vintage Vienna/Berlin snapshots pre-date our held Dec-2022+ panel (gap #1), and the bundled multi-city downloader is a ready-made, low-effort tool for pulling Inside Airbnb's currently-live archive across many markets we don't yet hold.",
+  "potential": "medium",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Vienna, Berlin committed; dozens more via downloader",
+  "time_coverage": "2017 (Vienna); download tool covers current live IA archive",
+  "size_hint": "~1.1-1.3MB per city CSV",
+  "license": "unspecified",
+  "last_activity": "unknown exact date",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Committed 2017-vintage Vienna/Berlin snapshots pre-date our held Dec-2022+ panel (gap #1), and the bundled multi-city downloader is a ready-made, low-effort tool for pulling Inside Airbnb's currently-live archive across many markets we don't yet hold.",
+   "A reusable, generic method to pull whatever historical snapshots Inside Airbnb still exposes for a given city/date, which could be pointed at any surviving NYC dates near the LL18 window or used as a template for building a systematic archive puller; not NYC-specific itself.",
+   "A ready-made client for pulling InsideAirbnb historical snapshots (potentially including vintages no longer on the live CDN, which currently keeps only ~1 year); worth checking whether its URL list/date index reaches further back than our current archive, which would fill gap 1.",
+   "The CLI's historical-snapshot indexing is a possible mechanism for pulling Inside Airbnb vintages older than the ~1-year CDN retention window we're currently limited to (2017-era snapshots referenced) \u2014 directly relevant to gap #1 (historical/archived Inside Airbnb dumps, pre-2023, including the NYC Local-Law-18 gap window). Needs verification of what host download_csv.R actually hits (may just be pointing at Wayback-cached Inside Airbnb URLs)."
+  ]
+ },
+ {
+  "key": "other:https://researchdata.gla.ac.uk/2056",
+  "url": "https://researchdata.gla.ac.uk/2056",
+  "name": "University of Glasgow \u2014 Airbnb raw scraped data collection",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "External (non-GitHub, university data repository) archive: daily-scraped Airbnb property characteristics, booking-calendar updates, booking policies, host info and reviews for 30 Scottish Travel-to-Work Areas + 10 UK locations, June 2021-Dec 2023 monthly-aggregated occupancy/visitor/income estimates at MSOA/Intermediate Zone level, DOI 10.5525/gla.researchdata.2056. Access restricted to UBDC staff for non-commercial academic use (not freely downloadable), but methodology and code (see ubdc-airbnb above) are open.",
+  "why_useful": "Documents exactly what a daily-calendar STR occupancy/income reconstruction looks like at sub-city geography (relevant to gap #2), even though we cannot pull the underlying files ourselves; worth citing as an existence proof and methodology reference, and as a reason to ask a human whether an academic-access request is worth pursuing before the pitch deadline (unlikely to clear in time).",
+  "potential": "medium",
+  "gap_targets": [
+   2
+  ],
+  "geography": "Scotland + 10 other UK TTWAs",
+  "time_coverage": "June 2021-Dec 2023",
+  "size_hint": "unspecified; restricted",
+  "license": "University of Glasgow copyright; academic-only, gated",
+  "last_activity": "archived record",
+  "duplicate_of_holding": "Same underlying project as ubdc-airbnb code repo above",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "Documents exactly what a daily-calendar STR occupancy/income reconstruction looks like at sub-city geography (relevant to gap #2), even though we cannot pull the underlying files ourselves; worth citing as an existence proof and methodology reference, and as a reason to ask a human whether an academic-access request is worth pursuing before the pitch deadline (unlikely to clear in time).",
+   "Even though the raw store itself is gated, it documents exactly what a daily-calendar-scrape occupancy product looks like at scale (fields, geography, cadence) and is the dataset behind the peer-reviewed alternative to the San Francisco review-rate model \u2014 useful as a specification to replicate on our own calendars."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/datasets/kritikseth/us-airbnb-open-data",
+  "url": "https://www.kaggle.com/datasets/kritikseth/us-airbnb-open-data",
+  "name": "U.S. Airbnb Open Data (AB_US_2023.csv)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Kaggle-hosted compilation of Inside Airbnb US-city listings recompiled/updated 14 Apr 2023 as `AB_US_2023.csv` (host id, listing id, name, lat/lon, neighbourhood, price, room type, min nights, reviews, availability, city column covering multiple US metros including New York City).",
+  "why_useful": "A US multi-city, single-file snapshot from April 2023 \u2014 a few months before Local Law 18 enforcement (5 Sep 2023) \u2014 giving a clean 'last normal' NYC cross-section to pair with the post-enforcement Jan 2024 snapshot above for a before/after comparison without needing the missing CDN dumps.",
+  "potential": "medium",
+  "gap_targets": [
+   1
+  ],
+  "geography": "US, multi-city including NYC",
+  "time_coverage": "single snapshot, updated 2023-04-14",
+  "size_hint": "multi-city CSV, tens of thousands of rows (typical Inside Airbnb compilation size)",
+  "license": "Kaggle dataset license (unspecified); source data CC0-derivative per Inside Airbnb terms",
+  "last_activity": "2023-04-14",
+  "duplicate_of_holding": "partially overlaps the 13-city Inside Airbnb panel already held, but this specific April-2023 pre-LL18 US compilation is not confirmed already in hand",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "A US multi-city, single-file snapshot from April 2023 \u2014 a few months before Local Law 18 enforcement (5 Sep 2023) \u2014 giving a clean 'last normal' NYC cross-section to pair with the post-enforcement Jan 2024 snapshot above for a before/after comparison without needing the missing CDN dumps."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/datasets/godofoutcasts/new-york-city-airbnb-2023-public-data",
+  "url": "https://www.kaggle.com/datasets/godofoutcasts/new-york-city-airbnb-2023-public-data",
+  "name": "New York City Airbnb 2023, Public Data (Kaggle)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Kaggle dataset titled 'New York City Airbnb 2023, Public Data'; exact snapshot date and row count could not be confirmed via fetch (page content not retrievable through the tool), but title and Kaggle notebook activity (July 2023) suggest a mid-2023 NYC snapshot, potentially inside or just before the LL18 gap window.",
+  "why_useful": "Possible additional NYC 2023 point-in-time snapshot; worth a follow-up direct check (browser or Kaggle API) to confirm the exact scrape date before treating as filling the gap.",
+  "potential": "medium",
+  "gap_targets": [
+   1
+  ],
+  "geography": "New York City",
+  "time_coverage": "2023 (exact date unconfirmed)",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "dataset referenced by a July 2023 Kaggle notebook",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Possible additional NYC 2023 point-in-time snapshot; worth a follow-up direct check (browser or Kaggle API) to confirm the exact scrape date before treating as filling the gap."
+  ]
+ }
+]

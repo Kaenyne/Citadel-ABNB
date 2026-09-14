@@ -1,0 +1,123 @@
+[
+ {
+  "key": "github:haonan-100/sf311-citizen-service-requests-local-data-pipeline-and-analytics",
+  "url": "https://github.com/Haonan-100/SF311-Citizen-Service-Requests-Local-Data-Pipeline-and-Analytics",
+  "name": "Haonan-100/SF311-Citizen-Service-Requests-Local-Data-Pipeline-and-Analytics",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end pipeline ingesting >7.6M San Francisco 311 service-request records (2008-2025) via the Socrata API into PostgreSQL with Metabase dashboards. Data itself is git-ignored (not committed); pipeline/config code only. Top complaint types are generic (bulky-item pickup, cleaning) with no Airbnb/STR-specific handling shown.",
+  "why_useful": "SF is one of the three target cities (SF 311/OSTR). Provides a ready, long-history (17-year) one-command pull method for SF's full 311 feed, from which STR/short-term-rental complaint categories could be isolated to build an enforcement-activity proxy.",
+  "potential": "low",
+  "geography": "San Francisco",
+  "time_coverage": "2008-2025",
+  "license": "unknown",
+  "size_hint": "~7.6M rows / ~700MB CSV snapshot, not committed to repo",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "SF is one of the three target cities (SF 311/OSTR). Provides a ready, long-history (17-year) one-command pull method for SF's full 311 feed, from which STR/short-term-rental complaint categories could be isolated to build an enforcement-activity proxy."
+  ]
+ },
+ {
+  "key": "github:ollieiris95/nyc-311-noise-analysis",
+  "url": "https://github.com/ollieiris95/nyc-311-noise-analysis",
+  "name": "ollieiris95/nyc-311-noise-analysis",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Python/SQL study of NYC 311 noise complaints; committed raw file '311_noise_complaints_2024.csv' (raw_data folder) covering calendar year 2024 only, with date/time, complaint type, borough, and geolocation fields. No Airbnb or STR linkage in the documentation.",
+  "why_useful": "Noise complaints are a commonly proposed proxy for short-term-rental party/turnover activity in dense neighborhoods, but this repo is single-year, city-wide (not STR-filtered) and would need substantial rework to isolate an Airbnb-adjacent signal.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "2024 only",
+  "license": "unknown",
+  "size_hint": "single-year CSV, row count not stated",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Noise complaints are a commonly proposed proxy for short-term-rental party/turnover activity in dense neighborhoods, but this repo is single-year, city-wide (not STR-filtered) and would need substantial rework to isolate an Airbnb-adjacent signal."
+  ]
+ },
+ {
+  "key": "github:georgiosioannoucoder/nyc-open-data-311-service-requests",
+  "url": "https://github.com/GeorgiosIoannouCoder/nyc-open-data-311-service-requests",
+  "name": "GeorgiosIoannouCoder/nyc-open-data-311-service-requests",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Database-normalization project (third-normal-form schema) for the NYC 311 open dataset; general-purpose ETL/schema tooling, not city-specific to STR complaint types (per topic-page description only, not independently verified by full README fetch).",
+  "why_useful": "Another generic NYC 311 access/normalization tool that could underlie a home-built STR/Illegal-Home-Sharing complaint-count series if someone filters the complaint-type field; marginal add over 311derful above.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "unknown",
+  "license": "unknown",
+  "size_hint": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "Overlaps ishitakapoor7/311derful in purpose (both are generic NYC 311 pull/normalize tools)",
+  "hits": 1,
+  "themes": [
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Another generic NYC 311 access/normalization tool that could underlie a home-built STR/Illegal-Home-Sharing complaint-count series if someone filters the complaint-type field; marginal add over 311derful above."
+  ]
+ },
+ {
+  "key": "github:crgalleguillos/chile-night-lights-change",
+  "url": "https://github.com/crgalleguillos/chile-night-lights-change",
+  "name": "chile-night-lights-change",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "VIIRS Black Marble (VNP46A3) nighttime-lights change analysis for Chile across 2014, 2019, 2024: annual composites, deltas, and regional (region-level) metrics. Repo description implies committed regional summary outputs, not just a notebook, but file listing was not independently confirmed.",
+  "why_useful": "Chile is one of the LatAm markets named in gap #7 (regional travel volume outside US/EU: LatAm \u2014 Mexico, Brazil, Colombia, Argentina, and by extension Chile). A regional nightlights delta series could proxy destination-level tourism recovery/growth where DATATUR/INEGI-style official series don't exist for Chile specifically.",
+  "potential": "low",
+  "geography": "Chile, regional (sub-national)",
+  "time_coverage": "2014, 2019, 2024 snapshots (not continuous monthly)",
+  "size_hint": "small, snapshot-based (3 years only)",
+  "license": "none stated",
+  "last_activity": "2026-04-01",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Chile is one of the LatAm markets named in gap #7 (regional travel volume outside US/EU: LatAm \u2014 Mexico, Brazil, Colombia, Argentina, and by extension Chile). A regional nightlights delta series could proxy destination-level tourism recovery/growth where DATATUR/INEGI-style official series don't exist for Chile specifically."
+  ]
+ },
+ {
+  "key": "other:https://github.com/dublininquirer",
+  "url": "https://github.com/dublininquirer",
+  "name": "Dublin Inquirer GitHub org (checked, no STR registry repo found)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Verified: this org (Dublin's investigative local newspaper, known for reporting on Ireland's Register of Short-Term Lettings) has only 4 public repos -- dublininquirer-com (site code), counciltracker-ie (council motions/votes tracker, forked from civictech-ie), you-draw-it (D3/TypeScript interactive-prediction visualization tool), and voter-guide-2024. No Airbnb/STR-register scraper or dataset is publicly on this org despite their STR reporting.",
+  "why_useful": "Negative result worth recording so a future scout does not re-check the same lead: the Irish Register of Short-Term Lettings does not have a public GitHub scraper/mirror under this org. counciltracker-ie (forked from civictech-ie) may be worth a separate regulatory-tooling look for other Irish civic-data trackers, but it is not STR-specific.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Ireland (Dublin)",
+  "time_coverage": "N/A",
+  "size_hint": "N/A",
+  "license": "Apache-2.0 (dublininquirer-com, counciltracker-ie)",
+  "last_activity": "dublininquirer-com archived; counciltracker-ie active fork",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "Negative result worth recording so a future scout does not re-check the same lead: the Irish Register of Short-Term Lettings does not have a public GitHub scraper/mirror under this org. counciltracker-ie (forked from civictech-ie) may be worth a separate regulatory-tooling look for other Irish civic-data trackers, but it is not STR-specific."
+  ]
+ }
+]

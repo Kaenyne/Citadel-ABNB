@@ -1,0 +1,144 @@
+[
+ {
+  "key": "github:david984-code/hospitality-alt-data-dashboard",
+  "url": "https://github.com/david984-code/hospitality-alt-data-dashboard",
+  "name": "hospitality-alt-data-dashboard",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Streamlit research tool building a near-real-time US lodging-demand proxy for MAR/HLT/H between earnings prints, from entirely free/keyless public sources: TSA checkpoint throughput (2019+), Google Trends brand search (pytrends, 6 hotel brands), BLS employment/JOLTS/PPI for traveler accommodation, yfinance prices/earnings dates, plus one committed hand-keyed file `data/reported_revpar.csv` (quarterly RevPAR for MAR/HLT/H with source URLs \u2014 same underlying idea as our 'MAR/HLT RevPAR from releases' but committed as a clean CSV with source links). README states explicitly this is a RevPAR *proxy*, not real STR data (\"True RevPAR is STR data (paid)\"), substituting BLS accommodation employment/PPI as demand/rate proxies. Reports its own honest backtest: deseasonalized MoM r\u22480.41 (p\u22480.003) vs RevPAR, but a composite TSA+brand-search+JOLTS signal fails out of sample (r=-0.14 steady state, p\u22480.09 on a trading overlay). 32 commits, CI runs daily to refresh data and publish outputs as GitHub Actions artifacts; no paid keys required (optional BLS_API_KEY for higher limits).",
+  "why_useful": "Directly on gap #8 (hotel supply/demand STR/CoStar proxy) and gap #17 (nowcasting method transparency). Even though it is explicitly a proxy rather than licensed STR data, it is a working, keyless, one-command pull architecture (TSA+BLS+PPI+Trends+yfinance) we could fork or mine for the BLS accommodation-employment/PPI series we may not already be pulling, and its self-reported failure of the composite signal is a useful negative data point consistent with our own TSA/Trends null results.",
+  "potential": "high",
+  "size_hint": "small hand-keyed CSV + gitignored cached pulls; 32 commits",
+  "time_coverage": "TSA data 2019+, quarterly RevPAR since ~2019 (hand-keyed)",
+  "geography": "US (national), MAR/HLT/Choice brand-level",
+  "license": "not confirmed in fetch",
+  "last_activity": "not confirmed in fetch (active enough to run daily CI as of check)",
+  "duplicate_of_holding": "Overlaps our existing 'MAR/HLT RevPAR from releases' and our own tested-and-failed TSA-throughput / Google-Trends constructions \u2014 still worth flagging for the BLS PPI/accommodation-employment proxy angle we may not have tried, and as a second working example of the same null result on TSA/Trends.",
+  "gap_targets": [
+   8,
+   17
+  ],
+  "hits": 3,
+  "themes": [
+   "Hotel performance data: STR / CoStar weekly and monthly US RevPAR figures scraped from press releases, HotStats, Smith Travel history compiled on GitHub",
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Directly on gap #8 (hotel supply/demand STR/CoStar proxy) and gap #17 (nowcasting method transparency). Even though it is explicitly a proxy rather than licensed STR data, it is a working, keyless, one-command pull architecture (TSA+BLS+PPI+Trends+yfinance) we could fork or mine for the BLS accommodation-employment/PPI series we may not already be pulling, and its self-reported failure of the composite signal is a useful negative data point consistent with our own TSA/Trends null results.",
+   "Directly matches gap #8 (regional RevPAR, hotel demand) with an actual committed multi-year reported-RevPAR CSV plus a live, no-key pipeline (TSA/BLS/Trends/yfinance) for hotel-brand demand proxies that read through to STR competitive pricing pressure.",
+   "The PPI Traveler Accommodation series is a monthly hotel-room-rate price index (adjacent to CPI lodging, arguably a cleaner room-rate proxy since it is closer to producer pricing) with an automated pull method; the committed reported-RevPAR CSV (2019-2026) is independently useful for gap #8 (hotel supply/demand RevPAR) as a hand-collected, already-tabulated series saving re-transcription from 10-Qs."
+  ]
+ },
+ {
+  "key": "github:jtilly/cbpr",
+  "url": "https://github.com/jtilly/cbpR",
+  "name": "jtilly/cbpR",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package that downloads and assembles panel datasets from the U.S. Census Bureau's County Business Patterns (CBP) program, aggregable to county/metro/micro level; `getFirmCount()`-style functions accept a NAICS code (demonstrated with a 6-digit code, so NAICS 721 'Accommodation' / 721110 'Hotels and Motels' is selectable), and years are user-specified (demo shown for 2000-2009, but CBP itself runs 1986-2023 annual).",
+  "why_useful": "CBP publishes annual county-level establishment counts, employment and payroll for NAICS 721 (Accommodation and Food Services > Accommodation) \u2014 a free, long-run, granular US hotel-supply census (number of hotel establishments, employment) that could be turned into a US hotel-supply-growth series to compare against Airbnb's US listing growth. Directly addresses gap 8 (hotel supply) with public, county-level government data going back further than any commercial STR/CoStar series we hold.",
+  "potential": "high",
+  "gap_targets": [
+   8
+  ],
+  "geography": "United States, county/metro/micro/state/national level",
+  "time_coverage": "CBP program spans 1986-2023 annually; package demo covers 2000-2009 but is not hardcoded to that range",
+  "size_hint": "Tooling + cached CBP panel builds, CBP source files are tens of MB/year",
+  "license": "unspecified (check repo)",
+  "last_activity": "2026-05-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "CBP publishes annual county-level establishment counts, employment and payroll for NAICS 721 (Accommodation and Food Services > Accommodation) \u2014 a free, long-run, granular US hotel-supply census (number of hotel establishments, employment) that could be turned into a US hotel-supply-growth series to compare against Airbnb's US listing growth. Directly addresses gap 8 (hotel supply) with public, county-level government data going back further than any commercial STR/CoStar series we hold."
+  ]
+ },
+ {
+  "key": "github:overturemaps/overturemaps-py",
+  "url": "https://github.com/OvertureMaps/overturemaps-py",
+  "name": "OvertureMaps/overturemaps-py",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Overture Maps Foundation Python CLI (MIT license, 266 stars, 270 commits). Downloads Overture data for a bbox/region and a theme (places, buildings, transportation, divisions, base, addresses) and converts to GeoParquet/GeoJSON/etc. Places theme covers global POIs including accommodation/lodging categories (confirmed via schema repo cross-check, exact category list not extracted). Data underneath lives on S3/Azure as versioned monthly releases (STAC catalog), so pulling the same bbox at different Overture release dates gives a point-in-time-ish hotel/lodging POI count by city or metro.",
+  "why_useful": "This is the practical one-command tool to actually pull the places theme (hotels/lodging category) for named cities/regions and diff across releases \u2014 turns the Overture places theme (row above) into something the team can script without hand-rolling Parquet/S3 access.",
+  "potential": "high",
+  "gap_targets": [
+   8,
+   4
+  ],
+  "geography": "global (user-specified bbox)",
+  "time_coverage": "current + historical releases via `releases`/`changelog`",
+  "size_hint": "n/a (tool)",
+  "license": "MIT (per repo norms; verify)",
+  "last_activity": "actively maintained, 266 stars/50 forks",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "This is the practical one-command tool to actually pull the places theme (hotels/lodging category) for named cities/regions and diff across releases \u2014 turns the Overture places theme (row above) into something the team can script without hand-rolling Parquet/S3 access.",
+   "Gap #8/#9/#20: a free, global, monthly-versioned alternative to Inside Airbnb/AirDNA for counting STR-adjacent and hotel POIs by city, and for tracking new-supply growth (hotel openings, lodging POI density) as a cross-check on our Inside Airbnb listing counts. Also usable to build regional tourism-POI density controls (restaurants, attractions) as demand proxies.",
+   "A source of short-term-rental-adjacent and hotel POI density/counts by city that is independent of Inside Airbnb's own listing scrape, potentially usable as a supply cross-check or for markets outside the current 123-market Inside Airbnb panel (gap #8/#20 geospatial angle); actively maintained, quarterly-versioned open releases."
+  ]
+ },
+ {
+  "key": "github:diegoantognini/hotelrec",
+  "url": "https://github.com/diegoantognini/HotelRec",
+  "name": "diegoantognini/HotelRec",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "~50 million TripAdvisor hotel reviews (paper claims this is the largest public hotel-review corpus), far larger than the 515k Booking.com Kaggle set we already hold. Each record: hotel URL, author, review DATE, overall rating, title, text, and sub-ratings (sleep quality, value, rooms, service, cleanliness, location). Repo has loader/preprocessing code; actual JSON data is hosted off-GitHub at https://drive.switch.ch/index.php/s/n48smsdufhRA7fR (academic-research-only licence, no commercial redistribution). 73 stars, last updated Jun 2026 (repo maintained), underlying data collected pre-2020 per README sample (earliest sample review 2010; full date range not stated in README).",
+  "why_useful": "Dated per-hotel reviews at massive scale are the closest open substitute for a review-velocity/occupancy-nowcast panel (gap #2 realised occupancy proxy, and this scout's core theme) \u2014 review counts by date and hotel could be aggregated into a review-velocity time series by city/country as a hotel-demand proxy, the same logic as our reviews-based Airbnb 'stays index'. Caveat: appears to be a static historical crawl (not continuously updated), so its usefulness is as a backtest/calibration set for review-velocity-as-demand methodology, not a live feed; and licence is academic-only.",
+  "potential": "high",
+  "license": "unspecified in README; explicit 'academic research purpose only' restriction",
+  "size_hint": "50M reviews, JSON, hosted externally",
+  "time_coverage": "reviews dated but full span unclear from README (sample shown from 2010); likely covers ~2002-2019 given TripAdvisor crawl era",
+  "geography": "global hotels (TripAdvisor coverage)",
+  "last_activity": "2026-06-26 (repo), underlying data crawl likely much older",
+  "gap_targets": [
+   2,
+   8
+  ],
+  "duplicate_of_holding": "extends/supersedes the 515k Booking.com Kaggle hotel-review set we already hold (different source, ~100x larger, but Booking vs TripAdvisor)",
+  "hits": 2,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Dated per-hotel reviews at massive scale are the closest open substitute for a review-velocity/occupancy-nowcast panel (gap #2 realised occupancy proxy, and this scout's core theme) \u2014 review counts by date and hotel could be aggregated into a review-velocity time series by city/country as a hotel-demand proxy, the same logic as our reviews-based Airbnb 'stays index'. Caveat: appears to be a static historical crawl (not continuously updated), so its usefulness is as a backtest/calibration set for review-velocity-as-demand methodology, not a live feed; and licence is academic-only.",
+   "A large, dated, global TripAdvisor review corpus is exactly the raw material for building a review-velocity/review-count demand index (counts of new reviews per hotel per month as an occupancy/nights proxy), addressing gap #2 (realised occupancy proxy) and gap #17 (nowcasting methods) using a non-Airbnb site. Historical depth (2010+) also lets a velocity-vs-known-RevPAR backtest be built further back than our current sources."
+  ]
+ },
+ {
+  "key": "github:rezasbu/dubai-tourism-data-analysis-",
+  "url": "https://github.com/RezaSbu/Dubai-Tourism-Data-Analysis-",
+  "name": "Dubai-Tourism-Data-Analysis-",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Multiple committed CSVs that appear to be Dubai Department of Economy & Tourism (DET) source-format extracts: Divs_Visitors_Demographic_2024-04-26.csv, 5 Epermit files and 5 Eticketing files (Jun 2022-Sep 2023), Hotel_Establishment_Performance.csv, Overnight_Visitors_By_Region.csv, Overnight_Visitors_By_Source_Market.csv, Overseas_Overall_Monthly_Report_Fact.csv, Visitors_Count_By_Nationality.csv, plus a Jupyter notebook and PDF report. Coverage looks like 2022-2023 monthly with a 2024 demographic snapshot. Source attribution and licence not shown in the page fetch.",
+  "why_useful": "Direct-to-KPI: hotel establishment performance (occupancy/ADR proxy), overnight visitors by region/source market, and visitor nationality counts are exactly the kind of MEA travel-demand series named in gap #7 (regional travel volume outside US/EU) and could proxy Gulf inbound STR demand feeding ABNB EMEA/APAC splits. Needs verification of whether these are raw DET releases or a scrape/compilation, but files are committed so usable regardless of provenance.",
+  "potential": "high",
+  "geography": "Dubai, UAE",
+  "time_coverage": "~2022-2024 (monthly for most files)",
+  "size_hint": "~13 CSV files + 1 notebook + 1 PDF",
+  "license": "unknown (not stated in fetched page)",
+  "last_activity": "unknown, repo surfaced in 2026 gh search index",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Direct-to-KPI: hotel establishment performance (occupancy/ADR proxy), overnight visitors by region/source market, and visitor nationality counts are exactly the kind of MEA travel-demand series named in gap #7 (regional travel volume outside US/EU) and could proxy Gulf inbound STR demand feeding ABNB EMEA/APAC splits. Needs verification of whether these are raw DET releases or a scrape/compilation, but files are committed so usable regardless of provenance."
+  ]
+ }
+]

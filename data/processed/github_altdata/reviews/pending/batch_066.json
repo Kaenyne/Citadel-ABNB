@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:ar-puuk/overture-data-download",
+  "url": "https://github.com/ar-puuk/overture-data-download",
+  "name": "ar-puuk/overture-data-download",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R + DuckDB script to download Overture Maps Foundation data (places/buildings/etc.) for a given area of interest.",
+  "why_useful": "R-based alternative acquisition method for the same hotel-POI source; only useful if the team's pipeline is R rather than Python.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Current Overture releases",
+  "size_hint": "Tooling only",
+  "license": "MIT",
+  "last_activity": "2025-11-24",
+  "duplicate_of_holding": "OvertureMaps/data (same underlying source)",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "R-based alternative acquisition method for the same hotel-POI source; only useful if the team's pipeline is R rather than Python."
+  ]
+ },
+ {
+  "key": "github:arthurgailes/overturer",
+  "url": "https://github.com/arthurgailes/overtureR",
+  "name": "arthurgailes/overtureR",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package that loads Overture Maps datasets as dbplyr/sf-ready data frames (21 stars), i.e. an R client library for the same places/hotel POI data.",
+  "why_useful": "Makes the Overture places (hotel/lodging) pull scriptable and joinable in R for anyone building the hotel-supply proxy in R rather than Python/DuckDB directly.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Current Overture releases",
+  "size_hint": "Tooling only",
+  "license": "Other (check terms)",
+  "last_activity": "2026-09-07",
+  "duplicate_of_holding": "OvertureMaps/data (same underlying source)",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "Makes the Overture places (hotel/lodging) pull scriptable and joinable in R for anyone building the hotel-supply proxy in R rather than Python/DuckDB directly."
+  ]
+ },
+ {
+  "key": "github:whubsch/overturetoosm",
+  "url": "https://github.com/whubsch/overturetoosm",
+  "name": "whubsch/overturetoosm",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package translating Overture Maps schema/tags to OpenStreetMap tags (and vice versa conceptually), useful for cross-walking Overture's accommodation categories to OSM's tourism=hotel/motel/hostel/guest_house tagging scheme.",
+  "why_useful": "Lets a hotel-supply build reconcile counts pulled from Overture with counts pulled directly from OSM (Overpass/Geofabrik extracts), giving two independent POI sources to cross-check a hotel-count time series.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Current",
+  "size_hint": "Tooling only",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Lets a hotel-supply build reconcile counts pulled from Overture with counts pulled directly from OSM (Overpass/Geofabrik extracts), giving two independent POI sources to cross-check a hotel-count time series.",
+   "Enables cross-walking Overture Places categories to OSM tourism=* tags (and vice versa) so a lodging-supply count built from one source can be reconciled/merged with the other, improving coverage and cross-validation."
+  ]
+ },
+ {
+  "key": "github:overturemaps/explore-site",
+  "url": "https://github.com/OvertureMaps/explore-site",
+  "name": "OvertureMaps/explore-site",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Interactive web map for exploring Overture Maps data themes (including places/accommodation) release-by-release; points at the same S3/Azure-hosted Parquet releases as OvertureMaps/data, useful only for eyeballing coverage before committing to a bulk pull.",
+  "why_useful": "Quick visual QA of hotel POI density/coverage in specific ABNB markets before investing in the DuckDB pull.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Current release",
+  "size_hint": "Web app, no local data",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "OvertureMaps/data",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "Quick visual QA of hotel POI density/coverage in specific ABNB markets before investing in the DuckDB pull."
+  ]
+ },
+ {
+  "key": "github:wikimedia-research/whereintheworldiswikipedia",
+  "url": "https://github.com/wikimedia-research/WhereInTheWorldIsWikipedia",
+  "name": "WhereInTheWorldIsWikipedia",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Wikimedia Research team code for geographically mapping Wikimedia pageviews (i.e. attributing pageviews to reader geography/country), not article-topic geography.",
+  "why_useful": "Marginal: could in principle help split 'reader interest by country' for a destination article, which is a weaker but distinct signal (who is searching about a place) versus 'interest in a place.' Not a ready dataset.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "unspecified, likely historical Wikimedia research-era (repo appears older/low-activity)",
+  "size_hint": "small research codebase",
+  "license": "other",
+  "last_activity": "2017-10-23",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Marginal: could in principle help split 'reader interest by country' for a destination article, which is a weaker but distinct signal (who is searching about a place) versus 'interest in a place.' Not a ready dataset."
+  ]
+ }
+]

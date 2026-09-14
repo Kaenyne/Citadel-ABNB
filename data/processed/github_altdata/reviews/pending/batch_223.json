@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:topics/courtlistener",
+  "url": "https://github.com/topics/courtlistener",
+  "name": "courtlistener-api-client (search-yourself, ~28 stars)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A third-party Python SDK for CourtListener's REST API, letting a script query case law and court opinions programmatically (no data committed in the repo itself).",
+  "why_useful": "A lighter-weight alternative to writing raw HTTP calls against CourtListener's API to pull Airbnb-related case law/dockets on demand; convenience method only, no unique data.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "n/a (live API pass-through)",
+  "geography": "US courts",
+  "size_hint": "client library only",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "same underlying data as freelawproject/courtlistener",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "A lighter-weight alternative to writing raw HTTP calls against CourtListener's API to pull Airbnb-related case law/dockets on demand; convenience method only, no unique data."
+  ]
+ },
+ {
+  "key": "github:ritikrb126/impact-of-airbnb-regulations-on-hosts-and-prices",
+  "url": "https://github.com/Ritikrb126/Impact-of-Airbnb-Regulations-on-Hosts-and-Prices",
+  "name": "Ritikrb126/Impact-of-Airbnb-Regulations-on-Hosts-and-Prices",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Kaggle-notebook style analysis of how city regulations affect Airbnb pricing and host behavior; appears to be a single-notebook study, not a distinct regulation dataset (uses standard Airbnb listing data joined against regulation flags).",
+  "why_useful": "Marginal: method for tagging listings with regulatory status could be reused, but no new committed regulatory dataset found beyond generic Airbnb listing data. Included only because it directly matched the theme's search terms.",
+  "potential": "low",
+  "geography": "unspecified (generic multi-city)",
+  "time_coverage": "unknown",
+  "size_hint": "single notebook",
+  "license": "none listed",
+  "last_activity": "2025-05-31",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "Marginal: method for tagging listings with regulatory status could be reused, but no new committed regulatory dataset found beyond generic Airbnb listing data. Included only because it directly matched the theme's search terms."
+  ]
+ },
+ {
+  "key": "github:janibert1/vakantieverhuur-check",
+  "url": "https://github.com/janibert1/vakantieverhuur-check",
+  "name": "vakantieverhuur-check",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A small HTML/JS tool (not a dataset) that tells a Dutch homeowner how many nights/year they may legally short-term-let before needing a permit, keyed by Dutch municipality (vakantieverhuur rules). Topics: airbnb, compliance, netherlands, short-term-rental. 0 stars, updated within the last week (Sep 2026), no license stated.",
+  "why_useful": "Encodes per-municipality Dutch STR night-cap rules (a proxy for regulatory tightness feeding Amsterdam/NL enforcement severity), but it is a rules-lookup tool, not enforcement or registration data, so only marginally useful without scraping its rule table.",
+  "potential": "low",
+  "geography": "Netherlands (municipality-level)",
+  "time_coverage": "current rules only, no history",
+  "size_hint": "small static site, unknown rule-table row count",
+  "license": "none stated",
+  "last_activity": "~Sep 2026",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "Encodes per-municipality Dutch STR night-cap rules (a proxy for regulatory tightness feeding Amsterdam/NL enforcement severity), but it is a rules-lookup tool, not enforcement or registration data, so only marginally useful without scraping its rule table."
+  ]
+ },
+ {
+  "key": "github:devillers/taxes-de-sejour",
+  "url": "https://github.com/devillers/taxes-de-sejour",
+  "name": "devillers/taxes-de-sejour",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Next.js/MongoDB web app for French conciergeries/hosts/communes to compute and remit taxe de sejour from uploaded stay-record CSVs. Repo ships data/owners.csv (70KB), data/properties.csv (82KB) and data/taxes.csv (10KB), but these read as sample/seed fixtures for the app (owner names, property addresses) rather than real municipal tax-collection totals.",
+  "why_useful": "Marginal: the underlying rate-calculation logic reflects real French taxe de sejour rules, but the committed CSVs appear to be synthetic demo data, not actual remittance figures for any commune.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "size_hint": "~160KB across 3 CSVs, appears synthetic",
+  "time_coverage": "unclear",
+  "geography": "France (generic, no specific commune data confirmed)",
+  "license": "none declared",
+  "last_activity": "2025-07-29",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform"
+  ],
+  "why_all": [
+   "Marginal: the underlying rate-calculation logic reflects real French taxe de sejour rules, but the committed CSVs appear to be synthetic demo data, not actual remittance figures for any commune."
+  ]
+ },
+ {
+  "key": "github:arcam-vd/e-arcam",
+  "url": "https://github.com/arcam-vd/e-arcam",
+  "name": "arcam-vd/e-arcam",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Cyberadministration webapp for a Swiss regional association (Cossonay-Aubonne-Morges, Vaud canton) to administer taxe de sejour collection. Appears to be the admin tool itself, not a public dataset of collections figures.",
+  "why_useful": "Low relevance: shows the administrative software side of tourist-tax collection in a small Swiss region, no ABNB-scale data.",
+  "potential": "low",
+  "gap_targets": [],
+  "size_hint": "unknown, admin app repo",
+  "time_coverage": "unknown",
+  "geography": "Cossonay-Aubonne-Morges, Switzerland",
+  "license": "none declared",
+  "last_activity": "2018-07-31",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform"
+  ],
+  "why_all": [
+   "Low relevance: shows the administrative software side of tourist-tax collection in a small Swiss region, no ABNB-scale data."
+  ]
+ }
+]

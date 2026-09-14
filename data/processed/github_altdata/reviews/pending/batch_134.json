@@ -1,0 +1,152 @@
+[
+ {
+  "key": "github:navarreteed/eiapy",
+  "url": "https://github.com/Navarreteed/eiapy",
+  "name": "eiapy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client wrapping the full EIA Open Data API v2 (222 leaf routes across 13 categories: petroleum, natural gas, electricity, coal, SEDS, STEO, AEO/IEO, etc.), returning typed pandas DataFrames. Petroleum category includes get_data(\"petroleum\",\"pri\",\"gnd\") for retail gasoline/diesel prices (EIA's weekly/monthly regional and national gas price series). Requires a free EIA API key (no payment).",
+  "why_useful": "One-command, no-cost, no-scraping pull of EIA's official weekly/monthly retail gasoline and diesel price series (by PADD region and US average), which is the standard non-AAA benchmark for consumer fuel cost and a clean point-in-time-able macro input; also opens EIA's much broader petroleum/energy dataset (jet fuel, refinery data) relevant to travel-cost gap analyses.",
+  "potential": "high",
+  "geography": "US, PADD regions",
+  "time_coverage": "as far back as EIA series go (gasoline weekly since 1990s) via the API",
+  "size_hint": "API client, no committed data; pull volume depends on query",
+  "license": "MIT",
+  "last_activity": "recent, under active development per README",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "One-command, no-cost, no-scraping pull of EIA's official weekly/monthly retail gasoline and diesel price series (by PADD region and US average), which is the standard non-AAA benchmark for consumer fuel cost and a clean point-in-time-able macro input; also opens EIA's much broader petroleum/energy dataset (jet fuel, refinery data) relevant to travel-cost gap analyses."
+  ]
+ },
+ {
+  "key": "github:epfl-dlab/googletrendsanchorbank",
+  "url": "https://github.com/epfl-dlab/GoogleTrendsAnchorBank",
+  "name": "GoogleTrendsAnchorBank (gtab)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package `gtab` implementing the anchor-bank calibration method from the CIKM 2020 paper 'Calibration of Google Trends Time Series' (Robert West, EPFL). Directories: gtab/ (core library), example/ (notebooks + CLI demos), cikm2020_paper/ (reproducibility materials). Builds a set of calibration ('anchor') queries so arbitrary Google Trends queries can be placed on one absolute, comparable scale instead of the 0-100 relative index that changes with every pull. Pulls live via pytrends; does not ship pre-built historical data but the anchor-bank building code is a one-command pipeline. MIT license, 217 commits.",
+  "why_useful": "Directly targets gap #17 (anchored Google Trends, gtab named explicitly) and gap #4 (point-in-time Google Trends). Our own Trends work failed 0/162 vs naive partly on renormalisation; this is the standard academic fix others (including the OECD Weekly Tracker methodology) build on, so worth testing before concluding Trends is dead.",
+  "potential": "high",
+  "gap_targets": [
+   17,
+   4
+  ],
+  "license": "MIT",
+  "last_activity": "unknown exact date; 217 commits, actively cited",
+  "geography": "global (any Google Trends geo)",
+  "time_coverage": "user-defined (as far back as Trends allows)",
+  "size_hint": "small library, no large data files",
+  "hits": 8,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos",
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies",
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "Directly targets gap #17 (anchored Google Trends, gtab named explicitly) and gap #4 (point-in-time Google Trends). Our own Trends work failed 0/162 vs naive partly on renormalisation; this is the standard academic fix others (including the OECD Weekly Tracker methodology) build on, so worth testing before concluding Trends is dead.",
+   "Directly named in CONTEXT gap #17 ('anchored Google Trends (gtab)'). CONTEXT notes raw Google Trends as pulled failed (0/162, renormalisation issues) -- gtab is the specific fix for that renormalisation problem via calibrated anchor banks, and per-anchor-bank timeframes make historical pulls closer to point-in-time reproducible, which is squarely this theme's remit (vintage-aware, reproducible macro/search-interest series).",
+   "Directly fills gap #17 (anchored Google Trends / gtab) and speaks to gap #4 (point-in-time / comparable-magnitude series): our own note says raw Google Trends pulls are NOT point-in-time and failed as a nowcast (0/162). gtab's whole purpose is making trend magnitudes stable and comparable across separate pulls, which is the exact defect our failed test hit. Worth a controlled re-test of the ABNB/travel term set through gtab before concluding Trends is dead as a source, and it directly supports building a genuinely point-in-time trends vintage register if pulls are logged with pull dates.",
+   "Directly addresses CONTEXT.md gap #4 (point-in-time/anchored Google Trends) and #17 (anchored Google Trends / gtab named explicitly). Our own past test found raw Trends-as-pulled fails (0/162, renormalization issue) \u2014 gtab is the standard fix for exactly that renormalization problem, since it makes pulls comparable across different query dates and regions, which raw pytrends cannot. Worth re-testing travel/ABNB/competitor terms through gtab before concluding Trends is dead.",
+   "Directly the 'gtab / anchored Google Trends' method flagged as a target in gap 17. Our own Google Trends work (9 terms, not point-in-time) failed as pulled; gtab is the standard fix for making Trends pulls calibrated and comparable across refresh dates \u2014 worth testing as a longer-run, comparable alternative before writing off Trends entirely.",
+   "Directly named in the brief's gap #17 ('anchored Google Trends (gtab)'). Does not fix the point-in-time problem that killed our prior Trends test, but does fix the precision/comparability problem (raw integer rounding), which was a separate defect; worth a documented retry using period-specific anchor banks rather than raw pulls.",
+   "This is exactly the 'anchored Google Trends (gtab)' method named in gap #17, proposed as a fix for why our own Trends construction failed (0/162 beat naive due to renormalization). Worth an actual pilot before shelving Trends entirely.",
+   "Direct hit on CONTEXT gap #4/#17: the team's own Google Trends test failed because raw pulls are not point-in-time and not comparable across pulls; gtab is exactly the 'anchored Google Trends' tooling flagged as a method still worth trying before writing off Trends entirely as a nights/engagement nowcast input."
+  ]
+ },
+ {
+  "key": "github:trendecon/trendecon",
+  "url": "https://github.com/trendecon/trendecon",
+  "name": "trendecon",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package that queries Google Trends at multiple frequencies (daily/weekly/monthly) for the same terms and harmonises them into a single consistent daily index, preserving long-run trend levels that a single Trends pull cannot give (Trends caps daily granularity to short windows). Companion site trendecon.org publishes daily-updated Swiss economic indicators built this way. Published in Economic Inquiry (2022). No committed data files -- data pulled on demand via gtrendsR. GPL-3.0, 41 stars, grew out of a 2020 COVID hackathon.",
+  "why_useful": "This is essentially a from-scratch, open-source recipe for building an OECD-Weekly-Tracker-style consistent daily/weekly Google Trends series -- addresses the same renormalisation problem that killed our 0/162 Trends test. Could be re-run for US/EMEA travel-adjacent search terms instead of the 9 terms we already tried.",
+  "potential": "high",
+  "gap_targets": [
+   17,
+   4
+  ],
+  "license": "GPL-3.0",
+  "last_activity": "unknown, ongoing per stars/forks",
+  "geography": "primarily Switzerland demo; geo parameter is configurable",
+  "time_coverage": "rolling, Trends-API-limited (~5 years typical)",
+  "size_hint": "small; no committed data",
+  "hits": 2,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "This is essentially a from-scratch, open-source recipe for building an OECD-Weekly-Tracker-style consistent daily/weekly Google Trends series -- addresses the same renormalisation problem that killed our 0/162 Trends test. Could be re-run for US/EMEA travel-adjacent search terms instead of the 9 terms we already tried.",
+   "A second, independently-published fix for the exact renormalization/comparability problem that killed our raw-Trends test (gap #17: 'anchored Google Trends'). The method (not the Swiss-specific site) is directly reusable on any keyword list, including travel/short-term-rental/consumer terms relevant to ABNB nights and consumer strength."
+  ]
+ },
+ {
+  "key": "github:frbny-timeseriesanalysis/nowcasting",
+  "url": "https://github.com/FRBNY-TimeSeriesAnalysis/Nowcasting",
+  "name": "FRBNY Nowcasting (dynamic factor model)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "New York Fed's own MATLAB implementation of the dynamic-factor-model nowcasting framework from their Staff Report 830 ('Macroeconomic Nowcasting and Forecasting with Big Data') -- the same family of methodology underlying the NY Fed / now-Dallas-Fed Weekly Economic Index. Ships example US data pulled from FRED, a model-spec template, and a pre-computed DFM results file, but explicitly does NOT include the full proprietary dataset used for the live weekly release (redistribution restricted). BSD-3-Clause, 4 commits visible.",
+  "why_useful": "Not a data source, but it is the actual official mixed-frequency DFM code the WEI/GDP nowcast family is built on -- useful if we want to build our own weekly ABNB-demand nowcast (gap #17, MIDAS/DFM nowcasting) rather than only tracking someone else's published index.",
+  "potential": "high",
+  "gap_targets": [
+   17
+  ],
+  "license": "BSD-3-Clause",
+  "last_activity": "unknown exact date; low commit count, appears stable/reference code",
+  "geography": "US methodology, generalizable",
+  "time_coverage": "example data only",
+  "size_hint": "small, MATLAB scripts",
+  "hits": 4,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Not a data source, but it is the actual official mixed-frequency DFM code the WEI/GDP nowcast family is built on -- useful if we want to build our own weekly ABNB-demand nowcast (gap #17, MIDAS/DFM nowcasting) rather than only tracking someone else's published index.",
+   "The canonical open-source dynamic-factor-model nowcasting framework built around mixed-frequency, real-time-vintage macro inputs -- directly the kind of 'methods: nowcasting with mixed-frequency data (MIDAS, DFM)' tooling named in gap #17, and a template for how to structure our own quarterly nowcast around vintage macro releases.",
+   "Canonical, most-cited open implementation of the DFM nowcasting method (gap #17); useful as the estimation engine to build an ABNB-KPI-specific mixed-frequency nowcast (nights/ADR vs macro + alt-data releases) rather than reinventing the Kalman filter/EM code.",
+   "Canonical DFM nowcasting codebase; could be adapted to combine a review-velocity index with macro series into a single nowcast of ABNB nights/GBV, addressing gap #17's DFM method request directly with a proven, citable implementation."
+  ]
+ },
+ {
+  "key": "github:onnokleen/alfred",
+  "url": "https://github.com/onnokleen/alfred",
+  "name": "alfred (R package, CRAN)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client for ALFRED (Archival FRED) that pulls historical data releases / vintages for any FRED series with no API key required; returns tidy data frames of a series as it was known at any given past date. Example series shown: INDPRO. On CRAN since June 2017, last functional update 26 Jul 2021; mirrored at github.com/cran/alfred (0 stars, but that's just the CRAN read-only mirror).",
+  "why_useful": "Directly implements gap #4 (ALFRED-style macro vintages). Gives point-in-time snapshots of any FRED series (GDP, PCE, CPI, payrolls, industrial production) as they stood on a given historical date -- exactly what's needed to refit at guide dates per the repo's point-in-time rule rather than using today's revised macro series as an input to nowcasts of consumer spend/travel demand.",
+  "potential": "high",
+  "gap_targets": [
+   4
+  ],
+  "license": "CRAN license (GPL-family, see DESCRIPTION)",
+  "last_activity": "2021-07-26 (package); CRAN mirror synced 2023-03-21",
+  "geography": "US (FRED/ALFRED = St. Louis Fed)",
+  "time_coverage": "Whatever vintage history FRED/ALFRED expose per series (many series back to 1990s-2000s vintages)",
+  "size_hint": "small R package, no committed data (live API pulls)",
+  "hits": 2,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Directly implements gap #4 (ALFRED-style macro vintages). Gives point-in-time snapshots of any FRED series (GDP, PCE, CPI, payrolls, industrial production) as they stood on a given historical date -- exactly what's needed to refit at guide dates per the repo's point-in-time rule rather than using today's revised macro series as an input to nowcasts of consumer spend/travel demand.",
+   "A no-key alternative/cross-check to fredapi for pulling point-in-time macro vintages (gap #4); useful if the team's Python fredapi key setup is inconvenient or for R-based backtest scripts."
+  ]
+ }
+]

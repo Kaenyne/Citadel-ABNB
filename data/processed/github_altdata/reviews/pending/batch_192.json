@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:aws-samples/demand-forecasting-on-amazon-sagemaker-with-predicthq-event-data",
+  "url": "https://github.com/aws-samples/demand-forecasting-on-amazon-sagemaker-with-predicthq-event-data",
+  "name": "aws-samples/demand-forecasting-on-amazon-sagemaker-with-predicthq-event-data",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "AWS sample (MIT-0) walking through pulling PredictHQ event-impact features (including conferences/expos) and feeding them into a SageMaker demand-forecasting pipeline; includes notebook code showing the API-to-feature pipeline end to end.",
+  "why_useful": "A concrete, runnable replication of turning event/conference data into a demand forecast feature -- directly usable as a template for a MICE-driven regional demand adjustment.",
+  "potential": "low",
+  "geography": "generic (demo)",
+  "time_coverage": "n/a",
+  "size_hint": "notebook + sample code, small",
+  "license": "MIT-0",
+  "last_activity": "2026-01-21",
+  "gap_targets": [
+   17,
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "A concrete, runnable replication of turning event/conference data into a demand forecast feature -- directly usable as a template for a MICE-driven regional demand adjustment."
+  ]
+ },
+ {
+  "key": "github:tducret/amazon-scraper-python",
+  "url": "https://github.com/tducret/amazon-scraper-python",
+  "name": "amazon-scraper-python",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed, non-official Python client for scraping Amazon product listing pages (price, rating, review count, title) from search results. No data committed, pure client code, 878 stars, actively maintained (updated 13 Sep 2026).",
+  "why_useful": "A clean, permissively-licensed reference implementation for a search-results scraper (price + rank + rating extraction pattern) that is the closest structural analogue to what an Airbnb search-page fee-panel capture needs to do; useful as a code-pattern template, not as travel data itself.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "N/A - scraper code only",
+  "time_coverage": "N/A",
+  "geography": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "A clean, permissively-licensed reference implementation for a search-results scraper (price + rank + rating extraction pattern) that is the closest structural analogue to what an Airbnb search-page fee-panel capture needs to do; useful as a code-pattern template, not as travel data itself."
+  ]
+ },
+ {
+  "key": "github:philipperemy/amazon-reviews-scraper",
+  "url": "https://github.com/philipperemy/amazon-reviews-scraper",
+  "name": "amazon-reviews-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0 multi-language Amazon review scraper (title, rating, date, body). No dataset committed. 135 stars.",
+  "why_useful": "Template for review-velocity-as-demand-proxy methodology (analogous to the team's own Inside-Airbnb reviews-based 'stays index'); could be adapted conceptually, not directly useful as data.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "N/A",
+  "time_coverage": "N/A",
+  "geography": "N/A",
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Template for review-velocity-as-demand-proxy methodology (analogous to the team's own Inside-Airbnb reviews-based 'stays index'); could be adapted conceptually, not directly useful as data."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/amazon-scraper",
+  "url": "https://github.com/omkarcloud/amazon-scraper",
+  "name": "amazon-scraper (omkarcloud)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT REST API wrapper for real-time Amazon product/search/review/ranking data across 24 marketplaces. Confirmed via README fetch: no committed dataset files, purely a live-scrape API client.",
+  "why_useful": "Marginal \u2014 one more scraper template covering multiple country marketplaces (useful only if team ever wants cross-country Amazon price-index comparisons as a consumer-strength proxy); no data value on its own.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "size_hint": "N/A",
+  "time_coverage": "N/A",
+  "geography": "24 Amazon marketplaces (countries)",
+  "license": "MIT",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Marginal \u2014 one more scraper template covering multiple country marketplaces (useful only if team ever wants cross-country Amazon price-index comparisons as a consumer-strength proxy); no data value on its own."
+  ]
+ },
+ {
+  "key": "github:justsxm/deals-scraper",
+  "url": "https://github.com/JustSxm/Deals-Scraper",
+  "name": "Deals-Scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT Canadian multi-site scraper (Facebook Marketplace, Kijiji, eBay, Amazon, Lespac) for deal/price listings. No committed dataset.",
+  "why_useful": "Marginal template for cross-platform consumer-pricing scraping; not travel-relevant beyond generic method reference.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "size_hint": "N/A",
+  "time_coverage": "N/A",
+  "geography": "Canada",
+  "license": "MIT",
+  "last_activity": "2026-09-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Marginal template for cross-platform consumer-pricing scraping; not travel-relevant beyond generic method reference."
+  ]
+ }
+]

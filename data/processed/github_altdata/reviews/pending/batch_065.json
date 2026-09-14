@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:alexissamp/tota-water-consumption-powerbi-dashboard",
+  "url": "https://github.com/AlexisSamp/TOTA-Water-Consumption-PowerBI-Dashboard",
+  "name": "TOTA-Water-Consumption-PowerBI-Dashboard",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed water_data.csv plus a tota_water_consumption_dashboard.pbix (Power BI) for the Okanagan watershed pilot region (Thompson Okanagan Tourism Association, British Columbia, Canada), built for that region's annual UN Tourism INSTO (International Network of Sustainable Tourism Observatories) reporting. Multi-municipality, multi-year municipal water consumption data collected from public sources; supports year-over-year comparison. No license file found.",
+  "why_useful": "A committed, tourism-board-curated municipal water-consumption CSV explicitly built for a UN Tourism sustainable-tourism observatory report is a rare direct water-as-tourism-activity proxy, and demonstrates the INSTO reporting format that other tourism regions may also publish on GitHub.",
+  "potential": "medium",
+  "geography": "Okanagan watershed, British Columbia, Canada",
+  "time_coverage": "multi-year, exact range not stated in README excerpt",
+  "size_hint": "one CSV (water_data.csv) + PBIX dashboard file",
+  "license": "none specified",
+  "last_activity": "2026-08-28",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "A committed, tourism-board-curated municipal water-consumption CSV explicitly built for a UN Tourism sustainable-tourism observatory report is a rare direct water-as-tourism-activity proxy, and demonstrates the INSTO reporting format that other tourism regions may also publish on GitHub."
+  ]
+ },
+ {
+  "key": "github:mathewhauer/irs-migration-data",
+  "url": "https://github.com/mathewhauer/IRS-migration-data",
+  "name": "IRS-migration-data",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R scripts that download and process raw IRS Statistics-of-Income migration files into one flat file `county_migration_data.txt` covering 1990-2010, 95-98% of the tax-filing universe; 5-digit FIPS origin county, 2-digit FIPS destination state, flows under 10 filers coded 99999. Includes manuscript/LaTeX explaining methodology. 22 stars, MIT code / CC-BY-3.0 data, last commit 2024-05-23.",
+  "why_useful": "Pre-cleaned 1990-2010 IRS migration panel, MIT-licensed, useful to backfill migration history before the 1998-2015 series above and cross-check destination-county in-migration trends against Airbnb-heavy vacation/second-home markets.",
+  "potential": "medium",
+  "geography": "US, county-level",
+  "time_coverage": "1990-2010",
+  "size_hint": "2000+ raw files + 1 processed flat file",
+  "license": "MIT",
+  "last_activity": "2024-05-23",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Pre-cleaned 1990-2010 IRS migration panel, MIT-licensed, useful to backfill migration history before the 1998-2015 series above and cross-check destination-county in-migration trends against Airbnb-heavy vacation/second-home markets.",
+   "Long-run, cleanly documented county-level migration series (sunbelt in-migration, second-home-market feeder counties) that is a candidate proxy for where new short-term-rental demand/supply and vacation-home purchases concentrate; gap 20 (geotagged tourism/migration proxies) and general population-shift context for NA nights."
+  ]
+ },
+ {
+  "key": "github:nbaubek/population-demographics-de-project",
+  "url": "https://github.com/nbaubek/population-demographics-de-project",
+  "name": "population-demographics-de-project",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Data-engineering pipeline combining Census ACS, TIGER/Line, and IRS migration data (2012-2024) at state/county/tract granularity into an interactive mapping tool; described as a pipeline rather than a static committed dataset (not independently verified).",
+  "why_useful": "If it bundles a processed 2012-2024 IRS-migration table, it would be the most recent multi-year panel found in this sweep, extending well past the other repos' 2015 cutoff -- worth a follow-up directory listing.",
+  "potential": "medium",
+  "geography": "US, state/county/tract",
+  "time_coverage": "2012-2024",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2026-08-21",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "If it bundles a processed 2012-2024 IRS-migration table, it would be the most recent multi-year panel found in this sweep, extending well past the other repos' 2015 cutoff -- worth a follow-up directory listing.",
+   "Widest and most recent time span (2012-2024) of any migration repo found here; a maintained pipeline that could be re-run to get current-vintage IRS migration + ACS demographic joins for identifying growing STR/second-home markets."
+  ]
+ },
+ {
+  "key": "github:worldbank/blackmarblepy",
+  "url": "https://github.com/worldbank/blackmarblepy",
+  "name": "blackmarblepy",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package that pulls NASA Black Marble VNP46 nighttime-lights tiles (daily/monthly/yearly, global, any user-defined date range and region-of-interest polygon) via the NASA LAADS DAAC API, converts HDF5 to georeferenced rasters, mosaics them, and computes zonal statistics/time series. No data committed to the repo itself \u2014 pure acquisition + processing tool, free NASA Earthdata token required, no paid key.",
+  "why_useful": "Could be pointed at specific Airbnb-heavy tourism geographies (e.g. Cancun, Bali, Algarve, Gold Coast) to build a custom nightlights-based destination-activity index as an occupancy/demand proxy for gap #2 (realised occupancy) or gap #7 (regional travel volume, LatAm/APAC) where no other free series exists. World Bank-maintained, MIT licence, actively updated (last push 7 Sep 2026).",
+  "potential": "medium",
+  "geography": "global, user-selected ROI",
+  "time_coverage": "2012-present (VIIRS era), user-selected range",
+  "size_hint": "no committed data; API-pulled rasters",
+  "license": "MIT",
+  "last_activity": "2026-09-07",
+  "gap_targets": [
+   2,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Could be pointed at specific Airbnb-heavy tourism geographies (e.g. Cancun, Bali, Algarve, Gold Coast) to build a custom nightlights-based destination-activity index as an occupancy/demand proxy for gap #2 (realised occupancy) or gap #7 (regional travel volume, LatAm/APAC) where no other free series exists. World Bank-maintained, MIT licence, actively updated (last push 7 Sep 2026)."
+  ]
+ },
+ {
+  "key": "github:dso6060/viirs-nightlights-analysis-tool",
+  "url": "https://github.com/dso6060/viirs-nightlights-analysis-tool",
+  "name": "viirs-nightlights-analysis-tool",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "FastAPI + Leaflet/D3 web tool that pulls Suomi NPP VIIRS DNB monthly composite radiance (NOAA EOG, ~750m, 2012-present) for geocoded cities, applies Elvidge et al. (2021) bias correction, and exports raw + bias-corrected radiance time series (Excel/CSV/JSON) with quality flags. Ships with example city lists: 45 Indian cities, 25 US metros, 30 European capitals, 20 Pakistani cities, plus conflict-zone cities.",
+  "why_useful": "A ready-made, citable-methodology (bias-corrected) nightlights time-series puller for named cities including several ABNB-relevant US/European metros; could be re-pointed at our 13/123-city Inside Airbnb panel to build a per-market activity index as an occupancy/demand cross-check.",
+  "potential": "medium",
+  "license": "non-commercial open-source (per README)",
+  "last_activity": "2026-06-03",
+  "geography": "global (examples: India, US, Europe, Pakistan, conflict zones)",
+  "time_coverage": "2012-present, monthly",
+  "size_hint": "17 commits; no large committed dataset, generates outputs on run",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "A ready-made, citable-methodology (bias-corrected) nightlights time-series puller for named cities including several ABNB-relevant US/European metros; could be re-pointed at our 13/123-city Inside Airbnb panel to build a per-market activity index as an occupancy/demand cross-check."
+  ]
+ }
+]

@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:tourmind-com/tourmind-booking-skills",
+  "name": "tourmind-com/Tourmind-Booking-Skills",
+  "url": "https://github.com/tourmind-com/Tourmind-Booking-Skills",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "AI-agent skill (973 stars, updated Sep 9 2026) providing live cross-OTA rate comparison and booking via the TourMind API, spanning multiple OTA suppliers. No committed historical dataset \u2014 a live API client only.",
+  "why_useful": "A maintained, popular, currently-active cross-OTA price-comparison client; could be a pull mechanism for point-in-time competitor hotel pricing if a human clears the ToS question, but holds no data itself.",
+  "potential": "low",
+  "geography": "global multi-OTA",
+  "time_coverage": "live only",
+  "license": "unspecified",
+  "last_activity": "2026-09-09",
+  "size_hint": "code only",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "A maintained, popular, currently-active cross-OTA price-comparison client; could be a pull mechanism for point-in-time competitor hotel pricing if a human clears the ToS question, but holds no data itself."
+  ]
+ },
+ {
+  "key": "github:topics/ctrip",
+  "name": "ECommerceCrawlers (Ctrip module)",
+  "url": "https://github.com/topics/ctrip",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Multi-purpose Chinese e-commerce/web scraper collection including a Ctrip hotel-and-flight data extraction module (surfaced via the 'ctrip' GitHub topic; exact owner/repo path not independently re-verified due to search rate-limiting). No committed bulk dataset found in the topic listing.",
+  "why_useful": "Potential source of a Ctrip flight/hotel price-pull method for a China outbound-travel-volume proxy; needs direct repo confirmation before use.",
+  "potential": "low",
+  "geography": "China (Ctrip)",
+  "time_coverage": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "size_hint": "unknown",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Potential source of a Ctrip flight/hotel price-pull method for a China outbound-travel-volume proxy; needs direct repo confirmation before use."
+  ]
+ },
+ {
+  "key": "github:heskarioth/py-hostelworld",
+  "url": "https://github.com/heskarioth/py-hostelworld",
+  "name": "py-hostelworld",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Described as 'Unofficial hostelworld API created using REST endpoints and some creativity' \u2014 a Python client hitting Hostelworld's internal search/price endpoints. 1 star, last touched 2021-05-01. README could not be fetched (404 on raw HEAD \u2014 repo may be renamed/deleted/archived); could not confirm current functionality or any committed data.",
+  "why_useful": "If live, this is a method to pull Hostelworld hostel prices/availability, the only near-hit on the Hostelworld part of this theme; addresses gap #9 (competitor/adjacent supply) as a hostel-price proxy, though hostels are a small ABNB overlap.",
+  "potential": "low",
+  "geography": "global (Hostelworld coverage)",
+  "time_coverage": "unknown \u2014 likely current-price snapshots only, no history",
+  "size_hint": "unknown, single script/small repo",
+  "license": "none declared",
+  "last_activity": "2021-05-01",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Hostelworld, Hipcamp, Outdoorsy, RVshare, Sonder, Vacasa, Inspirato, Marriott Homes & Villas, Plum Guide, onefinestay, Flatio, Blueground datasets or filings parsers"
+  ],
+  "why_all": [
+   "If live, this is a method to pull Hostelworld hostel prices/availability, the only near-hit on the Hostelworld part of this theme; addresses gap #9 (competitor/adjacent supply) as a hostel-price proxy, though hostels are a small ABNB overlap."
+  ]
+ },
+ {
+  "key": "github:pulsedev2gwencd/hostelworld-scraper",
+  "url": "https://github.com/pulsedev2gwencd/hostelworld-scraper",
+  "name": "hostelworld-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Repo described only as 'Hostelworld hostel data scraper', 0 stars, updated 2025-12-12 (recent). No README fetched, no confirmation of committed data files vs. scrape-on-demand code only.",
+  "why_useful": "Recently active scraper targeting Hostelworld; possible method to acquire hostel occupancy/price signals as a hostel-market comparator, but per CLAUDE.md rules this and any scraper is a method to catalogue and leave unrun, not to execute.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2025-12-12",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Hostelworld, Hipcamp, Outdoorsy, RVshare, Sonder, Vacasa, Inspirato, Marriott Homes & Villas, Plum Guide, onefinestay, Flatio, Blueground datasets or filings parsers"
+  ],
+  "why_all": [
+   "Recently active scraper targeting Hostelworld; possible method to acquire hostel occupancy/price signals as a hostel-market comparator, but per CLAUDE.md rules this and any scraper is a method to catalogue and leave unrun, not to execute."
+  ]
+ },
+ {
+  "key": "github:adamstrain2010/hostelworldscrape",
+  "url": "https://github.com/adamstrain2010/HostelworldScrape",
+  "name": "HostelworldScrape",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "0-star repo named HostelworldScrape, updated 2025-06-30, no description, not inspected further (no README fetched, may just be scraping code with no committed data).",
+  "why_useful": "Another possible Hostelworld scraping method; marginal, unverified.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2025-06-30",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Hostelworld, Hipcamp, Outdoorsy, RVshare, Sonder, Vacasa, Inspirato, Marriott Homes & Villas, Plum Guide, onefinestay, Flatio, Blueground datasets or filings parsers"
+  ],
+  "why_all": [
+   "Another possible Hostelworld scraping method; marginal, unverified."
+  ]
+ }
+]

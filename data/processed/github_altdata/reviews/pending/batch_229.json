@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:yelp/dataset-examples",
+  "url": "https://github.com/Yelp/dataset-examples",
+  "name": "Yelp/dataset-examples",
+  "category": "social_text_news",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Archived (read-only since May 2025) official Yelp repo with example scripts (JSON-to-CSV converter, category predictor, review generator, word-positivity scorer) for the Yelp Academic/Open Dataset, which itself is hosted at yelp.com/dataset (businesses, reviews, users, checkins, tips across multiple US/Canada metros, updated periodically by Yelp, JSON format, several GB). 45 commits, Python 2.6+/mrjob based.",
+  "why_useful": "Yelp business density/review-volume/rating trends by metro are a leisure/dining-demand proxy correlated with local tourism and short-term-rental attractiveness (gap #6, restaurant-adjacent leisure proxy); the actual dataset must be pulled from yelp.com, not GitHub, hence pointer_to_external_host.",
+  "potential": "medium",
+  "license": "custom Yelp dataset terms (non-commercial, academic use) for the data; repo code license unspecified",
+  "last_activity": "archived 2025-05-13; underlying dataset periodically refreshed by Yelp",
+  "geography": "US/Canada (Yelp coverage metros)",
+  "time_coverage": "multi-year, vintage depends on current Yelp dataset release",
+  "size_hint": "several GB JSON (businesses+reviews+users+checkins+tips)",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "Yelp business density/review-volume/rating trends by metro are a leisure/dining-demand proxy correlated with local tourism and short-term-rental attractiveness (gap #6, restaurant-adjacent leisure proxy); the actual dataset must be pulled from yelp.com, not GitHub, hence pointer_to_external_host."
+  ]
+ },
+ {
+  "key": "other:https://academictorrents.com",
+  "url": "https://academictorrents.com",
+  "name": "Pushshift Reddit dumps (Academic Torrents, pointed to by PushshiftDumps/arctic_shift READMEs)",
+  "category": "social_text_news",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "The actual monthly comments/submissions dump files (zst-compressed, all subreddits) that Watchful1/PushshiftDumps and other tools are built to process; distributed as torrents, not GitHub-hosted.",
+  "why_useful": "This is the underlying raw data source for any r/airbnb / r/AirBnBHosts / r/travel historical pull; needed alongside the GitHub tooling above.",
+  "potential": "medium",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "hundreds of GB total, filterable to per-subreddit subsets",
+  "time_coverage": "through ~2023 (Pushshift API/ingestion shutdown), some community-maintained continuations later",
+  "geography": "n/a",
+  "license": "unclear/community norms",
+  "last_activity": "n/a",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "This is the underlying raw data source for any r/airbnb / r/AirBnBHosts / r/travel historical pull; needed alongside the GitHub tooling above."
+  ]
+ },
+ {
+  "key": "github:voussoir/timesearch",
+  "url": "https://github.com/voussoir/timesearch",
+  "name": "timesearch",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "BSD-3 Python CLI (132 commits) that archives full subreddit/user submission+comment history into a local SQLite database; originally used Reddit's own timestamp search, pivoted to Pushshift after 2018, and since Pushshift's 2023 shutdown can ingest downloaded Pushshift JSON archives and update via Reddit's live API. Includes livestream, offline HTML rendering, and index/breakdown analysis modules.",
+  "why_useful": "A complete, still-functional pipeline (live Reddit API + optional Pushshift archive ingestion) to build a local historical database of r/airbnb, r/AirBnBHosts or r/travel \u2014 useful for post-volume time series and full-text mining of host/traveler sentiment, cancellation complaints, or regulation chatter.",
+  "potential": "medium",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "per-subreddit SQLite DB, size depends on subreddit activity",
+  "time_coverage": "full subreddit history where reachable via Reddit API + optional Pushshift backfill",
+  "geography": "n/a",
+  "license": "BSD-3-Clause",
+  "last_activity": "132 commits",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "A complete, still-functional pipeline (live Reddit API + optional Pushshift archive ingestion) to build a local historical database of r/airbnb, r/AirBnBHosts or r/travel \u2014 useful for post-volume time series and full-text mining of host/traveler sentiment, cancellation complaints, or regulation chatter."
+  ]
+ },
+ {
+  "key": "github:josephlai241/urs",
+  "url": "https://github.com/JosephLai241/URS",
+  "name": "Universal Reddit Scraper (URS)",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed PRAW-based CLI (1,360 commits, actively maintained) that scrapes subreddits, individual redditors, and submission comment trees via the official Reddit API; exports to CSV/JSON; includes word-frequency and wordcloud analysis, plus a livestream mode for real-time comment/submission monitoring.",
+  "why_useful": "A live, currently-working (official-API-based, no Pushshift dependency) way to pull ongoing r/airbnb, r/AirBnBHosts and r/travel post/comment flow going forward, and to livestream new posts around events like guide dates or regulation news \u2014 text for sentiment/volume features, needs Reddit API credentials (free tier).",
+  "potential": "medium",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "n/a, tooling; output size depends on scrape scope",
+  "time_coverage": "Reddit API rate/history limits apply (recent + limited historical search)",
+  "geography": "n/a",
+  "license": "MIT",
+  "last_activity": "1,360 commits, actively maintained",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "A live, currently-working (official-API-based, no Pushshift dependency) way to pull ongoing r/airbnb, r/AirBnBHosts and r/travel post/comment flow going forward, and to livestream new posts around events like guide dates or regulation news \u2014 text for sentiment/volume features, needs Reddit API credentials (free tier)."
+  ]
+ },
+ {
+  "key": "github:aliparlakci/bulk-downloader-for-reddit",
+  "url": "https://github.com/aliparlakci/bulk-downloader-for-reddit",
+  "name": "Bulk Downloader for Reddit (BDFR)",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GPL-3.0 Python tool (2.6k stars, 1,137 commits, actively maintained) that downloads/archives Reddit submissions and metadata (JSON/XML/YAML) by subreddit, user, multireddit, or search, including comments and stats via its 'archive'/'clone' modes.",
+  "why_useful": "Generic but robust and current subreddit archiving tool; usable to build a point-in-time snapshot of r/airbnb / r/AirBnBHosts / r/travel submissions+comments for text mining (host complaints, RNPL mentions, regulation chatter) without needing Pushshift at all.",
+  "potential": "medium",
+  "gap_targets": [
+   14
+  ],
+  "size_hint": "n/a, tooling; output scales with scrape scope",
+  "time_coverage": "current + reachable history via Reddit API",
+  "geography": "n/a",
+  "license": "GPL-3.0",
+  "last_activity": "1,137 commits, active (100 open issues, 12 open PRs)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets"
+  ],
+  "why_all": [
+   "Generic but robust and current subreddit archiving tool; usable to build a point-in-time snapshot of r/airbnb / r/AirBnBHosts / r/travel submissions+comments for text mining (host complaints, RNPL mentions, regulation chatter) without needing Pushshift at all."
+  ]
+ }
+]

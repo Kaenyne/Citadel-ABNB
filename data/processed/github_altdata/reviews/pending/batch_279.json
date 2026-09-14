@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:recohut-datasets/i94_immigration",
+  "url": "https://github.com/RecoHut-Datasets/i94_immigration",
+  "name": "i94_immigration",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed files: sas_data.tar.xz (26.9MB, the classic US I-94 arrivals SAS extract, April 2016 only), immigration_data_sample.csv (144KB sample), I94_SAS_Labels_Descriptions.SAS (code labels for country/port/visa/mode/state fields), plus reference tables airlines.dat, airport-codes_csv.csv, airports.csv, cities.csv, countries.csv, mode.csv, visa.csv, us_states.csv, us-cities-demographics.csv. This is the Udacity Data Engineering capstone I-94 dataset (US National Travel & Tourism Office non-immigrant arrivals) with world-region/country, visa type, transport mode, age group, destination state, and port-of-entry fields. Also carries an unrelated GlobalLandTemperaturesByCity.parquet file (Kaggle climate data, ignore).",
+  "why_useful": "We already hold current NTTO I-94 arrivals (per CONTEXT.md), but this is only a single month (Apr 2016) \u2014 value here is mainly the reference/crosswalk tables (visa code, mode-of-entry code, port/airport code, country code lookups) and a worked example of parsing the SAS I-94 extract, useful if the team ever needs to reprocess raw DHS/NTTO I-94 SAS files into a point-in-time panel (gap #4/#7). Low incremental data value, moderate tooling value.",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   4
+  ],
+  "duplicate_of_holding": "NTTO I-94 arrivals (already held) \u2014 this repo's actual arrivals data is older/narrower (one month, 2016) than what we hold",
+  "license": "MIT",
+  "geography": "United States (inbound, by country of origin)",
+  "time_coverage": "April 2016 only",
+  "size_hint": "sas_data.tar.xz 26.9MB; sample csv 144KB; reference tables <6MB",
+  "last_activity": "2022-06-18",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "We already hold current NTTO I-94 arrivals (per CONTEXT.md), but this is only a single month (Apr 2016) \u2014 value here is mainly the reference/crosswalk tables (visa code, mode-of-entry code, port/airport code, country code lookups) and a worked example of parsing the SAS I-94 extract, useful if the team ever needs to reprocess raw DHS/NTTO I-94 SAS files into a point-in-time panel (gap #4/#7). Low incremental data value, moderate tooling value."
+  ]
+ },
+ {
+  "key": "github:tgherzog/wbgapi",
+  "url": "https://github.com/tgherzog/wbgapi",
+  "name": "wbgapi",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (177 stars, actively maintained, on PyPI/conda-forge) for the World Bank's official Data API. Pulls any World Development Indicators series by country/year in a pandas-friendly way, including ST.INT.ARVL (international tourism, number of arrivals) and ST.INT.DPRT (departures) and ST.INT.RCPT (tourism receipts) for essentially every country back to the mid-1990s (UNWTO-sourced via WDI) -- covers Mexico, Brazil, Thailand, Indonesia, India, Korea, Japan, Australia, Canada all in one call, annual frequency.",
+  "why_useful": "One-command, no-API-key acquisition of UNWTO-sourced annual international arrivals for every APAC/LatAm market named in gap #7, and a general macro/consumer cross-check tool for other themes. Annual only (not monthly), so it complements rather than replaces NTTO/JNTO/KTO monthly series, but is the fastest way to backfill any missing country-year and to sanity-check UNWTO totals without scraping unwto.org directly.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Global (World Bank WDI country list)",
+  "time_coverage": "~1995-2024, annual",
+  "size_hint": "library, not a data dump",
+  "license": "MIT",
+  "last_activity": "2026 (active, per PyPI/conda-forge feedstock also present)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "One-command, no-API-key acquisition of UNWTO-sourced annual international arrivals for every APAC/LatAm market named in gap #7, and a general macro/consumer cross-check tool for other themes. Annual only (not monthly), so it complements rather than replaces NTTO/JNTO/KTO monthly series, but is the fastest way to backfill any missing country-year and to sanity-check UNWTO totals without scraping unwto.org directly.",
+   "One-command pull of World Bank PPP conversion factors and official FX rates by country/year -- a broader and longer-run complement to the Big Mac index for tourist-affordability comparisons across ABNB's LatAm/APAC markets (gap 7 regional travel volume context)."
+  ]
+ },
+ {
+  "key": "github:bpalmer4/readabs",
+  "url": "https://github.com/bpalmer4/readabs",
+  "name": "readabs (Python)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python port (9 stars, active Aug 2026) of the same ABS time-series downloader concept -- retrieves ABS catalogue tables (incl. 3401.0 Overseas Arrivals and Departures) directly into pandas DataFrames.",
+  "why_useful": "Python-native alternative to the R readabs package for pulling Australia's monthly overseas arrivals/departures series without a browser or manual spreadsheet download; fits directly into a Python forecasting pipeline.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "monthly, historical + current",
+  "size_hint": "library",
+  "license": "check repo (not confirmed)",
+  "last_activity": "2026-08-22",
+  "duplicate_of_holding": "Same underlying ABS source as MattCowgill/readabs; keep both since one is R, one Python.",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Python-native alternative to the R readabs package for pulling Australia's monthly overseas arrivals/departures series without a browser or manual spreadsheet download; fits directly into a Python forecasting pipeline."
+  ]
+ },
+ {
+  "key": "github:claudiodanielpc/inegipy_v2",
+  "url": "https://github.com/claudiodanielpc/INEGIpy_v2",
+  "name": "INEGIpy_v2",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (7 stars) wrapping INEGI's (Mexico) Banco de Indicadores Econ\u00f3micos API, which carries INEGI's tourism-sector indicators (visitor counts, hotel occupancy) alongside general macro series, after INEGI changed its series keys; supersedes the older, now partly broken INEGIpy.",
+  "why_useful": "Programmatic access to Mexico's official statistics agency tourism/hospitality indicators (complements DATATUR) for the LatAm gap (#7); Mexico-specific, maintained update addressing INEGI's 2025-26 key changes that broke the original library.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico",
+  "time_coverage": "varies by INEGI series, generally monthly/quarterly, multi-year",
+  "size_hint": "library",
+  "license": "not confirmed",
+  "last_activity": "not confirmed from search metadata (repo exists, description empty)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Programmatic access to Mexico's official statistics agency tourism/hospitality indicators (complements DATATUR) for the LatAm gap (#7); Mexico-specific, maintained update addressing INEGI's 2025-26 key changes that broke the original library."
+  ]
+ },
+ {
+  "key": "github:merieme-laib/japan-tourism-dashboard",
+  "url": "https://github.com/merieme-laib/japan-tourism-dashboard",
+  "name": "japan-tourism-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Streamlit dashboard analyzing inbound tourism trends in Japan built on \"historical JNTO data\" -- likely bundles a JNTO visitor-arrivals CSV (JNTO publishes monthly inbound visitor counts by origin country back to the 1960s-70s annually, 2010s+ monthly) as the app's data source.",
+  "why_useful": "Potential ready-to-use JNTO monthly/annual inbound-visitor extract, which is the exact APAC series named in this theme (Japan visitor arrivals are a leading indicator of ABNB APAC nights and a comp for the FX/travel-demand thesis); needs inspection to confirm the underlying data file's vintage and completeness.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "not confirmed (described only as 'historical JNTO data')",
+  "size_hint": "small app + data file",
+  "license": "not confirmed",
+  "last_activity": "2026-06-22",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Potential ready-to-use JNTO monthly/annual inbound-visitor extract, which is the exact APAC series named in this theme (Japan visitor arrivals are a leading indicator of ABNB APAC nights and a comp for the FX/travel-demand thesis); needs inspection to confirm the underlying data file's vintage and completeness."
+  ]
+ }
+]

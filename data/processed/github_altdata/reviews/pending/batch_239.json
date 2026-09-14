@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:blackfalcondata-org/airbnb-reviews-scraper",
+  "url": "https://github.com/BlackFalconData-org/airbnb-reviews-scraper",
+  "name": "BlackFalconData-org/airbnb-reviews-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "No-browser scraper that pulls Airbnb reviews as flat rows (review text, star rating, date, reviewer name & location, language, host public reply) for any listing URL or an entire city, output as structured JSON. No data committed to the repo itself; updated Sep 2026 so actively maintained.",
+  "why_useful": "A working, recently-updated method for building a fresh review-date/review-count corpus per city if the team ever needs a more current stays-proxy panel than the frozen Inside Airbnb reviews.csv extracts; scraping airbnb.com directly is a ToS decision per repo rules so this is catalogued as method only, not run.",
+  "size_hint": "n/a (tool, not a dataset)",
+  "time_coverage": "n/a",
+  "geography": "any (URL/city driven)",
+  "license": "not stated",
+  "last_activity": "2026-09-04",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "A working, recently-updated method for building a fresh review-date/review-count corpus per city if the team ever needs a more current stays-proxy panel than the frozen Inside Airbnb reviews.csv extracts; scraping airbnb.com directly is a ToS decision per repo rules so this is catalogued as method only, not run."
+  ]
+ },
+ {
+  "key": "github:ankit-peshin/airbnb",
+  "url": "https://github.com/Ankit-Peshin/airbnb",
+  "name": "Ankit-Peshin/airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Course/capstone project that runs NLP (bag-of-words, word2vec/embeddings) over a large Airbnb reviews corpus, reporting a resulting bag-of-words of 20M+ words after sampling ~30% of the full reviews dataset (implying an underlying corpus in the tens of millions of review tokens, likely Inside-Airbnb-derived, multi-city). Code (Airbnb_final_knit.rmd and related) shows the preprocessing/sampling pipeline rather than shipping a standalone dataset file.",
+  "why_useful": "A reusable, already-tested large-scale NLP preprocessing pipeline for a multi-city reviews corpus at a scale close to what we would need to extend our 123-market reviews-based stays index or to mine review text for demand-adjacent signals (e.g., complaint/cancellation language, sentiment shifts) rather than just review counts.",
+  "size_hint": ">20M-word bag-of-words from a 30% sample of the full review set (underlying corpus likely tens of millions of tokens / hundreds of thousands of reviews)",
+  "time_coverage": "not specified",
+  "geography": "not specified (appears multi-city, likely US)",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "A reusable, already-tested large-scale NLP preprocessing pipeline for a multi-city reviews corpus at a scale close to what we would need to extend our 123-market reviews-based stays index or to mine review text for demand-adjacent signals (e.g., complaint/cancellation language, sentiment shifts) rather than just review counts."
+  ]
+ },
+ {
+  "key": "github:giselesilva-datascience/nlp-text-mining-cultural-differences-between-lisbon-and-rio-de-janeiro-in-airbnb-portuguese-reviews",
+  "url": "https://github.com/giselesilva-datascience/NLP-Text-Mining-Cultural-differences-between-Lisbon-and-Rio-de-Janeiro-in-Airbnb-Portuguese-reviews",
+  "name": "NLP-Text-Mining-Cultural-differences-between-Lisbon-and-Rio-de-Janeiro-in-Airbnb-Portuguese-reviews",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Master's thesis repo (42 commits) with a Datasets/ folder plus Sentiment_Analysis, Topic_Modeling, and Topic_Inference_by_Sentiment folders. Abstract states the study analyzed 200,000 reviews published between 2010 and 2025 for Lisbon (Sep 21 2025 snapshot) and Rio de Janeiro (Sep 26 2025 snapshot), sourced from Inside Airbnb -- i.e. a very recent (weeks-old at time of this scout) full review-date corpus for two cities not in our current 13-city + 123-market panels' most recent vintage.",
+  "why_useful": "A recent (2025-vintage) non-English, cross-market Airbnb reviews dataset+methodology; useful if the team wants a LatAm (Rio) reviews-text vintage newer than what we currently hold (our 123-market panel; Rio not in our named 13-city list), and a working non-English NLP pipeline that could be repointed at other Portuguese/Spanish-speaking markets for the LatAm gap (#7).",
+  "size_hint": "Two city-level Inside Airbnb reviews.csv snapshots (row counts not confirmed)",
+  "time_coverage": "Sep 2025 (Lisbon), similar-era (Rio)",
+  "geography": "Lisbon, Portugal; Rio de Janeiro, Brazil",
+  "license": "not confirmed",
+  "last_activity": "recent (2025/2026 snapshot dates referenced)",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "A recent (2025-vintage) non-English, cross-market Airbnb reviews dataset+methodology; useful if the team wants a LatAm (Rio) reviews-text vintage newer than what we currently hold (our 123-market panel; Rio not in our named 13-city list), and a working non-English NLP pipeline that could be repointed at other Portuguese/Spanish-speaking markets for the LatAm gap (#7).",
+   "A committed, very recent (Sep 2025) Inside-Airbnb-derived review corpus with full 2010-2025 date range for Lisbon and Rio -- both cities outside our current panel -- directly usable as a review-count-over-time stays proxy and possibly a fresher vintage than what we hold for these markets."
+  ]
+ },
+ {
+  "key": "github:danieldacosta/airbnb-analysis",
+  "url": "https://github.com/DanielDaCosta/airbnb-analysis",
+  "name": "Airbnb website history analysis - Rio de Janeiro",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "CSV/listings.zip (28.0MB) and CSV/reviews.zip (40.8MB) committed in-repo: detailed Airbnb listings and reviews data for Rio de Janeiro, Brazil, spanning January 2010 to January 2020 per the README (an Inside-Airbnb-style detailed export, not just a single-month snapshot). Jupyter notebook Data_Analysis.ipynb walks through geographic pricing, host response rate vs. score, YoY growth, and price vs. accommodates. MIT-unspecified license (none declared), last commit 2022-04-08, 5 stars.",
+  "why_useful": "A committed, city-specific long review-date panel (2010-2020) for Rio de Janeiro, a market not in our current 13-city Inside Airbnb panel -- usable as a stays-proxy time series and a cross-check against the giselesilva 2025-vintage Rio snapshot above.",
+  "potential": "medium",
+  "gap_targets": [
+   1,
+   20
+  ],
+  "license": "MIT (code); data license not stated",
+  "last_activity": "February 2023",
+  "geography": "Rio de Janeiro, Brazil",
+  "time_coverage": "Jan 2010 - Jan 2020",
+  "size_hint": "reported ~330,000 reviews",
+  "duplicate_of_holding": "adds a market (Rio) not in our panel, but coverage stops 2020, so mainly useful as a historical baseline",
+  "hits": 2,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "A committed, city-specific long review-date panel (2010-2020) for Rio de Janeiro, a market not in our current 13-city Inside Airbnb panel -- usable as a stays-proxy time series and a cross-check against the giselesilva 2025-vintage Rio snapshot above.",
+   "Rio de Janeiro is not in our current 13-city Inside Airbnb panel, and this vintage (2010-2020) predates anything reachable off today's Inside Airbnb CDN \u2014 directly matches gap #1 (historical/archived Inside Airbnb-style dumps) for a LatAm market, and could support gap #2 (realised occupancy/ADR) if the detailed listings file carries price/review-based occupancy proxies over a full decade."
+  ]
+ },
+ {
+  "key": "github:tule2236/airbnb-dynamic-pricing-optimization",
+  "url": "https://github.com/tule2236/Airbnb-Dynamic-Pricing-Optimization",
+  "name": "Airbnb-Dynamic-Pricing-Optimization",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "San-Francisco-only project (Bayview, Chinatown, etc.) that clusters Inside Airbnb listings within a 3-mile radius and fits regression (poly/linear) demand curves relating price to occupancy; explicitly assumes review rate = 0.5 as the constant to convert reviews to estimated bookings (same 'SF model' family as edmondodriscoll's repo). Also pulls SF police incident (crime) data as a covariate. Uses InsideAirbnb as the listings source; no confirmation of large committed CSVs beyond notebooks.",
+  "why_useful": "A second independent implementation of the same review-rate occupancy-estimation convention, with a neighborhood-cluster demand-curve method (price vs. occupancy) that could be repurposed as a cross-check method for nights/occupancy estimation on our Inside Airbnb panel; the SF crime-data-as-demand-covariate angle is a minor bonus but not central to ABNB forecasting.",
+  "potential": "medium",
+  "gap_targets": [
+   2
+  ],
+  "geography": "San Francisco",
+  "time_coverage": "unspecified Inside Airbnb vintage",
+  "size_hint": "small, notebook-based",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)"
+  ],
+  "why_all": [
+   "A second independent implementation of the same review-rate occupancy-estimation convention, with a neighborhood-cluster demand-curve method (price vs. occupancy) that could be repurposed as a cross-check method for nights/occupancy estimation on our Inside Airbnb panel; the SF crime-data-as-demand-covariate angle is a minor bonus but not central to ABNB forecasting.",
+   "Illustrative of how a PriceLabs/Wheelhouse-style comp-set method is built, but it does not add data beyond what we already hold (Inside Airbnb-style single-market listing snapshot), so it is cataloguing value only as a method reference."
+  ]
+ }
+]

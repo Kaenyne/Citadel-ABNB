@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:akshaygulabrao/secform4",
+  "url": "https://github.com/akshaygulabrao/secform4",
+  "name": "secform4",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scripts (sec_filings.py, sec_analyst.py, all_companies.py) to track all SEC Form 4 insider-trading filings across companies and \"investigate insider sentiment quicker\". 8 commits, no license specified.",
+  "why_useful": "Cross-company Form 4 puller could be pointed at ABNB and peers (BKNG, EXPE) to build an insider-sentiment time series; addresses gap #15.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "not specified",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "small script collection",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Cross-company Form 4 puller could be pointed at ABNB and peers (BKNG, EXPE) to build an insider-sentiment time series; addresses gap #15."
+  ]
+ },
+ {
+  "key": "github:jefferror404/13f_info_get_fund_holdings",
+  "url": "https://github.com/jefferror404/13f_info_get_fund_holdings",
+  "name": "13f_info_get_fund_holdings",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "BeautifulSoup scraper of 13f.info for historical holdings of specific fund managers (Berkshire Hathaway, Bridgewater, Pershing Square, etc.). CC0-1.0 license (public domain), 1 star, updated 2025-03-03.",
+  "why_useful": "A route to specific well-known funds' historical ABNB position sizes (if held) via 13f.info rather than raw EDGAR XML; CC0 license means output is freely reusable.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "license": "CC0-1.0",
+  "last_activity": "2025-03-03",
+  "geography": "US",
+  "time_coverage": "historical (per 13f.info coverage)",
+  "size_hint": "scraper, no bundled CSVs",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "A route to specific well-known funds' historical ABNB position sizes (if held) via 13f.info rather than raw EDGAR XML; CC0 license means output is freely reusable."
+  ]
+ },
+ {
+  "key": "github:elveanapp/swift-edgar",
+  "url": "https://github.com/ElveanApp/swift-edgar",
+  "name": "swift-edgar",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Native Swift, zero-dependency, async/await client for SEC EDGAR covering 13F filings, XBRL financials, insider trading (Form 4), fund holdings, and company search. MIT license, 1 star, updated 2026-07-12.",
+  "why_useful": "Alternative-language (Swift) EDGAR client bundling 13F + Form 4 + fund holdings in one API; low practical value for a Python-based pipeline but confirms the method space is active and well-covered.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "license": "MIT",
+  "last_activity": "2026-07-12",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "library",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Alternative-language (Swift) EDGAR client bundling 13F + Form 4 + fund holdings in one API; low practical value for a Python-based pipeline but confirms the method space is active and well-covered."
+  ]
+ },
+ {
+  "key": "github:tsushanth/trade-copier-13f",
+  "url": "https://github.com/tsushanth/trade-copier-13f",
+  "name": "trade-copier-13f",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pulls a chosen filer's SEC EDGAR 13F holdings, diffs consecutive quarters, and dry-runs proportional \"mirror\" trades on Alpaca paper trading (risk-gated); explicitly notes the 45-day disclosure lag and includes an honest backtest vs SPY. Updated 2026-09-03.",
+  "why_useful": "Illustrates the quarter-over-quarter diff mechanics for a single filer's 13F holdings (useful pattern for building an ABNB-holder concentration/turnover series) and is refreshingly explicit about the reporting lag, which matters for point-in-time discipline.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "2026-09-03",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "pipeline + backtest script",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Illustrates the quarter-over-quarter diff mechanics for a single filer's 13F holdings (useful pattern for building an ABNB-holder concentration/turnover series) and is refreshingly explicit about the reporting lag, which matters for point-in-time discipline."
+  ]
+ },
+ {
+  "key": "github:kentstephen/thirteen-f-scrape",
+  "url": "https://github.com/kentstephen/thirteen-f-scrape",
+  "name": "thirteen-f-scrape",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "SEC EDGAR 13F filings scraper plus a Dagster/DuckDB/Evidence data-pipeline and dashboard stack. Updated 2026-04-09, no license listed.",
+  "why_useful": "A more production-grade (orchestrated, DuckDB-backed) 13F pipeline than the ad-hoc scrapers -- fits our DuckDB-centric workflow if we wanted to stand up an ongoing 13F pull rather than a one-off script.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "2026-04-09",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "pipeline stack",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "A more production-grade (orchestrated, DuckDB-backed) 13F pipeline than the ad-hoc scrapers -- fits our DuckDB-centric workflow if we wanted to stand up an ongoing 13F pull rather than a one-off script."
+  ]
+ }
+]

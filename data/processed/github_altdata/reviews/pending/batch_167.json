@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:yiromo/pytrends-modern",
+  "url": "https://github.com/yiromo/pytrends-modern",
+  "name": "pytrends-modern",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Newer Python client billed as 'combining the best features from pytrends, trendspyg, and more' \u2014 a post-archival successor client for the same Google Trends endpoints (interest over time/region, related queries).",
+  "why_useful": "Alternative maintained client if trendspyg has issues; low incremental value beyond trendspyg since it targets the same underlying data we've already tested.",
+  "potential": "low",
+  "gap_targets": [],
+  "license": "not confirmed",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "last_activity": "active per topics listing",
+  "duplicate_of_holding": "Yes \u2014 same underlying Trends data already tested and found not useful as pulled.",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Alternative maintained client if trendspyg has issues; low incremental value beyond trendspyg since it targets the same underlying data we've already tested."
+  ]
+ },
+ {
+  "key": "github:groovili/gogtrends",
+  "url": "https://github.com/groovili/gogtrends",
+  "name": "gogtrends",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Unofficial Go-language client for the Google Trends API (interest over time/region, trending/realtime searches). Same endpoints as pytrends, just a different language binding.",
+  "why_useful": "No incremental data value for this team's Python/R stack; noted only for completeness.",
+  "potential": "low",
+  "gap_targets": [],
+  "license": "not confirmed",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "last_activity": "listed as active on topics page",
+  "duplicate_of_holding": "Yes.",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "No incremental data value for this team's Python/R stack; noted only for completeness."
+  ]
+ },
+ {
+  "key": "github:bgpkit/radar-rs",
+  "url": "https://github.com/bgpkit/radar-rs",
+  "name": "radar-rs",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Unofficial Rust SDK/client wrapper for the Cloudflare Radar API (BGP routing stats, attack data, DNS, HTTP traffic metrics, bot-traffic breakdowns, top ASNs). Read-only client, requires the user's own Cloudflare API token; commits no data itself.",
+  "why_useful": "Lower-friction way to pull Cloudflare Radar's HTTP-traffic-by-category and bot/crawler-traffic-share endpoints (which include an internet-traffic-by-industry breakdown covering 'Internet & Telecom'/travel-adjacent categories and AI-bot vs human traffic share) programmatically, relevant to gap 19 (AI-referral / bot crawler share). Requires a free Cloudflare account/API token (not a paid key), so within the 'no paid API keys' rule, but is a thin client rather than a dataset.",
+  "potential": "low",
+  "gap_targets": [
+   19
+  ],
+  "license": "MIT",
+  "geography": "global",
+  "time_coverage": "live API, no historical bulk export",
+  "size_hint": "n/a (client library)",
+  "last_activity": "2023-07 (older, may be stale)",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "Lower-friction way to pull Cloudflare Radar's HTTP-traffic-by-category and bot/crawler-traffic-share endpoints (which include an internet-traffic-by-industry breakdown covering 'Internet & Telecom'/travel-adjacent categories and AI-bot vs human traffic share) programmatically, relevant to gap 19 (AI-referral / bot crawler share). Requires a free Cloudflare account/API token (not a paid key), so within the 'no paid API keys' rule, but is a thin client rather than a dataset.",
+   "A code-level client for the same Cloudflare Radar data referenced in gaps #5 and #19; useful once someone registers a free Cloudflare Radar API token to pull historical internet-traffic and AI-bot-share series as an engagement/AI-disintermediation proxy for travel-booking sites broadly.",
+   "Another thin client for Radar's traffic-rank and outage endpoints (gap #5/#19: web-traffic-estimate style engagement proxies and bot/AI traffic); low value on its own since it is an unofficial low-star wrapper, but confirms Radar's API is the right target and is scriptable outside Rust via its plain REST endpoints too."
+  ]
+ },
+ {
+  "key": "github:citability/ai-visibility-readiness",
+  "url": "https://github.com/Citability/ai-visibility-readiness",
+  "name": "ai-visibility-readiness",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source 'AI Visibility Readiness' audit methodology: deterministic HTTP/HTML probes plus live citation measurement, with Cloudflare Radar crawler baselines used to benchmark how much of a site's traffic is AI-bot crawlers vs human. Auto-generates a CHECKS.md from the audit code; framework, not a pre-collected panel.",
+  "why_useful": "A candidate method (not data) for measuring how 'AI-crawlable'/AI-referenced a given site is, tying to gap 19's LLM-travel-agent-benchmark angle \u2014 could in principle be pointed at airbnb.com or competitor booking sites to get an AI-crawler-traffic baseline, though this would count as scraping and needs a human ToS call per repo rules.",
+  "potential": "low",
+  "gap_targets": [
+   19
+  ],
+  "license": "Other (custom, check terms)",
+  "geography": "global",
+  "time_coverage": "current snapshot tool only",
+  "size_hint": "n/a (audit codebase)",
+  "last_activity": "2026-08-14",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "A candidate method (not data) for measuring how 'AI-crawlable'/AI-referenced a given site is, tying to gap 19's LLM-travel-agent-benchmark angle \u2014 could in principle be pointed at airbnb.com or competitor booking sites to get an AI-crawler-traffic baseline, though this would count as scraping and needs a human ToS call per repo rules."
+  ]
+ },
+ {
+  "key": "github:afterpacket/partially.online",
+  "url": "https://github.com/AfterPacket/partially.online",
+  "name": "partially.online",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Real-time internet outage/restriction dashboard aggregating live data from IODA, OONI, and Cloudflare Radar; trinocular Bayesian probing, severity scoring, 30-day country timelines. Not travel/search specific but demonstrates a working multi-source Radar aggregation pipeline.",
+  "why_useful": "Marginal: could be adapted to flag country-level internet disruptions (which would depress both search demand and STR bookings in a market) as an event/shock indicator, but this is a stretch use of an outage-monitoring tool rather than a direct search/SEO dataset.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "license": "Other",
+  "geography": "global, per-country",
+  "time_coverage": "rolling 30-day live window, no long history committed",
+  "size_hint": "n/a (live dashboard)",
+  "last_activity": "2026-09-02",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "Marginal: could be adapted to flag country-level internet disruptions (which would depress both search demand and STR bookings in a market) as an event/shock indicator, but this is a stretch use of an outage-monitoring tool rather than a direct search/SEO dataset."
+  ]
+ }
+]

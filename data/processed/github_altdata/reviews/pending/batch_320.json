@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:derekcheungsa/flight-monitor",
+  "url": "https://github.com/derekcheungsa/flight-monitor",
+  "name": "derekcheungsa/flight-monitor",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"Flight price monitor: Google Flights scraper with dashboard, date scanning, and price history\" -- suggests it stores a price-history time series internally (DB not verified). Not fetched in detail due to budget; needs a closer look for a committed database/export.",
+  "why_useful": "If run continuously this produces exactly the kind of route-level fare time series useful as a travel-demand proxy; worth a closer look at whether historical exports exist.",
+  "potential": "low",
+  "license": "unlicensed (no SPDX)",
+  "last_activity": "2026-08-03",
+  "geography": "unspecified routes",
+  "time_coverage": "unknown, app-generated",
+  "size_hint": "unknown",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "If run continuously this produces exactly the kind of route-level fare time series useful as a travel-demand proxy; worth a closer look at whether historical exports exist.",
+   "If it persists a genuine multi-date price-history series (not just a live dashboard), it could be a small but real point-in-time fare panel; flagged for follow-up rather than confirmed."
+  ]
+ },
+ {
+  "key": "github:clementhennet/db1b_data_extraction",
+  "url": "https://github.com/clementhennet/DB1B_data_extraction",
+  "name": "clementhennet/DB1B_data_extraction",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"DB1B Data Downloader: U.S. Airline Market Analysis\" -- a scripted downloader for BTS DB1B quarterly files. No committed data seen; a lighter alternative to skynet for automated DB1B pulls.",
+  "why_useful": "Another maintained DB1B extraction tool; redundant with skynet/DB1B_Automation but confirms the data is easily pullable for an airfare-level proxy.",
+  "potential": "low",
+  "license": "unlicensed",
+  "last_activity": "2026-05-24",
+  "duplicate_of_holding": "overlaps with ropensci/skynet and i-baumann/DB1B_Automation as an acquisition method for the same BTS source",
+  "geography": "United States",
+  "time_coverage": "depends on vintages pulled",
+  "size_hint": "scripts only",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Another maintained DB1B extraction tool; redundant with skynet/DB1B_Automation but confirms the data is easily pullable for an airfare-level proxy.",
+   "Same DB1B utility as skynet (gap 10) with a possibly simpler Python-only pipeline; worth comparing if skynet's R dependencies are unwanted."
+  ]
+ },
+ {
+  "key": "github:zlacet/dot-db1b-analytics-pipeline",
+  "url": "https://github.com/zlacet/DOT-DB1B-Analytics-Pipeline",
+  "name": "zlacet/DOT-DB1B-Analytics-Pipeline",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end pipeline: DOT DB1B fare data -> Python ETL -> PostgreSQL -> Tableau dashboard with automated reporting, updated Sep 2026 (MIT).",
+  "why_useful": "A recent, full ETL reference implementation for turning raw DB1B fare files into an analyzable warehouse; useful as a build template even without a stored dataset.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2026-09-03",
+  "geography": "United States",
+  "time_coverage": "depends on DB1B vintages loaded",
+  "size_hint": "pipeline code, no data committed (DB warehouse)",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "A recent, full ETL reference implementation for turning raw DB1B fare files into an analyzable warehouse; useful as a build template even without a stored dataset."
+  ]
+ },
+ {
+  "key": "github:steveriffe/avdb",
+  "url": "https://github.com/steveriffe/AvDB",
+  "name": "steveriffe/AvDB",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"Exploratory Analytics & Visualizations of DB1B and BTS data\" -- a personal analysis repo over BTS DB1B, updated 7 Sep 2026 (very recent). Not verified for committed data files vs. code only.",
+  "why_useful": "Another active DB1B/BTS analysis repo; worth checking for committed processed extracts.",
+  "potential": "low",
+  "license": "unlicensed",
+  "last_activity": "2026-09-07",
+  "geography": "United States",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Another active DB1B/BTS analysis repo; worth checking for committed processed extracts.",
+   "Recent DB1B analysis repo; worth a follow-up check for reusable derived tables or visualization code applicable to a US airfare/capacity cross-check (gap 10)."
+  ]
+ },
+ {
+  "key": "github:elvi3n/fabric-medallion-pipeline-airline-origin-and-destination-survey-db1b",
+  "url": "https://github.com/Elvi3n/Fabric-Medallion-Pipeline-Airline-Origin-and-Destination-Survey-DB1B",
+  "name": "Elvi3n/Fabric-Medallion-Pipeline-Airline-Origin-and-Destination-Survey-DB1B",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Microsoft Fabric/PySpark medallion-architecture data-engineering pipeline built specifically to ingest and transform BTS DB1B (Airline Origin and Destination Survey) data. MIT licensed, updated Apr 2026.",
+  "why_useful": "Another engineering template for ingesting DB1B; marginal beyond the other DB1B tools already listed.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2026-04-22",
+  "geography": "United States",
+  "time_coverage": "unspecified DB1B vintages",
+  "size_hint": "pipeline code only",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Another engineering template for ingesting DB1B; marginal beyond the other DB1B tools already listed.",
+   "Another DB1B ingestion pipeline (bronze/silver/gold layers); mainly useful as an engineering template rather than as a data source of its own, since it runs against externally-downloaded BTS files."
+  ]
+ }
+]

@@ -1,0 +1,119 @@
+[
+ {
+  "key": "github:greattombproductions/county-migration",
+  "url": "https://github.com/GreatTombProductions/county-migration",
+  "name": "county-migration",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "IRS SOI county-to-county migration lookup tool for the 2010-2011 tax year (most recent year IRS published this format at county level): inflow/outflow counts, net migration, top origin/destination counties, and average AGI per flow, US counties.",
+  "why_useful": "Adds average-AGI-by-migration-flow, a rough proxy for the income level of movers into second-home/vacation destination counties -- useful for wealth-segment demand context, though only a single-year snapshot.",
+  "potential": "low",
+  "geography": "US, county-level",
+  "time_coverage": "2010-2011",
+  "size_hint": "small lookup dataset",
+  "license": "MIT",
+  "last_activity": "2026-08-13",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Adds average-AGI-by-migration-flow, a rough proxy for the income level of movers into second-home/vacation destination counties -- useful for wealth-segment demand context, though only a single-year snapshot.",
+   "Another actively maintained IRS-SOI migration lookup tool; corroborates data availability and gives a second, recent implementation to cross-check against mathewhauer's historical build."
+  ]
+ },
+ {
+  "key": "github:justincgohn/migration-flow-tool",
+  "url": "https://github.com/justincgohn/migration-flow-tool",
+  "name": "migration-flow-tool",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "County-to-county migration pattern tool built on IRS tax data (SOI migration files); appears to be a processing/visualization tool rather than a large bundled historical archive -- not independently verified beyond repo description.",
+  "why_useful": "Recently updated (Aug 2026) IRS-migration tooling could point to a newer IRS SOI vintage/pull method than the 2015-era archives above.",
+  "potential": "low",
+  "geography": "US, county-level",
+  "time_coverage": "unknown (recent IRS SOI vintage, per description)",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2026-08-06",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Recently updated (Aug 2026) IRS-migration tooling could point to a newer IRS SOI vintage/pull method than the 2015-era archives above.",
+   "A currently-maintained (2026) method for pulling/refreshing IRS migration data, useful if the team wants a live-updating migration feed rather than a frozen historical dump."
+  ]
+ },
+ {
+  "key": "github:gordonje/irs_migration",
+  "url": "https://github.com/gordonje/IRS_Migration",
+  "name": "IRS_Migration",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Exploration of state-to-state and county-to-county IRS migration data (not independently verified for committed files beyond description).",
+  "why_useful": "Another independent IRS-SOI ingestion example; low priority given older last-activity date and unverified data presence.",
+  "potential": "low",
+  "geography": "US, state and county level",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2015-03-17",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Another independent IRS-SOI ingestion example; low priority given older last-activity date and unverified data presence."
+  ]
+ },
+ {
+  "key": "github:stefan-rose/flood_claim_migrations",
+  "url": "https://github.com/stefan-rose/flood_claim_migrations",
+  "name": "flood_claim_migrations",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Maps/models National Flood Insurance Program claims against county-to-county IRS migration flows by year; likely bundles or references NFIP claims data plus IRS migration data (not independently verified).",
+  "why_useful": "Climate-driven relocation into/out of coastal vacation-home markets (a known second-home demand driver) -- template and possibly data for linking flood risk to migration.",
+  "potential": "low",
+  "geography": "US, county-level",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2022-03-16",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Climate-driven relocation into/out of coastal vacation-home markets (a known second-home demand driver) -- template and possibly data for linking flood risk to migration."
+  ]
+ },
+ {
+  "key": "github:vannizhang/migration_flow_map",
+  "url": "https://github.com/vannizhang/migration_flow_map",
+  "name": "migration_flow_map",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Visualization tool for county-to-county US migration flows; likely consumes Census/IRS migration data rather than bundling a novel dataset (not independently verified).",
+  "why_useful": "Possible pointer to a Census-based migration-flow source/pipeline as an alternative to IRS SOI.",
+  "potential": "low",
+  "geography": "US, county-level",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2024-08-05",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Possible pointer to a Census-based migration-flow source/pipeline as an alternative to IRS SOI."
+  ]
+ }
+]

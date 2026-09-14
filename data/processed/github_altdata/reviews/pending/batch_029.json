@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:factden/hotels-com-reviews-scraper",
+  "url": "https://github.com/factden/hotels-com-reviews-scraper",
+  "name": "factden/hotels-com-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Companion Apify actor specifically for Hotels.com: guest ratings, category sub-ratings, review text, owner responses; no login/API key required per description; CSV/JSON/API output.",
+  "why_useful": "Narrower duplicate of factden's Expedia-Group scraper focused on Hotels.com alone; same rationale (competitor engagement/demand proxy, gap #9), same caveats (live scrape, ToS question, no data committed).",
+  "potential": "low",
+  "size_hint": "n/a (scraper, no committed data)",
+  "time_coverage": "live/current",
+  "geography": "global (Hotels.com coverage)",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "factden/expedia-hotel-reviews-scraper (same author, overlapping brand coverage)",
+  "hits": 2,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Narrower duplicate of factden's Expedia-Group scraper focused on Hotels.com alone; same rationale (competitor engagement/demand proxy, gap #9), same caveats (live scrape, ToS question, no data committed).",
+   "Additional non-Airbnb review-velocity source for hotel demand nowcasting cross-checks."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/expedia-scraper",
+  "url": "https://github.com/omkarcloud/expedia-scraper",
+  "name": "omkarcloud/expedia-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tool for searching airports, comparing flights and hotel fares, and retrieving real-time itineraries/booking links from Expedia; commercial product with a free tier (5,000 requests/month). Last updated 30 Apr 2026.",
+  "why_useful": "Another live-pull path to Expedia pricing/availability, potentially usable for flight-side travel-demand cross-checks (gap #10 adjacency) as well as hotel ADR proxies; no data committed, requires running against a live commercial site.",
+  "potential": "low",
+  "size_hint": "n/a (scraper/service, no committed data)",
+  "time_coverage": "live/current",
+  "geography": "global (Expedia coverage)",
+  "license": "unspecified",
+  "last_activity": "2026-04-30",
+  "gap_targets": [
+   2,
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Another live-pull path to Expedia pricing/availability, potentially usable for flight-side travel-demand cross-checks (gap #10 adjacency) as well as hotel ADR proxies; no data committed, requires running against a live commercial site."
+  ]
+ },
+ {
+  "key": "github:oxylabs/expedia-scraper",
+  "url": "https://github.com/oxylabs/expedia-scraper",
+  "name": "oxylabs/expedia-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Java-based Expedia scraper (Oxylabs) pulling flights, prices, destinations, and hotel information from the live site. Commercial API wrapper, code examples only, no data committed. Last updated 22 Jun 2026.",
+  "why_useful": "Third independent live-pull option for Expedia hotel/flight pricing; adds nothing over omkarcloud/expedia-scraper beyond language choice.",
+  "potential": "low",
+  "size_hint": "n/a (scraper, no committed data)",
+  "time_coverage": "live/current",
+  "geography": "global (Expedia coverage)",
+  "license": "unspecified",
+  "last_activity": "2026-06-22",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "omkarcloud/expedia-scraper (same target site, overlapping scope)",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Third independent live-pull option for Expedia hotel/flight pricing; adds nothing over omkarcloud/expedia-scraper beyond language choice."
+  ]
+ },
+ {
+  "key": "github:jios325/tripadvisor-reviews-scraper",
+  "url": "https://github.com/jios325/tripadvisor-reviews-scraper",
+  "name": "jios325/tripadvisor-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small (2-star, 1-commit) MIT-licensed scraper using TripAdvisor's GraphQL API directly (via curl_cffi TLS fingerprinting, no Selenium/Playwright needed) to pull 21 structured review fields (ratings, text, dates, reviewer info, management responses) per hotel. Outputs JSON, CSV, or SQL INSERT statements. No committed sample data; ships proxies.txt.example.",
+  "why_useful": "Lighter-weight technical route to hotel review counts/dates (review velocity as a demand proxy) than Selenium-based scrapers; still a method, not a dataset.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "size_hint": "no data committed; tool only",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-07-04",
+  "hits": 3,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Lighter-weight technical route to hotel review counts/dates (review velocity as a demand proxy) than Selenium-based scrapers; still a method, not a dataset.",
+   "Lightweight, dependency-free, up-to-date (GraphQL, not scraping rendered HTML) method -- likely to survive longer against TripAdvisor's anti-bot changes than Selenium-based scrapers above. Method only.",
+   "Another actively maintained current-day TripAdvisor review pull method (dated reviews), redundant with wow4er's repo but a second working implementation if one breaks."
+  ]
+ },
+ {
+  "key": "github:pro100chok/tripadvisor-hotels-reviews-scraper-python",
+  "url": "https://github.com/PRO100CHOK/tripadvisor-hotels-reviews-scraper-python",
+  "name": "PRO100CHOK/tripadvisor-hotels-reviews-scraper-python",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper for TripAdvisor hotels, restaurants, attractions and reviews, framed explicitly for 'hospitality compset & review sentiment' use cases; updated 2026-06-06, MIT.",
+  "why_useful": "Purpose-built for exactly the hotel-compset review-velocity/sentiment use case relevant to a lodging-demand proxy; still unrun/uncommitted data.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "size_hint": "no data committed; tool only",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-06-06",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Purpose-built for exactly the hotel-compset review-velocity/sentiment use case relevant to a lodging-demand proxy; still unrun/uncommitted data."
+  ]
+ }
+]

@@ -1,0 +1,142 @@
+[
+ {
+  "key": "github:b00040611/gowalla-dataset-analysis",
+  "url": "https://github.com/b00040611/gowalla-dataset-analysis",
+  "name": "gowalla-dataset-analysis",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Notebook/scripts for handling the Gowalla check-in dataset (Stanford SNAP social/location dataset, ~196K users, ~6.4M worldwide geotagged check-ins, 2009-2010). Repo processes the public dataset rather than shipping tourism-specific extracts; global coverage includes some Caribbean/Central American points of interest but they are not isolated.",
+  "why_useful": "Global geotagged check-in data with lat/lon and time could in principle be turned into a travel/mobility-flow proxy (gap 20: party size/group travel/cross-border proxies via geotagged datasets), but the underlying SNAP dataset only covers 2009-2010, more than a decade before the ABNB forecast window, with no continuation - a historical curiosity, not a usable nowcast input.",
+  "potential": "low",
+  "gap_targets": [
+   20
+  ],
+  "geography": "Global (skewed to US/Europe early-smartphone-adopter cities)",
+  "time_coverage": "Feb 2009 - Oct 2010",
+  "size_hint": "~6.4M check-ins, ~200k users (per original SNAP release)",
+  "license": "none declared in this wrapper repo",
+  "last_activity": "2025-02-27",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins",
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "Global geotagged check-in data with lat/lon and time could in principle be turned into a travel/mobility-flow proxy (gap 20: party size/group travel/cross-border proxies via geotagged datasets), but the underlying SNAP dataset only covers 2009-2010, more than a decade before the ABNB forecast window, with no continuation - a historical curiosity, not a usable nowcast input.",
+   "Matches gap #20 (geotagged tourism datasets: Foursquare/Gowalla check-ins) as a worked example of loading/parsing the Gowalla check-in corpus, which could be re-mined for regional check-in density or trip length-of-stay proxies in island/Caribbean POIs if someone wanted to build that from the raw SNAP file."
+  ]
+ },
+ {
+  "key": "github:thekingofkings/gowalla-exp",
+  "url": "https://github.com/thekingofkings/gowalla-exp",
+  "name": "gowalla-exp",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Trajectory-based analysis/experiment code over the same SNAP Gowalla check-in dataset described above; no new data, method/analysis scripts only.",
+  "why_useful": "Same underlying 2009-2010 global check-in dataset as above; provides trajectory-extraction code that could be reused if a fresher check-in-style dataset were ever found, but stale on its own.",
+  "potential": "low",
+  "gap_targets": [
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Feb 2009 - Oct 2010",
+  "size_hint": "~6.4M check-ins",
+  "license": "none declared",
+  "last_activity": "2022-07-10",
+  "duplicate_of_holding": "same source dataset as b00040611/gowalla-dataset-analysis above",
+  "hits": 4,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins",
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Same underlying 2009-2010 global check-in dataset as above; provides trajectory-extraction code that could be reused if a fresher check-in-style dataset were ever found, but stale on its own.",
+   "Same rationale as gowalla-dataset-analysis: a second, slightly more developed (trajectory modeling) code path onto the Gowalla check-in corpus relevant to gap #20's geotagged mobility datasets; not island/Caribbean specific and needs substantial rework to extract a tourism-relevant series.",
+   "A second lead toward the raw(er) Gowalla check-in geodata (with trajectories, implying lat/lon/time preserved) rather than LightGCN's ID-only reduction; worth a closer read if the team wants a pre-2013 geotagged mobility panel as a structural (not current) party-size/cross-border proxy per gap #20.",
+   "A second, code-level example of how to turn raw Gowalla geotagged check-ins into trajectory/flow features, useful methods reference if a follow-up agent pursues the check-in-based tourist-flow idea above."
+  ]
+ },
+ {
+  "key": "github:duykienvp/locationentropy",
+  "url": "https://github.com/duykienvp/LocationEntropy",
+  "name": "LocationEntropy",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Location-entropy experiments over the SNAP Gowalla dataset; a small academic-style repo with the analysis code, not a new dataset.",
+  "why_useful": "Marginal - illustrates a mobility/entropy method applicable to any check-in panel, but tied to the same 2009-2010 Gowalla data.",
+  "potential": "low",
+  "gap_targets": [
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Feb 2009 - Oct 2010",
+  "size_hint": "~6.4M check-ins",
+  "license": "none declared",
+  "last_activity": "2018-03-06",
+  "duplicate_of_holding": "same source dataset as above",
+  "hits": 1,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins"
+  ],
+  "why_all": [
+   "Marginal - illustrates a mobility/entropy method applicable to any check-in panel, but tied to the same 2009-2010 Gowalla data."
+  ]
+ },
+ {
+  "key": "github:thekingofkings/foursquare-exp",
+  "url": "https://github.com/thekingofkings/foursquare-exp",
+  "name": "foursquare-exp",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Trajectory-based experiment code over a Foursquare check-in dataset (not the full TIST2015 global release found in this pass - appears to be a smaller/older Foursquare check-in sample used in the associated academic paper). No dataset files committed in the repo listing shown; points to an external check-in corpus.",
+  "why_useful": "Same category as the Gowalla repos: check-in mobility data that could proxy travel flow/POI popularity if a recent, geographically broad vintage existed; this one's vintage/scope is unclear from the README summary alone and was not independently verified beyond the search snippet.",
+  "potential": "low",
+  "gap_targets": [
+   20
+  ],
+  "geography": "unclear from listing (city-level Foursquare check-ins, likely US-centric per typical academic Foursquare samples)",
+  "time_coverage": "unclear, pre-2015 based on repo age",
+  "size_hint": "unclear",
+  "license": "GPL-3.0",
+  "last_activity": "2015-01-19",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins",
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "Same category as the Gowalla repos: check-in mobility data that could proxy travel flow/POI popularity if a recent, geographically broad vintage existed; this one's vintage/scope is unclear from the README summary alone and was not independently verified beyond the search snippet.",
+   "Also matches gap #20's explicit mention of Foursquare check-in data as a party-size/travel-flow proxy source; global not Caribbean-specific, and is old/lightly maintained (2 stars, last touched 2015)."
+  ]
+ },
+ {
+  "key": "github:gunaygultekin/preprocessingdatasets",
+  "url": "https://github.com/gunaygultekin/preprocessingDatasets",
+  "name": "preprocessingDatasets",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Preprocessing scripts for both the Gowalla and Brightkite SNAP check-in datasets (Brightkite: ~4.5M check-ins, ~58k users, Apr 2008-Oct 2010, global). No data files committed, just cleaning/parsing code for the two external datasets.",
+  "why_useful": "Convenience tooling for pulling in two of the classic geotagged social check-in corpora at once; both datasets are 2008-2010 vintage and stale for a 2026 nowcast, but the parsing code lowers the cost of exploring them if a team member wants a historical mobility baseline.",
+  "potential": "low",
+  "gap_targets": [
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Apr 2008 - Oct 2010 (Brightkite), Feb 2009 - Oct 2010 (Gowalla)",
+  "size_hint": "~4.5M (Brightkite) + ~6.4M (Gowalla) check-ins",
+  "license": "none declared",
+  "last_activity": "2018-12-20",
+  "duplicate_of_holding": "same two source datasets as the Gowalla repos above",
+  "hits": 1,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins"
+  ],
+  "why_all": [
+   "Convenience tooling for pulling in two of the classic geotagged social check-in corpora at once; both datasets are 2008-2010 vintage and stale for a 2026 nowcast, but the parsing code lowers the cost of exploring them if a team member wants a historical mobility baseline."
+  ]
+ }
+]

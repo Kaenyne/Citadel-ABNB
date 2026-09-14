@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:danielnaqvi/hawai-i-tourism-length-of-stay-analysis-project",
+  "url": "https://github.com/danielnaqvi/Hawai-i-Tourism-Length-of-Stay-Analysis-Project",
+  "name": "Hawaii Tourism Length-of-Stay Analysis Project",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed raw file 'Hawaii Tourism Data (from DBEDT Data Warehouse) (1).csv' (Hawaii Dept. of Business, Economic Development & Tourism data warehouse export), 1999-2021, broken out by visitor category (air, hotel-only, etc.) and island. Repo also has HawaiiLOS.sql (analysis queries) and derived Excel outputs: avg_los.xlsx, first_time_los.xlsx, repeat_los.xlsx, first_time_repeat_los_yearly.xlsx, YoY_visitors.xlsx, YoY_islands.xlsx \u2014 i.e. average length-of-stay split by first-time vs. repeat visitor, by year and by island. References a companion Kaggle dataset 'hawaii-travel-length-of-trip'.",
+  "why_useful": "We already hold Hawaii DBEDT visitor stats as 'the only public party-size series' \u2014 this repo's committed CSV covers a longer span (1999-2021 vs whatever vintage we pulled) and, more importantly, has length-of-stay decomposed by first-time vs. repeat visitor and by island, which is new granularity directly on gap #20 (length-of-stay / party-size proxies) and is a Hawaii-like template that could be replicated for other STR-heavy island destinations.",
+  "geography": "Hawaii (USA)",
+  "time_coverage": "1999-2021, annual/monthly by island",
+  "size_hint": "one CSV + several small xlsx outputs",
+  "license": "none stated",
+  "last_activity": "2026-02-26",
+  "potential": "high",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "Hawaii DBEDT visitor stats (partial overlap) - this version is longer-history and has first-time/repeat LOS splits we don't currently have",
+  "hits": 1,
+  "themes": [
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "We already hold Hawaii DBEDT visitor stats as 'the only public party-size series' \u2014 this repo's committed CSV covers a longer span (1999-2021 vs whatever vintage we pulled) and, more importantly, has length-of-stay decomposed by first-time vs. repeat visitor and by island, which is new granularity directly on gap #20 (length-of-stay / party-size proxies) and is a Hawaii-like template that could be replicated for other STR-heavy island destinations."
+  ]
+ },
+ {
+  "key": "github:prabesh01/ips-mlops",
+  "url": "https://github.com/Prabesh01/IPS-mlops",
+  "name": "IPS-mlops",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Committed file ips_2023.csv: UK Office for National Statistics International Passenger Survey (IPS) 2023 microdata, 252,260 individual overseas-visitor-to-UK records, 61 variables including trip purpose, duration/length of stay, nationality, destination country/region within UK, transport mode, package vs independent travel, fare class, and total expenditure (target variable for the repo's ML pipeline). Also includes process.ipynb/process.html (EDA + feature engineering + model training) and requirements.txt. Single calendar year (2023) only, one-off ONS release rather than a maintained pull.",
+  "why_useful": "Confirms IPS 2023 microdata exists at UK Data Service with row-level trip records (trip purpose, party info typically included in IPS schema); repo's pipeline code shows which fields matter and gives a working ETL to adapt if UKDS access is obtained.",
+  "potential": "high",
+  "size_hint": "252,260 records (external, not in repo)",
+  "time_coverage": "2023 (Jan-Dec)",
+  "geography": "UK",
+  "license": "unspecified",
+  "last_activity": "2026-05-09",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Length-of-stay, party-size and trip-purpose survey microdata (NTTO SIAT, UK IPS, Eurostat tour_dem, Japan travel survey, national travel surveys)"
+  ],
+  "why_all": [
+   "Confirms IPS 2023 microdata exists at UK Data Service with row-level trip records (trip purpose, party info typically included in IPS schema); repo's pipeline code shows which fields matter and gives a working ETL to adapt if UKDS access is obtained.",
+   "Directly addresses gap #20 (party size / length-of-stay / trip-purpose survey microdata) via one of the exact named source families (UK IPS) with a genuinely committed row-level CSV, not just a pointer -- unusually granular (61 fields, quarter-of-century-old survey vintage that predates most alt-data digitization). Length-of-stay and purpose-of-visit distributions for UK inbound travel are a plausible cross-check for STR demand mix (leisure vs business) in the EMEA region ABNB reports."
+  ]
+ },
+ {
+  "key": "github:osakwe1/tfl_stations",
+  "url": "https://github.com/Osakwe1/TFL_Stations",
+  "name": "TFL_Stations",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed `/data` folder of TfL station entry/exit CSVs by time-of-day and day-of-week, sourced from the TfL Open Data portal's annual station-usage releases; figures pre-2017 cover London Underground only, 2017+ covers the wider TfL network (rail, tram, DLR). Includes a compiled `Stations_20220221.csv` master station list. Processed outputs (CSV, maps, images) also committed under `/output`.",
+  "why_useful": "Station-level London ridership 2007-2021 including Heathrow Express/Piccadilly line stations at Heathrow terminals \u2014 a usable airport-rail-linked visitor proxy for London, ABNB's largest EMEA/UK market, and a long historical panel (14 years) versus most repos here.",
+  "potential": "high",
+  "geography": "London, UK (TfL network)",
+  "time_coverage": "2007-2021 (annual releases)",
+  "size_hint": "multiple CSVs, station-level, multi-year panel",
+  "license": "none stated (derived from TfL Open Data, non-commercial TfL licence terms apply to source)",
+  "last_activity": "2025-12-04",
+  "gap_targets": [
+   10,
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Station-level London ridership 2007-2021 including Heathrow Express/Piccadilly line stations at Heathrow terminals \u2014 a usable airport-rail-linked visitor proxy for London, ABNB's largest EMEA/UK market, and a long historical panel (14 years) versus most repos here."
+  ]
+ },
+ {
+  "key": "github:meshalalamr/flight-price-prediction",
+  "url": "https://github.com/MeshalAlamr/flight-price-prediction",
+  "name": "flight-price-prediction (Kayak scraper)",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "CSV of 55,363 rows x 7 columns committed in /data: source/destination airport (4 sources, 4 destinations), number of stops, airline, average price by airline, flight duration, and ticket price, scraped from Kayak via an included scraper notebook. Random-forest price-prediction model on top. Years/specific city pairs not stated in the README.",
+  "why_useful": "A working, actively-maintained (updated 2026-09-08) non-Airbnb scraper for flight prices could be repurposed as a cheap, point-in-time-capable proxy for travel-demand/price intensity feeding gap 10 (airline/transport capacity) and cross-checking consumer travel-spend strength; scraping Kayak is not on the sanctioned-source list, so running it is a ToS decision for a human, not something to execute here.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "license": "not stated",
+  "geography": "wherever Kayak serves (global city-pair search)",
+  "time_coverage": "point-in-time scrape at run time; historical scraped sample committed in repo (date range not specified in listing)",
+  "size_hint": "small scraped CSV sample plus scraper script (~repo is a few hundred KB)",
+  "last_activity": "2026-09-08",
+  "hits": 4,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers",
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels",
+   "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)"
+  ],
+  "why_all": [
+   "A working, actively-maintained (updated 2026-09-08) non-Airbnb scraper for flight prices could be repurposed as a cheap, point-in-time-capable proxy for travel-demand/price intensity feeding gap 10 (airline/transport capacity) and cross-checking consumer travel-spend strength; scraping Kayak is not on the sanctioned-source list, so running it is a ToS decision for a human, not something to execute here.",
+   "Committed flight-price dataset scraped from Kayak could serve as a low-value cross-check on general travel-price/demand trends (peripheral to ABNB, closer to airline capacity gap #10), but scope and vintage are almost certainly narrow (single-route/date snapshot typical of these portfolio projects) -- worth a look only if airline-fare read-through becomes a workstream.",
+   "Not hotel metasearch, but the only repo in this whole sweep that pairs a committed scraped dataset with a working, currently-referenced metasearch-style scraper (Kayak) \u2014 a template for what a hotel-price panel repo would need to look like (none found). Marginal fit to this theme; flagged as the closest structural analogue.",
+   "A small but real, self-collected (not a stale Kaggle mirror) airfare pricing dataset -- a possible airline-capacity/pricing proxy for gap #10 (airline capacity and traffic) and a demonstrated working Kayak-scraping method that could be pointed at other routes if a human signs off on scraping Kayak."
+  ]
+ },
+ {
+  "key": "github:siloah-travel/siloah-travel-mcp",
+  "url": "https://github.com/Siloah-Travel/siloah-travel-mcp",
+  "name": "siloah-travel-mcp",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server + REST API (mcp.siloah.travel) indexing 70,000+ cruise voyages, 678 ships, 62 cruise lines (20 active), 6,700+ ports, 11,000+ cabin types across 30 languages. No local data files committed \u2014 queries a live Postgres/Supabase+pgvector backend on Cloudflare Workers; supports filtering by destination, departure city, cruise line, duration, price. MIT licensed, 7 commits.",
+  "why_useful": "A single free API surface that already aggregates cruise-line schedule/capacity breadth (ships, itineraries, ports) across 62 lines including NCLH/RCL/CCL brands \u2014 could be pulled repeatedly to build a point-in-time itinerary-count/capacity proxy for gap #18 (cruise book-ahead analogue) without scraping individual cruise-line sites.",
+  "potential": "medium",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "current/live snapshot only (no historical vintages found)",
+  "geography": "global",
+  "size_hint": "70k voyages, 678 ships, 6.7k ports (live DB, not committed)",
+  "license": "MIT",
+  "last_activity": "not shown (7 commits total)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "A single free API surface that already aggregates cruise-line schedule/capacity breadth (ships, itineraries, ports) across 62 lines including NCLH/RCL/CCL brands \u2014 could be pulled repeatedly to build a point-in-time itinerary-count/capacity proxy for gap #18 (cruise book-ahead analogue) without scraping individual cruise-line sites."
+  ]
+ }
+]

@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:ahuarte47/duckdb-eurostat",
+  "url": "https://github.com/ahuarte47/duckdb-eurostat",
+  "name": "ahuarte47/duckdb-eurostat",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "DuckDB extension (35 stars, MIT, updated 9 Sep 2026) that exposes the Eurostat database as SQL tables directly inside DuckDB, so any Eurostat dataset (including tour_ce_omr and related tourism/accommodation tables) can be queried with plain SQL.",
+  "why_useful": "Repo's own environment already uses DuckDB for large-store queries; this extension would let the team pull/refresh Eurostat platform-tourism tables in the same DuckDB workflow used for Inside Airbnb, with no separate Python/R dependency.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "duplicate_of_holding": "same Eurostat tables already held via other means",
+  "geography": "EU/EEA",
+  "time_coverage": "current Eurostat catalogue",
+  "size_hint": "extension binary + SQL macros, no bundled data",
+  "last_activity": "2026-09-09",
+  "license": "MIT",
+  "hits": 1,
+  "themes": [
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Repo's own environment already uses DuckDB for large-store queries; this extension would let the team pull/refresh Eurostat platform-tourism tables in the same DuckDB workflow used for Inside Airbnb, with no separate Python/R dependency."
+  ]
+ },
+ {
+  "key": "github:v-rathod/us-immigration-datasets",
+  "url": "https://github.com/v-rathod/us-immigration-datasets",
+  "name": "us-immigration-datasets",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper/orchestration tool (fetch_latest.py, 2,475 lines; sources.yaml defining 20+ US government sources) that pulls Visa Bulletin PDFs (FY2011-2026), Visa Statistics PDFs (2017-2025), Visa Annual Reports (FY2015-2024), LCA/H-1B and PERM labor-certification Excel files (FY2008-2026), USCIS employment forms (1991-2026), and NIV (non-immigrant visa) statistics (2021-2024) -- ~4.9GB across 1,033+ files when run. No data committed to the repo itself; public-domain/CC0 sources. Last snapshot noted 2026-03-10.",
+  "why_useful": "A one-command puller for long-run US work/seasonal-visa volumes (H-1B, H-2B via LCA/PERM lineage, NIV stats) and visa-bulletin backlogs -- a proxy for foreign-worker and long-stay travel volume into the US that could feed a labor-mobility/long-stay-rental demand variable (gaps 16 and 2/3 adjacent); the NIV and Visa Bulletin PDFs may also carry seasonal (H-2B/H-2A) visa issuance figures worth extracting.",
+  "potential": "medium",
+  "gap_targets": [
+   16
+  ],
+  "geography": "United States (inbound)",
+  "time_coverage": "1991-2026 depending on source series",
+  "size_hint": "~4.9GB / 1,033+ files once pulled; repo itself is code-only",
+  "license": "Public domain / CC0 for the tool; underlying US government sources are public domain",
+  "last_activity": "2026-03-10 (per README snapshot note)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "A one-command puller for long-run US work/seasonal-visa volumes (H-1B, H-2B via LCA/PERM lineage, NIV stats) and visa-bulletin backlogs -- a proxy for foreign-worker and long-stay travel volume into the US that could feed a labor-mobility/long-stay-rental demand variable (gaps 16 and 2/3 adjacent); the NIV and Visa Bulletin PDFs may also carry seasonal (H-2B/H-2A) visa issuance figures worth extracting."
+  ]
+ },
+ {
+  "key": "github:olist/work-at-olist-data",
+  "url": "https://github.com/olist/work-at-olist-data",
+  "name": "Olist Brazilian E-Commerce public dataset (source repo)",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "MIT-licensed repo (the original source behind the well-known Kaggle \"Brazilian E-Commerce Public Dataset by Olist\") holding sample relational tables extracted from Olist's real marketplace: orders, order items/prices, freight value, products, sellers (9,000+), customers, and reviews, covering hundreds of thousands of orders across Brazil; includes an ER-diagram schema.",
+  "why_useful": "A real (not synthetic) multi-table ecommerce marketplace transaction dataset with prices, freight/shipping cost, seller counts, delivery times and customer reviews by Brazilian region \u2014 useful as a structural template for how a two-sided marketplace's take-rate/logistics-cost/review data can be organized, and as a LatAm regional ecommerce-activity dataset in its own right (LatAm demand is gap #7).",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "time_coverage": "2016-2018 order history (per the well-known Kaggle companion release; exact span not restated on this page)",
+  "geography": "Brazil",
+  "license": "MIT (repo); Kaggle release under CC BY-NC-SA",
+  "last_activity": "not shown; used as a stable hiring-assessment reference dataset",
+  "size_hint": "hundreds of thousands of orders, 950,000+ products, 9,000+ sellers per repo description",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "A real (not synthetic) multi-table ecommerce marketplace transaction dataset with prices, freight/shipping cost, seller counts, delivery times and customer reviews by Brazilian region \u2014 useful as a structural template for how a two-sided marketplace's take-rate/logistics-cost/review data can be organized, and as a LatAm regional ecommerce-activity dataset in its own right (LatAm demand is gap #7)."
+  ]
+ },
+ {
+  "key": "github:yashveeeeeeer/india-district-nightlights-viirs",
+  "url": "https://github.com/yashveeeeeeer/india-district-nightlights-viirs",
+  "name": "india-district-nightlights-viirs",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed derived-statistics panel at output/csv/nightlights_district_panel.csv: 641 Indian districts x 13 years (2012-2024) = 8,333 rows, with mean/median/sum radiance, std dev, min/max, valid-pixel counts, and log-transformed variants per district-year; also year-wise GeoJSON with district polygons. Raw VIIRS rasters are gitignored (must be re-pulled via Google Earth Engine), but the derived panel itself is committed.",
+  "why_useful": "A ready-made district-level economic-activity proxy for India, one of ABNB's under-covered APAC growth markets (gap #7, regional travel volume outside US/EU) \u2014 could be aggregated to tourism-heavy districts (Goa, Kerala backwaters, Rajasthan) as an occupancy/demand proxy where no official monthly tourism series exists.",
+  "potential": "medium",
+  "geography": "India, 641 districts / 35 states-UTs",
+  "time_coverage": "2012-2024, annual",
+  "size_hint": "8,333-row CSV + per-year GeoJSON",
+  "license": "none stated",
+  "last_activity": "2026-07-26",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "A ready-made district-level economic-activity proxy for India, one of ABNB's under-covered APAC growth markets (gap #7, regional travel volume outside US/EU) \u2014 could be aggregated to tourism-heavy districts (Goa, Kerala backwaters, Rajasthan) as an occupancy/demand proxy where no official monthly tourism series exists."
+  ]
+ },
+ {
+  "key": "github:acebee007/minpaku-reporter",
+  "url": "https://github.com/AceBee007/minpaku-reporter",
+  "name": "AceBee007/minpaku-reporter",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Python (Poetry, pyenv, Selenium/Chromium webdriver) automation tool described as automating report work on minpaku.mlit.go.jp \u2014 Japan's official national minpaku (private lodging) registration and business-report portal run by MLIT. No committed data; it is a browser-automation client against the government's own STR reporting site, not airbnb.com.",
+  "why_useful": "minpaku.mlit.go.jp is the authoritative Japanese government minpaku registration/business-days-reported system (the official counterpart to Tokyo/Kyoto minpaku registration counts). A tool that already knows how to interact with this specific official portal is a lead for automating a point-in-time pull of Japan's official minpaku registration/operating-days data, which is otherwise not on Inside Airbnb.",
+  "potential": "medium",
+  "geography": "Japan (national, incl. Tokyo, Kyoto)",
+  "time_coverage": "n/a (live automation, GPL-3.0)",
+  "size_hint": "small Python codebase, no data files",
+  "license": "gpl-3.0",
+  "last_activity": "2026-05-01",
+  "gap_targets": [
+   7,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "minpaku.mlit.go.jp is the authoritative Japanese government minpaku registration/business-days-reported system (the official counterpart to Tokyo/Kyoto minpaku registration counts). A tool that already knows how to interact with this specific official portal is a lead for automating a point-in-time pull of Japan's official minpaku registration/operating-days data, which is otherwise not on Inside Airbnb.",
+   "Confirms minpaku.mlit.go.jp is the official Japanese minpaku registration/reporting system and shows the portal's automatable workflow, but this specific tool submits a single host's own data rather than extracting aggregate registration counts \u2014 not directly a data source for gap #12/APAC regulation, only a pointer to where such data technically lives (behind login, individual-host-scoped)."
+  ]
+ }
+]

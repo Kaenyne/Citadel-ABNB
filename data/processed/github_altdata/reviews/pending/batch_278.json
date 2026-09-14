@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:stiles/flight-tracer",
+  "url": "https://github.com/stiles/flight-tracer",
+  "name": "flight-tracer",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package for fetching, processing, storing, and plotting flight data from ADS-B Exchange. CC0-1.0 licensed, 18 stars, actively updated (Mar 2026).",
+  "why_useful": "More mature/maintained acquisition tool than the other ADS-B Exchange scripts found here; CC0 license means output data could be freely stored point-in-time. Useful base for building a repeatable airport-traffic nowcast series (gap #10) if the team wants to start collecting ADS-B snapshots going forward.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Global (ADS-B Exchange coverage, configurable by user)",
+  "time_coverage": "Forward-collection only (no historical archive included)",
+  "size_hint": "Library/tool only, no committed dataset",
+  "license": "CC0-1.0",
+  "last_activity": "2026-03-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "More mature/maintained acquisition tool than the other ADS-B Exchange scripts found here; CC0 license means output data could be freely stored point-in-time. Useful base for building a repeatable airport-traffic nowcast series (gap #10) if the team wants to start collecting ADS-B snapshots going forward."
+  ]
+ },
+ {
+  "key": "github:thomasdubdub/opensky-traffic-viz",
+  "url": "https://github.com/thomasdubdub/opensky-traffic-viz",
+  "name": "opensky-traffic-viz",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tools to load and visualize OpenSky Network air traffic data (OpenSky's REST/Impala historical database of ADS-B flight records going back to ~2019, covering scheduled and general aviation traffic globally). MIT licensed, 11 stars.",
+  "why_useful": "OpenSky Network's underlying historical database (queried through this or similar clients) is one of the few genuinely long-run, free, global flight-position archives -- a route-level or airport-level flight-count series derived from it could serve as an airline capacity/traffic proxy for gap #10. This particular repo is just a viz/loading helper, not the data itself, so it is a pointer to the acquisition method rather than a dataset.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Global (OpenSky Network sensor coverage, strongest in Europe/US)",
+  "time_coverage": "OpenSky historical DB extends back to ~2019 (not committed in this repo; queried live)",
+  "size_hint": "Tool only; underlying OpenSky database is very large (external, queried via API)",
+  "license": "MIT",
+  "last_activity": "2026-03-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "OpenSky Network's underlying historical database (queried through this or similar clients) is one of the few genuinely long-run, free, global flight-position archives -- a route-level or airport-level flight-count series derived from it could serve as an airline capacity/traffic proxy for gap #10. This particular repo is just a viz/loading helper, not the data itself, so it is a pointer to the acquisition method rather than a dataset."
+  ]
+ },
+ {
+  "key": "github:alvarofpp/dataset-flights-brazil",
+  "url": "https://github.com/alvarofpp/dataset-flights-brazil",
+  "name": "dataset-flights-brazil",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed dataset from Brazil's ANAC (national civil aviation agency): anac.csv.lrz (compressed flight records, all registered flights in Brazil), airports.csv (ICAO codes, names, coordinates for every airport appearing in the ANAC records), and air_traffic.graphml (an airport-connection graph weighted by flight counts). 39 commits.",
+  "why_useful": "Direct, free, committed domestic flight-volume data for Brazil -- fills part of gap #7 (regional travel volume outside US/EU, specifically Brazil, alongside the Embratur/IBGE sources already flagged) and could proxy inbound tourism/business-travel intensity to Brazilian Airbnb markets.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "size_hint": "compressed CSV (lrzip) of unspecified but apparently substantial row count + airport list + graph file",
+  "time_coverage": "not stated in README; spans ANAC's public flight-record history",
+  "geography": "Brazil (domestic + Brazil-touching routes)",
+  "license": "CDLA-Sharing-1.0",
+  "last_activity": "39 commits, exact last-commit date not surfaced",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Direct, free, committed domestic flight-volume data for Brazil -- fills part of gap #7 (regional travel volume outside US/EU, specifically Brazil, alongside the Embratur/IBGE sources already flagged) and could proxy inbound tourism/business-travel intensity to Brazilian Airbnb markets."
+  ]
+ },
+ {
+  "key": "github:jpatokal/openflights",
+  "url": "https://github.com/jpatokal/openflights",
+  "name": "openflights",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "The classic OpenFlights database: airports.dat (~7,000+ airports worldwide, IATA/ICAO/coords), airlines.dat (~6,000 airlines), routes.dat (~67,000 route pairs, i.e. which airline flies which city pair -- no seat/frequency counts, just route existence). Static snapshot, last meaningfully updated circa 2014, but still the standard free global route-network reference (confirmed via the flightdelay-dbt-warehouse repo, which cites OpenFlights airline reference at 6,162 rows).",
+  "why_useful": "Gives a free global city-pair route-network topology that can be combined with T-100/other capacity sources or used as a static baseline for which international gateways connect to which Airbnb-heavy markets; AGPL-3.0 licensed code repo, data itself widely mirrored.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "3 .dat files, tens of thousands of rows combined",
+  "time_coverage": "static snapshot, last substantive update ~2014 (stale for current capacity, still useful as network topology)",
+  "geography": "global",
+  "license": "AGPL-3.0 for code; data conventionally treated as open/attributable",
+  "last_activity": "low -- largely dormant, occasional maintenance commits",
+  "hits": 2,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "Gives a free global city-pair route-network topology that can be combined with T-100/other capacity sources or used as a static baseline for which international gateways connect to which Airbnb-heavy markets; AGPL-3.0 licensed code repo, data itself widely mirrored.",
+   "Not a KPI time series but a clean route-network reference table; useful as a join key / weighting scheme to turn airline capacity or airport-passenger stats (gap #10) into a regional travel-intensity index by market, cheaper than building an airport list from scratch."
+  ]
+ },
+ {
+  "key": "github:euctrl-pru/airport-dashboard",
+  "url": "https://github.com/euctrl-pru/airport-dashboard",
+  "name": "euctrl-pru/airport-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Dashboard application for airport performance monitoring, part of the official EUROCONTROL PRU org; likely consumes PRU data APIs rather than storing a standalone dataset (not independently verified - README not fetched due to budget).",
+  "why_useful": "Could point to airport-level throughput metrics (delays, movements) that correlate with regional travel activity in Europe; needs closer inspection to confirm data vs. dashboard-only.",
+  "potential": "medium",
+  "geography": "Europe",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Could point to airport-level throughput metrics (delays, movements) that correlate with regional travel activity in Europe; needs closer inspection to confirm data vs. dashboard-only.",
+   "Points to where EUROCONTROL PRU publishes airport performance/traffic metrics; worth a deeper look (not verified beyond org listing) as a possible source of committed data files or an API client for punctuality/traffic KPIs by airport."
+  ]
+ }
+]

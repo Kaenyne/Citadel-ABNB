@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:atsushinagashima1/minpaku-map",
+  "url": "https://github.com/atsushinagashima1/minpaku-map",
+  "name": "minpaku-map",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "\"Tokyo 23-ward minpaku / ryokan-gyo (inn-business) ordinance map\" by OpenPolicy (Japanese civic-tech). Repo description states it is password-protected, so contents (likely a Tokyo ward-level regulation/ordinance map, possibly with underlying data) could not be verified via fetch.",
+  "why_useful": "If accessible, this would be a ward-level regulatory map for Tokyo minpaku ordinances (gap #12: STR ordinance trackers) \u2014 one of the only APAC-specific regulation-tracker repos found, but it is gated and unverified.",
+  "potential": "low",
+  "geography": "Tokyo, Japan (23 wards)",
+  "time_coverage": "unknown",
+  "size_hint": "unknown (password-protected)",
+  "license": "not stated",
+  "last_activity": "2026-09-09",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "If accessible, this would be a ward-level regulatory map for Tokyo minpaku ordinances (gap #12: STR ordinance trackers) \u2014 one of the only APAC-specific regulation-tracker repos found, but it is gated and unverified."
+  ]
+ },
+ {
+  "key": "github:bobbymuljono/singapore-airbnb",
+  "url": "https://github.com/bobbymuljono/Singapore-Airbnb",
+  "name": "Singapore-Airbnb (STA violation viz)",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "\"A data analysis project to visualize listings that violate the STA laws in Singapore\" (Singapore's Short-Term Accommodation Act, which effectively bans most Airbnb-style STR). GPL-3.0, 1 star, updated 2026-08-17.",
+  "why_useful": "Singapore is one of the theme's named markets and has an outright STR ban with enforcement; a repo explicitly built to flag STA-law violators among listing data is a regulation-relevant angle (gap #12) rather than a generic price-prediction notebook, though the underlying listings data is likely a static Kaggle/Inside-Airbnb snapshot.",
+  "potential": "low",
+  "geography": "Singapore",
+  "time_coverage": "unknown (likely single Kaggle/Inside Airbnb snapshot)",
+  "size_hint": "unknown",
+  "license": "GPL-3.0",
+  "last_activity": "2026-08-17",
+  "duplicate_of_holding": "Likely duplicates a standard Kaggle/Inside-Airbnb Singapore listings snapshot we may already have access to; flagged for its regulatory-violation angle, not new raw data.",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Singapore is one of the theme's named markets and has an outright STR ban with enforcement; a repo explicitly built to flag STA-law violators among listing data is a regulation-relevant angle (gap #12) rather than a generic price-prediction notebook, though the underlying listings data is likely a static Kaggle/Inside-Airbnb snapshot."
+  ]
+ },
+ {
+  "key": "github:cfpb/ccdb5-ui",
+  "url": "https://github.com/cfpb/ccdb5-ui",
+  "name": "cfpb/ccdb5-ui",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Official CFPB GitHub org's front-end (JavaScript) for the Consumer Complaint Database search UI (consumerfinance.gov/complaint database), not the bulk data itself; the underlying complaint records (including travel/lodging, prepaid card, and BNPL complaint categories, since 2011, with company response and product/sub-product tags) are pulled separately via the CFPB's own Socrata-style bulk CSV/API, which this UI queries. Actively maintained (7 stars, updated 11 Sep 2026).",
+  "why_useful": "The underlying complaint database (once pulled via the public API this UI hits) could give a free, point-in-time-taggable proxy for lodging-booking friction, cancellation disputes, and BNPL/prepaid-card complaint volume relevant to the RNPL thesis; this repo is only the client, so it is cataloged as a method/pointer, not a dataset \u2014 a follow-up agent should locate the actual bulk-export endpoint or a mirror repo of the CSV dumps.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   3
+  ],
+  "geography": "US",
+  "time_coverage": "2011-present (underlying database), UI repo itself has no data",
+  "size_hint": "not applicable (UI code only)",
+  "license": "not confirmed (CFPB repos are typically CC0/public domain)",
+  "last_activity": "2026-09-11",
+  "hits": 1,
+  "themes": [
+   "wildcard: a payments and consumer-credit analyst who knows public card"
+  ],
+  "why_all": [
+   "The underlying complaint database (once pulled via the public API this UI hits) could give a free, point-in-time-taggable proxy for lodging-booking friction, cancellation disputes, and BNPL/prepaid-card complaint volume relevant to the RNPL thesis; this repo is only the client, so it is cataloged as a method/pointer, not a dataset \u2014 a follow-up agent should locate the actual bulk-export endpoint or a mirror repo of the CSV dumps."
+  ]
+ },
+ {
+  "key": "github:m-atoms/sf-legistar-scraper",
+  "url": "https://github.com/m-atoms/sf-legistar-scraper",
+  "name": "sf-legistar-scraper",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Legistar scraper aimed specifically at San Francisco's council site.",
+  "why_useful": "SF is home to Airbnb's own HQ jurisdiction and one of the earliest/most-litigated STR ordinances (SF OSTR, already partially held per CONTEXT.md); a city-specific scraper could pull ongoing enforcement/legislative actions rather than just the registry snapshot already in hand.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "license": "none stated",
+  "last_activity": "2024-08-28",
+  "geography": "San Francisco, US",
+  "time_coverage": "n/a",
+  "size_hint": "small",
+  "hits": 1,
+  "themes": [
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "SF is home to Airbnb's own HQ jurisdiction and one of the earliest/most-litigated STR ordinances (SF OSTR, already partially held per CONTEXT.md); a city-specific scraper could pull ongoing enforcement/legislative actions rather than just the registry snapshot already in hand."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/deceptive_str_operations",
+  "url": "https://github.com/UPGo-McGill/deceptive_str_operations",
+  "name": "deceptive_str_operations",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "R/Rmarkdown code ('Max's SRP') analyzing deceptive short-term-rental operations \u2014 likely listings that misrepresent registration status, host identity, or property count to evade local ordinances.",
+  "why_useful": "Directly on-theme for a compliance analyst: measures the scale of non-compliant/evasive STR supply, which affects how much of the addressable STR market any registration crackdown can actually capture \u2014 relevant to forecasting the effect of new ordinances on Airbnb's regional listing counts.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "license": "not confirmed",
+  "last_activity": "41 commits, README blank (thin documentation, would need code read to confirm geography/dataset)",
+  "geography": "unconfirmed (likely Canadian city per lab's usual scope)",
+  "time_coverage": "unconfirmed",
+  "size_hint": "small",
+  "hits": 1,
+  "themes": [
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Directly on-theme for a compliance analyst: measures the scale of non-compliant/evasive STR supply, which affects how much of the addressable STR market any registration crackdown can actually capture \u2014 relevant to forecasting the effect of new ordinances on Airbnb's regional listing counts."
+  ]
+ }
+]

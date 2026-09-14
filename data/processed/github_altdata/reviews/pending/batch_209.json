@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:ropensci/patentsview",
+  "url": "https://github.com/ropensci/patentsview",
+  "name": "ropensci/patentsview",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client (ropensci-vetted, 39 stars, active as of Jul 2026) to the free PatentsView API (USPTO bulk patent data). No data committed; wraps query/fieldsets/subscore endpoints for patent search, assignees, inventors, CPC classes. Could pull Airbnb's own patent filings (assignee='Airbnb') and counts over time as a product-development-pace proxy.",
+  "why_useful": "Addresses gap #15 (patents/trademarks as company-structure/product-launch signal) \u2014 patent filing counts/timing can be a lagging proxy for feature roadmap and M&A-adjacent R&D. Free API, no key required in most PatentsView modes.",
+  "potential": "medium",
+  "geography": "US (USPTO)",
+  "time_coverage": "USPTO patents 1976-present (varies by endpoint)",
+  "size_hint": "API client, no local dataset",
+  "license": "Other (ropensci standard, effectively open)",
+  "last_activity": "2026-07-16",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Addresses gap #15 (patents/trademarks as company-structure/product-launch signal) \u2014 patent filing counts/timing can be a lagging proxy for feature roadmap and M&A-adjacent R&D. Free API, no key required in most PatentsView modes.",
+   "Could pull Airbnb's (assignee-disambiguated) patent grant history and technology-category tags over time as a slow-moving product-roadmap signal (gap #15) -- R rather than Python, but PatentsView's disambiguated assignee IDs are the main value-add over raw USPTO bulk data."
+  ]
+ },
+ {
+  "key": "github:ethan3600/uspto-trademark-api",
+  "url": "https://github.com/Ethan3600/USPTO-Trademark-API",
+  "name": "Ethan3600/USPTO-Trademark-API",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small client (GPL-3.0, 6 stars, updated Feb 2026) that pulls trademark status data from USPTO's TSDR (Trademark Status & Document Retrieval) system \u2014 i.e., a scriptable way to check a company's live trademark filings/status by serial or registration number.",
+  "why_useful": "Directly on-theme for the trademark half of gap #15 \u2014 could be pointed at Airbnb's trademark filings (new brand names/features, e.g. product or program launches often get trademarked ahead of announcement) as an early product-signal proxy.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "current TSDR records, no historical archive",
+  "size_hint": "small script/client, no committed data",
+  "license": "GPL-3.0",
+  "last_activity": "2026-02-18",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Directly on-theme for the trademark half of gap #15 \u2014 could be pointed at Airbnb's trademark filings (new brand names/features, e.g. product or program launches often get trademarked ahead of announcement) as an early product-signal proxy."
+  ]
+ },
+ {
+  "key": "github:parkerhancock/patent_client",
+  "url": "https://github.com/parkerhancock/patent_client",
+  "name": "patent_client",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Archived (April 2026) Python ORM-style unified client covering USPTO Patent Examination Data, Open Data Portal, Global Dossier, Patent Assignments, PTAB, Patent Public Search, Bulk Data Storage, plus EPO Inpadoc. Pandas-integrated, Pydantic v2 models. 632 commits, 128 stars, Apache 2.0. Note: archived/read-only, successor is an AI-agent-focused rewrite not evaluated here.",
+  "why_useful": "One client covers multiple USPTO patent/assignment endpoints, so it could pull Airbnb's (and Vacasa/Sonder/Booking's) patent filing and assignment history as a very-low-frequency but genuine leading indicator of product roadmap (gap #15). Being archived means it may need patching for current USPTO API changes.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "US (+ partial EPO)",
+  "time_coverage": "however far USPTO bulk/API data goes",
+  "size_hint": "library only, archived repo",
+  "license": "Apache 2.0",
+  "last_activity": "archived 24 Apr 2026, 632 commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "One client covers multiple USPTO patent/assignment endpoints, so it could pull Airbnb's (and Vacasa/Sonder/Booking's) patent filing and assignment history as a very-low-frequency but genuine leading indicator of product roadmap (gap #15). Being archived means it may need patching for current USPTO API changes."
+  ]
+ },
+ {
+  "key": "github:poliquin/pylegiscan",
+  "url": "https://github.com/poliquin/pylegiscan",
+  "name": "pylegiscan",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client wrapping the LegiScan API, which covers bill text, status, votes, and sponsors for all 50 US state legislatures plus Congress. Not STR-specific and holds no committed dataset, but is a working, well-starred (23 stars) way to programmatically pull STR-related bills (keyword search e.g. 'short-term rental', 'vacation rental') across every state legislature in one client.",
+  "why_useful": "Directly matches gap #12's 'Legistar/LegiScan tooling' call-out -- a keyword search for 'short-term rental' across state legislatures could feed a US STR-ordinance/bill tracker; requires a free LegiScan API key.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "small repo, 7 commits, no visible recent activity",
+  "geography": "US states",
+  "time_coverage": "current LegiScan bill data (not a static historical file)",
+  "size_hint": "acquisition method, API-key gated (free tier)",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers",
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Directly matches gap #12's 'Legistar/LegiScan tooling' call-out -- a keyword search for 'short-term rental' across state legislatures could feed a US STR-ordinance/bill tracker; requires a free LegiScan API key.",
+   "Turns gap #12 (STR ordinance/registration trackers) into a pullable, nationwide bill-tracking method rather than a one-city hand-built database \u2014 could build a state-by-state STR-restriction bill count/status series as a regulatory-intensity index."
+  ]
+ },
+ {
+  "key": "github:codeforbc/airbnb-regulation",
+  "url": "https://github.com/CodeForBc/airbnb-regulation",
+  "name": "CodeForBc/airbnb-regulation",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code for BC civic-tech project building a pipeline to flag Airbnb listings in British Columbia that violate provincial short-term-rental rules: a scraping/data-ingestion module plus a rules-based compliance classifier, output to a Grafana dashboard. No committed regulation text or listing dataset in the repo itself \u2014 it is a live scrape+rules method, not a stored dataset.",
+  "why_useful": "A working method for detecting non-compliant STR listings against a specific regulatory regime (BC's 2024 provincial STR restrictions); could be adapted as a template for measuring de-facto STR supply compression under new rules elsewhere, but requires running a scraper against Airbnb (a ToS decision, not to be run).",
+  "potential": "medium",
+  "geography": "British Columbia, Canada",
+  "time_coverage": "unclear / current rules only",
+  "size_hint": "no data files committed",
+  "license": "MIT",
+  "last_activity": "2025-07-27",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   12
+  ],
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "A working method for detecting non-compliant STR listings against a specific regulatory regime (BC's 2024 provincial STR restrictions); could be adapted as a template for measuring de-facto STR supply compression under new rules elsewhere, but requires running a scraper against Airbnb (a ToS decision, not to be run).",
+   "A working method for turning STR registration/compliance policy into a quantifiable violation rate, relevant to gap #12 (city/provincial STR registration datasets). Note: it scrapes airbnb.com directly, so per repo rules this is catalogued as a method only and must not be run without a human ToS decision."
+  ]
+ }
+]

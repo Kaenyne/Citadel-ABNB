@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:dylan-jeon/earnings-surprise-analysis",
+  "url": "https://github.com/dylan-jeon/earnings-surprise-analysis",
+  "name": "earnings-surprise-analysis (PEAD event study)",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PEAD/earnings-surprise event study described as covering 499 S&P 500 companies, 2015-2026, testing for increasing market efficiency; method and (likely) intermediate CAR/surprise output, not independently verified for committed raw data files.",
+  "why_useful": "If the underlying earnings-surprise series (SUE) are committed rather than WRDS-pulled, this would be a broad, recent (through 2026) cross-sectional earnings-surprise dataset relevant to gap #4 (historical consensus/surprise snapshots) and #17 (PEAD replication). Needs a closer look (not verified with directory listing) before relying on it.",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "size_hint": "unverified \u2014 499 companies implied",
+  "time_coverage": "2015-2026 (claimed)",
+  "geography": "US (S&P 500)",
+  "license": "unspecified",
+  "last_activity": "2026-07-08",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "If the underlying earnings-surprise series (SUE) are committed rather than WRDS-pulled, this would be a broad, recent (through 2026) cross-sectional earnings-surprise dataset relevant to gap #4 (historical consensus/surprise snapshots) and #17 (PEAD replication). Needs a closer look (not verified with directory listing) before relying on it."
+  ]
+ },
+ {
+  "key": "github:manja316/polymarket-historical-data",
+  "url": "https://github.com/manja316/polymarket-historical-data",
+  "name": "polymarket-historical-data (manja316)",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Claims 13,964 Polymarket markets, 10.8M price records, $11.7B+ volume as a historical price/volume archive; description does not confirm file format (likely CSV/SQLite) or whether earnings/travel/regulation category markets are tagged separately \u2014 needs a directory listing to confirm real committed files vs. a thin wrapper.",
+  "why_useful": "A broad Polymarket price history would let us pull any historical ABNB-earnings-move or travel/regulation-event contracts (e.g. FIFA World Cup timing, Fed/CPI prints, government shutdown, tourism-tax votes) as point-in-time implied-probability series \u2014 relevant to gap 4 (point-in-time vintages) and gap 11/12 (events, regulation).",
+  "potential": "medium",
+  "size_hint": "10.8M rows across 13,964 markets (per README claim, unverified)",
+  "time_coverage": "unspecified, likely 2024-2026 (Polymarket's active era)",
+  "geography": "global (crypto-native prediction market, mostly US/global political and sports events)",
+  "license": "none declared",
+  "last_activity": "2026-05-29",
+  "gap_targets": [
+   4,
+   11,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "A broad Polymarket price history would let us pull any historical ABNB-earnings-move or travel/regulation-event contracts (e.g. FIFA World Cup timing, Fed/CPI prints, government shutdown, tourism-tax votes) as point-in-time implied-probability series \u2014 relevant to gap 4 (point-in-time vintages) and gap 11/12 (events, regulation)."
+  ]
+ },
+ {
+  "key": "github:luciferforge/polymarket-historical-data",
+  "url": "https://github.com/LuciferForge/polymarket-historical-data",
+  "name": "polymarket-historical-data (LuciferForge)",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "18.6M price snapshots across 22,410 markets at 15-min resolution over a 92-day window (Mar-Jun 2026), distributed as SQLite; free sample plus a paid/full dataset link.",
+  "why_useful": "High-frequency, multi-market Polymarket snapshot archive covering spring 2026 \u2014 could contain any ABNB-earnings or macro/regulation contracts active in that window; MIT licensed sample is directly pullable without scraping.",
+  "potential": "medium",
+  "size_hint": "18.6M snapshots, SQLite db",
+  "time_coverage": "Mar-Jun 2026 (92 days)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-07-05",
+  "gap_targets": [
+   4,
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "High-frequency, multi-market Polymarket snapshot archive covering spring 2026 \u2014 could contain any ABNB-earnings or macro/regulation contracts active in that window; MIT licensed sample is directly pullable without scraping."
+  ]
+ },
+ {
+  "key": "github:ndelventhal/cot_reports",
+  "url": "https://github.com/NDelventhal/cot_reports",
+  "name": "NDelventhal/cot_reports",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (`cot_hist`, `cot_year`, `cot_all`) that pulls CFTC Commitments of Traders reports -- Legacy, Disaggregated, Traders-in-Financial-Futures formats -- from 1986 to present, including FX futures positioning (tagged 'foreign-exchange').",
+  "why_useful": "Speculative FX futures positioning (EUR, GBP, JPY, MXN, BRL, AUD) is a standard macro-strategist proxy for risk sentiment and carry-trade crowding; extreme positioning has historically preceded EM currency stress that could compress ABNB's EMEA/LatAm ADR-in-USD and outbound demand.",
+  "potential": "medium",
+  "geography": "US-regulated futures markets, but covers major and EM-adjacent currency futures",
+  "time_coverage": "1986-present, weekly",
+  "size_hint": "moderate (multi-decade weekly CSVs)",
+  "license": "MIT",
+  "last_activity": "unspecified, 25 commits, appears active",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Speculative FX futures positioning (EUR, GBP, JPY, MXN, BRL, AUD) is a standard macro-strategist proxy for risk sentiment and carry-trade crowding; extreme positioning has historically preceded EM currency stress that could compress ABNB's EMEA/LatAm ADR-in-USD and outbound demand."
+  ]
+ },
+ {
+  "key": "github:toddwschneider/sec-13f-filings",
+  "url": "https://github.com/toddwschneider/sec-13f-filings",
+  "name": "toddwschneider/sec-13f-filings",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby on Rails app (MIT, 438 stars) with a schema (thirteen_fs / holdings / aggregate_holdings tables) and scripts that import and parse SEC 13F XML filings from 2014 onward for any manager CIK you specify; the live instance (13f.info) already tracks large holders such as Berkshire Hathaway quarterly. No CUSIP-ticker mapping bundled (licensing), but the parser and schema are complete.",
+  "why_useful": "Turns raw 13F XML into a queryable holdings-history database -- lets us build ABNB institutional-ownership concentration/turnover history (fund entries/exits, hedge fund vs long-only mix) as a positioning read ahead of the Q4 guide, complementing the options-chain and short-interest data already held.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "geography": "US filers",
+  "time_coverage": "2014-present",
+  "license": "MIT",
+  "size_hint": "app + schema, no bundled data (pulls from EDGAR)",
+  "last_activity": "2026-08-26",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Turns raw 13F XML into a queryable holdings-history database -- lets us build ABNB institutional-ownership concentration/turnover history (fund entries/exits, hedge fund vs long-only mix) as a positioning read ahead of the Q4 guide, complementing the options-chain and short-interest data already held."
+  ]
+ }
+]

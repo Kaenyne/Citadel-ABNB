@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:rasmuse/eust",
+  "url": "https://github.com/rasmuse/eust",
+  "name": "rasmuse/eust",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tools to download, ARCHIVE, and read Eurostat data (2 stars, MIT). The archiving angle matters: it snapshots dataset pulls rather than always hitting the live (revised) series.",
+  "why_useful": "Archiving a Eurostat pull is exactly the point-in-time / vintage capability called out as HIGH-value (gap #4) \u2014 Eurostat series like tour_occ get revised, and this tool is built to keep dated snapshots rather than only current values.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2023-01-26",
+  "geography": "EU",
+  "time_coverage": "as published, with archived vintages",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Archiving a Eurostat pull is exactly the point-in-time / vintage capability called out as HIGH-value (gap #4) \u2014 Eurostat series like tour_occ get revised, and this tool is built to keep dated snapshots rather than only current values."
+  ]
+ },
+ {
+  "key": "github:imkejoor/airpade",
+  "url": "https://github.com/imkejoor/airPaDE",
+  "name": "imkejoor/airPaDE",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Code package (3 stars, MIT, updated 2026-03-10) that downloads and extracts Eurostat data parameters used in causal air-passenger-demand estimation, plus implementations of several air-passenger-volume estimation approaches between city pairs.",
+  "why_useful": "Directly touches gap #10 (airline capacity/traffic) using Eurostat inputs \u2014 a ready-made air-passenger demand estimation toolkit for European city pairs, useful as an EU travel-volume proxy alongside tour_occ.",
+  "potential": "medium",
+  "gap_targets": [
+   10,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2026-03-10",
+  "geography": "EU city pairs",
+  "time_coverage": "as published Eurostat air transport series",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Directly touches gap #10 (airline capacity/traffic) using Eurostat inputs \u2014 a ready-made air-passenger demand estimation toolkit for European city pairs, useful as an EU travel-volume proxy alongside tour_occ."
+  ]
+ },
+ {
+  "key": "github:flame175kk-collab/frontur-estacionalidad-turismo",
+  "url": "https://github.com/flame175kk-collab/frontur-estacionalidad-turismo",
+  "name": "flame175kk-collab/frontur-estacionalidad-turismo",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Spanish-language repo analysing seasonality of Spanish tourism by country of origin and region (CCAA) using official INE Frontur/Egatur data pulled with Python; identifies which origin markets could fill off-season hotel demand. Updated 2026-08-28.",
+  "why_useful": "A working Python pipeline against INE Frontur/Egatur (Spain inbound/outbound tourist arrivals and spend) broken out by CCAA and origin country \u2014 finer-grained than the INE Frontur/EOH series we already hold, and could be adapted to pull EOAT tourist-apartment tables from the same INE portal.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "unspecified",
+  "last_activity": "2026-08-28",
+  "geography": "Spain, by CCAA and country of origin",
+  "time_coverage": "recent (as of repo date, likely multi-year Frontur/Egatur history)",
+  "duplicate_of_holding": "We hold INE Spain Frontur/EOH at national level; this is a CCAA/origin-country-level pipeline, finer-grained",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "A working Python pipeline against INE Frontur/Egatur (Spain inbound/outbound tourist arrivals and spend) broken out by CCAA and origin country \u2014 finer-grained than the INE Frontur/EOH series we already hold, and could be adapted to pull EOAT tourist-apartment tables from the same INE portal."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-destatis",
+  "url": "https://github.com/pipeworx-io/mcp-destatis",
+  "name": "pipeworx-io/mcp-destatis",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server (4 commits, MIT) exposing Destatis GENESIS-Online search and table retrieval (population, GDP, CPI, employment, foreign trade, production) to AI agents; part of a larger 'Pipeworx' 1476-source gateway.",
+  "why_useful": "A live, current tool to query Destatis GENESIS for German hotel/accommodation nights and occupancy tables (Germany is a top-5 ABNB EU market); complements Eurostat tour_occ with a national-source route that may have finer NUTS/city detail and faster releases.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "geography": "Germany",
+  "time_coverage": "as published by Destatis GENESIS",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "A live, current tool to query Destatis GENESIS for German hotel/accommodation nights and occupancy tables (Germany is a top-5 ABNB EU market); complements Eurostat tour_occ with a national-source route that may have finer NUTS/city detail and faster releases.",
+   "Generic GENESIS-Online access point; would need testing whether it can reach German tourism/accommodation tables (45412-series) \u2014 not confirmed from README. Low confidence, early-stage repo."
+  ]
+ },
+ {
+  "key": "github:eurostat/restatapi",
+  "url": "https://github.com/eurostat/restatapi",
+  "name": "eurostat/restatapi",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Eurostat R package (35 stars) to search and retrieve ANY Eurostat SDMX dataset, not just tour_ce_omr platform nights \u2014 includes accommodation capacity, occupancy rate by NUTS2 region, nights spent by country of residence, and tourism-industry employment tables.",
+  "why_useful": "Alternate official SDMX route into tour_occ/tour_ce tables with finer partial-download control (useful for pulling only e.g. NUTS2 accommodation-nights subsets without downloading whole bulk files).",
+  "potential": "medium",
+  "geography": "EU",
+  "time_coverage": "full Eurostat archive",
+  "size_hint": "R package only",
+  "license": "EUPL",
+  "last_activity": "unspecified, active org repo",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "another Eurostat client, overlaps pyrostat/rOpenGov",
+  "hits": 3,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Alternate official SDMX route into tour_occ/tour_ce tables with finer partial-download control (useful for pulling only e.g. NUTS2 accommodation-nights subsets without downloading whole bulk files).",
+   "Official first-party alternative to rOpenGov/eurostat for pulling tour_ce_omr and related platform-tourism tables with guaranteed schema stability; useful if the community package lags a Eurostat table change.",
+   "Finer-grained/regional (NUTS2) version of the Eurostat platform-nights series we already hold; could give sub-national EMEA occupancy and nights-by-origin-country splits that tour_ce_omr alone doesn't, useful for regional-mix forecasting."
+  ]
+ }
+]
