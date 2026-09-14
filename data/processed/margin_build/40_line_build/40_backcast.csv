@@ -1,0 +1,5 @@
+test,predicted,actual,note,error_pct
+"FY25 cost of revenue from FY24-knowable rates (fee % GBV, chargebacks/booking, hosting run-rate, other/night)",2064.251522597298,2086.0,FY24 fee rate 1.69% of GBV; out of sample,-1.0425923970614592
+FY25 ops & support from FY24 cost per booking x FY25 bookings x the pre-AI -2.5%/yr per-unit trend,1294.3938192516016,1237.0,out of sample; the -10/-16% AI statements came in 2026,4.63975903408258
+1H26 cost of revenue with the base rates and 1H26 drivers,1223.6537534246572,1214.0,in sample (1.66% sits between FY25 1.76% and the 1H26 fit 1.62%),0.7952020942880722
+"1H26 ops & support per booking, y/y %",-5.061999999999999,-5.1,"calibration of the variable share v = 0.19; identity, not a test",-0.7450980392156858
