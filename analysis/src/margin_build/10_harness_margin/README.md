@@ -156,6 +156,28 @@ half-life 4 quarters, anchored at the latest quarter of the window = 2026Q2, nor
 `scoreboard_by_quarter.csv` is the long file (error, CRPS, coverage flag, weight, and the seasonal-naive point and
 error on every row) so a method can diff its errors quarter by quarter.
 
+### 6.1 Significance columns (added in the WS22 discussion round; `harness_margin/significance.py`)
+
+WS21 R01/R02/R08 showed the survivor flags are close to free at this n: W2's 10 quarters are a **subset** of W1's 14,
+the two weightings are highly correlated, a sign-flip null over the 74 margin h=0 PIT cells gives **22.1 survivors on
+average against 25 observed (P 0.39)**, and the flags are asserted on as few as **2** matched quarters. The scorer now
+carries the missing statistic, in **new columns only** (no existing column changed value):
+
+| column | meaning |
+|---|---|
+| `d_mean_<b>` | mean of the paired loss differential `d_q = \|e_method(q)\| - \|e_<b>(q)\|` on matched quarters (negative = better) |
+| `t_nw1_<b>`, `p_nw1_<b>` | `mean(d)` over a Newey-West(1) SE; two-sided normal p. Indicative at n 10-14, not a decision rule |
+| `k_better_<b>`, `n_cmp_<b>`, `p_sign_<b>` | quarters better, quarters compared, one-sided exact binomial sign test (ties dropped) — the distribution-free statistic, and the one to quote |
+| `n_min_both_windows` | the smaller of the W1 and W2 matched-quarter counts for the key |
+| `survives_both_windows_n8` | both survivor flags **and** `n_min_both_windows >= 8` (kills the n=2/n=3 passes) |
+| `survives_both_windows_sig` | that, **and** the W1 sign test against `seasonal_naive` at p < 0.10 |
+| `replays_present_fixed` | `replays_present` recomputed with the baselines' `\|PIT` / `\|full_sample` suffix stripped out of `spec_id` (R09); the baselines read 1 in the old column purely because they put the replay inside the spec id |
+
+`<b>` is `seasonal_naive` and `street`. **Quote a result as "beats <baseline> by d, better in k of n quarters,
+sign-test p", never as "survives both windows".** `significance_check.py` recomputes the same columns straight from
+`scoreboard_by_quarter.csv` into `scoreboard_significance.csv` without re-running the scorer (useful when several
+agents are working and only one may re-score).
+
 ## 7. Other files
 
 `guides_margin.csv` (38 numeric margin guides from the ledger, canonical periods), `street_margin_pit.csv` (336

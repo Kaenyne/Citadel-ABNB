@@ -184,6 +184,35 @@ def test_scorer_toy_known_answer():
     assert b["beats_seasonal_naive"] and b["rw_beats_seasonal_naive"]
 
 
+def test_significance_columns_known_answer():
+    """WS22: paired-loss significance. Object `obj` beats `seasonal_naive` in every one of 4 quarters
+    by exactly 1pp, so d = -1 every quarter: k_better 4/4, one-sided sign p = 0.5**4 = 0.0625, and a
+    zero-variance differential gives |t| = 1 / sqrt(1e-12 / 4) -> p_nw1 = 0. The n=4 cell must also
+    fail the new n>=8 gate (R08)."""
+    from harness_margin import significance as SIG
+    t = HM.load_targets().set_index("quarter")
+    qs = ["2025Q3", "2025Q4", "2026Q1", "2026Q2"]
+    vds = [D(2025, 8, 6), D(2025, 11, 6), D(2026, 2, 12), D(2026, 5, 7)]
+    rows = []
+    for q, vd in zip(qs, vds):
+        a = t.at[q, "adj_ebitda_margin_pct"]
+        for obj, meth, e in (("obj", "toy", 1.0), ("seasonal_naive", "baselines-margin", 2.0)):
+            rows.append(dict(method=meth, object=obj, target="adj_ebitda_margin_pct", quarter=q, vintage_date=vd,
+                             horizon_q=0, point=a + e, q50=a + e, q10=a + e - 3, q90=a + e + 3, window="W2",
+                             prior_basis="PIT", n_params=1, n_train=20, spec_id=""))
+    sb, _ = S.score_registry(pd.DataFrame(rows))
+    a = sb[sb["object"] == "obj"].iloc[0]
+    assert a["k_better_seasonal_naive"] == 4 and a["n_cmp_seasonal_naive"] == 4
+    assert abs(a["p_sign_seasonal_naive"] - 0.0625) < 1e-9, a["p_sign_seasonal_naive"]
+    assert abs(a["d_mean_seasonal_naive"] + 1.0) < 1e-9
+    assert a["p_nw1_seasonal_naive"] < 1e-6
+    assert not a["survives_both_windows_n8"] and not a["survives_both_windows_sig"]
+    # the standalone recomputation must agree cell by cell with the scorer
+    d = np.array([-1.0, 1.0, 0.0, 2.0])
+    r = SIG.paired_loss_test(np.array([1.0, 2.0, 1.0, 3.0]), np.array([2.0, 1.0, 1.0, 1.0]))
+    assert r["k_better"] == 1 and r["n_cmp"] == 4 and abs(r["d_mean"] - d.mean()) < 1e-12
+
+
 def test_scorer_survives_both_requires_w1_and_w2():
     t = HM.load_targets().set_index("quarter")
     rows = []

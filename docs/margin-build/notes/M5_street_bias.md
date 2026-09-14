@@ -309,6 +309,49 @@ dispersion_conditioned}.csv` (1,296 rows each; 6 specs x 2 replays, plus the `_f
 Figures: `analysis/figures/margin_build/M5_street_bias_{surprise_and_bias, mae_ratio, dispersion}.png`.
 Note: this file.
 
+## Discussion response (WS22, group C, 14 Sep 2026)
+
+Every WS21 finding addressed to M5 was reproduced. Nothing in `run.py`, `build.py` or `analyse.py` changed, so
+no registry file and no number this note already carries moved; the response is a restatement of what may be
+quoted, plus three NEW diagnostic files written by a NEW script that reads only what `run.py` already produced:
+
+```
+py -3.13 analysis/src/margin_build/M5_street_bias/discussion_checks.py     # exit 0, ~40 s
+```
+-> `M5_discussion_paired_tests.csv` (144 cells vs the raw Street, NW(1) t + sign test),
+`M5_discussion_clip_audit.csv`, `M5_discussion_counterfactual.csv`, `M5_discussion_summary.json`.
+
+| finding | decision | reproduced | before -> after |
+|---|---|---|---|
+| R23 margin claim not significant, dollar claim is | **ACCEPT** | yes, to 4 dp | headline bullet 2 ("the Street is beatable, and by a lot") is **withdrawn as a margin claim**. `dispersion_conditioned rw_hl4` on margin: W1 ratio 0.835, mean d −0.26pt, t −0.57, p 0.57, better 9/14 (sign p 0.21); W2 ratio 0.567, t −1.46, p 0.14, 7/10 (sign p 0.17). `street_plus_flowthrough rw_hl4` on **$**: W2 ratio 0.581, t −2.71, **p 0.007**, 9/10 (sign p 0.011); W1 ratio 0.660, t −1.39, p 0.16, 11/14 (**sign p 0.029**). 4 of 144 cells beat Street at p<0.05, all the same object/target/window. |
+| R24 dispersion regression significant only off-pool | **ACCEPT** | yes (`M5_secondary_tests.json`) | the supporting number is now **+17.1 pt per unit sd/mean, se 8.1, p 0.052, R² 0.23, n 17** (2022Q1+, the pre-registered pool). The +28.3 / p 0.005 / n 19 figure keeps 2021, which every bias pool in the method drops; it is a full-sample diagnostic and is **withdrawn from the card**. |
+| R25 the clip, not dispersion, drives the LIVE call | **ACCEPT, and it is worse than R21 said** | yes | clip audit: the multiplier sits exactly at the 0.5 floor in **19 of 37** dispersion-bearing backtest rows (20 of 39 including LIVE; 21 of 39 counting the two rows within 0.01 of the floor — that is WS21's count), and in **9 of the 14** h=0 vintages from 2023-05 on. New counterfactual: replace the multiplier with a **fixed constant 0.5** (no dispersion input at all) and the margin MAE is 1.370 W1 / 1.034 W2 against `dispersion_conditioned`'s 1.330 / 0.743 and Street's 1.592 / 1.311. The dispersion conditioning adds **−0.04pt in W1 (t −0.16, p 0.87, better in 6 of 14)** and −0.29pt in W2 (t −1.16, p 0.25, better in only **4 of 10** — it wins at the three February spikes and loses the rest). **The object's whole margin win is "halve the bias", not "condition on dispersion".** At the LIVE vintage the identity is exact: `rw_hl4` 49.7757 + 0.5 x 1.0569 = **50.3042%**, `rw_hl4_med` 49.7757 + 0.5 x 0.6841 = **50.1178%** — the dispersion input contributes nothing to the 3Q26 number beyond selecting the floor. |
+| R27 quantiles unusable | **ACCEPT** (the note already said so) | yes: cov80 = cov90 = 1.00 in all 24 h=0 cells | unchanged; do not use M5's quantiles. Take the 5 Nov band from the realised h=0 error distribution or from M2/M4. |
+| R26 PIT / consensus stamping | pass | yes | no action. |
+| R11 LIVE 3Q26 above the guide-sentence ceiling | **ACCEPT / reconciled** | yes: 50.19% vs the 50.09% 3Q25 actual the "roughly flat to slightly down" sentence ceilings | the 0.10pt excess **is the clip**: uncapped, the dispersion object gives 49.9%, i.e. below the ceiling and essentially the Street. M5 therefore does **not** override the sentence; on the card the margin line reads "3Q26 margin at or just below 50.09%, flat y/y" and the beat is taken in **dollars** ($2,412M on team revenue; $2,390M on the 6 Aug pre-guide vintage), where the revenue path, not a margin call, does the work. |
+
+**Clip floor sensitivity, added for WS20's question 1** (`M5_discussion_clip_sensitivity_{live,backtest}.csv`;
+the rebuild reproduces the registered floor-0.5 points exactly). LIVE 3Q26 `rw_hl4`: no floor **49.96%** /
+$2,387M, floor 0.3 50.09% / $2,406M, floor 0.5 (registered) 50.30% / $2,436M, floor 0.7 50.52% / $2,466M, no
+conditioning 50.83% / $2,510M; `rw_hl4_med` (the spec WS20 weights 60%) 49.89 / 49.98 / **50.12** / 50.25 /
+50.46%. So **about two-thirds of the composite +0.41pt beat is the floor**, and re-scoring the backtest at each
+floor says the floor should not be there at all: removing it is equal-or-better in all ten h=0 cells (margin W1
+1.326 vs 1.330, W2 0.743 vs 0.743; $ W1 50.7 vs 52.9, W2 46.2 vs 50.3). **The pre-registered 0.5 was a
+conservative guess, not a fitted value, and it is the entire disagreement with the Street.** Recommendation:
+quote the floor-free variant (3Q26 **49.96% / $2,387M**, i.e. at the Street and under the 50.09% ceiling) and
+take the beat in dollars from the flow-through object. Regime evidence for WS20's question 2 is in
+`M5_discussion_regime_by_quarter.csv` and answered in `docs/margin-build/discussion/group_C.md` §4.
+
+**What M5 now claims.** One thing, and it is the only object in the run that survives an adversarial test: starting
+from the Street's 3Q-type EBITDA and adding the fitted flow-through of our own revenue surprise (`m` 0.464,
+intercept +$15.9M) cuts dollar EBITDA MAE from **$58.1M to $33.8M in W2 (ratio 0.581, NW(1) t −2.71, p 0.007,
+better in 9 of 10 quarters)** and from $65.3M to $43.1M in W1 (ratio 0.660, p 0.16 but better in **11 of 14**,
+sign p 0.029) — h = 0 only. Everything else is downgraded to description: the Street has under-called the margin
+at 21 of 22 prints and the beat has decayed to +0.4-0.7pt, dispersion is at a record low (0.0085 vs a 0.0497
+reference, below the whole backtest range), and at h = 1 there is no harvestable bias at all (every correction
+worse). LIVE, quote **3Q26 adjusted EBITDA $2,390-2,412M** with the margin stated as flat vs 50.09%, not
++0.41pt; `street_plus_bias` (50.8% / $2,510M) and the `_fyalloc` FY27 rows stay off every card.
+
 ## RESUME
 
 M5 is complete and rebuildable (`py -3.13 analysis/src/margin_build/M5_street_bias/run.py`, exit 0;
@@ -325,3 +368,5 @@ request 3 alongside the two in the margin harness README; (d) re-run M5 if WS03 
 (e) at synthesis, note that M5's dispersion finding (+28 pt of surprise per unit of sd/mean, p 0.005) is the
 cleanest cross-check on M1's 51.6% and M2's 48.1% for 3Q26 — M5's 50.2% sits between them and is the only one
 of the three anchored to a number the market has actually published.
+
+**RESUME addendum (WS22, 14 Sep).** The discussion round withdrew M5's margin claim and the +0.41pt LIVE beat; quote the dollar flow-through ($2,390-2,412M for 3Q26, W2 t -2.71 p 0.007, 9/10) and, if the margin object is carried at all, carry the floor-free variant (3Q26 49.96%) and describe it as "street + half the recency-weighted bias". Next agent: re-run WS20's blend on the floor-free variant before fixing weights, and re-run `discussion_checks.py` (not `run.py`) after any re-score.

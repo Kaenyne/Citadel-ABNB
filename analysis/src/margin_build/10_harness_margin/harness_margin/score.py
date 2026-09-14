@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 
 from . import paths as P
+from . import significance as SIG
 from .frozen import Q, W, M, QUANTILE_COLUMNS, QUANTILE_LEVELS, TODAY, FORMAT_VERSION
 from .panel import load_targets, TARGET_METRICS
 from .registry import load_registry
@@ -179,6 +180,9 @@ def score_registry(reg: pd.DataFrame | None = None, targets=None, n_cal: int = 6
                 rec[f"mae_ratio_{bobj}"] = np.nan
                 rec[f"rw_mae_ratio_{bobj}"] = np.nan
                 rec[f"n_match_{bobj}"] = int(m.sum())
+        # WS22 (R01/R02/R08): paired-loss significance next to every ratio. New columns only.
+        rec.update(SIG.significance_columns({q: abs(pp - yy) for q, pp, yy in zip(g["quarter"], p, y)},
+                                            bmaps, target, window, int(h)))
         r_ew = rec[f"mae_ratio_{PRIMARY_BASELINE}"]
         r_rw = rec[f"rw_mae_ratio_{PRIMARY_BASELINE}"]
         rec["beats_seasonal_naive"] = bool(np.isfinite(r_ew) and r_ew < 1.0)
@@ -206,6 +210,15 @@ def score_registry(reg: pd.DataFrame | None = None, targets=None, n_cal: int = 6
         sb[col] = [both.get(tuple(r[c] for c in key), False) for _, r in sb.iterrows()]
     rp = sb.groupby(["method", "object", "target", "horizon_q", "spec_id"])["prior_basis"].nunique().rename("replays_present")
     sb = sb.merge(rp, on=["method", "object", "target", "horizon_q", "spec_id"], how="left")
+    # WS22 (R09): the baselines put prior_basis INSIDE spec_id, so the group key above splits their two
+    # replays and `replays_present` reads 1 for every baseline row. Recomputed here with that suffix
+    # stripped, as a NEW column; `replays_present` itself is left exactly as it was.
+    sb["_spec_base"] = sb["spec_id"].astype(str).str.replace(r"\|(PIT|full_sample)$", "", regex=True)
+    rp2 = (sb.groupby(["method", "object", "target", "horizon_q", "_spec_base"])["prior_basis"]
+             .nunique().rename("replays_present_fixed"))
+    sb = sb.merge(rp2, on=["method", "object", "target", "horizon_q", "_spec_base"], how="left").drop(columns="_spec_base")
+    sb = SIG.add_window_flags(sb)
+    sb = SIG.mark_oracle(sb)
     sb = sb.sort_values(["target", "window", "horizon_q", "prior_basis", "mae"]).reset_index(drop=True)
     by_q_cols = GROUP_KEYS + ["quarter", "vintage_date", "point", "actual", "err", "abs_err", "crps", "pinball",
                               "in80", "in90", "pit", "weight_rw", "seasonal_naive_point", "seasonal_naive_abs_err",
@@ -230,12 +243,21 @@ def scoreboard_md(sb: pd.DataFrame, title="Margin harness scoreboard") -> str:
              "LIVE rows enter no metric. `mae_ratio_seasonal_naive` < 1 beats y[q-4] on the same target, window, "
              "horizon and replay; a claim must have `survives_both_windows` (equal-weighted) AND "
              "`rw_survives_both_windows` (recency-weighted, half-life 4 quarters) to be quoted.", "",
+             "**WS22 amendment (WS21 R01/R02/R08).** Those two flags are NOT evidence of skill on their "
+             "own: W2's 10 quarters are a subset of W1's 14, the two weightings are highly correlated, and "
+             "a sign-flip null over the 74 margin h=0 PIT cells gives 22.1 survivors on average against 25 "
+             "observed (P 0.39). They are also asserted on as few as 2 matched quarters. Quote a result as "
+             "`beats <baseline> by d, better in k of n quarters, sign-test p` using the new columns "
+             "`d_mean_*`, `k_better_*`, `p_sign_*`, `t_nw1_*`, `p_nw1_*` (vs `seasonal_naive` and vs "
+             "`street`), and filter on `survives_both_windows_n8` / `survives_both_windows_sig` rather than "
+             "on the raw flags. `p_sn` below is `p_sign_seasonal_naive`, `k/n` the quarters-better count.", "",
              "> " + M.EXCHANGEABILITY_CAVEAT, ""]
     if len(sb) == 0:
         lines.append("_(registry empty)_")
         return "\n".join(lines)
     cols = ["method", "object", "window", "h", "replay", "n", "mae", "rw_mae", "rmse", "bias", "rw_bias",
-            "r_sn", "rw_r_sn", "r_street", "crps", "cov80", "n_params", "both", "rw_both"]
+            "r_sn", "rw_r_sn", "r_street", "k/n", "p_sn", "p_street", "crps", "cov80", "n_params",
+            "both", "rw_both"]
     for tgt in [t for t in _MD_TARGETS if t in set(sb["target"])] + \
             sorted(set(sb["target"]) - set(_MD_TARGETS)):
         g = sb[sb["target"] == tgt]
@@ -244,7 +266,11 @@ def scoreboard_md(sb: pd.DataFrame, title="Margin harness scoreboard") -> str:
             vals = [r["method"], r["object"], r["window"], str(r["horizon_q"]), r["prior_basis"], str(r["n"]),
                     _fmt(r["mae"]), _fmt(r["rw_mae"]), _fmt(r["rmse"]), _fmt(r["bias"]), _fmt(r["rw_bias"]),
                     _fmt(r.get("mae_ratio_seasonal_naive"), 3), _fmt(r.get("rw_mae_ratio_seasonal_naive"), 3),
-                    _fmt(r.get("mae_ratio_street"), 3), _fmt(r["crps"]), _fmt(r["cov80"], 2),
+                    _fmt(r.get("mae_ratio_street"), 3),
+                    (f"{int(r['k_better_seasonal_naive'])}/{int(r['n_cmp_seasonal_naive'])}"
+                     if pd.notna(r.get("k_better_seasonal_naive")) else ""),
+                    _fmt(r.get("p_sign_seasonal_naive"), 3), _fmt(r.get("p_sign_street"), 3),
+                    _fmt(r["crps"]), _fmt(r["cov80"], 2),
                     str(r["n_params"]), str(r["survives_both_windows"]), str(r["rw_survives_both_windows"])]
             lines.append("| " + " | ".join(vals) + " |")
         lines.append("")

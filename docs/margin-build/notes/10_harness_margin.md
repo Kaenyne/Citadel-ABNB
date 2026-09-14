@@ -208,6 +208,56 @@ Baseline row for 3Q26: naive 50.1% / $2,051M; Street (11 Sep) 49.8% / $2,362M; F
 "down slightly vs 50.1%". The harness's job on 5 Nov is to score every method's 3Q26 row against the print at these three
 comparison columns; the naive band is 46-54% (80%), the Street band 47.8-51.7%.
 
+## Discussion response (WS22, group C, 14 Sep 2026)
+
+WS21's central finding (R01) is against the harness, and it is **accepted in full**: the flag the README told
+every method author to quote is close to free at this n. The fix is a test, and it is now in the scorer.
+
+| finding | decision | reproduced | what changed |
+|---|---|---|---|
+| **R01** `survives_both_windows` is ~30% free (sign-flip null 22.1 expected vs 25 observed, P 0.39; W2 ⊂ W1) | **ACCEPT** | yes — `check_07_survivor_placebo.py` re-read; the structural argument needs no simulation: W2's 10 target quarters are a subset of W1's 14, so the two flags are one sample and its tail | new scorer columns (below) and a rewritten instruction in `scoreboard_margin.md`'s header and in README §6.1: quote "beats `<baseline>` by d, better in k of n quarters, sign-test p", **never** "survives both windows". |
+| **R02** no non-Street margin win is distinguishable from zero | **ACCEPT** | yes, on the new columns: of the 150 (object, spec, window) cells at `adj_ebitda_margin_pct`, h=0, PIT, excluding baselines, **52 carry both survivor flags (26 object-spec pairs); 14 cells (7 pairs) survive the n>=8 and W1 sign-test gates, and 6 of the 7 are M5 street-bias specs** (the seventh is M3's `last_pin`, whose W1 mean d is −0.03pp) | same columns; WS23 can now filter instead of arguing. |
+| **R08** flags asserted on as few as 2 matched quarters | **ACCEPT** | yes — `guide-policy-margin/q4_implied\|guide_mid` carries both flags on n=2 in W2 (4 both-flag cells across the whole registry have `n_min_both_windows < 8`) | new column `n_min_both_windows` and the gated flags `survives_both_windows_n8` / `survives_both_windows_sig`. The original flags are **untouched**, so nothing that has already been quoted moves. |
+| **R09** `replays_present` reads 1 for all 1,452 baseline rows | **ACCEPT (additively)** | yes — the baselines write `\|PIT` / `\|full_sample` into `spec_id`, which is in the group key | new column `replays_present_fixed` (the same count with that suffix stripped) reads **2** for every baseline row. `replays_present` itself is left as it was so no existing scoreboard number changes in the orchestrator's re-score. |
+| **R17** h=0 is a post-letter, post-guide forecast | **ACCEPT** | yes (`panel.history_as_of`, `include_same_day=True`) | no code change — this is the frozen convention and changing it would break comparability with the revenue harness. Stated in README §2 and to be stated on the card: a 4Q26 trade into 5 Nov is an h=1-type position, not an h=0 one. |
+
+**The new columns** (`analysis/src/margin_build/10_harness_margin/harness_margin/significance.py`, wired into
+`score.py`; all new, none replaced). For each scored cell, against `seasonal_naive` and against `street`, on
+matched quarters: `d_mean_<b>` (mean paired loss differential `|e_method| − |e_base|`, negative = better),
+`t_nw1_<b>` / `p_nw1_<b>` (Newey-West(1) SE, two-sided), `k_better_<b>` / `n_cmp_<b>` / `p_sign_<b>` (one-sided
+exact binomial sign test, ties dropped), plus `n_min_both_windows`, `w1_p_sign_seasonal_naive`,
+`survives_both_windows_n8`, `survives_both_windows_sig` and `replays_present_fixed`. The markdown scoreboard
+gains three columns (`k/n`, `p_sn`, `p_street`) and a header paragraph carrying R01's null result. The NW(1)
+and sign-test conventions are byte-for-byte WS21's (`check_02` / `check_10`), so the discussion numbers and the
+scoreboard numbers are the same numbers. A 12th unit test (`test_significance_columns_known_answer`) pins the
+sign test, the differential and the n-gate on a hand case; **`tests.py` is 12/12 under `py -3.13`**.
+
+**WS20's question 13 (an `is_oracle` column instead of a naming convention): done.**
+`significance.mark_oracle()` writes a boolean `is_oracle` from `ORACLE_MARKERS = ("revknown", "nightsknown",
+"ebitda_known")` matched against `object|spec_id`. It flags **756 of 6,768** scored cells across 14
+(method, object, spec) combinations — WS21's six, their `lines` twins, and M7's four `ebitda_known` specs. It is
+a marker, not a filter: the rows stay registered and scored, which is what the two-replay discipline wants.
+`scoreboard_significance.csv` already carries it. WS20's other two asks to the harness — the interval recipe for
+WS23 and whether a second (bridge v3) revenue leg should exist — are answered in
+`docs/margin-build/discussion/group_C.md` §4; the short version is that the LIVE leg should gain a second,
+clearly named `bridge_v3` column and the **backtest leg must not change**, because every registered row and both
+replays were scored against it.
+
+`survives_both_windows_sig` is deliberately gated at the **W1** sign test with **p < 0.10**, not W2 at 0.05:
+W2 is a subset of W1, so a W2-only result is the tail of the same sample, and at n=14 the sign test cannot
+return anything between 0.090 (10/14) and 0.029 (11/14) — a 5% line at this n is a 11-of-14 line, which is a
+harder bar than the evidence in this run can carry. The gate is a filter for WS23, not a pass line.
+
+**Because three discussion agents were running, `score.py` was NOT re-run.** The same columns were computed
+straight from `scoreboard_by_quarter.csv` by a new standalone script, so WS20/23 has the numbers now:
+
+```
+py -3.13 analysis/src/margin_build/10_harness_margin/significance_check.py   # exit 0, ~2 min
+```
+-> `data/processed/margin_build/10_harness_margin/scoreboard_significance.csv` (6,768 cells; existing MAE
+ratios and flags joined to the new statistics). When the orchestrator re-runs `score.py`, `scoreboard_margin.csv`
+will carry the same columns and this file becomes redundant.
+
 ## RESUME
 
 The harness is complete and scored; nothing is pending in WS10. If WS02 or WS03 are rebuilt, re-run
@@ -218,3 +268,5 @@ use `py -3.13`, register both replays and h=0,1,2 at all 14 W1 dates plus LIVE h
 Two cheap follow-ups if anyone has time: (a) a `street_post_guide` object (WS03 `guided_q_post_guide_5td`) registered at a
 later vintage is not possible under the frozen vintage rule — leave it; (b) the ±k direction rule above is the obvious first
 M-method test, with k fit PIT on the magnitude of past y/y moves in that direction.
+
+**RESUME addendum (WS22, 14 Sep).** The scorer now carries paired-loss and sign-test columns, n-gated survivor flags, `replays_present_fixed` and `is_oracle`; `tests.py` is 12/12 and `score.py` was deliberately NOT run (the orchestrator re-scores once). Next agent: run `score.py` once, confirm `scoreboard_margin.csv` gains the new columns and that no pre-existing column changed, then delete `scoreboard_significance.csv` as redundant. Outstanding: the LIVE-only `bridge_v3` revenue leg (§4 of the group C discussion note) — additive, ~30 lines, must not run concurrently with another method's `run.py`.

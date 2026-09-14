@@ -446,6 +446,43 @@ quarterly share delta.
 | `analysis/figures/margin_build/M7_below_ebitda_{interest_income,fcf_backtest,eps_bridge_3q26}.png` | three figures |
 | `data/manifests/margin_build/M7_below_ebitda.csv` | the FRED pull manifest (URL, timestamp, sha256) |
 
+## Discussion response (WS22, group C, 14 Sep 2026)
+
+Reproduced with a NEW script that reads only the scoreboard `run.py` already produced — no registry row,
+no processed CSV and no number above changed, so **M7 was not re-run** (and could not be: `run.py` ends by
+calling `score.py`, which the discussion round is forbidden to touch):
+
+```
+py -3.13 analysis/src/margin_build/M7_below_ebitda/discussion_checks.py    # exit 0, ~30 s
+```
+-> `M7_discussion_coverage_band.csv`, `M7_discussion_eps_decomp.csv`, `M7_discussion_summary.json`.
+
+| finding | decision | reproduced | before -> after |
+|---|---|---|---|
+| R10 "tax quantiles under-cover" | **ACCEPT — the claim is withdrawn** | yes, and the note contradicted itself | The "Coverage" paragraph above says `tax_rate_pct` (0.86 W1 / 0.90 W2) and `tax_provision_musd` (0.71 / 0.70) are **under**-covered. Against the **exact binomial 5-95 band** attainable at that n — [0.643, 0.929] at n 14, [0.60, 1.00] at n 10 — 0.86/0.90 are *above* nominal 0.80 and 0.71/0.70 are *inside* the band. Over all 384 M7 cov80 cells, mean coverage **0.941**, **42 above** their band and **2 below** (both `capex_musd` W1 h=1 at 0.538 vs a 0.615 floor; capex is $5-17M a quarter and I would not defend either direction). **Before:** "the quarterly tax quantiles are under-covered, do not quote them as a real 80% interval." **After:** M7's intervals are systematically **too wide**, the tax line included; the reason not to quote them is over-dispersion, not under-coverage. Any 5 Nov band should come from the realised h=0 error distribution, not from the Gaussian-on-last-12 pool. The kill-list entry 7 stands as written. |
+| R16 EPS error is the EBITDA input, not the bridge | **ACCEPT with a number** | yes, and it splits by window | At h=0, the share of the `ebitda_pit` EPS MAE contributed by the EBITDA input is **64% in W2** (corr(err, contribution) 0.92; MAE $0.125 vs $0.066 with the actual EBITDA in) but only **17% in W1** (corr 0.23), because W1 carries the 2023 valuation-allowance and lodging-tax quarters where the bridge itself is the error. Quoting rule adopted: **below-the-line accuracy is quoted from `ebitda_known` (W2 h=0 EPS MAE $0.066), total EPS error only from `ebitda_pit` ($0.125)**, never mixed, and the W1 numbers are quoted with the two break quarters named. |
+| R13 FRED inputs have no re-pull fallback | **ACCEPT-DEFER** | yes — `load_daily` (run.py:109) reads `data/raw/margin_build/M7_below_ebitda/fred_<series>.csv` and raises `FileNotFoundError` on a clean clone | Not fixed tonight because the only honest way to land it is to re-run `run.py`, which re-runs `score.py`. The patch for the morning, 6 lines in `load_daily`: `p = RAW / f"fred_{series}.csv"; if not p.exists(): RAW.mkdir(parents=True, exist_ok=True); urlretrieve(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}", p)` (keyless, the same call WS04 already uses), then append the file to `data/manifests/margin_build/M7_below_ebitda.csv`. Meanwhile the three files are manifested and the README says to re-pull by hand; the package is reproducible on this machine and nowhere else. |
+| R14 line-level wins are close to free | **ACCEPT, not binding on M7** | yes | M7 makes no `adj_ebitda_margin_pct` claim; its lines are below-EBITDA lines with their own hardest baselines (`seasonal_naive_drift` / `trailing4`), which the note already quotes alongside `seasonal_naive`. The one M7 result quoted against `seasonal_naive` alone that should not be is the *pass* of test 4 for `sbc`/`da`/`share_count`: against the drift baseline SBC is 0.93/0.96, D&A 0.81/1.00, shares 0.40/0.67 — so of that block only share count and (weakly) D&A are genuine. |
+| R17 h=0 is post-letter | **ACCEPT** | yes | Said on the card: the backtested h=0 rows forecast the quarter whose letter is already out; the 4Q26 EPS/FCF position on 5 Nov is an h=1-type problem, where M7's own MAEs are 15-25% worse. |
+| quarterly FCF fails (M7's own result) | unchanged | — | reaffirmed: `fcf_musd` h=0 ratio 1.018 W1 / 0.927 W2 equal-weighted, 1.090 / 1.054 recency; the object is carried for the FY bridge only. |
+
+**WS20's two questions (answered in full in `docs/margin-build/discussion/group_C.md` §4).** (10) The quarterly
+FCF rows — `fcf_musd`, `cfo_musd`, `fcf_margin_pct` — are **withdrawn from the quotable set**; the annual FY
+result (3 of 4 years, +$399M mean high bias) is the only FCF claim the memo should make. (11) Swapping WS23's
+recommended margin blend (50.39%) in for M1 as the EBITDA input: the waterfall is linear, slope
+**d(EPS)/d(EBITDA) = (1 − ETR)/shares = $0.001386 per $M = $0.0666 per 1pp of 3Q26 margin**, so 3Q26 EPS goes
+**$3.000 -> $2.909** (Street $2.845, and on the Street's own EBITDA this bridge gives $2.827). The interval does
+**not** widen if it is propagated properly: bridge sd $0.083 (realised W2 h=0 with EBITDA known) combined with
+$0.062 from the blend's margin error gives sd $0.103 and an 80% band of **$2.78-3.04**, inside the registered
+$2.73-3.09. `M7_discussion_blend_eps.csv`.
+
+**What M7 now claims.** An auditable bridge, not an edge. Six of seven objects beat seasonal naive at h=0 in both
+windows, but the ones that matter are interest income (MAE $17.9M W1 / $10.5M W2, 0.81x / 0.68x the *hardest*
+baseline, one fitted parameter) and share count (0.40x / 0.67x the drift). EPS accuracy is quoted two ways and
+never mixed: with the actual EBITDA in, W2 h=0 MAE **$0.066**; with a PIT EBITDA baseline in, **$0.125**, of which
+64% is the EBITDA input. Against the Street the bridge is 0.94x in W1 and 1.04x in W2 — i.e. no alpha. Quarterly
+FCF fails; FY FCF passes 3 of 4 years and is biased +$399M high. All intervals, tax included, are too wide.
+
 ## RESUME
 
 M7 is complete and reproducible: `py -3.13 analysis/src/margin_build/M7_below_ebitda/run.py` exits 0 and rewrites every output
@@ -464,3 +501,5 @@ funds payable directly off the WS06 GBV-by-month path rather than off quarterly 
 forward are **3Q26 EPS $3.00 (Street $2.85), FY26 EPS $5.39 (Street $5.31), and interest income $184M in 3Q26 with a
 +/-$49M per 100bp rate sensitivity**; and the one sentence to carry is that the Street's own EBITDA run through this bridge
 reproduces the Street's own EPS to two cents, so the 5 Nov EPS argument is an EBITDA argument.
+
+**RESUME addendum (WS22, 14 Sep).** Tax under-coverage is withdrawn (the intervals are too wide, not too narrow); quarterly FCF is withdrawn from the quotable set; EPS is quoted from `ebitda_known` for the bridge and `ebitda_pit` for the total, never mixed. Two jobs left, both needing a run that may not race the scorer: the FRED fetch-if-missing patch in `load_daily` (R13, 6 lines, written out above) and rebuilding the LIVE waterfall on WS23's blend EBITDA rather than M1's (3Q26 EPS $2.909, computed analytically in `M7_discussion_blend_eps.csv`).
