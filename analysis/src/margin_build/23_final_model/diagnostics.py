@@ -22,6 +22,8 @@ sys.path.insert(0, str(HERE))
 import combine as C  # noqa: E402
 
 OUT = C.OUT
+wpath = C.wpath
+rpath = C.rpath
 
 
 def replay(qf, guides, target, window, horizon, pool, lam=0.5, clip=True):
@@ -35,7 +37,9 @@ def replay(qf, guides, target, window, horizon, pool, lam=0.5, clip=True):
         if p.empty:
             continue
         lab = list(p.index)
-        prior_q = qs[:i]
+        # WS31 audit 01: the same print-date gate as combine.run_backtest
+        vdate = meta.loc[tq, "vintage_date"]
+        prior_q = [x for x in qs[:i] if C.printed_before(x, vdate)]
         prior = (P.loc[prior_q, lab] - meta.loc[prior_q, "actual"].values[:, None]).abs() \
             if prior_q else pd.DataFrame(columns=lab)
         prior = prior.dropna(axis=0, how="any")
@@ -46,7 +50,7 @@ def replay(qf, guides, target, window, horizon, pool, lam=0.5, clip=True):
         w = w.reindex(lab).fillna(0.0)
         w = w / w.sum()
         raw = float((p * w).sum())
-        g = C.guide_in_force(guides, meta.loc[tq, "vintage_date"], tq)
+        g = C.guide_in_force(guides, vdate, tq)
         point = C.apply_clip(raw, g, meta.loc[tq, "naive"])[0] if (clip and target.endswith("pct")) else raw
         a = float(meta.loc[tq, "actual"])
         rows.append(dict(quarter=tq, point=point, actual=a, err=point - a, abs_err=abs(point - a),
@@ -87,7 +91,7 @@ def main():
                          ratio_to_naive=r.abs_err.mean() / r.naive_abs_err.mean(),
                          delta_vs_full_pp=r.abs_err.mean() - b_mae, dropped="the clip"))
     lo = pd.DataFrame(rows)
-    lo.to_csv(OUT / "23_diag_leave_one_out.csv", index=False)
+    lo.to_csv(wpath("23_diag_leave_one_out.csv"), index=False)
 
     # each member's own PIT MAE on the same quarters
     rows = []
@@ -100,10 +104,10 @@ def main():
         nai = meta["naive"] - meta["actual"]
         rows.append(dict(window=window, member="seasonal_naive (= the sentence level)",
                          n=int(nai.notna().sum()), mae=float(nai.abs().mean()), bias=float(nai.mean())))
-    pd.DataFrame(rows).to_csv(OUT / "23_diag_member_scores.csv", index=False)
+    pd.DataFrame(rows).to_csv(wpath("23_diag_member_scores.csv"), index=False)
 
     # shock vs calm
-    bt = pd.read_csv(OUT / "23_combination_by_quarter.csv")
+    bt = pd.read_csv(rpath("23_combination_by_quarter.csv"))
     s = bt[(bt.target == target) & (bt.window == "W1") & (bt.horizon_q == 0)
            & (bt.prior_basis == "PIT") & (bt.spec_id == "stack_clip")]
     sets = {"all_14": s.quarter.tolist(),
@@ -120,7 +124,7 @@ def main():
         rows.append(dict(set=name, n=len(sub), combination_mae=sub.abs_err.mean(),
                          street_mae=nb.abs_err.mean() if len(nb) else np.nan,
                          naive_mae=sub.seasonal_naive_point.sub(sub.actual).abs().mean()))
-    pd.DataFrame(rows).to_csv(OUT / "23_diag_shock_vs_calm.csv", index=False)
+    pd.DataFrame(rows).to_csv(wpath("23_diag_shock_vs_calm.csv"), index=False)
 
     # LIVE 3Q26 for the Street-independent variant (what the pitch may quote when it
     # explicitly does not want to lean on consensus)
@@ -147,15 +151,15 @@ def main():
     clipped = C.apply_clip(raw, g, 50.085470)[0]
     pd.DataFrame([dict(variant="street_independent_live_3Q26", raw_pct=raw, clipped_pct=clipped,
                        weights=json.dumps({k: round(float(w[k]), 4) for k in vals}),
-                       points=json.dumps({k: round(v, 4) for k, v in vals.items()}))])         .to_csv(OUT / "23_diag_street_independent_live.csv", index=False)
+                       points=json.dumps({k: round(v, 4) for k, v in vals.items()}))])         .to_csv(wpath("23_diag_street_independent_live.csv"), index=False)
     print("street-independent LIVE 3Q26: raw %.3f clipped %.3f" % (raw, clipped))
 
     pd.set_option("display.width", 220)
     print(lo.round(4).to_string(index=False))
     print()
-    print(pd.read_csv(OUT / "23_diag_member_scores.csv").round(3).to_string(index=False))
+    print(pd.read_csv(rpath("23_diag_member_scores.csv")).round(3).to_string(index=False))
     print()
-    print(pd.read_csv(OUT / "23_diag_shock_vs_calm.csv").round(3).to_string(index=False))
+    print(pd.read_csv(rpath("23_diag_shock_vs_calm.csv")).round(3).to_string(index=False))
 
 
 if __name__ == "__main__":

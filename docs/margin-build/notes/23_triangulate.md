@@ -235,3 +235,83 @@ See the RESUME section of `docs/margin-build/SYNTHESIS.md` — it is the authori
 line: write the WS22 group C `revenue_leg_live.csv` harness patch, reconcile or retire WS31b's
 4Q26 profile, and build a genuine h=1 object for 4Q26, because that is the quarter the 5 Nov guide
 actually lands on and the only one where this build has no edge.
+
+---
+
+## Audit response (appended by WS31, 14 Sep 2026 — history above is not rewritten)
+
+The Codex/Astra audit (`docs/margin-build/audit/CODEX_ASTRA_AUDIT.md`, 18 findings: 1 critical,
+12 major, 5 minor) was applied to this package. Triage table with a decision per finding:
+`docs/margin-build/audit/AUDIT_RESPONSE.md`. Every number that moved, before -> after:
+`docs/margin-build/SYNTHESIS.md` §11. **No finding was rejected**; finding 16 is accepted in part
+(the workbook is now labelled a frozen report; wiring it into an input-driven model is deferred,
+with the reason). Pre-audit copies of every CSV live in
+`data/processed/margin_build/23_final_model/_pre_audit/`, the registry in
+`registry/final-margin__combined_pre_audit.csv.bak`, the workbook in
+`model/ABNB_margin_model_pre_audit.xlsx`.
+
+**The one that matters (critical, 01).** `combine.run_backtest` and `diagnostics.replay` chose the
+weight-calibration pool and the conformal-band pool by *quarter order* (`qs[:i]`), not by what had
+printed. At h=1 and h=2 that let a vintage use an actual it could not have seen — 2023Q3 forecast
+on 9 May 2023 was weighted on 2023Q2 errors, and 2023Q2 printed on 3 August. Both pools are now
+gated on `print_date <= vintage_date` (`combine.printed_before`, from the harness `targets.csv`).
+h=0 is unchanged by construction. h=1 W1 MAE 1.962 -> 1.952, W2 1.275 -> 1.269; h=2 W1 2.255 ->
+2.229, W2 1.762 -> 1.766; h=2 W1 cov80 0.833 -> 0.750. **Every pass/fail verdict survives**: h=0
+still passes both windows and both weightings, h=1 still loses to the raw Street (1.189 / 1.278),
+h=2 still fails in W2 (1.026x the naive).
+
+**What else changed in this package's code.**
+
+1. *One add-back schedule* (02, 03). The cost stack used M1's `other_net` rule (0.68% of revenue,
+   $32.5M in 3Q26) while the GAAP bridge subtracted only D&A ($20.6M) — $11.9M of unsupported
+   add-backs, and a five-line sum that did not equal the displayed total. The stack now carries
+   **D&A only** (`addbacks_musd`, from the same M7 bridge the GAAP walk uses); on actuals
+   2024Q1-2026Q2 `other_net - D&A` runs -12 to +6, mean -1.2, so D&A is the schedule the data
+   supports. `sum_five_lines_musd`, `addbacks_musd` and `recon_gap_musd` are now displayed columns,
+   and the Bridge sheet shows the reconciliation as three rows. Effect: 3Q26 S&M $790.2M -> $781.1M
+   (+35.0% -> +33.5% y/y), pd and G&A a little lower; EBITDA, margin, operating income and EPS
+   unchanged.
+2. *The adopted dollar object* (04). What the card quotes is the margin combination times revenue,
+   which was never registered or calibrated; the band came from the margin route and the beat
+   probability from the four-member dollar combination. `final-margin__combined_dollar_from_margin`
+   is now built, scored and registered (576 rows): W1/W2 h=0 MAE **$30.7M / $25.8M**, 0.25x / 0.26x
+   the naive, 0.47x / 0.44x the Street, better than the Street in 14 of 14 and 10 of 10 (sign p
+   0.0001 / 0.0010). Band **$2,337-2,462M**, P(beat) **0.779** on its sd of $48.8M. The old **0.77
+   is withdrawn**, not restated.
+3. *Scenario statements* (05). Bear and bull now carry M6's fitted cost response (k = 0.364 on
+   total cash costs) rather than the base margin on a different revenue. FY27 bear/bull margin
+   34.51/34.71 -> **32.15/36.53**.
+4. *EPS bands* (06). Joint, not EBITDA-only: M7's measured bridge sd $0.083 (W2 h=0 with EBITDA
+   known) in quadrature with the EBITDA term. 3Q26 $2.74-3.02 -> **$2.70-3.05**. The old column is
+   kept as `eps_q10/q90_ebitda_only`.
+5. *Cash flow and annual arithmetic* (07, 15). CFO is rebuilt from the updated **net income**
+   (`CFO = NI + D&A + SBC + working capital + other`, M7's identity), not moved by the pretax
+   EBITDA delta; annual tax and net income are the sum of the quarters with the ETR derived
+   afterwards. FY26 FCF mid 4,830 -> **4,844**; FY26 base NI 3,145.93 -> **3,146.12**.
+6. *Registry hygiene* (08, 09, 17). `street_vendor` / `street_as_of` / `knowable_from` propagated
+   (768 consensus-anchored rows); `n_params` = 54 with the 2+52 split in `notes`; `n_train` =
+   prior observations; `n_members`, the member list and `consensus_anchored` in `notes`; the
+   `<bound method NDFrame.clip>` bug fixed (`r["clip"]`). A first-class `n_members` **column** is
+   impossible without a harness change: FORMAT 1.0 is frozen and `validate_registry_frame` raises
+   on unknown columns.
+7. *Guards* (18, and new). `MARGIN_VERIFY_ONLY=1` recomputes the whole package into `_verify/`,
+   writes nothing and no registry row, and prints a per-file comparison against the committed CSVs.
+   `run.py` step 4b asserts every identity above and exits 2 if one breaks.
+8. *Wording* (10, 11, 12, 13) — rewritten in SYNTHESIS §1, §2, §5 and §9, not here: results are
+   retrospective and conditional on a pool selected after seeing the scoreboard; "attained coverage
+   82-91%" is withdrawn (it was a rank grid from n, not a measurement); the FY floor is an
+   inequality, not a 27.6% point forecast or an automatic sell; and the peer opex regression is
+   imprecise (k 0.14, t 0.47, SE 0.30, 95% CI -0.44 to +0.72), not a demonstration that costs do
+   not respond.
+
+**Incidental repair found on the way.** `combine.run_live` looked up the bridge-v3 revenue path with
+canonical quarter codes (`2026Q3`) against a file keyed `3Q26`, so the `ebitda_musd_{base,bear,bull}`
+columns of `23_combination_live.csv` were silently never written. Fixed (`bridge_v3_revenue()`);
+nothing downstream had used them, so no published number changed.
+
+**Commands re-run, in this order, sequentially (never two at once — they shell out to `score.py`):**
+
+```bash
+py -3.13 analysis/src/margin_build/23_final_model/run.py      # exit 0; ends by calling score.py
+py -3.13 analysis/src/margin_build/20_scoreboard/run.py       # exit 0
+```

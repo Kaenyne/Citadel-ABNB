@@ -10,10 +10,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | k/n | p_sn | p_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| final-margin | combined | W1 | 0 | PIT | 14 | 1.12 | 0.82 | 1.57 | -0.66 | -0.42 | 0.502 | 0.430 | 0.705 | 11/14 | 0.003 | 0.029 | 0.82 | 0.93 | 2 | True | True |
-| final-margin | combined | W1 | 0 | PIT | 14 | 1.13 | 0.82 | 1.58 | -0.67 | -0.44 | 0.504 | 0.430 | 0.708 | 11/14 | 0.003 | 0.029 | 0.83 | 0.93 | 2 | True | True |
-| final-margin | combined | W1 | 0 | PIT | 14 | 1.13 | 0.82 | 1.58 | -0.67 | -0.44 | 0.505 | 0.431 | 0.709 | 11/14 | 0.003 | 0.029 | 0.83 | 0.93 | 2 | True | True |
-| final-margin | combined | W1 | 0 | PIT | 14 | 1.19 | 0.84 | 1.62 | -0.60 | -0.42 | 0.534 | 0.441 | 0.750 | 11/14 | 0.029 | 0.090 | 0.86 | 0.93 | 2 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 1.12 | 0.82 | 1.57 | -0.66 | -0.42 | 0.502 | 0.430 | 0.705 | 11/14 | 0.003 | 0.029 | 0.82 | 0.93 | 54 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 1.13 | 0.82 | 1.58 | -0.67 | -0.44 | 0.504 | 0.430 | 0.708 | 11/14 | 0.003 | 0.029 | 0.83 | 0.93 | 54 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 1.13 | 0.82 | 1.58 | -0.67 | -0.44 | 0.505 | 0.431 | 0.709 | 11/14 | 0.003 | 0.029 | 0.83 | 0.93 | 54 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 1.19 | 0.84 | 1.62 | -0.60 | -0.42 | 0.534 | 0.441 | 0.750 | 11/14 | 0.029 | 0.090 | 0.86 | 0.93 | 54 | True | True |
 | street-bias | dispersion_conditioned | W1 | 0 | PIT | 14 | 1.22 | 0.86 | 1.58 | 0.13 | -0.16 | 0.547 | 0.449 | 0.768 | 10/14 | 0.090 | 0.212 | 2.37 | 1.00 | 5 | True | True |
 | street-bias | dispersion_conditioned | W1 | 0 | PIT | 14 | 1.33 | 0.82 | 1.81 | 0.44 | 0.08 | 0.594 | 0.429 | 0.835 | 10/14 | 0.090 | 0.212 | 2.43 | 1.00 | 5 | True | True |
 | street-bias | dispersion_conditioned | W1 | 0 | PIT | 14 | 1.33 | 0.82 | 1.81 | 0.44 | 0.08 | 0.594 | 0.429 | 0.835 | 10/14 | 0.090 | 0.212 | 2.43 | 1.00 | 5 | True | True |
@@ -94,11 +94,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 4.60 | 3.29 | 6.37 | -0.30 | -0.06 | 2.056 | 1.719 | 2.890 | 4/14 | 0.971 | 0.910 | 3.91 | 0.86 | 5 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 5.94 | 3.47 | 9.65 | 5.17 | 1.86 | 2.655 | 1.814 | 3.730 | 4/14 | 0.971 | 0.994 | 5.77 | 0.86 | 7 | False | False |
 | baselines-margin | trailing4 | W1 | 0 | PIT | 14 | 9.48 | 8.49 | 12.10 | 0.64 | 1.21 | 4.236 | 4.440 | 5.953 | 2/14 | 0.999 | 0.994 | 6.93 | 0.79 | 2 | False | False |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 1.10 | 0.81 | 1.56 | -0.65 | -0.45 | 0.493 | 0.424 | 0.693 | 10/14 | 0.006 | 0.006 | 0.82 | 0.93 | 2 | True | True |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 1.11 | 0.81 | 1.56 | -0.65 | -0.44 | 0.494 | 0.425 | 0.694 | 10/14 | 0.006 | 0.006 | 0.82 | 0.93 | 2 | True | True |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 1.11 | 0.81 | 1.57 | -0.65 | -0.44 | 0.495 | 0.425 | 0.696 | 11/14 | 0.003 | 0.029 | 0.82 | 0.93 | 2 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 1.10 | 0.81 | 1.56 | -0.65 | -0.45 | 0.493 | 0.424 | 0.693 | 10/14 | 0.006 | 0.006 | 0.82 | 0.93 | 54 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 1.11 | 0.81 | 1.56 | -0.65 | -0.44 | 0.494 | 0.425 | 0.694 | 10/14 | 0.006 | 0.006 | 0.82 | 0.93 | 54 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 1.11 | 0.81 | 1.57 | -0.65 | -0.44 | 0.495 | 0.425 | 0.696 | 11/14 | 0.003 | 0.029 | 0.82 | 0.93 | 54 | True | True |
 | street-bias | dispersion_conditioned | W1 | 0 | full_sample | 14 | 1.22 | 0.86 | 1.58 | 0.13 | -0.16 | 0.547 | 0.449 | 0.768 | 10/14 | 0.090 | 0.212 | 3.44 | 1.00 | 5 | True | True |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 1.26 | 0.86 | 1.69 | -0.49 | -0.40 | 0.564 | 0.448 | 0.793 | 10/14 | 0.090 | 0.090 | 0.88 | 0.93 | 2 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 1.26 | 0.86 | 1.69 | -0.49 | -0.40 | 0.564 | 0.448 | 0.793 | 10/14 | 0.090 | 0.090 | 0.88 | 0.93 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 1.29 | 1.13 | 1.76 | -0.26 | -0.09 | 0.576 | 0.589 | 0.809 | 8/14 | 0.055 | 0.395 | 1.77 | 1.00 | 2 | True | True |
 | street-bias | dispersion_conditioned | W1 | 0 | full_sample | 14 | 1.33 | 0.82 | 1.81 | 0.44 | 0.08 | 0.594 | 0.429 | 0.835 | 10/14 | 0.090 | 0.212 | 3.49 | 1.00 | 5 | True | True |
 | street-bias | dispersion_conditioned | W1 | 0 | full_sample | 14 | 1.33 | 0.82 | 1.81 | 0.44 | 0.08 | 0.594 | 0.429 | 0.835 | 10/14 | 0.090 | 0.212 | 3.49 | 1.00 | 5 | True | True |
@@ -193,10 +193,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | street-bias | street_plus_flowthrough | W1 | 1 | PIT | 13 | 1.84 | 1.52 | 2.72 | 1.34 | 0.99 | 0.782 | 0.786 | 1.120 | 8/13 | 0.291 | 0.500 | 2.73 | 1.00 | 6 | False | True |
 | street-bias | street_plus_flowthrough | W1 | 1 | PIT | 13 | 1.85 | 1.41 | 2.89 | 1.32 | 0.84 | 0.786 | 0.731 | 1.126 | 9/13 | 0.133 | 0.500 | 2.66 | 1.00 | 6 | False | True |
 | street-bias | dispersion_conditioned | W1 | 1 | PIT | 13 | 1.88 | 1.51 | 2.46 | 1.60 | 1.24 | 0.799 | 0.781 | 1.144 | 8/13 | 0.291 | 0.709 | 2.26 | 1.00 | 5 | False | True |
-| final-margin | combined | W1 | 1 | PIT | 13 | 1.96 | 1.55 | 2.37 | -0.43 | -0.36 | 0.833 | 0.803 | 1.193 | 9/13 | 0.133 | 0.954 | 1.31 | 0.85 | 2 | True | True |
-| final-margin | combined | W1 | 1 | PIT | 13 | 1.96 | 1.57 | 2.36 | -0.44 | -0.38 | 0.835 | 0.810 | 1.196 | 9/13 | 0.133 | 0.954 | 1.31 | 0.85 | 2 | True | True |
-| final-margin | combined | W1 | 1 | PIT | 13 | 1.96 | 1.57 | 2.36 | -0.44 | -0.38 | 0.835 | 0.810 | 1.196 | 9/13 | 0.133 | 0.954 | 1.31 | 0.85 | 2 | True | True |
-| final-margin | combined | W1 | 1 | PIT | 13 | 1.97 | 1.59 | 2.36 | -0.47 | -0.42 | 0.838 | 0.824 | 1.201 | 9/13 | 0.133 | 0.954 | 1.31 | 0.85 | 2 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 1.94 | 1.54 | 2.34 | -0.44 | -0.37 | 0.827 | 0.798 | 1.184 | 9/13 | 0.133 | 0.954 | 1.29 | 0.85 | 54 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 1.95 | 1.56 | 2.35 | -0.45 | -0.39 | 0.831 | 0.807 | 1.189 | 9/13 | 0.133 | 0.954 | 1.30 | 0.85 | 54 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 1.95 | 1.56 | 2.35 | -0.45 | -0.39 | 0.831 | 0.807 | 1.189 | 9/13 | 0.133 | 0.954 | 1.30 | 0.85 | 54 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 1.97 | 1.59 | 2.36 | -0.47 | -0.42 | 0.838 | 0.824 | 1.201 | 9/13 | 0.133 | 0.954 | 1.31 | 0.85 | 54 | True | True |
 | street-bias | dispersion_conditioned | W1 | 1 | PIT | 13 | 2.09 | 1.80 | 2.53 | 1.65 | 1.60 | 0.890 | 0.930 | 1.274 | 7/13 | 0.500 | 0.709 | 2.35 | 0.92 | 5 | False | False |
 | street-bias | dispersion_conditioned | W1 | 1 | PIT | 13 | 2.09 | 1.80 | 2.53 | 1.65 | 1.60 | 0.890 | 0.930 | 1.274 | 7/13 | 0.500 | 0.709 | 2.35 | 0.92 | 5 | False | False |
 | guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 2.19 | 1.73 | 2.88 | -1.91 | -1.47 | 0.931 | 0.895 | 1.334 | 9/13 | 0.133 | 0.998 | 1.77 | 1.00 | 1 | True | True |
@@ -276,12 +276,12 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | street-bias | street_plus_flowthrough | W1 | 1 | full_sample | 13 | 1.77 | 1.38 | 2.53 | 0.97 | 0.65 | 0.754 | 0.712 | 1.080 | 9/13 | 0.133 | 0.291 | 2.90 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 1 | full_sample | 13 | 1.77 | 1.38 | 2.53 | 0.97 | 0.65 | 0.754 | 0.712 | 1.080 | 9/13 | 0.133 | 0.291 | 2.90 | 1.00 | 6 | True | True |
 | street-bias | dispersion_conditioned | W1 | 1 | full_sample | 13 | 1.82 | 1.51 | 2.05 | 0.39 | 0.19 | 0.776 | 0.782 | 1.111 | 7/13 | 0.500 | 0.867 | 2.51 | 1.00 | 5 | False | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 1.83 | 1.50 | 2.21 | -0.46 | -0.48 | 0.777 | 0.775 | 1.112 | 9/13 | 0.133 | 0.709 | 1.19 | 0.77 | 2 | True | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 1.83 | 1.49 | 2.23 | -0.42 | -0.44 | 0.780 | 0.769 | 1.117 | 9/13 | 0.133 | 0.709 | 1.20 | 0.77 | 2 | True | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 1.83 | 1.49 | 2.23 | -0.42 | -0.44 | 0.780 | 0.769 | 1.117 | 9/13 | 0.133 | 0.709 | 1.20 | 0.77 | 2 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 1.83 | 1.50 | 2.21 | -0.46 | -0.48 | 0.777 | 0.775 | 1.112 | 9/13 | 0.133 | 0.709 | 1.18 | 0.77 | 54 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 1.83 | 1.49 | 2.23 | -0.42 | -0.44 | 0.780 | 0.769 | 1.117 | 9/13 | 0.133 | 0.709 | 1.19 | 0.77 | 54 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 1.83 | 1.49 | 2.23 | -0.42 | -0.44 | 0.780 | 0.769 | 1.117 | 9/13 | 0.133 | 0.709 | 1.19 | 0.77 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 1 | full_sample | 13 | 1.84 | 1.52 | 2.72 | 1.34 | 0.99 | 0.782 | 0.786 | 1.120 | 8/13 | 0.291 | 0.500 | 2.95 | 1.00 | 6 | False | True |
 | street-bias | street_plus_flowthrough | W1 | 1 | full_sample | 13 | 1.84 | 1.52 | 2.72 | 1.34 | 0.99 | 0.782 | 0.786 | 1.120 | 8/13 | 0.291 | 0.500 | 2.95 | 1.00 | 6 | False | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 1.84 | 1.49 | 2.24 | -0.41 | -0.42 | 0.784 | 0.768 | 1.122 | 9/13 | 0.133 | 0.867 | 1.21 | 0.77 | 2 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 1.84 | 1.49 | 2.24 | -0.41 | -0.42 | 0.784 | 0.768 | 1.122 | 9/13 | 0.133 | 0.867 | 1.20 | 0.77 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 1 | full_sample | 13 | 1.85 | 1.41 | 2.89 | 1.32 | 0.84 | 0.786 | 0.731 | 1.126 | 9/13 | 0.133 | 0.500 | 2.78 | 1.00 | 6 | False | True |
 | street-bias | dispersion_conditioned | W1 | 1 | full_sample | 13 | 1.88 | 1.51 | 2.46 | 1.60 | 1.24 | 0.799 | 0.781 | 1.144 | 8/13 | 0.291 | 0.709 | 2.49 | 1.00 | 5 | False | True |
 | guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 1.88 | 1.44 | 2.47 | -1.48 | -1.12 | 0.802 | 0.742 | 1.148 | 8/13 | 0.291 | 0.954 | 2.12 | 1.00 | 1 | True | True |
@@ -347,10 +347,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 2.02 | 1.82 | 2.48 | 0.98 | 1.22 | 0.815 | 0.927 |  | 7/12 | 0.387 |  | 1.76 | 1.00 | 3 | False | False |
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 2.02 | 1.82 | 2.55 | 1.06 | 1.15 | 0.816 | 0.930 |  | 8/12 | 0.194 |  | 1.82 | 1.00 | 3 | False | False |
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 2.18 | 1.85 | 2.63 | 0.80 | 1.07 | 0.879 | 0.946 |  | 7/12 | 0.387 |  | 1.81 | 1.00 | 3 | False | False |
-| final-margin | combined | W1 | 2 | PIT | 12 | 2.23 | 1.87 | 2.55 | -0.52 | -0.35 | 0.898 | 0.956 |  | 7/12 | 0.387 |  | 1.45 | 0.83 | 2 | False | True |
-| final-margin | combined | W1 | 2 | PIT | 12 | 2.26 | 1.89 | 2.58 | -0.46 | -0.29 | 0.910 | 0.966 |  | 7/12 | 0.387 |  | 1.46 | 0.83 | 2 | False | False |
-| final-margin | combined | W1 | 2 | PIT | 12 | 2.26 | 1.89 | 2.58 | -0.46 | -0.29 | 0.910 | 0.966 |  | 7/12 | 0.387 |  | 1.46 | 0.83 | 2 | False | False |
-| final-margin | combined | W1 | 2 | PIT | 12 | 2.27 | 1.90 | 2.60 | -0.43 | -0.26 | 0.916 | 0.971 |  | 7/12 | 0.387 |  | 1.47 | 0.83 | 2 | False | False |
+| final-margin | combined | W1 | 2 | PIT | 12 | 2.23 | 1.87 | 2.55 | -0.52 | -0.35 | 0.898 | 0.956 |  | 7/12 | 0.387 |  | 1.45 | 0.75 | 54 | False | True |
+| final-margin | combined | W1 | 2 | PIT | 12 | 2.23 | 1.86 | 2.55 | -0.44 | -0.27 | 0.900 | 0.950 |  | 6/12 | 0.613 |  | 1.45 | 0.75 | 54 | False | False |
+| final-margin | combined | W1 | 2 | PIT | 12 | 2.23 | 1.86 | 2.55 | -0.44 | -0.27 | 0.900 | 0.950 |  | 6/12 | 0.613 |  | 1.45 | 0.75 | 54 | False | False |
+| final-margin | combined | W1 | 2 | PIT | 12 | 2.23 | 1.86 | 2.55 | -0.41 | -0.22 | 0.900 | 0.948 |  | 6/12 | 0.613 |  | 1.45 | 0.75 | 54 | False | False |
 | margin-ts | ensemble_simple | W1 | 2 | PIT | 12 | 2.33 | 2.01 | 2.94 | 0.67 | 0.50 | 0.938 | 1.026 |  | 7/12 | 0.387 |  | 2.74 | 1.00 | 5 | False | False |
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 2.40 | 2.04 | 2.77 | 0.42 | 0.85 | 0.968 | 1.041 |  | 6/12 | 0.613 |  | 1.69 | 0.83 | 3 | False | False |
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 2.40 | 2.08 | 2.93 | 0.70 | 1.03 | 0.969 | 1.061 |  | 7/12 | 0.387 |  | 1.95 | 1.00 | 3 | False | False |
@@ -407,10 +407,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 1.73 | 1.60 | 1.89 | 0.10 | 0.23 | 0.700 | 0.817 |  | 8/12 | 0.194 |  | 1.73 | 1.00 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 1.88 | 1.66 | 2.07 | -0.05 | 0.17 | 0.760 | 0.845 |  | 8/12 | 0.194 |  | 1.56 | 1.00 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 1.89 | 1.62 | 2.06 | 0.12 | 0.31 | 0.762 | 0.828 |  | 8/12 | 0.194 |  | 1.54 | 1.00 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 2.09 | 1.77 | 2.53 | -1.03 | -0.78 | 0.843 | 0.902 |  | 8/12 | 0.194 |  | 1.43 | 0.75 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 2.13 | 1.79 | 2.57 | -1.02 | -0.76 | 0.859 | 0.915 |  | 7/12 | 0.387 |  | 1.46 | 0.75 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 2.13 | 1.79 | 2.57 | -1.02 | -0.76 | 0.859 | 0.915 |  | 7/12 | 0.387 |  | 1.46 | 0.75 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 2.15 | 1.81 | 2.59 | -1.02 | -0.75 | 0.868 | 0.921 |  | 6/12 | 0.613 |  | 1.48 | 0.75 | 2 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 2.09 | 1.77 | 2.53 | -1.03 | -0.78 | 0.843 | 0.902 |  | 8/12 | 0.194 |  | 1.41 | 0.75 | 54 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 2.13 | 1.79 | 2.57 | -1.02 | -0.76 | 0.859 | 0.915 |  | 7/12 | 0.387 |  | 1.44 | 0.75 | 54 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 2.13 | 1.79 | 2.57 | -1.02 | -0.76 | 0.859 | 0.915 |  | 7/12 | 0.387 |  | 1.44 | 0.75 | 54 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 2.15 | 1.81 | 2.59 | -1.02 | -0.75 | 0.868 | 0.921 |  | 6/12 | 0.613 |  | 1.45 | 0.75 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 2.22 | 1.99 | 2.96 | -1.77 | -1.39 | 0.895 | 1.013 |  | 8/12 | 0.194 |  | 1.93 | 1.00 | 1 | True | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 2.23 | 2.18 | 2.61 | -0.23 | -0.63 | 0.902 | 1.112 |  | 6/12 | 0.613 |  | 1.63 | 1.00 | 14 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | full_sample | 12 | 2.24 | 2.05 | 2.63 | -0.06 | -0.33 | 0.903 | 1.047 |  | 5/12 | 0.806 |  | 1.60 | 1.00 | 12 | False | False |
@@ -464,11 +464,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | trailing4 | W1 | 2 | full_sample | 12 | 9.52 | 8.70 | 12.19 | -0.76 | 1.16 | 3.841 | 4.438 |  | 2/12 | 0.997 |  | 6.86 | 0.83 | 2 | False | False |
 | street-bias | dispersion_conditioned | W2 | 0 | PIT | 10 | 0.74 | 0.62 | 1.05 | 0.26 | 0.05 | 0.380 | 0.354 | 0.567 | 8/10 | 0.055 | 0.172 | 1.40 | 1.00 | 5 | True | True |
 | street-bias | dispersion_conditioned | W2 | 0 | PIT | 10 | 0.74 | 0.62 | 1.05 | 0.26 | 0.05 | 0.380 | 0.354 | 0.567 | 8/10 | 0.055 | 0.172 | 1.40 | 1.00 | 5 | True | True |
-| final-margin | combined | W2 | 0 | PIT | 10 | 0.78 | 0.65 | 1.12 | -0.47 | -0.30 | 0.398 | 0.373 | 0.595 | 9/10 | 0.011 | 0.055 | 0.60 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 0.78 | 0.65 | 1.12 | -0.47 | -0.30 | 0.398 | 0.373 | 0.595 | 9/10 | 0.011 | 0.055 | 0.60 | 1.00 | 54 | True | True |
 | street-bias | dispersion_conditioned | W2 | 0 | PIT | 10 | 0.79 | 0.70 | 1.07 | 0.07 | -0.17 | 0.402 | 0.400 | 0.600 | 8/10 | 0.055 | 0.172 | 1.38 | 1.00 | 5 | True | True |
-| final-margin | combined | W2 | 0 | PIT | 10 | 0.79 | 0.66 | 1.13 | -0.47 | -0.30 | 0.402 | 0.377 | 0.601 | 9/10 | 0.011 | 0.055 | 0.60 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 0 | PIT | 10 | 0.79 | 0.66 | 1.13 | -0.47 | -0.30 | 0.402 | 0.377 | 0.601 | 9/10 | 0.011 | 0.055 | 0.60 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 0 | PIT | 10 | 0.80 | 0.68 | 1.14 | -0.47 | -0.31 | 0.410 | 0.387 | 0.612 | 9/10 | 0.011 | 0.055 | 0.61 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 0.79 | 0.66 | 1.13 | -0.47 | -0.30 | 0.402 | 0.377 | 0.601 | 9/10 | 0.011 | 0.055 | 0.60 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 0.79 | 0.66 | 1.13 | -0.47 | -0.30 | 0.402 | 0.377 | 0.601 | 9/10 | 0.011 | 0.055 | 0.60 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 0.80 | 0.68 | 1.14 | -0.47 | -0.31 | 0.410 | 0.387 | 0.612 | 9/10 | 0.011 | 0.055 | 0.61 | 1.00 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | PIT | 10 | 0.99 | 0.93 | 1.22 | 0.32 | 0.41 | 0.504 | 0.528 | 0.753 | 7/10 | 0.172 | 0.377 | 1.46 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | PIT | 10 | 0.99 | 0.93 | 1.22 | 0.32 | 0.41 | 0.504 | 0.528 | 0.753 | 7/10 | 0.172 | 0.377 | 1.46 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | PIT | 10 | 1.02 | 0.98 | 1.33 | 0.49 | 0.49 | 0.522 | 0.558 | 0.779 | 7/10 | 0.172 | 0.623 | 1.45 | 1.00 | 6 | True | True |
@@ -549,10 +549,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | street-bias | dispersion_conditioned | W2 | 0 | full_sample | 10 | 0.74 | 0.62 | 1.05 | 0.26 | 0.05 | 0.380 | 0.354 | 0.567 | 8/10 | 0.055 | 0.172 | 3.34 | 1.00 | 5 | True | True |
 | street-bias | dispersion_conditioned | W2 | 0 | full_sample | 10 | 0.74 | 0.62 | 1.05 | 0.26 | 0.05 | 0.380 | 0.354 | 0.567 | 8/10 | 0.055 | 0.172 | 3.34 | 1.00 | 5 | True | True |
 | street-bias | dispersion_conditioned | W2 | 0 | full_sample | 10 | 0.79 | 0.70 | 1.07 | 0.07 | -0.17 | 0.402 | 0.400 | 0.600 | 8/10 | 0.055 | 0.172 | 3.33 | 1.00 | 5 | True | True |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 0.83 | 0.67 | 1.21 | -0.47 | -0.31 | 0.423 | 0.383 | 0.633 | 8/10 | 0.020 | 0.055 | 0.64 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 0.83 | 0.68 | 1.23 | -0.48 | -0.32 | 0.426 | 0.386 | 0.636 | 8/10 | 0.020 | 0.055 | 0.64 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 0.84 | 0.69 | 1.27 | -0.52 | -0.34 | 0.429 | 0.391 | 0.640 | 9/10 | 0.011 | 0.055 | 0.65 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 0.86 | 0.69 | 1.24 | -0.46 | -0.31 | 0.437 | 0.392 | 0.653 | 8/10 | 0.055 | 0.055 | 0.65 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 0.83 | 0.67 | 1.21 | -0.47 | -0.31 | 0.423 | 0.383 | 0.633 | 8/10 | 0.020 | 0.055 | 0.64 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 0.83 | 0.68 | 1.23 | -0.48 | -0.32 | 0.426 | 0.386 | 0.636 | 8/10 | 0.020 | 0.055 | 0.64 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 0.84 | 0.69 | 1.27 | -0.52 | -0.34 | 0.429 | 0.391 | 0.640 | 9/10 | 0.011 | 0.055 | 0.65 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 0.86 | 0.69 | 1.24 | -0.46 | -0.31 | 0.437 | 0.392 | 0.653 | 8/10 | 0.055 | 0.055 | 0.65 | 1.00 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | full_sample | 10 | 0.99 | 0.93 | 1.22 | 0.32 | 0.41 | 0.504 | 0.528 | 0.753 | 7/10 | 0.172 | 0.377 | 3.46 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | full_sample | 10 | 0.99 | 0.93 | 1.22 | 0.32 | 0.41 | 0.504 | 0.528 | 0.753 | 7/10 | 0.172 | 0.377 | 3.46 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | full_sample | 10 | 1.02 | 0.98 | 1.33 | 0.49 | 0.49 | 0.522 | 0.558 | 0.779 | 7/10 | 0.172 | 0.623 | 3.48 | 1.00 | 6 | True | True |
@@ -635,10 +635,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | q_sentence_direction | W2 | 1 | PIT | 1 | 0.74 | 0.74 | 0.74 | -0.74 | -0.74 |  |  |  |  |  |  | 1.33 | 1.00 | 2 | False | False |
 | baselines-margin | street | W2 | 1 | PIT | 9 | 0.99 | 0.97 | 1.21 | 0.28 | 0.03 | 0.629 | 0.605 | 1.000 | 7/9 | 0.090 |  | 1.18 | 1.00 | 1 | True | True |
 | margin-ts | q_sentence_direction | W2 | 1 | PIT | 1 | 1.03 | 1.03 | 1.03 | 1.03 | 1.03 |  |  |  |  |  |  | 1.37 | 1.00 | 2 | False | False |
-| final-margin | combined | W2 | 1 | PIT | 9 | 1.27 | 1.27 | 1.47 | 0.22 | -0.12 | 0.802 | 0.796 | 1.274 | 6/9 | 0.254 | 0.980 | 0.80 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | PIT | 9 | 1.28 | 1.29 | 1.49 | 0.22 | -0.13 | 0.808 | 0.806 | 1.285 | 6/9 | 0.254 | 0.980 | 0.80 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | PIT | 9 | 1.28 | 1.29 | 1.49 | 0.22 | -0.13 | 0.808 | 0.806 | 1.285 | 6/9 | 0.254 | 0.980 | 0.80 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | PIT | 9 | 1.30 | 1.32 | 1.51 | 0.22 | -0.14 | 0.821 | 0.827 | 1.305 | 6/9 | 0.254 | 0.980 | 0.81 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 1.26 | 1.26 | 1.46 | 0.23 | -0.12 | 0.796 | 0.789 | 1.265 | 6/9 | 0.254 | 0.980 | 0.80 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 1.27 | 1.28 | 1.47 | 0.23 | -0.13 | 0.804 | 0.802 | 1.278 | 6/9 | 0.254 | 0.980 | 0.81 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 1.27 | 1.28 | 1.47 | 0.23 | -0.13 | 0.804 | 0.802 | 1.278 | 6/9 | 0.254 | 0.980 | 0.81 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 1.30 | 1.32 | 1.51 | 0.22 | -0.14 | 0.821 | 0.827 | 1.305 | 6/9 | 0.254 | 0.980 | 0.82 | 1.00 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 1.30 | 1.21 | 1.44 | 0.67 | 0.47 | 0.826 | 0.754 | 1.313 | 6/9 | 0.254 | 0.746 | 2.28 | 1.00 | 1 | False | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 1.32 | 1.24 | 1.45 | 0.65 | 0.43 | 0.839 | 0.777 | 1.333 | 6/9 | 0.254 | 0.746 | 2.08 | 1.00 | 1 | False | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 1.35 | 1.37 | 1.55 | -1.12 | -1.11 | 0.857 | 0.854 | 1.363 | 6/9 | 0.254 | 0.980 | 1.45 | 1.00 | 1 | True | True |
@@ -720,13 +720,13 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | street | W2 | 1 | full_sample | 9 | 0.99 | 0.97 | 1.21 | 0.28 | 0.03 | 0.629 | 0.605 | 1.000 | 7/9 | 0.090 |  | 1.30 | 1.00 | 1 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.09 | 1.14 | 1.27 | 0.49 | 0.45 | 0.693 | 0.709 | 1.101 | 7/9 | 0.090 | 0.746 | 1.83 | 1.00 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.14 | 1.22 | 1.29 | 0.54 | 0.53 | 0.721 | 0.760 | 1.146 | 7/9 | 0.090 | 0.910 | 2.04 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 1.14 | 1.21 | 1.40 | 0.08 | -0.23 | 0.725 | 0.754 | 1.153 | 6/9 | 0.254 | 0.910 | 0.74 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 1.14 | 1.21 | 1.40 | 0.08 | -0.23 | 0.725 | 0.754 | 1.153 | 6/9 | 0.254 | 0.910 | 0.75 | 1.00 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.15 | 1.14 | 1.39 | -0.88 | -0.85 | 0.728 | 0.711 | 1.157 | 6/9 | 0.254 | 0.910 | 1.77 | 1.00 | 1 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.16 | 1.14 | 1.28 | 0.63 | 0.55 | 0.732 | 0.713 | 1.163 | 7/9 | 0.090 | 0.746 | 1.82 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 1.16 | 1.22 | 1.41 | 0.07 | -0.24 | 0.734 | 0.763 | 1.166 | 6/9 | 0.254 | 0.910 | 0.74 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 1.16 | 1.22 | 1.41 | 0.07 | -0.24 | 0.734 | 0.763 | 1.166 | 6/9 | 0.254 | 0.910 | 0.74 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 1.16 | 1.22 | 1.41 | 0.07 | -0.24 | 0.734 | 0.763 | 1.166 | 6/9 | 0.254 | 0.910 | 0.75 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 1.16 | 1.22 | 1.41 | 0.07 | -0.24 | 0.734 | 0.763 | 1.166 | 6/9 | 0.254 | 0.910 | 0.75 | 1.00 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.16 | 1.12 | 1.40 | -0.89 | -0.83 | 0.735 | 0.697 | 1.168 | 6/9 | 0.254 | 0.910 | 1.93 | 1.00 | 1 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 1.19 | 1.25 | 1.43 | 0.06 | -0.27 | 0.751 | 0.782 | 1.194 | 6/9 | 0.254 | 0.910 | 0.75 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 1.19 | 1.25 | 1.43 | 0.06 | -0.27 | 0.751 | 0.782 | 1.194 | 6/9 | 0.254 | 0.910 | 0.76 | 1.00 | 54 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 1.29 | 1.38 | 1.51 | 0.40 | 0.26 | 0.816 | 0.863 | 1.297 | 6/9 | 0.254 | 0.910 | 1.10 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.31 | 1.37 | 1.43 | 0.40 | 0.21 | 0.829 | 0.857 | 1.317 | 5/9 | 0.500 | 0.910 | 1.45 | 1.00 | 5 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.35 | 1.37 | 1.54 | -1.12 | -1.11 | 0.858 | 0.854 | 1.364 | 6/9 | 0.254 | 0.980 | 1.47 | 1.00 | 1 | True | True |
@@ -801,10 +801,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 1.67 | 1.95 | 2.03 | -1.14 | -1.37 | 0.968 | 1.173 |  | 5/8 | 0.363 |  | 1.34 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 1.72 | 1.66 | 1.82 | 0.86 | 0.52 | 1.000 | 1.000 |  | 3/8 | 0.312 |  | 1.52 | 1.00 | 2 | False | True |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 1.72 | 1.66 | 1.82 | 0.86 | 0.52 | 1.000 | 1.000 |  | 0/8 |  |  | 1.52 | 1.00 | 1 | False | False |
-| final-margin | combined | W2 | 2 | PIT | 8 | 1.73 | 1.66 | 1.92 | 0.46 | -0.05 | 1.004 | 0.998 |  | 4/8 | 0.637 |  | 1.09 | 0.88 | 2 | False | True |
-| final-margin | combined | W2 | 2 | PIT | 8 | 1.76 | 1.71 | 1.94 | 0.43 | -0.10 | 1.024 | 1.029 |  | 3/8 | 0.855 |  | 1.10 | 0.88 | 2 | False | False |
-| final-margin | combined | W2 | 2 | PIT | 8 | 1.76 | 1.71 | 1.94 | 0.43 | -0.10 | 1.024 | 1.029 |  | 3/8 | 0.855 |  | 1.10 | 0.88 | 2 | False | False |
-| final-margin | combined | W2 | 2 | PIT | 8 | 1.78 | 1.74 | 1.95 | 0.41 | -0.12 | 1.034 | 1.044 |  | 3/8 | 0.855 |  | 1.11 | 0.88 | 2 | False | False |
+| final-margin | combined | W2 | 2 | PIT | 8 | 1.73 | 1.66 | 1.92 | 0.46 | -0.05 | 1.004 | 0.998 |  | 4/8 | 0.637 |  | 1.07 | 0.88 | 54 | False | True |
+| final-margin | combined | W2 | 2 | PIT | 8 | 1.77 | 1.71 | 1.94 | 0.42 | -0.10 | 1.026 | 1.031 |  | 3/8 | 0.855 |  | 1.09 | 0.88 | 54 | False | False |
+| final-margin | combined | W2 | 2 | PIT | 8 | 1.77 | 1.71 | 1.94 | 0.42 | -0.10 | 1.026 | 1.031 |  | 3/8 | 0.855 |  | 1.09 | 0.88 | 54 | False | False |
+| final-margin | combined | W2 | 2 | PIT | 8 | 1.78 | 1.74 | 1.95 | 0.41 | -0.13 | 1.037 | 1.048 |  | 3/8 | 0.855 |  | 1.10 | 0.88 | 54 | False | False |
 | guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 1.88 | 2.15 | 2.34 | -1.63 | -1.87 | 1.091 | 1.290 |  | 4/8 | 0.637 |  | 1.33 | 1.00 | 1 | False | False |
 | guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 1.93 | 2.17 | 2.35 | -1.69 | -1.90 | 1.121 | 1.306 |  | 4/8 | 0.637 |  | 1.47 | 1.00 | 1 | False | False |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 2.02 | 1.79 | 2.61 | 1.84 | 1.48 | 1.174 | 1.075 |  | 4/8 | 0.637 |  | 1.78 | 1.00 | 3 | False | False |
@@ -858,12 +858,12 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.24 | 1.36 | 1.55 | 0.36 | 0.26 | 0.722 | 0.818 |  | 4/8 | 0.637 |  | 1.79 | 1.00 | 5 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 1.30 | 1.37 | 1.58 | -0.10 | -0.44 | 0.756 | 0.825 |  | 5/8 | 0.363 |  | 2.63 | 1.00 | 5 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 1.39 | 1.47 | 1.59 | 0.01 | -0.36 | 0.810 | 0.884 |  | 4/8 | 0.637 |  | 2.61 | 1.00 | 1 | True | True |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 1.42 | 1.52 | 1.63 | -0.11 | -0.49 | 0.828 | 0.915 |  | 5/8 | 0.363 |  | 0.87 | 0.88 | 2 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 1.42 | 1.52 | 1.63 | -0.11 | -0.49 | 0.828 | 0.915 |  | 5/8 | 0.363 |  | 0.88 | 0.88 | 54 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 1.43 | 1.45 | 1.61 | 0.43 | 0.26 | 0.834 | 0.872 |  | 5/8 | 0.363 |  | 1.02 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.44 | 1.72 | 1.79 | -0.86 | -1.06 | 0.836 | 1.031 |  | 5/8 | 0.363 |  | 1.60 | 1.00 | 1 | True | False |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 1.44 | 1.55 | 1.64 | -0.10 | -0.46 | 0.839 | 0.931 |  | 5/8 | 0.363 |  | 0.87 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 1.44 | 1.55 | 1.64 | -0.10 | -0.46 | 0.839 | 0.931 |  | 5/8 | 0.363 |  | 0.87 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 1.45 | 1.56 | 1.64 | -0.09 | -0.45 | 0.844 | 0.938 |  | 5/8 | 0.363 |  | 0.88 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 1.44 | 1.55 | 1.64 | -0.10 | -0.46 | 0.839 | 0.931 |  | 5/8 | 0.363 |  | 0.89 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 1.44 | 1.55 | 1.64 | -0.10 | -0.46 | 0.839 | 0.931 |  | 5/8 | 0.363 |  | 0.89 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 1.45 | 1.56 | 1.64 | -0.09 | -0.45 | 0.844 | 0.938 |  | 5/8 | 0.363 |  | 0.89 | 1.00 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.47 | 1.73 | 1.79 | -0.82 | -1.04 | 0.852 | 1.040 |  | 5/8 | 0.363 |  | 1.39 | 1.00 | 1 | True | False |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 1.50 | 1.39 | 1.73 | 0.24 | 0.14 | 0.872 | 0.836 |  | 4/8 | 0.637 |  | 1.41 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 1.50 | 1.39 | 1.72 | 0.22 | 0.12 | 0.872 | 0.836 |  | 4/8 | 0.637 |  | 1.41 | 1.00 | 3 | True | True |
@@ -919,10 +919,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | k/n | p_sn | p_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| final-margin | combined | W1 | 0 | PIT | 14 | 39.61 | 29.49 | 48.33 | -13.94 | -10.70 | 0.321 | 0.254 | 0.607 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 2 | True | True |
-| final-margin | combined | W1 | 0 | PIT | 14 | 39.68 | 29.66 | 48.30 | -13.94 | -10.94 | 0.322 | 0.256 | 0.608 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 2 | True | True |
-| final-margin | combined | W1 | 0 | PIT | 14 | 39.68 | 29.66 | 48.30 | -13.94 | -10.94 | 0.322 | 0.256 | 0.608 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 2 | True | True |
-| final-margin | combined | W1 | 0 | PIT | 14 | 39.83 | 29.98 | 48.27 | -13.96 | -11.40 | 0.323 | 0.258 | 0.610 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 2 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | PIT | 14 | 30.50 | 24.55 | 39.87 | -11.27 | -5.85 | 0.247 | 0.212 | 0.467 | 13/14 | 0.001 | 0.000 | 22.23 | 0.86 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | PIT | 14 | 30.66 | 24.26 | 40.07 | -11.47 | -6.31 | 0.248 | 0.209 | 0.470 | 13/14 | 0.001 | 0.000 | 22.23 | 0.86 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | PIT | 14 | 30.74 | 24.12 | 40.19 | -11.56 | -6.54 | 0.249 | 0.208 | 0.471 | 13/14 | 0.001 | 0.000 | 22.23 | 0.86 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | PIT | 14 | 32.18 | 24.70 | 40.86 | -9.94 | -5.87 | 0.261 | 0.213 | 0.493 | 13/14 | 0.001 | 0.001 | 22.85 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 39.61 | 29.49 | 48.33 | -13.94 | -10.70 | 0.321 | 0.254 | 0.607 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 39.68 | 29.66 | 48.30 | -13.94 | -10.94 | 0.322 | 0.256 | 0.608 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 39.68 | 29.66 | 48.30 | -13.94 | -10.94 | 0.322 | 0.256 | 0.608 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | PIT | 14 | 39.83 | 29.98 | 48.27 | -13.96 | -11.40 | 0.323 | 0.258 | 0.610 | 12/14 | 0.006 | 0.090 | 26.79 | 0.86 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 0 | PIT | 14 | 42.83 | 34.18 | 52.47 | 26.49 | 20.24 | 0.347 | 0.295 | 0.656 | 10/14 | 0.090 | 0.090 | 102.67 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 0 | PIT | 14 | 43.06 | 33.99 | 53.00 | 21.41 | 17.34 | 0.349 | 0.293 | 0.660 | 10/14 | 0.090 | 0.029 | 102.87 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 0 | PIT | 14 | 43.06 | 33.99 | 53.00 | 21.41 | 17.34 | 0.349 | 0.293 | 0.660 | 10/14 | 0.090 | 0.029 | 102.87 | 1.00 | 6 | True | True |
@@ -1003,10 +1007,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 139.82 | 112.66 | 179.05 | 118.53 | 101.89 | 1.133 | 0.971 | 2.142 | 6/14 | 0.788 | 0.971 | 168.45 | 0.93 | 3 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 155.58 | 101.99 | 221.65 | 131.75 | 52.62 | 1.260 | 0.879 | 2.383 | 6/14 | 0.788 | 0.971 | 128.60 | 0.86 | 7 | False | True |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 271.62 | 252.70 | 365.51 | -41.75 | -15.55 | 2.201 | 2.179 | 4.161 | 4/14 | 0.971 | 0.994 | 195.07 | 0.86 | 3 | False | False |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 39.53 | 29.11 | 48.03 | -13.77 | -11.31 | 0.320 | 0.251 | 0.606 | 12/14 | 0.006 | 0.006 | 26.65 | 0.86 | 2 | True | True |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 39.64 | 28.86 | 48.08 | -12.53 | -10.03 | 0.321 | 0.249 | 0.607 | 12/14 | 0.006 | 0.006 | 26.77 | 0.86 | 2 | True | True |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 39.64 | 28.86 | 48.08 | -12.53 | -10.03 | 0.321 | 0.249 | 0.607 | 12/14 | 0.006 | 0.006 | 26.77 | 0.86 | 2 | True | True |
-| final-margin | combined | W1 | 0 | full_sample | 14 | 39.69 | 28.73 | 48.13 | -11.91 | -9.39 | 0.322 | 0.248 | 0.608 | 12/14 | 0.006 | 0.006 | 26.83 | 0.86 | 2 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | full_sample | 14 | 31.94 | 26.21 | 41.00 | -9.82 | -3.33 | 0.259 | 0.226 | 0.489 | 13/14 | 0.001 | 0.000 | 22.31 | 0.93 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | full_sample | 14 | 32.02 | 26.31 | 41.10 | -9.82 | -3.21 | 0.259 | 0.227 | 0.490 | 13/14 | 0.001 | 0.000 | 22.38 | 0.93 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | full_sample | 14 | 32.11 | 26.48 | 41.28 | -9.88 | -3.00 | 0.260 | 0.228 | 0.492 | 13/14 | 0.001 | 0.000 | 22.50 | 0.93 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 0 | full_sample | 14 | 35.39 | 27.30 | 43.14 | -6.45 | -2.22 | 0.287 | 0.235 | 0.542 | 12/14 | 0.006 | 0.006 | 23.98 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 39.53 | 29.11 | 48.03 | -13.77 | -11.31 | 0.320 | 0.251 | 0.606 | 12/14 | 0.006 | 0.006 | 26.65 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 39.64 | 28.86 | 48.08 | -12.53 | -10.03 | 0.321 | 0.249 | 0.607 | 12/14 | 0.006 | 0.006 | 26.77 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 39.64 | 28.86 | 48.08 | -12.53 | -10.03 | 0.321 | 0.249 | 0.607 | 12/14 | 0.006 | 0.006 | 26.77 | 0.86 | 54 | True | True |
+| final-margin | combined | W1 | 0 | full_sample | 14 | 39.69 | 28.73 | 48.13 | -11.91 | -9.39 | 0.322 | 0.248 | 0.608 | 12/14 | 0.006 | 0.006 | 26.83 | 0.86 | 54 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 40.48 | 38.23 | 51.30 | -22.65 | -7.53 | 0.328 | 0.330 | 0.620 | 13/14 | 0.001 | 0.212 | 51.03 | 1.00 | 2 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 40.73 | 38.28 | 51.43 | -21.88 | -6.85 | 0.330 | 0.330 | 0.624 | 14/14 | 0.000 | 0.212 | 45.82 | 0.93 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 41.43 | 40.57 | 51.38 | 4.01 | 9.56 | 0.336 | 0.350 | 0.635 | 10/14 | 0.090 | 0.029 | 40.69 | 0.93 | 3 | True | True |
@@ -1099,13 +1107,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 70.33 | 70.52 | 80.64 | -51.35 | -61.29 | 0.539 | 0.600 | 1.074 | 9/13 | 0.133 | 0.709 | 101.49 | 1.00 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 70.73 | 70.86 | 80.92 | -50.69 | -61.03 | 0.543 | 0.603 | 1.080 | 9/13 | 0.133 | 0.709 | 105.86 | 1.00 | 2 | True | True |
 | street-bias | dispersion_conditioned | W1 | 1 | PIT | 13 | 72.08 | 69.64 | 89.22 | 15.07 | -3.47 | 0.553 | 0.592 | 1.100 | 8/13 | 0.291 | 0.954 | 96.79 | 1.00 | 5 | True | True |
-| final-margin | combined | W1 | 1 | PIT | 13 | 74.93 | 69.86 | 85.54 | -6.59 | -22.43 | 0.575 | 0.594 | 1.144 | 9/13 | 0.133 | 0.709 | 49.51 | 0.62 | 2 | True | True |
-| final-margin | combined | W1 | 1 | PIT | 13 | 75.29 | 70.42 | 85.79 | -6.46 | -22.32 | 0.577 | 0.599 | 1.150 | 9/13 | 0.133 | 0.709 | 49.76 | 0.62 | 2 | True | True |
-| final-margin | combined | W1 | 1 | PIT | 13 | 75.29 | 70.42 | 85.79 | -6.46 | -22.32 | 0.577 | 0.599 | 1.150 | 9/13 | 0.133 | 0.709 | 49.76 | 0.62 | 2 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 75.19 | 70.11 | 86.31 | -6.20 | -22.01 | 0.577 | 0.596 | 1.148 | 9/13 | 0.133 | 0.709 | 50.38 | 0.62 | 54 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 75.47 | 70.59 | 86.32 | -6.20 | -22.04 | 0.579 | 0.601 | 1.152 | 9/13 | 0.133 | 0.709 | 50.40 | 0.62 | 54 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 75.47 | 70.59 | 86.32 | -6.20 | -22.04 | 0.579 | 0.601 | 1.152 | 9/13 | 0.133 | 0.709 | 50.40 | 0.62 | 54 | True | True |
 | baselines-margin | q_guide_implied | W1 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  |  |  |  | 46.78 | 1.00 | 1 | False | False |
-| final-margin | combined | W1 | 1 | PIT | 13 | 76.02 | 71.55 | 86.35 | -6.19 | -22.11 | 0.583 | 0.609 | 1.161 | 9/13 | 0.133 | 0.709 | 50.27 | 0.62 | 2 | True | True |
+| final-margin | combined | W1 | 1 | PIT | 13 | 76.02 | 71.55 | 86.35 | -6.19 | -22.11 | 0.583 | 0.609 | 1.161 | 9/13 | 0.133 | 0.709 | 50.45 | 0.62 | 54 | True | True |
 | street-bias | dispersion_conditioned | W1 | 1 | PIT | 13 | 76.88 | 71.69 | 94.74 | 37.25 | 20.54 | 0.590 | 0.610 | 1.174 | 8/13 | 0.291 | 0.709 | 100.32 | 1.00 | 5 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 77.84 | 70.57 | 88.70 | 6.35 | 6.38 | 0.597 | 0.600 | 1.188 | 10/13 | 0.046 | 0.867 | 58.91 | 1.00 | 3 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 1 | PIT | 13 | 78.08 | 73.00 | 91.22 | 1.36 | -17.53 | 0.599 | 0.621 | 1.192 | 8/13 | 0.291 | 0.867 | 53.20 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 1 | PIT | 13 | 78.30 | 73.41 | 91.42 | 1.15 | -17.98 | 0.600 | 0.625 | 1.195 | 8/13 | 0.291 | 0.709 | 53.30 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 1 | PIT | 13 | 78.30 | 73.41 | 91.42 | 1.15 | -17.98 | 0.600 | 0.625 | 1.195 | 8/13 | 0.291 | 0.709 | 53.30 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 1 | PIT | 13 | 78.72 | 74.22 | 91.82 | 0.74 | -18.87 | 0.604 | 0.631 | 1.202 | 8/13 | 0.291 | 0.709 | 53.50 | 0.62 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 1 | PIT | 13 | 80.21 | 72.61 | 107.65 | 38.82 | 10.16 | 0.615 | 0.618 | 1.225 | 8/13 | 0.291 | 0.709 | 191.81 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W1 | 1 | PIT | 13 | 80.21 | 72.61 | 107.65 | 38.82 | 10.16 | 0.615 | 0.618 | 1.225 | 8/13 | 0.291 | 0.709 | 191.81 | 1.00 | 6 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 80.34 | 66.66 | 98.60 | 39.11 | 23.63 | 0.616 | 0.567 | 1.227 | 7/13 | 0.500 | 0.500 | 63.38 | 0.92 | 3 | True | True |
@@ -1191,17 +1203,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 70.12 | 70.40 | 80.29 | -51.25 | -61.21 | 0.538 | 0.599 | 1.071 | 9/13 | 0.133 | 0.709 | 86.62 | 0.92 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 70.53 | 70.77 | 80.57 | -50.61 | -60.97 | 0.541 | 0.602 | 1.077 | 9/13 | 0.133 | 0.709 | 88.04 | 0.92 | 2 | True | True |
 | street-bias | dispersion_conditioned | W1 | 1 | full_sample | 13 | 72.08 | 69.64 | 89.22 | 15.07 | -3.47 | 0.553 | 0.592 | 1.100 | 8/13 | 0.291 | 0.954 | 97.55 | 1.00 | 5 | True | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 72.41 | 69.47 | 82.93 | -6.39 | -24.18 | 0.555 | 0.591 | 1.106 | 9/13 | 0.133 | 0.709 | 47.35 | 0.69 | 2 | True | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 72.59 | 69.05 | 82.61 | -8.15 | -24.84 | 0.557 | 0.587 | 1.108 | 9/13 | 0.133 | 0.709 | 47.37 | 0.69 | 2 | True | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 72.59 | 69.05 | 82.61 | -8.15 | -24.84 | 0.557 | 0.587 | 1.108 | 9/13 | 0.133 | 0.709 | 47.37 | 0.69 | 2 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 72.41 | 69.47 | 82.93 | -6.39 | -24.18 | 0.555 | 0.591 | 1.106 | 9/13 | 0.133 | 0.709 | 47.21 | 0.62 | 54 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 72.59 | 69.05 | 82.61 | -8.15 | -24.84 | 0.557 | 0.587 | 1.108 | 9/13 | 0.133 | 0.709 | 47.27 | 0.69 | 54 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 72.59 | 69.05 | 82.61 | -8.15 | -24.84 | 0.557 | 0.587 | 1.108 | 9/13 | 0.133 | 0.709 | 47.27 | 0.69 | 54 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 72.66 | 63.45 | 82.45 | -1.30 | -2.14 | 0.557 | 0.540 | 1.109 | 10/13 | 0.046 | 0.709 | 56.25 | 1.00 | 3 | True | True |
-| final-margin | combined | W1 | 1 | full_sample | 13 | 72.68 | 68.84 | 82.50 | -9.03 | -25.17 | 0.557 | 0.586 | 1.110 | 9/13 | 0.133 | 0.709 | 47.39 | 0.69 | 2 | True | True |
+| final-margin | combined | W1 | 1 | full_sample | 13 | 72.68 | 68.84 | 82.50 | -9.03 | -25.17 | 0.557 | 0.586 | 1.110 | 9/13 | 0.133 | 0.709 | 47.30 | 0.69 | 54 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 72.70 | 63.76 | 82.59 | -3.22 | -3.85 | 0.558 | 0.542 | 1.110 | 10/13 | 0.046 | 0.709 | 55.88 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 73.07 | 66.21 | 85.36 | -18.28 | -17.31 | 0.560 | 0.563 | 1.116 | 10/13 | 0.046 | 0.867 | 57.59 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 73.18 | 66.93 | 86.73 | -22.71 | -21.26 | 0.561 | 0.569 | 1.117 | 10/13 | 0.046 | 0.867 | 59.58 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 73.19 | 67.03 | 86.93 | -23.31 | -21.80 | 0.561 | 0.570 | 1.118 | 10/13 | 0.046 | 0.867 | 59.30 | 1.00 | 3 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 1 | full_sample | 13 | 75.58 | 72.53 | 88.95 | 0.54 | -20.94 | 0.580 | 0.617 | 1.154 | 8/13 | 0.291 | 0.709 | 50.69 | 0.62 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 75.61 | 65.71 | 94.80 | 61.73 | 53.43 | 0.580 | 0.559 | 1.154 | 6/13 | 0.709 | 0.709 | 107.17 | 1.00 | 3 | True | True |
 | baselines-margin | q_guide_implied | W1 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  |  |  |  | 44.00 | 1.00 | 1 | False | False |
+| final-margin | combined_dollar_from_margin | W1 | 1 | full_sample | 13 | 76.06 | 72.45 | 89.28 | 1.41 | -19.76 | 0.583 | 0.616 | 1.161 | 8/13 | 0.291 | 0.709 | 51.04 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 1 | full_sample | 13 | 76.06 | 72.45 | 89.28 | 1.41 | -19.76 | 0.583 | 0.616 | 1.161 | 8/13 | 0.291 | 0.709 | 51.04 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 1 | full_sample | 13 | 76.30 | 72.41 | 89.46 | 1.85 | -19.17 | 0.585 | 0.616 | 1.165 | 8/13 | 0.291 | 0.709 | 51.21 | 0.62 | 54 | True | True |
 | street-bias | dispersion_conditioned | W1 | 1 | full_sample | 13 | 76.88 | 71.69 | 94.74 | 37.25 | 20.54 | 0.590 | 0.610 | 1.174 | 8/13 | 0.291 | 0.709 | 102.06 | 1.00 | 5 | True | True |
 | margin-ts | yoy_margin_change | W1 | 1 | full_sample | 13 | 79.62 | 74.46 | 94.25 | -19.53 | -26.19 | 0.611 | 0.633 | 1.216 | 9/13 | 0.133 | 0.989 | 88.06 | 0.92 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 79.90 | 74.38 | 93.88 | -16.50 | -23.07 | 0.613 | 0.633 | 1.220 | 9/13 | 0.133 | 0.989 | 85.17 | 0.92 | 7 | True | True |
@@ -1261,11 +1277,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 80.73 | 75.50 | 101.70 | 35.29 | 18.68 | 0.610 | 0.641 |  | 7/12 | 0.387 |  | 76.00 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 83.47 | 89.09 | 99.98 | -39.33 | -52.64 | 0.631 | 0.757 |  | 9/12 | 0.073 |  | 83.47 | 0.92 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 84.46 | 93.91 | 102.30 | -50.51 | -66.65 | 0.639 | 0.797 |  | 8/12 | 0.194 |  | 83.76 | 0.92 | 2 | True | True |
-| final-margin | combined | W1 | 2 | PIT | 12 | 85.44 | 85.28 | 98.60 | 8.60 | -12.62 | 0.646 | 0.724 |  | 8/12 | 0.194 |  | 56.11 | 0.58 | 2 | False | True |
-| final-margin | combined | W1 | 2 | PIT | 12 | 85.79 | 85.77 | 99.01 | 8.66 | -12.73 | 0.649 | 0.728 |  | 8/12 | 0.194 |  | 56.44 | 0.58 | 2 | False | True |
-| final-margin | combined | W1 | 2 | PIT | 12 | 85.79 | 85.77 | 99.01 | 8.66 | -12.73 | 0.649 | 0.728 |  | 8/12 | 0.194 |  | 56.44 | 0.58 | 2 | False | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | PIT | 12 | 85.69 | 84.96 | 98.98 | 11.60 | -9.53 | 0.648 | 0.721 |  | 8/12 | 0.194 |  | 55.27 | 0.58 | 54 | False | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | PIT | 12 | 85.96 | 85.56 | 99.23 | 10.66 | -10.67 | 0.650 | 0.727 |  | 8/12 | 0.194 |  | 55.42 | 0.58 | 54 | False | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | PIT | 12 | 85.96 | 85.56 | 99.23 | 10.66 | -10.67 | 0.650 | 0.727 |  | 8/12 | 0.194 |  | 55.42 | 0.58 | 54 | False | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 85.97 | 94.85 | 103.77 | -49.26 | -65.81 | 0.650 | 0.805 |  | 8/12 | 0.194 |  | 80.03 | 0.92 | 2 | True | True |
-| final-margin | combined | W1 | 2 | PIT | 12 | 86.49 | 86.74 | 99.84 | 8.78 | -12.96 | 0.654 | 0.737 |  | 8/12 | 0.194 |  | 57.10 | 0.58 | 2 | False | True |
+| final-margin | combined | W1 | 2 | PIT | 12 | 86.33 | 85.93 | 99.44 | 10.75 | -10.75 | 0.653 | 0.730 |  | 8/12 | 0.194 |  | 55.56 | 0.58 | 54 | False | True |
+| final-margin | combined | W1 | 2 | PIT | 12 | 86.39 | 86.20 | 99.54 | 10.09 | -11.49 | 0.653 | 0.732 |  | 8/12 | 0.194 |  | 55.61 | 0.58 | 54 | False | True |
+| final-margin | combined | W1 | 2 | PIT | 12 | 86.39 | 86.20 | 99.54 | 10.09 | -11.49 | 0.653 | 0.732 |  | 8/12 | 0.194 |  | 55.61 | 0.58 | 54 | False | True |
+| final-margin | combined | W1 | 2 | PIT | 12 | 86.49 | 86.74 | 99.84 | 8.78 | -12.96 | 0.654 | 0.737 |  | 8/12 | 0.194 |  | 55.72 | 0.58 | 54 | False | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | PIT | 12 | 86.49 | 86.74 | 99.84 | 8.78 | -12.96 | 0.654 | 0.737 |  | 8/12 | 0.194 |  | 55.72 | 0.58 | 54 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 88.89 | 85.34 | 100.43 | 6.39 | -1.54 | 0.672 | 0.725 |  | 7/12 | 0.387 |  | 115.91 | 1.00 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 96.63 | 80.75 | 122.42 | 59.16 | 25.97 | 0.731 | 0.686 |  | 7/12 | 0.387 |  | 88.62 | 0.83 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 96.74 | 88.52 | 123.84 | 55.75 | 38.14 | 0.732 | 0.752 |  | 7/12 | 0.387 |  | 77.11 | 1.00 | 2 | False | True |
@@ -1324,12 +1344,16 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 74.28 | 66.54 | 86.49 | -21.01 | -20.38 | 0.562 | 0.565 |  | 9/12 | 0.073 |  | 65.28 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 75.97 | 82.51 | 92.52 | -25.97 | -41.97 | 0.574 | 0.701 |  | 11/12 | 0.003 |  | 74.65 | 0.92 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 77.97 | 83.50 | 94.59 | -26.10 | -41.75 | 0.590 | 0.709 |  | 10/12 | 0.019 |  | 68.49 | 0.92 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 81.13 | 83.18 | 90.56 | -8.28 | -25.02 | 0.613 | 0.706 |  | 8/12 | 0.194 |  | 52.45 | 0.67 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 81.15 | 83.71 | 90.95 | -7.80 | -25.20 | 0.614 | 0.711 |  | 8/12 | 0.194 |  | 52.60 | 0.67 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 81.15 | 83.71 | 90.95 | -7.80 | -25.20 | 0.614 | 0.711 |  | 8/12 | 0.194 |  | 52.60 | 0.67 | 2 | True | True |
-| final-margin | combined | W1 | 2 | full_sample | 12 | 81.18 | 84.75 | 91.83 | -6.83 | -25.55 | 0.614 | 0.720 |  | 8/12 | 0.194 |  | 52.91 | 0.67 | 2 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 81.13 | 83.18 | 90.56 | -8.28 | -25.02 | 0.613 | 0.706 |  | 8/12 | 0.194 |  | 52.05 | 0.67 | 54 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 81.15 | 83.71 | 90.95 | -7.80 | -25.20 | 0.614 | 0.711 |  | 8/12 | 0.194 |  | 52.06 | 0.67 | 54 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 81.15 | 83.71 | 90.95 | -7.80 | -25.20 | 0.614 | 0.711 |  | 8/12 | 0.194 |  | 52.06 | 0.67 | 54 | True | True |
+| final-margin | combined | W1 | 2 | full_sample | 12 | 81.18 | 84.75 | 91.83 | -6.83 | -25.55 | 0.614 | 0.720 |  | 8/12 | 0.194 |  | 52.08 | 0.67 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | full_sample | 12 | 81.18 | 84.75 | 91.83 | -6.83 | -25.55 | 0.614 | 0.720 |  | 8/12 | 0.194 |  | 52.08 | 0.67 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 81.54 | 79.75 | 92.64 | 26.73 | 4.79 | 0.617 | 0.677 |  | 6/12 | 0.613 |  | 75.65 | 1.00 | 3 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | full_sample | 12 | 82.25 | 85.23 | 92.55 | -6.72 | -25.12 | 0.622 | 0.724 |  | 8/12 | 0.194 |  | 52.62 | 0.67 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | full_sample | 12 | 82.25 | 85.23 | 92.55 | -6.72 | -25.12 | 0.622 | 0.724 |  | 8/12 | 0.194 |  | 52.62 | 0.67 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 82.56 | 80.23 | 92.79 | 22.80 | 3.36 | 0.624 | 0.681 |  | 6/12 | 0.613 |  | 65.49 | 1.00 | 3 | True | True |
+| final-margin | combined_dollar_from_margin | W1 | 2 | full_sample | 12 | 82.79 | 85.47 | 92.92 | -6.67 | -24.91 | 0.626 | 0.726 |  | 8/12 | 0.194 |  | 52.89 | 0.67 | 54 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 83.51 | 89.15 | 99.90 | -39.33 | -52.63 | 0.631 | 0.757 |  | 9/12 | 0.073 |  | 79.65 | 0.92 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 84.50 | 93.96 | 102.21 | -50.50 | -66.64 | 0.639 | 0.798 |  | 8/12 | 0.194 |  | 80.08 | 0.92 | 2 | True | True |
 | margin-ts | ensemble_simple | W1 | 2 | full_sample | 12 | 85.68 | 82.77 | 95.23 | -20.02 | -29.78 | 0.648 | 0.703 |  | 9/12 | 0.073 |  | 82.58 | 1.00 | 5 | True | True |
@@ -1371,10 +1395,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 132.25 | 117.76 | 166.63 | -131.08 | -116.69 | 1.000 | 1.000 |  | 0/12 |  |  | 140.51 | 1.00 | 1 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | full_sample | 12 | 157.45 | 125.73 | 210.99 | 40.79 | -8.98 | 1.191 | 1.068 |  | 7/12 | 0.387 |  | 114.32 | 0.50 | 4 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 284.02 | 263.98 | 375.45 | -69.09 | -28.56 | 2.148 | 2.242 |  | 4/12 | 0.927 |  | 204.03 | 1.00 | 3 | False | False |
-| final-margin | combined | W2 | 0 | PIT | 10 | 30.65 | 25.11 | 38.51 | -8.94 | -7.43 | 0.313 | 0.236 | 0.527 | 9/10 | 0.011 | 0.011 | 24.20 | 0.90 | 2 | True | True |
-| final-margin | combined | W2 | 0 | PIT | 10 | 30.86 | 25.46 | 38.62 | -9.24 | -7.90 | 0.316 | 0.239 | 0.531 | 9/10 | 0.011 | 0.011 | 24.28 | 0.90 | 2 | True | True |
-| final-margin | combined | W2 | 0 | PIT | 10 | 30.86 | 25.46 | 38.62 | -9.24 | -7.90 | 0.316 | 0.239 | 0.531 | 9/10 | 0.011 | 0.011 | 24.28 | 0.90 | 2 | True | True |
-| final-margin | combined | W2 | 0 | PIT | 10 | 31.29 | 26.14 | 38.88 | -9.84 | -8.83 | 0.320 | 0.246 | 0.538 | 9/10 | 0.011 | 0.011 | 24.46 | 0.90 | 2 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | PIT | 10 | 25.51 | 20.93 | 33.80 | -5.80 | -2.93 | 0.261 | 0.197 | 0.439 | 9/10 | 0.011 | 0.001 | 20.29 | 0.80 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | PIT | 10 | 25.84 | 21.37 | 34.08 | -5.82 | -2.93 | 0.264 | 0.201 | 0.445 | 9/10 | 0.011 | 0.001 | 20.47 | 0.80 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | PIT | 10 | 25.84 | 21.37 | 34.08 | -5.82 | -2.93 | 0.264 | 0.201 | 0.445 | 9/10 | 0.011 | 0.001 | 20.47 | 0.80 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | PIT | 10 | 26.48 | 22.25 | 34.64 | -5.85 | -2.92 | 0.271 | 0.209 | 0.456 | 9/10 | 0.011 | 0.001 | 20.85 | 0.80 | 54 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 30.65 | 25.11 | 38.51 | -8.94 | -7.43 | 0.313 | 0.236 | 0.527 | 9/10 | 0.011 | 0.011 | 24.20 | 0.90 | 54 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 30.86 | 25.46 | 38.62 | -9.24 | -7.90 | 0.316 | 0.239 | 0.531 | 9/10 | 0.011 | 0.011 | 24.28 | 0.90 | 54 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 30.86 | 25.46 | 38.62 | -9.24 | -7.90 | 0.316 | 0.239 | 0.531 | 9/10 | 0.011 | 0.011 | 24.28 | 0.90 | 54 | True | True |
+| final-margin | combined | W2 | 0 | PIT | 10 | 31.29 | 26.14 | 38.88 | -9.84 | -8.83 | 0.320 | 0.246 | 0.538 | 9/10 | 0.011 | 0.011 | 24.46 | 0.90 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | PIT | 10 | 33.76 | 31.08 | 38.21 | 15.05 | 16.61 | 0.345 | 0.292 | 0.581 | 7/10 | 0.172 | 0.011 | 73.00 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | PIT | 10 | 33.76 | 31.08 | 38.21 | 15.05 | 16.61 | 0.345 | 0.292 | 0.581 | 7/10 | 0.172 | 0.011 | 73.00 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | PIT | 10 | 34.86 | 31.71 | 42.21 | 19.86 | 18.96 | 0.356 | 0.298 | 0.600 | 7/10 | 0.172 | 0.055 | 72.85 | 1.00 | 6 | True | True |
@@ -1455,10 +1483,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 103.67 | 100.42 | 131.90 | 90.03 | 94.02 | 1.060 | 0.944 | 1.784 | 5/10 | 0.623 | 0.945 | 129.95 | 1.00 | 3 | False | True |
 | guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 106.48 | 90.83 | 145.69 | 9.79 | 11.18 | 1.089 | 0.854 | 1.832 | 5/10 | 0.623 | 0.828 | 193.79 | 0.90 | 6 | False | True |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 264.77 | 249.38 | 345.41 | -6.87 | 0.25 | 2.707 | 2.344 | 4.556 | 2/10 | 0.989 | 0.989 | 187.80 | 1.00 | 3 | False | False |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 30.46 | 24.58 | 39.22 | -9.83 | -6.69 | 0.311 | 0.231 | 0.524 | 9/10 | 0.011 | 0.001 | 24.73 | 0.90 | 2 | True | True |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 30.58 | 24.81 | 39.38 | -10.66 | -7.62 | 0.313 | 0.233 | 0.526 | 9/10 | 0.011 | 0.001 | 24.89 | 0.90 | 2 | True | True |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 30.58 | 24.81 | 39.38 | -10.66 | -7.62 | 0.313 | 0.233 | 0.526 | 9/10 | 0.011 | 0.001 | 24.89 | 0.90 | 2 | True | True |
-| final-margin | combined | W2 | 0 | full_sample | 10 | 30.82 | 25.28 | 39.79 | -12.33 | -9.47 | 0.315 | 0.238 | 0.530 | 9/10 | 0.011 | 0.001 | 25.20 | 0.90 | 2 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | full_sample | 10 | 28.99 | 23.97 | 37.15 | -2.35 | 1.16 | 0.296 | 0.225 | 0.499 | 9/10 | 0.011 | 0.001 | 22.01 | 0.90 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | full_sample | 10 | 29.10 | 24.15 | 37.30 | -2.81 | 0.86 | 0.298 | 0.227 | 0.501 | 9/10 | 0.011 | 0.001 | 22.22 | 0.90 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | full_sample | 10 | 29.32 | 24.54 | 37.60 | -3.83 | 0.21 | 0.300 | 0.231 | 0.505 | 9/10 | 0.011 | 0.001 | 22.64 | 0.90 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 0 | full_sample | 10 | 29.73 | 24.46 | 37.72 | -2.19 | 1.16 | 0.304 | 0.230 | 0.512 | 9/10 | 0.011 | 0.011 | 22.48 | 0.90 | 54 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 30.46 | 24.58 | 39.22 | -9.83 | -6.69 | 0.311 | 0.231 | 0.524 | 9/10 | 0.011 | 0.001 | 24.73 | 0.90 | 54 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 30.58 | 24.81 | 39.38 | -10.66 | -7.62 | 0.313 | 0.233 | 0.526 | 9/10 | 0.011 | 0.001 | 24.89 | 0.90 | 54 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 30.58 | 24.81 | 39.38 | -10.66 | -7.62 | 0.313 | 0.233 | 0.526 | 9/10 | 0.011 | 0.001 | 24.89 | 0.90 | 54 | True | True |
+| final-margin | combined | W2 | 0 | full_sample | 10 | 30.82 | 25.28 | 39.79 | -12.33 | -9.47 | 0.315 | 0.238 | 0.530 | 9/10 | 0.011 | 0.001 | 25.20 | 0.90 | 54 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | full_sample | 10 | 33.76 | 31.08 | 38.21 | 15.05 | 16.61 | 0.345 | 0.292 | 0.581 | 7/10 | 0.172 | 0.011 | 119.72 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | full_sample | 10 | 33.76 | 31.08 | 38.21 | 15.05 | 16.61 | 0.345 | 0.292 | 0.581 | 7/10 | 0.172 | 0.011 | 119.72 | 1.00 | 6 | True | True |
 | street-bias | street_plus_flowthrough | W2 | 0 | full_sample | 10 | 34.86 | 31.71 | 42.21 | 19.86 | 18.96 | 0.356 | 0.298 | 0.600 | 7/10 | 0.172 | 0.055 | 120.59 | 1.00 | 6 | True | True |
@@ -1551,13 +1583,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 65.13 | 58.89 | 77.05 | 24.40 | 1.11 | 0.718 | 0.566 | 1.394 | 5/9 | 0.500 | 0.980 | 119.01 | 1.00 | 2 | True | True |
 | street-bias | dispersion_conditioned | W2 | 1 | PIT | 9 | 65.48 | 60.61 | 73.12 | 28.72 | 3.82 | 0.722 | 0.582 | 1.401 | 5/9 | 0.500 | 0.910 | 91.99 | 1.00 | 5 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 66.27 | 66.92 | 72.91 | 34.78 | 15.61 | 0.731 | 0.643 | 1.418 | 6/9 | 0.254 | 0.910 | 56.04 | 1.00 | 3 | True | True |
-| final-margin | combined | W2 | 1 | PIT | 9 | 68.25 | 66.39 | 83.56 | 8.28 | -18.83 | 0.753 | 0.638 | 1.460 | 5/9 | 0.500 | 0.910 | 43.01 | 0.89 | 2 | True | True |
-| final-margin | combined | W2 | 1 | PIT | 9 | 68.95 | 67.32 | 83.89 | 8.51 | -18.56 | 0.761 | 0.647 | 1.475 | 5/9 | 0.500 | 0.910 | 43.29 | 0.89 | 2 | True | True |
-| final-margin | combined | W2 | 1 | PIT | 9 | 68.95 | 67.32 | 83.89 | 8.51 | -18.56 | 0.761 | 0.647 | 1.475 | 5/9 | 0.500 | 0.910 | 43.29 | 0.89 | 2 | True | True |
-| final-margin | combined | W2 | 1 | PIT | 9 | 70.36 | 69.17 | 84.66 | 8.97 | -18.03 | 0.776 | 0.665 | 1.505 | 5/9 | 0.500 | 0.910 | 43.86 | 0.89 | 2 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 67.58 | 65.73 | 83.08 | 9.02 | -18.08 | 0.745 | 0.632 | 1.446 | 5/9 | 0.500 | 0.910 | 41.93 | 0.89 | 54 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 68.50 | 66.87 | 83.57 | 9.01 | -18.07 | 0.756 | 0.643 | 1.466 | 5/9 | 0.500 | 0.910 | 42.31 | 0.89 | 54 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 68.50 | 66.87 | 83.57 | 9.01 | -18.07 | 0.756 | 0.643 | 1.466 | 5/9 | 0.500 | 0.910 | 42.31 | 0.89 | 54 | True | True |
+| final-margin | combined | W2 | 1 | PIT | 9 | 70.36 | 69.17 | 84.66 | 8.97 | -18.03 | 0.776 | 0.665 | 1.505 | 5/9 | 0.500 | 0.910 | 43.05 | 0.89 | 54 | True | True |
 | street-bias | dispersion_conditioned | W2 | 1 | PIT | 9 | 70.48 | 59.97 | 81.15 | 50.01 | 26.08 | 0.777 | 0.576 | 1.508 | 5/9 | 0.500 | 0.910 | 94.92 | 1.00 | 5 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 73.71 | 70.37 | 88.55 | 29.82 | 3.48 | 0.813 | 0.676 | 1.577 | 5/9 | 0.500 | 0.910 | 84.31 | 1.00 | 2 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 1 | PIT | 9 | 74.62 | 70.87 | 91.58 | 12.54 | -15.45 | 0.823 | 0.681 | 1.597 | 5/9 | 0.500 | 0.910 | 46.49 | 0.89 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 1 | PIT | 9 | 75.09 | 71.54 | 91.94 | 12.40 | -15.69 | 0.828 | 0.687 | 1.607 | 5/9 | 0.500 | 0.910 | 46.67 | 0.89 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 1 | PIT | 9 | 75.09 | 71.54 | 91.94 | 12.40 | -15.69 | 0.828 | 0.687 | 1.607 | 5/9 | 0.500 | 0.910 | 46.67 | 0.89 | 54 | True | True |
 | baselines-margin | q_guide_implied | W2 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  |  |  |  | 46.78 | 1.00 | 1 | False | False |
+| final-margin | combined_dollar_from_margin | W2 | 1 | PIT | 9 | 76.02 | 72.87 | 92.67 | 12.13 | -16.19 | 0.838 | 0.700 | 1.627 | 5/9 | 0.500 | 0.910 | 47.05 | 0.89 | 54 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 78.42 | 65.70 | 96.20 | 54.70 | 27.67 | 0.865 | 0.631 | 1.678 | 4/9 | 0.746 | 0.746 | 64.38 | 1.00 | 3 | True | True |
 | street-bias | street_plus_bias | W2 | 1 | PIT | 9 | 79.62 | 67.24 | 94.29 | 50.11 | 19.46 | 0.878 | 0.646 | 1.704 | 4/9 | 0.746 | 0.910 | 98.90 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 80.79 | 68.06 | 94.77 | 77.22 | 64.83 | 0.891 | 0.654 | 1.729 | 3/9 | 0.910 | 0.910 | 162.68 | 1.00 | 3 | True | True |
@@ -1644,21 +1680,25 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 58.22 | 66.36 | 68.23 | -43.13 | -58.35 | 0.642 | 0.638 | 1.246 | 5/9 | 0.500 | 0.746 | 86.09 | 1.00 | 2 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 60.45 | 59.32 | 66.48 | 24.45 | 5.05 | 0.667 | 0.570 | 1.293 | 6/9 | 0.254 | 0.746 | 53.82 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 60.82 | 59.13 | 67.27 | 26.17 | 6.69 | 0.671 | 0.568 | 1.301 | 6/9 | 0.254 | 0.746 | 54.49 | 1.00 | 3 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 63.47 | 64.39 | 76.17 | 1.22 | -23.29 | 0.700 | 0.619 | 1.358 | 5/9 | 0.500 | 0.910 | 39.18 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 64.85 | 65.49 | 78.04 | 2.27 | -22.74 | 0.715 | 0.629 | 1.388 | 5/9 | 0.500 | 0.910 | 40.08 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 64.85 | 65.49 | 78.04 | 2.27 | -22.74 | 0.715 | 0.629 | 1.388 | 5/9 | 0.500 | 0.910 | 40.08 | 1.00 | 2 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 63.47 | 64.39 | 76.17 | 1.22 | -23.29 | 0.700 | 0.619 | 1.358 | 5/9 | 0.500 | 0.910 | 38.66 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 64.85 | 65.49 | 78.04 | 2.27 | -22.74 | 0.715 | 0.629 | 1.388 | 5/9 | 0.500 | 0.910 | 39.50 | 1.00 | 54 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 64.85 | 65.49 | 78.04 | 2.27 | -22.74 | 0.715 | 0.629 | 1.388 | 5/9 | 0.500 | 0.910 | 39.50 | 1.00 | 54 | True | True |
 | street-bias | dispersion_conditioned | W2 | 1 | full_sample | 9 | 65.48 | 60.61 | 73.12 | 28.72 | 3.82 | 0.722 | 0.582 | 1.401 | 5/9 | 0.500 | 0.910 | 102.84 | 1.00 | 5 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 66.69 | 69.88 | 82.58 | 6.54 | -19.86 | 0.736 | 0.672 | 1.427 | 5/9 | 0.500 | 0.980 | 87.34 | 1.00 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 66.86 | 69.12 | 83.00 | 9.62 | -16.77 | 0.737 | 0.664 | 1.431 | 5/9 | 0.500 | 0.980 | 85.57 | 1.00 | 3 | True | True |
-| final-margin | combined | W2 | 1 | full_sample | 9 | 67.63 | 67.69 | 81.87 | 4.37 | -21.66 | 0.746 | 0.650 | 1.447 | 5/9 | 0.500 | 0.910 | 41.89 | 0.89 | 2 | True | True |
+| final-margin | combined | W2 | 1 | full_sample | 9 | 67.63 | 67.69 | 81.87 | 4.37 | -21.66 | 0.746 | 0.650 | 1.447 | 5/9 | 0.500 | 0.910 | 41.17 | 0.89 | 54 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 67.87 | 69.25 | 83.56 | 12.79 | -13.59 | 0.749 | 0.666 | 1.452 | 5/9 | 0.500 | 0.980 | 82.51 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 69.30 | 69.53 | 84.48 | 16.96 | -9.42 | 0.764 | 0.668 | 1.483 | 5/9 | 0.500 | 0.980 | 87.78 | 1.00 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 70.06 | 69.67 | 85.05 | 19.17 | -7.20 | 0.773 | 0.670 | 1.499 | 5/9 | 0.500 | 0.980 | 85.78 | 1.00 | 3 | True | True |
 | street-bias | dispersion_conditioned | W2 | 1 | full_sample | 9 | 70.48 | 59.97 | 81.15 | 50.01 | 26.08 | 0.777 | 0.576 | 1.508 | 5/9 | 0.500 | 0.910 | 107.07 | 1.00 | 5 | True | True |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 71.88 | 70.02 | 86.65 | 24.49 | -1.86 | 0.793 | 0.673 | 1.538 | 5/9 | 0.500 | 0.910 | 67.30 | 1.00 | 4 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 1 | full_sample | 9 | 72.96 | 70.59 | 87.77 | 7.75 | -18.92 | 0.805 | 0.678 | 1.561 | 5/9 | 0.500 | 0.910 | 44.76 | 0.89 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 1 | full_sample | 9 | 73.30 | 71.00 | 88.45 | 7.68 | -19.22 | 0.808 | 0.682 | 1.568 | 5/9 | 0.500 | 0.910 | 44.99 | 0.89 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 1 | full_sample | 9 | 73.30 | 71.00 | 88.45 | 7.68 | -19.22 | 0.808 | 0.682 | 1.568 | 5/9 | 0.500 | 0.910 | 44.99 | 0.89 | 54 | True | True |
 | margin-ts | ensemble_simple | W2 | 1 | full_sample | 9 | 73.37 | 77.93 | 85.03 | 1.51 | -25.14 | 0.809 | 0.749 | 1.570 | 5/9 | 0.500 | 0.998 | 77.22 | 1.00 | 5 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 73.71 | 70.37 | 88.55 | 29.82 | 3.48 | 0.813 | 0.676 | 1.577 | 5/9 | 0.500 | 0.910 | 75.90 | 1.00 | 2 | True | True |
 | margin-ts | ensemble_simple | W2 | 1 | full_sample | 9 | 73.85 | 77.88 | 86.89 | 2.95 | -24.23 | 0.815 | 0.748 | 1.580 | 5/9 | 0.500 | 0.998 | 78.16 | 1.00 | 1 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 1 | full_sample | 9 | 73.98 | 71.83 | 89.84 | 7.53 | -19.82 | 0.816 | 0.690 | 1.583 | 5/9 | 0.500 | 0.910 | 45.44 | 0.89 | 54 | True | True |
 | baselines-margin | q_guide_implied | W2 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  |  |  |  | 44.00 | 1.00 | 1 | False | False |
 | street-bias | street_plus_bias | W2 | 1 | full_sample | 9 | 79.62 | 67.24 | 94.29 | 50.11 | 19.46 | 0.878 | 0.646 | 1.704 | 4/9 | 0.746 | 0.910 | 110.09 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 80.62 | 66.73 | 100.37 | 73.71 | 57.75 | 0.889 | 0.641 | 1.725 | 3/9 | 0.910 | 0.910 | 112.43 | 1.00 | 3 | True | True |
@@ -1721,10 +1761,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 90.95 | 85.09 | 103.54 | 34.30 | 5.18 | 0.982 | 0.806 |  | 3/8 | 0.855 |  | 105.89 | 1.00 | 2 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 91.57 | 77.20 | 104.32 | 91.57 | 77.20 | 0.989 | 0.731 |  | 3/8 | 0.855 |  | 120.94 | 1.00 | 3 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 92.62 | 105.60 | 114.77 | -90.88 | -104.35 | 1.000 | 1.000 |  | 0/8 |  |  | 154.67 | 1.00 | 1 | False | False |
-| final-margin | combined | W2 | 2 | PIT | 8 | 92.95 | 88.21 | 107.91 | 19.47 | -14.90 | 1.004 | 0.835 |  | 5/8 | 0.363 |  | 56.01 | 0.88 | 2 | False | True |
-| final-margin | combined | W2 | 2 | PIT | 8 | 92.96 | 88.14 | 107.94 | 19.77 | -14.52 | 1.004 | 0.835 |  | 5/8 | 0.363 |  | 56.01 | 0.88 | 2 | False | True |
-| final-margin | combined | W2 | 2 | PIT | 8 | 92.96 | 88.14 | 107.94 | 19.77 | -14.52 | 1.004 | 0.835 |  | 5/8 | 0.363 |  | 56.01 | 0.88 | 2 | False | True |
-| final-margin | combined | W2 | 2 | PIT | 8 | 92.97 | 88.00 | 108.04 | 20.38 | -13.76 | 1.004 | 0.833 |  | 5/8 | 0.363 |  | 56.02 | 0.88 | 2 | False | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | PIT | 8 | 92.97 | 88.00 | 108.04 | 20.38 | -13.76 | 1.004 | 0.833 |  | 5/8 | 0.363 |  | 55.16 | 0.88 | 54 | False | True |
+| final-margin | combined | W2 | 2 | PIT | 8 | 92.97 | 88.00 | 108.04 | 20.38 | -13.76 | 1.004 | 0.833 |  | 5/8 | 0.363 |  | 55.16 | 0.88 | 54 | False | True |
+| final-margin | combined | W2 | 2 | PIT | 8 | 93.66 | 88.99 | 108.40 | 19.69 | -14.75 | 1.011 | 0.843 |  | 5/8 | 0.363 |  | 55.44 | 0.88 | 54 | False | True |
+| final-margin | combined | W2 | 2 | PIT | 8 | 93.66 | 88.99 | 108.40 | 19.69 | -14.75 | 1.011 | 0.843 |  | 5/8 | 0.363 |  | 55.44 | 0.88 | 54 | False | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | PIT | 8 | 93.96 | 89.45 | 108.64 | 19.39 | -15.21 | 1.014 | 0.847 |  | 5/8 | 0.363 |  | 55.56 | 0.88 | 54 | False | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | PIT | 8 | 93.96 | 89.45 | 108.64 | 19.39 | -15.21 | 1.014 | 0.847 |  | 5/8 | 0.363 |  | 55.56 | 0.88 | 54 | False | True |
+| final-margin | combined | W2 | 2 | PIT | 8 | 94.00 | 89.49 | 108.60 | 19.34 | -15.25 | 1.015 | 0.847 |  | 5/8 | 0.363 |  | 55.57 | 0.88 | 54 | False | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | PIT | 8 | 94.45 | 90.17 | 108.96 | 18.89 | -15.93 | 1.020 | 0.854 |  | 5/8 | 0.363 |  | 55.75 | 0.88 | 54 | False | True |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 106.80 | 95.87 | 127.51 | 49.26 | 9.19 | 1.153 | 0.908 |  | 4/8 | 0.637 |  | 93.07 | 1.00 | 4 | False | True |
 | baselines-margin | guide_implied | W2 | 2 | PIT | 4 | 109.48 | 81.18 | 166.33 | 82.03 | 53.06 | 1.652 | 1.360 |  | 1/4 | 0.938 |  | 85.51 | 0.75 | 4 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 110.15 | 90.75 | 138.10 | 75.42 | 40.05 | 1.189 | 0.859 |  | 4/8 | 0.637 |  | 87.92 | 1.00 | 2 | False | True |
@@ -1780,16 +1824,20 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 79.79 | 88.62 | 96.44 | -25.49 | -51.10 | 0.861 | 0.839 |  | 6/8 | 0.145 |  | 74.87 | 1.00 | 2 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 80.96 | 81.29 | 92.59 | 3.96 | -25.22 | 0.874 | 0.770 |  | 5/8 | 0.363 |  | 82.73 | 1.00 | 5 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 81.27 | 94.23 | 100.01 | -42.25 | -67.44 | 0.877 | 0.892 |  | 5/8 | 0.363 |  | 75.61 | 1.00 | 2 | True | True |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 82.49 | 82.73 | 93.86 | 4.38 | -24.46 | 0.891 | 0.783 |  | 5/8 | 0.363 |  | 47.96 | 0.62 | 2 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 82.49 | 82.73 | 93.86 | 4.38 | -24.46 | 0.891 | 0.783 |  | 5/8 | 0.363 |  | 48.39 | 0.62 | 54 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 82.86 | 82.70 | 94.66 | 5.99 | -23.70 | 0.895 | 0.783 |  | 5/8 | 0.363 |  | 83.36 | 1.00 | 1 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 83.33 | 95.28 | 102.01 | -40.19 | -66.40 | 0.900 | 0.902 |  | 5/8 | 0.363 |  | 73.72 | 0.88 | 2 | True | True |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 83.53 | 83.85 | 95.09 | 4.04 | -25.17 | 0.902 | 0.794 |  | 5/8 | 0.363 |  | 48.56 | 0.62 | 2 | True | True |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 83.53 | 83.85 | 95.09 | 4.04 | -25.17 | 0.902 | 0.794 |  | 5/8 | 0.363 |  | 48.56 | 0.62 | 2 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 83.53 | 83.85 | 95.09 | 4.04 | -25.17 | 0.902 | 0.794 |  | 5/8 | 0.363 |  | 48.90 | 0.62 | 54 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 83.53 | 83.85 | 95.09 | 4.04 | -25.17 | 0.902 | 0.794 |  | 5/8 | 0.363 |  | 48.90 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | full_sample | 8 | 83.94 | 84.41 | 95.78 | 3.57 | -25.76 | 0.906 | 0.799 |  | 5/8 | 0.363 |  | 49.32 | 0.62 | 54 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 84.50 | 84.48 | 96.42 | 10.75 | -18.25 | 0.912 | 0.800 |  | 4/8 | 0.637 |  | 93.78 | 1.00 | 7 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | full_sample | 8 | 84.50 | 84.97 | 96.38 | 3.50 | -26.03 | 0.912 | 0.805 |  | 5/8 | 0.363 |  | 49.52 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | full_sample | 8 | 84.50 | 84.97 | 96.38 | 3.50 | -26.03 | 0.912 | 0.805 |  | 5/8 | 0.363 |  | 49.52 | 0.62 | 54 | True | True |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 85.35 | 84.56 | 97.05 | 13.87 | -15.15 | 0.921 | 0.801 |  | 4/8 | 0.637 |  | 93.36 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 85.41 | 80.01 | 97.91 | 27.62 | 0.85 | 0.922 | 0.758 |  | 3/8 | 0.855 |  | 78.45 | 1.00 | 3 | True | True |
 | guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 85.41 | 80.01 | 97.91 | 27.62 | 0.85 | 0.922 | 0.758 |  | 3/8 | 0.855 |  | 67.40 | 1.00 | 3 | True | True |
-| final-margin | combined | W2 | 2 | full_sample | 8 | 85.61 | 86.08 | 97.62 | 3.35 | -26.58 | 0.924 | 0.815 |  | 5/8 | 0.363 |  | 49.76 | 0.62 | 2 | True | True |
+| final-margin | combined | W2 | 2 | full_sample | 8 | 85.61 | 86.08 | 97.62 | 3.35 | -26.58 | 0.924 | 0.815 |  | 5/8 | 0.363 |  | 49.92 | 0.62 | 54 | True | True |
+| final-margin | combined_dollar_from_margin | W2 | 2 | full_sample | 8 | 85.61 | 86.08 | 97.62 | 3.35 | -26.58 | 0.924 | 0.815 |  | 5/8 | 0.363 |  | 49.92 | 0.62 | 54 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 86.23 | 84.64 | 97.80 | 17.08 | -11.96 | 0.931 | 0.802 |  | 4/8 | 0.637 |  | 87.02 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 87.38 | 84.75 | 98.95 | 21.29 | -7.77 | 0.943 | 0.803 |  | 4/8 | 0.637 |  | 94.73 | 1.00 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 88.00 | 84.81 | 99.63 | 23.53 | -5.54 | 0.950 | 0.803 |  | 4/8 | 0.637 |  | 94.18 | 1.00 | 3 | True | True |

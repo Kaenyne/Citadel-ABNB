@@ -1,0 +1,19 @@
+window,variant,n,mae,ratio_to_naive,delta_vs_full_pp,dropped
+W1,ALL (stack_clip),14,1.1264245509875443,0.5035273600673428,0.0,
+W1,drop street-bias|dispersion_conditioned|rw_hl4_med,14,1.2208403227659474,0.545732516436334,0.0944157717784031,street-bias|dispersion_conditioned|rw_hl4_med
+W1,drop street-bias|street_plus_flowthrough|rw_hl4,14,1.163351502798599,0.5200342184667386,0.036926951811054654,street-bias|street_plus_flowthrough|rw_hl4
+W1,drop baselines-margin|street,14,1.0986288438932492,0.49110229440082726,-0.02779570709429513,baselines-margin|street
+W1,drop guide-policy-margin|actual_given_guide|nov_sentence_pin,14,1.1068657203852132,0.49478429216229586,-0.0195588306023311,guide-policy-margin|actual_given_guide|nov_sentence_pin
+W1,drop margin-ts|q_sentence_direction|k_fit_median,14,1.1303368667402007,0.5052762193415462,0.003912315752656381,margin-ts|q_sentence_direction|k_fit_median
+W1,drop FAMILY_A,14,1.0865810588314262,0.4857167677789864,-0.039843492156118154,FAMILY_A
+W1,STREET-INDEPENDENT ONLY (M3 + M2sent + family),14,1.4194464049606315,0.6345121831908744,0.2930218539730871,all Street-anchored
+W1,NO SENTENCE CLIP,14,1.1947787297083654,0.5340826237383022,0.06835417872082106,the clip
+W2,ALL (stack_clip),10,0.7876374470960329,0.40209042381442045,0.0,
+W2,drop street-bias|dispersion_conditioned|rw_hl4_med,10,0.8706037191515715,0.4444448644471125,0.08296627205553864,street-bias|dispersion_conditioned|rw_hl4_med
+W2,drop street-bias|street_plus_flowthrough|rw_hl4,10,0.8693282894055724,0.44379375512136227,0.08169084230953949,street-bias|street_plus_flowthrough|rw_hl4
+W2,drop baselines-margin|street,10,0.7533815367103713,0.38460271601700274,-0.03425591038566156,baselines-margin|street
+W2,drop guide-policy-margin|actual_given_guide|nov_sentence_pin,10,0.7752892527939498,0.39578664699607163,-0.012348194302083115,guide-policy-margin|actual_given_guide|nov_sentence_pin
+W2,drop margin-ts|q_sentence_direction|k_fit_median,10,0.8144769848255166,0.4157920591803116,0.026839537729483665,margin-ts|q_sentence_direction|k_fit_median
+W2,drop FAMILY_A,10,0.8136950306295165,0.41539287006705605,0.02605758353348364,FAMILY_A
+W2,STREET-INDEPENDENT ONLY (M3 + M2sent + family),10,1.202365189180608,0.61380972969203,0.4147277420845751,all Street-anchored
+W2,NO SENTENCE CLIP,10,0.7876374470960329,0.40209042381442045,0.0,the clip

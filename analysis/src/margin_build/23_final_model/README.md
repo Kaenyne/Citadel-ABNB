@@ -9,7 +9,14 @@ The combination of every surviving margin object in the run, its line decomposit
 cd "C:\Users\krish\citadel-abnb-margins"
 py -3.13 analysis/src/margin_build/23_final_model/run.py       # ~4 min, exit 0
 MARGIN_SKIP_SCORE=1 py -3.13 analysis/src/margin_build/23_final_model/run.py   # without the scorer
+MARGIN_VERIFY_ONLY=1 py -3.13 analysis/src/margin_build/23_final_model/run.py  # no-write audit mode
 ```
+
+**`MARGIN_VERIFY_ONLY=1`** (added by WS31 for audit finding 18) recomputes the whole package into
+`data/processed/margin_build/23_final_model/_verify/`, writes **no** committed output and **no**
+registry row, skips `score.py`, runs the same reconciliation assertions, and prints a per-file
+comparison against the committed CSVs (max absolute numeric difference, added/removed rows). Use it
+to reproduce the build read-only. The `_verify/` folder is scratch — delete it when done.
 
 **Interpreter: `py -3.13`** (pandas 2.3, numpy, scipy, openpyxl). The repo venv `python` has no
 scipy and no openpyxl and will not run this package.
@@ -27,7 +34,14 @@ WS20 section 10.
 | `diagnostics.py` | leave-one-member-out, the no-clip variant, the Street-independent variant, shock vs calm. |
 | `forecast.py` | line decomposition reconciled to the adopted EBITDA, the full P&L / bridge / FCF, annuals, scenarios, cyclicality, the 5 Nov card, the budget identity. |
 | `workbook.py` | writes `model/ABNB_margin_model.xlsx` (README, Inputs, Lines, Bridge, Scenarios, Consensus, Seasonality, Weights, Card). |
-| `run.py` | all of the above in order, then `score.py` once. |
+| `run.py` | all of the above in order, then the reconciliation assertions (step 4b), then `score.py` once. |
+
+**Step 4b, the reconciliation assertions** (WS31, from audit findings 02/03/04/05/06/07/15). The
+build exits 2 unless: the five cash lines minus the D&A add-back equal total cash costs; revenue
+minus total cash costs equals adj EBITDA; the GAAP bridge uses the same add-back schedule; CFO =
+net income + D&A + SBC + working capital and other; annual tax and net income are the sum of the
+quarters; the card's dollar band and P(beat) come from the same registered object; the bear and
+base scenario margins differ; and the EPS band is wider than the EBITDA-only band.
 
 ## Outputs
 
@@ -40,8 +54,14 @@ WS20 section 10.
 `23_diag_leave_one_out.csv`, `23_diag_member_scores.csv`, `23_diag_shock_vs_calm.csv`,
 `23_diag_street_independent_live.csv`.
 
+Plus (WS31) `23_dollar_from_margin_by_quarter.csv`, `23_dollar_from_margin_live.csv`,
+`23_dollar_from_margin_scores.csv` — the ADOPTED dollar construction (the margin combination x the
+revenue leg), which is the object the card's dollar point, band and P(beat) all come from.
+`_pre_audit/` holds the pre-audit copy of every CSV whose numbers moved.
+
 Registry: `data/processed/margin_build/registry/final-margin__combined.csv` (1,152 rows,
-four specs, PIT and full_sample replays, W1 / W2 / LIVE).
+four specs, PIT and full_sample replays, W1 / W2 / LIVE) and
+`final-margin__combined_dollar_from_margin.csv` (576 rows).
 
 Workbook: `model/ABNB_margin_model.xlsx`. Note: `docs/margin-build/SYNTHESIS.md`,
 `docs/margin-build/notes/23_triangulate.md`.

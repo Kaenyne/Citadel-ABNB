@@ -18,10 +18,21 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
+import os
+
 ROOT = Path(__file__).resolve().parents[4]
 PROC = ROOT / "data" / "processed" / "margin_build"
 OUT = PROC / "23_final_model"
-XLSX = ROOT / "model" / "ABNB_margin_model.xlsx"
+# WS31 audit 18: no-write verification mode (see combine.py)
+VERIFY = os.environ.get("MARGIN_VERIFY_ONLY") == "1"
+VOUT = OUT / "_verify"
+XLSX = (VOUT / "ABNB_margin_model.xlsx") if VERIFY else (ROOT / "model" / "ABNB_margin_model.xlsx")
+
+
+def rpath(name):
+    if VERIFY and (VOUT / name).exists():
+        return VOUT / name
+    return OUT / name
 
 HDR = Font(bold=True, color="FFFFFF")
 HDRFILL = PatternFill("solid", fgColor="1F3B57")
@@ -66,23 +77,23 @@ def write_table(ws, df, start_row=1, title=None, number_format="#,##0.00", width
 
 def main():
     XLSX.parent.mkdir(parents=True, exist_ok=True)
-    live = pd.read_csv(OUT / "23_combination_live.csv")
-    path = pd.read_csv(OUT / "23_path_rule.csv")
-    bands = pd.read_csv(OUT / "23_bands.csv")
-    lines = pd.read_csv(OUT / "23_lines_quarterly.csv")
-    pl = pd.read_csv(OUT / "23_forecast_quarterly.csv")
-    ann = pd.read_csv(OUT / "23_forecast_annual.csv")
-    cons = pd.read_csv(OUT / "23_vs_consensus.csv")
-    scen = pd.read_csv(OUT / "23_scenarios.csv")
-    seas = pd.read_csv(OUT / "23_seasonality.csv")
-    macro = pd.read_csv(OUT / "23_macro_sensitivity.csv")
-    floor = pd.read_csv(OUT / "23_fy26_floor_breakeven.csv")
-    card = pd.read_csv(OUT / "23_card_5nov.csv")
-    bi = pd.read_csv(OUT / "23_card_budget_identity.csv")
-    wts = pd.read_csv(OUT / "23_combination_weights.csv")
-    sc23 = pd.read_csv(OUT / "23_combination_scores.csv")
-    diag = pd.read_csv(OUT / "23_diag_leave_one_out.csv")
-    dmem = pd.read_csv(OUT / "23_diag_member_scores.csv")
+    live = pd.read_csv(rpath("23_combination_live.csv"))
+    path = pd.read_csv(rpath("23_path_rule.csv"))
+    bands = pd.read_csv(rpath("23_bands.csv"))
+    lines = pd.read_csv(rpath("23_lines_quarterly.csv"))
+    pl = pd.read_csv(rpath("23_forecast_quarterly.csv"))
+    ann = pd.read_csv(rpath("23_forecast_annual.csv"))
+    cons = pd.read_csv(rpath("23_vs_consensus.csv"))
+    scen = pd.read_csv(rpath("23_scenarios.csv"))
+    seas = pd.read_csv(rpath("23_seasonality.csv"))
+    macro = pd.read_csv(rpath("23_macro_sensitivity.csv"))
+    floor = pd.read_csv(rpath("23_fy26_floor_breakeven.csv"))
+    card = pd.read_csv(rpath("23_card_5nov.csv"))
+    bi = pd.read_csv(rpath("23_card_budget_identity.csv"))
+    wts = pd.read_csv(rpath("23_combination_weights.csv"))
+    sc23 = pd.read_csv(rpath("23_combination_scores.csv"))
+    diag = pd.read_csv(rpath("23_diag_leave_one_out.csv"))
+    dmem = pd.read_csv(rpath("23_diag_member_scores.csv"))
     rev = pd.read_csv(PROC / "06_fy27_path_v2" / "06_revenue_path_3q26_4q27_v2b.csv")
     revb = rev[rev.line == "revenue_musd"].pivot(index="quarter", columns="scenario", values="value")
 
@@ -92,9 +103,19 @@ def main():
     ws = wb.active
     ws.title = "README"
     txt = [
-        ("ABNB margin model — WS23 final", True),
+        ("ABNB margin model — WS23 final, post-audit (WS31)", True),
         ("Built 14 Sep 2026 by the margin-build run (docs/margin-build/SYNTHESIS.md).", False),
         ("Vintage: 2026-09-11 (LSEG consensus row). Revenue path: bridge v3 / WS06 v2b.", False),
+        ("", False),
+        ("THIS IS A FROZEN REPORT, NOT AN INPUT-DRIVEN MODEL.", True),
+        ("Every forecast cell is a value generated from the CSVs in", False),
+        ("data/processed/margin_build/23_final_model/. Changing a number on the Inputs sheet", False),
+        ("does NOT flow through: the only live formulas are the local identities on the Bridge", False),
+        ("sheet (line sum, total cash costs, adj EBITDA, margins, operating income, pretax,", False),
+        ("tax, net income, EPS), and their cached results are blank until Excel opens the file", False),
+        ("and recalculates. To change an assumption, edit the code and rebuild:", False),
+        ("    py -3.13 analysis/src/margin_build/23_final_model/run.py", False),
+        ("(MARGIN_VERIFY_ONLY=1 recomputes into _verify/ and compares, writing nothing.)", False),
         ("", False),
         ("What this workbook is", True),
         ("A margin model on top of an adopted revenue path. It does NOT forecast revenue.", False),
@@ -175,8 +196,9 @@ def main():
     r = write_table(ws, hist[keep], 1, "History — actual cash cost lines ex-SBC, 1Q21-2Q26 (WS02 panel)")
     fc = lines[lines.scenario != "actual"].copy()
     keep2 = ["quarter", "scenario", "revenue_musd", "cor_cash_musd", "ops_cash_musd", "pd_cash_musd",
-             "sm_cash_musd", "ga_cash_musd", "other_net_musd", "residual_allocated_musd",
-             "total_cash_costs_musd", "adj_ebitda_musd", "adj_ebitda_margin_pct"]
+             "sm_cash_musd", "ga_cash_musd", "sum_five_lines_musd", "addbacks_musd",
+             "residual_allocated_musd", "total_cash_costs_musd", "recon_gap_musd",
+             "adj_ebitda_musd", "adj_ebitda_margin_pct", "scenario_cost_basis"]
     keep2 = [c for c in keep2 if c in fc.columns]
     r = write_table(ws, fc[keep2], r,
                     "Forecast — M1 driver lines reconciled to the adopted adj EBITDA; "
@@ -202,8 +224,10 @@ def main():
         ("Product development", "pd_cash_musd", None),
         ("Sales & marketing", "sm_cash_musd", None),
         ("G&A ex reserves", "ga_cash_musd", None),
-        ("Total cash costs", "total_cash_costs_musd", None),
-        ("Adj EBITDA", "adj_ebitda_musd", None),
+        ("Sum of the five cash lines", None, "sum_lines"),
+        ("less: D&A add-back (the one add-back schedule)", "addbacks_musd", None),
+        ("Total cash costs (net of the add-back)", None, "tcc"),
+        ("Adj EBITDA", None, "ebitda"),
         ("Adj EBITDA margin %", None, "ebitda_margin"),
         ("  80% band low %", "margin_q10", None),
         ("  80% band high %", "margin_q90", None),
@@ -238,6 +262,14 @@ def main():
                 ws.cell(row=rr, column=j, value=v).number_format = "#,##0.00"
             else:
                 f = {
+                    "sum_lines": ("=" + "+".join(
+                        f"{L}{ridx[x]}" for x in ["Cost of revenue", "Operations & support",
+                                                  "Product development", "Sales & marketing",
+                                                  "G&A ex reserves"])),
+                    "tcc": (f"={L}{ridx['Sum of the five cash lines']}"
+                            f"-{L}{ridx['less: D&A add-back (the one add-back schedule)']}"),
+                    "ebitda": (f"={L}{ridx['Revenue']}"
+                               f"-{L}{ridx['Total cash costs (net of the add-back)']}"),
                     "ebitda_margin": f"={L}{ridx['Adj EBITDA']}/{L}{ridx['Revenue']}*100",
                     "op": f"={L}{ridx['Adj EBITDA']}-{L}{ridx['Depreciation & amortisation']}-{L}{ridx['Stock-based compensation']}",
                     "opm": f"={L}{ridx['GAAP operating income']}/{L}{ridx['Revenue']}*100",

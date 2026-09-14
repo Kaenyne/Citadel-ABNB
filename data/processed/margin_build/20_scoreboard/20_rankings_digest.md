@@ -2,47 +2,45 @@
 
 ## adj_ebitda_margin_pct
 
-**h=0, W1, equal-weighted** (n_objects 75)
+**h=0, W1, equal-weighted** (n_objects 79)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
-| 1 | M5\|dispersion_conditioned\|rw_hl4_med | 14 | 1.223 | 0.55 | 0.77 | 5 | y |
-| 2 | M5\|dispersion_conditioned\|rw_hl4 | 14 | 1.330 | 0.59 | 0.84 | 5 | y |
-| 3 | M5\|dispersion_conditioned\|rw_hl4_usd | 14 | 1.330 | 0.59 | 0.84 | 5 | y |
+| 1 | final-margin\|combined\|stack_ew_clip | 14 | 1.123 | 0.50 | 0.71 | 54 | y |
+| 2 | final-margin\|combined\|stack_clip | 14 | 1.126 | 0.50 | 0.71 | 54 | y |
+| 3 | final-margin\|combined\|stack_lam25_clip | 14 | 1.129 | 0.50 | 0.71 | 54 | y |
 
-Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 1.883
-
-**h=0, W1, recency-weighted** (n_objects 75)
+**h=0, W1, recency-weighted** (n_objects 79)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
 | 1 | M5\|dispersion_conditioned\|rw_hl4 | 14 | 0.820 | 0.43 | 0.66 | 5 | y |
 | 2 | M5\|dispersion_conditioned\|rw_hl4_usd | 14 | 0.820 | 0.43 | 0.66 | 5 | y |
-| 3 | M5\|dispersion_conditioned\|rw_hl4_med | 14 | 0.860 | 0.45 | 0.69 | 5 | y |
+| 3 | final-margin\|combined\|stack_ew_clip | 14 | 0.823 | 0.43 | 0.66 | 54 | y |
 
-Best Street-independent: M2|q_sentence_direction|k_fit_median MAE 1.521
+Best Street-independent: final-margin|combined|stack_ew_clip MAE 0.823
 
-**h=0, W2, equal-weighted** (n_objects 75)
+**h=0, W2, equal-weighted** (n_objects 79)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
 | 1 | M5\|dispersion_conditioned\|rw_hl4 | 10 | 0.743 | 0.38 | 0.57 | 5 | y |
 | 2 | M5\|dispersion_conditioned\|rw_hl4_usd | 10 | 0.743 | 0.38 | 0.57 | 5 | y |
-| 3 | M5\|dispersion_conditioned\|rw_hl4_med | 10 | 0.787 | 0.40 | 0.60 | 5 | y |
+| 3 | final-margin\|combined\|stack_lam25_clip | 10 | 0.780 | 0.40 | 0.60 | 54 | y |
 
-Best Street-independent: M2|q_sentence_direction|k_abs_rw MAE 1.312
+Best Street-independent: final-margin|combined|stack_lam25_clip MAE 0.780
 
-**h=0, W2, recency-weighted** (n_objects 75)
+**h=0, W2, recency-weighted** (n_objects 79)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
 | 1 | M5\|dispersion_conditioned\|rw_hl4 | 10 | 0.622 | 0.35 | 0.56 | 5 | y |
 | 2 | M5\|dispersion_conditioned\|rw_hl4_usd | 10 | 0.622 | 0.35 | 0.56 | 5 | y |
-| 3 | M5\|dispersion_conditioned\|rw_hl4_med | 10 | 0.703 | 0.40 | 0.63 | 5 | y |
+| 3 | final-margin\|combined\|stack_lam25_clip | 10 | 0.654 | 0.37 | 0.59 | 54 | y |
 
-Best Street-independent: M2|q_sentence_direction|k_abs_rw MAE 1.082
+Best Street-independent: final-margin|combined|stack_lam25_clip MAE 0.654
 
-**h=1, W1, equal-weighted** (n_objects 70)
+**h=1, W1, equal-weighted** (n_objects 74)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -50,9 +48,9 @@ Best Street-independent: M2|q_sentence_direction|k_abs_rw MAE 1.082
 | 2 | M5\|street_plus_flowthrough\|rw_hl4_med | 13 | 1.730 | 0.74 | 1.05 | 6 | n |
 | 3 | M5\|dispersion_conditioned\|rw_hl4 | 13 | 1.748 | 0.74 | 1.07 | 5 | n |
 
-Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 2.189
+Best Street-independent: final-margin|combined|stack_lam25_clip MAE 1.943
 
-**h=1, W1, recency-weighted** (n_objects 70)
+**h=1, W1, recency-weighted** (n_objects 74)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -60,19 +58,19 @@ Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 2.189
 | 2 | M5\|street_plus_flowthrough\|rw_hl4 | 13 | 1.376 | 0.71 | 1.10 | 6 | y |
 | 3 | M5\|street_plus_flowthrough\|rw_hl4_usd | 13 | 1.376 | 0.71 | 1.10 | 6 | y |
 
-Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 1.731
+Best Street-independent: final-margin|combined|stack_lam25_clip MAE 1.544
 
-**h=1, W2, equal-weighted** (n_objects 70)
+**h=1, W2, equal-weighted** (n_objects 74)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
 | 1 | base\|street\|street|adj_ebitda_margin_pct|h1|PIT | 9 | 0.993 | 0.63 | 1.00 | 1 | y |
-| 2 | M3\|actual_given_guide\|last_pin | 9 | 1.304 | 0.83 | 1.31 | 1 | n |
-| 3 | M3\|actual_given_guide\|last | 9 | 1.324 | 0.84 | 1.33 | 1 | n |
+| 2 | final-margin\|combined\|stack_lam25_clip | 9 | 1.256 | 0.80 | 1.26 | 54 | y |
+| 3 | final-margin\|combined\|stack | 9 | 1.269 | 0.80 | 1.28 | 54 | y |
 
-Best Street-independent: M3|actual_given_guide|last_pin MAE 1.304
+Best Street-independent: final-margin|combined|stack_lam25_clip MAE 1.256
 
-**h=1, W2, recency-weighted** (n_objects 70)
+**h=1, W2, recency-weighted** (n_objects 74)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -82,7 +80,7 @@ Best Street-independent: M3|actual_given_guide|last_pin MAE 1.304
 
 Best Street-independent: M3|actual_given_guide|last_pin MAE 1.208
 
-**h=2, W1, equal-weighted** (n_objects 50)
+**h=2, W1, equal-weighted** (n_objects 54)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -90,7 +88,7 @@ Best Street-independent: M3|actual_given_guide|last_pin MAE 1.208
 | 2 | M2\|incremental_margin\|k8_median | 12 | 2.021 | 0.82 | - | 3 | n |
 | 3 | M2\|incremental_margin\|k8_rw | 12 | 2.177 | 0.88 | - | 3 | n |
 
-**h=2, W1, recency-weighted** (n_objects 50)
+**h=2, W1, recency-weighted** (n_objects 54)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -98,7 +96,7 @@ Best Street-independent: M3|actual_given_guide|last_pin MAE 1.208
 | 2 | M2\|incremental_margin\|k8_median | 12 | 1.822 | 0.93 | - | 3 | n |
 | 3 | M2\|incremental_margin\|k8_rw | 12 | 1.854 | 0.95 | - | 3 | n |
 
-**h=2, W2, equal-weighted** (n_objects 50)
+**h=2, W2, equal-weighted** (n_objects 54)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -106,57 +104,49 @@ Best Street-independent: M3|actual_given_guide|last_pin MAE 1.208
 | 2 | M3\|actual_given_guide\|last_pin | 8 | 1.612 | 0.94 | - | 1 | n |
 | 3 | M3\|actual_given_guide\|nov_sentence_pin | 8 | 1.665 | 0.97 | - | 1 | n |
 
-**h=2, W2, recency-weighted** (n_objects 50)
+**h=2, W2, recency-weighted** (n_objects 54)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
 | 1 | M3\|actual_given_guide\|last | 8 | 1.481 | 0.89 | - | 1 | n |
 | 2 | M3\|actual_given_guide\|last_pin | 8 | 1.481 | 0.89 | - | 1 | n |
-| 3 | M2\|pct_rev_seasonal\|nodrift | 8 | 1.663 | 1.00 | - | 2 | y |
+| 3 | final-margin\|combined\|stack_ew_clip | 8 | 1.660 | 1.00 | - | 54 | y |
 
 ## adj_ebitda_musd
 
-**h=0, W1, equal-weighted** (n_objects 75)
+**h=0, W1, equal-weighted** (n_objects 83)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
-| 1 | M5\|street_plus_flowthrough\|rw_hl4_med | 14 | 42.832 | 0.35 | 0.66 | 6 | y |
-| 2 | M5\|street_plus_flowthrough\|rw_hl4 | 14 | 43.062 | 0.35 | 0.66 | 6 | y |
-| 3 | M5\|street_plus_flowthrough\|rw_hl4_usd | 14 | 43.062 | 0.35 | 0.66 | 6 | y |
+| 1 | final-margin\|combined_dollar_from_margin\|stack_ew_clip | 14 | 30.495 | 0.25 | 0.47 | 54 | y |
+| 2 | final-margin\|combined_dollar_from_margin\|stack_clip | 14 | 30.655 | 0.25 | 0.47 | 54 | y |
+| 3 | final-margin\|combined_dollar_from_margin\|stack_lam25_clip | 14 | 30.735 | 0.25 | 0.47 | 54 | y |
 
-Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 45.477
-
-**h=0, W1, recency-weighted** (n_objects 75)
+**h=0, W1, recency-weighted** (n_objects 83)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
-| 1 | M5\|street_plus_bias\|rw_hl4_usd | 14 | 33.966 | 0.29 | 0.55 | 3 | y |
-| 2 | M5\|street_plus_flowthrough\|rw_hl4 | 14 | 33.987 | 0.29 | 0.55 | 6 | y |
-| 3 | M5\|street_plus_flowthrough\|rw_hl4_usd | 14 | 33.987 | 0.29 | 0.55 | 6 | y |
+| 1 | final-margin\|combined_dollar_from_margin\|stack_lam25_clip | 14 | 24.118 | 0.21 | 0.39 | 54 | y |
+| 2 | final-margin\|combined_dollar_from_margin\|stack_clip | 14 | 24.261 | 0.21 | 0.39 | 54 | y |
+| 3 | final-margin\|combined_dollar_from_margin\|stack_ew_clip | 14 | 24.546 | 0.21 | 0.39 | 54 | y |
 
-Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 38.789
-
-**h=0, W2, equal-weighted** (n_objects 75)
+**h=0, W2, equal-weighted** (n_objects 83)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
-| 1 | M5\|street_plus_flowthrough\|rw_hl4 | 10 | 33.758 | 0.35 | 0.58 | 6 | y |
-| 2 | M5\|street_plus_flowthrough\|rw_hl4_usd | 10 | 33.758 | 0.35 | 0.58 | 6 | y |
-| 3 | M5\|street_plus_flowthrough\|rw_hl4_med | 10 | 34.856 | 0.36 | 0.60 | 6 | y |
+| 1 | final-margin\|combined_dollar_from_margin\|stack_lam25_clip | 10 | 25.514 | 0.26 | 0.44 | 54 | y |
+| 2 | final-margin\|combined_dollar_from_margin\|stack | 10 | 25.837 | 0.26 | 0.44 | 54 | y |
+| 3 | final-margin\|combined_dollar_from_margin\|stack_clip | 10 | 25.837 | 0.26 | 0.44 | 54 | y |
 
-Best Street-independent: M2|q_sentence_direction|k_abs_rw MAE 37.555
-
-**h=0, W2, recency-weighted** (n_objects 75)
+**h=0, W2, recency-weighted** (n_objects 83)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
-| 1 | M5\|street_plus_bias\|rw_hl4_usd | 10 | 29.711 | 0.28 | 0.50 | 3 | y |
-| 2 | M5\|street_plus_flowthrough\|rw_hl4 | 10 | 31.080 | 0.29 | 0.52 | 6 | y |
-| 3 | M5\|street_plus_flowthrough\|rw_hl4_usd | 10 | 31.080 | 0.29 | 0.52 | 6 | y |
+| 1 | final-margin\|combined_dollar_from_margin\|stack_lam25_clip | 10 | 20.929 | 0.20 | 0.35 | 54 | y |
+| 2 | final-margin\|combined_dollar_from_margin\|stack | 10 | 21.369 | 0.20 | 0.36 | 54 | y |
+| 3 | final-margin\|combined_dollar_from_margin\|stack_clip | 10 | 21.369 | 0.20 | 0.36 | 54 | y |
 
-Best Street-independent: M2|q_sentence_direction|k_abs_rw MAE 34.246
-
-**h=1, W1, equal-weighted** (n_objects 70)
+**h=1, W1, equal-weighted** (n_objects 78)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -166,7 +156,7 @@ Best Street-independent: M2|q_sentence_direction|k_abs_rw MAE 34.246
 
 Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 64.278
 
-**h=1, W1, recency-weighted** (n_objects 70)
+**h=1, W1, recency-weighted** (n_objects 78)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -176,7 +166,7 @@ Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 64.278
 
 Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 60.976
 
-**h=1, W2, equal-weighted** (n_objects 70)
+**h=1, W2, equal-weighted** (n_objects 78)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -186,7 +176,7 @@ Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 60.976
 
 Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 49.166
 
-**h=1, W2, recency-weighted** (n_objects 70)
+**h=1, W2, recency-weighted** (n_objects 78)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -196,7 +186,7 @@ Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 49.166
 
 Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 55.253
 
-**h=2, W1, equal-weighted** (n_objects 50)
+**h=2, W1, equal-weighted** (n_objects 58)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -204,7 +194,7 @@ Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 55.253
 | 2 | M2\|incremental_margin\|k8_ew | 12 | 74.315 | 0.56 | - | 3 | y |
 | 3 | M2\|incremental_margin\|k8_rw | 12 | 76.337 | 0.58 | - | 3 | y |
 
-**h=2, W1, recency-weighted** (n_objects 50)
+**h=2, W1, recency-weighted** (n_objects 58)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -212,7 +202,7 @@ Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 55.253
 | 2 | M2\|incremental_margin\|k8_rw | 12 | 72.176 | 0.61 | - | 3 | y |
 | 3 | M2\|incremental_margin\|k8_ew | 12 | 72.201 | 0.61 | - | 3 | y |
 
-**h=2, W2, equal-weighted** (n_objects 50)
+**h=2, W2, equal-weighted** (n_objects 58)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|
@@ -220,7 +210,7 @@ Best Street-independent: M3|actual_given_guide|nov_sentence_pin MAE 55.253
 | 2 | M3\|actual_given_guide\|nov_sentence_pin | 8 | 79.724 | 0.86 | - | 2 | y |
 | 3 | M3\|actual_given_guide\|nocushion_pin | 8 | 81.205 | 0.88 | - | 2 | y |
 
-**h=2, W2, recency-weighted** (n_objects 50)
+**h=2, W2, recency-weighted** (n_objects 58)
 
 | # | method\|object\|spec | n | MAE | vs naive | vs street | params | surv |
 |---|---|---|---|---|---|---|---|

@@ -1,0 +1,15 @@
+window,member,n,mae,bias
+W1,street-bias|dispersion_conditioned|rw_hl4_med,14,1.2232269750553417,0.1341344995765379
+W1,street-bias|street_plus_flowthrough|rw_hl4,14,1.660796379219001,0.6924918534695753
+W1,baselines-margin|street,14,1.5920779972124077,-1.2191457761029767
+W1,guide-policy-margin|actual_given_guide|nov_sentence_pin,14,1.882738881700558,-1.424079583313518
+W1,margin-ts|q_sentence_direction|k_fit_median,14,2.048075433060218,-1.6801282767615253
+W1,FAMILY_A,14,2.1275489218938284,-0.0631093977875139
+W1,seasonal_naive (= the sentence level),14,2.237067218823807,-0.4732602177636394
+W2,street-bias|dispersion_conditioned|rw_hl4_med,10,0.7869452728492963,0.06864823999963968
+W2,street-bias|street_plus_flowthrough|rw_hl4,10,0.987179779949685,0.3158871116862212
+W2,baselines-margin|street,10,1.3111779281441889,-1.126356841361538
+W2,guide-policy-margin|actual_given_guide|nov_sentence_pin,10,1.8420770447497812,-1.5065565615570276
+W2,margin-ts|q_sentence_direction|k_fit_median,10,1.5387779164650184,-1.023651897646848
+W2,FAMILY_A,10,1.669812568644345,0.429086331899904
+W2,seasonal_naive (= the sentence level),10,1.9588565169598682,0.19350365323268903

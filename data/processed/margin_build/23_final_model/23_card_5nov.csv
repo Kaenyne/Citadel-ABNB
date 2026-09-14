@@ -1,10 +1,10 @@
 item,value,unit,band80,vs,note
 3Q26 adj EBITDA margin,49.93993908638773,%,47.86 - 52.02,Street 49.78%,"combination stack_clip, h=0; bias-corrected on the last 5 PIT errors -> 50.21%, which the 'down slightly' sentence caps at 50.09%"
-3Q26 adj EBITDA,2399.132402388442,USD m,2299 - 2499,"Street 2362 (n 36, sd 20.0)","margin x bridge v3 revenue 4,804"
+3Q26 adj EBITDA,2399.132402388442,USD m,2337 - 2462,"Street 2362 (n 36, EBITDA sd 20.0)","final-margin|combined_dollar_from_margin (the margin combination x bridge-v3 revenue 4,804), band = its OWN conformal qhat80 62.6 on the 2024Q1+ calibration; W1/W2 h=0 MAE 30.7 / 25.8. Cross-check: the four-member dollar combination reads 2411"
 "3Q26 beat vs Street, $",37.610612388442405,USD m,,,"M5 flow-through arithmetic: 0.464 x (4,804 - 4,744) + 16 = +$44M"
-P(3Q26 adj EBITDA beats Street),0.7654418391009807,probability,,,Gaussian on the conformal sd; the 80% band contains the Street
-P(3Q26 margin beats Street margin),0.5402861765589382,probability,,,same
-3Q26 EPS (GAAP diluted),2.8789064125062396,USD,2.74 - 3.02,Street 2.85,"M7 bridge, ETR 18.0%, 591.7m shares; $0.001386 of EPS per $M of EBITDA"
+P(3Q26 adj EBITDA beats Street),0.7794080869036119,probability,,,"Gaussian, sd = qhat80/1.2816 = 48.8, on the SAME object as the band (WS31 audit 04). The previously published 0.77 mixed a band from the margin route with an sd from the four-member dollar object and is withdrawn. Descriptive, not a validated probability: the calibration pool is n=10 and the object was selected after seeing the scoreboard"
+P(3Q26 margin beats Street margin),0.5402861765589382,probability,,,Gaussian on the margin object's own conformal sd; same caveat
+3Q26 EPS (GAAP diluted),2.8789064125062396,USD,2.70 - 3.05,Street 2.85,"M7 bridge, ETR 18.0%, 591.7m shares; $0.001386 of EPS per $M of EBITDA. Band is JOINT (WS31 audit 06): EBITDA conformal term and M7's measured bridge sd $0.083 in quadrature, not EBITDA-only"
 4Q26 adj EBITDA margin,28.897437,%,,Street 28.90%,"h=1 rule: the Street is unbeaten; combination 29.04%, M3 sentence path 29.90%"
 FY26 adj EBITDA margin,35.72661108582304,%,,"floor 35.5%, Street 35.62%","1H26 actual + 3Q26 combination + 4Q26 Street, on bridge v3 revenue"
 FY26 adj EBITDA,5097.524101685529,USD m,,"Street 5,053.7",

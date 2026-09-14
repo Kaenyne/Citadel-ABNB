@@ -52,10 +52,35 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 22 | Discussion round: three Opus agents (A: M1/M4/M6, B: M2/M3, C: M5/M7/10) answer the red team now and the scoreboard when it lands; orchestrator concatenates discussion/group_*.md into DISCUSSION.md and re-runs score.py once | opus | 21 (+20 for part 2) | done | 00:15 | DISCUSSION.md | 01:50 |
 | 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | done | 01:50 | SYNTHESIS.md + notes/23_triangulate.md | 05:35 |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | done | 02:30 | audit/CODEX_ASTRA_AUDIT.md | 02:55 |
-| 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | running | 02:55 | audit/AUDIT_RESPONSE.md | 02:55 |
+| 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | done | 02:55 | audit/AUDIT_RESPONSE.md | 05:55 |
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 15 Sep 05:55 WS31 done (audit applied in full: 17 findings fixed, 1 part-deferred, 0 rejected; `AUDIT_RESPONSE.md` + SYNTHESIS §11 + an
+  appended "Audit response" in notes/23_triangulate.md). CRITICAL 01 fixed and replayed: both calibration pools (member errors for the
+  weights, own errors for the conformal band) are now gated on `print_date <= vintage_date` in combine.py and diagnostics.py. h=0 UNCHANGED
+  (margin MAE 1.126/0.788, all ratios, sign tests, leave-one-out); h=1 1.962->1.952 W1 / 1.275->1.269 W2, h=2 2.255->2.229 / 1.762->1.766,
+  h=2 W1 cov80 0.833->0.750. EVERY pass/fail verdict survives (h=0 passes, h=1 still loses to Street 1.189/1.278, h=2 still fails W2 1.026).
+  NEW REGISTERED OBJECT `final-margin__combined_dollar_from_margin` (576 rows) = the ADOPTED dollar construction (margin combination x revenue
+  leg): W1/W2 h=0 MAE $30.7M/$25.8M, 0.25x/0.26x naive, 0.47x/0.44x Street, better than Street in 14/14 and 10/10 (sign p 0.0001/0.0010) - the
+  best dollar object in the build; the four-member dollar combination ($39.7/$30.9M) is now a labelled cross-check. CARD MOVES: 3Q26 band
+  $2,299-2,499M -> $2,337-2,462M, P(beat) 0.77 WITHDRAWN -> 0.779 (band and probability now from one object), EPS band $2.74-3.02 -> $2.70-3.05
+  (M7 bridge sd $0.083 in quadrature), 3Q26 S&M $790M/+35.0% -> $781M/+33.5% (one add-back schedule = D&A only; the old M1 other_net rule carried
+  $11.9M of unsupported add-backs). STATEMENTS: FY26 base NI 3,145.93->3,146.12 (annual = sum of quarters), FY FCF mid 4,830/5,283/5,716 ->
+  4,844/5,297/5,731 (CFO rebuilt from after-tax NI), FY27 bear/bull margin 34.51/34.71 -> 32.15/36.53 (scenarios now carry M6 k=0.364).
+  UNCHANGED: 3Q26 49.94%/$2,399M, 4Q26 28.90%/$918M, FY26 35.73%/$5,098M, FY27 34.64%/$5,483M, EPS $5.28/$5.73, the budget identity, the floor
+  break-evens. REGISTRY: provenance populated (768 consensus-anchored rows carry LSEG + street_as_of; knowable_from on all rows), n_params 2->54
+  (2 wrapper + 52 inherited), n_train = prior observations, `bound method` notes bug fixed; n_members lives in notes because FORMAT 1.0 is frozen.
+  WORDING rewritten (10-13): results retrospective and conditional on a post-hoc pool; "attained coverage 82-91%" withdrawn (a rank grid, not a
+  measurement); the FY floor is an inequality, not a 27.6% point or an automatic sell; "Airbnb has no cost dial" withdrawn (k 0.14, t 0.47,
+  SE 0.30, 95% CI -0.44 to +0.72 - imprecise, not zero). NEW GUARDS: run.py step 4b asserts eight identities (exit 2 on failure);
+  MARGIN_VERIFY_ONLY=1 recomputes into _verify/ and diffs without writing. Incidental repair: the LIVE ebitda_musd_* columns of
+  23_combination_live.csv were silently never written (quarter-code mismatch) - fixed, nothing downstream used them. DEFERRED: finding 16's
+  second half (wire the workbook Inputs into the forecast cells and save formula caches) - openpyxl cannot evaluate formulas; the workbook is
+  now labelled a frozen report instead. Re-ran, sequentially: 23_final_model/run.py (exit 0, ends with score.py) then 20_scoreboard/run.py (exit 0).
+
+- 15 Sep ~03:00 SESSION LIMIT hit (reset 3:20am ET) while WS31 was starting; nothing written. 03:25 relaunched WS31 on Opus with RESUME prefix.
 
 - 15 Sep 02:55 Codex astra audit done (18 findings: 1 critical = h=1/h=2 calibration pools not print-date gated, h=0 unchanged; 12 major incl. cost stack not summing on display, add-back mismatch between cost and GAAP bridges, P(beat) 77% from a different object than the band (68.5% band-consistent), scenario P&L at constant margin, EPS bands EBITDA-only, FCF not re-derived from NI, consensus provenance missing in the final registry, n_params/n_train semantics, post-selection overstatement, 'attained coverage' wording, floor treated as a point, 'no cost dial' overclaim; 5 minor). Verdict: not ready to quote until fixed; h=0 point reproduces. WS31 apply-audit launched (Opus).
 
