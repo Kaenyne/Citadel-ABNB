@@ -1,0 +1,10 @@
+{
+ "slug": "augustliu-bnpl-merchant-dataset",
+ "url": "https://github.com/AugustLiu0415/BNPL_Merchant_Dataset",
+ "category": "macro_consumer_spend",
+ "data_kind": "both",
+ "one_line": "Real CSVs committed (verified sizes): data/merchant_list_raw_data/BNPL_Merchant_List.csv 1.8 MB and BNPL_Merchant_Categories.csv 3.4 MB (8,470 merchants across Affirm/Klarna/Afterpay/Zip/Sezzle directories), data/public_company_panel_data/public_company_panel_data_2015-2026.csv 3.1 MB (4,675 firm-quarter SEC rows), plus crosswalk, variable definitions and a 14.8 MB source audit; scraper bnpl_scraper.py 36 KB; last commit 2026-08-10; NO licence file.",
+ "abnb_use": "Gap 3 (RNPL / reserve-now-pay-later) and gap 6 (consumer-credit strength): the merchant directories say which travel and lodging brands carry Affirm/Klarna/Afterpay and \u2014 via Internet-Archive CDX adoption dating \u2014 roughly when the option appeared, which is the closest public read on whether pay-later financing is spreading through travel booking. The SEC firm-quarter panel is a template for the adoption-window event study rather than an ABNB input.",
+ "sample_plan": "Sparse shallow clone of committed CSVs only, never run bnpl_scraper.py: git clone --depth 1 --filter=blob:none --sparse https://github.com/AugustLiu0415/BNPL_Merchant_Dataset.git then git sparse-checkout set README.md data/merchant_list_raw_data data/public_company_panel_data/public_company_panel_data_2015-2026.csv data/public_company_panel_data/public_company_crosswalk.csv data/public_company_panel_data/public_company_panel_variable_definitions.csv data/adoption_date_data. Explicitly EXCLUDE public_company_panel_source_audit.csv (14.8 MB) and the .xlsx twins. Expected ~9 MB; if the clone exceeds 25 MB fall back to raw.githubusercontent.com curls of the four named files. Then grep the merchant list for Airbnb/Vrbo/Expedia/Booking/Marriott/Hilton.",
+ "tos_or_license_flag": true
+}

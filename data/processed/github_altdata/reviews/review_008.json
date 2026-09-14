@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://huggingface.co/datasets/eloukas/edgar-corpus",
+  "slug": "edgar-corpus-10k-sections-1993-2020",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "one_line": "EDGAR-CORPUS: 10-K full text split into 23 named sections (Item 1, 1A, 7, 7A, 9A...) for ~220k filings from all SEC registrants 1993-2020; hosted as plain per-year JSONL on HuggingFace (1993/train.jsonl 114MB ... 2002/train.jsonl 1.06GB, 40.7GB total, Apache-2.0 with EDGAR data public) plus a Zenodo mirror at https://zenodo.org/record/5528490 (per-year zips 39MB-525MB, CC-BY-4.0).",
+  "abnb_use": "Pre-extracted MD&A and risk-factor text for BKNG/EXPE/MAR/HLT (and every lodging/travel filer) 1993-2020 gives a long peer-commentary and management-tone panel without re-scraping EDGAR; useful for gap 15 (company-structure/filing text signals) and as a much longer history than our own post-IPO letter/transcript set. ABNB itself is out of coverage (first 10-K is FY2020, filed 2021), so this is a peer/industry-language resource, not an ABNB one.",
+  "sample_plan": "Files are plain line-delimited JSONL at https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/<year>/<split>.jsonl, so a Range request gives whole usable records. Pull the head of two small splits, ~4 MB total: `curl -L -r 0-2000000 -o edgar_corpus_2020_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/2020/test.jsonl` and `curl -L -r 0-2000000 -o edgar_corpus_1993_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/1993/test.jsonl`, then drop the final truncated line and record the JSON key set (filename, cik, year, section_1 ... section_9B). Do NOT pull whole years (smallest full year is ~140 MB, Zenodo zips start at 39 MB and cannot be partially read).",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified on HuggingFace: Apache-2.0, 40.7GB, year_1993..year_2020 configs, and the file tree confirms real committed JSONL data (not just a loader script), with a CC-BY-4.0 Zenodo mirror whose per-year zips I listed via the Zenodo API. The dataset-viewer/parquet endpoint is disabled (loading script runs arbitrary code), so sampling must go through the raw JSONL resolve URLs, which Range requests handle cleanly. Genuine stored data, generously in scope as a long peer-text corpus, and cheaply sampleable."
+ },
+ {
+  "url": "https://github.com/edouardswiac/python-edgar",
+  "slug": "python-edgar-full-index-stitcher",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "python-edgar: 64 KB zero-dependency MIT library/CLI (355 stars, last push 2024-05-11) that downloads and stitches SEC EDGAR quarterly full-index files (company name, CIK, form type, filing date, URL) 1993-present into one master filing index; no data committed, pulls live from sec.gov.",
+  "abnb_use": "Builds the exact-filing-date master index needed for point-in-time joins in the L0 vintage register (gap 4) - when each ABNB/BKNG/EXPE/MAR/HLT 8-K, 10-Q and 10-K actually hit the wire, so consensus and price snapshots can be aligned to the release timestamp rather than the quarter label.",
+  "sample_plan": "Skip the package; pull the underlying public keyless index directly and keep it small. `curl -A 'ksurapaneni@ufl.edu academic research' -s https://www.sec.gov/Archives/edgar/full-index/2026/QTR3/company.idx -o edgar_full_index_2026Q3_company.idx` (typically 5-12 MB; if over 5 MB use `curl -r 0-3000000` for the head) and also grab the tiny form-type index `.../2026/QTR3/form.idx` head with `curl -r 0-1000000`. Optionally `git clone --depth 1 https://github.com/edouardswiac/python-edgar` (64 KB) to keep the stitcher script. Cap 25 MB.",
+  "tos_or_license_flag": false,
+  "reasoning": "gh api confirms MIT, 64 KB, 355 stars, last push May 2024 - small and stable rather than dead, and the root listing shows only code (edgar/, run.py, test.py), no committed data. The value is the SEC full-index it assembles, which is a genuinely public keyless source we do not currently hold as a filing-date index. Sampling one quarter's company.idx is cheap and proves the format."
+ },
+ {
+  "url": "https://github.com/jadchaar/sec-edgar-downloader",
+  "slug": "sec-edgar-downloader-client",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "sec-edgar-downloader: maintained MIT Python client (717 stars, last push 2026-06-22, 4.4 MB repo, no data committed) that bulk-downloads any of 300+ SEC filing types by ticker or CIK straight from EDGAR, keyless apart from a courtesy user-agent (company name + email).",
+  "abnb_use": "A reliable keyless way to assemble the full 8-K/10-Q corpus for BKNG, EXPE, MAR and HLT for peer-print KPI extraction (gap 9 competitor volumes, gap 15 filing tooling); would also re-pull ABNB's own filings if the existing store ever needs rebuilding.",
+  "sample_plan": "n/a - catalog_only. Nothing in the repo to sample (client code only), and the filings it would fetch for ABNB and the four peers are already in our store, so an agent pull would duplicate holdings rather than add coverage. If a human later wants it: `pip install -U sec-edgar-downloader`, then Downloader('UF','ksurapaneni@ufl.edu').get('8-K','EXPE',after='2026-01-01').",
+  "tos_or_license_flag": false,
+  "reasoning": "WebFetch and gh api agree: MIT, actively maintained into mid-2026, 717 stars, and the repo holds only source/tests/docs with no committed data and no API key requirement. It is a clean method but functionally duplicates edgartools/python-edgar and, more importantly, the filings it fetches are already in our company-data holdings. Worth a catalogue line as a fallback downloader, not worth an agent pull."
+ },
+ {
+  "url": "https://github.com/janlukasschroeder/sec-api-python",
+  "slug": "sec-api-io-python-sdk",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "sec-api-python: MIT-licensed SDK (319 stars, last push 2026-04-13, 139 KB, no data committed) for the commercial sec-api.io service - full-text search over EDGAR 2001+, XBRL-to-JSON for the full US GAAP taxonomy, 10-K/10-Q/8-K section extraction, real-time filing stream; every endpoint requires an sec-api.io API key (free rate-limited tier, paid above it).",
+  "abnb_use": "Full-text phrase search across peer filings 2001+ ('RevPAR', 'nights booked', 'alternative accommodations') would be a fast way to build a peer KPI-mention or disclosure-change index (gaps 9 and 15) that EDGAR's own full-text search only covers from 2001 with cruder ranking.",
+  "sample_plan": "n/a - catalog_only. Requires registering for an sec-api.io API key, which is a credential and a third-party service ToS decision for a human; no agent pull.",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed the client is MIT and contains no data, but WebFetch of the README shows every call takes an sec-api.io key, with a free tier gated behind registration and paid plans above it. That puts it squarely in the catalog_only bucket under the run's no-credentials, no-paid-key rule, and the underlying service's terms are a human decision. Catalogued because the full-text search capability is one we genuinely lack."
+ },
+ {
+  "url": "https://github.com/john-friedman/datamule-python",
+  "slug": "datamule-python-sec-bulk",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "datamule-python: MIT bulk-SEC package (557 stars, 673 commits, last push 2026-08-14, ~134 MB repo but root holds only datamule/, examples/, readme - no committed data) that downloads and parses submissions (10-K, 10-Q, 8-K, Form 4, 13F) from EDGAR free at ~5 req/s, with an optional paid datamule-tar archive provider at $1/100k downloads for higher throughput.",
+  "abnb_use": "Free-tier path is a keyless alternative for assembling the peer 8-K/10-Q corpus and, via its Form 4 / 13F parsers, for a holder-concentration and insider-sale history on ABNB (gap 15 company-structure signals).",
+  "sample_plan": "n/a - catalog_only. The repo commits no data, the free path only re-fetches EDGAR filings we already hold, and the throughput advantage sits behind the paid datamule-tar provider. A human can evaluate it later with `pip install datamule`.",
+  "tos_or_license_flag": false,
+  "reasoning": "gh api confirms MIT, active (pushed Aug 2026, 673 commits, 557 stars) and the root contents listing shows source, examples and a readme with no data directory despite the large reported repo size. The free tier is keyless but its output duplicates our existing filing store, and the actual differentiator (bulk archive) is a paid service. Useful as a catalogue line for its Form 4 / 13F parsing, not an agent pull."
+ }
+]

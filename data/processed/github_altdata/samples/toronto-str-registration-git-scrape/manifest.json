@@ -1,0 +1,36 @@
+{
+  "slug": "toronto-str-registration-git-scrape",
+  "url": "https://github.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration",
+  "sampled": true,
+  "total_bytes": 3906666,
+  "files": [
+    "short-term-rental-registrations-data_current.csv",
+    "short-term-rental-registrations-data_2024-02-20.csv",
+    "short-term-rental-registrations-data_2024-09-01.csv",
+    "short-term-rental-registrations-data_2025-03-01.csv",
+    "short-term-rental-registrations-data_2025-09-01.csv",
+    "short-term-rental-registrations-data_2026-03-01.csv",
+    "LICENSE",
+    "README_repo.md"
+  ],
+  "rows": "current (13 Sep 2026): 8750; 2024-02-20: 8094; 2024-09-01: 8673; 2025-03-01: 8510; 2025-09-01: 7259; 2026-03-01: 7293 (one row = one active registration, no duplicates)",
+  "columns": "operator_registration_number, address, unit, postal_code (FSA only), property_type, ward_number, ward_name (first vintage also has _id)",
+  "date_range": "vintages 2024-02-20 to 2026-09-13 (daily commits, 917 commits); registration numbers encode issue month STR-YYMM, min 2020-09, max 2026-09; no explicit date column",
+  "how_pulled": "gh api repos/RamVasuthevan/city-of-toronto-short-term-rentals-registration/contents/ ; gh api 'repos/.../commits?until=<date>T23:59:59Z&per_page=1&path=short-term-rental-registrations-data.csv' to resolve a SHA per date; curl -sL -o <file> https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/{HEAD|<sha>}/short-term-rental-registrations-data.csv ; python/pandas to count rows",
+  "full_dataset_size": "one 0.57-0.70 MB CSV per daily commit, ~917 commits since 20 Feb 2024 (~600 MB if every vintage is materialised; the git repo itself is far smaller because of delta compression); git clone gives all vintages in one command",
+  "description": "Daily git-scraped snapshots of the City of Toronto's official Short-Term Rental Registrations open-data CSV: one row per active registered STR operator/unit with registration number (which encodes the issue month), street address, postal-code FSA, property type and ward. Grain is registration x vintage date; source is open.toronto.ca via a GitHub Action that commits at UTC midnight. An analyst would diff consecutive vintages to build a daily/weekly panel of registered-supply adds and drops for Toronto (a top-20 North American Airbnb market), split by property type and ward, and use the STR-YYMM issue-month codes to reconstruct gross new registrations back to Sep 2020. The sample shows registered units rising 8.1k to 8.7k (Feb-Sep 2024), falling to 7.3k (Sep 2025-Mar 2026, likely renewal purge) and rebounding to 8.75k by Sep 2026.",
+  "issues": "Licence: code is MIT (Ram Vasuthevan); data is Open Government Licence - Toronto v1.0 (commercial use allowed with attribution 'Contains information licensed under the Open Government Licence - Toronto'); GitHub shows NOASSERTION because the two are combined in one LICENSE file. Registrations are the licensed-to-operate stock, not listings, and 2024-2025 declines may reflect renewal cycles rather than exits; no explicit date column, the first vintage carries an extra _id column; one row in later vintages uses a non-standard property_type label 'Single-family detached'. Nothing failed.",
+  "source_urls": [
+    "https://api.github.com/repos/RamVasuthevan/city-of-toronto-short-term-rentals-registration/contents/",
+    "https://api.github.com/repos/RamVasuthevan/city-of-toronto-short-term-rentals-registration/commits",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/HEAD/short-term-rental-registrations-data.csv",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/HEAD/LICENSE",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/HEAD/README.md",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/4309ccea47052e216230f1b76d13311bdaed75dd/short-term-rental-registrations-data.csv",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/55c7cccbc6aee21eecb5ff58d3599d43c7ba7894/short-term-rental-registrations-data.csv",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/e517731054b0be731c00c026c25ac2292a72cd9d/short-term-rental-registrations-data.csv",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/a045659cba818ccb2cc178b4a86b40d5ae6622fb/short-term-rental-registrations-data.csv",
+    "https://raw.githubusercontent.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration/9c0a6a34fa6a71dab92686986466e80b6a1fd436/short-term-rental-registrations-data.csv"
+  ],
+  "pulled_at": "2026-09-14"
+}

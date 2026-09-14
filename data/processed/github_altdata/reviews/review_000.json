@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/montera34/airbnb.barcelona",
+  "slug": "montera34-barcelona-insideairbnb-2015-2019",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "one_line": "Verified: 34 dated Inside Airbnb Barcelona snapshots committed under data/original/airbnb/<YYMMDD>/ from 150430 (30 Apr 2015) to 190308 (8 Mar 2019), each with listings_summary_barcelona_insideairbnb.csv (~2.0-3.0 MB; columns id, host_id, neighbourhood, lat/lon, room_type, price, minimum_nights, number_of_reviews, last_review, reviews_per_month, calculated_host_listings_count, availability_365) and reviews_summary_barcelona_insideairbnb.csv (listing_id+date, 2.9 MB in 2015 rising to 11.1 MB in 2019); repo ~147 MB total, plus boundary shapefiles and Barcelona population/dwelling tables; no LICENSE file (upstream Inside Airbnb is CC BY 4.0); last push 19 Oct 2019, 0 stars, not archived.",
+  "abnb_use": "Direct hit on gap #1 (Inside Airbnb dumps older than ~1 year, which are off the CDN): 34 pre-2023 Barcelona vintages give a 2015-2019 base period for the reviews-based stays index, host-concentration and quoted-price/availability series in one of our 13 panel cities, and let the 2022-2026 EMEA nights/ADR trend be judged against a full pre-COVID cycle and the 2016-17 Barcelona HUTB crackdown.",
+  "sample_plan": "cd <scratch>; D=https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb; for d in 150430 160103 170104 180117 190308; do curl -sL -o bcn_listings_$d.csv \"$D/$d/listings_summary_barcelona_insideairbnb.csv\"; done  (5 files, ~12.5 MB); then curl -sL -o bcn_reviews_190308.csv \"$D/190308/reviews_summary_barcelona_insideairbnb.csv\" (11.1 MB, cumulative review history back to 2009). Total ~24 MB, under the cap. Record the full 34-date list with `gh api repos/montera34/airbnb.barcelona/contents/data/original/airbnb --jq '.[].name'` and note remaining dates for a later targeted pull. Do NOT run anything in scraping/.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified by gh api: the 34 dated snapshot directories and both CSVs per date really are committed, with prices and availability in the listings summary and full review dates in the reviews summary. This is exactly the pre-2023 Inside Airbnb history the CDN no longer serves, for a city already in our panel, so it extends rather than duplicates what we hold. No repo licence is stated, so redistribution outside the team needs a human call; the underlying data is Inside Airbnb under CC BY 4.0."
+ },
+ {
+  "url": "https://github.com/sideye/airbnb-occupancy-tax",
+  "slug": "sideye-boston-occupancy-tax-imputed-nights",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "one_line": "Verified: economics honours thesis on Boston's Jan-2019 STR occupancy tax with committed derived panels - long_reservation_date_by_month/week/sm.csv (city-month/week rows: month, price, nights, unit, trt across Boston plus Asheville, Chicago, Denver, Montreal, Nashville, Providence/RI, Quebec City, San Francisco, Twin Cities, Washington DC), long_date_booked(.2).csv (booking-date aggregation), entries.csv/exits.csv, control_cities.xlsx (tax rates and enactment dates), plus notebooks including 'Panel Data estimation for imputed nights from reviews.ipynb' and 'Validate Transactions.ipynb', writeup.pdf (668 KB) and synth.R; data CSVs are tiny (3-17 KB each), repo bulk is a 12 MB pptx and a 9 MB .pages; no LICENSE; last push 29 Apr 2020 (scout's '2024-04-13' was wrong - that is an update-log day, not a commit date).",
+  "abnb_use": "Gap #2/#3: an imputed realised-nights and average-price panel by city-month for 11 North American markets in 2018-2019, built from calendar snapshots and cross-validated against review counts (the README reports ~0.5 reviews per imputed night, i.e. ~4 nights per review at the month level) - a direct external calibration of our own reviews-based stays index and a worked template for lodging-tax event studies (gap #12), with the control-city tax-rate sheet usable in the regulatory factor database.",
+  "sample_plan": "curl -sL from https://raw.githubusercontent.com/sideye/airbnb-occupancy-tax/master/ for: long_reservation_date_by_month.csv, long_reservation_date_by_week.csv, long_reservation_date_by_sm_final.csv, long_date_booked.csv, long_date_booked_2.csv, entries.csv, exits.csv, date_normalization.csv, control_cities.xlsx, writeup.pdf, compute_reservations.py, compute_bookings_cutoff.py, synth.R, and 'Panel%20Data%20estimation%20for%20imputed%20nights%20from%20reviews.ipynb'. Total under 1 MB. SKIP Prelim SCM.pptx (12 MB), writeup.pages (9 MB), SCM Analysis.ipynb (1.7 MB). Do NOT run compute_reservations.py or any scraper - the author scraped listing calendars himself; that is a human terms-of-service call.",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed the derived CSVs are committed and readable (entries.csv and long_reservation_date_by_month.csv heads fetched: period/city/value and month/price/nights/unit/trt). The underlying raw data was scraped by the author from listing calendars and the repo carries no licence, so we catalogue and sample the small derived outputs and the method notebook but leave the collection code unrun. Dead since 2020 and small, but it is the rare public artefact carrying imputed realised nights and a reviews-to-nights calibration."
+ },
+ {
+  "url": "https://github.com/OpenSourceAP/CrossSection",
+  "slug": "chen-zimmermann-open-source-asset-pricing",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "academic_replication",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Verified: Chen & Zimmermann open-source cross-sectional asset pricing - ~15,000 lines of Python (signal construction) and R (portfolio construction) for 200+ published anomalies including EarningsSurprise/SUE, GPL-2.0, 1,043 stars, actively maintained (last push 22 Oct 2025). No data is committed: signals and portfolio returns are distributed off-repo at https://www.openassetpricing.com/data/ via Google Drive (monthly long-short returns for 212 predictors as a wide CSV; stock-level signals ~1.6 GB zipped; coverage through Dec 2024, option-IV signals through Dec 2022), also reachable via `pip install openassetpricing` or the R package OpenSourceAP.DownloadR. Rebuilding from source needs WRDS credentials and a FRED API key.",
+  "abnb_use": "Gap #17 methods: the monthly long-short return series for the EarningsSurprise/SUE family gives a market-wide base rate for post-earnings drift, i.e. whether a drift trade around the 5 Nov ABNB print has any unconditional edge before we build one, and the wider signal set is a ready benchmark for any factor attribution on an ABNB position.",
+  "sample_plan": "Not to be pulled by an agent. If a human wants it: the monthly long-short portfolio returns CSV (small, ~212 predictors x monthly since 1926-2024) from https://www.openassetpricing.com/data/ (Google Drive), or `pip install openassetpricing` then pull only the portfolio-return table; never the 1.6 GB stock-level signal archive, and never the WRDS rebuild path.",
+  "tos_or_license_flag": true,
+  "reasoning": "Real, large, actively maintained project, but nothing usable is in git - the code needs WRDS (paid subscription) plus a FRED key, and the data lives on Google Drive, outside the hosts an agent may pull from, with the biggest file at 1.6 GB. Cataloguing it with the exact data-page URL is the right outcome; a human can decide whether to take the small monthly long-short return file."
+ },
+ {
+  "url": "https://github.com/aarushisingh470/Post-Earnings-Announcement-Drift",
+  "slug": "aarushisingh-pead-investor-attention",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "academic_replication",
+  "data_kind": "both",
+  "one_line": "Verified: PEAD + investor-attention replication created 9 Mar 2026, last push 10 Mar 2026, no LICENSE, 5.5 MB. Committed data: Output/final/ holds attention_panel_gtrends.csv (243 KB), attention_panel_gtrends_terms.csv (693 KB), daily_returns.csv (657 KB), event_panel_yf.csv, final_event_dataset.csv, gtrends_download_plan.csv and gtrends_download_instructions.txt; Output/cache/ holds yfinance earnings_dates_<TICKER>.csv for 15 mega-caps (AAPL, AMZN, AVGO, BAC, COST, GOOGL, HD, JPM, MA, META, MSFT, NVDA, PG, TSLA, UNH, XOM - no ABNB) and adjusted-close panels from 2019-01-01; Output/tables/ has drift-by-attention, drift-by-distraction and strategy performance summaries; Notebooks/ has a 4-step pipeline plus a Report notebook and a 483 KB PDF write-up.",
+  "abnb_use": "Gap #17: a working CAR event-study scaffold (t=0 to t=21) with an earnings-announcement congestion/distraction control and a documented, reproducible Google Trends pull plan with pull dates - the pull-plan/instructions file is the piece we lack (point-in-time trends provenance, gap #4), and the drift-by-attention tables give a small-sample base rate to compare an ABNB 5-Nov drift against.",
+  "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/aarushisingh470/Post-Earnings-Announcement-Drift pead && cd pead && git sparse-checkout set Output/final Output/tables Notebooks  (~2 MB). Skip Output/cache/adjclose_0_15_2019-01-01.csv only if the total would exceed the cap - otherwise it is 530 KB and fine. Skip the Papers/ directory and the 483 KB PDF unless a human asks. Do not re-run the Google Trends notebook.",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed the cached data, tables and notebooks are genuinely committed rather than promised - this is not a bare Kaggle re-analysis. It is a 15-ticker student project with no ABNB coverage and an unverified Sharpe claim, so its value is purely as a method template and a documented trends-pull recipe, which is worth a 2 MB sample. No licence file, so treat as read-only reference."
+ },
+ {
+  "url": "https://github.com/eda-yilmaz/DI722_Istanbul_Airbnb",
+  "slug": "istanbul-str-licensing-h3-2025",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "one_line": "Verified: METU graduate project (May-Jun 2026, no LICENSE, 8.9 MB) on Turkey's Law No. 7464 national STR permit regime (in force 1 Jan 2024) using a single Inside Airbnb Istanbul cross-section pulled 29-30 Sep 2025 (listings.csv 30,051 rows x 79 cols; calendar.csv.gz ~10.9M rows, Sep 2025-Sep 2026). Committed under Data/: mgwr_summary.csv (35 KB - h3_cell, listing_count, unlicensed_rate, mean_price in TRY, GWR coefficients and significance at three bandwidths), istanbul_airbnb_h3.geojson (1.06 MB), six standalone HTML maps (0.3-4.3 MB each), four PNG figures, mgwr_bandwidths.txt; plus a 66 KB Spatial_Final_Version.py pipeline and a 45 KB README. The raw Inside Airbnb files and the 12-month booking series are NOT committed; the author notes 2023-2024 Istanbul history has been formally requested from Inside Airbnb.",
+  "abnb_use": "Gap #12 with an EMEA market absent from our 32-factor regulatory database and municipal registry panel: an H3-cell unlicensed-rate and mean-price surface quantifies permit non-compliance 21 months after a national licensing shock, which is the kind of compliance-decay number we need for EMEA supply/nights risk, and the licence-field classification rule (permit number vs Exempt vs Non-real-estate vs NaN) is directly reusable on the licence column of our own 120-market Jun-2026 cohort.",
+  "sample_plan": "curl -sL from https://raw.githubusercontent.com/eda-yilmaz/DI722_Istanbul_Airbnb/main/ for: README.md (45 KB), Data/mgwr_summary.csv (35 KB), Data/mgwr_bandwidths.txt, Data/istanbul_airbnb_h3.geojson (1.06 MB), Spatial_Final_Version.py (66 KB). Total ~1.2 MB. Skip all six .html maps (up to 4.3 MB each, presentation only) and the PNGs.",
+  "tos_or_license_flag": true,
+  "reasoning": "Checked the Data/ listing and the README: only aggregated H3-cell outputs and maps are committed, not the underlying Inside Airbnb files, so this is a small derived-data plus method pull rather than a data mirror. It is nonetheless the only Turkey/Law-7464 artefact in the batch and the licence-status classification and unlicensed-rate surface are usable immediately. Unlicensed repo and a single Sep-2025 cross-section, so treat the numbers as context, not a time series."
+ }
+]

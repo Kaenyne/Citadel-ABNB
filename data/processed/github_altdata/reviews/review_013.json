@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/galibin24/SEC-EDGAR-python-scraper",
+  "slug": "galibin24-sec-edgar-python-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Scrapy spider + pandas parser turning EDGAR financial-statement pages into per-CIK income/balance/cash-flow CSVs; 24 stars, ~334 KB repo, US filers, NO licence declared, DEAD since 12 Nov 2019 (scout's '2026-09-03' last-activity is wrong); data dirs ALL/, parsed/, files/, sec/ contain only .gitkeep and stale LibreOffice lock files, i.e. no data is committed.",
+  "abnb_use": "Gap 15 (EDGAR tooling): in principle another route to peer BKNG/EXPE/MAR/HLT fundamentals, but it is a 2019 Scrapy spider against EDGAR HTML that predates the SEC user-agent/throttle regime and is almost certainly broken; we already pull XBRL for ABNB and peers.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified via gh api: pushed_at 2019-11-12, no LICENSE, and every data directory holds only .gitkeep plus three '.~lock.1018724_*.csv#' artefacts, so nothing is actually downloadable. It is strictly inferior to edgartools/sec-edgar for the one job it does. Catalogue one line as a dead alternative; no reason to spend an agent pull on it."
+ },
+ {
+  "url": "https://github.com/pChitral/ETL-SEC-EDGAR-10-k-Filings",
+  "slug": "pchitral-etl-sec-edgar-10k-mda-corpus",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "one_line": "Committed MD&A text corpus: ticker_data/ holds 135 per-ticker .parquet files (repo ~210 MB) with columns CIK, ticker, report year and extracted 10-K MD&A text, built with sec_edgar_downloader + BeautifulSoup; includes BKNG.parquet (849 KB), MAR.parquet (940 KB) and UBER.parquet (179 KB) but NOT ABNB, EXPE or HLT; plus processing_status.csv (471 KB) and run logs; licence is a custom but MIT-equivalent permissive text (GitHub reports NOASSERTION); 17 stars, last push 11 Feb 2024.",
+  "abnb_use": "Gap 15 / management-tone work: gives a ready cross-sectional MD&A panel for two direct lodging/OTA comparables (BKNG, MAR) plus 133 large caps, so peer 'tone' or topic scores can be benchmarked against a market-wide distribution rather than read in isolation — our earlier management-tone test failed on our own construction, and a cross-sectional baseline is exactly the missing ingredient. Annual 10-K cadence only, so it reads on narrative, not on quarterly nights/ADR.",
+  "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/pChitral/ETL-SEC-EDGAR-10-k-Filings.git && cd ETL-SEC-EDGAR-10-k-Filings && git sparse-checkout set ticker_data/BKNG.parquet ticker_data/MAR.parquet ticker_data/UBER.parquet processing_status.csv README.md LICENSE  — total ~2.5 MB. Do NOT check out the rest of ticker_data (~200 MB) or the *.out logs (19 MB + 2 MB). Then report each parquet's schema, row count and min/max report year (python: pandas.read_parquet).",
+  "tos_or_license_flag": false,
+  "reasoning": "gh api confirms real committed data, not just a pipeline: 135 parquet files under ticker_data with BKNG and MAR present, and the decoded LICENSE is a permissive MIT-style grant (use, modify, distribute, commercial) despite GitHub's NOASSERTION tag. Underlying content is public-domain SEC text, so a small sparse-checkout is safe and cheap. Sampling three tickers plus the coverage CSV settles year span and text quality without dragging the 210 MB repo."
+ },
+ {
+  "url": "https://github.com/tumarkin/edgar",
+  "slug": "tumarkin-edgar-haskell-cli",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Haskell CLI (stack build, requires a local Postgres) that mirrors the EDGAR quarterly form index (YYYYqQ, back to the 1990s) into a database and downloads forms filtered by CIK, company name, form type and date range; BSD-3-Clause, 13 stars, ~97 KB, no data committed, last push 18 Feb 2025; no API key, but SEC requires an email in the user agent.",
+  "abnb_use": "Gap 15 and gap 4 (point-in-time): the quarterly index is genuinely date-stamped, so it could build a vintage archive of peer 8-K/10-Q filings as of each guide date. But we already have ABNB and peer filings, and the Haskell/stack + Postgres setup is far heavier than edgartools for the same result.",
+  "sample_plan": "",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified the repo is source only — app/, src/, package.yaml, no data directory — and the README confirms a stack install plus a Postgres init step. Building a Haskell toolchain to reach an index we can already hit with a Python client is not worth an agent's time. Worth one catalogue line as the tidiest point-in-time EDGAR-index mirror if we ever need vintage filing lists."
+ },
+ {
+  "url": "https://github.com/Elijas/sec-api-io",
+  "slug": "elijas-sec-api-io-wrapper",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Unofficial Python wrapper around the COMMERCIAL sec-api.io service (filing search/filter, 10-Q/10-K section extraction); MIT, 6 stars, ~959 KB, no data committed, last push 22 Nov 2023 (scout's '2026-09-03' is wrong); every call needs a sec-api.io API token.",
+  "abnb_use": "Gap 15 only, and not reachable under our rules: the backing service is paid beyond a small free tier, and this run forbids paid keys, so nothing here can be pulled by an agent.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "gh api shows pushed_at 2023-11-22 and a homepage pointing at the docs site; the package is a thin client for a third-party paid API, so its usefulness is entirely contingent on a credential we will not buy or type. No stored data exists to sample. Catalogue one line flagging the key requirement so a future agent does not re-open it."
+ },
+ {
+  "url": "https://github.com/LexPredict/openedgar",
+  "slug": "lexpredict-openedgar-framework",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Django/Celery framework (MIT, 332 stars, 99 forks, ~138 KB source only) that builds a local relational database of EDGAR filings at scale — retrieval, dedup, text extraction — the pipeline behind LexPredict's commercial agreement database; no data committed, first release May 2018, last push 26 Dec 2022.",
+  "abnb_use": "Gap 15: the only repo in this batch built for whole-corpus EDGAR work, so it is the reference design if we ever wanted a queryable ABNB+peer filing database with an ORM instead of flat files. For a memo due 2 Oct it is far too much infrastructure.",
+  "sample_plan": "",
+  "tos_or_license_flag": false,
+  "reasoning": "Confirmed via gh api and the repo page that this is framework source only (138 KB, no data directory) needing Postgres, Celery and an S3-style object store, and it has been untouched since Dec 2022 so the Django/dependency stack is stale. MIT licence, public SEC content, nothing to sample. One catalogue line as the heavyweight option."
+ }
+]

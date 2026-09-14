@@ -1,0 +1,29 @@
+{
+ "slug": "dolthub-post-no-preference-earnings-consensus-vintages",
+ "url": "https://www.dolthub.com/repositories/post-no-preference/earnings",
+ "sampled": true,
+ "total_bytes": 227692,
+ "files": [
+  "sales_estimate_ABNB_BKNG_EXPE.csv",
+  "eps_estimate_ABNB_BKNG_EXPE.csv",
+  "earnings_calendar_ABNB_BKNG_EXPE.csv",
+  "manifest.json",
+  "README.md"
+ ],
+ "rows": "sales_estimate 2,160 (ABNB 1,160 complete; BKNG 1,000 = first 1,000 by date, truncated; EXPE 0 - timed out); eps_estimate 200 (ABNB head only); earnings_calendar 23 (ABNB, all)",
+ "columns": "sales_estimate/eps_estimate: date (snapshot, weekly Sunday), act_symbol, period {Current Quarter, Next Quarter, Current Year, Next Year}, period_end_date, consensus, [recent - eps only], count, high, low, year_ago. earnings_calendar: act_symbol, date, when",
+ "date_range": "sales_estimate snapshot dates 2018-04-08 (BKNG) to 2026-09-13 (ABNB); ABNB 2021-02-07 to 2026-09-13; eps head 2021-02-07 to 2022-01-23; earnings_calendar ABNB 2021-02-25 to 2026-08-06",
+ "how_pulled": "Keyless GET to the DoltHub SQL API, one ticker per query, LIMIT/OFFSET pagination, no ORDER BY beyond the PK: curl -sL -G --data-urlencode \"q=select * from sales_estimate where act_symbol = 'ABNB' order by date, period limit 1000 offset 0\" https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master ; same with offset 1000; same for BKNG (offset 0 only succeeded); curl ... \"q=select * from earnings_calendar where act_symbol = 'ABNB' limit 200\"; curl ... \"q=select * from eps_estimate where act_symbol = 'ABNB' limit 200\". JSON rows -> pandas -> CSV (scratch scripts pull.py / describe.py).",
+ "full_dataset_size": "Whole Dolt database covers every US ticker with full commit history (multi-GB via `dolt clone post-no-preference/earnings`; not attempted). For the three tickers only: sales_estimate ~3,900 rows (ABNB 1,160; BKNG ~1,700; EXPE ~1,100 back to 2017-10-27), eps_estimate similar, eps_history and earnings_calendar a few hundred rows - roughly 1-2 MB of CSV in total.",
+ "description": "Weekly point-in-time snapshots of the sell-side analyst revenue (sales_estimate) and EPS (eps_estimate) consensus per ticker and forecast period (current/next quarter, current/next year), with contributor count, high, low and year-ago value, plus an earnings-date calendar and EPS actual history; Zacks-style schema, published as a public Dolt database by DoltHub user post-no-preference. Grain: one row per (snapshot date, ticker, period). For ABNB the sample holds the complete revenue-consensus history from 2021-02-07 to 2026-09-13 (1,160 rows), so an analyst can reconstruct what the Street expected at every guide date and print in the guidance ledger, measure consensus drift and dispersion into each print (e.g. 4Q26 revenue $3.20bn mean, $3.05-3.70bn range, n=10 as of 2026-09-13), and register it as a second, timestamped consensus vendor in the L0 vintage register; the same tables cover BKNG and EXPE for peer readthrough.",
+ "issues": "(1) No licence stated on the DoltHub page; the underlying numbers look like redistributed Zacks consensus data - a human must decide whether it can be quoted or only used internally (tos_or_license_flag=true). (2) The API is fragile: any query touching more than one ticker, any aggregate (count/min/max), and larger offsets frequently return 'context deadline exceeded'; one HTTP 403 (rate limit) appeared after ~40 requests in 20 minutes. BKNG sales_estimate was truncated at 1,000 rows and EXPE, eps_history and the full eps_estimate were not pulled. (3) Estimate values are bigint (whole dollars / EPS in cents-like units for eps? - check: sales consensus 4740000000 = $4.74bn; eps consensus units need confirming against a known print). (4) earnings_calendar shows 23 ABNB dates up to 2026-08-06; the 5 Nov 2026 date is not yet listed. (5) Snapshot dates are Sundays; rows are not present for every week (gaps), so any point-in-time join must use as-of logic.",
+ "source_urls": [
+  "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20*%20from%20sales_estimate%20where%20act_symbol%20%3D%20%27ABNB%27%20order%20by%20date%2C%20period%20limit%201000%20offset%200",
+  "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20*%20from%20sales_estimate%20where%20act_symbol%20%3D%20%27ABNB%27%20order%20by%20date%2C%20period%20limit%201000%20offset%201000",
+  "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20*%20from%20sales_estimate%20where%20act_symbol%20%3D%20%27BKNG%27%20order%20by%20date%2C%20period%20limit%201000%20offset%200",
+  "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20*%20from%20earnings_calendar%20where%20act_symbol%20%3D%20%27ABNB%27%20limit%20200",
+  "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20*%20from%20eps_estimate%20where%20act_symbol%20%3D%20%27ABNB%27%20limit%20200",
+  "https://www.dolthub.com/repositories/post-no-preference/earnings"
+ ],
+ "pulled_at": "2026-09-14"
+}

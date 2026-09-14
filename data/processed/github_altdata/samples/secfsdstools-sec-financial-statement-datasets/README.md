@@ -1,0 +1,7 @@
+# secfsdstools / SEC Financial Statement Data Sets - sample
+
+What: the SEC DERA quarterly Financial Statement Data Sets (as-filed XBRL facts from every EDGAR filing since 2009: sub/num/pre/tag tab files, one zip per filing quarter) and the secfsdstools Apache-2.0 Python library (https://github.com/HansjoergW/sec-fincancial-statement-data-set) that downloads them to parquet and standardises IS/BS/CF lines across companies.
+How pulled (2026-09-14): curl with a contact User-Agent from https://www.sec.gov/files/dera/data/financial-statement-data-sets/{2010q1,2021q1}.zip; pandas read the .txt inside; sparse shallow clone of the repo (src only, commit af83c24, 2025-09-20).
+Caps: 2010q1 sub and tag in full, num/pre first 10k rows only; 2021q1 (97.9 MB zip, scratch only) reduced to sub in full plus num/pre rows for travel peers BKNG, EXPE, MAR, HLT, NCLH, CCL, RCL. Folder ~7 MB. Repo standardiser + downloader source and SEC readme.htm (field definitions) included under repo_src/.
+Known gap: Airbnb (CIK 1559720) does not appear in 2021q1 despite its 10-K filed 2021-02-26 - check 2021q2 and completeness before use.
+Full dataset: pip install secfsdstools; set a config with user agent email; `from secfsdstools.update import update; update()` pulls all ~70 quarters (2-3 GB zipped, ~7 GB parquet). Or curl the zips directly with the URL pattern above (2009q1 .. current). Do not commit the raw zips/parquet.

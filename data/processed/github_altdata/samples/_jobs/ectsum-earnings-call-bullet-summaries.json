@@ -1,0 +1,10 @@
+{
+ "slug": "ectsum-earnings-call-bullet-summaries",
+ "url": "https://github.com/rajdeep345/ECTSum",
+ "category": "company_filings_estimates",
+ "data_kind": "stored_dataset",
+ "one_line": "ECTSum (EMNLP 2022): earnings-call transcripts paired with terse Reuters-style bullet summaries, committed in-repo under data/final/{train,val,test}/{ects,gt_summaries}; test split alone is 495 transcripts (8.70 MB) + 495 gold summaries (132 KB), filenames TICKER_qN_YYYY covering roughly 2019-2021 US mid/large caps (HLT present, no ABNB); GPL-3.0, last update 8 Mar 2023.",
+ "abnb_use": "Gap 17 (methods): a labelled corpus of 'what the wire pulled out of a call' is a ready-made training/eval set for extracting guide items and management tone from ABNB and peer calls; HLT_q4_2020 gives one lodging-peer example of transcript-to-summary pairing.",
+ "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/rajdeep345/ECTSum ectsum && cd ectsum && git sparse-checkout set data/final/test/gt_summaries (132 KB, all 495 files); then fetch ~10 transcripts only, via curl -sL https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/<NAME>.txt for HLT_q4_2020.txt plus 9 alphabetically-first files (~180 KB). Do NOT sparse-checkout data/final/train or codes/ (multi-tens-of-MB). Total < 1 MB.",
+ "tos_or_license_flag": true
+}

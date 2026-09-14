@@ -1,0 +1,10 @@
+{
+ "slug": "fawazahmed0-fx-git-vintages",
+ "url": "https://github.com/fawazahmed0/exchange-api",
+ "category": "fx_rates",
+ "data_kind": "stored_dataset",
+ "one_line": "CC0 daily FX JSON snapshots (200+ currencies) committed to git day-by-day since ~2023, served via jsDelivr/Cloudflare; git history is an inherent point-in-time vintage record.",
+ "abnb_use": "Fills gap 4 directly: a free, keyless, genuinely point-in-time FX vintage series to reconstruct the spot rate as-of any historical date, matching CLAUDE.md rule 2's point-in-time requirement.",
+ "sample_plan": "Fetch a handful of dated JSON snapshots via the public jsDelivr CDN (e.g. 3-5 historical dates for EUR/GBP/MXN/JPY), <1MB total.",
+ "tos_or_license_flag": false
+}

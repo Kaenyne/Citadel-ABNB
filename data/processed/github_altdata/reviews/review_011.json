@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/logiover/greenhouse-job-board-scraper",
+  "slug": "logiover-greenhouse-job-board-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Marketing/doc repo (9 KB: README 12.6 KB + examples/api-curl|cli|python|javascript.md, MIT, 0 stars, last push 13 Jul 2026) for a hosted Apify actor that scrapes any company's public Greenhouse job board (job id, title, full description, department, office, posted date); NO data committed and every documented call goes to api.apify.com with an Apify token, not to Greenhouse. The underlying free path it points at is Greenhouse's own public JSON board API (boards-api.greenhouse.io/v1/boards/<company>/jobs), which is keyless.",
+  "abnb_use": "Gap #15 (company-structure signals): open-role counts by department and office on Airbnb's own Greenhouse board are a free headcount / investment-mix proxy (engineering vs trust & safety vs international), and repeated snapshots give a hiring-momentum series that reads on opex and the EBITDA-margin line; also a soft read on regional expansion (EMEA/LatAm/APAC postings).",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified via gh api: 9 KB repo, MIT, zero data files, examples/api-curl.md explicitly says 'Replace YOUR_APIFY_TOKEN with the token from console.apify.com/account/integrations' and every endpoint is api.apify.com/v2/acts/... So it needs a paid-platform account, and the alternative direct path is scraping a third party's careers board — both are catalog_only by the run's rules. Worth a catalogue line because the keyless Greenhouse boards endpoint it implies is a genuinely cheap headcount proxy a human can approve later."
+ },
+ {
+  "url": "https://github.com/airbnb",
+  "slug": "airbnb-github-org",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Airbnb's own verified GitHub organisation (confirmed via gh api orgs/airbnb: 204 public repos, 5,716 followers, created 30 Mar 2011, San Francisco); not a dataset but a live public source whose repo-level metadata (created_at, pushed_at, language, stars, archived flag) is pullable keylessly from the GitHub REST API, with GH Archive / OpenDigger available for full event history.",
+  "abnb_use": "Gap #15 (company-structure signals / own GitHub org activity): new-repo creation and push cadence by year is a free, high-frequency proxy for engineering headcount and where R&D is going (chronon/viaduct data-platform and GraphQL work vs. dormant mobile OSS), which reads on the opex side of the adj. EBITDA-margin forecast; also a crude timestamp of the 2023 layoff/hiring-freeze period for a headcount narrative check.",
+  "sample_plan": "Public GitHub REST, no key beyond gh's public read: `gh api \"orgs/airbnb/repos?per_page=100&sort=pushed&direction=desc\" --paginate > airbnb_org_repos.json` (204 records, ~1.5 MB raw JSON, well under the 5 MB cap), then reduce to a CSV of name, created_at, pushed_at, updated_at, language, stargazers_count, archived, fork. Optionally add one keyless commit-cadence sample for the two active flagships only: `gh api \"repos/airbnb/chronon/commits?per_page=100&since=2024-01-01T00:00:00Z\" --paginate --jq '.[].commit.author.date'` and the same for repos/airbnb/viaduct (each a few hundred KB). Do NOT clone any repo source and do NOT touch airbnb.com; total cap 25 MB.",
+  "tos_or_license_flag": false,
+  "reasoning": "Confirmed live and active: 204 public repos, org followers 5.7k, several repos pushed within days of 13 Sep 2026. It is a pointer rather than a dataset, but the metadata pull is a small, keyless, public-API command that yields a real time series (repo creation and push dates back to 2011), so sampling is cheap and legitimate — github.com/airbnb is not airbnb.com and no scraping is involved. Value is a weak headcount/investment proxy only, never a KPI, so it is catalogued as a colour series."
+ },
+ {
+  "url": "https://github.com/awinml/earnings-call-transcripts-dataset",
+  "slug": "awinml-earnings-call-transcripts-tech10",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "one_line": "MIT-licensed corpus of real committed .txt earnings-call transcripts under Transcripts/<TICKER>/<YYYY-Mon-DD>-<TICKER>.txt for exactly ten US mega-cap tech names (AAPL, AMD, AMZN, ASML, CSCO, GOOGL, INTC, MSFT, MU, NVDA), ~55-65 KB per call, repo size 3.46 MB, coverage roughly 2016 through mid-2023; last push 4 Jul 2023 (the scout's '2026-08-22' last-activity is wrong), README is one line.",
+  "abnb_use": "Only as a cross-sector management-tone control corpus or as a file-layout template if we ever rebuild a peer transcript store; it contains no travel, OTA, hotel or ABNB ticker, so it touches no ABNB KPI and no numbered gap directly.",
+  "sample_plan": "",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified the Transcripts/ tree and AAPL folder listing via gh api: the files are genuinely committed (2016-Jan-26 through 2023), MIT, 3.46 MB total — so it is real data, just the wrong universe. We already hold every ABNB letter and transcript since IPO plus peer 8-K KPIs for BKNG/EXPE/MAR/HLT, and this repo adds zero travel names, so pulling it would spend the sample budget on semiconductors. Catalogued in case a tone-model control sample is ever wanted; the repo is also dead since Jul 2023."
+ },
+ {
+  "url": "https://github.com/UncannyJ33/earnings-call-nlp",
+  "slug": "uncannyj33-earnings-call-nlp-finbert",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Full FinBERT-sentiment-to-abnormal-return signal-testing pipeline (src/ = data_ingestion, preprocessing, features, returns, sentiment, signal_testing ~142 KB of Python, plus app/, notebooks/, tests/, figures/, 17 KB README, no licence, last push 21 Apr 2026); NO data committed — it points at the Kaggle dataset 'tpotterer/motley-fool-scraped-earnings-call-transcripts' (https://www.kaggle.com/datasets/tpotterer/motley-fool-scraped-earnings-call-transcripts), 18,755 transcripts across 2,876 tickers 2017-2023, which needs ~/.kaggle/kaggle.json credentials.",
+  "abnb_use": "Gaps #4 and #17: 2,876 tickers over 2017-2023 almost certainly includes ABNB (from 2021), BKNG, EXPE, MAR and HLT, so the Kaggle base is a ready peer/management-tone corpus with call dates; and the repo's returns.py/signal_testing.py give an event-study + abnormal-return testing scaffold (sentiment_delta vs prior quarter, post-call CAR) we could reuse for the 5 Nov print's tone-vs-reaction question.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "README confirms the transcripts are not in the repo ('Data files and FinBERT inference cache are not included') and require Kaggle API credentials, and the underlying text is scraped Motley Fool content with no stated licence — both force catalog_only per the run's rules. The code itself is public and substantial, so the catalogue line records the method and the exact Kaggle slug for a human to fetch under their own account. Note our own prior test found management tone did not work on our construction, so this is a corpus/method line, not a signal claim."
+ },
+ {
+  "url": "https://github.com/quantraunak/Earnings-Calls",
+  "slug": "quantraunak-earnings-calls-tech10-rmd",
+  "exists_and_has_content": true,
+  "usefulness": "none",
+  "verdict": "discard",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Three-file student R project (Project43.Rmd 19 KB, knitted Project43.html 1.75 MB, README 793 B, no licence, 0 stars, last push 21 Aug 2026) doing text analysis of earnings calls for ten semiconductor/large-cap tech names (MU, CSCO, NVDA, AMZN, AAPL, MSFT, GOOGL, AMD, ASML, INTC) joined to daily returns; no transcripts, no price files, no stated data source and no date range.",
+  "abnb_use": "None — no travel, OTA, hotel or ABNB coverage, no committed data, and the transcript-text-vs-returns method is a weaker duplicate of the FinBERT pipeline in the same batch.",
+  "sample_plan": "",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified the full file listing via gh api (only .Rmd, knitted .html and README) and read the README: it names ten tech tickers, specifies no data source, ships no data and carries no licence. There is nothing here that informs an ABNB KPI or any numbered gap, and the method is a generic classroom text-vs-returns regression we already exceed. Discard."
+ }
+]

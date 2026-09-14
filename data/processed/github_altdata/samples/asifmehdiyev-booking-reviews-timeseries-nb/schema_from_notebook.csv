@@ -1,0 +1,16 @@
+column,dtype,notes_from_notebook_outputs
+review_title,object,26385 non-null; free-text headline
+reviewed_at,object,"review date, '11 July 2021' format; min 2018-07-31 max 2021-07-19"
+reviewed_by,object,reviewer first name / Anonymous
+images,object,25632 null; CDN URL
+crawled_at,object,"scrape timestamp, all 2021-07-20"
+url,object,booking.com/reviews/be/hotel/... (Belgium)
+hotel_name,object,819 unique properties
+hotel_url,object,property page URL
+avg_rating,float64,property average score 3.8-10.0
+nationality,object,"reviewer country, 163 unique; UK 6725, BE 4342, NL 2045, DE 1300, US 1173"
+rating,float64,"review score 1-10, mean 8.56"
+review_text,object,positive/negative text
+raw_review_text,object,HTML of review block
+tags,object,tilde-separated: trip type~party type~room type~Stayed N nights~Submitted via mobile
+meta,object,dict with language ('en-gb') and source

@@ -1,0 +1,10 @@
+{
+ "slug": "bts-canada-border-crossings-plus-intercept-survey",
+ "url": "https://github.com/AlexBogden/canadian-border-crossings-analysis",
+ "category": "travel_volume_transport",
+ "data_kind": "both",
+ "one_line": "Committed data/ with BTS monthly US-Canada land border crossings by port 1996-present, a Whatcom County passenger-vehicle intercept survey (n=31,208, 4 waves 2018-2026), and NTTO air arrivals Jan 2019-Jul 2026; MIT, active 2026.",
+ "abnb_use": "Gap 7/10 and the North America regional split: cross-border leisure travel volumes into 2026 plus an individual-level traveller survey (trip purpose, party, spend) we hold nothing comparable to.",
+ "sample_plan": "Pull the whole committed data/ folder (BTS port-month CSV, the 4 survey waves, the NTTO air-arrivals CSV) via raw.githubusercontent; cap 25MB, skip figures/ and any parquet over 10MB.",
+ "tos_or_license_flag": false
+}

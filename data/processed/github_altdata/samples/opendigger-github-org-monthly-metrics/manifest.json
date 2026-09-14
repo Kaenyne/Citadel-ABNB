@@ -1,0 +1,34 @@
+{
+  "slug": "opendigger-github-org-monthly-metrics",
+  "url": "https://github.com/X-lab2017/open-digger",
+  "sampled": true,
+  "total_bytes": 279266,
+  "files": [
+    "opendigger_airbnb_repo_metrics_long.csv",
+    "opendigger_airbnb_openrank_monthly_wide.csv",
+    "raw_json/opendigger_airbnb_{javascript,lottie-android,lottie-ios,epoxy,knowledge-repo}_{openrank,activity,stars,participants,technical_fork}.json (25 files)",
+    "labeled_data_companies/airbnb/{index,airflow,enzyme,react_dates,superset}.yml",
+    "labeled_data_companies/ctrip/index.yml",
+    "LICENSE.open-digger.txt"
+  ],
+  "rows": "long CSV 4,127 rows (2,839 month, 994 quarter, 270 year, 24 other e.g. '2021-10-raw'); wide openrank CSV 138 monthly rows x 5 repos; 25 raw JSON files of 81-140 monthly keys each plus yearly/quarterly keys; 6 YAML taxonomy files (n/a)",
+  "columns": "long: repo, metric, period, granularity, value; wide: period, airbnb/epoxy, airbnb/javascript, airbnb/knowledge-repo, airbnb/lottie-android, airbnb/lottie-ios; raw JSON: {period_key: float}; YAML: name, type, data.labels, data.platforms[].orgs/repos(id,name)",
+  "date_range": "2015-01 to 2026-08 (monthly; airbnb/javascript is the only repo back to 2015-01, others start 2016-08 to 2017-02; knowledge-repo activity/openrank end 2025-07; 2026-06 and 2026-07 are absent for javascript openrank/activity, latest month present is 2026-08)",
+  "how_pulled": "for repo in javascript lottie-android lottie-ios epoxy knowledge-repo; do for m in openrank activity stars participants technical_fork; do curl -s -L -o opendigger_airbnb_${repo}_${m}.json https://oss.open-digger.cn/github/airbnb/${repo}/${m}.json; done; done  (all 25 returned HTTP 200). Then: git clone --depth 1 --filter=blob:none --sparse https://github.com/X-lab2017/open-digger.git && git sparse-checkout set labeled_data/companies sample_data (HEAD 63e4b89, 2026-08-20); copied labeled_data/companies/{airbnb,ctrip} and LICENSE. Python/pandas tidied the JSONs into a long CSV (period keys classified year/quarter/month/other) and an openrank monthly wide CSV.",
+  "full_dataset_size": "CDN: one JSON (2-4 KB) per repo per metric for every GitHub repo with activity; ~30 metric endpoints (openrank, activity, stars, forks, participants, new_contributors, issues_new/closed, change_requests, bus_factor, technical_fork, attention, etc.) plus per-user and label-level aggregates; the Airbnb org has ~200 public repos so the full Airbnb org pull is ~6,000 small files, ~15-20 MB; adding BKNG/EXPE/MAR/HLT/Ctrip org repos is similar again. labeled_data/companies in the repo is 1.4 MB YAML for 382 companies. sample_data holds only ClickHouse export scripts (no data); the underlying GH-Archive ClickHouse store is ~TB scale and needs their Docker image + OSS download.",
+  "description": "Precomputed monthly, quarterly and yearly open-source health metrics (OpenRank influence score, activity, stars, participants, technical forks) for GitHub repositories, derived by X-lab's OpenDigger from GH Archive and served keyless from oss.open-digger.cn; the sample covers five airbnb-org repos, Jan 2015 to Aug 2026, plus the repo's company-to-project taxonomy entries for Airbnb (org id 698437; labels airflow, enzyme, react_dates, superset) and Ctrip. Grain is repo x metric x period. For ABNB this is a Gap #15 engineering-footprint proxy: the airbnb/javascript openrank falls 736 (2017) to 446 (2024) to 304 (2025), and every sampled repo shows the same decay, so an analyst would sum the metric over Airbnb's repo list to build a monthly org-level OSS-investment series and compare it against Booking, Expedia, Marriott and Ctrip org repos as a cross-sectional engineering-spend read; it has no direct link to bookings or revenue.",
+  "issues": "Org-level endpoints (github/airbnb/openrank.json) 404 per the job card, so an org series requires enumerating the repo list (gh api orgs/airbnb/repos) and summing, which mixes archived/abandoned repos with active ones. Period keys are heterogeneous inside each JSON (YYYY, YYYY-MM, YYYYQn, and a '2021-10-raw' key); the tidy CSV classifies them but the 'raw' key semantics are undocumented. Months can be missing (2026-06, 2026-07 absent for airbnb/javascript openrank/activity; knowledge-repo activity stops 2025-07), so treat gaps as no-activity vs not-computed with care. Airbnb's public OSS activity is mostly decay of legacy projects (Airflow and Superset moved to Apache, so they no longer count under airbnb/), which confounds any headcount reading. OpenDigger code is Apache-2.0; the CDN data carries no explicit licence statement in the sample, and the site is hosted in China (Aliyun OSS), so availability is not guaranteed. sample_data contains only scripts, no data.",
+  "source_urls": [
+    "https://oss.open-digger.cn/github/airbnb/javascript/openrank.json",
+    "https://oss.open-digger.cn/github/airbnb/javascript/activity.json",
+    "https://oss.open-digger.cn/github/airbnb/javascript/stars.json",
+    "https://oss.open-digger.cn/github/airbnb/javascript/participants.json",
+    "https://oss.open-digger.cn/github/airbnb/javascript/technical_fork.json",
+    "https://oss.open-digger.cn/github/airbnb/lottie-android/{openrank,activity,stars,participants,technical_fork}.json",
+    "https://oss.open-digger.cn/github/airbnb/lottie-ios/{openrank,activity,stars,participants,technical_fork}.json",
+    "https://oss.open-digger.cn/github/airbnb/epoxy/{openrank,activity,stars,participants,technical_fork}.json",
+    "https://oss.open-digger.cn/github/airbnb/knowledge-repo/{openrank,activity,stars,participants,technical_fork}.json",
+    "https://github.com/X-lab2017/open-digger.git (sparse: labeled_data/companies, sample_data; HEAD 63e4b89ecd525221be95fe2a48a714ebb3c722ec)"
+  ],
+  "pulled_at": "2026-09-14"
+}

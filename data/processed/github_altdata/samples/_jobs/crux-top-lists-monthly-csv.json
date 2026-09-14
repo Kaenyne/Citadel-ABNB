@@ -1,0 +1,10 @@
+{
+ "slug": "crux-top-lists-monthly-csv",
+ "url": "https://github.com/zakird/crux-top-lists",
+ "category": "web_app_engagement",
+ "data_kind": "stored_dataset",
+ "one_line": "Monthly CSV.gz snapshots (origin, bucketed rank 1k/10k/100k/1M) of Chrome's top ~1M sites from the public CrUX dataset, global and per-country, monthly back to ~2018, CITATION.cff present; data under Google CrUX dataset terms.",
+ "abnb_use": "Gap 5: a monthly, dated, real-usage popularity rank for airbnb.com against booking.com/expedia.com/vrbo.com back to 2018 \u2014 the point-in-time engagement series Google Trends failed to provide.",
+ "sample_plan": "Pull data/global/current.csv.gz plus 6-8 dated monthly files spanning 2019, 2022, 2024 and 2026 from raw.githubusercontent (each ~5-8MB gz); cap 25MB. Immediately filter to airbnb.com, vrbo.com, booking.com, expedia.com, vacasa.com and discard the rest before storing.",
+ "tos_or_license_flag": true
+}

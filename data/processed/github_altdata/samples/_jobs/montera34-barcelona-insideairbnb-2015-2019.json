@@ -1,0 +1,10 @@
+{
+ "slug": "montera34-barcelona-insideairbnb-2015-2019",
+ "url": "https://github.com/montera34/airbnb.barcelona",
+ "category": "str_airbnb_direct",
+ "data_kind": "both",
+ "one_line": "Verified: 34 dated Inside Airbnb Barcelona snapshots committed under data/original/airbnb/<YYMMDD>/ from 150430 (30 Apr 2015) to 190308 (8 Mar 2019), each with listings_summary_barcelona_insideairbnb.csv (~2.0-3.0 MB; columns id, host_id, neighbourhood, lat/lon, room_type, price, minimum_nights, number_of_reviews, last_review, reviews_per_month, calculated_host_listings_count, availability_365) and reviews_summary_barcelona_insideairbnb.csv (listing_id+date, 2.9 MB in 2015 rising to 11.1 MB in 2019); repo ~147 MB total, plus boundary shapefiles and Barcelona population/dwelling tables; no LICENSE file (upstream Inside Airbnb is CC BY 4.0); last push 19 Oct 2019, 0 stars, not archived.",
+ "abnb_use": "Direct hit on gap #1 (Inside Airbnb dumps older than ~1 year, which are off the CDN): 34 pre-2023 Barcelona vintages give a 2015-2019 base period for the reviews-based stays index, host-concentration and quoted-price/availability series in one of our 13 panel cities, and let the 2022-2026 EMEA nights/ADR trend be judged against a full pre-COVID cycle and the 2016-17 Barcelona HUTB crackdown.",
+ "sample_plan": "cd <scratch>; D=https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb; for d in 150430 160103 170104 180117 190308; do curl -sL -o bcn_listings_$d.csv \"$D/$d/listings_summary_barcelona_insideairbnb.csv\"; done  (5 files, ~12.5 MB); then curl -sL -o bcn_reviews_190308.csv \"$D/190308/reviews_summary_barcelona_insideairbnb.csv\" (11.1 MB, cumulative review history back to 2009). Total ~24 MB, under the cap. Record the full 34-date list with `gh api repos/montera34/airbnb.barcelona/contents/data/original/airbnb --jq '.[].name'` and note remaining dates for a later targeted pull. Do NOT run anything in scraping/.",
+ "tos_or_license_flag": true
+}

@@ -1,0 +1,28 @@
+{
+ "slug": "bts-canada-border-crossings-plus-intercept-survey",
+ "url": "https://github.com/AlexBogden/canadian-border-crossings-analysis",
+ "sampled": true,
+ "total_bytes": 4904970,
+ "files": [
+  "bts_border_crossings_us_canada_2018plus.csv",
+  "bts_us_canada_monthly_by_measure_1996plus.csv",
+  "README_repo.md",
+  "bts_update_data_clean.py"
+ ],
+ "rows": "bts_border_crossings_us_canada_2018plus.csv: 37,950 (complete, not truncated; 88 ports, 10 states, 8 measures); bts_us_canada_monthly_by_measure_1996plus.csv: 2,933 (367 months x 8 measures); README/py: n/a",
+ "columns": "port_name, state, port_code, border, date, measure, value, latitude, longitude | date, measure, value",
+ "date_range": "1996-01-01 to 2026-07-01 (aggregate); 2018-01-01 to 2026-07-01 (port-level)",
+ "how_pulled": "gh api repos/AlexBogden/canadian-border-crossings-analysis/git/trees/HEAD?recursive=1 (showed data/ is gitignored, nothing committed); curl -sL raw.githubusercontent.com/AlexBogden/canadian-border-crossings-analysis/HEAD/{README.md,scripts/bts_update_data_clean.py}; curl -sL -G https://data.bts.gov/resource/keg4-3bc2.csv --data-urlencode '$select=port_name,state,port_code,border,date,measure,value,latitude,longitude' --data-urlencode \"$where=border='US-Canada Border' AND date >= '2018-01-01T00:00:00'\" --data-urlencode '$order=date,port_code,measure' --data-urlencode '$limit=50000'; curl -sL -G https://data.bts.gov/resource/keg4-3bc2.csv --data-urlencode '$select=date,measure,sum(value) as value' --data-urlencode \"$where=border='US-Canada Border'\" --data-urlencode '$group=date,measure' --data-urlencode '$order=date,measure'",
+ "full_dataset_size": "BTS keg4-3bc2: 275,901 rows total (209,708 US-Canada, rest US-Mexico), 1996-01 to 2026-07, ~35 MB CSV, one Socrata GET with $limit=300000. BPRI Whatcom intercept survey (31,208 responses, 4 waves) is NOT public - held privately by the repo author. NTTO I-92 air arrivals: not committed; hand-exported from trade.gov visualization.",
+ "description": "Monthly inbound crossings into the US at each land port of entry, by mode (personal vehicles and passengers, buses, trains, pedestrians, trucks), from BTS Border Crossing Entry Data (data.bts.gov keg4-3bc2, public domain). Grain is port x month x measure; the sample holds the complete US-Canada border 2018-2026 port panel plus a 1996-2026 monthly aggregate by measure. The GitHub repo itself commits no data (all data dirs gitignored); its value is the SQL/Python recipe and the framing of the 2025-26 Canadian travel boycott (-20% crossings 2024->2025, April 2026 first YoY gain). For ABNB an analyst would use it as a monthly, ~6-week-lag North America cross-border demand series (Canadian inbound leisure travel to US border states) to split the NA regional nights view and to track the boycott's fade into 3Q26/4Q26.",
+ "issues": "Job card overstated the repo: no data/ files are committed (data/raw, data/processed, figures each contain only a '.gitignore' with '*'). The n=31,208 Whatcom County BPRI intercept survey was supplied privately by BPRI's director and is not obtainable; the NTTO I-92 table is a manual trade.gov export not in the repo. Sample was therefore pulled directly from the upstream BTS Socrata API (keyless, public domain), not from GitHub. Repo licence MIT covers code only. Port-level pull restricted to US-Canada 2018+ to stay under caps; US-Mexico rows and pre-2018 port detail omitted (available via the same endpoint).",
+ "source_urls": [
+  "https://github.com/AlexBogden/canadian-border-crossings-analysis",
+  "https://raw.githubusercontent.com/AlexBogden/canadian-border-crossings-analysis/HEAD/README.md",
+  "https://raw.githubusercontent.com/AlexBogden/canadian-border-crossings-analysis/HEAD/scripts/bts_update_data_clean.py",
+  "https://raw.githubusercontent.com/AlexBogden/canadian-border-crossings-analysis/HEAD/border_crossings_analysis.sql",
+  "https://data.bts.gov/api/views/keg4-3bc2.json",
+  "https://data.bts.gov/resource/keg4-3bc2.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

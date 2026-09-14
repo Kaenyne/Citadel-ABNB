@@ -1,0 +1,192 @@
+### CELL: # Create a copy of the initial data for further reference initial_data=pd.read_c
+data shape after data cleaning: (43583, 96)
+
+
+### CELL: # print out the information about missing data print(listings.info())
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 43583 entries, 0 to 44503
+Data columns (total 96 columns):
+id                                  43583 non-null int64
+listing_url                         43583 non-null object
+scrape_id                           43583 non-null int64
+last_scraped                        43583 non-null object
+name                                43577 non-null object
+summary                             42072 non-null object
+space                               31339 non-null object
+description                         42872 non-null object
+experiences_offered                 43583 non-null object
+neighborhood_overview               27342 non-null object
+notes                               21697 non-null object
+transit                             25931 non-null object
+access                              27467 non-null object
+interaction                         26336 non-null object
+house_rules                         29735 non-null object
+thumbnail_url                       0 non-null float64
+medium_url                          0 non-null float64
+picture_url                         43583 non-null object
+xl_picture_url                      0 non-null float64
+host_id                             43583 non-null int64
+host_url                            43583 non-null object
+host_name                           43580 non-null object
+host_since                          43580 non-null object
+host_location                       43431 non-null object
+host_about                          28232 non-null object
+host_response_time                  26971 non-null object
+host_response_rate                  26971 non-null object
+host_acceptance_rate                0 non-null float64
+host_is_superhost                   43580 non-null object
+host_thumbnail_url                  43580 non-null object
+host_picture_url                    43580 non-null object
+host_neighbourhood                  35338 non-null object
+host_listings_count                 43580 non-null float64
+host_total_listings_count           43580 non-null float64
+host_verifications                  43583 non-null object
+host_has_profile_pic                43580 non-null object
+host_identity_verified              43580 non-null object
+street                              43583 non-null object
+neighbourhood                       39553 non-null object
+neighbourhood_cleansed              43583 non-null object
+neighbourhood_group_cleansed        0 non-null float64
+city                                43569 non-null object
+state                               43579 non-null object
+zipcode                             42988 non-null object
+market                              43500 non-null object
+smart_location                      43583 non-null object
+country_code                        43583 non-null object
+country                             43583 non-null object
+latitude                            43583 non-null float64
+longitude                           43583 non-null float64
+is_location_exact                   43583 non-null object
+property_type                       43583 non-null object
+room_type                           43583 non-null object
+accommodates                        43583 non-null int64
+bathrooms                           43547 non-null float64
+bedrooms                            43565 non-null float64
+beds                                43543 non-null float64
+bed_type                            43583 non-null object
+amenities                           43583 non-null object
+square_feet                         360 non-null float64
+price                               43583 non-null float64
+weekly_price                        5821 non-null object
+monthly_price                       5323 non-null object
+security_deposit                    31639 non-null object
+cleaning_fee                        36717 non-null object
+guests_included                     43583 non-null int64
+extra_people                        43583 non-null object
+minimum_nights                      43583 non-null int64
+maximum_nights                      43583 non-null int64
+calendar_updated                    43583 non-null object
+has_availability                    43583 non-null object
+availability_30                     43583 non-null int64
+availability_60                     43583 non-null int64
+availability_90                     43583 non-null int64
+availability_365                    43583 non-null int64
+calendar_last_scraped               43583 non-null object
+number_of_reviews                   43583 non-null int64
+first_review                        34490 non-null object
+last_review                         34490 non-null object
+review_scores_rating                33881 non-null float64
+review_scores_accuracy              33850 non-null float64
+review_scores_cleanliness           33850 non-null float64
+review_scores_checkin               33812 non-null float64
+review_scores_communication         33843 non-null float64
+review_scores_location              33804 non-null float64
+review_scores_value                 33794 non-null float64
+requires_license                    43583 non-null object
+license                             778 non-null object
+jurisdiction_names                  30731 non-null object
+instant_bookable                    43583 non-null object
+is_business_travel_ready            43583 non-null object
+cancellation_policy                 43583 non-null object
+require_guest_profile_picture       43583 non-null object
+require_guest_phone_verification    43583 non-null object
+calculated_host_listings_count      43583 non-null int64
+reviews_per_month                   34490 non-null float64
+dtypes: float64(22), int64(13), object(61)
+memory usage: 32.3+ MB
+None
+
+
+### CELL: # print the features after the cleaaning print(listings.info())
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 43583 entries, 0 to 44503
+Data columns (total 76 columns):
+id                                            43583 non-null int64
+host_is_superhost                             43583 non-null bool
+host_has_profile_pic                          43583 non-null bool
+neighbourhood_cleansed                        43583 non-null object
+property_type                                 43583 non-null object
+room_type                                     43583 non-null object
+accommodates                                  43583 non-null int64
+bathrooms                                     43547 non-null float64
+bedrooms                                      43565 non-null float64
+beds                                          43543 non-null float64
+bed_type                                      43583 non-null object
+price                                         43583 non-null float64
+guests_included                               43583 non-null int64
+minimum_nights                                43583 non-null int64
+maximum_nights                                43583 non-null int64
+number_of_reviews                             43583 non-null int64
+review_scores_rating                          33881 non-null float64
+review_scores_accuracy                        33850 non-null float64
+review_scores_cleanliness                     33850 non-null float64
+review_scores_checkin                         33812 non-null float64
+review_scores_communication                   33843 non-null float64
+review_scores_location                        33804 non-null float64
+review_scores_value                           33794 non-null float64
+instant_bookable                              43583 non-null bool
+cancellation_policy                           43583 non-null object
+reviews_per_month                             34490 non-null float64
+Wifi                                          43583 non-null bool
+Essentials                                    43583 non-null bool
+Smoke detector                                43583 non-null bool
+Kitchen                                       43583 non-null bool
+Heating                                       43583 non-null bool
+Hangers                                       43583 non-null bool
+TV                                            43583 non-null bool
+Shampoo                                       43583 non-null bool
+Washer                                        43583 non-null bool
+Dryer                                         43583 non-null bool
+Air conditioning                              43583 non-null bool
+Hair dryer                                    43583 non-null bool
+Laptop friendly workspace                     43583 non-null bool
+Carbon monoxide detector                      43583 non-null bool
+Iron                                          43583 non-null bool
+Free parking on premises                      43583 non-null bool
+Hot water                                     43583 non-null bool
+Fire extinguisher                             43583 non-null bool
+First aid kit                                 43583 non-null bool
+Family/kid friendly                           43583 non-null bool
+Lock on bedroom door                          43583 non-null bool
+Free street parking                           43583 non-null bool
+Refrigerator                                  43583 non-null bool
+Dishes and silverware                         43583 non-null bool
+Self check-in                                 43583 non-null bool
+Bed linens                                    43583 non-null bool
+Microwave                                     43583 non-null bool
+Cable TV                                      43583 non-null bool
+Private entrance                              43583 non-null bool
+Stove                                         43583 non-null bool
+Internet                                      43583 non-null bool
+Long term stays allowed                       43583 non-null bool
+Coffee maker                                  43583 non-null bool
+Cooking basics                                43583 non-null bool
+Oven                                          43583 non-null bool
+Step-free access                              43583 non-null bool
+Extra pillows and blankets                    43583 non-null bool
+Pool                                          43583 non-null bool
+Indoor fireplace                              43583 non-null bool
+Elevator                                      43583 non-null bool
+Luggage dropoff allowed                       43583 non-null bool
+Dishwasher                                    43583 non-null bool
+Patio or balcony                              43583 non-null bool
+Hot tub                                       43583 non-null bool
+Host greets you                               43583 non-null bool
+translation missing: en.hosting_amenity_50    43583 non-null bool
+Pets allowed                                  43583 non-null bool
+Garden or backyard                            43583 non-null bool
+Safety card                                   43583 non-null bool
+Lockbox                                       43583 non-null bool
+dtypes: bool(53), float64(12), int64(6), object(5)
+memory usage: 10.2+ MB
+None

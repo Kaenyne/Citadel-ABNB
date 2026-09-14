@@ -1,0 +1,10 @@
+{
+ "slug": "asifmehdiyev-booking-reviews-timeseries-nb",
+ "url": "https://github.com/Asifmehdiyev/Booking_Time_Series_Modelling",
+ "category": "competitor_ota",
+ "data_kind": "pointer_to_external_host",
+ "one_line": "Single 1.1 MB Jupyter notebook (README 444 B, no licence, 0 stars, last push 2023-06-19) doing EDA/time-series/forecasting on a Booking.com GUEST-REVIEW scrape hosted on Kaggle (kaggle.com/datasets/asifmehdiyev/bookingnew, file booking.csv); notebook outputs show columns review_title, reviewed_at, reviewed_by, images, rating, nationality with review dates spanning ~2019-2021. NOT the Portugal hotel-booking-demand dataset the scout guessed; no data committed to the repo, raw CSV needs a Kaggle login.",
+ "abnb_use": "A dated Booking.com review stream is the competitor analogue of our reviews-based 'stays index' (gap 9, competitor OTA volumes); the notebook's committed outputs show how the reviews-per-period series behaves and the schema/nationality field would let a cross-border-share proxy be built if the Kaggle CSV is ever pulled by a human.",
+ "sample_plan": "One file only: curl -sL -o asifmehdiyev_booking_ts.ipynb https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/raw/HEAD/booking-time-series-modelling.ipynb (canonical: https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/HEAD/booking-time-series-modelling.ipynb), ~1.1 MB. Strip base64 image outputs and keep the text/plain output cells (df.head(), value_counts, resampled review-count tables) to record the schema, the date range and the aggregated series. Do NOT attempt the Kaggle CSV (login required). Total < 2 MB.",
+ "tos_or_license_flag": true
+}

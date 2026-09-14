@@ -1,0 +1,10 @@
+{
+ "slug": "chicagoboothml-insideairbnb-2015-30cities",
+ "url": "https://github.com/ChicagoBoothML/DATA___InsideAirBnB",
+ "category": "str_airbnb_direct",
+ "data_kind": "stored_dataset",
+ "one_line": "Full Inside Airbnb listings/calendar/reviews dumps committed for ~30 global cities at a Dec-2015 vintage (NYC alone: listings 4.7MB, calendar.csv.gz 29.6MB, reviews.csv.gz 62MB); no licence file.",
+ "abnb_use": "Gap #1 directly: a pre-2023 full-scope Inside Airbnb vintage (with calendar prices) for 11 of our 13 panel cities plus SF, Boston, Seattle, DC, Amsterdam, Berlin, Madrid, Toronto \u2014 a pre-regulation supply/price baseline.",
+ "sample_plan": "raw.githubusercontent pull of newyorkcity/listings.csv (4.7MB) plus barcelona/listings.csv and the neighbourhoods.csv for both; confirm the snapshot date from the calendar date range; cap 15 MB total, skip all .gz.",
+ "tos_or_license_flag": true
+}

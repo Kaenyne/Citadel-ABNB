@@ -1,0 +1,10 @@
+{
+ "slug": "hf-bookingcom-accommodation-reviews",
+ "url": "https://huggingface.co/datasets/Booking-com/accommodation-reviews",
+ "category": "competitor_ota",
+ "data_kind": "pointer_to_external_host",
+ "one_line": "Official Booking.com-published review corpus on HuggingFace (public, NOT gated, no login needed), CC-BY-SA-4.0, last modified 21 Sep 2025, ~1.71 GB total: root train.csv (584,286,730 bytes) and val.csv (72,987,708 bytes) plus a rectour24/ subfolder (train_reviews.csv 554 MB, train_users.csv, train_matches.csv, val_*, test_*); ~1.6M English reviews over ~40k accommodations with guest_score, guest_type, guest_country, room_nights, check-in month, accommodation_type/country/star_rating and location_is_beach/ski/city_center tags. The 193-row figure the scout saw is only the broken dataset-viewer preview, not the real files.",
+ "abnb_use": "Gap #9 competitor read and gap #20 party-size/length-of-stay: room_nights is a direct length-of-stay distribution and guest_type a party-composition proxy on a Booking.com panel, with check-in month and beach/ski/city-centre tags allowing a seasonal and destination-mix cut \u2014 a richer comparator than the 515k Kaggle review file we hold, and an external benchmark for our Hawaii party-size series.",
+ "sample_plan": "Range-read the heads only, no full download: curl -sL -H 'Range: bytes=0-3000000' 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/train.csv' -o hf_booking_train_head.csv and curl -sL -H 'Range: bytes=0-2000000' 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_users.csv' -o hf_booking_rectour24_users_head.csv (~5 MB total; drop the trailing partial line before parsing). Also save the full file listing: curl -s 'https://huggingface.co/api/datasets/Booking-com/accommodation-reviews?full=true'. Do NOT pull the 584 MB or 554 MB files whole.",
+ "tos_or_license_flag": false
+}

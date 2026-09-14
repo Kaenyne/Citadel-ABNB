@@ -1,0 +1,10 @@
+{
+ "slug": "opendigger-github-org-monthly-metrics",
+ "url": "https://github.com/X-lab2017/open-digger",
+ "category": "methods_tooling",
+ "data_kind": "both",
+ "one_line": "OpenDigger (X-lab, Apache-2.0, 366 stars, 1,083 commits, last commit 2026-08-20): GH-Archive-derived analytics platform with committed sample_data/labeled_data (including a labeled_data/companies taxonomy) AND - verified live - a keyless public CDN of precomputed per-repo monthly metrics at https://oss.open-digger.cn/github/<owner>/<repo>/<metric>.json (openrank, activity, stars, participants, etc.), yearly+monthly values back to 2015.",
+ "abnb_use": "Gap #15: turns Airbnb's public GitHub footprint into a ready-made monthly series without touching BigQuery - e.g. airbnb/javascript openrank 736 (2017) -> 446 (2024) -> 304 (2025), a decaying-OSS-investment proxy; the same endpoint gives BKNG/EXPE/Marriott org repos for a cross-sectional engineering-spend read.",
+ "sample_plan": "No clone needed for the metrics. Keyless: for repo in javascript lottie-android lottie-ios epoxy knowledge-repo; do for m in openrank activity stars participants technical_fork; do curl -s -o \"opendigger_airbnb_${repo}_${m}.json\" \"https://oss.open-digger.cn/github/airbnb/${repo}/${m}.json\"; done; done (each file is a few KB; verified 200/valid JSON for airbnb/javascript openrank, activity, stars). Then, for the in-repo taxonomy only: `git clone --depth 1 --filter=blob:none --sparse https://github.com/X-lab2017/open-digger.git && cd open-digger && git sparse-checkout set labeled_data/companies sample_data` (a few MB of YAML/JSON). Total < 10 MB. Note that org-level paths (github/airbnb/openrank.json) 404 - metrics are repo-level, so the Airbnb org series must be summed across its repo list.",
+ "tos_or_license_flag": false
+}

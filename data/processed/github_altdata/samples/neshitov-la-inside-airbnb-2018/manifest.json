@@ -1,0 +1,25 @@
+{
+  "slug": "neshitov-la-inside-airbnb-2018",
+  "url": "https://github.com/neshitov/airbnb",
+  "sampled": false,
+  "total_bytes": 15174,
+  "files": ["repo_README.md", "notebook_listings_info_output.txt"],
+  "rows": "n/a (no data table obtained); notebook output shows 44,504 raw rows / 43,583 after author's cleaning, 96 columns",
+  "columns": "Standard Inside Airbnb 2018 listings.csv schema (96 cols): id, listing_url, scrape_id, last_scraped, name, host_id, host_since, host_is_superhost, host_listings_count, neighbourhood_cleansed, city, zipcode, latitude, longitude, property_type, room_type, accommodates, bathrooms, bedrooms, beds, amenities, price, weekly_price, monthly_price, security_deposit, cleaning_fee, guests_included, extra_people, minimum_nights, maximum_nights, availability_30/60/90/365, calendar_last_scraped, number_of_reviews, first_review, last_review, review_scores_*, license, jurisdiction_names, instant_bookable, cancellation_policy, calculated_host_listings_count, reviews_per_month",
+  "date_range": "single vintage: scrape date 2018-12-06 (per repo README and notebook); no date columns inspected because no table was pulled",
+  "how_pulled": "gh api repos/neshitov/airbnb/contents/ ; gh api repos/neshitov/airbnb/git/trees/master?recursive=1 ; gh api repos/neshitov/airbnb/commits + per-commit tree listing (grep csv|geojson) ; curl -sL -o README.md https://raw.githubusercontent.com/neshitov/airbnb/HEAD/README.md ; curl -sL -o nb.ipynb 'https://raw.githubusercontent.com/neshitov/airbnb/HEAD/LA%20airbnb%20data.ipynb' + python to extract listings.info() cell output ; curl -sIL http://data.insideairbnb.com/united-states/ca/los-angeles/2018-12-06/data/listings.csv.gz (403) ; curl archive.org/wayback/available and web.archive.org/cdx for that URL (429 Too Many Requests, twice)",
+  "full_dataset_size": "The referenced file is one Inside Airbnb dump: los-angeles/2018-12-06 listings.csv.gz (~44.5k rows x 96 cols, ~30-40 MB uncompressed, ~10 MB gz) plus neighbourhoods.geojson (~1 MB). It is NOT in the repo (0 files, no commit ever contained it) and is off the live IA CDN (403).",
+  "description": "The job card is wrong on the key point: neshitov/airbnb contains only a Jupyter notebook, a README and three gmplot HTML maps; listings.csv and neighbourhoods.geojson were never committed in any of its 11 commits (Dec 2018). What the repo does preserve is the exact source URL (data.insideairbnb.com/united-states/ca/los-angeles/2018-12-06/data/listings.csv.gz), the row count (44,504 raw) and the full 96-column schema of that vintage via printed notebook output. For ABNB this is at most a pointer for gap #1 (pre-2023 Inside Airbnb dumps): an analyst would need to recover the file from the Wayback Machine or ask Inside Airbnb directly; the notebook itself is a listing-price regression with no forecasting value.",
+  "issues": "sampled=false: no data file exists in the repo (contents API, recursive tree and all 11 commit trees checked). Live Inside Airbnb CDN URL returns 403 (dump older than the ~1-year retention). Wayback availability/CDX lookups returned HTTP 429 (rate-limited, probably shared with parallel agents) on two attempts; a human should retry web.archive.org for data.insideairbnb.com/united-states/ca/los-angeles/2018-12-06/ later. Repo has no LICENSE (spdx null); README defers to Inside Airbnb's licence (CC BY 4.0 at the time). Recommend downgrading data_kind from stored_dataset to pointer/method.",
+  "source_urls": [
+    "https://api.github.com/repos/neshitov/airbnb/contents/",
+    "https://api.github.com/repos/neshitov/airbnb/git/trees/master?recursive=1",
+    "https://api.github.com/repos/neshitov/airbnb/commits",
+    "https://raw.githubusercontent.com/neshitov/airbnb/HEAD/README.md",
+    "https://raw.githubusercontent.com/neshitov/airbnb/HEAD/LA%20airbnb%20data.ipynb",
+    "http://data.insideairbnb.com/united-states/ca/los-angeles/2018-12-06/data/listings.csv.gz",
+    "https://archive.org/wayback/available?url=data.insideairbnb.com/united-states/ca/los-angeles/2018-12-06/data/listings.csv.gz",
+    "https://web.archive.org/cdx/search/cdx?url=data.insideairbnb.com/united-states/ca/los-angeles/2018-12-06*"
+  ],
+  "pulled_at": "2026-09-14"
+}

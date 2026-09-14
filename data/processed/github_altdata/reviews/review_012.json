@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/hamid-vakilzadeh/motley-fool-scraper",
+  "slug": "motley-fool-scraper-vakilzadeh",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Single-file Selenium scraper (Motley-Scraper.py, 3.9 KB) that walks page 1 of fool.com/earnings/call-transcripts; 4 files total, ~8 KB repo, 5 stars, last push 15 Dec 2022, BSD-2-Clause on the code only; no data committed; README states fool.com Terms of Use prohibit scraping and the author will delete the repo on takedown.",
+  "abnb_use": "Gap 17 (methods) / transcript acquisition: a documented fallback pattern for pulling peer earnings transcripts (BKNG, EXPE, MAR, HLT, ABNB) when IR CDN PDFs are unavailable, feeding the management-tone and guidance-ledger work. We already hold every ABNB letter and transcript since IPO, so marginal value is the peer-transcript route only.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified via gh api and the raw README: the repo is four files (LICENSE, README, requirements.txt, one 3.9 KB Selenium script) with zero committed data, untouched since Dec 2022. The README itself says fool.com's Terms of Use forbid scraping, so per project rule 6 this is a human ToS decision and must not be run by an agent. Code is BSD-2-Clause and small enough to read inline if we ever need the pattern, so there is nothing worth sampling."
+ },
+ {
+  "url": "https://github.com/AndreNagano/Earnings-Calls-Transcript-Scraper",
+  "slug": "andrenagano-earnings-calls-transcript-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "one_line": "Three-file repo (624 KB): a 6.2 KB requests/BeautifulSoup scraper (earnings_calls_transcript_scrape.py) returning {ticker: [{date, link, content}]} from fool.com, plus example.ipynb (1.99 MB) whose saved outputs embed full NVDA and AAPL transcript text (NVDA FY25 Q4, Feb 2025 onward); 1 star, last push 26 Sep 2025, NO licence declared.",
+  "abnb_use": "Gap 17 (methods): the most recently maintained of the fool.com transcript scrapers, so the best reference for the HTML structure if we ever need peer transcripts (BKNG/EXPE/MAR/HLT) or a fool.com fallback for ABNB. The committed notebook data is NVDA/AAPL only and reads on nothing in the ABNB KPI stack.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed by directory listing and a 3 KB range read of example.ipynb: the notebook's stored outputs are literal Motley Fool transcript text for NVDA and AAPL, which is copyrighted third-party content committed under no licence at all, and the scraper targets fool.com whose ToS forbids scraping. Both facts put it firmly in catalog_only under rule 6 and the no-licence rule. The only genuinely useful artefact is the 6 KB parsing logic, which needs no sample pull."
+ },
+ {
+  "url": "https://github.com/twyb/Motley-Fool-Transcript-Extractor",
+  "slug": "twyb-motley-fool-transcript-extractor",
+  "exists_and_has_content": true,
+  "usefulness": "none",
+  "verdict": "discard",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "one_line": "Abandoned personal project (4.4 MB, 0 stars, last push 28 Feb 2020, no licence): two short Python files plus a committed 7.7 MB-on-disk chromedriver.exe binary and Transcripts/ holding only raw fool.com HTML for BIDU (7 calls, Q4 2017-Q3 2019) and JD (6 calls, Q4 2017-Q3 2019).",
+  "abnb_use": "None. The only stored data is Baidu and JD.com earnings-call HTML from 2017-2019, which touches no ABNB KPI, no travel or lodging read, and no gap in CONTEXT.md; the scraper itself is strictly worse than the two other fool.com scrapers in this batch.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "I listed Transcripts/BIDU and Transcripts/JD directly and they contain 13 Chinese-ADR transcript HTML files and nothing else; the repo bulk is a checked-in Windows chromedriver binary. Dead since Feb 2020, no licence, and duplicative of the two better fool.com scrapers already catalogued in this batch. Nothing here informs the pitch, so discard."
+ },
+ {
+  "url": "https://github.com/bondvit/seeking-alpha-scraper-examples",
+  "slug": "bondvit-seeking-alpha-scraper-examples",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Tiny (~5 KB) vendor demo repo, last push 12 Jun 2026, 0 stars, licence NOASSERTION: examples/python and examples/javascript call a PAID Apify 'Seeking Alpha Scraper' actor (needs an Apify token) for valuation, quant ratings, analyst ratings and stock data, plus a 3.1 KB examples/sample_output.json showing the returned field shape.",
+  "abnb_use": "Reads on gap 4 (historical analyst-consensus snapshots for ABNB/BKNG/EXPE) only as a negative result: it documents that Seeking Alpha quant/analyst-rating data is reachable via a commercial actor, not a free feed. Catalogue value is knowing the field list (rating history, valuation grades) exists behind a paid wall so we stop searching for a free GitHub mirror.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Directory listing confirms the repo is README plus two example folders and one 3.1 KB sample_output.json; there is no bulk data and every runnable path needs an Apify API token, which we will not supply. Licence resolves to NOASSERTION, and the target is a login-walled third-party site. Both the API-key rule and the ToS rule force catalog_only, and the 3 KB sample is too thin to be worth an agent pull."
+ },
+ {
+  "url": "https://github.com/SEC-API-io/sec-api-node",
+  "slug": "sec-api-io-sec-api-node",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Actively maintained vendor SDK (310 stars, last push 29 Apr 2026, repo touched 3 Sep 2026, ~4.6 MB dominated by a 144 KB README): Node.js wrapper over the commercial sec-api.io service covering full-text search, XBRL-to-JSON, 10-K/10-Q/8-K section extraction, Forms 3/4/5, 13F, 13D/G, N-PORT, ADV, enforcement actions and real-time filing streams over 20M+ filings from 1993; NO licence file declared; free signup key required for essentially everything (only raw filing downloads at <=20/sec and datasetsApi.getAll() work keyless).",
+  "abnb_use": "Gap 15 (13F concentration history for ABNB, SEC EDGAR full-text/XBRL tooling) and gap 4 in part: the 144 KB README is a de facto field dictionary for what a 13F/Form 4/XBRL extraction layer should expose, useful as a spec for a home-grown EDGAR parser over ABNB and the peer set (BKNG, EXPE, MAR, HLT) whose 8-K KPIs we already track.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "The raw README confirms setApiKey() gates nearly every endpoint behind a sec-api.io account, with only unauthenticated filing downloads and a dataset listing working keyless, and the repo declares no licence. It stores no data of its own, so there is nothing to sample; its value is purely as a schema reference for tooling we would build against free EDGAR endpoints ourselves. Registering for a key, even a free one, is a credential step this run does not take."
+ }
+]

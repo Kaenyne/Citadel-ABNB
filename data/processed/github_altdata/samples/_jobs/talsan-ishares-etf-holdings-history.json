@@ -1,0 +1,10 @@
+{
+ "slug": "talsan-ishares-etf-holdings-history",
+ "url": "https://github.com/talsan/ishares",
+ "category": "markets_options_positioning",
+ "data_kind": "both",
+ "one_line": "Scraper for iShares.com per-fund, per-date holdings-history CSVs (history back to 2006), 38 stars, 42 commits, last push 2024-10-28, NO licence declared; the repo also has three real committed snapshots under output/: IWB_holdings_20220621.csv (14.0 MB), IWB_holdings_20220823.csv (5.8 MB) and IWV_holdings_20220516.csv (93.6 MB) - Russell 1000/3000 constituent weights and share counts that include ABNB; optional S3+Athena output needs AWS credentials, the local path does not.",
+ "abnb_use": "A route to a genuinely point-in-time series of ABNB's weight and share count inside index ETFs (passive-ownership and index-flow proxy, gap 15 and markets/positioning), plus the same for travel/consumer-discretionary funds - the only free substitute we have for licensed 13F/consensus positioning data.",
+ "sample_plan": "Do NOT run the scraper against ishares.com (third-party site, terms-of-service call for a human). Pull only the committed snapshots: git clone --depth 1 --filter=blob:none --sparse https://github.com/talsan/ishares && cd ishares && git sparse-checkout set output README.md README_Quant.md athena_ddl, then keep ONLY output/IWB_holdings_20220823.csv (5.8 MB) - delete or never materialise IWB_holdings_20220621.csv (14 MB) and IWV_holdings_20220516.csv (93.6 MB), or if sparse-checkout pulls all three, instead take heads by raw URL: curl -L -r 0-2000000 https://raw.githubusercontent.com/talsan/ishares/master/output/IWV_holdings_20220516.csv -o IWV_head.csv. Total <= 8 MB.",
+ "tos_or_license_flag": true
+}

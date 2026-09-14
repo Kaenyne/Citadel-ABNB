@@ -1,0 +1,25 @@
+{
+  "slug": "nyc-airbnb-listings-2024-01-05",
+  "url": "https://github.com/Tracey-Sneed/New-York-Airbnb-Listings-2024",
+  "sampled": true,
+  "total_bytes": 4465191,
+  "files": [
+    "new_york_listings_2024.csv",
+    "schema.sql",
+    "SOURCE_README.md"
+  ],
+  "rows": "new_york_listings_2024.csv: 20,758 rows x 22 columns (full file, not a head); schema.sql and SOURCE_README.md: n/a",
+  "columns": "id, name, host_id, host_name, neighbourhood_group (borough), neighbourhood, latitude, longitude, room_type, price, minimum_nights, number_of_reviews, last_review, reviews_per_month, calculated_host_listings_count, availability_365, number_of_reviews_ltm, license, rating, bedrooms, beds, baths",
+  "date_range": "last_review 2011-12-10 to 2024-01-05 (snapshot date 2024-01-05; every row has a last_review, none null)",
+  "how_pulled": "gh api repos/Tracey-Sneed/New-York-Airbnb-Listings-2024/contents/ ; curl -sL -o new_york_listings_2024.csv https://raw.githubusercontent.com/Tracey-Sneed/New-York-Airbnb-Listings-2024/main/new_york_listings_2024.csv ; curl -sL -o schema.sql .../main/schema.sql ; curl -sL -o SOURCE_README.md .../main/README.md ; python/pandas to describe",
+  "full_dataset_size": "Whole repo is ~29 MB in 8 files: the 4.4 MB CSV (pulled in full), database.db 17.1 MB SQLite (same rows loaded into all_listings plus derived tables), Airbnb Project Dashboard.pbix 6.4 MB, two PDFs (0.9 MB), schema.sql, sample_queries.sql. The CSV is the only data of interest; it is complete here.",
+  "description": "One point-in-time snapshot of NYC Airbnb listings dated 5 Jan 2024 (Inside Airbnb summary-listings format, re-hosted via Kaggle user vrindakallu 'new-york-dataset'), one row per listing with borough, room type, nightly price, minimum nights, review counts, 365-day availability, host listing count, NYC OSE licence string, and rating/bedrooms/beds/baths added by the Kaggle curator. It sits inside the Local Law 18 window (enforcement began 5 Sep 2023) that our Inside Airbnb panel is missing (2023-06 to 2024-03), so an analyst would use it to date the NYC listing-count and mix collapse (only 1,054 rows carry an OSE-STRREG licence; 17,569 say 'No License', 2,135 'Exempt'; min-nights distribution shows the 30-night shift) rather than interpolating across the gap. It is a cleaned subset: 20,758 rows versus roughly 39k in the Inside Airbnb 2024-01-05 NYC dump, and every row has at least one review, so listings with zero reviews were dropped by the curator; counts must be compared on a reviewed-listings basis.",
+  "issues": "No licence file in the repo (repo license = null); the data is Inside Airbnb (CC BY 4.0) via a Kaggle re-upload, so attribution to Inside Airbnb is the practical licence, but a human should confirm before quoting. The Kaggle curator filtered the dump (zero-review listings removed, nulls dropped, rating/bedrooms/beds/baths parsed from the name field), so it is NOT the raw Inside Airbnb 2024-01-05 dump and listing totals are not comparable to raw dump counts without restricting to reviewed listings. Price max 100,000 indicates the usual Inside Airbnb outlier prices are retained. Repo last pushed 2024-03-09; single snapshot only, no time series.",
+  "source_urls": [
+    "https://github.com/Tracey-Sneed/New-York-Airbnb-Listings-2024",
+    "https://raw.githubusercontent.com/Tracey-Sneed/New-York-Airbnb-Listings-2024/main/new_york_listings_2024.csv",
+    "https://raw.githubusercontent.com/Tracey-Sneed/New-York-Airbnb-Listings-2024/main/schema.sql",
+    "https://raw.githubusercontent.com/Tracey-Sneed/New-York-Airbnb-Listings-2024/main/README.md"
+  ],
+  "pulled_at": "2026-09-14"
+}

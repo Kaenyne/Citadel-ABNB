@@ -1,0 +1,31 @@
+{
+ "slug": "talsan-ishares-etf-holdings-history",
+ "url": "https://github.com/talsan/ishares",
+ "sampled": true,
+ "total_bytes": 7851402,
+ "files": [
+  "IWB_holdings_20220823.csv",
+  "IWV_holdings_20220516_head.csv",
+  "ishares-etf-index.csv",
+  "repo_README.md",
+  "repo_README_Quant.md",
+  "athena_ishares_etf_holdings.sql"
+ ],
+ "rows": "IWB_holdings_20220823.csv: 32,626 rows (32 month-end snapshots x ~1,000-1,035 holdings); IWV_holdings_20220516_head.csv: 12,695 rows (first 2 MB of a 93.6 MB file, 5 snapshots); ishares-etf-index.csv: 395 rows (one per iShares ETF); README/SQL: n/a",
+ "columns": "holdings: as_of_date, ticker, name, sector, asset_class, market_value, weight, notional_value, shares, cusip, isin, sedol, price, location, exchange, currency, fx_rate, maturity; etf-index: ticker, name, start_date, product_url",
+ "date_range": "IWB (Russell 1000 ETF): 2019-12-31 to 2022-07-29 monthly, ABNB present only in the last two snapshots (2022-06-30 w=0.094%, 273,546-274,096 sh; 2022-07-29 w=0.107%); IWV head: 2006-09-29 to 2007-01-31; etf-index start_date 1996-03-12 to 2022-10-04",
+ "how_pulled": "gh api repos/talsan/ishares/contents/output (sizes); curl -sL -o IWB_holdings_20220823.csv https://raw.githubusercontent.com/talsan/ishares/master/output/IWB_holdings_20220823.csv; curl -sL -r 0-1999999 -o IWV_holdings_20220516_head.csv https://raw.githubusercontent.com/talsan/ishares/master/output/IWV_holdings_20220516.csv (trailing partial line trimmed in Python); curl -sL -o README.md / README_Quant.md / athena_ddl/ishares_etf_holdings.sql / ishares/data/ishares-etf-index.csv from the same raw base; pandas to profile. Scraper NOT run.",
+ "full_dataset_size": "Committed: 3 CSVs, 113 MB total (IWB 20220621 14.0 MB, IWB 20220823 5.8 MB, IWV 20220516 93.6 MB, ~600k rows combined). What the scraper would produce: month-end (and daily for recent years) holdings for 395 iShares ETFs back to 2006; IWV alone is ~3,000 rows per snapshot, so a full monthly IWV history is roughly 200 snapshots x 3k = 0.6M rows / ~100 MB; the whole product line would be several GB.",
+ "description": "Per-holding, per-snapshot constituent files for iShares ETFs (weight, share count, market value, price, sector, CUSIP/ISIN/SEDOL), produced by a scraper of ishares.com's holdings-history download; the committed snapshots cover the Russell 1000 ETF (IWB) month-ends Dec 2019-Jul 2022 and the head of a 2006+ Russell 3000 (IWV) history. Grain is fund x as_of_date x security. For ABNB an analyst would build a point-in-time series of ABNB's index weight and shares held by passive funds (IWB/IWV, plus travel or consumer-discretionary sector ETFs) as a passive-ownership and index-flow proxy, and the same for BKNG/EXPE/MAR/HLT (all 32 snapshots in IWB). ABNB only enters IWB in the 2022-06-30 snapshot, so the committed data give just two ABNB observations; anything longer requires running the scraper.",
+ "issues": "No licence declared on the repo (all rights reserved by default) and the underlying data belong to BlackRock/iShares under its site terms - a human must decide before the scraper is run or the data redistributed; the scraper (sync_etf_downloader.py / easy_downloader.py) was NOT run. ABNB appears in only 2 of the 32 committed IWB snapshots (Jun and Jul 2022), so the committed data are near-useless for ABNB on their own; the value is the method. ishares.com download URLs may have changed since the last push (2024-10-28), so the scraper may need repair. The IWV file was truncated to its first 2 MB (2006-07 rows only) to stay under the size cap. Optional S3/Athena path needs AWS credentials; not used.",
+ "source_urls": [
+  "https://github.com/talsan/ishares",
+  "https://raw.githubusercontent.com/talsan/ishares/master/output/IWB_holdings_20220823.csv",
+  "https://raw.githubusercontent.com/talsan/ishares/master/output/IWV_holdings_20220516.csv",
+  "https://raw.githubusercontent.com/talsan/ishares/master/README.md",
+  "https://raw.githubusercontent.com/talsan/ishares/master/README_Quant.md",
+  "https://raw.githubusercontent.com/talsan/ishares/master/athena_ddl/ishares_etf_holdings.sql",
+  "https://raw.githubusercontent.com/talsan/ishares/master/ishares/data/ishares-etf-index.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

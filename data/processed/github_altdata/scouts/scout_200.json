@@ -1,0 +1,56 @@
+{
+  "theme": "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos: 311 airbnb complaints",
+    "gh search repos: nyc 311 short term rental",
+    "gh search repos: 311 complaints airbnb (sort updated)",
+    "gh search repos: 311 short term rental (sort updated)",
+    "gh search repos: MyLA311 short term rental",
+    "gh search repos: airbnb noise complaints",
+    "gh search repos: illegal hotel nyc 311",
+    "gh search repos: short-term rental enforcement",
+    "WebSearch: site:github.com \"311\" \"airbnb\" complaints dataset (blocked, session WebSearch budget exhausted)",
+    "WebSearch: site:github.com nyc 311 short term rental complaints repo (blocked, session WebSearch budget exhausted)",
+    "WebFetch github.com/search?q=311+airbnb+complaints (HTTP 429, github.com search rate-limited, Retry-After 3600s)",
+    "WebFetch github.com/search?q=%22short+term+rental%22+%22311%22 (HTTP 429)",
+    "WebFetch duckduckgo.com/html (HTTP 403)",
+    "WebFetch bing.com/search: github airbnb 311 complaints repository data (no repo links surfaced)",
+    "WebFetch bing.com/search: github MyLA311 airbnb short term rental (no repo links surfaced)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/xmunoz/sodapy",
+      "name": "sodapy",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Python client for the Socrata Open Data API. NYC Open Data (data.cityofnewyork.us), LA (data.lacity.org / MyLA311), and San Francisco (datasf.org) all run on Socrata, so this client is the direct mechanism for pulling the NYC 311 Service Requests dataset (Socrata id erm2-nwe9, filterable to complaint types like 'Illegal Vacation Rental Unit', 'Short-Term Rental', 'Illegal Conversion / Illegal Hotel Rental'), LA's MyLA311 service request dataset, and SF 311 Cases, on a point-in-time basis (SoQL supports as_of-style filtering by created_date). No data committed in the repo itself — it is the pull mechanism, not a mirror.",
+      "why_useful": "Directly addresses gap #17 (Socrata/CKAN open-data discovery/pull clients) and is the concrete tool to build the exact 311-Airbnb-mention enforcement/activity proxy this theme is scoped around — NYC, LA and SF 311 STR/illegal-hotel complaint volume as a monthly panel, refreshable and point-in-time by created_date.",
+      "potential": "medium",
+      "gap_targets": [17],
+      "license": "BSD-3-Clause (verify on repo)",
+      "last_activity": "actively maintained historically; not independently re-verified this run (search access blocked)",
+      "geography": "US cities on Socrata (NYC, LA, SF, and others)",
+      "time_coverage": "n/a (live API client)",
+      "size_hint": "small library, no data payload",
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/ckan/ckanapi",
+      "name": "ckanapi",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Command-line tool and Python client for the CKAN open-data API, used by many municipal and national open-data portals (some EU cities' STR registries, e.g. Amsterdam/Barcelona portals, run CKAN rather than Socrata).",
+      "why_useful": "Complements sodapy for gap #17 — lets an agent discover and pull STR/complaint datasets from CKAN-based city portals outside the Socrata set (useful for the EU registration/enforcement trackers in gap #12), rounding out a cross-city 311/enforcement-proxy pull pipeline.",
+      "potential": "low",
+      "gap_targets": [17, 12],
+      "license": "MIT (verify on repo)",
+      "last_activity": "not independently re-verified this run (search access blocked)",
+      "geography": "global (CKAN-based portals)",
+      "time_coverage": "n/a (live API client)",
+      "size_hint": "small library, no data payload",
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "This theme hit a wall of rate limits rather than a wall of empty results. Every `gh search repos` call for 311/Airbnb/noise-complaint/enforcement terms ('311 airbnb complaints', 'nyc 311 short term rental', '311 complaints airbnb', '311 short term rental', 'MyLA311 short term rental', 'airbnb noise complaints', 'illegal hotel nyc 311', 'short-term rental enforcement') returned either an empty array or, after the shared search-API quota was exhausted by other concurrent scouts, HTTP 403 'API rate limit exceeded'. The two non-403 queries that did return ('nyc 311 short term rental', 'MyLA311 short term rental', 'airbnb noise complaints', 'illegal hotel nyc 311', 'short-term rental enforcement') came back genuinely empty ([]) — gh search repos' full-text matching on repo name/description/README is narrow and these multi-word city-agency-specific phrases apparently don't hit any indexed repo. Fallback channels were also blocked in sequence: this session's WebSearch quota (200/200) was already exhausted before this scout ran (used by earlier scouts on the same shared session), a direct WebFetch to github.com/search returned HTTP 429 with a 3600s Retry-After (github.com itself is being hammered by the other ~10 concurrent scouts), and duckduckgo.com/html returned HTTP 403. Bing search via WebFetch loaded but the rendered page did not surface actual repo result links (only chrome/nav elements), so it could not confirm or deny candidates either. Net effect: I cannot rule out that a real committed-data repo for NYC/LA/SF 311-Airbnb complaints exists on GitHub — I simply could not reach a working search surface to find it this run. The two candidates I did report (sodapy, ckanapi) are recalled from general knowledge as real, well-known, actively-used API clients (not verified live this session) that are the correct *mechanism* for this exact theme (pulling NYC/LA/SF 311 short-term-rental/illegal-hotel complaint series from their Socrata backends) even though no committed dataset was found. Recommend a re-run of this theme once the shared gh search-API and github.com scraping quotas reset (~1 hour), trying narrower single-word queries (e.g. 'airbnb311', '311nyc', 'illegalhotel') and `gh search repos --topic=nyc-311` / `--topic=open-data-nyc`, plus a direct check of whether NYC's Mayor's Office of Special Enforcement (OSE) illegal-hotel dataset (already flagged as held, per CONTEXT.md municipal STR registries) has any GitHub mirror with a longer back-history than what NYC Open Data currently serves."
+}

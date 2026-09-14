@@ -1,0 +1,10 @@
+{
+ "slug": "boston-str-monitor-2015-2019",
+ "url": "https://github.com/js-fitz/STR-Monitor",
+ "category": "str_airbnb_direct",
+ "data_kind": "stored_dataset",
+ "one_line": "Boston STR ordinance panel: airbnb.csv (23 merged Inside Airbnb scrapes, 124,730 x 31, Jan 2017-Nov 2019), city STRE registry (396k rows), licence-application tracker, BARI parcel file, and 917,948 rows of Padmapper LTR asking prices 2016-2020; no licence declared, last touched 2020.",
+ "abnb_use": "Directly fills gap 1 (pre-2023 Inside Airbnb vintages, a city we do not hold at all) and gap 12/13 \u2014 a real regulation natural experiment with before/after listing counts and a paired long-term-rental price series.",
+ "sample_plan": "Pull airbnb.csv (head ~100k rows if needed) and STR_apps.csv in full; take only the header plus a 50k-row slice of STRE.csv and padmapper.csv; skip SAMREF.csv and bari_props_2019.csv entirely. Cap 25 MB total.",
+ "tos_or_license_flag": true
+}

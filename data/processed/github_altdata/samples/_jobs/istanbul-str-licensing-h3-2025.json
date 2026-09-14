@@ -1,0 +1,10 @@
+{
+ "slug": "istanbul-str-licensing-h3-2025",
+ "url": "https://github.com/eda-yilmaz/DI722_Istanbul_Airbnb",
+ "category": "regulatory_legal",
+ "data_kind": "both",
+ "one_line": "Verified: METU graduate project (May-Jun 2026, no LICENSE, 8.9 MB) on Turkey's Law No. 7464 national STR permit regime (in force 1 Jan 2024) using a single Inside Airbnb Istanbul cross-section pulled 29-30 Sep 2025 (listings.csv 30,051 rows x 79 cols; calendar.csv.gz ~10.9M rows, Sep 2025-Sep 2026). Committed under Data/: mgwr_summary.csv (35 KB - h3_cell, listing_count, unlicensed_rate, mean_price in TRY, GWR coefficients and significance at three bandwidths), istanbul_airbnb_h3.geojson (1.06 MB), six standalone HTML maps (0.3-4.3 MB each), four PNG figures, mgwr_bandwidths.txt; plus a 66 KB Spatial_Final_Version.py pipeline and a 45 KB README. The raw Inside Airbnb files and the 12-month booking series are NOT committed; the author notes 2023-2024 Istanbul history has been formally requested from Inside Airbnb.",
+ "abnb_use": "Gap #12 with an EMEA market absent from our 32-factor regulatory database and municipal registry panel: an H3-cell unlicensed-rate and mean-price surface quantifies permit non-compliance 21 months after a national licensing shock, which is the kind of compliance-decay number we need for EMEA supply/nights risk, and the licence-field classification rule (permit number vs Exempt vs Non-real-estate vs NaN) is directly reusable on the licence column of our own 120-market Jun-2026 cohort.",
+ "sample_plan": "curl -sL from https://raw.githubusercontent.com/eda-yilmaz/DI722_Istanbul_Airbnb/main/ for: README.md (45 KB), Data/mgwr_summary.csv (35 KB), Data/mgwr_bandwidths.txt, Data/istanbul_airbnb_h3.geojson (1.06 MB), Spatial_Final_Version.py (66 KB). Total ~1.2 MB. Skip all six .html maps (up to 4.3 MB each, presentation only) and the PNGs.",
+ "tos_or_license_flag": true
+}

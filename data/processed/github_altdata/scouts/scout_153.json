@@ -1,0 +1,14 @@
+{
+  "theme": "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers",
+  "modality": "web",
+  "scout": "scout_153",
+  "status": "BLOCKED",
+  "candidates": [],
+  "queries_run": [
+    "site:github.com neighborhood boundaries geojson cities dataset",
+    "github census tract crosswalk zip code neighborhood shapefile",
+    "github \"short term rental\" city GIS layer geojson dataset",
+    "Inside Airbnb neighbourhood boundaries geojson github repo crosswalk census tract"
+  ],
+  "notes": "BLOCKED before any real search could run: the WebSearch tool reported this session's web-search budget (200/200) was already exhausted at the very first call, and every subsequent query returned the same 'budget used' rejection with zero results. No candidates could be sourced or verified via WebFetch as a result -- this is a tooling/environment failure, not a null result for the theme. This theme should be re-run by a fresh scout session (or after CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION is raised) before concluding nothing exists here. Promising starting points to hand to that re-run: NYC Department of City Planning neighborhood tabulation area (NTA) shapefiles mirrored on GitHub, US Census TIGER/Line + tract-to-ZCTA crosswalk repos (e.g. from the UDS Mapper / HUD USPS crosswalk projects), city open-data-portal STR/short-term-rental-registration GIS layers (LA HSO, SF OSTR, Toronto, New Orleans, Austin) often mirrored as geojson in civic-tech GitHub orgs, and Inside Airbnb's own neighbourhood.geojson files per city (already partly held) plus any repo that crosswalks those neighbourhoods to Census tracts for ACS/HUD data joins."
+}

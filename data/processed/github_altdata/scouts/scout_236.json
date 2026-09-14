@@ -1,0 +1,50 @@
+{
+  "theme": "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"airbnb listing survival\" --limit 30 --sort stars",
+    "gh search repos \"airbnb churn listings\" --limit 50 --sort stars (rate-limited, retried below)",
+    "gh search repos \"airbnb host professionalization\" --limit 30 --sort stars",
+    "gh search repos \"airbnb listing churn multi-city\" --limit 30 --sort stars",
+    "gh search repos \"short-term rental listing panel dataset\" --limit 30 --sort stars",
+    "gh search repos \"airbnb multi-city panel replication\" --limit 30 --sort stars",
+    "gh search repos \"insideairbnb archive historical\" --limit 30 --sort updated",
+    "gh api repos/mellinkarl/Predicting-Airbnb-Listing-Survival-Using-Machine-Learning/contents/data (+ /Seattle) to confirm committed files",
+    "gh api repos/husainalalawi/airbnb-host-professionalization/contents to confirm committed files"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/mellinkarl/Predicting-Airbnb-Listing-Survival-Using-Machine-Learning",
+      "name": "Predicting-Airbnb-Listing-Survival-Using-Machine-Learning",
+      "category": "str_airbnb_direct",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Committed Inside Airbnb-derived data for Austin (three cleaned/versioned CSVs: cleaned_austin_v1.csv ~11.5MB, v2 ~11.2MB, v3, plus listings.csv, listings_detailed.csv, processed_listings.csv) and a Seattle listings.csv, built specifically to model listing survival (a PDF report and notebooks folder do survival/churn classification). 0 stars, last updated Dec 2025.",
+      "why_useful": "Directly on-theme: a researcher-compiled, cleaned, versioned listing-survival dataset (not a raw single Kaggle snapshot) for two cities we already hold via Inside Airbnb raw dumps — the value-add is the derived survival/exit labeling and versioned cleaning, which could be reused or cross-checked against our own Austin/13-city panel rather than re-deriving survival from scratch. Small city count and unclear licence/time span (needs opening the notebook/PDF to confirm vintage years) limit it to medium rather than high.",
+      "potential": "medium",
+      "license": "none declared",
+      "last_activity": "2025-12-02",
+      "geography": "Austin TX, Seattle WA",
+      "time_coverage": "unclear (multiple cleaned versions suggest at least 2-3 Inside Airbnb snapshot dates per city; needs notebook inspection)",
+      "size_hint": "~35MB of CSVs across data/",
+      "gap_targets": [1],
+      "duplicate_of_holding": "Partial overlap: we already hold Austin (13-city Inside Airbnb panel) but not a survival-labeled derived version; Seattle is not in our current 13-city list."
+    },
+    {
+      "url": "https://github.com/husainalalawi/airbnb-host-professionalization",
+      "name": "airbnb-host-professionalization",
+      "category": "str_airbnb_direct",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Single-snapshot San Diego Inside Airbnb listings.csv.gz plus a course-project notebook (STAT4710) doing PCA and k-means clustering to classify hosts into home-sharers vs. commercial/professional operators. No multi-year panel, no README detail on vintage date. 0 stars, updated Apr 2026.",
+      "why_useful": "On-theme (professionalisation classification of Airbnb hosts) but appears to be a single cross-sectional snapshot rather than a longitudinal/multi-year compiled panel, so it adds a method (host-professionalisation clustering approach) more than new data — we already hold San Diego is not in our 13-city Inside Airbnb panel, so the snapshot itself has marginal incremental value, but the clustering methodology for host professionalisation could be replicated on our own multi-year San Diego-adjacent or other-city dumps.",
+      "potential": "low",
+      "license": "none declared",
+      "last_activity": "2026-04-30",
+      "geography": "San Diego, CA",
+      "time_coverage": "single snapshot, date unconfirmed",
+      "size_hint": "one listings.csv.gz (compressed, size unconfirmed) + one notebook",
+      "gap_targets": [],
+      "duplicate_of_holding": "We hold San Diego in the 13-city Inside Airbnb panel already; this single snapshot is likely subsumed, but the host-professionalisation clustering method is not something we've applied."
+    }
+  ],
+  "notes": "This theme returned very little on GitHub via `gh search repos`. Six of seven search-term batches came back empty or dominated by unrelated spam/template repos (a cluster of near-identical 'ncreighton/*-airbnb-short-term-rental-*' repos selling VS Code snippets, browser extensions and Notion templates for Airbnb hosts — no data, excluded). No repo was found that stores a genuine multi-year, multi-city, listing-ID-tracked survival/churn panel built by an academic researcher (the kind of thing gap #1 wants); the two candidates found are both course-project style repos with committed Inside-Airbnb-derived CSVs, one (mellinkarl) plausibly a real versioned survival-labeled dataset worth a closer look, the other (husainalalawi) a single-snapshot clustering exercise. The GitHub search API rate-limited twice early on (403, resolved after a 45s wait; used 7 of the nominal 6-call budget total because 2 of those calls failed with 0 results returned before the wait). WebSearch was unavailable this session (session budget of 200 already exhausted by other scouts), so no site:github.com fallback searches could be run to fill in gaps from the empty gh queries — a follow-up scout with WebSearch budget available should retry 'airbnb listing survival dataset', 'airbnb host churn panel research', and 'STR listing lifecycle dataset github' via web search rather than gh search repos, since the raw GitHub keyword-repo-search clearly under-indexes this niche (most real work in this space likely lives as unstarred course/thesis repos with generic names, or as supplementary code linked from a paper's Zenodo/OSF page rather than GitHub itself)."
+}

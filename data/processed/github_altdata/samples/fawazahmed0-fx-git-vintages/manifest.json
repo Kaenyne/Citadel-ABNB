@@ -1,0 +1,35 @@
+{
+  "slug": "fawazahmed0-fx-git-vintages",
+  "url": "https://github.com/fawazahmed0/exchange-api",
+  "sampled": true,
+  "total_bytes": 157404,
+  "files": [
+    "usd_2024-03-03.json",
+    "usd_2024-03-06.json",
+    "usd_2025-01-02.json",
+    "usd_2025-07-01.json",
+    "usd_2026-01-02.json",
+    "usd_2026-09-12.json",
+    "currencies_latest.json",
+    "usd_vintages_long.csv"
+  ],
+  "rows": "usd_vintages_long.csv: 2,756 rows (6 snapshots x 339-701 quote currencies; 2024 snapshots carry ~700 quotes incl. crypto tokens, 2025-26 snapshots ~340). Each usd_<date>.json is one snapshot (one base, N quotes). currencies_latest.json: ~340 currency-code -> name pairs.",
+  "columns": "usd_vintages_long.csv: snapshot_date, base, quote, rate_per_usd. JSON: {date, usd: {code: rate}}.",
+  "date_range": "Snapshots sampled 2024-03-03 to 2026-09-12. Earliest dated snapshot the CDN serves is 2024-03-02 (2024-03-01 and earlier return 'release version not found'); daily through the previous day.",
+  "how_pulled": "curl -sL -o usd_<date>.json https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@<date>/v1/currencies/usd.json for dates 2024-03-03, 2024-03-06, 2025-01-02, 2025-07-01, 2026-01-02, 2026-09-12; curl -sL -o currencies_latest.json https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json; python (json+pandas) to melt the six snapshots into usd_vintages_long.csv. Metadata via curl https://api.github.com/repos/fawazahmed0/exchange-api and https://registry.npmjs.org/@fawazahmed0/currency-api (keyless GETs).",
+  "full_dataset_size": "One dated npm version per day since 2024-03-02 (~925 days as of Sep 2026), each with ~340 base-currency files of ~7.5 KB (2024 files ~15 KB with crypto tokens) -> roughly 2.5 MB per day, ~2.3 GB for every base x every day; pulling only USD (or EUR) base is ~925 files, ~7 MB. Also one minified variant per file (.min.json) and a Cloudflare Pages mirror at https://<date>.currency-api.pages.dev/v1/currencies/<base>.json.",
+  "description": "Free CC0 daily exchange-rate snapshots (fiat plus crypto/metal tokens, ~200 fiat currencies) published by fawazahmed0 as a dated npm package version per day and served via jsDelivr; grain is one JSON per base currency per calendar date, rates expressed as units of quote per 1 base. Source is the maintainer's aggregation of public rate feeds (not a central-bank fixing), and each date's file is frozen as an immutable npm version, so it functions as a point-in-time vintage: the rate as-of any date since 2024-03-02 can be fetched by URL without keys. For ABNB an analyst would use it to reconstruct spot rates at each guide date (EUR, GBP, MXN, BRL, JPY, AUD, CAD, INR vs USD) for the ex-FX / FX split of ADR and revenue in the point-in-time harness, and to check FX moves between a print and the next guide. It does not substitute for constant-currency figures Airbnb itself discloses; it only gives the market rate path.",
+  "issues": "(1) Job-card claim 'committed to git day-by-day since ~2023' is not borne out: the GitHub repo is 538 KB and holds code plus README; daily snapshots live as npm package versions (registry lists dated versions 2024-10-01 onward, jsDelivr also serves 2024-03-02 to 2024-09 dates) and on Cloudflare Pages, not in git history. Earliest retrievable snapshot found: 2024-03-02, so the vintage series covers ~2.5 years, not since 2023; the pre-2024 'currency-api@1' gh path is dead (404). (2) Point-in-time integrity rests on npm's immutable versions, which is strong, but rates are the maintainer's blend of unspecified public feeds, so values differ slightly from ECB/Fed fixings; a human should decide whether to treat these as the harness's FX reference or only as a cross-check against FRED DEX series. (3) Licence CC0-1.0, no ToS concern; jsDelivr is a public CDN with no rate limits stated, but a full 925-day x 340-base pull should be throttled.",
+  "source_urls": [
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-03-03/v1/currencies/usd.json",
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-03-06/v1/currencies/usd.json",
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2025-01-02/v1/currencies/usd.json",
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2025-07-01/v1/currencies/usd.json",
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2026-01-02/v1/currencies/usd.json",
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2026-09-12/v1/currencies/usd.json",
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json",
+    "https://api.github.com/repos/fawazahmed0/exchange-api",
+    "https://registry.npmjs.org/@fawazahmed0/currency-api"
+  ],
+  "pulled_at": "2026-09-14"
+}

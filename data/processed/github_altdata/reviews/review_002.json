@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/e1quem/PEADReplication",
+  "slug": "e1quem-peadreplication",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "one_line": "Bernard & Thomas (1989) PEAD replication + out-of-sample extension (notebooks_OOS, notebooks_sample, papers/, LaTeX write-up); MIT; last push 2026-07-20; repo 40 MB is almost entirely PDFs/figures — data/ holds only a .DS_Store (6 KB), the pipeline is WRDS/CRSP/Compustat-dependent and ships no data.",
+  "abnb_use": "Gap #17 (event-study / earnings-drift methodology) only: a template for SUE-decile drift tests around the 5 Nov print if someone ever gets WRDS. No KPI content.",
+  "sample_plan": "No pull. data/ is empty (only .DS_Store, 6148 B) and the 40 MB of repo weight is papers/ and media/ PDFs; a human who wants the method can read notebooks_OOS/ in the browser. Verified via `gh api repos/e1quem/PEADReplication/contents/data`.",
+  "tos_or_license_flag": false,
+  "reasoning": "Directory listing confirms the scout's claim: the only file under data/ is a .DS_Store, so there is nothing to sample and every input comes from WRDS. The MIT licence is clean and the repo is active (Jul 2026), but a zero-star general-market PEAD replication contributes no travel, STR or ABNB KPI content — it is at most a citable method for gap #17. Catalogued rather than discarded because the team has no event-study/drift template of its own."
+ },
+ {
+  "url": "https://github.com/gabbocg/pead",
+  "slug": "gabbocg-pead-sue-panel",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "markets_options_positioning",
+  "data_kind": "both",
+  "one_line": "R pipeline (Livnat–Mendenhall 2006) building three standardized-earnings-surprise measures per firm-quarter from IBES + Compustat + CRSP — and, unlike the scout's note, it DOES ship the built panel: data/esurprises.rds, 37,825,175 B (37.8 MB) committed; no licence file; last push 2026-05-19; 0 stars.",
+  "abnb_use": "Gap #4 (point-in-time / vintage consensus): a firm-quarter US panel of analyst-expectation vs actual EPS that should contain ABNB, BKNG, EXPE, MAR and HLT back to their IPOs — a cross-check on our press-quote consensus ledger at 23 prints and a ready-made surprise/drift comparison set for the 5 Nov event study.",
+  "sample_plan": "Do NOT pull with an agent. The single payload file is a 37.8 MB gzip-compressed .rds — above the 25 MB cap and not partially readable via a Range request (a truncated rds will not deserialize), so there is no valid small sample. If a human decides the licence question, fetch it directly: `curl -L -o esurprises.rds https://raw.githubusercontent.com/gabbocg/pead/HEAD/data/esurprises.rds` then in R `x <- readRDS('esurprises.rds'); subset(x, ticker %in% c('ABNB','BKNG','EXPE','MAR','HLT'))`.",
+  "tos_or_license_flag": true,
+  "reasoning": "The scout said 'ships no committed data'; the contents API shows a 37.8 MB data/esurprises.rds, which makes this the only repo in the batch with a real panel. It is derived from WRDS IBES/Compustat/CRSP and the repo carries no licence at all, so redistribution of that derived file is a terms question for a human, and the compressed binary cannot be head-sampled under the byte cap. Catalogued as a known location for a US firm-quarter surprise panel rather than pulled."
+ },
+ {
+  "url": "https://github.com/tripuramgeetanjali/earnings-surprise-drift",
+  "slug": "tripuramgeetanjali-earnings-surprise-drift",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "22 KB, 2-commit Python CLI + notebook for an FTSE 350 earnings-surprise / post-earnings-drift event study; MIT; last push 2025-08-14; data/ is toy only — sample_earnings.csv (249 B), sample_ftse350.csv (39 B), sample_prices.csv (26 KB) — with a keyless `--prices_source yfinance` path for real prices.",
+  "abnb_use": "Gap #17 only: a self-contained, keyless (yfinance) drift/event-study scaffold that could be re-pointed at ABNB, BKNG and EXPE print dates to frame the 5 Nov trade. No travel or KPI data.",
+  "sample_plan": "No pull needed — the three CSVs are toy placeholders (249 B / 39 B / 26 KB of UK tickers), not data. If someone still wants the code: `git clone --depth 1 https://github.com/tripuramgeetanjali/earnings-surprise-drift` (whole repo is 22 KB); running it against yfinance is keyless and touches no Airbnb property.",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified the data/ listing: the largest file is a 26 KB sample price CSV for FTSE names, so there is no dataset here, only a two-commit template. MIT and keyless, which makes it harmless, but a second UK PEAD scaffold adds nothing we cannot write ourselves. Kept as a one-line catalogue entry under methods rather than pulled."
+ },
+ {
+  "url": "https://zenodo.org/search?q=Gy%C3%B3di%20airbnb",
+  "slug": "zenodo-gyodi-eu-airbnb-hotel-prices",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Zenodo API check of the Gyódi records: the two the scout named carry NO data (record 5233198 'Airbnb and hotels during COVID-19', CC-BY-NC-4.0, one 1.18 MB PDF; record 8135170 spatial-patterns supplement, CC-BY-4.0, one 14.5 MB PDF) — but two sibling Gyódi records DO hold CSVs: 4446043 'Determinants of Airbnb prices in European cities' (Gyódi & Nawaro, CC-BY-4.0, 20 listing-level CSVs, ~10.7 MB, 10 EU cities × weekday/weekend, 2018–19, price/room type/capacity/cleanliness/distance-to-centre/metro/lat-lon + models_robust.py) and 6976622 'Hotel prices' (CC-BY-4.0, 17 CSVs, ~4.7 MB, same 10 cities, summer 2019, hotel-level median 2-person price, stars, hotel-vs-hostel segment, ratings, distance, lat-lon).",
+  "abnb_use": "Gaps #2 and #9 plus the EMEA ADR read: paired same-city, same-season Airbnb quote prices and hotel prices for Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, London, Paris, Rome, Vienna — a 2018–19 pre-COVID European price level and Airbnb-vs-hotel spread that sits earlier than any Inside Airbnb dump we hold and gives an independent basis check on the EMEA ADR decomposition and the quote-index wedge work.",
+  "sample_plan": "Keyless direct downloads, ~4.5 MB total (stay under the cap by taking 4 cities from each record, weekday+weekend): `curl -L -o zen4446043_<city>_<days>.csv https://zenodo.org/records/4446043/files/<city>_<days>.csv?download=1` for city in barcelona, paris, london, rome and days in weekdays, weekends (~5.9 MB — drop london_weekends if tight); then `curl -L -o zen6976622_<city>_<days>.csv https://zenodo.org/records/6976622/files/<city>_<days>.csv?download=1` for the same four cities (~3.6 MB). Also grab the 1.18 MB COVID PDF for its nine-city 2018–2020 tables: `curl -L -o gyodi_covid.pdf 'https://zenodo.org/records/5233198/files/Airbnb_Covid_19_Cities__final_-5.pdf?download=1'`. Skip the 14.5 MB ESDA_2023_suplement.pdf. Note Zenodo is currently rate-limiting bots — one file at a time, no parallel fetches.",
+  "tos_or_license_flag": true,
+  "reasoning": "Querying the Zenodo API directly disproved the scout's hope for the COVID record (PDF only) but surfaced two adjacent Gyódi records that do ship the underlying European price CSVs under CC-BY-4.0, which is the actually useful payload. The data is listing-level Airbnb quote prices plus matched hotel prices for ten EU cities in 2018–19, older than anything in our Inside Airbnb holdings and directly on the EMEA ADR/hotel-spread question. Licence flag is set only because the named COVID PDF is CC-BY-NC (non-commercial) while the CSV records are CC-BY — cite attribution and keep the NC PDF out of any distributed deliverable."
+ },
+ {
+  "url": "https://github.com/vgreg/earnings_news_jar",
+  "slug": "vgreg-earnings-news-jar",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "one_line": "Replication code for Grégoire & Martineau (JAR), 'How Is Earnings News Transmitted to Stock Prices?'; MIT, 11 stars, last push 2021-07-12, 44 KB total — root holds only IBES/, RavenPack/, TRTH/, Sample_Stocks/ code folders and a README; every input (RavenPack news, IBES surprises, ~12 TB Refinitiv Tick History, Nasdaq ITCH) is licensed and none is committed.",
+  "abnb_use": "Gap #17 as a citable methodology for how earnings news gets impounded intraday — relevant only if we ever wanted to characterise the 5 Nov print's price path; no KPI, travel or consensus data.",
+  "sample_plan": "No pull. There is no data/ directory (confirmed via `gh api repos/vgreg/earnings_news_jar/contents`) and the only CSV is a sample stock-identifier list; the pipeline needs RavenPack + IBES + TRTH/ITCH, all paid and none redistributable.",
+  "tos_or_license_flag": true,
+  "reasoning": "Root listing confirms code-only folders with no committed data, and the README names RavenPack, IBES, TRTH and ITCH as inputs — every one paid or licensed, so the repo can never yield free data. The MIT code is a legitimate published methodology reference for intraday earnings-news transmission, which is why it is catalogued rather than discarded. Dormant since Jul 2021."
+ }
+]

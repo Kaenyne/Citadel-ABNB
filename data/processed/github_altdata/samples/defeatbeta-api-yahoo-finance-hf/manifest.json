@@ -1,0 +1,37 @@
+{
+  "slug": "defeatbeta-api-yahoo-finance-hf",
+  "url": "https://github.com/defeat-beta/defeatbeta-api",
+  "sampled": true,
+  "total_bytes": 6378417,
+  "files": [
+    "abnb_transcripts_paragraphs.csv",
+    "peer_transcripts_sample_paragraphs.csv",
+    "revenue_breakdown_abnb_peers.csv",
+    "stock_revenue_breakdown_head10k.csv",
+    "earning_calendar_abnb_peers.csv",
+    "stock_earning_calendar_head10k.csv",
+    "exchange_rate_2023on.csv",
+    "daily_treasury_yield.csv",
+    "spec.json"
+  ],
+  "rows": "abnb_transcripts_paragraphs 1,638 paragraphs (23 ABNB calls, 4Q20-2Q26, whole ABNB history); peer_transcripts_sample_paragraphs 438 (8 BKNG calls 3Q24-2Q26); revenue_breakdown_abnb_peers 568 (BKNG only); stock_revenue_breakdown_head10k 10,000 of 171,240; earning_calendar_abnb_peers 90; stock_earning_calendar_head10k 10,000 of 69,526; exchange_rate_2023on 40,230 (42 USD pairs, full file 243,207); daily_treasury_yield 9,181 (whole file); spec.json n/a",
+  "columns": "transcripts: symbol, fiscal_year, fiscal_quarter, report_date, transcripts_id, paragraph_number, speaker, content | revenue_breakdown: symbol, breakdown, breakdown_name, value_type, currency, series_name, period_type (quarterly/trailing), report_date, value | earning_calendar: symbol, report_date, time, name, fiscal_quarter_ending | exchange_rate: symbol (e.g. EUR=X), report_date, open, close, high, low | treasury: report_date, bc_1month ... bc_30year",
+  "date_range": "transcripts ABNB 2021-02-25 to 2026-08-06 (peers back to 2006-02-16 for BKNG/EXPE, HLT 2007, MAR 2007, NCLH 2013); revenue_breakdown 2018-12-31 to 2026-09-30 (BKNG rows 2020-03-31 to 2026-06-30); earning_calendar 2023-01-03 to 2026-09-14; exchange_rate 1996-10-30 to 2026-09-14 (sample 2023-01-02 on); treasury 1990-01-02 to 2026-09-11",
+  "how_pulled": "curl -sL https://huggingface.co/api/datasets/defeatbeta/yahoo-finance-data/tree/main/data (file list, sizes); curl -sL -o <name> https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/{spec.json,data/stock_revenue_breakdown.parquet,data/exchange_rate.parquet,data/stock_earning_calendar.parquet,data/daily_treasury_yield.parquet,data/company_tickers.json}; py -3.13 -m pip install duckdb; duckdb httpfs range-scan of the 2.27 GB transcript parquet without downloading it: COPY (SELECT * FROM read_parquet('https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/stock_earning_call_transcripts.parquet') WHERE symbol='ABNB') TO 'abnb_transcripts.parquet' and the same with symbol IN ('BKNG','EXPE') ORDER BY symbol, report_date DESC LIMIT 8; then unnest(transcripts) struct list to one row per paragraph and write CSV heads (parquet is gitignored in the repo)",
+  "full_dataset_size": "Hugging Face dataset defeatbeta/yahoo-finance-data, 16 files, ~4.1 GB, refreshed daily (spec.json stamps 2026-09-14): stock_earning_call_transcripts.parquet 2.27 GB (ABNB 23 calls, BKNG 81, EXPE 83, MAR 78, HLT 53, NCLH 54), stock_news.parquet 1.17 GB, stock_prices.parquet 467 MB, stock_statement.parquet 118 MB, stock_sec_filing.parquet 91 MB, stock_shares_outstanding 6 MB, exchange_rate 3.3 MB (243,207 rows, 42 pairs), stock_profile 2.6 MB, stock_tailing_eps 3 MB, stock_officers 1.5 MB, stock_revenue_breakdown 1.3 MB (171,240 rows, 367 symbols), company_tickers.json 1.4 MB, stock_earning_calendar 0.2 MB (69,526 rows, 5,310 symbols), daily_treasury_yield 0.15 MB, dividend/split events <1 MB",
+  "description": "A daily-refreshed Hugging Face mirror (ODC-BY) of Yahoo Finance and SEC-derived company data, exposed through the Apache-2.0 defeatbeta-api DuckDB client but fetchable keylessly by plain HTTPS range reads. Grain: one row per company per call for speaker-attributed earnings-call transcripts (paragraph list inside a struct), one row per symbol x breakdown x series x period for segment/geographic revenue, one row per symbol per print for the earnings calendar, one row per currency pair per day for USD FX, plus prices, statements, SEC filings and news tables. For ABNB the immediate uses are the complete 23-call ABNB transcript history and the 2006-onward BKNG/EXPE/MAR/HLT/NCLH transcript archive in one machine-readable table (management-tone, guidance-language and peer read-through work), the print-date calendar for aligning the 5 Nov event window, and the 42-pair daily FX table for the ex-FX ADR decomposition; the revenue-breakdown table is only useful for BKNG (agency/merchant bookings and revenue by segment) because ABNB and the other peers are absent.",
+  "issues": "1) stock_revenue_breakdown covers only 367 symbols; ABNB, EXPE, MAR, HLT and NCLH have NO rows, so the job card's 'segment/geographic revenue table for the regional-split model' does not apply to Airbnb (BKNG has operating-expense, revenue-by-segment and agency/merchant travel-bookings 1Q20-2Q26). 2) Licence: dataset card says ODC-BY, but the underlying content is Yahoo Finance scrape output (transcripts appear to be third-party call transcripts redistributed); a human should decide whether transcript text may be quoted or redistributed in the pitch package - the repo carries a tos_or_license_flag. 3) Transcripts are not point-in-time snapshots and carry no vendor timestamp; they are fine as text, not as consensus vintages. 4) duckdb was missing from both the repo venv and py -3.13 and was pip-installed into py -3.13 for the range scan. 5) The 40-row LIMIT in the sample plan was replaced by 'all ABNB rows' (23 calls, 0.7 MB parquet) plus 8 BKNG calls; EXPE rows were excluded by the LIMIT ordering (symbol asc, date desc). 6) company_tickers.json (SEC ticker map, 1.4 MB) was fetched but not kept, to stay near the 5 MB preference.",
+  "source_urls": [
+    "https://github.com/defeat-beta/defeatbeta-api",
+    "https://huggingface.co/api/datasets/defeatbeta/yahoo-finance-data",
+    "https://huggingface.co/api/datasets/defeatbeta/yahoo-finance-data/tree/main/data",
+    "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/spec.json",
+    "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/stock_revenue_breakdown.parquet",
+    "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/exchange_rate.parquet",
+    "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/stock_earning_calendar.parquet",
+    "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/daily_treasury_yield.parquet",
+    "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/company_tickers.json",
+    "https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/stock_earning_call_transcripts.parquet"
+  ],
+  "pulled_at": "2026-09-14"
+}

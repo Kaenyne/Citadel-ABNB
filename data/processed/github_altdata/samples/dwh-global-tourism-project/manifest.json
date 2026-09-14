@@ -1,0 +1,38 @@
+{
+ "slug": "dwh-global-tourism-project",
+ "url": "https://github.com/Daniele1388/DWH---Global-Tourism-Project",
+ "sampled": true,
+ "total_bytes": 1764085,
+ "files": [
+  "Domestic_Tourism-Accommodation.csv",
+  "Inbound_Tourism-Accommodation.csv",
+  "Inbound_Tourism-Arrivals.csv",
+  "Inbound_Tourism-Expenditure.csv",
+  "Inbound_Tourism-Purpose.csv",
+  "Inbound_Tourism-Regions.csv",
+  "Outbound_Tourism-Departures.csv",
+  "Outbound_Tourism-Expenditure.csv",
+  "Tourism_Industries.csv",
+  "README_upstream.md"
+ ],
+ "rows": "Domestic_Tourism-Accommodation 1788 (336 with data); Inbound_Tourism-Accommodation 1788 (490); Inbound_Tourism-Arrivals 1346 (617); Inbound_Tourism-Expenditure 898 (573); Inbound_Tourism-Purpose 1123 (562); Inbound_Tourism-Regions 2461 (1563); Outbound_Tourism-Departures 1119 (229); Outbound_Tourism-Expenditure 898 (585); Tourism_Industries 1789 (1032). Rows are wide UNWTO Compendium layout: country header rows, section rows, and indicator rows; '..' = missing.",
+ "columns": "C. (country code); S. (series code); C. & S.; Basic data and indicators (country name); 4 unnamed indicator-hierarchy cols; Units; Notes; Series (VF/TF/TCE flags, some files); 1995..2022 year columns; trailing empty col. Semicolon-delimited, UTF-8 BOM, thousands separators as commas.",
+ "date_range": "Annual 1995 to 2022 (year columns); no finer grain",
+ "how_pulled": "gh api repos/Daniele1388/DWH---Global-Tourism-Project/contents/Datasets (tree listing); curl -sL -o <name>.csv https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/<name>.csv for 9 of 14 CSVs plus README.md; python pandas read_csv(sep=';', encoding='utf-8-sig') to count rows/columns/years",
+ "full_dataset_size": "14 CSVs, ~4.3 MB total (largest SDG_12b1.csv 1.7 MB); repo 2.3 MB packed. Not pulled: Domestic Tourism-Trips (131 KB), Inbound Tourism-Transport (177 KB), SDG 8.9.1 (252 KB), SDG 8.9.2 (213 KB), SDG_12b1 (1.7 MB). Underlying source is the UN Tourism (UNWTO) Compendium of Tourism Statistics / Key Tourism Statistics dataset (unwto.org/tourism-statistics/key-tourism-statistics), free Excel download, updated annually.",
+ "description": "UN Tourism (UNWTO) Compendium of Tourism Statistics exported as wide semicolon CSVs: one row per country x indicator, one column per year 1995-2022, covering ~226-230 countries and territories. Tables sampled: inbound arrivals (total, overnight, same-day, cruise), arrivals by origin region, inbound purpose (business vs personal), inbound and outbound expenditure (travel and passenger transport, USD mn), outbound departures, domestic and inbound guests/overnights in hotels and similar establishments, and tourism-industry supply (establishments, rooms, bed-places, occupancy rates, average length of stay). For ABNB it is a long annual cross-country panel for gap #7 (LatAm/APAC travel volume) and for cross-border share and hotel-supply context per country; it is annual and ends in 2022, so it is background/structural, not a nowcast input.",
+ "issues": "Annual only and stops at 2022 (the current UNWTO release runs to 2023/2024, so this mirror is stale versus the free source). Layout is a spreadsheet export, not tidy: country code column has Excel-mangled date strings (e.g. 'Apr-00' for code 4), indicator hierarchy spread across 4 unnamed columns, values are strings with comma thousands separators and '..' for missing; needs a reshape before use. Repo licence is MIT but the data are UN Tourism's; UNWTO terms permit non-commercial/educational use with attribution -- fine for a student pitch, check before any redistribution. Repo last pushed 2026-04-22.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Domestic%20Tourism-Accommodation.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Inbound%20Tourism-Accommodation.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Inbound%20Tourism-Arrivals.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Inbound%20Tourism-Expenditure.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Inbound%20Tourism-Purpose.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Inbound%20Tourism-Regions.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Outbound%20Tourism-Departures.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Outbound%20Tourism-Expenditure.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/Datasets/Tourism%20Industries.csv",
+  "https://raw.githubusercontent.com/Daniele1388/DWH---Global-Tourism-Project/main/README.md"
+ ],
+ "pulled_at": "2026-09-14"
+}

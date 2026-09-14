@@ -1,0 +1,42 @@
+{
+ "slug": "secfsdstools-sec-financial-statement-datasets",
+ "url": "https://github.com/HansjoergW/sec-fincancial-statement-data-set",
+ "sampled": true,
+ "total_bytes": 8654963,
+ "files": [
+  "2010q1_num_head10k.csv",
+  "2010q1_pre_head10k.csv",
+  "2010q1_sub.csv",
+  "2010q1_tag.csv",
+  "2021q1_num_abnb_and_travel_peers.csv",
+  "2021q1_pre_abnb_and_travel_peers.csv",
+  "2021q1_sub.csv",
+  "repo_src/LICENSE",
+  "repo_src/__init__.py",
+  "repo_src/base_prepivot_rules.py",
+  "repo_src/base_rule_framework.py",
+  "repo_src/base_rules.py",
+  "repo_src/base_validation_rules.py",
+  "repo_src/bs_standardize.py",
+  "repo_src/cf_standardize.py",
+  "repo_src/is_standardize.py",
+  "repo_src/secdownloading_process.py",
+  "repo_src/secfsdstools_README.md",
+  "repo_src/standardizing.py",
+  "sec_fsds_readme.htm"
+ ],
+ "rows": "2010q1_sub.csv 495; 2010q1_tag.csv 9,699; 2010q1_num_head10k.csv 10,000 (of ~300k); 2010q1_pre_head10k.csv 10,000 (of ~130k); 2021q1_sub.csv 6,316; 2021q1_num_abnb_and_travel_peers.csv 3,699; 2021q1_pre_abnb_and_travel_peers.csv 872; readme.htm and 11 repo source files n/a",
+ "columns": "sub: adsh, cik, name, sic, countryba, stprba, cityba, fye, form, period, fy, fp, filed, accepted, prevrpt, detail, instance (36 cols). num: adsh, tag, version, ddate, qtrs, uom, segments, coreg, value, footnote. pre: adsh, report, line, stmt, inpth, rfile, tag, version, plabel, negating. tag: tag, version, custom, abstract, datatype, iord, crdr, tlabel, doc",
+ "date_range": "2010q1: filed 2010-01-05..2010-03-31, period 2009-06-30..2010-02-28, num.ddate 2005-12-31..2010-02-28. 2021q1: filed 2021-01-04..2021-03-31, period 2012-10-31..2021-02-28, peer num.ddate 2009-03-31..2020-12-31. Full upstream series: 2009q1 to current quarter.",
+ "how_pulled": "curl -sS -L -A \"citadel-abnb research ksurapaneni@ufl.edu\" -o 2010q1.zip https://www.sec.gov/files/dera/data/financial-statement-data-sets/2010q1.zip (5.3 MB); same for 2021q1.zip (97.9 MB, kept in scratch only); git clone --depth 1 --filter=blob:none --sparse https://github.com/HansjoergW/sec-fincancial-statement-data-set && git sparse-checkout set src (1.3 MB, commit af83c24 2025-09-20); python/pandas read the tab-separated sub/tag/num/pre .txt inside the zips and wrote CSVs: 2010q1 sub+tag in full, num/pre first 10k rows; 2021q1 sub in full, num/pre filtered to CIKs of BKNG, EXPE, MAR, HLT, NCLH, CCL, RCL (and ABNB 1559720, which returned no rows).",
+ "full_dataset_size": "~70 quarterly zips 2009q1-2026q3, 5 MB (2010) to ~100 MB (recent) each, roughly 2-3 GB zipped / ~20 GB as text; ~7 GB as secfsdstools parquet; sub ~ 500k+ filings total, num ~ hundreds of millions of rows.",
+ "geography": "United States (all SEC registrants, incl. foreign private issuers filing 20-F/40-F); ABNB is a US filer",
+ "description": "The SEC DERA Financial Statement Data Sets: every numeric XBRL fact from every 10-K/10-Q/20-F/S-1 etc. filed with EDGAR since 2009, as-filed (not restated), one zip per calendar quarter of filing, four tab files (sub = one row per filing, num = one row per tag x date x period x unit, pre = statement presentation order, tag = taxonomy labels). secfsdstools is an Apache-2.0 Python library that downloads all quarters into local parquet, indexes by CIK, and standardises income statement, balance sheet and cash flow lines across companies and taxonomy versions. For ABNB an analyst would pull the as-filed quarterly line items for ABNB and peers (BKNG, EXPE, MAR, HLT) since 2009 in one command for the margin model, build a point-in-time (filing-dated) financial panel, and lift cruise-line customer deposits / deferred revenue (CCL, RCL, NCLH) as the book-ahead kernel analogue.",
+ "issues": "(1) Airbnb (CIK 1559720) has NO rows in the 2021q1 dataset even though its first 10-K was filed 2021-02-26 - the SEC data sets are known to omit some filings (renderer failures) and the 10-K may sit in 2021q2 depending on acceptance date; a human should check which quarter carries ABNB's first filing and whether every ABNB 10-Q/10-K is present before relying on it. (2) sec.gov requires a descriptive User-Agent with contact email and rate-limits at 10 req/s; no key needed. (3) SEC data are US public domain; library is Apache-2.0. (4) Repo is code-only; the 97.9 MB 2021q1 zip was downloaded to scratch and not copied. (5) Full pull is 2-3 GB of zips - fine locally, never commit. (6) 2010q1 num/pre trimmed to 10k-row heads to keep the folder under ~8 MB.",
+ "source_urls": [
+  "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2010q1.zip",
+  "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2021q1.zip",
+  "https://github.com/HansjoergW/sec-fincancial-statement-data-set"
+ ],
+ "pulled_at": "2026-09-14"
+}

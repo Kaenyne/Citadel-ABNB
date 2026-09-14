@@ -1,0 +1,25 @@
+Google Trends Manual Download Plan
+
+Recommended settings to start with for consistency across firms:
+Location: United States
+Time range: Past 5 years
+Search type: Web Search
+Category: All categories
+
+If a term shows 'not enough data' in US, try:
+1) Switch Location to Worldwide
+2) Try the fallback terms for the same ticker
+3) If still sparse, reduce the window to Past 12 months
+
+What to download for each ticker:
+Download the CSV from the download icon on the Interest over time chart.
+Name the file like this so merging is easy later:
+gtrends_<TICKER>_<GEO>_<WINDOW>.csv
+Examples:
+gtrends_AAPL_US_5y.csv
+gtrends_AMZN_WW_5y.csv
+
+Columns expected in the CSV:
+Week (or Day) and a single search interest column for your chosen term.
+
+Ticker list and terms are saved in output/final/gtrends_download_plan.csv

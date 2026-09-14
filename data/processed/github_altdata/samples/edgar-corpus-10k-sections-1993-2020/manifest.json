@@ -1,0 +1,23 @@
+{
+  "slug": "edgar-corpus-10k-sections-1993-2020",
+  "url": "https://huggingface.co/datasets/eloukas/edgar-corpus",
+  "sampled": true,
+  "total_bytes": 3451753,
+  "files": [
+    "edgar_corpus_1993_test_head_clean.jsonl",
+    "edgar_corpus_2020_test_head_clean.jsonl",
+    "records_index.csv"
+  ],
+  "rows": "edgar_corpus_1993_test_head_clean.jsonl: 9 filings; edgar_corpus_2020_test_head_clean.jsonl: 7 filings; records_index.csv: 16 rows (one per filing)",
+  "columns": "filename, cik, year, section_1, section_1A, section_1B, section_2, section_3, section_4, section_5, section_6, section_7, section_7A, section_8, section_9, section_9A, section_9B, section_10, section_11, section_12, section_13, section_14, section_15 (23 keys; sections are full text strings, empty string when the item does not exist in that filing). records_index.csv: filename, cik, year, section_*_chars",
+  "date_range": "year 1993 (9 filings) and year 2020 (7 filings); the year field is the fiscal/filing year of the 10-K; no finer date column",
+  "how_pulled": "curl -sL -r 0-2000000 -o edgar_corpus_2020_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/2020/test.jsonl ; curl -sL -r 0-2000000 -o edgar_corpus_1993_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/1993/test.jsonl ; python: json.loads each line, drop the final truncated line, rewrite as *_clean.jsonl; records_index.csv = per-filing character counts per section",
+  "full_dataset_size": "~220k 10-K filings, 1993-2020, one folder per year with train/validation/test JSONL splits; 40.7 GB total on HuggingFace (per-year files 114 MB to 1.06 GB); Zenodo mirror record 5528490 holds per-year zips 39-525 MB",
+  "description": "EDGAR-CORPUS (Loukas et al., 2021) is every annual 10-K filed with the SEC from 1993 to 2020, parsed into 23 named Item sections (Business, Risk Factors, MD&A, Quantitative Market Risk, Controls, etc.) with one JSON record per filing keyed by CIK and year. The sample head of the 1993 split already contains Mirage Resorts, illustrating that lodging and travel filers are present from the start. For ABNB the value is a ready-made, pre-sectioned MD&A and risk-factor text panel for BKNG, EXPE, MAR, HLT and every other lodging/travel registrant back to 1993, usable for peer management-tone, risk-language and business-description studies without re-scraping EDGAR; Airbnb itself is outside coverage (first 10-K is FY2020, filed 2021), so it is a peer/industry-language resource. An analyst would filter by CIK for the peer set and extract section_7 (MD&A) and section_1A (Risk Factors) by year.",
+  "issues": "Sample is a Range-request head (first ~2 MB per split) so it is 7-9 filings per year, not a representative draw; filings appear in no obvious order. 2020 section_1A (Risk Factors) is populated while 1993 lacks 1A/7A/9A because those Items did not exist then (post-2005 items are empty strings in old years), so cross-era comparisons must handle missing sections. Some 2020 records have near-empty section_1 or section_7 (parser misses, e.g. 1108348_2020 with 26/103 chars), so parser quality varies. Coverage ends at fiscal 2020; anything post-2020 must be pulled from EDGAR directly. Licence: HuggingFace card says Apache-2.0, Zenodo mirror says CC-BY-4.0; underlying EDGAR text is public domain. No ToS concern. Full pull of one year is 114 MB to 1 GB, over the sample cap.",
+  "source_urls": [
+    "https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/2020/test.jsonl",
+    "https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/1993/test.jsonl"
+  ],
+  "pulled_at": "2026-09-14"
+}

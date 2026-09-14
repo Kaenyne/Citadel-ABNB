@@ -1,0 +1,10 @@
+{
+ "slug": "bookingcom-multi-destination-trip-wsdm2021",
+ "url": "https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset",
+ "category": "competitor_ota",
+ "data_kind": "pointer_to_external_host",
+ "one_line": "Booking.com official WSDM WebTour-2021 challenge microdata on HuggingFace (not GitHub): train_set.csv + test_set.csv + ground_truth.csv, 1.55M anonymised reservations, 9 cols (user_id, checkin, checkout, city_id, device_class, affiliate_id, booker_country, hotel_country, utrip_id), ~128 MB CSV (152 MB repo), 2016 vintage, public/ungated, CC-BY-NC-ND-4.0, last updated 6 Dec 2024.",
+ "abnb_use": "Booked (not quoted) reservation records with checkin/checkout give competitor length-of-stay distributions and booker_country x hotel_country cross-border flow tables - a read on gap #20 (LOS / cross-border share proxies) and gap #9 (competitor volumes), and a historical base rate for LOS mix that our Airbnb-side ADR/nights decomposition has no independent check on. 2016 vintage means it is structural background, not a nowcast input.",
+ "sample_plan": "Ranged HTTP heads from the HF resolve endpoint, no login needed, ~9 MB total: (1) curl -sL -r 0-4999999 'https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/train_set.csv' -o bkng_trip_train_head.csv ; (2) curl -sL -r 0-1999999 'https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/test_set.csv' -o bkng_trip_test_head.csv ; (3) curl -sL -r 0-1999999 'https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/ground_truth.csv' -o bkng_trip_gt_head.csv ; (4) curl -sL 'https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/README.md' -o bkng_trip_README.md. Drop the last partial line of each head. Do NOT pull the full 128 MB.",
+ "tos_or_license_flag": true
+}

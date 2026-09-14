@@ -1,0 +1,17 @@
+GWR Bandwidth Sensitivity + Variable-Scale Analysis
+=======================================================
+Global AICc-optimal BW: 101 cells
+
+AICc at different global bandwidths:
+  bw=30: AICc=263.18  R2=0.7109
+  bw=60: AICc=217.29  R2=0.6174
+  bw=101: AICc=211.29  R2=0.5541 <- AICc optimum
+
+Univariate per-variable optimal bandwidths:
+  unlicensed_rate          :   20 cells  [vs GWR=101]
+  entire_home_rate         :   20 cells  [vs GWR=101]
+  mean_availability        :   20 cells  [vs GWR=101]
+  mean_accommodates        :   40 cells  [vs GWR=101]
+
+Key: unlicensed_rate optimal BW = 20 cells
+     GWR single BW = 101 cells
