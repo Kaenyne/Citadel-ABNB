@@ -1,0 +1,99 @@
+{
+ "backup_bytes": 43035,
+ "register_bytes": 870641,
+ "prefix_byte_identical": true,
+ "data_rows": 1320,
+ "duplicate_register_ids": 0,
+ "dolthub_rows": 1159,
+ "dolthub_vendor_strings": [
+  "DoltHub post-no-preference/earnings"
+ ],
+ "any_dolthub_vendor_contains_zacks": false,
+ "pre_guide_street_2026Q3": {
+  "vendor": "LSEG",
+  "period": "2026Q3",
+  "value": 4610.0,
+  "as_of_timestamp": "2026-08-06",
+  "source_path": "data/processed/overnight/16_consensus_at_print_merged.csv"
+ },
+ "pit_zacks_2026Q3_asof_0806": null,
+ "pit_dolthub_2026Q3_asof_0806": {
+  "vendor": "DoltHub post-no-preference/earnings",
+  "period": "2026Q3",
+  "metric": "revenue",
+  "value": 4540.0,
+  "unit": "musd",
+  "n_estimates": 10.0,
+  "as_of_timestamp": "2026-08-02",
+  "url": "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20*%20from%20sales_estimate%20where%20act_symbol%20%3D%20%27ABNB%27%20order%20by%20date%2C%20period%20limit%201000%20offset%201000",
+  "role": "pit_history",
+  "source_path": "data/processed/github_altdata/samples/dolthub-post-no-preference-earnings-consensus-vintages/sales_estimate_ABNB_BKNG_EXPE.csv"
+ },
+ "pit_zacks_2026Q3_asof_0911": {
+  "vendor": "Zacks",
+  "period": "2026Q3",
+  "metric": "revenue",
+  "value": 4740.0,
+  "unit": "musd",
+  "n_estimates": 7.0,
+  "as_of_timestamp": "2026-09-04",
+  "url": "https://www.zacks.com/stock/quote/ABNB/detailed-earnings-estimates",
+  "role": "current",
+  "source_path": "data/processed/overnight/04_current_consensus.csv"
+ },
+ "pit_vendor_none_2026Q3_asof_0806": {
+  "vendor": "DoltHub post-no-preference/earnings",
+  "period": "2026Q3",
+  "metric": "revenue",
+  "value": 4540.0,
+  "unit": "musd",
+  "n_estimates": 10.0,
+  "as_of_timestamp": "2026-08-02",
+  "url": "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20*%20from%20sales_estimate%20where%20act_symbol%20%3D%20%27ABNB%27%20order%20by%20date%2C%20period%20limit%201000%20offset%201000",
+  "role": "pit_history",
+  "source_path": "data/processed/github_altdata/samples/dolthub-post-no-preference-earnings-consensus-vintages/sales_estimate_ABNB_BKNG_EXPE.csv"
+ },
+ "pit_vendor_none_2026Q3_asof_0807": {
+  "vendor": "LSEG",
+  "period": "2026Q3",
+  "metric": "revenue",
+  "value": 4610.0,
+  "unit": "musd",
+  "n_estimates": null,
+  "as_of_timestamp": "2026-08-06",
+  "url": NaN,
+  "role": "pre_guide",
+  "source_path": "data/processed/overnight/16_consensus_at_print_merged.csv"
+ },
+ "vendor_none_behaviour_change": {
+  "guide_date": {
+   "n": 23,
+   "changed": 23,
+   "old_none_new_value": 23,
+   "both_values_changed": 0,
+   "largest_abs_rel_change_pct": null,
+   "largest_rel_change_row": null
+  },
+  "print_date": {
+   "n": 23,
+   "changed": 23,
+   "old_none_new_value": 6,
+   "both_values_changed": 15,
+   "largest_abs_rel_change_pct": 16.93548387096774,
+   "largest_rel_change_row": {
+    "kind": "print_date",
+    "date": "2022-05-03",
+    "period": "2022Q1",
+    "old_vendor": "CNBC unattributed",
+    "old_value": 1240.0,
+    "old_as_of": "2022-02-15",
+    "new_vendor": "DoltHub post-no-preference/earnings",
+    "new_value": 1450.0,
+    "new_as_of": "2022-05-01",
+    "changed": true,
+    "rel_change_pct": 16.93548387096774
+   }
+  }
+ },
+ "all_hard_rules_hold": true
+}

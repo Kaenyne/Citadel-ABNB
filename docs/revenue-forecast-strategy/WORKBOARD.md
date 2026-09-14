@@ -36,6 +36,8 @@ Status values: `open` · `claimed` · `in-progress` · `blocked (reason)` · `do
 | WP-N | Fee-panel runs 14/16/18 Sep — measure panel overlap on 16 Sep; θ DiD after 18 Sep | Jessie | scheduled (launchd) | — | — | — | 2026-09-11 | `05_backtests/N_THETA_DID.md` |
 | WP-O | ToS decisions: fee-inclusive quote route; Experiences/Services counts scrape; AirDNA purchase | all | **human** | team | — | — | 2026-09-11 | decision logged here |
 | WP-P | Card freeze ABNB-INT-v1 (26 Sep) and 5 Nov score sheet | Writer | blocked (WP-H, WP-F, WP-A) | — | — | — | 2026-09-11 | `PREREG_ABNB-INT-v1.md` signed |
+| G1b | DoltHub consensus history -> vintage register (stand-in for WP-G1): 1,159 ABNB revenue rows appended (register 161 -> 1,320), vendor `DoltHub post-no-preference/earnings`, T0 provenance PASS (3 AS OF spot checks), T1 vendor equivalence PASS (pre-guide median abs diff 0.48 %, sign 18/18; at-print median 0.0 %); registry baseline `l0-dolthub-v2__street_dolthub` scored; NCLH sales_estimate pulled for WP-E1 only to 2025-02-02 (API 403 on page 4, re-pull offsets 1500+) | Krish | done (NCLH partial) | Krish (Claude) | krish/github-altdata-catalog | 2026-09-14 | 2026-09-14 | `05_backtests/G1b_dolthub_consensus_history.md`, `L0_dolthub_v2/` |
+| WP-O (G1b) | Human decision: quoting historical DoltHub values externally as Zacks. The DoltHub repo carries no licence and its numbers mirror the Zacks free page (13 Sep 2026 snapshot equals the 11 Sep Zacks capture to the dollar and count); internal use has the same standing as the Zacks page captures WP-M appends, external quotation of a historical value as "Zacks via DoltHub" needs a person to decide | all | **human** | team | — | 2026-09-14 | 2026-09-14 | decision logged here |
 
 ## Done (11 Sep 2026)
 

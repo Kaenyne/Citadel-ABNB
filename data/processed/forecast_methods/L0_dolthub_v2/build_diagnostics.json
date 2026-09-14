@@ -1,0 +1,111 @@
+{
+ "built_at": "2026-09-14T13:51:30",
+ "source": "data/processed/github_altdata/samples/dolthub-post-no-preference-earnings-consensus-vintages/sales_estimate_ABNB_BKNG_EXPE.csv",
+ "vendor": "DoltHub post-no-preference/earnings",
+ "abnb_rows_in_sample": 1160,
+ "rows_dropped_no_consensus": [
+  {
+   "date": "2023-08-06",
+   "period": "Current Quarter",
+   "period_end_date": "2023-09-30"
+  }
+ ],
+ "snapshots": 290,
+ "first_snapshot": "2021-02-07",
+ "last_snapshot": "2026-09-13",
+ "only_latest": false,
+ "non_sunday_snapshots": [
+  "2023-02-28",
+  "2025-10-13"
+ ],
+ "register_rows_built": 1159,
+ "periods": [
+  "2020Q4",
+  "2021Q1",
+  "2021Q2",
+  "2021Q3",
+  "2021Q4",
+  "2022Q1",
+  "2022Q2",
+  "2022Q3",
+  "2022Q4",
+  "2023Q1",
+  "2023Q2",
+  "2023Q3",
+  "2023Q4",
+  "2024Q1",
+  "2024Q2",
+  "2024Q3",
+  "2024Q4",
+  "2025Q1",
+  "2025Q2",
+  "2025Q3",
+  "2025Q4",
+  "2026Q1",
+  "2026Q2",
+  "2026Q3",
+  "2026Q4",
+  "FY2020",
+  "FY2021",
+  "FY2022",
+  "FY2023",
+  "FY2024",
+  "FY2025",
+  "FY2026",
+  "FY2027"
+ ],
+ "t0_provenance": {
+  "t0_provenance.json": {
+   "verdict": "FAIL",
+   "n_requests": 8,
+   "checks": [
+    {
+     "snapshot": "2022-08-07",
+     "commit": "94kead12h59c6cef9i41kumjt94dkbp3",
+     "match": false,
+     "n_rows_as_of": 0
+    },
+    {
+     "snapshot": "2024-02-11",
+     "commit": "p40c5m0fcke76i9r48aljbc1tb6r8l7h",
+     "match": false,
+     "n_rows_as_of": 0
+    },
+    {
+     "snapshot": "2025-08-03",
+     "commit": "vekif410brrdr2veuqrl2u4dauh5b550",
+     "match": false,
+     "n_rows_as_of": 0
+    }
+   ]
+  },
+  "t0_provenance_attempt2.json": {
+   "verdict": "PASS",
+   "n_requests": 4,
+   "checks": [
+    {
+     "snapshot": "2022-08-07",
+     "commit": "j2s47ospjd1vbouii690hkifso0up7h3",
+     "match": true,
+     "n_rows_as_of": 4
+    },
+    {
+     "snapshot": "2024-02-11",
+     "commit": "id6rhl4mfi8lmp791pp2uidgigcd5lb7",
+     "match": true,
+     "n_rows_as_of": 4
+    },
+    {
+     "snapshot": "2025-08-03",
+     "commit": "54csabpuanoeoq9ng4k35dub2g8k8f0q",
+     "match": true,
+     "n_rows_as_of": 4
+    }
+   ]
+  }
+ },
+ "provenance_status": "verified",
+ "register_data_rows_before": 161,
+ "register_data_rows_after": 1320,
+ "rows_appended": 1159
+}

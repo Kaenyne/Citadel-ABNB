@@ -1,0 +1,39 @@
+{
+ "pages": [
+  {
+   "offset": 0,
+   "http": "200",
+   "at": "2026-09-14T13:54:35",
+   "status": "Success",
+   "message": "",
+   "n_rows": 500
+  },
+  {
+   "offset": 500,
+   "http": "200",
+   "at": "2026-09-14T13:56:17",
+   "status": "Success",
+   "message": "",
+   "n_rows": 500
+  },
+  {
+   "offset": 1000,
+   "http": "200",
+   "at": "2026-09-14T13:58:01",
+   "status": "Success",
+   "message": "",
+   "n_rows": 500
+  },
+  {
+   "offset": 1500,
+   "http": "200",
+   "at": "2026-09-14T13:59:39",
+   "status": "Error",
+   "message": "query error: http status: 403",
+   "n_rows": 0,
+   "stop": "query failed"
+  }
+ ],
+ "rows_written": 1500,
+ "finished": "2026-09-14T13:59:39"
+}
