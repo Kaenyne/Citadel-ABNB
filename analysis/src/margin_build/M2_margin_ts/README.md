@@ -4,8 +4,14 @@
 cd "C:\Users\krish\citadel-abnb-margins"
 py -3.13 analysis/src/margin_build/M2_margin_ts/run.py              # rebuild everything, rescore, figures; exit 0
 py -3.13 analysis/src/margin_build/M2_margin_ts/run.py --no-sarima  # same without object 5 (faster)
+py -3.13 analysis/src/margin_build/M2_margin_ts/run.py --no-score   # rebuild without re-running the scorer
+py -3.13 analysis/src/margin_build/M2_margin_ts/discussion_checks.py  # WS22: paired tests, R07, R10, ledger
 py -3.13 analysis/src/margin_build/10_harness_margin/score.py       # rescore only
 ```
+
+WS22 discussion round (see the "Discussion response" section of the note): the three oracle specs carry the
+`oracle_` prefix and an `ORACLE DIAGNOSTIC` stamp in `notes`; the LIVE Street comparison columns carry their
+own `street_pull_date`; `_pre_discussion/` under the data folder holds the pre-discussion copies.
 
 Interpreter: `py -3.13` (pandas 2.3, numpy, statsmodels for SARIMAX, matplotlib for the two figures).
 

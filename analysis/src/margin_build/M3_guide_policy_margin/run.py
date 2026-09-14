@@ -47,8 +47,17 @@ HALF_LIFE_Q = 4.0
 RESID_MAX_N, MIN_RESID = 12, 3
 FALLBACK_PP, FALLBACK_REL = 3.0, 0.10
 BUCKET = {2: "FEB", 5: "MAY", 8: "AUG", 11: "NOV"}
+# Pre-registered cushion specs (the note's pre-registration paragraph): rw_hl4 (main), equal, last,
+# nocushion, rw_hl4_prorata.  Everything else was added after the first backtest run and is POST-HOC:
+# rw_hl4_pin / nocushion_pin / last_pin (WS21 R05) and nov_sentence_pin (WS22, the R12 reconciliation).
+# `oracle_` prefix = the actual revenue is fed in; a diagnostic, never a forecast (WS21 R03).
+PRE_REGISTERED_SPECS = ["rw_hl4", "equal", "last", "nocushion", "rw_hl4_prorata"]
+POST_HOC_SPECS = {"rw_hl4_pin": "post-hoc: specified after the first backtest run (WS21 R05)",
+                  "nocushion_pin": "post-hoc: specified after the first backtest run (WS21 R05)",
+                  "last_pin": "post-hoc: specified after the first backtest run (WS21 R05)",
+                  "nov_sentence_pin": "post-hoc: added in the WS22 discussion round as the R12 fix"}
 SPECS = ["rw_hl4", "equal", "last", "nocushion", "rw_hl4_prorata", "rw_hl4_pin",
-         "rw_hl4_revknown", "nocushion_pin", "last_pin"]
+         "oracle_rw_hl4_revknown", "nocushion_pin", "last_pin", "nov_sentence_pin"]
 MAIN_SPEC = "rw_hl4"
 VINTAGES = list(GUIDE_DATES_ALL) + [TODAY]
 
@@ -143,6 +152,10 @@ def cushion(vd, bucket: str, spec: str, prior_basis: str):
     """(cushion pp, n, label). PIT: only cushions whose FY printed on or before the vintage."""
     if spec.startswith("nocushion"):
         return 0.0, 0, "zero"
+    if spec.startswith("nov_sentence"):
+        # the November-sentence spec carries no estimated cushion: its only adjustment to the guide in
+        # force is object 2's floor+50bp rule, applied inside fy_forecast (WS22 R12 fix).
+        return 0.0, 0, "zero (nov_sentence rule)"
     h = CUSH[(CUSH["bucket"] == bucket) & CUSH["cushion_pp"].notna()].copy()
     if prior_basis == "PIT":
         h = h[h["knowable_from"].map(lambda x: x is not None and x <= _d(vd))]
@@ -278,6 +291,16 @@ def fy_forecast(vd, fy, spec, prior_basis, scenario="base"):
         return None
     b = BUCKET.get(_d(g["guide_date"]).month)
     c, n_c, lab = cushion(vd, b, spec, prior_basis)
+    if spec.startswith("nov_sentence"):
+        # WS22 R12 fix. The quotable FY target is the sentence management is predicted to give, not the
+        # floor plus a backward-looking cushion: object 2's November rule ("numeric floor in force ->
+        # approximately floor + 50 bp", exact 2/2) when the guide in force is numeric, else the guide
+        # taken literally. 0 estimated parameters; the +50 bp is a fixed rule, not a fitted cushion.
+        if guide_is_numeric(g) and g["form"] == "level":
+            lvl = round50(float(g["level_pct"]) + 0.5)
+            c, lab = lvl - float(g["level_pct"]), "nov_sentence rule floor+50bp"
+        else:
+            c, lab = 0.0, "nov_sentence rule (no numeric floor -> literal guide)"
     return {"fy": fy, "guide_level_pct": g["level_pct"], "guide_type": g["guide_type"],
             "guide_date": _d(g["guide_date"]), "bucket": b, "cushion_pp": c, "cushion_n": n_c,
             "cushion_label": lab, "fy_margin_pct": g["level_pct"] + c, "numeric": guide_is_numeric(g),
@@ -429,7 +452,24 @@ def attach_quantiles(g: pd.DataFrame) -> pd.DataFrame:
 
 
 N_PARAMS = {"rw_hl4": 1, "equal": 1, "last": 0, "nocushion": 0, "rw_hl4_prorata": 4,
-            "rw_hl4_pin": 1, "rw_hl4_revknown": 1, "nocushion_pin": 0, "last_pin": 0}
+            "rw_hl4_pin": 1, "oracle_rw_hl4_revknown": 1, "nocushion_pin": 0, "last_pin": 0,
+            "nov_sentence_pin": 0}
+
+ORACLE_STAMP = ("ORACLE DIAGNOSTIC (actual revenue fed in at the vintage; NOT a point-in-time forecast; "
+                "exclude from survivor and ranking tables -- WS21 R03). ")
+# WS21 R12: the registered rw_hl4_pin LIVE path puts 4Q26 above every historical Q4 because the AUG-bucket
+# cushion (+1.53pp) that M3's own FY backtest rejects (P2) is pushed into the residual quarter.
+R12_STAMP = ("NOT QUOTABLE AS A LIVE FORECAST (WS21 R12): the AUG-bucket cushion in this spec is the one "
+             "M3's own FY backtest rejects; use spec nov_sentence_pin for the LIVE path. ")
+
+
+def _spec_stamp(spec_id: str, window: str) -> str:
+    s = ORACLE_STAMP if str(spec_id).startswith("oracle_") else ""
+    if str(spec_id) in POST_HOC_SPECS:
+        s += POST_HOC_SPECS[str(spec_id)] + ". "
+    if window == "LIVE" and str(spec_id) in ("rw_hl4_pin", "rw_hl4", "equal"):
+        s += R12_STAMP
+    return s
 
 
 def registry_frame(g: pd.DataFrame, obj: str) -> pd.DataFrame:
@@ -443,7 +483,8 @@ def registry_frame(g: pd.DataFrame, obj: str) -> pd.DataFrame:
                                 + (0 if str(r.sigma_kind).endswith("fallback") else 1)
                                 + (1 if r.target == "adj_ebitda_musd" else 0)),
                    "n_train": int(r.n_train), "sd": float(r.sd), "spec_id": r.spec_id,
-                   "notes": f"{r.notes}; sigma {r.sigma_kind} n={int(r.sigma_n)}"[:480]}
+                   "notes": (_spec_stamp(r.spec_id, win)
+                             + f"{r.notes}; sigma {r.sigma_kind} n={int(r.sigma_n)}")[:700]}
             for c in QCOLS:
                 row[c] = float(getattr(r, c))
             rows.append(row)

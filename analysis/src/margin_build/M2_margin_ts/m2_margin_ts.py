@@ -48,6 +48,8 @@ LINES = ["cor", "ops", "pd", "sm", "ga"]
 VINTAGES_ALL = list(GUIDE_DATES_ALL) + [TODAY]
 LIVE_VINTAGES = [GUIDE_DATE_LIVE, TODAY]
 LAST_REGISTERED_Q = "2027Q4"
+STREET_PULL_DATE = "2026-09-13"     # WS21 R18: pull date of the LIVE comparison column, stamped separately
+                                    # from vintage_date (2026-09-11). Comparison only; never a model input.
 LIVE_QUARTERS = [Q.shift("2026Q3", i) for i in range(10)]          # 3Q26 .. 4Q28 (FY28 for the annual file)
 QCOLS = ["q05", "q10", "q25", "q50", "q75", "q90", "q95"]
 ZS = dict(zip(QCOLS, [-1.6448536269514722, -1.2815515655446004, -0.6744897501960817, 0.0,
@@ -245,7 +247,7 @@ def fc_yoy(st, qs, params, inp):
 # ----------------------------------------------------------------------------- object 2: incremental_margin
 SPECS_INCR = {"k4_rw": (4, "rw", "mean", False), "k8_rw": (8, "rw", "mean", False), "k4_ew": (4, "ew", "mean", False),
               "k8_ew": (8, "ew", "mean", False), "k8_median": (8, "ew", "median", False),
-              "k4_rw_revknown": (4, "rw", "mean", True)}
+              "oracle_k4_rw_revknown": (4, "rw", "mean", True)}   # WS22 R03: `oracle_` prefix = actual revenue/nights used
 
 
 def incr_series(st) -> pd.Series:
@@ -280,7 +282,7 @@ def fc_incr(st, qs, params, inp):
 
 # ----------------------------------------------------------------------------- object 3: pct_rev_seasonal
 SPECS_PCT = {"drift_k4_rw": (4, "rw", True, False), "drift_k4_ew": (4, "ew", True, False), "drift_k8_rw": (8, "rw", True, False),
-             "nodrift": (4, "rw", False, False), "drift_k4_rw_revknown": (4, "rw", True, True)}
+             "nodrift": (4, "rw", False, False), "oracle_drift_k4_rw_revknown": (4, "rw", True, True)}
 
 
 def fit_pct(st, spec):
@@ -320,7 +322,7 @@ def fc_pct(st, qs, params, inp):
 
 # ----------------------------------------------------------------------------- object 4: per_night_seasonal
 SPECS_PN = {"g_k4_rw": (4, "rw", True, False), "g_k4_ew": (4, "ew", True, False), "g_k8_rw": (8, "rw", True, False),
-            "nogrowth": (4, "rw", False, False), "g_k4_rw_nightsknown": (4, "rw", True, True)}
+            "nogrowth": (4, "rw", False, False), "oracle_g_k4_rw_nightsknown": (4, "rw", True, True)}
 
 
 def fit_pn(st, spec):
@@ -801,6 +803,14 @@ def attach_quantiles(g: pd.DataFrame) -> pd.DataFrame:
 
 
 # ----------------------------------------------------------------------------- registry
+# WS22 discussion, red-team R03: specs that feed the ACTUAL revenue or nights into a row labelled
+# prior_basis=PIT are diagnostics, not forecasts. They carry the `oracle_` prefix in `spec_id` (and keep
+# the `revknown` / `nightsknown` substrings so the WS20 filters still catch them) and say so in `notes`.
+ORACLE_PREFIX = "oracle_"
+ORACLE_STAMP = ("ORACLE DIAGNOSTIC (actual revenue/nights fed in at the vintage; NOT a point-in-time "
+                "forecast; exclude from survivor and ranking tables -- WS21 R03). ")
+
+
 def registry_frames(g: pd.DataFrame) -> dict:
     frames = {}
     for obj, grp in g.groupby("object"):
@@ -809,12 +819,14 @@ def registry_frames(g: pd.DataFrame) -> dict:
             if r.quarter > LAST_REGISTERED_Q:
                 continue
             for win in windows_for(r.vintage_date, r.quarter):
+                stamp = ORACLE_STAMP if str(r.spec_id).startswith(ORACLE_PREFIX) else ""
                 row = {"method": METHOD, "object": obj, "target": r.target, "quarter": r.quarter,
                        "vintage_date": r.vintage_date, "horizon_q": int(r.horizon_q), "point": float(r.point),
                        "window": win, "prior_basis": r.prior_basis,
                        "n_params": int(r.n_params) + (0 if str(r.sigma_kind).endswith("fallback") else 1),
                        "n_train": int(r.n_train), "sd": r.sd, "knowable_from": r.knowable_from,
-                       "spec_id": r.spec_id, "notes": f"{r.notes}; sigma {r.sigma_kind} n={int(r.sigma_n)} ({r.prior_basis})"}
+                       "spec_id": r.spec_id,
+                       "notes": f"{stamp}{r.notes}; sigma {r.sigma_kind} n={int(r.sigma_n)} ({r.prior_basis})"}
                 for c in QCOLS:
                     row[c] = float(getattr(r, c))
                 rows.append(row)
@@ -861,7 +873,12 @@ def live_table(g: pd.DataFrame, live: pd.DataFrame, targets) -> tuple[pd.DataFra
     lv["street_ebitda_musd"] = lv["quarter"].map(cmap_e)
     lv["street_revenue_musd"] = lv["quarter"].map(cmap_r)
     lv["street_margin_pct"] = 100.0 * lv["street_ebitda_musd"] / lv["street_revenue_musd"]
-    lv["street_vendor"] = "LSEG mean, 06_consensus_quarterly_2027.csv (pull 2026-09-13; obs dates in that file)"
+    # WS21 R18: the Street column is a COMPARISON column pulled after the vintage; stamp its own pull date
+    # separately from `vintage_date` so no reader can mistake it for a point-in-time input.
+    lv["street_vendor"] = "LSEG mean, 06_consensus_quarterly_2027.csv (obs dates in that file)"
+    lv["street_pull_date"] = STREET_PULL_DATE
+    lv["street_is_comparison_only"] = True
+    lv["street_post_vintage"] = STREET_PULL_DATE > str(TODAY)
     sn = {}
     t = targets.set_index("quarter")
     for q in LIVE_QUARTERS:

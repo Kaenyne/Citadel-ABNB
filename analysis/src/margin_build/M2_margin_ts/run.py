@@ -5,6 +5,8 @@ LIVE and annual tables, scoreboard rescore, figures, scoreboard extract for the 
   cd "<worktree root>"
   py -3.13 analysis/src/margin_build/M2_margin_ts/run.py            # ~2-4 min, exit 0
   py -3.13 analysis/src/margin_build/M2_margin_ts/run.py --no-sarima   # skip object 5 (faster)
+  py -3.13 analysis/src/margin_build/M2_margin_ts/run.py --no-score     # rebuild without re-running score.py
+                                                                        # (WS22: several agents share the scorer)
 """
 from __future__ import annotations
 
@@ -21,6 +23,7 @@ import m2_margin_ts as M  # noqa: E402
 def main() -> int:
     t0 = time.time()
     include_sarima = "--no-sarima" not in sys.argv
+    do_score = "--no-score" not in sys.argv
     M.OUT.mkdir(parents=True, exist_ok=True)
     targets = M.load_targets()
     n_act = int(targets["has_actual"].sum())
@@ -53,13 +56,19 @@ def main() -> int:
     with pd.option_context("display.width", 200):
         print(x.pivot_table(index=["object", "spec_id"], columns="quarter", values="point").round(2).to_string())
 
-    print("\n[4/5] rescore the margin registry")
-    from harness_margin.score import main as score_main
-    score_main(verbose=False)
+    if do_score:
+        print("\n[4/5] rescore the margin registry")
+        from harness_margin.score import main as score_main
+        score_main(verbose=False)
+    else:
+        print("\n[4/5] --no-score: scorer NOT run; reading the scoreboard on disk (it may be stale)")
     sb = pd.read_csv(M.REPO / "data/processed/margin_build/10_harness_margin/scoreboard_margin.csv")
     by_q = pd.read_csv(M.REPO / "data/processed/margin_build/10_harness_margin/scoreboard_by_quarter.csv")
     mine = sb[sb["method"] == M.METHOD].copy()
-    mine.to_csv(M.OUT / f"{M.SLUG}_scoreboard_extract.csv", index=False)
+    if do_score:
+        mine.to_csv(M.OUT / f"{M.SLUG}_scoreboard_extract.csv", index=False)
+    else:
+        print("  scoreboard extract NOT rewritten (stale scoreboard); re-run without --no-score after scoring")
     cols = ["object", "spec_id", "window", "horizon_q", "prior_basis", "n", "mae", "rw_mae", "bias",
             "mae_ratio_seasonal_naive", "rw_mae_ratio_seasonal_naive", "mae_ratio_street", "cov80",
             "survives_both_windows", "rw_survives_both_windows", "n_params"]

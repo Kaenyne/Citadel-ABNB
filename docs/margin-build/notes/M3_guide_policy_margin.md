@@ -356,3 +356,149 @@ which would move its 3Q26 from 48.06 to about 49.1-49.4 and reconcile it with th
 Street's 49.78. If anyone wants a registered FY27 margin from the guidance policy, the missing input is a
 February-sentence model that knows about the reinvestment decision -- the mechanical haircut rule fails
 (82 bp MAE, and it failed in exactly the year that mattered).
+
+---
+
+# Discussion response (WS22, 14 Sep 2026, group B agent)
+
+Red-team findings addressed to M3: R03, R05, R06, R08, R12, plus the run-wide R01/R02/R10. Reproduction
+script `analysis/src/margin_build/M3_guide_policy_margin/discussion_checks.py` (`py -3.13`, ~10 s, exit 0);
+outputs `M3_discussion_paired_tests.csv`, `M3_discussion_pin_decomposition.csv`,
+`M3_discussion_live_coherence.csv`. Pre-discussion copies of every CSV and both registry files are in
+`data/processed/margin_build/M3_guide_policy_margin/_pre_discussion/`. `run.py` re-run under `py -3.13`
+(13 s, exit 0; figures skipped once because the orchestrator's scorer had the scoreboard open — re-run
+`make_figures.py` after the final score). Every pre-existing registered number is unchanged: the 2,808 old
+rows match the new file exactly (max abs diff 0.0); 312 rows were **added** for one new spec.
+
+## 1. R05 — which specs were pre-registered (ACCEPT)
+
+I cannot re-run the red team's `git log` check (this round runs without git), so I accept its timestamp
+evidence and the plain reading of the note above: the pre-registration paragraph names exactly five cushion
+specs — `rw_hl4`, `equal`, `last`, `nocushion`, `rw_hl4_prorata` — and the amendment's claim that it also
+named `rw_hl4_pin` is wrong. **Restated pass line: P1 fails.** On the pre-registered specs, `rw_hl4` (the
+declared main spec) has an h=0 margin MAE of 3.83 pp in W1 against seasonal naive's 2.24 (ratio 1.71) and
+1.97 vs 1.96 in W2. No pre-registered spec beats seasonal naive in both windows. The pin specs
+(`rw_hl4_pin`, `nocushion_pin`, `last_pin`) and tonight's `nov_sentence_pin` are **exploratory**; the code now
+carries `PRE_REGISTERED_SPECS` and `POST_HOC_SPECS` and every post-hoc row's `notes` begins with
+"post-hoc: specified after the first backtest run (WS21 R05)" (or "...added in the WS22 discussion round as
+the R12 fix"). **1,248 rows stamped post-hoc, 312 stamped ORACLE, 144 LIVE rows stamped NOT QUOTABLE (R12).**
+
+## 2. R06 — the pin's win is one quarter wide (ACCEPT, reproduced exactly)
+
+`M3_discussion_pin_decomposition.csv`, against seasonal naive, h=0, PIT:
+
+| spec | window | n | mean d | better | best quarter | best gain | mean d without it |
+|---|---|---|---|---|---|---|---|
+| `rw_hl4_pin` | W1 | 14 | -0.054 | **4/14** | 2023Q4 | -3.18 pp | **+0.186** |
+| `rw_hl4_pin` | W2 | 10 | -0.517 | 3/10 | 2024Q1 | -2.31 pp | -0.318 |
+| `last_pin` | W1 | 14 | -0.028 | 8/14 | 2023Q4 | -3.18 pp | **+0.215** |
+| `nocushion_pin` | W1 | 14 | -0.006 | 6/14 | 2023Q4 | -3.18 pp | +0.238 |
+| `nov_sentence_pin` (new) | W1 | 14 | -0.354 | 8/14 | 2023Q4 | -3.18 pp | **-0.137** |
+
+The red team is right: the pin clips the break quarters (2023Q4 carries the $931M lodging-tax reserve year
+end), and with that quarter removed the two specs it attacked are worse than y[q-4]. That is how the pin is
+described from here. The one spec whose W1 advantage survives the exclusion is the new `nov_sentence_pin`
+(-0.137 pp without 2023Q4), and it too is post-hoc, so it is offered as a hypothesis for 5 Nov, not a pass.
+
+## 3. R02 — what M3 *can* defend, with a paired test (ACCEPT the finding, add the surviving claim)
+
+The red team tested M3 against **seasonal naive** and found nothing significant in W1. Agreed. But M3's actual
+claim is about the **allocation** — that the harness's `guide_implied` baseline mis-reads the FY guide by
+prorating the remaining EBITDA on seasonal shares, and that `m_q = m_{q-4} + delta` reads it correctly. That
+comparison uses **pre-registered specs only** and it is significant in **both** windows
+(`M3_discussion_paired_tests.csv`, h=0, PIT, NW(1)):
+
+| comparison (same guide, same PIT revenue leg) | window | n | MAE | ratio | mean d | t | p | better | sign p | without the best quarter |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `nocushion` (pre-reg.) vs harness `guide_implied` | W1 | 14 | 2.39 vs 4.38 | 0.546 | -1.99 pp | **-2.20** | **0.028** | **12/14** | **0.013** | -1.40 |
+| `nocushion` vs harness `guide_implied` | W2 | 10 | 2.54 vs 3.80 | 0.669 | -1.26 pp | **-2.16** | **0.030** | **9/10** | **0.021** | -0.81 |
+| `nocushion` vs `rw_hl4_prorata` (within-method ablation) | W1 | 14 | 2.39 vs 4.60 | 0.520 | -2.21 pp | -2.43 | 0.015 | 11/14 | 0.057 | -1.42 |
+| `rw_hl4` vs `rw_hl4_prorata` (same cushion, pre-reg. pair) | W2 | 10 | 1.97 vs 3.49 | 0.564 | -1.52 pp | -2.09 | 0.037 | 6/10 | 0.75 | -0.74 |
+| `rw_hl4_prorata` vs seasonal naive (the harness's reading) | W1 | 14 | 4.60 vs 2.24 | 2.056 | +2.36 pp | +2.96 | 0.003 | 4/14 | 0.18 | +2.79 |
+
+Read together: **the proration is significantly worse than y[q-4] (p 0.003), and replacing it with the
+`m_{q-4} + delta` allocation halves the error against the same guide, in both windows, at p<0.05, better in
+12 of 14 and 9 of 10 quarters, and it survives dropping the single best quarter.** That is a statement about a
+mis-specified baseline, not a claim of forecasting skill: the repaired object still does not beat y[q-4]
+(2.39 vs 2.24 in W1) and does not beat the Street (1.59 / 1.31). Quoted that way, it is the finding of this
+method, together with the budget identity.
+
+## 4. R08 — the n=3 flag (ACCEPT, withdrawn)
+
+`q4_implied|guide_mid` carries `survives_both_windows = yes` on **3 matched quarters in W1 and 2 in W2**. The
+flag is withdrawn. P5 is restated without it: *at the three Novembers on record the FY-sentence-implied Q4
+margin under-called the realised Q4 by +3.65, +4.26 and +0.69 pp (mean +2.87), while the Street sat within
+0.4 pp of the implied number.* No flag, no ratio, just the three quarters.
+
+## 5. R12 — the LIVE path (ACCEPT, fixed by registering the sentence scenario)
+
+The registered `rw_hl4_pin` LIVE row (4Q26 34.51%, 4Q27 34.30%, FY26 37.03%) is **withdrawn as a forecast**.
+Its mechanism is exactly what M3's own FY backtest rejects: the AUG-bucket cushion (+1.53 pp) that P2 shows
+over-predicts by 1.2-3.2 pp PIT is added to the FY floor and, with 3Q26 pinned at the ceiling, the whole
+residual lands in Q4. Every LIVE row of `rw_hl4_pin`, `rw_hl4` and `equal` now opens its `notes` with
+"NOT QUOTABLE AS A LIVE FORECAST (WS21 R12)".
+
+In its place I registered the sentence scenario as its own spec, as R12's proposed fix invites:
+**`nov_sentence_pin`** — the FY target is the sentence object 2 predicts management will give (its November
+rule: a numeric floor in force -> "approximately floor + 50 bp", exact 2/2), with no estimated cushion, and
+the quarterly sentence pin on the near quarter. **0 estimated parameters** (the +50 bp is the rule, not a fit).
+It is backtestable at every vintage, and it is labelled post-hoc in the registry and here.
+
+| spec | 3Q26 | 4Q26 | 4Q26 $m | 1Q27 | 4Q27 | FY26 | inside the 2022-26 quarter range? |
+|---|---|---|---|---|---|---|---|
+| `rw_hl4_pin` (withdrawn) | 50.09 | **34.51** | 1,097 | 19.17 | **34.30** | 37.03 | **no** (Q4 max 33.27) |
+| **`nov_sentence_pin`** (new) | 50.09 | **29.90** | **950** | 17.62 | 28.15 | **36.00** | yes, every quarter |
+| `nov_sentence_pin` at 3Q26 = 49.4% ("slightly") | 49.4 | **30.9** | **983** | – | – | 36.00 | yes |
+| `nocushion` (floor literal) | 49.83 | 28.04 | 891 | 17.61 | 26.27 | 35.50 | yes |
+| Street (LSEG 11 Sep) | 49.78 | 28.90 | 914 | 20.29 | 30.28 | 35.63 | – |
+
+Its backtest, for information (post-hoc spec, no pass claimed): h=0 margin MAE **1.88 pp W1** (ratio to
+seasonal naive 0.842, t -1.08, p 0.28, 8/14) and 1.84 pp W2 (0.940, p 0.74, 5/10); against the harness
+`guide_implied` 0.430 / 0.485 with p 0.005 / 0.006. It is the best M3 spec in W1 and the only one whose W1
+edge over the naive survives dropping 2023Q4 — but at these p-values that is a hypothesis for 5 Nov, not a
+demonstrated win.
+
+**For WS23's weighting.** WS20 wants ~20% on this method because it is the only orthogonal view (mean pairwise
+r 0.118) and the best object in the 1H23 regime break (0.79 pp). Keep the weight, move it to
+`nov_sentence_pin`: it is *better* in 1H23 (0.767 vs 0.792 pp) and over W1 as a whole (1.88 vs 2.18 pp), so
+nothing WS20 valued is lost. What is lost is part of the orthogonality — `nov_sentence_pin` correlates 0.48
+with the other methods' h=0 errors against `rw_hl4_pin`'s 0.14 — because the pin's low correlation is
+substantially the erratic AUG cushion (+7.97 pp at the first vintage, +0.60 at the last), which is noise
+diversification from a parameter this method's own FY backtest rejects. At a 20% weight the swap moves the
+blended 4Q26 margin by 0.92 pp and blended 4Q26 EBITDA by $29M. Detail and the correlation matrix:
+`M3_discussion_cross_method.csv`, `M3_discussion_error_correlations.csv`, and
+`docs/margin-build/discussion/group_B.md` §5.
+
+## 6. R03 (ACCEPT, fixed) and R10 (ACCEPT)
+
+- `rw_hl4_revknown` -> **`oracle_rw_hl4_revknown`**, every row stamped "ORACLE DIAGNOSTIC (actual revenue fed
+  in at the vintage; NOT a point-in-time forecast; exclude from survivor and ranking tables -- WS21 R03)".
+  `prior_basis` stays `PIT` because FORMAT 1.0 admits nothing else.
+- **R10.** `M3_discussion_live_coherence.csv`: the registered LIVE q10-q90 for `rw_hl4_pin` is 9.6 pp at 3Q26
+  and 9.3 pp at 4Q26, against a realised W1 h=0 10-90 error range of **5.0 pp**. Do not take M3's quantiles.
+  The band to quote around the 4Q26 sentence arithmetic is **+/- 2.5 pp** (the realised h=0 spread), which on
+  "approximately 36%" is 4Q26 28.4-33.4% — and note that most of that width is the 3Q26/4Q26 trade-off, not
+  independent noise: 1 pp of 3Q26 margin is -1.51 pp of 4Q26 at a fixed FY sentence.
+
+## What M3 now claims
+
+One paragraph: *the FY margin guide is a budget constraint, and the way to read it is `m_q = m_{q-4} + delta`
+with one delta solved on the remaining quarters — not the seasonal-share proration the harness baseline uses,
+which is significantly worse than last year's margin (p 0.003). The repaired reading halves the guide-implied
+error in both windows (0.55x W1 p 0.028 12/14; 0.67x W2 p 0.030 9/10) using a pre-registered, zero-cushion
+spec, and it still does not beat y[q-4] or the Street, so it is a measurement of the guide, not a forecaster.
+The November sentence itself is mechanical: floor + 50 bp, exact 2 of 2, so 5 Nov reads "approximately 36%"
+(p ~0.45-0.50), and that sentence plus the budget identity puts 4Q26 at **29.9-30.9% and $950-983M against a
+Street $914M**, with the 3Q26 print the swing factor at -1.51 pp of Q4 per +1 pp of Q3. The February floor is
+not mechanical (MAE 82 bp, wrong in both years that mattered) and no FY27 margin should be taken from this
+method.* Free parameters: 0 for `nov_sentence_pin` and `nocushion` (+1 residual sd), 1 for the cushion specs.
+
+## Files changed by this response
+
+`analysis/src/margin_build/M3_guide_policy_margin/run.py` (spec rename, `PRE_REGISTERED_SPECS` /
+`POST_HOC_SPECS`, the `nov_sentence_pin` spec in `cushion()` and `fy_forecast()`, `_spec_stamp()` on the
+registry `notes`), `.../discussion_checks.py` (new), `data/processed/margin_build/M3_guide_policy_margin/`
+(rebuilt; five new `M3_discussion_*.csv` — paired tests, pin decomposition, LIVE coherence, error
+correlations, cross-method; `_pre_discussion/` holds the previous copies), registry
+`guide-policy-margin__actual_given_guide.csv` (3,120 rows, +312 for the new spec; all pre-existing points
+unchanged) and `guide-policy-margin__q4_implied.csv` (unchanged numbers).

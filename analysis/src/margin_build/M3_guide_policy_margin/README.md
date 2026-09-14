@@ -34,8 +34,17 @@ WS05's language pattern is used as a cross-check in the note, not as an input to
 | `M3_guide_forecast_november_backtest.csv` / `..._february_backtest.csv` | object 2 |
 | `M3_q4_implied_backtest.csv` / `M3_q4_implied_live_5nov.csv` | object 3 |
 | `M3_slightly_magnitude.csv` | the "slightly" adverb test M2 asked for |
+| `M3_discussion_paired_tests.csv` | WS22: every spec vs seasonal naive / guide_implied / Street / the proration ablation, with NW(1) t, p and quarters better |
+| `M3_discussion_pin_decomposition.csv` | WS22 (R06): how much of each pin spec's win is one quarter |
+| `M3_discussion_live_coherence.csv` | WS22 (R12): every LIVE spec against the 2022-26 quarter-of-year range |
+| `_pre_discussion/` | copies of every CSV and both registry files as they stood before the WS22 discussion round |
 
-Registry: `data/processed/margin_build/registry/guide-policy-margin__actual_given_guide.csv` (2,808 rows,
-9 spec_ids × 2 replays, W1 / W2 / LIVE) and `guide-policy-margin__q4_implied.csv` (20 rows, W1 / W2).
+Registry: `data/processed/margin_build/registry/guide-policy-margin__actual_given_guide.csv` (3,120 rows,
+10 spec_ids × 2 replays, W1 / W2 / LIVE) and `guide-policy-margin__q4_implied.csv` (20 rows, W1 / W2).
+WS22: `oracle_rw_hl4_revknown` (renamed, diagnostic only), post-hoc specs stamped in `notes`, the withdrawn
+`rw_hl4_pin` LIVE rows stamped "NOT QUOTABLE (WS21 R12)", and the new zero-parameter `nov_sentence_pin`
+(the predicted November sentence, floor + 50 bp, with the quarterly pin) added as the quotable LIVE path.
+Reproduce the WS22 checks with
+`py -3.13 analysis/src/margin_build/M3_guide_policy_margin/discussion_checks.py`.
 Figures: `analysis/figures/margin_build/M3_guide_policy_margin_*.png`.
 Note: `docs/margin-build/notes/M3_guide_policy_margin.md`.

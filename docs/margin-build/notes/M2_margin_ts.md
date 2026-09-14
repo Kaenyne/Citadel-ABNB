@@ -355,3 +355,133 @@ per-night object conditional on nights (W2 1.31 pp with nights known) if M1 supp
 re-run `run.py` (72 s) — it picks the override up automatically and the note's LIVE tables would need refreshing from
 `M2_margin_ts_live_forecasts.csv`; (5) WORKBOARD.md was not touched (outside the write scope in `00_BRIEF.md`; the orchestrator appends
 rows at stage 32). Do not add specs to chase the Street: the pre-registered grid is closed at 29.
+
+---
+
+# Discussion response (WS22, 14 Sep 2026, group B agent)
+
+Red-team findings addressed to M2: R03, R07, R10, R14, R17, R18, plus the run-wide R01/R02. Reproduction
+script `analysis/src/margin_build/M2_margin_ts/discussion_checks.py` (`py -3.13`, ~10 s, exit 0); outputs
+`M2_discussion_paired_tests.csv`, `M2_discussion_sentence_info.csv`, `M2_discussion_sentence_summary.csv`,
+`M2_discussion_guide_ledger.csv`, `M2_discussion_bands.csv`. Pre-discussion copies of every CSV and every
+registry file are in `data/processed/margin_build/M2_margin_ts/_pre_discussion/`. `run.py` was re-run under
+`py -3.13` (84 s, exit 0) with the new `--no-score` flag (three discussion agents share the scorer; the
+orchestrator scores once at the end).
+
+**No forecast number in this note changed.** All 3,936 non-oracle LIVE rows are byte-identical to the
+pre-discussion file (max abs diff 0.0); the registry changes are labels only.
+
+## 1. R01 / R02 — every claim re-quoted with a p-value and a quarters-better count (ACCEPT)
+
+Paired loss differential `d_q = |e_method| - |e_baseline|`, Newey-West(1) t, h=0, PIT
+(`M2_discussion_paired_tests.csv`):
+
+| claim | baseline | window | n | MAE ratio | mean d | NW(1) t | p | better | sign p |
+|---|---|---|---|---|---|---|---|---|---|
+| `q_sentence_direction k_fit_rw` margin | seasonal naive | W1 | 14 | 0.924 | -0.17 pp | -0.22 | 0.83 | 7/14 | 1.00 |
+| same | seasonal naive | W2 | 10 | 0.839 | -0.32 pp | -0.53 | 0.59 | 5/10 | 1.00 |
+| same | Street | W1 / W2 | 14 / 10 | 1.298 / 1.253 | +0.48 / +0.33 | +0.88 / +0.78 | 0.38 / 0.44 | 7/14, 5/10 | – |
+| `sarima_margin lines_aicc` margin | seasonal naive | W1 / W2 | 14 / 10 | 0.911 / 0.759 | -0.20 / -0.47 | -0.71 / -1.27 | 0.48 / 0.20 | 8/14, 6/10 | – |
+| **`q_sentence_direction k_fit_rw` EBITDA $** | **Street** | **W1** | 14 | **0.858** | -$9.3M | -0.65 | **0.51** | **10/14** | 0.18 |
+| same | Street | W2 | 10 | 0.819 | -$10.5M | -1.02 | 0.31 | 8/10 | 0.11 |
+| same | `q_guide_implied` | W1 / W2 | 14 / 10 | 0.887 / 0.771 | -$7 / -$14M | -0.42 / -0.97 | 0.68 / 0.33 | 8/14, 6/10 | – |
+| same | seasonal naive | W1 / W2 | 14 / 10 | 0.454 / 0.487 | -$67 / -$50M | -2.28 / -2.66 | 0.022 / 0.008 | 11/14, 8/10 | – |
+
+Two consequences, both accepted:
+
+1. **The margin claim is a descriptive regularity, not demonstrated skill.** Bottom-line item 2 above should
+   be read as: the sentence rule's h=0 margin MAE is 8% below y[q-4] in W1 and 16% below in W2, and that
+   difference is not distinguishable from zero (p 0.83 / 0.59). Item 2's "do beat the naive in both windows"
+   language is withdrawn in favour of the numbers.
+2. **Bottom-line item 4 is downgraded.** The sentence rule's dollar MAE really is 14-18% below the Street's in
+   both windows and it is better in 10 of 14 and 8 of 10 quarters, but the paired test does not reject
+   (p 0.51 / 0.31). The only object in this run that clears that bar against the Street is M5's
+   `street_plus_flowthrough` (t -2.71, p 0.007 in W2, 11/14 in W1). M2's dollar object should be quoted as
+   *corroborating M5's direction* (both say the Street's EBITDA dollars are low), not as an independent win.
+   The only p<0.05 result M2 owns is against seasonal naive **in dollars**, which the red team is right to call
+   nearly free for a growing series.
+
+## 2. R03 — oracle specs re-labelled (ACCEPT, fixed)
+
+Renamed in `m2_margin_ts.py` and therefore in the registry, keeping the old substrings so existing filters
+still fire: `k4_rw_revknown` -> `oracle_k4_rw_revknown`, `drift_k4_rw_revknown` -> `oracle_drift_k4_rw_revknown`,
+`g_k4_rw_nightsknown` -> `oracle_g_k4_rw_nightsknown`. Every row of those specs now opens its `notes` with
+"ORACLE DIAGNOSTIC (actual revenue/nights fed in at the vintage; NOT a point-in-time forecast; exclude from
+survivor and ranking tables -- WS21 R03)". 4,236 rows stamped. `prior_basis` stays `PIT` because FORMAT 1.0
+admits only `PIT` / `full_sample`; the label carries the warning instead. WS20's tables were built before the
+rename and still carry the old names.
+
+## 3. R07 — the sentence rule's provenance (ACCEPT)
+
+Reproduced exactly (`M2_discussion_sentence_summary.csv`): over the 14 W1 target quarters the direction is
+non-zero 13 times (9 ceilings, 4 floors) with **3 sign changes along the sequence**; a constant "always down"
+rule agrees with the realised sign 8/13, the direction rule 12/13. W2: 9 non-zero, 2 sign changes, 6/9 vs 8/9.
+So the incremental content of the sentence over "assume a y/y decline" is four quarters, three of them in the
+2023 recovery, and the MAE ratio that expresses it has t = -0.22. **The hypothesis came from WS10's full-sample
+look at these same 14 quarters, so this is not an out-of-sample test.** From here the rule is quoted as: *the
+sentence has called the direction of the y/y margin change 12 of 13 times it gave one, and the average size of
+the move is about 2 pp; that is a regularity, not a fitted forecaster with demonstrated skill.*
+
+## 4. The `q_guide_in_force` leakage surface (REJECT, with numbers)
+
+The orchestrator asked whether M2 reads a sentence through the ledger's `print_date` that was not public at the
+vintage. It does not (`M2_discussion_guide_ledger.csv`): of the 20 quarterly margin guides in
+`02_guidance_ledger.csv`, **20 of 20 carry a `guide_date` equal to the print date of the quarter named in
+`print_quarter`**, and **19 of 20 have `target_period = print_quarter + 1`**. The single exception,
+`ABNB-2Q25-adj_ebitda_margin_yoy_pts-4Q25-152` (6 Aug 2025, target 4Q25), is a *forward* two-quarter guide, not
+a retrospective row — it is the one h=1 sentence row M2 has. There is no row whose guide date postdates the
+quarter it describes, so no sentence can leak backwards.
+
+## 5. R10 — the intervals (ACCEPT, with a distinction)
+
+`M2_discussion_bands.csv`. M2's own P4 already failed, and the run-wide over-coverage holds, but the sentence
+rule is the exception on *width*: its LIVE q10-q90 is 4.33 pp against a realised W1 10-90 error range of
+4.39 pp (W2 4.42). What is wrong with it is **centring**: the PIT h=0 error pool is centred at **-1.82 pp (W1)
+/ -1.31 pp (W2)** — k was too big in 2023-24 — so an honest empirical band for 3Q26 is *asymmetric*:
+**49.9% central (W1 bias-corrected) or 49.4% (W2), band 47.7-52.1%**, against the registered symmetric
+48.06% (45.9-50.2). That is a material change of reading for the card: bias-corrected, M2's time-series anchor
+agrees with the Street (49.78%), with M3's adverb answer (48.6-49.4%) and with M3's pin ceiling (50.09%), and
+the run's apparent 47-51.5% disagreement on 3Q26 narrows to about **49.4-50.1%**. The SARIMA-lines band is
+genuinely too wide (7.33 pp registered vs 5.18 pp realised).
+
+## 6. R14, R17, R18 (ACCEPT)
+
+- **R14.** M2's line table is already scored against `seasonal_naive_drift`, the baseline R14 asks for, and the
+  note already reports P3 as a FAIL. The point that survives into the card: the same specs whose *lines* beat
+  drift for CoR and Ops (0.82-0.90) lose to y[q-4] on the *margin* (1.05-1.08), so no line result may be
+  quoted as evidence about the margin.
+- **R17.** Stated on the card: every h=0 number here is a post-letter, post-guide forecast. For 4Q26 on
+  5 Nov we occupy the h=0 position only after the letter is out; before it, the honest 4Q26 anchor is the naive
+  28.29% / Street 28.90%, and nothing in M2 beats y[q-4] at h=1.
+- **R18.** Fixed in `live_table()`: the LIVE Street comparison columns now carry `street_pull_date`
+  (2026-09-13), `street_is_comparison_only` and `street_post_vintage` alongside the vintage stamp
+  (2026-09-11), and `street_vendor` no longer buries the pull date in free text.
+
+## 7. M3's "slightly" result — adopted as a scenario, not as a spec (REJECT as a spec)
+
+M3 measured that "slightly" sentences realise a mean absolute y/y move of 1.49 pp against 3.60 pp for plain
+sentences (n 3 vs 13), and offered it to M2 as an adverb term on k. **I am not registering it.** It is
+post-hoc, it rests on 2-3 quarters, one of the three has the wrong sign (2Q25 +1.16 against a "flat to down
+slightly"), and it would add a second parameter to a one-parameter rule that already cannot be distinguished
+from y[q-4]. The pre-registered grid stays closed at 29 specs. What the reader should take instead: the adverb
+haircut (48.6-49.4%) and the bias correction of the existing rule (49.4-49.9%) point the same way, which is
+worth more than either as a new fitted parameter.
+
+## What M2 now claims
+
+One paragraph: *no time-series object built from ABNB's own history forecasts the adjusted EBITDA margin
+better than last year's margin by an amount distinguishable from zero at n=14/10 — the best of them, the
+management-sentence rule, runs at 0.92x (W1) / 0.84x (W2) of the naive with p 0.83 / 0.59, and at 1.25-1.30x
+the Street. In EBITDA dollars the same rule sits 14-18% below the Street's MAE and is better in 10 of 14 and
+8 of 10 quarters (p 0.51 / 0.31), which corroborates M5's dollar finding without independently establishing
+it. Its LIVE 3Q26 reading, once the -1.3 to -1.8 pp PIT bias is taken out, is 49.4-49.9% (registered point
+48.06%), and at h=1 for 4Q26 nothing here beats y[q-4] = 28.29%.* Free parameters: 2 (k plus the residual sd).
+
+## Files changed by this response
+
+`analysis/src/margin_build/M2_margin_ts/m2_margin_ts.py` (oracle spec renames, oracle `notes` stamp,
+`STREET_PULL_DATE` and the three new LIVE comparison columns), `.../run.py` (`--no-score`),
+`.../discussion_checks.py` (new), `data/processed/margin_build/M2_margin_ts/` (rebuilt; four new
+`M2_discussion_*.csv`; `_pre_discussion/` holds the previous copies), registry files
+`margin-ts__{incremental_margin,pct_rev_seasonal,per_night_seasonal}.csv` (spec labels only; the other four
+objects are unchanged).
