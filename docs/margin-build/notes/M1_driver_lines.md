@@ -313,3 +313,164 @@ after the other M-methods register — M1's rows are in `M1_driver_lines_scorebo
 combined object, the natural hybrid is M1 lines for cor / ops / pd / other_net plus a management-language S&M and G&A level — that is not
 registered here and would need its own pre-registration; (3) the `c_mix` and `d_steps` specs can be dropped from any synthesis; (4) the S&M
 sensitivity for the 5 Nov card is $48M of S&M per 1.0 pp of 3Q26 margin at the $4,804M kernel revenue.
+
+---
+
+# Discussion response (WS22, 14 Sep 2026)
+
+Written by the group A discussion agent (M1 / M4 / M6). Everything above this line is the original note and
+was not edited. Red-team findings addressed: **R01, R02, R03, R04, R08, R10, R11, R14, R17, R19**.
+Backups: `data/processed/margin_build/M1_driver_lines/_pre_discussion/` (every CSV) and
+`data/processed/margin_build/registry/driver-lines__*_pre_discussion.csv.bak` (both registry files).
+Rebuild: `MARGIN_SKIP_SCORE=1 py -3.13 analysis/src/margin_build/M1_driver_lines/run.py` (39 s, exit 0).
+`score.py` was **not** run (three discussion agents were live); the orchestrator re-scores once.
+
+## D1. R04 — the step dummies were not point-in-time. ACCEPTED and FIXED.
+
+Reproduced exactly with the red team's own check
+(`py -3.13 analysis/src/margin_build/21_red_team/checks/check_09_m1_step_dummy_leak.py`): `event_E09_cor_cash`
+is ON from 2025Q1 but knowable 2026-02-12, `event_E10_pd_cash` ON from 2023Q1 but knowable 2023-03-01;
+7 of 14 W1 guide dates and 6 of 10 W2 dates fit or forecast with a step that was not public.
+
+Fix: `step_level(sc, q, vd)` in `run.py` reads `data/processed/margin_build/04_alt_signals/04_signal_knowable_from.csv`
+and returns 0 for any quarter whose signal was not knowable at the vintage — in `design_rows` (the fit) and in
+`forecast_quarter` (the forecast). A gated-to-zero column has no variation, so the existing "needs at least two
+non-zero observations" rule drops it and the coefficient is 0: the spec reverts to `b_elastic` at those vintages.
+The full_sample **parameter** fit keeps the ungated sample (hindsight in the parameters is the declared meaning of
+that replay); every **forecast point** in both replays is gated.
+
+Before to after, `d_steps_rw`, PIT, h=0 (`M1_driver_lines_grid_margin.csv`):
+
+| window | MAE pp | ratio vs seasonal naive | rw ratio |
+|---|---|---|---|
+| W1 | 2.5538 -> **2.5599** | 1.1416 -> **1.1443** | 0.9112 -> **0.9177** |
+| W2 | 1.9076 -> **1.9161** | 0.9738 -> **0.9782** | 0.8401 -> **0.8479** |
+
+26 forecast rows moved, at 10 vintages, by at most 0.82pp. **The leak was buying a small amount of spurious
+accuracy and the spec is slightly worse without it.** `a_unit`, `b_elastic`, `c_mix` and `e_revknown` are
+bit-identical (checked row by row against `_pre_discussion/M1_driver_lines_forecasts_wide.csv`), so **no headline
+M1 number changes**. Kill-list item 3 ("M1 `d_steps_rw` numbers until the gate is added") is discharged; the spec
+is still a fail, and section 6.3 above ("regional mix and step dummies do nothing") is unchanged and, if anything,
+stronger.
+
+## D2. R03 — the oracle spec was registered as PIT. ACCEPTED and FIXED.
+
+Reproduced: 516 rows in `driver-lines__margin_v2` and 860 in `driver-lines__lines_v2` carried
+`spec_id=e_revknown_rw` with `prior_basis` in {PIT, full_sample}. FORMAT 1.0 is frozen, has no column that marks
+an oracle, and validates `prior_basis` against `{PIT, full_sample}` — so re-labelling inside the registry is
+impossible. `e_revknown_rw` is therefore **withdrawn from the registry**: its 1,376 rows (with quantiles and
+actuals) go to `M1_driver_lines_oracle_diagnostic.csv`, whose first column reads
+"ORACLE_NOT_A_FORECAST — actual revenue/nights/GBV fed in ... must never enter a scoreboard or a survivor table".
+
+Registry rows: `margin_v2` 3,612 -> **3,096**; `lines_v2` 6,020 -> **5,160**. The other six specs are unchanged.
+The diagnostic is still worth quoting **as a diagnostic**, and section 6.1 above still rests on it: with actual
+drivers the same cost parameters give margin MAE 1.96pp (W1) / 1.45pp (W2) against 2.26 / 1.91 with the PIT
+revenue leg — **roughly a quarter of M1's h=0 margin error is the revenue leg, not the cost stack**. What must
+never again be said is that it "beats the naive" or "survives both windows".
+
+## D3. R11 — LIVE 3Q26 above the guidance ceiling. ACCEPTED; the sentence wins.
+
+Reproduced: M1 `b_elastic_rw` LIVE 3Q26 = **51.575%** against a 3Q25 actual of **50.085%**, the 2Q26 letter's
+ceiling sentence ("adj EBITDA margin roughly flat to slightly down y/y") and Street 49.776%.
+
+I tested the only defence available — that management's quarterly margin sentence is systematically sandbagged —
+and **it fails**. The harness `q_guide_implied` baseline is exactly that sentence turned into a level; its
+realised (actual minus sentence) gaps are:
+
+| window | n | mean | median | quarters above the sentence |
+|---|---|---|---|---|
+| W1 | 14 | +0.47pp | **-0.60pp** | 6 / 14 |
+| W2 | 10 | **-0.19pp** | **-0.94pp** | **4 / 10** |
+
+The last eight quarters average **-0.86pp**. The 60-140bp beat pattern WS05/31a documents is an **FY floor**
+phenomenon; the **quarterly** sentence is not beaten. M1 does not get to override it.
+
+Size of the gap: 1.489pp of a $4,804M quarter = **$71.5M of cost**, which is **1.23x** M1's own h=0 total-cash-cost
+MAE ($58.1M, W1) and 0.53x its h=0 margin sd (2.8pp). **The model does not contradict the sentence at any
+meaningful confidence; it is a noisy point that happens to land above it.** Nothing needed re-fitting.
+
+New file `M1_driver_lines_live_guide_reconciled.csv` carries the model point, the ceiling, the clipped point, the
+clip in pp and $, the gap in units of the h=0 cost MAE, and the sentence-beat history above.
+
+| quarter | model | ceiling | reconciled (card) | clip |
+|---|---|---|---|---|
+| 3Q26 | 51.57% / $2,478M | 50.085% | **50.09% / $2,406M** | -1.49pp / -$71.5M |
+| 4Q26 | 28.47% / $905M | none in force | 28.47% / $905M | — |
+| FY26 | 36.18% | — | **35.68%** (floor +0.18pp) | -0.50pp |
+
+**No registered number moved** — LIVE rows are not scored, and the backtest is untouched. The model's unclipped
+output stays on the record as what a pure cost-trend extrapolation says. Section 9's card language is superseded
+by D6 below. Downstream consequence for M6: see that note's D3.
+
+## D4. R14 — line wins are free. ACCEPTED, and worse than the red team said.
+
+R14 asked for every line claim to be re-scored on `adj_ebitda_margin_pct` and against `seasonal_naive_drift` or
+`pct_rev_last4` rather than `seasonal_naive`. Done, on the pre-discussion scoreboard (PIT, h=0; `b_elastic_rw` is
+unchanged by D1/D2 so the numbers stand). Paired loss differentials, Newey-West(1) standard errors and a sign test
+(`analysis/src/margin_build/22_discussion_group_A/repro_drift.py` -> `data/processed/margin_build/22_discussion_group_A/groupA_paired_vs_drift.csv`):
+
+| target | W1 ratio vs **drift** | t | p | better | W2 ratio | t | p |
+|---|---|---|---|---|---|---|---|
+| cost of revenue | **0.753** | -2.03 | **0.042** | 9/14 | **0.770** | -1.51 | 0.130 |
+| operations & support | 0.946 | -0.27 | 0.79 | 9/14 | 0.919 | -0.33 | 0.74 |
+| product development | **1.109** | +0.40 | 0.69 | 6/14 | **1.221** | +0.55 | 0.58 |
+| sales & marketing | **1.176** | +0.87 | 0.38 | 5/14 | **1.139** | +0.46 | 0.65 |
+| G&A ex reserves | 1.018 | +0.09 | 0.93 | 8/14 | 1.098 | +0.45 | 0.66 |
+| **total cash costs** | **1.165** | +1.18 | 0.24 | 6/14 | **1.170** | +0.83 | 0.41 |
+| adj EBITDA $ | 0.618 | -2.09 | **0.036** | 9/14 | 0.768 | -1.15 | 0.25 |
+| adj EBITDA margin | 0.947 | -0.31 | 0.76 | 7/14 | 0.946 | -0.27 | 0.79 |
+
+**Section 1.1's "every line but G&A beats the seasonal naive by 20-70%" and section 4b's "total cash costs ratios
+0.27 / 0.22 — the cost stack itself is forecastable" are WITHDRAWN.** Against a baseline that also knows the line
+is growing, only **cost of revenue** survives; product development, S&M and the total cash-cost stack are *worse*
+than the drift naive. The 0.27 ratio was the growth term, not the model. The cost-of-revenue result is real and is
+the only line-level claim M1 should make (M6's `k` version of the same line is stronger: ratio 0.652 W1 / 0.677 W2,
+t -3.57 / -2.67, better in 13/14 and 9/10 — see M6's D4). This re-scoring is **post-hoc**, prompted by R14; it was
+not a pre-registered pass line.
+
+## D5. R01, R02, R08, R10, R17, R19 — accepted as quoting rules; nothing to re-fit.
+
+- **R01 / R02.** Reproduced on M1's own cells (`22_discussion_group_A/groupA_paired_tests.csv`): at h=0, PIT, against seasonal naive,
+  every M1 spec has |NW(1) t| <= 0.83 and p >= 0.41 in W1 and is better in only 5-8 of 14 quarters.
+  `b_elastic_rw` W1: mean d +0.022pp, t +0.07, p 0.95, 7/14; W2: -0.048pp, t -0.14, p 0.89, 5/10. **M1 claims no
+  margin skill against y[q-4] and never did** — both pre-registered pass lines failed and the note says so. From
+  here on every M1 ratio is quoted with its p and its quarters-better count, and the phrase "survives both
+  windows" does not appear in anything M1 supplies.
+- **R08.** No M1 cell rests on n < 8 (they are 14 / 13 / 12 / 10 / 9 / 8). Not an M1 problem; agreed as a
+  scoreboard fix for group C.
+- **R10.** Confirmed, and already in sections 4c and 5: M1's `cov80` is 0.93-1.00 against a nominal 0.80 — the
+  bands are too **wide**. ACCEPT-DEFER on a fix (a conformal or realised-error band is a new object and needs its
+  own pre-registration). Meanwhile take the 5 Nov band from the **realised h=0 error distribution** (W1 MAE
+  2.26pp, W2 1.91pp, sd 2.8pp) and do not quote M1's q05-q95 ladder as a probability.
+- **R17.** Accepted and carried to the card: `history_as_of` includes the same-day letter, so M1's h=0 is a
+  **post-letter, post-guide** forecast — the position a reader occupies *after* the print, not the position of a
+  trade *into* it.
+- **R19.** M1's pre-registration is at commit `d5da4e4`, before the results. No action.
+
+## D6. Replacement card lines for M1 (supersede section 9)
+
+- **3Q26: 50.1% / $2,406M** — the guidance-sentence level, not the model's 51.6%. The unclipped 51.6% / $2,478M is
+  the **"the 2025-26 spending ramp pauses"** case and must be labelled that way. The gap is $71.5M of cost, 1.2x
+  the model's own one-quarter cost error; the line that carries it is S&M, at **$48M per 1.0pp** of 3Q26 margin
+  (M1 has S&M at $730M, +25% y/y, against a 1H26 realised pace of +34% / +26%).
+- **4Q26: 28.5% / $905M**, unclipped (no quarterly sentence in force), against Street 28.9% / $914M. M3's
+  sentence-modal 4Q26 is 30.9%, 2.4pp higher, and 2.4pp of 4Q26 is 0.54pp of FY26 — **4Q26 is where the FY26 floor
+  is actually decided.**
+- **FY26: 35.68%** after the 3Q26 clip, only **+0.18pp** above the 35.5% floor (36.18% and +0.68pp unclipped).
+- **FY27: 35.1%, down 1.0pp**, against Street +0.8pp (36.4%) — unchanged, and still the most useful thing M1
+  produces, because it is an arithmetic consequence of the spending trends rather than a forecast of a print.
+- **Line claim:** "the driver model beats a drift naive on cost of revenue (ratio 0.75, p 0.04, 9 of 14 quarters)
+  and on nothing else." Do not say the cost stack is forecastable.
+
+## D7. Recommended WS23 weights for M1's objects
+
+| object / use | weight | why |
+|---|---|---|
+| `margin_v2` as a margin **point forecast** | **0** | ratio 1.010 / 0.975 vs naive, t 0.07, 7 of 14 quarters; Street is 1.3-1.5x better at h=0 |
+| `lines_v2` **cost of revenue** (b 0.81 on GBV, LOYO 0.66-0.98) | **1.0** | the only line that beats a drift baseline (p 0.04 in W1) |
+| `lines_v2` ops and support (b 0.76 on nights) | 0.5 | a tie against drift (0.95 / 0.92) but the right sign and a stable LOYO range; needed to close the stack |
+| `lines_v2` pd / sm / G&A trends | **0** | all worse than a drift naive; take the levels from M3's guide policy or management language |
+| `other_net` rule (0.68% of revenue) | 1.0 | an accounting identity fitted as a share; nothing better exists |
+| FY27 arithmetic (35.1%, incremental margin 25.6%) | 0.75 | the clearest statement of the S&M problem in the run, but a scenario rather than a validated forecast |
+| M1 quantiles | **0** | over-dispersed (cov80 0.93-1.00 against 0.80) |
+| `e_revknown_rw` / `d_steps_rw` / `c_mix_rw` | **0** | oracle, and no content |

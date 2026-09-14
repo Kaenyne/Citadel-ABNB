@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
+import os
 import subprocess
 import sys
 import warnings
@@ -49,6 +50,7 @@ WS06_WIDE = WS06_LONG_V2B if WS06_LONG_V2B.exists() else WS06_DIR / "06_revenue_
 WS06_CONS27 = WS06_DIR / "06_consensus_quarterly_2027.csv"
 WS03_CURRENT = MB / "03_consensus_pit" / "03_current_consensus.csv"
 WS04_PANEL = MB / "04_alt_signals" / "04_signal_panel_quarterly.csv"
+WS04_KNOWABLE = MB / "04_alt_signals" / "04_signal_knowable_from.csv"   # R04 gate (WS22 discussion)
 WS10_REGIONAL = REPO / "data" / "processed" / "overnight" / "10_regional_panel_quarterly.csv"
 WS31B_PROFILE = REPO / "data" / "processed" / "overnight" / "31b_forward_margin_by_profile.csv"
 WS30_FY = REPO / "data" / "processed" / "overnight" / "30_fy_summary.csv"
@@ -83,6 +85,14 @@ SPECS = {
     "d_steps_rw":     ("d", "rw", FIRST_YOY_MAIN, "revenue"),
     "e_revknown_rw":  ("e", "rw", FIRST_YOY_MAIN, "revenue"),
 }
+# --- WS22 discussion, R03 -----------------------------------------------------------------------
+# `e_revknown_rw` feeds the ACTUAL revenue / nights / GBV into the cost equations. M_common rule 6
+# allows it as a diagnostic ("how much of the error is revenue, how much is cost"), but FORMAT 1.0 has
+# no column that marks a spec as an oracle, the scorer does not know, and its rows were the best margin
+# cell in the run by MAE. It is therefore NO LONGER REGISTERED: its rows go to
+# `M1_driver_lines_oracle_diagnostic.csv` and can never reach a scoreboard survivor table.
+ORACLE_SPECS = {"e_revknown_rw"}
+REGISTERED_SPECS = [s for s in SPECS if s not in ORACLE_SPECS]
 # grid-only variants (reported in the note, not registered)
 GRID_EXTRA = {
     "b_smnights_rw":      ("b", "rw", FIRST_YOY_MAIN, "nights"),
@@ -130,6 +140,39 @@ PANEL = build_panel()
 STEPCOLS = sorted({c for v in STEPS.values() for c in v})
 
 
+# --- WS22 discussion, R04: knowable_from gate on the WS04 step dummies ---------------------------
+# WS04 dates `event_E09_cor_cash` ON from 2025Q1 but it became knowable only 2026-02-12, and
+# `event_E10_pd_cash` ON from 2023Q1, knowable 2023-03-01. Before this fix spec `d_steps` read the step
+# LEVEL straight out of PANEL in both `design_rows` (the fit) and `forecast_quarter` (the forecast), so
+# 7 of the 14 W1 guide dates and 6 of the 10 W2 dates used a regressor that was not public. The gate is
+# modelled on M4's `known(ks[q], vd)`: before a signal's knowable_from the step is 0 everywhere, which
+# makes it unidentified at that vintage and its coefficient 0 (the spec reverts to `b_elastic`).
+def _step_knowable_from() -> dict:
+    k = pd.read_csv(WS04_KNOWABLE)
+    out = {}
+    for c in STEPCOLS:
+        d = pd.to_datetime(k[c], errors="coerce").dropna()
+        out[c] = d.min().date() if len(d) else None
+    return out
+
+
+STEP_KNOWABLE = _step_knowable_from()
+
+
+def step_level(sc: str, q: str, vd=None) -> float:
+    """Level of step `sc` in quarter q AS VISIBLE AT VINTAGE vd (0 before the signal was public).
+    vd=None switches the gate off and is used only for the full_sample parameter fit, where hindsight
+    in the parameters is the declared convention; every forecast point is gated."""
+    if vd is not None:
+        kf = STEP_KNOWABLE.get(sc)
+        if kf is None or kf > pd.to_datetime(vd).date():
+            return 0.0
+    if q in PANEL.index:
+        v = PANEL.loc[q, sc]
+        return float(v) if pd.notna(v) else 0.0
+    return 0.0 if q < PANEL.index.min() else float(PANEL[sc].iloc[-1])
+
+
 def hist_as_of(vd) -> pd.DataFrame:
     h = history_as_of(vd)
     qs = set(h["quarter"].map(Q.canon))
@@ -144,7 +187,7 @@ def _d4(series: pd.Series, q: str):
     return None, None
 
 
-def design_rows(h: pd.DataFrame, line: str, family: str, first_yoy: str, sm_driver: str):
+def design_rows(h: pd.DataFrame, line: str, family: str, first_yoy: str, sm_driver: str, vd=None):
     """(quarters, y, X columns dict) of the y/y observations available in history h for one line."""
     drv = DRIVER[line] if line != "sm" else sm_driver
     rows = []
@@ -164,21 +207,20 @@ def design_rows(h: pd.DataFrame, line: str, family: str, first_yoy: str, sm_driv
             mq, mlag = _d4(h["exna_share"], q)
             rec["mix"] = (mq - mlag) if mq is not None else np.nan
         if family == "d":
-            for sc in STEPS[line]:
-                sq, slag = _d4(h[sc], q)
-                rec[sc] = (sq - slag) if sq is not None else 0.0
+            for sc in STEPS[line]:                                   # R04: gated by knowable_from
+                rec[sc] = step_level(sc, q, vd) - step_level(sc, Q.shift(q, -4), vd)
         rows.append(rec)
     return pd.DataFrame(rows)
 
 
-def fit_line(h: pd.DataFrame, line: str, spec: str, anchor: str | None = None) -> dict:
+def fit_line(h: pd.DataFrame, line: str, spec: str, anchor: str | None = None, vd=None) -> dict:
     """Weighted least squares on y/y log changes. Returns the parameter dict for one line."""
     family, weighting, first_yoy, sm_driver = ALL_SPECS[spec]
     fam_for_design = family if family != "e" else "b"
-    d = design_rows(h, line, fam_for_design, first_yoy, sm_driver)
+    d = design_rows(h, line, fam_for_design, first_yoy, sm_driver, vd)
     flags = []
     if len(d) < MIN_OBS and first_yoy != FIRST_YOY_2020:
-        d = design_rows(h, line, fam_for_design, FIRST_YOY_2020, sm_driver)
+        d = design_rows(h, line, fam_for_design, FIRST_YOY_2020, sm_driver, vd)
         flags.append("added_2021_obs")
     out = {"line": line, "spec": spec, "n_obs": int(len(d)), "g": np.nan, "b": np.nan, "b_imposed": False,
            "c_mix": np.nan, "flags": ""}
@@ -238,8 +280,8 @@ def fit_line(h: pd.DataFrame, line: str, spec: str, anchor: str | None = None) -
     return out
 
 
-def fit_all(h: pd.DataFrame, spec: str, anchor: str | None = None) -> dict:
-    return {ln: fit_line(h, ln, spec, anchor) for ln in LINES}
+def fit_all(h: pd.DataFrame, spec: str, anchor: str | None = None, vd=None) -> dict:
+    return {ln: fit_line(h, ln, spec, anchor, vd) for ln in LINES}
 
 
 # ----------------------------------------------------------------------------- drivers
@@ -314,7 +356,7 @@ def live_mix_d4(q: str, h: pd.DataFrame) -> float:
 
 # ----------------------------------------------------------------------------- forecasting
 def forecast_quarter(params: dict, spec: str, h: pd.DataFrame, q: str, drv: dict, prev: dict,
-                     mix_d4: float | None) -> dict | None:
+                     mix_d4: float | None, vd=None) -> dict | None:
     """Levels for quarter q given fitted params, PIT history h, driver levels drv and the chain `prev`
     (quarter -> dict of forecast levels for quarters not yet printed)."""
     family, _, _, sm_driver = ALL_SPECS[spec]
@@ -337,10 +379,9 @@ def forecast_quarter(params: dict, spec: str, h: pd.DataFrame, q: str, drv: dict
             for sc in STEPS[ln]:
                 c = p.get(f"c_{sc}", np.nan)
                 if np.isfinite(c):
-                    # step level for a future quarter: persists at the last known level
-                    lvl_q = PANEL.loc[q, sc] if q in PANEL.index else PANEL[sc].iloc[-1]
-                    lvl_l = PANEL.loc[lag, sc] if lag in PANEL.index else 0.0
-                    x += c * (lvl_q - lvl_l)
+                    # step level for a future quarter: persists at the last known level.
+                    # R04: gated by knowable_from at the vintage (0 before the signal was public).
+                    x += c * (step_level(sc, q, vd) - step_level(sc, lag, vd))
         out[ln] = float(base[ln] * np.exp(x))
     last4 = h.tail(4)
     on_share = float((last4["other_net"] / last4["revenue"]).mean())
@@ -356,7 +397,7 @@ def run_vintage(vd, spec: str, replay: str, full_params: dict, live: bool, scena
                 h_max: int | None = None) -> tuple[list, dict]:
     """Forecasts at one vintage for one spec and replay. Returns (rows, params)."""
     h = hist_as_of(vd)
-    params = full_params if replay == "full_sample" else fit_all(h, spec)
+    params = full_params if replay == "full_sample" else fit_all(h, spec, vd=vd)
     q0 = Q.quarter_of_date(pd.to_datetime(vd).date())
     hmax = h_max if h_max is not None else (H_LIVE if live else H_BACK)
     prev, rows = {}, []
@@ -383,7 +424,7 @@ def run_vintage(vd, spec: str, replay: str, full_params: dict, live: bool, scena
                 last = h.index.max(); l4 = Q.shift(last, -4)
                 mix = float(h.loc[last, "exna_share"] - h.loc[l4, "exna_share"]) \
                     if (l4 in h.index and pd.notna(h.loc[last, "exna_share"]) and pd.notna(h.loc[l4, "exna_share"])) else 0.0
-        f = forecast_quarter(params, spec, h, q, drv, prev, mix)
+        f = forecast_quarter(params, spec, h, q, drv, prev, mix, vd=vd)
         if f is None:
             continue
         prev[q] = f
@@ -506,7 +547,7 @@ def main() -> int:
                                       target_print_date=pd_map.get(r.quarter),
                                       notes=f"rev_leg={r.rev_leg};scenario={r.scenario};{r.flags}"))
     long = pd.DataFrame(long_rows)
-    long = long[long["spec_id"].isin(SPECS)]
+    long = long[long["spec_id"].isin(SPECS)]      # oracle rows split out after the quantiles, below (R03)
     # quantile pools use the W1-vintage rows (all vintages from 2022-02-15 give the pool via `wide`, but the
     # registry only carries W1/W2/LIVE rows; build the pool from every backtest vintage for depth)
     pool_rows = []
@@ -525,6 +566,15 @@ def main() -> int:
     long = both[both["_reg"] == True].drop(columns=["_reg"]).copy()   # noqa: E712
     long["q50"] = long["point"]
     long.to_csv(OUT / "M1_driver_lines_registry_long.csv", index=False)
+
+    # --- R03 (WS22 discussion): the oracle spec is NOT registered -------------------------------
+    orc = long[long["spec_id"].isin(ORACLE_SPECS)].copy()
+    orc.insert(0, "ORACLE_NOT_A_FORECAST",
+               "actual revenue/nights/GBV fed in; diagnostic for the cost-vs-revenue error split only; "
+               "NOT point-in-time; must never enter a scoreboard or a survivor table")
+    orc.to_csv(OUT / "M1_driver_lines_oracle_diagnostic.csv", index=False)
+    print(f"  oracle rows withheld from the registry: {len(orc)} -> M1_driver_lines_oracle_diagnostic.csv")
+    long = long[~long["spec_id"].isin(ORACLE_SPECS)]
 
     reg_cols = ["method", "object", "target", "quarter", "vintage_date", "horizon_q", "point", "q50", "window",
                 "prior_basis", "n_params", "n_train", "q05", "q10", "q25", "q75", "q90", "q95", "sd", "knowable_from",
@@ -643,6 +693,71 @@ def main() -> int:
             "ws31b_management_margin_pct", "ws31b_base_margin_pct", "ws30_margin_pct", "mgmt_3q26_ceiling_margin_pct"]
     live_q[keep].to_csv(OUT / "M1_driver_lines_live_quarterly.csv", index=False)
 
+    # --- R11 (WS22 discussion): reconcile the LIVE 3Q26 point with the guidance sentence ---------
+    # The 2Q26 letter (6 Aug 2026) carries a CEILING sentence for 3Q26: adj EBITDA margin roughly flat
+    # to slightly down y/y, against a 3Q25 actual of 50.09%. M1's unclipped point is 51.57%. Two
+    # questions decide whether the model may override the sentence:
+    #   (1) is the quarterly sentence historically beaten?  The harness `q_guide_implied` baseline is
+    #       that sentence turned into a level; its realised (actual - sentence) gaps are computed here.
+    #   (2) is the gap large relative to the model's own h=0 error?  Reported in cost dollars and in
+    #       units of the model's h=0 total-cash-cost MAE.
+    # Answer (1) is no (W2 mean is NEGATIVE), so the sentence wins: the card carries the clipped point
+    # and the unclipped model point is shown as a labelled "spending-ramp-pauses" upside case.
+    qg = load_registry("baselines-margin", "q_guide_implied")
+    qg = qg[(qg["prior_basis"] == "PIT") & (qg["target"] == "adj_ebitda_margin_pct") & (qg["horizon_q"] == 0)]
+    qg = qg.drop_duplicates(subset=["quarter", "window"]).copy()
+    qg["actual"] = qg["quarter"].map(lambda q: float(act.loc[q, "adj_ebitda_margin_pct"]) if q in act.index else np.nan)
+    qg = qg[qg["actual"].notna()]
+    sent = {}
+    for win in ("W1", "W2"):
+        g = qg[qg["window"] == win]
+        b = (g["actual"] - g["point"]).to_numpy(dtype=float)
+        sent[win] = (len(b), float(np.mean(b)), float(np.median(b)), int((b > 0).sum()))
+    rec_rows = []
+    ceiling = float(act.loc["2025Q3", "adj_ebitda_margin_pct"])
+    mspec = live_q[(live_q["spec_id"] == MAIN_SPEC) & (live_q["prior_basis"] == "PIT")
+                   & (live_q["scenario"] == "base")].set_index("quarter")
+    cost_mae_w1 = 58.06      # M1 h=0 total_cash_costs_musd MAE, W1 (scoreboard, PIT)
+    for q, cap in (("2026Q3", ceiling), ("2026Q4", np.nan)):
+        if q not in mspec.index:
+            continue
+        r = mspec.loc[q]
+        pt, rev = float(r["adj_ebitda_margin_pct"]), float(r["revenue"])
+        capped = min(pt, cap) if np.isfinite(cap) else pt
+        rec_rows.append(dict(quarter=q, model_margin_pct=pt, sentence_ceiling_pct=cap,
+                             reconciled_margin_pct=capped, gap_pp=pt - cap if np.isfinite(cap) else np.nan,
+                             gap_musd_of_cost=(pt - cap) / 100 * rev if np.isfinite(cap) else np.nan,
+                             gap_in_h0_cost_mae=((pt - cap) / 100 * rev / cost_mae_w1) if np.isfinite(cap) else np.nan,
+                             model_ebitda_musd=float(r["adj_ebitda_musd"]),
+                             reconciled_ebitda_musd=capped / 100 * rev, revenue_musd=rev,
+                             street_margin_pct=float(r["cons_margin_pct"]),
+                             sentence="2Q26 letter, 6 Aug 2026: 3Q26 margin roughly flat to slightly down y/y"
+                                       if q == "2026Q3" else "no quarterly margin sentence in force"))
+    rc_df = pd.DataFrame(rec_rows)
+    _h1 = act.loc[["2026Q1", "2026Q2"]]
+    h1e, h1r = float(_h1["adj_ebitda_musd"].sum()), float(_h1["revenue"].sum())
+    fy26_rev = h1r + rc_df["revenue_musd"].sum()
+    fy26_model = 100 * (h1e + rc_df["model_ebitda_musd"].sum()) / fy26_rev
+    fy26_rec = 100 * (h1e + rc_df["reconciled_ebitda_musd"].sum()) / fy26_rev
+    rc_df.loc[len(rc_df)] = dict(quarter="FY26", model_margin_pct=fy26_model, sentence_ceiling_pct=np.nan,
+                                 reconciled_margin_pct=fy26_rec, gap_pp=fy26_model - fy26_rec,
+                                 gap_musd_of_cost=(fy26_model - fy26_rec) / 100 * fy26_rev,
+                                 gap_in_h0_cost_mae=np.nan,
+                                 model_ebitda_musd=h1e + rc_df["model_ebitda_musd"].sum(),
+                                 reconciled_ebitda_musd=h1e + rc_df["reconciled_ebitda_musd"].sum(),
+                                 revenue_musd=fy26_rev, street_margin_pct=np.nan,
+                                 sentence="FY26 floor >= 35.5% (2Q26 guide); cushion above the floor "
+                                          f"= {fy26_rec - 35.5:+.2f}pp after the 3Q26 clip")
+    for win in ("W1", "W2"):
+        n, mean_b, med_b, pos = sent[win]
+        rc_df[f"sentence_beat_{win}_n"] = n
+        rc_df[f"sentence_beat_{win}_mean_pp"] = mean_b
+        rc_df[f"sentence_beat_{win}_median_pp"] = med_b
+        rc_df[f"sentence_beat_{win}_positive"] = pos
+    rc_df.to_csv(OUT / "M1_driver_lines_live_guide_reconciled.csv", index=False)
+    print(f"  R11 reconciliation: FY26 model {fy26_model:.2f}% -> clipped {fy26_rec:.2f}%; "
+          f"sentence beat W2 mean {sent['W2'][1]:+.2f}pp, positive {sent['W2'][3]}/{sent['W2'][0]}")
+
     # annual: FY26 = 1H26 actual + 3Q/4Q forecast; FY27, FY28 sums (FY28 base only)
     cur = pd.read_csv(WS03_CURRENT)
     cons_fy = {r.period: (r.revenue_mean, r.ebitda_mean) for r in cur[cur["vendor"] == "LSEG"].itertuples()}
@@ -720,17 +835,29 @@ def main() -> int:
         print(f"  figure skipped: {e}")
 
     # ---- scoreboard -----------------------------------------------------------------------
-    print("  running score.py ...")
-    rc = subprocess.run([sys.executable, str(HARNESS / "score.py")], cwd=str(REPO), capture_output=True, text=True)
-    print(rc.stdout[-2000:])
-    if rc.returncode != 0:
-        print(rc.stderr[-3000:])
-        return rc.returncode
-    sb = pd.read_csv(MB / "10_harness_margin" / "scoreboard_margin.csv")
-    mine = sb[sb["method"] == METHOD]
-    mine.to_csv(OUT / "M1_driver_lines_scoreboard_rows.csv", index=False)
+    # WS22 discussion round: three agents re-run their packages concurrently, so score.py is run ONCE
+    # by the orchestrator afterwards. Set MARGIN_SKIP_SCORE=1 to skip it here (the scoreboard rows
+    # copied below are then the previous scoring and are stale until the orchestrator re-scores).
+    if os.environ.get("MARGIN_SKIP_SCORE") == "1":
+        print("  MARGIN_SKIP_SCORE=1: skipping score.py (orchestrator re-scores once)")
+    else:
+        print("  running score.py ...")
+        rc = subprocess.run([sys.executable, str(HARNESS / "score.py")], cwd=str(REPO), capture_output=True, text=True)
+        print(rc.stdout[-2000:])
+        if rc.returncode != 0:
+            print(rc.stderr[-3000:])
+            return rc.returncode
+    sbp = MB / "10_harness_margin" / "scoreboard_margin.csv"
+    if sbp.exists():
+        sb = pd.read_csv(sbp)
+        mine = sb[sb["method"] == METHOD]
+        mine.to_csv(OUT / "M1_driver_lines_scoreboard_rows.csv", index=False)
+    else:                       # the harness is mid-rebuild (WS22 runs concurrently); keep the old copy
+        print("  scoreboard_margin.csv absent; leaving M1_driver_lines_scoreboard_rows.csv as it was")
+        mine = pd.read_csv(OUT / "M1_driver_lines_scoreboard_rows.csv")             if (OUT / "M1_driver_lines_scoreboard_rows.csv").exists() else pd.DataFrame()
     json.dump({"built": f"{t0:%Y-%m-%d %H:%M:%S}", "ws06_wide": WS06_WIDE.name, "n_forecast_rows": int(len(wide)),
-               "n_registry_rows": int(len(long)), "specs": list(SPECS), "main_spec": MAIN_SPEC},
+               "n_registry_rows": int(len(long)), "specs": list(REGISTERED_SPECS),
+               "oracle_specs_withheld": sorted(ORACLE_SPECS), "main_spec": MAIN_SPEC},
               open(OUT / "M1_driver_lines_build.json", "w"), indent=2)
     print(f"done in {(_dt.datetime.now() - t0).total_seconds():.0f}s")
     return 0

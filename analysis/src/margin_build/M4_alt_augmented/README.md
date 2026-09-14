@@ -72,3 +72,15 @@ One of 50 signals clears the pre-registered pass line (`ga` ~ private computer-s
 2-quarter lead). The random-series placebo puts the false-positive rate for a single G&A test at 5.5% and for
 best-of-5 selection at 22.5%, so that one survivor is inside the noise, and it improves the **margin** MAE by
 0.6% (W1) / 0.1% (W2). **The LIVE margin table is M1's.** See the note for the full grid and the reasoning.
+
+## WS22 discussion round (14 Sep 2026)
+
+One change only: `MARGIN_SKIP_SCORE=1` now skips the `score.py` call at the end (three discussion agents
+re-ran their packages concurrently; the orchestrator re-scores once), and a missing `scoreboard_margin.csv`
+no longer raises. **Every M4 output is byte-identical after the re-run**, including both registry files -
+confirmation that M1's R04 step gate does not touch the `b_elastic` base M4 builds on. M4 registers no
+oracle spec, so R03 costs it nothing.
+
+```bash
+MARGIN_SKIP_SCORE=1 py -3.13 analysis/src/margin_build/M4_alt_augmented/run.py   # ~130 s, exit 0
+```

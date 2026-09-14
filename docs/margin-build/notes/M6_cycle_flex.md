@@ -587,3 +587,159 @@ answerable: the cut caps (sm 20 / pd 10 / ga 5) are judgement constants; T1 fail
 T2 failed on the 2H22 reproduction and the reason is the revenue leg, not the cost equations; the quantiles
 are too wide (cov80 0.93-1.00 against 0.80); and the model adds nothing in calm quarters (ratio 1.00) by
 design.
+
+---
+
+# Discussion response (WS22, 14 Sep 2026)
+
+Written by the group A discussion agent (M1 / M4 / M6). Everything above this line is the original note and was
+not edited. Findings addressed: **R01, R02, R03, R08, R10, R11, R13, R14, R15, R17, R19**.
+Backups: `data/processed/margin_build/M6_cycle_flex/_pre_discussion/` (every CSV) and
+`data/processed/margin_build/registry/cycle-flex__*_pre_discussion.csv.bak`.
+Rebuild: `MARGIN_SKIP_SCORE=1 py -3.13 analysis/src/margin_build/M6_cycle_flex/run.py` (23 s, exit 0).
+`score.py` was **not** run; the orchestrator re-scores once.
+
+## D1. R03 — `revknown_rw` was registered as PIT. ACCEPTED and FIXED.
+
+Reproduced: 468 rows in `cycle-flex__flex_margin` and 780 in `cycle-flex__flex_lines` carried
+`spec_id=revknown_rw`, in both replays, and its W1 h=0 margin ratio of 0.981 (rw 0.875) sat in the same survivor
+table as the genuine PIT specs. FORMAT 1.0 validates `prior_basis` against `{PIT, full_sample}` and has no oracle
+column, so the spec is **withdrawn from the registry**: 1,248 rows now live in
+`M6_cycle_flex_oracle_diagnostic.csv` behind a leading `ORACLE_NOT_A_FORECAST` column.
+Registry rows: `flex_margin` 1,872 -> **1,404**, `flex_lines` 3,120 -> **2,340**. `l0_rw`, `l0_eq` and `dl_rw` are
+unchanged. Section 7's `revknown_rw` rows stay in the note as a **diagnostic** — with the actual revenue path the
+same `k`s give margin MAE 2.19pp (W1) / 1.76pp (W2) against `l0_rw`'s 2.20 / 1.77, i.e. at h=0 **the revenue leg is
+worth almost nothing**, which is itself the useful finding (the revenue leg only starts to matter at h>=1, where
+`revknown_rw` at h=2 scores 0.922 / 0.930 against `l0_rw`'s 1.092 / 1.359).
+
+## D2. R15 — FY28 is unusable. ACCEPTED and FIXED.
+
+Reproduced: the five FY28 rows all read **31.33%** against Street 37.65%, because `c_pd` 0.147 and `c_sm` 0.155
+compound discretionary spend at 15-19%/yr against 8-9% revenue growth over four unanchored quarters.
+`M6_cycle_flex_annual_forecasts.csv` now carries a **flat roll-forward of the same row's FY27 margin** in
+`adj_ebitda_margin_pct` (34.36% for every base/flex row, 35.00% for `cut`), the withdrawn value in a new
+`withdrawn_growth_model_margin_pct` column, the line columns set to NaN (they are not meaningful under a flat
+roll), and a `fy28_basis` string that says so. The original five rows are preserved in
+`M6_cycle_flex_fy28_withdrawn.csv`. Kill-list item 6 ("M6's FY28 of 31.3%") is now enforced by the data file, not
+only by a sentence in a note. **For a FY28 level use M1's 32.6% or Street's 37.65%, labelled.**
+
+## D3. R11 — LIVE 3Q26 above the ceiling. ACCEPTED, and it costs M6 its headline claim.
+
+Reproduced: M6's engine puts 3Q26 at **51.575%** on the M1 base and **51.233%** on its own, against the 2Q26
+letter's ceiling of **50.085%** and Street 49.776%. As in M1's D3, the defence that management's *quarterly*
+sentence is sandbagged does not hold (`q_guide_implied` realised gaps: W2 mean **-0.19pp**, median -0.94pp, only
+**4 of 10** quarters above the sentence; last eight quarters -0.86pp). The sentence wins.
+
+Clipping 3Q26 to the sentence and leaving 4Q26 alone is not cosmetic for M6, because M6's most-quoted number is
+the FY26 floor cushion. New file `M6_cycle_flex_guide_clipped_floor.csv`:
+
+| base | 3Q26 clip | FY26 margin | cushion vs the 35.5% floor | 2H26 revenue shortfall the floor survives |
+|---|---|---|---|---|
+| M1 base, `flex` | 51.57 -> 50.09% (-$71.5M) | 36.18 -> **35.68%** | +0.68 -> **+0.18pp** | 2.54% ($203M) -> **0.68% ($54M)** |
+| M1 base, `held` | same | same | same | 1.87% ($149M) -> **0.50% ($40M)** |
+| M6 own base, `flex` | 51.23 -> 50.09% (-$55.1M) | 35.97 -> **35.59%** | +0.47 -> **+0.09pp** | 1.77% ($141M) -> **0.33% ($26M)** |
+
+**Section 11's card line 3 ("the FY26 35.5% floor is not at risk — it survives a 1.9-2.5% 2H26 revenue shortfall,
+$149-203M") is WITHDRAWN as written.** Under the guidance sentence the cushion is **$19-54M, not $149-203M**, and
+the floor stops being a revenue question and becomes a **4Q26 question**: M3's sentence-modal 4Q26 of 30.9%
+(against M1's 28.5%) is worth 2.43pp of 4Q26 = **+0.54pp of FY26**, which on its own restores FY26 to 36.22% and
+the cushion to +0.72pp. The honest card sentence is: *the FY26 floor is not decided by 3Q26 — with 3Q26 capped at
+the guidance sentence the FY26 cushion is under 20bp, and everything then depends on 4Q26, where our own two
+methods disagree by 2.4pp.* The engine's **sensitivities and deltas are untouched** (0.27pp of FY26 margin per 1%
+of 2H26 revenue flexed, 0.36pp held; flexing recovers only 30-40% of what a revenue miss costs); it is only the
+*level* the cushion is measured from that moves.
+
+## D4. R14 — line-vs-margin. ACCEPTED, and it hands M6 the best line result in group A.
+
+Re-scored against `seasonal_naive_drift`, the honest baseline for a growing dollar line (PIT, h=0; `l0_rw` is
+unchanged by D1-D3 so these numbers stand). Paired loss differentials, Newey-West(1), plus a sign test
+(`analysis/src/margin_build/22_discussion_group_A/repro_drift.py` ->
+`data/processed/margin_build/22_discussion_group_A/groupA_paired_vs_drift.csv`):
+
+| target | `l0_rw` W1 ratio | t | p | better | W2 ratio | t | p | better |
+|---|---|---|---|---|---|---|---|---|
+| **cost of revenue** | **0.652** | **-3.57** | **0.0004** | **13/14** (sign p 0.002) | **0.677** | **-2.67** | **0.008** | **9/10** (sign p 0.021) |
+| operations and support | 0.988 | -0.06 | 0.95 | 8/14 | 0.960 | -0.16 | 0.87 | 6/10 |
+| product development | 1.216 | +1.00 | 0.32 | 6/14 | 1.276 | +0.84 | 0.40 | 4/10 |
+| sales and marketing | 1.176 | +0.87 | 0.38 | 5/14 | 1.139 | +0.46 | 0.65 | 3/10 |
+| G&A ex reserves | 1.001 | +0.01 | 0.99 | 9/14 | 1.055 | +0.28 | 0.78 | 6/10 |
+| total cash costs | 1.164 | +1.00 | 0.32 | 6/14 | 1.139 | +0.53 | 0.60 | 4/10 |
+| adj EBITDA $ | 0.597 | -2.23 | **0.026** | 10/14 | 0.716 | -1.29 | 0.20 | 6/10 |
+| adj EBITDA margin | 0.923 | -0.45 | 0.65 | 7/14 | 0.878 | -0.53 | 0.60 | 5/10 |
+
+**`k_cor = 0.56` on cost of revenue is, as far as group A can find, the only object built from ABNB's own history
+that beats an adversarial baseline at p<0.05 in BOTH windows and on both the t-test and the sign test.** The red
+team's "not a single cell is significant in W1" holds against `seasonal_naive` and against the Street; it does not
+hold against `seasonal_naive_drift` for this one line. That is a much smaller claim than a margin model, and it is
+the claim M6 should make. Section 7's line table (ratios 0.20-0.53 against `pct_rev_last4`) stays in the note but
+must be quoted with the drift column beside it. The re-scoring is **post-hoc**, prompted by R14.
+
+## D5. R13 — reproducibility of the licensed peer files. PARTLY REJECTED, partly accepted.
+
+**Rejected:** R13 says M6's `run.py` "raises FileNotFoundError before writing anything" from a clean clone.
+It does not. `peer_k_table()` opens with `if not PEER_OPEX.exists(): return pd.DataFrame()`, and the S&M file has
+its own `.exists()` guard. Reproduced by loading `run.py` as a module, pointing `PEER_OPEX` and `PEER_SM` at
+non-existent paths and calling `peer_k_table()`: **0 rows returned, no exception**. Both files are also already
+manifested with size, sha256 and pull timestamp in `data/manifests/margin_build/04_alt_signals.csv`.
+
+**Accepted:** the prerequisite was undocumented and the failure was silent — an empty `_peer_k.csv` would have
+been read as "the peers have no cyclicality" rather than "the peer table is missing". Fixed: `peer_k_table()` now
+prints `!! MISSING LICENSED INPUT ... the peer k comparison is SKIPPED`; the README has a new **Licensed
+prerequisites** section naming both files, their manifest, the LSEG fields to re-pull, and the warning that an
+empty file means missing, not zero; and `data/manifests/margin_build/M6_cycle_flex.csv` (new) cross-references
+both rows with a `consumed_by` column.
+
+## D6. R01, R02, R08, R10, R17, R19 — accepted as quoting rules.
+
+- **R01 / R02.** Reproduced on M6's cells (`22_discussion_group_A/groupA_paired_tests.csv`). `l0_rw` vs seasonal naive at h=0, PIT:
+  W1 mean d **-0.036pp**, NW(1) t **-0.10**, p **0.92**, better in **7 of 14**; W2 -0.186pp, t -0.52, p 0.60,
+  5 of 10. `dl_rw` is worse than naive (t +0.87 / +0.94). **Section 1's "the registered forecaster passes its
+  harness test" is downgraded to "the registered forecaster is a tie with y[q-4] and its pass flag is the ~30%
+  free flag the red team priced".** Section 7's "survives both windows both weightings" line for `l0_rw` must not
+  be quoted without t -0.10 / p 0.92 / 7-of-14 next to it. T3 (the 2025 shock slice, ratio 0.92 in both windows,
+  n = 4) was pre-registered and stands as pre-registered, but n = 4 cannot carry a p-value and must be quoted as
+  "4 quarters".
+- **R08.** M6's own cells are n = 14 / 13 / 12 / 10 / 9 / 8 except the pre-registered T3 slice (n = 4) and the 2H22
+  slice (n = 3), both of which are labelled in the note. Agreed that the scoreboard should carry n beside the flag.
+- **R10.** Confirmed and already flagged in section 7: cov80 0.93-1.00 and cov90 1.00 at h=0 against a nominal
+  0.80. ACCEPT-DEFER. M6's own instruction stands and is now the rule: **use the scenario spread, never the
+  residual band.**
+- **R17.** Accepted: M6's h=0 is post-letter and post-guide, which is precisely why D3's clip is the right
+  treatment — the sentence is in the model's information set.
+- **R19.** M6's pre-registration is at commit `bebbf4e`, before the results. No action.
+
+## D7. Replacement card lines for M6 (supersede section 11)
+
+1. **"Airbnb has no cost dial"** — unchanged and still the best thing M6 has: total opex elasticity 0.14 and not
+   significant, against BKNG 0.61, TRIP 0.63, EXPE 0.44 and BKNG advertising 0.87-0.98 (n = 18 each).
+2. **"So the 3Q26 print is a revenue print"** — unchanged (1% of 2H26 revenue is ~27bp of FY26 margin flexed,
+   ~36bp held), but the sentence that followed it, "a 150-180bp margin beat is in the base case", is **withdrawn**:
+   that beat is the unclipped model against a guidance sentence the company has not historically beaten.
+3. **"The FY26 floor is not at risk"** — **withdrawn as written** (see D3). Replacement: *with 3Q26 capped at the
+   guidance sentence, the FY26 cushion above the 35.5% floor is +0.09 to +0.18pp, i.e. a 0.24-0.68% 2H26 revenue
+   shortfall ($19-54M); the floor is then decided by 4Q26, where M1 (28.5%) and M3's sentence-modal (30.9%) differ
+   by 2.4pp = 0.54pp of FY26.*
+4. **"Watch the FY27 sentence, not the FY26 one"** — unchanged (FY27 34.4-35.1% flexed against Street 36.4%;
+   bear 31.3-32.4% unless $386-508M is cut).
+5. **The asymmetry** (k_dn < k_up for ops, S&M and total cash costs, p < 0.02, n = 16) — unchanged.
+6. **1Q27 trough 19.5%, band 17-22%** — unchanged.
+7. **New:** *cost of revenue moves 0.56 with revenue and that relationship is the one testable thing in the cost
+   stack: ratio 0.65 against a drift naive, p 0.0004, better in 13 of 14 quarters.*
+8. **FY28: do not quote M6.** The annual file now carries a labelled flat roll-forward.
+
+## D8. Recommended WS23 weights for M6's objects
+
+| object / use | weight | why |
+|---|---|---|
+| `k_cor` = 0.56 (cost of revenue on revenue growth) | **1.0** | the only ABNB-history object in group A significant against a drift baseline in both windows |
+| `k_ops` = 0.44 | 0.5 | right sign, t 3.4, but a tie against drift at the line level |
+| `k_pd` / `k_ga` | **0** | insignificant and wrong-signed; M6's own T1 failed on pd |
+| `k_sm` = 0.42 | 0.25 | t 2.3 but unstable (0.87 in 2022, 0.30-0.42 since 2025); use it only for scenario deltas |
+| peer `k` comparison (ABNB 0.14 vs BKNG 0.61 / TRIP 0.63 / EXPE 0.44) | **1.0** | a measurement, not a forecast; the strongest qualitative point in the run |
+| scenario engine **deltas** (bear/bull, flex vs held, cut) | **1.0** | the deltas never depended on the level; unchanged by every fix here |
+| FY26 floor break-even | **1.0 in its clipped form** (`_guide_clipped_floor.csv`), 0 in the unclipped form | see D3 |
+| `flex_margin` as a margin **point forecast** at h=0 | **0.15** | t -0.10, p 0.92, 7 of 14; keep it only as one arm of the 350bp cross-method spread |
+| `flex_margin` beyond h=0, FY27 / FY28 **levels** | **0** | W1 h=1 ratio 1.31; FY28 withdrawn; carry M1's levels and M6's deltas |
+| `dl_rw` | **0** | 22 parameters, worse on every cut |
+| `revknown_rw` | **0** as a forecast, keep as the h>=1 revenue-leg diagnostic | oracle |
+| M6 quantiles | **0** | cov80 0.93-1.00 |

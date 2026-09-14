@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
+import os
 import subprocess
 import sys
 import warnings
@@ -74,6 +75,13 @@ HAC_LAGS = 2
 # spec_id -> (family, weighting, revenue source)
 SPECS = {"l0_rw": ("l0", "rw", "pit"), "l0_eq": ("l0", "eq", "pit"), "dl_rw": ("dl", "rw", "pit"),
          "revknown_rw": ("l0", "rw", "actual")}
+# --- WS22 discussion, R03 ------------------------------------------------------------------------
+# `revknown_rw` substitutes the ACTUAL revenue path. M_common rule 6 allows it as a diagnostic (it
+# splits cost error from revenue error), but FORMAT 1.0 has no column that marks an oracle spec and the
+# scorer cannot tell, so its rows were sitting in the same survivor table as genuine PIT specs. It is
+# NO LONGER REGISTERED: the rows go to `M6_cycle_flex_oracle_diagnostic.csv` instead.
+ORACLE_SPECS = {"revknown_rw"}
+REGISTERED_SPECS = [s for s in SPECS if s not in ORACLE_SPECS]
 MAIN_SPEC = "l0_rw"
 N_PARAMS = {"l0": 12, "dl": 22}
 
@@ -446,6 +454,12 @@ def k_table(h_full: pd.DataFrame) -> pd.DataFrame:
 def peer_k_table() -> pd.DataFrame:
     """Lag-0 k for BKNG / EXPE / TRIP (and ABNB from LSEG GAAP lines as a cross-check) on the WS04 raw LSEG pull."""
     if not PEER_OPEX.exists():
+        # R13 (WS22 discussion): the two LSEG peer files are LICENSED and gitignored, so they do not
+        # exist in a clean clone. peer_k_table degrades to an empty table rather than raising, but say
+        # so loudly: section 4's peer comparison (ABNB 0.14 vs BKNG 0.61 / TRIP 0.63 / EXPE 0.44) is
+        # then MISSING, not zero. Re-pull per the README before quoting it.
+        print(f"!! MISSING LICENSED INPUT {PEER_OPEX.relative_to(REPO)} -- the peer k comparison is "
+              f"SKIPPED and {SLUG}_peer_k.csv will be empty. See README 'Licensed prerequisites'.")
         return pd.DataFrame()
     a = pd.read_csv(PEER_OPEX)
     b = pd.read_csv(PEER_SM) if PEER_SM.exists() else pd.DataFrame(columns=["Instrument", "Period End Date"])
@@ -675,6 +689,15 @@ def main() -> int:
     long = both[both["_reg"] == True].drop(columns=["_reg"]).copy()  # noqa: E712
     long["q50"] = long["point"]
     long.to_csv(OUT / f"{SLUG}_registry_long.csv", index=False)
+
+    # --- R03 (WS22 discussion): the oracle spec is NOT registered --------------------------------
+    orc = long[long["spec_id"].isin(ORACLE_SPECS)].copy()
+    orc.insert(0, "ORACLE_NOT_A_FORECAST",
+               "actual revenue path fed in; diagnostic for the cost-vs-revenue error split only; "
+               "NOT point-in-time; must never enter a scoreboard or a survivor table")
+    orc.to_csv(OUT / f"{SLUG}_oracle_diagnostic.csv", index=False)
+    print(f"  oracle rows withheld from the registry: {len(orc)} -> {SLUG}_oracle_diagnostic.csv")
+    long = long[~long["spec_id"].isin(ORACLE_SPECS)]
     reg_cols = ["method", "object", "target", "quarter", "vintage_date", "horizon_q", "point", "q50", "window",
                 "prior_basis", "n_params", "n_train", "q05", "q10", "q25", "q75", "q90", "q95", "sd", "knowable_from",
                 "spec_id", "notes"]
@@ -822,6 +845,32 @@ def main() -> int:
             rec["fy25_actual_margin_pct"] = 100 * ACT.loc[[f"2025Q{n}" for n in (1, 2, 3, 4)], "adj_ebitda_musd"].sum() / ACT.loc[[f"2025Q{n}" for n in (1, 2, 3, 4)], "revenue"].sum()
             ann_rows.append(rec)
     ann = pd.DataFrame(ann_rows)
+
+    # --- R15 (WS22 discussion): M6's FY28 is WITHDRAWN -------------------------------------------
+    # The lag-0 growth spec carries positive intercepts (c_pd 0.147, c_sm 0.155), so four unanchored
+    # quarters compound discretionary spend at 15-19%/yr against 8-9% revenue growth and the margin
+    # erodes mechanically (FY28 31.33% against Street 37.65%). That is a structural warning, not a
+    # forecast. The FY28 rows are replaced in place by a FLAT roll-forward of the same
+    # (base, scenario, variant) FY27 margin, labelled; the withdrawn values keep their own file.
+    ann["fy28_basis"] = ""
+    ann["withdrawn_growth_model_margin_pct"] = np.nan
+    if (ann["fy"] == "FY28").any():
+        ann[ann["fy"] == "FY28"].to_csv(OUT / f"{SLUG}_fy28_withdrawn.csv", index=False)
+        fy27m = ann[ann["fy"] == "FY27"].set_index(["base", "scenario", "variant"])["adj_ebitda_margin_pct"].to_dict()
+        for i in ann.index[ann["fy"] == "FY28"]:
+            r = ann.loc[i]
+            m27 = fy27m.get((r["base"], r["scenario"], r["variant"]), np.nan)
+            ann.loc[i, "withdrawn_growth_model_margin_pct"] = r["adj_ebitda_margin_pct"]
+            ann.loc[i, "adj_ebitda_margin_pct"] = m27
+            ann.loc[i, "adj_ebitda_musd"] = (m27 / 100 * r["revenue"]) if np.isfinite(m27) else np.nan
+            for ln in LINES:
+                ann.loc[i, ln] = np.nan
+                ann.loc[i, f"{ln}_pct_rev"] = np.nan
+            ann.loc[i, "fy28_basis"] = (
+                "FLAT roll-forward of this row's FY27 margin (R15, WS22 discussion). The growth-model "
+                "value is in withdrawn_growth_model_margin_pct and in "
+                f"{SLUG}_fy28_withdrawn.csv and must NOT be quoted. For a FY28 level use M1's.")
+        print(f"  R15: FY28 replaced by a flat roll-forward on {int((ann['fy'] == 'FY28').sum())} rows")
     ann.to_csv(OUT / f"{SLUG}_annual_forecasts.csv", index=False)
 
     # break-even
@@ -834,6 +883,48 @@ def main() -> int:
                 be_rows.append(rec)
     be = pd.DataFrame(be_rows)
     be.to_csv(OUT / f"{SLUG}_fy26_floor_breakeven.csv", index=False)
+
+    # --- R11 (WS22 discussion): what the 3Q26 guidance-sentence clip does to the FY26 floor -------
+    # The 2Q26 letter caps 3Q26 margin at roughly the 3Q25 actual (50.09%). M6's engine puts 3Q26 at
+    # 51.2-51.6% on both bases. Clipping 3Q26 to the sentence removes ~0.50pp of FY26 margin and
+    # therefore most of the cushion M6 reported above the 35.5% floor; the break-even shortfall is
+    # rescaled by the same sensitivity. This table is what the card should quote.
+    ceiling_3q26 = float(ACT.loc["2025Q3", "adj_ebitda_margin_pct"])
+    sens = be[be["shortfall_on"] == "2H26"].set_index(["base", "variant"])[
+        "margin_sensitivity_pp_per_1pct_shortfall"].to_dict()
+    clip_rows = []
+    for (blabel, var), g in scen[scen["scenario"] == "base"].groupby(["base", "variant"]):
+        g = g.set_index("quarter")
+        if not {"2026Q3", "2026Q4"} <= set(g.index):
+            continue
+        r3, r4 = float(g.loc["2026Q3", "revenue"]), float(g.loc["2026Q4", "revenue"])
+        m3 = float(g.loc["2026Q3", "adj_ebitda_margin_pct"])
+        e3, e4 = float(g.loc["2026Q3", "adj_ebitda_musd"]), float(g.loc["2026Q4", "adj_ebitda_musd"])
+        rev26 = actual_1h26["revenue"] + r3 + r4
+        fy_model = 100 * (actual_1h26["adj_ebitda_musd"] + e3 + e4) / rev26
+        e3c = min(m3, ceiling_3q26) / 100 * r3
+        fy_clip = 100 * (actual_1h26["adj_ebitda_musd"] + e3c + e4) / rev26
+        k = sens.get((blabel, var), np.nan)
+        clip_rows.append(dict(base=blabel, variant=var, q3_model_margin_pct=m3,
+                              q3_sentence_ceiling_pct=ceiling_3q26, q3_clipped_margin_pct=min(m3, ceiling_3q26),
+                              q3_clip_musd=e3 - e3c, fy26_margin_model_pct=fy_model,
+                              fy26_margin_clipped_pct=fy_clip, fy26_floor_pct=FY26_FLOOR,
+                              cushion_model_pp=fy_model - FY26_FLOOR, cushion_clipped_pp=fy_clip - FY26_FLOOR,
+                              sensitivity_pp_per_1pct_2h26=k,
+                              breakeven_2h26_shortfall_model_pct=(fy_model - FY26_FLOOR) / k if k else np.nan,
+                              breakeven_2h26_shortfall_clipped_pct=(fy_clip - FY26_FLOOR) / k if k else np.nan,
+                              breakeven_2h26_shortfall_clipped_musd=((fy_clip - FY26_FLOOR) / k / 100 * (r3 + r4))
+                              if k else np.nan,
+                              note="3Q26 clipped to the 2Q26 letter's ceiling sentence (flat to slightly "
+                                   "down y/y vs 3Q25 50.09%); 4Q26 unclipped (no quarterly sentence in force)"))
+    clip = pd.DataFrame(clip_rows)
+    clip.to_csv(OUT / f"{SLUG}_guide_clipped_floor.csv", index=False)
+    _f = clip[(clip["base"] == base_label) & (clip["variant"] == "flex")]
+    if len(_f):
+        print(f"  R11 clip: FY26 {float(_f['fy26_margin_model_pct'].iloc[0]):.2f}% -> "
+              f"{float(_f['fy26_margin_clipped_pct'].iloc[0]):.2f}%, cushion "
+              f"{float(_f['cushion_clipped_pp'].iloc[0]):+.2f}pp, break-even "
+              f"{float(_f['breakeven_2h26_shortfall_clipped_pct'].iloc[0]):.2f}% of 2H26 revenue")
 
     # seasonal (part A i)
     seas = seasonal_table({k: v for k, v in bases.items()})
@@ -904,21 +995,35 @@ def main() -> int:
         print(f"  figure skipped: {e}")
 
     # ---- scoreboard -------------------------------------------------------------------------------------
-    print("  running score.py ...")
-    rc = subprocess.run([sys.executable, str(HARNESS / "score.py")], cwd=str(REPO), capture_output=True, text=True)
-    print(rc.stdout[-1500:])
-    if rc.returncode != 0:
-        print(rc.stderr[-3000:])
-        return rc.returncode
-    sb = pd.read_csv(MB / "10_harness_margin" / "scoreboard_margin.csv")
-    sb[sb["method"] == METHOD].to_csv(OUT / f"{SLUG}_scoreboard_rows.csv", index=False)
+    # WS22 discussion round: three agents re-run their packages concurrently, so score.py is run ONCE by
+    # the orchestrator afterwards. MARGIN_SKIP_SCORE=1 skips it here; the scoreboard copies below are then
+    # the previous scoring and are stale until the orchestrator re-scores.
+    if os.environ.get("MARGIN_SKIP_SCORE") == "1":
+        print("  MARGIN_SKIP_SCORE=1: skipping score.py (orchestrator re-scores once)")
+    else:
+        print("  running score.py ...")
+        rc = subprocess.run([sys.executable, str(HARNESS / "score.py")], cwd=str(REPO), capture_output=True, text=True)
+        print(rc.stdout[-1500:])
+        if rc.returncode != 0:
+            print(rc.stderr[-3000:])
+            return rc.returncode
+    sbp = MB / "10_harness_margin" / "scoreboard_margin.csv"
+    if sbp.exists():
+        sb = pd.read_csv(sbp)
+        sb[sb["method"] == METHOD].to_csv(OUT / f"{SLUG}_scoreboard_rows.csv", index=False)
+    else:
+        print("  scoreboard_margin.csv absent (harness mid-rebuild); keeping the previous scoreboard rows")
     # T3 from the by-quarter file
-    bq = pd.read_csv(MB / "10_harness_margin" / "scoreboard_by_quarter.csv")
-    t3 = bq[(bq["method"] == METHOD) & (bq["target"] == "adj_ebitda_margin_pct") & (bq["horizon_q"] == 0)
-            & (bq["prior_basis"] == "PIT") & (bq["quarter"].isin(SHOCK_2025))]
-    t3.to_csv(OUT / f"{SLUG}_test_T3_rows.csv", index=False)
+    bqp = MB / "10_harness_margin" / "scoreboard_by_quarter.csv"
+    if bqp.exists():
+        bq = pd.read_csv(bqp)
+        t3 = bq[(bq["method"] == METHOD) & (bq["target"] == "adj_ebitda_margin_pct") & (bq["horizon_q"] == 0)
+                & (bq["prior_basis"] == "PIT") & (bq["quarter"].isin(SHOCK_2025))]
+        t3.to_csv(OUT / f"{SLUG}_test_T3_rows.csv", index=False)
+    else:
+        print("  scoreboard_by_quarter.csv absent (harness mid-rebuild); keeping the previous T3 rows")
     json.dump({"built": f"{t0:%Y-%m-%d %H:%M:%S}", "n_forecast_rows": int(len(wide)), "n_registry_rows": int(len(long)),
-               "specs": list(SPECS), "main_spec": MAIN_SPEC, "engine_base": base_label, "k_main": k_main,
+               "specs": list(REGISTERED_SPECS), "oracle_specs_withheld": sorted(ORACLE_SPECS), "main_spec": MAIN_SPEC, "engine_base": base_label, "k_main": k_main,
                "k_lags_dl": {k: list(v) for k, v in k_lags.items()}, "cut_caps": CUT_CAPS, "fy26_floor": FY26_FLOOR,
                "fy27_target": FY27_TARGET, "cut_first_q": CUT_FIRST_Q},
               open(OUT / f"{SLUG}_build.json", "w"), indent=2)

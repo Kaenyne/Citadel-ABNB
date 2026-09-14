@@ -351,3 +351,142 @@ Third, if anyone acquires a *daily* Google Trends pull for the P1_peers payload 
 `build_qtd` in `run.py`; change the 21-day cut and the +8-day stamp); that is the single near-miss in the grid
 (IV 0.88-0.94) and the only route by which alt data could earn a place in the margin model before the 22-24 Oct
 finals. Everything else in the grid is noise and should stay in the drawer.
+
+---
+
+# Discussion response (WS22, 14 Sep 2026)
+
+Written by the group A discussion agent (M1 / M4 / M6). Everything above this line is the original note and was
+not edited. Findings addressed: **R01, R02, R03 (inherited), R08, R10, R11, R14, R17, R19**.
+Backups: `data/processed/margin_build/M4_alt_augmented/_pre_discussion/` and
+`data/processed/margin_build/registry/alt-augmented__*_pre_discussion.csv.bak`.
+Rebuild: `MARGIN_SKIP_SCORE=1 py -3.13 analysis/src/margin_build/M4_alt_augmented/run.py` (130 s, exit 0).
+`score.py` was **not** run; the orchestrator re-scores once.
+
+**Every M4 output is byte-identical to the pre-discussion build**, both registry files included
+(`cmp` on `alt-augmented__margin_aug.csv`, `alt-augmented__lines_aug.csv`, `_live_quarterly.csv`,
+`_annual_forecasts.csv`, `_signal_tests.csv`, `_placebo_summary.csv`). The only code change in this package is the
+`MARGIN_SKIP_SCORE` guard and a tolerant read of a missing scoreboard file. That identity is itself a result: it
+confirms that M1's R04 step gate does not touch the `b_elastic` base M4 imports, so M4's 50 tests, its 47 leakage
+placebos and its 1,000 random-series draws all stand exactly as written.
+
+## D1. R03 — "M4 inherits the oracle spec". REJECTED on the facts.
+
+The red team lists M4 as inheriting M1's oracle spec. It does not. M4's registered `spec_id`s are `none_rw`,
+`none_eq`, `best1_rw`, `best1_eq`, `ridge_all_rw`, `ridge_all_eq` and `surv_emp_computer_systems_design_rw`;
+a substring scan for `revknown` / `nightsknown` over both `alt-augmented__*.csv` files returns **0 rows**, and M4
+never calls M1's family-`e` path. M4's `none` spec is M1's `b_elastic`, which uses the PIT revenue leg. Nothing to
+fix. (M1's own oracle spec *has* been withdrawn from the registry — see M1's D2.)
+
+## D2. R11 — the LIVE 3Q26 ceiling breach. ACCEPTED; M4 adopts M1's reconciliation.
+
+M4's LIVE margin table is M1's by construction: `none_rw` 3Q26 **51.57%**, and every augmented spec is within
++0.15pp of it (`surv` 51.70, `best1_rw` 52.06, `ridge_all_rw` 51.50) against the 2Q26 letter's ceiling of
+**50.085%** and Street 49.776%. The defence that the quarterly sentence is sandbagged fails on the data
+(`q_guide_implied` realised gaps: W2 mean -0.19pp, median -0.94pp, 4 of 10 quarters above the sentence — see M1's
+D3), so the card number is the clipped **50.09% / $2,406M**, not 51.6%. M4 adds one thing here that M1 cannot: the
+augmentations move 3Q26 by at most **+0.49pp** (`best1_rw`) and the survivor by **+0.13pp**, so **no external
+series in the grid closes any part of the 1.49pp gap to the sentence.** The gap is a spending-level question, not
+an information question — which is the same conclusion M4 reached from the other direction.
+
+## D3. R14 — line wins are free. ACCEPTED; M4 raised it and it is now confirmed and sharpened.
+
+M4's own section 1 point 1 (best1 improves four of five lines and makes the margin worse) is confirmed by the red
+team's check 06 and generalises. Re-scored against `seasonal_naive_drift` rather than `seasonal_naive` (PIT, h=0;
+paired loss differentials with Newey-West(1) and a sign test; `analysis/src/margin_build/22_discussion_group_A/repro_drift.py`), `best1_rw`'s line "wins" mostly disappear too:
+
+| line | `best1_rw` ratio vs seasonal naive (W1) | vs **drift** (W1) | t | p | vs drift (W2) |
+|---|---|---|---|---|---|
+| cost of revenue | 0.381 | 0.836 | -1.21 | 0.23 | 0.768 |
+| operations and support | 0.773 | 0.917 | -0.42 | 0.67 | 0.860 |
+| product development | 0.315 | **1.032** | +0.12 | 0.90 | **1.104** |
+| sales and marketing | 0.371 | **1.088** | +0.39 | 0.70 | **1.032** |
+| G&A ex reserves | 0.702 | 0.918 | -0.63 | 0.53 | 0.988 |
+| **total cash costs** | 0.281 | **1.226** | +1.37 | 0.17 | **1.242** |
+| **adj EBITDA margin** | **1.087** | **1.019** | +0.13 | 0.90 | **1.068** |
+
+So the honest version of M4's warning is stronger than the one in section 1: **`best1` does not really improve
+four of five lines either — it improves them against a baseline that does not know the line is growing.** Against
+a drift naive it improves none of them at any conventional level, and it still makes the margin worse. The rule
+M4 proposed ("score cost-line work on the margin, not on the lines") should be amended to: **score cost-line work
+on the margin, and score lines against `seasonal_naive_drift`.**
+
+This also puts a number on the `ridge_all_eq` cell that WS20 might otherwise pick up: its margin ratio of 0.976
+(W1) / 0.920 (W2) against seasonal naive has t **-0.20** / **-0.52**, p **0.84** / **0.60**, and is better in
+7 of 14 and 5 of 10 quarters — on **37 free parameters against 14 backtest quarters**. It is not a result.
+
+### D3b. Addendum for WS20 open question 7: what margin-first selection would have picked
+
+The board asks whether `best1` churns signals by vintage and whether a shared signal would trade line accuracy
+for margin accuracy. **It does not churn**: the five picks are made once on the full-window h=0 recency-weighted
+line IV and held fixed at every vintage; only `c` is refit (`_best1_selection.csv`, `_coefs_by_vintage.csv`).
+And the margin damage is concentrated in **one** pick: the per-signal margin IVs (h=0, W1, rw) of the five
+selected signals are cor 1.011, ops 1.032, pd 1.018, ga 1.009 — and **sm `trends_qtd4_share_ww@0` 1.253**. The
+signal with the best *line* IV in the whole grid is, on its own, responsible for almost all of the composite's
+23% margin degradation, because S&M is the largest cash line ($730M of a $2,326M stack) and its error is
+**negatively** correlated with the rest of the stack. Improving it in isolation removes a hedge.
+
+Ranking each line's candidates by **margin** IV instead (50 real gated tests, placebos excluded):
+
+| line | n | best-on-margin | margin IV W1 / W2 | candidates < 1.0 in both windows |
+|---|---|---|---|---|
+| cor | 10 | `ppi_data_hosting@1` | 0.974 / 0.948 | 2 |
+| ops | 10 | `playstore_ratings_new_per_day@2` | **0.903 / 0.876** | 6 |
+| pd | 12 | `ahe_information@2` | 0.992 / 0.988 | 5 |
+| sm | 12 | `trends_airbnb_share_us@2` | **0.906 / 0.901** | 2 |
+| ga | 6 | `careers_open_roles@1` | 0.989 / 0.986 | 3 |
+
+A margin-selected composite would therefore land near 0.90-0.99 rather than 1.233. **We did not fit it**, and it
+should not be believed: the median margin IV over the 50 real tests is **1.010 / 1.011** and **18 of 50** are
+below 1.0 in both windows (36%, the coin-flip rate this note's own random-series placebo predicts for a
+two-window bar); it is a five-way best-of-6-to-12 in-sample selection on 14 quarters, which section 4(ii) prices
+at up to a **22.5%** false-positive rate; the two picks doing the work fail on economics (`playstore` on ops is
+wrong-signed at both leads, and `trends_airbnb_share_us@2` is the lagged Trends series section 3 shows is worth
+nothing once knowable); and it would be a post-hoc spec added after seeing the grid — the failure mode R05 caught
+in M3. If it is fitted before the finals it needs its own pre-registration, its own best-of-k placebo and a
+paired p-value.
+
+## D4. R01, R02, R08, R10, R17, R19 — accepted as quoting rules.
+
+- **R01 / R02.** Reproduced on M4's cells (`22_discussion_group_A/groupA_paired_tests.csv`), h=0, PIT, vs seasonal naive: `none_rw`
+  t +0.07 / -0.14 (W1 / W2), `ridge_all_eq` -0.20 / -0.52, `surv_...` +0.02 / -0.14, `best1_rw` **+0.57 / +0.52**
+  (worse). Every W1 p >= 0.39. M4's conclusion was already a negative result, so nothing is withdrawn; but the
+  survivor row's `rw_survives_both_windows = yes` in section 5's table must always be quoted with its
+  **t +0.02, p 0.98, better in 6 of 14** and with the 5.5% / 22.5% placebo false-positive rate that section 4
+  already reports. M4 is the one method in the run whose placebo machinery *prices* R01 rather than being caught
+  by it: the random-series draws say a pass line like the scoreboard's fires on noise 2.5-22.5% of the time
+  depending on the line, which is the same order as the red team's 30% survivor null.
+- **R08.** No M4 cell rests on n < 8, except the `pd | careers_open_roles@2` row, where the **signal term is
+  present in only 2 of the 14 W1 quarters** — section 3 already says so and says it is untestable. Agreed that the
+  scoreboard should carry n beside the flag.
+- **R10.** Confirmed; M4 flagged it first ("cov80 0.93-1.00 and cov90 1.00 for every spec — an M1 issue, not an M4
+  one, flagged for the red team"). ACCEPT-DEFER: the augmentations inherit M1's over-dispersed Gaussian bands, so
+  M4's quantiles should not be quoted either.
+- **R17.** Accepted, and it matters more for M4 than for anyone else: the reason a lead-0 quarterly signal can
+  never be knowable at h=0 is exactly the same convention. Section 0's lead structure already encodes it.
+- **R19.** M4's pre-registration is at commit `fdf3447`, before the results. No action.
+
+## D5. What M4 now claims
+
+Unchanged in substance, with two amendments. **There is no external dataset in our reach that improves the 3Q26
+margin call.** Fifty pre-registered point-in-time tests under a strict `knowable_from` gate produced one survivor
+(G&A on computer-systems-design employment, lead 2, IV 0.895-0.898), which the random-series placebo says fires
+on noise 5.5% of the time per G&A test and 22.5% under best-of-5 selection; across 50 tests the null expects 1.0
+false positives and we observed 1. It moves the margin MAE by 0.6% (W1) and 0.1% (W2) and the 5 Nov quarter by
++0.13pp. The two amendments: (a) the composite result is stronger than stated — against a drift baseline `best1`
+improves **no** line, not four of five; (b) M4's LIVE margin table is M1's and therefore carries M1's clipped
+3Q26 of 50.09%, not 51.57%. The WS04 Trends-to-S&M relationship still does not survive knowability
+(lead 0 gate-off 0.83-0.85, knowable lead 1 1.02-1.08, honest quarter-to-date 0.88-0.94, fails the equal-weighted
+leg) and the interest-income hand-off to M7 (avg earning base x tbill3m x 0.862) still checks to the dollar in 2Q26.
+
+## D6. Recommended WS23 weights for M4's objects
+
+| object / use | weight | why |
+|---|---|---|
+| **The negative result itself** ("no alt-data edge on margins"; 50 tests, 47 leakage placebos, 1,000 random draws) | **1.0** | the best-evidenced statement in the run and the one that keeps the pitch honest under questioning |
+| The false-positive priors (single test 0.5-5.5%, best-of-5 2.5-22.5%, margin IV 1.01-1.05 for a noise regressor) | **1.0** | the only calibrated prior anyone in this run has for "an unvalidated cost regressor" |
+| `margin_aug` / `lines_aug` as **forecasts** (any spec) | **0** | `none` is M1 (already weighted there); `best1` and `ridge_all` are worse on the margin and worse against drift |
+| `surv_emp_computer_systems_design_rw` | **0** | registered, and explicitly not recommended by its own author |
+| Alt-data margin overlay for 3Q26-4Q27 | **0.00pp** | unchanged |
+| Interest-income rule (0.862 x T-bill x earning base) | **1.0**, but it belongs to M7 | verified to the dollar in 2Q26 |
+| M4 quantiles | **0** | inherited from M1 and over-dispersed |

@@ -1,0 +1,27 @@
+{
+  "built": "2026-09-13 23:41:36",
+  "n_forecast_rows": 1414,
+  "n_registry_rows": 9632,
+  "specs_registered": [
+    "none_rw",
+    "none_eq",
+    "best1_rw",
+    "ridge_all_rw",
+    "best1_eq",
+    "ridge_all_eq",
+    "surv_emp_computer_systems_design_rw"
+  ],
+  "n_tests": 50,
+  "n_placebo_specs": 47,
+  "n_random": 1000,
+  "survivors": [
+    "ga|emp_computer_systems_design@2"
+  ],
+  "best1": {
+    "cor": "event_E02_cor_cash@1",
+    "ops": "emp_business_support_services@1",
+    "pd": "careers_open_roles@2",
+    "sm": "trends_qtd4_share_ww@0",
+    "ga": "emp_computer_systems_design@2"
+  }
+}

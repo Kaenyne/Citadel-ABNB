@@ -17,6 +17,7 @@ from __future__ import annotations
 import datetime as _dt
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 import warnings
@@ -711,14 +712,24 @@ def main() -> int:
         print(f"  figure skipped: {e}")
 
     # ---- scoreboard --------------------------------------------------------------------------------
-    print("  running score.py ...")
-    rc = subprocess.run([sys.executable, str(HARNESS / "score.py")], cwd=str(REPO), capture_output=True, text=True)
-    print(rc.stdout[-1500:])
-    if rc.returncode != 0:
-        print(rc.stderr[-3000:])
-        return rc.returncode
-    sb = pd.read_csv(MB / "10_harness_margin" / "scoreboard_margin.csv")
-    sb[sb["method"] == METHOD].to_csv(OUT / "M4_alt_augmented_scoreboard_rows.csv", index=False)
+    # WS22 discussion round: three agents re-run their packages concurrently, so score.py is run ONCE by
+    # the orchestrator afterwards. MARGIN_SKIP_SCORE=1 skips it here; the scoreboard copy below is then
+    # the previous scoring and is stale until the orchestrator re-scores.
+    if os.environ.get("MARGIN_SKIP_SCORE") == "1":
+        print("  MARGIN_SKIP_SCORE=1: skipping score.py (orchestrator re-scores once)")
+    else:
+        print("  running score.py ...")
+        rc = subprocess.run([sys.executable, str(HARNESS / "score.py")], cwd=str(REPO), capture_output=True, text=True)
+        print(rc.stdout[-1500:])
+        if rc.returncode != 0:
+            print(rc.stderr[-3000:])
+            return rc.returncode
+    sbp = MB / "10_harness_margin" / "scoreboard_margin.csv"
+    if sbp.exists():
+        sb = pd.read_csv(sbp)
+        sb[sb["method"] == METHOD].to_csv(OUT / "M4_alt_augmented_scoreboard_rows.csv", index=False)
+    else:
+        print("  scoreboard_margin.csv absent (harness mid-rebuild); keeping the previous scoreboard rows")
     json.dump({"built": f"{t0:%Y-%m-%d %H:%M:%S}", "n_forecast_rows": int(len(wide)), "n_registry_rows": int(len(long)),
                "specs_registered": reg_ids, "n_tests": int((tests["kind"] == "test").sum()),
                "n_placebo_specs": int((tests["kind"] != "test").sum()), "n_random": N_RANDOM * len(LINES),

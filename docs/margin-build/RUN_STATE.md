@@ -49,13 +49,15 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | opus | 10 | done | 05:15 | notes/M7_below_ebitda.md | 15:05 |
 | 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | done | 23:00 | notes/20_scoreboard.md | 00:35 |
 | 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | done | 22:30 | notes/21_red_team.md | 23:55 |
-| 22 | Discussion round: three Opus agents (A: M1/M4/M6, B: M2/M3, C: M5/M7/10) answer the red team now and the scoreboard when it lands; orchestrator concatenates discussion/group_*.md into DISCUSSION.md and re-runs score.py once | opus | 21 (+20 for part 2) | running | 00:15 | DISCUSSION.md | 00:15 |
-| 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | pending | | SYNTHESIS.md | |
+| 22 | Discussion round: three Opus agents (A: M1/M4/M6, B: M2/M3, C: M5/M7/10) answer the red team now and the scoreboard when it lands; orchestrator concatenates discussion/group_*.md into DISCUSSION.md and re-runs score.py once | opus | 21 (+20 for part 2) | done | 00:15 | DISCUSSION.md | 01:50 |
+| 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | running | 01:50 | SYNTHESIS.md | 01:50 |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | pending | | audit/CODEX_ASTRA_AUDIT.md | |
 | 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | pending | | audit/AUDIT_RESPONSE.md | |
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 15 Sep 01:50 WS22 done: three group files assembled into DISCUSSION.md; score.py and 20_scoreboard/run.py re-run once (exit 0). 3Q26 converges on the 50.09% ceiling (49.4-50.1%); M5 dollar flow-through, M3 allocation and M6 cost-of-revenue slope survive significance; nov_sentence_pin registered (4Q26 29.9%). WS23 triangulation launched (Opus).
 
 - 14 Sep 00:35 WS20 DONE (relaunch). All seven method `run.py` plus the harness rebuild exit 0 (runtimes 11-226 s;
   `data/processed/margin_build/20_scoreboard/20_runpy_status.csv`); `score.py` re-run alone from clean, exit 0, 141 s.

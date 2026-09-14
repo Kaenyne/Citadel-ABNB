@@ -1,15 +1,17 @@
 {
-  "built": "2026-09-13 23:38:22",
+  "built": "2026-09-13 23:54:56",
   "ws06_wide": "06_revenue_path_3q26_4q27_v2b.csv",
   "n_forecast_rows": 2020,
-  "n_registry_rows": 9632,
+  "n_registry_rows": 8256,
   "specs": [
     "a_unit_rw",
     "a_unit_eq",
     "b_elastic_rw",
     "b_elastic_eq",
     "c_mix_rw",
-    "d_steps_rw",
+    "d_steps_rw"
+  ],
+  "oracle_specs_withheld": [
     "e_revknown_rw"
   ],
   "main_spec": "b_elastic_rw"
