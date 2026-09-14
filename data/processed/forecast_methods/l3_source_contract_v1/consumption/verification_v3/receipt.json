@@ -1,0 +1,127 @@
+{
+  "timestamp_utc": "2026-09-14T04:54:46.797914+00:00",
+  "commands": [
+    {
+      "name": "tests",
+      "command": [
+        "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "pytest",
+        "analysis/src/forecast_methods/l3_source_contract_v1/consumption/test_consumption.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "27c0df2cc629f2382fcbb09393ae5e9830562599d41cf6d7599a75890170c40d"
+    },
+    {
+      "name": "canonical",
+      "command": [
+        "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "analysis/src/forecast_methods/l3_source_contract_v1/consumption/run.py",
+        "--out",
+        "data\\processed\\forecast_methods\\l3_source_contract_v1\\consumption\\results_v3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4c172900cfa049332f812f60ced6210c66b438223b37b30e3106a34a94970371"
+    },
+    {
+      "name": "rebuild",
+      "command": [
+        "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "analysis/src/forecast_methods/l3_source_contract_v1/consumption/run.py",
+        "--out",
+        "data\\processed\\forecast_methods\\l3_source_contract_v1\\consumption\\results_verify_v3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4c172900cfa049332f812f60ced6210c66b438223b37b30e3106a34a94970371"
+    }
+  ],
+  "rebuild_checks": [
+    {
+      "path": "consumption_matrix.csv",
+      "sha256": "e01442ae80e0e203a93541c5dd40485a8be4edbba09c60b31b3dd007a3220ae1",
+      "byte_identical": true
+    },
+    {
+      "path": "existing_data_inventory.csv",
+      "sha256": "76656e0ac0a5011d1e382cffbd3e868aa11d61336be3f2492e468498c12ebf2f",
+      "byte_identical": true
+    },
+    {
+      "path": "guide_basis_audit.csv",
+      "sha256": "a99fe11a8bfeb12cae54999b09596f4f84f4290ffb6b7e5ee7719b7af5ce8585",
+      "byte_identical": true
+    },
+    {
+      "path": "information_gaps.csv",
+      "sha256": "feadf5c167a0b82cc26eefb35444349680765bad1a44f1d649ee2930d0d6bdc5",
+      "byte_identical": true
+    },
+    {
+      "path": "interface_audit.csv",
+      "sha256": "db9f1126c7b974fe30fa9558d10f7c89c14d4dc1f2ebc9dd821eee258df84fd2",
+      "byte_identical": true
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "8243dc27810af147d4333bd25bc9331f76bceec8bcab66690f0a524a0ff1e374",
+      "byte_identical": true
+    },
+    {
+      "path": "source_manifest.csv",
+      "sha256": "885db7f8c3935cd7b21bbe4b872bd9600b2bca60624c20f5f764e473c0640d5a",
+      "byte_identical": true
+    },
+    {
+      "path": "summary.json",
+      "sha256": "1794a00244eec81eeafcfb2ef486d9e26fb52bc9c8e875966bcfee9c5877bbfc",
+      "byte_identical": true
+    }
+  ],
+  "all_original_cells_and_statuses_preserved": true,
+  "classification_changes_from_v2": [
+    {
+      "package": "fee_panel",
+      "scenario": "sep",
+      "fields": [
+        "exact_additional_inputs",
+        "dependency_contract"
+      ]
+    },
+    {
+      "package": "fee_panel",
+      "scenario": "oct",
+      "fields": [
+        "exact_additional_inputs",
+        "dependency_contract"
+      ]
+    }
+  ],
+  "code": [
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\freeze_evidence.py",
+      "sha256": "f69cb5e7b11aef548ae3894a365d261b36c5cc8eb02cc86d212b2722b412ec87"
+    },
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\README.md",
+      "sha256": "053d0532309d0655d8bf29a7971435ed8517b586beb9f0735d5e2b862b80f172"
+    },
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\run.py",
+      "sha256": "f2900e2d4ab065c0cf7914f46d969c9bc71325c8908569d0f155d2eb1ea86058"
+    },
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\test_consumption.py",
+      "sha256": "2acaeb79bac29bcb518d232d4a7c3893128577d67dbfa84fbb41da89eb183d6e"
+    }
+  ]
+}

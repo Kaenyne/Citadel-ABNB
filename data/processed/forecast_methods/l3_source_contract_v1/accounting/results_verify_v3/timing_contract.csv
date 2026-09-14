@@ -1,0 +1,10 @@
+event,fact_ids,ledger_object,event_clock,not_identified,review_date,observation_vs_assumption
+booking,Q01;Q02,GBV flow,booking quarter,gross booking-cohort matrix and reservation-level booking date,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+cancellation_processing,Q01;Q08,GBV/nights current-period reductions,cancellation or alteration processing quarter,original booking-cohort membership and incremental surviving-fee effect,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+guest_cash_receipt,Q03;K04,cash and unearned-fee stock,actual payment date,RNPL revenue-cohort receipt distribution; no equality to recognition assumed,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+contractual_currency_fixing,K07,economic currency exposure,contract-specific fixing event unavailable,payment date or recognition date does not prove fixing rule,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+host_settlement,K04;K07,customer payable/cash settlement,after check-in; transaction date unavailable,currency mismatch P&L mapping and settlement schedule,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+short_stay_recognition,K01;K03,net service-fee revenue flow,check-in,transaction/fee allocation ledger,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+long_stay_recognition,K02;K03,monthly net service-fee revenue flow,initial check-in and later monthly anniversaries,monthly-contract allocation; not entire lifetime fee at first check-in,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+FX_translation_and_remeasurement,K05;K06,"reported income, AOCI or other income/expense",functional-currency and line-item policy,line-by-entity reconciliation; no universally FX-clean consolidated backlog line,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
+hedge_reclassification,Q05;Q06;Q07,revenue hedge component,hedged transaction earnings period,future-quarter release schedule and inherited-lambda hedge decomposition,2026-09-14,disclosed_event_policy;transaction_dates_unavailable
