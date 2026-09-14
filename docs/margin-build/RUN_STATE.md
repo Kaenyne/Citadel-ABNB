@@ -49,13 +49,15 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | M7 | Below-EBITDA bridge: SBC, D&A, interest income, tax, share count, EPS; FCF bridge; backtests | opus | 10 | done | 05:15 | notes/M7_below_ebitda.md | 15:05 |
 | 20 | Scoreboard: all methods and baselines, both windows, equal and recency weighted, coverage, parameter counts, error correlations | opus | M1-M7 | running (relaunched 23:20 after a stream stall) | 23:00 | notes/20_scoreboard.md | 23:20 |
 | 21 | Red team: leakage/PIT audit, overfitting, kill-list compliance, for every method | opus | M1-M7 | done | 22:30 | notes/21_red_team.md | 23:55 |
-| 22 | Discussion round: orchestrator sends 20+21 to each method agent for rebuttal/adjustment; collected in DISCUSSION.md | orchestrator | 20, 21 | pending | | DISCUSSION.md | |
+| 22 | Discussion round: three Opus agents (A: M1/M4/M6, B: M2/M3, C: M5/M7/10) answer the red team now and the scoreboard when it lands; orchestrator concatenates discussion/group_*.md into DISCUSSION.md and re-runs score.py once | opus | 21 (+20 for part 2) | running | 00:15 | DISCUSSION.md | 00:15 |
 | 23 | Triangulation: final combined model, quarterly forecasts 3Q26-4Q27 + FY28, vs consensus and management, cyclicality, scenarios, workbook, SYNTHESIS.md | opus | 22 | pending | | SYNTHESIS.md | |
 | 30 | Codex (gpt-6-astra) read-only audit of the final model | codex | 23 | pending | | audit/CODEX_ASTRA_AUDIT.md | |
 | 31 | Apply the audit: triage, fix, re-run, re-score, record accept/reject | opus | 30 | pending | | audit/AUDIT_RESPONSE.md | |
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | pending | | MORNING_REPORT.md | |
 
 ## Log
+
+- 15 Sep 00:15 WS21 red team done and committed (890afeb): 27 findings (2 critical, 14 major), all PIT rules pass mechanically, but survives_both_windows is ~30% free and only M5's dollar flow-through beats the Street at p<0.05. Discussion round launched early as three Opus agents (prompt 22_discussion.md) so it overlaps WS20; original method agents are not addressable after the session change.
 
 - 14 Sep 23:55 WS21 red team DONE (M1-M7 + M5 + harness; 10 reproducible checks under
   `analysis/src/margin_build/21_red_team/checks/`, `run.py` exit 0 in ~50 s; 27 findings in
