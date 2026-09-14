@@ -1,0 +1,3 @@
+# Publication audit
+
+Read-only Git-object scanner for the user-authorized branch push. Run `run.py --out <fresh quant publication audit data directory> --remote-ref <exact advertised commit> ...` from the worktree root. Supply all currently advertised remote branch commit IDs from `git ls-remote --heads origin`, after fetching those objects. Exact completed command and refs are recorded in the audit note/receipt. The tool scans outgoing intermediate blobs as well as final files, records sizes/hashes, and reports candidate sensitive paths/patterns without printing matching values. Manually adjudicate any flags; an automated pattern pass is not proof of absence. It never pushes, commits, accesses credentials or changes existing files.
