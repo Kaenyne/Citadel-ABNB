@@ -1,0 +1,31 @@
+# L4 integration v2 — definitions and acceptance fixed before calculation
+
+Execution date 14 September 2026; frozen information snapshot 13 September 2026. Starting baseline commit `29b2d9ae2d66da5f1f5086ba7dc36e4c2d96ab70`; accepted L3 bundle-containing commit `8821961853e4068febbfe2712f9a4e1036c9e629`. This is integration and propagation, not a competing conversion or investment-thesis validation programme.
+
+## Source and adoption boundary
+
+Extract the exact bundle Git objects into a new L4 source directory and verify all 108 file hashes, the supplied manifest hash, and committed source lineage. Recompute acceptance-receipt bindings against actual objects and distinguish byte preservation from statistical replication. Every research row receives an integration disposition and reason. No changing L3 worktree input or optional supplement is accepted without a separately supplied explicit commit and source/review checks.
+
+Conversion validation is complete. Free-weight promotion failed both matched chronological windows; preserve K0's existing fixed 2/3 weight and seasonal estimation policy. All22 free/fixed OLS parameters and their joint draws are descriptive evidence, not production replacements. Read existing uncertainty and sensitivity outputs without refitting or manufacturing independent parameter bounds.
+
+## Economic definitions
+
+1. Preserve baseline Q4 revenue, guide and cushion unless an accepted source or explicit coherent scenario changes them. Reconcile each dollar change by GBV, conversion, FX/hedge, overlap treatment or cushion. Q3 guidance is already issued; Q4 guidance is a future object. Keep their timing distinct.
+2. Primary observed expectations comparison is own revenue minus separately dated vendor revenue consensus. Explicit expectations for management's guide remain unavailable unless directly sourced. Own guide versus Street revenue is a different-object diagnostic, not a surprise signal. A hypothetical Street guide may be calculated as Street revenue divided by 1 plus an explicitly assumed Street cushion, with a separate evidence status.
+3. Report coherent named operating/conversion/cushion scenarios, preserving joint parameter pairs if descriptive fitted-model uncertainty is shown. Do not independently combine marginal w/lambda bounds. Do not sum overlapping FX, fee, residual, cancellation or RNPL effects. Scenario envelopes are not confidence intervals; letter-close conversion errors omit today's unprinted GBV and future cushion uncertainty.
+4. Cohort retiming is eligible for financial application only if the source multiplier numerator/denominator, reference-currency GBV and recognized-revenue share denominator match the baseline. For a verified pre-hedge multiplier m, use R_new=m*(R-H)+H_new; both H and H_new need explicit accounting meaning. H_new=H is a named unchanged-hedge assumption. Missing hedge or cohort inputs are not zero. An after-hedge ratio cannot be silently recast as pre-hedge. Rejected/unavailable central FX inputs may remain a separately disclosed illustrative net-revenue sensitivity, not an identified effect.
+5. Use 13 September 2027 as the conditional 12-month valuation date from the frozen 13 September 2026 information snapshot. FY27 cash/share flows may be interpolated from the prior year-end with an explicit uniform-within-year assumption, using the exact calendar fraction, while the inherited EV/FY27 EBITDA multiple remains a visible conditional assumption. Preserve the December 2027 value as a separately labelled later-date comparison. Neither is an adopted target. Do not apply the unvalidated +0.48 relation or unsupported scenario probabilities.
+
+Scenario-design clarification before the new joint-scenario outputs: a fixed-weight seasonal conversion stress of plus/minus 0.10 percentage point is an explicit assumed stress size, not a fitted coefficient interval. It may be combined with a named GBV replacement and cushion choice in a coherent deterministic scenario. A generic net-revenue FX sensitivity is isolated, because adding it to a conversion stress could count the same FX/cancellation uncertainty twice. Existing 1,000 free-weight parameter tuples are propagated intact only in a separate descriptive appendix at the reference operating/cushion assumptions; that rejected candidate's ranges are not production scenarios or K0 prediction intervals.
+
+## Implementation acceptance
+
+- All original tracked files and accepted source bytes remain unchanged. New output IDs refuse overwrite; scoped new Git attributes preserve checksum bytes.
+- Source row dispositions, eligibility decisions and all benchmark/scenario dollars are auditable. Same-basis gaps and hypothetical guide arithmetic independently reproduce within $0.001 million; forecast dollar reconciliation is below $0.001 million.
+- Workbook formulas recalculate without errors/external links and tie independently to Python outputs within $0.001 million/$0.001 per share. Horizon cash/share timing and stale-case detection are tested. No duplicated legacy revenue construction.
+- Memo is exactly two readable pages with editable source; each page is rendered and visually inspected. Card and decisions distinguish observed inputs, conditional calculations, descriptive validation, comparators and unavailable/rejected evidence. Conversion acceptance wording is precise; FX identification and investment adoption remain separate.
+- Independent reviewers check provenance, numerical/economic propagation and final artifact claims; demonstrated findings are repaired. Existing test suites are not broadly repeated without changed dependencies. If genuinely new forecast objects are registered, use a new method identity and actual dates, then run both unchanged scorers to new snapshots and verify all historical scores exactly as required. Do not register identical numbers merely because labels are corrected.
+
+## RESUME
+
+Finish all available integration from the explicit L3 bundle. A missing source-contract supplement or unidentified empirical input affects only its own eligibility or claim. Preserve negative evidence, limited scenarios, all prior L4 artifacts and the publication block. Parent commits the new local work after independent review; no public push, merge, teammate outreach or signed investment decision.

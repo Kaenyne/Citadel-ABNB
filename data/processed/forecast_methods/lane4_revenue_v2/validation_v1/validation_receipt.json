@@ -1,0 +1,59 @@
+{
+  "commands": [
+    {
+      "name": "tests",
+      "command": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "analysis/src/forecast_methods/lane4_revenue_v2/tests",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "rebuild",
+      "command": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "analysis/src/forecast_methods/lane4_revenue_v2/run.py",
+        "--output",
+        "data/processed/forecast_methods/lane4_revenue_v2/rebuild_01"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "overwrite_refusal",
+      "command": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "analysis/src/forecast_methods/lane4_revenue_v2/run.py"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "future_vintage_refusal",
+      "command": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "analysis/src/forecast_methods/lane4_revenue_v2/run.py",
+        "--as-of",
+        "2026-09-14",
+        "--output",
+        "data/processed/forecast_methods/lane4_revenue_v2/refused_future"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "tests_passed": 49,
+  "snapshot_hashes_verified": 30,
+  "stable_rebuild_files": 29,
+  "all_stable_rebuild_files_byte_identical": true,
+  "overwrite_refusal_preserved_snapshot": true,
+  "future_vintage_refused_before_directory_creation": true,
+  "failures": "none; development_run_01 retained successful; expected refusals logged",
+  "snapshot_sha256": "517ca9badf1200e4eef3955abcd9766c1ace7216d909858970ed9b87fbbd5f83"
+}

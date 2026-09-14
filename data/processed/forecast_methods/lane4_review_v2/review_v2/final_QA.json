@@ -1,0 +1,134 @@
+{
+  "status": "FINAL_ARTIFACT_QA_PASS_UNSIGNED",
+  "model_workbook": "model\\lane4_v2\\outputs\\lane4_model\\snapshot_v2\\ABNB_L4_review.xlsx",
+  "model_workbook_sha256": "882b6d7b321d2f791fecc9b1d7ec57265b5e2fdcedd705326ee7bd3ee9ce6f92",
+  "model_snapshot": "snapshot_v2",
+  "review_version": "review_v2",
+  "memo_pages": 2,
+  "exhibit_pages": 3,
+  "visual_QA": "Both final memo pages and all3 appendix pages inspected; no clipping, missing text or cropped limits",
+  "review_tests": 18,
+  "ledger_rows": 1767,
+  "unchanged_L3_dispositions": 1187,
+  "decisions": 13,
+  "card_rules": 12,
+  "independent_reviews": [
+    {
+      "path": "data/processed/forecast_methods/lane4_control_v2/export_review_v2.json",
+      "sha256": "32f5305b3428c6de9b844c6f8801d7be3f05d116e1f4a65ea5f6f23e178ee373"
+    },
+    {
+      "path": "data/processed/forecast_methods/lane4_sources_v2/artifact_review_final_v1/receipt.json",
+      "sha256": "e4bea0affcf445b3c07a0a996565c8feb16cc8f7c73dc3cc8ea896779c49ce2c"
+    },
+    {
+      "path": "docs/revenue-forecast-strategy/05_backtests/L4_INDEPENDENT_REVIEW_v2.md",
+      "sha256": "2608569470332e1214fd504a4075d874aa7c394fe5cbef5bc9aa666f18c8200b"
+    },
+    {
+      "path": "docs/revenue-forecast-strategy/05_backtests/L4_ARTIFACT_EVIDENCE_REVIEW_v2.md",
+      "sha256": "52c9b4b2283cf5c18368e9d79363cad547232a52fb9a134f0300fdfa622b0d9f"
+    }
+  ],
+  "known_notice": "Poppler font fallback notices with exit0; no visible missing glyphs",
+  "source_code": [
+    {
+      "file": ".gitattributes",
+      "sha256": "f06202a408fef9b9ea69bb6b1cb8160dbb0378c5bb67a444d510d231813824c8"
+    },
+    {
+      "file": ".gitignore",
+      "sha256": "a51104264729e7b362ea8c739de0ada29ba6e4f6047580ec3a3fd330ad20fd47"
+    },
+    {
+      "file": "README.md",
+      "sha256": "a384571c0dba8c9953edb2566e904c93ac2fb15595cca5e8ed7d9430c21e54dc"
+    },
+    {
+      "file": "render.py",
+      "sha256": "0cbbc4135545b657b3027c2ccde74ecb3b40a9bfe40f6c51bb68683f082aae9b"
+    },
+    {
+      "file": "run.py",
+      "sha256": "387741431e8550a1468c9e48dce1e22d59e1a6c2c857e77e0337c7c4ac328560"
+    },
+    {
+      "file": "scoring.py",
+      "sha256": "5ea92889c1b77247bd7b0efe6e64ba0639943b43ce30812d06c38a8522f16a61"
+    }
+  ],
+  "final_outputs": [
+    {
+      "file": "01_seasonal_conversion.png",
+      "sha256": "52ffcb5cef1e965127370afca0d233d0de57efeed8dd369e98e662823a7642ac"
+    },
+    {
+      "file": "01_seasonal_conversion.svg",
+      "sha256": "851d5cee2aca6204aabbaeba3d3144c2ee40f896ab0773bb4a3763f7f48c59fe"
+    },
+    {
+      "file": "02_weight_identification.png",
+      "sha256": "70664777090d6c6ead68763878c126d4591893b5725c2a785884c33761f0b27b"
+    },
+    {
+      "file": "02_weight_identification.svg",
+      "sha256": "cfa380225529c79283e14259248002f16efa92d83de457058b49e76e2d568350"
+    },
+    {
+      "file": "03_chronological_validation.png",
+      "sha256": "89b39cb8527bdd531caba51b7c50e9939254b43c6bbb25e537217f74acd72248"
+    },
+    {
+      "file": "03_chronological_validation.svg",
+      "sha256": "e0322de126adef6d857401cd944ac296e77aa04590fa78217e60a2343e5ca2e4"
+    },
+    {
+      "file": "accepted_L3_exhibits.pdf",
+      "sha256": "da5636822a00075e9692adb8adb602d4b503525393f0765ac71bdfc3942a6db3"
+    },
+    {
+      "file": "decision_register.csv",
+      "sha256": "e353b7250c925c3aa46767a8efde368a17f949a333745c8603af518d85fbf69f"
+    },
+    {
+      "file": "decision_register.md",
+      "sha256": "079d4d481a0ace4af8df71f1baeccc073e6b84dcd334136055cb7008c8dd7c88"
+    },
+    {
+      "file": "financial_scenarios.csv",
+      "sha256": "c3a640fda7789e23708fdaae8875f7a3cd104d873a14a18ea716ad0d1290a51a"
+    },
+    {
+      "file": "rejected_free_weight_descriptive_extremes.csv",
+      "sha256": "db2803fd57325fcc83b89dc4673ba5019d37e70583f83742f5b0b24693062f49"
+    },
+    {
+      "file": "review_memo.md",
+      "sha256": "f7603c8eefe56a2396c56258a946e5e79803eed07729d60391e2cd882739d0ab"
+    },
+    {
+      "file": "review_memo.pdf",
+      "sha256": "53e102eeca2dcda418368924cacb9a28486f3274332ba0b06fc804a6b1fe0187"
+    },
+    {
+      "file": "same_basis_expectations.csv",
+      "sha256": "d1588d403a7771db5eb4ee65fd52e40503cfaf524ffef320d68f0c23069280a9"
+    },
+    {
+      "file": "source_assumption_ledger.csv",
+      "sha256": "ed17a52d3ab1f2de68d8aed3f372c50b95215f0e84132fc442ef5e78658f6bab"
+    },
+    {
+      "file": "unsigned_card.csv",
+      "sha256": "c1026f83f047837cd0e564c4c265b9fd7bfedfa658ea94251369c7d1d37a758c"
+    },
+    {
+      "file": "unsigned_card.json",
+      "sha256": "c1c48a0c51d403004a007815183c209f29a33439fd01daf6de2978c88bae2c2b"
+    },
+    {
+      "file": "unsigned_november_card.md",
+      "sha256": "beda7d4ee84f3c3ee824193bf6c5a526435a3dc890b8cb4fa9974b4a26c1a821"
+    }
+  ]
+}
