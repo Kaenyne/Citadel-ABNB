@@ -101,6 +101,7 @@ setup.
 | 4. RNPL destroys the float | **KEEP — strongest measured leg** |
 | 5. Vacation destinations rolling over | ❌ **DROPPED** — fails four tests, see below |
 | 6. Hotel share ceiling | ⚠️ **CUT — this is a long argument** |
+| 7. Macro: front end down, long end up | **KEEP — the transmission channel for leg 4** |
 
 
 
@@ -245,6 +246,76 @@ if asked in Q&A, concede the share gain is real and pivot to the lap.
 Same verdict on the party-size slide (Airbnb ~6% of solo lodging demand vs ~31% of 5+ parties,
 confirmed in four datasets): interesting, not a catalyst, and not in the model — the switch-rate
 machinery moved 2030 nights by 2.1% across its entire plausible range.
+
+
+### Leg 7 — the macro that actually applies  [NEW, and it is the transmission channel for Leg 4]
+
+Built and reproducible: `analysis/src/macro_short_legs_q3q4.py`.
+
+**First, the screening result that reframes the whole pitch.** Regressing the 1-day excess return on
+the beat-vs-consensus and the guide (`abnb_reaction_regression.csv`, n=18): **R² 0.052, adjusted R²
+−0.074, beat coefficient p = 0.35.** Every specification has a *negative* adjusted R² and nothing
+clears p = 0.35. A short built on "they miss nights by two points" has **no measured historical link
+to this stock moving.** That is not an argument against the nights work — it is an argument that the
+macro and valuation legs are where the edge is, not decoration on top of it.
+
+**Second, macro is the biggest single driver of big moves, but ABNB has no macro of its own.** Of 41
+daily moves ≥7% since the IPO, **20 were macro/market** — the largest bucket. On those days
+**ABNB = 1.79 × QQQ, corr 0.88, 2.4× amplification in absolute terms.** It is a high-beta expression
+of the tape. And the regime matters: **14 of the 20 were the 2022 hiking cycle, 2 were the April 2025
+tariff days, and there were zero in 2023, 2024 or 2026.** A 7% macro day needs a macro *shock*, not a
+macro drift. Do not pitch "macro is weak" and expect it to do work.
+
+**Third, the screen — Aug 2026 vs Aug 2025:**
+
+| channel | Aug-25 | Aug-26 | YoY | direction |
+|---|---|---|---|---|
+| **Fed funds** | 4.33 | 3.63 | **−16.2%** | SHORT |
+| **10-year** | 4.26 | 4.68 | **+9.9%** | SHORT |
+| WTI crude | 64.86 | 83.90 | +29.4% | SHORT |
+| U. Mich sentiment (Jul) | 61.7 | 55.2 | −10.5% | SHORT |
+| Broad dollar | 120.58 | 118.85 | −1.4% | **LONG** |
+| Unemployment | 4.30 | 4.10 | −4.7% | **LONG** |
+
+**The split is the point. The front end is 70bp lower YoY while the long end is 42bp higher.** Those
+are two different variables pointing the same way for a short: the front end hits the P&L *now*, the
+long end hits the multiple *now*. Against the short, and kept on the record: the dollar is 1.4%
+weaker (~58% of revenue is ex-NA, so this is a real translation tailwind) and unemployment is 20bp
+lower. Neither is large.
+
+**Fourth, the one macro channel that is ABNB-specific and that nobody models — interest income.**
+
+- FY2025 operating income **$2,544mm**; FY2025 interest income **$705mm** = **27.7% of operating income, 21.7% of pre-tax.** It is ~100% margin.
+- FY23 $721mm → FY24 $818mm → **FY25 $705mm**. 1H26 $338mm vs 1H25 $363mm, **−6.9%** — *while GBV grew 16–19%.*
+
+Two forces, same direction, both live in 3Q/4Q26: **(a)** the front end is 70bp lower so the yield on
+the float falls, and **(b)** RNPL removes the float itself (unearned fees −$442mm / −$466mm below
+seasonal-normal in 1Q26/2Q26, against ±5% before). 2H25 interest income was $342mm; at the 1H26 run
+rate 2H26 is ~$318mm, at rate-plus-float compounding ~$301mm (−$41mm), bear ~$280mm (−$62mm).
+
+*Honest sizing:* −$41mm is ~2% of 2H operating income. **It does not carry a short on its own.** What
+it does is make Leg 4 quantitative and give it a macro tailwind, and it is one of the very few ABNB
+lines whose direction is known before the print.
+
+**Fifth, and this is where macro actually bites — the discount rate against a priced-for-growth FCF line.**
+
+Price $181.94, EV $99.0bn, LTM FCF $4,827mm → **EV/FCF 20.5×**. But **SBC is $1,696mm, 35% of reported
+FCF**; on SBC-adjusted FCF of $3,131mm it is **31.6×**. Reverse DCF, implied 10-year FCF growth:
+
+| WACC | on reported FCF (3% TG) | on SBC-adjusted FCF (3% TG) |
+|---|---|---|
+| 9% | 5.3% | **11.0%** |
+| 10% | 7.5% | **13.3%** |
+| 11% | 9.5% | **15.5%** |
+
+**At a 9–10% WACC the market is paying for 11–13% SBC-adjusted FCF growth for a decade** — in a cash
+flow line that RNPL is structurally shrinking (float) and that falling front-end rates are shrinking
+again (interest income), while the long end raises the bar to clear. That is the construction:
+**macro is not a separate leg, it is the transmission channel for Leg 4.**
+
+*What kills it:* the Fed cuts hard into a soft landing, the long end falls with it, and a
+high-beta travel name re-rates up. Rate cuts are ambiguous here — bad for interest income, good
+for the multiple, and the multiple is the bigger number.
 
 ## 3. What would kill this
 
