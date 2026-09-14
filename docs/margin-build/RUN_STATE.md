@@ -1,6 +1,6 @@
 # Margin build run: state ledger and continuation instructions
 
-Owner: Krish (asleep from ~00:00 14 Sep 2026). Orchestrator: Claude Code (Fable 5.1) session in the main tree, working in
+**RUN COMPLETE 15 Sep 2026 04:50.** Branch pushed; draft PR https://github.com/Kaenyne/Citadel-ABNB/pull/56. Owner: Krish (asleep from ~00:00 14 Sep 2026). Orchestrator: Claude Code (Fable 5.1) session in the main tree, working in
 `C:\Users\krish\citadel-abnb-margins` (branch `krish/margin-build`). This file is the single source of truth for continuing
 the run after a usage-limit pause, a crash, or a new session. Update the status table whenever a stage changes.
 
@@ -56,6 +56,8 @@ Status values: `pending`, `running`, `done`, `failed`, `skipped`.
 | 32 | Morning report, explainer HTML artifact, WORKBOARD rows, commit, push, draft PR | opus + orchestrator | 31 | done (agent part; commit/push/PR remain with the orchestrator) | 03:55 | MORNING_REPORT.md | 05:20 |
 
 ## Log
+
+- 15 Sep 04:50 RUN COMPLETE. WS32 committed (b04685c) with the stale FY27 S&M figure restated in SYNTHESIS.md ($3,721M / 23.5%); branch pushed; draft PR #56 opened; heartbeat cron deleted. Artifact publish of the explainer was refused by the permission classifier (page is in the repo at docs/explainers/margin_build_2026-09-14.html; Krish can publish it if wanted).
 
 - 15 Sep 05:20 **WS32 DONE (agent part).** Four deliverables written, no code run, no registry touched, no git command issued.
   (1) `docs/margin-build/MORNING_REPORT.md` — the ten-minute report, sections (a)-(j): the view in eight lines, the model in one
