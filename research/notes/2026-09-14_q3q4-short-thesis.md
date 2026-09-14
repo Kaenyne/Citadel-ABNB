@@ -49,11 +49,12 @@ Overlay adds two variant views and nothing else:
 
 Against a 3Q26 guide of **10–12%** that is 2.1 points below the midpoint.
 
-**Three independent nowcasts agree, and none of them is my model.**
+**Three independent nowcasts sit below the guide — but they are weak evidence, and I over-sold
+them in the first draft of this note.**
 
 | method | 3Q26 nights YoY | file |
 |---|---|---|
-| NTTO overseas inbound QTD (best walk-forward feature, ratio 0.74 vs naive) | **+9.17%** | `q3nowcast/G/G_nowcast_3q26_observable.csv` |
+| NTTO overseas inbound QTD | +9.17% | `q3nowcast/G/G_nowcast_3q26_observable.csv` |
 | NTTO Western Europe QTD | +9.40% | same |
 | TSA QTD-72 | +7.45% | same |
 | Inside Airbnb review index, equal / median weighted | +9.20 / +9.23% | `q3nowcast/E_aug/q3_2026_nowcast.csv` |
@@ -61,10 +62,28 @@ Against a 3Q26 guide of **10–12%** that is 2.1 points below the midpoint.
 | naive carry-forward | 10.34% | — |
 | **guide midpoint** | **11%** | — |
 
-The leading external feature is reading **NTTO overseas inbound at −7.0% YoY** and **Western Europe
-inbound at −10.5%**. US inbound travel is contracting while the guide assumes low double-digit
-nights growth. Only the CPI-lodging features print above the guide (11.9%), and they are the
-weakest of the set on walk-forward.
+**The walk-forward scoreboards say do not lean on these.** From `q3nowcast/G/G_backtest_scoreboard.csv`,
+share of specifications that beat a naive carry-forward out of sample:
+
+| feature family | W1 (2022Q1+) | W2 (2023Q1+) | best ratio |
+|---|---|---|---|
+| NTTO US inbound | 7 / 24 | 9 / 24 | 0.72 |
+| TSA air throughput | 2 / 12 | 3 / 12 | 0.92 |
+| Hotel RevPAR | 2 / 16 | 6 / 16 | 0.67 |
+| Spain INE | **0 / 40** | 14 / 40 | 1.00 |
+| Eurostat platform | **0 / 12** | 1 / 12 | 1.03 |
+| BLS CPI price | **0 / 24** | 8 / 24 | 1.32 |
+
+Only a minority of specs beat naive in *either* window, and Spain INE / Eurostat / CPI fail W1
+outright — so under this repo's own two-window rule (CLAUDE.md §2) they are not quotable. The
+0.74 walk-forward ratio I quoted for NTTO is the **best of 24 specs**, i.e. selection. The Inside
+Airbnb review-index nowcast is worse on this test than it looks: `q3nowcast/E_aug/backtest_scoreboard.csv`
+shows **465 of 2,560 specs (18%) beat naive**, and only 70 (2.7%) beat it by 20%. A 2,560-spec search
+with an 18% hit rate is an overfitting machine.
+
+**Honest status: the nowcasts are directionally consistent with a sub-guide print and that is all
+they are.** They are a reason to hold the view, not evidence to pitch. The quotable part of the
+nights call is the *lap arithmetic*, which is disclosure-dated and does not depend on any of this.
 
 **Counterweight, and it decides the trade structure:** Airbnb has **beaten the top of its own
 nights range both times it gave one** — 4Q25 guided 4–6%, printed 9.82%; 1Q26 guided 7–9%, printed
@@ -72,7 +91,18 @@ nights range both times it gave one** — 4Q25 guided 4–6%, printed 9.82%; 1Q2
 February 1Q27 guide against a +17.9% comp is the better expression; these two quarters are the
 setup.
 
-## 2. Thesis legs
+## 2. Thesis legs — scorecard
+
+| leg | verdict |
+|---|---|
+| 1. The lap, not the cancellations | **KEEP — lead with it.** Disclosure-dated, team-modelled |
+| 2. RNPL share above consensus | KEEP — supporting |
+| 3. World Cup cancellation-mix washout | KEEP — new, but parameters are judgment |
+| 4. RNPL destroys the float | **KEEP — strongest measured leg** |
+| 5. Vacation destinations rolling over | ❌ **DROPPED** — fails four tests, see below |
+| 6. Hotel share ceiling | ⚠️ **CUT — this is a long argument** |
+
+
 
 ### Leg 1 — the lap, not the cancellations (the audit's own conclusion)
 
@@ -137,36 +167,59 @@ which **+$188mm merchant fees**) but Airbnb has never split them by payment timi
 attribution is possible. Refunds are stated as immaterial. Do not claim a P&L cost leg beyond
 interest income.
 
-### Leg 5 — vacation destinations are rolling over  [NEW, and it is the one with clean data]
+### Leg 5 — vacation destinations  ❌ **TESTED AND DROPPED**
 
-`data/processed/destination_air_vs_str_snapshot.csv` — air traffic into marquee leisure markets:
+The first draft of this note pitched falling air traffic into leisure destinations (Cancun −11.5%,
+Las Vegas −9.3%, Japan −6.8%, Orlando −4.8%) as a short leg. It fails four separate tests. Recording
+the failure rather than deleting it, per CLAUDE.md §3.
 
-| destination | period | air traffic YoY |
+**1. Airbnb is barely in those places.** Ranking Inside Airbnb's 120 covered markets by trailing-12m
+reviews (the demand proxy), the destinations in that table are small or absent:
+
+- **Orlando and Cancun are not covered at all.**
+- Las Vegas (clark-county-nv) = **1.08%** of covered-market demand. Fort Lauderdale 1.20%. Hawaii 1.93%. Tokyo 2.94%.
+- The actual top markets are **São Paulo 3.77%, London 3.59%, Rome 3.57%, Paris 3.52%, Mexico City 3.09%**.
+  `top_airbnb_cities_listings_airports.csv` says the same thing by listings: Paris 40,362 vs **NYC 10,069 and LA 9,919**.
+
+Airbnb's demand base is European capitals and LatAm metros — not US/Caribbean sun-and-sand resorts,
+which is where the air data was weak. The leg was measuring the wrong markets.
+
+**2. There is no city-level revenue disclosure, so the "% of revenue" question cannot be answered.**
+Airbnb reports four regions and nothing below that. Any city-share number would be my construction
+off Inside Airbnb's coverage, which is a regulatory-interest sample, not a representative one. I can
+bound it — no single city looks like more than ~4% of demand — but I cannot source a revenue share.
+
+**3. Airbnb's own forward booking pace does not corroborate it.** `q3nowcast/F/F2_q3_in_progress.csv`
+measures lead-time-adjusted booked listing-nights for Sep 2026 vs 2025 across 30 markets. Weighting
+by market demand:
+
+| region | n | weighted YoY |
 |---|---|---|
-| **Cancun** (ASUR CUN) | Jun 2026 | **−11.5%** |
-| **Las Vegas** (Harry Reid) | Jun 2026 | **−9.3%** |
-| **Japan** (JNTO inbound) | Jun 2026 | **−6.8%** |
-| **Orlando** (MCO) | Jun 2026 | **−4.8%** |
-| Miami (MIA) | May 2026 | +0.5% |
-| Hawaii (DBEDT arrivals) | Jul 2026 | +1.2% |
-| Athens | Jun 2026 | +1.7% |
-| Barcelona (El Prat) | Jul 2026 | +6.0% |
+| LatAm | 5 | **+2.99pp** |
+| NA | 6 | +0.15pp |
+| APAC | 15 | −0.75pp |
+| EMEA | 4 | −1.73pp |
+| **ALL** | **30** | **+0.03pp** |
 
-Las Vegas STR **RevPAR −17.1%** and Cancun STR revenue **−7.3%** confirm it on the supply side.
-Orlando and Miami diverge (occupancy/RevPAR up on falling air traffic) — that is drive-to
-substitution and it is a genuine offset, kept on the record.
+Dead flat. And the EMEA figure is carried entirely by **London −7.20pp**, which is the least reliable
+row in the file: a 14-day window with a **+26.9-day horizon offset** between the 2026 and 2025
+snapshots, against a maximum of 12.8 days everywhere else. **Excluding London: EMEA +0.61pp, global
++0.72pp — positive.** Booked pace is flat-to-up, not rolling over.
 
-Cross-checked against the forward booking pace in `q3nowcast/F/F2_q3_in_progress.csv` (lead-time-
-adjusted YoY listing-nights booked for Sep 2026): **Singapore −6.7pp, Mexico City −4.2pp, Tokyo
-−3.9pp, Western Australia −3.8pp, Bangkok −3.4pp, Austin −7.5pp, London −7.2pp, Paris −2.2pp.**
-Against that: Rio +9.7pp, Santiago +5.9pp, Chicago +5.8pp, Northern Rivers +4.8pp, Mornington
-Peninsula +4.3pp, Rome +3.6pp, San Diego +3.7pp. **It is a genuine split, not a uniform rollover** —
-APAC city markets and the US sunbelt are soft, LatAm and Australian coastal are strong. Pitch it as
-*the soft markets are the high-ADR ones*, not as a global demand collapse.
+**4. Destination travel data has never moved this stock.** `abnb_big_moves_7pct.csv` — all 41 daily
+moves ≥7% since the IPO: **20 macro/market, 11 earnings, 9 company/other, 1 competitor. Zero** driven
+by destination or travel-volume data. Earnings moves average **12.1% absolute, 11.3% excess vs QQQ**.
+The stock trades on the print and on rates. A soft airport series is not a catalyst and has never been
+one.
 
-### Leg 6 — the share-gain engine is running out of road in its best markets
+**What survives:** nothing pitchable. If a version of this leg is ever revived it has to be built on
+the markets that actually matter (São Paulo, London, Rome, Paris, Mexico City) and on Airbnb booking
+data, not airport throughput — and right now that data is flat to positive.
 
-`eurostat_platform_vs_hotel_by_country_2019_2024.csv`, platform STR share of commercial guest-nights:
+### Leg 6 — hotel share  ⚠️ **THIS IS A LONG ARGUMENT, NOT A SHORT ONE**
+
+Stating this plainly because the first draft tried to have it both ways. Platform STR share of EU
+commercial guest-nights:
 
 | | 2019 | 2024 | change | platform growth 19–24 | hotel growth 19–24 |
 |---|---|---|---|---|---|
@@ -178,20 +231,20 @@ APAC city markets and the US sunbelt are soft, LatAm and Australian coastal are 
 | Germany | 10.8% | 16.8% | +5.9pts | +62.3% | −2.2% |
 | **Netherlands** | 14.7% | **14.9%** | **+0.2pts** | **+19.7%** | +18.2% |
 
-Read this honestly: for five years essentially **all** of Airbnb's European growth was share taken
-from hotels, not category growth — hotel nights were flat to down everywhere. That is a bull fact
-about the past. The short reading is the **Netherlands row**: once share stops moving, platform
-growth collapses to category growth (19.7% vs the hotel's 18.2% over five years — a dead heat).
-France is at **47.3% of all commercial guest-nights** in Airbnb's #2 market. There is not another
-16 points to take, and the regulatory pressure is concentrated in exactly the highest-share cities
-(Barcelona's 2028 ban, Paris and Amsterdam caps, NYC LL18). EMEA is 38.7% of revenue.
+Airbnb took nine points of European share in five years while hotel nights went nowhere. **That is a
+long thesis.** It is a company compounding share against a structurally stagnant incumbent, and it is
+the single strongest bull fact in this repo. Any short that puts this slide up loses the room.
 
-Related, and a clean pitch slide: Airbnb takes ~**6% of solo lodging demand but ~31% of 5+ party
-demand** (confirmed in four independent datasets). The company's share is concentrated in the
-segment that travels least often. The hotel comparison is a good *thesis* point; it is **not** in
-the nights model, deliberately — the switch-rate machinery moved 2030 nights by 2.1% across its
-entire plausible range, and the NA reconciliation found neither the switch rate nor the contestable
-share could close the gap at *any* value.
+The only short-usable reading is the **Netherlands row** — when share stops moving, platform growth
+collapses to category growth (19.7% vs the hotel's 18.2% over five years, a dead heat) — plus France
+at 47.3% having limited headroom, and regulation concentrated in the highest-share cities (Barcelona
+2028, Paris/Amsterdam caps, NYC LL18). But that is a **multi-year terminal-value argument on one
+country**, and this is a two-quarter pitch. **It does not belong in a Q3/Q4 short.** Leave it out;
+if asked in Q&A, concede the share gain is real and pivot to the lap.
+
+Same verdict on the party-size slide (Airbnb ~6% of solo lodging demand vs ~31% of 5+ parties,
+confirmed in four datasets): interesting, not a catalyst, and not in the model — the switch-rate
+machinery moved 2030 nights by 2.1% across its entire plausible range.
 
 ## 3. What would kill this
 
