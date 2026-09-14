@@ -78,6 +78,10 @@ prm("recon", "recon_share_to_marketing", 0.70, "share of the cost gap assigned t
 prm("ga", "ga_growth_2h26", 5.0, "% y/y, 2H26 (ex reserves)", "1H26 -5.4% because non-income taxes fell $38M; underlying payroll +$32M in 2Q26 alone (10-Q); 'extremely disciplined' (2Q26)", bear=8.0, bull=2.0)
 prm("ga", "ga_growth_fy27", 5.0, "% y/y, FY27", "31b 5%; highest fixed share of any line", bear=8.0, bull=3.0)
 prm("ga", "lodging_reserves_fwd", 0.0, "USD m per quarter (added back)", "None assumed; 4Q25's $81M was a one-off")
+# RNPL / short-case overlays (0 in base; set by the short case)
+prm("overlay", "rnpl_ops_uplift_pct", 0.0, "% uplift on ops & support per completed booking", "Cancellations raise contacts, refunds and make-goods per completed stay: 2Q26 10-Q customer relations +$10M on higher make-good payouts and related case reserves, 1Q26 +$3M refunds and credits; short case 4%")
+prm("overlay", "chargeback_add_per_booking", 0.0, "USD per booking added", "1H26 chargebacks +$25M y/y (+37%) after two years of declines; short case +$0.15")
+prm("overlay", "q4_marketing_cut_musd", 0.0, "USD m cut from 4Q26 marketing", "Management protected the FY floor in 4Q24 by phasing brand marketing down; the short case reports the cut needed")
 # below EBITDA (M7 rules)
 m7 = pd.read_csv(M7).set_index("name")["value"]
 prm("below", "da_per_q", float(m7["da_musd_q"]), "USD m per quarter", "M7 parameter sheet")
@@ -108,7 +112,7 @@ non_na = lambda q: 1 - pan.loc[q, "rev_na"] / pan.loc[q, "revenue"]
 # ----------------------------------------------------------------------------------------------------------------------
 # 3. The build
 # ----------------------------------------------------------------------------------------------------------------------
-def build(rev_scn: str = "base", cost_scn: str = "base", override: dict | None = None) -> pd.DataFrame:
+def build(rev_scn: str = "base", cost_scn: str = "base", override: dict | None = None, path_override: pd.DataFrame | None = None) -> pd.DataFrame:
     p = dict(PV[cost_scn]); p.update(override or {})
     mkt_1h26 = p["marketing_fy25"] * p["marketing_1h_share"] * (1 + p["marketing_growth_1h26"] / 100)
     mkt_2h26 = p["marketing_fy25"] * (1 - p["marketing_1h_share"]) * (1 + p["marketing_growth_2h26"] / 100)
@@ -148,12 +152,12 @@ def build(rev_scn: str = "base", cost_scn: str = "base", override: dict | None =
     shares = p["diluted_shares_2q26"]; rows = []
     for q in Q_ORDER:
         is27 = q.endswith("27"); qn = QN[q]; pq = PREV[q]
-        r = path.loc[(rev_scn, q)]; rev, nights, gbv = float(r["revenue_musd"]), float(r["nights_mm"]), float(r["gbv_busd"])
+        r = path_override.loc[q] if path_override is not None else path.loc[(rev_scn, q)]; rev, nights, gbv = float(r["revenue_musd"]), float(r["nights_mm"]), float(r["gbv_busd"])
         bookings = nights / (p["nights_per_booking_fy27"] if is27 else p["nights_per_booking_fy26"])
         # cost of revenue
         fee_rate = (p["merchant_fee_pct_gbv"] + p["xborder_fee_bp_per_pt"] * xb_drift_pts / 100) * FEE_FACTOR[qn]
         fees = fee_rate / 100 * gbv * 1000
-        chargebacks = p["chargeback_per_booking"] * bookings
+        chargebacks = (p["chargeback_per_booking"] + p["chargeback_add_per_booking"]) * bookings
         hosting = (p["hosting_fy27"] + max(0.0, 2 * (hosting_step - p["hosting_step_2h26"]))) / 4 if is27 else (p["hosting_fy25"] / 2 + hosting_step) / 2
         cor_other = p["cor_other_per_night"] * nights
         cor = fees + chargebacks + hosting + cor_other
@@ -162,10 +166,10 @@ def build(rev_scn: str = "base", cost_scn: str = "base", override: dict | None =
         v = p["ops_variable_share"]
         ops_var = hist[pq]["ops"] * v * (1 + d_var / 100) * bookings / hist[pq]["bookings"]
         ops_fix = hist[pq]["ops"] * (1 - v) * (1 + p["ops_fixed_growth"] / 100)
-        ops = ops_var + ops_fix
+        ops = (ops_var + ops_fix) * (1 + p["rnpl_ops_uplift_pct"] / 100)
         # product development, S&M, G&A: FY (or 2H) view spread on the 2023-25 quarterly shares
         pdv = pd_fy27 * SHARE["pd"][qn] if is27 else pd_2h26 * SHARE["pd"][qn] / H2["pd"]
-        mkt = mkt_fy27 * SHARE["sm"][qn] if is27 else mkt_2h26 * SHARE["sm"][qn] / H2["sm"] + (mkt_q3_step if qn == 3 else 0.0)
+        mkt = mkt_fy27 * SHARE["sm"][qn] if is27 else mkt_2h26 * SHARE["sm"][qn] / H2["sm"] + (mkt_q3_step if qn == 3 else 0.0) - (p["q4_marketing_cut_musd"] if q == "4Q26" else 0.0)
         fld = fld_fy27 * SHARE["sm"][qn] if is27 else fld_2h26 * SHARE["sm"][qn] / H2["sm"]
         sm = mkt + fld
         ga_ex = ga_fy27 * SHARE["ga"][qn] if is27 else ga_2h26 * SHARE["ga"][qn] / H2["ga"]
@@ -324,6 +328,50 @@ assert (lines.sm_cash - (lines.sm_marketing + lines.sm_field)).abs().max() < 1e-
 assert (lines.ops_cash - (lines.ops_variable + lines.ops_fixed)).abs().max() < 1e-6
 
 # ----------------------------------------------------------------------------------------------------------------------
+# 8b. The short case: the lap (bundle, Canada, World Cup) plus RNPL cancellations on a budgeted cost base
+# ----------------------------------------------------------------------------------------------------------------------
+SHORT = dict(nights_yoy={"3Q26": 8.5, "4Q26": 5.0, "1Q27": 4.0, "2Q27": 2.0, "3Q27": 3.0, "4Q27": 4.0},   # guide low in Q3 (World Cup still in July), then ~3pts below the team path as the bundle and World Cup lap and RNPL cancellations land
+             adr_exfx_yoy={"3Q26": 2.5, "4Q26": 0.0, "1Q27": 0.0, "2Q27": 0.0, "3Q27": 0.0, "4Q27": 0.0},  # mix-driven ADR growth normalises; FX stays on the kernel path
+             overlays={"rnpl_ops_uplift_pct": 4.0, "chargeback_add_per_booking": 0.15, "rnpl_share_shift_pts": 10.0})
+bp = path.loc["base"]; pv = pd.read_csv(PATH); pv = pv[pv.scenario == "base"]
+adr_exfx_base = pv[pv.line == "adr_exfx_yoy_pct"].set_index("quarter")["value"]; adr_rep_base = pv[pv.line == "adr_reported_yoy_pct"].set_index("quarter")["value"]
+nights_base_yoy = pv[pv.line == "nights_yoy_pct"].set_index("quarter")["value"]
+short_rows = {}; prev_n = {"3Q26": float(pan.loc["3Q25", "nights_m"]), "4Q26": float(pan.loc["4Q25", "nights_m"]), "1Q27": float(pan.loc["1Q26", "nights_m"]), "2Q27": float(pan.loc["2Q26", "nights_m"])}
+for q in Q_ORDER:
+    n_s, n_b = SHORT["nights_yoy"][q], float(nights_base_yoy[q]); a_s = float(adr_rep_base[q]) - (float(adr_exfx_base[q]) - SHORT["adr_exfx_yoy"][q]); a_b = float(adr_rep_base[q])
+    k = (1 + n_s / 100) / (1 + n_b / 100) * (1 + a_s / 100) / (1 + a_b / 100)
+    nights = prev_n[q] * (1 + n_s / 100); prev_n[{"3Q26": "3Q27", "4Q26": "4Q27"}.get(q, "_")] = nights
+    short_rows[q] = dict(revenue_musd=float(bp.loc[q, "revenue_musd"]) * k, gbv_busd=float(bp.loc[q, "gbv_busd"]) * k, nights_mm=nights, nights_yoy_pct=n_s, adr_reported_yoy_pct=a_s, revenue_vs_base_pct=(k - 1) * 100)
+short_path = pd.DataFrame(short_rows).T
+def short_build(cut=0.0, reconcile=1.0):
+    ov = dict(SHORT["overlays"]); ov.update({"q4_marketing_cut_musd": cut, "reconcile_to_sentence": reconcile})
+    return build(override=ov, path_override=short_path).set_index("quarter")
+sc = short_build()
+fy26_rev = float(h1.revenue.sum()) + float(sc.loc[["3Q26", "4Q26"], "revenue"].sum()); fy26_e = float(h1.adj_ebitda_reported.sum()) + float(sc.loc[["3Q26", "4Q26"], "adj_ebitda"].sum())
+cut_needed = max(0.0, 0.355 * fy26_rev - fy26_e)
+sc_cut = short_build(cut=cut_needed)
+def fy(d, qs, add_e=0.0, add_r=0.0):
+    e = float(d.loc[qs, "adj_ebitda"].sum()) + add_e; r = float(d.loc[qs, "revenue"].sum()) + add_r; return e, r, e / r * 100
+rows = []
+for label, d in (("short_costs_at_budget", sc), ("short_with_q4_marketing_cut", sc_cut)):
+    e26, r26, m26 = fy(d, ["3Q26", "4Q26"], float(h1.adj_ebitda_reported.sum()), float(h1.revenue.sum())); e27, r27, m27 = fy(d, Q_ORDER[2:])
+    rows.append(dict(case=label, q3_ebitda=float(d.loc["3Q26", "adj_ebitda"]), q3_margin=float(d.loc["3Q26", "adj_ebitda_margin_pct"]), q3_revenue=float(d.loc["3Q26", "revenue"]),
+                     q4_ebitda=float(d.loc["4Q26", "adj_ebitda"]), q4_margin=float(d.loc["4Q26", "adj_ebitda_margin_pct"]), q4_revenue=float(d.loc["4Q26", "revenue"]),
+                     fy26_ebitda=e26, fy26_margin=m26, fy26_revenue=r26, fy27_ebitda=e27, fy27_margin=m27, fy27_revenue=r27,
+                     q3_eps=float(d.loc["3Q26", "eps"]), fy27_eps=float(d.loc[Q_ORDER[2:], "net_income"].sum()) / float(d.loc[Q_ORDER[2:], "diluted_shares_m"].mean()),
+                     q4_marketing_cut_musd=(cut_needed if label.endswith("cut") else 0.0)))
+short_summary = pd.DataFrame(rows)
+short_summary.to_csv(OUT / "40_short_case_summary.csv", index=False)
+sc.assign(scenario="short_costs_at_budget").reset_index().to_csv(OUT / "40_short_case_quarterly.csv", index=False)
+short_path.reset_index().rename(columns={"index": "quarter"}).to_csv(OUT / "40_short_case_revenue_path.csv", index=False)
+stress = pd.DataFrame([dict(quarter=q, revenue=float(sc.loc[q, "revenue"]), revenue_vs_team_path_pct=float(short_path.loc[q, "revenue_vs_base_pct"]), nights_yoy=SHORT["nights_yoy"][q],
+                            ops_cash=float(sc.loc[q, "ops_cash"]), ops_per_booking=float(sc.loc[q, "ops_per_booking"]), chargebacks=float(sc.loc[q, "cor_chargebacks"]), interest_income=float(sc.loc[q, "interest_income"]),
+                            sm_pct_rev=float(sc.loc[q, "sm_cash_pct_rev"]), total_cash_costs_pct_rev=float(sc.loc[q, "total_cash_costs_pct_rev"]), margin=float(sc.loc[q, "adj_ebitda_margin_pct"]),
+                            margin_vs_base_pp=float(sc.loc[q, "adj_ebitda_margin_pct"]) - float(base_q.loc[q, "adj_ebitda_margin_pct"])) for q in Q_ORDER])
+stress.to_csv(OUT / "40_short_case_stress.csv", index=False)
+print("\n=== SHORT CASE ===\n", short_summary.round(2).T.to_string()); print(stress.round(2).to_string(index=False))
+
+# ----------------------------------------------------------------------------------------------------------------------
 # 9. Workbook (frozen report of the CSVs)
 # ----------------------------------------------------------------------------------------------------------------------
 from openpyxl import Workbook
@@ -351,6 +399,7 @@ def sheet(name, df):
         w.column_dimensions[get_column_letter(j)].width = max(12, min(70, int(df[c].astype(str).str.len().max()) + 2))
 sheet("Params", params); sheet("Lines_quarterly", lines.round(3)); sheet("Annual", annual.round(3)); sheet("Sentence_implied", sent.round(2))
 sheet("Backcast", backcast.round(2)); sheet("Sensitivities", sens.round(3)); sheet("Vs_run23", cmp.round(2))
+sheet("Short_case", short_summary.round(3)); sheet("Short_case_quarterly", stress.round(3)); sheet("Short_case_revenue_path", short_path.reset_index().rename(columns={"index": "quarter"}).round(3))
 hist_cols = ["revenue", "nights_m", "gbv_busd", "cor_cash", "ops_cash", "pd_cash", "sm_cash", "ga_cash", "ga_cash_ex_lodging", "lodging_tax_reserves", "da", "sbc_total_is", "adj_ebitda_reported", "adj_ebitda_margin_pct", "interest_income", "net_income", "eps_diluted", "shares_diluted_m", "funds_held_on_behalf"]
 sheet("Actuals_1Q23_2Q26", pan.loc[[q for q in pan.index if q[-2:] in ("23", "24", "25", "26")], hist_cols].reset_index().round(2))
 wb.save(XLSX)

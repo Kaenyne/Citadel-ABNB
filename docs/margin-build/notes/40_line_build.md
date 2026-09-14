@@ -134,6 +134,44 @@ revenue (49.59%) and at our revenue (50.37%) separately; the ops share v is cali
 approximation); the backcast note text was stale; `etr_fy26` renamed `etr_2h26` (1H26 printed 17.1%, so the FY26 blend is 17.7%).
 No headline number moved by more than $3M or 0.1pp.
 
+## The short case: the lap plus RNPL on a budgeted cost base
+
+Added 15 Sep after Krish's read: the pitch is a short, built on (i) the 4Q25-1Q26 bundle and the June-July World Cup having flattered 1H26
+nights, so the underlying rate is 6-7%, not 9-10%, and (ii) RNPL eligibility expanding into a cohort that cancels more while the alt data
+shows no volume offset. The standard of evidence is the disclosed mechanism plus current data, not a historical backtest; RNPL at scale is new.
+
+Assumptions (`40_short_case_revenue_path.csv`, overlays in `40_params.csv`): nights +8.5% in 3Q26 (guide low; July still has the World Cup),
+then +5 / +4 / +2 / +3 / +4% through 4Q27 (about three points below the team path as the bundle and World Cup lap and cancellations land);
+ADR ex-FX +2.5% in 3Q26 then flat (mix growth normalises); FX on the kernel path (about 3 points of revenue in 3Q26, near zero after);
+take rate on the team path. RNPL overlays: ops & support +4% per completed booking (the 2Q26 make-good and case-reserve language),
+chargebacks +$0.15 per booking (1H26 +37%), funds held -10% (interest income). Costs at management's budget; a second row shows the
+4Q26 marketing cut that holds the 35.5% floor.
+
+| | Short, costs at budget | Short, Q4 marketing cut | Base | Street |
+|---|---|---|---|---|
+| 3Q26 revenue | $4,681M (-2.6% vs team path) | same | $4,804M | $4,744M |
+| 3Q26 adj EBITDA / margin | $2,290M / 48.9% | same | $2,420M / 50.4% | $2,362M / 49.8% |
+| 3Q26 EPS | $2.71 | same | $2.91 | $2.85 |
+| 4Q26 revenue | $2,966M (-6.7%) | same | $3,178M | $3,162M |
+| 4Q26 adj EBITDA / margin | $700M / 23.6% | $876M / 29.6% | $899M / 28.3% | $914M / 28.9% |
+| FY26 margin | 34.2% (floor broken) | 35.5% (needs a $177M Q4 cut, ~35% of Q4 marketing) | 35.7% | 35.6% |
+| FY27 revenue | $14,914M (+4.5%) | same | $15,829M | $15,819M |
+| FY27 adj EBITDA / margin | $4,761M / 31.9% | same | $5,644M / 35.7% | $5,766M / 36.5% |
+| FY27 EPS | $4.58 | same | $5.93 | $6.23 |
+
+What carries it, quarter by quarter (`40_short_case_stress.csv`): the margin gap to base is 1.5 points in 3Q26, 4.7 in 4Q26, 5.5 in 1Q27 (12.7%
+against 18.2%), then 3-4 points through 2027. Almost all of it is revenue on fixed cost: total cash costs go from 77% to 88% of revenue in
+the low quarters. The RNPL cost overlays add $10-15M a quarter (ops) and $6-7M (chargebacks); the interest-income hit is $10-19M a quarter and
+sits below EBITDA. S&M reaches 25-29% of revenue in 4Q26 and 1Q27.
+
+The 5 Nov sequence this implies: a Q3 print near the sentence (48.9% against "down slightly"), a Q4 revenue guide about 6% below the Street,
+and either an FY sentence held at "at least 35.5%" with a visible marketing cut or the floor at risk. On the Street's 4Q26 EBITDA the gap
+is $214M at budget and $38M after the cut; on FY27 it is $1.0bn.
+
+Not re-audited by Codex; the additions are a revenue path override and three overlay parameters on the checked build. The revenue path
+here is a scaling of the team path by the nights and ADR deltas, not a re-run of the bridge kernel, so the Q3 FX and take-rate timing are
+inherited from bridge v3.
+
 ## Caveats
 
 Fourteen quarters of component disclosure and one half-year of AI statements. The reconciliation takes management's Q3 sentence as the cost
@@ -148,6 +186,6 @@ backtested; this build was not) and uses this note for the composition.
 
 ## RESUME
 
-Done. Open for Krish: (1) whether to adopt the reconciled base (sentence as budget) or the evidence build for 3Q26; (2) the hosting/AI
+Done; short case added. Open for Krish: (1) whether to adopt the reconciled base (sentence as budget) or the evidence build for 3Q26; (2) the hosting/AI
 run-rate assumption, which the 10-Q on 5 Nov will size; (3) FY27 marketing growth, the single largest lever (+5pts = -0.67pp). To extend:
 add the brand/performance split when the FY26 10-K prints, and replace the RNPL sensitivity with a share series if WS-D produces one.

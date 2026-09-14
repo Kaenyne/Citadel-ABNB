@@ -30,6 +30,9 @@ recon,recon_share_to_marketing,0.7,0.7,0.7,share of the cost gap assigned to 2H2
 ga,ga_growth_2h26,5.0,8.0,2.0,"% y/y, 2H26 (ex reserves)",1H26 -5.4% because non-income taxes fell $38M; underlying payroll +$32M in 2Q26 alone (10-Q); 'extremely disciplined' (2Q26)
 ga,ga_growth_fy27,5.0,8.0,3.0,"% y/y, FY27",31b 5%; highest fixed share of any line
 ga,lodging_reserves_fwd,0.0,0.0,0.0,USD m per quarter (added back),None assumed; 4Q25's $81M was a one-off
+overlay,rnpl_ops_uplift_pct,0.0,0.0,0.0,% uplift on ops & support per completed booking,"Cancellations raise contacts, refunds and make-goods per completed stay: 2Q26 10-Q customer relations +$10M on higher make-good payouts and related case reserves, 1Q26 +$3M refunds and credits; short case 4%"
+overlay,chargeback_add_per_booking,0.0,0.0,0.0,USD per booking added,1H26 chargebacks +$25M y/y (+37%) after two years of declines; short case +$0.15
+overlay,q4_marketing_cut_musd,0.0,0.0,0.0,USD m cut from 4Q26 marketing,Management protected the FY floor in 4Q24 by phasing brand marketing down; the short case reports the cut needed
 below,da_per_q,20.633970599907517,20.633970599907517,20.633970599907517,USD m per quarter,M7 parameter sheet
 below,sbc_growth,13.177740767185675,13.177740767185675,13.177740767185675,% y/y on SBC[q-4],M7 (recency-weighted last-4 y/y); mgmt: SBC growth below FY25's
 below,interest_income_beta,0.8764975067193741,0.8764975067193741,0.8764975067193741,x 3m T-bill x avg earning base / 4,"M7 / WS04 rule (r 0.83, n 18)"

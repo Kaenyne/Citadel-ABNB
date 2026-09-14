@@ -437,7 +437,7 @@ tr.hl td{font-weight:600}
 
 <section id="linebuild">
   <h2>The line build: each cost item on its own drivers</h2>
-  <p class="lede">The combination above is calibrated, not explained. A second build, written after the run, constructs every cost line from its components and a sourced parameter, and reconciles the result to what management has said. It agrees with the combination on 2026 and disagrees on 2027.</p>
+  <p class="lede">The combination above is calibrated, not explained. A second build, written after the run, constructs every cost line from its components and a sourced parameter, reconciles the result to what management has said, and then runs the short case: what the lap of the bundle and the World Cup plus RNPL cancellations do to margins when the cost base is already budgeted.</p>
   <div class="tbl panel">
     <h3>What each line is made of · <span class="src">40_line_build/40_params.csv</span>, <span class="src">40_annual.csv</span></h3>
     <table>
@@ -472,6 +472,19 @@ tr.hl td{font-weight:600}
       </table>
       <span class="note">Largest FY27 levers: marketing growth (+5pts = −0.67pp), the merchant fee rate (+10bp of GBV = −0.39pp), FY27 hosting (+$50M = −0.32pp). Source: <span class="src">40_sensitivities.csv</span>. The line build was checked read-only by the same auditor (seven findings, all fixed); it has no backtest of its own beyond cost of revenue, so the beat probability still comes from the combination.</span>
     </div>
+  </div>
+
+  <div class="tbl panel" style="margin-top:18px">
+    <h3>The short case: the lap plus RNPL on a budgeted cost base · <span class="src">40_short_case_summary.csv</span></h3>
+    <table>
+      <tr><th></th><th class="r">Short, costs at budget</th><th class="r">Short, Q4 marketing cut</th><th class="r">Base</th><th class="r">Street</th></tr>
+      <tr><td>3Q26 adj EBITDA / margin</td><td class="r n">2,290 / 48.9%</td><td class="r n">same</td><td class="r n">2,420 / 50.4%</td><td class="r n">2,362 / 49.8%</td></tr>
+      <tr><td>4Q26 adj EBITDA / margin</td><td class="r n">700 / 23.6%</td><td class="r n">876 / 29.6%</td><td class="r n">899 / 28.3%</td><td class="r n">914 / 28.9%</td></tr>
+      <tr class="hl"><td>FY26 margin</td><td class="r n">34.2% (floor broken)</td><td class="r n">35.5% ($177M cut)</td><td class="r n">35.7%</td><td class="r n">35.6%</td></tr>
+      <tr class="hl"><td>FY27 adj EBITDA / margin</td><td class="r n">4,761 / 31.9%</td><td class="r n">same</td><td class="r n">5,644 / 35.7%</td><td class="r n">5,766 / 36.5%</td></tr>
+      <tr><td>FY27 EPS</td><td class="r n">4.58</td><td class="r n">same</td><td class="r n">5.93</td><td class="r n">6.23</td></tr>
+    </table>
+    <span class="note">Nights +8.5% in 3Q26 (guide low, World Cup still in July) then +5 / +4 / +2 / +3 / +4% through 4Q27; ADR ex-FX flat from Q4; FX on the kernel path; RNPL overlays on support per booking (+4%), chargebacks (+$0.15) and funds held (−10%). Costs at management's budget. The margin gap to base is 1.5 points in 3Q26, 4.7 in 4Q26 and 5.5 in 1Q27, almost all revenue on fixed cost. The 5 Nov sequence: a Q3 print near the sentence, a Q4 guide ~6% below the Street, and either a visible marketing cut or the floor at risk. Not separately audited.</span>
   </div>
 </section>
 

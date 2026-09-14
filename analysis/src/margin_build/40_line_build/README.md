@@ -19,3 +19,8 @@ D&A; adjusted EBITDA = revenue - sum(cash lines) + D&A + lodging-tax reserves, t
 
 Scenarios: `base` (reconciled to management's 3Q26 sentence), `evidence_only` (the same build without the reconciliation), `rev_bear` /
 `rev_bull` (revenue path at base costs), `cost_bear` / `cost_bull` (base revenue at the adverse / favourable cost parameters), `both_*`.
+
+Short case (section 8b of `run.py`): a revenue path override (nights at the guide low then ~3pts below the team path, ADR ex-FX flat, FX on the
+kernel) with RNPL overlays (ops per booking +4%, chargebacks +$0.15 per booking, funds held -10%) on the budgeted cost base, with and without
+the 4Q26 marketing cut that holds the FY26 floor. Outputs `40_short_case_summary.csv`, `40_short_case_quarterly.csv`, `40_short_case_stress.csv`,
+`40_short_case_revenue_path.csv` and three workbook sheets.
