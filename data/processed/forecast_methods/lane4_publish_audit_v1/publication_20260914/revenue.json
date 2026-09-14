@@ -1,0 +1,23 @@
+{
+  "commit": "3da2903e2c78f6beea358819e7c561b07a5f49a3",
+  "check": "revenue",
+  "started_utc": "2026-09-14T14:11:17.471325+00:00",
+  "commands": [
+    [
+      "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "analysis/src/forecast_methods/lane4_revenue_v2/tests"
+    ]
+  ],
+  "exit_codes": [
+    0
+  ],
+  "tests_passed": 49,
+  "verdict": "PASS",
+  "elapsed_seconds": 9.28200000000652
+}
