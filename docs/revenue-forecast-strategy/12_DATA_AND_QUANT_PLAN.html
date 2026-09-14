@@ -1,0 +1,187 @@
+<title>ABNB Data and Quant Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F2F4F6; --card:#FFFFFF; --ink:#0B1218; --ink-2:#22303C; --muted:#3F4F5C; --line:#B9C4CE;
+  --red:#C8102E; --red-ink:#A50E24; --blue:#2F63A8; --blue-ink:#1F4E8C; --green:#0F6B3F; --amber:#B7791F;
+  --tint-red:#FCE3E5; --tint-blue:#E1EAF6; --tint-green:#DCF0E5; --tint-amber:#FBEFD6; --tint-grey:#E8EDF1;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:74rem;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:28px 96px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:clamp(28px,4vw,40px);line-height:1.1;margin:6px 0 10px;letter-spacing:-.01em;text-wrap:balance}
+.dek{font-size:17px;color:var(--ink-2);max-width:70ch;margin:0 0 22px}
+h2{font-family:"IBM Plex Serif",Georgia,serif;font-weight:600;font-size:clamp(21px,2.6vw,26px);margin:42px 0 6px;line-height:1.2}
+h2 .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;color:var(--red-ink);letter-spacing:.08em;margin-right:10px;vertical-align:middle}
+.claim{color:var(--ink-2);font-size:15.5px;margin:0 0 12px;max-width:76ch}
+.table-wrap{overflow-x:auto;margin:10px 0 0;border:1px solid var(--line);background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--tint-grey);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.k{font-weight:600;min-width:150px}
+td.mono,code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px}
+.chip{display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:2px;border:1px solid;white-space:nowrap;margin:0 4px 2px 0}
+.have{color:var(--green);background:var(--tint-green);border-color:var(--green)}
+.free{color:var(--blue-ink);background:var(--tint-blue);border-color:var(--blue)}
+.scrape{color:var(--amber);background:var(--tint-amber);border-color:var(--amber)}
+.paid{color:var(--red-ink);background:var(--tint-red);border-color:var(--red)}
+.human{color:var(--ink-2);background:var(--tint-grey);border-color:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0 0}
+.lane{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--blue);padding:14px 16px}
+.lane h3{margin:0 0 6px;font-size:17px}
+.lane ul{margin:0;padding-left:18px;font-size:14.5px;display:grid;gap:4px}
+.rules{background:var(--card);border-left:5px solid var(--red);padding:14px 18px;margin:12px 0 0;font-size:15px}
+.rules ol{margin:6px 0 0;padding-left:20px;display:grid;gap:5px}
+footer{margin-top:50px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+</style>
+
+<div class="wrap">
+<div class="eyebrow">Citadel-ABNB · data and quantification plan · 11 Sep 2026</div>
+<h1>How every number in the pitch gets measured, and what data it needs</h1>
+<p class="dek">Organised along the chain: bookings → kernel → backlog and RNPL → guide and Street → composition → fees → valuation → other tickers. Each row says the estimator, the pass line, the data, and whether we have it, can get it free, must scrape it (a terms-of-service call), or must pay.</p>
+<p><span class="chip have">have</span> on disk today &nbsp; <span class="chip free">free</span> public, no scraping &nbsp; <span class="chip scrape">scrape</span> own collection — ToS decision &nbsp; <span class="chip paid">paid</span> vendor &nbsp; <span class="chip human">human</span> a person must do it</p>
+
+<!-- ============ 0 ORGANISATION ============ -->
+<h2><span class="n">0</span>Organisation</h2>
+<p class="claim">Four lanes, one harness, one card. Agents run the measurement; humans make the calls and own the captures that decay.</p>
+<div class="grid">
+  <div class="lane"><h3>Lane 1 · Kernel, guide, valuation — Krish</h3><ul><li>λ / φ estimation, control chart, term structure</li><li>cushion, κ, kernel-guide vs Street (Thesis A, B)</li><li>L1 regional reconciliation (72 cells)</li><li>exit-multiple band and the target</li></ul></div>
+  <div class="lane" style="border-top-color:var(--red)"><h3>Lane 2 · Data, RNPL, consensus — Theo</h3><ul><li>Inside Airbnb daily capture; calendar pickup; reviews store</li><li>paid vs unpaid backlog; u, L; re-based nights (Thesis F)</li><li>vintage register; LSEG / consensus history</li><li>FX refresh; NTTO / Eurostat / national stats pulls</li></ul></div>
+  <div class="lane" style="border-top-color:var(--amber)"><h3>Lane 3 · Fees, mix, hotels — Jessie</h3><ul><li>fee-deadline price panels; θ by DiD</li><li>party size / LOS / unit size hedonic; seats and hotel volumes</li><li>hotel comps (STR / MAR / HLT) for the pricing residual</li><li>Thesis E on NCLH (advance ticket sales)</li></ul></div>
+  <div class="lane" style="border-top-color:var(--green)"><h3>Lane 4 · Memo and card — Writer</h3><ul><li>memo v1 (17 Sep) → v2 (26 Sep) → PDF (2 Oct)</li><li>pre-registration card ABNB-INT-v1, the 11 decisions</li><li>kill list and vintage stamps on every number</li><li>5 Nov score sheet</li></ul></div>
+</div>
+<div class="rules"><b>Standing rules (the harness).</b>
+<ol>
+<li>Copy, never overwrite: new work in <code>analysis/src/forecast_methods/&lt;pkg&gt;_v2/</code>, outputs in <code>data/processed/forecast_methods/&lt;pkg&gt;_v2/</code>, notes in <code>docs/revenue-forecast-strategy/05_backtests/</code>; new registry method names; re-run <code>harness/score.py</code> after every registration.</li>
+<li>Point-in-time or it doesn't count: every consensus value carries vendor + timestamp (L0 vintage register); refit at guide dates; two windows W1 (1Q23+) and W2 (1Q24+); letter integers scored as ±0.5 intervals.</li>
+<li>Pass lines are written before the test runs; a failed test is published, not deleted.</li>
+<li>Baselines every object must beat: naive / AR(1), trailing-4, guide × (1 + cushion), the vintage-stamped Street, and — for GBV — the RNPL-corrected unearned-fees series.</li>
+<li>Nothing licensed on git (Bloomberg, Third Bridge, LSEG exports); manifests and SHA-256 only.</li>
+</ol></div>
+
+<!-- ============ 1 BOOKED GBV ============ -->
+<h2><span class="n">1</span>Booked GBV — the term that carries 97% of the variance</h2>
+<p class="claim">Target: booking-dated GBV y/y for the quarter in progress, plus the in-quarter ~40% of revenue (the residual R). This is where new data earns its place.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Quantity</th><th>How we quantify it</th><th>Pass line</th><th>Data</th><th>Status · how to get</th></tr></thead>
+<tbody>
+<tr><td class="k">GBV_3Q26 nowcast (ledger)</td><td>expanding-window regression of GBV y/y on RNPL-corrected unearned-fees growth, funds-payable growth, GBV momentum; Bayesian shrinkage; PIT</td><td>beats naive on W1 and W2 (only the corrected UF series does today: $26.4–26.6bn, 80% $25.7–27.5bn)</td><td>02_kpi_panel_quarterly.csv; kernel_phi_v2 outputs</td><td><span class="chip have">have</span> done in K1; refresh at each 10-Q</td></tr>
+<tr><td class="k">Calendar pickup (bookings made in a window)</td><td>for the same stay dates, nights that flip available → unavailable between consecutive monthly dumps, restricted to horizons ≤ 90 days (beyond that owner blocks dominate — K2's U-shape); aggregate by market, weight by listing price where present; map to GBV y/y via a cross-sectional calibration on the 13 cities</td><td>pickup y/y correlates with disclosed GBV y/y on the 2024–26 vintages with the right sign; beats the ledger baseline on W2</td><td>Inside Airbnb calendar dumps: 164 vintages 2024–25 (34 markets) + the daily capture from 11 Sep (120 markets, calendar + reviews + listings)</td><td><span class="chip have">have</span> + <span class="chip free">free</span> monthly dumps; September batch mid/late Sep closes the 3Q26 window. Owner Theo. Do NOT scrape calendars ourselves — the dumps are the sanctioned source</td></tr>
+<tr><td class="k">Stays index (recognition proxy)</td><td>review-date stays series, survivorship-matched (Krish's E); use it on the revenue residual R and on nights, not on booked GBV (it measures stays, not bookings)</td><td>already beats naive on nights (ratio 0.68); test on R with the same protocol</td><td>67.5M-review store; 363 review dumps incl. 2025 vintages</td><td><span class="chip have">have</span>; re-run on the September dumps</td></tr>
+<tr><td class="k">Inbound arrivals</td><td>NTTO I-94 monthly arrivals by country; Eurostat monthly platform nights; JNTO / INE Frontur / DATATUR / ISTAT monthly; regional split covariates for L1</td><td>NTTO is already a survivor (0.72–0.74x); keep only series that beat naive on the regional nights bands</td><td>NTTO CSV; Eurostat API; national statistics APIs (scripts partly exist in analysis/src/q3nowcast/G)</td><td><span class="chip free">free</span> monthly; Owner Theo; one pull script, cron monthly</td></tr>
+<tr><td class="k">Web / app demand</td><td>Similarweb visits, Sensor Tower / data.ai downloads and MAU, Apptopia</td><td>would need to beat the ledger on GBV on both windows; prior team tests on Trends and app reviews failed</td><td>not in repo</td><td><span class="chip paid">paid</span>; free tiers are too coarse. Low priority: ask UF Business Library if any seat exists; otherwise skip</td></tr>
+<tr><td class="k">Card / spend panels</td><td>Earnest, Consumer Edge, YipitData, Second Measure</td><td>—</td><td>not in repo; YipitData has no travel footprint; Second Measure not in a standard terminal seat</td><td><span class="chip paid">paid</span> out of reach; state it in the memo as what a fund would add</td></tr>
+<tr><td class="k">Booking lead-time distribution (current Airbnb mix)</td><td>needed to pin φ₀ (in-quarter share) for today's mix; K2 used Melbourne 2014–17</td><td>replace the prior when a current source exists</td><td>AirDNA / Transparent publish lead time by market; Airbnb IR reservation-level request (RNPL handoff)</td><td><span class="chip paid">paid</span> (AirDNA market report, or Transparent's free dashboards for a few cities) · <span class="chip human">human</span> IR ask</td></tr>
+</tbody></table></div>
+
+<!-- ============ 2 KERNEL / BACKLOG / RNPL ============ -->
+<h2><span class="n">2</span>Kernel, backlog and RNPL</h2>
+<p class="claim">All from Airbnb's own disclosures. The work is definitional discipline and the RNPL wiring; the data need is the next 10-Q and the management-statement ledger.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Quantity</th><th>How we quantify it</th><th>Pass line</th><th>Data</th><th>Status · how to get</th></tr></thead>
+<tbody>
+<tr><td class="k">λ by season; φ weights</td><td>pooled φ on the simplex with seasonal scale c_s (K1); PIT weight ⅔ on GBV_{q−1}; block bootstrap; LOO vs fixed kernel</td><td>reproduces the 12-cell λ table to 2dp; φ₁+φ₂ quoted as the identified sum (0.58–0.64), split unidentified</td><td>02_kpi_panel_quarterly.csv</td><td><span class="chip have">have</span> (kernel_phi_v2)</td></tr>
+<tr><td class="k">Paid backlog and coverage</td><td>unearned fees + funds payable ÷ next-quarter revenue; seasonal norms 2022–1H25; paid / booked-unpaid / not-yet-booked split (Q3 35/32/33; Q4 30/27/42)</td><td>norms stable pre-RNPL within ±3pp; deviation attributed to u</td><td>10-Q balance sheets in the KPI panel; abnb_backlog_indicators.csv</td><td><span class="chip have">have</span>; add 3Q26 on 5 Nov</td></tr>
+<tr><td class="k">Unpaid RNPL share u</td><td>joint solve on UF and FP against pre-RNPL norms (Theo's bridge); range 6–16%; excess unpaid share +2.0 → +8.1 → +9.7pp</td><td>u stays a range; refuted if excess share falls back inside ±2pp with FP growing +5–11%</td><td>same + management RNPL statements (D ledger, 60 rows)</td><td><span class="chip have">have</span>; resolve which line carries the FX confound (K1 vs Theo's note) before the card</td></tr>
+<tr><td class="k">Leakage L (cancellations before check-in)</td><td>L = RNPL share of GBV × differential cancellation rate from the D1 cohort grid; applied inside the kernel; λ control chart</td><td>λ_Q3 &lt; 17.09% warning, &lt; 16.93% escalate; historical false-alarm rate published</td><td>D1_rnpl_cohort_scenarios.csv; 10-Q cancellation language</td><td><span class="chip have">have</span>; 3Q26 10-Q text in Nov</td></tr>
+<tr><td class="k">Re-based nights (pull-forward and tail)</td><td>bridge: US launch 3Q25 lap, July eligibility expansion, ex-NA lap 1Q27; bands</td><td>3Q26 +9.3% (8.8–9.8), 4Q26 +7.6% (7.2–8.1) vs team 9.9 / 8.9 — team decision D-08 / D-11</td><td>nights_baseline_reconciliation.csv; overnight2/D</td><td><span class="chip have">have</span></td></tr>
+<tr><td class="k">RNPL policy facts</td><td>rollout dates by country, eligibility rules, cancellation policy changes, the "bundle" contribution figures per call</td><td>every date sourced with URL; anything unsourced is marked</td><td>Airbnb Help Center / Newsroom / Resource Center; letters; transcripts</td><td><span class="chip free">free</span>; weekly monitor script (fetch + diff of ~10 URLs). Owner Theo</td></tr>
+<tr><td class="k">Host-side RNPL anecdotes</td><td>qualitative: cancellation complaints, payout timing, single-fee migration friction</td><td>context only, never a number</td><td>Airbnb Community Center, r/airbnb_hosts, Rental Scale-Up</td><td><span class="chip scrape">scrape</span>-light (public forums, read-only, rate-limited) — or manual reading; low priority</td></tr>
+<tr><td class="k">The two IR asks</td><td>unbilled RNPL balance; single-fee share of GBV</td><td>—</td><td>Investor Relations</td><td><span class="chip human">human</span> one email from the team; no cost</td></tr>
+</tbody></table></div>
+
+<!-- ============ 3 GUIDE / STREET ============ -->
+<h2><span class="n">3</span>Guide and Street</h2>
+<p class="claim">The cushion is measured; the missing piece is point-in-time consensus history with a vendor stamp — the one dataset that upgrades Theses A and B from press quotes to real vintages.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Quantity</th><th>How we quantify it</th><th>Pass line</th><th>Data</th><th>Status · how to get</th></tr></thead>
+<tbody>
+<tr><td class="k">Cushion c, range width</td><td>trailing-8 actual ÷ guide-midpoint at each guide date; block bootstrap; trend</td><td>mean +1.86%, sd 1.0pp reproduced; PIT</td><td>02_guidance_ledger.csv, 02_guidance_cushion_series.csv</td><td><span class="chip have">have</span></td></tr>
+<tr><td class="k">κ (at-print consensus vs guide)</td><td>vendor-consistent pairs only</td><td>n and vendor reported</td><td>16_consensus_at_print_merged.csv + L0 vintage register</td><td><span class="chip have">have</span>, thin (n≈13)</td></tr>
+<tr><td class="k">Kernel-guide vs Street (Thesis A)</td><td>S = kernel guide − PIT consensus at each of 14 guide dates; sign hit-rate on |S| &gt; 1pp; executable 1/5/20-day returns</td><td>hit-rate ≥ 70% both windows</td><td>guide ledger; consensus at print; abnb_earnings_reactions.csv (open_* columns)</td><td><span class="chip have">have</span>; 1-day agent task</td></tr>
+<tr><td class="k">Term structure vs FY consensus (Thesis B)</td><td>T = kernel FY − FY consensus at each print; 60-day revision; returns</td><td>revision sign ≥ 70%; corr &gt; 0.4</td><td>FY consensus history by vintage — thin before 2024 in the register</td><td><span class="chip human">human</span> LSEG Workspace self-registration via UF (estimates history since 2021, ABNB + NCLH/BKNG/EXPE), then an agent export. WRDS/IBES is faculty-only (email the Business Library once)</td></tr>
+<tr><td class="k">Live consensus stamps</td><td>Zacks, Alpha Vantage 36-analyst, Yahoo (same LSEG panel), S&amp;P — weekly and 2–3 Nov (nights/ADR/GBV consensus appears then)</td><td>every value with vendor + timestamp; never mixed</td><td>L0_vintage_register.csv (167 rows today)</td><td><span class="chip free">free</span>; Alpha Vantage via MCP weekly; Zacks page capture</td></tr>
+<tr><td class="k">Options-implied move</td><td>nearest straddle covering 5 Nov as % of spot, once the weekly lists (late Oct)</td><td>quote only a listed contract</td><td>CBOE delayed quotes; Bloomberg options workbook (licensed)</td><td><span class="chip free">free</span> late Oct; re-run analysis/src/abnb_options_ledger.py</td></tr>
+</tbody></table></div>
+
+<!-- ============ 4 COMPOSITION ============ -->
+<h2><span class="n">4</span>Composition — nights by region, ADR terms, FX</h2>
+<p class="claim">The variant view lives here. Most terms are measured; the like-for-like price term is the one thing no free source measures, and the memo must say so.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Quantity</th><th>How we quantify it</th><th>Pass line</th><th>Data</th><th>Status · how to get</th></tr></thead>
+<tbody>
+<tr><td class="k">Regional nights and geo mix</td><td>constrained LS to the 72 exact regional revenue cells, disclosed bands as intervals, softmax shares (L1 v2); geo mix falls out as an output</td><td>Gate G2 (72/72 cells) passed; ex-FX ADR residual vs the ADR note still −1.4pp worst gap — open</td><td>10_xbrl_revenue_geography.csv; 10_regional_panel_quarterly.csv; L0 files</td><td><span class="chip have">have</span>; improve with national arrivals as covariates (row 1.4)</td></tr>
+<tr><td class="k">Unit size, LOS, party size</td><td>one joint hedonic on the Inside Airbnb dumps (bedroom elasticity 0.23); review-text capacity index (Krish I: party size +0.80pp)</td><td>coefficients stable across the 12- and 29-market panels</td><td>168 dumps × 13 cities; 29-market panel; review store</td><td><span class="chip have">have</span>; refresh on September dumps</td></tr>
+<tr><td class="k">Seats and hotel dilution</td><td>scenario on assumed volumes (Experiences $75, Services $120, hotels 3.5% of nights at 0.8×)</td><td>labelled assumed; −0.5pp/yr</td><td>no disclosure</td><td><span class="chip scrape">scrape</span> optional: Experiences / Services / hotel listing counts by city from public search pages — a ToS call; value is modest (−0.5pp), so decide last</td></tr>
+<tr><td class="k">Like-for-like home price</td><td>the unidentified +2.8–3.6pp remainder; a repeat-listing quote index would identify it</td><td>report the identified sum; do not split</td><td>2026 calendars carry no price; quote panel has listed price only, Mar–Aug 2026, 13 cities; 2024–25 calendars carry prices only to May 2025</td><td><span class="chip paid">paid</span> AirDNA realised ADR is the only measured source; otherwise state "unidentified" — this is honest and defensible</td></tr>
+<tr><td class="k">Hotel pricing comps</td><td>STR / CoStar weekly RevPAR and ADR, MAR / HLT prints, CPI lodging — comparators for the pricing residual, never components</td><td>hotel RevPAR family beats naive on nights (0.665x) — keep as a covariate</td><td>press releases; FRED CPI</td><td><span class="chip free">free</span> weekly; scripted in q3nowcast/G</td></tr>
+<tr><td class="k">FX: ADR-FX and revenue-FX</td><td>9-currency booking basket from FRED; lag-loaded spec for what management will state; observed-share triple; hedge once</td><td>PIT MAE ≈ 0.9pp; pre-registered 5 Nov test (+3 → kernel, 0/+1 → short lag)</td><td>fx_lag_v2 (FRED to 4 Sep)</td><td><span class="chip have">have</span>; weekly FRED refresh into the v2 file</td></tr>
+</tbody></table></div>
+
+<!-- ============ 5 FEES / TAKE RATE ============ -->
+<h2><span class="n">5</span>Fees and take rate — θ is the number the Street's bull case rests on</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Quantity</th><th>How we quantify it</th><th>Pass line</th><th>Data</th><th>Status · how to get</th></tr></thead>
+<tbody>
+<tr><td class="k">Pass-through θ of the single host-only fee</td><td>difference-in-differences on LISTED prices: migrating cohort (non-EEA-resident hosts, deadline 15 Sep) vs EEA control (13 Oct), fixed sample of 2,600 listings, fixed stay dates 13 Nov and 11 Dec; runs 14/16/18 Sep and 12/14/16 Oct</td><td>panel overlap ≥ 40% between runs (measured 16 Sep); θ estimate with CI; falsifies full pass-through if the listed-price jump on the migrating cohort is &lt; 10pp vs control</td><td>own capture via public search pages (listed price only — fees and taxes do not render)</td><td><span class="chip scrape">scrape</span> running (launchd); the fee-inclusive route (GraphQL) is blocked pending a human ToS decision — without it the guest-side total is not measured</td></tr>
+<tr><td class="k">Printed take rate (3Q26)</td><td>revenue ÷ GBV from the reconciled live block; P(≥ 18.10%) reported against each GBV view (0.49–0.89)</td><td>one number, one probability, pre-registered as a pair with GBV</td><td>live_block_v2</td><td><span class="chip have">have</span></td></tr>
+<tr><td class="k">Migrated share of GBV</td><td>dated schedule from the fee timeline (PMS Oct 2025 → ~25% → ~50% → deadline-forced), GBV-weighted</td><td>exogenous, never fitted to GBV</td><td>06_fee_timeline.csv; call statements</td><td><span class="chip have">have</span> (assumed)</td></tr>
+<tr><td class="k">Line take rates (hotels 11%, Experiences 20%, Services 15%)</td><td>from Help Center fee pages; volumes assumed (row 4.3)</td><td>rates sourced; volumes labelled assumed</td><td>Help Center 1857 / 4095</td><td><span class="chip free">free</span></td></tr>
+</tbody></table></div>
+
+<!-- ============ 6 VALUATION ============ -->
+<h2><span class="n">6</span>Valuation and the multiple</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Quantity</th><th>How we quantify it</th><th>Pass line</th><th>Data</th><th>Status · how to get</th></tr></thead>
+<tbody>
+<tr><td class="k">Multiple vs forward growth</td><td>ABNB's own time series of EV/EBITDA vs forward revenue growth (+0.48 turns/pt), a 19-name cross-section, a fade DCF → exit band 13.5 / 16.5 / 18.5x</td><td>all three methods inside the band; margin explains nothing</td><td>overnight WS12 files; peer multiples</td><td><span class="chip have">have</span>; refresh spot and consensus monthly</td></tr>
+<tr><td class="k">Target reconciliation</td><td>football field ($154–157 base) vs branch analogues ($170–185); the memo must carry one</td><td>team decision this weekend</td><td>13_valuation_summary.csv; memo v0</td><td><span class="chip human">human</span></td></tr>
+<tr><td class="k">Positioning</td><td>short interest, rating split, target dispersion, 22 raises / 0 cuts since Aug</td><td>stamped as of date</td><td>overnight 09 / 12 files; Bloomberg workbook (licensed)</td><td><span class="chip have">have</span>; refresh before 2 Oct</td></tr>
+</tbody></table></div>
+
+<!-- ============ 7 GENERALISATION ============ -->
+<h2><span class="n">7</span>Thesis E — the same kernel on other tickers</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Ticker</th><th>The backlog line</th><th>Quantify</th><th>Data</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td class="k">NCLH (on the competition list)</td><td>advance ticket sales (balance sheet) vs passenger ticket revenue; occupancy and net yield disclosures</td><td>λ by season on advance ticket sales lagged 1–2 quarters; guide-surprise hit-rate; λ range</td><td>quarterly balance sheet and income statement via Alpha Vantage MCP; 10-Q text for definitions; consensus via LSEG when available</td><td><span class="chip free">free</span>; 3–5 day agent task — the "it's a method" exhibit</td></tr>
+<tr><td class="k">BKNG</td><td>deferred merchant bookings; merchant vs agency gross bookings</td><td>same</td><td>same</td><td><span class="chip free">free</span>; after NCLH</td></tr>
+<tr><td class="k">EXPE</td><td>deferred merchant bookings</td><td>same</td><td>same</td><td><span class="chip free">free</span>; optional</td></tr>
+</tbody></table></div>
+
+<!-- ============ 8 CAPTURES ============ -->
+<h2><span class="n">8</span>Captures and pulls — what runs, what to start, what needs a decision</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Capture</th><th>Cadence</th><th>Owner</th><th>Status</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td class="k">Inside Airbnb daily capture (listings + calendar + reviews, 120 markets)</td><td>daily 06:00</td><td>Theo · launchd</td><td><span class="chip have">running</span></td><td>first run 360/360 files, 10.2 GB; watch for the September batch and the unlisted Aug 2026 batch (86 markets)</td></tr>
+<tr><td class="k">Fee-deadline listed-price panels</td><td>14 / 16 / 18 Sep · 12 / 14 / 16 Oct</td><td>Jessie · launchd</td><td><span class="chip have">scheduled</span></td><td>2,600 listings; measure overlap on 16 Sep; the fee-inclusive route is a ToS decision</td></tr>
+<tr><td class="k">Consensus stamps</td><td>weekly + 2–3 Nov</td><td>Theo</td><td><span class="chip free">start</span></td><td>Alpha Vantage via MCP + Zacks page capture → vintage register (append only)</td></tr>
+<tr><td class="k">FRED FX refresh</td><td>weekly</td><td>Theo</td><td><span class="chip free">start</span></td><td>fx_lag_v2/fetch_fx_v2.py into the v2 file; never overwrite 10_fx_daily.csv</td></tr>
+<tr><td class="k">NTTO / Eurostat / national tourism / STR weekly / CPI</td><td>monthly (weekly for STR)</td><td>Theo</td><td><span class="chip free">start</span></td><td>one pull script extending q3nowcast/G; manifests only</td></tr>
+<tr><td class="k">Airbnb policy monitor (RNPL, fees, cancellation)</td><td>weekly</td><td>Theo</td><td><span class="chip free">start</span></td><td>fetch + diff ~10 Help Center / Newsroom URLs; every change dated and sourced</td></tr>
+<tr><td class="k">LSEG Workspace estimates history</td><td>once, then at each print</td><td>Theo</td><td><span class="chip human">register</span></td><td>businesslibrary.uflib.ufl.edu/refinitivworkspace → workspace.refinitiv.com/web; grant the Chrome extension site access; then the export agent runs</td></tr>
+<tr><td class="k">Alpha Vantage fundamentals for NCLH / BKNG / EXPE</td><td>once, then quarterly</td><td>Jessie</td><td><span class="chip free">start</span></td><td>via MCP; balance sheet + income statement, quarterly</td></tr>
+<tr><td class="k">Experiences / Services / hotel listing counts</td><td>monthly</td><td>Jessie</td><td><span class="chip scrape">decide</span></td><td>public search pages; low value (−0.5pp seats dilution) — decide last</td></tr>
+<tr><td class="k">Fee-inclusive quote route (GraphQL)</td><td>with the fee panels</td><td>team</td><td><span class="chip scrape">decide</span></td><td>the only way to measure the guest-side total; blocked as a ToS question — a human call, not an agent's</td></tr>
+<tr><td class="k">AirDNA market report (lead time, realised ADR)</td><td>one purchase</td><td>team</td><td><span class="chip paid">decide</span></td><td>the only measured realised-ADR and current lead-time source; would replace two "unidentified" labels; check student pricing</td></tr>
+<tr><td class="k">IR asks (unbilled RNPL balance; single-fee share of GBV)</td><td>once</td><td>team</td><td><span class="chip human">send</span></td><td>one email; the answers pin u and the migrated share</td></tr>
+</tbody></table></div>
+
+<!-- ============ 9 PRIORITY ============ -->
+<h2><span class="n">9</span>If we can only do five things</h2>
+<div class="rules">
+<ol>
+<li><b>LSEG Workspace registration</b> — unlocks point-in-time consensus history and makes Theses A and B real backtests instead of press-quote reconstructions. Human, 15 minutes.</li>
+<li><b>Thesis A backtest</b> — decides whether the memo may claim an expectations edge. One agent-day, data on disk.</li>
+<li><b>Wire RNPL as a variable</b> (u, L, re-based nights, λ chart, funds-payable score line) and resolve the FX-confound question — the bear engine of the memo. One agent-day plus Theo's review.</li>
+<li><b>September Inside Airbnb dumps → calendar pickup ≤ 90 days</b> — the first alt-data object aimed at booked GBV. Theo, when the batch lands (mid/late Sep).</li>
+<li><b>NCLH kernel</b> — the exhibit that turns an Airbnb observation into a method. One agent, 3–5 days, free data.</li>
+</ol></div>
+
+<footer>Sources: 05_backtests/K1_*, K2_*, B1–B4, A1–A3 notes; 01_ground-truth/05_altdata_landscape.md; PREREG_ABNB-INT-v1.md. Research, not investment advice.</footer>
+</div>

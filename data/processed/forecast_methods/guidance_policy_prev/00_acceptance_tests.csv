@@ -1,0 +1,22 @@
+test,passed,detail
+A1 guide ranges in ledger == 22 (19 scoreable + 3 with no actual yet),False,n_ranges=20 n_scoreable=19
+A2 19/19 beat the midpoint,True,"19/19 above midpoint, 0 below the low end"
+A3 15/19 above the top of the range,True,15/19 above the high end
+A4 cushion recomputed from actual/mid matches ledger 2dp column,True,max abs diff = 0.00486 pp
+B1 trailing-8 cushion at 2026-08-06 = mean 1.856% / median 1.790% / sd 1.006pp,True,"ledger-2dp: mean 1.8562% median 1.7900% sd 1.0064pp on [np.float64(0.86), np.float64(2.69), np.float64(0.98), np.float64(2.52), np.float64(0.86), np.float64(3.27), np.float64(2.61), np.float64(1.06)] | raw ratios: mean 1.8567% median 1.7905% sd 1.0048pp"
+B2 cushion shrank ~3.0% (first 11) -> ~1.86% (last 8),True,"first-11 mean 3.039%, last-8 mean 1.857%, OLS slope -0.1234pp/print p=0.055"
+B3 range width 4.9% -> 1.9% of midpoint,True,"first-4 mean 4.86%, last-4 mean 1.85%, last-8 mean 1.86%, 3Q26 guide 1.69%; the 4.9 figure reproduces only on the first 4, not the first 11 (3.72%)"
+C1 kappa ~ +0.52% with sd ~28bp on LSEG-only pairs,True,LSEG-only n=12 mean +0.604% median +0.517% sd 0.300pp (the stated sd 0.28pp is NOT reproduced; see note)
+C2 guide-vs-Street sd ~2.5pp >> revenue-surprise sd ~1.1pp (LSEG era 2023Q3+),True,LSEG era: gap sd 2.13pp (n=12) vs surprise sd 1.16pp (n=12); FULL sample gap sd 4.41pp (n=19) and surprise sd 5.66pp (n=23) -- the full sample is dominated by the 2020-21 recovery prints and does NOT reproduce the claim
+D1 kernel conversion table reproduces the architect's 12 cells at w=2/3,True,12/12 cells match to 0.002pp; mismatches={}
+D2 Q4 lambda mean 12.030% and range 0.171pp (2023-2025),True,mean 12.0298% range 0.1711pp n=3
+D3 the extra 1Q23/2Q23 cells the method cards omit do exist,True,"2023Q1 12.803%; 2023Q2 13.724% -- Q1 and Q2 therefore have 4 same-season observations, Q3 and Q4 only 3"
+"E1 Gate G4 sign test vs the pre-guide Street (W1 target >= 8/14, W2 >= 6/10)",False,W1 PIT: model beats Street on 7/14 guide dates (one-sided p=0.605); W2 PIT: 4/10 (p=0.828). GATE G4 FAILS -- must survive both
+"E2 ON LEVEL WE LOSE TO THE STREET (this is a disclosure, not a pass/fail)",True,W1 PIT guide-midpoint MAE model 1.99% vs Street 1.97%; bias model +1.12% vs Street -0.51%
+"F1 consensus self-inconsistency: quarterly sum 14,226M vs FY26 14,100M = 126M",True,"sum 14226M, FY26 14,100M, gap 126M -- larger than our own edge"
+"F2 central GBV 26,300 reproduces print 3,200 / guide 3,141 (no fee) and 3,240 / 3,181 (half fee)",True,no fee: print 3200 guide 3142; half fee: print 3240 guide 3181; lambda_Q4 12.030% cushion 1.857% sd 3.03pp (kernel PIT RMSE 2.86pp + cushion sd 1.005pp)
+G1 pooled volume-bucket conservatism is about +4pp,True,"pooled n=5 mean +4.36pp median +4.82pp; nights-only n=2 mean +2.99pp -- n is 5 and 2, say so"
+G2 (DISCLOSURE) 4Q26 nights bucket word: declared vs estimated,True,"estimator (n=3 deltas, mean -1.65pp sd 2.23pp) gives P(low double digit) in [0.30, 0.35] across the two 3Q26 nights scenarios; DECLARED 0.55 is ABOVE what the n=3 estimator supports. Both published; the declared set is judgement, not measurement."
+G3 FY26 guide-raise probability: base rate vs the declared 0.75,True,"Q3-print re-statements: 5/7 raises, 0 cuts, Laplace 0.67; FY26 revenue guide itself raised 2/2 so far; declared 0.75"
+H1 the 9/9 rule: does guide-below-Street survive as an executable signal?,False,"as-published: below-guide 9/9 negative 20d, above-guide 6/10; EXECUTABLE from the reaction close, Fisher p=0.141, spread -1.50pp"
+H2 calendar-artefact check,True,"in 2022Q3-2025Q1, 9/11 of ALL prints had a negative executable 20d excess return regardless of the guide sign, and 8/11 of the guide-below observations fall in that era. The rule is a calendar artefact. NOT A SIGNAL."

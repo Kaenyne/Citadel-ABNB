@@ -1,0 +1,194 @@
+==============================================================================
+1. WHAT B3 v2's DRIVER-BASE N ACTUALLY EMBEDS
+==============================================================================
+
+FY26 N 584.08M -> FY27 N 639.30M   g_N = +9.455783%   (B3 v2 publishes +9.455783%)
+FY26 GBV $104,400.1M -> FY27 $116,417.7M   g_GBV = +11.511084%   (B3 v2 publishes +11.511084%)
+g_ADR = +1.877745%   (B3 v2 publishes +1.877745%)
+
+QUARTERLY SHAPE of the N that B3 publishes only as an annual number:
+quarter   nights_m  nights_yoy_pct  adr_yoy_pct  gbv_yoy_pct                          n_source
+ 2026Q1    156.200           9.154        9.188       19.184                     printed_panel
+ 2026Q2    148.300          10.342        4.896       15.745                     printed_panel
+ 2026Q3    146.114           9.367        0.591       10.014 driver_scenario_flat_regional_yoy
+ 2026Q4    133.461           9.484        2.115       11.799 driver_scenario_flat_regional_yoy
+ 2027Q1    170.730           9.302        2.617       12.163 driver_scenario_flat_regional_yoy
+ 2027Q2    162.201           9.374        1.527       11.044 driver_scenario_flat_regional_yoy
+ 2027Q3    160.036           9.528        1.229       10.874 driver_scenario_flat_regional_yoy
+ 2027Q4    146.336           9.647        2.088       11.937 driver_scenario_flat_regional_yoy
+
+REGIONAL CELLS -- the ONLY exogenous nights inputs in the FY27 path.
+Each is a SINGLE ANNUAL RATE applied FLAT to all four 2027 quarters:
+region  nights_yoy_pct
+    na             6.0
+  emea             7.0
+ latam            16.0
+  apac            15.0
+source: data/processed/overnight/10_regional_forecast.csv, period FY27, scenario 'base'
+        (bear NA+3/EMEA+4/LatAm+12/APAC+11 -> TOTAL +5.82%;
+         bull NA+8/EMEA+9/LatAm+19/APAC+18 -> TOTAL +11.48%)
+
+NO quarterly phasing, NO lap schedule, NO RNPL term, NO cancellation term,
+NO pull-forward term exists anywhere in this path.  The FY27 quarterly nights
+growth varies ONLY because the regional mix drifts between quarters.
+
+==============================================================================
+2. THE LAP GRID -- B3's N against the three lap schedules the repo argues over
+==============================================================================
+                   schedule  fy27_nights_yoy_pct  delta_vs_b3_pp  implied_gbv_growth_pct  delta_gbv_vs_b3_pp  status
+  none (B3 v2 as published)                9.456           0.000                  11.511              -0.000 derived
+NA-only bundle lap (PR #32)                8.200          -1.256                  10.232              -1.279 derived
+ global bundle lap (PR #32)                6.400          -3.056                   8.398              -3.113 derived
+        29-bridge FY27 walk                9.200          -0.256                  11.250              -0.261 derived
+
+The lap is therefore worth  0.00pp (B3 as published)  to  -3.06pp of FY27 nights
+growth, i.e. up to -3.12pp of GBV growth.  B3 carries NONE of it.
+
+==============================================================================
+3. KAPPA ANATOMY -- how much of the 2.34pp w-band is economics?
+==============================================================================
+
+--- lambda_fixed_at_w=2/3 (B3 convention)
+   kernel_w   lambda_q2  fy26_revenue_musd  fy27_revenue_musd  fy27_growth_pct   kappa_pct  kappa_lag_pct  kappa_print_pct
+     0.3300     13.7136         14398.5470         15720.2552           9.1795     -2.0909        -0.0923          -1.9986
+     0.5000     13.7136         14298.8907         15779.4914          10.3547     -1.0371        -0.0809          -0.9562
+     0.6667     13.7136         14201.1886         15837.5661          11.5228      0.0105        -0.0698           0.0803
+    FY27 growth band across w in [0.33, 2/3]: 2.343pp   -> EV/EBITDA turns +/- 0.562
+
+--- lambda_REFIT_at_this_w (B3 caveat 1)
+   kernel_w   lambda_q2  fy26_revenue_musd  fy27_revenue_musd  fy27_growth_pct   kappa_pct  kappa_lag_pct  kappa_print_pct
+     0.3300     15.5296         14254.3495         15890.7955          11.4803     -0.0276        -0.0724           0.0449
+     0.5000     14.5559         14227.6734         15863.1404          11.4950     -0.0144        -0.0708           0.0564
+     0.6667     13.7136         14201.1886         15837.5661          11.5228      0.0105        -0.0698           0.0803
+    FY27 growth band across w in [0.33, 2/3]: 0.042pp   -> EV/EBITDA turns +/- 0.010
+
+THE FINDING B3's OWN CAVEAT 1 POINTS AT AND DOES NOT PRICE:
+  published band (lambda fixed at w = 2/3)           2.343pp   = +/- 0.562 turns
+  self-consistent band (lambda re-fit at each w)     0.042pp   = +/- 0.010 turns
+  pure LAG channel span (the only economics in it)   0.023pp
+  The PRINT channel -- FY26 1H is the printed number while FY26 2H and all of
+  FY27 are kernel -- carries 99.0% of the published band.
+
+WHICH w DO THE PRINTED 1H26 QUARTERS SUPPORT?  (lambda fixed at 2/3, B3 convention)
+  kernel_w lambda_convention quarter  printed_musd  kernel_musd    err_pct  status                                       source
+      0.33         fixed@2/3  2026Q1       2678.00      2802.15       4.64 derived printed 1H26 revenue vs the kernel at this w
+      0.33         fixed@2/3  2026Q2       3608.00      3195.81     -11.42 derived printed 1H26 revenue vs the kernel at this w
+      0.50         fixed@2/3  2026Q1       2678.00      2748.20       2.62 derived printed 1H26 revenue vs the kernel at this w
+      0.50         fixed@2/3  2026Q2       3608.00      3400.97      -5.74 derived printed 1H26 revenue vs the kernel at this w
+      0.67         fixed@2/3  2026Q1       2678.00      2695.31       0.65 derived printed 1H26 revenue vs the kernel at this w
+      0.67         fixed@2/3  2026Q2       3608.00      3602.10      -0.16 derived printed 1H26 revenue vs the kernel at this w
+  -> at w = 0.33 the kernel misses printed 2Q26 by ~-11%; at w = 2/3 by ~-0.2%.
+  -> but lambda was FIT at w = 2/3, so this test is partly circular; the re-fit
+     column below is the non-circular version.
+  kernel_w lambda_convention quarter  printed_musd  kernel_musd    err_pct  status                                       source
+      0.33             refit  2026Q1       2678.00      2673.37      -0.17 derived printed 1H26 revenue vs the kernel at this w
+      0.33             refit  2026Q2       3608.00      3619.03       0.31 derived printed 1H26 revenue vs the kernel at this w
+      0.50             refit  2026Q1       2678.00      2684.17       0.23 derived printed 1H26 revenue vs the kernel at this w
+      0.50             refit  2026Q2       3608.00      3609.86       0.05 derived printed 1H26 revenue vs the kernel at this w
+      0.67             refit  2026Q1       2678.00      2695.31       0.65 derived printed 1H26 revenue vs the kernel at this w
+      0.67             refit  2026Q2       3608.00      3602.10      -0.16 derived printed 1H26 revenue vs the kernel at this w
+
+==============================================================================
+4. RNPL -> FY27 REVENUE GROWTH: THE CHANNEL LEDGER
+==============================================================================
+id                                                                                                             channel  lo_pp  hi_pp  central_pp       status                                                                                                                                                                                                                                                                                                 in_b3
+ a                                       volume N -- product-bundle lap (US 3Q26, global 1Q27, Jul-26 types expansion)  -3.06   0.00       -1.26      derived                                                                                                                                                                                                                                                          NO -- B3's N carries no lap term of any kind
+ b                                    volume N -- RNPL cancellation tail and rising propensity (platform ~16% -> ~17%)  -0.90   0.00       -0.30      derived                                                                                                                                                                                                                                                                                                    NO
+ c                                                           volume N -- pull-forward reversal (lead-time lengthening)  -1.80   0.00       -0.90 unidentified                                                                                                                                                                                                                                                                                                    NO
+ d ADR line -- RNPL larger-home mix and the pricing residual; TWO-SIDED, and B3 already sits at the mean-reversion end  -2.00   1.78        0.00      assumed ATTRIBUTION ONLY -- zero weight. B3's ADR line is pinned by the driver assumption 'every region +3.00% ex-FX'. To make this channel bite you must restate the +3.00%. B3's +2.83pp remainder means B3 is NOT exposed to residual mean reversion -- it assumes it. The unpriced risk is the OTHER way.
+ e                                         kernel recognition kappa_w -- longer booking-to-stay lag argues for LOWER w  -2.34   0.00       -0.02      derived                                                                                                                                                                                                                             THE BAND IS IN B3; the RNPL-based ARGUMENT for where to sit in it is not.
+ f                                                                                    fee line x RNPL on unearned fees   0.36   0.90        0.59      assumed                                                                                                                                                                                                                                     ASSUMED BLOCK -- explicitly OUTSIDE the computed $15,720-15,838M.
+ g                                                           take-rate timing residual (2Q26 13.26%, FY26 guided flat)   0.00   0.00        0.00     measured                                                                                                                                                                                                                                                                                 NO, and correctly so.
+
+Volume channels (a+b+c) sum ADDITIVELY to -5.76pp .. +0.00pp (central -2.46pp).
+  That would put FY27 nights at 3.70% .. 9.46%, i.e. BELOW
+  every published construction. The additive sum OVER-COUNTS and must not be quoted.
+
+THE DEFENSIBLE FY27 NIGHTS RANGE is anchored on the three independent constructions:
+     9.46%   B3 v2 / WS10 driver base (no lap, no RNPL term)       [derived]
+     8.20%   PR #32, NA-only lap                                   [derived, FITTED on 4 NA obs, branch-only]
+     9.20%   29-bridge FY27 walk (imports WS10 gross)              [derived]
+     6.40%   PR #32, global lap                                    [derived, FITTED, branch-only]
+     6.52%   Jessie plateau-plus-drag (lap 0 + cancel -0.90)       [derived, annual only, branch-only]
+  -> RNPL-SUPPORTED FY27 NIGHTS RANGE: +6.4% to +8.2%, and B3's +9.46% is ABOVE it.
+  -> The low end is reached by TWO independent constructions 0.12pp apart, which is
+     corroboration; but both are UNMERGED BRANCH artefacts and neither is registered.
+
+==============================================================================
+5. FY27 QUARTERLY PHASING AND THE MULTIPLE
+==============================================================================
+
+--- B3 driver_base quarterly path, w = 0.330
+quarter  nights_yoy_pct  adr_yoy_pct  gbv_yoy_pct  kappa_q_pp  rev_growth_pct  fy26_comp_growth_pct
+ 2027Q1            9.30         2.62        12.16        3.52           15.68                 17.87
+ 2027Q2            9.37         1.53        11.04      -11.88           -0.84                 16.54
+ 2027Q3            9.53         1.23        10.87        0.94           11.81                 16.60
+ 2027Q4            9.65         2.09        11.94       -0.95           10.99                 12.00
+
+--- B3 driver_base quarterly path, w = 0.500
+quarter  nights_yoy_pct  adr_yoy_pct  gbv_yoy_pct  kappa_q_pp  rev_growth_pct  fy26_comp_growth_pct
+ 2027Q1            9.30         2.62        12.16        1.60           13.76                 17.87
+ 2027Q2            9.37         1.53        11.04       -5.46            5.59                 16.54
+ 2027Q3            9.53         1.23        10.87        0.75           11.62                 16.60
+ 2027Q4            9.65         2.09        11.94       -0.97           10.96                 12.00
+
+--- B3 driver_base quarterly path, w = 0.667
+quarter  nights_yoy_pct  adr_yoy_pct  gbv_yoy_pct  kappa_q_pp  rev_growth_pct  fy26_comp_growth_pct
+ 2027Q1            9.30         2.62        12.16       -0.29           11.88                 17.87
+ 2027Q2            9.37         1.53        11.04        0.84           11.89                 16.54
+ 2027Q3            9.53         1.23        10.87        0.56           11.44                 16.60
+ 2027Q4            9.65         2.09        11.94       -1.00           10.93                 12.00
+
+--- RNPL-AWARE path, NA-only lap (to PR #32 +8.2%), at w = 2/3
+quarter  nights_yoy_b3_pct  lap_drag_pp  nights_yoy_rnpl_pct  adr_yoy_pct  kappa_q_pp  rev_growth_rnpl_pct  rev_growth_b3_pct  fy26_comp_growth_pct
+ 2027Q1               9.30        -1.26                 8.05         2.62       -0.29                10.59              11.88                 17.87
+ 2027Q2               9.37        -1.26                 8.12         1.53        0.84                10.61              11.89                 16.54
+ 2027Q3               9.53        -1.26                 8.27         1.23        0.56                10.16              11.44                 16.60
+ 2027Q4               9.65        -1.26                 8.39         2.09       -1.00                 9.65              10.93                 12.00
+
+--- RNPL-AWARE path, global lap (to PR #32 +6.4%), at w = 2/3
+quarter  nights_yoy_b3_pct  lap_drag_pp  nights_yoy_rnpl_pct  adr_yoy_pct  kappa_q_pp  rev_growth_rnpl_pct  rev_growth_b3_pct  fy26_comp_growth_pct
+ 2027Q1               9.30        -2.32                 6.98         2.62       -0.29                 9.50              11.88                 17.87
+ 2027Q2               9.37        -3.30                 6.07         1.53        0.84                 8.53              11.89                 16.54
+ 2027Q3               9.53        -3.30                 6.23         1.23        0.56                 8.09              11.44                 16.60
+ 2027Q4               9.65        -3.30                 6.35         2.09       -1.00                 7.56              10.93                 12.00
+
+--- THE STREET'S FY27, PHASED LIKE FY26
+       street_case quarter  implied_musd  implied_growth_pct  fy26_comp_growth_pct  status                                                                          source
+Street lo $15,740M  2027Q1       2968.18               10.84                 17.87 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+Street lo $15,740M  2027Q2       3998.96               10.84                 16.54 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+Street lo $15,740M  2027Q3       5324.59               10.84                 16.60 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+Street lo $15,740M  2027Q4       3448.27               10.84                 12.00 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+Street hi $15,790M  2027Q1       2977.61               11.19                 17.87 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+Street hi $15,790M  2027Q2       4011.66               11.19                 16.54 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+Street hi $15,790M  2027Q3       5341.51               11.19                 16.60 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+Street hi $15,790M  2027Q4       3459.23               11.19                 12.00 derived Street FY27 total phased on the FY26 quarterly revenue shares at kernel w = 2/3
+  Proportional phasing is flat by construction: the Street's FY27 is ~+11% in
+  EVERY quarter, including 1Q27 against a +17.9% comp and 2Q27 against +16.5%.
+
+--- RNPL-AWARE vs STREET-PHASED, by quarter (gap in pp)
+lap_case    NA-only lap (to PR #32 +8.2%)                    global lap (to PR #32 +6.4%)                   
+street_case            Street hi $15,790M Street lo $15,740M           Street hi $15,790M Street lo $15,740M
+quarter                                                                                                     
+2027Q1                              -0.60              -0.25                        -1.69              -1.34
+2027Q2                              -0.58              -0.23                        -2.65              -2.30
+2027Q3                              -1.02              -0.67                        -3.09              -2.74
+2027Q4                              -1.54              -1.18                        -3.62              -3.27
+
+TURNS AT +0.48 PER POINT OF FORWARD GROWTH, APPLIED ONCE:
+                                             case               street_name  edge_lo_pp  edge_hi_pp  turns_lo  turns_hi
+   B3 computed band, w 0.33 -> 2/3 (as published) Street-implied lo +11.32%      -2.143       0.200    -1.029     0.096
+   B3 computed band, w 0.33 -> 2/3 (as published) Street-implied hi +11.63%      -2.452      -0.108    -1.177    -0.052
+            B3 at w = 2/3 + RNPL NA-only lap in N Street-implied lo +11.32%      -1.079      -1.079    -0.518    -0.518
+            B3 at w = 2/3 + RNPL NA-only lap in N Street-implied hi +11.63%      -1.388      -1.388    -0.666    -0.666
+             B3 at w = 2/3 + RNPL global lap in N Street-implied lo +11.32%      -2.913      -2.913    -1.398    -1.398
+             B3 at w = 2/3 + RNPL global lap in N Street-implied hi +11.63%      -3.222      -3.222    -1.546    -1.546
+B3 at w = 2/3 + RNPL lap band (global .. NA-only) Street-implied lo +11.32%      -2.913      -1.079    -1.398    -0.518
+B3 at w = 2/3 + RNPL lap band (global .. NA-only) Street-implied hi +11.63%      -3.222      -1.388    -1.546    -0.666
+
+B3's own benchmark: the w-indeterminacy is 2.343pp of growth, which B3 quotes
+as +/-1.12 turns (0.48 x 2.343 = 1.125 turns of SPREAD;
+  B3 labels the full spread '+/-1.12', which is loose but is its published figure).
+  self-consistent re-fit of lambda:  0.042pp = 0.020 turns of spread.
+  RNPL lap band (global vs NA-only): 1.834pp = 0.880 turns of spread.
+  RNPL lap CENTRAL effect vs B3 as published (NA-only): -1.280pp = -0.614 turns.

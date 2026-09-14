@@ -1,0 +1,13 @@
+spec,window,n,rmse,mae,bias,interval_rmse,hit_rate_in_band,n_params,best_in_window
+H0_contemporaneous,W1,14,1.7657,1.6158,0.4636,1.3236,0.0,2,False
+H0_contemporaneous,W2,10,1.8227,1.6332,0.3041,1.3925,0.0,2,False
+H1_repo_eur_mean_t1_t2,W1,14,2.4642,1.8333,-1.2503,2.1178,0.214,3,False
+H1_repo_eur_mean_t1_t2,W2,10,1.0925,0.9579,-0.1416,0.6933,0.3,3,False
+H2_phi_adrfx,W1,10,0.9936,0.8977,0.0975,0.5782,0.3,2,True
+H2_phi_adrfx,W2,10,0.9936,0.8977,0.0975,0.5782,0.3,2,True
+H2b_phi_basket,W1,14,1.7975,1.3269,-0.4334,1.4619,0.286,2,False
+H2b_phi_basket,W2,10,1.3155,0.9718,0.2791,0.9923,0.4,2,False
+H3_free_weights,W1,14,1.4854,1.1861,0.4317,1.1176,0.286,4,False
+H3_free_weights,W2,10,1.6974,1.3983,0.4526,1.3062,0.3,4,False
+H3b_free_lags123,W1,14,1.6652,1.3647,-0.1145,1.2876,0.071,4,False
+H3b_free_lags123,W2,10,1.4842,1.2141,0.37,1.1129,0.1,4,False

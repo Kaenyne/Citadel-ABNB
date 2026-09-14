@@ -1,0 +1,132 @@
+==============================================================================
+l1-reconciliation-v2 -- B3 FY27 decomposition rebuild.  EXPLORATORY.
+run 2026-09-11.  reads v1 artefacts read-only from l1_reconciliation/, writes to l1_reconciliation_v2/
+==============================================================================
+
+seasonal lambda (recomputed from the KPI panel at w=2/3, as v1 does; NOTE that 
+lambda is ESTIMATED at w=2/3 and then held FIXED across the w grid -- that is v1's
+convention, reproduced here so the grids are comparable, and it is a caveat):
+  lambda_Q1 = 12.693760%  (n=4, sd=0.3001)
+  lambda_Q2 = 13.713589%  (n=4, sd=0.2040)
+  lambda_Q3 = 17.239362%  (n=3, sd=0.1324)
+  lambda_Q4 = 12.029793%  (n=3, sd=0.0856)
+
+--- CHECK 0: does v2 reproduce the v1 driver_base grid?  (it must, to the cent)
+ kernel_w      fy26_v2      fy26_v1      fy27_v2      fy27_v1  growth_v2  growth_v1  abs_err_fy27_musd  abs_err_growth_pp
+ 0.330000 14398.546952 14398.546952 15720.255163 15720.255163   9.179456   9.179456                0.0                0.0
+ 0.500000 14298.890735 14298.890735 15779.491378 15779.491378  10.354654  10.354654                0.0                0.0
+ 0.666667 14201.188561 14201.188561 15837.566098 15837.566098  11.522821  11.522821                0.0                0.0
+  PASS: max |dFY27| = 1.82e-12 $M, max |dgrowth| = 1.78e-15 pp
+
+--- THE ALGEBRA (FY2027 vs FY2026, driver_base GBV path; GBV is w-INVARIANT)
+  GBV_FY26 = 104,400.1 $M      GBV_FY27 = 116,417.7 $M
+  N_FY26   = 584.08 M     N_FY27   = 639.30 M
+  ADR_FY26 = 178.7444 $        ADR_FY27 = 182.1007 $
+
+  BASIS B (published).  GBV == N x ADR_blend, exactly, so
+    (1 + g_N +9.455783%) x (1 + g_ADR +1.877745%) - 1 = +11.511084%  ==  g_GBV +11.511084%
+    additive expansion: +9.4558 + +1.8777 + cross +0.1776 = +11.5111 pp
+
+  BASIS A (the red team's index basis).  Fixed-price quantity index Q x fixed-quantity price index P:
+    (1 + Q +8.263188%) x (1 + P +3.000000%) - 1 = +11.511084%  ==  g_GBV
+    additive expansion: +8.2632 + +3.0000 + cross +0.2479 = +11.5111 pp
+
+  *** THE v1 DOUBLE COUNT, NAMED.  v1 took its VOLUME line from basis A (Q = +8.2632pp,
+      a FIXED-PRICE index which ALREADY CONTAINS geographic mix) and its PRICE line from basis A
+      (P = +3.0000pp), then ADDED the basis-B geographic-mix line (-1.0896pp)
+      and the unit-size/LOS line (+0.3818pp) on top.  Mixing the two bases is the double count.
+      It also dropped the basis-A cross term (+0.2479pp), which is why the plug came out
+      at +0.1674pp instead of the true kernel effect.  v2 never mixes bases.
+
+  regional detail (driver_base scenario assumptions):
+        nights_yoy_pct  adr_yoy_pct  gbv_share_y0_pct  nights_share_y0_pct  nights_share_y1_pct
+region                                                                                         
+apac              15.0          3.0            9.4252              13.9723              14.6800
+emea               7.0          3.0           41.4963              39.1165              38.2388
+latam             16.0          3.0            9.9995              18.0712              19.1516
+na                 6.0          3.0           39.0789              28.8401              27.9296
+
+--- THE KERNEL RECOGNITION / TIMING EFFECT kappa_w, COMPUTED (not a residual)
+  Revenue_q = lambda_s(q) x [ w*GBV_{q-1} + (1-w)*GBV_{q-2} ].  FY26 revenue uses the
+  PRINTED 1Q26 ($2,678M) and 2Q26 ($3,608M); 3Q26/4Q26 and all of FY27 are kernel.
+  w=0.3300:  FY26 rev 14,398.5  FY27 rev 15,720.3  g_rev +9.17946%  kappa -2.09094%  (lag channel -0.09232, print channel -1.99862)
+  w=0.5000:  FY26 rev 14,298.9  FY27 rev 15,779.5  g_rev +10.35465%  kappa -1.03705%  (lag channel -0.08090, print channel -0.95616)
+  w=0.6667:  FY26 rev 14,201.2  FY27 rev 15,837.6  g_rev +11.52282%  kappa +0.01053%  (lag channel -0.06977, print channel +0.08030)
+  The v1 line 'kernel timing +0.1674pp, an identity' is REFUTED: at w=2/3 the computed effect is +0.01053%, i.e. +0.0117pp of growth.
+
+--- fy27_decomposition_v2.csv  (block / line / pp; only block=COMPUTED_TOTAL rows carry weight)
+                             block                                                               line  pp_w0333  pp_w050  pp_w0667                                 weight_in_total  attributed_pp_of_adr_line                      basis
+                      COMPUTED_GBV                                 volume: total Nights-and-Seats (N)    9.4558   9.4558    9.4558                                             YES                        NaN                   computed
+                      COMPUTED_GBV                            price: blended REPORTED ADR (ADR_blend)    1.8777   1.8777    1.8777                                             YES                        NaN                   computed
+                      COMPUTED_GBV                                         cross term: volume x price    0.1776   0.1776    0.1776                                             YES                        NaN                   computed
+                    COMPUTED_TOTAL                                         = GBV growth (w-INVARIANT)   11.5111  11.5111   11.5111                                        SUBTOTAL                        NaN                   computed
+                  COMPUTED_REVENUE                kernel recognition / timing (lagged-GBV conversion)   -2.3316  -1.1564    0.0117                                             YES                        NaN                   computed
+                    COMPUTED_TOTAL       = FY27 REVENUE GROWTH, COMPUTED (excludes the ASSUMED block)    9.1795  10.3547   11.5228                                           TOTAL                        NaN                   computed
+ASSUMED_NOT_IN_THE_COMPUTED_DOLLAR                            fee / take-rate migration (half weight)    0.9000   0.9000    0.9000           NO -- OUTSIDE the computed $15,837.6M                        NaN                    assumed
+ASSUMED_NOT_IN_THE_COMPUTED_DOLLAR                       new lines outside GBV (ads, Services excess)    0.2000   0.2000    0.2000           NO -- OUTSIDE the computed $15,837.6M                        NaN                    assumed
+ASSUMED_NOT_IN_THE_COMPUTED_DOLLAR                              regulation (dated DiD on EMEA nights)   -0.3000  -0.3000   -0.3000           NO -- OUTSIDE the computed $15,837.6M                        NaN                    assumed
+ASSUMED_NOT_IN_THE_COMPUTED_DOLLAR                       hedge (DOLLARS, added ONCE by kernel-lambda)    0.0000   0.0000    0.0000           NO -- OUTSIDE the computed $15,837.6M                        NaN                    assumed
+ASSUMED_NOT_IN_THE_COMPUTED_DOLLAR                                             = assumed block, total    0.8000   0.8000    0.8000    NO -- shown separately, never added silently                        NaN                    assumed
+           ATTRIBUTION_ZERO_WEIGHT    [L1] geographic mix (OUTPUT of ADR_blend = sum_r share_r ADR_r)    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                    -1.0896            computed_output
+           ATTRIBUTION_ZERO_WEIGHT     [L1] within-region price (reported basis, before the L2 split)    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                     3.0000            computed_output
+           ATTRIBUTION_ZERO_WEIGHT                                        [L1] mix x price cross term    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                    -0.0327            computed_output
+           ATTRIBUTION_ZERO_WEIGHT                      [L1] = ADR LINE (blended reported ADR growth)    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                     1.8777                   computed
+           ATTRIBUTION_ZERO_WEIGHT                       [L2] unit-size mix (bedroom elasticity 0.23)    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                     0.6300                   measured
+           ATTRIBUTION_ZERO_WEIGHT                                                       [L2] LOS mix    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                     0.0400                   measured
+           ATTRIBUTION_ZERO_WEIGHT   [L2] seats / hotel dilution (OUTPUT of N = home + hotel + seats)    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                    -0.5000 assumed_structure_measured
+           ATTRIBUTION_ZERO_WEIGHT                           [L2] booking-date FX carried through Phi    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                     0.0000    assumed_flat_spot_carry
+           ATTRIBUTION_ZERO_WEIGHT [L2] like-for-like price + sub-regional mix (IDENTIFIED REMAINDER)    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                     2.8300      unidentified_2d_ridge
+           ATTRIBUTION_ZERO_WEIGHT              [L2] = within-region price line (L2 rows sum to this)    0.0000   0.0000    0.0000 NO -- ZERO WEIGHT (already inside the ADR line)                     3.0000                   computed
+
+--- IDENTITY CHECK: do the pieces reproduce total FY27 growth at every w?
+ kernel_w  multiplicative_pct  additive_pp_sum  model_growth_pct  abs_err_pp  attribution_block_weight  assumed_block_excluded_pp
+ 0.330000            9.179456         9.179456          9.179456         0.0                       0.0                        0.8
+ 0.500000           10.354654        10.354654         10.354654         0.0                       0.0                        0.8
+ 0.666667           11.522821        11.522821         11.522821         0.0                       0.0                        0.8
+  PASS: max |error| = 2.31e-14 pp (tolerance 0.01pp)
+
+--- ADR ATTRIBUTION (ZERO WEIGHT IN THE TOTAL).  Sums to the ADR line, by construction.
+level                                                          line      pp                      basis   weight_in_total
+   L1    geographic mix (OUTPUT of ADR_blend = sum_r share_r ADR_r) -1.0896            computed_output NO -- ZERO WEIGHT
+   L1     within-region price (reported basis, before the L2 split)  3.0000            computed_output NO -- ZERO WEIGHT
+   L1                                        mix x price cross term -0.0327            computed_output NO -- ZERO WEIGHT
+   L1                      = ADR LINE (blended reported ADR growth)  1.8777                   computed NO -- ZERO WEIGHT
+   L2                       unit-size mix (bedroom elasticity 0.23)  0.6300                   measured NO -- ZERO WEIGHT
+   L2                                                       LOS mix  0.0400                   measured NO -- ZERO WEIGHT
+   L2   seats / hotel dilution (OUTPUT of N = home + hotel + seats) -0.5000 assumed_structure_measured NO -- ZERO WEIGHT
+   L2                           booking-date FX carried through Phi  0.0000    assumed_flat_spot_carry NO -- ZERO WEIGHT
+   L2 like-for-like price + sub-regional mix (IDENTIFIED REMAINDER)  2.8300      unidentified_2d_ridge NO -- ZERO WEIGHT
+   L2              = within-region price line (L2 rows sum to this)  3.0000                   computed NO -- ZERO WEIGHT
+
+--- BOOTSTRAP PROPAGATION (published block-bootstrap share intervals, 4000 draws, seed 20260911)
+  FY27 GBV growth p10 +11.4556%  p50 +11.5106%  p90 +11.5645%  sd 0.0423pp
+  Channel is COMPOSITION only: quarterly total GBV is pinned by the letters, so a share
+  perturbation moves the GBV weights and hence the quantity index, not the level.
+
+--- KERNEL-WEIGHT BAND (w = 0.33 / 0.50 / 2/3)
+ kernel_w  fy26_revenue_musd  fy27_revenue_musd  fy27_growth_pct  fy27_revenue_incl_assumed_theta1_musd  fy27_revenue_incl_assumed_theta083_musd
+     0.33           14398.55           15720.26             9.18                               15835.44                                 15790.81
+     0.50           14298.89           15779.49            10.35                               15893.88                                 15849.56
+     0.67           14201.19           15837.57            11.52                               15951.18                                 15907.15
+
+--- GROWTH EDGE vs EACH VENDOR-STAMPED STREET ANCHOR, and the multiple implication
+    (+0.48 EV/EBITDA turns per point of forward growth, APPLIED ONCE)
+                     vendor      as_of  street_fy27_musd  street_implied_growth_pct  kernel_w  our_fy27_musd  level_edge_pct  growth_edge_pp  ev_ebitda_turns
+                      Zacks 2026-09-04           15745.0                    11.4296    0.3300     15720.2552         -0.1572         -2.2501          -1.0801
+                      Zacks 2026-09-04           15745.0                    11.4296    0.5000     15779.4914          0.2191         -1.0749          -0.5160
+                      Zacks 2026-09-04           15745.0                    11.4296    0.6667     15837.5661          0.5879          0.0932           0.0448
+                      Zacks 2026-09-11           15740.0                    11.6312    0.3300     15720.2552         -0.1254         -2.4518          -1.1768
+                      Zacks 2026-09-11           15740.0                    11.6312    0.5000     15779.4914          0.2509         -1.2766          -0.6127
+                      Zacks 2026-09-11           15740.0                    11.6312    0.6667     15837.5661          0.6199         -0.1084          -0.0520
+Alpha Vantage (LSEG family) 2026-09-11           15757.8                    11.3224    0.3300     15720.2552         -0.2383         -2.1430          -1.0286
+Alpha Vantage (LSEG family) 2026-09-11           15757.8                    11.3224    0.5000     15779.4914          0.1377         -0.9678          -0.4645
+Alpha Vantage (LSEG family) 2026-09-11           15757.8                    11.3224    0.6667     15837.5661          0.5062          0.2004           0.0962
+Yahoo Finance (LSEG family) 2026-09-11           15790.0                    11.5113    0.3300     15720.2552         -0.4417         -2.3318          -1.1193
+Yahoo Finance (LSEG family) 2026-09-11           15790.0                    11.5113    0.5000     15779.4914         -0.0666         -1.1566          -0.5552
+Yahoo Finance (LSEG family) 2026-09-11           15790.0                    11.5113    0.6667     15837.5661          0.3012          0.0115           0.0055
+              S&P Global MI 2026-09-10           15770.0                    11.3701    0.3300     15720.2552         -0.3154         -2.1906          -1.0515
+              S&P Global MI 2026-09-10           15770.0                    11.3701    0.5000     15779.4914          0.0602         -1.0154          -0.4874
+              S&P Global MI 2026-09-10           15770.0                    11.3701    0.6667     15837.5661          0.4284          0.1528           0.0733
+registered l1-reconciliation-v2__fy27_revenue_v2: 6 rows (strict_windows=False -- harness change request, see docstring)
+registered l1-reconciliation-v2__fy27_growth_v2: 6 rows (strict_windows=False -- harness change request, see docstring)
+parked the ANNUAL FY27 object at fy27_annual_object_v2.csv (harness v1.0 has no annual slot)

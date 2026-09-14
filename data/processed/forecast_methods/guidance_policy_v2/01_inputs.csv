@@ -1,0 +1,11 @@
+input,value,source
+lambda_Q4_pct,12.029792635176292,"kernel w=2/3, mean of 4Q23/4Q24/4Q25"
+gbv_2q26_musd,27200.0,"printed, 2Q26 letter"
+cushion_mean_pct,1.8567430632975808,trailing-8 A/g as of 2026-08-06
+cushion_median_pct,1.7904910308494282,trailing-8 A/g as of 2026-08-06
+cushion_sd_pp,1.004799578644722,"trailing-8 A/g, ddof=1"
+kernel_w1_pit_walkforward_rmse_pct,2.8590839216355013,guidance_policy/07_backtest_scores.csv print_kernel_policy W1 PIT n=14
+sd_guide_mid_pp_CHOSEN,3.0305087137639526,"kernel RMSE (+) cushion sd, in quadrature"
+sd_print_pp,2.8590839216355013,kernel RMSE only; the cushion draw is the print->guide step
+sd_alt_pp_SENSITIVITY,2.73,"optimal-mix no-guide pool top3_inv_mse, wider of W1/W2"
+trailing8_mean_range_width_pct,1.8588392101091462,trailing-8 (hi-lo)/mid

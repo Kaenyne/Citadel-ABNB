@@ -1,0 +1,42 @@
+G2: 72/72 exact cells; max error 2.2737367544323206e-13
+ year  within_exfx_pp  adr_note_exfx_pp  residual_pp
+ 2023        2.818493              3.10    -0.281507
+ 2024        2.045727              3.44    -1.394273
+ 2025        3.399944              3.41    -0.010056
+ kernel_w  fy26_revenue_musd  fy27_revenue_musd  fy27_growth_pct  revenue_q10  revenue_q90  growth_q10  growth_q90  n_draws                                       basis                            lambda_variant
+ 0.330000       14423.407890       15853.689952         9.916395 15824.814043 15859.680535    9.725454    9.956017       40 conditional_composition_only_not_predictive K0_v2_ewm_fixed_across_weight_sensitivity
+ 0.500000       14332.741194       15914.722339        11.037534 15885.252766 15920.836710   10.846189   11.077250       40 conditional_composition_only_not_predictive K0_v2_ewm_fixed_across_weight_sensitivity
+ 0.666667       14243.852275       15974.558012        12.150545 15944.506415 15980.793744   11.958897   12.190334       40 conditional_composition_only_not_predictive K0_v2_ewm_fixed_across_weight_sensitivity
+{
+  "verdict": "partial",
+  "exact_cells": 72,
+  "g2_max_error_musd": 2.2737367544323206e-13,
+  "n_quarters": 18,
+  "n_params": 57,
+  "kernel_coefficients": 4,
+  "n_disclosure_constraints": 127,
+  "n_annual_adr_anchors": 16,
+  "observational_interval_jacobian_rank": 57,
+  "observational_local_null_dimensions": 0,
+  "exfx_max_abs_residual_pp": 1.3942725566612753,
+  "exfx_under_08_every_year": false,
+  "max_conditional_adr_halfwidth_pct": 25.69474771414509,
+  "max_anchor_sensitivity_pct": 34.62413324353051,
+  "adr_identification_pass": false,
+  "adr_identification_reason": "Conditional ADR halfwidth exceeds 10 percent and anchor sensitivity exceeds 10 percent; full local Jacobian rank does not imply a narrow identified set",
+  "bootstrap_requested": 40,
+  "bootstrap_retained": 40,
+  "identity_residual_bootstrap_width": 0,
+  "arrivals_earned": [],
+  "monthly_public_rows": 397,
+  "runtime_seconds": 88.74232909997227,
+  "as_of": "2026-09-12",
+  "registration_status": {
+    "status": "UNREGISTERED_LOCAL_CANDIDATE",
+    "rows": 12,
+    "shared_registry_files_written": 0,
+    "analysis_input_cutoff": "2026-09-12",
+    "reconstruction_created_at_utc": "2026-09-13T01:42:57.875475+00:00",
+    "reason": "Frozen harness does not admit this reconstruction's actual date. An earlier date must not be used as a format slot. Parent must obtain a suitable dated schema before registration."
+  }
+}

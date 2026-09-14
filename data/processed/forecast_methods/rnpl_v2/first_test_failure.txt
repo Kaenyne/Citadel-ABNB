@@ -1,0 +1,13 @@
+Command: ./.venv/Scripts/python.exe -X utf8 -m pytest analysis/src/forecast_methods/rnpl_v2/tests -q
+2026-09-13; exit 1; wall time 2.94 seconds
+1 failed, 11 passed, 3 PerformanceWarning in 1.71s.
+FAILED test_stock_reconstruction_matches_independent_K1_outputs:
+Stock reconstruction allclose against frozen K1 passed at rtol=1e-11.
+Headline rounding assertion failed:
+assert (8.1 - 0.05) <= 8.047784019288606
+
+Correction: implementation verification now compares directly with frozen K1 B3 full precision;
+the pre-registered headline +8.1 reproduction still FAILS and acceptance.json retains that failure.
+This is not cured by widening the acceptance band. The later test checks the source discrepancy.
+An input label inspection also found the grid ADR labels are equal / plus15 / plus25; corrected
+the implementation mapping from its initially assumed plus50 label before any model execution.

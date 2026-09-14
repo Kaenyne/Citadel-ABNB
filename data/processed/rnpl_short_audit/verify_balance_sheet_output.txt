@@ -1,0 +1,481 @@
+ADVERSARIAL VERIFICATION OF research/notes/2026-09-11_rnpl-balance-sheet-and-q3-bridge.md
+Opus verification agent for Theo, 2026-09-11.  Read-only on all inputs.
+panel: /Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB/data/processed/overnight/02_kpi_panel_quarterly.csv
+10-Q : /Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB/data/raw/regulatory/quantification/abnb_2026q2_10q.html
+10-K : /Users/theomachado/Library/CloudStorage/OneDrive-UniversityofFlorida/Young, Willem K.'s files - Citadel - ABNB/Citadel-ABNB/data/raw/regulatory/quantification/abnb_2025_10k.json
+
+====================================================================================================
+C1 - does the 2Q26 10-Q carry the RNPL cancellation / decorrelation language?
+====================================================================================================
+abnb_2026q2_10q.html, Part I Item 2 MD&A, 'Key Business Metrics and Non-GAAP Financial Measures - Gross Booking Value': "Our flexible payment options allow guests to defer a portion or all of their payment from the time of booking to a date closer to stay. In 2025, we launched RNPL and expanded it internationally in 2026. To date, RNPL bookings, which require no payment at the time of booking, have experienced higher cancellation rates than historic bookings in which some or all of the cash was received at the time of booking. As adoption of RNPL and our other flexible payment options continues to grow, the timing among GBV, revenue, and cash receipts may become less correlated."
+
+  verbatim in 10-Q: 'have experienced higher cancellation rates than historic bookings' -> True
+  verbatim in 10-Q: 'the timing among GBV, revenue, and cash receipts may become less correlated' -> True
+  verbatim in 10-Q: 'which require no payment at the time of booking' -> True
+  verbatim in 10-Q: 'In 2025, we launched RNPL and expanded it internationally in 2026' -> True
+  ledger rows = 60; columns = ['statement_id', 'date', 'period_referenced', 'event', 'speaker', 'role', 'theme', 'quote', 'quantity', 'quantity_num_low', 'quantity_num_high', 'unit', 'basis', 'scope', 'night_weighted', 'official_or_mirror', 'quote_verified', 'source_key', 'source_file', 'source_url', 'access_date', 'note']
+  ledger contains 'higher cancellation': 1 row(s) ['D006']
+  ledger contains 'less correlated': 0 row(s) []
+  ledger contains 'unbilled': 1 row(s) ['D056']
+  ledger contains 'single fee': 2 row(s) ['D024', 'D047']
+  ledger contains '15.5': 1 row(s) ['D024']
+
+====================================================================================================
+C2a - independent recomputation of the y/y gap table (panel, all figures %)
+====================================================================================================
+         gbv_yoy  uf_yoy  fp_yoy  uf_minus_gbv  fp_minus_gbv  uf_gap_minus_fp_gap  panel_uf_yoy  panel_fp_yoy  panel_gbv_yoy
+quarter                                                                                                                     
+1Q25        6.99   11.87    5.01          4.89         -1.97                 6.86         11.87          5.01           6.99
+2Q25       10.85    9.00    7.01         -1.84         -3.84                 1.99          9.00          7.01          10.85
+3Q25       13.93    9.84    9.68         -4.09         -4.25                 0.16          9.84          9.68          13.93
+4Q25       15.91    7.86   17.33         -8.05          1.42                -9.47          7.86         17.33          15.91
+1Q26       19.18    0.37   14.99        -18.82         -4.20               -14.62          0.37         14.99          19.18
+2Q26       15.74   -0.91   10.45        -16.65         -5.29               -11.36         -0.91         10.45          15.74
+
+Verdict on the arithmetic: reproduces the note's table 2.1 to 0.1pt on every cell.
+
+C2b - BUT the 4Q25 'funds payable beat GBV' cell rests on a depressed 4Q24 base.
+         uf_2yr_cagr  fp_2yr_cagr  gbv_2yr_cagr  fp_minus_gbv  uf_minus_gbv
+quarter                                                                    
+3Q25           11.38         9.74         11.86         -2.12         -0.48
+4Q25           10.52         8.89         14.72         -5.83         -4.20
+1Q26            5.96         9.89         12.92         -3.03         -6.96
+2Q26            3.93         8.72         13.27         -4.55         -9.34
+
+4Q24 funds payable grew +1.06% y/y against GBV +13.55% (panel).  On the two-year stack the
+4Q25 funds-payable line still LAGS GBV by ~5.8pts.  The +1.4pt 'beat' in table 2.1 is a base effect.
+
+====================================================================================================
+C2c - FX translation of funds payable, reconciled off the filings (decisive)
+====================================================================================================
+abnb_2026q2_10q.html, MD&A 'Effect of Exchange Rates': "The effect of exchange rate changes on cash, cash equivalents, and restricted cash on our unaudited condensed consolidated statements of cash flows relates to certain assets, principally cash balances held on behalf of customers, that are denominated in currencies other than the functional currency of certain of our subsidiaries. For the six months ended June 30, 2026, we recorded a reduction of $146 million in cash, cash equivalents, and restricted cash, primarily due to the strengthening of the U.S. dollar against major currencies, mainly the Euro and British Pound."  The +$689 million figure in the same table is the SIX MONTHS ENDED 30 JUNE 2025 column, not 1H26.
+
+abnb_2025_10k.json p.49 (Item 7 MD&A, 'Effect of Exchange Rates'): "In 2025, we recorded an increase of $655 million in cash, cash equivalents, and restricted cash, primarily due to the weakening of the U.S. dollar against major currencies, mainly the Euro and British Pound."  Consolidated statements of cash flows: FY2023 $152M, FY2024 $(237)M, FY2025 $655M.
+
+Reconciliation: balance-sheet movement minus the cash-flow-statement movement = FX (+ other).
+
+                                    line  d_balance_musd  cash_flow_stmt_musd  residual_musd  memo_fx_on_cash_musd
+funds payable  FY2025 (31Dec24->31Dec25)          1028.0                  401          627.0                   655
+funds payable  FY2024 (31Dec23->31Dec24)            62.0                  320         -258.0                  -237
+funds payable  1H2025 (31Dec24->30Jun25)          5136.0                 4510          626.0                   689
+funds payable  1H2026 (31Dec25->30Jun26)          5265.0                 5426         -161.0                  -146
+                   unearned fees  FY2025           127.0                  122            5.0                   655
+                   unearned fees  1H2025          1241.0                 1236            5.0                   689
+                   unearned fees  1H2026          1088.0                 1085            3.0                  -146
+
+Reading: the funds-payable residual tracks the disclosed FX-on-cash line to within 5-10%;
+the unearned-fees residual is $3-8mm on a $1.1-1.2bn move, i.e. ZERO.  Unearned fees is an
+FX-clean line; funds payable is not.
+
+C2d - funds-payable y/y with the translation effect removed
+  4Q25 FP y/y reported                          :  17.33%
+  4Q25 FP y/y, FY25 translation out of numerator:   6.76%  (FY25 residual $627mm)
+  4Q25 FP y/y, FY24 translation out of base too :   2.31%  (FY24 residual $-258mm)
+  4Q25 GBV y/y                                  :  15.91%
+  4Q25 UF  y/y (FX-clean)                       :   7.86%
+
+  30Jun25 -> 30Jun26 funds-payable translation residual: $-160mm
+  2Q26 FP y/y reported :  10.45%
+  2Q26 FP y/y ex-FX    :  11.90%
+  2Q26 GBV y/y         :  15.74%
+  2Q26 UF  y/y         :  -0.91%
+
+So FX kills the 4Q25 cell entirely (FP ex-FX +2.3% to +6.8% vs GBV +15.9%, i.e. FP lagging
+GBV by 9 to 14pts, WORSE than unearned fees' -8.1pt gap) and works the WRONG way in 2Q26
+(ex-FX the UF-FP split is wider, not narrower).  The note's 'only a transfer between the two
+lines produces that sign pattern' therefore fails on its own headline quarter.
+
+====================================================================================================
+C2e - does the single-fee migration move fees OUT of unearned fees?  Filing test.
+====================================================================================================
+abnb_2025_10k.json p.62 (Note 2, 'Revenue Recognition'): "Historically, the Company operated only under a split-fee structure, charging service fees as a percentage of the booking amount to both hosts and guests. In October 2025, the Company began transitioning to a single-fee structure, charging only the host a service fee. For bookings that remain under the split-fee model, the Company continues to charge service fees separately to both hosts and guests."
+
+abnb_2025_10k.json p.62 (Note 2, 'Revenue Recognition'): "For all bookings, the guest pays the booking amount to the Company, which disburses the booking amount to the host after check-in, net of the host's service fees."
+
+abnb_2025_10k.json p.63 (Note 2, Significant Accounting Policies - 'Funds Receivable and Funds Payable'): "The Company records guest payments, net of service fees, as funds receivable and amounts held on behalf of customers with a corresponding amount in funds payable and amounts payable to customers when cash is received in advance of check-in. Host and guest fees are recorded as cash with a corresponding amount in unearned fees."
+
+abnb_2025_10k.json p.45 (Item 7 MD&A, Revenue): "We record the service fees that we collect from customers prior to check-in on our balance sheet as unearned fees."  And p.63: "Service fees collected from customers prior to check-in are recorded as unearned fees on the consolidated balance sheets."
+
+abnb_2025_10k.json pp.63-64 (Note 2, 'Funds Receivable and Funds Payable'): "Under the Pay Less Upfront Program, when the Company receives the first installment payment from the guest upon confirmation of the booking, the Company records the first installment payment as funds receivable and amounts held on behalf of customers with a corresponding amount in funds payable and amounts payable to customers, net of the host and guest fees. The full value of the service fees is recorded as cash and cash equivalents and unearned fees on the consolidated balance sheets upon receipt of the first installment payment to represent what the Company expects to be recognized as revenue if the underlying booking is not canceled."
+
+abnb_2026q2_10q.html, MD&A 'Liquidity and Capital Resources - Cash Flows': "This reflected unearned fees growing at a rate less than the GBV growth rate during the six months ended June 30, 2026, compared to the same period in the prior year, which was primarily due to the increased guest adoption of our flexible payment options, which allow guests to pay closer to check-in dates rather than at time of booking, shifting the timing of cash collection and its recognition in operating activities. For example, under our RNPL option, payment is collected closer to check-in rather than at booking. Accordingly, unearned fees are not recorded, and operating cash flows are not generated until payment is received."
+
+Mechanical consequence, with P = host's pre-fee price, g = guest fee, h = old host fee,
+s = new single fee.  FP takes the guest payment NET of service fees; UF takes ALL service fees.
+
+ host_fee  guest_fee  uf_over_gbv_split  uf_over_gbv_single  d_uf_over_gbv_pct  fp_over_gbv_split  fp_over_gbv_single  d_fp_over_gbv_pct  uf_over_fp_split  uf_over_fp_single
+    0.025      0.100             0.1136               0.155            36.4000             0.8864               0.845            -4.6667            0.1282             0.1834
+    0.025      0.120             0.1295               0.155            19.7241             0.8705               0.845            -2.9333            0.1487             0.1834
+    0.025      0.142             0.1462               0.155             5.9940             0.8538               0.845            -1.0267            0.1713             0.1834
+    0.025      0.140             0.1447               0.155             7.0909             0.8553               0.845            -1.2000            0.1692             0.1834
+    0.030      0.100             0.1182               0.155            31.1538             0.8818               0.845            -4.1753            0.1340             0.1834
+    0.030      0.120             0.1339               0.155            15.7333             0.8661               0.845            -2.4330            0.1546             0.1834
+    0.030      0.142             0.1506               0.155             2.9128             0.8494               0.845            -0.5165            0.1773             0.1834
+    0.030      0.140             0.1491               0.155             3.9412             0.8509               0.845            -0.6907            0.1753             0.1834
+    0.035      0.100             0.1227               0.155            26.2963             0.8773               0.845            -3.6788            0.1399             0.1834
+    0.035      0.120             0.1384               0.155            12.0000             0.8616               0.845            -1.9275            0.1606             0.1834
+    0.035      0.142             0.1550               0.155             0.0056             0.8450               0.845            -0.0010            0.1834             0.1834
+    0.035      0.140             0.1535               0.155             0.9714             0.8465               0.845            -0.1762            0.1813             0.1834
+
+Under EVERY parameterisation the migration RAISES unearned fees relative to funds payable
+(UF/FP goes from ~0.177 to ~0.183, +3 to +4%), because the host fee is collected at booking
+and sits in unearned fees exactly as the guest fee did.  The note assumes the opposite sign
+and a ~10x larger magnitude.  Its migration term is not identified by the balance sheet.
+
+Observed unearned fees / funds payable, and its y/y change:
+         uf_over_fp  yoy_pct
+quarter                     
+1Q23         0.2799  -2.2323
+2Q23         0.2567  -3.2673
+3Q23         0.2451  -3.4936
+4Q23         0.2431  -1.6119
+1Q24         0.2786  -0.4686
+2Q24         0.2534  -1.2617
+3Q24         0.2521   2.8645
+4Q24         0.2725  12.0608
+1Q25         0.2968   6.5328
+2Q25         0.2582   1.8633
+3Q25         0.2525   0.1469
+4Q25         0.2505  -8.0743
+1Q26         0.2591 -12.7138
+2Q26         0.2316 -10.2889
+
+Two facts fall out.  (1) The level, 0.23-0.30, is 30-70% ABOVE the 0.15-0.18 that a fully
+prepaid book implies at any fee structure - that wedge is the Pay Less Upfront programme,
+which books the FULL service fee into unearned fees on the FIRST instalment while funds
+payable receives only that instalment.  (2) The ratio falls ~10-13% y/y in 1H26.  A shift
+from Pay Less Upfront into RNPL (zero paid, neither line recorded) mechanically lowers the
+ratio; the fee migration mechanically raises it.  The observed sign is RNPL's, not the
+migration's.
+
+====================================================================================================
+C2f - every alternative explanation for the 4Q25 divergence, sized
+====================================================================================================
+  - FX translation of non-USD funds payable
+      size/test : +627mm in the 4Q25 balance, -258mm in the 4Q24 base; swing $885mm = 14.9pts of the reported +17.3% y/y
+      verdict   : SURVIVES - and is on its own larger than the whole divergence
+  - Depressed 4Q24 base
+      size/test : 4Q24 FP y/y +1.06% vs GBV +13.55%; two-year FP CAGR at 4Q25 still lags GBV by ~5.8pts
+      verdict   : SURVIVES - same root cause as the FX item, not additive to it
+  - Single-fee migration (the note's explanation)
+      size/test : sign is wrong: UF/FP rises 3-4% under migration, observed UF/FP falls 8-13%; and the 2Q26 10-Q never mentions the fee structure in MD&A, attributing the UF shortfall to flexible payment options
+      verdict   : REFUTED
+  - Pay Less Upfront / pay-part-now-part-later mix
+      size/test : full fee to UF on first instalment vs partial payment to FP -> a shift INTO PLU raises UF/FP; a shift OUT of PLU into RNPL lowers it.  Explains both the 0.23-0.30 level and the 1H26 fall
+      verdict   : SURVIVES - and it is an RNPL-adoption story, not a fee story
+  - Lead-time lengthening (longer-dated book)
+      size/test : scales BOTH stocks by the same factor B; cancels out of the UF/FP ratio entirely
+      verdict   : cannot produce a divergence; only rescales the level
+  - Occupancy / lodging taxes collected
+      size/test : grows with GBV; would have to change tax-collection coverage discontinuously in 4Q25 to matter; no such disclosure in the FY25 10-K or 2Q26 10-Q
+      verdict   : not supported
+  - Host payout timing after check-in
+      size/test : would raise FP without touching UF; undisclosed, so unfalsifiable from the filings
+      verdict   : SURVIVES as an unquantifiable residual
+  - Experiences / Services seats
+      size/test : 'For experiences and services, we only earn a host fee' (10-K p.45); 'Substantially all of the bookings on our platform to date have come from nights' (2Q26 10-Q). Immaterial
+      verdict   : does not survive on size
+  - Strict-to-Firm cancellation-policy migration
+      size/test : 10-K p.9 mentions 'updates to cancellation policies' in 2025 but gives no payment-timing change; cancellation policy changes what is REVERSED out of both lines, symmetrically
+      verdict   : no mechanism to split the two lines
+  - Hedge cash / derivative settlements
+      size/test : hedges sit in cash and other income, not in funds payable; 10-K 10% adverse-move sensitivity on NET monetary assets is only $38mm
+      verdict   : too small
+  - Funds receivable vs funds held mix
+      size/test : 10-Q balance sheet shows funds receivable = funds payable exactly ($6,959 / $12,224), so the asset side carries no independent information
+      verdict   : no effect
+
+====================================================================================================
+C3 - the two-line solve: replication, then stress
+====================================================================================================
+Replication with the note's own construction (stock / NEXT quarter revenue; norm = 2023, 2024, 1H25):
+         uf_ratio  fp_ratio  note_uf_ratio  note_fp_ratio
+quarter                                                  
+3Q25        0.986     0.970            NaN            NaN
+4Q25        0.945     0.971          0.945          0.971
+1Q26        0.861     0.947          0.861          0.947
+2Q26        0.846     0.936          0.846          0.936
+
+  4Q25: replicated m= 2.38%  u(B=1.00)= 3.19%   | note m=2.4%  u=3.2%
+  1Q26: replicated m= 8.02%  u(B=1.00)= 6.40%   | note m=8.0%  u=6.4%
+  2Q26: replicated m= 8.47%  u(B=1.00)= 7.55%   | note m=8.5%  u=7.5%
+
+STRESS 1 - norm window and denominator
+        m_pct              u_pct              
+          min median   max   min median    max
+quarter                                       
+1Q26     6.39   7.69  8.40  3.09  10.06  16.42
+2Q26     8.14   8.96  9.56  4.99  11.22  16.70
+4Q25     1.12   1.75  2.47 -0.74   7.43  13.60
+
+By norm construction (u at B=1.00, coef=0.142):
+                                          m_pct             u_pct            
+quarter                                    1Q26  2Q26  4Q25  1Q26  2Q26  4Q25
+norm                                                                         
+next-Q rev, 2022+2023+2024                 7.04  9.19  1.24  5.64  6.33  2.50
+next-Q rev, 2022-2024 +1H25                8.12  9.17  1.24  4.98  6.49  2.50
+next-Q rev, 2023+2024 only (no 1H25)       6.39  8.14  2.38  8.06  7.83  3.19
+note baseline: next-Q rev, 2023+2024+1H25  8.02  8.47  2.38  6.40  7.55  3.19
+same-quarter GBV, 2022-2024                7.05  9.16  1.12  3.91  5.32  4.50
+same-quarter GBV, 2023+2024+1H25           8.07  8.47  2.22  5.70  7.32  4.96
+trailing-4 revenue, 2022-2024              7.11  9.24  1.12  7.12  8.37 -0.43
+trailing-4 revenue, 2023+2024+1H25         8.02  8.47  2.25  3.39  6.54 -0.65
+
+By B (all norms, coef=0.142):
+           min                 max              
+quarter   1Q26   2Q26  4Q25   1Q26   2Q26   4Q25
+B                                               
+1.00      3.39   5.32 -0.65   8.06   8.37   4.96
+1.05      7.99   9.83  4.14  12.43  12.73   9.49
+1.10     12.17  13.93  8.50  16.42  16.70  13.60
+
+STRESS 2 - the same solve with the CORRECT sign on the migration term.
+Under 10-K accounting the migration multiplies UF/norm by (1+eps) and FP/norm by 1, with
+eps ~ +3.5% at full penetration.  Re-solving for m with that sign:
+  4Q25: implied single-fee share m =   -77.5%  (a negative/absurd root: the observed
+        gap has the wrong sign to be a fee migration at all)
+  1Q26: implied single-fee share m =  -258.7%  (a negative/absurd root: the observed
+        gap has the wrong sign to be a fee migration at all)
+  2Q26: implied single-fee share m =  -273.0%  (a negative/absurd root: the observed
+        gap has the wrong sign to be a fee migration at all)
+
+STRESS 3 - the identified, FX-clean alternative: solve u from UNEARNED FEES ALONE.
+Unearned fees carries the whole service fee under both structures and reconciles to the cash
+flow statement within $8mm, so UF/norm = (1-u_eff) B with no migration term at all.
+          min             median               max            
+B        1.00  1.05  1.10   1.00  1.05  1.10  1.00  1.05  1.10
+quarter                                                       
+1Q26     10.7  14.9  18.8   13.0  17.1  20.9  13.9  18.0  21.8
+2Q26     14.0  18.1  21.8   15.1  19.2  22.8  16.8  20.8  24.4
+3Q25      0.1   4.9   9.2    0.6   5.4   9.7   2.2   6.9  11.1
+4Q25      0.7   5.4   9.7    4.6   9.1  13.3   7.1  11.5  15.5
+
+STRESS 4 - unpaid GBV and unpaid nights
+A divisor error in the note first.  analysis/src/rnpl_balance_sheet_bridge.py line 41 grosses
+the unearned-fees norm back to GBV with G_SPLIT = 0.124, the GUEST-fee share of GBV.  But
+unearned fees holds BOTH fees ('Host and guest fees are recorded as cash with a corresponding
+amount in unearned fees', 10-K p.63), i.e. ~15.1% of GBV under the split structure and 15.5%
+under the single fee, and only ~13.3% once incentives and refunds are netted (revenue/GBV).
+Dividing by 0.124 therefore OVERSTATES the paid-equivalent backlog by 7% to 25%.
+
+  Range across fee divisor 0.124-0.155, B 1.00-1.10, both u definitions:
+                           u_pct       unpaid_gbv_busd       nights_mm_adr1p00       nights_mm_adr1p33      
+                             min   max             min   max               min   max               min   max
+quarter u_defn                                                                                              
+1Q26    UF-only (FX-clean)  13.9  21.7            2.85  6.12              15.3  32.8              11.5  24.6
+        note joint solve     6.4  14.9            1.31  4.20               7.0  22.5               5.3  16.9
+2Q26    UF-only (FX-clean)  15.4  23.1            3.32  6.85              18.1  37.3              13.6  28.0
+        note joint solve     7.5  16.0            1.63  4.73               8.9  25.8               6.7  19.4
+
+  At the note's own divisor (0.124) and 1.33x ADR, for direct comparison with its table 2.2:
+              nights_mm_adr1p33                               u_pct                     unpaid_gbv_busd                 
+u_defn       UF-only (FX-clean) note joint solve UF-only (FX-clean) note joint solve UF-only (FX-clean) note joint solve
+quarter B                                                                                                               
+1Q26    1.00               14.3              6.6               13.9              6.4               3.56             1.64
+        1.05               19.5             11.8               18.0             10.9               4.84             2.92
+        1.10               24.6             16.9               21.7             14.9               6.12             4.20
+2Q26    1.00               17.0              8.3               15.4              7.5               4.15             2.04
+        1.05               22.5             13.9               19.4             12.0               5.50             3.39
+        1.10               28.0             19.4               23.1             16.0               6.85             4.73
+
+STRESS 5 - third constraints available in the filings to break the u-vs-B degeneracy
+  (a) cash-flow-statement change in unearned fees: 1H25 +$1,236mm vs 1H26 +$1,085mm on GBV
+      up 17.3% -> the fee inflow per dollar of GBV booked fell ~25%.  This is the SAME
+      information as the UF balance (residual $3-8mm), so it does NOT add a constraint.
+  (b) funds receivable = funds payable exactly on the 10-Q balance sheet -> no new constraint.
+  (c) the FX-on-cash line DOES add one: it identifies how much of the FP move is translation,
+      which is what this audit uses to kill the migration reading.
+  (d) the hedge notional on 'unbilled amounts for confirmed bookings under the terms of our
+      payment programs (Pay Less Upfront and Reserve Now, Pay Later)' (10-K p.50) WOULD
+      identify the unpaid book directly - but the 10-K discloses only the $38mm 10%-move
+      sensitivity on NET monetary assets, not the notional.  It is an IR ask, not a datum.
+  CONCLUSION: no third constraint in the public filings separates u from B.  u stays a range.
+
+====================================================================================================
+C3b - longer-dated book vs pre-payment cancellations: which does the data favour?
+====================================================================================================
+The disclosed RNPL share of GBV flow is ~20% (1Q26 letter, official) and 'over 20%' (2Q26 call
+mirror only).  If RNPL bookings aged in the book like any other, the unpaid share of the book
+would be ~20%.  The note's joint solve gives 6.4% / 7.5% at B=1.00 and calls the shortfall a
+puzzle to be closed by B>1 or by pre-payment cancellations.  THE SHORTFALL IS MOSTLY THE
+SPURIOUS MIGRATION TERM.  On the FX-clean unearned-fees line alone the unpaid share is
+13.9% (1Q26) and 15.4% (2Q26) at B=1.00, and 21.7% / 23.1% at B=1.10 - i.e. the balance sheet
+is CONSISTENT with RNPL sitting in the book at roughly its disclosed flow share.  Two further
+observations:
+
+  (1) A longer-dated book raises BOTH stocks by B.  It therefore cannot be hiding in the
+      ratio of the two.  But it IS visible in the LEVEL of each stock against a flow, and
+      the unearned-fees stock per dollar of next-quarter revenue is FALLING, not rising:
+        1Q25: UF/norm = 1.000   FP/norm = 0.959
+        2Q25: UF/norm = 1.001   FP/norm = 0.993
+        3Q25: UF/norm = 0.986   FP/norm = 0.970
+        4Q25: UF/norm = 0.945   FP/norm = 0.971
+        1Q26: UF/norm = 0.861   FP/norm = 0.947
+        2Q26: UF/norm = 0.846   FP/norm = 0.936
+      For B=1.10 to be true with u=15%, BOTH lines would have to be 10% longer-dated while
+      the fee line is 14-15% short of its norm.  That is internally possible but it makes the
+      unpaid book (15-16%) collide with the 20-21% flow share only if RNPL bookings are
+      ALSO longer-dated than average - which is management's own lead-time claim, so B>1 and
+      a high u are not independent; they reinforce.
+
+  (2) The issuer states the cancellation fact directly: RNPL bookings 'have experienced
+      higher cancellation rates than historic bookings'.  Cancelled-before-payment bookings
+      never touch either line, so they are the residual that closes 20-21% flow share down to
+      a 6-16% stock share.  The filings give the DIRECTION (cancellations are higher) but no
+      magnitude, and the balance sheet is structurally blind to them.
+
+  Net: once the migration term is removed, there is very little gap left to explain.  A B of
+  1.04 to 1.06 closes 14-15% to the full 20% flow share on its own, and management has said
+  lead times lengthened in all regions (1Q26 letter, ledger D039).  A pre-payment cancellation
+  drag large enough to matter is NOT required by the balance sheet.  The honest read is:
+  the balance sheet cannot see cancelled-before-payment bookings at all, and it no longer
+  supplies a shortfall that needs them.  The note's paragraph 3 corroboration of Krish's
+  cohort engine 'from an independent direction' therefore does not hold as stated - the
+  independent direction, done cleanly, points to a LARGER live unpaid book (14-23% of the
+  backlog, 11-28mm nights at 30 June depending on ADR ratio and fee divisor), not a smaller
+  one, which makes the 7-19mm figure and the 'implausible 7 to 17 point revision' argument
+  the WEAKER version of the note's own case.
+
+====================================================================================================
+C4 - the deferral-only 3Q26 table and the proposed 5 November rule
+====================================================================================================
+  Pre-RNPL, pre-migration 3Q26 expectation at 4Q26 revenue $3166mm:
+    unearned fees $2,105mm (+15.6% y/y);  funds payable $8,468mm (+17.5% y/y)
+    (note states $2,105mm / +15.6% and $8,468mm / +17.5%)
+
+  Deferral-only grid, note's model (UF loses m, FP gains 0.142m):
+ u_pct  m_pct   UF  UF_yoy   FP  FP_yoy
+   7.0    9.0 1781    -2.1 7976    10.6
+  10.0   12.0 1667    -8.4 7751     7.5
+  12.0   18.0 1519   -16.6 7642     6.0
+   7.0    0.0 1957     7.5 7875     9.2
+  15.0    0.0 1789    -1.7 7198    -0.2
+
+  Same grid under 10-K accounting (no migration term on either line; UF is FX-clean, FP is not):
+ u_pct   UF  UF_yoy  FP_exFX  FP_exFX_yoy
+   5.0 1999     9.9     8044         11.6
+   7.0 1957     7.5     7875          9.2
+  10.0 1894     4.1     7621          5.7
+  12.0 1852     1.8     7452          3.4
+  15.0 1789    -1.7     7198         -0.2
+  20.0 1684    -7.5     6774         -6.0
+
+  FX band on the funds-payable print.  Observed 12-month translation residuals on funds
+  payable: FY2024 $-258mm, FY2025 $627mm,
+  Jul25-Jun26 $-160mm.  On a ~$7.2bn 3Q25 base that is a
+  8.7pt swing in EITHER direction on the y/y print, before any
+  RNPL signal.  The proposed +5% to +11% window is roughly ONE such FX move wide, so it
+  cannot discriminate.  Unearned fees has no such term.
+
+  Sensitivity of each line to a 1pt change in the unpaid share u:
+    unearned fees : 1.16pts of y/y per 1pt of u   -> 1.16pts
+    funds payable : 1.17pts
+  Both lines respond about equally to u; only funds payable ALSO responds to FX, taxes,
+  payout cadence and the Pay Less Upfront mix.  Funds payable is strictly the noisier gauge.
+
+  IS KRISH'S -3% ROW 'TRIPPABLE BY MIGRATION ALONE'?  No.  Set m = 0 (the 10-K accounting)
+  and read the grid above: the unearned-fees line only reaches -3% y/y at u of about 16%,
+  and only reaches the note's -17% tail at u of about 28%.  Every trip of the threshold
+  requires a genuinely large unpaid book.  The note's claim in paragraph 2 that the row
+  'can be tripped by migration alone' rests entirely on its (1-m) term, which the 10-K
+  removes.  The row survives.
+
+  Threshold mapping at the guided GBV print (2Q26 letter: 'mid teens' GBV growth):
+    GBV +13% and gap -18pts -> unearned fees -5.0% y/y ($1,729mm)
+    GBV +13% and gap -12pts -> unearned fees +1.0% y/y ($1,838mm)
+    GBV +13% and gap -8pts -> unearned fees +5.0% y/y ($1,911mm)
+    GBV +15% and gap -18pts -> unearned fees -3.0% y/y ($1,765mm)
+    GBV +15% and gap -12pts -> unearned fees +3.0% y/y ($1,875mm)
+    GBV +15% and gap -8pts -> unearned fees +7.0% y/y ($1,947mm)
+    GBV +17% and gap -18pts -> unearned fees -1.0% y/y ($1,802mm)
+    GBV +17% and gap -12pts -> unearned fees +5.0% y/y ($1,911mm)
+    GBV +17% and gap -8pts -> unearned fees +9.0% y/y ($1,984mm)
+  Note that at mid-teens GBV the -18pt gap maps to about -3% on unearned fees, i.e. to
+  Krish's existing number.  The correction is to make the row CONDITIONAL on the realised
+  GBV print rather than fixed, so a GBV miss cannot be scored as a deferral signal.
+
+  CORRECTED 5 NOVEMBER RULE (replacing both the note's and the D-note's):
+   Score the FX-clean line, and score it against GBV, not against zero.
+   Primary  : (3Q26 unearned fees y/y) minus (3Q26 GBV y/y).
+              gap at or below -18pts   -> unpaid book at or above the 1H26 run-rate; drag on
+              gap -12 to -18pts        -> in line with 1H26; thesis intact, no escalation
+              gap wider than -8pts     -> deferral is NOT deepening; drag hypothesis weakened
+   Cross-check (not a trigger): reconcile the unearned-fees balance move to the cash-flow
+              statement's 'Unearned fees' line; they have agreed within $8mm for six quarters,
+              so any divergence is an accounting change, not RNPL.
+   Funds payable: use ONLY after subtracting the balance-sheet-minus-cash-flow residual, i.e.
+              (FP balance change) - (financing-activities 'Change in funds payable'), which is
+              the translation effect.  Un-adjusted funds payable y/y is NOT a scoreable line.
+
+====================================================================================================
+C5 - marginal ADR of bundle-driven bookings
+====================================================================================================
+Note: '1Q26 ~4pts GBV on ~3pts nights -> 4/3 = 1.33x'; '4Q25 ~300bp on >200bp -> 1.5x'.
+
+Arithmetic.  If RNPL adds a pts to GBV growth and b pts to nights growth, then
+  dGBV / dNights = (a * GBV_{t-1}) / (b * Nights_{t-1}) = (a/b) * ADR_{t-1}.
+So 4/3 is the marginal ADR relative to the PRIOR-YEAR average ADR, not the current one.
+  4Q25: ADR $167.51 vs 4Q24 $158.13 (+5.9%).
+        4/3 x prior-year ADR = $210.84 = 1.26x the CURRENT quarter ADR.
+  1Q26: ADR $186.82 vs 1Q25 $171.34 (+9.0%).
+        4/3 x prior-year ADR = $228.45 = 1.22x the CURRENT quarter ADR.
+  2Q26: ADR $183.73 vs 2Q25 $174.48 (+5.3%).
+        4/3 x prior-year ADR = $232.64 = 1.27x the CURRENT quarter ADR.
+
+  1Q26: 4/3 = 1.333 relative to 1Q25 ADR; relative to the 1Q26 ADR it is 1.22x.  The note uses 1.33x against the
+  quarter's own ADR to convert unpaid GBV into nights, which overstates the ADR and therefore
+  UNDERSTATES unpaid nights by ~8%.
+
+  4Q25: the source is '~300bp on >200bp'.  '>200bp' is a LOWER bound on the denominator, so
+  300/200 = 1.5 is an UPPER bound on the ratio, not a point estimate.  At 250bp the ratio is
+  1.20; at 290bp it is 1.03.  Quoting 1.5x as a derived parameter is not supported.
+
+  Interpretation.  The ratio is the average value of the INCREMENTAL bookings only if the
+  'points of GBV' attribution is pure incremental volume.  The 2Q26 10-Q says 'The increase
+  in ADR was driven in part by the continued adoption of RNPL', i.e. RNPL raises the ADR of
+  the book it touches, which at a 20-21% GBV share includes re-mix of bookings that would
+  have happened anyway.  Any such re-mix sits in the GBV numerator with no nights in the
+  denominator, inflating the ratio.  4/3 is an UPPER bound on marginal ADR, not a point.
+
+  Downstream: note para 7 says '21% GBV share and 1.33x -> RNPL nights share 16.7%'.
+    at 1.15x vs non-RNPL ADR, RNPL nights share = 18.8%
+    at 1.20x vs non-RNPL ADR, RNPL nights share = 18.1%
+    at 1.33x vs non-RNPL ADR, RNPL nights share = 16.6%
+    at 1.50x vs non-RNPL ADR, RNPL nights share = 15.1%
+  0.21/1.333 = 15.8% if 1.33x is against the OVERALL average; 16.7% only if it is against the
+  NON-RNPL average.  The note does not say which; both are defensible, the label is not.
+
+====================================================================================================
+C6 - internal checks on the note's own solve, and the downstream workstreams
+====================================================================================================
+(i) FALSIFICATION QUARTER.  3Q25 is the note's own 'pure RNPL, no migration' quarter.
+    The solve returns m = -1.4% for 3Q25 - a NEGATIVE single-fee share, three months
+    before the migration began (10-K: 'In October 2025, the Company began transitioning').
+    An estimator that reports -1.4% of the backlog on a fee structure that did not yet exist
+    is measuring noise in the UF/FP ratio.  The note's table 2.2 omits this row; the script's
+    own printed output (data/processed/rnpl_balance_sheet/...output.txt) carries it.
+
+(ii) m IS MATHEMATICALLY INVARIANT TO B.  Both ratios are divided by the same B before the
+    solve, so B cancels out of b/a and only moves u.  The note presents m as a solved
+    quantity alongside a B sensitivity; in fact m is a pure function of the observed UF/FP
+    ratio and the assumed guest-fee coefficient, and carries no information the ratio in
+    C2e does not already carry - including the FX contamination.
+
+(iii) DOWNSTREAM.  Jessie's backlog conversion = revenue / (revenue + closing unearned fees)
+    (origin/jessie/backlog-conversion, research/notes/2026-09-05_eu-platform-and-backlog.md
+    section 3b): 1Q25 45.485% -> 1Q26 49.492% (+4.007pts); 2Q25 52.007% -> 2Q26 56.034%
+    (+4.027pts).  That statistic uses ONLY unearned fees and revenue.  Unearned fees is the
+    FX-clean, migration-neutral line, so Jessie's break is NOT confounded by the fee
+    migration.  The note's claim that it is 'RNPL plus migration' does not hold.
+
+(iv) Krish's pre-registered row (D1_prereg_thresholds.csv, metric '3Q26 quarter-end unearned
+    fees, y/y'; supports at or below -3%) is likewise on the clean line and should stand.
+    Its real weakness is different from the one the note identifies: the row's own 'identifies'
+    field already concedes it reads 'payment timing, not cancellation'.  Replacing it with a
+    funds-payable rule would swap a clean line for an FX-contaminated one.
+
+(v) analysis/src/forecast_methods/tracker_backlog/gate_g1.py applies rnpl_correction_pct =
+    k * RNPL_GBV_SHARE_SCENARIO_PCT with no fee-migration term anywhere in the package.  On
+    this audit's finding that is CORRECT specification, not an omission.  The package's real
+    defect is the opposite one: rnpl_correction_pct takes feature_key and never uses it, so
+    the identical add-back is applied to the funds-held feature, which is the FX-dirty line.

@@ -4,6 +4,11 @@ One file per source or topic. Name with date and topic: `2026-09-10_Q2-earnings-
 
 Each note should say up top: source, date, and who wrote the note.
 
+RNPL: read [the team/AI handoff](../../docs/RNPL_HANDOFF.md) first. It connects the
+original H1/H2 bridge, later source corrections, materiality calculations, and
+three-market calendar pilot, distinguishing measured findings from unresolved
+or data-limited approaches.
+
 Listing churn: use the [broad panel execution](2026-09-07_listing-churn-broad-panel.md)
 for the current measured rates. The earlier two-city note is the destination pilot.
 The [platform-history follow-up](2026-09-07_listing-platform-history.md) investigates

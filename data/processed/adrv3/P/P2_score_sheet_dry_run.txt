@@ -1,0 +1,84 @@
+5 NOVEMBER 2026 SCORE SHEET, 3Q26 print against the pre-print record (WS-P, generated 2026-09-11)
+Every row: printed value | record value | difference | verdict. Record values were fixed before the print; nothing here feeds a forecast.
+====================================================================================================================================
+
+1. NIGHTS (3Q26 Nights and Seats Booked, y/y on the 3Q25 base of 133.6mm)
+   printed 146.8mm = +9.88% y/y
+   reviews-index band 8.5 to 11.0 (point 9.5 to 10.0): print is inside the band, +0.13 pp from its centre
+   team baseline 9.9% (146.8mm): print is -0.02 pp, +0.0mm from baseline
+   D pre-registered thresholds: inconclusive on the drag hypothesis (D band 8.6 to 10.2%)
+
+2. REPORTED ADR (3Q26, y/y on 3Q25 $171.29)
+   printed $177.17 = +3.43% y/y
+   record                                                  point    error     central band        wide band  verdict
+   card v3 point (with_K), midpoint FX                     +3.43    +0.00   +2.03 to  +4.84   -0.74 to  +6.12  inside central
+   card v3 (without_K), midpoint FX                        +3.26    +0.17   +1.93 to  +4.59   -0.74 to  +5.18  inside central
+   card v2 (J3, persistence), midpoint FX                  +3.03    +0.40   +1.70 to  +4.35   -0.74 to  +5.18  inside central
+   H card headline, midpoint FX                            +3.19    +0.24   +1.57 to  +4.57   +0.88 to  +5.26  inside central
+   naive: last disclosed ex-FX 4 + midpoint FX -0.43       +3.57    -0.14                                    model beat naive on the dollar target
+   dollars: card v3 (with_K) $177.17 (central $174.76 to $179.58); card v2 $176.47; H card $176.76; print $177.17
+
+3. FX EFFECT (disclosed ADR FX effect against the three estimators fixed before the print; N named the midpoint)
+   eur        estimate -1.12 pp | disclosed -0.43 | error +0.69 pp
+   baskets    estimate +0.26 pp | disclosed -0.43 | error -0.69 pp
+   midpoint   estimate -0.43 pp | disclosed -0.43 | error +0.00 pp  <- closest
+   verdict: midpoint closest this quarter; one more point in a 17-quarter sample (N: not by itself a reason to change the midpoint recommendation)
+
+4. EX-FX ADR (3Q26)
+   ex-FX +4.00 pp (disclosed)
+   card v3 (with_K)                         record +3.86 | error +0.14 pp
+   card v3 (without_K)                      record +3.69 | error +0.31 pp
+   card v2 (J3), about +3.5                 record +3.46 | error +0.54 pp
+   naive: last disclosed                    record +4.00 | error +0.00 pp
+   target 1 (integer-fair): model rounds to +4, naive +4, disclosed +4: model exact; naive exact
+
+5. PRICING RESIDUAL (solved the H way: ex-FX minus the measured mix terms and fills used in the card)
+   mix and fills in the card: geo -1.43, size +0.80, LOS +0.06, new business -0.48, interaction -0.10 = -1.16
+   solved residual +5.16 pp (carries the +/- 0.5 pp rounding of a whole-point ex-FX disclosure)
+   last_q (v3 rule, 2Q26 value)             +4.85 | error +0.31
+   K rule: last_q + 0.007 x share change    +5.02 | error +0.14  <- nearest
+   persistence (v2 rule)                    +4.62 | error +0.54
+   AR(1) on the residual                    +4.37 | error +0.78
+   lap + tranche 2, central                 +4.10 | error +1.05
+   lap only, residual steps                 +3.93 | error +1.23
+   mean reversion (2023-25 mean)            +2.40 | error +2.76
+   case: PERSISTENCE case (split at 3.62, halfway between mean reversion 2.40 and last_q 4.85)
+   K reading: near 5.0, the rule stands and the reprice question stays open; 4Q26 residual band stays 3.1 to 5.2 around 4.85
+
+6. REGIONAL NIGHTS BUCKETS (if given) against the split I used for the geo-mix term
+   not supplied (--regional); the record's split was E: NA +6.9, EMEA +0.9, LatAm +27.5, APAC +10.0 (geo term -1.43)
+
+7. WALK-FORWARD EXTENDED BY ONE QUARTER (S harness, target 2: reported dollar ADR y/y; 3Q26 added; model = card ex-FX + the same FX estimator as the naive)
+   historical rows are the harness paths (measured mix, S prior-year fills, residual rule strictly before t); the 3Q26 row is the card's own ex-FX (J3 fills)
+   variant with_K:
+   estimator  window        n   ratio     was  jk min  jk max     was  below 1  3Q26 err model   naive
+   eur        1Q24-3Q26    11   0.920   0.912   0.877   0.974   0.966    11/11           -0.69   -0.55
+   eur        2Q24-3Q26    10   0.911   0.898   0.837   0.997   0.984    10/10           -0.69   -0.55
+   baskets    1Q24-3Q26    11   0.871   0.873   0.786   0.910   0.916    11/11           +0.69   +0.83
+   baskets    2Q24-3Q26    10   0.865   0.868   0.751   0.913   0.921    10/10           +0.69   +0.83
+   midpoint   1Q24-3Q26    11   0.888   0.889   0.818   0.941   0.942    11/11           -0.00   +0.14
+   midpoint   2Q24-3Q26    10   0.874   0.876   0.757   0.950   0.951    10/10           -0.00   +0.14
+   pre-registered v3 criterion on n 11 / n 10 (ratio < 1 and jackknife max < 1 under eur and baskets, both windows): PASS (4 of 4 checks); binding jackknife max 0.997
+   variant without_K:
+   estimator  window        n   ratio     was  jk min  jk max     was  below 1  3Q26 err model   naive
+   eur        1Q24-3Q26    11   0.934   0.916   0.894   0.988   0.969    11/11           -0.86   -0.55
+   eur        2Q24-3Q26    10   0.932   0.905   0.866   1.019   0.989     9/10           -0.86   -0.55
+   baskets    1Q24-3Q26    11   0.861   0.876   0.773   0.899   0.918    11/11           +0.52   +0.83
+   baskets    2Q24-3Q26    10   0.853   0.871   0.733   0.899   0.924    10/10           +0.52   +0.83
+   midpoint   1Q24-3Q26    11   0.894   0.893   0.826   0.945   0.945    11/11           -0.17   +0.14
+   midpoint   2Q24-3Q26    10   0.883   0.882   0.770   0.956   0.955    10/10           -0.17   +0.14
+   pre-registered v3 criterion on n 11 / n 10 (ratio < 1 and jackknife max < 1 under eur and baskets, both windows): FAIL (3 of 4 checks); binding jackknife max 1.019
+
+8. 4Q26 GUIDE against N's two nights cases and D's pre-registered thresholds
+   nights guide +8.10% (131.8mm) | case B baseline +8.12% (131.8mm) | case A top of band +8.86% (132.7mm) | nearer case B_global_lap_baseline
+   D thresholds: inconclusive (D band 7.6 to 9.4%; both N cases sit inside it)
+   revenue guide $3,134mm | anticipated guide arithmetic $3,050 to $3,100mm | card v3 (with_K) revenue at case B $3,134mm, at case A $3,155mm (same-quarter take 0.1362)
+   ADR implied by the guide at its own nights and the same-quarter take: $174.62 = +4.24% y/y, against card v3 4Q26 $174.57 (+4.22%)
+
+9. CHECKLIST: did management restate the product-bundle contribution figure for 3Q26?
+   record: 4Q25 'over 200 bp nights, roughly 300 bp GBV'; 1Q26 'about 3 points nights, 4 points GBV'; 2Q26 none (D ledger D014, D032)
+   restated: NO (or not supplied via --bundle-figure). D reads a missing figure as consistent with the anniversary arriving; case B stays on its sourced dates. If a qualitative update only was given, that is what 2Q26 gave: inconclusive.
+   also check: RNPL GBV share for 3Q26 (D: flat or down vs 2Q26 with nights decelerating supports the drag; at or above 25% with nights at or above 10% weakens it); any migrated-share or take-rate-lift figure for the fee migration updates K1 directly
+
+====================================================================================================================================
+Sources: adr_card_v3.csv and P1_card_v3_terms.csv (P), adr_card_v2.csv (J3), adr_forecast_card.csv (H), K4_residual_nowcast.csv (K), N1 / N2 (N), D1_prereg_thresholds.csv (D), docs/q3nowcast/SYNTHESIS.md (reviews band), S1_scoring (harness). Labels: printed = sourced at the print; record = as labelled in the source file.

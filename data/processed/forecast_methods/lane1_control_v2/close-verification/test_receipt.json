@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-09-13T01:39:11.918916+00:00",
+  "command": [
+    "-m",
+    "pytest",
+    "analysis/src/forecast_methods/harness/tests",
+    "analysis/src/forecast_methods/L0",
+    "-q"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 2.7158551000175066,
+  "input_hashes_verified": 366,
+  "package_tests_passed_separate_suites": 120,
+  "frozen_tests_expected": 47,
+  "frozen_sources_unchanged": true
+}

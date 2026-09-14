@@ -1,0 +1,63 @@
+{
+  "method": "valuation-v1",
+  "verdict": "partial",
+  "slope_replication_pass": true,
+  "slope": {
+    "spec": "12_row_changes",
+    "dependent": "ev_ltm_ebitda_x",
+    "window": "ALL",
+    "n": 35,
+    "n_params": 4,
+    "as_of": "2026-09-12",
+    "slope_turns_per_growth_pp": 0.4860216575119952,
+    "ci95_lo": 0.31722946833225124,
+    "ci95_hi": 0.6548138466917393,
+    "intercept": -2.8256488890568576,
+    "r2": 0.4507395647987892,
+    "first_observation": "2023-11-30",
+    "last_observation": "2026-09-04",
+    "last_reported_quarters": 12,
+    "source_vintage_status": "inherited monthly PIT label; source vintages unverified",
+    "status": "descriptive_only"
+  },
+  "price_band": [
+    170.63923956113425,
+    181.8929695485945
+  ],
+  "annual_base_inputs": {
+    "ebitda": 5685.7698,
+    "net_cash": 10115.9869,
+    "shares": 574.5982,
+    "growth": 11.3086
+  },
+  "monthly_label_date_checks_pass": 47,
+  "monthly_label_date_checks_n": 47,
+  "complete_source_vintage_cells": 0,
+  "scored_W1_cells": 0,
+  "scored_W2_cells": 0,
+  "registry_status": "not registered: no price or multiple target in frozen harness",
+  "positioning": {
+    "provider": "Yahoo Finance via yfinance",
+    "source_url": "https://finance.yahoo.com/quote/ABNB/",
+    "retrieved_at_utc": "2026-09-13T00:18:59.397636+00:00",
+    "requested_as_of": "2026-09-12",
+    "status": "price_refreshed",
+    "errors": [],
+    "price": 170.19000244140625,
+    "price_date": "2026-09-11",
+    "price_kind": "unadjusted regular-session close",
+    "shortPercentOfFloat": 0.0344,
+    "sharesShort": 14228547,
+    "shortRatio": 2.56,
+    "dateShortInterest": 1788134400,
+    "targetLowPrice": 125.0,
+    "targetHighPrice": 220.0,
+    "targetMeanPrice": 182.125,
+    "targetMedianPrice": 185.0,
+    "numberOfAnalystOpinions": 40,
+    "recommendationKey": "buy",
+    "positioning_stamp_status": "Yahoo snapshot retrieval stamp; analyst-target publication stamps not supplied",
+    "short_interest_date": "2026-08-31"
+  },
+  "runtime_seconds": 3.104027400026098
+}

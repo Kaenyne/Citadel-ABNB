@@ -1,0 +1,36 @@
+{
+  "verdict": "PASS",
+  "manifest_sources": 14,
+  "normalized_rows": 35124,
+  "verified_publication_date_rows": 124,
+  "historical_PIT_rows": 0,
+  "by_source": {
+    "ntto": 25236,
+    "jnto": 4784,
+    "datatur": 700,
+    "ine_frontur": 1586,
+    "ine_egatur": 824,
+    "fred_cpi_lodging": 0,
+    "bls_cpi_lodging": 103,
+    "istat": 402,
+    "costar_us_weekly": 4,
+    "eurostat_platform_EU27_2020": 297,
+    "eurostat_platform_ES": 297,
+    "eurostat_platform_FR": 297,
+    "eurostat_platform_IT": 297,
+    "eurostat_platform_DE": 297
+  },
+  "independent_ratio_arithmetic": [
+    {
+      "window": "W1",
+      "n": 14,
+      "nights_level_rmse_ratio": 1.032388752083611
+    },
+    {
+      "window": "W2",
+      "n": 10,
+      "nights_level_rmse_ratio": 0.6771162736078636
+    }
+  ],
+  "limit": "This checks capture integrity and arithmetic, not archival release vintages or a predictive edge."
+}

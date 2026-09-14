@@ -1,0 +1,12 @@
+{
+  "core_command": "python analysis/src/forecast_methods/l1_reconciliation_v3/run.py --bootstrap 40",
+  "core_exit_code": 0,
+  "core_seconds": 169.8057795999921,
+  "bootstrap_converged": 40,
+  "test_command": "python -m pytest analysis/src/forecast_methods/l1_reconciliation_v3/test_refresh.py -q",
+  "test_exit_code": 0,
+  "tests_passed": 5,
+  "test_seconds": 2.06,
+  "post_run_change": "Input manifest extended to all eight raw dependencies plus pinned public monthly aggregates; hash calculation executed separately. No numerical code changed.",
+  "tokens": "unavailable"
+}

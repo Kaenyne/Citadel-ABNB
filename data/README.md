@@ -1,5 +1,16 @@
 # Data
 
+RNPL calendar pilot (2026-09-10): `outputs/rnpl-calendar-pilot-20260910/`
+contains the Austin/Rome/Sydney matched availability-transition results and report.
+Inputs are 15 existing Inside Airbnb calendar downloads under
+`raw/inside_airbnb_calendar/`, five vintages per market from September 2025 to
+August 2026, sourced by `processed/adr/14c_calendar_manifest.csv` (CC BY 4.0).
+The pilot uses a deterministic approximately 10% listing-ID sample; per-market
+JSONs record source URLs, SHA-256 hashes, coverage, and reopening/reclosure
+sensitivities. These are **availability proxies, not cancellation or RNPL rates**.
+Rebuild with `analysis/src/rnpl_calendar_pilot.py`, then
+`analysis/src/rnpl_calendar_pilot_report.py`. No additional raw data was acquired.
+
 Listing churn audit (2026-09-06): `processed/listing_churn_existing_data_audit.csv`
 and `.json` reconstruct ID absence from the team's supply-panel aggregates at commit
 `620f1ee4691d06df964bd73ce84cc35e8766e4a0`. Source: Inside Airbnb (CC BY 4.0), via

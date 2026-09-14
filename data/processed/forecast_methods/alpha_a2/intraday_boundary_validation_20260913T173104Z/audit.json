@@ -1,0 +1,24 @@
+{
+  "run_date": "2026-09-13",
+  "run_started_utc": "2026-09-13T17:33:44.851720+00:00",
+  "seed": 20260913,
+  "runtime_seconds": 16.137417799967807,
+  "fixed_full_sample_variant": "ewm",
+  "register_rows": 48,
+  "registry_path": "None",
+  "inputs_sha256": {
+    "data/processed/forecast_methods/harness/calendar.csv": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "data/processed/forecast_methods/harness/targets.csv": "6b7e98b22f1064b1b79d2899790e21f45f745aefb3ebe7a1016cfb213e4ee4d2",
+    "data/processed/overnight/02_guidance_ledger.csv": "c1a2b34330dc6655c549cbe7cab66adabcaaffcffc4441c833c726714d8267f2",
+    "data/processed/overnight/16_consensus_at_print_merged.csv": "b4f19f66cac431b31cdc6c5e7ae31d63527ac5f0de517d7e6f70148f9e8d961d",
+    "data/processed/forecast_methods/L0/L0_vintage_register.csv": "199904b04ee4286644b7d2c36f5f9f53f401ff2e2c4ae908ab099125f2de727d",
+    "data/processed/forecast_methods/returns_v1/earnings_reactions_open_v1.csv": "11347775f5190c3496a7533d65f55ad8738e43df94ed9494b77697589a149c02",
+    "data/processed/overnight/02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "data/processed/overnight/02_guidance_cushion_series.csv": "0140b2763604826c3b59dfde2ef90c186c8bb2c2c95de4b9e7c758eea54ce578",
+    "analysis/src/forecast_methods/kernel_engine_v2/engine.py": "328431c5f9379e6d4ae7e9c5d01212ee1bcd550b02c3c9783b85851e3e9a3279",
+    "analysis/src/forecast_methods/kernel_phi_v2/stage_d.py": "930e8029c06cd8e479bc3601120409a564b00e74f71fce32e6daa966c4e7eb10",
+    "data/processed/forecast_methods/alpha_a/pit_cells.csv": "e65febc0dc0caa69fe1720e9df4ab47e837add03830d7aaf8f62533b6e734432",
+    "data/processed/forecast_methods/alpha_a/post_letter_diagnostic.csv": "1d749f43078fb598262b6dba31098ff50e471158c5ab441d65ca5e58b3dc1835"
+  },
+  "notes": "Only PIT default enters verdict; full_sample uses retrospective variant choice with PIT coefficients; scorers owned by parent"
+}

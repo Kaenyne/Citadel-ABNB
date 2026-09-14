@@ -1,0 +1,11 @@
+metric,quarter,adjustment,pts
+nights_yoy_pct,3Q26,RNPL US lap (mgmt: ~3 pts of 1Q26 growth); half assumed to lap in Q3,-1.5
+nights_yoy_pct,4Q26,"RNPL US lap, fuller",-2.5
+nights_yoy_pct,3Q26,World Cup residual (July stays booked in-quarter); Paris 2024 analogue,0.5
+nights_yoy_pct,3Q26,"Middle East cancellation drag (was -1 in 1Q26, not cited in 2Q26): assumed faded",0.0
+fx_pts_adr,3Q26,replace pattern with FRED-fitted quarter average (flat spot after 2026-09-04),-4.242935794161506
+fx_pts_adr,4Q26,replace pattern with FRED-fitted quarter average (flat spot after 2026-09-04),-2.971299609059348
+adr_yoy_exfx_pct,3Q26,"seats/hotel dilution (15_seats_dilution, mean of cases)",-0.4863733108112722
+adr_yoy_exfx_pct,4Q26,"seats/hotel dilution (15_seats_dilution, mean of cases)",-0.4863733108112722
+fx_pts_revenue,3Q26,management: ~3 pts FX in the Q3 revenue guide (hedged); revenue FX lags ADR FX by 1-2 quarters,-3.0
+fx_pts_revenue,4Q26,"assumed 2.0 (range 1-3): revenue FX is hedged and lags ADR FX irregularly (rev FX 3Q25 0, 4Q25 1, 1Q26 3, 2Q26 4 vs ADR FX 2.7, 2.9, 5.0, 1.3); flat spot implies fade from ~3",-4.0

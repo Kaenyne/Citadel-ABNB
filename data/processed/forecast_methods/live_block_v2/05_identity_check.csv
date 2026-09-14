@@ -1,0 +1,7 @@
+check,lhs,rhs,abs_rel_dev_pct,tolerance_pct,pass
+"GBV vs Nights x ADR, reconciled point",26549.7639,26549.7639,0.0,0.01,True
+"GBV vs Nights x ADR, reconciled draws (max over 500k)",,,2.220446049250313e-14,0.01,True
+"take rate vs Revenue / GBV, reconciled draws (max)",,,0.0,0.01,True
+PUBLISHED block: (1+nights_yoy)(1+adr_yoy)-1 vs gbv_yoy [pp],16.153808256400005,15.9378,0.21600825640000565,0.01,False
+PUBLISHED block: revenue/GBV vs published take rate [pp],18.13989765837428,17.8065,0.33339765837428104,0.01,False
+"printed history: GBV vs nights x ADR, worst quarter 2023Q1-2026Q2 (the letter rounds GBV to $0.1bn = +/-0.25% and nights to 0.1M, so the identity can only be checked to ~0.32%)",,,0.2702840909090898,0.35,True

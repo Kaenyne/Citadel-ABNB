@@ -1,0 +1,8 @@
+window  n_dates  n_signal  n_consensus  n_threshold  n_sign_scored hits hit_rate wilson_lo wilson_hi permutation_p  ridge_n_train  ridge_n_test ridge_slope ridge_slope_ci_lo ridge_slope_ci_hi  n_return signed_open_20d_mean signed_open_20d_ci_lo signed_open_20d_ci_hi      verdict
+    W1       14         0            0            0              0 None     None      None      None          None              0             0        None              None              None         0                 None                  None                  None underpowered
+    W2       10         0            0            0              0 None     None      None      None          None              0             0        None              None              None         0                 None                  None                  None underpowered
+                                   street_vendor street_as_of  consensus_musd  conditional_guide_musd  conditional_signal_pct
+      Alpha Vantage (aggregated sell-side panel)   2026-09-11          3158.0             3158.227962                0.007219
+S&P Global Market Intelligence via StockAnalysis   2026-09-10          3160.0             3158.227962               -0.056077
+                                           Zacks   2026-09-11          3200.0             3158.227962               -1.305376
+A verdict: underpowered; historical registry rows=0; open columns=[]; runtime=22.462s

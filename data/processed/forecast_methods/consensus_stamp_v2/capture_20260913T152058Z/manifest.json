@@ -1,0 +1,55 @@
+{
+  "started_utc": "2026-09-13T15:20:58Z",
+  "finished_utc": "2026-09-13T15:20:59Z",
+  "records": [
+    {
+      "provider": "Yahoo Finance / LSEG family",
+      "capture_method": "yfinance.Ticker(ABNB).revenue_estimate",
+      "url": "https://finance.yahoo.com/quote/ABNB/analysis/",
+      "capture_started_utc": "2026-09-13T15:20:58Z",
+      "status": "ok",
+      "captured_utc": "2026-09-13T15:20:58Z",
+      "path": "data/processed/forecast_methods/consensus_stamp_v2/capture_20260913T152058Z/yfinance_revenue_estimate.csv",
+      "sha256": "c0036aa0aca25ac06107dacd80c521060bbd159355fea97369ce35101cd952aa",
+      "rows": 4
+    },
+    {
+      "provider": "Yahoo Finance / LSEG family",
+      "capture_method": "yfinance.Ticker(ABNB).earnings_estimate",
+      "url": "https://finance.yahoo.com/quote/ABNB/analysis/",
+      "capture_started_utc": "2026-09-13T15:20:58Z",
+      "status": "ok",
+      "captured_utc": "2026-09-13T15:20:58Z",
+      "path": "data/processed/forecast_methods/consensus_stamp_v2/capture_20260913T152058Z/yfinance_earnings_estimate.csv",
+      "sha256": "b9730d070d991f654d34187ba08ef4d2e1aa379dd26c1bf9cdac1c0db5f53cfd",
+      "rows": 4
+    },
+    {
+      "provider": "zacks",
+      "url": "https://www.zacks.com/stock/quote/ABNB/detailed-earning-estimates",
+      "capture_method": "requests.get public HTML; BeautifulSoup visible text",
+      "capture_started_utc": "2026-09-13T15:20:58Z",
+      "http_status": 403,
+      "captured_utc": "2026-09-13T15:20:58Z",
+      "response_sha256": "ef4f65b2ab43f19fec63e7117b4fdcee0ded779a06da933d9213adbef7da9fda",
+      "status": "http_error"
+    },
+    {
+      "provider": "stockanalysis",
+      "url": "https://stockanalysis.com/stocks/abnb/forecast/",
+      "capture_method": "requests.get public HTML; BeautifulSoup visible text",
+      "capture_started_utc": "2026-09-13T15:20:58Z",
+      "http_status": 403,
+      "captured_utc": "2026-09-13T15:20:59Z",
+      "response_sha256": "7f3b9a1495ae108e3f1c8aff0b2790247fc0e869b8b4a4bfd26465279b0dc8dc",
+      "status": "http_error"
+    },
+    {
+      "provider": "Alpha Vantage / LSEG family",
+      "url": "https://www.alphavantage.co/query?function=EARNINGS_ESTIMATES&symbol=ABNB",
+      "capture_started_utc": "2026-09-13T15:20:59Z",
+      "status": "skipped",
+      "reason": "ALPHAVANTAGE_API_KEY absent"
+    }
+  ]
+}

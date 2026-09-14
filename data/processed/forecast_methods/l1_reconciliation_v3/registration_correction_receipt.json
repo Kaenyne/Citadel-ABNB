@@ -1,0 +1,38 @@
+{
+  "checked_at_utc": "2026-09-13T00:50:59.521792+00:00",
+  "command": "python -X utf8 analysis/src/forecast_methods/l1_reconciliation_v3/run.py --candidates-only",
+  "exit_code": 0,
+  "wall_seconds": 2.016953599988483,
+  "analytical_files_byte_unchanged": 19,
+  "regional_model_refits": 0,
+  "shared_R_registry_files": 0,
+  "preserved_rejected_rows": 12,
+  "correction_tests": {
+    "command": "python -X utf8 -m pytest analysis/src/forecast_methods/l1_reconciliation_v3/test_refresh.py -q",
+    "exit_code": 0,
+    "passed": 7,
+    "seconds": 2.59
+  },
+  "analytical_sha256": {
+    "anchor_sensitivity.csv": "30b9c85a053b2a4858b09ed2f587e3453e29c8f3ec9051b214b3398715a4f3b2",
+    "annual_adr_residuals.csv": "5ec2d93ac7a75873711d303fb0c9a25da6a31941b1e259be21e66a310c53054f",
+    "arrivals_descriptive_coefficients.csv": "d1e09e996b1797909838aab4bc07acf734fd5ad0f8db4d7c634b2442dad5ff78",
+    "arrivals_manifest.json": "c23c368308c0aaf450ecedc69dd879b4de932d5afc128ee60965644092b4828d",
+    "arrivals_monthly_current.csv": "2487d304a9228e0402f76ca6e34c945a4fe78bf126d0773a5f91c1d328e51097",
+    "arrivals_quarterly_current.csv": "bd3cfd079d626c719d4ed826b9bcadea840b28fe9c8dc4e9442498e0749b4053",
+    "arrivals_vintage_audit.csv": "8f09d18d957de36d3b0b15c56f9b5ecc83305b7238992bc587e4f5fea87fcb76",
+    "diagnostics.json": "96981b8c547183272e4d3633f476af79f893c3bc2392abd5b1235ee0347defc4",
+    "disclosure_residuals.csv": "d8b00c30e1698b48810538f6722fd7b6b7b60af19f24794aa2cdbebe5e456557",
+    "fy27_attribution.csv": "7935f3b33746b018438203b69392998d7eb7944651a7bb393adf1aa179c85ed6",
+    "fy27_bootstrap_factors.csv": "d1344c84f28dec2a4780b54e87f822a0b131779b1e442f442ee1f09ef2cffa12",
+    "fy27_kernel_band.csv": "17b2b8cc510564a85656e6e8a5164f0a6cb6aa37ef91b8b5e5de36c9d4aaa3f1",
+    "fy27_regional_scenario.csv": "00c339bbaabfc6ddf52353a52799b0ed285b27e0b238d235ca019de8ba3126ad",
+    "input_manifest.json": "e744a80dbfb3fe388491130040cfabbf4096326d336e085adf57390750b22d42",
+    "observational_jacobian_singular_values.csv": "055a6ceaac89b76ccc366962def9c8772807558978617f0095d4c6ed36ca9b83",
+    "regional_adr_intervals.csv": "1292e6f5d02fe36aa3a947ed053477910bac9e47db39fdeeaaa4bba47162096b",
+    "regional_panel_v3.csv": "35adb71fce707f33fa55fc4e4da7881667f1c40f45aadcff45cc0a5e9c26fcd9",
+    "verification_receipt.json": "1ed4dedc90f2a91b245f134a88b7ed0febe957a2197b8c37f5880a4dc0e5b8c0",
+    "window_summary.csv": "f347ca650a678770735aa2a10aeb0abc27785c0b4074c572b522b1aa324ed685"
+  },
+  "token_usage": "unavailable"
+}

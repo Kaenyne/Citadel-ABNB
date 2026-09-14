@@ -1,0 +1,49 @@
+region,quarter,pick,pick_kind,pick_rmse_prior_oos,n_oos_prior,n_eligible,runner_up,runner_up_rmse_prior_oos,last_q_rmse_prior_oos,last_q_n_prior_oos,selection_basis,pred_pp,pred_last_q_pp,actual_pp,actual_usable
+na,1Q24,last_q,own_rule,0.8180067970377752,3,0,,,0.8180067970377752,3,default: no candidate has four out-of-sample quarters before t,-0.2236,-0.2236,2.7792,True
+na,2Q24,last_q,own_rule,1.660136530529944,4,1,,,1.660136530529944,4,lowest OOS RMSE over 4 usable quarters before t among 1 eligible,2.7792,2.7792,4.0906,True
+na,3Q24,last_q,own_rule,1.596495108667734,5,2,persistence,2.5668754329193693,1.596495108667734,5,lowest OOS RMSE over 5 usable quarters before t among 2 eligible,4.0906,4.0906,3.3314,True
+na,4Q24,last_q,own_rule,1.4899870133662239,6,3,last_q_ex_size,1.7386771758079744,1.4899870133662239,6,lowest OOS RMSE over 6 usable quarters before t among 3 eligible,3.3314,3.3314,3.4676,True
+na,1Q25,last_q,own_rule,1.3804201348036866,7,4,last_q_ex_size,1.5655087390064302,1.3804201348036866,7,lowest OOS RMSE over 7 usable quarters before t among 4 eligible,3.4676,3.4676,3.0,True
+na,2Q25,cpi_lodging_sa|level|lag1,proxy_ols,0.9595640811908578,4,21,bea_hotels_price|level|lag1,1.015272737383341,1.301804900897212,8,lowest OOS RMSE over 4 usable quarters before t among 21 eligible,2.766093347545531,3.0,3.3308,True
+na,3Q25,cpi_lodging_sa|level|lag1,proxy_ols,0.8946447906261963,5,21,bea_hotels_price|level|lag1,0.9282941456884737,1.2322967103024427,9,lowest OOS RMSE over 5 usable quarters before t among 21 eligible,4.1507273497286405,3.3308,5.0474,True
+na,4Q25,bea_hotels_price|level|lag1,proxy_ols,0.8930572310202728,6,21,cpi_lodging_sa|level|lag1,0.894983086312959,1.288941899388797,10,lowest OOS RMSE over 6 usable quarters before t among 21 eligible,4.8353031230203865,5.0474,4.777,True
+na,1Q26,bea_hotels_price|level|lag1,proxy_ols,0.8271039459134775,7,21,cpi_lodging_sa|level|lag1,0.831670236895401,1.2316592046356152,11,lowest OOS RMSE over 7 usable quarters before t among 21 eligible,4.8504701596535105,4.777,6.3048,True
+na,2Q26,cpi_lodging_nsa|level|lag1,proxy_ols,0.8597692408410204,8,21,bea_hotels_price|level|lag1,0.9289632558625339,1.2590009663750594,12,lowest OOS RMSE over 8 usable quarters before t among 21 eligible,1.7606411071335824,6.3048,6.7506,True
+na,3Q26,bea_hotels_price|level|lag1,proxy_ols,1.1517637329958277,9,21,last_q,1.2159117769109604,1.2159117769109604,13,lowest OOS RMSE over 9 usable quarters before t among 21 eligible,,,,False
+na,4Q26,bea_hotels_price|level|lag1,proxy_ols,1.1517637329958277,9,21,last_q,1.2159117769109604,1.2159117769109604,13,lowest OOS RMSE over 9 usable quarters before t among 21 eligible,,,,False
+emea,1Q24,last_q,own_rule,3.8261991695414923,4,1,,,3.8261991695414923,4,lowest OOS RMSE over 4 usable quarters before t among 1 eligible,6.0,6.0,5.0172,True
+emea,2Q24,persistence,own_rule,2.191299006582625,4,2,last_q,3.450365087349454,3.450365087349454,5,lowest OOS RMSE over 4 usable quarters before t among 2 eligible,5.5085999999999995,5.0172,4.61,True
+emea,3Q24,persistence,own_rule,2.000732231209364,5,2,last_q,3.1541218540189604,3.1541218540189604,6,lowest OOS RMSE over 5 usable quarters before t among 2 eligible,4.8136,4.61,4.6137,True
+emea,4Q24,last_q_ex_size,own_rule,0.920308809602816,4,4,trailing_4q,1.6866374162998101,2.9201497444480484,7,lowest OOS RMSE over 4 usable quarters before t among 4 eligible,4.494682457087602,4.6137,6.0,True
+emea,1Q25,ar1,own_rule,0.8775350086410751,4,13,hicp_ea_accommodation|level|lag0,0.9916775211876873,2.775174530547584,8,lowest OOS RMSE over 4 usable quarters before t among 13 eligible,5.437416711621249,6.0,4.0,True
+emea,2Q25,hicp_ea_accommodation|level|lag0,proxy_ols,0.8959590031229813,5,13,ar1,1.0145380789709977,2.7000565714238083,9,lowest OOS RMSE over 5 usable quarters before t among 13 eligible,3.643209487602517,4.0,3.0,True
+emea,3Q25,hicp_ea_accommodation|level|lag0,proxy_ols,0.8590140783991382,6,13,ar1,1.2184225989258364,2.5809445828998347,10,lowest OOS RMSE over 6 usable quarters before t among 13 eligible,2.296869799374978,3.0,4.0,True
+emea,4Q25,hicp_ea_accommodation|level|lag0,proxy_ols,1.0231662064122715,7,13,ar1,1.1359058739772747,2.479236491708321,11,lowest OOS RMSE over 7 usable quarters before t among 13 eligible,3.2720630728626485,4.0,4.0,True
+emea,1Q26,hicp_ea_accommodation|level|lag0,proxy_ols,0.9910837358353431,8,13,ar1,1.0779328601671625,2.373688223700268,12,lowest OOS RMSE over 8 usable quarters before t among 13 eligible,3.953784161924556,4.0,4.0,True
+emea,2Q26,hicp_ea_accommodation|level|lag0,proxy_ols,0.9345296901048818,9,13,ar1,1.027137281388321,2.2805658778200035,13,lowest OOS RMSE over 9 usable quarters before t among 13 eligible,4.260350481894,4.0,5.0,True
+emea,3Q26,hicp_ea_accommodation|level|lag0,proxy_ols,0.9169074699675085,10,13,ar1,0.9930051789558458,2.2138000522695296,14,lowest OOS RMSE over 10 usable quarters before t among 13 eligible,,,,False
+emea,4Q26,hicp_ea_accommodation|level|lag0,proxy_ols,0.9169074699675085,10,13,ar1,0.9930051789558458,2.2138000522695296,14,lowest OOS RMSE over 10 usable quarters before t among 13 eligible,,,,False
+latam,1Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,-2.7994,-2.7994,-4.4003,False
+latam,2Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,-4.4003,-4.4003,-0.1754,False
+latam,3Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,-0.1754,-0.1754,4.724,False
+latam,4Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,4.724,4.724,4.0,True
+latam,1Q25,last_q,own_rule,0.7240000000000002,1,0,,,0.7240000000000002,1,default: no candidate has four out-of-sample quarters before t,4.0,4.0,2.0,True
+latam,2Q25,last_q,own_rule,1.5040239359797438,2,0,,,1.5040239359797438,2,default: no candidate has four out-of-sample quarters before t,2.0,2.0,2.0,True
+latam,3Q25,last_q,own_rule,1.2280304013609218,3,0,,,1.2280304013609218,3,default: no candidate has four out-of-sample quarters before t,2.0,2.0,3.0,True
+latam,4Q25,last_q,own_rule,1.1751782843466774,4,1,,,1.1751782843466774,4,lowest OOS RMSE over 4 usable quarters before t among 1 eligible,3.0,3.0,3.0,True
+latam,1Q26,last_q,own_rule,1.051111411792299,5,3,last_q_ex_size,1.091028132575132,1.051111411792299,5,lowest OOS RMSE over 5 usable quarters before t among 3 eligible,3.0,3.0,3.0,True
+latam,2Q26,last_q,own_rule,0.9595290511495731,6,3,last_q_ex_size,0.9782482993999123,0.9595290511495731,6,lowest OOS RMSE over 6 usable quarters before t among 3 eligible,3.0,3.0,2.0,True
+latam,3Q26,last_q,own_rule,0.9654144927735149,7,4,persistence,1.0188261619792325,0.9654144927735149,7,lowest OOS RMSE over 7 usable quarters before t among 4 eligible,,,,False
+latam,4Q26,last_q,own_rule,0.9654144927735149,7,4,persistence,1.0188261619792325,0.9654144927735149,7,lowest OOS RMSE over 7 usable quarters before t among 4 eligible,,,,False
+apac,1Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,1.848,1.848,4.0312,False
+apac,2Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,4.0312,4.0312,2.3195,False
+apac,3Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,2.3195,2.3195,-1.5166,False
+apac,4Q24,last_q,own_rule,,0,0,,,,0,default: no candidate has four out-of-sample quarters before t,-1.5166,-1.5166,2.0,True
+apac,1Q25,last_q,own_rule,3.5166,1,0,,,3.5166,1,default: no candidate has four out-of-sample quarters before t,2.0,2.0,3.0,True
+apac,2Q25,last_q,own_rule,2.585195888129176,2,0,,,2.585195888129176,2,default: no candidate has four out-of-sample quarters before t,3.0,3.0,1.0,True
+apac,3Q25,last_q,own_rule,2.4059977528390726,3,0,,,2.4059977528390726,3,default: no candidate has four out-of-sample quarters before t,1.0,1.0,3.0,True
+apac,4Q25,last_q,own_rule,2.3111942562233923,4,1,,,2.3111942562233923,4,lowest OOS RMSE over 4 usable quarters before t among 1 eligible,3.0,3.0,2.0,True
+apac,1Q26,persistence,own_rule,1.2047159522580417,4,3,last_q_ex_size,1.5018238058010063,2.115016574875951,5,lowest OOS RMSE over 4 usable quarters before t among 3 eligible,2.5,2.0,2.0,True
+apac,2Q26,persistence,own_rule,1.1004873559019204,5,3,last_q_ex_size,1.349791254840435,1.9307371459281208,6,lowest OOS RMSE over 5 usable quarters before t among 3 eligible,2.0,2.0,-1.3509,True
+apac,3Q26,trailing_4q,own_rule,1.6927850266369473,4,4,persistence,1.6972474241400397,2.19072741898341,7,lowest OOS RMSE over 4 usable quarters before t among 4 eligible,,,,False
+apac,4Q26,trailing_4q,own_rule,1.6927850266369473,4,4,persistence,1.6972474241400397,2.19072741898341,7,lowest OOS RMSE over 4 usable quarters before t among 4 eligible,,,,False

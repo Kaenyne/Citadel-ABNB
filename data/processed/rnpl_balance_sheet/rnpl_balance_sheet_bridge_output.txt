@@ -1,0 +1,65 @@
+## 1. Growth of the two prepaid-customer lines versus GBV (y/y, %)
+quarter | GBV | unearned fees | gap UF-GBV | funds payable | gap FH-GBV | UF gap minus FH gap
+1Q25 |   7.0 |  11.9 |    4.9 |   5.0 |   -2.0 |    6.9
+2Q25 |  10.8 |   9.0 |   -1.8 |   7.0 |   -3.8 |    2.0
+3Q25 |  13.9 |   9.8 |   -4.1 |   9.7 |   -4.2 |    0.2
+4Q25 |  15.9 |   7.9 |   -8.1 |  17.3 |    1.4 |   -9.5
+1Q26 |  19.2 |   0.4 |  -18.8 |  15.0 |   -4.2 |  -14.6
+2Q26 |  15.7 |  -0.9 |  -16.6 |  10.4 |   -5.3 |  -11.4
+
+## 2. Pre-RNPL seasonal norms (stock / next-quarter revenue)
+Q1: UF 0.880  FH 3.089  from ['1Q23', '1Q24', '1Q25']
+Q2: UF 0.697  FH 2.722  from ['2Q23', '2Q24', '2Q25']
+Q3: UF 0.665  FH 2.675  from ['3Q23', '3Q24']
+Q4: UF 0.689  FH 2.675  from ['4Q23', '4Q24']
+
+## 3. Joint solve for unpaid RNPL share u and single-fee share m of the backlog
+model: UF_ratio=(1-u)(1-m)B ; FH_ratio=(1-u)(1+0.142m)B ; B = backlog scale vs norm (1.00 unless stated)
+quarter | UF ratio | FH ratio | B | m (single-fee share) | u (unpaid RNPL share) | unpaid GBV $B | unpaid nights M @1.33xADR
+3Q25 | 0.986 | 0.970 | 1.00 |  -1.4% |   2.8% |   0.4 |   1.8
+3Q25 | 0.986 | 0.970 | 1.05 |  -1.4% |   7.4% |   1.2 |   5.1
+3Q25 | 0.986 | 0.970 | 1.10 |  -1.4% |  11.6% |   1.9 |   8.4
+4Q25 | 0.945 | 0.971 | 1.00 |   2.4% |   3.2% |   0.5 |   2.1
+4Q25 | 0.945 | 0.971 | 1.05 |   2.4% |   7.8% |   1.2 |   5.5
+4Q25 | 0.945 | 0.971 | 1.10 |   2.4% |  12.0% |   2.0 |   8.8
+1Q26 | 0.861 | 0.947 | 1.00 |   8.0% |   6.4% |   1.6 |   6.6
+1Q26 | 0.861 | 0.947 | 1.05 |   8.0% |  10.9% |   2.9 |  11.7
+1Q26 | 0.861 | 0.947 | 1.10 |   8.0% |  14.9% |   4.2 |  16.9
+2Q26 | 0.846 | 0.936 | 1.00 |   8.5% |   7.5% |   2.0 |   8.3
+2Q26 | 0.846 | 0.936 | 1.05 |   8.5% |  11.9% |   3.4 |  13.9
+2Q26 | 0.846 | 0.936 | 1.10 |   8.5% |  15.9% |   4.7 |  19.4
+Reference flow: RNPL GBV booked per quarter at the disclosed share: 1Q26 ~$5.8B (20%), 2Q26 ~$5.7B (21%).
+
+## 4. 3Q26 quarter-end lines under deferral-only scenarios (score sheet for 5 Nov)
+pre-RNPL, pre-migration expectation: UF $2,105M (+15.6% y/y), FH $8,468M (+17.5% y/y)
+u (unpaid share) | m (single-fee share) | UF $M | UF y/y | FH $M | FH y/y
+   7% |    9% |  1781 |  -2.1% |   7975 | +10.6%   <- 2Q26 solved values carried
+  10% |   12% |  1667 |  -8.4% |   7751 |  +7.5%   <- RNPL share 22-23%, migration ~60% listings
+  12% |   18% |  1519 | -16.6% |   7642 |  +6.0%   <- July expansion + migration ~80%
+   7% |    0% |  1957 |  +7.5% |   7875 |  +9.2%   <- no migration effect at all
+  15% |    0% |  1789 |  -1.7% |   7198 |  -0.2%   <- UF hole all RNPL, no migration
+
+## 5. Marginal ADR of bundle-driven bookings, pinned by 4Q25 and 1Q26 disclosures
+4Q25 >200bp nights / ~300bp GBV: marginal ADR / average ADR = 1.50x
+1Q26 ~3pts nights / ~4pts GBV: marginal ADR / average ADR = 1.33x
+RNPL nights share at 21% GBV share and r=1.33: 16.7%  (r=1.00: 21.0%, r=1.25: 17.5%)
+
+## 6. One-time pull-forward in 3Q25 (US launch) that reverses in the 3Q26 comp
+3Q25 RNPL nights share 3.3%, lead uplift 7%: pull-forward 0.17% of 3Q25 nights = 0.23M -> 3Q26 y/y -0.17 pts
+3Q25 RNPL nights share 3.3%, lead uplift 15%: pull-forward 0.36% of 3Q25 nights = 0.48M -> 3Q26 y/y -0.36 pts
+3Q25 RNPL nights share 5.0%, lead uplift 7%: pull-forward 0.26% of 3Q25 nights = 0.34M -> 3Q26 y/y -0.26 pts
+3Q25 RNPL nights share 5.0%, lead uplift 15%: pull-forward 0.55% of 3Q25 nights = 0.73M -> 3Q26 y/y -0.55 pts
+
+## 7. D1 central cell (share_central, adr_plus25, lead_2.2, uplift_7, rebook 0.25): y/y growth points
+     delta_0pp (+0.0pp): 3Q26 +0.00 -> 9.89% | 4Q26 +0.00 -> 8.9%
+     delta_1pp (+1.0pp): 3Q26 -0.15 -> 9.74% | 4Q26 -0.14 -> 8.76%
+     delta_2pp (+2.0pp): 3Q26 -0.31 -> 9.58% | 4Q26 -0.28 -> 8.62%
+     delta_4pp (+4.0pp): 3Q26 -0.62 -> 9.27% | 4Q26 -0.57 -> 8.33%
+  mgmt_implied (+6.0pp): 3Q26 -0.93 -> 8.96% | 4Q26 -0.85 -> 8.05%
+
+## 8. 3Q26 / 4Q26 nights bridge (growth points)
+scenario | 3Q26 | nights M | 4Q26 | nights M
+mild (+2pp tail, small pull-fwd, July +0.3) | 9.78% | 146.7 | 8.07% | 131.7
+central (+4pp tail, July +0.2) | 9.27% | 146.0 | 7.64% | 131.2
+heavy (+6pp mgmt-implied, July +0.1) | 8.76% | 145.3 | 7.22% | 130.7
+reviews-index read (stay-date, cannot see the booking-date tail): 9.5 (8.5-11.0); minus central tail 0.62 -> 8.9

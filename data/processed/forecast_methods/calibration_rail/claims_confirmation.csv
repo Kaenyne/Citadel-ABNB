@@ -1,0 +1,8 @@
+claim,series,prior_basis,n,mape_pct,rmse,mae
+guide+cushion revenue LEVEL ~1.1pct mean error,guide_cushion,PIT,14,1.0684121816998848,,
+guide+cushion revenue LEVEL ~1.1pct mean error,guide_cushion,full_sample,14,0.9897641877393762,,
+guide(+cushion) worst predictor of surprise vs Street,bl_zero,"n/a (ledger, historical)",100,,1.8727625690407208,1.5329400000000002
+guide(+cushion) worst predictor of surprise vs Street,bl_last_quarter,"n/a (ledger, historical)",100,,1.7595620932493405,1.5017999999999998
+guide(+cushion) worst predictor of surprise vs Street,bl_expanding_mean,"n/a (ledger, historical)",100,,3.9263060092280124,3.6879790000000003
+guide(+cushion) worst predictor of surprise vs Street,bl_guide,"n/a (ledger, historical)",100,,2.587971750232216,2.3344199999999997
+guide(+cushion) worst predictor of surprise vs Street,bl_guide_plus_cushion,"n/a (ledger, historical)",100,,2.6424212402453926,1.906347

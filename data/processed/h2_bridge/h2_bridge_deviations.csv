@@ -1,0 +1,131 @@
+metric,label,year,quarter,h1_mean,expected_transition,actual_transition,deviation_pts,implied_by_pattern,actual,threshold_pts,flag,events_in_quarter
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2022,3Q22,24.5,26.900000000000002,26.0,-0.9000000000000021,51.400000000000006,50.5,1.5,False,USD surge (DXY peak Sep 2022)
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2022,4Q22,24.5,5.5,2.1000000000000014,-3.3999999999999986,30.0,26.6,1.5,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2023,3Q23,23.7,25.200000000000003,30.3,5.099999999999998,48.900000000000006,54.0,1.5,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2023,4Q23,23.7,3.450000000000001,9.599999999999998,6.149999999999997,27.15,33.3,1.5,True,
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2024,3Q24,26.15,27.175,26.35,-0.8249999999999993,53.325,52.5,1.5,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2024,4Q24,26.15,5.924999999999999,4.650000000000002,-1.2749999999999968,32.074999999999996,30.8,1.5,False,"US election week (5 Nov) softness, then nights accelerate to +12%"
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2025,3Q25,26.05,28.325000000000003,24.05,-4.275000000000002,54.375,50.1,1.5,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+adj_ebitda_margin_pct,"Adj. EBITDA margin (level, %)",2025,4Q25,26.05,7.125,2.25,-4.875,33.175,28.3,1.5,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2022,3Q22,7.0,-0.5,5.0,5.5,6.5,12.0,1.0,True,USD surge (DXY peak Sep 2022)
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2022,4Q22,7.0,-0.16666666666666666,-2.0,-1.8333333333333333,6.833333333333333,5.0,1.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2023,3Q23,2.5,0.25,-2.0,-2.25,2.75,0.5,1.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2023,4Q23,2.5,0.75,-2.0,-2.75,3.25,0.5,1.0,True,
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2024,3Q24,2.5,-0.5,-0.5,0.0,2.0,2.0,1.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2024,4Q24,2.5,0.0,-0.5,-0.5,2.5,2.0,1.0,False,"US election week (5 Nov) softness, then nights accelerate to +12%"
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2025,3Q25,1.0,-1.25,1.0,2.25,-0.25,2.0,1.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+adr_yoy_exfx_pct,ADR y/y ex-FX (%),2025,4Q25,1.0,-1.25,2.0,3.25,-0.25,3.0,1.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+adr_yoy_na_pct,NA ADR y/y (%),2023,3Q23,-1.0,1.0,0.0,-1.0,0.0,-1.0,1.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+adr_yoy_na_pct,NA ADR y/y (%),2023,4Q23,-1.0,1.0,1.0,0.0,0.0,0.0,1.0,False,
+adr_yoy_na_pct,NA ADR y/y (%),2024,3Q24,3.5,1.25,-0.5,-1.75,4.75,3.0,1.0,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+adr_yoy_na_pct,NA ADR y/y (%),2024,4Q24,3.5,1.75,-0.5,-2.25,5.25,3.0,1.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+adr_yoy_na_pct,NA ADR y/y (%),2025,3Q25,2.5,-0.25,2.5,2.75,2.25,5.0,1.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+adr_yoy_na_pct,NA ADR y/y (%),2025,4Q25,2.5,0.25,2.5,2.25,2.75,5.0,1.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+adr_yoy_reported_pct,ADR y/y reported (%),2022,3Q22,3.3,1.7166666666666668,1.6000000000000005,-0.11666666666666625,5.016666666666667,4.9,1.0,False,USD surge (DXY peak Sep 2022)
+adr_yoy_reported_pct,ADR y/y reported (%),2022,4Q22,3.3,1.75,-3.8,-5.55,5.05,-0.5,1.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+adr_yoy_reported_pct,ADR y/y reported (%),2023,3Q23,0.7999999999999999,1.375,2.4000000000000004,1.0250000000000004,2.175,3.2,1.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+adr_yoy_reported_pct,ADR y/y reported (%),2023,4Q23,0.7999999999999999,1.725,1.8000000000000003,0.07500000000000018,2.525,2.6,1.0,False,
+adr_yoy_reported_pct,ADR y/y reported (%),2024,3Q24,2.35,3.0500000000000003,-0.9500000000000002,-4.0,5.4,1.4,1.0,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+adr_yoy_reported_pct,ADR y/y reported (%),2024,4Q24,2.35,3.3500000000000005,-1.4500000000000002,-4.800000000000001,5.700000000000001,0.9,1.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+adr_yoy_reported_pct,ADR y/y reported (%),2025,3Q25,1.0,0.7250000000000001,3.7,2.975,1.725,4.7,1.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+adr_yoy_reported_pct,ADR y/y reported (%),2025,4Q25,1.0,0.17500000000000004,4.9,4.7250000000000005,1.175,5.9,1.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+fx_pts_adr,FX contribution to ADR y/y (pts),2022,3Q22,-5.6,2.216666666666667,-1.5,-3.716666666666667,-3.383333333333333,-7.1,1.0,True,USD surge (DXY peak Sep 2022)
+fx_pts_adr,FX contribution to ADR y/y (pts),2022,4Q22,-5.6,1.9166666666666667,0.09999999999999964,-1.816666666666667,-3.6833333333333327,-5.5,1.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+fx_pts_adr,FX contribution to ADR y/y (pts),2023,3Q23,-1.7,1.125,4.4,3.2750000000000004,-0.575,2.7,1.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+fx_pts_adr,FX contribution to ADR y/y (pts),2023,4Q23,-1.7,0.9749999999999999,3.8,2.825,-0.7250000000000001,2.1,1.0,True,
+fx_pts_adr,FX contribution to ADR y/y (pts),2024,3Q24,-0.15000000000000002,3.5500000000000003,-0.44999999999999996,-4.0,3.4000000000000004,-0.6,1.0,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+fx_pts_adr,FX contribution to ADR y/y (pts),2024,4Q24,-0.15000000000000002,3.3499999999999996,-0.9500000000000001,-4.3,3.1999999999999997,-1.1,1.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+fx_pts_adr,FX contribution to ADR y/y (pts),2025,3Q25,0.0,1.975,2.7,0.7250000000000001,1.975,2.7,1.0,False,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+fx_pts_adr,FX contribution to ADR y/y (pts),2025,4Q25,0.0,1.4249999999999998,2.9,1.475,1.4249999999999998,2.9,1.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+fx_pts_revenue,FX contribution to revenue y/y (pts),2022,3Q22,-5.0,2.5,-2.0,-4.5,-2.5,-7.0,1.5,True,USD surge (DXY peak Sep 2022)
+fx_pts_revenue,FX contribution to revenue y/y (pts),2022,4Q22,-5.0,2.5,-2.0,-4.5,-2.5,-7.0,1.5,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+fx_pts_revenue,FX contribution to revenue y/y (pts),2023,3Q23,-2.5,0.5,6.5,6.0,-2.0,4.0,1.5,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+fx_pts_revenue,FX contribution to revenue y/y (pts),2023,4Q23,-2.5,1.0,5.5,4.5,-1.5,3.0,1.5,True,
+fx_pts_revenue,FX contribution to revenue y/y (pts),2024,3Q24,0.0,3.75,0.0,-3.75,3.75,0.0,1.5,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+fx_pts_revenue,FX contribution to revenue y/y (pts),2024,4Q24,0.0,3.75,0.0,-3.75,3.75,0.0,1.5,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+fx_pts_revenue,FX contribution to revenue y/y (pts),2025,3Q25,-1.0,3.25,1.0,-2.25,2.25,0.0,1.5,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+fx_pts_revenue,FX contribution to revenue y/y (pts),2025,4Q25,-1.0,2.75,2.0,-0.75,1.75,1.0,1.5,False,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2022,3Q22,52.5,-0.8333333333333334,-12.5,-11.666666666666666,51.666666666666664,40.0,2.0,True,USD surge (DXY peak Sep 2022)
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2022,4Q22,52.5,0.8333333333333334,-26.5,-27.333333333333332,53.333333333333336,26.0,2.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2023,3Q23,17.5,0.5,-3.5,-4.0,18.0,14.0,2.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2023,4Q23,17.5,3.5,-4.5,-8.0,21.0,13.0,2.0,True,
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2024,3Q24,12.0,-0.25,-2.0,-1.75,11.75,10.0,2.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2024,4Q24,12.0,-0.25,3.0,3.25,11.75,15.0,2.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2025,3Q25,9.0,-2.75,3.0,5.75,6.25,12.0,2.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+gbv_yoy_exfx_pct,GBV y/y ex-FX (%),2025,4Q25,9.0,-0.75,4.0,4.75,8.25,13.0,2.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+gbv_yoy_reported_pct,GBV y/y reported (%),2022,3Q22,47.0,1.6666666666666667,-16.0,-17.666666666666668,48.666666666666664,31.0,2.0,True,USD surge (DXY peak Sep 2022)
+gbv_yoy_reported_pct,GBV y/y reported (%),2022,4Q22,47.0,2.6666666666666665,-27.0,-29.666666666666668,49.666666666666664,20.0,2.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+gbv_yoy_reported_pct,GBV y/y reported (%),2023,3Q23,16.0,2.0,1.0,-1.0,18.0,17.0,2.0,False,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+gbv_yoy_reported_pct,GBV y/y reported (%),2023,4Q23,16.0,4.5,-1.0,-5.5,20.5,15.0,2.0,True,
+gbv_yoy_reported_pct,GBV y/y reported (%),2024,3Q24,11.0,3.0,-1.0,-4.0,14.0,10.0,2.0,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+gbv_yoy_reported_pct,GBV y/y reported (%),2024,4Q24,11.0,3.0,2.0,-1.0,14.0,13.0,2.0,False,"US election week (5 Nov) softness, then nights accelerate to +12%"
+gbv_yoy_reported_pct,GBV y/y reported (%),2025,3Q25,9.0,0.0,5.0,5.0,9.0,14.0,2.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+gbv_yoy_reported_pct,GBV y/y reported (%),2025,4Q25,9.0,0.5,7.0,6.5,9.5,16.0,2.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+nights_yoy_apac_pct,APAC nights y/y (%),2023,3Q23,36.0,-0.5,-9.0,-8.5,35.5,27.0,2.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+nights_yoy_apac_pct,APAC nights y/y (%),2023,4Q23,36.0,1.0,-14.0,-15.0,37.0,22.0,2.0,True,
+nights_yoy_apac_pct,APAC nights y/y (%),2024,3Q24,20.0,-4.5,-1.0,3.5,15.5,19.0,2.0,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+nights_yoy_apac_pct,APAC nights y/y (%),2024,4Q24,20.0,-7.0,2.0,9.0,13.0,22.0,2.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+nights_yoy_apac_pct,APAC nights y/y (%),2025,3Q25,15.0,-5.0,0.0,5.0,10.0,15.0,2.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+nights_yoy_apac_pct,APAC nights y/y (%),2025,4Q25,15.0,-6.0,0.0,6.0,9.0,15.0,2.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+nights_yoy_latam_pct,LatAm nights y/y (%),2023,3Q23,22.0,-0.5,2.0,2.5,21.5,24.0,2.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+nights_yoy_latam_pct,LatAm nights y/y (%),2023,4Q23,22.0,1.0,0.0,-1.0,23.0,22.0,2.0,False,
+nights_yoy_latam_pct,LatAm nights y/y (%),2024,3Q24,18.0,2.0,-3.0,-5.0,20.0,15.0,2.0,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+nights_yoy_latam_pct,LatAm nights y/y (%),2024,4Q24,18.0,-1.0,4.0,5.0,17.0,22.0,2.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+nights_yoy_latam_pct,LatAm nights y/y (%),2025,3Q25,20.0,-0.5,2.0,2.5,19.5,22.0,2.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+nights_yoy_latam_pct,LatAm nights y/y (%),2025,4Q25,20.0,2.0,-2.0,-4.0,22.0,18.0,2.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+nights_yoy_pct,Nights & seats y/y (%),2022,3Q22,41.665,-0.2533333333333336,-16.575,-16.321666666666665,41.41166666666667,25.09,2.0,True,USD surge (DXY peak Sep 2022)
+nights_yoy_pct,Nights & seats y/y (%),2022,4Q22,41.665,0.8733333333333334,-21.505,-22.378333333333334,42.538333333333334,20.16,2.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+nights_yoy_pct,Nights & seats y/y (%),2023,3Q23,14.8,0.25000000000000044,-1.2600000000000016,-1.510000000000002,15.05,13.54,2.0,False,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+nights_yoy_pct,Nights & seats y/y (%),2023,4Q23,14.8,2.7000000000000006,-2.780000000000001,-5.480000000000002,17.5,12.02,2.0,True,
+nights_yoy_pct,Nights & seats y/y (%),2024,3Q24,9.094999999999999,-0.07250000000000112,-0.6149999999999984,-0.5424999999999973,9.022499999999997,8.48,2.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+nights_yoy_pct,Nights & seats y/y (%),2024,4Q24,9.094999999999999,-0.31750000000000034,3.255000000000001,3.572500000000001,8.777499999999998,12.35,2.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+nights_yoy_pct,Nights & seats y/y (%),2025,3Q25,7.675,-0.9375,1.1149999999999993,2.0524999999999993,6.7375,8.79,2.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+nights_yoy_pct,Nights & seats y/y (%),2025,4Q25,7.675,0.23749999999999982,2.1450000000000005,1.9075000000000006,7.9125,9.82,2.0,False,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2022,3Q22,69.0,-4.166666666666667,-33.0,-28.833333333333332,64.83333333333333,36.0,2.0,True,USD surge (DXY peak Sep 2022)
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2022,4Q22,69.0,-3.1666666666666665,-38.0,-34.833333333333336,65.83333333333333,31.0,2.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2023,3Q23,21.5,-2.5,-7.5,-5.0,19.0,14.0,2.0,True,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2023,4Q23,21.5,-1.0,-7.5,-6.5,20.5,14.0,2.0,True,
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2024,3Q24,14.5,-4.0,-4.5,-0.5,10.5,10.0,2.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2024,4Q24,14.5,-3.5,-2.5,1.0,11.0,12.0,2.0,False,"US election week (5 Nov) softness, then nights accelerate to +12%"
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2025,3Q25,10.5,-6.0,-0.5,5.5,4.5,10.0,2.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+revenue_yoy_exfx_pct,Revenue y/y ex-FX (%),2025,4Q25,10.5,-5.0,0.5,5.5,5.5,11.0,2.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+revenue_yoy_reported_pct,Revenue y/y reported (%),2022,3Q22,64.0,-1.6666666666666667,-35.0,-33.333333333333336,62.333333333333336,29.0,2.0,True,USD surge (DXY peak Sep 2022)
+revenue_yoy_reported_pct,Revenue y/y reported (%),2022,4Q22,64.0,-0.6666666666666666,-40.0,-39.333333333333336,63.333333333333336,24.0,2.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+revenue_yoy_reported_pct,Revenue y/y reported (%),2023,3Q23,19.0,-2.0,-1.0,1.0,17.0,18.0,2.0,False,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+revenue_yoy_reported_pct,Revenue y/y reported (%),2023,4Q23,19.0,0.0,-2.0,-2.0,19.0,17.0,2.0,True,
+revenue_yoy_reported_pct,Revenue y/y reported (%),2024,3Q24,14.5,-0.25,-4.5,-4.25,14.25,10.0,2.0,True,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+revenue_yoy_reported_pct,Revenue y/y reported (%),2024,4Q24,14.5,0.25,-2.5,-2.75,14.75,12.0,2.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+revenue_yoy_reported_pct,Revenue y/y reported (%),2025,3Q25,9.5,-2.75,0.5,3.25,6.75,10.0,2.0,True,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+revenue_yoy_reported_pct,Revenue y/y reported (%),2025,4Q25,9.5,-2.25,2.5,4.75,7.25,12.0,2.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+size_term_pp,Party-size / listing-size term in ADR (pts),2022,3Q22,0.8695705830834962,0.022578868985707268,-0.2843852601109762,-0.30696412909668347,0.8921494520692035,0.58518532297252,1.0,False,USD surge (DXY peak Sep 2022)
+size_term_pp,Party-size / listing-size term in ADR (pts),2022,4Q22,0.8695705830834962,-0.05362533400158296,-0.36546516251501726,-0.3118398285134343,0.8159452490819132,0.504105420568479,1.0,False,USD strength persists; Q4 nights guide cut to ~20% from 25%
+size_term_pp,Party-size / listing-size term in ADR (pts),2023,3Q23,0.4121176562405874,0.03497844725486099,-0.0022202875526001753,-0.037198734807461165,0.44709610349544837,0.4098973686879872,1.0,False,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+size_term_pp,Party-size / listing-size term in ADR (pts),2023,4Q23,0.4121176562405874,-0.019706151546101613,-0.12146369891254566,-0.10175754736644405,0.39241150469448577,0.2906539573280417,1.0,False,
+size_term_pp,Party-size / listing-size term in ADR (pts),2024,3Q24,0.8677550608444707,0.022587960467703116,0.02256068602171557,-2.7274445987546247e-05,0.8903430213121739,0.8903157468661863,1.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+size_term_pp,Party-size / listing-size term in ADR (pts),2024,4Q24,0.8677550608444707,0.0001021464569058439,-0.16108029491856057,-0.16118244137546642,0.8678572073013766,0.7066747659259102,1.0,False,"US election week (5 Nov) softness, then nights accelerate to +12%"
+size_term_pp,Party-size / listing-size term in ADR (pts),2025,3Q25,0.7007547478435081,0.010170199234557697,0.04739620848800641,0.03722600925344871,0.7109249470780659,0.7481509563315145,1.0,False,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+size_term_pp,Party-size / listing-size term in ADR (pts),2025,4Q25,0.7007547478435081,-0.14127199691555312,0.12166799182635735,0.2629399887419105,0.559482750927955,0.8224227396698655,1.0,False,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+take_rate_pct,"Implied take rate (level, %)",2022,3Q22,10.575,7.224999999999999,7.914999999999999,0.6900000000000004,17.799999999999997,18.49,1.0,False,USD surge (DXY peak Sep 2022)
+take_rate_pct,"Implied take rate (level, %)",2022,4Q22,10.575,2.8949999999999996,3.5150000000000006,0.620000000000001,13.469999999999999,14.09,1.0,False,USD strength persists; Q4 nights guide cut to ~20% from 25%
+take_rate_pct,"Implied take rate (level, %)",2023,3Q23,10.96,7.0375,7.599999999999998,0.5624999999999982,17.997500000000002,18.56,1.0,False,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+take_rate_pct,"Implied take rate (level, %)",2023,4Q23,10.96,2.6674999999999995,3.3499999999999996,0.6825000000000001,13.627500000000001,14.31,1.0,False,
+take_rate_pct,"Implied take rate (level, %)",2024,3Q24,11.155000000000001,7.129999999999999,7.414999999999999,0.28500000000000014,18.285,18.57,1.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+take_rate_pct,"Implied take rate (level, %)",2024,4Q24,11.155000000000001,2.875,2.9349999999999987,0.05999999999999872,14.030000000000001,14.09,1.0,False,"US election week (5 Nov) softness, then nights accelerate to +12%"
+take_rate_pct,"Implied take rate (level, %)",2025,3Q25,11.219999999999999,7.5074999999999985,6.66,-0.8474999999999984,18.7275,17.88,1.0,False,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+take_rate_pct,"Implied take rate (level, %)",2025,4Q25,11.219999999999999,3.142499999999999,2.4000000000000004,-0.7424999999999988,14.362499999999997,13.62,1.0,False,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2022,3Q22,75.87572116779083,-12.685709425417627,-11.716940936455387,0.9687684889622403,63.1900117423732,64.15878023133544,5.0,False,USD surge (DXY peak Sep 2022)
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2022,4Q22,75.87572116779083,-11.231481204782284,-10.859219517625817,0.3722616871564668,64.64423996300854,65.01650165016501,5.0,False,USD strength persists; Q4 nights guide cut to ~20% from 25%
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2023,3Q23,78.26499369292883,-12.966400925566447,-12.124326425119989,0.8420745004464578,65.29859276736238,66.14066726780884,5.0,False,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2023,4Q23,78.26499369292883,-11.024715623640851,-11.64501236706515,-0.6202967434242979,67.24027806928797,66.61998132586368,5.0,False,
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2024,3Q24,79.40197372424026,-12.734835340522437,-12.587457595208008,0.14737774531442938,66.66713838371783,66.81451612903226,5.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2024,4Q24,79.40197372424026,-12.709615226743438,-8.275213160859977,4.434402065883461,66.69235849749683,71.12676056338029,5.0,False,"US election week (5 Nov) softness, then nights accelerate to +12%"
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2025,3Q25,78.86010307521934,-12.355892010163998,-13.345344255924886,-0.9894522457608872,66.50421106505534,65.51475881929446,5.0,False,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+unearned_cover_next_q_pct,Unearned fees / next-quarter revenue (%),2025,4Q25,78.86010307521934,-9.960112763962563,-13.774218086421726,-3.814105322459163,68.89999031125677,65.08588498879762,5.0,False,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+unearned_fees_yoy_pct,Unearned fees y/y (%),2022,3Q22,59.099999999999994,-0.2233333333333345,-22.359999999999992,-22.136666666666656,58.87666666666666,36.74,2.0,True,USD surge (DXY peak Sep 2022)
+unearned_fees_yoy_pct,Unearned fees y/y (%),2022,4Q22,59.099999999999994,-0.6166666666666668,-28.349999999999994,-27.733333333333327,58.48333333333333,30.75,2.0,True,USD strength persists; Q4 nights guide cut to ~20% from 25%
+unearned_fees_yoy_pct,Unearned fees y/y (%),2023,3Q23,21.380000000000003,0.2450000000000001,-1.1600000000000037,-1.4050000000000038,21.625000000000004,20.22,2.0,False,"NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)"
+unearned_fees_yoy_pct,Unearned fees y/y (%),2023,4Q23,21.380000000000003,-0.5999999999999992,-0.6500000000000021,-0.05000000000000293,20.780000000000005,20.73,2.0,False,
+unearned_fees_yoy_pct,Unearned fees y/y (%),2024,3Q24,11.865,-0.8775000000000013,1.084999999999999,1.9625000000000004,10.987499999999999,12.95,2.0,False,Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+unearned_fees_yoy_pct,Unearned fees y/y (%),2024,4Q24,11.865,-1.6125000000000003,1.375,2.9875000000000003,10.2525,13.24,2.0,True,"US election week (5 Nov) softness, then nights accelerate to +12%"
+unearned_fees_yoy_pct,Unearned fees y/y (%),2025,3Q25,10.434999999999999,-0.03750000000000231,-0.5949999999999989,-0.5574999999999966,10.397499999999997,9.84,2.0,False,Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+unearned_fees_yoy_pct,Unearned fees y/y (%),2025,4Q25,10.434999999999999,0.36249999999999893,-2.5749999999999984,-2.9374999999999973,10.797499999999998,7.86,2.0,True,US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)

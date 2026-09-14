@@ -1,0 +1,8 @@
+spec,method,maturities,n_maturities,background_vol_pct,fwd_var_between_expiries_brief_formula,diffusion_share_of_fwd_var,event_var,event_sd_pct,event_exp_abs_move_pct,fwd_var_sd_pct_if_all_called_event,loo_range,note
+pair_2026-10-16_vs_20Nov,pair: E = T_post*(sig_post^2 - sig_pre^2); background b = sig_pre^2,"2026-10-16 (pre, 35d) + 2026-11-20 (post, 70d)",2,31.11,0.019044,0.009291,0.009753,9.88,7.88,13.8,,
+pair_2026-10-09_vs_20Nov,pair: E = T_post*(sig_post^2 - sig_pre^2); background b = sig_pre^2,"2026-10-09 (pre, 28d) + 2026-11-20 (post, 70d)",2,30.56,0.021161,0.010757,0.010404,10.2,8.14,14.55,,
+pair_16Oct_vs_18Dec,pair: E = T_post*(sig_post^2 - sig_pre^2); background b = sig_pre^2,"2026-10-16 (pre, 35d) + 2026-12-18 (post, 98d)",2,31.11,0.027612,0.016716,0.010895,10.44,8.33,16.62,,
+LS_to_Jan27_one_print_max,LS: sig^2 T = b T + E n,"2026-09-18, 2026-10-16, 2026-11-20, 2026-12-18, 2027-01-15",5,32.68,,,0.008389,9.16,7.31,,7.97..10.13,resid rmse (var units) 0.00064
+LS_all_maturities_multi_print,LS: sig^2 T = b T + E n,"2026-09-18, 2026-10-16, 2026-11-20, 2026-12-18, 2027-01-15, 2027-03-19, 2027-04-16, 2027-06-17, 2027-09-17, 2027-12-17, 2028-01-21",11,32.85,,,0.012111,11.01,8.78,,9.62..12.55,resid rmse (var units) 0.00354
+LS_all_maturities_multi_print_slope_bg,LS: sig^2 T = b0 T + b1 T^2 + E n,"2026-09-18, 2026-10-16, 2026-11-20, 2026-12-18, 2027-01-15, 2027-03-19, 2027-04-16, 2027-06-17, 2027-09-17, 2027-12-17, 2028-01-21",11,31.93,,,0.009474,9.73,7.77,,9.14..10.27,b1=0.01469 (background var slope per year); resid rmse (var units) 0.00117
+pair_20Nov_vs_18Dec_both_post,LS: sig^2 T = b T + E n,"2026-11-20, 2026-12-18",2,33.42,,,0.006897,8.3,6.63,,,resid rmse (var units) 0.00000

@@ -1,0 +1,5 @@
+id,statement,basis,resolves,status
+KL-1,"3Q26 printed revenue lands in [4700, 4910] MUSD","kernel w=2/3, both GBV lags printed, q10-q90",2026-11-05,open
+KL-2,4Q26 guide midpoint < 3200 (Zacks 2026-09-04),print/(1+cushion) at GBV_3Q26=26300,2026-11-05,open
+KL-3,phi_0 (same-quarter GBV weight) is not distinguishable from 0,"constrained simplex lag polynomial, block bootstrap",tested tonight,see 06_lag_polynomial.csv
+KL-4,the kernel weight is not identified better than +/-0.2,LOO grid + block bootstrap on the argmin,tested tonight,see 03_weight_summary.csv

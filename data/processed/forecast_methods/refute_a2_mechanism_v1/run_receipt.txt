@@ -1,0 +1,24 @@
+window  evaluable_n  n  hits  kernel_signed_20d  guide_signed_20d  guide_minus_kernel_20d  gap_corr  raw_return_corr  positive_gap_n  negative_gap_n  named_gbv_vendor_n
+    W1           11  8     7          -0.307680          2.646965                2.954645  0.676803         0.015639               4               4                   0
+    W2            9  7     6          -0.983347          2.393391                3.376738  0.654747        -0.051548               4               3                   0
+window              target    controls  n       raw   partial  control_rank
+    W1 excess_open_20d_pct         GBV  6 -0.069129 -0.463405             2
+    W1                 gap         GBV  6  0.626236  0.000585             2
+    W1 excess_open_20d_pct   guide_gap 11  0.015639 -0.392108             2
+    W1 excess_open_20d_pct GBV_and_gap  6 -0.069129 -0.538118             3
+    W1 excess_open_20d_pct      season 11  0.015639 -0.104796             4
+    W1                 gap      season 11  0.676803  0.718409             4
+    W2 excess_open_20d_pct         GBV  6 -0.069129 -0.463405             2
+    W2                 gap         GBV  6  0.626236  0.000585             2
+    W2 excess_open_20d_pct   guide_gap  9 -0.051548 -0.441007             2
+    W2 excess_open_20d_pct GBV_and_gap  6 -0.069129 -0.538118             3
+    W2 excess_open_20d_pct      season  9 -0.051548 -0.145578             4
+    W2                 gap      season  9  0.654747  0.743485             4
+window        hedge  n  signed_mean  q05_block  q95_block
+    W1     unit_QQQ  8    -0.307680  -3.706978   3.423700
+    W1     unhedged  8    -3.164056  -8.832142   1.825224
+    W1 PIT_beta_QQQ  8    -0.146645  -3.918555   4.217211
+    W2     unit_QQQ  7    -0.983347  -4.228847   2.452963
+    W2     unhedged  7    -3.169454  -9.397473   2.636897
+    W2 PIT_beta_QQQ  7    -1.143931  -4.465262   2.277482
+Independent source and return reconstruction assertions PASS; runtime 0.580s

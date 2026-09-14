@@ -1,0 +1,156 @@
+markets: 34, market-interval rows: 130
+permutation (US vs non-US labels) observed non-US minus US change = 2.124 pp, p = 0.2587
+                    group  markets  mean_change_pp median_change_pp sd_change_pp min_change_pp max_change_pp  share_positive mean_I1 mean_I2 mean_I3 mean_I4
+                       US        7           -1.89            -1.56         3.58         -7.20          2.52            0.43   12.59   11.50   10.54    9.77
+                   non_US       25            0.23            -0.38         4.52         -6.37         17.00            0.48    8.72   11.86    9.86   11.18
+              EMEA_Europe        4           -0.98            -1.52         1.76         -2.34          1.46            0.25   11.02    8.28    8.46    8.89
+           APAC_Australia       11            1.38             0.65         5.79         -6.37         17.00            0.64    5.96   10.11    7.79   11.04
+       APAC_non_Australia        5            1.12             0.75         3.63         -3.99          4.65            0.60   11.76   14.96   15.49   13.46
+                    LatAm        5           -2.20            -2.81         3.07         -5.37          2.56            0.20    9.91   15.45    9.90   11.06
+balanced_intervals_non_US       21            0.24            -0.85         4.68         -6.37         17.00            0.43    9.37   11.95    9.97   11.83
+    balanced_intervals_US        6           -2.63            -2.95         3.29         -7.20          1.37            0.33   13.59   11.70   11.21    8.83
+      deep_cohorts_non_US       20           -0.50            -0.61         2.27         -5.37          3.81            0.45    8.70   11.54    9.58    9.66
+          deep_cohorts_US        6           -1.01            -0.54         2.96         -4.51          2.52            0.50   11.65   11.94   11.10   10.47
+nonUS_minus_US_difference       32            2.12             None         None          None          None            0.26    None    None    None    None
+
+Pre-rollout (interval 1) short-run level by US flag:
+       count  mean  median  std
+us                             
+False     25  8.72    7.49 5.07
+True       7 12.59   12.01 5.45
+
+Europe dispersion:
+   market    I1    I2   I3    I4  change_pp
+     rome 11.60  7.79 9.00 13.32       1.46
+barcelona  9.00  6.38 7.42  6.25      -0.85
+    paris 12.60  8.40 8.60  8.04      -2.18
+   london 10.89 10.54 8.81  7.94      -2.34
+
+Market changes, sorted:
+               market region    us    I1    I2    I3    I4  change_pp  min_interval_days  max_interval_days
+       barossa-valley   APAC False  3.63  6.12  3.94 39.81      17.00                 62                 92
+               taipei   APAC False  4.46  7.19 12.30  8.66       4.65                 61                122
+            hong-kong   APAC False  3.89  6.87 11.18  8.70       4.56                 62                 95
+    western-australia   APAC False  5.76  9.48  9.01 13.84       3.81                 63                 93
+               belize  LatAm False  8.19 13.43 10.75 16.00       2.56                 63                 92
+            san-diego  NA_US  True  6.59 10.28  6.47 15.44       2.52                 63                108
+                 rome   EMEA False 11.60  7.79  9.00 13.32       1.46                 66                 98
+            melbourne   APAC False  7.49  8.79 11.66  7.43       1.41                 60                 99
+barwon-south-west-vic   APAC False  5.86 10.86  6.95 12.52       1.37                 63                 92
+            nashville  NA_US  True  6.68 11.27  9.08 11.60       1.37                 62                 95
+       sunshine-coast   APAC False  6.61  7.05  8.06  8.23       1.31                 62                122
+                tokyo   APAC False 12.18 11.01 12.83 11.86       0.75                 62                 92
+             brisbane   APAC False  8.00  8.45  9.10  8.64       0.65                 59                101
+          new-orleans  NA_US  True  9.79 10.62 14.86  6.50       0.47                 60                 97
+      mid-north-coast   APAC False  3.77  9.14  7.33  5.82       0.12                 26                129
+              bangkok   APAC False 10.35 22.35 17.83 14.11      -0.38                 62                 93
+            barcelona   EMEA False  9.00  6.38  7.42  6.25      -0.85                 60                 97
+               sydney   APAC False  7.17 11.87  9.38  7.68      -0.99                 60                 99
+       rio-de-janeiro  LatAm False  7.71 15.74 11.59  9.33      -1.27                 67                 93
+             tasmania   APAC False  6.23  9.39  7.51  5.40      -1.35                 59                 97
+        new-york-city  NA_US  True 12.01 18.07 15.68 11.28      -1.56                 57                102
+      northern-rivers   APAC False  6.93 12.00  8.54  6.73      -1.83                 64                 94
+                paris   EMEA False 12.60  8.40  8.60  8.04      -2.18                 60                 98
+               london   EMEA False 10.89 10.54  8.81  7.94      -2.34                 60                 98
+          mexico-city  LatAm False 12.12 14.45 10.55 10.41      -2.81                 76                 93
+            singapore   APAC False 27.91 27.36 23.33 23.96      -3.99                 63                 92
+             santiago  LatAm False 15.03 11.54  7.13 11.16      -4.14                 62                 93
+               austin  NA_US  True 20.61  8.17 10.16  9.95      -4.34                 64                 97
+          los-angeles  NA_US  True 14.19 13.24 10.36  8.05      -4.51                 56                102
+         buenos-aires  LatAm False  6.51 22.11  9.47  8.41      -5.37                 61                123
+ mornington-peninsula   APAC False  4.15 18.12  4.25  5.28      -6.37                 65                 95
+              chicago  NA_US  True 18.28  8.86  7.14  5.59      -7.20                 64                 94
+
+Night-weighted pooled rates:
+             group  markets  pooled_I1_pct  pooled_I2_pct  pooled_I3_pct  pooled_I4_pct  pooled_change_pp  initial_I4
+                US        7          11.19          11.57           9.94           9.87             -1.48       40747
+            non_US       25           8.97           9.92           9.55          10.00              0.33      269515
+       EMEA_Europe        4          11.39           8.42           8.70           9.83             -0.64      103609
+    APAC_Australia       11           6.19           9.71           8.64           8.99              0.86       81196
+APAC_non_Australia        5          11.07          12.25          13.69          12.11              1.24       42153
+             LatAm        5           8.45          14.92          10.21          10.25             -1.45       42557
+  non_US_ex_Europe       21           7.93          11.62          10.33          10.11              0.44      165906
+    Europe_ex_Rome        3          11.27           8.88           8.52           7.70             -1.97       64372
+         rome_only        1          11.60           7.79           9.00          13.32              1.46       39237
+
+Duration-normalised (per 90 days, post hoc) change by group:
+       count  mean  median
+us                        
+False     25  2.70    1.55
+True       7  0.77    0.33
+
+Fixed days-to-arrival bands, pooled:
+         group     band  pooled_I1_pct  pooled_I2_pct  pooled_I3_pct  pooled_I4_pct  pooled_change_pp
+            US d001_030           9.02           7.65           8.52           9.99              0.92
+            US d031_060          14.91          11.81           9.68           9.76             -3.64
+            US d061_090          11.61          12.31           9.29           9.06             -2.79
+            US d091_180          12.17          12.48          10.55           9.54             -2.28
+        non_US d001_030           6.78           7.78           8.20           9.84              1.74
+        non_US d031_060           9.73           8.95          11.00           9.10              0.71
+        non_US d061_090           9.36          10.23          10.53          10.19              0.56
+        non_US d091_180           9.93          11.33           9.15           9.95             -1.08
+   EMEA_Europe d001_030           8.93           6.08           6.45           9.75              0.59
+   EMEA_Europe d031_060          14.49           7.17           9.90           8.29             -1.73
+   EMEA_Europe d061_090          11.47           7.67           9.58          10.27              0.36
+   EMEA_Europe d091_180          11.10           9.98           8.94          10.17             -0.99
+APAC_Australia d001_030           5.15           9.31          10.10          10.29              2.96
+APAC_Australia d031_060           7.07           9.24          13.77           9.41              3.44
+APAC_Australia d061_090           6.79          11.05           9.62           9.30              0.54
+APAC_Australia d091_180           6.50           9.67           7.46           7.69             -0.51
+         LatAm d001_030           6.65          11.67           9.73           8.94              0.17
+         LatAm d031_060           8.28          17.30           8.62           9.89             -3.53
+         LatAm d061_090           9.98          17.50          11.79           9.21             -3.24
+         LatAm d091_180          11.88          14.91          11.03          11.67             -2.05
+
+Leave-one-out extremes on the non-US minus US difference:
+ full_sample_nonUS_minus_US_pp dropped_market  nonUS_minus_US_pp  shift_vs_full_pp
+                          2.12        chicago               1.24             -0.88
+                          2.12 barossa-valley               1.43             -0.70
+                          2.12    los-angeles               1.69             -0.44
+                          2.12    new-orleans               2.52              0.39
+                          2.12      nashville               2.67              0.54
+                          2.12      san-diego               2.86              0.74
+
+Listing-clustered bootstrap contrasts:
+                   contrast  n_a  n_b  bootstrap_mean_pp  boot_lo_pp  boot_hi_pp  reps               cluster
+JunAug_level_nonUS_minus_US   25    7               1.38        0.02        2.72  2000 listing within market
+      change_nonUS_minus_US   25    7               2.06        0.69        3.47  2000 listing within market
+  change_Australia_minus_US   11    7               3.21        1.45        4.90  2000 listing within market
+     change_Europe_minus_US    4    7               0.90       -0.45        2.18  2000 listing within market
+
+Bootstrap per market (final interval):
+               market region  listings_in_cohort  last_interval_rate_pct  boot_lo_pct  boot_hi_pct  change_pp  change_boot_lo_pp  change_boot_hi_pp
+               austin  NA_US                 340                    9.95         7.72        12.48      -4.34              -7.93              -0.67
+              bangkok   APAC                 481                   14.11        11.34        16.98      -0.38              -3.96               3.35
+            barcelona   EMEA                 508                    6.25         5.18         7.38      -0.85              -2.37               0.62
+       barossa-valley   APAC                  27                   39.81        16.94        59.43      17.00               5.09              26.97
+barwon-south-west-vic   APAC                 399                   12.52         9.07        16.37       1.37              -1.44               4.33
+               belize  LatAm                 198                   16.00        11.06        21.34       2.56              -1.67               6.53
+               bogota  LatAm                 596                   10.41         8.26        12.50        NaN                NaN                NaN
+             brisbane   APAC                 231                    8.64         5.89        12.01       0.65              -2.16               3.20
+         buenos-aires  LatAm                 767                    8.41         6.93         9.97      -5.37             -10.06              -1.29
+              chicago  NA_US                 317                    5.59         4.15         7.18      -7.20             -10.64              -3.78
+            hong-kong   APAC                  58                    8.70         4.01        15.05       4.56              -2.10              11.81
+               london   EMEA                1874                    7.94         7.15         8.79      -2.34              -3.38              -1.26
+          los-angeles  NA_US                 714                    8.05         6.54         9.65      -4.51              -6.84              -2.34
+            melbourne   APAC                 732                    7.43         6.12         8.81       1.41              -0.16               3.22
+          mexico-city  LatAm                 858                   10.41         8.92        11.84      -2.81              -5.07              -0.58
+      mid-north-coast   APAC                 355                    5.82         4.53         7.23       0.12              -1.73               2.06
+ mornington-peninsula   APAC                 233                    5.28         3.38         7.56      -6.37             -12.19              -1.35
+            nashville  NA_US                 306                   11.60         9.01        14.57       1.37              -1.23               3.74
+          new-orleans  NA_US                 256                    6.50         5.20         7.88       0.47              -1.93               2.77
+        new-york-city  NA_US                 287                   11.28         9.07        13.73      -1.56              -4.94               1.93
+      northern-rivers   APAC                 312                    6.73         5.23         8.26      -1.83              -4.17               0.43
+                paris   EMEA                1634                    8.04         7.21         8.95      -2.18              -3.65              -0.83
+       rio-de-janeiro  LatAm                1620                    9.33         8.30        10.44      -1.27              -2.96               0.38
+                 rome   EMEA                2027                   13.32        11.91        14.80       1.46               0.41               2.57
+            san-diego  NA_US                 503                   15.44        12.31        18.75       2.52               0.25               4.75
+             santiago  LatAm                 454                   11.16         8.15        14.56      -4.14              -7.56              -0.86
+            sao-paulo  LatAm                1562                    7.99         6.95         9.07        NaN                NaN                NaN
+            singapore   APAC                  74                   23.96        13.62        35.91      -3.99             -18.06               8.20
+       sunshine-coast   APAC                 424                    8.23         6.72         9.80       1.31              -0.42               2.86
+               sydney   APAC                 630                    7.68         6.46         8.93      -0.99              -2.94               0.82
+               taipei   APAC                 185                    8.66         5.43        12.56       4.65               1.27               8.35
+             tasmania   APAC                 377                    5.40         4.38         6.51      -1.35              -2.87               0.16
+                tokyo   APAC                1433                   11.86        10.51        13.30       0.75              -0.41               1.92
+    western-australia   APAC                 661                   13.84        11.55        16.25       3.81               2.00               5.56

@@ -1,0 +1,54 @@
+item,value,label,note
+pull_time_utc,2026-09-12T04:49:30.183206+00:00,MEASURED,"yfinance, Friday 11 Sep 2026 close quotes"
+spot,170.19000244140625,ANCHOR,close 11 Sep 2026
+risk_free_used_pct,4.0,JUDGEMENT,^IRX 3.91% on 11 Sep; brief 4.0-4.2%
+first_post_print_expiry,2026-11-20,MEASURED,no 6 Nov weekly listed; 15 days after the 5 Nov print
+straddle_20nov_170_mid_pct_spot,13.544,MEASURED,"mid of a 12.0-15.0 market (170 put quoted 8.85/12.30); TOTAL 70-day move, not the print"
+straddle_20nov_model_atm_pct_spot,13.388,MEASURED,smile-model ATM straddle at the forward
+straddle_20nov_0p85_rule_pct,11.51,MEASURED,"rule-of-thumb applied to a 70-day straddle: upper bound only, NOT the print move"
+straddle_16oct_170_mid_pct_spot,7.727,MEASURED,pre-print 35-day straddle
+atm_iv_16oct_pct,31.11,MEASURED,"own Black-76 IV from mids, smile at forward"
+atm_iv_20nov_pct,38.42,MEASURED,own
+atm_iv_12m_pct,39.52,MEASURED,variance-interpolated Jun27/Dec27
+event_sd_pair_16oct_20nov_pct,9.88,MEASURED,E = T_post (sig_post^2 - sig_pre^2); flat background; +/-1 vol pt on either leg gives 8.4..11.2
+event_sd_ls_one_print_pct,9.16,MEASURED,"5 maturities, LOO 7.97..10.13"
+event_sd_ls_all_sloped_bg_pct,9.73,MEASURED,"11 maturities, 5 prints, background allowed to slope"
+event_sd_two_post_pct,8.3,MEASURED,"20 Nov vs 18 Dec, both contain the print"
+event_sd_central_pct,9.5 (range 8.5-10.5; identified specs 8.3-11.0),JUDGEMENT,about 0.7 pt of sd per vol pt of either leg; smile fit RMSE 0.5-0.7 pt
+event_exp_abs_move_central_pct,7.6 (range 6.8-8.4),JUDGEMENT,0.80 x sd
+event_sd_4sep_bbg_chain_pair_pct,9.77,MEASURED,same method on the 4 Sep Bloomberg chain; within noise of the 11 Sep reading
+hist_mean_implied_sd_iv_crush_pct,10.47,MEASURED,"Bloomberg 30D ATM IV, print close vs reaction close, 23 prints; upper-bound style measure"
+hist_mean_implied_sd_kink45_pct,8.51,MEASURED,Bloomberg 30D vs 60D IV 45 days before each print
+hist_realised_raw_rms_pct,8.92,MEASURED,"raw close-to-close, 20_executable_returns entry_postclose_px / pre_close"
+hist_realised_raw_mean_abs_pct,7.07,MEASURED,same
+hist_realised_raw_median_abs_pct,6.87,MEASURED,same
+hist_realised_raw_share_abs_ge_7pct,0.48,MEASURED,same
+hist_realised_raw_share_abs_ge_10pct,0.35,MEASURED,same
+hist_realised_raw_up_down,13 up / 10 down,MEASURED,same
+hist_realised_raw_rms_over_implied_crush,0.853,MEASURED,8.92 / 10.47
+hist_realised_excess_rms_pct,8.48,MEASURED,QQQ-excess close-to-close (legacy_1d_pct); the series earlier notes used
+hist_realised_excess_mean_abs_pct,6.81,MEASURED,same
+hist_realised_excess_median_abs_pct,5.14,MEASURED,same
+hist_realised_excess_up_down,11 up / 12 down,MEASURED,same
+hist_realised_excess_rms_over_implied_crush,0.81,MEASURED,8.48 / 10.47
+nights_accel_split_raw,6 up / 2 down accel; 3 up / 8 down decel,MEASURED,"threshold 0, n 8 / 11; base rate not model"
+nights_accel_split_excess,6 up / 2 down accel; 1 up / 10 down decel,MEASURED,1Q25 and 1Q26 flip sign once QQQ is subtracted; C's +/-0.25pt dead band moves 1Q22 and 3Q24 to flat
+rr25_20nov_volpts,-3.47,MEASURED,25d call IV minus 25d put IV; negative = puts richer
+skew_90_110_20nov_volpts,3.31,MEASURED,"own method, 70d; cross-method vs BBG 30D history (median 4.4) is approximate, own method reads ~1 pt below BBG"
+call10_over_put10_20nov_relative_to_flat,0.845,MEASURED,"market call/put ratio is 15.5% below the flat-smile ratio, i.e. the put is 1/0.845 = 1.18x richer relative to the call than under a flat smile"
+p_above_spot_20nov_rnd,0.493,MEASURED,risk-neutral
+p12m_lognormal_p10,98.7,MEASURED,"HEADLINE 12M distribution: lognormal, ATM IV 39.5%, forward 177.1, risk-neutral"
+p12m_lognormal_p25,125.5,MEASURED,
+p12m_lognormal_p50,163.8,MEASURED,below spot mechanically: RN drift = carry less half the variance
+p12m_lognormal_p75,213.9,MEASURED,
+p12m_lognormal_p90,271.9,MEASURED,
+p12m_skew_rnd_p25,123.8,MEASURED,sensitivity: skew-adjusted RND; mean 0.8% below forward from clipping
+p12m_skew_rnd_p50,166.8,MEASURED,sensitivity
+p12m_skew_rnd_p75,217.2,MEASURED,sensitivity
+p12m_skew_rnd_p10_p90,94.4 / 264.1,JUDGEMENT,extrapolated beyond quoted strikes; do not quote
+p12m_above_179p5,0.41-0.43,MEASURED,mean target; lognormal-skew RND range; risk-neutral
+p12m_above_220,0.23-0.24,MEASURED,top target
+p12m_below_150,0.40-0.41,MEASURED,bear tape
+p12m_below_125,0.25-0.26,MEASURED,MS target
+bbg_monthly_straddles_print_months_implied_vs_realised,11.77 vs 13.3,MEASURED,"23 print months, 30-day straddles, realised to expiry not day 1"
+bbg_monthly_straddles_nonprint_implied_vs_realised,9.75 vs 9.45,MEASURED,42 non-print months

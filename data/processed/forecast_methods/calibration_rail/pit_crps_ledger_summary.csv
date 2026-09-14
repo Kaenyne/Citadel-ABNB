@@ -1,0 +1,35 @@
+task,target,model,n,pit_mean,pit_edge_frac,crps_mean,mae,pit_ks_p,calibration_read
+A_pre_earnings_forecast,nights_surprise_pct,eu_platform_yoy_lag1,8,0.6578389772004081,0.375,0.7811810125315846,1.036375,0.09750844354694899,roughly calibrated on this small sample
+A_pre_earnings_forecast,nights_surprise_pct,pr_hotel_revpar_yoy,8,0.7962590191204119,0.5,1.1566280381288012,1.422775,0.0071926233191582116,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,f_surprise_trail4,6,0.8096256437448859,0.3333333333333333,1.1282041392318025,1.4613833333333333,0.038598796734658616,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,pr_hotel_revpar_yoy_pit,6,0.707232214917667,0.16666666666666666,0.9211961778771309,1.2386333333333333,0.19789055690560042,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,bl_funds_yoy_lag1,4,0.7437388536679768,0.25,1.084807357816665,1.4917,0.1741828849569043,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,f_guide_vs_street_lag1,4,0.7845136326838122,0.25,1.2521773701907366,1.6556,0.07345534803228329,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,f_prior_surprise,4,0.7082517450152397,0.25,1.0908153149068622,1.5733750000000002,0.15692449252329055,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,nights_surprise_pct,f_guide_cushion_trail4,3,0.6997041325874194,0.3333333333333333,1.2674079570094563,1.6685666666666668,,roughly calibrated on this small sample
+A_pre_earnings_forecast,revenue_surprise_pct,eu_platform_yoy_lag1,12,0.025000000000000005,1.0,3.965685165040334,4.742816666666667,1.1920928955078252e-19,OVERCONFIDENT (>50% of actuals outside the ladder)
+A_pre_earnings_forecast,revenue_surprise_pct,f_prior_surprise,11,0.38327086429573926,0.09090909090909091,0.9060334245973132,1.2851181818181818,0.5094774697701183,roughly calibrated on this small sample
+A_pre_earnings_forecast,revenue_surprise_pct,pr_hotel_revpar_yoy,11,0.0775044941204099,0.45454545454545453,2.225012495522206,3.0543909090909094,1.5709901956682093e-07,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,f_surprise_trail4,10,0.49072083712383685,0.1,0.7338829660902269,1.17055,0.6787620563769324,roughly calibrated on this small sample
+A_pre_earnings_forecast,revenue_surprise_pct,pr_hotel_revpar_yoy_pit,9,0.08439432392307517,0.4444444444444444,2.1050789708649136,3.0091555555555556,2.176038029516219e-06,BIASED (PIT mean far from 0.5)
+A_pre_earnings_forecast,revenue_surprise_pct,bl_funds_yoy_lag1,7,0.487226802984447,0.0,0.5549501939704437,0.8115,0.387793356320149,roughly calibrated on this small sample
+A_pre_earnings_forecast,revenue_surprise_pct,f_guide_vs_street_lag1,7,0.4408467308412085,0.0,0.5641093103487642,0.7701142857142858,0.2641265219001403,roughly calibrated on this small sample
+A_pre_earnings_forecast,revenue_surprise_pct,f_guide_cushion_trail4,6,0.32041991696467215,0.16666666666666666,0.6063348292103593,0.9099166666666667,0.32242540484886106,roughly calibrated on this small sample
+B_post_release_drift,legacy_20d_pct,revenue_surprise_pct,12,0.6439096464994151,0.25,6.155938228471247,8.311675,0.32145416062777854,roughly calibrated on this small sample
+B_post_release_drift,legacy_20d_pct,guide_vs_street_pct,8,0.7128395052354242,0.25,6.854880327189612,8.44365,0.038631154133443535,BIASED (PIT mean far from 0.5)
+B_post_release_drift,legacy_20d_pct,nights_surprise_pct,8,0.5755631915742215,0.25,4.999318340877535,6.273925,0.735247080419922,roughly calibrated on this small sample
+B_post_release_drift,legacy_5d_pct,revenue_surprise_pct,12,0.5921381850120083,0.08333333333333333,5.594803656044822,7.602116666666666,0.6441403871742326,roughly calibrated on this small sample
+B_post_release_drift,legacy_5d_pct,guide_vs_street_pct,8,0.721261720448986,0.375,6.81056886933792,8.9256875,0.11046642190400369,BIASED (PIT mean far from 0.5)
+B_post_release_drift,legacy_5d_pct,nights_surprise_pct,8,0.6328876574164023,0.375,6.172355447451146,8.5057625,0.22153487052001952,roughly calibrated on this small sample
+B_post_release_drift,open_20d_pct,revenue_surprise_pct,12,0.610740532248777,0.16666666666666666,4.181987580396098,5.258916666666667,0.10645947498200403,roughly calibrated on this small sample
+B_post_release_drift,open_20d_pct,guide_vs_street_pct,8,0.5951239973321056,0.125,4.38441672767742,5.6154875,0.2301981583281082,roughly calibrated on this small sample
+B_post_release_drift,open_20d_pct,nights_surprise_pct,8,0.5359232792389368,0.125,3.9947616309065612,4.965574999999999,0.5356129027813278,roughly calibrated on this small sample
+B_post_release_drift,open_5d_pct,revenue_surprise_pct,12,0.5847337571823632,0.08333333333333333,2.9714523766429424,4.3369,0.3581785886328379,roughly calibrated on this small sample
+B_post_release_drift,open_5d_pct,guide_vs_street_pct,8,0.601720586131274,0.125,3.339266820384365,4.8441875,0.2061931499201215,roughly calibrated on this small sample
+B_post_release_drift,open_5d_pct,nights_surprise_pct,8,0.6465795809382225,0.125,3.4486785035378587,4.9792749999999995,0.1510772770431722,roughly calibrated on this small sample
+B_post_release_drift,postclose_20d_pct,revenue_surprise_pct,12,0.664738087929062,0.16666666666666666,4.1691185002198585,5.71675,0.10387829203513244,roughly calibrated on this small sample
+B_post_release_drift,postclose_20d_pct,guide_vs_street_pct,8,0.6059063781461388,0.0,4.125302430143639,5.6194875,0.19504128825904088,roughly calibrated on this small sample
+B_post_release_drift,postclose_20d_pct,nights_surprise_pct,8,0.569867903870777,0.125,3.486872861492851,4.7536249999999995,0.2829935435134717,roughly calibrated on this small sample
+B_post_release_drift,postclose_5d_pct,revenue_surprise_pct,12,0.7066361959277248,0.16666666666666666,2.6653307495125267,3.9579,0.007123873378445111,BIASED (PIT mean far from 0.5)
+B_post_release_drift,postclose_5d_pct,guide_vs_street_pct,8,0.6425868457559281,0.125,2.8939425840790043,4.67645,0.0353333810422346,roughly calibrated on this small sample
+B_post_release_drift,postclose_5d_pct,nights_surprise_pct,8,0.7219463613547004,0.125,3.330676659641227,5.154999999999999,0.002064194594896819,BIASED (PIT mean far from 0.5)

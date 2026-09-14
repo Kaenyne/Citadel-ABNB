@@ -1,0 +1,332 @@
+<title>ABNB Next 12 Hours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F5F7F8; --card:#FFFFFF; --ink:#131C24; --ink-2:#3A4855; --muted:#6C7B89; --line:#D8DFE5;
+  --accent:#D63E43; --accent-fill:#FF5A5F; --good:#1E7B5B; --warn:#A8701A; --crit:#B3261E;
+  --good-bg:#E4F2EC; --warn-bg:#F8EFDC; --crit-bg:#F9E4E2; --code-bg:#EAEFF3;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1418; --card:#161F26; --ink:#E9EEF2; --ink-2:#C6D0D8; --muted:#93A3B0; --line:#2A3740;
+    --accent:#FF7B80; --accent-fill:#FF5A5F; --good:#4CC397; --warn:#E0A94A; --crit:#F0736C;
+    --good-bg:#16302A; --warn-bg:#35291A; --crit-bg:#3B201F; --code-bg:#1D2830; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1418; --card:#161F26; --ink:#E9EEF2; --ink-2:#C6D0D8; --muted:#93A3B0; --line:#2A3740;
+  --accent:#FF7B80; --accent-fill:#FF5A5F; --good:#4CC397; --warn:#E0A94A; --crit:#F0736C;
+  --good-bg:#16302A; --warn-bg:#35291A; --crit-bg:#3B201F; --code-bg:#1D2830; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:60rem;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:28px 96px}
+h1{font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--ink-2);margin:0 0 6px;max-width:70ch}
+.mono,code,pre{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+.meta{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;color:var(--muted)}
+/* the one-line rule */
+.rule{margin:22px 0 28px;padding:16px 20px;background:var(--card);border-left:5px solid var(--accent-fill);font-size:18px;line-height:1.45}
+.rule b{font-weight:700}
+/* clock strip */
+.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 34px}
+.clock div{background:var(--card);border:1px solid var(--line);padding:10px 12px}
+.clock .t{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.clock .w{font-weight:600;margin-top:2px;line-height:1.3}
+@media (max-width:640px){.clock{grid-template-columns:repeat(2,1fr)}}
+/* blocks */
+h2{font-size:22px;margin:40px 0 4px;padding-top:16px;border-top:2px solid var(--ink);line-height:1.2}
+h2 .when{display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;color:var(--muted);margin-left:10px;letter-spacing:.04em}
+.why{color:var(--ink-2);margin:0 0 14px;max-width:70ch;font-size:15.5px}
+/* task cards */
+.task{background:var(--card);border:1px solid var(--line);padding:16px 18px 14px 18px;margin:0 0 12px;display:grid;grid-template-columns:44px 1fr;gap:6px 14px}
+.task .box{width:26px;height:26px;border:2px solid var(--ink);border-radius:4px;margin-top:2px}
+.task h3{margin:0;font-size:18px;line-height:1.3;grid-column:2}
+.task .tags{grid-column:2;display:flex;flex-wrap:wrap;gap:6px 10px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;color:var(--muted)}
+.task .tags b{color:var(--ink);font-weight:500}
+.task .tags .own{background:var(--code-bg);padding:1px 7px;border-radius:3px;color:var(--ink)}
+.task ol{grid-column:2;margin:6px 0 0;padding-left:22px;display:grid;gap:5px;font-size:15.5px}
+.task ol li{max-width:72ch}
+.task pre{grid-column:2;margin:6px 0 0;padding:10px 12px;background:var(--code-bg);border:1px solid var(--line);font-size:12.5px;line-height:1.5;overflow-x:auto;white-space:pre}
+.task .done{grid-column:2;margin-top:8px;padding:8px 12px;background:var(--good-bg);border-left:3px solid var(--good);font-size:14.5px}
+.task .done b{color:var(--good)}
+.task .warnline{grid-column:2;margin-top:6px;padding:8px 12px;background:var(--warn-bg);border-left:3px solid var(--warn);font-size:14.5px}
+.task.block{border-left:4px solid var(--crit)}
+.task.clockk{border-left:4px solid var(--warn)}
+/* do-not */
+.donot{background:var(--crit-bg);border:1px solid color-mix(in srgb,var(--crit) 40%,transparent);padding:14px 18px;margin:8px 0 0}
+.donot h3{margin:0 0 8px;font-size:17px;color:var(--crit)}
+.donot ul{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15.5px}
+/* numbers to have at hand */
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--card);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+th,td{padding:8px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.n{font-family:"IBM Plex Mono",ui-monospace,monospace;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.table-wrap{overflow-x:auto;margin:10px 0 0}
+footer{margin-top:50px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+<div class="meta">CITADEL-ABNB · RUNBOOK · WRITTEN FRI 11 SEP 2026, 13:40 ET · CLOCK RUNS TO SAT 01:40 ET</div>
+<h1>The next 12 hours</h1>
+<p class="sub">Twelve tasks in four blocks. Each one says who, the exact command or file, and what "done" looks like. Do them in order inside a block; blocks A and C can run in parallel with B.</p>
+<p class="meta">Owners by lane: <b>Theo</b> = data / alt-data / Bloomberg · <b>Krish</b> = model / guidance / kernel · <b>Jessie</b> = take rate / fees / hotels · <b>Writer</b> = whoever owns the memo. Reassign freely; the lane matters, not the name.</p>
+
+<div class="rule">The rule for everything below: <b>the pitch's object is the guide Airbnb will give on 5 Nov and what it is made of — not a better revenue number.</b> Every task either sharpens that object or protects a number that will be quoted.</div>
+
+<div class="clock">
+  <div><div class="t">Block A · now → +2 h</div><div class="w">Irreversible clocks</div></div>
+  <div><div class="t">Block B · +1 h → +8 h</div><div class="w">Fix the three numbers that will be quoted</div></div>
+  <div><div class="t">Block C · +2 h → +10 h</div><div class="w">Freeze, write, commit</div></div>
+  <div><div class="t">Block D · +10 h → +12 h</div><div class="w">Re-score and hand off</div></div>
+</div>
+
+<p class="meta">Every command runs from the repo root <code>Citadel-ABNB/</code> with <code>PY=/Users/theomachado/.venvs/citadel-abnb/bin/python</code>. Paths contain spaces and an apostrophe — quote them.</p>
+
+<!-- ================= BLOCK A ================= -->
+<h2>A · Irreversible clocks <span class="when">now → +2 h · these cannot be recovered later</span></h2>
+<p class="why">Three data captures decay by the day. None of them changes the memo tonight; all of them decide what you can prove on 5 Nov and in 2027.</p>
+
+<div class="task clockk">
+  <div class="box"></div>
+  <h3>A1 · Stamp today's consensus, all vendors, with timestamps</h3>
+  <div class="tags"><span class="own">Theo</span><span>⏱ 30 min</span><span>file <b>data/processed/forecast_methods/L0/L0_vintage_register.csv</b></span></div>
+  <ol>
+    <li>Pull 3Q26, 4Q26, FY26 and FY27 revenue consensus from Zacks (page + n estimates), Alpha Vantage (36-analyst panel) and S&amp;P / any Bloomberg screen you can see. If nights / ADR / GBV consensus exists anywhere, take it.</li>
+    <li>Append one row per value: <code>vendor, period, metric, value, n_estimates, as_of_timestamp, url, source_path</code>. Never overwrite an older row — the point is the history.</li>
+    <li>Set a calendar reminder for <b>2–3 Nov</b> (Zacks posts nights / ADR / GBV consensus 2–3 days before the print).</li>
+  </ol>
+  <pre>$PY -c "import pandas as pd; d=pd.read_csv('data/processed/forecast_methods/L0/L0_vintage_register.csv'); print(d.tail(12).to_string()); print('latest stamp:', d['as_of_timestamp'].max())"</pre>
+  <div class="done"><b>Done when</b> the register has today's date on at least Zacks + Alpha Vantage rows for all four periods, and the 6 Aug pre-guide Q3 row still reads LSEG $4,610M (not Zacks $4,740M).</div>
+</div>
+
+<div class="task clockk">
+  <div class="box"></div>
+  <h3>A2 · Start the daily Inside Airbnb capture — listings, calendar AND reviews</h3>
+  <div class="tags"><span class="own">Theo</span><span>⏱ 60–90 min</span><span>script <b>analysis/src/inside_airbnb_supply_panel.py</b> (adapt)</span></div>
+  <ol>
+    <li>Take the identical 120-market list from <code>raw_expansion/v2_2026-09-05/inside_airbnb_current_manifest.csv</code>.</li>
+    <li>Write a small runner that HEAD-polls <code>data.insideairbnb.com</code> once a day per market and downloads any new <code>listings.csv.gz</code>, <code>calendar.csv.gz</code>, <code>reviews.csv.gz</code> on first sight, with a SHA-256 manifest row per file. Reviews and calendar were the files the last run skipped — that is why no second vintage exists.</li>
+    <li>Store outside OneDrive if you can (external SSD path already used for the 588M-row store); log the manifest inside the repo under <code>data/manifests/</code>.</li>
+    <li>Schedule it (launchd or cron, 06:00 daily). Run it once now.</li>
+  </ol>
+  <pre>$PY analysis/src/inside_airbnb_supply_panel.py --help     # confirm the discover / download entry points
+# then: (crontab -l; echo "0 6 * * * cd '<repo>' && $PY tools/ia_daily_capture.py >> data/manifests/ia_capture.log 2>&1") | crontab -</pre>
+  <div class="done"><b>Done when</b> today's first pull is on disk with a manifest row per file, and the scheduler entry exists. A missed dump is gone for good — 28 of 73 historical CDN probes are already dead.</div>
+</div>
+
+<div class="task clockk">
+  <div class="box"></div>
+  <h3>A3 · Schedule the fee-deadline price panels (Mon 14 → Wed 16 Sep)</h3>
+  <div class="tags"><span class="own">Jessie</span><span>⏱ 45 min today, then 3 timed runs</span><span>script <b>analysis/src/overnight/06_quote_panel.py</b> / <b>ABNB-Crossover/tools/cc_pricing_scraper.py</b></span></div>
+  <ol>
+    <li><b>DONE 11 Sep (A3):</b> the dates are sourced — Airbnb Resource Center article 771 (7 Jul 2026): price-adjustment deadline <b>15 Sep</b> for hosts living outside the EEA, <b>13 Oct</b> inside the EEA or Switzerland (repo source FEE-01; S66–S71 added). Caveats to carry: Airbnb prints no year; it is a pricing deadline, not a switch date; it keys to the <b>host's residence, not the listing's location</b>, so the EEA control is approximate.</li>
+    <li>Pick a fixed listing sample (the same ids on all runs) in the 13 quote cities; capture fee-inclusive quotes for the same stay dates on <b>14 Sep, 16 Sep and 18 Sep</b>, then again <b>12 / 14 / 16 Oct</b>.</li>
+    <li>What you are measuring is pass-through θ: the jump in the <b>listed</b> price on the migrating cohort versus the EEA-resident control (difference-in-differences). θ is the number the whole fee edge rests on and it is <b>unidentified</b> — the "0.83–1.41 measured range" was the detection window, not a measurement. <b>A3 finding:</b> only listed prices are obtainable (fees and taxes return 0 %; the GraphQL route is a ToS decision for a human, not an agent), and <code>06_quote_line_items.csv</code> is <b>not</b> fee-inclusive. Panel overlap between runs is the risk — measure it on 16 Sep; under ~40 % the design degrades to a city index.</li>
+    <li>Dry-run tonight on one city to make sure the scraper still parses the quote JSON.</li>
+  </ol>
+  <div class="done"><b>Done when</b> the sample ids are frozen in a CSV, the 14 Sep run is scheduled, the dry run produced rows with price, service fee and total, and the deadline source URL is in <code>research/sources/README.md</code>.</div>
+</div>
+
+<!-- ================= BLOCK B ================= -->
+<h2>B · Fix the three numbers that will be quoted <span class="when">+1 h → +8 h · memo-blocking</span></h2>
+<p class="why">The red team found that three live numbers in our own outputs are inconsistent or rest on a hand-set input. Nothing goes into the memo until these are one number each.</p>
+<div class="task" style="border-left:4px solid var(--good)">
+  <div class="box" style="background:var(--good);border-color:var(--good)"></div>
+  <h3>Block B DONE — 11 Sep, 18:30 ET (v2 objects; nothing existing overwritten)</h3>
+  <div class="tags"><span>notes: <b>B1_TAKE_RATE_RECONCILIATION.md · B2_Q4_GUIDE_EXHIBIT.md · B3_FY27_DECOMPOSITION.md · B4_FX_EXHIBIT.md</b></span><span>code/data: <b>*_v2/ folders</b></span><span>registry: <b>live-block-v2, guidance-policy-v2, l1-reconciliation-v2, fx-lag-v2</b></span></div>
+  <ol>
+    <li><b>B1 · 3Q26 printed take rate = 18.14 %</b>, sd 0.46pp, <b>P(≥ 18.10 %) = 0.53</b> — the flip line is a coin toss. 17.81 % was a persistence model, 18.40 % used the hand-set GBV; identity GBV = nights × ADR now holds exactly.</li>
+    <li><b>B2 · 5 Nov Q4 guide midpoint = $3,161M</b> (80 % $3,012–3,312M) on our own GBV<sub>3Q26</sub> $26,550M; <b>P(below)</b> LSEG-family $3,158M <b>0.49</b> · S&amp;P $3,160M <b>0.50</b> · Zacks $3,200M <b>0.63</b> (θ = 0.83 step: 0.43 / 0.44 / 0.57). Fee half-step is +0.55 %, not +1.25 %.</li>
+    <li><b>B3 · FY27 = $15,838M / +11.52 %</b> at w = ⅔; band <b>+9.18 % to +11.52 %</b> (w 0.33 → ⅔); GBV +11.51 % invariant to w; edge vs Street +0.09pp at w = ⅔, −2.25pp at w = 0.33. <b>Exploratory.</b> Attribution block (geo −1.09, unit +0.63, LOS +0.04, seats −0.50, remainder +2.83) carries zero weight.</li>
+    <li><b>B4 · 4Q26 revenue FX = +1.0pp</b> (lag-CS interval +0.3 to +2.2; weak/strong USD +1.5 / +0.5). Observed share at 5 Nov: 0.67 (free fit) · 1.00 (Φ kernel) · 0.38 (contemporaneous); volume 1.00. Live 3Q26: free fit +1.3 · Φ × 0.851 +2.9 · management +3.0 after hedging. <b>Ex-FX acceleration flips sign at GBV $26,250M</b> — say "flat", not "accelerating". Pre-registered: printed 3Q26 FX of +3 backs the kernel, 0/+1 backs the free fit.</li>
+  </ol>
+  <div class="done"><b>Memo may now say:</b> the guide is arithmetic on printed GBV over a shrinking cushion; against the broad consensus panels the 5 Nov guide is a coin toss and only leans below against Zacks; the take-rate hinge is likewise ~50/50 and the trade is defined both ways; FY27 is composition, not level. <b>Still open:</b> C1 pre-registration card with these numbers, C2 memo v0, C3 branch + PR, D1 scoreboard narrative.</div>
+</div>
+
+<div class="task block">
+  <div class="box"></div>
+  <h3>B1 · One 3Q26 take-rate number, one probability</h3>
+  <div class="tags"><span class="own">Jessie + Krish</span><span>⏱ 2 h</span><span>folders <b>analysis/src/forecast_methods/optimal_mix/ · fee_takerate/ · kernel_lambda/</b></span></div>
+  <ol>
+    <li>Today three answers exist for the same object: 18.14 % (mix revenue ÷ mix GBV), 17.81 % (take-rate object, P(≥18.10) = 0.25) and 18.40 % (fee-takerate, P = 0.78). The pre-registered flip line is <b>18.10 %</b>.</li>
+    <li>Impose the identity on the live 3Q26 block: GBV = nights × ADR, take rate = revenue ÷ GBV. Derive the take rate <b>once</b>, from the combined revenue and combined GBV; drop the two standalone take-rate objects from the live block (keep them as diagnostics).</li>
+    <li>Re-run the probability of clearing 18.10 % from that one distribution. Write the number, the sd and the n into <code>docs/revenue-forecast-strategy/05_backtests/LIVE_3Q26_CARD.md</code>.</li>
+  </ol>
+  <pre>$PY analysis/src/forecast_methods/optimal_mix/run.py      # regenerates data/processed/forecast_methods/optimal_mix/combined_live_objects.json
+$PY -c "import json;d=json.load(open('data/processed/forecast_methods/optimal_mix/combined_live_objects.json'));print({k:v for k,v in d.items() if 'take' in k.lower() or 'gbv' in k.lower() or 'revenue' in k.lower()})"</pre>
+  <div class="done"><b>Done when</b> the card shows one take-rate point, one P(≥ 18.10 %), and revenue ÷ GBV in the card reproduces it to 5bp.</div>
+</div>
+
+<div class="task block">
+  <div class="box"></div>
+  <h3>B2 · Replace the hand-set GBV<sub>3Q26</sub> with our own forecast and publish the Q4 guide as a distribution</h3>
+  <div class="tags"><span class="own">Krish</span><span>⏱ 2–3 h</span><span>folders <b>guidance_policy/ · kernel_lambda/ · tracker_backlog/</b></span></div>
+  <ol>
+    <li>The Q4 guide object was computed on GBV<sub>3Q26</sub> = $26,300M (an architect input). Our combined forecast is <b>$26,550M</b>. On our number the guide midpoint is $3,161M, not $3,142M, and P(guide below Zacks $3,200M) falls 0.73 → 0.66; against the 36-analyst $3,158M it is 0.49.</li>
+    <li>Register a LIVE 3Q26 GBV row from the tracker / kernel packages (today the growth targets have none — that is why the mix renormalised onto naive).</li>
+    <li>Rebuild the Q4 exhibit as a table over GBV<sub>3Q26</sub> = $25.9bn … $27.0bn in $100M steps × {no fee step, fee step at θ = 0.83}, giving print, guide midpoint, range (1.7–2.2 % of mid), and P(below) for <b>both</b> anchors, each with vendor and timestamp.</li>
+    <li>Pick one predictive sd and say which (guidance-policy 3.03 % or mix 2.73 %). Never print 0.73 without 0.66 beside it.</li>
+  </ol>
+  <pre>$PY analysis/src/forecast_methods/guidance_policy/run.py
+# output to check: data/processed/forecast_methods/guidance_policy/*q4_2026*  and the note 05_backtests/guidance-policy.md</pre>
+  <div class="done"><b>Done when</b> <code>05_backtests/Q4_GUIDE_EXHIBIT.md</code> exists with the grid, both anchors stamped, P(below) shown as a range (≈0.49–0.73), and the sentence "consensus vendors disagree by $42M on Q4" appears before any probability.</div>
+</div>
+
+<div class="task block">
+  <div class="box"></div>
+  <h3>B3 · Rebuild the FY27 decomposition so it cannot double count</h3>
+  <div class="tags"><span class="own">Krish</span><span>⏱ 2 h</span><span>folder <b>analysis/src/forecast_methods/l1_reconciliation/</b></span></div>
+  <ol>
+    <li>Current table lists geographic mix (−1.09pp) and unit-size / LOS (+0.38pp) as separate lines, but (1 + volume 8.26 %) × (1 + ADR 3.00 %) already equals the model's GBV growth 11.51 % — so those lines are inside the two big ones. Net double count −0.71pp; a +0.25pp volume × price cross-term is missing; "kernel timing +0.17pp" is a residual, not an identity.</li>
+    <li>Rebuild multiplicatively: GBV growth = volume × ADR × cross-term; below it an <i>attribution</i> block (geo mix, unit size, LOS, seats) that sums to the ADR line and carries zero weight in the total; then Layer 2: kernel timing (computed), fee (assumed), hedge, new lines, regulation — each labelled <b>assumed</b> where it is.</li>
+    <li>Print the kernel-weight band: FY27 growth +9.2 % (w = 0.33) to +11.5 % (w = ⅔). Label the whole exhibit <b>exploratory</b>. The growth edge over the Street is +0.09pp at w = ⅔ and −2.25pp at w = 0.33 — say so.</li>
+  </ol>
+  <pre>$PY analysis/src/forecast_methods/l1_reconciliation/run.py
+$PY -c "import pandas as pd;d=pd.read_csv('data/processed/forecast_methods/l1_reconciliation/l1_fy27_growth_decomposition.csv');print(d.to_string())"   # also: l1_fy27_revenue_grid.csv for the w band</pre>
+  <div class="done"><b>Done when</b> the contributions reproduce total FY27 growth to 0.01pp, no term appears in two places, and the exhibit header says EXPLORATORY with the w band.</div>
+</div>
+
+<div class="task block">
+  <div class="box"></div>
+  <h3>B4 · FX: one exhibit, both numbers, the lag rule</h3>
+  <div class="tags"><span class="own">Theo</span><span>⏱ 1.5 h</span><span>folder <b>analysis/src/forecast_methods/fx_lag/</b></span></div>
+  <ol>
+    <li>Our registered live 3Q26 revenue-FX is +1.2pp (80 % 0.07–2.33). Management guided "~+3pp after hedging" on 6 Aug. Either strike ours or print both with the explanation — never ours alone.</li>
+    <li>The explanation to write: full-sample, effective lag ≈ 0.4–0.5 quarters and a pure two-quarter lag is rejected; but on the last three stated quarters the lagged Φ kernel tracks management within 0.22pp while the full-sample fit misses by 1.21pp. Use the <b>lag-loaded</b> spec to forecast what management will <i>state</i> (it is the best point-in-time forecaster: RMSE 0.99pp), and quote the effective-lag confidence set (0.03–0.92), not a point.</li>
+    <li>Refresh FRED (the daily series ends 28 Aug) and re-run so the "already-observed" shares are as of today. Produce the four-way table: repo bridge −3.4pp (double-subtraction, rejected) · repo schedule −0.4 · M6 +0.4 · guide-anchored +2.6 · kernel-implied +0.6–0.7 (adopted, as an output).</li>
+  </ol>
+  <pre>$PY analysis/src/overnight/10_fetch_fx.py          # refresh FRED dailies
+$PY analysis/src/forecast_methods/fx_lag/run.py</pre>
+  <div class="done"><b>Done when</b> <code>05_backtests/FX_EXHIBIT.md</code> shows the four-way table, both 3Q26 numbers side by side with the regime note, and the observed-FX shares for 5 Nov are recomputed on data through today.</div>
+</div>
+
+<!-- ================= BLOCK C ================= -->
+<h2>C · Freeze, write, commit <span class="when">+2 h → +10 h · runs in parallel with B</span></h2>
+<p class="why">Pre-register before you run anything else, write the memo around the mechanism, and get the overnight work onto a branch so nobody loses it.</p>
+<div class="task" style="border-left:4px solid var(--good)">
+  <div class="box" style="background:var(--good);border-color:var(--good)"></div>
+  <h3>C1 + C2 DONE — 11 Sep, ~20:15 ET (new files only). C3 is yours.</h3>
+  <div class="tags"><span>card: <b>05_backtests/PREREG_ABNB-INT-v1.md</b> + <b>prereg/ABNB-INT-v1_card.csv</b> (24 items)</span><span>memo: <b>deck/drafts/memo_v0_2026-09-11.md</b> (1,153 words) + <b>memo_v0_exhibits/</b></span><span>thesis draft: <b>research/thesis_draft_2026-09-11.md</b></span></div>
+  <ol>
+    <li><b>The take-rate hinge is a GBV hinge.</b> Revenue is set by the kernel, which never sees nights or ADR, so the source most bearish on volume is mechanically most bullish on the printed take rate: P(≥ 18.10 %) = 0.49 (kernel revenue) · 0.53 (v2 block) · 0.69 (frozen card) · 0.82 (Krish $25.9bn) · 0.89 (Theo re-base). Register the pair; say what the print actually resolves.</li>
+    <li><b>Choose a block, not a GBV.</b> Reviews nights × ADR card v2 = $25,816M breaks the identity against the registered $26,550M by −3.1pp. Recommended headline block (ii) 147.38M / $180.15 / $26,550M, block (i) published beside it, the implied-ADR hybrid rejected.</li>
+    <li><b>Eleven team decisions</b> (D-01…D-11) in the card — incl. guide+cushion $4,816M vs kernel $4,804M; reviews index vs team nights baseline; card v2 quoted with its FAIL; lag-loaded FX → predict about +3; no-fee-step Q4 guide; ex-NA lap base 8.0–8.2 %; the funds-payable refutation condition written two ways (&lt;+3 % vs ≥+11 %); the 4Q26 ex-NA lap chained with PR #32's 1Q27 lap double-counts ~0.8pp. Krish's "$4.80bn" is unsourced (his own arithmetic gives $4,632M).</li>
+    <li><b>Memo v0 honesty flags:</b> model FY27 geo-mix drag −1.09pp vs 1H26 observed −0.34pp; the six-lens football field ($154–157) sits <i>below</i> the memo's base branch ($170–185) — reconcile before anyone presents.</li>
+  </ol>
+  <div class="done"><b>D1 done (~20:45 ET):</b> <b>05_backtests/SCOREBOARD_v2.md</b> (matches the 276-row CSV) and <b>HANDOFF_MESSAGE_2026-09-11.md</b> (paste-ready, 399 words). <b>Memo wording fix required:</b> with the mix rows scored, no single object beats guide × (1 + cushion) on BOTH windows, but two different mix variants each beat it on one (parsimonious 0.360 vs 0.377 on W1; all-pool 0.313 vs 0.319 on W2) — write "no object beats it on both windows", not "nothing beats it". Also: 112 of 276 rows have no baseline (six targets) — "untested", not "failed"; the fx-lag-v2 H2 rows are byte-identical to v1 (same forecast, two names).</div>
+  <div class="warnline"><b>Remaining, human only:</b> C3 — branch from HEAD 5bd2d08 + PR (20 min); D2 — send the hand-off message, set the Mon 14 Sep 09:00 and Wed 16 Sep 18:00 checkpoints; LSEG Workspace self-registration; the quote-route terms-of-service decision.</div>
+</div>
+
+<div class="task">
+  <div class="box"></div>
+  <h3>C1 · Freeze the pre-registration card <code>ABNB-INT-v1</code></h3>
+  <div class="tags"><span class="own">Writer</span><span>⏱ 45 min</span><span>file <b>docs/revenue-forecast-strategy/05_backtests/PREREG_ABNB-INT-v1.md</b></span></div>
+  <ol>
+    <li>List the items that get scored on 6 Nov: 3Q26 revenue (point + 80 % interval), 3Q26 nights, 3Q26 take rate and the 18.10 % flip line, the Q4 guide midpoint distribution and P(below) for each anchor, the stated Q3 FX, Q4 nights bucket word. Copy the numbers from B1–B4 as they land; where a number is still open, write "pending B2" rather than a placeholder value.</li>
+    <li>State the scoring rule per item and the baseline it must beat. Sign it with the commit hash once C3 is done.</li>
+    <li>Keep the existing frozen card <code>data/processed/overnight/20_frozen_q3_2026.csv</code> untouched; this is a second, integrated card.</li>
+  </ol>
+  <div class="done"><b>Done when</b> the file exists, every item has a rule and a baseline, and the header says "frozen — do not edit before 5 Nov".</div>
+</div>
+
+<div class="task">
+  <div class="box"></div>
+  <h3>C2 · Memo v0 — two pages, built around the guide</h3>
+  <div class="tags"><span class="own">Writer</span><span>⏱ 3 h</span><span>file <b>research/thesis.md</b> (it is still a template) + <b>deck/drafts/memo_v0.md</b></span></div>
+  <ol>
+    <li>Paragraph 1 is the mechanism: a quarter's revenue is mostly booked before it starts; revenue = λ<sub>season</sub> × [⅔ GBV<sub>q−1</sub> + ⅓ GBV<sub>q−2</sub>]; the guide is that number over a shrinking cushion (+1.86 %, sd 1.0pp); Airbnb has beaten its own midpoint 19 of 19 because of arithmetic, not conservatism.</li>
+    <li>Paragraph 2 is the composition: the FY26→FY27 halving is a dollar lap (an output of the kernel, +0.6–0.7pp for 4Q26, not −3.4pp), a product-bundle lap, and a mix identity (geo −1.5pp; bedroom nights worth +0.46pp not +2pp; seats −0.5pp). Both bull and bear narratives on the tape misread the shape.</li>
+    <li>Paragraph 3 is the asymmetry and the flip rule: 3Q26 printed take rate ≥ 18.10 % and Q4 nights reiterated "low double digit" → bull branch ($205–215); "high single digit" nights and a flat take rate → bear ($140–152); otherwise base ($170–185). Write that you change your mind on 5 Nov if the line prints.</li>
+    <li>One chart: the Q4 guide-midpoint grid from B2 with the two anchors. One table: the FX four-way from B4.</li>
+    <li>Run the kill list against the draft (next section). Every number carries (PIT / full-sample) and (vendor, date).</li>
+  </ol>
+  <div class="done"><b>Done when</b> a two-page draft exists with the three paragraphs, the one chart placeholder, the flip rule, and zero numbers from the kill list.</div>
+</div>
+
+<div class="task">
+  <div class="box"></div>
+  <h3>C3 · Put the overnight work on a branch and open the PR</h3>
+  <div class="tags"><span class="own">Theo</span><span>⏱ 20 min</span><span>per <b>CONTRIBUTING.md</b>: never commit to main directly</span></div>
+  <pre>cd "<repo>"
+git status --short | head -20                      # expect: analysis/src/forecast_methods, data/processed/forecast_methods, docs/revenue-forecast-strategy
+git checkout -b theo/forecast-methods-overnight
+git add analysis/src/forecast_methods data/processed/forecast_methods docs/revenue-forecast-strategy
+git commit -m "Overnight revenue-forecast programme: harness, 7 packages, scoreboard, mix, red team, report"
+git push -u origin theo/forecast-methods-overnight
+gh pr create --fill --base main</pre>
+  <div class="warnline">Check <code>git status</code> before adding: <code>data/processed/forecast_methods/</code> is 5.3 MB and fine; do <b>not</b> add anything from <code>raw_expansion/</code> or the Bloomberg workbooks (licensed, off git).</div>
+  <div class="done"><b>Done when</b> the PR is open and its description links <code>07_MORNING_REPORT.md</code> and <code>RED_TEAM.md</code>.</div>
+</div>
+
+<!-- ================= BLOCK D ================= -->
+<h2>D · Re-score and hand off <span class="when">+10 h → +12 h</span></h2>
+
+<div class="task">
+  <div class="box"></div>
+  <h3>D1 · Re-run the scorer after every registry change, then refresh the scoreboard narrative</h3>
+  <div class="tags"><span class="own">whoever finishes B last</span><span>⏱ 20 min</span></div>
+  <pre>$PY analysis/src/forecast_methods/harness/score.py
+$PY -c "import pandas as pd;s=pd.read_csv('data/processed/forecast_methods/harness/scoreboard.csv');print(len(s),'rows');print(s[s.target=='revenue_musd'].sort_values(['window','rmse_ratio_to_naive']).head(12))"</pre>
+  <ol>
+    <li>Confirm the revenue-level winner is still the <code>guide_cushion</code> baseline on both windows (0.377 / 0.319). If anything registered tonight appears to beat it, assume leakage first and check its vintage_date column.</li>
+    <li>Relabel any scoreboard row with an empty ratio as "no baseline" rather than "failed"; update the tables in <code>05_backtests/SCOREBOARD.md</code> (its narrative predates the 12:50 re-score).</li>
+  </ol>
+  <div class="done"><b>Done when</b> scoreboard.csv is newer than every registry file and SCOREBOARD.md quotes the current row count.</div>
+</div>
+
+<div class="task">
+  <div class="box"></div>
+  <h3>D2 · Hand-off message to the team</h3>
+  <div class="tags"><span class="own">Theo</span><span>⏱ 15 min</span></div>
+  <ol>
+    <li>Send the PR link, the report link, and the three sentences from C2.</li>
+    <li>Assign next-week owners: Krish — kernel + guide exhibit + FY27 rebuild; Jessie — θ panels + take-rate card + hotel lines; Theo — captures, vintages, FX refresh weekly; Writer — memo v1 by Wed 17 Sep, dry-run Fri 19 Sep.</li>
+    <li>Book two 30-minute checkpoints: Mon 14 Sep 09:00 (are A1–A3 running?) and Wed 16 Sep 18:00 (B1–B4 numbers final for the memo).</li>
+  </ol>
+  <div class="done"><b>Done when</b> everyone has replied with their lane.</div>
+</div>
+
+<h2>Do not do these in the next 12 hours</h2>
+<div class="donot">
+  <h3>They are real work, but none of them changes a number that will be quoted on 2 Oct</h3>
+  <ul>
+    <li>Do not start the Stan / PyMC state-space model. Constrained least squares with the bootstrap gives every point estimate the memo needs.</li>
+    <li>Do not build the 120-market nights panel as a measurement — the raw correlation with disclosed regional growth is 0.14 / −0.07 / −0.36 / 0.22.</li>
+    <li>Do not start the hedonic quote index tonight (two-week item; it needs the θ panels first).</li>
+    <li>Do not quote: the −3.4pp Q4 FX step · "82 % of Q4 FX already determined" · "+4.05 % fee uplift" as measured · the 9/9 guide-below-Street rule as a signal · "half of ADR growth is bigger units" · any FY27 level edge without the +9.2–11.5 % band · any p-value for the drift rule · the restated unearned-fees "pin".</li>
+    <li>Do not mix consensus vintages: the 6 Aug pre-guide Street is LSEG $4,610M; Zacks $4,740M is a 4 Sep number. <b>A1 finding (11 Sep):</b> Yahoo and Alpha Vantage are the same LSEG-family panel; the three independent Q4 anchors are LSEG-family $3,158–3,160M, S&amp;P $3,160M and Zacks $3,200M — two of three sit at ~$3,160M, where P(guide below) ≈ 0.49.</li>
+    <li>Do not describe the 1.71M quote panel as fee-inclusive: service fee, cleaning fee and taxes are null in <code>06_quote_line_items.csv</code>.</li>
+    <li>Do not edit the frozen harness or L0 files; register new objects instead.</li>
+  </ul>
+</div>
+
+<h2>Numbers to have at hand while you work</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Item</th><th>Value</th><th>Source / stamp</th></tr></thead>
+<tbody>
+<tr><td>Spot, market anchor</td><td class="n">$181.94</td><td>close 4 Sep 2026</td></tr>
+<tr><td>Q3 26 guide</td><td class="n">$4,690–4,770M (+15–17 %)</td><td>6 Aug 2026 letter; FX "~+3pp after hedging"</td></tr>
+<tr><td>Street Q3 / Q4 / FY26 / FY27</td><td class="n">$4,740M / $3,200M / $14.10–14.16bn / $15.73–15.76bn</td><td>Zacks, 4 Sep 2026</td></tr>
+<tr><td>Street Q4, second vendor</td><td class="n">$3,158M</td><td>Alpha Vantage 36-analyst, 11 Sep 2026</td></tr>
+<tr><td>Pre-guide Q3 Street</td><td class="n">$4,610M</td><td>LSEG at 6 Aug 2026 — use this for guide-vs-Street history</td></tr>
+<tr><td>Printed GBV 2Q26 / 1Q26</td><td class="n">$27,200M / $29,200M</td><td>letters</td></tr>
+<tr><td>Kernel λ (Q1 / Q2 / Q3 / Q4)</td><td class="n">12.66 / 13.71 / 17.24 / 12.03 %</td><td>kernel-lambda, reproduces to 2dp</td></tr>
+<tr><td>Cushion, trailing-8</td><td class="n">mean +1.86 %, median +1.79 %, sd 1.006pp</td><td>guidance-policy</td></tr>
+<tr><td>3Q26 revenue (kernel / combined)</td><td class="n">$4,804M / $4,816M (80 % $4,757–4,876)</td><td>= guide × 1.018; frozen card $4,801M</td></tr>
+<tr><td>Take-rate flip line</td><td class="n">≥ 18.10 % printed 3Q26</td><td>pre-registered; B1 reconciles the live number</td></tr>
+<tr><td>Fee migration uplift on migrated cohort</td><td class="n">+1.1 to +1.8 % (θ 0.83–0.90); +4.05 % only at θ = 1</td><td>fee-takerate; θ unidentified</td></tr>
+<tr><td>Q4 26 guide midpoint</td><td class="n">$3,142M (GBV 26.3bn) → $3,161M (GBV 26.55bn); +$39M with half fee step</td><td>B2 rebuilds as a grid</td></tr>
+<tr><td>FY27 revenue / growth</td><td class="n">$15,838M / +11.5 % at w = ⅔; band +9.2 to +11.5 %</td><td>exploratory</td></tr>
+<tr><td>Growth → multiple</td><td class="n">+0.48 EV/EBITDA turns per pt of forward growth, applied once</td><td>overnight WS12</td></tr>
+</tbody>
+</table>
+</div>
+
+<footer>Full context: docs/revenue-forecast-strategy/07_MORNING_REPORT.md · 05_backtests/RED_TEAM.md · 00_OVERNIGHT_RUNBOOK.md. Research, not investment advice.</footer>
+</div>

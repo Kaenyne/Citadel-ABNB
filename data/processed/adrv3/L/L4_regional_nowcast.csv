@@ -1,0 +1,33 @@
+variant,region,quarter,pick,pick_basis,proxy_input,forecast_exfx_pp,band_pp,band_basis,last_disclosed_exfx_pp,last_basis,weight_share_pct,weight_adr_anchored_usd
+L_wf,na,3Q26,bea_hotels_price|level|lag1,OLS on 13 usable quarters,bea_hotels_price level lag1 = 4.96,0.1517147263580858,1.1517637329958277,OOS RMSE of the pick on 9 usable quarters before 3Q26,6.7506,solved,31.3935,249.337
+L_wf,na,4Q26,bea_hotels_price|level|lag1,OLS on 14 usable quarters; proxy at lag 1 = the 3Q26 reading,bea_hotels_price level lag1 = 3.55,1.0626060742424546,1.1517637329958277,same OOS RMSE as 3Q26 (no 4Q26 record exists),6.7506,solved,30.0561,247.2078
+L_wf,emea,3Q26,hicp_ea_accommodation|level|lag0,OLS on 14 usable quarters,hicp_ea_accommodation level lag0 = 4.60,4.628429917429913,0.9169074699675084,OOS RMSE of the pick on 10 usable quarters before 3Q26,5.0,disclosed,36.7798,162.0721
+L_wf,emea,4Q26,hicp_ea_accommodation|level|lag0,OLS on 15 usable quarters; assumed: 3Q26 proxy reading held for 4Q26,hicp_ea_accommodation level lag0 = 4.60,4.628429917429913,0.9169074699675084,same OOS RMSE as 3Q26 (no 4Q26 record exists),5.0,disclosed,40.2575,158.3398
+L_wf,latam,3Q26,last_q,usable history,,2.0,0.9654144927735148,OOS RMSE of the pick on 7 usable quarters before 3Q26,2.0,disclosed,16.9649,97.0811
+L_wf,latam,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,2.0,0.9654144927735148,same OOS RMSE as 3Q26 (no 4Q26 record exists),2.0,disclosed,17.4009,95.5083
+L_wf,apac,3Q26,trailing_4q,usable history,,1.412275,1.6927850266369473,OOS RMSE of the pick on 4 usable quarters before 3Q26,-1.3509,solved,14.8618,116.0255
+L_wf,apac,4Q26,trailing_4q,usable history; assumed: chains on the 3Q26 forecast,,1.01534375,1.6927850266369473,same OOS RMSE as 3Q26 (no 4Q26 record exists),-1.3509,solved,12.2855,115.3398
+L_wf_own,na,3Q26,last_q,usable history,,6.7506,1.2159117769109604,OOS RMSE of the pick on 13 usable quarters before 3Q26,6.7506,solved,31.3935,249.337
+L_wf_own,na,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,6.7506,1.2159117769109604,same OOS RMSE as 3Q26 (no 4Q26 record exists),6.7506,solved,30.0561,247.2078
+L_wf_own,emea,3Q26,ar1,usable history,,4.702845110256521,0.9930051789558458,OOS RMSE of the pick on 10 usable quarters before 3Q26,5.0,disclosed,36.7798,162.0721
+L_wf_own,emea,4Q26,ar1,usable history; assumed: chains on the 3Q26 forecast,,4.630005314860661,0.9930051789558458,same OOS RMSE as 3Q26 (no 4Q26 record exists),5.0,disclosed,40.2575,158.3398
+L_wf_own,latam,3Q26,last_q,usable history,,2.0,0.9654144927735148,OOS RMSE of the pick on 7 usable quarters before 3Q26,2.0,disclosed,16.9649,97.0811
+L_wf_own,latam,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,2.0,0.9654144927735148,same OOS RMSE as 3Q26 (no 4Q26 record exists),2.0,disclosed,17.4009,95.5083
+L_wf_own,apac,3Q26,trailing_4q,usable history,,1.412275,1.6927850266369473,OOS RMSE of the pick on 4 usable quarters before 3Q26,-1.3509,solved,14.8618,116.0255
+L_wf_own,apac,4Q26,trailing_4q,usable history; assumed: chains on the 3Q26 forecast,,1.01534375,1.6927850266369473,same OOS RMSE as 3Q26 (no 4Q26 record exists),-1.3509,solved,12.2855,115.3398
+L_fixed_hicp,na,3Q26,last_q,usable history,,6.7506,1.2159117769109604,OOS RMSE of the pick on 13 usable quarters before 3Q26,6.7506,solved,31.3935,249.337
+L_fixed_hicp,na,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,6.7506,1.2159117769109604,same OOS RMSE as 3Q26 (no 4Q26 record exists),6.7506,solved,30.0561,247.2078
+L_fixed_hicp,emea,3Q26,hicp_ea_accommodation|level|lag0,OLS on 14 usable quarters,hicp_ea_accommodation level lag0 = 4.60,4.628429917429913,0.9169074699675084,OOS RMSE of the pick on 10 usable quarters before 3Q26,5.0,disclosed,36.7798,162.0721
+L_fixed_hicp,emea,4Q26,hicp_ea_accommodation|level|lag0,OLS on 15 usable quarters; assumed: 3Q26 proxy reading held for 4Q26,hicp_ea_accommodation level lag0 = 4.60,4.628429917429913,0.9169074699675084,same OOS RMSE as 3Q26 (no 4Q26 record exists),5.0,disclosed,40.2575,158.3398
+L_fixed_hicp,latam,3Q26,last_q,usable history,,2.0,0.9654144927735148,OOS RMSE of the pick on 7 usable quarters before 3Q26,2.0,disclosed,16.9649,97.0811
+L_fixed_hicp,latam,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,2.0,0.9654144927735148,same OOS RMSE as 3Q26 (no 4Q26 record exists),2.0,disclosed,17.4009,95.5083
+L_fixed_hicp,apac,3Q26,last_q,usable history,,-1.3509,2.19072741898341,OOS RMSE of the pick on 7 usable quarters before 3Q26,-1.3509,solved,14.8618,116.0255
+L_fixed_hicp,apac,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,-1.3509,2.19072741898341,same OOS RMSE as 3Q26 (no 4Q26 record exists),-1.3509,solved,12.2855,115.3398
+L_reg_lastq,na,3Q26,last_q,usable history,,6.7506,1.2159117769109604,OOS RMSE of the pick on 13 usable quarters before 3Q26,6.7506,solved,31.3935,249.337
+L_reg_lastq,na,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,6.7506,1.2159117769109604,same OOS RMSE as 3Q26 (no 4Q26 record exists),6.7506,solved,30.0561,247.2078
+L_reg_lastq,emea,3Q26,last_q,usable history,,5.0,2.2138000522695296,OOS RMSE of the pick on 14 usable quarters before 3Q26,5.0,disclosed,36.7798,162.0721
+L_reg_lastq,emea,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,5.0,2.2138000522695296,same OOS RMSE as 3Q26 (no 4Q26 record exists),5.0,disclosed,40.2575,158.3398
+L_reg_lastq,latam,3Q26,last_q,usable history,,2.0,0.9654144927735148,OOS RMSE of the pick on 7 usable quarters before 3Q26,2.0,disclosed,16.9649,97.0811
+L_reg_lastq,latam,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,2.0,0.9654144927735148,same OOS RMSE as 3Q26 (no 4Q26 record exists),2.0,disclosed,17.4009,95.5083
+L_reg_lastq,apac,3Q26,last_q,usable history,,-1.3509,2.19072741898341,OOS RMSE of the pick on 7 usable quarters before 3Q26,-1.3509,solved,14.8618,116.0255
+L_reg_lastq,apac,4Q26,last_q,usable history; assumed: chains on the 3Q26 forecast,,-1.3509,2.19072741898341,same OOS RMSE as 3Q26 (no 4Q26 record exists),-1.3509,solved,12.2855,115.3398

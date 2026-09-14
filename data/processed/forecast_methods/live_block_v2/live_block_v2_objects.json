@@ -1,0 +1,65 @@
+{
+  "generated": "2026-09-11",
+  "package": "live-block-v2",
+  "supersedes": [
+    "optimal-mix live_3Q26_take_rate_pct (17.8065, P=0.254)",
+    "fee-takerate 07a central theta at GBV 26,300 (18.3971, P=0.775)"
+  ],
+  "identities_imposed": [
+    "GBV = Nights and Seats x ADR",
+    "take rate = Revenue / same-quarter GBV"
+  ],
+  "the_one_number": {
+    "printed_3Q26_take_rate_pct": 18.1399,
+    "sd_pp": 0.4628,
+    "q10": 17.5731,
+    "q50": 18.1396,
+    "q90": 18.7557,
+    "P_ge_18_10": 0.5345,
+    "P_le_17_88_fully_offset": 0.2833,
+    "yoy_vs_3Q25_bp": 26.0
+  },
+  "joint_distribution": {
+    "draws": 500000,
+    "seed": 20260911,
+    "marginals": "the published optimal-mix mixture means and sds, unchanged (each is already Gaussian on the level: q10 = point - 1.2816 sd)",
+    "corr_source": "optimal_mix/05_combined_walkforward.csv, the SAME pool and scheme each live object was built from; percent errors (point - actual)/actual",
+    "corr_rev_gbv_W1_PIT": 0.7595,
+    "corr_rev_nights_W1_PIT": 0.6753,
+    "corr_gbv_nights_W1_PIT": 0.8775,
+    "n_W1": 14,
+    "n_W2": 10,
+    "corr_rev_gbv_W2_PIT": 0.5347
+  },
+  "block": {
+    "revenue_musd": {
+      "point": 4816.1,
+      "sd": 48.0
+    },
+    "gbv_musd": {
+      "point": 26549.7639,
+      "sd": 853.209
+    },
+    "nights_m": {
+      "point": 147.3764,
+      "sd": 3.0774
+    },
+    "adr_usd": {
+      "point": 180.1494,
+      "sd": 3.0772
+    },
+    "take_rate_pct": {
+      "point": 18.1399,
+      "sd": 0.4628
+    }
+  },
+  "kernel_is_a_different_object": {
+    "lambda_Q3_pct_2023_25_mean": 17.2394,
+    "lambda_Q3_pct_sd": 0.1324,
+    "denominator": "LAGGED GBV, 2/3 x GBV_2Q26 + 1/3 x GBV_1Q26 = 27,866.7 musd",
+    "lagged_over_same_quarter_base_ratio_3Q26": 1.0496,
+    "lambda_converted_to_printed_take_rate_pct": 18.0945,
+    "warning": "lambda_Q3 = 17.24% is NOT a take rate below 18.10%. It is a ratio to a LARGER (lagged) denominator. Multiplied by the 3Q26 base ratio it becomes 18.09%. The 16.77-17.06% figures in circulation are the same object at kernel weight w = 0.38 (M6_fx_takerate_timing_mechanics.md) -- also not printed take rates."
+  },
+  "caveat": "the marginals are inherited, so every caveat on the optimal-mix live objects still binds: mix_gbv_musd loses to a seasonal naive on both windows (1.312 / 1.021) and mix_nights_m loses on both (1.549 / 1.105). The reconciliation fixes the INTERNAL consistency of the block; it does not make the GBV object skilful."
+}

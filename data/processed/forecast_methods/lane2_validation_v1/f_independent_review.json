@@ -1,0 +1,22 @@
+{
+  "verdict": "PASS",
+  "stock_cells_from_raw_GBV_and_frozen_phi": 18,
+  "excess_cells": [
+    {
+      "quarter": "2025Q4",
+      "excess_unpaid_pp": 1.9691138259797403
+    },
+    {
+      "quarter": "2026Q1",
+      "excess_unpaid_pp": 8.047784019288617
+    },
+    {
+      "quarter": "2026Q2",
+      "excess_unpaid_pp": 9.70589880371962
+    }
+  ],
+  "scenario_cells": 6,
+  "q3_lag_invariance": true,
+  "theo_q4_no_extra_overlapping_leakage": true,
+  "limitation": "Checks arithmetic and scenario plumbing; does not identify RNPL causality or validate D1 assumptions."
+}

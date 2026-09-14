@@ -1,0 +1,110 @@
+feature,label,source,country,asset_class,reading_3q26_yoy_pct,months_in,last_2q26_full_quarter,last_1q26,change_2q26_to_3q26_pp,last_period,knowable_before_5nov
+abs_cpi_30033_M,ABS monthly CPI holiday travel and accommodation (indicator to Sep 2025 spliced with complete monthly CPI),abs,AU,holiday travel and accommodation (monthly CPI),1.1537293796174408,Jul,2.5107259948691083,3.802375124851798,-1.3569966152516675,2026-07,"yes: Aug ~30 Sep, Sep ~28 Oct"
+abs_cpi_30033_Q,"ABS CPI holiday travel and accommodation, quarterly",abs,AU,"holiday travel and accommodation (CPI, bundles airfares)",,,2.487666631678387,3.799200168385597,,2026Q2,yes: Sep-quarter CPI 28 Oct
+abs_cpi_40101_Q,"ABS CPI domestic holiday travel and accommodation, quarterly",abs,AU,"holiday travel and accommodation (CPI, bundles airfares)",,,4.480417754569199,5.739847205468429,,2026Q2,yes: Sep-quarter CPI 28 Oct
+abs_cpi_40102_Q,"ABS CPI international holiday travel and accommodation, quarterly",abs,AU,"holiday travel and accommodation (CPI, bundles airfares)",,,0.47478370964337824,1.6679553739092023,,2026Q2,yes: Sep-quarter CPI 28 Oct
+bea_pce_accommodations_price,BEA PCE accommodations price index (hotels plus housing at school),bea_held,US,"accommodation, all",3.4028694657160408,Jul,4.472169994215143,-0.9928998848972989,-1.0693005284991024,2026-07,yes: Aug PCE ~26 Sep
+bea_pce_foreign_travel_by_us_residents_price,"BEA PCE foreign travel by US residents, price index",bea_held,US,travel deflator (outbound),2.4071343026535796,Jul,0.8193449848981812,1.8896038616321276,1.5877893177553983,2026-07,yes: Aug PCE ~26 Sep
+bea_pce_inbound_foreign_travel_in_us_price,"BEA PCE inbound foreign travel in US, price index (negative PCE)",bea_held,US,travel deflator (inbound),6.746792268962154,Jul,7.2719047839216415,2.336818571828895,-0.5251125149594875,2026-07,yes: Aug PCE ~26 Sep
+bls_CUSR0000SEHB02,"BLS CPI other lodging away from home incl hotels, SA",bls,US,hotel (CPI),2.764678961458855,"Jul,Aug",4.7265615638866,-1.1169432389064204,-1.9618826024277447,2026-08,yes: Sep PPI/CPI mid-Oct
+bls_CUUR0000SEHB02,"BLS CPI other lodging away from home incl hotels, NSA",bls,US,hotel (CPI),2.7647606950717996,"Jul,Aug",4.726493361923656,-1.116994662537622,-1.9617326668518564,2026-08,yes: Sep PPI/CPI mid-Oct
+bls_PCU7211--7211--,BLS PPI traveler accommodation 7211,bls,US,hotel,3.2248063491695955,"Jul,Aug",4.284340070251321,2.1561959538107502,-1.059533721081725,2026-08,yes: Sep PPI/CPI mid-Oct
+bls_PCU721110721110,BLS PPI hotels and motels 721110,bls,US,hotel,3.4251509397735247,"Jul,Aug",5.68537310262327,3.1910540844949673,-2.2602221628497454,2026-08,yes: Sep PPI/CPI mid-Oct
+hicp_CP11201_AT_RCH_A,"HICP hotels, motels, inns, AT",eurostat_hicp,AT,hotel,2.6,Jul,1.7,2.3,0.9000000000000001,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_BE_RCH_A,"HICP hotels, motels, inns, BE",eurostat_hicp,BE,hotel,3.4,Jul,13.9,8.5,-10.5,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_CH_RCH_A,"HICP hotels, motels, inns, CH",eurostat_hicp,CH,hotel,-1.6,Jul,0.0666666666666667,-3.0,-1.6666666666666667,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_CZ_RCH_A,"HICP hotels, motels, inns, CZ",eurostat_hicp,CZ,hotel,7.9,Jul,7.133333333333333,7.3,0.7666666666666675,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_DE_RCH_A,"HICP hotels, motels, inns, DE",eurostat_hicp,DE,hotel,2.1,Jul,2.766666666666667,2.433333333333333,-0.666666666666667,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_DK_RCH_A,"HICP hotels, motels, inns, DK",eurostat_hicp,DK,hotel,3.7,Jul,1.7333333333333336,0.20000000000000004,1.9666666666666666,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_EA_RCH_A,"HICP hotels, motels, inns, EA",eurostat_hicp,EA,hotel,4.2,Jul,3.766666666666666,3.933333333333333,0.433333333333334,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_EL_RCH_A,"HICP hotels, motels, inns, EL",eurostat_hicp,EL,hotel,-2.4,Jul,3.2000000000000006,-3.6333333333333333,-5.6000000000000005,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_ES_RCH_A,"HICP hotels, motels, inns, ES",eurostat_hicp,ES,hotel,9.7,Jul,9.433333333333332,8.833333333333334,0.2666666666666675,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_EU27_2020_RCH_A,"HICP hotels, motels, inns, EU27_2020",eurostat_hicp,EU27_2020,hotel,4.6,Jul,4.133333333333334,4.0,0.4666666666666659,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_FR_RCH_A,"HICP hotels, motels, inns, FR",eurostat_hicp,FR,hotel,6.3,Jul,4.7,3.4666666666666663,1.5999999999999996,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_HR_RCH_A,"HICP hotels, motels, inns, HR",eurostat_hicp,HR,hotel,14.4,Jul,10.466666666666667,3.1333333333333333,3.9333333333333336,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_HU_RCH_A,"HICP hotels, motels, inns, HU",eurostat_hicp,HU,hotel,7.5,Jul,5.033333333333334,9.933333333333334,2.466666666666666,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_IE_RCH_A,"HICP hotels, motels, inns, IE",eurostat_hicp,IE,hotel,3.8,Jul,0.9666666666666668,1.5999999999999999,2.833333333333333,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_IT_RCH_A,"HICP hotels, motels, inns, IT",eurostat_hicp,IT,hotel,3.4,Jul,1.9000000000000001,7.2,1.4999999999999998,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_NL_RCH_A,"HICP hotels, motels, inns, NL",eurostat_hicp,NL,hotel,14.5,Jul,12.933333333333332,5.166666666666667,1.5666666666666682,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_PL_RCH_A,"HICP hotels, motels, inns, PL",eurostat_hicp,PL,hotel,3.8,Jul,3.533333333333333,3.6,0.2666666666666666,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_PT_RCH_A,"HICP hotels, motels, inns, PT",eurostat_hicp,PT,hotel,-2.7,Jul,-3.1666666666666665,-0.09999999999999998,0.46666666666666634,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_SE_RCH_A,"HICP hotels, motels, inns, SE",eurostat_hicp,SE,hotel,8.4,Jul,4.666666666666667,1.0999999999999999,3.7333333333333334,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11201_TR_RCH_A,"HICP hotels, motels, inns, TR",eurostat_hicp,TR,hotel,12.5,Jul,16.933333333333334,24.766666666666666,-4.433333333333334,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_BE_RCH_A,"HICP holiday centres, camping, hostels, BE",eurostat_hicp,BE,other accommodation,16.5,Jul,7.866666666666667,9.466666666666667,8.633333333333333,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_CH_RCH_A,"HICP holiday centres, camping, hostels, CH",eurostat_hicp,CH,other accommodation,0.6,Jul,-1.0999999999999999,1.4000000000000001,1.6999999999999997,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_CZ_RCH_A,"HICP holiday centres, camping, hostels, CZ",eurostat_hicp,CZ,other accommodation,4.3,Jul,5.366666666666667,6.1000000000000005,-1.0666666666666673,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_DE_RCH_A,"HICP holiday centres, camping, hostels, DE",eurostat_hicp,DE,other accommodation,4.7,Jul,4.7,3.4,0.0,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_DK_RCH_A,"HICP holiday centres, camping, hostels, DK",eurostat_hicp,DK,other accommodation,-4.7,Jul,-3.233333333333333,3.0,-1.4666666666666672,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_EA_RCH_A,"HICP holiday centres, camping, hostels, EA",eurostat_hicp,EA,other accommodation,4.9,Jul,5.2,4.133333333333334,-0.2999999999999998,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_EL_RCH_A,"HICP holiday centres, camping, hostels, EL",eurostat_hicp,EL,other accommodation,7.2,Jul,8.0,8.5,-0.7999999999999998,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_ES_RCH_A,"HICP holiday centres, camping, hostels, ES",eurostat_hicp,ES,other accommodation,4.4,Jul,4.4,4.4,0.0,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_EU27_2020_RCH_A,"HICP holiday centres, camping, hostels, EU27_2020",eurostat_hicp,EU27_2020,other accommodation,5.0,Jul,4.766666666666667,3.533333333333333,0.2333333333333334,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_FR_RCH_A,"HICP holiday centres, camping, hostels, FR",eurostat_hicp,FR,other accommodation,7.2,Jul,6.3999999999999995,-1.3,0.8000000000000007,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_HR_RCH_A,"HICP holiday centres, camping, hostels, HR",eurostat_hicp,HR,other accommodation,-0.2,Jul,4.066666666666667,11.766666666666666,-4.2666666666666675,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_HU_RCH_A,"HICP holiday centres, camping, hostels, HU",eurostat_hicp,HU,other accommodation,3.0,Jul,5.333333333333333,8.066666666666666,-2.333333333333333,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_IT_RCH_A,"HICP holiday centres, camping, hostels, IT",eurostat_hicp,IT,other accommodation,2.9,Jul,5.2,8.833333333333334,-2.3000000000000003,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_NL_RCH_A,"HICP holiday centres, camping, hostels, NL",eurostat_hicp,NL,other accommodation,2.6,Jul,4.466666666666666,13.266666666666666,-1.8666666666666658,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_PL_RCH_A,"HICP holiday centres, camping, hostels, PL",eurostat_hicp,PL,other accommodation,4.9,Jul,6.8,6.266666666666667,-1.8999999999999995,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_PT_RCH_A,"HICP holiday centres, camping, hostels, PT",eurostat_hicp,PT,other accommodation,4.0,Jul,2.566666666666667,3.966666666666667,1.4333333333333331,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11202_SE_RCH_A,"HICP holiday centres, camping, hostels, SE",eurostat_hicp,SE,other accommodation,4.8,Jul,-6.166666666666667,-0.3000000000000002,10.966666666666667,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11209_EU27_2020_RCH_A,"HICP other accommodation services, EU27_2020",eurostat_hicp,EU27_2020,"other accommodation, incl short-term lets",,,,,,2024-12,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11209_IT_RCH_A,"HICP other accommodation services, IT",eurostat_hicp,IT,"other accommodation, incl short-term lets",,,,,,2015-12,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP11209_PL_RCH_A,"HICP other accommodation services, PL",eurostat_hicp,PL,"other accommodation, incl short-term lets",,,,,,2024-12,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_AT_RCH_A,"HICP accommodation services, AT",eurostat_hicp,AT,"accommodation, all",2.5,Jul,1.7,2.2666666666666666,0.8,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_BE_RCH_A,"HICP accommodation services, BE",eurostat_hicp,BE,"accommodation, all",9.8,Jul,10.733333333333334,7.966666666666666,-0.9333333333333336,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_CH_RCH_A,"HICP accommodation services, CH",eurostat_hicp,CH,"accommodation, all",-4.3,Jul,-6.633333333333334,-5.433333333333334,2.333333333333334,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_CZ_RCH_A,"HICP accommodation services, CZ",eurostat_hicp,CZ,"accommodation, all",7.1,Jul,6.733333333333333,6.8999999999999995,0.36666666666666625,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_DE_RCH_A,"HICP accommodation services, DE",eurostat_hicp,DE,"accommodation, all",2.8,Jul,3.266666666666667,2.6999999999999997,-0.46666666666666723,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_DK_RCH_A,"HICP accommodation services, DK",eurostat_hicp,DK,"accommodation, all",-6.2,Jul,-0.16666666666666638,2.2333333333333334,-6.033333333333334,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_EA_RCH_A,"HICP accommodation services, EA",eurostat_hicp,EA,"accommodation, all",4.6,Jul,4.266666666666667,3.933333333333333,0.33333333333333304,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_EL_RCH_A,"HICP accommodation services, EL",eurostat_hicp,EL,"accommodation, all",-2.1,Jul,3.433333333333333,-3.3333333333333335,-5.533333333333333,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_ES_RCH_A,"HICP accommodation services, ES",eurostat_hicp,ES,"accommodation, all",8.9,Jul,8.566666666666668,7.6000000000000005,0.33333333333333215,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_EU27_2020_RCH_A,"HICP accommodation services, EU27_2020",eurostat_hicp,EU27_2020,"accommodation, all",5.0,Jul,4.5,4.0,0.5,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_FR_RCH_A,"HICP accommodation services, FR",eurostat_hicp,FR,"accommodation, all",7.3,Jul,6.0,1.1,1.2999999999999998,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_HR_RCH_A,"HICP accommodation services, HR",eurostat_hicp,HR,"accommodation, all",3.0,Jul,5.6000000000000005,9.033333333333333,-2.6000000000000005,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_HU_RCH_A,"HICP accommodation services, HU",eurostat_hicp,HU,"accommodation, all",6.4,Jul,5.066666666666666,9.366666666666667,1.333333333333334,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_IE_RCH_A,"HICP accommodation services, IE",eurostat_hicp,IE,"accommodation, all",3.7,Jul,1.0666666666666667,1.6666666666666667,2.6333333333333337,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_IT_RCH_A,"HICP accommodation services, IT",eurostat_hicp,IT,"accommodation, all",4.0,Jul,2.566666666666667,7.266666666666667,1.4333333333333331,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_NL_RCH_A,"HICP accommodation services, NL",eurostat_hicp,NL,"accommodation, all",7.4,Jul,9.166666666666666,9.533333333333333,-1.7666666666666657,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_NO_RCH_A,"HICP accommodation services, NO",eurostat_hicp,NO,"accommodation, all",1.8,Jul,4.2,3.633333333333333,-2.4000000000000004,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_PL_RCH_A,"HICP accommodation services, PL",eurostat_hicp,PL,"accommodation, all",3.8,Jul,3.6666666666666665,3.7999999999999994,0.1333333333333333,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_PT_RCH_A,"HICP accommodation services, PT",eurostat_hicp,PT,"accommodation, all",-0.7,Jul,-1.2333333333333332,0.20000000000000004,0.5333333333333332,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_SE_RCH_A,"HICP accommodation services, SE",eurostat_hicp,SE,"accommodation, all",7.6,Jul,2.2333333333333334,0.7333333333333333,5.366666666666666,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+hicp_CP112_TR_RCH_A,"HICP accommodation services, TR",eurostat_hicp,TR,"accommodation, all",27.2,Jul,27.933333333333334,31.099999999999998,-0.7333333333333343,2026-07,"yes: Sep flash ~1 Oct, final ~16 Oct"
+sppi_I55_AT_PCH_SM,"SPPI accommodation I55, AT",eurostat_sppi,AT,"accommodation (NACE I55, producer price)",,,,2.1,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_DE_PCH_SM,"SPPI accommodation I55, DE",eurostat_sppi,DE,"accommodation (NACE I55, producer price)",,,,5.3,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_DK_PCH_SM,"SPPI accommodation I55, DK",eurostat_sppi,DK,"accommodation (NACE I55, producer price)",,,1.0,-0.3,,2026Q2,no: 3Q26 publishes Dec 2026
+sppi_I55_EA20_PCH_SM,"SPPI accommodation I55, EA20",eurostat_sppi,EA20,"accommodation (NACE I55, producer price)",,,,5.6,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_EL_PCH_SM,"SPPI accommodation I55, EL",eurostat_sppi,EL,"accommodation (NACE I55, producer price)",,,,0.8,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_ES_PCH_SM,"SPPI accommodation I55, ES",eurostat_sppi,ES,"accommodation (NACE I55, producer price)",,,,3.9,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_EU27_2020_PCH_SM,"SPPI accommodation I55, EU27_2020",eurostat_sppi,EU27_2020,"accommodation (NACE I55, producer price)",,,,5.4,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_FR_PCH_SM,"SPPI accommodation I55, FR",eurostat_sppi,FR,"accommodation (NACE I55, producer price)",,,4.7,2.3,,2026Q2,no: 3Q26 publishes Dec 2026
+sppi_I55_HR_PCH_SM,"SPPI accommodation I55, HR",eurostat_sppi,HR,"accommodation (NACE I55, producer price)",,,,-0.4,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_IE_PCH_SM,"SPPI accommodation I55, IE",eurostat_sppi,IE,"accommodation (NACE I55, producer price)",,,,9.1,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_IT_PCH_SM,"SPPI accommodation I55, IT",eurostat_sppi,IT,"accommodation (NACE I55, producer price)",,,9.3,14.9,,2026Q2,no: 3Q26 publishes Dec 2026
+sppi_I55_NL_PCH_SM,"SPPI accommodation I55, NL",eurostat_sppi,NL,"accommodation (NACE I55, producer price)",,,-3.1,-3.3,,2026Q2,no: 3Q26 publishes Dec 2026
+sppi_I55_NO_PCH_SM,"SPPI accommodation I55, NO",eurostat_sppi,NO,"accommodation (NACE I55, producer price)",,,4.2,3.6,,2026Q2,no: 3Q26 publishes Dec 2026
+sppi_I55_PL_PCH_SM,"SPPI accommodation I55, PL",eurostat_sppi,PL,"accommodation (NACE I55, producer price)",,,3.8,3.8,,2026Q2,no: 3Q26 publishes Dec 2026
+sppi_I55_PT_PCH_SM,"SPPI accommodation I55, PT",eurostat_sppi,PT,"accommodation (NACE I55, producer price)",,,,0.1,,2026Q1,no: 3Q26 publishes Dec 2026
+sppi_I55_SE_PCH_SM,"SPPI accommodation I55, SE",eurostat_sppi,SE,"accommodation (NACE I55, producer price)",,,0.7,2.0,,2026Q2,no: 3Q26 publishes Dec 2026
+sppi_I55_UK_PCH_SM,"SPPI accommodation I55, UK",eurostat_sppi,UK,"accommodation (NACE I55, producer price)",,,,,,2020Q3,no: 3Q26 publishes Dec 2026
+bea_export_travel_price,"BEA exports of travel, price index",fred_bea,US,travel exports deflator (inbound visitors' spend),,,6.077432696358143,3.747982591003307,,2026Q2,yes: 3Q advance 29 Oct
+bea_import_travel_price,"BEA imports of travel, price index",fred_bea,US,travel imports deflator (US residents abroad),,,-0.23599233609047365,-2.384280892541313,,2026Q2,yes: 3Q advance 29 Oct
+hawaii_vr_adr_island_yoy_reported_pct,"Hawaii vacation rental ADR y/y, island",hawaii_dbedt,US-HI,short-term rental (vacation rental ADR),10.723426962723703,Jul,4.188608172053136,-8.98682019698544,6.534818790670568,2026-07,yes
+hawaii_vr_adr_kauai_yoy_reported_pct,"Hawaii vacation rental ADR y/y, kauai",hawaii_dbedt,US-HI,short-term rental (vacation rental ADR),13.711002236335569,Jul,4.462798283344501,-6.29601812188253,9.248203952991068,2026-07,yes
+hawaii_vr_adr_maui_yoy_reported_pct,"Hawaii vacation rental ADR y/y, maui",hawaii_dbedt,US-HI,short-term rental (vacation rental ADR),23.209989192007964,Jul,12.467591510861356,-5.049244797183002,10.742397681146608,2026-07,yes
+hawaii_vr_adr_oahu_yoy_reported_pct,"Hawaii vacation rental ADR y/y, oahu",hawaii_dbedt,US-HI,short-term rental (vacation rental ADR),1.9009991880388988,Jul,3.134226534241406,-4.77494687331284,-1.2332273462025074,2026-07,yes
+hawaii_vr_adr_state_yoy_reported_pct,"Hawaii DBEDT vacation rental ADR y/y, statewide",hawaii_dbedt,US-HI,short-term rental (vacation rental ADR),14.466639582045923,Jul,8.066958447770537,-5.762097580615151,6.3996811342753865,2026-07,"yes: Aug report ~25 Sep, Sep ~25 Oct"
+ibge_ipca_hospedagem_yoy12m,IBGE IPCA hospedagem 12-month rate,ibge,BR,hotel (IPCA hospedagem),6.3149999999999995,"Jul,Aug",6.6499999999999995,7.883333333333333,-0.33499999999999996,2026-08,yes: Sep IPCA ~9 Oct
+ine_hdpi_holiday_dwellings_EOT8077,INE Spain holiday dwellings / tourist apartments y/y,ine_es,ES,short-term rental (tourist apartments),6.21,Jul,4.55,0.13666666666666663,1.6600000000000001,2026-07,yes: Sep release ~23 Oct
+ine_hotel_adr_EOT16415,"INE Spain hotel ADR, national y/y",ine_es,ES,hotel,6.79,Jul,4.966666666666667,3.1833333333333336,1.8233333333333333,2026-07,yes: Sep release ~23 Oct
+ine_hotel_revpar_EOT16471,"INE Spain hotel RevPAR, national y/y",ine_es,ES,hotel,6.57,Jul,5.386666666666667,3.2099999999999995,1.1833333333333336,2026-07,yes: Sep release ~23 Oct
+ine_rtapi_rural_EOT12767,INE Spain rural tourism accommodation y/y,ine_es,ES,other accommodation (rural),1.5,Jul,-0.010000000000000009,0.6933333333333334,1.51,2026-07,yes: Sep release ~23 Oct
+ine_tcpi_campsite_EOT8071,INE Spain campsite price index y/y,ine_es,ES,other accommodation (campsites),6.58,Jul,1.74,3.026666666666667,4.84,2026-07,yes
+japan_cpi_hotel_charges_index,Japan CPI hotel charges,japan_estat,JP,hotel (CPI hotel charges),0.8955223880596996,Jul,2.976846213001272,5.262464969535027,-2.081323824941572,2026-07,"yes: Aug CPI 19 Sep, Sep 24 Oct"
+nz_cpi_CPIQ.SE909601_domestic_accommodation_services_nan,Stats NZ CPI domestic_accommodation_services_nan,nz_statsnz,NZ,accommodation services (CPI),,,1.8530774321641408,5.045045045045038,,2026Q2,yes: Sep-quarter CPI ~20 Oct
+nz_cpi_CPIQ.SE9096_accommodation_services_nan,Stats NZ CPI accommodation_services_nan,nz_statsnz,NZ,accommodation services (CPI),,,2.3163841807909646,2.793614595210947,,2026Q2,yes: Sep-quarter CPI ~20 Oct
+ons_cpi_11201_hotels_index,ONS CPI 11.2.0.1 hotels,ons,UK,hotel,2.9906542056074903,Jul,3.5908485085126043,0.670970694748374,-0.600194302905114,2026-07,yes
+ons_cpi_11203_other_establishments_index,ONS CPI 11.2.0.3 other establishments,ons,UK,other accommodation,5.667144906743182,Jul,5.667144906743182,5.667144906743182,0.0,2026-07,yes
+ons_cpi_112_accommodation_index,ONS CPI 11.2 accommodation services,ons,UK,"accommodation, all",2.9504080351537842,Jul,3.5618816491229666,1.294834568984508,-0.6114736139691823,2026-07,yes: Sep CPI ~22 Oct
+statcan_cpi_traveller_accommodation,StatCan CPI traveller accommodation,statcan,CA,hotel (CPI traveller accommodation),2.468085106382989,Jul,6.135486874709906,1.3276235191156394,-3.6674017683269167,2026-07,yes: Sep CPI ~20 Oct

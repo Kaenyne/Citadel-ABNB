@@ -1,0 +1,6 @@
+construction,fx_4Q26_pp,status,named_cause,spread_pp,spread_musd_on_4Q26
+repo 05_fx_schedule revenue_fx_fit_pp,-0.4,REJECTED as an input,"a reduced-form fit of stated revenue FX on a lagged EURUSD/broad-USD blend; it is a level forecast of the disclosed pp, not the kernel arithmetic, and it double-counts the lag already inside the lagged GBV base",6.0,167.0
+repo 29_q4_fy27_bridge FX step,-3.4,REJECTED as an input,subtracts the FX step a SECOND time on top of a GBV base that already carries booking-date FX; this is the double-subtraction the architect ruled out,6.0,167.0
+M6 memo forward schedule,0.4,REJECTED as an input,"rests on an FX fit that misses a nearly observed quarter by about 2pp, and the memo carries +1.04pp in its schedule against +0.73pp in its own 3Q26 build",6.0,167.0
+guide-anchored (back out from management's stated Q3 FX assumption),2.6,REJECTED as an input,"holds the 3Q26 guided FX tailwind flat into 4Q26; management's own basket rolls over, so holding it flat imports a tailwind that the spot path has already removed",6.0,167.0
+"kernel-implied (this package, Object-A weights on the rebuilt basket)",0.7,"ADOPTED as the reported reading (as an OUTPUT of the arithmetic, never added to revenue)","booking-date FX is already inside the lagged USD GBV base; the pp shown is what the arithmetic produces, not an adjustment applied to it",6.0,167.0

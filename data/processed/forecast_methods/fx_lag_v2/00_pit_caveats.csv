@@ -1,0 +1,5 @@
+item,detail,severity,resolution
+fred_h10_publication_lag,"the 2026-09-11 refresh reaches 2026-09-04; FRED H.10 publishes weekly, so 'as of today' means FX through 2026-09-04",low (5 business days),stated on every table
+gross_ex_hedge_target_is_non_PIT_structural,"built from the 10-Q hedge reclassification, filed after the guide; used for the structural fit only, never registered","labelled, not a leak",the registered objects use the stated letter series
+training_feature_basket_lags_not_vintage_stamped,inherited from fx_lag: baskets.regional_revenue_weights() uses the current-vintage L0 split for historical quarters; the target quarter's own lag-0 basket IS vintage-filtered,"low: FRED spot never revises, L0 carries no restated rows","documented, not fixed"
+holiday_fill_fixed_in_v2,"fx_lag/pit_fx filled every business day with no FRED print -- bank holidays inside completed quarters included -- with the CURRENT spot; v2 uses the last rate observed on or before the day, and holds spot only after the last observation",fixed,see pit_fx._q_avg_spot_held

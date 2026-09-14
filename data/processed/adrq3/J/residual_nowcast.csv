@@ -1,0 +1,21 @@
+quarter,case,residual_pp,lo_pp,hi_pp,band_basis,pre_registered_point,source
+3Q26,last_q,4.84932637648649,3.91449897491125,5.784153778061729,+/- 1.00 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+3Q26,persistence,4.6149576635846685,3.680130262009429,5.549785065159908,+/- 1.00 x sd of quarterly residual changes (0.93 pp),True,residual history 1Q23-2Q26 (H reconstruction)
+3Q26,trailing_4q,3.9377549248724733,3.0029275232972337,4.872582326447713,+/- 1.00 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+3Q26,trailing_8q,3.0914312240472377,2.156603822471998,4.026258625622477,+/- 1.00 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+3Q26,ar1_residual,4.373896036629098,3.4390686350538586,5.308723438204337,+/- 1.00 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+3Q26,blend,3.853194443815953,2.9183670422407135,4.788021845391192,+/- 1.00 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+3Q26,persistence_case_1H26,4.6149576635846685,4.380588950682848,4.84932637648649,1Q26 and 2Q26 values,False,H reconstruction
+3Q26,mean_reversion_case_2023_25,2.398286815004551,2.038797139412187,2.92531229679002,2023-25 interquartile range (full range 0.83 to 3.70),False,H reconstruction
+3Q26,historical_distribution,2.7149540790874247,1.2753224918820476,4.17605622011445,1Q23-2Q26 10th to 90th percentile,False,H reconstruction
+3Q26,proxy_based,,,,no proxy survived the note-08 protocol against the residual (J2 proxy_tests.csv),False,J2
+4Q26,last_q,4.84932637648649,3.527280786700786,6.1713719662721935,+/- 1.41 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+4Q26,persistence,4.6149576635846685,3.292912073798965,5.9370032533703725,+/- 1.41 x sd of quarterly residual changes (0.93 pp),True,residual history 1Q23-2Q26 (H reconstruction)
+4Q26,trailing_4q,3.9377549248724733,2.6157093350867697,5.259800514658177,+/- 1.41 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+4Q26,trailing_8q,3.0914312240472377,1.7693856342615342,4.413476813832942,+/- 1.41 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+4Q26,ar1_residual,4.373896036629098,3.0518504468433947,5.695941626414802,+/- 1.41 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+4Q26,blend,3.853194443815953,2.5311488540302496,5.175240033601657,+/- 1.41 x sd of quarterly residual changes (0.93 pp),False,residual history 1Q23-2Q26 (H reconstruction)
+4Q26,persistence_case_1H26,4.6149576635846685,4.380588950682848,4.84932637648649,1Q26 and 2Q26 values,False,H reconstruction
+4Q26,mean_reversion_case_2023_25,2.398286815004551,2.038797139412187,2.92531229679002,2023-25 interquartile range (full range 0.83 to 3.70),False,H reconstruction
+4Q26,historical_distribution,2.7149540790874247,1.2753224918820476,4.17605622011445,1Q23-2Q26 10th to 90th percentile,False,H reconstruction
+4Q26,proxy_based,,,,no proxy survived the note-08 protocol against the residual (J2 proxy_tests.csv),False,J2

@@ -1,0 +1,17 @@
+test,passed,detail
+"A1 lambda_Q4 = 12.0298% (mean of 4Q23/4Q24/4Q25, within-season range 0.171pp)",True,"2023Q4 11.946; 2024Q4 12.117; 2025Q4 12.026 -> mean 12.0298%, range 0.171pp"
+"A2 GBV_2Q26 printed = 27,200M",True,27200
+A3 trailing-8 cushion mean 1.857 / median 1.790 / sd 1.005pp,True,mean 1.8567% (div 1.186) median 1.7905% sd 1.0048pp; trailing-8 mean range width 1.859% of midpoint
+A4 CHOSEN predictive sd 3.0305pp = sqrt(kernel W1-PIT walk-forward RMSE^2 + cushion sd^2),True,sqrt(2.8591^2 + 1.0048^2) = 3.0305pp; print-only sd = 2.8591pp (no cushion draw); sensitivity sd = 2.73pp (optimal-mix no-guide mix)
+"B1 the combined GBV ladder is EXACTLY symmetric -> normal, not skew-normal",True,"q10 25456.3 q50 26549.8 q90 27643.2; lower half 853.209 vs upper half 853.209, asymmetry -4.57e-06pp; fitted sd 853.209 vs published mixture_sd 853.209"
+B2 combined 3Q26 GBV object STATUS OK and weight coverage 1.0,True,"OK, coverage 1.0, scheme stack_shrunk, carriers ar1 0.167; naive 0.667; trailing4 0.167"
+"C1 primitives half step at fee-takerate's theta 0.8333 reproduces its 07b print 3,218.2M",True,"uplift 1.8172% x share 0.625441 / 2 = 0.5683% -> 3,200.0 x (1+0.005683) = 3218.1853M"
+C2 at theta = 0.83 the migrated cohort's GBV FALLS and the host payout FALLS,True,"listed x1.122781; migrated-cohort GBV -1.597%, revenue +1.773%, host payout -2.191%, take 14.987% -> 15.500%"
+C3 the primitives FULL step is smaller than the architect's HALF step,True,primitives full 1.1086% vs architect half 1.25% (architect full 2.50%); primitives half 0.5543%
+"D1 v1 central cell reproduces: GBV 26,300 no fee -> print 3,199.9 / guide 3,141.6 / P(<Zacks)=0.730",True,print 3199.92 guide 3141.59 P(<3200) 0.7302
+"D2 RED_TEAM F2 reproduces: GBV 26,549.8 no fee -> print 3,220.0 / guide 3,161.3 / 0.657 / 0.486",True,print 3219.96 guide 3161.26 P(<Zacks) 0.6570 P(<LSEG) 0.4864
+"D3 the published $25,900-27,000 grid does NOT bracket the programme's own GBV 80% interval",True,"GBV_3Q26 q10 25456 < grid floor 25900; q90 27643 > grid ceiling 27000; the 12 even steps carry only 47.8% of the unconditional GBV mass, which is why the unconditional numbers integrate the continuous normal, not the 12 cells"
+D4 round trip: guide_mid x (1 + c_mean) == print on every row,True,max abs err 0.00e+00M
+E1 unconditional mixture is self-consistent (CDF at its own q10/q90 = 0.10/0.90),True,"none: mean 3161.3 80% [3012, 3312] total sd 117.0; theta_0.83_primitives_half: mean 3178.8 80% [3029, 3330] total sd 117.7"
+E2 integrating GBV widens the interval: unconditional sd > conditional sd,True,none: unconditional 117.0M vs conditional 95.8M (3.70% vs 3.03%); theta_0.83_primitives_half: unconditional 117.7M vs conditional 96.3M (3.70% vs 3.03%)
+F1 the three independent panels disagree by $42M on 4Q26,True,"Zacks 3200 (n=10) vs LSEG-family 3,158 (n=36) = 42.0M; S&P Global MI 3,160 (n=35) sits with LSEG"
