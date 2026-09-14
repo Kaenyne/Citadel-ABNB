@@ -1,0 +1,6 @@
+vintage_date,fy,pred_type,pred_level_pct,pred_level_incl_counterfactual,rule,detail,actual_type,actual_level_pct,type_hit,level_err_pp,level_err_pp_rule_only,actual_quote
+2021-11-04,2021,none,,21.0,3 no numeric anchor,counterfactual level (rule 2) = 21.00,none,,1,,,
+2022-11-01,2022,none,,33.5,3 no numeric anchor,counterfactual level (rule 2) = 33.50,none,,1,,,
+2023-11-01,2023,none,,35.5,3 no numeric anchor,counterfactual level (rule 2) = 35.50,point,36.06177032459491,0,-0.5617703245949102,,we expect an Adjusted EBITDA margin for full-year 2023 that is approximately 150 bps higher than full-year 2022
+2024-11-07,2024,point,35.5,35.5,1 floor+50bp,floor 35.00 in force since 2024-08-06,point,35.5,1,0.0,0.0,"For the full-year 2024, we now expect to deliver an Adjusted EBITDA Margin of approximately 35.5%"
+2025-11-06,2025,point,35.0,35.0,1 floor+50bp,floor 34.50 in force since 2025-08-06,point,35.0,1,0.0,0.0,"For the full-year 2025, we now expect to deliver an Adjusted EBITDA Margin of approximately 35%"

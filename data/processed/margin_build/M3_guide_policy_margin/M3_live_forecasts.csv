@@ -1,0 +1,163 @@
+vintage_date,scenario,spec_id,quarter,revenue_musd,rev_source,adj_ebitda_margin_pct,adj_ebitda_musd,fy_margin_hat_pct,note
+2026-09-11,base,rw_hl4,2026Q3,4804.0355,ws06_v2b_base,52.55945795351143,2524.975018694263,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.47pp; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4,2026Q4,3178.1078,ws06_v2b_base,30.767724369121268,977.8314480575439,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.47pp; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4,2027Q1,3053.1293,ws06_v2b_base,19.162980208628166,585.0705635028277,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4,2027Q2,4028.9807,ws06_v2b_base,34.732956644695065,1399.384119754132,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4,2027Q3,5280.7325,ws06_v2b_base,52.342303733461485,2764.0570445016137,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4,2027Q4,3465.7641,ws06_v2b_base,30.550570149071316,1058.81069257183,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,equal,2026Q3,4804.0355,ws06_v2b_base,55.30554435344058,2656.897984207531,38.56145051708278,"FY2026 floor 35.50% + cushion +3.06pp (equal, n4, AUG) = 38.56%; delta on m[q-4]; delta +5.22pp; rev[ws06_v2b_base]"
+2026-09-11,base,equal,2026Q4,3178.1078,ws06_v2b_base,33.513810769050416,1065.1050341284313,38.56145051708278,"FY2026 floor 35.50% + cushion +3.06pp (equal, n4, AUG) = 38.56%; delta on m[q-4]; delta +5.22pp; rev[ws06_v2b_base]"
+2026-09-11,base,equal,2027Q1,3053.1293,ws06_v2b_base,20.712391435743694,632.3760916553814,38.56145051708278,FY2027 policy chain 39.76%; delta +1.33pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,equal,2027Q2,4028.9807,ws06_v2b_base,36.28236787181059,1461.8095990582497,38.56145051708278,FY2027 policy chain 39.76%; delta +1.33pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,equal,2027Q3,5280.7325,ws06_v2b_base,56.63780136050616,2990.8907837296906,38.56145051708278,FY2027 policy chain 39.76%; delta +1.33pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,equal,2027Q4,3465.7641,ws06_v2b_base,34.846067776115994,1207.6825072462966,38.56145051708278,FY2027 policy chain 39.76%; delta +1.33pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last,2026Q3,4804.0355,ws06_v2b_base,50.91165486375969,2445.8139732924924,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; delta +0.83pp; rev[ws06_v2b_base]"
+2026-09-11,base,last,2026Q4,3178.1078,ws06_v2b_base,29.119921279369525,925.4624895335028,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; delta +0.83pp; rev[ws06_v2b_base]"
+2026-09-11,base,last,2027Q1,3053.1293,ws06_v2b_base,18.224127542788164,556.4061776782354,36.10334123029164,FY2027 policy chain 34.84%; delta -1.16pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last,2027Q2,4028.9807,ws06_v2b_base,33.79410397885506,1361.5579270460025,36.10334123029164,FY2027 policy chain 34.84%; delta -1.16pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last,2027Q3,5280.7325,ws06_v2b_base,49.75564797786974,2627.4626733529603,36.10334123029164,FY2027 policy chain 34.84%; delta -1.16pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last,2027Q4,3465.7641,ws06_v2b_base,27.96391439347957,969.1633060039477,36.10334123029164,FY2027 policy chain 34.84%; delta -1.16pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion,2026Q3,4804.0355,ws06_v2b_base,49.83317771682605,2394.0035482944127,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.25pp; rev[ws06_v2b_base]"
+2026-09-11,base,nocushion,2026Q4,3178.1078,ws06_v2b_base,28.04144413243588,891.1873232055872,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.25pp; rev[ws06_v2b_base]"
+2026-09-11,base,nocushion,2027Q1,3053.1293,ws06_v2b_base,17.613384885196314,537.7594146517,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion,2027Q2,4028.9807,ws06_v2b_base,33.183361321263206,1336.9512232449595,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion,2027Q3,5280.7325,ws06_v2b_base,48.06642817334424,2538.2594941389457,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion,2027Q4,3465.7641,ws06_v2b_base,26.274694588954077,910.618932448613,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_prorata,2026Q3,4804.0355,ws06_v2b_base,52.3701874363396,2515.8823958582943,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; prorata shares FY2023-25; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4_prorata,2026Q4,3178.1078,ws06_v2b_base,31.05382614439674,986.9240708935122,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; prorata shares FY2023-25; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4_prorata,2027Q1,3053.1293,ws06_v2b_base,19.163480929242773,585.0858511506234,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_prorata,2027Q2,4028.9807,ws06_v2b_base,34.73345736530967,1399.404293691055,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_prorata,2027Q3,5280.7325,ws06_v2b_base,52.15353393690425,2754.0886165046322,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_prorata,2027Q4,3465.7641,ws06_v2b_base,30.837172644961395,1068.7436589840925,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_pin,2026Q3,4804.0355,ws06_v2b_base,50.085470085470085,2406.1237632478633,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +6.21pp; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4_pin,2026Q4,3178.1078,ws06_v2b_base,34.507410463041666,1096.6827035039435,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +6.21pp; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4_pin,2027Q1,3053.1293,ws06_v2b_base,19.169525214920327,585.2703910076204,37.0251850971514,FY2027 policy chain 36.69%; delta -0.21pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_pin,2027Q2,4028.9807,ws06_v2b_base,34.73950165098722,1399.6478167944565,37.0251850971514,FY2027 policy chain 36.69%; delta -0.21pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_pin,2027Q3,5280.7325,ws06_v2b_base,49.87486087171229,2633.7579873822947,37.0251850971514,FY2027 policy chain 36.69%; delta -0.21pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_pin,2027Q4,3465.7641,ws06_v2b_base,34.296801249283874,1188.646225146032,37.0251850971514,FY2027 policy chain 36.69%; delta -0.21pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_revknown,2026Q3,4804.0355,ws06_v2b_base,52.55945795351143,2524.975018694263,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.47pp; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4_revknown,2026Q4,3178.1078,ws06_v2b_base,30.767724369121268,977.8314480575439,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.47pp; rev[ws06_v2b_base]"
+2026-09-11,base,rw_hl4_revknown,2027Q1,3053.1293,ws06_v2b_base,19.162980208628166,585.0705635028277,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_revknown,2027Q2,4028.9807,ws06_v2b_base,34.732956644695065,1399.384119754132,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_revknown,2027Q3,5280.7325,ws06_v2b_base,52.342303733461485,2764.0570445016137,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,rw_hl4_revknown,2027Q4,3465.7641,ws06_v2b_base,30.550570149071316,1058.81069257183,37.0251850971514,FY2027 policy chain 36.69%; delta -0.22pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion_pin,2026Q3,4804.0355,ws06_v2b_base,49.83317771682605,2394.0035482944127,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.25pp; rev[ws06_v2b_base]"
+2026-09-11,base,nocushion_pin,2026Q4,3178.1078,ws06_v2b_base,28.04144413243588,891.1873232055872,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.25pp; rev[ws06_v2b_base]"
+2026-09-11,base,nocushion_pin,2027Q1,3053.1293,ws06_v2b_base,17.613384885196314,537.7594146517,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion_pin,2027Q2,4028.9807,ws06_v2b_base,33.183361321263206,1336.9512232449595,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion_pin,2027Q3,5280.7325,ws06_v2b_base,48.06642817334424,2538.2594941389457,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,nocushion_pin,2027Q4,3465.7641,ws06_v2b_base,26.274694588954077,910.618932448613,35.5,FY2027 policy chain 33.63%; delta -1.77pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last_pin,2026Q3,4804.0355,ws06_v2b_base,50.085470085470085,2406.1237632478633,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +2.08pp; rev[ws06_v2b_base]"
+2026-09-11,base,last_pin,2026Q4,3178.1078,ws06_v2b_base,30.368784204806758,965.1526995781317,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +2.08pp; rev[ws06_v2b_base]"
+2026-09-11,base,last_pin,2027Q1,3053.1293,ws06_v2b_base,18.226313238458808,556.4729097931647,36.10334123029164,FY2027 policy chain 34.84%; delta -1.15pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last_pin,2027Q2,4028.9807,ws06_v2b_base,33.7962896745257,1361.6459883027335,36.10334123029164,FY2027 policy chain 34.84%; delta -1.15pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last_pin,2027Q3,5280.7325,ws06_v2b_base,48.931648895250774,2583.9494859973984,36.10334123029164,FY2027 policy chain 34.84%; delta -1.15pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,base,last_pin,2027Q4,3465.7641,ws06_v2b_base,29.214963014587447,1012.5216999878495,36.10334123029164,FY2027 policy chain 34.84%; delta -1.15pp on m[q-4]; rev[ws06_v2b_base]
+2026-09-11,bear,rw_hl4,2026Q3,4755.0,ws06_v2b_bear,52.61301247174591,2501.748743031518,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.53pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4,2026Q4,3123.807,ws06_v2b_bear,30.82127888735574,962.7972673727406,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.53pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4,2027Q1,2995.1629,ws06_v2b_bear,19.292952637828037,577.8553597227967,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4,2027Q2,3803.7239,ws06_v2b_bear,34.86292907389493,1326.0895654237902,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4,2027Q3,4936.538,ws06_v2b_bear,52.52583068089583,2592.957591378081,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4,2027Q4,3212.9091,ws06_v2b_bear,30.734097096505657,987.4586024164661,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,equal,2026Q3,4755.0,ws06_v2b_bear,55.37496655617798,2633.079659746263,38.56145051708278,"FY2026 floor 35.50% + cushion +3.06pp (equal, n4, AUG) = 38.56%; delta on m[q-4]; delta +5.29pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,equal,2026Q4,3123.807,ws06_v2b_bear,33.58323297178781,1049.0753823990156,38.56145051708278,"FY2026 floor 35.50% + cushion +3.06pp (equal, n4, AUG) = 38.56%; delta on m[q-4]; delta +5.29pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,equal,2027Q1,2995.1629,ws06_v2b_bear,20.85403698854468,624.6123790331675,38.56145051708278,FY2027 policy chain 39.76%; delta +1.47pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,equal,2027Q2,3803.7239,ws06_v2b_bear,36.42401342461157,1385.4689039711589,38.56145051708278,FY2027 policy chain 39.76%; delta +1.47pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,equal,2027Q3,4936.538,ws06_v2b_bear,56.84886911604454,2806.3660264838027,38.56145051708278,FY2027 policy chain 39.76%; delta +1.47pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,equal,2027Q4,3212.9091,ws06_v2b_bear,35.05713553165437,1126.3538976958564,38.56145051708278,FY2027 policy chain 39.76%; delta +1.47pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last,2026Q3,4755.0,ws06_v2b_bear,50.955687897327195,2422.942959517908,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; delta +0.87pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,last,2026Q4,3123.807,ws06_v2b_bear,29.163954312937026,911.0256463043286,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; delta +0.87pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,last,2027Q1,2995.1629,ws06_v2b_bear,18.347095454891466,549.5253962924954,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last,2027Q2,3803.7239,ws06_v2b_bear,33.91707189095836,1290.111769696565,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last,2027Q3,4936.538,ws06_v2b_bear,49.92264892354054,2464.4505347171694,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last,2027Q4,3212.9091,ws06_v2b_bear,28.130915339150373,903.8207388448583,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion,2026Q3,4755.0,ws06_v2b_bear,49.87097899631925,2371.3650512749805,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.21pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,nocushion,2026Q4,3123.807,ws06_v2b_bear,28.079245411929083,877.1414337250194,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.21pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,nocushion,2027Q1,2995.1629,ws06_v2b_bear,17.73176838326316,531.0953481294279,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion,2027Q2,3803.7239,ws06_v2b_bear,33.301744819330054,1266.706426809869,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion,2027Q3,4936.538,ws06_v2b_bear,48.22261295090429,2380.5276129143117,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion,2027Q4,3212.9091,ws06_v2b_bear,26.430879366514123,849.2001283767545,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_prorata,2026Q3,4755.0,ws06_v2b_bear,52.33232206687459,2488.4019142798866,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; prorata shares FY2023-25; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4_prorata,2026Q4,3123.807,ws06_v2b_bear,31.248540518808365,976.144096124372,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; prorata shares FY2023-25; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4_prorata,2027Q1,2995.1629,ws06_v2b_bear,19.293814678119208,577.8811792337809,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_prorata,2027Q2,3803.7239,ws06_v2b_bear,34.86379111418611,1326.1223550563732,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_prorata,2027Q3,4936.538,ws06_v2b_bear,52.24600231631568,2579.1437578258037,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_prorata,2027Q4,3212.9091,ws06_v2b_bear,31.162220768249455,1001.2138268251766,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_pin,2026Q3,4755.0,ws06_v2b_bear,50.085470085470085,2381.5641025641025,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +6.37pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4_pin,2026Q4,3123.807,ws06_v2b_bear,34.668656157059516,1082.981907840156,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +6.37pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4_pin,2027Q1,2995.1629,ws06_v2b_bear,19.300715081206217,578.0878575469935,37.0251850971514,FY2027 policy chain 36.69%; delta -0.08pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_pin,2027Q2,3803.7239,ws06_v2b_bear,34.87069151727311,1326.38482733779,37.0251850971514,FY2027 policy chain 36.69%; delta -0.08pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_pin,2027Q3,4936.538,ws06_v2b_bear,50.00605073799818,2468.56769698056,37.0251850971514,FY2027 policy chain 36.69%; delta -0.08pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_pin,2027Q4,3212.9091,ws06_v2b_bear,34.58923680958761,1111.32073707579,37.0251850971514,FY2027 policy chain 36.69%; delta -0.08pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_revknown,2026Q3,4755.0,ws06_v2b_bear,52.61301247174591,2501.748743031518,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.53pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4_revknown,2026Q4,3123.807,ws06_v2b_bear,30.82127888735574,962.7972673727406,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.53pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,rw_hl4_revknown,2027Q1,2995.1629,ws06_v2b_bear,19.292952637828037,577.8553597227967,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_revknown,2027Q2,3803.7239,ws06_v2b_bear,34.86292907389493,1326.0895654237902,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_revknown,2027Q3,4936.538,ws06_v2b_bear,52.52583068089583,2592.957591378081,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,rw_hl4_revknown,2027Q4,3212.9091,ws06_v2b_bear,30.734097096505657,987.4586024164661,37.0251850971514,FY2027 policy chain 36.69%; delta -0.09pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion_pin,2026Q3,4755.0,ws06_v2b_bear,49.87097899631925,2371.3650512749805,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.21pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,nocushion_pin,2026Q4,3123.807,ws06_v2b_bear,28.079245411929083,877.1414337250194,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.21pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,nocushion_pin,2027Q1,2995.1629,ws06_v2b_bear,17.73176838326316,531.0953481294279,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion_pin,2027Q2,3803.7239,ws06_v2b_bear,33.301744819330054,1266.706426809869,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion_pin,2027Q3,4936.538,ws06_v2b_bear,48.22261295090429,2380.5276129143117,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,nocushion_pin,2027Q4,3212.9091,ws06_v2b_bear,26.430879366514123,849.2001283767545,35.5,FY2027 policy chain 33.63%; delta -1.65pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last_pin,2026Q3,4755.0,ws06_v2b_bear,50.085470085470085,2381.5641025641025,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +2.19pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,last_pin,2026Q4,3123.807,ws06_v2b_bear,30.488583425868963,952.4045032581345,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +2.19pp; rev[ws06_v2b_bear]"
+2026-09-11,bear,last_pin,2027Q1,2995.1629,ws06_v2b_bear,18.349768017981958,549.6054439106608,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last_pin,2027Q2,3803.7239,ws06_v2b_bear,33.91974445404885,1290.2134266175808,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last_pin,2027Q3,4936.538,ws06_v2b_bear,49.055103674773925,2421.623833844611,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bear,last_pin,2027Q4,3212.9091,ws06_v2b_bear,29.458217015172803,946.4657351782354,36.10334123029164,FY2027 policy chain 34.84%; delta -1.03pp on m[q-4]; rev[ws06_v2b_bear]
+2026-09-11,bull,rw_hl4,2026Q3,4878.0,ws06_v2b_bull,52.456177727317794,2558.812349538562,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.37pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4,2026Q4,3227.9366,ws06_v2b_bull,30.66444414292763,989.8288156761172,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.37pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4,2027Q1,3119.9376,ws06_v2b_bull,19.13371250853209,596.9598908295959,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4,2027Q2,4189.9054,ws06_v2b_bull,34.70368894459898,1454.0517370889556,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4,2027Q3,5559.9477,ws06_v2b_bull,52.20975580717176,2902.835117176463,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4,2027Q4,3700.9529,ws06_v2b_bull,30.418022222781598,1125.7566755766802,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,equal,2026Q3,4878.0,ws06_v2b_bull,55.18378782538158,2691.8651701221133,38.56145051708278,"FY2026 floor 35.50% + cushion +3.06pp (equal, n4, AUG) = 38.56%; delta on m[q-4]; delta +5.10pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,equal,2026Q4,3227.9366,ws06_v2b_bull,33.392054240991406,1077.874340336814,38.56145051708278,"FY2026 floor 35.50% + cushion +3.06pp (equal, n4, AUG) = 38.56%; delta on m[q-4]; delta +5.10pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,equal,2027Q1,3119.9376,ws06_v2b_bull,20.676162218083604,645.0833592789844,38.56145051708278,FY2027 policy chain 39.76%; delta +1.30pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,equal,2027Q2,4189.9054,ws06_v2b_bull,36.2461386541505,1518.678920761739,38.56145051708278,FY2027 policy chain 39.76%; delta +1.30pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,equal,2027Q3,5559.9477,ws06_v2b_bull,56.479815614787064,3140.248209238594,38.56145051708278,FY2027 policy chain 39.76%; delta +1.30pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,equal,2027Q4,3700.9529,ws06_v2b_bull,34.68808203039689,1283.789577858353,38.56145051708278,FY2027 policy chain 39.76%; delta +1.30pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last,2026Q3,4878.0,ws06_v2b_bull,50.81946143632872,2478.9733288641155,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; delta +0.73pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,last,2026Q4,3227.9366,ws06_v2b_bull,29.027727851938554,936.9966514811184,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; delta +0.73pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,last,2027Q1,3119.9376,ws06_v2b_bull,18.19903713665911,567.798602464591,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last,2027Q2,4189.9054,ws06_v2b_bull,33.769013572726,1414.8897232103795,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last,2027Q3,5559.9477,ws06_v2b_bull,49.63836414430971,2759.867085559172,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last,2027Q4,3700.9529,ws06_v2b_bull,27.846630559919546,1030.5906812596286,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion,2026Q3,4878.0,ws06_v2b_bull,49.74824053206908,2426.71917315433,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.34pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,nocushion,2026Q4,3227.9366,ws06_v2b_bull,27.956506947678918,902.4183198456706,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.34pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,nocushion,2027Q1,3119.9376,ws06_v2b_bull,17.59102849268057,548.8291121698544,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion,2027Q2,4189.9054,ws06_v2b_bull,33.16100492874747,1389.4147362038561,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion,2027Q3,5559.9477,ws06_v2b_bull,47.959134596071536,2666.5028009141834,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion,2027Q4,3700.9529,ws06_v2b_bull,26.16740101168137,968.443186596451,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_prorata,2026Q3,4878.0,ws06_v2b_bull,52.250985214902464,2548.803058782942,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; prorata shares FY2023-25; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4_prorata,2026Q4,3227.9366,ws06_v2b_bull,30.974527394117235,999.8381064317365,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; prorata shares FY2023-25; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4_prorata,2027Q1,3119.9376,ws06_v2b_bull,19.133305534021254,596.9471934788099,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_prorata,2027Q2,4189.9054,ws06_v2b_bull,34.70328197008815,1454.0346852419498,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_prorata,2027Q3,5559.9477,ws06_v2b_bull,52.0041563202456,2891.4038932318995,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_prorata,2027Q4,3700.9529,ws06_v2b_bull,30.72769849946037,1137.2176487190352,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_pin,2026Q3,4878.0,ws06_v2b_bull,50.085470085470085,2443.1692307692306,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +5.95pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4_pin,2026Q4,3227.9366,ws06_v2b_bull,34.24701508838335,1105.4719344454484,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +5.95pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4_pin,2027Q1,3119.9376,ws06_v2b_bull,19.12901049688691,596.8131910003216,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_pin,2027Q2,4189.9054,ws06_v2b_bull,34.69898693295381,1453.8547272491257,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_pin,2027Q3,5559.9477,ws06_v2b_bull,49.83434615367888,2770.763582781507,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_pin,2027Q4,3700.9529,ws06_v2b_bull,33.995891156592144,1258.1719196407407,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_revknown,2026Q3,4878.0,ws06_v2b_bull,52.456177727317794,2558.812349538562,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.37pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4_revknown,2026Q4,3227.9366,ws06_v2b_bull,30.66444414292763,989.8288156761172,37.0251850971514,"FY2026 floor 35.50% + cushion +1.53pp (rw_hl4, n4, AUG) = 37.03%; delta on m[q-4]; delta +2.37pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,rw_hl4_revknown,2027Q1,3119.9376,ws06_v2b_bull,19.13371250853209,596.9598908295959,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_revknown,2027Q2,4189.9054,ws06_v2b_bull,34.70368894459898,1454.0517370889556,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_revknown,2027Q3,5559.9477,ws06_v2b_bull,52.20975580717176,2902.835117176463,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,rw_hl4_revknown,2027Q4,3700.9529,ws06_v2b_bull,30.418022222781598,1125.7566755766802,37.0251850971514,FY2027 policy chain 36.69%; delta -0.25pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion_pin,2026Q3,4878.0,ws06_v2b_bull,49.74824053206908,2426.71917315433,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.34pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,nocushion_pin,2026Q4,3227.9366,ws06_v2b_bull,27.956506947678918,902.4183198456706,35.5,"FY2026 floor 35.50% + cushion +0.00pp (zero, n0, AUG) = 35.50%; delta on m[q-4]; delta -0.34pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,nocushion_pin,2027Q1,3119.9376,ws06_v2b_bull,17.59102849268057,548.8291121698544,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion_pin,2027Q2,4189.9054,ws06_v2b_bull,33.16100492874747,1389.4147362038561,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion_pin,2027Q3,5559.9477,ws06_v2b_bull,47.959134596071536,2666.5028009141834,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,nocushion_pin,2027Q4,3700.9529,ws06_v2b_bull,26.16740101168137,968.443186596451,35.5,FY2027 policy chain 33.63%; delta -1.79pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last_pin,2026Q3,4878.0,ws06_v2b_bull,50.085470085470085,2443.1692307692306,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +1.84pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,last_pin,2026Q4,3227.9366,ws06_v2b_bull,30.136922440670077,972.8007495760028,36.10334123029164,"FY2026 floor 35.50% + cushion +0.60pp (last FY2025, n4, AUG) = 36.10%; delta on m[q-4]; 2026Q3 pinned by ceiling sentence at 50.09; delta +1.84pp; rev[ws06_v2b_bull]"
+2026-09-11,bull,last_pin,2027Q1,3119.9376,ws06_v2b_bull,18.197581353660702,567.7531829434492,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last_pin,2027Q2,4189.9054,ws06_v2b_bull,33.7675577897276,1414.828727279917,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last_pin,2027Q3,5559.9477,ws06_v2b_bull,48.90291701045267,2718.976609555572,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]
+2026-09-11,bull,last_pin,2027Q4,3700.9529,ws06_v2b_bull,28.95436936565266,1071.5875727148339,36.10334123029164,FY2027 policy chain 34.84%; delta -1.18pp on m[q-4]; rev[ws06_v2b_bull]

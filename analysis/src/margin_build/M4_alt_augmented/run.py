@@ -350,10 +350,15 @@ def forecast_aug(vd, line: str, sigs: list, p: dict, brows: list, h: pd.DataFram
 
 
 def run_spec(spec_id: str, line: str | None, sigdefs: list, weighting: str, ridge: bool = False, replays=("PIT", "full_sample"),
-             vintages=None, live: bool = True, h_back: int | None = None) -> tuple[list, list]:
+             vintages=None, live: bool = True, h_back: int | None = None, assume_known: bool = False) -> tuple[list, list]:
     """All forecast rows (backtest at every vintage, LIVE base/bear/bull) for one spec. `sigdefs` = [(name, transform, lead)].
-    line None = the `none` spec (M1 rows relabelled)."""
+    line None = the `none` spec (M1 rows relabelled).
+    `assume_known=True` switches OFF the knowable_from gate. It is used ONLY for the leakage placebos: with the gate on,
+    an unknowable alignment simply reverts to M1 and every placebo IV is exactly 1.000, which demonstrates nothing.
+    Disabling the gate is what a careless analyst would do, and that is the thing the placebo is meant to price."""
     sigs = [(f"{name}@{lead}", *shifted(*signal_change(name, tr), lead)) for name, tr, lead in sigdefs]
+    if assume_known:
+        sigs = [(nm, xs, pd.Series([FAR_PAST] * len(ALL_Q), index=ALL_Q, dtype=object)) for nm, xs, ks in sigs]
     rows, prow = [], []
     vints = vintages or VINTAGES
     full_p = None
@@ -461,7 +466,8 @@ def main() -> int:
     spec_rows = {}
     for line, sig, sign, tr, lead, kind in grid_specs:
         sid = f"{line}|{sig}@{lead}"
-        rows, prow = run_spec(sid, line, [(sig, tr, lead)], "rw", live=False, h_back=2)
+        rows, prow = run_spec(sid, line, [(sig, tr, lead)], "rw", live=False, h_back=2, replays=("PIT",),
+                              assume_known=(kind != "test"))
         spec_rows[sid] = rows
         for p in prow:
             all_params.append({**p, "kind": kind, "signal": sig, "lead": lead, "expected_sign": sign})
@@ -484,6 +490,8 @@ def main() -> int:
                           c_full=r0["c_full"], t_full=r0["t_full"], n_obs_live=r0["n_obs_live"], sign_ok=bool(r0["sign_ok"]),
                           **{f"iv_h0_{k}": v for k, v in vals.items()},
                           **{f"iv_h1_{r.window}_{w}": getattr(r, f"iv_{w}") for r in h1.itertuples() for w in ("eq", "rw")},
+                          **{f"n_signal_used_h0_{r.window}": int(r.n_signal_used) for r in
+                             ivs[(ivs["spec_id"] == sid) & (ivs["horizon_q"] == 0)].itertuples()},
                           iv_margin_h0_W1_rw=float(ivs[(ivs["spec_id"] == sid) & (ivs["horizon_q"] == 0) & (ivs["window"] == "W1")]["iv_margin_rw"].iloc[0]),
                           iv_margin_h0_W2_rw=float(ivs[(ivs["spec_id"] == sid) & (ivs["horizon_q"] == 0) & (ivs["window"] == "W2")]["iv_margin_rw"].iloc[0]),
                           iv_pass=ok, survives=bool(ok and r0["sign_ok"] and kind == "test")))
@@ -539,6 +547,8 @@ def main() -> int:
     best = cand.sort_values("sel_score").groupby("line").head(1).set_index("line")
     best_sigdefs = {ln: [(best.loc[ln, "signal"], next(t for l, s, _, t in SIGNALS if l == ln and s == best.loc[ln, "signal"]),
                           int(best.loc[ln, "lead"]))] for ln in LINES if ln in best.index}
+    for ln in LINES:
+        best_sigdefs.setdefault(ln, [])          # a line with no usable candidate stays pure M1
     best.to_csv(OUT / "M4_alt_augmented_best1_selection.csv")
     print("  best1 per line: " + "; ".join(f"{ln}: {v[0][0]}@{v[0][2]} (score {best.loc[ln,'sel_score']:.3f})" for ln, v in best_sigdefs.items()))
 

@@ -13,20 +13,31 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 2.04 | 1.59 | 2.69 | -0.29 | 0.22 | 0.911 | 0.830 | 1.280 | 1.52 | 0.93 | 15 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 2.05 | 1.52 | 2.45 | -1.68 | -0.80 | 0.916 | 0.795 | 1.286 | 1.79 | 0.93 | 2 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 2.07 | 1.53 | 2.65 | -1.82 | -1.03 | 0.924 | 0.798 | 1.298 | 1.86 | 0.93 | 2 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 2.18 | 1.58 | 2.66 | -0.33 | -0.05 | 0.976 | 0.827 | 1.371 | 1.59 | 0.93 | 37 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 2.18 | 1.64 | 3.43 | 0.85 | 0.62 | 0.976 | 0.856 | 1.371 | 2.22 | 0.93 | 2 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 2.19 | 1.67 | 2.50 | 0.11 | 0.37 | 0.981 | 0.875 | 1.378 | 1.43 | 0.93 | 12 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 2.20 | 1.55 | 2.58 | 0.19 | 0.40 | 0.984 | 0.812 | 1.382 | 1.50 | 0.93 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 2.21 | 1.64 | 3.53 | 0.40 | 0.11 | 0.988 | 0.858 | 1.388 | 2.23 | 0.93 | 1 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 2.21 | 1.63 | 2.69 | -0.28 | 0.08 | 0.990 | 0.851 | 1.391 | 1.61 | 0.93 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 2.21 | 1.63 | 2.69 | -0.28 | 0.08 | 0.990 | 0.851 | 1.391 | 1.61 | 0.93 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 2.23 | 1.83 | 2.68 | -2.01 | -1.77 | 0.997 | 0.958 | 1.401 | 1.77 | 1.00 | 1 | False | False |
 | baselines-margin | q_guide_implied | W1 | 0 | PIT | 14 | 2.24 | 1.91 | 2.85 | -0.47 | -0.02 | 1.000 | 1.000 | 1.405 | 1.59 | 0.86 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 2.24 | 1.91 | 2.85 | -0.47 | -0.02 | 1.000 | 1.000 | 1.405 | 2.17 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 2.24 | 1.91 | 2.85 | -0.47 | -0.02 | 1.000 | 1.000 | 1.405 | 2.17 | 1.00 | 2 | False | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 2.24 | 1.67 | 2.62 | -0.10 | 0.06 | 1.001 | 0.876 | 1.406 | 1.53 | 0.93 | 12 | False | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 2.24 | 1.66 | 2.63 | 0.17 | 0.52 | 1.003 | 0.868 | 1.409 | 1.57 | 1.00 | 12 | False | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 2.25 | 1.68 | 2.59 | 0.12 | 0.28 | 1.004 | 0.879 | 1.410 | 1.51 | 0.93 | 11 | False | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 2.25 | 1.70 | 2.62 | -0.15 | -0.04 | 1.005 | 0.888 | 1.412 | 1.53 | 0.93 | 37 | False | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 2.26 | 1.67 | 2.65 | -0.08 | 0.10 | 1.010 | 0.871 | 1.419 | 1.53 | 0.93 | 10 | False | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 2.26 | 1.67 | 2.65 | -0.08 | 0.10 | 1.010 | 0.871 | 1.419 | 1.53 | 0.93 | 10 | False | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 2.27 | 1.49 | 3.11 | 1.02 | 0.46 | 1.014 | 0.777 | 1.425 | 1.74 | 0.93 | 7 | False | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 2.28 | 1.68 | 2.74 | -0.30 | -0.11 | 1.020 | 0.878 | 1.434 | 1.67 | 0.93 | 7 | False | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 2.30 | 1.70 | 2.68 | -0.06 | 0.06 | 1.029 | 0.890 | 1.446 | 1.58 | 0.93 | 7 | False | True |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 2.38 | 1.98 | 3.06 | 0.26 | -0.17 | 1.066 | 1.036 | 1.498 | 2.06 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 2.39 | 1.95 | 2.99 | -2.15 | -1.88 | 1.069 | 1.018 | 1.502 | 2.80 | 1.00 | 1 | False | False |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 2.42 | 1.79 | 3.13 | 0.48 | 0.31 | 1.080 | 0.936 | 1.518 | 1.84 | 0.93 | 7 | False | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 2.43 | 2.05 | 2.73 | -0.46 | -0.61 | 1.087 | 1.074 | 1.527 | 1.62 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 2.44 | 2.07 | 2.82 | -0.85 | -0.90 | 1.093 | 1.083 | 1.535 | 1.72 | 1.00 | 15 | False | False |
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 2.53 | 2.03 | 3.06 | -2.10 | -1.31 | 1.131 | 1.063 | 1.589 | 2.11 | 0.93 | 2 | False | False |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 2.54 | 1.90 | 3.26 | 0.59 | 0.43 | 1.135 | 0.993 | 1.595 | 1.93 | 1.00 | 7 | False | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 2.55 | 1.74 | 2.96 | 0.35 | 0.30 | 1.142 | 0.911 | 1.604 | 1.69 | 0.93 | 14 | False | True |
@@ -39,35 +50,51 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W1 | 0 | PIT | 14 | 2.77 | 2.23 | 3.44 | 0.59 | 0.21 | 1.238 | 1.164 | 1.740 | 1.96 | 0.86 | 3 | False | False |
 | margin-ts | ensemble_simple | W1 | 0 | PIT | 14 | 2.78 | 2.10 | 3.33 | 0.57 | 0.10 | 1.243 | 1.096 | 1.746 | 2.19 | 1.00 | 5 | False | False |
 | margin-ts | incremental_margin | W1 | 0 | PIT | 14 | 2.85 | 2.27 | 3.57 | 0.56 | 0.17 | 1.276 | 1.185 | 1.793 | 2.05 | 0.86 | 3 | False | False |
+| guide-policy-margin | q4_implied | W1 | 0 | PIT | 3 | 2.87 | 2.13 | 3.27 | -2.87 | -2.13 | 0.739 | 0.687 | 1.731 | 1.89 | 0.67 | 0 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 2.92 | 2.58 | 3.37 | 0.27 | -0.27 | 1.307 | 1.349 | 1.836 | 3.09 | 1.00 | 3 | False | False |
 | margin-ts | incremental_margin | W1 | 0 | PIT | 14 | 2.95 | 2.29 | 3.64 | 0.70 | 0.32 | 1.321 | 1.195 | 1.856 | 2.08 | 0.86 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 2.96 | 2.31 | 3.27 | 0.36 | 0.09 | 1.322 | 1.207 | 1.857 | 1.95 | 0.71 | 4 | False | False |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 2.99 | 2.65 | 3.43 | 0.27 | -0.28 | 1.337 | 1.383 | 1.879 | 3.32 | 1.00 | 3 | False | False |
 | margin-ts | ensemble_simple | W1 | 0 | PIT | 14 | 3.00 | 2.17 | 3.70 | 0.95 | 0.23 | 1.340 | 1.137 | 1.883 | 2.29 | 0.93 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 3.49 | 2.00 | 5.13 | 1.79 | 0.70 | 1.561 | 1.048 | 2.194 | 3.79 | 1.00 | 1 | False | False |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 3.61 | 2.53 | 4.50 | 1.88 | 0.74 | 1.613 | 1.325 | 2.266 | 2.68 | 0.79 | 4 | False | False |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 3.68 | 2.71 | 4.40 | 1.19 | 0.19 | 1.643 | 1.414 | 2.309 | 3.03 | 1.00 | 3 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 3.78 | 2.75 | 4.79 | 1.55 | 0.25 | 1.690 | 1.437 | 2.375 | 3.41 | 0.93 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 3.78 | 2.75 | 4.79 | 1.55 | 0.25 | 1.690 | 1.437 | 2.375 | 3.41 | 0.93 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 3.83 | 2.30 | 5.24 | 2.81 | 1.79 | 1.713 | 1.202 | 2.406 | 3.88 | 1.00 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 3.90 | 2.35 | 5.33 | 2.92 | 1.85 | 1.742 | 1.227 | 2.447 | 3.88 | 1.00 | 2 | False | False |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 3.91 | 2.79 | 4.80 | 1.42 | 0.30 | 1.748 | 1.457 | 2.457 | 3.32 | 1.00 | 3 | False | False |
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 3.97 | 1.85 | 7.54 | -3.25 | -1.38 | 1.775 | 0.966 | 2.494 | 5.03 | 1.00 | 2 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 4.02 | 2.83 | 5.24 | 1.81 | 0.38 | 1.796 | 1.482 | 2.524 | 3.72 | 0.93 | 7 | False | False |
 | baselines-margin | guide_implied | W1 | 0 | PIT | 14 | 4.38 | 3.27 | 5.51 | -4.38 | -3.27 | 1.958 | 1.711 | 2.751 | 3.15 | 0.79 | 4 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 4.58 | 3.42 | 5.62 | 3.69 | 2.98 | 2.046 | 1.787 | 2.875 | 4.08 | 1.00 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 4.60 | 3.29 | 6.37 | -0.30 | -0.06 | 2.056 | 1.719 | 2.890 | 3.91 | 0.86 | 5 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 5.94 | 3.47 | 9.65 | 5.17 | 1.86 | 2.655 | 1.814 | 3.730 | 5.77 | 0.86 | 7 | False | False |
 | baselines-margin | trailing4 | W1 | 0 | PIT | 14 | 9.48 | 8.49 | 12.10 | 0.64 | 1.21 | 4.236 | 4.440 | 5.953 | 6.93 | 0.79 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 1.29 | 1.13 | 1.76 | -0.26 | -0.09 | 0.576 | 0.589 | 0.809 | 1.77 | 1.00 | 2 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 1.46 | 1.15 | 2.01 | -1.07 | -0.55 | 0.654 | 0.600 | 0.919 | 3.27 | 1.00 | 2 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 1.48 | 1.17 | 1.96 | -1.17 | -0.64 | 0.663 | 0.613 | 0.932 | 1.44 | 1.00 | 2 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 1.49 | 1.18 | 1.95 | -1.20 | -0.66 | 0.666 | 0.617 | 0.935 | 1.43 | 1.00 | 2 | True | True |
 | baselines-margin | street | W1 | 0 | full_sample | 14 | 1.59 | 1.25 | 2.00 | -1.22 | -1.10 | 0.712 | 0.654 | 1.000 | 1.32 | 1.00 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 1.64 | 1.18 | 2.16 | 0.24 | 0.26 | 0.734 | 0.617 | 1.032 | 2.99 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 1.65 | 1.20 | 2.15 | 0.34 | 0.32 | 0.738 | 0.629 | 1.038 | 2.95 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 1.68 | 1.65 | 1.98 | 0.15 | -0.51 | 0.751 | 0.865 | 1.056 | 1.82 | 1.00 | 5 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 1.73 | 1.33 | 2.27 | -1.50 | -1.26 | 0.772 | 0.696 | 1.085 | 1.87 | 1.00 | 1 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 1.82 | 1.62 | 2.14 | -1.57 | -0.99 | 0.816 | 0.846 | 1.146 | 1.53 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 1.87 | 1.30 | 2.53 | -1.43 | -1.17 | 0.834 | 0.677 | 1.172 | 2.99 | 1.00 | 1 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 1.88 | 1.31 | 2.34 | -0.17 | 0.02 | 0.841 | 0.685 | 1.182 | 1.30 | 0.79 | 10 | True | True |
 | margin-ts | ensemble_simple | W1 | 0 | full_sample | 14 | 1.96 | 1.44 | 2.87 | -1.23 | -0.55 | 0.877 | 0.751 | 1.232 | 2.11 | 1.00 | 5 | True | True |
 | margin-ts | ensemble_simple | W1 | 0 | full_sample | 14 | 1.98 | 1.55 | 2.87 | -1.15 | -0.53 | 0.884 | 0.808 | 1.242 | 2.16 | 1.00 | 1 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 2.02 | 1.50 | 2.43 | -0.20 | 0.03 | 0.902 | 0.785 | 1.267 | 1.36 | 0.71 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 2.04 | 1.62 | 2.38 | -0.15 | -0.22 | 0.910 | 0.849 | 1.279 | 1.34 | 0.86 | 15 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 2.08 | 1.43 | 2.61 | -0.12 | 0.02 | 0.931 | 0.747 | 1.308 | 1.45 | 0.79 | 22 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 2.09 | 1.45 | 2.59 | -0.13 | 0.06 | 0.933 | 0.757 | 1.312 | 1.43 | 0.79 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 2.12 | 1.48 | 2.94 | -1.58 | -0.88 | 0.949 | 0.775 | 1.334 | 1.71 | 0.93 | 7 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 2.13 | 1.57 | 2.55 | 0.14 | 0.38 | 0.954 | 0.819 | 1.341 | 1.43 | 0.79 | 12 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 2.14 | 1.66 | 2.70 | 0.12 | 0.34 | 0.957 | 0.869 | 1.344 | 1.49 | 0.86 | 14 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 2.15 | 1.73 | 2.43 | -0.06 | -0.32 | 0.959 | 0.904 | 1.348 | 1.38 | 0.86 | 15 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 2.16 | 1.60 | 2.62 | -0.27 | -0.02 | 0.964 | 0.837 | 1.355 | 1.45 | 0.86 | 11 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 2.17 | 1.53 | 2.62 | -0.05 | -0.01 | 0.971 | 0.799 | 1.364 | 1.46 | 0.79 | 37 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | full_sample | 14 | 2.17 | 1.93 | 3.03 | -1.13 | -0.68 | 0.972 | 1.012 | 1.366 | 3.15 | 1.00 | 3 | True | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 2.17 | 1.94 | 3.07 | -1.24 | -0.78 | 0.972 | 1.016 | 1.366 | 3.55 | 1.00 | 7 | True | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 2.17 | 1.93 | 2.99 | -1.03 | -0.57 | 0.972 | 1.007 | 1.366 | 3.60 | 1.00 | 7 | True | False |
@@ -75,10 +102,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 2.18 | 1.91 | 2.95 | -0.89 | -0.44 | 0.973 | 1.001 | 1.367 | 3.31 | 1.00 | 7 | True | False |
 | margin-ts | yoy_margin_change | W1 | 0 | full_sample | 14 | 2.19 | 1.91 | 2.92 | -0.82 | -0.37 | 0.978 | 1.001 | 1.374 | 2.89 | 1.00 | 3 | True | False |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 2.19 | 1.55 | 2.64 | -0.05 | -0.06 | 0.978 | 0.812 | 1.374 | 1.48 | 0.79 | 14 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 2.20 | 1.57 | 2.65 | -0.03 | 0.07 | 0.984 | 0.821 | 1.383 | 1.49 | 0.79 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 2.20 | 1.57 | 2.65 | -0.03 | 0.07 | 0.984 | 0.821 | 1.383 | 1.49 | 0.79 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 2.21 | 1.59 | 2.64 | -0.09 | -0.09 | 0.988 | 0.830 | 1.388 | 1.47 | 0.79 | 37 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 2.21 | 1.74 | 2.97 | -0.64 | -0.19 | 0.988 | 0.909 | 1.388 | 1.64 | 0.86 | 3 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | full_sample | 14 | 2.21 | 1.91 | 2.88 | -0.65 | -0.19 | 0.989 | 1.000 | 1.389 | 1.61 | 0.86 | 4 | True | False |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 2.21 | 1.58 | 2.67 | -0.14 | -0.07 | 0.990 | 0.829 | 1.391 | 1.49 | 0.79 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 2.21 | 1.58 | 2.67 | -0.14 | -0.07 | 0.990 | 0.829 | 1.391 | 1.49 | 0.79 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 2.22 | 1.83 | 2.67 | -2.01 | -1.77 | 0.994 | 0.956 | 1.396 | 1.74 | 1.00 | 1 | False | False |
 | baselines-margin | q_guide_implied | W1 | 0 | full_sample | 14 | 2.24 | 1.91 | 2.85 | -0.47 | -0.02 | 1.000 | 1.000 | 1.405 | 1.59 | 0.86 | 1 | False | False |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 2.24 | 1.91 | 2.85 | -0.47 | -0.02 | 1.000 | 1.000 | 1.405 | 2.31 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 2.24 | 1.91 | 2.85 | -0.47 | -0.02 | 1.000 | 1.000 | 1.405 | 2.31 | 1.00 | 2 | False | True |
@@ -90,14 +121,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 2.28 | 1.77 | 3.00 | -0.56 | -0.11 | 1.018 | 0.926 | 1.431 | 1.65 | 0.86 | 3 | False | True |
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 2.32 | 1.82 | 2.91 | -0.04 | 0.41 | 1.039 | 0.954 | 1.459 | 1.64 | 0.79 | 3 | False | True |
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 2.33 | 1.83 | 2.91 | 0.03 | 0.47 | 1.041 | 0.957 | 1.463 | 1.64 | 0.79 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 2.38 | 1.94 | 2.98 | -2.14 | -1.87 | 1.065 | 1.014 | 1.496 | 2.68 | 1.00 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 2.38 | 1.98 | 3.06 | 0.26 | -0.17 | 1.066 | 1.036 | 1.498 | 1.91 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W1 | 0 | full_sample | 14 | 2.42 | 1.94 | 2.89 | 0.67 | 1.13 | 1.081 | 1.016 | 1.518 | 3.18 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 0 | full_sample | 14 | 2.42 | 1.95 | 2.89 | 0.68 | 1.14 | 1.082 | 1.017 | 1.520 | 2.94 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 2.45 | 2.29 | 2.77 | 1.53 | 1.76 | 1.095 | 1.196 | 1.539 | 3.25 | 1.00 | 2 | False | False |
 | baselines-margin | guide_implied | W1 | 0 | full_sample | 14 | 2.54 | 2.55 | 2.91 | -2.00 | -2.40 | 1.136 | 1.333 | 1.596 | 1.66 | 0.93 | 4 | False | False |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 2.64 | 1.97 | 3.51 | -1.60 | -0.48 | 1.179 | 1.028 | 1.656 | 2.03 | 0.86 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 2.76 | 1.82 | 3.85 | -2.15 | -1.04 | 1.233 | 0.952 | 1.733 | 2.15 | 0.79 | 7 | False | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 2.77 | 3.33 | 3.18 | 1.31 | 2.50 | 1.239 | 1.742 | 1.741 | 1.88 | 1.00 | 2 | False | False |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 2.80 | 1.78 | 3.97 | -2.34 | -1.22 | 1.253 | 0.930 | 1.760 | 2.23 | 0.86 | 7 | False | True |
+| guide-policy-margin | q4_implied | W1 | 0 | full_sample | 3 | 2.87 | 2.13 | 3.27 | -2.87 | -2.13 | 0.739 | 0.687 | 1.731 | 2.11 | 0.33 | 1 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 2.90 | 2.35 | 3.60 | 0.37 | -0.02 | 1.295 | 1.227 | 1.820 | 2.02 | 0.93 | 4 | False | False |
 | baselines-margin | trailing4 | W1 | 0 | full_sample | 14 | 9.48 | 8.49 | 12.10 | 0.64 | 1.21 | 4.236 | 4.440 | 5.953 | 6.82 | 0.64 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | PIT | 1 | 0.25 | 0.25 | 0.25 | 0.25 | 0.25 |  |  |  | 3.11 | 1.00 | 2 | False | False |
@@ -110,17 +144,22 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 2.35 | 1.93 | 2.95 | -0.57 | -0.03 | 1.000 | 1.000 | 1.432 | 2.12 | 1.00 | 2 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 2.36 | 1.63 | 2.97 | -0.33 | 0.22 | 1.005 | 0.845 | 1.440 | 1.86 | 0.77 | 10 | False | True |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 2.39 | 1.93 | 2.85 | 1.07 | 1.18 | 1.016 | 0.996 | 1.455 | 1.73 | 0.92 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 2.46 | 2.04 | 3.05 | -2.28 | -1.91 | 1.048 | 1.054 | 1.501 | 1.88 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 2.49 | 2.05 | 3.06 | -2.30 | -1.92 | 1.059 | 1.060 | 1.516 | 1.84 | 1.00 | 1 | False | False |
 | baselines-margin | q_guide_implied | W1 | 1 | PIT | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 1 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 2.56 | 2.17 | 2.98 | 1.16 | 1.35 | 1.090 | 1.122 | 1.561 | 1.91 | 0.92 | 2 | False | False |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 2.58 | 1.88 | 3.08 | -0.06 | 0.46 | 1.097 | 0.973 | 1.571 | 2.02 | 0.77 | 12 | False | True |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 2.61 | 2.14 | 3.03 | 0.82 | 0.89 | 1.111 | 1.106 | 1.591 | 1.84 | 0.92 | 3 | False | False |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 2.79 | 2.40 | 3.20 | 0.33 | 0.41 | 1.186 | 1.241 | 1.699 | 1.88 | 0.92 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 2.83 | 1.78 | 3.94 | 2.36 | 1.06 | 1.203 | 0.918 | 1.722 | 2.70 | 0.92 | 1 | False | True |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 2.86 | 2.34 | 3.31 | 0.67 | 0.70 | 1.217 | 1.208 | 1.742 | 2.00 | 0.85 | 3 | False | False |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 2.88 | 2.36 | 3.31 | 0.05 | -0.10 | 1.227 | 1.220 | 1.757 | 2.29 | 0.85 | 12 | False | False |
 | margin-ts | yoy_margin_change | W1 | 1 | PIT | 13 | 2.95 | 2.39 | 3.39 | 0.35 | 0.16 | 1.254 | 1.234 | 1.796 | 2.20 | 1.00 | 4 | False | False |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 2.95 | 2.39 | 3.40 | 0.54 | 0.55 | 1.256 | 1.234 | 1.798 | 2.05 | 0.77 | 3 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 2.96 | 2.68 | 3.34 | -0.43 | -0.79 | 1.258 | 1.386 | 1.802 | 2.26 | 1.00 | 7 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 2.98 | 2.57 | 3.40 | -0.37 | -0.56 | 1.266 | 1.329 | 1.814 | 2.29 | 0.85 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 2.98 | 2.57 | 3.40 | -0.37 | -0.56 | 1.266 | 1.329 | 1.814 | 2.29 | 0.85 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 2.98 | 2.58 | 3.40 | -0.38 | -0.56 | 1.269 | 1.332 | 1.817 | 2.29 | 0.85 | 37 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 3.00 | 2.93 | 3.78 | 1.42 | 0.38 | 1.278 | 1.514 | 1.831 | 2.25 | 0.92 | 7 | False | False |
 | margin-ts | sarima_margin | W1 | 1 | PIT | 13 | 3.02 | 2.62 | 3.57 | -0.67 | -0.84 | 1.284 | 1.357 | 1.839 | 2.12 | 0.85 | 15 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 3.07 | 2.69 | 4.20 | 1.21 | -0.11 | 1.305 | 1.390 | 1.869 | 2.55 | 0.92 | 7 | False | False |
@@ -129,31 +168,49 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 3.14 | 2.94 | 3.51 | 0.58 | -0.15 | 1.335 | 1.519 | 1.912 | 2.20 | 1.00 | 7 | False | False |
 | margin-ts | ensemble_simple | W1 | 1 | PIT | 13 | 3.15 | 2.69 | 3.44 | 0.58 | 0.12 | 1.339 | 1.391 | 1.918 | 2.68 | 1.00 | 5 | False | False |
 | baselines-margin | guide_implied | W1 | 1 | PIT | 10 | 3.15 | 2.38 | 3.92 | -2.45 | -1.95 | 1.388 | 1.195 | 2.029 | 2.31 | 0.80 | 4 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 3.15 | 2.77 | 3.56 | -0.18 | -0.47 | 1.342 | 1.433 | 1.922 | 2.26 | 0.85 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 3.15 | 2.77 | 3.56 | -0.18 | -0.47 | 1.342 | 1.433 | 1.922 | 2.26 | 0.85 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 3.16 | 2.78 | 3.56 | -0.18 | -0.47 | 1.344 | 1.436 | 1.924 | 2.26 | 0.85 | 37 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 3.17 | 2.80 | 3.57 | -0.19 | -0.48 | 1.348 | 1.447 | 1.930 | 2.26 | 0.85 | 12 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 3.19 | 2.68 | 3.93 | 0.45 | -0.18 | 1.356 | 1.387 | 1.941 | 2.48 | 0.85 | 14 | False | False |
 | margin-ts | sarima_margin | W1 | 1 | PIT | 13 | 3.19 | 2.44 | 4.34 | 2.32 | 1.24 | 1.357 | 1.263 | 1.944 | 2.42 | 0.77 | 4 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 3.20 | 2.81 | 3.59 | 0.04 | -0.26 | 1.362 | 1.450 | 1.951 | 2.25 | 0.85 | 11 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 3.20 | 2.64 | 3.70 | -0.26 | -0.29 | 1.363 | 1.366 | 1.951 | 2.45 | 0.85 | 15 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 3.21 | 3.05 | 3.55 | 0.44 | -0.30 | 1.364 | 1.577 | 1.953 | 2.18 | 1.00 | 7 | False | False |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 3.24 | 2.80 | 3.69 | 0.03 | -0.20 | 1.377 | 1.446 | 1.972 | 2.57 | 1.00 | 22 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 3.27 | 1.89 | 4.85 | 2.83 | 1.24 | 1.391 | 0.980 | 1.992 | 3.42 | 0.85 | 1 | False | True |
 | margin-ts | ensemble_simple | W1 | 1 | PIT | 13 | 3.28 | 2.76 | 3.85 | 0.98 | 0.26 | 1.397 | 1.426 | 2.000 | 2.79 | 0.92 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 3.29 | 2.50 | 5.38 | 2.81 | 1.87 | 1.399 | 1.293 | 2.003 | 3.06 | 0.92 | 5 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 3.37 | 2.87 | 3.81 | -0.09 | -0.30 | 1.432 | 1.482 | 2.050 | 2.42 | 0.85 | 15 | False | False |
 | margin-ts | yoy_margin_change | W1 | 1 | PIT | 13 | 3.59 | 3.03 | 4.24 | 0.29 | -0.19 | 1.526 | 1.568 | 2.185 | 4.02 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 1 | PIT | 13 | 3.61 | 3.07 | 4.24 | 0.28 | -0.21 | 1.537 | 1.585 | 2.202 | 3.76 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 3.71 | 2.59 | 4.54 | 3.62 | 2.48 | 1.578 | 1.338 | 2.260 | 2.94 | 0.92 | 2 | False | False |
 | margin-ts | yoy_margin_change | W1 | 1 | PIT | 13 | 3.73 | 2.90 | 4.56 | 1.27 | 0.36 | 1.585 | 1.499 | 2.271 | 3.79 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 1 | PIT | 13 | 3.83 | 2.88 | 4.81 | 1.52 | 0.50 | 1.629 | 1.490 | 2.332 | 4.14 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 3.85 | 2.69 | 4.66 | 3.77 | 2.60 | 1.639 | 1.391 | 2.347 | 2.99 | 1.00 | 2 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 3.89 | 2.97 | 4.86 | 1.66 | 0.45 | 1.654 | 1.535 | 2.369 | 4.19 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 3.89 | 2.97 | 4.86 | 1.66 | 0.45 | 1.654 | 1.535 | 2.369 | 4.19 | 1.00 | 7 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 3.91 | 3.43 | 4.52 | 0.14 | -0.43 | 1.665 | 1.773 | 2.384 | 2.94 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 4.00 | 2.95 | 5.18 | 1.95 | 0.61 | 1.701 | 1.524 | 2.436 | 4.53 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 4.55 | 3.05 | 5.84 | 4.48 | 2.97 | 1.935 | 1.577 | 2.772 | 3.86 | 0.85 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 4.60 | 3.80 | 5.21 | 4.60 | 3.80 | 1.957 | 1.965 | 2.803 | 3.23 | 0.92 | 2 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 6.22 | 3.79 | 9.49 | 5.59 | 2.46 | 2.647 | 1.961 | 3.791 | 6.06 | 0.85 | 7 | False | False |
 | baselines-margin | trailing4 | W1 | 1 | PIT | 13 | 8.91 | 8.54 | 11.62 | -0.73 | 0.97 | 3.789 | 4.418 | 5.426 | 6.44 | 0.92 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 0.51 | 0.51 | 0.51 | -0.51 | -0.51 |  |  |  | 1.17 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 0.53 | 0.53 | 0.53 | 0.53 | 0.53 |  |  |  | 1.14 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 0.60 | 0.60 | 0.60 | 0.60 | 0.60 |  |  |  | 1.17 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 0.89 | 0.89 | 0.89 | 0.89 | 0.89 |  |  |  | 3.13 | 1.00 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 1.34 | 1.40 | 1.58 | -0.05 | 0.03 | 0.569 | 0.723 | 0.814 | 1.45 | 1.00 | 5 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 1.45 | 1.28 | 1.77 | 0.13 | 0.26 | 0.616 | 0.660 | 0.883 | 1.91 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 1.46 | 1.27 | 1.74 | 0.27 | 0.37 | 0.623 | 0.655 | 0.892 | 1.90 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 1.55 | 1.37 | 1.86 | 0.30 | 0.38 | 0.659 | 0.708 | 0.944 | 2.15 | 1.00 | 2 | True | True |
 | baselines-margin | street | W1 | 1 | full_sample | 13 | 1.64 | 1.25 | 2.17 | -0.66 | -0.34 | 0.698 | 0.647 | 1.000 | 1.53 | 1.00 | 1 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 1.84 | 1.25 | 2.37 | -0.33 | -0.02 | 0.783 | 0.647 | 1.122 | 1.31 | 0.77 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 1.88 | 1.44 | 2.47 | -1.48 | -1.12 | 0.802 | 0.742 | 1.148 | 2.12 | 1.00 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 1.90 | 1.46 | 2.48 | -1.51 | -1.15 | 0.808 | 0.756 | 1.156 | 1.99 | 1.00 | 1 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 1.98 | 1.48 | 2.42 | -0.41 | -0.02 | 0.841 | 0.766 | 1.204 | 1.36 | 0.69 | 12 | True | True |
 | baselines-margin | guide_implied | W1 | 1 | full_sample | 10 | 2.02 | 1.74 | 2.52 | -1.98 | -1.68 | 0.892 | 0.872 | 1.303 | 1.43 | 0.90 | 4 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 2.13 | 2.21 | 2.55 | 1.63 | 1.96 | 0.907 | 1.140 | 1.299 | 2.15 | 1.00 | 2 | False | False |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 2.13 | 1.71 | 2.95 | -0.94 | -0.26 | 0.908 | 0.885 | 1.300 | 1.63 | 0.85 | 3 | True | True |
 | margin-ts | ensemble_simple | W1 | 1 | full_sample | 13 | 2.23 | 1.96 | 3.02 | -1.37 | -0.90 | 0.950 | 1.015 | 1.361 | 2.52 | 1.00 | 5 | True | False |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 2.24 | 1.79 | 2.80 | -0.33 | 0.31 | 0.954 | 0.925 | 1.366 | 1.60 | 0.85 | 3 | False | True |
@@ -172,15 +229,24 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 2.35 | 1.93 | 2.95 | -0.57 | -0.03 | 1.000 | 1.000 | 1.432 | 2.10 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 2.35 | 1.93 | 2.95 | -0.57 | -0.03 | 1.000 | 1.000 | 1.432 | 2.10 | 1.00 | 2 | False | True |
 | margin-ts | yoy_margin_change | W1 | 1 | full_sample | 13 | 2.46 | 1.94 | 2.95 | 0.58 | 1.11 | 1.045 | 1.005 | 1.497 | 3.46 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 2.46 | 2.04 | 3.04 | -2.27 | -1.91 | 1.045 | 1.053 | 1.497 | 1.83 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W1 | 1 | full_sample | 13 | 2.46 | 1.95 | 2.95 | 0.59 | 1.12 | 1.046 | 1.006 | 1.498 | 3.24 | 1.00 | 3 | False | False |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 2.47 | 2.14 | 2.84 | 0.06 | -0.27 | 1.050 | 1.107 | 1.504 | 1.63 | 0.92 | 12 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 2.48 | 2.05 | 3.05 | -2.30 | -1.92 | 1.055 | 1.058 | 1.511 | 1.87 | 1.00 | 1 | False | False |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 2.55 | 2.28 | 2.93 | -0.22 | -0.66 | 1.085 | 1.178 | 1.553 | 1.69 | 0.92 | 12 | False | False |
 | baselines-margin | q_guide_implied | W1 | 1 | full_sample | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.47 | 1.00 | 1 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 2.56 | 2.17 | 2.98 | 1.16 | 1.35 | 1.090 | 1.122 | 1.561 | 1.71 | 0.92 | 2 | False | False |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 2.56 | 2.32 | 3.00 | -0.19 | -0.74 | 1.090 | 1.197 | 1.562 | 1.73 | 0.92 | 22 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 2.61 | 2.38 | 2.92 | 0.09 | -0.34 | 1.110 | 1.231 | 1.590 | 1.69 | 0.92 | 15 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 2.65 | 2.41 | 3.02 | -0.12 | -0.59 | 1.126 | 1.246 | 1.612 | 1.74 | 0.92 | 37 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 2.65 | 2.41 | 3.03 | -0.12 | -0.58 | 1.126 | 1.245 | 1.613 | 1.74 | 0.92 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 2.65 | 2.41 | 3.03 | -0.12 | -0.58 | 1.126 | 1.245 | 1.613 | 1.74 | 0.92 | 10 | False | False |
 | margin-ts | sarima_margin | W1 | 1 | full_sample | 13 | 2.66 | 2.50 | 3.09 | -0.26 | -0.97 | 1.131 | 1.293 | 1.619 | 1.74 | 0.92 | 14 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 2.66 | 2.46 | 3.05 | -0.14 | -0.69 | 1.132 | 1.272 | 1.621 | 1.74 | 0.92 | 14 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 2.68 | 2.50 | 2.95 | -0.26 | -0.66 | 1.141 | 1.290 | 1.634 | 1.70 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 2.70 | 2.49 | 3.05 | -0.23 | -0.70 | 1.147 | 1.286 | 1.643 | 1.75 | 0.92 | 37 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 2.70 | 2.45 | 3.01 | -0.27 | -0.61 | 1.148 | 1.267 | 1.643 | 1.72 | 1.00 | 11 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 2.70 | 2.49 | 3.05 | -0.23 | -0.69 | 1.148 | 1.286 | 1.645 | 1.75 | 0.92 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 2.70 | 2.49 | 3.05 | -0.23 | -0.69 | 1.148 | 1.286 | 1.645 | 1.75 | 0.92 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 2.74 | 2.57 | 3.12 | -0.22 | -0.78 | 1.166 | 1.329 | 1.670 | 1.79 | 0.92 | 7 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 2.75 | 2.51 | 3.13 | -0.25 | -0.68 | 1.171 | 1.299 | 1.676 | 1.79 | 0.92 | 12 | False | False |
@@ -210,16 +276,26 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 2.53 | 2.27 | 3.27 | 1.63 | 0.89 | 1.021 | 1.161 |  | 2.39 | 0.92 | 7 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 2.53 | 2.22 | 3.12 | -0.20 | -0.40 | 1.022 | 1.135 |  | 2.46 | 1.00 | 7 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 2.54 | 2.13 | 3.08 | -0.09 | -0.11 | 1.024 | 1.085 |  | 2.55 | 0.83 | 12 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 2.54 | 2.15 | 3.14 | -0.46 | -0.50 | 1.024 | 1.099 |  | 2.60 | 0.92 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 2.54 | 2.15 | 3.14 | -0.46 | -0.50 | 1.024 | 1.099 |  | 2.60 | 0.92 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 2.54 | 2.16 | 3.15 | -0.47 | -0.51 | 1.026 | 1.101 |  | 2.60 | 0.92 | 37 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 2.59 | 2.21 | 3.26 | 1.15 | 1.42 | 1.047 | 1.127 |  | 2.09 | 1.00 | 2 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 2.60 | 2.29 | 3.04 | 0.39 | -0.15 | 1.048 | 1.168 |  | 2.20 | 1.00 | 14 | False | False |
 | margin-ts | ensemble_simple | W1 | 2 | PIT | 12 | 2.60 | 2.17 | 3.12 | 1.13 | 0.67 | 1.049 | 1.107 |  | 2.74 | 1.00 | 1 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 2.66 | 2.22 | 3.33 | -0.23 | -0.31 | 1.075 | 1.134 |  | 2.53 | 0.92 | 12 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 2.67 | 2.23 | 3.32 | -0.22 | -0.30 | 1.079 | 1.140 |  | 2.53 | 0.92 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 2.67 | 2.23 | 3.32 | -0.22 | -0.30 | 1.079 | 1.140 |  | 2.53 | 0.92 | 11 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 2.67 | 2.23 | 3.32 | -0.22 | -0.30 | 1.079 | 1.140 |  | 2.53 | 0.92 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 2.67 | 2.23 | 3.33 | -0.23 | -0.31 | 1.079 | 1.140 |  | 2.53 | 0.92 | 37 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 2.71 | 2.27 | 3.30 | -0.05 | -0.14 | 1.092 | 1.157 |  | 2.53 | 0.92 | 12 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 2.72 | 2.20 | 3.53 | -0.67 | -0.56 | 1.096 | 1.123 |  | 2.80 | 0.92 | 15 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 2.76 | 2.46 | 3.64 | -2.60 | -2.22 | 1.115 | 1.253 |  | 1.98 | 0.83 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 2.79 | 2.48 | 3.63 | -2.63 | -2.24 | 1.126 | 1.264 |  | 1.98 | 0.92 | 1 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 2.86 | 2.82 | 3.48 | 1.39 | 0.21 | 1.156 | 1.438 |  | 2.64 | 1.00 | 7 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 2.88 | 2.31 | 3.70 | -0.41 | -0.37 | 1.163 | 1.181 |  | 2.75 | 0.83 | 15 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | PIT | 12 | 2.92 | 2.56 | 3.58 | -0.76 | -0.84 | 1.178 | 1.308 |  | 2.15 | 0.67 | 15 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 2.97 | 2.43 | 3.51 | -0.26 | -0.22 | 1.200 | 1.240 |  | 2.97 | 1.00 | 22 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 3.03 | 2.15 | 3.87 | 2.61 | 1.42 | 1.223 | 1.099 |  | 2.44 | 0.75 | 1 | False | False |
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 3.18 | 2.51 | 4.11 | 0.45 | 0.29 | 1.282 | 1.282 |  | 4.42 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 3.19 | 2.52 | 4.14 | 0.44 | 0.27 | 1.288 | 1.288 |  | 4.10 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 3.25 | 2.70 | 3.78 | 1.43 | 0.74 | 1.311 | 1.377 |  | 4.16 | 0.92 | 3 | False | False |
@@ -228,17 +304,36 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 3.32 | 2.82 | 3.92 | 1.69 | 0.88 | 1.341 | 1.439 |  | 4.57 | 0.92 | 3 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 3.46 | 2.85 | 4.27 | 2.17 | 1.05 | 1.396 | 1.455 |  | 4.91 | 0.92 | 7 | False | False |
 | baselines-margin | guide_implied | W1 | 2 | PIT | 6 | 3.48 | 2.29 | 4.16 | 0.60 | 0.51 | 1.097 | 0.837 |  | 2.71 | 0.50 | 4 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 3.53 | 2.33 | 4.50 | 3.10 | 1.61 | 1.423 | 1.191 |  | 2.92 | 0.83 | 1 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 3.63 | 2.79 | 4.67 | 0.30 | 0.01 | 1.465 | 1.422 |  | 3.30 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 3.95 | 3.03 | 4.60 | 3.95 | 3.03 | 1.593 | 1.545 |  | 2.76 | 0.75 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 4.12 | 3.17 | 4.79 | 4.12 | 3.17 | 1.662 | 1.616 |  | 2.82 | 0.75 | 2 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | PIT | 12 | 4.17 | 3.27 | 5.83 | 3.39 | 2.24 | 1.683 | 1.669 |  | 3.38 | 0.67 | 4 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 4.56 | 3.34 | 5.23 | 4.56 | 3.34 | 1.839 | 1.705 |  | 3.22 | 0.83 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 4.92 | 4.36 | 5.37 | 4.92 | 4.36 | 1.988 | 2.224 |  | 3.17 | 0.75 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 5.51 | 3.67 | 7.82 | 5.51 | 3.67 | 2.226 | 1.873 |  | 4.65 | 0.83 | 5 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 6.42 | 3.95 | 8.84 | 6.09 | 3.24 | 2.591 | 2.015 |  | 6.00 | 0.83 | 7 | False | False |
 | baselines-margin | trailing4 | W1 | 2 | PIT | 12 | 9.52 | 8.70 | 12.19 | -0.76 | 1.16 | 3.841 | 4.438 |  | 7.03 | 0.92 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 1.56 | 1.49 | 1.83 | -0.12 | 0.11 | 0.631 | 0.761 |  | 1.87 | 1.00 | 5 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 1.60 | 1.17 | 2.10 | -0.68 | -0.14 | 0.646 | 0.598 |  | 1.14 | 0.83 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 1.73 | 1.60 | 1.89 | 0.10 | 0.23 | 0.700 | 0.817 |  | 1.73 | 1.00 | 2 | True | True |
 | cycle-flex | flex_margin | W1 | 2 | full_sample | 12 | 1.87 | 1.44 | 2.35 | -0.71 | -0.09 | 0.756 | 0.736 |  | 1.30 | 0.75 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 1.88 | 1.66 | 2.07 | -0.05 | 0.17 | 0.760 | 0.845 |  | 1.56 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 1.89 | 1.62 | 2.06 | 0.12 | 0.31 | 0.762 | 0.828 |  | 1.54 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 2.22 | 1.99 | 2.96 | -1.77 | -1.39 | 0.895 | 1.013 |  | 1.93 | 1.00 | 1 | True | False |
 | cycle-flex | flex_margin | W1 | 2 | full_sample | 12 | 2.24 | 2.05 | 2.63 | -0.06 | -0.33 | 0.903 | 1.047 |  | 1.60 | 1.00 | 12 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 2.24 | 2.13 | 2.63 | -0.13 | -0.50 | 0.906 | 1.090 |  | 1.68 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 2.26 | 2.16 | 2.64 | -0.17 | -0.54 | 0.910 | 1.100 |  | 1.69 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 2.26 | 2.16 | 2.64 | -0.17 | -0.54 | 0.910 | 1.100 |  | 1.69 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 2.26 | 2.16 | 2.64 | -0.17 | -0.55 | 0.911 | 1.101 |  | 1.69 | 1.00 | 37 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 2.28 | 2.01 | 3.03 | -1.79 | -1.39 | 0.919 | 1.027 |  | 1.79 | 0.92 | 1 | True | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 2.28 | 2.22 | 2.61 | -0.23 | -0.65 | 0.921 | 1.131 |  | 1.65 | 1.00 | 14 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 2.29 | 2.16 | 2.70 | -0.31 | -0.62 | 0.923 | 1.103 |  | 1.69 | 1.00 | 12 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 2.29 | 2.20 | 2.68 | -0.27 | -0.64 | 0.924 | 1.123 |  | 1.68 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 2.29 | 2.20 | 2.68 | -0.28 | -0.64 | 0.925 | 1.124 |  | 1.68 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 2.29 | 2.20 | 2.68 | -0.28 | -0.64 | 0.925 | 1.124 |  | 1.68 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 2.29 | 2.20 | 2.68 | -0.28 | -0.64 | 0.925 | 1.124 |  | 1.68 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 2.29 | 2.21 | 2.68 | -0.28 | -0.64 | 0.925 | 1.126 |  | 1.68 | 1.00 | 37 | False | False |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 2.30 | 1.75 | 3.07 | -1.03 | -0.27 | 0.927 | 0.891 |  | 1.68 | 0.83 | 3 | True | True |
 | margin-ts | ensemble_simple | W1 | 2 | full_sample | 12 | 2.30 | 1.73 | 3.19 | -1.50 | -0.93 | 0.930 | 0.882 |  | 2.88 | 1.00 | 5 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 2.30 | 1.77 | 2.91 | -0.50 | 0.24 | 0.930 | 0.901 |  | 1.78 | 0.92 | 3 | True | True |
@@ -247,6 +342,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | ensemble_simple | W1 | 2 | full_sample | 12 | 2.36 | 1.82 | 3.17 | -1.42 | -0.86 | 0.951 | 0.926 |  | 2.86 | 1.00 | 1 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 2.37 | 2.34 | 2.75 | -0.30 | -0.76 | 0.955 | 1.195 |  | 1.75 | 1.00 | 7 | False | False |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 2.37 | 1.71 | 3.18 | -1.09 | -0.27 | 0.956 | 0.874 |  | 1.84 | 0.92 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 2.40 | 2.38 | 2.76 | 1.55 | 2.01 | 0.968 | 1.213 |  | 1.79 | 1.00 | 2 | False | False |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 2.41 | 1.71 | 3.27 | -1.25 | -0.40 | 0.971 | 0.875 |  | 1.90 | 0.92 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 2.41 | 1.72 | 3.28 | -1.27 | -0.42 | 0.975 | 0.877 |  | 1.90 | 0.92 | 3 | True | True |
 | cycle-flex | flex_margin | W1 | 2 | full_sample | 12 | 2.42 | 2.35 | 2.73 | -0.34 | -0.72 | 0.978 | 1.201 |  | 1.70 | 1.00 | 12 | False | False |
@@ -265,6 +361,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 2.53 | 2.02 | 3.31 | -1.45 | -0.81 | 1.022 | 1.033 |  | 4.72 | 1.00 | 7 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | full_sample | 12 | 2.59 | 2.67 | 2.86 | -0.35 | -1.02 | 1.044 | 1.360 |  | 1.64 | 0.92 | 14 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 2.59 | 2.21 | 3.26 | 1.15 | 1.42 | 1.047 | 1.127 |  | 1.91 | 0.92 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 2.76 | 2.46 | 3.63 | -2.60 | -2.22 | 1.115 | 1.255 |  | 2.03 | 0.83 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 2.79 | 2.48 | 3.63 | -2.63 | -2.24 | 1.127 | 1.265 |  | 2.03 | 0.83 | 1 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 2.80 | 2.41 | 3.64 | -1.74 | -1.61 | 1.131 | 1.228 |  | 2.41 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 2.92 | 3.20 | 3.22 | -1.45 | -2.09 | 1.179 | 1.631 |  | 2.78 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 3.17 | 2.83 | 3.96 | -2.29 | -2.18 | 1.279 | 1.446 |  | 2.44 | 1.00 | 7 | False | False |
@@ -275,8 +373,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | street | W2 | 0 | PIT | 10 | 1.31 | 1.12 | 1.74 | -1.13 | -1.03 | 0.669 | 0.636 | 1.000 | 1.11 | 1.00 | 1 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 1.31 | 1.18 | 1.66 | 0.67 | 0.40 | 0.670 | 0.670 | 1.000 | 1.24 | 1.00 | 7 | False | True |
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 1.31 | 1.08 | 1.92 | -1.12 | -0.80 | 0.670 | 0.617 | 1.001 | 3.54 | 1.00 | 2 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 1.44 | 1.34 | 1.70 | 0.28 | 0.46 | 0.736 | 0.764 | 1.100 | 1.75 | 1.00 | 2 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 1.45 | 1.21 | 1.64 | 0.38 | 0.42 | 0.740 | 0.690 | 1.105 | 1.10 | 1.00 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 1.48 | 1.34 | 1.97 | -0.35 | -0.11 | 0.755 | 0.766 | 1.128 | 1.77 | 1.00 | 1 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 1.49 | 1.35 | 1.63 | 0.35 | 0.53 | 0.759 | 0.768 | 1.134 | 1.12 | 1.00 | 14 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 1.49 | 1.35 | 2.08 | -0.18 | 0.14 | 0.763 | 0.767 | 1.140 | 3.05 | 1.00 | 1 | False | False |
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 1.54 | 1.32 | 1.89 | -1.02 | -0.53 | 0.786 | 0.753 | 1.174 | 1.41 | 1.00 | 2 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 1.64 | 1.38 | 2.08 | -1.31 | -0.83 | 0.839 | 0.785 | 1.253 | 1.46 | 1.00 | 2 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 1.74 | 1.67 | 2.09 | 1.33 | 1.14 | 0.888 | 0.951 | 1.326 | 1.28 | 1.00 | 3 | False | False |
@@ -284,11 +385,16 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 1.75 | 1.71 | 2.13 | 1.46 | 1.41 | 0.893 | 0.974 | 1.334 | 1.31 | 1.00 | 3 | False | False |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 1.76 | 1.48 | 1.94 | 0.58 | 0.59 | 0.898 | 0.842 | 1.342 | 1.22 | 1.00 | 12 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 1.77 | 1.35 | 2.03 | 0.60 | 0.61 | 0.905 | 0.769 | 1.352 | 1.30 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 1.80 | 1.38 | 2.09 | 0.09 | 0.17 | 0.920 | 0.788 | 1.375 | 1.40 | 1.00 | 37 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 1.81 | 1.46 | 2.06 | 0.58 | 0.74 | 0.922 | 0.831 | 1.377 | 1.39 | 1.00 | 12 | False | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 1.84 | 1.43 | 2.15 | 0.15 | 0.30 | 0.941 | 0.816 | 1.405 | 1.44 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 1.84 | 1.43 | 2.15 | 0.15 | 0.30 | 0.941 | 0.816 | 1.405 | 1.44 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 1.88 | 1.49 | 2.11 | 0.31 | 0.26 | 0.961 | 0.850 | 1.435 | 1.34 | 1.00 | 12 | False | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 1.90 | 1.49 | 2.23 | -0.10 | 0.04 | 0.971 | 0.848 | 1.450 | 1.50 | 1.00 | 7 | False | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 1.90 | 1.52 | 2.12 | 0.25 | 0.15 | 0.972 | 0.867 | 1.452 | 1.34 | 1.00 | 37 | False | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 1.91 | 1.47 | 2.16 | 0.41 | 0.40 | 0.974 | 0.840 | 1.455 | 1.38 | 1.00 | 14 | False | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 1.91 | 1.51 | 2.14 | 0.57 | 0.49 | 0.974 | 0.859 | 1.455 | 1.33 | 1.00 | 11 | False | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 1.91 | 1.48 | 2.16 | 0.34 | 0.31 | 0.975 | 0.845 | 1.457 | 1.35 | 1.00 | 10 | False | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 1.91 | 1.48 | 2.16 | 0.34 | 0.31 | 0.975 | 0.845 | 1.457 | 1.35 | 1.00 | 10 | False | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 1.92 | 1.95 | 2.31 | 0.99 | 0.37 | 0.980 | 1.110 | 1.464 | 1.42 | 1.00 | 3 | False | False |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 1.93 | 1.52 | 2.18 | 0.20 | 0.21 | 0.984 | 0.864 | 1.470 | 1.40 | 1.00 | 7 | False | True |
@@ -297,16 +403,23 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 1.96 | 1.75 | 2.36 | 0.19 | 0.27 | 1.000 | 1.000 | 1.494 | 1.85 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 1.96 | 1.75 | 2.36 | 0.19 | 0.27 | 1.000 | 1.000 | 1.494 | 1.85 | 1.00 | 2 | False | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 1.96 | 1.97 | 2.36 | 0.94 | 0.33 | 1.002 | 1.124 | 1.497 | 1.45 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 1.97 | 1.67 | 2.44 | 1.24 | 1.34 | 1.005 | 0.953 | 1.501 | 3.18 | 1.00 | 2 | False | False |
 | margin-ts | ensemble_simple | W2 | 0 | PIT | 10 | 2.01 | 1.83 | 2.22 | 0.64 | 0.16 | 1.024 | 1.044 | 1.530 | 1.81 | 1.00 | 5 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 2.01 | 1.71 | 2.50 | 1.34 | 1.41 | 1.028 | 0.977 | 1.536 | 3.17 | 1.00 | 2 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 2.02 | 1.85 | 2.66 | 0.54 | -0.07 | 1.031 | 1.052 | 1.541 | 1.78 | 1.00 | 1 | False | False |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 2.05 | 1.98 | 2.49 | 1.07 | 0.49 | 1.047 | 1.129 | 1.564 | 1.49 | 1.00 | 3 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 2.05 | 1.63 | 2.52 | 0.44 | 0.37 | 1.049 | 0.931 | 1.567 | 1.59 | 0.90 | 7 | False | True |
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 2.12 | 1.90 | 2.54 | -1.73 | -1.16 | 1.080 | 1.085 | 1.614 | 1.69 | 1.00 | 2 | False | False |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 2.13 | 1.91 | 2.22 | -0.41 | -0.72 | 1.085 | 1.088 | 1.621 | 1.56 | 1.00 | 15 | False | False |
 | margin-ts | ensemble_simple | W2 | 0 | PIT | 10 | 2.13 | 1.88 | 2.43 | 0.75 | 0.21 | 1.085 | 1.073 | 1.621 | 1.89 | 1.00 | 1 | False | False |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 2.16 | 1.91 | 2.27 | -0.03 | -0.44 | 1.101 | 1.090 | 1.645 | 1.47 | 1.00 | 15 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 2.20 | 1.75 | 2.62 | 0.49 | 0.47 | 1.123 | 0.999 | 1.678 | 1.67 | 1.00 | 7 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 2.33 | 1.79 | 2.80 | -2.33 | -1.79 | 1.189 | 1.021 | 1.777 | 1.60 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 2.36 | 2.08 | 2.51 | 0.50 | 0.19 | 1.206 | 1.183 | 1.801 | 1.51 | 1.00 | 4 | False | False |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 2.42 | 2.15 | 2.87 | 0.83 | 0.44 | 1.236 | 1.223 | 1.846 | 1.78 | 1.00 | 4 | False | False |
+| guide-policy-margin | q4_implied | W2 | 0 | PIT | 2 | 2.47 | 1.88 | 3.05 | -2.47 | -1.88 | 0.993 | 0.748 | 4.069 | 1.74 | 0.50 | 0 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 2.49 | 2.41 | 3.02 | 0.65 | -0.14 | 1.269 | 1.375 | 1.895 | 2.49 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 2.54 | 1.91 | 3.21 | -2.54 | -1.91 | 1.296 | 1.091 | 1.936 | 2.64 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 2.55 | 2.48 | 3.08 | 0.66 | -0.15 | 1.304 | 1.411 | 1.948 | 2.65 | 1.00 | 3 | False | False |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 2.61 | 2.00 | 3.28 | 1.52 | 0.99 | 1.330 | 1.142 | 1.987 | 2.13 | 1.00 | 22 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 2.75 | 2.43 | 3.06 | 0.79 | 0.04 | 1.406 | 1.384 | 2.100 | 2.91 | 1.00 | 7 | False | False |
@@ -315,7 +428,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 2.77 | 2.56 | 3.13 | 1.69 | 0.78 | 1.412 | 1.461 | 2.110 | 3.24 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 2.87 | 2.48 | 3.18 | 0.85 | 0.11 | 1.465 | 1.413 | 2.189 | 3.15 | 1.00 | 7 | False | False |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 2.88 | 2.45 | 3.20 | 0.85 | 0.17 | 1.470 | 1.393 | 2.196 | 2.84 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 3.01 | 2.91 | 3.43 | 2.47 | 2.66 | 1.538 | 1.660 | 2.298 | 3.45 | 1.00 | 2 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 3.04 | 3.25 | 3.18 | 2.05 | 2.67 | 1.550 | 1.852 | 2.315 | 1.95 | 0.90 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 3.49 | 2.86 | 4.79 | -0.56 | -0.17 | 1.781 | 1.629 | 2.661 | 2.89 | 1.00 | 5 | False | False |
 | baselines-margin | guide_implied | W2 | 0 | PIT | 10 | 3.80 | 3.06 | 4.95 | -3.80 | -3.06 | 1.938 | 1.741 | 2.895 | 2.64 | 0.90 | 4 | False | False |
 | baselines-margin | trailing4 | W2 | 0 | PIT | 10 | 8.98 | 8.32 | 11.09 | 1.77 | 1.73 | 4.583 | 4.739 | 6.848 | 6.33 | 0.90 | 2 | False | False |
 | margin-ts | q_sentence_direction | W2 | 0 | full_sample | 10 | 1.19 | 1.01 | 1.63 | -0.64 | -0.34 | 0.609 | 0.575 | 0.909 | 3.21 | 1.00 | 2 | True | True |
@@ -323,10 +438,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | q_sentence_direction | W2 | 0 | full_sample | 10 | 1.23 | 1.05 | 1.63 | -0.82 | -0.48 | 0.627 | 0.599 | 0.937 | 1.33 | 1.00 | 2 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 1.29 | 1.07 | 1.60 | -0.10 | 0.13 | 0.659 | 0.611 | 0.985 | 0.90 | 0.90 | 10 | True | True |
 | baselines-margin | street | W2 | 0 | full_sample | 10 | 1.31 | 1.12 | 1.74 | -1.13 | -1.03 | 0.669 | 0.636 | 1.000 | 1.24 | 1.00 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 1.38 | 1.10 | 1.90 | -0.29 | 0.18 | 0.703 | 0.629 | 1.050 | 2.88 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 1.39 | 1.09 | 1.97 | -0.40 | 0.13 | 0.711 | 0.619 | 1.063 | 2.93 | 1.00 | 2 | True | True |
 | margin-ts | ensemble_simple | W2 | 0 | full_sample | 10 | 1.41 | 1.18 | 1.98 | -0.49 | -0.22 | 0.718 | 0.670 | 1.072 | 1.91 | 1.00 | 5 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 1.43 | 1.14 | 1.99 | -0.57 | -0.15 | 0.730 | 0.652 | 1.090 | 1.82 | 1.00 | 2 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | full_sample | 10 | 1.47 | 1.45 | 1.74 | 0.05 | 0.12 | 0.749 | 0.827 | 1.120 | 1.14 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | full_sample | 10 | 1.51 | 1.46 | 1.82 | -0.06 | 0.03 | 0.771 | 0.833 | 1.151 | 1.17 | 1.00 | 3 | False | True |
 | margin-ts | incremental_margin | W2 | 0 | full_sample | 10 | 1.51 | 1.46 | 1.82 | -0.04 | 0.05 | 0.771 | 0.834 | 1.152 | 1.16 | 1.00 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 1.51 | 1.64 | 1.63 | -0.46 | -0.70 | 0.773 | 0.933 | 1.154 | 1.77 | 1.00 | 5 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | full_sample | 10 | 1.52 | 1.45 | 1.76 | 0.04 | 0.43 | 0.774 | 0.825 | 1.157 | 1.07 | 1.00 | 14 | True | True |
 | margin-ts | ensemble_simple | W2 | 0 | full_sample | 10 | 1.52 | 1.32 | 2.09 | -0.43 | -0.20 | 0.778 | 0.752 | 1.162 | 1.99 | 1.00 | 1 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | full_sample | 10 | 1.53 | 1.48 | 1.80 | 0.10 | 0.20 | 0.779 | 0.845 | 1.165 | 1.12 | 1.00 | 3 | False | True |
@@ -338,19 +457,28 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 1.64 | 1.25 | 2.09 | -0.14 | 0.15 | 0.837 | 0.710 | 1.250 | 1.16 | 0.90 | 12 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | full_sample | 10 | 1.70 | 1.56 | 2.01 | -1.34 | -0.86 | 0.867 | 0.887 | 1.295 | 1.50 | 1.00 | 2 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 1.72 | 1.38 | 2.06 | 0.21 | 0.49 | 0.876 | 0.787 | 1.309 | 1.15 | 0.90 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 1.75 | 1.34 | 2.10 | -0.10 | 0.05 | 0.895 | 0.762 | 1.337 | 1.18 | 0.90 | 37 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 1.78 | 1.38 | 2.13 | -0.05 | 0.15 | 0.906 | 0.785 | 1.354 | 1.19 | 0.90 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 1.78 | 1.38 | 2.13 | -0.05 | 0.15 | 0.906 | 0.785 | 1.354 | 1.19 | 0.90 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 1.78 | 1.28 | 2.42 | -1.77 | -1.28 | 0.909 | 0.732 | 1.358 | 1.89 | 1.00 | 1 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 1.81 | 1.38 | 2.20 | -0.20 | -0.03 | 0.925 | 0.786 | 1.382 | 1.23 | 0.90 | 14 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 1.82 | 1.40 | 2.19 | -0.15 | 0.01 | 0.929 | 0.797 | 1.387 | 1.23 | 0.90 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 1.82 | 1.40 | 2.19 | -0.15 | 0.01 | 0.929 | 0.797 | 1.387 | 1.23 | 0.90 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 1.82 | 1.40 | 2.23 | -0.15 | 0.00 | 0.930 | 0.795 | 1.389 | 1.24 | 0.90 | 12 | False | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 1.82 | 1.41 | 2.16 | -0.12 | -0.03 | 0.930 | 0.801 | 1.390 | 1.21 | 0.90 | 37 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 1.83 | 1.21 | 2.70 | -1.83 | -1.21 | 0.935 | 0.691 | 1.396 | 2.98 | 1.00 | 1 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 1.86 | 1.46 | 2.21 | -0.18 | -0.03 | 0.951 | 0.830 | 1.421 | 1.25 | 0.90 | 7 | False | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 1.87 | 1.44 | 2.24 | -0.06 | 0.13 | 0.954 | 0.819 | 1.425 | 1.25 | 0.90 | 11 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 1.87 | 1.45 | 2.23 | -0.23 | -0.08 | 0.954 | 0.827 | 1.425 | 1.26 | 0.90 | 7 | False | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 1.87 | 1.76 | 2.38 | -0.36 | -0.28 | 0.955 | 1.002 | 1.427 | 3.53 | 1.00 | 7 | True | False |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 1.87 | 1.77 | 2.40 | -0.47 | -0.39 | 0.955 | 1.007 | 1.427 | 3.07 | 1.00 | 3 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 1.87 | 1.78 | 2.42 | -0.57 | -0.49 | 0.955 | 1.012 | 1.427 | 3.48 | 1.00 | 7 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 1.87 | 1.75 | 2.36 | -0.23 | -0.15 | 0.957 | 0.997 | 1.430 | 3.23 | 1.00 | 7 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 1.87 | 1.75 | 2.36 | -0.23 | -0.15 | 0.957 | 0.997 | 1.430 | 3.23 | 1.00 | 7 | True | False |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 1.89 | 1.52 | 2.13 | 0.01 | -0.13 | 0.964 | 0.865 | 1.440 | 1.21 | 0.90 | 15 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 1.89 | 1.75 | 2.36 | -0.16 | -0.08 | 0.964 | 0.997 | 1.441 | 2.82 | 1.00 | 3 | True | False |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 1.92 | 1.75 | 2.35 | 0.02 | 0.10 | 0.982 | 0.999 | 1.467 | 1.38 | 0.90 | 4 | True | False |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 1.93 | 1.61 | 2.10 | -0.07 | -0.29 | 0.985 | 0.920 | 1.471 | 1.21 | 0.90 | 15 | True | True |
 | baselines-margin | q_guide_implied | W2 | 0 | full_sample | 10 | 1.96 | 1.75 | 2.36 | 0.19 | 0.27 | 1.000 | 1.000 | 1.494 | 1.36 | 0.90 | 1 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 1.96 | 1.75 | 2.36 | 0.19 | 0.27 | 1.000 | 1.000 | 1.494 | 2.21 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 1.96 | 1.75 | 2.36 | 0.19 | 0.27 | 1.000 | 1.000 | 1.494 | 2.21 | 1.00 | 2 | False | True |
@@ -360,8 +488,12 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 2.18 | 1.73 | 2.98 | -0.72 | -0.08 | 1.112 | 0.984 | 1.661 | 1.81 | 0.90 | 7 | False | False |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 2.21 | 1.81 | 2.70 | 1.34 | 1.42 | 1.129 | 1.031 | 1.686 | 3.13 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 2.22 | 1.81 | 2.71 | 1.35 | 1.43 | 1.131 | 1.033 | 1.689 | 2.89 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 2.24 | 2.24 | 2.52 | 1.13 | 1.71 | 1.146 | 1.277 | 1.711 | 3.20 | 1.00 | 2 | False | False |
 | margin-ts | sarima_margin | W2 | 0 | full_sample | 10 | 2.26 | 2.17 | 2.63 | 0.47 | 0.04 | 1.155 | 1.235 | 1.725 | 1.61 | 1.00 | 4 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 2.33 | 1.79 | 2.80 | -2.33 | -1.79 | 1.189 | 1.020 | 1.776 | 1.79 | 1.00 | 1 | False | False |
 | baselines-margin | guide_implied | W2 | 0 | full_sample | 10 | 2.41 | 2.50 | 2.72 | -2.35 | -2.48 | 1.230 | 1.427 | 1.838 | 1.57 | 1.00 | 4 | False | False |
+| guide-policy-margin | q4_implied | W2 | 0 | full_sample | 2 | 2.47 | 1.88 | 3.05 | -2.47 | -1.88 | 0.993 | 0.748 | 4.069 | 1.88 | 0.50 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 2.54 | 1.91 | 3.21 | -2.54 | -1.91 | 1.295 | 1.088 | 1.934 | 2.72 | 1.00 | 1 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 3.18 | 3.47 | 3.35 | 2.23 | 2.92 | 1.625 | 1.980 | 2.427 | 1.98 | 1.00 | 2 | False | False |
 | baselines-margin | trailing4 | W2 | 0 | full_sample | 10 | 8.98 | 8.32 | 11.09 | 1.77 | 1.73 | 4.583 | 4.739 | 6.848 | 6.28 | 0.70 | 2 | False | False |
 | margin-ts | q_sentence_direction | W2 | 1 | PIT | 1 | 0.25 | 0.25 | 0.25 | 0.25 | 0.25 |  |  |  | 3.11 | 1.00 | 2 | False | False |
@@ -369,30 +501,44 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | q_sentence_direction | W2 | 1 | PIT | 1 | 0.74 | 0.74 | 0.74 | -0.74 | -0.74 |  |  |  | 1.33 | 1.00 | 2 | False | False |
 | baselines-margin | street | W2 | 1 | PIT | 9 | 0.99 | 0.97 | 1.21 | 0.28 | 0.03 | 0.629 | 0.605 | 1.000 | 1.18 | 1.00 | 1 | True | True |
 | margin-ts | q_sentence_direction | W2 | 1 | PIT | 1 | 1.03 | 1.03 | 1.03 | 1.03 | 1.03 |  |  |  | 1.37 | 1.00 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 1.30 | 1.21 | 1.44 | 0.67 | 0.47 | 0.826 | 0.754 | 1.313 | 2.28 | 1.00 | 1 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 1.32 | 1.24 | 1.45 | 0.65 | 0.43 | 0.839 | 0.777 | 1.333 | 2.08 | 1.00 | 1 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 1.47 | 1.26 | 1.66 | 0.78 | 0.69 | 0.934 | 0.785 | 1.485 | 1.26 | 1.00 | 10 | False | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 1.58 | 1.60 | 1.72 | 0.81 | 0.51 | 1.000 | 1.000 | 1.590 | 1.69 | 1.00 | 2 | False | True |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 1.58 | 1.60 | 1.72 | 0.81 | 0.51 | 1.000 | 1.000 | 1.590 | 1.69 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 1.74 | 1.71 | 1.95 | -1.64 | -1.61 | 1.104 | 1.070 | 1.755 | 1.52 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 1.78 | 1.73 | 1.98 | -1.69 | -1.62 | 1.131 | 1.079 | 1.798 | 1.54 | 1.00 | 1 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 1.79 | 1.54 | 2.01 | 1.12 | 0.95 | 1.136 | 0.961 | 1.806 | 1.40 | 1.00 | 12 | False | True |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 2.03 | 1.80 | 2.43 | 1.81 | 1.46 | 1.288 | 1.124 | 2.048 | 1.53 | 1.00 | 3 | False | False |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 2.11 | 1.83 | 2.48 | 1.74 | 1.28 | 1.336 | 1.142 | 2.124 | 1.55 | 1.00 | 3 | False | False |
 | baselines-margin | guide_implied | W2 | 1 | PIT | 7 | 2.14 | 1.99 | 2.59 | -1.79 | -1.69 | 1.276 | 1.139 | 1.941 | 1.56 | 1.00 | 4 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 2.17 | 2.07 | 2.40 | 0.90 | 0.23 | 1.372 | 1.293 | 2.180 | 2.02 | 1.00 | 12 | False | False |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 2.19 | 1.99 | 2.50 | 1.68 | 1.20 | 1.386 | 1.242 | 2.204 | 1.60 | 1.00 | 3 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 2.24 | 2.28 | 2.52 | 0.46 | -0.24 | 1.419 | 1.426 | 2.256 | 2.05 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 2.24 | 2.28 | 2.52 | 0.46 | -0.24 | 1.419 | 1.426 | 2.256 | 2.05 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 2.25 | 2.29 | 2.52 | 0.45 | -0.25 | 1.425 | 1.430 | 2.264 | 2.05 | 1.00 | 37 | False | False |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 2.29 | 2.22 | 2.57 | 1.38 | 0.77 | 1.448 | 1.387 | 2.302 | 1.58 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W2 | 1 | PIT | 9 | 2.29 | 2.11 | 2.46 | 1.19 | 0.49 | 1.449 | 1.316 | 2.303 | 1.92 | 1.00 | 4 | False | False |
 | margin-ts | sarima_margin | W2 | 1 | PIT | 9 | 2.33 | 2.33 | 2.74 | 0.37 | -0.47 | 1.473 | 1.456 | 2.342 | 1.66 | 1.00 | 14 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 2.34 | 2.30 | 2.63 | 0.85 | 0.13 | 1.485 | 1.435 | 2.360 | 2.10 | 1.00 | 15 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 2.35 | 2.45 | 2.65 | 0.18 | -0.57 | 1.486 | 1.532 | 2.363 | 2.12 | 1.00 | 7 | False | False |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 2.35 | 2.14 | 2.79 | 1.73 | 1.07 | 1.490 | 1.337 | 2.368 | 1.72 | 1.00 | 3 | False | False |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 2.42 | 2.18 | 2.77 | 1.62 | 0.91 | 1.533 | 1.363 | 2.436 | 1.73 | 1.00 | 3 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 2.43 | 2.34 | 2.72 | 0.89 | 0.08 | 1.540 | 1.459 | 2.447 | 1.96 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 2.49 | 2.43 | 2.81 | 0.75 | -0.06 | 1.579 | 1.518 | 2.510 | 1.95 | 1.00 | 14 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 2.52 | 2.57 | 2.86 | 0.51 | -0.32 | 1.599 | 1.606 | 2.541 | 2.04 | 1.00 | 7 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 2.52 | 2.53 | 2.85 | 0.67 | -0.16 | 1.599 | 1.578 | 2.542 | 1.99 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 2.52 | 2.53 | 2.85 | 0.67 | -0.16 | 1.599 | 1.578 | 2.542 | 1.99 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 2.53 | 2.53 | 2.85 | 0.66 | -0.17 | 1.604 | 1.581 | 2.550 | 1.99 | 1.00 | 37 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 2.53 | 2.21 | 3.41 | 1.99 | 1.53 | 1.605 | 1.381 | 2.552 | 2.26 | 1.00 | 5 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 2.54 | 2.56 | 2.86 | 0.65 | -0.19 | 1.612 | 1.596 | 2.563 | 1.99 | 1.00 | 12 | False | False |
 | baselines-margin | q_guide_implied | W2 | 1 | PIT | 1 | 2.55 | 2.55 | 2.55 | 2.55 | 2.55 |  |  |  | 1.48 | 1.00 | 1 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 2.56 | 2.12 | 3.15 | 2.16 | 1.71 | 1.624 | 1.327 | 2.581 | 1.83 | 0.89 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 2.60 | 2.16 | 3.07 | 2.47 | 2.04 | 1.646 | 1.351 | 2.616 | 2.42 | 1.00 | 2 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 2.66 | 2.56 | 3.02 | 1.08 | 0.16 | 1.682 | 1.598 | 2.674 | 2.36 | 1.00 | 22 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 2.66 | 2.59 | 2.98 | 0.91 | 0.04 | 1.686 | 1.616 | 2.680 | 2.00 | 1.00 | 11 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 2.67 | 2.59 | 3.00 | 0.95 | 0.07 | 1.695 | 1.618 | 2.694 | 2.05 | 1.00 | 15 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 2.71 | 2.25 | 3.18 | 2.60 | 2.15 | 1.720 | 1.406 | 2.734 | 2.46 | 1.00 | 2 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 2.73 | 2.61 | 3.29 | 0.89 | -0.30 | 1.727 | 1.630 | 2.746 | 2.32 | 1.00 | 7 | False | False |
 | margin-ts | sarima_margin | W2 | 1 | PIT | 9 | 2.75 | 2.28 | 3.89 | 2.06 | 1.12 | 1.742 | 1.427 | 2.769 | 2.08 | 0.89 | 4 | False | False |
 | margin-ts | ensemble_simple | W2 | 1 | PIT | 9 | 2.77 | 2.55 | 2.98 | 1.26 | 0.33 | 1.757 | 1.590 | 2.793 | 2.63 | 1.00 | 5 | False | False |
@@ -404,11 +550,13 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 3.05 | 2.67 | 3.49 | 1.56 | 0.40 | 1.934 | 1.667 | 3.074 | 3.96 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 3.05 | 2.67 | 3.49 | 1.56 | 0.40 | 1.934 | 1.667 | 3.074 | 3.96 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 3.12 | 3.03 | 3.44 | 0.77 | -0.23 | 1.974 | 1.892 | 3.138 | 2.15 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 3.15 | 2.52 | 4.16 | 3.05 | 2.42 | 1.997 | 1.572 | 3.174 | 2.92 | 1.00 | 2 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 3.20 | 3.04 | 3.48 | 1.24 | 0.26 | 2.027 | 1.901 | 3.222 | 2.21 | 1.00 | 7 | False | False |
 | margin-ts | yoy_margin_change | W2 | 1 | PIT | 9 | 3.31 | 2.86 | 4.00 | 1.42 | 0.17 | 2.096 | 1.785 | 3.332 | 3.51 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W2 | 1 | PIT | 9 | 3.32 | 2.89 | 4.00 | 1.39 | 0.14 | 2.106 | 1.806 | 3.347 | 3.33 | 1.00 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 3.50 | 3.27 | 4.16 | 1.09 | -0.16 | 2.220 | 2.040 | 3.529 | 2.63 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 3.50 | 2.90 | 4.06 | 2.59 | 1.39 | 2.221 | 1.810 | 3.530 | 3.96 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 3.89 | 3.54 | 4.35 | 3.89 | 3.54 | 2.462 | 2.209 | 3.914 | 2.84 | 1.00 | 2 | False | False |
 | baselines-margin | trailing4 | W2 | 1 | PIT | 9 | 8.59 | 8.37 | 10.98 | 0.51 | 1.38 | 5.442 | 5.229 | 8.651 | 6.20 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W2 | 1 | full_sample | 1 | 0.51 | 0.51 | 0.51 | -0.51 | -0.51 |  |  |  | 1.17 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W2 | 1 | full_sample | 1 | 0.53 | 0.53 | 0.53 | 0.53 | 0.53 |  |  |  | 1.14 | 1.00 | 2 | False | False |
@@ -416,8 +564,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | q_sentence_direction | W2 | 1 | full_sample | 1 | 0.89 | 0.89 | 0.89 | 0.89 | 0.89 |  |  |  | 3.13 | 1.00 | 2 | False | False |
 | baselines-margin | street | W2 | 1 | full_sample | 9 | 0.99 | 0.97 | 1.21 | 0.28 | 0.03 | 0.629 | 0.605 | 1.000 | 1.30 | 1.00 | 1 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 1.05 | 0.94 | 1.30 | 0.22 | 0.25 | 0.667 | 0.585 | 1.059 | 0.78 | 1.00 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.09 | 1.14 | 1.27 | 0.49 | 0.45 | 0.693 | 0.709 | 1.101 | 1.83 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.14 | 1.22 | 1.29 | 0.54 | 0.53 | 0.721 | 0.760 | 1.146 | 2.04 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.15 | 1.14 | 1.39 | -0.88 | -0.85 | 0.728 | 0.711 | 1.157 | 1.77 | 1.00 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.16 | 1.14 | 1.28 | 0.63 | 0.55 | 0.732 | 0.713 | 1.163 | 1.82 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.16 | 1.12 | 1.40 | -0.89 | -0.83 | 0.735 | 0.697 | 1.168 | 1.93 | 1.00 | 1 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 1.29 | 1.38 | 1.51 | 0.40 | 0.26 | 0.816 | 0.863 | 1.297 | 1.10 | 1.00 | 3 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 1.30 | 1.20 | 1.57 | 0.25 | 0.29 | 0.824 | 0.749 | 1.310 | 0.90 | 0.89 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.31 | 1.37 | 1.43 | 0.40 | 0.21 | 0.829 | 0.857 | 1.317 | 1.45 | 1.00 | 5 | True | True |
 | margin-ts | ensemble_simple | W2 | 1 | full_sample | 9 | 1.36 | 1.62 | 1.62 | -0.13 | -0.42 | 0.860 | 1.014 | 1.366 | 2.30 | 1.00 | 5 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 1.40 | 1.59 | 1.52 | 0.05 | -0.25 | 0.885 | 0.993 | 1.406 | 3.99 | 1.00 | 7 | True | False |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 1.41 | 1.59 | 1.52 | 0.15 | -0.15 | 0.892 | 0.991 | 1.417 | 3.58 | 1.00 | 3 | True | False |
@@ -435,18 +589,28 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 1.58 | 1.60 | 1.72 | 0.81 | 0.51 | 1.000 | 1.000 | 1.590 | 1.81 | 1.00 | 1 | False | False |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 1.59 | 1.53 | 1.83 | 0.84 | 0.73 | 1.009 | 0.953 | 1.604 | 1.22 | 1.00 | 3 | False | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 1.61 | 1.54 | 1.85 | 0.90 | 0.78 | 1.017 | 0.959 | 1.617 | 1.23 | 1.00 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.74 | 1.72 | 1.95 | -1.65 | -1.61 | 1.105 | 1.071 | 1.757 | 1.49 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 1.79 | 1.73 | 1.98 | -1.69 | -1.62 | 1.132 | 1.079 | 1.799 | 1.53 | 1.00 | 1 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 1.96 | 1.95 | 2.19 | 0.51 | -0.10 | 1.243 | 1.218 | 1.976 | 1.33 | 1.00 | 12 | False | False |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 1.99 | 1.71 | 2.48 | 1.96 | 1.66 | 1.258 | 1.065 | 2.000 | 3.35 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 1.99 | 1.71 | 2.48 | 1.97 | 1.67 | 1.262 | 1.068 | 2.006 | 3.12 | 1.00 | 3 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 2.03 | 2.09 | 2.27 | 0.13 | -0.53 | 1.288 | 1.306 | 2.048 | 1.39 | 1.00 | 12 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 2.08 | 2.15 | 2.38 | 0.05 | -0.66 | 1.321 | 1.341 | 2.100 | 1.46 | 1.00 | 22 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 2.16 | 2.24 | 2.43 | 0.23 | -0.45 | 1.368 | 1.396 | 2.174 | 1.47 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 2.16 | 2.24 | 2.43 | 0.23 | -0.45 | 1.368 | 1.396 | 2.174 | 1.47 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 2.16 | 2.24 | 2.43 | 0.23 | -0.46 | 1.368 | 1.397 | 2.175 | 1.47 | 1.00 | 37 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 2.18 | 2.31 | 2.44 | 0.17 | -0.52 | 1.380 | 1.442 | 2.194 | 1.47 | 1.00 | 12 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 2.20 | 2.26 | 2.46 | 0.27 | -0.42 | 1.392 | 1.413 | 2.213 | 1.45 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 2.20 | 2.30 | 2.46 | 0.11 | -0.59 | 1.396 | 1.437 | 2.219 | 1.46 | 1.00 | 14 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 2.20 | 2.31 | 2.47 | 0.16 | -0.55 | 1.397 | 1.443 | 2.220 | 1.47 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 2.20 | 2.31 | 2.47 | 0.16 | -0.55 | 1.397 | 1.443 | 2.220 | 1.47 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 2.21 | 2.31 | 2.47 | 0.15 | -0.56 | 1.397 | 1.444 | 2.221 | 1.47 | 1.00 | 37 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 2.26 | 2.26 | 2.65 | 2.23 | 2.24 | 1.431 | 1.412 | 2.275 | 2.18 | 1.00 | 2 | False | False |
 | margin-ts | sarima_margin | W2 | 1 | full_sample | 9 | 2.28 | 2.39 | 2.52 | -0.25 | -0.98 | 1.443 | 1.493 | 2.294 | 1.48 | 1.00 | 14 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 2.28 | 2.26 | 2.51 | 0.45 | -0.21 | 1.446 | 1.412 | 2.298 | 1.50 | 1.00 | 15 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 2.28 | 2.61 | 2.74 | -0.74 | -1.33 | 1.447 | 1.631 | 2.299 | 1.99 | 1.00 | 7 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 2.30 | 2.42 | 2.61 | 0.08 | -0.67 | 1.458 | 1.511 | 2.317 | 1.55 | 1.00 | 7 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 2.31 | 2.36 | 2.53 | 0.16 | -0.51 | 1.464 | 1.472 | 2.328 | 1.49 | 1.00 | 15 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 2.31 | 2.45 | 2.63 | 0.03 | -0.73 | 1.467 | 1.527 | 2.331 | 1.56 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 2.40 | 2.69 | 2.77 | -1.17 | -1.97 | 1.522 | 1.682 | 2.419 | 2.22 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 2.45 | 2.88 | 3.00 | -1.29 | -1.90 | 1.549 | 1.797 | 2.463 | 2.03 | 1.00 | 7 | False | False |
@@ -458,18 +622,29 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | trailing4 | W2 | 1 | full_sample | 9 | 8.59 | 8.37 | 10.98 | 0.51 | 1.38 | 5.442 | 5.229 | 8.651 | 6.18 | 0.78 | 2 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 1.37 | 1.20 | 1.58 | 0.89 | 0.84 | 0.797 | 0.721 |  | 1.39 | 1.00 | 10 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 1.60 | 1.40 | 1.97 | 1.30 | 1.16 | 0.930 | 0.840 |  | 1.58 | 1.00 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 1.61 | 1.48 | 1.74 | 0.98 | 0.63 | 0.936 | 0.890 |  | 1.69 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 1.61 | 1.48 | 1.74 | 0.98 | 0.63 | 0.936 | 0.890 |  | 2.02 | 1.00 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 1.72 | 1.66 | 1.82 | 0.86 | 0.52 | 1.000 | 1.000 |  | 1.52 | 1.00 | 2 | False | True |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 1.72 | 1.66 | 1.82 | 0.86 | 0.52 | 1.000 | 1.000 |  | 1.52 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 1.88 | 2.15 | 2.34 | -1.63 | -1.87 | 1.091 | 1.290 |  | 1.33 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 1.93 | 2.17 | 2.35 | -1.69 | -1.90 | 1.121 | 1.306 |  | 1.47 | 1.00 | 1 | False | False |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 2.02 | 1.79 | 2.61 | 1.84 | 1.48 | 1.174 | 1.075 |  | 1.78 | 1.00 | 3 | False | False |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 2.03 | 1.76 | 2.64 | 1.81 | 1.39 | 1.178 | 1.058 |  | 1.81 | 1.00 | 3 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 2.07 | 1.89 | 2.58 | 0.54 | -0.17 | 1.204 | 1.136 |  | 2.66 | 1.00 | 15 | False | False |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 2.08 | 1.81 | 2.71 | 1.81 | 1.35 | 1.209 | 1.088 |  | 1.85 | 1.00 | 3 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 2.11 | 1.93 | 2.59 | 0.50 | -0.22 | 1.223 | 1.162 |  | 2.60 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 2.11 | 1.93 | 2.59 | 0.50 | -0.22 | 1.223 | 1.162 |  | 2.60 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 2.11 | 1.94 | 2.60 | 0.49 | -0.23 | 1.226 | 1.164 |  | 2.61 | 1.00 | 37 | False | False |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 2.13 | 1.92 | 2.54 | 1.77 | 1.31 | 1.237 | 1.153 |  | 1.50 | 1.00 | 3 | False | False |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 2.16 | 1.91 | 2.56 | 0.88 | 0.18 | 1.256 | 1.148 |  | 2.55 | 1.00 | 12 | False | False |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 2.22 | 1.88 | 2.96 | 1.87 | 1.30 | 1.287 | 1.130 |  | 1.95 | 1.00 | 3 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 2.26 | 2.00 | 2.89 | 0.78 | -0.02 | 1.315 | 1.201 |  | 2.49 | 1.00 | 12 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 2.27 | 2.03 | 2.56 | 1.38 | 0.67 | 1.317 | 1.223 |  | 2.33 | 1.00 | 4 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 2.27 | 2.16 | 2.73 | 0.21 | -0.56 | 1.317 | 1.300 |  | 2.72 | 1.00 | 7 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 2.28 | 2.00 | 2.89 | 0.83 | 0.01 | 1.324 | 1.204 |  | 2.56 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 2.28 | 2.01 | 2.88 | 0.78 | -0.03 | 1.324 | 1.209 |  | 2.49 | 1.00 | 37 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 2.28 | 2.01 | 2.87 | 0.79 | -0.02 | 1.324 | 1.209 |  | 2.49 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 2.28 | 2.01 | 2.87 | 0.79 | -0.02 | 1.324 | 1.209 |  | 2.49 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 2.28 | 2.01 | 2.87 | 0.79 | -0.02 | 1.324 | 1.209 |  | 2.49 | 1.00 | 10 | False | False |
 | baselines-margin | guide_implied | W2 | 2 | PIT | 4 | 2.29 | 1.69 | 2.97 | 0.89 | 0.68 | 1.030 | 0.730 |  | 1.97 | 0.75 | 4 | False | True |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 2.29 | 2.07 | 2.88 | 0.62 | -0.20 | 1.330 | 1.247 |  | 2.58 | 1.00 | 7 | False | False |
@@ -484,29 +659,40 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 2.67 | 2.26 | 3.48 | 1.21 | 0.23 | 1.554 | 1.359 |  | 2.44 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 2.71 | 2.27 | 3.55 | 1.66 | 0.74 | 1.576 | 1.364 |  | 2.53 | 1.00 | 7 | False | False |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 2.72 | 2.45 | 3.32 | 0.42 | -0.48 | 1.578 | 1.475 |  | 2.03 | 0.75 | 14 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 2.99 | 2.50 | 3.52 | 2.99 | 2.50 | 1.736 | 1.505 |  | 2.16 | 1.00 | 2 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 2.99 | 2.56 | 3.55 | 1.90 | 0.83 | 1.738 | 1.537 |  | 4.39 | 1.00 | 3 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 3.01 | 2.54 | 3.63 | 1.91 | 0.80 | 1.747 | 1.530 |  | 4.83 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 3.01 | 2.54 | 3.63 | 1.91 | 0.80 | 1.747 | 1.530 |  | 4.83 | 1.00 | 7 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 3.08 | 2.44 | 4.34 | 1.48 | 0.32 | 1.788 | 1.470 |  | 3.00 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 3.09 | 2.70 | 3.51 | 1.93 | 0.89 | 1.793 | 1.626 |  | 4.73 | 1.00 | 3 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 3.12 | 2.69 | 3.59 | 1.96 | 0.87 | 1.811 | 1.620 |  | 5.12 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 3.12 | 2.62 | 3.64 | 3.12 | 2.62 | 1.814 | 1.576 |  | 2.20 | 1.00 | 2 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 3.14 | 2.38 | 4.18 | 1.82 | 0.68 | 1.822 | 1.429 |  | 3.93 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 3.15 | 2.38 | 4.19 | 1.85 | 0.71 | 1.828 | 1.428 |  | 4.17 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 3.16 | 2.66 | 3.71 | 3.16 | 2.66 | 1.835 | 1.597 |  | 2.48 | 1.00 | 2 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 3.16 | 2.88 | 3.64 | 1.09 | -0.12 | 1.838 | 1.730 |  | 2.94 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 3.51 | 2.74 | 4.35 | 3.01 | 1.92 | 2.041 | 1.649 |  | 4.39 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 3.71 | 2.85 | 5.24 | 3.71 | 2.85 | 2.156 | 1.717 |  | 3.16 | 1.00 | 5 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 4.45 | 4.05 | 4.88 | 4.45 | 4.05 | 2.588 | 2.438 |  | 2.78 | 1.00 | 2 | False | False |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 4.63 | 3.28 | 6.73 | 3.46 | 2.08 | 2.689 | 1.973 |  | 4.09 | 0.62 | 4 | False | False |
 | baselines-margin | trailing4 | W2 | 2 | PIT | 8 | 9.74 | 8.83 | 11.97 | 0.57 | 1.65 | 5.661 | 5.310 |  | 6.86 | 1.00 | 2 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 1.15 | 0.98 | 1.36 | 0.19 | 0.21 | 0.669 | 0.589 |  | 0.80 | 1.00 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.24 | 1.36 | 1.55 | 0.36 | 0.26 | 0.722 | 0.818 |  | 1.79 | 1.00 | 5 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 1.30 | 1.37 | 1.58 | -0.10 | -0.44 | 0.756 | 0.825 |  | 2.63 | 1.00 | 5 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 1.39 | 1.47 | 1.59 | 0.01 | -0.36 | 0.810 | 0.884 |  | 2.61 | 1.00 | 1 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 1.43 | 1.45 | 1.61 | 0.43 | 0.26 | 0.834 | 0.872 |  | 1.02 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.44 | 1.72 | 1.79 | -0.86 | -1.06 | 0.836 | 1.031 |  | 1.60 | 1.00 | 1 | True | False |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 1.45 | 1.26 | 1.66 | 0.26 | 0.30 | 0.841 | 0.755 |  | 0.95 | 0.88 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.47 | 1.73 | 1.79 | -0.82 | -1.04 | 0.852 | 1.040 |  | 1.39 | 1.00 | 1 | True | False |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 1.50 | 1.39 | 1.73 | 0.24 | 0.14 | 0.872 | 0.836 |  | 1.41 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 1.50 | 1.39 | 1.72 | 0.22 | 0.12 | 0.872 | 0.836 |  | 1.41 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 1.52 | 1.41 | 1.74 | 0.37 | 0.26 | 0.884 | 0.848 |  | 1.38 | 1.00 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 1.53 | 1.66 | 1.60 | 0.10 | -0.25 | 0.889 | 0.997 |  | 4.47 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.54 | 1.49 | 1.63 | 0.66 | 0.40 | 0.892 | 0.899 |  | 1.68 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.54 | 1.49 | 1.63 | 0.66 | 0.40 | 0.892 | 0.899 |  | 1.47 | 1.00 | 2 | True | True |
 | baselines-margin | guide_implied | W2 | 2 | full_sample | 4 | 1.54 | 1.34 | 1.75 | -0.84 | -0.32 | 0.694 | 0.576 |  | 1.34 | 1.00 | 4 | True | True |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 1.56 | 1.66 | 1.61 | 0.20 | -0.14 | 0.904 | 0.997 |  | 4.05 | 1.00 | 3 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.58 | 1.46 | 1.68 | 0.79 | 0.52 | 0.918 | 0.879 |  | 1.46 | 1.00 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 1.58 | 1.66 | 1.63 | 0.30 | -0.04 | 0.919 | 0.998 |  | 4.23 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 1.62 | 1.66 | 1.66 | 0.44 | 0.10 | 0.939 | 0.998 |  | 4.24 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 1.62 | 1.66 | 1.66 | 0.44 | 0.10 | 0.939 | 0.998 |  | 4.24 | 1.00 | 7 | False | False |
@@ -516,13 +702,22 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 1.68 | 1.66 | 1.74 | 0.69 | 0.34 | 0.975 | 0.999 |  | 1.96 | 1.00 | 4 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 1.72 | 1.66 | 1.82 | 0.86 | 0.52 | 1.000 | 1.000 |  | 1.47 | 1.00 | 2 | False | True |
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 1.72 | 1.66 | 1.82 | 0.86 | 0.52 | 1.000 | 1.000 |  | 1.47 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.88 | 2.15 | 2.34 | -1.64 | -1.87 | 1.093 | 1.293 |  | 1.34 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 1.93 | 2.18 | 2.35 | -1.69 | -1.90 | 1.123 | 1.309 |  | 1.43 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 2.04 | 1.71 | 2.57 | 2.00 | 1.66 | 1.183 | 1.030 |  | 3.63 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 2.04 | 1.72 | 2.57 | 2.01 | 1.67 | 1.186 | 1.032 |  | 3.41 | 1.00 | 3 | False | False |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 2.07 | 1.93 | 2.47 | 0.41 | -0.26 | 1.202 | 1.162 |  | 1.55 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 2.14 | 2.07 | 2.53 | 0.16 | -0.55 | 1.242 | 1.245 |  | 1.64 | 1.00 | 12 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 2.16 | 2.19 | 2.64 | -0.59 | -1.27 | 1.254 | 1.315 |  | 2.13 | 1.00 | 7 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 2.17 | 2.07 | 2.58 | 0.24 | -0.48 | 1.262 | 1.244 |  | 1.68 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 2.19 | 2.09 | 2.58 | 0.21 | -0.52 | 1.271 | 1.258 |  | 1.69 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 2.19 | 2.09 | 2.58 | 0.21 | -0.52 | 1.271 | 1.258 |  | 1.69 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 2.19 | 2.09 | 2.58 | 0.20 | -0.53 | 1.272 | 1.259 |  | 1.69 | 1.00 | 37 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 2.21 | 2.14 | 2.60 | 0.15 | -0.60 | 1.286 | 1.286 |  | 1.66 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 2.21 | 2.14 | 2.60 | 0.14 | -0.60 | 1.286 | 1.287 |  | 1.66 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 2.21 | 2.14 | 2.60 | 0.14 | -0.60 | 1.286 | 1.287 |  | 1.66 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 2.21 | 2.14 | 2.60 | 0.14 | -0.60 | 1.286 | 1.287 |  | 1.66 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 2.22 | 2.14 | 2.60 | 0.14 | -0.61 | 1.289 | 1.290 |  | 1.67 | 1.00 | 37 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 2.25 | 2.17 | 2.61 | 0.09 | -0.65 | 1.307 | 1.306 |  | 1.67 | 1.00 | 14 | False | False |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 2.35 | 2.29 | 2.61 | 0.02 | -0.71 | 1.363 | 1.374 |  | 1.68 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 2.35 | 2.28 | 2.75 | 0.07 | -0.71 | 1.368 | 1.372 |  | 1.76 | 1.00 | 7 | False | False |
@@ -531,6 +726,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 2.46 | 2.41 | 2.70 | -0.06 | -0.82 | 1.430 | 1.447 |  | 1.74 | 1.00 | 22 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 2.56 | 2.74 | 2.95 | -1.31 | -2.02 | 1.486 | 1.645 |  | 2.15 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 2.57 | 2.15 | 3.26 | 2.32 | 1.79 | 1.496 | 1.291 |  | 1.90 | 0.88 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 2.58 | 2.41 | 2.96 | 2.52 | 2.36 | 1.497 | 1.447 |  | 1.86 | 1.00 | 2 | False | False |
 | margin-ts | sarima_margin | W2 | 2 | full_sample | 8 | 2.78 | 2.72 | 3.08 | -0.33 | -1.16 | 1.613 | 1.637 |  | 1.77 | 0.88 | 14 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 2.85 | 3.22 | 3.17 | -1.26 | -2.19 | 1.659 | 1.934 |  | 2.76 | 1.00 | 7 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 3.08 | 2.44 | 4.34 | 1.48 | 0.32 | 1.788 | 1.470 |  | 2.83 | 1.00 | 1 | False | False |
@@ -544,27 +740,38 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 52.85 | 45.86 | 61.31 | -36.26 | -14.16 | 0.428 | 0.395 | 0.810 | 55.89 | 0.93 | 2 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 52.94 | 40.82 | 63.19 | -0.64 | 8.93 | 0.429 | 0.352 | 0.811 | 48.21 | 1.00 | 10 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 56.03 | 46.34 | 66.50 | -39.05 | -20.99 | 0.454 | 0.400 | 0.858 | 65.75 | 0.93 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 56.05 | 49.01 | 66.81 | -51.70 | -47.79 | 0.454 | 0.422 | 0.859 | 46.93 | 0.86 | 2 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 56.62 | 49.70 | 70.15 | 1.71 | 16.42 | 0.459 | 0.428 | 0.867 | 49.45 | 0.86 | 15 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 59.34 | 48.14 | 66.96 | 5.74 | 14.19 | 0.481 | 0.415 | 0.909 | 50.53 | 1.00 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 59.82 | 52.29 | 72.98 | -54.89 | -50.90 | 0.485 | 0.451 | 0.916 | 111.03 | 1.00 | 2 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 60.79 | 45.00 | 80.79 | 32.72 | 19.57 | 0.492 | 0.388 | 0.931 | 52.78 | 0.93 | 7 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 61.23 | 50.55 | 73.21 | 1.85 | 9.40 | 0.496 | 0.436 | 0.938 | 65.24 | 1.00 | 37 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 61.74 | 49.19 | 73.32 | 14.87 | 21.43 | 0.500 | 0.424 | 0.946 | 60.94 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 62.07 | 52.16 | 73.70 | 3.61 | 13.30 | 0.503 | 0.450 | 0.951 | 66.05 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 62.07 | 52.16 | 73.70 | 3.61 | 13.30 | 0.503 | 0.450 | 0.951 | 66.05 | 1.00 | 10 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 62.54 | 52.35 | 73.00 | 14.70 | 25.09 | 0.507 | 0.451 | 0.958 | 65.40 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 62.67 | 51.61 | 75.12 | 6.30 | 9.61 | 0.508 | 0.445 | 0.960 | 60.77 | 1.00 | 37 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 62.90 | 53.18 | 74.47 | 3.03 | 8.35 | 0.510 | 0.458 | 0.964 | 67.26 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 62.98 | 52.74 | 74.79 | 7.71 | 12.56 | 0.510 | 0.455 | 0.965 | 61.09 | 1.00 | 12 | True | True |
 | baselines-margin | q_guide_implied | W1 | 0 | PIT | 14 | 63.17 | 58.04 | 75.91 | -2.91 | 7.29 | 0.512 | 0.500 | 0.968 | 55.01 | 0.86 | 1 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 63.17 | 58.04 | 75.91 | -2.91 | 7.29 | 0.512 | 0.500 | 0.968 | 75.92 | 1.00 | 2 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 63.91 | 53.40 | 75.70 | 8.50 | 13.82 | 0.518 | 0.460 | 0.979 | 61.60 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 63.91 | 53.40 | 75.70 | 8.50 | 13.82 | 0.518 | 0.460 | 0.979 | 61.60 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 64.25 | 54.30 | 75.53 | 9.24 | 12.86 | 0.521 | 0.468 | 0.984 | 62.50 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 64.26 | 54.51 | 75.91 | 13.72 | 19.00 | 0.521 | 0.470 | 0.984 | 60.47 | 1.00 | 11 | True | True |
 | baselines-margin | street | W1 | 0 | PIT | 14 | 65.28 | 62.31 | 77.76 | -51.33 | -53.74 | 0.529 | 0.537 | 1.000 | 49.85 | 0.93 | 1 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 66.39 | 52.20 | 83.59 | 22.95 | 19.54 | 0.538 | 0.450 | 1.017 | 61.89 | 0.86 | 7 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | PIT | 14 | 67.60 | 54.07 | 75.92 | 33.96 | 30.60 | 0.548 | 0.466 | 1.036 | 52.77 | 0.93 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | PIT | 14 | 68.86 | 55.10 | 78.48 | 34.67 | 37.55 | 0.558 | 0.475 | 1.055 | 54.24 | 0.93 | 3 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 68.90 | 61.01 | 79.91 | -47.05 | -28.96 | 0.558 | 0.526 | 1.055 | 77.27 | 0.93 | 2 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 70.40 | 64.71 | 79.23 | -4.33 | -8.80 | 0.570 | 0.558 | 1.078 | 62.05 | 1.00 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 70.56 | 55.30 | 86.58 | 25.83 | 22.74 | 0.572 | 0.477 | 1.081 | 64.69 | 0.86 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 70.62 | 51.97 | 123.53 | 26.71 | 12.33 | 0.572 | 0.448 | 1.082 | 59.94 | 0.79 | 2 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | PIT | 14 | 70.65 | 59.18 | 80.56 | 23.51 | 19.98 | 0.572 | 0.510 | 1.082 | 53.90 | 0.93 | 3 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 70.80 | 55.22 | 81.45 | 18.90 | 18.84 | 0.574 | 0.476 | 1.085 | 64.26 | 1.00 | 14 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 70.85 | 64.96 | 78.23 | -15.09 | -18.15 | 0.574 | 0.560 | 1.085 | 67.56 | 1.00 | 15 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | PIT | 14 | 74.13 | 65.00 | 90.83 | 7.93 | -0.43 | 0.601 | 0.560 | 1.136 | 56.02 | 0.93 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 74.45 | 57.62 | 125.12 | 40.18 | 29.36 | 0.603 | 0.497 | 1.141 | 55.71 | 0.86 | 3 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 74.75 | 57.70 | 92.05 | 48.84 | 38.93 | 0.606 | 0.497 | 1.145 | 62.15 | 0.86 | 7 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 75.08 | 62.01 | 96.89 | 28.28 | 29.60 | 0.608 | 0.535 | 1.150 | 104.28 | 1.00 | 22 | True | True |
 | margin-ts | ensemble_simple | W1 | 0 | PIT | 14 | 77.31 | 64.13 | 88.02 | 20.99 | 7.02 | 0.626 | 0.553 | 1.184 | 62.96 | 0.93 | 5 | True | True |
@@ -575,37 +782,57 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 84.52 | 100.77 | 96.62 | 50.89 | 81.72 | 0.685 | 0.869 | 1.295 | 110.67 | 0.93 | 2 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 85.11 | 79.47 | 100.38 | 13.50 | -1.00 | 0.690 | 0.685 | 1.304 | 67.19 | 0.93 | 3 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 87.09 | 81.45 | 102.34 | 13.66 | -1.48 | 0.706 | 0.702 | 1.334 | 69.84 | 0.93 | 3 | True | True |
+| guide-policy-margin | q4_implied | W1 | 0 | PIT | 3 | 89.20 | 74.40 | 95.29 | -89.20 | -74.40 | 0.956 | 1.408 | 1.552 | 59.77 | 0.33 | 1 | False | False |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 97.67 | 73.39 | 119.83 | 54.66 | 26.84 | 0.791 | 0.633 | 1.496 | 75.32 | 0.86 | 4 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | PIT | 14 | 97.85 | 52.05 | 166.46 | -65.13 | -28.28 | 0.793 | 0.449 | 1.499 | 217.46 | 0.93 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 97.90 | 79.22 | 113.83 | 36.74 | 5.37 | 0.793 | 0.683 | 1.500 | 81.33 | 0.93 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 98.81 | 60.11 | 148.55 | 57.73 | 26.27 | 0.801 | 0.518 | 1.514 | 153.27 | 0.93 | 2 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 99.06 | 80.42 | 113.76 | 34.85 | 9.46 | 0.803 | 0.693 | 1.518 | 78.91 | 0.93 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 100.40 | 81.34 | 119.75 | 43.19 | 10.66 | 0.813 | 0.701 | 1.538 | 83.33 | 0.93 | 7 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 103.36 | 93.49 | 118.54 | -3.21 | -20.32 | 0.837 | 0.806 | 1.583 | 76.17 | 1.00 | 1 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | PIT | 14 | 103.72 | 81.81 | 120.87 | 40.14 | 11.96 | 0.840 | 0.705 | 1.589 | 84.38 | 0.93 | 3 | True | True |
 | baselines-margin | guide_implied | W1 | 0 | PIT | 14 | 104.34 | 87.30 | 125.38 | -104.34 | -87.30 | 0.845 | 0.753 | 1.598 | 186.40 | 0.79 | 4 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 105.15 | 82.89 | 128.18 | 49.31 | 13.54 | 0.852 | 0.715 | 1.611 | 88.59 | 0.86 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 107.89 | 69.90 | 151.25 | 86.33 | 58.84 | 0.874 | 0.603 | 1.653 | 153.56 | 0.93 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 114.50 | 74.97 | 160.39 | 90.08 | 62.40 | 0.928 | 0.646 | 1.754 | 159.55 | 0.93 | 3 | True | True |
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 123.43 | 115.99 | 157.20 | -122.43 | -114.97 | 1.000 | 1.000 | 1.891 | 137.86 | 0.93 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 137.25 | 103.21 | 202.43 | 27.24 | 18.49 | 1.112 | 0.890 | 2.103 | 195.46 | 0.79 | 6 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | PIT | 14 | 139.82 | 112.66 | 179.05 | 118.53 | 101.89 | 1.133 | 0.971 | 2.142 | 168.45 | 0.93 | 3 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 155.58 | 101.99 | 221.65 | 131.75 | 52.62 | 1.260 | 0.879 | 2.383 | 128.60 | 0.86 | 7 | False | True |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 271.62 | 252.70 | 365.51 | -41.75 | -15.55 | 2.201 | 2.179 | 4.161 | 195.07 | 0.86 | 3 | False | False |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 40.48 | 38.23 | 51.30 | -22.65 | -7.53 | 0.328 | 0.330 | 0.620 | 51.03 | 1.00 | 2 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 40.73 | 38.28 | 51.43 | -21.88 | -6.85 | 0.330 | 0.330 | 0.624 | 45.82 | 0.93 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 41.43 | 40.57 | 51.38 | 4.01 | 9.56 | 0.336 | 0.350 | 0.635 | 40.69 | 0.93 | 3 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 41.90 | 38.66 | 52.72 | -18.94 | -4.26 | 0.339 | 0.333 | 0.642 | 147.66 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 42.38 | 33.89 | 51.78 | 11.29 | 11.84 | 0.343 | 0.292 | 0.649 | 96.18 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 43.08 | 35.34 | 54.63 | -34.45 | -27.93 | 0.349 | 0.305 | 0.660 | 43.70 | 0.93 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 45.79 | 33.98 | 59.56 | -32.63 | -25.26 | 0.371 | 0.293 | 0.702 | 96.93 | 0.93 | 2 | True | True |
 | margin-ts | q_sentence_direction | W1 | 0 | full_sample | 14 | 46.81 | 47.55 | 58.06 | -33.21 | -16.82 | 0.379 | 0.410 | 0.717 | 55.99 | 1.00 | 2 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 48.42 | 35.98 | 57.60 | -2.20 | 3.76 | 0.392 | 0.310 | 0.742 | 38.29 | 0.71 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 48.99 | 41.41 | 57.92 | 15.55 | 18.58 | 0.397 | 0.357 | 0.751 | 100.97 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 50.06 | 51.83 | 54.67 | 8.92 | -7.14 | 0.406 | 0.447 | 0.767 | 140.12 | 1.00 | 6 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 51.78 | 41.44 | 59.48 | -2.77 | 4.12 | 0.420 | 0.357 | 0.793 | 41.67 | 0.71 | 12 | True | True |
 | margin-ts | ensemble_simple | W1 | 0 | full_sample | 14 | 54.08 | 42.73 | 73.57 | -22.74 | -5.28 | 0.438 | 0.368 | 0.828 | 60.18 | 0.86 | 5 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 54.61 | 45.65 | 66.62 | -50.81 | -44.59 | 0.442 | 0.394 | 0.837 | 44.11 | 0.86 | 2 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 55.00 | 43.43 | 66.90 | 6.28 | 10.16 | 0.446 | 0.374 | 0.843 | 51.09 | 0.79 | 22 | True | True |
 | margin-ts | ensemble_simple | W1 | 0 | full_sample | 14 | 55.20 | 45.49 | 74.32 | -21.13 | -4.54 | 0.447 | 0.392 | 0.846 | 61.60 | 0.86 | 1 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 55.84 | 44.59 | 67.38 | 6.48 | 11.54 | 0.452 | 0.384 | 0.855 | 48.81 | 0.79 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 56.12 | 42.22 | 73.10 | -30.13 | -11.97 | 0.455 | 0.364 | 0.860 | 53.42 | 0.86 | 7 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 57.97 | 48.88 | 68.47 | 14.11 | 20.95 | 0.470 | 0.421 | 0.888 | 46.03 | 0.79 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 58.34 | 48.86 | 72.71 | -53.97 | -47.62 | 0.473 | 0.421 | 0.894 | 92.48 | 0.93 | 2 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 58.61 | 51.53 | 70.32 | 6.44 | 3.53 | 0.475 | 0.444 | 0.898 | 42.38 | 0.79 | 15 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 59.01 | 54.56 | 68.29 | 11.64 | 23.09 | 0.478 | 0.470 | 0.904 | 48.08 | 0.71 | 14 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 59.12 | 48.32 | 70.22 | 8.57 | 9.84 | 0.479 | 0.417 | 0.906 | 47.82 | 0.79 | 37 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 59.22 | 49.66 | 82.25 | -21.94 | -9.36 | 0.480 | 0.428 | 0.907 | 48.68 | 0.79 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 59.22 | 48.64 | 79.56 | -13.60 | 0.78 | 0.480 | 0.419 | 0.907 | 49.15 | 0.79 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 59.46 | 56.28 | 75.63 | -20.87 | -10.50 | 0.482 | 0.485 | 0.911 | 71.85 | 0.93 | 7 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 59.55 | 48.64 | 81.05 | -17.94 | -3.84 | 0.482 | 0.419 | 0.912 | 50.29 | 0.79 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 59.63 | 48.65 | 81.27 | -18.53 | -4.47 | 0.483 | 0.419 | 0.913 | 50.66 | 0.79 | 3 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 59.63 | 50.89 | 71.59 | 4.16 | 10.42 | 0.483 | 0.439 | 0.914 | 46.27 | 0.79 | 11 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 59.79 | 48.87 | 71.38 | 7.59 | 7.58 | 0.484 | 0.421 | 0.916 | 47.24 | 0.79 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 59.88 | 49.80 | 70.93 | 9.39 | 12.58 | 0.485 | 0.429 | 0.917 | 48.59 | 0.79 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 59.88 | 49.80 | 70.93 | 9.39 | 12.58 | 0.485 | 0.429 | 0.917 | 48.59 | 0.79 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 60.07 | 49.79 | 71.70 | 6.45 | 8.37 | 0.487 | 0.429 | 0.920 | 47.93 | 0.79 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 60.07 | 49.79 | 71.70 | 6.45 | 8.37 | 0.487 | 0.429 | 0.920 | 47.93 | 0.79 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 60.82 | 49.77 | 72.64 | 5.77 | 8.07 | 0.493 | 0.429 | 0.932 | 49.28 | 0.79 | 12 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 60.84 | 49.42 | 70.97 | 8.85 | 8.71 | 0.493 | 0.426 | 0.932 | 48.05 | 0.79 | 14 | True | True |
@@ -613,6 +840,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W1 | 0 | full_sample | 14 | 61.80 | 50.80 | 76.12 | 3.04 | 18.48 | 0.501 | 0.438 | 0.947 | 48.79 | 0.79 | 3 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 61.83 | 51.53 | 72.81 | 6.05 | 6.87 | 0.501 | 0.444 | 0.947 | 49.11 | 0.79 | 7 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 62.09 | 51.93 | 72.91 | 7.28 | 8.47 | 0.503 | 0.448 | 0.951 | 49.06 | 0.79 | 7 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 62.20 | 55.24 | 70.05 | 7.65 | -0.83 | 0.504 | 0.476 | 0.953 | 44.03 | 0.79 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 62.22 | 58.83 | 80.10 | -23.63 | -12.48 | 0.504 | 0.507 | 0.953 | 75.99 | 0.93 | 7 | True | True |
 | margin-ts | yoy_margin_change | W1 | 0 | full_sample | 14 | 62.25 | 58.68 | 79.53 | -20.77 | -9.42 | 0.504 | 0.506 | 0.954 | 73.68 | 0.93 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 62.29 | 58.53 | 79.05 | -17.83 | -6.27 | 0.505 | 0.505 | 0.954 | 73.72 | 0.93 | 7 | True | True |
@@ -628,8 +856,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | yoy_margin_change | W1 | 0 | full_sample | 14 | 71.14 | 63.68 | 87.36 | 30.75 | 45.68 | 0.576 | 0.549 | 1.090 | 64.24 | 0.93 | 3 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 72.56 | 54.70 | 92.82 | -40.71 | -12.28 | 0.588 | 0.472 | 1.112 | 71.47 | 0.79 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 73.52 | 53.61 | 95.03 | -45.64 | -17.41 | 0.596 | 0.462 | 1.126 | 73.72 | 0.71 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 0 | full_sample | 14 | 78.02 | 80.39 | 91.88 | 55.90 | 67.51 | 0.632 | 0.693 | 1.195 | 111.74 | 1.00 | 3 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 79.03 | 75.72 | 98.34 | 14.36 | 13.28 | 0.640 | 0.653 | 1.211 | 59.89 | 0.93 | 4 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 87.51 | 110.50 | 103.52 | 53.82 | 91.94 | 0.709 | 0.953 | 1.341 | 116.06 | 1.00 | 2 | False | False |
+| guide-policy-margin | q4_implied | W1 | 0 | full_sample | 3 | 89.20 | 74.40 | 95.29 | -89.20 | -74.40 | 0.956 | 1.408 | 1.552 | 66.52 | 0.33 | 2 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 103.36 | 93.49 | 118.54 | -3.21 | -20.32 | 0.837 | 0.806 | 1.583 | 74.84 | 0.93 | 1 | True | True |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 123.43 | 115.99 | 157.20 | -122.43 | -114.97 | 1.000 | 1.000 | 1.891 | 130.45 | 1.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | full_sample | 14 | 271.52 | 251.99 | 366.10 | -40.71 | -12.13 | 2.200 | 2.172 | 4.159 | 195.29 | 0.86 | 3 | False | False |
@@ -640,6 +870,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 63.30 | 45.67 | 75.23 | -3.54 | 10.69 | 0.485 | 0.389 | 0.966 | 56.42 | 0.77 | 10 | True | True |
 | baselines-margin | street | W1 | 1 | PIT | 13 | 65.50 | 57.93 | 79.45 | -33.41 | -30.46 | 0.502 | 0.493 | 1.000 | 68.99 | 1.00 | 1 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 69.95 | 53.56 | 79.73 | 4.28 | 17.56 | 0.537 | 0.456 | 1.068 | 62.39 | 0.77 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 70.33 | 70.52 | 80.64 | -51.35 | -61.29 | 0.539 | 0.600 | 1.074 | 101.49 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 70.73 | 70.86 | 80.92 | -50.69 | -61.03 | 0.543 | 0.603 | 1.080 | 105.86 | 1.00 | 2 | True | True |
 | baselines-margin | q_guide_implied | W1 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 46.78 | 1.00 | 1 | False | False |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 77.84 | 70.57 | 88.70 | 6.35 | 6.38 | 0.597 | 0.600 | 1.188 | 58.91 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 80.34 | 66.66 | 98.60 | 39.11 | 23.63 | 0.616 | 0.567 | 1.227 | 63.38 | 0.92 | 3 | True | True |
@@ -652,22 +884,34 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 101.02 | 91.34 | 122.90 | 17.93 | -7.84 | 0.775 | 0.777 | 1.542 | 107.88 | 1.00 | 12 | False | True |
 | margin-ts | incremental_margin | W1 | 1 | PIT | 13 | 101.93 | 89.58 | 118.14 | 24.04 | 3.80 | 0.782 | 0.762 | 1.556 | 73.46 | 0.85 | 3 | False | True |
 | baselines-margin | guide_implied | W1 | 1 | PIT | 10 | 103.36 | 93.07 | 113.91 | -46.11 | -60.82 | 0.726 | 0.718 | 1.547 | 75.43 | 0.80 | 4 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 103.54 | 72.27 | 133.82 | 75.34 | 21.28 | 0.794 | 0.615 | 1.581 | 136.06 | 1.00 | 2 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 105.11 | 103.79 | 128.12 | 4.37 | -28.14 | 0.806 | 0.883 | 1.605 | 113.65 | 1.00 | 7 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 105.29 | 99.85 | 125.89 | 6.14 | -21.14 | 0.808 | 0.849 | 1.608 | 108.40 | 1.00 | 10 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 105.29 | 99.85 | 125.89 | 6.14 | -21.14 | 0.808 | 0.849 | 1.608 | 108.40 | 1.00 | 10 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 105.39 | 100.02 | 126.06 | 5.96 | -21.31 | 0.808 | 0.851 | 1.609 | 108.26 | 1.00 | 37 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 107.28 | 78.19 | 128.00 | 104.81 | 75.33 | 0.823 | 0.665 | 1.638 | 173.77 | 1.00 | 3 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 107.41 | 99.31 | 130.27 | 17.89 | -11.75 | 0.824 | 0.845 | 1.640 | 102.16 | 1.00 | 12 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 107.41 | 86.57 | 131.57 | 48.51 | 10.77 | 0.824 | 0.736 | 1.640 | 92.14 | 0.92 | 7 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 109.39 | 106.94 | 133.05 | 11.57 | -21.55 | 0.839 | 0.910 | 1.670 | 107.89 | 1.00 | 7 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 110.77 | 105.87 | 133.92 | 11.60 | -19.03 | 0.850 | 0.901 | 1.691 | 102.55 | 1.00 | 12 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 110.83 | 100.41 | 131.49 | 9.78 | -13.14 | 0.850 | 0.854 | 1.692 | 108.78 | 1.00 | 15 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 110.94 | 105.83 | 133.53 | 11.69 | -18.66 | 0.851 | 0.900 | 1.694 | 102.49 | 1.00 | 37 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 110.96 | 105.81 | 133.47 | 11.81 | -18.58 | 0.851 | 0.900 | 1.694 | 102.55 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 110.96 | 105.81 | 133.47 | 11.81 | -18.58 | 0.851 | 0.900 | 1.694 | 102.55 | 1.00 | 10 | False | False |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 111.34 | 103.97 | 135.42 | 17.96 | -10.95 | 0.854 | 0.884 | 1.700 | 111.37 | 0.92 | 22 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 111.74 | 105.80 | 135.51 | 17.98 | -12.75 | 0.857 | 0.900 | 1.706 | 101.66 | 1.00 | 11 | False | False |
 | margin-ts | sarima_margin | W1 | 1 | PIT | 13 | 111.81 | 108.38 | 135.61 | -1.55 | -29.97 | 0.858 | 0.922 | 1.707 | 82.57 | 0.69 | 15 | False | False |
 | margin-ts | ensemble_simple | W1 | 1 | PIT | 13 | 113.51 | 105.90 | 138.92 | 35.71 | -3.38 | 0.871 | 0.901 | 1.733 | 87.44 | 0.92 | 5 | False | False |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 116.17 | 107.33 | 138.89 | 14.46 | -13.52 | 0.891 | 0.913 | 1.774 | 104.06 | 1.00 | 15 | False | False |
 | margin-ts | ensemble_simple | W1 | 1 | PIT | 13 | 116.71 | 107.07 | 144.94 | 40.88 | -1.50 | 0.895 | 0.911 | 1.782 | 90.25 | 0.92 | 1 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 116.94 | 115.33 | 152.14 | 52.57 | 1.98 | 0.897 | 0.981 | 1.785 | 81.90 | 0.85 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 116.98 | 117.70 | 142.45 | 28.59 | -13.73 | 0.897 | 1.001 | 1.786 | 80.98 | 0.85 | 7 | False | False |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 117.58 | 106.11 | 145.14 | 29.64 | -10.96 | 0.902 | 0.903 | 1.795 | 104.68 | 1.00 | 14 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 117.80 | 76.05 | 165.83 | 90.54 | 27.24 | 0.903 | 0.647 | 1.799 | 138.33 | 1.00 | 2 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 118.60 | 120.41 | 144.75 | 25.32 | -17.40 | 0.910 | 1.024 | 1.811 | 81.35 | 0.85 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 121.86 | 114.36 | 163.63 | 47.29 | -11.95 | 0.935 | 0.973 | 1.861 | 90.19 | 0.85 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 124.34 | 96.06 | 217.62 | 105.25 | 53.37 | 0.954 | 0.817 | 1.898 | 125.69 | 0.92 | 6 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 126.18 | 88.39 | 154.44 | 112.98 | 63.92 | 0.968 | 0.752 | 1.927 | 146.30 | 1.00 | 3 | False | True |
 | margin-ts | yoy_margin_change | W1 | 1 | PIT | 13 | 128.36 | 120.12 | 167.20 | 26.43 | -12.26 | 0.985 | 1.022 | 1.960 | 99.21 | 1.00 | 3 | False | False |
 | margin-ts | sarima_margin | W1 | 1 | PIT | 13 | 128.73 | 104.45 | 189.01 | 87.38 | 32.96 | 0.987 | 0.889 | 1.965 | 87.93 | 0.69 | 4 | False | True |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 129.08 | 118.15 | 154.39 | -8.77 | -23.41 | 0.990 | 1.005 | 1.971 | 102.89 | 1.00 | 1 | False | False |
@@ -677,23 +921,34 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | yoy_margin_change | W1 | 1 | PIT | 13 | 134.18 | 109.67 | 167.76 | 58.39 | 6.54 | 1.029 | 0.933 | 2.049 | 108.15 | 0.85 | 3 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 139.39 | 115.55 | 175.33 | 62.43 | 4.82 | 1.069 | 0.983 | 2.128 | 110.52 | 0.92 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 141.86 | 113.98 | 180.90 | 70.05 | 9.13 | 1.088 | 0.970 | 2.166 | 114.67 | 0.85 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 143.05 | 104.43 | 173.47 | 143.05 | 104.43 | 1.097 | 0.888 | 2.184 | 153.80 | 1.00 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | PIT | 13 | 149.64 | 97.71 | 193.55 | 139.18 | 78.86 | 1.148 | 0.831 | 2.285 | 152.51 | 1.00 | 3 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 208.34 | 135.47 | 307.61 | 174.22 | 63.68 | 1.598 | 1.153 | 3.181 | 166.72 | 0.85 | 7 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 269.07 | 265.14 | 368.74 | -68.72 | -34.94 | 2.064 | 2.256 | 4.108 | 190.76 | 0.85 | 3 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 9.71 | 9.71 | 9.71 | -9.71 | -9.71 |  |  |  | 38.37 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 19.25 | 19.25 | 19.25 | 19.25 | 19.25 |  |  |  | 37.70 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 21.35 | 21.35 | 21.35 | 21.35 | 21.35 |  |  |  | 33.21 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W1 | 1 | full_sample | 1 | 29.41 | 29.41 | 29.41 | 29.41 | 29.41 |  |  |  | 123.31 | 1.00 | 2 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 40.38 | 37.72 | 47.33 | 10.92 | 14.27 | 0.310 | 0.321 | 0.617 | 120.63 | 1.00 | 3 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 48.39 | 34.55 | 58.85 | -4.98 | 3.03 | 0.371 | 0.294 | 0.739 | 38.98 | 0.69 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 51.51 | 57.15 | 59.59 | 10.75 | -6.48 | 0.395 | 0.486 | 0.786 | 72.23 | 1.00 | 6 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 52.19 | 41.34 | 60.37 | -6.55 | 3.33 | 0.400 | 0.352 | 0.797 | 41.38 | 0.77 | 12 | True | True |
 | baselines-margin | guide_implied | W1 | 1 | full_sample | 10 | 54.87 | 65.65 | 70.48 | -47.30 | -61.22 | 0.385 | 0.506 | 0.822 | 44.45 | 1.00 | 4 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 56.97 | 53.04 | 68.88 | -27.44 | -37.33 | 0.437 | 0.451 | 0.870 | 93.01 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 58.29 | 51.41 | 69.61 | 17.66 | 2.55 | 0.447 | 0.437 | 0.890 | 97.68 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 58.89 | 54.82 | 69.86 | -28.54 | -38.51 | 0.452 | 0.466 | 0.899 | 93.24 | 1.00 | 2 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 59.28 | 49.50 | 83.80 | -28.11 | -10.63 | 0.455 | 0.421 | 0.905 | 50.98 | 0.85 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 61.65 | 50.38 | 73.36 | 23.18 | 6.52 | 0.473 | 0.429 | 0.941 | 99.95 | 1.00 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 63.55 | 57.22 | 78.46 | -22.95 | -10.82 | 0.487 | 0.487 | 0.970 | 78.58 | 0.92 | 7 | True | True |
 | baselines-margin | street | W1 | 1 | full_sample | 13 | 65.50 | 57.93 | 79.45 | -33.41 | -30.46 | 0.502 | 0.493 | 1.000 | 65.95 | 0.92 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 70.12 | 70.40 | 80.29 | -51.25 | -61.21 | 0.538 | 0.599 | 1.071 | 86.62 | 0.92 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 70.53 | 70.77 | 80.57 | -50.61 | -60.97 | 0.541 | 0.602 | 1.077 | 88.04 | 0.92 | 2 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 72.66 | 63.45 | 82.45 | -1.30 | -2.14 | 0.557 | 0.540 | 1.109 | 56.25 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 72.70 | 63.76 | 82.59 | -3.22 | -3.85 | 0.558 | 0.542 | 1.110 | 55.88 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 73.07 | 66.21 | 85.36 | -18.28 | -17.31 | 0.560 | 0.563 | 1.116 | 57.59 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 73.18 | 66.93 | 86.73 | -22.71 | -21.26 | 0.561 | 0.569 | 1.117 | 59.58 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 1 | full_sample | 13 | 73.19 | 67.03 | 86.93 | -23.31 | -21.80 | 0.561 | 0.570 | 1.118 | 59.30 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 1 | full_sample | 13 | 75.61 | 65.71 | 94.80 | 61.73 | 53.43 | 0.580 | 0.559 | 1.154 | 107.17 | 1.00 | 3 | True | True |
 | baselines-margin | q_guide_implied | W1 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.00 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W1 | 1 | full_sample | 13 | 79.62 | 74.46 | 94.25 | -19.53 | -26.19 | 0.611 | 0.633 | 1.216 | 88.06 | 0.92 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 79.90 | 74.38 | 93.88 | -16.50 | -23.07 | 0.613 | 0.633 | 1.220 | 85.17 | 0.92 | 7 | True | True |
@@ -709,9 +964,16 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 90.57 | 86.43 | 115.22 | 17.60 | -13.23 | 0.695 | 0.735 | 1.383 | 72.39 | 0.92 | 12 | False | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 92.60 | 82.73 | 123.15 | 47.09 | 32.55 | 0.710 | 0.704 | 1.414 | 66.47 | 1.00 | 2 | False | True |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 93.77 | 92.33 | 117.91 | 9.62 | -24.65 | 0.719 | 0.785 | 1.432 | 76.40 | 0.92 | 12 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 95.46 | 93.61 | 120.89 | 18.33 | -15.14 | 0.732 | 0.796 | 1.457 | 75.91 | 0.92 | 15 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 96.37 | 95.73 | 121.53 | 12.20 | -22.51 | 0.739 | 0.814 | 1.471 | 79.35 | 0.92 | 37 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 96.48 | 95.78 | 121.56 | 12.21 | -22.46 | 0.740 | 0.815 | 1.473 | 79.40 | 0.92 | 10 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 96.48 | 95.78 | 121.56 | 12.21 | -22.46 | 0.740 | 0.815 | 1.473 | 79.40 | 0.92 | 10 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 96.75 | 97.32 | 120.02 | 8.51 | -24.41 | 0.742 | 0.828 | 1.477 | 74.76 | 0.92 | 15 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 97.09 | 97.37 | 122.84 | 11.51 | -25.54 | 0.745 | 0.828 | 1.482 | 78.80 | 0.92 | 14 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 97.51 | 97.71 | 121.96 | 9.13 | -25.71 | 0.748 | 0.831 | 1.489 | 78.75 | 0.92 | 37 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 97.60 | 97.70 | 121.98 | 9.15 | -25.60 | 0.749 | 0.831 | 1.490 | 78.77 | 0.92 | 10 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 97.60 | 97.70 | 121.98 | 9.15 | -25.60 | 0.749 | 0.831 | 1.490 | 78.77 | 0.92 | 10 | False | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 97.69 | 96.55 | 120.38 | 8.34 | -23.11 | 0.749 | 0.821 | 1.492 | 75.94 | 0.85 | 11 | False | True |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 97.76 | 96.77 | 122.51 | 10.32 | -27.17 | 0.750 | 0.823 | 1.493 | 80.22 | 0.92 | 22 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 98.31 | 97.46 | 122.01 | 8.62 | -25.13 | 0.754 | 0.829 | 1.501 | 79.62 | 0.92 | 12 | False | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 100.04 | 101.58 | 125.70 | 9.17 | -28.13 | 0.767 | 0.864 | 1.527 | 81.83 | 0.92 | 7 | False | True |
@@ -733,26 +995,37 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 76.34 | 72.18 | 96.16 | 41.43 | 24.67 | 0.577 | 0.613 |  | 72.57 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 78.37 | 76.43 | 97.90 | 38.31 | 23.08 | 0.593 | 0.649 |  | 75.35 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | PIT | 12 | 80.73 | 75.50 | 101.70 | 35.29 | 18.68 | 0.610 | 0.641 |  | 76.00 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 84.46 | 93.91 | 102.30 | -50.51 | -66.65 | 0.639 | 0.797 |  | 83.76 | 0.92 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 85.97 | 94.85 | 103.77 | -49.26 | -65.81 | 0.650 | 0.805 |  | 80.03 | 0.92 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 88.89 | 85.34 | 100.43 | 6.39 | -1.54 | 0.672 | 0.725 |  | 115.91 | 1.00 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 96.63 | 80.75 | 122.42 | 59.16 | 25.97 | 0.731 | 0.686 |  | 88.62 | 0.83 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 96.74 | 88.52 | 123.84 | 55.75 | 38.14 | 0.732 | 0.752 |  | 77.11 | 1.00 | 2 | False | True |
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 106.84 | 97.04 | 122.16 | 38.43 | 9.87 | 0.808 | 0.824 |  | 85.46 | 0.92 | 4 | False | True |
 | margin-ts | ensemble_simple | W1 | 2 | PIT | 12 | 107.60 | 98.15 | 129.50 | 50.99 | 13.80 | 0.814 | 0.833 |  | 84.91 | 1.00 | 5 | False | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 111.28 | 108.09 | 125.17 | 14.46 | -14.62 | 0.841 | 0.918 |  | 185.70 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 111.28 | 108.09 | 125.17 | 14.46 | -14.62 | 0.841 | 0.918 |  | 185.70 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 111.39 | 108.23 | 125.41 | 14.13 | -15.08 | 0.842 | 0.919 |  | 185.66 | 1.00 | 37 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 111.81 | 112.36 | 126.77 | 12.79 | -21.79 | 0.845 | 0.954 |  | 199.92 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 111.83 | 106.67 | 134.84 | 43.33 | 1.58 | 0.846 | 0.906 |  | 81.10 | 1.00 | 7 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 112.60 | 106.05 | 126.70 | 25.93 | -2.30 | 0.851 | 0.901 |  | 181.25 | 1.00 | 12 | False | True |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 113.37 | 108.02 | 137.26 | 40.04 | -1.14 | 0.857 | 0.917 |  | 82.15 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 113.65 | 89.70 | 128.48 | 113.65 | 89.70 | 0.859 | 0.762 |  | 118.23 | 1.00 | 3 | True | True |
 | margin-ts | ensemble_simple | W1 | 2 | PIT | 12 | 113.70 | 101.36 | 138.15 | 57.24 | 16.11 | 0.860 | 0.861 |  | 87.96 | 1.00 | 1 | False | True |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 114.37 | 111.60 | 130.90 | 21.08 | -12.75 | 0.865 | 0.948 |  | 192.04 | 1.00 | 7 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 114.58 | 91.41 | 140.10 | -2.25 | -8.01 | 0.866 | 0.776 |  | 94.57 | 0.83 | 1 | True | True |
 | margin-ts | sarima_margin | W1 | 2 | PIT | 12 | 114.83 | 116.69 | 137.77 | 6.07 | -24.24 | 0.868 | 0.991 |  | 81.75 | 0.83 | 15 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 115.03 | 108.92 | 129.25 | 9.97 | -15.64 | 0.870 | 0.925 |  | 187.66 | 1.00 | 15 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 115.86 | 106.35 | 149.13 | 69.08 | 20.79 | 0.876 | 0.903 |  | 83.93 | 1.00 | 7 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 116.07 | 110.63 | 132.93 | 21.12 | -9.54 | 0.878 | 0.939 |  | 177.14 | 1.00 | 12 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 116.27 | 110.98 | 132.34 | 21.31 | -9.40 | 0.879 | 0.942 |  | 177.19 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 116.27 | 110.98 | 132.34 | 21.31 | -9.40 | 0.879 | 0.942 |  | 177.19 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 116.27 | 110.98 | 132.34 | 21.31 | -9.40 | 0.879 | 0.942 |  | 177.19 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 116.30 | 110.97 | 132.45 | 21.05 | -9.73 | 0.879 | 0.942 |  | 177.14 | 1.00 | 37 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 118.51 | 111.71 | 133.70 | 26.98 | -3.78 | 0.896 | 0.949 |  | 174.76 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 120.14 | 114.65 | 140.35 | 38.22 | -5.55 | 0.908 | 0.974 |  | 177.32 | 1.00 | 14 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 120.94 | 112.79 | 137.10 | 17.24 | -10.67 | 0.914 | 0.958 |  | 179.71 | 1.00 | 15 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 122.64 | 116.17 | 137.68 | 22.31 | -4.75 | 0.927 | 0.986 |  | 178.92 | 1.00 | 22 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 125.65 | 96.99 | 149.30 | 92.40 | 36.21 | 0.950 | 0.824 |  | 95.26 | 1.00 | 2 | True | True |
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 127.00 | 111.45 | 159.00 | 40.49 | 7.07 | 0.960 | 0.946 |  | 103.10 | 0.92 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 128.30 | 112.09 | 160.69 | 40.42 | 6.36 | 0.970 | 0.952 |  | 103.05 | 0.83 | 3 | False | False |
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 131.50 | 113.94 | 164.86 | 70.48 | 21.28 | 0.994 | 0.968 |  | 107.31 | 0.83 | 3 | False | False |
@@ -760,22 +1033,35 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | yoy_margin_change | W1 | 2 | PIT | 12 | 134.55 | 117.20 | 171.39 | 78.05 | 25.56 | 1.017 | 0.995 |  | 109.42 | 0.83 | 3 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 135.29 | 133.34 | 164.81 | 64.72 | 3.52 | 1.023 | 1.132 |  | 92.49 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 138.34 | 117.40 | 179.38 | 83.15 | 25.62 | 1.046 | 0.997 |  | 109.72 | 0.83 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 138.82 | 101.76 | 166.14 | 105.56 | 40.98 | 1.050 | 0.864 |  | 112.85 | 0.92 | 2 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 142.83 | 107.36 | 169.61 | 131.67 | 82.99 | 1.080 | 0.912 |  | 104.42 | 1.00 | 3 | False | True |
 | baselines-margin | guide_implied | W1 | 2 | PIT | 6 | 142.84 | 98.28 | 190.85 | 88.05 | 57.19 | 0.981 | 1.048 |  | 101.97 | 0.50 | 4 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 145.33 | 121.84 | 188.45 | 91.90 | 30.53 | 1.099 | 1.035 |  | 113.26 | 0.83 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 159.16 | 115.78 | 186.64 | 147.99 | 91.41 | 1.203 | 0.983 |  | 122.73 | 0.92 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 164.60 | 130.95 | 188.30 | 160.61 | 122.26 | 1.245 | 1.112 |  | 113.23 | 0.92 | 3 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | PIT | 12 | 177.21 | 146.38 | 254.61 | 133.87 | 74.73 | 1.340 | 1.243 |  | 130.07 | 0.50 | 4 | False | False |
+| guide-policy-margin | actual_given_guide | W1 | 2 | PIT | 12 | 207.58 | 136.54 | 316.57 | 196.42 | 112.17 | 1.570 | 1.159 |  | 159.78 | 0.83 | 6 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 232.13 | 151.15 | 333.26 | 204.95 | 94.26 | 1.755 | 1.284 |  | 181.46 | 0.67 | 7 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | PIT | 12 | 284.02 | 263.98 | 375.45 | -69.09 | -28.56 | 2.148 | 2.242 |  | 214.66 | 1.00 | 3 | False | False |
 | baselines-margin | guide_implied | W1 | 2 | full_sample | 6 | 31.89 | 20.40 | 43.76 | -19.28 | -4.28 | 0.219 | 0.218 |  | 42.74 | 1.00 | 4 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 42.55 | 32.81 | 51.69 | -13.32 | 0.03 | 0.322 | 0.279 |  | 36.54 | 0.75 | 10 | True | True |
 | cycle-flex | flex_margin | W1 | 2 | full_sample | 12 | 49.92 | 40.48 | 58.50 | -13.72 | 1.60 | 0.377 | 0.344 |  | 41.10 | 0.75 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 53.45 | 48.67 | 57.23 | 7.20 | 10.45 | 0.404 | 0.413 |  | 82.98 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 63.86 | 50.53 | 87.22 | -30.82 | -10.97 | 0.483 | 0.429 |  | 50.77 | 0.83 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 68.02 | 58.29 | 81.61 | -25.69 | -11.29 | 0.514 | 0.495 |  | 79.34 | 0.92 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 70.03 | 73.93 | 79.82 | 18.05 | 0.06 | 0.530 | 0.628 |  | 65.69 | 1.00 | 6 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 74.03 | 66.16 | 82.17 | 1.85 | -0.38 | 0.560 | 0.562 |  | 63.42 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 74.03 | 66.16 | 82.26 | -0.14 | -2.12 | 0.560 | 0.562 |  | 62.88 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 74.22 | 66.45 | 84.90 | -15.78 | -15.80 | 0.561 | 0.564 |  | 63.84 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 74.27 | 66.53 | 86.28 | -20.38 | -19.83 | 0.562 | 0.565 |  | 65.81 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W1 | 2 | full_sample | 12 | 74.28 | 66.54 | 86.49 | -21.01 | -20.38 | 0.562 | 0.565 |  | 65.28 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 75.97 | 82.51 | 92.52 | -25.97 | -41.97 | 0.574 | 0.701 |  | 74.65 | 0.92 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 77.97 | 83.50 | 94.59 | -26.10 | -41.75 | 0.590 | 0.709 |  | 68.49 | 0.92 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 81.54 | 79.75 | 92.64 | 26.73 | 4.79 | 0.617 | 0.677 |  | 75.65 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 82.56 | 80.23 | 92.79 | 22.80 | 3.36 | 0.624 | 0.681 |  | 65.49 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 84.50 | 93.96 | 102.21 | -50.50 | -66.64 | 0.639 | 0.798 |  | 80.08 | 0.92 | 2 | True | True |
 | margin-ts | ensemble_simple | W1 | 2 | full_sample | 12 | 85.68 | 82.77 | 95.23 | -20.02 | -29.78 | 0.648 | 0.703 |  | 82.58 | 1.00 | 5 | True | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 86.01 | 94.91 | 103.68 | -49.26 | -65.80 | 0.650 | 0.806 |  | 78.32 | 0.83 | 2 | True | True |
 | margin-ts | ensemble_simple | W1 | 2 | full_sample | 12 | 86.59 | 83.94 | 96.40 | -18.22 | -28.39 | 0.655 | 0.713 |  | 83.18 | 1.00 | 1 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 87.83 | 85.73 | 99.13 | -16.26 | -24.57 | 0.664 | 0.728 |  | 93.36 | 0.92 | 7 | True | True |
 | margin-ts | yoy_margin_change | W1 | 2 | full_sample | 12 | 87.97 | 85.68 | 99.00 | -13.27 | -21.52 | 0.665 | 0.728 |  | 92.68 | 0.92 | 3 | True | True |
@@ -786,13 +1072,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 88.89 | 85.34 | 100.43 | 6.39 | -1.54 | 0.672 | 0.725 |  | 88.65 | 0.92 | 2 | True | True |
 | margin-ts | yoy_margin_change | W1 | 2 | full_sample | 12 | 93.09 | 85.61 | 111.76 | 40.39 | 33.03 | 0.704 | 0.727 |  | 95.61 | 1.00 | 3 | False | True |
 | margin-ts | yoy_margin_change | W1 | 2 | full_sample | 12 | 93.17 | 85.63 | 111.90 | 40.69 | 33.33 | 0.704 | 0.727 |  | 95.14 | 1.00 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W1 | 2 | full_sample | 12 | 96.31 | 89.73 | 114.10 | 68.78 | 56.92 | 0.728 | 0.762 |  | 73.14 | 1.00 | 3 | False | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 96.74 | 88.52 | 123.84 | 55.75 | 38.14 | 0.732 | 0.752 |  | 73.85 | 1.00 | 2 | False | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 101.49 | 106.24 | 120.53 | -26.59 | -50.68 | 0.767 | 0.902 |  | 81.26 | 0.92 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 107.21 | 114.65 | 125.78 | -42.41 | -67.41 | 0.811 | 0.974 |  | 85.19 | 0.92 | 7 | False | False |
 | cycle-flex | flex_margin | W1 | 2 | full_sample | 12 | 107.64 | 107.16 | 123.12 | 25.35 | -9.00 | 0.814 | 0.910 |  | 110.65 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 107.91 | 110.30 | 124.12 | 19.41 | -19.78 | 0.816 | 0.937 |  | 119.76 | 1.00 | 14 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 108.09 | 110.46 | 123.64 | 17.93 | -19.63 | 0.817 | 0.938 |  | 119.45 | 1.00 | 37 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 108.11 | 110.41 | 123.64 | 18.01 | -19.47 | 0.817 | 0.938 |  | 119.43 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 108.11 | 110.41 | 123.64 | 18.01 | -19.47 | 0.817 | 0.938 |  | 119.43 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 108.11 | 110.41 | 123.64 | 18.01 | -19.47 | 0.817 | 0.938 |  | 119.43 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 108.14 | 110.40 | 123.68 | 18.15 | -19.34 | 0.818 | 0.937 |  | 119.16 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 108.15 | 109.59 | 123.89 | 21.10 | -16.69 | 0.818 | 0.931 |  | 122.30 | 1.00 | 37 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 108.20 | 109.59 | 123.90 | 21.19 | -16.56 | 0.818 | 0.931 |  | 122.32 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 108.20 | 109.59 | 123.90 | 21.19 | -16.56 | 0.818 | 0.931 |  | 122.32 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 108.21 | 109.27 | 124.08 | 22.33 | -15.38 | 0.818 | 0.928 |  | 121.78 | 1.00 | 15 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 108.28 | 109.42 | 122.94 | 17.54 | -18.75 | 0.819 | 0.929 |  | 120.15 | 1.00 | 12 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 108.94 | 117.11 | 127.66 | -47.47 | -72.58 | 0.824 | 0.994 |  | 86.37 | 0.83 | 7 | False | False |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 109.96 | 113.31 | 126.69 | 18.33 | -21.79 | 0.831 | 0.962 |  | 125.38 | 1.00 | 7 | False | False |
@@ -808,39 +1102,54 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 37.56 | 34.25 | 53.94 | -27.14 | -18.10 | 0.384 | 0.322 | 0.646 | 170.85 | 1.00 | 2 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 41.21 | 35.56 | 46.41 | 15.99 | 15.90 | 0.421 | 0.334 | 0.709 | 41.77 | 1.00 | 10 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 45.20 | 42.81 | 55.15 | -21.97 | -7.71 | 0.462 | 0.402 | 0.778 | 46.51 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 45.78 | 42.07 | 55.96 | 0.46 | 3.69 | 0.468 | 0.395 | 0.788 | 49.88 | 0.90 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 46.26 | 42.23 | 58.36 | 4.91 | 10.28 | 0.473 | 0.397 | 0.796 | 108.71 | 1.00 | 2 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 47.13 | 40.21 | 67.13 | 29.61 | 19.35 | 0.482 | 0.378 | 0.811 | 44.05 | 1.00 | 7 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 47.59 | 43.34 | 59.67 | -31.33 | -17.43 | 0.487 | 0.407 | 0.819 | 54.50 | 1.00 | 2 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 49.77 | 46.08 | 56.22 | 20.85 | 24.89 | 0.509 | 0.433 | 0.856 | 44.68 | 1.00 | 14 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 50.57 | 43.93 | 56.07 | 22.07 | 20.99 | 0.517 | 0.413 | 0.870 | 45.56 | 1.00 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 51.14 | 48.33 | 60.68 | 19.32 | 22.56 | 0.523 | 0.454 | 0.880 | 43.95 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 53.77 | 49.94 | 60.75 | 45.33 | 42.78 | 0.550 | 0.469 | 0.925 | 45.33 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 53.88 | 49.40 | 59.81 | 40.86 | 34.08 | 0.551 | 0.464 | 0.927 | 44.33 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 55.23 | 54.03 | 60.98 | 35.27 | 24.81 | 0.565 | 0.508 | 0.950 | 44.99 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 55.50 | 58.87 | 65.77 | 24.22 | 5.13 | 0.567 | 0.553 | 0.955 | 46.65 | 1.00 | 3 | True | True |
 | baselines-margin | street | W2 | 0 | PIT | 10 | 58.12 | 59.32 | 63.67 | -42.48 | -50.77 | 0.594 | 0.557 | 1.000 | 47.73 | 0.90 | 1 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 58.57 | 46.47 | 71.21 | 29.66 | 27.65 | 0.599 | 0.437 | 1.008 | 56.47 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 58.97 | 48.02 | 69.43 | 15.70 | 15.48 | 0.603 | 0.451 | 1.015 | 60.52 | 1.00 | 37 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 59.13 | 49.78 | 69.78 | 29.42 | 31.75 | 0.605 | 0.468 | 1.017 | 61.23 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 60.06 | 49.78 | 70.16 | 17.81 | 19.70 | 0.614 | 0.468 | 1.033 | 61.70 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 60.06 | 49.78 | 70.16 | 17.81 | 19.70 | 0.614 | 0.468 | 1.033 | 61.70 | 1.00 | 10 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | PIT | 10 | 60.56 | 58.44 | 73.63 | -44.33 | -27.08 | 0.619 | 0.549 | 1.042 | 64.61 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 60.81 | 48.96 | 71.58 | -60.81 | -48.96 | 0.622 | 0.460 | 1.046 | 49.96 | 0.90 | 2 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 61.27 | 49.38 | 73.73 | 20.15 | 15.20 | 0.626 | 0.464 | 1.054 | 56.32 | 1.00 | 37 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 61.45 | 51.15 | 71.72 | 11.26 | 12.72 | 0.628 | 0.481 | 1.057 | 63.41 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 61.54 | 50.59 | 73.11 | 21.94 | 18.42 | 0.629 | 0.475 | 1.059 | 56.73 | 1.00 | 12 | True | True |
 | baselines-margin | q_guide_implied | W2 | 0 | PIT | 10 | 61.72 | 55.99 | 70.85 | 16.36 | 14.98 | 0.631 | 0.526 | 1.062 | 55.04 | 0.90 | 1 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 61.72 | 55.99 | 70.85 | 16.36 | 14.98 | 0.631 | 0.526 | 1.062 | 69.07 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 62.03 | 53.99 | 82.81 | 47.19 | 46.98 | 0.634 | 0.507 | 1.067 | 112.81 | 1.00 | 3 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 62.85 | 51.32 | 74.41 | 23.04 | 19.82 | 0.643 | 0.482 | 1.081 | 57.45 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 62.85 | 51.32 | 74.41 | 23.04 | 19.82 | 0.643 | 0.482 | 1.081 | 57.45 | 1.00 | 10 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 62.87 | 62.53 | 70.71 | 28.11 | 8.06 | 0.643 | 0.588 | 1.082 | 49.37 | 1.00 | 3 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 62.99 | 51.21 | 74.69 | 25.00 | 22.28 | 0.644 | 0.481 | 1.084 | 58.77 | 1.00 | 14 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 63.21 | 52.42 | 74.13 | 19.49 | 17.58 | 0.646 | 0.493 | 1.088 | 58.94 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 63.34 | 53.66 | 80.83 | 41.15 | 37.69 | 0.648 | 0.504 | 1.090 | 54.66 | 0.90 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 63.64 | 52.70 | 75.93 | 29.20 | 25.20 | 0.651 | 0.495 | 1.095 | 56.18 | 1.00 | 11 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 64.11 | 50.05 | 81.61 | 26.70 | 21.88 | 0.655 | 0.470 | 1.103 | 60.00 | 0.90 | 7 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | PIT | 10 | 64.81 | 62.48 | 74.14 | 32.52 | 12.82 | 0.663 | 0.587 | 1.115 | 51.32 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 65.69 | 52.50 | 79.48 | -65.69 | -52.50 | 0.672 | 0.493 | 1.130 | 99.39 | 1.00 | 2 | True | True |
 | margin-ts | ensemble_simple | W2 | 0 | PIT | 10 | 66.96 | 60.17 | 78.04 | 26.78 | 9.23 | 0.685 | 0.565 | 1.152 | 56.79 | 1.00 | 5 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 67.76 | 52.95 | 84.13 | 28.22 | 24.79 | 0.693 | 0.498 | 1.166 | 62.57 | 0.90 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 68.23 | 58.69 | 92.36 | 50.21 | 50.28 | 0.698 | 0.552 | 1.174 | 117.49 | 1.00 | 3 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 68.49 | 62.82 | 72.06 | -0.77 | -13.08 | 0.700 | 0.590 | 1.178 | 63.85 | 1.00 | 15 | True | True |
 | margin-ts | ensemble_simple | W2 | 0 | PIT | 10 | 70.09 | 61.39 | 83.11 | 29.84 | 11.39 | 0.717 | 0.577 | 1.206 | 59.17 | 1.00 | 1 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 70.69 | 63.46 | 77.28 | 10.34 | -3.88 | 0.723 | 0.596 | 1.216 | 59.34 | 1.00 | 15 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 70.96 | 64.30 | 91.27 | 29.78 | 19.26 | 0.726 | 0.604 | 1.221 | 58.86 | 1.00 | 4 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 75.25 | 66.19 | 82.73 | 24.55 | 11.87 | 0.769 | 0.622 | 1.295 | 56.81 | 0.90 | 4 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 79.08 | 60.92 | 103.37 | 53.59 | 37.98 | 0.809 | 0.573 | 1.361 | 92.30 | 1.00 | 22 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 81.80 | 86.19 | 88.38 | 1.40 | -20.76 | 0.836 | 0.810 | 1.407 | 66.46 | 1.00 | 1 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 82.04 | 74.12 | 93.28 | 25.84 | 1.82 | 0.839 | 0.697 | 1.412 | 71.47 | 1.00 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 82.58 | 77.78 | 102.57 | 28.31 | 3.16 | 0.844 | 0.731 | 1.421 | 64.14 | 0.90 | 3 | True | True |
+| guide-policy-margin | q4_implied | W2 | 0 | PIT | 2 | 83.16 | 69.92 | 92.15 | -83.16 | -69.92 | 3.465 | 3.040 | 2.137 | 56.65 | 0.50 | 1 | False | False |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 84.64 | 79.74 | 104.65 | 28.61 | 2.67 | 0.865 | 0.749 | 1.456 | 66.38 | 0.90 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 88.76 | 77.41 | 103.72 | 31.83 | 6.85 | 0.908 | 0.727 | 1.527 | 74.64 | 1.00 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | PIT | 10 | 88.78 | 76.38 | 103.90 | 32.74 | 8.77 | 0.908 | 0.718 | 1.528 | 72.49 | 1.00 | 3 | True | True |
@@ -850,9 +1159,12 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | guide_implied | W2 | 0 | PIT | 10 | 96.69 | 84.50 | 118.50 | -96.69 | -84.50 | 0.989 | 0.794 | 1.664 | 201.81 | 0.90 | 4 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 96.93 | 105.23 | 106.34 | 74.71 | 92.46 | 0.991 | 0.989 | 1.668 | 98.69 | 0.90 | 2 | True | True |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 97.80 | 106.41 | 117.15 | -96.40 | -105.27 | 1.000 | 1.000 | 1.683 | 118.12 | 0.90 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 103.67 | 100.42 | 131.90 | 90.03 | 94.02 | 1.060 | 0.944 | 1.784 | 129.95 | 1.00 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | PIT | 10 | 106.48 | 90.83 | 145.69 | 9.79 | 11.18 | 1.089 | 0.854 | 1.832 | 193.79 | 0.90 | 6 | False | True |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 264.77 | 249.38 | 345.41 | -6.87 | 0.25 | 2.707 | 2.344 | 4.556 | 187.80 | 1.00 | 3 | False | False |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 35.29 | 30.65 | 41.28 | 2.47 | 7.16 | 0.361 | 0.288 | 0.607 | 31.69 | 0.80 | 10 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | full_sample | 10 | 37.12 | 36.49 | 47.61 | -12.17 | -2.49 | 0.380 | 0.343 | 0.639 | 51.45 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 37.13 | 31.99 | 46.83 | -2.79 | 8.81 | 0.380 | 0.301 | 0.639 | 96.31 | 1.00 | 3 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | full_sample | 10 | 37.38 | 36.49 | 47.46 | -10.99 | -1.68 | 0.382 | 0.343 | 0.643 | 45.74 | 0.90 | 2 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | full_sample | 10 | 38.63 | 36.69 | 47.85 | -6.49 | 1.41 | 0.395 | 0.345 | 0.665 | 152.62 | 1.00 | 2 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | full_sample | 10 | 40.23 | 42.49 | 46.07 | -0.57 | -0.44 | 0.411 | 0.399 | 0.692 | 39.18 | 0.90 | 3 | True | True |
@@ -862,38 +1174,54 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | ensemble_simple | W2 | 0 | full_sample | 10 | 41.80 | 36.90 | 54.26 | -0.39 | 4.06 | 0.427 | 0.347 | 0.719 | 57.76 | 0.90 | 5 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 42.21 | 37.33 | 49.20 | 1.23 | 7.40 | 0.432 | 0.351 | 0.726 | 37.60 | 0.80 | 12 | True | True |
 | margin-ts | ensemble_simple | W2 | 0 | full_sample | 10 | 45.21 | 40.44 | 58.13 | 0.91 | 4.59 | 0.462 | 0.380 | 0.778 | 59.94 | 0.90 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 45.29 | 39.92 | 55.93 | 3.10 | 16.22 | 0.463 | 0.375 | 0.779 | 101.83 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | full_sample | 10 | 45.37 | 44.32 | 49.89 | 23.16 | 25.86 | 0.464 | 0.417 | 0.781 | 41.05 | 0.90 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 0 | full_sample | 10 | 45.92 | 44.68 | 50.59 | 24.98 | 27.86 | 0.469 | 0.420 | 0.790 | 41.13 | 0.90 | 3 | True | True |
 | margin-ts | q_sentence_direction | W2 | 0 | full_sample | 10 | 46.19 | 47.27 | 58.72 | -28.34 | -13.58 | 0.472 | 0.444 | 0.795 | 57.18 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 46.29 | 34.90 | 58.84 | -39.82 | -27.94 | 0.473 | 0.328 | 0.796 | 46.87 | 0.90 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 46.35 | 41.64 | 56.35 | -1.41 | 8.88 | 0.474 | 0.391 | 0.797 | 44.28 | 0.90 | 3 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 46.48 | 36.89 | 57.39 | -13.86 | -4.30 | 0.475 | 0.347 | 0.800 | 49.36 | 0.90 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 46.92 | 32.67 | 64.08 | -40.45 | -25.71 | 0.480 | 0.307 | 0.807 | 99.80 | 0.90 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 50.26 | 52.55 | 54.48 | -2.72 | -11.17 | 0.514 | 0.494 | 0.865 | 142.29 | 1.00 | 6 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 50.99 | 40.90 | 61.98 | 6.84 | 12.27 | 0.521 | 0.384 | 0.877 | 49.36 | 0.90 | 22 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | full_sample | 10 | 51.98 | 52.13 | 59.54 | 16.56 | 27.42 | 0.531 | 0.490 | 0.894 | 42.17 | 0.80 | 14 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 52.26 | 42.12 | 63.38 | 9.03 | 14.28 | 0.534 | 0.396 | 0.899 | 46.93 | 0.90 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 52.66 | 52.78 | 61.38 | -1.87 | -2.82 | 0.538 | 0.496 | 0.906 | 72.13 | 0.90 | 7 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 55.49 | 46.96 | 65.53 | 19.09 | 24.51 | 0.567 | 0.441 | 0.955 | 43.76 | 0.90 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 56.85 | 46.30 | 67.03 | 10.50 | 12.03 | 0.581 | 0.435 | 0.978 | 45.33 | 0.90 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 56.91 | 55.60 | 67.59 | -3.25 | -4.35 | 0.582 | 0.522 | 0.979 | 76.88 | 0.90 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 57.59 | 55.63 | 67.84 | -0.24 | -1.23 | 0.589 | 0.523 | 0.991 | 74.56 | 0.90 | 3 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 57.61 | 47.84 | 67.46 | 11.90 | 15.15 | 0.589 | 0.450 | 0.991 | 46.04 | 0.90 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 57.61 | 47.84 | 67.46 | 11.90 | 15.15 | 0.589 | 0.450 | 0.991 | 46.04 | 0.90 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 57.91 | 44.96 | 70.11 | -57.91 | -44.96 | 0.592 | 0.422 | 0.996 | 47.39 | 0.80 | 2 | True | True |
 | baselines-margin | street | W2 | 0 | full_sample | 10 | 58.12 | 59.32 | 63.67 | -42.48 | -50.77 | 0.594 | 0.557 | 1.000 | 49.31 | 0.90 | 1 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 58.18 | 47.29 | 68.71 | 7.95 | 9.92 | 0.595 | 0.444 | 1.001 | 46.01 | 0.90 | 14 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 58.22 | 46.99 | 69.01 | 9.73 | 9.67 | 0.595 | 0.442 | 1.002 | 44.80 | 0.90 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 58.29 | 55.67 | 68.24 | 2.85 | 1.98 | 0.596 | 0.523 | 1.003 | 74.81 | 0.90 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 58.42 | 47.60 | 69.65 | 9.27 | 10.86 | 0.597 | 0.447 | 1.005 | 46.49 | 0.90 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 58.56 | 47.95 | 68.99 | 9.22 | 10.86 | 0.599 | 0.451 | 1.008 | 45.51 | 0.90 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 58.56 | 47.95 | 68.99 | 9.22 | 10.86 | 0.599 | 0.451 | 1.008 | 45.51 | 0.90 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 59.21 | 55.72 | 68.97 | 6.92 | 6.19 | 0.605 | 0.524 | 1.019 | 75.46 | 0.90 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 59.69 | 55.75 | 69.46 | 9.08 | 8.43 | 0.610 | 0.524 | 1.027 | 72.48 | 0.90 | 3 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 60.00 | 49.63 | 70.20 | 7.23 | 8.82 | 0.614 | 0.466 | 1.032 | 46.61 | 0.90 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 60.10 | 50.02 | 70.18 | 8.63 | 10.53 | 0.615 | 0.470 | 1.034 | 46.40 | 0.90 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 60.17 | 49.50 | 70.55 | 12.05 | 14.63 | 0.615 | 0.465 | 1.035 | 44.65 | 0.90 | 11 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 60.87 | 55.82 | 70.91 | 14.27 | 13.82 | 0.622 | 0.525 | 1.047 | 51.15 | 0.90 | 4 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 61.15 | 47.15 | 82.97 | -22.12 | -7.06 | 0.625 | 0.443 | 1.052 | 71.26 | 0.80 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 61.63 | 48.84 | 81.73 | -17.04 | -1.86 | 0.630 | 0.459 | 1.060 | 69.34 | 0.80 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 62.02 | 51.17 | 72.47 | 12.48 | 6.04 | 0.634 | 0.481 | 1.067 | 41.82 | 0.90 | 15 | True | True |
 | baselines-margin | q_guide_implied | W2 | 0 | full_sample | 10 | 62.04 | 55.88 | 72.72 | 19.47 | 19.21 | 0.634 | 0.525 | 1.068 | 51.32 | 0.90 | 1 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 62.04 | 55.88 | 72.72 | 19.47 | 19.21 | 0.634 | 0.525 | 1.068 | 73.48 | 0.90 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 62.74 | 48.41 | 78.05 | -62.74 | -48.41 | 0.641 | 0.455 | 1.079 | 96.38 | 0.90 | 2 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 63.44 | 54.50 | 70.76 | 9.30 | 0.01 | 0.649 | 0.512 | 1.092 | 42.56 | 0.90 | 15 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 64.69 | 56.73 | 79.84 | -0.83 | 15.06 | 0.661 | 0.533 | 1.113 | 65.31 | 0.80 | 7 | True | True |
 | baselines-margin | guide_implied | W2 | 0 | full_sample | 10 | 67.34 | 71.53 | 76.63 | -63.72 | -69.78 | 0.689 | 0.672 | 1.159 | 165.21 | 1.00 | 4 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | full_sample | 10 | 70.49 | 73.96 | 93.25 | 26.05 | 17.65 | 0.721 | 0.695 | 1.213 | 53.53 | 1.00 | 4 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 73.06 | 62.52 | 91.64 | 53.56 | 54.56 | 0.747 | 0.588 | 1.257 | 68.45 | 0.90 | 3 | True | True |
 | margin-ts | yoy_margin_change | W2 | 0 | full_sample | 10 | 73.25 | 62.76 | 91.85 | 53.87 | 54.88 | 0.749 | 0.590 | 1.260 | 66.43 | 0.90 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 0 | full_sample | 10 | 78.28 | 81.09 | 94.53 | 51.93 | 68.41 | 0.800 | 0.762 | 1.347 | 113.99 | 1.00 | 3 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 81.80 | 86.19 | 88.38 | 1.40 | -20.76 | 0.836 | 0.810 | 1.407 | 66.35 | 1.00 | 1 | True | True |
+| guide-policy-margin | q4_implied | W2 | 0 | full_sample | 2 | 83.16 | 69.92 | 92.15 | -83.16 | -69.92 | 3.465 | 3.040 | 2.137 | 61.54 | 0.50 | 2 | False | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 97.80 | 106.41 | 117.15 | -96.40 | -105.27 | 1.000 | 1.000 | 1.683 | 129.42 | 1.00 | 1 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 104.94 | 116.97 | 116.02 | 83.75 | 105.07 | 1.073 | 1.099 | 1.806 | 125.69 | 1.00 | 2 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | full_sample | 10 | 264.04 | 248.39 | 344.75 | -3.86 | 4.44 | 2.700 | 2.334 | 4.543 | 186.60 | 1.00 | 3 | False | False |
@@ -904,10 +1232,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 43.53 | 37.30 | 49.08 | 25.80 | 22.71 | 0.480 | 0.358 | 0.931 | 46.86 | 1.00 | 10 | True | True |
 | baselines-margin | street | W2 | 1 | PIT | 9 | 46.74 | 50.82 | 54.54 | -0.39 | -19.69 | 0.515 | 0.488 | 1.000 | 61.99 | 1.00 | 1 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 53.67 | 46.36 | 60.58 | 35.69 | 30.18 | 0.592 | 0.446 | 1.148 | 54.45 | 1.00 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 57.91 | 66.07 | 68.18 | -44.34 | -58.75 | 0.639 | 0.635 | 1.239 | 95.35 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 58.22 | 66.38 | 68.36 | -43.12 | -58.38 | 0.642 | 0.638 | 1.246 | 97.96 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 64.45 | 57.66 | 76.48 | 25.09 | 2.35 | 0.711 | 0.554 | 1.379 | 119.24 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 65.13 | 58.89 | 77.05 | 24.40 | 1.11 | 0.718 | 0.566 | 1.394 | 119.01 | 1.00 | 2 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 66.27 | 66.92 | 72.91 | 34.78 | 15.61 | 0.731 | 0.643 | 1.418 | 56.04 | 1.00 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 73.71 | 70.37 | 88.55 | 29.82 | 3.48 | 0.813 | 0.676 | 1.577 | 84.31 | 1.00 | 2 | True | True |
 | baselines-margin | q_guide_implied | W2 | 1 | PIT | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 46.78 | 1.00 | 1 | False | False |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 78.42 | 65.70 | 96.20 | 54.70 | 27.67 | 0.865 | 0.631 | 1.678 | 64.38 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 80.79 | 68.06 | 94.77 | 77.22 | 64.83 | 0.891 | 0.654 | 1.729 | 162.68 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 84.41 | 71.63 | 101.26 | 52.54 | 22.02 | 0.931 | 0.688 | 1.806 | 65.42 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 86.06 | 75.26 | 102.71 | 50.37 | 18.98 | 0.949 | 0.723 | 1.841 | 67.66 | 1.00 | 3 | True | True |
 | baselines-margin | guide_implied | W2 | 1 | PIT | 7 | 88.43 | 87.38 | 101.22 | -41.52 | -61.01 | 0.876 | 0.756 | 1.792 | 65.87 | 1.00 | 4 | True | True |
@@ -916,21 +1249,32 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 92.42 | 83.01 | 112.66 | 51.63 | 14.64 | 1.019 | 0.798 | 1.977 | 72.83 | 1.00 | 3 | False | True |
 | margin-ts | yoy_margin_change | W2 | 1 | PIT | 9 | 95.70 | 86.05 | 120.91 | 40.87 | 1.86 | 1.056 | 0.827 | 2.048 | 79.70 | 1.00 | 4 | False | True |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 97.41 | 89.40 | 123.22 | 34.28 | -3.88 | 1.074 | 0.859 | 2.084 | 119.52 | 1.00 | 12 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 97.83 | 77.15 | 120.52 | 78.77 | 49.43 | 1.079 | 0.741 | 2.093 | 133.80 | 1.00 | 3 | False | True |
 | margin-ts | incremental_margin | W2 | 1 | PIT | 9 | 98.01 | 88.01 | 116.32 | 48.35 | 9.73 | 1.081 | 0.846 | 2.097 | 74.54 | 1.00 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 100.91 | 87.09 | 163.42 | 73.34 | 38.71 | 1.113 | 0.837 | 2.159 | 116.10 | 1.00 | 6 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 102.02 | 98.37 | 127.94 | 21.90 | -17.58 | 1.125 | 0.945 | 2.183 | 119.54 | 1.00 | 10 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 102.02 | 98.37 | 127.94 | 21.90 | -17.58 | 1.125 | 0.945 | 2.183 | 119.54 | 1.00 | 10 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 102.19 | 98.57 | 128.20 | 21.61 | -17.79 | 1.127 | 0.947 | 2.186 | 119.38 | 1.00 | 37 | False | True |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 103.33 | 108.41 | 118.19 | 8.22 | -22.55 | 1.140 | 1.042 | 2.211 | 94.08 | 1.00 | 1 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 103.99 | 97.23 | 131.00 | 33.18 | -6.74 | 1.147 | 0.934 | 2.225 | 117.92 | 1.00 | 15 | False | True |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 104.54 | 85.58 | 139.85 | 70.75 | 39.04 | 1.153 | 0.822 | 2.237 | 73.12 | 1.00 | 2 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 105.17 | 103.95 | 132.89 | 14.04 | -27.05 | 1.160 | 0.999 | 2.250 | 123.95 | 1.00 | 7 | False | True |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 106.43 | 98.44 | 133.43 | 34.18 | -8.38 | 1.174 | 0.946 | 2.277 | 112.60 | 1.00 | 12 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 110.44 | 82.19 | 142.27 | 95.33 | 60.84 | 1.218 | 0.790 | 2.363 | 139.72 | 1.00 | 3 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 110.47 | 105.50 | 139.19 | 27.97 | -15.77 | 1.218 | 1.014 | 2.364 | 112.59 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 110.71 | 103.84 | 138.96 | 30.44 | -12.70 | 1.221 | 0.998 | 2.369 | 108.83 | 1.00 | 14 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 110.75 | 105.42 | 138.55 | 28.29 | -15.27 | 1.221 | 1.013 | 2.370 | 112.60 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 110.75 | 105.42 | 138.55 | 28.29 | -15.27 | 1.221 | 1.013 | 2.370 | 112.60 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 110.76 | 105.46 | 138.67 | 28.06 | -15.37 | 1.222 | 1.014 | 2.370 | 112.54 | 1.00 | 37 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 111.33 | 107.60 | 139.52 | 23.76 | -19.82 | 1.228 | 1.034 | 2.382 | 117.26 | 1.00 | 7 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 111.50 | 103.38 | 141.46 | 40.09 | -5.95 | 1.230 | 0.993 | 2.386 | 116.94 | 1.00 | 22 | False | True |
 | margin-ts | sarima_margin | W2 | 1 | PIT | 9 | 112.66 | 107.94 | 143.15 | 19.04 | -25.33 | 1.243 | 1.037 | 2.411 | 81.01 | 0.89 | 14 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 113.63 | 106.00 | 142.18 | 35.42 | -9.25 | 1.253 | 1.019 | 2.431 | 112.23 | 1.00 | 11 | False | False |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 113.89 | 105.92 | 142.78 | 36.49 | -8.31 | 1.256 | 1.018 | 2.437 | 112.98 | 1.00 | 15 | False | False |
 | margin-ts | yoy_margin_change | W2 | 1 | PIT | 9 | 118.92 | 104.16 | 149.90 | 52.54 | 2.19 | 1.312 | 1.001 | 2.544 | 102.51 | 1.00 | 3 | False | False |
 | margin-ts | ensemble_simple | W2 | 1 | PIT | 9 | 119.11 | 107.85 | 142.00 | 43.54 | -3.67 | 1.314 | 1.037 | 2.549 | 91.72 | 1.00 | 5 | False | False |
 | margin-ts | ensemble_simple | W2 | 1 | PIT | 9 | 120.42 | 108.35 | 145.25 | 45.28 | -2.90 | 1.328 | 1.041 | 2.577 | 92.69 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | PIT | 9 | 122.21 | 95.33 | 153.42 | 122.21 | 95.33 | 1.348 | 0.916 | 2.615 | 144.64 | 1.00 | 3 | False | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 122.96 | 107.76 | 154.17 | 52.68 | 0.49 | 1.356 | 1.036 | 2.631 | 103.60 | 1.00 | 7 | False | False |
 | margin-ts | yoy_margin_change | W2 | 1 | PIT | 9 | 123.43 | 107.92 | 155.55 | 51.93 | 0.23 | 1.361 | 1.037 | 2.641 | 102.63 | 1.00 | 3 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 124.98 | 116.77 | 161.42 | 34.25 | -20.90 | 1.378 | 1.122 | 2.674 | 90.77 | 0.89 | 7 | False | False |
@@ -948,14 +1292,22 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | q_sentence_direction | W2 | 1 | full_sample | 1 | 21.35 | 21.35 | 21.35 | 21.35 | 21.35 |  |  |  | 33.21 | 1.00 | 2 | False | False |
 | margin-ts | q_sentence_direction | W2 | 1 | full_sample | 1 | 29.41 | 29.41 | 29.41 | 29.41 | 29.41 |  |  |  | 123.31 | 1.00 | 2 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 30.55 | 27.56 | 36.48 | 9.40 | 9.86 | 0.337 | 0.265 | 0.654 | 28.86 | 0.89 | 10 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 35.92 | 36.00 | 42.25 | 20.27 | 18.85 | 0.396 | 0.346 | 0.769 | 124.50 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 37.34 | 41.48 | 43.26 | 6.72 | 2.34 | 0.412 | 0.399 | 0.799 | 41.34 | 1.00 | 3 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 37.84 | 35.45 | 44.16 | 10.43 | 11.17 | 0.417 | 0.341 | 0.810 | 32.81 | 0.89 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 44.69 | 49.75 | 49.68 | 11.74 | 2.32 | 0.493 | 0.478 | 0.956 | 74.11 | 1.00 | 7 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 45.21 | 48.46 | 57.67 | -20.38 | -34.69 | 0.499 | 0.466 | 0.967 | 92.24 | 1.00 | 2 | True | True |
 | baselines-margin | street | W2 | 1 | full_sample | 9 | 46.74 | 50.82 | 54.54 | -0.39 | -19.69 | 0.515 | 0.488 | 1.000 | 61.06 | 1.00 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 46.82 | 50.14 | 58.75 | -20.17 | -35.56 | 0.516 | 0.482 | 1.002 | 92.48 | 1.00 | 2 | True | True |
 | baselines-margin | guide_implied | W2 | 1 | full_sample | 7 | 51.90 | 65.68 | 68.07 | -42.30 | -61.00 | 0.514 | 0.568 | 1.052 | 44.93 | 1.00 | 4 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 53.82 | 47.10 | 66.15 | 22.60 | 6.23 | 0.594 | 0.453 | 1.151 | 100.97 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 55.38 | 49.93 | 66.78 | 21.04 | 3.41 | 0.611 | 0.480 | 1.185 | 100.20 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 56.52 | 61.31 | 60.96 | 6.35 | -12.15 | 0.623 | 0.589 | 1.209 | 54.95 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 56.63 | 61.25 | 61.05 | 6.90 | -11.63 | 0.625 | 0.589 | 1.212 | 55.48 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 56.91 | 59.36 | 63.55 | 15.98 | -5.96 | 0.628 | 0.570 | 1.218 | 75.56 | 1.00 | 6 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 57.50 | 60.81 | 61.83 | 10.88 | -7.84 | 0.634 | 0.584 | 1.230 | 53.57 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 57.89 | 66.01 | 68.03 | -44.32 | -58.70 | 0.638 | 0.634 | 1.239 | 84.53 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 58.22 | 66.36 | 68.23 | -43.13 | -58.35 | 0.642 | 0.638 | 1.246 | 86.09 | 1.00 | 2 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 60.45 | 59.32 | 66.48 | 24.45 | 5.05 | 0.667 | 0.570 | 1.293 | 53.82 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 1 | full_sample | 9 | 60.82 | 59.13 | 67.27 | 26.17 | 6.69 | 0.671 | 0.568 | 1.301 | 54.49 | 1.00 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 66.69 | 69.88 | 82.58 | 6.54 | -19.86 | 0.736 | 0.672 | 1.427 | 87.34 | 1.00 | 7 | True | True |
@@ -968,16 +1320,24 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 73.71 | 70.37 | 88.55 | 29.82 | 3.48 | 0.813 | 0.676 | 1.577 | 75.90 | 1.00 | 2 | True | True |
 | margin-ts | ensemble_simple | W2 | 1 | full_sample | 9 | 73.85 | 77.88 | 86.89 | 2.95 | -24.23 | 0.815 | 0.748 | 1.580 | 78.16 | 1.00 | 1 | True | True |
 | baselines-margin | q_guide_implied | W2 | 1 | full_sample | 1 | 75.88 | 75.88 | 75.88 | 75.88 | 75.88 |  |  |  | 44.00 | 1.00 | 1 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 1 | full_sample | 9 | 80.62 | 66.73 | 100.37 | 73.71 | 57.75 | 0.889 | 0.641 | 1.725 | 112.43 | 1.00 | 3 | True | True |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 85.69 | 72.68 | 107.18 | 64.76 | 38.51 | 0.945 | 0.698 | 1.833 | 89.54 | 1.00 | 3 | True | True |
 | margin-ts | yoy_margin_change | W2 | 1 | full_sample | 9 | 85.80 | 72.70 | 107.39 | 65.07 | 38.82 | 0.946 | 0.699 | 1.836 | 88.56 | 1.00 | 3 | True | True |
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 90.67 | 104.06 | 111.05 | -89.11 | -102.87 | 1.000 | 1.000 | 1.940 | 133.00 | 1.00 | 1 | False | False |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 91.87 | 86.83 | 118.23 | 23.48 | -13.18 | 1.013 | 0.834 | 1.966 | 73.19 | 0.89 | 12 | False | True |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 95.44 | 93.18 | 121.02 | 12.33 | -25.94 | 1.053 | 0.895 | 2.042 | 77.71 | 0.89 | 12 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 98.49 | 97.93 | 124.76 | 13.61 | -25.58 | 1.086 | 0.941 | 2.107 | 80.42 | 0.89 | 12 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 99.13 | 97.07 | 125.54 | 15.23 | -23.72 | 1.093 | 0.933 | 2.121 | 81.01 | 0.89 | 37 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 99.23 | 97.10 | 125.60 | 15.36 | -23.64 | 1.094 | 0.933 | 2.123 | 81.07 | 0.89 | 10 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 99.23 | 97.10 | 125.60 | 15.36 | -23.64 | 1.094 | 0.933 | 2.123 | 81.07 | 0.89 | 10 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 99.98 | 97.43 | 126.56 | 16.66 | -22.49 | 1.103 | 0.936 | 2.139 | 77.44 | 0.89 | 11 | False | True |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 100.05 | 98.04 | 126.31 | 10.12 | -29.71 | 1.103 | 0.942 | 2.141 | 82.01 | 0.89 | 22 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 100.10 | 98.96 | 126.70 | 13.21 | -26.53 | 1.104 | 0.951 | 2.142 | 80.32 | 0.89 | 10 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 100.10 | 98.96 | 126.70 | 13.21 | -26.53 | 1.104 | 0.951 | 2.142 | 80.32 | 0.89 | 10 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 100.11 | 99.01 | 126.72 | 13.05 | -26.70 | 1.104 | 0.952 | 2.142 | 80.32 | 0.89 | 37 | False | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 100.16 | 98.96 | 126.39 | 11.77 | -27.78 | 1.105 | 0.951 | 2.143 | 79.84 | 0.89 | 14 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 100.62 | 95.58 | 127.62 | 21.99 | -16.19 | 1.110 | 0.919 | 2.153 | 78.41 | 0.89 | 15 | False | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 102.31 | 99.45 | 127.66 | 13.71 | -25.00 | 1.128 | 0.956 | 2.189 | 77.51 | 0.89 | 15 | False | True |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 103.33 | 108.41 | 118.19 | 8.22 | -22.55 | 1.140 | 1.042 | 2.211 | 86.49 | 1.00 | 1 | False | False |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 104.40 | 103.69 | 131.62 | 11.04 | -30.05 | 1.151 | 0.996 | 2.234 | 84.23 | 0.89 | 7 | False | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 104.54 | 85.58 | 139.85 | 70.75 | 39.04 | 1.153 | 0.822 | 2.237 | 73.37 | 1.00 | 2 | False | True |
@@ -993,6 +1353,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 48.14 | 41.94 | 57.88 | 39.81 | 35.28 | 0.520 | 0.397 |  | 71.91 | 1.00 | 12 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 59.83 | 55.47 | 67.00 | 46.90 | 33.53 | 0.646 | 0.525 |  | 53.55 | 1.00 | 3 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 77.00 | 74.33 | 86.76 | 16.00 | -9.06 | 0.831 | 0.704 |  | 84.82 | 1.00 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 81.20 | 94.16 | 99.96 | -42.25 | -67.44 | 0.877 | 0.892 |  | 85.64 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 83.27 | 95.20 | 101.97 | -40.19 | -66.40 | 0.899 | 0.902 |  | 81.43 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 86.73 | 78.55 | 100.66 | 36.85 | 7.64 | 0.936 | 0.744 |  | 78.99 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 86.73 | 78.55 | 100.66 | 36.85 | 7.64 | 0.936 | 0.744 |  | 94.65 | 1.00 | 2 | False | True |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 87.32 | 73.85 | 106.15 | 55.56 | 25.01 | 0.943 | 0.699 |  | 80.82 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 87.33 | 74.30 | 107.35 | 55.20 | 23.54 | 0.943 | 0.704 |  | 79.93 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 87.39 | 74.95 | 103.43 | 56.56 | 27.90 | 0.944 | 0.710 |  | 79.44 | 1.00 | 3 | True | True |
@@ -1000,17 +1364,27 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 89.86 | 76.65 | 113.49 | 56.23 | 21.37 | 0.970 | 0.726 |  | 85.27 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | PIT | 8 | 90.66 | 79.24 | 111.23 | 59.07 | 26.13 | 0.979 | 0.750 |  | 85.04 | 1.00 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 90.95 | 85.09 | 103.54 | 34.30 | 5.18 | 0.982 | 0.806 |  | 105.89 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 91.57 | 77.20 | 104.32 | 91.57 | 77.20 | 0.989 | 0.731 |  | 120.94 | 1.00 | 3 | True | True |
 | baselines-margin | seasonal_naive | W2 | 2 | PIT | 8 | 92.62 | 105.60 | 114.77 | -90.88 | -104.35 | 1.000 | 1.000 |  | 154.67 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 106.80 | 95.87 | 127.51 | 49.26 | 9.19 | 1.153 | 0.908 |  | 93.07 | 1.00 | 4 | False | True |
 | baselines-margin | guide_implied | W2 | 2 | PIT | 4 | 109.48 | 81.18 | 166.33 | 82.03 | 53.06 | 1.652 | 1.360 |  | 85.51 | 0.75 | 4 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 110.15 | 90.75 | 138.10 | 75.42 | 40.05 | 1.189 | 0.859 |  | 87.92 | 1.00 | 2 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 112.51 | 90.65 | 140.87 | 95.75 | 62.21 | 1.215 | 0.858 |  | 92.73 | 1.00 | 3 | False | True |
 | margin-ts | ensemble_simple | W2 | 2 | PIT | 8 | 113.25 | 98.62 | 139.65 | 54.66 | 8.95 | 1.223 | 0.934 |  | 98.44 | 1.00 | 5 | False | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 114.48 | 107.29 | 133.96 | 25.75 | -15.18 | 1.236 | 1.016 |  | 219.34 | 1.00 | 15 | False | False |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 115.21 | 105.25 | 134.60 | 36.51 | -4.04 | 1.244 | 0.997 |  | 211.49 | 1.00 | 12 | False | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 115.29 | 108.40 | 134.24 | 24.50 | -16.72 | 1.245 | 1.027 |  | 216.77 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 115.29 | 108.40 | 134.24 | 24.50 | -16.72 | 1.245 | 1.027 |  | 216.77 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 115.44 | 108.54 | 134.55 | 23.98 | -17.27 | 1.246 | 1.028 |  | 216.73 | 1.00 | 37 | False | False |
 | margin-ts | ensemble_simple | W2 | 2 | PIT | 8 | 115.88 | 100.68 | 143.10 | 56.52 | 9.71 | 1.251 | 0.953 |  | 98.69 | 1.00 | 1 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 117.25 | 94.92 | 144.85 | 100.49 | 66.49 | 1.266 | 0.899 |  | 109.48 | 1.00 | 3 | False | True |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 119.09 | 114.52 | 138.92 | 15.98 | -27.05 | 1.286 | 1.085 |  | 231.74 | 1.00 | 7 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 120.27 | 110.55 | 143.31 | 32.40 | -11.55 | 1.298 | 1.047 |  | 206.49 | 1.00 | 12 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 120.57 | 110.93 | 142.61 | 32.25 | -11.79 | 1.302 | 1.051 |  | 206.49 | 1.00 | 37 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 120.57 | 110.95 | 142.49 | 32.68 | -11.39 | 1.302 | 1.051 |  | 206.56 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 120.57 | 110.95 | 142.49 | 32.68 | -11.39 | 1.302 | 1.051 |  | 206.56 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 120.57 | 110.95 | 142.49 | 32.68 | -11.39 | 1.302 | 1.051 |  | 206.56 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 120.72 | 110.81 | 143.24 | 33.72 | -10.49 | 1.303 | 1.049 |  | 209.27 | 1.00 | 15 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 121.04 | 112.93 | 143.11 | 27.54 | -16.84 | 1.307 | 1.069 |  | 222.39 | 1.00 | 7 | False | False |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 121.87 | 111.05 | 142.57 | 38.02 | -5.86 | 1.316 | 1.052 |  | 203.68 | 1.00 | 12 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 123.69 | 109.70 | 148.86 | 42.15 | -6.31 | 1.335 | 1.039 |  | 95.09 | 1.00 | 7 | False | False |
@@ -1026,24 +1400,34 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 139.41 | 112.68 | 181.49 | 62.24 | 7.60 | 1.505 | 1.067 |  | 117.55 | 1.00 | 3 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | PIT | 8 | 139.53 | 112.61 | 180.33 | 63.02 | 8.67 | 1.506 | 1.066 |  | 118.00 | 1.00 | 3 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 142.80 | 114.71 | 191.23 | 102.04 | 48.34 | 1.542 | 1.086 |  | 103.69 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 145.15 | 118.18 | 172.86 | 139.18 | 108.03 | 1.567 | 1.119 |  | 105.95 | 0.88 | 3 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 146.92 | 136.56 | 171.30 | 42.13 | -14.51 | 1.586 | 1.293 |  | 101.74 | 1.00 | 7 | False | False |
+| guide-policy-margin | actual_given_guide | W2 | 2 | PIT | 8 | 147.78 | 109.39 | 235.54 | 131.03 | 80.96 | 1.595 | 1.036 |  | 115.56 | 1.00 | 6 | False | False |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 196.45 | 148.59 | 290.89 | 131.45 | 64.99 | 2.121 | 1.407 |  | 152.69 | 0.50 | 4 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | PIT | 8 | 299.58 | 271.86 | 376.21 | -48.71 | -23.43 | 3.234 | 2.574 |  | 213.49 | 1.00 | 3 | False | False |
 | baselines-margin | guide_implied | W2 | 2 | full_sample | 4 | 11.66 | 11.88 | 14.18 | 7.26 | 6.91 | 0.176 | 0.199 |  | 38.83 | 1.00 | 4 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 33.71 | 29.07 | 38.18 | 9.11 | 8.80 | 0.364 | 0.275 |  | 30.52 | 0.88 | 10 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 41.63 | 43.52 | 45.87 | 7.19 | 2.30 | 0.449 | 0.412 |  | 38.69 | 1.00 | 3 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 42.14 | 37.15 | 46.83 | 11.31 | 11.58 | 0.455 | 0.352 |  | 35.00 | 0.88 | 12 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 49.40 | 46.22 | 53.75 | 23.93 | 15.26 | 0.533 | 0.438 |  | 85.84 | 1.00 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 50.22 | 52.36 | 52.70 | 13.15 | 2.42 | 0.542 | 0.496 |  | 74.96 | 1.00 | 7 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 60.13 | 61.96 | 69.76 | 6.06 | -13.92 | 0.649 | 0.587 |  | 63.28 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 60.32 | 61.99 | 69.86 | 6.61 | -13.40 | 0.651 | 0.587 |  | 64.00 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 61.73 | 62.23 | 70.74 | 10.66 | -9.62 | 0.666 | 0.589 |  | 62.43 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 66.53 | 63.06 | 75.52 | 24.44 | 3.22 | 0.718 | 0.597 |  | 63.70 | 1.00 | 3 | True | True |
 | margin-ts | incremental_margin | W2 | 2 | full_sample | 8 | 67.17 | 63.21 | 76.31 | 26.19 | 4.86 | 0.725 | 0.599 |  | 64.55 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 74.87 | 75.02 | 82.88 | 17.08 | -4.14 | 0.808 | 0.710 |  | 68.13 | 1.00 | 6 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 75.34 | 82.64 | 92.84 | -17.48 | -42.61 | 0.813 | 0.783 |  | 72.87 | 1.00 | 2 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 76.74 | 83.34 | 94.70 | -16.08 | -41.91 | 0.828 | 0.789 |  | 65.04 | 1.00 | 2 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 77.00 | 74.33 | 86.76 | 16.00 | -9.06 | 0.831 | 0.704 |  | 71.06 | 1.00 | 1 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 80.96 | 81.29 | 92.59 | 3.96 | -25.22 | 0.874 | 0.770 |  | 82.73 | 1.00 | 5 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 81.27 | 94.23 | 100.01 | -42.25 | -67.44 | 0.877 | 0.892 |  | 75.61 | 1.00 | 2 | True | True |
 | margin-ts | ensemble_simple | W2 | 2 | full_sample | 8 | 82.86 | 82.70 | 94.66 | 5.99 | -23.70 | 0.895 | 0.783 |  | 83.36 | 1.00 | 1 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 83.33 | 95.28 | 102.01 | -40.19 | -66.40 | 0.900 | 0.902 |  | 73.72 | 0.88 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 84.50 | 84.48 | 96.42 | 10.75 | -18.25 | 0.912 | 0.800 |  | 93.78 | 1.00 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 85.35 | 84.56 | 97.05 | 13.87 | -15.15 | 0.921 | 0.801 |  | 93.36 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 85.41 | 80.01 | 97.91 | 27.62 | 0.85 | 0.922 | 0.758 |  | 78.45 | 1.00 | 3 | True | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 85.41 | 80.01 | 97.91 | 27.62 | 0.85 | 0.922 | 0.758 |  | 67.40 | 1.00 | 3 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 86.23 | 84.64 | 97.80 | 17.08 | -11.96 | 0.931 | 0.802 |  | 87.02 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 87.38 | 84.75 | 98.95 | 21.29 | -7.77 | 0.943 | 0.803 |  | 94.73 | 1.00 | 7 | True | True |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 88.00 | 84.81 | 99.63 | 23.53 | -5.54 | 0.950 | 0.803 |  | 94.18 | 1.00 | 3 | True | True |
@@ -1052,6 +1436,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W2 | 2 | full_sample | 8 | 92.62 | 105.60 | 114.77 | -90.88 | -104.35 | 1.000 | 1.000 |  | 135.85 | 1.00 | 1 | False | False |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 100.63 | 86.01 | 122.59 | 69.65 | 40.37 | 1.086 | 0.815 |  | 101.50 | 1.00 | 3 | False | True |
 | margin-ts | yoy_margin_change | W2 | 2 | full_sample | 8 | 100.72 | 86.02 | 122.79 | 69.97 | 40.68 | 1.087 | 0.815 |  | 100.99 | 1.00 | 3 | False | True |
+| guide-policy-margin | actual_given_guide | W2 | 2 | full_sample | 8 | 105.91 | 90.97 | 124.00 | 82.68 | 58.57 | 1.143 | 0.861 |  | 78.18 | 1.00 | 3 | False | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 108.11 | 109.41 | 128.82 | -10.94 | -51.03 | 1.167 | 1.036 |  | 82.90 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 110.15 | 90.75 | 138.10 | 75.42 | 40.05 | 1.189 | 0.859 |  | 80.74 | 1.00 | 2 | False | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 113.48 | 118.49 | 133.02 | -27.46 | -68.11 | 1.225 | 1.122 |  | 85.87 | 1.00 | 7 | False | False |
@@ -1059,8 +1444,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 114.95 | 121.11 | 134.38 | -32.63 | -73.34 | 1.241 | 1.147 |  | 86.74 | 1.00 | 7 | False | False |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 115.19 | 108.81 | 133.42 | 23.78 | -16.04 | 1.244 | 1.030 |  | 115.70 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 116.45 | 113.15 | 135.68 | 12.92 | -28.92 | 1.257 | 1.072 |  | 125.00 | 1.00 | 14 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 116.47 | 112.12 | 135.20 | 16.35 | -25.19 | 1.257 | 1.062 |  | 127.72 | 1.00 | 37 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 116.48 | 111.73 | 135.30 | 17.70 | -23.83 | 1.258 | 1.058 |  | 127.17 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 116.51 | 112.11 | 135.20 | 16.53 | -25.02 | 1.258 | 1.062 |  | 127.74 | 1.00 | 10 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 116.51 | 112.11 | 135.20 | 16.53 | -25.02 | 1.258 | 1.062 |  | 127.74 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 116.75 | 113.19 | 135.62 | 14.49 | -27.54 | 1.260 | 1.072 |  | 124.94 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 116.75 | 113.19 | 135.62 | 14.49 | -27.54 | 1.260 | 1.072 |  | 124.94 | 1.00 | 11 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 116.75 | 113.19 | 135.62 | 14.49 | -27.54 | 1.260 | 1.072 |  | 124.94 | 1.00 | 10 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 116.78 | 113.17 | 135.65 | 14.60 | -27.43 | 1.261 | 1.072 |  | 124.65 | 1.00 | 15 | False | False |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 116.80 | 113.28 | 135.66 | 14.29 | -27.75 | 1.261 | 1.073 |  | 124.96 | 1.00 | 37 | False | False |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 119.54 | 116.38 | 136.98 | 12.34 | -29.21 | 1.291 | 1.102 |  | 121.25 | 1.00 | 12 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 119.97 | 116.76 | 139.55 | 12.22 | -31.16 | 1.295 | 1.106 |  | 131.20 | 1.00 | 7 | False | False |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 120.31 | 117.57 | 139.94 | 10.82 | -32.82 | 1.299 | 1.113 |  | 131.03 | 1.00 | 7 | False | False |
@@ -2187,16 +2579,23 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 16.99 | 17.78 | 24.26 | -5.33 | -3.67 | 0.317 | 0.292 |  | 18.80 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 17.43 | 17.87 | 24.41 | -6.36 | -4.38 | 0.325 | 0.294 |  | 19.72 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 18.05 | 17.41 | 25.51 | -5.27 | -3.04 | 0.336 | 0.286 |  | 16.47 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 18.06 | 16.88 | 25.33 | 4.61 | 2.26 | 0.337 | 0.278 |  | 14.13 | 0.79 | 37 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 18.40 | 18.22 | 25.81 | -2.44 | -0.18 | 0.343 | 0.300 |  | 16.17 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 18.41 | 17.20 | 25.32 | 4.63 | 1.99 | 0.343 | 0.283 |  | 14.19 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 18.41 | 17.20 | 25.32 | 4.63 | 1.99 | 0.343 | 0.283 |  | 14.19 | 0.79 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 18.41 | 17.20 | 25.32 | 4.63 | 1.99 | 0.343 | 0.283 |  | 14.19 | 0.79 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 18.41 | 17.31 | 26.09 | 5.17 | 2.55 | 0.343 | 0.285 |  | 14.48 | 0.79 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 18.41 | 18.06 | 25.88 | -6.57 | -4.60 | 0.343 | 0.297 |  | 19.08 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 18.94 | 16.90 | 22.00 | 8.83 | 4.38 | 0.353 | 0.278 |  | 13.21 | 0.93 | 2 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 19.28 | 17.05 | 25.23 | 7.50 | 4.01 | 0.359 | 0.280 |  | 14.24 | 0.86 | 37 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 19.54 | 21.15 | 24.39 | -5.78 | -10.79 | 0.364 | 0.348 |  | 15.32 | 0.93 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 19.54 | 17.12 | 25.29 | 8.28 | 4.81 | 0.364 | 0.282 |  | 14.20 | 0.93 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 19.54 | 17.12 | 25.29 | 8.28 | 4.81 | 0.364 | 0.282 |  | 14.20 | 0.93 | 10 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 20.01 | 19.74 | 26.75 | -1.57 | -7.57 | 0.373 | 0.325 |  | 16.71 | 0.93 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 20.43 | 20.78 | 27.42 | -1.95 | -8.47 | 0.381 | 0.342 |  | 17.21 | 0.86 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 20.43 | 18.00 | 26.84 | 6.01 | 2.01 | 0.381 | 0.296 |  | 15.17 | 0.79 | 15 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 21.23 | 17.95 | 30.28 | -7.38 | -4.36 | 0.396 | 0.295 |  | 17.74 | 0.71 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 21.88 | 18.12 | 27.38 | 9.72 | 4.26 | 0.408 | 0.298 |  | 15.60 | 0.93 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 22.11 | 26.35 | 26.50 | -5.62 | -15.49 | 0.412 | 0.433 |  | 15.75 | 0.93 | 2 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 22.54 | 22.94 | 27.99 | -2.47 | -1.75 | 0.420 | 0.377 |  | 18.39 | 0.93 | 22 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 22.86 | 19.72 | 28.37 | 3.77 | -2.66 | 0.426 | 0.324 |  | 16.61 | 0.79 | 15 | True | True |
@@ -2210,7 +2609,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 14.91 | 14.18 | 19.60 | 4.31 | 0.26 | 0.278 | 0.233 |  | 10.67 | 0.86 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 15.50 | 14.90 | 19.63 | 3.57 | -0.30 | 0.289 | 0.245 |  | 10.81 | 0.79 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 15.81 | 15.57 | 22.51 | 1.42 | 1.39 | 0.295 | 0.256 |  | 12.70 | 0.86 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 16.24 | 15.50 | 22.42 | 2.49 | 2.48 | 0.303 | 0.255 |  | 12.47 | 0.79 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 16.32 | 15.61 | 22.48 | 2.16 | 1.68 | 0.304 | 0.257 |  | 12.48 | 0.79 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 16.43 | 15.69 | 22.54 | 2.61 | 2.74 | 0.306 | 0.258 |  | 12.54 | 0.79 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 16.43 | 15.69 | 22.54 | 2.61 | 2.74 | 0.306 | 0.258 |  | 12.54 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 16.64 | 16.17 | 22.95 | 1.66 | 1.85 | 0.310 | 0.266 |  | 13.04 | 0.79 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 16.65 | 16.27 | 22.84 | 1.43 | 1.98 | 0.310 | 0.268 |  | 13.03 | 0.79 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 16.69 | 16.27 | 22.95 | 1.48 | 1.95 | 0.311 | 0.268 |  | 13.09 | 0.86 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 16.69 | 16.27 | 22.95 | 1.48 | 1.95 | 0.311 | 0.268 |  | 13.09 | 0.86 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 16.69 | 16.27 | 22.95 | 1.48 | 1.95 | 0.311 | 0.268 |  | 13.09 | 0.86 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 16.76 | 16.35 | 22.91 | 1.54 | 2.00 | 0.312 | 0.269 |  | 13.09 | 0.79 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 17.17 | 16.19 | 20.44 | 6.02 | 2.63 | 0.320 | 0.266 |  | 28.61 | 1.00 | 7 | True | True |
@@ -2241,16 +2647,23 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 20.52 | 23.39 | 25.02 | -8.64 | -14.48 | 0.389 | 0.385 |  | 49.40 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 21.45 | 23.95 | 27.25 | -3.78 | -10.26 | 0.407 | 0.394 |  | 15.82 | 0.77 | 1 | True | True |
 | margin-ts | sarima_margin | W1 | 1 | PIT | 13 | 22.77 | 20.12 | 28.88 | 5.82 | -3.38 | 0.432 | 0.331 |  | 16.16 | 0.85 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 22.80 | 21.51 | 27.33 | 5.15 | -4.48 | 0.432 | 0.354 |  | 16.61 | 0.69 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 22.80 | 21.51 | 27.33 | 5.15 | -4.48 | 0.432 | 0.354 |  | 16.61 | 0.69 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 22.80 | 21.51 | 27.33 | 5.15 | -4.48 | 0.432 | 0.354 |  | 16.61 | 0.69 | 10 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 22.83 | 24.65 | 27.16 | -0.50 | -9.99 | 0.433 | 0.406 |  | 19.68 | 0.85 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 22.84 | 21.55 | 27.32 | 5.11 | -4.52 | 0.433 | 0.355 |  | 16.63 | 0.69 | 37 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 23.09 | 24.41 | 28.29 | 1.05 | -10.32 | 0.438 | 0.402 |  | 15.94 | 0.77 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 23.42 | 25.97 | 27.63 | -0.84 | -10.90 | 0.444 | 0.428 |  | 20.33 | 0.85 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 23.44 | 21.85 | 27.72 | 5.27 | -4.21 | 0.444 | 0.360 |  | 16.96 | 0.69 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 23.84 | 21.25 | 28.22 | 9.29 | -0.63 | 0.452 | 0.350 |  | 17.37 | 0.69 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 23.84 | 21.25 | 28.22 | 9.29 | -0.63 | 0.452 | 0.350 |  | 17.37 | 0.69 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 23.89 | 21.33 | 28.16 | 9.11 | -0.81 | 0.453 | 0.351 |  | 17.33 | 0.69 | 37 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 23.89 | 27.79 | 27.32 | -2.92 | -14.30 | 0.453 | 0.458 |  | 16.86 | 0.92 | 2 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 23.94 | 25.22 | 28.94 | 2.50 | -9.50 | 0.454 | 0.415 |  | 16.31 | 0.77 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 27.14 | 23.25 | 31.42 | 8.71 | -3.59 | 0.515 | 0.383 |  | 19.94 | 0.62 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 27.57 | 25.91 | 34.53 | 9.80 | -3.96 | 0.523 | 0.427 |  | 19.68 | 0.85 | 2 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 27.97 | 25.09 | 35.18 | -14.41 | -13.98 | 0.530 | 0.413 |  | 22.47 | 0.77 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 28.84 | 23.79 | 33.17 | 13.09 | -0.18 | 0.547 | 0.392 |  | 20.51 | 0.62 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 33.25 | 28.90 | 42.97 | -25.05 | -22.32 | 0.630 | 0.476 |  | 29.48 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive | W1 | 1 | PIT | 13 | 52.75 | 60.72 | 57.52 | -52.75 | -60.72 | 1.000 | 1.000 |  | 36.67 | 0.54 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 79.09 | 71.89 | 109.35 | 25.69 | 1.43 | 1.499 | 1.184 |  | 57.20 | 0.85 | 3 | False | False |
@@ -2258,10 +2671,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 16.32 | 15.08 | 20.33 | 4.22 | -0.21 | 0.309 | 0.248 |  | 11.26 | 0.85 | 12 | True | True |
 | margin-ts | sarima_margin | W1 | 1 | full_sample | 13 | 16.56 | 16.92 | 21.65 | 3.99 | -0.92 | 0.314 | 0.279 |  | 12.07 | 0.92 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 17.68 | 16.52 | 22.04 | 4.89 | -2.78 | 0.335 | 0.272 |  | 12.59 | 0.92 | 22 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 18.53 | 18.74 | 23.40 | 3.25 | -3.26 | 0.351 | 0.309 |  | 13.27 | 0.85 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 18.56 | 18.71 | 23.45 | 3.37 | -3.15 | 0.352 | 0.308 |  | 13.31 | 0.85 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 18.56 | 18.71 | 23.45 | 3.37 | -3.15 | 0.352 | 0.308 |  | 13.31 | 0.85 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 18.88 | 19.24 | 23.71 | 2.62 | -4.23 | 0.358 | 0.317 |  | 13.49 | 0.85 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 18.90 | 19.37 | 23.76 | 2.12 | -4.69 | 0.358 | 0.319 |  | 13.92 | 0.92 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 18.92 | 19.38 | 23.79 | 2.12 | -4.70 | 0.359 | 0.319 |  | 13.97 | 0.92 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 18.92 | 19.38 | 23.79 | 2.12 | -4.70 | 0.359 | 0.319 |  | 13.97 | 0.92 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 18.92 | 19.38 | 23.79 | 2.12 | -4.70 | 0.359 | 0.319 |  | 13.97 | 0.92 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 18.96 | 19.97 | 23.38 | 1.30 | -5.27 | 0.359 | 0.329 |  | 14.00 | 0.92 | 14 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 18.97 | 19.43 | 23.85 | 2.14 | -4.74 | 0.360 | 0.320 |  | 13.97 | 0.92 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 19.08 | 19.48 | 23.96 | 2.16 | -4.78 | 0.362 | 0.321 |  | 14.08 | 0.92 | 15 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 19.98 | 20.32 | 24.98 | 0.99 | -6.38 | 0.379 | 0.335 |  | 16.10 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 20.17 | 21.59 | 25.03 | -2.02 | -9.55 | 0.382 | 0.356 |  | 16.07 | 0.92 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 20.26 | 17.24 | 23.63 | 9.93 | 5.93 | 0.384 | 0.284 |  | 44.53 | 1.00 | 7 | True | True |
@@ -2290,8 +2710,13 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 22.67 | 25.79 | 26.93 | -9.65 | -16.97 | 0.423 | 0.422 |  | 44.52 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 23.03 | 26.49 | 26.84 | -3.36 | -15.02 | 0.429 | 0.433 |  | 17.51 | 1.00 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 23.48 | 26.29 | 28.33 | -11.16 | -17.90 | 0.438 | 0.430 |  | 52.02 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 23.49 | 24.45 | 28.03 | 4.04 | -7.40 | 0.438 | 0.400 |  | 16.53 | 0.67 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 23.51 | 24.44 | 28.10 | 4.08 | -7.37 | 0.438 | 0.400 |  | 16.55 | 0.67 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 23.51 | 24.44 | 28.10 | 4.08 | -7.37 | 0.438 | 0.400 |  | 16.55 | 0.67 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 23.51 | 24.44 | 28.10 | 4.08 | -7.37 | 0.438 | 0.400 |  | 16.55 | 0.67 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 23.96 | 23.24 | 28.37 | 8.41 | -2.90 | 0.447 | 0.380 |  | 16.49 | 0.67 | 37 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 23.97 | 25.00 | 28.62 | 4.23 | -7.21 | 0.447 | 0.409 |  | 16.93 | 0.67 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 24.06 | 23.27 | 28.55 | 8.58 | -2.73 | 0.448 | 0.381 |  | 16.57 | 0.67 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 24.06 | 23.27 | 28.55 | 8.58 | -2.73 | 0.448 | 0.381 |  | 16.57 | 0.67 | 10 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 24.90 | 28.00 | 28.69 | -2.17 | -13.64 | 0.464 | 0.458 |  | 19.63 | 0.92 | 7 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 25.00 | 26.51 | 28.66 | -5.60 | -12.75 | 0.466 | 0.433 |  | 16.84 | 0.83 | 1 | True | True |
@@ -2299,15 +2724,24 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 25.07 | 28.54 | 28.94 | -2.40 | -14.23 | 0.467 | 0.467 |  | 20.26 | 0.92 | 7 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 25.35 | 27.22 | 28.75 | 2.53 | -10.01 | 0.472 | 0.445 |  | 17.14 | 0.67 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 26.54 | 30.01 | 30.68 | -1.10 | -14.13 | 0.495 | 0.491 |  | 21.34 | 1.00 | 22 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 27.97 | 26.53 | 32.71 | 8.14 | -6.11 | 0.521 | 0.434 |  | 19.44 | 0.75 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 28.46 | 27.35 | 32.85 | 10.10 | -4.16 | 0.530 | 0.447 |  | 19.91 | 0.75 | 2 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 29.78 | 27.38 | 36.16 | -15.44 | -16.26 | 0.555 | 0.448 |  | 21.71 | 0.83 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 29.90 | 26.61 | 34.47 | 13.07 | -1.71 | 0.557 | 0.435 |  | 20.15 | 0.83 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 35.29 | 31.75 | 46.24 | -28.68 | -26.77 | 0.658 | 0.519 |  | 43.40 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 53.65 | 61.15 | 58.63 | -53.65 | -61.15 | 1.000 | 1.000 |  | 37.57 | 0.25 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | PIT | 12 | 93.09 | 84.59 | 121.49 | 30.41 | 2.89 | 1.735 | 1.383 |  | 66.55 | 0.75 | 3 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 12.97 | 12.57 | 17.01 | 1.29 | -0.20 | 0.242 | 0.205 |  | 9.35 | 0.75 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 16.18 | 15.02 | 20.51 | 3.07 | -0.63 | 0.302 | 0.246 |  | 11.32 | 0.83 | 12 | True | True |
 | margin-ts | sarima_margin | W1 | 2 | full_sample | 12 | 17.50 | 17.61 | 22.71 | 4.16 | -0.65 | 0.326 | 0.288 |  | 12.40 | 0.83 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 18.62 | 20.19 | 23.33 | 1.88 | -6.03 | 0.347 | 0.330 |  | 14.16 | 0.92 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 18.64 | 20.17 | 23.36 | 1.99 | -5.94 | 0.347 | 0.330 |  | 14.20 | 0.92 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 18.64 | 20.17 | 23.36 | 1.99 | -5.94 | 0.347 | 0.330 |  | 14.20 | 0.92 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 18.66 | 20.57 | 23.29 | 0.85 | -7.12 | 0.348 | 0.336 |  | 14.28 | 0.92 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 18.95 | 20.89 | 23.68 | 0.61 | -7.77 | 0.353 | 0.342 |  | 15.13 | 1.00 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 18.96 | 20.95 | 23.68 | 0.46 | -7.92 | 0.353 | 0.343 |  | 15.23 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 18.97 | 20.91 | 23.71 | 0.60 | -7.80 | 0.354 | 0.342 |  | 15.19 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 18.97 | 20.91 | 23.71 | 0.60 | -7.80 | 0.354 | 0.342 |  | 15.19 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 18.97 | 20.91 | 23.71 | 0.60 | -7.80 | 0.354 | 0.342 |  | 15.19 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 18.99 | 21.04 | 23.91 | 0.62 | -7.89 | 0.354 | 0.344 |  | 15.21 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 19.21 | 21.51 | 23.44 | -0.11 | -8.27 | 0.358 | 0.352 |  | 15.44 | 1.00 | 14 | True | True |
@@ -2336,10 +2770,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 18.61 | 16.60 | 22.70 | 4.47 | 2.73 | 0.340 | 0.268 |  | 13.35 | 0.90 | 2 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 19.72 | 17.10 | 26.32 | -6.28 | -8.64 | 0.360 | 0.276 |  | 15.53 | 0.80 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 20.13 | 17.74 | 26.42 | -8.21 | -6.42 | 0.368 | 0.286 |  | 26.57 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.14 | 17.34 | 28.24 | 1.31 | 1.15 | 0.368 | 0.280 |  | 15.82 | 0.70 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.31 | 17.12 | 27.33 | 3.83 | 2.67 | 0.371 | 0.276 |  | 15.15 | 0.80 | 37 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 20.56 | 17.59 | 28.50 | -2.19 | -2.88 | 0.376 | 0.284 |  | 16.70 | 0.70 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.59 | 17.75 | 28.57 | 0.40 | 0.04 | 0.376 | 0.286 |  | 16.05 | 0.70 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.62 | 17.30 | 27.67 | 3.59 | 1.96 | 0.377 | 0.279 |  | 15.58 | 0.90 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.63 | 17.70 | 28.23 | 1.34 | 0.85 | 0.377 | 0.285 |  | 15.97 | 0.70 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.63 | 17.70 | 28.23 | 1.34 | 0.85 | 0.377 | 0.285 |  | 15.97 | 0.70 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 20.63 | 17.70 | 28.23 | 1.34 | 0.85 | 0.377 | 0.285 |  | 15.97 | 0.70 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 20.63 | 17.82 | 29.19 | 2.09 | 1.47 | 0.377 | 0.287 |  | 16.36 | 0.70 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 20.64 | 18.97 | 27.43 | -5.14 | -4.03 | 0.377 | 0.306 |  | 20.11 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.68 | 17.20 | 27.40 | 4.92 | 3.56 | 0.378 | 0.277 |  | 15.18 | 0.90 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 20.68 | 17.20 | 27.40 | 4.92 | 3.56 | 0.378 | 0.277 |  | 15.18 | 0.90 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 20.84 | 19.04 | 27.79 | -4.52 | -3.41 | 0.381 | 0.307 |  | 19.15 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 21.45 | 18.33 | 29.30 | -4.91 | -2.80 | 0.392 | 0.296 |  | 17.62 | 1.00 | 7 | True | True |
@@ -2361,9 +2802,16 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 17.99 | 15.49 | 22.17 | 2.26 | -1.14 | 0.329 | 0.250 |  | 12.48 | 0.70 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 18.16 | 16.35 | 22.17 | 2.55 | 1.33 | 0.332 | 0.264 |  | 29.97 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 19.13 | 17.48 | 22.79 | 6.04 | 4.95 | 0.350 | 0.282 |  | 14.09 | 1.00 | 2 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 19.24 | 16.32 | 25.84 | 1.65 | 1.46 | 0.352 | 0.263 |  | 14.43 | 0.70 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 19.29 | 16.25 | 25.92 | 2.61 | 2.43 | 0.353 | 0.262 |  | 14.45 | 0.70 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 19.44 | 16.42 | 26.01 | 2.84 | 2.73 | 0.355 | 0.265 |  | 14.50 | 0.70 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 19.44 | 16.42 | 26.01 | 2.84 | 2.73 | 0.355 | 0.265 |  | 14.50 | 0.70 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 19.48 | 16.49 | 26.23 | 0.88 | 1.24 | 0.356 | 0.266 |  | 14.78 | 0.80 | 14 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 19.61 | 16.83 | 23.74 | 6.17 | 4.54 | 0.358 | 0.271 |  | 22.06 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 19.74 | 16.95 | 26.49 | 1.27 | 1.71 | 0.361 | 0.273 |  | 15.00 | 0.70 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 19.78 | 17.08 | 26.42 | 1.39 | 1.95 | 0.362 | 0.276 |  | 14.99 | 0.70 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 19.83 | 17.08 | 26.55 | 1.41 | 1.90 | 0.363 | 0.275 |  | 15.05 | 0.80 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 19.83 | 17.08 | 26.55 | 1.41 | 1.90 | 0.363 | 0.275 |  | 15.05 | 0.80 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 19.83 | 17.08 | 26.55 | 1.41 | 1.90 | 0.363 | 0.275 |  | 15.05 | 0.80 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 19.85 | 17.15 | 26.45 | 1.43 | 1.93 | 0.363 | 0.277 |  | 15.03 | 0.70 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 20.03 | 18.45 | 23.60 | 8.64 | 7.64 | 0.366 | 0.298 |  | 22.30 | 1.00 | 7 | True | True |
@@ -2385,8 +2833,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | sarima_margin | W2 | 1 | PIT | 9 | 21.80 | 19.66 | 26.31 | -2.34 | -6.85 | 0.396 | 0.315 |  | 15.09 | 0.78 | 14 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 21.91 | 19.79 | 26.57 | -5.19 | -9.10 | 0.398 | 0.317 |  | 17.45 | 1.00 | 22 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 22.33 | 21.13 | 28.04 | -6.70 | -10.59 | 0.406 | 0.338 |  | 16.02 | 0.78 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 22.89 | 20.84 | 28.06 | 1.86 | -3.95 | 0.416 | 0.334 |  | 16.47 | 0.78 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 22.89 | 20.84 | 28.06 | 1.86 | -3.95 | 0.416 | 0.334 |  | 16.47 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 22.96 | 20.93 | 27.98 | 1.61 | -4.16 | 0.417 | 0.335 |  | 16.43 | 0.78 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 23.08 | 21.65 | 28.19 | -2.42 | -7.80 | 0.420 | 0.347 |  | 17.09 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 23.08 | 21.65 | 28.19 | -2.42 | -7.80 | 0.420 | 0.347 |  | 17.09 | 0.78 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 23.08 | 21.65 | 28.19 | -2.42 | -7.80 | 0.420 | 0.347 |  | 17.09 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 23.14 | 21.69 | 28.19 | -2.48 | -7.85 | 0.421 | 0.348 |  | 17.10 | 0.78 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 23.21 | 21.81 | 28.12 | -3.41 | -8.61 | 0.422 | 0.349 |  | 16.96 | 0.78 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 23.30 | 21.66 | 28.19 | 0.55 | -5.51 | 0.424 | 0.347 |  | 16.39 | 0.78 | 15 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 23.67 | 23.08 | 28.66 | -9.60 | -13.64 | 0.430 | 0.370 |  | 16.81 | 0.89 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 23.75 | 22.14 | 27.59 | -8.48 | -12.78 | 0.432 | 0.355 |  | 15.93 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 24.01 | 22.04 | 28.74 | -2.24 | -7.50 | 0.436 | 0.353 |  | 17.58 | 0.78 | 12 | True | True |
@@ -2409,10 +2864,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 18.53 | 15.59 | 22.96 | 1.05 | -1.74 | 0.337 | 0.250 |  | 13.01 | 0.78 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 18.88 | 16.44 | 23.46 | 3.95 | 3.63 | 0.343 | 0.263 |  | 45.71 | 1.00 | 7 | True | True |
 | margin-ts | sarima_margin | W2 | 1 | full_sample | 9 | 21.41 | 18.47 | 25.57 | 3.31 | -1.73 | 0.389 | 0.296 |  | 14.37 | 0.89 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 21.62 | 19.73 | 26.52 | -0.32 | -5.03 | 0.393 | 0.316 |  | 15.04 | 0.78 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 21.62 | 19.73 | 26.52 | -0.32 | -5.03 | 0.393 | 0.316 |  | 15.04 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 21.66 | 19.79 | 26.50 | -0.42 | -5.14 | 0.394 | 0.317 |  | 15.02 | 0.78 | 37 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 21.87 | 16.20 | 28.87 | 16.34 | 11.64 | 0.398 | 0.260 |  | 16.60 | 0.89 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 21.99 | 20.35 | 26.53 | -1.49 | -6.24 | 0.400 | 0.326 |  | 15.09 | 0.78 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 22.10 | 20.49 | 26.82 | -2.14 | -6.77 | 0.402 | 0.328 |  | 15.66 | 0.89 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 22.11 | 20.49 | 26.84 | -2.17 | -6.79 | 0.402 | 0.328 |  | 15.70 | 0.89 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 22.11 | 20.49 | 26.84 | -2.17 | -6.79 | 0.402 | 0.328 |  | 15.70 | 0.89 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 22.11 | 20.49 | 26.84 | -2.17 | -6.79 | 0.402 | 0.328 |  | 15.70 | 0.89 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 22.11 | 20.52 | 26.98 | -2.20 | -6.87 | 0.402 | 0.329 |  | 15.74 | 0.89 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 22.15 | 20.57 | 26.83 | -2.29 | -6.92 | 0.403 | 0.329 |  | 15.71 | 0.89 | 15 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 22.63 | 21.28 | 27.78 | -4.51 | -8.89 | 0.412 | 0.341 |  | 17.68 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 22.82 | 21.35 | 26.71 | -2.45 | -7.17 | 0.415 | 0.342 |  | 15.88 | 0.89 | 14 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 23.20 | 17.69 | 33.35 | 17.93 | 11.55 | 0.422 | 0.283 |  | 19.06 | 0.89 | 7 | True | True |
@@ -2442,8 +2904,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 25.95 | 28.19 | 30.03 | -8.51 | -18.15 | 0.493 | 0.456 |  | 18.01 | 1.00 | 2 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 26.09 | 27.60 | 29.73 | -6.30 | -15.78 | 0.496 | 0.447 |  | 17.99 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 26.12 | 26.56 | 29.96 | -4.61 | -13.59 | 0.496 | 0.430 |  | 17.80 | 1.00 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 26.46 | 24.37 | 30.63 | 3.13 | -6.13 | 0.503 | 0.394 |  | 18.26 | 0.62 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 26.60 | 24.40 | 30.88 | 3.39 | -5.94 | 0.506 | 0.395 |  | 18.32 | 0.62 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 26.60 | 24.40 | 30.88 | 3.39 | -5.94 | 0.506 | 0.395 |  | 18.32 | 0.62 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 26.70 | 26.24 | 31.06 | -2.42 | -11.58 | 0.507 | 0.424 |  | 18.10 | 0.75 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 26.85 | 26.07 | 31.13 | -1.43 | -10.70 | 0.510 | 0.422 |  | 18.81 | 0.62 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 26.88 | 26.06 | 31.22 | -1.38 | -10.67 | 0.511 | 0.422 |  | 18.78 | 0.62 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 26.88 | 26.06 | 31.22 | -1.38 | -10.67 | 0.511 | 0.422 |  | 18.78 | 0.62 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 26.88 | 26.06 | 31.22 | -1.38 | -10.67 | 0.511 | 0.422 |  | 18.78 | 0.62 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 27.39 | 25.57 | 31.65 | 2.14 | -7.47 | 0.521 | 0.414 |  | 17.92 | 0.88 | 15 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 27.56 | 26.72 | 31.92 | -1.14 | -10.48 | 0.524 | 0.432 |  | 19.35 | 0.62 | 12 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 28.23 | 29.73 | 32.19 | -6.35 | -16.40 | 0.536 | 0.481 |  | 19.53 | 0.88 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 28.35 | 30.30 | 32.31 | -6.71 | -17.09 | 0.539 | 0.490 |  | 20.20 | 0.88 | 7 | True | True |
@@ -2459,7 +2928,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 18.03 | 15.95 | 23.16 | 7.66 | 5.18 | 0.343 | 0.258 |  | 58.40 | 1.00 | 7 | True | True |
 | margin-ts | sarima_margin | W2 | 2 | full_sample | 8 | 22.35 | 19.11 | 26.98 | 7.37 | -0.19 | 0.425 | 0.309 |  | 15.17 | 0.75 | 14 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 23.33 | 16.52 | 30.41 | 19.65 | 12.80 | 0.443 | 0.267 |  | 17.70 | 0.88 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 23.44 | 22.13 | 27.58 | 0.68 | -7.49 | 0.445 | 0.358 |  | 16.23 | 0.88 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 23.44 | 22.10 | 27.61 | 0.77 | -7.40 | 0.445 | 0.358 |  | 16.27 | 0.88 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 23.44 | 22.10 | 27.61 | 0.77 | -7.40 | 0.445 | 0.358 |  | 16.27 | 0.88 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 23.47 | 22.53 | 27.59 | -0.40 | -8.59 | 0.446 | 0.365 |  | 16.32 | 0.88 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 23.57 | 22.84 | 27.93 | -1.27 | -9.51 | 0.448 | 0.370 |  | 17.10 | 1.00 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 23.58 | 22.90 | 27.94 | -1.42 | -9.67 | 0.448 | 0.370 |  | 17.19 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 23.58 | 22.86 | 27.95 | -1.31 | -9.56 | 0.448 | 0.370 |  | 17.15 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 23.58 | 22.86 | 27.95 | -1.31 | -9.56 | 0.448 | 0.370 |  | 17.15 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 23.58 | 22.86 | 27.95 | -1.31 | -9.56 | 0.448 | 0.370 |  | 17.15 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 23.83 | 23.08 | 28.24 | -1.37 | -9.70 | 0.453 | 0.373 |  | 17.25 | 1.00 | 12 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 23.89 | 21.47 | 29.44 | 7.18 | -2.13 | 0.454 | 0.347 |  | 17.20 | 0.88 | 7 | True | True |
@@ -2909,12 +3385,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 14.18 | 20.85 | 18.43 | 6.11 | 10.21 | 0.688 | 1.048 |  | 12.45 | 0.79 | 2 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 14.38 | 19.83 | 17.80 | 4.64 | 8.20 | 0.698 | 0.996 |  | 10.22 | 0.79 | 15 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 14.46 | 19.76 | 18.04 | 3.96 | 7.69 | 0.702 | 0.993 |  | 10.40 | 0.79 | 15 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 14.46 | 19.76 | 18.04 | 3.96 | 7.69 | 0.702 | 0.993 |  | 10.40 | 0.79 | 11 | True | False |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 15.11 | 21.79 | 20.18 | 3.68 | 8.99 | 0.734 | 1.095 |  | 12.26 | 0.79 | 7 | True | False |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 15.75 | 18.46 | 19.88 | 4.23 | 6.45 | 0.765 | 0.928 |  | 16.50 | 0.86 | 1 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 15.77 | 21.71 | 19.51 | 8.42 | 11.76 | 0.766 | 1.091 |  | 11.62 | 0.79 | 12 | True | False |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 15.78 | 21.72 | 19.63 | 8.44 | 11.77 | 0.766 | 1.091 |  | 11.79 | 0.79 | 12 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 15.93 | 21.85 | 19.38 | 8.83 | 12.45 | 0.774 | 1.098 |  | 11.33 | 0.79 | 37 | True | False |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 15.94 | 22.43 | 20.51 | 3.16 | 8.74 | 0.774 | 1.127 |  | 12.66 | 0.79 | 7 | True | False |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 16.02 | 21.60 | 20.60 | 2.41 | 8.92 | 0.778 | 1.085 |  | 14.83 | 0.79 | 7 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 16.03 | 21.91 | 19.40 | 9.18 | 12.87 | 0.778 | 1.101 |  | 11.37 | 0.79 | 10 | True | False |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 16.03 | 21.91 | 19.40 | 9.18 | 12.87 | 0.778 | 1.101 |  | 11.37 | 0.79 | 7 | True | False |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 16.03 | 21.91 | 19.40 | 9.18 | 12.87 | 0.778 | 1.101 |  | 11.37 | 0.79 | 10 | True | False |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 16.03 | 21.91 | 19.40 | 9.18 | 12.87 | 0.778 | 1.101 |  | 11.37 | 0.79 | 12 | True | False |
@@ -2922,6 +3403,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 16.03 | 21.91 | 19.40 | 9.18 | 12.87 | 0.778 | 1.101 |  | 11.37 | 0.79 | 10 | True | False |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 16.62 | 23.01 | 20.40 | 10.38 | 14.55 | 0.807 | 1.156 |  | 12.19 | 0.86 | 12 | True | False |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 16.63 | 22.99 | 20.46 | 11.03 | 15.75 | 0.807 | 1.155 |  | 12.54 | 0.50 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 16.79 | 23.22 | 20.72 | 11.35 | 16.05 | 0.815 | 1.167 |  | 11.92 | 0.86 | 37 | False | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 16.98 | 23.42 | 20.97 | 11.80 | 16.76 | 0.824 | 1.177 |  | 12.05 | 0.86 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 16.98 | 23.42 | 20.97 | 11.80 | 16.76 | 0.824 | 1.177 |  | 12.05 | 0.86 | 7 | False | False |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 16.98 | 23.42 | 20.97 | 11.80 | 16.76 | 0.824 | 1.177 |  | 12.05 | 0.86 | 10 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 18.15 | 26.89 | 24.76 | 12.90 | 19.44 | 0.881 | 1.351 |  | 16.29 | 0.79 | 2 | False | False |
@@ -2933,6 +3416,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 26.56 | 28.06 | 29.79 | 11.14 | 11.81 | 1.290 | 1.410 |  | 17.66 | 0.79 | 22 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 35.58 | 30.68 | 48.01 | -18.75 | 2.65 | 1.728 | 1.542 |  | 48.94 | 1.00 | 7 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 39.74 | 40.14 | 55.08 | 16.88 | 20.62 | 1.930 | 2.017 |  | 28.23 | 0.86 | 3 | False | False |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 12.01 | 16.40 | 15.84 | -2.50 | -0.56 | 0.583 | 0.824 |  | 8.63 | 0.79 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 12.01 | 16.40 | 15.84 | -2.50 | -0.56 | 0.583 | 0.824 |  | 8.63 | 0.79 | 11 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 12.04 | 17.42 | 15.88 | -0.52 | 3.16 | 0.585 | 0.875 |  | 8.64 | 0.86 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 13.31 | 18.10 | 17.59 | -4.82 | -1.24 | 0.646 | 0.910 |  | 10.79 | 0.93 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 13.35 | 18.06 | 17.66 | -5.13 | -1.57 | 0.648 | 0.908 |  | 10.45 | 0.93 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 13.36 | 19.06 | 17.11 | -0.14 | 3.66 | 0.649 | 0.957 |  | 10.66 | 1.00 | 7 | True | False |
@@ -2940,9 +3426,13 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 13.79 | 14.19 | 16.72 | -3.93 | -0.27 | 0.670 | 0.713 |  | 9.61 | 0.93 | 22 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 14.18 | 20.85 | 18.43 | 6.11 | 10.21 | 0.688 | 1.048 |  | 10.97 | 1.00 | 2 | True | False |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 14.30 | 20.61 | 18.35 | 2.25 | 8.81 | 0.694 | 1.036 |  | 9.93 | 0.79 | 12 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 14.55 | 20.80 | 18.40 | 3.98 | 10.59 | 0.706 | 1.045 |  | 9.93 | 0.79 | 37 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 14.64 | 18.49 | 18.01 | -4.72 | 1.39 | 0.711 | 0.929 |  | 10.04 | 0.71 | 37 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 14.65 | 20.66 | 18.34 | 3.28 | 10.04 | 0.711 | 1.038 |  | 9.97 | 0.79 | 14 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 14.71 | 21.00 | 18.62 | 4.33 | 11.16 | 0.714 | 1.055 |  | 10.03 | 0.79 | 10 | True | False |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 14.71 | 21.00 | 18.62 | 4.33 | 11.16 | 0.714 | 1.055 |  | 10.03 | 0.79 | 7 | True | False |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 14.71 | 21.00 | 18.62 | 4.33 | 11.16 | 0.714 | 1.055 |  | 10.03 | 0.79 | 10 | True | False |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 14.80 | 18.57 | 18.14 | -4.79 | 1.49 | 0.719 | 0.933 |  | 10.14 | 0.71 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 14.80 | 18.57 | 18.14 | -4.79 | 1.49 | 0.719 | 0.933 |  | 10.14 | 0.71 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 14.80 | 18.57 | 18.14 | -4.79 | 1.49 | 0.719 | 0.933 |  | 10.14 | 0.71 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 14.80 | 18.57 | 18.14 | -4.79 | 1.49 | 0.719 | 0.933 |  | 10.14 | 0.71 | 12 | True | True |
@@ -2959,9 +3449,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 20.60 | 19.90 | 23.76 | -16.88 | -11.33 | 1.000 | 1.000 |  | 13.68 | 0.71 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | full_sample | 14 | 39.81 | 40.38 | 55.05 | 17.10 | 21.46 | 1.933 | 2.029 |  | 28.04 | 0.79 | 3 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 15.55 | 21.86 | 19.65 | 7.44 | 10.90 | 0.763 | 1.102 |  | 12.34 | 0.85 | 2 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 16.36 | 21.61 | 19.41 | 5.61 | 8.96 | 0.803 | 1.090 |  | 10.71 | 0.77 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 16.65 | 22.57 | 20.16 | 4.74 | 8.65 | 0.818 | 1.138 |  | 11.04 | 0.77 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 16.65 | 22.57 | 20.16 | 4.74 | 8.65 | 0.818 | 1.138 |  | 11.04 | 0.77 | 11 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 17.09 | 24.57 | 22.30 | 4.12 | 9.23 | 0.839 | 1.239 |  | 13.69 | 0.92 | 7 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 17.38 | 25.31 | 22.66 | 4.86 | 9.95 | 0.853 | 1.276 |  | 14.05 | 0.92 | 7 | False | False |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 17.58 | 23.62 | 21.28 | 9.83 | 12.64 | 0.863 | 1.191 |  | 11.89 | 0.85 | 12 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 17.72 | 23.93 | 21.35 | 10.90 | 14.47 | 0.870 | 1.206 |  | 11.81 | 0.85 | 37 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 17.72 | 23.93 | 21.35 | 10.90 | 14.47 | 0.870 | 1.206 |  | 11.81 | 0.85 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 17.72 | 23.93 | 21.35 | 10.90 | 14.47 | 0.870 | 1.206 |  | 11.81 | 0.85 | 7 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 17.72 | 23.93 | 21.35 | 10.90 | 14.47 | 0.870 | 1.206 |  | 11.81 | 0.85 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 17.72 | 23.93 | 21.35 | 10.90 | 14.47 | 0.870 | 1.206 |  | 11.81 | 0.85 | 12 | False | False |
@@ -2970,8 +3465,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 17.76 | 23.64 | 21.40 | 11.59 | 14.95 | 0.872 | 1.192 |  | 12.03 | 0.92 | 12 | False | False |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 17.77 | 24.14 | 21.71 | 10.29 | 13.51 | 0.872 | 1.217 |  | 12.34 | 0.92 | 12 | False | False |
 | margin-ts | sarima_margin | W1 | 1 | PIT | 13 | 18.17 | 24.12 | 22.00 | 12.38 | 16.83 | 0.892 | 1.216 |  | 13.36 | 0.46 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 18.30 | 24.46 | 22.38 | 13.26 | 17.88 | 0.898 | 1.233 |  | 12.30 | 0.85 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 18.30 | 24.46 | 22.38 | 13.26 | 17.88 | 0.898 | 1.233 |  | 12.30 | 0.85 | 7 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 18.30 | 24.46 | 22.38 | 13.26 | 17.88 | 0.898 | 1.233 |  | 12.30 | 0.85 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 18.30 | 24.46 | 22.38 | 13.26 | 17.88 | 0.898 | 1.233 |  | 12.30 | 0.85 | 37 | False | False |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 19.07 | 25.14 | 23.24 | 2.12 | 9.26 | 0.936 | 1.267 |  | 15.21 | 0.92 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 19.25 | 24.01 | 24.63 | 0.46 | 7.66 | 0.945 | 1.210 |  | 3,515.46 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 19.62 | 24.31 | 23.38 | 13.68 | 15.96 | 0.963 | 1.225 |  | 13.63 | 0.85 | 2 | False | False |
@@ -2983,6 +3480,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 27.83 | 29.79 | 33.41 | 18.99 | 16.93 | 1.366 | 1.502 |  | 18.80 | 0.77 | 22 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 39.19 | 30.17 | 58.62 | -24.35 | -2.32 | 1.924 | 1.521 |  | 2,914.22 | 1.00 | 7 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 43.99 | 43.48 | 59.42 | 23.65 | 21.79 | 2.160 | 2.192 |  | 29.70 | 0.85 | 3 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.33 | 16.56 | 16.30 | -3.29 | -0.71 | 0.605 | 0.835 |  | 8.92 | 0.77 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.33 | 16.56 | 16.30 | -3.29 | -0.71 | 0.605 | 0.835 |  | 8.92 | 0.77 | 11 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.81 | 17.71 | 16.47 | -0.72 | 3.18 | 0.629 | 0.893 |  | 9.05 | 0.85 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 13.23 | 19.35 | 17.94 | 1.08 | 4.32 | 0.649 | 0.976 |  | 12.04 | 1.00 | 7 | True | False |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 13.67 | 18.92 | 18.08 | -3.68 | -0.62 | 0.671 | 0.954 |  | 12.13 | 1.00 | 7 | True | False |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 13.74 | 18.90 | 18.13 | -4.00 | -0.95 | 0.674 | 0.953 |  | 11.91 | 1.00 | 7 | True | False |
@@ -2990,6 +3490,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 14.45 | 18.61 | 21.03 | -7.28 | -5.59 | 0.709 | 0.938 |  | 2,677.93 | 1.00 | 7 | True | False |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 14.49 | 20.14 | 18.33 | 3.01 | 8.47 | 0.712 | 1.015 |  | 9.98 | 0.77 | 12 | True | False |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 14.56 | 18.06 | 18.98 | -6.73 | -1.63 | 0.715 | 0.910 |  | 13.30 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 14.87 | 18.65 | 18.42 | -4.09 | 1.78 | 0.730 | 0.941 |  | 10.29 | 0.69 | 10 | True | False |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 14.87 | 18.65 | 18.42 | -4.09 | 1.78 | 0.730 | 0.941 |  | 10.29 | 0.69 | 37 | True | False |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 14.87 | 18.65 | 18.42 | -4.09 | 1.78 | 0.730 | 0.941 |  | 10.29 | 0.69 | 7 | True | False |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 14.87 | 18.65 | 18.42 | -4.09 | 1.78 | 0.730 | 0.941 |  | 10.29 | 0.69 | 10 | True | False |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 14.87 | 18.65 | 18.42 | -4.09 | 1.78 | 0.730 | 0.941 |  | 10.29 | 0.69 | 12 | True | False |
@@ -2998,6 +3500,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 14.97 | 18.50 | 18.24 | -3.82 | 2.05 | 0.735 | 0.933 |  | 10.26 | 0.69 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 15.20 | 18.88 | 18.63 | -3.94 | 2.39 | 0.746 | 0.952 |  | 10.42 | 0.77 | 12 | True | False |
 | margin-ts | sarima_margin | W1 | 1 | full_sample | 13 | 15.20 | 20.91 | 18.92 | 4.11 | 10.37 | 0.746 | 1.054 |  | 10.35 | 0.77 | 14 | True | False |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 15.34 | 21.26 | 19.24 | 5.17 | 11.49 | 0.753 | 1.072 |  | 10.42 | 0.77 | 10 | True | False |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 15.34 | 21.26 | 19.24 | 5.17 | 11.49 | 0.753 | 1.072 |  | 10.42 | 0.77 | 37 | True | False |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 15.34 | 21.26 | 19.24 | 5.17 | 11.49 | 0.753 | 1.072 |  | 10.42 | 0.77 | 7 | True | False |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 15.34 | 21.26 | 19.24 | 5.17 | 11.49 | 0.753 | 1.072 |  | 10.42 | 0.77 | 10 | True | False |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 15.55 | 21.86 | 19.65 | 7.44 | 10.90 | 0.763 | 1.102 |  | 11.06 | 0.92 | 2 | False | False |
@@ -3015,19 +3519,26 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 17.15 | 20.63 | 19.42 | 9.28 | 11.35 | 0.888 | 1.056 |  | 11.24 | 0.92 | 2 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 18.29 | 20.93 | 20.84 | -1.76 | 5.76 | 0.948 | 1.071 |  | 12.24 | 0.83 | 7 | True | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 18.38 | 22.02 | 22.99 | 0.56 | 5.98 | 0.952 | 1.127 |  | 377.92 | 0.92 | 7 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 11 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 7 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 12 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 14 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 18.80 | 23.27 | 21.49 | 12.94 | 15.22 | 0.974 | 1.191 |  | 11.91 | 0.83 | 37 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | PIT | 12 | 19.12 | 24.12 | 22.49 | 14.48 | 17.83 | 0.991 | 1.235 |  | 14.85 | 0.50 | 15 | False | False |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 19.13 | 23.27 | 21.25 | 11.79 | 13.06 | 0.991 | 1.191 |  | 12.14 | 0.83 | 12 | False | False |
 | baselines-margin | seasonal_naive | W1 | 2 | PIT | 12 | 19.30 | 19.53 | 22.83 | -14.97 | -10.60 | 1.000 | 1.000 |  | 13.70 | 0.67 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 19.32 | 22.00 | 25.24 | -1.03 | 5.29 | 1.001 | 1.126 |  | 337.75 | 0.92 | 7 | False | False |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 19.53 | 24.01 | 22.14 | 12.65 | 14.56 | 1.012 | 1.229 |  | 13.27 | 0.92 | 12 | False | False |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 19.57 | 23.95 | 22.07 | 13.72 | 15.87 | 1.014 | 1.226 |  | 12.46 | 0.92 | 12 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 19.67 | 24.66 | 23.25 | 15.33 | 18.89 | 1.019 | 1.262 |  | 12.62 | 0.83 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 19.67 | 24.66 | 23.25 | 15.33 | 18.89 | 1.019 | 1.262 |  | 12.62 | 0.83 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 19.67 | 24.66 | 23.25 | 15.33 | 18.89 | 1.019 | 1.262 |  | 12.62 | 0.83 | 7 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 19.67 | 24.66 | 23.25 | 15.33 | 18.89 | 1.019 | 1.262 |  | 12.62 | 0.83 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 19.67 | 24.66 | 23.25 | 15.33 | 18.89 | 1.019 | 1.262 |  | 12.62 | 0.83 | 37 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 19.90 | 25.43 | 27.61 | -1.25 | 9.20 | 1.031 | 1.302 |  | 394.98 | 0.92 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 22.65 | 26.26 | 24.77 | 15.74 | 16.50 | 1.174 | 1.345 |  | 14.62 | 0.67 | 2 | False | False |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 27.65 | 26.03 | 32.18 | 18.97 | 13.94 | 1.433 | 1.333 |  | 19.62 | 0.92 | 22 | False | False |
@@ -3039,6 +3550,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 13.88 | 17.95 | 18.64 | -5.40 | -1.15 | 0.719 | 0.919 |  | 15.05 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 14.01 | 17.67 | 17.12 | 2.85 | 4.74 | 0.726 | 0.904 |  | 11.36 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 14.24 | 18.61 | 20.88 | -5.60 | -5.19 | 0.738 | 0.953 |  | 286.92 | 1.00 | 7 | True | False |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 14.24 | 18.57 | 18.05 | -2.56 | 2.33 | 0.738 | 0.951 |  | 9.97 | 0.83 | 15 | True | False |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 14.24 | 18.57 | 18.05 | -2.56 | 2.33 | 0.738 | 0.951 |  | 9.97 | 0.83 | 10 | True | False |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 14.24 | 18.57 | 18.05 | -2.56 | 2.33 | 0.738 | 0.951 |  | 9.97 | 0.83 | 37 | True | False |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 14.24 | 18.57 | 18.05 | -2.56 | 2.33 | 0.738 | 0.951 |  | 9.97 | 0.83 | 11 | True | False |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 14.24 | 18.57 | 18.05 | -2.56 | 2.33 | 0.738 | 0.951 |  | 9.97 | 0.83 | 7 | True | False |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 14.24 | 18.57 | 18.05 | -2.56 | 2.33 | 0.738 | 0.951 |  | 9.97 | 0.83 | 10 | True | False |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 14.24 | 18.57 | 18.05 | -2.56 | 2.33 | 0.738 | 0.951 |  | 9.97 | 0.83 | 12 | True | False |
@@ -3048,6 +3563,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 14.71 | 18.88 | 18.28 | -2.44 | 2.95 | 0.762 | 0.967 |  | 10.13 | 0.83 | 12 | True | False |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 14.74 | 20.47 | 18.55 | 4.67 | 9.03 | 0.763 | 1.048 |  | 10.14 | 0.75 | 12 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | full_sample | 12 | 15.20 | 21.04 | 19.19 | 5.72 | 10.95 | 0.787 | 1.077 |  | 10.51 | 0.75 | 14 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 15.42 | 21.42 | 19.59 | 6.80 | 12.08 | 0.799 | 1.097 |  | 10.60 | 0.75 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 15.42 | 21.42 | 19.59 | 6.80 | 12.08 | 0.799 | 1.097 |  | 10.60 | 0.75 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 15.42 | 21.42 | 19.59 | 6.80 | 12.08 | 0.799 | 1.097 |  | 10.60 | 0.75 | 37 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 15.42 | 21.42 | 19.59 | 6.80 | 12.08 | 0.799 | 1.097 |  | 10.60 | 0.75 | 7 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 15.42 | 21.42 | 19.59 | 6.80 | 12.08 | 0.799 | 1.097 |  | 10.60 | 0.75 | 10 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 15.69 | 19.24 | 22.45 | -9.38 | -9.04 | 0.813 | 0.985 |  | 280.62 | 1.00 | 7 | False | False |
@@ -3058,6 +3576,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 21.15 | 25.11 | 25.87 | -11.34 | -6.14 | 1.096 | 1.285 |  | 295.56 | 1.00 | 7 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 22.65 | 26.26 | 24.77 | 15.74 | 16.50 | 1.174 | 1.345 |  | 14.07 | 1.00 | 2 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 47.17 | 44.60 | 65.00 | 27.99 | 23.62 | 2.443 | 2.284 |  | 32.59 | 0.83 | 3 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 16.92 | 21.03 | 20.33 | 4.23 | 8.39 | 0.854 | 1.066 |  | 11.98 | 0.70 | 15 | True | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 17.00 | 20.97 | 20.68 | 3.70 | 7.94 | 0.858 | 1.063 |  | 12.17 | 0.70 | 15 | True | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 17.00 | 20.97 | 20.68 | 3.70 | 7.94 | 0.858 | 1.063 |  | 12.17 | 0.70 | 11 | True | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 17.20 | 19.21 | 22.08 | 3.00 | 6.37 | 0.869 | 0.974 |  | 16.05 | 0.80 | 1 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 17.23 | 22.36 | 21.11 | 6.08 | 10.61 | 0.870 | 1.134 |  | 13.92 | 0.70 | 2 | True | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 17.56 | 22.62 | 22.76 | 4.71 | 10.02 | 0.887 | 1.147 |  | 15.52 | 0.70 | 7 | True | False |
@@ -3066,17 +3587,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 18.14 | 22.90 | 21.90 | 7.99 | 11.91 | 0.916 | 1.161 |  | 13.30 | 0.70 | 12 | True | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 18.21 | 22.72 | 22.10 | 4.28 | 9.17 | 0.919 | 1.152 |  | 13.22 | 0.80 | 7 | True | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 18.25 | 23.71 | 23.16 | 5.03 | 9.62 | 0.922 | 1.202 |  | 14.21 | 0.70 | 7 | True | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 18.89 | 23.20 | 21.97 | 9.85 | 13.32 | 0.954 | 1.176 |  | 13.28 | 0.70 | 10 | True | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 18.89 | 23.20 | 21.97 | 9.85 | 13.32 | 0.954 | 1.176 |  | 13.28 | 0.70 | 7 | True | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 18.89 | 23.20 | 21.97 | 9.85 | 13.32 | 0.954 | 1.176 |  | 13.28 | 0.70 | 10 | True | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 18.89 | 23.20 | 21.97 | 9.85 | 13.32 | 0.954 | 1.176 |  | 13.28 | 0.70 | 12 | True | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 18.89 | 23.20 | 21.97 | 9.85 | 13.32 | 0.954 | 1.176 |  | 13.28 | 0.70 | 14 | True | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 18.89 | 23.20 | 21.97 | 9.85 | 13.32 | 0.954 | 1.176 |  | 13.28 | 0.70 | 10 | True | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 18.90 | 23.18 | 21.98 | 9.15 | 12.82 | 0.955 | 1.175 |  | 13.30 | 0.70 | 37 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 19.01 | 25.82 | 25.86 | 4.13 | 10.73 | 0.960 | 1.309 |  | 121.63 | 0.80 | 7 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 19.05 | 25.45 | 26.14 | 3.72 | 10.18 | 0.962 | 1.290 |  | 96.73 | 0.80 | 7 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 19.23 | 25.64 | 25.86 | 4.04 | 10.44 | 0.971 | 1.300 |  | 92.11 | 0.80 | 7 | True | False |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 19.43 | 24.35 | 23.04 | 10.95 | 15.04 | 0.981 | 1.235 |  | 14.15 | 0.80 | 12 | True | False |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 19.80 | 19.72 | 23.79 | -14.60 | -10.23 | 1.000 | 1.000 |  | 13.65 | 0.80 | 1 | False | False |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 19.82 | 24.41 | 23.27 | 12.51 | 16.52 | 1.001 | 1.238 |  | 14.53 | 0.40 | 14 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.11 | 24.68 | 23.58 | 12.68 | 16.79 | 1.016 | 1.251 |  | 14.14 | 0.80 | 37 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.28 | 24.89 | 23.90 | 13.66 | 17.66 | 1.024 | 1.262 |  | 14.29 | 0.80 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 20.28 | 24.89 | 23.90 | 13.66 | 17.66 | 1.024 | 1.262 |  | 14.29 | 0.80 | 7 | False | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 20.28 | 24.89 | 23.90 | 13.66 | 17.66 | 1.024 | 1.262 |  | 14.29 | 0.80 | 10 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 20.44 | 28.37 | 27.91 | 13.39 | 20.19 | 1.033 | 1.439 |  | 17.78 | 0.70 | 2 | False | False |
@@ -3084,13 +3609,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 24.79 | 27.87 | 28.39 | 3.21 | 9.88 | 1.252 | 1.413 |  | 16.07 | 0.80 | 22 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 40.74 | 40.30 | 54.52 | 15.98 | 20.54 | 2.058 | 2.043 |  | 28.42 | 0.90 | 3 | False | False |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 13.84 | 14.36 | 17.27 | -0.03 | 1.06 | 0.699 | 0.728 |  | 9.87 | 0.90 | 22 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.02 | 17.70 | 18.48 | -4.72 | -0.95 | 0.759 | 0.897 |  | 10.40 | 0.70 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.02 | 17.70 | 18.48 | -4.72 | -0.95 | 0.759 | 0.897 |  | 10.40 | 0.70 | 11 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.33 | 18.88 | 18.54 | -0.74 | 3.44 | 0.774 | 0.957 |  | 10.52 | 0.80 | 15 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 15.79 | 19.10 | 19.13 | -1.43 | 3.12 | 0.798 | 0.969 |  | 10.80 | 0.70 | 12 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 15.88 | 19.18 | 19.17 | -1.39 | 3.16 | 0.802 | 0.973 |  | 10.85 | 0.70 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.91 | 19.39 | 19.50 | -1.90 | 2.82 | 0.804 | 0.983 |  | 10.99 | 0.70 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 15.91 | 19.39 | 19.50 | -1.90 | 2.82 | 0.804 | 0.983 |  | 10.99 | 0.70 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 15.91 | 19.39 | 19.50 | -1.90 | 2.82 | 0.804 | 0.983 |  | 10.99 | 0.70 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 15.91 | 19.39 | 19.50 | -1.90 | 2.82 | 0.804 | 0.983 |  | 10.99 | 0.70 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 15.91 | 19.39 | 19.50 | -1.90 | 2.82 | 0.804 | 0.983 |  | 10.99 | 0.70 | 14 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 15.91 | 19.39 | 19.50 | -1.90 | 2.82 | 0.804 | 0.983 |  | 10.99 | 0.70 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.91 | 19.36 | 19.50 | -2.03 | 2.66 | 0.804 | 0.981 |  | 11.00 | 0.70 | 37 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 16.04 | 18.91 | 20.33 | -5.89 | -1.06 | 0.810 | 0.958 |  | 13.02 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 16.33 | 19.41 | 20.34 | -5.24 | -0.99 | 0.825 | 0.984 |  | 12.09 | 0.90 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 16.37 | 19.37 | 20.41 | -5.56 | -1.33 | 0.827 | 0.982 |  | 11.85 | 0.90 | 7 | True | True |
@@ -3099,6 +3629,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 17.20 | 19.21 | 22.08 | 3.00 | 6.37 | 0.869 | 0.974 |  | 15.17 | 1.00 | 1 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 17.23 | 22.36 | 21.11 | 6.08 | 10.61 | 0.870 | 1.134 |  | 12.39 | 1.00 | 2 | True | False |
 | margin-ts | sarima_margin | W2 | 0 | full_sample | 10 | 17.31 | 22.06 | 20.91 | 6.58 | 11.53 | 0.874 | 1.119 |  | 11.75 | 0.70 | 14 | True | False |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 17.48 | 22.28 | 21.13 | 7.07 | 12.00 | 0.883 | 1.130 |  | 11.69 | 0.70 | 37 | True | False |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 17.57 | 22.46 | 21.33 | 7.69 | 12.66 | 0.887 | 1.139 |  | 11.76 | 0.70 | 10 | True | False |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 17.57 | 22.46 | 21.33 | 7.69 | 12.66 | 0.887 | 1.139 |  | 11.76 | 0.70 | 7 | True | False |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 17.57 | 22.46 | 21.33 | 7.69 | 12.66 | 0.887 | 1.139 |  | 11.76 | 0.70 | 10 | True | False |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 19.80 | 19.72 | 23.79 | -14.60 | -10.23 | 1.000 | 1.000 |  | 13.56 | 0.70 | 1 | False | False |
@@ -3112,7 +3644,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 18.74 | 24.24 | 24.61 | 5.56 | 9.37 | 1.016 | 1.262 |  | 747.85 | 1.00 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 18.87 | 23.69 | 22.89 | 8.52 | 11.80 | 1.023 | 1.234 |  | 13.96 | 0.78 | 2 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 19.03 | 24.06 | 24.55 | 2.40 | 7.49 | 1.032 | 1.253 |  | 2,894.82 | 1.00 | 7 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 19.09 | 23.02 | 21.68 | 6.21 | 9.62 | 1.035 | 1.199 |  | 12.53 | 0.78 | 15 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 19.18 | 24.95 | 25.15 | 5.75 | 9.80 | 1.040 | 1.299 |  | 2,948.55 | 1.00 | 7 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 20.08 | 24.23 | 22.84 | 5.73 | 9.52 | 1.089 | 1.262 |  | 13.22 | 0.67 | 15 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 20.08 | 24.23 | 22.84 | 5.73 | 9.52 | 1.089 | 1.262 |  | 13.22 | 0.67 | 11 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 20.57 | 25.94 | 24.62 | 6.85 | 10.95 | 1.115 | 1.351 |  | 14.78 | 0.89 | 7 | False | False |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 21.15 | 25.48 | 24.22 | 10.47 | 13.24 | 1.147 | 1.327 |  | 14.06 | 0.78 | 12 | False | False |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 21.16 | 26.01 | 24.70 | 10.87 | 14.17 | 1.147 | 1.354 |  | 14.60 | 0.89 | 12 | False | False |
@@ -3120,6 +3655,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 21.29 | 26.94 | 25.91 | 7.40 | 10.76 | 1.154 | 1.403 |  | 15.91 | 0.89 | 7 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 21.71 | 27.75 | 26.58 | 7.63 | 11.36 | 1.177 | 1.445 |  | 16.41 | 0.89 | 7 | False | False |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 21.78 | 25.61 | 24.47 | 13.25 | 15.91 | 1.181 | 1.334 |  | 14.36 | 0.89 | 12 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 21.96 | 25.99 | 24.56 | 12.87 | 15.54 | 1.191 | 1.354 |  | 14.32 | 0.78 | 37 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 21.96 | 25.99 | 24.56 | 12.87 | 15.54 | 1.191 | 1.354 |  | 14.32 | 0.78 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 21.96 | 25.99 | 24.56 | 12.87 | 15.54 | 1.191 | 1.354 |  | 14.32 | 0.78 | 7 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 21.96 | 25.99 | 24.56 | 12.87 | 15.54 | 1.191 | 1.354 |  | 14.32 | 0.78 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 21.96 | 25.99 | 24.56 | 12.87 | 15.54 | 1.191 | 1.354 |  | 14.32 | 0.78 | 12 | False | False |
@@ -3128,13 +3665,20 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | sarima_margin | W2 | 1 | PIT | 9 | 22.19 | 26.09 | 25.20 | 15.28 | 18.26 | 1.203 | 1.359 |  | 15.93 | 0.22 | 14 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 22.47 | 25.86 | 26.20 | 13.88 | 16.41 | 1.218 | 1.347 |  | 15.68 | 0.78 | 2 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 22.52 | 30.09 | 29.55 | 6.27 | 14.07 | 1.221 | 1.567 |  | 3,279.35 | 1.00 | 7 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 22.83 | 26.63 | 25.91 | 16.47 | 19.44 | 1.238 | 1.386 |  | 15.06 | 0.78 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 22.83 | 26.63 | 25.91 | 16.47 | 19.44 | 1.238 | 1.386 |  | 15.06 | 0.78 | 7 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 22.83 | 26.63 | 25.91 | 16.47 | 19.44 | 1.238 | 1.386 |  | 15.06 | 0.78 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 22.83 | 26.63 | 25.91 | 16.47 | 19.44 | 1.238 | 1.386 |  | 15.06 | 0.78 | 37 | False | False |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 24.23 | 29.40 | 30.02 | 11.46 | 14.83 | 1.314 | 1.531 |  | 16.50 | 0.78 | 22 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 25.67 | 32.33 | 31.18 | 7.89 | 13.43 | 1.392 | 1.683 |  | 20.59 | 0.67 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | PIT | 9 | 44.43 | 43.76 | 59.68 | 24.11 | 22.52 | 2.409 | 2.279 |  | 30.08 | 0.89 | 3 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 14.67 | 17.68 | 18.51 | -3.22 | -0.22 | 0.795 | 0.920 |  | 10.32 | 0.67 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 14.67 | 17.68 | 18.51 | -3.22 | -0.22 | 0.795 | 0.920 |  | 10.32 | 0.67 | 11 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 15.16 | 18.69 | 19.88 | -3.88 | -0.09 | 0.822 | 0.973 |  | 14.00 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 15.19 | 18.97 | 18.75 | 1.02 | 4.29 | 0.824 | 0.988 |  | 10.56 | 0.78 | 15 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 15.25 | 19.08 | 18.88 | 0.85 | 4.21 | 0.827 | 0.994 |  | 10.59 | 0.78 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 15.35 | 19.32 | 19.33 | 0.22 | 3.83 | 0.832 | 1.006 |  | 10.79 | 0.78 | 10 | True | False |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 15.35 | 19.32 | 19.33 | 0.22 | 3.83 | 0.832 | 1.006 |  | 10.79 | 0.78 | 37 | True | False |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 15.35 | 19.32 | 19.33 | 0.22 | 3.83 | 0.832 | 1.006 |  | 10.79 | 0.78 | 7 | True | False |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 15.35 | 19.32 | 19.33 | 0.22 | 3.83 | 0.832 | 1.006 |  | 10.79 | 0.78 | 10 | True | False |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 15.35 | 19.32 | 19.33 | 0.22 | 3.83 | 0.832 | 1.006 |  | 10.79 | 0.78 | 12 | True | False |
@@ -3149,6 +3693,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 16.92 | 19.85 | 24.51 | -8.05 | -5.58 | 0.917 | 1.034 |  | 2,752.65 | 1.00 | 7 | True | False |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 17.04 | 21.63 | 21.00 | 6.84 | 10.34 | 0.924 | 1.126 |  | 11.70 | 0.67 | 12 | True | False |
 | margin-ts | sarima_margin | W2 | 1 | full_sample | 9 | 17.72 | 22.42 | 21.56 | 8.83 | 12.59 | 0.961 | 1.167 |  | 12.09 | 0.67 | 14 | True | False |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 18.11 | 22.88 | 22.09 | 9.95 | 13.73 | 0.982 | 1.191 |  | 12.26 | 0.67 | 10 | True | False |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 18.11 | 22.88 | 22.09 | 9.95 | 13.73 | 0.982 | 1.191 |  | 12.26 | 0.67 | 37 | True | False |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 18.11 | 22.88 | 22.09 | 9.95 | 13.73 | 0.982 | 1.191 |  | 12.26 | 0.67 | 7 | True | False |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 18.11 | 22.88 | 22.09 | 9.95 | 13.73 | 0.982 | 1.191 |  | 12.26 | 0.67 | 10 | True | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 18.25 | 20.11 | 26.26 | -11.94 | -9.48 | 0.990 | 1.047 |  | 2,711.55 | 1.00 | 7 | True | False |
@@ -3172,21 +3718,32 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 21.39 | 27.35 | 27.71 | 6.59 | 13.06 | 1.197 | 1.439 |  | 434.96 | 1.00 | 7 | False | False |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 22.59 | 25.22 | 24.04 | 11.58 | 13.31 | 1.264 | 1.327 |  | 13.82 | 0.88 | 12 | False | False |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 22.88 | 26.01 | 25.01 | 12.57 | 14.99 | 1.280 | 1.369 |  | 15.05 | 1.00 | 12 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 15 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 11 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 7 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 12 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 14 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 23.06 | 25.50 | 24.82 | 14.27 | 16.11 | 1.290 | 1.342 |  | 14.04 | 0.88 | 37 | False | False |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 23.51 | 26.07 | 25.26 | 14.73 | 16.65 | 1.315 | 1.372 |  | 14.43 | 1.00 | 12 | False | False |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 23.81 | 26.56 | 26.34 | 16.84 | 19.22 | 1.332 | 1.398 |  | 18.50 | 0.25 | 14 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 24.42 | 27.12 | 27.16 | 18.06 | 20.44 | 1.366 | 1.427 |  | 15.16 | 0.88 | 15 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 24.42 | 27.12 | 27.16 | 18.06 | 20.44 | 1.366 | 1.427 |  | 15.16 | 0.88 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 24.42 | 27.12 | 27.16 | 18.06 | 20.44 | 1.366 | 1.427 |  | 15.16 | 0.88 | 7 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 24.42 | 27.12 | 27.16 | 18.06 | 20.44 | 1.366 | 1.427 |  | 15.16 | 0.88 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 24.42 | 27.12 | 27.16 | 18.06 | 20.44 | 1.366 | 1.427 |  | 15.16 | 0.88 | 37 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 25.34 | 27.92 | 26.94 | 14.97 | 16.53 | 1.417 | 1.469 |  | 15.50 | 0.75 | 2 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 2 | PIT | 8 | 48.36 | 45.56 | 64.80 | 28.17 | 24.08 | 2.705 | 2.398 |  | 33.35 | 0.88 | 3 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 15.11 | 17.91 | 18.56 | -2.34 | -0.04 | 0.845 | 0.943 |  | 11.76 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 15.12 | 18.86 | 20.36 | -2.43 | 0.73 | 0.846 | 0.993 |  | 15.85 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 15.12 | 17.97 | 18.53 | -2.01 | 0.30 | 0.846 | 0.945 |  | 11.76 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 15.47 | 18.89 | 18.80 | 2.92 | 5.30 | 0.866 | 0.994 |  | 12.03 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 15.97 | 19.80 | 20.17 | 1.55 | 4.58 | 0.894 | 1.042 |  | 11.32 | 0.75 | 15 | True | False |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 15.97 | 19.80 | 20.17 | 1.55 | 4.58 | 0.894 | 1.042 |  | 11.32 | 0.75 | 10 | True | False |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 15.97 | 19.80 | 20.17 | 1.55 | 4.58 | 0.894 | 1.042 |  | 11.32 | 0.75 | 37 | True | False |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 15.97 | 19.80 | 20.17 | 1.55 | 4.58 | 0.894 | 1.042 |  | 11.32 | 0.75 | 11 | True | False |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 15.97 | 19.80 | 20.17 | 1.55 | 4.58 | 0.894 | 1.042 |  | 11.32 | 0.75 | 7 | True | False |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 15.97 | 19.80 | 20.17 | 1.55 | 4.58 | 0.894 | 1.042 |  | 11.32 | 0.75 | 10 | True | False |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 15.97 | 19.80 | 20.17 | 1.55 | 4.58 | 0.894 | 1.042 |  | 11.32 | 0.75 | 12 | True | False |
@@ -3202,6 +3759,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 2 | full_sample | 8 | 19.20 | 22.90 | 22.07 | 8.13 | 10.99 | 1.074 | 1.205 |  | 12.57 | 0.62 | 12 | False | False |
 | cycle-flex | flex_lines | W2 | 2 | full_sample | 8 | 19.38 | 22.58 | 23.66 | 5.21 | 10.22 | 1.084 | 1.188 |  | 13.65 | 1.00 | 22 | False | False |
 | margin-ts | sarima_margin | W2 | 2 | full_sample | 8 | 19.69 | 23.51 | 22.86 | 10.17 | 13.36 | 1.102 | 1.237 |  | 13.21 | 0.62 | 14 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 20.27 | 24.05 | 23.42 | 11.30 | 14.51 | 1.134 | 1.265 |  | 13.21 | 0.62 | 15 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 20.27 | 24.05 | 23.42 | 11.30 | 14.51 | 1.134 | 1.265 |  | 13.21 | 0.62 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 20.27 | 24.05 | 23.42 | 11.30 | 14.51 | 1.134 | 1.265 |  | 13.21 | 0.62 | 37 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 20.27 | 24.05 | 23.42 | 11.30 | 14.51 | 1.134 | 1.265 |  | 13.21 | 0.62 | 7 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 20.27 | 24.05 | 23.42 | 11.30 | 14.51 | 1.134 | 1.265 |  | 13.21 | 0.62 | 10 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 20.88 | 25.93 | 27.73 | 7.62 | 11.56 | 1.168 | 1.365 |  | 15.48 | 0.88 | 1 | False | False |
@@ -3772,17 +4332,24 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 16.79 | 14.92 | 20.40 | -2.08 | 1.53 | 0.751 | 0.786 |  | 12.19 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 16.87 | 15.01 | 20.90 | 1.71 | 0.64 | 0.755 | 0.791 |  | 11.83 | 0.86 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 17.18 | 15.11 | 21.34 | 1.62 | 0.47 | 0.768 | 0.796 |  | 12.04 | 0.93 | 7 | False | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 17.28 | 14.94 | 21.22 | 6.75 | 4.79 | 0.773 | 0.787 |  | 12.02 | 0.86 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 17.67 | 14.44 | 21.43 | -2.02 | 0.46 | 0.790 | 0.761 |  | 12.76 | 0.79 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 17.70 | 15.91 | 20.77 | -0.05 | 2.69 | 0.792 | 0.838 |  | 12.30 | 1.00 | 7 | False | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 17.74 | 15.69 | 20.76 | 7.30 | 5.43 | 0.793 | 0.826 |  | 11.97 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 17.82 | 16.26 | 21.37 | 7.83 | 6.49 | 0.797 | 0.856 |  | 12.20 | 0.64 | 10 | False | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 17.82 | 16.26 | 21.37 | 7.83 | 6.49 | 0.797 | 0.856 |  | 12.20 | 0.64 | 11 | False | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 17.82 | 16.26 | 21.37 | 7.83 | 6.49 | 0.797 | 0.856 |  | 12.20 | 0.64 | 10 | False | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 17.96 | 16.34 | 21.65 | 7.88 | 6.35 | 0.803 | 0.861 |  | 12.36 | 0.64 | 37 | False | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 18.33 | 17.11 | 21.60 | 8.08 | 7.19 | 0.820 | 0.901 |  | 12.35 | 0.64 | 12 | False | True |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 18.53 | 17.21 | 21.73 | 7.59 | 7.06 | 0.829 | 0.907 |  | 12.41 | 0.79 | 12 | False | True |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 18.60 | 17.59 | 21.55 | 7.90 | 7.31 | 0.832 | 0.927 |  | 12.45 | 0.71 | 12 | False | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 18.74 | 17.93 | 22.83 | 6.68 | 4.57 | 0.838 | 0.944 |  | 13.25 | 0.64 | 14 | False | False |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 18.82 | 16.36 | 22.13 | 0.12 | 0.63 | 0.842 | 0.862 |  | 12.94 | 0.93 | 7 | False | True |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 18.84 | 18.07 | 22.26 | 1.10 | 0.89 | 0.842 | 0.952 |  | 12.72 | 0.79 | 1 | False | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 19.39 | 18.47 | 22.70 | 12.36 | 11.64 | 0.867 | 0.973 |  | 12.70 | 0.71 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 19.39 | 18.47 | 22.70 | 12.36 | 11.64 | 0.867 | 0.973 |  | 12.70 | 0.71 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 19.46 | 18.48 | 22.82 | 12.09 | 11.22 | 0.870 | 0.973 |  | 12.77 | 0.71 | 37 | False | False |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 19.94 | 18.69 | 22.97 | 11.90 | 11.46 | 0.892 | 0.985 |  | 12.85 | 1.00 | 15 | False | False |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 20.15 | 19.57 | 22.65 | 11.53 | 11.61 | 0.901 | 1.031 |  | 12.81 | 0.86 | 12 | False | False |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 20.42 | 17.74 | 26.66 | 7.63 | 1.91 | 0.913 | 0.934 |  | 14.68 | 0.93 | 22 | False | True |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 21.58 | 19.78 | 25.89 | 8.11 | 5.59 | 0.965 | 1.042 |  | 15.23 | 0.79 | 15 | False | False |
@@ -3797,14 +4364,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 13.10 | 11.76 | 16.22 | -0.52 | 0.50 | 0.586 | 0.619 |  | 10.04 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 13.14 | 11.81 | 16.22 | -0.33 | 0.70 | 0.588 | 0.622 |  | 9.87 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 13.17 | 11.86 | 16.22 | -0.16 | 0.88 | 0.589 | 0.625 |  | 9.62 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 13.25 | 12.92 | 16.66 | 1.86 | 2.83 | 0.592 | 0.680 |  | 9.44 | 0.93 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 14.18 | 12.93 | 18.08 | -1.73 | 0.89 | 0.634 | 0.681 |  | 11.01 | 0.93 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 14.55 | 12.91 | 18.46 | -2.45 | 0.60 | 0.651 | 0.680 |  | 10.36 | 0.86 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 14.99 | 13.61 | 18.16 | -1.27 | 1.84 | 0.670 | 0.717 |  | 10.28 | 0.79 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 15.23 | 13.79 | 18.44 | -1.42 | 1.93 | 0.681 | 0.727 |  | 10.41 | 0.79 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 15.35 | 13.89 | 18.57 | -1.54 | 1.91 | 0.686 | 0.732 |  | 10.49 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 15.35 | 13.89 | 18.57 | -1.54 | 1.91 | 0.686 | 0.732 |  | 10.49 | 0.79 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 15.35 | 13.89 | 18.57 | -1.54 | 1.91 | 0.686 | 0.732 |  | 10.49 | 0.79 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 15.36 | 14.13 | 18.65 | -1.55 | 1.56 | 0.687 | 0.744 |  | 10.59 | 0.86 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 15.37 | 14.19 | 18.65 | -1.37 | 1.75 | 0.687 | 0.748 |  | 10.59 | 0.86 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 15.42 | 15.14 | 18.65 | 2.80 | 6.32 | 0.690 | 0.798 |  | 10.36 | 0.86 | 15 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 15.50 | 14.26 | 19.34 | -2.56 | 1.45 | 0.693 | 0.751 |  | 11.02 | 0.71 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 15.56 | 14.25 | 18.35 | -0.92 | 2.16 | 0.696 | 0.750 |  | 10.51 | 0.79 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 15.71 | 15.35 | 18.89 | 2.50 | 6.23 | 0.703 | 0.809 |  | 10.55 | 0.86 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 15.79 | 15.43 | 18.99 | 2.52 | 6.35 | 0.706 | 0.813 |  | 10.60 | 0.86 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 15.79 | 15.43 | 18.99 | 2.52 | 6.35 | 0.706 | 0.813 |  | 10.60 | 0.86 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 15.98 | 14.25 | 19.65 | -2.93 | 1.17 | 0.715 | 0.751 |  | 11.24 | 0.71 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 16.33 | 17.06 | 18.94 | 9.28 | 10.60 | 0.730 | 0.899 |  | 10.64 | 0.93 | 2 | False | False |
@@ -3832,11 +4406,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 21.32 | 17.00 | 26.64 | 7.24 | 1.50 | 1.037 | 0.920 |  | 15.77 | 1.00 | 22 | False | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 21.35 | 17.87 | 24.19 | 10.51 | 7.18 | 1.038 | 0.967 |  | 14.21 | 0.85 | 10 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 21.46 | 19.48 | 25.93 | 20.78 | 18.36 | 1.043 | 1.054 |  | 14.00 | 0.92 | 2 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 21.97 | 18.76 | 25.55 | 11.59 | 7.18 | 1.068 | 1.015 |  | 15.22 | 0.77 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 21.97 | 18.76 | 25.55 | 11.59 | 7.18 | 1.068 | 1.015 |  | 15.22 | 0.77 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 21.97 | 18.76 | 25.55 | 11.59 | 7.18 | 1.068 | 1.015 |  | 15.22 | 0.77 | 11 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 21.97 | 18.76 | 25.55 | 11.59 | 7.18 | 1.068 | 1.015 |  | 15.22 | 0.77 | 10 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 22.04 | 17.22 | 26.28 | -1.00 | -0.92 | 1.071 | 0.931 |  | 64.98 | 1.00 | 7 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 22.12 | 16.37 | 26.50 | -1.74 | -1.06 | 1.075 | 0.886 |  | 88.58 | 1.00 | 7 | False | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 22.16 | 19.08 | 25.69 | 11.43 | 6.90 | 1.077 | 1.032 |  | 15.32 | 0.77 | 37 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 22.16 | 19.10 | 25.61 | 11.69 | 7.36 | 1.078 | 1.033 |  | 15.27 | 0.77 | 12 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 22.76 | 19.47 | 26.62 | 16.09 | 12.68 | 1.107 | 1.053 |  | 15.83 | 0.77 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 22.76 | 19.47 | 26.62 | 16.09 | 12.68 | 1.107 | 1.053 |  | 15.83 | 0.77 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 22.76 | 19.47 | 26.62 | 16.09 | 12.68 | 1.107 | 1.053 |  | 15.83 | 0.77 | 10 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 22.90 | 19.65 | 26.78 | 15.96 | 12.39 | 1.113 | 1.063 |  | 15.94 | 0.77 | 37 | False | False |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 23.41 | 21.68 | 26.29 | 10.75 | 5.64 | 1.138 | 1.173 |  | 15.80 | 0.77 | 14 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 25.88 | 25.75 | 29.15 | 3.23 | 1.23 | 1.258 | 1.393 |  | 17.29 | 0.62 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 26.08 | 22.09 | 31.83 | -2.44 | 3.03 | 1.268 | 1.195 |  | 72.02 | 1.00 | 7 | False | False |
@@ -3851,7 +4432,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 14.02 | 12.62 | 16.90 | 4.31 | 4.76 | 0.682 | 0.683 |  | 9.54 | 0.77 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 14.31 | 12.94 | 18.44 | -0.89 | 1.14 | 0.696 | 0.700 |  | 12.62 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 14.32 | 12.83 | 18.53 | -1.29 | 0.94 | 0.696 | 0.694 |  | 10.36 | 0.77 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 14.61 | 13.76 | 18.20 | 1.68 | 1.76 | 0.711 | 0.744 |  | 10.23 | 0.62 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 14.61 | 13.76 | 18.20 | 1.68 | 1.76 | 0.711 | 0.744 |  | 10.23 | 0.62 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 14.61 | 13.76 | 18.20 | 1.68 | 1.76 | 0.711 | 0.744 |  | 10.23 | 0.62 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 14.61 | 13.76 | 18.20 | 1.68 | 1.76 | 0.711 | 0.744 |  | 10.23 | 0.62 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 14.65 | 13.79 | 18.21 | 1.72 | 1.75 | 0.712 | 0.746 |  | 10.23 | 0.62 | 37 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 14.76 | 14.00 | 18.03 | 1.90 | 1.72 | 0.718 | 0.758 |  | 10.17 | 0.62 | 14 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 14.98 | 14.13 | 18.46 | 2.00 | 1.16 | 0.728 | 0.764 |  | 10.39 | 0.92 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 15.02 | 14.16 | 18.49 | 2.18 | 1.35 | 0.731 | 0.766 |  | 10.41 | 0.92 | 7 | True | True |
@@ -3860,7 +4445,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 15.25 | 14.05 | 19.14 | -1.20 | 1.66 | 0.742 | 0.760 |  | 10.81 | 0.77 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 15.26 | 14.34 | 18.65 | 3.04 | 2.23 | 0.742 | 0.776 |  | 11.67 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 16.08 | 14.15 | 18.91 | 2.19 | 1.34 | 0.782 | 0.765 |  | 10.68 | 0.69 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 16.15 | 15.26 | 19.16 | 5.63 | 6.37 | 0.785 | 0.826 |  | 10.68 | 0.69 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 16.15 | 15.26 | 19.16 | 5.63 | 6.37 | 0.785 | 0.826 |  | 10.68 | 0.69 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 16.15 | 15.26 | 19.16 | 5.63 | 6.37 | 0.785 | 0.826 |  | 10.68 | 0.69 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 16.16 | 15.25 | 19.15 | 5.62 | 6.28 | 0.786 | 0.825 |  | 10.68 | 0.69 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 17.47 | 15.78 | 21.89 | -3.25 | -0.86 | 0.850 | 0.854 |  | 59.98 | 1.00 | 7 | True | True |
 | margin-ts | sarima_margin | W1 | 1 | full_sample | 13 | 18.91 | 18.43 | 21.49 | 4.36 | 5.77 | 0.919 | 0.997 |  | 12.73 | 1.00 | 14 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 19.70 | 19.05 | 22.68 | 12.66 | 12.03 | 0.958 | 1.031 |  | 12.57 | 0.85 | 2 | False | False |
@@ -3883,11 +4471,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 21.51 | 17.69 | 25.93 | 15.12 | 10.92 | 1.224 | 1.004 |  | 15.93 | 0.83 | 12 | False | False |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 21.56 | 18.96 | 24.89 | 16.71 | 13.28 | 1.227 | 1.076 |  | 13.77 | 0.92 | 2 | False | False |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 22.05 | 15.64 | 27.80 | 13.84 | 5.77 | 1.255 | 0.888 |  | 15.75 | 0.92 | 22 | False | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 22.40 | 17.48 | 27.92 | 16.53 | 9.39 | 1.275 | 0.992 |  | 16.55 | 0.75 | 15 | False | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 22.40 | 17.48 | 27.92 | 16.53 | 9.39 | 1.275 | 0.992 |  | 16.55 | 0.75 | 10 | False | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 22.40 | 17.48 | 27.92 | 16.53 | 9.39 | 1.275 | 0.992 |  | 16.55 | 0.75 | 11 | False | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 22.40 | 17.48 | 27.92 | 16.53 | 9.39 | 1.275 | 0.992 |  | 16.55 | 0.75 | 10 | False | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 22.40 | 17.52 | 27.91 | 16.44 | 9.26 | 1.275 | 0.995 |  | 16.53 | 0.75 | 37 | False | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 22.62 | 17.81 | 28.25 | 16.56 | 9.36 | 1.287 | 1.011 |  | 16.72 | 0.75 | 12 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 23.10 | 19.01 | 28.05 | 17.37 | 11.22 | 1.315 | 1.079 |  | 16.74 | 0.75 | 14 | False | False |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 23.33 | 18.93 | 27.96 | 19.26 | 13.40 | 1.328 | 1.074 |  | 17.11 | 0.83 | 12 | False | False |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 23.88 | 22.88 | 29.70 | 5.05 | -2.21 | 1.359 | 1.298 |  | 16.68 | 0.67 | 1 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 24.06 | 19.21 | 29.42 | 20.98 | 14.98 | 1.369 | 1.090 |  | 17.84 | 0.83 | 37 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 24.14 | 19.34 | 29.39 | 21.00 | 15.09 | 1.374 | 1.097 |  | 17.85 | 0.83 | 15 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 24.14 | 19.34 | 29.39 | 21.00 | 15.09 | 1.374 | 1.097 |  | 17.85 | 0.83 | 10 | False | False |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 24.14 | 19.34 | 29.39 | 21.00 | 15.09 | 1.374 | 1.097 |  | 17.85 | 0.83 | 10 | False | False |
 | margin-ts | sarima_margin | W1 | 2 | PIT | 12 | 25.65 | 19.84 | 31.99 | 17.56 | 9.35 | 1.460 | 1.126 |  | 17.85 | 0.67 | 15 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 28.87 | 25.48 | 32.11 | 25.22 | 19.85 | 1.643 | 1.446 |  | 19.48 | 0.75 | 2 | False | False |
@@ -3898,16 +4493,23 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 12.31 | 12.36 | 15.71 | 2.22 | 2.04 | 0.701 | 0.702 |  | 12.83 | 1.00 | 7 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 13.03 | 12.42 | 16.55 | 3.20 | 1.14 | 0.742 | 0.705 |  | 9.23 | 0.75 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 13.46 | 13.53 | 16.86 | 1.76 | 2.54 | 0.766 | 0.768 |  | 9.39 | 0.75 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 14.96 | 14.09 | 17.85 | 5.46 | 2.91 | 0.851 | 0.800 |  | 10.08 | 0.92 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 14.96 | 14.09 | 17.85 | 5.46 | 2.91 | 0.851 | 0.800 |  | 10.08 | 0.92 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 14.96 | 14.09 | 17.85 | 5.46 | 2.91 | 0.851 | 0.800 |  | 10.08 | 0.92 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 14.96 | 14.09 | 17.85 | 5.46 | 2.91 | 0.851 | 0.800 |  | 10.08 | 0.92 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 15.04 | 14.15 | 17.91 | 5.51 | 2.90 | 0.856 | 0.803 |  | 10.13 | 0.92 | 37 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 15.11 | 14.33 | 17.75 | 5.61 | 2.84 | 0.860 | 0.813 |  | 10.07 | 0.92 | 14 | True | True |
 | margin-ts | sarima_margin | W1 | 2 | full_sample | 12 | 15.26 | 14.17 | 19.28 | 7.48 | 6.42 | 0.869 | 0.804 |  | 10.95 | 1.00 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 15.66 | 14.66 | 18.33 | 8.08 | 5.94 | 0.891 | 0.832 |  | 10.36 | 0.75 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 15.70 | 14.74 | 18.81 | 5.91 | 2.28 | 0.894 | 0.836 |  | 10.65 | 0.92 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 16.13 | 14.76 | 18.95 | 5.91 | 2.36 | 0.918 | 0.838 |  | 10.93 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 16.20 | 14.81 | 19.01 | 6.09 | 2.55 | 0.922 | 0.840 |  | 10.96 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 16.26 | 15.12 | 19.14 | 9.38 | 7.50 | 0.926 | 0.858 |  | 10.61 | 0.75 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 16.26 | 15.12 | 19.14 | 9.38 | 7.50 | 0.926 | 0.858 |  | 10.61 | 0.75 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 16.26 | 15.12 | 19.14 | 9.38 | 7.50 | 0.926 | 0.858 |  | 10.61 | 0.75 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 16.27 | 15.41 | 20.84 | -0.86 | -0.16 | 0.926 | 0.875 |  | 237.66 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 16.37 | 14.92 | 19.19 | 6.59 | 3.06 | 0.932 | 0.847 |  | 11.85 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 16.40 | 15.30 | 19.22 | 9.40 | 7.47 | 0.933 | 0.868 |  | 10.67 | 0.75 | 37 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 16.45 | 14.97 | 19.27 | 6.79 | 3.26 | 0.936 | 0.849 |  | 12.06 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 16.51 | 15.01 | 19.34 | 6.97 | 3.44 | 0.940 | 0.852 |  | 11.78 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 17.37 | 16.03 | 20.64 | 2.47 | -3.28 | 0.988 | 0.909 |  | 226.19 | 1.00 | 7 | True | True |
@@ -3919,14 +4521,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 28.87 | 25.48 | 32.11 | 25.22 | 19.85 | 1.643 | 1.446 |  | 18.38 | 0.92 | 2 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 48.35 | 42.55 | 64.99 | 36.81 | 26.16 | 2.752 | 2.415 |  | 32.51 | 0.75 | 3 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 15.58 | 13.74 | 18.89 | 3.24 | 1.70 | 0.906 | 0.783 |  | 11.42 | 0.90 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 16.43 | 14.25 | 20.88 | 5.53 | 3.90 | 0.955 | 0.812 |  | 11.93 | 1.00 | 15 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 16.70 | 14.85 | 20.11 | 1.75 | 2.63 | 0.971 | 0.846 |  | 12.24 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 16.98 | 14.77 | 22.09 | 1.78 | 0.19 | 0.987 | 0.841 |  | 12.59 | 0.80 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 17.15 | 15.10 | 20.29 | 6.27 | 4.61 | 0.997 | 0.860 |  | 11.71 | 0.90 | 10 | True | True |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 17.20 | 17.55 | 22.32 | -15.20 | -15.59 | 1.000 | 1.000 |  | 12.32 | 0.80 | 1 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 17.22 | 15.68 | 21.54 | 1.37 | 0.62 | 1.001 | 0.894 |  | 12.63 | 0.90 | 7 | False | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 17.53 | 14.94 | 22.70 | 2.25 | 0.16 | 1.019 | 0.851 |  | 12.83 | 0.90 | 7 | False | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 17.55 | 15.81 | 21.36 | 6.78 | 5.73 | 1.020 | 0.901 |  | 12.18 | 0.70 | 10 | False | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 17.55 | 15.81 | 21.36 | 6.78 | 5.73 | 1.020 | 0.901 |  | 12.18 | 0.70 | 11 | False | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 17.55 | 15.81 | 21.36 | 6.78 | 5.73 | 1.020 | 0.901 |  | 12.18 | 0.70 | 10 | False | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 17.58 | 15.78 | 21.06 | 2.85 | 3.42 | 1.022 | 0.899 |  | 12.58 | 1.00 | 7 | False | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 17.75 | 15.90 | 21.76 | 6.86 | 5.58 | 1.032 | 0.906 |  | 12.41 | 0.70 | 37 | False | True |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 18.23 | 16.81 | 21.91 | 7.09 | 6.51 | 1.060 | 0.958 |  | 12.53 | 0.90 | 12 | False | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 18.28 | 16.75 | 21.69 | 7.14 | 6.51 | 1.063 | 0.954 |  | 12.39 | 0.70 | 12 | False | True |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 18.34 | 17.23 | 21.60 | 7.42 | 6.77 | 1.066 | 0.981 |  | 12.46 | 0.80 | 12 | False | True |
@@ -3934,7 +4540,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 19.10 | 18.02 | 23.33 | -0.30 | 0.18 | 1.110 | 1.027 |  | 13.41 | 0.70 | 1 | False | False |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 19.21 | 17.79 | 20.98 | 11.87 | 11.24 | 1.117 | 1.013 |  | 11.87 | 0.90 | 2 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 19.38 | 19.20 | 22.76 | -0.09 | 2.66 | 1.127 | 1.094 |  | 80.94 | 1.00 | 7 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 19.93 | 18.28 | 23.15 | 12.76 | 11.35 | 1.159 | 1.041 |  | 13.05 | 0.80 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 19.93 | 18.28 | 23.15 | 12.76 | 11.35 | 1.159 | 1.041 |  | 13.05 | 0.80 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.03 | 18.29 | 23.31 | 12.39 | 10.88 | 1.165 | 1.042 |  | 13.15 | 0.80 | 37 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 20.22 | 18.42 | 23.28 | 12.71 | 11.29 | 1.176 | 1.049 |  | 13.29 | 1.00 | 15 | False | False |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 20.57 | 19.42 | 23.08 | 12.32 | 11.49 | 1.196 | 1.106 |  | 13.20 | 0.90 | 12 | False | False |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 21.29 | 17.42 | 27.97 | 5.15 | 0.31 | 1.238 | 0.992 |  | 14.93 | 0.90 | 22 | False | True |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 22.31 | 19.47 | 25.99 | 4.75 | 4.08 | 1.297 | 1.109 |  | 15.33 | 0.80 | 14 | False | False |
@@ -3952,10 +4561,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 14.51 | 14.06 | 17.85 | 2.22 | 2.86 | 0.844 | 0.801 |  | 10.03 | 0.80 | 12 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 14.81 | 13.95 | 18.22 | 1.95 | 2.61 | 0.861 | 0.795 |  | 10.22 | 0.80 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 14.87 | 13.55 | 18.04 | 2.58 | 2.95 | 0.865 | 0.772 |  | 10.16 | 0.80 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 14.91 | 13.34 | 18.51 | 3.70 | 3.26 | 0.867 | 0.760 |  | 10.38 | 0.90 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.20 | 13.76 | 18.42 | 2.52 | 3.10 | 0.884 | 0.784 |  | 10.33 | 0.80 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.28 | 13.85 | 18.51 | 2.46 | 3.11 | 0.888 | 0.789 |  | 10.37 | 0.80 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 15.28 | 13.85 | 18.51 | 2.46 | 3.11 | 0.888 | 0.789 |  | 10.37 | 0.80 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 15.28 | 13.85 | 18.51 | 2.46 | 3.11 | 0.888 | 0.789 |  | 10.37 | 0.80 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 15.45 | 14.22 | 18.27 | 2.40 | 3.08 | 0.898 | 0.810 |  | 10.43 | 0.90 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 16.00 | 14.27 | 19.34 | 1.63 | 2.52 | 0.930 | 0.813 |  | 10.99 | 0.90 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 16.04 | 14.35 | 19.36 | 1.81 | 2.71 | 0.933 | 0.817 |  | 11.01 | 0.90 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 16.05 | 15.37 | 19.27 | 7.20 | 7.62 | 0.933 | 0.876 |  | 10.70 | 0.90 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 16.11 | 15.53 | 19.29 | 7.11 | 7.60 | 0.937 | 0.885 |  | 10.73 | 0.90 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 16.20 | 15.61 | 19.40 | 7.20 | 7.75 | 0.942 | 0.889 |  | 10.78 | 0.90 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 16.20 | 15.61 | 19.40 | 7.20 | 7.75 | 0.942 | 0.889 |  | 10.78 | 0.90 | 10 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | full_sample | 10 | 16.67 | 16.36 | 19.25 | 3.48 | 4.00 | 0.969 | 0.932 |  | 11.28 | 0.90 | 14 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 16.71 | 16.64 | 19.31 | 7.03 | 7.80 | 0.972 | 0.948 |  | 10.86 | 0.70 | 12 | True | True |
@@ -3982,12 +4598,19 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 17.39 | 15.94 | 19.50 | 5.46 | 4.66 | 0.915 | 0.873 |  | 11.49 | 1.00 | 10 | False | True |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 17.50 | 16.45 | 20.75 | 1.59 | 0.29 | 0.921 | 0.901 |  | 12.82 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 18.11 | 17.28 | 21.54 | 0.90 | -0.08 | 0.953 | 0.947 |  | 12.82 | 0.89 | 7 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 18.31 | 16.89 | 21.25 | 5.62 | 4.28 | 0.964 | 0.925 |  | 12.12 | 1.00 | 15 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 18.31 | 16.89 | 21.25 | 5.62 | 4.28 | 0.964 | 0.925 |  | 12.12 | 1.00 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 18.31 | 16.89 | 21.25 | 5.62 | 4.28 | 0.964 | 0.925 |  | 12.12 | 1.00 | 11 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 18.31 | 16.89 | 21.25 | 5.62 | 4.28 | 0.964 | 0.925 |  | 12.12 | 1.00 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 18.58 | 17.25 | 21.49 | 5.38 | 3.97 | 0.978 | 0.945 |  | 12.26 | 1.00 | 37 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 18.59 | 17.27 | 21.35 | 5.76 | 4.49 | 0.979 | 0.946 |  | 12.19 | 1.00 | 12 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 18.69 | 17.97 | 22.45 | 17.70 | 16.71 | 0.983 | 0.985 |  | 12.80 | 0.89 | 2 | False | False |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 19.00 | 18.25 | 23.52 | -17.00 | -16.29 | 1.000 | 1.000 |  | 13.10 | 0.78 | 1 | False | False |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 19.19 | 18.58 | 22.32 | 10.77 | 11.02 | 1.010 | 1.018 |  | 12.02 | 0.89 | 2 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 19.42 | 17.66 | 22.75 | 11.72 | 10.40 | 1.022 | 0.967 |  | 12.94 | 1.00 | 15 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 19.42 | 17.66 | 22.75 | 11.72 | 10.40 | 1.022 | 0.967 |  | 12.94 | 1.00 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 19.42 | 17.66 | 22.75 | 11.72 | 10.40 | 1.022 | 0.967 |  | 12.94 | 1.00 | 10 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 19.62 | 17.86 | 23.03 | 11.52 | 10.07 | 1.033 | 0.979 |  | 13.10 | 1.00 | 37 | False | False |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 20.40 | 20.19 | 22.50 | 4.40 | 2.54 | 1.074 | 1.106 |  | 12.96 | 1.00 | 14 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 21.52 | 20.31 | 26.58 | -2.69 | 2.67 | 1.133 | 1.112 |  | 63.08 | 1.00 | 7 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 24.11 | 25.12 | 28.06 | -2.56 | -1.30 | 1.269 | 1.376 |  | 16.23 | 0.78 | 1 | False | False |
@@ -4003,13 +4626,20 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 13.33 | 12.59 | 16.87 | -0.00 | 1.19 | 0.702 | 0.690 |  | 12.27 | 1.00 | 7 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 13.94 | 13.59 | 17.66 | -0.35 | 1.76 | 0.734 | 0.744 |  | 9.84 | 0.78 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 14.06 | 13.28 | 17.38 | 0.36 | 0.21 | 0.740 | 0.728 |  | 9.71 | 0.78 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 14.30 | 13.51 | 18.43 | 0.73 | 1.08 | 0.753 | 0.740 |  | 10.27 | 0.67 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 14.30 | 13.51 | 18.43 | 0.73 | 1.08 | 0.753 | 0.740 |  | 10.27 | 0.67 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 14.30 | 13.51 | 18.43 | 0.73 | 1.08 | 0.753 | 0.740 |  | 10.27 | 0.67 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 14.30 | 13.51 | 18.43 | 0.73 | 1.08 | 0.753 | 0.740 |  | 10.27 | 0.67 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 14.32 | 13.72 | 18.06 | 0.77 | 0.94 | 0.753 | 0.752 |  | 10.10 | 0.67 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 14.33 | 13.55 | 18.45 | 0.71 | 1.04 | 0.754 | 0.742 |  | 10.28 | 0.67 | 37 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 14.67 | 13.84 | 18.91 | -0.15 | 0.05 | 0.772 | 0.758 |  | 10.56 | 0.89 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 14.70 | 13.87 | 18.92 | 0.03 | 0.23 | 0.774 | 0.760 |  | 10.57 | 0.89 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 14.78 | 13.95 | 18.96 | 0.54 | 0.74 | 0.778 | 0.764 |  | 11.92 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 14.82 | 13.98 | 18.98 | 0.75 | 0.95 | 0.780 | 0.766 |  | 12.11 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 14.85 | 14.01 | 18.99 | 0.93 | 1.13 | 0.781 | 0.767 |  | 11.83 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 15.72 | 14.93 | 19.16 | 5.48 | 5.89 | 0.827 | 0.818 |  | 10.53 | 0.78 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 15.73 | 14.95 | 19.19 | 5.54 | 6.00 | 0.828 | 0.819 |  | 10.54 | 0.78 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 15.73 | 14.95 | 19.19 | 5.54 | 6.00 | 0.828 | 0.819 |  | 10.54 | 0.78 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 15.73 | 14.95 | 19.19 | 5.54 | 6.00 | 0.828 | 0.819 |  | 10.54 | 0.78 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 16.11 | 15.10 | 21.05 | -5.47 | -1.81 | 0.848 | 0.827 |  | 60.97 | 1.00 | 7 | True | True |
 | margin-ts | sarima_margin | W2 | 1 | full_sample | 9 | 18.02 | 18.10 | 20.76 | 4.15 | 5.38 | 0.948 | 0.992 |  | 12.42 | 1.00 | 14 | True | True |
@@ -4024,7 +4654,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 14.07 | 12.74 | 18.11 | 5.89 | 5.20 | 0.726 | 0.693 |  | 10.93 | 1.00 | 10 | False | True |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 14.13 | 12.98 | 19.05 | 5.69 | 4.27 | 0.729 | 0.707 |  | 11.09 | 1.00 | 12 | False | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 14.52 | 12.87 | 16.30 | -0.22 | -0.48 | 0.749 | 0.701 |  | 14.50 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 14.72 | 13.92 | 19.84 | 5.91 | 4.49 | 0.760 | 0.758 |  | 11.34 | 1.00 | 15 | False | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 14.72 | 13.92 | 19.84 | 5.91 | 4.49 | 0.760 | 0.758 |  | 11.34 | 1.00 | 10 | False | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 14.72 | 13.92 | 19.84 | 5.91 | 4.49 | 0.760 | 0.758 |  | 11.34 | 1.00 | 11 | False | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 14.72 | 13.92 | 19.84 | 5.91 | 4.49 | 0.760 | 0.758 |  | 11.34 | 1.00 | 10 | False | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 14.72 | 13.98 | 19.80 | 5.77 | 4.33 | 0.760 | 0.761 |  | 11.32 | 1.00 | 37 | False | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 14.72 | 14.69 | 17.50 | 1.40 | -0.10 | 0.760 | 0.800 |  | 12.19 | 1.00 | 7 | False | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 14.98 | 14.07 | 19.18 | -0.15 | -0.20 | 0.773 | 0.766 |  | 11.80 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 15.04 | 14.31 | 20.53 | 5.95 | 4.45 | 0.776 | 0.779 |  | 11.60 | 1.00 | 12 | False | False |
@@ -4033,8 +4667,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 15.74 | 15.88 | 18.68 | 0.60 | -0.83 | 0.813 | 0.865 |  | 12.05 | 1.00 | 7 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 15.77 | 15.71 | 20.10 | 7.16 | 6.62 | 0.814 | 0.855 |  | 11.62 | 1.00 | 14 | False | False |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 16.45 | 15.98 | 20.71 | 2.25 | 1.08 | 0.849 | 0.870 |  | 12.41 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 16.72 | 15.79 | 22.28 | 12.09 | 10.85 | 0.863 | 0.859 |  | 12.92 | 1.00 | 37 | False | False |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 16.72 | 15.79 | 20.92 | 10.62 | 9.34 | 0.863 | 0.859 |  | 12.50 | 1.00 | 12 | False | False |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 16.76 | 15.71 | 22.64 | 4.63 | 3.46 | 0.865 | 0.855 |  | 12.87 | 0.75 | 14 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 16.84 | 15.93 | 22.23 | 12.14 | 10.98 | 0.869 | 0.867 |  | 12.95 | 1.00 | 15 | False | False |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 16.84 | 15.93 | 22.23 | 12.14 | 10.98 | 0.869 | 0.867 |  | 12.95 | 1.00 | 10 | False | False |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 16.84 | 15.93 | 22.23 | 12.14 | 10.98 | 0.869 | 0.867 |  | 12.95 | 1.00 | 10 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 17.39 | 15.22 | 19.77 | -3.41 | 1.05 | 0.898 | 0.829 |  | 284.74 | 1.00 | 7 | False | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 17.45 | 16.18 | 21.34 | -6.29 | -6.32 | 0.901 | 0.881 |  | 261.26 | 1.00 | 7 | False | False |
@@ -4048,7 +4685,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 14.72 | 14.06 | 18.29 | 0.47 | 0.65 | 0.760 | 0.765 |  | 10.19 | 0.88 | 14 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 14.74 | 13.07 | 17.86 | -0.01 | 1.17 | 0.761 | 0.711 |  | 10.02 | 0.75 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 14.76 | 14.16 | 18.14 | 0.07 | -0.37 | 0.762 | 0.771 |  | 10.23 | 0.88 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 14.82 | 13.90 | 18.72 | 0.57 | 0.85 | 0.765 | 0.757 |  | 10.35 | 0.88 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 14.82 | 13.90 | 18.72 | 0.57 | 0.85 | 0.765 | 0.757 |  | 10.35 | 0.88 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 14.82 | 13.90 | 18.72 | 0.57 | 0.85 | 0.765 | 0.757 |  | 10.35 | 0.88 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 14.82 | 13.90 | 18.72 | 0.57 | 0.85 | 0.765 | 0.757 |  | 10.35 | 0.88 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 14.84 | 13.94 | 18.74 | 0.55 | 0.82 | 0.766 | 0.759 |  | 10.37 | 0.88 | 37 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 14.99 | 13.26 | 17.89 | 0.01 | 1.25 | 0.774 | 0.721 |  | 13.70 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 15.04 | 14.23 | 19.00 | -0.30 | -0.24 | 0.776 | 0.774 |  | 10.77 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 15.05 | 14.25 | 19.01 | -0.12 | -0.05 | 0.777 | 0.775 |  | 10.78 | 1.00 | 7 | True | True |
@@ -4058,8 +4699,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 2 | full_sample | 8 | 15.54 | 14.35 | 18.65 | 4.17 | 4.17 | 0.802 | 0.781 |  | 10.46 | 0.75 | 12 | True | True |
 | cycle-flex | flex_lines | W2 | 2 | full_sample | 8 | 15.61 | 14.27 | 18.73 | -0.32 | 1.89 | 0.806 | 0.777 |  | 10.55 | 0.75 | 12 | True | True |
 | margin-ts | sarima_margin | W2 | 2 | full_sample | 8 | 15.67 | 14.01 | 20.01 | 4.64 | 5.13 | 0.809 | 0.762 |  | 11.22 | 1.00 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 15.70 | 14.70 | 19.59 | 5.37 | 5.81 | 0.810 | 0.800 |  | 10.67 | 0.75 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 15.70 | 14.70 | 19.59 | 5.37 | 5.81 | 0.810 | 0.800 |  | 10.67 | 0.75 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 15.70 | 14.70 | 19.59 | 5.37 | 5.81 | 0.810 | 0.800 |  | 10.67 | 0.75 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 15.72 | 14.60 | 19.66 | -3.83 | -4.87 | 0.811 | 0.795 |  | 225.08 | 1.00 | 7 | False | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 15.84 | 14.89 | 19.65 | 5.35 | 5.75 | 0.818 | 0.810 |  | 10.72 | 0.75 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 15.94 | 14.94 | 19.88 | -4.91 | -5.94 | 0.823 | 0.813 |  | 421.92 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 16.20 | 15.34 | 20.22 | -6.15 | -7.18 | 0.836 | 0.835 |  | 225.90 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 17.45 | 15.62 | 22.25 | -5.48 | -1.62 | 0.901 | 0.850 |  | 241.07 | 1.00 | 7 | True | True |
@@ -4175,11 +4819,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | method | object | window | h | replay | n | mae | rw_mae | rmse | bias | rw_bias | r_sn | rw_r_sn | r_street | crps | cov80 | n_params | both | rw_both |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 10.09 | 8.81 | 12.60 | -2.53 | -1.68 | 0.305 | 0.234 |  | 7.50 | 0.93 | 1 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 10.41 | 8.85 | 14.18 | -3.81 | -2.34 | 0.315 | 0.236 |  | 8.06 | 0.79 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 10.69 | 8.89 | 14.39 | -5.44 | -5.58 | 0.324 | 0.236 |  | 8.23 | 0.79 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 11.19 | 9.84 | 14.74 | -4.59 | -3.32 | 0.339 | 0.262 |  | 8.40 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 11.19 | 9.84 | 14.74 | -4.59 | -3.32 | 0.339 | 0.262 |  | 8.40 | 0.79 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 11.19 | 9.84 | 14.74 | -4.59 | -3.32 | 0.339 | 0.262 |  | 8.40 | 0.79 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 11.19 | 9.84 | 14.74 | -4.59 | -3.32 | 0.339 | 0.262 |  | 8.40 | 0.79 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 11.19 | 9.84 | 14.74 | -4.59 | -3.32 | 0.339 | 0.262 |  | 8.40 | 0.79 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 11.19 | 9.84 | 14.74 | -4.59 | -3.32 | 0.339 | 0.262 |  | 8.40 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 11.27 | 9.92 | 14.56 | -4.28 | -2.62 | 0.341 | 0.264 |  | 8.31 | 0.79 | 37 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 11.42 | 10.16 | 14.39 | -1.84 | -0.08 | 0.346 | 0.270 |  | 8.39 | 0.71 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 11.43 | 10.17 | 15.15 | -6.21 | -6.33 | 0.346 | 0.271 |  | 8.67 | 0.79 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 11.78 | 10.45 | 15.38 | -6.53 | -7.14 | 0.356 | 0.278 |  | 8.82 | 0.79 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 11.78 | 10.45 | 15.38 | -6.53 | -7.14 | 0.356 | 0.278 |  | 8.82 | 0.79 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 11.78 | 10.45 | 15.38 | -6.53 | -7.14 | 0.356 | 0.278 |  | 8.82 | 0.79 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 12.19 | 10.15 | 15.28 | -5.80 | -3.59 | 0.369 | 0.270 |  | 8.83 | 0.79 | 12 | True | True |
@@ -4199,6 +4850,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 33.04 | 37.58 | 36.18 | -33.04 | -37.58 | 1.000 | 1.000 |  | 24.79 | 0.14 | 1 | False | False |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 46.53 | 29.51 | 63.29 | -37.52 | -10.71 | 1.408 | 0.785 |  | 85.08 | 1.00 | 7 | False | True |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 59.07 | 57.72 | 75.11 | 12.86 | 8.65 | 1.788 | 1.536 |  | 40.53 | 0.86 | 3 | False | False |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 7.97 | 6.56 | 11.62 | 1.00 | 0.65 | 0.241 | 0.175 |  | 6.52 | 0.79 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 8.06 | 6.60 | 11.70 | -1.91 | -2.64 | 0.244 | 0.176 |  | 6.62 | 0.79 | 15 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 8.98 | 7.68 | 11.32 | -2.07 | -2.31 | 0.272 | 0.205 |  | 6.79 | 0.93 | 14 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 10.09 | 8.81 | 12.60 | -2.53 | -1.68 | 0.305 | 0.234 |  | 7.57 | 0.93 | 1 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 10.17 | 9.09 | 11.85 | 0.76 | -0.25 | 0.308 | 0.242 |  | 7.20 | 0.93 | 22 | True | True |
@@ -4206,10 +4859,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 10.67 | 8.93 | 13.13 | 1.45 | -0.19 | 0.323 | 0.238 |  | 7.58 | 0.79 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 10.74 | 8.86 | 12.32 | -1.43 | -0.41 | 0.325 | 0.236 |  | 7.11 | 0.79 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 11.28 | 9.64 | 13.66 | -1.43 | -3.44 | 0.342 | 0.257 |  | 7.91 | 0.79 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 11.39 | 9.29 | 13.59 | 0.96 | -0.59 | 0.345 | 0.247 |  | 7.89 | 0.79 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 11.43 | 9.80 | 13.81 | -2.25 | -4.09 | 0.346 | 0.261 |  | 8.00 | 0.71 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 11.60 | 9.43 | 13.93 | 1.18 | -0.70 | 0.351 | 0.251 |  | 8.08 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 11.60 | 9.43 | 13.93 | 1.18 | -0.70 | 0.351 | 0.251 |  | 8.08 | 0.79 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 11.60 | 9.43 | 13.93 | 1.18 | -0.70 | 0.351 | 0.251 |  | 8.08 | 0.79 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 11.60 | 9.43 | 13.93 | 1.18 | -0.70 | 0.351 | 0.251 |  | 8.08 | 0.79 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 11.60 | 9.43 | 13.93 | 1.18 | -0.70 | 0.351 | 0.251 |  | 8.08 | 0.79 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 11.60 | 9.43 | 13.93 | 1.18 | -0.70 | 0.351 | 0.251 |  | 8.08 | 0.79 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 11.62 | 9.98 | 14.15 | -2.54 | -4.72 | 0.352 | 0.266 |  | 8.18 | 0.71 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 11.62 | 9.98 | 14.15 | -2.54 | -4.72 | 0.352 | 0.266 |  | 8.18 | 0.71 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 11.62 | 9.98 | 14.15 | -2.54 | -4.72 | 0.352 | 0.266 |  | 8.18 | 0.71 | 10 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 14.35 | 10.73 | 17.44 | 1.08 | -2.95 | 0.434 | 0.285 |  | 11.23 | 1.00 | 7 | True | True |
@@ -4224,12 +4882,19 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 19.74 | 17.59 | 21.79 | 7.83 | 6.15 | 0.597 | 0.468 |  | 89.03 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive | W1 | 0 | full_sample | 14 | 33.04 | 37.58 | 36.18 | -33.04 | -37.58 | 1.000 | 1.000 |  | 24.64 | 0.29 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | full_sample | 14 | 59.12 | 57.96 | 74.95 | 13.18 | 9.80 | 1.789 | 1.543 |  | 40.02 | 0.79 | 3 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 13.02 | 10.87 | 16.84 | -6.95 | -7.27 | 0.388 | 0.288 |  | 9.91 | 0.77 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 13.18 | 11.31 | 16.84 | -7.06 | -7.58 | 0.392 | 0.299 |  | 9.93 | 0.77 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 13.22 | 11.41 | 17.06 | -5.19 | -3.73 | 0.394 | 0.302 |  | 10.05 | 0.77 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 13.22 | 11.34 | 16.91 | -7.15 | -7.75 | 0.394 | 0.300 |  | 9.96 | 0.77 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 13.22 | 11.34 | 16.91 | -7.15 | -7.75 | 0.394 | 0.300 |  | 9.96 | 0.77 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 13.22 | 11.34 | 16.91 | -7.15 | -7.75 | 0.394 | 0.300 |  | 9.96 | 0.77 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 13.31 | 11.48 | 17.12 | -5.31 | -3.93 | 0.396 | 0.304 |  | 10.10 | 0.77 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 13.31 | 11.48 | 17.12 | -5.31 | -3.93 | 0.396 | 0.304 |  | 10.10 | 0.77 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 13.31 | 11.48 | 17.12 | -5.31 | -3.93 | 0.396 | 0.304 |  | 10.10 | 0.77 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 13.31 | 11.48 | 17.12 | -5.31 | -3.93 | 0.396 | 0.304 |  | 10.10 | 0.77 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 13.31 | 11.48 | 17.12 | -5.31 | -3.93 | 0.396 | 0.304 |  | 10.10 | 0.77 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 13.31 | 11.48 | 17.12 | -5.31 | -3.93 | 0.396 | 0.304 |  | 10.10 | 0.77 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 13.36 | 11.59 | 17.13 | -5.36 | -4.04 | 0.398 | 0.307 |  | 10.11 | 0.77 | 15 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 13.52 | 12.25 | 17.24 | -2.74 | -0.51 | 0.403 | 0.324 |  | 10.19 | 0.77 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 13.88 | 11.87 | 18.24 | -8.86 | -7.67 | 0.413 | 0.314 |  | 10.73 | 0.69 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 14.05 | 12.24 | 18.02 | -5.63 | -2.75 | 0.418 | 0.324 |  | 10.53 | 0.69 | 12 | True | True |
@@ -4249,16 +4914,23 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 35.19 | 32.10 | 42.16 | -15.26 | 2.23 | 1.048 | 0.849 |  | 32.44 | 0.92 | 7 | False | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 54.64 | 30.64 | 81.44 | -50.54 | -23.10 | 1.627 | 0.811 |  | 106.23 | 0.85 | 7 | False | True |
 | baselines-margin | pct_rev_last4 | W1 | 1 | PIT | 13 | 63.20 | 57.33 | 79.44 | 20.09 | 5.23 | 1.882 | 1.517 |  | 42.38 | 0.77 | 3 | False | False |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 8.20 | 6.59 | 11.98 | 0.70 | 0.57 | 0.244 | 0.174 |  | 6.75 | 0.77 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 8.43 | 6.66 | 12.11 | -2.31 | -2.75 | 0.251 | 0.176 |  | 6.89 | 0.77 | 15 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 10.88 | 8.86 | 12.54 | -0.86 | -0.25 | 0.324 | 0.235 |  | 7.27 | 0.85 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 11.25 | 8.77 | 13.45 | 1.57 | -0.13 | 0.335 | 0.232 |  | 7.84 | 0.77 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 11.55 | 10.09 | 12.75 | 1.06 | 1.96 | 0.344 | 0.267 |  | 7.73 | 1.00 | 22 | True | True |
 | margin-ts | sarima_margin | W1 | 1 | full_sample | 13 | 11.58 | 9.71 | 14.53 | -2.34 | -2.93 | 0.345 | 0.257 |  | 8.56 | 0.77 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 11.88 | 9.58 | 13.68 | 1.39 | 0.91 | 0.354 | 0.253 |  | 7.97 | 0.77 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.00 | 9.46 | 14.23 | 0.86 | -0.77 | 0.357 | 0.250 |  | 8.29 | 0.77 | 37 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 12.05 | 9.70 | 14.15 | -1.65 | -3.13 | 0.359 | 0.257 |  | 8.29 | 0.77 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.12 | 9.52 | 14.40 | 0.91 | -0.81 | 0.361 | 0.252 |  | 8.39 | 0.77 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.12 | 9.52 | 14.40 | 0.91 | -0.81 | 0.361 | 0.252 |  | 8.39 | 0.77 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 12.12 | 9.52 | 14.40 | 0.91 | -0.81 | 0.361 | 0.252 |  | 8.39 | 0.77 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 12.12 | 9.52 | 14.40 | 0.91 | -0.81 | 0.361 | 0.252 |  | 8.39 | 0.77 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 12.12 | 9.52 | 14.40 | 0.91 | -0.81 | 0.361 | 0.252 |  | 8.39 | 0.77 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 12.12 | 9.52 | 14.40 | 0.91 | -0.81 | 0.361 | 0.252 |  | 8.39 | 0.77 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.32 | 10.09 | 14.55 | -2.80 | -4.71 | 0.367 | 0.267 |  | 8.48 | 0.69 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 12.40 | 10.14 | 14.68 | -2.85 | -4.83 | 0.369 | 0.268 |  | 8.55 | 0.69 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 12.40 | 10.14 | 14.68 | -2.85 | -4.83 | 0.369 | 0.268 |  | 8.55 | 0.69 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 12.40 | 10.14 | 14.68 | -2.85 | -4.83 | 0.369 | 0.268 |  | 8.55 | 0.69 | 10 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 13.52 | 10.45 | 16.69 | -0.77 | -3.48 | 0.403 | 0.277 |  | 11.72 | 1.00 | 7 | True | True |
@@ -4274,11 +4946,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 21.59 | 19.65 | 23.72 | -5.38 | -12.94 | 0.643 | 0.520 |  | 25.42 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive | W1 | 1 | full_sample | 13 | 33.59 | 37.79 | 36.85 | -33.59 | -37.79 | 1.000 | 1.000 |  | 25.99 | 0.15 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 1 | full_sample | 13 | 63.20 | 57.33 | 79.44 | 20.09 | 5.23 | 1.882 | 1.517 |  | 42.49 | 0.85 | 3 | False | False |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 13.93 | 11.70 | 17.81 | -7.42 | -8.28 | 0.411 | 0.308 |  | 10.68 | 0.58 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 13.97 | 11.73 | 17.86 | -7.51 | -8.44 | 0.412 | 0.309 |  | 10.70 | 0.58 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 13.97 | 11.73 | 17.86 | -7.51 | -8.44 | 0.412 | 0.309 |  | 10.70 | 0.58 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 13.97 | 11.73 | 17.86 | -7.51 | -8.44 | 0.412 | 0.309 |  | 10.70 | 0.58 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 13.97 | 11.73 | 17.86 | -7.51 | -8.44 | 0.412 | 0.309 |  | 10.70 | 0.58 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 13.98 | 12.24 | 19.19 | -9.57 | -8.77 | 0.412 | 0.322 |  | 11.40 | 0.58 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 14.24 | 13.60 | 18.11 | -4.15 | -1.65 | 0.420 | 0.358 |  | 10.87 | 0.67 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 14.46 | 12.35 | 19.98 | -8.38 | -6.23 | 0.426 | 0.325 |  | 11.78 | 0.75 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 14.49 | 12.63 | 18.48 | -5.79 | -4.65 | 0.428 | 0.332 |  | 11.28 | 0.67 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 14.52 | 12.58 | 18.52 | -5.91 | -4.86 | 0.428 | 0.331 |  | 11.31 | 0.67 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 14.52 | 12.58 | 18.52 | -5.91 | -4.86 | 0.428 | 0.331 |  | 11.31 | 0.67 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 14.52 | 12.58 | 18.52 | -5.91 | -4.86 | 0.428 | 0.331 |  | 11.31 | 0.67 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 14.52 | 12.58 | 18.52 | -5.91 | -4.86 | 0.428 | 0.331 |  | 11.31 | 0.67 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 14.52 | 12.58 | 18.52 | -5.91 | -4.86 | 0.428 | 0.331 |  | 11.31 | 0.67 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 14.52 | 12.58 | 18.52 | -5.91 | -4.86 | 0.428 | 0.331 |  | 11.31 | 0.67 | 12 | True | True |
@@ -4304,11 +4983,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 11.97 | 8.91 | 13.98 | 1.92 | -0.08 | 0.353 | 0.235 |  | 8.23 | 0.75 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 12.41 | 9.92 | 14.36 | 1.46 | 0.93 | 0.366 | 0.261 |  | 8.41 | 0.75 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 12.74 | 9.94 | 14.74 | -1.56 | -3.14 | 0.376 | 0.262 |  | 8.68 | 0.75 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 12.97 | 9.67 | 14.87 | 1.08 | -0.74 | 0.383 | 0.255 |  | 8.76 | 0.75 | 37 | True | True |
 | margin-ts | sarima_margin | W1 | 2 | full_sample | 12 | 13.01 | 10.41 | 15.56 | -2.22 | -3.18 | 0.384 | 0.274 |  | 9.17 | 0.75 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 13.03 | 10.24 | 15.12 | -2.65 | -4.72 | 0.384 | 0.270 |  | 8.87 | 0.75 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 13.05 | 9.71 | 14.98 | 1.07 | -0.80 | 0.385 | 0.256 |  | 8.82 | 0.75 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 13.05 | 9.71 | 14.98 | 1.07 | -0.80 | 0.385 | 0.256 |  | 8.82 | 0.75 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 13.05 | 9.71 | 14.98 | 1.07 | -0.80 | 0.385 | 0.256 |  | 8.82 | 0.75 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 13.05 | 9.71 | 14.98 | 1.07 | -0.80 | 0.385 | 0.256 |  | 8.82 | 0.75 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 13.05 | 9.71 | 14.98 | 1.07 | -0.80 | 0.385 | 0.256 |  | 8.82 | 0.75 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 13.05 | 9.71 | 14.98 | 1.07 | -0.80 | 0.385 | 0.256 |  | 8.82 | 0.75 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 13.05 | 9.71 | 14.98 | 1.07 | -0.80 | 0.385 | 0.256 |  | 8.82 | 0.75 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 13.09 | 10.28 | 15.23 | -2.74 | -4.85 | 0.386 | 0.271 |  | 8.93 | 0.75 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 13.09 | 10.28 | 15.23 | -2.74 | -4.85 | 0.386 | 0.271 |  | 8.93 | 0.75 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 13.09 | 10.28 | 15.23 | -2.74 | -4.85 | 0.386 | 0.271 |  | 8.93 | 0.75 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 13.09 | 10.28 | 15.23 | -2.74 | -4.85 | 0.386 | 0.271 |  | 8.93 | 0.75 | 10 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 14.62 | 10.69 | 17.38 | -0.86 | -3.56 | 0.431 | 0.281 |  | 12.68 | 1.00 | 7 | True | True |
@@ -4325,14 +5011,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 33.89 | 37.97 | 37.37 | -33.89 | -37.97 | 1.000 | 1.000 |  | 26.06 | 0.25 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 68.56 | 60.25 | 87.88 | 21.67 | 4.42 | 2.023 | 1.587 |  | 46.40 | 0.92 | 3 | False | False |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 9.30 | 8.49 | 12.30 | -3.90 | -2.18 | 0.239 | 0.213 |  | 7.25 | 0.90 | 1 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 10.26 | 8.57 | 15.07 | -6.36 | -3.08 | 0.264 | 0.215 |  | 8.57 | 0.80 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 10.84 | 8.64 | 15.40 | -8.92 | -6.74 | 0.279 | 0.217 |  | 8.87 | 0.80 | 15 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 11.01 | 9.82 | 14.77 | -4.27 | -0.78 | 0.283 | 0.246 |  | 8.58 | 0.80 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 11.36 | 9.66 | 15.81 | -7.45 | -4.17 | 0.292 | 0.243 |  | 9.04 | 0.80 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 11.36 | 9.66 | 15.81 | -7.45 | -4.17 | 0.292 | 0.243 |  | 9.04 | 0.80 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 11.36 | 9.66 | 15.81 | -7.45 | -4.17 | 0.292 | 0.243 |  | 9.04 | 0.80 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 11.36 | 9.66 | 15.81 | -7.45 | -4.17 | 0.292 | 0.243 |  | 9.04 | 0.80 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 11.36 | 9.66 | 15.81 | -7.45 | -4.17 | 0.292 | 0.243 |  | 9.04 | 0.80 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 11.36 | 9.66 | 15.81 | -7.45 | -4.17 | 0.292 | 0.243 |  | 9.04 | 0.80 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 11.47 | 9.75 | 15.58 | -7.01 | -3.39 | 0.295 | 0.245 |  | 8.92 | 0.80 | 37 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 11.71 | 9.81 | 15.82 | -7.51 | -4.09 | 0.301 | 0.246 |  | 9.15 | 0.80 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 11.87 | 10.05 | 16.36 | -10.01 | -7.57 | 0.305 | 0.252 |  | 9.48 | 0.80 | 37 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 11.87 | 10.08 | 15.82 | -7.54 | -4.12 | 0.305 | 0.253 |  | 9.18 | 0.80 | 12 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 12.13 | 10.55 | 16.25 | -8.56 | -6.31 | 0.312 | 0.265 |  | 9.62 | 0.80 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 12.36 | 10.37 | 16.68 | -10.45 | -8.47 | 0.318 | 0.260 |  | 9.69 | 0.80 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 12.36 | 10.37 | 16.68 | -10.45 | -8.47 | 0.318 | 0.260 |  | 9.69 | 0.80 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 12.36 | 10.37 | 16.68 | -10.45 | -8.47 | 0.318 | 0.260 |  | 9.69 | 0.80 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 12.91 | 10.66 | 17.43 | -11.14 | -8.19 | 0.332 | 0.268 |  | 10.15 | 0.80 | 12 | True | True |
@@ -4349,17 +5042,24 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 26.54 | 23.13 | 31.29 | -13.92 | -2.32 | 0.682 | 0.581 |  | 82.20 | 1.00 | 7 | False | True |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 38.90 | 39.83 | 40.69 | -38.90 | -39.83 | 1.000 | 1.000 |  | 29.50 | 0.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 59.03 | 57.66 | 71.27 | 4.25 | 5.36 | 1.517 | 1.448 |  | 39.37 | 0.90 | 3 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 7.65 | 6.16 | 10.59 | -1.53 | -0.23 | 0.197 | 0.155 |  | 6.18 | 0.80 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 7.97 | 6.27 | 11.48 | -4.78 | -3.65 | 0.205 | 0.157 |  | 6.62 | 0.80 | 15 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | full_sample | 10 | 8.01 | 7.21 | 10.92 | -4.51 | -3.22 | 0.206 | 0.181 |  | 6.70 | 0.90 | 14 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 9.30 | 8.49 | 12.30 | -3.90 | -2.18 | 0.239 | 0.213 |  | 7.54 | 0.90 | 1 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 9.76 | 8.73 | 11.22 | -0.85 | -1.04 | 0.251 | 0.219 |  | 7.08 | 1.00 | 22 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 10.37 | 8.18 | 12.12 | -1.69 | -1.37 | 0.266 | 0.205 |  | 7.16 | 0.80 | 12 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 10.70 | 8.54 | 12.42 | -1.79 | -1.46 | 0.275 | 0.214 |  | 7.35 | 0.80 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 11.20 | 8.78 | 12.92 | -1.27 | -0.46 | 0.288 | 0.220 |  | 7.53 | 0.80 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 11.29 | 8.85 | 13.02 | -2.78 | -1.95 | 0.290 | 0.222 |  | 7.66 | 0.80 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 11.42 | 8.96 | 13.13 | -2.96 | -2.22 | 0.294 | 0.225 |  | 7.75 | 0.80 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 11.42 | 8.96 | 13.13 | -2.96 | -2.22 | 0.294 | 0.225 |  | 7.75 | 0.80 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 11.42 | 8.96 | 13.13 | -2.96 | -2.22 | 0.294 | 0.225 |  | 7.75 | 0.80 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 11.42 | 8.96 | 13.13 | -2.96 | -2.22 | 0.294 | 0.225 |  | 7.75 | 0.80 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 11.42 | 8.96 | 13.13 | -2.96 | -2.22 | 0.294 | 0.225 |  | 7.75 | 0.80 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 11.42 | 8.96 | 13.13 | -2.96 | -2.22 | 0.294 | 0.225 |  | 7.75 | 0.80 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 11.67 | 9.38 | 13.60 | -5.39 | -4.92 | 0.300 | 0.236 |  | 8.00 | 0.80 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 11.93 | 9.59 | 14.04 | -6.20 | -5.54 | 0.307 | 0.241 |  | 8.26 | 0.70 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 12.12 | 9.77 | 14.39 | -6.87 | -6.31 | 0.312 | 0.245 |  | 8.43 | 0.70 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 12.12 | 9.77 | 14.39 | -6.87 | -6.31 | 0.312 | 0.245 |  | 8.43 | 0.70 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 12.12 | 9.77 | 14.39 | -6.87 | -6.31 | 0.312 | 0.245 |  | 8.43 | 0.70 | 10 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 12.17 | 9.64 | 14.64 | -6.40 | -5.50 | 0.313 | 0.242 |  | 10.53 | 1.00 | 7 | True | True |
@@ -4374,13 +5074,20 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 20.14 | 16.67 | 24.51 | -12.99 | -10.36 | 0.518 | 0.418 |  | 52.58 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive | W2 | 0 | full_sample | 10 | 38.90 | 39.83 | 40.69 | -38.90 | -39.83 | 1.000 | 1.000 |  | 29.32 | 0.20 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 0 | full_sample | 10 | 59.26 | 57.98 | 71.65 | 5.28 | 6.79 | 1.523 | 1.456 |  | 39.24 | 0.80 | 3 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 14.05 | 10.90 | 18.57 | -12.55 | -9.15 | 0.342 | 0.268 |  | 11.12 | 0.78 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 14.30 | 11.40 | 18.58 | -12.69 | -9.49 | 0.348 | 0.280 |  | 11.16 | 0.78 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 14.35 | 11.43 | 18.65 | -12.85 | -9.69 | 0.349 | 0.281 |  | 11.20 | 0.78 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 14.35 | 11.43 | 18.65 | -12.85 | -9.69 | 0.349 | 0.281 |  | 11.20 | 0.78 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 14.35 | 11.43 | 18.65 | -12.85 | -9.69 | 0.349 | 0.281 |  | 11.20 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 14.37 | 11.53 | 18.80 | -9.66 | -5.03 | 0.349 | 0.283 |  | 11.29 | 0.78 | 37 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 14.43 | 12.39 | 18.34 | -6.48 | -1.49 | 0.351 | 0.304 |  | 10.97 | 0.78 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 14.46 | 11.60 | 18.87 | -9.87 | -5.27 | 0.352 | 0.285 |  | 11.36 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 14.46 | 11.60 | 18.87 | -9.87 | -5.27 | 0.352 | 0.285 |  | 11.36 | 0.78 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 14.46 | 11.60 | 18.87 | -9.87 | -5.27 | 0.352 | 0.285 |  | 11.36 | 0.78 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 14.46 | 11.60 | 18.87 | -9.87 | -5.27 | 0.352 | 0.285 |  | 11.36 | 0.78 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 14.46 | 11.60 | 18.87 | -9.87 | -5.27 | 0.352 | 0.285 |  | 11.36 | 0.78 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 14.46 | 11.60 | 18.87 | -9.87 | -5.27 | 0.352 | 0.285 |  | 11.36 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 14.53 | 11.73 | 18.88 | -9.94 | -5.40 | 0.353 | 0.288 |  | 11.38 | 0.78 | 15 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 14.56 | 12.75 | 18.50 | -6.33 | -2.91 | 0.354 | 0.313 |  | 10.94 | 0.78 | 1 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 14.60 | 12.14 | 16.77 | -7.28 | -7.02 | 0.355 | 0.298 |  | 12.71 | 1.00 | 2 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 14.79 | 13.36 | 18.28 | -6.72 | -2.47 | 0.360 | 0.328 |  | 11.38 | 0.78 | 22 | True | True |
@@ -4399,12 +5106,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 34.50 | 32.29 | 38.26 | -8.00 | 5.83 | 0.839 | 0.793 |  | 30.69 | 1.00 | 7 | False | True |
 | baselines-margin | seasonal_naive | W2 | 1 | PIT | 9 | 41.11 | 40.71 | 42.42 | -41.11 | -40.71 | 1.000 | 1.000 |  | 32.21 | 0.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | PIT | 9 | 61.07 | 56.46 | 74.63 | 8.93 | 1.30 | 1.485 | 1.387 |  | 41.26 | 0.78 | 3 | False | False |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 8.33 | 6.35 | 11.15 | -1.87 | -0.30 | 0.203 | 0.156 |  | 6.56 | 0.78 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 8.75 | 6.50 | 12.10 | -5.42 | -3.85 | 0.213 | 0.160 |  | 7.06 | 0.78 | 15 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 10.04 | 7.96 | 11.98 | -3.35 | -1.99 | 0.244 | 0.196 |  | 7.09 | 0.78 | 12 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 10.52 | 8.48 | 12.65 | -0.38 | 1.22 | 0.256 | 0.208 |  | 9.02 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 10.61 | 8.45 | 12.45 | -3.26 | -1.18 | 0.258 | 0.208 |  | 7.25 | 0.78 | 14 | True | True |
 | margin-ts | sarima_margin | W2 | 1 | full_sample | 9 | 10.72 | 9.20 | 14.20 | -7.13 | -4.60 | 0.261 | 0.226 |  | 8.57 | 0.78 | 14 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 10.87 | 8.88 | 12.56 | -3.11 | -0.68 | 0.264 | 0.218 |  | 7.37 | 0.78 | 12 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 10.90 | 9.69 | 12.26 | -1.42 | 1.13 | 0.265 | 0.238 |  | 7.66 | 1.00 | 22 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 11.00 | 8.68 | 12.88 | -4.86 | -2.86 | 0.268 | 0.213 |  | 7.61 | 0.78 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 11.02 | 8.70 | 12.91 | -4.95 | -2.95 | 0.268 | 0.214 |  | 7.64 | 0.78 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 11.02 | 8.70 | 12.91 | -4.95 | -2.95 | 0.268 | 0.214 |  | 7.64 | 0.78 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 11.02 | 8.70 | 12.91 | -4.95 | -2.95 | 0.268 | 0.214 |  | 7.64 | 0.78 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 11.02 | 8.70 | 12.91 | -4.95 | -2.95 | 0.268 | 0.214 |  | 7.64 | 0.78 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 11.02 | 8.70 | 12.91 | -4.95 | -2.95 | 0.268 | 0.214 |  | 7.64 | 0.78 | 12 | True | True |
@@ -4413,6 +5125,8 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 11.65 | 8.32 | 14.59 | -7.84 | -6.56 | 0.283 | 0.204 |  | 9.60 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 11.73 | 8.42 | 14.66 | -7.99 | -6.72 | 0.285 | 0.207 |  | 9.48 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 12.15 | 9.53 | 14.86 | -8.49 | -6.26 | 0.296 | 0.234 |  | 11.51 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 12.17 | 9.67 | 14.61 | -8.73 | -6.90 | 0.296 | 0.237 |  | 8.59 | 0.67 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 12.22 | 9.70 | 14.70 | -8.88 | -7.05 | 0.297 | 0.238 |  | 8.64 | 0.67 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 12.22 | 9.70 | 14.70 | -8.88 | -7.05 | 0.297 | 0.238 |  | 8.64 | 0.67 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 12.22 | 9.70 | 14.70 | -8.88 | -7.05 | 0.297 | 0.238 |  | 8.64 | 0.67 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 13.68 | 11.12 | 16.14 | -5.71 | -5.45 | 0.333 | 0.273 |  | 86.90 | 1.00 | 7 | True | True |
@@ -4425,13 +5139,20 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive | W2 | 1 | full_sample | 9 | 41.11 | 40.71 | 42.42 | -41.11 | -40.71 | 1.000 | 1.000 |  | 32.39 | 0.00 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W2 | 1 | full_sample | 9 | 61.07 | 56.46 | 74.63 | 8.93 | 1.30 | 1.485 | 1.387 |  | 41.44 | 0.89 | 3 | False | False |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 11.16 | 10.63 | 12.61 | -9.70 | -8.56 | 0.255 | 0.254 |  | 12.68 | 1.00 | 2 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 16.51 | 12.27 | 20.52 | -15.51 | -11.04 | 0.377 | 0.293 |  | 12.58 | 0.50 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 16.53 | 12.29 | 20.58 | -15.68 | -11.24 | 0.378 | 0.294 |  | 12.61 | 0.50 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 16.53 | 12.29 | 20.58 | -15.68 | -11.24 | 0.378 | 0.294 |  | 12.61 | 0.50 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 16.53 | 12.29 | 20.58 | -15.68 | -11.24 | 0.378 | 0.294 |  | 12.61 | 0.50 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 16.53 | 12.29 | 20.58 | -15.68 | -11.24 | 0.378 | 0.294 |  | 12.61 | 0.50 | 10 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 16.62 | 14.52 | 19.02 | -16.62 | -14.52 | 0.380 | 0.347 |  | 13.31 | 1.00 | 2 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 17.72 | 13.39 | 21.57 | -12.92 | -6.96 | 0.405 | 0.320 |  | 13.76 | 0.62 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 17.72 | 13.39 | 21.57 | -12.92 | -6.96 | 0.405 | 0.320 |  | 13.76 | 0.62 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 17.72 | 13.39 | 21.57 | -12.92 | -6.96 | 0.405 | 0.320 |  | 13.76 | 0.62 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 17.72 | 13.39 | 21.57 | -12.92 | -6.96 | 0.405 | 0.320 |  | 13.76 | 0.62 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 17.72 | 13.39 | 21.57 | -12.92 | -6.96 | 0.405 | 0.320 |  | 13.76 | 0.62 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 17.72 | 13.39 | 21.57 | -12.92 | -6.96 | 0.405 | 0.320 |  | 13.76 | 0.62 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 17.72 | 13.39 | 21.57 | -12.92 | -6.96 | 0.405 | 0.320 |  | 13.76 | 0.62 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 17.73 | 13.46 | 21.53 | -12.69 | -6.70 | 0.405 | 0.322 |  | 13.73 | 0.62 | 37 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 18.20 | 14.91 | 21.21 | -9.38 | -2.87 | 0.416 | 0.357 |  | 13.37 | 0.62 | 14 | True | True |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 18.36 | 14.28 | 21.60 | -14.62 | -9.36 | 0.420 | 0.342 |  | 14.59 | 0.75 | 14 | True | True |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 18.43 | 13.49 | 22.97 | -16.39 | -10.90 | 0.421 | 0.323 |  | 14.69 | 0.50 | 12 | True | True |
@@ -4453,6 +5174,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 9.47 | 8.08 | 10.57 | -2.82 | -0.22 | 0.216 | 0.193 |  | 8.99 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 9.89 | 9.52 | 11.45 | -8.11 | -6.98 | 0.226 | 0.228 |  | 1,084.36 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 10.17 | 8.15 | 12.23 | -5.43 | -1.99 | 0.232 | 0.195 |  | 7.11 | 0.75 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 10.79 | 8.47 | 12.91 | -7.06 | -3.68 | 0.247 | 0.203 |  | 7.66 | 0.75 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 10.83 | 8.50 | 12.95 | -7.14 | -3.77 | 0.247 | 0.203 |  | 7.69 | 0.75 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 10.83 | 8.50 | 12.95 | -7.14 | -3.77 | 0.247 | 0.203 |  | 7.69 | 0.75 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 10.83 | 8.50 | 12.95 | -7.14 | -3.77 | 0.247 | 0.203 |  | 7.69 | 0.75 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 10.83 | 8.50 | 12.95 | -7.14 | -3.77 | 0.247 | 0.203 |  | 7.69 | 0.75 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 10.83 | 8.50 | 12.95 | -7.14 | -3.77 | 0.247 | 0.203 |  | 7.69 | 0.75 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 10.83 | 8.50 | 12.95 | -7.14 | -3.77 | 0.247 | 0.203 |  | 7.69 | 0.75 | 12 | True | True |
@@ -4462,6 +5187,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 11.73 | 9.50 | 14.17 | -10.36 | -8.04 | 0.268 | 0.227 |  | 9.78 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 11.81 | 9.58 | 14.28 | -10.52 | -8.20 | 0.270 | 0.229 |  | 9.74 | 1.00 | 7 | True | True |
 | cycle-flex | flex_lines | W2 | 2 | full_sample | 8 | 12.08 | 9.33 | 14.53 | -9.37 | -5.93 | 0.276 | 0.223 |  | 8.65 | 0.75 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 12.55 | 9.69 | 15.16 | -10.97 | -7.75 | 0.287 | 0.232 |  | 9.00 | 0.75 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 12.61 | 9.74 | 15.26 | -11.12 | -7.91 | 0.288 | 0.233 |  | 9.05 | 0.75 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 12.61 | 9.74 | 15.26 | -11.12 | -7.91 | 0.288 | 0.233 |  | 9.05 | 0.75 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 12.61 | 9.74 | 15.26 | -11.12 | -7.91 | 0.288 | 0.233 |  | 9.05 | 0.75 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 12.61 | 9.74 | 15.26 | -11.12 | -7.91 | 0.288 | 0.233 |  | 9.05 | 0.75 | 10 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 12.67 | 9.61 | 15.51 | -10.55 | -7.02 | 0.290 | 0.230 |  | 12.39 | 1.00 | 7 | True | True |
@@ -4826,10 +5554,16 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 32.20 | 29.31 | 42.38 | -8.67 | -11.74 | 0.341 | 0.247 |  | 24.23 | 0.86 | 1 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 34.20 | 35.35 | 43.00 | 0.21 | -15.96 | 0.363 | 0.298 |  | 26.09 | 0.93 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 34.45 | 32.78 | 41.67 | 5.82 | 8.75 | 0.365 | 0.276 |  | 26.06 | 0.93 | 15 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 34.55 | 32.97 | 45.05 | 10.60 | -7.51 | 0.366 | 0.278 |  | 26.74 | 0.93 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 35.02 | 33.30 | 42.27 | 2.96 | 5.61 | 0.371 | 0.281 |  | 25.97 | 0.93 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 36.25 | 33.20 | 41.23 | -11.79 | -19.10 | 0.384 | 0.280 |  | 24.82 | 0.93 | 37 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 36.86 | 37.97 | 42.36 | -12.57 | -22.79 | 0.391 | 0.320 |  | 25.02 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 37.58 | 35.63 | 43.67 | -10.48 | -15.41 | 0.399 | 0.300 |  | 25.94 | 0.93 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 37.82 | 37.57 | 41.77 | -15.04 | -25.40 | 0.401 | 0.316 |  | 25.22 | 0.93 | 37 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 37.87 | 39.52 | 44.31 | -7.98 | -22.69 | 0.402 | 0.333 |  | 25.46 | 0.86 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 37.87 | 36.39 | 42.36 | -14.00 | -22.89 | 0.402 | 0.307 |  | 25.45 | 0.93 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 37.87 | 36.39 | 42.36 | -14.00 | -22.89 | 0.402 | 0.307 |  | 25.45 | 0.93 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 37.87 | 36.39 | 42.36 | -14.00 | -22.89 | 0.402 | 0.307 |  | 25.45 | 0.93 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 37.87 | 36.39 | 42.36 | -14.00 | -22.89 | 0.402 | 0.307 |  | 25.45 | 0.93 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 37.87 | 36.39 | 42.36 | -14.00 | -22.89 | 0.402 | 0.307 |  | 25.45 | 0.93 | 14 | True | True |
@@ -4840,6 +5574,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 38.61 | 35.17 | 43.09 | -13.05 | -15.17 | 0.409 | 0.296 |  | 26.16 | 0.86 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 40.16 | 31.70 | 47.46 | -16.13 | -14.10 | 0.426 | 0.267 |  | 29.35 | 0.93 | 7 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | PIT | 14 | 40.19 | 42.00 | 44.07 | -17.97 | -30.42 | 0.426 | 0.354 |  | 26.36 | 0.93 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | PIT | 14 | 40.19 | 42.00 | 44.07 | -17.97 | -30.42 | 0.426 | 0.354 |  | 26.36 | 0.93 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | PIT | 14 | 40.19 | 42.00 | 44.07 | -17.97 | -30.42 | 0.426 | 0.354 |  | 26.36 | 0.93 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 40.66 | 33.92 | 48.01 | -14.99 | -13.11 | 0.431 | 0.286 |  | 29.32 | 0.93 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 41.90 | 34.24 | 49.69 | -17.13 | -15.20 | 0.444 | 0.288 |  | 30.64 | 0.93 | 7 | True | True |
@@ -4849,8 +5584,13 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 57.47 | 77.42 | 67.20 | -46.58 | -71.34 | 0.609 | 0.652 |  | 39.31 | 0.57 | 2 | True | True |
 | baselines-margin | seasonal_naive | W1 | 0 | PIT | 14 | 94.30 | 118.71 | 105.63 | -94.30 | -118.71 | 1.000 | 1.000 |  | 68.28 | 0.36 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 0 | PIT | 14 | 103.52 | 105.83 | 127.25 | -8.19 | -29.25 | 1.098 | 0.891 |  | 70.03 | 0.79 | 3 | False | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 27.37 | 23.78 | 32.84 | 3.10 | 0.65 | 0.290 | 0.200 |  | 19.32 | 0.86 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 28.59 | 25.92 | 32.93 | 1.38 | 1.27 | 0.303 | 0.218 |  | 19.51 | 0.79 | 15 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 29.43 | 23.11 | 36.95 | 8.51 | 0.14 | 0.312 | 0.195 |  | 21.80 | 0.86 | 22 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 29.88 | 25.02 | 37.47 | 7.72 | -3.35 | 0.317 | 0.211 |  | 21.81 | 0.86 | 37 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 31.51 | 27.39 | 39.19 | 8.77 | -4.06 | 0.334 | 0.231 |  | 22.85 | 0.86 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 31.51 | 27.39 | 39.19 | 8.77 | -4.06 | 0.334 | 0.231 |  | 22.85 | 0.86 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 31.51 | 27.39 | 39.19 | 8.77 | -4.06 | 0.334 | 0.231 |  | 22.85 | 0.86 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 31.51 | 27.39 | 39.19 | 8.77 | -4.06 | 0.334 | 0.231 |  | 22.85 | 0.86 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 31.51 | 27.39 | 39.19 | 8.77 | -4.06 | 0.334 | 0.231 |  | 22.85 | 0.86 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 31.51 | 27.39 | 39.19 | 8.77 | -4.06 | 0.334 | 0.231 |  | 22.85 | 0.86 | 14 | True | True |
@@ -4858,8 +5598,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 31.61 | 27.53 | 38.72 | 8.26 | -4.48 | 0.335 | 0.232 |  | 22.66 | 0.86 | 10 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 0 | full_sample | 14 | 32.20 | 29.31 | 42.38 | -8.67 | -11.74 | 0.341 | 0.247 |  | 24.02 | 0.79 | 1 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 32.64 | 28.93 | 40.29 | 9.87 | -2.37 | 0.346 | 0.244 |  | 23.35 | 0.79 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 32.87 | 32.23 | 37.35 | -3.72 | -16.09 | 0.349 | 0.272 |  | 21.68 | 0.86 | 37 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 33.18 | 30.64 | 39.73 | 6.40 | -6.24 | 0.352 | 0.258 |  | 23.06 | 0.79 | 7 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 34.64 | 34.94 | 39.65 | -1.78 | -15.39 | 0.367 | 0.294 |  | 22.79 | 0.86 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 0 | full_sample | 14 | 35.03 | 35.85 | 39.25 | -4.76 | -19.15 | 0.372 | 0.302 |  | 22.63 | 0.86 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 0 | full_sample | 14 | 35.03 | 35.85 | 39.25 | -4.76 | -19.15 | 0.372 | 0.302 |  | 22.63 | 0.86 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 0 | full_sample | 14 | 35.03 | 35.85 | 39.25 | -4.76 | -19.15 | 0.372 | 0.302 |  | 22.63 | 0.86 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 35.82 | 29.40 | 47.59 | 26.60 | 13.80 | 0.380 | 0.248 |  | 31.52 | 0.93 | 7 | True | True |
@@ -4883,6 +5625,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 41.72 | 41.75 | 49.68 | -21.88 | -32.56 | 0.444 | 0.351 |  | 30.95 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 41.72 | 41.13 | 46.46 | -12.01 | -23.68 | 0.444 | 0.345 |  | 29.86 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 42.46 | 43.19 | 49.87 | -12.99 | -29.08 | 0.452 | 0.363 |  | 30.07 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 44.34 | 45.55 | 49.49 | -13.65 | -30.22 | 0.472 | 0.382 |  | 29.89 | 1.00 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 44.36 | 45.56 | 49.49 | -13.87 | -30.43 | 0.472 | 0.383 |  | 29.91 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 44.36 | 45.56 | 49.49 | -13.87 | -30.43 | 0.472 | 0.383 |  | 29.91 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 44.36 | 45.56 | 49.49 | -13.87 | -30.43 | 0.472 | 0.383 |  | 29.91 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 44.36 | 45.56 | 49.49 | -13.87 | -30.43 | 0.472 | 0.383 |  | 29.91 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 44.36 | 45.56 | 49.49 | -13.87 | -30.43 | 0.472 | 0.383 |  | 29.91 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 44.36 | 45.56 | 49.49 | -13.87 | -30.43 | 0.472 | 0.383 |  | 29.91 | 1.00 | 14 | True | True |
@@ -4890,8 +5636,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 44.56 | 42.23 | 48.87 | -16.01 | -28.46 | 0.474 | 0.355 |  | 29.78 | 0.85 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 44.56 | 42.23 | 48.87 | -16.01 | -28.46 | 0.474 | 0.355 |  | 29.78 | 0.85 | 10 | True | True |
 | margin-ts | sarima_margin | W1 | 1 | PIT | 13 | 44.78 | 43.71 | 50.31 | -5.91 | -23.82 | 0.477 | 0.367 |  | 29.33 | 0.85 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 45.84 | 50.28 | 50.94 | -16.96 | -36.32 | 0.488 | 0.422 |  | 29.71 | 0.92 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 45.90 | 49.80 | 54.55 | -35.01 | -44.41 | 0.488 | 0.418 |  | 32.63 | 0.92 | 7 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 46.03 | 50.57 | 51.16 | -17.36 | -36.81 | 0.490 | 0.425 |  | 29.83 | 0.92 | 12 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 46.03 | 50.57 | 51.16 | -17.36 | -36.81 | 0.490 | 0.425 |  | 29.83 | 0.92 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | PIT | 13 | 46.03 | 50.57 | 51.16 | -17.36 | -36.81 | 0.490 | 0.425 |  | 29.83 | 0.92 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | PIT | 13 | 46.03 | 50.57 | 51.16 | -17.36 | -36.81 | 0.490 | 0.425 |  | 29.83 | 0.92 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | PIT | 13 | 47.16 | 48.88 | 52.52 | -24.22 | -36.21 | 0.502 | 0.410 |  | 32.73 | 0.85 | 22 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 50.33 | 45.64 | 55.34 | -15.37 | -26.93 | 0.536 | 0.383 |  | 34.81 | 0.77 | 1 | True | True |
@@ -4904,11 +5653,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 33.44 | 29.05 | 41.36 | 12.33 | -2.00 | 0.356 | 0.244 |  | 24.04 | 0.77 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 33.83 | 30.76 | 40.66 | 8.80 | -5.90 | 0.360 | 0.258 |  | 23.64 | 0.77 | 7 | True | True |
 | margin-ts | sarima_margin | W1 | 1 | full_sample | 13 | 34.95 | 35.02 | 40.25 | 0.44 | -15.10 | 0.372 | 0.294 |  | 23.80 | 0.92 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 36.29 | 33.98 | 44.57 | 10.52 | -8.12 | 0.386 | 0.285 |  | 25.97 | 0.85 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 36.32 | 34.04 | 44.62 | 10.50 | -8.19 | 0.387 | 0.286 |  | 26.01 | 0.85 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 36.32 | 34.04 | 44.62 | 10.50 | -8.19 | 0.387 | 0.286 |  | 26.01 | 0.85 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 36.32 | 34.04 | 44.62 | 10.50 | -8.19 | 0.387 | 0.286 |  | 26.01 | 0.85 | 11 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 36.32 | 34.04 | 44.62 | 10.50 | -8.19 | 0.387 | 0.286 |  | 26.01 | 0.85 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 36.32 | 34.04 | 44.62 | 10.50 | -8.19 | 0.387 | 0.286 |  | 26.01 | 0.85 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 36.32 | 34.04 | 44.62 | 10.50 | -8.19 | 0.387 | 0.286 |  | 26.01 | 0.85 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 36.32 | 34.04 | 44.62 | 10.50 | -8.19 | 0.387 | 0.286 |  | 26.01 | 0.85 | 14 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 38.67 | 29.86 | 51.91 | 33.09 | 19.42 | 0.411 | 0.251 |  | 30.23 | 0.85 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 39.23 | 42.21 | 44.41 | -3.19 | -23.05 | 0.418 | 0.354 |  | 25.30 | 0.77 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 39.29 | 42.31 | 44.45 | -3.28 | -23.18 | 0.418 | 0.355 |  | 25.33 | 0.77 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 1 | full_sample | 13 | 39.29 | 42.31 | 44.45 | -3.28 | -23.18 | 0.418 | 0.355 |  | 25.33 | 0.77 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 1 | full_sample | 13 | 39.29 | 42.31 | 44.45 | -3.28 | -23.18 | 0.418 | 0.355 |  | 25.33 | 0.77 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 39.29 | 42.31 | 44.45 | -3.28 | -23.18 | 0.418 | 0.355 |  | 25.33 | 0.77 | 12 | True | True |
 | cycle-flex | flex_lines | W1 | 1 | full_sample | 13 | 39.57 | 38.37 | 47.84 | 10.50 | -11.30 | 0.421 | 0.322 |  | 28.14 | 0.85 | 22 | True | True |
@@ -4934,12 +5690,19 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 43.02 | 42.68 | 48.24 | -16.53 | -31.96 | 0.460 | 0.357 |  | 28.92 | 0.83 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 43.02 | 42.68 | 48.24 | -16.53 | -31.96 | 0.460 | 0.357 |  | 28.92 | 0.83 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 44.82 | 37.32 | 54.63 | 17.26 | -6.17 | 0.480 | 0.312 |  | 32.35 | 0.83 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 45.21 | 47.83 | 50.44 | -13.01 | -33.79 | 0.484 | 0.400 |  | 30.71 | 0.92 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 45.32 | 47.97 | 50.50 | -13.27 | -34.06 | 0.485 | 0.401 |  | 30.73 | 0.92 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 45.32 | 47.97 | 50.50 | -13.27 | -34.06 | 0.485 | 0.401 |  | 30.73 | 0.92 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 45.32 | 47.97 | 50.50 | -13.27 | -34.06 | 0.485 | 0.401 |  | 30.73 | 0.92 | 11 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 45.32 | 47.97 | 50.50 | -13.27 | -34.06 | 0.485 | 0.401 |  | 30.73 | 0.92 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 45.32 | 47.97 | 50.50 | -13.27 | -34.06 | 0.485 | 0.401 |  | 30.73 | 0.92 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 45.32 | 47.97 | 50.50 | -13.27 | -34.06 | 0.485 | 0.401 |  | 30.73 | 0.92 | 14 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 45.32 | 47.97 | 50.50 | -13.27 | -34.06 | 0.485 | 0.401 |  | 30.73 | 0.92 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 46.23 | 56.38 | 54.03 | -38.34 | -52.57 | 0.495 | 0.472 |  | 32.61 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 47.37 | 43.79 | 53.86 | 4.43 | -19.34 | 0.507 | 0.366 |  | 32.97 | 0.83 | 7 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 47.53 | 52.79 | 52.15 | -15.75 | -38.71 | 0.509 | 0.442 |  | 30.61 | 0.92 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 47.77 | 53.18 | 52.43 | -16.19 | -39.28 | 0.511 | 0.445 |  | 30.71 | 0.92 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | PIT | 12 | 47.77 | 53.18 | 52.43 | -16.19 | -39.28 | 0.511 | 0.445 |  | 30.71 | 0.92 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | PIT | 12 | 47.77 | 53.18 | 52.43 | -16.19 | -39.28 | 0.511 | 0.445 |  | 30.71 | 0.92 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | PIT | 12 | 47.77 | 53.18 | 52.43 | -16.19 | -39.28 | 0.511 | 0.445 |  | 30.71 | 0.92 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | PIT | 12 | 48.91 | 50.23 | 56.30 | -13.60 | -35.42 | 0.523 | 0.420 |  | 34.42 | 0.83 | 7 | True | True |
@@ -4954,6 +5717,10 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 34.78 | 29.32 | 42.75 | 14.81 | -1.65 | 0.372 | 0.245 |  | 25.09 | 0.75 | 7 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 34.96 | 31.00 | 41.91 | 11.21 | -5.57 | 0.374 | 0.259 |  | 24.61 | 0.75 | 7 | True | True |
 | margin-ts | sarima_margin | W1 | 2 | full_sample | 12 | 35.64 | 35.21 | 41.18 | 2.70 | -14.84 | 0.381 | 0.295 |  | 25.57 | 1.00 | 14 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 39.16 | 34.84 | 47.63 | 13.11 | -8.18 | 0.419 | 0.291 |  | 27.78 | 0.83 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 39.21 | 34.90 | 47.71 | 13.09 | -8.26 | 0.420 | 0.292 |  | 27.81 | 0.83 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 39.21 | 34.90 | 47.71 | 13.09 | -8.26 | 0.420 | 0.292 |  | 27.81 | 0.83 | 10 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 39.21 | 34.90 | 47.71 | 13.09 | -8.26 | 0.420 | 0.292 |  | 27.81 | 0.83 | 11 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 39.21 | 34.90 | 47.71 | 13.09 | -8.26 | 0.420 | 0.292 |  | 27.81 | 0.83 | 12 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 39.21 | 34.90 | 47.71 | 13.09 | -8.26 | 0.420 | 0.292 |  | 27.81 | 0.83 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 39.21 | 34.90 | 47.71 | 13.09 | -8.26 | 0.420 | 0.292 |  | 27.81 | 0.83 | 12 | True | True |
@@ -4961,6 +5728,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W1 | 2 | full_sample | 12 | 41.20 | 28.54 | 54.28 | 34.93 | 18.65 | 0.441 | 0.239 |  | 37.99 | 0.92 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 41.58 | 30.45 | 54.02 | 35.54 | 19.78 | 0.445 | 0.255 |  | 31.67 | 0.75 | 7 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 41.67 | 37.73 | 51.68 | 13.91 | -10.28 | 0.446 | 0.316 |  | 29.89 | 0.83 | 22 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 42.15 | 43.81 | 46.98 | -0.85 | -23.20 | 0.451 | 0.367 |  | 27.05 | 0.83 | 37 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 42.22 | 43.93 | 47.04 | -0.95 | -23.33 | 0.452 | 0.368 |  | 27.08 | 0.83 | 15 | True | True |
+| alt-augmented | lines_aug | W1 | 2 | full_sample | 12 | 42.22 | 43.93 | 47.04 | -0.95 | -23.33 | 0.452 | 0.368 |  | 27.08 | 0.83 | 10 | True | True |
 | driver-lines | lines_v2 | W1 | 2 | full_sample | 12 | 42.22 | 43.93 | 47.04 | -0.95 | -23.33 | 0.452 | 0.368 |  | 27.08 | 0.83 | 10 | True | True |
 | cycle-flex | flex_lines | W1 | 2 | full_sample | 12 | 42.22 | 43.93 | 47.04 | -0.95 | -23.33 | 0.452 | 0.368 |  | 27.08 | 0.83 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 47.16 | 34.80 | 61.61 | 32.43 | 9.50 | 0.505 | 0.291 |  | 36.23 | 0.83 | 7 | True | True |
@@ -4974,14 +5744,20 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 61.09 | 77.90 | 72.38 | -42.71 | -71.26 | 0.654 | 0.652 |  | 40.03 | 0.92 | 2 | True | True |
 | baselines-margin | seasonal_naive | W1 | 2 | full_sample | 12 | 93.45 | 119.52 | 106.64 | -93.45 | -119.52 | 1.000 | 1.000 |  | 72.22 | 0.25 | 1 | False | False |
 | baselines-margin | pct_rev_last4 | W1 | 2 | full_sample | 12 | 126.80 | 139.90 | 148.79 | -12.13 | -59.63 | 1.357 | 1.171 |  | 81.15 | 0.83 | 3 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 29.51 | 31.05 | 34.50 | -2.85 | 6.01 | 0.271 | 0.246 |  | 23.67 | 1.00 | 15 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 30.20 | 30.91 | 36.34 | -3.33 | -13.91 | 0.277 | 0.245 |  | 23.67 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 30.60 | 28.70 | 38.73 | -15.00 | -14.23 | 0.281 | 0.228 |  | 22.60 | 1.00 | 1 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 31.58 | 32.00 | 36.87 | -5.61 | 2.90 | 0.290 | 0.254 |  | 24.02 | 1.00 | 15 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 31.58 | 34.17 | 36.80 | -14.66 | -22.37 | 0.290 | 0.271 |  | 24.23 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 32.47 | 28.85 | 41.17 | -22.03 | -16.50 | 0.298 | 0.229 |  | 26.95 | 0.90 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 32.59 | 31.74 | 37.31 | -22.48 | -23.53 | 0.299 | 0.252 |  | 23.26 | 1.00 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 32.74 | 31.17 | 41.04 | -21.28 | -15.61 | 0.301 | 0.247 |  | 26.57 | 0.90 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 33.75 | 31.37 | 42.89 | -22.61 | -17.50 | 0.310 | 0.249 |  | 27.92 | 0.90 | 7 | True | True |
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 34.08 | 38.28 | 38.85 | -22.10 | -28.88 | 0.313 | 0.304 |  | 23.04 | 0.90 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 34.44 | 36.48 | 38.23 | -26.60 | -30.42 | 0.316 | 0.290 |  | 23.85 | 1.00 | 37 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 34.47 | 33.68 | 39.84 | -19.66 | -17.98 | 0.317 | 0.267 |  | 24.48 | 0.90 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 34.87 | 35.27 | 39.04 | -25.58 | -27.72 | 0.320 | 0.280 |  | 24.15 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 34.87 | 35.27 | 39.04 | -25.58 | -27.72 | 0.320 | 0.280 |  | 24.15 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 34.87 | 35.27 | 39.04 | -25.58 | -27.72 | 0.320 | 0.280 |  | 24.15 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 34.87 | 35.27 | 39.04 | -25.58 | -27.72 | 0.320 | 0.280 |  | 24.15 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 34.87 | 35.27 | 39.04 | -25.58 | -27.72 | 0.320 | 0.280 |  | 24.15 | 1.00 | 14 | True | True |
@@ -4992,6 +5768,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 36.66 | 35.03 | 44.42 | -18.90 | -18.91 | 0.337 | 0.278 |  | 26.50 | 0.90 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 37.33 | 35.06 | 45.55 | -20.07 | -20.98 | 0.343 | 0.278 |  | 27.61 | 0.90 | 7 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | PIT | 10 | 37.75 | 41.38 | 41.69 | -30.71 | -35.97 | 0.347 | 0.328 |  | 25.45 | 1.00 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | PIT | 10 | 37.75 | 41.38 | 41.69 | -30.71 | -35.97 | 0.347 | 0.328 |  | 25.45 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | PIT | 10 | 37.75 | 41.38 | 41.69 | -30.71 | -35.97 | 0.347 | 0.328 |  | 25.45 | 1.00 | 10 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 38.58 | 38.26 | 43.21 | -26.04 | -28.06 | 0.354 | 0.304 |  | 25.71 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | PIT | 10 | 49.36 | 57.49 | 56.21 | -47.58 | -56.77 | 0.453 | 0.456 |  | 32.70 | 0.70 | 2 | True | True |
@@ -4999,8 +5776,13 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 67.91 | 82.40 | 76.96 | -64.08 | -79.29 | 0.624 | 0.654 |  | 46.63 | 0.40 | 2 | True | True |
 | baselines-margin | pct_rev_last4 | W2 | 0 | PIT | 10 | 107.29 | 107.22 | 121.25 | -27.66 | -37.94 | 0.985 | 0.851 |  | 68.14 | 0.90 | 3 | False | True |
 | baselines-margin | seasonal_naive | W2 | 0 | PIT | 10 | 108.90 | 126.00 | 116.59 | -108.90 | -126.00 | 1.000 | 1.000 |  | 79.23 | 0.30 | 1 | False | False |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 21.86 | 21.60 | 26.04 | -3.21 | -2.02 | 0.201 | 0.171 |  | 16.13 | 1.00 | 15 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 22.21 | 19.99 | 25.51 | 0.23 | -3.80 | 0.204 | 0.159 |  | 17.23 | 1.00 | 22 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 23.86 | 24.10 | 27.22 | -4.64 | -1.05 | 0.219 | 0.191 |  | 16.72 | 0.90 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 24.49 | 22.54 | 29.48 | -0.86 | -7.61 | 0.225 | 0.179 |  | 18.06 | 1.00 | 37 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 26.57 | 25.06 | 31.36 | -0.25 | -8.64 | 0.244 | 0.199 |  | 19.17 | 1.00 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 26.57 | 25.06 | 31.36 | -0.25 | -8.64 | 0.244 | 0.199 |  | 19.17 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 26.57 | 25.06 | 31.36 | -0.25 | -8.64 | 0.244 | 0.199 |  | 19.17 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 26.57 | 25.06 | 31.36 | -0.25 | -8.64 | 0.244 | 0.199 |  | 19.17 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 26.57 | 25.06 | 31.36 | -0.25 | -8.64 | 0.244 | 0.199 |  | 19.17 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 26.57 | 25.06 | 31.36 | -0.25 | -8.64 | 0.244 | 0.199 |  | 19.17 | 1.00 | 14 | True | True |
@@ -5010,6 +5792,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 27.59 | 25.72 | 29.87 | 14.67 | 8.44 | 0.253 | 0.204 |  | 27.57 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 27.76 | 26.77 | 34.88 | 3.80 | -6.14 | 0.255 | 0.212 |  | 20.63 | 0.90 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 28.56 | 28.74 | 34.79 | 0.05 | -10.13 | 0.262 | 0.228 |  | 20.57 | 0.90 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 28.82 | 30.73 | 32.44 | -13.09 | -20.69 | 0.265 | 0.244 |  | 19.15 | 1.00 | 37 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 29.91 | 25.06 | 41.96 | 12.95 | 2.49 | 0.275 | 0.199 |  | 24.76 | 0.90 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 30.02 | 26.14 | 39.03 | 22.77 | 14.79 | 0.276 | 0.207 |  | 23.74 | 0.90 | 7 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 30.60 | 28.70 | 38.73 | -15.00 | -14.23 | 0.281 | 0.228 |  | 22.29 | 0.90 | 1 | True | True |
@@ -5018,6 +5801,7 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 31.06 | 24.59 | 46.32 | 23.70 | 13.91 | 0.285 | 0.195 |  | 27.02 | 0.90 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 31.18 | 28.61 | 34.33 | 22.31 | 16.37 | 0.286 | 0.227 |  | 25.89 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 31.30 | 28.72 | 34.51 | 22.59 | 16.65 | 0.287 | 0.228 |  | 24.89 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 0 | full_sample | 10 | 31.65 | 34.68 | 35.10 | -14.77 | -24.16 | 0.291 | 0.275 |  | 20.42 | 1.00 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 0 | full_sample | 10 | 31.65 | 34.68 | 35.10 | -14.77 | -24.16 | 0.291 | 0.275 |  | 20.42 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 0 | full_sample | 10 | 31.65 | 34.68 | 35.10 | -14.77 | -24.16 | 0.291 | 0.275 |  | 20.42 | 1.00 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 47.64 | 55.06 | 54.31 | -45.88 | -54.34 | 0.437 | 0.437 |  | 31.01 | 1.00 | 2 | True | True |
@@ -5036,12 +5820,19 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 42.03 | 43.31 | 48.01 | -34.97 | -37.89 | 0.367 | 0.336 |  | 29.68 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 42.22 | 41.46 | 46.21 | -35.64 | -36.45 | 0.368 | 0.322 |  | 28.78 | 0.89 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 42.22 | 41.46 | 46.21 | -35.64 | -36.45 | 0.368 | 0.322 |  | 28.78 | 0.89 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 42.61 | 45.35 | 47.29 | -34.18 | -38.93 | 0.372 | 0.352 |  | 29.44 | 1.00 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 42.63 | 45.36 | 47.29 | -34.50 | -39.16 | 0.372 | 0.352 |  | 29.48 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 42.63 | 45.36 | 47.29 | -34.50 | -39.16 | 0.372 | 0.352 |  | 29.48 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 42.63 | 45.36 | 47.29 | -34.50 | -39.16 | 0.372 | 0.352 |  | 29.48 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 42.63 | 45.36 | 47.29 | -34.50 | -39.16 | 0.372 | 0.352 |  | 29.48 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 42.63 | 45.36 | 47.29 | -34.50 | -39.16 | 0.372 | 0.352 |  | 29.48 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 42.63 | 45.36 | 47.29 | -34.50 | -39.16 | 0.372 | 0.352 |  | 29.48 | 1.00 | 14 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 42.63 | 45.36 | 47.29 | -34.50 | -39.16 | 0.372 | 0.352 |  | 29.48 | 1.00 | 12 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 43.56 | 43.11 | 48.68 | -30.00 | -32.78 | 0.380 | 0.334 |  | 29.08 | 1.00 | 1 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 45.19 | 50.81 | 50.48 | -38.54 | -45.74 | 0.394 | 0.394 |  | 29.63 | 0.89 | 37 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 45.47 | 51.14 | 50.80 | -39.12 | -46.29 | 0.397 | 0.397 |  | 29.81 | 0.89 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 45.47 | 51.14 | 50.80 | -39.12 | -46.29 | 0.397 | 0.397 |  | 29.81 | 0.89 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | PIT | 9 | 45.47 | 51.14 | 50.80 | -39.12 | -46.29 | 0.397 | 0.397 |  | 29.81 | 0.89 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | PIT | 9 | 45.47 | 51.14 | 50.80 | -39.12 | -46.29 | 0.397 | 0.397 |  | 29.81 | 0.89 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | PIT | 9 | 46.98 | 49.69 | 50.86 | -37.41 | -42.40 | 0.410 | 0.385 |  | 30.57 | 1.00 | 22 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 49.48 | 52.05 | 55.90 | -46.86 | -50.05 | 0.431 | 0.404 |  | 33.79 | 0.89 | 7 | True | True |
@@ -5056,7 +5847,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 26.59 | 24.67 | 35.80 | 18.54 | 12.84 | 0.232 | 0.191 |  | 23.00 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 27.35 | 28.28 | 34.23 | -4.32 | -12.23 | 0.239 | 0.219 |  | 19.79 | 0.89 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 28.47 | 25.57 | 38.06 | 9.16 | 0.88 | 0.248 | 0.198 |  | 25.28 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 29.55 | 31.33 | 35.83 | -6.99 | -16.22 | 0.258 | 0.243 |  | 21.65 | 1.00 | 37 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 29.59 | 31.39 | 35.87 | -7.06 | -16.31 | 0.258 | 0.243 |  | 21.69 | 1.00 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 29.59 | 31.39 | 35.87 | -7.06 | -16.31 | 0.258 | 0.243 |  | 21.69 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 29.59 | 31.39 | 35.87 | -7.06 | -16.31 | 0.258 | 0.243 |  | 21.69 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 29.59 | 31.39 | 35.87 | -7.06 | -16.31 | 0.258 | 0.243 |  | 21.69 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 29.59 | 31.39 | 35.87 | -7.06 | -16.31 | 0.258 | 0.243 |  | 21.69 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 29.59 | 31.39 | 35.87 | -7.06 | -16.31 | 0.258 | 0.243 |  | 21.69 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 29.59 | 31.39 | 35.87 | -7.06 | -16.31 | 0.258 | 0.243 |  | 21.69 | 1.00 | 14 | True | True |
@@ -5067,6 +5862,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 33.73 | 32.40 | 41.20 | 4.17 | -9.29 | 0.294 | 0.251 |  | 26.10 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 34.07 | 30.37 | 43.00 | 12.00 | -1.43 | 0.297 | 0.236 |  | 27.86 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | full_sample | 9 | 34.12 | 30.34 | 43.09 | 12.28 | -1.15 | 0.298 | 0.235 |  | 27.39 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 36.56 | 41.69 | 41.55 | -21.52 | -31.54 | 0.319 | 0.323 |  | 23.48 | 0.89 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 36.64 | 41.80 | 41.64 | -21.65 | -31.69 | 0.320 | 0.324 |  | 23.53 | 0.89 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 1 | full_sample | 9 | 36.64 | 41.80 | 41.64 | -21.65 | -31.69 | 0.320 | 0.324 |  | 23.53 | 0.89 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 1 | full_sample | 9 | 36.64 | 41.80 | 41.64 | -21.65 | -31.69 | 0.320 | 0.324 |  | 23.53 | 0.89 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 1 | full_sample | 9 | 36.64 | 41.80 | 41.64 | -21.65 | -31.69 | 0.320 | 0.324 |  | 23.53 | 0.89 | 12 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | full_sample | 9 | 43.56 | 43.11 | 48.68 | -30.00 | -32.78 | 0.380 | 0.334 |  | 28.79 | 0.89 | 1 | True | True |
@@ -5084,14 +5882,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 43.23 | 43.08 | 49.37 | -42.18 | -42.33 | 0.362 | 0.327 |  | 29.45 | 0.88 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 43.23 | 43.08 | 49.37 | -42.18 | -42.33 | 0.362 | 0.327 |  | 29.45 | 0.88 | 10 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 45.48 | 48.31 | 52.20 | -45.48 | -48.31 | 0.381 | 0.367 |  | 30.62 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 45.86 | 49.18 | 50.36 | -41.46 | -46.04 | 0.384 | 0.374 |  | 30.78 | 1.00 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 45.90 | 49.17 | 51.10 | -45.90 | -49.17 | 0.385 | 0.373 |  | 34.06 | 1.00 | 7 | True | True |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 45.96 | 45.78 | 52.02 | -34.27 | -37.44 | 0.385 | 0.348 |  | 35.25 | 0.62 | 14 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 46.03 | 49.34 | 50.45 | -41.85 | -46.36 | 0.386 | 0.375 |  | 30.80 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 46.03 | 49.34 | 50.45 | -41.85 | -46.36 | 0.386 | 0.375 |  | 30.80 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 46.03 | 49.34 | 50.45 | -41.85 | -46.36 | 0.386 | 0.375 |  | 30.80 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 46.03 | 49.34 | 50.45 | -41.85 | -46.36 | 0.386 | 0.375 |  | 30.80 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 46.03 | 49.34 | 50.45 | -41.85 | -46.36 | 0.386 | 0.375 |  | 30.80 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 46.03 | 49.34 | 50.45 | -41.85 | -46.36 | 0.386 | 0.375 |  | 30.80 | 1.00 | 14 | True | True |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 46.03 | 49.34 | 50.45 | -41.85 | -46.36 | 0.386 | 0.375 |  | 30.80 | 1.00 | 12 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 48.44 | 51.24 | 54.96 | -44.21 | -48.21 | 0.406 | 0.389 |  | 33.08 | 0.88 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 49.87 | 55.10 | 53.90 | -45.04 | -51.65 | 0.418 | 0.418 |  | 31.05 | 1.00 | 37 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | PIT | 8 | 49.88 | 51.18 | 57.83 | -40.62 | -44.58 | 0.418 | 0.389 |  | 34.86 | 0.88 | 1 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 50.23 | 55.56 | 54.30 | -45.70 | -52.32 | 0.421 | 0.422 |  | 31.20 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | PIT | 8 | 50.23 | 55.56 | 54.30 | -45.70 | -52.32 | 0.421 | 0.422 |  | 31.20 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | PIT | 8 | 50.23 | 55.56 | 54.30 | -45.70 | -52.32 | 0.421 | 0.422 |  | 31.20 | 1.00 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 2 | PIT | 8 | 50.23 | 55.56 | 54.30 | -45.70 | -52.32 | 0.421 | 0.422 |  | 31.20 | 1.00 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | PIT | 8 | 58.03 | 62.21 | 64.00 | -56.37 | -61.02 | 0.486 | 0.472 |  | 37.01 | 1.00 | 7 | True | True |
@@ -5108,7 +5913,11 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 26.69 | 24.93 | 38.54 | 14.39 | 7.81 | 0.224 | 0.189 |  | 26.64 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 26.93 | 25.15 | 38.86 | 15.24 | 8.71 | 0.226 | 0.191 |  | 27.32 | 1.00 | 7 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 27.54 | 28.42 | 35.15 | -8.09 | -14.25 | 0.231 | 0.216 |  | 20.46 | 0.88 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 27.71 | 30.95 | 35.59 | -11.36 | -19.24 | 0.232 | 0.235 |  | 21.46 | 1.00 | 37 | True | True |
 | cycle-flex | flex_lines | W2 | 2 | full_sample | 8 | 27.73 | 31.01 | 35.63 | -11.44 | -19.35 | 0.232 | 0.235 |  | 21.49 | 1.00 | 12 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 27.73 | 31.01 | 35.63 | -11.44 | -19.35 | 0.232 | 0.235 |  | 21.49 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 27.73 | 31.01 | 35.63 | -11.44 | -19.35 | 0.232 | 0.235 |  | 21.49 | 1.00 | 10 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 27.73 | 31.01 | 35.63 | -11.44 | -19.35 | 0.232 | 0.235 |  | 21.49 | 1.00 | 11 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 27.73 | 31.01 | 35.63 | -11.44 | -19.35 | 0.232 | 0.235 |  | 21.49 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 27.73 | 31.01 | 35.63 | -11.44 | -19.35 | 0.232 | 0.235 |  | 21.49 | 1.00 | 12 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 27.73 | 31.01 | 35.63 | -11.44 | -19.35 | 0.232 | 0.235 |  | 21.49 | 1.00 | 14 | True | True |
@@ -5117,6 +5926,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 35.72 | 38.10 | 40.76 | -0.60 | -13.55 | 0.299 | 0.289 |  | 25.08 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 38.14 | 37.92 | 41.88 | 7.32 | -5.66 | 0.319 | 0.288 |  | 30.13 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 38.22 | 37.92 | 41.95 | 7.61 | -5.38 | 0.320 | 0.288 |  | 26.80 | 1.00 | 7 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 38.51 | 43.56 | 43.09 | -25.99 | -34.62 | 0.323 | 0.331 |  | 24.39 | 1.00 | 37 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 38.61 | 43.69 | 43.18 | -26.13 | -34.78 | 0.323 | 0.332 |  | 24.45 | 1.00 | 15 | True | True |
+| alt-augmented | lines_aug | W2 | 2 | full_sample | 8 | 38.61 | 43.69 | 43.18 | -26.13 | -34.78 | 0.323 | 0.332 |  | 24.45 | 1.00 | 10 | True | True |
 | driver-lines | lines_v2 | W2 | 2 | full_sample | 8 | 38.61 | 43.69 | 43.18 | -26.13 | -34.78 | 0.323 | 0.332 |  | 24.45 | 1.00 | 10 | True | True |
 | cycle-flex | flex_lines | W2 | 2 | full_sample | 8 | 38.61 | 43.69 | 43.18 | -26.13 | -34.78 | 0.323 | 0.332 |  | 24.45 | 1.00 | 12 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 2 | full_sample | 8 | 49.88 | 51.18 | 57.83 | -40.62 | -44.58 | 0.418 | 0.389 |  | 34.20 | 0.75 | 1 | True | True |
@@ -5399,15 +6211,22 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | baselines-margin | seasonal_naive_drift | W1 | 0 | PIT | 14 | 49.83 | 39.88 | 62.57 | -6.96 | -11.57 | 0.229 | 0.165 |  | 36.40 | 0.86 | 1 | True | True |
 | margin-ts | sarima_margin | W1 | 0 | PIT | 14 | 50.24 | 42.80 | 68.62 | 8.88 | -7.94 | 0.231 | 0.177 |  | 40.70 | 0.93 | 15 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 52.94 | 40.82 | 63.19 | 0.64 | -8.93 | 0.243 | 0.168 |  | 38.47 | 0.93 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 55.08 | 44.53 | 65.87 | 6.99 | -4.82 | 0.253 | 0.184 |  | 40.63 | 0.93 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 55.08 | 44.53 | 65.87 | 6.99 | -4.82 | 0.253 | 0.184 |  | 40.63 | 0.93 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 55.22 | 45.50 | 65.56 | 8.75 | -0.93 | 0.254 | 0.188 |  | 40.57 | 0.93 | 37 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 55.61 | 45.01 | 64.28 | 7.57 | 0.13 | 0.256 | 0.186 |  | 41.50 | 1.00 | 7 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 56.98 | 47.46 | 65.69 | -4.10 | -16.61 | 0.262 | 0.196 |  | 40.88 | 0.93 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | PIT | 14 | 57.31 | 54.16 | 73.30 | 13.50 | 1.19 | 0.263 | 0.224 |  | 49.22 | 1.00 | 2 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 57.56 | 47.79 | 67.13 | -3.12 | -10.52 | 0.265 | 0.197 |  | 39.82 | 0.93 | 11 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 57.56 | 49.14 | 66.47 | 2.89 | -4.08 | 0.265 | 0.203 |  | 39.96 | 0.93 | 12 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 57.58 | 47.66 | 65.00 | 1.36 | -4.38 | 0.265 | 0.197 |  | 40.77 | 1.00 | 7 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 58.00 | 48.76 | 65.97 | -4.27 | -12.95 | 0.267 | 0.201 |  | 39.97 | 0.93 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 58.06 | 48.73 | 67.02 | 2.10 | -5.34 | 0.267 | 0.201 |  | 40.10 | 0.93 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | PIT | 14 | 58.06 | 48.73 | 67.02 | 2.10 | -5.34 | 0.267 | 0.201 |  | 40.10 | 0.93 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 58.11 | 50.09 | 66.69 | 4.30 | -1.13 | 0.267 | 0.207 |  | 40.14 | 0.93 | 37 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | PIT | 14 | 59.34 | 48.14 | 66.96 | -5.74 | -14.19 | 0.273 | 0.199 |  | 40.41 | 0.93 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 60.29 | 55.16 | 73.81 | 25.69 | 26.62 | 0.277 | 0.228 |  | 46.82 | 0.93 | 15 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | PIT | 14 | 61.10 | 55.30 | 72.96 | 14.92 | 17.28 | 0.281 | 0.228 |  | 44.27 | 0.93 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 61.18 | 55.22 | 72.42 | -12.35 | -11.06 | 0.281 | 0.228 |  | 53.26 | 0.93 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 63.67 | 51.96 | 73.52 | -22.12 | -11.09 | 0.293 | 0.214 |  | 46.21 | 0.86 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | PIT | 14 | 63.78 | 57.75 | 74.44 | -15.23 | -14.26 | 0.293 | 0.238 |  | 56.26 | 0.93 | 7 | True | True |
@@ -5426,13 +6245,20 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | sarima_margin | W1 | 0 | full_sample | 14 | 50.00 | 40.28 | 60.57 | 1.89 | -4.39 | 0.230 | 0.166 |  | 35.47 | 0.79 | 14 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 51.78 | 41.44 | 59.48 | 2.77 | -4.12 | 0.238 | 0.171 |  | 34.61 | 0.79 | 12 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 51.85 | 42.89 | 59.41 | 4.12 | -3.06 | 0.238 | 0.177 |  | 34.71 | 0.79 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 51.96 | 48.25 | 57.14 | 4.16 | 4.95 | 0.239 | 0.199 |  | 33.51 | 0.93 | 15 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 52.27 | 43.66 | 59.58 | -3.51 | -12.48 | 0.240 | 0.180 |  | 34.95 | 0.79 | 12 | True | True |
 | cycle-flex | flex_margin | W1 | 0 | full_sample | 14 | 52.34 | 43.45 | 59.29 | 4.32 | -1.68 | 0.241 | 0.179 |  | 34.80 | 0.79 | 22 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 52.44 | 42.95 | 61.03 | 6.44 | -1.94 | 0.241 | 0.177 |  | 35.40 | 0.93 | 11 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 52.49 | 42.35 | 59.19 | 2.03 | -1.36 | 0.241 | 0.175 |  | 34.53 | 0.86 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 52.58 | 41.86 | 60.05 | 1.21 | -4.10 | 0.242 | 0.173 |  | 35.04 | 0.86 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 52.58 | 41.86 | 60.05 | 1.21 | -4.10 | 0.242 | 0.173 |  | 35.04 | 0.86 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 52.85 | 43.36 | 59.53 | 1.75 | -0.23 | 0.243 | 0.179 |  | 34.72 | 0.86 | 14 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 53.45 | 49.80 | 57.37 | 2.95 | 9.31 | 0.246 | 0.206 |  | 33.26 | 0.93 | 15 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 53.66 | 43.21 | 60.83 | 3.32 | 0.00 | 0.247 | 0.178 |  | 35.53 | 0.93 | 7 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 53.89 | 44.35 | 60.71 | 4.15 | 0.11 | 0.248 | 0.183 |  | 35.37 | 0.93 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 53.89 | 44.35 | 60.71 | 4.15 | 0.11 | 0.248 | 0.183 |  | 35.37 | 0.93 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 53.96 | 43.90 | 60.92 | 4.54 | 1.61 | 0.248 | 0.181 |  | 35.67 | 0.93 | 7 | True | True |
+| alt-augmented | margin_aug | W1 | 0 | full_sample | 14 | 54.27 | 45.40 | 59.94 | 3.01 | 0.90 | 0.249 | 0.187 |  | 35.12 | 0.86 | 37 | True | True |
 | driver-lines | margin_v2 | W1 | 0 | full_sample | 14 | 55.10 | 45.41 | 61.89 | 4.83 | 0.41 | 0.253 | 0.187 |  | 36.31 | 0.93 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 0 | full_sample | 14 | 55.85 | 43.55 | 72.42 | 43.66 | 30.67 | 0.257 | 0.180 |  | 43.64 | 0.86 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 0 | full_sample | 14 | 56.53 | 55.82 | 70.79 | 15.53 | 8.05 | 0.260 | 0.230 |  | 51.83 | 1.00 | 2 | True | True |
@@ -5453,15 +6279,22 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 65.18 | 54.84 | 74.47 | 13.93 | -7.84 | 0.306 | 0.227 |  | 48.87 | 0.77 | 7 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 66.37 | 56.77 | 76.31 | 6.73 | -14.43 | 0.312 | 0.235 |  | 49.91 | 0.77 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 68.01 | 62.52 | 75.92 | -10.29 | -22.25 | 0.319 | 0.259 |  | 57.69 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 68.98 | 60.23 | 80.46 | 12.15 | -14.84 | 0.324 | 0.249 |  | 50.81 | 0.85 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 68.98 | 60.23 | 80.46 | 12.15 | -14.84 | 0.324 | 0.249 |  | 50.81 | 0.85 | 10 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 69.08 | 64.65 | 80.60 | 0.36 | -28.13 | 0.324 | 0.268 |  | 49.84 | 0.85 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 69.11 | 60.45 | 80.55 | 12.34 | -14.66 | 0.324 | 0.250 |  | 50.84 | 0.85 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 69.47 | 59.78 | 81.48 | 6.48 | -17.39 | 0.326 | 0.247 |  | 50.95 | 0.85 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 69.47 | 59.78 | 81.48 | 6.48 | -17.39 | 0.326 | 0.247 |  | 50.95 | 0.85 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 69.49 | 59.55 | 81.54 | 6.70 | -16.95 | 0.326 | 0.246 |  | 50.96 | 0.85 | 12 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 69.58 | 61.78 | 80.79 | 0.40 | -24.22 | 0.327 | 0.256 |  | 49.95 | 0.85 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 69.72 | 60.12 | 81.62 | 6.61 | -17.31 | 0.327 | 0.249 |  | 51.03 | 0.85 | 37 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 69.95 | 53.56 | 79.73 | -4.28 | -17.56 | 0.328 | 0.222 |  | 51.53 | 0.85 | 12 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 70.11 | 65.58 | 77.00 | -7.02 | -18.57 | 0.329 | 0.271 |  | 55.51 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | PIT | 13 | 70.74 | 61.84 | 82.89 | -11.35 | -25.02 | 0.332 | 0.256 |  | 50.08 | 0.85 | 14 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 71.23 | 62.50 | 81.58 | 0.32 | -23.22 | 0.334 | 0.259 |  | 50.94 | 0.85 | 11 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | PIT | 13 | 72.27 | 62.04 | 86.52 | 0.33 | -25.03 | 0.339 | 0.257 |  | 62.97 | 1.00 | 22 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 74.44 | 65.80 | 90.28 | 8.52 | -22.83 | 0.349 | 0.272 |  | 57.13 | 0.85 | 15 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | PIT | 13 | 75.75 | 64.43 | 89.09 | 3.83 | -22.45 | 0.356 | 0.267 |  | 56.21 | 0.85 | 15 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | PIT | 13 | 76.02 | 91.42 | 91.16 | -28.80 | -68.53 | 0.357 | 0.378 |  | 58.55 | 0.92 | 2 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 1 | PIT | 13 | 77.09 | 63.13 | 91.54 | -9.64 | -26.43 | 0.362 | 0.261 |  | 55.54 | 0.69 | 1 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | PIT | 13 | 79.41 | 62.68 | 103.35 | -44.14 | -40.79 | 0.373 | 0.259 |  | 1,714.69 | 1.00 | 7 | True | True |
@@ -5481,8 +6314,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 58.90 | 50.52 | 65.42 | 9.13 | -7.84 | 0.276 | 0.209 |  | 38.18 | 0.85 | 7 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 59.08 | 52.16 | 65.22 | 6.78 | -10.44 | 0.277 | 0.216 |  | 37.94 | 0.92 | 14 | True | True |
 | cycle-flex | flex_margin | W1 | 1 | full_sample | 13 | 59.73 | 58.03 | 67.09 | 0.69 | -22.75 | 0.280 | 0.240 |  | 39.06 | 0.92 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 59.76 | 53.85 | 65.98 | 6.09 | -13.47 | 0.281 | 0.223 |  | 38.48 | 0.85 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 59.78 | 53.83 | 66.00 | 6.08 | -13.51 | 0.281 | 0.223 |  | 38.51 | 0.85 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 59.78 | 53.83 | 66.00 | 6.08 | -13.51 | 0.281 | 0.223 |  | 38.51 | 0.85 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 59.95 | 52.59 | 66.89 | 9.17 | -10.26 | 0.281 | 0.218 |  | 38.87 | 0.85 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 60.07 | 52.68 | 67.05 | 9.15 | -10.37 | 0.282 | 0.218 |  | 38.97 | 0.85 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 60.07 | 52.68 | 67.05 | 9.15 | -10.37 | 0.282 | 0.218 |  | 38.97 | 0.85 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 61.31 | 56.92 | 68.35 | 9.79 | -11.57 | 0.288 | 0.236 |  | 39.76 | 0.92 | 15 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 61.31 | 60.01 | 66.69 | -0.03 | -20.84 | 0.288 | 0.248 |  | 38.85 | 0.92 | 15 | True | True |
+| alt-augmented | margin_aug | W1 | 1 | full_sample | 13 | 61.81 | 55.79 | 69.39 | 9.95 | -12.86 | 0.290 | 0.231 |  | 40.43 | 0.85 | 11 | True | True |
 | driver-lines | margin_v2 | W1 | 1 | full_sample | 13 | 62.28 | 53.87 | 70.09 | 9.68 | -10.84 | 0.292 | 0.223 |  | 40.76 | 0.85 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 1 | full_sample | 13 | 63.55 | 57.22 | 78.46 | 22.95 | 10.82 | 0.298 | 0.237 |  | 1,992.66 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W1 | 1 | full_sample | 13 | 76.02 | 91.42 | 91.16 | -28.80 | -68.53 | 0.357 | 0.378 |  | 56.17 | 1.00 | 2 | True | True |
@@ -5507,10 +6347,17 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 67.19 | 57.95 | 78.39 | 14.24 | -17.22 | 0.323 | 0.240 |  | 46.74 | 0.92 | 7 | True | True |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 69.40 | 64.55 | 82.01 | 9.39 | -27.67 | 0.333 | 0.268 |  | 50.10 | 0.92 | 12 | True | True |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 69.41 | 62.10 | 81.77 | 8.33 | -26.19 | 0.334 | 0.258 |  | 48.25 | 0.92 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 70.39 | 60.65 | 84.06 | 20.86 | -15.35 | 0.338 | 0.252 |  | 51.06 | 0.83 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 70.39 | 60.65 | 84.06 | 20.86 | -15.35 | 0.338 | 0.252 |  | 51.06 | 0.83 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 70.49 | 60.64 | 84.04 | 21.18 | -14.88 | 0.339 | 0.252 |  | 51.13 | 0.83 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 71.27 | 61.50 | 84.00 | 14.00 | -20.56 | 0.342 | 0.255 |  | 48.82 | 0.92 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 71.27 | 61.50 | 84.00 | 14.00 | -20.56 | 0.342 | 0.255 |  | 48.82 | 0.92 | 11 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 71.27 | 61.50 | 84.00 | 14.00 | -20.56 | 0.342 | 0.255 |  | 48.82 | 0.92 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 71.39 | 61.58 | 84.03 | 14.26 | -20.24 | 0.343 | 0.256 |  | 48.92 | 0.92 | 37 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | PIT | 12 | 72.64 | 62.87 | 84.86 | 14.19 | -20.43 | 0.349 | 0.261 |  | 49.30 | 0.92 | 12 | True | True |
 | cycle-flex | flex_margin | W1 | 2 | PIT | 12 | 73.91 | 63.84 | 89.13 | 13.00 | -25.21 | 0.355 | 0.265 |  | 66.13 | 1.00 | 22 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 76.40 | 64.11 | 93.60 | 25.34 | -14.33 | 0.367 | 0.266 |  | 56.55 | 0.83 | 15 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | PIT | 12 | 76.62 | 64.17 | 92.88 | 18.07 | -19.30 | 0.368 | 0.266 |  | 54.20 | 0.83 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 76.81 | 68.70 | 90.51 | -47.84 | -55.59 | 0.369 | 0.285 |  | 233.56 | 0.92 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W1 | 2 | PIT | 12 | 79.34 | 71.00 | 100.81 | -56.59 | -60.50 | 0.381 | 0.295 |  | 279.41 | 0.92 | 7 | True | True |
 | baselines-margin | seasonal_naive_drift | W1 | 2 | PIT | 12 | 82.03 | 73.28 | 96.72 | -10.87 | -39.10 | 0.394 | 0.304 |  | 58.12 | 0.67 | 1 | True | True |
@@ -5528,8 +6375,15 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 55.26 | 47.41 | 65.96 | 18.24 | -6.61 | 0.265 | 0.197 |  | 38.49 | 0.92 | 7 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 55.30 | 50.06 | 64.71 | 15.90 | -10.18 | 0.266 | 0.208 |  | 38.07 | 0.92 | 14 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 55.47 | 48.31 | 65.83 | 16.98 | -8.17 | 0.267 | 0.200 |  | 38.40 | 0.92 | 7 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 56.77 | 51.99 | 66.51 | 14.21 | -13.27 | 0.273 | 0.216 |  | 38.61 | 0.92 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 56.82 | 52.03 | 66.57 | 14.13 | -13.41 | 0.273 | 0.216 |  | 38.65 | 0.92 | 10 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 56.82 | 52.03 | 66.57 | 14.13 | -13.41 | 0.273 | 0.216 |  | 38.65 | 0.92 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 56.83 | 52.50 | 66.35 | 12.98 | -14.59 | 0.273 | 0.218 |  | 38.56 | 0.92 | 15 | True | True |
 | cycle-flex | flex_margin | W1 | 2 | full_sample | 12 | 57.46 | 51.24 | 67.18 | 17.96 | -9.45 | 0.276 | 0.213 |  | 39.20 | 0.83 | 12 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 57.49 | 50.82 | 68.31 | 17.38 | -10.34 | 0.276 | 0.211 |  | 39.99 | 0.92 | 37 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 57.57 | 50.97 | 68.38 | 17.16 | -10.62 | 0.277 | 0.211 |  | 40.04 | 0.92 | 15 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 57.59 | 50.93 | 68.46 | 17.30 | -10.50 | 0.277 | 0.211 |  | 40.07 | 0.92 | 10 | True | True |
+| alt-augmented | margin_aug | W1 | 2 | full_sample | 12 | 57.59 | 50.93 | 68.46 | 17.30 | -10.50 | 0.277 | 0.211 |  | 40.07 | 0.92 | 11 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 57.59 | 50.93 | 68.46 | 17.30 | -10.50 | 0.277 | 0.211 |  | 40.07 | 0.92 | 10 | True | True |
 | margin-ts | per_night_seasonal | W1 | 2 | full_sample | 12 | 58.40 | 43.67 | 76.44 | 51.25 | 32.18 | 0.281 | 0.181 |  | 50.16 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W1 | 2 | full_sample | 12 | 59.10 | 52.56 | 70.31 | 17.77 | -11.22 | 0.284 | 0.218 |  | 41.10 | 0.92 | 12 | True | True |
@@ -5549,7 +6403,9 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | sarima_margin | W2 | 0 | PIT | 10 | 36.02 | 36.98 | 45.80 | -12.12 | -17.06 | 0.158 | 0.148 |  | 30.28 | 1.00 | 14 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 41.21 | 35.56 | 46.41 | -15.99 | -15.90 | 0.181 | 0.143 |  | 32.55 | 1.00 | 10 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | PIT | 10 | 42.60 | 36.77 | 52.19 | -21.00 | -16.98 | 0.187 | 0.147 |  | 31.49 | 1.00 | 1 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 45.47 | 39.88 | 51.57 | -9.08 | -11.87 | 0.200 | 0.160 |  | 36.08 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 45.47 | 39.88 | 51.57 | -9.08 | -11.87 | 0.200 | 0.160 |  | 36.08 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 45.74 | 40.97 | 50.86 | -6.97 | -7.65 | 0.201 | 0.164 |  | 35.90 | 1.00 | 37 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 46.36 | 46.46 | 52.04 | -20.88 | -11.52 | 0.204 | 0.186 |  | 36.03 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 46.43 | 40.64 | 52.69 | -2.53 | -4.89 | 0.204 | 0.163 |  | 37.89 | 1.00 | 7 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 46.53 | 42.91 | 52.07 | -20.69 | -23.92 | 0.204 | 0.172 |  | 36.62 | 1.00 | 12 | True | True |
@@ -5557,9 +6413,14 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 48.53 | 44.54 | 53.46 | -20.93 | -19.82 | 0.213 | 0.179 |  | 35.02 | 1.00 | 12 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 49.07 | 43.61 | 54.50 | -10.76 | -9.75 | 0.215 | 0.175 |  | 36.85 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 49.15 | 45.14 | 54.44 | -13.21 | -10.59 | 0.216 | 0.181 |  | 35.14 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 49.45 | 43.80 | 56.79 | -20.47 | -17.37 | 0.217 | 0.176 |  | 35.24 | 1.00 | 11 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 49.84 | 44.70 | 55.38 | -14.32 | -11.99 | 0.219 | 0.179 |  | 35.33 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 49.84 | 44.70 | 55.38 | -14.32 | -11.99 | 0.219 | 0.179 |  | 35.33 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 50.07 | 46.25 | 54.91 | -11.42 | -7.37 | 0.220 | 0.185 |  | 35.38 | 1.00 | 37 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | PIT | 10 | 50.32 | 45.12 | 56.73 | -16.27 | -14.45 | 0.221 | 0.181 |  | 36.77 | 1.00 | 14 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | PIT | 10 | 50.57 | 43.93 | 56.07 | -22.07 | -20.99 | 0.222 | 0.176 |  | 36.42 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 50.69 | 50.95 | 54.25 | 9.50 | 20.91 | 0.223 | 0.204 |  | 41.82 | 1.00 | 15 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | PIT | 10 | 52.89 | 51.59 | 58.32 | -1.61 | 11.71 | 0.232 | 0.207 |  | 39.16 | 1.00 | 15 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 56.74 | 53.30 | 69.68 | -17.97 | -14.05 | 0.249 | 0.214 |  | 48.41 | 0.90 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 58.07 | 53.73 | 68.58 | -32.42 | -29.86 | 0.255 | 0.215 |  | 48.28 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | PIT | 10 | 60.39 | 56.21 | 71.81 | -19.50 | -16.96 | 0.265 | 0.225 |  | 50.84 | 0.90 | 7 | True | True |
@@ -5579,16 +6440,23 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 42.54 | 39.49 | 48.52 | 1.89 | -4.44 | 0.187 | 0.158 |  | 28.50 | 0.90 | 22 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 0 | full_sample | 10 | 42.60 | 36.77 | 52.19 | -21.00 | -16.98 | 0.187 | 0.147 |  | 30.63 | 0.80 | 1 | True | True |
 | cycle-flex | flex_margin | W2 | 0 | full_sample | 10 | 42.70 | 39.73 | 49.00 | -10.37 | -16.68 | 0.187 | 0.159 |  | 29.03 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 42.88 | 37.68 | 49.46 | -3.17 | -7.32 | 0.188 | 0.151 |  | 29.42 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 42.88 | 37.68 | 49.46 | -3.17 | -7.32 | 0.188 | 0.151 |  | 29.42 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 43.16 | 38.35 | 48.79 | -1.77 | -4.20 | 0.189 | 0.154 |  | 29.02 | 1.00 | 37 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 44.75 | 39.86 | 50.84 | 0.78 | -2.09 | 0.196 | 0.160 |  | 30.27 | 1.00 | 14 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 44.99 | 39.33 | 51.43 | 0.10 | -2.70 | 0.197 | 0.158 |  | 30.96 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 45.10 | 40.46 | 50.67 | -0.50 | -3.03 | 0.198 | 0.162 |  | 30.38 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 45.10 | 40.46 | 50.67 | -0.50 | -3.03 | 0.198 | 0.162 |  | 30.38 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 45.29 | 39.25 | 51.79 | -3.32 | -6.80 | 0.199 | 0.157 |  | 30.88 | 1.00 | 11 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 45.49 | 40.10 | 51.65 | 1.50 | -0.99 | 0.200 | 0.161 |  | 31.20 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 0 | full_sample | 10 | 45.58 | 41.32 | 51.16 | -0.54 | -3.03 | 0.200 | 0.166 |  | 30.94 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 45.93 | 41.76 | 50.24 | -1.00 | -1.84 | 0.202 | 0.167 |  | 30.33 | 1.00 | 37 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 47.74 | 52.23 | 55.89 | -1.70 | 1.23 | 0.210 | 0.209 |  | 49.41 | 1.00 | 2 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 48.19 | 53.98 | 56.46 | 10.85 | 14.25 | 0.212 | 0.216 |  | 148.98 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 48.66 | 54.81 | 57.26 | 14.92 | 18.46 | 0.214 | 0.220 |  | 336.62 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 49.39 | 56.06 | 59.00 | 21.01 | 24.79 | 0.217 | 0.225 |  | 174.19 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 49.52 | 47.92 | 52.43 | -0.58 | 7.82 | 0.217 | 0.192 |  | 30.67 | 1.00 | 15 | True | True |
+| alt-augmented | margin_aug | W2 | 0 | full_sample | 10 | 49.53 | 46.55 | 52.94 | -3.75 | 1.79 | 0.217 | 0.187 |  | 31.74 | 1.00 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 0 | full_sample | 10 | 52.66 | 52.78 | 61.38 | 1.87 | 2.82 | 0.231 | 0.212 |  | 152.64 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 53.27 | 44.39 | 69.57 | 18.60 | 5.38 | 0.234 | 0.178 |  | 53.85 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 0 | full_sample | 10 | 55.37 | 45.15 | 75.94 | 34.81 | 22.30 | 0.243 | 0.181 |  | 55.09 | 1.00 | 7 | True | True |
@@ -5601,14 +6469,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 50.12 | 48.43 | 56.40 | -13.46 | -20.22 | 0.213 | 0.191 |  | 36.69 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | PIT | 9 | 50.29 | 46.75 | 54.96 | -33.67 | -26.37 | 0.214 | 0.185 |  | 45.86 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 51.82 | 50.71 | 59.83 | -23.18 | -27.44 | 0.220 | 0.200 |  | 36.89 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 52.20 | 53.43 | 58.49 | -21.32 | -29.69 | 0.222 | 0.211 |  | 38.03 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 52.20 | 53.43 | 58.49 | -21.32 | -29.69 | 0.222 | 0.211 |  | 38.03 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 52.42 | 53.69 | 58.70 | -21.03 | -29.48 | 0.223 | 0.212 |  | 38.07 | 1.00 | 37 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 53.45 | 53.22 | 61.85 | -27.70 | -32.00 | 0.227 | 0.210 |  | 38.42 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 53.45 | 53.22 | 61.85 | -27.70 | -32.00 | 0.227 | 0.210 |  | 38.42 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 53.48 | 52.95 | 61.97 | -27.39 | -31.50 | 0.227 | 0.209 |  | 38.42 | 1.00 | 12 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 53.67 | 46.36 | 60.58 | -35.69 | -30.18 | 0.228 | 0.183 |  | 42.08 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 53.84 | 53.62 | 62.17 | -27.48 | -31.89 | 0.229 | 0.212 |  | 38.56 | 1.00 | 37 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 53.90 | 59.10 | 63.03 | -33.70 | -43.39 | 0.229 | 0.234 |  | 40.05 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 54.06 | 57.97 | 62.65 | -32.60 | -40.52 | 0.230 | 0.229 |  | 41.10 | 1.00 | 15 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 54.42 | 55.86 | 62.38 | -33.59 | -38.89 | 0.231 | 0.221 |  | 39.18 | 1.00 | 12 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | PIT | 9 | 56.54 | 56.57 | 63.83 | -29.86 | -34.56 | 0.241 | 0.224 |  | 39.56 | 1.00 | 14 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | PIT | 9 | 57.69 | 55.83 | 66.95 | -39.51 | -41.32 | 0.245 | 0.221 |  | 54.31 | 1.00 | 22 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 57.75 | 56.88 | 64.76 | -34.84 | -38.02 | 0.246 | 0.225 |  | 39.98 | 1.00 | 11 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | PIT | 9 | 58.14 | 57.26 | 64.94 | -35.90 | -38.95 | 0.247 | 0.226 |  | 41.61 | 1.00 | 15 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 58.96 | 53.77 | 78.70 | -52.09 | -47.76 | 0.251 | 0.212 |  | 154.00 | 1.00 | 7 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 1 | PIT | 9 | 60.12 | 55.98 | 79.28 | -50.98 | -45.43 | 0.256 | 0.221 |  | 1,487.56 | 1.00 | 7 | True | True |
 | baselines-margin | seasonal_naive_drift | W2 | 1 | PIT | 9 | 63.56 | 57.62 | 72.67 | -39.11 | -37.83 | 0.270 | 0.228 |  | 43.59 | 0.89 | 1 | True | True |
@@ -5630,11 +6505,18 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 46.13 | 47.17 | 53.44 | -11.75 | -21.32 | 0.196 | 0.186 |  | 30.90 | 1.00 | 12 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 46.97 | 44.66 | 53.88 | -9.13 | -15.58 | 0.200 | 0.176 |  | 31.72 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 47.60 | 45.78 | 54.16 | -10.46 | -17.21 | 0.202 | 0.181 |  | 31.90 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 48.48 | 47.83 | 55.12 | -12.46 | -20.57 | 0.206 | 0.189 |  | 32.42 | 1.00 | 37 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 48.52 | 47.90 | 55.15 | -12.63 | -20.73 | 0.206 | 0.189 |  | 32.47 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 48.52 | 47.90 | 55.15 | -12.63 | -20.73 | 0.206 | 0.189 |  | 32.47 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 48.66 | 47.88 | 55.41 | -11.19 | -19.48 | 0.207 | 0.189 |  | 32.42 | 1.00 | 14 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 48.85 | 49.52 | 54.94 | -14.77 | -23.63 | 0.208 | 0.196 |  | 31.98 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 48.85 | 49.52 | 54.94 | -14.77 | -23.63 | 0.208 | 0.196 |  | 31.98 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 48.89 | 49.56 | 55.04 | -14.65 | -23.54 | 0.208 | 0.196 |  | 31.99 | 1.00 | 37 | True | True |
 | driver-lines | margin_v2 | W2 | 1 | full_sample | 9 | 49.07 | 48.49 | 56.32 | -13.03 | -21.68 | 0.209 | 0.192 |  | 33.15 | 1.00 | 12 | True | True |
 | cycle-flex | flex_margin | W2 | 1 | full_sample | 9 | 50.59 | 54.77 | 58.34 | -22.90 | -34.08 | 0.215 | 0.216 |  | 34.24 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 50.79 | 51.19 | 56.72 | -16.08 | -24.77 | 0.216 | 0.202 |  | 34.05 | 1.00 | 11 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 53.74 | 53.63 | 60.39 | -13.12 | -22.27 | 0.229 | 0.212 |  | 35.50 | 1.00 | 15 | True | True |
+| alt-augmented | margin_aug | W2 | 1 | full_sample | 9 | 55.66 | 57.91 | 61.87 | -21.41 | -31.07 | 0.237 | 0.229 |  | 35.84 | 1.00 | 15 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 58.88 | 54.93 | 69.04 | 15.38 | 4.34 | 0.250 | 0.217 |  | 47.45 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 61.87 | 56.39 | 75.41 | 31.81 | 21.39 | 0.263 | 0.223 |  | 50.63 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 1 | full_sample | 9 | 62.57 | 56.51 | 77.88 | 36.97 | 26.62 | 0.266 | 0.223 |  | 53.45 | 1.00 | 7 | True | True |
@@ -5651,14 +6533,21 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 46.49 | 49.24 | 59.88 | -44.08 | -46.82 | 0.193 | 0.192 |  | 45.37 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 46.87 | 43.38 | 54.76 | -44.06 | -38.62 | 0.195 | 0.169 |  | 47.16 | 1.00 | 7 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 46.90 | 48.77 | 62.96 | -42.64 | -44.75 | 0.195 | 0.190 |  | 44.29 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 47.86 | 52.25 | 56.15 | -26.44 | -36.41 | 0.199 | 0.204 |  | 39.61 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 47.86 | 52.25 | 56.15 | -26.44 | -36.41 | 0.199 | 0.204 |  | 39.61 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 48.05 | 52.25 | 56.13 | -25.92 | -35.86 | 0.199 | 0.204 |  | 39.73 | 1.00 | 37 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 48.14 | 41.94 | 57.88 | -39.81 | -35.28 | 0.200 | 0.164 |  | 46.93 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 48.90 | 53.56 | 57.50 | -27.68 | -37.95 | 0.203 | 0.209 |  | 41.13 | 1.00 | 15 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 49.74 | 50.76 | 56.42 | -33.06 | -38.43 | 0.207 | 0.198 |  | 34.17 | 1.00 | 14 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 49.95 | 51.40 | 56.99 | -29.47 | -36.29 | 0.207 | 0.200 |  | 37.94 | 1.00 | 7 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 50.37 | 55.39 | 56.60 | -41.00 | -48.50 | 0.209 | 0.216 |  | 57.64 | 1.00 | 22 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 51.29 | 54.00 | 58.67 | -34.61 | -41.74 | 0.213 | 0.211 |  | 37.87 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 51.29 | 54.00 | 58.67 | -34.61 | -41.74 | 0.213 | 0.211 |  | 37.87 | 1.00 | 11 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 51.29 | 54.00 | 58.67 | -34.61 | -41.74 | 0.213 | 0.211 |  | 37.87 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 51.51 | 54.12 | 58.76 | -34.19 | -41.34 | 0.214 | 0.211 |  | 38.02 | 1.00 | 37 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 51.58 | 58.50 | 60.91 | -38.44 | -49.09 | 0.214 | 0.228 |  | 40.88 | 1.00 | 12 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | PIT | 8 | 51.67 | 55.73 | 58.85 | -39.95 | -47.27 | 0.215 | 0.217 |  | 38.39 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | PIT | 8 | 52.17 | 54.74 | 59.54 | -35.66 | -42.64 | 0.217 | 0.213 |  | 39.76 | 1.00 | 15 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | PIT | 8 | 53.34 | 55.60 | 60.49 | -34.33 | -41.58 | 0.221 | 0.217 |  | 38.58 | 1.00 | 12 | True | True |
 | margin-ts | sarima_margin | W2 | 2 | PIT | 8 | 55.29 | 51.52 | 60.05 | -25.50 | -29.23 | 0.230 | 0.201 |  | 45.60 | 0.75 | 14 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | PIT | 8 | 61.14 | 63.69 | 76.25 | -57.33 | -60.97 | 0.254 | 0.248 |  | 50.09 | 1.00 | 7 | True | True |
@@ -5677,12 +6566,19 @@ Registry FORMAT v1.0; margin harness `10_harness_margin`. Built 2026-09-11 (vali
 | margin-ts | sarima_margin | W2 | 2 | full_sample | 8 | 42.44 | 39.35 | 50.71 | -3.13 | -9.35 | 0.176 | 0.153 |  | 34.27 | 1.00 | 14 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 42.77 | 42.72 | 51.43 | -12.76 | -20.31 | 0.178 | 0.167 |  | 31.45 | 1.00 | 7 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 43.58 | 43.93 | 51.83 | -14.15 | -21.97 | 0.181 | 0.171 |  | 31.62 | 1.00 | 7 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 43.94 | 45.97 | 52.80 | -16.22 | -25.38 | 0.182 | 0.179 |  | 32.41 | 1.00 | 37 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 44.01 | 46.08 | 52.86 | -16.42 | -25.59 | 0.183 | 0.180 |  | 32.47 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 44.01 | 46.08 | 52.86 | -16.42 | -25.59 | 0.183 | 0.180 |  | 32.47 | 1.00 | 11 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 44.01 | 46.08 | 52.86 | -16.42 | -25.59 | 0.183 | 0.180 |  | 32.47 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 44.08 | 46.16 | 52.88 | -16.53 | -25.70 | 0.183 | 0.180 |  | 32.50 | 1.00 | 15 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 44.24 | 46.07 | 53.29 | -14.85 | -24.21 | 0.184 | 0.180 |  | 32.42 | 1.00 | 14 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 44.30 | 45.04 | 51.23 | -11.96 | -20.79 | 0.184 | 0.176 |  | 30.18 | 0.88 | 22 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 44.97 | 46.89 | 52.70 | -14.27 | -23.92 | 0.187 | 0.183 |  | 31.38 | 1.00 | 12 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 45.02 | 47.45 | 54.15 | -16.98 | -26.95 | 0.187 | 0.185 |  | 33.16 | 1.00 | 12 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 45.56 | 48.20 | 53.74 | -18.28 | -27.94 | 0.189 | 0.188 |  | 31.79 | 1.00 | 37 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 45.57 | 48.24 | 53.69 | -18.47 | -28.11 | 0.189 | 0.188 |  | 31.79 | 1.00 | 10 | True | True |
 | driver-lines | margin_v2 | W2 | 2 | full_sample | 8 | 45.57 | 48.24 | 53.69 | -18.47 | -28.11 | 0.189 | 0.188 |  | 31.79 | 1.00 | 10 | True | True |
+| alt-augmented | margin_aug | W2 | 2 | full_sample | 8 | 46.14 | 48.97 | 54.07 | -19.63 | -29.30 | 0.192 | 0.191 |  | 32.01 | 1.00 | 15 | True | True |
 | margin-ts | per_night_seasonal | W2 | 2 | full_sample | 8 | 47.33 | 44.16 | 54.81 | 9.01 | -2.10 | 0.196 | 0.172 |  | 38.88 | 1.00 | 7 | True | True |
 | cycle-flex | flex_margin | W2 | 2 | full_sample | 8 | 49.70 | 54.79 | 57.89 | -25.71 | -37.09 | 0.206 | 0.214 |  | 34.39 | 1.00 | 12 | True | True |
 | margin-ts | pct_rev_seasonal | W2 | 2 | full_sample | 8 | 50.22 | 52.36 | 52.70 | -13.15 | -2.42 | 0.208 | 0.204 |  | 244.52 | 1.00 | 7 | True | True |

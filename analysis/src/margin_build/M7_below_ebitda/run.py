@@ -669,14 +669,18 @@ def build_live(m: M7, reg: pd.DataFrame):
         ("rates_+100bp", dict(rate_shift_bp=100.0)), ("rates_-100bp", dict(rate_shift_bp=-100.0)),
         ("no_buyback_renewal", dict()), ("etr_16", dict(etr_override=16.0)), ("etr_19", dict(etr_override=19.0)),
     ]
+    base_path = load_live_path("base")
     for src_key in [base_key, "guide_implied", "street"]:
         for scen, kw in scen_list:
             if src_key != base_key and scen != "base":
                 continue
             path = load_live_path(scen if scen in ("base", "bear", "bull") else "base")
             ev = dict(srcs[src_key]["values"])
-            # FY28 quarters: FY27 margin of the source x FY28 revenue (flat margin); also fills any missing 2027 quarter for the comparison sources
-            fy27_rev = sum(path["rev"][q] for q in quarters[2:])
+            # FY28 quarters: FY27 margin of the source x FY28 revenue (flat margin); also fills any missing 2027 quarter for the comparison sources.
+            # The FY27 margin denominator is the BASE revenue path even in the bear/bull scenarios: the EBITDA source (M1) supplies a $ level,
+            # not a margin, so dividing it by a bear revenue path would raise the implied margin and invert the FY28 scenario order.
+            # Bear/bull revenue paths stop at 4Q27 (WS06), so FY28 carries the base revenue and, with this denominator, the base EBITDA too.
+            fy27_rev = sum(base_path["rev"][q] for q in quarters[2:])
             fy27_e = sum(ev.get(q, np.nan) for q in quarters[2:])
             marg27 = fy27_e / fy27_rev if np.isfinite(fy27_e) else np.nan
             for q in q28:

@@ -32,7 +32,11 @@ and re-running the two-line snippet in the note ("What ran").
 | `M7_eps_error_decomposition.csv` | last prints at h=0: EPS error with PIT EBITDA vs actual EBITDA vs the pre-guide Street, and the per-line contributions |
 | `M7_fy_fcf_test.csv` | FY FCF from each February vintage vs the seasonal naive and the actual |
 | `M7_live_waterfall_quarterly.csv` | 3Q26-4Q28 waterfall by EBITDA source (driver-lines / guide_implied / street) and scenario (base, bear, bull, rates +/-100bp, no buyback renewal, ETR 16 / 19) with the LSEG comparison columns |
-| `M7_below_ebitda_annual_forecasts.csv` | FY26, FY27, FY28 by source and scenario |
+| `M7_below_ebitda_annual_forecasts.csv` | FY26, FY27, FY28 by source and scenario. FY28 EBITDA = the source's FY27 margin (measured on the **base** revenue path) x FY28 base revenue, so FY28 is identical in base/bear/bull: the WS06 bear and bull revenue paths stop at 4Q27 and M1 supplies a $ level, not a margin. Do not read bear/bull as EBITDA scenarios. |
 | `M7_parameter_sheet.csv` | "For the model": every rate, beta, lag, share-count and tax assumption with unit and source |
 | `M7_interest_income_fit_history.csv`, `M7_cfo_other_residual_history.csv` | diagnostics |
 | `M7_build_log.txt` | run log |
+
+## Reproducibility
+
+Re-run from scratch 13 Sep 14:44-14:47: all twelve processed CSVs and all seven registry files came back byte-identical (only `M7_build_log.txt` differs, in its timestamp line); exit 0. A second run at 14:49-14:53, after the FY28 margin-denominator fix described above, also exited 0 and changed only the FY28 bear/bull rows.
