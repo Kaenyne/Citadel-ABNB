@@ -1,0 +1,22 @@
+{
+  "changed_column": "actual_endpoint_balance_value -> conditional_endpoint_balance_value",
+  "conditional_definition": "Uniform modeled cash/share roll with unchanged FY27 EBITDA and multiple; not actual future balances or an underwritten target",
+  "empirical_validation_n": 0,
+  "numerical_cell_string_checks": 4712,
+  "output_hashes": {
+    "accounting_diagnostics.csv": "594fedf5707703a55181b181a88cb5f4a855fce3f99b7d01c68643b9e216c870",
+    "annual_operating_contrast.csv": "e8d1191395cf37be5164ebbde5432a9c126505342d8100749595205df2e58d02",
+    "cash_share_horizons.csv": "32225be1c7d1217557ae8fc742b80a9c55d03c232cb25a633a2791480ec6328b",
+    "equation_checks.csv": "f7bce9120f0d3553beeeeaa87f18b0a2f5b4c97c8588d5e6a173857eae9a808d",
+    "horizon_convention.csv": "f43e5ae98489d7c66179a4847208fb6a5232654684cb7b51b53ab842e7d94fbb",
+    "horizon_operating_contrast.csv": "e2bb135b4f13327ef77af60d41bc21ea5a653e0361ba973880e295caca0babdc",
+    "multiple_cash_share_sensitivity.csv": "b7cdc9088b6e43e1cf2fc4223c0e0ca566780f9b7c1e1be4c22192c3a85826b4",
+    "numerical_receipt_v1.json": "6b587a5a2751e418992cf5f6b976702d76d7d490722c08305b08a2a5204eaad7",
+    "repurchase_price_sensitivity.csv": "5b39fa997ac03f80d8498ac0048f8a4f02fcdcf7dead1a2c81d37929a9455d76",
+    "source_hashes.json": "0cb47ec0f2f5f8624f6d54dc3807509364e98bd21dd85b1e768c3c8aae72f72b"
+  },
+  "source_code_sha256": "a122eef54e46f86762a8e17c06134182fe973a806fa58c26851eea5e7df0a439",
+  "source_directory": "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\economics_v1\\results_v1",
+  "source_receipt_sha256": "6b587a5a2751e418992cf5f6b976702d76d7d490722c08305b08a2a5204eaad7",
+  "status": "Publication-label repair only; numerical cells unchanged"
+}

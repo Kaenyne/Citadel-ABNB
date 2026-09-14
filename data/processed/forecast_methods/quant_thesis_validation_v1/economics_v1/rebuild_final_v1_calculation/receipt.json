@@ -1,0 +1,76 @@
+{
+  "captured_comparator": {
+    "different_object_guide_minus_revenue_musd": "-37.602374826607458370581109",
+    "empirical_validation_n": "0",
+    "evidence_status": "conditional historical snapshot",
+    "hypothetical_common_cushion_guide_gap_musd": "17.99987808375529226444793330",
+    "hypothetical_street_guide_musd": "3105.419237089637249364970957",
+    "n": "1",
+    "observed_guide_consensus_musd": "",
+    "observed_timestamp": "2026-09-13 15:20:00+00:00",
+    "own_cushion_pct": "1.7904910308494300",
+    "own_guide_musd": "3123.419115173392541629418891",
+    "own_revenue_musd": "3179.343654286408763024000000",
+    "panel_family": "LSEG family",
+    "quarter": "2026Q4",
+    "revenue_gap_musd": "18.322164286408763024000000",
+    "revenue_gap_pct": "0.579627957113596308514814900",
+    "source_url": "https://finance.yahoo.com/quote/ABNB/analysis/",
+    "street_revenue_musd": "3161.02149",
+    "vendor": "Yahoo Finance (LSEG family)"
+  },
+  "empirical_validation_n": 0,
+  "equation_count": 567,
+  "estimated_parameters": 0,
+  "evidence_scenario": "review_with_k",
+  "l4_commit": "29b2d9ae2d66da5f1f5086ba7dc36e4c2d96ab70",
+  "max_equation_delta": 1.8189894035458565e-12,
+  "output_hashes": {
+    "accounting_diagnostics.csv": "c119d7f491ed06876679d7e24fdf4f32a1b68075fb277c6d2f2ca670faaa527c",
+    "annual_operating_contrast.csv": "9aa631febc53f210d2e57e40dab86ed56515cc286f7dcd9826eef90c760b87e5",
+    "cash_share_horizons.csv": "a9302ff0b1231854466f91a71445596aa695a56e8036ecc2504c4e6190bb5347",
+    "equation_checks.csv": "82aa33b01e75a255f932622691e4baf1d415ec929b23e893267b06f5a53c99ac",
+    "horizon_convention.csv": "fced51a8e54305dc1b67e51d806d8f674f6aa225f84a7dbafa2f7c34ec608404",
+    "horizon_operating_contrast.csv": "138e8a4184123730a48b1a6c79633fc15eaab21ec43e3242dcb9eadffab0fa4e",
+    "multiple_cash_share_sensitivity.csv": "b372efdaa231c9074f1804d2198163c16052113276c4d8207fd711788e9b5b52",
+    "repurchase_price_sensitivity.csv": "12fa4dd07941fe119b349a3af488ab54b29e60382bf27509d8484122c52baad4"
+  },
+  "q4_revenue_gap_usdm": 18.322164286408764,
+  "scenario_year_count": 21,
+  "source_code_sha256": "59c8ef252533c13b52aa9eea144e033888af0c4cb8073dc71ae9e5e67df6649f",
+  "source_hashes": [
+    {
+      "path": "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\evidence_v3\\l4\\data\\processed\\forecast_methods\\lane4_model_v1\\snapshot_v4\\annual.csv",
+      "sha256": "333fb4da18fce8e87285dfdb824447e82b9365e43282a4d441ade0f353c3a329",
+      "verified_external_binding": true
+    },
+    {
+      "path": "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\evidence_v3\\l4\\data\\processed\\forecast_methods\\lane4_model_v1\\snapshot_v4\\valuation.csv",
+      "sha256": "57270f473f266f51ace7232e7ae2e8ff146b50edb57f70c4c6f32190f1252579",
+      "verified_external_binding": true
+    },
+    {
+      "path": "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\evidence_v3\\l4\\data\\processed\\forecast_methods\\lane4_model_v1\\snapshot_v4\\model_input.json",
+      "sha256": "7d9b725b8e4a9f81b4eacb5d70f02857c2b9ca01ee76477dff7b09bb96333bb2",
+      "verified_external_binding": true
+    },
+    {
+      "path": "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\expectations_v1\\same_basis.csv",
+      "sha256": "ac4df5e1b470b4ad49290138987c1cf8c5fd74e18bf59e11afa0cdb1d6478c3b",
+      "verified_external_binding": false
+    },
+    {
+      "path": "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\CHAIN_PROTOCOL_v1.md",
+      "sha256": "8b2adba16bdf3871cb5d7b93d3301c4902dbe07a25412e584ce3d0da2b9c505d",
+      "verified_external_binding": false
+    },
+    {
+      "path": "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\economics_v1\\ASSUMPTIONS_v1.md",
+      "sha256": "27a5ecd04e04f0f2d5ad013616c2f06e974bf046b868b6788ce648b225067570",
+      "verified_external_binding": false
+    }
+  ],
+  "statement": "Conditional economic bridge; no production or investment adoption",
+  "sustained_fraction_of_own_revenue": 0.005762876328800355,
+  "unit": "USD million except explicit per-share share-count ratio fields"
+}
