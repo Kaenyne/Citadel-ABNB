@@ -52,7 +52,7 @@ prm("cor", "hosting_fy27", 330.0, "USD m per year", "Between the old run-rate ($
 prm("cor", "cor_other_per_night", 0.36, "USD per night", "FY25 residual: 2,086 - 1,598 fees - 67 chargebacks - 224 hosting = $197M on 533M nights (AirCover claims, payment operations)")
 prm("cor", "xborder_fee_bp_per_pt", 1.0, "bp of GBV per +1pt non-NA revenue share", "Cross-border card volume carries higher interchange and FX cost; non-NA share of revenue 2Q26 55.8% vs 55.5% 2Q25 (WS02). Small at current drift.")
 # operations & support: same quarter last year per booking, moved by a variable part (mgmt's support cost per booking) and a fixed part
-prm("ops", "ops_variable_share", 0.19, "share of the line that behaves like mgmt's 'support cost per booking'", "Calibrated on 1H26: line cost per booking -5.1% y/y (WS02) while mgmt's metric fell -10% (1Q26) and -16% (2Q26) and bookings grew 11%; v solves 0.19 x (-13%) + 0.81 x (8% - 11.2%) = -5.1%. Consistent with the metric being third-party contact cost (13,000 contingent workers, FY25 10-K), not the whole line.", bear=0.15, bull=0.25)
+prm("ops", "ops_variable_share", 0.215, "share of the line that behaves like mgmt's 'support cost per booking'", "Calibrated on 1H26 with the rule itself: ops 1H26/1H25 = 624/591 = 1.056 = v x (1 - 0.13) x 1.112 (bookings) + (1 - v) x 1.08 -> v = 0.215; mgmt's metric fell -10% (1Q26) and -16% (2Q26). Consistent with the metric being third-party contact cost (13,000 contingent workers, FY25 10-K), not the whole line.", bear=0.17, bull=0.27)
 prm("ops", "ops_variable_decline_2h26", -14.0, "% y/y per booking, 2H26", "Support cost per booking -10% (1Q26 call), -16% (2Q26 call); >40% of issues resolved without an agent", bear=-8.0, bull=-18.0)
 prm("ops", "ops_variable_decline_fy27", -10.0, "% y/y per booking, FY27", "Chesky 4Q25/2Q26: 'continue to decline' as AI moves to voice; no number (31a: medium confidence)", bear=-4.0, bull=-14.0)
 prm("ops", "ops_fixed_growth", 8.0, "% y/y, the non-variable part", "1H26 10-Q: payroll +$14M/+$27M, customer relations +$3M/+$10M, insurance +$7M; headcount +12% in 2025 slowing", bear=11.0, bull=6.0)
@@ -88,7 +88,7 @@ prm("below", "cash_plus_sti", 12069.0, "USD m, held flat", "WS02 2Q26")
 prm("below", "rnpl_share_shift_pts", 0.0, "pts of GBV paid at check-in rather than at booking, vs 2025", "No RNPL share series exists in the repo; sensitivity only: each 10 pts of GBV paid later cuts average funds held by ~10%", bear=10.0, bull=0.0)
 prm("below", "interest_expense_per_q", 37.0, "USD m per quarter", "M7: $2.5bn notes (~$119M a year, WS05 H10)")
 prm("below", "other_income_per_q", 3.7, "USD m per quarter", "M7 recency-weighted mean")
-prm("below", "etr_fy26", 18.0, "%", "M7; mgmt high teens (2Q26)")
+prm("below", "etr_2h26", 18.0, "% applied to 2H26 forecast quarters (1H26 printed 17.1%)", "M7; mgmt high teens (2Q26)")
 prm("below", "etr_fy27", 17.5, "%", "M7; long-term mid-to-high teens under OBBBA (WS05 H09)")
 prm("below", "diluted_shares_2q26", 597.0, "m", "WS02 2Q26")
 prm("below", "diluted_shares_delta_per_q", float(m7["diluted_shares_delta_m_q"]), "m per quarter", "M7: -buyback/price + issuance; authorisation runs out ~1Q27 (WS05 H11)")
@@ -144,6 +144,7 @@ def build(rev_scn: str = "base", cost_scn: str = "base", override: dict | None =
         mkt_q3_step = 0.0
     hist = {q: dict(ops=float(pan.loc[q, "ops_cash"]), bookings=float(pan.loc[q, "nights_m"]) / NPB_ACT[q], sbc=float(pan.loc[q, "sbc_total_is"]),
                     fh=float(pan.loc[q, "funds_held_on_behalf"]), gbv=float(pan.loc[q, "gbv_busd"])) for q in NPB_ACT}
+    fh_last = hist["2Q26"]["fh"] * (1 - p["rnpl_share_shift_pts"] / 100)   # preceding quarter's (shifted) balance, for the average earning base
     shares = p["diluted_shares_2q26"]; rows = []
     for q in Q_ORDER:
         is27 = q.endswith("27"); qn = QN[q]; pq = PREV[q]
@@ -174,12 +175,14 @@ def build(rev_scn: str = "base", cost_scn: str = "base", override: dict | None =
         # below EBITDA
         sbc = hist[pq]["sbc"] * (1 + p["sbc_growth"] / 100)
         op_inc = ebitda - da - sbc - lodging
-        fh = hist[pq]["fh"] * (gbv / hist[pq]["gbv"]) * (1 - p["rnpl_share_shift_pts"] / 100)
-        int_inc = p["interest_income_beta"] * p["tbill_3m"] / 100 * (p["cash_plus_sti"] + (fh + hist[pq]["fh"]) / 2) / 4
+        fh_unshifted = hist[pq]["fh"] * (gbv / hist[pq]["gbv"])                 # same quarter last year x GBV growth (M7 rule), unshifted path
+        fh = fh_unshifted * (1 - p["rnpl_share_shift_pts"] / 100)               # RNPL level shift applied once, never compounded
+        int_inc = p["interest_income_beta"] * p["tbill_3m"] / 100 * (p["cash_plus_sti"] + (fh + fh_last) / 2) / 4   # average of this and the preceding quarter (M7)
+        fh_last = fh
         pretax = op_inc + int_inc - p["interest_expense_per_q"] + p["other_income_per_q"]
-        etr = p["etr_fy27"] if is27 else p["etr_fy26"]; ni = pretax * (1 - etr / 100)
+        etr = p["etr_fy27"] if is27 else p["etr_2h26"]; ni = pretax * (1 - etr / 100)
         shares += p["diluted_shares_delta_per_q"]; eps = ni / shares
-        hist[q] = dict(ops=ops, bookings=bookings, sbc=sbc, fh=fh, gbv=gbv)
+        hist[q] = dict(ops=ops, bookings=bookings, sbc=sbc, fh=fh_unshifted, gbv=gbv)
         rows.append(dict(quarter=q, rev_scenario=rev_scn, cost_scenario=cost_scn, revenue=rev, nights_m=nights, gbv_busd=gbv, bookings_m=bookings,
                          cor_fees=fees, cor_chargebacks=chargebacks, cor_hosting=hosting, cor_other=cor_other, cor_cash=cor, merchant_fee_rate_q_pct=fee_rate,
                          ops_variable=ops_var, ops_fixed=ops_fix, ops_cash=ops, ops_per_booking=ops / bookings,
@@ -234,6 +237,9 @@ fy27b = annual[(annual.period == "FY27") & (annual.scenario == "base")].iloc[0]
 rev28 = float(ann_path.loc[(ann_path.period == "FY28") & (ann_path.scenario == "base"), "revenue_musd"].iloc[0]); g = rev28 / fy27b["revenue"]
 r28 = {k: (v * g if isinstance(v, float) and not k.endswith("_pct") and k != "eps" else v) for k, v in fy27b.items()}
 r28.update(period="FY28 roll-forward (flagged)", scenario="base", eps=fy27b["eps"] * g)
+for c in ["cor_cash", "ops_cash", "pd_cash", "sm_cash", "sm_marketing", "ga_cash", "total_cash_costs", "sbc"]:
+    r28[c + "_pct_rev"] = r28[c] / r28["revenue"] * 100
+r28["adj_ebitda_margin_pct"] = r28["adj_ebitda"] / r28["revenue"] * 100
 annual = pd.concat([annual, pd.DataFrame([r28])], ignore_index=True)
 for c in ["cor_cash", "ops_cash", "pd_cash", "sm_cash", "ga_cash", "total_cash_costs"]:
     fy25 = float(pan.loc[["1Q25", "2Q25", "3Q25", "4Q25"], c].sum())
@@ -256,10 +262,11 @@ sent = pd.DataFrame([dict(item="3Q25 actual margin", value=float(pan.loc["3Q25",
                      dict(item="'down slightly' target used (3Q25 - 0.5pt)", value=target),
                      dict(item="evidence-only build: 3Q26 margin", value=float(evid_q.loc["3Q26", "adj_ebitda_margin_pct"])),
                      dict(item="evidence-only build: 3Q26 total cash cost growth y/y %", value=float(evid_q.loc["3Q26", "total_cash_costs_yoy_pct"])),
-                     dict(item="reconciled base: 3Q26 margin", value=float(base_q.loc["3Q26", "adj_ebitda_margin_pct"])),
+                     dict(item="reconciled base: 3Q26 margin at the GUIDE midpoint revenue (by construction = target)", value=target),
+                     dict(item="reconciled base: 3Q26 margin at OUR revenue ($4,804M; the forecast)", value=float(base_q.loc["3Q26", "adj_ebitda_margin_pct"])),
                      dict(item="reconciled base: 3Q26 total cash cost growth y/y %", value=float(base_q.loc["3Q26", "total_cash_costs_yoy_pct"])),
                      dict(item="reconciled base: cost gap assigned in 3Q26, USD m", value=float(base_q.loc["3Q26", "recon_gap_3q26_musd"])),
-                     dict(item="2H26 marketing growth % that lands the sentence (all else base)", value=mid),
+                     dict(item="2H26 marketing growth % that lands the sentence AT OUR revenue with no hosting step (evidence build)", value=mid),
                      dict(item="3Q26 S&M at that growth, USD m", value=float(implied.loc["3Q26", "sm_cash"])),
                      dict(item="3Q26 S&M y/y % at that growth", value=float(implied.loc["3Q26", "sm_cash_yoy_pct"])),
                      dict(item="3Q26 total cash cost growth y/y % at that growth", value=float(implied.loc["3Q26", "total_cash_costs_yoy_pct"])),
@@ -278,8 +285,8 @@ cor_1h26_hat = PV["base"]["merchant_fee_pct_gbv"] / 100 * (FEE_FACTOR[1] * float
 backcast = pd.DataFrame([
     dict(test="FY25 cost of revenue from FY24-knowable rates (fee % GBV, chargebacks/booking, hosting run-rate, other/night)", predicted=cor25_hat, actual=float(fy25.cor_cash.sum()), note=f"FY24 fee rate {fee24:.2f}% of GBV; out of sample"),
     dict(test="FY25 ops & support from FY24 cost per booking x FY25 bookings x the pre-AI -2.5%/yr per-unit trend", predicted=ops25_hat, actual=float(fy25.ops_cash.sum()), note="out of sample; the -10/-16% AI statements came in 2026"),
-    dict(test="1H26 cost of revenue with the base rates and 1H26 drivers", predicted=cor_1h26_hat, actual=float(h1.cor_cash.sum()), note="in sample (1.66% sits between FY25 1.76% and the 1H26 fit 1.62%)"),
-    dict(test="1H26 ops & support per booking, y/y %", predicted=0.19 * -13 + 0.81 * (8 - 11.2), actual=-5.1, note="calibration of the variable share v = 0.19; identity, not a test"),
+    dict(test="1H26 cost of revenue with the base rates (1.70% x seasonal factors) and 1H26 drivers", predicted=cor_1h26_hat, actual=float(h1.cor_cash.sum()), note="in sample; the 1H26 fit itself is 1.68% annual-equivalent, FY25 1.76%"),
+    dict(test="1H26 ops & support from the rule with v = 0.215 (exact calibration)", predicted=float(pan.loc[["1Q25", "2Q25"], "ops_cash"].sum()) * (0.215 * 0.87 * (float(h1.nights_m.sum()) / 3.65) / (float(pan.loc[["1Q25", "2Q25"], "nights_m"].sum()) / 3.7) + 0.785 * 1.08), actual=float(h1.ops_cash.sum()), note="calibration identity, not a test"),
 ])
 backcast["error_pct"] = (backcast.predicted / backcast.actual - 1) * 100
 backcast.to_csv(OUT / "40_backcast.csv", index=False)

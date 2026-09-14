@@ -109,7 +109,7 @@ tr.hl td{font-weight:600}
 </header>
 
 <nav class="toc" aria-label="Contents">
-  <a href="#answer">The answer</a><a href="#how">How it works</a><a href="#forecast">The forecast</a><a href="#seasonal">Seasonality</a><a href="#costs">The cost stack</a><a href="#evidence">Does it work?</a><a href="#cycle">The cycle</a><a href="#consensus">The consensus gap</a><a href="#card">The 5 Nov card</a><a href="#failed">What failed</a><a href="#audit">The audit</a>
+  <a href="#answer">The answer</a><a href="#how">How it works</a><a href="#forecast">The forecast</a><a href="#seasonal">Seasonality</a><a href="#costs">The cost stack</a><a href="#evidence">Does it work?</a><a href="#cycle">The cycle</a><a href="#consensus">The consensus gap</a><a href="#linebuild">The line build</a><a href="#card">The 5 Nov card</a><a href="#failed">What failed</a><a href="#audit">The audit</a>
 </nav>
 
 <section id="answer">
@@ -432,6 +432,46 @@ tr.hl td{font-weight:600}
       <tr><td>FY28</td><td class="r n">5,937</td><td class="r n">6,602.7</td><td class="r n">−666</td><td class="r n">34.64</td><td class="r n">37.65</td><td class="r n">−3.01</td><td class="r n">26 / $271.9M</td></tr>
     </table>
     <span class="note">Bloomberg's consensus (5 September pull, not point-in-time) reads 3Q26 $2,359.9M and FY26 $5,046.8M — inside $7M of LSEG on both. Incremental margin: FY26 model 39.5% against a Street-implied 38.8% (agreement); FY27 model 24.7% against a Street-implied 43.7% (a 19-point disagreement).</span>
+  </div>
+</section>
+
+<section id="linebuild">
+  <h2>The line build: each cost item on its own drivers</h2>
+  <p class="lede">The combination above is calibrated, not explained. A second build, written after the run, constructs every cost line from its components and a sourced parameter, and reconciles the result to what management has said. It agrees with the combination on 2026 and disagrees on 2027.</p>
+  <div class="tbl panel">
+    <h3>What each line is made of · <span class="src">40_line_build/40_params.csv</span>, <span class="src">40_annual.csv</span></h3>
+    <table>
+      <tr><th>Line</th><th class="r">FY25A</th><th class="r">FY26E</th><th class="r">FY27E</th><th>Formula and the evidence behind it</th></tr>
+      <tr><td>Cost of revenue</td><td class="r n">17.0%</td><td class="r n">17.0%</td><td class="r n">17.4%</td><td>Merchant fees at 1.70% of GBV with the quarterly pattern, chargebacks at $0.72 a booking (up from $0.47 after 1H26's +$25M), hosting from $224M to about $450M as the $1.7bn commitment and the AI step land, other at $0.36 a night. The one line that backcasts: FY25 predicted from FY24 rates within 1%.</td></tr>
+      <tr><td>Operations &amp; support</td><td class="r n">10.1%</td><td class="r n">9.1%</td><td class="r n">8.7%</td><td>Last year's cost per booking moved by two parts: the fifth of the line that behaves like management's "support cost per booking" (down 14% then 10% with AI) and the four fifths that is payroll, customer relations and insurance (up 8%). The share is calibrated on 1H26, when the line fell 5% per booking while the AI metric fell 10 to 16%.</td></tr>
+      <tr><td>Product development</td><td class="r n">10.9%</td><td class="r n">10.4%</td><td class="r n">10.3%</td><td>Payroll on headcount: +9% in 2H26 and +8% in FY27 plus $30M of AI tooling. 1H26 grew 10 to 12%, all payroll, and management says headcount growth is below 2025's 12%.</td></tr>
+      <tr><td>Sales &amp; marketing</td><td class="r n">19.4%</td><td class="r n">21.3%</td><td class="r n">21.9%</td><td>Brand and performance marketing from the 10-K split ($1,595M in FY25; +32% reported in 1H26, +25% assumed in 2H26 plus a Q3 step, +15% in FY27) plus field operations and policy cash ($781M; +18%, +11%). The Street-implied FY27 needs this ramp to stop; the run's allocation had it at 23.5% of revenue.</td></tr>
+      <tr><td>G&amp;A ex reserves</td><td class="r n">8.1%</td><td class="r n">7.0%</td><td class="r n">6.6%</td><td>+5% a year on payroll; 1H26 fell 5% only because non-income taxes dropped $38M.</td></tr>
+    </table>
+    <span class="note">Cash lines, ex stock compensation. Sources for every parameter are in the CSV; the 1H26 component deltas come from the 10-Q MD&amp;A, the S&amp;M split and hosting commitments from the 10-Ks.</span>
+  </div>
+  <div class="grid w" style="margin-top:18px">
+    <div>
+      <p><b>Built from the evidence alone, the third quarter does not decline.</b> Costs grow 11.4% against revenue of +17%, which puts 3Q26 at 52.4%, three points above management's "down slightly". Landing the sentence at the guide midpoint needs about $97M more cost in the quarter than the filings support, and the only lines management has flagged for a step are marketing and AI hosting. The base case takes management at its word: $67M into 3Q26 marketing as a timing step and $29M a quarter into hosting as a run-rate step. That gives <b>3Q26 $2,420M at 50.4%</b>, a revenue beat on management's own cost budget, within $21M of the combination.</p>
+      <p><b>The step cannot recur in Q4.</b> Carrying the same cost into 4Q26 would put the full year below the 35.5% floor at guide revenue, and the floor has been beaten every year. So 4Q26 is 28.3% and FY26 lands at 35.7%, the same number the combination reached by a different route.</p>
+      <p><b>2027 is one point higher than the combination, all of it marketing.</b> With the 10-K split and management's stated deceleration, FY27 S&amp;M is 21.9% of revenue rather than the allocated 23.5%, and FY27 margin is <b>35.7% ($5,644M)</b> against the combination's 34.6% and the Street's 36.5%. The incremental margin is 34.8%, between the run's 24.7% and the Street's 43.7%.</p>
+    </div>
+    <div class="tbl panel">
+      <h3>Line build versus the combination and the Street</h3>
+      <table>
+        <tr><th></th><th class="r">Line build</th><th class="r">Combination</th><th class="r">Street</th></tr>
+        <tr class="hl"><td>3Q26 adj EBITDA</td><td class="r n">2,420</td><td class="r n">2,399</td><td class="r n">2,362</td></tr>
+        <tr><td>3Q26 margin</td><td class="r n">50.4%</td><td class="r n">49.9%</td><td class="r n">49.8%</td></tr>
+        <tr><td>3Q26 S&amp;M growth</td><td class="r n">+33%</td><td class="r n">+34%</td><td class="r n">n/a</td></tr>
+        <tr><td>4Q26 margin</td><td class="r n">28.3%</td><td class="r n">28.9%</td><td class="r n">28.9%</td></tr>
+        <tr class="hl"><td>FY26 margin</td><td class="r n">35.7%</td><td class="r n">35.7%</td><td class="r n">35.6%</td></tr>
+        <tr class="hl"><td>FY27 adj EBITDA</td><td class="r n">5,644</td><td class="r n">5,483</td><td class="r n">5,766</td></tr>
+        <tr><td>FY27 margin</td><td class="r n">35.7%</td><td class="r n">34.6%</td><td class="r n">36.5%</td></tr>
+        <tr><td>FY27 S&amp;M % revenue</td><td class="r n">21.9%</td><td class="r n">23.5%</td><td class="r n">n/a</td></tr>
+        <tr><td>FY27 EPS</td><td class="r n">5.93</td><td class="r n">5.73</td><td class="r n">6.23</td></tr>
+      </table>
+      <span class="note">Largest FY27 levers: marketing growth (+5pts = −0.67pp), the merchant fee rate (+10bp of GBV = −0.39pp), FY27 hosting (+$50M = −0.32pp). Source: <span class="src">40_sensitivities.csv</span>. The line build was checked read-only by the same auditor (seven findings, all fixed); it has no backtest of its own beyond cost of revenue, so the beat probability still comes from the combination.</span>
+    </div>
   </div>
 </section>
 

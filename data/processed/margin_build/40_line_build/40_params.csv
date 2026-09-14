@@ -8,7 +8,7 @@ cor,hosting_step_2h26,30.0,45.0,20.0,USD m per half vs 2H25,1H26 server costs +$
 cor,hosting_fy27,330.0,400.0,290.0,USD m per year,Between the old run-rate ($224M) and the new commitment ($283M a year) plus the unsized AI inference ramp; WS05 H03 total purchase obligations ~$465M a year in 2027-28
 cor,cor_other_per_night,0.36,0.36,0.36,USD per night,"FY25 residual: 2,086 - 1,598 fees - 67 chargebacks - 224 hosting = $197M on 533M nights (AirCover claims, payment operations)"
 cor,xborder_fee_bp_per_pt,1.0,1.0,1.0,bp of GBV per +1pt non-NA revenue share,Cross-border card volume carries higher interchange and FX cost; non-NA share of revenue 2Q26 55.8% vs 55.5% 2Q25 (WS02). Small at current drift.
-ops,ops_variable_share,0.19,0.15,0.25,share of the line that behaves like mgmt's 'support cost per booking',"Calibrated on 1H26: line cost per booking -5.1% y/y (WS02) while mgmt's metric fell -10% (1Q26) and -16% (2Q26) and bookings grew 11%; v solves 0.19 x (-13%) + 0.81 x (8% - 11.2%) = -5.1%. Consistent with the metric being third-party contact cost (13,000 contingent workers, FY25 10-K), not the whole line."
+ops,ops_variable_share,0.215,0.17,0.27,share of the line that behaves like mgmt's 'support cost per booking',"Calibrated on 1H26 with the rule itself: ops 1H26/1H25 = 624/591 = 1.056 = v x (1 - 0.13) x 1.112 (bookings) + (1 - v) x 1.08 -> v = 0.215; mgmt's metric fell -10% (1Q26) and -16% (2Q26). Consistent with the metric being third-party contact cost (13,000 contingent workers, FY25 10-K), not the whole line."
 ops,ops_variable_decline_2h26,-14.0,-8.0,-18.0,"% y/y per booking, 2H26","Support cost per booking -10% (1Q26 call), -16% (2Q26 call); >40% of issues resolved without an agent"
 ops,ops_variable_decline_fy27,-10.0,-4.0,-14.0,"% y/y per booking, FY27",Chesky 4Q25/2Q26: 'continue to decline' as AI moves to voice; no number (31a: medium confidence)
 ops,ops_fixed_growth,8.0,11.0,6.0,"% y/y, the non-variable part","1H26 10-Q: payroll +$14M/+$27M, customer relations +$3M/+$10M, insurance +$7M; headcount +12% in 2025 slowing"
@@ -38,7 +38,7 @@ below,cash_plus_sti,12069.0,12069.0,12069.0,"USD m, held flat",WS02 2Q26
 below,rnpl_share_shift_pts,0.0,10.0,0.0,"pts of GBV paid at check-in rather than at booking, vs 2025",No RNPL share series exists in the repo; sensitivity only: each 10 pts of GBV paid later cuts average funds held by ~10%
 below,interest_expense_per_q,37.0,37.0,37.0,USD m per quarter,"M7: $2.5bn notes (~$119M a year, WS05 H10)"
 below,other_income_per_q,3.7,3.7,3.7,USD m per quarter,M7 recency-weighted mean
-below,etr_fy26,18.0,18.0,18.0,%,M7; mgmt high teens (2Q26)
+below,etr_2h26,18.0,18.0,18.0,% applied to 2H26 forecast quarters (1H26 printed 17.1%),M7; mgmt high teens (2Q26)
 below,etr_fy27,17.5,17.5,17.5,%,M7; long-term mid-to-high teens under OBBBA (WS05 H09)
 below,diluted_shares_2q26,597.0,597.0,597.0,m,WS02 2Q26
 below,diluted_shares_delta_per_q,-5.324186618094461,-5.324186618094461,-5.324186618094461,m per quarter,M7: -buyback/price + issuance; authorisation runs out ~1Q27 (WS05 H11)
