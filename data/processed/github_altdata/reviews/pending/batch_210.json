@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:sh-patterson/legiscan-mcp",
+  "url": "https://github.com/sh-patterson/legiscan-mcp",
+  "name": "sh-patterson/legiscan-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server wrapping the LegiScan API for bill search, full text, votes, legislator lookup, and change monitoring across all 50 states and Congress. Method only, no committed data.",
+  "why_useful": "Same value as pylegiscan but agent-native (MCP) \u2014 could be pointed at STR/vacation-rental keyword bills for an ongoing regulatory-tracking feed.",
+  "potential": "medium",
+  "geography": "USA (all states + Congress)",
+  "time_coverage": "current LegiScan coverage",
+  "size_hint": "API client only",
+  "license": "MIT",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Same value as pylegiscan but agent-native (MCP) \u2014 could be pointed at STR/vacation-rental keyword bills for an ongoing regulatory-tracking feed."
+  ]
+ },
+ {
+  "key": "github:betanyc/nyc-council-mcp",
+  "url": "https://github.com/BetaNYC/nyc-council-mcp",
+  "name": "BetaNYC/nyc-council-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server for NYC Council legislative data pulled live via the Legistar API (bills, committee votes, hearing calendars). No stored dataset, but a working, current (updated July 2026) client scoped to exactly the council whose Local Law 18 (STR registration) most affects our NYC gap.",
+  "why_useful": "Could pull the full NYC Council legislative history/amendments around Local Law 18 and any follow-on STR bills, useful context for interpreting the NYC Inside Airbnb dump gap (2023-06 to 2024-03) that gap #1 flags.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "current NYC Council Legistar coverage",
+  "size_hint": "API client only",
+  "license": "MIT",
+  "last_activity": "2026-07-27",
+  "gap_targets": [
+   12,
+   1
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Could pull the full NYC Council legislative history/amendments around Local Law 18 and any follow-on STR bills, useful context for interpreting the NYC Inside Airbnb dump gap (2023-06 to 2024-03) that gap #1 flags."
+  ]
+ },
+ {
+  "key": "github:timmkal01/city-council-watch",
+  "url": "https://github.com/timmKal01/city-council-watch",
+  "name": "timmKal01/city-council-watch",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify actor (3 commits) that fetches newly filed ordinances/resolutions and upcoming council/committee agendas from any city's Legistar Web API given a city code as a parameter; no hardcoded city list or committed data, source/config/Dockerfile only.",
+  "why_useful": "A generic, running scraper/method that could be filtered for STR-ordinance keywords across many US cities at once (LA, SF, Austin, Nashville, New Orleans, San Diego are all candidate Legistar cities in our Inside Airbnb panel), turning a one-off ordinance database into an always-on feed.",
+  "potential": "medium",
+  "geography": "multi-city, USA (any Legistar-hosted council)",
+  "time_coverage": "live/current only",
+  "size_hint": "no stored data, Apify actor",
+  "license": "none declared",
+  "last_activity": "2026-08-13",
+  "gap_targets": [
+   12
+  ],
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "A generic, running scraper/method that could be filtered for STR-ordinance keywords across many US cities at once (LA, SF, Austin, Nashville, New Orleans, San Diego are all candidate Legistar cities in our Inside Airbnb panel), turning a one-off ordinance database into an always-on feed.",
+   "A generic, parameterizable way to monitor new STR-ordinance filings in near-real time across any Legistar city, which could catch new caps/bans as they are introduced ahead of the pitch deadline (gap #12); marginal given its small size and lack of committed data."
+  ]
+ },
+ {
+  "key": "github:howtheyvote/data",
+  "url": "https://github.com/HowTheyVote/data",
+  "name": "HowTheyVote/data",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Weekly-updated CSV.gz exports (votes.csv.gz, plus MEP and political-group tables) of every roll-call vote in the European Parliament, collected by howtheyvote.eu; downloadable via GitHub releases as a single export.zip, with pandas-ready examples in the README. 121 commits, actively maintained (weekly cadence).",
+  "why_useful": "Machine-readable, point-in-time (weekly snapshot) EU Parliament vote history could locate/timestamp any EU-level short-term-rental or platform-economy (DAC7-adjacent) votes relevant to gap #12 (EU regulation trackers) and is a clean template for a point-in-time EU political-risk series (gap #4 vintage angle).",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   4
+  ],
+  "time_coverage": "rolling, updated weekly (start year not confirmed from fetch)",
+  "geography": "European Union / European Parliament",
+  "size_hint": "csv.gz export + full export.zip, row counts not confirmed",
+  "license": "custom 'our data license', see howtheyvote.eu/about",
+  "last_activity": "actively maintained, weekly updates per README",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Machine-readable, point-in-time (weekly snapshot) EU Parliament vote history could locate/timestamp any EU-level short-term-rental or platform-economy (DAC7-adjacent) votes relevant to gap #12 (EU regulation trackers) and is a clean template for a point-in-time EU political-risk series (gap #4 vintage angle)."
+  ]
+ },
+ {
+  "key": "github:opencivicdata/python-legistar-scraper",
+  "url": "https://github.com/opencivicdata/python-legistar-scraper",
+  "name": "opencivicdata/python-legistar-scraper",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Python library (BSD-3, 52 stars, updated Aug 2026 \u2014 actively maintained) that scrapes any municipal Legistar site: agendas, bill/legislation text, votes, committee actions, meeting calendars. Legistar/Granicus is used by hundreds of US city councils.",
+  "why_useful": "The core reusable client needed to pull city-council STR ordinance histories (hearing dates, vote counts, bill text links) for any of the ~40+ US cities that run Legistar (LA, SF, Boston, Chicago, Nashville, New Orleans, Austin, Denver, etc.) named in gap #12; complements the municipal registries we already hold with the legislative *process* record (when caps/bans were debated and passed).",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "as far back as each city's Legistar instance retains records (often 2000s-present)",
+  "geography": "any US city using Legistar",
+  "size_hint": "library only, no committed data",
+  "license": "not confirmed from fetch",
+  "last_activity": "not confirmed (has CI badge, 707 commits)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "The core reusable client needed to pull city-council STR ordinance histories (hearing dates, vote counts, bill text links) for any of the ~40+ US cities that run Legistar (LA, SF, Boston, Chicago, Nashville, New Orleans, Austin, Denver, etc.) named in gap #12; complements the municipal registries we already hold with the legislative *process* record (when caps/bans were debated and passed).",
+   "A generic tool to build an STR-ordinance tracker across many US cities at once (introduction of registration caps, licence-fee hikes, short-term-rental bans/votes) \u2014 feeds CONTEXT.md gap #12 (STR ordinance trackers) and gap #17 (Socrata/CKAN-style open-data discovery is the analogue for civic legislative data). Method only, no data committed."
+  ]
+ }
+]

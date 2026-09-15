@@ -1,0 +1,141 @@
+[
+ {
+  "key": "github:pipeworx-io/mcp-data-europa",
+  "url": "https://github.com/pipeworx-io/mcp-data-europa",
+  "name": "mcp-data-europa",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server providing a client for data.europa.eu, the official EU open-data hub (~1.6M datasets). TypeScript. Last updated 13 Sep 2026 (one day before this scout ran).",
+  "why_useful": "A maintained, current client for the EU's central data catalogue (DCAT-based) \u2014 useful for finding EU member-state tourism, mobility, or STR-regulation datasets referenced in gaps 7 and 12 (EU DAC7 platform reporting, national tourism-board series) without manual portal-by-portal search.",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   7
+  ],
+  "license": "not confirmed in fetch",
+  "last_activity": "2026-09-13",
+  "geography": "EU-wide",
+  "time_coverage": "n/a (live query tool)",
+  "size_hint": "n/a (client code only)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A maintained, current client for the EU's central data catalogue (DCAT-based) \u2014 useful for finding EU member-state tourism, mobility, or STR-regulation datasets referenced in gaps 7 and 12 (EU DAC7 platform reporting, national tourism-board series) without manual portal-by-portal search."
+  ]
+ },
+ {
+  "key": "github:vida-nyu/auctus",
+  "url": "https://github.com/VIDA-NYU/auctus",
+  "name": "Auctus",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "NYU academic dataset-search engine and crawler (mirror of gitlab.com/ViDA-NYU/auctus); indexes and profiles datasets from Socrata and Zenodo (among other plugins) into an Elasticsearch-backed catalog with a public API (auctus.vida-nyu.org) and React UI for join/union-based data augmentation. Apache-2.0, 2,771 commits.",
+  "why_useful": "A live, hosted, general-purpose dataset search engine spanning Socrata portals plus Zenodo \u2014 could surface STR/tourism/lodging datasets across many US cities' Socrata instances that a manual per-city search would miss; also directly matches the theme's 'dataset search tools' remit.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   12
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "mature, long-running academic project (2,771 commits)",
+  "geography": "global (Socrata + Zenodo coverage)",
+  "time_coverage": "n/a (live search/crawl tool)",
+  "size_hint": "n/a (service + crawler code)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A live, hosted, general-purpose dataset search engine spanning Socrata portals plus Zenodo \u2014 could surface STR/tourism/lodging datasets across many US cities' Socrata instances that a manual per-city search would miss; also directly matches the theme's 'dataset search tools' remit."
+  ]
+ },
+ {
+  "key": "github:awesomedata/awesome-public-datasets",
+  "url": "https://github.com/awesomedata/awesome-public-datasets",
+  "name": "awesome-public-datasets",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "The master curated catalogue itself (auto-generated from awesomedata/apd-core YAML metadata files), organized into ~35 sections (Agriculture, Economics, Finance, GIS, Government, SocialNetworks, SocialSciences, Transportation, etc.), each with dozens to hundreds of dataset links, mostly to external hosts (many recently-added entries are small commercial SEO-style 'open dataset' pages rather than research-grade data - the catalogue quality has degraded with many low-value submissions circa 2026, alongside legitimate long-standing entries like OpenFlights, RITA/BTS TranStat, Skytrax reviews, and Uber TLC data).",
+  "why_useful": "Fastest way to sweep for a free source we have not seen yet on gaps 6-13 (regional travel volume, hotel supply, housing/rental, consumer spend); worth a targeted re-read of its Transportation/Economics/Real-Estate sections rather than a full dataset in itself.",
+  "potential": "medium",
+  "size_hint": "README index only, no data files in this repo",
+  "geography": "global",
+  "time_coverage": "n/a (index)",
+  "last_activity": "2026-09-14",
+  "license": "MIT",
+  "gap_targets": [
+   6,
+   7,
+   8,
+   9,
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Fastest way to sweep for a free source we have not seen yet on gaps 6-13 (regional travel volume, hotel supply, housing/rental, consumer spend); worth a targeted re-read of its Transportation/Economics/Real-Estate sections rather than a full dataset in itself.",
+   "Serves as a standing discovery index worth periodic re-scanning (per gap 17's spirit of open-data discovery tooling), but as of this pass it surfaced no committed Airbnb/STR/tourism-specific datasets beyond what is separately flagged; most new entries are unrelated commercial price-index microsites."
+  ]
+ },
+ {
+  "key": "github:wilsonfreitas/awesome-quant",
+  "url": "https://github.com/wilsonfreitas/awesome-quant",
+  "name": "awesome-quant",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "29.5k-star flagship quant-finance resource list, updated same-day. Confirmed sections: Alternative Data & Sentiment (news/social sentiment tools), Economic & Macro Data (OmniOracle: 500+ series from FRED/World Bank/EIA/NOAA; pystlouisfed and fedfred: Python clients for FRED, ALFRED, GeoFRED and FRASER -- i.e. vintage/point-in-time macro data; treasurydirect, treasury-fiscaldata, newyorkfed, commitments-of-traders TypeScript API clients; estat-mcp for Japanese e-Stat data), Point-in-Time & Vintage Data Tools (ashare-data-immunity, pit-adjuster -- China A-share point-in-time adjustment, not US-relevant), and Institutional/Corporate Filings (edgartools, SECfinAPI, edinetdb/edinet-mcp for Japanese XBRL filings).",
+  "why_useful": "pystlouisfed / fedfred give a maintained Python client to FRED's ALFRED (archival vintage) service, which is exactly the 'ALFRED-style macro vintages' asked for in gap 4; estat-mcp is a ready client for Japanese government statistics (GDP/CPI/trade) relevant to gap 7 APAC volume.",
+  "potential": "medium",
+  "size_hint": "README index; linked clients are small pip/npm packages",
+  "geography": "US (FRED/ALFRED/Treasury), Japan (e-Stat), global",
+  "time_coverage": "ALFRED vintages: multi-decade; e-Stat: current",
+  "last_activity": "2026-09-14",
+  "license": "unspecified (index)",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "duplicate_of_holding": "FRED is already held (non-vintage); ALFRED vintages via pystlouisfed/fedfred would be new",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "pystlouisfed / fedfred give a maintained Python client to FRED's ALFRED (archival vintage) service, which is exactly the 'ALFRED-style macro vintages' asked for in gap 4; estat-mcp is a ready client for Japanese government statistics (GDP/CPI/trade) relevant to gap 7 APAC volume."
+  ]
+ },
+ {
+  "key": "github:stefan-jansen/machine-learning-for-trading",
+  "url": "https://github.com/stefan-jansen/machine-learning-for-trading",
+  "name": "machine-learning-for-trading",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Companion code repo for the \"Machine Learning for Algorithmic Trading\" book. Chapter 4 (\"Fundamental and Alternative Data\") documents point-in-time SEC EDGAR pipelines, entity resolution across identifier systems, macro/commodity fundamentals, and alternative-data evaluation frameworks (including newer additions like on-chain/prediction-market data). Earlier editions of this repo are widely known to include an OpenTable scraping chapter and other alt-data acquisition notebooks (Twitter/SEC filings/Seeking Alpha) though the current README summary did not enumerate a travel-specific scraper by name.",
+  "why_useful": "General-purpose, well-maintained reference implementation for gap #17 (point-in-time SEC EDGAR tooling, alt-data evaluation methodology) that we could adapt directly rather than build from scratch.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "geography": "N/A (methods)",
+  "time_coverage": "N/A",
+  "size_hint": "Large multi-chapter repo",
+  "license": "unconfirmed (book companion, check for reuse terms)",
+  "last_activity": "actively maintained per description",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "General-purpose, well-maintained reference implementation for gap #17 (point-in-time SEC EDGAR tooling, alt-data evaluation methodology) that we could adapt directly rather than build from scratch."
+  ]
+ }
+]

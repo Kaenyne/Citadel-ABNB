@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:mainedsa/ltr_license_scraper_portland",
+  "url": "https://github.com/MaineDSA/ltr_license_scraper_portland",
+  "name": "ltr_license_scraper_portland",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python 3.11+ scraper (requests + pandas) that downloads Portland, MAINE's Long-Term Rental (not short-term) landlord license list since Jan 1 2022 from the city website, saving a CSV with a JSON detail column per license; GPL-3.0, archived/read-only as of 13 Aug 2026.",
+  "why_useful": "Wrong city (Portland, Maine, not Portland, Oregon) and wrong rental type (LTR landlord licensing, not STR) \u2014 flagged only as a reusable scraper template for building an equivalent one against Portland, Oregon's ASTR permit registry or another city's licence portal that lacks a Socrata API.",
+  "potential": "low",
+  "geography": "Portland, Maine (template transferable to Portland, OR or other non-Socrata city license sites)",
+  "time_coverage": "Jan 2022 onward, now archived/frozen",
+  "size_hint": "single CSV, size unconfirmed",
+  "license": "GPL-3.0",
+  "last_activity": "archived 13 Aug 2026, read-only",
+  "duplicate_of_holding": "no overlap; not STR, not one of the target cities",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "Wrong city (Portland, Maine, not Portland, Oregon) and wrong rental type (LTR landlord licensing, not STR) \u2014 flagged only as a reusable scraper template for building an equivalent one against Portland, Oregon's ASTR permit registry or another city's licence portal that lacks a Socrata API."
+  ]
+ },
+ {
+  "key": "github:cadiz-resiste/openrta-maps",
+  "url": "https://github.com/cadiz-resiste/openrta-maps",
+  "name": "cadiz-resiste/openrta-maps",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Code to generate interactive maps from OpenRTA VUT (viviendas de uso tur\u00edstico) data for C\u00e1diz-area municipalities; Apache-2.0 licensed.",
+  "why_useful": "Another entry point into the same Andaluc\u00eda OpenRTA STR registry with a permissive license, useful if the .json data snapshots differ in date from openrta-tools.",
+  "potential": "low",
+  "geography": "C\u00e1diz province, Andaluc\u00eda, Spain",
+  "time_coverage": "unspecified, last commit 26 Jun 2024",
+  "size_hint": "small",
+  "license": "Apache-2.0",
+  "last_activity": "2024-06-26",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "overlaps Inquilinato-Cadiz/mapa and openrta-tools",
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "Another entry point into the same Andaluc\u00eda OpenRTA STR registry with a permissive license, useful if the .json data snapshots differ in date from openrta-tools."
+  ]
+ },
+ {
+  "key": "github:cadiz-resiste/openrta-excel",
+  "url": "https://github.com/cadiz-resiste/openrta-excel",
+  "name": "cadiz-resiste/openrta-excel",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Excel workbooks analysing the Junta de Andaluc\u00eda tourism registry (same OpenRTA source as the other cadiz-resiste repos).",
+  "why_useful": "Possible additional cut/vintage of the Andaluc\u00eda STR registry in spreadsheet form.",
+  "potential": "low",
+  "geography": "Andaluc\u00eda, Spain (C\u00e1diz focus)",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown, Excel workbooks",
+  "license": "not stated",
+  "last_activity": "2025-01-10",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "overlaps other cadiz-resiste/OpenRTA repos",
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "Possible additional cut/vintage of the Andaluc\u00eda STR registry in spreadsheet form."
+  ]
+ },
+ {
+  "key": "github:niteowlpt/conforme-pt-toolkit",
+  "url": "https://github.com/Niteowlpt/conforme-pt-toolkit",
+  "name": "Niteowlpt/conforme-pt-toolkit",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0 Python toolkit implementing Portuguese short-term-rental regulatory compliance logic: RNAL, SIBA (Lei 23/2007) guest-reporting, AT Modelo 30 tax form, and municipal tourist-tax arithmetic. No committed registry data; encodes the rules/fields RNAL registrations must carry.",
+  "why_useful": "No dataset, but documents the RNAL registration schema and municipal tourist-tax rules precisely enough to help interpret or reverse-engineer any future scrape of Portugal's national RNAL public register.",
+  "potential": "low",
+  "geography": "Portugal (national + municipal)",
+  "time_coverage": "n/a (compliance code, not a time series)",
+  "size_hint": "small toolkit",
+  "license": "Apache-2.0",
+  "last_activity": "2026-05-16",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "No dataset, but documents the RNAL registration schema and municipal tourist-tax rules precisely enough to help interpret or reverse-engineer any future scrape of Portugal's national RNAL public register."
+  ]
+ },
+ {
+  "key": "github:romankhazin/toronto-short-term-rentals",
+  "url": "https://github.com/RomanKhazin/Toronto-Short-Term-Rentals",
+  "name": "Toronto-Short-Term-Rentals",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A README + one Jupyter notebook ('Toronto Short Term Rentals.ipynb') doing exploratory analysis of Toronto's short-term rental registration data; description says 'Toronto short term rental registration data exploration'. Last updated 2021-10-04; effectively dormant. No confirmed committed CSV \u2014 the notebook likely pulls from the city's open-data portal itself, making this at most a reference/method rather than a stored panel.",
+  "why_useful": "Secondary/backup pointer to the same Toronto STR registration open-data source; low incremental value given the RamVasuthevan repo above is actively maintained and git-scraped, but worth noting as a second confirmation that Toronto's registration data is the same dataset multiple people have pulled.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Toronto, Canada",
+  "time_coverage": "Single pull, circa 2021",
+  "size_hint": "One notebook, no confirmed data file",
+  "license": "unknown",
+  "last_activity": "2021-10-04",
+  "duplicate_of_holding": "Same underlying source as city-of-toronto-short-term-rentals-registration above, but stale and one-shot rather than a vintage series",
+  "hits": 4,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Secondary/backup pointer to the same Toronto STR registration open-data source; low incremental value given the RamVasuthevan repo above is actively maintained and git-scraped, but worth noting as a second confirmation that Toronto's registration data is the same dataset multiple people have pulled.",
+   "Possible additional/older static snapshot of the Toronto STR registry (useful if it predates the daily-scrape repos and extends the point-in-time coverage backward); needs a direct repo read to confirm the snapshot date and file contents.",
+   "Points to Toronto's official STR registration open-data feed (a municipal registry, gap #12) via a working notebook, though the notebook itself adds little beyond exploration.",
+   "Possible older vintage of the Toronto registry (gap #12) predating the other repos' scrape windows; low confidence without opening the notebook."
+  ]
+ }
+]

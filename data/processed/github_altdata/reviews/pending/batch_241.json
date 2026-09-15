@@ -1,0 +1,145 @@
+[
+ {
+  "key": "other:https://zenodo.org/api/records?q=%22host%20concentration%22%20airbnb (search result: institutional mediation of str seasonality, pescador peredo/torres luque/torres-luque, 2026)",
+  "url": "https://zenodo.org/api/records?q=%22host%20concentration%22%20airbnb (search result: Institutional Mediation of STR Seasonality, Pescador Peredo/Torres Luque/Torres-Luque, 2026)",
+  "name": "Institutional Mediation of STR Seasonality: A Comparative Analysis of Santiago de Chile and Mexico City",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Zenodo record described as a 'dataset examining seasonality patterns in short-term rental markets' for Santiago de Chile and Mexico City; file contents not yet confirmed (record page only summarized, files list not fetched in this pass).",
+  "why_useful": "LatAm STR seasonality is a named gap (#7 regional volume, and general LatAm STR supply data); Mexico City overlaps our existing 13-city panel but Santiago de Chile does not -- worth a follow-up fetch of the record's actual files.",
+  "potential": "medium",
+  "geography": "Santiago de Chile, Mexico City",
+  "time_coverage": "not confirmed",
+  "size_hint": "unconfirmed - needs direct Zenodo record file-list check",
+  "license": "unconfirmed",
+  "last_activity": "2026",
+  "duplicate_of_holding": "partial overlap with Mexico City in our Inside Airbnb 13-city panel; Santiago de Chile is new",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "LatAm STR seasonality is a named gap (#7 regional volume, and general LatAm STR supply data); Mexico City overlaps our existing 13-city panel but Santiago de Chile does not -- worth a follow-up fetch of the record's actual files."
+  ]
+ },
+ {
+  "key": "github:surfnterd/pricelabs-tracker",
+  "url": "https://github.com/surfnterd/pricelabs-tracker",
+  "name": "surfnterd/pricelabs-tracker",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/FastAPI/SQLite tool that, given a user's own PriceLabs API key, takes daily snapshots for a listing: recommended/base price and min-max cap flags, >20% price-change history, YoY booking pace (occupancy and revenue vs. same days-out last year, alerts at >10pp lag), 'neighborhood market comp' snapshots daily, 3 years of backfilled reservation history, and Airbnb/Booking.com channel-mix split. MIT licensed, 1 commit, 0 stars (low adoption/no track record). No sample data committed; requires the operator's own paid PriceLabs account to run.",
+  "why_useful": "Shows the shape of PriceLabs' own-listing pace/YoY export (relevant to gap #2 style booking-pace concepts) but is single-listing telemetry, not a market panel, and needs a paid PriceLabs subscription to run.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "geography": "single unspecified listing",
+  "time_coverage": "live/current, no history committed",
+  "size_hint": "code only, snapshots kept locally by the operator, not in the repo",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)"
+  ],
+  "why_all": [
+   "Shows the shape of PriceLabs' own-listing pace/YoY export (relevant to gap #2 style booking-pace concepts) but is single-listing telemetry, not a market panel, and needs a paid PriceLabs subscription to run.",
+   "This is the most direct hit on the theme: a working, open-source method for pulling PriceLabs' own market-comp and pacing data (the exact quantity gap #2 wants \u2014 realised/ comp occupancy and ADR for STRs from a market-data vendor) rather than another NYC-2019 rehash. Would need a team member's/partner's PriceLabs subscription to actually run."
+  ]
+ },
+ {
+  "key": "github:everythingscraper/airbnb-scraper",
+  "url": "https://github.com/everythingscraper/airbnb-scraper",
+  "name": "airbnb-scraper (everythingscraper)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Very small repo (0 stars, 2 commits) wrapping an Apify Actor that explicitly computes occupancy rate, ADR and RevPAR per listing from Airbnb's forward-looking 12-month calendar, plus day-by-day booking status/pricing for the full 12 months, listing amenities/images/coordinates/review counts, and optional full review text/host portfolio. README shows a worked sample row (Paris listing: 78% occupancy, EUR142.50 ADR, EUR111.15 RevPAR). No committed dataset; output goes to JSON via Apify (paid).",
+  "why_useful": "A working method to derive occupancy/ADR/RevPAR comps directly from Airbnb calendars at scale (gap #2/#8-style comp data), but it operates by scraping airbnb.com itself \u2014 squarely the class of tool CONTEXT flags as a terms-of-service decision for a human, so this should be catalogued as method-only and NOT run.",
+  "potential": "medium",
+  "gap_targets": [
+   2
+  ],
+  "geography": "global, wherever Airbnb operates",
+  "time_coverage": "live/forward-looking only",
+  "size_hint": "n/a, pay-per-call",
+  "license": "not confirmed",
+  "last_activity": "Apr 27, 2026",
+  "duplicate_of_holding": "",
+  "hits": 7,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose",
+   "Hotel performance data: STR / CoStar weekly and monthly US RevPAR figures scraped from press releases, HotStats, Smith Travel history compiled on GitHub",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers",
+   "Hotel and STR supply from CoStar/CBRE/JLL/Cushman public reports scraped; real-estate broker STR reports with data"
+  ],
+  "why_all": [
+   "A working method to derive occupancy/ADR/RevPAR comps directly from Airbnb calendars at scale (gap #2/#8-style comp data), but it operates by scraping airbnb.com itself \u2014 squarely the class of tool CONTEXT flags as a terms-of-service decision for a human, so this should be catalogued as method-only and NOT run.",
+   "Rare case of a client whose stated purpose is exactly gap #2 (realised ADR/occupancy for STRs) rather than generic listing scraping -- worth reviewing the field schema even though it proxies through a paid Apify actor.",
+   "Directly targets gap #2 (realised ADR/occupancy for STRs) by name and design \u2014 this is the first repo in the sweep whose stated purpose is computing ADR/occupancy/RevPAR from Airbnb calendar data rather than just listing fields, even though (a) it uses FORWARD calendar/asking-price data, not realised bookings, so it inherits the same asking-vs-realised-price gap the project already knows about, and (b) it is unrun/uncatalogued elsewhere and has essentially no traction (0 stars).",
+   "If it works as advertised it would give realised ADR/occupancy/RevPAR at the listing level for STRs (our gap #2), which none of our current sources provide. But it scrapes airbnb.com directly, which our repo rules classify as a ToS decision for a human, not something to run \u2014 catalogued as method only, left unrun.",
+   "If it worked, this is exactly the realised-ADR/occupancy-for-STRs gap (#2), but it scrapes airbnb.com directly, which our rules flag as a terms-of-service decision for a human, not something to run. Catalogued as a method only, left un-run.",
+   "If ever run (a human ToS call, not for this pass), this is one of the only tools that claims to expose something close to realized ADR/occupancy per market \u2014 directly on gap #2. Catalogued as method only per repo rules; not run.",
+   "Not on-theme (it scrapes Airbnb itself, not CBRE/JLL/CoStar broker reports) and explicitly touches airbnb.com, which CLAUDE.md flags as a terms-of-service decision for a human, not something to run. Catalogued only as a method that exists; do not execute."
+  ]
+ },
+ {
+  "key": "github:johnbalvin/gobnb",
+  "url": "https://github.com/johnbalvin/gobnb",
+  "name": "gobnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go-language port of the same author's Airbnb scraper (39 stars, 22 commits, MIT, updated Jul 2025). Extracts room-level listing data (price, check-in/out, images), and search results by geographic coordinates/zoom level, optimized for airbnb.com/rooms/[roomID] URLs.",
+  "why_useful": "Same method family as pyairbnb; only useful if the desk ever needs a non-Python runtime. Not a new data source.",
+  "license": "MIT",
+  "last_activity": "2026-01-07",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [],
+  "duplicate_of_holding": "duplicates pyairbnb field coverage",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Same method family as pyairbnb; only useful if the desk ever needs a non-Python runtime. Not a new data source.",
+   "Same field coverage as pyairbnb but in Go for higher-throughput pulls if a human authorizes scraping; useful if Python client breaks against a schema change since it's independently maintained."
+  ]
+ },
+ {
+  "key": "github:digital-engineering/airbnb-scraper",
+  "url": "https://github.com/digital-engineering/airbnb-scraper",
+  "name": "airbnb-scraper (digital-engineering, Scrapy)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GPL-3.0 Scrapy spider (210 stars, updated Aug 2026, the highest-starred repo in this theme) for Airbnb search results. Exports via AirbnbScraperItem/FIELDS_TO_EXPORT (customizable in settings.py) to CSV/XLSX/Elasticsearch; README confirms name, description, review text and property ID fields at minimum, plus filterable search params (min/max price, checkin/checkout dates, neighborhoods, room types, weekly/monthly discount %). Author notes the project is 'no longer maintained' and exploring a simpler approach -- no committed sample data.",
+  "why_useful": "Longest-running, most-starred open Airbnb search scraper; documents a discount-percentage field (weekly/monthly) that could proxy price elasticity/promotional intensity if ever run. Catalogue as method only.",
+  "license": "GPL-3.0",
+  "last_activity": "2026-08-04",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo, no data files",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Longest-running, most-starred open Airbnb search scraper; documents a discount-percentage field (weekly/monthly) that could proxy price elasticity/promotional intensity if ever run. Catalogue as method only.",
+   "Second-highest-star pure scraper found; explicit note that Airbnb broke Scrapy-based requests is itself useful signal about how brittle these clients are (all of them are catalogue-only per the run's rules regardless)."
+  ]
+ }
+]

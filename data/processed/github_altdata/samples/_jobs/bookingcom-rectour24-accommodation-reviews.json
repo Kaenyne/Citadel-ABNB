@@ -1,0 +1,10 @@
+{
+ "slug": "bookingcom-rectour24-accommodation-reviews",
+ "url": "https://ceur-ws.org/Vol-3886/challenge1.pdf",
+ "category": "competitor_ota",
+ "data_kind": "pointer_to_external_host",
+ "one_line": "RecTour-2024 Booking.com reviews challenge; the actual data lives at https://huggingface.co/datasets/Booking-com/accommodation-reviews (public, ungated, 1.80 GB): train.csv/val.csv (~1.6M English reviews from 40k accommodations published in 2023, fields incl. guest_type, guest_country, room_nights, month, accommodation_country/type/star_rating) plus a rectour24/ folder (train/val/test reviews, users, matches). Licence 'cc' on the card, CC-BY-NC-SA-style research terms; last modified 21 Sep 2025.",
+ "abnb_use": "guest_type + room_nights + guest_country x accommodation_country on 1.6M dated 2023 reviews is a competitor-side party-composition, length-of-stay and cross-border-share panel (gaps #20 and #9) - the only non-Airbnb source we would hold with room_nights and guest_type on the same row, a direct comparator for the Hawaii DBEDT party-size series and for our LOS assumptions in the ADR decomposition.",
+ "sample_plan": "Ranged HTTP heads from HF resolve, no login, ~11 MB total: (1) curl -sL -r 0-4999999 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/train.csv' -o bkng_acc_train_head.csv ; (2) curl -sL -r 0-1999999 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/val.csv' -o bkng_acc_val_head.csv ; (3) curl -sL -r 0-1999999 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_users.csv' -o rectour24_train_users_head.csv ; (4) curl -sL -r 0-1999999 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_reviews.csv' -o rectour24_train_reviews_head.csv ; (5) curl -sL 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/README.md' -o bkng_acc_README.md. Drop trailing partial lines; do not pull the full 1.8 GB.",
+ "tos_or_license_flag": true
+}

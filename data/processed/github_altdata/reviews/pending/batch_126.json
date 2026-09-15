@@ -1,0 +1,116 @@
+[
+ {
+  "key": "github:addisonlynch/py_bls_",
+  "url": "https://github.com/addisonlynch/py_BLS_",
+  "name": "py_BLS_ (unverified - 404 on direct fetch)",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Search-result snippet only: \"Python Wrapper for the Bureau of Labor Statistics Public Data API\", 7 stars, last updated Jan 2019. Direct WebFetch to the repo URL returned 404 (may be renamed/deleted/archived under a different path) \u2014 could not verify contents independently.",
+  "why_useful": "Would be a generic BLS API client if still live; flagging for a human to re-check the exact URL (GitHub search sometimes mangles trailing-underscore repo names) rather than dropping it silently.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Would be a generic BLS API client if still live; flagging for a human to re-check the exact URL (GitHub search sometimes mangles trailing-underscore repo names) rather than dropping it silently."
+  ]
+ },
+ {
+  "key": "github:ilyna/geospatial-and-reporting-visualizations",
+  "url": "https://github.com/Ilyna/Geospatial-and-Reporting-Visualizations",
+  "name": "Geospatial-and-Reporting-Visualizations",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Maps/analysis of March 2020 QCEW employment location quotients (industry concentration) for Leisure & Hospitality and Natural Resources & Mining sectors, by county/region. 0 stars, last updated March 2021, appears to be a one-off class project map deliverable rather than a raw data file.",
+  "why_useful": "Confirms Leisure & Hospitality QCEW location-quotient data exists in processed form somewhere, but this specific repo is a visualization project, not a reusable dataset or puller \u2014 low value as-is.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Confirms Leisure & Hospitality QCEW location-quotient data exists in processed form somewhere, but this specific repo is a visualization project, not a reusable dataset or puller \u2014 low value as-is."
+  ]
+ },
+ {
+  "key": "github:n8n-code/n8n-nodes-mastercard-spendingpulse",
+  "url": "https://github.com/n8n-code/n8n-nodes-mastercard-spendingpulse",
+  "name": "n8n-code/n8n-nodes-mastercard-spendingpulse",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An n8n workflow-automation custom node wrapping the Mastercard SpendingPulse API to pull 'monthly sales volume and growth rate data' (retail sales, category cuts) into automation pipelines. No data committed \u2014 it's a thin API client requiring a paid Mastercard developer key.",
+  "why_useful": "Could be a template for how to call the SpendingPulse API programmatically if the team ever gets Mastercard developer credentials, but SpendingPulse itself is licensed/paid and the CLAUDE.md rules bar paid API keys \u2014 flagging as a method pointer only, not directly actionable now.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "geography": "US (SpendingPulse is US-focused)",
+  "time_coverage": "n/a (live API wrapper, no historical data bundled)",
+  "size_hint": "Small code repo, no data",
+  "last_activity": "2026-06-13",
+  "license": "unspecified",
+  "hits": 2,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "Could be a template for how to call the SpendingPulse API programmatically if the team ever gets Mastercard developer credentials, but SpendingPulse itself is licensed/paid and the CLAUDE.md rules bar paid API keys \u2014 flagging as a method pointer only, not directly actionable now.",
+   "SpendingPulse (Mastercard's aggregated US retail sales report, including a Restaurants/travel-adjacent category) requires a Mastercard developer API key; this is a ready-made client that could pull it on a schedule if the team obtains an API key \u2014 a method rather than a dataset, matching the theme's core keyword directly."
+  ]
+ },
+ {
+  "key": "github:perusworld/mcdevapi-spendingpulse-refimpl-web",
+  "url": "https://github.com/perusworld/mcdevapi-spendingpulse-refimpl-web",
+  "name": "perusworld/mcdevapi-spendingpulse-refimpl-web",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Three companion reference-implementation repos (Angular/Web, Spring3, Spring Boot) from Mastercard's own developer-relations era demonstrating how to call the Mastercard Developer API's SpendingPulse endpoint. No data committed; example/scaffold client code only, appears old (pre-2020 era Mastercard dev portal branding).",
+  "why_useful": "Marginal: illustrates historical SpendingPulse API schema (retail category, YoY growth) but stale, requires paid credentials, and CLAUDE.md forbids paid API keys \u2014 kept only as a documentation curiosity.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "geography": "US",
+  "time_coverage": "n/a",
+  "size_hint": "Small code repo",
+  "last_activity": "2016-11-15",
+  "license": "MIT",
+  "hits": 2,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "Marginal: illustrates historical SpendingPulse API schema (retail category, YoY growth) but stale, requires paid credentials, and CLAUDE.md forbids paid API keys \u2014 kept only as a documentation curiosity.",
+   "Confirms the shape of the SpendingPulse API contract if the team later decides to pursue a Mastercard developer key; low value as a source of data today since these are stale scaffolding repos with no committed output."
+  ]
+ },
+ {
+  "key": "github:perusworld/mcdevapi-spendingpulse-refimpl-springboot",
+  "url": "https://github.com/perusworld/mcdevapi-spendingpulse-refimpl-springboot",
+  "name": "perusworld/mcdevapi-spendingpulse-refimpl-springboot",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Sibling Spring-Boot/Maven backend reference implementation for the same Mastercard SpendingPulse API (no data files committed).",
+  "why_useful": "Same as the web variant above \u2014 a stale API-schema reference only, not a usable data source without paid credentials.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "duplicate of perusworld/mcdevapi-spendingpulse-refimpl-web (same product, different tech stack)",
+  "geography": "US",
+  "time_coverage": "n/a",
+  "size_hint": "Small code repo",
+  "last_activity": "2017-01-04",
+  "license": "unspecified",
+  "hits": 1,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "Same as the web variant above \u2014 a stale API-schema reference only, not a usable data source without paid credentials."
+  ]
+ }
+]

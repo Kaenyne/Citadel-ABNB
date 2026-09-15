@@ -1,0 +1,139 @@
+[
+ {
+  "key": "github:ckan/ckanapi",
+  "url": "https://github.com/ckan/ckanapi",
+  "name": "ckan/ckanapi",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official CLI + Python module for the CKAN Action API (CKAN is the open-data portal platform used by many EU cities/national statistics offices and some US agencies). Supports bulk dataset dump/load, remote/local/test targets, parallel workers. 212 stars, 615 commits, MIT/Crown Copyright license, active CI.",
+  "why_useful": "Complements sodapy for CKAN-based portals; several EU STR-regulation and housing-registry sources (city/regional open-data catalogues in scope per gap #12/#13) are CKAN-hosted, so this is a working discovery/pull method rather than a bespoke scraper.",
+  "potential": "low",
+  "geography": "Global (client works against any CKAN-hosted portal)",
+  "time_coverage": "N/A - tooling",
+  "size_hint": "N/A - library",
+  "license": "MIT / Crown Copyright (Government of Canada)",
+  "last_activity": "active, CI/CD workflows present",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 3,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract",
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets",
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Complements sodapy for CKAN-based portals; several EU STR-regulation and housing-registry sources (city/regional open-data catalogues in scope per gap #12/#13) are CKAN-hosted, so this is a working discovery/pull method rather than a bespoke scraper.",
+   "Standard tooling for bulk-pulling from CKAN-based portals (US data.gov, many EU/UK/Canada city and national statistics portals) that could hold STR registries, tourism-board releases, or housing datasets under gaps 7, 12, 13.",
+   "Complements sodapy for gap #17 \u2014 lets an agent discover and pull STR/complaint datasets from CKAN-based city portals outside the Socrata set (useful for the EU registration/enforcement trackers in gap #12), rounding out a cross-city 311/enforcement-proxy pull pipeline."
+  ]
+ },
+ {
+  "key": "github:uscensusbureau/citysdk",
+  "url": "https://github.com/uscensusbureau/citysdk",
+  "name": "uscensusbureau/citysdk",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official (now archived) Census Bureau JavaScript utility library for Census APIs: statistics pulls plus cartographic GeoJSON and lat/lng-to-FIPS geocoding.",
+  "why_useful": "Geocoding utility to map STR listing lat/lng (Inside Airbnb) to census tract/FIPS for joining against ACS vacancy/rent-burden tables; superseded functionally by tidycensus but still a working reference implementation.",
+  "potential": "low",
+  "geography": "USA",
+  "time_coverage": "N/A - tooling, archived",
+  "size_hint": "N/A - library",
+  "license": "not confirmed in fetch (US Census Bureau official repo)",
+  "last_activity": "archived (no longer maintained)",
+  "duplicate_of_holding": "tidycensus does the statistical-pull half better and is actively maintained; citysdk's only distinct value is the lat/lng->FIPS geocoding helper",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Geocoding utility to map STR listing lat/lng (Inside Airbnb) to census tract/FIPS for joining against ACS vacancy/rent-burden tables; superseded functionally by tidycensus but still a working reference implementation."
+  ]
+ },
+ {
+  "key": "github:xds12138/weekly-economic-index-gdp-nowcasting",
+  "url": "https://github.com/XDS12138/weekly-economic-index-gdp-nowcasting",
+  "name": "weekly-economic-index-gdp-nowcasting",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0 licensed repo (last updated 2 Aug 2026) implementing GDP nowcasting from a weekly economic index construction; description is empty, so exact data source (own WEI-style build vs. pulling NY Fed's WEI) and file contents were not confirmed via README/API inspection.",
+  "why_useful": "Potential open replication of a WEI-style weekly GDP nowcast methodology (relevant to gap #17 mixed-frequency/nowcasting methods); worth a closer look by whoever picks up this thread, but not verified to contain a usable dataset.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "size_hint": "unknown",
+  "time_coverage": "unknown",
+  "geography": "unclear, likely US",
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-02",
+  "hits": 1,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index"
+  ],
+  "why_all": [
+   "Potential open replication of a WEI-style weekly GDP nowcast methodology (relevant to gap #17 mixed-frequency/nowcasting methods); worth a closer look by whoever picks up this thread, but not verified to contain a usable dataset."
+  ]
+ },
+ {
+  "key": "github:jamesduce/covid-lockdown-asset-pricing",
+  "url": "https://github.com/JamesDuce/covid-lockdown-asset-pricing",
+  "name": "covid-lockdown-asset-pricing",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Markov-chain asset-pricing analysis using the FRED-hosted NY Fed Weekly Economic Index (WEI) for the COVID period; likely just pulls WEI from FRED (a series we may already have access to via our existing FRED integration) rather than storing an independent longer history.",
+  "why_useful": "Confirms the WEI is trivially available through FRED (which the project already queries for ~40 series) \u2014 worth adding the WEI series ID to our existing FRED pull rather than treating this as a new data source; the repo itself is a one-off academic analysis, not a data store.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "FRED (already integrated) hosts NY Fed WEI directly; no separate data value in this repo",
+  "size_hint": "small, notebook/script only",
+  "time_coverage": "2020 COVID window",
+  "geography": "US",
+  "license": "none declared",
+  "last_activity": "2026-05-05",
+  "hits": 1,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index"
+  ],
+  "why_all": [
+   "Confirms the WEI is trivially available through FRED (which the project already queries for ~40 series) \u2014 worth adding the WEI series ID to our existing FRED pull rather than treating this as a new data source; the repo itself is a one-off academic analysis, not a data store."
+  ]
+ },
+ {
+  "key": "github:cykbennie/fbi",
+  "url": "https://github.com/cykbennie/fbi",
+  "name": "fbi (Factor-Based Imputation) R package",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (GPL-3.0, 70 commits) implementing Bai-Ng-style factor/matrix-completion imputation for high-dimensional macro panels; ships a vignette applying the method to the FRED-MD monthly macro dataset (McCracken & Ng), though the FRED-MD data itself is fetched externally, not committed.",
+  "why_useful": "Could be applied to reconstruct/impute gaps in a weekly or monthly macro panel we assemble (e.g. filling missing weeks in a homemade weekly tracker), tangential fit to point-in-time vintage work (gap #4).",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "license": "GPL-3.0",
+  "last_activity": "unknown",
+  "geography": "n/a (generic method); demo uses US FRED-MD",
+  "time_coverage": "n/a",
+  "size_hint": "small library",
+  "hits": 3,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Could be applied to reconstruct/impute gaps in a weekly or monthly macro panel we assemble (e.g. filling missing weeks in a homemade weekly tracker), tangential fit to point-in-time vintage work (gap #4).",
+   "Useful methods layer if the team pulls the (separately hosted) FRED-MD/FRED-QD standardized macro panels and needs missing-value handling consistent with the academic real-time-data literature; adjacent to point-in-time macro nowcasting methods (gap #17).",
+   "Points to FRED-MD/FRED-QD (large curated 100+ series monthly/quarterly macro panels, standard in macro-nowcasting) as an external target, plus a working imputation method for handling ragged-edge/missing macro data in a MIDAS/DFM nowcast \u2014 relevant to gap #17 (mixed-frequency nowcasting methods)."
+  ]
+ }
+]

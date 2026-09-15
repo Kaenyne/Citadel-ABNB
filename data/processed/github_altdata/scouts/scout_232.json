@@ -1,0 +1,250 @@
+{
+ "candidates": [
+  {
+   "url": "https://github.com/Nandha1604/MTA-Ridership-Data-Analysis-Dashboard",
+   "name": "MTA-Ridership-Data-Analysis-Dashboard",
+   "category": "travel_volume_transport",
+   "data_kind": "stored_dataset",
+   "what_it_holds": "Committed MTA_Daily_Ridership.xlsx snapshot of the MTA's official 'Daily Ridership Data: Beginning 2020' dataset, covering subway, bus, LIRR, Metro-North, Access-A-Ride, bridges & tunnels traffic, and Staten Island Railway from 2020 onward, plus a dashboard build.",
+   "why_useful": "Multi-modal NYC transit ridership recovery/level series can act as a local visitor-and-mobility proxy for one of ABNB's largest single markets (gap 10, transit as visitor proxy); a static committed copy avoids relying on the live Socrata endpoint.",
+   "potential": "medium",
+   "geography": "New York City",
+   "time_coverage": "2020-present (daily)",
+   "size_hint": "single xlsx, multi-sheet, daily rows across ~7 modes",
+   "license": "unspecified",
+   "last_activity": "2025-07-22",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/jeremiak/mta-ridership-map",
+   "name": "mta-ridership-map",
+   "category": "travel_volume_transport",
+   "data_kind": "stored_dataset",
+   "what_it_holds": "Committed CSVs (Stations.csv, ridership.csv, joined.csv) plus nyc.json geodata and pull/join scripts mapping NYC MTA subway ridership to station locations.",
+   "why_useful": "Station-level subway ridership panel usable as a granular NYC tourist-corridor mobility proxy (e.g., airport-linked or Manhattan-core stations) rather than only system-wide totals.",
+   "potential": "medium",
+   "geography": "New York City",
+   "time_coverage": "not stated in README (older snapshot, repo dormant since 2022)",
+   "size_hint": "a few CSVs, station-level",
+   "license": "unspecified",
+   "last_activity": "2022-10-02",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/atharvakarnik/NY-MetroMetrics",
+   "name": "NY-MetroMetrics",
+   "category": "travel_volume_transport",
+   "data_kind": "acquisition_method",
+   "what_it_holds": "Data-engineering/ETL pipeline (Apache-2.0) that extracts MTA ridership data (subway, bus, Metro-North) for post-pandemic analysis; no data files confirmed committed, README does not specify exact source files or date range.",
+   "why_useful": "Reusable extraction pipeline for the official MTA ridership feeds if a point-in-time pull is needed, but contributes no new dataset itself.",
+   "potential": "low",
+   "geography": "New York City",
+   "time_coverage": "unspecified, framed as 'post-pandemic'",
+   "size_hint": "pipeline code, no confirmed data size",
+   "license": "Apache-2.0",
+   "last_activity": "2024-08-01",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/LeeProut/mta-ridership",
+   "name": "mta-ridership",
+   "category": "travel_volume_transport",
+   "data_kind": "stored_dataset",
+   "what_it_holds": "Jupyter notebook (MTA_ridership_01-03-22.ipynb) plus Resources/Images analyzing MTA subway, bus, and vehicular (bridge/tunnel) ridership from March 2020 to March 2021.",
+   "why_useful": "Narrow COVID-window ridership analysis; marginal value as it predates the demand regime relevant to the 2026 pitch and is a single narrow snapshot.",
+   "potential": "low",
+   "geography": "New York City",
+   "time_coverage": "Mar 2020 - Mar 2021",
+   "size_hint": "one notebook + small resource files",
+   "license": "unspecified",
+   "last_activity": "2024-11-11",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/mattmattheisen/msp_dal_backtest",
+   "name": "msp_dal_backtest",
+   "category": "travel_volume_transport",
+   "data_kind": "both",
+   "what_it_holds": "data/msp_passengers.csv: monthly MSP airport enplanement counts 2015-2024 (~120 obs) sourced from Metropolitan Airports Commission monthly operations reports, paired with data/dal_prices.csv (Tiingo monthly DAL closes); backtest code testing MSP passenger momentum as a leading signal for Delta Air Lines equity, with COVID period excluded and optional seasonal adjustment.",
+   "why_useful": "Directly analogous 'book-ahead volume as equity signal' methodology (kernel analogue per gap 18, cruise/airline advance-volume-as-signal) and a concrete airport-enplanement time series/pull method that could be replicated for airports feeding ABNB-heavy markets.",
+   "potential": "medium",
+   "geography": "Minneapolis-St Paul (MSP), USA",
+   "time_coverage": "2015-2024 monthly",
+   "size_hint": "~120-row CSV x2 plus backtest scripts",
+   "license": "MIT",
+   "last_activity": "2026-08-28",
+   "gap_targets": [
+    10,
+    18
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/maxtong1987/hkimmd-scrapper",
+   "name": "hkimmd-scrapper",
+   "category": "travel_volume_transport",
+   "data_kind": "acquisition_method",
+   "what_it_holds": "Scraper (Apache-2.0) targeting immd.gov.hk (Hong Kong Immigration Department) for airport/border passenger-traffic statistics \u2014 a working, non-Airbnb-site method for pulling Hong Kong visitor-arrival counts.",
+   "why_useful": "Working scraper for an official APAC border-crossing/airport arrivals source not already in our government-data holdings; relevant to regional travel volume in Asia (gap 7) via a rail/airport-link proxy.",
+   "potential": "medium",
+   "geography": "Hong Kong",
+   "time_coverage": "whatever immd.gov.hk currently publishes (scraper, not a static archive)",
+   "size_hint": "single scraper script",
+   "license": "Apache-2.0",
+   "last_activity": "2021-07-09",
+   "gap_targets": [
+    7
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/meganbougle/LAX-Dataset",
+   "name": "LAX-Dataset",
+   "category": "travel_volume_transport",
+   "data_kind": "stored_dataset",
+   "what_it_holds": "CSV recovered from data.gov's 'Los Angeles International Airport Passenger Traffic By Terminal' dataset, a static single-airport terminal-level passenger count file.",
+   "why_useful": "Terminal-level LAX passenger traffic could proxy inbound visitor volume to the LA market (one of the 13 Inside Airbnb panel cities), though it is a single static pull of a government dataset we could fetch directly.",
+   "potential": "low",
+   "geography": "Los Angeles",
+   "time_coverage": "unspecified in listing (data.gov snapshot)",
+   "size_hint": "single CSV",
+   "license": "unspecified",
+   "last_activity": "2024-10-28",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/G33kLabs/ratp-open-datas",
+   "name": "ratp-open-datas",
+   "category": "travel_volume_transport",
+   "data_kind": "acquisition_method",
+   "what_it_holds": "Script that downloads a fresh copy of RATP (Paris metro/RER operator) Open Data and builds per-station JSON files; no ridership counts confirmed, appears focused on station/line metadata rather than passenger volumes.",
+   "why_useful": "Could be adapted to pull RATP station-level data if RATP publishes ridership counts in its open-data portal, relevant to Paris (an Inside Airbnb panel city) visitor-proxy work.",
+   "potential": "low",
+   "geography": "Paris",
+   "time_coverage": "n/a (live pull script, dormant since 2014)",
+   "size_hint": "small script repo",
+   "license": "unspecified",
+   "last_activity": "2014-08-29",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/ayoubfoussoul/hacking-the-paris-subway",
+   "name": "hacking-the-paris-subway",
+   "category": "travel_volume_transport",
+   "data_kind": "acquisition_method",
+   "what_it_holds": "Prediction/optimization project for Paris subway (RATP) schedules using RATP open data; primarily a scheduling-optimization exercise, ridership-data content unconfirmed from README alone.",
+   "why_useful": "Possible secondary pointer to RATP open-data ridership tables if inspected further, but as listed it reads as a scheduling project rather than a ridership archive.",
+   "potential": "low",
+   "geography": "Paris",
+   "time_coverage": "unspecified",
+   "size_hint": "unknown",
+   "license": "unspecified",
+   "last_activity": "2019-09-26",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/api-evangelist/transport-for-paris-france",
+   "name": "transport-for-paris-france",
+   "category": "travel_volume_transport",
+   "data_kind": "pointer_to_external_host",
+   "what_it_holds": "Contains no ridership data \u2014 an API-Evangelist bulk-registered profile repo holding only an apis.yml machine-readable pointer to the RATP Open Data API surface (confirmed via file listing: kin/, screenshots/, security/, README.md, apis.yml). No OpenAPI spec or data files present.",
+   "why_useful": "Only useful as a discovery pointer to RATP's own open-data API; contributes no data itself.",
+   "potential": "low",
+   "geography": "Paris",
+   "time_coverage": "n/a",
+   "size_hint": "metadata files only",
+   "license": "unspecified",
+   "last_activity": "2026-09-12",
+   "gap_targets": [],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/issed1996/airports-by-passenger-traffic-ETL",
+   "name": "airports-by-passenger-traffic-ETL",
+   "category": "travel_volume_transport",
+   "data_kind": "acquisition_method",
+   "what_it_holds": "A simple ETL pipeline described as processing 'airports passenger traffic' data; source and geographic scope not detailed in the search listing.",
+   "why_useful": "Potential reusable ETL pattern for airport passenger-traffic ingestion if the underlying source (unconfirmed) is a usable public feed; needs closer inspection before relying on it.",
+   "potential": "low",
+   "geography": "unspecified",
+   "time_coverage": "unspecified",
+   "size_hint": "unknown",
+   "license": "unspecified",
+   "last_activity": "2024-12-12",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/PurpleRadish42/airports-project",
+   "name": "airports-project",
+   "category": "travel_volume_transport",
+   "data_kind": "stored_dataset",
+   "what_it_holds": "Two Excel files with a brief analysis of airport passenger traffic in India (scope/years not detailed beyond the description).",
+   "why_useful": "Possible small India airport-traffic dataset relevant to APAC regional travel-volume gap, though scope looks thin (described as 'brief analysis').",
+   "potential": "low",
+   "geography": "India",
+   "time_coverage": "unspecified",
+   "size_hint": "2 Excel files",
+   "license": "unspecified",
+   "last_activity": "2025-08-20",
+   "gap_targets": [
+    7
+   ],
+   "duplicate_of_holding": ""
+  },
+  {
+   "url": "https://github.com/PAGiesting/MetisMTAProject",
+   "name": "MetisMTAProject",
+   "category": "travel_volume_transport",
+   "data_kind": "acquisition_method",
+   "what_it_holds": "Links MTA ridership data, subway station locations, and hospital locations (older Metis bootcamp project, 2020) to identify underserved areas; ridership data likely pulled from MTA turnstile data, not health/tourism focused.",
+   "why_useful": "Marginal \u2014 the underserved-areas health framing is off-thesis, but the underlying MTA turnstile-to-station join logic could be repurposed for a station-level tourist-corridor cut.",
+   "potential": "low",
+   "geography": "New York City",
+   "time_coverage": "pre-2020 (project dated 2020-04)",
+   "size_hint": "unknown",
+   "license": "unspecified",
+   "last_activity": "2020-04-04",
+   "gap_targets": [
+    10
+   ],
+   "duplicate_of_holding": ""
+  }
+ ],
+ "queries_run": [
+  "gh search repos \"mta ridership data\" --sort stars",
+  "gh search repos \"tfl ridership OR tfl open data\" --sort stars",
+  "gh search repos \"RATP open data\" --sort stars",
+  "gh search repos \"airport passenger traffic\" --sort stars",
+  "gh search repos \"NYC TLC airport taxi trips\" --sort stars",
+  "gh search repos \"japan railway passengers OR JR ridership OR narita passengers\" --sort stars",
+  "WebFetch raw READMEs and gh api contents listings for shortlisted repos"
+ ],
+ "notes": "Dead ends: TfL-specific search returned zero results (no repo description matched 'tfl ridership' or 'tfl open data' text directly \u2014 TfL's own open-data API is well known but GitHub mirrors of TfL ridership counts did not surface; a follow-up scout could try 'tfl.gov.uk open data', 'oyster card data', or 'London Underground station usage' as more specific terms). NYC TLC airport-taxi-trip search and Japan rail/airport passenger searches both returned zero repos \u2014 worth retrying with terms like 'nyc taxi trip data github', 'JR East IR passenger statistics', 'Haneda Narita monthly passengers', or checking JNTO/Japan-government open-data portals directly rather than GitHub search, since Japanese rail/airport operators do not appear to have GitHub-native ridership mirrors. WebSearch budget was exhausted mid-session (this session had already used 200/200 web searches from prior work), so I relied on WebFetch (unmetered) for repo README/content inspection instead \u2014 a few promising leads (RATP ridership specifically, JR/Narita/Haneda passenger data, London Underoriginal station-level Oyster/contactless counts) were not fully chased down via WebSearch and are worth a dedicated re-scout. Most MTA-themed repos found are small student/bootcamp analyses of the same official MTA 'Daily Ridership Data: Beginning 2020' Socrata dataset (2020-present only, no pre-2020 archive found) \u2014 none add a materially longer or point-in-time version of what a human could pull directly from MTA's own open-data portal, so ratings are capped at medium. The MSP-DAL backtest repo is the most conceptually interesting find: it operationalizes airport enplanements as a leading equity signal, which is the same 'book-ahead volume as kernel proxy' logic as gap #18 (cruise advance sales) and could be replicated for airports serving ABNB-heavy markets (e.g., a Paris CDG/Orly, Barcelona, or Sydney enplanement series) if such committed CSVs exist on GitHub \u2014 worth a targeted follow-up search on '<city> airport passengers csv github' for the 13-city Inside Airbnb panel.",
+ "theme": "recovered from journal",
+ "modality": "gh",
+ "_recovered_from_journal": true
+}

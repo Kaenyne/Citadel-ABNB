@@ -1,0 +1,66 @@
+{
+  "theme": "Consumer sentiment and surveys: UMich, Conference Board, NY Fed SCE, EU consumer confidence, travel-intent surveys (Longwoods, Destination Analysts, MMGY) scraped",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"michigan consumer sentiment\" --limit 30 --sort stars",
+    "gh search repos \"survey of consumer expectations\" OR \"SCE\" \"New York Fed\" --limit 30 --sort stars",
+    "gh search repos \"consumer confidence index\" data --limit 30 --sort stars",
+    "gh search repos \"fred-md\" OR \"umich\" \"sentiment\" --limit 30 --sort stars",
+    "gh search repos \"longwoods\" OR \"destination analysts\" OR \"mmgy\" travel --limit 30 --sort updated",
+    "gh search repos \"consumer expectations\" survey nyfed --limit 30 --sort updated",
+    "gh search repos \"UMCSENT\" OR \"consumer sentiment\" csv --limit 30 --sort stars",
+    "WebSearch: github repo survey of consumer expectations NY Fed data csv (blocked, session web-search budget exhausted)",
+    "WebSearch: github consumer sentiment umich data.gov mirror csv repository (blocked, session web-search budget exhausted)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/arturbeg/google_trends_consumption_prediction",
+      "name": "google_trends_consumption_prediction",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Research repo (40 stars, updated Jul 2025) comparing a Kernel-PCA Google Trends consumption indicator against the Conference Board Consumer Confidence Index and the University of Michigan Consumer Sentiment Index as predictors of US real PCE. No raw survey series committed as files, but the code pulls/uses UMich CSI and Conference Board CCI series and documents the construction and an in-sample/out-of-sample nowcasting comparison methodology (kernel PCA on Google Trends categories vs. survey indices, AR baseline).",
+      "why_useful": "Gap 17 (nowcasting methods, anchored/constructed Google Trends). We already found raw Google Trends fails naive tests (0/162) on our own construction; this repo's kernel-PCA re-weighting of a consumption-relevant Trends basket, benchmarked explicitly against UMich/Conference Board, is a different construction worth stealing the method from rather than the conclusion. Low direct data value (no files), moderate method value.",
+      "potential": "medium",
+      "geography": "US",
+      "time_coverage": "not stated in repo card; consumption/CCI/CSI history depends on FRED vintage used",
+      "size_hint": "code repo, no large data files",
+      "license": "none declared",
+      "last_activity": "2025-07-30",
+      "gap_targets": [17],
+      "duplicate_of_holding": "We already hold UMich/Conference Board via general macro sources and have tested raw Google Trends (failed); this is a re-weighted Trends construction, not a duplicate of the failed test."
+    },
+    {
+      "url": "https://github.com/berkedizdar12/tuik-forecasting-project",
+      "name": "tuik-forecasting-project",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Small repo forecasting Turkey's monthly Consumer Confidence Index using the `tuikr` R package (a client for TÜİK, Turkey's official statistics agency) to pull the series, then compares ten forecasting methods.",
+      "why_useful": "Not useful for ABNB directly (Turkey is a small/non-priority geography for the pitch), but demonstrates a working R client (`tuikr`) for a non-US/EU official consumer-confidence series if the team ever needs EMEA-adjacent consumer data beyond Eurostat/OECD.",
+      "potential": "low",
+      "geography": "Turkey",
+      "time_coverage": "monthly, TÜİK history",
+      "size_hint": "small script repo",
+      "license": "none declared",
+      "last_activity": "2026-06-03",
+      "gap_targets": [],
+      "duplicate_of_holding": "We already hold an OECD consumer confidence panel; Turkey specifically is not currently held but is low priority."
+    },
+    {
+      "url": "https://github.com/subasreecodes/correlation-of-GDP-and-CCI",
+      "name": "correlation-of-GDP-and-CCI",
+      "category": "macro_consumer_spend",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Small student project analyzing eight years of Consumer Confidence Index (CCI) vs real GDP per capita across multiple countries; likely a small hand-compiled CSV (not inspected in depth; 0 stars, no license, no committed-file listing confirmed).",
+      "why_useful": "Marginal — flagged only because it claims a multi-country CCI panel; provenance and vintage of the CCI figures are unclear and it was not worth spending one of the limited `gh api` directory-listing calls on a 0-star, unlicensed repo to confirm. Low confidence this adds anything beyond the OECD consumer confidence panel we already hold.",
+      "potential": "low",
+      "geography": "multiple (unspecified in card)",
+      "time_coverage": "~8 years, unspecified end date",
+      "size_hint": "small, likely single CSV",
+      "license": "none declared",
+      "last_activity": "2024-01-21",
+      "gap_targets": [],
+      "duplicate_of_holding": "Probable duplicate of the OECD consumer confidence panel we already hold; not confirmed superior (older/longer/finer)."
+    }
+  ],
+  "notes": "This theme returned very little via `gh search repos` within the 6-call hard limit and WebSearch was unavailable (session web-search budget already exhausted before this scout ran, so no query executed). Root cause: GitHub CLI's generic-term search is dominated by (a) thousands of unrelated 'travel planner' / AI travel-agent app boilerplate repos when searching on 'travel' + survey-vendor names, (b) the ubiquitous UCI Bank-Marketing tutorial dataset which happens to have a field literally named 'cons.conf.idx' and floods any 'consumer confidence index' query, and (c) generic NLP 'sentiment analysis' libraries/tutorials that swamp any query containing the word 'sentiment'. None of the four commercial travel-intent survey vendors named in the brief (Longwoods, Destination Analysts, MMGY) turned up any GitHub repo at all, scraped or otherwise — these are subscription/report-based research firms with no evidence of open scraping activity on GitHub; likely a dead end for this modality specifically (worth trying WebSearch/direct-site inspection instead of gh search, or `gh search code` on a vendor-specific term, which this scout's budget did not permit trying since gh search code is capped separately and code search often needs exact filenames). Similarly, no repo surfaced containing an actual committed CSV/parquet of the NY Fed SCE microdata or aggregate series, or of UMich Surveys of Consumers monthly index values, despite multiple query variants; these series are typically pulled live via FRED (UMCSENT, CONCCONF102USM665S, etc.) which the team's existing ~40-series FRED holding likely already covers numerically, so the marginal GitHub-specific gap here may be genuinely small. Recommend a follow-up scout try `gh search code \"UMCSENT\"` (single use of the 10/min-capped code search) or a WebFetch-based crawl of alternativedata-focused GitHub topic pages (`gh search repos --topic=alternative-data`, `--topic=nowcasting`, `--topic=economic-indicators`) which this run did not reach given the 6-call ceiling."
+}

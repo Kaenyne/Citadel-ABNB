@@ -1,0 +1,123 @@
+[
+ {
+  "key": "github:kdeldycke/awesome-billing",
+  "url": "https://github.com/kdeldycke/awesome-billing",
+  "name": "awesome-billing",
+  "category": "other",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Large (1.3k star) curated awesome-list on billing/payments/pricing knowledge for platforms; general SaaS pricing, not travel/STR specific. Listed here only because it surfaced under the 'pricing-strategy' topic search; no STR/Airbnb content confirmed.",
+  "why_useful": "Marginal \u2014 flagged only as a breadcrumb in case its pricing-strategy sub-sections link out to hospitality revenue-management resources; not independently verified to contain anything ABNB-relevant.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "large curated list, non-STR",
+  "license": "not confirmed",
+  "last_activity": "active, 1.3k stars",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)"
+  ],
+  "why_all": [
+   "Marginal \u2014 flagged only as a breadcrumb in case its pricing-strategy sub-sections link out to hospitality revenue-management resources; not independently verified to contain anything ABNB-relevant."
+  ]
+ },
+ {
+  "key": "github:fahadpn/hotel-search-api",
+  "url": "https://github.com/FAHADPN/Hotel-search-API",
+  "name": "FAHADPN/Hotel-search-API",
+  "category": "other",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small utility generating Kayak.co.in redirect/search-result links for hotel queries; not a scraper of structured data, just a URL-builder.",
+  "why_useful": "Negligible research value -- flagged only for completeness; does not extract or store any pricing/availability data itself.",
+  "potential": "low",
+  "size_hint": "n/a",
+  "time_coverage": "n/a",
+  "geography": "India-focused (Kayak.co.in)",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Negligible research value -- flagged only for completeness; does not extract or store any pricing/availability data itself."
+  ]
+ },
+ {
+  "key": "github:factden/reports",
+  "url": "https://github.com/factden/reports",
+  "name": "factden/reports",
+  "category": "other",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repo advertised as providing free sample datasets from FactDen's scrapers, but the only file actually present is `saas-battlecard-atlas-2026-sample.csv` (a sample from 50,000 G2.com software reviews, 30+ columns) -- no TripAdvisor, Airbnb, Booking, or Hotels.com sample data despite the org maintaining scrapers for all of them.",
+  "why_useful": "Checked because it looked promising (a committed sample-data repo from an org with 20+ scrapers) but turned out irrelevant to travel/lodging. Flagging so nobody re-checks it expecting travel data.",
+  "license": "stated 'public G2 review data provided for evaluation purposes'",
+  "last_activity": "2026 edition referenced",
+  "geography": "n/a (G2 software reviews)",
+  "time_coverage": "2026",
+  "size_hint": "one CSV sample file",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Checked because it looked promising (a committed sample-data repo from an org with 20+ scrapers) but turned out irrelevant to travel/lodging. Flagging so nobody re-checks it expecting travel data."
+  ]
+ },
+ {
+  "key": "github:alphacoderutah-web/vilano101-tax-filing",
+  "url": "https://github.com/alphacoderutah-web/vilano101-tax-filing",
+  "name": "vilano101-tax-filing",
+  "category": "other",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Monthly Florida DR-15 (state sales/use tax) and St. Johns County tourist development tax filing records for a single named short-term-rental portfolio (\"VILANO101\"). Updated as recently as 9 Sep 2026.",
+  "why_useful": "Real, current, granular Florida TDT filing data, but scoped to one operator's few properties in one county \u2014 not a market-wide series, so its value is illustrative of filing mechanics rather than a usable demand proxy.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "St. Johns County, FL (single portfolio)",
+  "time_coverage": "recent, ongoing monthly filings",
+  "size_hint": "small, single-operator records",
+  "license": "not stated",
+  "last_activity": "2026-09-09",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)"
+  ],
+  "why_all": [
+   "Real, current, granular Florida TDT filing data, but scoped to one operator's few properties in one county \u2014 not a market-wide series, so its value is illustrative of filing mechanics rather than a usable demand proxy."
+  ]
+ },
+ {
+  "key": "github:eurostat/nuts2json",
+  "url": "https://github.com/eurostat/Nuts2json",
+  "name": "eurostat/Nuts2json",
+  "category": "other",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Eurostat NUTS regional boundary dataset as JSON/TopoJSON for web mapping, 89 stars, active (updated 2026-09-11), EUPL-1.2.",
+  "why_useful": "Not tourism data itself, but the NUTS2/NUTS3 geometry needed to join Eurostat tour_occ regional tables (published at NUTS2) to a map or to other geospatial STR/regulation datasets; low direct value but a useful joining key.",
+  "potential": "low",
+  "gap_targets": [],
+  "license": "EUPL-1.2",
+  "last_activity": "2026-09-11",
+  "geography": "EU NUTS regions",
+  "time_coverage": "current boundaries, multiple NUTS vintages",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Not tourism data itself, but the NUTS2/NUTS3 geometry needed to join Eurostat tour_occ regional tables (published at NUTS2) to a map or to other geospatial STR/regulation datasets; low direct value but a useful joining key."
+  ]
+ }
+]

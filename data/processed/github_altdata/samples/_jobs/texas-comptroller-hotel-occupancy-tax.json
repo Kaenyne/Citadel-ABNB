@@ -1,0 +1,10 @@
+{
+ "slug": "texas-comptroller-hotel-occupancy-tax",
+ "url": "https://github.com/natnaelsolomon0101-sketch/tx-hotel-heatmap",
+ "category": "hotel_lodging",
+ "data_kind": "both",
+ "one_line": "TypeScript pipeline parsing Texas Comptroller hotel-occupancy-tax filings at individual-property grain (rooms, revenue) across multiple historical quarterly periods, computing property-level RevPAR/ADR/occupancy; updated Jul 2026.",
+ "abnb_use": "State-level, property-grain hotel occupancy-tax data explicitly named in gap #8 (alongside Nevada/Florida bed tax), and a repeatable method transferable to those states.",
+ "sample_plan": "Pull data/hotels.csv and one or two files from data/periods/ (cap at a few MB); skip the geocoded GeoJSON/Mapbox build artifacts.",
+ "tos_or_license_flag": false
+}

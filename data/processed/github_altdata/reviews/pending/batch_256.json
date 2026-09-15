@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:triscero/selenium_airbnb_scraper",
+  "url": "https://github.com/triscero/selenium_airbnb_scraper",
+  "name": "triscero/selenium_airbnb_scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium-based scraper targeting the Airbnb Experiences pages to extract the geographic location of listed experiences. No data files committed (code only), small repo, last updated 20 Jun 2026, no license declared.",
+  "why_useful": "Directly targets Airbnb Experiences (not just home-listings) -- the only repo found in this sweep that touches Experiences data acquisition specifically. Confirms no public dataset exists yet for Experiences volume/geography, only ad hoc scraping code. Per project rules this scrapes airbnb.com directly and must NOT be run -- catalogued as method only, human ToS call required.",
+  "potential": "low",
+  "license": "none declared",
+  "last_activity": "2026-06-20",
+  "geography": "unspecified (whatever Experiences markets the scraper is pointed at)",
+  "time_coverage": "n/a (live scrape only, no stored data)",
+  "size_hint": "small code repo, no data",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Directly targets Airbnb Experiences (not just home-listings) -- the only repo found in this sweep that touches Experiences data acquisition specifically. Confirms no public dataset exists yet for Experiences volume/geography, only ad hoc scraping code. Per project rules this scrapes airbnb.com directly and must NOT be run -- catalogued as method only, human ToS call required."
+  ]
+ },
+ {
+  "key": "github:hasdata/airbnb-mcp",
+  "url": "https://github.com/HasData/airbnb-mcp",
+  "name": "airbnb-mcp",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Model Context Protocol server exposing two read-only tools that scrape live airbnb.com search results and listing detail pages (price with breakdown/discounts, ratings, host/Superhost status, amenities, address) as structured JSON via a paid hosted service (5 credits/call, 1,000 free credits/month). No committed dataset; configuration/documentation only.",
+  "why_useful": "Another live airbnb.com scraping method (price + listing detail), same ToS caveat as above; only useful if a human explicitly clears scraping airbnb.com directly, which CONTEXT says to treat as out of bounds absent that decision.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "n/a",
+  "license": "not confirmed",
+  "last_activity": "not shown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)"
+  ],
+  "why_all": [
+   "Another live airbnb.com scraping method (price + listing detail), same ToS caveat as above; only useful if a human explicitly clears scraping airbnb.com directly, which CONTEXT says to treat as out of bounds absent that decision."
+  ]
+ },
+ {
+  "key": "github:johnbalvin/pybnb",
+  "url": "https://github.com/johnbalvin/pybnb",
+  "name": "pybnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Same author's earlier/alternate Python Airbnb scraper (52 stars, updated Mar 2026), MIT. Likely superseded by pyairbnb but a live fork worth noting as a fallback method with possibly different field coverage.",
+  "why_useful": "Backup method reference; same field classes (price, calendar, reviews) as pyairbnb from the same maintainer lineage.",
+  "license": "MIT",
+  "last_activity": "2026-03-31",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "duplicates pyairbnb (johnbalvin) field coverage, older/less-starred",
+  "potential": "low",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Backup method reference; same field classes (price, calendar, reviews) as pyairbnb from the same maintainer lineage.",
+   "Secondary/older version of pyairbnb; catalogue for completeness in case pyairbnb regresses a field this one still has."
+  ]
+ },
+ {
+  "key": "github:noahzinsmeister/rbnb",
+  "url": "https://github.com/NoahZinsmeister/Rbnb",
+  "name": "Rbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GPL-3.0 R front-end (25 stars, updated Mar 2026) to the Airbnb search API -- an R-native alternative to the Python wrappers, for teams whose STR/ADR modeling is in R.",
+  "why_useful": "Only R-language client found in this sweep; low incremental value over the Python options but useful if the model pipeline needs to stay in R.",
+  "license": "GPL-3.0",
+  "last_activity": "2026-03-10",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [],
+  "duplicate_of_holding": "duplicates functionality of pyairbnb/airbnb-python in a different language",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Only R-language client found in this sweep; low incremental value over the Python options but useful if the model pipeline needs to stay in R."
+  ]
+ },
+ {
+  "key": "github:gmlang/rairbnb",
+  "url": "https://github.com/gmlang/RAirbnb",
+  "name": "RAirbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Second, independent R wrapper for the Airbnb API (3 stars), explicitly inspired by Rbnb. Low activity (last commit 2023).",
+  "why_useful": "Marginal alternative to Rbnb; flagged only for completeness.",
+  "license": "GPL-3.0",
+  "last_activity": "2023-03-05",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [],
+  "duplicate_of_holding": "duplicates Rbnb",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Marginal alternative to Rbnb; flagged only for completeness."
+  ]
+ }
+]

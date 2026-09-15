@@ -1,0 +1,141 @@
+[
+ {
+  "key": "github:walkerke/tidycensus",
+  "url": "https://github.com/walkerke/tidycensus",
+  "name": "walkerke/tidycensus",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package/client wrapping the Census Bureau's Decennial Census and ACS 1-/5-year APIs, returning tidyverse data frames with optional tract/block-group/county geometry (sf). Pulls any ACS table including rental vacancy rate (DP04/B25004), gross rent as % of income / rent burden (B25070/B25071), tenure, and housing-unit counts needed to compute an STR-share-of-housing-stock denominator by tract. 768+ commits, actively maintained, requires free Census API key.",
+  "why_useful": "This is the standard, well-maintained tool for building the denominator (occupied/vacant housing units, rent burden distribution) that any STR-share-of-housing-stock or rent-burden-vs-STR-density study needs at tract level, nationwide, for any of our 13 Inside Airbnb cities.",
+  "potential": "medium",
+  "geography": "USA, tract/block-group/county/state, any ACS-covered geography",
+  "time_coverage": "ACS 1-year (2005-present) and 5-year (2009-present) vintages, decennial 2000/2010/2020",
+  "size_hint": "N/A - library, not a fixed dataset; pulls arbitrary ACS tables on demand",
+  "license": "MIT (per repo LICENSE file)",
+  "last_activity": "active, 768 commits, 22 open issues, 4 open PRs at fetch time",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "This is the standard, well-maintained tool for building the denominator (occupied/vacant housing units, rent burden distribution) that any STR-share-of-housing-stock or rent-burden-vs-STR-density study needs at tract level, nationwide, for any of our 13 Inside Airbnb cities."
+  ]
+ },
+ {
+  "key": "github:xmunoz/sodapy",
+  "url": "https://github.com/xmunoz/sodapy",
+  "name": "xmunoz/sodapy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client for the Socrata Open Data API. NYC Open Data (data.cityofnewyork.us), LA (data.lacity.org / MyLA311), and San Francisco (datasf.org) all run on Socrata, so this client is the direct mechanism for pulling the NYC 311 Service Requests dataset (Socrata id erm2-nwe9, filterable to complaint types like 'Illegal Vacation Rental Unit', 'Short-Term Rental', 'Illegal Conversion / Illegal Hotel Rental'), LA's MyLA311 service request dataset, and SF 311 Cases, on a point-in-time basis (SoQL supports as_of-style filtering by created_date). No data committed in the repo itself \u2014 it is the pull mechanism, not a mirror.",
+  "why_useful": "Many of the STR housing-stock, rent-burden, and vacancy datasets we still need (municipal housing-court, rent-registry, or vacancy survey tables) live on Socrata portals per city; this is the general-purpose discovery/pull client called out as a gap-#17 method target rather than a one-off scraper.",
+  "potential": "medium",
+  "geography": "Global (client works against any Socrata-hosted portal)",
+  "time_coverage": "N/A - tooling",
+  "size_hint": "N/A - library",
+  "license": "MIT",
+  "last_activity": "active; maintainer transfer March 2025",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 3,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract",
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets",
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Many of the STR housing-stock, rent-burden, and vacancy datasets we still need (municipal housing-court, rent-registry, or vacancy survey tables) live on Socrata portals per city; this is the general-purpose discovery/pull client called out as a gap-#17 method target rather than a one-off scraper.",
+   "Baseline tooling needed to pull STR registration datasets from any Socrata-hosted city portal named across gaps 8 and 12 (e.g. NYC OSE, Austin licences already held; extend to LA, Toronto-equivalent US cities, lodging-tax collections). Generic \u2014 value is in what it's pointed at, not the client itself.",
+   "Directly addresses gap #17 (Socrata/CKAN open-data discovery/pull clients) and is the concrete tool to build the exact 311-Airbnb-mention enforcement/activity proxy this theme is scoped around \u2014 NYC, LA and SF 311 STR/illegal-hotel complaint volume as a monthly panel, refreshable and point-in-time by created_date."
+  ]
+ },
+ {
+  "key": "github:cran/nomadlist",
+  "url": "https://github.com/cran/nomadlist",
+  "name": "nomadlist (CRAN mirror)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Read-only GitHub mirror of an R package (from CRAN) providing an interface to the Nomad List API \u2014 programmatic R client for city cost/quality-of-life metrics Nomad List tracks. Single commit, archival mirror only, no committed data.",
+  "why_useful": "A ready-made API client for Nomad List (gap 16), lower engineering lift than a scraper if the underlying API still responds.",
+  "potential": "medium",
+  "gap_targets": [
+   16
+  ],
+  "geography": "global (Nomad List cities)",
+  "time_coverage": "n/a (live API client)",
+  "size_hint": "R package, no data files",
+  "license": "unspecified on mirror; check original CRAN package",
+  "last_activity": "static archival mirror",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "A ready-made API client for Nomad List (gap 16), lower engineering lift than a scraper if the underlying API still responds."
+  ]
+ },
+ {
+  "key": "github:dbnomics/rdbnomics",
+  "url": "https://github.com/dbnomics/rdbnomics",
+  "name": "dbnomics/rdbnomics",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client (also has Python/other-language siblings) for the DBnomics API (api.db.nomics.world), which aggregates time series from ~90+ national and international statistical providers (Eurostat, IMF, World Bank, ECB, and many national statistical offices/central banks) into one queryable API via rdb(), rdb_datasets(), rdb_providers(). On CRAN and GitHub, 36 stars, 104 commits, mirrored from git.nomics.world. Does not itself contain UK ONS / Banco de Portugal / Norges Bank card-spending series as committed files, but DBnomics as a platform is a single point to check whether those agencies' series (including any card/payment statistics they publish) are mirrored and pullable programmatically.",
+  "why_useful": "A one-API acquisition method to probe for point-in-time-style pulls of European national-statistics series (potential CHAPS/SIBS/Norges Bank-adjacent series if those agencies publish to DBnomics), relevant to gaps #4 and #6; needs a follow-up check of rdb_providers() output to confirm ONS/BdP/Norges Bank coverage before relying on it.",
+  "geography": "Global (provider list includes many European national statistical offices/central banks per DBnomics' own description)",
+  "time_coverage": "Varies by underlying provider/series",
+  "size_hint": "N/A - API client, not a static dataset",
+  "license": "Not confirmed on the fetched page (CRAN package; DBnomics platform itself is open data / AGPL-family per its own site, not independently verified here)",
+  "last_activity": "Active CRAN package; exact last-commit date not shown on fetched page",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4,
+   6
+  ],
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "A one-API acquisition method to probe for point-in-time-style pulls of European national-statistics series (potential CHAPS/SIBS/Norges Bank-adjacent series if those agencies publish to DBnomics), relevant to gaps #4 and #6; needs a follow-up check of rdb_providers() output to confirm ONS/BdP/Norges Bank coverage before relying on it."
+  ]
+ },
+ {
+  "key": "github:dhopp1/nowcast_lstm",
+  "url": "https://github.com/dhopp1/nowcast_lstm",
+  "name": "nowcast_lstm",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PyTorch LSTM library purpose-built for economic nowcasting (targets growth rates of stationary/seasonally-adjusted series), with automatic hyperparameter tuning/variable selection, uncertainty intervals via synthetic vintage generation, permutation-importance feature contributions, and ARMA-based ragged-edge handling. No datasets committed but ships an example notebook+data zip. 90 commits, MIT, v0.2.6, sibling R/Julia/MATLAB wrappers exist (nowcastLSTM, NowcastLSTM.jl, nowcast_lstm_matlab). Built by a UNCTAD staffer for official nowcasting use.",
+  "why_useful": "Same use case as FRBNY Nowcasting but a modern, maintained, easier-to-use alternative for mixed-frequency nowcasting of a weekly/quarterly ABNB demand series from assorted alt-data inputs (gap #17).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "actively maintained, recent versioned releases",
+  "geography": "n/a (generic tool)",
+  "time_coverage": "n/a",
+  "size_hint": "small library + example zip",
+  "hits": 4,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Same use case as FRBNY Nowcasting but a modern, maintained, easier-to-use alternative for mixed-frequency nowcasting of a weekly/quarterly ABNB demand series from assorted alt-data inputs (gap #17).",
+   "Alternative/competitor method to MIDAS and DFM for the KPI-nowcasting problem in gap #17; benchmarked as best single method in dhopp1/nowcasting_benchmark below \u2014 a candidate engine for nowcasting ABNB nights/ADR from ragged alt-data releases (Trends, TSA, calendar-derived indices) ahead of quarter close.",
+   "An alt-data-friendly nowcasting engine already designed for irregular/ragged mixed-frequency inputs and synthetic-vintage uncertainty bands -- could take ABNB's weekly calendar-pace/reviews-index/Trends series directly as inputs to nowcast quarterly nights without hand-built bridge equations.",
+   "A ready-made mixed-frequency nowcasting method (alternative to MIDAS/DFM) that could ingest a review-velocity series alongside macro series to nowcast nights/ADR -- directly on-theme for gap #17 (nowcasting methods with mixed-frequency data)."
+  ]
+ }
+]

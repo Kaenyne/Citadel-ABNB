@@ -1,0 +1,10 @@
+{
+ "slug": "wikimedia-pageviews-attractions",
+ "url": "https://github.com/Kenchch/nz-attraction-pageviews",
+ "category": "web_app_engagement",
+ "data_kind": "acquisition_method",
+ "one_line": "Small MIT tool ingesting daily Wikimedia Analytics pageviews for 8 NZ attraction pages via the public, keyless Wikimedia API.",
+ "abnb_use": "Directly fills gap 5 (Wikipedia pageviews tooling) and gap 20 (destination-attention proxy); could be repointed at ABNB-relevant destination or FIFA World Cup host-city pages as a free, point-in-time-able engagement series, unlike our failed Google Trends attempt.",
+ "sample_plan": "skip the repo's code; call the public Wikimedia pageviews API directly (https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/<Article>/daily/<start>/<end>) for 2-3 candidate destination articles, ~90 days, JSON only",
+ "tos_or_license_flag": false
+}

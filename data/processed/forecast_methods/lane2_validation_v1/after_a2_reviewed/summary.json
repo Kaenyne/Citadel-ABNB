@@ -1,0 +1,172 @@
+{
+  "stage": "after_a2_reviewed",
+  "started_at_utc": "2026-09-13T15:14:49.462740+00:00",
+  "source": "unmodified existing scorer main functions; output destinations only redirected",
+  "absolute_tolerance": 1e-09,
+  "relative_tolerance": 0,
+  "frozen_rows_vs_1_0": {
+    "expected_rows": 276,
+    "actual_rows": 280,
+    "added_rows": 4,
+    "max_abs_by_metric": {
+      "mae": 6.821210263296962e-13,
+      "rmse": 9.094947017729282e-13,
+      "bias": 7.958078640513122e-13,
+      "mape_pct": 2.842170943040401e-14,
+      "rmse_naive": 3.410605131648481e-13,
+      "rmse_ratio_to_naive": 3.552713678800501e-15,
+      "crps": 4.547473508864641e-13,
+      "pinball_mean": 2.2737367544323206e-13,
+      "pit_mean": 1.1102230246251565e-15,
+      "pit_ks_p": 1.9484414082171497e-14,
+      "pit_edge_frac": 0.0,
+      "cov_nominal": 0.0,
+      "cov_empirical": 0.0,
+      "conformal_alpha": 0.0,
+      "conformal_cov_empirical": 0.0,
+      "conformal_mean_width": 7.275957614183426e-12,
+      "conformal_attainable_lo": 0.0,
+      "conformal_attainable_hi": 0.0,
+      "param_obs_ratio": 0.0
+    },
+    "max_abs_difference": 7.275957614183426e-12,
+    "discrete_fields_exact": true,
+    "missingness_exact": true
+  },
+  "frozen_rows_vs_1_1": {
+    "expected_rows": 276,
+    "actual_rows": 280,
+    "added_rows": 4,
+    "max_abs_by_metric": {
+      "mae": 6.821210263296962e-13,
+      "rmse": 9.094947017729282e-13,
+      "bias": 7.958078640513122e-13,
+      "mape_pct": 2.842170943040401e-14,
+      "rmse_naive": 3.410605131648481e-13,
+      "rmse_ratio_to_naive": 3.552713678800501e-15,
+      "crps": 4.547473508864641e-13,
+      "pinball_mean": 2.2737367544323206e-13,
+      "pit_mean": 1.1102230246251565e-15,
+      "pit_ks_p": 1.9484414082171497e-14,
+      "pit_edge_frac": 0.0,
+      "cov_nominal": 0.0,
+      "cov_empirical": 0.0,
+      "conformal_alpha": 0.0,
+      "conformal_cov_empirical": 0.0,
+      "conformal_mean_width": 7.275957614183426e-12,
+      "conformal_attainable_lo": 0.0,
+      "conformal_attainable_hi": 0.0,
+      "param_obs_ratio": 0.0
+    },
+    "max_abs_difference": 7.275957614183426e-12,
+    "discrete_fields_exact": true,
+    "missingness_exact": true
+  },
+  "both_scorers": {
+    "expected_rows": 280,
+    "actual_rows": 280,
+    "added_rows": 0,
+    "max_abs_by_metric": {
+      "mae": 0.0,
+      "rmse": 0.0,
+      "bias": 0.0,
+      "mape_pct": 0.0,
+      "rmse_naive": 0.0,
+      "rmse_ratio_to_naive": 0.0,
+      "crps": 0.0,
+      "pinball_mean": 0.0,
+      "pit_mean": 0.0,
+      "pit_ks_p": 0.0,
+      "pit_edge_frac": 0.0,
+      "cov_nominal": 0.0,
+      "cov_empirical": 0.0,
+      "conformal_alpha": 0.0,
+      "conformal_cov_empirical": 0.0,
+      "conformal_mean_width": 0.0,
+      "conformal_attainable_lo": 0.0,
+      "conformal_attainable_hi": 0.0,
+      "param_obs_ratio": 0.0
+    },
+    "max_abs_difference": 0.0,
+    "discrete_fields_exact": true,
+    "missingness_exact": true
+  },
+  "loader_returns": {
+    "calendar_rows": 25,
+    "target_rows": 25,
+    "l0_rows": 161,
+    "roles": {
+      "at_print": 85,
+      "current": 56,
+      "pre_guide": 20
+    },
+    "aug6_pre_guide": [
+      {
+        "vendor": "LSEG",
+        "value": 4610.0,
+        "as_of_timestamp": "2026-08-06",
+        "pit_usable": true
+      }
+    ],
+    "return_events": 23,
+    "all_entries_strictly_after_letter": true,
+    "excess_identity_atol": 1e-09,
+    "legacy_tieout_n": 23,
+    "legacy_median_abs_diff_pp": 0.028567913790061183,
+    "returns_rebuild_comparison": {
+      "expected_rows": 23,
+      "actual_rows": 23,
+      "added_rows": 0,
+      "max_abs_by_metric": {
+        "guide_mid_musd": 0.0,
+        "abnb_entry_open": 0.0,
+        "gap_pct": 0.0,
+        "qqq_gap_pct": 2.220446049250313e-14,
+        "cc_1d_pct": 2.1316282072803006e-14,
+        "qqq_cc_1d_pct": 2.220446049250313e-14,
+        "open_1d_pct": 0.0,
+        "qqq_open_1d_pct": 4.440892098500626e-14,
+        "excess_open_1d_pct": 4.440892098500626e-14,
+        "open_5d_pct": 0.0,
+        "qqq_open_5d_pct": 2.1760371282653068e-14,
+        "excess_open_5d_pct": 2.3092638912203256e-14,
+        "open_20d_pct": 0.0,
+        "qqq_open_20d_pct": 2.220446049250313e-14,
+        "excess_open_20d_pct": 2.842170943040401e-14,
+        "open_60d_pct": 0.0,
+        "qqq_open_60d_pct": 2.4868995751603507e-14,
+        "excess_open_60d_pct": 2.4868995751603507e-14,
+        "excess_cc_1d_pct": 2.3092638912203256e-14
+      },
+      "max_abs_difference": 4.440892098500626e-14,
+      "discrete_fields_exact": true,
+      "missingness_exact": true
+    },
+    "returns_manifest": {
+      "source": "Yahoo Finance daily bars via yfinance (public, no login)",
+      "yfinance_version": "1.7.0",
+      "retrieved_at_utc": "2026-09-13T06:07:17+00:00",
+      "tickers": [
+        "ABNB",
+        "QQQ"
+      ],
+      "start": "2020-12-01",
+      "auto_adjust": false,
+      "rows": {
+        "ABNB": 1444,
+        "QQQ": 1451
+      },
+      "first_date": "2020-12-01",
+      "last_date": "2026-09-11",
+      "file": "ohlc_daily.csv",
+      "sha256": "5b03005c30b1793e2d146e6a76fc352ecee56b7fbaf0e9f737bd479652b7a253"
+    },
+    "RUN_DATE": "2026-09-13",
+    "LIVE_VINTAGE_MIN": "2026-08-07",
+    "format": "1.1"
+  },
+  "verdict": "PASS",
+  "frozen_hashes_unchanged": true,
+  "protected_file_count": 81,
+  "finished_at_utc": "2026-09-13T15:15:03.138632+00:00"
+}

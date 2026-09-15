@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/efebiskin/sec-form4-parser",
+  "slug": "efebiskin-sec-form4-parser",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "MIT-licensed, zero-dependency typed Python parser for SEC Form 4 insider-trading XML plus an optional rate-limited EDGAR fetcher and CLI; code only (14 KB repo: src/, tests/, examples/, 13 tests), no data committed, pushed 2026-04-17, 0 stars.",
+  "abnb_use": "Gap 15 (company-structure signals): lets us build an ABNB insider buy/sell history from EDGAR Form 4 XML without hand-rolling the parser — an ownership/insider panel to sit beside the guidance ledger and the 5 Nov print. Not a KPI input; context/positioning only.",
+  "sample_plan": "git clone --depth 1 https://github.com/efebiskin/sec-form4-parser (whole repo is ~14 KB source, no data). Optionally then one keyless EDGAR pull with a proper UA to confirm the parser works: curl -s -H 'User-Agent: UF student ksurapaneni@ufl.edu' 'https://data.sec.gov/submissions/CIK0001559720.json' -o abnb_submissions.json (~2-5 MB, ABNB CIK 1559720) and keep only the form=='4' rows. Total well under 25 MB; no key, no login, SEC is a public government source.",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified via GitHub page and gh api: MIT licence, 14 KB, only src/tests/examples/pyproject — no bundled Form 4 data, so the value is purely the method. It is a genuinely clean, dependency-free parser against a free public government source (EDGAR), which is exactly the kind of tooling CONTEXT.md gap 15 asks for. Zero stars and only two commits means quality is unproven, but it is cheap to pull and inspect."
+ },
+ {
+  "url": "https://github.com/lucabol/FollowTheGuru",
+  "slug": "lucabol-followtheguru",
+  "exists_and_has_content": true,
+  "usefulness": "none",
+  "verdict": "discard",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Abandoned C#/.NET Visual Studio solution (ConsoleFollower, GuruLoader, GuruLoaderTests) for parsing 13F-HR filings by CIK; no README, no licence, no data, 1 star, last push 2016-12-15 (the scout's 2021 date is wrong).",
+  "abnb_use": "Nominally gap 15 (institutional-ownership concentration for ABNB from 13F-HR), but ABNB IPO'd in Dec 2020 — four years after this repo's last commit — so it has never been run against any filing we care about and predates the current EDGAR 13F XML schema.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "gh api shows pushed_at 2016-12-15, no LICENSE file, no README, 166 KB of stale .NET source and 1 star — a dead repo whose 13F XML assumptions predate both ABNB's IPO and the current EDGAR schema. There is no data to sample and no method worth porting from C# when Python 13F parsers are abundant. No licence declared also means default all-rights-reserved."
+ },
+ {
+  "url": "https://github.com/mileshenrichs/openholdings",
+  "slug": "mileshenrichs-openholdings",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Apache-2.0 Python package 'retrieve full ETF holdings lists with a single Python function' (openholdings/ with fetchers/, models/, offline/, utils/); 44 KB, no data committed, 4 stars, 9 commits, last push 2021-10-23 (scout's 2026 date is wrong).",
+  "abnb_use": "Gap 15 only: a one-call way to read ABNB's weight across consumer-discretionary / travel / growth ETFs as a passive-flow and index-inclusion proxy. Point-in-time snapshots only — no history, so it cannot build the ownership time series the gap actually wants.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed by gh api: code-only, 44 KB, last touched Oct 2021, one-line README that names no supported fund families. Its fetchers scrape fund-provider websites (BlackRock/SSGA-style holdings pages), so running it is a terms-of-service call for a human, and after five years of bit-rot the page layouts it targets are almost certainly gone. Catalogue the idea; do not have an agent run it."
+ },
+ {
+  "url": "https://github.com/bdi2357/iShares_ETF_holdings_downloader",
+  "slug": "bdi2357-ishares-etf-holdings-downloader",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "MIT-licensed single Jupyter notebook (ishares_holdings_downloader.ipynb, 101 KB, the only content besides LICENSE/README) that downloads iShares ETF holdings for different as-of dates from BlackRock's site; 3 stars, 12 commits, last push 2022-09-05; no CSVs committed.",
+  "abnb_use": "Gap 15: the as-of-date parameter is the one genuinely interesting bit — it would let us reconstruct a historical ABNB weight series in iShares consumer/growth ETFs (ITB/IYC/IWF-style) rather than a single snapshot, as a passive-ownership and index-flow proxy around prints.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "gh api confirms the repo is one notebook plus LICENSE/README with no committed data, last pushed Sep 2022. The notebook pulls from blackrock.com, a third-party commercial site, so running it is a human terms-of-service decision under CONTEXT.md's rules; the MIT licence covers the code, not BlackRock's data. Worth one catalogue line for the historical-as-of-date trick, not an agent pull."
+ },
+ {
+  "url": "https://github.com/tarikceric/Price-Trends-for-ARK-investments",
+  "slug": "tarikceric-ark-holdings-price-trends",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Small unlicensed Python/PostgreSQL pipeline (downloadArkCSVS.py, populateETFHoldings/Prices/Stocks/Trends.py, createTables.sql, ~15 KB) that fetches ARKK/ARKX daily holdings CSVs from ark-funds.com and prices via the Alpaca API; 1 star, 7 commits, last push 2021-11-22; no data committed.",
+  "abnb_use": "Gap 15, weakly: daily ARK holdings are higher-frequency than 13F, so an archive of them would show fast institutional accumulation/distribution in growth-consumer names. But it saves only today's file into a dated folder — it builds no history unless run daily from now — and ABNB's presence in ARKK/ARKX is unconfirmed.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Read downloadArkCSVS.py directly: it hard-codes two ark-funds.com CSV URLs and sends a spoofed desktop-Chrome User-Agent, i.e. it is a scraper of a commercial asset manager's site — a terms-of-service decision for a human, not an agent pull. The prices half also needs an Alpaca API key, which this run forbids, and the repo declares no licence. Nothing is stored, the URLs date from 2021, and the daily snapshot gives no back-history, so its catalogue value is just the pointer to ARK's public daily CSVs."
+ }
+]

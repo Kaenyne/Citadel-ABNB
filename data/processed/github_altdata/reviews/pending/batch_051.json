@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:clueed/10times-org-scraper",
+  "url": "https://github.com/Clueed/10times-org-scraper",
+  "name": "Clueed/10times-org-scraper",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper for organizer-level pages on 10times.com (conference organizers, event listings). No committed data, code only.",
+  "why_useful": "Alternate scraping angle on the same MICE calendar source as above (by organizer rather than by ranking); low incremental value versus scholar-8/10times.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "Global",
+  "time_coverage": "Live listings",
+  "size_hint": "Small",
+  "license": "Unspecified",
+  "last_activity": "2024-01-11",
+  "duplicate_of_holding": "same source as scholar-8/10times",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Alternate scraping angle on the same MICE calendar source as above (by organizer rather than by ranking); low incremental value versus scholar-8/10times."
+  ]
+ },
+ {
+  "key": "github:abubakarsq/10times-scraper",
+  "url": "https://github.com/Abubakarsq/10times-scraper",
+  "name": "Abubakarsq/10times-scraper",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium/BeautifulSoup/Requests scraper for 10times.com event detail pages (name, date, venue, category). No committed dataset.",
+  "why_useful": "Another 10times.com scraper implementation; redundant with scholar-8/10times but confirms the site is a commonly-scraped public MICE calendar with several independent working recipes.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "Global",
+  "time_coverage": "Live listings",
+  "size_hint": "Small",
+  "license": "Unspecified",
+  "last_activity": "2023-12-27",
+  "duplicate_of_holding": "same source as scholar-8/10times",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Another 10times.com scraper implementation; redundant with scholar-8/10times but confirms the site is a commonly-scraped public MICE calendar with several independent working recipes."
+  ]
+ },
+ {
+  "key": "github:qaisbhatti/eventbrite",
+  "url": "https://github.com/Qaisbhatti/eventbrite",
+  "name": "Qaisbhatti/eventbrite",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper for Eventbrite event listing pages, writes JSON/CSV. No committed dataset in the repo; extraction fields are basic (event name, date, location, category).",
+  "why_useful": "Eventbrite skews toward smaller/local events rather than corporate conferences, so this is a weaker MICE proxy than 10times, but it is another non-Airbnb-site scraping method for the events-and-shocks gap (#11) and could pick up smaller local gatherings that move demand in secondary markets.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "Global (Eventbrite coverage skews US/UK/Australia)",
+  "time_coverage": "Live listings",
+  "size_hint": "Small",
+  "license": "Unspecified",
+  "last_activity": "2026-05-18",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Eventbrite skews toward smaller/local events rather than corporate conferences, so this is a weaker MICE proxy than 10times, but it is another non-Airbnb-site scraping method for the events-and-shocks gap (#11) and could pick up smaller local gatherings that move demand in secondary markets."
+  ]
+ },
+ {
+  "key": "github:komalnpn/ratingsofmeetupvenues",
+  "url": "https://github.com/komalnpn/ratingsOfMeetupVenues",
+  "name": "komalnpn/ratingsOfMeetupVenues",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper combining Meetup.com event listings with the Google Places API to rate event venues by locality. No committed dataset (small student project), just a method.",
+  "why_useful": "Marginal: Meetup skews to recurring small local groups (tech/social meetups), not MICE/business conferences, so this barely touches the business-travel theme; flagged only for completeness as a workable event-scraping pattern.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "Wherever Meetup has coverage (mostly US/EU cities)",
+  "time_coverage": "Live listings",
+  "size_hint": "Very small",
+  "license": "Apache-2.0",
+  "last_activity": "2025-12-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Marginal: Meetup skews to recurring small local groups (tech/social meetups), not MICE/business conferences, so this barely touches the business-travel theme; flagged only for completeness as a workable event-scraping pattern."
+  ]
+ },
+ {
+  "key": "github:jmstratil/create_datedataset",
+  "url": "https://github.com/JMStratil/Create_DateDataset",
+  "name": "JMStratil/Create_DateDataset",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Base-R script that builds a daily calendar panel with school holidays, public holidays, and derived 'exposure' variables, computed from a Gregorian Easter algorithm and statutory holiday rules (no temperature/shapefile/population data, per its own description). Country/region scope and date range were not resolved on WebFetch (repo showed as empty on a second look, updated 8 Sep 2026, 0 stars) so contents could not be independently confirmed beyond the gh search snippet.",
+  "why_useful": "If it actually runs, a generated school/public-holiday panel is a low-cost way to build an academic-calendar / long-weekend feature for nowcasting nights (gap area: student and school-break travel timing), but confirmation failed (WebFetch reported an empty repo) so this is speculative and should be re-checked before use.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "unclear, likely a single country (statutory-rule based)",
+  "time_coverage": "unknown",
+  "size_hint": "single R script, 0 stars",
+  "license": "none declared",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "If it actually runs, a generated school/public-holiday panel is a low-cost way to build an academic-calendar / long-weekend feature for nowcasting nights (gap area: student and school-break travel timing), but confirmation failed (WebFetch reported an empty repo) so this is speculative and should be re-checked before use."
+  ]
+ }
+]

@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:moda-nyc/db-safegraph",
+  "url": "https://github.com/MODA-NYC/db-safegraph",
+  "name": "db-safegraph",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "NYC Mayor's Office of Data Analytics ETL pipeline for ingesting SafeGraph data into a city database (NYC Planning fork also exists: NYCPlanning/db-safegraph). Pipeline/infra code only, no committed foot-traffic CSVs (SafeGraph access is licensed to the city).",
+  "why_useful": "Confirms municipal-government SafeGraph pipelines exist for NYC (a market already in the Inside Airbnb panel) but the underlying data itself is not public through these repos.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "N/A",
+  "size_hint": "ETL/infra code only",
+  "license": "unspecified",
+  "last_activity": "2026-07-13",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Confirms municipal-government SafeGraph pipelines exist for NYC (a market already in the Inside Airbnb panel) but the underlying data itself is not public through these repos."
+  ]
+ },
+ {
+  "key": "github:cbeddow/overture2osm",
+  "url": "https://github.com/cbeddow/overture2osm",
+  "name": "cbeddow/overture2osm",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT tools (5 stars, updated 13 Sep 2026) converting Overture Maps Foundation data to OpenStreetMap tags/formats -- similar purpose to whubsch/overturetoosm.",
+  "why_useful": "Alternative/duplicate cross-walk tool between Overture and OSM schemas; same rationale as above for reconciling lodging POI category definitions across sources.",
+  "potential": "low",
+  "geography": "global (schema-level)",
+  "time_coverage": "n/a (method)",
+  "size_hint": "tool code",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "functionally overlaps whubsch/overturetoosm",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Alternative/duplicate cross-walk tool between Overture and OSM schemas; same rationale as above for reconciling lodging POI category definitions across sources."
+  ]
+ },
+ {
+  "key": "github:alperen-acikol/hud-crosswalk",
+  "url": "https://github.com/alperen-acikol/hud-crosswalk",
+  "name": "alperen-acikol/hud-crosswalk",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit wrapping the HUD USPS Crosswalk API to map survey ZIP codes to county FIPS codes; a client/method rather than a stored dataset.",
+  "why_useful": "One-command puller for ZIP-to-county FIPS mapping, a lighter-weight alternative to hosting the static crosswalk files, for regional-aggregation work on ZIP-level STR/registry data.",
+  "potential": "low",
+  "size_hint": "small API client",
+  "geography": "USA, national",
+  "time_coverage": "n/a (live API pull)",
+  "license": "none stated",
+  "last_activity": "2026-07-05",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "One-command puller for ZIP-to-county FIPS mapping, a lighter-weight alternative to hosting the static crosswalk files, for regional-aggregation work on ZIP-level STR/registry data."
+  ]
+ },
+ {
+  "key": "github:ajayarunachalam/deep_xf",
+  "url": "https://github.com/ajayarunachalam/Deep_XF",
+  "name": "Deep_XF",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package for building explainable forecasting/nowcasting models combining deep neural nets with Dynamic Factor Models on time-series panels, single-line-of-code API; also includes signal-similarity matching and denoising utilities.",
+  "why_useful": "Another off-the-shelf DFM+deep-learning nowcasting library (gap #17) that could shortcut building a KPI nowcast pipeline for ABNB nights/ADR from a mixed panel of alt-data signals.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "118 stars",
+  "license": "unspecified",
+  "last_activity": "2026-06-26",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Another off-the-shelf DFM+deep-learning nowcasting library (gap #17) that could shortcut building a KPI nowcast pipeline for ABNB nights/ADR from a mixed panel of alt-data signals."
+  ]
+ },
+ {
+  "key": "github:halalified/nowcasting-python",
+  "url": "https://github.com/Halalified/Nowcasting-Python",
+  "name": "Nowcasting-Python",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python port/implementation of a nowcasting model (dynamic-factor/mixed-frequency style, per description \"Python Nowcasting\"); 135 stars but description is terse \u2014 needs closer inspection before relying on it.",
+  "why_useful": "Potential lightweight Python DFM nowcasting implementation (gap #17) if it turns out to be a faithful port of the classic Giannone-Reichlin-Small model; flagged for follow-up rather than confirmed.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "135 stars",
+  "license": "BSD-3-Clause",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Potential lightweight Python DFM nowcasting implementation (gap #17) if it turns out to be a faithful port of the classic Giannone-Reichlin-Small model; flagged for follow-up rather than confirmed."
+  ]
+ }
+]

@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:drarahimi/windsor-essex",
+  "url": "https://github.com/drarahimi/windsor-essex",
+  "name": "windsor-essex (border wait time PWA)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "border-wait-times.html widget showing live Gordie Howe Bridge / Ambassador Bridge & Tunnel (Windsor-Detroit) wait times, lane status and toll calculator, alongside separate committed JSON scrapes (windsor-events.json, windsor-traffic.json, windsor-news.json, windsor-311.json); source API for the border wait feed not documented; MIT license; 5 commits, updated Aug 2026",
+  "why_useful": "Marginal but real: a live front-end consuming a US-Canada bridge crossing wait-time feed at one of the busiest commercial crossings; more useful as a pointer to whatever wait-time API it consumes than as a stored dataset (that source isn't disclosed in the README).",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2026-08",
+  "geography": "Windsor(ON)-Detroit(MI) crossing",
+  "time_coverage": "live only, no historical archive apparent",
+  "size_hint": "small JSON scrape files, sizes unknown",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Marginal but real: a live front-end consuming a US-Canada bridge crossing wait-time feed at one of the busiest commercial crossings; more useful as a pointer to whatever wait-time API it consumes than as a stored dataset (that source isn't disclosed in the README)."
+  ]
+ },
+ {
+  "key": "github:firstof9/ha-gasbuddy",
+  "url": "https://github.com/firstof9/ha-gasbuddy",
+  "name": "ha-gasbuddy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Home Assistant integration (65 stars, updated 11 Sep 2026, MIT) wrapping py-gasbuddy to poll a single station's price on a schedule and expose it as a smart-home sensor.",
+  "why_useful": "Same underlying GasBuddy data as py-gasbuddy but wired for scheduled polling/logging, which is closer to a ready-made point-in-time capture harness (poll daily, log to CSV) than the bare library is; still single-station granularity, needs adaptation for national/regional averages.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-11",
+  "geography": "US (per-station)",
+  "time_coverage": "live only",
+  "size_hint": "small",
+  "duplicate_of_holding": "same source (GasBuddy) as py-gasbuddy above",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Same underlying GasBuddy data as py-gasbuddy but wired for scheduled polling/logging, which is closer to a ready-made point-in-time capture harness (poll daily, log to CSV) than the bare library is; still single-station granularity, needs adaptation for national/regional averages."
+  ]
+ },
+ {
+  "key": "github:msdavidson/aaa_gas_scraper",
+  "url": "https://github.com/msdavidson/aaa_gas_scraper",
+  "name": "aaa_gas_scraper",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small scraper (updated 13 Sep 2026, actively run 'once a day') pulling AAA's published gas-price pages for Nevada, Las Vegas, and Reno specifically. Repo appears to be actively logging daily runs (very recent update).",
+  "why_useful": "AAA's daily national/state/city average gas price feed (the standard press benchmark cited around holiday-driving forecasts) is not otherwise in our catalogue; this shows AAA's page is scrape-able and gives a working pattern, though scope is limited to 3 Nevada geographies. A generalized version (all 50 states) would be more useful than this one.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "none declared",
+  "last_activity": "2026-09-13",
+  "geography": "Nevada (Las Vegas, Reno) only",
+  "time_coverage": "ongoing daily since unknown start, small n likely",
+  "size_hint": "small scraper + presumably a growing local log (not confirmed committed)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "AAA's daily national/state/city average gas price feed (the standard press benchmark cited around holiday-driving forecasts) is not otherwise in our catalogue; this shows AAA's page is scrape-able and gives a working pattern, though scope is limited to 3 Nevada geographies. A generalized version (all 50 states) would be more useful than this one."
+  ]
+ },
+ {
+  "key": "github:chamseddine4/time-series-vmt-analysis",
+  "url": "https://github.com/chamseddine4/Time-Series-VMT-Analysis",
+  "name": "Time-Series-VMT-Analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed monthly US national Vehicle Miles Traveled series 1972-2008 (likely sourced from FHWA), used for a time-series class analysis notebook/report.",
+  "why_useful": "Long back-history (36 years) of national VMT could help establish seasonal/holiday-driving baselines and cyclical patterns predating the FHWA data our other candidate (trendct) covers only recently; useful mainly as a historical reference series, not current.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "none declared",
+  "last_activity": "2025-05-20",
+  "geography": "US national",
+  "time_coverage": "1972-2008 monthly",
+  "size_hint": "small, single CSV + analysis notebook",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Long back-history (36 years) of national VMT could help establish seasonal/holiday-driving baselines and cyclical patterns predating the FHWA data our other candidate (trendct) covers only recently; useful mainly as a historical reference series, not current."
+  ]
+ },
+ {
+  "key": "github:jalsama/covid---19-travel-data",
+  "url": "https://github.com/jalsama/COVID---19-Travel-Data",
+  "name": "COVID---19-Travel-Data",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed combined dataset: monthly TSA passenger throughput, monthly state-level VMT, quarterly average domestic airline itinerary fares by state, and monthly COVID-19 cases/deaths by state, built to compare air vs. road travel during the pandemic.",
+  "why_useful": "Joins VMT with TSA throughput and airfares in one panel, which is a ready-made air-vs-road substitution frame; however TSA-post-2024 already failed as a nowcast per our own tests, and this data appears COVID-era vintage (2020-21), so its marginal value is mainly the joined structure/methodology rather than fresh numbers.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "none declared",
+  "last_activity": "2022-03-30",
+  "geography": "US, state-level",
+  "time_coverage": "~2020-2021 (COVID era)",
+  "size_hint": "small, multiple CSVs joined",
+  "duplicate_of_holding": "overlaps TSA throughput (already held) and VMT-by-state (candidate above)",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Joins VMT with TSA throughput and airfares in one panel, which is a ready-made air-vs-road substitution frame; however TSA-post-2024 already failed as a nowcast per our own tests, and this data appears COVID-era vintage (2020-21), so its marginal value is mainly the joined structure/methodology rather than fresh numbers."
+  ]
+ }
+]

@@ -1,0 +1,7 @@
+source,security_title,transaction_date,transaction_code,shares,price_per_share,acquired_disposed,shares_owned_following,ownership,is_derivative
+abnb_form4_latest.xml,Class A Common Stock,2026-09-01,TransactionCode.EXERCISE_DERIVATIVE,5224,40.18,AcquiredDisposed.ACQUIRED,53737.054,Ownership.DIRECT,False
+abnb_form4_latest.xml,Class A Common Stock,2026-09-01,TransactionCode.OPEN_MARKET_SALE,5224,182.49,AcquiredDisposed.DISPOSED,48513.054,Ownership.DIRECT,False
+abnb_form4_latest.xml,Stock Option,2026-09-01,TransactionCode.EXERCISE_DERIVATIVE,5224,0,AcquiredDisposed.DISPOSED,0,Ownership.DIRECT,True
+sec-form4-parser/tests/fixtures/sample_form4_purchase.xml,Common Stock,2024-03-15,TransactionCode.OPEN_MARKET_PURCHASE,10000,172.45,AcquiredDisposed.ACQUIRED,50000,Ownership.DIRECT,False
+sec-form4-parser/tests/fixtures/sample_form4_purchase.xml,Common Stock,2024-03-15,TransactionCode.OPEN_MARKET_SALE,500,173.10,AcquiredDisposed.DISPOSED,49500,Ownership.DIRECT,False
+sec-form4-parser/tests/fixtures/sample_form4_multi_reporter.xml,Employee Stock Option (right to buy),2024-06-01,TransactionCode.EXERCISE_DERIVATIVE,2500,0,AcquiredDisposed.DISPOSED,7500,Ownership.DIRECT,True

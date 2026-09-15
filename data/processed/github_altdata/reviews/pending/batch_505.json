@@ -1,0 +1,657 @@
+[
+ {
+  "key": "github:eliseocab/brownsville-wait-times",
+  "url": "https://github.com/EliseoCab/brownsville-wait-times",
+  "name": "EliseoCab/brownsville-wait-times",
+  "category": "cross_border_visa",
+  "data_kind": "both",
+  "what_it_holds": "Very fresh repo (last push 14 Sep 2026, same day as this scout) with committed XML snapshots of CBP Brownsville, TX Port of Entry wait times: data/bwt-all.xml (181KB, appears to be an accumulating historical log) and data/bwt.xml (3.3KB, latest snapshot), pulled from the public CBP Border Wait Times feed (bwt.cbp.gov).",
+  "why_useful": "A single-port but actually time-stamped, accumulating CBP wait-time archive -- if bwt-all.xml is a running log it could give a real point-in-time series of land-border congestion (US-Mexico), a genuine proxy for cross-border travel volume (gap #10); worth checking XML contents/date range before relying on it, single port limits usefulness for a national picture.",
+  "potential": "medium",
+  "license": "none stated",
+  "last_activity": "2026-09-14",
+  "size_hint": "181KB accumulating XML log + 3.3KB current snapshot",
+  "time_coverage": "unclear -- appears to be actively growing as of Sep 2026",
+  "geography": "Brownsville, TX (US-Mexico border) only",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "A single-port but actually time-stamped, accumulating CBP wait-time archive -- if bwt-all.xml is a running log it could give a real point-in-time series of land-border congestion (US-Mexico), a genuine proxy for cross-border travel volume (gap #10); worth checking XML contents/date range before relying on it, single port limits usefulness for a national picture."
+  ]
+ },
+ {
+  "key": "github:kirkwood-justin/park-atlas-data",
+  "url": "https://github.com/kirkwood-justin/park-atlas-data",
+  "name": "park-atlas-data",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Four CSVs refreshed from theparkatlas.com covering all 474 US National Park System units: parks.csv (park code, name, designation, states, 2025 visitor counts, dark-sky status, timed-entry flag, fee flag, bird species count, active alerts), entrance_fees.csv, campgrounds.csv, wildlife_checklist_counts.csv. CC0 public domain, snapshot dated 13 Sep 2026, sourced from NPS API, NPS IRMA visitation stats, NPSpecies, Recreation.gov RIDB, DarkSky.",
+  "why_useful": "Actively refreshed (updated the same week as this scout run), CC0, single-year current visitor-count cross-section across all 474 NPS units plus fee/entry data; useful as an up-to-date benchmark against NPS IRMA and to sanity-check any nowcast built on the longer national-parks-bi series above.",
+  "potential": "medium",
+  "geography": "US, all 474 NPS units",
+  "time_coverage": "single snapshot, 2025 visitor counts, refreshed Sep 2026",
+  "size_hint": "4 CSVs, ~474 rows each",
+  "license": "CC0 1.0",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Actively refreshed (updated the same week as this scout run), CC0, single-year current visitor-count cross-section across all 474 NPS units plus fee/entry data; useful as an up-to-date benchmark against NPS IRMA and to sanity-check any nowcast built on the longer national-parks-bi series above."
+  ]
+ },
+ {
+  "key": "github:annachant/capstone-disney-world-date-and-attendance-predictor",
+  "url": "https://github.com/annachant/Capstone-Disney-World-Date-and-Attendance-Predictor",
+  "name": "Capstone-Disney-World-Date-and-Attendance-Predictor",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "12 CSVs of daily average ride wait times (resampled from 5-10 minute readings) for rides across all four Walt Disney World parks (Magic Kingdom x3, Epcot x2, Hollywood Studios x3, Animal Kingdom x4), covering Jan 2015-Dec 2021 (analysis window 2015-2019). Original data pulled from touringplans.com's public crowd-calendar dataset.",
+  "why_useful": "Ride wait times are a well-established public proxy for theme-park crowd levels/attendance (touringplans.com dataset used in academic tourism-demand papers); gives a long, daily, US leisure-travel demand series independent of Airbnb, useful as a domestic discretionary-travel cross-check alongside TSA and NPS series.",
+  "potential": "medium",
+  "geography": "US (Orlando, FL - Walt Disney World)",
+  "time_coverage": "daily, 2015-2021",
+  "size_hint": "12 CSV files, multi-year daily series per ride",
+  "license": "not stated; underlying source touringplans.com is a known open dataset",
+  "last_activity": "2026-04-02",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Ride wait times are a well-established public proxy for theme-park crowd levels/attendance (touringplans.com dataset used in academic tourism-demand papers); gives a long, daily, US leisure-travel demand series independent of Airbnb, useful as a domestic discretionary-travel cross-check alongside TSA and NPS series."
+  ]
+ },
+ {
+  "key": "github:topics/ticketmaster",
+  "url": "https://github.com/topics/ticketmaster",
+  "name": "ticketpy (Ticketmaster Discovery API Python wrapper)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python SDK/wrapper (29 stars) for the Ticketmaster Discovery API, which exposes event listings (concerts, sports, festivals) with venue, date, and location metadata across the US and internationally where Ticketmaster operates.",
+  "why_useful": "A ready client for pulling event density by city/date as an events/shocks proxy (gap #11: FIFA World Cup 2026, concerts, conferences) that could feed a city-level event calendar to explain short-term nights/ADR spikes; requires a free Ticketmaster Discovery API key, no scraping of a login-walled site.",
+  "potential": "medium",
+  "license": "unspecified (check repo)",
+  "last_activity": "unspecified, low star count suggests light maintenance",
+  "geography": "US-heavy, some international (Ticketmaster footprint)",
+  "time_coverage": "forward-looking event calendar, not historical panel",
+  "size_hint": "n/a (API client)",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "A ready client for pulling event density by city/date as an events/shocks proxy (gap #11: FIFA World Cup 2026, concerts, conferences) that could feed a city-level event calendar to explain short-term nights/ADR spikes; requires a free Ticketmaster Discovery API key, no scraping of a login-walled site.",
+   "Same events-calendar use case as ticketpy above (gap #11) if the official API's coverage or rate limits are insufficient; runs on Apify's platform rather than being a self-contained repo."
+  ]
+ },
+ {
+  "key": "github:italobel/world-cup-2026-calendar",
+  "url": "https://github.com/italobel/world-cup-2026-calendar",
+  "name": "world-cup-2026-calendar",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed FIFA_World_Cup_2026.ics file (~40KB), all 104 matches numbered WC2026 #1-#104, group letters A-L, kickoff times in US Eastern, venue and host city for every match (Estadio Azteca, MetLife Stadium, BMO Field, AT&T Stadium, etc.) across US/Canada/Mexico, Jun 11-Jul 19 2026. MIT license, 6 stars, updated 23 Jul 2026.",
+  "why_useful": "Same schedule/host-city gap as above but as a clean, single-file calendar (easy to parse to a date x host-metro table) rather than a relational dataset -- a cheap cross-check/alternate source for the World Cup demand-shock calendar feeding 3Q26 forecasts.",
+  "potential": "medium",
+  "geography": "US, Canada, Mexico",
+  "time_coverage": "Jun 11 - Jul 19 2026",
+  "size_hint": "1 ICS file, ~40KB, 104 events",
+  "license": "MIT",
+  "last_activity": "2026-07-23",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Same schedule/host-city gap as above but as a clean, single-file calendar (easy to parse to a date x host-metro table) rather than a relational dataset -- a cheap cross-check/alternate source for the World Cup demand-shock calendar feeding 3Q26 forecasts."
+  ]
+ },
+ {
+  "key": "github:predicthq/phq-data-science-docs",
+  "url": "https://github.com/predicthq/phq-data-science-docs",
+  "name": "phq-data-science-docs",
+  "category": "events_weather_shocks",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "PredictHQ's data-science documentation repo (MIT, 17 stars) with articles and linked downloadable Jupyter notebooks demonstrating how to build demand-forecasting features from event data (attendance impact, event density nowcasting). No committed CSV/parquet in the repo itself -- notebooks are linked externally.",
+  "why_useful": "Could contain worked examples of turning event calendars into demand features (analogous to what we'd want for World Cup / conferences / holidays feeding nights forecasts) even without a full data export.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "n/a (docs)",
+  "size_hint": "docs/notebooks",
+  "license": "MIT",
+  "last_activity": "2026-08-27",
+  "gap_targets": [
+   11
+  ],
+  "hits": 4,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Could contain worked examples of turning event calendars into demand features (analogous to what we'd want for World Cup / conferences / holidays feeding nights forecasts) even without a full data export.",
+   "Shows worked examples of how an events-impact feed could be joined to demand series (methodological reference for building our own event-shock feature even if we don't buy PredictHQ), but supplies no standalone data.",
+   "Worked methodology for turning an event calendar (including MICE/conference events) into a demand-nowcasting feature -- relevant to gap #17 (nowcasting methods) if the team ever builds an event-density regressor for business-travel markets.",
+   "Companion methods doc to sdk-py; useful as a template for building an events-based demand feature set for ABNB nights/ADR nowcasting without re-deriving the feature engineering from scratch."
+  ]
+ },
+ {
+  "key": "github:predicthq/streamlit-accommodation-demo",
+  "url": "https://github.com/predicthq/streamlit-accommodation-demo",
+  "name": "streamlit-accommodation-demo",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Streamlit demo app pulling PredictHQ event data specifically for accommodation-demand forecasting (per the repo purpose: 'Streamlit Accommodation Demo App'). No committed dataset (needs API key), but the method -- event calendar -> accommodation demand -- is exactly the ABNB use case.",
+  "why_useful": "A worked reference implementation for turning an event calendar (concerts/conferences/sports) into an accommodation-demand signal, i.e. a template method for the World Cup/holiday/conference demand-shock work, even though it requires a paid/free-tier PredictHQ key to run.",
+  "potential": "medium",
+  "geography": "global (demo, location configurable)",
+  "time_coverage": "n/a (live API demo)",
+  "size_hint": "small Streamlit app",
+  "license": "unknown",
+  "last_activity": "2024-08-15",
+  "gap_targets": [
+   11
+  ],
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "A worked reference implementation for turning an event calendar (concerts/conferences/sports) into an accommodation-demand signal, i.e. a template method for the World Cup/holiday/conference demand-shock work, even though it requires a paid/free-tier PredictHQ key to run.",
+   "Confirms PredictHQ explicitly markets an accommodation-demand use case (i.e. this is exactly what STR pricing tools ingest) and gives a runnable reference implementation for pulling an events-based demand index by market \u2014 useful scaffolding rather than a dataset."
+  ]
+ },
+ {
+  "key": "github:predicthq/aws-sagemaker-demand-forecasting-example",
+  "url": "https://github.com/predicthq/aws-sagemaker-demand-forecasting-example",
+  "name": "aws-sagemaker-demand-forecasting-example",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed worked example (also mirrored as an official aws-samples repo) forecasting demand with AWS SageMaker XGBoost using PredictHQ event features as exogenous regressors.",
+  "why_useful": "Another event-driven demand-forecasting method template (events -> XGBoost demand forecast) that could be adapted to nights/ADR around World Cup or major conferences, though it depends on a live PredictHQ feed rather than committed data.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "size_hint": "notebook/example code",
+  "license": "MIT",
+  "last_activity": "2023-08-12",
+  "gap_targets": [
+   11
+  ],
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Another event-driven demand-forecasting method template (events -> XGBoost demand forecast) that could be adapted to nights/ADR around World Cup or major conferences, though it depends on a live PredictHQ feed rather than committed data.",
+   "A concrete, runnable nowcasting-with-mixed-frequency-events template (gap #17) that could be adapted to regress ABNB nights/ADR residuals on an event-density feature built from PredictHQ."
+  ]
+ },
+ {
+  "key": "github:jfjelstul/worldcup",
+  "url": "https://github.com/jfjelstul/worldcup",
+  "name": "jfjelstul/worldcup (Fjelstul World Cup Database)",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "27 linked datasets (>1.5M data points) on tournaments, teams, players, managers, referees, stadiums, matches, goals, bookings for all 22 men's World Cups (1930-2022) and 9 women's World Cups (1991-2019); available as R package, .RData, .csv, .json, and SQLite.",
+  "why_useful": "Deep historical World Cup base-rate data (host-city attendance/stadium capacity patterns) useful for calibrating how prior World Cups moved host-country travel/lodging demand, though it stops at 2022 and does not itself cover 2026.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global (past host countries)",
+  "time_coverage": "1930-2022 (men), 1991-2019 (women)",
+  "license": "CC-BY-SA 4.0",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Deep historical World Cup base-rate data (host-city attendance/stadium capacity patterns) useful for calibrating how prior World Cups moved host-country travel/lodging demand, though it stops at 2022 and does not itself cover 2026."
+  ]
+ },
+ {
+  "key": "github:nager/nager.date",
+  "url": "https://github.com/nager/Nager.Date",
+  "name": "nager/Nager.Date",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Open-source public-holiday data and a free REST API (nagerholidays.com/api/v3) covering 200+ countries; holiday objects carry date, local/English name, country code, subdivision, and type (Public/Bank/School/Authorities/Optional/Observance); MIT licensed, 1.4k stars, 1,706 commits, also ships as NuGet/Docker.",
+  "why_useful": "Alternative/cross-check source to the Python `holidays` package for per-country holiday calendars, reachable via a plain HTTP GET with no auth for a quick one-off pull (e.g. from a notebook without pandas/holidays installed).",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global, 200+ countries",
+  "time_coverage": "any year via API",
+  "license": "MIT (API free tier; some offline packages need a sponsor key)",
+  "last_activity": "not confirmed exact date; actively maintained",
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Alternative/cross-check source to the Python `holidays` package for per-country holiday calendars, reachable via a plain HTTP GET with no auth for a quick one-off pull (e.g. from a notebook without pandas/holidays installed).",
+   "A second, independently maintained global holiday source (cross-check against `holidays`/vacanza) with a live queryable API -- useful for point-in-time holiday-calendar snapshots by country for the seasonality/party-size and regional-mix work, and distinguishes School holidays specifically (relevant to family/group travel timing)."
+  ]
+ },
+ {
+  "key": "github:peopledoc/workalendar",
+  "url": "https://github.com/peopledoc/workalendar",
+  "name": "peopledoc/workalendar",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python module computing legal/religious holidays and working-day arithmetic for 80+ countries/territories including US state-level, Canada, Brazil, Mexico, Argentina, Chile, China, Japan, Korea, India, Australia, NZ, South Africa and more; includes precomputed astronomical data (equinoxes, solar terms) for 1991-2051; MIT license, ~1,377 commits, 950 stars.",
+  "why_useful": "Second independent holiday/working-day calendar engine with stronger LatAm/APAC subdivision coverage than some alternatives, useful for regional (LatAm/APAC) seasonality controls referenced in gap #11 and cross-checking the `holidays` package.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "80+ countries, strong LatAm/APAC/Africa coverage",
+  "time_coverage": "1991-2051 for astronomical holidays; general holiday rules for any year",
+  "license": "MIT",
+  "last_activity": "active, 950 stars",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Second independent holiday/working-day calendar engine with stronger LatAm/APAC subdivision coverage than some alternatives, useful for regional (LatAm/APAC) seasonality controls referenced in gap #11 and cross-checking the `holidays` package."
+  ]
+ },
+ {
+  "key": "github:tech-conferences/conference-data",
+  "url": "https://github.com/tech-conferences/conference-data",
+  "name": "tech-conferences/conference-data (confs.tech backing data)",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "JSON files (one per topic/year) of tech conferences worldwide with fields for name, start/end dates, city/country location, CFP dates, social handles; 13,987 commits, community-maintained, MIT license, covers many years across dozens of tech topics (JS, Python, Rust, data, etc.).",
+  "why_useful": "A machine-readable conference calendar with dates and host cities that can proxy business-travel demand spikes in specific ABNB markets (partial coverage of the 'conferences' part of gap #11); skewed toward software/tech conferences only, not a general conference census.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global, city-level",
+  "time_coverage": "multi-year, ongoing (historical + upcoming)",
+  "license": "MIT",
+  "last_activity": "actively maintained (19 open PRs, 4 open issues at capture)",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "A machine-readable conference calendar with dates and host cities that can proxy business-travel demand spikes in specific ABNB markets (partial coverage of the 'conferences' part of gap #11); skewed toward software/tech conferences only, not a general conference census."
+  ]
+ },
+ {
+  "key": "github:cyanheads/fema-mcp-server",
+  "url": "https://github.com/cyanheads/fema-mcp-server",
+  "name": "fema-mcp-server",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP (Model Context Protocol) server / API client exposing FEMA OpenFEMA endpoints: disaster declarations, public-assistance grants, individual/household housing aid, and NFIP flood-insurance claims. Actively maintained TypeScript project (docs/, tests/, CI, package.json), last updated 24 Aug 2026, Apache-2.0.",
+  "why_useful": "Turns FEMA's official disaster-declaration and NFIP flood-claims feeds into a clean, scriptable pull for gap 11 (hurricanes/wildfires/floods as shocks to specific STR markets) and could be repointed to pull county-level declarations timed against Airbnb market calendars.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-24",
+  "size_hint": "small (source code only, no committed data)",
+  "geography": "US (FEMA jurisdiction)",
+  "time_coverage": "current OpenFEMA API coverage (1953-present per OpenFEMA)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Turns FEMA's official disaster-declaration and NFIP flood-claims feeds into a clean, scriptable pull for gap 11 (hurricanes/wildfires/floods as shocks to specific STR markets) and could be repointed to pull county-level declarations timed against Airbnb market calendars.",
+   "One-command programmatic pull of the same OpenFEMA declaration + assistance + NFIP-claims data as the rearc mirror, but live and queryable, including NFIP flood claims which give a dollar-loss proxy per county/disaster not in the plain declarations file."
+  ]
+ },
+ {
+  "key": "github:msimotwq/catastrophe-risk-dashboard",
+  "url": "https://github.com/Msimotwq/catastrophe-risk-dashboard",
+  "name": "catastrophe-risk-dashboard",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Streamlit catastrophe-risk dashboard with an actually-committed data file `emdat_disasters.xlsx` (confirmed via directory listing) plus `Cat modelling.py` and `Disaster dashboard.py`. Small hobby project, 0 stars, updated 12 Mar 2026.",
+  "why_useful": "A directly downloadable EM-DAT extract (global disaster records incl. storms/floods/wildfires) already committed to a repo rather than requiring an EM-DAT account signup, useful as a quick cross-check source for gap 11 regional shock timing (LatAm/APAC per gaps 7/11).",
+  "potential": "medium",
+  "gap_targets": [
+   11,
+   7
+  ],
+  "license": "none listed",
+  "last_activity": "2026-03-12",
+  "size_hint": "one xlsx file, likely a few thousand rows (typical EM-DAT extract)",
+  "geography": "global",
+  "time_coverage": "unspecified EM-DAT vintage (likely 2000s-2020s based on typical extracts)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A directly downloadable EM-DAT extract (global disaster records incl. storms/floods/wildfires) already committed to a repo rather than requiring an EM-DAT account signup, useful as a quick cross-check source for gap 11 regional shock timing (LatAm/APAC per gaps 7/11)."
+  ]
+ },
+ {
+  "key": "github:kylescorner/earth-engine-wildfire-data",
+  "url": "https://github.com/KylesCorner/Earth-Engine-Wildfire-Data",
+  "name": "Earth-Engine-Wildfire-Data",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit for downloading, processing, and preparing wildfire perimeter data from Google Earth Engine (GEE), supporting both historical and forecasted wildfire datasets; generates config files for wildfire modeling workflows. MIT licensed, 4 stars, updated 22 Nov 2025.",
+  "why_useful": "A scriptable, non-Airbnb-site method to pull historical wildfire perimeters (could target Maui 2023 and LA Jan 2025 fires specifically) for gap 11 tourism-shock timing/severity, more current than static NIFC/GeoMAC dumps.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "MIT",
+  "last_activity": "2025-11-22",
+  "size_hint": "code only, pulls data on demand from GEE",
+  "geography": "global (wherever GEE fire products cover, incl. US)",
+  "time_coverage": "historical + forecasted, exact years unspecified",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A scriptable, non-Airbnb-site method to pull historical wildfire perimeters (could target Maui 2023 and LA Jan 2025 fires specifically) for gap 11 tourism-shock timing/severity, more current than static NIFC/GeoMAC dumps."
+  ]
+ },
+ {
+  "key": "github:iloveburritos/datacenters-wildfires",
+  "url": "https://github.com/iloveburritos/datacenters-wildfires",
+  "name": "datacenters-wildfires",
+  "category": "events_weather_shocks",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Interactive map site combining US data-center locations with historical wildfire perimeters (NIFC/WFIGS, 2016-Sep 2026) per its description. Directory listing shows only `us_data_centers_100mw_plus.csv` and an HTML map committed; wildfire perimeter data itself is pulled live from the NIFC/WFIGS API, not stored in-repo. Updated 10 Sep 2026 (very fresh).",
+  "why_useful": "Confirms NIFC/WFIGS as a live, current (through Sep 2026) wildfire-perimeter API worth querying directly for gap 11 (Maui/LA fires and any 2026 wildfire events); the repo itself is not a data store but demonstrates a working integration pattern.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "none listed",
+  "last_activity": "2026-09-10",
+  "size_hint": "one small CSV + one HTML file; no wildfire data committed",
+  "geography": "US",
+  "time_coverage": "2016-Sep 2026 (via live NIFC/WFIGS API, not committed)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Confirms NIFC/WFIGS as a live, current (through Sep 2026) wildfire-perimeter API worth querying directly for gap 11 (Maui/LA fires and any 2026 wildfire events); the repo itself is not a data store but demonstrates a working integration pattern.",
+   "A recent, actively updated (pushed 2026-09-10) mirror/consumer of the authoritative US wildfire-perimeter feed (NIFC/WFIGS) reaching into 2026, i.e. covers the LA fires (Jan 2025) and any 2026 events relevant to the pitch window."
+  ]
+ },
+ {
+  "key": "github:cran/noaastormevents",
+  "url": "https://github.com/cran/noaastormevents",
+  "name": "noaastormevents (CRAN mirror)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Read-only GitHub mirror of the CRAN R package `noaastormevents`, an R client for exploring NOAA's Storm Events Database (1950-present: tornadoes, hurricanes/tropical storms, floods, hail, high wind, wildfire, heat, etc., county-level with property/crop damage estimates).",
+  "why_useful": "Gives a clean, maintained R interface to the authoritative NOAA county-level storm-events feed (hurricanes, wildfires, heatwaves all included as event types) for gap 11; could be used to build a county-to-STR-market crosswalk for shock timing/severity.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "not specified in listing (CRAN package, check upstream)",
+  "last_activity": "2021-01-29",
+  "size_hint": "package code only; source DB has 1.7M+ records per a related repo's description",
+  "geography": "US (county level)",
+  "time_coverage": "1950-present",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Gives a clean, maintained R interface to the authoritative NOAA county-level storm-events feed (hurricanes, wildfires, heatwaves all included as event types) for gap 11; could be used to build a county-to-STR-market crosswalk for shock timing/severity."
+  ]
+ },
+ {
+  "key": "github:muhammadtaimoor3355-gif/post-disaster-mobility-public",
+  "url": "https://github.com/muhammadtaimoor3355-gif/post-disaster-mobility-public",
+  "name": "post-disaster-mobility-public",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Public-data pipeline linking FEMA National Risk Index (NRI), CDC Social Vulnerability Index (SVI), Census PUMA geographies, and FEMA disaster declarations through to IPUMS migration-PUMA level, i.e. models post-disaster population mobility/migration. Updated 15 Apr 2026, 'other' license.",
+  "why_useful": "Post-disaster migration/mobility flows are a proxy for demand disruption and displacement travel (short-term-rental usage spikes for displaced residents) around hurricanes/wildfires, relevant to gap 11 and gap 20 (mobility/geospatial proxies).",
+  "potential": "medium",
+  "gap_targets": [
+   11,
+   20
+  ],
+  "license": "other",
+  "last_activity": "2026-04-15",
+  "size_hint": "pipeline/code scale, sources IPUMS + FEMA NRI + CDC SVI + Census",
+  "geography": "US (PUMA level)",
+  "time_coverage": "unspecified, contemporary FEMA/IPUMS vintages",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Post-disaster migration/mobility flows are a proxy for demand disruption and displacement travel (short-term-rental usage spikes for displaced residents) around hurricanes/wildfires, relevant to gap 11 and gap 20 (mobility/geospatial proxies)."
+  ]
+ },
+ {
+  "key": "github:nicolejkeeney/thesis-flood-impact-analysis-2025",
+  "url": "https://github.com/nicolejkeeney/thesis-flood-impact-analysis-2025",
+  "name": "thesis-flood-impact-analysis-2025",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MS thesis (Colorado State University) processing pipeline and analysis code measuring flood-disaster impacts using MODIS satellite imagery, climate data, and EM-DAT disaster records. MIT licensed, 5 stars, updated 10 Sep 2026 (very fresh/active).",
+  "why_useful": "An actively maintained academic replication-style pipeline joining MODIS satellite flood extent with EM-DAT records; the method (not necessarily a large committed dataset) could be repurposed for hurricane-driven flooding impacting specific tourism markets (gap 11).",
+  "potential": "medium",
+  "gap_targets": [
+   11,
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "size_hint": "code/pipeline; unclear if raw MODIS/EM-DAT data is committed",
+  "geography": "global (wherever EM-DAT flood records + MODIS overlap)",
+  "time_coverage": "unspecified",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "An actively maintained academic replication-style pipeline joining MODIS satellite flood extent with EM-DAT records; the method (not necessarily a large committed dataset) could be repurposed for hurricane-driven flooding impacting specific tourism markets (gap 11).",
+   "Working EM-DAT extraction/cleaning code (flood subtype) that could be adapted to pull other disaster types (storm, wildfire) by country/date for an events regressor; illustrates how to join disaster events to a market panel."
+  ]
+ },
+ {
+  "key": "github:datadesk/nasa-wildfires",
+  "url": "https://github.com/datadesk/nasa-wildfires",
+  "name": "nasa-wildfires",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "LA Times Data Desk's Python tool to download wildfire hotspot detections from NASA satellites via FIRMS (MODIS/VIIRS), returning point-level fire-detection data with timestamps and confidence.",
+  "why_useful": "A well-maintained (34 stars), newsroom-grade one-command puller for near-real-time and historical FIRMS hotspot data -- lower-fidelity than perimeter polygons but easy to script for any market/date range, including Hawaii and Southern California.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "current NASA FIRMS archive (2000-present for MODIS, 2012-present VIIRS)",
+  "size_hint": "API client, no committed dataset",
+  "license": "not stated (LA Times Data Desk open-source tools are typically MIT/permissive)",
+  "last_activity": "2025-06-26",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A well-maintained (34 stars), newsroom-grade one-command puller for near-real-time and historical FIRMS hotspot data -- lower-fidelity than perimeter polygons but easy to script for any market/date range, including Hawaii and Southern California."
+  ]
+ },
+ {
+  "key": "github:geanders/hurricaneexposuredata",
+  "url": "https://github.com/geanders/hurricaneexposuredata",
+  "name": "hurricaneexposuredata",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R data package with hazard-based exposure data (storm-level rain and wind exposure) for every US county within the Atlantic-basin hurricane-affected region, keyed to specific historical tropical-storm events; companion to the `hurricaneexposure` toolkit (rOpenSci-affiliated) which layers on visualization/analysis functions.",
+  "why_useful": "County-level, storm-by-storm exposure intensity (not just track lines) lets you quantify how directly a given Inside Airbnb market (e.g. Florida, Gulf Coast, coastal NC/SC) was hit by a named storm -- useful for a hurricane-shock control variable in nights/ADR regressions, addressing gap #11.",
+  "potential": "medium",
+  "geography": "US counties, Atlantic basin storms",
+  "time_coverage": "historical tropical storms through package's last data refresh (package built off HURDAT2 vintages)",
+  "size_hint": "13 stars, 6 forks, 102 commits; R package data/ directory",
+  "license": "not explicitly stated in fetched excerpt (rOpenSci packages are typically MIT/GPL)",
+  "last_activity": "not shown in fetch excerpt; rOpenSci-reviewed package, periodically maintained",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "County-level, storm-by-storm exposure intensity (not just track lines) lets you quantify how directly a given Inside Airbnb market (e.g. Florida, Gulf Coast, coastal NC/SC) was hit by a named storm -- useful for a hurricane-shock control variable in nights/ADR regressions, addressing gap #11."
+  ]
+ },
+ {
+  "key": "github:levicowan-noaa/ibtracs",
+  "url": "https://github.com/levicowan-noaa/ibtracs",
+  "name": "ibtracs",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python API/wrapper for interfacing with NOAA's IBTrACS (International Best Track Archive for Climate Stewardship) global tropical-cyclone best-track dataset -- position, intensity, and metadata for every tracked tropical cyclone worldwide since ~1841 (satellite-era reliable from ~1980s).",
+  "why_useful": "Global coverage (not just Atlantic/HURDAT2) matters for APAC typhoon exposure (Japan, Thailand, Philippines -- gap #7 APAC travel volume interacts with typhoon season) and for a global, not just US, hurricane/typhoon shock variable.",
+  "potential": "medium",
+  "geography": "Global (all ocean basins)",
+  "time_coverage": "~1841-present (reliable satellite era ~1980s-present), updated as NOAA IBTrACS releases new versions",
+  "size_hint": "wrapper around NOAA's canonical IBTrACS CSV/NetCDF files (~10s of MB)",
+  "license": "not stated",
+  "last_activity": "2023-12-02",
+  "gap_targets": [
+   7,
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Global coverage (not just Atlantic/HURDAT2) matters for APAC typhoon exposure (Japan, Thailand, Philippines -- gap #7 APAC travel volume interacts with typhoon season) and for a global, not just US, hurricane/typhoon shock variable."
+  ]
+ },
+ {
+  "key": "github:tomerburg/ibtracs",
+  "url": "https://github.com/tomerburg/IBTrACS",
+  "name": "IBTrACS",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repository directly committing IBTrACS CSV files (global tropical cyclone best-track data) rather than just a client wrapper.",
+  "why_useful": "A committed, version-controlled copy of IBTrACS CSVs on GitHub -- easier to pin/point-in-time than always pulling live from NOAA, useful if the team wants a frozen vintage for backtesting hurricane-season effects.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "IBTrACS full historical record as of repo's last commit",
+  "size_hint": "CSV files, tens of MB typical for full IBTrACS",
+  "license": "not stated",
+  "last_activity": "2024-10-04",
+  "gap_targets": [
+   7,
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A committed, version-controlled copy of IBTrACS CSVs on GitHub -- easier to pin/point-in-time than always pulling live from NOAA, useful if the team wants a frozen vintage for backtesting hurricane-season effects."
+  ]
+ },
+ {
+  "key": "github:metemaad/hurdat2_processor",
+  "url": "https://github.com/metemaad/HURDAT2_processor",
+  "name": "HURDAT2_processor",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script converting NOAA's Atlantic hurricane database (HURDAT2) raw fixed-width text format into a clean pandas dataframe / CSV (storm id, name, date/time, lat/lon, max wind, pressure, per 6-hourly fix).",
+  "why_useful": "A simple, no-dependency way to get HURDAT2 (the standard official Atlantic-basin storm-track record used by NHC) into an analysis-ready CSV without hand-parsing the NOAA text format, directly supporting Gulf/Atlantic hurricane-season event studies (gap #11).",
+  "potential": "medium",
+  "geography": "Atlantic basin (US Gulf/East Coast + Caribbean)",
+  "time_coverage": "HURDAT2 full record, 1851-present (reliable from ~1950s-60s)",
+  "size_hint": "single script + resulting CSV of a few MB",
+  "license": "not stated",
+  "last_activity": "2019-11-05",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A simple, no-dependency way to get HURDAT2 (the standard official Atlantic-basin storm-track record used by NHC) into an analysis-ready CSV without hand-parsing the NOAA text format, directly supporting Gulf/Atlantic hurricane-season event studies (gap #11)."
+  ]
+ },
+ {
+  "key": "github:exxamalte/python-aio-georss-gdacs",
+  "url": "https://github.com/exxamalte/python-aio-georss-gdacs",
+  "name": "python-aio-georss-gdacs",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Async Python client for the Global Disaster Alert and Coordination System (GDACS) GeoRSS feed -- real-time and near-term-historical alerts for earthquakes, tropical cyclones, floods, volcanoes, droughts, and wildfires worldwide, each with a severity/alert-level score.",
+  "why_useful": "GDACS gives a single cross-hazard, cross-country severity feed (not just US-only like FEMA) -- useful as a lightweight global disaster-shock indicator across APAC/LatAm/EMEA markets that FEMA/NIFC/HURDAT2 don't cover, complementing gap #11 outside the US.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "live feed; GDACS itself archives alerts back to the mid-2000s on its own site",
+  "size_hint": "API client, no committed dataset",
+  "license": "not stated (exxamalte's georss packages are typically Apache-2.0)",
+  "last_activity": "2026-07-20",
+  "gap_targets": [
+   7,
+   11
+  ],
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "GDACS gives a single cross-hazard, cross-country severity feed (not just US-only like FEMA) -- useful as a lightweight global disaster-shock indicator across APAC/LatAm/EMEA markets that FEMA/NIFC/HURDAT2 don't cover, complementing gap #11 outside the US.",
+   "GDACS is a genuinely global, near-real-time, free disaster feed (UN/EU backed) broader than EM-DAT's slower-updated historical archive; a lightweight client makes it feasible to build a live events-and-shocks flag feeding the nights/ADR nowcast for the current quarter, not just backtests."
+  ]
+ }
+]

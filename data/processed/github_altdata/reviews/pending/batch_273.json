@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:minical/channex-integration",
+  "url": "https://github.com/minical/channex-integration",
+  "name": "minical/channex-integration",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed extension (7 stars, updated 25 May 2026) integrating the miniCal PMS with Channex to connect to OTAs including Booking.com, Airbnb, and Expedia.",
+  "why_useful": "A second, independent confirmation of the Channex cross-OTA ARI schema (see channex-mcp above); low incremental value beyond that.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "license": "MIT",
+  "last_activity": "2026-05-25",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "code only, no data",
+  "duplicate_of_holding": "same underlying Channex cross-OTA schema as webrenew/channex-mcp",
+  "hits": 1,
+  "themes": [
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "A second, independent confirmation of the Channex cross-OTA ARI schema (see channex-mcp above); low incremental value beyond that."
+  ]
+ },
+ {
+  "key": "github:ryokiti0104/tourism-satellite-account-analysis-of-japan-2023",
+  "url": "https://github.com/ryokiti0104/tourism-satellite-account-analysis-of-Japan-2023",
+  "name": "tourism-satellite-account-analysis-of-Japan-2023",
+  "category": "tourism_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Repo only contains .gitignore and LICENSE (MIT) at the root as of inspection \u2014 no data files, notebooks, or scripts committed yet. Presumably a student project analysing Japan's official Tourism Satellite Account for CY2023 but the analysis/data itself is not yet pushed.",
+  "why_useful": "On-theme title (Japan TSA, APAC regional travel volume is gap #7) but effectively empty right now; flagging only in case content gets pushed later.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "geography": "Japan",
+  "time_coverage": "CY2023 (nominal)",
+  "size_hint": "near-empty (2 files: .gitignore, LICENSE)",
+  "license": "MIT",
+  "last_activity": "2026-04-17",
+  "hits": 2,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "On-theme title (Japan TSA, APAC regional travel volume is gap #7) but effectively empty right now; flagging only in case content gets pushed later.",
+   "Japan TSA is a genuine national tourism-satellite-account release (APAC gap #7, JNTO angle); this and the near-duplicate RyoKawada repo are small analysis notebooks, not raw data mirrors, so value is mainly as a pointer to the underlying Japan TSA CY2023 release rather than a portable dataset."
+  ]
+ },
+ {
+  "key": "github:ryokawada/tourism-satellite-account-analysis-of-japan-cy2023-",
+  "url": "https://github.com/RyoKawada/Tourism-Satellite-Account-Analysis-of-Japan-CY2023-",
+  "name": "Tourism-Satellite-Account-Analysis-of-Japan-CY2023-",
+  "category": "tourism_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Same situation as the sibling repo above (likely a fork or parallel submission of the same coursework) \u2014 root contains only .gitignore and LICENSE (MIT), no data or code files visible in the listing. Description: 'How tourism consumption connects to industry structure, employment, and capital formation in Japan' (i.e., a TSA read-through of Japan's CY2023 national accounts).",
+  "why_useful": "Same as above \u2014 likely near-duplicate of ryokiti0104's repo (same .gitignore blob hash, near-identical name); on-theme but no committed data at inspection time.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "likely duplicate/fork of ryokiti0104/tourism-satellite-account-analysis-of-Japan-2023 (identical .gitignore hash)",
+  "geography": "Japan",
+  "time_coverage": "CY2023 (nominal)",
+  "size_hint": "near-empty (2 files: .gitignore, LICENSE)",
+  "license": "MIT",
+  "last_activity": "2026-04-03",
+  "hits": 2,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "Same as above \u2014 likely near-duplicate of ryokiti0104's repo (same .gitignore blob hash, near-identical name); on-theme but no committed data at inspection time.",
+   "Same as above \u2014 pointer to Japan's national TSA release, not independently valuable beyond the first listing."
+  ]
+ },
+ {
+  "key": "github:ropensci/skynet",
+  "url": "https://github.com/ropensci/skynet",
+  "name": "ropensci/skynet",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Peer-reviewed rOpenSci R package with import_db1b() and import_t100() functions that parse raw BTS DB1B (Coupon/Ticket) and T-100 segment CSVs downloaded from transtats.bts.gov into tidy data frames, plus make_net_dir() to build directed air-transport networks (city-pair traffic, fares) with statistical edge filtering. Includes a convert_raw() helper to compress raw files to needed variables. Topics tagged: bts, transtats, rita, t100, db1b, bureau-of-transport-statistics. Does not fetch On-Time Performance data. No raw data committed (BYO download from BTS website); this is a tidying/network-construction method, not a stored dataset.",
+  "why_useful": "Directly targets gap #10 (airline capacity/traffic as a travel-demand kernel analogue for ABNB nights) \u2014 a maintained, peer-reviewed method for turning raw BTS T-100 (city-pair capacity/seats/departures) and DB1B (fare/itinerary) files into usable panels, saving the team from writing a T-100/DB1B parser from scratch.",
+  "potential": "high",
+  "geography": "US domestic + international segments touching the US (BTS scope)",
+  "time_coverage": "Whatever vintage of T-100/DB1B the user downloads from BTS (historical archive back to 1990s available at source)",
+  "size_hint": "Method only, no committed data; T-100/DB1B source files are large (DB1B ~GB-scale per quarter)",
+  "license": "rOpenSci package, GPL-family typical (license file present, not read in full)",
+  "last_activity": "Last updated 2024-09-12 per GitHub topic page",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   10
+  ],
+  "hits": 4,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers",
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route",
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Directly targets gap #10 (airline capacity/traffic as a travel-demand kernel analogue for ABNB nights) \u2014 a maintained, peer-reviewed method for turning raw BTS T-100 (city-pair capacity/seats/departures) and DB1B (fare/itinerary) files into usable panels, saving the team from writing a T-100/DB1B parser from scratch.",
+   "T-100 is the closest thing to genuine 'airline seat capacity by route' public data (monthly, by carrier, domestic+international, free from BTS); this package is a ready-made, tested pipeline for turning it into route-network capacity series that could proxy inbound/outbound travel capacity to Airbnb-relevant markets (esp. US gateway cities, and international routes feeding APAC/LatAm markets).",
+   "DB1B/T-100 are the exact 'airline capacity and traffic' data named in gap 10; this is a maintained, peer-reviewed one-command pull method for a large, free, official US domestic fare/traffic dataset spanning 1990s-present, directly usable as a travel-volume/pricing proxy.",
+   "DB1B/T100 is the authoritative US domestic airfare + passenger-volume + route-network dataset (gap 10: airline capacity/traffic) and could proxy long-haul/US travel demand and average realized fares by O&D market as a consumer-travel-spend cross-check; this package removes most of the BTS data-wrangling pain."
+  ]
+ },
+ {
+  "key": "other:https://opensky-network.org/datasets/covid-19",
+  "url": "https://opensky-network.org/datasets/covid-19/",
+  "name": "OpenSky Network COVID-19 flight dataset",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Daily global flight-level records (callsign, ICAO24, origin/destination airport where inferable, first/last-seen times, altitude profile) crowdsourced from 2,500+ ADS-B ground receivers, published by the OpenSky Network / Eurocontrol PRU academic team, coverage from 1 Jan 2019 to present, updated continuously; documented in Strohmeier et al. 2021, Earth System Science Data, DOI 10.5194/essd-13-357-2021. Not a GitHub-committed dataset -- served via an S3-style bucket browser at opensky-network.org, free for research use with attribution. GitHub repos that consume it (e.g. siddharth271101/Covid-19-and-Aviation-Industry, a Spark/EMR pipeline joining it to JHU CSSE COVID case counts, MIT licence, 29 commits) show the pull method.",
+  "why_useful": "This is essentially a global daily flight-volume series since 2019 -- a genuine travel-demand proxy usable for gap #10 (airline/rail/road capacity and traffic) and cross-checkable against nights/ADR seasonality and COVID-era base effects; far larger and more current than TSA throughput (already tried and found weak since 2024) because it is global, not US-security-line-only.",
+  "potential": "high",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "multi-TB raw, but aggregatable to daily flight counts per country/airport; ~7 years of daily data",
+  "time_coverage": "2019-01-01 to present, continuously updated",
+  "geography": "global",
+  "license": "free for research/education with attribution; not a standard OSS licence",
+  "last_activity": "actively updated (ongoing academic project)",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "This is essentially a global daily flight-volume series since 2019 -- a genuine travel-demand proxy usable for gap #10 (airline/rail/road capacity and traffic) and cross-checkable against nights/ADR seasonality and COVID-era base effects; far larger and more current than TSA throughput (already tried and found weak since 2024) because it is global, not US-security-line-only."
+  ]
+ }
+]

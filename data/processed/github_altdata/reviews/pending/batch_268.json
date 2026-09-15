@@ -1,0 +1,126 @@
+[
+ {
+  "key": "github:darrkong/airbnb_host_retention",
+  "url": "https://github.com/Darrkong/Airbnb_host_retention",
+  "name": "Darrkong/Airbnb_host_retention",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Single Jupyter notebook (Host_Retention.ipynb) implementing a simple listing-survival/churn method: pulls Inside Airbnb Los Angeles listings.csv.gz for the 2017-04-02 scrape and the 2018-05-09 scrape and labels a listing 'discontinued' if its ID present in 2017 is absent in 2018. No data committed to the repo (external download only), single city, two snapshots.",
+  "why_useful": "Confirms specific old Inside Airbnb LA vintages (2017-04, 2018-05) that are off the current CDN and demonstrates a minimal ID-matching churn method that could be re-applied to any two vintages we still hold or can recover.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Los Angeles only",
+  "time_coverage": "2017-04-02 and 2018-05-09 snapshots",
+  "size_hint": "Two listings.csv.gz files (not committed), typical LA scrape size (tens of thousands of rows)",
+  "license": "unstated",
+  "last_activity": "unclear (not shown)",
+  "duplicate_of_holding": "Partially \u2014 we already hold a 13-city Inside Airbnb panel including LA-adjacent methodology, but not these specific 2017/2018 vintages",
+  "hits": 1,
+  "themes": [
+   "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)"
+  ],
+  "why_all": [
+   "Confirms specific old Inside Airbnb LA vintages (2017-04, 2018-05) that are off the current CDN and demonstrates a minimal ID-matching churn method that could be re-applied to any two vintages we still hold or can recover."
+  ]
+ },
+ {
+  "key": "github:pouyanfallahi/berlin-airbnb-insights",
+  "url": "https://github.com/pouyanfallahi/berlin-airbnb-insights",
+  "name": "berlin-airbnb-insights",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "635,000+ Berlin Airbnb reviews and ~14,000 listings; clustering, sentiment, price and superhost-prediction notebooks. Larger review corpus than the typical single-snapshot Kaggle mirror, likely a pulled Inside Airbnb Berlin snapshot bundled with the repo rather than an external pointer.",
+  "why_useful": "If the review file is genuinely committed (needs a contents-listing check we did not spend budget on), it is a larger Berlin review panel than what we hold in the 123-market stays-index construction; marginal incremental city coverage, not a new city.",
+  "potential": "low",
+  "geography": "Berlin",
+  "license": "MIT",
+  "last_activity": "2026-05-20",
+  "size_hint": "~14k listings, ~635k reviews (unverified as committed files vs. re-pulled)",
+  "time_coverage": "unclear, likely a single recent Inside Airbnb pull",
+  "duplicate_of_holding": "overlaps our existing Inside Airbnb reviews-based stays index if Berlin is in-scope there; Berlin is not currently one of our 13-city or 123-market named panels per CONTEXT.md so may add a market",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "If the review file is genuinely committed (needs a contents-listing check we did not spend budget on), it is a larger Berlin review panel than what we hold in the 123-market stays-index construction; marginal incremental city coverage, not a new city."
+  ]
+ },
+ {
+  "key": "github:data-spaces-project/berlin-airbnb-dataset-analysis",
+  "url": "https://github.com/Data-Spaces-project/Berlin-Airbnb-Dataset-Analysis",
+  "name": "Berlin-Airbnb-Dataset-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "\"Data science analysis of the Berlin Airbnb dataset of 2018\" \u2014 references the well-known 2018/Nov-2018 Berlin Kaggle snapshot (~22,552 listings at that date per a sibling repo's description). If the raw CSV is committed in-repo (not verified \u2014 we did not spend a contents-listing call), this is a pre-2023 historical snapshot.",
+  "why_useful": "Directly targets gap #1 (historical/archived Inside Airbnb-style dumps pre-2023) IF the file is actually committed rather than downloaded at runtime from Kaggle; Berlin 2018 predates our current Dec-2022-onward panel entirely.",
+  "potential": "low",
+  "geography": "Berlin",
+  "license": "unlicensed",
+  "last_activity": "2019-09-03",
+  "size_hint": "~22.5k listings (Nov 2018 vintage, per contemporaneous repos)",
+  "time_coverage": "2018",
+  "duplicate_of_holding": "would be new \u2014 pre-2023 Berlin not in our current panel",
+  "gap_targets": [
+   1
+  ],
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "Directly targets gap #1 (historical/archived Inside Airbnb-style dumps pre-2023) IF the file is actually committed rather than downloaded at runtime from Kaggle; Berlin 2018 predates our current Dec-2022-onward panel entirely."
+  ]
+ },
+ {
+  "key": "github:vvs74/airbnb-sentiment-pricing",
+  "url": "https://github.com/vvs74/airbnb-sentiment-pricing",
+  "name": "airbnb-sentiment-pricing",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "320K Vienna Airbnb reviews used for topic modeling (LDA/NMF/LSA) and DistilBERT sentiment scoring, tested against price; concludes review text does not predict price (r=0.016) but structural features do (Keras NN R2 0.62).",
+  "why_useful": "Larger Vienna review corpus (320k) than a typical single Inside Airbnb pull; Vienna is not in our current 13-city/123-market panels, so this is incremental city coverage if the underlying review file is committed rather than fetched live.",
+  "potential": "low",
+  "geography": "Vienna",
+  "license": "unlicensed",
+  "last_activity": "2026-07-12",
+  "size_hint": "~320k reviews",
+  "time_coverage": "unclear, single recent snapshot",
+  "duplicate_of_holding": "adds Vienna, a city not in our current stated panel",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "Larger Vienna review corpus (320k) than a typical single Inside Airbnb pull; Vienna is not in our current 13-city/123-market panels, so this is incremental city coverage if the underlying review file is committed rather than fetched live."
+  ]
+ },
+ {
+  "key": "github:twomathematicians-code/inside-airbnb-amsterdam-dashboard",
+  "url": "https://github.com/twomathematicians-code/inside-airbnb-amsterdam-dashboard",
+  "name": "inside-airbnb-amsterdam-dashboard",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "BI dashboard (14 charts, 4 tabs) built on Inside Airbnb Amsterdam data with \"live refresh\" and Docker/cloud deployment \u2014 a repeatable pull-and-refresh pipeline rather than a static notebook.",
+  "why_useful": "A live-refresh pipeline against Inside Airbnb Amsterdam could be a template for automating our own Amsterdam ingestion, but it is a method wrapper around a source we can already pull directly; no unique data.",
+  "potential": "low",
+  "geography": "Amsterdam",
+  "license": "MIT",
+  "last_activity": "2026-08-12",
+  "size_hint": "n/a (pipeline, not a stored dataset)",
+  "time_coverage": "current Inside Airbnb Amsterdam vintage",
+  "duplicate_of_holding": "duplicate of Inside Airbnb access we already have",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "A live-refresh pipeline against Inside Airbnb Amsterdam could be a template for automating our own Amsterdam ingestion, but it is a method wrapper around a source we can already pull directly; no unique data."
+  ]
+ }
+]

@@ -1,0 +1,65 @@
+metric,scenario,window,model,n,rmse_usd_m,mae_usd_m,bias_usd_m,rmse_ratio_seasonal_naive,forecast_hurdle_pass,status
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,ar1,14,340.667703584,311.226541138,-189.8746109,0.92585189129,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,kernel_fixed_2_3_1_3,14,489.39090211,472.184603708,472.184603708,1.33004534193,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,kernel_simplex,14,506.468848305,476.0816206,476.0816206,1.37645904249,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,seasonal_naive,14,367.950540242,261.472714286,-255.597,1,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,seasonal_naive_recent_growth,14,382.472689521,208.616243246,160.345490485,1.03946766668,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,trailing_four,14,283.087487079,223.987910714,-130.753803571,0.769362879295,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+passenger_ticket_revenue_usd_m,primary_include_2022,W1,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,ar1,10,334.678792107,307.073446921,-165.35747427,2.50298336671,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,kernel_fixed_2_3_1_3,10,471.908135893,455.619827954,455.619827954,3.5292891053,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,kernel_simplex,10,513.553649708,490.954707734,490.954707734,3.84074603305,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,seasonal_naive,10,133.711952128,116.0451,-107.8191,1,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,seasonal_naive_recent_growth,10,109.515499115,94.5545301354,41.4975586672,0.819040462519,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,trailing_four,10,219.188890173,173.455325,-47.938825,1.63926176146,False,
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+passenger_ticket_revenue_usd_m,primary_include_2022,W2,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,ar1,14,344.142898122,317.073572285,-169.796806962,0.935296624093,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,kernel_fixed_2_3_1_3,14,498.383489831,483.915236217,483.915236217,1.35448500634,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,kernel_simplex,14,515.863732897,493.856656583,493.856656583,1.40199205186,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,seasonal_naive,14,367.950540242,261.472714286,-255.597,1,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,seasonal_naive_recent_growth,14,382.472689521,208.616243246,160.345490485,1.03946766668,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,trailing_four,14,283.087487079,223.987910714,-130.753803571,0.769362879295,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W1,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,ar1,10,336.229512909,308.050801281,-143.275486859,2.51458084006,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,kernel_fixed_2_3_1_3,10,478.875355253,464.989279056,464.989279056,3.58139528764,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,kernel_simplex,10,501.467531285,479.649380046,479.649380046,3.7503568178,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,seasonal_naive,10,133.711952128,116.0451,-107.8191,1,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,seasonal_naive_recent_growth,10,109.515499115,94.5545301354,41.4975586672,0.819040462519,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,trailing_four,10,219.188890173,173.455325,-47.938825,1.63926176146,False,
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+passenger_ticket_revenue_usd_m,sensitivity_exclude_2022,W2,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,primary_include_2022,W1,ar1,14,459.645673267,430.720994934,-239.588571735,0.842964401905,False,
+total_revenue_usd_m,primary_include_2022,W1,kernel_fixed_2_3_1_3,14,633.36076014,613.71385037,613.71385037,1.1615481346,False,
+total_revenue_usd_m,primary_include_2022,W1,kernel_simplex,14,654.237581584,614.088979257,614.088979257,1.199835055,False,
+total_revenue_usd_m,primary_include_2022,W1,seasonal_naive,14,545.272934691,388.419357143,-379.324785714,1,False,
+total_revenue_usd_m,primary_include_2022,W1,seasonal_naive_recent_growth,14,561.073361936,307.91484247,223.436568245,1.02897709796,False,
+total_revenue_usd_m,primary_include_2022,W1,trailing_four,14,395.684389329,315.173982143,-199.347017857,0.725662992155,False,
+total_revenue_usd_m,primary_include_2022,W1,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,primary_include_2022,W1,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,primary_include_2022,W2,ar1,10,441.475655221,411.837578544,-202.636806623,2.29575297374,False,
+total_revenue_usd_m,primary_include_2022,W2,kernel_fixed_2_3_1_3,10,618.024504151,596.753972865,596.753972865,3.21383880735,False,
+total_revenue_usd_m,primary_include_2022,W2,kernel_simplex,10,665.904004743,636.649783771,636.649783771,3.46282083969,False,
+total_revenue_usd_m,primary_include_2022,W2,seasonal_naive,10,192.301027275,173.1707,-160.4383,1,False,
+total_revenue_usd_m,primary_include_2022,W2,seasonal_naive_recent_growth,10,153.586180053,131.345390503,52.1316394788,0.798675816917,False,
+total_revenue_usd_m,primary_include_2022,W2,trailing_four,10,285.190709301,235.217175,-79.898075,1.48304308792,False,
+total_revenue_usd_m,primary_include_2022,W2,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,primary_include_2022,W2,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,sensitivity_exclude_2022,W1,ar1,14,464.668380049,435.752785278,-201.815677899,0.852175764623,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W1,kernel_fixed_2_3_1_3,14,646.66149115,629.671798421,629.671798421,1.18594092978,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W1,kernel_simplex,14,663.645069958,636.763113842,636.763113842,1.21708786139,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W1,seasonal_naive,14,545.272934691,388.419357143,-379.324785714,1,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W1,seasonal_naive_recent_growth,14,561.073361936,307.91484247,223.436568245,1.02897709796,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W1,trailing_four,14,395.684389329,315.173982143,-199.347017857,0.725662992155,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W1,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,sensitivity_exclude_2022,W1,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,sensitivity_exclude_2022,W2,ar1,10,443.671441197,409.338372782,-166.193061593,2.30717145656,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W2,kernel_fixed_2_3_1_3,10,628.144521905,609.45184107,609.45184107,3.26646472359,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W2,kernel_simplex,10,652.964492382,625.129789909,625.129789909,3.39553304335,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W2,seasonal_naive,10,192.301027275,173.1707,-160.4383,1,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W2,seasonal_naive_recent_growth,10,153.586180053,131.345390503,52.1316394788,0.798675816917,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W2,trailing_four,10,285.190709301,235.217175,-79.898075,1.48304308792,False,
+total_revenue_usd_m,sensitivity_exclude_2022,W2,guide_plus_trailing8_cushion,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus
+total_revenue_usd_m,sensitivity_exclude_2022,W2,vintage_matched_street,0,,,,,,UNAVAILABLE: no metric-matched quarterly GAAP revenue guide/consensus

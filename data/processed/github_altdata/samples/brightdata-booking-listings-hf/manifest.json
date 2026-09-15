@@ -1,0 +1,21 @@
+{
+ "slug": "brightdata-booking-listings-hf",
+ "url": "https://huggingface.co/datasets/BrightData/Booking.com-Listings",
+ "sampled": true,
+ "total_bytes": 4892831,
+ "files": [
+  "brightdata_booking_listings_head.csv",
+  "head_summary.json"
+ ],
+ "rows": "brightdata_booking_listings_head.csv: 5,896 rows (first ~5 MB of a 62,784,719-byte CSV; final truncated record dropped); head_summary.json: n/a",
+ "columns": "url, location, check_in, check_out, adults, children, rooms, id, title, address, city, review_score, review_count, image, final_price, original_price, currency, tax_description, nb_livingrooms, nb_kitchens, nb_bedrooms, nb_all_beds, full_location (JSON), no_prepayment, free_cancellation, property_sustainability (JSON), free_cancellation_until, country, hotel_rank, searched_country, map_coordinates, listing_country, total_listings_found, star_rating, tags (last 8 all-null in the head)",
+ "date_range": "check_in 2024-12-27 to 2025-02-27 (six distinct dates; modal 2025-02-05); check_out 2024-12-31 to 2025-02-28; free_cancellation_until 2025-01-31 to 2025-02-28 (70% non-null)",
+ "how_pulled": "curl -sL -D headers.txt -r 0-5000000 -o brightdata_booking_listings_head_raw.csv 'https://huggingface.co/datasets/BrightData/Booking.com-Listings/resolve/main/booking-listings.csv'  (HTTP 206, content-range bytes 0-5000000/62784719); then python/pandas read_csv(on_bad_lines='skip'), drop last (truncated) row, to_csv -> brightdata_booking_listings_head.csv; head_summary.json computed with pandas from that file",
+ "full_dataset_size": "1 file, booking-listings.csv, 62,784,719 bytes (~63 MB); HF size tag 10K<n<100K rows; extrapolating 5,896 rows per 4.9 MB gives roughly 75k rows",
+ "description": "Booking.com search-result listings captured by Bright Data (a commercial scraper vendor) and published on HuggingFace: one row per property returned for a search (city/region, check-in date, adults, rooms) with quoted final_price vs original_price in USD, free-cancellation and no-prepayment flags, cancellation deadline, bedroom/bed/kitchen counts, review score and count, and sustainability JSON. Grain is listing x search; check-ins are six dates from 27 Dec 2024 to 27 Feb 2025, so it is a one-off cross-section, not a time series; the head spans 50 country codes (India, Indonesia, Japan, Malaysia, US, Vietnam, Thailand, Italy lead). For ABNB an analyst would use it as a competitor-pricing and payment-terms backdrop: the share of Booking.com inventory offered with no prepayment (39% in the head; free_cancellation is 100% in the head, so the capture was probably filtered on that flag) and the discount depth (29% of rows discounted, median 22%) frame the RNPL / cancellation thesis, and nb_bedrooms > 0 (31% of rows) isolates alternative-accommodation units for a capacity/party-size comparison against Inside Airbnb.",
+ "issues": "Licence is 'other' = Bright Data Master Service Agreement, not an open licence; the CSV is world-readable without a token but redistribution rights are unclear, so only a 5 MB head was taken and the remaining ~58 MB was NOT fetched pending a human licence decision (tos_or_license_flag=true). Data provenance is a scraper vendor's marketing sample, one-off cross-section with a 100% free_cancellation share (likely a filtered search), so cancellation shares are not representative of all Booking.com inventory. Eight columns (country, hotel_rank, searched_country, map_coordinates, listing_country, total_listings_found, star_rating, tags) are entirely null in the head; listing country was recovered from the /hotel/<cc>/ path in url instead. One row priced in BRL, the rest USD. No scraper was run; no airbnb.com contact.",
+ "source_urls": [
+  "https://huggingface.co/datasets/BrightData/Booking.com-Listings/resolve/main/booking-listings.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

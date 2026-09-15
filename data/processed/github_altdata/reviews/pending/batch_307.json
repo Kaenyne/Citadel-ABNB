@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:berkcanerken/aaa-gas-prices-module",
+  "url": "https://github.com/berkcanerken/AAA-Gas-Prices-Module",
+  "name": "AAA-Gas-Prices-Module",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Discord bot module (0 stars, last updated Feb 2024) that scrapes AAA's gas-price website on command; no data committed, method only.",
+  "why_useful": "Second confirmation that AAA's national/state gas-price page is scrape-able; low value beyond that since it stores nothing and is unmaintained.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "none declared",
+  "last_activity": "2024-02-05",
+  "geography": "US (AAA national page)",
+  "time_coverage": "live only",
+  "size_hint": "tiny script",
+  "duplicate_of_holding": "same source as aaa_gas_scraper above",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Second confirmation that AAA's national/state gas-price page is scrape-able; low value beyond that since it stores nothing and is unmaintained."
+  ]
+ },
+ {
+  "key": "github:ryan-serpico/aaa-sa-gas-prices",
+  "url": "https://github.com/ryan-serpico/AAA-SA-gas-prices",
+  "name": "AAA-SA-gas-prices",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Git-scraping style repo (simonw pattern) that scrapes San Antonio, TX average gas prices from AAA's site 4x/day; full history lives in the git commit log of the tracked data file rather than in separate dated files.",
+  "why_useful": "Single-city but very high frequency (4x daily) AAA gas price series via git history -- a template for point-in-time gas price vintages if the git log is mined; low standalone value for ABNB (one city) but a useful method example.",
+  "potential": "low",
+  "geography": "San Antonio, TX",
+  "time_coverage": "unknown start date, ongoing",
+  "size_hint": "single small CSV/JSON, history in git log",
+  "license": "unknown",
+  "last_activity": "unknown, appears active (git-scraping cron pattern)",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Single-city but very high frequency (4x daily) AAA gas price series via git history -- a template for point-in-time gas price vintages if the git log is mined; low standalone value for ABNB (one city) but a useful method example."
+  ]
+ },
+ {
+  "key": "github:gregorbj/nhts2001",
+  "url": "https://github.com/gregorbj/NHTS2001",
+  "name": "NHTS2001",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Compressed 2001 National Household Travel Survey public-use dataset (household/person/vehicle/trip files), packaged for use in the VisionEval travel-demand modeling framework.",
+  "why_useful": "Oldest committed NHTS wave found on GitHub (2001) -- useful as a historical baseline for pre-STR-era household travel/driving behavior if a long time-series comparison of road-trip share of travel is ever built.",
+  "potential": "low",
+  "geography": "US (national survey)",
+  "time_coverage": "2001",
+  "size_hint": "compressed microdata files, national household survey scale (tens of thousands of records)",
+  "license": "unknown (public NHTS data)",
+  "last_activity": "unknown, static historical dataset",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Oldest committed NHTS wave found on GitHub (2001) -- useful as a historical baseline for pre-STR-era household travel/driving behavior if a long time-series comparison of road-trip share of travel is ever built."
+  ]
+ },
+ {
+  "key": "github:mmkkll/fuel-price-finder",
+  "url": "https://github.com/mmkkll/fuel-price-finder",
+  "name": "fuel-price-finder",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Real-time fuel price and EV charging finder app; README notes prices update daily (\"not real-time\"), CSV reflects prices reported by 08:00, not all independent stations report. Appears to be a build tutorial/app rather than a data archive; geography and source unclear from snippet (needs verification of underlying feed, likely US or UK government open fuel-price feed).",
+  "why_useful": "Possible additional method for pulling a daily station-level fuel price CSV feed; lower confidence than fuelfeed/AAA repos above since geography/source were not confirmed by full README read.",
+  "potential": "low",
+  "geography": "unclear (not verified)",
+  "time_coverage": "daily snapshot, ongoing presumably",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Possible additional method for pulling a daily station-level fuel price CSV feed; lower confidence than fuelfeed/AAA repos above since geography/source were not confirmed by full README read."
+  ]
+ },
+ {
+  "key": "github:beaubellamy/skiresortscraper",
+  "url": "https://github.com/beaubellamy/SkiResortScraper",
+  "name": "SkiResortScraper",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python web scraper targeting www.skiresort.info to pull global ski-resort details, statistics (slope km, lift counts, snow reliability ratings) and user reviews. No visitation/skier-day counts committed \u2014 it's a scraper against a third-party non-Airbnb site, not raw data in-repo.",
+  "why_useful": "Could be run (as a method, not pre-built dataset) to build a global ski-resort attribute/rating panel as a winter-destination demand proxy; skiresort.info itself doesn't appear to publish skier-visit counts, only facility stats and ratings, so value is limited to a facility census rather than attendance volume.",
+  "potential": "low",
+  "geography": "global ski resorts",
+  "time_coverage": "point-in-time scrape (no history)",
+  "size_hint": "scraper only, no committed data",
+  "license": "none declared",
+  "last_activity": "2024-09-26",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Could be run (as a method, not pre-built dataset) to build a global ski-resort attribute/rating panel as a winter-destination demand proxy; skiresort.info itself doesn't appear to publish skier-visit counts, only facility stats and ratings, so value is limited to a facility census rather than attendance volume."
+  ]
+ }
+]

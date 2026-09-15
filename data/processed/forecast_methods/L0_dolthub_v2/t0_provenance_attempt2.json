@@ -1,0 +1,655 @@
+{
+ "api": "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master",
+ "attempt": 2,
+ "started": "2026-09-14T13:50:12",
+ "queries": [
+  {
+   "n": 1,
+   "sql": "select commit_hash, date, message from dolt_log where message like 'sales_estimate 2022-08-07 update%' or message like 'sales_estimate 2024-02-11 update%' or message like 'sales_estimate 2025-08-03 update%' order by date",
+   "http": "200",
+   "seconds": 0.9,
+   "at": "2026-09-14T13:50:13",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select commit_hash, date, message from dolt_log where message like 'sales_estimate 2022-08-07 update%' or message like 'sales_estimate 2024-02-11 update%' or message like 'sales_estimate 2025-08-03 update%' order by date",
+    "schema": [
+     {
+      "columnName": "commit_hash",
+      "columnType": "text"
+     },
+     {
+      "columnName": "date",
+      "columnType": "datetime(3)"
+     },
+     {
+      "columnName": "message",
+      "columnType": "text"
+     }
+    ],
+    "rows": [
+     {
+      "commit_hash": "j2s47ospjd1vbouii690hkifso0up7h3",
+      "date": "2022-08-08 05:12:37.616",
+      "message": "sales_estimate 2022-08-07 update"
+     },
+     {
+      "commit_hash": "id6rhl4mfi8lmp791pp2uidgigcd5lb7",
+      "date": "2024-02-12 03:32:08.995",
+      "message": "sales_estimate 2024-02-11 update"
+     },
+     {
+      "commit_hash": "54csabpuanoeoq9ng4k35dub2g8k8f0q",
+      "date": "2025-08-04 02:52:49.350",
+      "message": "sales_estimate 2025-08-03 update"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "sql": "select * from sales_estimate as of 'j2s47ospjd1vbouii690hkifso0up7h3' where act_symbol = 'ABNB' and date = '2022-08-07'",
+   "http": "200",
+   "seconds": 0.7,
+   "at": "2026-09-14T13:50:24",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select * from sales_estimate as of 'j2s47ospjd1vbouii690hkifso0up7h3' where act_symbol = 'ABNB' and date = '2022-08-07'",
+    "schema": [
+     {
+      "columnName": "date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "act_symbol",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period_end_date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "consensus",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "count",
+      "columnType": "smallint"
+     },
+     {
+      "columnName": "high",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "low",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "year_ago",
+      "columnType": "bigint"
+     }
+    ],
+    "rows": [
+     {
+      "date": "2022-08-07",
+      "act_symbol": "ABNB",
+      "period": "Current Quarter",
+      "period_end_date": "2022-09-30",
+      "consensus": "2840000000",
+      "count": "11",
+      "high": "2900000000",
+      "low": "2800000000",
+      "year_ago": "2240000000"
+     },
+     {
+      "date": "2022-08-07",
+      "act_symbol": "ABNB",
+      "period": "Current Year",
+      "period_end_date": "2022-12-31",
+      "consensus": "8340000000",
+      "count": "12",
+      "high": "8440000000",
+      "low": "8180000000",
+      "year_ago": "5990000000"
+     },
+     {
+      "date": "2022-08-07",
+      "act_symbol": "ABNB",
+      "period": "Next Quarter",
+      "period_end_date": "2022-12-31",
+      "consensus": "1900000000",
+      "count": "11",
+      "high": "1950000000",
+      "low": "1770000000",
+      "year_ago": "1530000000"
+     },
+     {
+      "date": "2022-08-07",
+      "act_symbol": "ABNB",
+      "period": "Next Year",
+      "period_end_date": "2023-12-31",
+      "consensus": "9680000000",
+      "count": "12",
+      "high": "10320000000",
+      "low": "8980000000",
+      "year_ago": "8340000000"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "sql": "select * from sales_estimate as of 'id6rhl4mfi8lmp791pp2uidgigcd5lb7' where act_symbol = 'ABNB' and date = '2024-02-11'",
+   "http": "200",
+   "seconds": 0.7,
+   "at": "2026-09-14T13:50:35",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select * from sales_estimate as of 'id6rhl4mfi8lmp791pp2uidgigcd5lb7' where act_symbol = 'ABNB' and date = '2024-02-11'",
+    "schema": [
+     {
+      "columnName": "date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "act_symbol",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period_end_date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "consensus",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "count",
+      "columnType": "smallint"
+     },
+     {
+      "columnName": "high",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "low",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "year_ago",
+      "columnType": "bigint"
+     }
+    ],
+    "rows": [
+     {
+      "date": "2024-02-11",
+      "act_symbol": "ABNB",
+      "period": "Current Quarter",
+      "period_end_date": "2023-12-31",
+      "consensus": "2160000000",
+      "count": "11",
+      "high": "2200000000",
+      "low": "2150000000",
+      "year_ago": "1900000000"
+     },
+     {
+      "date": "2024-02-11",
+      "act_symbol": "ABNB",
+      "period": "Current Year",
+      "period_end_date": "2023-12-31",
+      "consensus": "9860000000",
+      "count": "12",
+      "high": "9900000000",
+      "low": "9850000000",
+      "year_ago": "8400000000"
+     },
+     {
+      "date": "2024-02-11",
+      "act_symbol": "ABNB",
+      "period": "Next Quarter",
+      "period_end_date": "2024-03-31",
+      "consensus": "2040000000",
+      "count": "10",
+      "high": "2090000000",
+      "low": "1970000000",
+      "year_ago": "1820000000"
+     },
+     {
+      "date": "2024-02-11",
+      "act_symbol": "ABNB",
+      "period": "Next Year",
+      "period_end_date": "2024-12-31",
+      "consensus": "11100000000",
+      "count": "12",
+      "high": "11460000000",
+      "low": "10640000000",
+      "year_ago": "9860000000"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "sql": "select * from sales_estimate as of '54csabpuanoeoq9ng4k35dub2g8k8f0q' where act_symbol = 'ABNB' and date = '2025-08-03'",
+   "http": "200",
+   "seconds": 0.7,
+   "at": "2026-09-14T13:50:46",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select * from sales_estimate as of '54csabpuanoeoq9ng4k35dub2g8k8f0q' where act_symbol = 'ABNB' and date = '2025-08-03'",
+    "schema": [
+     {
+      "columnName": "date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "act_symbol",
+      "columnType": "varchar(64)"
+     },
+     {
+      "columnName": "period",
+      "columnType": "varchar(64)"
+     },
+     {
+      "columnName": "period_end_date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "consensus",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "count",
+      "columnType": "smallint"
+     },
+     {
+      "columnName": "high",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "low",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "year_ago",
+      "columnType": "bigint"
+     }
+    ],
+    "rows": [
+     {
+      "date": "2025-08-03",
+      "act_symbol": "ABNB",
+      "period": "Current Quarter",
+      "period_end_date": "2025-06-30",
+      "consensus": "3040000000",
+      "count": "12",
+      "high": "3090000000",
+      "low": "3010000000",
+      "year_ago": "2750000000"
+     },
+     {
+      "date": "2025-08-03",
+      "act_symbol": "ABNB",
+      "period": "Current Year",
+      "period_end_date": "2025-12-31",
+      "consensus": "12060000000",
+      "count": "13",
+      "high": "12240000000",
+      "low": "11910000000",
+      "year_ago": "11100000000"
+     },
+     {
+      "date": "2025-08-03",
+      "act_symbol": "ABNB",
+      "period": "Next Quarter",
+      "period_end_date": "2025-09-30",
+      "consensus": "4040000000",
+      "count": "12",
+      "high": "4130000000",
+      "low": "3950000000",
+      "year_ago": "3730000000"
+     },
+     {
+      "date": "2025-08-03",
+      "act_symbol": "ABNB",
+      "period": "Next Year",
+      "period_end_date": "2026-12-31",
+      "consensus": "13190000000",
+      "count": "13",
+      "high": "13630000000",
+      "low": "12790000000",
+      "year_ago": "12060000000"
+     }
+    ]
+   }
+  }
+ ],
+ "snapshot_checks": [
+  {
+   "snapshot": "2022-08-07",
+   "commit": "j2s47ospjd1vbouii690hkifso0up7h3",
+   "commit_date": "2022-08-08 05:12:37.616",
+   "rows_as_of": [
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2022-09-30",
+     "consensus": "2840000000",
+     "count": "11",
+     "high": "2900000000",
+     "low": "2800000000",
+     "year_ago": "2240000000"
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2022-12-31",
+     "consensus": "8340000000",
+     "count": "12",
+     "high": "8440000000",
+     "low": "8180000000",
+     "year_ago": "5990000000"
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2022-12-31",
+     "consensus": "1900000000",
+     "count": "11",
+     "high": "1950000000",
+     "low": "1770000000",
+     "year_ago": "1530000000"
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2023-12-31",
+     "consensus": "9680000000",
+     "count": "12",
+     "high": "10320000000",
+     "low": "8980000000",
+     "year_ago": "8340000000"
+    }
+   ],
+   "rows_current": [
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2022-09-30",
+     "consensus": 2840000000.0,
+     "count": 11.0,
+     "high": 2900000000.0,
+     "low": 2800000000.0,
+     "year_ago": 2240000000.0
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2022-12-31",
+     "consensus": 8340000000.0,
+     "count": 12.0,
+     "high": 8440000000.0,
+     "low": 8180000000.0,
+     "year_ago": 5990000000.0
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2022-12-31",
+     "consensus": 1900000000.0,
+     "count": 11.0,
+     "high": 1950000000.0,
+     "low": 1770000000.0,
+     "year_ago": 1530000000.0
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2023-12-31",
+     "consensus": 9680000000.0,
+     "count": 12.0,
+     "high": 10320000000.0,
+     "low": 8980000000.0,
+     "year_ago": 8340000000.0
+    }
+   ],
+   "match": true,
+   "commit_message": "sales_estimate 2022-08-07 update",
+   "diffs": []
+  },
+  {
+   "snapshot": "2024-02-11",
+   "commit": "id6rhl4mfi8lmp791pp2uidgigcd5lb7",
+   "commit_date": "2024-02-12 03:32:08.995",
+   "rows_as_of": [
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2023-12-31",
+     "consensus": "2160000000",
+     "count": "11",
+     "high": "2200000000",
+     "low": "2150000000",
+     "year_ago": "1900000000"
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2023-12-31",
+     "consensus": "9860000000",
+     "count": "12",
+     "high": "9900000000",
+     "low": "9850000000",
+     "year_ago": "8400000000"
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2024-03-31",
+     "consensus": "2040000000",
+     "count": "10",
+     "high": "2090000000",
+     "low": "1970000000",
+     "year_ago": "1820000000"
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2024-12-31",
+     "consensus": "11100000000",
+     "count": "12",
+     "high": "11460000000",
+     "low": "10640000000",
+     "year_ago": "9860000000"
+    }
+   ],
+   "rows_current": [
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2023-12-31",
+     "consensus": 2160000000.0,
+     "count": 11.0,
+     "high": 2200000000.0,
+     "low": 2150000000.0,
+     "year_ago": 1900000000.0
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2023-12-31",
+     "consensus": 9860000000.0,
+     "count": 12.0,
+     "high": 9900000000.0,
+     "low": 9850000000.0,
+     "year_ago": 8400000000.0
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2024-03-31",
+     "consensus": 2040000000.0,
+     "count": 10.0,
+     "high": 2090000000.0,
+     "low": 1970000000.0,
+     "year_ago": 1820000000.0
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2024-12-31",
+     "consensus": 11100000000.0,
+     "count": 12.0,
+     "high": 11460000000.0,
+     "low": 10640000000.0,
+     "year_ago": 9860000000.0
+    }
+   ],
+   "match": true,
+   "commit_message": "sales_estimate 2024-02-11 update",
+   "diffs": []
+  },
+  {
+   "snapshot": "2025-08-03",
+   "commit": "54csabpuanoeoq9ng4k35dub2g8k8f0q",
+   "commit_date": "2025-08-04 02:52:49.350",
+   "rows_as_of": [
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2025-06-30",
+     "consensus": "3040000000",
+     "count": "12",
+     "high": "3090000000",
+     "low": "3010000000",
+     "year_ago": "2750000000"
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2025-12-31",
+     "consensus": "12060000000",
+     "count": "13",
+     "high": "12240000000",
+     "low": "11910000000",
+     "year_ago": "11100000000"
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2025-09-30",
+     "consensus": "4040000000",
+     "count": "12",
+     "high": "4130000000",
+     "low": "3950000000",
+     "year_ago": "3730000000"
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2026-12-31",
+     "consensus": "13190000000",
+     "count": "13",
+     "high": "13630000000",
+     "low": "12790000000",
+     "year_ago": "12060000000"
+    }
+   ],
+   "rows_current": [
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2025-06-30",
+     "consensus": 3040000000.0,
+     "count": 12.0,
+     "high": 3090000000.0,
+     "low": 3010000000.0,
+     "year_ago": 2750000000.0
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2025-12-31",
+     "consensus": 12060000000.0,
+     "count": 13.0,
+     "high": 12240000000.0,
+     "low": 11910000000.0,
+     "year_ago": 11100000000.0
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2025-09-30",
+     "consensus": 4040000000.0,
+     "count": 12.0,
+     "high": 4130000000.0,
+     "low": 3950000000.0,
+     "year_ago": 3730000000.0
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2026-12-31",
+     "consensus": 13190000000.0,
+     "count": 13.0,
+     "high": 13630000000.0,
+     "low": 12790000000.0,
+     "year_ago": 12060000000.0
+    }
+   ],
+   "match": true,
+   "commit_message": "sales_estimate 2025-08-03 update",
+   "diffs": []
+  }
+ ],
+ "verdict": "PASS",
+ "n_requests": 4,
+ "finished": "2026-09-14T13:50:46"
+}

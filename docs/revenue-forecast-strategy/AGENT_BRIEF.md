@@ -232,3 +232,17 @@ captures `~/abnb_ia_capture/` (outside the repo) with manifests in `data/manifes
   `CITADEL_ABNB_PARENT`), `red_team/run.py` uses `sys.executable`, and machine-specific interpreter paths in docstrings/READMEs became
   `python`; (b) `L0/test_l0.py`: two assertions updated to accept A1's 11 Sep register appends (S&P FY27 relay 15,770; QUARANTINED rows
   with a stated reason). Verified in a fresh shallow clone: harness 27/27, kernel acceptance PASS on 12 cells, scorer exit 0.
+- 13 Sep — Lane 1 (PR #53) returned A and B′ as 0/14, 0/10 because the Lane-1 briefs said "consensus strictly before the guide date" and
+  "refuse anything printed on/after the guide date". That is tighter than the harness itself: FORMAT 1.0 §PIT allows `knowable_from <=
+  vintage_date` (the letter's own prints are knowable at a guide-date vintage) and §baseline_street treats the morning-of-print consensus as
+  pre-letter (ABNB reports after the close). The convention is now written once in `docs/thesis-kernel-topdown/lane2/CONVENTION.md`; A2 / B2 re-run
+  under it. No team decision was needed. Also from Lane 1: zero registrations because FORMAT 1.0 pins the live date to 2026-09-11 → `harness_v1_1/`
+  (FORMAT 1.1, additive copy, LIVE rows at the real run date, W1/W2 rules identical); no `open_*` returns → `returns_v1/` (public OHLC, next-open
+  entry, 23 events).
+- 13 Sep — the A2 note (11 Sep) said the Inside Airbnb daily capture was "live (launchd 06:00)". It was not: the LaunchAgent never spawned on 12 or
+  13 Sep (`last exit code = 78: EX_CONFIG`, nothing logged) because its StandardOutPath/StandardErrorPath pointed inside the OneDrive repo;
+  launchd cannot open a log there before spawn. Verified with four dry-run test agents; fixed 13 Sep by logging to `~/abnb_ia_capture/logs/`
+  (kickstart → exit 0, 360/360 cached, no dump missed). The fee-panels agent still logs inside the repo; it has run twice, but it is the same
+  risk class — verify after its 14 Sep 09:00 capture. Any new LaunchAgent logs under `$HOME`.
+- 13 Sep — PR #53's GitHub description is the blank template; Codex could not open the PR (integration 403, no `gh`). The real body is
+  `05_backtests/LANE1_PULL_REQUEST_BODY.md`.

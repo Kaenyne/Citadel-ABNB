@@ -1,0 +1,23 @@
+{
+  "model_final": "snapshot_v2",
+  "review_final": "review_v2",
+  "five_numerical_outputs_byte_identical_to_audited_v1": [
+    "annual.csv",
+    "scenario_summary.csv",
+    "valuation.csv",
+    "horizon.json",
+    "legacy_replication.json"
+  ],
+  "D13_original_Q3_decision_preserved": true,
+  "D04_three_main_cases_distinguished": true,
+  "hashes": {
+    "model/lane4_v2/outputs/lane4_model/snapshot_v2/ABNB_L4_review.xlsx": "882b6d7b321d2f791fecc9b1d7ec57265b5e2fdcedd705326ee7bd3ee9ce6f92",
+    "data/processed/forecast_methods/lane4_model_v2/snapshot_v2/model_input.json": "10b1e5713ff4020bdaf1f00743fd8a0e84c6ae388723442ed9578afcfc5afe8f",
+    "data/processed/forecast_methods/lane4_model_v2/snapshot_v2/scenario_summary.csv": "c3a640fda7789e23708fdaae8875f7a3cd104d873a14a18ea716ad0d1290a51a",
+    "data/processed/forecast_methods/lane4_model_v2/snapshot_v2/horizon.json": "eb53770783fe75aec867b6128f17dbad690e2a29e997c4ee016a57c9ff3ae215",
+    "deck/drafts/lane4_v2/review_v2/review_memo.pdf": "53e102eeca2dcda418368924cacb9a28486f3274332ba0b06fc804a6b1fe0187",
+    "deck/drafts/lane4_v2/review_v2/review_memo.md": "f7603c8eefe56a2396c56258a946e5e79803eed07729d60391e2cd882739d0ab",
+    "deck/drafts/lane4_v2/review_v2/decision_register.csv": "e353b7250c925c3aa46767a8efde368a17f949a333745c8603af518d85fbf69f",
+    "deck/drafts/lane4_v2/review_v2/unsigned_card.csv": "c1026f83f047837cd0e564c4c265b9fd7bfedfa658ea94251369c7d1d37a758c"
+  }
+}

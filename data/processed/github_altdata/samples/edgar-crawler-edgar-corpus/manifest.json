@@ -1,0 +1,32 @@
+{
+ "slug": "edgar-crawler-edgar-corpus",
+ "url": "https://github.com/nlpaueb/edgar-crawler",
+ "sampled": true,
+ "total_bytes": 4901588,
+ "files": [
+  "edgar_corpus_2020_test_head.jsonl",
+  "edgar_corpus_1995_test_head.jsonl",
+  "companies_info_head.json",
+  "edgar-crawler_code/download_filings.py",
+  "edgar-crawler_code/extract_items.py",
+  "edgar-crawler_code/item_lists.py",
+  "edgar-crawler_code/logger.py",
+  "edgar-crawler_code/config.json",
+  "edgar-crawler_code/README.md",
+  "edgar-crawler_code/LICENSE",
+  "edgar-crawler_code/requirements.txt"
+ ],
+ "rows": "edgar_corpus_2020_test_head.jsonl: 11 complete 10-K records; edgar_corpus_1995_test_head.jsonl: 28 complete 10-K records; companies_info_head.json: first 200 of 39,022 CIK entries; code files n/a",
+ "columns": "JSONL: filename, cik, year, section_1, section_1A, section_1B, section_2, section_3, section_4, section_5, section_6, section_7, section_7A, section_8, section_9, section_9A, section_9B, section_10..section_15 (full item text, tables removed). companies_info: cik -> {Company Name, SIC, State location, State of Inc, Fiscal Year End}",
+ "date_range": "filing years 1995 and 2020 in the two heads (full corpus 1993-2020; the crawler itself pulls any year 1993-present from sec.gov)",
+ "how_pulled": "git clone --depth 1 --filter=blob:none https://github.com/nlpaueb/edgar-crawler (91 MB on disk, 42 MB of it tests/fixtures - only the 8 code/config/licence files copied); curl -sL -r 0-3000000 -o edgar_corpus_2020_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/2020/test.jsonl; curl -sL -r 0-2000000 -o edgar_corpus_1995_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/1995/test.jsonl; python: keep only complete JSON lines, write first 200 entries of datasets/companies_info.json",
+ "full_dataset_size": "Crawler: code only (~7 MB code + 7.7 MB companies_info.json + 42 MB test fixtures). EDGAR-CORPUS: Zenodo record 5528490, 28 year zips 1993-2020, 39-524 MB each, ~10 GB total, ~220k 10-K filings; Hugging Face eloukas/edgar-corpus 87 JSONL files (<year>/{train,validate,test}.jsonl), ~231 GB stored, 6B+ tokens. Running the crawler for the 6 travel peers 2019-2026 (10-K/10-Q/8-K) would be a few hundred MB of raw HTML.",
+ "description": "edgar-crawler is a keyless Python downloader for SEC EDGAR 10-K/10-Q/8-K filings that splits each filing into per-item JSON (Item 1, 1A, 7, 7A, 8 ... for 10-Ks; Items 1-9 for 8-Ks) on a single schema; the sample holds the code plus heads of the companion EDGAR-CORPUS (one row per annual 10-K, keyed by CIK and year, every Item as plain text with tables stripped, 1993-2020, built by the same authors from sec.gov). The grain is one filing per row; the crawler run itself is a GET against sec.gov full-index files with a declared user-agent, no key. For ABNB an analyst would point config.json at BKNG, EXPE, MAR, HLT, NCLH and ABNB (10-Q/8-K, 2019-2026) to pull peer KPI tables and MD&A/guidance language on the same item schema as Airbnb's own filings, and use the 1993-2020 corpus as a pre-IPO baseline for management-tone or risk-factor language work. companies_info.json (39,022 CIKs with SIC codes) gives a quick SIC-7011 lodging / SIC-4700 travel-services peer screen.",
+ "issues": "No data committed in the repo itself - everything filing-level requires running download_filings.py against sec.gov (public, keyless, but the SEC fair-access rule of 10 requests/second and a real user-agent string must be respected; a human should decide whether that counts as a sanctioned scrape - it is not airbnb.com). Repo has moved to lefterisloukas/edgar-crawler; nlpaueb URL still redirects. Licences differ: crawler GPL-3.0, Zenodo corpus CC-BY-4.0, Hugging Face copy Apache-2.0. Corpus is 10-K only (no 10-Q/8-K), ends 2020 (pre-ABNB IPO), and companies_info.json has no ABNB/BKNG/EXPE/MAR/HLT/NCLH tickers (keyed by CIK, ticker not stored). Hugging Face JSONL heads are truncated by byte range, so the final partial line was dropped; 2020 rows are 50-500 kB each so only 11 fit in 3 MB. Non-ASCII characters in 2020 text show as replacement characters (mojibake in the source, not in our pull).",
+ "source_urls": [
+  "https://github.com/nlpaueb/edgar-crawler",
+  "https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/2020/test.jsonl",
+  "https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/1995/test.jsonl"
+ ],
+ "pulled_at": "2026-09-14"
+}

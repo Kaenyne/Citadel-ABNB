@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:housing-data-coalition/oca",
+  "url": "https://github.com/Housing-Data-Coalition/oca",
+  "name": "Housing-Data-Coalition/oca",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "ETL pipeline (Python) that produces 11 deidentified CSV tables from NYS Office of Court Administration NYC Housing Court filings: oca_index, oca_causes (nonpayment vs. holdover etc.), oca_addresses, oca_parties, oca_events, oca_appearances/outcomes, oca_motions, oca_decisions, oca_judgments, oca_warrants (eviction warrants). Covers all NYC landlord-tenant cases, addresses geocoded for tract-level aggregation.",
+  "why_useful": "Nonpayment eviction-filing rate by address/tract is a direct, high-frequency rent-burden/housing-distress signal that can be paired with Inside Airbnb NYC listing density to test STR-driven displacement or affordability pressure claims (gap #13/#14 adjacent).",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "Not stated precisely in fetched page; OCA records span recent years (court filings ongoing)",
+  "size_hint": "11 CSV tables, city-wide court-filing volume (likely hundreds of thousands of rows across tables)",
+  "license": "CC BY-NC-SA 4.0 (attribution to OCA, Right to Counsel Coalition, BetaNYC)",
+  "last_activity": "not surfaced precisely; org (Housing Data Coalition) appears active with recent repos",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Nonpayment eviction-filing rate by address/tract is a direct, high-frequency rent-burden/housing-distress signal that can be paired with Inside Airbnb NYC listing density to test STR-driven displacement or affordability pressure claims (gap #13/#14 adjacent)."
+  ]
+ },
+ {
+  "key": "github:amangang3/justlanded",
+  "url": "https://github.com/amangang3/Justlanded",
+  "name": "Justlanded",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Python/Playwright scraper targeting Blueground's listing API (despite the repo description also naming Furnished Finder, only Blueground is implemented), with committed sample Excel outputs (listings.xlsx, sf-listings.xlsx) containing beds/baths/sqft/price-per-month/move-in/min-stay/address/city/state/lat/lon/source/link columns. Built as an MIT-course (15.573) group project; 10 commits.",
+  "why_useful": "A working, verified acquisition method plus sample committed data for Blueground furnished/corporate-housing pricing \u2014 directly on-theme (coliving/corporate housing) and a possible template for pulling comparable mid-term-rental pricing to compare against ABNB long-stay ADR.",
+  "potential": "medium",
+  "gap_targets": [],
+  "geography": "at least San Francisco (sf-listings.xlsx); scraper is general",
+  "time_coverage": "point-in-time snapshot, one-off project",
+  "size_hint": "two small Excel sample files + scraper code",
+  "license": "not stated",
+  "last_activity": "10 commits, course project, dated activity unclear",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "A working, verified acquisition method plus sample committed data for Blueground furnished/corporate-housing pricing \u2014 directly on-theme (coliving/corporate housing) and a possible template for pulling comparable mid-term-rental pricing to compare against ABNB long-stay ADR."
+  ]
+ },
+ {
+  "key": "github:happyendpointhq/awesome-alternative-data",
+  "url": "https://github.com/happyendpointhq/awesome-alternative-data",
+  "name": "awesome-alternative-data",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated alt-data list for investment research (updated 7 Sep 2026) with sections Property/Real Estate, Consumer Spending & Transactions, Web Traffic & Engagement, Macroeconomic Data. Concrete free entries: HM Land Registry Price Paid (every England/Wales residential sale since 1995, free, point-in-time by construction), Dubai Pulse DLD transaction history (free); paid entries: Earnest Analytics, Consumer Edge, Second Measure/Bloomberg, Fable Data (card/transaction panels), Similarweb & Semrush (web traffic/engagement APIs).",
+  "why_useful": "HM Land Registry and Dubai Pulse are free, long-run, point-in-time housing-transaction feeds relevant to STR-vs-LTR host economics (gap 13); the Similarweb/Semrush and card-panel entries map directly to gaps 5 (engagement) and 6 (consumer spend) even though most require paid access, useful as a sourcing map.",
+  "potential": "medium",
+  "size_hint": "README link list, ~15 entries",
+  "geography": "UK, UAE, US, Europe, global",
+  "time_coverage": "HM Land Registry: 1995-present",
+  "last_activity": "2026-09-07",
+  "license": "other (custom)",
+  "gap_targets": [
+   5,
+   6,
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "HM Land Registry and Dubai Pulse are free, long-run, point-in-time housing-transaction feeds relevant to STR-vs-LTR host economics (gap 13); the Similarweb/Semrush and card-panel entries map directly to gaps 5 (engagement) and 6 (consumer spend) even though most require paid access, useful as a sourcing map."
+  ]
+ },
+ {
+  "key": "github:etewiah/awesome-real-estate",
+  "url": "https://github.com/etewiah/awesome-real-estate",
+  "name": "awesome-real-estate",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "369-star curated real-estate resource list (CC0), regularly updated (8 Sep 2026), with regional sections. Notable concrete data entries: BailleurVerif (MIT, open dataset of non-compliant French rental listings across 7 cities, ~210 listings/wave), Staying API (commercial real-time Airbnb/STR listing data by listing ID/address/dates/price, REST+MCP, free tier), Cost Segregation Benchmarks 2026 (CC-BY-4.0 CSV, 260 US studies), Phuket condo asking-price snapshot (CC BY 4.0, 391 listings CSV/JSON), Bangkok off-plan housing pipeline (CC BY 4.0, refreshed every 2 days), Japan Neighborhoods (free API, crime/safety/price for 5,078 Tokyo neighborhoods).",
+  "why_useful": "'Staying API' is a live, queryable Airbnb/STR pricing source with a free tier -- directly on-point for gap 2 (realised ADR/occupancy for STRs) if the free tier covers enough listings to sample; the small CC-BY regional snapshots (Phuket, Bangkok) are APAC/SE-Asia STR-adjacent supply signals not in our current holdings.",
+  "potential": "medium",
+  "size_hint": "README link list; individual linked datasets are small (hundreds of rows)",
+  "geography": "France, US, Thailand, Thailand/Bangkok, Japan, global",
+  "time_coverage": "current/live for most entries",
+  "last_activity": "2026-09-08",
+  "license": "CC0-1.0",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "'Staying API' is a live, queryable Airbnb/STR pricing source with a free tier -- directly on-point for gap 2 (realised ADR/occupancy for STRs) if the free tier covers enough listings to sample; the small CC-BY regional snapshots (Phuket, Bangkok) are APAC/SE-Asia STR-adjacent supply signals not in our current holdings."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/cmhcr",
+  "url": "https://github.com/UPGo-McGill/cmhcr",
+  "name": "cmhcr",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package to 'Import and Clean CMHC Data Tables' -- CMHC (Canada Mortgage and Housing Corporation) is Canada's federal housing agency publishing rental market survey vacancy rates, average rents, starts/completions by CMA. Package is an import/clean client, not a bundled dataset.",
+  "why_useful": "Fills the Canada leg of gap #13 (long-term rental/housing economics, host supply side) with a ready-made client for CMHC's official rental market data, useful for STR<->LTR crossover analysis in Canadian markets (Toronto, Vancouver, Montreal) where UPGo/strr's other repos already do STR-side work.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "license": "MIT",
+  "last_activity": "2020-08-03",
+  "geography": "Canada (CMA-level)",
+  "time_coverage": "whatever CMHC's public tables cover (multi-year, updated annually by CMHC)",
+  "size_hint": "small package, no bundled CSVs found",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Fills the Canada leg of gap #13 (long-term rental/housing economics, host supply side) with a ready-made client for CMHC's official rental market data, useful for STR<->LTR crossover analysis in Canadian markets (Toronto, Vancouver, Montreal) where UPGo/strr's other repos already do STR-side work.",
+   "A ready-made client for a public, national (Canada-wide) rental-market data source \u2014 could pull CMHC vacancy/rent series for any Canadian metro, feeding STR<->LTR crossover and housing-supply-economics angles (gap #13) without re-scraping CMHC by hand."
+  ]
+ }
+]

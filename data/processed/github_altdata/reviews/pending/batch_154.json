@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:meowser/pyairbnb",
+  "url": "https://github.com/meowser/pyairbnb",
+  "name": "pyairbnb",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python client for Airbnb's unofficial API (search by location, listing details, user info, map visualization); does not explicitly document calendar/availability endpoints in its README, and ships no committed dataset \u2014 queries Airbnb live. 19 commits.",
+  "why_useful": "A ready-made client-side hook into Airbnb's own (undocumented) API surface, which is what a calendar/availability puller would build on; flagged as a scraper of airbnb.com itself, which per repo rules is a terms-of-service call for a human, not to be run.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "unknown, small commit count",
+  "geography": "global (query-driven)",
+  "time_coverage": "live/current only",
+  "size_hint": "code only",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "A ready-made client-side hook into Airbnb's own (undocumented) API surface, which is what a calendar/availability puller would build on; flagged as a scraper of airbnb.com itself, which per repo rules is a terms-of-service call for a human, not to be run."
+  ]
+ },
+ {
+  "key": "github:cityofaustin/atd-utils-socrata",
+  "url": "https://github.com/cityofaustin/atd-utils-socrata",
+  "name": "cityofaustin/atd-utils-socrata",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official City of Austin (Transportation Dept) Python utilities for interacting with the Socrata Open Data API generically (not STR-specific), public-domain licensed.",
+  "why_useful": "A vetted, official client for pulling any Austin Socrata dataset including the STR licence dataset we already hold; useful as the maintained access method rather than a new API client, and could be adapted city-to-city since most of the target cities (Chicago, Seattle, Denver, etc.) also run Socrata portals (gap #17).",
+  "potential": "low",
+  "geography": "Austin, TX (generic Socrata client)",
+  "time_coverage": "n/a",
+  "size_hint": "utility library, no data",
+  "license": "public domain",
+  "last_activity": "unknown",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "We already hold Austin daily STR licences per CONTEXT.md; this is just the access-library, not new data",
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "A vetted, official client for pulling any Austin Socrata dataset including the STR licence dataset we already hold; useful as the maintained access method rather than a new API client, and could be adapted city-to-city since most of the target cities (Chicago, Seattle, Denver, etc.) also run Socrata portals (gap #17)."
+  ]
+ },
+ {
+  "key": "github:dolmios/airindex-2022",
+  "url": "https://github.com/dolmios/airindex-2022",
+  "name": "dolmios/airindex-2022",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Landing page/project 'AirIndex' described as testing techniques for aggregating and providing open short-term rental data from Airbnb (project site referenced, not the repo itself). README does not detail specific fields, and no data files are evident; appears to be a marketing/landing-page repo (Next.js tooling, sitemap generation) rather than a working data pipeline.",
+  "why_useful": "Possible alternative acquisition method for Airbnb-adjacent open data aggregation; unverified maturity, low confidence without deeper inspection.",
+  "potential": "low",
+  "geography": "unspecified",
+  "time_coverage": "2022 vintage per repo name",
+  "size_hint": "unknown, not inspected further",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 3,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Possible alternative acquisition method for Airbnb-adjacent open data aggregation; unverified maturity, low confidence without deeper inspection.",
+   "Concept is on-theme (an open Airbnb data aggregation index) but content/status could not be confirmed as functional or as holding real data; flagging in case the live site (airindex site referenced in repo) has since published something.",
+   "Concept-stage aggregator for open STR data \u2014 flagged for completeness only; archived and undocumented, likely dead. Worth a 5-minute check of the live Vercel URL if someone wants to rule it out definitively."
+  ]
+ },
+ {
+  "key": "github:oxylabs/how-to-scrape-airbnb",
+  "url": "https://github.com/oxylabs/how-to-scrape-airbnb",
+  "name": "how-to-scrape-airbnb (Oxylabs)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Vendor (Oxylabs) tutorial repo (21 commits) using their paid Web Scraper API plus Python asyncio/aiohttp to pull Airbnb listing titles, nightly/total pricing, host URL, rating, review text/dates, and photos from both listing pages and paginated search results (up to 250 listings/search). No committed dataset.",
+  "why_useful": "Documents Airbnb's current (2026) search-response JSON schema in a vendor-neutral tutorial form -- useful as a schema reference even without adopting Oxylabs' proxy product.",
+  "license": "not specified",
+  "last_activity": "2026-06-22",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo, tutorial",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 3,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Documents Airbnb's current (2026) search-response JSON schema in a vendor-neutral tutorial form -- useful as a schema reference even without adopting Oxylabs' proxy product.",
+   "Another independent field-schema reference, but requires a paid third-party proxy/API service (Oxylabs), which is a heavier dependency than pyairbnb/gobnb which hit Airbnb directly.",
+   "Could theoretically extend the fee-panel search-page capture the team already runs (gap #2, realised/asking price), but it scrapes airbnb.com directly beyond the sanctioned capture and needs a paid proxy backend \u2014 a ToS decision, catalogue-only per repo rules, do not run."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/hostaway",
+  "url": "https://github.com/api-evangelist/hostaway",
+  "name": "api-evangelist/hostaway",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Same author's documentation profile of the Hostaway PMS public API surface (properties, reservations, channel management, revenue optimization endpoints). No data.",
+  "why_useful": "Marginal: shows Hostaway exposes per-operator reservation/rate data, but only for a user's own connected account, not a market-wide benchmark \u2014 not useful for macro nowcasting.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "docs only",
+  "license": "none listed",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Marginal: shows Hostaway exposes per-operator reservation/rate data, but only for a user's own connected account, not a market-wide benchmark \u2014 not useful for macro nowcasting."
+  ]
+ }
+]

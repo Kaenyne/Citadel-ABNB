@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:wbuchanan/legiscanr",
+  "url": "https://github.com/wbuchanan/legiscanR",
+  "name": "wbuchanan/legiscanR",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R interface to the LegiScan API, generic bill/vote/legislator lookup across US states and Congress.",
+  "why_useful": "Same value class as the Python/Node LegiScan clients above; only useful if the team's pipeline is R-based.",
+  "potential": "low",
+  "geography": "USA (all states + Congress)",
+  "time_coverage": "current LegiScan coverage",
+  "size_hint": "API client only",
+  "license": "GPL-2.0",
+  "last_activity": "2026-01-04",
+  "duplicate_of_holding": "functionally duplicates pylegiscan above",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Same value class as the Python/Node LegiScan clients above; only useful if the team's pipeline is R-based."
+  ]
+ },
+ {
+  "key": "github:akash250298/airbnb_regulation_project",
+  "url": "https://github.com/akash250298/Airbnb_Regulation_Project",
+  "name": "akash250298/Airbnb_Regulation_Project",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis notebook examining Paris Airbnb listing/pricing trends and how local regulation has shaped the market; uses existing (likely Inside Airbnb) Paris data, no new dataset committed.",
+  "why_useful": "Marginal \u2014 an analysis of a market we already hold (Paris is in our 13-city panel) rather than new data; worth a one-line flag only in case its regulation-event timeline (French STR rule changes, dates) is usable as a ready-made event list.",
+  "potential": "low",
+  "geography": "Paris, France",
+  "time_coverage": "unclear (uses existing Inside Airbnb Paris vintages)",
+  "size_hint": "notebook only, no new data files",
+  "license": "none declared",
+  "last_activity": "2025-08-07",
+  "duplicate_of_holding": "Paris is already in our 13-city Inside Airbnb panel",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Marginal \u2014 an analysis of a market we already hold (Paris is in our 13-city panel) rather than new data; worth a one-line flag only in case its regulation-event timeline (French STR rule changes, dates) is usable as a ready-made event list."
+  ]
+ },
+ {
+  "key": "github:parltrack/parltrack",
+  "url": "https://github.com/parltrack/parltrack",
+  "name": "parltrack/parltrack",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper + application ('Parliamentary Tracker') that builds a queryable database of European Parliament dossiers, votes, and MEP activity from EP sources; 639 commits, 74 stars. Page did not expose committed data dumps directly but the project is known to publish periodic JSON/DB dumps via parltrack.org.",
+  "why_useful": "A second, older/broader EU legislative-tracking tool than HowTheyVote; could be used to pull the legislative history of any EU platform-economy/short-term-rental dossier (gap #12) with dated snapshots (gap #4).",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "not confirmed from fetch",
+  "geography": "European Union",
+  "size_hint": "not confirmed",
+  "license": "not confirmed",
+  "last_activity": "not confirmed (639 commits total, appears maintained)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "A second, older/broader EU legislative-tracking tool than HowTheyVote; could be used to pull the legislative history of any EU platform-economy/short-term-rental dossier (gap #12) with dated snapshots (gap #4)."
+  ]
+ },
+ {
+  "key": "github:c-tonneslan/convene",
+  "url": "https://github.com/c-tonneslan/convene",
+  "name": "c-tonneslan/convene",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool (MIT, 12 commits) that pulls municipal meeting data via the Legistar Web API and Granicus scraping into a normalized OCD-shaped JSON/NDJSON/CSV/iCal output, preconfigured for 24 US cities including Philadelphia, NYC, Chicago, Seattle, San Francisco, Denver, and Boston; outputs meetings, legislation with sponsors, vote records and action histories, with worked JSON examples in the README.",
+  "why_useful": "Lightweight, easy one-command client to pull council-level ordinance/vote histories for STR-relevant cities (SF OSTR, NYC, Denver, Boston) \u2014 a smaller, more approachable alternative to the DataMade/opencivicdata stack for gap #12.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "current + historical depending on city's Legistar/Granicus retention",
+  "geography": "24 preconfigured US cities (Philadelphia, NYC, Chicago, Seattle, SF, Denver, Boston, others)",
+  "size_hint": "code + README examples only, no bulk committed data",
+  "license": "MIT",
+  "last_activity": "recent (12 commits, appears new/small project)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Lightweight, easy one-command client to pull council-level ordinance/vote histories for STR-relevant cities (SF OSTR, NYC, Denver, Boston) \u2014 a smaller, more approachable alternative to the DataMade/opencivicdata stack for gap #12."
+  ]
+ },
+ {
+  "key": "github:freelawproject/recap",
+  "url": "https://github.com/freelawproject/recap",
+  "name": "freelawproject/recap (recap-chrome)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Issue tracker for RECAP, a crowdsourced Chrome/Firefox extension (main code in freelawproject/recap-chrome, 550 commits) that captures and re-shares PACER federal court filings for free, feeding into the CourtListener/RECAP archive.",
+  "why_useful": "Complementary tooling to CourtListener for finding and archiving PACER filings in any active Airbnb federal litigation (e.g. host classification suits, regulatory challenges) without paying PACER fees; same gap targets as CourtListener above.",
+  "potential": "low",
+  "gap_targets": [
+   12,
+   11
+  ],
+  "time_coverage": "not confirmed",
+  "geography": "US federal courts (PACER)",
+  "size_hint": "extension code only",
+  "license": "not stated in fetch",
+  "last_activity": "not confirmed (550 commits)",
+  "duplicate_of_holding": "overlaps with freelawproject/courtlistener above",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Complementary tooling to CourtListener for finding and archiving PACER filings in any active Airbnb federal litigation (e.g. host classification suits, regulatory challenges) without paying PACER fees; same gap targets as CourtListener above."
+  ]
+ }
+]

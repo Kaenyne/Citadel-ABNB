@@ -1,0 +1,139 @@
+[
+ {
+  "key": "github:rjdverse/rjd3nowcasting",
+  "url": "https://github.com/rjdverse/rjd3nowcasting",
+  "name": "rjd3nowcasting",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R interface to the JDemetra+ v3 (official EU statistical software) nowcasting engine: DFM specification/estimation and news-analysis functionality, GUI-inspired API from the JDemetra+ V2 nowcasting add-in used by some EU statistical agencies. Published by the rjdverse org (successor to EU/Bank of Belgium seasonal-adjustment tooling). EUPL-1.2 licensed, 152 commits, requires Java 21+.",
+  "why_useful": "Production-grade DFM/news-analysis tooling used in official European statistics context; could be applied to Eurostat tour_ce_omr or EU consumer-confidence panels we already hold, to build a proper EU nights nowcast with news decomposition rather than ad hoc constructions.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "152 commits, 3 stars/7 forks",
+  "time_coverage": "n/a (package)",
+  "geography": "EU (official statistics tooling)",
+  "license": "EUPL-1.2",
+  "last_activity": "not dated in fetch",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Production-grade DFM/news-analysis tooling used in official European statistics context; could be applied to Eurostat tour_ce_omr or EU consumer-confidence panels we already hold, to build a proper EU nights nowcast with news decomposition rather than ad hoc constructions."
+  ]
+ },
+ {
+  "key": "github:edgi-govdata-archiving/wayback",
+  "url": "https://github.com/edgi-govdata-archiving/wayback",
+  "name": "wayback (EDGI)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client library (977 commits, BSD-3-Clause) from the Environmental Data & Governance Initiative for finding/loading historical Wayback Machine captures of specific URLs; built for their environmental-page monitoring work but generic.",
+  "why_useful": "Well-maintained alternative to waybackpy with a more research-oriented API (used in academic replication pipelines); same use case for gaps #1, #2, #17.",
+  "potential": "medium",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "BSD-3-Clause",
+  "last_activity": "unspecified, actively developed by an established org (EDGI)",
+  "geography": "global",
+  "time_coverage": "full Wayback Machine depth",
+  "size_hint": "library only",
+  "duplicate_of_holding": "functionally duplicates waybackpy/waybackpack above",
+  "hits": 2,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Well-maintained alternative to waybackpy with a more research-oriented API (used in academic replication pipelines); same use case for gaps #1, #2, #17.",
+   "Same class as waybackpack above, more actively maintained (EDGI is a live project) \u2014 usable for pulling dated snapshots of newsroom.airbnb.com, ir.airbnb.com guidance pages, or third-party STR-data-vendor market pages (AirDNA, Key Data, etc.) for point-in-time reconstruction, directly serving gap #17."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cdx_toolkit",
+  "url": "https://github.com/commoncrawl/cdx_toolkit",
+  "name": "cdx_toolkit",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Common Crawl org's Python toolkit for querying CDX indices (Common Crawl and Internet Archive Wayback). Pulls index rows and fetches WARC records by offset/length; no committed dataset, purely a client library/CLI. 211 stars, Apache-2.0, updated 7 Sep 2026 (actively maintained).",
+  "why_useful": "This is almost certainly the tool underlying our existing Common Crawl CDX index over airbnb.com (2.08M rows, 50 crawls) and the 3,000 WARC renders we already hold; documents how to re-pull or extend that index to more crawls, other domains (Vrbo, Booking.com, Expedia, competitor STR platforms), or historical date ranges for the same host \u2014 directly extends gap targets 9 (competitor supply) and 17 (methods).",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   17
+  ],
+  "duplicate_of_holding": "We already hold a CC CDX index over airbnb.com and WARC renders; this is the generating tool, not new data",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-07",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "library, no bundled dataset",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "This is almost certainly the tool underlying our existing Common Crawl CDX index over airbnb.com (2.08M rows, 50 crawls) and the 3,000 WARC renders we already hold; documents how to re-pull or extend that index to more crawls, other domains (Vrbo, Booking.com, Expedia, competitor STR platforms), or historical date ranges for the same host \u2014 directly extends gap targets 9 (competitor supply) and 17 (methods)."
+  ]
+ },
+ {
+  "key": "github:webrecorder/warcio",
+  "url": "https://github.com/webrecorder/warcio",
+  "name": "warcio",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Streaming WARC/ARC record reader/writer library (Python), used to parse the WARC files that cdx_toolkit or direct CC fetches return. 472 stars, Apache-2.0, updated 8 Sep 2026, actively maintained by the Webrecorder/Internet Archive-adjacent team.",
+  "why_useful": "Needed to actually read the 3,000 WARC renders we already captured, or any new WARC pulls for competitor sites (Vrbo, Sonder, Vacasa, Hipcamp listing pages) to extract page text/prices/counts at a point in time.",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-08",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "library",
+  "hits": 2,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Needed to actually read the 3,000 WARC renders we already captured, or any new WARC pulls for competitor sites (Vrbo, Sonder, Vacasa, Hipcamp listing pages) to extract page text/prices/counts at a point in time.",
+   "Needed to actually open/parse the 3,000 WARC renders we already captured (or any new ones pulled via cdx_toolkit) without standing up Spark; low-friction way to extract page text/HTML from archived Airbnb, AirDNA, or competitor pages for point-in-time price/availability text mining."
+  ]
+ },
+ {
+  "key": "github:mojomast/arrhivescrape",
+  "url": "https://github.com/mojomast/arrhivescrape",
+  "name": "arrhivescrape",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reusable Wayback Machine / CDX-based static-site recovery toolkit with a CLI and local web UI, for reconstructing archived versions of a site from CDX index entries. 0 stars, no license, updated 26 Jun 2026.",
+  "why_useful": "Matches gap 17's 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' \u2014 could be pointed (with human sign-off, not run by an agent) at archived AirDNA market pages or historical airbnb.com pages already indexed by CDX to reconstruct point-in-time snapshots.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "unspecified",
+  "last_activity": "2026-06-26",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "CLI tool, no bundled dataset",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Matches gap 17's 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' \u2014 could be pointed (with human sign-off, not run by an agent) at archived AirDNA market pages or historical airbnb.com pages already indexed by CDX to reconstruct point-in-time snapshots."
+  ]
+ }
+]

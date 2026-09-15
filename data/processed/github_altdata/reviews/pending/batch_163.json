@@ -1,0 +1,124 @@
+[
+ {
+  "key": "github:umutseve4/revisionledger",
+  "url": "https://github.com/umutseve4/RevisionLedger",
+  "name": "RevisionLedger",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python bitemporal-ledger library (valid time + system/knowledge time per data point) demonstrated on ALFRED's Real GDP series (GDPC1), with two real sample vintages of Q4-2023 US real GDP committed as fixtures with SHA-256 manifests. 16 passing tests, MIT, 0 stars, 14 commits -- proof-of-concept scope, explicitly not a general downloader yet.",
+  "why_useful": "A tiny, clean reference implementation of 'as-of' querying for macro vintages (exactly this theme), but scope is currently limited to a worked example, not a usable general tool yet.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "license": "MIT",
+  "last_activity": "recent (Sep 2026), 14 commits, small",
+  "geography": "US (ALFRED example)",
+  "time_coverage": "single worked example (Q4 2023 GDP, two vintages)",
+  "size_hint": "tiny, proof-of-concept",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "A tiny, clean reference implementation of 'as-of' querying for macro vintages (exactly this theme), but scope is currently limited to a worked example, not a usable general tool yet."
+  ]
+ },
+ {
+  "key": "github:josephbsmith/vintage",
+  "url": "https://github.com/josephbsmith/vintage",
+  "name": "vintage (as-of statistics query tool)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Single-file Python/SQLite CLI tool (vintage.py) that ingests generic CSV releases (series_id, period, released_at, value) and supports 'as-of' snapshots and 'diff' comparisons between two knowledge dates; preserves source text so trivial revisions (1.0 -> 1.00) aren't lost. MIT, 1 commit, 0 stars -- generic, source-agnostic, user must supply their own release CSVs (no bundled data).",
+  "why_useful": "Generic point-in-time query tool that could sit on top of any macro series the team already scrapes with a release timestamp (e.g. consensus snapshots, FRED pulls) to do as-of queries without building custom code; very early/minimal though.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "license": "MIT",
+  "last_activity": "1 commit only, very new/minimal",
+  "geography": "generic/source-agnostic",
+  "time_coverage": "n/a (tool, no bundled data)",
+  "size_hint": "single-file script",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Generic point-in-time query tool that could sit on top of any macro series the team already scrapes with a release timestamp (e.g. consensus snapshots, FRED pulls) to do as-of queries without building custom code; very early/minimal though."
+  ]
+ },
+ {
+  "key": "github:hrecht/census-api-datasets",
+  "url": "https://github.com/hrecht/census-api-datasets",
+  "name": "census-api-datasets",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Tracks additions/removals of datasets on the Census Bureau's API over time (a changelog/registry, 15 stars) \u2014 i.e., a curated index of what's available and when it appeared or disappeared from the API.",
+  "why_useful": "Metadata tool for discovering new/deprecated Census series systematically rather than manually; low direct KPI value but useful for a future systematic scan of Census offerings relevant to travel/housing.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "ongoing changelog",
+  "license": "unresolved",
+  "last_activity": "unresolved",
+  "size_hint": "small changelog",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Metadata tool for discovering new/deprecated Census series systematically rather than manually; low direct KPI value but useful for a future systematic scan of Census offerings relevant to travel/housing."
+  ]
+ },
+ {
+  "key": "github:vincentarelbundock/rdatasets",
+  "url": "https://github.com/vincentarelbundock/Rdatasets",
+  "name": "Rdatasets",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Mirror of 3,648 datasets originally bundled inside R packages, exported as CSV and Parquet with an HTML/CSV index; broad general-purpose collection (economics, social science, biology, etc.), not macro-specific but includes many economic/time-series teaching datasets.",
+  "why_useful": "Worth a targeted grep of its CSV index for any macro/travel/tourism/airfare series bundled from lesser-known R packages (e.g. AER, Ecdat, wooldridge) that might not otherwise surface; low direct hit rate but essentially free to check.",
+  "potential": "low",
+  "geography": "mixed/global",
+  "time_coverage": "varies by dataset",
+  "license": "GPL-3.0 (code); data licensing uncertain per maintainer's own disclosure",
+  "last_activity": "actively maintained mirror",
+  "size_hint": "3,648 datasets",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Worth a targeted grep of its CSV index for any macro/travel/tourism/airfare series bundled from lesser-known R packages (e.g. AER, Ecdat, wooldridge) that might not otherwise surface; low direct hit rate but essentially free to check."
+  ]
+ },
+ {
+  "key": "github:ud4yfr/bnpl-stress-test",
+  "url": "https://github.com/ud4yfr/bnpl-stress-test",
+  "name": "ud4yfr/bnpl-stress-test",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Monte Carlo stress-test model comparing Affirm vs Klarna unit economics under rising delinquency scenarios. Appears to be a modeling exercise (parametrized assumptions), not a committed real-data extract of Affirm/Klarna disclosed statistics. Updated 1 Aug 2026, 0 stars, no license listed.",
+  "why_useful": "Marginal: illustrates how BNPL delinquency sensitivity could be modeled, but does not appear to hold real disclosed Affirm/Klarna public stats (10-Q GMV, delinquency rates) that would be the actual high-value target; would need inspection of source code to confirm any embedded real figures.",
+  "potential": "low",
+  "license": "none listed",
+  "last_activity": "2026-08-01",
+  "geography": "US",
+  "time_coverage": "unclear",
+  "size_hint": "small, model/notebook scale",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Marginal: illustrates how BNPL delinquency sensitivity could be modeled, but does not appear to hold real disclosed Affirm/Klarna public stats (10-Q GMV, delinquency rates) that would be the actual high-value target; would need inspection of source code to confirm any embedded real figures."
+  ]
+ }
+]

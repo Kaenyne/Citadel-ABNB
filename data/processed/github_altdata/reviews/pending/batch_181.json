@@ -1,0 +1,103 @@
+[
+ {
+  "key": "github:microprediction/microprediction",
+  "url": "https://github.com/microprediction/microprediction",
+  "name": "microprediction",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"If you can measure it, consider it predicted\" \u2014 an open, crowd-sourced real-time prediction/nowcasting platform and Python client where any published time series (economic, web-traffic, etc.) can be nowcast by a community of algorithms; includes APIs to pull live crowd-nowcasts of arbitrary streams.",
+  "why_useful": "Not a data source itself, but a live nowcasting-as-a-service platform (gap #17, tangential to #4 point-in-time forecasts) \u2014 could in principle host or query a crowd-nowcast of a published economic series relevant to consumer/travel demand; more a curiosity than a direct fit, low priority.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a (live streams)",
+  "size_hint": "377 stars",
+  "license": "unspecified",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Not a data source itself, but a live nowcasting-as-a-service platform (gap #17, tangential to #4 point-in-time forecasts) \u2014 could in principle host or query a crowd-nowcast of a published economic series relevant to consumer/travel demand; more a curiosity than a direct fit, low priority."
+  ]
+ },
+ {
+  "key": "github:mikekeith52/scalecast",
+  "url": "https://github.com/mikekeith52/scalecast",
+  "name": "scalecast",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "General-purpose Python time-series forecasting library ('the practitioner's forecasting library') wrapping ARIMA, Prophet, LSTM, XGBoost, scikit-learn models with a unified pipeline for transformations, missing-value handling, and model stacking. 598 commits, MIT license. Does not implement MIDAS or mixed-frequency nowcasting specifically.",
+  "why_useful": "Not a nowcasting-specific tool but a mature stacking/pipeline framework that could host whichever mixed-frequency model (MIDAS/DFM/LSTM) the team settles on for KPI nowcasting; low priority relative to the purpose-built packages above.",
+  "potential": "low",
+  "gap_targets": [],
+  "size_hint": "598 commits",
+  "time_coverage": "n/a (package)",
+  "geography": "generic",
+  "license": "MIT",
+  "last_activity": "not dated in fetch",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Not a nowcasting-specific tool but a mature stacking/pipeline framework that could host whichever mixed-frequency model (MIDAS/DFM/LSTM) the team settles on for KPI nowcasting; low priority relative to the purpose-built packages above."
+  ]
+ },
+ {
+  "key": "github:rockhazard/wayback_scraper",
+  "url": "https://github.com/rockhazard/wayback_scraper",
+  "name": "wayback_scraper (rockhazard)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool to download and reconstruct entire archived websites from the Wayback Machine (fetches all resources for a given URL/date range), MIT licensed, updated Jul 2026, 1 star. No data committed, generic.",
+  "why_useful": "Same acquisition-method use case as waybackpy but page-reconstruction rather than API querying -- would let a researcher pull a full archived AirDNA or Mashvisor city-report page (not just text) for manual reading. Very small/low-maturity repo (1 star), unclear reliability.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Same acquisition-method use case as waybackpy but page-reconstruction rather than API querying -- would let a researcher pull a full archived AirDNA or Mashvisor city-report page (not just text) for manual reading. Very small/low-maturity repo (1 star), unclear reliability."
+  ]
+ },
+ {
+  "key": "github:dtanders/wayback-scraper",
+  "url": "https://github.com/dtanders/wayback-scraper",
+  "name": "wayback-scraper (dtanders)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Generic Wayback Machine scraper, MIT license, very recently touched (14 Sep 2026), 1 star, no description beyond name -- appears to be a personal utility, not domain-specific.",
+  "why_useful": "Marginal; another generic CDX/snapshot puller with no Airbnb or STR-market angle and no evidence of committed data.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Marginal; another generic CDX/snapshot puller with no Airbnb or STR-market angle and no evidence of committed data."
+  ]
+ },
+ {
+  "key": "github:kernelequinox/wayback-scraper",
+  "url": "https://github.com/KernelEquinox/Wayback-Scraper",
+  "name": "Wayback-Scraper (KernelEquinox)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script for quick enumeration of all archived snapshots of a given URL/domain via the Wayback CDX index. 9 stars, no license declared, no bundled data.",
+  "why_useful": "Same generic-tooling use case; could be run against airbnb.com or AirDNA domains to enumerate which historical dates are archived before deciding whether a targeted pull is worth a human ask under rule 6.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Same generic-tooling use case; could be run against airbnb.com or AirDNA domains to enumerate which historical dates are archived before deciding whether a targeted pull is worth a human ask under rule 6."
+  ]
+ }
+]

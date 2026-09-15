@@ -1,0 +1,10 @@
+{
+ "slug": "dubai-det-tourism-csvs",
+ "url": "https://github.com/RezaSbu/Dubai-Tourism-Data-Analysis-",
+ "category": "travel_volume_transport",
+ "data_kind": "stored_dataset",
+ "one_line": "~13 committed CSVs in Dubai DET source format: hotel establishment performance, overnight visitors by region and by source market, visitor counts by nationality, e-permit/e-ticketing files, ~2022-2024 monthly; licence unstated.",
+ "abnb_use": "Gap 7 (travel volume outside US/EU): Gulf inbound overnight visitors and hotel occupancy/ADR proxies for an EMEA regional read; also a source-market cut showing where travellers originate.",
+ "sample_plan": "Pull the repo's raw CSVs directly: Hotel_Establishment_Performance.csv, Overnight_Visitors_By_Region.csv, Overnight_Visitors_By_Source_Market.csv, Visitors_Count_By_Nationality.csv, Overseas_Overall_Monthly_Report_Fact.csv via raw.githubusercontent.com; skip the e-permit/e-ticket files and the PDF. Cap 5 MB.",
+ "tos_or_license_flag": true
+}

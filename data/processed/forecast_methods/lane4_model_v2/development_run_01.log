@@ -1,0 +1,26 @@
+file:///C:/Users/wille/Desktop/Citadel%20-%20ABNB/.worktrees/lane4-full/analysis/src/forecast_methods/lane4_model_v2/build.mjs:94
+ V('Assumptions','C84','Kernel coefficients are fixed 2/3 and 1/3. A quarter's input GBV first affects next-quarter revenue.');
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at node:internal/modules/esm/loader:632:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:362:14)
+
+Node.js v24.19.0
+Traceback (most recent call last):
+  File "C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\lane4-full\analysis\src\forecast_methods\lane4_model_v2\run.py", line 203, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\lane4-full\analysis\src\forecast_methods\lane4_model_v2\run.py", line 201, in main
+    subprocess.run([str(DEFAULT_NODE),str(PACKAGE/'build.mjs'),str(out/'model_input.json')],check=True,cwd=ROOT)
+  File "C:\Users\wille\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\wille\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe', 'C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane4-full\\analysis\\src\\forecast_methods\\lane4_model_v2\\build.mjs', 'C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane4-full\\data\\processed\\forecast_methods\\lane4_model_v2\\development_run_01\\model_input.json']' returned non-zero exit status 1.

@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:nderkach/airbnb-python",
+  "url": "https://github.com/nderkach/airbnb-python",
+  "name": "airbnb-python",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "WTFPL Python wrapper (203 stars, updated May 2026) around Airbnb's unofficial API -- one of the oldest and most-starred wrappers, historically used as the base for many derivative scrapers. Exposes search, listing detail, calendar/pricing, and user/host endpoints similar to pyairbnb.",
+  "why_useful": "Long-lived, widely-forked reference implementation; useful mainly to compare field coverage/endpoint stability over time against pyairbnb (API has shifted several times since this was written, so it also documents which fields Airbnb has deprecated).",
+  "license": "WTFPL",
+  "last_activity": "2026-05-10",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Long-lived, widely-forked reference implementation; useful mainly to compare field coverage/endpoint stability over time against pyairbnb (API has shifted several times since this was written, so it also documents which fields Airbnb has deprecated).",
+   "Long-standing, widely-forked reference for calendar+review+search fields; useful as a fallback/second implementation to cross-check pyairbnb's field names, though the underlying API it targets is likely partly deprecated (Airbnb closed most of its public partner API years ago) so it may need patching before any human decides to run it."
+  ]
+ },
+ {
+  "key": "github:blackfalcondata-org/airbnb-scraper",
+  "url": "https://github.com/BlackFalconData-org/airbnb-scraper",
+  "name": "BlackFalconData-org/airbnb-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Recently updated (Sep 2026) scraper claiming full-city coverage past Airbnb's 280-result search cap, with incremental NEW/UPDATED/EXPIRED listing tracking -- i.e. it is built to construct a longitudinal panel of listing turnover, not just a snapshot.",
+  "why_useful": "The NEW/UPDATED/EXPIRED tracking design is the closest thing found in this sweep to a method for measuring STR supply churn/new-listing formation over time, relevant to the new-listing/ADR residual work referenced in memory (ADR v3 run).",
+  "license": "not specified",
+  "last_activity": "2026-09-04",
+  "geography": "global (per-city)",
+  "time_coverage": "live, incremental panel if run repeatedly",
+  "size_hint": "code repo",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "The NEW/UPDATED/EXPIRED tracking design is the closest thing found in this sweep to a method for measuring STR supply churn/new-listing formation over time, relevant to the new-listing/ADR residual work referenced in memory (ADR v3 run)."
+  ]
+ },
+ {
+  "key": "github:scrapfly/scrapfly-scrapers",
+  "url": "https://github.com/scrapfly/scrapfly-scrapers/tree/main/airbnb-scraper",
+  "name": "scrapfly-scrapers: airbnb-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "One folder inside the large multi-site scrapfly-scrapers monorepo (Python 3.10, scrapfly-sdk, 1,028 commits repo-wide). Extracts search results by location, full listing detail (title, description, room type, amenities, images), host info + geo-coordinates, pricing/ratings/review counts, and guest review text. Includes a `./results` directory with committed example output (format unconfirmed \u2014 likely JSON) plus `airbnb.py`, `run.py`, `test.py`.",
+  "why_useful": "Only repo in this sweep with an actual committed example-output folder (not just README samples) alongside the scraper code, and it is part of a monorepo that ALSO contains scrapers for Booking.com and other non-Airbnb travel sites (see companion candidate below) \u2014 useful as a template if the team later builds its own point-in-time Airbnb capture and wants a maintained anti-bot approach (relies on paid Scrapfly proxy/rendering, though).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "live/point-of-scrape only; committed results are illustrative examples, not a time series",
+  "size_hint": "small example-results folder only",
+  "license": "check repo (LICENSE file present, terms not confirmed)",
+  "last_activity": "actively maintained monorepo (1,028 commits total)",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Only repo in this sweep with an actual committed example-output folder (not just README samples) alongside the scraper code, and it is part of a monorepo that ALSO contains scrapers for Booking.com and other non-Airbnb travel sites (see companion candidate below) \u2014 useful as a template if the team later builds its own point-in-time Airbnb capture and wants a maintained anti-bot approach (relies on paid Scrapfly proxy/rendering, though).",
+   "A single maintained repo covering both Airbnb and at least one direct competitor (Booking.com) with a consistent scraper pattern and example outputs; worth a deeper look by whichever agent owns the competitor-OTA theme, since it lowers the engineering cost of building a comparable non-Airbnb capture (gap #9) using the same toolkit already catalogued for Airbnb."
+  ]
+ },
+ {
+  "key": "github:biganomaly/airdna-scraper",
+  "url": "https://github.com/BigAnomaly/airdna-scraper",
+  "name": "BigAnomaly/airdna-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An Apify actor (README only, no code visible in the default branch listing beyond README) that enriches a list of Airbnb listing URLs with AirDNA revenue, occupancy, ADR, and revenue-potential figures. Requires an existing AirDNA account and a bearer token copied from the browser session (app.airdna.co), plus an AirDNA market ID for revenue/occupancy fields. Outputs one record per listing with listing_id, market, listing_type, bedrooms/bathrooms/accommodates, rating, and the AirDNA metrics.",
+  "why_useful": "AirDNA is explicitly gap #2 (realised ADR/occupancy for STRs from a free proxy). This is a method that could produce a market-level occupancy/ADR series if run, though it targets a licensed data vendor's site and is a terms-of-service question, not ours to run.",
+  "potential": "medium",
+  "gap_targets": [
+   2
+  ],
+  "geography": "global (whatever AirDNA market pages cover)",
+  "time_coverage": "current snapshot only, no history",
+  "size_hint": "actor config, no data file",
+  "license": "unknown",
+  "last_activity": "2026-06-02",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks",
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "AirDNA is explicitly gap #2 (realised ADR/occupancy for STRs from a free proxy). This is a method that could produce a market-level occupancy/ADR series if run, though it targets a licensed data vendor's site and is a terms-of-service question, not ours to run.",
+   "Directly targets gap #2 (realised ADR/occupancy for STRs from AirDNA-type sources) at the listing level, which is exactly the metric class we are missing; however it requires an authenticated AirDNA account (paid product) and manually harvested bearer token, so it is a method pointer, not a free dataset, and running it would be a terms-of-service question for a human."
+  ]
+ },
+ {
+  "key": "github:satrancci/web-crawler-with-proxies",
+  "url": "https://github.com/satrancci/web-crawler-with-proxies",
+  "name": "web-crawler-with-proxies",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Vrbo.com crawler (105 commits) using Crawlera API + Hotspot Shield VPN proxy rotation against vrbo.com/search/keywords:<LOCATION>/page:<PAGE_NUM> to pull city-level listing routes/IDs and prices, writing city-price pairs to parsed_data.txt plus CDF price-distribution plots per city. No committed data files (locations_to_crawl.txt is an empty template); requires paid proxy/VPN services to run.",
+  "why_useful": "Confirms feasibility (and the anti-bot difficulty) of building a Vrbo listing crawler; would need real infrastructure and is explicitly a ToS decision to run \u2014 catalogued as a method, not usable off the shelf.",
+  "potential": "medium",
+  "gap_targets": [
+   9
+  ],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "code only",
+  "license": "mit",
+  "last_activity": "2026-02-01",
+  "hits": 2,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Confirms feasibility (and the anti-bot difficulty) of building a Vrbo listing crawler; would need real infrastructure and is explicitly a ToS decision to run \u2014 catalogued as a method, not usable off the shelf.",
+   "A second working method for pulling Vrbo prices by city (gap #9, and adjacent to gap #2 realised ADR-type data), with more mature crawling infra (105 commits) than most Vrbo scrapers found, though it needs paid proxies and produces no historical snapshot on its own."
+  ]
+ }
+]

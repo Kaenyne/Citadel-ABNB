@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:galibin24/sec-edgar-python-scraper",
+  "url": "https://github.com/galibin24/SEC-EDGAR-python-scraper",
+  "name": "SEC-EDGAR-python-scraper",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper/parser (24 stars, updated 3 Sep 2026) extracting fundamental financial data (income statement / balance sheet line items) for US companies from EDGAR filings.",
+  "why_useful": "Lightweight alternative for pulling peer (BKNG/EXPE/MAR/HLT) fundamentals if edgartools proves too heavy; minor incremental value only.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "filing-dependent",
+  "size_hint": "library, not a dataset",
+  "license": "none declared",
+  "last_activity": "2026-09-03",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Lightweight alternative for pulling peer (BKNG/EXPE/MAR/HLT) fundamentals if edgartools proves too heavy; minor incremental value only."
+  ]
+ },
+ {
+  "key": "github:pchitral/etl-sec-edgar-10-k-filings",
+  "url": "https://github.com/pChitral/ETL-SEC-EDGAR-10-k-Filings",
+  "name": "ETL-10-K-Filings",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python ETL pipeline (17 stars, updated 10 May 2026) focused on the MD&A section of 10-K filings, processing data for 10,000+ publicly traded companies with multi-threaded parsing.",
+  "why_useful": "Could generate an MD&A text corpus across all SEC filers (not just ABNB peers) for cross-sectional management-tone or topic-model comparisons at scale; overlaps somewhat with edgar-crawler.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "not stated, likely recent filings only",
+  "size_hint": "pipeline, not a committed dataset",
+  "license": "Other (custom)",
+  "last_activity": "2026-05-10",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Could generate an MD&A text corpus across all SEC filers (not just ABNB peers) for cross-sectional management-tone or topic-model comparisons at scale; overlaps somewhat with edgar-crawler."
+  ]
+ },
+ {
+  "key": "github:tumarkin/edgar",
+  "url": "https://github.com/tumarkin/edgar",
+  "name": "edgar (tumarkin)",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Command-line utility (13 stars, BSD-3, updated 9 Jan 2026) that locally indexes and downloads filings from the SEC EDGAR full-text index.",
+  "why_useful": "Simple CLI for point-in-time bulk-downloading peer 8-K/10-Q filings by date, useful for building a local vintage archive of BKNG/EXPE/MAR/HLT prints; marginal versus edgartools/sec-edgar.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "full EDGAR index",
+  "size_hint": "CLI tool, not a dataset",
+  "license": "BSD-3-Clause",
+  "last_activity": "2026-01-09",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Simple CLI for point-in-time bulk-downloading peer 8-K/10-Q filings by date, useful for building a local vintage archive of BKNG/EXPE/MAR/HLT prints; marginal versus edgartools/sec-edgar."
+  ]
+ },
+ {
+  "key": "github:elijas/sec-api-io",
+  "url": "https://github.com/Elijas/sec-api-io",
+  "name": "sec-api-io (python wrapper)",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Unofficial Python wrapper (6 stars, MIT, updated 3 Sep 2026) around the sec-api.io commercial service for searching/filtering SEC filings.",
+  "why_useful": "Python-side counterpart to sec-api-node; same caveat that the backing service is paid beyond a free tier, so only free-tier full-text search calls are usable without a key purchase.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "full EDGAR coverage via the paid service",
+  "size_hint": "wrapper only",
+  "license": "MIT",
+  "last_activity": "2026-09-03",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Python-side counterpart to sec-api-node; same caveat that the backing service is paid beyond a free tier, so only free-tier full-text search calls are usable without a key purchase."
+  ]
+ },
+ {
+  "key": "github:lexpredict/openedgar",
+  "url": "https://github.com/LexPredict/openedgar",
+  "name": "OpenEDGAR",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Django-based framework that builds a local relational database from EDGAR filings, automating retrieval and parsing of EDGAR forms at scale (used to power LexPredict's commercial legal-document database). MIT, 332 stars, 99 forks, 54 commits, first released 2018.",
+  "why_useful": "Heavier-weight option if the team wants a queryable local database (rather than flat files) of all peer + ABNB filings with full parsing pipeline already built, e.g. for building a structured 8-K/10-Q archive with a real ORM/schema.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "overlaps other EDGAR clients; heavier infra than needed for our team's scope",
+  "geography": "US SEC registrants",
+  "time_coverage": "full EDGAR history",
+  "size_hint": "n/a, framework only, older/less active (54 commits, oldest activity 2018)",
+  "license": "MIT",
+  "last_activity": "modest activity, 2018 first release",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Heavier-weight option if the team wants a queryable local database (rather than flat files) of all peer + ABNB filings with full parsing pipeline already built, e.g. for building a structured 8-K/10-Q archive with a real ORM/schema."
+  ]
+ }
+]

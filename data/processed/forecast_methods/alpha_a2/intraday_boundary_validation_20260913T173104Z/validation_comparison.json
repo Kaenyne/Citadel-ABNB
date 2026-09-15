@@ -1,0 +1,76 @@
+{
+  "existing_outputs_untouched": {
+    "data\\processed\\forecast_methods\\alpha_a2\\after_m_rebuild_comparison.json": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\audit.json": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\cells.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\conditional_returns.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\controls.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\lane1_reconciliation.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\live_november_guide_scenario.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\registry_preview.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\ridge_expanding.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\run_receipt_after_m.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\run_receipt_final.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\run_receipt_initial.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\run_receipt_provenance.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\run_receipt_reviewed.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\signal_gap_returns.png": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\statistics.csv": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\test_receipt_after_m.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\test_receipt_final.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\test_receipt_initial.txt": true,
+    "data\\processed\\forecast_methods\\alpha_a2\\test_receipt_reviewed.txt": true,
+    "data\\processed\\forecast_methods\\registry\\alpha-a2__guide_mid_next_q.csv": true
+  },
+  "historical_snapshot_comparisons": [
+    {
+      "file": "cells.csv",
+      "existing_sha256": "dfa9af8370069e110dc9eead389ebba5efda39c78c24628ff7d4272d3b5ae615",
+      "snapshot_sha256": "dfa9af8370069e110dc9eead389ebba5efda39c78c24628ff7d4272d3b5ae615",
+      "identical": true
+    },
+    {
+      "file": "statistics.csv",
+      "existing_sha256": "31ed19c5bcf803808fe52e435d98a4c0f01e535441ea21282dd125ac248c7de8",
+      "snapshot_sha256": "31ed19c5bcf803808fe52e435d98a4c0f01e535441ea21282dd125ac248c7de8",
+      "identical": true
+    },
+    {
+      "file": "conditional_returns.csv",
+      "existing_sha256": "42ca0c890c2ff6af93ed17e29288c65776a60bcfe388e394c994279dd6befd1f",
+      "snapshot_sha256": "42ca0c890c2ff6af93ed17e29288c65776a60bcfe388e394c994279dd6befd1f",
+      "identical": true
+    },
+    {
+      "file": "controls.csv",
+      "existing_sha256": "76277d4b32c54c8688fbbe02081513d28277818779d3f8ab37bb98c61fe25750",
+      "snapshot_sha256": "76277d4b32c54c8688fbbe02081513d28277818779d3f8ab37bb98c61fe25750",
+      "identical": true
+    },
+    {
+      "file": "ridge_expanding.csv",
+      "existing_sha256": "84f0e35602e1863e995fd9269be2b9a09bb882eb5432b1c2d9766844a70bbe00",
+      "snapshot_sha256": "84f0e35602e1863e995fd9269be2b9a09bb882eb5432b1c2d9766844a70bbe00",
+      "identical": true
+    },
+    {
+      "file": "lane1_reconciliation.csv",
+      "existing_sha256": "c3f81655df984285bfee0f0cd07ddcfd49b271410bf19a7873190bc55d7a7eac",
+      "snapshot_sha256": "c3f81655df984285bfee0f0cd07ddcfd49b271410bf19a7873190bc55d7a7eac",
+      "identical": true
+    },
+    {
+      "file": "registry_preview.csv",
+      "existing_sha256": "0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0",
+      "snapshot_sha256": "0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0",
+      "identical": true
+    }
+  ],
+  "registry_unchanged": true,
+  "registry_matches_new_preview": true,
+  "registry_sha256": "0db86bcbab4aebd4155f4a0c5f44638ff5afc642425733adf10b7d0cd61e6aa0",
+  "live_values_and_sources_unchanged": true,
+  "live_only_new_field_value": "comparison_as_of_utc",
+  "exact_memo_sentence_unchanged": true,
+  "memo_sentence": "\u201cAt letter-close vintages, the kernel agrees with the guide-gap sign in 7/8 W1 and 6/7 W2 cases with |S|>1pp, but the executable next-open 20-day return test does not establish a trading edge.\u201d"
+}

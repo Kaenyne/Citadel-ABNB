@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:164investments/guesty-cli",
+  "url": "https://github.com/164investments/guesty-cli",
+  "name": "164investments/guesty-cli",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CLI for the Guesty property management API with OAuth token caching and rate limiting.",
+  "why_useful": "Generic authenticated client to one's own Guesty portfolio; no public/market data. Named \"164investments\" suggests a real-estate-fund use, i.e. plausible internal ops tooling rather than research data.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "CLI only",
+  "license": "none listed",
+  "last_activity": "2026-09-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Generic authenticated client to one's own Guesty portfolio; no public/market data. Named \"164investments\" suggests a real-estate-fund use, i.e. plausible internal ops tooling rather than research data."
+  ]
+ },
+ {
+  "key": "github:ishandutta2007/awesome-hospitality-channel-manager",
+  "url": "https://github.com/ishandutta2007/Awesome-Hospitality-Channel-Manager",
+  "name": "Awesome-Hospitality-Channel-Manager",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated link list (no data itself) of commercial channel-manager SaaS platforms (SiteMinder, Cloudbeds/myallocator, Cubilis, RateGain, D-EDGE, STAAH, eZee Centrix, HotelRunner, RoomCloud) and open-source integration code (QloApps, frappe/hospitality, ilgala/laravel-wubook, ChannexIO/php-sdk, vBridge/laravel-icalendar). Mentions industry market sizing (~$1.1-1.8B) with no citation. No datasets.",
+  "why_useful": "Map of who the channel-manager vendors are and which have API SDKs, useful as a lead list if the team later wants to pull benchmark blog data from a vendor site (e.g. Cloudbeds/AirDNA market reports), but nothing pullable here itself.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "global",
+  "time_coverage": "n/a (link list, current as of repo)",
+  "size_hint": "README only, no data files",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Map of who the channel-manager vendors are and which have API SDKs, useful as a lead list if the team later wants to pull benchmark blog data from a vendor site (e.g. Cloudbeds/AirDNA market reports), but nothing pullable here itself."
+  ]
+ },
+ {
+  "key": "github:ranatuhin/hostaway-php-sdk",
+  "url": "https://github.com/RanaTuhin/Hostaway-PHP-SDK",
+  "name": "Hostaway-PHP-SDK",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PHP SDK wrapping the Hostaway PMS REST API (listings, reservations, calendars, financials). No committed data; requires a paid Hostaway account + API credentials to pull anything.",
+  "why_useful": "Would let a Hostaway-subscriber host or partner pull realised occupancy/ADR by property if the team ever gets access to a Hostaway account; not usable without credentials the team doesn't have.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "SDK code only",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Would let a Hostaway-subscriber host or partner pull realised occupancy/ADR by property if the team ever gets access to a Hostaway account; not usable without credentials the team doesn't have."
+  ]
+ },
+ {
+  "key": "github:mkaboldy/guesty-client",
+  "url": "https://github.com/mkaboldy/guesty-client",
+  "name": "guesty-client",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PHP wrapper for the Guesty API (property/reservation management). No committed data; requires a paid Guesty account. Last updated Feb 2019 (stale).",
+  "why_useful": "Same pattern as Hostaway SDK \u2014 only useful with a live paid Guesty subscription the team does not have.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "SDK code only",
+  "license": "unknown",
+  "last_activity": "2019-02-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Same pattern as Hostaway SDK \u2014 only useful with a live paid Guesty subscription the team does not have."
+  ]
+ },
+ {
+  "key": "github:dljrealty/guesty-mcp-server",
+  "url": "https://github.com/DLJRealty/guesty-mcp-server",
+  "name": "guesty-mcp-server",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "38 MCP tools exposing a connected Guesty account's reservations, listings, and financials to an AI agent. Requires the operator's own Guesty account credentials; no public data.",
+  "why_useful": "Not usable for us without a Guesty account of our own; flagged only because it shows the shape of data Guesty exposes (occupancy, ADR, reservation pipeline) if we ever partnered with a manager willing to share access.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "MCP server code only",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Not usable for us without a Guesty account of our own; flagged only because it shows the shape of data Guesty exposes (occupancy, ADR, reservation pipeline) if we ever partnered with a manager willing to share access."
+  ]
+ }
+]

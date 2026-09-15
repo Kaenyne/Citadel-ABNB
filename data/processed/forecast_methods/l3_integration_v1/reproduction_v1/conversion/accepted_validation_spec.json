@@ -1,0 +1,32 @@
+{
+  "validation_protocol_status": "accepted_audited_specification_pending_independent_review",
+  "model_id": "conversion_validation_v1_shared_w_four_seasons",
+  "formula": "R_t=lambda_s*(w*GBV_t-1+(1-w)*GBV_t-2)",
+  "units": "R and GBV in USD millions; lambda fraction; w scalar fraction",
+  "fit_window": "2021Q1-2026Q2",
+  "n": 22,
+  "n_parameters": 5,
+  "loss": "USD-level SSE with analytical season-through-origin OLS profile, common bounded w",
+  "descriptive_calibration": {
+    "w": 0.7864784807845561,
+    "lambda_by_season": {
+      "Q1": 0.1293191114179443,
+      "Q2": 0.1322423247632188,
+      "Q3": 0.17302744066064013,
+      "Q4": 0.12111558318740108
+    }
+  },
+  "descriptive_calibration_status": "auditable_fullsample_fit_not_PIT_forecast_or_booking_share",
+  "prospective_free_weight_hurdle": "FAIL",
+  "prospective_hurdle_definition": "USD RMSE lower than identically fitted fixed 2/3 in BOTH matched W1 and W2",
+  "production_benchmark": "existing fixed 2/3 operational engine retained; no new all22 OLS coefficients adopted",
+  "adoption_status": "pending_L4_and_team_review; validation acceptance is separate from model adoption",
+  "parameter_uncertainty": "year-block sensitivity: six calendar years including partial 2026; not precise structural identification",
+  "forbidden_interpretations": [
+    "w as booking-to-stay probability or measured revenue share",
+    "lambda as commission take rate",
+    "in-sample fit as prospective edge",
+    "all future revenue already booked",
+    "double-add FX to reported USD GBV"
+  ]
+}

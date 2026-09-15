@@ -1,0 +1,25 @@
+{
+  "commit": "3da2903e2c78f6beea358819e7c561b07a5f49a3",
+  "check": "model",
+  "started_utc": "2026-09-14T14:11:17.804866+00:00",
+  "commands": [
+    [
+      "C:\\Users\\wille\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "analysis/src/forecast_methods/lane4_model_v2",
+      "-p",
+      "test_model.py",
+      "-v"
+    ]
+  ],
+  "exit_codes": [
+    0
+  ],
+  "tests_passed": 9,
+  "verdict": "PASS",
+  "elapsed_seconds": 0.5310000000172295
+}

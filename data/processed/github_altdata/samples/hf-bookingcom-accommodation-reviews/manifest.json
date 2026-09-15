@@ -1,0 +1,27 @@
+{
+ "slug": "hf-bookingcom-accommodation-reviews",
+ "url": "https://huggingface.co/datasets/Booking-com/accommodation-reviews",
+ "sampled": true,
+ "total_bytes": 5032508,
+ "files": [
+  "hf_booking_train_head.csv",
+  "hf_booking_rectour24_users_head.csv",
+  "hf_api_listing.json",
+  "hf_dataset_card_README.md",
+  "hf_file_sizes.txt"
+ ],
+ "rows": "hf_booking_train_head.csv 8,395 rows (head of train.csv, ~1.6M rows); hf_booking_rectour24_users_head.csv 19,329 rows (head of rectour24/train_users.csv); listing/card/sizes non-tabular",
+ "columns": "train: review_title, review_positive, review_negative, review_score, review_helpful_votes, guest_type, guest_country(anonymised), room_nights, month(check-in), accommodation_id, accommodation_type, accommodation_country, accommodation_score, accommodation_star_rating, location_is_ski/beach/city_center. rectour24 users: user_id + same stay/accommodation fields, no review text.",
+ "date_range": "Reviews published in 2023; only check-in month (1-12) is given, no year/day column. Sample months span 1-12.",
+ "how_pulled": "curl -sL -H 'Range: bytes=0-3000000' 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/train.csv' -o hf_booking_train_head.csv; curl -sL -H 'Range: bytes=0-2000000' '.../resolve/main/rectour24/train_users.csv' -o hf_booking_rectour24_users_head.csv; curl -sL 'https://huggingface.co/api/datasets/Booking-com/accommodation-reviews?full=true' -o hf_api_listing.json; curl -sL '.../resolve/main/README.md'; curl -sIL per file for Content-Length. Python: truncated at last newline, dropped final row, re-saved via pandas.",
+ "full_dataset_size": "10 CSVs, 1.71 GB (usedStorage 1,801,999,068 bytes): train.csv 584 MB (~1.6M reviews, 40k accommodations), val.csv 73 MB, rectour24/train_reviews.csv 554 MB, train_users.csv 168 MB, train_matches.csv 138 MB, val_reviews 69 MB, val_users 21 MB, val_matches 17 MB, test_reviews 67 MB, test_users 21 MB. Full pull: `huggingface-cli download --repo-type dataset Booking-com/accommodation-reviews` or curl each resolve/main URL, no login.",
+ "description": "Booking.com's officially published review corpus: ~1.6M moderated English guest reviews (published 2023) over ~40k accommodations worldwide, one row per review/stay with review text and score, guest_type (solo/couple/group/family), room_nights (length of stay), check-in month, accommodation type/country/star rating and beach/ski/city-centre tags; rectour24/ repackages the same panel as user-accommodation match tasks for the RecTour 2024 challenge. Grain is the individual stay, cross-sectional for one year with month but no year or day. For ABNB it is a competitor party-size and length-of-stay distribution (gap #20) and a Booking.com destination/accommodation-type mix cut (gap #9): in the head, mean room_nights 2.6, median 2, Couple 43%, Family 27%, Solo 18%, Group 12%, Hotel 58% vs Apartment 8%. Not a time series, so it benchmarks levels and seasonal profile, not trends.",
+ "issues": "Licence contradiction a human must decide: the dataset card says 'published under the following non-commercial license' but links CC-BY-SA-4.0 (which permits commercial use); HF metadata just says 'cc'. Treat as non-commercial/research-only for the pitch to be safe. Data is heavily anonymised (guest_country is a fake token, accommodation_id hashed), single year, month only, not point-in-time; selection filter (>=3 topics) biases toward long reviews. Overlaps with RecTour24 dataset we already hold. Sample took the file head only, so ordering bias possible. No failures or dead links.",
+ "source_urls": [
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/train.csv",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_users.csv",
+  "https://huggingface.co/api/datasets/Booking-com/accommodation-reviews?full=true",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/README.md"
+ ],
+ "pulled_at": "2026-09-14"
+}

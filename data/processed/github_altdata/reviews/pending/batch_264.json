@@ -1,0 +1,97 @@
+[
+ {
+  "key": "github:upgo-mcgill/florida-presentation",
+  "url": "https://github.com/UPGo-McGill/florida-presentation",
+  "name": "UPGo-McGill/florida-presentation",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "McGill UPGo presentation materials/analysis prepared for a Florida Realtors conference, on STR market activity in Florida.",
+  "why_useful": "Florida STR supply/pricing angle; could complement Hawaii DBEDT as a state-level STR/tourism data point (gap #8 state-level occupancy mentions Florida bed tax).",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Florida STR supply/pricing angle; could complement Hawaii DBEDT as a state-level STR/tourism data point (gap #8 state-level occupancy mentions Florida bed tax)."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/starkville_analysis",
+  "url": "https://github.com/UPGo-McGill/Starkville_analysis",
+  "name": "UPGo-McGill/Starkville_analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "McGill UPGo analysis of STR activity in the US South, focused on Starkville, MS and similar smaller cities.",
+  "why_useful": "Marginal \u2014 a small-market case study; listed for completeness of the UPGo body of work.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Marginal \u2014 a small-market case study; listed for completeness of the UPGo body of work."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/charlottetown-analysis",
+  "url": "https://github.com/UPGo-McGill/charlottetown-analysis",
+  "name": "UPGo-McGill/charlottetown-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "McGill UPGo STR market analysis for Charlottetown, PEI.",
+  "why_useful": "Marginal small-market Canadian STR case study.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Marginal small-market Canadian STR case study."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/la-analysis",
+  "url": "https://github.com/UPGo-McGill/la-analysis",
+  "name": "UPGo-McGill/la-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "McGill UPGo STR analysis of the Los Angeles market (2019).",
+  "why_useful": "LA is already in our 13-city Inside Airbnb panel; this could be a cross-check dataset/methodology or an earlier vintage (2019) than our current holdings.",
+  "duplicate_of_holding": "Overlaps geography with our existing LA Inside Airbnb coverage but from a different (AirDNA-derived) source and earlier vintage.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "LA is already in our 13-city Inside Airbnb panel; this could be a cross-check dataset/methodology or an earlier vintage (2019) than our current holdings."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/toronto-report",
+  "url": "https://github.com/UPGo-McGill/toronto-report",
+  "name": "toronto-report",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Bookdown report source ('Analysis of Toronto's STR registration system') with chapters on market overview, housing impacts, COVID-era returning listings, regulatory compliance. Has a data/ folder but it is empty (only .DS_Store) -- raw STR data is gitignored/licensed, not committed.",
+  "why_useful": "Confirms Toronto STR registration-compliance analysis exists (regulation angle, gap #12) but no usable data is actually in the repo -- catalogue as method-only pointer.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "license": "MIT",
+  "last_activity": "2021-02-09",
+  "geography": "Toronto, Canada",
+  "time_coverage": "through ~2021 (COVID era)",
+  "size_hint": "report source only, no data files",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Confirms Toronto STR registration-compliance analysis exists (regulation angle, gap #12) but no usable data is actually in the repo -- catalogue as method-only pointer."
+  ]
+ }
+]

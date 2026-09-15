@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:cocrawler/cdx-toolkit",
+  "url": "https://github.com/cocrawler/cdx-toolkit",
+  "name": "cdx-toolkit",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client that queries CDX indexes across both Common Crawl and the Internet Archive Wayback Machine with one API, iterating captures for a given domain/URL pattern and fetching WARC records. (Fetch to this exact URL 404'd on this pass; repo is well-known/widely cited \u2014 verify existence before relying on it.)",
+  "why_useful": "Would generalize our existing airbnb.com CDX/WARC pull (2.08M rows, 3,000 renders) to competitor domains (vrbo.com, booking.com's alternative-accommodation pages, expedia.com) for a comparable point-in-time web-presence panel.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "2008-present (CDX coverage)",
+  "size_hint": "tooling only",
+  "license": "unknown (fetch failed to confirm)",
+  "last_activity": "unverified this pass",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "Would generalize our existing airbnb.com CDX/WARC pull (2.08M rows, 3,000 renders) to competitor domains (vrbo.com, booking.com's alternative-accommodation pages, expedia.com) for a comparable point-in-time web-presence panel."
+  ]
+ },
+ {
+  "key": "github:mattlinebarger/pd-customer-rif-notifications",
+  "url": "https://github.com/mattlinebarger/pd-customer-rif-notifications",
+  "name": "pd-customer-rif-notifications",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script that scrapes the layoffs.fyi Airtable backend directly and posts row information to a Slack channel \u2014 demonstrates a working, minimal API-based pull method for layoffs.fyi's underlying Airtable rather than screen-scraping the site.",
+  "why_useful": "A lightweight, working recipe for pulling layoffs.fyi data programmatically (via its Airtable API) which could be re-run periodically to build our own point-in-time vintage register of headcount events, addressing the point-in-time problem noted for this whole data family.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2023-02-08",
+  "geography": "global",
+  "time_coverage": "n/a (method only)",
+  "size_hint": "n/a",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "A lightweight, working recipe for pulling layoffs.fyi data programmatically (via its Airtable API) which could be re-run periodically to build our own point-in-time vintage register of headcount events, addressing the point-in-time problem noted for this whole data family."
+  ]
+ },
+ {
+  "key": "github:satyamfouzdar/linkedin-employee-count-scraper",
+  "url": "https://github.com/satyamfouzdar/linkedin-employee-count-scraper",
+  "name": "linkedin-employee-count-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A scraper aimed at pulling LinkedIn company employee-count figures (headcount) \u2014 no committed dataset, 0 stars, unclear if still functional against LinkedIn's current anti-scraping measures.",
+  "why_useful": "If it still works, LinkedIn's 'employees on LinkedIn' counter is a widely-used informal headcount proxy for public companies including Airbnb; but this repo shows no evidence of being maintained or of holding any data, and scraping LinkedIn directly would be a terms-of-service question requiring human sign-off per repo rules.",
+  "potential": "low",
+  "license": "not specified",
+  "last_activity": "2023-06-22",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "If it still works, LinkedIn's 'employees on LinkedIn' counter is a widely-used informal headcount proxy for public companies including Airbnb; but this repo shows no evidence of being maintained or of holding any data, and scraping LinkedIn directly would be a terms-of-service question requiring human sign-off per repo rules."
+  ]
+ },
+ {
+  "key": "github:tsegayis122123/tenacious-conversion-engine",
+  "url": "https://github.com/TsegayIS122123/tenacious-conversion-engine",
+  "name": "tenacious-conversion-engine",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A lead-generation system that ingests 'public signal data (Crunchbase, job posts, layoffs.fyi)' to score companies \u2014 built for a benchmark eval, not a data repository per se; no dataset files confirmed.",
+  "why_useful": "Shows a pattern for combining job-posting counts + layoffs signal + Crunchbase into a single 'company health' score, which is conceptually close to what a headcount-momentum indicator for Airbnb would need, but this repo itself has no committed Airbnb-relevant data.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2026-04-24",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Shows a pattern for combining job-posting counts + layoffs signal + Crunchbase into a single 'company health' score, which is conceptually close to what a headcount-momentum indicator for Airbnb would need, but this repo itself has no committed Airbnb-relevant data."
+  ]
+ },
+ {
+  "key": "github:canadianbaconboi/waybackmachinediff",
+  "url": "https://github.com/CanadianBaconBoi/WaybackMachineDiff",
+  "name": "CanadianBaconBoi/WaybackMachineDiff",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small diff viewer (1 star, updated Dec 2024, no license set) for comparing two Wayback Machine snapshots of a page, with automatic HTML-to-Markdown conversion to make diffs readable.",
+  "why_useful": "Generic Wayback-diff tool matching gap #17's 'Wayback Machine tooling (archived airbnb.com pages...)' request \u2014 could be pointed at archived Airbnb help-center or press pages to detect changes (fee-policy wording, new-feature announcements) over time, complementing the fee-panel search-page capture already running per CLAUDE.md.",
+  "potential": "low",
+  "geography": "n/a (generic web tool)",
+  "time_coverage": "n/a",
+  "size_hint": "tiny single-purpose script/viewer",
+  "license": "none declared",
+  "last_activity": "2024-12-20",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Generic Wayback-diff tool matching gap #17's 'Wayback Machine tooling (archived airbnb.com pages...)' request \u2014 could be pointed at archived Airbnb help-center or press pages to detect changes (fee-policy wording, new-feature announcements) over time, complementing the fee-panel search-page capture already running per CLAUDE.md."
+  ]
+ }
+]

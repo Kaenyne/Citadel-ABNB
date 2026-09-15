@@ -1,0 +1,7 @@
+2026-09-13. Initial diagnostic run exited 1 after 0.94 seconds.
+Command: .venv\Scripts\python.exe analysis/src/forecast_methods/refute_b2_mechanism/run.py
+Failure at line 43, pandas.read_csv on the inputs:
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 2 fields in line 7, saw 14
+Cause: the source L0 CSV has comment preamble rows; the new refuter parser omitted comment="#".
+Fix: add comment="#" to the new script's input reads, as the source B2 reader already does.
+No analysis ran, no forecast was registered, no existing source or output file was modified.

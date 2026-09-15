@@ -1,0 +1,19 @@
+{
+  "run_id": "review_v4",
+  "pages": 2,
+  "page_images": {
+    "page-1.png": "7d56681208cad5d6caa3e49c9df5a66302c1afe7d7f1e8e3d19fd42ba788771a",
+    "page-2.png": "7505cf25bb3758d408fa707cd0eba624b54ee0260defdeccf217548032f4df15"
+  },
+  "pdf_sha256": "8bfe0b07dc66b92de8be424e37a557363cf33eb989a6938c6303376d89c8e641",
+  "all_pages_visually_inspected": true,
+  "inspection_result": "PASS: readable 10.5-point body, all content within page bounds, no clipping or overlap, tables and source/status text readable",
+  "independent_parent_visual_review": "review_v3 approved; both final review_v4 page PNGs are byte-identical to approved review_v3 PNGs",
+  "pixel_identical_to_review_v3": true,
+  "change_since_review_v3": "C05 card definition clarifies comparison with prior-year reported blended ADR; no memo content or numerical changes",
+  "conversion_status": "Fixed 2/3 K0 benchmark remains provisional pending accepted L3 conversion validation",
+  "fx_rnpl_status": "Separate L3 inputs pending; unavailable is not zero",
+  "adoption": "UNSIGNED",
+  "tests": "16 tests passed before wording-only C05 repair; final builder consistency checks passed on review_v4",
+  "poppler_warnings": "No display font for Symbol and ArialUnicode; render exit 0; output visually clean"
+}

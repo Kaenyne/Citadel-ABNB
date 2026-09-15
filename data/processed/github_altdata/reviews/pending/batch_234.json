@@ -1,0 +1,143 @@
+[
+ {
+  "key": "github:urbanbigdatacentre/ubdc-airbnb",
+  "url": "https://github.com/urbanbigdatacentre/ubdc-airbnb",
+  "name": "urbanbigdatacentre/ubdc-airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Containerized, continuously-run scraper (Docker + Django/Celery) that has been collecting DAILY snapshots since 2020 of Airbnb listing property characteristics, booking calendars (day-by-day availability), booking policies, host info, and guest reviews for user-defined geographic areas. Method published/validated in PLOS One 2024 (Enhancing our understanding of short-term rental activity: a daily scrape-based approach for Airbnb listings, PMC10849255) which derives occupancy indicators from calendar-state changes. The actual accumulated dataset (30 UK/Scotland TTWAs, monthly estimates Jun-2021 to Dec-2023) is restricted to UBDC staff (researchdata.gla.ac.uk/2056) but the full scraping/estimation codebase is public on GitHub, so the method (daily calendar-diff -> occupancy/review-count series) is directly reusable against any market.",
+  "why_useful": "A working, actively-documented (peer-reviewed) daily-calendar-scrape methodology for STR occupancy/availability reconstruction (relevant to gap #2, realised occupancy) and a template for a from-scratch calendar-based occupancy indicator, even though the underlying UK dataset itself is gated. Also directly scrapes airbnb.com, so per repo rules this is catalogued as method only and must not be run without a human ToS decision.",
+  "potential": "high",
+  "gap_targets": [
+   2
+  ],
+  "geography": "Scotland (30 TTWAs) + 10 other UK TTWAs",
+  "time_coverage": "Daily since 2020; published analysis June 2021-Dec 2023",
+  "size_hint": "unknown (restricted dataset)",
+  "license": "unspecified repo license; data access restricted to UBDC staff",
+  "last_activity": "active research infrastructure as of the PLOS ONE 2024 publication",
+  "duplicate_of_holding": "",
+  "hits": 6,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "A working, actively-documented (peer-reviewed) daily-calendar-scrape methodology for STR occupancy/availability reconstruction (relevant to gap #2, realised occupancy) and a template for a from-scratch calendar-based occupancy indicator, even though the underlying UK dataset itself is gated. Also directly scrapes airbnb.com, so per repo rules this is catalogued as method only and must not be run without a human ToS decision.",
+   "If the associated Glasgow research-data deposit (external, non-GitHub) holds pre-built daily-since-2020 calendar/booking data across many cities, it would be a strong candidate for realized occupancy/booking-lead-time proxies (gaps 2, 3). Flagging the METHOD only, per repo instructions: scraper directly hits airbnb.com \u2014 CLAUDE.md rule 6 says any scrape beyond Inside Airbnb/the sanctioned fee-panel is a ToS decision for a human; do not run this.",
+   "This is the most rigorous public implementation of exactly the method needed for gap #2 (realised occupancy for STRs from a free/buildable source) and this theme's review-count-as-stays-proxy angle: it operationalizes daily calendar diffing plus review accrual into an occupancy indicator, peer-reviewed, with a working codebase we could point at any of our 123 Inside-Airbnb markets if we wanted independent validation of our own stays index methodology.",
+   "Longest-running, still-live daily Airbnb scrape we've found (since 2020, UK-focused), directly targeting reviews/bookings as a stays proxy -- fills gap #1/#2 in kind, but the actual data output is access-restricted so only the method is usable, and it scrapes airbnb.com directly (ToS question, flagged per repo rule 6, not run).",
+   "Directly addresses gap #2 (realised occupancy for STRs) and #17 (methods) with a working, non-review-based occupancy/cancellation-estimation pipeline (calendar-diff method) that is an alternative to the Inside Airbnb San Francisco model already in use; also relevant to gap #3 (booking lead time / cancellation, RNPL thesis) since the companion paper explicitly studies cancellation trends via calendar tracking.",
+   "A peer-reviewed, published methodology for turning raw Airbnb calendar scrapes into occupancy/activity-level indicators without an AirDNA subscription -- directly relevant to gap #2 as an alternative construction method, and cross-relevant to the team's own Inside-Airbnb calendar work. NOTE: running this against airbnb.com is a scraping decision the CLAUDE.md rules reserve for a human (rule 6) -- catalogue only, do not run."
+  ]
+ },
+ {
+  "key": "github:tracey-sneed/new-york-airbnb-listings-2024",
+  "url": "https://github.com/Tracey-Sneed/New-York-Airbnb-Listings-2024",
+  "name": "New-York-Airbnb-Listings-2024",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV `new_york_listings_2024.csv` \u2014 NYC Airbnb listings as of 5 Jan 2024, sourced from Kaggle (vrindakallu/new-york-dataset). This snapshot date falls squarely inside the missing 2023-06\u21922024-03 Local Law 18 window (post-enforcement, ~4 months after the 5 Sep 2023 registration deadline). Data loaded into a SQLite3 db and visualized in Power BI (.pbix template also in repo). 24 commits, no license stated.",
+  "why_useful": "Directly fills gap #1 (NYC dumps 2023-06\u21922024-03 missing from Inside Airbnb's CDN) with an actual point-in-time NYC listings snapshot from inside that window; can be cross-checked against the pre/post LL18 listing-count collapse (22,246\u21924,000) the team already knows about.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "New York City",
+  "time_coverage": "single snapshot, 2024-01-05",
+  "size_hint": "unspecified row count, single CSV + SQLite db",
+  "license": "none stated",
+  "last_activity": "unspecified (24 commits)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (NYC dumps 2023-06\u21922024-03 missing from Inside Airbnb's CDN) with an actual point-in-time NYC listings snapshot from inside that window; can be cross-checked against the pre/post LL18 listing-count collapse (22,246\u21924,000) the team already knows about."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/datasets/vrindakallu/new-york-dataset",
+  "url": "https://www.kaggle.com/datasets/vrindakallu/new-york-dataset",
+  "name": "New York Airbnb Open Data 2024 (Kaggle)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Original Kaggle source for the same 5 Jan 2024 NYC Airbnb listings snapshot mirrored into the Tracey-Sneed GitHub repo above; https://www.kaggle.com/datasets/vrindakallu/new-york-dataset",
+  "why_useful": "Same value as the GitHub mirror (fills the LL18-window NYC gap); listed separately since it's the canonical host and may carry more metadata/columns than the GitHub copy.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "New York City",
+  "time_coverage": "single snapshot, 2024-01-05",
+  "size_hint": "unknown",
+  "license": "Kaggle dataset license (unspecified)",
+  "last_activity": "",
+  "duplicate_of_holding": "same data as Tracey-Sneed/New-York-Airbnb-Listings-2024 candidate above",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Same value as the GitHub mirror (fills the LL18-window NYC gap); listed separately since it's the canonical host and may carry more metadata/columns than the GitHub copy."
+  ]
+ },
+ {
+  "key": "github:silent-j/airbnb-data-analysis",
+  "url": "https://github.com/silent-j/Airbnb-Data-Analysis",
+  "name": "silent-j/Airbnb-Data-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Six committed CSVs (in datasets.zip) for three Spanish cities: barcelona_list.csv, madrid_list.csv, valencia_list.csv (listing/property features) plus barcelona_cal.csv, madrid_cal.csv, valencia_cal.csv (calendar: listing id x date x availability x PRICE for the 12 months forward from Sep 2019). Downloaded directly from insideairbnb.com on 2019-09-18.",
+  "why_useful": "A pre-2023 Inside Airbnb calendar snapshot WITH price data for Madrid/Valencia (not in our 13-city panel) and an older Barcelona vintage than we hold; directly fills gap 1 (historical/archived Inside Airbnb dumps pre-2023) and is one of the few sources with realized forward calendar pricing from that era.",
+  "potential": "high",
+  "gap_targets": [
+   1,
+   2
+  ],
+  "geography": "Barcelona, Madrid, Valencia (Spain)",
+  "time_coverage": "Snapshot taken 18 Sep 2019; calendar covers ~Sep 2019-Oct 2020 forward-looking",
+  "size_hint": "6 CSVs, city listing counts each likely 10k-20k rows (typical Inside Airbnb city size at that date) plus 365-day calendar per listing",
+  "license": "unknown (check repo LICENSE)",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "Older/finer than our held Inside Airbnb 13-city panel (Dec-2022 onward) and older than our 2024-25 calendar vintages; Madrid/Valencia are new geographies for us.",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "A pre-2023 Inside Airbnb calendar snapshot WITH price data for Madrid/Valencia (not in our 13-city panel) and an older Barcelona vintage than we hold; directly fills gap 1 (historical/archived Inside Airbnb dumps pre-2023) and is one of the few sources with realized forward calendar pricing from that era."
+  ]
+ },
+ {
+  "key": "github:edmondodriscoll/airbnb_occupancy",
+  "url": "https://github.com/edmondodriscoll/AirBnB_Occupancy",
+  "name": "AirBnB_Occupancy",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Implements the classic 'San Francisco Budget & Legislative Analyst's Office' review-based occupancy methodology (review rate 30.5%-72%, midpoint 50%, used to convert Inside Airbnb review counts into estimated bookings, x avg length-of-stay per city, capped at 70% occupancy) and proposes a refinement: filters to multi-listing hosts (20+ properties), 365-day-available, Instant-Book-enabled listings (calendar more likely accurate), then scrapes Airbnb's live calendar API for a subset to validate/calibrate against the review-based estimate. Built on Inside Airbnb listings+reviews as the base dataset. No large committed data files found (methodology/code repo, some scraped calendar snapshots for validation).",
+  "why_useful": "Directly the 'San Francisco model' / review-to-booking-ratio occupancy estimator named in the theme; addresses gap #2 (realised occupancy for STRs from a free source) \u2014 gives a concrete, reproducible formula (review rate x ALOS, city-level) we could re-run on our own 123-market Inside Airbnb panel to get an independent occupancy/nights proxy, and the Instant-Book calendar-accuracy filter is a usable refinement for cross-checking Inside Airbnb calendar-derived occupancy.",
+  "potential": "high",
+  "gap_targets": [
+   2
+  ],
+  "geography": "Not city-specific in the base method; validation touches at least one city (methodology generalizable to any Inside Airbnb market)",
+  "time_coverage": "Not specified (uses whatever Inside Airbnb vintage is pulled)",
+  "size_hint": "small code repo, methodology + some scraped validation data",
+  "license": "unspecified",
+  "last_activity": "unknown (not confirmed via API)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "Directly the 'San Francisco model' / review-to-booking-ratio occupancy estimator named in the theme; addresses gap #2 (realised occupancy for STRs from a free source) \u2014 gives a concrete, reproducible formula (review rate x ALOS, city-level) we could re-run on our own 123-market Inside Airbnb panel to get an independent occupancy/nights proxy, and the Instant-Book calendar-accuracy filter is a usable refinement for cross-checking Inside Airbnb calendar-derived occupancy.",
+   "A clean, inspectable open-source reimplementation of the exact review-rate occupancy methodology already used by Inside Airbnb (which we already lean on) plus an independent calendar-based cross-check idea for calibrating that ratio \u2014 useful for validating/adjusting our own occupancy assumptions (gap #2)."
+  ]
+ }
+]

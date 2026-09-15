@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:hari-2782/airbnb-data-warehouse-bi-solution",
+  "url": "https://github.com/Hari-2782/Airbnb-Data-Warehouse-BI-Solution",
+  "name": "Hari-2782/Airbnb-Data-Warehouse-BI-Solution",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "SQL Server/SSIS BI project built on 'Airbnb Open Data' (the well-known NYC-based Kaggle set with extra fields like host verification, cancellation policy, house rules); MIT licensed, 9 stars, most-starred repo found for generic 'airbnb open data' search.",
+  "why_useful": "Marginal -- appears to be the standard single-city NYC Kaggle file with a BI wrapper. Flagged only because it is the highest-starred hit and includes a cancellation_policy field, which is tangential to the RNPL/cancellation-rate thesis (gap 3) if the underlying columns hold real cancellation-policy distributions rather than just the policy label.",
+  "potential": "low",
+  "gap_targets": [
+   3
+  ],
+  "geography": "New York City",
+  "time_coverage": "unspecified NYC Airbnb Open Data vintage",
+  "size_hint": "unspecified, Kaggle NYC-scale",
+  "license": "MIT",
+  "last_activity": "2026-08-30",
+  "duplicate_of_holding": "Likely duplicates the standard NYC Kaggle file already excluded by scope rules; flagged only for the cancellation_policy field angle, otherwise should be treated as excluded boilerplate.",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Marginal -- appears to be the standard single-city NYC Kaggle file with a BI wrapper. Flagged only because it is the highest-starred hit and includes a cancellation_policy field, which is tangential to the RNPL/cancellation-rate thesis (gap 3) if the underlying columns hold real cancellation-policy distributions rather than just the policy label."
+  ]
+ },
+ {
+  "key": "github:bercinersoz/tableau_story_airbnb_preferences_in_10_european_cities",
+  "url": "https://github.com/BercinErsoz/Tableau_Story_Airbnb_Preferences_in_10_European_Cities",
+  "name": "BercinErsoz/Tableau_Story_Airbnb_Preferences_in_10_European_Cities",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Cross-sectional Airbnb listing data for 10 European cities used to build a Tableau story on price drivers (location, reviews, quality). Same underlying source dataset family as the Gy\u00f3di & Nawaro / kraina data (Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, Paris, Rome, Vienna, and one more).",
+  "why_useful": "Another committed copy of the 10-EU-city weekday/weekend price dataset, useful as a redundant/backup source in case the Zenodo/HF hosting is unavailable.",
+  "potential": "low",
+  "geography": "10 EU cities",
+  "time_coverage": "single cross-section, same vintage as Gy\u00f3di & Nawaro data",
+  "size_hint": "not verified (not fetched)",
+  "license": "not verified",
+  "last_activity": "not verified",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "Same underlying dataset as kraina/airbnb entry above",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Another committed copy of the 10-EU-city weekday/weekend price dataset, useful as a redundant/backup source in case the Zenodo/HF hosting is unavailable."
+  ]
+ },
+ {
+  "key": "github:kailash1245/airbnb_data",
+  "url": "https://github.com/KailasH1245/Airbnb_Data",
+  "name": "KailasH1245/Airbnb_Data",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "airbnb_dataset.csv with 100,000 records spanning multiple (unspecified in search snippet) cities; used for SQL/Python analysis of pricing trends, property types, review scores and availability.",
+  "why_useful": "Possible multi-city, larger-than-NYC-2019 committed dataset; needs a direct repo fetch to confirm actual city list/years/source (could be another Kaggle US-cities compilation) before being trusted as incremental.",
+  "potential": "low",
+  "geography": "unconfirmed, described as multi-city",
+  "time_coverage": "unconfirmed",
+  "size_hint": "100,000 rows, single CSV + a zipped copy",
+  "license": "not verified",
+  "last_activity": "not verified",
+  "gap_targets": [],
+  "duplicate_of_holding": "possibly duplicates a Kaggle US-Airbnb-Open-Data style compilation we may already have via peer/other scouts",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Possible multi-city, larger-than-NYC-2019 committed dataset; needs a direct repo fetch to confirm actual city list/years/source (could be another Kaggle US-cities compilation) before being trusted as incremental."
+  ]
+ },
+ {
+  "key": "github:stayapi/airbnb-review-scraper",
+  "url": "https://github.com/stayapi/airbnb-review-scraper",
+  "name": "stayapi/airbnb-review-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "0-star repo (from GitHub topics listing) advertised as scraping Airbnb listing reviews in Python or Node.js 'no proxies, no CAPTCHAs.' Not independently verified beyond the topic-page description.",
+  "why_useful": "Alternative, permissively-licensed method for pulling review text+dates per listing if a small-sample validation of review-count-as-stays-proxy is needed; catalogued as method only (scraping airbnb.com is a ToS decision for a human).",
+  "size_hint": "n/a (tool, not a dataset)",
+  "time_coverage": "n/a",
+  "geography": "any",
+  "license": "MIT",
+  "last_activity": "2026-08-10",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 3,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Alternative, permissively-licensed method for pulling review text+dates per listing if a small-sample validation of review-count-as-stays-proxy is needed; catalogued as method only (scraping airbnb.com is a ToS decision for a human).",
+   "Reviews-only wrapper -- narrower than pyairbnb but purpose-built for the review-date extraction the team's existing 'stays index' (123-market reviews-based nights proxy) already relies on; could be a lighter-weight alternative acquisition method for extending that panel to new markets.",
+   "If genuinely proxy-free, could be a lighter-weight review-text puller than the project's existing 123-market reviews pipeline \u2014 but unverified traction (0 stars) and not fetched directly in this pass; flagged for someone else to verify before relying on it."
+  ]
+ },
+ {
+  "key": "github:epicsaber/airbnb-reviews-scraper",
+  "url": "https://github.com/EpicSaber/airbnb-reviews-scraper",
+  "name": "EpicSaber/airbnb-reviews-scraper (and sibling EpicSaber/airbnb-review-scraper, BigAnomaly/airbnb-reviews-scraper---low-cost)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Thin GitHub wrapper/landing pages pointing to paid Apify actors for Airbnb review scraping; no code or data of substance committed to the repos themselves.",
+  "why_useful": "Marginal: confirms multiple commercial Apify-actor options exist for Airbnb review scraping (market/listing-wide), but nothing here is a usable open dataset or a real open-source method beyond an actor listing link. Flagged for completeness only.",
+  "size_hint": "n/a",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "not confirmed",
+  "last_activity": "2026-06-02",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "Marginal: confirms multiple commercial Apify-actor options exist for Airbnb review scraping (market/listing-wide), but nothing here is a usable open dataset or a real open-source method beyond an actor listing link. Flagged for completeness only."
+  ]
+ }
+]

@@ -1,0 +1,73 @@
+[
+ {
+  "url": "https://github.com/wadefagen/datasets",
+  "slug": "wadefagen-uiuc-open-datasets",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "sample",
+  "category": "other",
+  "data_kind": "stored_dataset",
+  "one_line": "UIUC open-data CSVs committed in-repo (gpa, course-catalog, geneds, teachers-ranked-as-excellent, illini-football, students-by-state); students-by-state is 57 KB keyed Year/Term back to ~2016; 194 stars, last commit 2026-07-07, NO licence file (404 on /license).",
+  "abnb_use": "Only as a toy template: term-level enrolment by home state at one campus is a weak proxy for term-start/term-end domestic travel generation and out-of-state share (gap 11, holiday/academic calendars). It is one campus, so it informs no ABNB KPI directly; value is the panel shape, not the numbers.",
+  "sample_plan": "curl -sL -o students-by-state.csv https://raw.githubusercontent.com/wadefagen/datasets/main/students-by-state/uiuc-students-by-state.csv (57 KB) and the sibling README.md (2 KB); optionally curl -r 0-300000 the gpa/uiuc-gpa-dataset.csv head for the term key. Total < 0.5 MB. Do not clone the whole repo.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified: the six CSVs are really committed and the students-by-state file is 57 KB, last commit 2026-07-07, but there is no LICENSE in the repo (GitHub license endpoint 404s), so redistribution terms are unstated. Single-campus UIUC data cannot measure travel demand at any useful granularity for ABNB; the only plausible use is as a methods template for assembling an academic-calendar / out-of-state-student panel across many campuses. Sampling costs almost nothing, so pull the one small file and catalogue it."
+ },
+ {
+  "url": "https://github.com/jeet787/AirBnB_Impact_Of_Regulation_Paris",
+  "slug": "jeet787-airbnb-regulation-paris-notebook",
+  "exists_and_has_content": true,
+  "usefulness": "none",
+  "verdict": "discard",
+  "category": "academic_replication",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Three files only (AirbnbProject.ipynb 403 KB, a PNG, README); no data committed. README says the input is the Kaggle 'Airbnb Listings & Reviews' set (mysarahmadbhat, 10 cities, 250k listings / 5M reviews) — a well-known static Kaggle file, not Inside Airbnb vintages. Last commit 2025-08-07, no licence.",
+  "abnb_use": "None. The 'findings' are four generic narrative bullets (growth, saturation, regulatory shock, adaptation) with no dated regulation timeline, no city-level event coding, and no listing or price series we do not already hold far better from our 13-city Inside Airbnb panel and 32-factor regulatory event database.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "duplicate_of_existing": "Overlaps our Paris Inside Airbnb panel and the 32-factor regulatory event database, and at a coarser grain (a single undated Kaggle snapshot).",
+  "reasoning": "I fetched the repo tree and the raw README: the only content is one notebook, an image and a README, with the data left on Kaggle. It is exactly the 'merely re-analyses a well-known Kaggle file' case, and the README's regulatory content is qualitative advice rather than a coded timeline. Nothing here is longer, older or finer than what we hold, so discard."
+ },
+ {
+  "url": "https://github.com/dgunning/edgartools",
+  "slug": "dgunning-edgartools",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "MIT-licensed Python library (2.7k stars, 4,388 commits, active through Sep 2026) that turns SEC EDGAR into typed objects: 10-K/10-Q, XBRL standardised concepts, 8-K, 13F, Forms 3/4/5, DEF 14A, N-PORT. No API key or signup — SEC only wants a contact string in the User-Agent; repo also ships /data fixtures, /notebooks and /examples.",
+  "abnb_use": "Gap 4 (point-in-time company data) and gap 18 (book-ahead analogues): filing timestamps are inherent to EDGAR, so this builds vintage-correct quarterly panels for ABNB, BKNG, EXPE, MAR, HLT and — via custom XBRL tags — NCLH/CCL/RCL 'customer deposits / advance ticket sales', the cruise-line deferred-revenue analogue to ABNB's unearned fees. Also gap 15: 13F concentration history and Form 4 insider prints for ABNB.",
+  "sample_plan": "Two keyless steps, both public. (1) Shallow sparse clone for the API surface and fixtures: git clone --depth 1 --filter=blob:none --sparse https://github.com/dgunning/edgartools.git then git sparse-checkout set README.md data examples (skip notebooks if > 5 MB; cap the clone at 25 MB). (2) One keyless proof pull straight from data.sec.gov with a generic contact User-Agent, NOT the user's email: curl -s -H 'User-Agent: citadel-abnb-research contact@example.com' -o abnb_facts_head.json --max-filesize 5000000 https://data.sec.gov/api/xbrl/companyconcept/CIK0001559720/us-gaap/Revenues.json and the same for CIK0001513761 (NCLH) us-gaap/DeferredRevenueCurrent. Head-truncate anything over 5 MB with curl -r 0-5000000. Total <= 15 MB.",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified MIT, 2.7k stars, heavy recent commit activity, and confirmed the library needs only set_identity(contact) rather than a key or paid tier — so it is squarely inside 'keyless pull against a public source'. It is the cleanest route we have found to point-in-time XBRL for ABNB and peers, and to the cruise-line advance-ticket-sales series the kernel-analogue work wants. Sample the repo's own fixtures plus one live EDGAR concept pull to confirm it works before a Fable agent builds on it."
+ },
+ {
+  "url": "https://github.com/AugustLiu0415/BNPL_Merchant_Dataset",
+  "slug": "augustliu-bnpl-merchant-dataset",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "one_line": "Real CSVs committed (verified sizes): data/merchant_list_raw_data/BNPL_Merchant_List.csv 1.8 MB and BNPL_Merchant_Categories.csv 3.4 MB (8,470 merchants across Affirm/Klarna/Afterpay/Zip/Sezzle directories), data/public_company_panel_data/public_company_panel_data_2015-2026.csv 3.1 MB (4,675 firm-quarter SEC rows), plus crosswalk, variable definitions and a 14.8 MB source audit; scraper bnpl_scraper.py 36 KB; last commit 2026-08-10; NO licence file.",
+  "abnb_use": "Gap 3 (RNPL / reserve-now-pay-later) and gap 6 (consumer-credit strength): the merchant directories say which travel and lodging brands carry Affirm/Klarna/Afterpay and — via Internet-Archive CDX adoption dating — roughly when the option appeared, which is the closest public read on whether pay-later financing is spreading through travel booking. The SEC firm-quarter panel is a template for the adoption-window event study rather than an ABNB input.",
+  "sample_plan": "Sparse shallow clone of committed CSVs only, never run bnpl_scraper.py: git clone --depth 1 --filter=blob:none --sparse https://github.com/AugustLiu0415/BNPL_Merchant_Dataset.git then git sparse-checkout set README.md data/merchant_list_raw_data data/public_company_panel_data/public_company_panel_data_2015-2026.csv data/public_company_panel_data/public_company_crosswalk.csv data/public_company_panel_data/public_company_panel_variable_definitions.csv data/adoption_date_data. Explicitly EXCLUDE public_company_panel_source_audit.csv (14.8 MB) and the .xlsx twins. Expected ~9 MB; if the clone exceeds 25 MB fall back to raw.githubusercontent.com curls of the four named files. Then grep the merchant list for Airbnb/Vrbo/Expedia/Booking/Marriott/Hilton.",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed the data directories exist with substantive committed CSVs and a 2026-08-10 commit, so this is a stored dataset, not vapour. Two flags: there is no LICENSE file, and the collection method is a scraper against five third-party BNPL merchant directories — pulling the already-committed CSVs is fine, but re-running bnpl_scraper.py is a terms-of-service call for a human, so the sample plan takes files only. Its travel-merchant rows are a genuinely novel angle on the RNPL thesis that nothing else we hold covers."
+ },
+ {
+  "url": "https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction",
+  "slug": "maec-multimodal-earnings-call-corpus",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "social_text_news",
+  "data_kind": "both",
+  "one_line": "CC-BY-SA-4.0 corpus of S&P 1500 earnings calls, in-repo MAEC_Dataset/ ~147.7 MB as one folder per call named YYYYMMDD_TICKER (verified: 1,000+ folders, earliest 20150225_LMAT) each holding text.txt plus a low-level audio features.csv; also MAEC_Dataset_Person_Label/ and an Iterative Forced Alignment pipeline (Python 3.5, pydub/aeneas/ffmpeg). 59 GB of MFCC .npy features live on Google Drive. 107 stars, 25 forks, last commit 2022-01-11.",
+  "abnb_use": "Gap 17 / management-tone methods: a licensed, speaker-labelled peer-tone benchmark covering 2015-2018 calls for travel peers already in our panel (EXPE, MAR, HLT, PCLN/BKNG) that predates ABNB's IPO, so it is a training/calibration corpus for a tone measure rather than an ABNB series. The forced-alignment code is a worked example for aligning ABNB call audio to our own transcripts if we ever want delivery features alongside text.",
+  "sample_plan": "Sparse shallow clone, take only a handful of call folders: git clone --depth 1 --filter=blob:none --sparse https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction.git then git sparse-checkout set README.md LICENSE 'Iterative Forced Alignment' and add at most 6-8 individual call directories under MAEC_Dataset (use gh api .../contents/MAEC_Dataset to find EXPE/MAR/HLT/PCLN folder names first, e.g. MAEC_Dataset/2015*_EXPE). Do NOT sparse-checkout all of MAEC_Dataset (147.7 MB) and do NOT touch the 59 GB Google Drive link. Target <= 10 MB. Record the full ticker/date folder list (paginate gh api contents) as an index even though the bodies are not pulled.",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified in the tree: LICENSE (CC-BY-SA-4.0, so reuse with attribution is permitted), MAEC_Dataset with per-call folders keyed YYYYMMDD_TICKER starting Feb 2015, and the alignment code; repo has been dormant since Jan 2022, so it ends well before ABNB's covered history. Coverage is pre-2020 S&P 1500, meaning no ABNB calls at all — the value is peer-tone calibration and the alignment method, and our own tone tests have already failed once, so this is catalogue-and-index rather than a signal candidate. A small sparse sample of a few travel-peer call folders plus the full folder index is enough to record what the corpus contains."
+ }
+]

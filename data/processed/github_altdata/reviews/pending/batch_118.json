@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:itamarst/cambridge-dining",
+  "url": "https://github.com/itamarst/cambridge-dining",
+  "name": "itamarst/cambridge-dining",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Committed CSV `2020-2022vs2019_Seated_Diner_Data.csv` \u2014 OpenTable 'State of the Industry' seated-diner counts for Cambridge, MA, day-by-day 2020-2022 vs matched 2019 baseline dates, plus a MA COVID case-count CSV for comparison. Data manually pulled from opentable.com/state-of-industry, not scraped/API. Jupyter notebook does the analysis.",
+  "why_useful": "OpenTable seated-diners is explicitly named in gap #6 as a public consumer/leisure-spend indicator; this repo shows a working method to pull/parse it, even though scope (one city) is narrow.",
+  "potential": "low",
+  "geography": "Cambridge, MA, US",
+  "time_coverage": "unclear, likely 2020-2022 COVID era",
+  "size_hint": "single-city, small repo, 0 stars",
+  "license": "unspecified",
+  "last_activity": "2022-02-25",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data",
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "OpenTable seated-diners is explicitly named in gap #6 as a public consumer/leisure-spend indicator; this repo shows a working method to pull/parse it, even though scope (one city) is narrow.",
+   "Directly matches numbered gap 6 (OpenTable seated-diners as a consumer/leisure-spend proxy) and shows the exact public OpenTable page + CSV shape to replicate for other/more recent cities and dates relevant to ABNB quarters, though this instance is COVID-era and single-city so it is a template, not usable data as-is."
+  ]
+ },
+ {
+  "key": "github:imjakedaniels/restaurant_shutdown_toronto",
+  "url": "https://github.com/imjakedaniels/restaurant_shutdown_toronto",
+  "name": "imjakedaniels/restaurant_shutdown_toronto",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Year-over-year seated-customer counts from the OpenTable network for Toronto restaurants, limited to March 2020 (COVID shutdown period).",
+  "why_useful": "Another OpenTable seated-diners method/dataset (gap #6), but the time window is a single month during COVID onset, so of limited use as a live consumer-strength proxy for 2026 forecasting.",
+  "potential": "low",
+  "geography": "Toronto, Canada",
+  "time_coverage": "March 2020 only",
+  "size_hint": "tiny, 0 stars",
+  "license": "unspecified",
+  "last_activity": "2020-03-30",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "Another OpenTable seated-diners method/dataset (gap #6), but the time window is a single month during COVID onset, so of limited use as a live consumer-strength proxy for 2026 forecasting."
+  ]
+ },
+ {
+  "key": "github:itshyunseunglee/jeju-card-analysis",
+  "url": "https://github.com/itshyunseunglee/jeju-card-analysis",
+  "name": "itshyunseunglee/jeju-card-analysis",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Jeju Island (South Korea) regional card-spending dataset 2017-2018, used to analyze where/when a cafe would do well by area and time.",
+  "why_useful": "A worked example of a national card-spend dataset by region/time outside the US/EU, structurally analogous to what a BBVA/CaixaBank/Norges Bank card panel would look like (regional card spend by merchant category); could serve as an APAC/Korea travel-adjacent consumer-spend proxy, though geography (Jeju, a tourist island) and vintage (2017-18) are dated and not KTO/travel-specific.",
+  "potential": "low",
+  "geography": "Jeju Island, South Korea",
+  "time_coverage": "2017-2018",
+  "size_hint": "small, 0 stars",
+  "license": "unspecified",
+  "last_activity": "2026-05-31",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "A worked example of a national card-spend dataset by region/time outside the US/EU, structurally analogous to what a BBVA/CaixaBank/Norges Bank card panel would look like (regional card spend by merchant category); could serve as an APAC/Korea travel-adjacent consumer-spend proxy, though geography (Jeju, a tourist island) and vintage (2017-18) are dated and not KTO/travel-specific."
+  ]
+ },
+ {
+  "key": "github:ooi-darren/project-007-global-consumer-spending",
+  "url": "https://github.com/ooi-darren/project-007-global-consumer-spending",
+  "name": "ooi-darren/project-007-global-consumer-spending",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "MIT-licensed, 10-commit repo with a 182-country annual consumer-spending panel (data/processed/master_consumer_spending.csv), 2013-2023, built from World Bank household consumption expenditure/GDP/population/urbanisation/internet-penetration data, World Bank Worldwide Governance Indicators, and OECD 12-category (COICOP) household spending shares for 36 countries (category_spending_shares_oecd.csv), plus a latest_year_snapshot.csv and a UN M49 region-mapping file. No isolated travel/tourism/accommodation spend category confirmed; annual frequency only.",
+  "why_useful": "Marginal: annual, country-level, non-point-in-time macro consumption data that mostly duplicates World Bank/OECD/Eurostat series the team likely already has cheaper access to (and does not isolate travel spend); the COICOP category-share file for 36 countries could be a minor cross-check for discretionary-spend share trends by country, but nothing here is finer-grained or more current than existing holdings.",
+  "geography": "182 countries (36 with OECD category detail)",
+  "time_coverage": "2013-2023, annual",
+  "size_hint": "Small (~182 rows x few dozen columns for the main panel; ~36 rows for category shares)",
+  "license": "MIT",
+  "last_activity": "10 commits total; recent given repo is a 2026-era portfolio project, exact date not confirmed",
+  "duplicate_of_holding": "Overlaps with existing Eurostat/BEA PCE/OECD consumer-confidence holdings; adds little",
+  "gap_targets": [
+   6
+  ],
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "Marginal: annual, country-level, non-point-in-time macro consumption data that mostly duplicates World Bank/OECD/Eurostat series the team likely already has cheaper access to (and does not isolate travel spend); the COICOP category-share file for 36 countries could be a minor cross-check for discretionary-spend share trends by country, but nothing here is finer-grained or more current than existing holdings."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/txn",
+  "url": "https://github.com/api-evangelist/txn",
+  "name": "api-evangelist/txn",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A documentation/profile repo (part of Kin Lane's 'API Evangelist' API-directory project) describing TXN Solutions Inc., a San Francisco fintech that captures consumer transactions directly from credit/debit cards for spending analytics and competitive intelligence. Contains no data files itself, only a write-up/profile pointing at TXN's commercial product (https://txnsolutions.com or similar, not independently verified).",
+  "why_useful": "Not itself a data source - flags a commercial (licensed, likely paid) card-transaction data vendor that could be worth a human licensing conversation, but nothing free or open is in the repo.",
+  "geography": "US (vendor claim, unverified)",
+  "time_coverage": "Unknown - vendor product, not a static dataset",
+  "size_hint": "N/A (documentation only, no data)",
+  "license": "Unknown / commercial vendor, repo itself likely CC/MIT for the write-up only",
+  "last_activity": "Unknown",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   6
+  ],
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "Not itself a data source - flags a commercial (licensed, likely paid) card-transaction data vendor that could be worth a human licensing conversation, but nothing free or open is in the repo."
+  ]
+ }
+]

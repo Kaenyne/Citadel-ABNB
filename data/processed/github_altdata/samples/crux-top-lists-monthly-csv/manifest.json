@@ -1,0 +1,32 @@
+{
+  "slug": "crux-top-lists-monthly-csv",
+  "url": "https://github.com/zakird/crux-top-lists",
+  "sampled": true,
+  "total_bytes": 258062,
+  "files": [
+    "travel_origins_filtered.csv",
+    "global_202608_head2000.csv",
+    "us_202608_head2000.csv"
+  ],
+  "rows": "travel_origins_filtered.csv: 2,474 rows (filtered from 9 x 1,000,000-row monthly files); global_202608_head2000.csv: 2,000 rows (first 2,000 of 1,000,000); us_202608_head2000.csv: 2,000 rows (first 2,000 of 1,000,000)",
+  "columns": "raw files: origin, rank (bucketed: 1000/5000/10000/50000/100000/500000/1000000; 2021-22 files use only 1k/10k/100k/1M). filtered file adds scope (global|us), month (YYYYMM or 'current'), brand",
+  "date_range": "Sampled months 202102, 202201, 202301, 202401, 202501, 202601, 202608, current (=202608); US country file 202608 only. Repo global coverage 2021-02 to 2026-08 (monthly, 67 files); per-country dirs (238 countries) 2025-01 onward only.",
+  "how_pulled": "for m in 202102 202201 202301 202401 202501 202601 202608 current; do curl -sL -o global_$m.csv.gz https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/$m.csv.gz; done; curl -sL -o us_202608.csv.gz https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/country/us/202608.csv.gz; python (pandas) read each gz, regex-match origins whose registrable domain is airbnb|vrbo|booking|expedia|vacasa|hotels|agoda|tripadvisor|kayak|hostelworld|marriott|hilton|sonder|homeaway|trivago|priceline|hopper|evolve|plumguide -> travel_origins_filtered.csv; zcat | head -2001 for the two raw heads. Raw gz files (~9 MB each, 79 MB total) left in scratchpad, not stored.",
+  "full_dataset_size": "Global: 67 monthly csv.gz (2021-02..2026-08) + current.csv.gz, ~8.6-9.4 MB gz each, 1,000,000 rows each (~600 MB gz, 67M rows). Country: 238 country dirs x 20 months (2025-01..2026-08), ~8 MB gz each, 1M rows each (~38 GB gz, 4.8B rows). Whole repo ~40 GB; clone only with --filter=blob:none and sparse-checkout.",
+  "description": "Monthly snapshots of the Chrome User Experience Report (CrUX) top-1M origins, cached as CSV from Google BigQuery by Zakir Durumeric's group (Stanford). Grain is origin x month with an order-of-magnitude rank bucket (top 1k / 5k / 10k / 50k / 100k / 500k / 1M), global since Feb 2021 and per-country since Jan 2025; ranking is by real Chrome page loads, so it is a dated, point-in-time engagement measure. For ABNB an analyst would track airbnb.com, vrbo.com, booking.com, expedia.com, vacasa.com and the country origins (airbnb.co.uk, airbnb.fr, airbnb.com.au, ...) across months and countries as a popularity series against Google Trends and Similarweb. The sample shows the limitation: airbnb.com sits in the global 5k bucket (10k before the 2023 bucket refinement) and the US 1k bucket in every sampled month, so the bucketed rank is too coarse to move quarter-to-quarter; the useful signal, if any, is in regional origins and bucket transitions of smaller peers (vacasa.com fell 100k -> 500k by 2026-01).",
+  "issues": "Coverage begins 2021-02, not ~2018 as the job card claimed (CrUX rank data itself starts 2021-02). Per-country files exist only from 2025-01. Ranks are bucketed by magnitude with random order inside a bucket, so no fine-grained rank series exists for airbnb.com (constant bucket in all sampled months). Licence: no LICENSE file in the repo; README says data is queried from the public CrUX BigQuery dataset, which is under Google's CrUX terms (CC BY 4.0 for the BigQuery dataset per Google docs) - human should confirm before publication. Brand filter uses domain-name regex; 'hotels', 'evolve', 'hopper', 'sonder' brands include unrelated lookalike domains and should be re-checked before use. Raw 1M-row files not stored (25 MB cap); only filtered rows and 2,000-row heads kept.",
+  "source_urls": [
+    "https://github.com/zakird/crux-top-lists",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/README.md",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/202102.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/202201.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/202301.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/202401.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/202501.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/202601.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/202608.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/global/current.csv.gz",
+    "https://raw.githubusercontent.com/zakird/crux-top-lists/HEAD/data/country/us/202608.csv.gz"
+  ],
+  "pulled_at": "2026-09-14"
+}

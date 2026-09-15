@@ -1,0 +1,131 @@
+[
+ {
+  "key": "other:https://huggingface.co/datasets/foursquare/fsq-os-places",
+  "url": "https://huggingface.co/datasets/foursquare/fsq-os-places",
+  "name": "Foursquare Open Source Places (FSQ OS Places)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Foursquare's open-sourced global places dataset (Apache 2.0 license), ~100M+ POI records (dataset docs cite up to ~1B rows counting historical/duplicate entries; ~239GB total across parquet files for places + a separate categories file). Commercial categories include hotels/lodging, restaurants, retail; 34 non-commercial categories (airports, cities, taxi stands, etc.) are flagged for filtering out. Distributed as Parquet on Hugging Face (gated download, free after accepting terms); no GitHub repo found for a companion access tool as of this check.",
+  "why_useful": "Gap #20/#8/#9: a free, global, commercially-licensed (Apache 2.0) alternative POI census to build a worldwide hotel/lodging count by city and to identify non-Airbnb short-term-rental-adjacent venues (hostels, vacation rental offices) as a supply cross-check; could also proxy tourism-attraction density by market for demand normalization.",
+  "potential": "high",
+  "geography": "Global",
+  "time_coverage": "Single current snapshot (released 2024); unclear if historical snapshots are retained",
+  "license": "Apache 2.0",
+  "size_hint": "~239 GB total, ~100M+ POI records",
+  "last_activity": "2024 release, referenced as current",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Gap #20/#8/#9: a free, global, commercially-licensed (Apache 2.0) alternative POI census to build a worldwide hotel/lodging count by city and to identify non-Airbnb short-term-rental-adjacent venues (hostels, vacation rental offices) as a supply cross-check; could also proxy tourism-attraction density by market for demand normalization."
+  ]
+ },
+ {
+  "key": "github:junjielyu13/aiguadebarcelona_datachallenge",
+  "url": "https://github.com/junjielyu13/AiguaDeBarcelona_DataChallenge",
+  "name": "AiguaDeBarcelona_DataChallenge",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Barcelona water utility (Aig\u00fces de Barcelona) data-challenge repo: water consumption measured by meter, broken out by industrial / domestic / tourism-sector use, by geographical region within Barcelona, for 2019-2021 (pre/post-COVID span). Repo structure has db/, model/, src/, app.py (Flask), requirements.txt; described as analysing consumption 'by industrial, domestic and tourism factors using AI'. Apache-2.0 licensed. Exact row/column counts and CSV filenames not confirmed by the fetch (would need a clone to see db/ contents).",
+  "why_useful": "Barcelona is one of our 13 held Inside Airbnb panel cities. A tourism-sector water-consumption series by district, spanning a COVID collapse and recovery, is a genuine independent occupancy proxy for a market we already track \u2014 directly on-theme for 'utility consumption as occupancy proxy' and could cross-check the Barcelona Inside Airbnb reviews-based stays index.",
+  "potential": "high",
+  "geography": "Barcelona, Spain (sub-city regional breakdown)",
+  "time_coverage": "2019-2021",
+  "size_hint": "unknown row count; multi-year meter-level utility data by sector/region",
+  "license": "Apache-2.0",
+  "last_activity": "2022-12-18",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Barcelona is one of our 13 held Inside Airbnb panel cities. A tourism-sector water-consumption series by district, spanning a COVID collapse and recovery, is a genuine independent occupancy proxy for a market we already track \u2014 directly on-theme for 'utility consumption as occupancy proxy' and could cross-check the Barcelona Inside Airbnb reviews-based stays index."
+  ]
+ },
+ {
+  "key": "github:eugeniopaglino/hurricanes_and_migration",
+  "url": "https://github.com/eugeniopaglino/Hurricanes_and_Migration",
+  "name": "Hurricanes_and_Migration",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Complete county-to-county migration flow matrices built from IRS-SOI data, 1998-2015, as CSVs in outflows/ and inflows/ folders (yearly matrices e.g. 0101in.csv, plus aggregated outflow.csv/inflow.csv). Also ships hurricanes.json: US federal disaster assistance records 1990-2018 with affected county FIPS, costs, casualties, dates. Python scripts analyze migration response to Katrina and Sandy.",
+  "why_useful": "Long, clean, ready-to-use IRS migration panel (1998-2015) at county level -- can be extended/joined with post-2015 IRS SOI vintages to build a second-home / relocation proxy for STR demand in destination counties (sunbelt/vacation-market in-migration), and the hurricane-shock design is a template for isolating migration-driven demand shifts.",
+  "potential": "high",
+  "geography": "US, county-level",
+  "time_coverage": "1998-2015 (migration); 1990-2018 (hurricanes)",
+  "size_hint": "~18 annual matrix pairs + 2 aggregate CSVs + 1 JSON",
+  "license": "unspecified",
+  "last_activity": "2019-07-31",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Long, clean, ready-to-use IRS migration panel (1998-2015) at county level -- can be extended/joined with post-2015 IRS SOI vintages to build a second-home / relocation proxy for STR demand in destination counties (sunbelt/vacation-market in-migration), and the hurricane-shock design is a template for isolating migration-driven demand shifts.",
+   "Longer span than the mathewhauer repo (through 2015) and pairs migration directly with hurricane/disaster shocks by county \u2014 directly useful for gap 11 (events/shocks, hurricanes) and for modeling population/second-home exposure to storm-affected STR markets (Florida, Gulf Coast, coastal Northeast)."
+  ]
+ },
+ {
+  "key": "github:worldbank/blackmarbler",
+  "url": "https://github.com/worldbank/blackmarbler",
+  "name": "blackmarbler",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (World Bank DIME) that automates downloading and processing NASA Black Marble (VIIRS-derived) daily/monthly/annual nighttime-lights composites from NASA LAADS DAAC and aggregating radiance to any user-defined WGS84 polygon. No committed raw data (requires free NASA bearer token); demonstrated with 2012-2022+ near-real-time data (daily lag ~1 week). Actively maintained World Bank org repo.",
+  "why_useful": "Same use case as blackmarblepy for teams working in R; redundant capability, listed for completeness.",
+  "potential": "high",
+  "geography": "global, user-selected ROI",
+  "time_coverage": "2012-present, user-selected range",
+  "size_hint": "no committed data",
+  "license": "Other (permissive, World Bank)",
+  "last_activity": "2026-09-06",
+  "gap_targets": [
+   2,
+   7
+  ],
+  "duplicate_of_holding": "same capability as blackmarblepy above",
+  "hits": 2,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Same use case as blackmarblepy for teams working in R; redundant capability, listed for completeness.",
+   "One-command, point-in-time-capable pull of nightlights for any Airbnb market polygon (city/region) as a tourism/economic-activity proxy at monthly or even daily granularity, addressing gap #5 (engagement/activity proxies) and the broader satellite-tourism-activity theme; because it hits NASA's archive directly it could be re-run vintage-by-vintage for point-in-time construction."
+  ]
+ },
+ {
+  "key": "github:hec10r/stalker-challenge",
+  "url": "https://github.com/hec10r/stalker-challenge",
+  "name": "stalker-challenge",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A solved take-home 'Stalker Challenge' from AllTheRooms (an STR analytics vendor named explicitly in our gap #2). Repo is a single Jupyter notebook (StalkerChallenge.ipynb); the original challenge dataset lives at alltherooms.github.io and was not independently verified as still live in this pass -- needs a follow-up fetch of that link and the notebook contents to confirm what STR fields (ADR, occupancy, listing counts) the challenge dataset actually contains and for which market/year.",
+  "why_useful": "Not an STR-vendor dataset at all, but the Gowalla check-in dataset it points to is directly named in CONTEXT.md gap #20 (geotagged tourism/check-in datasets for party-size/group-travel/cross-border proxies) -- worth noting as a rediscovery path to that Stanford dataset via a real-estate-tech hiring challenge, and evidence AllTheRooms itself does not expose free market data even for recruiting purposes.",
+  "potential": "medium",
+  "license": "unspecified",
+  "last_activity": "2020-05-05",
+  "geography": "global (Gowalla users)",
+  "time_coverage": "Gowalla dataset: Feb 2009-Oct 2010 (per SNAP)",
+  "size_hint": "Gowalla external dataset: ~6.4M check-ins (per SNAP listing, not re-verified here)",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Not an STR-vendor dataset at all, but the Gowalla check-in dataset it points to is directly named in CONTEXT.md gap #20 (geotagged tourism/check-in datasets for party-size/group-travel/cross-border proxies) -- worth noting as a rediscovery path to that Stanford dataset via a real-estate-tech hiring challenge, and evidence AllTheRooms itself does not expose free market data even for recruiting purposes.",
+   "AllTheRooms is one of the named realised-ADR/occupancy vendors we are missing (gap #2); a public hiring-challenge dataset from them, even a toy sample, could hint at their schema or, if the full challenge dataset is still hosted, provide an actual small STR panel with real ADR/occupancy for at least one market."
+  ]
+ }
+]

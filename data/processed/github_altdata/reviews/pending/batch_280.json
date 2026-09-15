@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:ryokawada/inbound-tourism-analysis-jp",
+  "url": "https://github.com/RyoKawada/inbound-tourism-analysis-jp",
+  "name": "inbound-tourism-analysis-jp",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Quantitative analysis repo combining JNTO inbound-visitor data with Bank of Japan (BOJ) FX data specifically to study FX impact on Japan inbound tourism; likely holds a merged JNTO + FX time series and regression/analysis code.",
+  "why_useful": "Directly on-thesis for ABNB's FX-and-travel-demand angle (APAC/Japan mix, yen weakness driving inbound tourism) -- a pre-built JNTO+FX joined dataset would save reconstruction work; still needs inspection for the underlying JNTO series length and whether raw files are committed.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "not confirmed",
+  "size_hint": "not confirmed",
+  "license": "not confirmed",
+  "last_activity": "2026-03-05",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Directly on-thesis for ABNB's FX-and-travel-demand angle (APAC/Japan mix, yen weakness driving inbound tourism) -- a pre-built JNTO+FX joined dataset would save reconstruction work; still needs inspection for the underlying JNTO series length and whether raw files are committed."
+  ]
+ },
+ {
+  "key": "github:daniele1388/dwh---global-tourism-project",
+  "url": "https://github.com/Daniele1388/DWH---Global-Tourism-Project",
+  "name": "DWH - Global Tourism Project",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "SQL data warehouse built from UN Tourism (UNWTO) statistics: five committed CSV datasets covering domestic tourism, inbound tourism, outbound tourism, tourism industries, and SDG tourism indicators (8.9.1, 8.9.2, 12.b.1), global country coverage, 1995-2022. Repo has Datasets/ (raw CSVs, delimiter-modified for SQL Server), Scripts/ (SQL bronze->silver->gold transforms), Tests/ folders; medallion architecture with star-schema fact/dimension views. MIT licence, last commit ~22 Apr 2026.",
+  "why_useful": "A 27-year global UNWTO arrivals panel already structured as relational tables (countries x years x metrics) would be a fast way to get comparison-country context (Mexico, Brazil, Thailand, Indonesia, India, Korea, Japan, Australia, Canada) without re-scraping unwto.org, which no longer offers free bulk downloads.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Global",
+  "time_coverage": "1995-2022",
+  "size_hint": "not confirmed (needs inspection; described as 'complete' SQL DWH)",
+  "license": "not confirmed",
+  "last_activity": "2026-04-22",
+  "duplicate_of_holding": "Overlaps wbgapi WDI ST.INT.ARVL series but UNWTO's own bulletin figures sometimes differ from WDI's UNWTO-sourced copy and this repo's build predates any WDI revision lag",
+  "hits": 3,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys",
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "A 27-year global UNWTO arrivals panel already structured as relational tables (countries x years x metrics) would be a fast way to get comparison-country context (Mexico, Brazil, Thailand, Indonesia, India, Korea, Japan, Australia, Canada) without re-scraping unwto.org, which no longer offers free bulk downloads.",
+   "A broader, longer-run (1995-2022) global UNWTO panel than what we hold (Eurostat tour_ce_omr is EU-only, 2018-2026). Could give regional tourism-arrivals/expenditure trend context for LatAm/APAC gap (#7) and a cross-check series for global travel demand, though it is a re-shaped mirror of published UNWTO tables, not new primary data.",
+   "A global, multi-decade UNWTO inbound/outbound tourism panel (which typically includes tourism-receipts-in-balance-of-payments series) mirrored with committed CSVs rather than needing a fresh UNWTO portal pull; useful for regional (LatAm/APAC) travel-demand cross-checks per gap #7 and as a broader denominator for ABNB regional nights."
+  ]
+ },
+ {
+  "key": "github:disclouded/ds2500_final",
+  "url": "https://github.com/Disclouded/DS2500_final",
+  "name": "DS2500_final (UNWTO key tourism statistics extract)",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A student project's cleaned data pull, explicitly sourced and linked to https://www.unwto.org/tourism-statistics/key-tourism-statistics -- i.e. a committed, cleaned CSV extracted from UNWTO's own 'Key Tourism Statistics' Excel workbook (country-level arrivals, receipts, expenditures by year).",
+  "why_useful": "UNWTO's official Key Tourism Statistics workbook is the primary global-arrivals reference this theme is built around; a pre-cleaned copy avoids re-downloading/re-parsing UNWTO's Excel file (which requires registration/paywall for the very latest editions in some years).",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Global",
+  "time_coverage": "not confirmed vintage of the UNWTO KTS workbook used",
+  "size_hint": "small (single project dataset)",
+  "license": "not confirmed",
+  "last_activity": "2024-12-14",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "UNWTO's official Key Tourism Statistics workbook is the primary global-arrivals reference this theme is built around; a pre-cleaned copy avoids re-downloading/re-parsing UNWTO's Excel file (which requires registration/paywall for the very latest editions in some years).",
+   "Marginal \u2014 a cleaned copy of the UNWTO key tourism statistics page, useful only as a quick-reference table, not a substantial new panel."
+  ]
+ },
+ {
+  "key": "github:lmeulen/easyeurostat",
+  "url": "https://github.com/lmeulen/EasyEuroStat",
+  "name": "lmeulen/EasyEuroStat",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Package for downloading Eurostat datasets by code, 13 stars, updated 2026-04-03, MIT.",
+  "why_useful": "Alternate simple Eurostat downloader for tour_occ/tour_ce dataset codes if pyrostat/opensdmx have friction.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2026-04-03",
+  "geography": "EU",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Alternate simple Eurostat downloader for tour_occ/tour_ce dataset codes if pyrostat/opensdmx have friction."
+  ]
+ },
+ {
+  "key": "github:petres/eurostat",
+  "url": "https://github.com/petres/eurostat",
+  "name": "petres/eurostat",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Eurostat and OECD download tool with Stata and Excel export support, 11 stars, updated 2026-03-27.",
+  "why_useful": "Alternate Eurostat+OECD puller; Stata/Excel export could be handy for the model pipeline; OECD reach also touches tourism satellite-account tables.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "unspecified",
+  "last_activity": "2026-03-27",
+  "geography": "EU/OECD",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Alternate Eurostat+OECD puller; Stata/Excel export could be handy for the model pipeline; OECD reach also touches tourism satellite-account tables."
+  ]
+ }
+]

@@ -1,0 +1,51 @@
+{
+  "theme": "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"waybackpy\"",
+    "gh search repos \"wayback machine cdx airbnb\"",
+    "gh search repos \"cdx-toolkit OR cdx-index-client\"",
+    "gh search repos \"internet archive scraper dataset\"",
+    "gh search repos \"wayback scraper\"",
+    "gh search repos \"airbnb wayback\""
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/akamhy/waybackpy",
+      "name": "waybackpy",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "General-purpose Python client + CLI for the Wayback Machine API: save a URL, get the nearest/oldest/newest snapshot, list all snapshots of a URL via the CDX API, and download snapshot HTML. No committed dataset, MIT licensed, 604 stars, actively updated (last commit Aug 2026). Not Airbnb-specific.",
+      "why_useful": "Could be pointed at archived airbnb.com search/city pages, archived AirDNA/Mashvisor market-stat pages, or archived Inside Airbnb download pages to reconstruct a point-in-time history of listing counts, ADR estimates, or occupancy claims that are no longer live -- directly useful for point-in-time discipline (rule 2) if a human decides this is within the sanctioned-scraping boundary (rule 6). This is a tool, not a dataset, so it does not by itself close a gap; it would need a follow-up scrape job against specific historical URLs, which per CLAUDE.md rule 6 requires a human go/no-ahead before touching airbnb.com even via an archive.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/rockhazard/wayback_scraper",
+      "name": "wayback_scraper (rockhazard)",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Python tool to download and reconstruct entire archived websites from the Wayback Machine (fetches all resources for a given URL/date range), MIT licensed, updated Jul 2026, 1 star. No data committed, generic.",
+      "why_useful": "Same acquisition-method use case as waybackpy but page-reconstruction rather than API querying -- would let a researcher pull a full archived AirDNA or Mashvisor city-report page (not just text) for manual reading. Very small/low-maturity repo (1 star), unclear reliability.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/dtanders/wayback-scraper",
+      "name": "wayback-scraper (dtanders)",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Generic Wayback Machine scraper, MIT license, very recently touched (14 Sep 2026), 1 star, no description beyond name -- appears to be a personal utility, not domain-specific.",
+      "why_useful": "Marginal; another generic CDX/snapshot puller with no Airbnb or STR-market angle and no evidence of committed data.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/KernelEquinox/Wayback-Scraper",
+      "name": "Wayback-Scraper (KernelEquinox)",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Python script for quick enumeration of all archived snapshots of a given URL/domain via the Wayback CDX index. 9 stars, no license declared, no bundled data.",
+      "why_useful": "Same generic-tooling use case; could be run against airbnb.com or AirDNA domains to enumerate which historical dates are archived before deciding whether a targeted pull is worth a human ask under rule 6.",
+      "potential": "low"
+    }
+  ],
+  "notes": "This theme is genuinely thin on GitHub: 'gh search repos' with waybackpy/CDX/wayback-scraper/airbnb-wayback terms turns up dozens of generic, non-domain-specific Wayback Machine utilities (mostly personal snapshot/archival scripts, none related to short-term rentals, AirDNA, Mashvisor, or Inside Airbnb) and zero repos that combine Wayback/CDX tooling with an Airbnb, AirDNA, Mashvisor, or STR-market angle. Two direct-airbnb-wayback and one internet-archive-scraper-dataset query returned literally zero hits. No academic replication packages, no committed archived-page corpora, no release assets of scraped historical snapshots were found under this theme. All 6 permitted gh search calls were used before hitting empty results twice in a row (a signal the space is exhausted for repo-search phrasing); the WebSearch fallback could not be used because this session's WebSearch budget (200/200) was already exhausted by other work before this scout ran, so no site:github.com fallback queries were possible. If another scout has WebSearch budget left, worthwhile follow-up queries would be: site:github.com \"archive.org\" airbnb historical listings; site:github.com airdna wayback OR archive scraper; site:github.com mashvisor archive dataset; and checking whether Inside Airbnb's own GitHub org (insideairbnb) has an archival/wayback companion repo (not found in this pass). Bottom line for CONTEXT.md: this theme does not currently offer any dataset or repo worth pulling into the project beyond generic acquisition-method tooling (waybackpy) that a human would need to approve pointing at specific archived pages under rule 6."
+}

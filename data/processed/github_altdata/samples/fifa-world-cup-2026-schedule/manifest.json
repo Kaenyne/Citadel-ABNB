@@ -1,0 +1,38 @@
+{
+  "slug": "fifa-world-cup-2026-schedule",
+  "url": "https://github.com/Tylerx404/World-Cup-2026-Schedule-Calendar",
+  "sampled": true,
+  "total_bytes": 81541,
+  "files": [
+    "schedule.ts",
+    "repo_schedule_placeholder.csv",
+    "worldcup.ts",
+    "generateIcs.ts",
+    "LICENSE",
+    "openfootball_worldcup_2026.json",
+    "openfootball_worldcup_2026_matches.csv",
+    "openfootball_worldcup_2026_stadiums.json",
+    "openfootball_worldcup_2026_stadiums.csv",
+    "README.md",
+    "manifest.json"
+  ],
+  "rows": "repo_schedule_placeholder.csv 24; openfootball_worldcup_2026_matches.csv 104; openfootball_worldcup_2026_stadiums.csv 16",
+  "columns": "matches: match_no, round, group, date, time_local, datetime_utc, team1, team2, ground, city, ft1, ft2, et, pens | placeholder: id, stage, group, datetime, teamA, teamB, venue, city, matchday | stadiums: city, timezone, cc, name, capacity, coords",
+  "date_range": "2026-06-11 to 2026-07-19 (matches, UTC 2026-06-11T19:00Z to 2026-07-19T20:00Z); placeholder 2026-06-11T20:00Z to 2026-07-19T20:00Z",
+  "how_pulled": "gh api repos/Tylerx404/World-Cup-2026-Schedule-Calendar/contents/{,data,lib,app/api}; curl -sL -o <f> https://raw.githubusercontent.com/Tylerx404/World-Cup-2026-Schedule-Calendar/HEAD/{data/schedule.ts,data/standingsGroups.ts,lib/worldcup.ts,lib/generateIcs.ts,LICENSE,README_en.md}; curl -sL -o <f> https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/{worldcup.json,worldcup.stadiums.json}; python convert.py (regex-parse schedule.ts, json->CSV with UTC kickoff derived from 'HH:MM UTC-x')",
+  "full_dataset_size": "Repo itself: ~150 KB of source, the only committed data is the 24-row placeholder schedule.ts (5.9 KB) plus data/teams (~117 KB squads). Upstream openfootball/worldcup.json 2026/ folder: 7 files, ~740 KB (worldcup.json 43 KB 104 matches, worldcup-full.json 288 KB, squads 385 KB, teams 12 KB, groups 2 KB, stadiums 3 KB, quali_playoffs 6 KB); no compression needed.",
+  "description": "Complete FIFA World Cup 2026 fixture list: one row per match (104 matches, 48 teams, 16 host cities in the US, Canada and Mexico, 11 Jun-19 Jul 2026) with round/group, local kickoff time and UTC, teams, venue city and full-time score, plus a 16-row stadium table with capacity, country and coordinates. The catalogued repo is an MIT Next.js calendar site whose committed schedule is a placeholder; its ICS feed is rendered at request time from the CC0 openfootball/worldcup.json feed, which is the actual data source and was sampled here. An analyst would join match dates x host city to Inside Airbnb calendar/reviews panels (LA, NYC, Mexico City, Toronto, Miami, etc.) to build city-day event dummies for the 3Q26 nights nowcast, size the NA/LatAm regional mix shock, and use stadium capacity as an intensity weight.",
+  "issues": "Job card says 64 matches; the 2026 format is 104 matches (48 teams) and the sample has all 104. The repo's own committed schedule.ts is a 24-row placeholder with wrong kickoff times (e.g. Mexico-South Africa listed 23:00Z vs actual 19:00Z) and only 13 cities; do not use it, use the openfootball CSV. The 'auto-updating iCal feed' is a runtime API route (app/api/calendar), not a committed file, so no .ics was pulled; generateIcs.ts shows how to render one. Coordinates in stadiums file mix DMS and decimal formats and were read with a degree-sign encoding artefact in the console (file bytes are fine, UTF-8). Licences: repo MIT, upstream openfootball CC0-1.0 -- no concerns. Team-name spellings differ between the two sources (Korea Republic vs South Korea, Czechia vs Czech Republic).",
+  "source_urls": [
+    "https://github.com/Tylerx404/World-Cup-2026-Schedule-Calendar",
+    "https://raw.githubusercontent.com/Tylerx404/World-Cup-2026-Schedule-Calendar/HEAD/README_en.md",
+    "https://raw.githubusercontent.com/Tylerx404/World-Cup-2026-Schedule-Calendar/HEAD/data/schedule.ts",
+    "https://raw.githubusercontent.com/Tylerx404/World-Cup-2026-Schedule-Calendar/HEAD/data/standingsGroups.ts",
+    "https://raw.githubusercontent.com/Tylerx404/World-Cup-2026-Schedule-Calendar/HEAD/lib/worldcup.ts",
+    "https://raw.githubusercontent.com/Tylerx404/World-Cup-2026-Schedule-Calendar/HEAD/lib/generateIcs.ts",
+    "https://raw.githubusercontent.com/Tylerx404/World-Cup-2026-Schedule-Calendar/HEAD/LICENSE",
+    "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+    "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.stadiums.json"
+  ],
+  "pulled_at": "2026-09-14"
+}

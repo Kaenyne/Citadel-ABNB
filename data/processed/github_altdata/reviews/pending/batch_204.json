@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:js-fitz/str-monitor",
+  "url": "https://github.com/js-fitz/STR-Monitor",
+  "name": "js-fitz/STR-Monitor",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Multi-file panel for monitoring Boston's 2019 Short-Term Rental Ordinance: airbnb.csv (23 merged Inside Airbnb scrapes, 124,730 rows x 31 cols, Jan 2017-Nov 2019, listing IDs/prices/host info/license status), STRE.csv (city STR public registry keyed by SAM_ID, 396,462 rows x 16 cols, registration status + violation counts, downloaded Feb 2020), STR_apps.csv (2,127 rows x 25 cols, internal STR license-application tracker from Boston's Dept of Innovation & Technology, license numbers/status/issue dates), SAMREF.csv (396,462 rows x 43 cols, address/GPS reference), bari_props_2019.csv (174,074 rows x 94 cols, Boston Area Research Initiative property assessment/land-use/owner-occupancy data), and padmapper.csv (917,948 rows x 6 cols, 87 merged scrapes of long-term rental asking prices, Jan 2016-Mar 2020).",
+  "why_useful": "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023 \u2014 Boston 2015-2019 vintage we do not hold) and gap #12 (city STR registration/ordinance enforcement dataset). Also touches gap #13 (Padmapper long-term-rental listings for STR/LTR host-supply crossover). A real natural experiment (ordinance date, enforcement date, before/after listing counts) that could anchor an elasticity estimate for regulation impact on supply.",
+  "potential": "high",
+  "geography": "Boston, MA",
+  "time_coverage": "2015-2019 (listings); ordinance enacted June 2018, enforced Jan-Dec 2019",
+  "size_hint": "124,730 listing rows; 917,948 LTR rows; 174,074 parcels; 396,462 addresses",
+  "license": "none declared",
+  "last_activity": "2020-05-25",
+  "gap_targets": [
+   1,
+   12,
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation",
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (historical/archived Inside Airbnb dumps pre-2023 \u2014 Boston 2015-2019 vintage we do not hold) and gap #12 (city STR registration/ordinance enforcement dataset). Also touches gap #13 (Padmapper long-term-rental listings for STR/LTR host-supply crossover). A real natural experiment (ordinance date, enforcement date, before/after listing counts) that could anchor an elasticity estimate for regulation impact on supply.",
+   "A full worked example of matching a city STR license registry + enforcement/violation counts + application pipeline to Inside Airbnb listings and long-term rental comps around a real STR ordinance (owner-occupancy requirement, per-night fines). Directly analogous to the HOA/condo STR-ban and municipal-registration angle in the theme; the STRE/STR_apps registry design is a template for building a similar panel for other cities (e.g., Barcelona/Amsterdam/Paris licensing) even though the data itself is Boston-only and stops in 2020."
+  ]
+ },
+ {
+  "key": "github:datanews/illegal-hotel-inspections",
+  "url": "https://github.com/datanews/illegal-hotel-inspections",
+  "name": "datanews/illegal-hotel-inspections",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "inspections.csv, one row per inspection, 2,684 inspection records (~2,491 after excluding 193 unrelated reports) from NYC Mayor's Office of Special Enforcement (OSE), obtained via FOIL/FOIA request by WNYC. Fields cover property details, inspection rationale, and identified violations for illegal short-term-rental activity. Date range October 2013 through April 2015. Originated as Word docs, converted to HTML, parsed to CSV.",
+  "why_useful": "Direct hit on the NYC OSE enforcement keyword hint in the theme brief; a rare committed, structured extract of actual OSE inspection/violation records rather than a news summary. Old vintage (2013-2015, pre-Local Law 18) limits direct use for a 2026 forecast, but it is a template for what an OSE FOIL pull looks like and could be combined with a fresher FOIL request if the team wants a current NYC enforcement proxy for STR supply suppression.",
+  "potential": "high",
+  "geography": "New York City",
+  "time_coverage": "Oct 2013 - Apr 2015",
+  "size_hint": "~2,684 rows, single CSV",
+  "license": "none listed",
+  "last_activity": "2017-07-21",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "Direct hit on the NYC OSE enforcement keyword hint in the theme brief; a rare committed, structured extract of actual OSE inspection/violation records rather than a news summary. Old vintage (2013-2015, pre-Local Law 18) limits direct use for a 2026 forecast, but it is a template for what an OSE FOIL pull looks like and could be combined with a fresher FOIL request if the team wants a current NYC enforcement proxy for STR supply suppression.",
+   "Direct historical NYC OSE enforcement microdata (this scout's core target and gap #12 regulatory tracker). Pre-dates our held NYC OSE dataset and could extend the enforcement-intensity time series further back (2013-15), useful as a base-period comparator for post-Local-Law-18 enforcement intensity."
+  ]
+ },
+ {
+  "key": "github:jastephan63/str-regulation-housing",
+  "url": "https://github.com/jastephan63/str-regulation-housing",
+  "name": "str-regulation-housing",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "ETH Zurich master's thesis (2024) replication package, 'Regulatory Repercussions: how municipal short-term rental regulation affects US housing costs'. Two committed CSVs: regulatory_data.csv (131 US cities across 44 states, coded municipal STR-ordinance 'prohibitiveness scores' 0.5-5.0 covering hosted vs. unhosted rental rules and enforcement mechanisms) and longitudinal_data.csv (2,431 city-month panel rows, 24 California cities, 2015-2023, combining prohibitiveness scores with rental costs, property values, and demographic/economic covariates). Codebooks included; raw ordinance PDFs and MAXQDA project not included but coded results are. MIT licensed.",
+  "why_useful": "Strong direct hit on gap #12 (STR ordinance tracker / city registration datasets, US-wide with a quantified prohibitiveness score across 131 cities/44 states) and gap #13 (STR-housing-cost crossover panel, CA cities 2015-2023) -- a genuinely new, committed, structured dataset outside anything we currently hold.",
+  "potential": "high",
+  "gap_targets": [
+   12,
+   13
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-05",
+  "geography": "United States (131 cities/44 states regulatory panel; 24 California cities longitudinal panel)",
+  "time_coverage": "2015-2023 (longitudinal panel); regulatory panel is current as coded (2024 thesis)",
+  "size_hint": "2 CSVs + codebooks, thesis-scale (thousands of rows)",
+  "duplicate_of_holding": "not a duplicate; new to our regulatory event database (32 factors) -- longer time span and quantified score, worth cross-checking against our existing 32-factor database for overlap/extension",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Strong direct hit on gap #12 (STR ordinance tracker / city registration datasets, US-wide with a quantified prohibitiveness score across 131 cities/44 states) and gap #13 (STR-housing-cost crossover panel, CA cities 2015-2023) -- a genuinely new, committed, structured dataset outside anything we currently hold.",
+   "A directly usable, longer (2015-2023) and methodologically rigorous companion to gap #12/#13 (STR-ordinance-to-housing-cost pass-through); the prohibitiveness score is a continuous alternative to the letter-grade regulatory classifications we currently score as \u00b10.5 intervals, and the DiD template is reusable for any of our own city-ban events."
+  ]
+ },
+ {
+  "key": "github:george88b/str-regulation-data",
+  "url": "https://github.com/george88b/str-regulation-data",
+  "name": "str-regulation-data (STR Rule Watch)",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Human-verified US short-term-rental regulation dataset, 176 markets (116 cities, 10 counties, all 50 states). CSV one-row-per-market summary plus JSON per-market records with permit requirements/fees, occupancy rules, stay-length limits, lodging taxes, an 8-level regulatory-status categorical (allowed_no_permit -> banned), verbatim source-quote evidence and last-verified dates. CC-BY-4.0, updated 2026-07-30, live counterpart at shortrentalrules.com.",
+  "why_useful": "Finer-grained and more current than our 32-factor regulatory event database and the ~25-dataset municipal registry panel (gap #12); a clean cross-sectional status variable for the 4Q26 regional-mix and North America nights bridge, and a candidate control set for any city-level STR natural-experiment work.",
+  "potential": "high",
+  "geography": "US, 176 markets",
+  "time_coverage": "current snapshot, dated verification fields back several years per market",
+  "license": "CC-BY-4.0",
+  "last_activity": "2026-07-30",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Finer-grained and more current than our 32-factor regulatory event database and the ~25-dataset municipal registry panel (gap #12); a clean cross-sectional status variable for the 4Q26 regional-mix and North America nights bridge, and a candidate control set for any city-level STR natural-experiment work."
+  ]
+ },
+ {
+  "key": "github:ropensci/nycopendata",
+  "url": "https://github.com/ropensci/nycOpenData",
+  "name": "nycOpenData (rOpenSci)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package giving programmatic access to any NYC Open Data Socrata dataset (search/filter/download), including the city's own short-term-rental registration dataset published by the Mayor's Office of Special Enforcement under Local Law 18.",
+  "why_useful": "Generic but working method to pull NYC's OSE short-term-rental registration counts/records over time (registrations fell from ~38,000 at start of 2023 to ~3,000 by 2026), which is a direct, point-in-time-able proxy for NYC STR supply through the LL18 transition \u2014 complements rather than duplicates Inside Airbnb listing snapshots.",
+  "potential": "medium",
+  "gap_targets": [
+   1,
+   12
+  ],
+  "geography": "New York City (any NYC Open Data dataset)",
+  "time_coverage": "live pull; historical depth depends on dataset revision history on the portal",
+  "size_hint": "N/A (API client)",
+  "license": "rOpenSci package, typically MIT/GPL",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "adjacent to, not the same as, the existing '25 municipal STR registries incl. NYC OSE' holding \u2014 this is a generic access tool rather than a stored NYC OSE dataset",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Generic but working method to pull NYC's OSE short-term-rental registration counts/records over time (registrations fell from ~38,000 at start of 2023 to ~3,000 by 2026), which is a direct, point-in-time-able proxy for NYC STR supply through the LL18 transition \u2014 complements rather than duplicates Inside Airbnb listing snapshots."
+  ]
+ }
+]

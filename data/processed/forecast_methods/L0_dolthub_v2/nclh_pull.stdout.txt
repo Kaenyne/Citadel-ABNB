@@ -1,0 +1,6 @@
+offset 0: http=200 status=Success rows=500
+offset 500: http=200 status=Success rows=500
+offset 1000: http=200 status=Success rows=500
+offset 1500: http=200 status=Error rows=0
+NCLH: 1500 rows, 2017-10-27..2025-02-02 -> C:\Users\krish\citadel-abnb-ghcat\data\processed\forecast_methods\L0_dolthub_v2\dolthub_sales_estimate_NCLH.csv
+EXIT=0

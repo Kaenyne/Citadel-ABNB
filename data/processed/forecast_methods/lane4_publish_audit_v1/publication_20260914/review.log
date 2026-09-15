@@ -1,0 +1,23 @@
+test_charts_exact_bytes (test_integrity.IntegrityTests.test_charts_exact_bytes) ... ok
+test_complete_ledger (test_integrity.IntegrityTests.test_complete_ledger) ... ok
+test_decision_continuity_and_no_adoption (test_integrity.IntegrityTests.test_decision_continuity_and_no_adoption) ... ok
+test_no_guide_expectation_imputation (test_integrity.IntegrityTests.test_no_guide_expectation_imputation) ... ok
+test_original_card_unsigned_and_missing (test_integrity.IntegrityTests.test_original_card_unsigned_and_missing) ... ok
+test_pages_and_visible_limits (test_integrity.IntegrityTests.test_pages_and_visible_limits) ... ok
+test_source_manifest_still_matches (test_integrity.IntegrityTests.test_source_manifest_still_matches) ... ok
+test_exact_thresholds_are_inclusive (test_scoring.CardRules.test_exact_thresholds_are_inclusive) ... ok
+test_growth_uses_both_rounding_intervals (test_scoring.CardRules.test_growth_uses_both_rounding_intervals) ... ok
+test_integer_escalation_boundary_is_ambiguous (test_scoring.CardRules.test_integer_escalation_boundary_is_ambiguous) ... ok
+test_integer_warning_boundary_is_ambiguous (test_scoring.CardRules.test_integer_warning_boundary_is_ambiguous) ... ok
+test_invalid_intervals_rejected (test_scoring.CardRules.test_invalid_intervals_rejected) ... ok
+test_missing_input_is_absent (test_scoring.CardRules.test_missing_input_is_absent) ... ok
+test_overlapping_comparisons_not_directional (test_scoring.CardRules.test_overlapping_comparisons_not_directional) ... ok
+test_phrase_not_implicitly_mapped (test_scoring.CardRules.test_phrase_not_implicitly_mapped) ... ok
+test_refutation_gap_strictly_above_minus_eight (test_scoring.CardRules.test_refutation_gap_strictly_above_minus_eight) ... ok
+test_refutation_requires_all_three (test_scoring.CardRules.test_refutation_requires_all_three) ... ok
+test_zero_or_negative_denominator_rejected (test_scoring.CardRules.test_zero_or_negative_denominator_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.431s
+
+OK

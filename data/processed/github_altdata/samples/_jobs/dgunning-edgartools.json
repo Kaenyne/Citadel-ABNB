@@ -1,0 +1,10 @@
+{
+ "slug": "dgunning-edgartools",
+ "url": "https://github.com/dgunning/edgartools",
+ "category": "methods_tooling",
+ "data_kind": "acquisition_method",
+ "one_line": "MIT-licensed Python library (2.7k stars, 4,388 commits, active through Sep 2026) that turns SEC EDGAR into typed objects: 10-K/10-Q, XBRL standardised concepts, 8-K, 13F, Forms 3/4/5, DEF 14A, N-PORT. No API key or signup \u2014 SEC only wants a contact string in the User-Agent; repo also ships /data fixtures, /notebooks and /examples.",
+ "abnb_use": "Gap 4 (point-in-time company data) and gap 18 (book-ahead analogues): filing timestamps are inherent to EDGAR, so this builds vintage-correct quarterly panels for ABNB, BKNG, EXPE, MAR, HLT and \u2014 via custom XBRL tags \u2014 NCLH/CCL/RCL 'customer deposits / advance ticket sales', the cruise-line deferred-revenue analogue to ABNB's unearned fees. Also gap 15: 13F concentration history and Form 4 insider prints for ABNB.",
+ "sample_plan": "Two keyless steps, both public. (1) Shallow sparse clone for the API surface and fixtures: git clone --depth 1 --filter=blob:none --sparse https://github.com/dgunning/edgartools.git then git sparse-checkout set README.md data examples (skip notebooks if > 5 MB; cap the clone at 25 MB). (2) One keyless proof pull straight from data.sec.gov with a generic contact User-Agent, NOT the user's email: curl -s -H 'User-Agent: citadel-abnb-research contact@example.com' -o abnb_facts_head.json --max-filesize 5000000 https://data.sec.gov/api/xbrl/companyconcept/CIK0001559720/us-gaap/Revenues.json and the same for CIK0001513761 (NCLH) us-gaap/DeferredRevenueCurrent. Head-truncate anything over 5 MB with curl -r 0-5000000. Total <= 15 MB.",
+ "tos_or_license_flag": false
+}

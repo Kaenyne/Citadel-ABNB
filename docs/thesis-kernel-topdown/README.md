@@ -61,6 +61,8 @@ Claim your package in `docs/revenue-forecast-strategy/WORKBOARD.md` before start
 - `prompts/` — one paste-ready prompt per package (rules included, pass line pre-registered).
 - **`prompts/CODEX_LANE1_FULL_PROMPT.md` — the single prompt that runs all of Lane 1 end to end with subagents (gated, refuted, one PR).**
   `prompts/CODEX_HANDOFF_LANE1.md` is the smaller CORE variant; `lane1/` holds the per-subagent briefs both prompts hand out.
+- **`prompts/CODEX_LANE2_FULL_PROMPT.md` — Lane 2 end to end (RNPL, consensus, public data, and A / B′ re-run under the harness convention);**
+  `lane2/` holds its briefs and **`lane2/CONVENTION.md`**, the point-in-time convention every agent must use (Lane 1's briefs were tighter than the harness and came back empty).
 
 Visual explainers (open in a browser): `../revenue-forecast-strategy/10_KERNEL_EXPLAINED.html` (start here),
 `11_FINAL_PLAN.html`, `12_DATA_AND_QUANT_PLAN.html`, `08_THESIS_MAP.html`. Long-form: `../revenue-forecast-strategy/07_MORNING_REPORT.md`

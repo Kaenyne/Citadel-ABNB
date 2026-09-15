@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/Asifmehdiyev/Booking_Time_Series_Modelling",
+  "slug": "asifmehdiyev-booking-reviews-timeseries-nb",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Single 1.1 MB Jupyter notebook (README 444 B, no licence, 0 stars, last push 2023-06-19) doing EDA/time-series/forecasting on a Booking.com GUEST-REVIEW scrape hosted on Kaggle (kaggle.com/datasets/asifmehdiyev/bookingnew, file booking.csv); notebook outputs show columns review_title, reviewed_at, reviewed_by, images, rating, nationality with review dates spanning ~2019-2021. NOT the Portugal hotel-booking-demand dataset the scout guessed; no data committed to the repo, raw CSV needs a Kaggle login.",
+  "abnb_use": "A dated Booking.com review stream is the competitor analogue of our reviews-based 'stays index' (gap 9, competitor OTA volumes); the notebook's committed outputs show how the reviews-per-period series behaves and the schema/nationality field would let a cross-border-share proxy be built if the Kaggle CSV is ever pulled by a human.",
+  "sample_plan": "One file only: curl -sL -o asifmehdiyev_booking_ts.ipynb https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/raw/HEAD/booking-time-series-modelling.ipynb (canonical: https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/HEAD/booking-time-series-modelling.ipynb), ~1.1 MB. Strip base64 image outputs and keep the text/plain output cells (df.head(), value_counts, resampled review-count tables) to record the schema, the date range and the aggregated series. Do NOT attempt the Kaggle CSV (login required). Total < 2 MB.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified via gh api: the repo contains exactly README.md (444 B) and booking-time-series-modelling.ipynb (1.13 MB) — no data files, and the notebook reads /kaggle/input/bookingnew/booking.csv, so the underlying data is Kaggle-gated. It is a re-analysis of a small personal Kaggle upload rather than a new source, but the committed notebook outputs are free and document a dated Booking.com review schema, which is cheap to capture. No licence is declared, so anything beyond reading the notebook is a human decision."
+ },
+ {
+  "url": "https://github.com/stayapi/booking-com-review-scraper",
+  "slug": "stayapi-booking-review-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "one_line": "MIT, 13 KB, actively maintained (last push 2026-08-10, 0 stars): Python + Node client that pulls Booking.com hotel reviews through the commercial StayAPI REST service (stayapi.com, 50 free requests then paid, STAYAPI_KEY env var required). Committed sample_output.csv (1.5 KB) and sample_output.json (3.4 KB) show a 16-column schema: review_id, score, reviewed_date (timestamp to the second), title, positive, negative, language, guest_name, guest_country, traveler_type (Couple/Family/Solo/Business), travel_purpose, room_type, NIGHTS, helpful_votes, photo_count, partner_reply.",
+  "abnb_use": "The schema is the interesting part: per-review 'nights' + traveler_type + guest_country on Booking.com properties would give competitor length-of-stay, party-type mix and cross-border share (gaps 9 and 20), and reviewed_date gives a competitor stays-index at daily resolution — the same construction as our 123-market Airbnb reviews index but for the largest OTA.",
+  "sample_plan": "n/a — do not run. Any real pull needs a StayAPI account and key, and the underlying content is scraped from booking.com, which is a terms-of-service decision for a human. If someone wants the schema on file, it is quoted in full in this line; the two sample files are 1.5 KB / 3.4 KB at raw.githubusercontent.com/stayapi/booking-com-review-scraper/HEAD/sample_output.{csv,json}.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified the repo contents and read the README and sample_output.csv: the wrapper code is MIT but it is a thin client for a paid third-party scraping service that requires signing up for an API key, so it falls squarely in the 'API key / login / third-party-site scraping' catalog_only bucket. Still worth a catalogue line because the field list (notably per-review nights stayed and traveler_type) documents what a competitor-side stays/LOS panel could contain, and the repo is current rather than abandoned."
+ },
+ {
+  "url": "https://huggingface.co/datasets/BrightData/Booking.com-Listings",
+  "slug": "brightdata-booking-listings-hf",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "HuggingFace dataset (BrightData, last modified 2025-05-12, licence tag 'other' = bright-data-master-service-agreement): a single public CSV booking-listings.csv of 62,784,719 bytes (~63 MB, HF size category 10K<n<100K rows) — NOT the 13-row marketing sample the scout assumed. 35 columns of Booking.com search-result listings for Feb-2025 check-in dates, global (first rows are Korea): url, location, check_in, check_out, adults/children/rooms, id, title, address, city, review_score, review_count, final_price, original_price, currency, tax_description, nb_bedrooms/nb_all_beds/nb_kitchens/nb_livingrooms, no_prepayment, free_cancellation, free_cancellation_until, property_sustainability, country, hotel_rank, searched_country, map_coordinates, listing_country, total_listings_found, star_rating, tags.",
+  "abnb_use": "Three gaps at once: quoted prices with original_price vs final_price on a competitor platform for a fixed Feb-2025 stay date (gap 9, competitor pricing / alternative accommodation); the no_prepayment, free_cancellation and free_cancellation_until flags are a direct read on how widely 'reserve now, pay later' terms are offered on Booking.com, which is the competitive backdrop to our RNPL thesis (gap 3); nb_bedrooms/nb_all_beds gives a party-size/whole-unit capacity distribution outside Airbnb (gap 20), plus a rough regional (searched_country/listing_country) split.",
+  "sample_plan": "Range-read the head only, never the whole 63 MB file: curl -sL -r 0-5000000 -o brightdata_booking_listings_head.csv 'https://huggingface.co/datasets/BrightData/Booking.com-Listings/resolve/main/booking-listings.csv' (~5 MB, drop the final truncated line). No login or token needed (verified: HTTP 200, content-type text/csv). Record row count, distinct searched_country, the free_cancellation / no_prepayment shares and the final_price distribution from the head; do not redistribute the file, and do not fetch the remaining ~58 MB without a human licence decision.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified by HEAD/Range request against the HF resolve endpoint: the file is publicly downloadable with no auth and is 62.8 MB with a 35-column schema, so the scout's '13 rows, marketing sample' description is wrong and this is the only substantive dataset in the batch. Licence is the Bright Data Master Service Agreement (vendor terms, reuse and redistribution restricted), so it is flagged and the plan caps the pull at a 5 MB inspection head. Value is a one-off Feb-2025 snapshot, not a time series, so it is a cross-section for cancellation-terms and price-level context rather than anything trackable."
+ },
+ {
+  "url": "https://www.kaggle.com/c/expedia-hotel-recommendations",
+  "slug": "kaggle-expedia-hotel-recommendations-2016",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Kaggle competition data only (https://www.kaggle.com/c/expedia-hotel-recommendations): ~37M Expedia search/click/book log rows for 2013-2014 with date_time, srch_ci/srch_co (check-in/out), srch_adults_cnt/children_cnt, srch_rm_cnt, is_package, is_booking, user country/region, hotel_country/market/cluster. The dozens of GitHub repos on this competition (mandalsubhajit/Kaggle--Expedia-Hotel-Recommendations ~26 stars, gouravshenoy/ExpediaHotelRecommendation and ~40 near-duplicates) are modelling notebooks only — competition rules forbid redistribution, so no GitHub mirror carries the CSVs; a Kaggle account is required.",
+  "abnb_use": "date_time vs srch_ci gives a real booking-lead-time distribution and a cancellation-free book/look ratio on an OTA (gaps 3 and 9), and srch_adults_cnt/children_cnt/rm_cnt is one of the very few free party-size sources (gap 20) — but it is 2013-14 vintage, so at best it calibrates the shape of seasonality/lead-time curves, never a current read.",
+  "sample_plan": "n/a — Kaggle competition download requires a logged-in account and rule acceptance; no keyless mirror exists (the GitHub solution repos are code-only). If a human ever wants it, the URL is https://www.kaggle.com/c/expedia-hotel-recommendations (train.csv ~4 GB uncompressed).",
+  "tos_or_license_flag": true,
+  "reasoning": "This is a pointer, not a repo: the cataloguing value is knowing the fields exist and that the GitHub ecosystem around it holds no redistributable data, which the scout already established and which matches Kaggle's competition rules. Login-gated plus competition-specific terms means catalog_only by the run's rules. Usefulness is kept at possibly_useful only because lead-time and party-count fields are genuinely scarce, not because the 2013-14 vintage would be quotable."
+ },
+ {
+  "url": "https://www.kaggle.com/c/expedia-personalized-sort",
+  "slug": "kaggle-expedia-personalized-sort-icdm2013",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Kaggle/ICDM-2013 Data Mining Cup dataset (https://www.kaggle.com/c/expedia-personalized-sort): ~10M Expedia hotel search-impression rows from 2013 with price_usd, prop_starrating, prop_review_score, prop_location_score, promotion_flag, srch_length_of_stay, srch_booking_window, srch_adults/children_count, plus click_bool/booking_bool labels and a competitor-price block (comp1-8 rate/inv/rate_percent_diff). GitHub repos found (igorpejic/personalize_expedia_hotel_searches_2013 ~7 stars, gxanth/Learning-to-rank-with-Expedia MIT, jlin-vt/expedia2013 and several more) are learning-to-rank code only and require the user to supply train.csv/test.csv.",
+  "abnb_use": "srch_booking_window (lead time) and srch_length_of_stay are exactly the two distributions we lack for the RNPL/lead-time work (gap 3) and the LOS/party-size work (gap 20), and the comp1-8 rate-difference columns are a rare look at cross-OTA price dispersion (gap 9); all of it is 2013 though, so it is shape calibration at best.",
+  "sample_plan": "n/a — Kaggle login and competition-rule acceptance required; verified that the GitHub repos around it are code-only and redistribute nothing. Pointer for a human: https://www.kaggle.com/c/expedia-personalized-sort (train.csv ~4 GB).",
+  "tos_or_license_flag": true,
+  "reasoning": "Same situation as the other Expedia competition: the data lives behind a Kaggle login under competition terms and every GitHub repo is a modelling notebook with no CSVs committed, so an agent has nothing keyless to pull. Catalogued rather than discarded because booking_window and length_of_stay are fields we cannot get free anywhere else, which is worth a human knowing. Code licences on the wrapper repos (MIT on gxanth) do not extend to the data."
+ }
+]

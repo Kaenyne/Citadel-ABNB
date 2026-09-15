@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:peterdavehello/top-1m-domains",
+  "url": "https://github.com/PeterDaveHello/top-1m-domains",
+  "name": "top-1m-domains (PeterDaveHello)",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated list of download links (not committed data) to eight top-domain ranking services: Alexa (historical), Cisco Umbrella, Majestic, BuiltWith, Statvoo, DomCop, Tranco, and Cloudflare Radar top domains \u2014 mostly .csv.zip direct-download URLs to each vendor's own host.",
+  "why_useful": "One-stop index of where to pull Tranco/Majestic/Cisco Umbrella/Cloudflare top-1M domain CSVs (each free, updated daily/weekly) for building an airbnb.com and competitor-domain rank time series (gap #5) \u2014 a navigation aid rather than a dataset itself.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "current snapshots only (links point to daily/weekly vendor feeds, not history)",
+  "size_hint": "README only, ~8 commits",
+  "license": "unspecified",
+  "last_activity": "unspecified (small repo)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "One-stop index of where to pull Tranco/Majestic/Cisco Umbrella/Cloudflare top-1M domain CSVs (each free, updated daily/weekly) for building an airbnb.com and competitor-domain rank time series (gap #5) \u2014 a navigation aid rather than a dataset itself."
+  ]
+ },
+ {
+  "key": "github:commonists/pageview-api",
+  "url": "https://github.com/Commonists/pageview-api",
+  "name": "pageview-api",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Mature Python client (31 stars, actively updated to Aug 2026) for the official Wikimedia Pageview REST API (per-article, per-project, per-country pageview counts, various access/agent breakdowns). No data committed; it is a well-maintained API wrapper.",
+  "why_useful": "The most robust, still-maintained Python client for pulling Wikipedia pageviews for any set of city/attraction/company articles going back to mid-2015 (official Wikimedia pageviews dataset start). Fills gap #5 tooling need with a production-quality option rather than a one-off script; could pull ABNB-relevant destination-city pageviews, or even the 'Airbnb' company article itself, as an engagement/interest proxy.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global (any Wikipedia article/language)",
+  "time_coverage": "Wikimedia pageviews API covers ~July 2015 to present at daily/monthly/hourly granularity",
+  "size_hint": "small library, no bundled data",
+  "license": "MIT",
+  "last_activity": "2026-08-23",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)",
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "The most robust, still-maintained Python client for pulling Wikipedia pageviews for any set of city/attraction/company articles going back to mid-2015 (official Wikimedia pageviews dataset start). Fills gap #5 tooling need with a production-quality option rather than a one-off script; could pull ABNB-relevant destination-city pageviews, or even the 'Airbnb' company article itself, as an engagement/interest proxy.",
+   "Directly serves gap #5 (Wikipedia pageviews tooling as an engagement/interest proxy for Airbnb, distinct from the non-point-in-time Google Trends we already tried and found not to work)."
+  ]
+ },
+ {
+  "key": "github:musikanimal/pageviews",
+  "url": "https://github.com/MusikAnimal/pageviews",
+  "name": "pageviews (Wikimedia Foundation tool)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The official-ish, actively maintained (164 stars, updated Sep 2026) Pageviews Analysis web tool used on Wikimedia Toolforge, source code for pageviews.wmcloud.org / pageviews.toolforge.org \u2014 lets you compare pageview trends across articles/projects/date ranges interactively, and its underlying code can be adapted to bulk-pull series.",
+  "why_useful": "Highest-star, best-maintained pageviews tool found in this sweep; even if used only as the live web tool (not cloned), it is the fastest manual way to eyeball a city or attraction's Wikipedia interest trend as a sanity check on other tourism-demand proxies. Its source also documents the API request shape most robustly.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "~2015-present",
+  "size_hint": "web app source, no bundled long time series",
+  "license": "MIT",
+  "last_activity": "2026-09-02",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Highest-star, best-maintained pageviews tool found in this sweep; even if used only as the live web tool (not cloned), it is the fastest manual way to eyeball a city or attraction's Wikipedia interest trend as a sanity check on other tourism-demand proxies. Its source also documents the API request shape most robustly.",
+   "Not directly a data source for our pipeline (it is a browser UI, not an API client library to embed), but is the reference implementation showing exactly what pageview granularities/filters (agent type, access method, per-project) are available - useful for spec'ing a pull. Low direct utility since the repo itself is archived and UI-only."
+  ]
+ },
+ {
+  "key": "github:gesiscss/wiki-download-parse-page-views",
+  "url": "https://github.com/gesiscss/wiki-download-parse-page-views",
+  "name": "wiki-download-parse-page-views",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python pipeline (GESIS - Leibniz Institute for the Social Sciences) that downloads, filters and aggregates Wikipedia's original hourly/monthly static pagecount dumps from before the 2015 API existed, for a user-specified list of pages and year range, outputting aggregated annual CSV view counts per page. 12 commits; no license file found; notes the dump server throttles to 3 concurrent threads.",
+  "why_useful": "Another route into the historical raw pageview dumps (2015-present) with an academic-institution maintenance track record, useful as a backup/cross-check to pvduck for building a multi-year destination-pageviews panel.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "2015-present",
+  "size_hint": "small pipeline codebase",
+  "license": "none declared",
+  "last_activity": "2026-06-24",
+  "duplicate_of_holding": "vegardege/pvduck (same functional purpose)",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Another route into the historical raw pageview dumps (2015-present) with an academic-institution maintenance track record, useful as a backup/cross-check to pvduck for building a multi-year destination-pageviews panel.",
+   "A second, independent route (besides wikipediatrend/statsgrokse) to reconstruct pre-2015 pageview history for any set of destination/city Wikipedia articles directly from Wikimedia's own raw dump archive rather than a third-party mirror \u2014 reduces single-point-of-failure risk for the historical-depth use case in Gap 4/5."
+  ]
+ },
+ {
+  "key": "github:wikimedia/waxer",
+  "url": "https://github.com/wikimedia/waxer",
+  "name": "waxer",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Wikimedia R package wrapping the Analytics Query Service (AQS) /metrics REST endpoint (pageviews, unique devices, edits, registered users) for any Wikimedia project. MIT licensed, 24 commits, actively maintained by the Wikimedia Foundation itself.",
+  "why_useful": "Official, currently-maintained alternative to Commonists/Ironholds for R users wanting AQS/pageviews data; broader than pure pageviews (also edits, unique devices) which could proxy general public attention to a destination or to Airbnb itself.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "~2015-present (AQS coverage)",
+  "size_hint": "small library",
+  "license": "other",
+  "last_activity": "2026-07-21",
+  "duplicate_of_holding": "Commonists/pageview-api, Ironholds/pageviews (overlapping purpose)",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Official, currently-maintained alternative to Commonists/Ironholds for R users wanting AQS/pageviews data; broader than pure pageviews (also edits, unique devices) which could proxy general public attention to a destination or to Airbnb itself.",
+   "First-party, presumably most-stable client for the same pageviews API as python-mwviews/pageviews.js, useful if the team's forecasting stack is R-based (the ADR/margin work already uses R-adjacent tooling in places) for pulling destination-article pageviews as an engagement proxy."
+  ]
+ }
+]

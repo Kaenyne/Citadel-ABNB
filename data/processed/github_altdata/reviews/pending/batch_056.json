@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:openbb-finance/openbb",
+  "url": "https://github.com/OpenBB-finance/OpenBB",
+  "name": "OpenBB-finance/OpenBB",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Large open-source 'investment research platform' (73k+ stars, 6800+ commits) aggregating many data providers behind one Python/CLI interface, including forex/FX modules pulling from multiple upstream providers (some free, many require third-party API keys). No committed dataset -- it is integration plumbing.",
+  "why_useful": "Could be used as a single client to assemble ad hoc FX, macro and equity data pulls (including peer 8-K-style data and options) without hand-rolling each API wrapper, but most useful feeds need a paid key so value is mainly as a convenience layer, not a new data source.",
+  "potential": "low",
+  "license": "AGPLv3",
+  "last_activity": "very active (6863 commits on develop, current)",
+  "geography": "Global",
+  "time_coverage": "depends on underlying provider",
+  "size_hint": "large codebase, no data committed",
+  "duplicate_of_holding": "Overlaps broadly with things we already source directly (FRED, options chains); flagged low because of key requirements",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Could be used as a single client to assemble ad hoc FX, macro and equity data pulls (including peer 8-K-style data and options) without hand-rolling each API wrapper, but most useful feeds need a paid key so value is mainly as a convenience layer, not a new data source."
+  ]
+ },
+ {
+  "key": "github:romeltorres/alpha_vantage",
+  "url": "https://github.com/RomelTorres/alpha_vantage",
+  "name": "RomelTorres/alpha_vantage",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python wrapper for the Alpha Vantage API's FX endpoints (get_currency_exchange_rate and related forex time-series calls), returning pandas DataFrames. Requires a free Alpha Vantage API key (not a paid key, generous free tier).",
+  "why_useful": "Cheap way to pull historical daily FX time series for currency pairs relevant to ABNB's regional mix (EUR, GBP, MXN, BRL, AUD, JPY vs USD) if FRED coverage of a specific cross is thin; also has stock/equity time series in the same client.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "not shown but actively maintained, widely used package",
+  "geography": "Global currency pairs",
+  "time_coverage": "Whatever Alpha Vantage's free tier exposes (typically full daily history for majors)",
+  "size_hint": "small python library, no data committed",
+  "duplicate_of_holding": "Overlaps with our existing FX schedules; only useful if a specific cross is missing",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Cheap way to pull historical daily FX time series for currency pairs relevant to ABNB's regional mix (EUR, GBP, MXN, BRL, AUD, JPY vs USD) if FRED coverage of a specific cross is thin; also has stock/equity time series in the same client."
+  ]
+ },
+ {
+  "key": "github:owid/owid-datasets",
+  "url": "https://github.com/owid/owid-datasets",
+  "name": "owid/owid-datasets (Our World in Data, archived)",
+  "category": "fx_rates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Archived (as of 14 Apr 2025) OWID collection of CSV+datapackage social/economic indicator datasets by country; likely includes historical PPP and exchange-rate-adjusted GDP series (could not confirm exact folder contents from the fetched page -- OWID's live Grapher/ETL and Chart API at ourworldindata.org now supersede this repo for current data). Worth a follow-up directory listing if pursued.",
+  "why_useful": "If it still contains PPP/exchange-rate-adjusted series in committed CSV form, it would be a long-run, easy-to-diff complement to the Big Mac index and World Bank PPP factors for tourist affordability comparisons.",
+  "potential": "low",
+  "license": "unspecified in fetched content (OWID data typically CC BY)",
+  "last_activity": "archived 14 Apr 2025 (no longer updated)",
+  "geography": "Global",
+  "time_coverage": "unclear from fetch, likely multi-decade per OWID convention",
+  "size_hint": "unknown, not verified further",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "If it still contains PPP/exchange-rate-adjusted series in committed CSV form, it would be a long-run, easy-to-diff complement to the Big Mac index and World Bank PPP factors for tourist affordability comparisons."
+  ]
+ },
+ {
+  "key": "github:eliasmanj/banxico-api",
+  "url": "https://github.com/EliasManj/banxico-api",
+  "name": "banxico-api",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package to fetch Banxico economic/financial series with metadata handling and date-range queries. 1 star, MIT, updated Dec 2024.",
+  "why_useful": "Alternate, actively-typed Banxico client if sie_banxico is unmaintained; same use case (Mexico FX/macro pull).",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico",
+  "time_coverage": "Banxico series history",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2024-12-21",
+  "duplicate_of_holding": "duplicate of sie_banxico use case",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Alternate, actively-typed Banxico client if sie_banxico is unmaintained; same use case (Mexico FX/macro pull)."
+  ]
+ },
+ {
+  "key": "github:eliasca93/sie_banxico_bi",
+  "url": "https://github.com/EliasCA93/sie_banxico_bi",
+  "name": "sie_banxico_bi",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library to retrieve and visualize Mexican economic indicators via the Banxico SIE API, wrapping https://www.banxico.org.mx/SieAPIRest/service/v1/doc/consultaSeries. 1 star, updated Jul 2026.",
+  "why_useful": "Another actively-touched Banxico wrapper with visualization built in; marginal over sie_banxico but confirms the SIE API pattern is well-trodden and easy to build on.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico",
+  "time_coverage": "Banxico series history",
+  "size_hint": "small",
+  "license": "none stated",
+  "last_activity": "2026-07-23",
+  "duplicate_of_holding": "duplicate use case of sie_banxico",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Another actively-touched Banxico wrapper with visualization built in; marginal over sie_banxico but confirms the SIE API pattern is well-trodden and easy to build on."
+  ]
+ }
+]

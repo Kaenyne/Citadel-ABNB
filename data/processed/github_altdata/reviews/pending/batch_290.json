@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:aweirddev/flights",
+  "url": "https://github.com/AWeirdDev/flights",
+  "name": "AWeirdDev/flights",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package ('fast-flights') scraping live Google Flights results (prices, routes, airlines, stops, duration, emissions) via base64-encoded protobuf against Google's internal flight-search endpoint, no API key. MIT licensed, 2,047 stars, v3.0, actively updated (commits as of 14 Sep 2026). No committed price data itself -- a live acquisition method a human would need to run and archive over time to build a fare panel.",
+  "why_useful": "Airfare levels are a travel-demand/consumer-discretionary proxy that reads on ABNB nights and ADR (kernel analogue per gap list). Fastest available method to start a point-in-time airfare pull; would need daily cron to become a vintage series (gap 4).",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "geography": "global (any Google Flights route)",
+  "time_coverage": "real-time only, no history stored",
+  "size_hint": "library, no data files",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Airfare levels are a travel-demand/consumer-discretionary proxy that reads on ABNB nights and ADR (kernel analogue per gap list). Fastest available method to start a point-in-time airfare pull; would need daily cron to become a vintage series (gap 4).",
+   "Could be run point-in-time (with sign-off, since it touches a non-Airbnb site) to build a forward-looking domestic/international airfare panel as a travel-demand and consumer-strength proxy (gap 6/10) or FX-adjusted travel-cost input; also the best-maintained reference implementation if the team ever needs a Google Flights client."
+  ]
+ },
+ {
+  "key": "github:i-baumann/db1b_automation",
+  "url": "https://github.com/i-baumann/DB1B_Automation",
+  "name": "i-baumann/DB1B_Automation",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automates downloading/cleaning BTS DB1B + T100 to replicate a transportation-economics paper: produces multimarket contact indices, hub variables, HHI market-concentration measures, outsourcing proportions, network-size metrics. No longer maintained (archived note: \"as of 2025 I am no longer maintaining this\"). MIT licensed. No data committed.",
+  "why_useful": "Lowers the cost of building a US domestic airfare/traffic panel from the official DOT source named in gap 10.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2025-10-10",
+  "geography": "United States",
+  "time_coverage": "depends on BTS vintages pulled",
+  "size_hint": "scripts only",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Lowers the cost of building a US domestic airfare/traffic panel from the official DOT source named in gap 10.",
+   "An academic-replication-style pipeline over DB1B/T100 producing airline market-structure metrics (HHI, hub concentration) that could serve as a competitor-capacity/consolidation cross-check (gap 10), though unmaintained and possibly stale against current BTS file formats."
+  ]
+ },
+ {
+  "key": "github:trevorkaaya21/airline-market-power-analysis-",
+  "url": "https://github.com/Trevorkaaya21/airline-market-power-analysis-",
+  "name": "Trevorkaaya21/airline-market-power-analysis-",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Python/pandas analysis of US domestic DB1B fares: HHI, price dispersion, demand elasticity by market. Unverified whether raw DB1B extract or only derived tables are committed; described as pandas-based market-power study.",
+  "why_useful": "Could be a source of ready-processed route-level fare/elasticity output rather than raw DB1B, saving reprocessing time if it holds committed CSVs.",
+  "potential": "medium",
+  "license": "unlicensed",
+  "last_activity": "2025-12-22",
+  "geography": "United States",
+  "time_coverage": "unspecified DB1B quarters",
+  "size_hint": "notebook + possible processed CSVs, unconfirmed",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Could be a source of ready-processed route-level fare/elasticity output rather than raw DB1B, saving reprocessing time if it holds committed CSVs.",
+   "Another DB1B-based analysis that might have derived, smaller CSVs (price dispersion / elasticity by route) more directly usable than the raw multi-GB BTS files; worth a closer look if the team pursues a US-fare-elasticity angle."
+  ]
+ },
+ {
+  "key": "github:toddwschneider/nyc-subway-turnstile-data",
+  "url": "https://github.com/toddwschneider/nyc-subway-turnstile-data",
+  "name": "nyc-subway-turnstile-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby/PostgreSQL pipeline that downloads MTA turnstile files directly from the MTA site from 2014-10-11 onward and loads them into a `turnstile_observations` table; committed `lib/stations.csv` maps station/line/division to borough; weekly automated refresh (Saturdays) driving a public dashboard. 121 stars, MIT, actively maintained (updated Apr 2026).",
+  "why_useful": "Gives station- and borough-level NYC subway entries/exits back to 2014 as a leading/coincident visitor-flow proxy for the NYC market (ABNB's largest single US city); could be aggregated to a monthly NYC subway volume series to compare against Inside Airbnb NYC nights.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "2014-10-11 to present (weekly refresh)",
+  "size_hint": "raw MTA weekly turnstile files, not committed; only a small station-mapping CSV committed",
+  "license": "MIT",
+  "last_activity": "2026-04-07",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Gives station- and borough-level NYC subway entries/exits back to 2014 as a leading/coincident visitor-flow proxy for the NYC market (ABNB's largest single US city); could be aggregated to a monthly NYC subway volume series to compare against Inside Airbnb NYC nights."
+  ]
+ },
+ {
+  "key": "github:mebauer/mta-data",
+  "url": "https://github.com/mebauer/mta-data",
+  "name": "mta-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pulls the MTA's 2023 Subway Origin-Destination Ridership Estimate (~116M rows, scaled-up OMNY/MetroCard tap-and-swipe data) from NYC Open Data (Socrata) via `data-exporter.py` into a 2.5GB DuckDB file; aggregated by month/day-of-week/hour for every station pair with station lat/long; includes PDF data dictionary and a Jupyter analysis notebook.",
+  "why_useful": "Origin-destination granularity could isolate airport-linked lines (JFK AirTrain/LIRR, LaGuardia, Newark) or tourist-corridor station pairs as a finer NYC visitor-flow proxy than raw entries/exits.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "calendar year 2023 only",
+  "size_hint": "~116M rows / 2.5GB DuckDB",
+  "license": "MIT",
+  "last_activity": "2024-12-15",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Origin-destination granularity could isolate airport-linked lines (JFK AirTrain/LIRR, LaGuardia, Newark) or tourist-corridor station pairs as a finer NYC visitor-flow proxy than raw entries/exits."
+  ]
+ }
+]

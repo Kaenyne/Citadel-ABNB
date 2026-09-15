@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:bisolaanalytics/global-debt",
+  "url": "https://github.com/BisolaAnalytics/Global-Debt",
+  "name": "Global-Debt",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed IMF Global Debt Database extract: unbalanced panel of 190 advanced/emerging/low-income economies, annual government/corporate/household/external debt as % of GDP, 1950-2022 (columns: country, debt-category/inflation indicator, annual percentages).",
+  "why_useful": "Household-debt-to-GDP by country is a cross-country consumer-leverage/credit-stress proxy that could feed the regional consumer-strength split (NA/EMEA/LatAm/APAC) the model already tracks; longer history (to 1950) than anything currently held on consumer credit.",
+  "potential": "medium",
+  "geography": "190 countries (global)",
+  "time_coverage": "1950-2022 annual",
+  "size_hint": "single cross-country panel CSV, IMF-sourced",
+  "license": "unspecified (source is IMF, generally open)",
+  "last_activity": "2025-12-04",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Household-debt-to-GDP by country is a cross-country consumer-leverage/credit-stress proxy that could feed the regional consumer-strength split (NA/EMEA/LatAm/APAC) the model already tracks; longer history (to 1950) than anything currently held on consumer credit."
+  ]
+ },
+ {
+  "key": "github:rogeriosprf/japan-cpi-tracker",
+  "url": "https://github.com/rogeriosprf/japan-cpi-tracker",
+  "name": "japan-cpi-tracker",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end pipeline (ingest -> transform/validate -> compute MoM/YoY -> SQLite -> Streamlit dashboard) for Japan's regional CPI using the official e-Stat API. README does not confirm coverage of the lodging/hotel-charges CPI item specifically, but the e-Stat regional CPI tables it pulls from do carry item-level detail (including the 'lodging fees' sub-item) that the pipeline's ingestion logic could be pointed at.",
+  "why_useful": "Regional (prefecture-level) CPI granularity could feed a Japan consumer-strength regional split, finer than national CPI.",
+  "potential": "medium",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "geography": "Japan (regional/prefecture)",
+  "time_coverage": "not stated",
+  "size_hint": "small pipeline + dashboard",
+  "license": "none stated",
+  "last_activity": "2026-08-26",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Regional (prefecture-level) CPI granularity could feed a Japan consumer-strength regional split, finer than national CPI.",
+   "General, actively-updated (2026-08-26) e-Stat CPI ingestion method for Japan \u2014 a starting point to pull Japan's CPI lodging-fee item by region rather than only the national headline, which is otherwise hard to source without a Japanese-language e-Stat query."
+  ]
+ },
+ {
+  "key": "github:alantaranti/sidrapy",
+  "url": "https://github.com/AlanTaranti/sidrapy",
+  "name": "sidrapy",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (MIT, 82 stars, 199 commits, active through at least 2022) for IBGE's SIDRA API. sidrapy.get_table() pulls any SIDRA table by code -- includes tourism/hospitality, PNAD labor, IPCA inflation, industrial production series for Brazil, at whatever frequency/geography IBGE publishes (national, state, municipal). No data committed; it is a live-pull method, so point-in-time care is needed at query time.",
+  "why_useful": "Gap #7 (LatAm regional travel volume outside US/EU) -- Brazil is the largest LatAm ABNB market; IBGE SIDRA carries hotel/tourism establishment surveys (PMS - Pesquisa Mensal de Servicos, including hospedagem) and consumer indicators that could proxy Brazil travel demand.",
+  "potential": "medium",
+  "geography": "Brazil (national/state/municipal)",
+  "time_coverage": "varies by SIDRA table, many series 1990s-present",
+  "license": "MIT",
+  "last_activity": "active per PyPI (docs at sidrapy.readthedocs.io), commit history through ~2022+",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #7 (LatAm regional travel volume outside US/EU) -- Brazil is the largest LatAm ABNB market; IBGE SIDRA carries hotel/tourism establishment surveys (PMS - Pesquisa Mensal de Servicos, including hospedagem) and consumer indicators that could proxy Brazil travel demand."
+  ]
+ },
+ {
+  "key": "github:wilsonfreitas/python-bcb",
+  "url": "https://github.com/wilsonfreitas/python-bcb",
+  "name": "python-bcb",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (MIT, 127 stars, 22 forks, 235 commits, recent activity/CI visible) for Banco Central do Brasil open-data APIs: SGS time series (many series from 1980s/90s), PTAX daily FX bulletins, and crucially the FOCUS bulletin market-expectations OData endpoint -- Brazil's official weekly consensus survey of analyst forecasts for GDP, inflation, FX, Selic etc. Also real-estate financing (SBPE) and bank-level IFDATA.",
+  "why_useful": "Gap #4 (point-in-time historical analyst-consensus snapshots) -- the FOCUS bulletin is a genuine vintage-carrying consensus series (published weekly with as-of dates), a rare real point-in-time macro-expectations dataset, distinct from Bloomberg/FactSet ABNB consensus but useful as a template/comparator and for Brazil-specific FX/GDP nowcasting inputs to the LatAm regional split.",
+  "potential": "medium",
+  "geography": "Brazil",
+  "time_coverage": "SGS series from 1980s/90s to present; FOCUS bulletin weekly, several years of history",
+  "license": "MIT",
+  "last_activity": "recent (CI workflows visible in repo)",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #4 (point-in-time historical analyst-consensus snapshots) -- the FOCUS bulletin is a genuine vintage-carrying consensus series (published weekly with as-of dates), a rare real point-in-time macro-expectations dataset, distinct from Bloomberg/FactSet ABNB consensus but useful as a template/comparator and for Brazil-specific FX/GDP nowcasting inputs to the LatAm regional split."
+  ]
+ },
+ {
+  "key": "github:eflores89/inegir",
+  "url": "https://github.com/eflores89/inegiR",
+  "name": "inegiR",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (53 stars, 15 forks) wrapping INEGI's Banco de Indicadores API v2.0. Functions prefixed inind_/incat_ pull GDP, unemployment and other national indicators at annual/quarterly/monthly/biweekly frequency with batch download and catalog/code lookup. Was on CRAN but archived 2026-06-01 for unaddressed issues (note: this is a currently-live compatibility problem per its own README, not a data absence) -- current working version must be installed from GitHub, not CRAN.",
+  "why_useful": "Gap #7 (Mexico regional macro) -- broadest indicator coverage of the INEGI candidates found (GDP, employment, and INEGI also publishes hotel-occupancy/tourism series reachable by indicator code through this same API), but flag the CRAN-archive/compatibility caveat before use.",
+  "potential": "medium",
+  "geography": "Mexico",
+  "time_coverage": "varies by indicator; INEGI series often 1990s/2000s-present",
+  "license": "not fully specified (open source, GitHub-hosted after CRAN archival)",
+  "last_activity": "CRAN archived 2026-06-01; GitHub version described as a substantial v3 rewrite for INEGI API compatibility",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #7 (Mexico regional macro) -- broadest indicator coverage of the INEGI candidates found (GDP, employment, and INEGI also publishes hotel-occupancy/tourism series reachable by indicator code through this same API), but flag the CRAN-archive/compatibility caveat before use."
+  ]
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:gusgordon/awesome-flight-data",
+  "url": "https://github.com/gusgordon/awesome-flight-data",
+  "name": "awesome-flight-data",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A curated 'awesome list' cataloguing flight-data APIs and providers across categories: seat maps/booking (Duffel, Sabre), schedules/seats/capacity (OAG Flight Info API, Cirium Developer Studio), ADS-B/tracking (Flightradar24 API, OpenSky Network API, FlightAware AeroAPI), and historical schedules (Aviation Edge, aviationstack, AeroDataBox, FlightLabs, AirLabs). No data itself, just a map of where to look, including the one named source in our theme (aviationstack) and the closest thing to a paid seat-capacity API (OAG).",
+  "why_useful": "Confirms that true public/free airline seat-capacity-by-route data does not exist on GitHub as a committed dataset -- the closest real feeds (OAG, Cirium) are paid APIs, which narrows this theme's actionable candidates to BTS T-100 (via skynet) and OpenSky-derived flight counts as the realistic free substitutes.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "README list only",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "not stated (list repo)",
+  "last_activity": "not surfaced",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Confirms that true public/free airline seat-capacity-by-route data does not exist on GitHub as a committed dataset -- the closest real feeds (OAG, Cirium) are paid APIs, which narrows this theme's actionable candidates to BTS T-100 (via skynet) and OpenSky-derived flight counts as the realistic free substitutes."
+  ]
+ },
+ {
+  "key": "github:euctrl-pru/pruatlas",
+  "url": "https://github.com/euctrl-pru/pruatlas",
+  "name": "pruatlas",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R package of EUROCONTROL Performance Review Unit airspace GIS layers (FIR/ANSP boundaries) and mapping helpers, based on a single 2015 AIRAC snapshot. Confirmed via WebFetch: NOT a traffic-volume or passenger-count dataset, just cartography for PRU publications.",
+  "why_useful": "Pure airspace geography/mapping utility, no passenger or traffic volume figures; only useful as a plotting aid if building airspace maps, not a KPI input.",
+  "potential": "low",
+  "time_coverage": "Single snapshot, AIRAC cycle late 2015",
+  "geography": "EUROCONTROL Member State airspace",
+  "size_hint": "small (R spatial objects)",
+  "license": "Not confirmed",
+  "last_activity": "EUROCONTROL PRU org repo",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Pure airspace geography/mapping utility, no passenger or traffic volume figures; only useful as a plotting aid if building airspace maps, not a KPI input.",
+   "Flagging as a dead end for idea #8 (bilateral air-passenger traffic): this is the closest EUROCONTROL-adjacent open repo found and it does not hold what we need. A real Eurocontrol/IATA passenger-volume-by-route open dataset was not located on GitHub in this pass."
+  ]
+ },
+ {
+  "key": "github:hementhkumar/montecarlo-gbm-analysis",
+  "url": "https://github.com/hementhkumar/Montecarlo-GBM-Analysis",
+  "name": "Montecarlo-GBM-Analysis (Jordan Tourism Board passenger demand)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Passenger-demand forecasting project for the Jordan Tourism Board using OAG Traffic Analyser data (2012-2025), World Bank WDI, UNWTO, and IMF WEO series; OLS log-log regression, residual-based Monte Carlo and GBM simulation; forecast horizon 2025-2030 (6 years forward, 13 years historical).",
+  "why_useful": "Not a data source for our specific countries, but a worked methods example (log-log demand regression + GBM Monte Carlo on air-traffic + UNWTO + WDI inputs) that is directly transferable to nowcasting/forecasting international arrivals as a leading indicator for ABNB APAC/LatAm nights -- fits the 'methods_tooling' gap (#17, mixed-frequency/demand-forecasting methods).",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Jordan (methods only, not target geography)",
+  "time_coverage": "2012-2030 (historical + forecast)",
+  "size_hint": "not confirmed",
+  "license": "not confirmed",
+  "last_activity": "2026-04-09",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "Not a data source for our specific countries, but a worked methods example (log-log demand regression + GBM Monte Carlo on air-traffic + UNWTO + WDI inputs) that is directly transferable to nowcasting/forecasting international arrivals as a leading indicator for ABNB APAC/LatAm nights -- fits the 'methods_tooling' gap (#17, mixed-frequency/demand-forecasting methods).",
+   "A worked example combining airline traffic (OAG) with UNWTO/World Bank/IMF macro series for tourism-demand forecasting \u2014 a usable methods template for MIDAS/nowcasting-style work (gap #17) even though the underlying OAG data itself is licensed and likely not redistributed in full."
+  ]
+ },
+ {
+  "key": "github:bis-med-it/pysdmx",
+  "url": "https://github.com/bis-med-it/pysdmx",
+  "name": "bis-med-it/pysdmx",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Bank for International Settlements-maintained Python SDMX library (29 stars) for reading/writing SDMX data and metadata, used internally at BIS and by some central banks for statistical exchange.",
+  "why_useful": "Another actively maintained (BIS-backed) SDMX client that could substitute for a hand-rolled Eurostat/ISTAT puller; institutional backing suggests longevity.",
+  "potential": "low",
+  "geography": "Global (SDMX providers)",
+  "time_coverage": "current live",
+  "size_hint": "library only",
+  "license": "unspecified, check repo",
+  "last_activity": "unspecified",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "overlaps khaeru/sdmx, opensdmx",
+  "hits": 2,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Another actively maintained (BIS-backed) SDMX client that could substitute for a hand-rolled Eurostat/ISTAT puller; institutional backing suggests longevity.",
+   "A central-bank-grade SDMX client is a plausible route into central-bank tourism-receipts or card-spend series (gap #6) that are published via SDMX rather than a bespoke portal."
+  ]
+ },
+ {
+  "key": "github:etalab/transport-site",
+  "url": "https://github.com/etalab/transport-site",
+  "name": "transport-site",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Elixir/Phoenix codebase for transport.data.gouv.fr, France's National Access Point for mobility data \u2014 aggregates GTFS/GTFS-RT feeds from ~356 French transit authorities (76.3% population coverage per the site) including regional and national rail/bus operators, with feed validation and proxying tools. The site itself (not this code repo) is the actual place to pull French SNCF-adjacent GTFS feeds.",
+  "why_useful": "Points to a comprehensive French national transit-data catalog (potentially including SNCF TER/Intercit\u00e9s GTFS and FlixBus France feeds) that a scraper/analyst could query for schedule/capacity data; the GitHub repo itself is only the platform's code, not the data.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "France",
+  "time_coverage": "current feeds, ongoing",
+  "size_hint": "n/a (platform code)",
+  "license": "open-source (Etalab/French government)",
+  "last_activity": "actively maintained government project",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Points to a comprehensive French national transit-data catalog (potentially including SNCF TER/Intercit\u00e9s GTFS and FlixBus France feeds) that a scraper/analyst could query for schedule/capacity data; the GitHub repo itself is only the platform's code, not the data."
+  ]
+ }
+]

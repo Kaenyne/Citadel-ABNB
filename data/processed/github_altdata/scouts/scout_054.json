@@ -1,0 +1,91 @@
+{
+  "theme": "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"cruise ship schedule dataset\" --sort stars",
+    "gh search repos \"cruise ship data\" --sort stars",
+    "gh search repos \"cruise port calls\" --sort stars",
+    "gh search repos \"AIS ship tracking dataset\" --sort stars",
+    "gh search repos \"port authority cruise passengers\" --sort stars",
+    "gh search repos \"cruise itinerary\" --sort stars",
+    "gh search repos \"NCLH OR Carnival OR RoyalCaribbean SEC filings\" --sort stars"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/reggiegentle/ncl-cli",
+      "name": "ncl-cli",
+      "category": "travel_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Unofficial read-only CLI (MIT licence) that pulls Norwegian Cruise Line itinerary and shore-excursion data (plus images) from NCL's public site as JSON. No committed dataset — a live-pull method only. Updated 3 Jul 2026, 0 stars.",
+      "why_useful": "Could be adapted to build a point-in-time itinerary/capacity-by-sailing panel for NCLH (gap #18, cruise book-ahead analogue) if run repeatedly and archived; on its own it is just a client, not data.",
+      "potential": "low",
+      "gap_targets": [18],
+      "license": "MIT",
+      "last_activity": "2026-07-03",
+      "geography": "Global (NCL sailings)",
+      "time_coverage": "Current/live only, no history",
+      "size_hint": "Code only, no data files"
+    },
+    {
+      "url": "https://github.com/NormanLo4319/Cruise_Tourism_Research_API_Request",
+      "name": "Cruise_Tourism_Research_API_Request",
+      "category": "travel_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Uses the Google Maps API plus web-scripting tools to collect cruise ports and cruise ships data (port locations, ship metadata) for a tourism research project. Small academic project repo, MIT licence, last touched 2020, 1 star.",
+      "why_useful": "A crude method sketch for building a port-call panel, but stale (2020), no committed output data visible, and Google Maps API is not a cruise-schedule source of real value.",
+      "potential": "low",
+      "gap_targets": [18],
+      "license": "MIT",
+      "last_activity": "2020-07-19",
+      "geography": "Unspecified/global",
+      "time_coverage": "2020 snapshot",
+      "size_hint": "Small, code-only"
+    },
+    {
+      "url": "https://github.com/Gulkhan0987/cruisemapper-ships-scraper",
+      "name": "cruisemapper-ships-scraper",
+      "category": "travel_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Node.js/Python scraper targeting cruisemapper.com for cruise ship data extraction (ship specs, presumably schedules/positions since cruisemapper tracks live ship positions and itineraries). MIT licence, updated Apr 2026, 1 star. No committed dataset seen, tool only.",
+      "why_useful": "cruisemapper.com aggregates live ship tracking/itinerary data across all major lines (NCLH/CCL/RCL); a working scraper against it could in principle build a port-call/schedule panel, but this repo ships no data and scraping a commercial site is a ToS question per repo rules.",
+      "potential": "low",
+      "gap_targets": [18],
+      "license": "MIT",
+      "last_activity": "2026-04-23",
+      "geography": "Global",
+      "time_coverage": "Live/current only",
+      "size_hint": "Code only"
+    },
+    {
+      "url": "https://github.com/digitalevenings/cruise-ship-data-extractor",
+      "name": "cruise-ship-data-extractor",
+      "category": "travel_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Node.js scraper (via ScraperAPI, a paid proxy service) extracting data on ~1,155 cruise ships: images, amenities, and specs. No occupancy, pricing, or schedule fields evident; no data committed to the repo itself. Updated Apr 2026, 1 star.",
+      "why_useful": "Ship-count/fleet-roster data at best; no booking, ADR, or occupancy signal. Marginal even as a fleet-capacity proxy (could sum berths across NCLH/CCL/RCL ships if specs include passenger capacity) but requires running the scraper (paid API) and no sample output is visible.",
+      "potential": "low",
+      "gap_targets": [18],
+      "license": "none stated",
+      "last_activity": "2026-04-23",
+      "geography": "Global",
+      "time_coverage": "Current only",
+      "size_hint": "Code only; target ~1,155 ship records if run"
+    },
+    {
+      "url": "https://github.com/SixbucksSolutions/ItineraryWatch",
+      "name": "ItineraryWatch",
+      "category": "travel_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Monitors cruise itineraries matching customer-provided search criteria (a price/availability watcher, not a stored panel). MIT licence, updated Jul 2026, 0 stars.",
+      "why_useful": "Conceptually close to a booking-curve/price-tracking tool (relevant to 'reserve now pay later' / advance-sale analogues) but it is a personal alert tool with no committed historical data and unclear source coverage.",
+      "potential": "low",
+      "gap_targets": [3, 18],
+      "license": "MIT",
+      "last_activity": "2026-07-24",
+      "geography": "Unspecified",
+      "time_coverage": "None (live monitor only)",
+      "size_hint": "Code only"
+    }
+  ],
+  "notes": "This theme is close to a dead end on GitHub via repo search. Six `gh search repos` calls (schedule dataset, ship data, port calls, AIS tracking dataset, port authority cruise passengers, itinerary, NCLH/Carnival/RCL SEC filings) turned up no repositories with a committed cruise dataset, no release-asset data dumps, no mirrors of CLIA/cruise-industry statistics, and nothing touching NCLH/CCL/RCL advance ticket sales, booked occupancy, or capacity (ALBD) figures specifically -- those numbers live only in the companies' own 10-Q/10-K filings (SEC EDGAR full-text/XBRL, already in our company-data holdings per gap #15's EDGAR tooling) and in paid trade-press data (Cruise Industry News, CLIA reports), not on GitHub. All results were either (a) student/tutorial DB-design or ML-regression exercises using a toy 'predict crew size' Kaggle-style cruise-ship dataset (irrelevant, excluded), (b) small scrapers/CLIs targeting cruisemapper.com, NCL's own site, or general cruise-ship specs (fleet roster / amenities, not pricing or occupancy), or (c) consumer itinerary-search tools with no historical data committed. No AIS-based port-call panels, no CLIA/BREA economic-impact-study mirrors, and no academic replication packages surfaced. WebSearch was unavailable this session (session budget exhausted before any query for this theme could run), so this scout relied on gh search repos alone; a follow-up scout with WebSearch or `gh search code` (not used here, reserved) targeting 'CLIA state of the cruise industry data', 'BREA cruise economic impact', or SEC EDGAR XBRL scrapers filtered to NCLH/CCL/RCL tickers would be the next thing to try. Given the near-total absence of usable data, the better path for gap #18 (cruise lines as book-ahead analogue) is almost certainly the companies' own quarterly disclosures (booked position commentary, ALBD, net yield) pulled via SEC EDGAR full-text search/XBRL rather than any GitHub dataset."
+}

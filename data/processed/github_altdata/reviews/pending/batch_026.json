@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:gilbertekalea/booking.com_crawler",
+  "url": "https://github.com/gilbertekalea/booking.com_crawler",
+  "name": "gilbertekalea/booking.com_crawler",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper collecting Booking.com property name, review score, price, address, plus image/URL download. No dataset committed. MIT licence, 18 stars, updated 6 Sep 2026.",
+  "why_useful": "Same class as BookingScraper \u2014 a method to build a fresh Booking.com price/rating panel; would need a human ToS decision before running per repo rules.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "global",
+  "time_coverage": "none (point-in-time crawl tool)",
+  "size_hint": "script only",
+  "license": "MIT",
+  "last_activity": "2026-09-06",
+  "duplicate_of_holding": "functionally duplicates ZoranPandovski/BookingScraper",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "Same class as BookingScraper \u2014 a method to build a fresh Booking.com price/rating panel; would need a human ToS decision before running per repo rules."
+  ]
+ },
+ {
+  "key": "github:edioff/booking-scraper",
+  "url": "https://github.com/Edioff/booking-scraper",
+  "name": "Edioff/booking-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Async Playwright-based Booking.com scraper: multi-city search, detail extraction, pricing, amenities, reviews, with anti-bot handling. MIT, 3 stars, updated Aug 2026.",
+  "why_useful": "More technically capable scraper (handles anti-bot measures, multi-city) than the simpler BeautifulSoup scripts; if a repeated price panel were ever authorized this is a more robust starting point.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "global",
+  "time_coverage": "none",
+  "size_hint": "script only",
+  "license": "MIT",
+  "last_activity": "2026-08-01",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "More technically capable scraper (handles anti-bot measures, multi-city) than the simpler BeautifulSoup scripts; if a repeated price panel were ever authorized this is a more robust starting point."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/booking-scraper",
+  "url": "https://github.com/omkarcloud/booking-scraper",
+  "name": "omkarcloud/booking-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source scraper/client targeting Booking.com search and hotel-detail pages: extracts hotel name/address/coordinates, star rating, review scores and sub-scores, live nightly/total pricing for given dates and currency, room types/bed configurations, amenities, up to 60 photos, guest reviews (25/page), Q&A, and nearby-landmark distances. No committed dataset \u2014 sample JSON response structures only. Repo shows minimal traction (1 star, 0 forks, 5 commits visible), license not clearly stated.",
+  "why_useful": "Another scraping method option for a Booking.com price panel; no data committed.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "global",
+  "time_coverage": "none",
+  "size_hint": "script only",
+  "license": "unspecified",
+  "last_activity": "2026-08-26",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "Another scraping method option for a Booking.com price panel; no data committed.",
+   "A working method for pulling live Booking.com nightly prices/availability by date/market, which is the kind of realised-price signal called out in gap #2 (realised ADR/occupancy proxies) if run responsibly and periodically \u2014 but it is unrun, thin, and would need a terms-of-service decision before any pull."
+  ]
+ },
+ {
+  "key": "github:pixelcrash/sync-rentals-calendar",
+  "url": "https://github.com/pixelcrash/Sync-Rentals-Calendar",
+  "name": "pixelcrash/Sync-Rentals-Calendar",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hosted tool to synchronize iCal rental-availability calendars across Airbnb, Booking.com, and other platforms. No committed dataset \u2014 it is calendar-sync infrastructure a host would run, not a data mirror.",
+  "why_useful": "Illustrates that Booking.com (and other STR/OTA platforms) expose iCal calendar feeds per-listing similar to Airbnb's; conceptually this is the mechanism by which one could build a Booking.com occupancy/availability panel analogous to Inside Airbnb calendars, addressing gaps #2 (realised occupancy) and #9, but requires a host's private iCal URLs, not a public bulk source.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "geography": "n/a (per-host tool)",
+  "time_coverage": "n/a",
+  "size_hint": "script only",
+  "license": "unspecified",
+  "last_activity": "2026-08-24",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "Illustrates that Booking.com (and other STR/OTA platforms) expose iCal calendar feeds per-listing similar to Airbnb's; conceptually this is the mechanism by which one could build a Booking.com occupancy/availability panel analogous to Inside Airbnb calendars, addressing gaps #2 (realised occupancy) and #9, but requires a host's private iCal URLs, not a public bulk source."
+  ]
+ },
+ {
+  "key": "github:nashmans/r-booking.com-data-analysis-and-nlp",
+  "url": "https://github.com/nashmans/R-Booking.com-Data-analysis-and-NLP",
+  "name": "nashmans/R-Booking.com-Data-analysis-and-NLP",
+  "category": "competitor_ota",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R project doing analysis/NLP on a Booking.com dataset the author webscraped with BeautifulSoup/Selenium; description mentions pricing dynamics and trends. Need to inspect repo contents to confirm whether the scraped CSV itself is committed (not verified beyond description) \u2014 2 stars, updated Jan 2025.",
+  "why_useful": "If the underlying scraped price/review dataset is actually committed in the repo, it would be a small independent Booking.com price snapshot rather than just a scraper; flagged for a closer look rather than a confirmed finding.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "unclear (likely a Europe/UK sample based on 'R' naming convention, unverified)",
+  "time_coverage": "unclear, likely single snapshot",
+  "size_hint": "unverified \u2014 description implies a scraped dataset exists but contents not confirmed",
+  "license": "unspecified",
+  "last_activity": "2025-01-28",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "If the underlying scraped price/review dataset is actually committed in the repo, it would be a small independent Booking.com price snapshot rather than just a scraper; flagged for a closer look rather than a confirmed finding."
+  ]
+ }
+]

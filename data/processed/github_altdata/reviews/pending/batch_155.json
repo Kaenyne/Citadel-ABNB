@@ -1,0 +1,124 @@
+[
+ {
+  "key": "github:api-evangelist/guesty",
+  "url": "https://github.com/api-evangelist/guesty",
+  "name": "api-evangelist/guesty",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Documentation profile of Guesty's Open API surface (properties, reservations, guests, operations across channels). No data.",
+  "why_useful": "Same caveat as Hostaway profile \u2014 per-operator private data only, not a market benchmark.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "docs only",
+  "license": "none listed",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Same caveat as Hostaway profile \u2014 per-operator private data only, not a market benchmark."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/lodgify",
+  "url": "https://github.com/api-evangelist/lodgify",
+  "name": "api-evangelist/lodgify",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Documentation profile of Lodgify's public API (v1/v2) surface: website builder, booking engine, channel manager, PMS endpoints. No data.",
+  "why_useful": "Same caveat \u2014 private per-operator data only.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "docs only",
+  "license": "none listed",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Same caveat \u2014 private per-operator data only."
+  ]
+ },
+ {
+  "key": "github:th1-ai/hostaway-pp-cli",
+  "url": "https://github.com/th1-ai/hostaway-pp-cli",
+  "name": "th1-ai/hostaway-pp-cli",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Typed Go CLI + MCP server wrapping the Hostaway PMS API: portfolio pipeline, channel-parity drift detection, owner statements, bulk calendar/messaging, with a local SQLite mirror of the pulled data.",
+  "why_useful": "Only pulls data the caller's own Hostaway account can see (needs an API key tied to a specific property manager's portfolio) \u2014 not a public market dataset. Cataloguing only because it shows the shape of PMS operational data (rates, channel-parity, occupancy) that in principle could be assembled if the team had operator relationships.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a (per-account)",
+  "time_coverage": "n/a",
+  "size_hint": "CLI/SDK only, no bundled data",
+  "license": "Apache-2.0",
+  "last_activity": "2026-07-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Only pulls data the caller's own Hostaway account can see (needs an API key tied to a specific property manager's portfolio) \u2014 not a public market dataset. Cataloguing only because it shows the shape of PMS operational data (rates, channel-parity, occupancy) that in principle could be assembled if the team had operator relationships."
+  ]
+ },
+ {
+  "key": "github:th1-ai/lodgify-pp-cli",
+  "url": "https://github.com/th1-ai/lodgify-pp-cli",
+  "name": "th1-ai/lodgify-pp-cli",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Same generator's Go CLI + MCP server for the Lodgify API: 73 endpoints across bookings, properties, rates, calendar, messages, payment links, with local SQLite mirror.",
+  "why_useful": "Same caveat as the Hostaway sibling repo \u2014 per-account private PMS data only.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "CLI/SDK only",
+  "license": "Apache-2.0",
+  "last_activity": "2026-07-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Same caveat as the Hostaway sibling repo \u2014 per-account private PMS data only."
+  ]
+ },
+ {
+  "key": "github:mobin-torabi/pricing-tracker",
+  "url": "https://github.com/mobin-torabi/pricing-tracker",
+  "name": "mobin-torabi/pricing-tracker",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"Portable daily tracker for Rental Ninja & Lodgify pricing into your own Google Sheets\" \u2014 a script that logs an operator's own listing prices day over day.",
+  "why_useful": "Shows a pattern (daily price-tracking into a spreadsheet) that could in principle be repointed at public listing pages for a point-in-time price panel, but as shipped it only tracks the user's own PMS-connected listings.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "geography": "n/a",
+  "time_coverage": "ongoing daily log, account-specific",
+  "size_hint": "script only",
+  "license": "none listed",
+  "last_activity": "2026-06-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Shows a pattern (daily price-tracking into a spreadsheet) that could in principle be repointed at public listing pages for a point-in-time price panel, but as shipped it only tracks the user's own PMS-connected listings."
+  ]
+ }
+]

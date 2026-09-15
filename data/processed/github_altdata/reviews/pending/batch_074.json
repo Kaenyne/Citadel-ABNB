@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:mpayson/safegraph-patterns",
+  "url": "https://github.com/mpayson/safegraph-patterns",
+  "name": "mpayson/safegraph-patterns",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Minimal ArcGIS-JS demo app (0 stars, 1 commit, built for an Esri Partner Conference) for exploring SafeGraph Patterns (POI-level visit-count) data. No data bundled, no license stated; essentially a UI shell.",
+  "why_useful": "Confirms SafeGraph Patterns schema/structure is documented in the open even where the underlying paid dataset is not; low standalone value but a pointer for anyone with SafeGraph/Advan/Placer.ai access.",
+  "geography": "US POI-level (per SafeGraph coverage)",
+  "time_coverage": "none in repo",
+  "size_hint": "trivial",
+  "license": "none stated",
+  "last_activity": "2020-05-04",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Confirms SafeGraph Patterns schema/structure is documented in the open even where the underlying paid dataset is not; low standalone value but a pointer for anyone with SafeGraph/Advan/Placer.ai access."
+  ]
+ },
+ {
+  "key": "github:kuandeng/lightgcn",
+  "url": "https://github.com/kuandeng/LightGCN",
+  "name": "kuandeng/LightGCN",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Recommendation-systems repo that bundles a processed version of the Gowalla location check-in dataset (train.txt/test.txt user-item interaction lists plus user_list.txt/item_list.txt ID maps) alongside Yelp2018 and Amazon-book, as inputs to a graph recommender.",
+  "why_useful": "CONTEXT gap #20 names Gowalla/Foursquare check-ins as party-size / cross-border tourism-flow proxies; this repo's Gowalla data is however already reduced to anonymous user-POI interaction pairs for a recommender (no raw lat/lon/timestamp), so it would need re-derivation from the original SNAP Gowalla release to recover geospatial/temporal check-in patterns \u2014 flagging as a lead, not a ready-made dataset.",
+  "potential": "low",
+  "geography": "originally global (Gowalla was worldwide, US/EU heavy)",
+  "time_coverage": "Gowalla operated 2007-2012 (service later shut down); dataset reflects that window only",
+  "size_hint": "processed text files, tens of MB",
+  "license": "not stated for data; code unspecified",
+  "last_activity": "not surfaced",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   20
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "CONTEXT gap #20 names Gowalla/Foursquare check-ins as party-size / cross-border tourism-flow proxies; this repo's Gowalla data is however already reduced to anonymous user-POI interaction pairs for a recommender (no raw lat/lon/timestamp), so it would need re-derivation from the original SNAP Gowalla release to recover geospatial/temporal check-in patterns \u2014 flagging as a lead, not a ready-made dataset."
+  ]
+ },
+ {
+  "key": "github:pengwynn/gowalla",
+  "url": "https://github.com/pengwynn/gowalla",
+  "name": "pengwynn/gowalla",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby wrapper (56 stars) for the (now-defunct) Gowalla API.",
+  "why_useful": "Historical-interest only \u2014 Gowalla shut down in 2012 so this API client is dead; listed only to close out the idea for the next scout so it is not re-flagged.",
+  "potential": "low",
+  "geography": "n/a (defunct service)",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "2025-06-08 (repo housekeeping only, underlying API dead since 2012)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   20
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "Historical-interest only \u2014 Gowalla shut down in 2012 so this API client is dead; listed only to close out the idea for the next scout so it is not re-flagged."
+  ]
+ },
+ {
+  "key": "github:alexrod61/doordash-dataset",
+  "url": "https://github.com/alexrod61/doordash-dataset",
+  "name": "alexrod61/doordash-dataset",
+  "category": "gig_economy_not_in_taxonomy",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed CSV (`doordash.csv`), a sample of DoorDash's own historical ETA-prediction dataset (order-level features: store/market id, item counts, order value, created-at/actual-delivery timestamps), originally released by DoorDash for a takehome/Kaggle exercise. Static, one vintage, no ongoing pull.",
+  "why_useful": "Order-level delivery-app data is the closest committed 'gig/platform consumer behaviour' dataset found in this sweep; could sanity-check discretionary local-spend timing patterns (order value by day-of-week/hour) as a loose cross-platform consumer-strength read, but it is a fixed historical snapshot, not a refreshable time series, so it cannot feed a quarterly forecast on its own.",
+  "potential": "low",
+  "geography": "US metros (unspecified which)",
+  "time_coverage": "Single historical window (exact dates not documented in README)",
+  "size_hint": "One CSV, row count unspecified (parent Kaggle DoorDash ETA dataset is ~197k rows)",
+  "last_activity": "2026-01-26",
+  "license": "MIT",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Order-level delivery-app data is the closest committed 'gig/platform consumer behaviour' dataset found in this sweep; could sanity-check discretionary local-spend timing patterns (order value by day-of-week/hour) as a loose cross-platform consumer-strength read, but it is a fixed historical snapshot, not a refreshable time series, so it cannot feed a quarterly forecast on its own.",
+   "Real per-order delivery volume/timing data by market and date could in principle be used as a template for a food-delivery demand pace proxy (kernel analogue to booking pace), but this specific sample is a static historical ML benchmark (one company, ~2015, no recent extension), not a live or refreshable series."
+  ]
+ },
+ {
+  "key": "github:dklim-git/doordash-project",
+  "url": "https://github.com/dklim-git/DoorDash-Project",
+  "name": "dklim-git/DoorDash-Project",
+  "category": "gig_economy_not_in_taxonomy",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Data-cleaning/visualization project built on the same DoorDash ETA sample dataset; likely re-hosts the CSV plus notebooks.",
+  "why_useful": "Redundant with alexrod61/doordash-dataset; flagged only in case this copy has extra fields or a longer sample.",
+  "potential": "low",
+  "geography": "US metros (unspecified)",
+  "time_coverage": "Same historical snapshot as above",
+  "size_hint": "Unverified",
+  "last_activity": "2025-08-11",
+  "license": "none stated",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "alexrod61/doordash-dataset (same underlying DoorDash ETA sample)",
+  "hits": 1,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Redundant with alexrod61/doordash-dataset; flagged only in case this copy has extra fields or a longer sample."
+  ]
+ }
+]

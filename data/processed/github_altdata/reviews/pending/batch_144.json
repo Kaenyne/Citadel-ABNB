@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:chi0tzp/yfcc100m-downloader",
+  "url": "https://github.com/chi0tzp/YFCC100M-Downloader",
+  "name": "YFCC100M-Downloader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python multiprocessing downloader for the metadata of the Yahoo Flickr Creative Commons 100M dataset: ~99.2M photos + 0.8M videos with geotags, timestamps, and CC licence info, fetched in two steps (index then file download). Repo does not host the data itself. 42 stars, no stated licence for the tool.",
+  "why_useful": "Working, non-scraper acquisition path for YFCC100M's geotagged Flickr photo/video metadata (100M items, worldwide, with capture timestamps) -- could be filtered to top tourism destinations for a photo-volume travel-flow proxy, one of the explicit theme targets (YFCC100M tourism subsets).",
+  "potential": "medium",
+  "geography": "worldwide (YFCC100M is global)",
+  "time_coverage": "YFCC100M photos span ~2004-2014 capture dates",
+  "size_hint": "n/a (downloader); parent dataset is 100M Flickr photos/videos with metadata",
+  "license": "not confirmed",
+  "last_activity": "2020-05-12",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Working, non-scraper acquisition path for YFCC100M's geotagged Flickr photo/video metadata (100M items, worldwide, with capture timestamps) -- could be filtered to top tourism destinations for a photo-volume travel-flow proxy, one of the explicit theme targets (YFCC100M tourism subsets).",
+   "YFCC100M geotags could reconstruct historical (pre-2015) tourist-flow / visitor-origin-destination patterns for cities in the Inside Airbnb panel, complementing party-size and cross-border-share proxies (CONTEXT gap #20) -- though the underlying photo corpus is dated (collected ~2004-2014), so it is a baseline/methods reference more than a current nowcast source."
+  ]
+ },
+ {
+  "key": "github:yya518/finbert",
+  "url": "https://github.com/yya518/FinBERT",
+  "name": "FinBERT (Yang, UcHRoy, Huang) \u2014 finance-domain BERT incl. earnings-call pretraining",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Pretrained BERT for financial text, trained on 4.9B tokens: 10-K/10-Q corporate reports (2.5B tokens), EARNINGS CALL TRANSCRIPTS (1.3B tokens), and analyst reports (1.1B tokens); the released finbert-tone variant is fine-tuned on 10,000 manually labeled (pos/neg/neutral) analyst-report sentences. Apache-2.0, 661 stars, 144 forks. Model weights hosted on Hugging Face (yiyanghkust/finbert-tone), including ESG and forward-looking-statement variants.",
+  "why_useful": "A ready-made, earnings-call-trained tone/sentiment scorer (not a raw ABNB dataset, but a validated tool) that could score ABNB's own and peer transcripts for management-tone features feeding the guide-composition model, without needing to build a tone classifier from scratch.",
+  "potential": "medium",
+  "geography": "US, broad financial-text corpus",
+  "time_coverage": "not stated precisely",
+  "size_hint": "4.9B token pretraining corpus (not redistributed raw); 10k labeled sentences for fine-tuning",
+  "license": "Apache-2.0",
+  "last_activity": "not stated precisely; multiple HF model variants released",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "team already tested 'management tone' and found it did not beat naive on our construction; this is a different, earnings-call-pretrained tone tool worth trying before concluding tone is dead",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A ready-made, earnings-call-trained tone/sentiment scorer (not a raw ABNB dataset, but a validated tool) that could score ABNB's own and peer transcripts for management-tone features feeding the guide-composition model, without needing to build a tone classifier from scratch."
+  ]
+ },
+ {
+  "key": "github:unniananya/earnings-implied-move-mispricing",
+  "url": "https://github.com/unniananya/Earnings-Implied-Move-Mispricing",
+  "name": "Earnings-Implied-Move-Mispricing",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Research framework studying earnings-implied-move mispricing via option straddle prices vs. realized post-earnings moves. Notebooks build base/loose/strict event datasets of 9,804 / 9,022 / 7,412 earnings events (2018-2024) using WRDS, OptionMetrics, and CRSP; regresses straddle 'edge' (realized minus implied move) on pre-earnings IV, bid-ask spreads, open interest, volume, price; expanding-window OOS validation 2018-2020 train / 2021-2024 test; includes a research paper PDF.",
+  "why_useful": "Directly on-theme methodology for constructing an ABNB earnings-implied-move / vol-crush estimator ahead of the 5 Nov print (straddle price vs realized move), which is exactly the reverse-DCF/market-implied-move work already underway (see reverse-dcf-run memory note) \u2014 worth a closer read for the modeling approach even if the underlying tickers are not ABNB.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (US equities cross-section)",
+  "time_coverage": "unknown, not yet inspected",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "2026-06-14",
+  "duplicate_of_holding": "overlaps in spirit with our own market-implied reverse-DCF work (12-13 Sep 2026, docs/reverse_dcf/SYNTHESIS.md) which already derived a 12M implied-move sd of 9.5% for the 5 Nov print; this repo's method could be a cross-check, not a new number",
+  "hits": 3,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets",
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Directly on-theme methodology for constructing an ABNB earnings-implied-move / vol-crush estimator ahead of the 5 Nov print (straddle price vs realized move), which is exactly the reverse-DCF/market-implied-move work already underway (see reverse-dcf-run memory note) \u2014 worth a closer read for the modeling approach even if the underlying tickers are not ABNB.",
+   "Large-sample (thousands of events) earnings-implied-move methodology directly applicable to ABNB's 5 Nov print, but the underlying data (WRDS/OptionMetrics/CRSP) is licensed and not redistributable -- only the method/code is freely usable, not the dataset itself.",
+   "A worked methodology for comparing ABNB's straddle-implied 5 Nov move against realized historical post-print moves (already partly done in the reverse-DCF market-implied model per memory) -- could sanity-check or extend that sd-of-move estimate; no bundled ABNB data."
+  ]
+ },
+ {
+  "key": "github:open-lemma/options-implied-probability",
+  "url": "https://github.com/Open-Lemma/options-implied-probability",
+  "name": "OIPD (options-implied-probability)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (354 stars, Apache-2.0) that fits an arbitrage-free implied-volatility surface from an options chain and converts it into a market-implied probability distribution for the underlying's future price; built-in free yfinance data connector; example notebooks pull GME options live.",
+  "why_useful": "Directly usable as a method to build an ABNB earnings-implied-move / implied-distribution estimate from current Yahoo option chains (which the team already holds) ahead of the 5 Nov print \u2014 a ready-made implied-move calculator rather than data itself.",
+  "potential": "medium",
+  "size_hint": "code only, no persisted dataset",
+  "time_coverage": "current/live snapshot only via yfinance",
+  "geography": "US listed options (works for ABNB)",
+  "license": "Apache-2.0",
+  "last_activity": "624 commits, appears actively maintained",
+  "duplicate_of_holding": "uses the same Yahoo current-options-chain source already held; adds an implied-move METHOD on top, not new raw data",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Directly usable as a method to build an ABNB earnings-implied-move / implied-distribution estimate from current Yahoo option chains (which the team already holds) ahead of the 5 Nov print \u2014 a ready-made implied-move calculator rather than data itself."
+  ]
+ },
+ {
+  "key": "github:riyadhmzyev/financial-market-event-study-python",
+  "url": "https://github.com/riyadhmzyev/Financial-Market-Event-Study-Python",
+  "name": "Financial-Market-Event-Study-Python",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reusable Python event-study framework: OLS market-model estimation, abnormal returns (AR) and cumulative abnormal returns (CAR), statistical significance testing, and visualization, built on historical price data (user-supplied, not bundled).",
+  "why_useful": "Generic, reusable event-study package (not a one-off single-ticker notebook) that we could point at ABNB earnings dates plus the peer set (BKNG/EXPE/MAR/HLT) to measure abnormal-return reactions and drift; directly matches gap #17 (event-study packages, earnings-implied-move estimators).",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "size_hint": "small Python repo, no bundled data",
+  "time_coverage": "n/a (user-supplied price history)",
+  "geography": "n/a",
+  "license": "unspecified",
+  "last_activity": "2026-08-22",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Generic, reusable event-study package (not a one-off single-ticker notebook) that we could point at ABNB earnings dates plus the peer set (BKNG/EXPE/MAR/HLT) to measure abnormal-return reactions and drift; directly matches gap #17 (event-study packages, earnings-implied-move estimators)."
+  ]
+ }
+]

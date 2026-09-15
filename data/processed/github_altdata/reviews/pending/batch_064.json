@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:tsdataclinic/newerhoods",
+  "url": "https://github.com/tsdataclinic/newerhoods",
+  "name": "tsdataclinic/newerhoods",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "NYC Data Clinic project aggregating NYC Open Data at the census-tract level and using ML (clustering) to redraw data-driven neighbourhood boundaries; includes tract-level feature tables and boundary-generation code, Apache-2.0.",
+  "why_useful": "Provides both a census-tract-level NYC dataset and a method for building STR-relevant neighbourhood definitions from tract data, useful for any tract-to-neighbourhood crosswalk work on NYC STR data.",
+  "potential": "medium",
+  "size_hint": "NYC tract-level tables + clustering code",
+  "geography": "New York City",
+  "time_coverage": "circa 2020-2021 NYC Open Data vintage",
+  "license": "Apache-2.0",
+  "last_activity": "2025-01-09",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "Provides both a census-tract-level NYC dataset and a method for building STR-relevant neighbourhood definitions from tract data, useful for any tract-to-neighbourhood crosswalk work on NYC STR data."
+  ]
+ },
+ {
+  "key": "github:hantswilliams/hud_usps_crosswalk_files",
+  "url": "https://github.com/hantswilliams/hud_usps_crosswalk_files",
+  "name": "hantswilliams/hud_usps_crosswalk_files",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed copies of HUD-USPS ZIP-code crosswalk files (ZIP to census tract / county / CBSA), which HUD otherwise only distributes as a paid/registration-gated quarterly download.",
+  "why_useful": "A free mirror of the standard ZIP<->tract/county/CBSA crosswalk used to join STR registry data (often ZIP-level) to census geographies for regional aggregation; generally useful infrastructure for any of our municipal STR registry work.",
+  "potential": "medium",
+  "size_hint": "multiple quarterly crosswalk CSVs",
+  "geography": "USA, national",
+  "time_coverage": "multiple HUD quarterly vintages through 2024",
+  "license": "none stated",
+  "last_activity": "2024-10-15",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "A free mirror of the standard ZIP<->tract/county/CBSA crosswalk used to join STR registry data (often ZIP-level) to census geographies for regional aggregation; generally useful infrastructure for any of our municipal STR registry work."
+  ]
+ },
+ {
+  "key": "github:kraina-ai/quackosm",
+  "url": "https://github.com/kraina-ai/QuackOSM",
+  "name": "kraina-ai/QuackOSM",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source Python/CLI tool (375 stars, Apache-2.0) for reading OpenStreetMap PBF extracts directly via DuckDB, producing tabular/geoparquet output of OSM features (including tourism/accommodation/POI tags) for any region.",
+  "why_useful": "A one-command way to pull OSM points of interest (hotels, short-term-rental-tagged buildings, restaurants/attractions used as tourism-density proxies) for any city/country as a free, always-current geospatial layer feeding gap #20 (geospatial POI / party-size proxies) and cross-checking Inside Airbnb listing density against broader tourism infrastructure.",
+  "potential": "medium",
+  "geography": "global (OSM coverage)",
+  "time_coverage": "current OSM snapshot, any historical PBF extract if available",
+  "size_hint": "tool, not a fixed dataset",
+  "license": "Apache-2.0",
+  "last_activity": "active (390+375 stars across kraina-ai repos, actively maintained per repo listing)",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "A one-command way to pull OSM points of interest (hotels, short-term-rental-tagged buildings, restaurants/attractions used as tourism-density proxies) for any city/country as a free, always-current geospatial layer feeding gap #20 (geospatial POI / party-size proxies) and cross-checking Inside Airbnb listing density against broader tourism infrastructure."
+  ]
+ },
+ {
+  "key": "github:bryanvallejo16/popflowestonia",
+  "url": "https://github.com/bryanvallejo16/popFlowEstonia",
+  "name": "popFlowEstonia",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Leaflet/D3 population-flowmap visualization built on an origin-destination (OD) matrix derived from mobile positioning data supplied by the University of Tartu Mobility Lab (the academic group behind Positium, Estonia's mobile-network-operator tourism-statistics pioneer that feeds Eurostat's MNO experimental statistics work). Contains a committed data file data/population_estonia.js (~11.1MB) holding the OD matrix/flow data for Estonia, plus index.html/style.css for the map viewer.",
+  "why_useful": "Directly touches the Eurostat MNO-experimental-statistics lineage named in this theme (Estonia/Positium/University of Tartu is the flagship MNO-tourism-stats case study); the committed 11MB OD-matrix file is real mobile-positioning-derived flow data, even though it is a population/commuting flow map rather than an inbound-tourism arrivals series, and no README detail on vintage/exact fields was retrievable via fetch.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Estonia",
+  "time_coverage": "unknown (not stated in fetched content)",
+  "size_hint": "one ~11.1MB JS data file (OD matrix)",
+  "license": "unknown (not stated)",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Directly touches the Eurostat MNO-experimental-statistics lineage named in this theme (Estonia/Positium/University of Tartu is the flagship MNO-tourism-stats case study); the committed 11MB OD-matrix file is real mobile-positioning-derived flow data, even though it is a population/commuting flow map rather than an inbound-tourism arrivals series, and no README detail on vintage/exact fields was retrievable via fetch.",
+   "Directly downstream of the Estonian mobile-positioning/MNO tourism-statistics ecosystem the Eurostat experimental series is built on; if the OD matrices in data/ are real (not synthetic demo), this is a rare committed MNO-derived mobility dataset rather than just a paper describing the method."
+  ]
+ },
+ {
+  "key": "github:pintergreg/reverse-engineering-yjmob100k-grid",
+  "url": "https://github.com/pintergreg/reverse-engineering-YJMob100K-grid",
+  "name": "reverse-engineering-YJMob100K-grid",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Code (65 commits) reverse-engineering the geographic grid underlying YJMob100K, a large anonymized human-mobility dataset (~100,000 users, ~75 days, originally Japan/Yahoo Japan) hosted on Zenodo; this repo's own outputs are a reproduced GeoJSON grid (EPSG:2449), choropleth maps, and comparative grids for Helsinki/London/Toronto/Dallas-Fort Worth, cross-validated against Japan's 2020 Census. Points to the YJMob100K Zenodo dataset itself for raw data. Code: BSD-3-Clause; figures: CC BY 4.0; shapefiles: OSM ODbL.",
+  "why_useful": "YJMob100K is a substantial, real, publicly hosted (Zenodo) mobile-location panel that could proxy domestic mobility/tourism intensity in Japan (APAC gap) and other cities; this repo supplies the georeferencing/grid-reconstruction method needed to use it, and documents that de-identified location data does not anonymize well, which is itself a usable caveat for any mobile-positioning occupancy-proxy work.",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "geography": "Japan (primary), plus Helsinki, London, Toronto, Dallas-Fort Worth grids",
+  "time_coverage": "~75 days of underlying YJMob100K panel (exact years not stated in fetch)",
+  "size_hint": "~100,000 users in underlying Zenodo dataset; this repo is grid/code only",
+  "license": "BSD-3-Clause (code), CC BY 4.0 (docs/figures), ODbL (shapefiles)",
+  "last_activity": "2026-06-03",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "YJMob100K is a substantial, real, publicly hosted (Zenodo) mobile-location panel that could proxy domestic mobility/tourism intensity in Japan (APAC gap) and other cities; this repo supplies the georeferencing/grid-reconstruction method needed to use it, and documents that de-identified location data does not anonymize well, which is itself a usable caveat for any mobile-positioning occupancy-proxy work.",
+   "Points to YJMob100K as an external, sizeable Japan urban-mobility dataset derived from mobile positioning; not tourism-labeled but could proxy visitor movement in a market (Japan/APAC) that is one of our numbered regional gaps if cross-referenced with known tourist areas."
+  ]
+ }
+]

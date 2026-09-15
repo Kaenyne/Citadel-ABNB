@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:jonathanyang7/adaptive-nowcasting",
+  "url": "https://github.com/jonathanyang7/adaptive-nowcasting",
+  "name": "adaptive-nowcasting (tourism)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R repository implementing 'Adaptive Nowcasting of Tourism Statistics using Google Trends' \u2014 a method paper/code specifically for tourism-statistics nowcasting from Trends data (not consumption or GDP generically).",
+  "why_useful": "Directly on-theme: a tourism-specific (not generic macro) Google-Trends nowcasting method, addressing gap #17 (mixed-frequency/nowcasting methods) with a travel-demand application closer to Airbnb nights than the generic GDP/consumption nowcasting repos below. Worth reading the method even though our own generic Trends nowcast failed \u2014 this uses an adaptive/rolling weighting scheme we have not tried.",
+  "potential": "medium",
+  "geography": "unspecified (method paper, likely a national tourism board case study)",
+  "time_coverage": "unspecified",
+  "size_hint": "small research repo",
+  "license": "unspecified",
+  "last_activity": "2024-08-24",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "overlaps failed 'Google Trends as pulled' test but is a different (adaptive) method, not yet tried",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Directly on-theme: a tourism-specific (not generic macro) Google-Trends nowcasting method, addressing gap #17 (mixed-frequency/nowcasting methods) with a travel-demand application closer to Airbnb nights than the generic GDP/consumption nowcasting repos below. Worth reading the method even though our own generic Trends nowcast failed \u2014 this uses an adaptive/rolling weighting scheme we have not tried."
+  ]
+ },
+ {
+  "key": "github:chenchends/tourism-data-analysis",
+  "url": "https://github.com/ChenChenDS/Tourism-data-analysis",
+  "name": "Tourism-data-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed file `travel_data.xls` used to analyze top tourist-sending and top tourist-receiving countries and trend of the international travel & tourism sector. Exact source, years, and country list not confirmed from the fetched page (needs opening the xls to verify).",
+  "why_useful": "One of the few repos directly citing a WTTC report as its data source; worth checking for a committed WTTC economic-impact extract (GDP/employment contribution by country), which would plug directly into the WTTC gap in this theme, though the repo is stale (2019) so any data would be pre-2019 vintage only.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "license": "none declared",
+  "last_activity": "2019-05-13",
+  "geography": "unspecified, likely global",
+  "time_coverage": "pre-2019",
+  "size_hint": "unverified, 29 stars",
+  "hits": 2,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys",
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "One of the few repos directly citing a WTTC report as its data source; worth checking for a committed WTTC economic-impact extract (GDP/employment contribution by country), which would plug directly into the WTTC gap in this theme, though the repo is stale (2019) so any data would be pre-2019 vintage only.",
+   "Possible bilateral/country-level international-tourist-flow panel (sending vs receiving countries), which would be relevant to cross-border travel-flow proxies (gap #20) if the underlying data turns out to be UNWTO/World Bank sourced and multi-year \u2014 but unverified beyond the filename, so flagged as marginal until someone opens the actual .xls."
+  ]
+ },
+ {
+  "key": "github:namchylka-ux/china-tourism-dataset",
+  "url": "https://github.com/namchylka-ux/china-tourism-dataset",
+  "name": "china-tourism-dataset",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed CSV `china_tourism_2015_2023.csv` (12.6KB), 31 Chinese provinces/regions x 9 years (2015-2023): columns year, province, domestic_tourists_mln, inbound_tourists_mln, tourism_revenue_billion, gdp_billion, population_mln. E.g. Beijing 2015: domestic 199.75mn, inbound 9.168mn, tourism revenue RMB190.63bn. Appears compiled from official (NBS/provincial statistical yearbook) tourism figures; no source citation or code, just the flat file. No commit history/stars visible beyond the single file; unclear licence.",
+  "why_useful": "Directly addresses gap #7 (regional travel volume outside US/EU, China domestic+inbound) with province-level granularity and a longer 9-year run; could be cross-checked/extended for a China domestic-travel base rate, though ABNB's China exposure is minor so relevance is mostly as a macro-context comparator, not a KPI driver.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "China, 31 provinces",
+  "time_coverage": "2015-2023, annual",
+  "size_hint": "12.6KB single CSV",
+  "license": "none stated",
+  "last_activity": "2025-10-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Directly addresses gap #7 (regional travel volume outside US/EU, China domestic+inbound) with province-level granularity and a longer 9-year run; could be cross-checked/extended for a China domestic-travel base rate, though ABNB's China exposure is minor so relevance is mostly as a macro-context comparator, not a KPI driver."
+  ]
+ },
+ {
+  "key": "github:baisebaoma/_baiduqianxi_",
+  "url": "https://github.com/baisebaoma/_baiduqianxi_",
+  "name": "_baiduqianxi_ (Baidu Migration Platform API client)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (87 stars, updated ~13 days ago per search snapshot) for Baidu Qianxi (\"Baidu Migration\"/\u6167\u773c) \u2014 China's near-real-time population-flow index built from Baidu Maps location data, giving city-to-city and intra-city movement intensity indices, historically used by researchers/media to track Chunyun (Spring Festival travel rush) and holiday travel surges since ~2015.",
+  "why_useful": "Baidu Qianxi is the closest thing to a real-time China domestic-travel-intensity proxy (used academically for COVID mobility and holiday-travel studies); a pull method for it would let the team build a China domestic travel-intensity index analogous to TSA throughput, addressing gap #7/#20-style mobility proxies, though it requires validating against any China revenue-relevant KPI (currently unclear if worth building given ABNB's small China footprint).",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "geography": "China, city/province/national",
+  "time_coverage": "~2015-present, daily/near-real-time",
+  "size_hint": "scraper/client, no bundled data",
+  "license": "unknown",
+  "last_activity": "recent (within ~2 weeks of scan)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Baidu Qianxi is the closest thing to a real-time China domestic-travel-intensity proxy (used academically for COVID mobility and holiday-travel studies); a pull method for it would let the team build a China domestic travel-intensity index analogous to TSA throughput, addressing gap #7/#20-style mobility proxies, though it requires validating against any China revenue-relevant KPI (currently unclear if worth building given ABNB's small China footprint)."
+  ]
+ },
+ {
+  "key": "github:sunnyuxuan/china_outbound_tourism",
+  "url": "https://github.com/sunnyuxuan/China_Outbound_Tourism",
+  "name": "China_Outbound_Tourism",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "data/ folder with 9 committed CSVs: Age.csv, Consumption.csv, Income.csv, Marriage.csv, Outbound_travelers_by_province.csv, Spending.csv, TopPlace.csv, TourismExpenditure1995_2013.csv, population.csv, plus a china.json map. A student data-viz project profiling Chinese outbound tourist demographics and spending; TourismExpenditure1995_2013.csv gives a long (18-year) historical outbound-expenditure series and Outbound_travelers_by_province.csv gives province-level outbound traveler counts. No license stated; last activity ~2017 (repo old, data itself covers 1995-2013).",
+  "why_useful": "Fills gap #7 (regional travel volume outside US/EU) and gap #9 context (Chinese outbound demand, relevant to APAC mix and Chinese-traveler share of ABNB bookings) with genuinely historical (pre-2013) province-level and time-series data not covered by anything we hold.",
+  "potential": "medium",
+  "geography": "China (outbound, by province)",
+  "time_coverage": "~1995-2013 (TourismExpenditure series); other files single-snapshot demographic breakdowns, era unclear",
+  "size_hint": "9 small CSVs, unknown row counts (not row-counted, file listing only)",
+  "license": "none stated",
+  "last_activity": "~2017 (repo inactive)",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Fills gap #7 (regional travel volume outside US/EU) and gap #9 context (Chinese outbound demand, relevant to APAC mix and Chinese-traveler share of ABNB bookings) with genuinely historical (pre-2013) province-level and time-series data not covered by anything we hold."
+  ]
+ }
+]

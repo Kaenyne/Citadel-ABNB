@@ -1,0 +1,25 @@
+{
+  "slug": "sumaksharikaa-earnings-call-finbert-sentiment",
+  "url": "https://github.com/sumaksharikaa/earnings-call-nlp",
+  "sampled": true,
+  "total_bytes": 720675,
+  "files": [
+    "sumaksharikaa_sentiment_results.csv",
+    "sumaksharikaa_README.md"
+  ],
+  "rows": "sumaksharikaa_sentiment_results.csv: 4,498 rows as committed, but only 282 distinct rows (277 distinct ticker-quarter pairs) - the file is a join artifact with each transcript row repeated ~16x on average; README.md: n/a",
+  "columns": "ticker, quarter (YYYY-Qn), date (call datetime string, e.g. 'May 06, 2021, 8:00 a.m. ET'), positive, negative, neutral (FinBERT probs on first 3,000 chars of Q&A section), sentiment_score (=positive-negative), sector, q (duplicate of quarter), risk_count, positive_count (keyword counts), risk_ratio",
+  "date_range": "quarter 2017-Q4 to 2023-Q3; parsed call dates 2019-04-25 to 2023-02-08 (17 of 4,498 date strings did not parse); per-ticker coverage is patchy (1 to 15 quarters each)",
+  "how_pulled": "curl -sL -o sumaksharikaa_sentiment_results.csv https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/main/data/sentiment_results.csv ; curl -sL -o sumaksharikaa_README.md https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/HEAD/README.md ; gh api repos/sumaksharikaa/earnings-call-nlp/contents/{,data,notebooks} ; curl of notebooks/earnings_nlp (ipynb, 487 KB, grepped for the data source only, not kept) ; pandas profiling of the CSV",
+  "full_dataset_size": "The repo itself is complete at 3 files of data (sentiment_results.csv 719 KB; two PNGs 200 KB and 372 KB; notebook 487 KB). The underlying corpus (data/transcripts.pkl, gitignored, 18,755 Motley Fool transcripts, 2,876 tickers, 2017-2022, roughly 1-2 GB of text) is NOT in the repo and lives on Kaggle behind a login; the repo does not name the Kaggle slug, but the figures match the Kaggle dataset 'Motley Fool Scraped Earnings Call Transcripts' (tpotterer) - unverified.",
+  "description": "Transcript-level FinBERT sentiment scores for 514 earnings calls of 30 large-cap US names (AAPL, AMZN, GOOGL, MSFT, TSLA, DIS, JPM, WFC, MRNA etc.) across 8 sectors, 2017-Q4 to 2023-Q3, produced by a student portfolio project; grain is one transcript (ticker x quarter) but the committed CSV repeats each row many times (4,498 rows, 282 unique). Source text is the Kaggle-hosted Motley Fool scrape (18,755 transcripts, 2,876 tickers, 2017-2022), which is not committed. For ABNB the scored CSV is near-useless: no ABNB, BKNG, EXPE, MAR or HLT (DIS is the only travel-adjacent name); its only value is as a template for sentence/Q&A-section FinBERT scoring and as a pointer to the Kaggle corpus, which would give BKNG/EXPE/MAR/HLT peer calls on one basis for the peer-readthrough study if a human downloads it under Kaggle's terms.",
+  "issues": "No licence file in the repo (tos_or_license_flag=true) - treat as all-rights-reserved; Motley Fool transcript text is itself copyrighted and the Kaggle corpus is a scrape, so any use of the underlying corpus is a licence decision for a human. Kaggle download NOT attempted (login required). The repo does not name the Kaggle dataset slug anywhere (README, notebook or app.py); the match to tpotterer's Motley Fool dataset is inferred from the 18,755 / 2,876 figures only. The committed CSV has a duplication bug (each row repeated ~16x) and 17 malformed date strings; dedupe before any use. Zero travel/lodging tickers except DIS.",
+  "source_urls": [
+    "https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/main/data/sentiment_results.csv",
+    "https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/HEAD/README.md",
+    "https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/HEAD/notebooks/earnings_nlp",
+    "https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/HEAD/.gitignore",
+    "https://api.github.com/repos/sumaksharikaa/earnings-call-nlp/contents/"
+  ],
+  "pulled_at": "2026-09-14"
+}

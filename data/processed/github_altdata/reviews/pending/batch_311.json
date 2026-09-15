@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:kingsley0107/bd_qianxicrawler",
+  "url": "https://github.com/kingsley0107/bd_qianxiCrawler",
+  "name": "bd_qianxiCrawler",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python crawler (10 stars, updated April 2024) collecting Baidu migration city-level flow indices plus inbound/outbound movement and commuting metrics \u2014 a third independent client for the same underlying Baidu Qianxi source, more recently maintained than the two above.",
+  "why_useful": "Most recently active of the three Baidu-migration clients found; same China domestic-mobility-proxy rationale, worth noting as the freshest fallback method.",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "geography": "China",
+  "time_coverage": "through April 2024 (repo activity)",
+  "size_hint": "scraper only",
+  "license": "unknown",
+  "last_activity": "2024-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Most recently active of the three Baidu-migration clients found; same China domestic-mobility-proxy rationale, worth noting as the freshest fallback method."
+  ]
+ },
+ {
+  "key": "github:miraclewc/web-crawlers-travel-information",
+  "url": "https://github.com/MiracleWc/Web-crawlers-travel-information",
+  "name": "Web-crawlers-travel-information",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python web crawlers (2 stars) extracting travel information from three Chinese OTA platforms: Ctrip (\u643a\u7a0b), Tuniu (\u9014\u725b), and Qunar (\u53bb\u54ea\u513f) \u2014 no committed dataset, method only.",
+  "why_useful": "A scraper template for Chinese OTA listing/price/route pages could, if run (a ToS decision for a human per repo rules), proxy Chinese domestic/outbound travel search intensity or route pricing; flagged as method only, not run.",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "geography": "China (Ctrip/Tuniu/Qunar)",
+  "time_coverage": "n/a (live scrape)",
+  "size_hint": "scraper only",
+  "license": "unknown",
+  "last_activity": "unknown, low stars",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "A scraper template for Chinese OTA listing/price/route pages could, if run (a ToS decision for a human per repo rules), proxy Chinese domestic/outbound travel search intensity or route pricing; flagged as method only, not run."
+  ]
+ },
+ {
+  "key": "github:visien/tourist-flow-web-crawler",
+  "url": "https://github.com/Visien/Tourist-Flow-Web-Crawler",
+  "name": "Tourist-Flow-Web-Crawler",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python crawler (2 stars) built to support academic research on spatial patterns of tourism flow in the Chengdu-Chongqing region of China, likely pulling from a Chinese OTA/review site (description suggests Ctrip-adjacent).",
+  "why_useful": "Regional (sub-national) Chinese tourism-flow research tooling; could be adapted to other Chinese metro regions for a domestic-travel-flow proxy, low current usefulness given narrow regional scope and low maintenance.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "China, Chengdu-Chongqing region",
+  "time_coverage": "unknown",
+  "size_hint": "scraper only",
+  "license": "unknown",
+  "last_activity": "unknown, low stars",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Regional (sub-national) Chinese tourism-flow research tooling; could be adapted to other Chinese metro regions for a domestic-travel-flow proxy, low current usefulness given narrow regional scope and low maintenance."
+  ]
+ },
+ {
+  "key": "github:ft-interactive/ftcr_outbound_tourism",
+  "url": "https://github.com/ft-interactive/ftcr_outbound_tourism",
+  "name": "ftcr_outbound_tourism",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Financial Times interactive-graphics scaffold (public-archive, JS/bower/CircleCI build, last updated Oct 2017) for a \"2017 China Outbound Tourism report\" published article; repo contents inspected are build tooling (.bowerrc, .editorconfig, .circleci) rather than a raw data file \u2014 any underlying dataset is likely embedded in build assets or sourced externally (e.g. CNTA/UNWTO/CLIA figures cited in the FT piece) rather than committed as a clean CSV.",
+  "why_useful": "Points to an FT-sourced compilation of 2017-vintage China outbound tourism statistics (likely CNTA/CTA figures); low direct usefulness since it is an archived news-graphics repo, not a data repo, but the FT article's underlying numbers (if extractable) could seed a historical outbound-tourism baseline.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "China (outbound)",
+  "time_coverage": "circa 2017 snapshot",
+  "size_hint": "small JS/build repo",
+  "license": "unknown",
+  "last_activity": "2017-10-20 (archived)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Points to an FT-sourced compilation of 2017-vintage China outbound tourism statistics (likely CNTA/CTA figures); low direct usefulness since it is an archived news-graphics repo, not a data repo, but the FT article's underlying numbers (if extractable) could seed a historical outbound-tourism baseline.",
+   "If the underlying data (chart data feeding the FT viz) is embedded in the client/views JS/JSON, it could give a professionally-sourced China outbound tourism time series, but this could not be confirmed from the repo listing alone."
+  ]
+ },
+ {
+  "key": "github:wangyazhu16/outbound_tourism_china",
+  "url": "https://github.com/Wangyazhu16/outbound_tourism_china",
+  "name": "outbound_tourism_china",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Small HTML repo (1 star, last updated 2018) titled around China outbound tourism; not inspected in depth (budget-limited) beyond search metadata \u2014 likely a student/coursework data-visualization project rather than a primary dataset.",
+  "why_useful": "Possible small compiled dataset on China outbound tourism trends; low confidence given age (2018) and lack of direct file inspection, flagged for completeness only.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "China (outbound)",
+  "time_coverage": "unknown, pre-2018",
+  "size_hint": "unknown, small",
+  "license": "unknown",
+  "last_activity": "2018-06-29",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Possible small compiled dataset on China outbound tourism trends; low confidence given age (2018) and lack of direct file inspection, flagged for completeness only."
+  ]
+ }
+]

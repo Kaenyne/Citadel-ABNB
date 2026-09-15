@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:mcpwright/fred-mcp",
+  "url": "https://github.com/mcpwright/fred-mcp",
+  "name": "fred-mcp",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP (Model Context Protocol) server exposing FRED's 800k+ series plus ALFRED vintage data ('the numbers before revisions') as a tool interface, updated 20 Aug 2026.",
+  "why_useful": "Lower priority than fredapi/alfred but notable as a very recent (Aug 2026), actively maintained wrapper if the team wants ALFRED access exposed as an agent tool rather than a library call.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "license": "MIT",
+  "last_activity": "2026-08-20",
+  "geography": "US (FRED)",
+  "time_coverage": "Full ALFRED vintage span",
+  "size_hint": "small MCP server, 0 stars",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Lower priority than fredapi/alfred but notable as a very recent (Aug 2026), actively maintained wrapper if the team wants ALFRED access exposed as an agent tool rather than a library call."
+  ]
+ },
+ {
+  "key": "github:marcellekostic/macro-treasury-futures",
+  "url": "https://github.com/marcellekostic/macro-treasury-futures",
+  "name": "macro-treasury-futures (point-in-time macro ML strategy)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Point-in-time macro ML strategy for Treasury futures using ALFRED vintage data (CPI, payrolls, unemployment, industrial production, jobless claims -> 24 features) with leakage-safe, expanding-window Ridge regression; backtested 2020-Jul 2026 (3.85% annual return, 0.50 Sharpe, 52% hit rate). No Airbnb relevance directly but a second worked example of ALFRED-vintage + leakage-safe backtest design.",
+  "why_useful": "Secondary reference implementation for vintage-aware, leakage-safe backtest design (same rationale as macro-dashboard above); the feature-engineering pattern (release-date-aligned macro surprises) could be adapted to the ABNB consumer-strength regional split workstream.",
+  "potential": "low",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "license": "none declared",
+  "last_activity": "2026-08-05",
+  "geography": "US",
+  "time_coverage": "2020-2026",
+  "size_hint": "small repo, code only, 0 stars",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Secondary reference implementation for vintage-aware, leakage-safe backtest design (same rationale as macro-dashboard above); the feature-engineering pattern (release-date-aligned macro surprises) could be adapted to the ABNB consumer-strength regional split workstream."
+  ]
+ },
+ {
+  "key": "github:cran/alfred",
+  "url": "https://github.com/cran/alfred",
+  "name": "cran/alfred (read-only CRAN mirror)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automated read-only mirror of the CRAN 'alfred' package (same package as onnokleen/alfred above), synced 2023-03-21.",
+  "why_useful": "Duplicate pointer to onnokleen/alfred; flagged only so it isn't mistaken for a separate tool. No new content.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "onnokleen/alfred in this same list",
+  "license": "see upstream package",
+  "last_activity": "2023-03-21",
+  "geography": "US",
+  "time_coverage": "n/a (mirror)",
+  "size_hint": "n/a",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Duplicate pointer to onnokleen/alfred; flagged only so it isn't mistaken for a separate tool. No new content."
+  ]
+ },
+ {
+  "key": "github:nbbrd/rjdemetra",
+  "url": "https://github.com/nbbrd/rjdemetra",
+  "name": "RJDemetra / JDemetra+",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R interface (and underlying Java app at github.com/jdemetra) to JDemetra+, the seasonal-adjustment software officially recommended to Eurostat's European Statistical System and the ESCB since 2015. Implements TRAMO/SEATS, X-13ARIMA-SEATS, plus nowcasting, temporal disaggregation, and benchmarking utilities. EUPL-1.2, 503 commits, 55 stars.",
+  "why_useful": "This is literally the tool that produces the ONS/Eurostat seasonally-adjusted series and revisions we're trying to reason about; useful if we need to re-run or understand how Eurostat's tour_ce_omr platform-nights series (already held) gets seasonally adjusted/revised, or to build our own vintage-consistent seasonal adjustment of any series we pull point-in-time.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "license": "EUPL-1.2",
+  "last_activity": "active, 503 commits",
+  "geography": "EU (Eurostat/ESCB standard)",
+  "time_coverage": "n/a (software, not a dataset)",
+  "size_hint": "library/application",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "This is literally the tool that produces the ONS/Eurostat seasonally-adjusted series and revisions we're trying to reason about; useful if we need to re-run or understand how Eurostat's tour_ce_omr platform-nights series (already held) gets seasonally adjusted/revised, or to build our own vintage-consistent seasonal adjustment of any series we pull point-in-time."
+  ]
+ },
+ {
+  "key": "github:lslb05/public-market-data",
+  "url": "https://github.com/lslb05/public-market-data",
+  "name": "public-market-data",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small but functional Python/Airflow/Postgres pipeline that ingests FRED data (currently just one JSON endpoint implemented; BCB/SEC EDGAR planned) while preserving three timestamps per observation (reference date, publication date, collection date), explicitly 'so backtests never see a future revision.' MIT, 6 commits, 12 tests/92% coverage, 0 stars -- very new/small project.",
+  "why_useful": "A working minimal reference implementation of exactly the point-in-time ingestion discipline the CLAUDE.md rule #2 demands (vendor + timestamp per value); could be read as a design pattern even if not adopted wholesale, though it's early-stage and only covers one FRED endpoint so far.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "license": "MIT",
+  "last_activity": "recent, 6 commits, very new/small",
+  "geography": "US (FRED) with BCB Brazil planned",
+  "time_coverage": "n/a (ingestion tool)",
+  "size_hint": "small codebase, no bundled data",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "A working minimal reference implementation of exactly the point-in-time ingestion discipline the CLAUDE.md rule #2 demands (vendor + timestamp per value); could be read as a design pattern even if not adopted wholesale, though it's early-stage and only covers one FRED endpoint so far."
+  ]
+ }
+]

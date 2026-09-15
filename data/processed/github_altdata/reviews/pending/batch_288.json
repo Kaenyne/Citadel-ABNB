@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:chaimaebouyarmane/afc_analysis_of_tourist_arrivals_in_morocco",
+  "url": "https://github.com/chaimaebouyarmane/AFC_Analysis_of_Tourist_Arrivals_in_Morocco",
+  "name": "AFC_Analysis_of_Tourist_Arrivals_in_Morocco",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Touristes.csv: tourist arrivals to Morocco by nationality (France, Germany, China, US, Belgium, UK, Spain, Scandinavia, plus Moroccans-living-abroad/MRE), 2012-2020, sourced explicitly from Morocco's Ministry of Tourism, Crafts, and Social and Solidarity Economy dataset published on data.gov.ma (14 Apr 2022).",
+  "why_useful": "Traceable to an official Moroccan government open-data source (data.gov.ma) with nationality breakdown -- fills gap #7 (regional travel volume outside US/EU) for North Africa, a market not otherwise covered; also a pointer worth following back to data.gov.ma directly for a longer/more current pull.",
+  "potential": "medium",
+  "geography": "Morocco",
+  "time_coverage": "2012-2020, annual by nationality",
+  "size_hint": "1 CSV, single dataset (row count not stated)",
+  "license": "unknown; underlying source is Moroccan open government data (data.gov.ma)",
+  "last_activity": "2023 (repo), source dataset published 2022-04-14",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Traceable to an official Moroccan government open-data source (data.gov.ma) with nationality breakdown -- fills gap #7 (regional travel volume outside US/EU) for North Africa, a market not otherwise covered; also a pointer worth following back to data.gov.ma directly for a longer/more current pull."
+  ]
+ },
+ {
+  "key": "github:ianmatsane/international-tourism-in-south-africa-from-2021-to-2025-analysis-of-tourist-arrivals",
+  "url": "https://github.com/IanMatsane/International-Tourism-in-South-Africa-from-2021-to-2025-Analysis-of-Tourist-Arrivals",
+  "name": "International-Tourism-in-South-Africa (SADC vs Rest-of-Africa arrivals)",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "SA_Tourist_Arrivals.pbix (Power BI) and .sql file plus a Word report comparing SADC-region tourist arrivals vs rest-of-Africa arrivals into South Africa, 2021-2025. Underlying source not confirmed as StatsSA in the fetched page but topic and period match StatsSA's Tourism and Migration releases.",
+  "why_useful": "Recent (through 2025) South Africa arrivals split by source region -- addresses gap #7 for Sub-Saharan Africa, an entirely uncovered geography in our current holdings; would need the .sql/.pbix data extracted to confirm it is StatsSA-sourced and get raw rows.",
+  "potential": "medium",
+  "geography": "South Africa",
+  "time_coverage": "2021-2025",
+  "size_hint": "1 Power BI file + 1 SQL file",
+  "license": "unknown",
+  "last_activity": "~4 days before scouting (Sep 2026)",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Recent (through 2025) South Africa arrivals split by source region -- addresses gap #7 for Sub-Saharan Africa, an entirely uncovered geography in our current holdings; would need the .sql/.pbix data extracted to confirm it is StatsSA-sourced and get raw rows."
+  ]
+ },
+ {
+  "key": "github:anu-coder/forecasting-fta-timeseries-vs-dlmodels",
+  "url": "https://github.com/anu-coder/forecasting-FTA-timeseries-vs-DLmodels",
+  "name": "forecasting-FTA-timeseries-vs-DLmodels",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repo compares MLP/LSTM/AR models forecasting Foreign Tourist Arrivals (FTA) to India, with a committed Data/ folder (contents not enumerated by the fetch, tree subpath 404'd) and forecasting horizons referenced at 6 and 24 months, implying a monthly FTA series.",
+  "why_useful": "If the Data folder holds a monthly India FTA series (rather than only annual), it would be one of the more granular India tourism series found and useful for gap #7 (APAC/South Asia inbound volume); also demonstrates an FTA nowcasting method (gap #17) worth inspecting further.",
+  "potential": "medium",
+  "geography": "India",
+  "time_coverage": "unknown, referenced up to 24-month forecast horizon",
+  "size_hint": "unverified Data folder",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "If the Data folder holds a monthly India FTA series (rather than only annual), it would be one of the more granular India tourism series found and useful for gap #7 (APAC/South Asia inbound volume); also demonstrates an FTA nowcasting method (gap #17) worth inspecting further."
+  ]
+ },
+ {
+  "key": "github:jutsued/dr-tourism-dashboard",
+  "url": "https://github.com/Jutsued/dr-tourism-dashboard",
+  "name": "dr-tourism-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single-file static HTML dashboard (index.html, ~37KB, one commit, updated 2026-05-30) with embedded (hand-entered, not linked raw files) Dominican Republic tourism series 2019-2025: total visitor arrivals (6.4M in 2019 to 12.5M 2025e), air arrivals, cruise passengers (1.1M to 2.65M), tourism revenue in USD ($7.5B to $10.9B), tourism as % of GDP (8.1% to 8.8%), 2024 airport-level passenger counts (Punta Cana 9.55M, Las Americas 5.48M, Cibao 2.29M, Puerto Plata with 2021-2024 breakdown), 2024 source-market shares (USA 50%, Canada 12%, Panama 6%, Colombia 5%, Puerto Rico 5%), and hotel room capacity (87,322 rooms, 10,060 pipeline). Footer cites sources: MITUR, JAC, Banco Central (BCRD), ASONAHORES, UN Tourism.",
+  "why_useful": "Directly addresses gap #7 (regional travel volume outside US/EU, specifically Caribbean/LatAm) with a compact, already-aggregated annual DR tourism series through 2024/2025 sourced from BCRD/MITUR \u2014 useful as a cross-check series or to locate the underlying BCRD/MITUR releases, though the repo itself is a single static page with numbers baked into HTML, not a machine-readable table, and it is a personal project (0 stars) so the figures are unverified against source.",
+  "potential": "medium",
+  "geography": "Dominican Republic",
+  "time_coverage": "2019-2025 (annual, 2025 partly estimated)",
+  "size_hint": "~37KB single HTML file",
+  "license": "none declared",
+  "last_activity": "2026-05-30",
+  "gap_targets": [
+   7
+  ],
+  "hits": 2,
+  "themes": [
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "Directly addresses gap #7 (regional travel volume outside US/EU, specifically Caribbean/LatAm) with a compact, already-aggregated annual DR tourism series through 2024/2025 sourced from BCRD/MITUR \u2014 useful as a cross-check series or to locate the underlying BCRD/MITUR releases, though the repo itself is a single static page with numbers baked into HTML, not a machine-readable table, and it is a personal project (0 stars) so the figures are unverified against source.",
+   "If the embedded numbers do trace to BCRD's published monthly visitor-arrival series, this would be a quick pointer to DR travel-volume data (gap #7 region), but the single-file, single-commit shape and lack of source documentation makes this unverified \u2014 flagging for a human to open the HTML and check whether it cites real BCRD figures."
+  ]
+ },
+ {
+  "key": "github:debasisb/hawaii-tourism-los-calculator",
+  "url": "https://github.com/debasisb/hawaii-tourism-los-calculator",
+  "name": "hawaii-tourism-los-calculator",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Web app (importData.js loads a CSV into MongoDB) built around the same 'Hawaii Tourism Data (from DBEDT Data Warehouse)' source (1999-2021) as the danielnaqvi repo above; computes min/max average length-of-stay by visitor category and location/island. Raw CSV file is referenced by name but not clearly persisted in git (loaded into a database instead), so treat as a method/app rather than a guaranteed data mirror.",
+  "why_useful": "Second independent implementation over the same DBEDT length-of-stay dataset; useful mainly as confirmation the dataset exists and as an alternate ingestion script if the danielnaqvi CSV is incomplete.",
+  "geography": "Hawaii (USA)",
+  "time_coverage": "1999-2021",
+  "size_hint": "small app, data status uncertain",
+  "license": "none stated",
+  "last_activity": "2026-03-03",
+  "potential": "medium",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "same DBEDT source as danielnaqvi/Hawai-i-Tourism-Length-of-Stay-Analysis-Project",
+  "hits": 1,
+  "themes": [
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "Second independent implementation over the same DBEDT length-of-stay dataset; useful mainly as confirmation the dataset exists and as an alternate ingestion script if the danielnaqvi CSV is incomplete."
+  ]
+ }
+]

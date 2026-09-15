@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:jimoholayinka01/revolut-spending",
+  "url": "https://github.com/jimoholayinka01/Revolut-Spending",
+  "name": "jimoholayinka01/Revolut-Spending",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "End-to-end time series analysis/forecasting project on Revolut debit-card spending data in the UK, examining transaction trends by age demographic and seasonality. Not confirmed whether the underlying dataset is real Revolut transaction data, a public Revolut aggregate release, or a synthetic/Kaggle stand-in \u2014 needs a directory-listing check before relying on it.",
+  "why_useful": "If the underlying data is genuine (even anonymized/aggregated) UK fintech card-spend data with seasonality, it is a private-sector analogue to ONS card spending (gap #6) for UK consumer strength, which reads on EMEA nights/ADR. Unverified provenance keeps this at medium-low until checked.",
+  "potential": "medium",
+  "geography": "United Kingdom",
+  "time_coverage": "unclear (needs directory check)",
+  "size_hint": "unknown, 0 stars",
+  "license": "unspecified",
+  "last_activity": "2025-08-16",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "If the underlying data is genuine (even anonymized/aggregated) UK fintech card-spend data with seasonality, it is a private-sector analogue to ONS card spending (gap #6) for UK consumer strength, which reads on EMEA nights/ADR. Unverified provenance keeps this at medium-low until checked."
+  ]
+ },
+ {
+  "key": "github:m-muecke/bbk",
+  "url": "https://github.com/m-muecke/bbk",
+  "name": "bbk",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client package for German/European central bank APIs; `bbk_data()` pulls arbitrary Bundesbank statistics-API series by flow ID + data key (example shown is a daily yield curve). Pure API wrapper, no committed data files, but actively maintained (updated 12 Sep 2026).",
+  "why_useful": "One-command programmatic access to any Bundesbank series, including (if the flow ID is supplied) the Bundesbank weekly activity index named in this theme, plus other German high-frequency series (retail, trade, FX) relevant to EMEA consumer strength regional splits.",
+  "potential": "medium",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "size_hint": "small (R package code only)",
+  "time_coverage": "n/a (live API client)",
+  "geography": "Germany / euro area",
+  "license": "other (custom, check terms)",
+  "last_activity": "2026-09-12",
+  "hits": 1,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index"
+  ],
+  "why_all": [
+   "One-command programmatic access to any Bundesbank series, including (if the flow ID is supplied) the Bundesbank weekly activity index named in this theme, plus other German high-frequency series (retail, trade, FX) relevant to EMEA consumer strength regional splits."
+  ]
+ },
+ {
+  "key": "github:sboysel/fredr",
+  "url": "https://github.com/sboysel/fredr",
+  "name": "fredr",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R bindings to the FRED API; example calls return realtime_start/realtime_end columns confirming ALFRED vintage support. 101 stars, 242 commits, MIT-style license, active (recent examples dated 2021+, CI enabled).",
+  "why_useful": "Another mature, well-maintained R client covering the same point-in-time macro-vintage need as fredapi/alfred (gap #4); wider adoption (101 stars) than onnokleen/alfred so likely more battle-tested for edge cases.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "overlaps with onnokleen/alfred and fredapi in function",
+  "license": "MIT (LICENSE file present)",
+  "last_activity": "active, CI passing",
+  "geography": "US (FRED/ALFRED)",
+  "time_coverage": "series-dependent",
+  "size_hint": "library only",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Another mature, well-maintained R client covering the same point-in-time macro-vintage need as fredapi/alfred (gap #4); wider adoption (101 stars) than onnokleen/alfred so likely more battle-tested for edge cases."
+  ]
+ },
+ {
+  "key": "github:nikhilxsunder/fedfred",
+  "url": "https://github.com/nikhilxsunder/fedfred",
+  "name": "fedfred",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Feature-rich Python package covering FRED, GeoFRED, ALFRED, and FRASER APIs; native Pandas/Polars/Dask support, async requests, local caching, rate limiting. MIT licensed, 359 commits, v3.0.0, 9 stars.",
+  "why_useful": "Newer/broader alternative to fredapi with explicit ALFRED support plus GeoFRED (regional/state series, useful for the STR-regulation and regional-macro gaps) and caching for repeated point-in-time backtests.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "overlaps with fredapi",
+  "license": "MIT",
+  "last_activity": "actively maintained, v3.0.0, 359 commits",
+  "geography": "US (FRED/ALFRED/GeoFRED)",
+  "time_coverage": "series-dependent",
+  "size_hint": "library only",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Newer/broader alternative to fredapi with explicit ALFRED support plus GeoFRED (regional/state series, useful for the STR-regulation and regional-macro gaps) and caching for repeated point-in-time backtests."
+  ]
+ },
+ {
+  "key": "github:jasonjosuecruz/peruvian_gdp_revisions",
+  "url": "https://github.com/JasonJosueCruz/peruvian_gdp_revisions",
+  "name": "peruvian_gdp_revisions (Peru Real-Time GDP dataset pipeline)",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Python pipeline (scrape -> OCR for pre-2013 scans -> clean -> vintage-format / releases-format output) that reconstructs a real-time GDP vintage dataset for Peru from BCRP Weekly Reports, 1994-2025 (monthly and quarterly/annual). Actual processed vintage CSV/Parquet outputs are hosted on Zenodo (DOI 10.5281/zenodo.18099975); GitHub repo (MIT, 1,289 commits, 1 star) holds only the code. Includes OCR for scanned pre-2013 PDFs.",
+  "why_useful": "A genuine, working real-time/vintage GDP dataset construction for a LatAm economy (gap #7 regional travel/macro outside US/EU is adjacent; more directly this is a template + actual vintage dataset for point-in-time macro data outside the US ALFRED system, filling the 'ONS revisions, Eurostat vintages... elsewhere' spirit of this theme for a market ABNB reports LatAm revenue in).",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "active, 1,289 commits, recent",
+  "geography": "Peru",
+  "time_coverage": "1994-2025",
+  "size_hint": "dataset hosted externally on Zenodo; pipeline code in repo",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "A genuine, working real-time/vintage GDP dataset construction for a LatAm economy (gap #7 regional travel/macro outside US/EU is adjacent; more directly this is a template + actual vintage dataset for point-in-time macro data outside the US ALFRED system, filling the 'ONS revisions, Eurostat vintages... elsewhere' spirit of this theme for a market ABNB reports LatAm revenue in)."
+  ]
+ }
+]

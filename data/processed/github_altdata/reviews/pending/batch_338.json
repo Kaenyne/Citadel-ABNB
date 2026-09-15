@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:appfigures/cli",
+  "url": "https://github.com/appfigures/cli",
+  "name": "appfigures/cli",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Appfigures CLI and MCP server (Apache-2.0, 20 stars, updated 2 Sep 2026) for pulling sales/rank/review data from the Appfigures API for apps you (or a free-tier account) have access to.",
+  "why_useful": "Official, maintained client for Appfigures -- the vendor named directly in our gap list -- but almost certainly requires an Appfigures account/API key, and free-tier access is normally limited to apps you own (i.e. would not give third-party Airbnb download data without a paid plan). Worth flagging as the correct tool if the team ever gets/considers an Appfigures trial key, but not usable as-is without one.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (API client)",
+  "size_hint": "CLI tool",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-02",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 2,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Official, maintained client for Appfigures -- the vendor named directly in our gap list -- but almost certainly requires an Appfigures account/API key, and free-tier access is normally limited to apps you own (i.e. would not give third-party Airbnb download data without a paid plan). Worth flagging as the correct tool if the team ever gets/considers an Appfigures trial key, but not usable as-is without one.",
+   "Would be the highest-fidelity route to real historical App Store/Play Store rank curves for Airbnb, but Appfigures requires a paid API key/subscription \u2014 out of bounds under this repo's 'never use paid API keys' rule. Catalogued only as a method for a human to consider licensing later."
+  ]
+ },
+ {
+  "key": "github:econosopher/sensortowerr",
+  "url": "https://github.com/econosopher/sensortowerR",
+  "name": "sensortowerR",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R interface (custom/other license, 6 stars, updated 13 May 2026) to the official (paid) Sensor Tower API, covering downloads, revenue, and rank endpoints.",
+  "why_useful": "Confirms Sensor Tower has an R client, but the underlying API is paid/keyed -- not usable without a Sensor Tower subscription, so low value unless the team already has or can trial API access.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (API client)",
+  "size_hint": "R package",
+  "license": "other",
+  "last_activity": "2026-05-13",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Confirms Sensor Tower has an R client, but the underlying API is paid/keyed -- not usable without a Sensor Tower subscription, so low value unless the team already has or can trial API access."
+  ]
+ },
+ {
+  "key": "github:virusimmortal00/sensortower-mcp",
+  "url": "https://github.com/virusimmortal00/sensortower-mcp",
+  "name": "sensortower-mcp",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server (no listed license, 17 stars, updated 2 Jul 2026) exposing Sensor Tower's official (paid) API endpoints as tools for an LLM agent.",
+  "why_useful": "Same caveat as the R client -- convenient wrapper but gated behind a paid Sensor Tower key; only useful if the team obtains one.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "size_hint": "MCP server",
+  "license": "none listed",
+  "last_activity": "2026-07-02",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Same caveat as the R client -- convenient wrapper but gated behind a paid Sensor Tower key; only useful if the team obtains one."
+  ]
+ },
+ {
+  "key": "github:cowboy-bebug/app-store-scraper",
+  "url": "https://github.com/cowboy-bebug/app-store-scraper",
+  "name": "app-store-scraper (review scraper)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Single-API App Store review scraper (MIT, 102 stars, updated 16 Jul 2026); pulls per-app review text, rating, and timestamps from Apple's storefront.",
+  "why_useful": "Could be pointed at Airbnb's App Store id to build a review-volume-over-time proxy (a cheap stand-in for review-count time series / app-store review scrapers, gap #14), but overlaps heavily with facundoolano/app-store-scraper's review endpoint.",
+  "potential": "low",
+  "geography": "per storefront",
+  "time_coverage": "snapshot of currently-visible reviews only (Apple does not expose full historical review archives)",
+  "size_hint": "small library",
+  "license": "MIT",
+  "last_activity": "2026-07-16",
+  "duplicate_of_holding": "facundoolano/app-store-scraper (reviews endpoint)",
+  "gap_targets": [
+   5,
+   14
+  ],
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Could be pointed at Airbnb's App Store id to build a review-volume-over-time proxy (a cheap stand-in for review-count time series / app-store review scrapers, gap #14), but overlaps heavily with facundoolano/app-store-scraper's review endpoint."
+  ]
+ },
+ {
+  "key": "github:glennfang/apple-app-reviews-scraper",
+  "url": "https://github.com/glennfang/apple-app-reviews-scraper",
+  "name": "apple-app-reviews-scraper",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apple App Store review scraper with a backoff strategy for rate limiting (MIT, 22 stars, updated 27 Apr 2026); also forked as Dinoxel/apple-app-reviews-scraper (8 stars).",
+  "why_useful": "Marginal addition to the review-scraper family above; the backoff handling could make a scheduled Airbnb-review-volume pull more reliable, but no new data or method beyond what facundoolano/app-store-scraper offers.",
+  "potential": "low",
+  "geography": "per storefront",
+  "time_coverage": "current reviews only",
+  "size_hint": "small script",
+  "license": "MIT",
+  "last_activity": "2026-04-27",
+  "duplicate_of_holding": "facundoolano/app-store-scraper, cowboy-bebug/app-store-scraper",
+  "gap_targets": [
+   5,
+   14
+  ],
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Marginal addition to the review-scraper family above; the backoff handling could make a scheduled Airbnb-review-volume pull more reliable, but no new data or method beyond what facundoolano/app-store-scraper offers."
+  ]
+ }
+]

@@ -1,0 +1,119 @@
+[
+ {
+  "key": "github:artursepp/vanillaoptionpricers",
+  "url": "https://github.com/ArturSepp/VanillaOptionPricers",
+  "name": "VanillaOptionPricers",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Fast vectorized Black-Scholes-Merton and Bachelier option pricers and implied-volatility fitters (Python).",
+  "why_useful": "Pricing/IV-fitting utility only; would need an actual ABNB option chain fed into it to be useful, no data of its own.",
+  "potential": "low",
+  "size_hint": "code only",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "unspecified in fetched content",
+  "last_activity": "unspecified",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Pricing/IV-fitting utility only; would need an actual ABNB option chain fed into it to be useful, no data of its own."
+  ]
+ },
+ {
+  "key": "github:bradleyboyuyang/empirical-finance",
+  "url": "https://github.com/bradleyboyuyang/Empirical-Finance",
+  "name": "Empirical-Finance",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Combined toolkit: Fama-French model estimation, idiosyncratic volatility construction, and event-study code in one repo (per description); likely course-derived but multi-method rather than single-ticker.",
+  "why_useful": "Same event-study + factor-loader combination as above, useful reference implementation for building an ABNB/peer earnings event study with risk adjustment.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "size_hint": "unverified, not inspected beyond description",
+  "time_coverage": "unknown",
+  "geography": "unknown",
+  "license": "unspecified",
+  "last_activity": "2026-06-18",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Same event-study + factor-loader combination as above, useful reference implementation for building an ABNB/peer earnings event study with risk adjustment."
+  ]
+ },
+ {
+  "key": "github:vashongithub/getfamafrenchfactors",
+  "url": "https://github.com/vashOnGitHub/getFamaFrenchFactors",
+  "name": "getFamaFrenchFactors",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python package that pulls Fama-French factor files directly from the Kenneth French Data Library and returns a pandas DataFrame (one-command pull, no scraping of a hostile site).",
+  "why_useful": "A clean, minimal one-command loader for the exact Ken French factors we already hold; useful only as a maintenance/automation convenience, not new data.",
+  "potential": "low",
+  "duplicate_of_holding": "We already hold Ken French factors; this is just a loader for the same public source",
+  "size_hint": "small package, MIT licensed",
+  "time_coverage": "same as Ken French library (1926-present)",
+  "geography": "US",
+  "license": "MIT",
+  "last_activity": "2026-04-27",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "A clean, minimal one-command loader for the exact Ken French factors we already hold; useful only as a maintenance/automation convenience, not new data."
+  ]
+ },
+ {
+  "key": "github:tbeason/famafrenchdata.jl",
+  "url": "https://github.com/tbeason/FamaFrenchData.jl",
+  "name": "FamaFrenchData.jl",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Julia package providing programmatic access to the Ken French Data Library factor files.",
+  "why_useful": "Same as getFamaFrenchFactors but in Julia; only relevant if the team ever needs a Julia pipeline.",
+  "potential": "low",
+  "duplicate_of_holding": "Duplicate of Ken French factors we already hold",
+  "size_hint": "small package",
+  "time_coverage": "same as Ken French library",
+  "geography": "US",
+  "license": "Other",
+  "last_activity": "2026-03-26",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Same as getFamaFrenchFactors but in Julia; only relevant if the team ever needs a Julia pipeline."
+  ]
+ },
+ {
+  "key": "github:husainm97/quant-lab-alpha",
+  "url": "https://github.com/husainm97/quant-lab-alpha",
+  "name": "quant-lab-alpha",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source investment analytics platform with Fama-French 5-factor portfolio risk decomposition, block-bootstrap Monte Carlo retirement modeling, max-drawdown/CVaR dashboards, Markowitz/Ledoit-Wolf optimisation, delivered as a UI tool rather than a dataset.",
+  "why_useful": "General-purpose factor/risk platform; could be repurposed to risk-decompose ABNB vs peers, but is tooling, not new data, and not earnings/event-study specific.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "size_hint": "app/platform repo",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "MIT",
+  "last_activity": "2026-09-11",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "General-purpose factor/risk platform; could be repurposed to risk-decompose ABNB vs peers, but is tooling, not new data, and not earnings/event-study specific."
+  ]
+ }
+]

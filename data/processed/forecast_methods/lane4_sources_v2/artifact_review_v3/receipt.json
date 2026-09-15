@@ -1,0 +1,17 @@
+{
+  "candidate": "review_v1/model snapshot_v1",
+  "identity_checks": 82,
+  "input_manifest_records": 29,
+  "preserved_L3_disposition_rows": 1187,
+  "source_ledger_rows": 1367,
+  "numeric_identity_checks": 319,
+  "maximum_absolute_difference": 5.9117155615240335e-12,
+  "result": "PASS_WITH_TWO_MINOR_WORDING_REPAIRS_REQUESTED",
+  "issues": [
+    "A2 no established executable edge wording",
+    "D10 corrected F attribution Lane2"
+  ],
+  "reviewer_initial_attempts": "Two read-only stops: manifest chart paths are root-relative, and descriptive extrema contain an all22 point with no draw ID. Resolver now requires exactly one existing hashed path and handles the explicitly labelled point from parameters.csv. No source or numeric defect.",
+  "no_statistical_models_executed": true,
+  "source_package_not_self_approved": true
+}

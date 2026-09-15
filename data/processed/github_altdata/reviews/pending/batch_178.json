@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:safegraphinc/safegraphr",
+  "url": "https://github.com/SafeGraphInc/SafeGraphR",
+  "name": "SafeGraphR",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R equivalent of safegraph_py: functions for reading/aggregating SafeGraph Patterns and Places CSVs, distance calculations, and panel bias correction. No data committed.",
+  "why_useful": "Alternative-language tooling for the same SafeGraph foot-traffic normalization task noted above; useful only if raw patterns data is separately obtained.",
+  "potential": "low",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "Library, no data files",
+  "license": "Apache-2.0",
+  "last_activity": "2026-01-27",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Alternative-language tooling for the same SafeGraph foot-traffic normalization task noted above; useful only if raw patterns data is separately obtained."
+  ]
+ },
+ {
+  "key": "github:safegraphinc/awesome-safegraph-datascience",
+  "url": "https://github.com/SafeGraphInc/awesome-safegraph-datascience",
+  "name": "awesome-safegraph-datascience",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Curated list of SafeGraph-ecosystem notebooks, dashboards, and academic papers using foot-traffic data (retail, tourism, urban-park visitation, pharmacy demand). Points to SafeGraph's paid Data Bar marketplace and an academic/community free-access program (application-gated, not a public download) rather than any directly downloadable dataset.",
+  "why_useful": "Useful map of who has built travel/leisure foot-traffic analyses on SafeGraph (e.g. urban park visitation, brand-level POI visit counts) that could be replicated if academic access to SafeGraph/Dewey Data is secured; not itself a data source.",
+  "potential": "low",
+  "geography": "Mixed, mostly US",
+  "time_coverage": "N/A",
+  "size_hint": "Link list only",
+  "license": "Apache-2.0",
+  "last_activity": "2026-07-06",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city",
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Useful map of who has built travel/leisure foot-traffic analyses on SafeGraph (e.g. urban park visitation, brand-level POI visit counts) that could be replicated if academic access to SafeGraph/Dewey Data is secured; not itself a data source.",
+   "Index into secondary SafeGraph-derived datasets that might include hospitality/tourism-adjacent foot traffic studies worth a deeper look."
+  ]
+ },
+ {
+  "key": "github:dewey-data/safegraph-publiccompanies",
+  "url": "https://github.com/Dewey-Data/SafeGraph-PublicCompanies",
+  "name": "SafeGraph-PublicCompanies",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Dewey Data's official notebook (SafeGraph-CompustatLinking.ipynb) matching SafeGraph Brand-level POI foot-traffic data to publicly traded tickers via SEC EDGAR + Compustat linking (ticker/fuzzy-name match). Requires a Dewey Data SafeGraph Brand subscription and WRDS Compustat access; no data or sample files committed.",
+  "why_useful": "Direct evidence that SafeGraph/Dewey sell brand-level foot-traffic time series mappable to public tickers (which would in principle cover hotel/travel-adjacent public comps, though not Airbnb itself since it has no storefronts) \u2014 a method for a future workstream if paid Dewey access is obtained, not a free dataset today.",
+  "potential": "low",
+  "geography": "US public companies with physical POIs",
+  "time_coverage": "N/A (tooling only)",
+  "size_hint": "Single notebook",
+  "license": "unspecified",
+  "last_activity": "2025-03-31",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Direct evidence that SafeGraph/Dewey sell brand-level foot-traffic time series mappable to public tickers (which would in principle cover hotel/travel-adjacent public comps, though not Airbnb itself since it has no storefronts) \u2014 a method for a future workstream if paid Dewey access is obtained, not a free dataset today."
+  ]
+ },
+ {
+  "key": "github:ekinugurel/safegraph_mobility_workshop",
+  "url": "https://github.com/ekinugurel/SafeGraph_Mobility_Workshop",
+  "name": "SafeGraph_Mobility_Workshop",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "NYCDOT DEV Working Group workshop (Feb 2026) notebook + slide deck on SafeGraph mobility-flow analysis for NYC (net-flow maps, origin-destination matrices). No committed SafeGraph data, code/method only.",
+  "why_useful": "Recent (2026) worked example of turning SafeGraph flows into an origin-destination travel index for a single city (NYC); a template if the team gets SafeGraph/Advan access for a market already in the Inside Airbnb panel.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "N/A",
+  "size_hint": "Notebook + PDF only",
+  "license": "MIT",
+  "last_activity": "2026-02-03",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Recent (2026) worked example of turning SafeGraph flows into an origin-destination travel index for a single city (NYC); a template if the team gets SafeGraph/Advan access for a market already in the Inside Airbnb panel.",
+   "Recent, maintained example of pulling SafeGraph-style visitation data by POI/neighborhood \u2014 relevant to gap #5 (engagement/visitation proxies) and #20 (geotagged tourism flows) if the team can access a SafeGraph or Advan/Placer.ai-style feed; method only, no committed data, and SafeGraph itself is a paid/gated source so this is a pointer, not a solved acquisition problem."
+  ]
+ },
+ {
+  "key": "github:joon-im/google_covid_19_mobility_scrape",
+  "url": "https://github.com/joon-im/google_covid_19_mobility_scrape",
+  "name": "google_covid_19_mobility_scrape",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small scraper pulling Google's COVID-19 Community Mobility Reports website into structured data (2020, early pandemic). No large committed archive; low star count (4), minimal scope.",
+  "why_useful": "Marginal \u2014 same underlying Google source as ActiveConclusion's larger, longer, already-committed mirror; only worth noting if the exact 2020 scrape logic is needed.",
+  "potential": "low",
+  "geography": "Countries/regions per Google report",
+  "time_coverage": "~2020 only",
+  "size_hint": "Small scraper + limited data",
+  "license": "unspecified",
+  "last_activity": "2020-04-07",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "Google mobility data already better covered by ActiveConclusion/COVID19_mobility",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Marginal \u2014 same underlying Google source as ActiveConclusion's larger, longer, already-committed mirror; only worth noting if the exact 2020 scrape logic is needed."
+  ]
+ }
+]

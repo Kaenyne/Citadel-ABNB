@@ -1,0 +1,10 @@
+{
+ "slug": "edgar-crawler-edgar-corpus",
+ "url": "https://github.com/nlpaueb/edgar-crawler",
+ "category": "company_filings_estimates",
+ "data_kind": "both",
+ "one_line": "GPL-3.0 EDGAR downloader/item-splitter (now lefterisloukas/edgar-crawler, 545 stars, last push 2025-07-18, code only - no data committed) that pulls 10-K/10-Q/8-K from sec.gov keylessly and splits them into per-item JSON; companion corpus EDGAR-CORPUS is on Zenodo record 5528490 (CC-BY-4.0, 28 year zips 1993-2020, 39-524 MB each, ~10 GB) and on Hugging Face eloukas/edgar-corpus (Apache-2.0, 87 JSONL files as <year>/{train,validate,test}.jsonl, 231 GB stored, 6B+ tokens).",
+ "abnb_use": "Gap 15 tooling: a ready, keyless, section-aware parser for peer 8-K/10-Q text (BKNG, EXPE, MAR, HLT, NCLH) so KPI tables and MD&A/guidance language can be extracted on the same schema as ABNB's; EDGAR-CORPUS itself gives a pre-2021 management-language baseline for tone work that predates our IPO-forward pull.",
+ "sample_plan": "1) Code, tiny: git clone --depth 1 https://github.com/nlpaueb/edgar-crawler (~5 MB after shallow clone; skip the images/ folder if it balloons). 2) Corpus head by HTTP Range off Hugging Face (no key, no login): curl -L -r 0-3000000 -o edgar_corpus_2020_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/2020/test.jsonl (first ~3 MB, several complete JSON lines; truncate the final partial line). Optionally repeat for 1995/test.jsonl to see the old-filing format. Do NOT fetch the Zenodo year zips - the smallest, 1993.zip, is 39.2 MB and a partial zip is unusable. Total <= 10 MB.",
+ "tos_or_license_flag": false
+}

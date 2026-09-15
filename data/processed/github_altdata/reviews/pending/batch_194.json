@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:calekochenour/nighttime-radiance",
+  "url": "https://github.com/calekochenour/nighttime-radiance",
+  "name": "nighttime-radiance",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scripts and Jupyter notebooks to download and preprocess VIIRS DNB (Day/Night Band) nighttime-lights data from NOAA/NASA sources; no data committed, method/pipeline only.",
+  "why_useful": "Lighter-weight alternative to blackmarblepy for a one-off pull of VIIRS DNB imagery over a specific tourism destination bounding box; BSD-3 licensed.",
+  "potential": "low",
+  "geography": "global, user-selected",
+  "time_coverage": "VIIRS DNB era (2012-present)",
+  "size_hint": "no committed data",
+  "license": "BSD-3-Clause",
+  "last_activity": "2025-04-03",
+  "gap_targets": [
+   2,
+   7
+  ],
+  "duplicate_of_holding": "overlaps blackmarblepy/blackmarbler capability",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Lighter-weight alternative to blackmarblepy for a one-off pull of VIIRS DNB imagery over a specific tourism destination bounding box; BSD-3 licensed."
+  ]
+ },
+ {
+  "key": "github:xkdr/nighttimelights.jl",
+  "url": "https://github.com/xKDR/NighttimeLights.jl",
+  "name": "NighttimeLights.jl",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Julia package to analyse VIIRS nighttime-lights data (processing/statistics functions); no committed geography-specific dataset.",
+  "why_useful": "General-purpose analysis tool if the team ever works in Julia; not tourism-specific.",
+  "potential": "low",
+  "geography": "global, generic tool",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "General-purpose analysis tool if the team ever works in Julia; not tourism-specific."
+  ]
+ },
+ {
+  "key": "github:datapartnership/syria-economic-monitor",
+  "url": "https://github.com/datapartnership/syria-economic-monitor",
+  "name": "syria-economic-monitor (and sibling datapartnership/*-economic-monitor repos)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "World Bank Data Partnership template repo combining remote sensing (nighttime lights, port/trade activity via satellite), mobility patterns, internet connectivity, and vegetation conditions to track economic activity in data-scarce countries. Same org has near-identical repos for Niger, Algeria, Egypt, Ethiopia, Myanmar, Morocco \u2014 a reusable methodology, not Airbnb-market data itself (all current instances cover conflict/data-scarce non-ABNB markets).",
+  "why_useful": "Not directly usable (wrong geographies) but is a concrete, working template for combining nightlights + mobility + connectivity into a single \"economic activity monitor\" \u2014 the same recipe could be forked and re-pointed at an ABNB-relevant tourism destination (e.g. a LatAm or APAC market from gap #7) faster than building from scratch.",
+  "potential": "low",
+  "geography": "Syria, Niger, Algeria, Egypt, Ethiopia, Myanmar, Morocco (none are core ABNB markets)",
+  "time_coverage": "varies by country monitor, generally recent (2023-2026)",
+  "size_hint": "notebooks + processed indicator files per country repo",
+  "license": "MPL-2.0 / Other",
+  "last_activity": "2026-08-13 (syria-economic-monitor)",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Not directly usable (wrong geographies) but is a concrete, working template for combining nightlights + mobility + connectivity into a single \"economic activity monitor\" \u2014 the same recipe could be forked and re-pointed at an ABNB-relevant tourism destination (e.g. a LatAm or APAC market from gap #7) faster than building from scratch."
+  ]
+ },
+ {
+  "key": "github:alexeiabrahams/nighttime-lights",
+  "url": "https://github.com/alexeiabrahams/nighttime-lights",
+  "name": "nighttime-lights (DMSP deblurring)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MATLAB academic replication package implementing 'Deblurring DMSP nighttime lights: A new method using Gaussian filters and Frequencies of illumination' (Abrahams et al.) \u2014 deblur_roving_window_call_script.m + block_deblur.m. No committed imagery; operates on NOAA NGDC EOG global annual DMSP composites + frequency-of-illumination rasters supplied by the user. 16 commits, 8 stars, 5 forks, MIT-licensed (citation required).",
+  "why_useful": "Methods package for sharpening older, low-resolution DMSP nightlights (pre-VIIRS, i.e. pre-2012) \u2014 relevant if the team ever wants a longer/older nightlights-based tourism-activity series than VIIRS alone provides, or to make historical nightlights comparable across the DMSP/VIIRS transition.",
+  "potential": "low",
+  "license": "MIT (citation required)",
+  "last_activity": "2024-05-20",
+  "geography": "global",
+  "time_coverage": "DMSP era (pre-2013 annual composites)",
+  "size_hint": "small; scripts only, no data",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Methods package for sharpening older, low-resolution DMSP nightlights (pre-VIIRS, i.e. pre-2012) \u2014 relevant if the team ever wants a longer/older nightlights-based tourism-activity series than VIIRS alone provides, or to make historical nightlights comparable across the DMSP/VIIRS transition."
+  ]
+ },
+ {
+  "key": "github:gadec-uk/departures-board",
+  "url": "https://github.com/gadec-uk/departures-board",
+  "name": "departures-board",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "175-star hardware/software project (ESP32 + OLED) for a live UK rail/London Underground/bus departures board, pulling real-time feeds from National Rail, TfL, and Bustimes APIs; actively updated (Sep 2026).",
+  "why_useful": "Not ridership data itself, but a maintained, working reference client for the TfL and National Rail real-time APIs (including Heathrow Express-adjacent National Rail feeds) that could be repurposed to sample live train frequency/crowding signals as a lightweight London visitor-flow proxy.",
+  "potential": "low",
+  "geography": "United Kingdom (London-area transit APIs)",
+  "time_coverage": "n/a (live API client)",
+  "size_hint": "firmware + client code",
+  "license": "other (stated in repo)",
+  "last_activity": "2026-09-06",
+  "gap_targets": [
+   5,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Not ridership data itself, but a maintained, working reference client for the TfL and National Rail real-time APIs (including Heathrow Express-adjacent National Rail feeds) that could be repurposed to sample live train frequency/crowding signals as a lightweight London visitor-flow proxy."
+  ]
+ }
+]

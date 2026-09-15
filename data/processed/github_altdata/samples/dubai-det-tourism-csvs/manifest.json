@@ -1,0 +1,33 @@
+{
+  "slug": "dubai-det-tourism-csvs",
+  "url": "https://github.com/RezaSbu/Dubai-Tourism-Data-Analysis-",
+  "sampled": true,
+  "total_bytes": 44054,
+  "files": [
+    "Divs_Visitors_Demographic_2024-04-26_10-39-44.csv",
+    "Hotel_Establishment_Performance.csv",
+    "Overnight_Visitors_By_Region.csv",
+    "Overnight_Visitors_By_Source_Market.csv",
+    "Overseas_Overall_Monthly_Report_Fact.csv",
+    "Visitors_Count_By_Nationality.csv",
+    "SOURCE_README.md"
+  ],
+  "rows": "Divs_Visitors_Demographic 244; Hotel_Establishment_Performance 2; Overnight_Visitors_By_Region 18; Overnight_Visitors_By_Source_Market 40; Overseas_Overall_Monthly_Report_Fact 117; Visitors_Count_By_Nationality 196 (total 617)",
+  "columns": "Overseas_Overall_Monthly: overall_visitor_count, dt_date_srgt | Hotel_Perf: report_date, total_hotels (by 5/4/1-3 star, deluxe/standard), total_rooms_available (same splits), room_occupancy, adr, revpar, occupied_room_nights, length_of_stay | Overnight_By_Region: month_by_year, region, visitors | Overnight_By_Source_Market: month_by_year, overall_visitors, country, visitors | Nationality: year, nationality, visitor_count | Demographic: year, source_market, gender shares, age-band shares, length_of_stay (days/nights/paid accom), visit-purpose shares",
+  "date_range": "2014-01 to 2024-06 (monthly overseas visitor series 2014-01..2023-12 with gaps; hotel performance and regional/source-market splits only 2024-05..2024-06; annual nationality 2016-2022; demographics 2016-2023)",
+  "how_pulled": "gh api repos/RezaSbu/Dubai-Tourism-Data-Analysis-/contents/ ; for f in <6 csvs> README.md: curl -sL -o $f https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/$f ; python pandas describe",
+  "full_dataset_size": "Whole repo is ~165 KB: 19 CSVs (the 6 pulled here plus 12 quarterly e-permit/e-ticketing files 2022-06..2023-09, each 0.3-8 KB), one notebook (119 KB) and a 107 KB PDF report. Pulling everything is a single depth-1 clone; no larger version exists in the repo. The underlying Dubai DET open-data portal series are longer.",
+  "description": "Six CSV exports in Dubai Department of Economy and Tourism (DET) open-data format, committed by a student EDA project: a monthly overseas visitor count for Dubai (2014-2023, 117 months, gaps in 2016-2019 and 2020 H1), two months (May-Jun 2024) of hotel establishment performance (hotel and room counts by star class, occupancy 79%/67%, ADR AED 444/357, RevPAR), May-Jun 2024 overnight visitors by region and top-20 source market, annual visitor counts by nationality 2016-2022, and annual per-source-market demographics 2016-2023 (age, gender, length of stay, visit purpose). Grain is monthly-by-market or annual-by-nationality; the source is DET's Dubai Pulse portal, re-exported here. An ABNB analyst would use the monthly overseas visitor series as a Gulf/EMEA inbound demand check and the source-market table for origin mix (India, Saudi, UK, Russia, China), but the hotel-KPI and regional splits are only two months long, so this repo is a format reference rather than a usable panel; the full series must come from the DET portal.",
+  "issues": "No licence in the repo (license: null) and the data are DET/Dubai Pulse exports whose terms are not stated; a human must confirm reuse. Hotel_Establishment_Performance and the by-region/by-source-market tables contain only May and June 2024 (2, 18, 40 rows), far short of the ~2022-2024 monthly panel implied by the job card. The monthly overseas series has holes (2016-05..2016-10, 2017-2019 partly, 2020 H1) and unsorted rows with float-valued counts, suggesting a derived/estimated field (dt_date_srgt surrogate key). Date formats are inconsistent across files (DD-MM-YYYY in the region file, YYYY-MM-DD elsewhere). E-permit/e-ticketing files, the notebook and the PDF were skipped per plan.",
+  "source_urls": [
+    "https://github.com/RezaSbu/Dubai-Tourism-Data-Analysis-",
+    "https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/Hotel_Establishment_Performance.csv",
+    "https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/Overnight_Visitors_By_Region.csv",
+    "https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/Overnight_Visitors_By_Source_Market.csv",
+    "https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/Visitors_Count_By_Nationality.csv",
+    "https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/Overseas_Overall_Monthly_Report_Fact.csv",
+    "https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/Divs_Visitors_Demographic_2024-04-26_10-39-44.csv",
+    "https://raw.githubusercontent.com/RezaSbu/Dubai-Tourism-Data-Analysis-/HEAD/README.md"
+  ],
+  "pulled_at": "2026-09-14"
+}

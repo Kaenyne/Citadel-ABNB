@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:plantree/layoffs-tracker",
+  "url": "https://github.com/plantree/layoffs-tracker",
+  "name": "layoffs-tracker (China)",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A layoffs.fyi-style tracker focused on the Chinese tech/market layoffs rather than the US/global one.",
+  "why_useful": "Only tangential to ABNB itself, but could be a template/comparator for tracking Chinese short-term-rental platform (Tujia, Xiaozhu) headcount/layoff activity mentioned in gap #9's adjacent-supply list \u2014 low direct value.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2025-09-03",
+  "geography": "China",
+  "time_coverage": "not specified",
+  "size_hint": "not specified",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Only tangential to ABNB itself, but could be a template/comparator for tracking Chinese short-term-rental platform (Tujia, Xiaozhu) headcount/layoff activity mentioned in gap #9's adjacent-supply list \u2014 low direct value."
+  ]
+ },
+ {
+  "key": "github:atharvajakkanwar/rating-text-reviews-glassdoor-dataset",
+  "url": "https://github.com/atharvajakkanwar/rating-text-reviews-glassdoor-dataset",
+  "name": "rating-text-reviews-glassdoor-dataset",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A generic Glassdoor employee-reviews dataset (source unclear, likely a Kaggle mirror) used to train text-rating models \u2014 not company-specific to Airbnb as far as the description shows.",
+  "why_useful": "Confirms Glassdoor review datasets of this kind exist on GitHub as generic NLP corpora; would need inspection to see if Airbnb rows are present or if it's restricted to a different industry sample \u2014 flagged for completeness only.",
+  "potential": "low",
+  "license": "not specified",
+  "last_activity": "2024-04-01",
+  "geography": "not specified",
+  "time_coverage": "not specified",
+  "size_hint": "not specified",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Confirms Glassdoor review datasets of this kind exist on GitHub as generic NLP corpora; would need inspection to see if Airbnb rows are present or if it's restricted to a different industry sample \u2014 flagged for completeness only."
+  ]
+ },
+ {
+  "key": "github:spinlud/py-linkedin-jobs-scraper",
+  "url": "https://github.com/spinlud/py-linkedin-jobs-scraper",
+  "name": "py-linkedin-jobs-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/headless-browser library scraping public LinkedIn job listings: job id, title, company, location, links, salary/benefits, easy-apply flag, applicant counts, employment type and experience-level filters, geoId-based geographic filtering, adaptive rate limiting, session persistence, CLI + programmatic API, JSON/CSV/table output. MIT, 189 commits.",
+  "why_useful": "Could be pointed at Airbnb's LinkedIn job listings to build an open-roles count and mix (function, seniority, geography) over time as a hiring-pace/headcount-growth proxy \u2014 same use case as JobSpy but LinkedIn-specific with richer per-posting metadata (applicant counts). Method only, current-snapshot, ToS caveats apply; not run.",
+  "potential": "low",
+  "geography": "n/a (global LinkedIn)",
+  "time_coverage": "n/a \u2014 live snapshot only",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "not stated (189 commits)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "overlaps JobSpy's LinkedIn coverage",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Could be pointed at Airbnb's LinkedIn job listings to build an open-roles count and mix (function, seniority, geography) over time as a hiring-pace/headcount-growth proxy \u2014 same use case as JobSpy but LinkedIn-specific with richer per-posting metadata (applicant counts). Method only, current-snapshot, ToS caveats apply; not run."
+  ]
+ },
+ {
+  "key": "github:dagrewal/istanbul-airbnb-analysis",
+  "url": "https://github.com/dagrewal/istanbul-airbnb-analysis",
+  "name": "istanbul-airbnb-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Analysis of Istanbul Airbnb accommodation 'using data from www.insideairbnb.com'; repo has a Code/ folder and (per truncated listing) likely a Data folder not fully inspected. Istanbul is outside our 13-city Inside Airbnb panel and outside APAC/EMEA coverage we hold.",
+  "why_useful": "Potential Istanbul-market Inside Airbnb snapshot; Turkey/Istanbul tourism is a data-thin region for us (adjacent to APAC/EMEA gap #7). Not fully verified whether raw data files are actually committed vs. just referenced.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2023-06-09",
+  "geography": "Istanbul, Turkey",
+  "time_coverage": "unknown snapshot date",
+  "size_hint": "unknown",
+  "gap_targets": [
+   1,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "Potential Istanbul-market Inside Airbnb snapshot; Turkey/Istanbul tourism is a data-thin region for us (adjacent to APAC/EMEA gap #7). Not fully verified whether raw data files are actually committed vs. just referenced."
+  ]
+ },
+ {
+  "key": "github:derodz/ml-shorttermrentals",
+  "url": "https://github.com/derodz/ml-shorttermrentals",
+  "name": "ml-shorttermrentals",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "ML notebook predicting daily STR rental rates using downloads from AllTheRooms.com (a subscription STR data vendor named explicitly in gap #2). Source CSVs are NOT committed ('I did not upload the source data' due to AllTheRooms redistribution restrictions); only a trained pickle model and notebook are present. Scope is a single zip code chosen by the author.",
+  "why_useful": "Confirms AllTheRooms.com as a named, real vendor for realized STR rates (relevant to gap #2), and shows what fields/approach a downloaded AllTheRooms export contains, even though no data is redistributable here.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2024-06-10",
+  "geography": "single unspecified US zip code",
+  "time_coverage": "monthly, unspecified span",
+  "size_hint": "n/a (no data committed)",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "Confirms AllTheRooms.com as a named, real vendor for realized STR rates (relevant to gap #2), and shows what fields/approach a downloaded AllTheRooms export contains, even though no data is redistributable here."
+  ]
+ }
+]

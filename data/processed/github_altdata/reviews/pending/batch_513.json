@@ -1,0 +1,655 @@
+[
+ {
+  "key": "github:dballinari/googletrends-scraper",
+  "url": "https://github.com/dballinari/GoogleTrends-Scraper",
+  "name": "GoogleTrends-Scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python implementation (226 stars, updated 2 Sep 2026) for scraping DAILY Google Trends data over long time periods by chaining overlapping weekly/monthly pulls and rescaling \u2014 same genre as longtrends, more actively maintained and higher-starred.",
+  "why_useful": "Alternative, more popular long-history daily Trends reconstruction method; relevant to gap #4 (historical Trends with pull dates, if run and logged repeatedly) and gap #17 (mixed-frequency nowcasting inputs need daily rather than weekly granularity).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "daily reconstruction over multi-year spans",
+  "size_hint": "library",
+  "license": "unspecified in listing",
+  "last_activity": "2026-09-02",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Alternative, more popular long-history daily Trends reconstruction method; relevant to gap #4 (historical Trends with pull dates, if run and logged repeatedly) and gap #17 (mixed-frequency nowcasting inputs need daily rather than weekly granularity)."
+  ]
+ },
+ {
+  "key": "github:flack0x/trendspyg",
+  "url": "https://github.com/flack0x/trendspyg",
+  "name": "trendspyg",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained Python library + CLI (successor-style to pytrends, now that pytrends is archived) for interest-over-time, interest-by-region, related queries, and multi-property (YouTube/News/Images/Shopping) Trends data. New in v1.3.0: opt-in local SQLite archiving so repeated fetches build a self-owned historical/point-in-time snapshot store going forward (cannot backfill past data Google no longer serves). MIT license, v1.8.0, 50 stars/7 forks, active development.",
+  "why_useful": "Google periodically breaks the endpoints pytrends scrapes; having a maintained alternative reduces operational risk for the weekly Trends re-pull mentioned in team memory notes. No new data, purely a resilience/tooling candidate.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "n/a (client)",
+  "size_hint": "library",
+  "license": "MIT",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "functional duplicate of pytrends, actively maintained fallback",
+  "hits": 2,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Google periodically breaks the endpoints pytrends scrapes; having a maintained alternative reduces operational risk for the weekly Trends re-pull mentioned in team memory notes. No new data, purely a resilience/tooling candidate.",
+   "Practical tool for building a going-forward point-in-time Trends vintage register (gap #4) cheaply, and a maintained replacement now that the original pytrends is archived/read-only."
+  ]
+ },
+ {
+  "key": "github:lc/gau",
+  "url": "https://github.com/lc/gau",
+  "name": "gau (getallurls)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CLI (Go, MIT, 5.1k stars, 171 commits) that fetches all known URLs for a domain from Wayback Machine, Common Crawl, and AlienVault OTX in one pass; supports date-range and MIME filters, JSON output.",
+  "why_useful": "One-command way to enumerate historical URL sets for competitor STR/OTA sites (Vrbo, Booking alt-accommodation, Sonder, Vacasa) across archives, e.g. to count listing/market pages seen over time as a rough supply/presence proxy (gap 9).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "as far back as Wayback/CC coverage goes per domain",
+  "size_hint": "tooling only; output size depends on domain",
+  "license": "MIT",
+  "last_activity": "active, 23 open issues/12 PRs",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "One-command way to enumerate historical URL sets for competitor STR/OTA sites (Vrbo, Booking alt-accommodation, Sonder, Vacasa) across archives, e.g. to count listing/market pages seen over time as a rough supply/presence proxy (gap 9).",
+   "URL-discovery step to enumerate what paths ever existed under airdna.co, mashvisor.com, or insideairbnb.com (e.g. old market-report slugs, city pages that later moved/disappeared) before running a downloader against the Wayback Machine \u2014 feeds gaps #1/#2."
+  ]
+ },
+ {
+  "key": "github:dgtlmoon/changedetection.io",
+  "url": "https://github.com/dgtlmoon/changedetection.io",
+  "name": "changedetection.io",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hostable website change-detection app (~2,496 commits): watches arbitrary URLs, diffs content via CSS/XPath/JSONPath selectors, supports PDF and browser-rendered (Playwright) pages, and fires notifications (Slack/Discord/webhook) on change. No committed dataset -- it is a running service you point at target pages.",
+  "why_useful": "Directly usable, no-code way to build a help-center / app-release-notes / newsroom change monitor for Airbnb (and comparators Vrbo, Booking, Vacasa) to catch product-launch and policy-change timing ahead of scraped confirmation -- fits gap #15 (product/patent/trademark & release monitors) as a generic acquisition method rather than site-specific script.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "n/a (generic tool)",
+  "time_coverage": "n/a",
+  "size_hint": "single Python app, Docker image available",
+  "license": "Apache 2.0",
+  "last_activity": "actively maintained, thousands of commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Directly usable, no-code way to build a help-center / app-release-notes / newsroom change monitor for Airbnb (and comparators Vrbo, Booking, Vacasa) to catch product-launch and policy-change timing ahead of scraped confirmation -- fits gap #15 (product/patent/trademark & release monitors) as a generic acquisition method rather than site-specific script."
+  ]
+ },
+ {
+  "key": "github:calidog/certstream-python",
+  "url": "https://github.com/CaliDog/certstream-python",
+  "name": "certstream-python",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python WebSocket client for the CertStream network, which aggregates real-time Certificate Transparency log feeds (domain names, fingerprints, issuer, timestamps). 36 commits, MIT license.",
+  "why_useful": "Real-time feed that could flag newly issued TLS certs for new Airbnb subdomains (e.g. a new product/microsite launch, an acquisition's domain going live, or a new country TLD) ahead of press coverage -- a leading indicator method for gap #15's product-launch monitor idea. Needs to run forward from now; can't backfill history.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "global (all CT logs)",
+  "time_coverage": "real-time only, no historical backfill",
+  "size_hint": "library only",
+  "license": "MIT",
+  "last_activity": "36 commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Real-time feed that could flag newly issued TLS certs for new Airbnb subdomains (e.g. a new product/microsite launch, an acquisition's domain going live, or a new country TLD) ahead of press coverage -- a leading indicator method for gap #15's product-launch monitor idea. Needs to run forward from now; can't backfill history."
+  ]
+ },
+ {
+  "key": "github:paulsec/crt.sh",
+  "url": "https://github.com/PaulSec/crt.sh",
+  "name": "crt.sh (Python wrapper)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python API wrapper (`crtshAPI().search('domain.com')`) around crt.sh's certificate-transparency search, returning certificate metadata (issuer, domain names, timestamps) for any queried domain. 20 commits, MIT license.",
+  "why_useful": "Can backfill historical certificate-issuance history (crt.sh keeps a searchable CT log archive) for airbnb.com and subsidiary/product subdomains -- a point-in-time-flavored way to date when a new product domain first appeared, unlike the real-time-only certstream feed above.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "global",
+  "time_coverage": "however far crt.sh's CT log ingestion goes (years)",
+  "size_hint": "library only",
+  "license": "MIT",
+  "last_activity": "20 commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Can backfill historical certificate-issuance history (crt.sh keeps a searchable CT log archive) for airbnb.com and subsidiary/product subdomains -- a point-in-time-flavored way to date when a new product domain first appeared, unlike the real-time-only certstream feed above."
+  ]
+ },
+ {
+  "key": "github:yassineaboukir/sublert",
+  "url": "https://github.com/yassineaboukir/sublert",
+  "name": "sublert",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool that leverages Certificate Transparency logs to automatically monitor and alert on newly deployed subdomains for a target organization. 1k stars.",
+  "why_useful": "Purpose-built for exactly this theme's 'product-launch monitor via CT' idea -- point it at airbnb.com (and Vrbo/Vacasa/Sonder) to catch new subdomains signaling product or market launches before press coverage.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "overlaps certstream-python/crt.sh/certspotter for the CT-monitoring use case; this one is purpose-built for org-level subdomain monitoring specifically",
+  "geography": "global",
+  "time_coverage": "real-time forward-looking, no historical backfill",
+  "size_hint": "single Python tool",
+  "license": "not confirmed (check on use)",
+  "last_activity": "1k stars",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Purpose-built for exactly this theme's 'product-launch monitor via CT' idea -- point it at airbnb.com (and Vrbo/Vacasa/Sonder) to catch new subdomains signaling product or market launches before press coverage."
+  ]
+ },
+ {
+  "key": "github:chi0tzp/yfcc100m-downloader",
+  "url": "https://github.com/chi0tzp/YFCC100M-Downloader",
+  "name": "YFCC100M-Downloader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python multiprocessing downloader for the metadata of the Yahoo Flickr Creative Commons 100M dataset: ~99.2M photos + 0.8M videos with geotags, timestamps, and CC licence info, fetched in two steps (index then file download). Repo does not host the data itself. 42 stars, no stated licence for the tool.",
+  "why_useful": "Working, non-scraper acquisition path for YFCC100M's geotagged Flickr photo/video metadata (100M items, worldwide, with capture timestamps) -- could be filtered to top tourism destinations for a photo-volume travel-flow proxy, one of the explicit theme targets (YFCC100M tourism subsets).",
+  "potential": "medium",
+  "geography": "worldwide (YFCC100M is global)",
+  "time_coverage": "YFCC100M photos span ~2004-2014 capture dates",
+  "size_hint": "n/a (downloader); parent dataset is 100M Flickr photos/videos with metadata",
+  "license": "not confirmed",
+  "last_activity": "2020-05-12",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Working, non-scraper acquisition path for YFCC100M's geotagged Flickr photo/video metadata (100M items, worldwide, with capture timestamps) -- could be filtered to top tourism destinations for a photo-volume travel-flow proxy, one of the explicit theme targets (YFCC100M tourism subsets).",
+   "YFCC100M geotags could reconstruct historical (pre-2015) tourist-flow / visitor-origin-destination patterns for cities in the Inside Airbnb panel, complementing party-size and cross-border-share proxies (CONTEXT gap #20) -- though the underlying photo corpus is dated (collected ~2004-2014), so it is a baseline/methods reference more than a current nowcast source."
+  ]
+ },
+ {
+  "key": "github:yya518/finbert",
+  "url": "https://github.com/yya518/FinBERT",
+  "name": "FinBERT (Yang, UcHRoy, Huang) \u2014 finance-domain BERT incl. earnings-call pretraining",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Pretrained BERT for financial text, trained on 4.9B tokens: 10-K/10-Q corporate reports (2.5B tokens), EARNINGS CALL TRANSCRIPTS (1.3B tokens), and analyst reports (1.1B tokens); the released finbert-tone variant is fine-tuned on 10,000 manually labeled (pos/neg/neutral) analyst-report sentences. Apache-2.0, 661 stars, 144 forks. Model weights hosted on Hugging Face (yiyanghkust/finbert-tone), including ESG and forward-looking-statement variants.",
+  "why_useful": "A ready-made, earnings-call-trained tone/sentiment scorer (not a raw ABNB dataset, but a validated tool) that could score ABNB's own and peer transcripts for management-tone features feeding the guide-composition model, without needing to build a tone classifier from scratch.",
+  "potential": "medium",
+  "geography": "US, broad financial-text corpus",
+  "time_coverage": "not stated precisely",
+  "size_hint": "4.9B token pretraining corpus (not redistributed raw); 10k labeled sentences for fine-tuning",
+  "license": "Apache-2.0",
+  "last_activity": "not stated precisely; multiple HF model variants released",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "team already tested 'management tone' and found it did not beat naive on our construction; this is a different, earnings-call-pretrained tone tool worth trying before concluding tone is dead",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A ready-made, earnings-call-trained tone/sentiment scorer (not a raw ABNB dataset, but a validated tool) that could score ABNB's own and peer transcripts for management-tone features feeding the guide-composition model, without needing to build a tone classifier from scratch."
+  ]
+ },
+ {
+  "key": "github:unniananya/earnings-implied-move-mispricing",
+  "url": "https://github.com/unniananya/Earnings-Implied-Move-Mispricing",
+  "name": "Earnings-Implied-Move-Mispricing",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Research framework studying earnings-implied-move mispricing via option straddle prices vs. realized post-earnings moves. Notebooks build base/loose/strict event datasets of 9,804 / 9,022 / 7,412 earnings events (2018-2024) using WRDS, OptionMetrics, and CRSP; regresses straddle 'edge' (realized minus implied move) on pre-earnings IV, bid-ask spreads, open interest, volume, price; expanding-window OOS validation 2018-2020 train / 2021-2024 test; includes a research paper PDF.",
+  "why_useful": "Directly on-theme methodology for constructing an ABNB earnings-implied-move / vol-crush estimator ahead of the 5 Nov print (straddle price vs realized move), which is exactly the reverse-DCF/market-implied-move work already underway (see reverse-dcf-run memory note) \u2014 worth a closer read for the modeling approach even if the underlying tickers are not ABNB.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (US equities cross-section)",
+  "time_coverage": "unknown, not yet inspected",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "2026-06-14",
+  "duplicate_of_holding": "overlaps in spirit with our own market-implied reverse-DCF work (12-13 Sep 2026, docs/reverse_dcf/SYNTHESIS.md) which already derived a 12M implied-move sd of 9.5% for the 5 Nov print; this repo's method could be a cross-check, not a new number",
+  "hits": 3,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets",
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Directly on-theme methodology for constructing an ABNB earnings-implied-move / vol-crush estimator ahead of the 5 Nov print (straddle price vs realized move), which is exactly the reverse-DCF/market-implied-move work already underway (see reverse-dcf-run memory note) \u2014 worth a closer read for the modeling approach even if the underlying tickers are not ABNB.",
+   "Large-sample (thousands of events) earnings-implied-move methodology directly applicable to ABNB's 5 Nov print, but the underlying data (WRDS/OptionMetrics/CRSP) is licensed and not redistributable -- only the method/code is freely usable, not the dataset itself.",
+   "A worked methodology for comparing ABNB's straddle-implied 5 Nov move against realized historical post-print moves (already partly done in the reverse-DCF market-implied model per memory) -- could sanity-check or extend that sd-of-move estimate; no bundled ABNB data."
+  ]
+ },
+ {
+  "key": "github:open-lemma/options-implied-probability",
+  "url": "https://github.com/Open-Lemma/options-implied-probability",
+  "name": "OIPD (options-implied-probability)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (354 stars, Apache-2.0) that fits an arbitrage-free implied-volatility surface from an options chain and converts it into a market-implied probability distribution for the underlying's future price; built-in free yfinance data connector; example notebooks pull GME options live.",
+  "why_useful": "Directly usable as a method to build an ABNB earnings-implied-move / implied-distribution estimate from current Yahoo option chains (which the team already holds) ahead of the 5 Nov print \u2014 a ready-made implied-move calculator rather than data itself.",
+  "potential": "medium",
+  "size_hint": "code only, no persisted dataset",
+  "time_coverage": "current/live snapshot only via yfinance",
+  "geography": "US listed options (works for ABNB)",
+  "license": "Apache-2.0",
+  "last_activity": "624 commits, appears actively maintained",
+  "duplicate_of_holding": "uses the same Yahoo current-options-chain source already held; adds an implied-move METHOD on top, not new raw data",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Directly usable as a method to build an ABNB earnings-implied-move / implied-distribution estimate from current Yahoo option chains (which the team already holds) ahead of the 5 Nov print \u2014 a ready-made implied-move calculator rather than data itself."
+  ]
+ },
+ {
+  "key": "github:riyadhmzyev/financial-market-event-study-python",
+  "url": "https://github.com/riyadhmzyev/Financial-Market-Event-Study-Python",
+  "name": "Financial-Market-Event-Study-Python",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reusable Python event-study framework: OLS market-model estimation, abnormal returns (AR) and cumulative abnormal returns (CAR), statistical significance testing, and visualization, built on historical price data (user-supplied, not bundled).",
+  "why_useful": "Generic, reusable event-study package (not a one-off single-ticker notebook) that we could point at ABNB earnings dates plus the peer set (BKNG/EXPE/MAR/HLT) to measure abnormal-return reactions and drift; directly matches gap #17 (event-study packages, earnings-implied-move estimators).",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "size_hint": "small Python repo, no bundled data",
+  "time_coverage": "n/a (user-supplied price history)",
+  "geography": "n/a",
+  "license": "unspecified",
+  "last_activity": "2026-08-22",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Generic, reusable event-study package (not a one-off single-ticker notebook) that we could point at ABNB earnings dates plus the peer set (BKNG/EXPE/MAR/HLT) to measure abnormal-return reactions and drift; directly matches gap #17 (event-study packages, earnings-implied-move estimators)."
+  ]
+ },
+ {
+  "key": "github:nipfpmf/eventstudies",
+  "url": "https://github.com/nipfpmf/eventstudies",
+  "name": "eventstudies (NIPFP)",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "R package (485 commits, CRAN v1.2.2, GPL-2) for event-study methodology from India's National Institute of Public Finance and Policy. Ships sample datasets (SplitDates, StockPriceReturns, OtherReturns) plus an `eventstudy()` function supporting market-model adjustment, custom event windows, cumulative-sum remapping, and bootstrap inference.",
+  "why_useful": "A mature, peer-reviewed-adjacent event-study toolkit with bootstrap inference (more rigorous than naive t-tests) -- usable for ABNB earnings-day and regulatory-event studies (gap #12 regulatory events, #17 methods).",
+  "potential": "medium",
+  "geography": "N/A (India-based maintainers, method is general)",
+  "time_coverage": "N/A",
+  "size_hint": "R package + small sample datasets",
+  "license": "GPL-2",
+  "last_activity": "unspecified (CRAN-published, actively versioned)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17,
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "A mature, peer-reviewed-adjacent event-study toolkit with bootstrap inference (more rigorous than naive t-tests) -- usable for ABNB earnings-day and regulatory-event studies (gap #12 regulatory events, #17 methods)."
+  ]
+ },
+ {
+  "key": "github:ong-pogs/awesome-prediction-market-apis",
+  "url": "https://github.com/Ong-pogs/awesome-prediction-market-apis",
+  "name": "awesome-prediction-market-apis",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated directory of prediction-market APIs, SDKs, MCP servers, and pointers to historical order-book data sources across Polymarket, Kalshi, Manifold, Limitless and others; itself an awesome-list (markdown), not a dataset.",
+  "why_useful": "Fastest way to find which of the many prediction-market API wrappers actually expose historical order-book/price series usable for point-in-time event-probability construction (gap 4, 11, 12) without re-discovering them one by one.",
+  "potential": "medium",
+  "size_hint": "markdown list, small",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "other/unspecified",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   4,
+   11,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Fastest way to find which of the many prediction-market API wrappers actually expose historical order-book/price series usable for point-in-time event-probability construction (gap 4, 11, 12) without re-discovering them one by one."
+  ]
+ },
+ {
+  "key": "github:bcongdon/pymanifold",
+  "url": "https://github.com/bcongdon/PyManifold",
+  "name": "PyManifold",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client for the Manifold Markets public API (18 stars, actively maintained through Jan 2026); wraps market listing, bet history, and price/probability history endpoints \u2014 Manifold's API is free/keyless for reads.",
+  "why_useful": "Manifold hosts many community-made questions on company earnings beats, travel/tourism events, and regulatory outcomes; this client is a one-command way to pull full probability history (with timestamps) for any such market \u2014 directly serves the point-in-time vintage gap (4) for event-probability nowcasts around the Nov 5 print or regulatory votes (gap 12).",
+  "potential": "medium",
+  "size_hint": "small client library, no bundled data",
+  "time_coverage": "pulls live/historical via API, Manifold history back to 2022",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-01-09",
+  "gap_targets": [
+   4,
+   11,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Manifold hosts many community-made questions on company earnings beats, travel/tourism events, and regulatory outcomes; this client is a one-command way to pull full probability history (with timestamps) for any such market \u2014 directly serves the point-in-time vintage gap (4) for event-probability nowcasts around the Nov 5 print or regulatory votes (gap 12)."
+  ]
+ },
+ {
+  "key": "github:futuur/prediction_markets",
+  "url": "https://github.com/futuur/prediction_markets",
+  "name": "prediction_markets (futuur)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit unifying Futuur, Manifold Markets, and Polymarket APIs for searching, correlating, and trading; includes market-matching logic across the three platforms by title similarity.",
+  "why_useful": "Cross-platform market matching would let us assemble a merged event-probability panel (earnings, travel, regulation questions) across three sources rather than one, improving coverage for point-in-time series (gap 4).",
+  "potential": "medium",
+  "size_hint": "small toolkit, no bundled dataset",
+  "time_coverage": "live pull, no historical archive",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-03-17",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Cross-platform market matching would let us assemble a merged event-probability panel (earnings, travel, regulation questions) across three sources rather than one, improving coverage for point-in-time series (gap 4)."
+  ]
+ },
+ {
+  "key": "github:nahrek/polyledger",
+  "url": "https://github.com/nahrek/polyledger",
+  "name": "polyledger",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hosted Polymarket indexer that streams on-chain OrderFilled events from Polygon via Envio HyperSync plus CLOB API market metadata into a single queryable DuckDB file ('one file on disk', SQL-queryable). No committed/downloadable dataset \u2014 user must run the backfill themselves (a few hours to a couple of days on free tier). MIT licensed, 22 commits, example output timestamped 2026-09-02 suggesting active/recent.",
+  "why_useful": "A one-command / scriptable method to build a full point-in-time Polymarket trade ledger (all categories) in a DuckDB file the team already uses elsewhere in its stack \u2014 lower effort than writing a custom indexer if the team wants an on-chain-verified, timestamped record of Polymarket odds around ABNB earnings or travel/regulation events.",
+  "geography": "Global (Polymarket/Polygon)",
+  "time_coverage": "Full Polymarket on-chain history back to inception once backfilled",
+  "size_hint": "Not stated; scales with full Polymarket trade history",
+  "license": "MIT",
+  "last_activity": "22 commits, recent (example dated 2026-09-02)",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "A one-command / scriptable method to build a full point-in-time Polymarket trade ledger (all categories) in a DuckDB file the team already uses elsewhere in its stack \u2014 lower effort than writing a custom indexer if the team wants an on-chain-verified, timestamped record of Polymarket odds around ABNB earnings or travel/regulation events."
+  ]
+ },
+ {
+  "key": "github:pmxt-dev/pmxt",
+  "url": "https://github.com/pmxt-dev/pmxt",
+  "name": "pmxt",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"CCXT for prediction markets\": a unified Python/TypeScript SDK, hosted API, self-hostable server, CLI, and MCP integration that normalizes access across Polymarket, Polymarket US, Kalshi, Limitless, Probable, Baozi, Myriad, Opinion, Metaculus, Smarkets, Hyperliquid, Gemini Titan, SuiBets, Rain, and Hunch. MIT licensed, 2.1k stars/269 forks, 1,687 commits, actively developed.",
+  "why_useful": "One client library to pull current AND (via each venue's own history endpoints) historical market data across a dozen-plus prediction-market venues including Metaculus, rather than writing bespoke API clients per platform \u2014 useful if the team wants to pull ABNB-earnings or travel/regulation contracts across multiple venues with one interface.",
+  "geography": "Global",
+  "time_coverage": "N/A (live API wrapper; historical depth depends on underlying venue APIs)",
+  "size_hint": "N/A - library, no committed data",
+  "license": "MIT",
+  "last_activity": "1,687 commits, actively maintained as of fetch",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "One client library to pull current AND (via each venue's own history endpoints) historical market data across a dozen-plus prediction-market venues including Metaculus, rather than writing bespoke API clients per platform \u2014 useful if the team wants to pull ABNB-earnings or travel/regulation contracts across multiple venues with one interface."
+  ]
+ },
+ {
+  "key": "github:aarora4/awesome-prediction-market-tools",
+  "url": "https://github.com/aarora4/Awesome-Prediction-Market-Tools",
+  "name": "Awesome-Prediction-Market-Tools",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated awesome-list (25+ categories: AI Agents, Analytics, Arbitrage, Dashboards, Data, News, APIs, Aggregators, Trading Bots, Portfolio Tracking, DeFi, Education, Infrastructure) linking to third-party data services such as Probalytics (REST/ClickHouse, 200-500M orderbook updates/day, Parquet/S3 bulk export), Marketlens (tick-level historical Polymarket order-book/trade data via Python SDK + backtest REST API), Dune Analytics community dashboards (on-chain Polymarket visualizations, price-bucket accuracy analysis), and TREMOR (SQL terminal over 140K+ active markets). 741 stars.",
+  "why_useful": "A map of where deeper historical/tick-level Polymarket and Kalshi data can be pulled from (Probalytics, Marketlens, Dune) beyond what any single GitHub repo commits directly; several of the linked services offer bulk Parquet/S3 exports that could be queried for ABNB-earnings or travel-shock contracts.",
+  "geography": "Global",
+  "time_coverage": "Varies by linked service",
+  "size_hint": "N/A (list); linked services claim 100M+ to 500M/day order-book updates",
+  "license": "unspecified (awesome-list, likely CC0/MIT)",
+  "last_activity": "not confirmed",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "A map of where deeper historical/tick-level Polymarket and Kalshi data can be pulled from (Probalytics, Marketlens, Dune) beyond what any single GitHub repo commits directly; several of the linked services offer bulk Parquet/S3 exports that could be queried for ABNB-earnings or travel-shock contracts."
+  ]
+ },
+ {
+  "key": "github:safegraphinc/safegraph_py",
+  "url": "https://github.com/SafeGraphInc/safegraph_py",
+  "name": "safegraph_py",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official SafeGraph Python library (203 commits) for wrangling SafeGraph 'Patterns' (weekly/monthly visit-frequency), 'Core' (place/POI reference), 'Geo' and 'Social Distancing' mobility files, plus 2016-2019 Census/CBG demographic joins. No data files committed -- it is a client for SafeGraph's (largely paywalled now, some free/academic tiers) place-visit data. Foot-traffic-by-POI is a plausible STR/hospitality demand proxy (hotel/lodging POIs, restaurant/attraction visits near lodging markets) if any free tier or academic snapshot is still reachable.",
+  "why_useful": "If the team ever obtains SafeGraph/Advan/Dewey foot-traffic samples (e.g. via academic access), this is the standard toolkit to normalize POI-level visit counts into a usable travel/leisure foot-traffic index (hotels, tourist attractions, airports) as an ABNB demand proxy.",
+  "potential": "medium",
+  "geography": "US-centric POI categories (SafeGraph's core panel), extensible",
+  "time_coverage": "N/A (tooling, not data)",
+  "size_hint": "Library, no data files",
+  "license": "Apache-2.0",
+  "last_activity": "2025-06-05",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city",
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "If the team ever obtains SafeGraph/Advan/Dewey foot-traffic samples (e.g. via academic access), this is the standard toolkit to normalize POI-level visit counts into a usable travel/leisure foot-traffic index (hotels, tourist attractions, airports) as an ABNB demand proxy.",
+   "Addresses gap #6 (consumer/foot-traffic panels) and gap #8 (hotel/lodging demand proxies) if a free SafeGraph sample or academic dataset can still be pulled; also a template for point-of-interest visit-pattern ingestion generally."
+  ]
+ },
+ {
+  "key": "github:mocnik-science/osm-python-tools",
+  "url": "https://github.com/mocnik-science/osm-python-tools",
+  "name": "OSMPythonTools",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (GPL-3.0, 487 stars, 177 commits) wrapping the Overpass API, Nominatim, and OSM API. Supports tag-based queries (e.g. `tourism=hotel`), reverse geocoding, GeoJSON export, and can track how a specific OSM object's tags changed over time (useful for a rough time series on individual hotel/venue records, though not scalable to full-city historical censuses since Overpass itself has no full history by default).",
+  "why_useful": "Lower-effort alternative to pyrosm for smaller, per-city, live Overpass pulls of tourism=hotel/guest_house/apartment POIs when a full Geofabrik PBF isn't needed; the per-object history feature is a rare free way to see an individual venue's tag history.",
+  "potential": "medium",
+  "geography": "Global (via Overpass)",
+  "time_coverage": "Live/current; per-object edit history available",
+  "license": "GPL-3.0",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Maintained (noted activity 2017-2022 window in fetch, likely with intermittent updates since)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Lower-effort alternative to pyrosm for smaller, per-city, live Overpass pulls of tourism=hotel/guest_house/apartment POIs when a full Geofabrik PBF isn't needed; the per-object history feature is a rare free way to see an individual venue's tag history."
+  ]
+ },
+ {
+  "key": "github:gboeing/osmnx",
+  "url": "https://github.com/gboeing/osmnx",
+  "name": "OSMnx",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Widely used Python package for downloading/modeling/analyzing OSM street networks, building footprints, transit, and 'urban amenities/points of interest' by place name or polygon.",
+  "why_useful": "General-purpose alternative for pulling POI/amenity layers (including tourism/lodging tags) by named city or custom polygon, complementing pyrosm for smaller ad hoc pulls.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Current OSM snapshot at pull time",
+  "license": "MIT (standard for this package)",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Very active, long-running project",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "General-purpose alternative for pulling POI/amenity layers (including tourism/lodging tags) by named city or custom polygon, complementing pyrosm for smaller ad hoc pulls."
+  ]
+ },
+ {
+  "key": "github:osmcode/pyosmium",
+  "url": "https://github.com/osmcode/pyosmium",
+  "name": "pyosmium",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Python bindings (BSD-2-Clause, 393 stars, 782 commits) for the libosmium C++ library, for fast low-level processing of OSM PBF files (including Geofabrik extracts and full history files with `.osh.pbf`).",
+  "why_useful": "Lower-level building block than pyrosm; notably supports OSM's full-history PBF format, which is the closest thing to a point-in-time OSM POI census (can reconstruct what tourism=hotel tags existed as of a past date) \u2014 directly relevant to the point-in-time rule in this project.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Current + full OSM edit history when using history-enabled extracts",
+  "license": "BSD-2-Clause",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Lower-level building block than pyrosm; notably supports OSM's full-history PBF format, which is the closest thing to a point-in-time OSM POI census (can reconstruct what tourism=hotel tags existed as of a past date) \u2014 directly relevant to the point-in-time rule in this project."
+  ]
+ },
+ {
+  "key": "github:baptiste-meunier/nowcasting_toolbox",
+  "url": "https://github.com/baptiste-meunier/Nowcasting_toolbox",
+  "name": "Nowcasting_toolbox",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code and templates accompanying Linzenich & Meunier (2024), 'Nowcasting Made Easier: a Toolbox for Real-Time Predictions,' ECB Working Paper No. 3004 \u2014 a general-purpose real-time nowcasting toolbox (bridge-equation and DFM style) built by ECB staff, designed to be adapted to any target series with mixed-frequency indicators.",
+  "why_useful": "Directly on-theme for gap #17 (bridge equations, DFM); an ECB-authored, paper-backed toolbox is a credible, documented starting point for building the ABNB revenue/nights bridge-equation nowcast the team already uses conceptually (H1-to-H2 bridge, Q4 guide arithmetic).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (methodology, euro-area orientation)",
+  "time_coverage": "n/a",
+  "size_hint": "58 stars",
+  "license": "unspecified",
+  "last_activity": "2026-07-31",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Directly on-theme for gap #17 (bridge equations, DFM); an ECB-authored, paper-backed toolbox is a credible, documented starting point for building the ABNB revenue/nights bridge-equation nowcast the team already uses conceptually (H1-to-H2 bridge, Q4 guide arithmetic)."
+  ]
+ },
+ {
+  "key": "github:nmecsys/nowcasting",
+  "url": "https://github.com/nmecsys/nowcasting",
+  "name": "nowcasting (R package)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package implementing Dynamic Factor Models with mixed frequencies and unbalanced panels (ragged-edge data), originally built for Brazilian central-bank-style nowcasting of GDP/activity indices.",
+  "why_useful": "Reusable DFM engine for mixed-frequency/unbalanced-panel problems (gap #17); the ragged-edge handling is exactly the shape of the ABNB problem (macro releases and alt-data land at different times ahead of the print).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (methodology; Brazil-origin use case)",
+  "time_coverage": "n/a",
+  "size_hint": "106 stars",
+  "license": "unspecified",
+  "last_activity": "2026-05-21",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Reusable DFM engine for mixed-frequency/unbalanced-panel problems (gap #17); the ragged-edge handling is exactly the shape of the ABNB problem (macro releases and alt-data land at different times ahead of the print)."
+  ]
+ }
+]

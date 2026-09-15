@@ -1,0 +1,139 @@
+[
+ {
+  "key": "github:wadefagen/datasets",
+  "url": "https://github.com/wadefagen/datasets",
+  "name": "wadefagen/datasets",
+  "category": "academic_replication",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "University of Illinois Urbana-Champaign (UIUC) open datasets as committed CSVs: uiuc-gpa-dataset.csv (course GPA distributions by Year/Term back to Fall 2016), uiuc-tre-dataset.csv (teacher ratings), uiuc-geneds-dataset.csv, uiuc-students-by-state.csv (student counts broken out by home US state), uiuc-course-catalog.csv, and illini-football-scores.csv. All keyed by Year/Term (Spring/Summer/Fall/Winter) with a combined YearTerm field.",
+  "why_useful": "students-by-state plus the by-term enrollment counts give a real, single-campus panel of term-level student population and home-state mix that could be used as a toy proxy for term-start/term-end travel volume and out-of-state (i.e., travel-generating) student share; useful mainly as a methods template for building a similar panel across more campuses, not itself a multi-university dataset.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "UIUC (single US campus)",
+  "time_coverage": "Fall 2016-present, by term",
+  "size_hint": "multiple CSVs, one row per course/term or per state/term",
+  "license": "not specified in repo",
+  "last_activity": "2026-07-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "students-by-state plus the by-term enrollment counts give a real, single-campus panel of term-level student population and home-state mix that could be used as a toy proxy for term-start/term-end travel volume and out-of-state (i.e., travel-generating) student share; useful mainly as a methods template for building a similar panel across more campuses, not itself a multi-university dataset."
+  ]
+ },
+ {
+  "key": "github:jeet787/airbnb_impact_of_regulation_paris",
+  "url": "https://github.com/jeet787/AirBnB_Impact_Of_Regulation_Paris",
+  "name": "AirBnB_Impact_Of_Regulation_Paris",
+  "category": "academic_replication",
+  "data_kind": "both",
+  "what_it_holds": "Student analysis of how STR regulation shaped Airbnb activity in Paris; likely built on Inside Airbnb Paris dumps we already hold plus a regulation timeline.",
+  "why_useful": "Marginal \u2014 largely duplicates our existing Paris Inside Airbnb panel and regulatory event database; flagged only in case its regulation timeline or coding differs from what we have.",
+  "potential": "low",
+  "geography": "Paris, France",
+  "duplicate_of_holding": "overlaps our 13-city Inside Airbnb panel (Paris) and 32-factor regulatory event database",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Marginal \u2014 largely duplicates our existing Paris Inside Airbnb panel and regulatory event database; flagged only in case its regulation timeline or coding differs from what we have."
+  ]
+ },
+ {
+  "key": "github:dgunning/edgartools",
+  "url": "https://github.com/dgunning/edgartools",
+  "name": "edgartools",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (MIT, 2711 stars, active, updated 2026-09-14) that reads and structures the full SEC EDGAR archive back to 1994: 10-K/10-Q financial statements, XBRL-standardized concepts for cross-company comparison, 8-K events, 13F institutional holdings, Form 3/4/5 insider transactions, DEF 14A proxies, fund N-CSR/N-PORT reports. Not a static dataset -- a one-command pull tool for point-in-time filing data (filing timestamps are inherent to EDGAR, so this can build vintage-correct financial statement panels for ABNB/BKNG/EXPE/MAR/HLT and institutional-ownership history) without XBRL frames plumbing.",
+  "why_useful": "General-purpose, no-cost way to pull point-in-time XBRL facts for NCLH/CCL/RCL \u2014 including custom tags cruise lines use for 'Advance ticket sales' / deferred revenue \u2014 quarter by quarter, which is exactly the book-ahead analogue metric gap #18 wants. Also usable for point-in-time company_filings_estimates work generally (gap #4).",
+  "potential": "high",
+  "gap_targets": [
+   4,
+   18
+  ],
+  "time_coverage": "as far back as each company's EDGAR XBRL history goes (typically 2009+)",
+  "geography": "US-listed companies",
+  "size_hint": "library, not a fixed dataset",
+  "license": "MIT",
+  "last_activity": "active, 4,388 commits",
+  "duplicate_of_holding": "",
+  "hits": 6,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls",
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)",
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers",
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "General-purpose, no-cost way to pull point-in-time XBRL facts for NCLH/CCL/RCL \u2014 including custom tags cruise lines use for 'Advance ticket sales' / deferred revenue \u2014 quarter by quarter, which is exactly the book-ahead analogue metric gap #18 wants. Also usable for point-in-time company_filings_estimates work generally (gap #4).",
+   "Could point-in-time-pull BKNG/EXPE/MAR/HLT (and ABNB) XBRL financials and 8-K exhibits quarter by quarter for the peer-print comparison the team already tracks (gap 15: SEC EDGAR XBRL tooling); also usable to backfill ABNB's own XBRL history with clean field names instead of hand-parsing filings.",
+   "One-command point-in-time pull of ABNB/BKNG/EXPE/MAR/HLT XBRL financials and 8-K exhibits (KPI tables) straight from EDGAR, and could backfill the guidance ledger / peer-8-K-KPI table with an exact filing-date timestamp for gap 4 (point-in-time consensus/financials) and gap 15 (XBRL tooling).",
+   "General-purpose, well-maintained method to pull ABNB's own 13F institutional-ownership history (concentration/turnover of holders) and any Form 4 insider transactions for ABNB officers/directors -- directly addresses gap #15 (company-structure signals: 13F parsers, concentration history, SEC EDGAR tooling).",
+   "Could mechanize pulling ABNB's (and peers' BKNG/EXPE/MAR/HLT) historical 8-K earnings-release dates and XBRL figures point-in-time, and cross-check against the existing guidance ledger/press-quote consensus register -- addresses gap #15 (SEC EDGAR full-text/XBRL tooling).",
+   "Directly serves gap #15 (13F holdings, EDGAR XBRL tooling) and the point-in-time consensus/financials need in #4 -- gives an easy, well-maintained way to pull vintage-correct peer financials and 13F ownership snapshots at each historical filing date rather than pull-date-anchored Bloomberg exports."
+  ]
+ },
+ {
+  "key": "github:augustliu0415/bnpl_merchant_dataset",
+  "url": "https://github.com/AugustLiu0415/BNPL_Merchant_Dataset",
+  "name": "BNPL_Merchant_Dataset",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Research pipeline scraping the official BNPL provider merchant directories (Affirm, Klarna, Afterpay, Zip, Sezzle) for merchant name/category/provider/URL, matched via SEC ticker files + SEC CompanyFacts API to public parent companies, building a quarterly firm-panel 2015-2026. Current checkpoint: 8,470 unique merchants, 144 public-company merchant rows / 127 unique parents, 4,675 firm-fiscal-quarter SEC records (93.6% revenue coverage), adoption-date verification via Internet Archive CDX (no fabricated dates, unresolved dates left UNKNOWN).",
+  "why_useful": "Directly on-theme: a maintained, methodologically careful cross-reference of which public companies (and whether Airbnb-adjacent travel merchants) accept which BNPL provider, plus the SEC-filing financial panel around adoption timing - this is the closest thing found to 'is Airbnb/travel-lodging a BNPL merchant and when did BNPL options appear' with a reusable, non-fabricated methodology. Also a template for checking Airbnb's own presence in Affirm/Klarna merchant directories.",
+  "potential": "high",
+  "geography": "US (SEC-filer universe), BNPL provider directories are broader",
+  "time_coverage": "merchant directories current; SEC financial panel 2015-2026",
+  "size_hint": "8,470 merchants; 4,675 firm-quarter records",
+  "license": "unspecified (verify)",
+  "last_activity": "2026-08-10",
+  "gap_targets": [
+   3,
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Directly on-theme: a maintained, methodologically careful cross-reference of which public companies (and whether Airbnb-adjacent travel merchants) accept which BNPL provider, plus the SEC-filing financial panel around adoption timing - this is the closest thing found to 'is Airbnb/travel-lodging a BNPL merchant and when did BNPL options appear' with a reusable, non-fabricated methodology. Also a template for checking Airbnb's own presence in Affirm/Klarna merchant directories."
+  ]
+ },
+ {
+  "key": "github:earnings-call-dataset/maec-a-multimodal-aligned-earnings-conference-call-dataset-for-financial-risk-prediction",
+  "url": "https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction",
+  "name": "MAEC dataset",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Multimodal Aligned Earnings Conference call corpus, S&P 1500 companies, described as 6x larger than prior academic sets. In-repo: transcripts + low-level audio (CSV) features, 147.7MB, organized YearMonthDay_CompanyCode/text.txt+features.csv. High-level MFCC features (59GB, .npy) hosted on Google Drive. Includes forced-alignment Python code (Python 3.5, pydub/aeneas/ffmpeg). CIKM 2020 paper; CC-BY-SA-4.0 license; 107 stars, 25 forks, 17 commits.",
+  "why_useful": "Largest open academic multimodal earnings-call corpus (S&P 1500) with a permissive share-alike license; usable both as a peer-tone benchmark and as a worked example of a text+audio alignment pipeline that could, in principle, be pointed at ABNB's own call audio/transcripts.",
+  "potential": "high",
+  "geography": "US (S&P 1500)",
+  "time_coverage": "not stated precisely, pre-2020 (CIKM 2020 paper)",
+  "size_hint": "147.7MB in-repo text+CSV features; 59GB audio features via Google Drive",
+  "license": "CC-BY-SA-4.0",
+  "last_activity": "17 commits, exact date not surfaced; 107 stars",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Largest open academic multimodal earnings-call corpus (S&P 1500) with a permissive share-alike license; usable both as a peer-tone benchmark and as a worked example of a text+audio alignment pipeline that could, in principle, be pointed at ABNB's own call audio/transcripts."
+  ]
+ }
+]

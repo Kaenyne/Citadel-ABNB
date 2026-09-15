@@ -1,0 +1,10 @@
+{
+ "slug": "edgar-corpus-10k-sections-1993-2020",
+ "url": "https://huggingface.co/datasets/eloukas/edgar-corpus",
+ "category": "company_filings_estimates",
+ "data_kind": "stored_dataset",
+ "one_line": "EDGAR-CORPUS: 10-K full text split into 23 named sections (Item 1, 1A, 7, 7A, 9A...) for ~220k filings from all SEC registrants 1993-2020; hosted as plain per-year JSONL on HuggingFace (1993/train.jsonl 114MB ... 2002/train.jsonl 1.06GB, 40.7GB total, Apache-2.0 with EDGAR data public) plus a Zenodo mirror at https://zenodo.org/record/5528490 (per-year zips 39MB-525MB, CC-BY-4.0).",
+ "abnb_use": "Pre-extracted MD&A and risk-factor text for BKNG/EXPE/MAR/HLT (and every lodging/travel filer) 1993-2020 gives a long peer-commentary and management-tone panel without re-scraping EDGAR; useful for gap 15 (company-structure/filing text signals) and as a much longer history than our own post-IPO letter/transcript set. ABNB itself is out of coverage (first 10-K is FY2020, filed 2021), so this is a peer/industry-language resource, not an ABNB one.",
+ "sample_plan": "Files are plain line-delimited JSONL at https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/<year>/<split>.jsonl, so a Range request gives whole usable records. Pull the head of two small splits, ~4 MB total: `curl -L -r 0-2000000 -o edgar_corpus_2020_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/2020/test.jsonl` and `curl -L -r 0-2000000 -o edgar_corpus_1993_test_head.jsonl https://huggingface.co/datasets/eloukas/edgar-corpus/resolve/main/1993/test.jsonl`, then drop the final truncated line and record the JSON key set (filename, cik, year, section_1 ... section_9B). Do NOT pull whole years (smallest full year is ~140 MB, Zenodo zips start at 39 MB and cannot be partially read).",
+ "tos_or_license_flag": false
+}

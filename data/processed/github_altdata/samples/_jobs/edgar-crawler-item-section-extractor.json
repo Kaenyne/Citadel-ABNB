@@ -1,0 +1,10 @@
+{
+ "slug": "edgar-crawler-item-section-extractor",
+ "url": "https://github.com/lefterisloukas/edgar-crawler",
+ "category": "methods_tooling",
+ "data_kind": "both",
+ "one_line": "GPL-3.0 toolkit (545 stars, WWW 2025 paper, last push 18 Jul 2025 \u2014 not Sep 2026 as the scout claimed) that downloads 10-K/10-Q/8-K from SEC EDGAR keylessly via config.json and segments them into per-Item JSON (Item 1A risk factors, Item 7 MD&A); the only committed data is datasets/companies_info.json (7.8 MB CIK/ticker/SIC metadata).",
+ "abnb_use": "Gap 15 / methods: gives a repeatable way to cut ABNB and peer (BKNG, EXPE, MAR, HLT) MD&A and risk-factor sections out of filings as clean text with filing dates attached, which is the point-in-time-safe input a re-tried text/tone construction would need; the CIK-SIC table also helps assemble a lodging/OTA peer universe.",
+ "sample_plan": "Sparse code-only checkout plus a head of the one data file: git clone --depth 1 --filter=blob:none --sparse https://github.com/lefterisloukas/edgar-crawler.git && cd edgar-crawler && git sparse-checkout set edgar_crawler config.json README.md; then curl -s -r 0-2000000 https://raw.githubusercontent.com/lefterisloukas/edgar-crawler/main/datasets/companies_info.json -o companies_info.head.json. Cap ~5 MB. Do not run a full EDGAR crawl.",
+ "tos_or_license_flag": true
+}

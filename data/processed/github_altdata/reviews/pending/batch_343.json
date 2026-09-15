@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:tomayac/pageviews.js",
+  "url": "https://github.com/tomayac/pageviews.js",
+  "name": "pageviews.js",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Lightweight JavaScript/Node client (Apache-2.0, Thomas Steiner, 2017, 63 commits) for the Wikimedia Pageviews API: per-article views, project totals, top articles, unique-device counts by time granularity.",
+  "why_useful": "Another mature client if any tooling needs to run in a JS/Node context (e.g. a dashboard); same underlying data source as the Python/R clients above.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "~2015-present",
+  "size_hint": "small library",
+  "license": "Apache-2.0",
+  "last_activity": "2024-11-15",
+  "duplicate_of_holding": "Commonists/pageview-api (same functional purpose, different language)",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Another mature client if any tooling needs to run in a JS/Node context (e.g. a dashboard); same underlying data source as the Python/R clients above.",
+   "A JS alternative to python-mwviews/waxer for the same pageviews-as-engagement-proxy use case; only worth using if the team ever needs a browser/Node-side pull (e.g. a lightweight dashboard) rather than a Python/R backtest pipeline."
+  ]
+ },
+ {
+  "key": "github:vegardege/pvduck",
+  "url": "https://github.com/vegardege/pvduck",
+  "name": "pvduck",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tool to aggregate raw Wikimedia pageviews DUMP files (the https://dumps.wikimedia.org/other/pageviews/ hourly dumps, not the aggregated REST API) directly into a DuckDB database, letting you query pageviews at scale without downloading/parsing gzipped dump files by hand.",
+  "why_useful": "Useful complementary tool to gap #5: the raw dumps go back further and are finer-grained (hourly, all-article) than the REST API's per-article convenience endpoint, so pvduck is the practical way to mine that firehose for a specific set of destination-city articles across years without standing up Hadoop/Spark.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "Wikimedia pageview dumps span 2015-present (hourly raw counts)",
+  "size_hint": "small tool; user supplies which dump files to ingest",
+  "license": "MIT",
+  "last_activity": "2025-12-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Useful complementary tool to gap #5: the raw dumps go back further and are finer-grained (hourly, all-article) than the REST API's per-article convenience endpoint, so pvduck is the practical way to mine that firehose for a specific set of destination-city articles across years without standing up Hadoop/Spark."
+  ]
+ },
+ {
+  "key": "github:monperrus/wikipedia-decline-llm",
+  "url": "https://github.com/monperrus/wikipedia-decline-llm",
+  "name": "wikipedia-decline-llm",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Uses the Wikimedia Pageviews API to estimate Wikipedia traffic decline attributable to AI chatbots (LLM referral cannibalization).",
+  "why_useful": "Off-theme for tourism demand but directly relevant to gap #19 (AI-referral traffic / bot-share datasets) \u2014 same pageviews API, different application: could be adapted to check whether AI-chatbot-driven decline in Wikipedia/travel-site traffic is a confound for any web-engagement-based tourism proxy the team builds.",
+  "potential": "low",
+  "gap_targets": [
+   19
+  ],
+  "geography": "global",
+  "time_coverage": "recent (2025-2026, LLM-era)",
+  "size_hint": "small analysis repo",
+  "license": "none declared",
+  "last_activity": "2026-05-15",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Off-theme for tourism demand but directly relevant to gap #19 (AI-referral traffic / bot-share datasets) \u2014 same pageviews API, different application: could be adapted to check whether AI-chatbot-driven decline in Wikipedia/travel-site traffic is a confound for any web-engagement-based tourism proxy the team builds."
+  ]
+ },
+ {
+  "key": "github:ai-robots-txt/ai.robots.txt",
+  "url": "https://github.com/ai-robots-txt/ai.robots.txt",
+  "name": "ai.robots.txt",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Curated, machine-generated list (robots.json source, MIT, 746 commits) of known AI-crawler user agents (GPTBot, ClaudeBot, PerplexityBot, etc.) exported as robots.txt/.htaccess/nginx/Caddy/HAProxy/lighttpd block-lists plus a table-of-bot-metrics.md; links out to a 'Bot Ledger' directory and an 'AI Crawler Census' that tracks allow/block status across top sites. No traffic-volume numbers in this repo itself.",
+  "why_useful": "Reference list of AI-bot identifiers needed to build any AI-referral-traffic measurement (gap 19); the linked 'AI Crawler Census' (tracks which top sites block which AI bots) is a candidate to check separately for site-level allow/block time series, though not fetchable this pass (404 on darkvisitors/agents).",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "current snapshot only (list of active bots, not a volume time series)",
+  "size_hint": "small config files",
+  "license": "MIT",
+  "last_activity": "746 commits, actively maintained",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "Reference list of AI-bot identifiers needed to build any AI-referral-traffic measurement (gap 19); the linked 'AI Crawler Census' (tracks which top sites block which AI bots) is a candidate to check separately for site-level allow/block time series, though not fetchable this pass (404 on darkvisitors/agents)."
+  ]
+ },
+ {
+  "key": "github:galaar-org/agentecho",
+  "url": "https://github.com/galaar-org/AgentECHO",
+  "name": "AgentECHO",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hosted analytics platform (Go/TypeScript/Next.js/ClickHouse) to detect, classify, and monetize AI bot traffic (GPTBot, ClaudeBot, PerplexityBot, etc.) on a site the operator controls; ships code only, no third-party dataset \u2014 it produces data only from traffic it observes on a deployed site.",
+  "why_useful": "Illustrates current tooling for AI-crawler traffic measurement (gap 19) but has no usable pre-existing dataset for ABNB or travel; would only be useful if deployed on a site we control.",
+  "potential": "low",
+  "geography": "n/a (self-hosted per deployment)",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "license": "unspecified in fetch",
+  "last_activity": "January 2026",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "Illustrates current tooling for AI-crawler traffic measurement (gap 19) but has no usable pre-existing dataset for ABNB or travel; would only be useful if deployed on a site we control."
+  ]
+ }
+]

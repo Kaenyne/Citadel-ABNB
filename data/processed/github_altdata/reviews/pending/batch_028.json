@@ -1,0 +1,135 @@
+[
+ {
+  "key": "other:https://recsys.trivago.cloud/challenge/dataset",
+  "url": "https://recsys.trivago.cloud/challenge/dataset/",
+  "name": "Trivago RecSys Challenge 2019 dataset",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Official Trivago clickstream dataset: ~910k user sessions / ~15M interactions (clicks, filters, sort actions, impressions with price) over European hotel search sessions, released for the ACM RecSys 2019 Challenge. GitHub repo wydzik/trivago-recsyschallenge-2019 only contains data-splitting notebooks (dask_data_split.ipynb, data_split.ipynb, functions.py) that assume the user already has the official CSVs from the challenge site/Kaggle mirror \u2014 no data files are committed to the repo itself.",
+  "why_useful": "A large real clickstream dataset with hotel prices and session-level search behavior across European markets in 2019; could inform methodology for search-intent-to-booking conversion or price-elasticity structure relevant to gap 9 (Expedia/Booking.com adjacent supply) and gap 2 (realized pricing proxies), but it is not committed to GitHub and is now a stale (2019) one-time competition snapshot rather than an ongoing feed.",
+  "potential": "low",
+  "gap_targets": [
+   9,
+   2
+  ],
+  "duplicate_of_holding": "",
+  "license": "none stated on wydzik repo; official dataset carries RecSys Challenge academic-use terms",
+  "geography": "Europe-heavy (trivago session data)",
+  "time_coverage": "2019 (roughly Nov 2018-Apr 2019 session window per public challenge description)",
+  "size_hint": "~15M interaction rows / ~910k sessions (official); GitHub repo itself <1MB of scripts",
+  "last_activity": "2019-12-10 (wydzik repo, no updates since)",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "A large real clickstream dataset with hotel prices and session-level search behavior across European markets in 2019; could inform methodology for search-intent-to-booking conversion or price-elasticity structure relevant to gap 9 (Expedia/Booking.com adjacent supply) and gap 2 (realized pricing proxies), but it is not committed to GitHub and is now a stale (2019) one-time competition snapshot rather than an ongoing feed."
+  ]
+ },
+ {
+  "key": "github:oxylabs/trivago-scraper",
+  "url": "https://github.com/oxylabs/trivago-scraper",
+  "name": "trivago-scraper (Oxylabs)",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Commercial scraper wrapper (Oxylabs) for pulling live Trivago hotel search-result pages: location, price, ratings, amenities, guest reviews, via Oxylabs' paid scraping API. Code-examples folder with sample requests in several languages and a JSON response schema; no data files committed. 33 stars, 1 fork, 13 commits, no license file visible.",
+  "why_useful": "Illustrates a currently working method to pull live trivago.com hotel price comparisons across many booking sites, which could proxy short-term hotel-rate movements (gap 8/9) if a human decided to run it; commercial/proxy-dependent and off the sanctioned-source list, so flagged as method only.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "license": "not stated",
+  "geography": "global (Trivago coverage, 250+ booking sites)",
+  "time_coverage": "n/a (live scrape only)",
+  "size_hint": "code/library, no data files",
+  "last_activity": "2026-08-21",
+  "hits": 2,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Illustrates a currently working method to pull live trivago.com hotel price comparisons across many booking sites, which could proxy short-term hotel-rate movements (gap 8/9) if a human decided to run it; commercial/proxy-dependent and off the sanctioned-source list, so flagged as method only.",
+   "A live-price acquisition method for hotel ADR/occupancy proxies (gap #2) via a metasearch aggregator that indexes many OTAs including Airbnb-adjacent short-term-rental listings on some markets -- flagged as method only; requires a paid API key so not runnable under project rules without a human decision, and touches a live commercial site (ToS question)."
+  ]
+ },
+ {
+  "key": "github:alexander-kahanek/trivago_classification",
+  "url": "https://github.com/Alexander-Kahanek/Trivago_Classification",
+  "name": "Trivago_Classification",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Repo description says it models hotel booking cancellations using a \"Trivago Hotel Booking dataset\" and Random Forest; README references a hotel_bookings.csv but the fetched README text was truncated/incomplete and did not confirm whether the CSV is actually committed to the repo or sourced externally (likely the well-known Antonio/Almeida/Nunes Portugal hotel-bookings dataset, mislabeled as \"Trivago\" \u2014 that dataset is already held per CONTEXT.md).",
+  "why_useful": "Possible false lead \u2014 if it is the Antonio et al. Portugal hotel-bookings dataset, it duplicates data we already hold; worth a follow-up check by the next scout before citing, since the actual data provenance could not be confirmed from the README fetch alone.",
+  "potential": "low",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "possibly Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held per CONTEXT.md line 28",
+  "license": "not stated",
+  "geography": "unclear (possibly Portugal)",
+  "time_coverage": "unclear",
+  "size_hint": "unclear, one CSV referenced",
+  "last_activity": "2023-03-20",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Possible false lead \u2014 if it is the Antonio et al. Portugal hotel-bookings dataset, it duplicates data we already hold; worth a follow-up check by the next scout before citing, since the actual data provenance could not be confirmed from the README fetch alone."
+  ]
+ },
+ {
+  "key": "github:rn5l/rsc19",
+  "url": "https://github.com/rn5l/rsc19",
+  "name": "rn5l/rsc19",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Another RecSys Challenge 2019 (trivago) competitor submission: preprocessing scripts, session-log transformation, latent-factor generation, LightGBM training. Requires user to extract a provided data zip into _data/raw manually -- no data committed, no license file visible.",
+  "why_useful": "Second independent implementation of the trivago session-log pipeline; marginal beyond logicai-io's repo but confirms multiple independent codebases exist for the same dataset, increasing confidence the underlying data is recoverable if a human clears the ToS question.",
+  "potential": "low",
+  "size_hint": "n/a (code only)",
+  "time_coverage": "2018 challenge window",
+  "geography": "EU-weighted trivago traffic",
+  "license": "none specified",
+  "last_activity": "unspecified (3 commits total, minimal repo)",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "logicai-io/recsys2019 (same underlying dataset, different code)",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Second independent implementation of the trivago session-log pipeline; marginal beyond logicai-io's repo but confirms multiple independent codebases exist for the same dataset, increasing confidence the underlying data is recoverable if a human clears the ToS question."
+  ]
+ },
+ {
+  "key": "github:rosetta-ai/rosetta_recsys2019",
+  "url": "https://github.com/rosetta-ai/rosetta_recsys2019",
+  "name": "rosetta-ai/rosetta_recsys2019",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "4th-place solution to RecSys Challenge 2019 by Team RosettaAI. Code and docs only (Neural Net / LightGBM / XGBoost models); README instructs placing unzipped official challenge data into an input/ directory -- no data files committed. Apache-2.0, 58 stars, 16 forks, 41 commits.",
+  "why_useful": "Third independent trivago-challenge codebase; adds little beyond logicai-io but is a clean, well-documented modeling reference if the team ever gets the underlying session logs.",
+  "potential": "low",
+  "size_hint": "n/a (code only)",
+  "time_coverage": "2018 challenge window",
+  "geography": "EU-weighted trivago traffic",
+  "license": "Apache-2.0",
+  "last_activity": "unspecified, static since 2019",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "logicai-io/recsys2019, rn5l/rsc19 (same dataset)",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Third independent trivago-challenge codebase; adds little beyond logicai-io but is a clean, well-documented modeling reference if the team ever gets the underlying session logs."
+  ]
+ }
+]

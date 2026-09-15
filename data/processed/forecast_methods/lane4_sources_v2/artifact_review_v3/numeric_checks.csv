@@ -1,0 +1,320 @@
+check,scenario,actual,independent,absolute_difference,tolerance,result
+calendar fraction,all,0.7013698630136986,0.7013698630136986,0.0,1e-15,PASS
+horizon_net_cash_musd,review_with_k,10029.055795273789,10029.055795273789,0.0,0.001,PASS
+horizon_shares_m,review_with_k,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,review_with_k,95824.28660676908,95824.28660676908,0.0,0.001,PASS
+equity_value_musd,review_with_k,105853.34240204286,105853.34240204286,0.0,0.001,PASS
+value_per_share,review_with_k,182.86701631744037,182.86701631744037,0.0,0.001,PASS
+december_value_per_share,review_with_k,184.66275525291607,184.66275525291607,0.0,0.001,PASS
+date_only_value_difference,review_with_k,1.795738935475697,1.795738935475697,0.0,0.001,PASS
+fcf 2026,review_with_k,5178.87037288186,5178.87037288186,0.0,0.001,PASS
+sbc_adj_fcf 2026,review_with_k,3392.3403728818603,3392.3403728818603,0.0,0.001,PASS
+op_income 2026,review_with_k,3294.8252769790497,3294.8252769790497,0.0,0.001,PASS
+net_cash 2026,review_with_k,9433.58487288186,9433.58487288186,0.0,0.001,PASS
+shares 2026,review_with_k,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,review_with_k,5536.825326066617,5536.825326066617,0.0,0.001,PASS
+sbc_adj_fcf 2027,review_with_k,3571.642326066617,3571.642326066617,0.0,0.001,PASS
+op_income 2027,review_with_k,3698.7794224556646,3698.7794224556646,0.0,0.001,PASS
+net_cash 2027,review_with_k,10282.596148948478,10282.596148948478,0.0,0.001,PASS
+shares 2027,review_with_k,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,review_with_k,6329.569497383463,6329.569497383463,0.0,0.001,PASS
+sbc_adj_fcf 2028,review_with_k,4207.171857383464,4207.171857383464,0.0,0.001,PASS
+op_income 2028,review_with_k,4555.41078839148,4555.41078839148,0.0,0.001,PASS
+net_cash 2028,review_with_k,11869.32647233194,11869.32647233194,0.0,0.001,PASS
+shares 2028,review_with_k,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,review_without_k,10022.346257518431,10022.346257518431,0.0,0.001,PASS
+horizon_shares_m,review_without_k,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,review_without_k,95666.76788508044,95666.76788508044,0.0,0.001,PASS
+equity_value_musd,review_without_k,105689.11414259888,105689.11414259888,0.0,0.001,PASS
+value_per_share,review_without_k,182.58330367201947,182.58330367201947,0.0,0.001,PASS
+december_value_per_share,review_without_k,184.37229647251942,184.37229647251942,0.0,0.001,PASS
+date_only_value_difference,review_without_k,1.7889928004999547,1.7889928004999547,0.0,0.001,PASS
+fcf 2026,review_without_k,5178.42890499463,5178.42890499463,0.0,0.001,PASS
+sbc_adj_fcf 2026,review_without_k,3391.8989049946304,3391.8989049946304,0.0,0.001,PASS
+op_income 2026,review_without_k,3294.2778753748835,3294.2778753748835,0.0,0.001,PASS
+net_cash 2026,review_without_k,9433.143404994631,9433.143404994631,0.0,0.001,PASS
+shares 2026,review_without_k,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,review_without_k,5527.8884295749485,5527.8884295749485,0.0,0.001,PASS
+sbc_adj_fcf 2027,review_without_k,3562.7054295749485,3562.7054295749485,0.0,0.001,PASS
+op_income 2027,review_without_k,3689.347150643961,3689.347150643961,0.0,0.001,PASS
+net_cash 2027,review_without_k,10273.21778456958,10273.21778456958,0.0,0.001,PASS
+shares 2027,review_without_k,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,review_without_k,6319.4682874563105,6319.4682874563105,0.0,0.001,PASS
+sbc_adj_fcf 2028,review_without_k,4197.07064745631,4197.07064745631,0.0,0.001,PASS
+op_income 2028,review_without_k,4544.662038720992,4544.662038720992,0.0,0.001,PASS
+net_cash 2028,review_without_k,11849.846898025891,11849.846898025891,0.0,0.001,PASS
+shares 2028,review_without_k,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,k0_conditional,10093.674094571294,10093.674094571294,0.0,0.001,PASS
+horizon_shares_m,k0_conditional,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,k0_conditional,97155.52011311596,97155.52011311596,0.0,0.001,PASS
+equity_value_musd,k0_conditional,107249.19420768725,107249.19420768725,0.0,0.001,PASS
+value_per_share,k0_conditional,185.27842108867577,185.27842108867577,0.0,0.001,PASS
+december_value_per_share,k0_conditional,187.1313166753386,187.1313166753386,0.0,0.001,PASS
+date_only_value_difference,k0_conditional,1.8528955866628394,1.8528955866628394,0.0,0.001,PASS
+fcf 2026,k0_conditional,5190.458881565957,5190.458881565957,0.0,0.001,PASS
+sbc_adj_fcf 2026,k0_conditional,3403.9288815659575,3403.9288815659575,0.0,0.001,PASS
+op_income 2026,k0_conditional,3307.512180657977,3307.512180657977,0.0,0.001,PASS
+net_cash 2026,k0_conditional,9445.173381565957,9445.173381565957,0.0,0.001,PASS
+shares 2026,k0_conditional,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,k0_conditional,5612.43420721464,5612.43420721464,0.0,0.001,PASS
+sbc_adj_fcf 2027,k0_conditional,3647.25120721464,3647.25120721464,0.0,0.001,PASS
+op_income 2027,k0_conditional,3778.5092527561824,3778.5092527561824,0.0,0.001,PASS
+net_cash 2027,k0_conditional,10369.793538780597,10369.793538780597,0.0,0.001,PASS
+shares 2027,k0_conditional,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,k0_conditional,6395.4884913577025,6395.4884913577025,0.0,0.001,PASS
+sbc_adj_fcf 2028,k0_conditional,4273.090851357703,4273.090851357703,0.0,0.001,PASS
+op_income 2028,k0_conditional,4626.716563354932,4626.716563354932,0.0,0.001,PASS
+net_cash 2028,k0_conditional,12022.4428561383,12022.4428561383,0.0,0.001,PASS
+shares 2028,k0_conditional,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,nights_case_a,10028.165920937548,10028.165920937548,0.0,0.001,PASS
+horizon_shares_m,nights_case_a,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,nights_case_a,95945.0403626548,95945.0403626548,0.0,0.001,PASS
+equity_value_musd,nights_case_a,105973.20628359236,105973.20628359236,0.0,0.001,PASS
+value_per_share,nights_case_a,183.07408725054262,183.07408725054262,0.0,0.001,PASS
+december_value_per_share,nights_case_a,184.8748309132629,184.8748309132629,0.0,0.001,PASS
+date_only_value_difference,nights_case_a,1.8007436627202935,1.8007436627202935,0.0,0.001,PASS
+fcf 2026,nights_case_a,5173.296387788616,5173.296387788616,0.0,0.001,PASS
+sbc_adj_fcf 2026,nights_case_a,3386.766387788616,3386.766387788616,0.0,0.001,PASS
+op_income 2026,nights_case_a,3289.2512918858056,3289.2512918858056,0.0,0.001,PASS
+net_cash 2026,nights_case_a,9428.010887788616,9428.010887788616,0.0,0.001,PASS
+shares 2026,nights_case_a,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,nights_case_a,5543.503843356876,5543.503843356876,0.0,0.001,PASS
+sbc_adj_fcf 2027,nights_case_a,3578.320843356876,3578.320843356876,0.0,0.001,PASS
+op_income 2027,nights_case_a,3705.97785212378,3705.97785212378,0.0,0.001,PASS
+net_cash 2027,nights_case_a,10283.700681145492,10283.700681145494,1.8189894035458565e-12,0.001,PASS
+shares 2027,nights_case_a,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,nights_case_a,6337.365253384668,6337.365253384668,0.0,0.001,PASS
+sbc_adj_fcf 2028,nights_case_a,4214.967613384668,4214.967613384668,0.0,0.001,PASS
+op_income 2028,nights_case_a,4563.886158241204,4563.886158241204,0.0,0.001,PASS
+net_cash 2028,nights_case_a,11878.22676053016,11878.22676053016,0.0,0.001,PASS
+shares 2028,nights_case_a,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,adr_mean_reversion,9942.574412630645,9942.574412630645,0.0,0.001,PASS
+horizon_shares_m,adr_mean_reversion,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,adr_mean_reversion,94194.22882518626,94194.22882518626,0.0,0.001,PASS
+equity_value_musd,adr_mean_reversion,104136.8032378169,104136.8032378169,0.0,0.001,PASS
+value_per_share,adr_mean_reversion,179.90160787372952,179.90160787372952,0.0,0.001,PASS
+december_value_per_share,adr_mean_reversion,181.62722693810838,181.62722693810838,0.0,0.001,PASS
+date_only_value_difference,adr_mean_reversion,1.7256190643788614,1.7256190643788614,0.0,0.001,PASS
+fcf 2026,adr_mean_reversion,5157.375119702342,5157.375119702342,0.0,0.001,PASS
+sbc_adj_fcf 2026,adr_mean_reversion,3370.8451197023423,3370.8451197023423,0.0,0.001,PASS
+op_income 2026,adr_mean_reversion,3271.796221584699,3271.796221584699,0.0,0.001,PASS
+net_cash 2026,adr_mean_reversion,9412.089619702343,9412.089619702341,1.8189894035458565e-12,0.001,PASS
+shares 2026,adr_mean_reversion,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,adr_mean_reversion,5444.169321167305,5444.169321167305,0.0,0.001,PASS
+sbc_adj_fcf 2027,adr_mean_reversion,3478.9863211673046,3478.9863211673046,0.0,0.001,PASS
+op_income 2027,adr_mean_reversion,3601.1384247166784,3601.1384247166784,0.0,0.001,PASS
+net_cash 2027,adr_mean_reversion,10168.444890869649,10168.444890869649,0.0,0.001,PASS
+shares 2027,adr_mean_reversion,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,adr_mean_reversion,6224.9358407102645,6224.9358407102645,0.0,0.001,PASS
+sbc_adj_fcf 2028,adr_mean_reversion,4102.538200710265,4102.538200710265,0.0,0.001,PASS
+op_income 2028,adr_mean_reversion,4444.260898766492,4444.260898766492,0.0,0.001,PASS
+net_cash 2028,adr_mean_reversion,11650.541557579912,11650.541557579912,0.0,0.001,PASS
+shares 2028,adr_mean_reversion,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,review_with_k_fx_down_sensitivity,9871.741003421794,9871.741003421794,0.0,0.001,PASS
+horizon_shares_m,review_with_k_fx_down_sensitivity,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,review_with_k_fx_down_sensitivity,93850.00526577489,93850.00526577489,0.0,0.001,PASS
+equity_value_musd,review_with_k_fx_down_sensitivity,103721.74626919668,103721.74626919668,0.0,0.001,PASS
+value_per_share,review_with_k_fx_down_sensitivity,179.18457591487964,179.18457591487964,0.0,0.001,PASS
+december_value_per_share,review_with_k_fx_down_sensitivity,180.89382235070534,180.89382235070534,0.0,0.001,PASS
+date_only_value_difference,review_with_k_fx_down_sensitivity,1.7092464358256905,1.7092464358256905,0.0,0.001,PASS
+fcf 2026,review_with_k_fx_down_sensitivity,5101.469496085028,5101.469496085028,0.0,0.001,PASS
+sbc_adj_fcf 2026,review_with_k_fx_down_sensitivity,3314.9394960850286,3314.9394960850286,0.0,0.001,PASS
+op_income 2026,review_with_k_fx_down_sensitivity,3214.9482111412462,3214.9482111412462,0.0,0.001,PASS
+net_cash 2026,review_with_k_fx_down_sensitivity,9356.183996085028,9356.183996085028,0.0,0.001,PASS
+shares 2026,review_with_k_fx_down_sensitivity,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,review_with_k_fx_down_sensitivity,5422.885564366871,5422.885564366871,0.0,0.001,PASS
+sbc_adj_fcf 2027,review_with_k_fx_down_sensitivity,3457.7025643668712,3457.7025643668712,0.0,0.001,PASS
+op_income 2027,review_with_k_fx_down_sensitivity,3580.1973177698246,3580.1973177698246,0.0,0.001,PASS
+net_cash 2027,review_with_k_fx_down_sensitivity,10091.2555104519,10091.2555104519,0.0,0.001,PASS
+shares 2027,review_with_k_fx_down_sensitivity,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,review_with_k_fx_down_sensitivity,6201.8243798292615,6201.8243798292615,0.0,0.001,PASS
+sbc_adj_fcf 2028,review_with_k_fx_down_sensitivity,4079.426739829262,4079.426739829262,0.0,0.001,PASS
+op_income 2028,review_with_k_fx_down_sensitivity,4421.597339485078,4421.597339485078,0.0,0.001,PASS
+net_cash 2028,review_with_k_fx_down_sensitivity,11550.240716281161,11550.240716281161,0.0,0.001,PASS
+shares 2028,review_with_k_fx_down_sensitivity,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,review_with_k_fx_up_sensitivity,10186.370587125783,10186.370587125783,0.0,0.001,PASS
+horizon_shares_m,review_with_k_fx_up_sensitivity,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,review_with_k_fx_up_sensitivity,97798.56794776327,97798.56794776327,0.0,0.001,PASS
+equity_value_musd,review_with_k_fx_up_sensitivity,107984.93853488905,107984.93853488905,0.0,0.001,PASS
+value_per_share,review_with_k_fx_up_sensitivity,186.5494567200011,186.5494567200011,0.0,0.001,PASS
+december_value_per_share,review_with_k_fx_up_sensitivity,188.43168815512678,188.43168815512678,0.0,0.001,PASS
+date_only_value_difference,review_with_k_fx_up_sensitivity,1.882231435125675,1.882231435125675,0.0,0.001,PASS
+fcf 2026,review_with_k_fx_up_sensitivity,5256.27124967869,5256.27124967869,0.0,0.001,PASS
+sbc_adj_fcf 2026,review_with_k_fx_up_sensitivity,3469.74124967869,3469.74124967869,0.0,0.001,PASS
+op_income 2026,review_with_k_fx_up_sensitivity,3374.7023428168527,3374.7023428168527,0.0,0.001,PASS
+net_cash 2026,review_with_k_fx_up_sensitivity,9510.98574967869,9510.98574967869,0.0,0.001,PASS
+shares 2026,review_with_k_fx_up_sensitivity,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,review_with_k_fx_up_sensitivity,5650.765087766362,5650.765087766362,0.0,0.001,PASS
+sbc_adj_fcf 2027,review_with_k_fx_up_sensitivity,3685.582087766362,3685.582087766362,0.0,0.001,PASS
+op_income 2027,review_with_k_fx_up_sensitivity,3817.361527141505,3817.361527141505,0.0,0.001,PASS
+net_cash 2027,review_with_k_fx_up_sensitivity,10473.936787445053,10473.936787445053,0.0,0.001,PASS
+shares 2027,review_with_k_fx_up_sensitivity,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,review_with_k_fx_up_sensitivity,6400.4259450984555,6400.4259450984555,0.0,0.001,PASS
+sbc_adj_fcf 2028,review_with_k_fx_up_sensitivity,4278.028305098456,4278.028305098456,0.0,0.001,PASS
+op_income 2028,review_with_k_fx_up_sensitivity,4632.335567458673,4632.335567458673,0.0,0.001,PASS
+net_cash 2028,review_with_k_fx_up_sensitivity,12131.523558543508,12131.523558543508,0.0,0.001,PASS
+shares 2028,review_with_k_fx_up_sensitivity,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,joint_soft,9834.494453055755,9834.494453055755,0.0,0.001,PASS
+horizon_shares_m,joint_soft,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,joint_soft,92813.50461625418,92813.50461625418,0.0,0.001,PASS
+equity_value_musd,joint_soft,102647.99906930994,102647.99906930994,0.0,0.001,PASS
+value_per_share,joint_soft,177.32962318247823,177.32962318247823,0.0,0.001,PASS
+december_value_per_share,joint_soft,178.99477806594385,178.99477806594385,0.0,0.001,PASS
+date_only_value_difference,joint_soft,1.6651548834656182,1.6651548834656182,0.0,0.001,PASS
+fcf 2026,joint_soft,5105.183383784391,5105.183383784391,0.0,0.001,PASS
+sbc_adj_fcf 2026,joint_soft,3318.653383784391,3318.653383784391,0.0,0.001,PASS
+op_income 2026,joint_soft,3217.934781008897,3217.934781008897,0.0,0.001,PASS
+net_cash 2026,joint_soft,9359.897883784392,9359.897883784392,0.0,0.001,PASS
+shares 2026,joint_soft,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,joint_soft,5364.484939781435,5364.484939781435,0.0,0.001,PASS
+sbc_adj_fcf 2027,joint_soft,3399.301939781435,3399.301939781435,0.0,0.001,PASS
+op_income 2027,joint_soft,3518.2073959488084,3518.2073959488084,0.0,0.001,PASS
+net_cash 2027,joint_soft,10036.568773565827,10036.568773565827,0.0,0.001,PASS
+shares 2027,joint_soft,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,joint_soft,6135.596609913939,6135.596609913939,0.0,0.001,PASS
+sbc_adj_fcf 2028,joint_soft,4013.198969913939,4013.198969913939,0.0,0.001,PASS
+op_income 2028,joint_soft,4350.67774800201,4350.67774800201,0.0,0.001,PASS
+net_cash 2028,joint_soft,11429.326209479765,11429.326209479765,0.0,0.001,PASS
+shares 2028,joint_soft,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+horizon_net_cash_musd,joint_firm,10137.405398762337,10137.405398762337,0.0,0.001,PASS
+horizon_shares_m,joint_firm,578.8542107467383,578.8542107467383,0.0,0.001,PASS
+enterprise_value_musd,joint_firm,97344.5732317978,97344.5732317978,0.0,0.001,PASS
+equity_value_musd,joint_firm,107481.97863056013,107481.97863056013,0.0,0.001,PASS
+value_per_share,joint_firm,185.680567982576,185.680567982576,0.0,0.001,PASS
+december_value_per_share,joint_firm,187.54259548601226,187.54259548601226,0.0,0.001,PASS
+date_only_value_difference,joint_firm,1.8620275034362521,1.8620275034362521,0.0,0.001,PASS
+fcf 2026,joint_firm,5225.886314964618,5225.886314964618,0.0,0.001,PASS
+sbc_adj_fcf 2026,joint_firm,3439.356314964618,3439.356314964618,0.0,0.001,PASS
+op_income 2026,joint_firm,3343.5236625524744,3343.5236625524744,0.0,0.001,PASS
+net_cash 2026,joint_firm,9480.600814964619,9480.600814964617,1.8189894035458565e-12,0.001,PASS
+shares 2026,joint_firm,588.850030229746,588.8500302297462,1.1368683772161603e-13,0.001,PASS
+fcf 2027,joint_firm,5624.273710492841,5624.273710492841,0.0,0.001,PASS
+sbc_adj_fcf 2027,joint_firm,3659.090710492841,3659.090710492841,0.0,0.001,PASS
+op_income 2027,joint_firm,3790.0385934953297,3790.0385934953297,0.0,0.001,PASS
+net_cash 2027,joint_firm,10417.06047545746,10417.060475457462,1.8189894035458565e-12,0.001,PASS
+shares 2027,joint_firm,574.598178232489,574.598178232489,0.0,0.001,PASS
+fcf 2028,joint_firm,6392.551338882928,6392.551338882928,0.0,0.001,PASS
+sbc_adj_fcf 2028,joint_firm,4270.153698882928,4270.153698882928,0.0,0.001,PASS
+op_income 2028,joint_firm,4623.373975722597,4623.373975722597,0.0,0.001,PASS
+net_cash 2028,joint_firm,12066.772640340387,12066.772640340387,0.0,0.001,PASS
+shares 2028,joint_firm,561.5344334929384,561.5344334929383,1.1368683772161603e-13,0.001,PASS
+revenue_gap_musd,review_with_k S&P Global,19.3436542864042,19.343654286400124,4.0749625895841746e-12,0.001,PASS
+revenue_gap_pct,review_with_k S&P Global,0.612140958430518,0.612140958430385,1.3300471835009375e-13,0.001,PASS
+own_guide_mid_musd,review_with_k S&P Global,3123.41911517339,3123.419115173384,5.9117155615240335e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,review_with_k S&P Global,-36.580884826612,-36.58088482661606,4.057199021190172e-12,0.001,PASS
+hypothetical_street_guide_musd,review_with_k S&P Global,3104.41571506154,3104.415715061543,2.7284841053187847e-12,0.001,PASS
+revenue_gap_musd,review_with_k Zacks,-20.6563457135958,-20.656345713599876,4.0749625895841746e-12,0.001,PASS
+revenue_gap_pct,review_with_k Zacks,-0.645510803549865,-0.6455108035499979,1.3289369604763124e-13,0.001,PASS
+own_guide_mid_musd,review_with_k Zacks,3123.41911517339,3123.419115173384,5.9117155615240335e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,review_with_k Zacks,-76.580884826612,-76.58088482661606,4.050093593832571e-12,0.001,PASS
+hypothetical_street_guide_musd,review_with_k Zacks,3143.71211651802,3143.7121165180183,1.8189894035458565e-12,0.001,PASS
+revenue_gap_musd,review_with_k LSEG family,18.3221642864041,18.32216428640004,4.0607517348689726e-12,0.001,PASS
+revenue_gap_pct,review_with_k LSEG family,0.57962795711346,0.5796279571133267,1.333377852574813e-13,0.001,PASS
+own_guide_mid_musd,review_with_k LSEG family,3123.41911517339,3123.419115173384,5.9117155615240335e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,review_with_k LSEG family,-37.602374826612,-37.60237482661614,4.142464149481384e-12,0.001,PASS
+hypothetical_street_guide_musd,review_with_k LSEG family,3105.41923708964,3105.4192370896376,2.2737367544323206e-12,0.001,PASS
+revenue_gap_musd,review_without_k S&P Global,15.92643761104,15.92643761104,0.0,0.001,PASS
+revenue_gap_pct,review_without_k S&P Global,0.50400119022278,0.5040011902227803,3.3306690738754696e-16,0.001,PASS
+own_guide_mid_musd,review_without_k S&P Global,3120.06200721492,3120.0620072149163,3.637978807091713e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,review_without_k S&P Global,-39.9379927850837,-39.93799278508368,2.1316282072803006e-14,0.001,PASS
+hypothetical_street_guide_musd,review_without_k S&P Global,3104.41571506154,3104.415715061543,2.7284841053187847e-12,0.001,PASS
+revenue_gap_musd,review_without_k Zacks,-24.07356238896,-24.07356238896,0.0,0.001,PASS
+revenue_gap_pct,review_without_k Zacks,-0.752298824654996,-0.7522988246549955,4.440892098500626e-16,0.001,PASS
+own_guide_mid_musd,review_without_k Zacks,3120.06200721492,3120.0620072149163,3.637978807091713e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,review_without_k Zacks,-79.9379927850837,-79.93799278508368,1.4210854715202004e-14,0.001,PASS
+hypothetical_street_guide_musd,review_without_k Zacks,3143.71211651802,3143.7121165180183,1.8189894035458565e-12,0.001,PASS
+revenue_gap_musd,review_without_k LSEG family,14.9049476110399,14.904947611039916,1.5987211554602254e-14,0.001,PASS
+revenue_gap_pct,review_without_k LSEG family,0.47152313447385,0.4715231344738502,1.6653345369377348e-16,0.001,PASS
+own_guide_mid_musd,review_without_k LSEG family,3120.06200721492,3120.0620072149163,3.637978807091713e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,review_without_k LSEG family,-40.9594827850838,-40.959482785083765,3.552713678800501e-14,0.001,PASS
+hypothetical_street_guide_musd,review_without_k LSEG family,3105.41923708964,3105.4192370896376,2.2737367544323206e-12,0.001,PASS
+revenue_gap_musd,nights_case_a S&P Global,19.3436542864042,19.343654286400124,4.0749625895841746e-12,0.001,PASS
+revenue_gap_pct,nights_case_a S&P Global,0.612140958430518,0.612140958430385,1.3300471835009375e-13,0.001,PASS
+own_guide_mid_musd,nights_case_a S&P Global,3123.41911517339,3123.419115173384,5.9117155615240335e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,nights_case_a S&P Global,-36.580884826612,-36.58088482661606,4.057199021190172e-12,0.001,PASS
+hypothetical_street_guide_musd,nights_case_a S&P Global,3104.41571506154,3104.415715061543,2.7284841053187847e-12,0.001,PASS
+revenue_gap_musd,nights_case_a Zacks,-20.6563457135958,-20.656345713599876,4.0749625895841746e-12,0.001,PASS
+revenue_gap_pct,nights_case_a Zacks,-0.645510803549865,-0.6455108035499979,1.3289369604763124e-13,0.001,PASS
+own_guide_mid_musd,nights_case_a Zacks,3123.41911517339,3123.419115173384,5.9117155615240335e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,nights_case_a Zacks,-76.580884826612,-76.58088482661606,4.050093593832571e-12,0.001,PASS
+hypothetical_street_guide_musd,nights_case_a Zacks,3143.71211651802,3143.7121165180183,1.8189894035458565e-12,0.001,PASS
+revenue_gap_musd,nights_case_a LSEG family,18.3221642864041,18.32216428640004,4.0607517348689726e-12,0.001,PASS
+revenue_gap_pct,nights_case_a LSEG family,0.57962795711346,0.5796279571133267,1.333377852574813e-13,0.001,PASS
+own_guide_mid_musd,nights_case_a LSEG family,3123.41911517339,3123.419115173384,5.9117155615240335e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,nights_case_a LSEG family,-37.602374826612,-37.60237482661614,4.142464149481384e-12,0.001,PASS
+hypothetical_street_guide_musd,nights_case_a LSEG family,3105.41923708964,3105.4192370896376,2.2737367544323206e-12,0.001,PASS
+revenue_gap_musd,adr_mean_reversion S&P Global,-30.1338365146657,-30.133836514669838,4.1389114358025836e-12,0.001,PASS
+revenue_gap_pct,adr_mean_reversion S&P Global,-0.953602421350186,-0.953602421350308,1.220135104063047e-13,0.001,PASS
+own_guide_mid_musd,adr_mean_reversion S&P Global,3074.81193163394,3074.8119316339366,3.183231456205249e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,adr_mean_reversion S&P Global,-85.1880683660597,-85.18806836606336,3.666400516522117e-12,0.001,PASS
+hypothetical_street_guide_musd,adr_mean_reversion S&P Global,3104.41571506154,3104.415715061543,2.7284841053187847e-12,0.001,PASS
+revenue_gap_musd,adr_mean_reversion Zacks,-70.1338365146657,-70.13383651466984,4.135358722123783e-12,0.001,PASS
+revenue_gap_pct,adr_mean_reversion Zacks,-2.1916823910833,-2.191682391083427,1.270095140171179e-13,0.001,PASS
+own_guide_mid_musd,adr_mean_reversion Zacks,3074.81193163394,3074.8119316339366,3.183231456205249e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,adr_mean_reversion Zacks,-125.18806836606,-125.18806836606336,3.367972567502875e-12,0.001,PASS
+hypothetical_street_guide_musd,adr_mean_reversion Zacks,3143.71211651802,3143.7121165180183,1.8189894035458565e-12,0.001,PASS
+revenue_gap_musd,adr_mean_reversion LSEG family,-31.1553265146658,-31.155326514669923,4.1247005810873816e-12,0.001,PASS
+revenue_gap_pct,adr_mean_reversion LSEG family,-0.985609449768909,-0.9856094497690315,1.2256862191861728e-13,0.001,PASS
+own_guide_mid_musd,adr_mean_reversion LSEG family,3074.81193163394,3074.8119316339366,3.183231456205249e-12,0.001,PASS
+guide_minus_revenue_diagnostic_musd,adr_mean_reversion LSEG family,-86.2095583660598,-86.20955836606345,3.652189661806915e-12,0.001,PASS
+hypothetical_street_guide_musd,adr_mean_reversion LSEG family,3105.41923708964,3105.4192370896376,2.2737367544323206e-12,0.001,PASS
+revenue_gap_musd,k0_conditional S&P Global,54.7757508938021,54.775750893799795,2.3021584638627246e-12,0.001,PASS
+revenue_gap_pct,k0_conditional S&P Global,1.73340983841146,1.7334098384113927,6.727951529228449e-14,0.001,PASS
+own_guide_mid_musd,k0_conditional S&P Global,3158.22796249161,3158.227962491609,9.094947017729282e-13,0.001,PASS
+guide_minus_revenue_diagnostic_musd,k0_conditional S&P Global,-1.77203750838908,-1.7720375083908948,1.8147705560522809e-12,0.001,PASS
+hypothetical_street_guide_musd,k0_conditional S&P Global,3104.41571506154,3104.415715061543,2.7284841053187847e-12,0.001,PASS
+revenue_gap_musd,k0_conditional Zacks,14.7757508938021,14.775750893799795,2.303934820702125e-12,0.001,PASS
+revenue_gap_pct,k0_conditional Zacks,0.461742215431316,0.46174221543124894,6.705747068735946e-14,0.001,PASS
+own_guide_mid_musd,k0_conditional Zacks,3158.22796249161,3158.227962491609,9.094947017729282e-13,0.001,PASS
+guide_minus_revenue_diagnostic_musd,k0_conditional Zacks,-41.7720375083891,-41.772037508390895,1.7976731214730535e-12,0.001,PASS
+hypothetical_street_guide_musd,k0_conditional Zacks,3143.71211651802,3143.7121165180183,1.8189894035458565e-12,0.001,PASS
+revenue_gap_musd,k0_conditional LSEG family,53.754260893802,53.75426089379971,2.2879476091475226e-12,0.001,PASS
+revenue_gap_pct,k0_conditional LSEG family,1.70053449696104,1.7005344969609704,6.972200594645983e-14,0.001,PASS
+own_guide_mid_musd,k0_conditional LSEG family,3158.22796249161,3158.227962491609,9.094947017729282e-13,0.001,PASS
+guide_minus_revenue_diagnostic_musd,k0_conditional LSEG family,-2.79352750838916,-2.79352750839098,1.8198775819655566e-12,0.001,PASS
+hypothetical_street_guide_musd,k0_conditional LSEG family,3105.41923708964,3105.4192370896376,2.2737367544323206e-12,0.001,PASS
+intact source w,minimum_Q4_result_intact_tuple,0.687639351326,0.687639351326,0.0,1e-12,PASS
+intact source lambda_Q1_pct,minimum_Q4_result_intact_tuple,12.8983420995,12.8983420995,0.0,1e-10,PASS
+intact source lambda_Q2_pct,minimum_Q4_result_intact_tuple,13.6647410084,13.6647410084,0.0,1e-10,PASS
+intact source lambda_Q3_pct,minimum_Q4_result_intact_tuple,17.0288053434,17.0288053434,0.0,1e-10,PASS
+intact source lambda_Q4_pct,minimum_Q4_result_intact_tuple,11.8841845025,11.8841845025,0.0,1e-10,PASS
+intact source w,minimum_Q4_result_intact_tuple,0.687639351326,0.687639351326,0.0,1e-12,PASS
+intact source lambda_Q1_pct,minimum_Q4_result_intact_tuple,12.8983420995,12.8983420995,0.0,1e-10,PASS
+intact source lambda_Q2_pct,minimum_Q4_result_intact_tuple,13.6647410084,13.6647410084,0.0,1e-10,PASS
+intact source lambda_Q3_pct,minimum_Q4_result_intact_tuple,17.0288053434,17.0288053434,0.0,1e-10,PASS
+intact source lambda_Q4_pct,minimum_Q4_result_intact_tuple,11.8841845025,11.8841845025,0.0,1e-10,PASS
+intact source w,minimum_Q4_result_intact_tuple,0.687639351326,0.687639351326,0.0,1e-12,PASS
+intact source lambda_Q1_pct,minimum_Q4_result_intact_tuple,12.8983420995,12.8983420995,0.0,1e-10,PASS
+intact source lambda_Q2_pct,minimum_Q4_result_intact_tuple,13.6647410084,13.6647410084,0.0,1e-10,PASS
+intact source lambda_Q3_pct,minimum_Q4_result_intact_tuple,17.0288053434,17.0288053434,0.0,1e-10,PASS
+intact source lambda_Q4_pct,minimum_Q4_result_intact_tuple,11.8841845025,11.8841845025,0.0,1e-10,PASS
+intact source w,maximum_Q4_result_intact_tuple,0.848017072564,0.848017072564,0.0,1e-12,PASS
+intact source lambda_Q1_pct,maximum_Q4_result_intact_tuple,12.9990081037,12.9990081037,0.0,1e-10,PASS
+intact source lambda_Q2_pct,maximum_Q4_result_intact_tuple,13.0464859147,13.0464859147,0.0,1e-10,PASS
+intact source lambda_Q3_pct,maximum_Q4_result_intact_tuple,17.3023857026,17.3023857026,0.0,1e-10,PASS
+intact source lambda_Q4_pct,maximum_Q4_result_intact_tuple,12.6319527943,12.6319527943,0.0,1e-10,PASS
+intact source w,maximum_Q4_result_intact_tuple,0.848017072564,0.848017072564,0.0,1e-12,PASS
+intact source lambda_Q1_pct,maximum_Q4_result_intact_tuple,12.9990081037,12.9990081037,0.0,1e-10,PASS
+intact source lambda_Q2_pct,maximum_Q4_result_intact_tuple,13.0464859147,13.0464859147,0.0,1e-10,PASS
+intact source lambda_Q3_pct,maximum_Q4_result_intact_tuple,17.3023857026,17.3023857026,0.0,1e-10,PASS
+intact source lambda_Q4_pct,maximum_Q4_result_intact_tuple,12.6319527943,12.6319527943,0.0,1e-10,PASS
+intact source w,maximum_Q4_result_intact_tuple,0.848017072564,0.848017072564,0.0,1e-12,PASS
+intact source lambda_Q1_pct,maximum_Q4_result_intact_tuple,12.9990081037,12.9990081037,0.0,1e-10,PASS
+intact source lambda_Q2_pct,maximum_Q4_result_intact_tuple,13.0464859147,13.0464859147,0.0,1e-10,PASS
+intact source lambda_Q3_pct,maximum_Q4_result_intact_tuple,17.3023857026,17.3023857026,0.0,1e-10,PASS
+intact source lambda_Q4_pct,maximum_Q4_result_intact_tuple,12.6319527943,12.6319527943,0.0,1e-10,PASS
+intact source w,all22_fullsample_point_not_adopted,0.786478480785,0.786478480785,0.0,1e-12,PASS
+intact source lambda_Q1_pct,all22_fullsample_point_not_adopted,12.9319111418,12.9319111418,0.0,1e-10,PASS
+intact source lambda_Q2_pct,all22_fullsample_point_not_adopted,13.2242324763,13.2242324763,0.0,1e-10,PASS
+intact source lambda_Q3_pct,all22_fullsample_point_not_adopted,17.3027440661,17.3027440661,0.0,1e-10,PASS
+intact source lambda_Q4_pct,all22_fullsample_point_not_adopted,12.1115583187,12.1115583187,0.0,1e-10,PASS
+intact source w,all22_fullsample_point_not_adopted,0.786478480785,0.786478480785,0.0,1e-12,PASS
+intact source lambda_Q1_pct,all22_fullsample_point_not_adopted,12.9319111418,12.9319111418,0.0,1e-10,PASS
+intact source lambda_Q2_pct,all22_fullsample_point_not_adopted,13.2242324763,13.2242324763,0.0,1e-10,PASS
+intact source lambda_Q3_pct,all22_fullsample_point_not_adopted,17.3027440661,17.3027440661,0.0,1e-10,PASS
+intact source lambda_Q4_pct,all22_fullsample_point_not_adopted,12.1115583187,12.1115583187,0.0,1e-10,PASS
+intact source w,all22_fullsample_point_not_adopted,0.786478480785,0.786478480785,0.0,1e-12,PASS
+intact source lambda_Q1_pct,all22_fullsample_point_not_adopted,12.9319111418,12.9319111418,0.0,1e-10,PASS
+intact source lambda_Q2_pct,all22_fullsample_point_not_adopted,13.2242324763,13.2242324763,0.0,1e-10,PASS
+intact source lambda_Q3_pct,all22_fullsample_point_not_adopted,17.3027440661,17.3027440661,0.0,1e-10,PASS
+intact source lambda_Q4_pct,all22_fullsample_point_not_adopted,12.1115583187,12.1115583187,0.0,1e-10,PASS

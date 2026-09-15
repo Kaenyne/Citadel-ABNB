@@ -1,0 +1,12 @@
+Executed 2026-09-13 from the L4 worktree root with bundled Python:
+python -m unittest discover -s analysis/src/forecast_methods/lane4_review_v1/tests -v
+
+16 tests passed; unittest reported 0.025 seconds; exit 0.
+11 tests cover unsigned card interval/wording rules.
+5 tests cover cash-flow/SBC reconciliation, EV/equity/share units, immutable
+snapshot copying, duplicate/missing scenario keys and refusal of unavailable
+numeric values.
+
+The subsequent final builder command exited 0 and produced exactly two pages.
+The combined test/build exec_command cell took 2.5358105 seconds.
+No conversion estimation, alpha test, registration or scorer ran in this package.

@@ -1,0 +1,146 @@
+[
+ {
+  "key": "github:jayesh2278/airdnascraper",
+  "url": "https://github.com/jayesh2278/airdnascraper",
+  "name": "airdnascraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapy-based scraper (airdna.py, scrapy.cfg) with a committed output file airdna.csv: title, room_type, property_type, bedrooms, accommodates, bathrooms, reviews, rating, days_available, occ, revenue for a small set of listings in the NJ lake region (Hopatcong/Cranberry Lake/Sparta/Newton area). occ and revenue columns are blank/'permission_denied' in the sample rows shown, so the financially useful fields are not actually populated.",
+  "why_useful": "A scraper of AirDNA's public market pages (rather than a paid-API client) would be the most direct route to realised ADR/occupancy proxies (gap #2) if AirDNA's site still exposes free market-level stats; scraping AirDNA (a non-Airbnb site) is explicitly in scope per our rules as a catalogued, unrun method.",
+  "potential": "medium",
+  "license": "unspecified",
+  "last_activity": "2026-01-27 (star event; commit date unconfirmed)",
+  "geography": "unspecified",
+  "time_coverage": "unspecified",
+  "size_hint": "not inspected in depth",
+  "gap_targets": [
+   2,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks",
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)"
+  ],
+  "why_all": [
+   "A scraper of AirDNA's public market pages (rather than a paid-API client) would be the most direct route to realised ADR/occupancy proxies (gap #2) if AirDNA's site still exposes free market-level stats; scraping AirDNA (a non-Airbnb site) is explicitly in scope per our rules as a catalogued, unrun method.",
+   "Demonstrates a scraping method aimed at AirDNA-hosted market pages (gap #2: realised ADR/occupancy for STRs), but the committed sample data is tiny, single-region, and missing exactly the occupancy/revenue fields that would matter; only the method (and its failure mode) is worth noting.",
+   "Same rationale as other AirDNA scrapers \u2014 potential route to a free occupancy/ADR proxy (gap #2) if a human clears the ToS question.",
+   "Second independent working AirDNA scraper/method, same rationale as hoffmanap/AIR for gap #2 (realised STR occupancy/ADR proxies); redundant with it but confirms the approach is reproducible."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/canada-analysis",
+  "url": "https://github.com/UPGo-McGill/canada-analysis",
+  "name": "UPGo-McGill/canada-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed R analysis code for Combs et al. 2019 ('Short-term cities: Airbnb's impact on Canadian housing markets'), the group's peer-reviewed study built on a 143-million-datapoint proprietary AirDNA-derived panel of daily Airbnb activity across Canadian cities (Montreal, Toronto, Vancouver and others) roughly 2016-2019. Repo structure shows an R/ directory, LICENSE, README; underlying raw AirDNA data itself is NOT committed (proprietary), only the analysis code.",
+  "why_useful": "Full, citable, peer-reviewed replication code for a large-scale AirDNA-based STR study; documents exactly how commercial-operator share and revenue concentration were computed from AirDNA data, which is directly on-point for gap #2, even though the raw data underneath is not open.",
+  "potential": "medium",
+  "geography": "Canada (Montreal, Toronto, Vancouver region focus)",
+  "time_coverage": "~2016-2019 (per published UPGo reports referencing this code)",
+  "size_hint": "R analysis scripts, MIT license, 20 commits",
+  "license": "MIT",
+  "last_activity": "unknown",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Full, citable, peer-reviewed replication code for a large-scale AirDNA-based STR study; documents exactly how commercial-operator share and revenue concentration were computed from AirDNA data, which is directly on-point for gap #2, even though the raw data underneath is not open.",
+   "Academic replication package for a published Airbnb-supply study; useful for methodology/benchmarks on Canadian STR growth even without the underlying proprietary data.",
+   "An academic replication package for a peer-reviewed Airbnb-Canada study gives a methodology and possibly underlying panel data for STR supply/pricing in a non-US market not covered by our current 13-city Inside Airbnb panel.",
+   "Points to a published academic study quantifying Canadian Airbnb growth/impact by city; methodology repo only, but confirms the study exists and how UPGo processes national STR panels -- relevant if the memo wants a Canada-wide STR growth benchmark.",
+   "An academic replication package tied to a named, citable paper on Airbnb activity in Canada \u2014 worth flagging as a possible source of methodology or (if the underlying data is linked in the README) a multi-city Canadian Airbnb panel predating our own Inside Airbnb coverage."
+  ]
+ },
+ {
+  "key": "other:https://www.airroi.com/data-portal",
+  "url": "https://www.airroi.com/data-portal/",
+  "name": "AirROI Data Portal",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Non-GitHub commercial data portal claiming 20M+ listings across 190+ countries and 100,000+ markets, daily-refreshed, with free occupancy rates, revenue estimates, pricing trends, and downloadable CSV/JSON/Parquet exports; also referenced as having a GitHub-hosted Claude-Code tool that generates instant STR income reports from an Airbnb listing URL. No confirmation of a committed open dataset on GitHub -- the free tier appears to be a hosted web tool, not a repo.",
+  "why_useful": "If AirROI's 'free' occupancy/revenue-estimate tier is genuinely queryable without payment, it would be a broader (and more current) analogue to AirDNA for gap #2 (190+ countries vs AirDNA's already-covered patch); flagging for a human to check the actual free-tier terms and whether a GitHub client exists, since scraping it is out of scope for this pass.",
+  "potential": "medium",
+  "geography": "global, 190+ countries claimed",
+  "time_coverage": "current/daily, not point-in-time archived",
+  "size_hint": "unknown, hosted commercial platform",
+  "license": "unknown / commercial ToS applies",
+  "last_activity": "n/a (not a repo)",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "If AirROI's 'free' occupancy/revenue-estimate tier is genuinely queryable without payment, it would be a broader (and more current) analogue to AirDNA for gap #2 (190+ countries vs AirDNA's already-covered patch); flagging for a human to check the actual free-tier terms and whether a GitHub client exists, since scraping it is out of scope for this pass."
+  ]
+ },
+ {
+  "key": "github:ericnost/nola-str",
+  "url": "https://github.com/ericnost/NOLA-STR",
+  "name": "ericnost/NOLA-STR",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "New Orleans official short-term-rental license data (Temporary, Accessory, and Commercial permit categories) current as of March 2018, joined to 2016 ACS 5-year block-group demographics (race/ethnicity, rent, income); includes an R script for parsing/joining. Exact row counts not stated in README.",
+  "why_useful": "Addresses gap #12 (city STR registration datasets) directly for New Orleans, one of our named target cities, and is a point-in-time (March 2018) municipal licence snapshot rather than an Airbnb-scraped listing count.",
+  "potential": "medium",
+  "geography": "New Orleans, LA",
+  "time_coverage": "single snapshot, ~March 2018",
+  "size_hint": "unspecified row count; single license file + ACS join",
+  "license": "unknown",
+  "last_activity": "unknown (not fetched)",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "Addresses gap #12 (city STR registration datasets) directly for New Orleans, one of our named target cities, and is a point-in-time (March 2018) municipal licence snapshot rather than an Airbnb-scraped listing count.",
+   "A committed historical (2018) snapshot of New Orleans STR licenses that predates our current New Orleans regulatory holdings \u2014 useful as an older vintage point for a longer STR-supply time series in that market, and the mapping code is reusable."
+  ]
+ },
+ {
+  "key": "github:neshitov/airbnb",
+  "url": "https://github.com/neshitov/airbnb",
+  "name": "neshitov/airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "listings.csv (~40,000 rows) from Inside Airbnb Los Angeles, vintage 2018-12-06, plus a neighbourhoods.geojson for mapping; host/property/location/price fields.",
+  "why_useful": "Another pre-2023 archived Inside Airbnb vintage (LA, Dec 2018) filling gap #1; older than anything currently on the live CDN.",
+  "potential": "medium",
+  "geography": "Los Angeles, CA",
+  "time_coverage": "single snapshot, 2018-12-06",
+  "size_hint": "~40k row CSV + geojson",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "Another pre-2023 archived Inside Airbnb vintage (LA, Dec 2018) filling gap #1; older than anything currently on the live CDN."
+  ]
+ }
+]

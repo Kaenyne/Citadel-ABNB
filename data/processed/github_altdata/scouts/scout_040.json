@@ -1,0 +1,81 @@
+{
+  "theme": "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"agoda dataset\"",
+    "gh search repos \"tujia OR xiaozhu\"",
+    "gh search repos \"ctrip OR trip.com hotel dataset\"",
+    "gh search repos \"makemytrip OR oyo rooms dataset\"",
+    "gh search repos \"agoda scraper\"",
+    "gh search repos \"traveloka OR meituan hotel\"",
+    "gh search repos \"china hotel price dataset\"",
+    "gh search repos \"OYO rooms\""
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/bhattbhavesh91/oyo_rooms_case_study",
+      "name": "oyo_rooms_case_study",
+      "category": "competitor_ota",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Small SQL/pandas case study with 4 tables (A, B, C = OYO India bookings for Jan/Feb/March 2017; D = hotel-to-city mapping). Real (if old and small) OYO booking-level data by city and month, but no row counts or full city list confirmed from README alone; 2 stars, not updated since 2017.",
+      "why_useful": "Only repo found with what looks like actual OYO (India STR/budget-hotel OTA) booking records rather than a UI clone; touches gap 9 (competitor/adjacent supply — OYO explicitly named) even though the vintage (2017) is far pre-COVID and too small/old to be decision-useful on its own.",
+      "potential": "low",
+      "geography": "India (city-level, unspecified which cities)",
+      "time_coverage": "Jan-Mar 2017",
+      "size_hint": "4 small tables, unknown row count",
+      "license": "unknown",
+      "last_activity": "2017-12-12",
+      "gap_targets": [9],
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/bondvit/agoda-scraper-examples",
+      "name": "agoda-scraper-examples",
+      "category": "competitor_ota",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Runnable Python & JS example client code calling a commercial Apify \"Agoda Hotel Scraper\" actor to pull hotel listings/room rates/availability/reviews from Agoda. No data committed; requires a paid Apify actor run to acquire anything.",
+      "why_useful": "Illustrates a working (if paid, third-party) route to Agoda price/availability data as a competitor-supply/pricing proxy (gap 9), but not a free or one-command pull and needs a human ToS/paid-API decision before any run.",
+      "potential": "low",
+      "geography": "APAC/global (Agoda's markets)",
+      "time_coverage": "current only (no historical archive)",
+      "size_hint": "example scripts only, no data",
+      "license": "other",
+      "last_activity": "2026-06-12",
+      "gap_targets": [9],
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/luminati-io/agoda-properties-listings-scraper",
+      "name": "agoda-properties-listings-scraper",
+      "category": "competitor_ota",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Bright Data (Luminati) official template/marketing repo for a paid \"Agoda scraper\" product extracting hotel listings, room rates, availability, and reviews. No data files committed; it is a lead-gen wrapper around a commercial scraping-as-a-service product.",
+      "why_useful": "Another paid-service pointer to Agoda pricing/availability data (gap 9); lower value than the Apify example since it is purely promotional with no runnable open code shown.",
+      "potential": "low",
+      "geography": "APAC/global",
+      "time_coverage": "current only",
+      "size_hint": "no data committed",
+      "license": "unknown",
+      "last_activity": "2026-05-05",
+      "gap_targets": [9],
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/projectivemotion/agoda-scraper",
+      "name": "agoda-scraper (PHP)",
+      "category": "competitor_ota",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Small PHP class (MIT licensed) for scraping agoda.com directly (no third-party paid service dependency). No data committed, 4 stars, appears functional as of last update (2024).",
+      "why_useful": "The only free/self-hosted (non-paid-actor) Agoda scraping method found; could in principle be adapted to pull current Agoda prices as an APAC hotel-pricing proxy for gap 9, though it targets a non-Airbnb site directly and any run is a ToS decision for a human, per the rules.",
+      "potential": "low",
+      "geography": "APAC/global",
+      "time_coverage": "current only",
+      "size_hint": "single PHP class, no data",
+      "license": "MIT",
+      "last_activity": "2024-02-19",
+      "gap_targets": [9],
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "This theme is essentially a dead end on GitHub. Extensive search across Agoda, Trip.com/Ctrip, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, and Traveloka turned up: (1) zero repos with a committed, substantive dataset from any of these platforms; (2) zero hits at all for Tujia, Xiaozhu, Ctrip/Trip.com, MakeMyTrip, or Traveloka as dataset/scraper subjects — searches returned empty; (3) dozens of OYO Rooms hits, but essentially all are student full-stack UI 'clone' apps (React/Flutter/Android replicas of the OYO booking flow with no real bookings data) or generic data-engineering ETL-pipeline tutorials using synthetic/unspecified sample data (e.g. heighterses/Oyo-Rooms-ETL-Pipeline-Pyspark-Data-Engineering-Project-AWS) rather than real OYO figures; (4) Agoda search surfaces only paid-scraper wrappers (Apify actors, Bright Data/Luminati templates) or small personal scraper scripts, none with data committed and all needing either a paid API or a live scrape of agoda.com (a ToS question for a human, per repo rules) to produce anything. No academic replication packages, no release-asset dumps, no Kaggle/Zenodo pointers were found for any of the eight named platforms. Recommendation for the team: this competitor-supply gap (CONTEXT.md #9, Chinese/APAC platforms specifically) is very unlikely to be filled from GitHub directly; more promising directions would be (a) government tourism-board statistics for China/India/Indonesia/Thailand that implicitly capture these platforms' markets (already gap #7, being covered by other scouts), or (b) app-store ranking/download history for the Trip.com, Agoda, OYO, and Meituan apps as an engagement proxy (gap #5), which is a different search theme. Did not hit any rate limits; used 8 gh search repos calls (slightly over the nominal 6-call guidance given how many empty results the narrow platform names produced) and 2 WebFetch calls, no gh api or gh search code calls."
+}

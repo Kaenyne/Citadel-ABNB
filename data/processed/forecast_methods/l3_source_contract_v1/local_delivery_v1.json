@@ -1,0 +1,22 @@
+{
+  "delivery": "local_manual_handoff_for_L4_and_quant",
+  "research_source_commit": "d6df46f4cbc0dfb707f4e338a8beb345f714e03f",
+  "original_bundle_commit": "8821961853e4068febbfe2712f9a4e1036c9e629",
+  "branch": "codex/lane3-full",
+  "supplement_path": "data/processed/forecast_methods/l3_source_contract_v1/supplement_v1",
+  "manifest_sha256": "061a5336812ab4ce03e4716bb0b6a7581795bab8cf66fd70695bbac63b01610d",
+  "acceptance_sha256": "abacd5e5826e85de615b89cb44ed7553e09f608f308bd486b5dbf7309c69594a",
+  "manifest_covered_files": 64,
+  "reviewed_committed_files": 312,
+  "tests_passed": 107,
+  "deterministic_package_files": 25,
+  "main_handoff": "docs/revenue-forecast-strategy/05_backtests/L3_SC_LEAD_HANDOFF_v1.md",
+  "presentation_claims": "docs/revenue-forecast-strategy/05_backtests/L3_SC_PRESENTATION_CLAIMS_v1.md",
+  "accepted_production_policy": "retain existing fixed 2/3-1/3 seasonal operational estimator; free-weight promotion FAIL remains",
+  "direct_L4_model_rows": 0,
+  "new_parameter_fits": 0,
+  "publication": "local only; no public push or merge authorized/performed",
+  "verify_command": "python -B -X utf8 analysis/src/forecast_methods/l3_source_contract_v1/pack.py --verify --out data/processed/forecast_methods/l3_source_contract_v1/supplement_v1",
+  "reproduce_command": "python -B -X utf8 analysis/src/forecast_methods/l3_source_contract_v1/run.py --out data/processed/forecast_methods/l3_source_contract_v1/rebuild_NEW",
+  "nonconsumable_fixtures_excluded": true
+}

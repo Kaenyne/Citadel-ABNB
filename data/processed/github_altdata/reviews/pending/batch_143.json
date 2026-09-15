@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:lc/gau",
+  "url": "https://github.com/lc/gau",
+  "name": "gau (getallurls)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CLI (Go, MIT, 5.1k stars, 171 commits) that fetches all known URLs for a domain from Wayback Machine, Common Crawl, and AlienVault OTX in one pass; supports date-range and MIME filters, JSON output.",
+  "why_useful": "One-command way to enumerate historical URL sets for competitor STR/OTA sites (Vrbo, Booking alt-accommodation, Sonder, Vacasa) across archives, e.g. to count listing/market pages seen over time as a rough supply/presence proxy (gap 9).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "as far back as Wayback/CC coverage goes per domain",
+  "size_hint": "tooling only; output size depends on domain",
+  "license": "MIT",
+  "last_activity": "active, 23 open issues/12 PRs",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "One-command way to enumerate historical URL sets for competitor STR/OTA sites (Vrbo, Booking alt-accommodation, Sonder, Vacasa) across archives, e.g. to count listing/market pages seen over time as a rough supply/presence proxy (gap 9).",
+   "URL-discovery step to enumerate what paths ever existed under airdna.co, mashvisor.com, or insideairbnb.com (e.g. old market-report slugs, city pages that later moved/disappeared) before running a downloader against the Wayback Machine \u2014 feeds gaps #1/#2."
+  ]
+ },
+ {
+  "key": "github:dgtlmoon/changedetection.io",
+  "url": "https://github.com/dgtlmoon/changedetection.io",
+  "name": "changedetection.io",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hostable website change-detection app (~2,496 commits): watches arbitrary URLs, diffs content via CSS/XPath/JSONPath selectors, supports PDF and browser-rendered (Playwright) pages, and fires notifications (Slack/Discord/webhook) on change. No committed dataset -- it is a running service you point at target pages.",
+  "why_useful": "Directly usable, no-code way to build a help-center / app-release-notes / newsroom change monitor for Airbnb (and comparators Vrbo, Booking, Vacasa) to catch product-launch and policy-change timing ahead of scraped confirmation -- fits gap #15 (product/patent/trademark & release monitors) as a generic acquisition method rather than site-specific script.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "n/a (generic tool)",
+  "time_coverage": "n/a",
+  "size_hint": "single Python app, Docker image available",
+  "license": "Apache 2.0",
+  "last_activity": "actively maintained, thousands of commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Directly usable, no-code way to build a help-center / app-release-notes / newsroom change monitor for Airbnb (and comparators Vrbo, Booking, Vacasa) to catch product-launch and policy-change timing ahead of scraped confirmation -- fits gap #15 (product/patent/trademark & release monitors) as a generic acquisition method rather than site-specific script."
+  ]
+ },
+ {
+  "key": "github:calidog/certstream-python",
+  "url": "https://github.com/CaliDog/certstream-python",
+  "name": "certstream-python",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python WebSocket client for the CertStream network, which aggregates real-time Certificate Transparency log feeds (domain names, fingerprints, issuer, timestamps). 36 commits, MIT license.",
+  "why_useful": "Real-time feed that could flag newly issued TLS certs for new Airbnb subdomains (e.g. a new product/microsite launch, an acquisition's domain going live, or a new country TLD) ahead of press coverage -- a leading indicator method for gap #15's product-launch monitor idea. Needs to run forward from now; can't backfill history.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "global (all CT logs)",
+  "time_coverage": "real-time only, no historical backfill",
+  "size_hint": "library only",
+  "license": "MIT",
+  "last_activity": "36 commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Real-time feed that could flag newly issued TLS certs for new Airbnb subdomains (e.g. a new product/microsite launch, an acquisition's domain going live, or a new country TLD) ahead of press coverage -- a leading indicator method for gap #15's product-launch monitor idea. Needs to run forward from now; can't backfill history."
+  ]
+ },
+ {
+  "key": "github:paulsec/crt.sh",
+  "url": "https://github.com/PaulSec/crt.sh",
+  "name": "crt.sh (Python wrapper)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python API wrapper (`crtshAPI().search('domain.com')`) around crt.sh's certificate-transparency search, returning certificate metadata (issuer, domain names, timestamps) for any queried domain. 20 commits, MIT license.",
+  "why_useful": "Can backfill historical certificate-issuance history (crt.sh keeps a searchable CT log archive) for airbnb.com and subsidiary/product subdomains -- a point-in-time-flavored way to date when a new product domain first appeared, unlike the real-time-only certstream feed above.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "global",
+  "time_coverage": "however far crt.sh's CT log ingestion goes (years)",
+  "size_hint": "library only",
+  "license": "MIT",
+  "last_activity": "20 commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Can backfill historical certificate-issuance history (crt.sh keeps a searchable CT log archive) for airbnb.com and subsidiary/product subdomains -- a point-in-time-flavored way to date when a new product domain first appeared, unlike the real-time-only certstream feed above."
+  ]
+ },
+ {
+  "key": "github:yassineaboukir/sublert",
+  "url": "https://github.com/yassineaboukir/sublert",
+  "name": "sublert",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool that leverages Certificate Transparency logs to automatically monitor and alert on newly deployed subdomains for a target organization. 1k stars.",
+  "why_useful": "Purpose-built for exactly this theme's 'product-launch monitor via CT' idea -- point it at airbnb.com (and Vrbo/Vacasa/Sonder) to catch new subdomains signaling product or market launches before press coverage.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "overlaps certstream-python/crt.sh/certspotter for the CT-monitoring use case; this one is purpose-built for org-level subdomain monitoring specifically",
+  "geography": "global",
+  "time_coverage": "real-time forward-looking, no historical backfill",
+  "size_hint": "single Python tool",
+  "license": "not confirmed (check on use)",
+  "last_activity": "1k stars",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Purpose-built for exactly this theme's 'product-launch monitor via CT' idea -- point it at airbnb.com (and Vrbo/Vacasa/Sonder) to catch new subdomains signaling product or market launches before press coverage."
+  ]
+ }
+]

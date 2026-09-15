@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:googlecloudplatform/covid-19-open-data",
+  "url": "https://github.com/GoogleCloudPlatform/covid-19-open-data",
+  "name": "covid-19-open-data",
+  "category": "web_app_engagement",
+  "data_kind": "both",
+  "what_it_holds": "Google-maintained (now archived) open-data pipeline merging epidemiology, hospitalizations, vaccinations, and a dedicated Mobility table (Google Community Mobility metrics) across >20,000 locations at 4 aggregation levels (country/state/county/locality) as a daily time series through ~15-Sep-2022. Pipeline code (to re-run locally against sources) plus generated CSV outputs under CC BY; mobility subset still requires accepting Google's mobility-report ToS. Repo archived Nov 2024.",
+  "why_useful": "Broader and better-structured than a raw Google Mobility CSV dump \u2014 includes county/locality-level granularity and is joinable to other macro/health covariates already in the same tables, useful for constructing a travel-demand recovery index by region (NA/EMEA/LatAm/APAC) for historical base-rate work.",
+  "potential": "medium",
+  "geography": "Global, down to locality/county level",
+  "time_coverage": "2020 through Sep 2022",
+  "size_hint": "Large multi-table daily panel, generated CSVs (data volume not fully inspected)",
+  "license": "Apache-2.0 (code); CC BY (generated data); mobility subset under Google ToS",
+  "last_activity": "archived Nov 2024",
+  "gap_targets": [
+   5,
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Broader and better-structured than a raw Google Mobility CSV dump \u2014 includes county/locality-level granularity and is joinable to other macro/health covariates already in the same tables, useful for constructing a travel-demand recovery index by region (NA/EMEA/LatAm/APAC) for historical base-rate work.",
+   "The authoritative, best-documented version of the same Google mobility signal as the ActiveConclusion mirror, with a clean harmonized geography key across country/state/county/locality that is far easier to join to other panels (e.g., Eurostat, TSA, FRED) than the raw report PDFs Google used to publish. Useful as a validated historical baseline for movement-vs-travel-demand relationships and as a schema template for any new mobility index construction."
+  ]
+ },
+ {
+  "key": "github:digitalcortex/72m-domains-dataset",
+  "url": "https://github.com/digitalcortex/72m-domains-dataset",
+  "name": "72m-domains-dataset",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "72,475,235 unique registered domains extracted via DuckDB from Common Crawl's cc-index columnar Parquet files, deduplicated across 14 monthly snapshots Jan 2025-Feb 2026. Stored as Parquet (built from an SQLite intermediate). 25 stars, license 'Other', updated 1 Sep 2026, actively maintained.",
+  "why_useful": "A monthly-cadence global domain-presence list built directly from the cc-index columnar query pattern named in this theme; could be used to check month-by-month whether specific competitor/STR-adjacent domains (Vrbo, Hipcamp, Sonder, Tujia, Xiaozhu, AllTheRooms) are crawled/indexed at all, and shows exactly how to run the same cc-index Parquet query ourselves for a custom domain list or date range.",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "Other (unspecified terms)",
+  "last_activity": "2026-09-01",
+  "geography": "global",
+  "time_coverage": "Jan 2025-Feb 2026 (monthly)",
+  "size_hint": "72.5M domain rows, Parquet",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "A monthly-cadence global domain-presence list built directly from the cc-index columnar query pattern named in this theme; could be used to check month-by-month whether specific competitor/STR-adjacent domains (Vrbo, Hipcamp, Sonder, Tujia, Xiaozhu, AllTheRooms) are crawled/indexed at all, and shows exactly how to run the same cc-index Parquet query ourselves for a custom domain list or date range."
+  ]
+ },
+ {
+  "key": "github:danwagnerco/similarweb",
+  "name": "danwagnerco/similarweb",
+  "url": "https://github.com/danwagnerco/similarweb",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client wrapping the official SimilarWeb API (traffic/engagement endpoints: visits, page views, bounce rate, traffic sources, by domain). No data committed; every call requires a paid SimilarWeb API key (free trial only, rate-limited).",
+  "why_useful": "SimilarWeb-style web-traffic estimates for airbnb.com are named explicitly in gap 5 as a target category; this is the best-maintained (51-star, MIT) open client for that API, useful IF the team ever obtains a SimilarWeb trial key, but yields nothing without one.",
+  "potential": "medium",
+  "size_hint": "small Python package, no data",
+  "time_coverage": "n/a (live API only)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-05-15",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "SimilarWeb-style web-traffic estimates for airbnb.com are named explicitly in gap 5 as a target category; this is the best-maintained (51-star, MIT) open client for that API, useful IF the team ever obtains a SimilarWeb trial key, but yields nothing without one.",
+   "Backup client if the free-API approach above breaks; requires a paid Similarweb key so lower priority than the free-endpoint repo."
+  ]
+ },
+ {
+  "key": "github:jwoohong1983/goiener-smartmeter-mirror",
+  "url": "https://github.com/jwoohong1983/goiener-smartmeter-mirror",
+  "name": "goiener-smartmeter-mirror",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Mirror of the GoiEner smart-meter dataset (original: Universidad de Deusto / GoiEner, Zenodo, CC-BY 4.0): raw.tzst (2.0GB compressed, ~15GB unpacked) containing 25,559 per-supply-point CSV files of hourly household electricity consumption (kWh) for the Basque Country / Navarre region of Spain, 2014-11-02 to 2022-06-08, plus metadata.csv (tariffs, contracted power, location). Committed as actual data, not a link; downloaded/re-hosted 2026-09-13, unmodified, with attribution.",
+  "why_useful": "A genuine open, granular (hourly, per-meter, ~8 year span) smart-meter electricity panel \u2014 exactly the modality this theme is scouting for as an occupancy/activity proxy, even though the geography (Basque/Navarre, mixed residential) is not purely touristic; usable as a template/comparator for building an ADR-orthogonal occupancy proxy or for testing the smart-meter-as-occupancy-proxy method before looking for a tourist-specific panel.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   8
+  ],
+  "geography": "Spain (Basque Country, Navarre)",
+  "time_coverage": "2014-11-02 to 2022-06-08 (hourly)",
+  "size_hint": "25,559 meters; 2.0GB compressed / ~15GB unpacked",
+  "license": "CC-BY 4.0 (per repo note; possible CC-BY-SA ambiguity per upstream Zenodo record)",
+  "last_activity": "2026-09-12 (mirror created); underlying Zenodo data through 2022",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "A genuine open, granular (hourly, per-meter, ~8 year span) smart-meter electricity panel \u2014 exactly the modality this theme is scouting for as an occupancy/activity proxy, even though the geography (Basque/Navarre, mixed residential) is not purely touristic; usable as a template/comparator for building an ADR-orthogonal occupancy proxy or for testing the smart-meter-as-occupancy-proxy method before looking for a tourist-specific panel."
+  ]
+ },
+ {
+  "key": "github:luminati-io/ecommerce-dataset-samples",
+  "url": "https://github.com/luminati-io/eCommerce-dataset-samples",
+  "name": "eCommerce-dataset-samples",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Bright Data (formerly Luminati) org repo of committed sample datasets, one per retailer, each >1,000 records, in JSON/NDJSON/CSV/Parquet (optionally gzipped). Sites covered: Amazon, Walmart, Target, eBay, Zara, Home Depot, plus more. Fields (~17 per record): title, ASIN/product id, URL, initial_price, final_price, currency, availability/inventory, reviews_count, rating, description, categories, brand, features, images_count, image_url, seller info, delivery details. Described as subsets of larger paid datasets with 'millions of records'; no dates/geography stated in README, 91 stars, updated 13 Sep 2026 (actively maintained).",
+  "why_useful": "Directly the requested template: a real, committed multi-retailer price/rank/review-count dataset schema (price, rating, review velocity, availability) that is the closest open analogue to what a scraped Airbnb search-page panel would need to look like for point-in-time price/availability nowcasting. Useful as a schema/format reference for the team's own fee-panel search-page capture (rule #6) and for gap #2 (realised price/occupancy proxies) methodology, even though it is retail not travel.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   5
+  ],
+  "size_hint": ">1,000 records per sample file across ~6+ retailers; full paid dataset described as millions of rows",
+  "time_coverage": "not stated in README",
+  "geography": "not stated (likely US-centric given US retailers listed)",
+  "license": "none declared (proprietary/unclear per gh API)",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Directly the requested template: a real, committed multi-retailer price/rank/review-count dataset schema (price, rating, review velocity, availability) that is the closest open analogue to what a scraped Airbnb search-page panel would need to look like for point-in-time price/availability nowcasting. Useful as a schema/format reference for the team's own fee-panel search-page capture (rule #6) and for gap #2 (realised price/occupancy proxies) methodology, even though it is retail not travel."
+  ]
+ }
+]

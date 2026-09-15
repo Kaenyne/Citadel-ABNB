@@ -1,0 +1,153 @@
+[
+ {
+  "key": "github:googlechrome/crux",
+  "url": "https://github.com/GoogleChrome/CrUX",
+  "name": "CrUX",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Google Chrome team repo for the Chrome UX Report: example BigQuery SQL queries, dataset schema docs, changelog of CrUX releases, issue tracker for the public BigQuery dataset `chrome-ux-report`. No committed rows itself; it is the canonical pointer/method for querying per-origin popularity rank and Core Web Vitals monthly since ~2018 via BigQuery (free tier covers occasional queries).",
+  "why_useful": "Authoritative source and ready-made SQL for pulling airbnb.com's monthly popularity-rank decile/percentile history from 2018 onward if crux-dumps' 2021+ coverage isn't long enough or a fresher pull is needed.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "code + docs only; underlying BigQuery dataset is multi-TB",
+  "time_coverage": "2017/2018-present, monthly",
+  "geography": "global, some country splits",
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-05",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank",
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Authoritative source and ready-made SQL for pulling airbnb.com's monthly popularity-rank decile/percentile history from 2018 onward if crux-dumps' 2021+ coverage isn't long enough or a fresher pull is needed.",
+   "CrUX's public BigQuery dataset covers per-origin real-Chrome-user metrics for airbnb.com and competitor domains monthly since 2017; this repo is just the query cookbook needed to pull it (gap 5 popularity-rank angle), not itself a data cache.",
+   "Matches gap #5 (\"Chrome UX Report popularity rank\") exactly; CrUX's origin popularity ranking (rank buckets by real Chrome traffic) is a free, monthly, historically-versioned alternative/complement to Similarweb-style traffic estimates for airbnb.com and competitor domains."
+  ]
+ },
+ {
+  "key": "github:distrinet/tranco-list",
+  "url": "https://github.com/DistriNet/tranco-list",
+  "name": "tranco-list",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Source code (Python: combined_lists.py, generate_daily_list.py, job_handler.py/job_server.py, generate_domain_parts.py) that produces the daily Tranco top-1M website ranking, a research-oriented, manipulation-hardened alternative to Alexa/Similarweb rankings; the live ranking lists themselves are served from tranco-list.eu (daily-updated, historical lists downloadable by date from that companion site), with the generation code open on GitHub.",
+  "why_useful": "Tranco is explicitly designed to be a stable, citable, point-in-time domain-popularity ranking (each list has a fixed hash/date), which is exactly the point-in-time property the team's rules require and Google Trends lacked; could track airbnb.com vs vrbo.com/booking.com/expedia.com rank drift back to 2018.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "code only; external lists are ~1M domains/day since 2018",
+  "time_coverage": "2018-present, daily",
+  "geography": "global",
+  "license": "unspecified",
+  "last_activity": "2026-09-05",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank",
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Tranco is explicitly designed to be a stable, citable, point-in-time domain-popularity ranking (each list has a fixed hash/date), which is exactly the point-in-time property the team's rules require and Google Trends lacked; could track airbnb.com vs vrbo.com/booking.com/expedia.com rank drift back to 2018.",
+   "Directly matches CONTEXT gap #5 (\"Tranco / Common Crawl host-graph ranks\") as an engagement/traffic-rank proxy; a historical Tranco pull for airbnb.com vs. booking.com/expedia.com/vrbo.com domains could serve as a crude relative web-traffic-momentum indicator ahead of prints, and this repo is the citable source/generation method plus pointer to the historical list archive.",
+   "Named explicitly in gap #5 (Tranco / Common Crawl host-graph ranks); gives a durable, versioned, non-manipulable domain-popularity rank history for Airbnb vs. peers as an engagement-momentum proxy, and the companion tranco-python-package / tranco-list-api repos below make historical list IDs machine-pullable."
+  ]
+ },
+ {
+  "key": "github:zakird/crux-top-lists",
+  "url": "https://github.com/zakird/crux-top-lists",
+  "name": "crux-top-lists",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Monthly CSV.gz snapshots (columns: origin, rank) of Chrome's top ~1M sites derived from Google's public CrUX BigQuery dataset. Rank is bucketed (1000/10K/100K/1M) by pageload volume, both global and country-specific lists, cached under data/global/ back to roughly 2018 (monthly releases, second Tuesday of month). Current file at raw.githubusercontent.com/zakird/crux-top-lists/main/data/global/current.csv.gz. CITATION.cff present.",
+  "why_useful": "airbnb.com's CrUX popularity-rank bucket over time is a free, long-running proxy for site-visit volume/engagement (gap #5, engagement/web-traffic). Monthly history since 2018 lets you build a point-in-time-ish visitation trend and compare against nights/GBV seasonality; also covers competitor domains (booking.com, vrbo.com, expedia.com) for relative-share reads.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global + per-country",
+  "time_coverage": "~2018-present, monthly",
+  "size_hint": "CSV.gz per month, ~1M rows each, chunked",
+  "license": "Data under Google CrUX Dataset Terms; repo code likely permissive (check LICENSE file)",
+  "last_activity": "actively maintained (monthly automated releases)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "airbnb.com's CrUX popularity-rank bucket over time is a free, long-running proxy for site-visit volume/engagement (gap #5, engagement/web-traffic). Monthly history since 2018 lets you build a point-in-time-ish visitation trend and compare against nights/GBV seasonality; also covers competitor domains (booking.com, vrbo.com, expedia.com) for relative-share reads."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cc-webgraph",
+  "url": "https://github.com/commoncrawl/cc-webgraph",
+  "name": "cc-webgraph",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Common Crawl Java toolkit to build host-level and domain-level web graphs from Common Crawl crawl data and compute PageRank / Harmonic Centrality rankings using the WebGraph framework. No graph files or ranking CSVs are committed in the repo itself \u2014 the actual host-rank datasets (domain harmonic-centrality and PageRank tables, updated with most Common Crawl monthly crawls) are announced/hosted separately on commoncrawl.org's webgraph release pages (e.g. s3://commoncrawl/projects/hyperlinkgraph/).",
+  "why_useful": "This is the actual method behind 'Common Crawl host-graph rank' named in the theme brief \u2014 it lets you derive a host-level authority/rank score for airbnb.com and competitor domains from Common Crawl's periodically released host graphs (several per year, going back to ~2017), a free alternative to Tranco/Majestic that is already partially in scope given we hold a Common Crawl CDX index over airbnb.com (existing holding). Directly extends what we already hold rather than duplicating it.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "per Common Crawl webgraph releases, ~2017-present, several/year",
+  "size_hint": "toolkit only; source webgraphs are multi-GB, hosted externally at commoncrawl.org/web-graphs",
+  "license": "Apache-2.0",
+  "last_activity": "176 commits, appears actively maintained",
+  "duplicate_of_holding": "extends existing Common Crawl CDX index over airbnb.com; different data product (host-graph rank vs CDX index)",
+  "hits": 4,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank",
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "This is the actual method behind 'Common Crawl host-graph rank' named in the theme brief \u2014 it lets you derive a host-level authority/rank score for airbnb.com and competitor domains from Common Crawl's periodically released host graphs (several per year, going back to ~2017), a free alternative to Tranco/Majestic that is already partially in scope given we hold a Common Crawl CDX index over airbnb.com (existing holding). Directly extends what we already hold rather than duplicating it.",
+   "This is the authoritative method for producing a Common Crawl-derived domain popularity/authority rank for airbnb.com and competitor domains over time (each crawl release gives a new rank snapshot, several times a year back to 2017) \u2014 a genuine point-in-time web-authority series, complementary to our existing Common Crawl CDX index over airbnb.com pages. Falls under gap 5 (web-traffic-like popularity proxies) as an acquisition method rather than a stored dataset; the actual rank tables must be pulled from Common Crawl's S3 announcements, which are public and free.",
+   "Could be re-run to derive a longitudinal 'web-graph rank' for airbnb.com vs vrbo.com/booking.com/expedia.com as an engagement/authority proxy (gap 5, 19). We already hold a CDX index over airbnb.com; this is the tool that turns crawl data into rank numbers.",
+   "A free, Common-Crawl-native alternative to Tranco/CrUX for a web-popularity time series on airbnb.com vs booking.com/expedia.com/vrbo.com -- directly targets gap 5 (web-traffic-estimate / rank proxies) and gap 19 (bot/crawler-visible presence) without any paid Similarweb-type feed. Ranks are released per crawl (roughly monthly/bi-monthly), so a multi-year vintage series is buildable by re-downloading historical rank releases."
+  ]
+ },
+ {
+  "key": "github:mediawiki-utilities/python-mwviews",
+  "url": "https://github.com/mediawiki-utilities/python-mwviews",
+  "name": "python-mwviews",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client library (MIT, ~38 commits, 67 stars) for the Wikimedia pageviews API and static pageview dumps. Query per-article views, per-project views, and top-N articles by project/access-method/agent-type at daily/monthly granularity back to July 2015 (API) with dump-parsing support for older static counts. No data committed; pure acquisition tooling.",
+  "why_useful": "Directly builds Gap 5 (Wikipedia pageviews tooling as an engagement/destination-demand proxy) \u2014 a maintained, well-documented one-command way to pull pageviews for any city/attraction/landmark Wikipedia article (e.g. 'New York City', 'Eiffel Tower', destination pages) as a free, high-frequency, near-real-time travel-interest signal comparable to Google Trends but with committable raw counts instead of blocked normalization.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global (any Wikipedia language edition/article)",
+  "time_coverage": "API: July 2015-present daily; static dumps back further with separate parsing",
+  "size_hint": "client library, no bundled data",
+  "license": "MIT",
+  "last_activity": "unspecified exact date; actively maintained per repo stats",
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)",
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels",
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Directly builds Gap 5 (Wikipedia pageviews tooling as an engagement/destination-demand proxy) \u2014 a maintained, well-documented one-command way to pull pageviews for any city/attraction/landmark Wikipedia article (e.g. 'New York City', 'Eiffel Tower', destination pages) as a free, high-frequency, near-real-time travel-interest signal comparable to Google Trends but with committable raw counts instead of blocked normalization.",
+   "One-command pull of Airbnb's (and Vrbo/Booking/Expedia/Vacasa's) Wikipedia pageview history as a free, long-run public-attention proxy (gap 5: engagement/web-traffic estimates) \u2014 Wikipedia pageviews are public back to ~2007-2015 depending on project, and this tool is simpler than hitting the raw REST API directly.",
+   "Same gap #5 use case as pageview-api but adds access to Wikimedia's static dump files, which is useful for getting a longer point-in-time-stamped Airbnb pageview history in one pull rather than many API calls.",
+   "Matches gap #5 (\"Wikipedia pageviews tooling\"); pageviews on the \"Airbnb\", \"Vrbo\", \"Booking.com\" etc. Wikipedia articles, or on destination-city pages, are a free, long-history, point-in-time-stable (dumps are dated) engagement/interest proxy that complements (and is less noisy for point-in-time purposes than) Google Trends, which the team already found not to work as pulled.",
+   "Lets the team pull daily pageviews for destination-city pages, 'Digital nomad', 'Short-term rental', 'FIFA World Cup 2026', or country-tourism pages as a free, easy, non-Airbnb travel-interest nowcast series -- a different construction from the Google Trends approach that already failed (0/162), and genuinely point-in-time since Wikipedia dump timestamps are fixed at publication."
+  ]
+ }
+]

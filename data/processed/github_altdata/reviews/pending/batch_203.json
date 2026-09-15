@@ -1,0 +1,150 @@
+[
+ {
+  "key": "github:polina-postnikova/digital-nomad-research",
+  "url": "https://github.com/polina-postnikova/Digital-Nomad-Research",
+  "name": "Digital-Nomad-Research",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Academic replication package for digital-nomad-visa policy adoption. Processed dataset DigitalNomadDataset.xlsx with two sheets: tourism_and_macroeconomic_data (2,464 country-year rows: GDP, unemployment, tourism expenditure and GDP share, tourism employment, business/total tourism arrivals, internet usage, inflation, FX rate, price-level index) and policy_data (33 confirmed digital-nomad-visa adopter countries: adoption timing, permit duration, income requirements, visa fees, tax treatment, remote-work eligibility). Also ships intermediate LLM-audit files (LLM_Stage1.xlsx, LLM_Stage2.xlsx, Audit_Stage1_Stage2.csv) documenting a 190-jurisdiction screening process. Applies TWFE and a Callaway-Sant'Anna-style group-time DID estimator to the policy adoption. MIT license (code); underlying World Bank/UN Tourism data retain their own licences. Last substantive update 2026-08-09.",
+  "why_useful": "Directly fills gap 16 (digital-nomad visa dataset) with a genuine policy panel plus a much broader 190-country tourism/macro panel that could substitute or cross-check for LatAm/APAC travel-volume gaps (gap 7).",
+  "potential": "high",
+  "gap_targets": [
+   16,
+   7
+  ],
+  "geography": "33 countries (visa policy) / 190 countries (macro-tourism panel)",
+  "time_coverage": "multi-year panel (years not fully specified in README summary)",
+  "size_hint": "one xlsx, 2,464 rows in macro panel + 33 policy records",
+  "license": "MIT (code); third-party data retains original licence",
+  "last_activity": "active, 94 commits on main",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)",
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Directly fills gap 16 (digital-nomad visa dataset) with a genuine policy panel plus a much broader 190-country tourism/macro panel that could substitute or cross-check for LatAm/APAC travel-volume gaps (gap 7).",
+   "A research-grade (causal-inference-ready) digital-nomad-visa panel \u2014 complements the 0brien18 dataset above for gap 16, and the DiD code itself is a reusable method for event-study style analysis of policy shocks (also relevant to gap 12 STR-regulation event studies methodologically).",
+   "Directly addresses gap 16 (remote-work/long-stay demand, digital-nomad visa datasets) with an actual policy-adoption panel and a country-year tourism/macro panel across 190 countries -- usable to test whether digital-nomad-visa adoption correlates with long-stay booking demand in ABNB's addressable markets, and the event-study/DID method itself is reusable for other ABNB-adjacent policy shocks (e.g. STR ordinances).",
+   "Directly targets gap #16 (remote-work/long-stay demand) with a pre-built causal-inference template (Callaway-Sant'Anna) we already use elsewhere in the repo (margin/regulatory work) \u2014 visa-adoption events are testable against Airbnb's long-stay night share by region."
+  ]
+ },
+ {
+  "key": "github:0brien18/global-emigration-dataset",
+  "url": "https://github.com/0brien18/global-emigration-dataset",
+  "name": "global-emigration-dataset",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "9 committed CSVs: easiest-countries-2026.csv, digital-nomad-visas-2026.csv (income requirements per programme), visa-processing-times-2026.csv, immigration-pathways-by-category-2026.csv, visa-thresholds-global-2026.csv, cost-of-living-global-2026.csv, salary-by-profession-global-2026.csv, quality-of-life-global-2026.csv, data-dictionary.csv. Covers 190+ countries, 2,500+ visa/residency pathways, sourced from a third-party site (WhereToEmigrate.io), July 2026 snapshot, CC BY 4.0, only 2 commits.",
+  "why_useful": "Broad digital-nomad-visa and cost-of-living cross-country dataset (gap 16); the cost-of-living-global-2026.csv could proxy destination attractiveness/affordability shifts relevant to nights mix, though provenance (a single third-party site scrape) and only 2 commits warrant caution.",
+  "potential": "high",
+  "gap_targets": [
+   16
+  ],
+  "geography": "190+ countries",
+  "time_coverage": "single July 2026 snapshot, claimed quarterly refresh",
+  "size_hint": "9 CSVs, 2,500+ pathway rows",
+  "license": "CC BY 4.0",
+  "last_activity": "2 commits, 2026",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)",
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Broad digital-nomad-visa and cost-of-living cross-country dataset (gap 16); the cost-of-living-global-2026.csv could proxy destination attractiveness/affordability shifts relevant to nights mix, though provenance (a single third-party site scrape) and only 2 commits warrant caution.",
+   "Directly fills gap 16 (remote-work/long-stay demand, digital-nomad visa datasets) with a structured, country-level digital-nomad-visa panel that could proxy long-stay demand growth markets for Airbnb.",
+   "A broader, non-academic companion to the Digital-Nomad-Research package for gap 16 -- gives income thresholds and processing times per digital-nomad program, which is the input needed to model how easy/attractive long-stay remote-work travel is into a given country, a plausible driver of ABNB's long-stay/EMEA-APAC nights mix.",
+   "Broader superset of the nomad-visa idea (gap #16); mostly redundant with the two more focused datasets above but wider country coverage could fill APAC/LatAm gaps they miss."
+  ]
+ },
+ {
+  "key": "github:markphamm/local_warehouse_pipeline",
+  "url": "https://github.com/MarkPhamm/local_warehouse_pipeline",
+  "name": "MarkPhamm/local_warehouse_pipeline",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A local-first ELT pipeline (dlt + PyArrow extraction, DuckDB + dbt transform, Prefect orchestration, Visivo dashboards) that pulls CFPB consumer-complaint data live from the CFPB complaints API. Users configure target companies and start dates in src/cfg/config.py; staged data lands as daily Parquet files under landing/cfpb_complaints/YYYY_MM_DD/, one file per company per day, supporting incremental and historical backfills. MIT-licensed, updated 27 Jun 2026, 11 stars.",
+  "why_useful": "A ready-made, working, non-Airbnb-site method to pull CFPB complaint records filtered to a target company \u2014 pointed at 'Airbnb, Inc.' as the configured company this becomes exactly the sanctioned CFPB-complaints-about-Airbnb dataset the theme asks for (refund/cancellation complaint counts and text as a service-friction proxy), without scraping airbnb.com itself.",
+  "potential": "high",
+  "license": "MIT",
+  "last_activity": "2026-06-27",
+  "geography": "US",
+  "time_coverage": "configurable start date to present, daily granularity",
+  "size_hint": "pipeline code, not a static dataset; output scales with configured pull window",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "A ready-made, working, non-Airbnb-site method to pull CFPB complaint records filtered to a target company \u2014 pointed at 'Airbnb, Inc.' as the configured company this becomes exactly the sanctioned CFPB-complaints-about-Airbnb dataset the theme asks for (refund/cancellation complaint counts and text as a service-friction proxy), without scraping airbnb.com itself."
+  ]
+ },
+ {
+  "key": "github:thisiszaq/nowcasting-mexico",
+  "url": "https://github.com/thisisZAQ/nowcasting-mexico",
+  "name": "nowcasting-mexico",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reproducible Snakemake pipeline nowcasting Mexican IGAE (economic-activity index) 2018-2024 using Banxico API series (exchange rate, CETES, M1, credit), INEGI flat files (industrial production, retail sales, unemployment), Google Trends (7 keywords) and Google Mobility (2020-2022). Implements AR(4), MIDAS, DFM, LASSO, Ridge, Random Forest with pseudo-out-of-sample evaluation, R+Python, Zenodo DOI 10.5281/zenodo.20563443 for the writeup. No committed data files, but automated pull scripts for all sources.",
+  "why_useful": "Directly answers gap #17 (nowcasting with mixed-frequency data, MIDAS/DFM) applied to Mexican macro activity, which is a LatAm demand proxy for ABNB's Mexico City market; the code pattern (Banxico pull + Trends + mobility + MIDAS) is reusable for a Mexico travel-demand nowcast.",
+  "potential": "high",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "geography": "Mexico",
+  "time_coverage": "not stated in listing, IGAE monthly series",
+  "size_hint": "small repo, code + replication package",
+  "license": "other (custom, check Zenodo terms)",
+  "last_activity": "2026-07-14",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Directly answers gap #17 (nowcasting with mixed-frequency data, MIDAS/DFM) applied to Mexican macro activity, which is a LatAm demand proxy for ABNB's Mexico City market; the code pattern (Banxico pull + Trends + mobility + MIDAS) is reusable for a Mexico travel-demand nowcast.",
+   "Fills gap #7 (LatAm regional travel/economic volume \u2014 Mexico specifically) via a live Banxico API client plus a full MIDAS/DFM nowcasting toolkit (also relevant to gap #17's 'nowcasting with mixed-frequency data' ask), reusable as a template even if the Google Trends leg alone is weak.",
+   "Direct template for gap #7 (LatAm regional travel/consumer volume, esp. Mexico DATATUR/INEGI-adjacent) and gap #17 (mixed-frequency nowcasting methods incl. MIDAS/DFM combined with Google Trends and mobility data) \u2014 could be adapted to nowcast ABNB LatAm nights using Mexico macro + Trends + mobility as regressors, and the MIDAS/DFM code is directly reusable methodology."
+  ]
+ },
+ {
+  "key": "github:openstates/openstates-scrapers",
+  "url": "https://github.com/openstates/openstates-scrapers",
+  "name": "openstates-scrapers",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open States project's scraper codebase (22,236 commits, GPL-3.0, actively maintained) covering bills and votes for all 50 US state legislatures, feeding the Open States API/bulk data. Not itself a committed bill-text dataset here, but the live method to pull every state-level short-term-rental bill (registration caps, tax changes, statewide preemption fights) with bill status history.",
+  "why_useful": "A much larger and more actively maintained alternative to pylegiscan for a US state-level STR-ordinance/bill tracker (gap #12): openstates.org's own bulk data/API (not scraped by us) could be queried for 'short-term rental' bills across all 50 states with full text and status history.",
+  "potential": "high",
+  "license": "GPL-3.0",
+  "last_activity": "very active, 22,236 commits total on repo",
+  "geography": "all US states",
+  "time_coverage": "varies by state, generally multi-year current-session coverage via openstates.org bulk data",
+  "size_hint": "large scraper codebase; actual bill data lives on openstates.org, not committed in this repo",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers",
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "A much larger and more actively maintained alternative to pylegiscan for a US state-level STR-ordinance/bill tracker (gap #12): openstates.org's own bulk data/API (not scraped by us) could be queried for 'short-term rental' bills across all 50 states with full text and status history.",
+   "Fills gap #12 (STR ordinance/legislation trackers) at the state level across all 50 states, complementing city-level Legistar coverage; state preemption laws are a first-order driver of city STR caps that affect Airbnb US supply."
+  ]
+ }
+]

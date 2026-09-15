@@ -1,0 +1,19 @@
+# L3 fee-panel preregistration v1
+
+Lead · 2026-09-13 · codex/lane3-full. Saved before running new analysis or tests.
+
+Implementation pass: consumes existing sanctioned capture CSVs without collection, rejects duplicate observations, invalid prices/currencies and information-date leakage; treatment uses host residence only, with unknown residence excluded from the primary association. Synthetic arithmetic tests must recover theta and cover Mexico, failed overlap, missing waves, missing arms and changing currency. Research pass requires >=40% complete-panel overlap and a finite 95% theta interval of width strictly <0.58. No future captures are fabricated.
+
+September dates: 14/16/18, non-EEA resident hosts treated. October: 12/14/16, EEA/Switzerland treated; already-treated non-EEA hosts are only an assumed stable comparator. One pre and two post observations in either wave imply no identified pre-trend. Early migration and unknown actual switch dates make any result a deadline association, not automatically causal pass-through. No automatic October/September pooling or extrapolation to ABNB revenue.
+
+Primary key is listing_id, checkin, checkout, nights, wave capture date. Compare the same listing/stay/currency; exact duplicate keys require explicit input selection instead of averaging multiple runs. Join residence and strata from frozen sample_ids.csv (or an explicitly supplied metadata CSV with the same schema and source date). Do not infer host residence from listing country. The small frozen sample overlap does not imply that unjoined search listings are treated or control.
+
+Overlap denominator is the number of valid pre-wave listing/stay observations in each stratum; numerator is their intersection with each post and both posts together. Also publish Jaccard overlap for each pair. Report pooled, city-by-stay, residence arm, room type, bedroom and host-class strata. Every observed nonempty pre stratum must reach 40% balanced-three-run retention for the primary estimate, as well as each residence arm; no stratum can be hidden by pooling. Unknown residence has descriptive overlap but is not a primary gate stratum. Missing or unsupported treatment/control arms block estimation. Coverage against the frozen sampling frame is reported separately.
+
+Estimator, fixed before data: average log listed price across the two post dates minus pre log listed price, per complete listing/stay. OLS on intercept, stay-window dummies and treated * log((1-old_host_fee)/(1-new_host_fee)); listing-cluster robust 95% interval with t(G-1), at least four listing clusters and two in each arm. Old host fee 0.03 is an explicit fee-mechanics assumption. New fee is 0.155, 0.16 for Mexico/Brazil listing fee regimes. theta is a log-repricing fraction; never divide log changes by the 14.79% arithmetic price change. The listing difference removes fixed listing, market and stay-quality levels; it does not remove market-specific time trends. City and professional-host results remain stratified diagnostics. The same assumed neutral denominator is published for every fee regime. Listed-price units never become verified guest totals.
+
+If overlap fails publish city/stay/date/currency descriptive median indices, no primary theta. If metadata, waves or controls are absent leave theta and interval null. Report all failures and n. The runner refuses existing output directories. No ABNB registry changes or adoption of a fee uplift. W1/W2 forecast effectiveness is unmeasured, n=0.
+
+## RESUME
+
+Run the new fee_panel_v1 consumer after each already scheduled capture is provided. Preserve this preregistration and use new output directories. Never launch or change capture jobs. Interpret only associations that clear coverage and precision, and require a separate fee/revenue basis bridge before L4 replaces any assumed fee mechanics.

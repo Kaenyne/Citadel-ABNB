@@ -1,0 +1,10 @@
+{
+ "slug": "databnb-10city-zillow-panel",
+ "url": "https://github.com/estherkim99/cs1951a-final",
+ "category": "housing_rental",
+ "data_kind": "both",
+ "one_line": "Class project pre-joining ~4 years of Inside Airbnb scrapes for 10 US cities (~347k listing rows, SQLite) to Zillow ZHVI/ZRI housing indices.",
+ "abnb_use": "Directly touches gap #13 (STR vs. long-term-rental crossover, host supply economics) with a ready multi-city, multi-year join already built.",
+ "sample_plan": "Pull the committed SQLite database (or data/database_sample.txt) and the two small Zillow CSVs (ZHVI 507 rows, ZRI 466 rows); NYC/LA raw listings were excluded from the repo so nothing oversized to worry about.",
+ "tos_or_license_flag": true
+}

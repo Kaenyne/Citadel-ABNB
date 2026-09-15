@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:mellinkarl/predicting-airbnb-listing-survival-using-machine-learning",
+  "url": "https://github.com/mellinkarl/Predicting-Airbnb-Listing-Survival-Using-Machine-Learning",
+  "name": "Predicting-Airbnb-Listing-Survival-Using-Machine-Learning",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Student ML project with a data/ directory containing multiple committed CSVs across at least two US cities: cleaned_austin_v1.csv, cleaned_austin_v2.csv, cleaned_austin_v3.csv (three cleaned vintages, suggesting a multi-snapshot Austin panel used for survival labeling), plus listings.csv, listings_detailed.csv, processed_listings.csv, and a separate Seattle/ subdirectory. Includes a PDF report and notebooks. 0 stars, updated Dec 2025.",
+  "why_useful": "Directly on-theme: a researcher-compiled, cleaned, versioned listing-survival dataset (not a raw single Kaggle snapshot) for two cities we already hold via Inside Airbnb raw dumps \u2014 the value-add is the derived survival/exit labeling and versioned cleaning, which could be reused or cross-checked against our own Austin/13-city panel rather than re-deriving survival from scratch. Small city count and unclear licence/time span (needs opening the notebook/PDF to confirm vintage years) limit it to medium rather than high.",
+  "potential": "medium",
+  "license": "none declared",
+  "last_activity": "2025-12-02",
+  "geography": "Austin TX, Seattle WA",
+  "time_coverage": "unclear (multiple cleaned versions suggest at least 2-3 Inside Airbnb snapshot dates per city; needs notebook inspection)",
+  "size_hint": "~35MB of CSVs across data/",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "Partial overlap: we already hold Austin (13-city Inside Airbnb panel) but not a survival-labeled derived version; Seattle is not in our current 13-city list.",
+  "hits": 2,
+  "themes": [
+   "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)"
+  ],
+  "why_all": [
+   "Directly on-theme: a researcher-compiled, cleaned, versioned listing-survival dataset (not a raw single Kaggle snapshot) for two cities we already hold via Inside Airbnb raw dumps \u2014 the value-add is the derived survival/exit labeling and versioned cleaning, which could be reused or cross-checked against our own Austin/13-city panel rather than re-deriving survival from scratch. Small city count and unclear licence/time span (needs opening the notebook/PDF to confirm vintage years) limit it to medium rather than high.",
+   "A committed, ready-to-inspect multi-vintage Austin (+ Seattle) listing panel built specifically for survival prediction \u2014 worth checking whether its Austin vintages cover any of the pre-2023 or NYC-analogous gap window, or extend our existing Austin coverage backward."
+  ]
+ },
+ {
+  "key": "github:estherkim99/cs1951a-final",
+  "url": "https://github.com/estherkim99/cs1951a-final",
+  "name": "estherkim99/cs1951a-final (Databnb project)",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Class project ('Databnb') compiling roughly 20 Inside Airbnb scrapes per city over a 4-year window for 10 US cities (Seattle, Nashville, San Francisco, Denver, Boston, Austin, Chicago, Los Angeles, New York) plus Zillow ZHVI (507 rows) and ZRI (466 rows) housing indices, stored in SQLite; totals ~347,440 listing rows across cities. NYC and LA full CSVs were too large to commit to GitHub (attempted, then dropped); a data/database_sample.txt sample file is included. Project site: https://cs1951a-s20-brown.github.io/projects/project_data/Databnb/data.html.",
+  "why_useful": "A pre-built multi-year (4-year), multi-city (10 US cities) longitudinal listing panel already joined to housing-value indices (Zillow ZHVI/ZRI) \u2014 useful as a ready cross-check dataset for STR-vs-long-term-rental crossover (gap #13) even though the underlying source is Inside Airbnb we already hold in other vintages.",
+  "potential": "medium",
+  "gap_targets": [
+   1,
+   13
+  ],
+  "geography": "Seattle, Nashville, San Francisco, Denver, Boston, Austin, Chicago, Los Angeles, New York",
+  "time_coverage": "~4 years, ~20 scrapes/city (exact years not stated in visible content)",
+  "size_hint": "~347,440 listing rows (SQLite + partial CSVs; NYC/LA CSVs excluded from repo for size)",
+  "license": "unstated (academic class project)",
+  "last_activity": "~2020 (course project, Spring 2020 cohort)",
+  "duplicate_of_holding": "Underlying source is Inside Airbnb, which we already hold for a different city/vintage mix; this fills specific vintages/cities (Denver, Nashville pre-existing years) we may not have and pre-joins to Zillow housing indices",
+  "hits": 1,
+  "themes": [
+   "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)"
+  ],
+  "why_all": [
+   "A pre-built multi-year (4-year), multi-city (10 US cities) longitudinal listing panel already joined to housing-value indices (Zillow ZHVI/ZRI) \u2014 useful as a ready cross-check dataset for STR-vs-long-term-rental crossover (gap #13) even though the underlying source is Inside Airbnb we already hold in other vintages."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities",
+  "url": "https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities",
+  "name": "Airbnb Prices in European Cities (Kaggle mirror)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Kaggle-hosted mirror of the academic Gyodi & Nawaro (2021, 'Determinants of price in the sharing economy: An analysis of Airbnb data') scrape: per-city weekday/weekend CSVs for roughly 10 European cities including Amsterdam, Athens, Berlin, Lisbon and Vienna from our target list (plus Barcelona, Budapest, London, Paris, Rome), collected Aug 2018 and Jan 2019, with columns for price (realSum), room_type, person_capacity, host_is_superhost, distance to city centre/metro, cleanliness/satisfaction ratings, and weekday/weekend flag. Original source is an academic Mendeley Data deposit (exact DOI/ID not independently verified this session -- a direct Mendeley URL guess 404'd, so only the Kaggle mirror is confirmed reachable).",
+  "why_useful": "One of the only multi-city academic-grade Airbnb price panels that actually covers five of our ten target cities (Amsterdam, Athens, Berlin, Lisbon, Vienna) simultaneously with a consistent methodology and hedonic covariates -- useful as an older, independent cross-check on relative ADR/price levels across those markets even though it predates our current window (2018-19 vintage, one-time weekday/weekend cut, not a time series).",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   20
+  ],
+  "geography": "Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, London, Paris, Rome, Vienna",
+  "time_coverage": "Two snapshots: August 2018 and January 2019 (weekday/weekend each)",
+  "size_hint": "~51,000 listing-rows across the 10 cities per public description",
+  "license": "Kaggle dataset licence not independently confirmed this session",
+  "last_activity": "Underlying academic collection 2018-2019; Kaggle mirror upload date not confirmed",
+  "duplicate_of_holding": "Distinct vintage/methodology from our 13-city Inside Airbnb panel and our 123-market reviews-based stays index; not previously catalogued",
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "One of the only multi-city academic-grade Airbnb price panels that actually covers five of our ten target cities (Amsterdam, Athens, Berlin, Lisbon, Vienna) simultaneously with a consistent methodology and hedonic covariates -- useful as an older, independent cross-check on relative ADR/price levels across those markets even though it predates our current window (2018-19 vintage, one-time weekday/weekend cut, not a time series)."
+  ]
+ },
+ {
+  "key": "github:jenna-creator/medellin-airbnb-displacement-risk",
+  "url": "https://github.com/Jenna-Creator/medellin-airbnb-displacement-risk",
+  "name": "medellin-airbnb-displacement-risk",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Pipeline flagging Medellin/Barranquilla, Colombia neighborhoods where Airbnb growth concentrates in low-income areas. Committed: comuna_estrato.csv (Medellin socioeconomic strata by comuna), barranquilla_barrio_estrato.csv (parcel-level ESTRATO_1994 layer, maintained through 2025), dane_housing_blocks.geojson (DANE 2018 census block housing counts), medellin_barrio_housing.csv / barranquilla_barrio_housing.csv (aggregated housing units), plus geospatial boundaries: 265 barrios/16 comunas (Medellin, from GeoMedellin) and 189 barrios/5 localidades (Barranquilla, from Secretaria Distrital de Planeacion). Airbnb listings themselves are pulled via an Apify scraper (method, not a static committed dump) rather than stored point-in-time snapshots. README gives no row counts. Repo created/updated 13 Sep 2026 (one day before this scan) \u2014 very new, single contributor, unclear maturity.",
+  "why_useful": "First concrete LatAm-city STR + regulation/displacement-adjacent dataset found for this theme: ties Colombian Airbnb growth to DANE census and municipal socioeconomic-strata (estrato) data for two cities not in our current Inside Airbnb panel, relevant to gap #12 (regulation/registration context) and gap #7 (regional supply/housing crossover) even though it is not a pure ADR/occupancy series.",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   12,
+   13
+  ],
+  "geography": "Medellin and Barranquilla, Colombia",
+  "time_coverage": "DANE census baseline 2018; estrato layer maintained through 2025; Airbnb pull is live/current via Apify, not vintaged",
+  "size_hint": "Several CSVs + one geojson, city-block/barrio granularity (265 + 189 areal units); no listing-level row count given",
+  "license": "none declared",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "First concrete LatAm-city STR + regulation/displacement-adjacent dataset found for this theme: ties Colombian Airbnb growth to DANE census and municipal socioeconomic-strata (estrato) data for two cities not in our current Inside Airbnb panel, relevant to gap #12 (regulation/registration context) and gap #7 (regional supply/housing crossover) even though it is not a pure ADR/occupancy series."
+  ]
+ },
+ {
+  "key": "github:coletangsy/powerbi-airbnb-hk-market",
+  "url": "https://github.com/coletangsy/PowerBI-Airbnb-HK-market",
+  "name": "coletangsy/PowerBI-Airbnb-HK-market",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Inside Airbnb-sourced Hong Kong dataset committed as CSVs: listings-gz.csv (6,747 listings) and reviews.csv (203,701 reviews), plus an NLP-tokenized reviews file; vintage date not specified in README (likely single recent snapshot).",
+  "why_useful": "A sizeable committed HK listings+reviews snapshot (203k reviews) that could extend or cross-check our reviews-based stays index into Hong Kong, an APAC market not in our current 123-market reviews panel per CONTEXT.md unless already covered.",
+  "potential": "medium",
+  "geography": "Hong Kong",
+  "time_coverage": "unspecified (undated snapshot, repo last updated 2026-05)",
+  "size_hint": "6,747 listings; 203,701 reviews (2 main CSVs)",
+  "license": "unknown",
+  "last_activity": "2026-05-01",
+  "gap_targets": [
+   1,
+   9
+  ],
+  "duplicate_of_holding": "Possible overlap with the 120-market Jun-2026 Inside Airbnb cohort if HK is in that cohort; still worth checking vintage date since undocumented.",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "A sizeable committed HK listings+reviews snapshot (203k reviews) that could extend or cross-check our reviews-based stays index into Hong Kong, an APAC market not in our current 123-market reviews panel per CONTEXT.md unless already covered."
+  ]
+ }
+]

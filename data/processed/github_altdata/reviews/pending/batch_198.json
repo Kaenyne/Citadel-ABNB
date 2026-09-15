@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:leopardi3/oecd-cli-equity-returns",
+  "url": "https://github.com/leopardi3/oecd-cli-equity-returns",
+  "name": "leopardi3/oecd-cli-equity-returns",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Small research repo testing whether the OECD Composite Leading Indicator predicts equity returns -- ships the pulled OECD CLI series across four markets plus a leakage-free walk-forward backtest harness (stats + ML benchmarks).",
+  "why_useful": "Doubles as (a) a country-level consumer/business-cycle leading-indicator series for regional demand context and (b) a concrete worked example of a leakage-free, point-in-time-honest backtest design -- relevant to this project's own W1/W2 pre-registration discipline (methods gap #17).",
+  "potential": "low",
+  "geography": "four unspecified developed markets",
+  "time_coverage": "not specified in listing",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2026-06-06",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Doubles as (a) a country-level consumer/business-cycle leading-indicator series for regional demand context and (b) a concrete worked example of a leakage-free, point-in-time-honest backtest design -- relevant to this project's own W1/W2 pre-registration discipline (methods gap #17)."
+  ]
+ },
+ {
+  "key": "github:linwoodc3/gdelt2headerrows",
+  "url": "https://github.com/linwoodc3/gdelt2HeaderRows",
+  "name": "gdelt2HeaderRows",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "CSV schema/header-row reference files for the GDELT 2.0 Global Knowledge Graph, Events Database, and Event Mentions database (TableId, data type, nullability, description per field). 54 stars, 27 forks, 11 commits.",
+  "why_useful": "Not a travel-filtered GDELT feed itself, but the schema reference is what a follow-up agent needs to correctly parse GDELT's raw 15-minute event files for travel-relevant CAMEO event codes (protests, disasters, border/visa policy actions, transport strikes) feeding events/shocks work (gap #11) and regulation tracking (gap #12) via GDELT GKG themes.",
+  "potential": "low",
+  "gap_targets": [
+   11,
+   12,
+   17
+  ],
+  "time_coverage": "schema only, applies to GDELT 2.0 (2015-present)",
+  "geography": "global",
+  "size_hint": "small (schema files)",
+  "license": "not specified",
+  "last_activity": "not shown (11 total commits)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Not a travel-filtered GDELT feed itself, but the schema reference is what a follow-up agent needs to correctly parse GDELT's raw 15-minute event files for travel-relevant CAMEO event codes (protests, disasters, border/visa policy actions, transport strikes) feeding events/shocks work (gap #11) and regulation tracking (gap #12) via GDELT GKG themes."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-gdacs",
+  "url": "https://github.com/pipeworx-io/mcp-gdacs",
+  "name": "mcp-gdacs",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Model Context Protocol (MCP) server wrapping the GDACS global disaster feed, exposing disaster-alert queries as tools callable by an LLM agent.",
+  "why_useful": "Lets an LLM-based research agent query live global disaster alerts (type, severity, country, date) programmatically as part of an automated events-and-shocks nowcast pipeline, rather than one-off scraping -- a tooling accelerant for gap #11.",
+  "potential": "low",
+  "size_hint": "small",
+  "geography": "global",
+  "time_coverage": "live feed",
+  "license": "unspecified",
+  "last_activity": "not specified",
+  "gap_targets": [
+   11,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Lets an LLM-based research agent query live global disaster alerts (type, severity, country, date) programmatically as part of an automated events-and-shocks nowcast pipeline, rather than one-off scraping -- a tooling accelerant for gap #11."
+  ]
+ },
+ {
+  "key": "github:junchidu/pead-event-study-us-firms",
+  "url": "https://github.com/JunchiDu/pead-event-study-us-firms",
+  "name": "JunchiDu/pead-event-study-us-firms",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R event-study code testing whether post-earnings-announcement drift persists among 50 large US firms, 2000-2024, using CRSP/Compustat data (licensed, not bundled).",
+  "why_useful": "A ready-made PEAD event-study framework (gap #17 methods) that could be adapted to test whether ABNB (and peers BKNG/EXPE) exhibit drift after beats/misses on nights/ADR/guide -- relevant to how the stock trades in the days after the 5 Nov print, though it requires CRSP/Compustat access we may not have.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "US",
+  "time_coverage": "2000-2024",
+  "license": "unspecified (code only; CRSP/Compustat data is licensed)",
+  "size_hint": "single study repo",
+  "last_activity": "2026",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "A ready-made PEAD event-study framework (gap #17 methods) that could be adapted to test whether ABNB (and peers BKNG/EXPE) exhibit drift after beats/misses on nights/ADR/guide -- relevant to how the stock trades in the days after the 5 Nov print, though it requires CRSP/Compustat access we may not have."
+  ]
+ },
+ {
+  "key": "github:fivethirtyeight/data",
+  "url": "https://github.com/fivethirtyeight/data",
+  "name": "data",
+  "category": "other",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "FiveThirtyEight's full data-and-code repository behind all its published articles and graphics (CC-BY-4.0, 17,445 stars, actively updated through Sep 2026). Includes the uber-tlc-foil-response-style subfolders among many other topic folders (gig economy, freelance/labor-market pieces, consumer spending stories) each with committed CSVs matching the underlying article.",
+  "why_useful": "A broad, well-maintained pointer repo worth a manual folder-by-folder pass for any gig-economy, freelance-labor, or consumer-spending story with a data release; too large and heterogeneous to fully catalogue in this pass, flagged as a source to mine further rather than a specific dataset.",
+  "potential": "medium",
+  "geography": "mixed / mostly US",
+  "time_coverage": "spans FiveThirtyEight's publication history, ~2014-2026",
+  "size_hint": "hundreds of subfolders",
+  "license": "CC-BY-4.0",
+  "last_activity": "2026-09-14",
+  "gap_targets": [
+   6,
+   16
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "A broad, well-maintained pointer repo worth a manual folder-by-folder pass for any gig-economy, freelance-labor, or consumer-spending story with a data release; too large and heterogeneous to fully catalogue in this pass, flagged as a source to mine further rather than a specific dataset."
+  ]
+ }
+]

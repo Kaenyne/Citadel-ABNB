@@ -1,0 +1,10 @@
+{
+ "slug": "qin-yang-earningscall-multimodal-2017",
+ "url": "https://github.com/GeminiLn/EarningsCall_Dataset",
+ "category": "academic_replication",
+ "data_kind": "both",
+ "one_line": "Replication data for Qin & Yang, 'Predicting Stock Volatility Using Verbal and Vocal Cues' (ACL 2019): repo root holds only three example call folders (3M 2017-04-25, Amazon 2017-02-02, Twitter 2017-02-09), each with a ~22 KB sentence-split Text.txt plus an Audio/ directory; the full 559-call S&P 500 corpus sits in five split zips on Google Drive; no LICENSE; last commit 2022-08-04 (dormant).",
+ "abnb_use": "Gap #17 methods: a documented sentence-aligned text+audio schema and a published volatility-prediction benchmark we could mirror for ABNB call tone / earnings-implied-move work. The 2017 vintage predates ABNB's IPO, so it contributes no ABNB or travel-peer observations - template and benchmark value only.",
+ "sample_plan": "Text only, skip Audio (wav files are the bulk). `git clone --depth 1 --filter=blob:none --sparse https://github.com/GeminiLn/EarningsCall_Dataset.git && cd EarningsCall_Dataset && git sparse-checkout set '3M Company_20170425/Text.txt' 'Amazon.com Inc._20170202/Text.txt' 'Twitter, Inc._20170209/Text.txt' README.md` - roughly 70 KB total (verified 3M's Text.txt at 22,151 bytes). Record the Google Drive link from the README in the catalogue but do NOT download it (Drive host, unstated size, no licence).",
+ "tos_or_license_flag": true
+}

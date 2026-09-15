@@ -1,0 +1,10 @@
+{
+ "slug": "factden-expedia-hotel-reviews-scraper",
+ "url": "https://github.com/factden/expedia-hotel-reviews-scraper",
+ "category": "competitor_ota",
+ "data_kind": "both",
+ "one_line": "MIT-licensed Apify actor scraping all seven Expedia Group brands (Expedia, Hotels.com, Orbitz, Travelocity, Wotif, CheapTickets, ebookers) for guest ratings, category sub-ratings, review text and owner responses (44 KB repo, last push 2026-09-07, 4 stars); running it needs an Apify account, but the repo commits a real 48 KB reviews-sample.csv plus a 5 KB JSON sample and a FIELDS.md field dictionary.",
+ "abnb_use": "The committed samples document a competitor review-stream schema (per-review dates, traveller type, room type) that maps onto our own Inside Airbnb reviews-based stays index \u2014 a template for an EXPE-side review-velocity demand proxy (gap #9) and, via Vrbo as an Expedia Group brand, the closest free read on competitor alternative-accommodation volume.",
+ "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/factden/expedia-hotel-reviews-scraper.git && cd expedia-hotel-reviews-scraper && git sparse-checkout set examples FIELDS.md README.md HOWTO.md  \u2014 total well under 1 MB (reviews-sample.csv 48 KB, reviews-output.sample.json 5 KB, input.json 245 B). Do NOT run the actor: it scrapes a live commercial site and needs an Apify account.",
+ "tos_or_license_flag": true
+}

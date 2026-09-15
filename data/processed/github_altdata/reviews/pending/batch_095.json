@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:orangecoding/fredy",
+  "url": "https://github.com/orangecoding/fredy",
+  "name": "fredy",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Multi-platform (ImmoScout24, Immowelt, eBay Kleinanzeigen) European apartment/house search-and-notify tool, 1,495 stars, very actively maintained.",
+  "why_useful": "Most popular repo found in this theme; a working, well-maintained multi-source German/European rental listing monitor, though built for personal notification rather than dataset export \u2014 would need adaptation to accumulate a panel.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany / Europe (ImmoScout24, Immowelt, eBay Kleinanzeigen)",
+  "time_coverage": "N/A (live monitor)",
+  "size_hint": "N/A",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Most popular repo found in this theme; a working, well-maintained multi-source German/European rental listing monitor, though built for personal notification rather than dataset export \u2014 would need adaptation to accumulate a panel."
+  ]
+ },
+ {
+  "key": "github:flathunters/flathunter",
+  "url": "https://github.com/flathunters/flathunter",
+  "name": "flathunter",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/Docker bot that scrapes live listings from ImmoScout24, Immowelt, WG-Gesucht, Kleinanzeigen (Germany), Idealista, Immobiliare, Subito (Italy/Spain) and pushes new-listing alerts via Telegram/Slack/Mattermost/Apprise. No historical data committed; keeps only a processed_ids.db to dedupe. AGPL-3.0, 1,100+ stars, 1,183 commits, actively maintained.",
+  "why_useful": "A single maintained multi-platform LTR scraper covering DE/IT/ES markets could be run periodically (by a human, terms-of-service permitting) to build a point-in-time LTR-asking-rent panel for host-supply-economics analysis (gap 13). Not itself a dataset.",
+  "potential": "medium",
+  "size_hint": "code only, no data files",
+  "time_coverage": "N/A (live scrape tool)",
+  "geography": "Germany, Italy, Spain",
+  "license": "AGPL-3.0",
+  "last_activity": "actively maintained (commit count high, recent forks/stars growth noted)",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "A single maintained multi-platform LTR scraper covering DE/IT/ES markets could be run periodically (by a human, terms-of-service permitting) to build a point-in-time LTR-asking-rent panel for host-supply-economics analysis (gap 13). Not itself a dataset."
+  ]
+ },
+ {
+  "key": "github:zacharyhampton/homeharvest",
+  "url": "https://github.com/ZacharyHampton/HomeHarvest",
+  "name": "HomeHarvest",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (MIT, 739 stars, 288 commits) that scrapes Realtor.com (not actually Zillow/Redfin despite topic tagging) for MLS-style listing data: address, MLS ID, listing status, beds/baths/sqft, list/sold price, price-per-sqft, HOA fees, list/sold/last-update dates, coordinates, county, nearby schools, agent/broker info, tax history and assessment values. Outputs to CSV/Excel/Pandas/JSON.",
+  "why_useful": "One-command pull of current US rental asking-price listings by metro from Realtor.com; usable to build a point-in-time LTR panel for host-supply-economics / STR<->LTR crossover work (gap 13). No historical data bundled -- would need to be run repeatedly going forward, so cannot backfill.",
+  "potential": "medium",
+  "size_hint": "code only, no data files",
+  "time_coverage": "N/A (live scrape, current only)",
+  "geography": "United States",
+  "license": "MIT",
+  "last_activity": "2026 (active)",
+  "gap_targets": [
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)",
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "One-command pull of current US rental asking-price listings by metro from Realtor.com; usable to build a point-in-time LTR panel for host-supply-economics / STR<->LTR crossover work (gap 13). No historical data bundled -- would need to be run repeatedly going forward, so cannot backfill.",
+   "A maintained, no-API-key scraper for current/historical-by-repeated-pull residential listing and sold-price data at the county level, usable to build a for-sale housing supply/price series as an LTR<->STR crossover input; no dedicated investor-purchase field but sold-price + tax-assessment history could support an investor-activity proxy (repeat-buyer / fast-flip detection) if pulled longitudinally."
+  ]
+ },
+ {
+  "key": "github:topics/rental-prices",
+  "url": "https://github.com/topics/rental-prices (multiple small repos: Bali Rental Market Data, Dublin Rent Predictor)",
+  "name": "Bali Rental Market Data / Dublin Rent Predictor (topic-page finds, not directly verified)",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Bali Rental Market Data: described on GitHub topic page as an open 'monthly dataset of median rents and villa sale prices per Bali area,' CC BY 4.0 licensed. Dublin Rent Predictor: uses official Irish RTB (Residential Tenancies Board) government rent data, claims 74% prediction accuracy. Neither repo's exact owner/path was confirmed by direct fetch in this pass (404s on my two owner guesses) -- follow-up scout should resolve exact URLs via search, which was unavailable to me.",
+  "why_useful": "Bali is a top ABNB APAC leisure market; a committed monthly median-rent/villa-price series there is a rare non-US/EU LTR data point that could proxy local housing-cost/STR-conversion pressure (gap 13, touches gap 7 APAC). Dublin Rent Predictor repackages Ireland's official RTB rent index, a point-in-time government series (gap 13/4).",
+  "potential": "medium",
+  "size_hint": "unknown row counts; described only via topic-page summary",
+  "time_coverage": "Bali: unspecified monthly window; Dublin: current RTB vintage",
+  "geography": "Bali, Indonesia; Dublin/Ireland",
+  "license": "Bali: CC BY 4.0; Dublin: unspecified",
+  "last_activity": "unverified -- not directly fetched",
+  "gap_targets": [
+   7,
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Bali is a top ABNB APAC leisure market; a committed monthly median-rent/villa-price series there is a rare non-US/EU LTR data point that could proxy local housing-cost/STR-conversion pressure (gap 13, touches gap 7 APAC). Dublin Rent Predictor repackages Ireland's official RTB rent index, a point-in-time government series (gap 13/4)."
+  ]
+ },
+ {
+  "key": "github:zhichensha/craigslist_rental_listing_scraper",
+  "url": "https://github.com/zhichensha/craigslist_rental_listing_scraper",
+  "name": "craigslist_rental_listing_scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium/BeautifulSoup scraper suite pulling long-term rental listings from Craigslist across the top 100 US MSAs, with weekly CSV batches, proxy management, multiprocessing, and Census-based geocoding/zipcode assignment. Scraper only \u2014 no committed listing data (local_data/ is gitignored).",
+  "why_useful": "Rental-specific (not generic classifieds) Craigslist scraper -- most direct match to the theme's Craigslist keyword hint, but stale and undocumented beyond the topic-page description; would need direct repo verification (not done this pass) before relying on its output schema.",
+  "potential": "medium",
+  "size_hint": "code only",
+  "time_coverage": "N/A (live)",
+  "geography": "United States (unspecified metro(s))",
+  "license": "unspecified",
+  "last_activity": "16 Apr 2024",
+  "gap_targets": [
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Rental-specific (not generic classifieds) Craigslist scraper -- most direct match to the theme's Craigslist keyword hint, but stale and undocumented beyond the topic-page description; would need direct repo verification (not done this pass) before relying on its output schema.",
+   "A ready-made, non-Airbnb acquisition method for a long-term-rental price panel across 100 MSAs \u2014 the natural denominator for the STR<->LTR host-supply-economics question (gap #13) and a free alternative to Zillow ZORI at finer geography if run ourselves (would need a scrape-policy decision, but Craigslist is not Airbnb)."
+  ]
+ }
+]

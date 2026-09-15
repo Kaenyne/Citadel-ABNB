@@ -1,0 +1,30 @@
+{
+ "slug": "pit-fundamentals-pit-harness",
+ "url": "https://github.com/christianpichichero-max/pit-fundamentals",
+ "sampled": true,
+ "total_bytes": 902786,
+ "files": [
+  "pit_fundamentals_history.csv",
+  "query_asof.py",
+  "check_your_data.py",
+  "METHODOLOGY.md",
+  "UPSTREAM_README.md",
+  "UPSTREAM_LICENSE"
+ ],
+ "rows": "pit_fundamentals_history.csv: 6,969 rows (full file); others n/a (scripts/docs)",
+ "columns": "ticker, cik, concept, xbrl_tag, fiscal_year, period_end, first_filed, lag_days, filed_reliable, original_value, latest_value, restated, qa_status",
+ "date_range": "period_end 2006-12-31 to 2026-07-25; first_filed 2010-01-29 to 2026-09-02; fiscal_year 2006-2026",
+ "how_pulled": "curl -sL -f -o <name> https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/{data/pit_fundamentals_history.csv,query_asof.py,check_your_data.py,METHODOLOGY.md,README.md,LICENSE}; python/pandas to describe",
+ "full_dataset_size": "This IS the full dataset: one 868 KB CSV, 6,969 rows (16 XBRL concepts x 40 US large caps, FY2006-2026) plus 2 scripts and docs; repo <1 MB. Vendor (Tradevo) sells a larger universe; not pulled.",
+ "description": "Point-in-time annual XBRL fundamentals from SEC EDGAR for 40 US large caps (no ABNB/BKNG/EXPE/MAR/HLT), one row per ticker x concept x fiscal year, with first_filed date, filing lag, original vs latest value and a restated flag. Source is EDGAR companyfacts, rebuilt Sep 2026; data CC0, code MIT. For ABNB the value is the method: query_asof.py shows the as-of join pattern and check_your_data.py is a dependency-free lookahead-bias audit we can point at our own L0 vintage register and the refit-at-guide-date harness; the lag_days column (mean 43 on reliable rows, median 45) is a prior for how stale EDGAR-derived features are at a guide date.",
+ "issues": "No ABNB or travel peers in the ticker list (job card was right). Filing lag: mean 43.2 days on filed_reliable rows (matches job card), 54.2 over all rows, median 45; 146 rows flagged lag_out_of_range, 367 restated. Annual (10-K) grain only, no quarterly. Vendor-marketing repo (Tradevo); free sample, data CC0 and code MIT, no ToS concern. Landed under data/processed/github_altdata/samples/ per the run's convention rather than data/raw/ as the job card suggested.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/data/pit_fundamentals_history.csv",
+  "https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/query_asof.py",
+  "https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/check_your_data.py",
+  "https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/METHODOLOGY.md",
+  "https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/README.md",
+  "https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/LICENSE"
+ ],
+ "pulled_at": "2026-09-14"
+}

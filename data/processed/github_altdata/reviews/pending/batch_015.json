@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:suranjana58/estimizescraping_db",
+  "url": "https://github.com/suranjana58/EstimizeScraping_DB",
+  "name": "suranjana58/EstimizeScraping_DB",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium/pandas scraper of Estimize tables into a database, with querying/analysis notebooks; content and coverage not verified beyond the description.",
+  "why_useful": "Another Estimize scraping pattern (Selenium-based, useful if Estimize's site requires JS rendering); no confirmed committed dataset.",
+  "potential": "low",
+  "geography": "n/a",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2023-05-07",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "Another Estimize scraping pattern (Selenium-based, useful if Estimize's site requires JS rendering); no confirmed committed dataset."
+  ]
+ },
+ {
+  "key": "github:jordanhauer4/estimize-api",
+  "url": "https://github.com/jordanhauer4/Estimize-API",
+  "name": "jordanhauer4/Estimize-API",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Simple Python client wrapping the (former) public Estimize Community Data API \u2014 a documented REST endpoint rather than a page scraper.",
+  "why_useful": "If Estimize's community API endpoint still resolves, this is a lower-maintenance pull method than HTML scraping for forward point-in-time ABNB crowd-estimate capture; API may be dead (2015-era client) so needs a live check before relying on it.",
+  "potential": "low",
+  "geography": "n/a",
+  "time_coverage": "n/a (API client)",
+  "size_hint": "tiny",
+  "license": "none declared",
+  "last_activity": "2015-04-18",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "If Estimize's community API endpoint still resolves, this is a lower-maintenance pull method than HTML scraping for forward point-in-time ABNB crowd-estimate capture; API may be dead (2015-era client) so needs a live check before relying on it."
+  ]
+ },
+ {
+  "key": "github:kfoxder/estimize_data",
+  "url": "https://github.com/KFoxder/Estimize_Data",
+  "name": "KFoxder/Estimize_Data",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Small repo (6 commits, from 2014) with committed JSON files: Estimates.json, Tickers.json, User.json, User_New.json -- an apparent raw pull/scrape of Estimize's crowdsourced earnings-estimate database (estimates, ticker universe, contributing users) from around 2014. No README describing exact coverage; row counts and date range unverified beyond 'from 2014'.",
+  "why_useful": "Name suggests a committed Estimize dataset from ~2014; worth a human clone-and-look given how rare committed historical-estimate data is, but unverified and very old.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "circa 2014, unverified",
+  "size_hint": "unknown, unverified",
+  "license": "none declared",
+  "last_activity": "2014-02-07",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data",
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Name suggests a committed Estimize dataset from ~2014; worth a human clone-and-look given how rare committed historical-estimate data is, but unverified and very old.",
+   "If it contains actual historical Estimize crowd-estimate records (not just schema), it's a rare committed snapshot of point-in-time crowd consensus predating most public archives -- worth a close look for gap #4, though it looks stale/small and unmaintained (0 stars)."
+  ]
+ },
+ {
+  "key": "github:ishasolanki04/bharat-estimize-",
+  "url": "https://github.com/ishasolanki04/bharat-estimize-",
+  "name": "ishasolanki04/bharat-estimize-",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"BharatEstimize\" \u2014 an AI-powered consensus-trading strategy for Indian equities; framed as a strategy repo, not a raw historical-estimate dataset. Likely uses live/paid data feeds internally.",
+  "why_useful": "Not directly relevant (Indian equities, strategy not data), included only because it demonstrates a consensus/estimate-revision trading construction pattern that could be adapted; essentially not useful for ABNB.",
+  "potential": "low",
+  "geography": "India",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2025-06-04",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "Not directly relevant (Indian equities, strategy not data), included only because it demonstrates a consensus/estimate-revision trading construction pattern that could be adapted; essentially not useful for ABNB."
+  ]
+ },
+ {
+  "key": "github:evdubs/spdr-etf-holdings",
+  "url": "https://github.com/evdubs/spdr-etf-holdings",
+  "name": "evdubs/spdr-etf-holdings",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Shell/ETL scripts (extract-transform-load.sh) that download and parse SPDR (State Street) ETF holdings XLS documents into structured form; MPL-2.0 licensed, README ~2.6KB describing the pipeline. No committed historical data, just the puller.",
+  "why_useful": "Same class as the iShares tool above but for SPDR funds (XLY consumer discretionary, sector ETFs that hold ABNB) \u2014 a repeatable way to snapshot ABNB's ETF-holding weight/shares if run on a schedule, feeding an institutional-ownership-concentration proxy.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "point of run only, no bundled history",
+  "size_hint": "small script repo",
+  "license": "MPL-2.0",
+  "last_activity": "2026-06-02",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Same class as the iShares tool above but for SPDR funds (XLY consumer discretionary, sector ETFs that hold ABNB) \u2014 a repeatable way to snapshot ABNB's ETF-holding weight/shares if run on a schedule, feeding an institutional-ownership-concentration proxy."
+  ]
+ }
+]

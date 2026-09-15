@@ -1,0 +1,10 @@
+{
+ "slug": "pixelcrash-sync-rentals-ical-merger",
+ "url": "https://github.com/pixelcrash/Sync-Rentals-Calendar",
+ "category": "str_airbnb_direct",
+ "data_kind": "both",
+ "one_line": "Small self-hosted PHP iCal merger (icalmerger.php, 5 KB) that unions a host's Airbnb / Booking.com / Atraveo availability feeds into one calendar; no licence, 41 stars, last push Jan 2020; ships one real merged calendar ics/allservices.ics (2.9 KB) for an Austrian rental (kuenstlerzimmer.at) whose VEVENTs carry the booking channel in SUMMARY (e.g. ATRAVEO) with DTSTART/DTEND date ranges through 2019.",
+ "abnb_use": "Gaps 2 and 9: the committed ics is a single-listing, channel-tagged booked-nights calendar \u2014 a worked example of what a per-listing occupancy record with channel mix and length-of-stay looks like, and documents the iCal mechanism by which a non-Airbnb (Booking/Vrbo/Atraveo) availability panel could be assembled from host-held feeds rather than scraping.",
+ "sample_plan": "curl -sL https://raw.githubusercontent.com/pixelcrash/Sync-Rentals-Calendar/HEAD/ics/allservices.ics -o allservices.ics (2.9 KB) and curl -sL https://raw.githubusercontent.com/pixelcrash/Sync-Rentals-Calendar/HEAD/icalmerger.php -o icalmerger.php (5 KB). Total under 10 KB; do not clone vendor/. Do not run the tool \u2014 it needs a host's private feed URLs.",
+ "tos_or_license_flag": true
+}

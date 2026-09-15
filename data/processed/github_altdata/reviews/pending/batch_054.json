@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:datasets/exchange-rates",
+  "url": "https://github.com/datasets/exchange-rates",
+  "name": "datasets/exchange-rates",
+  "category": "fx_rates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Frictionless-Data/Open Knowledge Foundation packaged FX dataset sourced from FRED (fred.stlouisfed.org). Daily, monthly and yearly CSVs with Date, Country, Value fields (USD/currency or currency/USD by country convention). Datapackage.json schema included; automated maintenance workflow.",
+  "why_useful": "Ready-to-use multi-country FX time series in tidy CSV form, no API key needed -- can substitute/cross-check our current FRED FX pull (~40 series) with a pre-packaged, versioned alternative and is trivially reproducible.",
+  "potential": "medium",
+  "license": "PDDL 1.0 (public domain)",
+  "last_activity": "55 commits, automated update workflow present (exact date not shown)",
+  "geography": "Multi-country (major currencies vs USD)",
+  "time_coverage": "Historical through FRED's series length (varies by currency, several decades for majors)",
+  "size_hint": "small CSVs, daily/monthly/yearly variants",
+  "duplicate_of_holding": "Overlaps with our existing FRED FX schedules holding; flagged because it is a pre-cleaned, versioned CSV mirror rather than a raw API pull",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Ready-to-use multi-country FX time series in tidy CSV form, no API key needed -- can substitute/cross-check our current FRED FX pull (~40 series) with a pre-packaged, versioned alternative and is trivially reproducible.",
+   "Wider currency coverage than our current FX schedule for translation-effect modeling of ABNB's regional revenue mix, especially smaller LatAm/APAC currencies."
+  ]
+ },
+ {
+  "key": "github:fawazahmed0/exchange-api",
+  "url": "https://github.com/fawazahmed0/exchange-api",
+  "name": "fawazahmed0/exchange-api (successor to currency-api)",
+  "category": "fx_rates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Git-based, daily-updated JSON currency exchange rate files (200+ currencies, plus crypto/metals) served via jsDelivr/Cloudflare CDN, but the underlying data is committed to the git history day by day -- so cloning history gives a de facto daily point-in-time FX panel back to when the project started (repo shows queries working from at least 2024-03-06 forward; older history may exist in git log). Prettified and minified JSON per date.",
+  "why_useful": "Because each day's rates are a separate git-tracked JSON snapshot, this is one of the few free FX sources that is inherently point-in-time/vintage-correct (rule #2) rather than a rewritten current-value table -- useful for reconstructing what a spot rate looked like on any specific historical date without paying for a vendor terminal.",
+  "potential": "medium",
+  "license": "CC0-1.0",
+  "last_activity": "111 commits, active GitHub Actions daily publish workflow",
+  "geography": "Global, 200+ currencies",
+  "time_coverage": "Daily, from project start (~2023) to present",
+  "size_hint": "many small JSON files, cumulative history could be sizeable via git log",
+  "duplicate_of_holding": "New angle vs our existing FX schedules: vintage-correctness via git history",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Because each day's rates are a separate git-tracked JSON snapshot, this is one of the few free FX sources that is inherently point-in-time/vintage-correct (rule #2) rather than a rewritten current-value table -- useful for reconstructing what a spot rate looked like on any specific historical date without paying for a vendor terminal."
+  ]
+ },
+ {
+  "key": "github:expersso/bis",
+  "url": "https://github.com/expersso/BIS",
+  "name": "expersso/BIS",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package with get_datasets() and get_bis() functions that download and parse BIS (Bank for International Settlements) CSV datasets into a unified format: policy rates, exchange rates, nominal and real effective exchange rate (EER) indices, credit statistics, property prices, at daily/monthly/quarterly/annual frequencies.",
+  "why_useful": "Gives a one-command pull of BIS broad effective exchange rate indices (a standard 'broad-dollar-index' analogue for other currencies, e.g. EUR EER, JPY EER) that we do not currently hold -- useful for constructing a multi-currency trade-weighted FX basket beyond just USD, relevant to ABNB's EMEA/APAC/LatAm revenue mix.",
+  "potential": "medium",
+  "license": "not explicitly shown on page (unofficial/community R package, unaffiliated with BIS)",
+  "last_activity": "6 commits (low activity, but BIS's own data endpoints are stable)",
+  "geography": "Global (BIS member central banks)",
+  "time_coverage": "BIS EER series generally 1994-present per BIS's own archive",
+  "size_hint": "small R package, data pulled live from BIS servers (not committed)",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "Gives a one-command pull of BIS broad effective exchange rate indices (a standard 'broad-dollar-index' analogue for other currencies, e.g. EUR EER, JPY EER) that we do not currently hold -- useful for constructing a multi-currency trade-weighted FX basket beyond just USD, relevant to ABNB's EMEA/APAC/LatAm revenue mix."
+  ]
+ },
+ {
+  "key": "github:dillanas/sie_banxico",
+  "url": "https://github.com/DillanAS/sie_banxico",
+  "name": "sie_banxico",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python wrapper (MIT, 4 stars) for Banco de Mexico's Sistema de Informacion Economica (SIE) API. Documents example series like SF311408/SF311418 (monetary aggregates M1/M2); supports metadata lookup, latest value, historical range queries, percent-change calc, pandas output. Code only, no committed data.",
+  "why_useful": "One-command pull for Mexican peso FX and macro series (consumer strength / FX gap #7 and #6) at whatever frequency Banxico publishes; complements Mexico City nights forecast with a real-time peso/rate input.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico",
+  "time_coverage": "as far back as each SIE series goes (many decades for FX/CPI)",
+  "size_hint": "small library",
+  "license": "MIT",
+  "last_activity": "2026-01-27",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "One-command pull for Mexican peso FX and macro series (consumer strength / FX gap #7 and #6) at whatever frequency Banxico publishes; complements Mexico City nights forecast with a real-time peso/rate input.",
+   "Gap #7 (Mexico regional macro) -- Mexico City is in our Inside Airbnb panel; Banxico SIE carries FX, monetary and (via other series codes) tourism/travel-balance-of-payments indicators (travel receipts) that could feed a Mexico-specific ADR/FX or demand proxy."
+  ]
+ },
+ {
+  "key": "github:mattikummu/griddedgdppc",
+  "url": "https://github.com/mattikummu/griddedGDPpc",
+  "name": "griddedGDPpc",
+  "category": "fx_rates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Academic replication package (R + Matlab + Python scripts, no data files committed in repo root) for 'Downscaled gridded global dataset for GDP per capita at purchasing power parity (PPP) over 1990-2024, constant 2021 USD'. Global coverage, ADM0/ADM1/ADM2 admin levels plus gridded rasters (5 arcmin/30 arcmin/30 arcsec GeoTIFF) and GeoPackage+CSV tables, combining World Bank/IMF/CIA national data with OECD/Eurostat subnational detail. Actual output data lives on Zenodo (linked from paper: Kummu et al. 2025, Scientific Data 12:567), not in this GitHub repo. MIT-licensed code.",
+  "why_useful": "Gives a country-by-country and subnational PPP-adjusted GDP per capita time series, which is a structural proxy for cross-border travel affordability and currency-adjusted consumer spending power feeding ABNB's international ADR/nights mix (relevant to gap themes on FX mix and regional consumer strength, e.g. overlapping with the existing FX-mix / consumer-strength-regional-split workstreams).",
+  "potential": "medium",
+  "size_hint": "code repo only (~20 scripts); actual data hosted on Zenodo, size unknown from this fetch",
+  "time_coverage": "1990-2024",
+  "geography": "global, national + subnational",
+  "license": "MIT (code); data license unspecified in README, check Zenodo",
+  "last_activity": "2026-08-24",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "Gives a country-by-country and subnational PPP-adjusted GDP per capita time series, which is a structural proxy for cross-border travel affordability and currency-adjusted consumer spending power feeding ABNB's international ADR/nights mix (relevant to gap themes on FX mix and regional consumer strength, e.g. overlapping with the existing FX-mix / consumer-strength-regional-split workstreams)."
+  ]
+ }
+]

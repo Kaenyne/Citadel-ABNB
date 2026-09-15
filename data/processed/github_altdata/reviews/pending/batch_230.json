@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:linwoodc3/gdeltpyr",
+  "url": "https://github.com/linwoodc3/gdeltPyR",
+  "name": "gdeltPyR",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "257-star, GPL-3.0 Python framework to retrieve full GDELT 1.0 and 2.0 Events tables (15-minute update cadence, back to 1979 for v1, 2015 for v2 events). Pulls raw event records (actors, event codes/CAMEO, geography, tone) into pandas, not just the Doc API subset.",
+  "why_useful": "Lower-level than the Doc API client; would let a team filter GDELT Events by CAMEO codes/actor for tourism-, regulation-, or travel-related event categories (e.g. protest/legislation events tied to STR ordinances) rather than just keyword news volume. Addresses gap 14/17.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "1979-2026 (v1), 2015-2026 (v2)",
+  "size_hint": "no committed data; pull tool, GDELT itself is multi-TB",
+  "license": "GPL-3.0",
+  "last_activity": "2026-08-21",
+  "gap_targets": [
+   14,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Lower-level than the Doc API client; would let a team filter GDELT Events by CAMEO codes/actor for tourism-, regulation-, or travel-related event categories (e.g. protest/legislation events tied to STR ordinances) rather than just keyword news volume. Addresses gap 14/17.",
+   "Could nowcast STR-regulation news flow, travel-shock events, or Airbnb-mention tone (gaps #12 regulation, #14 text/social, #17 methods) at daily/15-min granularity, filterable by CAMEO event codes and country/actor."
+  ]
+ },
+ {
+  "key": "github:fhamborg/news-please",
+  "url": "https://github.com/fhamborg/news-please",
+  "name": "news-please",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "General-purpose news crawler/extractor (headline, lead, text, image, author, date, language) that can crawl a given news site recursively or via RSS, and specifically supports pulling news articles out of Common Crawl's news archive (CC-NEWS). Apache-2.0, 820 commits.",
+  "why_useful": "Could be pointed at Skift, PhocusWire, or other travel-trade press sites (or filtered against CC-NEWS) to build a travel-industry news corpus/timeline; also complements our existing Common Crawl CDX capture (different Common Crawl sub-index, CC-NEWS vs CDX/WARC).",
+  "potential": "medium",
+  "license": "Apache-2.0",
+  "last_activity": "unknown exact date; 820 commits, long-running, widely used research tool",
+  "geography": "any site the crawler is pointed at",
+  "time_coverage": "CC-NEWS coverage from ~2016-present plus live crawling",
+  "size_hint": "acquisition method",
+  "gap_targets": [
+   14,
+   8
+  ],
+  "duplicate_of_holding": "adjacent to our existing Common Crawl CDX capture over airbnb.com, but this is the CC-NEWS route + generic site crawling, not the same index",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Could be pointed at Skift, PhocusWire, or other travel-trade press sites (or filtered against CC-NEWS) to build a travel-industry news corpus/timeline; also complements our existing Common Crawl CDX capture (different Common Crawl sub-index, CC-NEWS vs CDX/WARC)."
+  ]
+ },
+ {
+  "key": "github:topics/gdelt",
+  "url": "https://github.com/topics/gdelt",
+  "name": "GDELT ecosystem (e.g. gdeltPyR, gdeltr2, spark-gdelt)",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "145 public repos tagged 'gdelt'; gdeltPyR (257 stars) is a Python client to pull GDELT 1.0/2.0 global event/news-tone data; gdeltr2 is the R equivalent; spark-gdelt runs GDELT through Apache Spark for large-scale event/news processing. All are acquisition tools over GDELT's own public data lake, not committed datasets.",
+  "why_useful": "GDELT already flagged in CONTEXT gap #14 (text/social); these are the concrete, actively used client libraries (gdeltPyR in particular) that make a GDELT pull mechanical for a global news/event-tone or shock-detection feature (e.g. World Cup/conference/regulatory news spikes by country).",
+  "potential": "medium",
+  "gap_targets": [
+   14
+  ],
+  "geography": "global",
+  "time_coverage": "GDELT 1.0 (1979-) / 2.0 (2015-) as hosted by GDELT project",
+  "license": "varies by repo (gdeltPyR: MIT-style, check repo)",
+  "last_activity": "gdeltPyR last significant activity years ago per star history; topic page shows repos updated through 2026",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "GDELT already flagged in CONTEXT gap #14 (text/social); these are the concrete, actively used client libraries (gdeltPyR in particular) that make a GDELT pull mechanical for a global news/event-tone or shock-detection feature (e.g. World Cup/conference/regulatory news spikes by country)."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/news-crawl",
+  "url": "https://github.com/commoncrawl/news-crawl",
+  "name": "news-crawl",
+  "category": "social_text_news",
+  "data_kind": "both",
+  "what_it_holds": "Apache StormCrawler-based crawler that discovers articles via RSS/Atom feeds and Google News sitemaps and archives full article WARC content, feeding an ongoing AWS Open Dataset ('CC-NEWS') hosted by Common Crawl. Apache-2.0, 204 commits, actively maintained.",
+  "why_useful": "CC-NEWS is a continuously updated, free, full-text news-article WARC corpus; filterable for Airbnb/short-term-rental/hospitality news mentions or regulation-tracker source articles (gap 12, gap 14 text/news) without needing a bespoke news scraper -- complements GDELT-style approaches.",
+  "potential": "medium",
+  "gap_targets": [
+   14,
+   12
+  ],
+  "time_coverage": "ongoing, ~2016-present (CC-NEWS dataset)",
+  "geography": "global, multi-language news sources with sitemaps/feeds",
+  "size_hint": "CC-NEWS dataset is multi-TB overall; crawler repo itself is code only",
+  "license": "Apache-2.0",
+  "last_activity": "active, 8 open PRs",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "CC-NEWS is a continuously updated, free, full-text news-article WARC corpus; filterable for Airbnb/short-term-rental/hospitality news mentions or regulation-tracker source articles (gap 12, gap 14 text/news) without needing a bespoke news scraper -- complements GDELT-style approaches."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/booking-com/absa-dataset",
+  "url": "https://huggingface.co/datasets/Booking-com/absa-dataset",
+  "name": "Booking-com/absa-dataset (TRABL)",
+  "category": "social_text_news",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "TRABL: aspect-based sentiment analysis dataset from Booking.com covering three travel domains (hotels, attractions, destinations). 7,566 rows total (5,768 train / 898 validation / 900 test). Each row: review_id, two annotators' label sets (aspect_term, aspect_category, opinion_span, sentiment, supporting text snippet) built from LLM-generated labels with human correction. Average review ~42 words, ~7 aspect tuples/review. License CC-BY-SA-4.0 (non-commercial research). Accepted at ACM Web Conference 2026 (WWW 2026).",
+  "why_useful": "A structured, aspect-level sentiment dataset on hotel/attraction/destination reviews from a major OTA; marginal for KPI forecasting directly but could feed a text/sentiment nowcasting method (gap #14) if extended to a live pull, since it demonstrates a machine-labelable review schema.",
+  "size_hint": "7,566 rows",
+  "time_coverage": "Not stated; dataset published for WWW 2026",
+  "geography": "Not stated (global reviews)",
+  "license": "CC-BY-SA-4.0",
+  "last_activity": "Published for WWW 2026 (2026)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   14
+  ],
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "A structured, aspect-level sentiment dataset on hotel/attraction/destination reviews from a major OTA; marginal for KPI forecasting directly but could feed a text/sentiment nowcasting method (gap #14) if extended to a live pull, since it demonstrates a machine-labelable review schema."
+  ]
+ }
+]

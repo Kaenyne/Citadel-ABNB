@@ -1,0 +1,143 @@
+[
+ {
+  "key": "github:nishantshah2112/airdna-scraper",
+  "url": "https://github.com/nishantshah2112/airdna-scraper",
+  "name": "airdna-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A short (7KB) Playwright/Python script (airdna_scraper.py) that logs into app.airdna.co with an email/password pair read from a .env file (AIRDNA_EMAIL/AIRDNA_PASSWORD) and navigates to a market overview page; the actual scraping/extraction logic is stubbed out ('keeping it short for upload guide ... scraping logic goes here'), so it is an incomplete login-automation skeleton rather than a working data puller.",
+  "why_useful": "Same rationale as jayesh2278/airdnascraper -- a method for pulling AirDNA public market pages, catalogued unrun.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2026-02-09",
+  "geography": "unspecified",
+  "time_coverage": "unspecified",
+  "size_hint": "not inspected",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "possible duplicate of jayesh2278/airdnascraper in scope/intent",
+  "hits": 2,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "Same rationale as jayesh2278/airdnascraper -- a method for pulling AirDNA public market pages, catalogued unrun.",
+   "Same target as the Apify actor above (AirDNA revenue/occupancy/ADR, gap #2) but incomplete, and it requires typing a real AirDNA username/password into an automation script, which is a credential-handling and ToS concern; flagged for completeness only, not something to run."
+  ]
+ },
+ {
+  "key": "github:devsharmagrowleads-oss/airdna-property-manager-scraper",
+  "url": "https://github.com/devsharmagrowleads-oss/airdna-property-manager-scraper",
+  "name": "airdna-property-manager-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Sep 2026 repo; scrapes AirDNA's property-manager directory/listings rather than market ADR/occupancy stats (based on name only, not fetched in depth).",
+  "why_useful": "Likely a lead-gen tool (property manager contact scraping) rather than market-metric data; flagged for completeness but probably off-target for KPI forecasting.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2026-09-09",
+  "geography": "unspecified",
+  "time_coverage": "unspecified",
+  "size_hint": "not inspected",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Likely a lead-gen tool (property manager contact scraping) rather than market-metric data; flagged for completeness but probably off-target for KPI forecasting."
+  ]
+ },
+ {
+  "key": "github:guestready/airdna-api",
+  "url": "https://github.com/guestready/airdna-api",
+  "name": "airdna-api",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Thin client wrapper for the commercial AirDNA Enterprise API (market metrics, comparable-property sets, Rentalizer revenue estimates). No data committed; requires a paid AirDNA API key to pull anything. 2 stars, last updated 27 Jan 2026.",
+  "why_useful": "A ready client if the team ever obtained a paid AirDNA API key; not usable without one. Documents the API's method surface.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2026-01-27",
+  "geography": "global (per AirDNA coverage)",
+  "time_coverage": "n/a, live API only",
+  "size_hint": "code only",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves",
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "A ready client if the team ever obtained a paid AirDNA API key; not usable without one. Documents the API's method surface.",
+   "Targets gap #2 (realised ADR/occupancy for STRs) if the team ever obtains an AirDNA key; otherwise only documents the request shapes AirDNA exposes.",
+   "A ready-made client for pulling AirDNA (realised ADR/occupancy comp data, gap #2) if the team ever gets AirDNA access; saves building a wrapper from scratch, but delivers nothing without a paid subscription.",
+   "Only useful as a reference for what an AirDNA integration looks like; cannot be run under the 'never use paid API keys' rule, and it holds no data itself.",
+   "AirDNA is the highest-value named source for gap #2 (realised ADR/occupancy for STRs); this client shows the API is programmatically reachable, though a paid key is required and none is authorized for this project."
+  ]
+ },
+ {
+  "key": "github:subnetangel/airdna-mcp",
+  "url": "https://github.com/subnetangel/airdna-mcp",
+  "name": "airdna-mcp",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "FastMCP server exposing AirDNA's STR market-data API (occupancy, ADR, RevPAR by market) as MCP tools. Requires an AirDNA Enterprise API subscription; no data bundled. Updated 15 Apr 2026.",
+  "why_useful": "Same limitation as guestready/airdna-api -- a method, not data, and needs a paid key.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2026-04-15",
+  "geography": "global",
+  "time_coverage": "n/a, live API",
+  "size_hint": "code only",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Same limitation as guestready/airdna-api -- a method, not data, and needs a paid key.",
+   "Same AirDNA-gap relevance as above (gap #2), packaged as an agent tool rather than a raw client; still blocked on the paid key.",
+   "Adjacent to gap #2 (realised ADR/occupancy for STRs) rather than our turnover/cleaning theme proper \u2014 flagging because it surfaced in the same sweep and documents that AirDNA's API is at least programmatically reachable (paid), which is a standing target for a different scout's gap-2 work."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/mashvisor",
+  "url": "https://github.com/api-evangelist/mashvisor",
+  "name": "mashvisor (API Evangelist profile)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Same api-evangelist style profile, but for Mashvisor's Data API (US STR + LTR + MLS analytics). Documentation only, no committed data.",
+  "why_useful": "Schema reference only; Mashvisor's real API is paid.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2026-09-12",
+  "geography": "US",
+  "time_coverage": "n/a",
+  "size_hint": "documentation only",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Schema reference only; Mashvisor's real API is paid."
+  ]
+ }
+]

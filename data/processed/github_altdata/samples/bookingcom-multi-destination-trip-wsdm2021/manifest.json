@@ -1,0 +1,27 @@
+{
+  "slug": "bookingcom-multi-destination-trip-wsdm2021",
+  "url": "https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset",
+  "sampled": true,
+  "total_bytes": 8844555,
+  "files": [
+    "bkng_trip_train_head.csv",
+    "bkng_trip_test_head.csv",
+    "bkng_trip_gt_head.csv",
+    "bkng_trip_README.md"
+  ],
+  "rows": "train head 62,861 rows (11,763 trips) of 1,166,835; test head 25,880 rows (4,798 trips) of ~379k; ground_truth 70,662 rows (COMPLETE file, 1.84 MB); README n/a",
+  "columns": "train/test: user_id, checkin, checkout, city_id, device_class, affiliate_id, booker_country, hotel_country, utrip_id (test column order differs; test hides the last city of each trip). ground_truth: utrip_id, city_id, hotel_country",
+  "date_range": "checkin 2016-01-01 to 2017-02-27; checkout 2016-01-02 to 2017-02-28 (heads; full set is the same 2016-2017 span per README)",
+  "how_pulled": "cd <scratch>; B=https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main; curl -sL -r 0-4999999 $B/train_set.csv -o bkng_trip_train_head.csv; curl -sL -r 0-1999999 $B/test_set.csv -o bkng_trip_test_head.csv; curl -sL -r 0-1999999 $B/ground_truth.csv -o bkng_trip_gt_head.csv; curl -sL $B/README.md -o bkng_trip_README.md; python: truncate each CSV at its last newline, pandas.read_csv to describe, copy to samples folder; curl -sIL for full sizes; curl https://huggingface.co/api/datasets/Booking-com/multi-destination-trip-dataset for metadata",
+  "full_dataset_size": "3 CSVs = 123.6 MB (train_set.csv 92.65 MB / 1,166,835 rows; test_set.csv 29.15 MB / ~379k rows; ground_truth.csv 1.84 MB / 70,662 rows) plus README, a PDF description, evaluation_demo.ipynb, submission.csv, one jpg; ~152 MB repo; one command per file via the HF resolve endpoint, no login",
+  "description": "Booking.com's official WSDM WebTour 2021 challenge release: 1.55M anonymised real hotel reservations (2016 to Feb 2017) grouped into multi-destination trips, one row per reservation with check-in/check-out dates, anonymised city and country IDs (countries carry fictional names such as Gondal, Elbonia), device class, affiliate channel and booker country. Grain is reservation within trip; source is Booking.com itself, hosted ungated on HuggingFace. An ABNB analyst would use it as a competitor base rate for length-of-stay distributions (head: mean 1.74 nights, median 1), share of cross-border stays (~90% in the head, which is biased because the challenge selects multi-city trips), device mix and trip-chaining behaviour, not as a nowcast input given the 2016 vintage.",
+  "issues": "Licence CC-BY-NC-ND-4.0: non-commercial and no-derivatives; a competition pitch is arguably non-commercial but a human should confirm before quoting figures. Country and city identifiers are anonymised (fictional country names, integer city IDs) so no real geography or regional split can be recovered; no price, room type or accommodation type column, so no ADR or STR/hotel split. README lists a created_date column that is absent from the files (no lead-time measure). Heads are the first N bytes of files sorted by user_id, so booker_country shows only 5 values in the head; the ground_truth file was pulled in full. Sample is multi-city trips only (4+ reservations per trip), so LOS and cross-border shares are not representative of all Booking.com bookings.",
+  "source_urls": [
+    "https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/train_set.csv",
+    "https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/test_set.csv",
+    "https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/ground_truth.csv",
+    "https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset/resolve/main/README.md",
+    "https://huggingface.co/api/datasets/Booking-com/multi-destination-trip-dataset"
+  ],
+  "pulled_at": "2026-09-14"
+}

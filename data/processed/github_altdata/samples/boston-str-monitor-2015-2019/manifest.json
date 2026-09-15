@@ -1,0 +1,41 @@
+{
+ "slug": "boston-str-monitor-2015-2019",
+ "url": "https://github.com/js-fitz/STR-Monitor",
+ "sampled": true,
+ "total_bytes": 2281326,
+ "files": [
+  "c_grouped_air.csv",
+  "c_grouped_pad.csv",
+  "c_grouped_str.csv",
+  "c_grouped_pro.csv",
+  "c_grouped_props.csv",
+  "n_grouped_air.csv",
+  "n_grouped_pad.csv",
+  "duplicated_license_listings.csv",
+  "license_centroids.csv",
+  "census_groups_data.csv",
+  "README_upstream.md"
+ ],
+ "rows": "c_grouped_air 4709; c_grouped_pad 12910; c_grouped_str 162; c_grouped_pro 181; c_grouped_props 181; n_grouped_air 708; n_grouped_pad 2085; duplicated_license_listings 770; license_centroids 182; census_groups_data 181; README_upstream n/a",
+ "columns": "air (tract/nbhd x scrape): scraped, tract|neighborhood, n_listings, sum_accommodates, n_licensed, n_exempt, pct_licensed, pct_exempt, avg_reviews, n_hosts, med_host_dist_km, med_price, avg_price, avg_avail_30d. pad (tract/nbhd x scrape): scraped, tract|neighborhood, n_listings, med/avg price_mo, avg_beds, med/avg price_per_bed. str (tract): active/expired/inactive/revoked/void counts, open_violations, violations_6mo. pro/props (tract): parcels, units, living_area, bldg_age, owner_occ_pct, land-use pcts. duplicated_license_listings (listing): IA listing fields + license, license_count, host_name, name, description. license_centroids (licence): count_listings, violator_prob_rating, license_status/category/max_bedrooms/max_guests, geometry. census_groups_data (tract): merged AIR_/STR_/BARI_/PAD_ cross-section.",
+ "date_range": "Airbnb aggregates: 35 scrape dates 2015-10-03 to 2020-02-13 (annual 2015-2017, roughly monthly Apr 2018-Feb 2020); Padmapper LTR aggregates: 85 scrape dates 2013-02-18 to 2020-02-18; listing-level duplicated_license file is the 2020-02-13 scrape only; STR registry / BARI cross-sections as of Feb 2020.",
+ "how_pulled": "gh api repos/js-fitz/STR-Monitor/git/trees/HEAD?recursive=1 (tree listing); curl -sL -o <name> https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/<path> for README.md, groupby_neighbs_and_tracts/c_grouped/{air,pad,str,pro,props}.csv, groupby_neighbs_and_tracts/n_grouped/{air,pad}.csv, groupby_neighbs_and_tracts/census_groups_data.csv, groupby_prep/duplicated_license_listings.csv, groupby_prep/license_centroids.csv; profiled with pandas (python).",
+ "full_dataset_size": "Everything tabular that is committed to the repo is already here (~2.3 MB, 10 CSVs; the repo also holds ~1.6 MB of GeoJSON and ~30 MB of notebooks/images). The raw inputs described in the README were NEVER committed: airbnb.csv (23 merged Inside Airbnb Boston scrapes, 629 MB raw, 124,730 x 31 cleaned), STRE.csv (23.4 MB, data.boston.gov), STR_apps.csv (300 kB, from Boston DoIT, not public), SAMREF.csv (78.6 MB), bari_props_2019.csv (78.9 MB, Harvard Dataverse), padmapper.csv (47.9 MB, 917,948 x 6, from jefftk.com). Rebuilding airbnb.csv needs the 2015-2020 Boston listings.csv.gz dumps, which are no longer on the Inside Airbnb CDN.",
+ "description": "Derived panel from a 2020 student capstone on Boston's June-2018 Short-Term Rental Ordinance. The committed tables are aggregates of Inside Airbnb Boston scrapes (35 scrape dates, Oct 2015-Feb 2020) at census-tract and neighbourhood grain per scrape date (listing count, accommodates, licensed share, median/avg nightly price, 30-day availability), plus a matching Padmapper long-term-rental asking-rent panel (Feb 2013-Feb 2020, 85 scrapes), Feb-2020 cross-sections of the city STR registry status counts and BARI parcel attributes by tract, and a listing-level file of 770 listings sharing duplicated licence numbers from the Feb-2020 scrape. For ABNB an analyst would use it as a pre-2023 Boston listing-count and quote-price time series (a city we do not hold) and as a regulation natural-experiment case: listing counts and licensed share before and after the Dec-2019 registration deadline, paired with LTR rents. The raw listing-level 2015-2020 vintages themselves are not in the repo.",
+ "issues": "The job card's plan (airbnb.csv, STRE.csv, padmapper.csv, STR_apps.csv) could not be followed: none of those raw files were ever committed; only the derived tract/neighbourhood aggregates exist on GitHub. No LICENSE file (all rights reserved by default); inputs carry their own terms (Inside Airbnb CC BY 4.0, data.boston.gov open, jefftk.com scrapes unlicensed, BARI Dataverse). duplicated_license_listings.csv contains host first names, listing names/descriptions and licence numbers (public IA data, but personal-ish; do not redistribute). Scrape dates include stray 1-7 listing rows on off-dates (e.g. 2018-05-19, 2019-05-24), artefacts of the merge, and 2015-2017 are single annual scrapes. Airbnb price is quoted nightly price, not realised ADR. Repo last pushed 2020-05-25; the linked Flask app (jsfitz.pythonanywhere.com) may be dead.",
+ "source_urls": [
+  "https://github.com/js-fitz/STR-Monitor",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/README.md",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/c_grouped/air.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/c_grouped/pad.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/c_grouped/str.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/c_grouped/pro.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/c_grouped/props.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/n_grouped/air.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/n_grouped/pad.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_neighbs_and_tracts/census_groups_data.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_prep/duplicated_license_listings.csv",
+  "https://raw.githubusercontent.com/js-fitz/STR-Monitor/HEAD/groupby_prep/license_centroids.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

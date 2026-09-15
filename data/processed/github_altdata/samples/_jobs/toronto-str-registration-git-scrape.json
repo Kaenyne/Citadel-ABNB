@@ -1,0 +1,10 @@
+{
+ "slug": "toronto-str-registration-git-scrape",
+ "url": "https://github.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration",
+ "category": "regulatory_legal",
+ "data_kind": "stored_dataset",
+ "one_line": "Daily git-scraped commits of Toronto's official Short Term Rental Registrations CSV from the city open-data portal, live as of 13 Sep 2026; licence 'other'.",
+ "abnb_use": "A genuinely point-in-time municipal STR-registration panel (each commit a dated vintage) for a top North American market \u2014 gaps 4 and 12, and better-vintaged than any of our ~25 held registries.",
+ "sample_plan": "Pull the current short-term-rental-registrations-data.csv plus 3-4 dated historical versions recovered from the commit history (quarterly spacing) to measure the registered-unit trend; cap 25 MB total, prefer under 10 MB.",
+ "tos_or_license_flag": true
+}

@@ -1,0 +1,112 @@
+[
+ {
+  "key": "github:visahl04/redfin-scraper",
+  "url": "https://github.com/Visahl04/Redfin-scraper",
+  "name": "Redfin-scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Generic 'scrape housing market data' tool targeting Redfin; last updated Dec 2024, unclear which fields/geography it covers.",
+  "why_useful": "Marginal \u2014 undocumented scope; only useful as a fallback method if redfin-market-pulse doesn't cover needed fields.",
+  "potential": "low",
+  "duplicate_of_holding": "redfin-market-pulse covers similar ground with clearer scope",
+  "last_activity": "2024-12-02",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "Marginal \u2014 undocumented scope; only useful as a fallback method if redfin-market-pulse doesn't cover needed fields."
+  ]
+ },
+ {
+  "key": "github:shanma621/post_covid_rent_analysis",
+  "url": "https://github.com/shanma621/post_covid_rent_analysis",
+  "name": "post_covid_rent_analysis",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Analysis of U.S. county-level rent trends before/after COVID-19 using Zillow ZORI data, focused on geographic and temporal patterns in housing costs.",
+  "why_useful": "Likely carries a committed county-level ZORI time series spanning pre/post-2020, useful as a ready county panel rather than re-downloading from Zillow directly.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2026-01-12",
+  "geography": "US counties",
+  "hits": 2,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Likely carries a committed county-level ZORI time series spanning pre/post-2020, useful as a ready county panel rather than re-downloading from Zillow directly.",
+   "County-level ZORI pre/post-COVID time series construction; a minor building block for a rent-cost baseline panel relevant to STR-vs-LTR host economics, but thin and MIT-licensed with no unique new data beyond raw ZORI."
+  ]
+ },
+ {
+  "key": "github:nbaumbick/rental-planner",
+  "url": "https://github.com/NBaumbick/Rental-Planner",
+  "name": "Rental-Planner",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "XGBoost model predicting 12-month rent trends by ZIP code, trained on Zillow ZORI and HUD Small Area Fair Market Rate (SAFMR) data; produces YoY rent-change forecasts and seasonality profiles by ZIP.",
+  "why_useful": "ZIP-level ZORI granularity is finer than county; if the raw ZIP panel is committed it's a useful finer-grained rent series.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2026-05-25",
+  "geography": "US ZIP codes",
+  "hits": 2,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "ZIP-level ZORI granularity is finer than county; if the raw ZIP panel is committed it's a useful finer-grained rent series.",
+   "ZIP-level SAFMR + ZORI join with a seasonality decomposition is a usable pattern for a fine-grained (ZIP-level, finer than metro) long-term-rent baseline, useful context for STR-conversion economics (gap #13), though it is a forecasting tool, not a static dataset."
+  ]
+ },
+ {
+  "key": "github:txrunn/zillow_market_analysis",
+  "url": "https://github.com/txrunn/zillow_market_analysis",
+  "name": "zillow_market_analysis",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Clustering of housing markets based on Zillow's ZHVI (home value) and ZORI (rent) data, combining both series. Pushed 9 Dec 2024.",
+  "why_useful": "Joint ZHVI+ZORI file, if committed, gives both price and rent series in one place for a market-clustering cut \u2014 modest incremental value over pulling Zillow's own CSVs.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2024-12-09",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "Joint ZHVI+ZORI file, if committed, gives both price and rent series in one place for a market-clustering cut \u2014 modest incremental value over pulling Zillow's own CSVs."
+  ]
+ },
+ {
+  "key": "github:chkcreate/us_census_building_permits",
+  "url": "https://github.com/chkCreate/US_Census_Building_Permits",
+  "name": "US_Census_Building_Permits",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Web-scraped US Census Bureau building permits data with Python scripts producing Tableau visualizations. Last updated 2021.",
+  "why_useful": "Building permits proxy new housing (and indirectly new STR-eligible) supply, named explicitly in gap 13; stale but shows the acquisition pattern for Census permit series.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2021-12-28",
+  "geography": "US",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "Building permits proxy new housing (and indirectly new STR-eligible) supply, named explicitly in gap 13; stale but shows the acquisition pattern for Census permit series."
+  ]
+ }
+]

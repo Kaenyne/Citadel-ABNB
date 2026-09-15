@@ -1,0 +1,99 @@
+{
+  "verdict": "PASS",
+  "source_hashes_verified": 17,
+  "forecast_rows_recomputed": 15,
+  "maximum_revenue_difference": 8.185452315956354e-12,
+  "checks": [
+    {
+      "scenario": "review_with_k",
+      "quarter": "2026Q3",
+      "independent_revenue_musd": 4808.362929493917,
+      "absolute_revenue_difference": 2.7284841053187847e-12
+    },
+    {
+      "scenario": "review_with_k",
+      "quarter": "2026Q4",
+      "independent_revenue_musd": 3179.3436542864038,
+      "absolute_revenue_difference": 3.637978807091713e-12
+    },
+    {
+      "scenario": "review_with_k",
+      "quarter": "2027Q1",
+      "independent_revenue_musd": 3055.6805804424216,
+      "absolute_revenue_difference": 1.8189894035458565e-12
+    },
+    {
+      "scenario": "review_without_k",
+      "quarter": "2026Q3",
+      "independent_revenue_musd": 4808.362929493917,
+      "absolute_revenue_difference": 2.7284841053187847e-12
+    },
+    {
+      "scenario": "review_without_k",
+      "quarter": "2026Q4",
+      "independent_revenue_musd": 3175.9264376110405,
+      "absolute_revenue_difference": 4.547473508864641e-13
+    },
+    {
+      "scenario": "review_without_k",
+      "quarter": "2027Q1",
+      "independent_revenue_musd": 3046.828996198423,
+      "absolute_revenue_difference": 2.7284841053187847e-12
+    },
+    {
+      "scenario": "nights_case_a",
+      "quarter": "2026Q3",
+      "independent_revenue_musd": 4808.362929493917,
+      "absolute_revenue_difference": 2.7284841053187847e-12
+    },
+    {
+      "scenario": "nights_case_a",
+      "quarter": "2026Q4",
+      "independent_revenue_musd": 3179.3436542864038,
+      "absolute_revenue_difference": 3.637978807091713e-12
+    },
+    {
+      "scenario": "nights_case_a",
+      "quarter": "2027Q1",
+      "independent_revenue_musd": 3069.0116670540715,
+      "absolute_revenue_difference": 1.3642420526593924e-12
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "quarter": "2026Q3",
+      "independent_revenue_musd": 4808.362929493917,
+      "absolute_revenue_difference": 2.7284841053187847e-12
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "quarter": "2026Q4",
+      "independent_revenue_musd": 3129.8661634853383,
+      "absolute_revenue_difference": 8.185452315956354e-12
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "quarter": "2027Q1",
+      "independent_revenue_musd": 2983.608987194455,
+      "absolute_revenue_difference": 5.002220859751105e-12
+    },
+    {
+      "scenario": "k0_conditional",
+      "quarter": "2026Q3",
+      "independent_revenue_musd": 4808.362929493917,
+      "absolute_revenue_difference": 2.7284841053187847e-12
+    },
+    {
+      "scenario": "k0_conditional",
+      "quarter": "2026Q4",
+      "independent_revenue_musd": 3214.775750893805,
+      "absolute_revenue_difference": 5.002220859751105e-12
+    },
+    {
+      "scenario": "k0_conditional",
+      "quarter": "2027Q1",
+      "independent_revenue_musd": 3121.4228476563503,
+      "absolute_revenue_difference": 4.547473508864641e-13
+    }
+  ],
+  "limits": "Arithmetic review of fixed benchmark only; no new conversion validation or accepted L3 inputs"
+}

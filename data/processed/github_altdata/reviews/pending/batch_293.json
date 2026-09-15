@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:gulkhan0987/cruisemapper-ships-scraper",
+  "url": "https://github.com/Gulkhan0987/cruisemapper-ships-scraper",
+  "name": "cruisemapper-ships-scraper",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js/Python scraper targeting cruisemapper.com for cruise ship data extraction (ship specs, presumably schedules/positions since cruisemapper tracks live ship positions and itineraries). MIT licence, updated Apr 2026, 1 star. No committed dataset seen, tool only.",
+  "why_useful": "cruisemapper.com aggregates live ship tracking/itinerary data across all major lines (NCLH/CCL/RCL); a working scraper against it could in principle build a port-call/schedule panel, but this repo ships no data and scraping a commercial site is a ToS question per repo rules.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "license": "MIT",
+  "last_activity": "2026-04-23",
+  "geography": "Global",
+  "time_coverage": "Live/current only",
+  "size_hint": "Code only",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "cruisemapper.com aggregates live ship tracking/itinerary data across all major lines (NCLH/CCL/RCL); a working scraper against it could in principle build a port-call/schedule panel, but this repo ships no data and scraping a commercial site is a ToS question per repo rules."
+  ]
+ },
+ {
+  "key": "github:digitalevenings/cruise-ship-data-extractor",
+  "url": "https://github.com/digitalevenings/cruise-ship-data-extractor",
+  "name": "cruise-ship-data-extractor",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js scraper (via ScraperAPI, a paid proxy service) extracting data on ~1,155 cruise ships: images, amenities, and specs. No occupancy, pricing, or schedule fields evident; no data committed to the repo itself. Updated Apr 2026, 1 star.",
+  "why_useful": "Ship-count/fleet-roster data at best; no booking, ADR, or occupancy signal. Marginal even as a fleet-capacity proxy (could sum berths across NCLH/CCL/RCL ships if specs include passenger capacity) but requires running the scraper (paid API) and no sample output is visible.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "license": "none stated",
+  "last_activity": "2026-04-23",
+  "geography": "Global",
+  "time_coverage": "Current only",
+  "size_hint": "Code only; target ~1,155 ship records if run",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Ship-count/fleet-roster data at best; no booking, ADR, or occupancy signal. Marginal even as a fleet-capacity proxy (could sum berths across NCLH/CCL/RCL ships if specs include passenger capacity) but requires running the scraper (paid API) and no sample output is visible."
+  ]
+ },
+ {
+  "key": "github:sixbuckssolutions/itinerarywatch",
+  "url": "https://github.com/SixbucksSolutions/ItineraryWatch",
+  "name": "ItineraryWatch",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Monitors cruise itineraries matching customer-provided search criteria (a price/availability watcher, not a stored panel). MIT licence, updated Jul 2026, 0 stars.",
+  "why_useful": "Conceptually close to a booking-curve/price-tracking tool (relevant to 'reserve now pay later' / advance-sale analogues) but it is a personal alert tool with no committed historical data and unclear source coverage.",
+  "potential": "low",
+  "gap_targets": [
+   3,
+   18
+  ],
+  "license": "MIT",
+  "last_activity": "2026-07-24",
+  "geography": "Unspecified",
+  "time_coverage": "None (live monitor only)",
+  "size_hint": "Code only",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Conceptually close to a booking-curve/price-tracking tool (relevant to 'reserve now pay later' / advance-sale analogues) but it is a personal alert tool with no committed historical data and unclear source coverage."
+  ]
+ },
+ {
+  "key": "github:tools-mcp/vessel-traffic-mcp",
+  "url": "https://github.com/tools-mcp/vessel-traffic-mcp",
+  "name": "vessel-traffic-mcp",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Read-only MCP server normalizing vessel identity, AIS-style positions, port calls, and shipping schedules across a provider tier system: fixture data (deterministic test data, no network), public opt-in browser-captured adapters (MyShipTracking, Tradlinx, AIsFriends), and BYOK commercial APIs (MarineTraffic, VesselFinder, AISStream, AISHub, BarentsWatch, SeaRates, Routescanner, VesselAPI). No bulk data committed beyond test fixtures. MIT licensed, 101 commits.",
+  "why_useful": "A generic client/normalizer for AIS-based port-call and vessel-schedule data; could in principle be pointed at a specific cruise ship's IMO/MMSI to derive port-dwell-time / itinerary-pace as an occupancy-timing proxy, but requires paid API keys (BYOK) for anything beyond fixtures, and explicitly avoids bypassing paywalls.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "n/a (live queries only)",
+  "geography": "global",
+  "size_hint": "n/a \u2014 API client",
+  "license": "MIT",
+  "last_activity": "not shown (101 commits)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "A generic client/normalizer for AIS-based port-call and vessel-schedule data; could in principle be pointed at a specific cruise ship's IMO/MMSI to derive port-dwell-time / itinerary-pace as an occupancy-timing proxy, but requires paid API keys (BYOK) for anything beyond fixtures, and explicitly avoids bypassing paywalls."
+  ]
+ },
+ {
+  "key": "github:fhoffarth/timonelo",
+  "url": "https://github.com/FHoffarth/timonelo",
+  "name": "timonelo",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A 'cruise intelligence' knowledge-graph platform (Python/Pydantic backend, TypeScript/React frontend) organizing evidence about ships, cabins, routes and ports under knowledge/ships/, knowledge/evidence/ (SHA-256-verified artifacts), and data/hypotheses/ (explicitly quarantined, non-canonical). No dataset size/time-span documented; 230 commits on develop branch. MIT licensed.",
+  "why_useful": "Early-stage structured schema for cruise ship/route/port facts with a verification discipline; not a ready dataset but worth watching if it accumulates a real corpus of route/capacity facts.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "unknown",
+  "geography": "unknown",
+  "size_hint": "unknown, no row counts documented",
+  "license": "MIT",
+  "last_activity": "unknown date, 230 commits (develop branch)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Early-stage structured schema for cruise ship/route/port facts with a verification discipline; not a ready dataset but worth watching if it accumulates a real corpus of route/capacity facts."
+  ]
+ }
+]

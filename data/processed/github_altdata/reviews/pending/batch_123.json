@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:ernienishino/japan-macro-data-fetcher",
+  "url": "https://github.com/ErnieNishino/japan-macro-data-fetcher",
+  "name": "japan-macro-data-fetcher",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool to fetch key Japanese macro indicators (consumption, CPI) via the e-Stat API, with interactive table search, 'smart table recommendation', and auto-cleaning CSV export. General e-Stat querying tool, not limited to headline CPI.",
+  "why_useful": "A second, more generic e-Stat client (vs. the CPI-specific tracker above) that could be pointed at Japan's detailed CPI item tables to pull the lodging/hotel-charges component and consumption series relevant to APAC nights/ADR work.",
+  "potential": "low",
+  "license": "not confirmed",
+  "last_activity": "2025-11-19",
+  "geography": "Japan",
+  "time_coverage": "current e-Stat availability",
+  "size_hint": "CLI tool, no committed data",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "A second, more generic e-Stat client (vs. the CPI-specific tracker above) that could be pointed at Japan's detailed CPI item tables to pull the lodging/hotel-charges component and consumption series relevant to APAC nights/ADR work."
+  ]
+ },
+ {
+  "key": "github:romantsisyk/myeurostatapp",
+  "url": "https://github.com/RomanTsisyk/MyEuroStatApp",
+  "name": "MyEuroStatApp",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source Kotlin Multiplatform mobile/desktop client for the public Eurostat API, with a dedicated tourism module alongside economy, population, environment, trade, social, and science modules. AGPL-3.0 licensed, updated 4 Sep 2026 (actively maintained). No data committed; it is a generic Eurostat-API pull client.",
+  "why_useful": "Lower priority than pandaSDMX/eurostat-R for programmatic pulls, but confirms an actively updated (2026-09-04) general Eurostat client exists if a GUI-based check of HICP accommodation figures is ever wanted.",
+  "potential": "low",
+  "license": "not confirmed",
+  "last_activity": "2026-09-04",
+  "geography": "EU",
+  "time_coverage": "current Eurostat availability",
+  "size_hint": "mobile/desktop app source",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation",
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Lower priority than pandaSDMX/eurostat-R for programmatic pulls, but confirms an actively updated (2026-09-04) general Eurostat client exists if a GUI-based check of HICP accommodation figures is ever wanted.",
+   "A maintained, general-purpose Eurostat API client that already has a tourism module could be adapted to pull MNO-derived experimental tourism tables (or the tour_ce_omr series we already hold) programmatically, though it duplicates a pull mechanism rather than adding new data."
+  ]
+ },
+ {
+  "key": "github:suiram67/scraper_hicp_2",
+  "url": "https://github.com/Suiram67/Scraper_HICP_2",
+  "name": "Scraper_HICP_2",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Script for automated retrieval of Eurozone HICP data excluding tobacco through the Eurostat API (a specific headline aggregate, not confirmed to isolate the accommodation-services sub-index, but built on the same Eurostat API access pattern that could be redirected to the accommodation COICOP code).",
+  "why_useful": "One more working example of a minimal, current Eurostat-API pull script; marginal on its own (headline ex-tobacco index, not accommodation-specific) but low-effort to verify/adapt.",
+  "potential": "low",
+  "license": "not confirmed",
+  "last_activity": "2026-07-18",
+  "geography": "Euro area",
+  "time_coverage": "current Eurostat HICP history",
+  "size_hint": "small script repo",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "One more working example of a minimal, current Eurostat-API pull script; marginal on its own (headline ex-tobacco index, not accommodation-specific) but low-effort to verify/adapt."
+  ]
+ },
+ {
+  "key": "github:k-kolovos/greek-holidays-income",
+  "url": "https://github.com/k-kolovos/greek-holidays-income",
+  "name": "greek-holidays-income",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Analysis of Greek household affordability of a week's holiday, built on Eurostat and Greek statistical authority (ELSTAT) data in Python \u2014 likely pulls Eurostat HICP/holiday-package price series plus income data for Greece specifically.",
+  "why_useful": "A country-specific (Greece/Southern Europe) accommodation/holiday-price analysis that could surface a Greek CPI-accommodation or package-holiday price series not otherwise on our radar; EMEA/Southern-Europe granularity is thin in what we currently hold.",
+  "potential": "low",
+  "license": "not confirmed",
+  "last_activity": "2026-09-09",
+  "geography": "Greece",
+  "time_coverage": "not specified",
+  "size_hint": "analysis notebook/scripts",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "A country-specific (Greece/Southern Europe) accommodation/holiday-price analysis that could surface a Greek CPI-accommodation or package-holiday price series not otherwise on our radar; EMEA/Southern-Europe granularity is thin in what we currently hold."
+  ]
+ },
+ {
+  "key": "github:datasets/cpi-us",
+  "url": "https://github.com/datasets/cpi-us",
+  "name": "cpi-us",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Frictionless-Data/datahub.io core dataset: US CPI-U all-items index, monthly, January 1913-present, columns Date/CPI/Inflation MoM%, base 1982-84=100, sourced from the BLS API with GitHub Actions auto-monthly updates; processed CSV lands in `data/` after the build script runs.",
+  "why_useful": "This is the ALL-ITEMS headline CPI-U, not the lodging-away-from-home sub-index, so it does not fill the specific gap on its own \u2014 flagged mainly as a clean, automatically-updated, long-history (1913+) CPI mirror pattern that could be forked/adapted to pull the CUUR0000SEHB lodging series instead of headline CPI.",
+  "potential": "low",
+  "license": "PDDL/permissive (typical for datahub.io core datasets, not directly confirmed here)",
+  "last_activity": "automated monthly updates (ongoing per README)",
+  "geography": "US",
+  "time_coverage": "1913-present, monthly",
+  "size_hint": "single CSV, small (a few thousand rows)",
+  "gap_targets": [],
+  "duplicate_of_holding": "We already hold BLS CPI via FRED; this is headline CPI-U only, not the lodging component",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "This is the ALL-ITEMS headline CPI-U, not the lodging-away-from-home sub-index, so it does not fill the specific gap on its own \u2014 flagged mainly as a clean, automatically-updated, long-history (1913+) CPI mirror pattern that could be forked/adapted to pull the CUUR0000SEHB lodging series instead of headline CPI."
+  ]
+ }
+]

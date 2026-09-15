@@ -1,0 +1,142 @@
+[
+ {
+  "key": "github:mobilitydata/mobility-database-catalogs",
+  "url": "https://github.com/MobilityData/mobility-database-catalogs",
+  "name": "mobility-database-catalogs",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A global catalog (JSON files per feed + a consolidated CSV at files.mobilitydatabase.org/feeds_v2.csv, plus a Python API) of public GTFS Schedule and GTFS Realtime feeds worldwide, filterable by country/subdivision/bounding box/status. Not rail-company-specific but a discovery layer for whichever rail/bus GTFS feeds (SNCF TER/Intercit\u00e9s, Trenitalia, FlixBus, regional EU operators) are publicly published.",
+  "why_useful": "Matches gap #17 (Socrata/CKAN-style open-data discovery client) applied to transit: a single machine-readable index to find and pull SNCF/DB/Trenitalia/FlixBus schedule (capacity/frequency) feeds without hand-hunting each operator's portal.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   10
+  ],
+  "geography": "global",
+  "time_coverage": "live/current feeds only (schedules, not historical ridership)",
+  "size_hint": "thousands of catalogued feeds",
+  "license": "repo MIT/Apache-style; underlying feeds vary by operator",
+  "last_activity": "actively maintained (official MobilityData project)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Matches gap #17 (Socrata/CKAN-style open-data discovery client) applied to transit: a single machine-readable index to find and pull SNCF/DB/Trenitalia/FlixBus schedule (capacity/frequency) feeds without hand-hunting each operator's portal."
+  ]
+ },
+ {
+  "key": "github:georgekhananaev/google-reviews-scraper-pro",
+  "url": "https://github.com/georgekhananaev/google-reviews-scraper-pro",
+  "name": "georgekhananaev/google-reviews-scraper-pro",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained (updated Sep 2026) Python scraper for Google Maps/Google Business reviews: multi-language review extraction with review dates, images, MongoDB storage, incremental re-scraping (so it can build a review-velocity time series per business/location over repeated runs), and anti-detection handling. 329 stars, MIT licence. No data committed \u2014 a tool only.",
+  "why_useful": "A working, actively-maintained method to build a time series of review volume/ratings for restaurants, attractions, and short-term-rental-adjacent leisure businesses in specific markets (proxy for local leisure/tourism activity levels feeding nights/ADR by region); scrapes Google, not Airbnb, so it is a methods-only flag per the run rules, not to be executed here.",
+  "geography": "global (any Google Maps listing)",
+  "time_coverage": "point-in-time scrape, no historical archive",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "A working, actively-maintained method to build a time series of review volume/ratings for restaurants, attractions, and short-term-rental-adjacent leisure businesses in specific markets (proxy for local leisure/tourism activity levels feeding nights/ADR by region); scrapes Google, not Airbnb, so it is a methods-only flag per the run rules, not to be executed here.",
+   "Could be pointed at hotel/short-term-rental listings on Google Maps to build a review-count-by-date velocity series as a demand nowcast for specific markets, complementing the existing Inside Airbnb reviews-based stays index with an independent (non-Airbnb) hotel-sector read. Running it against any specific site is a ToS decision for a human per repo rules; catalogued as method only."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/google-maps-reviews-scraper",
+  "url": "https://github.com/omkarcloud/google-maps-reviews-scraper",
+  "name": "omkarcloud/google-maps-reviews-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Extracts Google Maps reviews with content, ratings, timestamps, original language + translation, and keyword-filterable review search. MIT license, 31 commits, no sample data committed.",
+  "why_useful": "Same class of tool as above \u2014 could be pointed at restaurants/attractions/hotels in ABNB-relevant markets to build a leisure-activity/engagement proxy series; no data committed, method only.",
+  "geography": "global",
+  "time_coverage": "point-in-time scrape",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2026-09-09",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "near-duplicate of georgekhananaev/google-reviews-scraper-pro",
+  "potential": "medium",
+  "hits": 4,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Same class of tool as above \u2014 could be pointed at restaurants/attractions/hotels in ABNB-relevant markets to build a leisure-activity/engagement proxy series; no data committed, method only.",
+   "Could build a review-volume-over-time series (a nowcast proxy for foot traffic/leisure activity at specific venues or markets) similar to the team's existing Inside Airbnb reviews-based stays index methodology.",
+   "Same use case as georgekhananaev's tool above (review-velocity nowcast building block for hotels/STRs on Google Maps); a second, differently-built option in case one is blocked or deprecated.",
+   "Timestamped Google review pulls are the cleanest 'review velocity' signal available (Google reviews are the largest and most current review pool for lodging businesses) -- directly on-theme for a review-count nowcast built per city/market to compare against Inside Airbnb's own review-based stays index."
+  ]
+ },
+ {
+  "key": "github:gosom/google-maps-scraper",
+  "url": "https://github.com/gosom/google-maps-scraper",
+  "name": "gosom/google-maps-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go/Playwright based scraper extracting 36+ fields per Google Maps business listing (name, address, GPS, rating, review count, reviews with timestamps/ratings, hours, price range, categories). CLI/Web UI/REST API/self-hosted SaaS modes, Docker/Kubernetes support. MIT license, ~5,800 stars, 333 commits, actively maintained.",
+  "why_useful": "A working, well-maintained method to pull rating/review-volume time series for restaurants and leisure venues by city as a local leisure/tourism-activity proxy, and potentially for competitor STR listings' Google Maps presence; usable within the fee-panel style sanctioned scraping decision (a human call per rules).",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "actively maintained 2026",
+  "geography": "global (any Google Maps market)",
+  "time_coverage": "point-in-time snapshot tool, not historical",
+  "size_hint": "n/a (scraper, not a dataset)",
+  "gap_targets": [
+   6,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "A working, well-maintained method to pull rating/review-volume time series for restaurants and leisure venues by city as a local leisure/tourism-activity proxy, and potentially for competitor STR listings' Google Maps presence; usable within the fee-panel style sanctioned scraping decision (a human call per rules)."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/google-maps-scraper",
+  "url": "https://github.com/omkarcloud/google-maps-scraper",
+  "name": "omkarcloud/google-maps-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python Google Maps business scraper, 50+ fields (name, address, phone, website, emails, socials, ratings, reviews), CLI + Python/Node API, free tier 200 searches/month. MIT license, ~3.5k stars, 209 commits.",
+  "why_useful": "Alternative/competing Google Maps scraping method to gosom's for leisure/restaurant/venue density and rating trends by market; same leisure-proxy rationale.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "active 2026",
+  "geography": "global",
+  "time_coverage": "point-in-time",
+  "size_hint": "n/a",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "same purpose as gosom/google-maps-scraper",
+  "hits": 2,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Alternative/competing Google Maps scraping method to gosom's for leisure/restaurant/venue density and rating trends by market; same leisure-proxy rationale.",
+   "Widely used, high-star general-purpose method to pull Google Maps ratings/review-count per business (hotels, STR-adjacent venues) as a demand proxy; also usable for gap #9 (competitor supply counts) by querying hotel/vacation-rental categories by city."
+  ]
+ }
+]

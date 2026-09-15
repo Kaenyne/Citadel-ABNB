@@ -1,0 +1,10 @@
+{
+ "slug": "gharchive-org-github-event-archive",
+ "url": "https://github.com/igrigorik/gharchive.org",
+ "category": "methods_tooling",
+ "data_kind": "acquisition_method",
+ "one_line": "GH Archive project site/code (MIT code, CC-BY-4.0 site content, 3.1k stars, last commit 2025-05-25); repo commits NO data - the archive itself is public keyless hourly JSON.gz at https://data.gharchive.org/YYYY-MM-DD-H.json.gz (verified HTTP 206 on a range request) covering every public GitHub event 2011-present, also mirrored as a BigQuery public dataset.",
+ "abnb_use": "Gap #15 (company-structure / engineering-footprint signals): the only free way to build a monthly series of Airbnb's own public-GitHub-org activity (pushes/PRs/contributors across its ~200 public repos) as an engineering-investment and indirect headcount proxy; also a generic event feed for any competitor org.",
+ "sample_plan": "Do NOT clone the repo for data (there is none). Keyless public pull, capped: `curl -s -r 0-3000000 https://data.gharchive.org/2026-09-01-15.json.gz -o gharchive_sample.json.gz` (3 MB range of one hourly file; verified 206 works), then `gzip -dc gharchive_sample.json.gz 2>/dev/null | head -200 > gharchive_sample_head.jsonl` to record the event schema (type, repo.name, actor, created_at). Also `curl -sI https://data.gharchive.org/2015-01-01-0.json.gz` to confirm how far back the archive reaches. Total < 5 MB. Note in the catalogue that a real Airbnb-org series means downloading ~100 MB/hour for every hour, so BigQuery (needs a Google account) is the practical route - flag that as a human decision.",
+ "tos_or_license_flag": false
+}

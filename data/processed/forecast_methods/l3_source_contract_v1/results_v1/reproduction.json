@@ -1,0 +1,44 @@
+[
+  {
+    "label": "integration_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\test_pack.py\" \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\test_quality.py\" -q",
+    "exit_code": 0,
+    "seconds": 0.6099999999860302
+  },
+  {
+    "label": "precision_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\precision\" -q",
+    "exit_code": 0,
+    "seconds": 0.9369999999762513
+  },
+  {
+    "label": "precision",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\precision\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_source_contract_v1\\results_v1\\precision\"",
+    "exit_code": 0,
+    "seconds": 0.20300000003771856
+  },
+  {
+    "label": "accounting_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\accounting\" -q",
+    "exit_code": 0,
+    "seconds": 1.2189999999827705
+  },
+  {
+    "label": "accounting",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\accounting\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_source_contract_v1\\results_v1\\accounting\"",
+    "exit_code": 0,
+    "seconds": 0.25
+  },
+  {
+    "label": "consumption_tests",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 -m pytest \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\" -q",
+    "exit_code": 0,
+    "seconds": 2.0
+  },
+  {
+    "label": "consumption",
+    "command": "\"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe\" -B -X utf8 \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\run.py\" --out \"C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane3-full\\data\\processed\\forecast_methods\\l3_source_contract_v1\\results_v1\\consumption\"",
+    "exit_code": 0,
+    "seconds": 0.4529999999795109
+  }
+]

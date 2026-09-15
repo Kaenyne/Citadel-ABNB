@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:montera34/airbnb.barcelona",
+  "url": "https://github.com/montera34/airbnb.barcelona",
+  "name": "montera34/airbnb.barcelona",
+  "category": "academic_replication",
+  "data_kind": "both",
+  "what_it_holds": "Repo from a 2018 participatory data workshop on Airbnb/touristification in Barcelona. Contains Inside-Airbnb-sourced snapshots under data/original/airbnb/ at multiple dated pulls between 150430 (30 Apr 2015) and 190308 (8 Mar 2019), each with listings_summary_barcelona_insideairbnb.csv and reviews_summary_barcelona_insideairbnb.csv (large listings.csv.gz not stored in repo), plus geographic boundary shapefiles and Barcelona demographic/housing (population, dwelling) tables for overlay analysis.",
+  "why_useful": "Barcelona Inside Airbnb history back to April 2015 -- earlier than our current 13-city panel (Dec 2022 onward) and directly relevant to the Garcia-Lopez et al. Barcelona housing-impact replication literature named in this theme; also usable to sanity-check current Barcelona ADR/listing trends against a much longer base period.",
+  "potential": "medium",
+  "geography": "Barcelona, Spain",
+  "time_coverage": "Apr 2015 - Mar 2019 (multiple snapshot dates)",
+  "license": "Not explicit in README (montera34 projects are typically open-data oriented; verify before use)",
+  "size_hint": "Multiple dated snapshot folders of listings/reviews summary CSVs plus shapefiles",
+  "last_activity": "2019 (workshop-era), org still exists",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "Partial overlap with our Barcelona Inside Airbnb coverage, but several years older",
+  "hits": 1,
+  "themes": [
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews"
+  ],
+  "why_all": [
+   "Barcelona Inside Airbnb history back to April 2015 -- earlier than our current 13-city panel (Dec 2022 onward) and directly relevant to the Garcia-Lopez et al. Barcelona housing-impact replication literature named in this theme; also usable to sanity-check current Barcelona ADR/listing trends against a much longer base period."
+  ]
+ },
+ {
+  "key": "github:sideye/airbnb-occupancy-tax",
+  "url": "https://github.com/sideye/airbnb-occupancy-tax",
+  "name": "airbnb-occupancy-tax",
+  "category": "academic_replication",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Economics honors thesis studying Boston's Airbnb occupancy-tax implementation (2018-2019). Committed Jupyter notebooks (e.g. 'Calculate Exits.ipynb') and CSVs with listing-level reservation-date metrics (weekly/bimonthly/monthly aggregations), 'date booked' monthly aggregation, and an entries/exits analysis. Treatment city Boston plus control cities Montreal, Providence/Rhode Island, Washington DC, Quebec City, Nashville, San Francisco, Chicago, Twin Cities, Denver, Asheville, with a control-city tax-rate spreadsheet. Filters to listings booked >14 nights/year (the tax threshold) and applies synthetic-control methodology around each city's tax-implementation date.",
+  "why_useful": "Direct academic precedent for imputing occupancy/nights from Airbnb review cadence around a lodging-tax event (methodologically close to the team's own reviews-based stays index, gap #2/#3 realised-occupancy proxies and tax pass-through). Small city-year panel, not itself a broad tax-collections dataset, but a usable cross-check dataset and method.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "geography": "Boston + 10 control cities (US/Canada)",
+  "time_coverage": "2018-2019",
+  "size_hint": "several CSVs, city-year/day panel; small",
+  "license": "not specified",
+  "last_activity": "2024-04-13",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)",
+   "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform"
+  ],
+  "why_all": [
+   "Direct academic precedent for imputing occupancy/nights from Airbnb review cadence around a lodging-tax event (methodologically close to the team's own reviews-based stays index, gap #2/#3 realised-occupancy proxies and tax pass-through). Small city-year panel, not itself a broad tax-collections dataset, but a usable cross-check dataset and method.",
+   "Directly on-theme: a natural-experiment dataset on how STR occupancy-tax implementation affects Airbnb listing/booking behavior across 11 North American cities, with before/after listing-level data. Could inform how new occupancy-tax regimes (gap #12 regulation trackers, also relevant to nights/ADR elasticity work) affect nights and host supply; a template for a similar study on newer tax rollouts."
+  ]
+ },
+ {
+  "key": "github:opensourceap/crosssection",
+  "url": "https://github.com/OpenSourceAP/CrossSection",
+  "name": "Open Source Asset Pricing (Chen-Zimmermann) CrossSection",
+  "category": "academic_replication",
+  "data_kind": "both",
+  "what_it_holds": "Code (WRDS pull in Python, portfolio construction in R) reproducing 300+ published cross-sectional return anomalies, including an 'EarningsSurprise.csv' signal and (per the project's data portal) an Earnings Announcement Return / SUE-style anomaly among the documented signals. Pre-built signal and portfolio-return files are distributed off-repo at openassetpricing.com rather than committed in git.",
+  "why_useful": "The EarningsSurprise / SUE-family signal underlying the classic earnings-drift anomaly is exactly the academic analogue of an 'earnings-drift dataset' \u2014 could be used to benchmark whether an ABNB-style earnings-drift effect is even a real base rate in the broader market before building any drift trade thesis.",
+  "potential": "medium",
+  "size_hint": "300+ signals, decades of US cross-section, WRDS-derived",
+  "time_coverage": "typically 1963/1970s-present depending on signal",
+  "geography": "US equities broad cross-section (not ABNB-specific)",
+  "license": "GPL-2.0",
+  "last_activity": "actively maintained project (openassetpricing.com companion site)",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "The EarningsSurprise / SUE-family signal underlying the classic earnings-drift anomaly is exactly the academic analogue of an 'earnings-drift dataset' \u2014 could be used to benchmark whether an ABNB-style earnings-drift effect is even a real base rate in the broader market before building any drift trade thesis."
+  ]
+ },
+ {
+  "key": "github:aarushisingh470/post-earnings-announcement-drift",
+  "url": "https://github.com/aarushisingh470/Post-Earnings-Announcement-Drift",
+  "name": "Post-Earnings-Announcement-Drift (investor attention)",
+  "category": "academic_replication",
+  "data_kind": "both",
+  "what_it_holds": "Jupyter-notebook replication package (11 commits) of the PEAD anomaly using a standard event-study/CAR framework over an event window t=0 to t=21. Adds Google Trends search volume as an investor-attention proxy (following Da, Engelberg & Gao 2011) and an 'earnings announcement congestion' measure (competing same-day earnings releases) to test delayed information incorporation. Reports an annualized Sharpe of ~1.76 for a resulting long-short strategy. Contains cached datasets, figures, and tables in output folders (exact tickers/row counts not stated in README).",
+  "why_useful": "A ready-made PEAD + investor-attention replication combining exactly the two themes in scope (event-study drift, and a Google-Trends-as-attention-proxy method) -- useful as a template even though our team's own Google Trends test failed as a demand nowcast; this is a different application (attention/congestion, not level).",
+  "potential": "medium",
+  "geography": "US equities",
+  "time_coverage": "unspecified (uses Google Trends, so likely post-2011)",
+  "size_hint": "notebooks + cached data/figures, 11 commits",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "duplicate_of_holding": "Google Trends already tested and found not to work as a demand nowcast; this is a distinct use (investor attention around earnings dates), not a re-flag of the same failed construction.",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "A ready-made PEAD + investor-attention replication combining exactly the two themes in scope (event-study drift, and a Google-Trends-as-attention-proxy method) -- useful as a template even though our team's own Google Trends test failed as a demand nowcast; this is a different application (attention/congestion, not level)."
+  ]
+ },
+ {
+  "key": "github:eda-yilmaz/di722_istanbul_airbnb",
+  "url": "https://github.com/eda-yilmaz/DI722_Istanbul_Airbnb",
+  "name": "DI722_Istanbul_Airbnb",
+  "category": "academic_replication",
+  "data_kind": "both",
+  "what_it_holds": "Spatio-temporal study of short-term-rental regulation's impact on Airbnb activity in Istanbul, Turkey \u2014 a geography and regulatory regime (Turkey's 2024 national STR licensing law) not present in any of our current holdings.",
+  "why_useful": "Extends regional-mix regulatory coverage (gap #12) into a fast-growing EMEA/emerging market not in our 32-factor database or municipal registry panel; useful context for EMEA nights/ADR mix even if the underlying data turns out thin.",
+  "potential": "medium",
+  "geography": "Istanbul, Turkey",
+  "time_coverage": "unclear, likely 2023-2025",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Extends regional-mix regulatory coverage (gap #12) into a fast-growing EMEA/emerging market not in our 32-factor database or municipal registry panel; useful context for EMEA nights/ADR mix even if the underlying data turns out thin."
+  ]
+ }
+]

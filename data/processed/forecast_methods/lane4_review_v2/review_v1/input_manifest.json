@@ -1,0 +1,147 @@
+[
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\annual.csv",
+    "sha256": "2015f3862de12bf046a66ef06cee0544c0c8f5fff6ab21b0f16b93f7ccb1967e",
+    "snapshot": "inputs\\00_annual.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\scenario_summary.csv",
+    "sha256": "c3a640fda7789e23708fdaae8875f7a3cd104d873a14a18ea716ad0d1290a51a",
+    "snapshot": "inputs\\01_scenario_summary.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\horizon.json",
+    "sha256": "eb53770783fe75aec867b6128f17dbad690e2a29e997c4ee016a57c9ff3ae215",
+    "snapshot": "inputs\\02_horizon.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\legacy_replication.json",
+    "sha256": "d954db5c9b79a2a438f13cd3bfa2440fae31dac475c1338f44773452b9a5efc8",
+    "snapshot": "inputs\\03_legacy_replication.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\input_manifest.json",
+    "sha256": "553e61cde9f71dfaa5537ad9a10e4a791df4815aab1acc55dd0933e06b2c265c",
+    "snapshot": "inputs\\04_input_manifest.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\workbook_tieout.json",
+    "sha256": "08144e34bc4bd89742005d5a16cb240438f7593445214490e4e61fc4d1f8a52e",
+    "snapshot": "inputs\\05_workbook_tieout.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\forecast.csv",
+    "sha256": "44381e679cc41d2ae7d952bbad78e2a2008392eeb085451ac8130b4ae509e397",
+    "snapshot": "inputs\\06_forecast.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\operating_inputs.csv",
+    "sha256": "4e971be2a5ef8c53fc790fc1ef1465ff852e88f77b200b589f7b82e5a88d3b21",
+    "snapshot": "inputs\\07_operating_inputs.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\expectations_comparison.csv",
+    "sha256": "d1588d403a7771db5eb4ee65fd52e40503cfaf524ffef320d68f0c23069280a9",
+    "snapshot": "inputs\\08_expectations_comparison.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\joint_scenarios.csv",
+    "sha256": "76a15e37371c530d08ab895aa4f72b5bbe56153b804717d2351be4912567b662",
+    "snapshot": "inputs\\09_joint_scenarios.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\descriptive_joint_extremes.csv",
+    "sha256": "db2803fd57325fcc83b89dc4673ba5019d37e70583f83742f5b0b24693062f49",
+    "snapshot": "inputs\\10_descriptive_joint_extremes.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\integrity_receipt.json",
+    "sha256": "9afb70a7abf8e8e988f5ded745802cc4d54ea4d3b95e9241e86ae75e2de470aa",
+    "snapshot": "inputs\\11_integrity_receipt.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\row_dispositions.csv",
+    "sha256": "661618b195e8a7e23919225fe2cf9d4a0db0b16102df0ee0909d90847fda28f4",
+    "snapshot": "inputs\\12_row_dispositions.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\accounting_eligibility.json",
+    "sha256": "362d01b2575343358d9844377ce2f5156a9979fc447c4e6996031a051465c128",
+    "snapshot": "inputs\\13_accounting_eligibility.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\accounting_interface.csv",
+    "sha256": "87c4f7c92dafdf72fc9c8bf506ce3d1eae0e3838ce6fb61020fa7ef90aecec69",
+    "snapshot": "inputs\\14_accounting_interface.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\chronological_scores.csv",
+    "sha256": "3ac919a1c3f88bc5a9653c8776b015c8d3690acb186cb73676d3e4ce4d0f87a7",
+    "snapshot": "inputs\\15_chronological_scores.csv"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\summary.json",
+    "sha256": "9ccdf1a8ddbbe1d49009334204d4e0c69f7b1bd8b3d2184b08167c417d1f98a8",
+    "snapshot": "inputs\\16_summary.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\claim_ledger.csv",
+    "sha256": "be783ed3cb65cbe85c3ee9040dc674d970a6c2f0e40b22871ee6964b02288921",
+    "snapshot": "inputs\\17_claim_ledger.csv"
+  },
+  {
+    "path": "deck\\drafts\\lane4_v1\\review_v4\\unsigned_card.json",
+    "sha256": "020cf46190433267674a69afa7ba217a65356108dffcb9e4724bf3541e42a8c3",
+    "snapshot": "inputs\\18_unsigned_card.json"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\qvs\\QVS_GUIDE_BASIS_AND_DECISION_LOGIC_v1.md",
+    "sha256": "37bacad9d55d1b5a1f31aa0db793f3ca8784051d3bfd8e4f84786fe1be49cd36",
+    "snapshot": "inputs\\19_QVS_GUIDE_BASIS_AND_DECISION_LOGIC_v1.md"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\qvs\\QVS_VARIANCE_AND_PRESENTATION_ARGUMENTS_v1.md",
+    "sha256": "0d8eb557924f7dc476d400cb0cec2ba2c30aac92fc22e0133047416677e7cb84",
+    "snapshot": "inputs\\20_QVS_VARIANCE_AND_PRESENTATION_ARGUMENTS_v1.md"
+  },
+  {
+    "path": "docs\\revenue-forecast-strategy\\05_backtests\\LANE2_MEMO_READY_CLAIMS.md",
+    "sha256": "5b54b1c2e6fdd62f8cc84ff9602b02a364d1df9507886bb132ee45712aa59d3a",
+    "snapshot": "inputs\\21_LANE2_MEMO_READY_CLAIMS.md"
+  },
+  {
+    "path": "docs\\revenue-forecast-strategy\\05_backtests\\ALPHA_F_RNPL.md",
+    "sha256": "636850c6c887cd0efecd05322f2a8d2a59ab2146aa5ed13bcca4a115d024b6ee",
+    "snapshot": "inputs\\22_ALPHA_F_RNPL.md"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\01_seasonal_conversion.png",
+    "sha256": "52ffcb5cef1e965127370afca0d233d0de57efeed8dd369e98e662823a7642ac",
+    "snapshot": "deck\\drafts\\lane4_v2\\review_v1\\01_seasonal_conversion.png"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\01_seasonal_conversion.svg",
+    "sha256": "851d5cee2aca6204aabbaeba3d3144c2ee40f896ab0773bb4a3763f7f48c59fe",
+    "snapshot": "deck\\drafts\\lane4_v2\\review_v1\\01_seasonal_conversion.svg"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\02_weight_identification.png",
+    "sha256": "70664777090d6c6ead68763878c126d4591893b5725c2a785884c33761f0b27b",
+    "snapshot": "deck\\drafts\\lane4_v2\\review_v1\\02_weight_identification.png"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\02_weight_identification.svg",
+    "sha256": "cfa380225529c79283e14259248002f16efa92d83de457058b49e76e2d568350",
+    "snapshot": "deck\\drafts\\lane4_v2\\review_v1\\02_weight_identification.svg"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\03_chronological_validation.png",
+    "sha256": "89b39cb8527bdd531caba51b7c50e9939254b43c6bbb25e537217f74acd72248",
+    "snapshot": "deck\\drafts\\lane4_v2\\review_v1\\03_chronological_validation.png"
+  },
+  {
+    "path": "data\\processed\\forecast_methods\\lane4_sources_v2\\snapshot_v1\\bundle\\payload\\conversion\\03_chronological_validation.svg",
+    "sha256": "e0322de126adef6d857401cd944ac296e77aa04590fa78217e60a2343e5ca2e4",
+    "snapshot": "deck\\drafts\\lane4_v2\\review_v1\\03_chronological_validation.svg"
+  }
+]

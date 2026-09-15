@@ -1,0 +1,32 @@
+{
+ "slug": "montera34-barcelona-insideairbnb-2015-2019",
+ "url": "https://github.com/montera34/airbnb.barcelona",
+ "sampled": true,
+ "total_bytes": 24427670,
+ "files": [
+  "bcn_listings_150430.csv",
+  "bcn_listings_160103.csv",
+  "bcn_listings_170104.csv",
+  "bcn_listings_180117.csv",
+  "bcn_listings_190308.csv",
+  "bcn_reviews_190308.csv",
+  "snapshot_dates_all34.txt"
+ ],
+ "rows": "bcn_listings_150430 12,033; 160103 14,855; 170104 17,412; 180117 18,760; 190308 17,807; bcn_reviews_190308 576,579 (listing_id,date pairs); snapshot_dates_all34.txt 34 lines",
+ "columns": "listings: id, name, host_id, host_name, neighbourhood_group, neighbourhood, latitude, longitude, room_type, price, minimum_nights, number_of_reviews, last_review, reviews_per_month, calculated_host_listings_count, availability_365. reviews: listing_id, date",
+ "date_range": "snapshots 2015-04-30 to 2019-03-08 (5 of 34 pulled); reviews 2010-08-11 to 2019-03-07; last_review min 2011-02-19",
+ "how_pulled": "gh api repos/montera34/airbnb.barcelona/contents/data/original/airbnb --jq '.[].name' > dates.txt; D=https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb; for d in 150430 160103 170104 180117 190308; do curl -sL -o bcn_listings_$d.csv \"$D/$d/listings_summary_barcelona_insideairbnb.csv\"; done; curl -sL -o bcn_reviews_190308.csv \"$D/190308/reviews_summary_barcelona_insideairbnb.csv\"; described with pandas",
+ "full_dataset_size": "34 dated snapshot folders (150430..190308) each with listings_summary (~2-3.2 MB, 12k-19k rows) and reviews_summary (2.9-11.1 MB, cumulative); ~34 x 2 files, roughly 80-90 MB of CSV for the Inside Airbnb part; repo ~147 MB total including shapefiles and census tables. One curl per file, or git clone --depth 1 --filter=blob:none --sparse then sparse-checkout set data/original/airbnb",
+ "description": "Committed copies of Inside Airbnb's Barcelona summary files (listings_summary and reviews_summary) at 34 scrape dates from Apr 2015 to Mar 2019, made by montera34 for a Barcelona STR mapping project. Grain is one row per listing per snapshot (quoted nightly price, room type, neighbourhood, host listing count, availability_365, review counts) and one row per review per listing (listing_id, date) cumulative back to 2010. Source is the Inside Airbnb dumps that are no longer on the Inside Airbnb CDN. For ABNB an analyst would extend the Barcelona leg of the reviews-based stays index and the supply/host-concentration and quoted-price series back through a full pre-COVID cycle including the 2016-17 HUTB crackdown, giving a base period to judge the 2022-26 EMEA trend against.",
+ "issues": "No LICENSE file in the repo; upstream Inside Airbnb data is CC BY 4.0 (attribution required), montera34's own code/redistribution terms unstated - a human should decide whether to redistribute. Files are the summary (not full listings.csv/calendar.csv) versions so no calendar/availability-by-day or full price detail. Prices are quoted, not realised. 29 of 34 snapshots not pulled (list in snapshot_dates_all34.txt). Repo last pushed Oct 2019, 0 stars. Sample sits at ~24.4 MB, just under the 25 MB cap.",
+ "source_urls": [
+  "https://api.github.com/repos/montera34/airbnb.barcelona/contents/data/original/airbnb",
+  "https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb/150430/listings_summary_barcelona_insideairbnb.csv",
+  "https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb/160103/listings_summary_barcelona_insideairbnb.csv",
+  "https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb/170104/listings_summary_barcelona_insideairbnb.csv",
+  "https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb/180117/listings_summary_barcelona_insideairbnb.csv",
+  "https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb/190308/listings_summary_barcelona_insideairbnb.csv",
+  "https://raw.githubusercontent.com/montera34/airbnb.barcelona/master/data/original/airbnb/190308/reviews_summary_barcelona_insideairbnb.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

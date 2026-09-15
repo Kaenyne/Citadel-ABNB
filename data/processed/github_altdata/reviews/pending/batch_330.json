@@ -1,0 +1,144 @@
+[
+ {
+  "key": "github:petermeissner/wikipediatrend",
+  "url": "https://github.com/petermeissner/wikipediatrend",
+  "name": "wikipediatrend",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (GPL>=2, v2.1.6 released 2020-06-03) with wp_trend() to retrieve per-article Wikipedia pageview time series by language/article, returning a tidy date/lang/article/views data frame. Critically, it stitches together historical pre-2016 data (pre-dating the official API, sourced from a Hertie School of Governance-commissioned archive hosted at petermeissner.de) with the post-2016 official Wikimedia Foundation API, giving continuous coverage back to as early as 2007-2008 for some articles.",
+  "why_useful": "Fills the point-in-time/history-depth problem directly: our stated gap is that Google Trends pulls are not point-in-time and pageviews tooling generally starts in 2015. This gives longer (2007+) continuous history for city/destination/attraction Wikipedia articles as a demand proxy usable for longer backtests than the official API alone allows.",
+  "potential": "high",
+  "gap_targets": [
+   5,
+   4
+  ],
+  "geography": "global (any Wikipedia language edition/article)",
+  "time_coverage": "~2007/2008-present (pre-API era stitched to API era)",
+  "size_hint": "client library, no bundled dataset",
+  "license": "GPL (>=2)",
+  "last_activity": "2020-06-03 (last CRAN release); repo otherwise dormant",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Fills the point-in-time/history-depth problem directly: our stated gap is that Google Trends pulls are not point-in-time and pageviews tooling generally starts in 2015. This gives longer (2007+) continuous history for city/destination/attraction Wikipedia articles as a demand proxy usable for longer backtests than the official API alone allows."
+  ]
+ },
+ {
+  "key": "github:wangmm001/common-crawl-ranks-cache",
+  "url": "https://github.com/wangmm001/common-crawl-ranks-cache",
+  "name": "common-crawl-ranks-cache",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Daily-polled (effectively quarterly, since CC webgraph releases are quarterly) mirror of Common Crawl's host- and domain-level web-graph ranks, Top-1M per release. Host-level CSV: rank, harmonic-centrality score, PageRank position, PageRank value, hostname. Domain-level CSV adds distinct-host count per domain. Gzip-compressed CSVs in a GitHub Actions-driven repo; no stated start date/backfill (tracks only from first cron run), license 'Other'.",
+  "why_useful": "Directly answers gap 5 (web-traffic/engagement proxies: Tranco/Common Crawl host-graph ranks). If airbnb.com (and Vrbo, Booking.com, Expedia domains) sit inside the Top-1M, this gives a free, repeatable time series of relative web-graph prominence per CC quarterly release that could proxy for site engagement/traffic momentum, complementing the missing Similarweb/Cloudflare Radar data.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "license": "Other (unspecified terms)",
+  "last_activity": "2026-08-26",
+  "geography": "global",
+  "time_coverage": "from first cron run (recent) forward, refreshed ~quarterly with CC webgraph releases",
+  "size_hint": "Top-1M hosts/domains per release, gzip CSV",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Directly answers gap 5 (web-traffic/engagement proxies: Tranco/Common Crawl host-graph ranks). If airbnb.com (and Vrbo, Booking.com, Expedia domains) sit inside the Top-1M, this gives a free, repeatable time series of relative web-graph prominence per CC quarterly release that could proxy for site engagement/traffic momentum, complementing the missing Similarweb/Cloudflare Radar data."
+  ]
+ },
+ {
+  "key": "other:https://tranco-list.eu",
+  "url": "https://tranco-list.eu/",
+  "name": "Tranco top-sites list",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Research-grade top-1M-sites domain ranking aggregated from Cisco Umbrella, Majestic, Farsight, Chrome UX Report (CrUX), and Cloudflare Radar, averaged over rolling 30-day windows; historical daily list IDs are permanently retrievable (point-in-time by construction), with Python/Go client libraries and a GitHub source repo (linked from the site) plus BigQuery access. Not Common-Crawl-derived, but sits in the same 'host popularity ranking' space as cc-webgraph and is more directly comparable to Similarweb/CrUX-rank asks in gap 5.",
+  "why_useful": "Gives a genuinely point-in-time (dated list IDs, never revised) domain-popularity series for airbnb.com vs booking.com/expedia.com/vrbo.com going back years, filling gap 5's 'Tranco / host-graph rank' ask directly and with an off-the-shelf client.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "time_coverage": "Tranco lists generated daily since ~2018, each permanently archived by ID",
+  "geography": "global domains",
+  "size_hint": "each list ~1M domains, small compressed CSV per date",
+  "license": "list data CC-BY-4.0-style research use per Tranco's academic paper (verify on repo); client code license per its own GitHub repo",
+  "last_activity": "actively maintained public research service",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites",
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Gives a genuinely point-in-time (dated list IDs, never revised) domain-popularity series for airbnb.com vs booking.com/expedia.com/vrbo.com going back years, filling gap 5's 'Tranco / host-graph rank' ask directly and with an off-the-shelf client.",
+   "Same as the tranco-list repo above \u2014 external host for the actual point-in-time ranking snapshots by date, which is what would be needed for a genuine time series (gap #4/#5, vintage engagement data)."
+  ]
+ },
+ {
+  "key": "github:dawe35/similarweb-free-api",
+  "url": "https://github.com/DaWe35/Similarweb-free-API",
+  "name": "Similarweb-free-API",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python example (153 stars, last pushed 2019-11-29) hitting Similarweb's free/no-API-key browser-extension endpoint to fetch website traffic estimates (visits, engagement, traffic sources) for any domain, including airbnb.com and competitor domains (booking.com, vrbo.com, expedia.com).",
+  "why_useful": "Directly addresses gap #5 (Similarweb-like web-traffic engagement data) with a genuinely free, no-login method; would need to be tested for whether the endpoint still works (2019 vintage) and whether it is current-only (not point-in-time historical).",
+  "potential": "high",
+  "size_hint": "single script, ~100 lines",
+  "geography": "global (any domain)",
+  "time_coverage": "current snapshot only, no history unless polled ourselves",
+  "last_activity": "2019-11-29",
+  "license": "unclear",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 3,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)",
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Directly addresses gap #5 (Similarweb-like web-traffic engagement data) with a genuinely free, no-login method; would need to be tested for whether the endpoint still works (2019 vintage) and whether it is current-only (not point-in-time historical).",
+   "Directly answers gap #5 (web-traffic estimates / Similarweb-like engagement data) with a genuinely free, no-API-key route to Similarweb-grade domain rank and traffic-source data for airbnb.com (and BKNG/EXPE/VRBO domains) that could be pulled going forward as a point-in-time engagement series if the team decides to run it (a ToS question per rule #6 since it touches a scraping-adjacent endpoint, even though the target is not airbnb.com's booking flow).",
+   "Directly serves gap #5 (Similarweb-like web-traffic estimates) -- a no-cost route to a time series of airbnb.com (and vrbo.com, booking.com, expedia.com) visit/engagement estimates as a demand-engagement proxy ahead of prints, without a paid Similarweb contract."
+  ]
+ },
+ {
+  "key": "github:jomingyu/google-play-scraper",
+  "url": "https://github.com/JoMingyu/google-play-scraper",
+  "name": "google-play-scraper (JoMingyu)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library for pulling Google Play Store app metadata, ratings, rating-count histories, and full review text/timestamps for any app ID via public endpoints (no scraping of restricted pages), handling pagination beyond the 200-review batch limit. Generic tool, not Airbnb-specific, but trivially pointed at the Airbnb Android app package to pull rating trend and dated user reviews.",
+  "why_useful": "A clean, general-purpose, non-Airbnb-site method to build an Airbnb app rating/review-count time series as an engagement/usage proxy -- directly addresses gap #5 (app rankings/engagement history) without touching airbnb.com, so it is not a rule-6 ToS question the way a direct Airbnb-site scraper would be.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "license": "check repo (commonly MIT for this class of tool; not independently confirmed)",
+  "last_activity": "actively used by community (exact date not confirmed)",
+  "geography": "global (Play Store)",
+  "time_coverage": "live, current reviews plus historical rating counts where exposed by the API",
+  "size_hint": "n/a (library, not a dataset)",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series",
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "A clean, general-purpose, non-Airbnb-site method to build an Airbnb app rating/review-count time series as an engagement/usage proxy -- directly addresses gap #5 (app rankings/engagement history) without touching airbnb.com, so it is not a rule-6 ToS question the way a direct Airbnb-site scraper would be.",
+   "Same use case as the Node original but directly usable from our Python stack without a Node bridge; worth noting as the drop-in choice if we build a scheduled Android app-metrics puller.",
+   "Python-native alternative to the Node scraper for the same engagement-snapshot use case (gap 5); easier to slot into this repo's pandas/duckdb pipeline than the Node tools.",
+   "Feeds gap #5 (engagement: app downloads/rankings, review sentiment) -- Airbnb app rating trends and review volume/sentiment on Google Play as an engagement proxy, refreshed on a schedule for a point-in-time series (ratings/review counts change over time, so repeated pulls with pull-dates would be usable)."
+  ]
+ }
+]

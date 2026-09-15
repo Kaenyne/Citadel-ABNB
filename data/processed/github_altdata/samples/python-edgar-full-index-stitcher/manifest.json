@@ -1,0 +1,33 @@
+{
+ "slug": "python-edgar-full-index-stitcher",
+ "url": "https://github.com/edouardswiac/python-edgar",
+ "sampled": true,
+ "total_bytes": 5997960,
+ "files": [
+  "README.md",
+  "abnb_submissions_recent_CIK0001559720.csv",
+  "edgar_full_index_2026Q3_8K_10Q_10K.csv",
+  "edgar_full_index_2026Q3_abnb_peers.csv",
+  "edgar_full_index_2026Q3_company_head.idx",
+  "edgar_full_index_2026Q3_company_head20k.csv",
+  "edgar_full_index_2026Q3_form_head20k.csv",
+  "manifest.json",
+  "python_edgar_LICENSE",
+  "python_edgar_README.md",
+  "python_edgar_main.py"
+ ],
+ "rows": "company_head20k.csv 20,000; form_head20k.csv 20,000; 8K_10Q_10K.csv 18,351 (all 8-K/10-Q/10-K in 2026Q3 index through 12 Sep); abnb_peers.csv 119 (ABNB 57, BKNG 17, EXPE 21, MAR 13, HLT 11); abnb_submissions_recent.csv 1,001; company_head.idx 2,000 raw lines; python_edgar_main.py / README / LICENSE n/a",
+ "columns": "idx files: company_name, form_type, cik, date_filed, file_name (edgar/data/<cik>/<accession>.txt). submissions JSON: accessionNumber, filingDate, reportDate, acceptanceDateTime, act, form, fileNumber, filmNumber, items, core_type, size, isXBRL, isInlineXBRL, isXBRLNumeric, primaryDocument, primaryDocDescription",
+ "date_range": "2026Q3 index rows observed: 2026-07-01 to 2026-09-11 (file header 'Last Data Received: September 12, 2026'); ABNB submissions recent: 2023-05-01 to 2026-09-03 (older 452 filings 2012-10-24 to 2023-04-29 sit in the linked CIK0001559720-submissions-001.json, not pulled)",
+ "how_pulled": "git clone --depth 1 --filter=blob:none https://github.com/edouardswiac/python-edgar (commit d53ffae, 2023-05-04); curl -s -A 'ksurapaneni@ufl.edu academic research' -r 0-3999999 https://www.sec.gov/Archives/edgar/full-index/2026/QTR3/company.idx (sec.gov ignored the Range header and served the full 39.3 MB file to scratch; same for form.idx with -r 0-999999); curl -s -A '<same UA>' https://data.sec.gov/submissions/CIK0001559720.json; python/pandas parsed the fixed-width idx (split on 2+ spaces), wrote 20k-row heads, the 8-K/10-Q/10-K subset, the ABNB+peer subset, and the submissions 'recent' table to CSV; copied edgar/main.py, README.md, LICENSE from the clone",
+ "full_dataset_size": "Full-index quarterly files exist 1993Q1-2026Q3 (~135 quarters); recent quarters are ~39 MB each for company.idx (~1.0M filing rows/quarter), earlier years far smaller; the whole stitched master index is roughly 1.5-2.5 GB uncompressed, ~25-30M filing rows (python-edgar's run.py downloads the .zip variants, ~10x smaller). Per-company submissions JSON: one ~150 KB file per CIK plus paginated history files",
+ "description": "SEC EDGAR full-index: one row per filing (company name, CIK, form type, filing date, path to the accession .txt) for every EDGAR filing, published quarterly by the SEC and refreshed daily inside the current quarter; the python-edgar repo is a 4 KB MIT stitcher that downloads every quarterly file since 1993 and concatenates them into one master index, no data is committed in the repo. Grain is filing-level, filing date only (no time of day); the companion data.sec.gov submissions JSON per CIK adds acceptanceDateTime to the second and reportDate. For ABNB an analyst would use it to build the exact wire timestamps of every ABNB/BKNG/EXPE/MAR/HLT 8-K earnings release, 10-Q and 10-K since IPO so consensus and price snapshots in the L0 vintage register are aligned to release time rather than quarter label, and to detect Form 4/144 insider-sale cadence around prints.",
+ "issues": "sec.gov ignores HTTP Range requests on full-index files (Accept-Ranges advertised but full 39 MB served), so the sample was truncated locally rather than server-side; the fixed-width parser split on 2+ spaces and mis-shifts rows whose company name or form type contains runs of 2+ spaces (e.g. 'ARMSTRONG  D GEOFFREY', 'BANK OF NEW YORK /N Y/  /GFN'); 4 of 50k company rows and 7 of 50k form rows were dropped by a date regex, so a production parser should use the fixed column offsets instead. Data is US-government public domain; SEC fair-access policy requires a descriptive User-Agent with contact email and <=10 requests/sec. The repo itself is stale (last commit 2023-05, last push 2024-05) and only wraps a trivial download loop; the underlying index is the asset. acceptanceDateTime is not in the full-index files, only in the per-CIK submissions JSON.",
+ "source_urls": [
+  "https://github.com/edouardswiac/python-edgar",
+  "https://www.sec.gov/Archives/edgar/full-index/2026/QTR3/company.idx",
+  "https://www.sec.gov/Archives/edgar/full-index/2026/QTR3/form.idx",
+  "https://data.sec.gov/submissions/CIK0001559720.json"
+ ],
+ "pulled_at": "2026-09-14"
+}

@@ -1,0 +1,89 @@
+{
+  "theme": "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"google hotels scraper\" --limit 30 --sort stars",
+    "gh search repos \"google travel prices dataset\" --limit 30 --sort stars",
+    "gh search repos \"hotel metasearch price data\" --limit 30 --sort stars",
+    "gh search repos \"serpapi google hotels\" --limit 30 --sort stars",
+    "gh search repos \"hotel price index dataset\" --limit 30 --sort stars",
+    "gh search repos \"hotel rate shopper\" --limit 30 --sort stars",
+    "gh search repos \"google hotel ads\" --limit 30 --sort stars",
+    "gh search repos \"hotel price panel\" OR \"kayak scraper\" --limit 30 --sort stars"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/bahiazul/google-hotel-ads-xml",
+      "name": "google-hotel-ads-xml",
+      "category": "hotel_lodging",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Library (1 star, last updated 2021) to parse and write the XML feed format used by the actual Google Hotel Ads advertiser API (price/availability feeds hoteliers push to Google) — a client for the feed schema, not a dataset. No committed price history.",
+      "why_useful": "Shows the real GHA feed schema (room rates, availability, currency) if the team ever wanted to build a hotel-price scraper against Google's own advertiser-facing spec rather than scraping search-result HTML; illustrates what fields would need to be captured for a metasearch price panel (gap 8).",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/factden/google-hotels-scraper",
+      "name": "google-hotels-scraper",
+      "category": "hotel_lodging",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "MIT-licensed Apify actor (0 stars, updated 7 Sep 2026) scraping Google Hotels search results for nightly/total price, OTA rate ladder (Booking/Agoda/Expedia/Hotels.com), star class, ratings, coordinates. No data committed — pay-per-run actor, output is JSON/CSV per query, nothing stored in the repo.",
+      "why_useful": "Most functionally complete open scraper found for a live hotel-metasearch price panel (multi-OTA rate comparison across markets); could in principle be run point-in-time to start a fresh ADR/RevPAR-adjacent panel, but requires ongoing scraping of a third party site and Apify infra — a method, not a dataset, and would need a human ToS call per repo CLAUDE.md rule 6.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/BlackFalconData-org/google-hotels-scraper",
+      "name": "google-hotels-scraper (BlackFalconData)",
+      "category": "hotel_lodging",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "0-star Apify actor (updated 4 Sep 2026) explicitly marketed for tracking Google Hotels price changes across repeated runs, with MCP integration for AI agents. No data committed to the repo itself.",
+      "why_useful": "Same category as factden's actor — a maintained, currently-updated scraper aimed specifically at price-change tracking over time, which is closer to what a metasearch price panel needs than one-off scrapers; still a live-scrape method only.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/blazejp83/proscraper",
+      "name": "proscraper",
+      "category": "hotel_lodging",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "MIT CLI wrapper around SerpAPI (a paid API) covering Google Hotels, Flights, Scholar, TripAdvisor, with SQLite persistence and response caching for repeated pulls. 0 stars, updated Aug 2026.",
+      "why_useful": "The SQLite caching layer is the one design here that would actually accumulate a point-in-time price panel over repeated runs rather than discarding each pull, if paired with a paid SerpAPI key; illustrates a workable architecture even though no data or key is provided.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/rohitrawat11/hotel-rate-shopper",
+      "name": "hotel-rate-shopper",
+      "category": "hotel_lodging",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "MIT repo (0 stars, updated Aug 2026) tracking Booking.com rates over time for competitive rate-intelligence/RM use, not Google specifically. No committed dataset found in listing (description only).",
+      "why_useful": "Adjacent metasearch-style rate-tracking method (Booking.com rather than Google) that explicitly frames itself as tracking rates 'over time' — closest thing found to an actual time-series rate panel design, but appears to be a fresh/empty tool rather than a populated dataset.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/Veetal-Connect/recipes",
+      "name": "Veetal-Connect/recipes",
+      "category": "hotel_lodging",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "MIT 'recipes' repo (0 stars, updated 2 Sep 2026) of Node scripts against the Veetal Connect commercial API: hotel rate shopping, multi-OTA reputation, rate parity, event demand, flight data. Recipes only, no data committed, requires a paid Veetal API key.",
+      "why_useful": "Confirms rate-parity / multi-OTA rate-shopping as a commercially served category (paid API) rather than something with open committed data; the 'event demand' recipe name is a minor pointer to event-driven hotel demand signals (gap 11) but content is not inspectable without a key.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/MeshalAlamr/flight-price-prediction",
+      "name": "flight-price-prediction",
+      "category": "travel_volume_transport",
+      "data_kind": "both",
+      "what_it_holds": "55-star repo (most-starred hit across all queries, active as of 8 Sep 2026): scraped Kayak flight-price dataset plus the Kayak scraper used to build it, plus a random-forest price-prediction model. Flight prices, not hotel, but a genuine committed dataset + working scraper pair.",
+      "why_useful": "Not hotel metasearch, but the only repo in this whole sweep that pairs a committed scraped dataset with a working, currently-referenced metasearch-style scraper (Kayak) — a template for what a hotel-price panel repo would need to look like (none found). Marginal fit to this theme; flagged as the closest structural analogue.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/AchintyaAshok/Kayak-Scraper",
+      "name": "Kayak-Scraper",
+      "category": "travel_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "9-star library (updated Apr 2026) to pull flight data from Kayak.com, a travel metasearch engine. No committed price panel, library only.",
+      "why_useful": "Second-most-starred hit in the whole sweep; again flights not hotels, but Kayak is a metasearch competitor to Google Travel and this is a maintained-enough client if the team ever wanted a non-Google metasearch price source.",
+      "potential": "low"
+    }
+  ],
+  "notes": "This theme is a near dead-end for actual data: every gh search (8 queries across the 6-call budget plus 2 combined OR queries) turned up only live-scrape tooling — mostly disposable, zero/near-zero-star 'Apify actor' mirrors for Google Hotels/Google Hotel Ads with no data committed to the repo (output is per-run JSON/CSV never checked in). No repo held a committed historical Google Hotel Ads / Google Travel price time series, no release assets with price data, and no academic replication package on this topic surfaced. The two highest-star hits (55 and 9 stars) are flight-price scrapers/datasets (Kayak), not hotel metasearch, included only as the closest structural analogues (dataset+scraper pairs) since nothing hotel-specific reached that bar. This is consistent with the CONTEXT.md framing of item 8 (hotel supply/demand, RevPAR) as something scraped from press releases/regional sources rather than sitting in open GitHub datasets — Google/metasearch price data in particular appears to only exist behind paid APIs (SerpAPI, Veetal Connect, Apify actors charging per run) with no free historical mirror on GitHub. Did not use gh search code (0/1 used) since repo-level description search already covered the space and no promising repo needed a code-level content check. No rate-limit errors encountered across the 8 queries. Recommend other scouts not re-run this exact theme; if revisited, the productive next step would be WebSearch for academic papers with a 'GHA' or 'metasearch hotel price' replication package on Zenodo/Dataverse rather than more gh search repos calls, since GitHub itself appears to hold no static Google Hotel Ads price panel."
+}

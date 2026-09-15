@@ -1,0 +1,25 @@
+{
+  "commit": "3da2903e2c78f6beea358819e7c561b07a5f49a3",
+  "check": "sources",
+  "started_utc": "2026-09-14T14:11:16.608868+00:00",
+  "commands": [
+    [
+      "C:\\Users\\wille\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "analysis/src/forecast_methods/lane4_sources_v2",
+      "-p",
+      "test_*.py",
+      "-v"
+    ]
+  ],
+  "exit_codes": [
+    0
+  ],
+  "tests_passed": 18,
+  "verdict": "PASS",
+  "elapsed_seconds": 5.0310000000172295
+}

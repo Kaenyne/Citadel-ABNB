@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:lowmason/alt-nfp",
+  "url": "https://github.com/lowmason/alt-nfp",
+  "name": "alt-nfp",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Bayesian state-space nowcasting system for US nonfarm payrolls combining CES survey prints, QCEW administrative anchors, private payroll-provider microdata, and cyclical indicators, with 'strict as-of censoring' so backtests only see what was knowable on the day (true real-time/ALFRED-style vintage reconstruction). Pipeline stages: lookups -> download -> ingest -> vintages; model layer in JAX/NumPyro; data persisted to S3-compatible storage with local fallback. MIT-licensed.",
+  "why_useful": "A working point-in-time vintage-reconstruction pipeline for BLS employment series (CES+QCEW) -- directly on-point for CONTEXT.md gap #4 (ALFRED-style macro vintages) and gap #17 (nowcasting methods/mixed-frequency). Could be adapted to isolate the leisure & hospitality CES/QCEW sub-series as a vintage-correct labor-cost/employment input.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "license": "MIT",
+  "geography": "US, national (industry detail depends on config)",
+  "time_coverage": "not stated explicitly; built for real-time vintage backtesting",
+  "size_hint": "codebase + pipeline, no flat data files committed",
+  "last_activity": "2026-08-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A working point-in-time vintage-reconstruction pipeline for BLS employment series (CES+QCEW) -- directly on-point for CONTEXT.md gap #4 (ALFRED-style macro vintages) and gap #17 (nowcasting methods/mixed-frequency). Could be adapted to isolate the leisure & hospitality CES/QCEW sub-series as a vintage-correct labor-cost/employment input."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/ghost",
+  "url": "https://github.com/UPGo-McGill/ghost",
+  "name": "UPGo-McGill/ghost",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Standalone R package (spun out of strr) implementing the 'ghost hotel/hostel' detector: identifies clusters of private-room STR listings that are actually being run as a single commercial operation out of one building/unit.",
+  "why_useful": "A concrete, published algorithm for flagging commercial/illegal operators in an Inside Airbnb-style panel \u2014 could be run against our own 13-city or 120-market Inside Airbnb cohort to build a professional-host / supply-quality signal.",
+  "potential": "medium",
+  "license": "none declared",
+  "last_activity": "2019-04-24",
+  "geography": "generic method",
+  "time_coverage": "n/a",
+  "size_hint": "tiny, code only",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "A concrete, published algorithm for flagging commercial/illegal operators in an Inside Airbnb-style panel \u2014 could be run against our own 13-city or 120-market Inside Airbnb cohort to build a professional-host / supply-quality signal.",
+   "Methodology for detecting commercial/illegal STR operators, relevant to gap #12 (regulatory/registration compliance) and to separating true P2P supply from de facto hotel supply within STR panels.",
+   "Could be applied to our Inside Airbnb panel to estimate the commercial/multi-listing share of supply, a proxy for professionalised vs. casual host mix that feeds nights/ADR interpretation."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/raffle",
+  "url": "https://github.com/UPGo-McGill/raffle",
+  "name": "UPGo-McGill/raffle",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Standalone R package implementing the 'raffle' method: probabilistically assigns STR listings (given only an approximate/obfuscated map point, as Airbnb/AirDNA show) to administrative geography (city, neighbourhood, census tract) by weighted random assignment matching known listing-density priors.",
+  "why_useful": "Method for geocoding fuzzy STR listing locations into standard geographies, useful for building regional (city/neighbourhood-level) STR supply panels from Inside-Airbnb-style data with imprecise coordinates.",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Method for geocoding fuzzy STR listing locations into standard geographies, useful for building regional (city/neighbourhood-level) STR supply panels from Inside-Airbnb-style data with imprecise coordinates.",
+   "Reusable geocoding method for our own Inside Airbnb 123-market panel, where Airbnb's public listing lat/long is deliberately jittered \u2014 could sharpen neighbourhood-level assignment for regional/city splits."
+  ]
+ },
+ {
+  "key": "github:flowminder/flowkit",
+  "url": "https://github.com/Flowminder/FlowKit",
+  "name": "FlowKit",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Flowminder's open-source CDR (call detail record) analytics toolkit: a full pipeline (Spark backend, FlowAPI, FlowClient Python/R clients, FlowAuth) for turning raw mobile operator CDRs into mobility indicators (flows, residential/relocation, subscriber density, event counts) at scale. No data committed (operates on an operator's own CDR store) but a mature, actively maintained (98 stars, updated Aug 2026), MPL-2.0-licensed method for exactly the kind of MNO-derived mobility indicator Eurostat's experimental tourism statistics use.",
+  "why_useful": "This is the reference open-source implementation of the MNO-mobility-indicator pipeline (used in real national statistics offices for humanitarian/mobility work); documents the exact indicator definitions (home location, trips, subscriber density) that a from-scratch MNO tourism proxy would need, even though we would still need our own CDR/roaming source to run it.",
+  "potential": "medium",
+  "geography": "global (framework, not tied to one country)",
+  "time_coverage": "n/a (toolkit)",
+  "size_hint": "large codebase, no data",
+  "license": "MPL-2.0",
+  "last_activity": "2026-08-10",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "This is the reference open-source implementation of the MNO-mobility-indicator pipeline (used in real national statistics offices for humanitarian/mobility work); documents the exact indicator definitions (home location, trips, subscriber density) that a from-scratch MNO tourism proxy would need, even though we would still need our own CDR/roaming source to run it."
+  ]
+ },
+ {
+  "key": "github:arikanatakan/revmng",
+  "url": "https://github.com/arikanatakan/revmng",
+  "name": "revmng",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library for hotel/airline revenue management: single-leg seat/room protection (Littlewood rule, EMSR-a/b, exact dynamic programming), overbooking, pricing, group displacement, length-of-stay controls, network bid prices. No committed booking-pace data, but validated against published worked examples (textbook RM cases) and could be used to build a synthetic OTB/pickup forward-curve model from disclosed occupancy/ADR to sanity-check pace assumptions.",
+  "why_useful": "Directly relevant to gap 17 (methods: nowcasting/RM methodology) and to the booking-curve/forward-curve theme even though it carries no proprietary data itself \u2014 useful for structuring a pickup model against the ~60%-booked-before-quarter-start framing in CONTEXT.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-07-05",
+  "size_hint": "small library, no data files",
+  "geography": "generic/global (methodology only)",
+  "time_coverage": "n/a",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves",
+   "Hotel and STR supply from CoStar/CBRE/JLL/Cushman public reports scraped; real-estate broker STR reports with data"
+  ],
+  "why_all": [
+   "Directly relevant to gap 17 (methods: nowcasting/RM methodology) and to the booking-curve/forward-curve theme even though it carries no proprietary data itself \u2014 useful for structuring a pickup model against the ~60%-booked-before-quarter-start framing in CONTEXT.",
+   "Could supply a validated RM/bid-price modeling framework for thinking about ADR/occupancy trade-offs and length-of-stay dynamics (methods for gap #17 nowcasting/analogue kernels), not a data source itself.",
+   "Pure methods tooling (no data) that implements the RevPAR/ADR-pricing mechanics hotels and STR operators use; could inform how to model ADR/occupancy trade-offs mechanically, but contributes nothing toward the CoStar/CBRE/JLL data gap directly."
+  ]
+ }
+]

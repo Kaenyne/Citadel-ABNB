@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:noi-techpark/opendatahub-alpinebits-destination-data-proxy",
+  "url": "https://github.com/noi-techpark/opendatahub-alpinebits-destination-data-proxy",
+  "name": "opendatahub-alpinebits-destination-data-proxy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js REST proxy/reference implementation exposing OpenDataHub (South Tyrol/Alps region open tourism data platform) destination data in the AlpineBits industry-standard format, with OpenAPI spec; AGPL-3.0, maintained by NOI Techpark.",
+  "why_useful": "Illustrates a working municipal/regional destination-data-as-API pattern (AlpineBits standard, OpenDataHub) that could point to other AlpineBits-conformant European destination boards' open data \u2014 marginal for ABNB (Alps region, not a major ABNB market) but relevant as a discovery method for gap 17 (open-data discovery tooling for tourism boards).",
+  "potential": "low",
+  "geography": "South Tyrol / Alps region (Italy/Austria/Switzerland)",
+  "time_coverage": "live API, unspecified history",
+  "size_hint": "small code repo, no bulk data committed",
+  "license": "AGPL-3.0",
+  "last_activity": "2026-08-17",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "Illustrates a working municipal/regional destination-data-as-API pattern (AlpineBits standard, OpenDataHub) that could point to other AlpineBits-conformant European destination boards' open data \u2014 marginal for ABNB (Alps region, not a major ABNB market) but relevant as a discovery method for gap 17 (open-data discovery tooling for tourism boards)."
+  ]
+ },
+ {
+  "key": "github:jasmine-mohammed/forecasting-las-vegas-visitor-volume-time-series-analysis",
+  "url": "https://github.com/jasmine-mohammed/Forecasting-Las-Vegas-Visitor-Volume-Time-Series-Analysis",
+  "name": "Forecasting-Las-Vegas-Visitor-Volume-Time-Series-Analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Time-series forecasting notebook for Las Vegas visitor volume; README states the dataset is 'publicly available at the Las Vegas Convention and Visitors Authority' research portal (external link) rather than a committed file \u2014 could not confirm whether raw CSV is checked into the repo itself.",
+  "why_useful": "Second independent pointer to LVCVA visitor-volume data plus a working method (time-series decomposition/forecast) that could be adapted as a hotel-market comparator for ABNB NA nights; lower value than vegas-tourism-insights since the data itself may not be committed.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "Las Vegas, NV",
+  "time_coverage": "unknown",
+  "size_hint": "notebook, small",
+  "license": "not stated",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "overlaps vegas-tourism-insights above (same LVCVA source)",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "Second independent pointer to LVCVA visitor-volume data plus a working method (time-series decomposition/forecast) that could be adapted as a hotel-market comparator for ABNB NA nights; lower value than vegas-tourism-insights since the data itself may not be committed."
+  ]
+ },
+ {
+  "key": "github:uhero/dvw-api",
+  "url": "https://github.com/UHERO/dvw-api",
+  "name": "dvw-api",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Go REST API backing DBEDT's visitor data warehouse (paired with dvw-data-portal above). README is sparse/incomplete (no local-dev config, requires production DB connection); does not itself carry data files, but is the API layer over the same DBEDT/UHERO Hawaii visitor warehouse.",
+  "why_useful": "Confirms UHERO operates a production API-backed Hawaii tourism data warehouse beyond the static DBEDT reports; if the live API/portal (data.uhero.hawaii.edu/dvw/) is queryable, it could give more granular or more current Hawaii visitor series than we currently hold.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "Hawaii",
+  "time_coverage": "unknown",
+  "size_hint": "API server code only, no data files",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "same underlying warehouse as dvw-data-portal",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "Confirms UHERO operates a production API-backed Hawaii tourism data warehouse beyond the static DBEDT reports; if the live API/portal (data.uhero.hawaii.edu/dvw/) is queryable, it could give more granular or more current Hawaii visitor series than we currently hold."
+  ]
+ },
+ {
+  "key": "github:uhero/kauai",
+  "url": "https://github.com/UHERO/kauai",
+  "name": "kauai",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "\"Economic Dashboard for County of Kauai\" \u2014 county-level Hawaii economic/tourism dashboard by UHERO; likely draws on the same DBEDT visitor warehouse at county granularity (Kauai is a distinct STR/tourism market from Oahu/Maui).",
+  "why_useful": "County-level Hawaii breakout (vs. statewide DBEDT figures we hold) would sharpen the Hawaii party-size/occupancy series to a finer geography, useful if Airbnb Hawaii supply is concentrated in specific counties.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Kauai County, HI",
+  "time_coverage": "unknown",
+  "size_hint": "dashboard app, data source unconfirmed",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "County-level Hawaii breakout (vs. statewide DBEDT figures we hold) would sharpen the Hawaii party-size/occupancy series to a finer geography, useful if Airbnb Hawaii supply is concentrated in specific counties."
+  ]
+ },
+ {
+  "key": "github:tevasoft/sap-concur-connector",
+  "url": "https://github.com/Tevasoft/sap-concur-connector",
+  "name": "Tevasoft/sap-concur-connector",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Typed, async Python client for the SAP Concur API (Expense Reports v4, Travel, Users, Financial Integration, OAuth2). No data \u2014 it is a connector that only returns data for accounts with Concur API credentials (a corporate customer's own tenant); there is no public/aggregate Concur dataset behind it.",
+  "why_useful": "Confirms there is no free, aggregate Concur/GBTA corporate-travel-spend dataset reachable via API without a paying corporate account \u2014 useful negative finding for the team (rules out a 'just hit the Concur API' shortcut for a business-travel-spend proxy).",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "Small client library",
+  "license": "MIT",
+  "last_activity": "2026-06-26",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Confirms there is no free, aggregate Concur/GBTA corporate-travel-spend dataset reachable via API without a paying corporate account \u2014 useful negative finding for the team (rules out a 'just hit the Concur API' shortcut for a business-travel-spend proxy)."
+  ]
+ }
+]

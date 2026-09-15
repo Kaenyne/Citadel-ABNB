@@ -1,0 +1,35 @@
+{
+  "commit": "3da2903e2c78f6beea358819e7c561b07a5f49a3",
+  "check": "numeric",
+  "started_utc": "2026-09-14T14:11:19.087840+00:00",
+  "commands": [
+    [
+      "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+      "-B",
+      "analysis/src/forecast_methods/lane4_control_v2/review_revenue.py",
+      "--revenue-dir",
+      "data/processed/forecast_methods/lane4_revenue_v2/snapshot_v1",
+      "--output",
+      "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane4-full\\data\\processed\\forecast_methods\\lane4_publish_audit_v1\\publication_20260914\\revenue_arithmetic.json"
+    ],
+    [
+      "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+      "-B",
+      "analysis/src/forecast_methods/lane4_control_v2/review_exports.py",
+      "--workbook",
+      "model/lane4_v2/outputs/lane4_model/snapshot_v2/ABNB_L4_review.xlsx",
+      "--model-dir",
+      "data/processed/forecast_methods/lane4_model_v2/snapshot_v2",
+      "--revenue-dir",
+      "data/processed/forecast_methods/lane4_revenue_v2/snapshot_v1",
+      "--output",
+      "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane4-full\\data\\processed\\forecast_methods\\lane4_publish_audit_v1\\publication_20260914\\export_arithmetic.json"
+    ]
+  ],
+  "exit_codes": [
+    0,
+    0
+  ],
+  "verdict": "PASS",
+  "elapsed_seconds": 1.5469999999622814
+}

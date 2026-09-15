@@ -1,0 +1,33 @@
+{
+ "slug": "edgar-crawler-item-section-extractor",
+ "url": "https://github.com/lefterisloukas/edgar-crawler",
+ "sampled": true,
+ "total_bytes": 990619,
+ "files": [
+  "code/config.json",
+  "code/download_filings.py",
+  "code/extract_items.py",
+  "code/README.md",
+  "code/item_lists.py",
+  "code/requirements.txt",
+  "companies_info_head.csv",
+  "companies_info_lodging_travel_sic.csv",
+  "example_extracted_8K.json",
+  "FILINGS_METADATA_TEST.csv"
+ ],
+ "rows": "companies_info_head.csv 10,314 rows (head of the 39,022-record companies_info.json); companies_info_lodging_travel_sic.csv 2,062 rows (SIC 7011/4700/4724/4725/7000/7370-7374/6531/4512/4513/4522 subset of the full file); FILINGS_METADATA_TEST.csv 799 rows (553 8-K, 184 10-Q, 62 10-K); example_extracted_8K.json 1 record; code/* n/a",
+ "columns": "companies_info: cik, Company Name, SIC, State location, State of Inc, Fiscal Year End. FILINGS_METADATA: CIK, Company, Type, Date, complete_text_file_link, html_index, Filing Date, Period of Report, SIC, htm_file_link, State of Inc, State location, Fiscal Year End, filename. Extracted JSON: cik, company, filing_type, filing_date, period_of_report, sic, state_of_inc, state_location, fiscal_year_end, links, filename, item_1.01 ... item_9.01 (10-K: item_1 ... item_16; 10-Q: part_1_item_1 ...)",
+ "date_range": "FILINGS_METADATA_TEST.csv Filing Date 1994-01-24 to 2023-12-22 (Period of Report 1993-12-31 to 2023-12-22); companies_info has no date column; repo last push 2025-07-18",
+ "how_pulled": "git clone --depth 1 --filter=blob:none --sparse https://github.com/lefterisloukas/edgar-crawler.git (repo is flat: root .py files, config.json, README came with the sparse clone; commit 84a8d0c 2025-07-18); curl -sL -r 0-2000000 https://raw.githubusercontent.com/lefterisloukas/edgar-crawler/main/datasets/companies_info.json -o companies_info.head.json (truncated JSON repaired at the last complete record -> companies_info_head.csv); the full 7.8 MB JSON was also read in scratch to write the 2,062-row SIC subset; curl -sL of tests/fixtures/FILINGS_METADATA_TEST.csv and tests/fixtures/EXTRACTED_FILINGS/8-K.zip (0.99 MB; one JSON record extracted with zipfile). No EDGAR crawl was run.",
+ "full_dataset_size": "Repo ~24 MB: datasets/companies_info.json 7.8 MB (39,022 CIKs); test fixtures 15.5 MB of zipped raw and extracted 10-K/10-Q/8-K (799 filings). The real dataset is whatever you crawl from EDGAR: ABNB + BKNG + EXPE + MAR + HLT 2020-2026 is roughly 300-700 filings, under 1 GB raw HTML, tens of MB of extracted per-Item JSON.",
+ "description": "edgar-crawler is a GPL-3.0 Python toolkit (WWW 2025 paper, 545 stars) that downloads 10-K/10-Q/8-K filings from the SEC EDGAR full-index for chosen CIKs or tickers and years, writes FILINGS_METADATA.csv (one row per filing with filing date, period of report, SIC and links) and then segments each filing into a JSON with one key per Item (10-K Item 1A risk factors and Item 7 MD&A; 8-K Item 2.02 results and 7.01 Reg FD; 10-Q Part I/II items). The only committed data is a 39,022-row CIK-to-name/SIC/state/FYE table (ABNB CIK 1559720 SIC 7340, BKNG 1075531 and EXPE 1324424 SIC 4700, MAR 1048286 and HLT 1585689 SIC 7011 are all present) plus test fixtures covering 799 filings from 1994-2023. For ABNB an analyst would set cik_tickers to ABNB plus the peer set, crawl 2020-2026, and obtain date-stamped per-Item clean text of MD&A, risk factors and 8-K earnings/Reg FD items as a point-in-time-safe input for a re-tried tone or text construction, or use the SIC table to define a lodging/OTA peer universe.",
+ "issues": "Job card claimed a last push in Sep 2026; the actual last push is 2025-07-18 (commit 84a8d0c), so the code is a year stale but functional. Sample-plan path edgar_crawler/ does not exist (repo is flat); git sparse-checkout set errored on config.json in cone mode but the root files were already checked out. Licence is GPL-3.0 (copyleft; fine for internal analysis, flag before redistributing derived code). Running the crawler hits sec.gov and needs a declared User-Agent under the SEC fair-access policy (max 10 req/s); that is a human decision and was not run here. Pinned requirements are old (pandas 1.5.3, numpy 1.24.4, lxml 4.9.1, click 7.0) and will not install into the repo's pandas-3 environment; use a separate venv. companies_info.json carries legacy duplicate entities (e.g. EXPEDIA INC CIK 1095357 alongside Expedia Group 1324424) and 1,212 CIKs with no SIC.",
+ "source_urls": [
+  "https://github.com/lefterisloukas/edgar-crawler.git",
+  "https://raw.githubusercontent.com/lefterisloukas/edgar-crawler/main/datasets/companies_info.json",
+  "https://raw.githubusercontent.com/lefterisloukas/edgar-crawler/main/tests/fixtures/FILINGS_METADATA_TEST.csv",
+  "https://raw.githubusercontent.com/lefterisloukas/edgar-crawler/main/tests/fixtures/EXTRACTED_FILINGS/8-K.zip",
+  "https://api.github.com/repos/lefterisloukas/edgar-crawler"
+ ],
+ "pulled_at": "2026-09-14"
+}
