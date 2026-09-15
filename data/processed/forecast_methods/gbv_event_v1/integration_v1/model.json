@@ -1,0 +1,651 @@
+{
+  "as_of": "2026-09-15",
+  "parameter_cutoff": "2026-09-13",
+  "forecast": [
+    {
+      "quarter": "2026Q3",
+      "lag1_quarter": "2026Q2",
+      "lag2_quarter": "2026Q1",
+      "lag1_gbv_musd": 27200.0,
+      "lag2_gbv_musd": 29200.0,
+      "weight": 0.6666666666666666,
+      "weighted_gbv_musd": 27866.666666666664,
+      "lambda_decimal": 0.17254890895313102,
+      "cushion_decimal": 0.0179049103084942,
+      "revenue_musd": 4808.362929493917,
+      "implied_guide_musd": 4723.784000645656,
+      "guide_kind": "already_issued_diagnostic",
+      "lambda_n_train": 5,
+      "lambda_knowable_from": "2025-11-06",
+      "parameter_cutoff": "2026-09-13",
+      "prepared_at": "2026-09-15",
+      "evidence_status": "Conditional scenario, not promoted forecast",
+      "cushion_n": 8
+    },
+    {
+      "quarter": "2026Q4",
+      "lag1_quarter": "2026Q3",
+      "lag2_quarter": "2026Q2",
+      "lag1_gbv_musd": 26008.556,
+      "lag2_gbv_musd": 27200.0,
+      "weight": 0.6666666666666666,
+      "weighted_gbv_musd": 26405.704,
+      "lambda_decimal": 0.12040366938470581,
+      "cushion_decimal": 0.0179049103084942,
+      "revenue_musd": 3179.343654286404,
+      "implied_guide_musd": 3123.419115173388,
+      "guide_kind": "conditional_future_guide",
+      "lambda_n_train": 5,
+      "lambda_knowable_from": "2026-02-12",
+      "parameter_cutoff": "2026-09-13",
+      "prepared_at": "2026-09-15",
+      "evidence_status": "Conditional scenario, not promoted forecast",
+      "cushion_n": 8
+    },
+    {
+      "quarter": "2027Q1",
+      "lag1_quarter": "2026Q4",
+      "lag2_quarter": "2026Q3",
+      "lag1_gbv_musd": 23008.326,
+      "lag2_gbv_musd": 26008.556,
+      "weight": 0.6666666666666666,
+      "weighted_gbv_musd": 24008.40266666667,
+      "lambda_decimal": 0.12727546363111183,
+      "cushion_decimal": 0.0179049103084942,
+      "revenue_musd": 3055.680580442422,
+      "implied_guide_musd": 3001.9312702955167,
+      "guide_kind": "conditional_future_guide",
+      "lambda_n_train": 6,
+      "lambda_knowable_from": "2026-05-07",
+      "parameter_cutoff": "2026-09-13",
+      "prepared_at": "2026-09-15",
+      "evidence_status": "Conditional scenario, not promoted forecast",
+      "cushion_n": 8
+    },
+    {
+      "quarter": "2027Q2",
+      "lag1_quarter": "2027Q1",
+      "lag2_quarter": "2026Q4",
+      "lag1_gbv_musd": 32424.358475969053,
+      "lag2_gbv_musd": 23008.326,
+      "weight": 0.6666666666666666,
+      "weighted_gbv_musd": 29285.68098397937,
+      "lambda_decimal": 0.13823804574623988,
+      "cushion_decimal": 0.0179049103084942,
+      "revenue_musd": 4048.395307573128,
+      "implied_guide_musd": 3977.1841815226035,
+      "guide_kind": "conditional_future_guide",
+      "lambda_n_train": 6,
+      "lambda_knowable_from": "2026-08-06",
+      "parameter_cutoff": "2026-09-13",
+      "prepared_at": "2026-09-15",
+      "evidence_status": "Conditional scenario, not promoted forecast",
+      "cushion_n": 8
+    }
+  ],
+  "gbv_inputs": [
+    {
+      "quarter": "2026Q1",
+      "gbv_musd": 29200.0,
+      "status": "Reported, original rounded convention",
+      "source": "L4 frozen lag inputs",
+      "information_date": "2026-08-06",
+      "limitation": "Exact filing comparison shown separately"
+    },
+    {
+      "quarter": "2026Q2",
+      "gbv_musd": 27200.0,
+      "status": "Reported, original rounded convention",
+      "source": "L4 frozen lag inputs",
+      "information_date": "2026-08-06",
+      "limitation": "Exact filing comparison shown separately"
+    },
+    {
+      "quarter": "2026Q3",
+      "gbv_musd": 26008.556,
+      "status": "Conditional GBV assumption",
+      "source": "L4 working GBV scenario",
+      "information_date": "2026-09-13",
+      "limitation": "Originally component-derived; shared-input uncertainty"
+    },
+    {
+      "quarter": "2026Q4",
+      "gbv_musd": 23008.326,
+      "status": "Conditional GBV assumption",
+      "source": "L4 working GBV scenario",
+      "information_date": "2026-09-13",
+      "limitation": "Originally component-derived; shared-input uncertainty"
+    },
+    {
+      "quarter": "2027Q1",
+      "gbv_musd": 32424.358475969053,
+      "status": "Conditional GBV assumption",
+      "source": "L4 inherited Q1 GBV assumption",
+      "information_date": "2026-09-13",
+      "limitation": "Not a validated Q1 GBV forecast"
+    }
+  ],
+  "comparisons": [
+    {
+      "quarter": "2026Q3",
+      "vendor": "Alpha Vantage (aggregated sell-side panel)",
+      "register_id": "CU-2026Q3-revenue-AlphaVantage",
+      "observed_at": "2026-09-11",
+      "consensus_revenue_musd": 4737.0,
+      "revenue_gap_musd": 71.36292949391736,
+      "revenue_gap_pct": 1.50650051707657,
+      "implied_street_conversion": 0.16998803827751197,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4653.676342483079,
+      "implied_guide_gap_musd": 70.10765816257754,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q3",
+      "vendor": "DoltHub post-no-preference/earnings",
+      "register_id": "PIT-2026Q3-revenue-DHPNP-20260913",
+      "observed_at": "2026-09-13",
+      "consensus_revenue_musd": 4740.0,
+      "revenue_gap_musd": 68.36292949391736,
+      "revenue_gap_pct": 1.4422558964961363,
+      "implied_street_conversion": 0.17009569377990433,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4656.623572592314,
+      "implied_guide_gap_musd": 67.160428053342,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q3",
+      "vendor": "LSEG",
+      "register_id": "PG-2026Q3-revenue",
+      "observed_at": "2026-08-06",
+      "consensus_revenue_musd": 4610.0,
+      "revenue_gap_musd": 198.36292949391736,
+      "revenue_gap_pct": 4.302883503121846,
+      "implied_street_conversion": 0.1654306220095694,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4528.91026785877,
+      "implied_guide_gap_musd": 194.87373278688665,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q3",
+      "vendor": "S&P Global Market Intelligence via StockAnalysis",
+      "register_id": "CU-2026Q3-revenue-SPGlobal-20260910",
+      "observed_at": "2026-09-10",
+      "consensus_revenue_musd": 4740.0,
+      "revenue_gap_musd": 68.36292949391736,
+      "revenue_gap_pct": 1.4422558964961363,
+      "implied_street_conversion": 0.17009569377990433,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4656.623572592314,
+      "implied_guide_gap_musd": 67.160428053342,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q3",
+      "vendor": "Yahoo Finance",
+      "register_id": "CU-2026Q3-revenue-Yahoo-20260911",
+      "observed_at": "2026-09-11",
+      "consensus_revenue_musd": 4740.0,
+      "revenue_gap_musd": 68.36292949391736,
+      "revenue_gap_pct": 1.4422558964961363,
+      "implied_street_conversion": 0.17009569377990433,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4656.623572592314,
+      "implied_guide_gap_musd": 67.160428053342,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q3",
+      "vendor": "Yahoo Finance (LSEG family)",
+      "register_id": "CU-2026Q3-revenue-Yahoo-20260913T1520Z",
+      "observed_at": "2026-09-13T15:20Z",
+      "consensus_revenue_musd": 4744.88187,
+      "revenue_gap_musd": 63.4810594939172,
+      "revenue_gap_pct": 1.3378849301872497,
+      "implied_street_conversion": 0.17027088050239236,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4661.419570676772,
+      "implied_guide_gap_musd": 62.364429968884,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q3",
+      "vendor": "Zacks",
+      "register_id": "CU-2026Q3-revenue-Zacks-20260911",
+      "observed_at": "2026-09-11",
+      "consensus_revenue_musd": 4740.0,
+      "revenue_gap_musd": 68.36292949391736,
+      "revenue_gap_pct": 1.4422558964961363,
+      "implied_street_conversion": 0.17009569377990433,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4656.623572592314,
+      "implied_guide_gap_musd": 67.160428053342,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q4",
+      "vendor": "Alpha Vantage (aggregated sell-side panel)",
+      "register_id": "CU-2026Q4-revenue-AlphaVantage",
+      "observed_at": "2026-09-11",
+      "consensus_revenue_musd": 3158.0,
+      "revenue_gap_musd": 21.343654286404217,
+      "revenue_gap_pct": 0.6758598570742347,
+      "implied_street_conversion": 0.11959537227259685,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 3102.450894988719,
+      "implied_guide_gap_musd": 20.968220184669008,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q4",
+      "vendor": "DoltHub post-no-preference/earnings",
+      "register_id": "PIT-2026Q4-revenue-DHPNP-20260913",
+      "observed_at": "2026-09-13",
+      "consensus_revenue_musd": 3200.0,
+      "revenue_gap_musd": -20.656345713595783,
+      "revenue_gap_pct": -0.6455108035498647,
+      "implied_street_conversion": 0.12118593770497464,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 3143.7121165180183,
+      "implied_guide_gap_musd": -20.293001344630284,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q4",
+      "vendor": "S&P Global Market Intelligence via StockAnalysis",
+      "register_id": "CU-2026Q4-revenue-SPGlobal-20260910",
+      "observed_at": "2026-09-10",
+      "consensus_revenue_musd": 3160.0,
+      "revenue_gap_musd": 19.343654286404217,
+      "revenue_gap_pct": 0.6121409584305182,
+      "implied_street_conversion": 0.11967111348366247,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 3104.415715061543,
+      "implied_guide_gap_musd": 19.003400111845167,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q4",
+      "vendor": "Yahoo Finance",
+      "register_id": "CU-2026Q4-revenue-Yahoo-20260911",
+      "observed_at": "2026-09-11",
+      "consensus_revenue_musd": 3160.0,
+      "revenue_gap_musd": 19.343654286404217,
+      "revenue_gap_pct": 0.6121409584305182,
+      "implied_street_conversion": 0.11967111348366247,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 3104.415715061543,
+      "implied_guide_gap_musd": 19.003400111845167,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q4",
+      "vendor": "Yahoo Finance (LSEG family)",
+      "register_id": "CU-2026Q4-revenue-Yahoo-20260913T1520Z",
+      "observed_at": "2026-09-13T15:20Z",
+      "consensus_revenue_musd": 3161.02149,
+      "revenue_gap_musd": 18.32216428640413,
+      "revenue_gap_pct": 0.5796279571134599,
+      "implied_street_conversion": 0.11970979792850817,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 3105.4192370896376,
+      "implied_guide_gap_musd": 17.999878083750446,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q4",
+      "vendor": "Zacks",
+      "register_id": "CU-2026Q4-revenue-Zacks-20260911",
+      "observed_at": "2026-09-11",
+      "consensus_revenue_musd": 3200.0,
+      "revenue_gap_musd": -20.656345713595783,
+      "revenue_gap_pct": -0.6455108035498647,
+      "implied_street_conversion": 0.12118593770497464,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 3143.7121165180183,
+      "implied_guide_gap_musd": -20.293001344630284,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    }
+  ],
+  "selected_comparisons": [
+    {
+      "quarter": "2026Q3",
+      "vendor": "Yahoo Finance (LSEG family)",
+      "register_id": "CU-2026Q3-revenue-Yahoo-20260913T1520Z",
+      "observed_at": "2026-09-13T15:20Z",
+      "consensus_revenue_musd": 4744.88187,
+      "revenue_gap_musd": 63.4810594939172,
+      "revenue_gap_pct": 1.3378849301872497,
+      "implied_street_conversion": 0.17027088050239236,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 4661.419570676772,
+      "implied_guide_gap_musd": 62.364429968884,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2026Q4",
+      "vendor": "Yahoo Finance (LSEG family)",
+      "register_id": "CU-2026Q4-revenue-Yahoo-20260913T1520Z",
+      "observed_at": "2026-09-13T15:20Z",
+      "consensus_revenue_musd": 3161.02149,
+      "revenue_gap_musd": 18.32216428640413,
+      "revenue_gap_pct": 0.5796279571134599,
+      "implied_street_conversion": 0.11970979792850817,
+      "assumed_street_cushion": 0.0179049103084942,
+      "implied_street_guide_musd": 3105.4192370896376,
+      "implied_guide_gap_musd": 17.999878083750446,
+      "guide_expectation_status": "Implied with common cushion, not observed guide expectations"
+    },
+    {
+      "quarter": "2027Q1",
+      "vendor": "Yahoo/LSEG",
+      "consensus_revenue_musd": null,
+      "observed_at": null,
+      "guide_expectation_status": "Unavailable; no silent cross-vendor fill"
+    },
+    {
+      "quarter": "2027Q2",
+      "vendor": "Yahoo/LSEG",
+      "consensus_revenue_musd": null,
+      "observed_at": null,
+      "guide_expectation_status": "Unavailable; no silent cross-vendor fill"
+    }
+  ],
+  "precision_comparison": [
+    {
+      "quarter": "2026Q3",
+      "revenue_musd": 4813.021750035652,
+      "implied_guide_musd": 4728.360872703699,
+      "revenue_delta_musd": 4.658820541734713,
+      "scope": "Input precision only; frozen lambda unchanged"
+    },
+    {
+      "quarter": "2026Q4",
+      "revenue_musd": 3181.229978440098,
+      "implied_guide_musd": 3125.272258953903,
+      "revenue_delta_musd": 1.8863241536937494,
+      "scope": "Input precision only; frozen lambda unchanged"
+    },
+    {
+      "quarter": "2027Q1",
+      "revenue_musd": 3055.680580442422,
+      "implied_guide_musd": 3001.9312702955167,
+      "revenue_delta_musd": 0.0,
+      "scope": "Input precision only; frozen lambda unchanged"
+    },
+    {
+      "quarter": "2027Q2",
+      "revenue_musd": 4048.395307573128,
+      "implied_guide_musd": 3977.1841815226035,
+      "revenue_delta_musd": 0.0,
+      "scope": "Input precision only; frozen lambda unchanged"
+    }
+  ],
+  "preservation": [
+    {
+      "quarter": "2026Q3",
+      "field": "revenue_musd",
+      "difference_musd": -2.7284841053187847e-12
+    },
+    {
+      "quarter": "2026Q3",
+      "field": "implied_guide_musd",
+      "difference_musd": -3.637978807091713e-12
+    },
+    {
+      "quarter": "2026Q4",
+      "field": "revenue_musd",
+      "difference_musd": 4.092726157978177e-12
+    },
+    {
+      "quarter": "2026Q4",
+      "field": "implied_guide_musd",
+      "difference_musd": -1.8189894035458565e-12
+    },
+    {
+      "quarter": "2027Q1",
+      "field": "revenue_musd",
+      "difference_musd": 2.2737367544323206e-12
+    },
+    {
+      "quarter": "2027Q1",
+      "field": "implied_guide_musd",
+      "difference_musd": -3.183231456205249e-12
+    }
+  ],
+  "lambda_history": [
+    {
+      "quarter": "2021Q1",
+      "season": 1,
+      "print_date": "2021-05-13T00:00:00",
+      "revenue_musd": 887.0,
+      "gbv_l1": 5905.7,
+      "gbv_l2": 8029.3,
+      "base_musd": 6613.5666666666675,
+      "lambda_pct": 13.411825187619387
+    },
+    {
+      "quarter": "2021Q2",
+      "season": 2,
+      "print_date": "2021-08-12T00:00:00",
+      "revenue_musd": 1335.0,
+      "gbv_l1": 10300.0,
+      "gbv_l2": 5905.7,
+      "base_musd": 8835.233333333334,
+      "lambda_pct": 15.109957480843743
+    },
+    {
+      "quarter": "2021Q3",
+      "season": 3,
+      "print_date": "2021-11-04T00:00:00",
+      "revenue_musd": 2237.0,
+      "gbv_l1": 13400.0,
+      "gbv_l2": 10300.0,
+      "base_musd": 12366.666666666666,
+      "lambda_pct": 18.088948787061994
+    },
+    {
+      "quarter": "2021Q4",
+      "season": 4,
+      "print_date": "2022-02-15T00:00:00",
+      "revenue_musd": 1532.0,
+      "gbv_l1": 11900.0,
+      "gbv_l2": 13400.0,
+      "base_musd": 12400.0,
+      "lambda_pct": 12.35483870967742
+    },
+    {
+      "quarter": "2022Q1",
+      "season": 1,
+      "print_date": "2022-05-03T00:00:00",
+      "revenue_musd": 1509.0,
+      "gbv_l1": 11300.0,
+      "gbv_l2": 11900.0,
+      "base_musd": 11500.0,
+      "lambda_pct": 13.121739130434783
+    },
+    {
+      "quarter": "2022Q2",
+      "season": 2,
+      "print_date": "2022-08-02T00:00:00",
+      "revenue_musd": 2104.0,
+      "gbv_l1": 17200.0,
+      "gbv_l2": 11300.0,
+      "base_musd": 15233.333333333332,
+      "lambda_pct": 13.811816192560176
+    },
+    {
+      "quarter": "2022Q3",
+      "season": 3,
+      "print_date": "2022-11-01T00:00:00",
+      "revenue_musd": 2884.0,
+      "gbv_l1": 17000.0,
+      "gbv_l2": 17200.0,
+      "base_musd": 17066.666666666664,
+      "lambda_pct": 16.898437500000004
+    },
+    {
+      "quarter": "2022Q4",
+      "season": 4,
+      "print_date": "2023-02-14T00:00:00",
+      "revenue_musd": 1902.0,
+      "gbv_l1": 15600.0,
+      "gbv_l2": 17000.0,
+      "base_musd": 16066.666666666668,
+      "lambda_pct": 11.83817427385892
+    },
+    {
+      "quarter": "2023Q1",
+      "season": 1,
+      "print_date": "2023-05-09T00:00:00",
+      "revenue_musd": 1818.0,
+      "gbv_l1": 13500.0,
+      "gbv_l2": 15600.0,
+      "base_musd": 14200.0,
+      "lambda_pct": 12.80281690140845
+    },
+    {
+      "quarter": "2023Q2",
+      "season": 2,
+      "print_date": "2023-08-03T00:00:00",
+      "revenue_musd": 2484.0,
+      "gbv_l1": 20400.0,
+      "gbv_l2": 13500.0,
+      "base_musd": 18100.0,
+      "lambda_pct": 13.723756906077348
+    },
+    {
+      "quarter": "2023Q3",
+      "season": 3,
+      "print_date": "2023-11-01T00:00:00",
+      "revenue_musd": 3397.0,
+      "gbv_l1": 19100.0,
+      "gbv_l2": 20400.0,
+      "base_musd": 19533.333333333332,
+      "lambda_pct": 17.390784982935156
+    },
+    {
+      "quarter": "2023Q4",
+      "season": 4,
+      "print_date": "2024-02-13T00:00:00",
+      "revenue_musd": 2218.0,
+      "gbv_l1": 18300.0,
+      "gbv_l2": 19100.0,
+      "base_musd": 18566.666666666668,
+      "lambda_pct": 11.946140035906643
+    },
+    {
+      "quarter": "2024Q1",
+      "season": 1,
+      "print_date": "2024-05-08T00:00:00",
+      "revenue_musd": 2142.0,
+      "gbv_l1": 15500.0,
+      "gbv_l2": 18300.0,
+      "base_musd": 16433.333333333332,
+      "lambda_pct": 13.03448275862069
+    },
+    {
+      "quarter": "2024Q2",
+      "season": 2,
+      "print_date": "2024-08-06T00:00:00",
+      "revenue_musd": 2748.0,
+      "gbv_l1": 22900.0,
+      "gbv_l2": 15500.0,
+      "base_musd": 20433.333333333332,
+      "lambda_pct": 13.448613376835237
+    },
+    {
+      "quarter": "2024Q3",
+      "season": 3,
+      "print_date": "2024-11-07T00:00:00",
+      "revenue_musd": 3732.0,
+      "gbv_l1": 21200.0,
+      "gbv_l2": 22900.0,
+      "base_musd": 21766.666666666664,
+      "lambda_pct": 17.145482388973967
+    },
+    {
+      "quarter": "2024Q4",
+      "season": 4,
+      "print_date": "2025-02-13T00:00:00",
+      "revenue_musd": 2480.0,
+      "gbv_l1": 20100.0,
+      "gbv_l2": 21200.0,
+      "base_musd": 20466.666666666668,
+      "lambda_pct": 12.117263843648209
+    },
+    {
+      "quarter": "2025Q1",
+      "season": 1,
+      "print_date": "2025-05-01T00:00:00",
+      "revenue_musd": 2272.0,
+      "gbv_l1": 17600.0,
+      "gbv_l2": 20100.0,
+      "base_musd": 18433.333333333332,
+      "lambda_pct": 12.325497287522605
+    },
+    {
+      "quarter": "2025Q2",
+      "season": 2,
+      "print_date": "2025-08-06T00:00:00",
+      "revenue_musd": 3096.0,
+      "gbv_l1": 24500.0,
+      "gbv_l2": 17600.0,
+      "base_musd": 22200.0,
+      "lambda_pct": 13.945945945945946
+    },
+    {
+      "quarter": "2025Q3",
+      "season": 3,
+      "print_date": "2025-11-06T00:00:00",
+      "revenue_musd": 4095.0,
+      "gbv_l1": 23500.0,
+      "gbv_l2": 24500.0,
+      "base_musd": 23833.333333333336,
+      "lambda_pct": 17.18181818181818
+    },
+    {
+      "quarter": "2025Q4",
+      "season": 4,
+      "print_date": "2026-02-12T00:00:00",
+      "revenue_musd": 2778.0,
+      "gbv_l1": 22900.0,
+      "gbv_l2": 23500.0,
+      "base_musd": 23100.0,
+      "lambda_pct": 12.025974025974026
+    },
+    {
+      "quarter": "2026Q1",
+      "season": 1,
+      "print_date": "2026-05-07T00:00:00",
+      "revenue_musd": 2678.0,
+      "gbv_l1": 20400.0,
+      "gbv_l2": 22900.0,
+      "base_musd": 21233.333333333336,
+      "lambda_pct": 12.612244897959183
+    },
+    {
+      "quarter": "2026Q2",
+      "season": 2,
+      "print_date": "2026-08-06T00:00:00",
+      "revenue_musd": 3608.0,
+      "gbv_l1": 29200.0,
+      "gbv_l2": 20400.0,
+      "base_musd": 26266.666666666664,
+      "lambda_pct": 13.736040609137056
+    }
+  ],
+  "source_hashes": {
+    "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\operating_inputs.csv": "4e971be2a5ef8c53fc790fc1ef1465ff852e88f77b200b589f7b82e5a88d3b21",
+    "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\forecast.csv": "44381e679cc41d2ae7d952bbad78e2a2008392eeb085451ac8130b4ae509e397",
+    "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\cushion_inputs.csv": "a537868726c471cc727ce56263380648b1cf5644a6e5e7f294488c337e88f621",
+    "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v2\\model_input.json": "10b1e5713ff4020bdaf1f00743fd8a0e84c6ae388723442ed9578afcfc5afe8f",
+    "data\\processed\\forecast_methods\\L0\\L0_vintage_register.csv": "3a5bf0a4848e30b3e5ecce380de0ebafcce8f5bb27add4d8b38ddcefd624fc00",
+    "analysis\\src\\forecast_methods\\kernel_engine_v2\\engine.py": "328431c5f9379e6d4ae7e9c5d01212ee1bcd550b02c3c9783b85851e3e9a3279"
+  },
+  "inherited_q2_revenue_musd": 4048.7896866552855,
+  "direct_guide_expectations_available": false,
+  "instructions": "Edit GBV, conversion and cushion inputs. Current path is conditional; no Street-outperformance claim."
+}

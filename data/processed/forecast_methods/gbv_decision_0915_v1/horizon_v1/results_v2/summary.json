@@ -1,0 +1,88 @@
+{
+  "spec": "frozen_core_and_two_preregistered_simple_baselines",
+  "core_sha256": "6f395b2956762f179701e78f4c6743ba523da55e45cb7c9f742a2151aa2495af",
+  "seed": 20260915,
+  "historical_target_windows": {
+    "W1": "2023Q1",
+    "W2": "2024Q1"
+  },
+  "bootstrap_draws": 2000,
+  "primary_evaluation": "same rows for all4 production models",
+  "W1_W2_overlap": "W2subsetofW1; long-horizon eligible samples may be identical",
+  "physical_cohorts": "UNAVAILABLE; not required to test reduced-form total forecasts",
+  "new_feature_or_weight_search": false,
+  "live_cutoff": "2026-09-15",
+  "live_last_company_publication": "2026-08-06",
+  "promotion_gates": [
+    {
+      "horizon_quarters": 2,
+      "model": "joint",
+      "coverage_pass": true,
+      "magnitude_pass": false,
+      "deletion_pass": false,
+      "paired_guidegrowth_interval_pass": false,
+      "promotion_pass": false,
+      "evaluated_windows_overlap": true,
+      "reused_historical_data": true
+    },
+    {
+      "horizon_quarters": 2,
+      "model": "fixed",
+      "coverage_pass": true,
+      "magnitude_pass": false,
+      "deletion_pass": false,
+      "paired_guidegrowth_interval_pass": false,
+      "promotion_pass": false,
+      "evaluated_windows_overlap": true,
+      "reused_historical_data": true
+    },
+    {
+      "horizon_quarters": 3,
+      "model": "joint",
+      "coverage_pass": true,
+      "magnitude_pass": false,
+      "deletion_pass": false,
+      "paired_guidegrowth_interval_pass": false,
+      "promotion_pass": false,
+      "evaluated_windows_overlap": true,
+      "reused_historical_data": true
+    },
+    {
+      "horizon_quarters": 3,
+      "model": "fixed",
+      "coverage_pass": true,
+      "magnitude_pass": false,
+      "deletion_pass": false,
+      "paired_guidegrowth_interval_pass": false,
+      "promotion_pass": false,
+      "evaluated_windows_overlap": true,
+      "reused_historical_data": true
+    },
+    {
+      "horizon_quarters": 4,
+      "model": "joint",
+      "coverage_pass": true,
+      "magnitude_pass": false,
+      "deletion_pass": false,
+      "paired_guidegrowth_interval_pass": false,
+      "promotion_pass": false,
+      "evaluated_windows_overlap": true,
+      "reused_historical_data": true
+    },
+    {
+      "horizon_quarters": 4,
+      "model": "fixed",
+      "coverage_pass": true,
+      "magnitude_pass": true,
+      "deletion_pass": true,
+      "paired_guidegrowth_interval_pass": true,
+      "promotion_pass": true,
+      "evaluated_windows_overlap": true,
+      "reused_historical_data": true
+    }
+  ],
+  "historical_rows": 225,
+  "live_rows": 12,
+  "unique_fitted_origins": 12,
+  "predictive_intervals": null
+}

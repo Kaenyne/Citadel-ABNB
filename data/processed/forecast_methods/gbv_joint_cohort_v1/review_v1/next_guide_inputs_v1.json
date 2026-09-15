@@ -1,0 +1,87 @@
+{
+  "cutoff": "2026-09-15",
+  "last_company_publication": "2026-08-06",
+  "latest_company_quarter": "2026Q2",
+  "primary_training_n": 20,
+  "primary_training_quarters": [
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "primary_training_by_season": {
+    "1": [
+      "2022Q1",
+      "2023Q1",
+      "2024Q1",
+      "2025Q1",
+      "2026Q1"
+    ],
+    "2": [
+      "2022Q2",
+      "2023Q2",
+      "2024Q2",
+      "2025Q2",
+      "2026Q2"
+    ],
+    "3": [
+      "2021Q3",
+      "2022Q3",
+      "2023Q3",
+      "2024Q3",
+      "2025Q3"
+    ],
+    "4": [
+      "2021Q4",
+      "2022Q4",
+      "2023Q4",
+      "2024Q4",
+      "2025Q4"
+    ]
+  },
+  "latest_gbv_yoy_pct": 15.74468085106382,
+  "q3_gbv_forecast_musd": 26505.531914893614,
+  "q4_gbv_forecast_musd": 23611.91489361702,
+  "baseline_q4_training_quarters": [
+    "2021Q4",
+    "2022Q4",
+    "2023Q4",
+    "2024Q4",
+    "2025Q4"
+  ],
+  "baseline_lambda_pct": 12.040366938470584,
+  "mean_cushion_pct": 1.8567430632975808,
+  "cushion_quarters": [
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "baseline_revenue_musd": 3219.2354701190793,
+  "baseline_guide_musd": 3160.55213754334,
+  "source_sha256": {
+    "data\\processed\\overnight\\02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "data\\processed\\forecast_methods\\harness\\calendar.csv": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2"
+  },
+  "review_method": "Independent read-only arithmetic; no optimization or race; future GBV values forecast, not realized"
+}

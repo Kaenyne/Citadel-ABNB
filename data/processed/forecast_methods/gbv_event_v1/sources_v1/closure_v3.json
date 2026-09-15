@@ -1,0 +1,89 @@
+{
+  "verdict": "PASS bounded repairs and unchanged arithmetic; source readiness remains PARTIAL",
+  "unchanged_csvs": [
+    {
+      "file": "associations.csv",
+      "same_bytes": true,
+      "sha256": "11af6979ecc86c89d59a48e96a1f2e25cd4b4ff35f57fe45bd41f102f5ce0f0f"
+    },
+    {
+      "file": "current_print_control.csv",
+      "same_bytes": true,
+      "sha256": "c02758e8dc0bfddc8f1653e42dc1f6a095851370d35879962e87a1db88d37336"
+    },
+    {
+      "file": "cushion_training.csv",
+      "same_bytes": true,
+      "sha256": "3d41b64b55102c21e1b6daaa8c5f0db4e9241341b320ba753cb3b7afc48dbba8"
+    },
+    {
+      "file": "guide_tieout.csv",
+      "same_bytes": true,
+      "sha256": "0f1fdac13bb8a722425bb6c06a3645a8f6ee7adfcc095af945817cfbf9598288"
+    },
+    {
+      "file": "influence.csv",
+      "same_bytes": true,
+      "sha256": "573ca0f60b54a4f36f7a121a15b9cccfbb93aab8aea8184a01fb74ebca2f5307"
+    },
+    {
+      "file": "sign_groups.csv",
+      "same_bytes": true,
+      "sha256": "b73f879a5f5cc035d8e3efe9d10df560bf6799ef3a11b99a366dfddd43cc9dc2"
+    },
+    {
+      "file": "vendor_sensitivity.csv",
+      "same_bytes": true,
+      "sha256": "8cc807e953420109a6785ddc111afe63e57dd91c7c3fa721b16a75f39abc68ed"
+    },
+    {
+      "file": "pre_event_forecast_join.csv",
+      "same_bytes": true,
+      "sha256": "d9163addfdd10240894ef4bc7532d75ba09bd9001cc28dcd4f8bb302d3d9cf4e"
+    },
+    {
+      "file": "return_tieout.csv",
+      "same_bytes": true,
+      "sha256": "80439bcc2be9cc3a291aa6c5d718450e0aa042b76874c4c015aeb372b3bce41e"
+    }
+  ],
+  "unchanged_event_cells": 1472,
+  "event_metadata_changes": "two raw source timestamp columns and eligibility basis labels",
+  "manual_timestamp_code_review": "Raw timestamp preserved. Date-only same-day exception isolated; aware timestamps strictly before 16:00 America/New_York; naive/exact-close/post-close rejected. Existing date-only inputs numerically unchanged. Owning-agent tests report 12 passed.",
+  "independent_arithmetic": {
+    "checks": 314,
+    "passed": 314,
+    "max_abs_error": 3.637978807091713e-12,
+    "event_n": 23,
+    "earlier_origin_rows": 21,
+    "imports_candidate_functions": false,
+    "scope": "Arithmetic and source joins only; no new fit, statistical retest, or strategy claim",
+    "source_hashes": {
+      "data/processed/forecast_methods/gbv_event_v1/integration_v2/model.json": "91f8eb92d4a94ba52750e5aefb8a74f6a03fa50f5b548cbd1101c22f46b1e349",
+      "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/event_panel.csv": "6327bc888826bf2d9cbef8bb0207c9a4a3cd350afbb6cf7aaa81da3ae13aae0b",
+      "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/pre_event_forecast_join.csv": "d9163addfdd10240894ef4bc7532d75ba09bd9001cc28dcd4f8bb302d3d9cf4e",
+      "data/processed/forecast_methods/returns_v1/ohlc_daily.csv": "a94c35e2c70f5bc9ce4b5bd85343fed199ac1e941b94d287bb3ee7780b799286",
+      "data/processed/forecast_methods/harness/calendar.csv": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+      "data/processed/overnight/02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+      "data/processed/forecast_methods/L0/L0_vintage_register.csv": "3a5bf0a4848e30b3e5ecce380de0ebafcce8f5bb27add4d8b38ddcefd624fc00"
+    }
+  },
+  "model_repairs": "current/pit_history role filter; conditional break-even conversion name; true Q1 publication date; all nine transitive source hashes checked",
+  "source_precision": "CRLF working hash and retained LF hash reconcile without data change",
+  "remaining_limits": [
+    "No held real intraday event panel",
+    "No directly observed guide-expectations panel",
+    "No historical forecast promotion",
+    "Current EWM scenario differs from ex-COVID historical audit variant",
+    "No calibrated current probability or demonstrated executable trade"
+  ],
+  "bindings": {
+    "data/processed/forecast_methods/gbv_event_v1/integration_v2/model.json": "91f8eb92d4a94ba52750e5aefb8a74f6a03fa50f5b548cbd1101c22f46b1e349",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/receipt.json": "83aeb4987defcb7c6d9b5492abc0a0702f0f87b04e5923a5f89b06b3bcbc580a",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/event_panel.csv": "6327bc888826bf2d9cbef8bb0207c9a4a3cd350afbb6cf7aaa81da3ae13aae0b",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/canonical_v1.json": "cbd785959c1c6680cb32acd03b9b07cdb53e93b4a5dc9aa3b9ce5e7c4a159d2c",
+    "analysis/src/forecast_methods/gbv_event_v1/events/run.py": "1668e65f6a3c9a4e3f0416035cf736524e4d3b0c0f5d0575e94304ba9e5e9024",
+    "analysis/src/forecast_methods/gbv_event_v1/events/test_events.py": "f0414ad3817858bc64b51fb5b7691e9644e717b79d4106a19ee885f50357c202",
+    "data/processed/forecast_methods/gbv_event_v1/sources_v1/review_v2/receipt.json": "457d4bec89a3b8bb2cc5db60f6fbc345594ef31466c319898e53e01bfa6b40c0"
+  }
+}

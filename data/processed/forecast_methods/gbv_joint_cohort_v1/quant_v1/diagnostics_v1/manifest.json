@@ -1,0 +1,43 @@
+{
+  "code_sha256": "39c3514848d78453e01424d194d42232b11d1395f079265afca42bfc9d1436e8",
+  "core_code_sha256": "6f395b2956762f179701e78f4c6743ba523da55e45cb7c9f742a2151aa2495af",
+  "inputs": {
+    "bootstrap_draws.csv": "00a0d40411e2fabb5fdec6309b641f71305f73af2cc2b3c4cf20f2c7bc5f1028",
+    "bootstrap_intervals.csv": "c7bce0d361734b4c9e7f211bdb04df227adad58b041c64aba5004e6024ac90fd",
+    "conditional_dollar_covariance.csv": "45ebbdc4f4fd28de0ba1ed848f918697fa030a4e43d0d4bb63c8c731cb8845d7",
+    "conditional_temporal_variance.csv": "94b6b68502ba4061aa1150ad00b6172ceb02d2018561eb39ebfc297e35271a3c",
+    "covariance_identity.csv": "812a02e3ef45b6eb6c017dbdbd5fbd0d8a43caaf580f0937ba0d8681a5c67f01",
+    "flexible_design_rank.csv": "0a8344682695c2421412d9ea6da4b1f67f7551ef504e3b980dfddb87bd3de39a",
+    "flexible_identification_bounds.csv": "eb3d2ea1965d428c44dddeea22a47f7af6807ebd822a8345e859ae551682bc7a",
+    "flexible_witness_matrices.csv": "0e9199aa529c0ba53e54942415d2542fafdf85f92e61bfd3fa4b1ee197d457f2",
+    "manifest.json": "9867d8c9822132f4f07a057083fd053f1fc3ff96c7cd6fd8cd6b7a4e9cdc44fb",
+    "model_matrix.csv": "86a49f94b5a7c55af75dd21b72c11f381a0d08262917e89921aac0a1a857459b",
+    "nearfit_bounds.csv": "f53024c95a055341210ccbf5c85c78283e4da84255bc8d4fa3d00fbb6b93103b",
+    "nearfit_shapes.csv": "85b222077b63dbf420fa5de89df1e6bd65fb16eb2cbf4022c312c1c2ea3b8f6b",
+    "parameter_year_deletion.csv": "c279ea3bf3fab48b4b983bd12ef2183042dd5d75746b34e073d17e2e563cbe1d",
+    "parsimonious_identification_summary.csv": "7e7fc3881cf91c327f7b4c8778c4c961263c60c27f5171eb8ebcc925acf07220",
+    "pit_predictions.csv": "6162f05f32fdc434b895b101c5dee26f43d9f3ac35a142e2de272fd0deebe48b",
+    "pit_scores.csv": "5abc7e54ab71f6f146c49702674eb67cfaa0def3553ff06932749753d675c25c",
+    "pit_score_deletions.csv": "c32af23412d92028b9df506acc6e6969854a6e745fcd5fc830912aec78d3853e",
+    "pit_skipped_origins.csv": "1d714728e9bddbc43be235b6db66182eb894e15f7d44a43939496b75f19129b8",
+    "realized_conditional_matrix.csv": "8d5399e956e221c86b28bc91541630ef6c269faba1b9ab95f1efc30e945ffb9b",
+    "retrospective_fit.csv": "6e17ebf954049d99a135846b1c82c64b152815caad959d0359edba4002b4723f",
+    "stale_k2_conditional_bounds.csv": "b332a8490a89400d2e875ff16636a7fd55302eab1fc3cee1d4aac03317721bf3",
+    "verdict.json": "07cba6f2818964ccdf5111630f0c650c5442addb808749cf7072da7d5803c70c"
+  },
+  "flight_source_sha256": "7af9d132b762c5ead5a5abf4261b5cae24a07c48d61bd3d9d819d149c3d31f6d",
+  "flight_lineage_sha256": "cc58165d6e042e7a07cbea77590ec59102920be93a9c6280df720aa71b279d97",
+  "outputs": {
+    "evidence_status.json": "e44d2da2a0407ade0eea756410c94eecd7aac1725634bd96838abc83504bf19f",
+    "forward_booking_rows.csv": "299dc0cb843484f120d0d077dbe3025c6adfcda1b5b76e7cfd9402d61e87c756",
+    "live_nearfit_forecasts.csv": "82d3435215ed12383b54238f13677c00ccc22c0d298f4e0463e42899359c1822",
+    "live_nearfit_sensitivity.csv": "3c2181629be6561f43837b4e2a8d556cc94bc47c172f02e7edeca5c2bb82d2a6",
+    "nearfit_contribution_covariance.csv": "21a35fa89100004c060f3593ccbd3b87b0e1a61ad556b02aee363fdfc40b15de",
+    "nearfit_covariance_identity.csv": "8f968d33b04846f71d5823476dc4f355ee4dd6a11d2cc691c86f04681a985e57",
+    "paired_forecast_uncertainty.csv": "1efa7b2786e90d5ea61f170f5b9320ec5d526c7ea5e452a7f6c9f42361c1c057",
+    "pr60_flight_predictions.csv": "a6a0354d57d23dbc8421e6c7fe2e0f582f5f25c29deb5899ae91077608a50d2b",
+    "pr60_flight_scores.csv": "0f4ea0e2572944db8f741682453161745f725a1bd2dcc47c94d0690431b1e56e",
+    "pr60_flight_skipped.csv": "33768c9ecc83467ca43a2d70c2feb8afee7ee9ea665a2495e02583629597c89a",
+    "pr60_flight_training_pairs.csv": "b87b4d841948cf8ba26c36fcebe4a3f2dc5afb610b206e6ea61d39f747a9c51b"
+  }
+}

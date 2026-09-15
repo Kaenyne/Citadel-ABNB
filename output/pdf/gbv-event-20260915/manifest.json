@@ -1,0 +1,32 @@
+{
+  "operation": "create",
+  "pages": 2,
+  "source_hashes": {
+    "data/processed/forecast_methods/gbv_event_v1/integration_v2/model.json": "91f8eb92d4a94ba52750e5aefb8a74f6a03fa50f5b548cbd1101c22f46b1e349",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/event_panel.csv": "6327bc888826bf2d9cbef8bb0207c9a4a3cd350afbb6cf7aaa81da3ae13aae0b",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/associations.csv": "11af6979ecc86c89d59a48e96a1f2e25cd4b4ff35f57fe45bd41f102f5ce0f0f",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/receipt.json": "83aeb4987defcb7c6d9b5492abc0a0702f0f87b04e5923a5f89b06b3bcbc580a",
+    "data/processed/forecast_methods/gbv_event_v1/forecast_v1/results_v1/forecast_audit.json": "8e0092d4e956c6aa87f68923661539945726ca4186fcb9e8f565682cdd624daf",
+    "data/processed/forecast_methods/gbv_event_v1/forecast_v1/results_v1/score_summary.csv": "0d9e1affe254339f61ad8146b4f4eea273e9d5af16b33409ef9649ed5422b351",
+    "data/processed/forecast_methods/gbv_event_v1/forecast_v1/results_v1/variance_reconciliation.csv": "d8b91a1af15cae7cf0ad9879fd702acc69b9534cb5682db2faabf8c08690d48e",
+    "data/processed/forecast_methods/gbv_event_v1/sources_v1/review_v2/receipt.json": "457d4bec89a3b8bb2cc5db60f6fbc345594ef31466c319898e53e01bfa6b40c0",
+    "docs/revenue-forecast-strategy/05_backtests/GE_SOURCE_RESULTS_v2.md": "de49f08fd21d01a9c8550d7b38d21688a612d35d04ab1d133a0708558f2167f5"
+  },
+  "builder_sha256": "54bac15575349e867e9e5c15c2b8b310574f513b00d682ec44c1f67b62a771b8",
+  "model_zero_gap_q3_gbv_musd": 25780.296790209697,
+  "model_zero_gap_q4_conversion_pct": 11.970979792850816,
+  "source_checks": {
+    "four_quarters": true,
+    "event_n": 23,
+    "holm_family_n": 12,
+    "all_primary_holm_1": true,
+    "independent_checks": 314
+  },
+  "artifacts": {
+    "ABNB_GBV_two_pager.md": "763b9415aa56ffa5e88fff70b8b53e910287833ca1035be137176d921cb561ff",
+    "ABNB_GBV_two_pager.pdf": "61cd50b6627b54e178872bf8e4a5e16a5cb104f2f6e38fe31aee791075d0b350",
+    "extracted_text.txt": "98601cb0ee9acad4d310c5e415b1af863a3abb63e9c21074b35c590a8f93aef5",
+    "layout_bounds.json": "9a5a701d32eb41768845f0e7d056546963c5794b31d5c8545610048b6b2bf40a"
+  },
+  "render_qa": "Pending PNG inspection; additive QA receipt required"
+}

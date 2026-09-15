@@ -9,3 +9,33 @@
 *.pdf  binary
 *.png  binary
 *.jpg  binary
+
+# Preserve audited GBV source/result bytes and their recorded SHA256 hashes.
+# These rules apply only to the new GBV research packages and dated artifacts.
+analysis/src/forecast_methods/gbv_cohorts_0915_v1/** -text whitespace=cr-at-eol
+analysis/src/forecast_methods/gbv_decision_0915_v1/** -text whitespace=cr-at-eol
+analysis/src/forecast_methods/gbv_event_v1/** -text whitespace=cr-at-eol
+analysis/src/forecast_methods/gbv_joint_cohort_v1/** -text whitespace=cr-at-eol
+data/processed/forecast_methods/gbv_decision_0915_v1/** -text whitespace=cr-at-eol
+data/processed/forecast_methods/gbv_event_v1/** -text whitespace=cr-at-eol
+data/processed/forecast_methods/gbv_joint_cohort_v1/** -text whitespace=cr-at-eol
+data/processed/forecast_methods/registry/gbv-*.csv -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/05_backtests/GD_*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/05_backtests/GE_*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/05_backtests/JOINT_COHORT_*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/05_backtests/SR_*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/05_backtests/improvement_0915_theo*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/WORKBOARD_GBV_*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/WORKBOARD_JOINT_COHORT_*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/WORKBOARD_FOUR_QUARTER_SCOPE_v1.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/WORKBOARD_SUBMISSION_READINESS*.md -text whitespace=cr-at-eol
+docs/revenue-forecast-strategy/WORKBOARD_improvement_0915_theo*.md -text whitespace=cr-at-eol
+output/pdf/gbv-event-20260915/** -text whitespace=cr-at-eol
+outputs/gbv-cohorts-20260915-v1/** -text whitespace=cr-at-eol
+outputs/gbv-decision-20260915-v*/** -text whitespace=cr-at-eol
+outputs/gbv-event-20260915/** -text whitespace=cr-at-eol
+outputs/gbv-joint-cohort-20260915-v*/** -text whitespace=cr-at-eol
+gbv_decision_*.log -text whitespace=cr-at-eol
+# Matplotlib emits trailing spaces in SVG path coordinates; keep audited bytes.
+outputs/gbv-cohorts-20260915-v1/*.svg -whitespace
+outputs/gbv-joint-cohort-20260915-v*/*.svg -whitespace

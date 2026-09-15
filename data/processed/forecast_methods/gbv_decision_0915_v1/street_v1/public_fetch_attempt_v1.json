@@ -1,0 +1,13 @@
+{
+  "audit_date": "2026-09-15",
+  "request_count": 1,
+  "mechanism": "web__run open",
+  "requested_url": "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master?q=select%20commit_hash%2C%20date%2C%20message%20from%20dolt_log%20where%20message%20like%20'sales_estimate%202022-12-11%20update%25'%20or%20message%20like%20'sales_estimate%202023-03-12%20update%25'%20or%20message%20like%20'sales_estimate%202023-06-11%20update%25'%20or%20message%20like%20'sales_estimate%202023-09-10%20update%25'%20or%20message%20like%20'sales_estimate%202023-12-10%20update%25'%20or%20message%20like%20'sales_estimate%202024-03-10%20update%25'%20or%20message%20like%20'sales_estimate%202024-06-09%20update%25'%20or%20message%20like%20'sales_estimate%202024-09-08%20update%25'%20or%20message%20like%20'sales_estimate%202024-12-15%20update%25'%20or%20message%20like%20'sales_estimate%202025-03-09%20update%25'%20or%20message%20like%20'sales_estimate%202025-06-08%20update%25'%20or%20message%20like%20'sales_estimate%202025-09-14%20update%25'%20or%20message%20like%20'sales_estimate%202025-12-14%20update%25'%20or%20message%20like%20'sales_estimate%202026-03-15%20update%25'%20order%20by%20date",
+  "status": "TOOL_FETCH_UNAVAILABLE",
+  "tool_result": "Internal Error; URL is not safe to open (non-retryable error)",
+  "provider_response_received": false,
+  "commit_rows_received": 0,
+  "asof_rows_received": 0,
+  "further_requests": 0,
+  "interpretation": "No archival verification obtained for the 14 selected snapshots. This does not demonstrate future leakage or source back-editing; inherited publisher-date qualification remains."
+}

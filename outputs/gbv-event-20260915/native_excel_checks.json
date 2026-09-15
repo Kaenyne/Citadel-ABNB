@@ -1,0 +1,44 @@
+{
+  "chart_counts": [
+    {
+      "charts": 1,
+      "sheet": "Decision"
+    },
+    {
+      "charts": 1,
+      "sheet": "Conversion"
+    },
+    {
+      "charts": 0,
+      "sheet": "Inputs"
+    },
+    {
+      "charts": 2,
+      "sheet": "Forecast audit"
+    },
+    {
+      "charts": 3,
+      "sheet": "Event study"
+    },
+    {
+      "charts": 0,
+      "sheet": "Event data"
+    },
+    {
+      "charts": 0,
+      "sheet": "Sources"
+    }
+  ],
+  "status": "pass",
+  "raw_export_sha256": "22AED8CB88AF9733B54F73A8D2010BC3B8A153C824370FAD31EB296C2C1EF190",
+  "checks": [
+    "guide and gap tie-outs",
+    "observed Q3 guide",
+    "GBV edit propagation",
+    "zero versus missing cushion",
+    "fixed expectation benchmark",
+    "restored working inputs"
+  ],
+  "engine": "Microsoft Excel COM",
+  "version": "16.0"
+}

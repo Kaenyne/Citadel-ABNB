@@ -1,0 +1,15 @@
+{
+  "audit_date": "2026-09-15",
+  "status": "NETWORK_BLOCKED",
+  "url": "https://raw.githubusercontent.com/euctrl-pru/daio/c3d58c5cd2f274c51ced8352bf6b770716355411/daio_2026.csv",
+  "commit": "c3d58c5cd2f274c51ced8352bf6b770716355411",
+  "year": 2026,
+  "method": "Python urllib.request.urlopen, timeout12s; bounded read2000000 bytes",
+  "request_count": 1,
+  "response_bytes_received": 0,
+  "error": "URLError(PermissionError(13, 'An attempt was made to access a socket in a way forbidden by its access permissions', None, 10013, None))",
+  "further_requests": 0,
+  "raw_blobs_verified": 0,
+  "scope": "Attempted pinned historical public-file validation after v1 local audit; no original file overwritten and no raw data saved",
+  "remaining_qualification": "Stored historical-commit-vintage lineage was internally checked; original file bytes and per-day40-state coverage were not independently recertified"
+}

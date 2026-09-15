@@ -1,0 +1,33 @@
+{
+  "canonical": "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3",
+  "status": "completed_descriptive_audit_no_strategy_promotion",
+  "tests": {
+    "passed": 12,
+    "exit_code": 0
+  },
+  "sha256": {
+    "analysis/src/forecast_methods/gbv_event_v1/events/run.py": "1668e65f6a3c9a4e3f0416035cf736524e4d3b0c0f5d0575e94304ba9e5e9024",
+    "analysis/src/forecast_methods/gbv_event_v1/events/test_events.py": "f0414ad3817858bc64b51fb5b7691e9644e717b79d4106a19ee885f50357c202",
+    "analysis/src/forecast_methods/gbv_event_v1/events/README.md": "1dfdd19412dd0c7a0011114602760620029aaf041c762a92b0c83535d60ef370",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/receipt.json": "83aeb4987defcb7c6d9b5492abc0a0702f0f87b04e5923a5f89b06b3bcbc580a"
+  },
+  "run_v2_to_v3_csv_byte_equality": {
+    "associations.csv": true,
+    "current_print_control.csv": true,
+    "cushion_training.csv": true,
+    "event_panel.csv": false,
+    "guide_tieout.csv": true,
+    "influence.csv": true,
+    "pre_event_forecast_join.csv": true,
+    "pre_event_signal_associations.csv": false,
+    "return_tieout.csv": true,
+    "sign_groups.csv": true,
+    "vendor_sensitivity.csv": true
+  },
+  "differences": {
+    "event_panel.csv": "two raw timestamp fields added; two eligibility text columns now identify date-only basis; numerical columns unchanged",
+    "pre_event_signal_associations.csv": "adds frozen target-endpoint2026Q2 windows to existing expanded windows",
+    "pre_event_signal_influence.csv": "new secondary forecast event/year deletion tables"
+  },
+  "notes": "Run receipt binds exact inputs and numerical outputs; frozen run_v2 peer reviews are separately hash-bound. This manifest records author reproduction, not independent peer acceptance."
+}

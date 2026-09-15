@@ -1,0 +1,3 @@
+model,target,quarter,origin_date,asof,last_company_publication,last_company_quarter,revenue_musd,guide_mid_musd,n_train,n_train_basis,n_params_revenue,n_params_guide,seasonal_lambda_pct,cushion_pct,n_cushion,knowable_from,status,predictive_interval
+joint,2026Q4,2026Q4,2026-09-15,2026-09-15,2026-08-06,2026Q2,3244.3892518828134,3185.2473918851197,20,all_complete_quarters,7,8,12.681513343028172,1.8567430632975808,8,2026-08-06,LIVE_research_snapshot_not_promoted,not_calculated
+fixed,2026Q4,2026Q4,2026-09-15,2026-09-15,2026-08-06,2026Q2,3219.2354701190793,3160.55213754334,5,target_same_season_quarters,4,5,12.040366938470584,1.8567430632975808,8,2026-08-06,LIVE_research_snapshot_not_promoted,not_calculated

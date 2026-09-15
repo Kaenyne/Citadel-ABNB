@@ -1,0 +1,1 @@
+{"attempt":"run_v1","exit_code":1,"stage":"guide_source_tieout_before_calculation","error":"guide ledger mismatch 2021Q3: 0","cause":"New adapter used revenue_musd; existing guidance ledger metric is revenue_usd_m.","repair":"Select authoritative revenue_usd_m ledger rows. No source or result was overwritten. Subsequent run uses new directory run_v2."}

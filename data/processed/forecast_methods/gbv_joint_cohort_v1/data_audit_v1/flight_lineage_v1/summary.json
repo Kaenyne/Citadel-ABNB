@@ -1,0 +1,26 @@
+{
+  "n_quarters": 17,
+  "first_quarter": "3Q22",
+  "last_quarter": "3Q26",
+  "n_git_commits": 1071,
+  "all_stored_lineage_checks_pass": true,
+  "max_lag_days": 16,
+  "source_label": "inherited stored historical-commit-vintage diagnostic; original blobs not locally recertified",
+  "feature_admission": "Select eu40_flt_da_yoy only when committed_utc is no later than origin timestamp; do not treat target-quarter day75 as known at prior-quarter guide.",
+  "completeness_caveat": "Upstream code guards75 dates but not40states per date; raw historical blobs absent locally.",
+  "median_abs_daily_revision_pct": 0.0,
+  "max_abs_daily_revision_pct": 4922.922636103152,
+  "max_revision_entry_date": "2026-03-22",
+  "max_revision_before": 698.0,
+  "max_revision_after": 35060.0,
+  "max_revision_relevance": "Extreme date2026-03-22 lies after1Q26 day75; not evidence the saved QTD75 reading contains that anomaly. Median0 does not imply all daily revisions nil.",
+  "direct_cohort_measurement_status": "UNAVAILABLE; an unmet data-admission gate is not a rejected physical survival hypothesis",
+  "input_sha256": {
+    "data/processed/govdata_v2/qtd75_pit.csv": "7af9d132b762c5ead5a5abf4261b5cae24a07c48d61bd3d9d819d149c3d31f6d",
+    "data/processed/govdata_v2/git_commits.csv": "cc837d41c2e2d1cec22f173b20775581b9dfdfc0cbb5fb60bbd97632b57d4f09",
+    "data/processed/govdata_v2/revision_check.csv": "5c3b91de505feec4015553d04717d47b8303444eec2f8bb5f4ecba88a9f74978",
+    "data/processed/govdata_v2/revision_summary.csv": "0206ce0e67f3079ef87ed91da351e86cd794554899d638ac7eea4940d7cdfa06",
+    "data/processed/govdata_v2/C_feature_panel.csv": "49491234113f84e166e39d3c171c3edb36f308fef95dbf468106242cde9139a5",
+    "analysis/src/govdata_v2/C2_vintages.py": "5e125dc948d975f497f1ecfad1b3a970043ba7cbd7918b7dbf511dc310447dc5"
+  }
+}
