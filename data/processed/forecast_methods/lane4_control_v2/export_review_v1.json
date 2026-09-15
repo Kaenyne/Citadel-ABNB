@@ -1,0 +1,1918 @@
+{
+  "verdict": "PASS",
+  "formula_count": 1875,
+  "formula_errors": 0,
+  "external_links": 0,
+  "checks_count": 316,
+  "max_abs_difference": 7.375339549753335e-06,
+  "horizon_fraction": 0.7013698630136986,
+  "consensus_value": 3161.02149,
+  "consensus_vendor": "Yahoo Finance (LSEG family)",
+  "consensus_timestamp": "2026-09-13T15:20Z",
+  "source_hashes": {
+    "model\\lane4_v2\\outputs\\lane4_model\\snapshot_v1\\ABNB_L4_review.xlsx": "5cec85afc5ad454409dbd24a6ec9144fe50562d53d6561706ad26a3c8cb0a7f9",
+    "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\scenario_summary.csv": "c3a640fda7789e23708fdaae8875f7a3cd104d873a14a18ea716ad0d1290a51a",
+    "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1\\annual.csv": "2015f3862de12bf046a66ef06cee0544c0c8f5fff6ab21b0f16b93f7ccb1967e",
+    "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1\\consensus_selection.csv": "969cb23970a187635e8f68ae5849aa838f4b547c05b18853841a8469c60349c5",
+    "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane4-full\\analysis\\src\\forecast_methods\\lane4_control_v1\\review_exports.py": "611e47ac21b3d41d578339f29dd5e4ed55e2a595606ab8cfe31015dee1aad73f"
+  },
+  "scope": "Independent raw export caches and CSV cash/share/expectations audit; no native Excel session",
+  "checks": [
+    {
+      "check": "review_with_k/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/horizon_net_cash_musd",
+      "actual": 10029.055795273789,
+      "expected": 10029.055795273789,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/enterprise_value_musd",
+      "actual": 95824.28660676908,
+      "expected": 95824.28660676908,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/equity_value_musd",
+      "actual": 105853.34240204286,
+      "expected": 105853.34240204286,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/value_per_share",
+      "actual": 182.86701631744037,
+      "expected": 182.86701631744037,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/december_value_per_share",
+      "actual": 184.66275525291607,
+      "expected": 184.66275525291607,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/date_only_value_difference",
+      "actual": 1.795738935475697,
+      "expected": 1.795738935475697,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/cash flow identity",
+      "actual": 9433.58487288186,
+      "expected": 9433.58487288186,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "review_with_k/2026/earnings identity",
+      "actual": 3834.8252769790497,
+      "expected": 3834.8252769790497,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/cash flow identity",
+      "actual": 10282.596148948478,
+      "expected": 10282.596148948478,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/earnings identity",
+      "actual": 4193.779422455665,
+      "expected": 4193.779422455665,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/cash flow identity",
+      "actual": 11869.32647233194,
+      "expected": 11869.32647233194,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "review_with_k/2028/earnings identity",
+      "actual": 5020.41078839148,
+      "expected": 5020.41078839148,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/revenue bridge",
+      "actual": 3179.3436542864,
+      "expected": 3179.3436542864,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k/guide identity",
+      "actual": 3123.419115173384,
+      "expected": 3123.419115173384,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!E8",
+      "actual": 3123.4191151733926,
+      "expected": 3123.419115173384,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!E9",
+      "actual": 14273.706583780326,
+      "expected": 14273.70658378032,
+      "difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "Case comparison!E10",
+      "actual": 15952.233240744847,
+      "expected": 15952.233240744836,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!E11",
+      "actual": 5807.532521622381,
+      "expected": 5807.532521622368,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!E12",
+      "actual": 3355.023537964542,
+      "expected": 3355.023537964532,
+      "difference": 1.000444171950221e-11
+    },
+    {
+      "check": "Case comparison!E13",
+      "actual": 5536.825326066628,
+      "expected": 5536.825326066617,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!E14",
+      "actual": 10029.055795273802,
+      "expected": 10029.055795273789,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!E15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!E16",
+      "actual": 95824.28660676928,
+      "expected": 95824.28660676908,
+      "difference": 2.0372681319713593e-10
+    },
+    {
+      "check": "Case comparison!E17",
+      "actual": 105853.34240204308,
+      "expected": 105853.34240204286,
+      "difference": 2.1827872842550278e-10
+    },
+    {
+      "check": "Case comparison!E18",
+      "actual": 182.86701631744072,
+      "expected": 182.86701631744037,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "check": "Case comparison!E19",
+      "actual": 184.6627552529164,
+      "expected": 184.66275525291607,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "check": "Case comparison!E20",
+      "actual": 3179.3436542864088,
+      "expected": 3179.3436542864,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!E21",
+      "actual": 18.32216428640868,
+      "expected": 18.32216428640004,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "review_without_k/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/horizon_net_cash_musd",
+      "actual": 10022.346257518431,
+      "expected": 10022.346257518431,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/enterprise_value_musd",
+      "actual": 95666.76788508044,
+      "expected": 95666.76788508044,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/equity_value_musd",
+      "actual": 105689.11414259888,
+      "expected": 105689.11414259888,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/value_per_share",
+      "actual": 182.58330367201947,
+      "expected": 182.58330367201947,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/december_value_per_share",
+      "actual": 184.37229647251942,
+      "expected": 184.37229647251942,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/date_only_value_difference",
+      "actual": 1.7889928004999547,
+      "expected": 1.7889928004999547,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/cash flow identity",
+      "actual": 9433.143404994631,
+      "expected": 9433.143404994631,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "review_without_k/2026/earnings identity",
+      "actual": 3834.2778753748835,
+      "expected": 3834.2778753748835,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/cash flow identity",
+      "actual": 10273.21778456958,
+      "expected": 10273.21778456958,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/earnings identity",
+      "actual": 4184.347150643961,
+      "expected": 4184.347150643961,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/cash flow identity",
+      "actual": 11849.846898025891,
+      "expected": 11849.846898025891,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "review_without_k/2028/earnings identity",
+      "actual": 5009.662038720992,
+      "expected": 5009.662038720992,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/revenue bridge",
+      "actual": 3175.92643761104,
+      "expected": 3175.92643761104,
+      "difference": 0.0
+    },
+    {
+      "check": "review_without_k/guide identity",
+      "actual": 3120.0620072149163,
+      "expected": 3120.0620072149163,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!F8",
+      "actual": 3120.0620072149213,
+      "expected": 3120.0620072149163,
+      "difference": 5.002220859751105e-12
+    },
+    {
+      "check": "Case comparison!F9",
+      "actual": 14270.28936710496,
+      "expected": 14270.28936710496,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!F10",
+      "actual": 15939.531309461861,
+      "expected": 15939.53130946185,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!F11",
+      "actual": 5797.98593242913,
+      "expected": 5797.985932429117,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!F12",
+      "actual": 3347.4777205151786,
+      "expected": 3347.477720515169,
+      "difference": 9.549694368615746e-12
+    },
+    {
+      "check": "Case comparison!F13",
+      "actual": 5527.88842957496,
+      "expected": 5527.8884295749485,
+      "difference": 1.1823431123048067e-11
+    },
+    {
+      "check": "Case comparison!F14",
+      "actual": 10022.346257518439,
+      "expected": 10022.346257518431,
+      "difference": 7.275957614183426e-12
+    },
+    {
+      "check": "Case comparison!F15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!F16",
+      "actual": 95666.76788508064,
+      "expected": 95666.76788508044,
+      "difference": 2.0372681319713593e-10
+    },
+    {
+      "check": "Case comparison!F17",
+      "actual": 105689.11414259908,
+      "expected": 105689.11414259888,
+      "difference": 2.0372681319713593e-10
+    },
+    {
+      "check": "Case comparison!F18",
+      "actual": 182.58330367201978,
+      "expected": 182.58330367201947,
+      "difference": 3.126388037344441e-13
+    },
+    {
+      "check": "Case comparison!F19",
+      "actual": 184.37229647251976,
+      "expected": 184.37229647251942,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "check": "Case comparison!F20",
+      "actual": 3175.926437611045,
+      "expected": 3175.92643761104,
+      "difference": 5.002220859751105e-12
+    },
+    {
+      "check": "Case comparison!F21",
+      "actual": 14.904947611044918,
+      "expected": 14.904947611039916,
+      "difference": 5.002220859751105e-12
+    },
+    {
+      "check": "k0_conditional/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/horizon_net_cash_musd",
+      "actual": 10093.674094571294,
+      "expected": 10093.674094571294,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/enterprise_value_musd",
+      "actual": 97155.52011311596,
+      "expected": 97155.52011311596,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/equity_value_musd",
+      "actual": 107249.19420768725,
+      "expected": 107249.19420768725,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/value_per_share",
+      "actual": 185.27842108867577,
+      "expected": 185.27842108867577,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/december_value_per_share",
+      "actual": 187.1313166753386,
+      "expected": 187.1313166753386,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/date_only_value_difference",
+      "actual": 1.8528955866628394,
+      "expected": 1.8528955866628394,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/cash flow identity",
+      "actual": 9445.173381565957,
+      "expected": 9445.173381565957,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "k0_conditional/2026/earnings identity",
+      "actual": 3847.512180657977,
+      "expected": 3847.512180657977,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/cash flow identity",
+      "actual": 10369.793538780597,
+      "expected": 10369.793538780597,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/earnings identity",
+      "actual": 4273.509252756183,
+      "expected": 4273.509252756183,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/cash flow identity",
+      "actual": 12022.4428561383,
+      "expected": 12022.4428561383,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "k0_conditional/2028/earnings identity",
+      "actual": 5091.716563354932,
+      "expected": 5091.716563354932,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/revenue bridge",
+      "actual": 3214.7757508938,
+      "expected": 3214.7757508938,
+      "difference": 0.0
+    },
+    {
+      "check": "k0_conditional/guide identity",
+      "actual": 3158.227962491609,
+      "expected": 3158.227962491609,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!G8",
+      "actual": 3158.227962491619,
+      "expected": 3158.227962491609,
+      "difference": 1.000444171950221e-11
+    },
+    {
+      "check": "Case comparison!G9",
+      "actual": 14309.138680387727,
+      "expected": 14309.13868038772,
+      "difference": 7.275957614183426e-12
+    },
+    {
+      "check": "Case comparison!G10",
+      "actual": 16057.898603629306,
+      "expected": 16057.898603629294,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!G11",
+      "actual": 5888.2133401888605,
+      "expected": 5888.213340188846,
+      "difference": 1.4551915228366852e-11
+    },
+    {
+      "check": "Case comparison!G12",
+      "actual": 3418.807402204958,
+      "expected": 3418.8074022049464,
+      "difference": 1.1823431123048067e-11
+    },
+    {
+      "check": "Case comparison!G13",
+      "actual": 5612.434207214654,
+      "expected": 5612.43420721464,
+      "difference": 1.3642420526593924e-11
+    },
+    {
+      "check": "Case comparison!G14",
+      "actual": 10093.67409457131,
+      "expected": 10093.674094571294,
+      "difference": 1.6370904631912708e-11
+    },
+    {
+      "check": "Case comparison!G15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!G16",
+      "actual": 97155.5201131162,
+      "expected": 97155.52011311596,
+      "difference": 2.473825588822365e-10
+    },
+    {
+      "check": "Case comparison!G17",
+      "actual": 107249.19420768751,
+      "expected": 107249.19420768725,
+      "difference": 2.6193447411060333e-10
+    },
+    {
+      "check": "Case comparison!G18",
+      "actual": 185.2784210886762,
+      "expected": 185.27842108867577,
+      "difference": 4.263256414560601e-13
+    },
+    {
+      "check": "Case comparison!G19",
+      "actual": 187.13131667533904,
+      "expected": 187.1313166753386,
+      "difference": 4.263256414560601e-13
+    },
+    {
+      "check": "Case comparison!G20",
+      "actual": 3214.7757508938103,
+      "expected": 3214.7757508938,
+      "difference": 1.0459189070388675e-11
+    },
+    {
+      "check": "Case comparison!G21",
+      "actual": 53.75426089381017,
+      "expected": 53.75426089379971,
+      "difference": 1.0459189070388675e-11
+    },
+    {
+      "check": "nights_case_a/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/horizon_net_cash_musd",
+      "actual": 10028.165920937548,
+      "expected": 10028.165920937548,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/enterprise_value_musd",
+      "actual": 95945.0403626548,
+      "expected": 95945.0403626548,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/equity_value_musd",
+      "actual": 105973.20628359236,
+      "expected": 105973.20628359236,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/value_per_share",
+      "actual": 183.07408725054262,
+      "expected": 183.07408725054262,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/december_value_per_share",
+      "actual": 184.8748309132629,
+      "expected": 184.8748309132629,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/date_only_value_difference",
+      "actual": 1.8007436627202935,
+      "expected": 1.8007436627202935,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/cash flow identity",
+      "actual": 9428.010887788616,
+      "expected": 9428.010887788616,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "nights_case_a/2026/earnings identity",
+      "actual": 3829.2512918858056,
+      "expected": 3829.2512918858056,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/cash flow identity",
+      "actual": 10283.700681145492,
+      "expected": 10283.700681145494,
+      "difference": -1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/earnings identity",
+      "actual": 4200.97785212378,
+      "expected": 4200.97785212378,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/cash flow identity",
+      "actual": 11878.22676053016,
+      "expected": 11878.22676053016,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "nights_case_a/2028/earnings identity",
+      "actual": 5028.886158241204,
+      "expected": 5028.886158241204,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/revenue bridge",
+      "actual": 3179.3436542864,
+      "expected": 3179.3436542864,
+      "difference": 0.0
+    },
+    {
+      "check": "nights_case_a/guide identity",
+      "actual": 3123.419115173384,
+      "expected": 3123.419115173384,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!H8",
+      "actual": 3123.4191151733926,
+      "expected": 3123.419115173384,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!H9",
+      "actual": 14273.706583780326,
+      "expected": 14273.70658378032,
+      "difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "Case comparison!H10",
+      "actual": 15965.564327356498,
+      "expected": 15965.564327356486,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!H11",
+      "actual": 5814.850931069999,
+      "expected": 5814.850931069988,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!H12",
+      "actual": 3360.7822816990333,
+      "expected": 3360.7822816990247,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!H13",
+      "actual": 5543.503843356887,
+      "expected": 5543.503843356876,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!H14",
+      "actual": 10028.16592093756,
+      "expected": 10028.165920937548,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!H15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!H16",
+      "actual": 95945.04036265498,
+      "expected": 95945.0403626548,
+      "difference": 1.7462298274040222e-10
+    },
+    {
+      "check": "Case comparison!H17",
+      "actual": 105973.20628359255,
+      "expected": 105973.20628359236,
+      "difference": 1.8917489796876907e-10
+    },
+    {
+      "check": "Case comparison!H18",
+      "actual": 183.0740872505429,
+      "expected": 183.07408725054262,
+      "difference": 2.8421709430404007e-13
+    },
+    {
+      "check": "Case comparison!H19",
+      "actual": 184.8748309132632,
+      "expected": 184.8748309132629,
+      "difference": 2.8421709430404007e-13
+    },
+    {
+      "check": "Case comparison!H20",
+      "actual": 3179.3436542864088,
+      "expected": 3179.3436542864,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!H21",
+      "actual": 18.32216428640868,
+      "expected": 18.32216428640004,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "adr_mean_reversion/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/horizon_net_cash_musd",
+      "actual": 9942.574412630645,
+      "expected": 9942.574412630645,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/enterprise_value_musd",
+      "actual": 94194.22882518626,
+      "expected": 94194.22882518626,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/equity_value_musd",
+      "actual": 104136.8032378169,
+      "expected": 104136.8032378169,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/value_per_share",
+      "actual": 179.90160787372952,
+      "expected": 179.90160787372952,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/december_value_per_share",
+      "actual": 181.62722693810838,
+      "expected": 181.62722693810838,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/date_only_value_difference",
+      "actual": 1.7256190643788614,
+      "expected": 1.7256190643788614,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/cash flow identity",
+      "actual": 9412.089619702343,
+      "expected": 9412.089619702341,
+      "difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "adr_mean_reversion/2026/earnings identity",
+      "actual": 3811.796221584699,
+      "expected": 3811.796221584699,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/cash flow identity",
+      "actual": 10168.444890869649,
+      "expected": 10168.444890869649,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/earnings identity",
+      "actual": 4096.138424716679,
+      "expected": 4096.138424716679,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/cash flow identity",
+      "actual": 11650.541557579912,
+      "expected": 11650.541557579912,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "adr_mean_reversion/2028/earnings identity",
+      "actual": 4909.260898766492,
+      "expected": 4909.260898766492,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/revenue bridge",
+      "actual": 3129.86616348533,
+      "expected": 3129.86616348533,
+      "difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/guide identity",
+      "actual": 3074.8119316339366,
+      "expected": 3074.8119316339366,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!I8",
+      "actual": 3074.811931633949,
+      "expected": 3074.8119316339366,
+      "difference": 1.2278178473934531e-11
+    },
+    {
+      "check": "Case comparison!I9",
+      "actual": 14224.22909297926,
+      "expected": 14224.22909297925,
+      "difference": 9.094947017729282e-12
+    },
+    {
+      "check": "Case comparison!I10",
+      "actual": 15824.412911522391,
+      "expected": 15824.412911522371,
+      "difference": 2.000888343900442e-11
+    },
+    {
+      "check": "Case comparison!I11",
+      "actual": 5708.7411409204,
+      "expected": 5708.74114092038,
+      "difference": 2.000888343900442e-11
+    },
+    {
+      "check": "Case comparison!I12",
+      "actual": 3276.9107397733587,
+      "expected": 3276.9107397733433,
+      "difference": 1.546140993013978e-11
+    },
+    {
+      "check": "Case comparison!I13",
+      "actual": 5444.169321167325,
+      "expected": 5444.169321167305,
+      "difference": 2.000888343900442e-11
+    },
+    {
+      "check": "Case comparison!I14",
+      "actual": 9942.574412630667,
+      "expected": 9942.574412630645,
+      "difference": 2.1827872842550278e-11
+    },
+    {
+      "check": "Case comparison!I15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!I16",
+      "actual": 94194.2288251866,
+      "expected": 94194.22882518626,
+      "difference": 3.346940502524376e-10
+    },
+    {
+      "check": "Case comparison!I17",
+      "actual": 104136.80323781726,
+      "expected": 104136.8032378169,
+      "difference": 3.637978807091713e-10
+    },
+    {
+      "check": "Case comparison!I18",
+      "actual": 179.90160787373011,
+      "expected": 179.90160787372952,
+      "difference": 5.968558980384842e-13
+    },
+    {
+      "check": "Case comparison!I19",
+      "actual": 181.62722693810898,
+      "expected": 181.62722693810838,
+      "difference": 5.968558980384842e-13
+    },
+    {
+      "check": "Case comparison!I20",
+      "actual": 3129.866163485343,
+      "expected": 3129.86616348533,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!I21",
+      "actual": -31.15532651465719,
+      "expected": -31.155326514669923,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/horizon_net_cash_musd",
+      "actual": 9871.741003421794,
+      "expected": 9871.741003421794,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/enterprise_value_musd",
+      "actual": 93850.00526577489,
+      "expected": 93850.00526577489,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/equity_value_musd",
+      "actual": 103721.74626919668,
+      "expected": 103721.74626919668,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/value_per_share",
+      "actual": 179.18457591487964,
+      "expected": 179.18457591487964,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/december_value_per_share",
+      "actual": 180.89382235070534,
+      "expected": 180.89382235070534,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/date_only_value_difference",
+      "actual": 1.7092464358256905,
+      "expected": 1.7092464358256905,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/cash flow identity",
+      "actual": 9356.183996085028,
+      "expected": 9356.183996085028,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/earnings identity",
+      "actual": 3754.9482111412462,
+      "expected": 3754.9482111412462,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/cash flow identity",
+      "actual": 10091.2555104519,
+      "expected": 10091.2555104519,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/earnings identity",
+      "actual": 4075.1973177698246,
+      "expected": 4075.1973177698246,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/cash flow identity",
+      "actual": 11550.240716281161,
+      "expected": 11550.240716281161,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/earnings identity",
+      "actual": 4886.597339485078,
+      "expected": 4886.597339485078,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/revenue bridge",
+      "actual": 3147.550217743536,
+      "expected": 3147.550217743536,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/guide identity",
+      "actual": 3092.18492402165,
+      "expected": 3092.18492402165,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!J8",
+      "actual": 3092.184924021659,
+      "expected": 3092.18492402165,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!J9",
+      "actual": 14193.829517942522,
+      "expected": 14193.829517942517,
+      "difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "Case comparison!J10",
+      "actual": 15833.198805203954,
+      "expected": 15833.198805203941,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!J11",
+      "actual": 5687.879107016674,
+      "expected": 5687.87910701666,
+      "difference": 1.4551915228366852e-11
+    },
+    {
+      "check": "Case comparison!J12",
+      "actual": 3260.157854215871,
+      "expected": 3260.15785421586,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!J13",
+      "actual": 5422.885564366885,
+      "expected": 5422.885564366871,
+      "difference": 1.3642420526593924e-11
+    },
+    {
+      "check": "Case comparison!J14",
+      "actual": 9871.741003421808,
+      "expected": 9871.741003421794,
+      "difference": 1.4551915228366852e-11
+    },
+    {
+      "check": "Case comparison!J15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!J16",
+      "actual": 93850.00526577512,
+      "expected": 93850.00526577489,
+      "difference": 2.3283064365386963e-10
+    },
+    {
+      "check": "Case comparison!J17",
+      "actual": 103721.74626919693,
+      "expected": 103721.74626919668,
+      "difference": 2.473825588822365e-10
+    },
+    {
+      "check": "Case comparison!J18",
+      "actual": 179.18457591488004,
+      "expected": 179.18457591487964,
+      "difference": 3.979039320256561e-13
+    },
+    {
+      "check": "Case comparison!J19",
+      "actual": 180.89382235070576,
+      "expected": 180.89382235070534,
+      "difference": 4.263256414560601e-13
+    },
+    {
+      "check": "Case comparison!J20",
+      "actual": 3147.5502177435446,
+      "expected": 3147.550217743536,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!J21",
+      "actual": -13.47127225645545,
+      "expected": -13.47127225646409,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/horizon_net_cash_musd",
+      "actual": 10186.370587125783,
+      "expected": 10186.370587125783,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/enterprise_value_musd",
+      "actual": 97798.56794776327,
+      "expected": 97798.56794776327,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/equity_value_musd",
+      "actual": 107984.93853488905,
+      "expected": 107984.93853488905,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/value_per_share",
+      "actual": 186.5494567200011,
+      "expected": 186.5494567200011,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/december_value_per_share",
+      "actual": 188.43168815512678,
+      "expected": 188.43168815512678,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/date_only_value_difference",
+      "actual": 1.882231435125675,
+      "expected": 1.882231435125675,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/cash flow identity",
+      "actual": 9510.98574967869,
+      "expected": 9510.98574967869,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/earnings identity",
+      "actual": 3914.7023428168527,
+      "expected": 3914.7023428168527,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/cash flow identity",
+      "actual": 10473.936787445053,
+      "expected": 10473.936787445053,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/earnings identity",
+      "actual": 4312.361527141506,
+      "expected": 4312.361527141506,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/cash flow identity",
+      "actual": 12131.523558543508,
+      "expected": 12131.523558543508,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/earnings identity",
+      "actual": 5097.335567458673,
+      "expected": 5097.335567458673,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/revenue bridge",
+      "actual": 3211.1370908292643,
+      "expected": 3211.1370908292643,
+      "difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/guide identity",
+      "actual": 3154.653306325118,
+      "expected": 3154.653306325118,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!K8",
+      "actual": 3154.653306325127,
+      "expected": 3154.653306325118,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!K9",
+      "actual": 14353.58364961813,
+      "expected": 14353.583649618124,
+      "difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "Case comparison!K10",
+      "actual": 16071.267676285745,
+      "expected": 16071.267676285732,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!K11",
+      "actual": 5927.185936228091,
+      "expected": 5927.185936228077,
+      "difference": 1.4551915228366852e-11
+    },
+    {
+      "check": "Case comparison!K12",
+      "actual": 3449.8892217132156,
+      "expected": 3449.8892217132047,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!K13",
+      "actual": 5650.7650877663755,
+      "expected": 5650.765087766362,
+      "difference": 1.3642420526593924e-11
+    },
+    {
+      "check": "Case comparison!K14",
+      "actual": 10186.370587125795,
+      "expected": 10186.370587125783,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Case comparison!K15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!K16",
+      "actual": 97798.5679477635,
+      "expected": 97798.56794776327,
+      "difference": 2.3283064365386963e-10
+    },
+    {
+      "check": "Case comparison!K17",
+      "actual": 107984.9385348893,
+      "expected": 107984.93853488905,
+      "difference": 2.473825588822365e-10
+    },
+    {
+      "check": "Case comparison!K18",
+      "actual": 186.54945672000147,
+      "expected": 186.5494567200011,
+      "difference": 3.694822225952521e-13
+    },
+    {
+      "check": "Case comparison!K19",
+      "actual": 188.43168815512718,
+      "expected": 188.43168815512678,
+      "difference": 3.979039320256561e-13
+    },
+    {
+      "check": "Case comparison!K20",
+      "actual": 3211.137090829273,
+      "expected": 3211.1370908292643,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Case comparison!K21",
+      "actual": 50.11560082927281,
+      "expected": 50.11560082926417,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "joint_soft/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/horizon_net_cash_musd",
+      "actual": 9834.494453055755,
+      "expected": 9834.494453055755,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/enterprise_value_musd",
+      "actual": 92813.50461625418,
+      "expected": 92813.50461625418,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/equity_value_musd",
+      "actual": 102647.99906930994,
+      "expected": 102647.99906930994,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/value_per_share",
+      "actual": 177.32962318247823,
+      "expected": 177.32962318247823,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/december_value_per_share",
+      "actual": 178.99477806594385,
+      "expected": 178.99477806594385,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/date_only_value_difference",
+      "actual": 1.6651548834656182,
+      "expected": 1.6651548834656182,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/cash flow identity",
+      "actual": 9359.897883784392,
+      "expected": 9359.897883784392,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "joint_soft/2026/earnings identity",
+      "actual": 3757.934781008897,
+      "expected": 3757.934781008897,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/cash flow identity",
+      "actual": 10036.568773565827,
+      "expected": 10036.568773565827,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/earnings identity",
+      "actual": 4013.207395948808,
+      "expected": 4013.207395948808,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/cash flow identity",
+      "actual": 11429.326209479765,
+      "expected": 11429.326209479765,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "joint_soft/2028/earnings identity",
+      "actual": 4815.67774800201,
+      "expected": 4815.67774800201,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/revenue bridge",
+      "actual": 3103.8713895762,
+      "expected": 3103.8713895762,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_soft/guide identity",
+      "actual": 2987.9393430652676,
+      "expected": 2987.9393430652676,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!L8",
+      "actual": 2987.9393430652776,
+      "expected": 2987.9393430652676,
+      "difference": 1.000444171950221e-11
+    },
+    {
+      "check": "Case comparison!L9",
+      "actual": 14170.36765240346,
+      "expected": 14170.367652403449,
+      "difference": 1.0913936421275139e-11
+    },
+    {
+      "check": "Case comparison!L10",
+      "actual": 15741.165542753199,
+      "expected": 15741.16554275318,
+      "difference": 1.8189894035458565e-11
+    },
+    {
+      "check": "Case comparison!L11",
+      "actual": 5625.060885833605,
+      "expected": 5625.060885833587,
+      "difference": 1.8189894035458565e-11
+    },
+    {
+      "check": "Case comparison!L12",
+      "actual": 3210.565916759061,
+      "expected": 3210.5659167590466,
+      "difference": 1.4551915228366852e-11
+    },
+    {
+      "check": "Case comparison!L13",
+      "actual": 5364.484939781451,
+      "expected": 5364.484939781435,
+      "difference": 1.6370904631912708e-11
+    },
+    {
+      "check": "Case comparison!L14",
+      "actual": 9834.494453055777,
+      "expected": 9834.494453055755,
+      "difference": 2.1827872842550278e-11
+    },
+    {
+      "check": "Case comparison!L15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!L16",
+      "actual": 92813.50461625449,
+      "expected": 92813.50461625418,
+      "difference": 3.055902197957039e-10
+    },
+    {
+      "check": "Case comparison!L17",
+      "actual": 102647.99906931026,
+      "expected": 102647.99906930994,
+      "difference": 3.2014213502407074e-10
+    },
+    {
+      "check": "Case comparison!L18",
+      "actual": 177.32962318247874,
+      "expected": 177.32962318247823,
+      "difference": 5.115907697472721e-13
+    },
+    {
+      "check": "Case comparison!L19",
+      "actual": 178.9947780659444,
+      "expected": 178.99477806594385,
+      "difference": 5.400124791776761e-13
+    },
+    {
+      "check": "Case comparison!L20",
+      "actual": 3103.8713895762103,
+      "expected": 3103.8713895762,
+      "difference": 1.0459189070388675e-11
+    },
+    {
+      "check": "Case comparison!L21",
+      "actual": -57.15010042378981,
+      "expected": -57.15010042380027,
+      "difference": 1.0459189070388675e-11
+    },
+    {
+      "check": "joint_firm/horizon_fraction",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/horizon_net_cash_musd",
+      "actual": 10137.405398762337,
+      "expected": 10137.405398762337,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/horizon_shares_m",
+      "actual": 578.8542107467383,
+      "expected": 578.8542107467383,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/enterprise_value_musd",
+      "actual": 97344.5732317978,
+      "expected": 97344.5732317978,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/equity_value_musd",
+      "actual": 107481.97863056013,
+      "expected": 107481.97863056013,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/value_per_share",
+      "actual": 185.680567982576,
+      "expected": 185.680567982576,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/december_value_per_share",
+      "actual": 187.54259548601226,
+      "expected": 187.54259548601226,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/date_only_value_difference",
+      "actual": 1.8620275034362521,
+      "expected": 1.8620275034362521,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/cash flow identity",
+      "actual": 9480.600814964619,
+      "expected": 9480.600814964617,
+      "difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2026/share identity",
+      "actual": 588.850030229746,
+      "expected": 588.8500302297462,
+      "difference": -1.1368683772161603e-13
+    },
+    {
+      "check": "joint_firm/2026/earnings identity",
+      "actual": 3883.5236625524744,
+      "expected": 3883.5236625524744,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/cash flow identity",
+      "actual": 10417.06047545746,
+      "expected": 10417.060475457462,
+      "difference": -1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2027/share identity",
+      "actual": 574.598178232489,
+      "expected": 574.598178232489,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/earnings identity",
+      "actual": 4285.03859349533,
+      "expected": 4285.03859349533,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/cash flow identity",
+      "actual": 12066.772640340387,
+      "expected": 12066.772640340387,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/share identity",
+      "actual": 561.5344334929384,
+      "expected": 561.5344334929383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "joint_firm/2028/earnings identity",
+      "actual": 5088.373975722597,
+      "expected": 5088.373975722597,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/revenue bridge",
+      "actual": 3205.7493582864,
+      "expected": 3205.7493582864,
+      "difference": 0.0
+    },
+    {
+      "check": "joint_firm/guide identity",
+      "actual": 3149.360343801505,
+      "expected": 3149.360343801505,
+      "difference": 0.0
+    },
+    {
+      "check": "Case comparison!M8",
+      "actual": 3149.3603438015143,
+      "expected": 3149.360343801505,
+      "difference": 9.094947017729282e-12
+    },
+    {
+      "check": "Case comparison!M9",
+      "actual": 14327.978954446993,
+      "expected": 14327.97895444699,
+      "difference": 3.637978807091713e-12
+    },
+    {
+      "check": "Case comparison!M10",
+      "actual": 16049.945718012534,
+      "expected": 16049.945718012528,
+      "difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "Case comparison!M11",
+      "actual": 5899.671104957446,
+      "expected": 5899.671104957442,
+      "difference": 3.637978807091713e-12
+    },
+    {
+      "check": "Case comparison!M12",
+      "actual": 3428.030874796267,
+      "expected": 3428.0308747962645,
+      "difference": 2.7284841053187847e-12
+    },
+    {
+      "check": "Case comparison!M13",
+      "actual": 5624.273710492845,
+      "expected": 5624.273710492841,
+      "difference": 3.637978807091713e-12
+    },
+    {
+      "check": "Case comparison!M14",
+      "actual": 10137.405398762343,
+      "expected": 10137.405398762337,
+      "difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "Case comparison!M15",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!M16",
+      "actual": 97344.57323179785,
+      "expected": 97344.5732317978,
+      "difference": 5.820766091346741e-11
+    },
+    {
+      "check": "Case comparison!M17",
+      "actual": 107481.9786305602,
+      "expected": 107481.97863056013,
+      "difference": 7.275957614183426e-11
+    },
+    {
+      "check": "Case comparison!M18",
+      "actual": 185.68056798257612,
+      "expected": 185.680567982576,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Case comparison!M19",
+      "actual": 187.54259548601235,
+      "expected": 187.54259548601226,
+      "difference": 8.526512829121202e-14
+    },
+    {
+      "check": "Case comparison!M20",
+      "actual": 3205.749358286409,
+      "expected": 3205.7493582864,
+      "difference": 9.094947017729282e-12
+    },
+    {
+      "check": "Case comparison!M21",
+      "actual": 44.72786828640892,
+      "expected": 44.727868286399826,
+      "difference": 9.094947017729282e-12
+    },
+    {
+      "check": "Summary!E29",
+      "actual": 3179.3436542864088,
+      "expected": 3179.3436542864,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Summary!E30",
+      "actual": 3161.02149,
+      "expected": 3161.02149,
+      "difference": 0.0
+    },
+    {
+      "check": "Summary!E31",
+      "actual": 18.32216428640868,
+      "expected": 18.32216428640004,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Summary!E32",
+      "actual": 0.005796279571135936,
+      "expected": 0.005796279571133267,
+      "difference": 2.6688720677903177e-15
+    },
+    {
+      "check": "Summary!E33",
+      "actual": -37.6023748266075,
+      "expected": -37.60237482661614,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Summary!E34",
+      "actual": 3105.4192370896376,
+      "expected": 3105.4192370896376,
+      "difference": 0.0
+    },
+    {
+      "check": "Summary!E35",
+      "actual": 17.999878083754993,
+      "expected": 17.999878083746353,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Summary!E18",
+      "actual": 182.86701631744072,
+      "expected": 182.86701631744037,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "check": "Summary!E19",
+      "actual": 184.6627552529164,
+      "expected": 184.66275525291607,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "check": "Summary!E20",
+      "actual": 3123.4191151733926,
+      "expected": 3123.419115173384,
+      "difference": 8.640199666842818e-12
+    },
+    {
+      "check": "Valuation!E10",
+      "actual": 95824.28660676928,
+      "expected": 95824.28660676908,
+      "difference": 2.0372681319713593e-10
+    },
+    {
+      "check": "Valuation!E11",
+      "actual": 10029.055795273802,
+      "expected": 10029.055795273789,
+      "difference": 1.2732925824820995e-11
+    },
+    {
+      "check": "Valuation!E12",
+      "actual": 105853.34240204308,
+      "expected": 105853.34240204286,
+      "difference": 2.1827872842550278e-10
+    },
+    {
+      "check": "Valuation!E13",
+      "actual": 578.8542107467384,
+      "expected": 578.8542107467383,
+      "difference": 1.1368683772161603e-13
+    },
+    {
+      "check": "Valuation!E14",
+      "actual": 182.86701631744072,
+      "expected": 182.86701631744037,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "check": "Valuation!E23",
+      "actual": 184.6627552529164,
+      "expected": 184.66275525291607,
+      "difference": 3.410605131648481e-13
+    },
+    {
+      "check": "Valuation!E38",
+      "actual": 180.87629337533954,
+      "expected": 180.876286,
+      "difference": 7.375339549753335e-06
+    },
+    {
+      "check": "Valuation!E45",
+      "actual": 156.78684711979025,
+      "expected": 156.786845,
+      "difference": 2.1197902526637336e-06
+    },
+    {
+      "check": "Assumptions!F145",
+      "actual": 0.7013698630136986,
+      "expected": 0.7013698630136986,
+      "difference": 0.0
+    }
+  ]
+}

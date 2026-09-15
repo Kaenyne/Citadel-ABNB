@@ -1,0 +1,44 @@
+          scenario quarter  revenue_musd  guide_musd
+     review_with_k  2026Q3   4808.362929 4723.784001
+     review_with_k  2026Q4   3179.343654 3123.419115
+     review_with_k  2027Q1   3055.680580 3001.931270
+  review_without_k  2026Q3   4808.362929 4723.784001
+  review_without_k  2026Q4   3175.926438 3120.062007
+  review_without_k  2027Q1   3046.828996 2993.235385
+     nights_case_a  2026Q3   4808.362929 4723.784001
+     nights_case_a  2026Q4   3179.343654 3123.419115
+     nights_case_a  2027Q1   3069.011667 3015.027864
+adr_mean_reversion  2026Q3   4808.362929 4723.784001
+adr_mean_reversion  2026Q4   3129.866163 3074.811932
+adr_mean_reversion  2027Q1   2983.608987 2931.127414
+    k0_conditional  2026Q3   4808.362929 4723.784001
+    k0_conditional  2026Q4   3214.775751 3158.227962
+    k0_conditional  2027Q1   3121.422848 3066.517133
+{
+  "as_of": "2026-09-13",
+  "completed_utc": "2026-09-14T04:36:13.128854+00:00",
+  "n_forecast_rows": 15,
+  "n_operating_rows": 10,
+  "conversion_status": "accepted_L3_free_weight_promotion_failed_W1_W2_retained_operational_K0_2over3",
+  "n_cohort_rows": 30,
+  "reconciliation_residual_musd": -4.547473508864641e-13,
+  "k0_q4_guide_musd": 3158.227962491611,
+  "n_new_fitted_parameters": 0,
+  "elapsed_seconds": 1.9295528000220656,
+  "missing_l3_inputs": "certified compatible pre-hedge reference; baseline/new hedge dollars; identified surviving RNPL revenue exposure and rate fixing",
+  "claimed_historical_validation": "none; conditional review scenario only; W1=0 W2=0",
+  "accepted_bundle_commit": "8821961853e4068febbfe2712f9a4e1036c9e629",
+  "accepted_research_commit": "7fb6fe0f248d5492b899672b9b70545da62d63ee",
+  "accepted_manifest_sha256": "9a8563fff0142d51fd3537699899f032165a69a6c1db9cad6c4b24d450952970",
+  "verified_payload_hashes": 108,
+  "source_integrity_receipt_sha256": "9afb70a7abf8e8e988f5ded745802cc4d54ea4d3b95e9241e86ae75e2de470aa",
+  "n_existing_joint_draws": 1000,
+  "n_descriptive_draw_output_rows": 3000,
+  "n_main_joint_cases": 3,
+  "main_joint_status": "conditional_fixed_K0_assumed_stress_no_probability_no_predictive_band",
+  "descriptive_draw_status": "rejected_free_weight_model_descriptive_joint_resampling_not_production_not_predictive_band",
+  "operational_baseline_max_abs_change_musd": 4.092726157978177e-12,
+  "consensus_information_snapshot": "2026-09-13; per-vendor original timestamps preserved",
+  "new_fits": 0,
+  "guide_expectations_status": "unavailable; hypothetical common-cushion bridge separately labelled"
+}

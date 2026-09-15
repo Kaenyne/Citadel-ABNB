@@ -1,0 +1,64 @@
+{
+  "source_integrity": "ACCEPTED_VERIFIED_COMMITTED_BUNDLE",
+  "conversion_validation": "COMPLETE_ACCEPTED_AFTER_INDEPENDENT_REVIEW",
+  "free_weight_promotion": "FAIL_BOTH_MATCHED_W1_W2",
+  "operational_conversion": "RETAIN_EXISTING_FIXED_2OVER3_K0_SEASONAL_POLICY",
+  "all22_OLS_status": "DESCRIPTIVE_ONLY_FREE_AND_FIXED_JOINT_COEFFICIENTS_NOT_ADOPTED",
+  "fx_research": "ACCEPTED_CONDITIONAL_IMPLEMENTATION_PARTIAL_IDENTIFICATION",
+  "central_fx_financial_eligibility": false,
+  "fx_integration_status": "ACCEPTED_SOURCE_NOT_ELIGIBLE_FOR_CURRENT_FINANCIAL_APPLICATION",
+  "estimated_incremental_fx_musd": null,
+  "retained_baseline": "Existing reported-USD kernel remains unchanged; this does not estimate economic FX effect as zero",
+  "fx_source_current_target_quarters": [
+    "2026Q3"
+  ],
+  "fx_source_historical_comparator_quarters": [
+    "2025Q3"
+  ],
+  "fx_no_extrapolation_quarters": [
+    "2026Q4",
+    "2027Q1"
+  ],
+  "failed_compatibility_conditions": [
+    "Source T/B denominator not certified pre-hedge",
+    "Baseline signed revenue hedge H unavailable",
+    "Scenario H_new unavailable; H_new=H has not been silently assumed",
+    "Reference GBV/currency contribution shares and RNPL recognition shares are conditional, not measured",
+    "Q4/Q1 target-specific cohort, rate and replacement inputs absent"
+  ],
+  "source_formula": "B=sum(C0*f_booking); T=sum(C0*((1-u)*f_booking+u*sum(p*f_recognition))); m_source=T/B",
+  "required_application": "R_new=m_pre*(R-H)+H_new; only on matching certified pre-hedge, reference and cohort bases",
+  "fee_theta": "UNAVAILABLE_0_OF_6_SCHEDULED_CAPTURES_AT_FROZEN_SNAPSHOT",
+  "nclh": "TRANSFER_FAIL_NO_ABNB_ADJUSTMENT",
+  "hotel": "COMPARATOR_ONLY_ACTUAL_PRODUCTION_UNAVAILABLE",
+  "adr": "COHERENT_REPLACEMENT_SCENARIOS_ONLY_FX_AND_FEE_ALREADY_EMBEDDED",
+  "n_rows": 1187,
+  "disposition_counts": {
+    "conditional": 962,
+    "calculated": 198,
+    "unavailable": 4,
+    "comparator": 4,
+    "rejected": 12,
+    "descriptive": 7
+  },
+  "source_measurement_counts": {
+    "calculated_from_assumed_exposures_and_frozen_rates": 1080,
+    "unavailable": 4,
+    "assumed_or_proxy_component": 26,
+    "calculated_from_assumed_and_proxy_components": 36,
+    "calculated_identity_on_conditional_inputs": 18,
+    "calculated_from_observed_public_price_indices": 4,
+    "calculated_cross_issuer_research_result": 12,
+    "calculated_research_result": 7
+  },
+  "observed_row_note": "No l4_inputs row is a raw directly observed ABNB revenue-cohort parameter; observed raw rates/indices are separate payload inputs",
+  "n_fx_scenario_arithmetic_checks": 180,
+  "n_isolated_Q3_timing_diagnostics": 4,
+  "n_baseline_rows": 15,
+  "n_reported_Q3_identity_matches": 5,
+  "n_financially_eligible_fx_baselines": 0,
+  "new_fitted_parameters": 0,
+  "statistical_refits": 0,
+  "optional_supplements_accepted": 0,
+  "source_claims_only": "Integrity and arithmetic checks do not repeat independent research validation or adopt investment conclusions"
+}

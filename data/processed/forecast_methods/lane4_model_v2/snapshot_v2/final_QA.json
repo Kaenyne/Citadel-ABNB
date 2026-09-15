@@ -1,0 +1,115 @@
+{
+  "status": "FINAL_ARTIFACT_QA_PASS_NO_INVESTMENT_ADOPTION",
+  "final_workbook": "model\\lane4_v2\\outputs\\lane4_model\\snapshot_v2\\ABNB_L4_review.xlsx",
+  "workbook_sha256": "882b6d7b321d2f791fecc9b1d7ec57265b5e2fdcedd705326ee7bd3ee9ce6f92",
+  "financial_data_final": "snapshot_v2",
+  "model_tests": 9,
+  "capture_checks": 126,
+  "capture_max_abs_delta": 3.637978807091713e-10,
+  "recapture": {
+    "path": "model\\lane4_v2\\outputs\\lane4_model\\validation_recapture_v1\\ABNB_L4_review.xlsx",
+    "sha256": "2b2e2a2ab13e7dcc07c22d05ab4c38a51916f5e9cb33de25d38b44b680f40d86",
+    "cached_comparisons": 126,
+    "max_abs_delta": 0.0
+  },
+  "visual_QA": {
+    "all_eight_sheets_inspected": true,
+    "both_assumption_regions_inspected": true,
+    "column_M_formatted": true,
+    "previews": [
+      {
+        "file": "Assumptions.png",
+        "sha256": "6b6c87b424273eea8a3006e7a362eed004a5b75caa024af780f5df048d916864"
+      },
+      {
+        "file": "Case_comparison.png",
+        "sha256": "669cecbd2f425ce9504c708f98bccfff8c643e20ee64e210aef5b041ea635f2e"
+      },
+      {
+        "file": "Cash.png",
+        "sha256": "68ba12eb82a14e165430911020e255a62849cd0fd767e805b597ecbd1456046d"
+      },
+      {
+        "file": "Costs.png",
+        "sha256": "829655e0afebdc2b800466788fd81356246b0d4ba7e0c1a5a98521eda39195fa"
+      },
+      {
+        "file": "Operating_assumptions.png",
+        "sha256": "d468dc6e324e64026136226237a260d85c32b324f88f7debeaebb16609889784"
+      },
+      {
+        "file": "Revenue.png",
+        "sha256": "415c69f865c10309b034f149080a40885c05837efa712c226aee2bc46335ec35"
+      },
+      {
+        "file": "Source.png",
+        "sha256": "a0e0d4ffde4453a94500d6f900bd79066b3d437f3e3b236e703e0ad2a2acd0e8"
+      },
+      {
+        "file": "Summary.png",
+        "sha256": "42afa8ef8fcfcdf9291c9de5260f58c6ccd61439640f7116886e6791cabcd706"
+      },
+      {
+        "file": "Valuation.png",
+        "sha256": "6a75eb16c3b7a8d5c7a4eb1475955c10858b2d6b37fd966f7bb396bfa1890257"
+      }
+    ]
+  },
+  "preview_process_status": "Exit1 after all requested PNGs written; unresolved bundled runtime behavior, not a clean renderer exit",
+  "formula_errors": 0,
+  "external_links": 0,
+  "new_fitted_parameters": 0,
+  "registrations": 0,
+  "independent_reviews": [
+    {
+      "path": "data/processed/forecast_methods/lane4_control_v2/export_review_v2.json",
+      "sha256": "32f5305b3428c6de9b844c6f8801d7be3f05d116e1f4a65ea5f6f23e178ee373"
+    },
+    {
+      "path": "data/processed/forecast_methods/lane4_sources_v2/artifact_review_final_v1/receipt.json",
+      "sha256": "e4bea0affcf445b3c07a0a996565c8feb16cc8f7c73dc3cc8ea896779c49ce2c"
+    },
+    {
+      "path": "docs/revenue-forecast-strategy/05_backtests/L4_INDEPENDENT_REVIEW_v2.md",
+      "sha256": "2608569470332e1214fd504a4075d874aa7c394fe5cbef5bc9aa666f18c8200b"
+    },
+    {
+      "path": "docs/revenue-forecast-strategy/05_backtests/L4_ARTIFACT_EVIDENCE_REVIEW_v2.md",
+      "sha256": "52c9b4b2283cf5c18368e9d79363cad547232a52fb9a134f0300fdfa622b0d9f"
+    }
+  ],
+  "source_code": [
+    {
+      "file": ".gitattributes",
+      "sha256": "f06202a408fef9b9ea69bb6b1cb8160dbb0378c5bb67a444d510d231813824c8"
+    },
+    {
+      "file": ".gitignore",
+      "sha256": "aac083a92e2610f0540c8164da6f8c6c1a604fbc6be7dd5569b1d924a9240851"
+    },
+    {
+      "file": "build.mjs",
+      "sha256": "3f750a8d9b67246cf46f4382915bd805c5683e1e341e4fcc72a9c54e77a9c0d8"
+    },
+    {
+      "file": "README.md",
+      "sha256": "f1b17d1404fe5d3abaccb5cc20b18f1aa64ad20a731eafb6af7d98c2ee89d18b"
+    },
+    {
+      "file": "render.mjs",
+      "sha256": "6e0fedea0fef6aa0d39f2e20cb4dd956b360ecd8c0a446a9abe9dcc93407815a"
+    },
+    {
+      "file": "render_all.mjs",
+      "sha256": "31a53788093101706776ef0044d6a3bc2adecd5ca47b8988d0e23f1190304265"
+    },
+    {
+      "file": "run.py",
+      "sha256": "a00f6e6c4435c359c1c08ccb317a67e455e102648013291dfe454c675561312f"
+    },
+    {
+      "file": "test_model.py",
+      "sha256": "21d040ca950143b9a0965ecb39ac6eb5caeecaafd640e1a4dc8f76315c202fd4"
+    }
+  ]
+}

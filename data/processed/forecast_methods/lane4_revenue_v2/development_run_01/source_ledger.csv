@@ -1,0 +1,30 @@
+path,sha256,scope,imported_at
+data/processed/adrv3/P/adr_card_v3.csv,feebf30018a38cb2c409487fd3cd7b8f8d1891cbdd0d526716a51f432011ffd1,committed L1/L2 input; never mutated,2026-09-13
+data/processed/adrv3/P/P1_card_v3_terms.csv,8f72a1c77030c6bc0fc4b134fa12fd876dad9ca985370386a1c752a30e83b03d,committed L1/L2 input; never mutated,2026-09-13
+data/processed/overnight/02_kpi_panel_quarterly.csv,c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac,committed L1/L2 input; never mutated,2026-09-13
+data/processed/forecast_methods/harness/calendar.csv,8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2,committed L1/L2 input; never mutated,2026-09-13
+data/processed/h2_bridge_v3/h2_bridge_revenue_dollars.csv,cadd979bb75e746b342716e5f901030924f79a971ba635a507c814e8a2461aae,committed L1/L2 input; never mutated,2026-09-13
+data/processed/forecast_methods/kernel_engine_v2/term_structure_2026-09-12.csv,6b873017f44db8a20e2dee636ba9ed27a8f6470682f3560181940bc5488fadde,committed L1/L2 input; never mutated,2026-09-13
+data/processed/forecast_methods/L0/L0_vintage_register.csv,fc9975bb9a81ab34f10b14c890703fd21713f8bc5dcfea35c4a0ea99978f955a,committed L1/L2 input; never mutated,2026-09-13
+data/processed/overnight/02_guidance_cushion_series.csv,0140b2763604826c3b59dfde2ef90c186c8bb2c2c95de4b9e7c758eea54ce578,committed L1/L2 input; never mutated,2026-09-13
+analysis/src/forecast_methods/kernel_engine_v2/engine.py,328431c5f9379e6d4ae7e9c5d01212ee1bcd550b02c3c9783b85851e3e9a3279,committed L1/L2 input; never mutated,2026-09-13
+analysis/src/forecast_methods/kernel_phi_v2/stage_d.py,930e8029c06cd8e479bc3601120409a564b00e74f71fce32e6daa966c4e7eb10,committed L1/L2 input; never mutated,2026-09-13
+docs/adrv3/SYNTHESIS.md,37a137e535af6ddfbb9754a655d1ca88528d7651bf2b539ec8b334cb1c49cfd2,committed L1/L2 input; never mutated,2026-09-13
+docs/revenue-forecast-strategy/05_backtests/ALPHA_F_RNPL.md,636850c6c887cd0efecd05322f2a8d2a59ab2146aa5ed13bcca4a115d024b6ee,committed L1/L2 input; never mutated,2026-09-13
+docs/revenue-forecast-strategy/05_backtests/LANE2_MEMO_READY_CLAIMS.md,5b54b1c2e6fdd62f8cc84ff9602b02a364d1df9507886bb132ee45712aa59d3a,committed L1/L2 input; never mutated,2026-09-13
+analysis/src/forecast_methods/lane4_revenue_v2/adapter.py,5bc203afcb8cc7e8f792457cfd13d4b6db4ca97d229d205736cb8ea7b6a2875f,L4 reproducible code,2026-09-13
+analysis/src/forecast_methods/lane4_revenue_v2/integration.py,e7976c4fad7606154a6ffaccbffb7cdd7aba6ab5a1df070665bdea4c7b87ba2f,L4 reproducible code,2026-09-13
+analysis/src/forecast_methods/lane4_revenue_v2/l3_contract.py,049f8fd74bab1e6d420a6c508cabaedbdb7ee2e5ec41ae44627207fb7bc79fcd,L4 reproducible code,2026-09-13
+analysis/src/forecast_methods/lane4_revenue_v2/run.py,215719777d5787cc7923f2842473eff28dd1a97d60e0a1a9f942f876b1544afd,L4 reproducible code,2026-09-13
+analysis/src/forecast_methods/lane4_revenue_v2/tests/test_adapter.py,d5036c352018d7eee3291a8eb9905228b909df6cc283983d21dcdd57c9e18e0c,L4 reproducible code,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/integrity_receipt.json,9afb70a7abf8e8e988f5ded745802cc4d54ea4d3b95e9241e86ae75e2de470aa,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/bundle/SHA256SUMS.json,9a8563fff0142d51fd3537699899f032165a69a6c1db9cad6c4b24d450952970,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/bundle/payload/conversion/parameter_bootstrap.csv,5f89aeeb8c14c3304728554c4e57794c3e565c7c805636c2a9d2372eb8ca6b3e,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/bundle/payload/conversion/parameters.csv,baa328ac3b8d3e6523e5de6486e8307a6510de2cec4414a4c6b78145859fc17b,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/bundle/payload/conversion/chronological_scores.csv,3ac919a1c3f88bc5a9653c8776b015c8d3690acb186cb73676d3e4ce4d0f87a7,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/qvs/QVS_VARIANCE_AND_PRESENTATION_ARGUMENTS_v1.md,0d8eb557924f7dc476d400cb0cec2ba2c30aac92fc22e0133047416677e7cb84,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/qvs/QVS_GUIDE_BASIS_AND_DECISION_LOGIC_v1.md,37bacad9d55d1b5a1f31aa0db793f3ca8784051d3bfd8e4f84786fe1be49cd36,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/accounting_eligibility.json,362d01b2575343358d9844377ce2f5156a9979fc447c4e6996031a051465c128,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/cohort_baseline_compatibility.csv,bccb80980d9bd3f78caee2a7f59e30fb64b4f8ce5135dee3b99d10710bff071e,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/fx_isolated_diagnostics.csv,c3186a3eac91c4e273d3a3e61fea99b2e44454ecee2cd97c2b0a9a4f9e61bbf8,accepted immutable source copy; no new fit,2026-09-13
+data/processed/forecast_methods/lane4_sources_v2/snapshot_v1/row_dispositions.csv,661618b195e8a7e23919225fe2cf9d4a0db0b16102df0ee0909d90847fda28f4,accepted immutable source copy; no new fit,2026-09-13

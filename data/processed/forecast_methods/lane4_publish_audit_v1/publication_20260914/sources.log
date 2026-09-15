@@ -1,0 +1,23 @@
+test_all1187_dispositions_preserve_source_fields (test_sources.AccountingTests.test_all1187_dispositions_preserve_source_fields) ... ok
+test_all180_source_identities_and_isolated_diagnostics (test_sources.AccountingTests.test_all180_source_identities_and_isolated_diagnostics) ... ok
+test_baseline_coverage_and_missing_fx_not_zero (test_sources.AccountingTests.test_baseline_coverage_and_missing_fx_not_zero) ... ok
+test_current_audit_cannot_overwrite (test_sources.AccountingTests.test_current_audit_cannot_overwrite) ... ok
+test_each_unmatched_contract_blocks_application (test_sources.AccountingTests.test_each_unmatched_contract_blocks_application) ... ok
+test_missing_hedge_or_invalid_prehedge_denominator_rejected (test_sources.AccountingTests.test_missing_hedge_or_invalid_prehedge_denominator_rejected) ... ok
+test_missing_nonfinite_never_zero (test_sources.AccountingTests.test_missing_nonfinite_never_zero) ... ok
+test_prehedge_identity_and_unchanged_hedge (test_sources.AccountingTests.test_prehedge_identity_and_unchanged_hedge) ... ok
+test_unknown_schema_rejected_and_fee_null_preserved (test_sources.AccountingTests.test_unknown_schema_rejected_and_fee_null_preserved) ... ok
+test_actual_bundle_and_32_committed_bindings (test_sources.IntegrityTests.test_actual_bundle_and_32_committed_bindings) ... ok
+test_bundle_manifest_inventory_and_corruption (test_sources.IntegrityTests.test_bundle_manifest_inventory_and_corruption) ... ok
+test_exact_binding (test_sources.IntegrityTests.test_exact_binding) ... ok
+test_existing_extraction_destination_rejected (test_sources.IntegrityTests.test_existing_extraction_destination_rejected) ... ok
+test_missing_committed_object_rejected (test_sources.IntegrityTests.test_missing_committed_object_rejected) ... ok
+test_newline_difference_is_explicit (test_sources.IntegrityTests.test_newline_difference_is_explicit) ... ok
+test_non_newline_content_mismatch_rejected (test_sources.IntegrityTests.test_non_newline_content_mismatch_rejected) ... ok
+test_unsafe_paths_rejected (test_sources.IntegrityTests.test_unsafe_paths_rejected) ... ok
+test_write_refuses_overwrite (test_sources.IntegrityTests.test_write_refuses_overwrite) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 3.945s
+
+OK

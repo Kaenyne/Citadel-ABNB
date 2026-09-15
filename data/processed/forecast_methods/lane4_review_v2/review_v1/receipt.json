@@ -1,0 +1,89 @@
+{
+  "status": "GENERATED_PENDING_VISUAL_AND_INDEPENDENT_REVIEW",
+  "pages": 2,
+  "exhibit_pages": 3,
+  "row_dispositions": 1187,
+  "source_ledger_rows": 1367,
+  "model_cases": 9,
+  "financial_checks": 54,
+  "conversion": "Validation complete; free-weight promotion FAIL W1/W2; existing fixed 2/3 K0 seasonal policy retained.",
+  "fx": "Verified source; current financial application ineligible: pre-hedge baseline and H/H_new missing. Q3 only; no Q4/Q1 extrapolation.",
+  "model_snapshot": "data\\processed\\forecast_methods\\lane4_model_v2\\snapshot_v1",
+  "revenue_snapshot": "data\\processed\\forecast_methods\\lane4_revenue_v2\\snapshot_v1",
+  "new_fitted_parameters": 0,
+  "registrations": 0,
+  "outputs": [
+    {
+      "file": "01_seasonal_conversion.png",
+      "sha256": "52ffcb5cef1e965127370afca0d233d0de57efeed8dd369e98e662823a7642ac"
+    },
+    {
+      "file": "01_seasonal_conversion.svg",
+      "sha256": "851d5cee2aca6204aabbaeba3d3144c2ee40f896ab0773bb4a3763f7f48c59fe"
+    },
+    {
+      "file": "02_weight_identification.png",
+      "sha256": "70664777090d6c6ead68763878c126d4591893b5725c2a785884c33761f0b27b"
+    },
+    {
+      "file": "02_weight_identification.svg",
+      "sha256": "cfa380225529c79283e14259248002f16efa92d83de457058b49e76e2d568350"
+    },
+    {
+      "file": "03_chronological_validation.png",
+      "sha256": "89b39cb8527bdd531caba51b7c50e9939254b43c6bbb25e537217f74acd72248"
+    },
+    {
+      "file": "03_chronological_validation.svg",
+      "sha256": "e0322de126adef6d857401cd944ac296e77aa04590fa78217e60a2343e5ca2e4"
+    },
+    {
+      "file": "accepted_L3_exhibits.pdf",
+      "sha256": "ac54e79e2e62a7aa010f47c62a6521bc9dc43ec3acf2ffae3ca342e0fc0f34c1"
+    },
+    {
+      "file": "decision_register.csv",
+      "sha256": "157808cb1a3e8aa0f8ea385c5d518a646149e0bba5b1d9bca0f4e7bf67b29294"
+    },
+    {
+      "file": "decision_register.md",
+      "sha256": "3ae7a19fe81c24ab36f78ebf4ec17f69be0c62c9cff33cedf4327bd5b7e2ad90"
+    },
+    {
+      "file": "financial_scenarios.csv",
+      "sha256": "c3a640fda7789e23708fdaae8875f7a3cd104d873a14a18ea716ad0d1290a51a"
+    },
+    {
+      "file": "rejected_free_weight_descriptive_extremes.csv",
+      "sha256": "db2803fd57325fcc83b89dc4673ba5019d37e70583f83742f5b0b24693062f49"
+    },
+    {
+      "file": "review_memo.md",
+      "sha256": "7b397ad6452dab08d217f02ca63c9cc37026af8763a24197930f532ebb648fb4"
+    },
+    {
+      "file": "review_memo.pdf",
+      "sha256": "f25ea92905d1d39d2d90738ce2e9e5c70852fbbb13072529788ff4ef96986402"
+    },
+    {
+      "file": "same_basis_expectations.csv",
+      "sha256": "d1588d403a7771db5eb4ee65fd52e40503cfaf524ffef320d68f0c23069280a9"
+    },
+    {
+      "file": "source_assumption_ledger.csv",
+      "sha256": "0105526e27cc3efc4adfc2a870c2d5a0ffca6dd274f929ea6d5a7abca5246d4e"
+    },
+    {
+      "file": "unsigned_card.csv",
+      "sha256": "c1026f83f047837cd0e564c4c265b9fd7bfedfa658ea94251369c7d1d37a758c"
+    },
+    {
+      "file": "unsigned_card.json",
+      "sha256": "c1c48a0c51d403004a007815183c209f29a33439fd01daf6de2978c88bae2c2b"
+    },
+    {
+      "file": "unsigned_november_card.md",
+      "sha256": "beda7d4ee84f3c3ee824193bf6c5a526435a3dc890b8cb4fa9974b4a26c1a821"
+    }
+  ]
+}

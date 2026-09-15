@@ -1,0 +1,51 @@
+{
+  "implementation_tests": "36 passed in 1.86s; exit0",
+  "test_command": "python -X utf8 -m pytest analysis/src/forecast_methods/lane4_revenue_v1/tests -q",
+  "source_hash_checks": 17,
+  "independent_decimal_q4_revenue_musd": "3179.3436542864087630240000",
+  "independent_decimal_q4_guide_musd": "3123.419115173392541629418891",
+  "independent_checks": "published ADR*nights; weighted GBV conversion; guide division;15weight sums;quarter timing;pending values remain null",
+  "rebuild_exit_code": 0,
+  "rebuild_command": [
+    "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "analysis/src/forecast_methods/lane4_revenue_v1/run.py",
+    "--output",
+    "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\lane4-full\\data\\processed\\forecast_methods\\lane4_revenue_v1\\rebuild_01"
+  ],
+  "csv_files_byte_identical": [
+    "cohort_weights.csv",
+    "consensus_comparison.csv",
+    "consensus_selection.csv",
+    "consensus_source_rows.csv",
+    "cushion_inputs.csv",
+    "fee_mechanics_comparison.csv",
+    "forecast.csv",
+    "guide_reconciliation.csv",
+    "issued_guide_comparison.csv",
+    "k0_public_api_snapshot.csv",
+    "operating_inputs.csv",
+    "sensitivity.csv",
+    "source_ledger.csv"
+  ],
+  "existing_output_refusal_exit_code": 1,
+  "existing_output_hashes_unchanged": true,
+  "snapshot_hashes": {
+    "cohort_weights.csv": "33fdfa56eda54a9d85c7cf0808278f2c41bceca60bda3c0b38196a8e02a67009",
+    "consensus_comparison.csv": "a97a6b03a1339b8d613a56f92874873fae362b286d2e6da5ef106811ac5640ef",
+    "consensus_selection.csv": "7f7c265b1e14f0589191d2cb7a8cfd9157d18b38baaf614d195d9ce7d6af0fa5",
+    "consensus_source_rows.csv": "990b8dc510432cfabdf42838bf791b7d10c70f67c5d274fe1ec33a351538d708",
+    "cushion_inputs.csv": "a537868726c471cc727ce56263380648b1cf5644a6e5e7f294488c337e88f621",
+    "fee_mechanics_comparison.csv": "50cbb7d0cba45409ebc0c1f24d8127b30cb9a97e8ee4888a01227ed7c9358552",
+    "forecast.csv": "afba9714d56c09b72323b9a9795db28dda0aa1e2e8800457aa3adb698aa5c087",
+    "guide_reconciliation.csv": "5cc95848b7ce2aa5649e384990fb8247c7a3286cb2eeb09e4df8b35c29966431",
+    "integration_status.json": "8ffc0968a1b8de0813ebe3c2f625e1dda6dd9ad6265cd96ffe26bdba90ea293f",
+    "issued_guide_comparison.csv": "488416940946d075ccb94ef1de802991eaa179d44d80286e53e1f57c732ff0ae",
+    "k0_public_api_snapshot.csv": "c609a4987937857e80d23378176c05d1cada09c22d4330ffc1f4c962e99a23d8",
+    "operating_inputs.csv": "4e971be2a5ef8c53fc790fc1ef1465ff852e88f77b200b589f7b82e5a88d3b21",
+    "run_receipt.json": "78d41b94688fb23b8916baf4f751663d4849c7dd6636c7b880791f1f9d0a3e59",
+    "sensitivity.csv": "d587ddae0a671ab17bb6d980b6bf7cb3254032d9626dc6b46ef4c63c05385eb8",
+    "source_ledger.csv": "3b96a4ba98599fa07d129b2fc38e9dad7256c6d44cc44c5a1569d5e4046e73de"
+  }
+}

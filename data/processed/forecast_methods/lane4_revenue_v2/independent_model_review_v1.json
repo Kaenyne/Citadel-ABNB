@@ -1,0 +1,3048 @@
+{
+  "model_snapshot": "lane4_model_v2/snapshot_v1",
+  "revenue_snapshot": "lane4_revenue_v2/snapshot_v1",
+  "n_independent_numeric_checks": 759,
+  "max_abs_error": 2.9103830456733704e-11,
+  "n_source_hashes_verified": 81,
+  "source_model_input_sha256": "d49ed8fbe3e1f50ebb79889eee7f96ae8766133525f4d3728fd416cab834c779",
+  "source_scenario_summary_sha256": "c3a640fda7789e23708fdaae8875f7a3cd104d873a14a18ea716ad0d1290a51a",
+  "checks": [
+    {
+      "check": "horizon fraction",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k2026Q3 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "review_with_k2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k2026Q4 source guide",
+      "absolute_difference": 5.9117155615240335e-12
+    },
+    {
+      "check": "review_with_k2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k2027Q1 source guide",
+      "absolute_difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "review_with_k2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/ops",
+      "absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "check": "review_with_k/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/horizon_net_cash_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/enterprise_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/equity_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k/december_value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k2026Q3 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "review_without_k2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k2026Q4 source guide",
+      "absolute_difference": 3.637978807091713e-12
+    },
+    {
+      "check": "review_without_k2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k2027Q1 source guide",
+      "absolute_difference": 6.366462912410498e-12
+    },
+    {
+      "check": "review_without_k2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/ops",
+      "absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "check": "review_without_k/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2026/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2026/net_income",
+      "absolute_difference": 1.3642420526593924e-12
+    },
+    {
+      "check": "review_without_k/2026/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2026/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2027/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/cor",
+      "absolute_difference": 4.547473508864641e-13
+    },
+    {
+      "check": "review_without_k/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2028/net_income",
+      "absolute_difference": 1.3642420526593924e-12
+    },
+    {
+      "check": "review_without_k/2028/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/2028/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/horizon_net_cash_musd",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_without_k/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/enterprise_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/equity_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_without_k/december_value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional2026Q3 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "k0_conditional2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional2026Q4 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "k0_conditional2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional2027Q1 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "k0_conditional2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/ops",
+      "absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "check": "k0_conditional/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/horizon_net_cash_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/enterprise_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/equity_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "k0_conditional/december_value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a2026Q3 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "nights_case_a2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a2026Q4 source guide",
+      "absolute_difference": 5.9117155615240335e-12
+    },
+    {
+      "check": "nights_case_a2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a2027Q1 source guide",
+      "absolute_difference": 4.547473508864641e-12
+    },
+    {
+      "check": "nights_case_a2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2026/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2026/net_income",
+      "absolute_difference": 1.3642420526593924e-12
+    },
+    {
+      "check": "nights_case_a/2026/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2026/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2027/net_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2027/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2027/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/2028/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2028/net_income",
+      "absolute_difference": 1.3642420526593924e-12
+    },
+    {
+      "check": "nights_case_a/2028/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2028/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "nights_case_a/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/horizon_net_cash_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "nights_case_a/enterprise_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "nights_case_a/equity_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "nights_case_a/value_per_share",
+      "absolute_difference": 5.684341886080802e-14
+    },
+    {
+      "check": "nights_case_a/december_value_per_share",
+      "absolute_difference": 5.684341886080802e-14
+    },
+    {
+      "check": "adr_mean_reversion2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion2026Q3 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "adr_mean_reversion2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion2026Q4 source guide",
+      "absolute_difference": 3.183231456205249e-12
+    },
+    {
+      "check": "adr_mean_reversion2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion2027Q1 source guide",
+      "absolute_difference": 5.9117155615240335e-12
+    },
+    {
+      "check": "adr_mean_reversion2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/ops",
+      "absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "check": "adr_mean_reversion/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2027/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2027/net_income",
+      "absolute_difference": 1.3642420526593924e-12
+    },
+    {
+      "check": "adr_mean_reversion/2027/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2027/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/cor",
+      "absolute_difference": 4.547473508864641e-13
+    },
+    {
+      "check": "adr_mean_reversion/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/2028/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2028/net_income",
+      "absolute_difference": 1.3642420526593924e-12
+    },
+    {
+      "check": "adr_mean_reversion/2028/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/2028/net_cash",
+      "absolute_difference": 3.637978807091713e-12
+    },
+    {
+      "check": "adr_mean_reversion/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/horizon_net_cash_musd",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "adr_mean_reversion/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "adr_mean_reversion/enterprise_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "adr_mean_reversion/equity_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "adr_mean_reversion/value_per_share",
+      "absolute_difference": 5.684341886080802e-14
+    },
+    {
+      "check": "adr_mean_reversion/december_value_per_share",
+      "absolute_difference": 5.684341886080802e-14
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2026Q3 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2026Q4 source guide",
+      "absolute_difference": 5.9117155615240335e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2027Q1 source guide",
+      "absolute_difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/ops",
+      "absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/net_income",
+      "absolute_difference": 1.3642420526593924e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/horizon_net_cash_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/enterprise_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/equity_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/value_per_share",
+      "absolute_difference": 5.684341886080802e-14
+    },
+    {
+      "check": "review_with_k_fx_down_sensitivity/december_value_per_share",
+      "absolute_difference": 5.684341886080802e-14
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2026Q3 source guide",
+      "absolute_difference": 9.094947017729282e-13
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2026Q4 source guide",
+      "absolute_difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2027Q1 source guide",
+      "absolute_difference": 5.4569682106375694e-12
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/ops",
+      "absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/horizon_net_cash_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/enterprise_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/equity_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "review_with_k_fx_up_sensitivity/december_value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft2026Q3 source guide",
+      "absolute_difference": 2.7284841053187847e-12
+    },
+    {
+      "check": "joint_soft2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft2026Q4 source guide",
+      "absolute_difference": 2.2737367544323206e-12
+    },
+    {
+      "check": "joint_soft2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft2027Q1 source guide",
+      "absolute_difference": 7.275957614183426e-12
+    },
+    {
+      "check": "joint_soft no net overlay",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/ops",
+      "absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "check": "joint_soft/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/cor",
+      "absolute_difference": 4.547473508864641e-13
+    },
+    {
+      "check": "joint_soft/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/adj_ebitda",
+      "absolute_difference": 3.637978807091713e-12
+    },
+    {
+      "check": "joint_soft/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/2028/op_income",
+      "absolute_difference": 3.637978807091713e-12
+    },
+    {
+      "check": "joint_soft/2028/net_income",
+      "absolute_difference": 3.183231456205249e-12
+    },
+    {
+      "check": "joint_soft/2028/fcf",
+      "absolute_difference": 3.637978807091713e-12
+    },
+    {
+      "check": "joint_soft/2028/net_cash",
+      "absolute_difference": 3.637978807091713e-12
+    },
+    {
+      "check": "joint_soft/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/horizon_net_cash_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/enterprise_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/equity_value_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_soft/december_value_per_share",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2026Q3 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2026Q3 source guide",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2026Q4 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2026Q4 source guide",
+      "absolute_difference": 5.002220859751105e-12
+    },
+    {
+      "check": "joint_firm2027Q1 source revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2027Q1 source guide",
+      "absolute_difference": 3.637978807091713e-12
+    },
+    {
+      "check": "joint_firm no net overlay",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2027Q2 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2027Q3 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm2027Q4 inherited same-quarter growth",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2026/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2026/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2026/net_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2026/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2026/net_cash",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2026/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/adj_ebitda",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2027/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/op_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2027/net_income",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2027/fcf",
+      "absolute_difference": 1.8189894035458565e-12
+    },
+    {
+      "check": "joint_firm/2027/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2027/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/revenue",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/gbv",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/nights",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/cor",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/ops",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/pd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/bpm",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/fop",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/ga",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/nb_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/ai_cost",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/cash_taxes",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/d_unearned",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/wc_resid",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/capex",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/addbacks",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/adj_ebitda",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/sbc",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/op_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/net_income",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/fcf",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/net_cash",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/2028/shares",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/horizon_net_cash_musd",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/horizon_shares_m",
+      "absolute_difference": 0.0
+    },
+    {
+      "check": "joint_firm/enterprise_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "joint_firm/equity_value_musd",
+      "absolute_difference": 2.9103830456733704e-11
+    },
+    {
+      "check": "joint_firm/value_per_share",
+      "absolute_difference": 2.842170943040401e-14
+    },
+    {
+      "check": "joint_firm/december_value_per_share",
+      "absolute_difference": 5.684341886080802e-14
+    }
+  ],
+  "result": "PASS; source/quarter/annual/cash/share/horizon arithmetic; no production function imported; no statistical estimation"
+}

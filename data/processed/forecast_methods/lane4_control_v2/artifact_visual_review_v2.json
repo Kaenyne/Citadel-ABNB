@@ -1,0 +1,23 @@
+{
+  "verdict": "PASS",
+  "pdf_checks": {
+    "review_memo.pdf": {
+      "pages": 2,
+      "sha256": "53e102eeca2dcda418368924cacb9a28486f3274332ba0b06fc804a6b1fe0187"
+    },
+    "accepted_L3_exhibits.pdf": {
+      "pages": 3,
+      "sha256": "da5636822a00075e9692adb8adb602d4b503525393f0765ac71bdfc3942a6db3"
+    }
+  },
+  "workbook_sha256": "882b6d7b321d2f791fecc9b1d7ec57265b5e2fdcedd705326ee7bd3ee9ce6f92",
+  "parent_visual_inspection": [
+    "final Case_comparison.png: all nine columns formatted consistently, no clipping",
+    "final memo-1.png and memo-2.png: readable, exact two-page layout",
+    "final exhibit-3.png: original accepted chart and explicit limits readable",
+    "Summary and Valuation draft layouts inspected; final numerical identity verified in export_review_v2.json"
+  ],
+  "other_reviews": "Artifact author inspected all eight sheet previews and all five PDF pages; independent source/economic reviewers signed final versions",
+  "known_renderer_limit": "Workbook preview process emits PNGs but exits1 at teardown; generation/export/recapture paths separately verified",
+  "native_excel_session": false
+}

@@ -1,0 +1,594 @@
+{
+  "differences": [
+    {
+      "scenario": "review_with_k",
+      "metric": "Q4:26 guide (USD m)",
+      "python": 3123.419115176903,
+      "workbook": 3123.4191151810014,
+      "delta": 4.098637873539701e-9
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "FY26 revenue (USD m)",
+      "python": 14273.70658378,
+      "workbook": 14273.706583784438,
+      "delta": 4.43833414465189e-9
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "FY27 revenue (USD m)",
+      "python": 15952.23324074218,
+      "workbook": 15952.23324074691,
+      "delta": 4.729372449219227e-9
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "FY27 EBITDA (USD m)",
+      "python": 5807.532521619698,
+      "workbook": 5807.532521624455,
+      "delta": 4.756657290272415e-9
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "FY27 net income (USD m)",
+      "python": 3355.0235379624155,
+      "workbook": 3355.023537966186,
+      "delta": 3.770310286199674e-9
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "FY27 FCF (USD m)",
+      "python": 5536.825326064073,
+      "workbook": 5536.825326068602,
+      "delta": 4.529283614829183e-9
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "FY27 net cash (USD m)",
+      "python": 10282.596148945624,
+      "workbook": 10282.59614895445,
+      "delta": 8.825736586004496e-9
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "FY27 diluted shares (m)",
+      "python": 574.598178232489,
+      "workbook": 574.5981782324891,
+      "delta": 1.1368683772161603e-13
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "Enterprise value (USD m)",
+      "python": 95824.28660672501,
+      "workbook": 95824.28660680351,
+      "delta": 7.84930307418108e-8
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "Equity value (USD m)",
+      "python": 106106.88275567064,
+      "workbook": 106106.88275575795,
+      "delta": 8.731149137020111e-8
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "Value per share",
+      "python": 184.66275525283442,
+      "workbook": 184.66275525298633,
+      "delta": 1.5191403690550942e-10
+    },
+    {
+      "scenario": "review_with_k",
+      "metric": "Six-lens mean",
+      "python": 160.47887021871966,
+      "workbook": 160.4788702188663,
+      "delta": 1.4662759895145427e-10
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "Q4:26 guide (USD m)",
+      "python": 3120.0620072138768,
+      "workbook": 3120.062007222522,
+      "delta": 8.64520188770257e-9
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "FY26 revenue (USD m)",
+      "python": 14270.2893671,
+      "workbook": 14270.289367109068,
+      "delta": 9.067662176676095e-9
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "FY27 revenue (USD m)",
+      "python": 15939.531309457967,
+      "workbook": 15939.53130946392,
+      "delta": 5.953552317805588e-9
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "FY27 EBITDA (USD m)",
+      "python": 5797.985932425216,
+      "workbook": 5797.985932431201,
+      "delta": 5.985384632367641e-9
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "FY27 net income (USD m)",
+      "python": 3347.4777205120754,
+      "workbook": 3347.477720516821,
+      "delta": 4.7457433538511395e-9
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "FY27 FCF (USD m)",
+      "python": 5527.888429571233,
+      "workbook": 5527.888429576932,
+      "delta": 5.698893801309168e-9
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "FY27 net cash (USD m)",
+      "python": 10273.217784561057,
+      "workbook": 10273.217784575543,
+      "delta": 1.4486431609839201e-8
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "FY27 diluted shares (m)",
+      "python": 574.598178232489,
+      "workbook": 574.5981782324891,
+      "delta": 1.1368683772161603e-13
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "Enterprise value (USD m)",
+      "python": 95666.76788501606,
+      "workbook": 95666.76788511482,
+      "delta": 9.876384865492582e-8
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "Equity value (USD m)",
+      "python": 105939.98566957712,
+      "workbook": 105939.98566969036,
+      "delta": 1.1324300430715084e-7
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "Value per share",
+      "python": 184.37229647239255,
+      "workbook": 184.3722964725896,
+      "delta": 1.9704771148099098e-10
+    },
+    {
+      "scenario": "review_without_k",
+      "metric": "Six-lens mean",
+      "python": 160.19594223633422,
+      "workbook": 160.19594223652257,
+      "delta": 1.8835066839528736e-10
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "Q4:26 guide (USD m)",
+      "python": 3158.227962487858,
+      "workbook": 3158.2279624967186,
+      "delta": 8.860752132022753e-9
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "FY26 revenue (USD m)",
+      "python": 14309.13868038,
+      "workbook": 14309.138680389287,
+      "delta": 9.287759894505143e-9
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "FY27 revenue (USD m)",
+      "python": 16057.89860362437,
+      "workbook": 16057.898603628631,
+      "delta": 4.261892172507942e-9
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "FY27 EBITDA (USD m)",
+      "python": 5888.213340184259,
+      "workbook": 5888.213340188545,
+      "delta": 4.285539034754038e-9
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "FY27 net income (USD m)",
+      "python": 3418.807402201312,
+      "workbook": 3418.80740220471,
+      "delta": 3.39787220582366e-9
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "FY27 FCF (USD m)",
+      "python": 5612.434207210289,
+      "workbook": 5612.434207214371,
+      "delta": 4.081812221556902e-9
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "FY27 net cash (USD m)",
+      "python": 10369.793538769089,
+      "workbook": 10369.79353878217,
+      "delta": 1.30821717903018e-8
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "FY27 diluted shares (m)",
+      "python": 574.598178232489,
+      "workbook": 574.5981782324891,
+      "delta": 1.1368683772161603e-13
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "Enterprise value (USD m)",
+      "python": 97155.52011304029,
+      "workbook": 97155.520113111,
+      "delta": 7.070775609463453e-8
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "Equity value (USD m)",
+      "python": 107525.31365180938,
+      "workbook": 107525.31365189317,
+      "delta": 8.378992788493633e-8
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "Value per share",
+      "python": 187.1313166751869,
+      "workbook": 187.1313166753327,
+      "delta": 1.4580336937797256e-10
+    },
+    {
+      "scenario": "k0_conditional",
+      "metric": "Six-lens mean",
+      "python": 162.7884037651979,
+      "workbook": 162.78840376532173,
+      "delta": 1.2383338798827026e-10
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "Q4:26 guide (USD m)",
+      "python": 3123.419115176903,
+      "workbook": 3123.4191151810014,
+      "delta": 4.098637873539701e-9
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "FY26 revenue (USD m)",
+      "python": 14273.70658378,
+      "workbook": 14273.706583784438,
+      "delta": 4.43833414465189e-9
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "FY27 revenue (USD m)",
+      "python": 15965.56432735218,
+      "workbook": 15965.564327358548,
+      "delta": 6.3682819018140435e-9
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "FY27 EBITDA (USD m)",
+      "python": 5814.85093106566,
+      "workbook": 5814.85093107206,
+      "delta": 6.400114216376096e-9
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "FY27 net income (USD m)",
+      "python": 3360.7822816955922,
+      "workbook": 3360.7822817006668,
+      "delta": 5.074525688542053e-9
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "FY27 FCF (USD m)",
+      "python": 5543.503843352755,
+      "workbook": 5543.50384335885,
+      "delta": 6.094523996580392e-9
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "FY27 net cash (USD m)",
+      "python": 10283.700681141063,
+      "workbook": 10283.700681151455,
+      "delta": 1.0391886462457478e-8
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "FY27 diluted shares (m)",
+      "python": 574.598178232489,
+      "workbook": 574.5981782324891,
+      "delta": 1.1368683772161603e-13
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "Enterprise value (USD m)",
+      "python": 95945.04036258339,
+      "workbook": 95945.04036268899,
+      "delta": 1.0560324881225824e-7
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "Equity value (USD m)",
+      "python": 106228.74104372445,
+      "workbook": 106228.74104384045,
+      "delta": 1.1599331628531218e-7
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "Value per share",
+      "python": 184.8748309131309,
+      "workbook": 184.87483091333274,
+      "delta": 2.0185098037472926e-10
+    },
+    {
+      "scenario": "nights_case_a",
+      "metric": "Six-lens mean",
+      "python": 160.6873402496254,
+      "workbook": 160.68734024982106,
+      "delta": 1.956550477189012e-10
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "Q4:26 guide (USD m)",
+      "python": 3074.811931638507,
+      "workbook": 3074.811931641566,
+      "delta": 3.059085429413244e-9
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "FY26 revenue (USD m)",
+      "python": 14224.22909298,
+      "workbook": 14224.229092983382,
+      "delta": 3.381501301191747e-9
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "FY27 revenue (USD m)",
+      "python": 15824.41291151889,
+      "workbook": 15824.412911523465,
+      "delta": 4.574758349917829e-9
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "FY27 EBITDA (USD m)",
+      "python": 5708.741140917179,
+      "workbook": 5708.741140921775,
+      "delta": 4.595676728058606e-9
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "FY27 net income (USD m)",
+      "python": 3276.9107397708076,
+      "workbook": 3276.9107397744506,
+      "delta": 3.642981027951464e-9
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "FY27 FCF (USD m)",
+      "python": 5444.169321164272,
+      "workbook": 5444.169321168649,
+      "delta": 4.376488504931331e-9
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "FY27 net cash (USD m)",
+      "python": 10168.44489086761,
+      "workbook": 10168.44489087526,
+      "delta": 7.650669431313872e-9
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "FY27 diluted shares (m)",
+      "python": 574.598178232489,
+      "workbook": 574.5981782324891,
+      "delta": 1.1368683772161603e-13
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "Enterprise value (USD m)",
+      "python": 94194.22882513345,
+      "workbook": 94194.22882520928,
+      "delta": 7.583003025501966e-8
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "Equity value (USD m)",
+      "python": 104362.67371600107,
+      "workbook": 104362.67371608454,
+      "delta": 8.346978574991226e-8
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "Value per share",
+      "python": 181.6272269380129,
+      "workbook": 181.62722693815815,
+      "delta": 1.4523493518936448e-10
+    },
+    {
+      "scenario": "adr_mean_reversion",
+      "metric": "Six-lens mean",
+      "python": 157.52932423176878,
+      "workbook": 157.5293242319095,
+      "delta": 1.4071588338993024e-10
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "Q4:26 guide (USD m)",
+      "python": 3092.1849240251336,
+      "workbook": 3092.1849240291913,
+      "delta": 4.057710611959919e-9
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "FY26 revenue (USD m)",
+      "python": 14193.8295179422,
+      "workbook": 14193.829517946595,
+      "delta": 4.394678398966789e-9
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "FY27 revenue (USD m)",
+      "python": 15833.198805201311,
+      "workbook": 15833.198805205993,
+      "delta": 4.6820787247270346e-9
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "FY27 EBITDA (USD m)",
+      "python": 5687.879107014017,
+      "workbook": 5687.879107018725,
+      "delta": 4.7084540710784495e-9
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "FY27 net income (USD m)",
+      "python": 3260.1578542137645,
+      "workbook": 3260.1578542174975,
+      "delta": 3.733021003426984e-9
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "FY27 FCF (USD m)",
+      "python": 5422.885564364354,
+      "workbook": 5422.885564368838,
+      "delta": 4.483808879740536e-9
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "FY27 net cash (USD m)",
+      "python": 10091.255510449077,
+      "workbook": 10091.255510457817,
+      "delta": 8.74024408403784e-9
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "FY27 diluted shares (m)",
+      "python": 574.598178232489,
+      "workbook": 574.5981782324891,
+      "delta": 1.1368683772161603e-13
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "Enterprise value (USD m)",
+      "python": 93850.00526573128,
+      "workbook": 93850.00526580897,
+      "delta": 7.769267540425062e-8
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "Equity value (USD m)",
+      "python": 103941.26077618035,
+      "workbook": 103941.26077626679,
+      "delta": 8.64383764564991e-8
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "Value per share",
+      "python": 180.89382235062453,
+      "workbook": 180.89382235077494,
+      "delta": 1.50407686305698e-10
+    },
+    {
+      "scenario": "review_with_k_fx_down_sensitivity",
+      "metric": "Six-lens mean",
+      "python": 156.82393058833682,
+      "workbook": 156.82393058848197,
+      "delta": 1.4514967006107327e-10
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "Q4:26 guide (USD m)",
+      "python": 3154.653306328672,
+      "workbook": 3154.6533063328116,
+      "delta": 4.139565135119483e-9
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "FY26 revenue (USD m)",
+      "python": 14353.5836496178,
+      "workbook": 14353.583649622284,
+      "delta": 4.483808879740536e-9
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "FY27 revenue (USD m)",
+      "python": 16071.267676283049,
+      "workbook": 16071.267676287825,
+      "delta": 4.776666173711419e-9
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "FY27 EBITDA (USD m)",
+      "python": 5927.18593622538,
+      "workbook": 5927.185936230183,
+      "delta": 4.803041520062834e-9
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "FY27 net income (USD m)",
+      "python": 3449.889221711066,
+      "workbook": 3449.8892217148737,
+      "delta": 3.807599568972364e-9
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "FY27 FCF (USD m)",
+      "python": 5650.765087763793,
+      "workbook": 5650.765087768368,
+      "delta": 4.574758349917829e-9
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "FY27 net cash (USD m)",
+      "python": 10473.936787442171,
+      "workbook": 10473.93678745109,
+      "delta": 8.918505045585334e-9
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "FY27 diluted shares (m)",
+      "python": 574.598178232489,
+      "workbook": 574.5981782324891,
+      "delta": 1.1368683772161603e-13
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "Enterprise value (USD m)",
+      "python": 97798.56794771877,
+      "workbook": 97798.56794779802,
+      "delta": 7.924973033368587e-8
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "Equity value (USD m)",
+      "python": 108272.50473516094,
+      "workbook": 108272.50473524911,
+      "delta": 8.817005436867476e-8
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "Value per share",
+      "python": 188.43168815504433,
+      "workbook": 188.43168815519772,
+      "delta": 1.5339196579589043e-10
+    },
+    {
+      "scenario": "review_with_k_fx_up_sensitivity",
+      "metric": "Six-lens mean",
+      "python": 163.86640215006204,
+      "workbook": 163.86640215019432,
+      "delta": 1.3227463568910025e-10
+    }
+  ],
+  "max_abs_delta": 1.1599331628531218e-7,
+  "perturbation_checks": "passed"
+}

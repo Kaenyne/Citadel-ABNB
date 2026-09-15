@@ -1,0 +1,9 @@
+{
+  "verdict": "FAIL_ENVIRONMENT",
+  "command": "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe -X utf8 -m pytest analysis/src/forecast_methods/lane4_revenue_v1/tests analysis/src/forecast_methods/lane4_model_v1/test_model.py analysis/src/forecast_methods/lane4_review_v1/tests -q",
+  "exit_code": 1,
+  "phase": "collection",
+  "error": "ModuleNotFoundError: No module named 'reportlab'",
+  "location": "lane4_review_v1/render.py import",
+  "interpretation": "Repository venv lacks the document-rendering dependency. No empirical test result was produced. Use the bundled artifact Python for the review package as required by its README."
+}
