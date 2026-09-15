@@ -1,0 +1,30 @@
+{
+  "reviewer": "/root/uncertainty_auditor",
+  "author": "/root/source_auditor",
+  "status": "PASS_source_reproduction_with_retained_original_vintage_limits",
+  "canonical_output": "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3",
+  "files_byte_identical": 8,
+  "guide_ranges_independently_verified": 20,
+  "availability_rows_independently_checked": 24,
+  "guide_midpoint_interval": "nominal midpoint +/-0.5 USDm administrative protocol convention",
+  "raw_letter_vintages_newly_recovered": 0,
+  "sample_extended": false,
+  "bound_author_files_sha256": {
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\run.py": "d13f615c5eeafd8de6fb1b0ee0ed8539c73aac96d077358e3075987735a6760a",
+    "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\source_audit_v1\\WP_Q1_SOURCE_AUDIT_v1.md": "92756d39eeb6fdef523085e741ea9d37d4293461f7d88d4ac368a805086d4257",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\accepted_source_reconciliation.csv": "fef41275dd4e87256595e6a6bef982aed7099504fac0928e5962f30163dcb753",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\bundle_checks.csv": "ce02a90e8448c05172ddf7cf6e5af3b11592e663f388cea4d335adc5cdb6c98f",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\input_manifest.csv": "894a939cf23f65bda24b5fb417af10d53d7d3b3507862ff05eab823225b92d07",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\material_input_ledger.csv": "d85be0f0146cca05c53bcfa4a3aab5078d49df8b6168135aa8e2456d84b36016",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\observation_availability.csv": "8d14fd3193df00508f2f3afd738cd7fa955c2472df2776c845a6e3cf8f4d8db0",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\source_precision_sensitivity.csv": "947e892398d73b3c9cf48f82cf2fd63c695cd3597bb3ec27b2ab2a13b2588d8a",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\summary.json": "c05459fc621bf4617676e2640b3776537006522c8ee7ab251ba4bbabf6266b92",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3\\unavailable_cells.csv": "c27eae6655c2e7f99c47ef0872e6ef7bee99adc66d74123843bc201e61bbfa83"
+  },
+  "limitations": [
+    "Exact original shareholder-letter bytes/SEC acceptance clocks absent in committed store.",
+    "Frozen values may carry later precision; date-qualified reconstruction is not original unrevised vintage data.",
+    "2020Q3 comparative availability is conservative source-based date, not first-publication claim.",
+    "Early revenue precision beyond retained quote remains unresolved."
+  ]
+}

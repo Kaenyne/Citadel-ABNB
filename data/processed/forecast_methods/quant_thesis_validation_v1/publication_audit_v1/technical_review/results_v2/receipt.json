@@ -1,0 +1,119 @@
+{
+  "status": "PASS_BOUNDED_TECHNICAL_PUBLICATION_AUDIT",
+  "reviewer": "/root/uncertainty_auditor",
+  "analytical_commit": "965166c4572fe7c6300c7281e77afc5877411820",
+  "handoff_commit": "b1e8885a6c294e1b212f9b908a9ce5fbeb3c1ec4",
+  "analytical_files": 623,
+  "analytical_bytes": 13362229,
+  "reviewer_file_binding_checks": 229,
+  "accepted_final_postseal_receipt_bound": true,
+  "protection_counts": {
+    "protected_manifest": 4444,
+    "external_manifest": 36
+  },
+  "historical_full_runner_stages_verified": 17,
+  "historical_full_runner_exact_pairs_reverified": 59,
+  "existing_tests_rerun": 20,
+  "guard_rejections_verified": 2,
+  "material_findings": 0,
+  "own_G_implementation_independently_certified": false,
+  "prior_G_receipts_role": "hash integrity only; independent parent/I review remains authoritative",
+  "full_root_rebuild_rerun": false,
+  "prior_relocation_limit_retained": true,
+  "network_calls": 0,
+  "git_mutations": 0,
+  "empirical_refits_or_searches": 0,
+  "commands": [
+    {
+      "label": "prospective_v1",
+      "argv": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1\\analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\prospective_v1",
+        "-p",
+        "test_prospective.py",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1",
+      "exit_code": 0,
+      "tests": 13
+    },
+    {
+      "label": "economics_v1",
+      "argv": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1\\analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\economics_v1",
+        "-p",
+        "test_economics.py",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1",
+      "exit_code": 0,
+      "tests": 7
+    },
+    {
+      "label": "existing_output",
+      "argv": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1\\analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\run.py",
+        "--run-id",
+        "final_v1",
+        "--pdf-python",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe"
+      ],
+      "cwd": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1",
+      "exit_code": 1,
+      "expected_rejection": true
+    },
+    {
+      "label": "path_traversal",
+      "argv": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1\\analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\run.py",
+        "--run-id",
+        "../escape",
+        "--pdf-python",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe"
+      ],
+      "cwd": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1",
+      "exit_code": 2,
+      "expected_rejection": true
+    }
+  ],
+  "bindings_sha256": {
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\publication_audit_v1\\technical_review\\run_v2.py": "440d8e691049fda26fcb201416969a91aa2211897029decd236cd1e88d880b91",
+    "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\handoff_v1\\analytical_manifest.json": "e2916691513dbafe3565c21e89205c7d9185b27045c836296902c1684052b30c",
+    "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\handoff_v1\\L4_HANDOFF.md": "3fb62469793577a927a8368e01e2d952d53bd57db8623c408dda64e869298cd5",
+    "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\handoff_v1\\ACCEPTANCE_FINAL.json": "33eb8c665f15db9ab09ecbf9d88aaccc4aa61b3d70a12fe6b87c808bbdeb58b0",
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\run.py": "eaacc6125ed0c1c4c0e5294d8b692df1df39a27e6af41b40d62b8218b76cec3d",
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\prospective_v1\\test_prospective.py": "8cb8eba781c74ceefd276f0052bb04e5181c751faf94624c2ce538bc80351439",
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\economics_v1\\test_economics.py": "68efc9654b71dce2f7f8af35b210d742bd3117c717cf149e05d60abb0f794a7f",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\reproductions\\final_v1\\run_receipt.json": "99038ab6860d3ba606edd51d9d0e47935a94092b80fae28747fecca9ed0a53f8",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\final_contract_review_v1\\final_receipt_v1\\receipt.json": "7b56134306dd8bd465e65a7fbfde12e7469ee5c7c8af83d0192adcbace8d11b3",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\final_contract_review_v1\\postseal_v1\\receipt.json": "a00a87ee6f366f4cc09e2b89b817329da192d8b603d524e7ebdd55339e1e7c85",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\adversarial_review_v1\\final_prose_closure_v1\\receipt.json": "3205ebbcbe5a6b0b001fd913fc7a8568e5ae0fbfd114d575e0d7370206797fdd",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\adversarial_review_v1\\results_v2\\receipt.json": "0255b08f2f16665f30d9554477ef6f32e159d22d2e9f8c118abf54a76c556d5a",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\complete_run_v2\\independent_completion_receipt.json": "80bf0d10a3b714745b0307bdbdd5259982d763fb3f135a2ac9e6557753668096",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\complete_run_v2\\prospective_review\\prospective_independent_receipt.json": "0dd54c79188036405916c28f6086d3b4e59632d65e68af91508cd82ae7ef418f",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\complete_run_v2\\source_review\\source_independent_receipt.json": "c0678e2b3f76b1501f2777083facc30550a378085833abed25798a141279bfa5"
+  }
+}

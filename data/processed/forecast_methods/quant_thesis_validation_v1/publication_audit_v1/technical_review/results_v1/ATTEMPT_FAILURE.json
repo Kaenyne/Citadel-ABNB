@@ -1,0 +1,6 @@
+{
+  "status": "FAIL_REVIEWER_PATH_HANDLING_ONLY",
+  "stage": "protected source hashes before test execution",
+  "cause": "Reviewer initial audit omitted Windows extended-length prefix for long legacy research filenames. Existing sealed verify_evidence.py and final-contract checker already handle this correctly.",
+  "repair": "Additive run_v2.py uses extended-length absolute paths; no protected input or analytical output changed."
+}

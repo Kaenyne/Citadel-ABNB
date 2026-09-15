@@ -1,0 +1,32 @@
+C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\quant-thesis-validation-v1\analysis\src\forecast_methods\quant_thesis_validation_v1\uncertainty_audit_v1\run_v2.py:80: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel["year"] = panel.quarter.str[:4].astype(int)
+C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\quant-thesis-validation-v1\analysis\src\forecast_methods\quant_thesis_validation_v1\uncertainty_audit_v1\run_v2.py:81: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel["season"] = panel.quarter.str[-1].astype(int)
+C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\quant-thesis-validation-v1\analysis\src\forecast_methods\quant_thesis_validation_v1\uncertainty_audit_v1\run_v2.py:82: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel["g1"], panel["g2"] = panel.gbv_musd.shift(1), panel.gbv_musd.shift(2)
+C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\quant-thesis-validation-v1\analysis\src\forecast_methods\quant_thesis_validation_v1\uncertainty_audit_v1\run_v2.py:82: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel["g1"], panel["g2"] = panel.gbv_musd.shift(1), panel.gbv_musd.shift(2)
+C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\quant-thesis-validation-v1\analysis\src\forecast_methods\quant_thesis_validation_v1\uncertainty_audit_v1\run_v2.py:83: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel["base_musd"] = (2 * panel.g1 + panel.g2) / 3
+C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\quant-thesis-validation-v1\analysis\src\forecast_methods\quant_thesis_validation_v1\uncertainty_audit_v1\run_v2.py:84: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel["a_pp"] = 100 * 2 * panel.g1 / (2 * panel.g1 + panel.g2)
+C:\Users\wille\Desktop\Citadel - ABNB\.worktrees\quant-thesis-validation-v1\analysis\src\forecast_methods\quant_thesis_validation_v1\uncertainty_audit_v1\run_v2.py:85: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel["lambda_pct"] = 100 * panel.revenue_musd / panel.base_musd
+{
+  "status": "PASS_bounded_arithmetic_reproduction",
+  "baseline_commit": "8821961853e4068febbfe2712f9a4e1036c9e629",
+  "observed_head": "acab9377aa9b00ecc3dcab380108248b1c982ff9",
+  "bundle_manifest_sha256": "9a8563fff0142d51fd3537699899f032165a69a6c1db9cad6c4b24d450952970",
+  "bundle_files_verified": 108,
+  "acceptance_output_bindings_verified": 24,
+  "max_score_difference_musd": 1.15706910719382e-09,
+  "n_full": 22,
+  "n_W1": 14,
+  "n_W2": 10,
+  "new_models_fitted": 0,
+  "new_weight_searches": 0,
+  "new_resamples": 0,
+  "registrations": 0,
+  "operational_parameters_changed": false,
+  "probability_calibration_claimed": false
+}
