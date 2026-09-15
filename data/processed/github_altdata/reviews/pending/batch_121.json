@@ -1,0 +1,122 @@
+[
+ {
+  "key": "github:palewire/cpi",
+  "url": "https://github.com/palewire/cpi",
+  "name": "palewire/cpi",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Python package (145 stars, MIT) with a /data directory bundling CPI series for inflation adjustment (US dollars any-year-to-any-year); pip-installable, docs at palewi.re/docs/cpi/.",
+  "why_useful": "Turnkey CPI deflator library with data actually committed to the repo rather than fetched live each time, useful for point-in-time-safe inflation adjustment of any nominal series in the model (ADR, GBV) without hitting BLS API rate limits.",
+  "potential": "low",
+  "geography": "US national",
+  "time_coverage": "unspecified span of headline CPI",
+  "license": "MIT",
+  "last_activity": "unresolved exact date; mature/starred project",
+  "size_hint": "small (CPI index only, not itemized subcomponents like lodging)",
+  "gap_targets": [],
+  "duplicate_of_holding": "overlaps existing FRED CPI holding",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Turnkey CPI deflator library with data actually committed to the repo rather than fetched live each time, useful for point-in-time-safe inflation adjustment of any nominal series in the model (ADR, GBV) without hitting BLS API rate limits."
+  ]
+ },
+ {
+  "key": "github:nickgardner/fedfred",
+  "url": "https://github.com/nickgardner/fedfred",
+  "name": "fedfred",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Listed on the GitHub 'fred-api' topic as a 'feature-rich Python package for Federal Reserve economic database interaction'; direct repo fetch returned 404 at the guessed path so the exact owner/URL needs re-verification via the topic page rather than the guessed slug.",
+  "why_useful": "Potential alternative/more full-featured FRED client (worth a follow-up scout with the correct owner slug); flagged here as unresolved rather than dropped since it appeared in the official GitHub topic listing.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "unresolved",
+  "license": "unresolved",
+  "last_activity": "unresolved",
+  "size_hint": "unresolved",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Potential alternative/more full-featured FRED client (worth a follow-up scout with the correct owner slug); flagged here as unresolved rather than dropped since it appeared in the official GitHub topic listing."
+  ]
+ },
+ {
+  "key": "github:oliversherouse/bls",
+  "url": "https://github.com/OliverSherouse/bls",
+  "name": "bls (Python, OliverSherouse)",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (GPL-2.0, dev branch 54 commits) wrapping the BLS API; get_series() pulls any BLS series ID with API-key-gated multi-decade history vs a default 3-year window with no key.",
+  "why_useful": "Simple alternative BLS client for pulling CPI lodging/airfares/employment series programmatically and repeatably; marginal over what the team already has via FRED's BLS mirror, but useful if BLS-only series (not on FRED) are needed.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "up to full BLS history with API key",
+  "license": "GPL-2.0",
+  "last_activity": "54 commits on dev branch",
+  "size_hint": "N/A (API client)",
+  "gap_targets": [],
+  "duplicate_of_holding": "overlaps existing BLS CPI holding",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Simple alternative BLS client for pulling CPI lodging/airfares/employment series programmatically and repeatably; marginal over what the team already has via FRED's BLS mirror, but useful if BLS-only series (not on FRED) are needed."
+  ]
+ },
+ {
+  "key": "github:berkedizdar12/tuik-forecasting-project",
+  "url": "https://github.com/berkedizdar12/tuik-forecasting-project",
+  "name": "tuik-forecasting-project",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small repo forecasting Turkey's monthly Consumer Confidence Index using the `tuikr` R package (a client for T\u00dc\u0130K, Turkey's official statistics agency) to pull the series, then compares ten forecasting methods.",
+  "why_useful": "Not useful for ABNB directly (Turkey is a small/non-priority geography for the pitch), but demonstrates a working R client (`tuikr`) for a non-US/EU official consumer-confidence series if the team ever needs EMEA-adjacent consumer data beyond Eurostat/OECD.",
+  "potential": "low",
+  "geography": "Turkey",
+  "time_coverage": "monthly, T\u00dc\u0130K history",
+  "size_hint": "small script repo",
+  "license": "none declared",
+  "last_activity": "2026-06-03",
+  "gap_targets": [],
+  "duplicate_of_holding": "We already hold an OECD consumer confidence panel; Turkey specifically is not currently held but is low priority.",
+  "hits": 1,
+  "themes": [
+   "Consumer sentiment and surveys: UMich, Conference Board, NY Fed SCE, EU consumer confidence, travel-intent surveys (Longwoods, Destination Analysts, MMGY) scraped"
+  ],
+  "why_all": [
+   "Not useful for ABNB directly (Turkey is a small/non-priority geography for the pitch), but demonstrates a working R client (`tuikr`) for a non-US/EU official consumer-confidence series if the team ever needs EMEA-adjacent consumer data beyond Eurostat/OECD."
+  ]
+ },
+ {
+  "key": "github:subasreecodes/correlation-of-gdp-and-cci",
+  "url": "https://github.com/subasreecodes/correlation-of-GDP-and-CCI",
+  "name": "correlation-of-GDP-and-CCI",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Small student project analyzing eight years of Consumer Confidence Index (CCI) vs real GDP per capita across multiple countries; likely a small hand-compiled CSV (not inspected in depth; 0 stars, no license, no committed-file listing confirmed).",
+  "why_useful": "Marginal \u2014 flagged only because it claims a multi-country CCI panel; provenance and vintage of the CCI figures are unclear and it was not worth spending one of the limited `gh api` directory-listing calls on a 0-star, unlicensed repo to confirm. Low confidence this adds anything beyond the OECD consumer confidence panel we already hold.",
+  "potential": "low",
+  "geography": "multiple (unspecified in card)",
+  "time_coverage": "~8 years, unspecified end date",
+  "size_hint": "small, likely single CSV",
+  "license": "none declared",
+  "last_activity": "2024-01-21",
+  "gap_targets": [],
+  "duplicate_of_holding": "Probable duplicate of the OECD consumer confidence panel we already hold; not confirmed superior (older/longer/finer).",
+  "hits": 1,
+  "themes": [
+   "Consumer sentiment and surveys: UMich, Conference Board, NY Fed SCE, EU consumer confidence, travel-intent surveys (Longwoods, Destination Analysts, MMGY) scraped"
+  ],
+  "why_all": [
+   "Marginal \u2014 flagged only because it claims a multi-country CCI panel; provenance and vintage of the CCI figures are unclear and it was not worth spending one of the limited `gh api` directory-listing calls on a 0-star, unlicensed repo to confirm. Low confidence this adds anything beyond the OECD consumer confidence panel we already hold."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:topics/makemytrip",
+  "name": "roubalsehgal? / Make-m-y-trip-dataset-analysis (owner unknown, found via GitHub topic 'makemytrip')",
+  "url": "https://github.com/topics/makemytrip",
+  "category": "competitor_ota",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'Make-m-y-trip-dataset-analysis' repo (title only confirmed via topic listing) examines travel trends and customer ratings for MakeMyTrip through data analysis; exact owner/repo path and row counts not independently verified due to GitHub search rate-limiting during this scout run.",
+  "why_useful": "If it holds a committed MakeMyTrip bookings/ratings CSV, it would be a rare India-OTA dataset; needs verification by a follow-up scout with GitHub API access.",
+  "potential": "low",
+  "geography": "India (MakeMyTrip)",
+  "time_coverage": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "size_hint": "unknown",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "If it holds a committed MakeMyTrip bookings/ratings CSV, it would be a rare India-OTA dataset; needs verification by a follow-up scout with GitHub API access."
+  ]
+ },
+ {
+  "key": "github:rhiosutoyo/traveloka-customer-review-sentiment-analysis-dataset",
+  "name": "rhiosutoyo/Traveloka-Customer-Review-Sentiment-Analysis-Dataset",
+  "url": "https://github.com/rhiosutoyo/Traveloka-Customer-Review-Sentiment-Analysis-Dataset",
+  "category": "competitor_ota",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "data_traveloka_fix.csv: 1,200 labeled Indonesian-language tweets (positive/negative sentiment) about Traveloka, pipe-delimited (tweet text | label). MIT license, 52 commits, accompanies a 2023 Procedia Computer Science paper.",
+  "why_useful": "Traveloka is the dominant Indonesian OTA; a labeled sentiment dataset could be a component of an SE Asia travel-sentiment index, though small (1,200 rows) and social-media rather than transaction data.",
+  "potential": "low",
+  "geography": "Indonesia (Traveloka)",
+  "time_coverage": "circa 2022-2023 tweets, not point-in-time, static snapshot",
+  "license": "MIT",
+  "last_activity": "unknown (paper published 2023)",
+  "size_hint": "1 CSV, 1,200 rows",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   14
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Traveloka is the dominant Indonesian OTA; a labeled sentiment dataset could be a component of an SE Asia travel-sentiment index, though small (1,200 rows) and social-media rather than transaction data."
+  ]
+ },
+ {
+  "key": "github:everythingscraper/traveloka-hotel-scraper",
+  "name": "everythingscraper/traveloka-hotel-scraper",
+  "url": "https://github.com/everythingscraper/traveloka-hotel-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python web scraping tool for live hotel pricing on Traveloka across Southeast Asia. No committed historical dataset.",
+  "why_useful": "Could be adapted to pull SE Asia hotel-rate snapshots (competitor pricing proxy) if run responsibly; live-only, no archive.",
+  "potential": "low",
+  "geography": "Southeast Asia (Traveloka)",
+  "time_coverage": "live snapshot only",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "size_hint": "code only",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Could be adapted to pull SE Asia hotel-rate snapshots (competitor pricing proxy) if run responsibly; live-only, no archive."
+  ]
+ },
+ {
+  "key": "github:topics/agoda",
+  "name": "everythingscraper/hotelrate-crawl",
+  "url": "https://github.com/topics/agoda",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "'hotelrate-crawl' repo (owner unverified \u2014 surfaced via the 'agoda' GitHub topic list): real-time hotel price comparison across multiple OTAs including Agoda, with an MCP server layer for AI-agent queries. Method only, no committed historical dataset seen.",
+  "why_useful": "A live cross-OTA rate-comparison tool touching Agoda; would need direct repo verification (owner/path not independently confirmed in this run) before use.",
+  "potential": "low",
+  "geography": "multi-OTA including Agoda (APAC)",
+  "time_coverage": "live only",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "size_hint": "unknown",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "A live cross-OTA rate-comparison tool touching Agoda; would need direct repo verification (owner/path not independently confirmed in this run) before use."
+  ]
+ },
+ {
+  "key": "github:wsdsbi/indicator_planform",
+  "name": "wsdsbi/indicator_planform",
+  "url": "https://github.com/wsdsbi/indicator_planform",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\u9014\u5bb6\u6570\u636e\u4ed3\u5e93\u6e90\u6cbb\u7406\u5e73\u53f0 (Tujia Data Warehouse Source Governance Platform) \u2014 internal Vue-based data-governance tooling for Tujia (Chinese vacation-rental platform, Airbnb's most direct China competitor). Last updated March 14, 2024.",
+  "why_useful": "Only Tujia-tagged repo found with any substantive engineering content; almost certainly internal tooling with no external data exposed, but flagged as the closest thing to a Tujia-adjacent open repo since Tujia has essentially no public data footprint on GitHub.",
+  "potential": "low",
+  "geography": "China (Tujia)",
+  "time_coverage": "n/a",
+  "license": "unknown",
+  "last_activity": "2024-03-14",
+  "size_hint": "codebase, no data files evident",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Only Tujia-tagged repo found with any substantive engineering content; almost certainly internal tooling with no external data exposed, but flagged as the closest thing to a Tujia-adjacent open repo since Tujia has essentially no public data footprint on GitHub."
+  ]
+ }
+]

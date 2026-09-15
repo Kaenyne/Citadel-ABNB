@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:wwk990630/tripadvisor-hotel-review-data-scraper",
+  "url": "https://github.com/wwk990630/tripadvisor-hotel-review-data-scraper",
+  "name": "wwk990630/tripadvisor-hotel-review-data-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper for TripAdvisor hotel review data extraction (bilingual EN/ZH readme); updated 2026-08-16, MIT.",
+  "why_useful": "Another maintained option for pulling hotel review timestamps/ratings if the team ever wants a hand-built review-velocity index; method only.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "size_hint": "no data committed; tool only",
+  "time_coverage": "n/a",
+  "geography": "global, notes CN market interest",
+  "license": "MIT",
+  "last_activity": "2026-08-16",
+  "hits": 2,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Another maintained option for pulling hotel review timestamps/ratings if the team ever wants a hand-built review-velocity index; method only.",
+   "Alternative TripAdvisor review-pull method to cross-check or refresh review-velocity series beyond HotelRec's 2020 cutoff."
+  ]
+ },
+ {
+  "key": "github:andorfermichael/tripadvisor-scraper",
+  "url": "https://github.com/andorfermichael/tripadvisor-scraper",
+  "name": "andorfermichael/tripadvisor-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "36-star archived (read-only since ~Apr 2023) scraper that pulls hotel reviews across an entire city on TripAdvisor (examples: NYC, Paris, Vienna) into timestamped directories plus a 'totalizer' script to consolidate all reviews/hotel info into one output. Uses pickle-based caching keyed to a TripAdvisor location ID.",
+  "why_useful": "City-level batch design is closer to what a review-velocity panel would need (one city -> many hotels -> many reviews) than single-hotel scrapers.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "size_hint": "no data committed; tool only",
+  "time_coverage": "n/a",
+  "geography": "configurable by city",
+  "license": "unknown",
+  "last_activity": "2025-07-01",
+  "hits": 2,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "City-level batch design is closer to what a review-velocity panel would need (one city -> many hotels -> many reviews) than single-hotel scrapers.",
+   "City-level bulk hotel-review pull is closer to what a 'review velocity by market' construction needs than single-property scrapers; archived/unmaintained so TripAdvisor's current page structure will likely have broken it, but the approach and location-ID list are reusable."
+  ]
+ },
+ {
+  "key": "github:anupamme/scrapehotelreviewdata-1.0",
+  "url": "https://github.com/anupamme/scrapeHotelReviewData-1.0",
+  "name": "anupamme/scrapeHotelReviewData-1.0",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A TripAdvisor hotel-review scraping routine (6 stars, 'Other' license); older but still present.",
+  "why_useful": "Another candidate scraper if the team ever wants to independently build a hotel review-velocity time series; unrun, uncommitted data.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "size_hint": "tool only",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "other",
+  "last_activity": "2024-03-22",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Another candidate scraper if the team ever wants to independently build a hotel review-velocity time series; unrun, uncommitted data."
+  ]
+ },
+ {
+  "key": "github:johnisanerd/apify-tripadvisor-api",
+  "url": "https://github.com/johnisanerd/Apify-Tripadvisor-API",
+  "name": "johnisanerd/Apify-Tripadvisor-API",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python + MCP quick-start wrapper for the paid Apify TripAdvisor scraping actor, returning structured JSON for hotels/reviews; updated 2026-09-13 (very recent).",
+  "why_useful": "Machine-pullable client for TripAdvisor data via a third-party actor; requires a paid Apify key so lower priority, but confirms an actively maintained pull path exists.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "size_hint": "tool only, needs paid Apify API key",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "unknown",
+  "last_activity": "2026-09-13",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Machine-pullable client for TripAdvisor data via a third-party actor; requires a paid Apify key so lower priority, but confirms an actively maintained pull path exists."
+  ]
+ },
+ {
+  "key": "github:bhattbhavesh91/oyo_rooms_case_study",
+  "url": "https://github.com/bhattbhavesh91/oyo_rooms_case_study",
+  "name": "oyo_rooms_case_study",
+  "category": "competitor_ota",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Small SQL/pandas case study with 4 tables (A, B, C = OYO India bookings for Jan/Feb/March 2017; D = hotel-to-city mapping). Real (if old and small) OYO booking-level data by city and month, but no row counts or full city list confirmed from README alone; 2 stars, not updated since 2017.",
+  "why_useful": "Only repo found with what looks like actual OYO (India STR/budget-hotel OTA) booking records rather than a UI clone; touches gap 9 (competitor/adjacent supply \u2014 OYO explicitly named) even though the vintage (2017) is far pre-COVID and too small/old to be decision-useful on its own.",
+  "potential": "low",
+  "geography": "India (city-level, unspecified which cities)",
+  "time_coverage": "Jan-Mar 2017",
+  "size_hint": "4 small tables, unknown row count",
+  "license": "unknown",
+  "last_activity": "2017-12-12",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Only repo found with what looks like actual OYO (India STR/budget-hotel OTA) booking records rather than a UI clone; touches gap 9 (competitor/adjacent supply \u2014 OYO explicitly named) even though the vintage (2017) is far pre-COVID and too small/old to be decision-useful on its own."
+  ]
+ }
+]

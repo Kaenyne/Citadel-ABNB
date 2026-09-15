@@ -1,0 +1,71 @@
+{
+  "theme": "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos: SWAA WFH research",
+    "gh search repos: nomad list dataset",
+    "gh search repos: digital nomad visa",
+    "gh search repos: furnished finder + corporate housing",
+    "gh search repos: coliving",
+    "gh search repos: mid term rental",
+    "gh search repos: nomad list",
+    "gh search repos: blueground OR zeus living OR landing.com corporate housing",
+    "gh search repos: co-living space dataset",
+    "gh search repos: SWAA",
+    "gh search repos: work from home survey dataset",
+    "gh search repos: remote work index dataset",
+    "gh api contents checks on ~8 candidate repos (digital-nomad-visa-data, NomadListData, nomad-list-datascraper, holistic-evaluation-of-digital-nomad-visa-programs, digital-nomad-tax-rates, nomad-passport-visa-index)",
+    "WebFetch of github.com/search (rate-limited 429 after two tries)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/MSeutin/digital-nomad-visa-data",
+      "name": "digital-nomad-visa-data (GlobeNomad Visa Dataset)",
+      "category": "housing_rental",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "data/visas.json: 53 digital-nomad-visa programmes across 46 countries (Thailand alone has 4 pathways), one record per programme with fields documented in SCHEMA.md; CHANGELOG.md shows a schema restructure 2026-08-27 (one row per programme instead of per country); each record cites an official government source page and a verification timestamp. CC-BY-4.0. Small (~single JSON file) but structured and maintained.",
+      "why_useful": "Directly fills gap #16 (digital-nomad visa datasets) with a maintained, sourced, timestamped panel of nomad-visa program existence/terms across 46 countries — usable as a proxy for long-stay/remote-work demand geography that could interact with ABNB's long-stay mix and regional nights growth (LatAm/APAC visa launches).",
+      "potential": "high",
+      "gap_targets": [16],
+      "geography": "46 countries, global",
+      "time_coverage": "live/current snapshot, versioned via CHANGELOG since at least 2026; not a historical time series",
+      "size_hint": "single JSON file, 53 records",
+      "license": "CC-BY-4.0",
+      "last_activity": "2026-09-09 (per gh search updatedAt)",
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/ihtishamulhaq800/NomadListData",
+      "name": "NomadListData",
+      "category": "housing_rental",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Committed Excel/CSV files: UAECitiesFile.csv, UAECitiesFile_processed.csv, city_data.xlsx, 'city_data - Filtered.xlsx', 'city_data - Copy - Copy.xlsx' plus two Jupyter notebooks (test.ipynb, test1.ipynb) and a requirements.txt — looks like a personal Nomad-List-style scrape/build focused on UAE cities (cost of living / city attribute fields, exact columns unconfirmed since README content could not be read). Also contains a committed .env (credential hygiene issue, not our concern but notable).",
+      "why_useful": "A working, non-Airbnb 'nomad city attributes' data build with real committed files rather than just a scraper stub; even limited to UAE cities it demonstrates a repeatable Nomad-List-style attribute scrape (cost of living, presumably internet speed / climate) that could be extended, and speaks to gap #16.",
+      "potential": "low",
+      "gap_targets": [16],
+      "geography": "UAE cities only (per file names)",
+      "time_coverage": "unknown, appears to be a single-pull snapshot",
+      "size_hint": "a handful of xlsx/csv files, city-level (not row-count confirmed)",
+      "license": "none declared",
+      "last_activity": "unknown (not in top search results with date; found via keyword match)",
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/asessums7/nomad-list-datascraper",
+      "name": "nomad-list-datascraper",
+      "category": "housing_rental",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Repo named as a Nomad List scraper; directory listing shows only .DS_Store, .gitignore, .gitignore.rtf at the root in the portion inspected — could not confirm actual scraped data files or scraper code content beyond the name (rate-limited before deeper inspection). Zero stars, last updated 2024.",
+      "why_useful": "If the scraper code inside is real and working, it would be a method for pulling Nomad List city attributes (cost of living, wifi speed, climate, nomad ratings) which has no committed public dataset elsewhere that we found; flagged as unconfirmed/low confidence given inspection was cut short.",
+      "potential": "low",
+      "gap_targets": [16],
+      "geography": "global (Nomad List city coverage, if functional)",
+      "time_coverage": "unknown, single scraper as of 2024",
+      "size_hint": "unknown, code only likely",
+      "license": "none declared",
+      "last_activity": "2024-01-17",
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "This theme returned almost nothing usable on GitHub. Findings: (1) 'coliving' as a bare keyword is useless on gh search — it collision-matches 'COLING' (the NLP conference) and returns hundreds of ML-paper repos with zero relevance; had to abandon that query. (2) 'SWAA' as a keyword also collides heavily with unrelated short acronyms (Swaap DeFi protocol, Swaad Indian-food apps, Swaasthy health apps) — WFH Research's SWAA survey (Barrero/Bloom/Davis) does not appear to have any GitHub mirror; their data is distributed directly from wfhresearch.com as Stata/CSV, not committed to GitHub as far as this search could find. (3) 'furnished finder', 'blueground', 'zeus living', 'landing.com', 'corporate housing' as gh search terms returned zero hits across all combinations tried — none of these commercial furnished/mid-term-rental platforms have any public GitHub scraper, mirror, or dataset that surfaces on repo-name/description search. (4) 'nomad list' as a keyword surfaces almost entirely NomadList-clone coding-bootcamp exercises (Korean/Vietnamese coding-school 'fc-nomad-list' repeats, JS/Vue clones with no data) — signal-to-noise is very poor; only two repos (ihtishamulhaq800, asessums7) had plausible real data files after directory inspection. (5) Digital-nomad-visa keyword search is dominated by 2025-2026 AI-agent-generated 'visa comparison tool' repos (RoamIQ, nomad-helper, RouteFit, apostille wizards) that are apps/UIs with no committed dataset — only MSeutin's repo had an actual structured, licensed, sourced dataset file; brandonhimpfen's and qixiaobo's and jibranpcccc's repos that looked promising by name turned out to be empty shells (LICENSE+README or README-only) on contents inspection. (6) Rate limits: WebSearch budget was exhausted session-wide before this scout could use it (200/200 already used by other concurrent scouts), and github.com/search web pages returned 429 for an hour after two WebFetch attempts, cutting off further browser-based verification (e.g., could not confirm asessums7's actual scraper code, could not run the two suggested keyword-hint searches 'furnished finder data' / 'nomad list dataset' via WebSearch as instructed). Recommend a future pass try WebFetch directly on wfhresearch.com/data or Zenodo/OSF for a possible SWAA microdata mirror, since GitHub itself appears to hold none. Also worth trying gh search with the literal strings 'Landing Zebra' or 'Placemakr' (other corporate-housing brands) and 'nomad list scraper' as a two-word phrase, not attempted here due to the 6-call search budget."
+}

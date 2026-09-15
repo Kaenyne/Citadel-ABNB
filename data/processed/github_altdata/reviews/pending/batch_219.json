@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:everettsouthwick/trusted-traveler-scheduler",
+  "url": "https://github.com/everettsouthwick/trusted-traveler-scheduler",
+  "name": "trusted-traveler-scheduler",
+  "category": "regulatory_legal",
+  "duplicate_of_holding": "",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script polling the DHS Trusted Traveler Program (Global Entry/NEXUS) public appointment-availability API for open interview slots; no historical data committed; 61 stars",
+  "why_useful": "Not a data source about travel volumes itself, but confirms a public, unauthenticated DHS TTP appointment API exists that a point-in-time scraper could turn into a (weak) proxy for cross-border-traveler enrollment demand/backlog over time; several near-identical sibling repos exist (mvexel/next_global_entry, arun0009/global-entry-slot-notifier, mattpopovich/GlobalEntryChecker) hitting the same endpoint.",
+  "potential": "low",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "geography": "US (Global Entry/NEXUS enrollment centers)",
+  "time_coverage": "live snapshot only",
+  "size_hint": "no dataset, polling script only",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Not a data source about travel volumes itself, but confirms a public, unauthenticated DHS TTP appointment API exists that a point-in-time scraper could turn into a (weak) proxy for cross-border-traveler enrollment demand/backlog over time; several near-identical sibling repos exist (mvexel/next_global_entry, arun0009/global-entry-slot-notifier, mattpopovich/GlobalEntryChecker) hitting the same endpoint."
+  ]
+ },
+ {
+  "key": "github:matthewgall/fuelfeed",
+  "url": "https://github.com/matthewgall/fuelfeed",
+  "name": "fuelfeed",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Cloudflare-Workers-based real-time UK fuel price aggregator pulling from 15+ UK retailers (ASDA, BP, Esso, Shell, Tesco, Morrisons, Sainsbury's, Jet, Gulf, Texaco, etc.) via the UK government's official Fuel Finder API/CSV feed, updated hourly to real-time, exposed as a public JSON/GeoJSON API (/api/data.json, /api/data.mapbox). mirror.mjs script performs the data mirroring.",
+  "why_useful": "UK retail fuel price panel at station level, sourced from the UK govt Fuel Finder scheme -- relevant to EMEA regional driving-cost/consumer-strength proxy (a UK-specific complement to the aykutsp global country-level series), and demonstrates a clean method for turning a public government feed into a queryable API.",
+  "potential": "low",
+  "geography": "UK (station-level, 15+ retailers)",
+  "time_coverage": "live/real-time only, no historical archive apparent",
+  "size_hint": "unknown station count, live feed",
+  "license": "MIT",
+  "last_activity": "active",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "UK retail fuel price panel at station level, sourced from the UK govt Fuel Finder scheme -- relevant to EMEA regional driving-cost/consumer-strength proxy (a UK-specific complement to the aykutsp global country-level series), and demonstrates a clean method for turning a public government feed into a queryable API."
+  ]
+ },
+ {
+  "key": "github:roloria/global-nomad-atlas",
+  "url": "https://github.com/Roloria/global-nomad-atlas",
+  "name": "global-nomad-atlas",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Open, community-maintained dataset (MIT, data snapshot 2026-08) scoring 80 digital-nomad cities across 40 countries (5 regions) on 12 dimensions (cost of living USD/month, internet quality, walkability, community strength, air quality, nightlife, safety, female-friendliness, LGBTQ+ acceptance, racial tolerance, English-friendliness) plus 60 coworking/coliving communities and a supplementary 16-city mainland-China dataset. Delivered as .xlsx and .csv files, PR-updatable.",
+  "why_useful": "If real, a city-level nomad-friendliness/cost index (gap 16/20 adjacent) broader than Nomad List's own paywalled data.",
+  "potential": "low",
+  "gap_targets": [
+   16
+  ],
+  "geography": "80 cities, 40 countries (unverified)",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unverified, 1 star",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "If real, a city-level nomad-friendliness/cost index (gap 16/20 adjacent) broader than Nomad List's own paywalled data.",
+   "Directly touches Gap 16 (remote-work/long-stay demand, digital-nomad datasets) as a small but concrete, structured, city-level dataset that could proxy for long-stay/nomad demand geography relevant to Airbnb's long-term-stay segment, though it is a point-in-time snapshot (not a time series) and very new/low-traction (1 star).",
+   "A rougher, crowd-sourced cross-check on the same long-stay/remote-work theme (gap #16); city-level rather than country-level, so it could sharpen regional mix within APAC/LatAm rather than just at the country level."
+  ]
+ },
+ {
+  "key": "github:daguar/cfpb-consumer-complaints-database",
+  "url": "https://github.com/daguar/cfpb-consumer-complaints-database",
+  "name": "daguar/cfpb-consumer-complaints-database",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Old (2013) 'meeting ground' repo \u2014 no committed data or scraper, just a discussion hub pointing users to the official CFPB Consumer Complaints database at the Socrata portal data.consumerfinance.gov and its API. 4 stars, last updated 2013, no data files.",
+  "why_useful": "Confirms the canonical free source for CFPB complaints (data.consumerfinance.gov Socrata API, filterable by company='AIRBNB' and product/issue) that any of the other repos in this list, or a fresh one-off pull, would hit; low value on its own since it holds nothing.",
+  "potential": "low",
+  "license": "none listed",
+  "last_activity": "2013-10-24",
+  "geography": "US",
+  "time_coverage": "n/a (pointer only)",
+  "size_hint": "no files",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Confirms the canonical free source for CFPB complaints (data.consumerfinance.gov Socrata API, filterable by company='AIRBNB' and product/issue) that any of the other repos in this list, or a fresh one-off pull, would hit; low value on its own since it holds nothing."
+  ]
+ },
+ {
+  "key": "github:luanhthe/cfpb-complaints",
+  "url": "https://github.com/LuAnhThe/CFPB-Complaints",
+  "name": "CFPB-Complaints",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "SQL query file (no raw data committed) that reconstructs an 18-field, 2M+-row CFPB complaint dataset from Google's public BigQuery mirror (`bigquery-public-data.cfpb_complaints`), plus a mortgage-focused PDF report as an example of use.",
+  "why_useful": "Second independent confirmation of the free BigQuery CFPB mirror and a ready SQL query to pull it; low incremental value beyond the ae-cfpb-complaint-benchmarking entry above but corroborates the access path.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "CFPB DB inception to pull date",
+  "size_hint": "2M+ rows, 18 fields (external)",
+  "license": "unspecified",
+  "last_activity": "2024-09-22",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "same BigQuery mirror as ae-cfpb-complaint-benchmarking",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Second independent confirmation of the free BigQuery CFPB mirror and a ready SQL query to pull it; low incremental value beyond the ae-cfpb-complaint-benchmarking entry above but corroborates the access path."
+  ]
+ }
+]

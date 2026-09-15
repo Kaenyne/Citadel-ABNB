@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:ridiculous/check_availability",
+  "url": "https://github.com/ridiculous/check_availability",
+  "name": "check_availability",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Companion script to vrbo-calendar-scraper (same author) that checks availability across a list of VRBO calendar URLs. No committed data.",
+  "why_useful": "Same rationale as vrbo-calendar-scraper: a starting point for VRBO availability tooling (gap #9), not itself a dataset.",
+  "potential": "low",
+  "license": "not stated",
+  "last_activity": "unknown",
+  "geography": "n/a",
+  "time_coverage": "live/current only",
+  "size_hint": "single script",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "same lineage as vrbo-calendar-scraper",
+  "hits": 1,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "Same rationale as vrbo-calendar-scraper: a starting point for VRBO availability tooling (gap #9), not itself a dataset."
+  ]
+ },
+ {
+  "key": "github:piotrv1001/how-to-scrape-viator-in-nodejs",
+  "url": "https://github.com/piotrv1001/how-to-scrape-viator-in-nodejs",
+  "name": "piotrv1001/how-to-scrape-viator-in-nodejs",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js example (4 commits, last touched ~16 Mar 2026, 1 star) that calls the Apify 'Viator Scraper' actor to pull Viator tour listings \u2014 names, URLs, thumbnails, per-person price + currency, availability dates, location, rating and review count. Includes a sample-output.json showing the shape but no bulk committed dataset; real pulls land in Apify's own dataset store (paid actor runs) and would need to be re-run.",
+  "why_useful": "A working, current method to acquire Viator (TripAdvisor-owned tours/activities OTA) listing-level data as a competitor/adjacent-supply proxy for Experiences-style demand (gap 9). Not Airbnb-specific and requires a paid/rate-limited third-party service (Apify) to actually run, so usefulness is marginal without further investment.",
+  "potential": "low",
+  "license": "none declared",
+  "last_activity": "2026-03-16",
+  "geography": "global (whatever cities the actor is queried for)",
+  "time_coverage": "n/a (live pull only)",
+  "size_hint": "small example repo, no data",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "A working, current method to acquire Viator (TripAdvisor-owned tours/activities OTA) listing-level data as a competitor/adjacent-supply proxy for Experiences-style demand (gap 9). Not Airbnb-specific and requires a paid/rate-limited third-party service (Apify) to actually run, so usefulness is marginal without further investment.",
+   "A working, documented one-command method to pull live Viator (Experiences competitor) tour pricing/availability/review-count by destination \u2014 could proxy activity demand/pricing for gap #9 (competitor supply) if run repeatedly at named cities; not itself a stored panel."
+  ]
+ },
+ {
+  "key": "github:huntehhh/viator-scraper",
+  "url": "https://github.com/Huntehhh/viator-scraper",
+  "name": "Huntehhh/viator-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small, undocumented Viator scraper repo, 0 stars, no description, last updated 25 May 2025. No data files visible from the repo listing/description alone.",
+  "why_useful": "Another candidate method for Viator tour/activity data if the sanctioned-sources list is ever expanded, but unmaintained and unverified -- flagged for completeness only, not recommended for follow-up over the Apify-actor version above.",
+  "potential": "low",
+  "license": "none declared",
+  "last_activity": "2025-05-25",
+  "geography": "unspecified",
+  "time_coverage": "n/a",
+  "size_hint": "unknown, likely small",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Another candidate method for Viator tour/activity data if the sanctioned-sources list is ever expanded, but unmaintained and unverified -- flagged for completeness only, not recommended for follow-up over the Apify-actor version above."
+  ]
+ },
+ {
+  "key": "github:roberttomjoseph/viator-scraper",
+  "url": "https://github.com/roberttomjoseph/viator-scraper",
+  "name": "roberttomjoseph/viator-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Another small, undocumented Viator scraper, 0 stars, dated 31 Dec 2022 (stale, ~4 years old). No description, no visible committed data.",
+  "why_useful": "Marginal duplicate of the Apify-actor approach; included only for completeness since it is the oldest of the three Viator scrapers found and could conceivably use a different (non-Apify) extraction method worth a quick look if the team pursues this thread.",
+  "potential": "low",
+  "license": "none declared",
+  "last_activity": "2022-12-31",
+  "geography": "unspecified",
+  "time_coverage": "n/a",
+  "size_hint": "unknown, likely small",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Marginal duplicate of the Apify-actor approach; included only for completeness since it is the oldest of the three Viator scrapers found and could conceivably use a different (non-Apify) extraction method worth a quick look if the team pursues this thread."
+  ]
+ },
+ {
+  "key": "github:usamaislam70/viator-and-gyg-scraper",
+  "url": "https://github.com/usamaislam70/Viator-and-GYG-Scraper",
+  "name": "Viator-and-GYG-Scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "4-commit repo with a 'supplier_activites' folder; no README or visible description of output format was retrievable. Appears to target both Viator and GetYourGuide supplier/activity pages.",
+  "why_useful": "Potential dual-source (Viator + GetYourGuide) activity scraper; unverified \u2014 code and output format not confirmed, flag for a closer look rather than trusted as a working source.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, small repo",
+  "license": "unclear",
+  "last_activity": "unknown (recent, 4 commits)",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Potential dual-source (Viator + GetYourGuide) activity scraper; unverified \u2014 code and output format not confirmed, flag for a closer look rather than trusted as a working source."
+  ]
+ }
+]

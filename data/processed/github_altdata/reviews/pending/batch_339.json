@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:facundoolano/google-play-api",
+  "url": "https://github.com/facundoolano/google-play-api",
+  "name": "google-play-api",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Turns google-play-scraper into a RESTful API server (MIT, 389 stars, updated 5 Sep 2026) -- same underlying fields (install buckets, rating, category rank), just exposed over HTTP instead of as a library import.",
+  "why_useful": "Convenience wrapper only; no new fields versus the base google-play-scraper. Noted for completeness since it appeared prominently in results, but adds nothing the base library doesn't already give us.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "snapshot only",
+  "size_hint": "small server",
+  "license": "MIT",
+  "last_activity": "2026-09-05",
+  "duplicate_of_holding": "facundoolano/google-play-scraper",
+  "gap_targets": [
+   5
+  ],
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Convenience wrapper only; no new fields versus the base google-play-scraper. Noted for completeness since it appeared prominently in results, but adds nothing the base library doesn't already give us."
+  ]
+ },
+ {
+  "key": "github:golface/appfigures_api",
+  "url": "https://github.com/Golface/appfigures_api",
+  "name": "appfigures_api (unofficial Python client, WIP)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Work-in-progress unofficial Python wrapper for the Appfigures REST API.",
+  "why_useful": "Alternative unofficial client to the official CLI; same paid-API-key limitation applies, and it is explicitly WIP/incomplete.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (client only)",
+  "license": "not confirmed",
+  "last_activity": "WIP, appears low-activity",
+  "size_hint": "small code repo",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Alternative unofficial client to the official CLI; same paid-API-key limitation applies, and it is explicitly WIP/incomplete."
+  ]
+ },
+ {
+  "key": "github:elfenlaid/ex_figures",
+  "url": "https://github.com/elfenlaid/ex_figures",
+  "name": "ex_figures",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Elixir wrapper for the Appfigures API.",
+  "why_useful": "Same paid-API constraint as above; only relevant if the team later licenses Appfigures and happens to use Elixir. Low practical value now.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "size_hint": "small",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Same paid-API constraint as above; only relevant if the team later licenses Appfigures and happens to use Elixir. Low practical value now."
+  ]
+ },
+ {
+  "key": "github:rankor/playhound",
+  "url": "https://github.com/RankoR/playhound",
+  "name": "playhound",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Unofficial Rust library for Google Play data extraction (app metadata, presumably ratings/reviews similar to the JS/Python equivalents).",
+  "why_useful": "Marginal \u2014 a Rust-language alternative client with no unique data access advantage found over the more established JS/Python scrapers.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "current only",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "size_hint": "code only",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Marginal \u2014 a Rust-language alternative client with no unique data access advantage found over the more established JS/Python scrapers."
+  ]
+ },
+ {
+  "key": "github:yunusemreyildiz/cmmntlnd",
+  "url": "https://github.com/yunusemreyildiz/cmmntlnd",
+  "name": "cmmntlnd",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Real-time monitor for App Store & Google Play reviews that forwards new reviews to Slack; a live alerting tool rather than a historical archive.",
+  "why_useful": "Could be adapted to log every new Airbnb app review (with timestamp/rating) going forward into a running review-count/sentiment time series, addressing gap 14's review-scraper angle, but builds no history retroactively.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "prospective only",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "size_hint": "small integration script",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Could be adapted to log every new Airbnb app review (with timestamp/rating) going forward into a running review-count/sentiment time series, addressing gap 14's review-scraper angle, but builds no history retroactively."
+  ]
+ }
+]

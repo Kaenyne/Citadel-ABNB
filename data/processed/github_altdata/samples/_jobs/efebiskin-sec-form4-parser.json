@@ -1,0 +1,10 @@
+{
+ "slug": "efebiskin-sec-form4-parser",
+ "url": "https://github.com/efebiskin/sec-form4-parser",
+ "category": "company_filings_estimates",
+ "data_kind": "acquisition_method",
+ "one_line": "MIT-licensed, zero-dependency typed Python parser for SEC Form 4 insider-trading XML plus an optional rate-limited EDGAR fetcher and CLI; code only (14 KB repo: src/, tests/, examples/, 13 tests), no data committed, pushed 2026-04-17, 0 stars.",
+ "abnb_use": "Gap 15 (company-structure signals): lets us build an ABNB insider buy/sell history from EDGAR Form 4 XML without hand-rolling the parser \u2014 an ownership/insider panel to sit beside the guidance ledger and the 5 Nov print. Not a KPI input; context/positioning only.",
+ "sample_plan": "git clone --depth 1 https://github.com/efebiskin/sec-form4-parser (whole repo is ~14 KB source, no data). Optionally then one keyless EDGAR pull with a proper UA to confirm the parser works: curl -s -H 'User-Agent: UF student ksurapaneni@ufl.edu' 'https://data.sec.gov/submissions/CIK0001559720.json' -o abnb_submissions.json (~2-5 MB, ABNB CIK 1559720) and keep only the form=='4' rows. Total well under 25 MB; no key, no login, SEC is a public government source.",
+ "tos_or_license_flag": false
+}

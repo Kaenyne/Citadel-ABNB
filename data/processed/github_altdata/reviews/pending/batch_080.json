@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:huynhtanphatt/hotel-cancellation-minimization-booking-behavior-analysis",
+  "url": "https://github.com/HuynhTanPhatT/Hotel-Cancellation-Minimization-Booking-Behavior-Analysis",
+  "name": "Hotel-Cancellation-Minimization-Booking-Behavior-Analysis",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Analysis project (SQL + Python + Power BI .pbix) over the same Antonio/Almeida/Nunes-style two-Portugal-property dataset (Lisbon city hotel + Algarve resort hotel, ~100k+ raw records, 86,113 bookings in the final analysed set, Jul 2015\u2013Oct 2017) with cancellation-status, advance-booking-window (lead time), ADR, and booking-channel (TA/TO, Corporate, Direct, GDS) fields. Raw CSV not clearly committed in-repo (analysis outputs and BI file are); described as sourced from Kaggle/ScienceDirect.",
+  "why_useful": "Confirms the Portugal H1/H2 dataset is the dominant public hotel-cancellation source on GitHub and that its lead-time field is literally named 'window_booking' in some derivative repos \u2014 useful only as a pointer to the same data we already hold, not new.",
+  "potential": "low",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "geography": "Portugal (2 resort/city hotels)",
+  "time_coverage": "Jul 2015 - Oct 2017",
+  "size_hint": "~100k+ bookings (same underlying dataset already held)",
+  "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already in our holdings",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Airbnb cancellation, refund and Reserve-Now-Pay-Later related datasets; STR booking lead-time and cancellation-rate data from any platform or PMS",
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "Confirms the Portugal H1/H2 dataset is the dominant public hotel-cancellation source on GitHub and that its lead-time field is literally named 'window_booking' in some derivative repos \u2014 useful only as a pointer to the same data we already hold, not new.",
+   "Confirms channel-segmented lead-time and cancellation breakdowns (TA/TO vs Corporate vs Direct vs GDS) on the already-held Antonio data that our own construction may not have replicated; low incremental value as it is a duplicate source, but the channel segmentation could be a useful reference for gap #3 (booking lead time / cancellation-rate distributions)."
+  ]
+ },
+ {
+  "key": "github:robhawkins/happiness",
+  "url": "https://github.com/robhawkins/happiness",
+  "name": "robhawkins/happiness",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Sentiment-analysis project reportedly built on ~70,000 TripAdvisor hotel reviews (fastai/LSTM/stacking/xgboost) -- larger than the standard 20k Kaggle file if the underlying data is genuinely committed; not independently verified beyond the repo description.",
+  "why_useful": "If the 70k-review corpus is real and multi-hotel/multi-city, it is a larger free hotel-review base than the common Kaggle set for sentiment/velocity work; flagged for follow-up verification rather than confirmed.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "size_hint": "~70,000 reviews claimed, unverified",
+  "time_coverage": "unknown",
+  "geography": "unknown",
+  "license": "unknown",
+  "last_activity": "2026-04-05",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "If the 70k-review corpus is real and multi-hotel/multi-city, it is a larger free hotel-review base than the common Kaggle set for sentiment/velocity work; flagged for follow-up verification rather than confirmed."
+  ]
+ },
+ {
+  "key": "github:bouaskaoun/aspect-based-sentiment-analysis-of-marrakesh-hotel-reviews",
+  "url": "https://github.com/Bouaskaoun/Aspect-Based-Sentiment-Analysis-of-Marrakesh-hotel-reviews",
+  "name": "Aspect-Based-Sentiment-Analysis-of-Marrakesh-hotel-reviews",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "TripAdvisor hotel reviews scoped to Marrakesh, Morocco, with aspect-based sentiment code and (per description) the underlying review data for that single city.",
+  "why_useful": "Fills a specific North-Africa/MENA geography not otherwise represented in the team's held hotel-review data, useful only as a single-city curiosity for regional sentiment texture, not a KPI driver.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "size_hint": "single city (Marrakesh), size unspecified",
+  "time_coverage": "unknown",
+  "geography": "Marrakesh, Morocco",
+  "license": "unknown",
+  "last_activity": "2026-05-12",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Fills a specific North-Africa/MENA geography not otherwise represented in the team's held hotel-review data, useful only as a single-city curiosity for regional sentiment texture, not a KPI driver."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/argilla/tripadvisor-hotel-reviews",
+  "url": "https://huggingface.co/datasets/argilla/tripadvisor-hotel-reviews",
+  "name": "argilla/tripadvisor-hotel-reviews",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "20,500 TripAdvisor hotel reviews (the well-known 'TripAdvisor Hotel Reviews' Kaggle set, mirrored/curated on Hugging Face by Argilla with added sentiment labels 1-5, confidence scores, text length). Reviews span international hotels (Florence, Barcelona, Hawaii, Amsterdam, Paris, Singapore, Punta Cana, Berlin, Tokyo, etc.), dates roughly 2004-2008 in visible samples. Parquet format, loadable via HF `datasets` or pandas.",
+  "why_useful": "Small but clean, ready-to-load, dated review sample across many geographies; could serve as a spot-check / calibration set for any review-velocity or sentiment method before scaling to HotelRec. Marginal versus HotelRec for size but easier to pull (no gated download).",
+  "license": "cc-by-nc-4.0",
+  "last_activity": "unknown (HF dataset, actively listed)",
+  "geography": "Global, mixed cities",
+  "time_coverage": "~2004-2008 (sample dates); original scrape date later",
+  "size_hint": "20,500 rows",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "Overlaps conceptually with Booking.com 515k-review Kaggle set already held, but TripAdvisor source is new",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Small but clean, ready-to-load, dated review sample across many geographies; could serve as a spot-check / calibration set for any review-velocity or sentiment method before scaling to HotelRec. Marginal versus HotelRec for size but easier to pull (no gated download)."
+  ]
+ },
+ {
+  "key": "github:magic890/tripadvisor-scraper",
+  "url": "https://github.com/magic890/tripadvisor-scraper",
+  "name": "magic890/tripadvisor-scraper",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "80-star Scrapy-based scraper targeting TripAdvisor restaurant listings (command shown: `scrapy crawl tripadvisor-restaurant`). Outputs JSON-lines by default. No sample data committed. GPL-3.0 licensed; educational-use disclaimer in README about possible ToS conflicts.",
+  "why_useful": "Restaurant demand/velocity is a weak but free proxy for local tourism activity (adjacent to OpenTable seated-diner data already held); low direct relevance to ABNB but easy to adapt.",
+  "license": "GPL-3.0",
+  "last_activity": "11 commits, date not surfaced",
+  "geography": "user-configurable, global",
+  "time_coverage": "current/live only",
+  "size_hint": "no data committed",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Restaurant demand/velocity is a weak but free proxy for local tourism activity (adjacent to OpenTable seated-diner data already held); low direct relevance to ABNB but easy to adapt."
+  ]
+ }
+]

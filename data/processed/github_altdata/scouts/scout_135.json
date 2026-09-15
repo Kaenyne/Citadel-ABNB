@@ -1,0 +1,13 @@
+{
+  "theme": "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data",
+  "modality": "web",
+  "status": "BLOCKED",
+  "candidates": [],
+  "queries_run": [
+    "site:github.com historical analyst estimates dataset EPS revenue consensus",
+    "github zacks scraper earnings estimates",
+    "github estimize dataset historical earnings estimates",
+    "github \"analyst estimates\" scraper yahoo finance historical"
+  ],
+  "notes": "BLOCKED before any results: the WebSearch tool for this session reported its web search budget already exhausted (0 of 200 remaining) on the very first call of this task, before this scout ran any successful search. All four queries attempted returned the same rejection message rather than results, so zero candidates could be verified. This is a session-level resource exhaustion, not a finding of 'nothing exists' for this theme -- historical analyst-estimate/consensus data (gap #4 in CONTEXT.md) is a HIGH-value target and should be re-run by a fresh scout/session with search budget available. Do not interpret the empty candidate list as evidence the theme is unproductive; it is unexplored. Recommend: rerun this exact theme+keyword set in a new session, or use gh/WebFetch-only modality against known candidate repo names (e.g. search terms to try next: 'ibes replication github', 'wrds ibes alternative open data', 'earnings estimate revision dataset kaggle', 'alpha vantage EARNINGS_ESTIMATES github', 'finviz scraper analyst ratings github', 'seeking alpha estimates scraper github', 'zacks rank history dataset', 'sec-edgar 8-K guidance dataset github', site:huggingface.co and site:zenodo.org variants)."
+}

@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/SajanGaba/zacks_scraper",
+  "slug": "zacks-scraper-russell3000",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Three-file repo (R3.py 5 KB scraper, R300.csv 74 KB, README 309 B) that scrapes zacks.com quote pages for a Russell-3000 ticker list; the committed R300.csv is ONLY a Company,Ticker universe list (and a stale one — it contains A123/AONE, AboveNet/ABVT, ACE Ltd, all gone by ~2016), not the 14 estimate fields the README lists; no licence, no stars, last push 2023-06-24.",
+  "abnb_use": "Gap #4 (point-in-time consensus): in principle the scraper shape shows how a free Zacks consensus page yields next-quarter/current-year sales and earnings estimates plus surprise history, which could be re-run at each guide date to start a forward vintage series for ABNB — but it captures no ABNB history and pulls no estimate data as committed.",
+  "sample_plan": "n/a — do not pull. The only data file is a stale Russell-3000 Company,Ticker list with no estimate columns and no date stamp; the estimate fields come from running R3.py against zacks.com, which is a third-party-site scrape and a terms-of-service decision for a human. If a human clears it: curl -s https://raw.githubusercontent.com/SajanGaba/zacks_scraper/main/R3.py to read the page-parsing logic (5 KB, no data).",
+  "tos_or_license_flag": true,
+  "reasoning": "I verified the repo and range-read R300.csv: the scout's description is wrong — the CSV holds two columns (Company, Ticker) of a ~2012-vintage Russell 3000 universe, not the 14 estimate fields, which are only the README's list of what the scraper would fetch. The actual data path is a live scrape of zacks.com with no licence declared and code untouched since June 2023, so it is a ToS question for a human and almost certainly broken against the current page layout. Catalogued as a method pointer for gap #4 only."
+ },
+ {
+  "url": "https://github.com/QuantConnect/Lean.DataSource.Estimize",
+  "slug": "quantconnect-lean-estimize-schema",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "QuantConnect's C# reference implementation of the Estimize marketplace data types — EstimizeConsensus.cs (9.8 KB), EstimizeEstimate.cs (7.6 KB), EstimizeRelease.cs (8.8 KB) plus four downloaders under DataProcessing/ that call the Estimize API; zero data committed (repo 107 KB, no licence file, 0 stars, 6 forks, last push 2026-06-18).",
+  "abnb_use": "Gap #4 (point-in-time consensus): documents the exact field layout a crowd-consensus feed would carry (per-fiscal-quarter consensus revenue/EPS with an as-of timestamp, individual analyst estimates, actual releases), which is the schema our L0 vintage register would need if Estimize-style estimates were ever obtained for ABNB/BKNG/EXPE.",
+  "sample_plan": "n/a — do not pull. There is no data in the repo; EstimizeConsensusDataDownloader.cs and siblings authenticate against the Estimize/QuantConnect API, and the underlying feed is a paid QuantConnect Data Marketplace product. The three .cs type files can be read directly in the browser if the schema is ever needed.",
+  "tos_or_license_flag": true,
+  "reasoning": "Directory listing confirms code only — DataProcessing/ holds four downloader classes that hit the Estimize API, and the 352-byte README states plainly it is an 'example production implementation' for a marketplace data type. No free acquisition path exists, so this is a schema reference, not a source. Catalogued so nobody re-flags it as a route to free crowd consensus."
+ },
+ {
+  "url": "https://github.com/Finnhub-Stock-API/finnhub-python",
+  "slug": "finnhub-python-client",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Official Finnhub Python API client, Apache-2.0, 1,074 stars, actively maintained (last push 2026-06-24, repo 232 KB); wraps endpoints for institutional ownership, insider transactions/sentiment, ETF holdings and country/sector exposure, earnings estimates and surprises, and price data — a client library only, with no data committed and every call requiring a Finnhub account API key.",
+  "abnb_use": "Gaps #15 and #4: one client could pull ABNB institutional-ownership and Form-4 insider history and (if entitled) analyst revenue/EPS estimate snapshots for ABNB/BKNG/EXPE, plus ETF country/sector exposure — but the estimate and ownership history endpoints are largely premium tiers, so the free-tier scope needs a human check before anyone relies on it.",
+  "sample_plan": "n/a — do not pull. Every endpoint needs FINNHUB_API_KEY from a registered account; run rule 7 (never type credentials) and the no-paid-key rule both bite. A human who already holds a free key can install with `pip install finnhub-python` and test client.company_basic_financials('ABNB', 'all') to see what the free tier actually returns.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified: Apache-2.0, large and active, but the repository is a generated OpenAPI client with no bundled data — usefulness is entirely gated on Finnhub entitlements we do not have. It is worth one catalogue line because it is the cleanest single client for the gap-#15 ownership/insider endpoints if the team ever gets a key. Catalog_only because an API key means signup, which this run does not do."
+ },
+ {
+  "url": "https://github.com/salkooheji/13f-portfolio-analysis",
+  "slug": "salkooheji-13f-portfolio-analysis",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Python/SQLite/Streamlit pipeline that reconstructs institutional portfolios from raw SEC EDGAR 13F filings — idempotent ingestion, byte-for-byte archival, per-filing value-unit verification (straddles the SEC's end-2022 unit change), multi-strategy CUSIP resolution (99.68% by value), amendment-aware QoQ diffs; shipped config covers 5 managers x 8 quarters (3Q22-2Q24, 44 filings, 37,959 holdings rows) but NO database or holdings file is committed (repo 1.6 MB is code plus dashboard screenshots); no licence declared, last push 2026-08-28.",
+  "abnb_use": "Gap #15 (company-structure signals): a correct 13F pipeline would let us build an ABNB institutional-ownership-concentration and net-flow history from primary EDGAR filings — the amendment handling and CUSIP resolution are exactly the parts homebrew 13F scripts get wrong, and the same code gives holder overlap with BKNG/EXPE for positioning context around the 5 Nov print.",
+  "sample_plan": "n/a — no data to sample; the repo ships code and screenshots only, and reproducing anything means running the full EDGAR ingestion. If the method is wanted: git clone --depth 1 --filter=blob:none --sparse https://github.com/salkooheji/13f-portfolio-analysis && git sparse-checkout set edgar13f config.yaml README.md (well under 5 MB, excludes docs/images), then read the CUSIP-resolution and amendment-composition modules. Note the absent licence before reusing any code.",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed by contents listing and README: pure pipeline, no SQLite database or CSV committed, so there is nothing for a sampling agent to fetch. The engineering is unusually careful for a 0-star repo (value-unit verification, amendment composition, traceability to accession numbers) which makes it a method worth recording against gap #15. No licence is declared, so any code reuse is a human decision."
+ },
+ {
+  "url": "https://github.com/alphasmo/alphasmo-tools",
+  "slug": "alphasmo-tools-13f-insider-cli",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "MIT-licensed TypeScript CLI + MCP server (2 stars, 89 KB, last push 2026-08-12) that queries alphasmo.com's hosted API for SEC 13F institutional holdings, Form 4/144 insider trades and a 'smart money convergence' signal; no data committed, and the data lives on a third-party commercial service, not in the repo — the free anonymous tier runs without a key (`npx alphasmo stocks flows --limit 10`), with an optional ALPHASMO_API_KEY to raise rate limits.",
+  "abnb_use": "Gap #15: `alphasmo stocks get ABNB` and `alphasmo insider summary ABNB` would give current holder counts, net institutional flow and insider buy/sell confidence for ABNB (and BKNG/EXPE/MAR/HLT) without building EDGAR plumbing — positioning colour around the 5 Nov print rather than a KPI input.",
+  "sample_plan": "n/a — do not run. The keyless path exists (`npx alphasmo stocks get ABNB --json`, `npx alphasmo insider summary ABNB --json`) but it executes unvetted npm code and queries a private commercial API's free tier, which is a terms-of-service and vendor-reliance decision for a human, not a public statistical source. If cleared, cap it at those two single-ticker calls (a few KB of JSON each).",
+  "tos_or_license_flag": true,
+  "reasoning": "README verified: the repo itself is a thin client (src/, package.json, no data files) and all content comes from alphasmo.com, a commercial startup API whose figures are derived rather than primary EDGAR. The anonymous tier is genuinely keyless, but running npx against a vendor API is outside this run's sanctioned-source rule, and the derived 'convergence score' is unauditable. Catalogued for gap #15 with the exact ABNB commands recorded for a human to decide on."
+ }
+]

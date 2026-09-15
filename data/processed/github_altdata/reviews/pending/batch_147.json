@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:osmcode/pyosmium",
+  "url": "https://github.com/osmcode/pyosmium",
+  "name": "pyosmium",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Python bindings (BSD-2-Clause, 393 stars, 782 commits) for the libosmium C++ library, for fast low-level processing of OSM PBF files (including Geofabrik extracts and full history files with `.osh.pbf`).",
+  "why_useful": "Lower-level building block than pyrosm; notably supports OSM's full-history PBF format, which is the closest thing to a point-in-time OSM POI census (can reconstruct what tourism=hotel tags existed as of a past date) \u2014 directly relevant to the point-in-time rule in this project.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Current + full OSM edit history when using history-enabled extracts",
+  "license": "BSD-2-Clause",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Lower-level building block than pyrosm; notably supports OSM's full-history PBF format, which is the closest thing to a point-in-time OSM POI census (can reconstruct what tourism=hotel tags existed as of a past date) \u2014 directly relevant to the point-in-time rule in this project."
+  ]
+ },
+ {
+  "key": "github:baptiste-meunier/nowcasting_toolbox",
+  "url": "https://github.com/baptiste-meunier/Nowcasting_toolbox",
+  "name": "Nowcasting_toolbox",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code and templates accompanying Linzenich & Meunier (2024), 'Nowcasting Made Easier: a Toolbox for Real-Time Predictions,' ECB Working Paper No. 3004 \u2014 a general-purpose real-time nowcasting toolbox (bridge-equation and DFM style) built by ECB staff, designed to be adapted to any target series with mixed-frequency indicators.",
+  "why_useful": "Directly on-theme for gap #17 (bridge equations, DFM); an ECB-authored, paper-backed toolbox is a credible, documented starting point for building the ABNB revenue/nights bridge-equation nowcast the team already uses conceptually (H1-to-H2 bridge, Q4 guide arithmetic).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (methodology, euro-area orientation)",
+  "time_coverage": "n/a",
+  "size_hint": "58 stars",
+  "license": "unspecified",
+  "last_activity": "2026-07-31",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Directly on-theme for gap #17 (bridge equations, DFM); an ECB-authored, paper-backed toolbox is a credible, documented starting point for building the ABNB revenue/nights bridge-equation nowcast the team already uses conceptually (H1-to-H2 bridge, Q4 guide arithmetic)."
+  ]
+ },
+ {
+  "key": "github:nmecsys/nowcasting",
+  "url": "https://github.com/nmecsys/nowcasting",
+  "name": "nowcasting (R package)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package implementing Dynamic Factor Models with mixed frequencies and unbalanced panels (ragged-edge data), originally built for Brazilian central-bank-style nowcasting of GDP/activity indices.",
+  "why_useful": "Reusable DFM engine for mixed-frequency/unbalanced-panel problems (gap #17); the ragged-edge handling is exactly the shape of the ABNB problem (macro releases and alt-data land at different times ahead of the print).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (methodology; Brazil-origin use case)",
+  "time_coverage": "n/a",
+  "size_hint": "106 stars",
+  "license": "unspecified",
+  "last_activity": "2026-05-21",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Reusable DFM engine for mixed-frequency/unbalanced-panel problems (gap #17); the ragged-edge handling is exactly the shape of the ABNB problem (macro releases and alt-data land at different times ahead of the print)."
+  ]
+ },
+ {
+  "key": "github:jstriaukas/midasmlpy",
+  "url": "https://github.com/jstriaukas/midasmlpy",
+  "name": "midasmlpy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python port of the midasml approach: regularized MIDAS regression using orthogonal-polynomial (Legendre) weighting plus sparse-group LASSO, fast proximal block-coordinate-descent solver, tools for high-dimensional mixed-frequency panel data. Sibling implementations exist in R, Julia, MATLAB. 151 commits, GPL-2.0, last updated 2025-05-15 (33 stars).",
+  "why_useful": "High-dimensional MIDAS with regularization is well suited to nowcasting a quarterly ABNB KPI from many weekly/daily alt-data series (Trends, calendar pace, reviews index, FX) without manual factor selection.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "151 commits",
+  "time_coverage": "n/a (package)",
+  "geography": "generic",
+  "license": "GPL-2.0",
+  "last_activity": "2025-05-15",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "High-dimensional MIDAS with regularization is well suited to nowcasting a quarterly ABNB KPI from many weekly/daily alt-data series (Trends, calendar pace, reviews index, FX) without manual factor selection."
+  ]
+ },
+ {
+  "key": "github:mpiktas/midasr",
+  "url": "https://github.com/mpiktas/midasr",
+  "name": "midasr",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "The original/reference R MIDAS package (documented in a Journal of Statistical Software article): midas_r (NLS estimation), midas_nlpr, midas_sp (semi-parametric), midas_qr (quantile MIDAS), robust SE and forecast utilities. Includes a /data folder with bundled example mixed-frequency datasets. 522 commits.",
+  "why_useful": "Most mature, citable MIDAS implementation (basis for many derivative packages found this pass); quantile-MIDAS (midas_qr) is a route to nowcasting a distribution/range for ABNB nights or ADR rather than a point estimate.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "522 commits, bundled example data",
+  "time_coverage": "n/a (package)",
+  "geography": "generic",
+  "license": "unspecified in fetch (repo has a LICENCE file)",
+  "last_activity": "not dated in fetch",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Most mature, citable MIDAS implementation (basis for many derivative packages found this pass); quantile-MIDAS (midas_qr) is a route to nowcasting a distribution/range for ABNB nights or ADR rather than a point estimate."
+  ]
+ }
+]

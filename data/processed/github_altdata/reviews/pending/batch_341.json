@@ -1,0 +1,140 @@
+[
+ {
+  "key": "github:duplixx/domain-industry-enricher",
+  "url": "https://github.com/duplixx/domain-industry-enricher",
+  "name": "domain-industry-enricher",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small DIY tool that enriches a list of top domains with industry/category classification using the Cloudflare Radar API (categorizes domains, e.g. travel, e-commerce). No committed dataset, requires a Cloudflare API token.",
+  "why_useful": "Illustrates a working Cloudflare Radar API client pattern (auth, endpoint calls) that could be repointed at Radar's `/radar/ranking/top` or per-domain rank endpoints for airbnb.com and travel-sector peers; most other Cloudflare Radar repos found were internet-outage/security dashboards, not domain-rank tools.",
+  "potential": "low",
+  "gap_targets": [
+   5,
+   19
+  ],
+  "size_hint": "script only",
+  "time_coverage": "n/a (live API)",
+  "geography": "n/a",
+  "license": "MIT",
+  "last_activity": "2026-06-05",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank",
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "Illustrates a working Cloudflare Radar API client pattern (auth, endpoint calls) that could be repointed at Radar's `/radar/ranking/top` or per-domain rank endpoints for airbnb.com and travel-sector peers; most other Cloudflare Radar repos found were internet-outage/security dashboards, not domain-rank tools.",
+   "Could be paired with the cloudflare-radar-rankings-cache top-domain lists to isolate travel/OTA-category domains and track their tier membership over time as a competitor-visibility proxy, but is purely a small utility script with no data of its own."
+  ]
+ },
+ {
+  "key": "github:isthiam/cloudflare-radar",
+  "url": "https://github.com/isthiam/cloudflare-radar",
+  "name": "cloudflare-radar (isthiam)",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'Empirical analysis of global internet security across 252 countries using Cloudflare Radar API data from 2025-2026' \u2014 implies pulled and possibly committed country-level Radar metrics (traffic/security) for a broad country set, plus analysis code.",
+  "why_useful": "If the underlying tables include Radar's bot-traffic-share or per-country internet-traffic-volume series (Radar publishes both), this could feed gap #19 (AI-referral / bot-traffic share) rather than domain rank specifically \u2014 worth a follow-up look at the actual files, which we did not open.",
+  "potential": "low",
+  "gap_targets": [
+   19
+  ],
+  "size_hint": "unknown, described as 252 countries x 53 weeks x 11 studies",
+  "time_coverage": "2025-2026",
+  "geography": "252 countries",
+  "license": "unspecified",
+  "last_activity": "2026-06-18",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "If the underlying tables include Radar's bot-traffic-share or per-country internet-traffic-volume series (Radar publishes both), this could feed gap #19 (AI-referral / bot-traffic share) rather than domain rank specifically \u2014 worth a follow-up look at the actual files, which we did not open.",
+   "If country-level traffic/attack data is committed rather than just pulled live, it gives a recent (2025-2026) point-in-time snapshot of internet activity by country that could proxy regional online travel-shopping intensity (gap #5) alongside FX/consumer-strength splits (NA/EMEA/LatAm/APAC)."
+  ]
+ },
+ {
+  "key": "github:ralfkoch/cloudflareradarkit",
+  "url": "https://github.com/RalfKoch/CloudflareRadarKit",
+  "name": "CloudflareRadarKit",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Typed Swift client library wrapping the Cloudflare Radar API (internet traffic volume, outage, BGP, and related network metrics) for iOS 17+/macOS 14+. No committed dataset \u2014 a one-call API client for pulling Cloudflare Radar's public traffic/ranking endpoints (Cloudflare also publishes a domain popularity ranking via Radar).",
+  "why_useful": "Cloudflare Radar exposes a domain-ranking endpoint and traffic-share time series that could stand in for web-engagement proxies (gap #5) and AI-crawler/bot traffic share (gap #19); this client shows the API is free and scriptable even though the client itself is Swift (a Python client would need to be written against the same public endpoints).",
+  "potential": "low",
+  "gap_targets": [
+   5,
+   19
+  ],
+  "geography": "global",
+  "time_coverage": "live API, historical ranges depend on Radar API",
+  "size_hint": "small library, no data",
+  "license": "check repo (not stated)",
+  "last_activity": "unspecified, appears recent",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank",
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Cloudflare Radar exposes a domain-ranking endpoint and traffic-share time series that could stand in for web-engagement proxies (gap #5) and AI-crawler/bot traffic share (gap #19); this client shows the API is free and scriptable even though the client itself is Swift (a Python client would need to be written against the same public endpoints).",
+   "Same Cloudflare Radar data source as bgpkit/radar-rs, in Swift; listed for completeness since it's a different language ecosystem \u2014 do not build both, pick one client."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-cloudflare-radar",
+  "url": "https://github.com/pipeworx-io/mcp-cloudflare-radar",
+  "name": "mcp-cloudflare-radar",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An MCP (model-context-protocol) server wrapping Cloudflare Radar's API for traffic, attack (DDoS), BGP routing, and internet-quality metrics \u2014 a thin API bridge, not a stored dataset.",
+  "why_useful": "Another confirmation the Radar API is queryable for domain/traffic-share data feeding gap #5/#19; low incremental value beyond showing endpoint coverage (traffic, BGP, quality).",
+  "potential": "low",
+  "gap_targets": [
+   5,
+   19
+  ],
+  "geography": "global",
+  "time_coverage": "live API",
+  "size_hint": "small server code, no data",
+  "license": "unspecified",
+  "last_activity": "unspecified, appears recent (2025-2026 era repo)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Another confirmation the Radar API is queryable for domain/traffic-share data feeding gap #5/#19; low incremental value beyond showing endpoint coverage (traffic, BGP, quality)."
+  ]
+ },
+ {
+  "key": "github:rix4uni/top-1m-domains",
+  "url": "https://github.com/rix4uni/top-1m-domains",
+  "name": "top-1m-domains (rix4uni)",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Similar curated compilation of top-1-million-domain list sources ('Alexa alternatives') \u2014 links to Tranco, Majestic, Cisco Umbrella etc., security-research oriented (recon/bug-bounty use case).",
+  "why_useful": "Redundant with PeterDaveHello/top-1m-domains but confirms multiple maintained indices of the same free rank feeds; low incremental value beyond that repo.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "current only",
+  "size_hint": "small",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "duplicate_of_holding": "PeterDaveHello/top-1m-domains (same idea)",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Redundant with PeterDaveHello/top-1m-domains but confirms multiple maintained indices of the same free rank feeds; low incremental value beyond that repo."
+  ]
+ }
+]

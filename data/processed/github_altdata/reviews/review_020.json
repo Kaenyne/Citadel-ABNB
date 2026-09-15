@@ -1,0 +1,72 @@
+[
+  {
+    "url": "https://github.com/luminati-io/Booking-dataset-sample",
+    "slug": "brightdata-booking-listings-sample-1001",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "sample",
+    "category": "competitor_ota",
+    "data_kind": "stored_dataset",
+    "one_line": "Bright Data promotional sample: 'Booking-dataset-sample Listings.csv' (814 KB, 1,001 rows, 26 cols) of Booking.com property quotes for a fixed stay window (check_in 2025-01-01 / check_out 2025-01-10, USD final_price and original_price, free_cancellation and no_prepayment booleans, review_score/count, bed/bedroom/kitchen counts, city, geo/distance JSON); captured ~Dec 2024, mixed global cities (Vienna first rows); NO licence file, promotional teaser for a paid 30.4K-record product; last push 2024-12-16, 0 stars.",
+    "abnb_use": "Gap #9 (competitor OTA supply/pricing) and gap #3 (cancellation-policy mix as an RNPL comparator): a quoted Booking.com price per property for a specified 9-night window plus free-cancellation / no-prepayment flags gives a non-Airbnb read on prepay-vs-pay-later penetration and on quoted nightly rates by city; also a schema template if we ever build a Booking quoted-price panel.",
+    "sample_plan": "curl -sL -o brightdata_booking_1001.csv 'https://raw.githubusercontent.com/luminati-io/Booking-dataset-sample/HEAD/Booking-dataset-sample%20Listings.csv' (814,588 bytes, single file, well under caps). Do NOT pull Booking-datasets.png (627 KB marketing image). Note the near-identical language mirrors luminati-io/bright-data-de, bright-kr, bright-jp Booking-dataset-sample are the same sample.",
+    "tos_or_license_flag": true,
+    "reasoning": "Verified: the CSV is genuinely committed and non-empty, with real rows (Vienna, 2025-01-01 to 2025-01-10, USD 953, free_cancellation=true). It is a one-off undated-ish snapshot of only 1,001 rows and the repo carries no licence (Bright Data promotional teaser for a paid product), so redistribution is flagged, but it is tiny and directly shows competitor quoted price plus cancellation-policy fields."
+  },
+  {
+    "url": "https://github.com/Edioff/vrbo-scraper",
+    "slug": "edioff-vrbo-scraper",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "catalog_only",
+    "category": "competitor_ota",
+    "data_kind": "acquisition_method",
+    "one_line": "Method only, no data: MIT-licensed Python/Selenium (undetected-chromedriver) Vrbo scraper — city search discovery via cities.vrbo.json then per-property extraction of pricing, lat/lon, room config, amenities, host details and cancellation policy to timestamped JSON; repo is 28 KB (run.py, requirements.txt, vrbo_scraper/), created and last pushed 12 Feb 2026, 0 stars, includes a manual-captcha prompt so it is not fully automatable.",
+    "abnb_use": "Gap #9 (Vrbo/HomeAway competitor supply) and gap #2 (STR pricing outside Airbnb): if a human ever authorises it, this is the most complete open field schema for a Vrbo supply/price panel comparable to Inside Airbnb, including cancellation policy for the RNPL comparison (gap #3).",
+    "sample_plan": "",
+    "tos_or_license_flag": true,
+    "reasoning": "Confirmed the repo contains only code (no data/ directory committed) and is brand new with zero stars, so nothing can be sampled. Running it scrapes Vrbo (Expedia Group) behind anti-bot defences, which is a terms-of-service decision for a human, so it is catalogued as an unrun method."
+  },
+  {
+    "url": "https://github.com/ZoranPandovski/BookingScraper",
+    "slug": "zoranpandovski-bookingscraper",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "catalog_only",
+    "category": "competitor_ota",
+    "data_kind": "acquisition_method",
+    "one_line": "Method only, no data: GPL-3.0 Python scraper of Booking.com hotel search-result pages (booking.py, bthread.py, file_writer.py, countries.txt with a country list, tests.py; 127 KB repo, 100 stars, last push 2026-08-05 — still maintained), outputs name/price/rating/location per search query; nothing committed under data.",
+    "abnb_use": "Gap #9 (competitor/adjacent supply): the maintained way to build a repeated quoted-price and availability panel on Booking.com as a hotel/alt-accommodation cross-check to our Inside Airbnb calendar captures; also relevant to an ADR comparator, subject to the team's finding that quote indices need care.",
+    "sample_plan": "",
+    "tos_or_license_flag": true,
+    "reasoning": "Verified the file listing: only scripts and a countries.txt, no committed dataset and no release assets. Running it hits Booking.com directly, a terms-of-service decision for a human, so it is catalogued as a method and left unrun; GPL-3.0 also constrains reuse of the code."
+  },
+  {
+    "url": "https://huggingface.co/datasets/Booking-com/accommodation-reviews",
+    "slug": "hf-bookingcom-accommodation-reviews",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "sample",
+    "category": "competitor_ota",
+    "data_kind": "pointer_to_external_host",
+    "one_line": "Official Booking.com-published review corpus on HuggingFace (public, NOT gated, no login needed), CC-BY-SA-4.0, last modified 21 Sep 2025, ~1.71 GB total: root train.csv (584,286,730 bytes) and val.csv (72,987,708 bytes) plus a rectour24/ subfolder (train_reviews.csv 554 MB, train_users.csv, train_matches.csv, val_*, test_*); ~1.6M English reviews over ~40k accommodations with guest_score, guest_type, guest_country, room_nights, check-in month, accommodation_type/country/star_rating and location_is_beach/ski/city_center tags. The 193-row figure the scout saw is only the broken dataset-viewer preview, not the real files.",
+    "abnb_use": "Gap #9 competitor read and gap #20 party-size/length-of-stay: room_nights is a direct length-of-stay distribution and guest_type a party-composition proxy on a Booking.com panel, with check-in month and beach/ski/city-centre tags allowing a seasonal and destination-mix cut — a richer comparator than the 515k Kaggle review file we hold, and an external benchmark for our Hawaii party-size series.",
+    "sample_plan": "Range-read the heads only, no full download: curl -sL -H 'Range: bytes=0-3000000' 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/train.csv' -o hf_booking_train_head.csv and curl -sL -H 'Range: bytes=0-2000000' 'https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_users.csv' -o hf_booking_rectour24_users_head.csv (~5 MB total; drop the trailing partial line before parsing). Also save the full file listing: curl -s 'https://huggingface.co/api/datasets/Booking-com/accommodation-reviews?full=true'. Do NOT pull the 584 MB or 554 MB files whole.",
+    "tos_or_license_flag": false,
+    "reasoning": "Verified via the HF API that the repo is public and ungated with real multi-hundred-MB CSVs, so the scout's 193-row worry was just the broken viewer preview. The rectour24/ subtree overlaps the RecTour24 user dataset we already hold, but root train.csv/val.csv are the larger ~1.6M-review corpus with room_nights and guest_type, which is a genuine upgrade; CC-BY-SA-4.0 permits use with attribution and share-alike."
+  },
+  {
+    "url": "https://github.com/recsyschallenge/2019",
+    "slug": "recsyschallenge-2019-trivago",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "catalog_only",
+    "category": "competitor_ota",
+    "data_kind": "acquisition_method",
+    "one_line": "Official ACM RecSys Challenge 2019 (trivago) repo, MIT, 496 KB, 101 stars, last push 2020-05-07: baseline recommender, submission verifier and scoring script in src/, docs/problem_definition.md describing the schema — but data/ holds only a .gitkeep, so NO data is committed; the trivago session logs (~15M rows of hotel search/clickout with displayed prices and impression positions, ~900k item_metadata accommodations, Nov 2018 vintage) live on trivago's challenge site behind free registration.",
+    "abnb_use": "Gap #9 (competitor/adjacent OTA demand and pricing) and gap #17 (methods): trivago metasearch clickout sessions with displayed prices are a hotel-side price-sensitivity and search-intent panel for late 2018, and the repo's problem_definition.md plus baseline/scoring code is a reusable template for session-based demand modelling.",
+    "sample_plan": "",
+    "tos_or_license_flag": true,
+    "reasoning": "Confirmed data/ contains only a .gitkeep, so the repo is code and documentation only and there is nothing to sample from GitHub. The actual dataset sits on trivago's host behind a registration/acceptance step and is a single 2018 snapshot, so it is catalogued as a pointer for a human to decide on rather than pulled by an agent."
+  }
+]

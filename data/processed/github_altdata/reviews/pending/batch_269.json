@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:magdamaurice/florence-airbnb-market-analysis",
+  "url": "https://github.com/MagdaMaurice/Florence-Airbnb-Market-Analysis",
+  "name": "Florence-Airbnb-Market-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Interactive Tableau dashboard and market-yield analysis over 13,000+ Florence, Italy Airbnb listings.",
+  "why_useful": "Florence is not in our current named panel; a committed 13k-listing snapshot (if the extract is in-repo, unverified) would add a market, but content otherwise mirrors a single Inside Airbnb pull.",
+  "potential": "low",
+  "geography": "Florence",
+  "license": "unlicensed",
+  "last_activity": "2026-08-20",
+  "size_hint": "~13,000 listings",
+  "time_coverage": "current single snapshot",
+  "duplicate_of_holding": "adds Florence, a city not in our current stated panel",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "Florence is not in our current named panel; a committed 13k-listing snapshot (if the extract is in-repo, unverified) would add a market, but content otherwise mirrors a single Inside Airbnb pull."
+  ]
+ },
+ {
+  "key": "github:giorgostzimas/copenhagen-airbnb-analysis",
+  "url": "https://github.com/GiorgosTzimas/Copenhagen-Airbnb-Analysis",
+  "name": "Copenhagen-Airbnb-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end data pipeline (Python cleaning + Tableau visualization) for Copenhagen Airbnb listings covering pricing, availability, and review patterns.",
+  "why_useful": "A repeatable Copenhagen pipeline; no unique data beyond a standard Inside Airbnb pull, and Copenhagen is not in our current panel so would be a marginal add if formalized.",
+  "potential": "low",
+  "geography": "Copenhagen",
+  "license": "unlicensed",
+  "last_activity": "2026-04-05",
+  "size_hint": "n/a",
+  "time_coverage": "current single snapshot",
+  "duplicate_of_holding": "adds Copenhagen, a city not in our current stated panel",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "A repeatable Copenhagen pipeline; no unique data beyond a standard Inside Airbnb pull, and Copenhagen is not in our current panel so would be a marginal add if formalized."
+  ]
+ },
+ {
+  "key": "github:dante-navaza2005/airbnb-rio-de-janeiro",
+  "url": "https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro",
+  "name": "Airbnb-Rio-de-Janeiro",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed final_data.csv and first_900_rows.csv of Rio de Janeiro Airbnb listings (price-prediction ML project with a Streamlit deploy app). Rio is not in our current 13-city Inside Airbnb panel. This is representative of a pattern: gh search returned roughly 25 near-identical 'Airbnb Rio de Janeiro' repos (Joaogabs1346, fredericmenezes, zaninth, mfre1re, matheusbarroso, MaioranoB, EricoCoutoJr, laraaraujoo, brunobarella, jhonatanpaz95, silvaelaine, IsmaelMiranda11, rafael-silva-ifood, Lucasllops, miranda-amanda, matheusbusch, Edu-Paiva, RStremel, Cpizzle1, Igor-Mello, franklin390, PabloHenrique78, lucashcp, ValberJose, eduardocorrearaujo, fabio-hen x2, joaovictordecastroa), almost all appearing to be a Brazilian data-science-bootcamp assignment reusing the same static Rio listings snapshot (likely a single Kaggle/Inside-Airbnb-derived pull, exact vintage unconfirmed) with 1-3 stars each and no unique data beyond the shared base file.",
+  "why_useful": "Rio de Janeiro is absent from our held Inside Airbnb panel, so a static listings snapshot is technically new-city coverage, but this looks like the same one-time educational dataset forked/re-scaffolded dozens of times with no point-in-time discipline, no vintage metadata, and likely a single stale pull date \u2014 low standalone value versus pulling a fresh Inside Airbnb Rio dump directly if Inside Airbnb covers Rio.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Rio de Janeiro, Brazil",
+  "time_coverage": "unknown single vintage, likely 2020-2022 era Kaggle-style pull",
+  "size_hint": "final_data.csv + first_900_rows.csv, listing-level, size unstated",
+  "license": "MIT (this repo); most of the ~25 near-duplicates have no license declared",
+  "last_activity": "2025-06-11 to 2025-10-03 across the cluster (most recently touched forks/reruns)",
+  "duplicate_of_holding": "Not literally duplicate (Rio is not in our 13-city panel) but functionally near-duplicate across ~25 forks of the same base file",
+  "hits": 1,
+  "themes": [
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Rio de Janeiro is absent from our held Inside Airbnb panel, so a static listings snapshot is technically new-city coverage, but this looks like the same one-time educational dataset forked/re-scaffolded dozens of times with no point-in-time discipline, no vintage metadata, and likely a single stale pull date \u2014 low standalone value versus pulling a fresh Inside Airbnb Rio dump directly if Inside Airbnb covers Rio."
+  ]
+ },
+ {
+  "key": "github:rodolfopardo/airbnb-buenos-aires",
+  "url": "https://github.com/rodolfopardo/Airbnb-Buenos-Aires",
+  "name": "Airbnb-Buenos-Aires (rodolfopardo)",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A single committed listings.csv (3.14MB) of Buenos Aires Airbnb listings, described as prepared for a data-journalism piece for Infobae Econ\u00f3mico (Argentine outlet). Repo dated 2020, 0 stars, no further documentation visible in the file listing beyond the CSV.",
+  "why_useful": "Buenos Aires is not in our current 13-city Inside Airbnb panel; a ~2019-2020 listings snapshot would be an older vintage than anything on the current CDN and gives a starting point for a LatAm market outside our coverage, though it is a single cross-section (no calendar/price-over-time) so value is modest.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Buenos Aires, Argentina",
+  "time_coverage": "~2019-2020 (single snapshot, exact date unconfirmed)",
+  "size_hint": "3.14MB (listings.csv only)",
+  "license": "none declared",
+  "last_activity": "2020-02-14",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Buenos Aires is not in our current 13-city Inside Airbnb panel; a ~2019-2020 listings snapshot would be an older vintage than anything on the current CDN and gives a starting point for a LatAm market outside our coverage, though it is a single cross-section (no calendar/price-over-time) so value is modest."
+  ]
+ },
+ {
+  "key": "github:gemorenov42/airbnb-buenos-aires",
+  "url": "https://github.com/gemorenov42/Airbnb-Buenos-Aires",
+  "name": "Airbnb-Buenos-Aires (gemorenov42)",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single large Jupyter notebook (~11.99MB, 'Microproyecto_1_Aprendizaje_No_Supervisado...ipynb') described as 'Base de datos obtenida de Airbnb Inside [sic], con datos de propiedades de Buenos Aires, Argentina'. No separate CSV visible in the top-level file listing; data likely embedded as notebook output cells or pulled at runtime from Inside Airbnb. Updated 2026-09-04 (very recent), 0 stars.",
+  "why_useful": "If the embedded data is a fresh (Sep 2026) Inside Airbnb pull for Buenos Aires, it would be a current vintage for a city outside our 13-city panel; unconfirmed without opening the notebook cell outputs.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Buenos Aires, Argentina",
+  "time_coverage": "unclear, notebook updated Sep 2026",
+  "size_hint": "11.99MB single .ipynb",
+  "license": "none declared",
+  "last_activity": "2026-09-04",
+  "duplicate_of_holding": "possible duplicate of official Inside Airbnb Buenos Aires dump if that is its source; unverified",
+  "hits": 1,
+  "themes": [
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "If the embedded data is a fresh (Sep 2026) Inside Airbnb pull for Buenos Aires, it would be a current vintage for a city outside our 13-city panel; unconfirmed without opening the notebook cell outputs."
+  ]
+ }
+]

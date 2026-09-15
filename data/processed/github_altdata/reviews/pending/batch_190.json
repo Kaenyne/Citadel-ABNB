@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:ndeogobernard/employment-allocation-toolbox",
+  "url": "https://github.com/ndeogobernard/Employment-Allocation-Toolbox",
+  "name": "Employment-Allocation-Toolbox",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "QCEW employment data ingestion and allocation tool (description-level only; could not confirm README detail or committed data within budget).",
+  "why_useful": "Potential generic QCEW ingestion utility; would need direct inspection to confirm it does anything beyond raw employment counts (no confirmed hospitality/wage angle).",
+  "potential": "low",
+  "gap_targets": [],
+  "license": "unknown",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "last_activity": "2026-07-30",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Potential generic QCEW ingestion utility; would need direct inspection to confirm it does anything beyond raw employment counts (no confirmed hospitality/wage angle)."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/upgo",
+  "url": "https://github.com/UPGo-McGill/upgo",
+  "name": "UPGo-McGill/upgo",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The lab's general-purpose R utility package (DESCRIPTION/NAMESPACE, R/ and man/ folders). Companion package to strr; likely holds shared helpers (DB connections, plotting themes, geocoding helpers) used across all UPGo city reports. No committed datasets found in the repo tree.",
+  "why_useful": "Supporting library for the strr/ghost/raffle ecosystem; only useful in combination with those.",
+  "potential": "low",
+  "hits": 4,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Supporting library for the strr/ghost/raffle ecosystem; only useful in combination with those.",
+   "Supporting tooling for the same AirDNA/STR pipeline as strr; low standalone value but worth noting alongside strr since some strr functions may depend on it.",
+   "Minor \u2014 mostly plumbing for the lab's other repos, but worth knowing it exists if any of the report repos import it as a dependency and we want to reproduce their pipeline.",
+   "Dependency needed to actually run any of the above UPGo-McGill report repos; catalogued for completeness/reproducibility, not independently a data source."
+  ]
+ },
+ {
+  "key": "github:apify/keboola-gmrs",
+  "url": "https://github.com/apify/keboola-gmrs",
+  "name": "apify/keboola-gmrs",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Keboola-platform connector/extractor wrapping the Apify Google Maps Reviews Scraper actor (0 stars, MIT). Thin integration glue, not a scraper itself and no data.",
+  "why_useful": "Marginal \u2014 only useful if the team already runs Keboola pipelines; otherwise the direct scrapers above are more useful.",
+  "potential": "low",
+  "license": "MIT",
+  "size_hint": "code only, thin wrapper",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "last_activity": "2026-07-15",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "subset of the google-maps-reviews-scraper tools already listed",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Marginal \u2014 only useful if the team already runs Keboola pipelines; otherwise the direct scrapers above are more useful."
+  ]
+ },
+ {
+  "key": "github:simberaj/mobilib",
+  "url": "https://github.com/simberaj/mobilib",
+  "name": "mobilib",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (MIT, 81 commits) for processing mobile-positioning data into commuting-interaction matrices, hierarchical settlement models, and functional-region delimitation. No mobile-operator or tourism data is committed; it is a processing toolkit to apply to an MNO dataset a team already holds.",
+  "why_useful": "A ready-made method for turning raw mobile-positioning data into origin-destination flows, directly applicable if the team obtains an MNO/Eurostat-experimental tourism panel later; useful as tooling rather than as a dataset.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "not geography-specific (generic method)",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2024-05-20",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "A ready-made method for turning raw mobile-positioning data into origin-destination flows, directly applicable if the team obtains an MNO/Eurostat-experimental tourism panel later; useful as tooling rather than as a dataset.",
+   "General-purpose method library for turning raw mobile-positioning feeds into interpretable mobility/OD statistics; relevant if the team obtains any MNO-derived feed for a tourism market."
+  ]
+ },
+ {
+  "key": "github:ilmaruduste/mpdsamplingstatistics",
+  "url": "https://github.com/ilmaruduste/MPDSamplingStatistics",
+  "name": "MPDSamplingStatistics",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A program for comparing different Mobile Positioning Data (MPD)-based results against each other with statistical tests \u2014 companion tool to SynthMPDGenerator from the same Estonian mobility-lab ecosystem underlying Eurostat's MNO tourism-statistics pilot.",
+  "why_useful": "Marginal: a validation-methodology tool for MPD-derived statistics (the same family as Eurostat MNO experimental tourism stats), useful only if the team acquires raw MPD panels to cross-check.",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "geography": "not stated",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "license": "unlicensed",
+  "last_activity": "2022-01-19",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Marginal: a validation-methodology tool for MPD-derived statistics (the same family as Eurostat MNO experimental tourism stats), useful only if the team acquires raw MPD panels to cross-check.",
+   "Methodological reference for validating any MNO-derived tourism/mobility proxy the team might build; no data itself."
+  ]
+ }
+]

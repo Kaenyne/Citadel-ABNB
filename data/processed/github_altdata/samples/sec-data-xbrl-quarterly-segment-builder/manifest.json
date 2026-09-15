@@ -1,0 +1,41 @@
+{
+ "slug": "sec-data-xbrl-quarterly-segment-builder",
+ "url": "https://github.com/baimmm6767/sec-data",
+ "sampled": true,
+ "total_bytes": 882258,
+ "files": [
+  "output-examples/AAPL_financials.csv",
+  "output-examples/AMZN_financials.csv",
+  "output-examples/GOOGL_financials.csv",
+  "output-examples/HOOD_financials.csv",
+  "output-examples/MA_financials.csv",
+  "output-examples/PLTR_financials.csv",
+  "output-examples/UBER_financials.csv",
+  "README_upstream.md",
+  "requirements.txt",
+  "LICENSE",
+  "sec_data_head200k.py"
+ ],
+ "rows": "AAPL 253; AMZN 266; GOOGL 317; HOOD 247; MA 225; PLTR 211; UBER 314 (rows = line items; columns = quarters)",
+ "columns": "Category (0_Period_Header, 1_Income_Statement, 2_Balance_Sheet, 3_Cash_Flow, 4a_Segments_Business, 4b_Segments_Geographic_Regions, 4c_Segments_Geographic_Countries, 4d_Segments_Cross_Tabulated, 4e_Operating_Metrics, 5_KPI_Metrics, 6_Disclosures, 7_Concentration_Risk, 8_Integrity_Checks), Label, then one column per fiscal quarter YYYY-Qn (wide format); row 0 carries Period Ending dates",
+ "date_range": "2011-Q1 (AMZN, MA) to 2026-Q2 (AAPL); UBER 2018-Q1..2026-Q1; HOOD 2020-Q1..2026-Q1; PLTR 2019-Q3..2026-Q1; GOOGL 2014-Q3..2026-Q1",
+ "how_pulled": "gh api repos/baimmm6767/sec-data/contents/{,output-examples}; for f in README.md requirements.txt LICENSE output-examples/*_financials.csv: curl -sL -o $f https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/$f; curl -sL -r 0-199999 -o sec_data_head200k.py .../HEAD/sec_data.py; pandas read_csv to describe. Crawler NOT run.",
+ "full_dataset_size": "Repo is ~9.5 MB on GitHub: 7 example CSVs (~640 KB), one 2.27 MB single-file engine sec_data.py, README, web/ HTML viewer. Full data is generated on demand: one CSV (~50-125 KB, 200-320 rows x 30-60 quarters) per ticker by running `python sec_data.py --ticker <T>` against SEC EDGAR (needs arelle + a User-Agent name/email prompt on first run).",
+ "description": "Apache-2.0 Python engine (2 stars, pushed 12 Sep 2026) that converts SEC EDGAR 10-Q/10-K XBRL into wide, modelling-ready quarterly statements: discrete quarters rebuilt from YTD and FY values (Q4 = FY minus 9M), business and geographic segment lines, KPI/operating metrics, concentration-risk disclosures and integrity checks. Grain is one row per line item, one column per fiscal quarter, one file per ticker; the sample holds the seven committed example outputs (AAPL, AMZN, GOOGL, HOOD, MA, PLTR, UBER), the UBER file showing regional revenue splits (US/Canada, EMEA, Asia, LatAm) and segment adjusted EBITDA. For ABNB an analyst would run the engine on ABNB, BKNG, EXPE, MAR, HLT to get consistent quarterly regional revenue and segment margins back to 2011 without a Bloomberg pull, and reuse the Q4-derivation and segment-extraction logic in the peer read-through and margin work.",
+ "issues": "None blocking. Engine not run (first run prompts for name/email to build the SEC User-Agent; that is a keyless EDGAR fetch but was outside this cataloguing pass). sec_data.py is a single 2.27 MB source file; only the first 200 KB is saved as a code sample. Example CSVs are the author's outputs, not independently verified against filings; README warns annual/foreign-filer support is experimental. Very low adoption (2 stars), single maintainer.",
+ "source_urls": [
+  "https://github.com/baimmm6767/sec-data",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/README.md",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/requirements.txt",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/LICENSE",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/sec_data.py",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/output-examples/AAPL_financials.csv",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/output-examples/AMZN_financials.csv",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/output-examples/GOOGL_financials.csv",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/output-examples/HOOD_financials.csv",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/output-examples/MA_financials.csv",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/output-examples/PLTR_financials.csv",
+  "https://raw.githubusercontent.com/baimmm6767/sec-data/HEAD/output-examples/UBER_financials.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

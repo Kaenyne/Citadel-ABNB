@@ -1,0 +1,72 @@
+{
+  "theme": "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos: airbnb new user bookings kaggle",
+    "gh search repos: expedia hotel recommendations kaggle",
+    "gh search repos: trivago recsys challenge",
+    "gh search repos: hotel demand forecasting dataset",
+    "gh search repos: expedia recommendation hotel data",
+    "gh search repos: travel demand forecasting",
+    "gh search repos: hotel booking demand data",
+    "gh search repos: booking.com dataset",
+    "gh api contents check: ahmedsaeedsaid/Airbnb-New-User-Bookings-kaggle",
+    "gh api contents check: pc90/Airbnb-New-User-Bookings---Kaggle-Competition",
+    "gh api contents check: RyanKopa/Airbnb-New-User-Bookings-Kaggle-Competition",
+    "gh api contents check: markrofail/airbnb-new-user-bookings-kaggle-",
+    "WebFetch: FabioAchilli/Excel-Data-Analysis-Hotel-Booking-Demand-Huge-DataSet",
+    "WebFetch: good0boy/Hotel-reservation-data-analysis"
+  ],
+  "candidates": [
+    {
+      "url": "https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings",
+      "name": "Airbnb New User Bookings (Kaggle competition data itself, not a repo)",
+      "category": "str_airbnb_direct",
+      "data_kind": "pointer_to_external_host",
+      "what_it_holds": "train_users_2.csv / test_users.csv (~275k Airbnb user signups 2010-2014 with device, marketing channel, demographics, and first-booking destination country), sessions.csv (~10M web/app action-type events for a subset of users, 2014), age_gender_bkts.csv, countries.csv. Checked ~10 GitHub mirrors of solutions (Samer-Haddad/COMP9417-Project, pc90/Airbnb-New-User-Bookings---Kaggle-Competition, karthikhegde05/Airbnb-new-user-booking-competition, MadhumitaRoy/AirbnbNewUserBookings_Kaggle_Multi-Classification, ahmedsaeedsaid/Airbnb-New-User-Bookings-kaggle, rtlatimer/Airbnb-New-User-Bookings-Kaggle, Maram-Elsayed/Airbnb-New-User-Bookings-Kaggle, markrofail/airbnb-new-user-bookings-kaggle-, chriszeng8/Airbnb-New-User-Bookings-Kaggle-2016, RyanKopa/Airbnb-New-User-Bookings-Kaggle-Competition) via gh api contents listings on 4 of them plus repo browsing on the rest: NONE commit the raw CSVs, all contain only notebooks/scripts/submission images that assume the Kaggle data is downloaded separately (which requires a Kaggle login, out of scope per the sanctioned-sources rule).",
+      "why_useful": "If the raw files existed in a repo they would be a pre-account-freeze (2010-2014) global user-acquisition and session-behavior panel for Airbnb itself -- interesting for host/guest engagement history (gap 15/company-structure adjacent, gap 5 engagement) -- but the data is 10+ years stale (pre-2015, well before the forecast window) and every mirror checked is a solutions notebook with no committed data, so this fails the cataloguing bar as a GitHub asset. Flagging only so nobody re-searches this exact query expecting a hit.",
+      "potential": "low",
+      "geography": "Global (destination countries), user base skews US signups",
+      "time_coverage": "Account creation 2010-2014; session log ~2014 only",
+      "size_hint": "~275k users, ~10M session rows (on Kaggle, not on GitHub)",
+      "license": "Kaggle competition rules (non-commercial); no data license attached in any mirror",
+      "last_activity": "Most mirrors 2016-2023, all now stale",
+      "data_kind_detail": "",
+      "duplicate_of_holding": "",
+      "gap_targets": []
+    },
+    {
+      "url": "https://github.com/FabioAchilli/Excel-Data-Analysis-Hotel-Booking-Demand-Huge-DataSet",
+      "name": "Excel-Data-Analysis-Hotel-Booking-Demand-Huge-DataSet",
+      "category": "hotel_lodging",
+      "data_kind": "pointer_to_external_host",
+      "what_it_holds": "Re-analysis (in two 35MB+ OneDrive-hosted Excel workbooks, not committed to git) of the well-known Antonio/Almeida/Nunes 'Hotel Booking Demand' Kaggle dataset -- 119,390 rows, city + resort hotel in the Algarve/Lisbon area, Jul 2015-Aug 2017, restricted here to the Resort-hotel/2016 subset (18,567 rows, 44 columns, ~800k cells). CC0-1.0 licensed repo, but the actual data lives off-GitHub on OneDrive and is not linked to a stable public URL in the repo.",
+      "why_useful": "Same underlying dataset already held by the team (Portugal hotel-booking demand, Antonio/Almeida/Nunes). This mirror adds nothing longer, older, or finer-grained -- it is a smaller single-year, single-property subset of data already in hand. Catalogued only to confirm no incremental value.",
+      "potential": "low",
+      "geography": "Algarve, Portugal (resort hotel only, subset of the two-hotel original)",
+      "time_coverage": "2016 only (subset of original 2015-2017)",
+      "size_hint": "18,567 rows / ~800k cells (subset); original full dataset 119,390 rows",
+      "license": "CC0-1.0 (repo); underlying data license per original Kaggle dataset",
+      "last_activity": "2024-07-24",
+      "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held per CONTEXT.md",
+      "gap_targets": []
+    },
+    {
+      "url": "https://github.com/good0boy/Hotel-reservation-data-analysis",
+      "name": "Hotel-reservation-data-analysis",
+      "category": "hotel_lodging",
+      "data_kind": "pointer_to_external_host",
+      "what_it_holds": "Single Jupyter notebook (Chinese-language) re-analysing the same Kaggle Hotel Booking Demand dataset (city + resort hotel, Portugal) for cancellation prediction; no raw data files committed to the repo, references the Kaggle source only.",
+      "why_useful": "No incremental data over what the team already holds.",
+      "potential": "low",
+      "geography": "Portugal",
+      "time_coverage": "2015-2017 (same as original dataset, referenced not committed)",
+      "size_hint": "n/a (no data committed)",
+      "license": "none declared",
+      "last_activity": "2026-07-14",
+      "duplicate_of_holding": "Portugal hotel-booking demand dataset already held",
+      "gap_targets": []
+    }
+  ],
+  "notes": "This theme was largely a dead end under the cataloguing bar. Two well-known Kaggle travel competitions dominate GitHub search results for these keywords: (1) 'Airbnb New User Bookings' (2015-16 recruiting competition, destination-country classification, data circa 2010-2014) and (2) 'Expedia Hotel Recommendations' (2016 ICDM competition, click/booking-log data circa 2013-2014, ~37M rows on Kaggle). Searched ~10-15 GitHub mirrors/solution repos for each and spot-checked file listings on 4 via `gh api contents`: every single one contains only notebooks, scripts, or submission artifacts -- none commit the actual competition CSVs (which would require pulling from Kaggle, a login-gated host, so even if found they would not clear the 'sanctioned sources' bar without a human ok). 'Hotel booking demand' searches return 25+ near-identical EDA/cancellation-prediction notebooks all reusing the exact Portugal city/resort dataset the team already holds -- none add rows, years, or geography beyond what CONTEXT.md lists, so per the exclusion rule ('pure tutorials/notebooks re-analysing ... with nothing new') they are excluded rather than listed. Trivago RecSys Challenge and generic 'hotel demand forecasting dataset' searches returned zero GitHub repos matching those exact terms. Broader 'travel demand forecasting' searches surfaced only urban-transportation-planning tooling (trip/traffic assignment models, e.g. wsp-sag/wsp-balsa) and student portfolio projects with synthetic or toy data -- a different domain (commuter/transit modeling) from tourism/short-term-rental demand, so not flagged. Net: no candidate here rises above 'low' potential; the Kaggle-travel-competition-on-GitHub angle appears exhausted for keyword search. A plausible next angle for a future scout on this theme: search GitHub for people who mirrored the Kaggle dataset FILES themselves via Kaggle API download scripts with output committed (e.g. search `filename:train_users_2.csv` or `filename:expedia-hotel-recommendations` via gh search code, which this scout was capped at one use of and did not spend), or search for the actual RecSys Challenge 2019 (Trivago) and 2022 (Dressipi/travel) organizer repos directly by name rather than generic keywords."
+}

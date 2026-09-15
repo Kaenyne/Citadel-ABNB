@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:gaspa93/tripadvisor-scraper",
+  "url": "https://github.com/gaspa93/tripadvisor-scraper",
+  "name": "tripadvisor-scraper (gaspa93)",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "General TripAdvisor scraper (8 stars), updated 2026-09-09 (very recent).",
+  "why_useful": "Recently active alternative TripAdvisor pull method; unverified scope beyond hotels (may cover attractions/restaurants too).",
+  "potential": "low",
+  "geography": "Global",
+  "time_coverage": "Live pull, current",
+  "size_hint": "N/A (method only)",
+  "license": "unspecified",
+  "last_activity": "2026-09-09",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "overlaps other TripAdvisor scrapers listed above",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Recently active alternative TripAdvisor pull method; unverified scope beyond hotels (may cover attractions/restaurants too)."
+  ]
+ },
+ {
+  "key": "github:ortizdavidg/marriott-hilton-ihg-hotel-data-scraper",
+  "url": "https://github.com/ortizdavidg/marriott-hilton-ihg-hotel-data-scraper",
+  "name": "marriott-hilton-ihg-hotel-data-scraper",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PHP scraper (1 commit, no license) that pulls per-property location, contact info, images, amenities and room/policy details from Marriott, Hilton and IHG US hotel pages. Placeholder /data/hotel_list.txt and room_list.txt only \u2014 no scraped data actually committed.",
+  "why_useful": "A method (not data) for pulling chain unit-level property lists across the three big chains; could in principle be adapted to build a unit-count census, but it targets amenities/room detail, not RevPAR, pipeline, or loyalty figures, and holds zero committed rows today.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "unknown (1 commit, no date surfaced)",
+  "geography": "US",
+  "time_coverage": "n/a (point scrape, no data committed)",
+  "size_hint": "0 rows committed",
+  "gap_targets": [
+   8,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel chain and REIT public datasets: loyalty program sizes, unit counts, Marriott/Hilton/Hyatt pipelines, hotel REIT portfolio RevPAR by market from filings"
+  ],
+  "why_all": [
+   "A method (not data) for pulling chain unit-level property lists across the three big chains; could in principle be adapted to build a unit-count census, but it targets amenities/room detail, not RevPAR, pipeline, or loyalty figures, and holds zero committed rows today."
+  ]
+ },
+ {
+  "key": "github:dgeopendata/integrated-urban-planning-using-public-transport-and-hotel-industry-data-in-abu-dhabi",
+  "url": "https://github.com/DGEOpendata/integrated-urban-planning-using-public-transport-and-hotel-industry-data-in-abu-dhabi",
+  "name": "integrated-urban-planning-using-public-transport-and-hotel-industry-data-in-abu-dhabi",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Auto-generated 'Dataset Publisher AI' repo (MIT license) describing an Abu Dhabi open-data study combining public-transport ridership and hotel-industry occupancy/demand data; no raw file evidently committed in the description surfaced by search, points back to Abu Dhabi DGE open-data portal.",
+  "why_useful": "Non-US hotel occupancy/demand series tied to a government open-data portal \u2014 a template for finding similar govt-hotel-data portals elsewhere, but Abu Dhabi hotel demand is not a direct ABNB driver market of note; marginal.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2025-05",
+  "geography": "Abu Dhabi, UAE",
+  "time_coverage": "unclear",
+  "size_hint": "unclear, likely a report/notebook not a raw panel",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel chain and REIT public datasets: loyalty program sizes, unit counts, Marriott/Hilton/Hyatt pipelines, hotel REIT portfolio RevPAR by market from filings"
+  ],
+  "why_all": [
+   "Non-US hotel occupancy/demand series tied to a government open-data portal \u2014 a template for finding similar govt-hotel-data portals elsewhere, but Abu Dhabi hotel demand is not a direct ABNB driver market of note; marginal."
+  ]
+ },
+ {
+  "key": "github:stayapi/stayapi-agent",
+  "url": "https://github.com/stayapi/stayapi-agent",
+  "name": "stayapi-agent",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CLI/API client (StayAPI, commercial service with free tier) that pulls live hotel, vacation-rental and restaurant data from Booking.com, Airbnb, Google Hotels, TripAdvisor and more as JSON.",
+  "why_useful": "A live multi-OTA pull tool spanning both hotels and Airbnb-adjacent vacation rentals could be a one-command way to grab current comparator pricing, but it is a paid API wrapper with only a small free quota, not a dataset, and touches airbnb.com directly which the repo rules flag as a human ToS call.",
+  "potential": "low",
+  "license": "MIT (client code only; underlying API is commercial)",
+  "last_activity": "2026-08",
+  "geography": "global",
+  "time_coverage": "live/current only, not historical",
+  "size_hint": "n/a, API wrapper",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel chain and REIT public datasets: loyalty program sizes, unit counts, Marriott/Hilton/Hyatt pipelines, hotel REIT portfolio RevPAR by market from filings"
+  ],
+  "why_all": [
+   "A live multi-OTA pull tool spanning both hotels and Airbnb-adjacent vacation rentals could be a one-command way to grab current comparator pricing, but it is a paid API wrapper with only a small free quota, not a dataset, and touches airbnb.com directly which the repo rules flag as a human ToS call."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/host-hotels-and-resorts",
+  "url": "https://github.com/api-evangelist/host-hotels-and-resorts",
+  "name": "host-hotels-and-resorts",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A third-party 'API profile' catalog entry for Host Hotels & Resorts (HST), a lodging REIT. Contains only company/API metadata (apis.yml, provenance.yml, README) and explicitly states no public API exists for the company. No financial, RevPAR, or portfolio data present.",
+  "why_useful": "Not directly useful as-is (no data), but flags that api-evangelist (github.com/api-evangelist) maintains similar catalog-only profile repos for many hotel REITs (Service Properties Trust, Gaming & Leisure Properties) that could be scanned for any that DO have public data/APIs listed, and confirms none of the major hotel REITs expose a public API.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "current snapshot only",
+  "size_hint": "tiny metadata repo, no data files",
+  "license": "unclear/unspecified",
+  "last_activity": "recent (api-evangelist actively maintains company profiles)",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel chain and REIT public datasets: loyalty program sizes, unit counts, Marriott/Hilton/Hyatt pipelines, hotel REIT portfolio RevPAR by market from filings"
+  ],
+  "why_all": [
+   "Not directly useful as-is (no data), but flags that api-evangelist (github.com/api-evangelist) maintains similar catalog-only profile repos for many hotel REITs (Service Properties Trust, Gaming & Leisure Properties) that could be scanned for any that DO have public data/APIs listed, and confirms none of the major hotel REITs expose a public API."
+  ]
+ }
+]

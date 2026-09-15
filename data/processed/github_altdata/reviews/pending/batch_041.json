@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:predicthq/aws-sagemaker-demand-forecasting-example",
+  "url": "https://github.com/predicthq/aws-sagemaker-demand-forecasting-example",
+  "name": "aws-sagemaker-demand-forecasting-example",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed worked example (also mirrored as an official aws-samples repo) forecasting demand with AWS SageMaker XGBoost using PredictHQ event features as exogenous regressors.",
+  "why_useful": "Another event-driven demand-forecasting method template (events -> XGBoost demand forecast) that could be adapted to nights/ADR around World Cup or major conferences, though it depends on a live PredictHQ feed rather than committed data.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "size_hint": "notebook/example code",
+  "license": "MIT",
+  "last_activity": "2023-08-12",
+  "gap_targets": [
+   11
+  ],
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Another event-driven demand-forecasting method template (events -> XGBoost demand forecast) that could be adapted to nights/ADR around World Cup or major conferences, though it depends on a live PredictHQ feed rather than committed data.",
+   "A concrete, runnable nowcasting-with-mixed-frequency-events template (gap #17) that could be adapted to regress ABNB nights/ADR residuals on an event-density feature built from PredictHQ."
+  ]
+ },
+ {
+  "key": "github:jfjelstul/worldcup",
+  "url": "https://github.com/jfjelstul/worldcup",
+  "name": "jfjelstul/worldcup (Fjelstul World Cup Database)",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "27 linked datasets (>1.5M data points) on tournaments, teams, players, managers, referees, stadiums, matches, goals, bookings for all 22 men's World Cups (1930-2022) and 9 women's World Cups (1991-2019); available as R package, .RData, .csv, .json, and SQLite.",
+  "why_useful": "Deep historical World Cup base-rate data (host-city attendance/stadium capacity patterns) useful for calibrating how prior World Cups moved host-country travel/lodging demand, though it stops at 2022 and does not itself cover 2026.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global (past host countries)",
+  "time_coverage": "1930-2022 (men), 1991-2019 (women)",
+  "license": "CC-BY-SA 4.0",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Deep historical World Cup base-rate data (host-city attendance/stadium capacity patterns) useful for calibrating how prior World Cups moved host-country travel/lodging demand, though it stops at 2022 and does not itself cover 2026."
+  ]
+ },
+ {
+  "key": "github:nager/nager.date",
+  "url": "https://github.com/nager/Nager.Date",
+  "name": "nager/Nager.Date",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Open-source public-holiday data and a free REST API (nagerholidays.com/api/v3) covering 200+ countries; holiday objects carry date, local/English name, country code, subdivision, and type (Public/Bank/School/Authorities/Optional/Observance); MIT licensed, 1.4k stars, 1,706 commits, also ships as NuGet/Docker.",
+  "why_useful": "Alternative/cross-check source to the Python `holidays` package for per-country holiday calendars, reachable via a plain HTTP GET with no auth for a quick one-off pull (e.g. from a notebook without pandas/holidays installed).",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global, 200+ countries",
+  "time_coverage": "any year via API",
+  "license": "MIT (API free tier; some offline packages need a sponsor key)",
+  "last_activity": "not confirmed exact date; actively maintained",
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Alternative/cross-check source to the Python `holidays` package for per-country holiday calendars, reachable via a plain HTTP GET with no auth for a quick one-off pull (e.g. from a notebook without pandas/holidays installed).",
+   "A second, independently maintained global holiday source (cross-check against `holidays`/vacanza) with a live queryable API -- useful for point-in-time holiday-calendar snapshots by country for the seasonality/party-size and regional-mix work, and distinguishes School holidays specifically (relevant to family/group travel timing)."
+  ]
+ },
+ {
+  "key": "github:peopledoc/workalendar",
+  "url": "https://github.com/peopledoc/workalendar",
+  "name": "peopledoc/workalendar",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python module computing legal/religious holidays and working-day arithmetic for 80+ countries/territories including US state-level, Canada, Brazil, Mexico, Argentina, Chile, China, Japan, Korea, India, Australia, NZ, South Africa and more; includes precomputed astronomical data (equinoxes, solar terms) for 1991-2051; MIT license, ~1,377 commits, 950 stars.",
+  "why_useful": "Second independent holiday/working-day calendar engine with stronger LatAm/APAC subdivision coverage than some alternatives, useful for regional (LatAm/APAC) seasonality controls referenced in gap #11 and cross-checking the `holidays` package.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "80+ countries, strong LatAm/APAC/Africa coverage",
+  "time_coverage": "1991-2051 for astronomical holidays; general holiday rules for any year",
+  "license": "MIT",
+  "last_activity": "active, 950 stars",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Second independent holiday/working-day calendar engine with stronger LatAm/APAC subdivision coverage than some alternatives, useful for regional (LatAm/APAC) seasonality controls referenced in gap #11 and cross-checking the `holidays` package."
+  ]
+ },
+ {
+  "key": "github:tech-conferences/conference-data",
+  "url": "https://github.com/tech-conferences/conference-data",
+  "name": "tech-conferences/conference-data (confs.tech backing data)",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "JSON files (one per topic/year) of tech conferences worldwide with fields for name, start/end dates, city/country location, CFP dates, social handles; 13,987 commits, community-maintained, MIT license, covers many years across dozens of tech topics (JS, Python, Rust, data, etc.).",
+  "why_useful": "A machine-readable conference calendar with dates and host cities that can proxy business-travel demand spikes in specific ABNB markets (partial coverage of the 'conferences' part of gap #11); skewed toward software/tech conferences only, not a general conference census.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global, city-level",
+  "time_coverage": "multi-year, ongoing (historical + upcoming)",
+  "license": "MIT",
+  "last_activity": "actively maintained (19 open PRs, 4 open issues at capture)",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "A machine-readable conference calendar with dates and host cities that can proxy business-travel demand spikes in specific ABNB markets (partial coverage of the 'conferences' part of gap #11); skewed toward software/tech conferences only, not a general conference census."
+  ]
+ }
+]

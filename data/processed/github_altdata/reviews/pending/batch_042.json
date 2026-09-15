@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:cyanheads/fema-mcp-server",
+  "url": "https://github.com/cyanheads/fema-mcp-server",
+  "name": "fema-mcp-server",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP (Model Context Protocol) server / API client exposing FEMA OpenFEMA endpoints: disaster declarations, public-assistance grants, individual/household housing aid, and NFIP flood-insurance claims. Actively maintained TypeScript project (docs/, tests/, CI, package.json), last updated 24 Aug 2026, Apache-2.0.",
+  "why_useful": "Turns FEMA's official disaster-declaration and NFIP flood-claims feeds into a clean, scriptable pull for gap 11 (hurricanes/wildfires/floods as shocks to specific STR markets) and could be repointed to pull county-level declarations timed against Airbnb market calendars.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-24",
+  "size_hint": "small (source code only, no committed data)",
+  "geography": "US (FEMA jurisdiction)",
+  "time_coverage": "current OpenFEMA API coverage (1953-present per OpenFEMA)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Turns FEMA's official disaster-declaration and NFIP flood-claims feeds into a clean, scriptable pull for gap 11 (hurricanes/wildfires/floods as shocks to specific STR markets) and could be repointed to pull county-level declarations timed against Airbnb market calendars.",
+   "One-command programmatic pull of the same OpenFEMA declaration + assistance + NFIP-claims data as the rearc mirror, but live and queryable, including NFIP flood claims which give a dollar-loss proxy per county/disaster not in the plain declarations file."
+  ]
+ },
+ {
+  "key": "github:msimotwq/catastrophe-risk-dashboard",
+  "url": "https://github.com/Msimotwq/catastrophe-risk-dashboard",
+  "name": "catastrophe-risk-dashboard",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Streamlit catastrophe-risk dashboard with an actually-committed data file `emdat_disasters.xlsx` (confirmed via directory listing) plus `Cat modelling.py` and `Disaster dashboard.py`. Small hobby project, 0 stars, updated 12 Mar 2026.",
+  "why_useful": "A directly downloadable EM-DAT extract (global disaster records incl. storms/floods/wildfires) already committed to a repo rather than requiring an EM-DAT account signup, useful as a quick cross-check source for gap 11 regional shock timing (LatAm/APAC per gaps 7/11).",
+  "potential": "medium",
+  "gap_targets": [
+   11,
+   7
+  ],
+  "license": "none listed",
+  "last_activity": "2026-03-12",
+  "size_hint": "one xlsx file, likely a few thousand rows (typical EM-DAT extract)",
+  "geography": "global",
+  "time_coverage": "unspecified EM-DAT vintage (likely 2000s-2020s based on typical extracts)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A directly downloadable EM-DAT extract (global disaster records incl. storms/floods/wildfires) already committed to a repo rather than requiring an EM-DAT account signup, useful as a quick cross-check source for gap 11 regional shock timing (LatAm/APAC per gaps 7/11)."
+  ]
+ },
+ {
+  "key": "github:kylescorner/earth-engine-wildfire-data",
+  "url": "https://github.com/KylesCorner/Earth-Engine-Wildfire-Data",
+  "name": "Earth-Engine-Wildfire-Data",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit for downloading, processing, and preparing wildfire perimeter data from Google Earth Engine (GEE), supporting both historical and forecasted wildfire datasets; generates config files for wildfire modeling workflows. MIT licensed, 4 stars, updated 22 Nov 2025.",
+  "why_useful": "A scriptable, non-Airbnb-site method to pull historical wildfire perimeters (could target Maui 2023 and LA Jan 2025 fires specifically) for gap 11 tourism-shock timing/severity, more current than static NIFC/GeoMAC dumps.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "MIT",
+  "last_activity": "2025-11-22",
+  "size_hint": "code only, pulls data on demand from GEE",
+  "geography": "global (wherever GEE fire products cover, incl. US)",
+  "time_coverage": "historical + forecasted, exact years unspecified",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A scriptable, non-Airbnb-site method to pull historical wildfire perimeters (could target Maui 2023 and LA Jan 2025 fires specifically) for gap 11 tourism-shock timing/severity, more current than static NIFC/GeoMAC dumps."
+  ]
+ },
+ {
+  "key": "github:iloveburritos/datacenters-wildfires",
+  "url": "https://github.com/iloveburritos/datacenters-wildfires",
+  "name": "datacenters-wildfires",
+  "category": "events_weather_shocks",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Interactive map site combining US data-center locations with historical wildfire perimeters (NIFC/WFIGS, 2016-Sep 2026) per its description. Directory listing shows only `us_data_centers_100mw_plus.csv` and an HTML map committed; wildfire perimeter data itself is pulled live from the NIFC/WFIGS API, not stored in-repo. Updated 10 Sep 2026 (very fresh).",
+  "why_useful": "Confirms NIFC/WFIGS as a live, current (through Sep 2026) wildfire-perimeter API worth querying directly for gap 11 (Maui/LA fires and any 2026 wildfire events); the repo itself is not a data store but demonstrates a working integration pattern.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "none listed",
+  "last_activity": "2026-09-10",
+  "size_hint": "one small CSV + one HTML file; no wildfire data committed",
+  "geography": "US",
+  "time_coverage": "2016-Sep 2026 (via live NIFC/WFIGS API, not committed)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Confirms NIFC/WFIGS as a live, current (through Sep 2026) wildfire-perimeter API worth querying directly for gap 11 (Maui/LA fires and any 2026 wildfire events); the repo itself is not a data store but demonstrates a working integration pattern.",
+   "A recent, actively updated (pushed 2026-09-10) mirror/consumer of the authoritative US wildfire-perimeter feed (NIFC/WFIGS) reaching into 2026, i.e. covers the LA fires (Jan 2025) and any 2026 events relevant to the pitch window."
+  ]
+ },
+ {
+  "key": "github:cran/noaastormevents",
+  "url": "https://github.com/cran/noaastormevents",
+  "name": "noaastormevents (CRAN mirror)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Read-only GitHub mirror of the CRAN R package `noaastormevents`, an R client for exploring NOAA's Storm Events Database (1950-present: tornadoes, hurricanes/tropical storms, floods, hail, high wind, wildfire, heat, etc., county-level with property/crop damage estimates).",
+  "why_useful": "Gives a clean, maintained R interface to the authoritative NOAA county-level storm-events feed (hurricanes, wildfires, heatwaves all included as event types) for gap 11; could be used to build a county-to-STR-market crosswalk for shock timing/severity.",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "license": "not specified in listing (CRAN package, check upstream)",
+  "last_activity": "2021-01-29",
+  "size_hint": "package code only; source DB has 1.7M+ records per a related repo's description",
+  "geography": "US (county level)",
+  "time_coverage": "1950-present",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Gives a clean, maintained R interface to the authoritative NOAA county-level storm-events feed (hurricanes, wildfires, heatwaves all included as event types) for gap 11; could be used to build a county-to-STR-market crosswalk for shock timing/severity."
+  ]
+ }
+]

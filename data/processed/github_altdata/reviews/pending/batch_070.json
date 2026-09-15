@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:ct-data-collaborative/2022-tract-crosswalk",
+  "url": "https://github.com/CT-Data-Collaborative/2022-tract-crosswalk",
+  "name": "CT-Data-Collaborative/2022-tract-crosswalk",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "2010-vintage census tract crosswalk file mapping Connecticut tracts to town, county, county-equivalent, ZIP code and PUMA.",
+  "why_useful": "Template/example of a state-level tract-to-place crosswalk; useful as a pattern for building similar tract-to-city crosswalks for other STR markets, though state coverage (CT) is narrow for ABNB purposes.",
+  "potential": "low",
+  "size_hint": "single state crosswalk table",
+  "geography": "Connecticut, USA",
+  "time_coverage": "2010 census vintage, updated 2026",
+  "license": "none stated",
+  "last_activity": "2026-05-14",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "Template/example of a state-level tract-to-place crosswalk; useful as a pattern for building similar tract-to-city crosswalks for other STR markets, though state coverage (CT) is narrow for ABNB purposes."
+  ]
+ },
+ {
+  "key": "github:gstinoco/citc-airbnb",
+  "url": "https://github.com/gstinoco/CITC-airbnb",
+  "name": "gstinoco/CITC-airbnb",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python pipeline (`Correlations.py`) computing Haversine distances and correlation matrices between Airbnb host/listing locations and cultural points of interest, with example host and cultural-place data bundled as tar.gz files in `Information/`. Also archived on Zenodo (10.5281 DOI family) by Gerardo Tinoco-Guerrero.",
+  "why_useful": "A ready-made method for host-to-attraction proximity correlation analysis, potentially reusable for professional-host / tourism-density work, but the bundled data is example-only (city/time range not documented) so it is a method, not a new dataset.",
+  "potential": "low",
+  "geography": "unspecified (example data only)",
+  "time_coverage": "unspecified",
+  "size_hint": "code + small example archives",
+  "license": "MIT",
+  "last_activity": "2024 (28 commits)",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "A ready-made method for host-to-attraction proximity correlation analysis, potentially reusable for professional-host / tourism-density work, but the bundled data is example-only (city/time range not documented) so it is a method, not a new dataset."
+  ]
+ },
+ {
+  "key": "github:yuxiawang1992/migration-patterns-in-china",
+  "url": "https://github.com/yuxiawang1992/migration-patterns-in-China",
+  "name": "migration-patterns-in-China",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis of migration patterns in China extracted from mobile positioning data (Apache-2.0). Appears to be code/analysis over a mobile-positioning-derived migration dataset (likely Baidu or similar Chinese MPD source); exact data provenance not confirmed by fetch.",
+  "why_useful": "If the underlying data or extraction method generalizes, it is a rare open example of MPD-based domestic movement statistics for a market (China) largely absent from our current holdings; low confidence on data reusability without further inspection.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "China",
+  "time_coverage": "not confirmed",
+  "size_hint": "not confirmed",
+  "license": "Apache-2.0",
+  "last_activity": "2019-11-15",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "If the underlying data or extraction method generalizes, it is a rare open example of MPD-based domestic movement statistics for a market (China) largely absent from our current holdings; low confidence on data reusability without further inspection."
+  ]
+ },
+ {
+  "key": "github:brightaboh/mobile_data_analysis",
+  "url": "https://github.com/BrightABOH/Mobile_data_analysis",
+  "name": "Mobile_data_analysis (CDR-Based Tourism Analytics in Rwanda)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A single script (CDR_analysis.py) plus LICENSE \u2014 no data committed. Described as leveraging Call Detail Records (CDR) and ML to analyze tourist mobility patterns, visitor flows, and economic impact in Rwanda; almost certainly built against the well-known 'Data for Development' (D4D) Rwanda mobile-operator CDR dataset (MTN Rwanda / NISR), which is not itself in this repo and requires a separate data-use application to the original challenge organizers.",
+  "why_useful": "Confirms a working CDR-to-tourism-mobility methodology exists for at least one country's real operator CDR release (Rwanda D4D), which is the closest real-world analogue to an MNO tourism-statistics pipeline; the underlying D4D Rwanda dataset itself (external, application-gated) would be the actual find if pursued.",
+  "potential": "low",
+  "geography": "Rwanda",
+  "time_coverage": "unspecified (D4D Rwanda challenge data, ~2013-2016 vintage typically)",
+  "size_hint": "code only; underlying CDR dataset external and access-gated",
+  "license": "MIT (for the code)",
+  "last_activity": "2025-03-04",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Confirms a working CDR-to-tourism-mobility methodology exists for at least one country's real operator CDR release (Rwanda D4D), which is the closest real-world analogue to an MNO tourism-statistics pipeline; the underlying D4D Rwanda dataset itself (external, application-gated) would be the actual find if pursued."
+  ]
+ },
+ {
+  "key": "github:v3ishnavi/sustainable-tourism-impact-in-decision-support-system",
+  "url": "https://github.com/V3ishnavi/Sustainable-Tourism-Impact-in-Decision-Support-System",
+  "name": "Sustainable-Tourism-Impact-in-Decision-Support-System",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "Small student project analysing tourism sustainability metrics (Total Revenue from Tourism, Tourism Employment Rate, Carbon Footprint Per Tourist, Waste Generated Per Tourist, Resident Satisfaction Index, Water Consumption per Tourist, GDP Contribution from Tourism, Sustainability Policy Compliance) via Excel then Power BI. Geography/time period not confirmed; appears to be a coursework-style dataset, possibly synthetic or a compiled multi-country panel.",
+  "why_useful": "If the underlying panel is real (not illustrative), 'Waste Generated Per Tourist' and 'Water Consumption per Tourist' are exactly the utility/waste occupancy-proxy metrics this theme targets, across what may be a cross-country panel \u2014 worth a closer look to confirm data provenance.",
+  "potential": "low",
+  "geography": "unconfirmed, possibly multi-country",
+  "time_coverage": "unconfirmed",
+  "size_hint": "small (Excel/Power BI project)",
+  "license": "none specified",
+  "last_activity": "2025-07-15",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "If the underlying panel is real (not illustrative), 'Waste Generated Per Tourist' and 'Water Consumption per Tourist' are exactly the utility/waste occupancy-proxy metrics this theme targets, across what may be a cross-country panel \u2014 worth a closer look to confirm data provenance."
+  ]
+ }
+]

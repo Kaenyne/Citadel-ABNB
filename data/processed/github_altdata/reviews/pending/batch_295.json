@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:karansgotit/seattle-flight-reliability",
+  "url": "https://github.com/karansgotit/seattle-flight-reliability",
+  "name": "karansgotit/seattle-flight-reliability",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Historical reliability comparison tool for SEA-origin domestic flights built on BTS On-Time Performance data; MIT licensed, updated 12 Sep 2026 (most recently active BTS repo found).",
+  "why_useful": "Recency and MIT license make it a plausible template for a fresh BTS On-Time pull script even though scope (Seattle-only reliability) is narrow and unrelated directly to nights/ADR; low direct fit to numbered gaps but real and current.",
+  "potential": "low",
+  "duplicate_of_holding": "None specific; generic BTS OTP analysis",
+  "gap_targets": [
+   10
+  ],
+  "geography": "US, Seattle-origin flights",
+  "time_coverage": "unspecified historical range",
+  "size_hint": "unknown",
+  "license": "MIT",
+  "last_activity": "2026-09-12",
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "Recency and MIT license make it a plausible template for a fresh BTS On-Time pull script even though scope (Seattle-only reliability) is narrow and unrelated directly to nights/ADR; low direct fit to numbered gaps but real and current."
+  ]
+ },
+ {
+  "key": "github:zaynahjaved/bloomberg-flight-delays",
+  "url": "https://github.com/zaynahjaved/bloomberg-flight-delays",
+  "name": "zaynahjaved/bloomberg-flight-delays",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "US flight delay prediction (48+ min arrival delay) using BTS On-Time Performance data and XGBoost.",
+  "why_useful": "Generic ML-on-BTS-OTP project; catalogued only because BTS pull/clean code may be reusable for a T-100-style capacity/delay cross-check, but no unique data beyond the standard BTS download.",
+  "potential": "low",
+  "duplicate_of_holding": "Generic BTS OTP re-use, no new data",
+  "gap_targets": [
+   10
+  ],
+  "geography": "US",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "2026-08-21",
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "Generic ML-on-BTS-OTP project; catalogued only because BTS pull/clean code may be reusable for a T-100-style capacity/delay cross-check, but no unique data beyond the standard BTS download."
+  ]
+ },
+ {
+  "key": "github:lennyhuntley/csci-192-final-project",
+  "url": "https://github.com/lennyhuntley/csci-192-final-project",
+  "name": "lennyhuntley/csci-192-final-project",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Serverless AWS data-lakehouse pipeline ingesting the full BTS On-Time Performance dataset (carrier benchmarking, schedule padding, airspeed recovery metrics) as a course final project.",
+  "why_useful": "Pipeline-only (S3/Lambda/Glue-style ELT for BTS OTP); potentially reusable as an ingestion template for a full historical BTS pull rather than month-by-month manual downloads, but no unique dataset.",
+  "potential": "low",
+  "duplicate_of_holding": "Generic BTS OTP ingestion",
+  "gap_targets": [
+   10
+  ],
+  "geography": "US",
+  "time_coverage": "unspecified, described as full BTS OTP history",
+  "size_hint": "unknown, \"lakehouse\" implies full multi-year corpus",
+  "license": "other",
+  "last_activity": "2026-05-09",
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "Pipeline-only (S3/Lambda/Glue-style ELT for BTS OTP); potentially reusable as an ingestion template for a full historical BTS pull rather than month-by-month manual downloads, but no unique dataset."
+  ]
+ },
+ {
+  "key": "github:john-otienoh/aviation_otp_pipeline",
+  "url": "https://github.com/john-otienoh/Aviation_OTP_Pipeline",
+  "name": "john-otienoh/Aviation_OTP_Pipeline",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Containerized Airflow + PostgreSQL pipeline computing industry-standard aviation on-time-performance reliability metrics from BTS On-Time Performance CSVs; ships only a 100-row synthetic prototype file (bts_ontime_simulated.csv, Jan2022-Dec2024 range simulated) \u2014 real BTS data is user-downloaded and gitignored above 100MB. MIT licensed, early-stage (3 commits).",
+  "why_useful": "A ready-made ETL scaffold (Airflow DAG + Postgres schema) for ingesting monthly BTS OTP files on a recurring basis, which could shortcut building a repeatable pull for a live delay/capacity monitor; data itself is not included so value is purely as tooling.",
+  "potential": "low",
+  "geography": "US domestic (BTS scope)",
+  "time_coverage": "Pipeline designed for any month; prototype simulates Jan2022-Dec2024",
+  "size_hint": "Prototype ships 100 rows only; real data external",
+  "license": "MIT",
+  "last_activity": "early-stage, 3 commits, no date visible",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "A ready-made ETL scaffold (Airflow DAG + Postgres schema) for ingesting monthly BTS OTP files on a recurring basis, which could shortcut building a repeatable pull for a live delay/capacity monitor; data itself is not included so value is purely as tooling."
+  ]
+ },
+ {
+  "key": "github:lienas/us-flight-delays-eda",
+  "url": "https://github.com/lienas/us-flight-delays-eda",
+  "name": "lienas/us-flight-delays-eda",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "EDA notebooks over a ~2 million-row / ~644k-flight sample of BTS On-Time domestic flight data spanning 2010-2019 (22 reporting carriers); raw airline_2m.csv (~880MB) not committed (exceeds GitHub's 100MB limit) \u2014 README points to the official BTS On-Time archive for the download. No 2020+ data (COVID-affected 2020 explicitly excluded).",
+  "why_useful": "A worked decade-long (2010-2019) carrier-level delay panel definition that could be re-pulled and extended through 2026 from the same BTS On-Time archive if a longer historical baseline for airline capacity/reliability is needed; itself contributes no new data since the file isn't committed and stops in 2019.",
+  "potential": "low",
+  "geography": "US domestic, 22 carriers",
+  "time_coverage": "2010-2019 (partial 1987 and 2020 excluded)",
+  "size_hint": "~880MB source (~2M rows) not committed",
+  "license": "not stated",
+  "last_activity": "not shown",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers",
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "A worked decade-long (2010-2019) carrier-level delay panel definition that could be re-pulled and extended through 2026 from the same BTS On-Time archive if a longer historical baseline for airline capacity/reliability is needed; itself contributes no new data since the file isn't committed and stops in 2019.",
+   "Another documented, reproducible method for pulling long-run (1987-2020) BTS domestic flight volume data, relevant as a US air-travel-demand proxy for the travel-volume/capacity gap; data itself must be re-pulled from BTS directly."
+  ]
+ }
+]

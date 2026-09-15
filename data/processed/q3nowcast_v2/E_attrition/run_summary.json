@@ -1,0 +1,47 @@
+{
+ "run_at": "2026-09-14T18:11:56Z",
+ "wall_s": 38.4,
+ "n_archive_vintages": 64,
+ "unmatched_cities": [],
+ "n_ladder_rows": 5039,
+ "n_intra_rows": 43094,
+ "n_raw_files": 100,
+ "raw_bytes": 946058488,
+ "spearman_decade_vs_12m_attrition_30cities": 0.292,
+ "n_cities_spearman": 30,
+ "results": [
+  {
+   "line": "L1",
+   "n_pairs": 40,
+   "n_reviews_archive": 17054093,
+   "value": 31.234792554777012,
+   "lo": 10.0,
+   "hi": 20.0,
+   "passed": false,
+   "detail": "review-weighted annual attrition, pct, montera34 pairs with early dump 2017-2019, gap 11-13 months, review months 1-36 before the early dump",
+   "verdict": "FAIL"
+  },
+  {
+   "line": "L2",
+   "n_pairs": 30,
+   "n_reviews_archive": 1016010,
+   "value": 0.13917973248294802,
+   "lo": 0.09687440434072259,
+   "hi": 0.2968744043407226,
+   "passed": true,
+   "detail": "review-weighted 2014-month survival, 2015 ChicagoBooth vintage -> held latest vintage; equal-weighted mean 0.151, median 0.155",
+   "verdict": "PASS"
+  },
+  {
+   "line": "L3",
+   "n_pairs": 1,
+   "n_reviews_archive": 168319,
+   "value": 0.06527486498850398,
+   "lo": 0.03917973248294801,
+   "hi": 0.23917973248294802,
+   "passed": true,
+   "detail": "NYC 2014-month survival, JoeyDeJager 2015-01-01 vintage -> held NYC latest vintage, vs the L2 pooled value",
+   "verdict": "PASS"
+  }
+ ]
+}

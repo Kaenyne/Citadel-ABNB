@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:talos/acris-bigquery",
+  "url": "https://github.com/talos/acris-bigquery",
+  "name": "talos/acris-bigquery",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts to pull the same NYC ACRIS dataset from NYC Open Data and load it into BigQuery for faster querying (no rows committed to repo).",
+  "why_useful": "Same ACRIS/LLC-ownership use case as acris-download but at BigQuery scale, useful if the team wants to run entity-name matching (LLC clustering) across the full ACRIS history without local DB setup.",
+  "potential": "medium",
+  "size_hint": "code only",
+  "time_coverage": "1966-present",
+  "geography": "New York City",
+  "license": "unlicensed",
+  "last_activity": "2023-10-23",
+  "duplicate_of_holding": "same underlying NYC ACRIS source as fitnr/acris-download",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Same ACRIS/LLC-ownership use case as acris-download but at BigQuery scale, useful if the team wants to run entity-name matching (LLC clustering) across the full ACRIS history without local DB setup."
+  ]
+ },
+ {
+  "key": "github:clhenrick/nyc-property-extractor",
+  "url": "https://github.com/clhenrick/nyc-property-extractor",
+  "name": "clhenrick/nyc-property-extractor",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js app providing a map-based interface to query NYC's MapPLUTO (parcel/zoning/building attributes) and ACRIS (transaction) datasets together.",
+  "why_useful": "Combines the two datasets the theme keyword hints named explicitly (PLUTO + ACRIS); useful as a reference implementation for joining parcel characteristics to ownership-transfer records for STR-supply analysis in NYC.",
+  "potential": "medium",
+  "size_hint": "app code, queries live NYC Open Data/Socrata endpoints, no bulk data committed",
+  "time_coverage": "current PLUTO/ACRIS vintages as of last update (2020)",
+  "geography": "New York City",
+  "license": "BSD-3-Clause",
+  "last_activity": "2020-03-12",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Combines the two datasets the theme keyword hints named explicitly (PLUTO + ACRIS); useful as a reference implementation for joining parcel characteristics to ownership-transfer records for STR-supply analysis in NYC."
+  ]
+ },
+ {
+  "key": "github:ryansherby/redfinscraper",
+  "url": "https://github.com/ryansherby/RedfinScraper",
+  "name": "ryansherby/RedfinScraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained (100 stars, updated 2 Sep 2026) Python library that calls Redfin's unofficial 'Stingray' API to bulk-pull for-sale listings and sold-home records (configurable 1mo-5yr sold windows) by zip code. No data committed; requires user-supplied zip list. README explicitly warns of Redfin IP-ban risk for misuse.",
+  "why_useful": "Most substantial Redfin access tool found; could be adapted to build a for-sale/sold-inventory and price time series (a housing-supply proxy for STR host economics) in markets Airbnb over-indexes on, though it does not natively flag investor/LLC buyers.",
+  "potential": "medium",
+  "size_hint": "code only; scrape volume limited by Redfin's own rate limits",
+  "time_coverage": "current + trailing 1mo-5yr sold windows at scrape time (not historical archive)",
+  "geography": "US, any Redfin-covered zip code",
+  "license": "MIT",
+  "last_activity": "2026-09-02",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Most substantial Redfin access tool found; could be adapted to build a for-sale/sold-inventory and price time series (a housing-supply proxy for STR host economics) in markets Airbnb over-indexes on, though it does not natively flag investor/LLC buyers."
+  ]
+ },
+ {
+  "key": "github:cfpb/hmda-platform",
+  "url": "https://github.com/cfpb/hmda-platform",
+  "name": "cfpb/hmda-platform",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "CFPB's official regulatory-technology platform for Home Mortgage Disclosure Act (HMDA) filings: parses/validates pipe-delimited Transmission (TS) and Loan Application Register (LAR) files, and exposes filing APIs, a data browser, analytics dashboards and a rate-spread calculator with documented REST endpoints for pulling loan-level mortgage origination data (loan amount, rate spread, applicant/property geography, action taken) nationwide. 11,916 commits, CC0-1.0 (public domain).",
+  "why_useful": "HMDA is the authoritative, free, loan-level US mortgage-origination dataset (rates, loan amounts, geography, applicant/property type) back to the 1970s at aggregate level and ~2007+ at loan level via the modern platform \u2014 a genuine free mortgage-rate/lending-volume source for the housing-supply/investor-purchase thread (mortgage rates + county-level lending activity), reachable via the linked Data Browser/S3 dumps rather than this repo's own commits.",
+  "potential": "medium",
+  "size_hint": "platform source code only in this repo; external HMDA public LAR datasets run into tens of millions of loan records per year",
+  "time_coverage": "modern HMDA platform ~2017-present; HMDA aggregate data back to 1975 via Data Browser",
+  "geography": "United States, county/tract level",
+  "license": "CC0-1.0 (per CFPB open-source policy)",
+  "last_activity": "recent (actively maintained CFPB repo)",
+  "gap_targets": [
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "HMDA is the authoritative, free, loan-level US mortgage-origination dataset (rates, loan amounts, geography, applicant/property type) back to the 1970s at aggregate level and ~2007+ at loan level via the modern platform \u2014 a genuine free mortgage-rate/lending-volume source for the housing-supply/investor-purchase thread (mortgage rates + county-level lending activity), reachable via the linked Data Browser/S3 dumps rather than this repo's own commits.",
+   "Provides a maintained, documented method to pull nationwide loan-level mortgage rate/origination data by county/tract and year -- directly useful for a mortgage-rate and housing-finance-conditions series feeding the host-supply-economics work in gap 13; CC0 licensing removes any reuse friction."
+  ]
+ },
+ {
+  "key": "github:leoyrh/mcp-atlas",
+  "url": "https://github.com/LEOyrh/mcp-atlas",
+  "name": "mcp-atlas",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server (npm package @urbankitstudio/mcp-atlas) providing a uniform query interface over ~137-155 US county parcel ArcGIS REST endpoints; tools for owner/taxpayer name lookup (case-insensitive partial match, useful for identifying LLC-named owners), APN lookup, and site/mailing address retrieval. MIT license, 13 commits, 2026 copyright.",
+  "why_useful": "A ready-made client for pulling county assessor/parcel-owner records (including LLC-style owner names) across a large multi-state county set without hand-building per-county ArcGIS queries -- directly on-theme for 'county assessor/parcel data' and 'LLC ownership'.",
+  "potential": "medium",
+  "geography": "137-155 US counties, multi-state",
+  "time_coverage": "current parcel-roll snapshot (live query, not historical)",
+  "license": "MIT",
+  "last_activity": "2026 (recent, per repo copyright)",
+  "size_hint": "13 commits, thin wrapper -- no committed dataset, live API pass-through",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "A ready-made client for pulling county assessor/parcel-owner records (including LLC-style owner names) across a large multi-state county set without hand-building per-county ArcGIS queries -- directly on-theme for 'county assessor/parcel data' and 'LLC ownership'."
+  ]
+ }
+]

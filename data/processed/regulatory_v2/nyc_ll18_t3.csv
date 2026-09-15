@@ -1,0 +1,23 @@
+item,value
+"r_pre: pooled 2025/2023 ratio, Sep 2022 to Jan 2023 (NYC pre-LL18 history attrition as of Sep 2025)",0.4338412694413123
+n pre months in 2023 vintage (complete),5
+"reviews Sep 2022 to Jan 2023, 2023 vintage",158747
+"reviews Sep 2022 to Jan 2023, 2025 vintage",68871
+"reviews Feb to Aug 2023, 2025 vintage (raw)",108996
+"A: pre-LL18 flow Sep 2022 to Aug 2023, attrition-corrected",409981.74338981573
+A raw in the 2025 vintage (uncorrected),177867
+B raw: post flow Sep 2023 to Aug 2024 in the 2025 vintage,120504
+"r_post used (E table 2.2, 12-24 month history)",0.86
+r_post NYC-specific sensitivity (2026-08 / 2025-09 on Sep 2023 to Aug 2024),0.8702283741618535
+B: post flow corrected by r_post 0.86,140120.93023255814
+B: post flow corrected by NYC-specific r_post,138473.9955371617
+"T3 = B/A - 1, percent (primary)",-65.82264149764117
+"T3 sensitivity with NYC-specific r_post, percent",-66.22435077420047
+"T3 uncorrected (both windows raw in the 2025 vintage), percent",-32.25050177941945
+"pass band lo, percent",-70.0
+"pass band hi, percent",-40.0
+T3 PASS (primary inside band),True
+"CRA guest-nights benchmark, percent (Sep 2023-Aug 2024 vs prior year)",-56.09756097560976
+"cross-check: Kaggle Jan 2024 file reviews_ltm sum (Jan 2023 to Jan 2024, as of 5 Jan 2024)",225268
+cross-check: same window counted in the 2025-09-01 dump,161016
+cross-check: ratio 2025 dump / Jan 2024 file,0.7147752898769466

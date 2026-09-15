@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:eblondel/rsdmx",
+  "url": "https://github.com/eblondel/rsdmx",
+  "name": "rsdmx",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package/client for reading SDMX-ML and SDMX-JSON data and metadata from any SDMX-compliant provider (Eurostat, OECD, IMF, ILO, UNSD, and many national statistical/tourism offices that publish via SDMX). Not a dataset itself; a generic connector. 110 stars, actively used, GPL-ish/open license, maintained multi-year.",
+  "why_useful": "Lets us systematically pull monthly tourism arrivals/nights/receipts and accommodation-capacity series from dozens of national statistics agencies (gap #7 LatAm/APAC volume, gap #4 point-in-time vintages if the provider keeps dataflow versions) instead of one country at a time.",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "geography": "global (any SDMX-publishing national/international agency)",
+  "time_coverage": "varies by provider, typically monthly, multi-year",
+  "size_hint": "connector library, not a fixed dataset",
+  "license": "GPL/open (R package)",
+  "last_activity": "actively maintained (multi-year commit history)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Lets us systematically pull monthly tourism arrivals/nights/receipts and accommodation-capacity series from dozens of national statistics agencies (gap #7 LatAm/APAC volume, gap #4 point-in-time vintages if the provider keeps dataflow versions) instead of one country at a time."
+  ]
+ },
+ {
+  "key": "github:haishanpeiris-eng/nextpads-pricelabs-api",
+  "url": "https://github.com/haishanpeiris-eng/nextpads-pricelabs-api",
+  "name": "haishanpeiris-eng/nextpads-pricelabs-api",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Repo named for an integration between a PMS ('Nextpads') and the PriceLabs dynamic-pricing API; updated 4 Sep 2026 (very recent). Contents not verified beyond gh search metadata \u2014 no description text, not fetched.",
+  "why_useful": "If it contains real request/response schemas for PriceLabs' market/comp-set/occupancy endpoints (unverified), it would show exactly what fields a professional STR revenue-management tool tracks (comp-set ADR, occupancy, demand index) \u2014 the closest wildcard analogue to a 'realised ADR/occupancy' proxy in gap #2. Needs a follow-up fetch to confirm.",
+  "potential": "medium",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, not fetched",
+  "license": "unspecified",
+  "last_activity": "2026-09-04",
+  "gap_targets": [
+   2,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage"
+  ],
+  "why_all": [
+   "If it contains real request/response schemas for PriceLabs' market/comp-set/occupancy endpoints (unverified), it would show exactly what fields a professional STR revenue-management tool tracks (comp-set ADR, occupancy, demand index) \u2014 the closest wildcard analogue to a 'realised ADR/occupancy' proxy in gap #2. Needs a follow-up fetch to confirm."
+  ]
+ },
+ {
+  "key": "github:aditya-prasad-projects/data-pipeline-for-analyzing-inside-airbnb-dataset",
+  "url": "https://github.com/aditya-prasad-projects/Data-Pipeline-for-analyzing-Inside-Airbnb-dataset",
+  "name": "Data-Pipeline-for-analyzing-Inside-Airbnb-dataset",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Airflow/S3/Spark/EMR/Redshift/Athena pipeline that ingests Inside Airbnb listings data 'at scale' for community analysis; no committed data files, pulls from insideairbnb.com at run time.",
+  "why_useful": "Infrastructure pattern for bulk-pulling and warehousing Inside Airbnb data across many cities/dates if the team wants to industrialize its own historical-vintage capture; not itself a data source.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "generic, any Inside Airbnb city",
+  "time_coverage": "N/A (pipeline only)",
+  "size_hint": "N/A",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Infrastructure pattern for bulk-pulling and warehousing Inside Airbnb data across many cities/dates if the team wants to industrialize its own historical-vintage capture; not itself a data source."
+  ]
+ },
+ {
+  "key": "github:tilburgsciencehub/inside-airbnb-tutorial",
+  "url": "https://github.com/tilburgsciencehub/inside-airbnb-tutorial",
+  "name": "inside-airbnb-tutorial",
+  "category": "methods_tooling",
+  "category_note": "academic/teaching tooling for pulling Inside Airbnb data on a schedule",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tilburg Science Hub tutorial/pipeline for pulling Inside Airbnb's monthly-updated calendar.csv and listings.csv programmatically (documented ETL steps rather than a one-off notebook).",
+  "why_useful": "A maintained, documented pull method (vs. ad hoc scripts) for Inside Airbnb calendar/listings data that could be adapted into our own point-in-time capture pipeline to get monthly vintages before the CDN drops them (addresses part of gap #1's forward-looking side: capturing dumps before they age off).",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "generic/any Inside Airbnb city",
+  "time_coverage": "n/a (tooling)",
+  "size_hint": "small tutorial repo",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "A maintained, documented pull method (vs. ad hoc scripts) for Inside Airbnb calendar/listings data that could be adapted into our own point-in-time capture pipeline to get monthly vintages before the CDN drops them (addresses part of gap #1's forward-looking side: capturing dumps before they age off)."
+  ]
+ },
+ {
+  "key": "github:ambientstl/travel-agency-database",
+  "url": "https://github.com/ambientstl/Travel-Agency-Database",
+  "name": "Travel-Agency-Database",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "ETL project that downloads calendar.csv.gz directly from the Inside Airbnb CDN and combines it with other travel/forecast data into a database.",
+  "why_useful": "Another working, scriptable one-command pull of Inside Airbnb calendar.csv.gz; marginal beyond what our team's own capture scripts already do, but confirms a clean download pattern and could be scavenged for a robust retry/URL-pattern implementation.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "generic",
+  "time_coverage": "n/a",
+  "size_hint": "small",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "duplicates our existing Inside Airbnb capture tooling",
+  "hits": 1,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "Another working, scriptable one-command pull of Inside Airbnb calendar.csv.gz; marginal beyond what our team's own capture scripts already do, but confirms a clean download pattern and could be scavenged for a robust retry/URL-pattern implementation."
+  ]
+ }
+]

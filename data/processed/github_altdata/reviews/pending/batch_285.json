@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:kevinsoo/npvisits",
+  "url": "https://github.com/kevinsoo/npVisits",
+  "name": "npVisits",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV 'All National Parks Visitation 1904-2016.csv' plus 'parks.csv' and 'parks_area.csv' (park metadata) and an R .Rda cache (parkVisits.Rda). Long annual NPS visitation series per park, 1904-2016, sourced originally from NPS IRMA stats system. R analysis script clean_data.R included.",
+  "why_useful": "US domestic leisure-travel demand proxy going back over a century; useful as a long macro backdrop series for national-park-driven road-trip/leisure demand even though NPS's own API/IRMA portal (irma.nps.gov/STATS) is the live, current-vintage source. Not a numbered gap explicitly but supports category 6/regional travel-volume framing (gap 7 analog for domestic).",
+  "potential": "medium",
+  "geography": "USA, per-park",
+  "time_coverage": "1904-2016 (annual)",
+  "size_hint": "single CSV, hundreds of parks x ~113 years",
+  "license": "none declared",
+  "last_activity": "2022-06-03",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "US domestic leisure-travel demand proxy going back over a century; useful as a long macro backdrop series for national-park-driven road-trip/leisure demand even though NPS's own API/IRMA portal (irma.nps.gov/STATS) is the live, current-vintage source. Not a numbered gap explicitly but supports category 6/regional travel-volume framing (gap 7 analog for domestic)."
+  ]
+ },
+ {
+  "key": "github:emmyoop/texas-state-parks",
+  "url": "https://github.com/emmyoop/texas-state-parks",
+  "name": "texas-state-parks",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Data/ directory with 5 committed Texas Parks & Wildlife monthly visitation Excel workbooks covering FY17 (Sep 2016-Aug 2017) through FY21 (Sep 2020-Jan 2021), 'all parks' monthly attendance reformatted from TPWD source releases. Includes a Jupyter notebook 'State Park Data Cleanup.ipynb'.",
+  "why_useful": "State-level monthly park attendance panel spanning pre-COVID through pandemic reopening; a regional US leisure/staycation demand proxy that could triangulate with STR nights in Texas markets (Austin is in our Inside Airbnb panel).",
+  "potential": "medium",
+  "geography": "Texas, USA (all TPWD state parks)",
+  "time_coverage": "Sep 2016 - Jan 2021 monthly",
+  "size_hint": "5 Excel workbooks, all-parks x month",
+  "license": "GPL-3.0",
+  "last_activity": "2021-03-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "State-level monthly park attendance panel spanning pre-COVID through pandemic reopening; a regional US leisure/staycation demand proxy that could triangulate with STR nights in Texas markets (Austin is in our Inside Airbnb panel)."
+  ]
+ },
+ {
+  "key": "github:cat-grep/us-national-park-visit",
+  "url": "https://github.com/cat-grep/us-national-park-visit",
+  "name": "us-national-park-visit",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Data visualization web app described as covering '44 years (1979-2023) of U.S. National Park visitation data' with interactive charts, maps and rankings; likely ships a processed CSV/JSON of annual visitation by park for that span (unverified exact file).",
+  "why_useful": "If the underlying dataset is genuinely 1979-2023, it is a longer and more current NPS visitation panel than either kevinsoo/npVisits (ends 2016) or aliu82's 2012-2022 set, giving the most complete free domestic park-visitation backdrop found in this sweep.",
+  "potential": "medium",
+  "geography": "USA national parks",
+  "time_coverage": "1979-2023 (claimed, annual)",
+  "size_hint": "unverified, repo updated May 2026",
+  "license": "none declared",
+  "last_activity": "2026-05-08",
+  "duplicate_of_holding": "overlaps kevinsoo/npVisits (1904-2016) but more current",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "If the underlying dataset is genuinely 1979-2023, it is a longer and more current NPS visitation panel than either kevinsoo/npVisits (ends 2016) or aliu82's 2012-2022 set, giving the most complete free domestic park-visitation backdrop found in this sweep."
+  ]
+ },
+ {
+  "key": "github:mahsaashouri/aus-wiki-binder",
+  "url": "https://github.com/mahsaashouri/AUS-Wiki-Binder",
+  "name": "AUS-Wiki-Binder",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R scripts (Fixed-origin-Wiki.R 28KB, Fixed-origin-tourism.R 36KB, OLSmodel_se.R) implementing 'fast forecast reconciliation using linear models' that pairs Australian official tourism statistics with Wikipedia pageviews as a covariate/predictor, wrapped for Binder/RStudio interactive use. No raw data files committed (scripts pull tourism + Wikipedia series at run time); academic methodology repo (mahsaashouri appears to be a forecast-reconciliation researcher, likely tied to a published paper).",
+  "why_useful": "Directly on-theme: a working academic method that uses Wikipedia pageviews to nowcast/forecast a country's tourism demand, with real code (not just a notebook). Fills part of gap #5 (Wikipedia pageviews tooling) and is a template method for using pageviews as an APAC travel-demand proxy (gap #7, Australia). Worth reading the underlying paper for the reconciliation approach even though it targets AUS not US/EMEA.",
+  "potential": "medium",
+  "gap_targets": [
+   5,
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "unspecified (README/short; scripts likely span whatever the source tourism series covers)",
+  "size_hint": "~65KB of R scripts, no data files",
+  "license": "none declared",
+  "last_activity": "unspecified (repo appears stable/older; not a 2026 update per search metadata ordering)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Directly on-theme: a working academic method that uses Wikipedia pageviews to nowcast/forecast a country's tourism demand, with real code (not just a notebook). Fills part of gap #5 (Wikipedia pageviews tooling) and is a template method for using pageviews as an APAC travel-demand proxy (gap #7, Australia). Worth reading the underlying paper for the reconciliation approach even though it targets AUS not US/EMEA."
+  ]
+ },
+ {
+  "key": "github:kenchch/nz-attraction-pageviews",
+  "url": "https://github.com/Kenchch/nz-attraction-pageviews",
+  "name": "nz-attraction-pageviews",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/DuckDB pipeline that incrementally ingests DAILY Wikipedia pageviews (Wikimedia Analytics API, per-article all-access user pageviews, CC0) for eight named New Zealand tourist-attraction Wikipedia articles (e.g. Milford Sound) into a local warehouse.duckdb, with retry/backfill logic, watermark tracking, and a venues CSV listing the monitored attractions. No raw pageview data or database file is committed to the repo itself \u2014 it is a one-command pull tool, not a dataset.",
+  "why_useful": "A clean, small, working example of exactly the tooling class named in gap #5 ('Wikipedia pageviews tooling') and gap #20 (destination/attraction proxies) \u2014 could be forked/adapted in under a day to pull daily pageviews for Airbnb-relevant destination Wikipedia pages (e.g. specific cities/neighborhoods, FIFA World Cup host-city pages for gap #11) as a free, near-real-time tourism-interest proxy, unlike Google Trends which the team already found not point-in-time/renormalized and failing (per CONTEXT.md 'ideas tested and found not to work').",
+  "potential": "medium",
+  "gap_targets": [
+   5,
+   20
+  ],
+  "geography": "New Zealand (8 named attractions)",
+  "time_coverage": "daily ingestion; demo shows 90-day backfill default, live example spans 7 days at time of README",
+  "size_hint": "small codebase; DuckDB warehouse built at runtime, not committed",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)",
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "A clean, small, working example of exactly the tooling class named in gap #5 ('Wikipedia pageviews tooling') and gap #20 (destination/attraction proxies) \u2014 could be forked/adapted in under a day to pull daily pageviews for Airbnb-relevant destination Wikipedia pages (e.g. specific cities/neighborhoods, FIFA World Cup host-city pages for gap #11) as a free, near-real-time tourism-interest proxy, unlike Google Trends which the team already found not point-in-time/renormalized and failing (per CONTEXT.md 'ideas tested and found not to work').",
+   "Matches numbered gap 5 (Wikipedia pageviews tooling as an engagement/attention proxy) with a concrete, currently-maintained (updated 6-8 Sep 2026) API client design \u2014 could be repointed at Airbnb-relevant destination or competitor Wikipedia pages, or at ABNB's own page, for a page-view engagement series."
+  ]
+ }
+]

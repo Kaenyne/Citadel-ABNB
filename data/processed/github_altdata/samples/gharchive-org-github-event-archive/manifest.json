@@ -1,0 +1,35 @@
+{
+ "slug": "gharchive-org-github-event-archive",
+ "url": "https://github.com/igrigorik/gharchive.org",
+ "sampled": true,
+ "total_bytes": 3327548,
+ "files": [
+  "README.md",
+  "gharchive_2024-09-01-15_head7000_flat.csv",
+  "gharchive_2026-09-01-15_all1844_flat.csv",
+  "gharchive_2026-09-01-15_full.json.gz",
+  "gharchive_2026-09-01-15_head200.jsonl"
+ ],
+ "rows": "gharchive_2026-09-01-15_full.json.gz: 1,844 events (whole hour); gharchive_2026-09-01-15_head200.jsonl: 200; gharchive_2026-09-01-15_all1844_flat.csv: 1,844; gharchive_2024-09-01-15_head7000_flat.csv: 7,000 (first 3 MB of an 80.7 MB hour)",
+ "columns": "raw JSON: id, type, actor{id,login,display_login,url,avatar_url}, repo{id,name,url}, org{id,login} (optional), payload (type-specific: action, pull_request, issue, commits, ref, forkee, release...), public, created_at; flat CSVs: id, type, actor_login, repo_name, org_login, created_at",
+ "date_range": "sample: 2024-09-01T15:00:00Z-15:01:58Z and 2026-09-01T15:00:00Z-15:59:52Z; archive reach verified by HEAD: 2011-02-12-0 (277 KB) and 2015-01-01-0 (2.7 MB) exist; hourly files run to the present (2026-09-10 checked)",
+ "how_pulled": "curl -s -r 0-3000000 https://data.gharchive.org/2026-09-01-15.json.gz -o gharchive_sample.json.gz (HTTP 206; whole file is only 1,717,717 bytes); gzip -dc ... | head -2000 > head.jsonl; head -200 -> gharchive_2026-09-01-15_head200.jsonl; python pandas json_normalize -> flat CSV; curl -s -r 0-3000000 https://data.gharchive.org/2024-09-01-15.json.gz -> gzip -dc (partial) -> first 7,000 rows -> gharchive_2024-09-01-15_head7000_flat.csv; curl -sI https://data.gharchive.org/{2011-02-12-0,2015-01-01-0,2024-09-01-15,2025-09-01-15,2026-01-15-15,2026-03-15-15,2026-05-15-15,2026-06-01-15,2026-07-15-15,2026-08-15-15,2026-09-10-15}.json.gz for sizes",
+ "full_dataset_size": "one gzipped JSON file per hour since 2011-02-12 (~137k files); ~80-100 MB/hour in 2024-25 (2024-09-01-15: 80.7 MB; 2025-09-01-15: 99.5 MB), ~13-40 MB/hour in 2026; roughly 2-3 GB/day recent, tens of TB total, billions of event rows. Mirrored in BigQuery public dataset githubarchive (day/month/year tables).",
+ "description": "GH Archive is the complete public-GitHub event stream, one JSON row per event (push, PR, issue, comment, star, fork, release, member) with actor, repo, org, timestamp and a type-specific payload, delivered as keyless hourly gzip files at data.gharchive.org from Feb 2011 to now and mirrored to BigQuery. Grain is event-level, timestamped to the second, global. For ABNB it is the only free way to build a monthly activity series for the airbnb/ GitHub org (pushes, PRs, unique contributors across ~200 public repos) as an engineering-investment / indirect headcount proxy, and the same filter works for competitor orgs (bookingcom, expediagroup). Practically that means filtering repo.name by prefix over every hourly file (or one BigQuery SQL), since no per-org export exists.",
+ "issues": "(1) Volume drop: hourly files shrink from ~100 MB (Sep 2025) to 39 MB (Jan 2026), 18-29 MB (Mar-Aug 2026), 13 MB (10 Sep 2026), and the sampled 2026-09-01-15 hour has 1,844 events with zero PushEvent/CreateEvent (vs 66% PushEvent in the 2024 slice) - either GH Archive's 2026 capture is incomplete or GitHub's Events API changed; a human should verify before trusting any 2026 series or the 2025/2026 seam. (2) No airbnb/ events appeared in either small slice (expected at this sample size), so the Airbnb-org signal is untested. (3) A real series needs a full crawl (~2-3 GB/day) or BigQuery, which requires a Google account and billed queries - human decision. (4) Licence: code MIT, site CC-BY-4.0; the event data itself is GitHub public-API output with no explicit licence statement on the archive - fine for internal research, cite gharchive.org.",
+ "source_urls": [
+  "https://data.gharchive.org/2026-09-01-15.json.gz",
+  "https://data.gharchive.org/2024-09-01-15.json.gz",
+  "https://data.gharchive.org/2015-01-01-0.json.gz",
+  "https://data.gharchive.org/2011-02-12-0.json.gz",
+  "https://data.gharchive.org/2025-09-01-15.json.gz",
+  "https://data.gharchive.org/2026-01-15-15.json.gz",
+  "https://data.gharchive.org/2026-03-15-15.json.gz",
+  "https://data.gharchive.org/2026-05-15-15.json.gz",
+  "https://data.gharchive.org/2026-06-01-15.json.gz",
+  "https://data.gharchive.org/2026-07-15-15.json.gz",
+  "https://data.gharchive.org/2026-08-15-15.json.gz",
+  "https://data.gharchive.org/2026-09-10-15.json.gz"
+ ],
+ "pulled_at": "2026-09-14"
+}

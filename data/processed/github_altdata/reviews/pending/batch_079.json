@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:roberto-perrotta/turismo_salento_forecasting",
+  "url": "https://github.com/Roberto-Perrotta/Turismo_Salento_forecasting",
+  "name": "Turismo_Salento_forecasting",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "`lecce_turismo_pulito.csv`: 760 rows x 27 columns of official Istat (Italian statistics institute) accommodation-movement data \u2014 arrivals, overnight stays, Italian vs. international visitor split, and average length of stay by year and municipality \u2014 for 92 municipalities in the Province of Lecce (Salento, Puglia), 2014-2024 annual. Also references a separate Naples Airbnb listings snapshot (9,752 listings, Sept 2025) used as a pricing proxy, and uses Facebook Prophet for dynamic-pricing forecasting.",
+  "why_useful": "A committed, cleaned Italian municipal-level tourism accommodation panel (2014-2024) \u2014 a finer-grained, longer regional hotel/accommodation demand series than what we currently hold for Southern Italy, and a second independent Inside-Airbnb Naples pull that could be checked against our own IA captures for basis consistency.",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   1
+  ],
+  "geography": "Italy (Lecce province / Salento, 92 municipalities)",
+  "time_coverage": "2014-2024, annual",
+  "size_hint": "760 rows x 27 cols processed CSV + Istat source worksheets referenced",
+  "license": "unspecified",
+  "last_activity": "2026-04-27",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "A committed, cleaned Italian municipal-level tourism accommodation panel (2014-2024) \u2014 a finer-grained, longer regional hotel/accommodation demand series than what we currently hold for Southern Italy, and a second independent Inside-Airbnb Naples pull that could be checked against our own IA captures for basis consistency.",
+   "Real, municipality-level Istat tourism-flow data for an Italian region over an 11-year span plus a length-of-stay breakdown by nationality \u2014 could support cross-checking European regional-travel-demand patterns (gap #7/regulatory panel already holds Eurostat national-level `tour_ce_omr`; this is sub-national and includes length-of-stay, which Eurostat's monthly series does not break out at this granularity). Airbnb angle is a same-country different-city proxy only, not usable directly for ABNB but the length-of-stay/international-share variables are the more novel piece."
+  ]
+ },
+ {
+  "key": "github:marco-d-sosa/spatial-hedonics-crime",
+  "url": "https://github.com/Marco-D-Sosa/Spatial-hedonics-crime",
+  "name": "Spatial-hedonics-crime",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Stata + Python codebase estimating a spatial hedonic panel model of short-term-rental (Inside Airbnb-sourced) listing prices in Buenos Aires (CABA) against neighborhood crime rates and socioeconomic controls; >145,000 observations. Cleaned dataset also mirrored on Kaggle (marcodiazzz/buenos-aires-rentals-and-crime) for direct pull. Headline estimate: 1% rise in local crime -> 0.062% drop in STR price.",
+  "why_useful": "A genuine academic-style hedonic pricing replication with committed code and a pullable dataset for a LatAm market (gap #7 geography) not in our 13-city Inside Airbnb panel; useful as a methods reference for hedonic/elasticity specification even though the target variable (crime, not bedroom/superhost mix) differs from our exact ask.",
+  "potential": "medium",
+  "geography": "Buenos Aires, Argentina",
+  "time_coverage": "not stated in README excerpt; Inside Airbnb-derived snapshot(s)",
+  "size_hint": ">145,000 observations",
+  "license": "MIT",
+  "last_activity": "2026-08-22",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "A genuine academic-style hedonic pricing replication with committed code and a pullable dataset for a LatAm market (gap #7 geography) not in our 13-city Inside Airbnb panel; useful as a methods reference for hedonic/elasticity specification even though the target variable (crime, not bedroom/superhost mix) differs from our exact ask."
+  ]
+ },
+ {
+  "key": "github:giuseppemaiorano/airbnb_european_cities",
+  "url": "https://github.com/giuseppemaiorano/airbnb_european_cities",
+  "name": "airbnb_european_cities",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Uses a committed 'airbnb_european-cities.csv' (Rome and Berlin per README, but the file name matches the well-known 10-city 'Airbnb Prices in European Cities' Kaggle dataset lineage - Amsterdam/Athens/Barcelona/Berlin/Budapest/Lisbon/London/Paris/Rome/Vienna - which carries cleanliness_rating, guest_satisfaction_overall, host_is_superhost, distance-to-center and room_type fields not present in raw Inside Airbnb scrapes). Repo computes median price by room type, cleanliness-vs-satisfaction correlation, price-vs-distance profile, and an explicit superhost price premium calculation, with both notebook and script versions.",
+  "why_useful": "A structured hedonic dataset with pre-computed listing-quality scores (cleanliness, guest satisfaction) and an explicit superhost premium calculation is closer to the theme's exact ask (bedroom/quality/superhost mix decomposition) than raw Inside Airbnb data; worth checking whether the underlying 10-city CSV (likely a static one-time snapshot, not point-in-time) is committed or externally sourced.",
+  "potential": "medium",
+  "geography": "European cities (Rome, Berlin per this repo; likely part of a broader 10-city Kaggle set)",
+  "time_coverage": "static snapshot, no date given",
+  "size_hint": "unspecified row count, one CSV",
+  "license": "none stated",
+  "last_activity": "2026-04-29",
+  "gap_targets": [],
+  "duplicate_of_holding": "Possibly a subset of a well-known static Kaggle Airbnb-Europe file; not the same as our Inside Airbnb 13-city panel (different cities, has satisfaction/cleanliness fields IA lacks)",
+  "hits": 1,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "A structured hedonic dataset with pre-computed listing-quality scores (cleanliness, guest satisfaction) and an explicit superhost premium calculation is closer to the theme's exact ask (bedroom/quality/superhost mix decomposition) than raw Inside Airbnb data; worth checking whether the underlying 10-city CSV (likely a static one-time snapshot, not point-in-time) is committed or externally sourced."
+  ]
+ },
+ {
+  "key": "github:romanrosh/airbnb-web-scaper",
+  "url": "https://github.com/romanrosh/airbnb-web-scaper",
+  "name": "airbnb-web-scaper (romanrosh)",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "12-star repo (Python, updated Jan 2019) described as 'Scraper and hotel API for data comparison' \u2014 appears to pair Airbnb scraping with a separate hotel-price API for cross-comparison.",
+  "why_useful": "Potentially relevant to a nights/ADR cross-check between Airbnb and hotel pricing (peer readthrough context) but old (2019) and not independently verified beyond the search snippet.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a",
+  "license": "unspecified",
+  "last_activity": "Jan 2019 (stale)",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Potentially relevant to a nights/ADR cross-check between Airbnb and hotel pricing (peer readthrough context) but old (2019) and not independently verified beyond the search snippet."
+  ]
+ },
+ {
+  "key": "github:larasafak/hotel-booking-demand-dashboard",
+  "url": "https://github.com/larasafak/hotel-booking-demand-dashboard",
+  "name": "hotel-booking-demand-dashboard",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Tableau dashboard over the same public Kaggle 'Hotel booking demand' (Antonio/Almeida/Nunes, Portugal city+resort hotel, 119,390 rows, 2015-2017) dataset we already hold; adds lead_time/cancellation-risk visualization but no new rows.",
+  "why_useful": "Confirms the Portugal hotel dataset is the dominant public source for booking-lead-time + cancellation joint distributions on GitHub; nothing new beyond what CONTEXT.md already lists.",
+  "potential": "low",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held per CONTEXT.md",
+  "size_hint": "119,390 rows (same as held dataset)",
+  "time_coverage": "2015-2017",
+  "geography": "Portugal (1 city hotel, 1 resort hotel)",
+  "license": "none declared",
+  "last_activity": "2026-09-12",
+  "hits": 1,
+  "themes": [
+   "Airbnb cancellation, refund and Reserve-Now-Pay-Later related datasets; STR booking lead-time and cancellation-rate data from any platform or PMS"
+  ],
+  "why_all": [
+   "Confirms the Portugal hotel dataset is the dominant public source for booking-lead-time + cancellation joint distributions on GitHub; nothing new beyond what CONTEXT.md already lists."
+  ]
+ }
+]

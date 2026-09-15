@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:tavarisjones/project_1",
+  "url": "https://github.com/TavarisJones/project_1",
+  "name": "project_1 (MashvisorTopMarkets.ipynb)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Jupyter notebook pulling 'top markets' data from the Mashvisor API (not a committed CSV in the repo itself; data is fetched live from Mashvisor's paid API at run time).",
+  "why_useful": "Shows the Mashvisor API fields used for market ranking (cash-on-cash return, ADR-adjacent metrics) but requires a Mashvisor API key to reproduce -- low value without credentials.",
+  "potential": "low",
+  "geography": "US markets (Mashvisor coverage)",
+  "time_coverage": "point of notebook run only",
+  "size_hint": "single notebook",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Shows the Mashvisor API fields used for market ranking (cash-on-cash return, ADR-adjacent metrics) but requires a Mashvisor API key to reproduce -- low value without credentials."
+  ]
+ },
+ {
+  "key": "other:https://github.com/rabbu-airbnb",
+  "url": "https://github.com/Rabbu-Airbnb",
+  "name": "Rabbu-Airbnb GitHub org",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Rabbu's own GitHub org page surfaced in search but content not verifiable by fetch in this pass (search budget exhausted before verification); Rabbu's public web tool (rabbu.com/airbnb-data) offers free market-level occupancy, ADR, RevPAR/RevPAN and seasonal-trend stats refreshed weekly across US markets, sourced from public Airbnb/Vrbo listing data.",
+  "why_useful": "Same class of free market-level STR stats as AirDNA/AirROI for gap #2; the org's actual repo contents are UNVERIFIED this pass -- flagged for a follow-up scout or manual check of https://github.com/Rabbu-Airbnb repos before relying on it.",
+  "potential": "low",
+  "geography": "USA",
+  "time_coverage": "current, weekly refresh (not archived/point-in-time)",
+  "size_hint": "unverified",
+  "license": "unverified",
+  "last_activity": "unverified",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Same class of free market-level STR stats as AirDNA/AirROI for gap #2; the org's actual repo contents are UNVERIFIED this pass -- flagged for a follow-up scout or manual check of https://github.com/Rabbu-Airbnb repos before relying on it."
+  ]
+ },
+ {
+  "key": "github:rhc-iv/nola-str-map",
+  "url": "https://github.com/rhc-iv/nola-str-map",
+  "name": "rhc-iv/nola-str-map",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Streamlit app that pulls the City of New Orleans' public open-data API for short-term-rental properties live (no static files committed); author calls it \"very skeletal\"/barebones and may not run cleanly.",
+  "why_useful": "Confirms New Orleans exposes a queryable STR-registration open-data endpoint and gives a minimal client pattern for pulling it on demand (gap #12, #17 Socrata/CKAN discovery).",
+  "potential": "low",
+  "geography": "New Orleans, LA",
+  "time_coverage": "live/current only, no history stored",
+  "size_hint": "no data committed, code only",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   12,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "Confirms New Orleans exposes a queryable STR-registration open-data endpoint and gives a minimal client pattern for pulling it on demand (gap #12, #17 Socrata/CKAN discovery)."
+  ]
+ },
+ {
+  "key": "github:nilovam30-ai/dee-airbnb-valencia",
+  "url": "https://github.com/nilovam30-ai/dee-airbnb-valencia",
+  "name": "nilovam30-ai/dee-airbnb-valencia",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Geospatial analysis of tourist dwellings (viviendas tur\u00edsticas) and residential rent pressure in Val\u00e8ncia, Spain.",
+  "why_useful": "Possible additional Spanish-city STR registry/geospatial dataset beyond Barcelona/C\u00e1diz; would need a repo-content check to confirm source registry vs. Inside Airbnb re-use.",
+  "potential": "low",
+  "geography": "Val\u00e8ncia, Spain",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown",
+  "license": "not stated",
+  "last_activity": "2026-05-26",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "Possible additional Spanish-city STR registry/geospatial dataset beyond Barcelona/C\u00e1diz; would need a repo-content check to confirm source registry vs. Inside Airbnb re-use."
+  ]
+ },
+ {
+  "key": "github:gmo321/airbnb-price-prediction",
+  "url": "https://github.com/gmo321/Airbnb-Price-Prediction",
+  "name": "Airbnb-Price-Prediction",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Described only as 'Vancouver Airbnb Data Analysis'; no stars, last updated 2025-06-26. Likely an Inside-Airbnb-derived Vancouver listings/price dataset used for a price-prediction ML exercise; contents (row counts, vintage, fields) not verified \u2014 flagged from search title/description only.",
+  "why_useful": "Possible additional Vancouver Airbnb snapshot/vintage beyond what we hold (our 13-city Inside Airbnb panel does not include Vancouver), but given the generic 'price prediction' framing this may just be a single unremarkable Inside Airbnb pull re-analysed with no new data attached \u2014 needs a repo-content check before treating as more than marginal.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Vancouver, Canada",
+  "time_coverage": "unknown, not verified",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2025-06-26",
+  "duplicate_of_holding": "Possibly duplicates standard Inside Airbnb Vancouver dump if that is its source; not confirmed",
+  "hits": 1,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)"
+  ],
+  "why_all": [
+   "Possible additional Vancouver Airbnb snapshot/vintage beyond what we hold (our 13-city Inside Airbnb panel does not include Vancouver), but given the generic 'price prediction' framing this may just be a single unremarkable Inside Airbnb pull re-analysed with no new data attached \u2014 needs a repo-content check before treating as more than marginal."
+  ]
+ }
+]

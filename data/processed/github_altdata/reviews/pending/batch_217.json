@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:backmarket-oss/dac7",
+  "url": "https://github.com/backmarket-oss/dac7",
+  "name": "dac7",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tooling (138 commits) to build and validate DAC7 declarations for French tax authority (DGFiP): revised XSD schema, JSON schemas for platform-operator/entity-seller/individual-seller flat files, example files adapted from official DGFiP specs, CLI to build/validate/encrypt declarations. No actual DAC7 statistics or aggregate reported-income data -- only the filing schema/tooling. License: Etalab-2.0 (schemas/examples).",
+  "why_useful": "Marginal: confirms the DAC7 declaration format and required host/seller fields; no actual Airbnb or STR data.",
+  "potential": "low",
+  "size_hint": "small library, no data files",
+  "time_coverage": "n/a",
+  "geography": "EU",
+  "license": "Other",
+  "last_activity": "2026-07-01",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Marginal: confirms the DAC7 declaration format and required host/seller fields; no actual Airbnb or STR data.",
+   "Gives the exact data schema platforms like Airbnb must report to EU tax authorities under DAC7 (seller income, number of transactions, property addresses) -- useful for understanding what a DAC7 aggregate-statistics release would even look like if one is ever published, and for identifying the right EU government portals to check for aggregate DAC7 statistics."
+  ]
+ },
+ {
+  "key": "github:lukaszzychal/dac7-dpi-client-php",
+  "url": "https://github.com/lukaszzychal/dac7-dpi-client-php",
+  "name": "dac7-dpi-client-php",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PHP client for the Polish DAC7 DPI API, letting a platform operator submit seller/host reports (DPI-FR registration, DPI-IS seller reports) to the Polish tax administration (KAS).",
+  "why_useful": "Points to a specific national API (Poland) where, in principle, aggregate/statistical releases about DAC7-reported platform income could originate; no data itself.",
+  "potential": "low",
+  "size_hint": "small client library",
+  "time_coverage": "n/a",
+  "geography": "Poland",
+  "license": "MIT",
+  "last_activity": "2025-10-19",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Points to a specific national API (Poland) where, in principle, aggregate/statistical releases about DAC7-reported platform income could originate; no data itself."
+  ]
+ },
+ {
+  "key": "github:bcgov/house-policy-strdss",
+  "url": "https://github.com/bcgov/House-Policy-STRDSS",
+  "name": "bcgov/House-Policy-STRDSS",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "British Columbia government's 'Short Term Rental Data Sharing System' -- full-stack app (backend, frontend, PostgreSQL) that platforms operating in BC (Airbnb included) are required to report host/listing data into under BC's Short-Term Rental Accommodations Act. 2,764 commits, Apache-2.0 license. The repo itself is the government's internal software, not a public dataset or API; no public statistics endpoint found in the fetched README (only CI/CD/release docs).",
+  "why_useful": "Confirms a real, government-mandated, DAC7-style platform-reporting regime exists for STR data in BC/Canada; worth a human checking gov.bc.ca or BC's open-data portal directly for any published aggregate statistics derived from this system (would be genuinely point-in-time regulatory data on host counts/compliance), even though the GitHub repo itself has no data.",
+  "potential": "low",
+  "geography": "British Columbia, Canada",
+  "time_coverage": "system launched under 2024 STR Act",
+  "size_hint": "software repo only",
+  "license": "Apache-2.0",
+  "last_activity": "active (2,764 commits)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Confirms a real, government-mandated, DAC7-style platform-reporting regime exists for STR data in BC/Canada; worth a human checking gov.bc.ca or BC's open-data portal directly for any published aggregate statistics derived from this system (would be genuinely point-in-time regulatory data on host counts/compliance), even though the GitHub repo itself has no data."
+  ]
+ },
+ {
+  "key": "github:2892480843/citypulse",
+  "name": "2892480843/CityPulse",
+  "url": "https://github.com/2892480843/CityPulse",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "AI agent for predicting emerging/trending destination cities for Qunar (Ctrip-owned Chinese OTA) with a scoring/backtest architecture. Data files (city_score_snapshot.csv, daily_signal_sample.csv, signals_demo_panel.csv: 13 cities x 45 days x 9 indicators = 5,031 rows, feature_dictionary.csv, reference_sources.csv) are explicitly labeled SYNTHETIC/demo, not real Qunar order data. MIT license, 32 commits.",
+  "why_useful": "The METHOD (a documented multi-signal, time-cutoff-validated nowcasting architecture for city-level Chinese travel demand) could be a template even though the data itself is fake; not a data source.",
+  "potential": "low",
+  "geography": "China (Qunar-focused city panel)",
+  "time_coverage": "synthetic 45-day demo window",
+  "license": "MIT",
+  "last_activity": "unknown 2026",
+  "size_hint": "~5,000-row synthetic CSV + code",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "The METHOD (a documented multi-signal, time-cutoff-validated nowcasting architecture for city-level Chinese travel demand) could be a template even though the data itself is fake; not a data source."
+  ]
+ },
+ {
+  "key": "github:chuqinyao/citypulse-ai-qunar-2026",
+  "name": "chuqinyao/citypulse-ai-qunar-2026",
+  "url": "https://github.com/chuqinyao/citypulse-ai-qunar-2026",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Competition entry (2026) using time-series signals to forecast trending Qunar destinations; data is explicitly is_synthetic=true, 12 cities x 180 days = 2,160 rows, no real Qunar order data. MIT license, 7 commits.",
+  "why_useful": "Same caveat as CityPulse above \u2014 a nowcasting-method reference only, not usable as a data source; documents rolling 7/14/28-day feature construction that could inspire a MIDAS-style APAC demand nowcast (gap #17).",
+  "potential": "low",
+  "geography": "China (Qunar city panel)",
+  "time_coverage": "synthetic 180-day window",
+  "license": "MIT",
+  "last_activity": "2026 (active, competition-era)",
+  "size_hint": "~2,160-row synthetic CSV + code",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Same caveat as CityPulse above \u2014 a nowcasting-method reference only, not usable as a data source; documents rolling 7/14/28-day feature construction that could inspire a MIDAS-style APAC demand nowcast (gap #17)."
+  ]
+ }
+]

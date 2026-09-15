@@ -1,0 +1,124 @@
+[
+ {
+  "key": "github:lmmx/fsqosp",
+  "url": "https://github.com/lmmx/fsqosp",
+  "name": "lmmx/fsqosp",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Small repo ('Mapping the FourSquare Open Source Places dataset') pointing at Foursquare's Open Source Places dataset (Foursquare's own release, hosted on Foursquare's S3/HuggingFace, ~100M+ global POIs including hotel/lodging categories, released under Apache-2.0/ODbL by Foursquare in Dec 2024). README fetch returned empty (likely a stub/thin wrapper); the underlying Foursquare OS Places dataset itself (not this repo) is the substantive asset -- see https://opensource.foursquare.com/os-places/ and https://huggingface.co/datasets/foursquare/fsq-os-places.",
+  "why_useful": "Points to Foursquare's global open POI dataset, a free alternative/complement to Overture Places with its own category taxonomy including 'Hotel', 'Bed and Breakfast', 'Vacation Rental', 'Resort' -- another global hotel/lodging-supply count source (gap #8) and geotagged tourism POI source (gap #20). Flagging the pointer since this specific repo has no committed code/data value beyond signposting the dataset.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "Foursquare OS Places released and updated periodically since Dec 2024",
+  "size_hint": "Foursquare's dataset is 100M+ POIs globally per public release notes (external, not in this repo)",
+  "license": "unclear on this repo; Foursquare's dataset itself is Apache-2.0",
+  "last_activity": "2024-12-12",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Points to Foursquare's global open POI dataset, a free alternative/complement to Overture Places with its own category taxonomy including 'Hotel', 'Bed and Breakfast', 'Vacation Rental', 'Resort' -- another global hotel/lodging-supply count source (gap #8) and geotagged tourism POI source (gap #20). Flagging the pointer since this specific repo has no committed code/data value beyond signposting the dataset."
+  ]
+ },
+ {
+  "key": "github:foursquare/quattroshapes",
+  "url": "https://github.com/foursquare/quattroshapes",
+  "name": "Quattroshapes",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Foursquare-published global gazetteer of administrative boundaries and localities (CC-BY 2.0, 17 commits): admin level 0 (countries), 1 (states/provinces), 2 (counties), local admin areas, localities (cities/towns), and neighborhoods, in Shapefile (WGS84) and gzipped GeoJSON, sourced partly from Natural Earth v3.0.0 and government data. Over 1 million administrative/populated places; total ~30GB across files.",
+  "why_useful": "Neighborhood-level boundaries for 13-city Inside Airbnb panel and any new market are otherwise ad hoc; this gives a free, global neighborhood polygon layer to join listings/reviews to sub-city geography for finer regional splits than city-level.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Static snapshot (project appears frozen, old but still usable as boundary reference)",
+  "license": "CC-BY 2.0 (mixed with some government-licensed subsets)",
+  "size_hint": "~30 GB total, admin2 files ~1.5MB to local-admin ~467MB",
+  "last_activity": "Old (17 commits, likely stale project from Foursquare's early open-data era)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Neighborhood-level boundaries for 13-city Inside Airbnb panel and any new market are otherwise ad hoc; this gives a free, global neighborhood polygon layer to join listings/reviews to sub-city geography for finer regional splits than city-level."
+  ]
+ },
+ {
+  "key": "github:whosonfirst-data/whosonfirst-data",
+  "url": "https://github.com/whosonfirst-data/whosonfirst-data",
+  "name": "Who's On First data (gazetteer)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Global gazetteer of places with stable 64-bit IDs, split into per-country repos (`whosonfirst-data-admin-{cc}`) and separate venue/POI repos (`whosonfirst-data-venue-*`) by country/region, as plain-text GeoJSON files (some via git-lfs for large countries). CC0 for original Mapzen work; attribution required for incorporated sources (GeoNames, Natural Earth).",
+  "why_useful": "A free, versioned (git-history-backed) global venue/place gazetteer that can, in principle, be diffed over commit history for a rough point-in-time venue census \u2014 an alternative geography backbone to Overture/Foursquare for joining STR and hotel POIs to stable place IDs across markets.",
+  "potential": "medium",
+  "geography": "Global (organized per-country repos)",
+  "time_coverage": "Git history back to Mapzen's original ~2015-2017 work, updated intermittently since",
+  "license": "CC0 (original work); mixed attribution for incorporated sources",
+  "size_hint": "Large; some country files near 100MB (git-lfs)",
+  "last_activity": "Low recent activity (111 commits on main tracking repo; per-country data repos vary)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "A free, versioned (git-history-backed) global venue/place gazetteer that can, in principle, be diffed over commit history for a rough point-in-time venue census \u2014 an alternative geography backbone to Overture/Foursquare for joining STR and hotel POIs to stable place IDs across markets."
+  ]
+ },
+ {
+  "key": "github:wmgeolab/geoboundaries",
+  "url": "https://github.com/wmgeolab/geoBoundaries",
+  "name": "geoBoundaries",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Global political administrative boundary polygons (CC BY 4.0 / ODbL-style, 947 commits, versioned releases e.g. v6.0.0) for all UN member states plus additional entities, ~300M vertices across hundreds of thousands of geometries, distributed via GitHub, API, and Python/R packages; tracks boundary changes since 2016.",
+  "why_useful": "Standardized, versioned admin-boundary layer to aggregate any POI/hotel-count dataset (Overture, OSM, Foursquare) up to consistent country/state/metro units across markets \u2014 a cleaner alternative to ad hoc boundary files for the regional (NA/EMEA/LatAm/APAC) splits this pitch needs.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Versioned since 2016, with dated releases enabling point-in-time boundary use",
+  "license": "CC BY 4.0 (attribution-only)",
+  "size_hint": "~300M vertices, git-lfs backed",
+  "last_activity": "Active (latest tagged release noted v6.0.0, Sep 2023)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Standardized, versioned admin-boundary layer to aggregate any POI/hotel-count dataset (Overture, OSM, Foursquare) up to consistent country/state/metro units across markets \u2014 a cleaner alternative to ad hoc boundary files for the regional (NA/EMEA/LatAm/APAC) splits this pitch needs."
+  ]
+ },
+ {
+  "key": "github:chriswhong/nyc-neighborhood-boundaries",
+  "url": "https://github.com/chriswhong/nyc-neighborhood-boundaries",
+  "name": "chriswhong/nyc-neighborhood-boundaries",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single GeoJSON file of contiguous, non-overlapping polygons for New York City neighbourhoods (hand-corrected from NYC Planning's NTAs), committed to the repo.",
+  "why_useful": "NYC is our largest single Inside Airbnb market and has the pre/post-Local-Law-18 gap (CONTEXT gap 1); a clean contiguous neighbourhood layer supports any tract-level rollup of NYC listings/registrations.",
+  "potential": "medium",
+  "size_hint": "1 GeoJSON, ~195 NYC neighbourhoods",
+  "geography": "New York City",
+  "time_coverage": "static, current NTA vintage",
+  "license": "other (stated in repo)",
+  "last_activity": "2026-07-20",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "NYC is our largest single Inside Airbnb market and has the pre/post-Local-Law-18 gap (CONTEXT gap 1); a clean contiguous neighbourhood layer supports any tract-level rollup of NYC listings/registrations."
+  ]
+ }
+]

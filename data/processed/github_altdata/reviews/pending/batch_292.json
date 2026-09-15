@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:omkarcloud/skyscanner-scraper",
+  "url": "https://github.com/omkarcloud/skyscanner-scraper",
+  "name": "skyscanner-scraper (omkarcloud)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained (updated 2026-09-08) scraper/API wrapper claiming to pull Skyscanner flight search results as structured JSON (routes, prices, dates); free tier of 1,000 calls/month advertised. No historical data committed, method only.",
+  "why_useful": "Another non-Airbnb, actively maintained flight-search puller relevant to gap 10 (airline capacity/traffic) and general travel-demand cross-checks; scraping Skyscanner is outside the sanctioned-source list so this is catalogued as a method only, not run.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "license": "not stated",
+  "geography": "global (Skyscanner coverage)",
+  "time_coverage": "n/a (live scrape only)",
+  "size_hint": "code/library, no data files",
+  "last_activity": "2026-09-08",
+  "hits": 2,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers",
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Another non-Airbnb, actively maintained flight-search puller relevant to gap 10 (airline capacity/traffic) and general travel-demand cross-checks; scraping Skyscanner is outside the sanctioned-source list so this is catalogued as a method only, not run.",
+   "Alternative live Skyscanner fare-acquisition method to Google Flights scrapers; only useful if the team decides to build and archive its own point-in-time airfare panel (a ToS question to flag per repo rules, since it scrapes a non-Airbnb but still commercial site)."
+  ]
+ },
+ {
+  "key": "github:thorwhalen/farepy",
+  "url": "https://github.com/thorwhalen/farepy",
+  "name": "thorwhalen/farepy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Multi-source flight-search Python client with normalized results, caching, and batch support, including a Kayak integration alongside other flight-search backends.",
+  "why_useful": "General-purpose flight-fare pull tool; could feed an airfare/travel-cost proxy series (gap #10) if a team member wants time-series airfare tracking beyond BLS/FRED airfare CPI already held, but it is a live scraper/aggregator client, not a stored dataset.",
+  "potential": "low",
+  "size_hint": "n/a (client library, no data)",
+  "time_coverage": "live/current",
+  "geography": "wherever underlying flight-search backends cover (global)",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "General-purpose flight-fare pull tool; could feed an airfare/travel-cost proxy series (gap #10) if a team member wants time-series airfare tracking beyond BLS/FRED airfare CPI already held, but it is a live scraper/aggregator client, not a stored dataset."
+  ]
+ },
+ {
+  "key": "github:skyscanner/skyscanner-python-sdk",
+  "url": "https://github.com/skyscanner/skyscanner-python-sdk",
+  "name": "skyscanner/skyscanner-python-sdk",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official (now archived/deprecated) Python SDK for the Skyscanner Flights, Hotels, and Car Hire APIs. Archived read-only Jan 2026; deprecated by Skyscanner itself since May 2020 with a stated warning the API will stop working. Apache License, 125 commits.",
+  "why_useful": "Historical interest only -- confirms Skyscanner once exposed a hotel-price API wrapped here, but the underlying API is dead and the SDK is explicitly non-functional against current endpoints. Not a usable acquisition method today.",
+  "potential": "low",
+  "size_hint": "n/a (dead API client)",
+  "time_coverage": "pre-2020 API, non-functional now",
+  "geography": "global (Skyscanner coverage)",
+  "license": "Apache License",
+  "last_activity": "archived Jan 2026 (development stopped May 2020)",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "Historical interest only -- confirms Skyscanner once exposed a hotel-price API wrapped here, but the underlying API is dead and the SDK is explicitly non-functional against current endpoints. Not a usable acquisition method today."
+  ]
+ },
+ {
+  "key": "github:reggiegentle/ncl-cli",
+  "url": "https://github.com/reggiegentle/ncl-cli",
+  "name": "ncl-cli",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Unofficial read-only CLI (MIT licence) that pulls Norwegian Cruise Line itinerary and shore-excursion data (plus images) from NCL's public site as JSON. No committed dataset \u2014 a live-pull method only. Updated 3 Jul 2026, 0 stars.",
+  "why_useful": "Could be adapted to build a point-in-time itinerary/capacity-by-sailing panel for NCLH (gap #18, cruise book-ahead analogue) if run repeatedly and archived; on its own it is just a client, not data.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "license": "MIT",
+  "last_activity": "2026-07-03",
+  "geography": "Global (NCL sailings)",
+  "time_coverage": "Current/live only, no history",
+  "size_hint": "Code only, no data files",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Could be adapted to build a point-in-time itinerary/capacity-by-sailing panel for NCLH (gap #18, cruise book-ahead analogue) if run repeatedly and archived; on its own it is just a client, not data."
+  ]
+ },
+ {
+  "key": "github:normanlo4319/cruise_tourism_research_api_request",
+  "url": "https://github.com/NormanLo4319/Cruise_Tourism_Research_API_Request",
+  "name": "Cruise_Tourism_Research_API_Request",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Uses the Google Maps API plus web-scripting tools to collect cruise ports and cruise ships data (port locations, ship metadata) for a tourism research project. Small academic project repo, MIT licence, last touched 2020, 1 star.",
+  "why_useful": "A crude method sketch for building a port-call panel, but stale (2020), no committed output data visible, and Google Maps API is not a cruise-schedule source of real value.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "license": "MIT",
+  "last_activity": "2020-07-19",
+  "geography": "Unspecified/global",
+  "time_coverage": "2020 snapshot",
+  "size_hint": "Small, code-only",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "A crude method sketch for building a port-call panel, but stale (2020), no committed output data visible, and Google Maps API is not a cruise-schedule source of real value."
+  ]
+ }
+]

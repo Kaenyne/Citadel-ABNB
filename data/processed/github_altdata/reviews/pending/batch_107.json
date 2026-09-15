@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:skonasani/chicago-permits-analysis",
+  "url": "https://github.com/skonasani/Chicago-Permits-Analysis",
+  "name": "skonasani/Chicago-Permits-Analysis",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pipeline (SQL + Python via Socrata API) over the City of Chicago's public building-permits dataset, 236,847 records, with a dashboard on neighborhood-level permit-driven demand signals.",
+  "why_useful": "Building-permit volume is a direct new-housing-supply proxy relevant to STR-host-supply growth in a major ABNB market (Chicago is in the team's 13-city Inside Airbnb panel); the Socrata ingestion code is reusable for other cities' open permit portals too.",
+  "potential": "low",
+  "size_hint": "236,847-row Chicago permits dataset (pulled live via Socrata, not necessarily committed as a static file)",
+  "time_coverage": "per Chicago Data Portal permits dataset (2006-present typically)",
+  "geography": "Chicago, IL",
+  "license": "unlicensed",
+  "last_activity": "2026-06-05",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Building-permit volume is a direct new-housing-supply proxy relevant to STR-host-supply growth in a major ABNB market (Chicago is in the team's 13-city Inside Airbnb panel); the Socrata ingestion code is reusable for other cities' open permit portals too."
+  ]
+ },
+ {
+  "key": "github:amiriqbalkhan123/data-cleaning-san-francisco-building-permits-dataset",
+  "url": "https://github.com/amiriqbalkhan123/Data-Cleaning-San-Francisco-Building-Permits-Dataset",
+  "name": "amiriqbalkhan123/Data-Cleaning-San-Francisco-Building-Permits-Dataset",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Cleaned/processed version of San Francisco's public building-permits dataset, ~198k records, with a semantic-normalization and validation pipeline.",
+  "why_useful": "SF is a high-cost, high-regulation STR/housing market; a cleaned, analysis-ready 198k-row permits file is a usable new-housing-supply proxy with minimal further prep, if the cleaned CSV is committed in the repo.",
+  "potential": "low",
+  "size_hint": "~198,000 records (city of San Francisco building permits)",
+  "time_coverage": "per SF DataSF permits dataset (roughly 2013-present)",
+  "geography": "San Francisco, CA",
+  "license": "unlicensed",
+  "last_activity": "2026-05-10",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "SF is a high-cost, high-regulation STR/housing market; a cleaned, analysis-ready 198k-row permits file is a usable new-housing-supply proxy with minimal further prep, if the cleaned CSV is committed in the repo."
+  ]
+ },
+ {
+  "key": "github:ampayreh/seattle-civic-data-tool",
+  "url": "https://github.com/ampayreh/seattle-civic-data-tool",
+  "name": "ampayreh/seattle-civic-data-tool",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Natural-language query tool that translates questions into Socrata SODA API calls against Seattle's open-data Building Permits dataset (LLM-assisted analysis layer on top).",
+  "why_useful": "A working, generalizable client for pulling Seattle building-permit records on demand; the same SODA pattern extends to any other Socrata-hosted city permits/parcel dataset.",
+  "potential": "low",
+  "size_hint": "tool/query code only, live API pulls, no bulk data committed",
+  "time_coverage": "current Seattle open-data permits coverage",
+  "geography": "Seattle, WA",
+  "license": "unlicensed",
+  "last_activity": "2026-08-17",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "A working, generalizable client for pulling Seattle building-permit records on demand; the same SODA pattern extends to any other Socrata-hosted city permits/parcel dataset."
+  ]
+ },
+ {
+  "key": "github:fournogo/austin-building-permits",
+  "url": "https://github.com/Fournogo/Austin-Building-Permits",
+  "name": "Fournogo/Austin-Building-Permits",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small script scraping/aggregating the City of Austin's public building-permit dataset totals.",
+  "why_useful": "Austin is in the team's own 13-city Inside Airbnb panel; a working pull method for Austin permit totals is a direct, cheap new-supply proxy for that market.",
+  "potential": "low",
+  "size_hint": "script only, aggregates totals rather than storing raw rows",
+  "time_coverage": "per Austin open-data permits dataset",
+  "geography": "Austin, TX",
+  "license": "unlicensed",
+  "last_activity": "2023-05-10",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Austin is in the team's own 13-city Inside Airbnb panel; a working pull method for Austin permit totals is a direct, cheap new-supply proxy for that market."
+  ]
+ },
+ {
+  "key": "github:ihtishamulhaq800/nomadlistdata",
+  "url": "https://github.com/ihtishamulhaq800/NomadListData",
+  "name": "NomadListData",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Excel/CSV files: UAECitiesFile.csv, UAECitiesFile_processed.csv, city_data.xlsx, 'city_data - Filtered.xlsx', 'city_data - Copy - Copy.xlsx' plus two Jupyter notebooks (test.ipynb, test1.ipynb) and a requirements.txt \u2014 looks like a personal Nomad-List-style scrape/build focused on UAE cities (cost of living / city attribute fields, exact columns unconfirmed since README content could not be read). Also contains a committed .env (credential hygiene issue, not our concern but notable).",
+  "why_useful": "A working, non-Airbnb 'nomad city attributes' data build with real committed files rather than just a scraper stub; even limited to UAE cities it demonstrates a repeatable Nomad-List-style attribute scrape (cost of living, presumably internet speed / climate) that could be extended, and speaks to gap #16.",
+  "potential": "low",
+  "gap_targets": [
+   16
+  ],
+  "geography": "UAE cities only (per file names)",
+  "time_coverage": "unknown, appears to be a single-pull snapshot",
+  "size_hint": "a handful of xlsx/csv files, city-level (not row-count confirmed)",
+  "license": "none declared",
+  "last_activity": "unknown (not in top search results with date; found via keyword match)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "A working, non-Airbnb 'nomad city attributes' data build with real committed files rather than just a scraper stub; even limited to UAE cities it demonstrates a repeatable Nomad-List-style attribute scrape (cost of living, presumably internet speed / climate) that could be extended, and speaks to gap #16."
+  ]
+ }
+]

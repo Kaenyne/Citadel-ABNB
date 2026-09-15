@@ -1,0 +1,137 @@
+[
+ {
+  "key": "other:https://huggingface.co/datasets/booking-com/multi-destination-trip-dataset",
+  "url": "https://huggingface.co/datasets/Booking-com/multi-destination-trip-dataset",
+  "name": "Booking-com/multi-destination-trip-dataset",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "The official Booking.com WSDM WebTour 2021 'Booking Challenge' dataset, published directly by Booking.com on HuggingFace (mirrors bookingchallenge.com). Train: 1,166,835 anonymized hotel reservations; test: 378,667 (total 1,545,502 rows). Columns: user_id, checkin, checkout, affiliate_id, device_class, booker_country, hotel_country, city_id, utrip_id (multi-stop trips are grouped by utrip_id, each trip's final destination concealed in test). Data window visible in samples is 2016 (Aug-Dec); the original 2021 challenge release covers roughly 2016-2017 bookings across many city_id/hotel_country codes worldwide. License CC-BY-NC-ND-4.0. Not on GitHub itself (Booking.com's GitHub orgs, 'bookingcom' and 'Booking-com', hold no data repos) but is the authoritative, directly downloadable microdata release (parquet/CSV via the `datasets` library or bookingchallenge.com).",
+  "why_useful": "Real booked (not just searched/quoted) reservation-level records with checkin/checkout dates let you derive length-of-stay and multi-destination trip-chaining distributions and booker_country x hotel_country flow tables for a major competitor OTA \u2014 a genuine, non-Airbnb building block for gap #9 (competitor/adjacent supply-demand) and gap #20 (party-size/length-of-stay/cross-border proxies, via trip chains). It is a materially bigger and more structured booking-level dataset than anything currently held for Booking.com beyond the 515k reviews file.",
+  "size_hint": "1.55M rows total (1.17M train + 0.38M test), ~9 columns",
+  "time_coverage": "~2016-2017 (WSDM WebTour 2021 challenge vintage)",
+  "geography": "Global (city_id and hotel_country/booker_country codes worldwide)",
+  "license": "CC-BY-NC-ND-4.0",
+  "last_activity": "Dataset card last updated 6 Dec 2024 on HuggingFace",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9,
+   20
+  ],
+  "potential": "high",
+  "hits": 1,
+  "themes": [
+   "Booking.com datasets beyond the 515k reviews: listing/price snapshots, alternative-accommodation counts, Booking scrapers, WSDM/RecSys Booking challenge data"
+  ],
+  "why_all": [
+   "Real booked (not just searched/quoted) reservation-level records with checkin/checkout dates let you derive length-of-stay and multi-destination trip-chaining distributions and booker_country x hotel_country flow tables for a major competitor OTA \u2014 a genuine, non-Airbnb building block for gap #9 (competitor/adjacent supply-demand) and gap #20 (party-size/length-of-stay/cross-border proxies, via trip chains). It is a materially bigger and more structured booking-level dataset than anything currently held for Booking.com beyond the 515k reviews file."
+  ]
+ },
+ {
+  "key": "other:https://ceur-ws.org/vol-3886/challenge1.pdf",
+  "url": "https://ceur-ws.org/Vol-3886/challenge1.pdf",
+  "name": "Booking.com RecTour 2024 Reviews Challenge dataset",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "RecTour 2024 (ACM RecSys workshop, co-located, Oct 18 2024) challenge dataset: 2,031,914 anonymized, dated user-generated reviews from 50,000 Booking.com accommodations, with guest and accommodation context fields. Distributed via the RecTour organizers / Hugging Face (Booking-com/accommodation-reviews) rather than a plain GitHub repo, but the RecTour workshop series (github search: RecTour, rectour24) hosts baseline code and challenge scaffolding on GitHub each year.",
+  "why_useful": "A large, dated (review-timestamped), non-Airbnb short-term-lodging review corpus at real scale (2M+ reviews, 50k properties) -- a genuine competitor (Booking.com alternative-accommodation) reviews-over-time dataset that could be used the same way as an Airbnb reviews stays-proxy, for a peer-comparison read-through. This extends what we already hold (RecTour24 user dataset, 515k Booking hotel reviews) with the newer, larger 2024 accommodation-reviews release.",
+  "potential": "medium",
+  "gap_targets": [
+   9
+  ],
+  "license": "RecTour/Booking.com challenge terms (research use; check before any use)",
+  "last_activity": "2024 (workshop held Oct 2024)",
+  "geography": "50,000 accommodations, multi-country (not specified)",
+  "time_coverage": "dated reviews, span not confirmed in this pass",
+  "size_hint": "2,031,914 reviews across 50,000 accommodations",
+  "duplicate_of_holding": "extends our existing RecTour24 / 515k Booking hotel reviews holdings with a newer, larger accommodation-reviews release",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "A large, dated (review-timestamped), non-Airbnb short-term-lodging review corpus at real scale (2M+ reviews, 50k properties) -- a genuine competitor (Booking.com alternative-accommodation) reviews-over-time dataset that could be used the same way as an Airbnb reviews stays-proxy, for a peer-comparison read-through. This extends what we already hold (RecTour24 user dataset, 515k Booking hotel reviews) with the newer, larger 2024 accommodation-reviews release."
+  ]
+ },
+ {
+  "key": "github:praveencs87/getyourguide-reviews-scraper",
+  "url": "https://github.com/praveencs87/getyourguide-reviews-scraper",
+  "name": "getyourguide-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Single-commit scraper for GetYourGuide tour reviews: tour URL/activity name, reviewer traveler-type tag (e.g. 'Family with young children'), star rating, full review text, review date; handles pagination; exports to JSON/CSV/Excel/HTML. No dataset committed \u2014 it is an extraction tool, 0 stars.",
+  "why_useful": "Review text + dates on a competitor Experiences marketplace could feed a demand/sentiment nowcast for tours & activities (adjacent to Airbnb Experiences), similar in spirit to the reviews-based 'stays index' already built for Inside Airbnb.",
+  "potential": "medium",
+  "geography": "global (GetYourGuide markets)",
+  "time_coverage": "reviews carry their own posted dates; pull is current-state only",
+  "size_hint": "no data committed; scraper only",
+  "license": "unclear",
+  "last_activity": "unknown, appears recent",
+  "gap_targets": [
+   9,
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Review text + dates on a competitor Experiences marketplace could feed a demand/sentiment nowcast for tours & activities (adjacent to Airbnb Experiences), similar in spirit to the reviews-based 'stays index' already built for Inside Airbnb."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/tripadvisor",
+  "url": "https://github.com/api-evangelist/tripadvisor",
+  "name": "tripadvisor (API Evangelist profile)",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "API Evangelist profile of Tripadvisor's public API surface (world's largest travel-guidance platform, owns Viator). Same spec/metadata-only format, no data.",
+  "why_useful": "TripAdvisor's official Content API covers hotel reviews, attraction/experience listings and location data across cities globally \u2014 this repo is only a map to it, but is a lead toward a legitimate cross-city review-volume/rating panel spanning hotels AND experiences, which nothing in our current holdings covers jointly.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "n/a",
+  "size_hint": "small",
+  "license": "unclear",
+  "last_activity": "unknown, org active",
+  "gap_targets": [
+   8,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "TripAdvisor's official Content API covers hotel reviews, attraction/experience listings and location data across cities globally \u2014 this repo is only a map to it, but is a lead toward a legitimate cross-city review-volume/rating panel spanning hotels AND experiences, which nothing in our current holdings covers jointly."
+  ]
+ },
+ {
+  "key": "github:stayingapi/vrbo-api",
+  "url": "https://github.com/stayingapi/vrbo-api",
+  "name": "vrbo-api examples (StayingAPI)",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed REST + native MCP wrapper claiming live Vrbo (plus Airbnb, Booking.com, Google Hotels) search, availability calendars, and pricing in one normalized schema. Free tier via sandbox key (stay_test_ prefix, deterministic mock data); production keys need signup but 'no credit card', and 'failed/empty/blocked calls are never billed'. Only 3 commits; third-party (not an official Vrbo product - Vrbo itself has no public self-serve API). Also topic-tagged as vrbo-api, last topic update 21 Jul 2026 (recently active).",
+  "why_useful": "Points to a commercial (not free) cross-platform normalization layer covering Vrbo \u2014 Airbnb's closest direct competitor supply-side (gap #9) \u2014 but it is a paid API, not open data, so value here is only as a pointer to what fields are obtainable, not a usable free source.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "live/point-of-scrape only",
+  "size_hint": "n/a",
+  "license": "MIT (for the example code only; underlying API is paid)",
+  "last_activity": "unknown, small repo (3 commits)",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose",
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Points to a commercial (not free) cross-platform normalization layer covering Vrbo \u2014 Airbnb's closest direct competitor supply-side (gap #9) \u2014 but it is a paid API, not open data, so value here is only as a pointer to what fields are obtainable, not a usable free source.",
+   "If the free tier genuinely returns live Vrbo pricing/availability without a paid key, this is a real one-command pull for point-in-time Vrbo pricing snapshots (gap #9 and could contribute to gap #2 realised-ADR type data) - but it is a commercial third-party reseller of unclear reliability/ToS status for repeated pulls; would need hands-on testing (out of scope for this cataloguing pass) and a ToS check before use."
+  ]
+ }
+]

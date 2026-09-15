@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/rajdeep345/ECTSum",
+  "slug": "ectsum-earnings-call-bullet-summaries",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "one_line": "ECTSum (EMNLP 2022): earnings-call transcripts paired with terse Reuters-style bullet summaries, committed in-repo under data/final/{train,val,test}/{ects,gt_summaries}; test split alone is 495 transcripts (8.70 MB) + 495 gold summaries (132 KB), filenames TICKER_qN_YYYY covering roughly 2019-2021 US mid/large caps (HLT present, no ABNB); GPL-3.0, last update 8 Mar 2023.",
+  "abnb_use": "Gap 17 (methods): a labelled corpus of 'what the wire pulled out of a call' is a ready-made training/eval set for extracting guide items and management tone from ABNB and peer calls; HLT_q4_2020 gives one lodging-peer example of transcript-to-summary pairing.",
+  "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/rajdeep345/ECTSum ectsum && cd ectsum && git sparse-checkout set data/final/test/gt_summaries (132 KB, all 495 files); then fetch ~10 transcripts only, via curl -sL https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/<NAME>.txt for HLT_q4_2020.txt plus 9 alphabetically-first files (~180 KB). Do NOT sparse-checkout data/final/train or codes/ (multi-tens-of-MB). Total < 1 MB.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified via gh api: data really is committed (data/final/test/ects = 495 .txt files, 8,704,680 bytes; gt_summaries = 495 files, 131,694 bytes), not a pointer to Kaggle. Coverage is 2020-2021 quarters across sectors with no ABNB and only one lodging name (HLT), so its value is as a method/benchmark corpus rather than as travel data. Flagged on licence because GPL-3.0 sits over transcripts and summaries derived from third-party publishers (Motley Fool / Reuters-style wraps), so redistribution is a human call."
+ },
+ {
+  "url": "https://github.com/revdotcom/speech-datasets",
+  "slug": "revdotcom-earnings21-earnings22-speech",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "one_line": "Rev.com Earnings21 (44 calls, ~39 h, 2020 US) and Earnings22 (125 calls, ~119 h, international) with speaker-tagged transcripts, entity/WER tags and metadata CSVs; transcripts CC-BY-SA 4.0, audio under media/ via Git LFS (many GB); last substantive update Aug 2024.",
+  "abnb_use": "Gap 17 only: speaker-labelled, ground-truth call transcripts to validate an ASR/tone pipeline; Earnings22's international spread (e.g. Argentina, LatAm tickers) is a template for non-US peer-call handling, but nothing here reads on travel demand.",
+  "sample_plan": "Not for pulling. If a human later wants it: earnings21/earnings21-file-metadata.csv (2.9 KB) and earnings21/speaker-metadata.csv (11 KB) plus earnings22/metadata.csv (10 KB) are plain raw.githubusercontent files; avoid media/ entirely (Git LFS audio).",
+  "tos_or_license_flag": false,
+  "reasoning": "Confirmed content: earnings21/ holds metadata CSVs, transcripts/{nlp_references,normalizations,wer_tags} and an LFS media/ tree; earnings22/ mirrors it with metadata.csv of 125 international tickers. I read the Earnings21 company list in full - 44 firms across healthcare, utilities, industrials and financials, with zero lodging, airline, OTA or leisure names (Travelers Companies is insurance), and Earnings22 metadata carries only tickers/country, no travel matches. Bulk is LFS audio, so the ABNB-relevant residue is a method corpus at best."
+ },
+ {
+  "url": "https://github.com/EarningsCall/earningscall-python",
+  "slug": "earningscall-python-api-client",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "MIT-licensed Python client for the EarningsCall API (transcripts at several detail levels incl. word-level timestamps, audio, slide decks, prepared-remarks vs Q&A tagging, earnings calendar; 5,000+ companies claimed) - but the keyless free tier serves only AAPL and MSFT; 92 commits, actively maintained into 2026.",
+  "abnb_use": "Gap 4/17: a structured, speaker-tagged, timestamped transcript and earnings-calendar source for ABNB, BKNG, EXPE, MAR and HLT, and an alignment path from audio to text for tone work on the 5 Nov call - if someone buys a key.",
+  "sample_plan": "Not to be pulled by an agent: everything beyond AAPL/MSFT needs a paid API key, and rule 'never use paid API keys' applies. Record the client (pip install earningscall) and the free-tier limitation for a human to price.",
+  "tos_or_license_flag": true,
+  "reasoning": "The code is MIT and real, but the README is explicit that default access without a key covers 'only two companies, Apple Inc. and Microsoft, Inc.' - so no ABNB or lodging peer data is reachable keylessly. That makes it a genuine acquisition method for point-in-time transcripts but strictly a catalogue entry, not a pull. Flagged because the data behind it is a commercial API with its own terms."
+ },
+ {
+  "url": "https://github.com/jeremiak/motley-fool-earning-transcripts",
+  "slug": "motley-fool-transcripts-datasette-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "Node scraper (index.mjs, 3.5 KB) plus Prisma schema and a GitHub Actions cron that built a SQLite DB of fool.com earnings-call transcripts served via Datasette - but NO database is committed to the repo and the published host motley-fool-earning-transcripts.fly.dev no longer resolves (DNS NXDOMAIN); last push 2 Apr 2023, no licence, author disclaims commercial use.",
+  "abnb_use": "Gap 17: a worked pattern for turning fool.com transcripts into a SQL-queryable store (ties to our existing fool.com rate-limit notes), and if revived would give cross-ticker full-text search of peer calls.",
+  "sample_plan": "Nothing to pull: repo holds code only (README, index.mjs, package.json, prisma/), the Datasette instance is dead, and running the scraper against fool.com is a terms-of-service decision for a human under project rule 6.",
+  "tos_or_license_flag": true,
+  "reasoning": "gh api on the repo root shows only source and config files - no .db, no release assets - and repo metadata gives license: null with pushed_at 2023-04-02. I checked the advertised Datasette host and DNS returns non-existent domain, so the 'running, queryable mirror' the scout described is gone. What remains is an unlicensed third-party-site scraper: catalogue as method, leave unrun."
+ },
+ {
+  "url": "https://huggingface.co/datasets/jlh-ibm/earnings_call",
+  "slug": "jlh-ibm-earnings-call-transcripts-prices",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "Hugging Face dataset jlh-ibm/earnings_call (CC0-1.0, last modified 15 Sep 2023, ~21 MB / 21,887 rows): 188 Eikon transcripts as data/transcripts/<TICKER>/YYYY-Mon-DD-<TICKER>.txt for 10 NASDAQ tech/semi names (AAPL, AMD, AMZN, ASML, CSCO, GOOGL, INTC, MSFT, MU, NVDA) 2016-2020, joined to data/stock_prices/*.csv (incl. a NASDAQ index file) and a transcript-sentiment subset; files are keylessly downloadable from huggingface.co/datasets/jlh-ibm/earnings_call/resolve/main/<path>.",
+  "abnb_use": "Gap 4/17 as a template only: a clean, public-domain worked example of joining call transcripts to daily prices with sentiment labels, i.e. the shape of an ABNB+peers event panel. It contains no travel, lodging or OTA names.",
+  "sample_plan": "Not worth agent time. If a human wants the template: curl -sL https://huggingface.co/datasets/jlh-ibm/earnings_call/resolve/main/data/stock_prices/AAPL.csv and one transcript under data/transcripts/AAPL/ (~200 KB total, no login).",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified through the public HF datasets API: cardData licence cc0-1.0, lastModified 2023-09-15, and the sibling list confirms 11 stock-price CSVs and per-ticker transcript folders - all keyless. But the ticker set is entirely tech/semiconductor with nothing in travel or lodging, and we already hold every ABNB letter/transcript plus daily prices, so its only contribution is methodological. Cheap to fetch, low enough value that a catalogue line is the right resting place."
+ }
+]

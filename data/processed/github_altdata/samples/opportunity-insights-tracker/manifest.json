@@ -1,0 +1,33 @@
+{
+  "slug": "opportunity-insights-tracker",
+  "url": "https://github.com/OpportunityInsights/EconomicTracker",
+  "sampled": true,
+  "total_bytes": 12160169,
+  "files": [
+    "Affinity - National - Daily.csv",
+    "Affinity - State - Daily.csv",
+    "Affinity - County - Daily.HEAD.csv",
+    "Affinity Industry Composition - National - 2020.csv",
+    "GeoIDs - State.csv",
+    "oi_tracker_data_dictionary.md",
+    "README_upstream.md"
+  ],
+  "rows": "National Daily 1,359; State Daily 50,694 (51 states x 994 days); County Daily HEAD 158,247 (first ~4 MB of a 41 MB file, 2018-12-31 to 2020-04-06 only); Industry Composition 8; GeoIDs State 51",
+  "columns": "year, month, day, [statefips|countyfips], freq, spend_all, spend_aap, spend_acf (accommodation+food service), spend_aer (arts/entertainment/recreation), spend_apg, spend_durables, spend_nondurables, spend_grf, spend_gen, spend_hic, spend_hcs, spend_inperson, spend_inpersonmisc, spend_remoteservices, spend_sgh, spend_tws (transport), spend_retail_*, spend_all_q1..q4 (income quartile), provisional; national file adds spend_<cat>_q# and spend_19_* / spend_s_* variants (142 cols). County file has spend_all only. Values are 7-day-avg % change vs Jan 2020 (decimal), '.' = missing.",
+  "date_range": "2018-12-31 to 2024-06-16 (rows); non-missing values 2020-01-13 to 2024-06-16; last 3 rows flagged provisional",
+  "how_pulled": "B=https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD; curl -sL -o <name> \"$B/data/Affinity%20-%20National%20-%20Daily.csv\" (same for State Daily, Industry Composition, GeoIDs - State, docs/oi_tracker_data_dictionary.md, README.md); curl -sL -r 0-3999999 -o \"Affinity - County - Daily.HEAD.csv\" \"$B/data/Affinity%20-%20County%20-%20Daily.csv\" then truncated to last full line in Python; gh api repos/OpportunityInsights/EconomicTracker/contents/data for the tree",
+  "full_dataset_size": "48 CSVs (+3 .csv.gz) in data/, ~470 MB total; Affinity block alone ~62 MB (County Daily 41 MB, State Daily 7.2 MB, City Daily 5.6 MB, County Monthly 4.8 MB); plus COVID, Employment (Paychex/Intuit/Earnin), Job Postings (Lightcast), UI Claims, Womply, Zearn, Google Mobility, Policy Milestones. One command: git clone --depth 1 https://github.com/OpportunityInsights/EconomicTracker",
+  "description": "Opportunity Insights Economic Tracker (tracktherecovery.org) public data: Affinity Solutions consumer credit/debit card spend as a 7-day-moving-average percent change relative to January 2020, seasonally adjusted, at national/state/county/city level by day and month, split by merchant industry (accommodation and food services, arts/entertainment/recreation, transport, retail, etc.) and by consumer ZIP-code income quartile. Grain here is one row per geography-day. Source is the official GitHub repo committed CSVs (last push 12 Sep 2026, but the Affinity series ends 16 Jun 2024). For ABNB an analyst would use spend_acf / spend_aer at state level as a regional US discretionary-travel and consumer-strength backdrop for NA nights and ADR over 2020-1H24 and as a covariate for backtests; it cannot nowcast 2025-26 quarters.",
+  "issues": "Series stops 2024-06-16 (repo pushes since then touch other files); no data for the pitch's forecast window. No LICENSE file: README asks users to name the data provider (Affinity Solutions) and cite the Chetty et al. 2020 tracker paper; job card flags no-resale attribution terms; a human should confirm citation in the pitch. Values are index changes vs Jan 2020, not dollar levels, and are seasonally adjusted by OI's own method. County file sampled only as a byte-range head (Jan 2019 to 6 Apr 2020) and contains spend_all only; the 41 MB full file is needed for county-level work. 2018-12-31 to 2020-01-12 rows are all '.' placeholders.",
+  "source_urls": [
+    "https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD/data/Affinity%20-%20National%20-%20Daily.csv",
+    "https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD/data/Affinity%20-%20State%20-%20Daily.csv",
+    "https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD/data/Affinity%20-%20County%20-%20Daily.csv",
+    "https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD/data/Affinity%20Industry%20Composition%20-%20National%20-%202020.csv",
+    "https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD/data/GeoIDs%20-%20State.csv",
+    "https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD/docs/oi_tracker_data_dictionary.md",
+    "https://raw.githubusercontent.com/OpportunityInsights/EconomicTracker/HEAD/README.md",
+    "https://api.github.com/repos/OpportunityInsights/EconomicTracker/contents/data"
+  ],
+  "pulled_at": "2026-09-14"
+}

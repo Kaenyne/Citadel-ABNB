@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:saanseoi/overturist",
+  "url": "https://github.com/saanseoi/overturist",
+  "name": "saanseoi/overturist",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small MIT-licensed CLI (9 stars, updated 6 Sep 2026, active) for obtaining data from Overture Maps, including the Places theme.",
+  "why_useful": "Lightweight, actively-updated CLI alternative for pulling Overture Places by bbox/category for a lodging-supply count.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "current Overture releases",
+  "size_hint": "CLI tool only",
+  "license": "MIT",
+  "last_activity": "2026-09-06",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "functionally overlaps other Overture downloaders above",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Lightweight, actively-updated CLI alternative for pulling Overture Places by bbox/category for a lodging-supply count."
+  ]
+ },
+ {
+  "key": "github:project-terraforma/mayhem_attribute_conflation",
+  "url": "https://github.com/project-terraforma/Mayhem_Attribute_Conflation",
+  "name": "project-terraforma/Mayhem_Attribute_Conflation",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0 pipeline (10 stars) that resolves attribute conflicts across multiple source feeds inside Overture Maps POI data using ML + rule-based heuristics to produce unified 'golden record' POIs.",
+  "why_useful": "Relevant to data-quality of any hotel/lodging POI count built from Overture (Overture places are conflated from multiple sources incl. Meta, Microsoft, community feeds, TomTom -- duplicate/attribute conflicts affect a supply count); useful as a QC method reference, not a dataset itself.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (method)",
+  "size_hint": "pipeline code",
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-10",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Relevant to data-quality of any hotel/lodging POI count built from Overture (Overture places are conflated from multiple sources incl. Meta, Microsoft, community feeds, TomTom -- duplicate/attribute conflicts affect a supply count); useful as a QC method reference, not a dataset itself."
+  ]
+ },
+ {
+  "key": "github:julien-noblet/download-geofabrik",
+  "url": "https://github.com/julien-noblet/download-geofabrik",
+  "name": "julien-noblet/download-geofabrik",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MPL-2.0 tool (35 stars, updated 7 Sep 2026, actively maintained) for downloading OSM .osm.pbf files from Geofabrik by region/country.",
+  "why_useful": "Simple, actively-maintained downloader for Geofabrik extracts as the raw input to a tourism=hotel/guest_house tag count; minimal-dependency alternative to the R/Python packages above.",
+  "potential": "low",
+  "geography": "global (Geofabrik regions)",
+  "time_coverage": "current OSM snapshot at run time",
+  "size_hint": "tool code only",
+  "license": "MPL-2.0",
+  "last_activity": "2026-09-07",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "overlaps osmextract/pydriosm",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Simple, actively-maintained downloader for Geofabrik extracts as the raw input to a tourism=hotel/guest_house tag count; minimal-dependency alternative to the R/Python packages above."
+  ]
+ },
+ {
+  "key": "github:mansueto-institute/prclz",
+  "url": "https://github.com/mansueto-institute/prclz",
+  "name": "mansueto-institute/prclz",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "GPL-3.0 repo (14 stars) of topological/graph-theoretic tools to study urban infrastructure at global scale, built on OSM data via Geofabrik-style extracts (parcels, building footprints, block complexity), from a University of Chicago urban-economics lab.",
+  "why_useful": "Academic-grade toolkit for measuring urban built-form density from OSM globally -- a possible proxy input for identifying informal/dense STR-supply-prone neighborhoods, though it is not lodging-specific.",
+  "potential": "low",
+  "geography": "global (any Geofabrik-covered region)",
+  "time_coverage": "current OSM snapshots",
+  "size_hint": "toolkit code + example outputs",
+  "license": "GPL-3.0",
+  "last_activity": "2026-06-03",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Academic-grade toolkit for measuring urban built-form density from OSM globally -- a possible proxy input for identifying informal/dense STR-supply-prone neighborhoods, though it is not lodging-specific."
+  ]
+ },
+ {
+  "key": "github:edisedis777/coffee-shops-analysis",
+  "url": "https://github.com/edisedis777/Coffee-Shops-Analysis",
+  "name": "edisedis777/Coffee-Shops-Analysis",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Notebook analyzing the Foursquare Open Source Places dataset for US coffee shop distribution (Portland focus). No lodging content, but confirms the Foursquare OS Places dataset is usable/queryable at the repo level (Foursquare Places, AGPL-3.0 repo, 0 stars).",
+  "why_useful": "Confirms usability of the Foursquare OS Places dataset via a working example pipeline, but not itself lodging-relevant -- low value as a standalone catalogue entry, kept as evidence the FSQ dataset is broadly workable.",
+  "potential": "low",
+  "geography": "US (Portland example)",
+  "time_coverage": "current FSQ release at run time",
+  "size_hint": "notebook + small derived outputs",
+  "license": "AGPL-3.0",
+  "last_activity": "2026-05-31",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "same underlying dataset as lmmx/fsqosp",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Confirms usability of the Foursquare OS Places dataset via a working example pipeline, but not itself lodging-relevant -- low value as a standalone catalogue entry, kept as evidence the FSQ dataset is broadly workable."
+  ]
+ }
+]

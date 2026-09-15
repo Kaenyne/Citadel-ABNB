@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:trendct-data/vehicle-miles-traveled-by-state",
+  "url": "https://github.com/trendct-data/Vehicle-miles-traveled-by-state",
+  "name": "Vehicle-miles-traveled-by-state",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed dataset stitching together FHWA (Federal Highway Administration) Traffic Volume Trends monthly state-level VMT spreadsheets into one file, built by a data journalism shop (TrendCT); one row/file per state per month, sourced directly from FHWA's monthly reports.",
+  "why_useful": "State-level monthly VMT is a direct measure of US road-travel volume and a plausible complement to TSA throughput (already held, flagged as not working post-2024) for the domestic drive-market share of leisure travel; state granularity could support a NA-region driving-vs-flying mix proxy for gap #10.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "license": "none declared",
+  "last_activity": "2021-07-21",
+  "geography": "US, state-level",
+  "time_coverage": "FHWA monthly VMT series through ~2021 (repo stale since)",
+  "size_hint": "small, stitched CSV(s) from monthly FHWA spreadsheets",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "State-level monthly VMT is a direct measure of US road-travel volume and a plausible complement to TSA throughput (already held, flagged as not working post-2024) for the domestic drive-market share of leisure travel; state granularity could support a NA-region driving-vs-flying mix proxy for gap #10."
+  ]
+ },
+ {
+  "key": "github:lykmapipo/us-gas-prices",
+  "url": "https://github.com/lykmapipo/US-Gas-Prices",
+  "name": "US-Gas-Prices",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Python (Selenium) scrapers that pull daily average gas prices from gasprices.aaa.com at state level (scrape_state_daily_averages.py) and metro/457-city level (scrape_metro_daily_averages.py), saving one CSV per day under data/state-daily-averages/ and data/metro-daily-averages/. Repo currently only has one committed snapshot (2026-09-13.csv) at check time -- it is a live/ongoing scrape, not a backfilled history -- but the method is a clean one-command pull of AAA's full state+metro daily average retail gas price panel.",
+  "why_useful": "AAA state/metro daily gas price panel is a real-time, high-frequency road-travel cost proxy that speaks to gap #10 (road capacity/traffic) and to consumer discretionary travel spend generally -- higher pump prices are a classic drag on US domestic driving vacations (a chunk of ABNB North America nights). MIT licensed, active as of Sep 2026.",
+  "potential": "medium",
+  "geography": "US (state + 457 metro areas)",
+  "time_coverage": "live-only, started ~Sep 2026 at time of check (grows daily going forward)",
+  "size_hint": "1 CSV/day, ~50 rows (states) or ~457 rows (metros) per file",
+  "license": "MIT",
+  "last_activity": "2026-09-13 (data commit)",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "AAA state/metro daily gas price panel is a real-time, high-frequency road-travel cost proxy that speaks to gap #10 (road capacity/traffic) and to consumer discretionary travel spend generally -- higher pump prices are a classic drag on US domestic driving vacations (a chunk of ABNB North America nights). MIT licensed, active as of Sep 2026."
+  ]
+ },
+ {
+  "key": "github:gueyenono/scrapeusgasprices",
+  "url": "https://github.com/gueyenono/ScrapeUSGasPrices",
+  "name": "ScrapeUSGasPrices",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python crawler that scrapes daily average gas prices for 457 US cities from the AAA Gas Prices website (gasprices.aaa.com), started ~2019-2022 vintage per repo notes (references a March 2022 outage). Method only in the README snippet seen; check repo tree for any committed historical CSVs.",
+  "why_useful": "Another independent AAA city-level gas price scraper, potentially with a longer running history (mentions issues from 2022) than lykmapipo's repo -- worth checking for a multi-year backfill of city-level pump prices.",
+  "potential": "medium",
+  "geography": "US, 457 cities",
+  "time_coverage": "unclear from README snippet; scraper referenced issues as far back as March 2022, suggesting it may have run since ~2019-2022",
+  "size_hint": "unknown, need to check data/ folder",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Another independent AAA city-level gas price scraper, potentially with a longer running history (mentions issues from 2022) than lykmapipo's repo -- worth checking for a multi-year backfill of city-level pump prices."
+  ]
+ },
+ {
+  "key": "github:byu-transpolab/nhts2017",
+  "url": "https://github.com/byu-transpolab/nhts2017",
+  "name": "nhtsr",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package producing eight tidy tibbles (households, persons, vehicles, trips) from the National Household Travel Survey (NHTS) 2017 and 2022 waves, properly typed and labeled from the raw ORNL SPSS files. Lets you compute trip counts, trip length, VMT-adjacent stats by metro size, day of week, etc.",
+  "why_useful": "NHTS is the authoritative US household travel behavior survey (trip counts, purpose, length, mode, vehicle ownership) -- useful for road-trip/leisure-travel share of total US travel and for cross-referencing vacation driving behavior against ABNB's North America nights, addressing gap #10 (road travel capacity/behavior) from a demand side rather than price side.",
+  "potential": "medium",
+  "geography": "US (national survey)",
+  "time_coverage": "2017 and 2022 survey waves (2022 file distributed by ORNL 2022-2024)",
+  "size_hint": "microdata, tens of thousands of household/trip records per wave",
+  "license": "unspecified in README; underlying NHTS data is public (ORNL/FHWA)",
+  "last_activity": "unknown, package supports up to 2022 wave",
+  "gap_targets": [
+   10,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "NHTS is the authoritative US household travel behavior survey (trip counts, purpose, length, mode, vehicle ownership) -- useful for road-trip/leisure-travel share of total US travel and for cross-referencing vacation driving behavior against ABNB's North America nights, addressing gap #10 (road travel capacity/behavior) from a demand side rather than price side."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/bureau-of-transportation-statistics",
+  "url": "https://github.com/api-evangelist/bureau-of-transportation-statistics",
+  "name": "bureau-of-transportation-statistics (API Evangelist profile)",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Third-party API profile (apis.yml/apis.json plus Postman/OpenAPI collections) pointing to the US Bureau of Transportation Statistics's public API surface: the BTS Open Data Socrata (SODA) portal (data.bts.gov), TranStats (airline on-time performance, carrier/airport snapshots, fuel consumption -- this is BTS T-100/DB1B territory, already a named gap #10 target), and the Freight Analysis Framework (FAF) for domestic/international freight flow volume and value by mode.",
+  "why_useful": "Not itself a road/fuel dataset, but a ready-made, machine-readable index (Postman + OpenAPI collections) of every BTS API surface -- aviation (T-100/DB1B), freight (FAF), and general transportation economics -- directly matching gap #10's 'BTS T-100/DB1B' and freight/road capacity ask, and could shortcut discovery of a BTS 'Highway Statistics'/VMT-adjacent Socrata dataset via data.bts.gov.",
+  "potential": "medium",
+  "geography": "US (national + state)",
+  "time_coverage": "n/a (API index, not a data snapshot)",
+  "size_hint": "small YAML/Postman collection files",
+  "license": "unclear for the profile repo itself (informational); underlying BTS data is public govt data",
+  "last_activity": "modified 2026-04-23",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Not itself a road/fuel dataset, but a ready-made, machine-readable index (Postman + OpenAPI collections) of every BTS API surface -- aviation (T-100/DB1B), freight (FAF), and general transportation economics -- directly matching gap #10's 'BTS T-100/DB1B' and freight/road capacity ask, and could shortcut discovery of a BTS 'Highway Statistics'/VMT-adjacent Socrata dataset via data.bts.gov."
+  ]
+ }
+]

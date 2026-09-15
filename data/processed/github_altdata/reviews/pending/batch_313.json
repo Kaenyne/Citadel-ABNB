@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:amit264703/india-foreign-tourist-arrivals",
+  "url": "https://github.com/Amit264703/India-Foreign-Tourist-Arrivals",
+  "name": "India-Foreign-Tourist-Arrivals",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Tableau visual analysis of India foreign tourist arrivals by source country, gender ratio, mode of arrival, and source region; likely built on the same official Ministry of Tourism India Tourism Statistics tables as the other India repos. Contents not enumerated.",
+  "why_useful": "Another possible source of an India FTA-by-country panel; worth checking for a committed CSV behind the Tableau workbook.",
+  "potential": "low",
+  "geography": "India",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2023-04-10",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Another possible source of an India FTA-by-country panel; worth checking for a committed CSV behind the Tableau workbook."
+  ]
+ },
+ {
+  "key": "github:elham6316/saudi-tourism-data-analysis",
+  "url": "https://github.com/Elham6316/Saudi-Tourism-Data-Analysis",
+  "name": "Saudi-Tourism-Data-Analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "End-to-end data analysis project (Python/Excel/SQL/Power BI) on Saudi tourism; contents not enumerated in this pass but sibling to alikhalill's repo above, may hold an overlapping or different-vintage Saudi tourism dataset.",
+  "why_useful": "Second independent Saudi tourism data-analysis repo; worth a duplicate check against alikhalill/saudi-tourism-data-analysis to see which has the more complete underlying dataset.",
+  "potential": "low",
+  "duplicate_of_holding": "possibly duplicates alikhalill/saudi-tourism-data-analysis's underlying Kaggle source",
+  "time_coverage": "unspecified",
+  "geography": "Saudi Arabia",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-07-04",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Second independent Saudi tourism data-analysis repo; worth a duplicate check against alikhalill/saudi-tourism-data-analysis to see which has the more complete underlying dataset."
+  ]
+ },
+ {
+  "key": "github:situmatheanalyst/-analysis-of-international-tourist-arrivals-in-turkey-2008-2020-",
+  "url": "https://github.com/situmatheanalyst/-Analysis-of-International-Tourist-Arrivals-in-Turkey-2008-2020-",
+  "name": "Analysis-of-International-Tourist-Arrivals-in-Turkey-2008-2020",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Turkeytourists.xlsx and 'Tourists by Nationalities.xlsx', annual tourist arrivals to Turkey 2008-2020 (151 valid observations, 395,153,133 cumulative tourists cited), plus SPSS output files and a Word report. No explicit source citation in README but consistent with Turkish MoT/TUIK annual totals.",
+  "why_useful": "Long annual back-history (2008-2020) for a MEA/Med gateway market relevant to EMEA demand comps; fills part of gap #7. Coarse (annual, no monthly granularity) so lower value than a monthly MoT series would be.",
+  "potential": "low",
+  "geography": "Turkey",
+  "time_coverage": "2008-2020, annual",
+  "size_hint": "2 Excel files, 151 rows",
+  "license": "none stated",
+  "last_activity": "2025-09-16",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Long annual back-history (2008-2020) for a MEA/Med gateway market relevant to EMEA demand comps; fills part of gap #7. Coarse (annual, no monthly granularity) so lower value than a monthly MoT series would be."
+  ]
+ },
+ {
+  "key": "github:iremtrm/tourism-time-series-analysis",
+  "url": "https://github.com/iremtrm/Tourism-Time-Series-Analysis",
+  "name": "Tourism-Time-Series-Analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Time series of German visitor arrivals to Turkey, 2008-2020, used for trend/seasonality decomposition. Not independently verified beyond search snippet.",
+  "why_useful": "Bilateral (Germany->Turkey) visitor flow series; niche but a real country-pair series relevant to EU-outbound demand context for MEA travel gap #7.",
+  "potential": "low",
+  "geography": "Turkey (German source market)",
+  "time_coverage": "2008-2020",
+  "size_hint": "unverified, likely small",
+  "license": "unknown",
+  "last_activity": "2025-06-10",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Bilateral (Germany->Turkey) visitor flow series; niche but a real country-pair series relevant to EU-outbound demand context for MEA travel gap #7."
+  ]
+ },
+ {
+  "key": "github:rubix64/tourism-analysis-of-india",
+  "url": "https://github.com/Rubix64/Tourism-analysis-of-India",
+  "name": "Tourism-analysis-of-India",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Jupyter notebook (tourism_analysis_in_India.ipynb) plus a dataset/ folder explicitly sourced from data.gov.in (India's open government data portal); file-level contents of dataset/ not enumerated by the fetch.",
+  "why_useful": "Points to data.gov.in as the underlying source for India tourism series -- worth a direct follow-up on data.gov.in itself for FTA/foreign-exchange-earnings-from-tourism series (gap #7), which this repo has already extracted into a committed folder.",
+  "potential": "low",
+  "geography": "India",
+  "time_coverage": "unknown",
+  "size_hint": "1 dataset folder, contents unverified",
+  "license": "unknown",
+  "last_activity": "2022-06-08",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Points to data.gov.in as the underlying source for India tourism series -- worth a direct follow-up on data.gov.in itself for FTA/foreign-exchange-earnings-from-tourism series (gap #7), which this repo has already extracted into a committed folder."
+  ]
+ }
+]

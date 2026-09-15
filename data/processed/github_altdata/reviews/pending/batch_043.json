@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:muhammadtaimoor3355-gif/post-disaster-mobility-public",
+  "url": "https://github.com/muhammadtaimoor3355-gif/post-disaster-mobility-public",
+  "name": "post-disaster-mobility-public",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Public-data pipeline linking FEMA National Risk Index (NRI), CDC Social Vulnerability Index (SVI), Census PUMA geographies, and FEMA disaster declarations through to IPUMS migration-PUMA level, i.e. models post-disaster population mobility/migration. Updated 15 Apr 2026, 'other' license.",
+  "why_useful": "Post-disaster migration/mobility flows are a proxy for demand disruption and displacement travel (short-term-rental usage spikes for displaced residents) around hurricanes/wildfires, relevant to gap 11 and gap 20 (mobility/geospatial proxies).",
+  "potential": "medium",
+  "gap_targets": [
+   11,
+   20
+  ],
+  "license": "other",
+  "last_activity": "2026-04-15",
+  "size_hint": "pipeline/code scale, sources IPUMS + FEMA NRI + CDC SVI + Census",
+  "geography": "US (PUMA level)",
+  "time_coverage": "unspecified, contemporary FEMA/IPUMS vintages",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Post-disaster migration/mobility flows are a proxy for demand disruption and displacement travel (short-term-rental usage spikes for displaced residents) around hurricanes/wildfires, relevant to gap 11 and gap 20 (mobility/geospatial proxies)."
+  ]
+ },
+ {
+  "key": "github:nicolejkeeney/thesis-flood-impact-analysis-2025",
+  "url": "https://github.com/nicolejkeeney/thesis-flood-impact-analysis-2025",
+  "name": "thesis-flood-impact-analysis-2025",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MS thesis (Colorado State University) processing pipeline and analysis code measuring flood-disaster impacts using MODIS satellite imagery, climate data, and EM-DAT disaster records. MIT licensed, 5 stars, updated 10 Sep 2026 (very fresh/active).",
+  "why_useful": "An actively maintained academic replication-style pipeline joining MODIS satellite flood extent with EM-DAT records; the method (not necessarily a large committed dataset) could be repurposed for hurricane-driven flooding impacting specific tourism markets (gap 11).",
+  "potential": "medium",
+  "gap_targets": [
+   11,
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "size_hint": "code/pipeline; unclear if raw MODIS/EM-DAT data is committed",
+  "geography": "global (wherever EM-DAT flood records + MODIS overlap)",
+  "time_coverage": "unspecified",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "An actively maintained academic replication-style pipeline joining MODIS satellite flood extent with EM-DAT records; the method (not necessarily a large committed dataset) could be repurposed for hurricane-driven flooding impacting specific tourism markets (gap 11).",
+   "Working EM-DAT extraction/cleaning code (flood subtype) that could be adapted to pull other disaster types (storm, wildfire) by country/date for an events regressor; illustrates how to join disaster events to a market panel."
+  ]
+ },
+ {
+  "key": "github:datadesk/nasa-wildfires",
+  "url": "https://github.com/datadesk/nasa-wildfires",
+  "name": "nasa-wildfires",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "LA Times Data Desk's Python tool to download wildfire hotspot detections from NASA satellites via FIRMS (MODIS/VIIRS), returning point-level fire-detection data with timestamps and confidence.",
+  "why_useful": "A well-maintained (34 stars), newsroom-grade one-command puller for near-real-time and historical FIRMS hotspot data -- lower-fidelity than perimeter polygons but easy to script for any market/date range, including Hawaii and Southern California.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "current NASA FIRMS archive (2000-present for MODIS, 2012-present VIIRS)",
+  "size_hint": "API client, no committed dataset",
+  "license": "not stated (LA Times Data Desk open-source tools are typically MIT/permissive)",
+  "last_activity": "2025-06-26",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A well-maintained (34 stars), newsroom-grade one-command puller for near-real-time and historical FIRMS hotspot data -- lower-fidelity than perimeter polygons but easy to script for any market/date range, including Hawaii and Southern California."
+  ]
+ },
+ {
+  "key": "github:geanders/hurricaneexposuredata",
+  "url": "https://github.com/geanders/hurricaneexposuredata",
+  "name": "hurricaneexposuredata",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R data package with hazard-based exposure data (storm-level rain and wind exposure) for every US county within the Atlantic-basin hurricane-affected region, keyed to specific historical tropical-storm events; companion to the `hurricaneexposure` toolkit (rOpenSci-affiliated) which layers on visualization/analysis functions.",
+  "why_useful": "County-level, storm-by-storm exposure intensity (not just track lines) lets you quantify how directly a given Inside Airbnb market (e.g. Florida, Gulf Coast, coastal NC/SC) was hit by a named storm -- useful for a hurricane-shock control variable in nights/ADR regressions, addressing gap #11.",
+  "potential": "medium",
+  "geography": "US counties, Atlantic basin storms",
+  "time_coverage": "historical tropical storms through package's last data refresh (package built off HURDAT2 vintages)",
+  "size_hint": "13 stars, 6 forks, 102 commits; R package data/ directory",
+  "license": "not explicitly stated in fetched excerpt (rOpenSci packages are typically MIT/GPL)",
+  "last_activity": "not shown in fetch excerpt; rOpenSci-reviewed package, periodically maintained",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "County-level, storm-by-storm exposure intensity (not just track lines) lets you quantify how directly a given Inside Airbnb market (e.g. Florida, Gulf Coast, coastal NC/SC) was hit by a named storm -- useful for a hurricane-shock control variable in nights/ADR regressions, addressing gap #11."
+  ]
+ },
+ {
+  "key": "github:levicowan-noaa/ibtracs",
+  "url": "https://github.com/levicowan-noaa/ibtracs",
+  "name": "ibtracs",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python API/wrapper for interfacing with NOAA's IBTrACS (International Best Track Archive for Climate Stewardship) global tropical-cyclone best-track dataset -- position, intensity, and metadata for every tracked tropical cyclone worldwide since ~1841 (satellite-era reliable from ~1980s).",
+  "why_useful": "Global coverage (not just Atlantic/HURDAT2) matters for APAC typhoon exposure (Japan, Thailand, Philippines -- gap #7 APAC travel volume interacts with typhoon season) and for a global, not just US, hurricane/typhoon shock variable.",
+  "potential": "medium",
+  "geography": "Global (all ocean basins)",
+  "time_coverage": "~1841-present (reliable satellite era ~1980s-present), updated as NOAA IBTrACS releases new versions",
+  "size_hint": "wrapper around NOAA's canonical IBTrACS CSV/NetCDF files (~10s of MB)",
+  "license": "not stated",
+  "last_activity": "2023-12-02",
+  "gap_targets": [
+   7,
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Global coverage (not just Atlantic/HURDAT2) matters for APAC typhoon exposure (Japan, Thailand, Philippines -- gap #7 APAC travel volume interacts with typhoon season) and for a global, not just US, hurricane/typhoon shock variable."
+  ]
+ }
+]

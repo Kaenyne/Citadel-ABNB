@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:alexandergirardet/london_rightmove",
+  "url": "https://github.com/alexandergirardet/london_rightmove",
+  "name": "london_rightmove",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "'Production ML rental prediction system' built on Rightmove London rental listings; likely includes a scraped dataset plus pipeline code.",
+  "why_useful": "London-specific rental panel/pipeline; could give a London LTR price series to compare against London STR (Inside Airbnb already covers London).",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "London, UK",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-06-20",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "London-specific rental panel/pipeline; could give a London LTR price series to compare against London STR (Inside Airbnb already covers London)."
+  ]
+ },
+ {
+  "key": "github:abracadabra50/open-properties",
+  "url": "https://github.com/abracadabra50/open-properties",
+  "name": "open-properties",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CLI/MCP-server/AI-agent-skill tool normalizing live queries across 9 providers in 9 countries: Rightmove/Zoopla/ESPC (UK), Daft.ie (Ireland), ImmoScout24 (Germany), RentCast (US), REALTOR.ca DDF (Canada), Domain (Australia), Idealista (Spain/Italy/Portugal). Queries live APIs, does not persist a dataset; some providers need API keys, three (Rightmove, Daft.ie, ImmoScout24) work anonymously. MIT license, 27 commits.",
+  "why_useful": "Single tool spanning most of the theme's target sites at once (incl. Australia and Germany); could be the fastest path to a standardized multi-country LTR pull if the team ever needs one comparable panel.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "UK, Ireland, US, Canada, Germany, Australia, Spain, Italy, Portugal",
+  "time_coverage": "N/A (live tool)",
+  "size_hint": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-08-27",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Single tool spanning most of the theme's target sites at once (incl. Australia and Germany); could be the fastest path to a standardized multi-country LTR pull if the team ever needs one comparable panel.",
+   "Broadest single multi-country LTR aggregation tool found; could be scheduled to build a point-in-time cross-country asking-rent panel (gap 13) without maintaining separate scrapers per country."
+  ]
+ },
+ {
+  "key": "github:asmaier/immospider",
+  "url": "https://github.com/asmaier/ImmoSpider",
+  "name": "ImmoSpider",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Crawler (215 stars, active Aug 2026) for the Immoscout24.de website, Germany's largest property portal (sale + rental).",
+  "why_useful": "Established, actively maintained German rental/property scraper; feeds a Germany LTR proxy.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "none declared",
+  "last_activity": "2026-08-14",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Established, actively maintained German rental/property scraper; feeds a Germany LTR proxy."
+  ]
+ },
+ {
+  "key": "github:eyayaw/cleaning-rwi-geo-red",
+  "url": "https://github.com/eyayaw/cleaning-RWI-GEO-RED",
+  "name": "cleaning-RWI-GEO-RED",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "R scripts to clean and construct hedonic price/rent indices from RWI-GEO-RED \u2014 the Research Data Center Ruhr's (FDZ Ruhr, RWI Essen) academic microdata product built from ImmoScout24 real-estate listings (sale + rental, apartments and houses) at German district / labor-market-region level, panel back to 2007-2021 in the repo's example config. Raw data itself is restricted-access, obtained directly from FDZ Ruhr (https://www.rwi-essen.de/en/research-advice/further/research-data-center-ruhr-fdz), not committed to the repo; only cleaning/index-construction code is here.",
+  "why_useful": "Points to the most rigorous, longest-running (2007+) academic German rental/housing microdata panel available, built from ImmoScout24 \u2014 a much longer, quality-adjusted hedonic-rent-index construction than any raw scraper gives, and a genuine academic-replication-package angle. Restricted access (registration/approval needed via FDZ Ruhr), so flagged as a pointer, not an immediate pull.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany (district / labor-market-region level)",
+  "time_coverage": "2007\u20132021 (configurable; RWI-GEO-RED itself extends further)",
+  "size_hint": "national German ImmoScout24 microdata panel (millions of listings, per FDZ Ruhr documentation); this repo is code-only",
+  "license": "none declared (code); underlying RWI-GEO-RED data is restricted/academic-access",
+  "last_activity": "2025-06-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Points to the most rigorous, longest-running (2007+) academic German rental/housing microdata panel available, built from ImmoScout24 \u2014 a much longer, quality-adjusted hedonic-rent-index construction than any raw scraper gives, and a genuine academic-replication-package angle. Restricted access (registration/approval needed via FDZ Ruhr), so flagged as a pointer, not an immediate pull."
+  ]
+ },
+ {
+  "key": "github:jjchern/zillowdata",
+  "url": "https://github.com/jjchern/zillowdata",
+  "name": "zillowdata",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed zip-code-level Zillow datasets including Zip_Zri_MultiFamilyResidenceRental \u2014 i.e. a stored extract of the Zillow Rent Index (ZORI/ZRI) at zip-code granularity, monthly, with example series shown for Chicago zips (60606, 60657, 60614).",
+  "why_useful": "Zillow's own rent index (ZORI/ZRI) is named explicitly in gap #13 (Zillow ZORI/Redfin/Apartment List/Realtor.com); this repo has an actual committed zip-level extract rather than just a link to Zillow Research, though it is a small/old snapshot repo and Zillow Research's live data page is a better primary source going forward.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "United States (zip-code level, example: Chicago)",
+  "time_coverage": "monthly, exact range unconfirmed (repo dated 2020, so likely covers Zillow's ZRI history up to ~2019-2020)",
+  "size_hint": "zip-code x month panel, national but repo last touched 2020",
+  "license": "none declared",
+  "last_activity": "2020-03-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Zillow's own rent index (ZORI/ZRI) is named explicitly in gap #13 (Zillow ZORI/Redfin/Apartment List/Realtor.com); this repo has an actual committed zip-level extract rather than just a link to Zillow Research, though it is a small/old snapshot repo and Zillow Research's live data page is a better primary source going forward."
+  ]
+ }
+]

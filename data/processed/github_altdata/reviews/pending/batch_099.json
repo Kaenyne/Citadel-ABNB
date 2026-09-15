@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:upgo-mcgill/str-ltr-mtl-analysis",
+  "url": "https://github.com/UPGo-McGill/str-ltr-mtl-analysis",
+  "name": "str-ltr-mtl-analysis",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code for a report on short-term rentals 'returning to the long-term market' in Montreal -- the STR-to-LTR conversion question directly. R/ and output/ and photos/ dirs; no committed raw dataset (licensed AirDNA input assumed, gitignored).",
+  "why_useful": "Directly on-point for gap #13's STR<->LTR crossover question, with a concrete Montreal case study methodology, even though no data ships with the repo.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "license": "none declared",
+  "last_activity": "2023-11-24",
+  "geography": "Montreal, Canada",
+  "time_coverage": "COVID-era return-to-LTR window (~2020-2023)",
+  "size_hint": "small, code + report outputs only",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Directly on-point for gap #13's STR<->LTR crossover question, with a concrete Montreal case study methodology, even though no data ships with the repo.",
+   "Directly addresses CONTEXT.md gap #13 (STR<->LTR crossover / host-supply economics) with an actual measured event (regulation-driven delisting into the LTR market) rather than a proxy."
+  ]
+ },
+ {
+  "key": "github:sieger1010/h2a",
+  "url": "https://github.com/sieger1010/h2a",
+  "name": "sieger1010/h2a",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Standardized U.S. Department of Labor H-2A agricultural seasonal-worker employment disclosure data, FY2008 through FY2025 Q3 (17+ years). Processed exports in processed_exports/ as CSV, Pickle, Feather, Parquet, and a SQLite DB. Fields include employer name (with known aliasing issues, e.g. North Carolina Growers Association), wage data, work-site location, employment start/end dates, worker certification counts, and DOL case numbers (some duplicated). README notes reported fields change across years so YoY comparisons need care; Python cleaning scripts are in-repo.",
+  "why_useful": "H-2A is a seasonal-migrant-worker visa program tied to harvest calendars in specific U.S. counties/states; a point-in-time, multi-year, county-level labor inflow series is a proxy for seasonal rural/agricultural-region short-term-rental and worker-housing demand (relevant to niche STR demand pockets and to broader seasonal-labor-market strength as a consumer-spending input) rather than a direct ABNB KPI driver, but it is a genuinely large, long, well-processed public dataset with no equivalent already held.",
+  "potential": "medium",
+  "gap_targets": [
+   6
+  ],
+  "geography": "United States (county/employer level)",
+  "time_coverage": "FY2008-FY2025 Q3",
+  "size_hint": "17+ years of DOL H-2A disclosure records; multi-format exports (CSV/Parquet/SQLite)",
+  "license": "unspecified in search result",
+  "last_activity": "unspecified (repo found via gh search, not dated in this pass)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "H-2A is a seasonal-migrant-worker visa program tied to harvest calendars in specific U.S. counties/states; a point-in-time, multi-year, county-level labor inflow series is a proxy for seasonal rural/agricultural-region short-term-rental and worker-housing demand (relevant to niche STR demand pockets and to broader seasonal-labor-market strength as a consumer-spending input) rather than a direct ABNB KPI driver, but it is a genuinely large, long, well-processed public dataset with no equivalent already held."
+  ]
+ },
+ {
+  "key": "github:eobodoechine/apartment-rental-scraper",
+  "url": "https://github.com/Eobodoechine/apartment-rental-scraper",
+  "name": "apartment-rental-scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Configurable multi-platform rental-hunting tool (a \"Claude Code skill\") that queries Zillow, Zumper, Redfin, Craigslist, Apartments.com and HotPads for long-term rental listings.",
+  "why_useful": "Broadest free multi-source LTR acquisition method found (gap #13); recent (Aug 2026) so likely still works against current site structures, useful if the team wants a apples-to-apples LTR price series to pair against STR/Airbnb ADR by metro.",
+  "potential": "medium",
+  "geography": "US, multi-platform (whatever each site covers)",
+  "last_activity": "2026-08-16",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Broadest free multi-source LTR acquisition method found (gap #13); recent (Aug 2026) so likely still works against current site structures, useful if the team wants a apples-to-apples LTR price series to pair against STR/Airbnb ADR by metro."
+  ]
+ },
+ {
+  "key": "github:cubxxw/remoteai-nomads",
+  "url": "https://github.com/cubxxw/RemoteAI-Nomads",
+  "name": "cubxxw/RemoteAI-Nomads",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "70-star, actively updated (14 Sep 2026) MIT repo: a global digital-nomad guide with a visa matrix comparing 12+ countries, cost-of-living tables for 25+ China-based nomad hubs, remote-work-platform lists, and cross-border payment/insurance notes. Bilingual (Chinese/English) markdown tables, not a clean CSV, but structured comparative data.",
+  "why_useful": "Directly targets gap #16 (remote-work/long-stay demand, digital-nomad visas) with an actually-maintained comparison table across visa programs rather than a single-country page; could seed a digital-nomad-visa-count time series (a long-stay demand proxy for Airbnb's higher-ADR, longer-LOS segment) if someone builds a scraper/tracker off the underlying visa-policy pages it cites.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "geography": "global (visa matrix), China-heavy for cost-of-living detail",
+  "time_coverage": "current snapshot, no history",
+  "size_hint": "markdown repo, no data files",
+  "gap_targets": [
+   16
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Directly targets gap #16 (remote-work/long-stay demand, digital-nomad visas) with an actually-maintained comparison table across visa programs rather than a single-country page; could seed a digital-nomad-visa-count time series (a long-stay demand proxy for Airbnb's higher-ADR, longer-LOS segment) if someone builds a scraper/tracker off the underlying visa-policy pages it cites."
+  ]
+ },
+ {
+  "key": "github:daviddevegamartin/alquiler_vivienda_turistica",
+  "url": "https://github.com/DavidDeVegaMartin/Alquiler_Vivienda_Turistica",
+  "name": "DavidDeVegaMartin/Alquiler_Vivienda_Turistica",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'Discovery Insights' student/portfolio project on Madrid tourist rentals sourced from Idealista; includes a Datos folder, Jupyter notebooks, and a presentation; 4 commits.",
+  "why_useful": "Small Idealista-sourced Madrid tourist-rental dataset; marginal size but a real non-Kaggle, non-Inside-Airbnb source (Idealista) relevant to housing-crossover gap 13.",
+  "potential": "low",
+  "geography": "Madrid, Spain",
+  "time_coverage": "unspecified, small",
+  "size_hint": "small (student project, 4 commits)",
+  "license": "not stated",
+  "last_activity": "2025-06-13",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "Small Idealista-sourced Madrid tourist-rental dataset; marginal size but a real non-Kaggle, non-Inside-Airbnb source (Idealista) relevant to housing-crossover gap 13."
+  ]
+ }
+]

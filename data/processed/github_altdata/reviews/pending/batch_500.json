@@ -1,0 +1,677 @@
+[
+ {
+  "key": "github:ilyankou/passport-index-dataset",
+  "url": "https://github.com/ilyankou/passport-index-dataset",
+  "name": "ilyankou/passport-index-dataset",
+  "category": "cross_border_visa",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "313-star, actively maintained (updated 29 Aug 2026) repo with CSVs of visa requirements for 199 countries, 2019-2025 vintages, MIT licensed. Includes a passport-index-matrix.csv (bilateral visa-requirement matrix: visa-free / visa-on-arrival / e-visa / visa-required codes between every pair of countries) and passport-index-tidy.csv, refreshed periodically from the Passport Index / Henley-style source.",
+  "why_useful": "A time-stamped, versioned visa-requirement matrix lets you build a cross-border 'ease of travel' index by origin country, useful as a slow-moving control variable for APAC/LatAm inbound demand shifts (gap #7) and as a covariate in any cross-border share model (gap #20); MIT license and multi-year vintages (2019-2025) make it usable point-in-time if commit history is walked.",
+  "potential": "high",
+  "license": "MIT",
+  "last_activity": "2026-08-29",
+  "size_hint": "multiple CSVs, low MB, 199x199 country matrix per year",
+  "time_coverage": "2019-2025 (annual snapshots)",
+  "geography": "global, 199 countries",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "A time-stamped, versioned visa-requirement matrix lets you build a cross-border 'ease of travel' index by origin country, useful as a slow-moving control variable for APAC/LatAm inbound demand shifts (gap #7) and as a covariate in any cross-border share model (gap #20); MIT license and multi-year vintages (2019-2025) make it usable point-in-time if commit history is walked.",
+   "A time-stamped (near point-in-time, annual snapshots 2019-2025) global visa-policy panel is exactly the \"visa changes\" shock category in the brief -- lets the team flag bilateral visa-requirement changes (e.g., a source country gaining/losing visa-free access to a destination) that would shift cross-border nights and regional mix, and is structured for a difference-in-differences design around policy-change dates."
+  ]
+ },
+ {
+  "key": "github:justinperry1511-hash/national-parks-bi",
+  "url": "https://github.com/justinperry1511-hash/national-parks-bi",
+  "name": "national-parks-bi",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "national_parks_clean.csv with 18,851 monthly visitation records across 63 US National Parks, Jan 2000-Dec 2024 (300 months), star-schema with parks/dates dimension tables and a monthly visitation fact table, backed by a SQLite DB with ETL staging layer. Source stated as NPS Public Use Statistics Office (irma.nps.gov/Stats).",
+  "why_useful": "Long, clean, monthly, government-sourced NPS visitation series across 63 parks (24 years) is a ready-made national-scale US leisure-travel/destination-demand proxy that could nowcast domestic NA nights alongside TSA throughput; addresses destination-demand gap adjacent to gap 10 (travel volume) and general consumer/travel strength gaps.",
+  "potential": "high",
+  "geography": "US, 63 National Park units",
+  "time_coverage": "monthly, 2000-2024",
+  "size_hint": "18,851 rows, one CSV + SQLite DB",
+  "license": "not stated in README",
+  "last_activity": "2026-04-08",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Long, clean, monthly, government-sourced NPS visitation series across 63 parks (24 years) is a ready-made national-scale US leisure-travel/destination-demand proxy that could nowcast domestic NA nights alongside TSA throughput; addresses destination-demand gap adjacent to gap 10 (travel volume) and general consumer/travel strength gaps."
+  ]
+ },
+ {
+  "key": "github:mominullptr/fifa-world-cup-2026-dataset",
+  "url": "https://github.com/mominullptr/FIFA-World-Cup-2026-Dataset",
+  "name": "FIFA-World-Cup-2026-Dataset",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "12 committed CSVs: venues.csv (16 stadiums, city/country/capacity/lat-lon across US/Canada/Mexico), matches.csv + matches_detailed.csv (104 matches, date, kickoff_time_utc, stage, venue_id, teams, scores, xG), teams.csv (48 teams, group, FIFA rank/Elo), squads_and_players.csv (1,248 players), plus match_events, match_team_stats, match_lineups, player_stats, match_prediction_features (65 ML features). Actively updated during the tournament (Jun 11-Jul 19 2026). CC0-1.0 license, 63 stars, updated 30 Aug 2026.",
+  "why_useful": "Directly fills gap #11 (World Cup 2026 host-city/schedule data): venue city + exact match date lets us build a host-city demand-shock calendar for 3Q26 nights/ADR (World Cup falls entirely inside 3Q26). Capacity and lat/lon support a per-market intensity weight (e.g. more matches/bigger stadium in a metro = larger STR demand pulse) for NA markets in the Inside Airbnb panel.",
+  "potential": "high",
+  "geography": "US, Canada, Mexico (16 host cities)",
+  "time_coverage": "Jun 11 - Jul 19 2026 (all inside 3Q26)",
+  "size_hint": "12 CSV files, largest ~1,248 rows (players); matches.csv 104 rows",
+  "license": "CC0-1.0",
+  "last_activity": "2026-08-30",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Directly fills gap #11 (World Cup 2026 host-city/schedule data): venue city + exact match date lets us build a host-city demand-shock calendar for 3Q26 nights/ADR (World Cup falls entirely inside 3Q26). Capacity and lat/lon support a per-market intensity weight (e.g. more matches/bigger stadium in a metro = larger STR demand pulse) for NA markets in the Inside Airbnb panel."
+  ]
+ },
+ {
+  "key": "github:vacanza/python-holidays",
+  "url": "https://github.com/vacanza/python-holidays",
+  "name": "python-holidays (vacanza, formerly dr-prodigy/python-holidays)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The canonical Python 'holidays' package: programmatic, offline public/bank/school holiday calendars for 100+ countries and many subdivisions, actively maintained (multiple confirmed forks/mirrors seen updated through 2026, e.g. a Sep 2026 l10n-migrator fork and a Rust port 'holidays-rs' both referencing it). MIT license.",
+  "why_useful": "Directly fills gap #20 (holiday calendars by country): gives a clean, versionable, no-API-key way to generate country-level holiday-date panels to control for local demand seasonality (long weekends, national holidays) across ABNB's NA/EMEA/LatAm/APAC regional splits and around the World Cup window.",
+  "potential": "high",
+  "geography": "100+ countries",
+  "time_coverage": "historical and forward-dated (rules-based, not vintage-limited)",
+  "size_hint": "Python package, not a static file dump",
+  "license": "MIT",
+  "last_activity": "2026 (actively maintained; several dependent forks updated Sep 2026)",
+  "gap_targets": [
+   20
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Directly fills gap #20 (holiday calendars by country): gives a clean, versionable, no-API-key way to generate country-level holiday-date panels to control for local demand seasonality (long weekends, national holidays) across ABNB's NA/EMEA/LatAm/APAC regional splits and around the World Cup window."
+  ]
+ },
+ {
+  "key": "github:predicthq/sdk-py",
+  "url": "https://github.com/predicthq/sdk-py",
+  "name": "sdk-py",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official MIT-licensed Python client (27 stars, 341 commits, updated 5 May 2026) for the PredictHQ Events/Demand-Intelligence API. Endpoints: Events (concerts, festivals, sports, conferences, public + school holidays, severe weather, term/academic dates, community events, disasters) globally, ranked by predicted attendance/impact; Places; Features (pre-aggregated demand-forecast features by location/date, e.g. a 'PHQ Rank' or attendance sum per day per area); Broadcasts (TV viewership tied to events); polygon/radius impact-area queries. This is the exact event-demand feed that vacation-rental dynamic-pricing engines (PriceLabs, Wheelhouse, Beyond Pricing all cite PredictHQ as a data partner) plug into to move nightly rates around demand shocks. No data files are committed; it is a live-API pull (free tier exists but usage-limited).",
+  "why_useful": "Standard, well-documented client for pulling a global multi-category event calendar (concerts/conferences/sports) with impact/attendance scores by location -- the general-purpose tool for the whole 'events and shocks' gap (#11), not just World Cup. Method only, not a dataset; a human would need to register for a key.",
+  "potential": "high",
+  "geography": "global",
+  "time_coverage": "current + forward-looking via API (no vintage/historical bulk export)",
+  "size_hint": "SDK code only",
+  "license": "MIT",
+  "last_activity": "2026-05-05",
+  "gap_targets": [
+   11
+  ],
+  "hits": 4,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Standard, well-documented client for pulling a global multi-category event calendar (concerts/conferences/sports) with impact/attendance scores by location -- the general-purpose tool for the whole 'events and shocks' gap (#11), not just World Cup. Method only, not a dataset; a human would need to register for a key.",
+   "Would be the mechanical route to a global events-and-impact feed (concerts, conferences, sports, public holidays, severe weather) PredictHQ sells, matching the 'PredictHQ samples' keyword in the theme, but is gated behind a paid API key that the project rules say not to use (no paid keys) \u2014 catalogued as a method only, not actionable without a licence.",
+   "Fills gap #11 (events and shocks) and the MICE/conference-calendar keyword directly -- a per-city, per-week conference/expo signal is exactly the kind of business-travel demand proxy the theme is chasing, though it is a paid-tiered acquisition method rather than a free static dataset.",
+   "Maps directly onto CONTEXT.md gap #11 (events/shocks: FIFA World Cup 2026, concerts, conferences) and #17 (event-study/nowcasting methods). A PredictHQ 'Features' pull by market (NA/EMEA/LatAm/APAC metros) around the 3Q26 World Cup window or major-market festival calendars could be turned into an independent, point-in-time event-density regressor for nights/ADR that is not derived from Airbnb data itself."
+  ]
+ },
+ {
+  "key": "github:openfootball/world-cup.json",
+  "url": "https://github.com/openfootball/world-cup.json",
+  "name": "openfootball/world-cup.json",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Match schedules (dates, kickoff times, teams, venues, group assignments, scores) for FIFA World Cups from 1930 through 2026, organized in year-labeled JSON files; description explicitly lists 'Canada/USA/Mexico 2026'. Public-domain dedication, files fetchable directly via raw GitHub URLs (no API key), so the 2026 match calendar (dates and host cities, June-July 2026, inside 3Q26) can be pulled as a one-command JSON fetch.",
+  "why_useful": "Directly fills gap #11 (FIFA World Cup 2026 schedule/host-city data) with the exact match dates/venues needed to build a 3Q26 host-city demand-shock calendar for the North America nights forecast.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "geography": "US/Canada/Mexico (2026 tournament); global historically",
+  "time_coverage": "1930-2026",
+  "license": "public domain",
+  "last_activity": "not confirmed exact date; actively maintained per description",
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Directly fills gap #11 (FIFA World Cup 2026 schedule/host-city data) with the exact match dates/venues needed to build a 3Q26 host-city demand-shock calendar for the North America nights forecast."
+  ]
+ },
+ {
+  "key": "github:vacanza/holidays",
+  "url": "https://github.com/vacanza/holidays",
+  "name": "vacanza/holidays (Python `holidays` package)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library computing government-designated public/bank/school/religious holidays on the fly for 250 country codes plus subdivisions (states/provinces) and 20+ financial-market calendars (ISO 10383 MICs); not a static file but a deterministic calendar engine, multi-language holiday names, ~4,066 commits, MIT license, 1.9k stars.",
+  "why_useful": "Gives a machine-pullable, per-country/per-subdivision holiday calendar (long weekends, school holidays) to build controls for seasonality and demand shocks in the nights/ADR forecast across all ABNB regions (NA/EMEA/LatAm/APAC), addressing the 'holiday calendars by country' part of gap #11.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "geography": "global, 250 countries",
+  "time_coverage": "computed for any year, historical and future",
+  "license": "MIT",
+  "last_activity": "active (dev branch 4,066 commits)",
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Gives a machine-pullable, per-country/per-subdivision holiday calendar (long weekends, school holidays) to build controls for seasonality and demand shocks in the nights/ADR forecast across all ABNB regions (NA/EMEA/LatAm/APAC), addressing the 'holiday calendars by country' part of gap #11.",
+   "Precise, code-verifiable public-holiday calendars by country and subdivision are a direct input to seasonal demand and party-size modeling (idea #20 in CONTEXT.md gap list touches length-of-stay/seasonality) and to building holiday-adjusted nights nowcasts across all of ABNB's regional splits (NA/EMEA/LatAm/APAC), not just the US."
+  ]
+ },
+ {
+  "key": "github:andreiosiptsov/disasters",
+  "url": "https://github.com/andreiosiptsov/disasters",
+  "name": "disasters (Measuring Economic Disruption from Climate Disasters)",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Replication package for paper measuring selection into the EM-DAT disaster record against MODIS burned-area and IBTrACS (hurricane) wind-field data. Repo holds bundled data as split archives (Climate_damage_full.bundle.part00/01, Climate_damage_repo.tar.gz.part00/01) plus code; README describes a 1,174-row register linking every number in the paper to its source (EM-DAT entry, MODIS burned area, IBTrACS wind fields, separating entry/monetisation/magnitude margins). No stars yet, updated 24 Aug 2026.",
+  "why_useful": "Directly usable for gap 11 (hurricanes/wildfires as tourism shocks) and gap 17 (methods/event-study/replication packages): gives a rigorous, sourced EM-DAT-vs-satellite cross-walk that could be adapted to flag disaster severity for ABNB-relevant markets (Maui, LA, Gulf Coast, Caribbean) rather than relying on raw EM-DAT counts alone.",
+  "potential": "high",
+  "gap_targets": [
+   11,
+   17
+  ],
+  "license": "not specified in listing",
+  "last_activity": "2026-08-24",
+  "size_hint": "multi-part bundle + tar.gz archives (exact size unknown, split into parts suggesting >100MB)",
+  "geography": "global",
+  "time_coverage": "not fully specified; EM-DAT/IBTrACS/MODIS overlap era (~2000s-2020s)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Directly usable for gap 11 (hurricanes/wildfires as tourism shocks) and gap 17 (methods/event-study/replication packages): gives a rigorous, sourced EM-DAT-vs-satellite cross-walk that could be adapted to flag disaster severity for ABNB-relevant markets (Maui, LA, Gulf Coast, Caribbean) rather than relying on raw EM-DAT counts alone.",
+   "A ready-made, point-in-time-conscious linkage of EM-DAT (global disaster event records: type, country, date, deaths, damages) to MODIS/IBTrACS -- gives the team a vetted way to pull EM-DAT-quality disaster events (wildfires, storms, floods) by country/date for building an events-and-shocks regressor without re-deriving the EM-DAT extract from scratch, and models exactly the kind of selection/measurement bias (what gets recorded vs. not) that matters if disaster counts are used as a KPI driver."
+  ]
+ },
+ {
+  "key": "github:rearc-data/fema-disaster-declarations-summaries",
+  "url": "https://github.com/rearc-data/fema-disaster-declarations-summaries",
+  "name": "fema-disaster-declarations-summaries",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automated mirror of OpenFEMA's 'Disaster Declarations Summaries V2' dataset via AWS Data Exchange: every federally declared disaster (major disaster, fire management, emergency declarations) from 1953 onward, county-level from 1964 onward, 22 fields (declaration string, disaster number, state/county FIPS, incident type, declaration date, IA/PA/HM program flags). CSV/JSON/JSONA, updated daily against FEMA's NEMIS system.",
+  "why_useful": "A ready-made, documented pipeline to the full historical FEMA disaster-declarations table (all US disaster types back to the 1950s) for gap 11; complements the FEMA-MCP client above with a batch/ETL-oriented approach.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "license": "none listed",
+  "last_activity": "2025-12-16",
+  "size_hint": "scripts only; source dataset is tens of thousands of rows",
+  "geography": "US",
+  "time_coverage": "1953-present (per OpenFEMA)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A ready-made, documented pipeline to the full historical FEMA disaster-declarations table (all US disaster types back to the 1950s) for gap 11; complements the FEMA-MCP client above with a batch/ETL-oriented approach.",
+   "Directly addresses gap #11 (events/shocks: hurricanes/wildfires) and gap #12-adjacent regulatory/declaration tracking; gives a clean county x date x incident-type panel to flag which weeks/markets in the Inside Airbnb 13-city / 123-market panels sat inside a federal disaster window (Maui wildfire, LA fires, Gulf hurricanes) for tourism-shock event studies."
+  ]
+ },
+ {
+  "key": "github:earthlab/firedpy",
+  "url": "https://github.com/earthlab/firedpy",
+  "name": "firedpy",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Python CLI (Earth Lab, CU Boulder) that classifies individual wildfire events from the MODIS Collection 6.1 Burned Area Product (MCD64A1) into discrete fire-event polygons (event-level and optional daily-expansion perimeters), output as GeoPackage/Shapefile plus attribute tables. Global via MODIS tiles; pre-built extracts available per US state/country/continent. Coverage November 2000 - December 2024 (v2.0, Oct 2024 release extends some regions to 2025).",
+  "why_useful": "Gives reproducible, dated wildfire-perimeter polygons (not just point hotspots) for any US state or country -- usable to build a 'was market X inside an active/recent fire perimeter' flag for California, Hawaii (Maui) and other Inside Airbnb markets, filling gap #11 with actual geometry rather than a news list.",
+  "potential": "high",
+  "geography": "Global (MODIS tiles); pre-generated country/state/continent extracts",
+  "time_coverage": "Nov 2000 - Dec 2024/2025",
+  "size_hint": "generates shapefiles/GeoPackages per region; pre-built US-state extracts sized in the 10s-100s of MB",
+  "license": "MIT",
+  "last_activity": "v2.0 released 2024-10-14",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Gives reproducible, dated wildfire-perimeter polygons (not just point hotspots) for any US state or country -- usable to build a 'was market X inside an active/recent fire perimeter' flag for California, Hawaii (Maui) and other Inside Airbnb markets, filling gap #11 with actual geometry rather than a news list."
+  ]
+ },
+ {
+  "key": "github:helios1014/us_state_department_travel_advisories",
+  "url": "https://github.com/helios1014/US_State_Department_Travel_Advisories",
+  "name": "US_State_Department_Travel_Advisories",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ongoing daily archive of US State Dept Travel Advisories, built by a script (feed_test.py) that pulls the official State Dept RSS feed once per day at 12:00 UTC and writes it into an archive format; generates a map visualization of advisory levels by country. Actively updated (last push 25 Aug 2026). No stated start date for the archive's history (appears to have begun recently, so backfill before its start date is not available), but going forward this gives a point-in-time, dated series of advisory level changes (Level 1-4) by country -- directly fills gap #11 (events/shocks) as a leading indicator for cross-border and destination-specific ABNB demand shocks (e.g. advisory upgrades in Mexico/LatAm/Europe markets).",
+  "why_useful": "A dated, per-country US travel advisory level series is a clean, free, point-in-time demand-shock proxy for cross-border travel to/from specific ABNB regional markets (LatAm, EMEA) -- addresses gap #11 (events and shocks) and could pair with the regulatory event database already held. Advisory level changes are discrete, dated events unlike sentiment indices that failed before.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "license": "BSD-3-Clause",
+  "last_activity": "2026-08-25",
+  "geography": "Global (by country, US State Dept perspective)",
+  "time_coverage": "Ongoing daily since repo creation (exact start unclear, likely 2025-2026); no historical backfill of past advisory levels apparent",
+  "size_hint": "small (RSS-derived daily snapshots)",
+  "hits": 2,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "A dated, per-country US travel advisory level series is a clean, free, point-in-time demand-shock proxy for cross-border travel to/from specific ABNB regional markets (LatAm, EMEA) -- addresses gap #11 (events and shocks) and could pair with the regulatory event database already held. Advisory level changes are discrete, dated events unlike sentiment indices that failed before.",
+   "Same demand-shock rationale as the travel-advisory-archive repo above (advisory-level changes as regional travel-demand shocks, gap #11) but delivered as a single flat CSV (easier to ingest than per-country markdown files) with an explicit, reusable acquisition script and a permissive license."
+  ]
+ },
+ {
+  "key": "github:johnmarkschofield/travel-advisory-archive",
+  "url": "https://github.com/johnmarkschofield/travel-advisory-archive",
+  "name": "travel-advisory-archive",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Daily automated archive of US State Dept travel advisories for all 222 tracked countries, split into 4 risk levels (Level 1 Normal Precautions: 87 countries, Level 2 Increased Caution: 83, Level 3 Reconsider Travel: 30, Level 4 Do Not Travel: 22 as of the 2026-09-13 snapshot). Data stored as per-country markdown files under /advisories plus a /data directory; GitHub Actions workflow updates daily. 290 commits, so likely has meaningful history of level changes if commit history is walked (git log on /data gives a point-in-time series of level changes per country). No stars/forks; unclear license.",
+  "why_useful": "Advisory-level upgrades/downgrades by country are a direct, point-in-time demand-shock series for regional travel demand (APAC/LatAm/EMEA nights) -- addresses gap #11 (events/shocks) and is a genuinely new asset class we do not currently hold (we only have a 32-factor STR regulatory event database, no travel-advisory series). Because it's git-committed daily, the commit history itself functions as a vintage register (point-in-time levels by date) if it can be walked.",
+  "potential": "high",
+  "time_coverage": "daily snapshots, exact start date unconfirmed from the fetch (repo has 290 commits; likely started within the last 1-2 years given no-stars/small-repo profile) through 2026-09-13 (still updating)",
+  "geography": "global, 222 countries",
+  "size_hint": "290 commits; small (markdown files per country)",
+  "license": "unstated in fetched content",
+  "last_activity": "2026-09-13 (actively updating daily via GitHub Actions)",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "Advisory-level upgrades/downgrades by country are a direct, point-in-time demand-shock series for regional travel demand (APAC/LatAm/EMEA nights) -- addresses gap #11 (events/shocks) and is a genuinely new asset class we do not currently hold (we only have a 32-factor STR regulatory event database, no travel-advisory series). Because it's git-committed daily, the commit history itself functions as a vintage register (point-in-time levels by date) if it can be walked."
+  ]
+ },
+ {
+  "key": "github:theeconomist/big-mac-data",
+  "url": "https://github.com/TheEconomist/big-mac-data",
+  "name": "TheEconomist/big-mac-data",
+  "category": "fx_rates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official Economist Big Mac Index source data and methodology, MIT licensed, 1748 stars, updated same day as our search (13 Sep 2026, actively maintained). Three committed files: big-mac-raw-index.csv, big-mac-adjusted-index.csv (GDP-adjusted), big-mac-full-index.csv, each carrying underlying local prices, exchange rates and implied-vs-actual PPP by country. Biannual since ~2000, ~70 countries incl. all ABNB's major regions (EU, UK, Japan, Australia, Mexico, Brazil, India). July 2022 methodology change archived in Releases so old vintage is recoverable.",
+  "why_useful": "Direct, long-running, free PPP/affordability series by country -> usable as a cross-check on real (purchasing-power-adjusted) ADR moves and as an affordability proxy for inbound/outbound travel demand by region (gap #6 consumer spend / broader macro-consumer-spend theme, and general FX/PPP gap not separately numbered but explicitly requested by this theme). Also a clean point-in-time-able series since each release is dated and archived.",
+  "potential": "high",
+  "geography": "Global, ~70 countries",
+  "time_coverage": "~2000-present, semiannual (Jan/Jul), with July 2022 methodology break archived separately",
+  "size_hint": "3 CSVs, small (~tens of KB), full history",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Direct, long-running, free PPP/affordability series by country -> usable as a cross-check on real (purchasing-power-adjusted) ADR moves and as an affordability proxy for inbound/outbound travel demand by region (gap #6 consumer spend / broader macro-consumer-spend theme, and general FX/PPP gap not separately numbered but explicitly requested by this theme). Also a clean point-in-time-able series since each release is dated and archived.",
+   "Direct PPP/affordability cross-country series -- a standard proxy for real currency over/undervaluation that could feed a cross-border demand/affordability adjustment for ABNB's international nights and ADR mix (gap area: PPP/Big Mac in theme, tangential to gap 6/7 consumer strength by country).",
+   "A ready, standing measure of currency over/undervaluation by country -- a cheap cross-border 'purchasing power' signal that could feed into ADR-ex-FX translation checks and outbound-demand direction by region (does a currency look cheap enough to pull travelers in/out)."
+  ]
+ },
+ {
+  "key": "github:overturemaps/data",
+  "url": "https://github.com/OvertureMaps/data",
+  "name": "OvertureMaps/data",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Root repo/pointer for the Overture Maps Foundation open dataset: six themes (addresses, base, buildings, divisions, places, transportation) released as cloud-native GeoParquet on S3/Azure, monthly-ish releases since mid-2023 (STAC catalog tracks each release). The 'places' theme includes global POIs with a category taxonomy (accommodation/lodging/hotel/motel/hostel categories, brand, confidence score, lat/lon, open/close dates in later releases) built from Meta, Microsoft, TomTom, Esri and community contributions. Not committed as files in-repo; pulled via `overturemaps` CLI or DuckDB spatial extension (one command: `overturemaps download --type=place --bbox=... `).",
+  "why_useful": "A repeatable, versioned pull of global hotel/lodging POI counts and locations by release date is a direct, non-Airbnb proxy for hotel-supply growth or contraction by market \u2014 fills gap 8 (hotel supply/demand) and gap 20 (geospatial POI). Because releases are dated snapshots, diffing releases gives a point-in-time hotel-count series per city/country that could be compared against ABNB listing growth in the same markets.",
+  "potential": "high",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Global",
+  "time_coverage": "Monthly-ish releases since ~July 2023, ongoing",
+  "size_hint": "Places theme alone is 100M+ POIs globally (multi-GB per release); filterable by bbox/category before download",
+  "license": "MIT (schema is CC-BY-4.0)",
+  "last_activity": "Active, updated 2026-09-10",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "A repeatable, versioned pull of global hotel/lodging POI counts and locations by release date is a direct, non-Airbnb proxy for hotel-supply growth or contraction by market \u2014 fills gap 8 (hotel supply/demand) and gap 20 (geospatial POI). Because releases are dated snapshots, diffing releases gives a point-in-time hotel-count series per city/country that could be compared against ABNB listing growth in the same markets.",
+   "Global, monthly-versioned hotel/lodging POI counts by geography could proxy hotel supply growth (gap #8) and give a competitor-supply denominator alongside Inside Airbnb STR counts; monthly releases are effectively point-in-time vintages (gap #4).",
+   "Global, monthly-refreshed, free POI dataset that lets you count/geolocate hotels, motels, resorts, campgrounds, and short-term-rental-adjacent lodging categories by city over time -- addresses gap #8 (hotel supply proxy from maps) and #20 (geotagged tourism POIs) if used as a supply-count time series across releases (data goes back to first Overture release ~2023, monthly cadence gives a de facto vintage series).",
+   "Confirms release cadence and access pattern for pulling historical Overture Places snapshots (point-in-time hotel/lodging POI counts) referenced by overturemaps-py above."
+  ]
+ },
+ {
+  "key": "github:activeconclusion/covid19_mobility",
+  "url": "https://github.com/ActiveConclusion/COVID19_mobility",
+  "name": "COVID19_mobility",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Aggregated, committed CSV/XLSX/ZIP mobility archive combining four sources: Google Community Mobility Reports (retail/recreation, grocery/pharmacy, parks, transit, workplaces, residential, country+sub-region+county level), Apple Mobility Trends (directions-request volume vs 13-Jan-2020 baseline, country/region/city), Waze driven-km percent change (country and some city level), and TomTom congestion rankings. Google span through 15-Oct-2022, Apple through 14-Apr-2022, Waze through mid-2022, TomTom continuing at time of archive. MIT license. Repo is archived/no longer updated (sources discontinued) but the historical CSVs remain committed.",
+  "why_useful": "Marginal: covers 2020-2022 mobility only (all four source programs have since been discontinued/archived by their publishers), so it is a historical archive rather than a live indicator, but it is the only committed multi-source mobility mirror found and could still backfill a 2020-22 travel-mobility panel if ever needed for a longer backtest window.",
+  "potential": "high",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "license": "unknown (check repo)",
+  "last_activity": "inactive since mobility programs ended (~2022)",
+  "geography": "global, country/region level",
+  "time_coverage": "2020-2022",
+  "size_hint": "moderate CSV set",
+  "hits": 4,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Marginal: covers 2020-2022 mobility only (all four source programs have since been discontinued/archived by their publishers), so it is a historical archive rather than a live indicator, but it is the only committed multi-source mobility mirror found and could still backfill a 2020-22 travel-mobility panel if ever needed for a longer backtest window.",
+   "This is exactly the kind of consumer-mobility/travel-demand proxy series useful for reconstructing 2020-2022 travel disruption and recovery baselines relevant to STR/hotel demand cyclicality; also a ready single source for four different mobility indices instead of re-scraping each vendor. Google's own hosted CSV disappeared after the report shut down, so a committed mirror is the only easy way to get the full multi-year daily series now (fills a version of gap #5/#8 travel-demand context, pre-ABNB-scale IPO period baseline).",
+   "Single mirror of both Google and Apple's own mobility-report CSVs (the raw category/place-type mobility deltas), which are gone from Google/Apple's own sites now; a longer, city/country-level baseline for travel-mobility shocks and a template for what fields exist (retail&recreation, transit, workplaces, residential) that could be re-anchored against 2026 alt-data. Relevant to gap #5 (engagement/mobility proxies) and #11 (event/shock studies).",
+   "The archived 2020-2022 mobility indices are a historical baseline for how sharply region-level 'away from home' mobility swings correlate with STR nights, which could calibrate elasticities for future shock events (gap #11) even though official Google/Apple mobility reporting ended in 2022; the repo format could also be repointed at any successor mobility-report source if one appears."
+  ]
+ },
+ {
+  "key": "github:cruiseresearchgroup/massive-steps",
+  "url": "https://github.com/cruiseresearchgroup/Massive-STEPS",
+  "name": "Massive-STEPS",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "Global-scale POI check-in trajectories for 15 cities across 10 countries (Beijing, Shanghai, Istanbul, Jakarta, Bandung, Palembang, Tangerang, Kuwait City, Melbourne, Sydney, Moscow, New York, Petaling Jaya, Sao Paulo, Tokyo). ~2.63M check-ins total, 133k+ users, 620k+ POIs, drawn from the 2013 and 2018 Semantic Trails Dataset (Foursquare-sourced) plus Foursquare Open Source Places. Preprocessed city-level splits hosted on Hugging Face Datasets; repo has Python preprocessing scripts and benchmark code (next-POI-prediction models). Apache-2.0 license, active repo (README references 2024-2025 work).",
+  "why_useful": "A genuinely global, multi-city geotagged check-in panel including tourism-heavy cities (Sydney, Istanbul, Sao Paulo, Tokyo, NYC) that could proxy cross-border travel share, visitor mix, or destination popularity shifts over 2013-2018 -- speaks to gap #20 (party size / group travel / cross-border share proxies via geotagged tourism datasets) and loosely to gap #5 (engagement/popularity proxies). Not point-in-time and dated (2013/2018), so only useful as a historical base-rate / methodology reference, not a live nowcast input.",
+  "potential": "high",
+  "geography": "15 cities, 10 countries (Asia, Europe, Middle East, Oceania, Americas)",
+  "time_coverage": "2013 and 2018 (Semantic Trails Dataset vintages)",
+  "size_hint": "~2.63M check-ins, 133k+ users, 620k+ POIs",
+  "license": "Apache-2.0",
+  "last_activity": "2024-2025 (active, per README/paper arXiv reference)",
+  "gap_targets": [
+   20,
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins"
+  ],
+  "why_all": [
+   "A genuinely global, multi-city geotagged check-in panel including tourism-heavy cities (Sydney, Istanbul, Sao Paulo, Tokyo, NYC) that could proxy cross-border travel share, visitor mix, or destination popularity shifts over 2013-2018 -- speaks to gap #20 (party size / group travel / cross-border share proxies via geotagged tourism datasets) and loosely to gap #5 (engagement/popularity proxies). Not point-in-time and dated (2013/2018), so only useful as a historical base-rate / methodology reference, not a live nowcast input."
+  ]
+ },
+ {
+  "key": "github:geods/covid19usflows",
+  "url": "https://github.com/GeoDS/COVID19USFlows",
+  "name": "COVID19USFlows (GeoDS Lab, UW-Madison)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Daily origin-destination population flow CSVs derived from SafeGraph mobile-location trajectories, at census-tract, county, and state scale for the entire US, Jan 2019 through at least Apr 2021 (pre-pandemic baseline included). Tract-level files split into 20 parts per date for size. Published alongside a Scientific Data (2020) paper; MIT licensed; includes Python download/merge utilities. Split across multiple linked GitHub repos due to size limits.",
+  "why_useful": "A genuine SafeGraph-derived mobility flow dataset committed to GitHub (not just a licensed sample) with county- and state-level granularity and a 2019 pre-pandemic baseline year \u2014 directly useful for calibrating a travel-mobility-to-nights elasticity model, and for testing whether short-term-rental demand co-moves with general population flow shocks (hurricanes, events). Fills part of gap #5/#11 and is a concrete method template (SafeGraph flow construction) relevant to gap #17 (methods/nowcasting with mixed-frequency mobility data).",
+  "geography": "United States, tract/county/state",
+  "time_coverage": "2019-01-01 through 2021-04 (approx)",
+  "size_hint": "Large multi-file CSV set; tract-level split into 20 files per date across the calendar range",
+  "license": "MIT",
+  "last_activity": "actively cited research repo; NSF-funded (BCS-2027375)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5,
+   11,
+   17
+  ],
+  "potential": "high",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "A genuine SafeGraph-derived mobility flow dataset committed to GitHub (not just a licensed sample) with county- and state-level granularity and a 2019 pre-pandemic baseline year \u2014 directly useful for calibrating a travel-mobility-to-nights elasticity model, and for testing whether short-term-rental demand co-moves with general population flow shocks (hurricanes, events). Fills part of gap #5/#11 and is a concrete method template (SafeGraph flow construction) relevant to gap #17 (methods/nowcasting with mixed-frequency mobility data)."
+  ]
+ },
+ {
+  "key": "github:ropensci/osmextract",
+  "url": "https://github.com/ropensci/osmextract",
+  "name": "ropensci/osmextract",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "rOpenSci R package (GPL-3.0, 196 stars, updated 10 Sep 2026) to download and import OpenStreetMap data from Geofabrik and other providers (bbbike, openstreetmap.fr) directly into R as sf objects, with built-in place-name matching to find the right regional extract.",
+  "why_useful": "Well-maintained, peer-reviewed R client for pulling Geofabrik/OSM regional PBF extracts, from which tourism=hotel/guest_house/apartment/chalet/motel tags can be filtered to build an OSM-based hotel/STR-supply proxy by city/country over time (re-runnable against historical Geofabrik daily diffs for a point-in-time-ish series).",
+  "why_useful_2": "",
+  "potential": "high",
+  "geography": "global (whatever Geofabrik/bbbike offer, i.e. most countries and many sub-national regions)",
+  "time_coverage": "current OSM snapshot at run time; Geofabrik keeps some historical daily/monthly extracts for a limited window",
+  "size_hint": "package code; downloaded extracts range MB-GB per region",
+  "license": "GPL-3.0",
+  "last_activity": "2026-09-10",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Well-maintained, peer-reviewed R client for pulling Geofabrik/OSM regional PBF extracts, from which tourism=hotel/guest_house/apartment/chalet/motel tags can be filtered to build an OSM-based hotel/STR-supply proxy by city/country over time (re-runnable against historical Geofabrik daily diffs for a point-in-time-ish series)."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/foursquare/fsq-os-places",
+  "url": "https://huggingface.co/datasets/foursquare/fsq-os-places",
+  "name": "Foursquare Open Source Places (FSQ OS Places)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Foursquare's open-sourced global places dataset (Apache 2.0 license), ~100M+ POI records (dataset docs cite up to ~1B rows counting historical/duplicate entries; ~239GB total across parquet files for places + a separate categories file). Commercial categories include hotels/lodging, restaurants, retail; 34 non-commercial categories (airports, cities, taxi stands, etc.) are flagged for filtering out. Distributed as Parquet on Hugging Face (gated download, free after accepting terms); no GitHub repo found for a companion access tool as of this check.",
+  "why_useful": "Gap #20/#8/#9: a free, global, commercially-licensed (Apache 2.0) alternative POI census to build a worldwide hotel/lodging count by city and to identify non-Airbnb short-term-rental-adjacent venues (hostels, vacation rental offices) as a supply cross-check; could also proxy tourism-attraction density by market for demand normalization.",
+  "potential": "high",
+  "geography": "Global",
+  "time_coverage": "Single current snapshot (released 2024); unclear if historical snapshots are retained",
+  "license": "Apache 2.0",
+  "size_hint": "~239 GB total, ~100M+ POI records",
+  "last_activity": "2024 release, referenced as current",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Gap #20/#8/#9: a free, global, commercially-licensed (Apache 2.0) alternative POI census to build a worldwide hotel/lodging count by city and to identify non-Airbnb short-term-rental-adjacent venues (hostels, vacation rental offices) as a supply cross-check; could also proxy tourism-attraction density by market for demand normalization."
+  ]
+ },
+ {
+  "key": "github:junjielyu13/aiguadebarcelona_datachallenge",
+  "url": "https://github.com/junjielyu13/AiguaDeBarcelona_DataChallenge",
+  "name": "AiguaDeBarcelona_DataChallenge",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Barcelona water utility (Aig\u00fces de Barcelona) data-challenge repo: water consumption measured by meter, broken out by industrial / domestic / tourism-sector use, by geographical region within Barcelona, for 2019-2021 (pre/post-COVID span). Repo structure has db/, model/, src/, app.py (Flask), requirements.txt; described as analysing consumption 'by industrial, domestic and tourism factors using AI'. Apache-2.0 licensed. Exact row/column counts and CSV filenames not confirmed by the fetch (would need a clone to see db/ contents).",
+  "why_useful": "Barcelona is one of our 13 held Inside Airbnb panel cities. A tourism-sector water-consumption series by district, spanning a COVID collapse and recovery, is a genuine independent occupancy proxy for a market we already track \u2014 directly on-theme for 'utility consumption as occupancy proxy' and could cross-check the Barcelona Inside Airbnb reviews-based stays index.",
+  "potential": "high",
+  "geography": "Barcelona, Spain (sub-city regional breakdown)",
+  "time_coverage": "2019-2021",
+  "size_hint": "unknown row count; multi-year meter-level utility data by sector/region",
+  "license": "Apache-2.0",
+  "last_activity": "2022-12-18",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Barcelona is one of our 13 held Inside Airbnb panel cities. A tourism-sector water-consumption series by district, spanning a COVID collapse and recovery, is a genuine independent occupancy proxy for a market we already track \u2014 directly on-theme for 'utility consumption as occupancy proxy' and could cross-check the Barcelona Inside Airbnb reviews-based stays index."
+  ]
+ },
+ {
+  "key": "github:eugeniopaglino/hurricanes_and_migration",
+  "url": "https://github.com/eugeniopaglino/Hurricanes_and_Migration",
+  "name": "Hurricanes_and_Migration",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Complete county-to-county migration flow matrices built from IRS-SOI data, 1998-2015, as CSVs in outflows/ and inflows/ folders (yearly matrices e.g. 0101in.csv, plus aggregated outflow.csv/inflow.csv). Also ships hurricanes.json: US federal disaster assistance records 1990-2018 with affected county FIPS, costs, casualties, dates. Python scripts analyze migration response to Katrina and Sandy.",
+  "why_useful": "Long, clean, ready-to-use IRS migration panel (1998-2015) at county level -- can be extended/joined with post-2015 IRS SOI vintages to build a second-home / relocation proxy for STR demand in destination counties (sunbelt/vacation-market in-migration), and the hurricane-shock design is a template for isolating migration-driven demand shifts.",
+  "potential": "high",
+  "geography": "US, county-level",
+  "time_coverage": "1998-2015 (migration); 1990-2018 (hurricanes)",
+  "size_hint": "~18 annual matrix pairs + 2 aggregate CSVs + 1 JSON",
+  "license": "unspecified",
+  "last_activity": "2019-07-31",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Long, clean, ready-to-use IRS migration panel (1998-2015) at county level -- can be extended/joined with post-2015 IRS SOI vintages to build a second-home / relocation proxy for STR demand in destination counties (sunbelt/vacation-market in-migration), and the hurricane-shock design is a template for isolating migration-driven demand shifts.",
+   "Longer span than the mathewhauer repo (through 2015) and pairs migration directly with hurricane/disaster shocks by county \u2014 directly useful for gap 11 (events/shocks, hurricanes) and for modeling population/second-home exposure to storm-affected STR markets (Florida, Gulf Coast, coastal Northeast)."
+  ]
+ },
+ {
+  "key": "github:worldbank/blackmarbler",
+  "url": "https://github.com/worldbank/blackmarbler",
+  "name": "blackmarbler",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (World Bank DIME) that automates downloading and processing NASA Black Marble (VIIRS-derived) daily/monthly/annual nighttime-lights composites from NASA LAADS DAAC and aggregating radiance to any user-defined WGS84 polygon. No committed raw data (requires free NASA bearer token); demonstrated with 2012-2022+ near-real-time data (daily lag ~1 week). Actively maintained World Bank org repo.",
+  "why_useful": "Same use case as blackmarblepy for teams working in R; redundant capability, listed for completeness.",
+  "potential": "high",
+  "geography": "global, user-selected ROI",
+  "time_coverage": "2012-present, user-selected range",
+  "size_hint": "no committed data",
+  "license": "Other (permissive, World Bank)",
+  "last_activity": "2026-09-06",
+  "gap_targets": [
+   2,
+   7
+  ],
+  "duplicate_of_holding": "same capability as blackmarblepy above",
+  "hits": 3,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity",
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Same use case as blackmarblepy for teams working in R; redundant capability, listed for completeness.",
+   "One-command, point-in-time-capable pull of nightlights for any Airbnb market polygon (city/region) as a tourism/economic-activity proxy at monthly or even daily granularity, addressing gap #5 (engagement/activity proxies) and the broader satellite-tourism-activity theme; because it hits NASA's archive directly it could be re-run vintage-by-vintage for point-in-time construction.",
+   "One-command way to get admin2-level nighttime-lights time series for any tourism market worldwide (LatAm/APAC gaps in current holdings) without touching Google Earth Engine directly; complements idea above as a more turnkey pull."
+  ]
+ },
+ {
+  "key": "github:diego999/hotelrec",
+  "url": "https://github.com/Diego999/HotelRec",
+  "name": "HotelRec",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "~50 million TripAdvisor hotel reviews (largest public hotel-review dataset per the authors, vs 0.9M in prior academic sets). Each review has hotel URL, reviewer username, date, overall rating, title, text, and sub-ratings (sleep quality, value, rooms, service, cleanliness, location). International coverage (sample shows Italian hotels; likely global given TripAdvisor's footprint). Actual data is not committed to the repo -- hosted on a SWITCHdrive link, restricted to academic research use only. Cites Antognini & Faltings, LREC 2020. Repo itself: 17 commits, README + download pointer.",
+  "why_useful": "By far the largest and longest-running TripAdvisor review corpus found. A review-velocity / sub-rating time series built from this (filtered to years with real dates, cross-referenced to ABNB peer-set cities) could proxy hotel demand momentum and sentiment ahead of MAR/HLT RevPAR releases -- addresses gap #8 (hotel supply/demand) indirectly via review flow as a leading indicator, and gap #20 partially (party-size/length-of-stay not present but trip-type sub-ratings sometimes are). Academic-only license limits direct commercial reuse but fine for an internal model.",
+  "license": "Academic research only (non-commercial); no open-source license stated for the download itself",
+  "last_activity": "Repo shows 17 commits; paper is 2020 (LREC)",
+  "geography": "Global (TripAdvisor hotel universe)",
+  "time_coverage": "Reviews with dates as early as ~2010 in samples shown; full range not confirmed",
+  "size_hint": "~50,000,000 reviews",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "potential": "high",
+  "hits": 2,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "By far the largest and longest-running TripAdvisor review corpus found. A review-velocity / sub-rating time series built from this (filtered to years with real dates, cross-referenced to ABNB peer-set cities) could proxy hotel demand momentum and sentiment ahead of MAR/HLT RevPAR releases -- addresses gap #8 (hotel supply/demand) indirectly via review flow as a leading indicator, and gap #20 partially (party-size/length-of-stay not present but trip-type sub-ratings sometimes are). Academic-only license limits direct commercial reuse but fine for an internal model.",
+   "TripAdvisor review-volume-and-rating time series across a huge global hotel panel is a competitor/adjacent-supply engagement proxy (gap #9, and loosely gap #5 engagement signals) analogous to how Inside Airbnb reviews are used as a stays-index kernel for ABNB nights; review dates could be aggregated into a monthly hotel-demand pulse by market if the gated download is obtained."
+  ]
+ },
+ {
+  "key": "github:david984-code/hospitality-alt-data-dashboard",
+  "url": "https://github.com/david984-code/hospitality-alt-data-dashboard",
+  "name": "hospitality-alt-data-dashboard",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Streamlit research tool building a near-real-time US lodging-demand proxy for MAR/HLT/H between earnings prints, from entirely free/keyless public sources: TSA checkpoint throughput (2019+), Google Trends brand search (pytrends, 6 hotel brands), BLS employment/JOLTS/PPI for traveler accommodation, yfinance prices/earnings dates, plus one committed hand-keyed file `data/reported_revpar.csv` (quarterly RevPAR for MAR/HLT/H with source URLs \u2014 same underlying idea as our 'MAR/HLT RevPAR from releases' but committed as a clean CSV with source links). README states explicitly this is a RevPAR *proxy*, not real STR data (\"True RevPAR is STR data (paid)\"), substituting BLS accommodation employment/PPI as demand/rate proxies. Reports its own honest backtest: deseasonalized MoM r\u22480.41 (p\u22480.003) vs RevPAR, but a composite TSA+brand-search+JOLTS signal fails out of sample (r=-0.14 steady state, p\u22480.09 on a trading overlay). 32 commits, CI runs daily to refresh data and publish outputs as GitHub Actions artifacts; no paid keys required (optional BLS_API_KEY for higher limits).",
+  "why_useful": "Directly on gap #8 (hotel supply/demand STR/CoStar proxy) and gap #17 (nowcasting method transparency). Even though it is explicitly a proxy rather than licensed STR data, it is a working, keyless, one-command pull architecture (TSA+BLS+PPI+Trends+yfinance) we could fork or mine for the BLS accommodation-employment/PPI series we may not already be pulling, and its self-reported failure of the composite signal is a useful negative data point consistent with our own TSA/Trends null results.",
+  "potential": "high",
+  "size_hint": "small hand-keyed CSV + gitignored cached pulls; 32 commits",
+  "time_coverage": "TSA data 2019+, quarterly RevPAR since ~2019 (hand-keyed)",
+  "geography": "US (national), MAR/HLT/Choice brand-level",
+  "license": "not confirmed in fetch",
+  "last_activity": "not confirmed in fetch (active enough to run daily CI as of check)",
+  "duplicate_of_holding": "Overlaps our existing 'MAR/HLT RevPAR from releases' and our own tested-and-failed TSA-throughput / Google-Trends constructions \u2014 still worth flagging for the BLS PPI/accommodation-employment proxy angle we may not have tried, and as a second working example of the same null result on TSA/Trends.",
+  "gap_targets": [
+   8,
+   17
+  ],
+  "hits": 3,
+  "themes": [
+   "Hotel performance data: STR / CoStar weekly and monthly US RevPAR figures scraped from press releases, HotStats, Smith Travel history compiled on GitHub",
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Directly on gap #8 (hotel supply/demand STR/CoStar proxy) and gap #17 (nowcasting method transparency). Even though it is explicitly a proxy rather than licensed STR data, it is a working, keyless, one-command pull architecture (TSA+BLS+PPI+Trends+yfinance) we could fork or mine for the BLS accommodation-employment/PPI series we may not already be pulling, and its self-reported failure of the composite signal is a useful negative data point consistent with our own TSA/Trends null results.",
+   "Directly matches gap #8 (regional RevPAR, hotel demand) with an actual committed multi-year reported-RevPAR CSV plus a live, no-key pipeline (TSA/BLS/Trends/yfinance) for hotel-brand demand proxies that read through to STR competitive pricing pressure.",
+   "The PPI Traveler Accommodation series is a monthly hotel-room-rate price index (adjacent to CPI lodging, arguably a cleaner room-rate proxy since it is closer to producer pricing) with an automated pull method; the committed reported-RevPAR CSV (2019-2026) is independently useful for gap #8 (hotel supply/demand RevPAR) as a hand-collected, already-tabulated series saving re-transcription from 10-Qs."
+  ]
+ },
+ {
+  "key": "github:jtilly/cbpr",
+  "url": "https://github.com/jtilly/cbpR",
+  "name": "jtilly/cbpR",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package that downloads and assembles panel datasets from the U.S. Census Bureau's County Business Patterns (CBP) program, aggregable to county/metro/micro level; `getFirmCount()`-style functions accept a NAICS code (demonstrated with a 6-digit code, so NAICS 721 'Accommodation' / 721110 'Hotels and Motels' is selectable), and years are user-specified (demo shown for 2000-2009, but CBP itself runs 1986-2023 annual).",
+  "why_useful": "CBP publishes annual county-level establishment counts, employment and payroll for NAICS 721 (Accommodation and Food Services > Accommodation) \u2014 a free, long-run, granular US hotel-supply census (number of hotel establishments, employment) that could be turned into a US hotel-supply-growth series to compare against Airbnb's US listing growth. Directly addresses gap 8 (hotel supply) with public, county-level government data going back further than any commercial STR/CoStar series we hold.",
+  "potential": "high",
+  "gap_targets": [
+   8
+  ],
+  "geography": "United States, county/metro/micro/state/national level",
+  "time_coverage": "CBP program spans 1986-2023 annually; package demo covers 2000-2009 but is not hardcoded to that range",
+  "size_hint": "Tooling + cached CBP panel builds, CBP source files are tens of MB/year",
+  "license": "unspecified (check repo)",
+  "last_activity": "2026-05-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "CBP publishes annual county-level establishment counts, employment and payroll for NAICS 721 (Accommodation and Food Services > Accommodation) \u2014 a free, long-run, granular US hotel-supply census (number of hotel establishments, employment) that could be turned into a US hotel-supply-growth series to compare against Airbnb's US listing growth. Directly addresses gap 8 (hotel supply) with public, county-level government data going back further than any commercial STR/CoStar series we hold."
+  ]
+ }
+]

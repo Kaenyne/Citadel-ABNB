@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:kenwoo123/finra_short_interest_fetcher",
+  "url": "https://github.com/kenwoo123/finra_short_interest_fetcher",
+  "name": "finra_short_interest_fetcher",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Fetches FINRA short-interest data. No stars, updated 2023-03-18, no license listed.",
+  "why_useful": "A working puller for FINRA's bi-monthly short-interest-by-security releases, which could extend our existing short-interest holding with a maintained script (or verify our vintages against a second source). Addresses part of gap #15/positioning tracking.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "2023-03-18",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "fetcher script",
+  "duplicate_of_holding": "We already hold ABNB short interest; this is a generic fetcher, not new coverage",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "A working puller for FINRA's bi-monthly short-interest-by-security releases, which could extend our existing short-interest holding with a maintained script (or verify our vintages against a second source). Addresses part of gap #15/positioning tracking."
+  ]
+ },
+ {
+  "key": "github:zyyzx/si-dashboard",
+  "url": "https://github.com/zyyzx/si-dashboard",
+  "name": "si-dashboard",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "FINRA short-interest dashboard covering 40 sector/industry themes, sector-sentiment aggregation, and a \"rising shorts\" screener. Updated 2026-08-17, no license listed.",
+  "why_useful": "Sector-level (travel/consumer discretionary) short-interest aggregation could contextualize ABNB's own short-interest trend against its peer/sector cohort.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "2026-08-17",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "dashboard app",
+  "duplicate_of_holding": "We already hold ABNB short interest",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Sector-level (travel/consumer discretionary) short-interest aggregation could contextualize ABNB's own short-interest trend against its peer/sector cohort."
+  ]
+ },
+ {
+  "key": "github:saidbahadev/options-dataset-hist",
+  "url": "https://github.com/SaidBahaDev/options-dataset-hist",
+  "name": "options-dataset-hist",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "README claims historical options data for SPY/IWM/QQQ, Jan 2008-Dec 2025, 53M+ contracts with Greeks/IV/microstructure, in SQLite (.db.zst) and partitioned Parquet. VERIFIED via gh api: repo is only 1886 KB total; data/spy_options.db.zst, iwm_options.db.zst, qqq_options.db.zst are each ~134-135 bytes (git-lfs pointer stubs, not real data); data/parquet_spy, parquet_iwm, parquet_qqq are empty (0-byte) directories; no GitHub releases with assets. The referenced upstream (github.com/philippdubach/historic-options-dataset) returns 404 (deleted/renamed). This looks like an unpopulated/placeholder or fork of a dead repo despite a convincing description.",
+  "why_useful": "Would be a strong general options/IV methodology dataset (index ETF proxies for IV term structure and event-window construction) if real, but currently non-functional \u2014 no usable bytes behind the claim.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "US (SPY/IWM/QQQ, not ABNB-specific)",
+  "time_coverage": "claimed 2008-2025, not actually present",
+  "size_hint": "repo 1.9MB total; data files are ~134-byte stubs; parquet dirs empty",
+  "license": "MIT",
+  "last_activity": "2026-09-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Would be a strong general options/IV methodology dataset (index ETF proxies for IV term structure and event-window construction) if real, but currently non-functional \u2014 no usable bytes behind the claim."
+  ]
+ },
+ {
+  "key": "github:piekstra/options-data",
+  "url": "https://github.com/piekstra/options-data",
+  "name": "options-data",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Described as a 'historical options data store for backtesting and analysis'; MIT licensed, updated 15 Jul 2026, 1 star. Not yet inspected for whether it commits actual chain data or is a scraper/ETL scaffold pointing at a paid feed (common pattern in this search).",
+  "why_useful": "Possible general-purpose options-chain storage/ETL tool that could be pointed at ABNB's own option chain (we already pull current Yahoo chains) to build a rolling historical archive ourselves, which we do not currently have (our options data is 'current' only, not a time series).",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "unknown, not inspected",
+  "size_hint": "unknown",
+  "license": "MIT",
+  "last_activity": "2026-07-15",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Possible general-purpose options-chain storage/ETL tool that could be pointed at ABNB's own option chain (we already pull current Yahoo chains) to build a rolling historical archive ourselves, which we do not currently have (our options data is 'current' only, not a time series)."
+  ]
+ },
+ {
+  "key": "github:joaojungblut/br-fama-french-factors",
+  "url": "https://github.com/JoaoJungblut/BR-Fama-French-Factors",
+  "name": "BR-Fama-French-Factors",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Open database of Fama-French style factors constructed for the Brazilian equity market (fills the stated absence of official FF factors for Brazil).",
+  "why_useful": "Could support a Brazil-specific equity risk model if the team ever builds a LatAm-listed comparator regression, but is a factor dataset, not travel/STR/consumer data, so relevance to ABNB LatAm nights/ADR forecasting is indirect.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "size_hint": "unverified",
+  "time_coverage": "unknown",
+  "geography": "Brazil",
+  "license": "MIT",
+  "last_activity": "2025-07-18",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Could support a Brazil-specific equity risk model if the team ever builds a LatAm-listed comparator regression, but is a factor dataset, not travel/STR/consumer data, so relevance to ABNB LatAm nights/ADR forecasting is indirect."
+  ]
+ }
+]

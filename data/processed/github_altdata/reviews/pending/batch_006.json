@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:rajdeep345/ectsum",
+  "url": "https://github.com/rajdeep345/ECTSum",
+  "name": "ECTSum (Earnings Call Transcript Summarization, EMNLP 2022)",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Benchmark dataset pairing earnings-call transcripts with concise bullet-point summaries (from Reuters-style analyst wrap-ups), plus the ECT-BPS extractive+paraphrasing baseline code and processed data files under codes/ECT-BPS/*/data/. GPL-3.0 license, 88 commits, last update 8 Mar 2023 (Colab notebook for the paraphrasing module).",
+  "why_useful": "Gives transcript-to-summary training pairs that could be repurposed as a proxy for 'what the sell-side extracted as the key guide items' from a call \u2014 directly relevant to modelling what management's guide is made of.",
+  "potential": "medium",
+  "geography": "US, cross-sector",
+  "time_coverage": "not stated precisely; pre-2022",
+  "size_hint": "not stated; benchmark-scale (thousands of call/summary pairs typical for this task)",
+  "license": "GPL-3.0",
+  "last_activity": "8 Mar 2023, 88 commits",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Gives transcript-to-summary training pairs that could be repurposed as a proxy for 'what the sell-side extracted as the key guide items' from a call \u2014 directly relevant to modelling what management's guide is made of."
+  ]
+ },
+ {
+  "key": "github:revdotcom/speech-datasets",
+  "url": "https://github.com/revdotcom/speech-datasets",
+  "name": "Earnings21 / Earnings22 (Rev.com ASR earnings-call speech datasets)",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Earnings21: 44 audio files (~39 hours) of 2020 earnings calls with transcripts, speaker labels, punctuation and entity tags. Earnings22: 125 files (~119 hours) of international earnings calls with transcripts, ticker symbols, HQ country and language-region metadata. Distributed via Git LFS; license not explicitly stated in the fetched README.",
+  "why_useful": "Real, long-form earnings-call audio+transcript data (not just US large-cap) with entity/ticker metadata; useful as raw material for a from-scratch ABNB peer-call tone/ASR pipeline or for validating a transcript-sourcing method against ground-truth audio.",
+  "potential": "medium",
+  "geography": "Earnings21 primarily US; Earnings22 international",
+  "time_coverage": "Earnings21: 2020 calls; Earnings22: not stated precisely",
+  "size_hint": "Earnings21 ~39 hrs/44 files; Earnings22 ~119 hrs/125 files (Git LFS)",
+  "license": "not stated in fetched content",
+  "last_activity": "not surfaced",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Real, long-form earnings-call audio+transcript data (not just US large-cap) with entity/ticker metadata; useful as raw material for a from-scratch ABNB peer-call tone/ASR pipeline or for validating a transcript-sourcing method against ground-truth audio."
+  ]
+ },
+ {
+  "key": "github:earningscall/earningscall-python",
+  "url": "https://github.com/EarningsCall/earningscall-python",
+  "name": "earningscall-python (EarningsCall API client)",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client for the (freemium/paid) EarningsCall API: transcripts at multiple detail levels (through word-level timestamps), audio downloads, slide decks, speaker/prepared-remarks-vs-Q&A tagging, and an earnings-event calendar; claims 5,000+ companies with an API key. MIT license, Python 3.10+, actively maintained (v2.0.1, 11 Mar 2026), CI via GitHub Actions.",
+  "why_useful": "A structured, speaker-tagged, timestamped transcript API client (with a free tier for some data) that could shortcut point-in-time transcript acquisition for ABNB and peers, including audio/slide alignment for tone work.",
+  "potential": "medium",
+  "geography": "global, broad ticker coverage (paid tier)",
+  "time_coverage": "current + historical, not quantified",
+  "size_hint": "API client, not a static dataset; 5,000+ companies claimed",
+  "license": "MIT",
+  "last_activity": "v2.0.1 released 11 Mar 2026, actively maintained",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A structured, speaker-tagged, timestamped transcript API client (with a free tier for some data) that could shortcut point-in-time transcript acquisition for ABNB and peers, including audio/slide alignment for tone work."
+  ]
+ },
+ {
+  "key": "github:jeremiak/motley-fool-earning-transcripts",
+  "url": "https://github.com/jeremiak/motley-fool-earning-transcripts",
+  "name": "motley-fool-earning-transcripts (Datasette)",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js scraper (index.mjs) with a GitHub Actions cron job that scrapes fool.com earnings-call transcripts into a Prisma-managed SQLite DB, served publicly via Datasette at motley-fool-earning-transcripts.fly.dev. 24 commits, no stated license; author disclaims commercial use.",
+  "why_useful": "A running, automated, queryable (SQL via Datasette) mirror of Motley Fool transcripts \u2014 potentially a faster point-in-time source than re-scraping fool.com directly, though it is itself a scrape of a site with anti-scraping terms (flag as method only, per project rule 6).",
+  "potential": "medium",
+  "geography": "US, broad tickers (whatever fool.com covers)",
+  "time_coverage": "ongoing via cron, start date not stated",
+  "size_hint": "SQLite DB served via Datasette; row count not stated",
+  "license": "not stated; explicit non-commercial disclaimer",
+  "last_activity": "24 commits, cron-based scraping badge shown as active",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A running, automated, queryable (SQL via Datasette) mirror of Motley Fool transcripts \u2014 potentially a faster point-in-time source than re-scraping fool.com directly, though it is itself a scrape of a site with anti-scraping terms (flag as method only, per project rule 6)."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/jlh-ibm/earnings_call",
+  "url": "https://huggingface.co/datasets/jlh-ibm/earnings_call",
+  "name": "IBM earnings_call dataset (Lelli et al., DataverseNL)",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "21,887 rows / 21.1MB: 188 earnings-call transcripts (Thomson Reuters Eikon) for 11 NASDAQ companies, 2016-2020, joined with ~13,200 daily stock-price rows (Yahoo Finance: OHLCV + adjusted close) and sentiment annotations across three subsets. CC0-1.0 (public domain). Originates from a DataverseNL deposit (point of contact Francesco Lelli) and is mirrored on Hugging Face; no primary GitHub repo found.",
+  "why_useful": "A small but clean, public-domain, transcript+price-linked dataset with an explicit build methodology (Eikon transcripts joined to daily prices) \u2014 a template for building a similar ABNB+peers panel, and CC0 licensing removes reuse friction.",
+  "potential": "medium",
+  "geography": "US (NASDAQ)",
+  "time_coverage": "2016-2020",
+  "size_hint": "21,887 rows, 21.1MB, 188 transcripts, 11 companies",
+  "license": "CC0-1.0",
+  "last_activity": "not stated",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A small but clean, public-domain, transcript+price-linked dataset with an explicit build methodology (Eikon transcripts joined to daily prices) \u2014 a template for building a similar ABNB+peers panel, and CC0 licensing removes reuse friction."
+  ]
+ }
+]

@@ -1,0 +1,124 @@
+[
+ {
+  "key": "github:thomasdubdub/eurocontrol-data-archive",
+  "url": "https://github.com/thomasdubdub/eurocontrol-data-archive",
+  "name": "thomasdubdub/eurocontrol-data-archive",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python framework (archive.py + 4 Jupyter notebooks) to load and visualize the EUROCONTROL R&D Data Archive (flight trajectories, e.g. 'short-haul flights over German upper airspace') as pandas/GeoPandas dataframes. No committed datasets -- wraps the external EUROCONTROL R&D archive (eurocontrol.int/dashboard/rnd-data-archive), which itself requires registration to access underlying flight data.",
+  "why_useful": "Only third-party (non-EUROCONTROL-org) tool found with real stars (9) for EUROCONTROL data; marginal for ABNB nights/ADR forecasting since it is trajectory/airspace-level, not airport passenger counts, and requires external archive access.",
+  "potential": "low",
+  "geography": "Europe (EUROCONTROL upper airspace)",
+  "time_coverage": "unspecified (archive-dependent)",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2025-05-28",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Only third-party (non-EUROCONTROL-org) tool found with real stars (9) for EUROCONTROL data; marginal for ABNB nights/ADR forecasting since it is trajectory/airspace-level, not airport passenger counts, and requires external archive access."
+  ]
+ },
+ {
+  "key": "github:bbc-data-unit/heathrow-noise",
+  "url": "https://github.com/BBC-Data-Unit/heathrow-noise",
+  "name": "Heathrow-noise (BBC Data Unit)",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "BBC Data Unit journalism repo scraping Heathrow's public noise-complaint portal, logging aircraft landing/noise complaint events roughly every five minutes; a byproduct data trail of landing frequency rather than an official passenger count.",
+  "why_useful": "Landing-frequency-as-noise-complaint-count could be a rough proxy for Heathrow flight cadence, but it's noise-complaint volume (confounded by public complaint behavior, not raw traffic) and a one-off journalism scrape, not an ongoing dataset - marginal use only if nothing else is available for high-frequency Heathrow activity.",
+  "potential": "low",
+  "time_coverage": "unspecified capture window (single BBC investigation)",
+  "geography": "Heathrow only",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unspecified, appears to be a completed one-off data-journalism project",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Landing-frequency-as-noise-complaint-count could be a rough proxy for Heathrow flight cadence, but it's noise-complaint volume (confounded by public complaint behavior, not raw traffic) and a one-off journalism scrape, not an ongoing dataset - marginal use only if nothing else is available for high-frequency Heathrow activity."
+  ]
+ },
+ {
+  "key": "github:billyedmoore/lhrnet",
+  "url": "https://github.com/billyedmoore/lhrnet",
+  "name": "lhrnet",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Neural-network project predicting Heathrow runway direction/usage from OpenSky-derived flight data; a modeling exercise built on live OpenSky pulls, no committed historical passenger or flight-count dataset of its own.",
+  "why_useful": "Not a data source per se; runway-usage prediction is orthogonal to passenger volume. Low relevance beyond illustrating another OpenSky-based Heathrow project.",
+  "potential": "low",
+  "time_coverage": "unspecified (live OpenSky data at time of project)",
+  "geography": "Heathrow only",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Not a data source per se; runway-usage prediction is orthogonal to passenger volume. Low relevance beyond illustrating another OpenSky-based Heathrow project."
+  ]
+ },
+ {
+  "key": "github:yjulio/iva-dashboard",
+  "url": "https://github.com/yjulio/iva-dashboard",
+  "name": "iva-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Vanuatu Bureau of Statistics International Visitor Arrivals dashboard repo (description only inspected, not file-listed). Likely holds or pulls VBOS visitor arrival series for Vanuatu.",
+  "why_useful": "Small Pacific-island market, not a listed priority country for ABNB (not in the 1-20 gap list explicitly), but a working example of a government-stats visitor-arrivals dashboard/pipeline that could be a template for building similar pulls for JNTO/KTO/ABS/DATATUR if none of those exist ready-made on GitHub.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "license": "unknown",
+  "geography": "Vanuatu",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "last_activity": "2026-09-07",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Small Pacific-island market, not a listed priority country for ABNB (not in the 1-20 gap list explicitly), but a working example of a government-stats visitor-arrivals dashboard/pipeline that could be a template for building similar pulls for JNTO/KTO/ABS/DATATUR if none of those exist ready-made on GitHub."
+  ]
+ },
+ {
+  "key": "github:abhishek1997pandey/tourism",
+  "url": "https://github.com/Abhishek1997Pandey/tourism",
+  "name": "tourism",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Repo description claims UNWTO World Tourism Barometer rankings (international visitor arrivals, inbound tourism revenue, outbound expenditure by UN region/subregion) but the actual repo content visible is just a README and a zipped 'TravelGuide-master.zip' \u2014 contents/provenance of the zip could not be confirmed without downloading it.",
+  "why_useful": "If the zip does contain a UNWTO Barometer extract, it would directly address gap #7 (regional international arrivals) and the broader UNWTO ask in this theme; flagged for a human to unzip and verify since data provenance is unconfirmed.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "license": "unknown",
+  "geography": "Global (UNWTO regions)",
+  "time_coverage": "unknown (repo dated 2018)",
+  "size_hint": "unknown, one zip file",
+  "last_activity": "2018-03-20",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "If the zip does contain a UNWTO Barometer extract, it would directly address gap #7 (regional international arrivals) and the broader UNWTO ask in this theme; flagged for a human to unzip and verify since data provenance is unconfirmed."
+  ]
+ }
+]

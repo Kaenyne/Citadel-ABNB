@@ -1,0 +1,89 @@
+{
+ "rows_in_head": 5896,
+ "url_country_code_top20": {
+  "in": 481,
+  "id": 481,
+  "jp": 472,
+  "my": 423,
+  "us": 353,
+  "vn": 353,
+  "th": 322,
+  "it": 311,
+  "kr": 242,
+  "gb": 224,
+  "cn": 209,
+  "au": 197,
+  "ae": 140,
+  "ph": 138,
+  "eg": 131,
+  "ar": 115,
+  "fr": 109,
+  "cz": 109,
+  "at": 103,
+  "de": 100
+ },
+ "distinct_url_country_codes": 50,
+ "check_in_min": "2024-12-27T00:00:00.000Z",
+ "check_in_max": "2025-02-27T00:00:00.000Z",
+ "check_in_value_counts": {
+  "2025-02-05": 2681,
+  "2025-01-01": 1650,
+  "2025-02-27": 1419,
+  "2025-02-01": 62,
+  "2025-01-12": 50,
+  "2024-12-27": 34
+ },
+ "adults_counts": {
+  "2": 4121,
+  "1": 1775
+ },
+ "free_cancellation_share": 1.0,
+ "no_prepayment_share": 0.38704206241519673,
+ "free_cancellation_until_nonnull_share": 0.6953867028493894,
+ "discount_share_(final<original)": 0.292910447761194,
+ "median_discount_pct_when_discounted": 22.19020172910663,
+ "final_price_USD_quantiles": {
+  "0.05": 15.0,
+  "0.25": 42.0,
+  "0.5": 104.0,
+  "0.75": 452.0,
+  "0.95": 2261.25
+ },
+ "currency_counts": {
+  "USD": 5895,
+  "BRL": 1
+ },
+ "nb_bedrooms_counts": {
+  "0": 4078,
+  "1": 1136,
+  "2": 409,
+  "3": 193,
+  "4": 46,
+  "5": 20,
+  "6": 6,
+  "8": 4,
+  "11": 2,
+  "7": 2
+ },
+ "nb_all_beds_counts": {
+  "1": 3465,
+  "2": 1501,
+  "3": 413,
+  "4": 215,
+  "5": 107,
+  "0": 62,
+  "6": 43,
+  "7": 27
+ },
+ "review_score_median": 8.1,
+ "all_null_columns_in_head": [
+  "country",
+  "hotel_rank",
+  "searched_country",
+  "map_coordinates",
+  "listing_country",
+  "total_listings_found",
+  "star_rating",
+  "tags"
+ ]
+}

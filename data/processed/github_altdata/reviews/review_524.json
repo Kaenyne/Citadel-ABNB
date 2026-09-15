@@ -1,0 +1,79 @@
+{
+ "verdicts": [
+  {
+   "url": "https://github.com/danwagnerco/similarweb",
+   "slug": "danwagnerco-similarweb-client",
+   "usefulness": "possibly_useful",
+   "verdict": "catalog_only",
+   "priority": 3,
+   "source_family": "similarweb-api-client",
+   "category": "web_app_engagement",
+   "data_kind": "acquisition_method",
+   "one_line": "MIT Python client wrapping the official (paid) SimilarWeb API for domain traffic/engagement metrics; no data committed, requires a paid API key.",
+   "abnb_use": "Would give web-traffic/engagement estimates for airbnb.com (gap 5) if the team ever obtains a SimilarWeb key; produces nothing without one.",
+   "sample_plan": "No public sample possible — every endpoint requires a paid SimilarWeb key; catalogue as a method to revisit only if a key is obtained.",
+   "tos_or_license_flag": false,
+   "reasoning": "Useful method pointer for gap 5 but gated entirely behind a paid API key, so no agent can pull anything from it now."
+  },
+  {
+   "url": "https://github.com/jwoohong1983/goiener-smartmeter-mirror",
+   "slug": "goiener-smartmeter-mirror",
+   "usefulness": "possibly_useful",
+   "verdict": "catalog_only",
+   "priority": 3,
+   "source_family": "goiener-smartmeter-basque",
+   "category": "geospatial_poi_mobility",
+   "data_kind": "stored_dataset",
+   "one_line": "Mirror of the GoiEner (Zenodo, CC-BY) hourly smart-meter dataset for 25,559 households in Basque Country/Navarre, Spain, Nov 2014-Jun 2022, ~15GB unpacked.",
+   "abnb_use": "Template/comparator for a smart-meter-as-occupancy-proxy method (gap 8-adjacent), but the panel is mixed residential, not touristic, and non-Spain, non-ABNB-market geography limits direct use.",
+   "sample_plan": "Not worth an agent pull: geography is not a covered market, mix is residential not touristic, and the dataset is large (2GB+ compressed) relative to the weak read-through — catalogue only.",
+   "tos_or_license_flag": false,
+   "reasoning": "Genuine open granular utility panel and a real method template, but wrong geography/population for an ABNB occupancy proxy and too large to justify a sample on that thin a connection."
+  },
+  {
+   "url": "https://github.com/luminati-io/eCommerce-dataset-samples",
+   "slug": "luminati-ecommerce-samples",
+   "usefulness": "unlikely",
+   "verdict": "discard",
+   "priority": 3,
+   "source_family": "brightdata-ecommerce-samples",
+   "category": "other",
+   "data_kind": "stored_dataset",
+   "one_line": "Bright Data org repo of committed retail-scrape samples (Amazon, Walmart, Target, eBay, Zara, Home Depot) with price/rating/review fields; no dates/geography stated.",
+   "abnb_use": "Only a loose schema analogy for a scraped price/availability panel; no travel, lodging, or Airbnb-adjacent content at all.",
+   "sample_plan": "Not applicable — no plausible ABNB read-through beyond 'other scrapers exist'; not a data source for any numbered gap.",
+   "tos_or_license_flag": false,
+   "reasoning": "Retail scrape samples with no license and no connection to travel/lodging KPIs; the schema-template argument is too weak to justify cataloguing as useful."
+  },
+  {
+   "url": "https://github.com/ashermanwmf/pageviewapi",
+   "slug": "ashermanwmf-pageviewapi",
+   "usefulness": "possibly_useful",
+   "verdict": "catalog_only",
+   "priority": 3,
+   "source_family": "wikimedia-pageviews-api",
+   "category": "web_app_engagement",
+   "data_kind": "acquisition_method",
+   "one_line": "Stale thin client for the official Wikimedia Pageviews REST API (per-article daily counts, July 2015-present, keyless).",
+   "abnb_use": "Could support gap 5 (engagement proxy: pageviews on 'Airbnb', 'Vrbo', destination-city articles) as a point-in-time-clean interest series.",
+   "sample_plan": "Skip this specific stale wrapper; if sampled, pull directly from the official Wikimedia REST API (see WikiPageviews entry) rather than through this client.",
+   "tos_or_license_flag": false,
+   "reasoning": "The load-bearing artifact is the official free Wikimedia API itself, not this particular stale wrapper repo, so cataloguing it as the pointer is enough."
+  },
+  {
+   "url": "https://github.com/rohitgodbole/WikiPageviews",
+   "slug": "wikipageviews-client",
+   "usefulness": "possibly_useful",
+   "verdict": "sample",
+   "priority": 2,
+   "source_family": "wikimedia-pageviews-api",
+   "category": "web_app_engagement",
+   "data_kind": "acquisition_method",
+   "one_line": "Thin, recently-touched (Apr 2026) wrapper around the official keyless Wikimedia Pageviews REST API, daily per-article counts back to July 2015.",
+   "abnb_use": "Gap 5 engagement proxy: pull daily pageviews for 'Airbnb', 'Vrbo', 'Short-term_rental' and a few destination-city articles as a point-in-time-clean search-interest series to compare against nights/ADR nowcasts.",
+   "sample_plan": "Skip cloning this repo; instead do a direct keyless GET against https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/<article>/daily/2018010100/2026091400 for 4-5 articles (Airbnb, Vrbo, Booking.com, Short-term_rental) and save as CSV, well under 5MB.",
+   "tos_or_license_flag": false,
+   "reasoning": "Wikimedia's pageviews API is public, keyless, and genuinely point-in-time, matching gap 5 directly and cheap enough to sample now even though this specific client repo is not itself load-bearing."
+  }
+ ]
+}

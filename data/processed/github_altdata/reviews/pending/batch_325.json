@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:kumawatcodes/nyc-mta-ridership-analysis-python",
+  "url": "https://github.com/KumawatCodes/nyc-mta-ridership-analysis-python",
+  "name": "nyc-mta-ridership-analysis-python",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "14-star analysis of NYC MTA daily ridership trends post-COVID using Python; updated Aug 2026, likely built on MTA's public daily ridership dashboard CSV.",
+  "why_useful": "Another entry point to MTA's own daily systemwide ridership series; cataloged for completeness alongside the recovery-analysis repo above.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "post-COVID period",
+  "size_hint": "small",
+  "license": "none stated",
+  "last_activity": "2026-08-10",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Another entry point to MTA's own daily systemwide ridership series; cataloged for completeness alongside the recovery-analysis repo above."
+  ]
+ },
+ {
+  "key": "github:boogie7869/korea-tourism-api",
+  "url": "https://github.com/boogie7869/Korea-Tourism-Api",
+  "name": "Korea-Tourism-Api",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python wrapper (korea_tourism_api.py, requirements.txt, translations.json, Procfile for Heroku) providing an English-friendly RESTful interface over Korea Tourism Organization (KTO) official data. 3 commits, no data files committed, 0 stars, license not stated.",
+  "why_useful": "A thin, easy client for KTO's official tourism-statistics API (gap #7, Korea KTO) \u2014 lets us pull Korean regional visitor stats programmatically instead of navigating KTO's raw API directly.",
+  "potential": "low",
+  "geography": "South Korea",
+  "time_coverage": "n/a (API wrapper, not a dataset)",
+  "size_hint": "single-file wrapper, 3 commits",
+  "license": "not stated",
+  "last_activity": "2026-05-04",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "A thin, easy client for KTO's official tourism-statistics API (gap #7, Korea KTO) \u2014 lets us pull Korean regional visitor stats programmatically instead of navigating KTO's raw API directly."
+  ]
+ },
+ {
+  "key": "github:nirholas/x402-campsites",
+  "url": "https://github.com/nirholas/x402-campsites",
+  "name": "nirholas/x402-campsites",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "TypeScript service (Apache-2.0, 4 stars, 6 commits, created Sep 2026) wrapping the official RIDB campground-metadata API plus Recreation.gov's public, keyless site-level availability API; exposes both as a pay-per-call (USDC micropayment) HTTP/MCP tool with a fallback fixture catalog of 8 campgrounds when no RIDB key is set.",
+  "why_useful": "Confirms Recreation.gov's live-availability endpoint is public and keyless (no scraping/ToS issue) \u2014 a ready acquisition path for outdoor-recreation capacity-utilization as a competing-travel-dollar proxy.",
+  "geography": "US",
+  "time_coverage": "live only",
+  "size_hint": "small codebase, no data files",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-14",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Confirms Recreation.gov's live-availability endpoint is public and keyless (no scraping/ToS issue) \u2014 a ready acquisition path for outdoor-recreation capacity-utilization as a competing-travel-dollar proxy."
+  ]
+ },
+ {
+  "key": "github:mheadd/node-ridb",
+  "url": "https://github.com/mheadd/node-ridb",
+  "name": "mheadd/node-ridb (representative of ~6 RIDB API wrapper repos: AJFunk/ridb-node, boscomonkey/doi-rec-data, jtbradt/ridbAPI, pipeworx-io/mcp-recreation-gov, Dnakitare/recreation-data-manager)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Thin client libraries (Node/Ruby/.NET/Java/MCP) for USDA/DOI's Recreation Information Database (RIDB) API \u2014 facility, campsite, and permit metadata across all US federal recreation lands. No bundled data, needs a free API key.",
+  "why_useful": "Federal outdoor-recreation demand is a free, government-run book-ahead system that scales across the whole US; a maintained client makes it trivial to build a national capacity-utilization index as a demand-substitute/complement signal.",
+  "geography": "US (federal lands)",
+  "time_coverage": "live",
+  "size_hint": "code only",
+  "license": "mixed MIT/BSD/none",
+  "last_activity": "mostly stale (2015-2020), pipeworx-io/mcp-recreation-gov and Dnakitare/recreation-data-manager updated 2026",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Federal outdoor-recreation demand is a free, government-run book-ahead system that scales across the whole US; a maintained client makes it trivial to build a national capacity-utilization index as a demand-substitute/complement signal."
+  ]
+ },
+ {
+  "key": "github:masonleon/d3-stacked-bar-massport-carriers",
+  "url": "https://github.com/masonleon/d3-stacked-bar-massport-carriers",
+  "name": "d3-stacked-bar-massport-carriers",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "D3.js visualization repo with underlying data on container-carrier alliances serving the Massachusetts Port Authority (MassPort) FY2014-FY2020 \u2014 cargo/container throughput by carrier, not passenger or cruise traffic.",
+  "why_useful": "Weak fit: only port-authority repo surfaced under that topic, and it's cargo-container data, not passenger/cruise arrivals, so it doesn't speak to tourism volume directly. Flagging as a dead end for the 'port authority' angle rather than a real lead.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "Boston/Massachusetts, USA",
+  "time_coverage": "FY2014-FY2020",
+  "size_hint": "small viz project",
+  "license": "unspecified",
+  "last_activity": "2021-11-03",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Weak fit: only port-authority repo surfaced under that topic, and it's cargo-container data, not passenger/cruise arrivals, so it doesn't speak to tourism volume directly. Flagging as a dead end for the 'port authority' angle rather than a real lead."
+  ]
+ }
+]

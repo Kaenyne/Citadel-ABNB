@@ -1,0 +1,12 @@
+{
+  "theme": "Hostelworld, Hipcamp, Outdoorsy, RVshare, Sonder, Vacasa, Inspirato, Marriott Homes & Villas, Plum Guide, onefinestay, Flatio, Blueground datasets or filings parsers",
+  "modality": "web",
+  "candidates": [],
+  "queries_run": [
+    "site:github.com hostelworld dataset",
+    "site:github.com sonder OR vacasa data scraper",
+    "site:github.com \"hipcamp\" dataset OR api scraper",
+    "site:github.com outdoorsy OR rvshare scraper dataset"
+  ],
+  "notes": "BLOCKED: WebSearch tool returned 'this session has used its web search budget (200 of 200 WebSearch calls)' on every query attempted, including the very first one. The budget was apparently exhausted by other activity in this session/environment before this scout task began (no prior searches were run by this agent in this conversation). No search results were returned for any of the 4 queries attempted, so no candidates could be found or verified via WebFetch. This scout could not complete its assigned web-search modality. Recommend re-running this theme (Hostelworld/Hipcamp/Outdoorsy/RVshare/Sonder/Vacasa/Inspirato/Marriott Homes & Villas/Plum Guide/onefinestay/Flatio/Blueground) in a fresh session with an unused WebSearch budget, or raising CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION. No candidates found is NOT the same as no candidates exist for this theme -- this is a tooling failure, not a negative result."
+}

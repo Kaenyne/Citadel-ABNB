@@ -1,0 +1,10 @@
+{
+ "slug": "trade-copier-13f-berkshire-panel",
+ "url": "https://github.com/tsushanth/trade-copier-13f",
+ "category": "company_filings_estimates",
+ "data_kind": "both",
+ "one_line": "EDGAR 13F puller that diffs consecutive quarters for one filer (Berkshire Hathaway, CIK 0001067983) and dry-runs mirror trades on Alpaca paper; ships 16 quarters of committed holdings JSON (holdings_2022-09-30 .. holdings_2026-06-30, ~6-10 KB each), raw infotable XMLs (~85 KB each), a cusip_ticker.json map and a backtest equity-curve CSV/JSON; 287 KB repo, no LICENSE, created and pushed 3 Sep 2026.",
+ "abnb_use": "Gap #15 and point-in-time discipline generally: the README is explicit that a quarter-end 13F is only actionable on the filing date ~45 days later, and the code implements that lag \u2014 exactly the refit-at-guide-date convention our harness needs; the quarter-diff logic transplants directly to building an ABNB holder-concentration/turnover series, and cusip_ticker.json is a reusable CUSIP\u2192ticker map.",
+ "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/tsushanth/trade-copier-13f.git into the scratch dir, then `git sparse-checkout set data results src`; keep only data/cusip_ticker.json, the 17 data/holdings_*.json files, results/backtest_result.json, results/backtest_equity_curve.csv and the src/ Python (skip results/backtest_equity_curve.png and skip all data/infotable_*.xml except ONE, infotable_000095012322012275.xml, as a format exemplar). Total well under 1 MB.",
+ "tos_or_license_flag": true
+}

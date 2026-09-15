@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/jadchaar/sec-cik-mapper",
+  "slug": "sec-cik-mapper-cik-ticker-crosswalk",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "one_line": "MIT, archived Apr 2025 (last push 28 Feb 2025, 75 stars): Python package plus committed mapping files under mappings/stocks/ (mappings.csv 443 KB, ticker_to_cik.json 214 KB, cik_to_tickers.json 200 KB, cik_to_company_name.json 306 KB, exchange maps) and a parallel mappings/mutual_funds/ tree; also served over jsDelivr; US SEC registrants, frozen at the archive date.",
+  "abnb_use": "Gap 15 (SEC EDGAR tooling): a ready CIK/ticker/exchange crosswalk to join ABNB, BKNG, EXPE, MAR, HLT, VCSA, SOND and any peer against XBRL frames, EDGAR full-text search and the financial-statement datasets without hand-deriving CIKs; mutual-fund series/class maps also support 13F/holder work.",
+  "sample_plan": "curl -sL -o mappings_stocks.csv https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/mappings.csv (443 KB) and curl -sL -o ticker_to_cik.json https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/ticker_to_cik.json (214 KB); also grab README.md. Total < 1 MB. Skip the mutual_funds tree unless 13F work needs it.",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified via gh api: repo is archived/read-only, MIT, and the mappings/stocks directory really does hold the nine committed CSV/JSON crosswalk files at the sizes listed, so the data is static and pullable with no key. It is a utility rather than a primary dataset, but it is tiny, permissively licensed and removes a nuisance step in any EDGAR/XBRL peer pull. Frozen at Feb 2025, so ABNB and all existing peers are covered; only post-2025 new listings would be missing."
+ },
+ {
+  "url": "https://github.com/igalci/zacks-scraper",
+  "slug": "igalci-zacks-earnings-table-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Apache-2.0, 26 KB, last push 26 Jun 2022 (repo metadata touched Sep 2024), 3 stars: a ~5 KB Python class that GETs https://www.zacks.com/stock/research/<TICKER>/earnings-calendar with a spoofed Firefox User-Agent and parses the embedded document.obj_data JSON for the EPS table and the sales (revenue) table — date reported, period end, estimate, actual, before/after hours. No data committed.",
+  "abnb_use": "Gap 4 (point-in-time / vintage consensus): the Zacks earnings-calendar JSON carries the consensus EPS *and revenue* estimate alongside the actual for every historical quarter, so for ABNB/BKNG/EXPE it would be a retroactive, at-report-date consensus series to compare against our press-quote consensus ledger at 23 prints — the revenue table in particular is rarer than EPS-only sources.",
+  "sample_plan": "Not to be pulled by an agent: it scrapes zacks.com with a spoofed browser User-Agent, which is a terms-of-service decision for a human. If cleared, the pull would be one GET per ticker of /stock/research/ABNB/earnings-calendar and a parse of document.obj_data — a few hundred KB for ABNB, BKNG, EXPE, MAR, HLT.",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed code-only (zacks_scraper/scraper.py, 5,069 bytes) with README usage Scraper('AAPL').get(); the constants show it extracts both earnings_announcements_earnings_table and earnings_announcements_sales_table. The revenue-estimate history is the genuinely interesting part for our consensus ledger, but the UA spoofing against zacks.com makes running it a human ToS call, and the code is four years old so the page structure may have drifted."
+ },
+ {
+  "url": "https://github.com/DerekZhang0000/ZackScraper",
+  "slug": "derekzhang-zacks-rank-screener-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "No licence declared, 100 KB, last push 4 Apr 2022, 2 stars: Node.js/cheerio scraper (zax.js + functions.js) that walks a 41 KB ticker list (stocksInput.txt) and writes Zacks Rank / Value / Growth / Momentum / VGM style scores plus five years of net income to CSV; the committed stocksOutput.csv is header-only (236 bytes), i.e. no data actually stored.",
+  "abnb_use": "Gap 4 only very loosely: Zacks Rank changes are a coarse estimate-revision-direction proxy and the net-income columns are backward-looking; nothing here is an ABNB revenue or nights estimate, and no history is committed.",
+  "sample_plan": "Do not pull: the only committed CSV is an empty header row, and running it means scraping zacks.com screener pages (human ToS decision). Catalogue the URL and the output schema only.",
+  "tos_or_license_flag": true,
+  "reasoning": "gh api shows stocksOutput.csv at 236 bytes and a curl of it returns only the header line, so the repo stores no data at all. The scraper targets Zacks' recommended-stock screener rather than an estimate history, so even if run it yields rank labels, not the consensus revenue/EPS vintages gap 4 needs. No licence declared, four years stale."
+ },
+ {
+  "url": "https://github.com/bvb-06/WebScraping-Estimize",
+  "slug": "bvb06-estimize-selenium-scrape-29-tickers",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "MIT, 1.3 MB, last push 8 Dec 2023, 1 star: a student project (Data Management_webscraping.ipynb 18 KB, MSA_8040_EPS_Regression_Final_Project.ipynb 41 KB, MySQL connection notebook, final sql queries.sql, 1.5 MB project-report PDF) that uses Python/Selenium to scrape estimize.com for 29 tickers across 2020-2022 quarters (EPS, company details, analyst insights) into CSV/MySQL. Bulk of the repo size is the PDF; no scraped CSV/JSON is committed.",
+  "abnb_use": "Gap 4: a worked Selenium pattern for Estimize crowd EPS estimates with per-analyst detail over 2020-2022, which overlaps ABNB's first public years — but the ticker set is not disclosed as including ABNB and none of the scraped output is stored, so it contributes a method, not data.",
+  "sample_plan": "Do not pull: the only sizeable artefact is a 1.5 MB student report PDF and the notebooks drive a Selenium scrape of estimize.com (login-walled in practice, and a human ToS decision). Record the method and move on.",
+  "tos_or_license_flag": true,
+  "reasoning": "Root listing confirms notebooks, a SQL file, a LICENSE and a large PDF — no data directory and no scraped CSVs, so the scout's 'likely code-only' guess is right. The README states the scope (29 tickers, 2020-2022, Estimize EPS/company/analyst tables) but never names the tickers, so ABNB coverage is unverified. Estimize sits behind an account wall for most detail, which pushes this to catalog_only regardless."
+ },
+ {
+  "url": "https://github.com/ner-aim/Retreving-Financial-Estimates-using-Estimize",
+  "slug": "ner-aim-estimize-fy2019-retail-estimates",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "one_line": "No licence declared, 863 KB, last push 10 Feb 2022, 1 star: unlike its siblings this one DOES commit Estimize output under Data/ (~530 KB) — Analysts Scored Estimates.csv 222 KB, Analysts Stocks.csv 159 KB, Analysts Info/Pending/Analysts.csv, Company.csv, EPS_ANAL_Q1-Q4.csv (~20 KB each) and EPS_Q1-Q4_2019_updated.csv with columns Ticker, Reported_Earnings, Estimate_Consensus, Estimate_Mean, Wall_Street_Conses; but Company.csv shows the universe is Consumer Discretionary / Specialty Retail names (GNC, PAG, ABG, ORLY, MNRO, FND...) for FY2019 only.",
+  "abnb_use": "Essentially none for ABNB KPIs: FY2019 predates the Dec-2020 IPO, the universe is specialty retail with no travel or lodging names, and there are no revenue estimates. Its only residual value is as a schema/worked example of Estimize crowd-consensus vs Wall-Street-consensus vs reported for gap 4 methodology.",
+  "sample_plan": "Do not pull: the committed CSVs are small but contain no travel, no lodging and no ABNB, and stop at FY2019, so a sample would add nothing to the catalogue beyond the column list already recorded here.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified the Data/ directory listing and curled Company.csv and EPS_Q1_2019_updated.csv: the tickers are specialty-retail (GNC, PAG, ABG, SYX, MNRO, ORLY...) and the year is FY2019, so there is no path to an ABNB or peer read. The dataset is nonetheless a genuine committed Estimize extract with Estimize consensus, Estimize mean and Wall Street consensus side by side, which is worth one catalogue line as a schema reference. No licence declared, so redistribution is not clean either."
+ }
+]

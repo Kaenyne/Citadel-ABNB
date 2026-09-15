@@ -1,0 +1,10 @@
+{
+ "slug": "eurocontrol-daio-daily-flights",
+ "url": "https://github.com/euctrl-pru/daio",
+ "category": "travel_volume_transport",
+ "data_kind": "stored_dataset",
+ "one_line": "Committed CSV and Parquet files daio_2019.csv through daio_2026.csv: daily departures, arrivals, internal and overflight counts by EUROCONTROL member state, 2019 to present, auto-updated.",
+ "abnb_use": "A daily, current-through-2026 European air-traffic series by country \u2014 a fresh EMEA travel-volume nowcast input for 3Q26/4Q26 nights that leads Eurostat's ~150-day-lagged platform nights by months.",
+ "sample_plan": "raw.githubusercontent pull of daio_2025.csv and daio_2026.csv (country x day, a few thousand rows each, well under 5 MB); check for a LICENSE file in the same pull.",
+ "tos_or_license_flag": true
+}

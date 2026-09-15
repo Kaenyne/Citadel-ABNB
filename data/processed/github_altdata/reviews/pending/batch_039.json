@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:rearc-data/fema-disaster-declarations-summaries",
+  "url": "https://github.com/rearc-data/fema-disaster-declarations-summaries",
+  "name": "fema-disaster-declarations-summaries",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automated mirror of OpenFEMA's 'Disaster Declarations Summaries V2' dataset via AWS Data Exchange: every federally declared disaster (major disaster, fire management, emergency declarations) from 1953 onward, county-level from 1964 onward, 22 fields (declaration string, disaster number, state/county FIPS, incident type, declaration date, IA/PA/HM program flags). CSV/JSON/JSONA, updated daily against FEMA's NEMIS system.",
+  "why_useful": "A ready-made, documented pipeline to the full historical FEMA disaster-declarations table (all US disaster types back to the 1950s) for gap 11; complements the FEMA-MCP client above with a batch/ETL-oriented approach.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "license": "none listed",
+  "last_activity": "2025-12-16",
+  "size_hint": "scripts only; source dataset is tens of thousands of rows",
+  "geography": "US",
+  "time_coverage": "1953-present (per OpenFEMA)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A ready-made, documented pipeline to the full historical FEMA disaster-declarations table (all US disaster types back to the 1950s) for gap 11; complements the FEMA-MCP client above with a batch/ETL-oriented approach.",
+   "Directly addresses gap #11 (events/shocks: hurricanes/wildfires) and gap #12-adjacent regulatory/declaration tracking; gives a clean county x date x incident-type panel to flag which weeks/markets in the Inside Airbnb 13-city / 123-market panels sat inside a federal disaster window (Maui wildfire, LA fires, Gulf hurricanes) for tourism-shock event studies."
+  ]
+ },
+ {
+  "key": "github:earthlab/firedpy",
+  "url": "https://github.com/earthlab/firedpy",
+  "name": "firedpy",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Python CLI (Earth Lab, CU Boulder) that classifies individual wildfire events from the MODIS Collection 6.1 Burned Area Product (MCD64A1) into discrete fire-event polygons (event-level and optional daily-expansion perimeters), output as GeoPackage/Shapefile plus attribute tables. Global via MODIS tiles; pre-built extracts available per US state/country/continent. Coverage November 2000 - December 2024 (v2.0, Oct 2024 release extends some regions to 2025).",
+  "why_useful": "Gives reproducible, dated wildfire-perimeter polygons (not just point hotspots) for any US state or country -- usable to build a 'was market X inside an active/recent fire perimeter' flag for California, Hawaii (Maui) and other Inside Airbnb markets, filling gap #11 with actual geometry rather than a news list.",
+  "potential": "high",
+  "geography": "Global (MODIS tiles); pre-generated country/state/continent extracts",
+  "time_coverage": "Nov 2000 - Dec 2024/2025",
+  "size_hint": "generates shapefiles/GeoPackages per region; pre-built US-state extracts sized in the 10s-100s of MB",
+  "license": "MIT",
+  "last_activity": "v2.0 released 2024-10-14",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Gives reproducible, dated wildfire-perimeter polygons (not just point hotspots) for any US state or country -- usable to build a 'was market X inside an active/recent fire perimeter' flag for California, Hawaii (Maui) and other Inside Airbnb markets, filling gap #11 with actual geometry rather than a news list."
+  ]
+ },
+ {
+  "key": "github:helios1014/us_state_department_travel_advisories",
+  "url": "https://github.com/helios1014/US_State_Department_Travel_Advisories",
+  "name": "US_State_Department_Travel_Advisories",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ongoing daily archive of US State Dept Travel Advisories, built by a script (feed_test.py) that pulls the official State Dept RSS feed once per day at 12:00 UTC and writes it into an archive format; generates a map visualization of advisory levels by country. Actively updated (last push 25 Aug 2026). No stated start date for the archive's history (appears to have begun recently, so backfill before its start date is not available), but going forward this gives a point-in-time, dated series of advisory level changes (Level 1-4) by country -- directly fills gap #11 (events/shocks) as a leading indicator for cross-border and destination-specific ABNB demand shocks (e.g. advisory upgrades in Mexico/LatAm/Europe markets).",
+  "why_useful": "A dated, per-country US travel advisory level series is a clean, free, point-in-time demand-shock proxy for cross-border travel to/from specific ABNB regional markets (LatAm, EMEA) -- addresses gap #11 (events and shocks) and could pair with the regulatory event database already held. Advisory level changes are discrete, dated events unlike sentiment indices that failed before.",
+  "potential": "high",
+  "gap_targets": [
+   11
+  ],
+  "license": "BSD-3-Clause",
+  "last_activity": "2026-08-25",
+  "geography": "Global (by country, US State Dept perspective)",
+  "time_coverage": "Ongoing daily since repo creation (exact start unclear, likely 2025-2026); no historical backfill of past advisory levels apparent",
+  "size_hint": "small (RSS-derived daily snapshots)",
+  "hits": 2,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "A dated, per-country US travel advisory level series is a clean, free, point-in-time demand-shock proxy for cross-border travel to/from specific ABNB regional markets (LatAm, EMEA) -- addresses gap #11 (events and shocks) and could pair with the regulatory event database already held. Advisory level changes are discrete, dated events unlike sentiment indices that failed before.",
+   "Same demand-shock rationale as the travel-advisory-archive repo above (advisory-level changes as regional travel-demand shocks, gap #11) but delivered as a single flat CSV (easier to ingest than per-country markdown files) with an explicit, reusable acquisition script and a permissive license."
+  ]
+ },
+ {
+  "key": "github:johnmarkschofield/travel-advisory-archive",
+  "url": "https://github.com/johnmarkschofield/travel-advisory-archive",
+  "name": "travel-advisory-archive",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Daily automated archive of US State Dept travel advisories for all 222 tracked countries, split into 4 risk levels (Level 1 Normal Precautions: 87 countries, Level 2 Increased Caution: 83, Level 3 Reconsider Travel: 30, Level 4 Do Not Travel: 22 as of the 2026-09-13 snapshot). Data stored as per-country markdown files under /advisories plus a /data directory; GitHub Actions workflow updates daily. 290 commits, so likely has meaningful history of level changes if commit history is walked (git log on /data gives a point-in-time series of level changes per country). No stars/forks; unclear license.",
+  "why_useful": "Advisory-level upgrades/downgrades by country are a direct, point-in-time demand-shock series for regional travel demand (APAC/LatAm/EMEA nights) -- addresses gap #11 (events/shocks) and is a genuinely new asset class we do not currently hold (we only have a 32-factor STR regulatory event database, no travel-advisory series). Because it's git-committed daily, the commit history itself functions as a vintage register (point-in-time levels by date) if it can be walked.",
+  "potential": "high",
+  "time_coverage": "daily snapshots, exact start date unconfirmed from the fetch (repo has 290 commits; likely started within the last 1-2 years given no-stars/small-repo profile) through 2026-09-13 (still updating)",
+  "geography": "global, 222 countries",
+  "size_hint": "290 commits; small (markdown files per country)",
+  "license": "unstated in fetched content",
+  "last_activity": "2026-09-13 (actively updating daily via GitHub Actions)",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "Advisory-level upgrades/downgrades by country are a direct, point-in-time demand-shock series for regional travel demand (APAC/LatAm/EMEA nights) -- addresses gap #11 (events/shocks) and is a genuinely new asset class we do not currently hold (we only have a 32-factor STR regulatory event database, no travel-advisory series). Because it's git-committed daily, the commit history itself functions as a vintage register (point-in-time levels by date) if it can be walked."
+  ]
+ },
+ {
+  "key": "github:kirkwood-justin/park-atlas-data",
+  "url": "https://github.com/kirkwood-justin/park-atlas-data",
+  "name": "park-atlas-data",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Four CSVs refreshed from theparkatlas.com covering all 474 US National Park System units: parks.csv (park code, name, designation, states, 2025 visitor counts, dark-sky status, timed-entry flag, fee flag, bird species count, active alerts), entrance_fees.csv, campgrounds.csv, wildlife_checklist_counts.csv. CC0 public domain, snapshot dated 13 Sep 2026, sourced from NPS API, NPS IRMA visitation stats, NPSpecies, Recreation.gov RIDB, DarkSky.",
+  "why_useful": "Actively refreshed (updated the same week as this scout run), CC0, single-year current visitor-count cross-section across all 474 NPS units plus fee/entry data; useful as an up-to-date benchmark against NPS IRMA and to sanity-check any nowcast built on the longer national-parks-bi series above.",
+  "potential": "medium",
+  "geography": "US, all 474 NPS units",
+  "time_coverage": "single snapshot, 2025 visitor counts, refreshed Sep 2026",
+  "size_hint": "4 CSVs, ~474 rows each",
+  "license": "CC0 1.0",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Actively refreshed (updated the same week as this scout run), CC0, single-year current visitor-count cross-section across all 474 NPS units plus fee/entry data; useful as an up-to-date benchmark against NPS IRMA and to sanity-check any nowcast built on the longer national-parks-bi series above."
+  ]
+ }
+]

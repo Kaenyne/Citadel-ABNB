@@ -1,0 +1,17 @@
+{
+ "slug": "tmasjc-vienna-berlin-2017-plus-downloader",
+ "url": "https://github.com/tmasjc/airbnb-market-data",
+ "sampled": true,
+ "total_bytes": 4875995,
+ "files": ["berlin_listings.csv", "vienna_listings.csv", "download_csv.R", "README_upstream.md", "README.md", "manifest.json"],
+ "rows": "berlin_listings.csv 20,576; vienna_listings.csv 9,201 (both complete, not truncated)",
+ "columns": "id, name, host_id, host_name, neighbourhood_group, neighbourhood, latitude, longitude, room_type, price, minimum_nights, number_of_reviews, last_review, reviews_per_month, calculated_host_listings_count, availability_365",
+ "date_range": "last_review: Berlin 2011-01-26 to 2017-05-08 (dump vintage ~2017-05-08); Vienna 2012-05-01 to 2017-09-14 (dump vintage 2017-09-15)",
+ "how_pulled": "gh api repos/tmasjc/airbnb-market-data/git/trees/HEAD?recursive=1; curl -sL -o <file> https://raw.githubusercontent.com/tmasjc/airbnb-market-data/master/{Data/berlin.csv,Data/vienna.csv,download_csv.R,README.md}; python/pandas to describe",
+ "full_dataset_size": "Whole repo ~12 MB: the two CSVs (4.86 MB, pulled in full), demo.gif 7 MB, Cache/webpage.xml 0.97 MB (2017 snapshot of insideairbnb.com/get-the-data.html listing every city and dump date then available), app.R/Dockerfile. Nothing else.",
+ "description": "Two 2017 Inside Airbnb summary listings.csv vintages (Vienna 2017-09-15, Berlin ~2017-05-08), one row per listing with quoted price, room type, minimum nights, review counts and 365-day availability, committed to a Shiny demo repo. Also an R CLI (download_csv.R) that indexed the 2017 get-the-data page by city and dump date. For ABNB this is a pre-panel supply/quote-price snapshot for two regulated EMEA cities (Berlin Zweckentfremdungsverbot era, Vienna pre-2019 rules) — cross-sectional only, one dump each; an analyst would use it as a 2017 anchor for listing counts, review velocity and quote ADR versus our 2022-26 dumps. The downloader is reference-only: its scraper targets a page layout that no longer exists.",
+ "issues": "Repo has no LICENSE file (data are Inside Airbnb, which publishes them as open/public). Downloader not run (third-party scrape; obsolete page structure). Berlin vintage date inferred from last_review max, not stated upstream. Summary listings only (no calendar/reviews files). The pull is the complete data content of the repo (nothing truncated), not a head sample.",
+ "geography": "Vienna, Austria; Berlin, Germany",
+ "source_urls": ["https://raw.githubusercontent.com/tmasjc/airbnb-market-data/master/Data/berlin.csv", "https://raw.githubusercontent.com/tmasjc/airbnb-market-data/master/Data/vienna.csv", "https://raw.githubusercontent.com/tmasjc/airbnb-market-data/master/download_csv.R", "https://raw.githubusercontent.com/tmasjc/airbnb-market-data/master/README.md", "https://raw.githubusercontent.com/tmasjc/airbnb-market-data/master/download-shiny-url.txt"],
+ "pulled_at": "2026-09-14"
+}

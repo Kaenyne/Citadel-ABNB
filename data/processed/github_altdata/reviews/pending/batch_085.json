@@ -1,0 +1,125 @@
+[
+ {
+  "key": "github:fabioachilli/excel-data-analysis-hotel-booking-demand-huge-dataset",
+  "url": "https://github.com/FabioAchilli/Excel-Data-Analysis-Hotel-Booking-Demand-Huge-DataSet",
+  "name": "Excel-Data-Analysis-Hotel-Booking-Demand-Huge-DataSet",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Re-analysis (in two 35MB+ OneDrive-hosted Excel workbooks, not committed to git) of the well-known Antonio/Almeida/Nunes 'Hotel Booking Demand' Kaggle dataset -- 119,390 rows, city + resort hotel in the Algarve/Lisbon area, Jul 2015-Aug 2017, restricted here to the Resort-hotel/2016 subset (18,567 rows, 44 columns, ~800k cells). CC0-1.0 licensed repo, but the actual data lives off-GitHub on OneDrive and is not linked to a stable public URL in the repo.",
+  "why_useful": "Same underlying dataset already held by the team (Portugal hotel-booking demand, Antonio/Almeida/Nunes). This mirror adds nothing longer, older, or finer-grained -- it is a smaller single-year, single-property subset of data already in hand. Catalogued only to confirm no incremental value.",
+  "potential": "low",
+  "geography": "Algarve, Portugal (resort hotel only, subset of the two-hotel original)",
+  "time_coverage": "2016 only (subset of original 2015-2017)",
+  "size_hint": "18,567 rows / ~800k cells (subset); original full dataset 119,390 rows",
+  "license": "CC0-1.0 (repo); underlying data license per original Kaggle dataset",
+  "last_activity": "2024-07-24",
+  "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held per CONTEXT.md",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)"
+  ],
+  "why_all": [
+   "Same underlying dataset already held by the team (Portugal hotel-booking demand, Antonio/Almeida/Nunes). This mirror adds nothing longer, older, or finer-grained -- it is a smaller single-year, single-property subset of data already in hand. Catalogued only to confirm no incremental value."
+  ]
+ },
+ {
+  "key": "github:good0boy/hotel-reservation-data-analysis",
+  "url": "https://github.com/good0boy/Hotel-reservation-data-analysis",
+  "name": "Hotel-reservation-data-analysis",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Single Jupyter notebook (Chinese-language) re-analysing the same Kaggle Hotel Booking Demand dataset (city + resort hotel, Portugal) for cancellation prediction; no raw data files committed to the repo, references the Kaggle source only.",
+  "why_useful": "No incremental data over what the team already holds.",
+  "potential": "low",
+  "geography": "Portugal",
+  "time_coverage": "2015-2017 (same as original dataset, referenced not committed)",
+  "size_hint": "n/a (no data committed)",
+  "license": "none declared",
+  "last_activity": "2026-07-14",
+  "duplicate_of_holding": "Portugal hotel-booking demand dataset already held",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)"
+  ],
+  "why_all": [
+   "No incremental data over what the team already holds."
+  ]
+ },
+ {
+  "key": "github:thekerimkerimov/eda-feature-engineering-europe-hotels-kaggle",
+  "url": "https://github.com/theKerimKerimov/eda-feature-engineering-europe-hotels-kaggle",
+  "name": "theKerimKerimov/eda-feature-engineering-europe-hotels-kaggle",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Feature-engineering/EDA notebooks over hotels.csv from the Kaggle '515K Hotel Reviews Data in Europe' competition (target variable reviewer_score); the 170MB+ CSV is gitignored and pulled from Google Drive/Kaggle, not committed. Repo is code/notebooks only.",
+  "why_useful": "Confirms the same 515K European hotel reviews dataset the team already holds; flagged only because it is a distinct, verifiably-working pull method with clear column documentation (reviewer_score, hotel metadata) that could speed re-acquisition, not because it is new data.",
+  "potential": "low",
+  "geography": "Europe (hotel reviews)",
+  "time_coverage": "Not specified in README",
+  "size_hint": "~515K review rows, external (not committed)",
+  "license": "MIT (code); dataset per Kaggle terms",
+  "last_activity": "Not confirmed",
+  "gap_targets": [],
+  "duplicate_of_holding": "Booking.com 515k hotel reviews (Kaggle) -- already held per CONTEXT.md",
+  "hits": 1,
+  "themes": [
+   "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)"
+  ],
+  "why_all": [
+   "Confirms the same 515K European hotel reviews dataset the team already holds; flagged only because it is a distinct, verifiably-working pull method with clear column documentation (reviewer_score, hotel metadata) that could speed re-acquisition, not because it is new data."
+  ]
+ },
+ {
+  "key": "github:saturndatacloud/datasets",
+  "url": "https://github.com/saturndatacloud/datasets",
+  "name": "saturndatacloud/datasets",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A multi-industry sample-dataset repo (8 stars) advertising \"alternative data in eCommerce, retailer, automotive, airlines, hotels, restaurants, real estate in 10+ countries.\" Confirmed automotive folders hold Tesla charging-station/store locations, Blink charging stations, used Tesla sales, and Carvana sales; Hotel/Restaurant/Airline folders exist in the directory tree but their specific file contents could not be confirmed from the landing page in this pass.",
+  "why_useful": "Plausibly touches gaps #8 (hotel supply/demand) and #10 (airline capacity) if the hotel/airline folders hold real committed CSVs rather than placeholders \u2014 needs a direct directory listing (gh or WebFetch on the subfolder) to confirm before relying on it.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   10
+  ],
+  "geography": "10+ countries claimed",
+  "time_coverage": "unconfirmed",
+  "size_hint": "unconfirmed per-folder",
+  "license": "unconfirmed",
+  "last_activity": "unconfirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Plausibly touches gaps #8 (hotel supply/demand) and #10 (airline capacity) if the hotel/airline folders hold real committed CSVs rather than placeholders \u2014 needs a direct directory listing (gh or WebFetch on the subfolder) to confirm before relying on it."
+  ]
+ },
+ {
+  "key": "github:branjbar/trivago-hotel-price-index-thpi",
+  "url": "https://github.com/branjbar/trivago-Hotel-Price-Index-tHPI",
+  "name": "trivago-Hotel-Price-Index-tHPI",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Described as 'Analysis of THPI 2015' (Trivago Hotel Price Index). README only surfaces a demo/visualization link, not a clear description of committed raw data files, years, or cities covered \u2014 could not confirm whether the underlying tHPI series is actually stored in the repo versus just an analysis of a single 2015 snapshot. Zero stars, last updated 2018, likely stale/abandoned.",
+  "why_useful": "If the underlying Trivago Hotel Price Index data is genuinely present, it would be a rare committed copy of a defunct hotel price index series (Trivago's tHPI is no longer published) that could serve as a historical hotel-ADR comparator; flagged as uncertain and worth a manual look rather than confirmed high-value.",
+  "potential": "low",
+  "size_hint": "unknown, small repo (0 stars)",
+  "time_coverage": "2015 snapshot (per description)",
+  "geography": "unknown",
+  "license": "unspecified",
+  "last_activity": "2018-06-14",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "If the underlying Trivago Hotel Price Index data is genuinely present, it would be a rare committed copy of a defunct hotel price index series (Trivago's tHPI is no longer published) that could serve as a historical hotel-ADR comparator; flagged as uncertain and worth a manual look rather than confirmed high-value.",
+   "Only repo found on GitHub that actually touches Trivago's Hotel Price Index (a real hotel-pricing benchmark series, analogous to what gap #8/#2 want for realized ADR/occupancy context); worth a closer look to see if the underlying 2015 tHPI figures are embedded in the Rmd, even though the index itself was discontinued and this is a single old snapshot."
+  ]
+ }
+]

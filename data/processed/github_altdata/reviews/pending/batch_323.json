@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:mango314/mta",
+  "url": "https://github.com/mango314/mta",
+  "name": "mta",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Data visualization app for NYC MTA turnstile data (9 stars, updated Dec 2025).",
+  "why_useful": "Marginal; another visualization layer over the same MTA source.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "not specified",
+  "size_hint": "small",
+  "license": "none stated",
+  "last_activity": "2025-12-01",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "toddwschneider/nyc-subway-turnstile-data",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Marginal; another visualization layer over the same MTA source."
+  ]
+ },
+ {
+  "key": "github:jackgisby/tfl-bikes-data-pipeline",
+  "url": "https://github.com/jackgisby/tfl-bikes-data-pipeline",
+  "name": "tfl-bikes-data-pipeline",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GCP-based pipeline (45 stars, GPL-3.0, updated May 2026) processing TfL Santander Cycles (bike-share) usage data; not rail/tube ridership.",
+  "why_useful": "Bike-share usage as a secondary London mobility/tourism proxy; lower relevance than direct tube/rail ridership but still a maintained TfL Open Data pull.",
+  "potential": "low",
+  "geography": "London, UK",
+  "time_coverage": "not specified, appears ongoing",
+  "size_hint": "pipeline, cloud-hosted output",
+  "license": "GPL-3.0",
+  "last_activity": "2026-05-17",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Bike-share usage as a secondary London mobility/tourism proxy; lower relevance than direct tube/rail ridership but still a maintained TfL Open Data pull."
+  ]
+ },
+ {
+  "key": "github:vonter/bmrcl-ridership-hourly",
+  "url": "https://github.com/Vonter/bmrcl-ridership-hourly",
+  "name": "bmrcl-ridership-hourly",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "55-star, ODbL-licensed dataset of hourly, station-wise ridership on Bengaluru's Namma Metro (BMRCL), sourced from RTI (India's Right-to-Information filings); actively updated (Jul 2026).",
+  "why_useful": "Not a current ABNB market but demonstrates a reusable RTI-sourced-ridership pattern for APAC metros; low direct relevance, flagged for completeness/method transfer to other APAC cities (gap #7).",
+  "potential": "low",
+  "geography": "Bengaluru, India",
+  "time_coverage": "hourly, ongoing (RTI filings)",
+  "size_hint": "hourly station-level panel, multi-year",
+  "license": "ODbL-1.0",
+  "last_activity": "2026-07-15",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Not a current ABNB market but demonstrates a reusable RTI-sourced-ridership pattern for APAC metros; low direct relevance, flagged for completeness/method transfer to other APAC cities (gap #7)."
+  ]
+ },
+ {
+  "key": "github:diagram-chasing/blr-metro-ridership",
+  "url": "https://github.com/diagram-chasing/blr-metro-ridership",
+  "name": "blr-metro-ridership",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "21-star analysis/dataset ('How Bangalore Uses the Metro') built on the same Namma Metro ridership data, MIT licensed, actively updated (Aug 2026).",
+  "why_useful": "Companion/derivative of bmrcl-ridership-hourly; same low direct ABNB relevance, cataloged for completeness.",
+  "potential": "low",
+  "geography": "Bengaluru, India",
+  "time_coverage": "not fully specified, recent",
+  "size_hint": "moderate",
+  "license": "MIT",
+  "last_activity": "2026-08-25",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "Vonter/bmrcl-ridership-hourly (same source data)",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Companion/derivative of bmrcl-ridership-hourly; same low direct ABNB relevance, cataloged for completeness."
+  ]
+ },
+ {
+  "key": "github:thecont1/namma-metro-ridership-tracker",
+  "url": "https://github.com/thecont1/namma-metro-ridership-tracker",
+  "name": "namma-metro-ridership-tracker",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "21-star tracker of Bengaluru Namma Metro ridership over time, actively updated (Sep 2026).",
+  "why_useful": "Third repo on the same Bengaluru metro ridership theme; low ABNB relevance, cataloged for completeness only.",
+  "potential": "low",
+  "geography": "Bengaluru, India",
+  "time_coverage": "ongoing",
+  "size_hint": "moderate",
+  "license": "other (stated in repo)",
+  "last_activity": "2026-09-09",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "Vonter/bmrcl-ridership-hourly",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Third repo on the same Bengaluru metro ridership theme; low ABNB relevance, cataloged for completeness only."
+  ]
+ }
+]

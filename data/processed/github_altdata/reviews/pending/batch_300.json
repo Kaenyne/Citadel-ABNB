@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:leejaew/visitkorea-tour-mcp",
+  "url": "https://github.com/leejaew/visitkorea-tour-mcp",
+  "name": "visitkorea-mcp / visitkorea-wellnesstourism-mcp / visitkorea-medicaltourism-mcp (family of repos by leejaew and others)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server wrappers around Korea Tourism Organization's public TourAPI / EngService2 (data.go.kr) \u2014 live API clients for attractions, restaurants, accommodations, festivals, wellness and medical tourism facility listings. These are point-of-interest/facility APIs, NOT visitor-arrival statistics.",
+  "why_useful": "Confirms KTO's open API surface is machine-accessible and unauthenticated-friendly, but the specific APIs wrapped here are POI/attraction directories, not the inbound-arrivals or nights series the theme needs (Korea's actual monthly arrivals stats live on KTO's separate statistics portal, not TourAPI). Cataloguing as a method pointer only, not a data source for the KPI itself.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "license": "MIT (some repos)",
+  "geography": "South Korea",
+  "time_coverage": "live/current only",
+  "size_hint": "code only, no stored dataset",
+  "last_activity": "2026-08",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Confirms KTO's open API surface is machine-accessible and unauthenticated-friendly, but the specific APIs wrapped here are POI/attraction directories, not the inbound-arrivals or nights series the theme needs (Korea's actual monthly arrivals stats live on KTO's separate statistics portal, not TourAPI). Cataloguing as a method pointer only, not a data source for the KPI itself."
+  ]
+ },
+ {
+  "key": "github:lrebollar/acceso-a-series-inegi-por-python",
+  "url": "https://github.com/lrebollar/Acceso-a-series-INEGI-por-Python",
+  "name": "Acceso a series INEGI por Python",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small standalone Python script (no stars) built specifically because INEGIpy broke after INEGI's 2025-26 series-key overhaul; re-implements direct access to INEGI time series (BIE) by the new keys.",
+  "why_useful": "Secondary/backup method for pulling INEGI series (including tourism/hospitality indicators) if INEGIpy_v2 also lags the current API; low-maturity but addresses a real, recently-broken access path relevant to any Mexico DATATUR/INEGI work.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico",
+  "time_coverage": "current INEGI series, varies",
+  "size_hint": "single script",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "Overlaps INEGIpy_v2 -- keep as fallback only",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Secondary/backup method for pulling INEGI series (including tourism/hospitality indicators) if INEGIpy_v2 also lags the current API; low-maturity but addresses a real, recently-broken access path relevant to any Mexico DATATUR/INEGI work."
+  ]
+ },
+ {
+  "key": "github:jetbolima/visitor-arrivals-to-the-philippines-2008-2021",
+  "url": "https://github.com/jetbolima/Visitor-Arrivals-to-the-Philippines-2008-2021",
+  "name": "Visitor Arrivals to the Philippines 2008-2021",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Dashboard project built from a Philippines Department of Tourism dataset (sourced from data.gov.ph) covering visitor arrivals 2008-2021; likely includes a committed CSV plus a dashboard notebook/app.",
+  "why_useful": "APAC arrivals series (Philippines, adjacent to the Thailand/Indonesia/Japan/Korea group named in this theme) with 13+ years of annual/monthly history from an official source, already extracted into a reusable file rather than a raw PDF.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Philippines",
+  "time_coverage": "2008-2021",
+  "size_hint": "small (dashboard + CSV)",
+  "license": "not confirmed",
+  "last_activity": "not confirmed (repo created 2026)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "APAC arrivals series (Philippines, adjacent to the Thailand/Indonesia/Japan/Korea group named in this theme) with 13+ years of annual/monthly history from an official source, already extracted into a reusable file rather than a raw PDF."
+  ]
+ },
+ {
+  "key": "github:jesusandresbaez/analisis-mercado-hostales-mexico",
+  "url": "https://github.com/jesusandresbaez/analisis-mercado-hostales-mexico",
+  "name": "analisis-mercado-hostales-mexico",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Market analysis project explicitly combining DATATUR, INEGI, and Hostelworld data to identify Mexican destinations with hostel-investment potential; likely has a merged/cleaned dataset joining DATATUR visitor volumes with INEGI series at the destination level.",
+  "why_useful": "Possible ready-made DATATUR extract (Mexico's official tourism-arrivals agency, explicitly named in this theme) already joined to INEGI and a lodging-supply source, saving a manual DATATUR portal pull; LatAm gap (#7).",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico (destination-level)",
+  "time_coverage": "not confirmed from listing (needs repo inspection)",
+  "size_hint": "not confirmed",
+  "license": "not confirmed",
+  "last_activity": "2026-02-28",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Possible ready-made DATATUR extract (Mexico's official tourism-arrivals agency, explicitly named in this theme) already joined to INEGI and a lodging-supply source, saving a manual DATATUR portal pull; LatAm gap (#7)."
+  ]
+ },
+ {
+  "key": "github:tjwodud04/mcp-tour",
+  "url": "https://github.com/tjwodud04/mcp-tour",
+  "name": "mcp-tour",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An MCP (Model Context Protocol) server integration wrapping the Korea Tourism Organization's (KTO) public API, intended for use with Claude Desktop -- effectively a ready-made client/tool wrapper around KTO's TourAPI.",
+  "why_useful": "KTO is explicitly named in this theme (Korea international arrivals/visitor data); this repo is a thin wrapper that could shortcut building a KTO API client, though it targets KTO's general tourism-content API rather than confirmed to expose the visitor-arrivals statistics endpoint specifically -- needs verification of which KTO endpoints it actually calls.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Korea",
+  "time_coverage": "n/a (live API wrapper)",
+  "size_hint": "small tool repo",
+  "license": "not confirmed",
+  "last_activity": "2026-08-19",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "KTO is explicitly named in this theme (Korea international arrivals/visitor data); this repo is a thin wrapper that could shortcut building a KTO API client, though it targets KTO's general tourism-content API rather than confirmed to expose the visitor-arrivals statistics endpoint specifically -- needs verification of which KTO endpoints it actually calls."
+  ]
+ }
+]

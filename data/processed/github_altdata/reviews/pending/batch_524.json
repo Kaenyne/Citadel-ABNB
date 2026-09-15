@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:danwagnerco/similarweb",
+  "name": "danwagnerco/similarweb",
+  "url": "https://github.com/danwagnerco/similarweb",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client wrapping the official SimilarWeb API (traffic/engagement endpoints: visits, page views, bounce rate, traffic sources, by domain). No data committed; every call requires a paid SimilarWeb API key (free trial only, rate-limited).",
+  "why_useful": "SimilarWeb-style web-traffic estimates for airbnb.com are named explicitly in gap 5 as a target category; this is the best-maintained (51-star, MIT) open client for that API, useful IF the team ever obtains a SimilarWeb trial key, but yields nothing without one.",
+  "potential": "medium",
+  "size_hint": "small Python package, no data",
+  "time_coverage": "n/a (live API only)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-05-15",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "SimilarWeb-style web-traffic estimates for airbnb.com are named explicitly in gap 5 as a target category; this is the best-maintained (51-star, MIT) open client for that API, useful IF the team ever obtains a SimilarWeb trial key, but yields nothing without one.",
+   "Backup client if the free-API approach above breaks; requires a paid Similarweb key so lower priority than the free-endpoint repo."
+  ]
+ },
+ {
+  "key": "github:jwoohong1983/goiener-smartmeter-mirror",
+  "url": "https://github.com/jwoohong1983/goiener-smartmeter-mirror",
+  "name": "goiener-smartmeter-mirror",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Mirror of the GoiEner smart-meter dataset (original: Universidad de Deusto / GoiEner, Zenodo, CC-BY 4.0): raw.tzst (2.0GB compressed, ~15GB unpacked) containing 25,559 per-supply-point CSV files of hourly household electricity consumption (kWh) for the Basque Country / Navarre region of Spain, 2014-11-02 to 2022-06-08, plus metadata.csv (tariffs, contracted power, location). Committed as actual data, not a link; downloaded/re-hosted 2026-09-13, unmodified, with attribution.",
+  "why_useful": "A genuine open, granular (hourly, per-meter, ~8 year span) smart-meter electricity panel \u2014 exactly the modality this theme is scouting for as an occupancy/activity proxy, even though the geography (Basque/Navarre, mixed residential) is not purely touristic; usable as a template/comparator for building an ADR-orthogonal occupancy proxy or for testing the smart-meter-as-occupancy-proxy method before looking for a tourist-specific panel.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   8
+  ],
+  "geography": "Spain (Basque Country, Navarre)",
+  "time_coverage": "2014-11-02 to 2022-06-08 (hourly)",
+  "size_hint": "25,559 meters; 2.0GB compressed / ~15GB unpacked",
+  "license": "CC-BY 4.0 (per repo note; possible CC-BY-SA ambiguity per upstream Zenodo record)",
+  "last_activity": "2026-09-12 (mirror created); underlying Zenodo data through 2022",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "A genuine open, granular (hourly, per-meter, ~8 year span) smart-meter electricity panel \u2014 exactly the modality this theme is scouting for as an occupancy/activity proxy, even though the geography (Basque/Navarre, mixed residential) is not purely touristic; usable as a template/comparator for building an ADR-orthogonal occupancy proxy or for testing the smart-meter-as-occupancy-proxy method before looking for a tourist-specific panel."
+  ]
+ },
+ {
+  "key": "github:luminati-io/ecommerce-dataset-samples",
+  "url": "https://github.com/luminati-io/eCommerce-dataset-samples",
+  "name": "eCommerce-dataset-samples",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Bright Data (formerly Luminati) org repo of committed sample datasets, one per retailer, each >1,000 records, in JSON/NDJSON/CSV/Parquet (optionally gzipped). Sites covered: Amazon, Walmart, Target, eBay, Zara, Home Depot, plus more. Fields (~17 per record): title, ASIN/product id, URL, initial_price, final_price, currency, availability/inventory, reviews_count, rating, description, categories, brand, features, images_count, image_url, seller info, delivery details. Described as subsets of larger paid datasets with 'millions of records'; no dates/geography stated in README, 91 stars, updated 13 Sep 2026 (actively maintained).",
+  "why_useful": "Directly the requested template: a real, committed multi-retailer price/rank/review-count dataset schema (price, rating, review velocity, availability) that is the closest open analogue to what a scraped Airbnb search-page panel would need to look like for point-in-time price/availability nowcasting. Useful as a schema/format reference for the team's own fee-panel search-page capture (rule #6) and for gap #2 (realised price/occupancy proxies) methodology, even though it is retail not travel.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   5
+  ],
+  "size_hint": ">1,000 records per sample file across ~6+ retailers; full paid dataset described as millions of rows",
+  "time_coverage": "not stated in README",
+  "geography": "not stated (likely US-centric given US retailers listed)",
+  "license": "none declared (proprietary/unclear per gh API)",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Directly the requested template: a real, committed multi-retailer price/rank/review-count dataset schema (price, rating, review velocity, availability) that is the closest open analogue to what a scraped Airbnb search-page panel would need to look like for point-in-time price/availability nowcasting. Useful as a schema/format reference for the team's own fee-panel search-page capture (rule #6) and for gap #2 (realised price/occupancy proxies) methodology, even though it is retail not travel."
+  ]
+ },
+ {
+  "key": "github:ashermanwmf/pageviewapi",
+  "url": "https://github.com/ashermanwmf/pageviewapi",
+  "name": "ashermanwmf/pageviewapi",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small client/wrapper for Wikimedia's official Pageviews API, returning per-article, per-day pageview counts back to mid-2015.",
+  "why_useful": "Matches CONTEXT gap #5 ('Wikipedia pageviews tooling') directly; Wikipedia pageviews for 'Airbnb', 'short-term rental', competitor articles, or destination-city articles are a free, long-history, point-in-time-clean (pageviews are immutable once logged) engagement/interest proxy that has not been tested by the team yet.",
+  "geography": "global, per-article and per-project(language) granularity",
+  "time_coverage": "mid-2015 to present, daily/monthly",
+  "size_hint": "client only, API pull required for data",
+  "license": "check repo",
+  "last_activity": "check repo (appears stale; the canonical/actively-maintained alternative is Wikimedia's own `wikimedia/mediawiki-services-pageview-api` or the `mwviews`/`pageviewapi` PyPI package \u2014 flag for a follow-up scout to find the best-maintained client)",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Matches CONTEXT gap #5 ('Wikipedia pageviews tooling') directly; Wikipedia pageviews for 'Airbnb', 'short-term rental', competitor articles, or destination-city articles are a free, long-history, point-in-time-clean (pageviews are immutable once logged) engagement/interest proxy that has not been tested by the team yet."
+  ]
+ },
+ {
+  "key": "github:rohitgodbole/wikipageviews",
+  "url": "https://github.com/rohitgodbole/WikiPageviews",
+  "name": "rohitgodbole/WikiPageviews",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A thin wrapper (0 stars) around the official Wikimedia Pageviews API, updated as recently as 26 Apr 2026.",
+  "why_useful": "CONTEXT gap #5 flags 'Wikipedia pageviews tooling' explicitly; pageviews for 'Airbnb', 'Vrbo', destination-city pages, or 'short-term rental' articles are free, dated-by-day, genuinely point-in-time (the API returns historical daily counts as originally recorded) and could proxy search/engagement interest as an alternative to non-point-in-time Google Trends. The official Wikimedia REST pageviews API itself (no wrapper needed) is the more load-bearing artifact here; this repo is just one thin client example.",
+  "potential": "medium",
+  "geography": "global, per-language-edition",
+  "time_coverage": "Wikimedia pageviews API covers July 2015-present daily/hourly, official and point-in-time",
+  "size_hint": "API client only",
+  "license": "not stated in repo",
+  "last_activity": "2026-04-26",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "CONTEXT gap #5 flags 'Wikipedia pageviews tooling' explicitly; pageviews for 'Airbnb', 'Vrbo', destination-city pages, or 'short-term rental' articles are free, dated-by-day, genuinely point-in-time (the API returns historical daily counts as originally recorded) and could proxy search/engagement interest as an alternative to non-point-in-time Google Trends. The official Wikimedia REST pageviews API itself (no wrapper needed) is the more load-bearing artifact here; this repo is just one thin client example."
+  ]
+ }
+]

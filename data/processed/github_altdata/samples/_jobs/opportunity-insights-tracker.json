@@ -1,0 +1,10 @@
+{
+ "slug": "opportunity-insights-tracker",
+ "url": "https://github.com/OpportunityInsights/EconomicTracker",
+ "category": "macro_consumer_spend",
+ "data_kind": "stored_dataset",
+ "one_line": "The official Track the Recovery repo: 48 committed CSVs of Affinity Solutions card spend at national/state/county/city by day and month with income-quartile and industry splits, plus Womply, Burning Glass and Zillow series, 2020 onward; attribution terms, no resale.",
+ "abnb_use": "Gap 6, named explicitly: daily/county US card spend with an accommodation-and-food-services and arts-and-entertainment cut as a regional consumer-strength and discretionary-travel input to NA nights and ADR.",
+ "sample_plan": "Raw-fetch data/'Affinity - National - Daily.csv', 'Affinity - State - Daily.csv' and 'Affinity Industry Composition' plus docs/Data Dictionary.md; head the county file rather than taking it whole. Cap 15 MB. Record the last data date \u2014 series may stop ~2023.",
+ "tos_or_license_flag": true
+}

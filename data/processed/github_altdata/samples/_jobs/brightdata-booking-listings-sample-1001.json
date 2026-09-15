@@ -1,0 +1,10 @@
+{
+ "slug": "brightdata-booking-listings-sample-1001",
+ "url": "https://github.com/luminati-io/Booking-dataset-sample",
+ "category": "competitor_ota",
+ "data_kind": "stored_dataset",
+ "one_line": "Bright Data promotional sample: 'Booking-dataset-sample Listings.csv' (814 KB, 1,001 rows, 26 cols) of Booking.com property quotes for a fixed stay window (check_in 2025-01-01 / check_out 2025-01-10, USD final_price and original_price, free_cancellation and no_prepayment booleans, review_score/count, bed/bedroom/kitchen counts, city, geo/distance JSON); captured ~Dec 2024, mixed global cities (Vienna first rows); NO licence file, promotional teaser for a paid 30.4K-record product; last push 2024-12-16, 0 stars.",
+ "abnb_use": "Gap #9 (competitor OTA supply/pricing) and gap #3 (cancellation-policy mix as an RNPL comparator): a quoted Booking.com price per property for a specified 9-night window plus free-cancellation / no-prepayment flags gives a non-Airbnb read on prepay-vs-pay-later penetration and on quoted nightly rates by city; also a schema template if we ever build a Booking quoted-price panel.",
+ "sample_plan": "curl -sL -o brightdata_booking_1001.csv 'https://raw.githubusercontent.com/luminati-io/Booking-dataset-sample/HEAD/Booking-dataset-sample%20Listings.csv' (814,588 bytes, single file, well under caps). Do NOT pull Booking-datasets.png (627 KB marketing image). Note the near-identical language mirrors luminati-io/bright-data-de, bright-kr, bright-jp Booking-dataset-sample are the same sample.",
+ "tos_or_license_flag": true
+}

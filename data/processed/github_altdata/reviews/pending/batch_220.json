@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:ytaka0542/estat-pandas",
+  "url": "https://github.com/ytaka0542/estat-pandas",
+  "name": "estat-pandas",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A pandas-datareader extension for Japan's e-Stat API \u2014 pulls series directly into pandas DataFrames. 0 stars, MIT, updated May 2026.",
+  "why_useful": "Lower-friction Python (vs R) e-Stat client that slots into a pandas-based nowcasting pipeline for Japan APAC macro (gap #7).",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "e-Stat catalogue",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2026-05-10",
+  "duplicate_of_holding": "duplicate use case of estatapi/estat-mcp",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Lower-friction Python (vs R) e-Stat client that slots into a pandas-based nowcasting pipeline for Japan APAC macro (gap #7)."
+  ]
+ },
+ {
+  "key": "github:seokhoonj/pykosis",
+  "url": "https://github.com/seokhoonj/pykosis",
+  "name": "pykosis",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client to read Korea's national statistics (population, prices, employment, housing) from KOSIS OpenAPI; sibling to the author's R package `kosis` (5 stars). 0 stars but updated 10 Sep 2026 alongside the R version.",
+  "why_useful": "Python-native alternative to korea-stats-mcp for direct KOSIS series pulls (housing/prices relevant to gap #13 crossover analysis too as a bonus).",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   13
+  ],
+  "geography": "South Korea",
+  "time_coverage": "full KOSIS catalogue",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "duplicate use case of korea-stats-mcp",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Python-native alternative to korea-stats-mcp for direct KOSIS series pulls (housing/prices relevant to gap #13 crossover analysis too as a bonus)."
+  ]
+ },
+ {
+  "key": "github:rubatoyd/kosis-openapi-mcp",
+  "url": "https://github.com/rubatoyd/kosis-openapi-mcp",
+  "name": "kosis-openapi-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "KOSIS OpenAPI CLI + MCP server with automatic period-splitting when a query would exceed the API's 40,000-cell limit. 0 stars, MIT, updated 13 Sep 2026 (very fresh).",
+  "why_useful": "Handles KOSIS's cell-limit pagination automatically, useful if pulling long historical Korean series (multi-decade monthly data would otherwise need manual chunking).",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "South Korea",
+  "time_coverage": "full KOSIS catalogue",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "duplicate use case of korea-stats-mcp",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Handles KOSIS's cell-limit pagination automatically, useful if pulling long historical Korean series (multi-decade monthly data would otherwise need manual chunking)."
+  ]
+ },
+ {
+  "key": "github:aprince/abs_sdmx-json_api",
+  "url": "https://github.com/aprince/ABS_SDMX-JSON_API",
+  "name": "ABS_SDMX-JSON_API",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tableau Web Data Connector demo for the Australian Bureau of Statistics ABS.Stat Developer API (SDMX-JSON). 7 stars, updated Feb 2026 (likely a stale repo touched by a bot/mirror update, original code older).",
+  "why_useful": "Documents the ABS.Stat SDMX-JSON query shape, transferable to a direct Python/R pull of Australian tourism/consumption series (gap #7, #6).",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "ABS.Stat catalogue",
+  "size_hint": "small demo",
+  "license": "none stated",
+  "last_activity": "2026-02-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Documents the ABS.Stat SDMX-JSON query shape, transferable to a direct Python/R pull of Australian tourism/consumption series (gap #7, #6)."
+  ]
+ },
+ {
+  "key": "github:lukeoz/abs",
+  "url": "https://github.com/lukeoz/ABS",
+  "name": "ABS",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Script(s) to retrieve data from ABS.Stat using the official API. 3 stars, updated Sep 2024.",
+  "why_useful": "Simple working retrieval example for Australian macro series if the SDMX-JSON demo above is insufficient.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "ABS.Stat catalogue",
+  "size_hint": "small",
+  "license": "none stated",
+  "last_activity": "2024-09-15",
+  "duplicate_of_holding": "duplicate use case of ABS_SDMX-JSON_API",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Simple working retrieval example for Australian macro series if the SDMX-JSON demo above is insufficient."
+  ]
+ }
+]

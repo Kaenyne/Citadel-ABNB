@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:sarangjo/academic-calendars",
+  "url": "https://github.com/sarangjo/academic-calendars",
+  "name": "academic-calendars",
+  "category": "other",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "README-only 'single source of truth' listing how to algorithmically retrieve academic-calendar dates (first/last day of instruction, finals weeks) for US universities, organized by region (West, Midwest, Northeast, South). Only 2 universities actually documented (University of Washington, Stanford) with URLs/parsing notes -- no committed CSV of term dates. 3 commits total, 0 stars, unlicensed, last touched 2020-06-08.",
+  "why_useful": "If built out, a university-term-date calendar (fall move-in, spring break, finals, commencement) is a candidate seasonal regressor for ABNB nights in college markets, but this repo is too thin (2 universities, no data file) to use as-is -- flag as a stub/idea, not a working dataset.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "geography": "US (2 universities documented)",
+  "time_coverage": "not applicable (retrieval methodology only)",
+  "size_hint": "README only, 3 commits",
+  "license": "none stated",
+  "last_activity": "2020-06-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "If built out, a university-term-date calendar (fall move-in, spring break, finals, commencement) is a candidate seasonal regressor for ABNB nights in college markets, but this repo is too thin (2 universities, no data file) to use as-is -- flag as a stub/idea, not a working dataset."
+  ]
+ },
+ {
+  "key": "github:divya-09nimbalkar/ecommerce-price-tracker",
+  "url": "https://github.com/divya-09nimbalkar/Ecommerce-Price-Tracker",
+  "name": "Ecommerce-Price-Tracker",
+  "category": "other",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small modular Python pipeline (no stars, updated Jul 2026) that scrapes real-time prices across e-commerce sites, cleans them into structured CSV-like outputs, computes historical trend charts. No data files committed as of the check; purely a scraping/ETL template.",
+  "why_useful": "Low-value on its own (no data, generic personal project) but is a concrete, current (2026) template for a lightweight scheduled price-scrape-to-timeseries pipeline, structurally similar to what would be needed for any non-Airbnb STR-price-panel scraper the team might build later.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "time_coverage": "n/a (no data committed)",
+  "geography": "n/a",
+  "license": "none stated",
+  "last_activity": "2026-07-02",
+  "size_hint": "code only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Low-value on its own (no data, generic personal project) but is a concrete, current (2026) template for a lightweight scheduled price-scrape-to-timeseries pipeline, structurally similar to what would be needed for any non-Airbnb STR-price-panel scraper the team might build later."
+  ]
+ },
+ {
+  "key": "github:n-white/nomadlistdata",
+  "url": "https://github.com/n-white/nomadListData",
+  "name": "n-white/nomadListData",
+  "category": "regional_travel_alt",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A 2016-vintage scrape of Nomad List city data (cost of living, internet speed, digital-nomad popularity by city) -- old and unmaintained (0 stars, last commit 2016), so treat as a single historical snapshot rather than a series.",
+  "why_useful": "Weak but directly on-target for gap #16 (Nomad List / digital-nomad demand data) -- Nomad List does not otherwise expose historical downloads, so an old committed scrape is the only way to anchor a 2016 baseline for long-stay/remote-work demand by city; would need a second, more recent scrape to build any trend.",
+  "potential": "low",
+  "gap_targets": [
+   16
+  ],
+  "geography": "global, city-level",
+  "time_coverage": "single 2016 snapshot",
+  "license": "unspecified",
+  "size_hint": "small scraped dataset",
+  "last_activity": "2016-10-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Weak but directly on-target for gap #16 (Nomad List / digital-nomad demand data) -- Nomad List does not otherwise expose historical downloads, so an old committed scrape is the only way to anchor a 2016 baseline for long-stay/remote-work demand by city; would need a second, more recent scrape to build any trend."
+  ]
+ },
+ {
+  "key": "github:affan-m/tourismforecastreconciliation",
+  "url": "https://github.com/Affan-M/TourismForecastReconciliation",
+  "name": "TourismForecastReconciliation",
+  "category": "regional_travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R project producing short-term tourism forecasts (ARIMA, ETS, dynamic harmonic regression, forecast reconciliation) for the Maldives, pulling directly from the Maldives Monetary Authority's public query database API (https://database.mma.gov.mv/api). Needs a user-supplied API key stored in a local Secrets.R file; no bulk data committed.",
+  "why_useful": "A working, scriptable client for a national-authority tourism/monetary database (APAC/Indian Ocean tourism-dependent economy) \u2014 relevant to gap 7 (regional travel volume outside US/EU) as a template for pulling government tourism series, and gap 17 for reconciliation methodology, though the underlying data itself is Maldives-specific and probably too small a market to move ABNB directly.",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "geography": "Maldives",
+  "time_coverage": "Whatever MMA's API exposes (not stated precisely)",
+  "size_hint": "small (script only, data pulled live)",
+  "license": "unspecified",
+  "last_activity": "2024-07-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "A working, scriptable client for a national-authority tourism/monetary database (APAC/Indian Ocean tourism-dependent economy) \u2014 relevant to gap 7 (regional travel volume outside US/EU) as a template for pulling government tourism series, and gap 17 for reconciliation methodology, though the underlying data itself is Maldives-specific and probably too small a market to move ABNB directly."
+  ]
+ },
+ {
+  "key": "github:nycdb/nycdb",
+  "url": "https://github.com/nycdb/nycdb",
+  "name": "nycdb/nycdb",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python program that downloads, processes, and loads 40+ NYC public housing/property datasets into a single PostgreSQL database in one command: PLUTO (parcel-level land use, ~857k lots), DOB job filings/complaints/violations/vacate orders/certificates of occupancy, HPD violations/registrations/litigations/complaints, DOF Rolling Sales and Tax Lien Sales, ACRIS (deeds and mortgage documents), Evictions, ECB Violations, Property Address Directory, rodent inspections, subsidized-housing database, corporate/ownership records. 796 commits, code AGPLv3, prebuilt database files CC BY-NC-SA 4.0.",
+  "why_useful": "Not Airbnb data itself, but a ready-made, one-command acquisition method for NYC housing/regulatory context (gap #13 housing/host-supply economics; possibly a path to NYC OSE short-term-rental registration counts if/when that dataset is added to its source list) -- useful as tooling to pull city registries around the LL18 period rather than as a direct Inside-Airbnb substitute.",
+  "potential": "high",
+  "gap_targets": [
+   12,
+   13
+  ],
+  "geography": "New York City",
+  "time_coverage": "current + historical NYC open-data extracts, varies by dataset",
+  "size_hint": "n/a (pulls from NYC Open Data at run time)",
+  "license": "check repo (open source)",
+  "last_activity": "actively maintained as of recent GitHub search",
+  "duplicate_of_holding": "We already hold the NYC OSE STR registry directly per CONTEXT.md; nycdb is a broader general-purpose NYC housing-data puller, not a duplicate of that specific dataset.",
+  "hits": 3,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Not Airbnb data itself, but a ready-made, one-command acquisition method for NYC housing/regulatory context (gap #13 housing/host-supply economics; possibly a path to NYC OSE short-term-rental registration counts if/when that dataset is added to its source list) -- useful as tooling to pull city registries around the LL18 period rather than as a direct Inside-Airbnb substitute.",
+   "Directly fills gap 13 (long-term rental/housing supply economics) and touches NYC PLUTO/ACRIS specifically named in the theme; a one-command ingest of parcel, permit, ownership, sales and rent-registration data for the largest ABNB metro, letting the team build NYC host-supply/LTR-STR crossover series without hand-scraping NYC Open Data endpoints one by one.",
+   "Rent Stabilization Unit Counts by building/year is the closest free proxy to 'STR share of housing stock' logic in reverse (regulated long-term supply vs. STR conversion pressure) for NYC, one of our 13 Inside Airbnb panel cities; evictions + HPD violations give a rent-burden/housing-distress proxy at building/tract level to pair with STR registry data (gap #13, also touches #8/#12 municipal registries we already hold for NYC OSE)."
+  ]
+ }
+]

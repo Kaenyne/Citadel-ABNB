@@ -1,0 +1,598 @@
+{
+ "api": "https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master",
+ "started": "2026-09-14T13:45:53",
+ "queries": [
+  {
+   "n": 1,
+   "sql": "select commit_hash, committer, date, message from dolt_log order by date desc limit 5",
+   "http": "200",
+   "seconds": 50.8,
+   "at": "2026-09-14T13:46:43",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select commit_hash, committer, date, message from dolt_log order by date desc limit 5",
+    "schema": [
+     {
+      "columnName": "commit_hash",
+      "columnType": "text"
+     },
+     {
+      "columnName": "committer",
+      "columnType": "text"
+     },
+     {
+      "columnName": "date",
+      "columnType": "datetime(3)"
+     },
+     {
+      "columnName": "message",
+      "columnType": "text"
+     }
+    ],
+    "rows": [
+     {
+      "commit_hash": "0hkbreo89spbpm5n8jip5pff7ohs47tf",
+      "committer": "post-no-preference",
+      "date": "2026-09-14 03:04:44.613",
+      "message": "eps_history 2026-09-13 update"
+     },
+     {
+      "commit_hash": "lsj3qhipq915523ui43hv90q4qvib8pn",
+      "committer": "post-no-preference",
+      "date": "2026-09-14 03:04:39.064",
+      "message": "sales_estimate 2026-09-13 update"
+     },
+     {
+      "commit_hash": "f64fgqd5i2d20gqjih7ddmn64e2fvsn6",
+      "committer": "post-no-preference",
+      "date": "2026-09-14 03:04:33.945",
+      "message": "eps_estimate 2026-09-13 update"
+     },
+     {
+      "commit_hash": "j2rj2c1f8jpida6k5pv1mb211ln103d0",
+      "committer": "post-no-preference",
+      "date": "2026-09-14 03:04:28.688",
+      "message": "rank_score 2026-09-13 update"
+     },
+     {
+      "commit_hash": "i8ia92v9g24tog7vljvdcigle2ctti69",
+      "committer": "post-no-preference",
+      "date": "2026-09-12 22:07:12.071",
+      "message": "earnings_calendar 2026-09-12 update"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "sql": "select commit_hash, committer, date, message from dolt_log order by date asc limit 3",
+   "http": "200",
+   "seconds": 0.5,
+   "at": "2026-09-14T13:46:54",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select commit_hash, committer, date, message from dolt_log order by date asc limit 3",
+    "schema": [
+     {
+      "columnName": "commit_hash",
+      "columnType": "text"
+     },
+     {
+      "columnName": "committer",
+      "columnType": "text"
+     },
+     {
+      "columnName": "date",
+      "columnType": "datetime(3)"
+     },
+     {
+      "columnName": "message",
+      "columnType": "text"
+     }
+    ],
+    "rows": [
+     {
+      "commit_hash": "lfb8cttadirn4367hd1jv37ocog6svma",
+      "committer": "post-no-preference",
+      "date": "2021-04-21 01:19:15.637",
+      "message": "Initialize data repository"
+     },
+     {
+      "commit_hash": "36pinnb6haum7pod7fjs28srpbsnsfq0",
+      "committer": "post-no-preference",
+      "date": "2021-04-21 01:26:26.281",
+      "message": "rank_score 2017-12-31 update"
+     },
+     {
+      "commit_hash": "42plrnudimmsfk7gj29tul46sr97s5th",
+      "committer": "post-no-preference",
+      "date": "2021-04-21 01:26:34.139",
+      "message": "eps_estimate 2017-12-31 update"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "sql": "select commit_hash, date from dolt_log where date between '2022-08-07' and '2022-08-21 23:59:59' order by date limit 1",
+   "http": "200",
+   "seconds": 49.4,
+   "at": "2026-09-14T13:47:53",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select commit_hash, date from dolt_log where date between '2022-08-07' and '2022-08-21 23:59:59' order by date limit 1",
+    "schema": [
+     {
+      "columnName": "commit_hash",
+      "columnType": "text"
+     },
+     {
+      "columnName": "date",
+      "columnType": "datetime(3)"
+     }
+    ],
+    "rows": [
+     {
+      "commit_hash": "94kead12h59c6cef9i41kumjt94dkbp3",
+      "date": "2022-08-08 05:12:19.654"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "sql": "select * from sales_estimate as of '94kead12h59c6cef9i41kumjt94dkbp3' where act_symbol = 'ABNB' and date = '2022-08-07'",
+   "http": "200",
+   "seconds": 1.0,
+   "at": "2026-09-14T13:48:04",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select * from sales_estimate as of '94kead12h59c6cef9i41kumjt94dkbp3' where act_symbol = 'ABNB' and date = '2022-08-07'",
+    "schema": [
+     {
+      "columnName": "date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "act_symbol",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period_end_date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "consensus",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "count",
+      "columnType": "smallint"
+     },
+     {
+      "columnName": "high",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "low",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "year_ago",
+      "columnType": "bigint"
+     }
+    ],
+    "rows": []
+   }
+  },
+  {
+   "n": 5,
+   "sql": "select commit_hash, date from dolt_log where date between '2024-02-11' and '2024-02-25 23:59:59' order by date limit 1",
+   "http": "200",
+   "seconds": 0.6,
+   "at": "2026-09-14T13:48:15",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select commit_hash, date from dolt_log where date between '2024-02-11' and '2024-02-25 23:59:59' order by date limit 1",
+    "schema": [
+     {
+      "columnName": "commit_hash",
+      "columnType": "text"
+     },
+     {
+      "columnName": "date",
+      "columnType": "datetime(3)"
+     }
+    ],
+    "rows": [
+     {
+      "commit_hash": "p40c5m0fcke76i9r48aljbc1tb6r8l7h",
+      "date": "2024-02-12 03:31:55.604"
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "sql": "select * from sales_estimate as of 'p40c5m0fcke76i9r48aljbc1tb6r8l7h' where act_symbol = 'ABNB' and date = '2024-02-11'",
+   "http": "200",
+   "seconds": 1.2,
+   "at": "2026-09-14T13:48:26",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select * from sales_estimate as of 'p40c5m0fcke76i9r48aljbc1tb6r8l7h' where act_symbol = 'ABNB' and date = '2024-02-11'",
+    "schema": [
+     {
+      "columnName": "date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "act_symbol",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period",
+      "columnType": "varchar(16383)"
+     },
+     {
+      "columnName": "period_end_date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "consensus",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "count",
+      "columnType": "smallint"
+     },
+     {
+      "columnName": "high",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "low",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "year_ago",
+      "columnType": "bigint"
+     }
+    ],
+    "rows": []
+   }
+  },
+  {
+   "n": 7,
+   "sql": "select commit_hash, date from dolt_log where date between '2025-08-03' and '2025-08-17 23:59:59' order by date limit 1",
+   "http": "200",
+   "seconds": 0.8,
+   "at": "2026-09-14T13:48:37",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select commit_hash, date from dolt_log where date between '2025-08-03' and '2025-08-17 23:59:59' order by date limit 1",
+    "schema": [
+     {
+      "columnName": "commit_hash",
+      "columnType": "text"
+     },
+     {
+      "columnName": "date",
+      "columnType": "datetime(3)"
+     }
+    ],
+    "rows": [
+     {
+      "commit_hash": "vekif410brrdr2veuqrl2u4dauh5b550",
+      "date": "2025-08-04 02:52:36.334"
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "sql": "select * from sales_estimate as of 'vekif410brrdr2veuqrl2u4dauh5b550' where act_symbol = 'ABNB' and date = '2025-08-03'",
+   "http": "200",
+   "seconds": 0.7,
+   "at": "2026-09-14T13:48:47",
+   "response": {
+    "query_execution_status": "Success",
+    "query_execution_message": "",
+    "repository_owner": "post-no-preference",
+    "repository_name": "earnings",
+    "commit_ref": "master",
+    "sql_query": "select * from sales_estimate as of 'vekif410brrdr2veuqrl2u4dauh5b550' where act_symbol = 'ABNB' and date = '2025-08-03'",
+    "schema": [
+     {
+      "columnName": "date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "act_symbol",
+      "columnType": "varchar(64)"
+     },
+     {
+      "columnName": "period",
+      "columnType": "varchar(64)"
+     },
+     {
+      "columnName": "period_end_date",
+      "columnType": "date"
+     },
+     {
+      "columnName": "consensus",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "count",
+      "columnType": "smallint"
+     },
+     {
+      "columnName": "high",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "low",
+      "columnType": "bigint"
+     },
+     {
+      "columnName": "year_ago",
+      "columnType": "bigint"
+     }
+    ],
+    "rows": []
+   }
+  }
+ ],
+ "snapshot_checks": [
+  {
+   "snapshot": "2022-08-07",
+   "commit": "94kead12h59c6cef9i41kumjt94dkbp3",
+   "commit_date": "2022-08-08 05:12:19.654",
+   "rows_as_of": [],
+   "rows_current": [
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2022-09-30",
+     "consensus": 2840000000.0,
+     "count": 11.0,
+     "high": 2900000000.0,
+     "low": 2800000000.0,
+     "year_ago": 2240000000.0
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2022-12-31",
+     "consensus": 8340000000.0,
+     "count": 12.0,
+     "high": 8440000000.0,
+     "low": 8180000000.0,
+     "year_ago": 5990000000.0
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2022-12-31",
+     "consensus": 1900000000.0,
+     "count": 11.0,
+     "high": 1950000000.0,
+     "low": 1770000000.0,
+     "year_ago": 1530000000.0
+    },
+    {
+     "date": "2022-08-07",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2023-12-31",
+     "consensus": 9680000000.0,
+     "count": 12.0,
+     "high": 10320000000.0,
+     "low": 8980000000.0,
+     "year_ago": 8340000000.0
+    }
+   ],
+   "match": false,
+   "diffs": []
+  },
+  {
+   "snapshot": "2024-02-11",
+   "commit": "p40c5m0fcke76i9r48aljbc1tb6r8l7h",
+   "commit_date": "2024-02-12 03:31:55.604",
+   "rows_as_of": [],
+   "rows_current": [
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2023-12-31",
+     "consensus": 2160000000.0,
+     "count": 11.0,
+     "high": 2200000000.0,
+     "low": 2150000000.0,
+     "year_ago": 1900000000.0
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2023-12-31",
+     "consensus": 9860000000.0,
+     "count": 12.0,
+     "high": 9900000000.0,
+     "low": 9850000000.0,
+     "year_ago": 8400000000.0
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2024-03-31",
+     "consensus": 2040000000.0,
+     "count": 10.0,
+     "high": 2090000000.0,
+     "low": 1970000000.0,
+     "year_ago": 1820000000.0
+    },
+    {
+     "date": "2024-02-11",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2024-12-31",
+     "consensus": 11100000000.0,
+     "count": 12.0,
+     "high": 11460000000.0,
+     "low": 10640000000.0,
+     "year_ago": 9860000000.0
+    }
+   ],
+   "match": false,
+   "diffs": []
+  },
+  {
+   "snapshot": "2025-08-03",
+   "commit": "vekif410brrdr2veuqrl2u4dauh5b550",
+   "commit_date": "2025-08-04 02:52:36.334",
+   "rows_as_of": [],
+   "rows_current": [
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Current Quarter",
+     "period_end_date": "2025-06-30",
+     "consensus": 3040000000.0,
+     "count": 12.0,
+     "high": 3090000000.0,
+     "low": 3010000000.0,
+     "year_ago": 2750000000.0
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Current Year",
+     "period_end_date": "2025-12-31",
+     "consensus": 12060000000.0,
+     "count": 13.0,
+     "high": 12240000000.0,
+     "low": 11910000000.0,
+     "year_ago": 11100000000.0
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Next Quarter",
+     "period_end_date": "2025-09-30",
+     "consensus": 4040000000.0,
+     "count": 12.0,
+     "high": 4130000000.0,
+     "low": 3950000000.0,
+     "year_ago": 3730000000.0
+    },
+    {
+     "date": "2025-08-03",
+     "act_symbol": "ABNB",
+     "period": "Next Year",
+     "period_end_date": "2026-12-31",
+     "consensus": 13190000000.0,
+     "count": 13.0,
+     "high": 13630000000.0,
+     "low": 12790000000.0,
+     "year_ago": 12060000000.0
+    }
+   ],
+   "match": false,
+   "diffs": []
+  }
+ ],
+ "verdict": "FAIL",
+ "dolt_log_latest": [
+  {
+   "commit_hash": "0hkbreo89spbpm5n8jip5pff7ohs47tf",
+   "committer": "post-no-preference",
+   "date": "2026-09-14 03:04:44.613",
+   "message": "eps_history 2026-09-13 update"
+  },
+  {
+   "commit_hash": "lsj3qhipq915523ui43hv90q4qvib8pn",
+   "committer": "post-no-preference",
+   "date": "2026-09-14 03:04:39.064",
+   "message": "sales_estimate 2026-09-13 update"
+  },
+  {
+   "commit_hash": "f64fgqd5i2d20gqjih7ddmn64e2fvsn6",
+   "committer": "post-no-preference",
+   "date": "2026-09-14 03:04:33.945",
+   "message": "eps_estimate 2026-09-13 update"
+  },
+  {
+   "commit_hash": "j2rj2c1f8jpida6k5pv1mb211ln103d0",
+   "committer": "post-no-preference",
+   "date": "2026-09-14 03:04:28.688",
+   "message": "rank_score 2026-09-13 update"
+  },
+  {
+   "commit_hash": "i8ia92v9g24tog7vljvdcigle2ctti69",
+   "committer": "post-no-preference",
+   "date": "2026-09-12 22:07:12.071",
+   "message": "earnings_calendar 2026-09-12 update"
+  }
+ ],
+ "dolt_log_earliest": [
+  {
+   "commit_hash": "lfb8cttadirn4367hd1jv37ocog6svma",
+   "committer": "post-no-preference",
+   "date": "2021-04-21 01:19:15.637",
+   "message": "Initialize data repository"
+  },
+  {
+   "commit_hash": "36pinnb6haum7pod7fjs28srpbsnsfq0",
+   "committer": "post-no-preference",
+   "date": "2021-04-21 01:26:26.281",
+   "message": "rank_score 2017-12-31 update"
+  },
+  {
+   "commit_hash": "42plrnudimmsfk7gj29tul46sr97s5th",
+   "committer": "post-no-preference",
+   "date": "2021-04-21 01:26:34.139",
+   "message": "eps_estimate 2017-12-31 update"
+  }
+ ],
+ "n_requests": 8,
+ "finished": "2026-09-14T13:48:47"
+}

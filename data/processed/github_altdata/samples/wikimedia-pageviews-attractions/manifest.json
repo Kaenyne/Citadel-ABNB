@@ -1,0 +1,31 @@
+{
+ "slug": "wikimedia-pageviews-attractions",
+ "url": "https://github.com/Kenchch/nz-attraction-pageviews",
+ "sampled": true,
+ "total_bytes": 83845,
+ "files": [
+  "pv_Airbnb.json",
+  "pv_Mexico_City.json",
+  "pv_Lisbon.json",
+  "pv_Kyoto.json",
+  "pageviews_daily.csv",
+  "venues.csv"
+ ],
+ "rows": "pv_*.json: 105 daily items each (4 files, 420 total); pageviews_daily.csv: 420 rows; venues.csv: 8 rows",
+ "columns": "pageviews_daily.csv: project, article, date, access, agent, views. venues.csv (from repo): venue_id, venue_name, region, wiki_article",
+ "date_range": "2026-06-01 to 2026-09-13 (daily)",
+ "how_pulled": "curl -sL -A '<user-agent>' -o pv_<Article>.json 'https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/{a}/daily/20260601/20260913' for Article in Airbnb, Mexico_City, Lisbon, Kyoto; curl -sL -o venues.csv https://raw.githubusercontent.com/Kenchch/nz-attraction-pageviews/HEAD/venues.csv; python/pandas flattened the JSON items to pageviews_daily.csv. Repo code not run (gh api used only to list the tree; MIT, pushed 2026-09-08, 0 stars).",
+ "full_dataset_size": "The repo itself holds no data (8-row venues.csv + ingest code). The underlying Wikimedia pageviews API covers every Wikipedia article daily/monthly from 2015-07-01 (hourly and per-article endpoints); one article-year is ~50 KB JSON, so a few hundred destination/attraction articles over 11 years is ~100-300 MB JSON (~1.5M rows). Bulk dumps at dumps.wikimedia.org/other/pageviews/ are ~50 MB gz per hour (~400 GB/yr).",
+ "description": "Daily user (non-spider) pageview counts for English Wikipedia articles, pulled keyless from the public Wikimedia Analytics REST API; one row per article-day. The GitHub repo is a small MIT ingest tool aimed at 8 New Zealand attraction pages and holds no data, so the sample calls the API directly for four ABNB-relevant articles (Airbnb, Mexico_City, Lisbon, Kyoto). An analyst would repoint it at a basket of destination, attraction, and FIFA World Cup 2026 host-city pages to build a free, reproducible destination-attention series back to July 2015 that is not renormalised the way Google Trends is, and test it as a lead on regional nights or as a point-in-time engagement proxy (the Airbnb article itself).",
+ "issues": "None blocking. API is public (CC0 data, Wikimedia terms ask for a descriptive User-Agent, which was set). Mexico_City spikes to 59k views on one day (news event), so series need spike-robust treatment. Pageviews are English-Wikipedia only here; other language projects need separate calls. Data start is 2015-07-01 (legacy pagecounts before that are a different basis). Repo has 0 stars and a 4-day-old push; treat it as a code pointer, not a data source.",
+ "source_urls": [
+  "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Airbnb/daily/20260601/20260913",
+  "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Mexico_City/daily/20260601/20260913",
+  "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Lisbon/daily/20260601/20260913",
+  "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Kyoto/daily/20260601/20260913",
+  "https://raw.githubusercontent.com/Kenchch/nz-attraction-pageviews/HEAD/venues.csv",
+  "https://api.github.com/repos/Kenchch/nz-attraction-pageviews/contents/"
+ ],
+ "pulled_at": "2026-09-14",
+ "geography": "Global (en.wikipedia readers); sample articles: Airbnb, Mexico City, Lisbon, Kyoto; repo targets New Zealand attractions"
+}

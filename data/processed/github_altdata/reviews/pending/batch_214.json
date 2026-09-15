@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:code-for-ota/minpaku",
+  "url": "https://github.com/code-for-ota/minpaku",
+  "name": "minpaku (Code for Ota)",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Civic-tech (Code for Japan/Code for Ota) Rails web-application repo described as \"\u6c11\u6cca\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\" (minpaku database), with db/ and minpaku_list/ directories suggesting a registry of minpaku (short-term rental) listings/registrations for Ota City/Ward, Tokyo. 48 commits. Could not confirm exact row counts, file formats, or whether it is a live registry backend vs. seeded fixture data without deeper file-level inspection.",
+  "why_useful": "A ward-level civic-tech minpaku registry app for Tokyo (Ota Ward) is exactly the kind of local Japanese minpaku registration data source called out as a keyword hint for this theme; worth a closer look (clone the db/ and minpaku_list/ directories) to see if real registration counts are seeded or fetched from Ota Ward open data.",
+  "potential": "medium",
+  "geography": "Ota Ward, Tokyo, Japan",
+  "time_coverage": "unknown",
+  "size_hint": "48 commits, Rails app with db/ and minpaku_list/ dirs",
+  "license": "not stated",
+  "last_activity": "2022-05-01 (per gh metadata)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "A ward-level civic-tech minpaku registry app for Tokyo (Ota Ward) is exactly the kind of local Japanese minpaku registration data source called out as a keyword hint for this theme; worth a closer look (clone the db/ and minpaku_list/ directories) to see if real registration counts are seeded or fetched from Ota Ward open data."
+  ]
+ },
+ {
+  "key": "github:daniil-oliynyk/toronto-str-ingestor",
+  "url": "https://github.com/daniil-oliynyk/Toronto-STR-Ingestor",
+  "name": "daniil-oliynyk/Toronto-STR-Ingestor",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go worker that retrieves City of Toronto Airbnb/STR registration data, geocodes it, and loads it into Postgres. Code only, no committed data files found.",
+  "why_useful": "A working ETL pattern for pulling and geocoding a municipal STR registry; template for building the same pipeline against a US-city Socrata portal (gap #17).",
+  "potential": "low",
+  "geography": "Toronto, Canada",
+  "time_coverage": "n/a, live pull tool",
+  "size_hint": "code only",
+  "license": "none stated",
+  "last_activity": "2026-05-26",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "A working ETL pattern for pulling and geocoding a municipal STR registry; template for building the same pipeline against a US-city Socrata portal (gap #17)."
+  ]
+ },
+ {
+  "key": "github:daniil-oliynyk/toronto-str-api",
+  "url": "https://github.com/daniil-oliynyk/Toronto-STR-API",
+  "name": "daniil-oliynyk/Toronto-STR-API",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Go/Chi backend API serving a Toronto STR registrations mapping app, backed by a Postgres/Supabase database populated from the city's STR registration data.",
+  "why_useful": "Same value as the ingestor above: reusable pattern for serving a municipal STR registry as queryable API; low standalone value without the underlying data store.",
+  "potential": "low",
+  "geography": "Toronto, Canada",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "license": "none stated",
+  "last_activity": "2026-06-07",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Same value as the ingestor above: reusable pattern for serving a municipal STR registry as queryable API; low standalone value without the underlying data store.",
+   "Method-only: shows a maintained ingestion path for Toronto's STR registry (idea 2/gap #12) if the git-scrape repo above ever lapses."
+  ]
+ },
+ {
+  "key": "github:kmangal/sf-permit-helper",
+  "url": "https://github.com/kmangal/sf-permit-helper",
+  "name": "kmangal/sf-permit-helper",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tool described as helping deal with San Francisco permits generally; unclear from title/description whether it targets STR/OSTR permits specifically vs. building permits. Not verified further (not fetched).",
+  "why_useful": "Possible pointer to an SF permit-portal client that could be adapted to pull OSTR short-term-rental registration records if it in fact touches that dataset; needs verification before relying on it.",
+  "potential": "low",
+  "geography": "San Francisco, CA",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, not verified",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "Possible pointer to an SF permit-portal client that could be adapted to pull OSTR short-term-rental registration records if it in fact touches that dataset; needs verification before relying on it."
+  ]
+ },
+ {
+  "key": "github:kdors/short-term-rentals-dash-app",
+  "url": "https://github.com/kdors/short-term-rentals-dash-app",
+  "name": "short-term-rentals-dash-app",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Plotly Dash app that pulls New Orleans short-term-rental permit applications live from data.nola.gov's Socrata API (app-token authenticated) rather than committing CSVs; includes a Jupyter notebook documenting the cleaning steps and the column-name differences between the API and CSV download paths; 14 commits.",
+  "why_useful": "A small but concrete worked example of pulling New Orleans STR permit-application data (distinct from license data) via Socrata API with documented cleaning quirks \u2014 minor value as a method reference, not as a dataset.",
+  "potential": "low",
+  "geography": "New Orleans, LA",
+  "time_coverage": "live pull, no historical archive committed",
+  "size_hint": "no data committed to repo",
+  "license": "not stated",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "New Orleans STR method already partly covered by our Socrata familiarity; adds permit-application angle vs license angle",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "A small but concrete worked example of pulling New Orleans STR permit-application data (distinct from license data) via Socrata API with documented cleaning quirks \u2014 minor value as a method reference, not as a dataset."
+  ]
+ }
+]

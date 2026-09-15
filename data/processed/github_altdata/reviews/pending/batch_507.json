@@ -1,0 +1,647 @@
+[
+ {
+  "key": "github:d2klab/semantic-trails",
+  "url": "https://github.com/D2KLab/semantic-trails",
+  "name": "Semantic Trails Dataset (semantic-trails)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Source dataset behind Massive-STEPS: Foursquare-derived global-scale check-ins enriched with GeoNames/Wikidata geography and Schema.org venue-category mappings, in checkins.csv / venues.csv plus RDF/Turtle conversions; a public SPARQL endpoint (http://std.eurecom.fr/sparql) is also live. Actual CSV/TTL files are hosted on figshare, not committed to the repo. Apache-2.0 license; example records dated through Oct 2017.",
+  "why_useful": "Larger, better-documented upstream source for the check-in data that Massive-STEPS subsets; worldwide coverage with population and category metadata could support a party-size / trip-type proxy or a cross-border destination-mix index (gap #20). Queryable via SPARQL without needing the full dump.",
+  "potential": "medium",
+  "geography": "Worldwide (city + country level via GeoNames/Wikidata)",
+  "time_coverage": "check-ins through ~2017 (dataset built circa 2018)",
+  "size_hint": "not stated in README; feeds Massive-STEPS's 2.63M-checkin subset, so likely larger",
+  "license": "Apache-2.0",
+  "last_activity": "not confirmed, dataset paper circa 2018",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins"
+  ],
+  "why_all": [
+   "Larger, better-documented upstream source for the check-in data that Massive-STEPS subsets; worldwide coverage with population and category metadata could support a party-size / trip-type proxy or a cross-border destination-mix index (gap #20). Queryable via SPARQL without needing the full dump."
+  ]
+ },
+ {
+  "key": "github:scikit-mobility/scikit-mobility",
+  "url": "https://github.com/scikit-mobility/scikit-mobility",
+  "name": "scikit-mobility",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "Python mobility-analysis toolkit (808 stars) with a bundled `data` module and `list_datasets()`/`load_dataset()` API; ships ready-to-load example datasets including `foursquare_nyc` (Foursquare check-ins of individuals moving in NYC) and `flow_foursquare_nyc` (derived flow/OD data), plus SF taxi and parking datasets and NYC spatial tessellation boundaries. Also supports loading arbitrary CDR/GPS/survey mobility data into standard TrajDataFrame/FlowDataFrame structures.",
+  "why_useful": "Turns the NYC Foursquare check-in dataset (and any future check-in export) into an immediately usable flow/OD panel with a one-line loader -- useful as a acquisition method for building a tourism-flow or intra-city mobility proxy without hand-rolling parsing, and its FlowDataFrame generative models (gravity/radiation) could synthesize destination-choice baselines for comparison.",
+  "potential": "medium",
+  "geography": "NYC bundled example; general-purpose otherwise",
+  "time_coverage": "n/a (tooling)",
+  "size_hint": "n/a (tooling); foursquare_nyc dataset is the standard ~227k-checkin Yang et al. NYC subset",
+  "license": "not confirmed (widely used academic-origin project, check repo LICENSE)",
+  "last_activity": "actively maintained project",
+  "gap_targets": [
+   17,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins"
+  ],
+  "why_all": [
+   "Turns the NYC Foursquare check-in dataset (and any future check-in export) into an immediately usable flow/OD panel with a one-line loader -- useful as a acquisition method for building a tourism-flow or intra-city mobility proxy without hand-rolling parsing, and its FlowDataFrame generative models (gravity/radiation) could synthesize destination-choice baselines for comparison."
+  ]
+ },
+ {
+  "key": "github:guocheng2025/sequential-recommendation-datasets",
+  "url": "https://github.com/guocheng2025/Sequential-Recommendation-Datasets",
+  "name": "Sequential-Recommendation-Datasets",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Download-and-preprocess scripts (228 stars, Apache-2.0, archived read-only as of May 2023) for 35+ sequential-recommendation datasets, including Foursquare NYC and Tokyo check-ins and Gowalla, alongside Amazon/Yelp/MovieLens etc. Provides user- or time-based splitting and PyTorch DataLoader wrappers; does not host raw data itself, only pull/parse code.",
+  "why_useful": "One-command pull-and-clean pipeline for the two classic location check-in datasets (Foursquare NYC/Tokyo, Gowalla) that other tourism-mobility repos (HGARN, scikit-mobility) reference informally -- useful as tooling to reconstruct those panels for a party-size or destination-choice cut.",
+  "potential": "medium",
+  "geography": "NYC, Tokyo (Foursquare); global (Gowalla)",
+  "time_coverage": "original Foursquare/Gowalla dataset vintages (~2009-2013)",
+  "size_hint": "n/a (scripts only)",
+  "license": "Apache-2.0",
+  "last_activity": "archived, last activity predates May 2023",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Twitter/X, Instagram, Flickr, TikTok tourism datasets: geotagged tourism flows, YFCC100M tourism subsets, Foursquare/Gowalla/Brightkite check-ins",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "One-command pull-and-clean pipeline for the two classic location check-in datasets (Foursquare NYC/Tokyo, Gowalla) that other tourism-mobility repos (HGARN, scikit-mobility) reference informally -- useful as tooling to reconstruct those panels for a party-size or destination-choice cut.",
+   "Gowalla/Foursquare geotagged check-ins are the closest free analogue to Twitter tourism-flow / cross-border travel-pattern datasets named in gap #20 (party size / group travel / cross-border share proxies) -- dated (2009-2011) but a genuine geotagged human-mobility panel with venue-category labels (some travel/hospitality-related) that could validate a tourist-flow methodology before applying it to newer data."
+  ]
+ },
+ {
+  "key": "github:geods/covid19usflows-weeklyflows",
+  "url": "https://github.com/GeoDS/COVID19USFlows-WeeklyFlows",
+  "name": "COVID19USFlows-WeeklyFlows (GeoDS Lab, UW-Madison)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Weekly-aggregated companion to COVID19USFlows: SafeGraph-derived origin-destination visitor/population flow CSVs at census-tract, county, and state scale, Jan 2019 through 2021. MIT licensed.",
+  "why_useful": "Weekly cadence is a better match to the pitch's mixed-frequency nowcasting cadence than the daily version and is smaller to work with; same value case as the daily-flows repo above (SafeGraph mobility as a demand-shock and elasticity calibration input, gap #5/#11/#17).",
+  "geography": "United States, tract/county/state",
+  "time_coverage": "2019-01 through 2021 (approx)",
+  "size_hint": "Multiple CSV files, weekly cadence, split by geography and repo size limits",
+  "license": "MIT",
+  "last_activity": "part of the same actively-cited GeoDS Lab research initiative",
+  "duplicate_of_holding": "Companion/weekly version of GeoDS/COVID19USFlows above",
+  "gap_targets": [
+   5,
+   11,
+   17
+  ],
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "Weekly cadence is a better match to the pitch's mixed-frequency nowcasting cadence than the daily version and is smaller to work with; same value case as the daily-flows repo above (SafeGraph mobility as a demand-shock and elasticity calibration input, gap #5/#11/#17)."
+  ]
+ },
+ {
+  "key": "github:descarteslabs/dl-covid-19",
+  "url": "https://github.com/descarteslabs/DL-COVID-19",
+  "name": "DL-COVID-19 (Descartes Labs mobility index)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Descartes Labs' mobility statistic (m50: median max-distance moved per day by a typical device; m50_index: percent of Feb-Mar 2020 baseline) at US state (admin1) and county (admin2) level with FIPS codes, provided in NDJSON, long-format CSV, and wide-format CSV (dates as columns). Starts 2020-03-24, CC BY 4.0 licensed, 400+ commits with regular releases.",
+  "why_useful": "An independent, non-SafeGraph, non-Google mobility index at daily county granularity with a clean, well-documented, actively-maintained-looking commit history \u2014 useful as a cross-check series against the SafeGraph/Google flow data above, and as another distance-moved proxy for gap #5/#11 travel-shock studies.",
+  "geography": "United States, state and county (FIPS-coded)",
+  "time_coverage": "2020-03-24 onward",
+  "size_hint": "Daily CSV/NDJSON per state+county, hundreds of rows per day, multi-year",
+  "license": "CC BY 4.0",
+  "last_activity": "404 commits, multiple data-release commits",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5,
+   11
+  ],
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "An independent, non-SafeGraph, non-Google mobility index at daily county granularity with a clean, well-documented, actively-maintained-looking commit history \u2014 useful as a cross-check series against the SafeGraph/Google flow data above, and as another distance-moved proxy for gap #5/#11 travel-shock studies."
+  ]
+ },
+ {
+  "key": "github:covidexposureindices/covidexposureindices",
+  "url": "https://github.com/COVIDExposureIndices/COVIDExposureIndices",
+  "name": "COVIDExposureIndices (PlaceIQ Location Exposure/Device Exposure Index)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "PlaceIQ-sourced smartphone movement exposure indices: Location Exposure Index (LEX, cross-geography device co-visitation share) and Device Exposure Index (DEX, commercial-venue co-visitation, with income/education/race-quartile splits), published twice weekly (Wed/Sat) as compressed CSVs at state (51), county (~2,000), and CBSA level, 2020-01-20 through 2021-08-24 (discontinued). Underlies Couture/Dingel/Green/Handbury/Williams, Journal of Urban Economics 2021; IRB-approved (UC Berkeley / U Chicago).",
+  "why_useful": "A third independent commercial-mobility provider (PlaceIQ, a SafeGraph/Advan/Cuebiq peer) with CBSA-level granularity and demographic splits not present in the Google/Apple/SafeGraph series above \u2014 useful for city-level (CBSA) foot-traffic/visitation cross-checks and as a template for how commercial location-data vendors structure exposure/visitation indices, relevant to gap #2 (realized occupancy proxies) and #5/#11.",
+  "geography": "United States: state, county (~2,000), CBSA",
+  "time_coverage": "2020-01-20 through 2021-08-24",
+  "size_hint": "154 stars, 335 commits; twice-weekly compressed CSVs across the full date range",
+  "license": "Academic use with citation requirement (Journal of Urban Economics 2021 paper)",
+  "last_activity": "discontinued Sep 2021, repo static since",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   2,
+   5,
+   11
+  ],
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "A third independent commercial-mobility provider (PlaceIQ, a SafeGraph/Advan/Cuebiq peer) with CBSA-level granularity and demographic splits not present in the Google/Apple/SafeGraph series above \u2014 useful for city-level (CBSA) foot-traffic/visitation cross-checks and as a template for how commercial location-data vendors structure exposure/visitation indices, relevant to gap #2 (realized occupancy proxies) and #5/#11."
+  ]
+ },
+ {
+  "key": "github:worldbank/overturelink-data-pipeline",
+  "url": "https://github.com/worldbank/OvertureLink-Data-Pipeline",
+  "name": "worldbank/OvertureLink-Data-Pipeline",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "World Bank-authored (MPL-2.0) ETL pipeline to query/extract Overture Maps data (roads, buildings, and by extension places) into ArcGIS Online, common GIS file formats, or local dumps for repeated use.",
+  "why_useful": "Institutional-grade, maintained pipeline for pulling Overture POI/building data repeatedly -- useful as tooling for a recurring hotel/lodging-supply count if the team wants a maintained World Bank pipeline instead of a one-off script.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "current Overture releases",
+  "size_hint": "pipeline code only",
+  "license": "MPL-2.0",
+  "last_activity": "2026-06-15",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Institutional-grade, maintained pipeline for pulling Overture POI/building data repeatedly -- useful as tooling for a recurring hotel/lodging-supply count if the team wants a maintained World Bank pipeline instead of a one-off script."
+  ]
+ },
+ {
+  "key": "github:mikeqfu/pydriosm",
+  "url": "https://github.com/mikeqfu/pydriosm",
+  "name": "mikeqfu/pydriosm",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GPL-3.0 Python package (48 stars) for downloading, reading, and PostgreSQL-based I/O of OpenStreetMap data (Geofabrik and BBBike sources), analogous to osmextract but in Python.",
+  "why_useful": "Python-native alternative to osmextract for the same OSM tourism=* tag extraction workflow, useful if the team's pipeline is Python/DuckDB-based rather than R.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "current OSM snapshot at run time",
+  "size_hint": "package code; extracts vary by region",
+  "license": "GPL-3.0",
+  "last_activity": "2026-05-12",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "functional duplicate of ropensci/osmextract in Python",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Python-native alternative to osmextract for the same OSM tourism=* tag extraction workflow, useful if the team's pipeline is Python/DuckDB-based rather than R."
+  ]
+ },
+ {
+  "key": "github:gsueur/osm-geoparquet",
+  "url": "https://github.com/gsueur/osm-geoparquet",
+  "name": "gsueur/osm-geoparquet",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pipeline (10 stars, updated 23 Jul 2026) converting Geofabrik OSM PBFs into state-partitioned, theme-filtered GeoParquet extracts.",
+  "why_useful": "Converts Geofabrik PBFs into an analysis-ready, queryable columnar format (GeoParquet), which materially lowers the effort of filtering to tourism=hotel/guest_house/apartment tags at scale (e.g. all US states) for a supply-count series.",
+  "potential": "medium",
+  "geography": "appears US state-partitioned; method is generalizable",
+  "time_coverage": "current OSM snapshot at run time",
+  "size_hint": "pipeline code; GeoParquet outputs vary by state",
+  "license": "custom/other",
+  "last_activity": "2026-07-23",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Converts Geofabrik PBFs into an analysis-ready, queryable columnar format (GeoParquet), which materially lowers the effort of filtering to tourism=hotel/guest_house/apartment tags at scale (e.g. all US states) for a supply-count series."
+  ]
+ },
+ {
+  "key": "github:lmmx/fsqosp",
+  "url": "https://github.com/lmmx/fsqosp",
+  "name": "lmmx/fsqosp",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Small repo ('Mapping the FourSquare Open Source Places dataset') pointing at Foursquare's Open Source Places dataset (Foursquare's own release, hosted on Foursquare's S3/HuggingFace, ~100M+ global POIs including hotel/lodging categories, released under Apache-2.0/ODbL by Foursquare in Dec 2024). README fetch returned empty (likely a stub/thin wrapper); the underlying Foursquare OS Places dataset itself (not this repo) is the substantive asset -- see https://opensource.foursquare.com/os-places/ and https://huggingface.co/datasets/foursquare/fsq-os-places.",
+  "why_useful": "Points to Foursquare's global open POI dataset, a free alternative/complement to Overture Places with its own category taxonomy including 'Hotel', 'Bed and Breakfast', 'Vacation Rental', 'Resort' -- another global hotel/lodging-supply count source (gap #8) and geotagged tourism POI source (gap #20). Flagging the pointer since this specific repo has no committed code/data value beyond signposting the dataset.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "Foursquare OS Places released and updated periodically since Dec 2024",
+  "size_hint": "Foursquare's dataset is 100M+ POIs globally per public release notes (external, not in this repo)",
+  "license": "unclear on this repo; Foursquare's dataset itself is Apache-2.0",
+  "last_activity": "2024-12-12",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Points to Foursquare's global open POI dataset, a free alternative/complement to Overture Places with its own category taxonomy including 'Hotel', 'Bed and Breakfast', 'Vacation Rental', 'Resort' -- another global hotel/lodging-supply count source (gap #8) and geotagged tourism POI source (gap #20). Flagging the pointer since this specific repo has no committed code/data value beyond signposting the dataset."
+  ]
+ },
+ {
+  "key": "github:foursquare/quattroshapes",
+  "url": "https://github.com/foursquare/quattroshapes",
+  "name": "Quattroshapes",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Foursquare-published global gazetteer of administrative boundaries and localities (CC-BY 2.0, 17 commits): admin level 0 (countries), 1 (states/provinces), 2 (counties), local admin areas, localities (cities/towns), and neighborhoods, in Shapefile (WGS84) and gzipped GeoJSON, sourced partly from Natural Earth v3.0.0 and government data. Over 1 million administrative/populated places; total ~30GB across files.",
+  "why_useful": "Neighborhood-level boundaries for 13-city Inside Airbnb panel and any new market are otherwise ad hoc; this gives a free, global neighborhood polygon layer to join listings/reviews to sub-city geography for finer regional splits than city-level.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Static snapshot (project appears frozen, old but still usable as boundary reference)",
+  "license": "CC-BY 2.0 (mixed with some government-licensed subsets)",
+  "size_hint": "~30 GB total, admin2 files ~1.5MB to local-admin ~467MB",
+  "last_activity": "Old (17 commits, likely stale project from Foursquare's early open-data era)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Neighborhood-level boundaries for 13-city Inside Airbnb panel and any new market are otherwise ad hoc; this gives a free, global neighborhood polygon layer to join listings/reviews to sub-city geography for finer regional splits than city-level."
+  ]
+ },
+ {
+  "key": "github:whosonfirst-data/whosonfirst-data",
+  "url": "https://github.com/whosonfirst-data/whosonfirst-data",
+  "name": "Who's On First data (gazetteer)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Global gazetteer of places with stable 64-bit IDs, split into per-country repos (`whosonfirst-data-admin-{cc}`) and separate venue/POI repos (`whosonfirst-data-venue-*`) by country/region, as plain-text GeoJSON files (some via git-lfs for large countries). CC0 for original Mapzen work; attribution required for incorporated sources (GeoNames, Natural Earth).",
+  "why_useful": "A free, versioned (git-history-backed) global venue/place gazetteer that can, in principle, be diffed over commit history for a rough point-in-time venue census \u2014 an alternative geography backbone to Overture/Foursquare for joining STR and hotel POIs to stable place IDs across markets.",
+  "potential": "medium",
+  "geography": "Global (organized per-country repos)",
+  "time_coverage": "Git history back to Mapzen's original ~2015-2017 work, updated intermittently since",
+  "license": "CC0 (original work); mixed attribution for incorporated sources",
+  "size_hint": "Large; some country files near 100MB (git-lfs)",
+  "last_activity": "Low recent activity (111 commits on main tracking repo; per-country data repos vary)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "A free, versioned (git-history-backed) global venue/place gazetteer that can, in principle, be diffed over commit history for a rough point-in-time venue census \u2014 an alternative geography backbone to Overture/Foursquare for joining STR and hotel POIs to stable place IDs across markets."
+  ]
+ },
+ {
+  "key": "github:wmgeolab/geoboundaries",
+  "url": "https://github.com/wmgeolab/geoBoundaries",
+  "name": "geoBoundaries",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Global political administrative boundary polygons (CC BY 4.0 / ODbL-style, 947 commits, versioned releases e.g. v6.0.0) for all UN member states plus additional entities, ~300M vertices across hundreds of thousands of geometries, distributed via GitHub, API, and Python/R packages; tracks boundary changes since 2016.",
+  "why_useful": "Standardized, versioned admin-boundary layer to aggregate any POI/hotel-count dataset (Overture, OSM, Foursquare) up to consistent country/state/metro units across markets \u2014 a cleaner alternative to ad hoc boundary files for the regional (NA/EMEA/LatAm/APAC) splits this pitch needs.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Versioned since 2016, with dated releases enabling point-in-time boundary use",
+  "license": "CC BY 4.0 (attribution-only)",
+  "size_hint": "~300M vertices, git-lfs backed",
+  "last_activity": "Active (latest tagged release noted v6.0.0, Sep 2023)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Standardized, versioned admin-boundary layer to aggregate any POI/hotel-count dataset (Overture, OSM, Foursquare) up to consistent country/state/metro units across markets \u2014 a cleaner alternative to ad hoc boundary files for the regional (NA/EMEA/LatAm/APAC) splits this pitch needs."
+  ]
+ },
+ {
+  "key": "github:chriswhong/nyc-neighborhood-boundaries",
+  "url": "https://github.com/chriswhong/nyc-neighborhood-boundaries",
+  "name": "chriswhong/nyc-neighborhood-boundaries",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single GeoJSON file of contiguous, non-overlapping polygons for New York City neighbourhoods (hand-corrected from NYC Planning's NTAs), committed to the repo.",
+  "why_useful": "NYC is our largest single Inside Airbnb market and has the pre/post-Local-Law-18 gap (CONTEXT gap 1); a clean contiguous neighbourhood layer supports any tract-level rollup of NYC listings/registrations.",
+  "potential": "medium",
+  "size_hint": "1 GeoJSON, ~195 NYC neighbourhoods",
+  "geography": "New York City",
+  "time_coverage": "static, current NTA vintage",
+  "license": "other (stated in repo)",
+  "last_activity": "2026-07-20",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "NYC is our largest single Inside Airbnb market and has the pre/post-Local-Law-18 gap (CONTEXT gap 1); a clean contiguous neighbourhood layer supports any tract-level rollup of NYC listings/registrations."
+  ]
+ },
+ {
+  "key": "github:tsdataclinic/newerhoods",
+  "url": "https://github.com/tsdataclinic/newerhoods",
+  "name": "tsdataclinic/newerhoods",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "NYC Data Clinic project aggregating NYC Open Data at the census-tract level and using ML (clustering) to redraw data-driven neighbourhood boundaries; includes tract-level feature tables and boundary-generation code, Apache-2.0.",
+  "why_useful": "Provides both a census-tract-level NYC dataset and a method for building STR-relevant neighbourhood definitions from tract data, useful for any tract-to-neighbourhood crosswalk work on NYC STR data.",
+  "potential": "medium",
+  "size_hint": "NYC tract-level tables + clustering code",
+  "geography": "New York City",
+  "time_coverage": "circa 2020-2021 NYC Open Data vintage",
+  "license": "Apache-2.0",
+  "last_activity": "2025-01-09",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "Provides both a census-tract-level NYC dataset and a method for building STR-relevant neighbourhood definitions from tract data, useful for any tract-to-neighbourhood crosswalk work on NYC STR data."
+  ]
+ },
+ {
+  "key": "github:hantswilliams/hud_usps_crosswalk_files",
+  "url": "https://github.com/hantswilliams/hud_usps_crosswalk_files",
+  "name": "hantswilliams/hud_usps_crosswalk_files",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed copies of HUD-USPS ZIP-code crosswalk files (ZIP to census tract / county / CBSA), which HUD otherwise only distributes as a paid/registration-gated quarterly download.",
+  "why_useful": "A free mirror of the standard ZIP<->tract/county/CBSA crosswalk used to join STR registry data (often ZIP-level) to census geographies for regional aggregation; generally useful infrastructure for any of our municipal STR registry work.",
+  "potential": "medium",
+  "size_hint": "multiple quarterly crosswalk CSVs",
+  "geography": "USA, national",
+  "time_coverage": "multiple HUD quarterly vintages through 2024",
+  "license": "none stated",
+  "last_activity": "2024-10-15",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "A free mirror of the standard ZIP<->tract/county/CBSA crosswalk used to join STR registry data (often ZIP-level) to census geographies for regional aggregation; generally useful infrastructure for any of our municipal STR registry work."
+  ]
+ },
+ {
+  "key": "github:kraina-ai/quackosm",
+  "url": "https://github.com/kraina-ai/QuackOSM",
+  "name": "kraina-ai/QuackOSM",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source Python/CLI tool (375 stars, Apache-2.0) for reading OpenStreetMap PBF extracts directly via DuckDB, producing tabular/geoparquet output of OSM features (including tourism/accommodation/POI tags) for any region.",
+  "why_useful": "A one-command way to pull OSM points of interest (hotels, short-term-rental-tagged buildings, restaurants/attractions used as tourism-density proxies) for any city/country as a free, always-current geospatial layer feeding gap #20 (geospatial POI / party-size proxies) and cross-checking Inside Airbnb listing density against broader tourism infrastructure.",
+  "potential": "medium",
+  "geography": "global (OSM coverage)",
+  "time_coverage": "current OSM snapshot, any historical PBF extract if available",
+  "size_hint": "tool, not a fixed dataset",
+  "license": "Apache-2.0",
+  "last_activity": "active (390+375 stars across kraina-ai repos, actively maintained per repo listing)",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "A one-command way to pull OSM points of interest (hotels, short-term-rental-tagged buildings, restaurants/attractions used as tourism-density proxies) for any city/country as a free, always-current geospatial layer feeding gap #20 (geospatial POI / party-size proxies) and cross-checking Inside Airbnb listing density against broader tourism infrastructure."
+  ]
+ },
+ {
+  "key": "github:bryanvallejo16/popflowestonia",
+  "url": "https://github.com/bryanvallejo16/popFlowEstonia",
+  "name": "popFlowEstonia",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Leaflet/D3 population-flowmap visualization built on an origin-destination (OD) matrix derived from mobile positioning data supplied by the University of Tartu Mobility Lab (the academic group behind Positium, Estonia's mobile-network-operator tourism-statistics pioneer that feeds Eurostat's MNO experimental statistics work). Contains a committed data file data/population_estonia.js (~11.1MB) holding the OD matrix/flow data for Estonia, plus index.html/style.css for the map viewer.",
+  "why_useful": "Directly touches the Eurostat MNO-experimental-statistics lineage named in this theme (Estonia/Positium/University of Tartu is the flagship MNO-tourism-stats case study); the committed 11MB OD-matrix file is real mobile-positioning-derived flow data, even though it is a population/commuting flow map rather than an inbound-tourism arrivals series, and no README detail on vintage/exact fields was retrievable via fetch.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Estonia",
+  "time_coverage": "unknown (not stated in fetched content)",
+  "size_hint": "one ~11.1MB JS data file (OD matrix)",
+  "license": "unknown (not stated)",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Directly touches the Eurostat MNO-experimental-statistics lineage named in this theme (Estonia/Positium/University of Tartu is the flagship MNO-tourism-stats case study); the committed 11MB OD-matrix file is real mobile-positioning-derived flow data, even though it is a population/commuting flow map rather than an inbound-tourism arrivals series, and no README detail on vintage/exact fields was retrievable via fetch.",
+   "Directly downstream of the Estonian mobile-positioning/MNO tourism-statistics ecosystem the Eurostat experimental series is built on; if the OD matrices in data/ are real (not synthetic demo), this is a rare committed MNO-derived mobility dataset rather than just a paper describing the method."
+  ]
+ },
+ {
+  "key": "github:pintergreg/reverse-engineering-yjmob100k-grid",
+  "url": "https://github.com/pintergreg/reverse-engineering-YJMob100K-grid",
+  "name": "reverse-engineering-YJMob100K-grid",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Code (65 commits) reverse-engineering the geographic grid underlying YJMob100K, a large anonymized human-mobility dataset (~100,000 users, ~75 days, originally Japan/Yahoo Japan) hosted on Zenodo; this repo's own outputs are a reproduced GeoJSON grid (EPSG:2449), choropleth maps, and comparative grids for Helsinki/London/Toronto/Dallas-Fort Worth, cross-validated against Japan's 2020 Census. Points to the YJMob100K Zenodo dataset itself for raw data. Code: BSD-3-Clause; figures: CC BY 4.0; shapefiles: OSM ODbL.",
+  "why_useful": "YJMob100K is a substantial, real, publicly hosted (Zenodo) mobile-location panel that could proxy domestic mobility/tourism intensity in Japan (APAC gap) and other cities; this repo supplies the georeferencing/grid-reconstruction method needed to use it, and documents that de-identified location data does not anonymize well, which is itself a usable caveat for any mobile-positioning occupancy-proxy work.",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "geography": "Japan (primary), plus Helsinki, London, Toronto, Dallas-Fort Worth grids",
+  "time_coverage": "~75 days of underlying YJMob100K panel (exact years not stated in fetch)",
+  "size_hint": "~100,000 users in underlying Zenodo dataset; this repo is grid/code only",
+  "license": "BSD-3-Clause (code), CC BY 4.0 (docs/figures), ODbL (shapefiles)",
+  "last_activity": "2026-06-03",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "YJMob100K is a substantial, real, publicly hosted (Zenodo) mobile-location panel that could proxy domestic mobility/tourism intensity in Japan (APAC gap) and other cities; this repo supplies the georeferencing/grid-reconstruction method needed to use it, and documents that de-identified location data does not anonymize well, which is itself a usable caveat for any mobile-positioning occupancy-proxy work.",
+   "Points to YJMob100K as an external, sizeable Japan urban-mobility dataset derived from mobile positioning; not tourism-labeled but could proxy visitor movement in a market (Japan/APAC) that is one of our numbered regional gaps if cross-referenced with known tourist areas."
+  ]
+ },
+ {
+  "key": "github:alexissamp/tota-water-consumption-powerbi-dashboard",
+  "url": "https://github.com/AlexisSamp/TOTA-Water-Consumption-PowerBI-Dashboard",
+  "name": "TOTA-Water-Consumption-PowerBI-Dashboard",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed water_data.csv plus a tota_water_consumption_dashboard.pbix (Power BI) for the Okanagan watershed pilot region (Thompson Okanagan Tourism Association, British Columbia, Canada), built for that region's annual UN Tourism INSTO (International Network of Sustainable Tourism Observatories) reporting. Multi-municipality, multi-year municipal water consumption data collected from public sources; supports year-over-year comparison. No license file found.",
+  "why_useful": "A committed, tourism-board-curated municipal water-consumption CSV explicitly built for a UN Tourism sustainable-tourism observatory report is a rare direct water-as-tourism-activity proxy, and demonstrates the INSTO reporting format that other tourism regions may also publish on GitHub.",
+  "potential": "medium",
+  "geography": "Okanagan watershed, British Columbia, Canada",
+  "time_coverage": "multi-year, exact range not stated in README excerpt",
+  "size_hint": "one CSV (water_data.csv) + PBIX dashboard file",
+  "license": "none specified",
+  "last_activity": "2026-08-28",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "A committed, tourism-board-curated municipal water-consumption CSV explicitly built for a UN Tourism sustainable-tourism observatory report is a rare direct water-as-tourism-activity proxy, and demonstrates the INSTO reporting format that other tourism regions may also publish on GitHub."
+  ]
+ },
+ {
+  "key": "github:mathewhauer/irs-migration-data",
+  "url": "https://github.com/mathewhauer/IRS-migration-data",
+  "name": "IRS-migration-data",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R scripts that download and process raw IRS Statistics-of-Income migration files into one flat file `county_migration_data.txt` covering 1990-2010, 95-98% of the tax-filing universe; 5-digit FIPS origin county, 2-digit FIPS destination state, flows under 10 filers coded 99999. Includes manuscript/LaTeX explaining methodology. 22 stars, MIT code / CC-BY-3.0 data, last commit 2024-05-23.",
+  "why_useful": "Pre-cleaned 1990-2010 IRS migration panel, MIT-licensed, useful to backfill migration history before the 1998-2015 series above and cross-check destination-county in-migration trends against Airbnb-heavy vacation/second-home markets.",
+  "potential": "medium",
+  "geography": "US, county-level",
+  "time_coverage": "1990-2010",
+  "size_hint": "2000+ raw files + 1 processed flat file",
+  "license": "MIT",
+  "last_activity": "2024-05-23",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Pre-cleaned 1990-2010 IRS migration panel, MIT-licensed, useful to backfill migration history before the 1998-2015 series above and cross-check destination-county in-migration trends against Airbnb-heavy vacation/second-home markets.",
+   "Long-run, cleanly documented county-level migration series (sunbelt in-migration, second-home-market feeder counties) that is a candidate proxy for where new short-term-rental demand/supply and vacation-home purchases concentrate; gap 20 (geotagged tourism/migration proxies) and general population-shift context for NA nights."
+  ]
+ },
+ {
+  "key": "github:nbaubek/population-demographics-de-project",
+  "url": "https://github.com/nbaubek/population-demographics-de-project",
+  "name": "population-demographics-de-project",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Data-engineering pipeline combining Census ACS, TIGER/Line, and IRS migration data (2012-2024) at state/county/tract granularity into an interactive mapping tool; described as a pipeline rather than a static committed dataset (not independently verified).",
+  "why_useful": "If it bundles a processed 2012-2024 IRS-migration table, it would be the most recent multi-year panel found in this sweep, extending well past the other repos' 2015 cutoff -- worth a follow-up directory listing.",
+  "potential": "medium",
+  "geography": "US, state/county/tract",
+  "time_coverage": "2012-2024",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2026-08-21",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "If it bundles a processed 2012-2024 IRS-migration table, it would be the most recent multi-year panel found in this sweep, extending well past the other repos' 2015 cutoff -- worth a follow-up directory listing.",
+   "Widest and most recent time span (2012-2024) of any migration repo found here; a maintained pipeline that could be re-run to get current-vintage IRS migration + ACS demographic joins for identifying growing STR/second-home markets."
+  ]
+ },
+ {
+  "key": "github:worldbank/blackmarblepy",
+  "url": "https://github.com/worldbank/blackmarblepy",
+  "name": "blackmarblepy",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package that pulls NASA Black Marble VNP46 nighttime-lights tiles (daily/monthly/yearly, global, any user-defined date range and region-of-interest polygon) via the NASA LAADS DAAC API, converts HDF5 to georeferenced rasters, mosaics them, and computes zonal statistics/time series. No data committed to the repo itself \u2014 pure acquisition + processing tool, free NASA Earthdata token required, no paid key.",
+  "why_useful": "Could be pointed at specific Airbnb-heavy tourism geographies (e.g. Cancun, Bali, Algarve, Gold Coast) to build a custom nightlights-based destination-activity index as an occupancy/demand proxy for gap #2 (realised occupancy) or gap #7 (regional travel volume, LatAm/APAC) where no other free series exists. World Bank-maintained, MIT licence, actively updated (last push 7 Sep 2026).",
+  "potential": "medium",
+  "geography": "global, user-selected ROI",
+  "time_coverage": "2012-present (VIIRS era), user-selected range",
+  "size_hint": "no committed data; API-pulled rasters",
+  "license": "MIT",
+  "last_activity": "2026-09-07",
+  "gap_targets": [
+   2,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Could be pointed at specific Airbnb-heavy tourism geographies (e.g. Cancun, Bali, Algarve, Gold Coast) to build a custom nightlights-based destination-activity index as an occupancy/demand proxy for gap #2 (realised occupancy) or gap #7 (regional travel volume, LatAm/APAC) where no other free series exists. World Bank-maintained, MIT licence, actively updated (last push 7 Sep 2026)."
+  ]
+ },
+ {
+  "key": "github:dso6060/viirs-nightlights-analysis-tool",
+  "url": "https://github.com/dso6060/viirs-nightlights-analysis-tool",
+  "name": "viirs-nightlights-analysis-tool",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "FastAPI + Leaflet/D3 web tool that pulls Suomi NPP VIIRS DNB monthly composite radiance (NOAA EOG, ~750m, 2012-present) for geocoded cities, applies Elvidge et al. (2021) bias correction, and exports raw + bias-corrected radiance time series (Excel/CSV/JSON) with quality flags. Ships with example city lists: 45 Indian cities, 25 US metros, 30 European capitals, 20 Pakistani cities, plus conflict-zone cities.",
+  "why_useful": "A ready-made, citable-methodology (bias-corrected) nightlights time-series puller for named cities including several ABNB-relevant US/European metros; could be re-pointed at our 13/123-city Inside Airbnb panel to build a per-market activity index as an occupancy/demand cross-check.",
+  "potential": "medium",
+  "license": "non-commercial open-source (per README)",
+  "last_activity": "2026-06-03",
+  "geography": "global (examples: India, US, Europe, Pakistan, conflict zones)",
+  "time_coverage": "2012-present, monthly",
+  "size_hint": "17 commits; no large committed dataset, generates outputs on run",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "A ready-made, citable-methodology (bias-corrected) nightlights time-series puller for named cities including several ABNB-relevant US/European metros; could be re-pointed at our 13/123-city Inside Airbnb panel to build a per-market activity index as an occupancy/demand cross-check."
+  ]
+ },
+ {
+  "key": "github:worldbank/opennightlights",
+  "url": "https://github.com/worldbank/OpenNightLights",
+  "name": "worldbank/OpenNightLights",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "World Bank curriculum + Python notebooks/tools for pulling and analysing VIIRS DNB and DMSP-OLS nighttime-lights rasters (Google Earth Engine + NASA sources), with worked examples turning radiance into economic-activity proxies at admin-region level, global coverage, monthly composites back to ~2012 (VIIRS) / 1992 (DMSP, coarser).",
+  "why_useful": "Nighttime-lights radiance at the city/region level is a classic CV/remote-sensing proxy for local economic and tourism activity; a resort town or STR-dense district showing radiance growth/decline ahead of an earnings quarter could flag regional nights/ADR mix shifts the way TSA throughput or Trends were tried and failed \u2014 worth testing on a shortlist of tourism-heavy markets (Miami, Cancun, Bali, etc.) as a new construction, not a rerun of a killed test.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "1992-2026 (DMSP coarse), ~2012-2026 (VIIRS monthly)",
+  "size_hint": "Tooling repo; underlying rasters are GBs pulled on demand via GEE/NASA, not committed",
+  "license": "CC-BY-4.0",
+  "last_activity": "2026-09-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Nighttime-lights radiance at the city/region level is a classic CV/remote-sensing proxy for local economic and tourism activity; a resort town or STR-dense district showing radiance growth/decline ahead of an earnings quarter could flag regional nights/ADR mix shifts the way TSA throughput or Trends were tried and failed \u2014 worth testing on a shortlist of tourism-heavy markets (Miami, Cancun, Bali, etc.) as a new construction, not a rerun of a killed test."
+  ]
+ }
+]

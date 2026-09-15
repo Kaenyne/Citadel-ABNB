@@ -1,0 +1,27 @@
+{
+ "slug": "asifmehdiyev-booking-reviews-timeseries-nb",
+ "url": "https://github.com/Asifmehdiyev/Booking_Time_Series_Modelling",
+ "sampled": true,
+ "files": [
+  "asifmehdiyev_booking_ts_stripped.ipynb",
+  "notebook_text_outputs.txt",
+  "schema_from_notebook.csv",
+  "dansaert_hotel_monthly_series_from_notebook.csv",
+  "README_upstream.md",
+  "README.md",
+  "manifest.json"
+ ],
+ "rows": "No raw data table pulled (Kaggle login needed). Notebook outputs describe booking.csv: 26,386 reviews x 15 columns, 819 properties, 163 nationalities. Saved: schema_from_notebook.csv 15 rows; dansaert_hotel_monthly_series_from_notebook.csv 23 rows (one hotel, monthly, 2018-07 to 2020-05, 2 NaN months); notebook 91 cells (22 PNG outputs stripped).",
+ "columns": "review_title, reviewed_at, reviewed_by, images, crawled_at, url, hotel_name, hotel_url, avg_rating, nationality, rating, review_text, raw_review_text, tags (trip type~party~room~Stayed N nights~mobile), meta",
+ "date_range": "reviewed_at 2018-07-31 to 2021-07-19 (per notebook df.min/max); crawled_at all 2021-07-20; single-hotel monthly series 2018-07 to 2020-05",
+ "how_pulled": "curl -sL -o nb.ipynb https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/HEAD/booking-time-series-modelling.ipynb; curl -sL -o README_upstream.md https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/HEAD/README.md; gh api repos/Asifmehdiyev/Booking_Time_Series_Modelling/contents/; python script stripped image/png and text/html outputs from the notebook (1,127,266 -> 78,306 bytes), dumped all sources + text/plain outputs to notebook_text_outputs.txt, and transcribed the schema and the one printed monthly table into CSVs.",
+ "full_dataset_size": "Repo: 2 files, 1.1 MB (notebook + README). Underlying Kaggle dataset kaggle.com/datasets/asifmehdiyev/bookingnew, booking.csv, 26,386 rows x 15 cols, ~2.6 MB in memory (est. 10-20 MB on disk with raw HTML column); requires Kaggle login, not pulled.",
+ "description": "A student notebook doing EDA and Prophet forecasting on a July-2021 scrape of Booking.com guest reviews for 819 Belgian properties (hotels, hostels, B&Bs, apartments), one row per review with review date, reviewer nationality, score, property average score, and a tags field encoding trip type, party composition, room type and length of stay. Source is a Kaggle CSV scraped from booking.com/reviews/be; the repo commits only the notebook. For ABNB an analyst would use the Kaggle CSV (if obtained by a human) as a dated Booking.com review stream for Belgium 2018-2021 to compare review-count seasonality and nationality/cross-border mix against our Inside Airbnb reviews-based stays index; the notebook itself only shows that the data exists and what its schema is. Single country and a 2021 endpoint make it archival context, not a nowcast input.",
+ "issues": "No licence in repo or stated for the Kaggle dataset; data is a scrape of booking.com (ToS question for a human). Raw CSV needs Kaggle login: NOT pulled. Notebook time-series work is on avg_rating of one hotel (a constant per property, so the series is effectively a review-count proxy) and is analytically weak; only the schema and date range are useful. Belgium only; ends 2021-07-19. Not the Portugal hotel-booking-demand dataset.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/HEAD/booking-time-series-modelling.ipynb",
+  "https://raw.githubusercontent.com/Asifmehdiyev/Booking_Time_Series_Modelling/HEAD/README.md",
+  "https://api.github.com/repos/Asifmehdiyev/Booking_Time_Series_Modelling/contents/"
+ ],
+ "pulled_at": "2026-09-14"
+}

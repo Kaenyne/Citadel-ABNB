@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:oliverpthomson/travel-advice-world-map",
+  "url": "https://github.com/oliverpthomson/travel-advice-world-map",
+  "name": "travel-advice-world-map",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Interactive world map of Australian Government (Smartraveller) travel advice levels and visa requirements for Australian passport holders. Updated 2026-09-13 (unofficial project pulling the Smartraveller source).",
+  "why_useful": "A third sovereign advisory source (Australia) -- useful for APAC-outbound demand-shock cross-checks and diversifying single-country advisory risk; also carries visa-requirement data, a separate friction variable on cross-border travel not covered by any of our current holdings.",
+  "potential": "medium",
+  "time_coverage": "current snapshot, unconfirmed historical depth",
+  "geography": "global via Australian Smartraveller, APAC-outbound angle",
+  "size_hint": "unknown",
+  "license": "unstated",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   11,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "A third sovereign advisory source (Australia) -- useful for APAC-outbound demand-shock cross-checks and diversifying single-country advisory risk; also carries visa-requirement data, a separate friction variable on cross-border travel not covered by any of our current holdings."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/predicthq",
+  "url": "https://github.com/api-evangelist/predicthq",
+  "name": "api-evangelist/predicthq",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Third-party API profile (OpenAPI spec, Postman/Open Collection files) of the PredictHQ Events API, a commercial demand-intelligence platform covering conferences, concerts, sports, community events, public holidays, school terms and severe weather across many countries with predicted-attendance/rank features. No data committed here \u2014 it documents how to call the live API (requires a PredictHQ account/API key, free tier exists with limited calls). Companion repo pipeworx-io/mcp-predicthq wraps the same API as an MCP tool.",
+  "why_useful": "PredictHQ's conference/MICE + event-impact category is the closest machine-pullable proxy we found for CONTEXT.md gap #11 (events/shocks calendar with predicted demand impact, could time FIFA World Cup 2026, major conferences, concerts against nights/ADR spikes by market).",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "Global",
+  "time_coverage": "Live/forward-looking; historical event archive depth depends on PredictHQ plan",
+  "size_hint": "N/A (API, not a static dataset)",
+  "license": "N/A (documentation repo is public; underlying API is commercial/freemium)",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "PredictHQ's conference/MICE + event-impact category is the closest machine-pullable proxy we found for CONTEXT.md gap #11 (events/shocks calendar with predicted demand impact, could time FIFA World Cup 2026, major conferences, concerts against nights/ADR spikes by market)."
+  ]
+ },
+ {
+  "key": "github:scholar-8/10times",
+  "url": "https://github.com/scholar-8/10times",
+  "name": "scholar-8/10times",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper (src/ modules for parsing, date extraction, JSON export) targeting 10times.com's Top-100 conference/trade-show rankings across 30+ industry categories worldwide. No committed dataset \u2014 output format shown only as an example JSON record (event name, dates, location, rating, URL). Presented as a portfolio/demo piece by a scraping shop (Bitbash), not a maintained data product.",
+  "why_useful": "10times.com is the largest public conference/trade-show/MICE calendar (thousands of B2B events, dates, cities, expected attendance where published); a working scraper pattern would let us build our own conference-density-by-city series for MICE-driven business travel demand, feeding gap #11. Scraping a non-Airbnb site is in-scope per the repo rules (still requires a human ToS call before running).",
+  "potential": "medium",
+  "gap_targets": [
+   11
+  ],
+  "geography": "Global (30+ categories, city-level events)",
+  "time_coverage": "Live/current listings only; no historical archive built in",
+  "size_hint": "Small scraper repo, no data files",
+  "license": "Unspecified",
+  "last_activity": "2025-11-18",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "10times.com is the largest public conference/trade-show/MICE calendar (thousands of B2B events, dates, cities, expected attendance where published); a working scraper pattern would let us build our own conference-density-by-city series for MICE-driven business travel demand, feeding gap #11. Scraping a non-Airbnb site is in-scope per the repo rules (still requires a human ToS call before running)."
+  ]
+ },
+ {
+  "key": "github:botondboros/balaton-bshi",
+  "url": "https://github.com/botondboros/balaton-bshi",
+  "name": "balaton-bshi (Balaton Satellite Health Index)",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "Satellite-based algal-bloom + tourism monitoring system for Lake Balaton, Hungary: 14 lakeside settlements, 3km coastal buffers, 2018-2025 with 2026 projection. Explicitly uses NOAA VIIRS nighttime lights (~500m, monthly) as a 'tourism activity proxy' alongside Sentinel-2 NDCI (algal bloom) and MODIS LST. Output is a JSON file (balaton.json) plus GeoJSON zone definitions powering a bilingual dashboard; intermediate Parquet files not version-controlled.",
+  "why_useful": "A working, recent (2026) real-world example of exactly this theme's method \u2014 VIIRS nightlights as a tourism-activity proxy at settlement level combined with environmental satellite data \u2014 directly reusable as a template/validation case for constructing an analogous nightlights-tourism proxy for Airbnb markets, even though the geography (Hungarian lake resort towns) is outside our current 13/123-market panel.",
+  "potential": "medium",
+  "license": "not stated",
+  "last_activity": "2026-05-21",
+  "geography": "Lake Balaton, Hungary (14 settlements)",
+  "time_coverage": "2018-2025 (+2026 projection)",
+  "size_hint": "small; JSON/GeoJSON outputs, processing scripts",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "A working, recent (2026) real-world example of exactly this theme's method \u2014 VIIRS nightlights as a tourism-activity proxy at settlement level combined with environmental satellite data \u2014 directly reusable as a template/validation case for constructing an analogous nightlights-tourism proxy for Airbnb markets, even though the geography (Hungarian lake resort towns) is outside our current 13/123-market panel."
+  ]
+ },
+ {
+  "key": "github:bloomberggraphics/2017-wmata-ridership-data",
+  "url": "https://github.com/BloombergGraphics/2017-wmata-ridership-data",
+  "name": "2017-wmata-ridership-data",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSVs of Washington Metro (WMATA) intraday, station-level entrance/exit counts by four daily time segments (AM peak, midday, PM peak, evening) for three one-off mega-events: 2009 Obama inauguration, 2017 Trump inauguration, 2017 Women's March; raw OCR'd tables plus a cleaned, deduplicated combined dataset and a system-wide totals sheet.",
+  "why_useful": "A worked example (methodology, not ABNB-relevant data itself) of turning transit ridership spikes into an event-attendance/visitor proxy \u2014 directly applicable as a template for building a FIFA World Cup 2026 host-city transit-surge indicator (gap #11) from MTA/other agencies' turnstile data around June-July 2026.",
+  "potential": "medium",
+  "geography": "Washington, D.C.",
+  "time_coverage": "Jan 2009, Jan 2017, Jan 2017 (three single events)",
+  "size_hint": "small, event-specific CSVs",
+  "license": "none stated",
+  "last_activity": "2026-06-11",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "A worked example (methodology, not ABNB-relevant data itself) of turning transit ridership spikes into an event-attendance/visitor proxy \u2014 directly applicable as a template for building a FIFA World Cup 2026 host-city transit-surge indicator (gap #11) from MTA/other agencies' turnstile data around June-July 2026."
+  ]
+ }
+]

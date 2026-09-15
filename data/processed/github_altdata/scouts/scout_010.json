@@ -1,0 +1,71 @@
+{
+  "theme": "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos: zervas airbnb",
+    "gh search repos: airbnb replication",
+    "gh search repos: airbnb hotel impact",
+    "gh search repos: airbnb discrimination",
+    "gh search repos: airbnb rent prices",
+    "gh search repos: airbnb reviews fraud",
+    "gh search repos: airbnb barcelona regulation",
+    "WebSearch: github.com Zervas Byers Proserpio airbnb hotel replication data",
+    "WebSearch: github.com Barron Kung Proserpio airbnb housing prices replication package",
+    "WebSearch: github.com Edelman Luca Svirsky airbnb discrimination replication data",
+    "WebSearch: github.com Fradkin airbnb reviews replication data",
+    "WebSearch: site:github.com airbnb replication OR replication package economics data code",
+    "WebSearch: site:github.com Koster Los Angeles airbnb data",
+    "WebSearch: site:github.com Farronato Fradkin airbnb data OR Horn Merante airbnb OR Garcia-Lopez Barcelona airbnb",
+    "WebFetch: github.com/airbert-vln/bnb-dataset",
+    "WebFetch: raw ledwindra/replication-code-economics README",
+    "WebFetch: dadepro.github.io/papers-chrono.html"
+  ],
+  "candidates": [
+    {
+      "url": "https://www.openicpsr.org/openicpsr/project/113691/version/V1/view",
+      "name": "Replication data for: Racial Discrimination in the Sharing Economy: Evidence from a Field Experiment (Edelman, Luca, Svirsky 2017)",
+      "category": "academic_replication",
+      "data_kind": "pointer_to_external_host",
+      "what_it_holds": "ICPSR-hosted replication package (not GitHub) for the AEJ: Applied Economics field experiment on Airbnb host acceptance rates by guest race. Covers June-December 2014 audit-study applications data with accept/reject outcomes by host and listing. No GitHub mirror found despite targeted search; flagging as the canonical source location since the paper itself is a foundational Airbnb-adjacent academic dataset (host discrimination behavior, not directly a KPI driver but relevant to platform-trust/regulatory-risk narratives).",
+      "why_useful": "Not a KPI forecasting input, but a primary source for discrimination/regulatory-risk framing (gap 12 adjacent) and a benchmark dataset if the team ever wants host-acceptance-rate behavior as a trust proxy. Recorded here because no GitHub replication mirror exists -- worth knowing the search came up empty so nobody re-searches this later.",
+      "potential": "low",
+      "size_hint": "audit-study microdata, ~1,300+ applications (per paper); small",
+      "time_coverage": "Jun-Dec 2014",
+      "geography": "5 US cities (Baltimore, Dallas, LA, St. Louis, DC per paper)",
+      "license": "ICPSR terms (academic use)",
+      "last_activity": "unknown (deposited ~2017)",
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/airbert-vln/bnb-dataset",
+      "name": "airbert-vln/bnb-dataset",
+      "category": "academic_replication",
+      "data_kind": "both",
+      "what_it_holds": "Scripts + two committed TSV files (airbnb-train-indoor-filtered.tsv, airbnb-test-indoor-filtered.tsv) of Airbnb listing photo-caption pairs (listing ID, photo ID, image URL, caption) scraped from Airbnb.com as of a 'Christmas 2019' snapshot, filtered to indoor images only, used to pretrain a vision-and-language-navigation model (the 'Airbert' CVPR 2021 paper by Guillaume Bono et al., not one of the named target authors but the closest thing to a large committed Airbnb scrape found on GitHub). Pipeline continues to LMDB visual features and JSON path-instruction pairs for robot navigation training, not economics.",
+      "why_useful": "Large-scale (listing-level) captioned photo dataset from real Airbnb listings worldwide at a single point in time (Dec 2019) -- could in principle be repurposed as a cross-market listing snapshot/description corpus (amenity mix, room-type text) predating most of what the team holds, though it is aimed at computer vision, not KPIs, and the authors note images are no longer guaranteed available. Also a working example of a non-airbnb-owned method for turning Airbnb.com into a TSV/image corpus -- flag as method only, not to be run (touches airbnb.com directly, a ToS decision per repo rules).",
+      "potential": "low",
+      "size_hint": "TSV files with listing/photo/caption rows across many markets; exact row count not confirmed",
+      "time_coverage": "~Dec 2019 snapshot",
+      "geography": "global (unspecified city list)",
+      "license": "unspecified (check repo)",
+      "last_activity": "circa 2021 (CVPR paper era)",
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/Itloow/lyon-airbnb-discrimination",
+      "name": "Itloow/lyon-airbnb-discrimination",
+      "category": "academic_replication",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "'Analyse NLP des biais discriminatoires dans les annonces Airbnb à Lyon' -- an NLP bias-analysis project on Airbnb listing text for Lyon, France; not a named replication of Edelman/Luca/Svirsky but a student/independent project in the same vein (discriminatory bias in listing text, single city). Updated Jan 2026 (recent). Not inspected further for committed data files.",
+      "why_useful": "Marginal: a modern (2026), non-US take on discrimination/bias analysis of Airbnb listing text; could be a template for text-bias methodology but is single-city and unlikely to hold a reusable dataset beyond Lyon listings.",
+      "potential": "low",
+      "size_hint": "unknown, likely small student project",
+      "time_coverage": "unknown, recent (updated 2026-01-17)",
+      "geography": "Lyon, France",
+      "license": "unspecified",
+      "last_activity": "2026-01-17",
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "This theme came up largely empty on GitHub itself. The named replication packages (Zervas/Proserpio/Byers 'Rise of the Sharing Economy', Barron/Kung/Proserpio 'Effect of Home-Sharing on House Prices and Rents' and 'Sharing Economy and Housing Affordability', Edelman/Luca/Svirsky discrimination study, Fradkin/Grewal/Holtz/Pearson reviews bias study) were all published in Marketing Science / AEJ:Applied / journal outlets whose replication packages are deposited on ICPSR, journal supplemental-materials sites, or authors' personal pages (checked dadepro.github.io, Proserpio's own GitHub Pages site -- no data/code links found there at all, only paper PDFs). No search combination (7 gh search calls, several WebSearches including site:github.com filters) turned up an actual GitHub mirror of any of these specific papers' data or code. Farronato/Fradkin, Horn/Merante, Garcia-Lopez (Barcelona), and Koster (Los Angeles) returned zero relevant hits of any kind -- likely because these are working papers/journal articles without public code releases, or their code repos are on institutional GitLab/private university servers not indexed by GitHub search or general web search. The gh CLI generic-keyword searches (zervas airbnb, airbnb hotel impact, airbnb discrimination, airbnb rent prices, airbnb replication) mostly surfaced either zero hits or a wall of unrelated Kaggle-NYC-tutorial / Airbnb-clone-website boilerplate repos, all excluded per instructions. One tangential find worth noting for a text/NLP-themed scout: airbert-vln/bnb-dataset is a genuine large-scale scrape+committed-TSV of real Airbnb listing photos and captions (Dec 2019 snapshot) built for a CVPR robotics/NLP paper, not economics -- low relevance to KPI forecasting but the one real 'data exists on GitHub' find in this theme. Recommend: if this gap matters to the pitch, the right move is direct outreach to ICPSR/journal supplemental sites rather than further GitHub search -- these papers' materials are not on GitHub."
+}

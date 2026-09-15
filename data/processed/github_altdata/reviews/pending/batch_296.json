@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:gaurav0502/us-domestic-flights",
+  "url": "https://github.com/Gaurav0502/us-domestic-flights",
+  "name": "Gaurav0502/us-domestic-flights",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Quarto EDAV project analyzing punctuality/delay patterns for 2023 flights to/from NYC-area airports (JFK, LGA, EWR), built on the R anyflights() package (which itself wraps FAA/BTS on-time feeds); data/README.md gives download instructions rather than committing raw files; 50 commits.",
+  "why_useful": "A narrow, NYC-specific 2023 flight punctuality slice \u2014 could be a cross-check for NYC-market travel-demand timing (NYC is one of the team's 13-city Inside Airbnb panel cities) but is single-year and not a stored dataset.",
+  "potential": "low",
+  "geography": "NYC airports (JFK, LGA, EWR)",
+  "time_coverage": "2023 only",
+  "size_hint": "not specified; generated via anyflights, not committed",
+  "license": "not stated",
+  "last_activity": "50 commits, date not shown",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   10,
+   8
+  ],
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "A narrow, NYC-specific 2023 flight punctuality slice \u2014 could be a cross-check for NYC-market travel-demand timing (NYC is one of the team's 13-city Inside Airbnb panel cities) but is single-year and not a stored dataset."
+  ]
+ },
+ {
+  "key": "github:mylee04/airport-now",
+  "url": "https://github.com/mylee04/airport-now",
+  "name": "mylee04/airport-now",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Live TypeScript/React/Vercel dashboard ('airport-now') aggregating real-time TSA checkpoint wait times (30 US airports, via official airport APIs/public pages), flight boards, nearby air-traffic, and crowdsourced traveler wait reports. Explicitly stores NO historical data: community reports live only in temporary Vercel runtime storage and auto-expire after 2 hours; no database, no committed dataset. Last review of its wait-source survey dated 2026-03-17. No license file found.",
+  "why_useful": "Shows there is a live TSA-wait-time aggregation source covering 30 airports that could in principle be polled going forward to build a point-in-time throughput/congestion series, but as shipped it persists nothing \u2014 any use requires standing up your own scraper against the same 30 airport APIs it lists (a TOS question, not to be run per repo rules) or reading its source for the list of underlying airport APIs it hits.",
+  "potential": "low",
+  "geography": "30 US airports",
+  "time_coverage": "live/real-time only, no history retained",
+  "size_hint": "no data committed",
+  "license": "none found",
+  "last_activity": "19 commits, wait-source survey reviewed 2026-03-17",
+  "duplicate_of_holding": "TSA throughput (daily, already held per CONTEXT.md item list) \u2014 this is finer-grained (per-checkpoint, real-time) but retains no history, so does not extend the held series",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "Shows there is a live TSA-wait-time aggregation source covering 30 airports that could in principle be polled going forward to build a point-in-time throughput/congestion series, but as shipped it persists nothing \u2014 any use requires standing up your own scraper against the same 30 airport APIs it lists (a TOS question, not to be run per repo rules) or reading its source for the list of underlying airport APIs it hits."
+  ]
+ },
+ {
+  "key": "github:vega/vega-datasets",
+  "url": "https://github.com/vega/vega-datasets",
+  "name": "vega/vega-datasets",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Widely-used vega/vega-lite example-data hub (70+ datasets) including committed flight files derived from historical BTS on-time data: flights-airport.csv (airport-pair aggregated counts), flights-3m.parquet (3 million flight records), flights-200k.arrow/json, flights-20k/10k/5k/2k.json, and airports.csv (airport metadata/coordinates). These are the well-known anonymized/sampled flight-delay teaching datasets (originating ~2001-2016 vintage per common knowledge of this dataset family) rather than a live or recent BTS pull.",
+  "why_useful": "A genuinely large, already-tidied, committed (not download-only) US flight-count/delay dataset with an airport-pair aggregation file \u2014 useful only as a structural template (schema, airport-pair aggregation pattern) since the vintage is old and not point-in-time; low direct value for a 2026 pitch.",
+  "potential": "low",
+  "geography": "US domestic, all airports",
+  "time_coverage": "Legacy vintage (dataset family originates from a fixed historical year, not refreshed)",
+  "size_hint": "flights-3m.parquet = 3,000,000 records; flights-200k, flights-airport.csv aggregated",
+  "license": "BSD-3 (vega-datasets standard license)",
+  "last_activity": "actively maintained repo (general vega ecosystem), but flight files are static/legacy",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "A genuinely large, already-tidied, committed (not download-only) US flight-count/delay dataset with an airport-pair aggregation file \u2014 useful only as a structural template (schema, airport-pair aggregation pattern) since the vintage is old and not point-in-time; low direct value for a 2026 pitch."
+  ]
+ },
+ {
+  "key": "github:jesannj/ads-b-exchange-samples",
+  "url": "https://github.com/JesanNJ/ADS-B-Exchange-Samples",
+  "name": "ADS-B-Exchange-Samples",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Scripts + processed data converting ADS-B Exchange 'trace' JSON files (from samples.adsbexchange.com) into flattened CSV. Repo description says flight trace CSVs + metadata organized by date/ICAO tail number. Small hobby repo (0 stars), single contributor, updated Jan 2026.",
+  "why_useful": "A worked method to turn ADS-B Exchange's free sample traces into per-flight CSV records (route, altitude, timestamps) -- could be adapted to proxy point-to-point flight volumes for gap #10 (airline/rail capacity) without needing an aviationstack key.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Unspecified (whatever ICAOs the author sampled)",
+  "time_coverage": "Unclear, likely a short recent window (ADS-B Exchange free samples only)",
+  "size_hint": "Small (sample-based, not full historical)",
+  "license": "unspecified",
+  "last_activity": "2026-01-14",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "A worked method to turn ADS-B Exchange's free sample traces into per-flight CSV records (route, altitude, timestamps) -- could be adapted to proxy point-to-point flight volumes for gap #10 (airline/rail capacity) without needing an aviationstack key."
+  ]
+ },
+ {
+  "key": "github:redeye-adsb/adsb-hist-snapshots-2025-08",
+  "url": "https://github.com/RedEye-adsb/adsb-hist-snapshots-2025-08",
+  "name": "adsb-hist-snapshots-2025-08",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed ADS-B Exchange readsb-hist snapshots for August 2025, described as a JSON dataset -- appears to be raw historical position/state-vector dumps for that single month.",
+  "why_useful": "A rare case of someone actually committing a month of raw ADS-B Exchange history to a repo rather than just scraping live; could be mined for a snapshot of US/global flight density in Aug 2025 as one data point for capacity gap #10, though a single month has limited standalone value.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Unspecified (global feed, likely ADS-B Exchange worldwide coverage)",
+  "time_coverage": "August 2025 only",
+  "size_hint": "Unknown, likely large raw JSON given readsb-hist format",
+  "license": "unspecified",
+  "last_activity": "2025-09-17",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "A rare case of someone actually committing a month of raw ADS-B Exchange history to a repo rather than just scraping live; could be mined for a snapshot of US/global flight density in Aug 2025 as one data point for capacity gap #10, though a single month has limited standalone value."
+  ]
+ }
+]

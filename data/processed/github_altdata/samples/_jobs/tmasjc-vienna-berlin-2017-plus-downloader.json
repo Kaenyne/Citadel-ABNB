@@ -1,0 +1,10 @@
+{
+ "slug": "tmasjc-vienna-berlin-2017-plus-downloader",
+ "url": "https://github.com/tmasjc/airbnb-market-data",
+ "category": "str_airbnb_direct",
+ "data_kind": "both",
+ "one_line": "Committed 2017 Vienna/Berlin Inside Airbnb listings.csv (~1.2MB each) plus a CLI that pulls listings.csv for dozens of live Inside Airbnb metros.",
+ "abnb_use": "2017 pre-panel vintage for gap #1, and the multi-city downloader is directly reusable to pull any live Inside Airbnb metro we don't yet hold.",
+ "sample_plan": "Pull the committed Vienna+Berlin listings.csv files, and note the downloader's city list/date-index logic for reuse; cap 5MB.",
+ "tos_or_license_flag": false
+}

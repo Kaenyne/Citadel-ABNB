@@ -1,0 +1,119 @@
+[
+ {
+  "key": "github:zverik/regional",
+  "url": "https://github.com/Zverik/regional",
+  "name": "regional (OSM extract splitting scripts)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Shell/Python scripts (43 stars, 32 commits) to cut custom polygon extracts from a full OSM planet file and keep them updated with incremental diffs \u2014 a manual, self-hosted alternative to relying solely on Geofabrik's pre-cut regional extracts.",
+  "why_useful": "Marginal: useful only if Geofabrik's existing city/region cuts don't match the exact metro polygons needed for a market (e.g. a custom Airbnb-market boundary); otherwise Geofabrik's own downloads are simpler.",
+  "potential": "low",
+  "geography": "Global (planet-file dependent)",
+  "time_coverage": "Current + incremental diffs going forward from setup date",
+  "license": "Not stated in fetch",
+  "size_hint": "N/A (tooling only)",
+  "last_activity": "Low (32 commits total, appears largely dormant)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Marginal: useful only if Geofabrik's existing city/region cuts don't match the exact metro polygons needed for a market (e.g. a custom Airbnb-market boundary); otherwise Geofabrik's own downloads are simpler."
+  ]
+ },
+ {
+  "key": "github:alexmotz/us-neighborhood-geojson",
+  "url": "https://github.com/AlexMotz/us-neighborhood-geojson",
+  "name": "AlexMotz/us-neighborhood-geojson",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "US neighborhood polygons in GeoJSON, converted from the same open-sourced Zillow Neighborhood Boundaries shapefiles.",
+  "why_useful": "Second independent mirror of the Zillow neighbourhood boundary geometry in a directly-loadable GeoJSON format for joining STR listing coordinates to neighbourhoods.",
+  "potential": "low",
+  "duplicate_of_holding": "same underlying source as mashvisor/us-neighborhoods-boundaries",
+  "size_hint": "US national",
+  "geography": "USA",
+  "time_coverage": "static, pre-2015 vintage",
+  "license": "none stated",
+  "last_activity": "2024-09-04",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "Second independent mirror of the Zillow neighbourhood boundary geometry in a directly-loadable GeoJSON format for joining STR listing coordinates to neighbourhoods."
+  ]
+ },
+ {
+  "key": "github:coddingtonbear/django-neighborhoods",
+  "url": "https://github.com/coddingtonbear/django-neighborhoods",
+  "name": "coddingtonbear/django-neighborhoods",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "both",
+  "what_it_holds": "Django app + management commands importing Zillow neighborhood boundary data for most major US cities, plus a City-of-Portland-specific boundary loader; ships as importable fixtures/loaders rather than raw files only.",
+  "why_useful": "A ready-made import/geocoding pipeline for turning point coordinates (Inside Airbnb listings, STR registry addresses) into neighbourhood names across many US metros at once.",
+  "potential": "low",
+  "size_hint": "multi-city import tool",
+  "geography": "USA (major cities) + Portland, OR",
+  "time_coverage": "static",
+  "license": "MIT",
+  "last_activity": "2023-12-11",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "A ready-made import/geocoding pipeline for turning point coordinates (Inside Airbnb listings, STR registry addresses) into neighbourhood names across many US metros at once."
+  ]
+ },
+ {
+  "key": "github:staeco/neighborhood-boundaries",
+  "url": "https://github.com/staeco/neighborhood-boundaries",
+  "name": "staeco/neighborhood-boundaries",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small MIT-licensed script that downloads and converts Zillow neighborhood boundary shapefiles to GeoJSON on demand.",
+  "why_useful": "One-command puller for the same Zillow neighbourhood geometry other repos mirror statically; useful if the canonical Zillow source URL still resolves.",
+  "potential": "low",
+  "size_hint": "tool only, no committed data",
+  "geography": "USA",
+  "time_coverage": "n/a (pulls current source)",
+  "license": "MIT",
+  "last_activity": "2019-07-17",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "One-command puller for the same Zillow neighbourhood geometry other repos mirror statically; useful if the canonical Zillow source URL still resolves."
+  ]
+ },
+ {
+  "key": "github:dnainfodata/draw-your-neighborhood",
+  "url": "https://github.com/DNAinfoData/Draw-Your-Neighborhood",
+  "name": "DNAinfoData/Draw-Your-Neighborhood",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Crowdsourced neighbourhood boundary polygons for New York City and Chicago, collected by DNAinfo's mapping project; GPL-3.0.",
+  "why_useful": "Independent, resident-drawn neighbourhood polygons for two of our 13 core Inside Airbnb cities (NYC, Chicago), an alternative to official planning-department boundaries for STR listing aggregation.",
+  "potential": "low",
+  "size_hint": "two-city polygon set",
+  "geography": "New York City, Chicago",
+  "time_coverage": "static, circa 2015 crowdsourcing vintage",
+  "license": "GPL-3.0",
+  "last_activity": "2026-01-21",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Geocoding, neighbourhood boundaries and census-tract crosswalks used for STR studies; city GIS portals with STR layers"
+  ],
+  "why_all": [
+   "Independent, resident-drawn neighbourhood polygons for two of our 13 core Inside Airbnb cities (NYC, Chicago), an alternative to official planning-department boundaries for STR listing aggregation."
+  ]
+ }
+]

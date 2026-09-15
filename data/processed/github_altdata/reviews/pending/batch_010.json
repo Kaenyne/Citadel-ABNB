@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:shwinn08/sec-form4-insider-tracker",
+  "url": "https://github.com/shwinn08/sec-form4-insider-tracker",
+  "name": "sec-form4-insider-tracker",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapes and structures SEC Form 4 insider-trading filings into a queryable SQLite database. 1 star, Python.",
+  "why_useful": "A structured (SQLite, queryable) rather than ad-hoc Form 4 pipeline -- lower-friction than scraping EDGAR by hand for ABNB officer/director transaction history around guide dates.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "not specified",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "SQLite DB schema + scraper, no pre-populated data",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "A structured (SQLite, queryable) rather than ad-hoc Form 4 pipeline -- lower-friction than scraping EDGAR by hand for ABNB officer/director transaction history around guide dates."
+  ]
+ },
+ {
+  "key": "github:codewritingcow/sec-web-scraper-13f",
+  "url": "https://github.com/CodeWritingCow/sec-web-scraper-13f",
+  "name": "sec-web-scraper-13f",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper (Requests/lxml/BeautifulSoup) that pulls a fund's 13F filings from SEC EDGAR by CIK and outputs a TSV of holdings. 48 stars.",
+  "why_useful": "Simple, moderately popular 13F-by-CIK puller; a fallback method if edgartools is overkill. Addresses gap #15.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "not specified",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "scraper only",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Simple, moderately popular 13F-by-CIK puller; a fallback method if edgartools is overkill. Addresses gap #15.",
+   "Alternate, simpler 13F puller if edgartools is overkill; same ownership-history use case as above."
+  ]
+ },
+ {
+  "key": "github:gmahama/13f-scraper",
+  "url": "https://github.com/gmahama/13f-scraper",
+  "name": "13f-scraper",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapes/parses/normalizes SEC 13F filings via CLI and Python API; lookup by fund name, CIK, or CSV upload; outputs CSV (fund name, CIK, filing period, first-time-filer flag, holdings count) and detailed holdings CSV/JSONL. First-time-filer detection, holdings-count filtering, REST API, rate-limited SEC compliance, response caching. MIT license.",
+  "why_useful": "More feature-complete 13F puller than most (first-time-filer detection is useful for spotting new institutional entrants into ABNB); addresses gap #15.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "license": "MIT",
+  "last_activity": "not specified",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "CLI/API tool",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "More feature-complete 13F puller than most (first-time-filer detection is useful for spotting new institutional entrants into ABNB); addresses gap #15."
+  ]
+ },
+ {
+  "key": "github:christianpichichero-max/pit-fundamentals",
+  "url": "https://github.com/christianpichichero-max/pit-fundamentals",
+  "name": "pit-fundamentals",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "data/pit_fundamentals_history.csv (6,969 rows), plus query_asof.py (point-in-time query tool) and check_your_data.py (lookahead-bias checker). Covers 40 large-cap US companies, 16 financial concepts, each row stamped with period_end, first_filed (public-disclosure date), lag_days, original_value, latest_value, restated flag. ~12 years of revenue history per company. Source: SEC EDGAR (public domain), CC0-licensed. Rebuilt 7 Sep 2026, 36 commits.",
+  "why_useful": "Directly implements gap #4's method (point-in-time fundamentals with no lookahead bias) as a reusable, license-clean pattern; even if ABNB/OTAs are not among the 40 tickers (unconfirmed), the query_asof.py + methodology is a ready-made PIT harness we could apply to ABNB's own EDGAR filings, which is exactly the discipline our CLAUDE.md rule #2 already requires.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "geography": "US",
+  "time_coverage": "~12 years per company, rebuilt Sep 2026",
+  "size_hint": "6,969 rows, 40 companies, 16 concepts",
+  "license": "CC0",
+  "last_activity": "2026-09-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Directly implements gap #4's method (point-in-time fundamentals with no lookahead bias) as a reusable, license-clean pattern; even if ABNB/OTAs are not among the 40 tickers (unconfirmed), the query_asof.py + methodology is a ready-made PIT harness we could apply to ABNB's own EDGAR filings, which is exactly the discipline our CLAUDE.md rule #2 already requires."
+  ]
+ },
+ {
+  "key": "other:https://www.dolthub.com/repositories/post-no-preference/earnings",
+  "url": "https://www.dolthub.com/repositories/post-no-preference/earnings",
+  "name": "post-no-preference/earnings (DoltHub)",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A Dolt (git-for-data) database on DoltHub described as holding \"historical revenue and EPS estimates... data goes back to 2018 and is recorded weekly\" \u2014 i.e. weekly-vintage analyst consensus snapshots, versioned like git commits so any past vintage is queryable/diffable. Not on GitHub itself but Dolt repos are git-clonable and DoltHub is a public, free host.",
+  "why_useful": "If it covers ABNB/BKNG/EXPE, this is close to a direct hit on gap #4 (historical analyst-consensus snapshots with true point-in-time versioning via Dolt's commit history) \u2014 worth a follow-up check of ticker coverage since ABNB has only traded since Dec 2020.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "geography": "US-listed companies (coverage unconfirmed)",
+  "time_coverage": "2018-present, weekly vintages",
+  "size_hint": "unconfirmed row count",
+  "license": "unconfirmed",
+  "last_activity": "unconfirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "If it covers ABNB/BKNG/EXPE, this is close to a direct hit on gap #4 (historical analyst-consensus snapshots with true point-in-time versioning via Dolt's commit history) \u2014 worth a follow-up check of ticker coverage since ABNB has only traded since Dec 2020."
+  ]
+ }
+]

@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:api-evangelist/thinknum",
+  "name": "api-evangelist/thinknum",
+  "url": "https://github.com/api-evangelist/thinknum",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "API Evangelist's independent write-up of Thinknum's alternative-data platform surface: job listings, store locations, product pricing, web traffic, app reviews, social engagement metrics tracked across companies. Descriptive markdown only, no data or working client.",
+  "why_useful": "Thinknum tracks exactly the kind of company-level web/app/job-posting metrics relevant to gaps 5 (engagement, app rankings) and 15 (job-posting trackers as headcount proxy for Airbnb) \u2014 worth knowing the product exists, but this repo has zero committed data and the real Thinknum product is paid/enterprise.",
+  "potential": "low",
+  "size_hint": "markdown docs only",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   5,
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Thinknum tracks exactly the kind of company-level web/app/job-posting metrics relevant to gaps 5 (engagement, app rankings) and 15 (job-posting trackers as headcount proxy for Airbnb) \u2014 worth knowing the product exists, but this repo has zero committed data and the real Thinknum product is paid/enterprise."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/apptopia",
+  "name": "api-evangelist/apptopia",
+  "url": "https://github.com/api-evangelist/apptopia",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "API Evangelist profile describing Apptopia's app-market-intelligence product: app download/revenue/usage/ratings/SDK-adoption estimates across iOS App Store, Google Play, Tencent, Xiaomi, Mobile 360 stores. Markdown description only, no data, no working client, no free tier documented.",
+  "why_useful": "Apptopia-style app download/usage estimates for the Airbnb app would directly address gap 5 (engagement: app downloads/rankings history), but this repo is descriptive only \u2014 it confirms the product exists and roughly what it covers, nothing pullable.",
+  "potential": "low",
+  "size_hint": "markdown docs only",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Apptopia-style app download/usage estimates for the Airbnb app would directly address gap 5 (engagement: app downloads/rankings history), but this repo is descriptive only \u2014 it confirms the product exists and roughly what it covers, nothing pullable."
+  ]
+ },
+ {
+  "key": "github:pirsquare/similarweb-python",
+  "name": "pirsquare/SimilarWeb-Python",
+  "url": "https://github.com/pirsquare/SimilarWeb-Python",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Alternative Python client for the SimilarWeb API (traffic, referrals, apps). No committed data; requires a paid key.",
+  "why_useful": "Same use case as danwagnerco/similarweb (gap 5), included for redundancy/fallback in case one client is unmaintained against current API changes.",
+  "potential": "low",
+  "size_hint": "small Python package, no data",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2025-12-13",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "danwagnerco/similarweb (same purpose, less starred)",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Same use case as danwagnerco/similarweb (gap 5), included for redundancy/fallback in case one client is unmaintained against current API changes."
+  ]
+ },
+ {
+  "key": "github:chat-data-llc/shopify_store_traffic_api",
+  "name": "chat-data-llc/shopify_store_traffic_api",
+  "url": "https://github.com/chat-data-llc/shopify_store_traffic_api",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Script using an unofficial/reverse-engineered SimilarWeb endpoint to pull traffic estimates for Shopify stores specifically (no general-domain support out of the box), no data committed, 61 stars.",
+  "why_useful": "Demonstrates a free/unofficial SimilarWeb scrape path (no paid key) but is scoped to Shopify storefronts, not applicable to airbnb.com without rewriting; flagged only as a proof that an unofficial-endpoint route exists.",
+  "potential": "low",
+  "size_hint": "small script, no data",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-07-12",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Demonstrates a free/unofficial SimilarWeb scrape path (no paid key) but is scoped to Shopify storefronts, not applicable to airbnb.com without rewriting; flagged only as a proof that an unofficial-endpoint route exists."
+  ]
+ },
+ {
+  "key": "github:thinknum/client-js",
+  "url": "https://github.com/thinknum/client-js",
+  "name": "thinknum/client-js",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Thinknum's official JavaScript API client for their Alternative Data platform (web-scraped job listings, app rankings, web traffic estimates, etc. sold as a paid product). No data files; last pushed 2021-12-22.",
+  "why_useful": "Documents Thinknum's exact API surface (useful if the team ever gets trial/paid access) but provides no free data itself; low value as a pure GitHub catalogue entry.",
+  "potential": "low",
+  "size_hint": "client library only",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "last_activity": "2021-12-22",
+  "license": "unclear",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Documents Thinknum's exact API surface (useful if the team ever gets trial/paid access) but provides no free data itself; low value as a pure GitHub catalogue entry."
+  ]
+ }
+]

@@ -1,0 +1,12 @@
+{
+  "theme": "Consumer sentiment and surveys: UMich, Conference Board, NY Fed SCE, EU consumer confidence, travel-intent surveys (Longwoods, Destination Analysts, MMGY) scraped",
+  "modality": "web",
+  "candidates": [],
+  "queries_run": [
+    "site:github.com University of Michigan consumer sentiment data csv",
+    "github repository \"consumer confidence\" survey dataset csv scraped",
+    "github \"NY Fed\" \"survey of consumer expectations\" data python client",
+    "github travel intent survey Destination Analysts data"
+  ],
+  "notes": "SESSION FAILURE, not a null result: this scout's WebSearch tool budget was already exhausted (200 of 200 WebSearch calls used) before this session ran any query of its own. All four attempted WebSearch calls returned an error ('this session has used its web search budget') and zero actual search results were returned or reviewed. No WebFetch verification was attempted since no candidate URLs were ever surfaced. This is a hard tooling block, not evidence that no relevant repos exist for this theme. RECOMMEND: re-run this theme (Consumer sentiment and surveys: UMich, Conference Board, NY Fed SCE, EU consumer confidence, Longwoods/Destination Analysts/MMGY travel-intent surveys) in a fresh session/session pool with an unspent WebSearch budget, or via the gh-search modality pool if capacity allows. Starting query ideas for the retry: 'site:github.com university michigan consumer sentiment index csv', 'NY Fed SCE microdata github', 'conference board consumer confidence index scraper github', 'eurostat consumer confidence indicator github repo', 'MMGY travel intelligence data github', 'longwoods international travel intentions data', '\"travel sentiment\" survey dataset github', 'awesome economic indicators datasets github consumer confidence'."
+}

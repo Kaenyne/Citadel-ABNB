@@ -1,0 +1,56 @@
+{
+  "theme": "Reddit dumps and tooling: Pushshift archives, r/airbnb r/AirBnBHosts r/travel datasets, Airbnb Community Center scrapes, host forum datasets",
+  "modality": "gh",
+  "candidates": [
+    {
+      "url": "https://github.com/ArthurHeitmann/arctic_shift",
+      "name": "arctic_shift",
+      "category": "social_text_news",
+      "data_kind": "both",
+      "what_it_holds": "Post-Pushshift-shutdown Reddit data mirror: full historical Reddit submissions+comments as bulk dumps (.zst/.zst_blocks and .jsonl/.json), a live-updating API, and a web search UI. No hard-coded subreddit allowlist -- covers all public subreddits including r/airbnb, r/AirBnBHosts, r/travel, r/vrbo, r/AirBnB (host-side) once filtered from the dumps or queried via the API by subreddit name; includes a separate tool for smaller subreddits / per-user pulls. 1,514 stars, updated 14 Sep 2026 (actively maintained), no explicit license file found.",
+      "why_useful": "Gap #14 (Reddit text/social for host/guest sentiment, complaint volume, cancellation/RNPL chatter). This is the main living successor to Pushshift after its 2023 API shutdown -- gives a genuinely current, queryable route to pull r/airbnb, r/AirBnBHosts, r/travel post/comment history (volume, sentiment, keyword trends) rather than a frozen historical dump, which is exactly the kind of point-in-time-extendable text source the team lacks.",
+      "potential": "high",
+      "gap_targets": [14],
+      "size_hint": "full Reddit corpus (submissions+comments, all public subreddits); bulk dumps are multi-TB, filterable to any subreddit",
+      "time_coverage": "Reddit's full history through present (actively updated)",
+      "geography": "global (Reddit, English-language dominant)",
+      "license": "none declared",
+      "last_activity": "2026-09-14",
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/Watchful1/PushshiftDumps",
+      "name": "PushshiftDumps",
+      "category": "social_text_news",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "MIT-licensed Python scripts (single-file processor, folder batch-processor, multiprocess filter-and-export tool) for reading the pre-shutdown Pushshift .zst dump files and filtering by subreddit/keyword/date, exporting matches to text and recompressing. The actual dumps (all subreddits, historical, up to the 2023 API shutdown) are pointed to via Academic Torrents (https://academictorrents.com/details/30dee5f0406da7a353aff6a8caa2d54fd01f2ca1). 507 stars, MIT license, updated 13 Sep 2026.",
+      "why_useful": "Gap #14. Gives a working, well-used (507-star) toolchain to extract r/airbnb, r/AirBnBHosts, r/travel post/comment history from the canonical historical Pushshift archive (through ~2023) via torrent, complementing arctic_shift's live coverage with the frozen historical base period.",
+      "potential": "medium",
+      "gap_targets": [14],
+      "size_hint": "points to full historical Pushshift dump set (multi-TB) via Academic Torrents; scripts themselves are small",
+      "time_coverage": "Reddit history through ~2023 (Pushshift API shutdown)",
+      "geography": "global",
+      "license": "MIT",
+      "last_activity": "2026-09-13",
+      "duplicate_of_holding": ""
+    }
+  ],
+  "queries_run": [
+    "gh search repos: pushshift reddit dump",
+    "gh search repos: airbnb community center scrape",
+    "gh search repos: reddit airbnb dataset",
+    "gh search repos: r/airbnb reddit (sort updated)",
+    "gh search repos: pushshift reddit airbnb",
+    "gh search repos: pushshift dump (sort stars)",
+    "WebSearch: site:github.com reddit dataset airbnb hosts scrape (blocked, session budget exhausted)",
+    "WebSearch: site:github.com airbnb community center scraper OR forum dataset (blocked, session budget exhausted)",
+    "WebSearch: site:github.com pushshift subreddit dump AirBnBHosts/r-airbnb/r-travel (blocked, session budget exhausted)",
+    "WebFetch: github.com/search?q=pushshift+airbnb (429 rate limited)",
+    "WebFetch: raw README of Watchful1/PushshiftDumps",
+    "WebFetch: raw README of ArthurHeitmann/arctic_shift",
+    "WebFetch: raw README of dmarx/psaw (404, repo/path does not exist as guessed)",
+    "gh api repos/ArthurHeitmann/arctic_shift",
+    "gh api repos/Watchful1/PushshiftDumps"
+  ],
+  "notes": "gh search repos found essentially nothing directly on this theme -- zero hits for 'reddit airbnb dataset', 'airbnb community center scrape', 'r/airbnb reddit', and 'pushshift reddit airbnb'; the only signal came from a generic 'pushshift dump' query. The GitHub repo search index appears to have very little indexed specifically for 'Airbnb + Reddit' as a combined dataset -- most likely because nobody has committed a pre-scraped r/airbnb or r/AirBnBHosts corpus to a repo (Reddit ToS discourages redistributing scraped Reddit content as a dataset, so people instead publish tooling/pointers, which is what we found). Both WebSearch (session-wide budget of 200 exhausted, shared across other scout agents) and a generic GitHub web search page (429 rate-limited) were unavailable for broader triangulation, which likely means real candidates were missed, e.g. any dedicated Airbnb Community Center (community.withairbnb.com) scraper, or an r/AirBnBHosts-specific sentiment repo, or PRAW-based one-off scripts that don't surface on 'pushshift'/'community center' keyword search. I did not find any repo holding a pre-built r/airbnb, r/AirBnBHosts, or r/travel-specific committed dataset, nor any Airbnb Community Center scraper repo -- only two general-purpose Reddit-wide tools (arctic_shift, PushshiftDumps) that would need to be pointed at those subreddits by a future workstream. Recommend a follow-up scout with a fresh WebSearch budget try queries like 'site:github.com \"community.withairbnb.com\" scraper', 'site:github.com PRAW airbnb', and 'site:github.com \"AirBnBHosts\"' once the shared budget resets, and also try gh search topics=reddit-dataset / topics=pushshift for repos not matched by free-text description."
+}

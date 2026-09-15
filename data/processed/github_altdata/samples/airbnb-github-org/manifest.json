@@ -1,0 +1,20 @@
+{
+  "slug": "airbnb-github-org",
+  "url": "https://github.com/airbnb",
+  "sampled": true,
+  "total_bytes": 1317001,
+  "files": ["airbnb_org_repos.json", "airbnb_org_repos.csv", "commits_chronon.csv", "commits_viaduct.csv"],
+  "rows": "airbnb_org_repos.json/.csv: 204 repos (full org, not a head); commits_chronon.csv: 575; commits_viaduct.csv: 1,594",
+  "columns": "repos: name, full_name, created_at, pushed_at, updated_at, language, stargazers_count, forks_count, open_issues_count, archived, fork, size, description, html_url, license; commits: sha, author_date, committer_date",
+  "date_range": "repos created_at 2011-04-07 to 2026-08-31, pushed_at 2011-04-12 to 2026-09-14; chronon commits 2023-12-09 to 2026-09-09; viaduct commits 2025-08-06 to 2026-09-14",
+  "how_pulled": "gh api \"orgs/airbnb/repos?per_page=100&sort=pushed&direction=desc\" --paginate > airbnb_org_repos.json; gh api \"repos/airbnb/<chronon|viaduct>/commits?per_page=100&since=2024-01-01T00:00:00Z\" --paginate --jq '.[] | [.sha, .commit.author.date, .commit.committer.date] | @csv' > commits_<repo>.csv; python/pandas reduced JSON to CSV (license flattened to spdx_id)",
+  "full_dataset_size": "Repo metadata is already complete (204 repos, 1.1 MB JSON). Full commit/event history for all 204 repos would be ~100-300k commits via REST (tens of MB) or via GH Archive (hourly gzipped JSON of all public GitHub events since 2011, ~tens of TB total; BigQuery githubarchive dataset queryable by org for pennies).",
+  "description": "Repo-level metadata for every public repository in Airbnb's verified GitHub organisation (one row per repo: creation, last push, language, stars, archived/fork flags, licence) plus per-commit timestamps since 2024 for the two most active repos (chronon ML feature platform, viaduct GraphQL/data platform). Source is the keyless GitHub REST API via gh. An ABNB analyst would build a yearly new-repo-creation and push-cadence series (creation peaked 2016 at 36 repos, fell to 2 in 2023, then 4-5/yr in 2025-26; pushes 47 in 2023 were mostly archiving) as a crude proxy for engineering headcount and R&D direction, feeding the opex/adj. EBITDA-margin narrative, not the revenue forecast.",
+  "issues": "Metadata is a current snapshot, not point-in-time (stars, archived flag, pushed_at overwrite); only created_at is a true historical stamp. 82 of 204 repos are forks and 24 are archived, so activity counts need filtering. Public OSS activity is a small, unrepresentative slice of Airbnb engineering; commit dates in viaduct cluster on bot/CI commits. No licence concern: GitHub API metadata is public; individual repos carry their own licences (mostly MIT/Apache-2.0).",
+  "source_urls": [
+    "https://api.github.com/orgs/airbnb/repos?per_page=100&sort=pushed&direction=desc",
+    "https://api.github.com/repos/airbnb/chronon/commits?per_page=100&since=2024-01-01T00:00:00Z",
+    "https://api.github.com/repos/airbnb/viaduct/commits?per_page=100&since=2024-01-01T00:00:00Z"
+  ],
+  "pulled_at": "2026-09-14"
+}

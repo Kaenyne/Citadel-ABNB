@@ -1,0 +1,82 @@
+{
+  "theme": "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"spendingpulse\" --sort stars",
+    "gh search repos \"cross border card spending\" --sort stars",
+    "gh search repos \"opportunity insights economic tracker\" --sort stars",
+    "gh search repos \"tourism receipts balance of payments\" --sort stars",
+    "gh search repos \"remittance data world bank\" --sort stars",
+    "gh search repos \"card spending data\" --sort stars",
+    "gh search repos \"UNWTO tourism statistics\" --sort stars",
+    "gh search repos \"IMF balance of payments data\" --sort stars",
+    "gh api repos/OpportunityInsights/EconomicTracker/contents/data (directory listing)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/OpportunityInsights/EconomicTracker",
+      "name": "OpportunityInsights/EconomicTracker",
+      "category": "macro_consumer_spend",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "The Opportunity Insights / Track the Recovery data repo (341 stars, updated 12 Sep 2026 — actively maintained). data/ folder has committed CSVs: 'Affinity - National/State/County/City - Daily.csv' and matching '- Monthly.csv' (Affinity Solutions credit/debit card spend index by geography, spend_all plus category cuts including accommodation/food-services and durables/apparel/etc.), 'Affinity Income Shares' and 'Affinity Industry Composition' national breakdowns, plus companion Womply (small-business revenue/merchants open), Google Mobility, Employment (Paychex/Intuit), Job Postings (Burning Glass/Indeed), UI Claims panels at national/state/county/city grain. Daily coverage runs from Jan 2020 through (per file naming) at least 2023 for COVID files; Affinity spend files are longer-running. This is exactly the 'Opportunity Insights Economic Tracker card spend' target named in CONTEXT.md gap #6.",
+      "why_useful": "Directly fills numbered gap 6 (public consumer card-spend panels) — the Affinity Solutions series is a real credit/debit card transaction index with an accommodation/food-services category cut at daily/weekly grain down to city level; could proxy US travel/lodging spend momentum ahead of ABNB's NA nights print, and the repo pulls are one-command (git clone / raw CSV fetch) so it's point-in-time-able by commit history.",
+      "potential": "high",
+      "gap_targets": [6],
+      "duplicate_of_holding": "",
+      "geography": "US (national, state, county, city)",
+      "time_coverage": "~Jan 2020 – ongoing (Affinity Daily/Monthly files); COVID-specific files run 2020-2023",
+      "size_hint": "Dozens of CSVs, city/county-level daily files likely 10k-100k+ rows each; repo updated as recently as 12 Sep 2026",
+      "last_activity": "2026-09-12",
+      "license": "unspecified in gh metadata (check repo LICENSE file before reuse)"
+    },
+    {
+      "url": "https://github.com/n8n-code/n8n-nodes-mastercard-spendingpulse",
+      "name": "n8n-code/n8n-nodes-mastercard-spendingpulse",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "An n8n workflow-automation custom node wrapping the Mastercard SpendingPulse API to pull 'monthly sales volume and growth rate data' (retail sales, category cuts) into automation pipelines. No data committed — it's a thin API client requiring a paid Mastercard developer key.",
+      "why_useful": "Could be a template for how to call the SpendingPulse API programmatically if the team ever gets Mastercard developer credentials, but SpendingPulse itself is licensed/paid and the CLAUDE.md rules bar paid API keys — flagging as a method pointer only, not directly actionable now.",
+      "potential": "low",
+      "gap_targets": [6],
+      "duplicate_of_holding": "",
+      "geography": "US (SpendingPulse is US-focused)",
+      "time_coverage": "n/a (live API wrapper, no historical data bundled)",
+      "size_hint": "Small code repo, no data",
+      "last_activity": "2026-06-13",
+      "license": "unspecified"
+    },
+    {
+      "url": "https://github.com/perusworld/mcdevapi-spendingpulse-refimpl-web",
+      "name": "perusworld/mcdevapi-spendingpulse-refimpl-web",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Old (2016) Mastercard Developer API reference implementation (Angular/Web) for the SpendingPulse product — shows request/response shapes for the paid API, no data files, no live data (API almost certainly deprecated/changed since 2016).",
+      "why_useful": "Marginal: illustrates historical SpendingPulse API schema (retail category, YoY growth) but stale, requires paid credentials, and CLAUDE.md forbids paid API keys — kept only as a documentation curiosity.",
+      "potential": "low",
+      "gap_targets": [6],
+      "duplicate_of_holding": "",
+      "geography": "US",
+      "time_coverage": "n/a",
+      "size_hint": "Small code repo",
+      "last_activity": "2016-11-15",
+      "license": "MIT"
+    },
+    {
+      "url": "https://github.com/perusworld/mcdevapi-spendingpulse-refimpl-springboot",
+      "name": "perusworld/mcdevapi-spendingpulse-refimpl-springboot",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Sibling Spring-Boot/Maven backend reference implementation for the same Mastercard SpendingPulse API (no data files committed).",
+      "why_useful": "Same as the web variant above — a stale API-schema reference only, not a usable data source without paid credentials.",
+      "potential": "low",
+      "gap_targets": [6],
+      "duplicate_of_holding": "duplicate of perusworld/mcdevapi-spendingpulse-refimpl-web (same product, different tech stack)",
+      "geography": "US",
+      "time_coverage": "n/a",
+      "size_hint": "Small code repo",
+      "last_activity": "2017-01-04",
+      "license": "unspecified"
+    }
+  ],
+  "notes": "SpendingPulse itself has almost no open-data footprint on GitHub — every hit is either a paid-API reference implementation/wrapper (no committed data, and CLAUDE.md forbids paid API keys so these are dead ends for this project) or an unrelated personal/company repo named 'SpendingPulse'. Direct searches for 'balance of payments travel receipts', 'cross border card spending', 'tourism receipts balance of payments', 'remittance data world bank', and 'IMF balance of payments data' returned zero relevant repos (either empty or off-topic). 'card spending data' returned only generic Kaggle-style credit-card EDA/ML-boilerplate notebooks (excluded per instructions — single static demographic datasets, no travel/tourism angle, no time series). The one genuinely strong find was Opportunity Insights/EconomicTracker, which is explicitly named as a gap-6 target in CONTEXT.md and is actively maintained with committed CSVs (Affinity Solutions card-spend panel) at national/state/county/city grain — worth a follow-up scout pass specifically on its Data Dictionary to see if 'Accommodation and Food Services' or travel-specific category cuts are broken out separately, and whether the daily series has continued past 2023 into 2025-2026 (the repo's last commit is 12 Sep 2026, suggesting it may still be live). Given the near-total absence of open Visa/Mastercard/Stripe/Adyen/remittance/BOP data on GitHub, this theme is largely a dead end for GitHub-hosted data specifically; the underlying public series (IMF BOP travel receipts, World Bank remittance data, ECB/BIS card payment statistics, UNWTO tourism receipts) exist as direct government/IGO downloads rather than GitHub mirrors — worth flagging to the orchestrator that a non-GitHub scout (direct API/bulk-download) would serve this theme far better than GitHub search."
+}

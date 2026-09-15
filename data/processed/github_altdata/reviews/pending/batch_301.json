@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:aydanadkins/tourism-pressure-index",
+  "url": "https://github.com/aydanadkins/tourism-pressure-index",
+  "name": "tourism-pressure-index",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Described as \"Global tourism built from World Bank, UNWTO, and UNEP data\" (a tourism-pressure/overtourism index). README content did not render fully on fetch (likely image/badge-heavy or data pulled live from World Bank/UNWTO/UNEP APIs rather than committed) \u2014 needs manual verification of whether source files are committed or pulled at runtime.",
+  "why_useful": "Potential ready-made global UNWTO/World Bank arrivals panel (multi-country, multi-year) already cleaned and joined; would need inspection to confirm which countries/years are covered and whether raw source files are committed vs. just an index output.",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   4
+  ],
+  "geography": "Global",
+  "time_coverage": "not confirmed",
+  "size_hint": "not confirmed",
+  "license": "not confirmed",
+  "last_activity": "2026-05-29",
+  "duplicate_of_holding": "Likely overlaps wbgapi/WDI UNWTO-sourced data; only useful if it commits raw per-country files not otherwise easy to pull",
+  "hits": 2,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "Potential ready-made global UNWTO/World Bank arrivals panel (multi-country, multi-year) already cleaned and joined; would need inspection to confirm which countries/years are covered and whether raw source files are committed vs. just an index output.",
+   "If it combines UNWTO arrivals with World Bank population/GDP and UNEP environmental-pressure data into a country panel, it could be a cross-check for regional travel-volume trends (LatAm/APAC gap #7); unverified so flagged low until content is confirmed."
+  ]
+ },
+ {
+  "key": "github:xemarap/eustatspy",
+  "url": "https://github.com/xemarap/eustatspy",
+  "name": "xemarap/eustatspy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python wrapper for the Eurostat APIs, 2 stars, updated 2026-02-22, MIT.",
+  "why_useful": "Another lightweight Eurostat client option for tour_occ/tour_ce pulls; low differentiation from pyrostat/opensdmx but recently updated.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2026-02-22",
+  "geography": "EU",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Another lightweight Eurostat client option for tour_occ/tour_ce pulls; low differentiation from pyrostat/opensdmx but recently updated."
+  ]
+ },
+ {
+  "key": "github:deepwaterpaladin/eurostatpy",
+  "url": "https://github.com/deepwaterpaladin/eurostatpy",
+  "name": "deepwaterpaladin/eurostatpy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Basic package for querying/downloading Eurostat data by dataset name or ID, 2 stars, updated 2026-08-11, Apache-2.0.",
+  "why_useful": "Another small, recently-touched Eurostat downloader; redundant with pyrostat but worth noting as a fallback.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "2026-08-11",
+  "geography": "EU",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Another small, recently-touched Eurostat downloader; redundant with pyrostat but worth noting as a fallback."
+  ]
+ },
+ {
+  "key": "github:opus-42/eurostat-api-client",
+  "url": "https://github.com/opus-42/eurostat-api-client",
+  "name": "opus-42/eurostat-api-client",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small, simple Python client (7 stars, updated 20 Mar 2026, Apache-2.0) to query the Eurostat REST API; minimal feature set compared to pyrostat/restatapi.",
+  "why_useful": "Another candidate Eurostat client; low differentiation, included for completeness/fallback.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "2026-03-20",
+  "geography": "EU",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Another candidate Eurostat client; low differentiation, included for completeness/fallback.",
+   "Lightweight fallback Eurostat client if the official packages are too heavy; marginal incremental value over rOpenGov/eurostat and pyrostat above."
+  ]
+ },
+ {
+  "key": "github:maschinenlesbar-org/destatis-genesis-cli",
+  "url": "https://github.com/maschinenlesbar-org/destatis-genesis-cli",
+  "name": "maschinenlesbar-org/destatis-genesis-cli",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "TypeScript API client and CLI for the DESTATIS GENESIS-Online REST API (official German federal statistics), updated 2026-09-11, AGPL-3.0.",
+  "why_useful": "Non-Python but current, actively maintained CLI for the same German tourism-relevant statistics tables as above; a fallback/alternate implementation.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "license": "AGPL-3.0",
+  "last_activity": "2026-09-11",
+  "geography": "Germany",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Non-Python but current, actively maintained CLI for the same German tourism-relevant statistics tables as above; a fallback/alternate implementation."
+  ]
+ }
+]

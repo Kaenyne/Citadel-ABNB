@@ -1,0 +1,10 @@
+{
+ "slug": "sec-data-xbrl-quarterly-segment-builder",
+ "url": "https://github.com/baimmm6767/sec-data",
+ "category": "company_filings_estimates",
+ "data_kind": "both",
+ "one_line": "Very new, low-adoption Apache-2.0 engine (2 stars, 130 commits, last push 12 Sep 2026) that turns EDGAR XBRL into modelling-ready CSV/Excel financials with discrete-quarter reconstruction from YTD values, business/geographic segment extraction and accounting-identity repairs; ships output-examples/ with 7 real CSVs (AAPL, AMZN, GOOGL, HOOD, MA, PLTR, UBER; 49-124 KB each, ~640 KB total).",
+ "abnb_use": "Gap 15 and the peer/regional work: the Q4 = FY minus 9M derivation and the geographic-segment extractor are exactly the mechanics needed to rebuild quarterly and by-region financials for BKNG/EXPE/MAR/HLT from XBRL; the committed UBER/HOOD example CSVs show the output schema (line items, segments, per-quarter columns) without running anything.",
+ "sample_plan": "Sparse checkout of the examples and the core module: git clone --depth 1 --filter=blob:none --sparse https://github.com/baimmm6767/sec-data.git && cd sec-data && git sparse-checkout set output-examples README.md (add the extraction package dir if the tree names one). ~1 MB total; the 7 example CSVs are the deliverable, do not run the crawler.",
+ "tos_or_license_flag": false
+}

@@ -1,0 +1,98 @@
+== V1_download_vintage2023.py --verify-only
+14:03:23 114 files planned, 4.88 GB
+14:03:23 manifest C:\Users\krish\citadel-abnb-ghcat\data\processed\q3nowcast_v2\E\raw_manifest_vintage2023.csv 114 rows; size_match all: True
+== V1_download_vintage2023.py exit 0 in 1s
+== V2_review_counts_two_folders.py --workers 3
+14:03:23 seeded 0 cache files from C:\Users\krish\citadel-abnb-q3nowcast\data\processed\q3nowcast\E\cache (958 now in cache)
+14:03:23 479 reviews files across 2 folders
+14:03:23 479 cached, 0 to count afresh
+14:03:27 cached [100/479]
+14:03:31 cached [200/479]
+14:03:38 cached [300/479]
+14:03:43 cached [400/479]
+14:03:46 market_vintage_monthly.csv 60811 rows, 123 markets, 479 market-vintages; failed []
+14:03:49 market_vintage_daily.csv 794595 rows
+14:03:49 v1 consistency: v1 49243 rows, v2 held 49512 rows, mismatched 269
+== V2_review_counts_two_folders.py exit 0 in 27s
+== V3_build_index.py 
+14:03:50 loaded 60811 market-vintage-months, 123 markets, 479 vintages
+14:03:53 survivorship_wedge.csv 81296 rows, 123 markets
+14:03:53 posting_lag_curve.csv 1159 rows
+14:03:55 market_monthly_yoy.csv 60822 rows; vintage-matched markets 120
+14:03:57 region_monthly_index.csv 2032 rows
+14:03:58 global_monthly_index.csv 508 rows
+14:03:58 index_quarterly.csv 1008 rows
+== V3_build_index.py exit 0 in 9s
+== V4_tests_T1_T2.py 
+14:03:59 2023 vintage markets 114, held 2025 vintage markets 120, both 114
+T1 wedge constancy (pooled review-weighted within-vintage y/y, Mar 2022 to Feb 2023)
+ scope  n_markets  n_pairs  yoy_2023_vintage_pct  yoy_2025_vintage_pct  diff_pp  equal_wt_diff_pp  line_pp  pass
+GLOBAL        114     1357                 90.41                 80.45    -9.96            -10.28      2.0 False
+  APAC         15      177                 80.22                 73.64    -6.58            -15.92      3.0 False
+  EMEA         55      657                115.27                103.73   -11.54             -8.43      3.0 False
+ LatAm          5       60                129.41                113.98   -15.42            -12.34      3.0 False
+   NAM         39      463                 55.77                 44.29   -11.48            -10.47      3.0 False
+T2 attrition extension (pooled n_late / n_2023, review months aged 26-40 months at the 2025 dump)
+ scope late_vintage  age_lo  age_hi  n_markets  n_pairs  n_early  n_late  pooled_ratio  median_ratio  mean_gap_months  band_lo  band_hi  pass  overall_pass  annualised_retention
+GLOBAL         2025      26      40        114     1246 11728878 7745185         0.660         0.666           28.901     0.75      0.9 False         False                 0.842
+  APAC         2025      26      40         15      164  1624179 1114510         0.686         0.683           28.707     0.75      0.9 False         False                 0.854
+  EMEA         2025      26      40         55      602  6074674 4163324         0.685         0.697           28.977     0.75      0.9 False         False                 0.855
+ LatAm         2025      26      40          5       55   767178  486867         0.635         0.658           29.000     0.75      0.9 False         False                 0.828
+   NAM         2025      26      40         39      425  3262847 1980484         0.607         0.636           28.856     0.75      0.9 False         False                 0.813
+table 2.2 extension, 2023 -> 2025 vintage (gap about 29 months):
+ months_before_early_dump  n_pairs  pooled_ratio  median_ratio  annualised_retention
+                        1       97         0.626         0.654                 0.824
+                        3      114         0.629         0.650                 0.825
+                        6      114         0.665         0.665                 0.844
+                       12      114         0.682         0.697                 0.853
+                       18      114         0.708         0.713                 0.866
+                       24      114         0.692         0.711                 0.858
+                       36      114         0.709         0.717                 0.867
+                       48      114         0.729         0.731                 0.877
+                       60      114         0.739         0.747                 0.882
+== V4_tests_T1_T2.py exit 0 in 3s
+== V5_nyc_ll18_bracket.py 
+14:04:07 2023-03-06: 1,110,024 reviews, 32,627 listings, dates 2009-04-13 to 2023-03-06
+14:04:07 2025-09-01: 980,152 reviews, 25,009 listings, dates 2009-05-25 to 2025-09-01
+14:04:07 2026-08-10: 994,127 reviews, 21,925 listings, dates 2009-05-25 to 2026-08-20
+                                                                                               item          value
+r_pre: pooled 2025/2023 ratio, Sep 2022 to Jan 2023 (NYC pre-LL18 history attrition as of Sep 2025)       0.433841
+                                                            n pre months in 2023 vintage (complete)              5
+                                                         reviews Sep 2022 to Jan 2023, 2023 vintage         158747
+                                                         reviews Sep 2022 to Jan 2023, 2025 vintage          68871
+                                                        reviews Feb to Aug 2023, 2025 vintage (raw)         108996
+                                         A: pre-LL18 flow Sep 2022 to Aug 2023, attrition-corrected   409981.74339
+                                                            A raw in the 2025 vintage (uncorrected)         177867
+                                          B raw: post flow Sep 2023 to Aug 2024 in the 2025 vintage         120504
+                                                     r_post used (E table 2.2, 12-24 month history)           0.86
+                        r_post NYC-specific sensitivity (2026-08 / 2025-09 on Sep 2023 to Aug 2024)       0.870228
+                                                              B: post flow corrected by r_post 0.86  140120.930233
+                                                      B: post flow corrected by NYC-specific r_post  138473.995537
+                                                                    T3 = B/A - 1, percent (primary)     -65.822641
+                                                   T3 sensitivity with NYC-specific r_post, percent     -66.224351
+                                     T3 uncorrected (both windows raw in the 2025 vintage), percent     -32.250502
+                                                                              pass band lo, percent          -70.0
+                                                                              pass band hi, percent          -40.0
+                                                                      T3 PASS (primary inside band)           True
+                              CRA guest-nights benchmark, percent (Sep 2023-Aug 2024 vs prior year)     -56.097561
+         cross-check: Kaggle Jan 2024 file reviews_ltm sum (Jan 2023 to Jan 2024, as of 5 Jan 2024)         225268
+                                            cross-check: same window counted in the 2025-09-01 dump         161016
+                                                       cross-check: ratio 2025 dump / Jan 2024 file       0.714775
+      date  listings_reviewed_ltm  min30_share  entire_share  licensed_n  reviews_ltm_sum  review_flow_12m
+2023-03-06                21456.0          NaN           NaN         NaN           331374       331374.000
+2023-08-31                    NaN          NaN           NaN         NaN           177867       409981.743
+2024-01-05                16148.0        0.851         0.556      1054.0           225268       225268.000
+2024-08-31                    NaN          NaN           NaN         NaN           120504       140120.930
+2025-09-01                10918.0          NaN           NaN         NaN           145073       145073.000
+2026-08-10                10720.0        0.808         0.552      2284.0           144476       144476.000
+== V5_nyc_ll18_bracket.py exit 0 in 7s
+T1 failed its pre-registered line: running the E5 substitution re-run (V6)
+== V6_backtest_substituted.py 
+                                                                                variant  n  v_4Q22  v_1Q23  wf_n  wf_rmse  wf_rmse_naive  wf_ratio_vs_naive  n_markets_4Q22  n_markets_1Q23
+                                                          v1 (single 2025/2026 vintage) 14  51.788  51.616    10    1.475          2.159              0.683             114               7
+a: literal, 2023-vintage 4Q22 (114 mkts) and 1Q23 (3 complete months: 7 late-dump mkts) 14  65.517 109.064    10    1.816          2.159              0.841             114               7
+                    b: 2023-vintage 4Q22 (114 mkts) and 1Q23 as Jan-Feb 2023 (103 mkts) 14  65.517  71.800    10    1.634          2.159              0.757             114               7
+                     c: v1 1Q23 rescaled by the pooled T1 wedge factor 1.055 (estimate) 14  51.788  59.985    10    1.538          2.159              0.713             114               7
+== V6_backtest_substituted.py exit 0 in 1s
+run.py complete, exit 0
+exit 0

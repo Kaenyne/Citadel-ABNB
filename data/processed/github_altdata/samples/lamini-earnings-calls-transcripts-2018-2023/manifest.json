@@ -1,0 +1,30 @@
+{
+ "slug": "lamini-earnings-calls-transcripts-2018-2023",
+ "url": "https://github.com/lamini-ai/lamini-earnings-calls",
+ "sampled": true,
+ "total_bytes": 7996628,
+ "files": [
+  "earnings-transcripts.head.jsonl",
+  "answers.head.jsonl",
+  "transcripts_head_index.csv",
+  "main.py",
+  "generate-qa.sh",
+  "README.upstream.md"
+ ],
+ "rows": "earnings-transcripts.head.jsonl: 100 transcripts (99 tickers); answers.head.jsonl: 334 QA rows (6 tickers); transcripts_head_index.csv: 100 rows",
+ "columns": "transcripts: date, exchange, q, ticker, transcript | answers: ticker, q, date, transcript (chunk), prompt, question, answer | index csv: ticker, exchange, q, date, call_date, transcript_chars",
+ "date_range": "transcripts head: calls 2019-07-24 to 2023-02-01 (q field 2018-Q4 to 2023-Q1, mode 2020-Q4/2021-Q1); answers head: 2019-08-07 to 2020-11-04 (2019-Q2 to 2020-Q3)",
+ "how_pulled": "curl -sL -r 0-5000000 https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/data/earnings-transcripts.jsonl -o earnings-transcripts.head.raw; curl -sL -r 0-3000000 .../data/answers.jsonl -o answers.head.raw; python: split on newline, drop final truncated line, re-serialise as *.head.jsonl; curl README.md, generate-qa.sh, lamini_earnings_calls/main.py; gh api repos/lamini-ai/lamini-earnings-calls/contents/{,data,scripts} for sizes",
+ "full_dataset_size": "2 files, 74.4 MB total: data/earnings-transcripts.jsonl 49.3 MB (~1,000 transcripts at ~50 KB each, estimated from head density) and data/answers.jsonl 25.1 MB (~2,800 QA rows, estimated); plus ~10 KB of scripts",
+ "description": "Committed JSONL corpus of full US earnings-call transcripts (Motley Fool page format: prepared remarks + Q&A, with speaker/title lines) keyed by ticker, exchange, fiscal quarter and call datetime, plus an LLM-generated question/answer set built from 4,096-char transcript chunks. Grain is one row per company-quarter call (transcripts) or one row per generated QA pair (answers). Source is Lamini's archived fine-tuning demo repo (archived 13 Jun 2024); transcript provenance is Motley Fool call pages, not stated. For ABNB an analyst would use it as a cross-sectional multi-ticker baseline for management-tone / call-language scoring (HLT present in the head; ABNB itself not seen in the sampled 100) and as a template for a transcript-to-QA extraction pipeline over the ABNB and peer transcripts already held.",
+ "issues": "No LICENSE file in the repo (HF mirror lamini/earnings-calls-qa is CC-BY-4.0, but the transcripts themselves are Motley Fool copyrighted text, so redistribution rights are unclear: tos_or_license_flag=true, human decision needed before any republication). Repo is archived/deprecated; generate-qa.sh and main.py require a Lamini API key and were NOT run. Head is the first 100 of an estimated ~1,000 transcripts, so ticker coverage of the full file (whether ABNB/BKNG/EXPE/MAR appear) is unverified. Coverage is thin outside 2020-Q4/2021-Q1. date field is a free-text string (one head row failed to parse); q is the company fiscal quarter, not calendar.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/data/earnings-transcripts.jsonl",
+  "https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/data/answers.jsonl",
+  "https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/README.md",
+  "https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/generate-qa.sh",
+  "https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/lamini_earnings_calls/main.py",
+  "https://api.github.com/repos/lamini-ai/lamini-earnings-calls/contents/data"
+ ],
+ "pulled_at": "2026-09-14"
+}

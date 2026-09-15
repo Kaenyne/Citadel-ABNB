@@ -1,0 +1,125 @@
+[
+ {
+  "key": "github:upgo-mcgill/toronto-analysis",
+  "url": "https://github.com/UPGo-McGill/toronto-analysis",
+  "name": "UPGo-McGill/toronto-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "McGill UPGo lab's analysis of Toronto's STR market (city-specific study, MIT licensed); likely built on AirDNA-derived panel data for Toronto pre-dating our current 13-city Inside Airbnb coverage.",
+  "why_useful": "City-specific STR supply/activity study for a market (Toronto) not in our current Inside Airbnb panel; could extend geographic coverage or provide a cross-check methodology.",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "City-specific STR supply/activity study for a market (Toronto) not in our current Inside Airbnb panel; could extend geographic coverage or provide a cross-check methodology."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/toronto-report-2023",
+  "url": "https://github.com/UPGo-McGill/toronto-report-2023",
+  "name": "toronto-report-2023",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Toronto STR/MTR (mid-term rental) market report code, ~8.4 MB repo, R/ and output/ folders. Sibling to toronto-report (2021) and toronto-analysis (2019), forming a multi-year Toronto STR report series from the same lab.",
+  "why_useful": "Multi-year Toronto STR report series is a longer time-series of a single city's regulatory/market narrative than we currently hold for any Canadian market; worth reading the output/ PDFs if the underlying data isn't public.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "2019, 2021, 2023 editions",
+  "geography": "Toronto, Ontario, Canada",
+  "size_hint": "~8.4 MB",
+  "license": "unspecified",
+  "last_activity": "2023-09-26",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Multi-year Toronto STR report series is a longer time-series of a single city's regulatory/market narrative than we currently hold for any Canadian market; worth reading the output/ PDFs if the underlying data isn't public.",
+   "A finer-grained, peer-reviewed alternative/complement to the raw Toronto registration CSV scrapers above \u2014 gives compliance-rate framing directly (what fraction of active listings are actually registered), which is the regulator-analyst's core question and speaks to true North America STR supply versus what shows as 'compliant'."
+  ]
+ },
+ {
+  "key": "github:ishandutta2007/awesome-short-term-rental-operations",
+  "url": "https://github.com/ishandutta2007/Awesome-Short-Term-Rental-Operations",
+  "name": "Awesome-Short-Term-Rental-Operations",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated awesome-list of STR turnover/cleaning/maintenance/ops tools: commercial SaaS (Properly, Turno, Operto, Minut, Chekin, Enso Connect, Host Tools) and 4 open-source GitHub projects (tykeal/homeassistant-rental-control, Kamra-PMS/kamra-pms, Gribadan/RentTools.io, lkilpatrick/OpenSTR). No data of its own; a discovery hub. MIT license, 1 star, updated 9 Sep 2026.",
+  "why_useful": "Useful map of the entire commercial STR-turnover-services landscape (confirms none of the major cleaning/turnover platforms \u2014 Turno, Properly, Operto, Minut, Chekin, Breezeway \u2014 publish open aggregate data; all are closed SaaS requiring paid per-operator accounts). Good reference if a future scout wants to re-check this space.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-09-09",
+  "geography": "global (US-centric SaaS vendors)",
+  "time_coverage": "N/A",
+  "size_hint": "README list only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Useful map of the entire commercial STR-turnover-services landscape (confirms none of the major cleaning/turnover platforms \u2014 Turno, Properly, Operto, Minut, Chekin, Breezeway \u2014 publish open aggregate data; all are closed SaaS requiring paid per-operator accounts). Good reference if a future scout wants to re-check this space."
+  ]
+ },
+ {
+  "key": "github:xhuang512/airbnb-price-analysis-in-athens",
+  "url": "https://github.com/xhuang512/Airbnb-Price-Analysis-in-Athens",
+  "name": "Airbnb-Price-Analysis-in-Athens",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "data/athens_weekdays.csv and data/athens_weekends.csv, split by weekday vs weekend pricing. Shape/variable naming (weekday/weekend price split for a single European city) matches the well-known Gyodi & Nawaro 'Determinants of Airbnb prices in European cities' academic dataset (originally covering Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, Paris, Rome, Vienna, London \u2014 ~5,000 listings/city, hedonic variables: room type, bedrooms, person capacity, superhost flag, cleanliness/guest satisfaction ratings, distance to center, restaurant/attraction indices). Repo itself is a small student analysis but the committed CSVs appear to be that dataset (or a close re-derivation) landing on GitHub, which we do not currently hold.",
+  "why_useful": "If this is (or reproduces) the Gyodi-Nawaro weekday/weekend European hedonic panel, it directly fills our hedonic/mix-decomposition gap with a multi-city academic dataset that separately identifies bedroom/quality/superhost premia and a weekday-vs-weekend price wedge -- useful for ADR mix decomposition (gap 2/20) in EMEA markets outside our 13-city Inside Airbnb panel.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   20
+  ],
+  "size_hint": "2 CSVs, likely ~5-6k rows total for Athens",
+  "time_coverage": "unclear, likely a single 2018-era snapshot (matches original Gyodi/Nawaro data vintage)",
+  "geography": "Athens, Greece",
+  "last_activity": "unknown (not checked precisely)",
+  "license": "none declared",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "If this is (or reproduces) the Gyodi-Nawaro weekday/weekend European hedonic panel, it directly fills our hedonic/mix-decomposition gap with a multi-city academic dataset that separately identifies bedroom/quality/superhost premia and a weekday-vs-weekend price wedge -- useful for ADR mix decomposition (gap 2/20) in EMEA markets outside our 13-city Inside Airbnb panel.",
+   "Athens is not in our 13-city panel; adds a Mediterranean/EU geography for hedonic price-determinant comparison, though likely a single static snapshot with standard methodology."
+  ]
+ },
+ {
+  "key": "github:dsp09/airbnb-in-vancouver",
+  "url": "https://github.com/dsp09/Airbnb-in-Vancouver",
+  "name": "Airbnb-in-Vancouver",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed listings.csv, calendar.csv, reviews.csv (standard Inside-Airbnb-format snapshot for Vancouver, Canada) plus vancouver_airbnb.ipynb implementing the analysis from the academic paper 'The What, Where, and Why of Airbnb Price Determinants' (hedonic price decomposition by listing attribute, neighborhood, and time).",
+  "why_useful": "Vancouver is not in our current 13-city Inside Airbnb panel; this is a static full listings+calendar+reviews snapshot (likely 2019-2020 vintage based on repo age) that could extend geographic coverage for a Canada/North-America-ex-US hedonic cross-check, and the notebook is a working implementation of a named academic hedonic-pricing paper.",
+  "potential": "medium",
+  "gap_targets": [
+   1
+  ],
+  "size_hint": "3 CSVs (listings/calendar/reviews), single-city, single-vintage snapshot",
+  "time_coverage": "likely ~2019-2020 (repo created around then; not independently confirmed)",
+  "geography": "Vancouver, Canada",
+  "last_activity": "2020-07-07",
+  "license": "MIT",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb and hotel price-elasticity, hedonic and mix-decomposition studies with data (bedroom counts, listing quality, superhost premium)"
+  ],
+  "why_all": [
+   "Vancouver is not in our current 13-city Inside Airbnb panel; this is a static full listings+calendar+reviews snapshot (likely 2019-2020 vintage based on repo age) that could extend geographic coverage for a Canada/North-America-ex-US hedonic cross-check, and the notebook is a working implementation of a named academic hedonic-pricing paper.",
+   "Vancouver is not in our 13-city Inside Airbnb panel; the repo is a direct, code-linked replication of a named academic hedonic-pricing paper, so it doubles as both a new-geography snapshot and a methods reference for structuring bedroom/quality/superhost regressors."
+  ]
+ }
+]

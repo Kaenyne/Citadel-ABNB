@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:mashvisor/mashvisor-api-docs",
+  "url": "https://github.com/mashvisor/mashvisor-api-docs",
+  "name": "mashvisor-api-docs",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Mashvisor's own official API documentation repo (MIT licensed), pointing to their live paid API for US property/STR/LTR analytics. No sample data files.",
+  "why_useful": "Confirms Mashvisor has no free data tier; only useful if the team later pays for API access.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2025-07-03",
+  "geography": "US",
+  "time_coverage": "n/a",
+  "size_hint": "docs only",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Confirms Mashvisor has no free data tier; only useful if the team later pays for API access."
+  ]
+ },
+ {
+  "key": "github:factden/airbnb-data-scraper",
+  "url": "https://github.com/factden/airbnb-data-scraper",
+  "name": "airbnb-data-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A pay-per-use commercial scraper explicitly marketed as 'a pay-per-use AirDNA alternative' -- scrapes airbnb.com listings, prices, availability, occupancy, ADR/RevPAR and reviews to JSON/CSV. Updated Sep 2026.",
+  "why_useful": "Directly targets airbnb.com itself, not a third-party vendor, so it falls under the repo's rule 6 (any scraping of airbnb.com beyond the sanctioned Inside Airbnb / fee-panel captures is a ToS decision for a human) -- flagged only for completeness/awareness, not recommended to run.",
+  "potential": "low",
+  "license": "other/unspecified",
+  "last_activity": "2026-09-07",
+  "geography": "global (per Airbnb coverage)",
+  "time_coverage": "n/a, live scrape",
+  "size_hint": "code/service only",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Directly targets airbnb.com itself, not a third-party vendor, so it falls under the repo's rule 6 (any scraping of airbnb.com beyond the sanctioned Inside Airbnb / fee-panel captures is a ToS decision for a human) -- flagged only for completeness/awareness, not recommended to run."
+  ]
+ },
+ {
+  "key": "github:justinolgui/web_scrape",
+  "url": "https://github.com/justinolgui/Web_Scrape",
+  "name": "Web_Scrape (AirDNA Surrey BC)",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Two committed CSVs (AirDNA_Surrey.csv, AirDNA_Surrey_2.csv) pulled via requests+BeautifulSoup against AirDNA's API for one city, Surrey, BC, Canada. Fields and date range not confirmed by fetch (page render limited); 10 commits total, author describes analysis as 'very basic'.",
+  "why_useful": "Directly addresses gap #2 (realised ADR/occupancy for STRs from a free/scraped AirDNA source) even though scope is a single small Canadian city \u2014 worth a manual pull to see actual columns (likely occupancy/ADR/revenue estimates AirDNA shows on its public city pages).",
+  "potential": "low",
+  "geography": "Surrey, BC, Canada",
+  "time_coverage": "unknown (small, likely single snapshot)",
+  "size_hint": "2 CSV files, single city",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Directly addresses gap #2 (realised ADR/occupancy for STRs from a free/scraped AirDNA source) even though scope is a single small Canadian city \u2014 worth a manual pull to see actual columns (likely occupancy/ADR/revenue estimates AirDNA shows on its public city pages).",
+   "One more single-city AirDNA method; low value alone but corroborates that AirDNA public pages carry city-level occupancy/ADR figures that could be nowcast targets."
+  ]
+ },
+ {
+  "key": "github:jnathanh/air_dna_scraper",
+  "url": "https://github.com/jnathanh/air_dna_scraper",
+  "name": "air_dna_scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium scraper configured to pull AirDNA's general city-level STR metrics (occupancy, ADR proxies) currently set up for Washington State cities. No committed output data visible; scrapes a paid/login-gated AirDNA market-data page.",
+  "why_useful": "A working method to reproduce AirDNA's public city-summary numbers (occupancy/ADR/RevPAR) for WA cities without a paid account, addressing gap #2. Would need to be run to get data; per repo rules only catalogued, not run.",
+  "potential": "low",
+  "geography": "Washington State, USA",
+  "time_coverage": "unknown",
+  "size_hint": "small scraper repo, 1 commit",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "A working method to reproduce AirDNA's public city-summary numbers (occupancy/ADR/RevPAR) for WA cities without a paid account, addressing gap #2. Would need to be run to get data; per repo rules only catalogued, not run.",
+   "Another AirDNA method repo; older (2019) so likely stale against AirDNA's current site structure, but shows the field list AirDNA exposes on public pages (occupancy, ADR, RevPAR by city).",
+   "AirDNA is the closest free-adjacent proxy for realised STR occupancy/ADR (gap #2), but this specific tool scrapes a page that sits behind AirDNA's paywall/ToS \u2014 a human ToS call, not runnable under our rules as-is."
+  ]
+ },
+ {
+  "key": "other:https://github.com/airdna",
+  "url": "https://github.com/AirDNA",
+  "name": "AirDNA GitHub org (incl. dna_util)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "AirDNA's own official GitHub org; public repos are engineering/data-science utility libraries (e.g. dna_util), not market data dumps. No committed market CSVs found.",
+  "why_useful": "Confirms AirDNA does not publish its market data as open GitHub datasets; only useful as a place to recheck periodically for a public sample-data repo.",
+  "potential": "low",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "code-only org",
+  "license": "varies by repo",
+  "last_activity": "unknown",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "Confirms AirDNA does not publish its market data as open GitHub datasets; only useful as a place to recheck periodically for a public sample-data repo."
+  ]
+ }
+]

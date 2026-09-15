@@ -1,0 +1,10 @@
+{
+ "slug": "nyc-airbnb-listings-2024-01-05",
+ "url": "https://github.com/Tracey-Sneed/New-York-Airbnb-Listings-2024",
+ "category": "str_airbnb_direct",
+ "data_kind": "stored_dataset",
+ "one_line": "Committed new_york_listings_2024.csv \u2014 NYC Airbnb listings as of 5 Jan 2024 (Kaggle vrindakallu origin), plus a SQLite db and Power BI file; no licence.",
+ "abnb_use": "Gap #1's named NYC hole: a point-in-time snapshot inside the 2023-06 to 2024-03 Local Law 18 window, letting us date the listing-count collapse instead of interpolating across it.",
+ "sample_plan": "raw.githubusercontent pull of new_york_listings_2024.csv only (single CSV, expect <10 MB); ignore the .pbix and .db.",
+ "tos_or_license_flag": true
+}

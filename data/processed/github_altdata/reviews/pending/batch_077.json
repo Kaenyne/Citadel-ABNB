@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:sayan88nandi-stack/inn-hotels-booking-cancellation-prediction",
+  "url": "https://github.com/sayan88nandi-stack/inn-hotels-booking-cancellation-prediction",
+  "name": "inn-hotels-booking-cancellation-prediction",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV Data/INNHotelsGroup.csv from the 'INN Hotels Group' academic dataset (India-based hotel chain, coursework-sourced, commonly cited as ~36,275 bookings). Fields include lead_time (days between booking and arrival), arrival date parts, market_segment_type, room_type_reserved, avg_price_per_room, no_of_special_requests, repeated_guest, deposit_type, and booking_status (Canceled/Not_Canceled).",
+  "why_useful": "A second, independently-sourced hotel booking-lead-time + cancellation-outcome dataset (different market/vendor than the Portugal H1/H2 Antonio dataset already held) \u2014 useful for cross-checking lead-time distributions and cancellation-rate base rates against a different hotel chain/geography (targets gap #3, RNPL/cancellation thesis, as a comparator, not a duplicate of the Portugal file).",
+  "potential": "medium",
+  "license": "unclear (repo states dataset rights remain with original academic provider; code appears MIT/unspecified)",
+  "last_activity": "unknown (not confirmed via fetch)",
+  "geography": "India (hotel chain)",
+  "time_coverage": "unspecified (coursework dataset, no explicit date range surfaced)",
+  "size_hint": "~36k rows (per widely-cited version of this dataset; not independently row-counted in this pass)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "hits": 1,
+  "themes": [
+   "Airbnb cancellation, refund and Reserve-Now-Pay-Later related datasets; STR booking lead-time and cancellation-rate data from any platform or PMS"
+  ],
+  "why_all": [
+   "A second, independently-sourced hotel booking-lead-time + cancellation-outcome dataset (different market/vendor than the Portugal H1/H2 Antonio dataset already held) \u2014 useful for cross-checking lead-time distributions and cancellation-rate base rates against a different hotel chain/geography (targets gap #3, RNPL/cancellation thesis, as a comparator, not a duplicate of the Portugal file)."
+  ]
+ },
+ {
+  "key": "github:diegma/trip-maml",
+  "url": "https://github.com/diegma/trip-maml",
+  "name": "diegma/trip-maml (Trip-MAML)",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Trip-MAML: a Multi-Aspect Multi-Lingual academic dataset of TripAdvisor hotel reviews in English, Italian and Spanish, annotated at the sentence level for aspect-oriented opinion mining (not the generic single-language Kaggle 20k file).",
+  "why_useful": "A genuine multilingual academic replication package rather than a reskin of the well-known Kaggle set; could support cross-region hotel sentiment/aspect comparisons (EMEA/LatAm language coverage) distinct from anything currently held.",
+  "potential": "medium",
+  "gap_targets": [
+   9
+  ],
+  "size_hint": "sentence-level annotated corpus, 3 languages (exact row count not confirmed without cloning)",
+  "time_coverage": "unknown, academic paper release era (pre-2024)",
+  "geography": "English/Italian/Spanish-speaking markets",
+  "license": "unknown",
+  "last_activity": "2024-04-09",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "A genuine multilingual academic replication package rather than a reskin of the well-known Kaggle set; could support cross-region hotel sentiment/aspect comparisons (EMEA/LatAm language coverage) distinct from anything currently held."
+  ]
+ },
+ {
+  "key": "github:factden/tripadvisor-hotel-reviews-api",
+  "url": "https://github.com/factden/tripadvisor-hotel-reviews-api",
+  "name": "factden/tripadvisor-hotel-reviews-api",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Apify-actor source code (MIT licensed) that pulls per-review data from TripAdvisor hotels/restaurants/attractions/airlines: rating, title, full text, language + machine-translation flag, reviewer profile, owner responses, sub-ratings (rooms, cleanliness, etc.), plus property records (rankings, amenities, address, TripAdvisor AI-generated review summaries). Repo commits real committed sample output: reviews.sample.json, places.sample.json, and a CSV from a live 'W Barcelona' run. Usage-based paid pricing (~$0.45/1,000 reviews, ~$2.00/1,000 property records) beyond a free monthly credit tier; global city/country filtering via 'Discover' mode. Does NOT cover TripAdvisor vacation rentals, only hotels/restaurants/attractions.",
+  "why_useful": "A maintained, documented, MIT-licensed method to pull fresh TripAdvisor hotel review counts and text at low marginal cost, city-filterable -- usable as a review-velocity nowcast input for competitor hotel demand (parallel to the ABNB reviews-based stays index already built over 123 Inside Airbnb markets). Has real committed sample data to inspect the schema without paying.",
+  "license": "MIT (code); Apify platform usage is metered/paid beyond free tier",
+  "last_activity": "15 commits, exact date not surfaced",
+  "geography": "Global",
+  "time_coverage": "Live/current pulls only, not historical archive",
+  "size_hint": "sample files only (few KB); production pulls scale to any size at cost",
+  "gap_targets": [
+   8,
+   9
+  ],
+  "duplicate_of_holding": "None (new method for hotel review velocity)",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "A maintained, documented, MIT-licensed method to pull fresh TripAdvisor hotel review counts and text at low marginal cost, city-filterable -- usable as a review-velocity nowcast input for competitor hotel demand (parallel to the ABNB reviews-based stays index already built over 123 Inside Airbnb markets). Has real committed sample data to inspect the schema without paying."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/jason1966/ahsan81_hotel-reservations-classification-dataset",
+  "url": "https://huggingface.co/datasets/jason1966/ahsan81_hotel-reservations-classification-dataset",
+  "name": "INN Hotels Group Reservations (ahsan81 Kaggle mirror)",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "36,275 reservation rows, 19 features, for an unnamed Indian hotel chain ('INN Hotels Group') sourced originally from Kaggle (ahsan81/hotel-reservations-classification-dataset). Fields include lead time, arrival date, number of adults/children, weekend/week nights, meal plan, room type, market segment, average price per room, special requests, and booking-status (cancelled/not-cancelled) target \u2014 CSV format, MIT-style permissive Kaggle mirror, 57,080 Kaggle downloads per HF card. Not on GitHub itself (found via Hugging Face's dataset API since GitHub/web search engines were rate-limited or blocked this session); several other HF mirrors of the same underlying Kaggle set also exist (Omrihahami/HotelReservationsDataset, sanjula153/Hotel-Reservation-Dataset, Brbg/Hotel_Reservation).",
+  "why_useful": "A second, independent (non-Portugal, non-Antonio) real-world PMS-style reservation dataset with lead time and cancellation status \u2014 useful as an out-of-sample cross-check for any cancellation/lead-time model built on the Antonio data, and it is India-geography which none of our held hotel datasets cover.",
+  "potential": "medium",
+  "size_hint": "36,275 rows, 19 columns",
+  "time_coverage": "Not stated in card (Kaggle upload ~2022, underlying stay dates unspecified)",
+  "geography": "India (unnamed hotel chain)",
+  "license": "Kaggle open dataset, permissive",
+  "last_activity": "Kaggle dataset ~2022, HF mirrors ongoing",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "hits": 1,
+  "themes": [
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "A second, independent (non-Portugal, non-Antonio) real-world PMS-style reservation dataset with lead time and cancellation status \u2014 useful as an out-of-sample cross-check for any cancellation/lead-time model built on the Antonio data, and it is India-geography which none of our held hotel datasets cover."
+  ]
+ },
+ {
+  "key": "github:kraina-ai/overturemaestro",
+  "url": "https://github.com/kraina-ai/overturemaestro",
+  "name": "kraina-ai/overturemaestro",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "36-star Python tool for reading Overture Maps data with multiprocessing, region clipping and QoL wrappers on top of the raw Parquet release, built by the same group behind `srai`/`quackosm` geospatial-ML tooling.",
+  "why_useful": "Another acquisition path for the same global hotel/lodging POI data described above; useful if overturemaps-py proves too slow for country-scale pulls.",
+  "potential": "medium",
+  "gap_targets": [
+   8
+  ],
+  "geography": "global",
+  "time_coverage": "current Overture releases",
+  "size_hint": "n/a (tool)",
+  "license": "check repo",
+  "last_activity": "active",
+  "duplicate_of_holding": "alternative access path to OvertureMaps/data above",
+  "hits": 2,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "Another acquisition path for the same global hotel/lodging POI data described above; useful if overturemaps-py proves too slow for country-scale pulls.",
+   "Overture Maps' 'places' theme includes categorized business POIs (lodging, hotels, short-term rental agencies) globally and is updated monthly/quarterly by a Linux Foundation consortium (Meta, Microsoft, Amazon, TomTom) \u2014 a free alternative/complement to commercial POI data for building geospatial tourism-density or party-size proxies (gap #20)."
+  ]
+ }
+]

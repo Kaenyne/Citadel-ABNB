@@ -1,0 +1,662 @@
+[
+ {
+  "key": "github:ianmatsane/international-tourism-in-south-africa-from-2021-to-2025-analysis-of-tourist-arrivals",
+  "url": "https://github.com/IanMatsane/International-Tourism-in-South-Africa-from-2021-to-2025-Analysis-of-Tourist-Arrivals",
+  "name": "International-Tourism-in-South-Africa (SADC vs Rest-of-Africa arrivals)",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "SA_Tourist_Arrivals.pbix (Power BI) and .sql file plus a Word report comparing SADC-region tourist arrivals vs rest-of-Africa arrivals into South Africa, 2021-2025. Underlying source not confirmed as StatsSA in the fetched page but topic and period match StatsSA's Tourism and Migration releases.",
+  "why_useful": "Recent (through 2025) South Africa arrivals split by source region -- addresses gap #7 for Sub-Saharan Africa, an entirely uncovered geography in our current holdings; would need the .sql/.pbix data extracted to confirm it is StatsSA-sourced and get raw rows.",
+  "potential": "medium",
+  "geography": "South Africa",
+  "time_coverage": "2021-2025",
+  "size_hint": "1 Power BI file + 1 SQL file",
+  "license": "unknown",
+  "last_activity": "~4 days before scouting (Sep 2026)",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Recent (through 2025) South Africa arrivals split by source region -- addresses gap #7 for Sub-Saharan Africa, an entirely uncovered geography in our current holdings; would need the .sql/.pbix data extracted to confirm it is StatsSA-sourced and get raw rows."
+  ]
+ },
+ {
+  "key": "github:anu-coder/forecasting-fta-timeseries-vs-dlmodels",
+  "url": "https://github.com/anu-coder/forecasting-FTA-timeseries-vs-DLmodels",
+  "name": "forecasting-FTA-timeseries-vs-DLmodels",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repo compares MLP/LSTM/AR models forecasting Foreign Tourist Arrivals (FTA) to India, with a committed Data/ folder (contents not enumerated by the fetch, tree subpath 404'd) and forecasting horizons referenced at 6 and 24 months, implying a monthly FTA series.",
+  "why_useful": "If the Data folder holds a monthly India FTA series (rather than only annual), it would be one of the more granular India tourism series found and useful for gap #7 (APAC/South Asia inbound volume); also demonstrates an FTA nowcasting method (gap #17) worth inspecting further.",
+  "potential": "medium",
+  "geography": "India",
+  "time_coverage": "unknown, referenced up to 24-month forecast horizon",
+  "size_hint": "unverified Data folder",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "If the Data folder holds a monthly India FTA series (rather than only annual), it would be one of the more granular India tourism series found and useful for gap #7 (APAC/South Asia inbound volume); also demonstrates an FTA nowcasting method (gap #17) worth inspecting further."
+  ]
+ },
+ {
+  "key": "github:jutsued/dr-tourism-dashboard",
+  "url": "https://github.com/Jutsued/dr-tourism-dashboard",
+  "name": "dr-tourism-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single-file static HTML dashboard (index.html, ~37KB, one commit, updated 2026-05-30) with embedded (hand-entered, not linked raw files) Dominican Republic tourism series 2019-2025: total visitor arrivals (6.4M in 2019 to 12.5M 2025e), air arrivals, cruise passengers (1.1M to 2.65M), tourism revenue in USD ($7.5B to $10.9B), tourism as % of GDP (8.1% to 8.8%), 2024 airport-level passenger counts (Punta Cana 9.55M, Las Americas 5.48M, Cibao 2.29M, Puerto Plata with 2021-2024 breakdown), 2024 source-market shares (USA 50%, Canada 12%, Panama 6%, Colombia 5%, Puerto Rico 5%), and hotel room capacity (87,322 rooms, 10,060 pipeline). Footer cites sources: MITUR, JAC, Banco Central (BCRD), ASONAHORES, UN Tourism.",
+  "why_useful": "Directly addresses gap #7 (regional travel volume outside US/EU, specifically Caribbean/LatAm) with a compact, already-aggregated annual DR tourism series through 2024/2025 sourced from BCRD/MITUR \u2014 useful as a cross-check series or to locate the underlying BCRD/MITUR releases, though the repo itself is a single static page with numbers baked into HTML, not a machine-readable table, and it is a personal project (0 stars) so the figures are unverified against source.",
+  "potential": "medium",
+  "geography": "Dominican Republic",
+  "time_coverage": "2019-2025 (annual, 2025 partly estimated)",
+  "size_hint": "~37KB single HTML file",
+  "license": "none declared",
+  "last_activity": "2026-05-30",
+  "gap_targets": [
+   7
+  ],
+  "hits": 2,
+  "themes": [
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "Directly addresses gap #7 (regional travel volume outside US/EU, specifically Caribbean/LatAm) with a compact, already-aggregated annual DR tourism series through 2024/2025 sourced from BCRD/MITUR \u2014 useful as a cross-check series or to locate the underlying BCRD/MITUR releases, though the repo itself is a single static page with numbers baked into HTML, not a machine-readable table, and it is a personal project (0 stars) so the figures are unverified against source.",
+   "If the embedded numbers do trace to BCRD's published monthly visitor-arrival series, this would be a quick pointer to DR travel-volume data (gap #7 region), but the single-file, single-commit shape and lack of source documentation makes this unverified \u2014 flagging for a human to open the HTML and check whether it cites real BCRD figures."
+  ]
+ },
+ {
+  "key": "github:debasisb/hawaii-tourism-los-calculator",
+  "url": "https://github.com/debasisb/hawaii-tourism-los-calculator",
+  "name": "hawaii-tourism-los-calculator",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Web app (importData.js loads a CSV into MongoDB) built around the same 'Hawaii Tourism Data (from DBEDT Data Warehouse)' source (1999-2021) as the danielnaqvi repo above; computes min/max average length-of-stay by visitor category and location/island. Raw CSV file is referenced by name but not clearly persisted in git (loaded into a database instead), so treat as a method/app rather than a guaranteed data mirror.",
+  "why_useful": "Second independent implementation over the same DBEDT length-of-stay dataset; useful mainly as confirmation the dataset exists and as an alternate ingestion script if the danielnaqvi CSV is incomplete.",
+  "geography": "Hawaii (USA)",
+  "time_coverage": "1999-2021",
+  "size_hint": "small app, data status uncertain",
+  "license": "none stated",
+  "last_activity": "2026-03-03",
+  "potential": "medium",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "same DBEDT source as danielnaqvi/Hawai-i-Tourism-Length-of-Stay-Analysis-Project",
+  "hits": 1,
+  "themes": [
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "Second independent implementation over the same DBEDT length-of-stay dataset; useful mainly as confirmation the dataset exists and as an alternate ingestion script if the danielnaqvi CSV is incomplete."
+  ]
+ },
+ {
+  "key": "github:aditisudhakar/dsdp_project1",
+  "url": "https://github.com/aditisudhakar/DSDP_Project1",
+  "name": "DSDP_Project1 (ONS/LIDA International Passenger Survey replacement)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Leeds Institute for Data Analytics (LIDA) x ONS Data Scientist Development Programme project to replace the UK International Passenger Survey (IPS) with non-survey sources (Mastercard transaction data, mobile/accommodation data mentioned) using ML. process.ipynb documents methodology exploring IPS microdata (trip purpose, expenditure, nationality) and candidate replacement signals. MIT license. No confirmed committed IPS microdata in-repo (references UK Data Service study 9279 as source).",
+  "why_useful": "IPS covers exactly the trip-purpose/party-composition/length-of-stay microdata this theme targets, and this repo documents both the IPS variable structure and non-survey proxies (card spend) that could stand in for a discontinued/lagged survey -- relevant to gap on inbound trip-purpose mix and nowcasting substitutes.",
+  "potential": "medium",
+  "size_hint": "small (notebook + docs, no bulk data confirmed)",
+  "time_coverage": "IPS discussion covers recent vintages (pre-discontinuation)",
+  "geography": "UK",
+  "license": "MIT",
+  "last_activity": "2024-07-30",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Length-of-stay, party-size and trip-purpose survey microdata (NTTO SIAT, UK IPS, Eurostat tour_dem, Japan travel survey, national travel surveys)"
+  ],
+  "why_all": [
+   "IPS covers exactly the trip-purpose/party-composition/length-of-stay microdata this theme targets, and this repo documents both the IPS variable structure and non-survey proxies (card spend) that could stand in for a discontinued/lagged survey -- relevant to gap on inbound trip-purpose mix and nowcasting substitutes.",
+   "A methods + partial-data repo on exactly the theme (IPS discontinuation / replacement), potentially pointing to what administrative proxies (border crossings, mobile/roaming data, etc.) can stand in for the survey when the sanctioned IPS itself lags or is retired -- relevant to gap #20 and to point-in-time concerns (gap #4) since IPS has real publication lag."
+  ]
+ },
+ {
+  "key": "github:kontogiannisg/eurostat-tourism-data-analysis",
+  "url": "https://github.com/kontogiannisg/Eurostat-Tourism-Data-Analysis",
+  "name": "Eurostat-Tourism-Data-Analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed analysis project pulling and analyzing Eurostat tourism statistics (domain likely includes tour_occ / tour_dem series covering nights spent, trip purpose, duration bands by country). No confirmed row counts; a code-based acquisition/analysis pipeline against the Eurostat API rather than a static committed dataset.",
+  "why_useful": "Eurostat's tour_dem dataset (EU demand-side tourism trips survey: purpose, duration, party/travel-group where available) is exactly the target series for this theme; this repo is a working example of pulling it programmatically, saving a fresh Eurostat API integration.",
+  "potential": "medium",
+  "size_hint": "unknown (API-pulled, not static)",
+  "time_coverage": "current Eurostat tour_dem vintages (survey runs ~2012-present, annual)",
+  "geography": "EU member states",
+  "license": "MIT",
+  "last_activity": "2023-01-17",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Length-of-stay, party-size and trip-purpose survey microdata (NTTO SIAT, UK IPS, Eurostat tour_dem, Japan travel survey, national travel surveys)"
+  ],
+  "why_all": [
+   "Eurostat's tour_dem dataset (EU demand-side tourism trips survey: purpose, duration, party/travel-group where available) is exactly the target series for this theme; this repo is a working example of pulling it programmatically, saving a fresh Eurostat API integration."
+  ]
+ },
+ {
+  "key": "github:jairaye/vegas-tourism-insights",
+  "url": "https://github.com/Jairaye/vegas-tourism-insights",
+  "name": "vegas-tourism-insights",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Streamlit analytics app with a committed 'LVCVA Data.xlsx' (cleaned) in data/, sourced from official Las Vegas Convention and Visitors Authority releases. Fields per README: visitor volume, room nights occupied, occupancy rate, ADR, RevPAR, auto traffic on major highways, room tax collections. Includes a Jupyter notebook for cleaning/EDA and manual forecasts extending to June 2025. Exact year range not stated in README but framed as 'historical tourism trends' (multi-year monthly).",
+  "why_useful": "Las Vegas is a top-10 US Airbnb/STR market and LVCVA publishes some of the best public monthly visitor-volume + ADR + RevPAR + hotel occupancy data among US destinations; a pre-cleaned, committed spreadsheet mirror saves re-scraping LVCVA's site and gives a monthly hotel-market comparator for Airbnb NA nights/ADR (addresses gap #8, hotel supply/demand benchmarking, and gap #2 realised ADR/occupancy analogue).",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   2
+  ],
+  "geography": "Las Vegas, NV",
+  "time_coverage": "multi-year monthly (exact start/end not confirmed from README)",
+  "size_hint": "single xlsx + notebook, small",
+  "license": "not stated in fetched README",
+  "last_activity": "unknown (not confirmed)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "Las Vegas is a top-10 US Airbnb/STR market and LVCVA publishes some of the best public monthly visitor-volume + ADR + RevPAR + hotel occupancy data among US destinations; a pre-cleaned, committed spreadsheet mirror saves re-scraping LVCVA's site and gives a monthly hotel-market comparator for Airbnb NA nights/ADR (addresses gap #8, hotel supply/demand benchmarking, and gap #2 realised ADR/occupancy analogue)."
+  ]
+ },
+ {
+  "key": "github:bafar/hawaii-visitor-data-downloader",
+  "url": "https://github.com/Bafar/hawaii-visitor-data-downloader",
+  "name": "hawaii-visitor-data-downloader",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script that downloads monthly visitor statistical report PDFs published by Hawaii DBEDT (Dept. of Business, Economic Development & Tourism). Supports a configurable year range (default 2018-2025), random User-Agent rotation, request delays, auto-retry, skips unavailable months (404), and resumes by skipping already-downloaded files. Output is a folder of DBEDT monthly PDFs, not parsed CSV.",
+  "why_useful": "A robust, working one-command puller for Hawaii DBEDT's monthly visitor statistics PDFs going back to 2018 (we already use DBEDT for the party-size series; this tool would let us pull a fuller point-in-time monthly PDF archive rather than only the annual/monthly-highlights pages we currently have via Wayback) \u2014 useful for extending or refreshing gap #8 (Hawaii bed-tax/occupancy) and the party-size series baseline.",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Hawaii (statewide + county)",
+  "time_coverage": "2018-2025 monthly (configurable range)",
+  "size_hint": "script only; downloads PDFs, not a stored dataset",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "we already hold Hawaii DBEDT visitor stats per CONTEXT.md; this is a longer/more automatable PDF archive method, not identical data",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "A robust, working one-command puller for Hawaii DBEDT's monthly visitor statistics PDFs going back to 2018 (we already use DBEDT for the party-size series; this tool would let us pull a fuller point-in-time monthly PDF archive rather than only the annual/monthly-highlights pages we currently have via Wayback) \u2014 useful for extending or refreshing gap #8 (Hawaii bed-tax/occupancy) and the party-size series baseline."
+  ]
+ },
+ {
+  "key": "github:uhero/dvw-data-portal",
+  "url": "https://github.com/UHERO/dvw-data-portal",
+  "name": "dvw-data-portal",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Angular front-end for UHERO's 'DBEDT Visitor Warehouse' (DVW) data portal, serving Hawaii visitor-industry time series (visitor arrivals, spending, room demand/occupancy per public description at data.uhero.hawaii.edu/dvw/). Repo itself is just the Angular CLI app, no data files committed; the actual series live behind the paired dvw-api / data.uhero.hawaii.edu/dvw/ endpoint.",
+  "why_useful": "UHERO's DBEDT Visitor Data Warehouse is a more granular, more frequently updated academic mirror of Hawaii tourism data than the DBEDT PDF reports we currently rely on \u2014 worth checking data.uhero.hawaii.edu/dvw/ directly for a queryable, possibly monthly/county-level, longer-history series (addresses gap #8 and possibly gap #2 for realised occupancy).",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   2
+  ],
+  "geography": "Hawaii",
+  "time_coverage": "unknown, ongoing (live portal)",
+  "size_hint": "frontend app only; data lives at external data.uhero.hawaii.edu/dvw/ endpoint",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "extends the Hawaii DBEDT visitor stats we already hold with a live, queryable warehouse",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "UHERO's DBEDT Visitor Data Warehouse is a more granular, more frequently updated academic mirror of Hawaii tourism data than the DBEDT PDF reports we currently rely on \u2014 worth checking data.uhero.hawaii.edu/dvw/ directly for a queryable, possibly monthly/county-level, longer-history series (addresses gap #8 and possibly gap #2 for realised occupancy)."
+  ]
+ },
+ {
+  "key": "github:aweirddev/flights",
+  "url": "https://github.com/AWeirdDev/flights",
+  "name": "AWeirdDev/flights",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package ('fast-flights') scraping live Google Flights results (prices, routes, airlines, stops, duration, emissions) via base64-encoded protobuf against Google's internal flight-search endpoint, no API key. MIT licensed, 2,047 stars, v3.0, actively updated (commits as of 14 Sep 2026). No committed price data itself -- a live acquisition method a human would need to run and archive over time to build a fare panel.",
+  "why_useful": "Airfare levels are a travel-demand/consumer-discretionary proxy that reads on ABNB nights and ADR (kernel analogue per gap list). Fastest available method to start a point-in-time airfare pull; would need daily cron to become a vintage series (gap 4).",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "geography": "global (any Google Flights route)",
+  "time_coverage": "real-time only, no history stored",
+  "size_hint": "library, no data files",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Airfare levels are a travel-demand/consumer-discretionary proxy that reads on ABNB nights and ADR (kernel analogue per gap list). Fastest available method to start a point-in-time airfare pull; would need daily cron to become a vintage series (gap 4).",
+   "Could be run point-in-time (with sign-off, since it touches a non-Airbnb site) to build a forward-looking domestic/international airfare panel as a travel-demand and consumer-strength proxy (gap 6/10) or FX-adjusted travel-cost input; also the best-maintained reference implementation if the team ever needs a Google Flights client."
+  ]
+ },
+ {
+  "key": "github:i-baumann/db1b_automation",
+  "url": "https://github.com/i-baumann/DB1B_Automation",
+  "name": "i-baumann/DB1B_Automation",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automates downloading/cleaning BTS DB1B + T100 to replicate a transportation-economics paper: produces multimarket contact indices, hub variables, HHI market-concentration measures, outsourcing proportions, network-size metrics. No longer maintained (archived note: \"as of 2025 I am no longer maintaining this\"). MIT licensed. No data committed.",
+  "why_useful": "Lowers the cost of building a US domestic airfare/traffic panel from the official DOT source named in gap 10.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2025-10-10",
+  "geography": "United States",
+  "time_coverage": "depends on BTS vintages pulled",
+  "size_hint": "scripts only",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Lowers the cost of building a US domestic airfare/traffic panel from the official DOT source named in gap 10.",
+   "An academic-replication-style pipeline over DB1B/T100 producing airline market-structure metrics (HHI, hub concentration) that could serve as a competitor-capacity/consolidation cross-check (gap 10), though unmaintained and possibly stale against current BTS file formats."
+  ]
+ },
+ {
+  "key": "github:trevorkaaya21/airline-market-power-analysis-",
+  "url": "https://github.com/Trevorkaaya21/airline-market-power-analysis-",
+  "name": "Trevorkaaya21/airline-market-power-analysis-",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Python/pandas analysis of US domestic DB1B fares: HHI, price dispersion, demand elasticity by market. Unverified whether raw DB1B extract or only derived tables are committed; described as pandas-based market-power study.",
+  "why_useful": "Could be a source of ready-processed route-level fare/elasticity output rather than raw DB1B, saving reprocessing time if it holds committed CSVs.",
+  "potential": "medium",
+  "license": "unlicensed",
+  "last_activity": "2025-12-22",
+  "geography": "United States",
+  "time_coverage": "unspecified DB1B quarters",
+  "size_hint": "notebook + possible processed CSVs, unconfirmed",
+  "gap_targets": [
+   10
+  ],
+  "hits": 2,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Could be a source of ready-processed route-level fare/elasticity output rather than raw DB1B, saving reprocessing time if it holds committed CSVs.",
+   "Another DB1B-based analysis that might have derived, smaller CSVs (price dispersion / elasticity by route) more directly usable than the raw multi-GB BTS files; worth a closer look if the team pursues a US-fare-elasticity angle."
+  ]
+ },
+ {
+  "key": "github:nandha1604/mta-ridership-data-analysis-dashboard",
+  "url": "https://github.com/Nandha1604/MTA-Ridership-Data-Analysis-Dashboard",
+  "name": "MTA-Ridership-Data-Analysis-Dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed MTA_Daily_Ridership.xlsx snapshot of the MTA's official 'Daily Ridership Data: Beginning 2020' dataset, covering subway, bus, LIRR, Metro-North, Access-A-Ride, bridges & tunnels traffic, and Staten Island Railway from 2020 onward, plus a dashboard build.",
+  "why_useful": "Multi-modal NYC transit ridership recovery/level series can act as a local visitor-and-mobility proxy for one of ABNB's largest single markets (gap 10, transit as visitor proxy); a static committed copy avoids relying on the live Socrata endpoint.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "2020-present (daily)",
+  "size_hint": "single xlsx, multi-sheet, daily rows across ~7 modes",
+  "license": "unspecified",
+  "last_activity": "2025-07-22",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Multi-modal NYC transit ridership recovery/level series can act as a local visitor-and-mobility proxy for one of ABNB's largest single markets (gap 10, transit as visitor proxy); a static committed copy avoids relying on the live Socrata endpoint."
+  ]
+ },
+ {
+  "key": "github:jeremiak/mta-ridership-map",
+  "url": "https://github.com/jeremiak/mta-ridership-map",
+  "name": "mta-ridership-map",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSVs (Stations.csv, ridership.csv, joined.csv) plus nyc.json geodata and pull/join scripts mapping NYC MTA subway ridership to station locations.",
+  "why_useful": "Station-level subway ridership panel usable as a granular NYC tourist-corridor mobility proxy (e.g., airport-linked or Manhattan-core stations) rather than only system-wide totals.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "not stated in README (older snapshot, repo dormant since 2022)",
+  "size_hint": "a few CSVs, station-level",
+  "license": "unspecified",
+  "last_activity": "2022-10-02",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Station-level subway ridership panel usable as a granular NYC tourist-corridor mobility proxy (e.g., airport-linked or Manhattan-core stations) rather than only system-wide totals."
+  ]
+ },
+ {
+  "key": "github:mattmattheisen/msp_dal_backtest",
+  "url": "https://github.com/mattmattheisen/msp_dal_backtest",
+  "name": "msp_dal_backtest",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "data/msp_passengers.csv: monthly MSP airport enplanement counts 2015-2024 (~120 obs) sourced from Metropolitan Airports Commission monthly operations reports, paired with data/dal_prices.csv (Tiingo monthly DAL closes); backtest code testing MSP passenger momentum as a leading signal for Delta Air Lines equity, with COVID period excluded and optional seasonal adjustment.",
+  "why_useful": "Directly analogous 'book-ahead volume as equity signal' methodology (kernel analogue per gap 18, cruise/airline advance-volume-as-signal) and a concrete airport-enplanement time series/pull method that could be replicated for airports feeding ABNB-heavy markets.",
+  "potential": "medium",
+  "geography": "Minneapolis-St Paul (MSP), USA",
+  "time_coverage": "2015-2024 monthly",
+  "size_hint": "~120-row CSV x2 plus backtest scripts",
+  "license": "MIT",
+  "last_activity": "2026-08-28",
+  "gap_targets": [
+   10,
+   18
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Directly analogous 'book-ahead volume as equity signal' methodology (kernel analogue per gap 18, cruise/airline advance-volume-as-signal) and a concrete airport-enplanement time series/pull method that could be replicated for airports feeding ABNB-heavy markets."
+  ]
+ },
+ {
+  "key": "github:maxtong1987/hkimmd-scrapper",
+  "url": "https://github.com/maxtong1987/hkimmd-scrapper",
+  "name": "hkimmd-scrapper",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper (Apache-2.0) targeting immd.gov.hk (Hong Kong Immigration Department) for airport/border passenger-traffic statistics \u2014 a working, non-Airbnb-site method for pulling Hong Kong visitor-arrival counts.",
+  "why_useful": "Working scraper for an official APAC border-crossing/airport arrivals source not already in our government-data holdings; relevant to regional travel volume in Asia (gap 7) via a rail/airport-link proxy.",
+  "potential": "medium",
+  "geography": "Hong Kong",
+  "time_coverage": "whatever immd.gov.hk currently publishes (scraper, not a static archive)",
+  "size_hint": "single scraper script",
+  "license": "Apache-2.0",
+  "last_activity": "2021-07-09",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Working scraper for an official APAC border-crossing/airport arrivals source not already in our government-data holdings; relevant to regional travel volume in Asia (gap 7) via a rail/airport-link proxy."
+  ]
+ },
+ {
+  "key": "github:toddwschneider/nyc-subway-turnstile-data",
+  "url": "https://github.com/toddwschneider/nyc-subway-turnstile-data",
+  "name": "nyc-subway-turnstile-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby/PostgreSQL pipeline that downloads MTA turnstile files directly from the MTA site from 2014-10-11 onward and loads them into a `turnstile_observations` table; committed `lib/stations.csv` maps station/line/division to borough; weekly automated refresh (Saturdays) driving a public dashboard. 121 stars, MIT, actively maintained (updated Apr 2026).",
+  "why_useful": "Gives station- and borough-level NYC subway entries/exits back to 2014 as a leading/coincident visitor-flow proxy for the NYC market (ABNB's largest single US city); could be aggregated to a monthly NYC subway volume series to compare against Inside Airbnb NYC nights.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "2014-10-11 to present (weekly refresh)",
+  "size_hint": "raw MTA weekly turnstile files, not committed; only a small station-mapping CSV committed",
+  "license": "MIT",
+  "last_activity": "2026-04-07",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Gives station- and borough-level NYC subway entries/exits back to 2014 as a leading/coincident visitor-flow proxy for the NYC market (ABNB's largest single US city); could be aggregated to a monthly NYC subway volume series to compare against Inside Airbnb NYC nights."
+  ]
+ },
+ {
+  "key": "github:mebauer/mta-data",
+  "url": "https://github.com/mebauer/mta-data",
+  "name": "mta-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pulls the MTA's 2023 Subway Origin-Destination Ridership Estimate (~116M rows, scaled-up OMNY/MetroCard tap-and-swipe data) from NYC Open Data (Socrata) via `data-exporter.py` into a 2.5GB DuckDB file; aggregated by month/day-of-week/hour for every station pair with station lat/long; includes PDF data dictionary and a Jupyter analysis notebook.",
+  "why_useful": "Origin-destination granularity could isolate airport-linked lines (JFK AirTrain/LIRR, LaGuardia, Newark) or tourist-corridor station pairs as a finer NYC visitor-flow proxy than raw entries/exits.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "calendar year 2023 only",
+  "size_hint": "~116M rows / 2.5GB DuckDB",
+  "license": "MIT",
+  "last_activity": "2024-12-15",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Origin-destination granularity could isolate airport-linked lines (JFK AirTrain/LIRR, LaGuardia, Newark) or tourist-corridor station pairs as a finer NYC visitor-flow proxy than raw entries/exits."
+  ]
+ },
+ {
+  "key": "github:peer-problem/eden-api",
+  "url": "https://github.com/peer-problem/eden-api",
+  "name": "eden-api",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Live public FastAPI service (no API key required, https://api.edenapi.org/v1) aggregating Korean inbound-tourism data: regional visitor insights/timeseries, inbound market comparisons by origin country (Japan, China, Taiwan, US, Philippines), travel-trend/visitor forecasts, destination recommendations, official government alerts, weather context, YouTube travel-keyword data. Python 3.12/FastAPI/MariaDB stack, 60 commits, no license stated in visible content.",
+  "why_useful": "Fills part of gap #7 (APAC regional travel volume outside US/EU) with a ready-made, no-key public API for Korea inbound visitor timeseries and market-comparison endpoints that could substitute for or supplement JNTO/KTO scraping.",
+  "potential": "medium",
+  "geography": "South Korea (inbound)",
+  "time_coverage": "not stated; live/current data",
+  "size_hint": "8 endpoints, live service",
+  "license": "not stated",
+  "last_activity": "60 commits, recent (2026-09-11 per gh metadata)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Fills part of gap #7 (APAC regional travel volume outside US/EU) with a ready-made, no-key public API for Korea inbound visitor timeseries and market-comparison endpoints that could substitute for or supplement JNTO/KTO scraping."
+  ]
+ },
+ {
+  "key": "github:juftin/camply",
+  "url": "https://github.com/juftin/camply",
+  "name": "juftin/camply",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python CLI/TUI (651 stars, MIT, actively maintained, 257 commits) that polls Recreation.gov, ReserveCalifornia, Yellowstone Lodges, and GoingToCamp-platform state park systems for campsite cancellations/availability at sold-out campgrounds and pushes notifications (email/Slack/SMS/Telegram/webhook). No bundled historical data; it is a live-polling method.",
+  "why_useful": "Outdoor-recreation booking pace is a competing-travel-dollar signal and a clean analogue for the RNPL/cancellation-monitoring thesis (watching for cancellations at capacity-constrained inventory) \u2014 same mechanic as the STR cancellation/lead-time question (gap #3), just on a different asset class; also a template for point-in-time capacity-utilization capture.",
+  "geography": "US, Canada (GoingToCamp)",
+  "time_coverage": "live/real-time only, no history",
+  "size_hint": "code only, no data files",
+  "license": "MIT",
+  "last_activity": "actively maintained (2026)",
+  "gap_targets": [
+   3,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo",
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Outdoor-recreation booking pace is a competing-travel-dollar signal and a clean analogue for the RNPL/cancellation-monitoring thesis (watching for cancellations at capacity-constrained inventory) \u2014 same mechanic as the STR cancellation/lead-time question (gap #3), just on a different asset class; also a template for point-in-time capacity-utilization capture.",
+   "A maintained, multi-country client for public outdoor-lodging availability data; could be adapted (not run per rules) to build a live occupancy/scarcity proxy for camping/outdoor short-term stays as a substitute-supply signal alongside STR registries."
+  ]
+ },
+ {
+  "key": "github:usdot-jpo-codehub/rec-gov-analysis",
+  "url": "https://github.com/usdot-jpo-codehub/rec-gov-analysis",
+  "name": "usdot-jpo-codehub/rec-gov-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "US DOT Volpe Center tooling (not a live scraper of Airbnb) for analyzing recreation.gov's own historical reservation exports from the RIDB portal (ridb.recreation.gov data-download page) across national forests/federal campgrounds, built for transportation-planning demand analysis. No data committed; points to a real point-in-time reservation-history download.",
+  "why_useful": "Outdoor-recreation/camping booking curves are a public, government-hosted 'book-ahead' kernel analogue (like NCLH advance sales, item 18) with real reservation lead times and cancellation behavior; a cross-check on how far ahead US leisure travelers commit, useful context for the RNPL/booking-lead-time thesis and travel-volume seasonality even though it never touches Airbnb.",
+  "potential": "medium",
+  "license": "unknown (not stated in fetched content)",
+  "last_activity": "2023-08-25",
+  "geography": "US (national forests / federal recreation lands)",
+  "time_coverage": "historical RIDB reservation exports, span not specified on page",
+  "size_hint": "tooling repo only; data lives on ridb.recreation.gov",
+  "gap_targets": [
+   18
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Outdoor-recreation/camping booking curves are a public, government-hosted 'book-ahead' kernel analogue (like NCLH advance sales, item 18) with real reservation lead times and cancellation behavior; a cross-check on how far ahead US leisure travelers commit, useful context for the RNPL/booking-lead-time thesis and travel-volume seasonality even though it never touches Airbnb."
+  ]
+ },
+ {
+  "key": "github:vincentarelbundock/wdi",
+  "url": "https://github.com/vincentarelbundock/WDI",
+  "name": "vincentarelbundock/WDI",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (252 stars) to pull any World Bank World Development Indicators series by code, including ST.INT.ARVL (international tourist arrivals), ST.INT.RCPT (international tourism receipts, current US$), and BX.TRF.PWKR (personal remittances received) by country and year.",
+  "why_useful": "Country x year tourism-arrivals and tourism-receipts series give a cross-border demand backdrop for LatAm/APAC regional mix (gap #7) that is broader in country coverage than our current Eurostat/BEA/NTTO holdings, even if annual and lagged.",
+  "potential": "medium",
+  "geography": "global, ~200 countries",
+  "time_coverage": "annual, 1960s-present (varies by indicator)",
+  "size_hint": "n/a (API wrapper; full pull is tens of MB)",
+  "license": "unspecified on repo page",
+  "last_activity": "2026-08-19",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Country x year tourism-arrivals and tourism-receipts series give a cross-border demand backdrop for LatAm/APAC regional mix (gap #7) that is broader in country coverage than our current Eurostat/BEA/NTTO holdings, even if annual and lagged."
+  ]
+ },
+ {
+  "key": "github:jomingyu/google-play-scraper",
+  "url": "https://github.com/JoMingyu/google-play-scraper",
+  "name": "google-play-scraper (JoMingyu)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library for pulling Google Play Store app metadata, ratings, rating-count histories, and full review text/timestamps for any app ID via public endpoints (no scraping of restricted pages), handling pagination beyond the 200-review batch limit. Generic tool, not Airbnb-specific, but trivially pointed at the Airbnb Android app package to pull rating trend and dated user reviews.",
+  "why_useful": "A clean, general-purpose, non-Airbnb-site method to build an Airbnb app rating/review-count time series as an engagement/usage proxy -- directly addresses gap #5 (app rankings/engagement history) without touching airbnb.com, so it is not a rule-6 ToS question the way a direct Airbnb-site scraper would be.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "license": "check repo (commonly MIT for this class of tool; not independently confirmed)",
+  "last_activity": "actively used by community (exact date not confirmed)",
+  "geography": "global (Play Store)",
+  "time_coverage": "live, current reviews plus historical rating counts where exposed by the API",
+  "size_hint": "n/a (library, not a dataset)",
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series",
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "A clean, general-purpose, non-Airbnb-site method to build an Airbnb app rating/review-count time series as an engagement/usage proxy -- directly addresses gap #5 (app rankings/engagement history) without touching airbnb.com, so it is not a rule-6 ToS question the way a direct Airbnb-site scraper would be.",
+   "Same use case as the Node original but directly usable from our Python stack without a Node bridge; worth noting as the drop-in choice if we build a scheduled Android app-metrics puller.",
+   "Python-native alternative to the Node scraper for the same engagement-snapshot use case (gap 5); easier to slot into this repo's pandas/duckdb pipeline than the Node tools.",
+   "Feeds gap #5 (engagement: app downloads/rankings, review sentiment) -- Airbnb app rating trends and review volume/sentiment on Google Play as an engagement proxy, refreshed on a schedule for a point-in-time series (ratings/review counts change over time, so repeated pulls with pull-dates would be usable)."
+  ]
+ },
+ {
+  "key": "github:julianprester/nomadlistscraper",
+  "url": "https://github.com/julianprester/nomadlistscraper",
+  "name": "nomadlistscraper",
+  "category": "web_app_engagement",
+  "data_kind": "both",
+  "what_it_holds": "Python scraper + Jupyter notebook (Nomadlist-Scraper.ipynb) plus a /data directory for output, built explicitly 'to understand the movements of digital nomads' from nomadlist.com. GitHub Actions workflow for automation. 2 commits, 1 star \u2014 minimal activity, no license stated.",
+  "why_useful": "A working acquisition method for Nomad List city-level nomad population/movement data (gap 16) \u2014 a non-Airbnb site scraper, in scope per CONTEXT.md rules (catalogue as method, do not run).",
+  "potential": "medium",
+  "gap_targets": [
+   16
+  ],
+  "geography": "global (Nomad List cities)",
+  "time_coverage": "point-in-time scrape, not historical",
+  "size_hint": "scraper code + small /data dir",
+  "license": "not stated",
+  "last_activity": "2 commits, low activity",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "A working acquisition method for Nomad List city-level nomad population/movement data (gap 16) \u2014 a non-Airbnb site scraper, in scope per CONTEXT.md rules (catalogue as method, do not run)."
+  ]
+ },
+ {
+  "key": "github:alegrey91/gypsylist",
+  "url": "https://github.com/alegrey91/gypsylist",
+  "name": "gypsylist",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/Selenium scraper (gypsylist.py) for nomadlist.com, pulling city ratings across cost, internet quality, safety, and overall suitability categories via user-supplied nomadlist.com filter URLs. GPL-3.0, 11 stars, 5 forks, 3 commits, no committed output data.",
+  "why_useful": "Another working Nomad List acquisition method (gap 16), somewhat more established (11 stars) than nomadlistscraper.",
+  "potential": "medium",
+  "gap_targets": [
+   16
+  ],
+  "geography": "global (Nomad List cities)",
+  "time_coverage": "n/a (live scrape)",
+  "size_hint": "scraper code only",
+  "license": "GPL-3.0",
+  "last_activity": "3 commits, low but nonzero stars",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "Another working Nomad List acquisition method (gap 16), somewhat more established (11 stars) than nomadlistscraper."
+  ]
+ }
+]

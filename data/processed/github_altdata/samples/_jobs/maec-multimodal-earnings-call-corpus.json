@@ -1,0 +1,10 @@
+{
+ "slug": "maec-multimodal-earnings-call-corpus",
+ "url": "https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction",
+ "category": "social_text_news",
+ "data_kind": "both",
+ "one_line": "CC-BY-SA-4.0 corpus of S&P 1500 earnings calls, in-repo MAEC_Dataset/ ~147.7 MB as one folder per call named YYYYMMDD_TICKER (verified: 1,000+ folders, earliest 20150225_LMAT) each holding text.txt plus a low-level audio features.csv; also MAEC_Dataset_Person_Label/ and an Iterative Forced Alignment pipeline (Python 3.5, pydub/aeneas/ffmpeg). 59 GB of MFCC .npy features live on Google Drive. 107 stars, 25 forks, last commit 2022-01-11.",
+ "abnb_use": "Gap 17 / management-tone methods: a licensed, speaker-labelled peer-tone benchmark covering 2015-2018 calls for travel peers already in our panel (EXPE, MAR, HLT, PCLN/BKNG) that predates ABNB's IPO, so it is a training/calibration corpus for a tone measure rather than an ABNB series. The forced-alignment code is a worked example for aligning ABNB call audio to our own transcripts if we ever want delivery features alongside text.",
+ "sample_plan": "Sparse shallow clone, take only a handful of call folders: git clone --depth 1 --filter=blob:none --sparse https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction.git then git sparse-checkout set README.md LICENSE 'Iterative Forced Alignment' and add at most 6-8 individual call directories under MAEC_Dataset (use gh api .../contents/MAEC_Dataset to find EXPE/MAR/HLT/PCLN folder names first, e.g. MAEC_Dataset/2015*_EXPE). Do NOT sparse-checkout all of MAEC_Dataset (147.7 MB) and do NOT touch the 59 GB Google Drive link. Target <= 10 MB. Record the full ticker/date folder list (paginate gh api contents) as an index even though the bodies are not pulled.",
+ "tos_or_license_flag": false
+}

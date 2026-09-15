@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:johnbrussell/db1b-market-data",
+  "url": "https://github.com/johnbrussell/db1b-market-data",
+  "name": "db1b-market-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Repo name suggests processed/committed DB1B market-level data (not verified by fetch due to budget); worth a follow-up read of its README/data folder.",
+  "why_useful": "Possible committed derived DB1B market data (fares/passengers by O&D market), which would be more directly usable than raw BTS extracts for a US travel-demand cross-check (gap 10).",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "unspecified (unverified)",
+  "last_activity": "2025-03-30",
+  "geography": "US domestic",
+  "time_coverage": "unverified",
+  "size_hint": "unverified",
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Possible committed derived DB1B market data (fares/passengers by O&D market), which would be more directly usable than raw BTS extracts for a US travel-demand cross-check (gap 10)."
+  ]
+ },
+ {
+  "key": "github:angeligareta/cheaper-travelling",
+  "url": "https://github.com/angeligareta/cheaper-travelling",
+  "name": "cheaper-travelling",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache Spark + Kafka streaming pipeline that pulls from Skyscanner, GeoDB Cities, and Flixbus public APIs to compare multimodal travel costs (flights, buses). Academic/course project; MIT licensed, 12 stars. No committed historical dataset, a live-streaming architecture demo.",
+  "why_useful": "A concrete example of pulling live Skyscanner fare data via API into a structured pipeline; low value as-is (no stored data, small project) but a usable reference architecture if the team wants to build its own Skyscanner-API puller.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "MIT",
+  "last_activity": "2026-03-15",
+  "geography": "route-dependent (Skyscanner API scope)",
+  "time_coverage": "real-time only",
+  "size_hint": "code only",
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "A concrete example of pulling live Skyscanner fare data via API into a structured pipeline; low value as-is (no stored data, small project) but a usable reference architecture if the team wants to build its own Skyscanner-API puller."
+  ]
+ },
+ {
+  "key": "github:youyanggu/subway_ridership",
+  "url": "https://github.com/youyanggu/subway_ridership",
+  "name": "subway_ridership",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Python scripts (`bart_ridership.py`, `mta_ridership.py`) plus a committed `output_data/` folder of processed CSVs (daily ridership time series, busiest-station rankings) for BART and NYC MTA, built for COVID-era before/after comparison against a Feb-1 baseline; BART updates monthly, MTA weekly at source.",
+  "why_useful": "Ready-made daily NYC and SF-Bay-Area transit volume series usable as a coincident indicator of local mobility/tourism recovery in two ABNB-relevant metros (NYC panel city; SF Bay Area adjacent).",
+  "potential": "low",
+  "geography": "New York City; San Francisco Bay Area",
+  "time_coverage": "~2020-2022 (pandemic-era focus), MIT license",
+  "size_hint": "small CSVs in output_data/",
+  "license": "MIT",
+  "last_activity": "2024-03-26",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Ready-made daily NYC and SF-Bay-Area transit volume series usable as a coincident indicator of local mobility/tourism recovery in two ABNB-relevant metros (NYC panel city; SF Bay Area adjacent)."
+  ]
+ },
+ {
+  "key": "github:chriswhong/nycturnstiles",
+  "url": "https://github.com/chriswhong/nycturnstiles",
+  "name": "nycturnstiles",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Older (39-star) scripts to fetch and parse raw MTA turnstile text files into usable tables; no long-run processed data committed.",
+  "why_useful": "Alternate/older parsing approach to the same MTA turnstile source as toddwschneider's repo; lower value given the more actively maintained alternative exists.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "raw MTA turnstile era (pre-2020s format)",
+  "size_hint": "scripts only",
+  "license": "none stated",
+  "last_activity": "2025-12-01",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "toddwschneider/nyc-subway-turnstile-data (same underlying MTA source, better maintained)",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Alternate/older parsing approach to the same MTA turnstile source as toddwschneider's repo; lower value given the more actively maintained alternative exists."
+  ]
+ },
+ {
+  "key": "github:ozkary/data-engineering-mta-turnstile",
+  "url": "https://github.com/ozkary/data-engineering-mta-turnstile",
+  "name": "data-engineering-mta-turnstile",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "34-star data-engineering pipeline (Apache-2.0) processing MTA subway turnstile data; actively updated (Jul 2026).",
+  "why_useful": "Another maintained pipeline over the same MTA turnstile source; useful mainly as a fallback/cross-check acquisition method.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "not specified, appears current",
+  "size_hint": "pipeline code, no large committed dataset apparent",
+  "license": "Apache-2.0",
+  "last_activity": "2026-07-30",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "toddwschneider/nyc-subway-turnstile-data",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Another maintained pipeline over the same MTA turnstile source; useful mainly as a fallback/cross-check acquisition method."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:pratyushbalaji/chennai-metro-ridership-tracker",
+  "url": "https://github.com/PratyushBalaji/chennai-metro-ridership-tracker",
+  "name": "chennai-metro-ridership-tracker",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "MIT-licensed scripts building a time-series dataset of Chennai Metro ridership, explicitly modeled on the Bengaluru tracker; updated Sep 2026.",
+  "why_useful": "Same India-metro pattern extended to a second city; low direct ABNB relevance.",
+  "potential": "low",
+  "geography": "Chennai, India",
+  "time_coverage": "ongoing",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Same India-metro pattern extended to a second city; low direct ABNB relevance."
+  ]
+ },
+ {
+  "key": "github:greaterdenvertransit/rtd-gtfs-data",
+  "url": "https://github.com/GreaterDenverTransit/RTD-gtfs-data",
+  "name": "RTD-gtfs-data",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Static GTFS feeds plus ridership-by-trip-and-stop data for Denver's RTD network, updated Nov 2025.",
+  "why_useful": "Concrete example of an agency publishing GTFS-ride formatted ridership; low direct ABNB-city relevance (Denver not a panel city) but useful as a template/precedent for pulling similar feeds from NYC/other ABNB markets.",
+  "potential": "low",
+  "geography": "Denver, Colorado",
+  "time_coverage": "not specified",
+  "size_hint": "moderate GTFS + ridership tables",
+  "license": "none stated",
+  "last_activity": "2025-11-20",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Concrete example of an agency publishing GTFS-ride formatted ridership; low direct ABNB-city relevance (Denver not a panel city) but useful as a template/precedent for pulling similar feeds from NYC/other ABNB markets."
+  ]
+ },
+ {
+  "key": "github:christopherbronner/mta_turnstile_data",
+  "url": "https://github.com/christopherbronner/MTA_Turnstile_Data",
+  "name": "MTA_Turnstile_Data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis repo (6 stars) working with raw MTA turnstile data; last touched 2024, appears to include some processed subsets.",
+  "why_useful": "Minor alternative processing of the same MTA turnstile source; low incremental value over toddwschneider's repo.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "not fully specified",
+  "size_hint": "small",
+  "license": "none stated",
+  "last_activity": "2024-03-26",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "toddwschneider/nyc-subway-turnstile-data",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Minor alternative processing of the same MTA turnstile source; low incremental value over toddwschneider's repo."
+  ]
+ },
+ {
+  "key": "github:gregfeliu/nyc-subway-frequencies",
+  "url": "https://github.com/gregfeliu/NYC-Subway-Frequencies",
+  "name": "NYC-Subway-Frequencies",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Estimates NYC subway service frequency from the MTA GTFS static schedule and combines it with ridership data to estimate line-level ridership; updated May 2026.",
+  "why_useful": "Line-level (rather than just station-level) ridership estimation for NYC subway, which could isolate airport-connector lines (A train to JFK, E/M to LaGuardia-adjacent transfers).",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "current MTA GTFS + ridership vintages",
+  "size_hint": "code + derived tables",
+  "license": "none stated",
+  "last_activity": "2026-05-15",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Line-level (rather than just station-level) ridership estimation for NYC subway, which could isolate airport-connector lines (A train to JFK, E/M to LaGuardia-adjacent transfers)."
+  ]
+ },
+ {
+  "key": "github:pravinchavan321/mta_ridership_recovery_analysis_post_pandemic_trends",
+  "url": "https://github.com/Pravinchavan321/MTA_Ridership_Recovery_Analysis_Post_Pandemic_Trends",
+  "name": "MTA_Ridership_Recovery_Analysis_Post_Pandemic_Trends",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "11-star analysis of MTA ridership recovery trends post-pandemic, updated Apr 2026; likely pulls MTA's public daily ridership dashboard data (subway/bus/bridges/tunnels) rather than committing a long raw panel.",
+  "why_useful": "Points to MTA's own published daily systemwide ridership recovery series (subway, bus, LIRR, Metro-North, bridges/tunnels) which is a simpler, already-aggregated NYC visitor/commuter proxy than turnstile-level data.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "pandemic recovery period (2020-2026)",
+  "size_hint": "small, analysis-focused",
+  "license": "none stated",
+  "last_activity": "2026-04-08",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "Points to MTA's own published daily systemwide ridership recovery series (subway, bus, LIRR, Metro-North, bridges/tunnels) which is a simpler, already-aggregated NYC visitor/commuter proxy than turnstile-level data."
+  ]
+ }
+]

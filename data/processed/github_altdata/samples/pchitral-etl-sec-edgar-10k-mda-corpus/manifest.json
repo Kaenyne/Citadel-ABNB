@@ -1,0 +1,33 @@
+{
+  "slug": "pchitral-etl-sec-edgar-10k-mda-corpus",
+  "url": "https://github.com/pChitral/ETL-SEC-EDGAR-10-k-Filings",
+  "sampled": true,
+  "total_bytes": 2550468,
+  "files": [
+    "BKNG.parquet",
+    "MAR.parquet",
+    "UBER.parquet",
+    "BKNG_head.csv",
+    "MAR_head.csv",
+    "UBER_head.csv",
+    "processing_status.csv",
+    "UPSTREAM_README.md",
+    "LICENSE"
+  ],
+  "rows": "BKNG.parquet 20 rows (FY2004-2023, one 10-K MD&A per year); MAR.parquet 21 rows (FY2003-2023, 1 row has empty mda_section); UBER.parquet 4 rows (FY2020-2023); *_head.csv = same rows with mda_section truncated to 2,000 chars; processing_status.csv 10,909 rows (8,350 unique CIKs; 'processed' is False for every row, so it is a ticker universe list, not a completion log)",
+  "columns": "parquet: cik (int), ticker, title, year (int, fiscal/report year), mda_section (full Item 7 text, 77k-190k chars), processed_timestamp (datetime, all 2024-01-15). processing_status.csv: cik_str, ticker, title, processed (bool)",
+  "date_range": "report years 2003 (MAR) / 2004 (BKNG) to 2023; processed_timestamp 2024-01-15 00:14 to 03:12 UTC-ish",
+  "how_pulled": "git clone --depth 1 --filter=blob:none --sparse failed on Windows ('Filename too long' writing the promisor file in the scratch path), so fell back to raw GETs: for f in ticker_data/BKNG.parquet ticker_data/MAR.parquet ticker_data/UBER.parquet processing_status.csv README.md LICENSE; do curl -sL -o $(basename $f) https://raw.githubusercontent.com/pChitral/ETL-SEC-EDGAR-10-k-Filings/HEAD/$f; done. Described with `py -3.13` (pandas + pyarrow 24.0.0; the repo venv `python` has no pyarrow/duckdb): pd.read_parquet, then wrote *_head.csv with mda_section[:2000].",
+  "full_dataset_size": "Repo ~210 MB: ticker_data/ holds 135 per-ticker .parquet files (~200 MB, roughly 4-21 rows each, one MD&A per fiscal year, 2003-2023) plus ~21 MB of *.out run logs and processing_status.csv (471 KB). Roughly 2,000-2,500 MD&A documents in total. ABNB, EXPE and HLT are in the ticker universe list but have NO parquet in ticker_data/.",
+  "description": "A committed corpus of Item 7 MD&A text extracted from annual 10-K filings, one row per company-fiscal-year, built with sec_edgar_downloader + BeautifulSoup and stored as one parquet per ticker (135 tickers, mostly large caps). Source is SEC EDGAR (public domain), processed 15 Jan 2024. For ABNB the direct use is as a cross-sectional baseline for management-tone / topic scoring: BKNG (2004-2023) and MAR (2003-2023) give two lodging/OTA comparables with 20 years of annual narrative, and the other 133 tickers give a market-wide distribution to benchmark any tone score against; an analyst would run the same extraction on ABNB's own 10-Ks (FY2020-2025) and score them against this panel. Annual cadence only, so it reads on narrative and disclosure language, not on quarterly nights/ADR.",
+  "issues": "(1) No ABNB, EXPE or HLT parquet despite those tickers appearing in processing_status.csv; the ABNB 10-K MD&A would have to be re-extracted with the repo's scripts (sec_edgar_downloader needs a user-agent string, no key). (2) Text has mojibake (smart quotes rendered as U+FFFD) and headers run together in places; one MAR year has an empty mda_section. (3) processing_status.csv shows processed=False for all 10,909 rows, so it cannot be used to tell which tickers were completed; list ticker_data/ instead. (4) Licence is a custom text titled 'MIT License for ETL-10-K-Filings' (MIT-equivalent wording, GitHub reports NOASSERTION); the underlying filings are SEC public domain. (5) The sparse git clone failed on Windows because of path length; raw.githubusercontent.com GETs work fine. (6) Repo last pushed 11 Feb 2024, so FY2024-2025 filings are absent.",
+  "source_urls": [
+    "https://raw.githubusercontent.com/pChitral/ETL-SEC-EDGAR-10-k-Filings/HEAD/ticker_data/BKNG.parquet",
+    "https://raw.githubusercontent.com/pChitral/ETL-SEC-EDGAR-10-k-Filings/HEAD/ticker_data/MAR.parquet",
+    "https://raw.githubusercontent.com/pChitral/ETL-SEC-EDGAR-10-k-Filings/HEAD/ticker_data/UBER.parquet",
+    "https://raw.githubusercontent.com/pChitral/ETL-SEC-EDGAR-10-k-Filings/HEAD/processing_status.csv",
+    "https://raw.githubusercontent.com/pChitral/ETL-SEC-EDGAR-10-k-Filings/HEAD/README.md",
+    "https://raw.githubusercontent.com/pChitral/ETL-SEC-EDGAR-10-k-Filings/HEAD/LICENSE"
+  ],
+  "pulled_at": "2026-09-14"
+}

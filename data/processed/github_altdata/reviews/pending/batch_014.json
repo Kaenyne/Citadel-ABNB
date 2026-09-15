@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:jadchaar/sec-cik-mapper",
+  "url": "https://github.com/jadchaar/sec-cik-mapper",
+  "name": "sec-cik-mapper",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Generates and hosts (via GitHub + jsDelivr CDN) daily-updated CSV/JSON mapping files linking SEC CIK <-> ticker <-> company name <-> exchange, plus mutual-fund series/class ID mappings. MIT, 351 commits. NOTE: archived/read-only as of 26 Apr 2025, so mapping files are frozen at that date, not live-updating.",
+  "why_useful": "Ready-made CIK/ticker crosswalk (ABNB, BKNG, EXPE, MAR, HLT and any peer) to join against XBRL frames / full-text search / financial-statement-dataset pulls without re-deriving CIKs by hand.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "small utility, not a primary dataset",
+  "geography": "US SEC registrants",
+  "time_coverage": "frozen at archival date (26 Apr 2025)",
+  "size_hint": "small CSV/JSON files",
+  "license": "MIT",
+  "last_activity": "archived 26 Apr 2025, no further updates",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Ready-made CIK/ticker crosswalk (ABNB, BKNG, EXPE, MAR, HLT and any peer) to join against XBRL frames / full-text search / financial-statement-dataset pulls without re-deriving CIKs by hand."
+  ]
+ },
+ {
+  "key": "github:igalci/zacks-scraper",
+  "url": "https://github.com/igalci/zacks-scraper",
+  "name": "igalci/zacks-scraper",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python package (zacks_scraper/scraper.py) for pulling data from zacks.com; Apache-2.0 licensed; no data files committed, code only.",
+  "why_useful": "A cleaner, packaged alternative Zacks-pulling method if the team wants to start a forward point-in-time Zacks consensus capture for ABNB/BKNG/EXPE; would need to be run going forward, contributes nothing retroactive.",
+  "potential": "low",
+  "geography": "n/a (method)",
+  "time_coverage": "n/a",
+  "size_hint": "tiny code repo",
+  "license": "Apache-2.0",
+  "last_activity": "2024-09-14",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "A cleaner, packaged alternative Zacks-pulling method if the team wants to start a forward point-in-time Zacks consensus capture for ABNB/BKNG/EXPE; would need to be run going forward, contributes nothing retroactive."
+  ]
+ },
+ {
+  "key": "github:derekzhang0000/zackscraper",
+  "url": "https://github.com/DerekZhang0000/ZackScraper",
+  "name": "DerekZhang0000/ZackScraper",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js scraper compiling Zacks' \"top recommended stocks\" rank changes; a stock-screener/rating scraper, not an EPS-estimate history extractor.",
+  "why_useful": "Marginal: Zacks Rank changes are a coarse revision-direction signal, not usable for ABNB EPS estimate history directly, but shows a working scrape pattern against Zacks pages if the team wants ABNB-specific rank tracking going forward.",
+  "potential": "low",
+  "geography": "n/a (method)",
+  "time_coverage": "n/a",
+  "size_hint": "small",
+  "license": "none declared",
+  "last_activity": "2022-05-18",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "Marginal: Zacks Rank changes are a coarse revision-direction signal, not usable for ABNB EPS estimate history directly, but shows a working scrape pattern against Zacks pages if the team wants ABNB-specific rank tracking going forward."
+  ]
+ },
+ {
+  "key": "github:bvb-06/webscraping-estimize",
+  "url": "https://github.com/bvb-06/WebScraping-Estimize",
+  "name": "bvb-06/WebScraping-Estimize",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed scraper targeting estimize.com for EPS/analyst-crowd estimates; repo content not deeply inspected beyond listing (small, likely code-only).",
+  "why_useful": "Another working pattern for pulling Estimize's public estimate pages if the team wants forward point-in-time capture of crowd-sourced ABNB estimates.",
+  "potential": "low",
+  "geography": "n/a (method)",
+  "time_coverage": "n/a",
+  "size_hint": "small",
+  "license": "MIT",
+  "last_activity": "2023-12-08",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "Another working pattern for pulling Estimize's public estimate pages if the team wants forward point-in-time capture of crowd-sourced ABNB estimates."
+  ]
+ },
+ {
+  "key": "github:ner-aim/retreving-financial-estimates-using-estimize",
+  "url": "https://github.com/ner-aim/Retreving-Financial-Estimates-using-Estimize",
+  "name": "ner-aim/Retreving-Financial-Estimates-using-Estimize",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Project retrieving FY2019 financial estimates for a handful of companies via Estimize; scope is a small fixed set of tickers/one fiscal year, not confirmed to include ABNB (which IPO'd Dec 2020, after FY2019).",
+  "why_useful": "Low direct relevance (predates ABNB's public listing) but shows another Estimize-pulling method; mainly useful as a code pattern.",
+  "potential": "low",
+  "geography": "n/a",
+  "time_coverage": "FY2019",
+  "size_hint": "small",
+  "license": "none declared",
+  "last_activity": "2023-03-10",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "Low direct relevance (predates ABNB's public listing) but shows another Estimize-pulling method; mainly useful as a code pattern."
+  ]
+ }
+]

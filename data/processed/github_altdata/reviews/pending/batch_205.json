@@ -1,0 +1,143 @@
+[
+ {
+  "key": "github:mebauer/sodapy-tutorial-nyc-opendata",
+  "url": "https://github.com/mebauer/sodapy-tutorial-nyc-opendata",
+  "name": "sodapy-tutorial-nyc-opendata",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed, three-notebook tutorial (API basics, SoQL query language, sample 311-data analysis) for pulling any Socrata-backed open-data portal via the sodapy Python client; 45 commits; not STR-specific but the exact mechanism needed for Nashville, Seattle, Denver, Chicago, Boston (Analyze Boston) and San Diego open-data portals, all of which run Socrata.",
+  "why_useful": "Lower-friction Python alternative to the R nycOpenData package for the same NYC OSE registration pull; marginal beyond that package.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "geography": "New York City",
+  "time_coverage": "live pull only",
+  "size_hint": "N/A",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "same purpose as ropensci/nycOpenData candidate above",
+  "hits": 3,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "Lower-friction Python alternative to the R nycOpenData package for the same NYC OSE registration pull; marginal beyond that package.",
+   "Directly serves gap #17 (Socrata/CKAN open-data discovery clients to find STR datasets across cities) \u2014 a clean, documented starting point for writing one reusable puller against the Socrata SODA API that could hit Nashville/Seattle/Denver/Chicago/Boston/San Diego STR endpoints identified in this same search.",
+   "Concrete example of hitting the exact portal (data.cityofnewyork.us) that hosts NYC's STR registration dataset; could help re-pull or verify the NYC OSE registry the team already has, or locate a longer-history NYC STR dataset ID via the same client."
+  ]
+ },
+ {
+  "key": "github:cityoflosangeles/short-term-rental-spec",
+  "url": "https://github.com/CityOfLosAngeles/short-term-rental-spec",
+  "name": "CityOfLosAngeles/short-term-rental-spec",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official City of Los Angeles GitHub org repo containing the Platform Sharing API specification (platform-sharing/v1.0.yaml, also on SwaggerHub) that STR platforms use to report listing compliance data to LA under the Home-Sharing Ordinance; Apache-2.0 licensed, 39 commits, actively maintained by the city itself.",
+  "why_useful": "It is the authoritative schema for what LA's STR compliance API returns (registration status per listing), which is the blueprint needed to build any future point-in-time LA HSO puller; also documents the compliance-reporting field structure other cities model.",
+  "potential": "medium",
+  "geography": "Los Angeles, CA",
+  "time_coverage": "n/a (API spec, not data)",
+  "size_hint": "one YAML spec file",
+  "license": "unknown, official city org repo",
+  "last_activity": "unknown",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "It is the authoritative schema for what LA's STR compliance API returns (registration status per listing), which is the blueprint needed to build any future point-in-time LA HSO puller; also documents the compliance-reporting field structure other cities model.",
+   "Not a dataset, but the authoritative schema for what compliance/registration fields LA (and any city adopting the same open spec) actually captures on STR platforms \u2014 useful for understanding what a scraped or FOIA'd LA HSO extract would contain, and it is a government-maintained repo (credible, low-risk source) rather than a third party's guess."
+  ]
+ },
+ {
+  "key": "github:drxto/tohs-tool-rbc",
+  "url": "https://github.com/drxTO/TOHS-tool-rbc",
+  "name": "TOHS-tool-rbc (Rental Background Check)",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Daily GitHub-Actions pipeline normalizing Toronto Short-Term Rental Registry data plus Ontario Landlord and Tenant Board (LTB) order catalogue, Toronto RentSafeTO, active building permits, multi-tenant house licences and planned developments into address-keyed JSON files (data/a.json ... data/z.json, data/0-9.json); 392 commits, code MIT-licensed, published data dual-licensed under Open Government Licence Toronto/Ontario.",
+  "why_useful": "Broader than the Toronto STR-only mirror above \u2014 bundles STR registration with landlord/tenant enforcement and building-permit data for the same city, useful for cross-referencing registration compliance with housing-supply signals; also a working template for building a similar address-keyed daily STR+housing pipeline for a US city.",
+  "potential": "medium",
+  "geography": "Toronto, Canada",
+  "time_coverage": "daily, ongoing",
+  "size_hint": "27 partitioned JSON files, address-keyed, size unconfirmed",
+  "license": "code MIT; data under Open Government Licence \u2013 Toronto / Ontario",
+  "last_activity": "active (392 commits, daily cron)",
+  "duplicate_of_holding": "partially overlaps candidate above for the STR slice; adds LTB/permits not in our holdings",
+  "gap_targets": [
+   4,
+   12,
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)"
+  ],
+  "why_all": [
+   "Broader than the Toronto STR-only mirror above \u2014 bundles STR registration with landlord/tenant enforcement and building-permit data for the same city, useful for cross-referencing registration compliance with housing-supply signals; also a working template for building a similar address-keyed daily STR+housing pipeline for a US city.",
+   "A second, independently-built daily mirror of Toronto's STR registry (cross-check/backup for the RamVasuthevan repo above) plus adjacent housing-supply signals (building permits, multi-tenant licences) that bear on long-term vs short-term rental crossover economics for a major Canadian ABNB market (gap #12 and #13)."
+  ]
+ },
+ {
+  "key": "github:evanwappel/robbins",
+  "url": "https://github.com/EvanWAppel/robbins",
+  "name": "robbins",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Streamlit app + DuckDB/dbt warehouse for Seattle-metro public data; explicitly ingests Seattle's Short-Term Rental License dataset (Socrata id s7df-xba4, ~8,100 records per the city portal) alongside other Socrata SODA API, ArcGIS FeatureServer and federal-bulk-file sources; author states the pipeline is 'replicable across cities through configuration changes only'.",
+  "why_useful": "A working, documented one-command pull for Seattle STR licenses (one of the named theme cities) plus a config-driven pattern that could be repointed at Denver/Nashville/Chicago/SF Socrata STR endpoints with minimal work \u2014 directly useful as acquisition-method tooling for gap #12 and #17 (Socrata discovery/client tooling).",
+  "potential": "medium",
+  "geography": "Seattle, WA (architecture generalizable)",
+  "time_coverage": "current snapshot via live Socrata pull, not a historical archive",
+  "size_hint": "~8,100 Seattle STR license records (per city portal, not committed to repo)",
+  "license": "not stated on page",
+  "last_activity": "33 commits, date not confirmed",
+  "duplicate_of_holding": "Seattle not in our current 25-dataset municipal STR list",
+  "gap_targets": [
+   12,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "A working, documented one-command pull for Seattle STR licenses (one of the named theme cities) plus a config-driven pattern that could be repointed at Denver/Nashville/Chicago/SF Socrata STR endpoints with minimal work \u2014 directly useful as acquisition-method tooling for gap #12 and #17 (Socrata discovery/client tooling)."
+  ]
+ },
+ {
+  "key": "github:diagmatrix/tourism-watcher",
+  "url": "https://github.com/diagmatrix/tourism-watcher",
+  "name": "diagmatrix/tourism-watcher",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python monitoring project for Granada, Spain that (a) scrapes Airbnb search results directly for 'Granada, Espa\u00f1a' with flexible dates, and (b) has an in-progress secondary track pulling public tourist-housing permit data. Data collection in a `data/` folder starting 2024-10-15; 18 commits; GPL-3.0. Per the README the permit/registry side (the useful, non-Airbnb half for our purposes) is still described as under development, not yet delivering committed registry data.",
+  "why_useful": "The permit-registry half, if completed, would be another Spanish-city STR licence dataset (gap 12); flagged mainly because the primary/working half of the tool scrapes Airbnb search pages directly, which is out of scope under our sanctioned-sources rule -- catalogue only, do not run.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Spain, Granada",
+  "time_coverage": "Oct 2024 onward, ad hoc",
+  "size_hint": "Small, early-stage; data folder exists but registry portion incomplete",
+  "license": "GPL-3.0",
+  "last_activity": "2024-11-21 (per gh search metadata)",
+  "duplicate_of_holding": "Partially overlaps existing Inside Airbnb Barcelona coverage in spirit but different city (Granada) and different source (permit registry, once built)",
+  "hits": 2,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "The permit-registry half, if completed, would be another Spanish-city STR licence dataset (gap 12); flagged mainly because the primary/working half of the tool scrapes Airbnb search pages directly, which is out of scope under our sanctioned-sources rule -- catalogue only, do not run.",
+   "Combines a public STR registry pull with an Airbnb listing scrape for one Spanish city \u2014 a method template for cross-checking registration counts against live listing counts (relevant to the RNPL/registration-coverage question), though it does touch airbnb.com and any run decision is a human call per repo rules."
+  ]
+ }
+]

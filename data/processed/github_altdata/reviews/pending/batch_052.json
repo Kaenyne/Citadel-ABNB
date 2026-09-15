@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:unicef-drp/ahead-of-the-storm-datapipeline",
+  "url": "https://github.com/unicef-drp/Ahead-of-the-Storm-DATAPIPELINE",
+  "name": "Ahead-of-the-Storm-DATAPIPELINE",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "UNICEF Data & Predictive Analytics pipeline that ingests and processes tropical-storm/hurricane 'envelope' geospatial data for impact analysis (originally built for child-population exposure, but the storm-track/impact-footprint ingestion is domain-agnostic). 2 stars.",
+  "why_useful": "A ready-made pipeline pattern for turning storm tracks into geographic exposure footprints, which could be repointed at STR-market exposure (which Inside Airbnb markets/zip codes sit inside a given storm's cone) for the RNPL/cancellation thesis (gap #11, #3).",
+  "potential": "low",
+  "gap_targets": [
+   11,
+   3
+  ],
+  "geography": "global tropical-storm basins",
+  "time_coverage": "depends on storm data source ingested (likely NOAA/IBTrACS-based)",
+  "size_hint": "pipeline code, not a fixed dataset",
+  "license": "check repo (UNICEF org)",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "A ready-made pipeline pattern for turning storm tracks into geographic exposure footprints, which could be repointed at STR-market exposure (which Inside Airbnb markets/zip codes sit inside a given storm's cone) for the RNPL/cancellation thesis (gap #11, #3)."
+  ]
+ },
+ {
+  "key": "github:shajusachin/fwc26",
+  "url": "https://github.com/shajusachin/fwc26",
+  "name": "fwc26",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Live FIFA World Cup 2026 schedule, scores, standings, knockout bracket, host-city profiles and stadium weather in local timezone; actively updated as of 14 Sep 2026.",
+  "why_useful": "Host-city profiles + stadium-level data could be repurposed as a per-city event calendar (attendance size proxies, dates) for regressing nights/ADR spikes in host markets during the tournament quarter.",
+  "potential": "low",
+  "size_hint": "small app + data feed",
+  "geography": "US, Canada, Mexico",
+  "time_coverage": "Jun-Jul 2026",
+  "license": "Other (custom)",
+  "last_activity": "2026-09-14",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Host-city profiles + stadium-level data could be repurposed as a per-city event calendar (attendance size proxies, dates) for regressing nights/ADR spikes in host markets during the tournament quarter."
+  ]
+ },
+ {
+  "key": "github:0xsd22/world-cup-2026-agent-skill",
+  "url": "https://github.com/0xsd22/world-cup-2026-agent-skill",
+  "name": "world-cup-2026-agent-skill",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Packaged \"skill\" bundling FIFA World Cup 2026 schedule/results/standings/venue/bracket data for AI-agent consumption -- effectively a structured JSON of matches and venues intended to be machine-queried.",
+  "why_useful": "If it bundles a static JSON schedule (host city, date, kickoff time) it is a lightweight, no-scrape source of the same event-calendar dummy variable as the other WC26 repos, packaged for programmatic reuse.",
+  "potential": "low",
+  "size_hint": "small",
+  "geography": "US/Canada/Mexico",
+  "time_coverage": "Jun-Jul 2026",
+  "license": "MIT",
+  "last_activity": "2026-06-11",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "If it bundles a static JSON schedule (host city, date, kickoff time) it is a lightweight, no-scrape source of the same event-calendar dummy variable as the other WC26 repos, packaged for programmatic reuse."
+  ]
+ },
+ {
+  "key": "github:kameronth/hurdat2converter",
+  "url": "https://github.com/KameronTH/Hurdat2Converter",
+  "name": "Hurdat2Converter",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Script converting NOAA's raw HURDAT2 fixed-format text file into a clean, analysis-ready CSV/table (storm id, date, position, wind, pressure).",
+  "why_useful": "Alternative lightweight tool to the R package above for the same hurricane best-track series, useful if the team's pipeline is Python-only.",
+  "potential": "low",
+  "size_hint": "small script",
+  "geography": "Atlantic/East Pacific",
+  "time_coverage": "1851-present",
+  "license": "Apache-2.0",
+  "last_activity": "2025-07-04",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "duplicate function of BigelowLab/hurdat2, different language",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Alternative lightweight tool to the R package above for the same hurricane best-track series, useful if the team's pipeline is Python-only."
+  ]
+ },
+ {
+  "key": "github:shamindras/backburner",
+  "url": "https://github.com/shamindras/backburner",
+  "name": "backburner",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R utilities for collecting open US wildfire data plus matched climate features (weather station data joined to fire events).",
+  "why_useful": "Alternative/older tooling for assembling a US wildfire event panel with weather covariates, useful if the team wants wildfire dates outside California too (e.g., Pacific Northwest markets not yet in the Inside Airbnb panel).",
+  "potential": "low",
+  "size_hint": "small",
+  "geography": "United States",
+  "time_coverage": "not specified",
+  "license": "unspecified",
+  "last_activity": "2021-02-24",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Alternative/older tooling for assembling a US wildfire event panel with weather covariates, useful if the team wants wildfire dates outside California too (e.g., Pacific Northwest markets not yet in the Inside Airbnb panel)."
+  ]
+ }
+]

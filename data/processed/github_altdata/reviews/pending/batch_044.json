@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:tomerburg/ibtracs",
+  "url": "https://github.com/tomerburg/IBTrACS",
+  "name": "IBTrACS",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repository directly committing IBTrACS CSV files (global tropical cyclone best-track data) rather than just a client wrapper.",
+  "why_useful": "A committed, version-controlled copy of IBTrACS CSVs on GitHub -- easier to pin/point-in-time than always pulling live from NOAA, useful if the team wants a frozen vintage for backtesting hurricane-season effects.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "IBTrACS full historical record as of repo's last commit",
+  "size_hint": "CSV files, tens of MB typical for full IBTrACS",
+  "license": "not stated",
+  "last_activity": "2024-10-04",
+  "gap_targets": [
+   7,
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A committed, version-controlled copy of IBTrACS CSVs on GitHub -- easier to pin/point-in-time than always pulling live from NOAA, useful if the team wants a frozen vintage for backtesting hurricane-season effects."
+  ]
+ },
+ {
+  "key": "github:metemaad/hurdat2_processor",
+  "url": "https://github.com/metemaad/HURDAT2_processor",
+  "name": "HURDAT2_processor",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script converting NOAA's Atlantic hurricane database (HURDAT2) raw fixed-width text format into a clean pandas dataframe / CSV (storm id, name, date/time, lat/lon, max wind, pressure, per 6-hourly fix).",
+  "why_useful": "A simple, no-dependency way to get HURDAT2 (the standard official Atlantic-basin storm-track record used by NHC) into an analysis-ready CSV without hand-parsing the NOAA text format, directly supporting Gulf/Atlantic hurricane-season event studies (gap #11).",
+  "potential": "medium",
+  "geography": "Atlantic basin (US Gulf/East Coast + Caribbean)",
+  "time_coverage": "HURDAT2 full record, 1851-present (reliable from ~1950s-60s)",
+  "size_hint": "single script + resulting CSV of a few MB",
+  "license": "not stated",
+  "last_activity": "2019-11-05",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "A simple, no-dependency way to get HURDAT2 (the standard official Atlantic-basin storm-track record used by NHC) into an analysis-ready CSV without hand-parsing the NOAA text format, directly supporting Gulf/Atlantic hurricane-season event studies (gap #11)."
+  ]
+ },
+ {
+  "key": "github:exxamalte/python-aio-georss-gdacs",
+  "url": "https://github.com/exxamalte/python-aio-georss-gdacs",
+  "name": "python-aio-georss-gdacs",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Async Python client for the Global Disaster Alert and Coordination System (GDACS) GeoRSS feed -- real-time and near-term-historical alerts for earthquakes, tropical cyclones, floods, volcanoes, droughts, and wildfires worldwide, each with a severity/alert-level score.",
+  "why_useful": "GDACS gives a single cross-hazard, cross-country severity feed (not just US-only like FEMA) -- useful as a lightweight global disaster-shock indicator across APAC/LatAm/EMEA markets that FEMA/NIFC/HURDAT2 don't cover, complementing gap #11 outside the US.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "live feed; GDACS itself archives alerts back to the mid-2000s on its own site",
+  "size_hint": "API client, no committed dataset",
+  "license": "not stated (exxamalte's georss packages are typically Apache-2.0)",
+  "last_activity": "2026-07-20",
+  "gap_targets": [
+   7,
+   11
+  ],
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "GDACS gives a single cross-hazard, cross-country severity feed (not just US-only like FEMA) -- useful as a lightweight global disaster-shock indicator across APAC/LatAm/EMEA markets that FEMA/NIFC/HURDAT2 don't cover, complementing gap #11 outside the US.",
+   "GDACS is a genuinely global, near-real-time, free disaster feed (UN/EU backed) broader than EM-DAT's slower-updated historical archive; a lightweight client makes it feasible to build a live events-and-shocks flag feeding the nights/ADR nowcast for the current quarter, not just backtests."
+  ]
+ },
+ {
+  "key": "github:chelseakr/perimeter",
+  "url": "https://github.com/ChelseaKR/perimeter",
+  "name": "perimeter",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Coverage/measurement code over California's wildfire perimeter datasets sourced from FRAP (Fire and Resource Assessment Program) and CAL FIRE -- California's own authoritative historical wildfire-perimeter record (predates and complements NIFC/WFIGS).",
+  "why_useful": "CAL FIRE/FRAP is the longest-running state-level wildfire perimeter archive (decades of California fires) -- useful specifically for the LA and broader California Inside Airbnb markets named in the theme brief.",
+  "potential": "medium",
+  "geography": "California",
+  "time_coverage": "CAL FIRE FRAP historical archive (multi-decade, exact span not confirmed from listing alone)",
+  "size_hint": "1 star; small utility repo",
+  "license": "not stated",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   11
+  ],
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "CAL FIRE/FRAP is the longest-running state-level wildfire perimeter archive (decades of California fires) -- useful specifically for the LA and broader California Inside Airbnb markets named in the theme brief.",
+   "California is one of ABNB's larger single-country revenue pools and hosts several Inside-Airbnb-panel markets (LA, San Diego); fire perimeter + date + damage-inspection data would let the team flag wildfire-season demand/cancellation shocks to West Coast STR nights and ADR by market and date."
+  ]
+ },
+ {
+  "key": "github:gavinmorrison/fcdo-travel-advice",
+  "url": "https://github.com/gavinmorrison/fcdo-travel-advice",
+  "name": "fcdo-travel-advice",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Client/scraper for the UK Foreign, Commonwealth & Development Office (FCDO) travel advice API -- a non-Airbnb-site source for a second country's official travel-advisory levels, complementing the US State Dept series. Updated 2026-09-14 (same day as this scout), so actively maintained.",
+  "why_useful": "A UK-government advisory series lets a demand-shock construction be cross-checked against a second sovereign source (useful for EMEA-heavy Airbnb markets where UK outbound travelers matter), and diversifies beyond single-source risk in the US State Dept feed.",
+  "potential": "medium",
+  "time_coverage": "current/ongoing pull, no stated historical depth",
+  "geography": "global (countries covered by FCDO advice), UK-outbound perspective",
+  "size_hint": "unknown, small repo",
+  "license": "unstated",
+  "last_activity": "2026-09-14",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "A UK-government advisory series lets a demand-shock construction be cross-checked against a second sovereign source (useful for EMEA-heavy Airbnb markets where UK outbound travelers matter), and diversifies beyond single-source risk in the US State Dept feed."
+  ]
+ }
+]

@@ -1,0 +1,10 @@
+{
+ "slug": "hf-buenosaires-airbnb-reviews",
+ "url": "https://huggingface.co/datasets/alujjdnd/Airbnb-Mar-2022-2023",
+ "category": "str_airbnb_direct",
+ "data_kind": "pointer_to_external_host",
+ "one_line": "MIT-licensed HuggingFace dataset of 16.5M Airbnb reviews for Buenos Aires spanning 2011-2023 (9.48GB CSV/Parquet), well outside our 13-city panel and predating our Dec-2022 start.",
+ "abnb_use": "Extends the reviews-based stays-index method (gap #1, historical pre-2023 coverage; gap #7, LatAm regional read) to a market and time window we do not hold.",
+ "sample_plan": "Stream/download a capped slice of the Parquet file (e.g. first ~50k rows or one year of review dates) via the HF datasets library or direct HTTPS range request; cap total pull at ~5MB, well under the 25MB budget.",
+ "tos_or_license_flag": false
+}

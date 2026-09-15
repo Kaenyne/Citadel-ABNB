@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:ilyabo/remittances",
+  "url": "https://github.com/ilyabo/remittances",
+  "name": "remittances",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "An older (circa 2013) D3.js interactive visualization of world remittance flows with a /data folder alongside /design, /doc, /site; likely built on a World Bank bilateral remittance matrix snapshot of that era (contents of /data not confirmed beyond folder listing).",
+  "why_useful": "If the committed /data folder holds a full World Bank bilateral matrix snapshot it would be a static historical cross-check, but the vintage is stale (~2013) and the specific file contents could not be confirmed via fetch.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "geography": "Global",
+  "time_coverage": "unknown, likely ~2010-2013 World Bank snapshot",
+  "size_hint": "unknown - /data folder present but contents unconfirmed",
+  "license": "not confirmed",
+  "last_activity": "old (~2013)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "If the committed /data folder holds a full World Bank bilateral matrix snapshot it would be a static historical cross-check, but the vintage is stale (~2013) and the specific file contents could not be confirmed via fetch."
+  ]
+ },
+ {
+  "key": "github:mrkoyee/global-remittances",
+  "url": "https://github.com/MrKoyee/Global-Remittances",
+  "name": "Global-Remittances",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Interactive Power BI dashboard analyzing global remittance inflows using World Bank data; likely bundles a World Bank remittance-inflows extract as the Power BI data source (file contents not verified beyond the description).",
+  "why_useful": "Possible secondary source/extract of World Bank remittance inflow data by country if the underlying data file is committed alongside the .pbix; lower confidence than the jessesiminitz repo since it wasn't verified by fetch.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "geography": "Global, country-level",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, likely a single Power BI file with embedded World Bank extract",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "Possible secondary source/extract of World Bank remittance inflow data by country if the underlying data file is committed alongside the .pbix; lower confidence than the jessesiminitz repo since it wasn't verified by fetch."
+  ]
+ },
+ {
+  "key": "github:uhero/dbedt-data-portal",
+  "url": "https://github.com/UHERO/dbedt-data-portal",
+  "name": "dbedt-data-portal",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Data portal front-end for DBEDT's *general* data warehouse (broader than just the visitor warehouse \u2014 likely covers Hawaii economic indicators generally). Not independently verified beyond the gh search description; likely same architecture as dvw-data-portal.",
+  "why_useful": "Possible additional Hawaii macro/economic series (consumer spend, employment) that could serve as a regional demand proxy for Hawaii travel spend, adjacent to gap #6 (consumer spend panels) though for a single state.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "geography": "Hawaii",
+  "time_coverage": "unknown",
+  "size_hint": "frontend app only",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "Possible additional Hawaii macro/economic series (consumer spend, employment) that could serve as a regional demand proxy for Hawaii travel spend, adjacent to gap #6 (consumer spend panels) though for a single state."
+  ]
+ },
+ {
+  "key": "github:aansensei/shadow-rent-index",
+  "url": "https://github.com/aansensei/shadow-rent-index",
+  "name": "shadow-rent-index",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/Selenium ETL pipeline (MIT license) that scrapes weekly rental listings from real-estate platforms for targeted zip codes in Madison, WI only, cleans with pandas (regex price cleaning, room-type extraction, outlier removal) and loads to a PostgreSQL time-series DB. No data committed to the repo itself; requires running the scraper (undetected-chromedriver) on a schedule to populate any history. Single small metro, 1 contributor, updated May 2026.",
+  "why_useful": "Illustrates a 'zero-lag shadow rent index' methodology (listing-based nowcast ahead of official CPI shelter) that could in principle be re-pointed at broader geography, but as-is it is single-city and holds no usable committed data.",
+  "potential": "low",
+  "geography": "Madison, WI only",
+  "time_coverage": "ongoing/weekly, no fixed history committed",
+  "size_hint": "no committed dataset; DB populated only by running scraper",
+  "license": "MIT",
+  "last_activity": "2026-05-29",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing and rent inflation nowcasts (Zillow observed rent, Apartment List, Fed rent nowcasts), new-tenant rent index, shelter CPI nowcasting repos"
+  ],
+  "why_all": [
+   "Illustrates a 'zero-lag shadow rent index' methodology (listing-based nowcast ahead of official CPI shelter) that could in principle be re-pointed at broader geography, but as-is it is single-city and holds no usable committed data."
+  ]
+ },
+ {
+  "key": "github:dontgitit/rm",
+  "url": "https://github.com/dontgitit/rm",
+  "name": "rm (repeat-sales rent index)",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "web2py application implementing a repeat-sales regression method to build a rental price index, tracking the same properties over time. Repo includes some reference data used for the calculation but the README does not specify whether production rent-listing data is committed or geography/date range covered (undocumented, 3 stars, last touched 2022).",
+  "why_useful": "A working repeat-sales index construction method could be adapted to any committed or newly-collected rent panel to build a new-tenant-style rent index as an ABNB substitute-cost/backdrop indicator, but is unmaintained and its data scope is unclear.",
+  "potential": "low",
+  "geography": "unspecified in docs",
+  "time_coverage": "unspecified",
+  "size_hint": "small reference dataset bundled with repo, size unstated",
+  "license": "unspecified",
+  "last_activity": "2022-07-18",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing and rent inflation nowcasts (Zillow observed rent, Apartment List, Fed rent nowcasts), new-tenant rent index, shelter CPI nowcasting repos"
+  ],
+  "why_all": [
+   "A working repeat-sales index construction method could be adapted to any committed or newly-collected rent panel to build a new-tenant-style rent index as an ABNB substitute-cost/backdrop indicator, but is unmaintained and its data scope is unclear."
+  ]
+ }
+]

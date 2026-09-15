@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:bondvit/agoda-scraper-examples",
+  "url": "https://github.com/bondvit/agoda-scraper-examples",
+  "name": "agoda-scraper-examples",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Runnable Python & JS example client code calling a commercial Apify \"Agoda Hotel Scraper\" actor to pull hotel listings/room rates/availability/reviews from Agoda. No data committed; requires a paid Apify actor run to acquire anything.",
+  "why_useful": "Illustrates a working (if paid, third-party) route to Agoda price/availability data as a competitor-supply/pricing proxy (gap 9), but not a free or one-command pull and needs a human ToS/paid-API decision before any run.",
+  "potential": "low",
+  "geography": "APAC/global (Agoda's markets)",
+  "time_coverage": "current only (no historical archive)",
+  "size_hint": "example scripts only, no data",
+  "license": "other",
+  "last_activity": "2026-06-12",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Illustrates a working (if paid, third-party) route to Agoda price/availability data as a competitor-supply/pricing proxy (gap 9), but not a free or one-command pull and needs a human ToS/paid-API decision before any run.",
+   "Marginal \u2014 thin wrapper/example around a paid Apify actor for Agoda hotel rates."
+  ]
+ },
+ {
+  "key": "github:luminati-io/agoda-properties-listings-scraper",
+  "url": "https://github.com/luminati-io/agoda-properties-listings-scraper",
+  "name": "agoda-properties-listings-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Bright Data (Luminati) official template/marketing repo for a paid \"Agoda scraper\" product extracting hotel listings, room rates, availability, and reviews. No data files committed; it is a lead-gen wrapper around a commercial scraping-as-a-service product.",
+  "why_useful": "Another paid-service pointer to Agoda pricing/availability data (gap 9); lower value than the Apify example since it is purely promotional with no runnable open code shown.",
+  "potential": "low",
+  "geography": "APAC/global",
+  "time_coverage": "current only",
+  "size_hint": "no data committed",
+  "license": "unknown",
+  "last_activity": "2026-05-05",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Another paid-service pointer to Agoda pricing/availability data (gap 9); lower value than the Apify example since it is purely promotional with no runnable open code shown."
+  ]
+ },
+ {
+  "key": "github:projectivemotion/agoda-scraper",
+  "url": "https://github.com/projectivemotion/agoda-scraper",
+  "name": "agoda-scraper (PHP)",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small PHP class (MIT licensed) for scraping agoda.com directly (no third-party paid service dependency). No data committed, 4 stars, appears functional as of last update (2024).",
+  "why_useful": "The only free/self-hosted (non-paid-actor) Agoda scraping method found; could in principle be adapted to pull current Agoda prices as an APAC hotel-pricing proxy for gap 9, though it targets a non-Airbnb site directly and any run is a ToS decision for a human, per the rules.",
+  "potential": "low",
+  "geography": "APAC/global",
+  "time_coverage": "current only",
+  "size_hint": "single PHP class, no data",
+  "license": "MIT",
+  "last_activity": "2024-02-19",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "The only free/self-hosted (non-paid-actor) Agoda scraping method found; could in principle be adapted to pull current Agoda prices as an APAC hotel-pricing proxy for gap 9, though it targets a non-Airbnb site directly and any run is a ToS decision for a human, per the rules."
+  ]
+ },
+ {
+  "key": "github:factden/agoda-hotel-reviews-scraper",
+  "name": "factden/agoda-hotel-reviews-scraper",
+  "url": "https://github.com/factden/agoda-hotel-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "JavaScript Apify actor scraping Agoda hotel reviews at scale: scores, full text, photos, traveler type, stay dates. No bulk dataset committed to the repo itself (runs on Apify). Last updated Sep 7, 2026.",
+  "why_useful": "Review volume/velocity by traveler type and stay date on Agoda could proxy APAC travel demand seasonality, complementary to the Booking.com review datasets already held.",
+  "potential": "low",
+  "geography": "Agoda global (APAC-heavy)",
+  "time_coverage": "current, no historical archive",
+  "license": "unspecified",
+  "last_activity": "2026-09-07",
+  "size_hint": "code only",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Review volume/velocity by traveler type and stay date on Agoda could proxy APAC travel demand seasonality, complementary to the Booking.com review datasets already held."
+  ]
+ },
+ {
+  "key": "github:factden/qunar-hotel-reviews-scraper",
+  "name": "factden/qunar-hotel-reviews-scraper",
+  "url": "https://github.com/factden/qunar-hotel-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify actor scraping Qunar (Ctrip-owned Chinese OTA) hotel reviews: ratings, sub-scores, text, photos, owner replies, LLM-ready markdown export.",
+  "why_useful": "Qunar is a large Chinese domestic-travel OTA; reviews could proxy domestic China lodging demand, an otherwise dark region for the team (gap #9, #7).",
+  "potential": "low",
+  "geography": "China (Qunar)",
+  "time_coverage": "current only",
+  "license": "unspecified",
+  "last_activity": "2026-09 (recently updated)",
+  "size_hint": "code only",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Qunar is a large Chinese domestic-travel OTA; reviews could proxy domestic China lodging demand, an otherwise dark region for the team (gap #9, #7)."
+  ]
+ }
+]

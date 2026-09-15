@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:shefalitakshak/airbnb-texas-tableau-dashboard",
+  "url": "https://github.com/shefalitakshak/Airbnb-Texas-Tableau-Dashboard",
+  "name": "Airbnb-Texas-Tableau-Dashboard",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Tableau dashboard project on Texas Airbnb listings; no description, no license, updated Jan 2024, 0 stars. Underlying data file not confirmed.",
+  "why_useful": "Marginal at best; a dashboard wrapper around what is likely a single-vintage Texas listings extract, no clear time series or new source.",
+  "potential": "low",
+  "geography": "Texas",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "last_activity": "2024-01-12",
+  "license": "none stated",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "Marginal at best; a dashboard wrapper around what is likely a single-vintage Texas listings extract, no clear time series or new source."
+  ]
+ },
+ {
+  "key": "github:si2-9harth/generating-florida-airbnbs-insights-",
+  "url": "https://github.com/Si2-9harth/Generating-Florida-AirBNBs-Insights-",
+  "name": "Generating-Florida-AirBNBs-Insights",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A single Tableau packaged workbook ('AirBNB in Florida Insights.twbx', repo ~14MB) plus a README, pushed April 2022. Tableau .twbx files bundle an internal data extract (often Inside Airbnb-derived) but the raw rows are not directly exposed as CSV without opening in Tableau or unzipping the .twbx.",
+  "why_useful": "Potentially an older (2022, pre-2023) Florida Airbnb listings snapshot, which would be valuable under gap #1 (historical/archived Inside Airbnb dumps), but the data is locked inside a proprietary Tableau extract format with no README detail on source date, city, or fields, making it low-confidence and low-accessibility.",
+  "potential": "low",
+  "geography": "Florida, USA (city unspecified in README)",
+  "time_coverage": "unclear, repo last touched April 2022",
+  "size_hint": "~14MB Tableau workbook",
+  "license": "none declared",
+  "last_activity": "2022-04-08",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "Potentially an older (2022, pre-2023) Florida Airbnb listings snapshot, which would be valuable under gap #1 (historical/archived Inside Airbnb dumps), but the data is locked inside a proprietary Tableau extract format with no README detail on source date, city, or fields, making it low-confidence and low-accessibility."
+  ]
+ },
+ {
+  "key": "github:artowldev/vancouver_shortterm_rentals_da",
+  "url": "https://github.com/artOwlDev/Vancouver_ShortTerm_Rentals_DA",
+  "name": "Vancouver_ShortTerm_Rentals_DA",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A student data-analysis project re-packaging Inside Airbnb Vancouver listings into cleaned CSVs plus a Power BI dashboard; not a regulatory dataset despite the name.",
+  "why_useful": "Low value \u2014 duplicates Inside Airbnb (already held) with no registration/enforcement angle; flagged only because it surfaced under the Vancouver STR search and could mislead a future scout into re-flagging it.",
+  "potential": "low",
+  "gap_targets": [],
+  "duplicate_of_holding": "Inside Airbnb panel already held",
+  "license": "not stated",
+  "last_activity": "2026-06-22",
+  "geography": "Vancouver, Canada",
+  "time_coverage": "single Inside Airbnb pull",
+  "size_hint": "two CSVs, small",
+  "hits": 1,
+  "themes": [
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Low value \u2014 duplicates Inside Airbnb (already held) with no registration/enforcement angle; flagged only because it surfaced under the Vancouver STR search and could mislead a future scout into re-flagging it."
+  ]
+ },
+ {
+  "key": "github:keithah/hospitable-python",
+  "url": "https://github.com/keithah/hospitable-python",
+  "name": "keithah/hospitable-python",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python SDK (2 stars, updated 3 Nov 2025) for the Hospitable Public API v2. Covers vacation-rental properties, reservations, calendar, messaging, and reviews. Hospitable is a mid-size multi-channel PMS managing thousands of Airbnb/Vrbo/Booking.com listings; the API exposes per-reservation nightly rate, length of stay, channel, and property/market metadata to the account owner.",
+  "why_useful": "Documents the field-level schema (ADR-equivalent nightly rate, LOS, channel/source, market) a professional multi-listing operator's system captures per booking \u2014 the same fields needed to build a bottom-up nights/ADR panel, if a cooperating Hospitable-using PM ever exported their own portfolio.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "license": "MIT",
+  "last_activity": "2025-11-03",
+  "geography": "wherever the connected account's listings are",
+  "time_coverage": "live/current, per-account only",
+  "size_hint": "code only, no data (requires the operator's own API key)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Documents the field-level schema (ADR-equivalent nightly rate, LOS, channel/source, market) a professional multi-listing operator's system captures per booking \u2014 the same fields needed to build a bottom-up nights/ADR panel, if a cooperating Hospitable-using PM ever exported their own portfolio."
+  ]
+ },
+ {
+  "key": "github:timwoodland/hospitable_financial_exporter",
+  "url": "https://github.com/timwoodland/hospitable_financial_exporter",
+  "name": "timwoodland/hospitable_financial_exporter",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small unlicensed Python script (updated 15 Jun 2026) written by an actual Hospitable-using host/PM to export their own financial data (per-listing revenue/booking detail) from Hospitable to CSV for a chosen date range.",
+  "why_useful": "A real, in-the-wild example of a small property manager exporting exactly the revenue/occupancy fields (by listing, by date range) this project would want in bulk; useful chiefly as a schema reference / proof that hosts routinely build these exports themselves, not as a source of usable third-party data (single-account, no data committed).",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "license": "unspecified",
+  "last_activity": "2026-06-15",
+  "geography": "n/a (single host's own portfolio)",
+  "time_coverage": "n/a",
+  "size_hint": "one script, no data",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "A real, in-the-wild example of a small property manager exporting exactly the revenue/occupancy fields (by listing, by date range) this project would want in bulk; useful chiefly as a schema reference / proof that hosts routinely build these exports themselves, not as a source of usable third-party data (single-account, no data committed)."
+  ]
+ }
+]

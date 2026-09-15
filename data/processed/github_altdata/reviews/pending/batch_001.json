@@ -1,0 +1,123 @@
+[
+ {
+  "key": "other:https://www.researchgate.net/publication/341408157_neutrality_may_matter",
+  "url": "https://www.researchgate.net/publication/341408157_Neutrality_May_Matter",
+  "name": "Neutrality May Matter: sentiment in Airbnb, Booking, and Couchsurfing reviews (Brazil/USA)",
+  "category": "academic_replication",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Academic paper (Santos, Mota, Benevenuto, Silva; Social Network Analysis and Mining, 2020) that collected and sentiment-scored reviews across three platforms -- Airbnb, Booking.com, and Couchsurfing -- for matched cities in Brazil and the USA. No GitHub code/data repository was found in this pass (search returned only ResearchGate/arXiv/Semantic Scholar mirrors of the paper itself); flagged as a lead worth a direct-author-page or arXiv-supplementary check rather than a confirmed repo.",
+  "why_useful": "If a companion repo/dataset surfaces, this would be a rare cross-platform (Airbnb vs. hotel-OTA vs. peer-to-peer) matched-city review corpus, useful for a sharing-economy vs. traditional-lodging sentiment/positivity-bias read that could bear on review-count-based demand proxies (why review positivity may differ between Airbnb and Booking, biasing simple review-count comparisons).",
+  "potential": "low",
+  "gap_targets": [
+   1,
+   9
+  ],
+  "license": "unknown",
+  "last_activity": "2020 publication",
+  "geography": "Brazil and USA, multiple cities",
+  "time_coverage": "not confirmed",
+  "size_hint": "not confirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "If a companion repo/dataset surfaces, this would be a rare cross-platform (Airbnb vs. hotel-OTA vs. peer-to-peer) matched-city review corpus, useful for a sharing-economy vs. traditional-lodging sentiment/positivity-bias read that could bear on review-count-based demand proxies (why review positivity may differ between Airbnb and Booking, biasing simple review-count comparisons)."
+  ]
+ },
+ {
+  "key": "other:https://www.openicpsr.org/openicpsr/project/113691/version/v1/view",
+  "url": "https://www.openicpsr.org/openicpsr/project/113691/version/V1/view",
+  "name": "Replication data for: Racial Discrimination in the Sharing Economy: Evidence from a Field Experiment (Edelman, Luca, Svirsky 2017)",
+  "category": "academic_replication",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "ICPSR-hosted replication package (not GitHub) for the AEJ: Applied Economics field experiment on Airbnb host acceptance rates by guest race. Covers June-December 2014 audit-study applications data with accept/reject outcomes by host and listing. No GitHub mirror found despite targeted search; flagging as the canonical source location since the paper itself is a foundational Airbnb-adjacent academic dataset (host discrimination behavior, not directly a KPI driver but relevant to platform-trust/regulatory-risk narratives).",
+  "why_useful": "Not a KPI forecasting input, but a primary source for discrimination/regulatory-risk framing (gap 12 adjacent) and a benchmark dataset if the team ever wants host-acceptance-rate behavior as a trust proxy. Recorded here because no GitHub replication mirror exists -- worth knowing the search came up empty so nobody re-searches this later.",
+  "potential": "low",
+  "size_hint": "audit-study microdata, ~1,300+ applications (per paper); small",
+  "time_coverage": "Jun-Dec 2014",
+  "geography": "5 US cities (Baltimore, Dallas, LA, St. Louis, DC per paper)",
+  "license": "ICPSR terms (academic use)",
+  "last_activity": "unknown (deposited ~2017)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews"
+  ],
+  "why_all": [
+   "Not a KPI forecasting input, but a primary source for discrimination/regulatory-risk framing (gap 12 adjacent) and a benchmark dataset if the team ever wants host-acceptance-rate behavior as a trust proxy. Recorded here because no GitHub replication mirror exists -- worth knowing the search came up empty so nobody re-searches this later.",
+   "Direct primary replication package for one of the eight named papers in this theme; useful as a reference dataset on discrimination/acceptance-rate dynamics even though it predates current forecasting relevance, and as a template for what a proper replication package looks like if the team wants to request similar deposits for the other seven papers."
+  ]
+ },
+ {
+  "key": "github:itloow/lyon-airbnb-discrimination",
+  "url": "https://github.com/Itloow/lyon-airbnb-discrimination",
+  "name": "Itloow/lyon-airbnb-discrimination",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "'Analyse NLP des biais discriminatoires dans les annonces Airbnb \u00e0 Lyon' -- an NLP bias-analysis project on Airbnb listing text for Lyon, France; not a named replication of Edelman/Luca/Svirsky but a student/independent project in the same vein (discriminatory bias in listing text, single city). Updated Jan 2026 (recent). Not inspected further for committed data files.",
+  "why_useful": "Marginal: a modern (2026), non-US take on discrimination/bias analysis of Airbnb listing text; could be a template for text-bias methodology but is single-city and unlikely to hold a reusable dataset beyond Lyon listings.",
+  "potential": "low",
+  "size_hint": "unknown, likely small student project",
+  "time_coverage": "unknown, recent (updated 2026-01-17)",
+  "geography": "Lyon, France",
+  "license": "unspecified",
+  "last_activity": "2026-01-17",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews"
+  ],
+  "why_all": [
+   "Marginal: a modern (2026), non-US take on discrimination/bias analysis of Airbnb listing text; could be a template for text-bias methodology but is single-city and unlikely to hold a reusable dataset beyond Lyon listings."
+  ]
+ },
+ {
+  "key": "other:https://doi.org/10.5281/zenodo.19940211",
+  "url": "https://doi.org/10.5281/zenodo.19940211",
+  "name": "Host Concentration & Spatial Clustering in Airbnb: Implications for Urban Housing Sustainability (Nayak, Nayak, Garg 2026)",
+  "category": "academic_replication",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Published paper (PDF only, 208KB, CC BY 4.0) in International Journal of Marketing & Financial Management analyzing host concentration, spatial clustering and turnover intensity in NYC using the well-known 2019 Inside Airbnb listing-level dataset we already hold. Zenodo record has only the PDF file, no separate data file.",
+  "why_useful": "Methodology reference for host-concentration metrics; no new data (duplicates our existing NYC 2019 Inside Airbnb holding).",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "2019",
+  "size_hint": "single PDF, 207,936 bytes",
+  "license": "CC BY 4.0",
+  "last_activity": "2026-05-01",
+  "duplicate_of_holding": "Uses the same NYC 2019 Inside Airbnb data we already hold; no new dataset",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "Methodology reference for host-concentration metrics; no new data (duplicates our existing NYC 2019 Inside Airbnb holding)."
+  ]
+ },
+ {
+  "key": "github:cja5553/national_park_visitation_analysis_w_mobile_phone_data",
+  "url": "https://github.com/cja5553/national_park_visitation_analysis_w_mobile_phone_data",
+  "name": "national_park_visitation_analysis_w_mobile_phone_data",
+  "category": "academic_replication",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Replication code for a published Scientific Reports paper (Alba, Pan, Yin et al. 2022) analyzing COVID-19 impact on US national park visitation by race/ethnicity using SafeGraph mobile-phone mobility data at Census Block Group level. Repo holds feature-extraction and modeling scripts under src/; only aggregated outputs are committed (raw SafeGraph data requires a commercial licence, not redistributed).",
+  "why_useful": "Method/pipeline for turning SafeGraph-style mobility data into park-visitation demand estimates with demographic splits; useful as a template if the team ever gets SafeGraph/Placer.ai access, and as an academic anchor citation for mobility-based destination-demand nowcasting (relates to gap 17, nowcasting methods).",
+  "potential": "low",
+  "geography": "USA national parks",
+  "time_coverage": "2019-2021 (COVID period)",
+  "size_hint": "code + aggregated results only, no raw mobility rows",
+  "license": "none declared",
+  "last_activity": "2024-10-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Method/pipeline for turning SafeGraph-style mobility data into park-visitation demand estimates with demographic splits; useful as a template if the team ever gets SafeGraph/Placer.ai access, and as an academic anchor citation for mobility-based destination-demand nowcasting (relates to gap 17, nowcasting methods)."
+  ]
+ }
+]

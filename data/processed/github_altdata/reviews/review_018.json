@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/L8ton-crypto/insidercluster",
+  "slug": "insidercluster-form4-cluster-buy",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Next.js 15 / Neon-Postgres web app (39 KB, 0 stars, last push 2026-06-03, NO licence) that walks SEC EDGAR Form 4 filings, keeps only Code-P open-market purchases and flags clusters of 3+ insiders inside a rolling 14-day window; the only substance is lib/edgar.ts (6.5 KB) + lib/clusters.ts (4.4 KB). No data committed, no release assets, US only.",
+  "abnb_use": "Gap #15 (company-structure signals): a reference implementation for pulling and filtering ABNB/BKNG/EXPE/MAR/HLT Form 4 Code-P transactions around guide dates, i.e. whether insiders bought before the 5 Nov print. Insider activity is a positioning colour item at best, not a KPI input.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "gh api confirms a 39 KB TypeScript app with only .gitignore/README/app/lib/config files -- there is no committed data and no release, so there is nothing for an agent to sample. Running it end to end needs a Neon Postgres DATABASE_URL and a Vercel cron, which is infrastructure plus a credential, and the repo carries no licence at all (licence field null), so reuse of the code is legally unclear. Catalogue the EDGAR Form 4 Code-P filter idea and move on; edgartools already covers the pull side in Python."
+ },
+ {
+  "url": "https://github.com/maxscott/sec_13f_filing_parser",
+  "slug": "maxscott-sec-13f-filing-parser-elixir",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "6 KB Elixir (mix) library -- not Python, contrary to the scout note -- that parses 13F header and position info from raw SEC filings; companion to the author's SecLatestFilingsRSSFeedParser; 2 stars, last push 2018-04-25 (scout's '2020-03-16' is wrong), no licence file.",
+  "abnb_use": "Gap #15 only in principle: 13F position history for ABNB holders (concentration, hedge-fund churn around prints). Contributes nothing we cannot get from edgartools or the EDGAR 13F XML directly.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Contents listing shows mix.exs/mix.lock/lib/test and a stub README pointing at an unpublished Hex package -- it is an eight-year-old Elixir toy with zero data files. Our stack is Python and we already have EDGAR tooling, so the parser adds no capability; there is also no licence, so it is not cleanly reusable. Nothing to sample, so catalogue the URL for completeness and do not spend agent time on it."
+ },
+ {
+  "url": "https://github.com/AsimMazin/JobListingProject",
+  "slug": "asimmazin-joblistingproject-thinknum-eda",
+  "exists_and_has_content": false,
+  "usefulness": "none",
+  "verdict": "discard",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "one_line": "Empty repo: reported size 0 KB and the only file at HEAD is a 70-byte README reading 'EDA of Job listing dataset from Thinknum Datasets'. No notebook, no CSV, no Thinknum sample, last push 2019-05-19.",
+  "abnb_use": "None. The hoped-for content (a free Thinknum job-posting-count sample that might include Airbnb, gap #15 headcount proxy) does not exist in this repository.",
+  "sample_plan": "",
+  "tos_or_license_flag": false,
+  "reasoning": "The scout explicitly asked for a follow-up file listing; gh api repos/AsimMazin/JobListingProject/contents returns exactly one item, the 70-byte README, and the repo size is reported as 0 KB. There is no committed Thinknum extract, no analysis code and no release asset, so the premise of the flag fails. Discard."
+ },
+ {
+  "url": "https://github.com/snauhaus/link_compustat_ibes",
+  "slug": "snauhaus-link-compustat-ibes",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "Single 4.1 KB Python script (MIT, 18 stars, last push 2019-10-24 -- scout's '2024-12-23' is wrong) that builds an I/B/E/S <-> Compustat linking table by querying the WRDS SQL server via CRSP or G_Security; README states plainly 'Requires WRDS login credentials'. No data files.",
+  "abnb_use": "Gap #4 (point-in-time consensus): plumbing that would sit under a genuinely point-in-time I/B/E/S consensus-revision history for ABNB/BKNG/EXPE, replacing our pull-date-anchored Bloomberg snapshots -- but only if UF WRDS access materialises, which is out of scope before the 2 Oct memo.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "The repo holds LICENSE, Readme.md and one script; every line of value runs against the WRDS SQL server behind institutional credentials, and I/B/E/S plus Compustat are licensed data we may not redistribute. That makes it a login-gated method by the run's own rules, so catalog_only with no pull. The code is MIT and harmless to read, but a linking table is useless without the licensed panels on both sides."
+ },
+ {
+  "url": "https://github.com/cagdemir/firm-characteristics-calculation",
+  "slug": "cagdemir-firm-characteristics-wrds",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "87 KB of Python (MIT, 14 stars, last push 2020-03-01 -- scout's '2025-09-17' is wrong) replicating the Green/Hand/Zhang (2016) firm-characteristic set end to end: main_characteristics.py (136 KB), additional_variables.py (91 KB), data_preprocess.py, portfolio_analysis.py, all pulling Compustat/CRSP/IBES through WRDS. No data committed.",
+  "abnb_use": "Gap #4 marginally (its IBES blocks show how analyst-estimate and revision variables are constructed from raw consensus files) and as a cross-sectional-factor replication template; it does not touch any Airbnb KPI, travel volume, or ADR/nights driver.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified as code-only: four .py files plus LICENSE and a three-line README, with every data path going through a WRDS connection that needs institutional credentials. Same gate as link_compustat_ibes, so it cannot be pulled or run by an agent. Worth one catalogue line as an IBES-variable-construction reference if WRDS ever opens up, nothing more."
+ }
+]

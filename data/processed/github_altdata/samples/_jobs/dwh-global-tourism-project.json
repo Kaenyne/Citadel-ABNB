@@ -1,0 +1,10 @@
+{
+ "slug": "dwh-global-tourism-project",
+ "url": "https://github.com/Daniele1388/DWH---Global-Tourism-Project",
+ "category": "travel_volume_transport",
+ "data_kind": "stored_dataset",
+ "one_line": "Five committed UNWTO CSVs (domestic, inbound, outbound, tourism industries, SDG tourism indicators), global country coverage, 1995-2022, MIT, built as a SQL medallion warehouse.",
+ "abnb_use": "A genuinely global, 27-year UNWTO arrivals/receipts panel we do not currently hold in this shape -- fills gap #7's need for LatAm/APAC regional travel-volume context beyond the EU-only Eurostat series.",
+ "sample_plan": "Pull the Datasets/ folder CSVs directly (inbound tourism, outbound tourism, tourism industries) for the last ~10 years; cap at 5MB, skip the SQL scripts.",
+ "tos_or_license_flag": false
+}

@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:kristina-lynch/disney-time-series-project",
+  "url": "https://github.com/kristina-lynch/Disney-Time-Series-Project",
+  "name": "Disney-Time-Series-Project",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R Markdown project applying ARIMA, neural-net, STL+ETS, and Prophet models to Disney park attendance; repo page shows only the report PDF, .Rmd, and a Prophet HTML output -- no raw attendance CSV visible in the top-level listing.",
+  "why_useful": "Method/approach reference for forecasting theme-park attendance with the same model families used elsewhere in this project (Prophet, ARIMA); low value as a data source since no committed dataset was confirmed.",
+  "potential": "low",
+  "geography": "US (Disney parks, unspecified which)",
+  "time_coverage": "unclear",
+  "size_hint": "no raw data confirmed",
+  "license": "not stated",
+  "last_activity": "2024-10-09",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Method/approach reference for forecasting theme-park attendance with the same model families used elsewhere in this project (Prophet, ARIMA); low value as a data source since no committed dataset was confirmed."
+  ]
+ },
+ {
+  "key": "github:cunningdj/recreationgovavailability",
+  "url": "https://github.com/CunningDJ/RecreationGovAvailability",
+  "name": "RecreationGovAvailability",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Browser-console JavaScript tool (not a stored dataset) that queries the public Recreation.gov API for campsite availability at any campground ID (covers national and state park campgrounds bookable via Recreation.gov) and visualizes open dates per campsite; 16 commits, no license stated.",
+  "why_useful": "Working, documented method to pull real-time camping-demand/availability signal (a leading indicator of outdoor-recreation/park demand) from a sanctioned public government API (recreation.gov), which could be adapted into a periodic pull for a national-park/state-park camping-occupancy proxy series -- currently we hold no camping-occupancy data.",
+  "potential": "low",
+  "geography": "US, all Recreation.gov-bookable campgrounds (national + state parks)",
+  "time_coverage": "real-time only, not historical",
+  "size_hint": "small script repo, no stored data",
+  "license": "not stated",
+  "last_activity": "unknown (repo shows 16 commits, date not surfaced)",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Working, documented method to pull real-time camping-demand/availability signal (a leading indicator of outdoor-recreation/park demand) from a sanctioned public government API (recreation.gov), which could be adapted into a periodic pull for a national-park/state-park camping-occupancy proxy series -- currently we hold no camping-occupancy data."
+  ]
+ },
+ {
+  "key": "github:soloriojuarez/california-national-parks-data-analysis",
+  "url": "https://github.com/soloriojuarez/california-national-parks-data-analysis",
+  "name": "california-national-parks-data-analysis",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "duplicate_of_holding": "overlaps NPS visitation stats also covered by national-parks-bi and park-atlas-data",
+  "what_it_holds": "Wolfram Mathematica notebook analyzing US National Park visitation trends, scoped to California parks per the repo name; exact data files not verified beyond the description.",
+  "why_useful": "Possible additional NPS visitation extract scoped to California (a large ABNB market state); low confidence without confirming committed data files.",
+  "potential": "low",
+  "geography": "US, California national parks",
+  "time_coverage": "unclear",
+  "size_hint": "unclear",
+  "license": "not stated",
+  "last_activity": "2026-03-29",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Possible additional NPS visitation extract scoped to California (a large ABNB market state); low confidence without confirming committed data files."
+  ]
+ },
+ {
+  "key": "github:emrbli/worldcup",
+  "url": "https://github.com/emrbli/worldcup",
+  "name": "worldcup",
+  "category": "events_weather_shocks",
+  "data_kind": "both",
+  "what_it_holds": "NestJS/Fastify/Drizzle/PostgreSQL backend shipping a 'pre-loaded dataset (teams, full squads, fixtures, venues, standings, broadcasts, 30+ language names, content) from public sources', plug-and-play via Docker. REST+WebSocket API over the seeded data.",
+  "why_useful": "Second independent source for World Cup fixtures/venues with a ready seed/migration file (structured schema) that could be used as a cross-check on match dates/venues if the seed data is inspected; lower priority than the two CSV/ICS sources above since it requires standing up a DB.",
+  "potential": "low",
+  "geography": "US, Canada, Mexico",
+  "time_coverage": "2026 tournament",
+  "size_hint": "seed data + Postgres migrations, size not stated",
+  "license": "MIT",
+  "last_activity": "2026-07-20",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Second independent source for World Cup fixtures/venues with a ready seed/migration file (structured schema) that could be used as a cross-check on match dates/venues if the seed data is inspected; lower priority than the two CSV/ICS sources above since it requires standing up a DB."
+  ]
+ },
+ {
+  "key": "github:nlbair/wc2026-events",
+  "url": "https://github.com/nlbair/wc2026-events",
+  "name": "wc2026-events",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'FIFA World Cup 2026 match event data - every match, shot maps, xG model, and visualization notebooks.' Likely per-match event-level data with dates/venues embedded; not independently verified beyond description. 26 stars, updated 7 Sep 2026, no license field returned.",
+  "why_useful": "Possible additional/alternate schedule and venue source with match-level granularity for the 3Q26 World Cup demand-shock calendar; would need a directory listing to confirm files before use.",
+  "potential": "low",
+  "geography": "US, Canada, Mexico",
+  "time_coverage": "Jun-Jul 2026",
+  "size_hint": "not confirmed",
+  "license": "unknown",
+  "last_activity": "2026-09-07",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Possible additional/alternate schedule and venue source with match-level granularity for the 3Q26 World Cup demand-shock calendar; would need a directory listing to confirm files before use."
+  ]
+ }
+]

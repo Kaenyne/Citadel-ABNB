@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:rgllm/awesome-portugal-data",
+  "url": "https://github.com/rgllm/awesome-portugal-data",
+  "name": "rgllm/awesome-portugal-data",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated awesome-list (512 stars, ~476 linked resources) of Portuguese open-data sources. Directly links: INE Portugal's official statistics API (https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_api), Turismo de Portugal's open-data portal (https://dadosabertos.turismodeportugal.pt/), the national tourism enterprise registry (https://registos.turismodeportugal.pt/), and Pordata municipal/EU statistics (https://www.pordata.pt/).",
+  "why_useful": "One-stop index confirming Portugal's national tourism statistics office (INE) has a documented, token-free REST/webservice API, and that Turismo de Portugal runs its own open-data portal \u2014 both plausible sources for Portugal-specific nights/occupancy series feeding the EMEA regional split. The repo itself holds no data, just curated links.",
+  "potential": "medium",
+  "geography": "Portugal",
+  "time_coverage": "n/a (index)",
+  "size_hint": "markdown link list",
+  "license": "unspecified (CC-style typical for awesome-lists)",
+  "last_activity": "2026-09-04",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "One-stop index confirming Portugal's national tourism statistics office (INE) has a documented, token-free REST/webservice API, and that Turismo de Portugal runs its own open-data portal \u2014 both plausible sources for Portugal-specific nights/occupancy series feeding the EMEA regional split. The repo itself holds no data, just curated links."
+  ]
+ },
+ {
+  "key": "github:dnme-minturdep/turismo_internacional",
+  "url": "https://github.com/dnme-minturdep/turismo_internacional",
+  "name": "dnme-minturdep/turismo_internacional",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "R Shiny dashboard from Argentina's national Ministry of Tourism statistics directorate (DNMyE) covering international inbound/outbound tourism flows and the tourism trade balance across transport modes (SINTA system). Likely bundles source CSVs feeding the dashboard (typical for these Shiny repos), though exact files not confirmed from the listing alone.",
+  "why_useful": "Off-Europe but hits gap 7 directly (LatAm regional travel volume, Argentina named explicitly): an official national-ministry GitHub with programmatically-built international tourism series, maintained by the same DNMyE org that also runs 'armonizacion' (harmonization of provincial tourism stats) and 'calendario_dnmye' (a SINTA release calendar \u2014 useful for point-in-time release-date tracking, gap 4).",
+  "potential": "medium",
+  "geography": "Argentina",
+  "time_coverage": "current SINTA series, historical depth unconfirmed",
+  "size_hint": "R Shiny app repo, unconfirmed data file sizes",
+  "license": "unspecified (org uses GPL-3.0 on sibling repos)",
+  "last_activity": "unspecified, org active through 2026 per topic hits",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Off-Europe but hits gap 7 directly (LatAm regional travel volume, Argentina named explicitly): an official national-ministry GitHub with programmatically-built international tourism series, maintained by the same DNMyE org that also runs 'armonizacion' (harmonization of provincial tourism stats) and 'calendario_dnmye' (a SINTA release calendar \u2014 useful for point-in-time release-date tracking, gap 4)."
+  ]
+ },
+ {
+  "key": "github:kylejones200/fixed-effects-panel-ols-covid-impact-on-amtrak-ridership",
+  "url": "https://github.com/kylejones200/fixed-effects-panel-ols-covid-impact-on-amtrak-ridership",
+  "name": "fixed-effects-panel-ols-covid-impact-on-amtrak-ridership",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Fixed-effects panel-OLS study of COVID's impact on Amtrak ridership; repo built/updated as recently as June 2026, MIT licensed, likely includes a route/state-level panel spanning pre- and post-COVID years (needs a contents check to confirm exact vintage and whether data is route-level or system-level).",
+  "why_useful": "If the panel is route- or state-level and covers 2019-2025+, it would be the freshest/most granular Amtrak series found and could proxy regional US ground-travel recovery relevant to domestic leisure travel demand (gap #10); worth a directory-listing check before relying on it.",
+  "potential": "medium",
+  "geography": "USA (route/state level, unconfirmed)",
+  "time_coverage": "unconfirmed, repo updated 2026-06-01",
+  "size_hint": "unconfirmed",
+  "license": "MIT",
+  "last_activity": "2026-06-01",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "If the panel is route- or state-level and covers 2019-2025+, it would be the freshest/most granular Amtrak series found and could proxy regional US ground-travel recovery relevant to domestic leisure travel demand (gap #10); worth a directory-listing check before relying on it."
+  ]
+ },
+ {
+  "key": "github:ducdainn/nyc-taxi-pipeline",
+  "url": "https://github.com/ducdainn/nyc-taxi-pipeline",
+  "name": "nyc-taxi-pipeline",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "ELT pipeline (PySpark/dbt/Airflow/DuckDB/Metabase) built against the official NYC TLC Trip Record data (data.cityofnewyork.us / TLC), which includes airport pickup/dropoff flags (JFK/LGA/EWR) by taxi zone, 2009-present monthly Parquet files. Repo itself is boilerplate with no committed rows.",
+  "why_useful": "Representative of dozens of near-identical NYC TLC ETL-pipeline repos found in this search; none add unique data, but they collectively confirm the TLC Trip Record Parquet archive (with an airport-trip flag) is the standing free, monthly, decade-plus, one-command-pullable source for gap #10's NYC airport-taxi-trips ask -- worth pulling directly from the TLC site rather than via any of these repos.",
+  "potential": "medium",
+  "geography": "New York City (incl. JFK/LGA/EWR airport trips)",
+  "time_coverage": "external dataset 2009-present monthly; repo itself dated 2026",
+  "size_hint": "external dataset multi-GB Parquet per month; repo has no committed data",
+  "license": "none declared",
+  "last_activity": "2026-03-16",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Representative of dozens of near-identical NYC TLC ETL-pipeline repos found in this search; none add unique data, but they collectively confirm the TLC Trip Record Parquet archive (with an airport-trip flag) is the standing free, monthly, decade-plus, one-command-pullable source for gap #10's NYC airport-taxi-trips ask -- worth pulling directly from the TLC site rather than via any of these repos."
+  ]
+ },
+ {
+  "key": "github:toddwschneider/chicago-taxi-data",
+  "url": "https://github.com/toddwschneider/chicago-taxi-data",
+  "name": "chicago-taxi-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts to download and analyze City of Chicago taxi trip records (~200M rows as of Q1 2020) and Transportation Network Provider/TNP data (Uber/Lyft, ~130M rows), plus census-tract/community-area mapping, weather data, and shapefiles. Data pulled from Chicago's open-data portal (70GB+ CSV), not committed.",
+  "why_useful": "Second major US metro ground-travel/rideshare volume series for gap #10; Chicago is a top-10 US market with international airport connections (O'Hare), useful as a cross-check on the NYC TLC series for broader US travel-demand read-through.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Chicago (O'Hare, Midway)",
+  "time_coverage": "~2013-present",
+  "size_hint": "~200M taxi rows + ~130M TNP rows (external)",
+  "license": "Public Chicago open-data portal data; repo code unspecified/MIT-like",
+  "last_activity": "maintained periodically (companion to nyc-taxi-data)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Second major US metro ground-travel/rideshare volume series for gap #10; Chicago is a top-10 US market with international airport connections (O'Hare), useful as a cross-check on the NYC TLC series for broader US travel-demand read-through."
+  ]
+ }
+]

@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:konradudohannes/genesispy",
+  "url": "https://github.com/KonradUdoHannes/genesispy",
+  "name": "KonradUdoHannes/genesispy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Minimal Python client for the Destatis Genesis RESTful API, updated 2020-12-31, unlicensed stars=0.",
+  "why_useful": "Older but minimal/simple Python option for the same German statistics tables; fallback to the MCP/CLI options above.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "license": "unspecified",
+  "last_activity": "2020-12-31",
+  "geography": "Germany",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Older but minimal/simple Python option for the same German statistics tables; fallback to the MCP/CLI options above."
+  ]
+ },
+ {
+  "key": "github:nilsme/restgenesis",
+  "url": "https://github.com/nilsme/restgenesis",
+  "name": "nilsme/restgenesis",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Basic Python and R functions to use the Destatis Genesis API, updated 2021-03-09.",
+  "why_useful": "Another basic client for German federal statistics (tourism/accommodation tables included); dated but functional-looking, R support is a plus for cross-checking.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "license": "unspecified",
+  "last_activity": "2021-03-09",
+  "geography": "Germany",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Another basic client for German federal statistics (tourism/accommodation tables included); dated but functional-looking, R support is a plus for cross-checking."
+  ]
+ },
+ {
+  "key": "github:dr4hcu5-jan/destatis-genesis-api",
+  "url": "https://github.com/dr4hcu5-jan/destatis-genesis-api",
+  "name": "dr4hcu5-jan/destatis-genesis-api",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Destatis GENESIS API client, updated 2022-02-25, BSD-3-Clause.",
+  "why_useful": "Yet another Destatis GENESIS client; included for completeness, redundant with entries above.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "license": "BSD-3-Clause",
+  "last_activity": "2022-02-25",
+  "geography": "Germany",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Yet another Destatis GENESIS client; included for completeness, redundant with entries above."
+  ]
+ },
+ {
+  "key": "github:ropenspain/siane",
+  "url": "https://github.com/rOpenSpain/Siane",
+  "name": "rOpenSpain/Siane",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package to represent Spanish INE statistical data on official Spanish administrative maps (choropleth), pulling from INE and IGN. General-purpose, not tourism-specific; no Frontur/Egatur/EOAT mentioned explicitly.",
+  "why_useful": "Confirms rOpenSpain ecosystem has INE-linked mapping/data tooling; could be adapted to visualize/pull regional tourist-apartment (EOAT) figures if INE exposes them through the same generic series interface, but not verified.",
+  "potential": "low",
+  "geography": "Spain",
+  "time_coverage": "current INE catalogue",
+  "size_hint": "R package",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Confirms rOpenSpain ecosystem has INE-linked mapping/data tooling; could be adapted to visualize/pull regional tourist-apartment (EOAT) figures if INE exposes them through the same generic series interface, but not verified."
+  ]
+ },
+ {
+  "key": "github:dnme-minturdep/armonizacion",
+  "url": "https://github.com/dnme-minturdep/armonizacion",
+  "name": "dnme-minturdep/armonizacion",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "48-commit Distill/R site titled 'Harmonizaci\u00f3n de las Estad\u00edsticas de Turismo en las Provincias' (harmonizing Argentina's provincial tourism statistics), hosted at armonizacion.yvera.tur.ar; a companion technical-document repo (DT6_ciencia_de_datos_turismo) from the same org documents the methodology in TeX.",
+  "why_useful": "Government methodology + likely underlying provincial-level tourism data for Argentina, feeding LatAm regional-split forecasting (gap 7); worth a follow-up clone-free look at the repo's data/ folder for committed CSVs.",
+  "potential": "low",
+  "geography": "Argentina (provincial)",
+  "time_coverage": "unconfirmed",
+  "size_hint": "R/Distill site, 48 commits",
+  "license": "none found",
+  "last_activity": "unspecified",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Government methodology + likely underlying provincial-level tourism data for Argentina, feeding LatAm regional-split forecasting (gap 7); worth a follow-up clone-free look at the repo's data/ folder for committed CSVs."
+  ]
+ }
+]

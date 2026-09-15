@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:freshactors/freshactors-scrapers",
+  "url": "https://github.com/Freshactors/freshactors-scrapers",
+  "name": "freshactors-scrapers",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Collection of Apify-based 'always fresh' scrapers spanning App Store, Google Play, Redfin, and Shopify App Store.",
+  "why_useful": "Multi-target scraper suite; the App Store/Google Play actors could be pointed at Airbnb's listing for periodic metadata pulls, and the Redfin actor is tangential to gap 13 (housing). Runs on Apify's paid platform in practice, so mainly a method reference.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "current only",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "size_hint": "collection of actor scripts",
+  "gap_targets": [
+   5,
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Multi-target scraper suite; the App Store/Google Play actors could be pointed at Airbnb's listing for periodic metadata pulls, and the Redfin actor is tangential to gap 13 (housing). Runs on Apify's paid platform in practice, so mainly a method reference."
+  ]
+ },
+ {
+  "key": "github:gotomi/kruk",
+  "url": "https://github.com/gotomi/kruk",
+  "name": "kruk (CrUX CLI)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Command-line tool that queries the Chrome UX Report BigQuery dataset for one or more origins/URLs and returns Core Web Vitals plus (via the CrUX API mode) popularity-rank buckets, exporting to CSV/JSON.",
+  "why_useful": "Lower-friction one-command way to pull airbnb.com / competitor popularity-rank history than writing raw BigQuery SQL; complements the CrUX repo above.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "CLI tool, no data",
+  "time_coverage": "n/a (queries live CrUX data)",
+  "geography": "n/a",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Lower-friction one-command way to pull airbnb.com / competitor popularity-rank history than writing raw BigQuery SQL; complements the CrUX repo above."
+  ]
+ },
+ {
+  "key": "github:eest/tranco-list-api",
+  "url": "https://github.com/eest/tranco-list-api",
+  "name": "tranco-list-api",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Lightweight alternative client/API wrapper for pulling a domain's rank from a given dated Tranco list.",
+  "why_useful": "Backup/alternative to the official Tranco Python package for the same point-in-time domain-rank pulls.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "small library",
+  "time_coverage": "2018-present via API",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-09-04",
+  "duplicate_of_holding": "DistriNet/tranco-python-package",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Backup/alternative to the official Tranco Python package for the same point-in-time domain-rank pulls."
+  ]
+ },
+ {
+  "key": "github:kyle-w-brown/majestic_million",
+  "url": "https://github.com/kyle-w-brown/majestic_million",
+  "name": "majestic_million",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Pulls/documents Majestic's `majestic_million.csv` (top 1M domains by referring subnets), with fields GlobalRank, TldRank, Domain, TLD, RefSubNets, RefIPs, plus Prev* columns for the previous period's values \u2014 i.e. it carries a built-in one-period rank history/delta, though the file itself is a daily-refreshed snapshot from Majestic's own servers rather than an archived series in-repo.",
+  "why_useful": "Alternative, backlink-based domain-authority/traffic proxy (distinct methodology from Tranco/CrUX) for tracking airbnb.com vs competitor domains; the Prev* columns give one period-over-period comparison for free.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "~1M rows, single current CSV (no historical archive committed)",
+  "time_coverage": "current snapshot only (Prev* = previous refresh)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-04-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Alternative, backlink-based domain-authority/traffic proxy (distinct methodology from Tranco/CrUX) for tracking airbnb.com vs competitor domains; the Prev* columns give one period-over-period comparison for free."
+  ]
+ },
+ {
+  "key": "github:joseossa18/similarweb_scraper",
+  "url": "https://github.com/joseossa18/similarweb_scraper",
+  "name": "similarweb_scraper (joseossa18)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Another independent Similarweb scraper for website traffic/engagement data by domain.",
+  "why_useful": "Redundant alternative implementation of the same Similarweb-pull method; kept only as a fallback if the higher-starred scrapers break against Similarweb's anti-bot defenses.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "script only",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "unspecified",
+  "last_activity": "2026-03-10",
+  "duplicate_of_holding": "wchan757/similarweb_scraper",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Redundant alternative implementation of the same Similarweb-pull method; kept only as a fallback if the higher-starred scrapers break against Similarweb's anti-bot defenses."
+  ]
+ }
+]

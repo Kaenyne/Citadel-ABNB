@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:quankiquanki/skytrax-reviews-dataset",
+  "url": "https://github.com/quankiquanki/skytrax-reviews-dataset",
+  "name": "skytrax-reviews-dataset",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Four committed CSVs scraped from airlinequality.com (Skytrax): 41,396 airline reviews, 17,721 airport reviews, 2,264 lounge reviews, 1,258 seat reviews, with rating dimensions (comfort, cleanliness, staff, amenities). Scraped as of Aug 2, 2015. CC0-1.0 license on the repo (scrape legality of underlying site noted as ambiguous by author). 73 stars/41 forks.",
+  "why_useful": "Text/sentiment travel-demand proxy adjacent to Airbnb (traveler experience/sentiment on air travel) - could feed a text-based travel-demand sentiment index (gap 14 adjacent) though it is a one-time 2015 scrape, not updated, so limited as a current indicator; more useful as a methodology template for scraping airline-review sentiment than as current data.",
+  "potential": "low",
+  "gap_targets": [
+   14
+  ],
+  "geography": "global airlines/airports",
+  "time_coverage": "reviews up to Aug 2015",
+  "size_hint": "~62k reviews total",
+  "license": "CC0-1.0 (repo); source site terms ambiguous",
+  "last_activity": "2015",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Text/sentiment travel-demand proxy adjacent to Airbnb (traveler experience/sentiment on air travel) - could feed a text-based travel-demand sentiment index (gap 14 adjacent) though it is a one-time 2015 scrape, not updated, so limited as a current indicator; more useful as a methodology template for scraping airline-review sentiment than as current data."
+  ]
+ },
+ {
+  "key": "github:mfdz/gtfs-hub",
+  "url": "https://github.com/mfdz/gtfs-hub",
+  "name": "gtfs-hub",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Aggregation/enhancement pipeline for German public transit GTFS feeds, gathered from CUTR-at-USF/awesome-transit list. Produces enhanced GTFS feeds for German transit agencies.",
+  "why_useful": "A one-command pull method for German ground-transport capacity data (gap 10 mentions DB/rail capacity generally); minor incremental value since it's a processing pipeline for transit schedules, not passenger volumes.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Germany",
+  "time_coverage": "ongoing/current GTFS feeds",
+  "size_hint": "feed-dependent",
+  "license": "unspecified",
+  "last_activity": "unknown, actively referenced in CUTR-at-USF/awesome-transit",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "A one-command pull method for German ground-transport capacity data (gap 10 mentions DB/rail capacity generally); minor incremental value since it's a processing pipeline for transit schedules, not passenger volumes."
+  ]
+ },
+ {
+  "key": "other:https://mobilitydatabase.org",
+  "url": "https://mobilitydatabase.org/",
+  "name": "The Mobility Database (GTFS catalogue)",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Repository/catalogue of 2000+ mobility (transit GTFS) datasets worldwide, successor to OpenMobilityData; linked from CUTR-at-USF/awesome-transit on GitHub. Not itself a GitHub-hosted data store but a discovery index for transit schedule/GTFS feeds globally, many of which are mirrored on GitHub by individual agencies/maintainers.",
+  "why_useful": "A discovery tool (like the CKAN/Socrata discovery clients gap 17 asks for) to find ground-transportation capacity data by city/country as an ABNB travel-volume cross-check; breadth is high but each underlying feed needs individual vetting.",
+  "potential": "low",
+  "gap_targets": [
+   10,
+   17
+  ],
+  "geography": "global",
+  "time_coverage": "current, ongoing",
+  "size_hint": "2000+ feeds",
+  "license": "varies by feed",
+  "last_activity": "active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "A discovery tool (like the CKAN/Socrata discovery clients gap 17 asks for) to find ground-transportation capacity data by city/country as an ABNB travel-volume cross-check; breadth is high but each underlying feed needs individual vetting."
+  ]
+ },
+ {
+  "key": "github:scascketta/capmetrics",
+  "url": "https://github.com/scascketta/CapMetrics",
+  "name": "CapMetrics",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Historical archive of Austin, TX transit (Capital Metro) vehicle position/ridership-adjacent data, per its listing in CUTR-at-USF/awesome-transit. Austin is one of the 13 cities in our Inside Airbnb panel.",
+  "why_useful": "A local ground-transport activity series for Austin that could be cross-checked against Inside Airbnb Austin listings/calendar activity as a market-level travel-volume proxy (gap 10), though scope and freshness need verification before use.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Austin, TX",
+  "time_coverage": "unspecified historical range",
+  "size_hint": "unspecified",
+  "license": "unspecified",
+  "last_activity": "unknown, repo appears inactive",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "A local ground-transport activity series for Austin that could be cross-checked against Inside Airbnb Austin listings/calendar activity as a market-level travel-volume proxy (gap 10), though scope and freshness need verification before use."
+  ]
+ },
+ {
+  "key": "other:https://openflights.org/data.php",
+  "url": "https://openflights.org/data.php",
+  "name": "OpenFlights airport/airline/route database",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Static reference tables of world airports, airlines, and routes (not schedules/volumes), maintained as flat files linkable from GitHub mirrors; catalogued in awesomedata/awesome-public-datasets/Transportation. Widely mirrored on GitHub (e.g. jpatokal/openflights).",
+  "why_useful": "A reference/join table (airport-to-city, route existence) rather than a volume series; could support building an airline-capacity proxy for gap 10 when paired with a real traffic source (e.g. BTS T-100), but on its own has no time-series volume.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "global",
+  "time_coverage": "static, periodically updated",
+  "size_hint": "~7,000 airports, ~6,000 airlines, ~67,000 routes",
+  "license": "Open Database License (ODbL)",
+  "last_activity": "maintained via community forks",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "A reference/join table (airport-to-city, route existence) rather than a volume series; could support building an airline-capacity proxy for gap 10 when paired with a real traffic source (e.g. BTS T-100), but on its own has no time-series volume."
+  ]
+ }
+]

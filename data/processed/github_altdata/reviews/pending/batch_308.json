@@ -1,0 +1,123 @@
+[
+ {
+  "key": "github:beaubellamy/skiresort-analysis",
+  "url": "https://github.com/beaubellamy/SkiResort-Analysis",
+  "name": "SkiResort-Analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Exploratory analysis notebook/scripts over the output of SkiResortScraper (companion repo) -- resort attribute table (location, slope stats, ratings) for a global set of ski resorts scraped from skiresort.info, likely committed as a CSV in-repo alongside the analysis.",
+  "why_useful": "Pairs with SkiResortScraper to give a ready-made global ski-resort facility census (not visitation counts) that could serve as a coarse index of winter-destination supply/popularity by region.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "point-in-time (as of ~2023 scrape)",
+  "size_hint": "unknown row count, single scrape snapshot",
+  "license": "none declared",
+  "last_activity": "2023-11-28",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Pairs with SkiResortScraper to give a ready-made global ski-resort facility census (not visitation counts) that could serve as a coarse index of winter-destination supply/popularity by region."
+  ]
+ },
+ {
+  "key": "github:chasediaz6/national-park-visitation-forecasting",
+  "url": "https://github.com/chasediaz6/National-Park-Visitation-Forecasting",
+  "name": "National-Park-Visitation-Forecasting",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Forecasting/exploration notebook over NPS visitation traffic; likely pulls from NPS's public visitation reports/IRMA stats system or a Kaggle mirror rather than shipping a large novel dataset. Not verified to have a large committed CSV beyond example data.",
+  "why_useful": "Possible pointer to how to programmatically pull current NPS visitation figures (IRMA stats system, irma.nps.gov/STATS/SSRSReports) for a live, current-vintage US park-demand series; would need inspection of the code to confirm the exact pull method.",
+  "potential": "low",
+  "geography": "USA national parks",
+  "time_coverage": "unclear, likely recent years",
+  "size_hint": "unverified, small repo (1 star)",
+  "license": "none declared",
+  "last_activity": "2025-02-26",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Possible pointer to how to programmatically pull current NPS visitation figures (IRMA stats system, irma.nps.gov/STATS/SSRSReports) for a live, current-vintage US park-demand series; would need inspection of the code to confirm the exact pull method."
+  ]
+ },
+ {
+  "key": "github:aliu82/us-national-parks-visitation-trends",
+  "url": "https://github.com/aliu82/US-National-Parks-Visitation-Trends",
+  "name": "US-National-Parks-Visitation-Trends",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Streamlit app analyzing US national park visitation trends 2012-2022; likely bundles a CSV of annual visitation by park for that decade (unverified row-level detail) sourced from NPS public stats.",
+  "why_useful": "A more recent (2012-2022) NPS visitation panel than kevinsoo/npVisits' 1904-2016 series would extend the domestic leisure-travel demand backdrop closer to the present, useful for cross-checking against STR/hotel demand cycles.",
+  "potential": "low",
+  "geography": "USA national parks",
+  "time_coverage": "2012-2022 (claimed)",
+  "size_hint": "unverified",
+  "license": "none declared",
+  "last_activity": "2023-05-03",
+  "duplicate_of_holding": "overlaps kevinsoo/npVisits for 2012-2016 window but extends to 2022 if verified",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "A more recent (2012-2022) NPS visitation panel than kevinsoo/npVisits' 1904-2016 series would extend the domestic leisure-travel demand backdrop closer to the present, useful for cross-checking against STR/hotel demand cycles."
+  ]
+ },
+ {
+  "key": "github:chkwon/awesome-transportation-network-data",
+  "url": "https://github.com/chkwon/awesome-transportation-network-data",
+  "name": "awesome-transportation-network-data",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "18-star curated list of transportation-network test datasets: TNTP (Sioux Falls, Anaheim, Barcelona, Chicago network-equilibrium data), Hazmat (Buffalo/Albany hazardous-materials routing + accident data), Korean Expressway EV-charging origin-destination flows, DC-NY-Boston corridor EV network, Eastern Massachusetts traffic-assignment network with observed traffic counts, Pisa OR-Group optimization instances; also points to a sibling 'Awesome-Transit' list (transit APIs/datasets) and VRP-REP (vehicle-routing datasets).",
+  "why_useful": "Mostly academic network-equilibrium/routing test data, not real-world passenger volumes -- low direct value for ABNB nights/travel demand, but the linked Awesome-Transit could hold public transit passenger datasets relevant to gap 10 (transport capacity/traffic); worth a follow-up fetch of that sibling list specifically.",
+  "potential": "low",
+  "size_hint": "handful of small academic network files",
+  "geography": "US (Sioux Falls, Buffalo/Albany, DC-NY-Boston, Massachusetts), South Korea, Italy (Pisa)",
+  "time_coverage": "static benchmark networks, no time series",
+  "last_activity": "2025-07-10",
+  "license": "unspecified",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Mostly academic network-equilibrium/routing test data, not real-world passenger volumes -- low direct value for ABNB nights/travel demand, but the linked Awesome-Transit could hold public transit passenger datasets relevant to gap 10 (transport capacity/traffic); worth a follow-up fetch of that sibling list specifically."
+  ]
+ },
+ {
+  "key": "github:ahmad1441/awesome-transportation",
+  "url": "https://github.com/Ahmad1441/awesome-transportation",
+  "name": "awesome-transportation",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "0-star, very recently created (4 Sep 2026) curated list claiming 'tools, datasets, standards, and learning resources for transportation and mobility'; contents not verified in this pass.",
+  "why_useful": "Too new/unverified to rate confidently; flagged only because its description explicitly promises datasets for mobility, which overlaps gap 10.",
+  "potential": "low",
+  "size_hint": "unknown",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "last_activity": "2026-09-04",
+  "license": "CC0-1.0",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Too new/unverified to rate confidently; flagged only because its description explicitly promises datasets for mobility, which overlaps gap 10."
+  ]
+ }
+]

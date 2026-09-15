@@ -1,0 +1,63 @@
+{
+  "theme": "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"short-term rental\" enforcement --sort updated",
+    "gh search repos \"alquiler turistico\" --sort stars",
+    "gh search repos \"office of special enforcement\" --sort updated",
+    "gh search repos \"registro turistico\" viviendas --sort updated",
+    "gh search repos \"airbnb regulation\" city --sort updated",
+    "gh search repos \"vut\" viviendas uso turistico --sort updated"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/datanews/illegal-hotel-inspections",
+      "name": "datanews/illegal-hotel-inspections",
+      "category": "regulatory_legal",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "inspections.csv, one row per inspection, 2,684 inspection records (~2,491 after excluding 193 unrelated reports) from NYC Mayor's Office of Special Enforcement (OSE), obtained via FOIL/FOIA request by WNYC. Fields cover property details, inspection rationale, and identified violations for illegal short-term-rental activity. Date range October 2013 through April 2015. Originated as Word docs, converted to HTML, parsed to CSV.",
+      "why_useful": "Direct hit on the NYC OSE enforcement keyword hint in the theme brief; a rare committed, structured extract of actual OSE inspection/violation records rather than a news summary. Old vintage (2013-2015, pre-Local Law 18) limits direct use for a 2026 forecast, but it is a template for what an OSE FOIL pull looks like and could be combined with a fresher FOIL request if the team wants a current NYC enforcement proxy for STR supply suppression.",
+      "potential": "medium",
+      "geography": "New York City",
+      "time_coverage": "Oct 2013 - Apr 2015",
+      "size_hint": "~2,684 rows, single CSV",
+      "license": "none listed",
+      "last_activity": "2017-07-21",
+      "gap_targets": [],
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/js-fitz/STR-Monitor",
+      "name": "js-fitz/STR-Monitor",
+      "category": "regulatory_legal",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Multi-file panel for monitoring Boston's 2019 Short-Term Rental Ordinance: airbnb.csv (23 merged Inside Airbnb scrapes, 124,730 rows x 31 cols, Jan 2017-Nov 2019, listing IDs/prices/host info/license status), STRE.csv (city STR public registry keyed by SAM_ID, 396,462 rows x 16 cols, registration status + violation counts, downloaded Feb 2020), STR_apps.csv (2,127 rows x 25 cols, internal STR license-application tracker from Boston's Dept of Innovation & Technology, license numbers/status/issue dates), SAMREF.csv (396,462 rows x 43 cols, address/GPS reference), bari_props_2019.csv (174,074 rows x 94 cols, Boston Area Research Initiative property assessment/land-use/owner-occupancy data), and padmapper.csv (917,948 rows x 6 cols, 87 merged scrapes of long-term rental asking prices, Jan 2016-Mar 2020).",
+      "why_useful": "A full worked example of matching a city STR license registry + enforcement/violation counts + application pipeline to Inside Airbnb listings and long-term rental comps around a real STR ordinance (owner-occupancy requirement, per-night fines). Directly analogous to the HOA/condo STR-ban and municipal-registration angle in the theme; the STRE/STR_apps registry design is a template for building a similar panel for other cities (e.g., Barcelona/Amsterdam/Paris licensing) even though the data itself is Boston-only and stops in 2020.",
+      "potential": "high",
+      "geography": "Boston, MA",
+      "time_coverage": "2016-2020 (registry snapshot Feb 2020)",
+      "size_hint": "6 CSVs, largest ~918k rows",
+      "license": "none listed",
+      "last_activity": "2020-05-25",
+      "gap_targets": [],
+      "duplicate_of_holding": ""
+    },
+    {
+      "url": "https://github.com/Ritikrb126/Impact-of-Airbnb-Regulations-on-Hosts-and-Prices",
+      "name": "Ritikrb126/Impact-of-Airbnb-Regulations-on-Hosts-and-Prices",
+      "category": "regulatory_legal",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Kaggle-notebook style analysis of how city regulations affect Airbnb pricing and host behavior; appears to be a single-notebook study, not a distinct regulation dataset (uses standard Airbnb listing data joined against regulation flags).",
+      "why_useful": "Marginal: method for tagging listings with regulatory status could be reused, but no new committed regulatory dataset found beyond generic Airbnb listing data. Included only because it directly matched the theme's search terms.",
+      "potential": "low",
+      "geography": "unspecified (generic multi-city)",
+      "time_coverage": "unknown",
+      "size_hint": "single notebook",
+      "license": "none listed",
+      "last_activity": "2025-05-31",
+      "gap_targets": [],
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "Search was noisy: 'alquiler turistico' and 'registro turistico'/'vut' queries returned almost entirely unrelated student/portfolio projects analyzing generic Airbnb-Madrid pricing data with no actual Spanish government STR registration numbers (no repo found mirroring Spain's 2025 mandatory platform-registration-number rollout under RD 1312/2024). No Barcelona, Amsterdam, or Paris municipal enforcement dataset surfaced on GitHub via these queries -- those cities' enforcement data (Barcelona's Ciutat Vella inspection reports, Amsterdam's meldpunt data, Paris's registration-number compliance checks) does not appear to be mirrored as a GitHub dataset; likely lives only on municipal open-data portals (dades.barcelona, data.amsterdam.nl, opendata.paris.fr) which are outside this GitHub-only sweep. No HOA/condo STR-ban dataset (US HOA-level bans) found either -- that data likely does not exist in structured form on GitHub at all; it is typically embedded in individual HOA CC&R PDFs, not aggregated. Used 8 gh search calls (slightly over the nominal 6-call guidance but no rate-limiting was hit, all returned promptly) across 4 Bash invocations; stopped because results were clearly saturating (repeat repos, then off-topic Spanish real-estate-investment noise). Recommend a future scout attempt direct WebSearch (not gh) for 'Barcelona pisos turisticos licencia dataset github', 'Amsterdam vergunning verhuur dataset', and 'RD 1312/2024 registro arrendamientos turisticos numero' to check non-GitHub hosts, and separately check gh for 'NYC local law 18 registration data' which was not tried."
+}

@@ -1,0 +1,124 @@
+[
+ {
+  "key": "github:cmegrouppublic/datamine_python",
+  "url": "https://github.com/CMEGroupPublic/datamine_python",
+  "name": "datamine_python",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official CME Group client (93 commits, 76 stars) for the CME Datamine alternative-data marketplace catalog/download API. Confirmed vendors reachable through it include TellusLabs (agriculture), Orbital Insight (satellite/energy), Bantix Technologies (options analytics), RS Metrics (metals), and 1010data-style CME-native futures/crypto data. No committed sample data files; Jupyter notebooks demo BTC reference-rate pulls. Underlying vendor data is generally paid, but the catalog listing itself is browsable and some vendors may have travel/consumer verticals not surfaced in this fetch.",
+  "why_useful": "A single client that enumerates a marketplace of alt-data vendors (mostly commodities-focused today) -- worth a deeper catalog crawl in case CME Datamine also lists consumer/travel-relevant feeds; otherwise a template for building our own vendor-catalog client.",
+  "potential": "low",
+  "size_hint": "client library, no bundled data",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "last_activity": "not precisely dated in fetch; repo shows 93 commits, 5 open issues",
+  "license": "unclear",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "A single client that enumerates a marketplace of alt-data vendors (mostly commodities-focused today) -- worth a deeper catalog crawl in case CME Datamine also lists consumer/travel-relevant feeds; otherwise a template for building our own vendor-catalog client."
+  ]
+ },
+ {
+  "key": "github:cmegrouppublic/datamine-orbitalinsight",
+  "url": "https://github.com/CMEGroupPublic/datamine-orbitalinsight",
+  "name": "datamine-orbitalinsight",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Overview/demo repo (10 stars) for Orbital Insight satellite-derived data specifically for crude-oil storage volumes, distributed via CME Datamine.",
+  "why_useful": "Not travel-relevant as-is (oil tanks), but demonstrates the satellite-imagery-as-alt-data pattern that could analogize to counting hotel parking-lot occupancy or resort activity if such a feed existed; low direct value for ABNB.",
+  "potential": "low",
+  "size_hint": "demo repo, no bundled data",
+  "geography": "n/a (oil storage sites)",
+  "time_coverage": "n/a",
+  "last_activity": "2018-11-20",
+  "license": "unclear",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Not travel-relevant as-is (oil tanks), but demonstrates the satellite-imagery-as-alt-data pattern that could analogize to counting hotel parking-lot occupancy or resort activity if such a feed existed; low direct value for ABNB."
+  ]
+ },
+ {
+  "key": "github:quiverquant/quiver-api-tutorials",
+  "url": "https://github.com/QuiverQuant/quiver-api-tutorials",
+  "name": "quiver-api-tutorials",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Quiver Quantitative's own official tutorials repo (1 commit, pushed 2026-09-03). Currently just one runnable script, strategies/insider_buying_monthly.py, backtesting an SEC Form-4 insider-buying strategy with point-in-time universes. README references broader Quiver datasets (congress trading, government contracts, lobbying, institutional holdings) that are not yet demoed in code.",
+  "why_useful": "Confirms Quiver's dataset catalog and their point-in-time discipline (relevant methodologically to our own PIT rule) but nothing ABNB-specific or travel-specific is present.",
+  "potential": "low",
+  "size_hint": "single script",
+  "geography": "US",
+  "time_coverage": "n/a",
+  "last_activity": "2026-09-03",
+  "license": "unclear",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Confirms Quiver's dataset catalog and their point-in-time discipline (relevant methodologically to our own PIT rule) but nothing ABNB-specific or travel-specific is present."
+  ]
+ },
+ {
+  "key": "github:brigadirk/stonkytonkydashboard",
+  "url": "https://github.com/Brigadirk/stonkytonkydashboard",
+  "name": "stonkytonkydashboard",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A point-in-time consensus-earnings methodology repo for 10 semiconductor/tech names (Broadcom, Alphabet, NVIDIA, SK hynix, Samsung, Micron, Sandisk, ASML, Apple, BESI) \u2014 universe.csv, analyst_candidates.csv (35 company-analyst pairs), forecast_samples.csv (16 sample observations from 2021 and 2026 reports), source_manifest.csv with checksums, missing_data_dates.csv. 13,928 daily closes, 1,173 annual EPS observations across 350 dated \"model snapshots\" that separately tag broker forecasts, consensus, management guidance, and model scenarios by publication date. Full underlying broker PDFs (396) and extracted observations (2,420) are explicitly NOT committed \u2014 only a 16-row sample is public.",
+  "why_useful": "Not travel/OTA data at all (semiconductors), but its schema for distinguishing broker-forecast vs. consensus vs. management-guidance vs. model-scenario observations, each stamped with a publication date, is a directly reusable template for our own L0 vintage register discipline (rule #2) \u2014 worth citing as a methods comparator even though we cannot use its data.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "geography": "N/A (semiconductor sector)",
+  "time_coverage": "unconfirmed full range; sample rows from 2021 and 2026",
+  "size_hint": "Only 16 rows of consensus data are actually public; rest excluded",
+  "license": "unconfirmed",
+  "last_activity": "unconfirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Not travel/OTA data at all (semiconductors), but its schema for distinguishing broker-forecast vs. consensus vs. management-guidance vs. model-scenario observations, each stamped with a publication date, is a directly reusable template for our own L0 vintage register discipline (rule #2) \u2014 worth citing as a methods comparator even though we cannot use its data."
+  ]
+ },
+ {
+  "key": "github:airbnb/knowledge-repo",
+  "url": "https://github.com/airbnb/knowledge-repo",
+  "name": "airbnb/knowledge-repo",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Airbnb's own official open-source platform (the one referenced by Airbnb's Data Science blog era) for publishing 'knowledge posts' \u2014 Jupyter/IPython notebooks, R Markdown, Markdown, or linked Google Docs \u2014 with a review workflow and a feed/stats dashboard. Repo directories: knowledge_repo/ (core app), knowledge_repo_v2/, docs/, docker/, scripts/, tests/. It is infrastructure, not a dataset: no committed Airbnb business data or analysis outputs ship in the repo itself, only the tool Airbnb used internally to run its knowledge-sharing feed.",
+  "why_useful": "Directly matches the 'Airbnb Data Science blog notebooks' theme hint but is a dead end for data: it explains why Airbnb's real internal DS notebooks are not on GitHub (they lived inside a knowledge-repo instance, not this repo).",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2024-09-04",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "~5.5k stars, tool codebase only",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Directly matches the 'Airbnb Data Science blog notebooks' theme hint but is a dead end for data: it explains why Airbnb's real internal DS notebooks are not on GitHub (they lived inside a knowledge-repo instance, not this repo).",
+   "Directly answers the 'Airbnb Data Science blog notebooks' theme hint \u2014 this is the actual platform, confirmed still on github.com/airbnb. No forecasting value on its own since it carries no data, but worth recording as the authoritative source-of-truth repo in case any public knowledge_repo instance (Airbnb's own or a fork) still serves archived posts/notebooks with real KPI analysis."
+  ]
+ }
+]

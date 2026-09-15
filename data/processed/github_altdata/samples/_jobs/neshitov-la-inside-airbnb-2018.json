@@ -1,0 +1,10 @@
+{
+ "slug": "neshitov-la-inside-airbnb-2018",
+ "url": "https://github.com/neshitov/airbnb",
+ "category": "str_airbnb_direct",
+ "data_kind": "stored_dataset",
+ "one_line": "Committed Inside Airbnb Los Angeles listings.csv (~40k rows, vintage 2018-12-06) plus neighbourhoods.geojson, predating anything on the live IA CDN.",
+ "abnb_use": "Directly fills numbered gap #1 (historical/archived Inside Airbnb dumps, pre-2023) for a named city.",
+ "sample_plan": "Pull listings.csv and neighbourhoods.geojson as-is; small (~40k rows), well under cap.",
+ "tos_or_license_flag": false
+}

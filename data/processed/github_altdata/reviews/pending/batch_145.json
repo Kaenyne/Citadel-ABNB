@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:nipfpmf/eventstudies",
+  "url": "https://github.com/nipfpmf/eventstudies",
+  "name": "eventstudies (NIPFP)",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "R package (485 commits, CRAN v1.2.2, GPL-2) for event-study methodology from India's National Institute of Public Finance and Policy. Ships sample datasets (SplitDates, StockPriceReturns, OtherReturns) plus an `eventstudy()` function supporting market-model adjustment, custom event windows, cumulative-sum remapping, and bootstrap inference.",
+  "why_useful": "A mature, peer-reviewed-adjacent event-study toolkit with bootstrap inference (more rigorous than naive t-tests) -- usable for ABNB earnings-day and regulatory-event studies (gap #12 regulatory events, #17 methods).",
+  "potential": "medium",
+  "geography": "N/A (India-based maintainers, method is general)",
+  "time_coverage": "N/A",
+  "size_hint": "R package + small sample datasets",
+  "license": "GPL-2",
+  "last_activity": "unspecified (CRAN-published, actively versioned)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17,
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "A mature, peer-reviewed-adjacent event-study toolkit with bootstrap inference (more rigorous than naive t-tests) -- usable for ABNB earnings-day and regulatory-event studies (gap #12 regulatory events, #17 methods)."
+  ]
+ },
+ {
+  "key": "github:ong-pogs/awesome-prediction-market-apis",
+  "url": "https://github.com/Ong-pogs/awesome-prediction-market-apis",
+  "name": "awesome-prediction-market-apis",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated directory of prediction-market APIs, SDKs, MCP servers, and pointers to historical order-book data sources across Polymarket, Kalshi, Manifold, Limitless and others; itself an awesome-list (markdown), not a dataset.",
+  "why_useful": "Fastest way to find which of the many prediction-market API wrappers actually expose historical order-book/price series usable for point-in-time event-probability construction (gap 4, 11, 12) without re-discovering them one by one.",
+  "potential": "medium",
+  "size_hint": "markdown list, small",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "other/unspecified",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   4,
+   11,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Fastest way to find which of the many prediction-market API wrappers actually expose historical order-book/price series usable for point-in-time event-probability construction (gap 4, 11, 12) without re-discovering them one by one."
+  ]
+ },
+ {
+  "key": "github:bcongdon/pymanifold",
+  "url": "https://github.com/bcongdon/PyManifold",
+  "name": "PyManifold",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client for the Manifold Markets public API (18 stars, actively maintained through Jan 2026); wraps market listing, bet history, and price/probability history endpoints \u2014 Manifold's API is free/keyless for reads.",
+  "why_useful": "Manifold hosts many community-made questions on company earnings beats, travel/tourism events, and regulatory outcomes; this client is a one-command way to pull full probability history (with timestamps) for any such market \u2014 directly serves the point-in-time vintage gap (4) for event-probability nowcasts around the Nov 5 print or regulatory votes (gap 12).",
+  "potential": "medium",
+  "size_hint": "small client library, no bundled data",
+  "time_coverage": "pulls live/historical via API, Manifold history back to 2022",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-01-09",
+  "gap_targets": [
+   4,
+   11,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Manifold hosts many community-made questions on company earnings beats, travel/tourism events, and regulatory outcomes; this client is a one-command way to pull full probability history (with timestamps) for any such market \u2014 directly serves the point-in-time vintage gap (4) for event-probability nowcasts around the Nov 5 print or regulatory votes (gap 12)."
+  ]
+ },
+ {
+  "key": "github:futuur/prediction_markets",
+  "url": "https://github.com/futuur/prediction_markets",
+  "name": "prediction_markets (futuur)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit unifying Futuur, Manifold Markets, and Polymarket APIs for searching, correlating, and trading; includes market-matching logic across the three platforms by title similarity.",
+  "why_useful": "Cross-platform market matching would let us assemble a merged event-probability panel (earnings, travel, regulation questions) across three sources rather than one, improving coverage for point-in-time series (gap 4).",
+  "potential": "medium",
+  "size_hint": "small toolkit, no bundled dataset",
+  "time_coverage": "live pull, no historical archive",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-03-17",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Cross-platform market matching would let us assemble a merged event-probability panel (earnings, travel, regulation questions) across three sources rather than one, improving coverage for point-in-time series (gap 4)."
+  ]
+ },
+ {
+  "key": "github:nahrek/polyledger",
+  "url": "https://github.com/nahrek/polyledger",
+  "name": "polyledger",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hosted Polymarket indexer that streams on-chain OrderFilled events from Polygon via Envio HyperSync plus CLOB API market metadata into a single queryable DuckDB file ('one file on disk', SQL-queryable). No committed/downloadable dataset \u2014 user must run the backfill themselves (a few hours to a couple of days on free tier). MIT licensed, 22 commits, example output timestamped 2026-09-02 suggesting active/recent.",
+  "why_useful": "A one-command / scriptable method to build a full point-in-time Polymarket trade ledger (all categories) in a DuckDB file the team already uses elsewhere in its stack \u2014 lower effort than writing a custom indexer if the team wants an on-chain-verified, timestamped record of Polymarket odds around ABNB earnings or travel/regulation events.",
+  "geography": "Global (Polymarket/Polygon)",
+  "time_coverage": "Full Polymarket on-chain history back to inception once backfilled",
+  "size_hint": "Not stated; scales with full Polymarket trade history",
+  "license": "MIT",
+  "last_activity": "22 commits, recent (example dated 2026-09-02)",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "A one-command / scriptable method to build a full point-in-time Polymarket trade ledger (all categories) in a DuckDB file the team already uses elsewhere in its stack \u2014 lower effort than writing a custom indexer if the team wants an on-chain-verified, timestamped record of Polymarket odds around ABNB earnings or travel/regulation events."
+  ]
+ }
+]

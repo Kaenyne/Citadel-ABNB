@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:talos/acris-schema",
+  "url": "https://github.com/talos/acris-schema",
+  "name": "talos/acris-schema",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Standalone Postgres schema definition for ACRIS legals/parties/documents tables (companion to acris-bigquery), no data.",
+  "why_useful": "Reference schema for building an ACRIS ingestion pipeline if the team wants to roll their own rather than use fitnr's tool.",
+  "potential": "low",
+  "size_hint": "schema files only",
+  "time_coverage": "n/a",
+  "geography": "New York City",
+  "license": "unlicensed",
+  "last_activity": "2017-11-05",
+  "duplicate_of_holding": "same as above",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Reference schema for building an ACRIS ingestion pipeline if the team wants to roll their own rather than use fitnr's tool."
+  ]
+ },
+ {
+  "key": "github:ezramechaber/acris-scraper",
+  "url": "https://github.com/ezramechaber/acris-scraper",
+  "name": "ezramechaber/acris-scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A scraper targeting ACRIS (recently updated 8 Sep 2026, actively maintained), 6 stars.",
+  "why_useful": "Another live ACRIS access route in case fitnr's tool is stale or the NYC Open Data API schema shifts; worth checking for any committed sample data given the recent update.",
+  "potential": "low",
+  "size_hint": "unknown, not deeply inspected",
+  "time_coverage": "unknown",
+  "geography": "New York City",
+  "license": "unlicensed",
+  "last_activity": "2026-09-08",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Another live ACRIS access route in case fitnr's tool is stale or the NYC Open Data API schema shifts; worth checking for any committed sample data given the recent update."
+  ]
+ },
+ {
+  "key": "github:residentmario/acris",
+  "url": "https://github.com/ResidentMario/acris",
+  "name": "ResidentMario/acris",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Notebook-style overview/exploration of the NYC Dept. of Finance ACRIS dataset(s), explaining schema and fields.",
+  "why_useful": "Good as documentation/onboarding to the ACRIS schema (party roles, document types) before building an LLC-ownership extraction pipeline.",
+  "potential": "low",
+  "size_hint": "notebooks/docs, no bulk data",
+  "time_coverage": "n/a",
+  "geography": "New York City",
+  "license": "unlicensed",
+  "last_activity": "2020-08-04",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Good as documentation/onboarding to the ACRIS schema (party roles, document types) before building an LLC-ownership extraction pipeline."
+  ]
+ },
+ {
+  "key": "github:bn4uc/visualizing-nyc-housing",
+  "url": "https://github.com/bn4uc/visualizing-nyc-housing",
+  "name": "bn4uc/visualizing-nyc-housing",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Visualizations combining NYC ACRIS records with HMDA (Home Mortgage Disclosure Act) mortgage-application data, likely with some processed/joined extracts committed.",
+  "why_useful": "Bridges ACRIS ownership-transfer data with HMDA mortgage-origination data in one NYC housing pipeline \u2014 relevant to both the LLC-ownership and mortgage-rate/lending threads of this theme.",
+  "potential": "low",
+  "size_hint": "small, exploratory (1 star, 2020)",
+  "time_coverage": "unknown, pre-2020",
+  "geography": "New York City",
+  "license": "unlicensed",
+  "last_activity": "2020-08-04",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Bridges ACRIS ownership-transfer data with HMDA mortgage-origination data in one NYC housing pipeline \u2014 relevant to both the LLC-ownership and mortgage-rate/lending threads of this theme."
+  ]
+ },
+ {
+  "key": "github:alireza-devx/redfin-data-pipeline",
+  "url": "https://github.com/Alireza-devX/redfin-data-pipeline",
+  "name": "Alireza-devX/redfin-data-pipeline",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end batch ETL pipeline (likely built on Redfin's public 'Data Center' weekly/monthly market CSVs \u2014 median sale price, inventory, days-on-market by metro) rather than a scraper of listing pages.",
+  "why_useful": "If it ingests Redfin's public Data Center exports (national/metro housing-market time series back to ~2012), it is a ready pipeline for a housing-supply/price series usable as an STR-host-economics control variable.",
+  "potential": "low",
+  "size_hint": "pipeline code, 1 star; underlying Redfin Data Center files are large public CSVs pulled at run time, not committed",
+  "time_coverage": "depends on Redfin Data Center vintage (~2012-present) if that is the source",
+  "geography": "US metros (per Redfin Data Center coverage)",
+  "license": "MIT",
+  "last_activity": "2026-04-01",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "If it ingests Redfin's public Data Center exports (national/metro housing-market time series back to ~2012), it is a ready pipeline for a housing-supply/price series usable as an STR-host-economics control variable."
+  ]
+ }
+]

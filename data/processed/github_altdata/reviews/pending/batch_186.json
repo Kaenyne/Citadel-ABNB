@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:joetric/doverde",
+  "url": "https://github.com/joetric/doverde",
+  "name": "doverde (Delaware Open Vendor Expense & Revenue Data Engine)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automated ETL using Polars + the Socrata Open Data API against Delaware's state checkbook/revenue open-data portal (1 star, MIT, updated Mar 2026, designed to run in Colab).",
+  "why_useful": "Not STR-specific, but a recent, actively-maintained example of a full Socrata ETL pipeline (auth, pagination, incremental pulls) that could be repurposed against any state Socrata portal carrying lodging-tax or transient-occupancy-tax collections (gap 8).",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "geography": "Delaware (state-level), method is portable",
+  "time_coverage": "n/a",
+  "size_hint": "small ETL scripts",
+  "license": "MIT",
+  "last_activity": "2026-03-08",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "Not STR-specific, but a recent, actively-maintained example of a full Socrata ETL pipeline (auth, pagination, incremental pulls) that could be repurposed against any state Socrata portal carrying lodging-tax or transient-occupancy-tax collections (gap 8)."
+  ]
+ },
+ {
+  "key": "github:derekslinz/meta-data-mcp",
+  "url": "https://github.com/derekslinz/meta-data-mcp",
+  "name": "meta-data-mcp",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python MCP tool indexing/routing across open-data discovery systems, with stated integration for Eurostat and data.gov (and similar platforms).",
+  "why_useful": "A lightweight discovery router spanning Eurostat (already partially held per CONTEXT.md) and data.gov (US federal/state/local catalog, itself CKAN-based) \u2014 could be pointed at gap 7 (regional travel volume) and gap 12 (US city STR registration) sources.",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   12
+  ],
+  "license": "not confirmed",
+  "last_activity": "not confirmed (small repo, 5 stars)",
+  "geography": "US + EU",
+  "time_coverage": "n/a",
+  "size_hint": "n/a (client code)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A lightweight discovery router spanning Eurostat (already partially held per CONTEXT.md) and data.gov (US federal/state/local catalog, itself CKAN-based) \u2014 could be pointed at gap 7 (regional travel volume) and gap 12 (US city STR registration) sources."
+  ]
+ },
+ {
+  "key": "github:findopendata/findopendata",
+  "url": "https://github.com/findopendata/findopendata",
+  "name": "findopendata",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python 'search engine for Open Data' (60 stars) aimed at open-data discovery generally, not source-specific.",
+  "why_useful": "Another general open-data search/indexing tool that could be re-pointed at municipal STR portals or tourism datasets; lower confidence than Ceres/Auctus since portal coverage wasn't confirmed in this pass.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "geography": "unspecified",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "Another general open-data search/indexing tool that could be re-pointed at municipal STR portals or tourism datasets; lower confidence than Ceres/Auctus since portal coverage wasn't confirmed in this pass."
+  ]
+ },
+ {
+  "key": "github:datopian/portaljs",
+  "url": "https://github.com/datopian/portaljs",
+  "name": "PortalJS",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "2.4k-star, actively developed (Sep 2026) TypeScript/Next.js framework for scaffolding data portals with a unified DataProvider interface across CKAN, Socrata, OpenDataSoft, ArcGIS, GitHub, Frictionless Data, DKAN, and OpenMetadata backends; MIT license.",
+  "why_useful": "A single abstraction layer that could pull from multiple portal families (Socrata + CKAN + OpenDataSoft + ArcGIS) with one interface, useful as connective tooling if the team wants to build a repeatable STR/tourism-dataset harvester across the many named city/country sources in gaps 7-13.",
+  "potential": "low",
+  "gap_targets": [
+   12,
+   7,
+   8,
+   13
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09 (active)",
+  "geography": "global (multi-backend)",
+  "time_coverage": "n/a (framework)",
+  "size_hint": "n/a (framework code)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A single abstraction layer that could pull from multiple portal families (Socrata + CKAN + OpenDataSoft + ArcGIS) with one interface, useful as connective tooling if the team wants to build a repeatable STR/tourism-dataset harvester across the many named city/country sources in gaps 7-13."
+  ]
+ },
+ {
+  "key": "github:awesomedata/apd-core",
+  "url": "https://github.com/awesomedata/apd-core",
+  "name": "apd-core",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Machine-readable CSV backing store for awesome-public-datasets, organized as one CSV per category (e.g. core/Transportation.csv) with dataset name/url/description columns; source-of-truth for new dataset PRs to the main list.",
+  "why_useful": "Lets a future pass query the whole awesome-public-datasets index programmatically (e.g. filter Transportation.csv, Economics.csv) instead of scraping the rendered README; the Transportation.csv category file was confirmed present via GitHub contents API on 14 Sep 2026 (fetch of raw file 404'd, likely a path/branch mismatch worth revisiting).",
+  "potential": "low",
+  "size_hint": "one CSV per top-level category, small",
+  "geography": "global",
+  "time_coverage": "n/a (index)",
+  "last_activity": "2026-09-13",
+  "license": "GPL-3.0",
+  "gap_targets": [],
+  "duplicate_of_holding": "same underlying content as awesomedata/awesome-public-datasets",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Lets a future pass query the whole awesome-public-datasets index programmatically (e.g. filter Transportation.csv, Economics.csv) instead of scraping the rendered README; the Transportation.csv category file was confirmed present via GitHub contents API on 14 Sep 2026 (fetch of raw file 404'd, likely a path/branch mismatch worth revisiting)."
+  ]
+ }
+]

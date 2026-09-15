@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:arpitkanungo/mock-pricelabs-api",
+  "url": "https://github.com/ArpitKanungo/mock-pricelabs-api",
+  "name": "ArpitKanungo/mock-pricelabs-api",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Verified via raw db.json: a 30-row mock JSON of STR-style listings (id, propertyName, city, lat/lng, basePrice $1.99-$129.99). Explicitly toy/demo data mimicking a PriceLabs-shaped listing feed; no occupancy, comp-set, or booking fields. One corrupted row. Updated 2 May 2026.",
+  "why_useful": "Not real data (confirmed mock/demo, unrealistic prices) \u2014 a dead end for actual signal, but the schema shape (property, geo, base nightly rate) is the minimum viable structure a real PriceLabs-style comp-set pull would need, useful only as a template if the team ever builds its own scraper against a public rate-shopping tool.",
+  "potential": "low",
+  "geography": "unspecified (mixed cities, one corrupted)",
+  "time_coverage": "none (static demo snapshot)",
+  "size_hint": "30 rows, single JSON file",
+  "license": "unspecified",
+  "last_activity": "2026-05-02",
+  "duplicate_of_holding": "none, but confirmed non-real/mock data",
+  "gap_targets": [
+   2
+  ],
+  "hits": 2,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Not real data (confirmed mock/demo, unrealistic prices) \u2014 a dead end for actual signal, but the schema shape (property, geo, base nightly rate) is the minimum viable structure a real PriceLabs-style comp-set pull would need, useful only as a template if the team ever builds its own scraper against a public rate-shopping tool.",
+   "Confirms PriceLabs (a dominant STR dynamic-pricing tool many hosts use) has a documented API shape worth knowing about, but this particular repo has nothing usable; flagged only so a follow-up agent doesn't re-discover and re-evaluate it."
+  ]
+ },
+ {
+  "key": "github:natalan/pricelabs-price-checker",
+  "url": "https://github.com/natalan/pricelabs-price-checker",
+  "name": "natalan/pricelabs-price-checker",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Verified via WebFetch: a small WordPress plugin that calls the PriceLabs API to show dynamic pricing on a direct-booking site. PHP integration code only, no bundled comp-set data; exact fields pulled not visible from the page (would need the .php source).",
+  "why_useful": "Confirms PriceLabs exposes a live, third-party-callable API that individual hosts already integrate against; a public confirmation that a comp-set/pricing acquisition path exists, worth a deeper source read if the team wants to explore PriceLabs' public-facing (non-paid-tier) endpoints for realised-ADR proxies (gap #2).",
+  "potential": "low",
+  "geography": "unspecified",
+  "time_coverage": "real-time, current pricing only",
+  "size_hint": "small plugin repo",
+  "license": "unspecified",
+  "last_activity": "2024-01-18",
+  "gap_targets": [
+   2
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a revenue manager at a large vacation-rental property-manage"
+  ],
+  "why_all": [
+   "Confirms PriceLabs exposes a live, third-party-callable API that individual hosts already integrate against; a public confirmation that a comp-set/pricing acquisition path exists, worth a deeper source read if the team wants to explore PriceLabs' public-facing (non-paid-tier) endpoints for realised-ADR proxies (gap #2)."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/opensky",
+  "url": "https://github.com/api-evangelist/opensky",
+  "name": "api-evangelist/opensky",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Independent third-party API profile of OpenSky Network: OpenAPI specs, JSON Schema, auth/rate-limit docs, pricing plans. Not the API itself and not data \u2014 pure documentation/spec artifacts. Created/modified 2026-06-13.",
+  "why_useful": "Useful only as a faster on-ramp to understand OpenSky's REST/Trino surface before building a puller; no standalone data value beyond the official client above.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "N/A (documentation)",
+  "time_coverage": "N/A",
+  "size_hint": "Small (spec files)",
+  "license": "unspecified",
+  "last_activity": "2026-06-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an airline network planner who knows capacity, schedule, far"
+  ],
+  "why_all": [
+   "Useful only as a faster on-ramp to understand OpenSky's REST/Trino surface before building a puller; no standalone data value beyond the official client above."
+  ]
+ },
+ {
+  "key": "github:fgregg/legistar-scrape",
+  "url": "https://github.com/fgregg/legistar-scrape",
+  "name": "legistar-scrape",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Alternative, simpler Python Legistar scraping library (MIT, 23 stars) for pulling legislation/meeting data from Legistar-hosted city sites.",
+  "why_useful": "Second, lighter-weight option for the same STR-ordinance-tracking use case as the opencivicdata scraper (gap #12).",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "license": "MIT",
+  "last_activity": "2022-05-13",
+  "geography": "any Legistar city",
+  "time_coverage": "n/a",
+  "size_hint": "small library",
+  "hits": 1,
+  "themes": [
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Second, lighter-weight option for the same STR-ordinance-tracking use case as the opencivicdata scraper (gap #12)."
+  ]
+ },
+ {
+  "key": "github:juftin/recdotgov-client",
+  "url": "https://github.com/juftin/recdotgov-client",
+  "name": "juftin/recdotgov-client",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Auto-generated API client for the Recreation Information Database (RIDB) that powers Recreation.gov.",
+  "why_useful": "Same cluster as above; a generated client is the lowest-effort path to pull the RIDB historical reservation-export endpoint if this analogue is ever developed further.",
+  "potential": "low",
+  "license": "unknown",
+  "last_activity": "2025-07-18",
+  "geography": "US",
+  "time_coverage": "real-time / whatever RIDB exposes",
+  "size_hint": "code only",
+  "gap_targets": [
+   18
+  ],
+  "duplicate_of_holding": "same RIDB surface as above three",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Same cluster as above; a generated client is the lowest-effort path to pull the RIDB historical reservation-export endpoint if this analogue is ever developed further."
+  ]
+ }
+]

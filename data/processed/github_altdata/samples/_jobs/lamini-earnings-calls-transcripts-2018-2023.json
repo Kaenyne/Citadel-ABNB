@@ -1,0 +1,10 @@
+{
+ "slug": "lamini-earnings-calls-transcripts-2018-2023",
+ "url": "https://github.com/lamini-ai/lamini-earnings-calls",
+ "category": "company_filings_estimates",
+ "data_kind": "both",
+ "one_line": "Archived (13 Jun 2024, read-only) Lamini repo with two committed JSONL data files: data/earnings-transcripts.jsonl (49.3 MB, full earnings-call transcripts with ticker/date/exchange/quarter fields) and data/answers.jsonl (25.1 MB, generated QA pairs); verified head-of-file sample covers 99 tickers incl. peer HLT over 2018-Q4 to 2023-Q1; transcript text formatted like Motley Fool call pages; no LICENSE file in repo (HF mirror lamini/earnings-calls-qa is CC-BY-4.0), 43 stars.",
+ "abnb_use": "Gap 17 (methods) and the management-tone line of work: a ready multi-ticker, multi-quarter transcript corpus (HLT present, other travel/consumer names possible in the untested remainder) to build a cross-sectional tone/QA baseline against which ABNB's own call language can be scored, plus a reusable transcript-to-QA extraction pipeline for the ABNB/peer transcripts we already hold.",
+ "sample_plan": "Range-request the head of each data file, no clone: curl -s -r 0-5000000 https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/data/earnings-transcripts.jsonl -o earnings-transcripts.head.jsonl and curl -s -r 0-3000000 https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/data/answers.jsonl -o answers.head.jsonl (drop the final truncated line of each). Also curl the two small pipeline scripts for the method record. Cap ~8 MB total; do NOT pull the full 74 MB.",
+ "tos_or_license_flag": true
+}

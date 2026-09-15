@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:siddarth-bantula/us-labor-market-analytics",
+  "url": "https://github.com/siddarth-bantula/us-labor-market-analytics",
+  "name": "siddarth-bantula/us-labor-market-analytics",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end labor market analytics pipeline using BLS API, Python ETL, Power BI (0 stars, updated 28 Aug 2026, no license). Similar shape to laborlens: BLS API extraction + ETL + BI dashboard, not confirmed to commit raw data files.",
+  "why_useful": "Second BLS-API ETL template; lower quality signal (0 stars, no README depth checked) than laborlens/fredapi. Included for completeness in case its ETL scripts target metro-level LAUS series the team could reuse.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "geography": "US",
+  "time_coverage": "unknown, not verified",
+  "size_hint": "unknown",
+  "license": "",
+  "last_activity": "2026-08-28",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Second BLS-API ETL template; lower quality signal (0 stars, no README depth checked) than laborlens/fredapi. Included for completeness in case its ETL scripts target metro-level LAUS series the team could reuse."
+  ]
+ },
+ {
+  "key": "github:lachlandeer/bls-api-to-csv",
+  "url": "https://github.com/lachlandeer/bls-api-to-csv",
+  "name": "lachlandeer/bls-api-to-csv",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python script (2 stars) that queries the BLS API for a given series ID and writes results to CSV \u2014 a minimal, easily-adapted reference implementation, not a curated panel or committed dataset.",
+  "why_useful": "Simplest possible template for a point-in-time-aware BLS pull (CPI lodging away from home series CUUR0000SEHB, CPI airline fares CUUR0000SETG01, or metro-level LAUS unemployment series) if the team wants to write its own minimal client rather than adopt a heavier framework.",
+  "potential": "low",
+  "gap_targets": [
+   4,
+   6
+  ],
+  "geography": "US (whatever BLS series ID is queried)",
+  "time_coverage": "n/a (script, not a stored dataset)",
+  "size_hint": "n/a",
+  "license": "",
+  "last_activity": "2024-07-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Simplest possible template for a point-in-time-aware BLS pull (CPI lodging away from home series CUUR0000SEHB, CPI airline fares CUUR0000SETG01, or metro-level LAUS unemployment series) if the team wants to write its own minimal client rather than adopt a heavier framework."
+  ]
+ },
+ {
+  "key": "github:govex/bls-oews-api-tutorial",
+  "url": "https://github.com/govex/bls-oews-api-tutorial",
+  "name": "govex/bls-oews-api-tutorial",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tutorial (MIT license, updated 7 Jan 2026) for querying BLS OEWS (Occupational Employment and Wage Statistics) survey data via the BLS API \u2014 a walkthrough, not a stored dataset.",
+  "why_useful": "OEWS gives industry/occupation employment and wages, which is a weak but real proxy for hospitality/leisure-sector labor demand by area if the team ever wants a labor-market-based travel-industry proxy. Marginal fit to the theme's core (macro consumer/travel series), included as a low-confidence adjacent method.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "US",
+  "time_coverage": "n/a (tutorial)",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "2026-01-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "OEWS gives industry/occupation employment and wages, which is a weak but real proxy for hospitality/leisure-sector labor demand by area if the team ever wants a labor-market-based travel-industry proxy. Marginal fit to the theme's core (macro consumer/travel series), included as a low-confidence adjacent method."
+  ]
+ },
+ {
+  "key": "github:timlenardo/py_census_api",
+  "url": "https://github.com/timlenardo/py_census_api",
+  "name": "timlenardo/py_census_api",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Minimal Python client (0 stars, MIT, last updated 2014) for querying the US Census Bureau Data API. Very old, unmaintained (12 years stale), unverified whether it still works against current Census API versions.",
+  "why_useful": "Could in principle be adapted to pull Census ACS/Population estimates by metro (a denominator for per-capita travel/booking metrics) or Census Household Pulse Survey (a real-time consumer-behavior survey with some travel/spending questions), but staleness makes it a weak candidate \u2014 flagged mainly because gh search turned up no better Census-specific client in this pass.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "geography": "US",
+  "time_coverage": "n/a (client only)",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "2014-05-22",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Could in principle be adapted to pull Census ACS/Population estimates by metro (a denominator for per-capita travel/booking metrics) or Census Household Pulse Survey (a real-time consumer-behavior survey with some travel/spending questions), but staleness makes it a weak candidate \u2014 flagged mainly because gh search turned up no better Census-specific client in this pass."
+  ]
+ },
+ {
+  "key": "github:leaderanalytics/vyntix.fred.fredclient",
+  "url": "https://github.com/leaderanalytics/Vyntix.Fred.FredClient",
+  "name": "leaderanalytics/Vyntix.Fred.FredClient",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": ".NET/C# client (7 stars, updated 18 Apr 2026) for the St. Louis Fed FRED API, part of a broader 'Vyntix' suite (see also Vyntix.Fred.Domain) that appears oriented toward storing FRED data with vintage/versioning semantics given the product name Vyntix (implies 'vintage-index').",
+  "why_useful": "Non-Python alternative FRED client; the 'Vyntix' branding suggests explicit vintage-data handling similar to ALFRED, which would be directly relevant to gap #4, but this was not verified by fetching the README (budget) \u2014 flagged as worth a follow-up check rather than confirmed high value.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "geography": "US (FRED)",
+  "time_coverage": "unknown, not verified",
+  "size_hint": "unknown",
+  "license": "Other",
+  "last_activity": "2026-04-18",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Non-Python alternative FRED client; the 'Vyntix' branding suggests explicit vintage-data handling similar to ALFRED, which would be directly relevant to gap #4, but this was not verified by fetching the README (budget) \u2014 flagged as worth a follow-up check rather than confirmed high value."
+  ]
+ }
+]

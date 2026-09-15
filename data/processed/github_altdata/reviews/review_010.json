@@ -1,0 +1,72 @@
+[
+  {
+    "url": "https://github.com/shwinn08/sec-form4-insider-tracker",
+    "slug": "sec-form4-insider-tracker",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "catalog_only",
+    "category": "company_filings_estimates",
+    "data_kind": "acquisition_method",
+    "one_line": "Five-stage Python pipeline (enumerate/parse/load/query/analyze) that pulls SEC Form 4 insider filings into a SQLite DB; config/ ticker list + CIK overrides, src/sec_form4/ modules, 5 req/sec rate limiting, README documenting 11 classes of SEC data-quality quirks; NO data committed (data/ is gitignored; author's own corpus was 11 tickers / 854 filings / 1,998 transactions over 12 months, ~900 KB db); 1 star, 5 commits, last push 2026-07-29, repo 339 KB, no licence file.",
+    "abnb_use": "Gap #15 (company-structure signals): ABNB officer/director Form 4 sales around guide dates and the 5 Nov print — Chesky/Blecharczyk 10b5-1 cadence and any off-plan disposals. A supporting/colour line only; it informs no KPI in the revenue or margin build.",
+    "sample_plan": "Nothing to sample — zero data files are committed and the repo carries no licence, so reuse of the code is not granted. Running the pipeline is a fresh EDGAR crawl the human should authorise, and `edgartools` (already in our stack) covers Form 4 with less setup. Catalogue the README's 11 data-quality gotchas as a reference if we ever build our own Form 4 puller.",
+    "tos_or_license_flag": true,
+    "reasoning": "Verified the repo exists and is a real, recently-pushed pipeline, but the data/ tree is generated not committed, so there is no dataset here — only a method. No licence is specified, which means no grant to reuse the code, and the marginal value (insider transactions) sits far from the nights/ADR/GBV chain the memo turns on."
+  },
+  {
+    "url": "https://github.com/CodeWritingCow/sec-web-scraper-13f",
+    "slug": "sec-web-scraper-13f",
+    "exists_and_has_content": true,
+    "usefulness": "unlikely",
+    "verdict": "catalog_only",
+    "category": "company_filings_estimates",
+    "data_kind": "acquisition_method",
+    "one_line": "Single-script (scraper.py, ~25 KB repo) Requests/lxml/BeautifulSoup puller that takes a 10-digit fund CIK, parses that fund's 13F filings off EDGAR and writes a TSV of holdings; MIT licence, 48 stars / 19 forks, ARCHIVED read-only since 22 Mar 2025 (last push 2023-08-12); no data files committed.",
+    "abnb_use": "Gap #15 only — who holds ABNB and how concentrated the register is, quarter by quarter. Nothing here reads on nights, ADR, GBV, take rate or the Q4 guide; at best it is background for a positioning slide.",
+    "sample_plan": "No data to sample and the code is archived and pre-dates EDGAR's current 13F information-table XML layout, so it is likely stale. If we ever need 13F holdings, use `edgartools` or the gmahama repo below rather than this. Catalogue the MIT licence and the URL, pull nothing.",
+    "tos_or_license_flag": false,
+    "reasoning": "Confirmed archived March 2025 with its last commit in August 2023 and only scraper.py plus dependency files — no committed holdings data anywhere. It is a strictly weaker version of tooling we already have, and 13F positioning is the most peripheral of the CONTEXT gaps for a KPI-forecast memo."
+  },
+  {
+    "url": "https://github.com/gmahama/13f-scraper",
+    "slug": "gmahama-13f-scraper",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "catalog_only",
+    "category": "company_filings_estimates",
+    "data_kind": "acquisition_method",
+    "one_line": "MIT-licensed Python package + CLI + FastAPI service (cli.py, logic.py, parser.py, sec_client.py, api.py, models.py, tests/, Procfile/railway.json) that scrapes and normalises SEC 13F-HR filings by fund name, CIK or CSV batch, with first-time-filer detection, holdings-count filtering, rate-limited SEC compliance, response caching and CSV/JSONL export; only sample_funds.csv is committed as data; 0 stars, 1 fork, 169 KB, last push 2025-08-18.",
+    "abnb_use": "Gap #15: the first-time-filer flag would let us list funds that entered ABNB for the first time in a given quarter, i.e. a crude new-money-in measure alongside the short-interest series we already hold. Positioning colour for a slide, not a KPI input.",
+    "sample_plan": "No dataset to pull — sample_funds.csv is a toy example list. The tool is a live EDGAR crawler with pip dependencies and its own rate-limit assumptions; running it is a fresh crawl and a human call, and 13F data is 45-days-lagged quarterly so it cannot inform the 5 Nov print anyway. Catalogue the URL, the MIT licence and the first-time-filer feature.",
+    "tos_or_license_flag": false,
+    "reasoning": "Verified the file list and MIT licence; it is genuinely the most feature-complete of the three EDGAR scrapers in this batch, but it ships no data at all beyond an example fund list. First-time-filer detection is a real capability we do not have, so it earns a catalogue line as a method even though nothing should be pulled."
+  },
+  {
+    "url": "https://github.com/christianpichichero-max/pit-fundamentals",
+    "slug": "pit-fundamentals-pit-harness",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "sample",
+    "category": "methods_tooling",
+    "data_kind": "both",
+    "one_line": "data/pit_fundamentals_history.csv — 868,346 bytes, 6,969 rows, columns ticker,cik,concept,xbrl_tag,fiscal_year,period_end,first_filed,lag_days,filed_reliable,original_value,latest_value,restated,qa_status — 16 XBRL concepts x 40 US large caps (verified ticker list: AAPL ABBV ADBE AMD AMZN AVGO BA CAT COST CRM CSCO CVX DIS GOOGL HD HON INTC JNJ JPM KO LLY LMT MCD META MRK MSFT NFLX NKE NVDA ORCL PEP PG QCOM TMO TSLA TXN UNH V WMT XOM — NO ABNB, BKNG, EXPE, MAR or HLT), ~12 years each, mean filing lag 43 days; plus query_asof.py and check_your_data.py (lookahead-bias checker) and METHODOLOGY.md; data declared CC0 (source SEC EDGAR, public domain), GitHub reports NOASSERTION on the repo itself; 3 stars, 36 commits, rebuilt 2026-09-07, last push 2026-09-09.",
+    "abnb_use": "Gap #4 as a METHOD, not as data: `original_value` vs `latest_value` + `restated` + `first_filed`/`lag_days` is exactly the vintage discipline CLAUDE.md rule #2 demands, and check_your_data.py is a ready-made lookahead-bias audit we could point at our own L0 vintage register and at the ADR/nights refit-at-guide-dates harness. The 43-day mean lag is also a usable prior for how stale any EDGAR-derived feature is at a guide date.",
+    "sample_plan": "Three keyless raw pulls, ~0.9 MB total, well under cap: curl -sL -o pit_fundamentals_history.csv https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/data/pit_fundamentals_history.csv (868 KB, full file — take all of it, it is small) ; curl -sL -O https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/query_asof.py ; curl -sL -O https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/check_your_data.py ; curl -sL -O https://raw.githubusercontent.com/christianpichichero-max/pit-fundamentals/HEAD/METHODOLOGY.md. Land under data/raw/github_altdata/pit-fundamentals/. Do NOT expect ABNB rows — the value is the schema and the two scripts.",
+    "tos_or_license_flag": false,
+    "reasoning": "I pulled the CSV header and the distinct ticker column directly and confirmed 40 tickers with no travel or OTA name among them, so the scout's 'unconfirmed' coverage question resolves to a no. The data itself is therefore irrelevant to ABNB, but the file is under 1 MB, CC0, actively rebuilt, and the PIT schema plus lookahead checker are a clean template for the vintage discipline our harness already requires — cheap enough to take for the method alone."
+  },
+  {
+    "url": "https://www.dolthub.com/repositories/post-no-preference/earnings",
+    "slug": "dolthub-post-no-preference-earnings-consensus-vintages",
+    "exists_and_has_content": true,
+    "usefulness": "possibly_useful",
+    "verdict": "sample",
+    "category": "company_filings_estimates",
+    "data_kind": "pointer_to_external_host",
+    "one_line": "Public Dolt (git-for-data) database, branch is `master` NOT `main`, queryable keyless over HTTP SQL; 10 tables verified live: balance_sheet_assets, balance_sheet_equity, balance_sheet_liabilities, cash_flow_statement, earnings_calendar, eps_estimate, eps_history, income_statement, rank_score, sales_estimate. sales_estimate schema = (date PK, act_symbol PK, period PK in {Current Quarter, Next Quarter, Current Year, Next Year}, period_end_date, consensus, count, high, low, year_ago) — i.e. a dated weekly snapshot of the analyst revenue consensus with dispersion and contributor count. VERIFIED coverage: ABNB 1,160 rows from 2021-02-07 to 2026-09-13; latest ABNB row 2026-09-13 has 3Q26 revenue consensus $4.74bn (n=7, high 4.77 / low 4.72) and 4Q26 $3.20bn (n=10, high 3.70 / low 3.05); BKNG present in eps_estimate to 2026-09-13; EXPE sales_estimate starts 2017-10-27. Zacks-style schema; no licence stated on the DoltHub page.",
+    "abnb_use": "The strongest hit in this batch and close to a bullseye on gap #4 — genuine point-in-time consensus vintages for ABNB revenue AND EPS at weekly frequency from Feb 2021 (i.e. covering every one of the ~23 prints in our guidance ledger, and both the W1 1Q23+ and W2 1Q24+ backtest windows) with contributor count and high/low dispersion. It would give the L0 vintage register a free, independently-sourced second consensus vendor with real timestamps, let us measure consensus drift into each print and the guide-date-to-print revision path, and extend the same to BKNG/EXPE (back to 2017) for the peer-readthrough work. The 4Q26 high/low spread ($3.05–3.70bn against a $3.20bn mean) is itself a read on how wide the Street is on the guide we are forecasting.",
+    "sample_plan": "Keyless public HTTP SQL API, no login, no key. Base URL: https://www.dolthub.com/api/v1alpha1/post-no-preference/earnings/master with a URL-encoded `q` parameter (use `master`; `main` returns 'branch not found'). Pull, paginating with LIMIT/OFFSET because the API caps rows and times out on wide aggregates: (1) curl -sL -G --data-urlencode \"q=select * from sales_estimate where act_symbol in ('ABNB','BKNG','EXPE') order by date, period limit 200 offset N\" <base> — loop N in steps of 200 until an empty rows array; (2) the same for eps_estimate; (3) curl -sL -G --data-urlencode \"q=select * from earnings_calendar where act_symbol in ('ABNB','BKNG','EXPE')\" <base>. Cap: ABNB+BKNG+EXPE across both estimate tables is roughly 8–12k rows, well under 5 MB of JSON. Keep each response as raw JSON under data/raw/github_altdata/dolthub_earnings/ with the pull timestamp in the filename. Do NOT attempt `dolt clone` of the whole database (it carries every US ticker and full commit history — far over the cap), and do NOT run unfiltered aggregates, which hit 'context deadline exceeded'.",
+    "tos_or_license_flag": true,
+    "reasoning": "I queried the live API and confirmed both the schema and ABNB coverage myself: 1,160 sales_estimate rows spanning 2021-02-07 to 2026-09-13, weekly, with dispersion — this is the historical-consensus-snapshot series CONTEXT gap #4 says we lack. The flag is licence, not access: the table layout (act_symbol, rank_score) is Zacks-derived and the DoltHub repo states no licence, so a human should clear redistribution before any number from it is quoted in the memo — but sampling a few thousand rows off a public keyless endpoint for evaluation is reasonable, and the timestamped rows would need to enter the L0 vintage register with 'DoltHub/post-no-preference' as the vendor."
+  }
+]

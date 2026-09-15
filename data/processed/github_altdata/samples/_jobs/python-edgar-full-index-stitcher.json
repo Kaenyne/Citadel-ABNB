@@ -1,0 +1,10 @@
+{
+ "slug": "python-edgar-full-index-stitcher",
+ "url": "https://github.com/edouardswiac/python-edgar",
+ "category": "company_filings_estimates",
+ "data_kind": "acquisition_method",
+ "one_line": "python-edgar: 64 KB zero-dependency MIT library/CLI (355 stars, last push 2024-05-11) that downloads and stitches SEC EDGAR quarterly full-index files (company name, CIK, form type, filing date, URL) 1993-present into one master filing index; no data committed, pulls live from sec.gov.",
+ "abnb_use": "Builds the exact-filing-date master index needed for point-in-time joins in the L0 vintage register (gap 4) - when each ABNB/BKNG/EXPE/MAR/HLT 8-K, 10-Q and 10-K actually hit the wire, so consensus and price snapshots can be aligned to the release timestamp rather than the quarter label.",
+ "sample_plan": "Skip the package; pull the underlying public keyless index directly and keep it small. `curl -A 'ksurapaneni@ufl.edu academic research' -s https://www.sec.gov/Archives/edgar/full-index/2026/QTR3/company.idx -o edgar_full_index_2026Q3_company.idx` (typically 5-12 MB; if over 5 MB use `curl -r 0-3000000` for the head) and also grab the tiny form-type index `.../2026/QTR3/form.idx` head with `curl -r 0-1000000`. Optionally `git clone --depth 1 https://github.com/edouardswiac/python-edgar` (64 KB) to keep the stitcher script. Cap 25 MB.",
+ "tos_or_license_flag": false
+}

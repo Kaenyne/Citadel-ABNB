@@ -1,0 +1,121 @@
+[
+ {
+  "key": "github:chandlerlutz/tidyzillow",
+  "url": "https://github.com/ChandlerLutz/tidyZillow",
+  "name": "tidyZillow",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package/scripts to 'tidy' Zillow Research data (ZHVI/ZORI-style CSVs) into long/tidy format for analysis; small utility repo, 2 stars.",
+  "why_useful": "A reusable tidying utility for Zillow's own published research CSVs (which we can download directly from Zillow's research page) -- saves reshape work if we pull ZORI/ZHVI ourselves, but adds no new data.",
+  "potential": "low",
+  "geography": "US, Zillow Research geography (metro/zip/city)",
+  "time_coverage": "whatever Zillow Research vintage is fed in",
+  "size_hint": "small R utility, no data committed",
+  "license": "none declared",
+  "last_activity": "2024-08-25",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "A reusable tidying utility for Zillow's own published research CSVs (which we can download directly from Zillow's research page) -- saves reshape work if we pull ZORI/ZHVI ourselves, but adds no new data."
+  ]
+ },
+ {
+  "key": "github:connorkersting/us-housing-buy-vs-rent",
+  "url": "https://github.com/connorkersting/us-housing-buy-vs-rent",
+  "name": "us-housing-buy-vs-rent",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R/Shiny interactive app comparing buy-vs-rent cost across US metros using Zillow research data (ZHVI for prices, presumably ZORI for rent); MIT licensed, updated Aug 2026.",
+  "why_useful": "Working, recently-touched Shiny app pulling Zillow buy-vs-rent metro series; the buy/rent cost gap is a plausible macro driver of household formation and short-vs-long-term rental substitution, but the repo is a live app over Zillow's own feed, not a static dataset.",
+  "potential": "low",
+  "geography": "US metros",
+  "time_coverage": "current Zillow Research vintage",
+  "size_hint": "no data committed, live Shiny pulls",
+  "license": "MIT",
+  "last_activity": "2026-08-07",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "Working, recently-touched Shiny app pulling Zillow buy-vs-rent metro series; the buy/rent cost gap is a plausible macro driver of household formation and short-vs-long-term rental substitution, but the repo is a live app over Zillow's own feed, not a static dataset."
+  ]
+ },
+ {
+  "key": "github:biganomaly/hud-fair-market-rents-scraper",
+  "url": "https://github.com/BigAnomaly/hud-fair-market-rents-scraper",
+  "name": "hud-fair-market-rents-scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An Apify actor (cloud scraper-as-a-service wrapper) for pulling HUD Fair Market Rent data; requires an Apify account/run to get output, no data committed to the repo.",
+  "why_useful": "Marginal -- just a thin Apify wrapper around HUD's own public FMR data/API, which we could query directly for free without needing Apify.",
+  "potential": "low",
+  "geography": "US, HUD FMR areas",
+  "time_coverage": "current HUD FMR vintage",
+  "size_hint": "no data committed, Apify actor config only",
+  "license": "unknown",
+  "last_activity": "2026-06-25",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Marginal -- just a thin Apify wrapper around HUD's own public FMR data/API, which we could query directly for free without needing Apify.",
+   "One-command (Apify run) method to pull current HUD FMR tables if the official bulk download changes format; low value since HUD already publishes bulk CSVs directly.",
+   "A packaged, schedulable puller for HUD FMR data if the team wants FMR refreshed on a cadence without hitting the HUD API directly; low marginal value since HUD FMR is already a documented public API (see Zoning-and-Rent-Burdens above), but useful as a ready integration if Apify credentials exist."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/hud",
+  "url": "https://github.com/api-evangelist/hud",
+  "name": "hud (API Evangelist documentation)",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Documentation/catalogue (not a live client) of HUD's public API surface: Fair Market Rents, income limits, and other housing-affordability APIs, pointing to HUD's own developer portal (data.hud.gov). Last updated 12 Sep 2026, 0 stars.",
+  "why_useful": "Useful map of what HUD actually exposes via API (endpoints, coverage) to plan a direct pull rather than scraping \u2014 low novelty as data but saves discovery time.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2026-09-12",
+  "hits": 2,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Useful map of what HUD actually exposes via API (endpoints, coverage) to plan a direct pull rather than scraping \u2014 low novelty as data but saves discovery time.",
+   "A map of which HUD housing APIs exist and their endpoints, useful for building a proper FMR puller directly against HUD's own API rather than relying on a third-party MCP wrapper. Supports gap 13."
+  ]
+ },
+ {
+  "key": "github:dwdii/hudfmrdataanalyzer",
+  "url": "https://github.com/dwdii/HudFmrDataAnalyzer",
+  "name": "HudFmrDataAnalyzer",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Older (2014) Python tool for downloading/analyzing HUD Fair Market Rent data across years; 1 star. Could carry older vintage FMR files bundled from the mid-2010s.",
+  "why_useful": "If it committed historical FMR files from ~2013-2014, that is a genuinely older vintage than what we currently hold; needs a file-tree check to confirm.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2014-12-26",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "If it committed historical FMR files from ~2013-2014, that is a genuinely older vintage than what we currently hold; needs a file-tree check to confirm."
+  ]
+ }
+]

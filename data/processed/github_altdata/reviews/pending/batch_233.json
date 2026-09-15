@@ -1,0 +1,160 @@
+[
+ {
+  "key": "github:ranahaani/gnews",
+  "url": "https://github.com/ranahaani/GNews",
+  "name": "GNews",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package wrapping Google News RSS feeds: title, description, published date, URL, publisher; supports 141+ countries, 41+ languages, optional full-text extraction and Playwright URL resolution. MIT, 235 commits, appears actively maintained.",
+  "why_useful": "Same use case as GoogleNews scraper but via RSS (more stable than HTML scraping) -- lower-friction way to track travel-industry / Airbnb / regulation news volume by country and topic.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "unknown exact date; 235 commits, actively maintained per repo signals",
+  "geography": "141+ countries",
+  "time_coverage": "current news only (RSS), no historical archive",
+  "size_hint": "acquisition method",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Same use case as GoogleNews scraper but via RSS (more stable than HTML scraping) -- lower-friction way to track travel-industry / Airbnb / regulation news volume by country and topic."
+  ]
+ },
+ {
+  "key": "github:eventregistry/event-registry-python",
+  "url": "https://github.com/EventRegistry/event-registry-python",
+  "name": "event-registry-python (NewsAPI.ai / Event Registry SDK)",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Python SDK for the Event Registry news-event API: article/blog search by keyword, concept, topic, source, sentiment, date; event clustering; trending-concept queries; articles ranked by social shares. MIT, 203 commits.",
+  "why_useful": "Event-level (not just article-level) news aggregation could support an events/shocks feed (gap #11) or a regulation-news tracker (gap #12) if Airbnb/STR terms are queried, though free tier is capped at last 30 days and requires an API key.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "unknown exact date; 203 commits",
+  "geography": "global",
+  "time_coverage": "free tier: last 30 days only; paid: longer archive",
+  "size_hint": "acquisition method, API-key gated",
+  "gap_targets": [
+   11,
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Event-level (not just article-level) news aggregation could support an events/shocks feed (gap #11) or a regulation-news tracker (gap #12) if Airbnb/STR terms are queried, though free tier is capped at last 30 days and requires an API key."
+  ]
+ },
+ {
+  "key": "github:codelucas/newspaper",
+  "url": "https://github.com/codelucas/newspaper",
+  "name": "newspaper3k / newspaper4k",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library for full-text article and metadata extraction (text, authors, date, images, keywords) from arbitrary news URLs, with parallel multi-threaded downloading; 35+ languages. MIT/Apache-2.0 dual license, 670 commits.",
+  "why_useful": "Generic extraction backend that would sit behind a Skift/PhocusWire/regulatory-news crawl once target URLs are identified (e.g. via waybackpy or a sitemap) -- turns raw HTML into structured article records for a text corpus.",
+  "potential": "low",
+  "license": "MIT / Apache-2.0",
+  "last_activity": "unknown exact date; 670 commits",
+  "geography": "any site",
+  "time_coverage": "n/a (live extraction tool)",
+  "size_hint": "acquisition method",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Generic extraction backend that would sit behind a Skift/PhocusWire/regulatory-news crawl once target URLs are identified (e.g. via waybackpy or a sitemap) -- turns raw HTML into structured article records for a text corpus."
+  ]
+ },
+ {
+  "key": "github:tomslee/airbnb-data-collection",
+  "url": "https://github.com/tomslee/airbnb-data-collection",
+  "name": "tomslee/airbnb-data-collection",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Tom Slee's original Airbnb scraper (Python 3 + PostgreSQL/PostGIS), predecessor to Inside Airbnb. 488 stars, 184 forks, 250 commits, last substantive activity ~2019 (MIT license, no longer maintained by author). The repo itself has no committed CSVs (schema/scraper only), but it was used to run quarterly-ish 'surveys' of listings across dozens of cities from 2014-07 to ~2017 (one example city shows 18 survey snapshots May 2014-Jul 2017). The author's own site (tomslee.net/airbnb-data-collection-get-the-data) hosts the resulting CSV exports by year (2014, 2015, 2016, 2017) as a direct download, and several Kaggle mirrors of 'Tom Slee Airbnb data' exist. Combined with the code here, this is a fully reproducible listing-level, multi-year, multi-city panel that predates Inside Airbnb's own coverage.",
+  "why_useful": "Directly fills gap #1 (historical/archived STR dumps pre-2023) with a source 5-8+ years older than our current earliest coverage; also a second, independent scrape methodology (not Inside Airbnb's own tool) so could crosscheck listing-count/price levels for 2015-2017 in cities we still care about (e.g. NYC, LA, Paris, London, Barcelona).",
+  "potential": "high",
+  "license": "unspecified in README",
+  "last_activity": "archived/no longer maintained per author (author announcement 2017; repo still on GitHub)",
+  "geography": "dozens of global cities (bounding-box + city surveys)",
+  "time_coverage": "2014-2017",
+  "size_hint": "code repo is small; bulk data lives externally on tomslee.net, size unknown, described as 'get the data' bulk downloads",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 15,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews",
+   "Airbnb cancellation, refund and Reserve-Now-Pay-Later related datasets; STR booking lead-time and cancellation-rate data from any platform or PMS",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers",
+   "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)",
+   "Amsterdam, Berlin, Vienna, Copenhagen, Prague, Lisbon, Athens, Florence, Venice, Dublin STR datasets and city-report data appendices"
+  ],
+  "why_all": [
+   "Directly fills gap #1 (historical/archived STR dumps pre-2023) with a source 5-8+ years older than our current earliest coverage; also a second, independent scrape methodology (not Inside Airbnb's own tool) so could crosscheck listing-count/price levels for 2015-2017 in cities we still care about (e.g. NYC, LA, Paris, London, Barcelona).",
+   "This is an independent, methodologically different (survey/scrape, not Inside Airbnb's pipeline) historical Airbnb listings panel reaching back to 2014-2015 \u2014 older than anything Inside Airbnb itself now serves on its CDN, and older than our held panel (Dec 2022+). Directly targets gap #1 (pre-2023 historical dumps) with an even deeper history; also relevant as a second, independent cross-check on any Inside Airbnb-based occupancy/price reconstruction.",
+   "Historically this project produced some of the earliest (pre-2015) multi-city Airbnb listing snapshots referenced in academic literature, potentially including NYC, but no such historical CSVs are committed in the current repo -- would require finding an archived release or a fork with data. Flagged as a method only; it scrapes airbnb.com directly, which is outside our sanctioned-source rule and should not be run without a human ToS decision.",
+   "Named author's original historical city-level Airbnb scrapes (2014-2017, dozens of cities, pre-dating Inside Airbnb's own coverage) are a known historical dataset in the STR-data literature; this repo is the associated tooling, not the data itself \u2014 worth checking Tom Slee's personal site/blog (airbnbdata.com, now defunct per other search hits) or Wayback Machine for the actual archived CSVs it produced, which would fill gap #1 for years before Inside Airbnb existed.",
+   "This is the single most cited pre-2015 / pre-Inside-Airbnb historical Airbnb snapshot archive that predates our current 13-city panel (Dec-2022 onward) by 6-8 years, directly answering the HIGH-value gap #1 (historical/archived Inside Airbnb-era dumps). Each survey snapshot carries a reviews-count field per listing that can be turned into an older review-accrual/stays proxy series for the same cities we already track.",
+   "If the associated tomslee.net archive is still live, this is a pre-2015 Airbnb listing/price panel that predates Inside Airbnb's earliest coverage -- would directly fill gap #1 (historical dumps pre-2023, here pre-2015). Worth a follow-up check of tomslee.net directly since the repo itself has no committed data.",
+   "Directly targets gap #1 (historical/archived Airbnb dumps pre-2023): this is the oldest known systematic Airbnb listings archive (2014-2016), predating Inside Airbnb, and could plug part of the pre-2023 hole even though it lacks calendar/availability fields (listings + review counts only, useful for review-rate occupancy proxies back to 2014).",
+   "Fills gap #1 (historical/archived Airbnb dumps older than what Inside Airbnb's CDN retains) -- covers 2013-2017, years for which we have no Inside Airbnb coverage at all. Also relevant to gap #2 (historical listing/price snapshots) as a point-in-time series of city-level surveys, several years earlier than our current panel start (Dec 2022).",
+   "If Tom Slee's own historic data dumps (2015-2017, many world cities) survive anywhere (his old site or a mirror), they would be an independent pre-2023 Airbnb listings source, addressing gap #1 (historical Inside-Airbnb-era coverage) \u2014 but this GitHub repo itself is only the scraper method, is unmaintained since 2019, and running it against airbnb.com is out of policy for us per repo rules (non-sanctioned scrape target).",
+   "Historically the source many rent-burden/STR-density academic papers used for pre-2015 Inside-Airbnb-era listing counts; flagged only as a method/provenance reference, not for re-running (scrapes airbnb.com directly, which is a terms-of-service decision outside this catalogue's remit per our own repo rules).",
+   "Historically this scraper generated some of the earliest publicly-shared Airbnb listing snapshots (predating Inside Airbnb, some cities back to ~2014-2015); forks or users of this tool sometimes published resulting CSVs elsewhere (Kaggle/Zenodo) \u2014 worth a targeted follow-up search for 'airbnb-data-collection' output dumps. As a live method it scrapes airbnb.com directly, which per our rules is a ToS decision for a human, not to be run.",
+   "Documents the method/schema used for the earliest known independent Airbnb listing archives (2015-2017), which is the vintage gap #1 explicitly wants filled; useful as a pointer to go find Slee's actual historical CSV dumps (hosted on his now-defunct site / mirrors) rather than as a runnable scraper today, and per repo rules any live scrape of airbnb.com is a ToS call for a human anyway.",
+   "This is the tool that produced some of the only pre-2015/pre-Inside-Airbnb-era STR listings snapshots that exist anywhere; if any fork or mirror of the author's actual output data surfaced elsewhere it would fill gap #1 (historical/archived dumps pre-2023). As shipped here it is code only, and it scrapes airbnb.com directly, which is a ToS decision for a human per repo rules \u2014 catalogued as method, not run.",
+   "Directly fills gap #1 (historical/archived listing dumps pre-2023 \u2014 here pre-2015 through 2017, years off the Inside Airbnb CDN entirely) with real listing IDs trackable across surveys for survival/churn work, across a broader city set than our current 13-city panel.",
+   "Historical precedent for pre-Inside-Airbnb multi-city Airbnb census methodology; the original Tom Slee survey outputs (not in this repo) covered some European cities circa 2015-16, which would sit inside gap #1 (archives older than Inside Airbnb's ~1yr CDN window) if located separately. As shipped, this is a live-scrape method against airbnb.com itself and out of scope to run under our rules -- catalogue only."
+  ]
+ },
+ {
+  "key": "github:chicagoboothml/data___insideairbnb",
+  "url": "https://github.com/ChicagoBoothML/DATA___InsideAirBnB",
+  "name": "ChicagoBoothML/DATA___InsideAirBnB",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Full Inside Airbnb per-city dumps committed directly to the repo for ~30 cities (Amsterdam, Austin, Barcelona, Berlin, Boston, Chicago, London, LA, Madrid, Melbourne, Montreal, Nashville, New Orleans, New York City, Oakland, Paris, Portland, San Diego, San Francisco, Santa Cruz, Seattle, Sydney, Toronto, Trentino, Venice, Vienna, Washington DC, etc). NYC folder contains listings.csv (4.7MB), listings.csv.gz (24MB), calendar.csv.gz (29.6MB), reviews.csv (6.8MB), reviews.csv.gz (62MB), neighbourhoods.csv, neighbourhoods.geojson -- a single full-scope vintage per city, no date in filenames. Repo created/pushed Dec 2015 (confirmed via repo metadata: created_at 2015-12-02, pushed_at 2015-12-03), so this is a ~2015 Inside Airbnb vintage, NOT the 2023-2024 Local Law 18 window. No license file (license: null).",
+  "why_useful": "Multiple cities we already hold (NYC, LA, Chicago, Austin, Nashville, New Orleans, San Diego, Paris, London, Barcelona, Sydney) plus many we don't (Boston, SF, Seattle, DC, Amsterdam, Berlin, Madrid, Melbourne, Montreal, Toronto, Vienna, Venice) at what looks like an early (pre-2023, likely 2016-17) vintage \u2014 directly targets gap #1 (historical Inside Airbnb dumps pre-2023) if the snapshot date is confirmed older than our earliest (Dec 2022) coverage.",
+  "potential": "high",
+  "gap_targets": [
+   1
+  ],
+  "geography": "30 cities, US + Europe + Australia",
+  "time_coverage": "Likely single snapshot circa 2016-2017 (unconfirmed exact date)",
+  "size_hint": "unknown; per-city listings/calendar/reviews CSVs",
+  "license": "unspecified in visible README",
+  "last_activity": "unknown (30 commits total, dates not surfaced)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "Multiple cities we already hold (NYC, LA, Chicago, Austin, Nashville, New Orleans, San Diego, Paris, London, Barcelona, Sydney) plus many we don't (Boston, SF, Seattle, DC, Amsterdam, Berlin, Madrid, Melbourne, Montreal, Toronto, Vienna, Venice) at what looks like an early (pre-2023, likely 2016-17) vintage \u2014 directly targets gap #1 (historical Inside Airbnb dumps pre-2023) if the snapshot date is confirmed older than our earliest (Dec 2022) coverage.",
+   "Not the target LL18 window, but it IS a genuine full-scope committed historical Inside Airbnb dump (listings+calendar+reviews) from ~2015 for NYC and 29 other cities -- older than anything on the current Inside Airbnb CDN and older than what we hold (Dec 2022+). Addresses gap #1 (historical/archived Inside Airbnb dumps, pre-2023) as an 'older, longer' data point even though it misses the specific LL18 window; useful as a pre-period baseline for a 'listings before any STR regulation wave' comparison across many of our 13-city panel members (NYC, LA, Chicago, Austin, Nashville, New Orleans, San Diego, Paris, London, Barcelona, Sydney)."
+  ]
+ }
+]

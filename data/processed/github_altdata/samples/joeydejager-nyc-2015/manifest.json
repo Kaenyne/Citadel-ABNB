@@ -1,0 +1,32 @@
+{
+  "slug": "joeydejager-nyc-2015",
+  "url": "https://github.com/JoeyDeJager/inside-airbnb-data",
+  "sampled": true,
+  "total_bytes": 6430719,
+  "files": [
+    "listings_head.csv",
+    "nyc_listings_20150101184336.csv",
+    "nyc_neighbourhoods.csv",
+    "nyc_reviews_head.csv",
+    "LICENSE",
+    "SOURCE_README.md"
+  ],
+  "rows": "listings_head.csv: 468 (head of ~27k; 846 raw records in the first 2.5 MB, 378 ragged rows with 55-56 fields dropped); nyc_listings_20150101184336.csv: 27,361 (complete); nyc_neighbourhoods.csv: 181 (complete); nyc_reviews_head.csv: 74,073 (head of ~280k); LICENSE/SOURCE_README.md: n/a",
+  "columns": "listings (54): id, scrape_id, last_scraped, name, summary, description, host_id, host_since, neighbourhood, city, zipcode, lat, lon, property_type, room_type, accommodates, bathrooms, bedrooms, beds, price, weekly_price, monthly_price, guests_included, extra_people, minimum_nights, maximum_nights, calendar_updated, availability_30/60/90/365, calendar_last_scraped, number_of_reviews, first_review, last_review, review_scores_* (7), host_listing_count. nyc_listings (15): id, host_id, host_name, neighbourhood_group, neighbourhood, lat, lon, room_type, price, minimum_nights, number_of_reviews, last_review, reviews_per_month, host_listing_count, availability_365. neighbourhoods (2): neighbourhood_group, neighbourhood. reviews (2): listing_id, date.",
+  "date_range": "Scrape 2015-01-01 (last_scraped 2015-01-02..2015-01-03); host_since 2009-02-01..2014-12-24; reviews 2008-10-13..2015-01-03; last_review 2009-10-26..2015-01-03",
+  "how_pulled": "gh api repos/JoeyDeJager/inside-airbnb-data/git/trees/HEAD?recursive=1 (tree + sizes); B=https://raw.githubusercontent.com/JoeyDeJager/inside-airbnb-data/master; curl -sL -o for README.md, LICENSE, new-york-city/2015-01-01/visualizations/nyc_neighbourhoods.csv and nyc_listings_20150101184336.csv (full); curl -sL -r 0-2499999 new-york-city/2015-01-01/data/listings.csv -> listings_head.csv; curl -sL -r 0-1499999 .../visualizations/nyc_reviews_20150101184336.csv -> nyc_reviews_head.csv; python csv module to drop the trailing partial record and (listings only) rows whose field count != 54.",
+  "full_dataset_size": "4 data files, ~93 MB total: data/listings.csv 83.9 MB (~27k rows x 54 cols, long text fields), visualizations/nyc_listings 3.6 MB (27,361 rows), nyc_reviews 5.6 MB (~280k rows), nyc_neighbourhoods 4.8 KB. Repo size 22 MB packed. One city, one date only.",
+  "description": "A January 2015 Inside Airbnb snapshot of New York City: the raw listings scrape (one row per active listing with quoted nightly/weekly/monthly price, room type, capacity, minimum nights, 30/60/90/365-day availability and review scores), the summary listings file, the neighbourhood lookup and the full review-date log (listing_id, date) back to 2008. Source is Inside Airbnb (Murray Cox) as mirrored by a contributor in Jan 2015; CC0-1.0. For ABNB this is the oldest NYC vintage we hold, well before the CDN's one-year window and pre-Local Law 18: an analyst would use it as the 2015 anchor for NYC supply, price-quote and review-velocity series (reviews-as-stays proxy), for pre/post-regulation supply comparisons, and to check that the current 13-city panel's NYC columns line up with the original Inside Airbnb schema.",
+  "issues": "Raw data/listings.csv is malformed: 378 of the first 846 records carry 55-56 fields against a 54-column header, so pandas' C parser fails; the sample keeps only well-formed rows and a user of the full file needs a tolerant parser (python engine, on_bad_lines) or field-count filter. Prices are strings with $ and commas. calendar_updated is relative text ('4 weeks ago'). Only one city/date in the repo (last push 2015-01-20), so it is a single-point anchor, not a series. Licence CC0-1.0, no ToS concern; data originates from Inside Airbnb's own scrape of airbnb.com, not ours.",
+  "source_urls": [
+    "https://api.github.com/repos/JoeyDeJager/inside-airbnb-data/git/trees/HEAD?recursive=1",
+    "https://api.github.com/repos/JoeyDeJager/inside-airbnb-data",
+    "https://raw.githubusercontent.com/JoeyDeJager/inside-airbnb-data/master/README.md",
+    "https://raw.githubusercontent.com/JoeyDeJager/inside-airbnb-data/master/LICENSE",
+    "https://raw.githubusercontent.com/JoeyDeJager/inside-airbnb-data/master/new-york-city/2015-01-01/visualizations/nyc_neighbourhoods.csv",
+    "https://raw.githubusercontent.com/JoeyDeJager/inside-airbnb-data/master/new-york-city/2015-01-01/visualizations/nyc_listings_20150101184336.csv",
+    "https://raw.githubusercontent.com/JoeyDeJager/inside-airbnb-data/master/new-york-city/2015-01-01/data/listings.csv",
+    "https://raw.githubusercontent.com/JoeyDeJager/inside-airbnb-data/master/new-york-city/2015-01-01/visualizations/nyc_reviews_20150101184336.csv"
+  ],
+  "pulled_at": "2026-09-14"
+}

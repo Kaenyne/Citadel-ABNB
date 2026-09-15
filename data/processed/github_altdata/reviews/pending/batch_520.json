@@ -1,0 +1,665 @@
+[
+ {
+  "key": "github:thomasdubdub/opensky-traffic-viz",
+  "url": "https://github.com/thomasdubdub/opensky-traffic-viz",
+  "name": "opensky-traffic-viz",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tools to load and visualize OpenSky Network air traffic data (OpenSky's REST/Impala historical database of ADS-B flight records going back to ~2019, covering scheduled and general aviation traffic globally). MIT licensed, 11 stars.",
+  "why_useful": "OpenSky Network's underlying historical database (queried through this or similar clients) is one of the few genuinely long-run, free, global flight-position archives -- a route-level or airport-level flight-count series derived from it could serve as an airline capacity/traffic proxy for gap #10. This particular repo is just a viz/loading helper, not the data itself, so it is a pointer to the acquisition method rather than a dataset.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Global (OpenSky Network sensor coverage, strongest in Europe/US)",
+  "time_coverage": "OpenSky historical DB extends back to ~2019 (not committed in this repo; queried live)",
+  "size_hint": "Tool only; underlying OpenSky database is very large (external, queried via API)",
+  "license": "MIT",
+  "last_activity": "2026-03-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "OpenSky Network's underlying historical database (queried through this or similar clients) is one of the few genuinely long-run, free, global flight-position archives -- a route-level or airport-level flight-count series derived from it could serve as an airline capacity/traffic proxy for gap #10. This particular repo is just a viz/loading helper, not the data itself, so it is a pointer to the acquisition method rather than a dataset."
+  ]
+ },
+ {
+  "key": "github:alvarofpp/dataset-flights-brazil",
+  "url": "https://github.com/alvarofpp/dataset-flights-brazil",
+  "name": "dataset-flights-brazil",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed dataset from Brazil's ANAC (national civil aviation agency): anac.csv.lrz (compressed flight records, all registered flights in Brazil), airports.csv (ICAO codes, names, coordinates for every airport appearing in the ANAC records), and air_traffic.graphml (an airport-connection graph weighted by flight counts). 39 commits.",
+  "why_useful": "Direct, free, committed domestic flight-volume data for Brazil -- fills part of gap #7 (regional travel volume outside US/EU, specifically Brazil, alongside the Embratur/IBGE sources already flagged) and could proxy inbound tourism/business-travel intensity to Brazilian Airbnb markets.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "size_hint": "compressed CSV (lrzip) of unspecified but apparently substantial row count + airport list + graph file",
+  "time_coverage": "not stated in README; spans ANAC's public flight-record history",
+  "geography": "Brazil (domestic + Brazil-touching routes)",
+  "license": "CDLA-Sharing-1.0",
+  "last_activity": "39 commits, exact last-commit date not surfaced",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "Direct, free, committed domestic flight-volume data for Brazil -- fills part of gap #7 (regional travel volume outside US/EU, specifically Brazil, alongside the Embratur/IBGE sources already flagged) and could proxy inbound tourism/business-travel intensity to Brazilian Airbnb markets."
+  ]
+ },
+ {
+  "key": "github:jpatokal/openflights",
+  "url": "https://github.com/jpatokal/openflights",
+  "name": "openflights",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "The classic OpenFlights database: airports.dat (~7,000+ airports worldwide, IATA/ICAO/coords), airlines.dat (~6,000 airlines), routes.dat (~67,000 route pairs, i.e. which airline flies which city pair -- no seat/frequency counts, just route existence). Static snapshot, last meaningfully updated circa 2014, but still the standard free global route-network reference (confirmed via the flightdelay-dbt-warehouse repo, which cites OpenFlights airline reference at 6,162 rows).",
+  "why_useful": "Gives a free global city-pair route-network topology that can be combined with T-100/other capacity sources or used as a static baseline for which international gateways connect to which Airbnb-heavy markets; AGPL-3.0 licensed code repo, data itself widely mirrored.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "3 .dat files, tens of thousands of rows combined",
+  "time_coverage": "static snapshot, last substantive update ~2014 (stale for current capacity, still useful as network topology)",
+  "geography": "global",
+  "license": "AGPL-3.0 for code; data conventionally treated as open/attributable",
+  "last_activity": "low -- largely dormant, occasional maintenance commits",
+  "hits": 2,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "Gives a free global city-pair route-network topology that can be combined with T-100/other capacity sources or used as a static baseline for which international gateways connect to which Airbnb-heavy markets; AGPL-3.0 licensed code repo, data itself widely mirrored.",
+   "Not a KPI time series but a clean route-network reference table; useful as a join key / weighting scheme to turn airline capacity or airport-passenger stats (gap #10) into a regional travel-intensity index by market, cheaper than building an airport list from scratch."
+  ]
+ },
+ {
+  "key": "github:euctrl-pru/airport-dashboard",
+  "url": "https://github.com/euctrl-pru/airport-dashboard",
+  "name": "euctrl-pru/airport-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Dashboard application for airport performance monitoring, part of the official EUROCONTROL PRU org; likely consumes PRU data APIs rather than storing a standalone dataset (not independently verified - README not fetched due to budget).",
+  "why_useful": "Could point to airport-level throughput metrics (delays, movements) that correlate with regional travel activity in Europe; needs closer inspection to confirm data vs. dashboard-only.",
+  "potential": "medium",
+  "geography": "Europe",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "European and global aviation stats: Eurocontrol, EASA, ACI airport passenger stats, IATA public figures, airport monthly traffic scrapers (Heathrow, Schiphol, ADP, Fraport, AENA)"
+  ],
+  "why_all": [
+   "Could point to airport-level throughput metrics (delays, movements) that correlate with regional travel activity in Europe; needs closer inspection to confirm data vs. dashboard-only.",
+   "Points to where EUROCONTROL PRU publishes airport performance/traffic metrics; worth a deeper look (not verified beyond org listing) as a possible source of committed data files or an API client for punctuality/traffic KPIs by airport."
+  ]
+ },
+ {
+  "key": "github:recohut-datasets/i94_immigration",
+  "url": "https://github.com/RecoHut-Datasets/i94_immigration",
+  "name": "i94_immigration",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed files: sas_data.tar.xz (26.9MB, the classic US I-94 arrivals SAS extract, April 2016 only), immigration_data_sample.csv (144KB sample), I94_SAS_Labels_Descriptions.SAS (code labels for country/port/visa/mode/state fields), plus reference tables airlines.dat, airport-codes_csv.csv, airports.csv, cities.csv, countries.csv, mode.csv, visa.csv, us_states.csv, us-cities-demographics.csv. This is the Udacity Data Engineering capstone I-94 dataset (US National Travel & Tourism Office non-immigrant arrivals) with world-region/country, visa type, transport mode, age group, destination state, and port-of-entry fields. Also carries an unrelated GlobalLandTemperaturesByCity.parquet file (Kaggle climate data, ignore).",
+  "why_useful": "We already hold current NTTO I-94 arrivals (per CONTEXT.md), but this is only a single month (Apr 2016) \u2014 value here is mainly the reference/crosswalk tables (visa code, mode-of-entry code, port/airport code, country code lookups) and a worked example of parsing the SAS I-94 extract, useful if the team ever needs to reprocess raw DHS/NTTO I-94 SAS files into a point-in-time panel (gap #4/#7). Low incremental data value, moderate tooling value.",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   4
+  ],
+  "duplicate_of_holding": "NTTO I-94 arrivals (already held) \u2014 this repo's actual arrivals data is older/narrower (one month, 2016) than what we hold",
+  "license": "MIT",
+  "geography": "United States (inbound, by country of origin)",
+  "time_coverage": "April 2016 only",
+  "size_hint": "sas_data.tar.xz 26.9MB; sample csv 144KB; reference tables <6MB",
+  "last_activity": "2022-06-18",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "We already hold current NTTO I-94 arrivals (per CONTEXT.md), but this is only a single month (Apr 2016) \u2014 value here is mainly the reference/crosswalk tables (visa code, mode-of-entry code, port/airport code, country code lookups) and a worked example of parsing the SAS I-94 extract, useful if the team ever needs to reprocess raw DHS/NTTO I-94 SAS files into a point-in-time panel (gap #4/#7). Low incremental data value, moderate tooling value."
+  ]
+ },
+ {
+  "key": "github:tgherzog/wbgapi",
+  "url": "https://github.com/tgherzog/wbgapi",
+  "name": "wbgapi",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (177 stars, actively maintained, on PyPI/conda-forge) for the World Bank's official Data API. Pulls any World Development Indicators series by country/year in a pandas-friendly way, including ST.INT.ARVL (international tourism, number of arrivals) and ST.INT.DPRT (departures) and ST.INT.RCPT (tourism receipts) for essentially every country back to the mid-1990s (UNWTO-sourced via WDI) -- covers Mexico, Brazil, Thailand, Indonesia, India, Korea, Japan, Australia, Canada all in one call, annual frequency.",
+  "why_useful": "One-command, no-API-key acquisition of UNWTO-sourced annual international arrivals for every APAC/LatAm market named in gap #7, and a general macro/consumer cross-check tool for other themes. Annual only (not monthly), so it complements rather than replaces NTTO/JNTO/KTO monthly series, but is the fastest way to backfill any missing country-year and to sanity-check UNWTO totals without scraping unwto.org directly.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Global (World Bank WDI country list)",
+  "time_coverage": "~1995-2024, annual",
+  "size_hint": "library, not a data dump",
+  "license": "MIT",
+  "last_activity": "2026 (active, per PyPI/conda-forge feedstock also present)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "One-command, no-API-key acquisition of UNWTO-sourced annual international arrivals for every APAC/LatAm market named in gap #7, and a general macro/consumer cross-check tool for other themes. Annual only (not monthly), so it complements rather than replaces NTTO/JNTO/KTO monthly series, but is the fastest way to backfill any missing country-year and to sanity-check UNWTO totals without scraping unwto.org directly.",
+   "One-command pull of World Bank PPP conversion factors and official FX rates by country/year -- a broader and longer-run complement to the Big Mac index for tourist-affordability comparisons across ABNB's LatAm/APAC markets (gap 7 regional travel volume context)."
+  ]
+ },
+ {
+  "key": "github:bpalmer4/readabs",
+  "url": "https://github.com/bpalmer4/readabs",
+  "name": "readabs (Python)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python port (9 stars, active Aug 2026) of the same ABS time-series downloader concept -- retrieves ABS catalogue tables (incl. 3401.0 Overseas Arrivals and Departures) directly into pandas DataFrames.",
+  "why_useful": "Python-native alternative to the R readabs package for pulling Australia's monthly overseas arrivals/departures series without a browser or manual spreadsheet download; fits directly into a Python forecasting pipeline.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "monthly, historical + current",
+  "size_hint": "library",
+  "license": "check repo (not confirmed)",
+  "last_activity": "2026-08-22",
+  "duplicate_of_holding": "Same underlying ABS source as MattCowgill/readabs; keep both since one is R, one Python.",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Python-native alternative to the R readabs package for pulling Australia's monthly overseas arrivals/departures series without a browser or manual spreadsheet download; fits directly into a Python forecasting pipeline."
+  ]
+ },
+ {
+  "key": "github:claudiodanielpc/inegipy_v2",
+  "url": "https://github.com/claudiodanielpc/INEGIpy_v2",
+  "name": "INEGIpy_v2",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (7 stars) wrapping INEGI's (Mexico) Banco de Indicadores Econ\u00f3micos API, which carries INEGI's tourism-sector indicators (visitor counts, hotel occupancy) alongside general macro series, after INEGI changed its series keys; supersedes the older, now partly broken INEGIpy.",
+  "why_useful": "Programmatic access to Mexico's official statistics agency tourism/hospitality indicators (complements DATATUR) for the LatAm gap (#7); Mexico-specific, maintained update addressing INEGI's 2025-26 key changes that broke the original library.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico",
+  "time_coverage": "varies by INEGI series, generally monthly/quarterly, multi-year",
+  "size_hint": "library",
+  "license": "not confirmed",
+  "last_activity": "not confirmed from search metadata (repo exists, description empty)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Programmatic access to Mexico's official statistics agency tourism/hospitality indicators (complements DATATUR) for the LatAm gap (#7); Mexico-specific, maintained update addressing INEGI's 2025-26 key changes that broke the original library."
+  ]
+ },
+ {
+  "key": "github:merieme-laib/japan-tourism-dashboard",
+  "url": "https://github.com/merieme-laib/japan-tourism-dashboard",
+  "name": "japan-tourism-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Streamlit dashboard analyzing inbound tourism trends in Japan built on \"historical JNTO data\" -- likely bundles a JNTO visitor-arrivals CSV (JNTO publishes monthly inbound visitor counts by origin country back to the 1960s-70s annually, 2010s+ monthly) as the app's data source.",
+  "why_useful": "Potential ready-to-use JNTO monthly/annual inbound-visitor extract, which is the exact APAC series named in this theme (Japan visitor arrivals are a leading indicator of ABNB APAC nights and a comp for the FX/travel-demand thesis); needs inspection to confirm the underlying data file's vintage and completeness.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "not confirmed (described only as 'historical JNTO data')",
+  "size_hint": "small app + data file",
+  "license": "not confirmed",
+  "last_activity": "2026-06-22",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Potential ready-to-use JNTO monthly/annual inbound-visitor extract, which is the exact APAC series named in this theme (Japan visitor arrivals are a leading indicator of ABNB APAC nights and a comp for the FX/travel-demand thesis); needs inspection to confirm the underlying data file's vintage and completeness."
+  ]
+ },
+ {
+  "key": "github:ryokawada/inbound-tourism-analysis-jp",
+  "url": "https://github.com/RyoKawada/inbound-tourism-analysis-jp",
+  "name": "inbound-tourism-analysis-jp",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Quantitative analysis repo combining JNTO inbound-visitor data with Bank of Japan (BOJ) FX data specifically to study FX impact on Japan inbound tourism; likely holds a merged JNTO + FX time series and regression/analysis code.",
+  "why_useful": "Directly on-thesis for ABNB's FX-and-travel-demand angle (APAC/Japan mix, yen weakness driving inbound tourism) -- a pre-built JNTO+FX joined dataset would save reconstruction work; still needs inspection for the underlying JNTO series length and whether raw files are committed.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "not confirmed",
+  "size_hint": "not confirmed",
+  "license": "not confirmed",
+  "last_activity": "2026-03-05",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT"
+  ],
+  "why_all": [
+   "Directly on-thesis for ABNB's FX-and-travel-demand angle (APAC/Japan mix, yen weakness driving inbound tourism) -- a pre-built JNTO+FX joined dataset would save reconstruction work; still needs inspection for the underlying JNTO series length and whether raw files are committed."
+  ]
+ },
+ {
+  "key": "github:daniele1388/dwh---global-tourism-project",
+  "url": "https://github.com/Daniele1388/DWH---Global-Tourism-Project",
+  "name": "DWH - Global Tourism Project",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "SQL data warehouse built from UN Tourism (UNWTO) statistics: five committed CSV datasets covering domestic tourism, inbound tourism, outbound tourism, tourism industries, and SDG tourism indicators (8.9.1, 8.9.2, 12.b.1), global country coverage, 1995-2022. Repo has Datasets/ (raw CSVs, delimiter-modified for SQL Server), Scripts/ (SQL bronze->silver->gold transforms), Tests/ folders; medallion architecture with star-schema fact/dimension views. MIT licence, last commit ~22 Apr 2026.",
+  "why_useful": "A 27-year global UNWTO arrivals panel already structured as relational tables (countries x years x metrics) would be a fast way to get comparison-country context (Mexico, Brazil, Thailand, Indonesia, India, Korea, Japan, Australia, Canada) without re-scraping unwto.org, which no longer offers free bulk downloads.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Global",
+  "time_coverage": "1995-2022",
+  "size_hint": "not confirmed (needs inspection; described as 'complete' SQL DWH)",
+  "license": "not confirmed",
+  "last_activity": "2026-04-22",
+  "duplicate_of_holding": "Overlaps wbgapi WDI ST.INT.ARVL series but UNWTO's own bulletin figures sometimes differ from WDI's UNWTO-sourced copy and this repo's build predates any WDI revision lag",
+  "hits": 3,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys",
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "A 27-year global UNWTO arrivals panel already structured as relational tables (countries x years x metrics) would be a fast way to get comparison-country context (Mexico, Brazil, Thailand, Indonesia, India, Korea, Japan, Australia, Canada) without re-scraping unwto.org, which no longer offers free bulk downloads.",
+   "A broader, longer-run (1995-2022) global UNWTO panel than what we hold (Eurostat tour_ce_omr is EU-only, 2018-2026). Could give regional tourism-arrivals/expenditure trend context for LatAm/APAC gap (#7) and a cross-check series for global travel demand, though it is a re-shaped mirror of published UNWTO tables, not new primary data.",
+   "A global, multi-decade UNWTO inbound/outbound tourism panel (which typically includes tourism-receipts-in-balance-of-payments series) mirrored with committed CSVs rather than needing a fresh UNWTO portal pull; useful for regional (LatAm/APAC) travel-demand cross-checks per gap #7 and as a broader denominator for ABNB regional nights."
+  ]
+ },
+ {
+  "key": "github:disclouded/ds2500_final",
+  "url": "https://github.com/Disclouded/DS2500_final",
+  "name": "DS2500_final (UNWTO key tourism statistics extract)",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A student project's cleaned data pull, explicitly sourced and linked to https://www.unwto.org/tourism-statistics/key-tourism-statistics -- i.e. a committed, cleaned CSV extracted from UNWTO's own 'Key Tourism Statistics' Excel workbook (country-level arrivals, receipts, expenditures by year).",
+  "why_useful": "UNWTO's official Key Tourism Statistics workbook is the primary global-arrivals reference this theme is built around; a pre-cleaned copy avoids re-downloading/re-parsing UNWTO's Excel file (which requires registration/paywall for the very latest editions in some years).",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Global",
+  "time_coverage": "not confirmed vintage of the UNWTO KTS workbook used",
+  "size_hint": "small (single project dataset)",
+  "license": "not confirmed",
+  "last_activity": "2024-12-14",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "International arrivals: NTTO I-94, UNWTO, StatCan travellers, JNTO Japan, Korea KTO, Australia ABS overseas arrivals, Mexico INEGI/DATATUR, Brazil, Thailand MOTS, Indonesia BPS, India MoT",
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "UNWTO's official Key Tourism Statistics workbook is the primary global-arrivals reference this theme is built around; a pre-cleaned copy avoids re-downloading/re-parsing UNWTO's Excel file (which requires registration/paywall for the very latest editions in some years).",
+   "Marginal \u2014 a cleaned copy of the UNWTO key tourism statistics page, useful only as a quick-reference table, not a substantial new panel."
+  ]
+ },
+ {
+  "key": "github:lmeulen/easyeurostat",
+  "url": "https://github.com/lmeulen/EasyEuroStat",
+  "name": "lmeulen/EasyEuroStat",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Package for downloading Eurostat datasets by code, 13 stars, updated 2026-04-03, MIT.",
+  "why_useful": "Alternate simple Eurostat downloader for tour_occ/tour_ce dataset codes if pyrostat/opensdmx have friction.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2026-04-03",
+  "geography": "EU",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Alternate simple Eurostat downloader for tour_occ/tour_ce dataset codes if pyrostat/opensdmx have friction."
+  ]
+ },
+ {
+  "key": "github:petres/eurostat",
+  "url": "https://github.com/petres/eurostat",
+  "name": "petres/eurostat",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Eurostat and OECD download tool with Stata and Excel export support, 11 stars, updated 2026-03-27.",
+  "why_useful": "Alternate Eurostat+OECD puller; Stata/Excel export could be handy for the model pipeline; OECD reach also touches tourism satellite-account tables.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "unspecified",
+  "last_activity": "2026-03-27",
+  "geography": "EU/OECD",
+  "time_coverage": "as published",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Alternate Eurostat+OECD puller; Stata/Excel export could be handy for the model pipeline; OECD reach also touches tourism satellite-account tables."
+  ]
+ },
+ {
+  "key": "github:rasmuse/eust",
+  "url": "https://github.com/rasmuse/eust",
+  "name": "rasmuse/eust",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tools to download, ARCHIVE, and read Eurostat data (2 stars, MIT). The archiving angle matters: it snapshots dataset pulls rather than always hitting the live (revised) series.",
+  "why_useful": "Archiving a Eurostat pull is exactly the point-in-time / vintage capability called out as HIGH-value (gap #4) \u2014 Eurostat series like tour_occ get revised, and this tool is built to keep dated snapshots rather than only current values.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2023-01-26",
+  "geography": "EU",
+  "time_coverage": "as published, with archived vintages",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Archiving a Eurostat pull is exactly the point-in-time / vintage capability called out as HIGH-value (gap #4) \u2014 Eurostat series like tour_occ get revised, and this tool is built to keep dated snapshots rather than only current values."
+  ]
+ },
+ {
+  "key": "github:imkejoor/airpade",
+  "url": "https://github.com/imkejoor/airPaDE",
+  "name": "imkejoor/airPaDE",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Code package (3 stars, MIT, updated 2026-03-10) that downloads and extracts Eurostat data parameters used in causal air-passenger-demand estimation, plus implementations of several air-passenger-volume estimation approaches between city pairs.",
+  "why_useful": "Directly touches gap #10 (airline capacity/traffic) using Eurostat inputs \u2014 a ready-made air-passenger demand estimation toolkit for European city pairs, useful as an EU travel-volume proxy alongside tour_occ.",
+  "potential": "medium",
+  "gap_targets": [
+   10,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2026-03-10",
+  "geography": "EU city pairs",
+  "time_coverage": "as published Eurostat air transport series",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Directly touches gap #10 (airline capacity/traffic) using Eurostat inputs \u2014 a ready-made air-passenger demand estimation toolkit for European city pairs, useful as an EU travel-volume proxy alongside tour_occ."
+  ]
+ },
+ {
+  "key": "github:flame175kk-collab/frontur-estacionalidad-turismo",
+  "url": "https://github.com/flame175kk-collab/frontur-estacionalidad-turismo",
+  "name": "flame175kk-collab/frontur-estacionalidad-turismo",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Spanish-language repo analysing seasonality of Spanish tourism by country of origin and region (CCAA) using official INE Frontur/Egatur data pulled with Python; identifies which origin markets could fill off-season hotel demand. Updated 2026-08-28.",
+  "why_useful": "A working Python pipeline against INE Frontur/Egatur (Spain inbound/outbound tourist arrivals and spend) broken out by CCAA and origin country \u2014 finer-grained than the INE Frontur/EOH series we already hold, and could be adapted to pull EOAT tourist-apartment tables from the same INE portal.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "unspecified",
+  "last_activity": "2026-08-28",
+  "geography": "Spain, by CCAA and country of origin",
+  "time_coverage": "recent (as of repo date, likely multi-year Frontur/Egatur history)",
+  "duplicate_of_holding": "We hold INE Spain Frontur/EOH at national level; this is a CCAA/origin-country-level pipeline, finer-grained",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "A working Python pipeline against INE Frontur/Egatur (Spain inbound/outbound tourist arrivals and spend) broken out by CCAA and origin country \u2014 finer-grained than the INE Frontur/EOH series we already hold, and could be adapted to pull EOAT tourist-apartment tables from the same INE portal."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-destatis",
+  "url": "https://github.com/pipeworx-io/mcp-destatis",
+  "name": "pipeworx-io/mcp-destatis",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server (4 commits, MIT) exposing Destatis GENESIS-Online search and table retrieval (population, GDP, CPI, employment, foreign trade, production) to AI agents; part of a larger 'Pipeworx' 1476-source gateway.",
+  "why_useful": "A live, current tool to query Destatis GENESIS for German hotel/accommodation nights and occupancy tables (Germany is a top-5 ABNB EU market); complements Eurostat tour_occ with a national-source route that may have finer NUTS/city detail and faster releases.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "geography": "Germany",
+  "time_coverage": "as published by Destatis GENESIS",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "A live, current tool to query Destatis GENESIS for German hotel/accommodation nights and occupancy tables (Germany is a top-5 ABNB EU market); complements Eurostat tour_occ with a national-source route that may have finer NUTS/city detail and faster releases.",
+   "Generic GENESIS-Online access point; would need testing whether it can reach German tourism/accommodation tables (45412-series) \u2014 not confirmed from README. Low confidence, early-stage repo."
+  ]
+ },
+ {
+  "key": "github:eurostat/restatapi",
+  "url": "https://github.com/eurostat/restatapi",
+  "name": "eurostat/restatapi",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Eurostat R package (35 stars) to search and retrieve ANY Eurostat SDMX dataset, not just tour_ce_omr platform nights \u2014 includes accommodation capacity, occupancy rate by NUTS2 region, nights spent by country of residence, and tourism-industry employment tables.",
+  "why_useful": "Alternate official SDMX route into tour_occ/tour_ce tables with finer partial-download control (useful for pulling only e.g. NUTS2 accommodation-nights subsets without downloading whole bulk files).",
+  "potential": "medium",
+  "geography": "EU",
+  "time_coverage": "full Eurostat archive",
+  "size_hint": "R package only",
+  "license": "EUPL",
+  "last_activity": "unspecified, active org repo",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "another Eurostat client, overlaps pyrostat/rOpenGov",
+  "hits": 3,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Alternate official SDMX route into tour_occ/tour_ce tables with finer partial-download control (useful for pulling only e.g. NUTS2 accommodation-nights subsets without downloading whole bulk files).",
+   "Official first-party alternative to rOpenGov/eurostat for pulling tour_ce_omr and related platform-tourism tables with guaranteed schema stability; useful if the community package lags a Eurostat table change.",
+   "Finer-grained/regional (NUTS2) version of the Eurostat platform-nights series we already hold; could give sub-national EMEA occupancy and nights-by-origin-country splits that tour_ce_omr alone doesn't, useful for regional-mix forecasting."
+  ]
+ },
+ {
+  "key": "github:rgllm/awesome-portugal-data",
+  "url": "https://github.com/rgllm/awesome-portugal-data",
+  "name": "rgllm/awesome-portugal-data",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated awesome-list (512 stars, ~476 linked resources) of Portuguese open-data sources. Directly links: INE Portugal's official statistics API (https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_api), Turismo de Portugal's open-data portal (https://dadosabertos.turismodeportugal.pt/), the national tourism enterprise registry (https://registos.turismodeportugal.pt/), and Pordata municipal/EU statistics (https://www.pordata.pt/).",
+  "why_useful": "One-stop index confirming Portugal's national tourism statistics office (INE) has a documented, token-free REST/webservice API, and that Turismo de Portugal runs its own open-data portal \u2014 both plausible sources for Portugal-specific nights/occupancy series feeding the EMEA regional split. The repo itself holds no data, just curated links.",
+  "potential": "medium",
+  "geography": "Portugal",
+  "time_coverage": "n/a (index)",
+  "size_hint": "markdown link list",
+  "license": "unspecified (CC-style typical for awesome-lists)",
+  "last_activity": "2026-09-04",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "One-stop index confirming Portugal's national tourism statistics office (INE) has a documented, token-free REST/webservice API, and that Turismo de Portugal runs its own open-data portal \u2014 both plausible sources for Portugal-specific nights/occupancy series feeding the EMEA regional split. The repo itself holds no data, just curated links."
+  ]
+ },
+ {
+  "key": "github:dnme-minturdep/turismo_internacional",
+  "url": "https://github.com/dnme-minturdep/turismo_internacional",
+  "name": "dnme-minturdep/turismo_internacional",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "R Shiny dashboard from Argentina's national Ministry of Tourism statistics directorate (DNMyE) covering international inbound/outbound tourism flows and the tourism trade balance across transport modes (SINTA system). Likely bundles source CSVs feeding the dashboard (typical for these Shiny repos), though exact files not confirmed from the listing alone.",
+  "why_useful": "Off-Europe but hits gap 7 directly (LatAm regional travel volume, Argentina named explicitly): an official national-ministry GitHub with programmatically-built international tourism series, maintained by the same DNMyE org that also runs 'armonizacion' (harmonization of provincial tourism stats) and 'calendario_dnmye' (a SINTA release calendar \u2014 useful for point-in-time release-date tracking, gap 4).",
+  "potential": "medium",
+  "geography": "Argentina",
+  "time_coverage": "current SINTA series, historical depth unconfirmed",
+  "size_hint": "R Shiny app repo, unconfirmed data file sizes",
+  "license": "unspecified (org uses GPL-3.0 on sibling repos)",
+  "last_activity": "unspecified, org active through 2026 per topic hits",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Off-Europe but hits gap 7 directly (LatAm regional travel volume, Argentina named explicitly): an official national-ministry GitHub with programmatically-built international tourism series, maintained by the same DNMyE org that also runs 'armonizacion' (harmonization of provincial tourism stats) and 'calendario_dnmye' (a SINTA release calendar \u2014 useful for point-in-time release-date tracking, gap 4)."
+  ]
+ },
+ {
+  "key": "github:kylejones200/fixed-effects-panel-ols-covid-impact-on-amtrak-ridership",
+  "url": "https://github.com/kylejones200/fixed-effects-panel-ols-covid-impact-on-amtrak-ridership",
+  "name": "fixed-effects-panel-ols-covid-impact-on-amtrak-ridership",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Fixed-effects panel-OLS study of COVID's impact on Amtrak ridership; repo built/updated as recently as June 2026, MIT licensed, likely includes a route/state-level panel spanning pre- and post-COVID years (needs a contents check to confirm exact vintage and whether data is route-level or system-level).",
+  "why_useful": "If the panel is route- or state-level and covers 2019-2025+, it would be the freshest/most granular Amtrak series found and could proxy regional US ground-travel recovery relevant to domestic leisure travel demand (gap #10); worth a directory-listing check before relying on it.",
+  "potential": "medium",
+  "geography": "USA (route/state level, unconfirmed)",
+  "time_coverage": "unconfirmed, repo updated 2026-06-01",
+  "size_hint": "unconfirmed",
+  "license": "MIT",
+  "last_activity": "2026-06-01",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "If the panel is route- or state-level and covers 2019-2025+, it would be the freshest/most granular Amtrak series found and could proxy regional US ground-travel recovery relevant to domestic leisure travel demand (gap #10); worth a directory-listing check before relying on it."
+  ]
+ },
+ {
+  "key": "github:ducdainn/nyc-taxi-pipeline",
+  "url": "https://github.com/ducdainn/nyc-taxi-pipeline",
+  "name": "nyc-taxi-pipeline",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "ELT pipeline (PySpark/dbt/Airflow/DuckDB/Metabase) built against the official NYC TLC Trip Record data (data.cityofnewyork.us / TLC), which includes airport pickup/dropoff flags (JFK/LGA/EWR) by taxi zone, 2009-present monthly Parquet files. Repo itself is boilerplate with no committed rows.",
+  "why_useful": "Representative of dozens of near-identical NYC TLC ETL-pipeline repos found in this search; none add unique data, but they collectively confirm the TLC Trip Record Parquet archive (with an airport-trip flag) is the standing free, monthly, decade-plus, one-command-pullable source for gap #10's NYC airport-taxi-trips ask -- worth pulling directly from the TLC site rather than via any of these repos.",
+  "potential": "medium",
+  "geography": "New York City (incl. JFK/LGA/EWR airport trips)",
+  "time_coverage": "external dataset 2009-present monthly; repo itself dated 2026",
+  "size_hint": "external dataset multi-GB Parquet per month; repo has no committed data",
+  "license": "none declared",
+  "last_activity": "2026-03-16",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Representative of dozens of near-identical NYC TLC ETL-pipeline repos found in this search; none add unique data, but they collectively confirm the TLC Trip Record Parquet archive (with an airport-trip flag) is the standing free, monthly, decade-plus, one-command-pullable source for gap #10's NYC airport-taxi-trips ask -- worth pulling directly from the TLC site rather than via any of these repos."
+  ]
+ },
+ {
+  "key": "github:toddwschneider/chicago-taxi-data",
+  "url": "https://github.com/toddwschneider/chicago-taxi-data",
+  "name": "chicago-taxi-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts to download and analyze City of Chicago taxi trip records (~200M rows as of Q1 2020) and Transportation Network Provider/TNP data (Uber/Lyft, ~130M rows), plus census-tract/community-area mapping, weather data, and shapefiles. Data pulled from Chicago's open-data portal (70GB+ CSV), not committed.",
+  "why_useful": "Second major US metro ground-travel/rideshare volume series for gap #10; Chicago is a top-10 US market with international airport connections (O'Hare), useful as a cross-check on the NYC TLC series for broader US travel-demand read-through.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Chicago (O'Hare, Midway)",
+  "time_coverage": "~2013-present",
+  "size_hint": "~200M taxi rows + ~130M TNP rows (external)",
+  "license": "Public Chicago open-data portal data; repo code unspecified/MIT-like",
+  "last_activity": "maintained periodically (companion to nyc-taxi-data)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Second major US metro ground-travel/rideshare volume series for gap #10; Chicago is a top-10 US market with international airport connections (O'Hare), useful as a cross-check on the NYC TLC series for broader US travel-demand read-through."
+  ]
+ },
+ {
+  "key": "github:fivethirtyeight/uber-tlc-foil-response",
+  "url": "https://github.com/fivethirtyeight/uber-tlc-foil-response",
+  "name": "uber-tlc-foil-response",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "FiveThirtyEight's classic FOIL-request dataset from NYC TLC: uber-raw-data-apr14.csv through sep14.csv (6 monthly files, ~4.5M Uber pickups Apr-Sep 2014, lat/lon/base), uber-raw-data-janjune-15.csv.zip (14.3M Uber pickups Jan-Jun 2015 with dispatching/affiliated base + location ID), Uber-Jan-Feb-FOIL.csv (aggregated daily Uber stats Jan-Feb 2015), and other-FHV-data/ covering 10 other NYC for-hire-vehicle companies plus other-FHV-data-jan-aug-2015.csv (daily pickups, 329 FHV companies, Jan-Aug 2015). NYC only, CC-BY-4.0 (parent fivethirtyeight/data repo), 735 stars, last updated Aug 2026 (repo itself, not the data vintage which is 2014-15).",
+  "why_useful": "Point-in-time historical rideshare-volume snapshot for NYC predating most modern coverage; static and fully committed so it is trivially reproducible without a live pull, useful as an older baseline/backtest period for a ground-travel demand proxy (gap #10).",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "New York City",
+  "time_coverage": "2014-2015",
+  "size_hint": "~19M Uber pickup rows + company-level FHV aggregates",
+  "license": "Public FOIL-released data; repo unlicensed/MIT-like",
+  "last_activity": "static since ~2015, still hosted",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi",
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data",
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Point-in-time historical rideshare-volume snapshot for NYC predating most modern coverage; static and fully committed so it is trivially reproducible without a live pull, useful as an older baseline/backtest period for a ground-travel demand proxy (gap #10).",
+   "A city-level ground-transport activity proxy of the kind gap 10 asks for (airport/ground transport capacity and traffic); mainly useful as a worked example of NYC TLC/FHV data structure rather than current data (2014-15 vintage) - would need the live TLC portal for present quarters.",
+   "A real committed multi-company platform-trip dataset with a genuine method (FOIL request) for pulling non-Airbnb platform volumes; useful as a template for how a cross-platform gig-economy volume series could be constructed, and as a very old baseline for Uber's early growth curve. Data itself is a decade stale so it does not directly nowcast anything in gap list; value is methodological (FOIL-request approach to force disclosure of platform-level trip volumes) rather than current data."
+  ]
+ }
+]

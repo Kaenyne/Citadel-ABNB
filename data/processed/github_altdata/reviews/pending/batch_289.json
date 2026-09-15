@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:aditisudhakar/dsdp_project1",
+  "url": "https://github.com/aditisudhakar/DSDP_Project1",
+  "name": "DSDP_Project1 (ONS/LIDA International Passenger Survey replacement)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Leeds Institute for Data Analytics (LIDA) x ONS Data Scientist Development Programme project to replace the UK International Passenger Survey (IPS) with non-survey sources (Mastercard transaction data, mobile/accommodation data mentioned) using ML. process.ipynb documents methodology exploring IPS microdata (trip purpose, expenditure, nationality) and candidate replacement signals. MIT license. No confirmed committed IPS microdata in-repo (references UK Data Service study 9279 as source).",
+  "why_useful": "IPS covers exactly the trip-purpose/party-composition/length-of-stay microdata this theme targets, and this repo documents both the IPS variable structure and non-survey proxies (card spend) that could stand in for a discontinued/lagged survey -- relevant to gap on inbound trip-purpose mix and nowcasting substitutes.",
+  "potential": "medium",
+  "size_hint": "small (notebook + docs, no bulk data confirmed)",
+  "time_coverage": "IPS discussion covers recent vintages (pre-discontinuation)",
+  "geography": "UK",
+  "license": "MIT",
+  "last_activity": "2024-07-30",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Length-of-stay, party-size and trip-purpose survey microdata (NTTO SIAT, UK IPS, Eurostat tour_dem, Japan travel survey, national travel surveys)"
+  ],
+  "why_all": [
+   "IPS covers exactly the trip-purpose/party-composition/length-of-stay microdata this theme targets, and this repo documents both the IPS variable structure and non-survey proxies (card spend) that could stand in for a discontinued/lagged survey -- relevant to gap on inbound trip-purpose mix and nowcasting substitutes.",
+   "A methods + partial-data repo on exactly the theme (IPS discontinuation / replacement), potentially pointing to what administrative proxies (border crossings, mobile/roaming data, etc.) can stand in for the survey when the sanctioned IPS itself lags or is retired -- relevant to gap #20 and to point-in-time concerns (gap #4) since IPS has real publication lag."
+  ]
+ },
+ {
+  "key": "github:kontogiannisg/eurostat-tourism-data-analysis",
+  "url": "https://github.com/kontogiannisg/Eurostat-Tourism-Data-Analysis",
+  "name": "Eurostat-Tourism-Data-Analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed analysis project pulling and analyzing Eurostat tourism statistics (domain likely includes tour_occ / tour_dem series covering nights spent, trip purpose, duration bands by country). No confirmed row counts; a code-based acquisition/analysis pipeline against the Eurostat API rather than a static committed dataset.",
+  "why_useful": "Eurostat's tour_dem dataset (EU demand-side tourism trips survey: purpose, duration, party/travel-group where available) is exactly the target series for this theme; this repo is a working example of pulling it programmatically, saving a fresh Eurostat API integration.",
+  "potential": "medium",
+  "size_hint": "unknown (API-pulled, not static)",
+  "time_coverage": "current Eurostat tour_dem vintages (survey runs ~2012-present, annual)",
+  "geography": "EU member states",
+  "license": "MIT",
+  "last_activity": "2023-01-17",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Length-of-stay, party-size and trip-purpose survey microdata (NTTO SIAT, UK IPS, Eurostat tour_dem, Japan travel survey, national travel surveys)"
+  ],
+  "why_all": [
+   "Eurostat's tour_dem dataset (EU demand-side tourism trips survey: purpose, duration, party/travel-group where available) is exactly the target series for this theme; this repo is a working example of pulling it programmatically, saving a fresh Eurostat API integration."
+  ]
+ },
+ {
+  "key": "github:jairaye/vegas-tourism-insights",
+  "url": "https://github.com/Jairaye/vegas-tourism-insights",
+  "name": "vegas-tourism-insights",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Streamlit analytics app with a committed 'LVCVA Data.xlsx' (cleaned) in data/, sourced from official Las Vegas Convention and Visitors Authority releases. Fields per README: visitor volume, room nights occupied, occupancy rate, ADR, RevPAR, auto traffic on major highways, room tax collections. Includes a Jupyter notebook for cleaning/EDA and manual forecasts extending to June 2025. Exact year range not stated in README but framed as 'historical tourism trends' (multi-year monthly).",
+  "why_useful": "Las Vegas is a top-10 US Airbnb/STR market and LVCVA publishes some of the best public monthly visitor-volume + ADR + RevPAR + hotel occupancy data among US destinations; a pre-cleaned, committed spreadsheet mirror saves re-scraping LVCVA's site and gives a monthly hotel-market comparator for Airbnb NA nights/ADR (addresses gap #8, hotel supply/demand benchmarking, and gap #2 realised ADR/occupancy analogue).",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   2
+  ],
+  "geography": "Las Vegas, NV",
+  "time_coverage": "multi-year monthly (exact start/end not confirmed from README)",
+  "size_hint": "single xlsx + notebook, small",
+  "license": "not stated in fetched README",
+  "last_activity": "unknown (not confirmed)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "Las Vegas is a top-10 US Airbnb/STR market and LVCVA publishes some of the best public monthly visitor-volume + ADR + RevPAR + hotel occupancy data among US destinations; a pre-cleaned, committed spreadsheet mirror saves re-scraping LVCVA's site and gives a monthly hotel-market comparator for Airbnb NA nights/ADR (addresses gap #8, hotel supply/demand benchmarking, and gap #2 realised ADR/occupancy analogue)."
+  ]
+ },
+ {
+  "key": "github:bafar/hawaii-visitor-data-downloader",
+  "url": "https://github.com/Bafar/hawaii-visitor-data-downloader",
+  "name": "hawaii-visitor-data-downloader",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script that downloads monthly visitor statistical report PDFs published by Hawaii DBEDT (Dept. of Business, Economic Development & Tourism). Supports a configurable year range (default 2018-2025), random User-Agent rotation, request delays, auto-retry, skips unavailable months (404), and resumes by skipping already-downloaded files. Output is a folder of DBEDT monthly PDFs, not parsed CSV.",
+  "why_useful": "A robust, working one-command puller for Hawaii DBEDT's monthly visitor statistics PDFs going back to 2018 (we already use DBEDT for the party-size series; this tool would let us pull a fuller point-in-time monthly PDF archive rather than only the annual/monthly-highlights pages we currently have via Wayback) \u2014 useful for extending or refreshing gap #8 (Hawaii bed-tax/occupancy) and the party-size series baseline.",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "geography": "Hawaii (statewide + county)",
+  "time_coverage": "2018-2025 monthly (configurable range)",
+  "size_hint": "script only; downloads PDFs, not a stored dataset",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "we already hold Hawaii DBEDT visitor stats per CONTEXT.md; this is a longer/more automatable PDF archive method, not identical data",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "A robust, working one-command puller for Hawaii DBEDT's monthly visitor statistics PDFs going back to 2018 (we already use DBEDT for the party-size series; this tool would let us pull a fuller point-in-time monthly PDF archive rather than only the annual/monthly-highlights pages we currently have via Wayback) \u2014 useful for extending or refreshing gap #8 (Hawaii bed-tax/occupancy) and the party-size series baseline."
+  ]
+ },
+ {
+  "key": "github:uhero/dvw-data-portal",
+  "url": "https://github.com/UHERO/dvw-data-portal",
+  "name": "dvw-data-portal",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Angular front-end for UHERO's 'DBEDT Visitor Warehouse' (DVW) data portal, serving Hawaii visitor-industry time series (visitor arrivals, spending, room demand/occupancy per public description at data.uhero.hawaii.edu/dvw/). Repo itself is just the Angular CLI app, no data files committed; the actual series live behind the paired dvw-api / data.uhero.hawaii.edu/dvw/ endpoint.",
+  "why_useful": "UHERO's DBEDT Visitor Data Warehouse is a more granular, more frequently updated academic mirror of Hawaii tourism data than the DBEDT PDF reports we currently rely on \u2014 worth checking data.uhero.hawaii.edu/dvw/ directly for a queryable, possibly monthly/county-level, longer-history series (addresses gap #8 and possibly gap #2 for realised occupancy).",
+  "potential": "medium",
+  "gap_targets": [
+   8,
+   2
+  ],
+  "geography": "Hawaii",
+  "time_coverage": "unknown, ongoing (live portal)",
+  "size_hint": "frontend app only; data lives at external data.uhero.hawaii.edu/dvw/ endpoint",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "duplicate_of_holding": "extends the Hawaii DBEDT visitor stats we already hold with a live, queryable warehouse",
+  "hits": 1,
+  "themes": [
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "UHERO's DBEDT Visitor Data Warehouse is a more granular, more frequently updated academic mirror of Hawaii tourism data than the DBEDT PDF reports we currently rely on \u2014 worth checking data.uhero.hawaii.edu/dvw/ directly for a queryable, possibly monthly/county-level, longer-history series (addresses gap #8 and possibly gap #2 for realised occupancy)."
+  ]
+ }
+]

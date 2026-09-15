@@ -1,0 +1,32 @@
+{
+ "slug": "usamaislam70-viator-gyg-activity-data",
+ "url": "https://github.com/usamaislam70/Viator-and-GYG-Scraper",
+ "sampled": true,
+ "total_bytes": 3523963,
+ "files": [
+  "gyg_uk.xlsx",
+  "viator_pakistan.xlsx",
+  "suppliers_master_head.csv",
+  "vietnam_itinerary_head.csv",
+  "viator_vietnam_head.csv",
+  "viator_input_urls.txt",
+  "gyg_input_urls.txt"
+ ],
+ "rows": "gyg_uk.xlsx 5; viator_pakistan.xlsx 5; suppliers_master_head.csv 5,257 (head of ~4.9 MB file); vietnam_itinerary_head.csv 770 (head of 13.2 MB file); viator_vietnam_head.csv 588 (head of 33.6 MB file); seed lists 1 URL each",
+ "columns": "Activity tables (GYG/Viator, 28-31 cols): Name, Rating, Reviews Count, Location, Price (USD, '$59.00'), Tags, Category, Itinerary, Itinerary Description, Meeting Point, Cancellation Policy, Reservation Confirmation Type, Overview, Highlights, Includes, Supplied By, Trading Name, Legal Name, Website, Phone, Email, Full Address, City, State, PostCode, Country, Registration Number, URL. Suppliers master (19 cols): Supplied By, Trading Name, Legal Name, Website, Phone, Email, address fields, Country, Trade Register Name, Registration Number, Managing Director, Supplier URL, Supplier ID, Source. Vietnam itinerary: row_key, Itinerary, Itinerary Description.",
+ "date_range": "No date column in any table; single snapshot. Only timestamp is in the filename 'Viator Vietnam 010720260135.csv' (1 Jul 2026 01:35) and the last push 8 Jul 2026.",
+ "how_pulled": "B=https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites; curl -sL -o gyg_uk.xlsx \"$B/output/gyg/United-Kingdom%20GYG%20Data.xlsx\"; curl -sL -o viator_pakistan.xlsx \"$B/output/viator/Pakistan%20Viator%20Data.xlsx\"; curl -sL -r 0-1500000 -o suppliers_master_head.csv \"$B/output/Suppliers%20Master%20File.csv\"; curl -sL -r 0-1000000 -o vietnam_itinerary_head.csv \"$B/output/vietnam_iternaery_data.csv\"; curl -sL -r 0-1000000 -o viator_vietnam_head.csv \"$B/output/viator/csv%20files/Viator%20Vietnam%20010720260135.csv\"; curl -sL -o viator_input_urls.txt \"$B/input/viator_input_urls.txt\"; curl -sL -o gyg_input_urls.txt \"$B/input/gyg_input_urls.txt\". Directory listing via gh api repos/usamaislam70/Viator-and-GYG-Scraper/contents/... . Tables opened with py -3.13 pandas/openpyxl; CSV heads read with on_bad_lines=skip (last partial line dropped).",
+ "full_dataset_size": "Repo ~113 MB, single snapshot. Committed outputs: Suppliers Master File.csv 4.94 MB (+ identical 'Copy'), vietnam_iternaery_data.csv 13.2 MB, GYG xlsx for Japan 7.96 MB / Spain 10.4 MB / Thailand 5.2 MB / Vietnam 8.0 MB / UK 10 KB, Viator xlsx ('Scrapped data') for Japan 8.1 MB / Spain 8.5 MB / Thailand 5.6 MB / Vietnam 10.2 MB, Viator Pakistan 14 KB, 'csv files/Viator Vietnam 010720260135.csv' 33.6 MB. Roughly 95 MB of data, order of 10^4-10^5 activity rows and ~30-40k supplier rows (head shows 5,257 suppliers in 1.5 MB of 4.9 MB). Pull with a sparse/blobless clone or per-file raw URLs.",
+ "description": "A one-off (early July 2026) Scrapy capture of tours-and-activities listings on GetYourGuide and Viator for Japan, Spain, Thailand, Vietnam (plus token UK and Pakistan pages), one row per activity with list price in USD, rating, review count, category tags, cancellation policy, confirmation type and the operator's legal/registration details, plus a supplier master file (~GYG operators by country, dominated by Spain and Japan). Source is the author's own scraper output committed to the repo; there is no time dimension. For ABNB it is an adjacent-supply and list-price snapshot of the Experiences competitive set in APAC/Spain (gap #9) and a ready operator universe for an Experiences TAM sanity check; the cancellation-policy column gives a distribution of free-cancellation windows in the activities vertical. It cannot be used for a time series unless re-scraped.",
+ "issues": "No licence declared (all rights reserved by default) and the data are scraped from Viator/GetYourGuide, whose terms prohibit scraping - a human must decide whether to use it beyond cataloguing. Files contain operator business contact details (phone, email, managing director names) - handle as personal data if reused. Row keys and 'Reviews Count' are dirty (e.g. 'Provider rating' text in the numeric column; GYG UK file has German suppliers). No scraper was run; input/config.json (empty SCRAPEOPS_API_KEY field) was deliberately not copied. Supplier ID column is empty in the head. Only heads of the three big CSVs were taken; the four large GYG and four Viator country xlsx files (5-10 MB each) were not fetched.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites/output/gyg/United-Kingdom%20GYG%20Data.xlsx",
+  "https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites/output/viator/Pakistan%20Viator%20Data.xlsx",
+  "https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites/output/Suppliers%20Master%20File.csv",
+  "https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites/output/vietnam_iternaery_data.csv",
+  "https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites/output/viator/csv%20files/Viator%20Vietnam%20010720260135.csv",
+  "https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites/input/viator_input_urls.txt",
+  "https://raw.githubusercontent.com/usamaislam70/Viator-and-GYG-Scraper/HEAD/supplier_activites/supplier_activites/input/gyg_input_urls.txt"
+ ],
+ "pulled_at": "2026-09-14"
+}

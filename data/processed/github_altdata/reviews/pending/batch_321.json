@@ -1,0 +1,127 @@
+[
+ {
+  "key": "github:saragadam-rohith/airfare-index",
+  "url": "https://github.com/saragadam-rohith/airfare-index",
+  "name": "saragadam-rohith/airfare-index",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Interactive Streamlit/Plotly app that processes airfare data and computes/visualizes a price index across routes, airlines, time periods; updated Aug 2026. Part of a large cluster of near-identical 'Smart India Hackathon 2026 SIH26056' student teams (dozens of repos named airfare-index / apix-airfare-index / mospi-airfare-index) building a real-time Indian domestic airfare CPI-style index via web scraping of OTAs, for India's MoSPI/NSO.",
+  "why_useful": "If any of these SIH26056 teams committed working scraper+index code and sample output, it is a template for a India-domestic airfare price index (Jevons-index CPI methodology) that could proxy APAC/India travel-cost inflation (gap 7 APAC regional). Quality/completeness is unverified across ~25 near-duplicate student repos found; flagging the cluster rather than each repo.",
+  "potential": "low",
+  "license": "unlicensed",
+  "last_activity": "2026-08-30",
+  "duplicate_of_holding": "cluster of ~25 near-identical hackathon submissions (e.g. chakradharreddy141-netizen/airfare-index, dspro2345-cpu/mospi-airfare-index, TushKum/apix-airfare-index, rishabhdeepak/airfare-indexer) all targeting the same India MoSPI SIH26056 problem statement; only listing one representative",
+  "geography": "India (domestic routes)",
+  "time_coverage": "prototype/real-time, no history yet",
+  "size_hint": "app code, sample data unconfirmed",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "If any of these SIH26056 teams committed working scraper+index code and sample output, it is a template for a India-domestic airfare price index (Jevons-index CPI methodology) that could proxy APAC/India travel-cost inflation (gap 7 APAC regional). Quality/completeness is unverified across ~25 near-duplicate student repos found; flagging the cluster rather than each repo."
+  ]
+ },
+ {
+  "key": "github:rishabhnair12345/skyscanner_scraper",
+  "url": "https://github.com/rishabhnair12345/skyscanner_scraper",
+  "name": "rishabhnair12345/skyscanner_scraper",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python flight-price tracker using the Skyscanner (RapidAPI) endpoint to fetch cheapest fares between two airports; updated May 2025.",
+  "why_useful": "Small but working Skyscanner-based acquisition method; requires a RapidAPI key, no stored history.",
+  "potential": "low",
+  "license": "unlicensed",
+  "last_activity": "2025-05-04",
+  "geography": "global (user-specified routes)",
+  "time_coverage": "real-time only",
+  "size_hint": "script only",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Small but working Skyscanner-based acquisition method; requires a RapidAPI key, no stored history."
+  ]
+ },
+ {
+  "key": "github:romankh3/flights-monitoring",
+  "url": "https://github.com/romankh3/flights-monitoring",
+  "name": "romankh3/flights-monitoring",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Application for monitoring flight cost based on the Skyscanner API, deployed on Heroku with a Swagger-documented REST API; Apache-2.0, updated Dec 2025.",
+  "why_useful": "A deployable monitoring service rather than a dataset; would need to be run over time to build a fare series.",
+  "potential": "low",
+  "license": "Apache-2.0",
+  "last_activity": "2025-12-25",
+  "geography": "global",
+  "time_coverage": "real-time only",
+  "size_hint": "app code",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "A deployable monitoring service rather than a dataset; would need to be run over time to build a fare series."
+  ]
+ },
+ {
+  "key": "github:naiborhujosua/flight-price-prediction",
+  "url": "https://github.com/naiborhujosua/Flight-Price-Prediction",
+  "name": "naiborhujosua/Flight-Price-Prediction",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Uses the well-known Kaggle 'Flight Price Dataset' (India domestic fares, ~10K-300K rows depending on version) for airfare prediction modeling.",
+  "why_useful": "Same static Kaggle flight-fare dataset re-used across dozens of near-identical EDA/ML repos found in this search (Flight-Price-EDA, Feature-Engineering-on-Flight-Price-Dataset, etc.); flagged once as a pointer since the underlying Kaggle set could theoretically serve as a historical India-airfare cross-section, but it is static, non-refreshing, and already the kind of single-well-known-dataset re-analysis the brief says to exclude.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2022-10-03",
+  "duplicate_of_holding": "same Kaggle Flight Price Dataset re-analyzed in ~30 near-identical repos surfaced by this search (excluded individually per brief's exclusion rule)",
+  "geography": "India (domestic)",
+  "time_coverage": "static snapshot, unclear vintage",
+  "size_hint": "single Kaggle CSV, exact row count unconfirmed",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Same static Kaggle flight-fare dataset re-used across dozens of near-identical EDA/ML repos found in this search (Flight-Price-EDA, Feature-Engineering-on-Flight-Price-Dataset, etc.); flagged once as a pointer since the underlying Kaggle set could theoretically serve as a historical India-airfare cross-section, but it is static, non-refreshing, and already the kind of single-well-known-dataset re-analysis the brief says to exclude."
+  ]
+ },
+ {
+  "key": "github:andrewfoudree/flight-tracker",
+  "url": "https://github.com/AndrewFoudree/flight-tracker",
+  "name": "flight-tracker (AndrewFoudree)",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Serverless flight-price tracker with GitHub Actions cron (weekly). Commits an append-only data/prices.csv (route, departure/return dates, party size, fare, carrier, stops, booking URL) plus data/fare_baseline.json (historical market pricing sourced from US DOT data) and data/usage.csv. Currently tracks a small route set (DSM-STT, DSM-SJU, DSM-DEN) via SerpAPI + Travelpayouts. Small, personal-scale panel, updated in-repo.",
+  "why_useful": "Demonstrates a working, fully in-repo (git-committed CSV) point-in-time fare-history pattern that is directly reusable as a template for a team-run tracker; the fare_baseline.json also references DOT-derived historical pricing worth checking for reusable fields.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "license": "unspecified",
+  "last_activity": "2026-09-13",
+  "geography": "3 US routes only",
+  "time_coverage": "weekly since project start (recent, short)",
+  "size_hint": "small CSV, few routes",
+  "hits": 1,
+  "themes": [
+   "Airline fare tracking datasets (Google Flights scrapers, Skyscanner, Hopper reports), airfare price indices"
+  ],
+  "why_all": [
+   "Demonstrates a working, fully in-repo (git-committed CSV) point-in-time fare-history pattern that is directly reusable as a template for a team-run tracker; the fare_baseline.json also references DOT-derived historical pricing worth checking for reusable fields."
+  ]
+ }
+]

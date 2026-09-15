@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:logiover/greenhouse-job-board-scraper",
+  "url": "https://github.com/logiover/greenhouse-job-board-scraper",
+  "name": "logiover/greenhouse-job-board-scraper",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Unofficial, MIT-licensed Apify actor description (repo itself is a doc/marketing page, 0 stars) that scrapes any company's public Greenhouse job board (job IDs, titles, full descriptions, department/office hierarchy, post dates) with named example targets including Airbnb, Anthropic, Stripe, Datadog. Runs on Apify infra, not the repo code itself; no API key or login needed since Greenhouse job boards are public JSON endpoints.",
+  "why_useful": "Airbnb's own Greenhouse board is public; open-role counts/departments/geos over time is a free, non-financial headcount and functional-investment proxy (engineering vs. trust&safety vs. international expansion hiring) that is genuinely non-obvious as an 'Airbnb search' and ties to gap #15 (company-structure signals / headcount proxy).",
+  "geography": "global (wherever Airbnb posts roles)",
+  "time_coverage": "point-in-time snapshots only if run repeatedly; no history bundled",
+  "size_hint": "code/doc only",
+  "license": "MIT",
+  "last_activity": "2026-07-13",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Airbnb's own Greenhouse board is public; open-role counts/departments/geos over time is a free, non-financial headcount and functional-investment proxy (engineering vs. trust&safety vs. international expansion hiring) that is genuinely non-obvious as an 'Airbnb search' and ties to gap #15 (company-structure signals / headcount proxy)."
+  ]
+ },
+ {
+  "key": "other:https://github.com/airbnb",
+  "url": "https://github.com/airbnb",
+  "name": "Airbnb GitHub organization",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Airbnb's own public GitHub org: 204 public repositories, 5.7k org followers, verified, San Francisco. Actively updated flagship repos as of Sep 2026 include chronon (Scala ML data platform, 1,048 stars, updated 11 Sep 2026), HorizonCalendar (Swift, 3,158 stars, updated 3 Sep 2026), viaduct (Kotlin GraphQL, 173 stars, updated 12 Sep 2026), plus long-running high-star projects (javascript style guide 148k stars, lottie-android/ios ~26-36k stars). Not itself a downloadable dataset \u2014 a live org page.",
+  "why_useful": "Raw source that OpenDigger / GH Archive tooling would point at to build the 'own GitHub org activity' engagement time series (gap #15); repo-update cadence and new-repo creation rate are a free, real-time proxy for engineering headcount and investment focus (e.g. chronon/viaduct being actively pushed suggests current data-platform and GraphQL infra investment).",
+  "potential": "low",
+  "geography": "n/a",
+  "time_coverage": "org founded early 2010s-present",
+  "size_hint": "204 public repos",
+  "license": "n/a (org page, mixed per-repo licenses)",
+  "last_activity": "11-13 Sep 2026 (multiple repos)",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Raw source that OpenDigger / GH Archive tooling would point at to build the 'own GitHub org activity' engagement time series (gap #15); repo-update cadence and new-repo creation rate are a free, real-time proxy for engineering headcount and investment focus (e.g. chronon/viaduct being actively pushed suggests current data-platform and GraphQL infra investment)."
+  ]
+ },
+ {
+  "key": "github:awinml/earnings-call-transcripts-dataset",
+  "url": "https://github.com/awinml/earnings-call-transcripts-dataset",
+  "name": "awinml/earnings-call-transcripts-dataset",
+  "category": "company_filings_estimates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "MIT-licensed repo with a `Transcripts/` folder committing actual transcript files organized by ticker subfolder: AAPL, AMD, AMZN, ASML, CSCO, GOOGL, INTC, MSFT, MU, NVDA. 10 mega-cap tech names only, no travel/OTA/hotel tickers. 3 stars, updated Aug 2026, README is 1 line (undocumented years/format).",
+  "why_useful": "Demonstrates a clean per-ticker transcript-corpus layout that could be replicated for BKNG/EXPE/MAR/HLT/ABNB (gap 4/17 point-in-time analyst/management text), but as-is has zero travel-sector coverage.",
+  "potential": "low",
+  "duplicate_of_holding": "We already hold all ABNB letters/transcripts since IPO; this adds nothing on ABNB and no peer tickers are present.",
+  "geography": "US mega-cap tech",
+  "time_coverage": "unclear (README undocumented)",
+  "size_hint": "10 ticker folders, per-transcript files (count unknown)",
+  "license": "MIT",
+  "last_activity": "2026-08-22",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Demonstrates a clean per-ticker transcript-corpus layout that could be replicated for BKNG/EXPE/MAR/HLT/ABNB (gap 4/17 point-in-time analyst/management text), but as-is has zero travel-sector coverage."
+  ]
+ },
+ {
+  "key": "github:uncannyj33/earnings-call-nlp",
+  "url": "https://github.com/UncannyJ33/earnings-call-nlp",
+  "name": "UncannyJ33/earnings-call-nlp",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "FinBERT sentiment tested for predictive power on post-call abnormal returns; description states '14k earnings call transcripts tested... (2017-2023)'. Not inspected further (no stars, no README fetched); likely the same Motley Fool Kaggle base corpus, narrower window than the 18,755/46,209-call versions above.",
+  "why_useful": "Another pointer instance of the same multi-year multi-ticker transcript base; only worth chasing if the two candidates above are dead ends.",
+  "potential": "low",
+  "duplicate_of_holding": "Likely overlaps entirely with the sumaksharikaa/Sonith-Bingi Motley Fool corpus pointers.",
+  "geography": "US-listed",
+  "time_coverage": "2017-2023",
+  "size_hint": "14,000 transcripts (external, unverified)",
+  "license": "unspecified",
+  "last_activity": "2026-06-08",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Another pointer instance of the same multi-year multi-ticker transcript base; only worth chasing if the two candidates above are dead ends."
+  ]
+ },
+ {
+  "key": "github:quantraunak/earnings-calls",
+  "url": "https://github.com/quantraunak/Earnings-Calls",
+  "name": "quantraunak/Earnings-Calls",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Text analysis of earnings-call transcripts for 10 semiconductor and large-cap tech names, joined to daily returns. No stars, updated 10 Sep 2026 (very recent), not inspected in depth.",
+  "why_useful": "Another transcript+returns join pipeline; tech-only, no travel names, low marginal value beyond method pattern.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "geography": "US semiconductor/tech",
+  "time_coverage": "unspecified",
+  "size_hint": "10 tickers",
+  "license": "unspecified",
+  "last_activity": "2026-09-10",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Another transcript+returns join pipeline; tech-only, no travel names, low marginal value beyond method pattern."
+  ]
+ }
+]

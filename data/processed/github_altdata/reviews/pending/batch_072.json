@@ -1,0 +1,118 @@
+[
+ {
+  "key": "github:seekinggradient/investmentproperty",
+  "url": "https://github.com/seekinggradient/InvestmentProperty",
+  "name": "InvestmentProperty",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Real-estate investment analysis dashboard combining IRS migration data with backtested appreciation models and interactive visualizations; likely a consumer of migration data rather than a novel archive (not independently verified).",
+  "why_useful": "Could reveal a migration-to-home-price-appreciation model relevant to second-home market strength in destination markets, but content unverified.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2026-01-18",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Could reveal a migration-to-home-price-appreciation model relevant to second-home market strength in destination markets, but content unverified."
+  ]
+ },
+ {
+  "key": "github:ghosh-anupam/irs-migration-outflow",
+  "url": "https://github.com/Ghosh-Anupam/IRS-Migration-Outflow",
+  "name": "IRS-Migration-Outflow",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code to convert abstractly-presented IRS migration data into a unified county-to-county outflow dataset; a processing script for raw IRS SOI files rather than a distinct archive (not independently verified).",
+  "why_useful": "Alternative/newer ingestion method for IRS SOI outflow data, potentially covering more recent years than the 2015-era archives.",
+  "potential": "low",
+  "geography": "US, county-level",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2025-12-06",
+  "gap_targets": [],
+  "hits": 2,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Alternative/newer ingestion method for IRS SOI outflow data, potentially covering more recent years than the 2015-era archives.",
+   "Another recent (Dec 2025) IRS migration outflow builder; minor incremental value over the other IRS repos already listed."
+  ]
+ },
+ {
+  "key": "github:adiandawuda/dmig",
+  "url": "https://github.com/AdianDawuda/DMIG",
+  "name": "DMIG (Domestic Migration Information Germany)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Spatial Data Infrastructure (SDI) for analyzing and visualizing annual domestic migration flows within Germany; likely built on official German statistical office (Destatis) migration series rather than bundling a large novel dataset (not independently verified).",
+  "why_useful": "A European domestic-migration analogue; Germany is a large Airbnb / holiday-home market, and internal migration toward coastal/alpine regions is a plausible second-home demand signal, but this repo's own data content is unconfirmed.",
+  "potential": "low",
+  "geography": "Germany",
+  "time_coverage": "unknown (annual series)",
+  "size_hint": "unknown",
+  "license": "GPL-3.0",
+  "last_activity": "2024-02-17",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "A European domestic-migration analogue; Germany is a large Airbnb / holiday-home market, and internal migration toward coastal/alpine regions is a plausible second-home demand signal, but this repo's own data content is unconfirmed."
+  ]
+ },
+ {
+  "key": "github:greater-london-authority/model_detailed_migration_flows",
+  "url": "https://github.com/Greater-London-Authority/model_detailed_migration_flows",
+  "name": "model_detailed_migration_flows",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GLA model to estimate missing detailed origin-destination domestic migration flows for London population projections; a modeling methodology repo, likely referencing ONS internal migration statistics rather than bundling a full novel dataset (not independently verified).",
+  "why_useful": "Official-statistics-adjacent UK internal migration modeling; London/UK second-home and short-let markets are relevant to ABNB's Europe segment, but low direct data yield expected.",
+  "potential": "low",
+  "geography": "UK (London)",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2025-03-14",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Official-statistics-adjacent UK internal migration modeling; London/UK second-home and short-let markets are relevant to ABNB's Europe segment, but low direct data yield expected."
+  ]
+ },
+ {
+  "key": "github:anninis/analysis-of-domestic-migration-flows-in-finland",
+  "url": "https://github.com/anninis/Analysis-of-domestic-migration-flows-in-Finland",
+  "name": "Analysis-of-domestic-migration-flows-in-Finland",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis notebook/repo on Finnish domestic migration flows, presumably drawing on Statistics Finland data; content not independently verified for committed raw data files.",
+  "why_useful": "Finland has a very high holiday-home ownership rate (relevant European comparator for holiday-home share stats) but this repo is a small personal analysis with no confirmed bundled dataset -- marginal.",
+  "potential": "low",
+  "geography": "Finland",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2024-11-07",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Finland has a very high holiday-home ownership rate (relevant European comparator for holiday-home share stats) but this repo is a small personal analysis with no confirmed bundled dataset -- marginal."
+  ]
+ }
+]

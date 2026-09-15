@@ -1,0 +1,35 @@
+{
+  "theme": "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"hotel occupancy tax\" --sort stars",
+    "gh search repos \"transient occupancy tax\" --sort stars",
+    "gh search repos \"tourist development tax\" --sort stars",
+    "gh search repos \"hotel occupancy tax\" --sort updated",
+    "gh search repos \"lodging tax\" --sort stars",
+    "gh search repos \"STR occupancy\" hotel --sort stars",
+    "gh search repos \"hotel tax\" socrata OR opendata --sort stars",
+    "gh search repos \"occupancy rate\" hotel csv OR dataset --sort stars",
+    "WebSearch site:github.com Florida tourist development tax dataset (blocked: session WebSearch budget exhausted before running)",
+    "WebSearch site:github.com Texas hotel occupancy tax comptroller data scraper (blocked: session WebSearch budget exhausted before running)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/receiptedit/us-sales-tax-2026",
+      "name": "us-sales-tax-2026",
+      "category": "regulatory_legal",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "MIT-licensed dataset of US state sales tax rates plus lodging tax rates for 2026, all 50 states, packaged with a free API and an embeddable calculator widget. Rates only (statutory lodging/occupancy tax rate by state), not collections or occupancy volumes; single 2026 snapshot, not a time series.",
+      "why_useful": "Could be a reference table for state-level lodging tax rate levels (Nevada/Florida/Texas/California/NY/Hawaii rates) but has no historical collections series or occupancy figures, so it doesn't fill the gap #8 need for actual occupancy/RevPAR/tax-collection time series.",
+      "potential": "low",
+      "geography": "US, all 50 states",
+      "time_coverage": "2026 snapshot only",
+      "size_hint": "small rates table + API code",
+      "license": "MIT",
+      "last_activity": "2026-08-26",
+      "gap_targets": [8],
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "This theme returned essentially nothing usable via GitHub CLI repo search after 6 gh search calls (the hard per-scout limit): queries for 'hotel occupancy tax', 'transient occupancy tax', 'tourist development tax', 'lodging tax', 'STR occupancy', and 'occupancy rate hotel csv/dataset' surfaced almost exclusively (a) toy hotel-booking-system / tax-calculator apps (Sri Lanka VAT calculator, Louisiana hotel tax Python helper, Detroit Lakes Lodgify tax-return script, various 'HotelOccupancy' C++/Java class exercises), (b) Power BI / Kaggle-style hotel-booking-cancellation EDA notebooks with no government data, and (c) unrelated one-off repos (a Bexar County TX stadium-referendum precinct map that happens to mention hotel occupancy tax in its description, a St. Johns County FL short-term-rental portfolio's monthly DR-15 filing repo — private business filings, not public collections data). None had committed government hotel-tax-collection time series, occupancy-rate panels, or RevPAR data for NV/FL/TX/CA/NYC/HI. The one repo worth a line (receiptedit/us-sales-tax-2026) is a rates snapshot, not a collections/occupancy series. My two follow-up WebSearch queries (targeting Florida DR-15/county TDT collections mirrors and Texas Comptroller hotel-occupancy-tax scrapers on GitHub specifically) were blocked because the session's shared WebSearch budget (200/200) was already exhausted by other concurrent scouts before I could run mine — so this theme is under-searched relative to plan; a rerun of this theme via WebSearch (not gh) once budget resets, targeting 'site:github.com Florida DR-15 tourist development tax', 'site:github.com Texas comptroller hotel occupancy tax data', 'site:github.com Nevada gaming visitor statistics occupancy', 'site:github.com NYC hotel occupancy tax finance data', and 'site:github.com Hawaii TAT collections dataset' is likely to find real candidates (these agencies do publish CSV/Excel monthly collections and several are Socrata/CKAN-hosted, which tends to attract GitHub mirror/scraper repos) that gh's repo-search text index simply isn't surfacing because repo descriptions rarely use the exact statutory phrase. Recommend a second pass on this theme with WebSearch once budget allows."
+}

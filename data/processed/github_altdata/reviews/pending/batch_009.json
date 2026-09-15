@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:sajangaba/zacks_scraper",
+  "url": "https://github.com/SajanGaba/zacks_scraper",
+  "name": "SajanGaba/zacks_scraper",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Python scraper (R3.py) for Zacks Investment Research plus one committed snapshot file R300.csv covering Russell 3000-style universe; ~14 fields per company including forward sales/earnings estimates, PE/PEG, and earnings-surprise history. Single point-in-time snapshot, not a repeated vintage series; no date metadata confirmed on the file itself.",
+  "why_useful": "Closest thing found to a free, machine-pullable Zacks consensus-estimate scraper with a working example output; could be re-run at guide dates going forward to start building a point-in-time consensus series for ABNB per rule #2 (gap #4), though it captures no ABNB history retroactively.",
+  "potential": "medium",
+  "geography": "US (Russell 3000 universe)",
+  "time_coverage": "single scrape snapshot, no historical run confirmed",
+  "size_hint": "one CSV (R300.csv), unknown row count, small repo",
+  "license": "none declared",
+  "last_activity": "2023-05-28",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data"
+  ],
+  "why_all": [
+   "Closest thing found to a free, machine-pullable Zacks consensus-estimate scraper with a working example output; could be re-run at guide dates going forward to start building a point-in-time consensus series for ABNB per rule #2 (gap #4), though it captures no ABNB history retroactively."
+  ]
+ },
+ {
+  "key": "github:quantconnect/lean.datasource.estimize",
+  "url": "https://github.com/QuantConnect/Lean.DataSource.Estimize",
+  "name": "QuantConnect/Lean.DataSource.Estimize",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "C# reference implementation (DataProcessing/, EstimizeConsensus.cs, EstimizeEstimate.cs, EstimizeRelease.cs) showing how QuantConnect's Lean platform ingests Estimize's Estimates/Releases/Consensus data types. No underlying Estimize data is committed to the repo \u2014 it is a schema/pipeline example only, and the actual Estimize feed is a paid QuantConnect Data Marketplace product.",
+  "why_useful": "Documents the exact schema (per-company consensus, individual crowd estimates, releases) an I/B/E/S-like Estimize feed would have if the team later pays for or otherwise obtains Estimize data; not itself a free data source.",
+  "potential": "medium",
+  "geography": "n/a (US-listed universe, method only)",
+  "time_coverage": "n/a",
+  "size_hint": "code only, no data",
+  "license": "none declared",
+  "last_activity": "2026-06-18",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Analyst estimates and consensus history: Yahoo/Zacks/Finviz/Estimize/Alpha Vantage scrapers, historical EPS estimate datasets, estimate-revision datasets, I/B/E/S-like open data",
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Documents the exact schema (per-company consensus, individual crowd estimates, releases) an I/B/E/S-like Estimize feed would have if the team later pays for or otherwise obtains Estimize data; not itself a free data source.",
+   "Estimize crowd estimates are an independent, higher-frequency-updating consensus series distinct from IBES/vendor consensus -- could give a point-in-time crowd-consensus check for ABNB revenue/EPS ahead of the 5 Nov print (gap #4, point-in-time consensus)."
+  ]
+ },
+ {
+  "key": "github:finnhub-stock-api/finnhub-python",
+  "url": "https://github.com/Finnhub-Stock-API/finnhub-python",
+  "name": "Finnhub-Stock-API/finnhub-python",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Python client (1074 stars, Apache-2.0) for the Finnhub API, which offers (per free tier, rate-limited) institutional ownership, insider transactions, ETF holdings/country/sector exposure, and short-interest-adjacent fundamentals endpoints alongside real-time price data. No data committed \u2014 a general API client; usefulness is gated on Finnhub's free-tier limits for these specific endpoints (untested here).",
+  "why_useful": "One client could in principle pull ABNB institutional-ownership history, insider transactions, and ETF-holdings country/sector breakdowns without separately licensed data, if the free tier actually exposes historical (not just current) values \u2014 worth a human check of Finnhub's free-tier scope before relying on it.",
+  "potential": "medium",
+  "geography": "global (multi-exchange)",
+  "time_coverage": "depends on Finnhub API entitlement, unconfirmed",
+  "size_hint": "client library only",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-03",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "One client could in principle pull ABNB institutional-ownership history, insider transactions, and ETF-holdings country/sector breakdowns without separately licensed data, if the free tier actually exposes historical (not just current) values \u2014 worth a human check of Finnhub's free-tier scope before relying on it."
+  ]
+ },
+ {
+  "key": "github:salkooheji/13f-portfolio-analysis",
+  "url": "https://github.com/salkooheji/13f-portfolio-analysis",
+  "name": "13f-portfolio-analysis",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reconstructs institutional portfolios from raw SEC EDGAR 13F filings: idempotent ingestion, per-filing value-unit verification, multi-strategy CUSIP resolution (claims 99.68% resolved by value), amendment-aware quarter-over-quarter diffs, Streamlit dashboard where every number traces back to its EDGAR accession number. Updated 2026-09-08 (very recent).",
+  "why_useful": "More rigorous 13F pipeline than the toy scrapers -- CUSIP resolution and amendment handling matter for building a clean institutional-ownership-concentration time series for ABNB or its holders/comps; addresses gap #15.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "license": "not specified",
+  "last_activity": "2026-09-08",
+  "geography": "US",
+  "time_coverage": "not specified (13F quarterly cadence)",
+  "size_hint": "pipeline/dashboard, no bundled dataset",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "More rigorous 13F pipeline than the toy scrapers -- CUSIP resolution and amendment handling matter for building a clean institutional-ownership-concentration time series for ABNB or its holders/comps; addresses gap #15."
+  ]
+ },
+ {
+  "key": "github:alphasmo/alphasmo-tools",
+  "url": "https://github.com/alphasmo/alphasmo-tools",
+  "name": "alphasmo-tools",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CLI + MCP server for SEC EDGAR 13F filings, insider trading (Form 4), and \"Smart Money convergence signals\" (cross-referencing institutional and insider activity). MIT license, 2 stars, updated 2026-08-12.",
+  "why_useful": "Combines 13F and Form 4 access with a convergence-signal layer already built; could be repurposed to watch ABNB institutional/insider activity around print dates without building the plumbing.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "license": "MIT",
+  "last_activity": "2026-08-12",
+  "geography": "US",
+  "time_coverage": "not specified",
+  "size_hint": "tool/server, no bundled data",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Combines 13F and Form 4 access with a convergence-signal layer already built; could be repurposed to watch ABNB institutional/insider activity around print dates without building the plumbing."
+  ]
+ }
+]

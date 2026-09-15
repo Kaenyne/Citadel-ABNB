@@ -1,0 +1,38 @@
+{
+ "slug": "texas-comptroller-hotel-occupancy-tax",
+ "url": "https://github.com/natnaelsolomon0101-sketch/tx-hotel-heatmap",
+ "sampled": true,
+ "total_bytes": 3322496,
+ "files": [
+  "README_upstream.md",
+  "build-data.ts",
+  "build-history.mjs",
+  "enrichment-report.json",
+  "hotel_history_long.csv",
+  "hotel_history_t12.csv",
+  "hotels_properties.csv",
+  "texas_hospitality_str_properties.csv",
+  "manifest.json",
+  "README.md"
+ ],
+ "rows": "hotel_history_long.csv 50,011 (5,141 hotels x up to 10 periods); hotel_history_t12.csv 5,141; hotels_properties.csv 5,305; texas_hospitality_str_properties.csv 767; scripts/README n/a",
+ "columns": "history_long: feature_id, period, revenue, revpar_per_night, annual, partial | t12: feature_id, t12Revenue, t12Revpar, lastMonthRevenue, lastMonthRevpar, lastMonth | properties: id, name, address, city, zip, rooms, revpar, revenue, bucket, lon, lat, source, brand, parentCompany, market, submarket, hotelClass, scale, yearBuilt | str_properties: Rooms, Brand, Parent Company, Property Name, Market/Submarket, Hotel Class, Scale, Operation Type, address, Year Built, Mtg space, FEMA fields",
+ "date_range": "2023 (annual) then 2024Q2 to 2026Q2 (2026Q2 partial = Apr+May 2026); last month = May 2026",
+ "how_pulled": "gh api repos/natnaelsolomon0101-sketch/tx-hotel-heatmap/git/trees/HEAD?recursive=1; curl -sL -o <f> https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/{README.md,data/box/texas-hospitality.tsv,public/hotel-history.json,public/hotels.geojson,public/enrichment-report.json,scripts/build-history.mjs,scripts/build-data.ts}; python/pandas flattened hotel-history.json to long+T12 CSVs, hotels.geojson properties+lon/lat to CSV, TSV to CSV; owner name/phone/contact columns dropped",
+ "full_dataset_size": "Repo total ~7.8 MB: hotel-history.json 3.1 MB + hotels.geojson 2.3 MB + TSV 0.4 MB are the whole committed data; everything is in this sample (only owner-contact columns removed). Raw per-period Comptroller CSVs (data/periods/: 2023, 2024Q2-2025Q4 quarterly, 2026-JAN..MAY monthly; ~5k rows each) are gitignored and NOT in the repo; they come from the Texas Comptroller Hotel Occupancy Tax public-data quarterly download (form-driven query, all quarters back to 2000s available, ~10 MB per quarter statewide).",
+ "description": "Property-grain Texas hotel room-revenue history derived from Texas Comptroller hotel occupancy tax (HOT) filings: for 5,141 Texas hotels (name, address, rooms, lat/lng) the repo holds taxable room revenue per period (2023 annual, 2024Q2-2026Q1 quarterly, Apr-May 2026 monthly) and a per-night RevPAR computed as revenue/rooms/days, plus a 767-row STR/CoStar-style property list (brand, chain scale, class, submarket) merged onto part of the panel. Source is the author's export of the Comptroller's public HOT quarterly data (raw files gitignored); the committed JSON/GeoJSON are the build outputs. For ABNB this is a state-level hotel demand/pricing benchmark (gap #8): aggregate revenue by quarter/submarket gives Texas hotel revenue growth and RevPAR by market and chain scale through May 2026, comparable against Inside Airbnb Austin/Texas STR supply and the NA nights/ADR path; the parsing method transfers to the Comptroller's own quarterly downloads for a 20-year history.",
+ "issues": "No LICENSE file in the repo (author's build output; Comptroller HOT data itself is public record). data/box/texas-hospitality.tsv is an STR/CoStar-style property export (columns 'Data Participation', chain scale, FEMA fields) whose redistribution terms are unknown -- owner name/phone/contact columns were dropped from the saved samples, and a human should decide before quoting the STR fields; that TSV also has a repeated header row inside it so a few rows parse misaligned. Room counts come from the Comptroller filing (1-room placeholder filings exist; author filters rooms<2 and RevPAR>$2000). Revenue is taxable room revenue, not total; hotels matched across periods by normalised address, so renamed/re-permitted properties break the series. 2026Q2 is partial (Apr+May). The Socrata datasets on data.texas.gov (ids vmy5-jctb, ifh4-9tpn, er34-v24h, qik7-ypfg, 9xry-ncut, hdzd-884n) are local-HOT city-level reporting and permits, not this property-grain series; the property-grain source is the Comptroller's form-driven HOT public data query, which was not run here.",
+ "source_urls": [
+  "https://github.com/natnaelsolomon0101-sketch/tx-hotel-heatmap",
+  "https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/README.md",
+  "https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/data/box/texas-hospitality.tsv",
+  "https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/public/hotel-history.json",
+  "https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/public/hotels.geojson",
+  "https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/public/enrichment-report.json",
+  "https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/scripts/build-history.mjs",
+  "https://raw.githubusercontent.com/natnaelsolomon0101-sketch/tx-hotel-heatmap/HEAD/scripts/build-data.ts",
+  "https://api.us.socrata.com/api/catalog/v1?domains=data.texas.gov&q=hotel%20occupancy%20tax&limit=8"
+ ],
+ "pulled_at": "2026-09-14",
+ "geography": "Texas, USA (statewide, property-level with lat/lng; markets Austin, Dallas, Houston, San Antonio, El Paso, etc.)"
+}

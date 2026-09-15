@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:petermeissner/statsgrokse",
+  "url": "https://github.com/petermeissner/statsgrokse",
+  "name": "statsgrokse",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R binding (GPL>=2, last release 2017-03-22) to the now-defunct stats.grok.se pageview mirror, covering Wikipedia pageview counts 2008-2015 (the pre-official-API era) by article/language/date range.",
+  "why_useful": "The only tool found in this sweep that reaches PRE-2015 Wikipedia pageview history, which is otherwise unavailable from the official API/dumps. Low relevance to ABNB itself (founded 2008, IPO 2020) but could extend a destination-interest panel a few years further back than any other pageviews source, or serve pre-2015 case studies of other travel/kernel businesses.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "2008-2015 (fills the gap before official Wikimedia pageviews dumps begin)",
+  "size_hint": "small R package, no bundled data",
+  "license": "none declared",
+  "last_activity": "2025-11-10",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "The only tool found in this sweep that reaches PRE-2015 Wikipedia pageview history, which is otherwise unavailable from the official API/dumps. Low relevance to ABNB itself (founded 2008, IPO 2020) but could extend a destination-interest panel a few years further back than any other pageviews source, or serve pre-2015 case studies of other travel/kernel businesses.",
+   "Companion/underlying tool to wikipediatrend's historical stitch; useful if that package's hosted historical mirror ever goes down, since it hits the original stats.grok.se archive directly for 2008-2015 city/destination article views."
+  ]
+ },
+ {
+  "key": "github:arturus/kaggle-web-traffic",
+  "url": "https://github.com/Arturus/kaggle-web-traffic",
+  "name": "kaggle-web-traffic (1st place solution, Wikipedia Web Traffic Forecasting)",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "1st-place solution code (MIT license) for Google/Kaggle's 'Web Traffic Time Series Forecasting' competition, which itself is built on a public dataset of ~145,000 Wikipedia articles' daily pageviews (train_2.csv/key_2.csv, roughly Jul 2015-Sep 2017, multiple languages including many city/country/landmark/tourism-related articles). Data must be pulled from Kaggle (kaggle.com/c/web-traffic-time-series-forecasting) rather than the repo itself; repo only has the RNN encoder-decoder modeling code.",
+  "why_useful": "The underlying Kaggle dataset (pointer, not in this repo) is a large, ready-made multi-year daily pageview panel across ~145k Wikipedia articles in several languages, which almost certainly includes major tourist-destination cities/landmarks/countries as dense daily series 2015-2017 - useful as a historical validation set for 'does city pageview level/growth lead STR/hotel demand' even though it predates the Airbnb-relevant recent quarters. Also a source of mixed-frequency/time-series forecasting method ideas (Gap 17).",
+  "potential": "medium",
+  "gap_targets": [
+   5,
+   17
+  ],
+  "geography": "global, multi-language Wikipedia (city/country/landmark articles included among the ~145k)",
+  "time_coverage": "~July 2015 - September 2017 daily",
+  "size_hint": "145,000 time series x ~800 days; dataset lives on Kaggle, repo is code-only",
+  "license": "MIT (code); Kaggle competition data terms apply to the dataset itself",
+  "last_activity": "unspecified (competition solution, static)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "The underlying Kaggle dataset (pointer, not in this repo) is a large, ready-made multi-year daily pageview panel across ~145k Wikipedia articles in several languages, which almost certainly includes major tourist-destination cities/landmarks/countries as dense daily series 2015-2017 - useful as a historical validation set for 'does city pageview level/growth lead STR/hotel demand' even though it predates the Airbnb-relevant recent quarters. Also a source of mixed-frequency/time-series forecasting method ideas (Gap 17)."
+  ]
+ },
+ {
+  "key": "github:wangmm001/cloudflare-radar-rankings-cache",
+  "url": "https://github.com/wangmm001/cloudflare-radar-rankings-cache",
+  "name": "cloudflare-radar-rankings-cache",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Automated daily/weekly mirror of Cloudflare Radar's domain popularity rankings, committed as gzip-compressed CSVs at four tiers (top-1k, top-10k, top-100k, top-1m), one 'domain' column per file, unordered (membership-only, not rank-ordered). Stored both as dated snapshots (YYYY-MM-DD dirs, so a time series builds up) and a current/ pointer. MIT-licensed code, data itself under Cloudflare Radar terms. Actively updated (commit within the last day as of scrape).",
+  "why_useful": "Gives a longitudinal, point-in-time-able snapshot of which domains are in Cloudflare's top-N popularity tiers each day/week \u2014 the closest free proxy to a Similarweb-style traffic-rank history for airbnb.com and competitor domains (booking.com, vrbo.com, expedia.com). Speaks to gap 5 (engagement/web-traffic estimates) and could be checked for airbnb.com's tier membership over time as a crude traffic-trend indicator, with the caveat that it's membership not rank-value.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "license": "MIT (code); Cloudflare Radar terms (data, non-commercial)",
+  "geography": "global",
+  "time_coverage": "ongoing snapshots, apparently started 2026; check earliest commit for history depth",
+  "size_hint": "4 gzip CSVs per snapshot day, up to 1M rows in the largest tier",
+  "last_activity": "2026-09-13 (last README update)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "Gives a longitudinal, point-in-time-able snapshot of which domains are in Cloudflare's top-N popularity tiers each day/week \u2014 the closest free proxy to a Similarweb-style traffic-rank history for airbnb.com and competitor domains (booking.com, vrbo.com, expedia.com). Speaks to gap 5 (engagement/web-traffic estimates) and could be checked for airbnb.com's tier membership over time as a crude traffic-trend indicator, with the caveat that it's membership not rank-value."
+  ]
+ },
+ {
+  "key": "github:microlinkhq/cloudflare-bot-directory",
+  "url": "https://github.com/microlinkhq/cloudflare-bot-directory",
+  "name": "cloudflare-bot-directory",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed JSON file (src/index.json) listing 500+ verified crawlers/bots from Cloudflare Radar's Verified Bots directory, with fields slug, name, kind, operator, operatorUrl, category, description, followsRobotsTxt, userAgentPatterns, userAgents. This is a static snapshot, not a traffic-share time series.",
+  "why_useful": "Directly on-theme for gap 19 (AI-referral traffic / bot crawler share) as a reference table of which bots exist and how to identify them in logs, but it holds no traffic volume or share data itself \u2014 only bot identity metadata. Useful mainly as a lookup table if we ever get log-level crawler-traffic data from elsewhere.",
+  "potential": "medium",
+  "gap_targets": [
+   19
+  ],
+  "license": "CC BY-NC 4.0 (data), repo code license unspecified",
+  "geography": "global",
+  "time_coverage": "single snapshot, no dated history",
+  "size_hint": "one JSON array, 500+ entries",
+  "last_activity": "2026-09-14",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "Directly on-theme for gap 19 (AI-referral traffic / bot crawler share) as a reference table of which bots exist and how to identify them in logs, but it holds no traffic volume or share data itself \u2014 only bot identity metadata. Useful mainly as a lookup table if we ever get log-level crawler-traffic data from elsewhere.",
+   "Matches CONTEXT gap #19 ('AI-referral traffic: bot/crawler share datasets') directly \u2014 a maintained, structured list of bot UAs is the building block for classifying web-log or CDN traffic into AI-agent vs. human vs. search-engine share, relevant to how Airbnb's own site traffic mix may be shifting toward AI-agent referrals/bookings.",
+   "CONTEXT gap #19 (AI-referral traffic / bot-crawler share) names Cloudflare Radar directly; this is a maintained, machine-readable snapshot of the bot taxonomy Radar tracks, useful as a reference table for classifying AI-agent vs human traffic in any web-log or Common Crawl work the team already has (the Common Crawl CDX index over airbnb.com), though it is not itself a time series of bot traffic share."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cc-crawl-statistics",
+  "url": "https://github.com/commoncrawl/cc-crawl-statistics",
+  "name": "cc-crawl-statistics",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts (crawlstats.py, crawlplot.py) plus PUBLISHED per-crawl statistics (aggregated ~1MiB files + plots at commoncrawl.github.io/cc-crawl-statistics/) covering every monthly crawl from CC-MAIN-2008-2009 to present: page/URL/document counts by host, domain, TLD, MIME type, protocol (HTTP vs HTTPS share), and content language (since mid-2018). Apache-2.0, 317 commits.",
+  "why_useful": "Could give a crude 'share of web indexed' time series by host, potentially proxying travel-site web presence/engagement trend over years, complementing our existing CDX/WARC captures.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "2008-2022+ (monthly crawls)",
+  "size_hint": "code only; pre-computed stats on S3 are modest CSVs per crawl",
+  "license": "Apache-2.0",
+  "last_activity": "317 commits, active",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Could give a crude 'share of web indexed' time series by host, potentially proxying travel-site web presence/engagement trend over years, complementing our existing CDX/WARC captures.",
+   "Gives a long, free, point-in-time-stamped (one file per monthly crawl, never revised) time series of overall web-crawl composition -- e.g., domain counts, HTTPS adoption, language mix -- useful as a macro internet-activity control variable, and the published files are themselves already a historical vintage register (each crawl's stats file is dated and never overwritten), which is exactly the kind of point-in-time discipline gap 4 wants, even though the subject is the whole web rather than ABNB-specific."
+  ]
+ }
+]

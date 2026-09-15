@@ -1,0 +1,51 @@
+{
+ "pre_guide": {
+  "n_cells": 18,
+  "n_with_dolthub": 18,
+  "median_abs_diff_pct": 0.4756632168843494,
+  "mean_diff_pct": 0.15434690510705856,
+  "max_abs_diff_pct": 2.7027027027027026,
+  "sign_agree": 18,
+  "sign_total": 18,
+  "disagreements": [],
+  "pass": true
+ },
+ "at_print": {
+  "n_cells": 23,
+  "n_with_dolthub": 23,
+  "median_abs_diff_pct": 0.0,
+  "mean_diff_pct": 0.14336660924369998,
+  "max_abs_diff_pct": 1.7857142857142856,
+  "missing": [],
+  "pass": true
+ },
+ "holes": [
+  {
+   "register_id": "PG-2021Q4-revenue",
+   "period": "2021Q4",
+   "guide_date": "2021-11-04",
+   "guide_mid": 1435.0,
+   "dolthub": {
+    "date": "2021-10-31",
+    "value": 1430.0,
+    "n": "10",
+    "slot": "Next Quarter"
+   },
+   "sign_guide_minus_street": 1
+  },
+  {
+   "register_id": "PG-2024Q3-revenue",
+   "period": "2024Q3",
+   "guide_date": "2024-08-06",
+   "guide_mid": 3700.0,
+   "dolthub": {
+    "date": "2024-07-28",
+    "value": 3860.0,
+    "n": "11",
+    "slot": "Next Quarter"
+   },
+   "sign_guide_minus_street": -1
+  }
+ ],
+ "T1_PASS": true
+}

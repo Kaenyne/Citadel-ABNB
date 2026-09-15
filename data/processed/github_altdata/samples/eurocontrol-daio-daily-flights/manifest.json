@@ -1,0 +1,27 @@
+{
+ "slug": "eurocontrol-daio-daily-flights",
+ "url": "https://github.com/euctrl-pru/daio",
+ "sampled": true,
+ "total_bytes": 1409021,
+ "files": [
+  "daio_2025.csv",
+  "daio_2026.csv",
+  "SOURCE_README.md",
+  "source_update_data.sh"
+ ],
+ "rows": "daio_2025.csv: 14,600 rows (40 countries x 365 days); daio_2026.csv: 10,240 rows (40 countries x 256 days); SOURCE_README.md and source_update_data.sh non-tabular",
+ "columns": "entry_date, country_icao_code, country_name, flt_daio (total), flt_o (overflights), flt_i (internal), flt_c (circular), flt_dai (dep+arr+internal), flt_d (departures), flt_a (arrivals), flt_da (dep+arr), flt_i_excl_c",
+ "date_range": "2025-01-01 to 2026-09-13 in the sample (full repo: 2019-01-01 to present, updated daily)",
+ "how_pulled": "gh api repos/euctrl-pru/daio/contents/ (tree listing; files sit at the repo root, not in data/); for f in daio_2025.csv daio_2026.csv README.md update_data.sh; do curl -sL -o $f https://raw.githubusercontent.com/euctrl-pru/daio/HEAD/$f; done; python/pandas to describe",
+ "full_dataset_size": "8 CSV files daio_2019.csv..daio_2026.csv (~0.58-0.83 MB each, ~6.3 MB total) plus matching parquet (~2.1 MB total); about 111k rows total (40 countries x ~2,813 days), one entry_date x country row per day",
+ "description": "EUROCONTROL PRU daily flight counts per member state: for each UTC day and each of 40 countries, departures, arrivals, internal (domestic), circular and overflight movements, plus their sums. Grain is country x day, 2019-01-01 to present, auto-committed daily from EUROCONTROL network data (last push 2026-09-14, data through 2026-09-13). For ABNB an analyst would build country-level and EMEA-aggregate arrivals+departures (flt_da) indices, seasonally adjust against 2019/2024/2025, and use them as a near-real-time EMEA travel-volume nowcast input for 3Q26/4Q26 nights, which leads Eurostat platform nights by months; also useful for FIFA/summer-shock reads and for mapping to the Inside Airbnb European city panel.",
+ "issues": "No LICENSE file in the repo and GitHub reports license=null; the data derive from EUROCONTROL network operations data, whose reuse terms are set by EUROCONTROL (the PRU publishes similar daily-traffic dashboards publicly) - a human should confirm redistribution terms before the files are committed or quoted externally. Counts are flights, not passengers (no load factor or seat count). Canary Islands folded into Spain. Some small negative flt_o values (min -5/-6) appear, suggesting revision artefacts. Country coverage is EUROCONTROL member states only (no Russia, limited Ukraine airspace since 2022). Most recent days may be revised on later pushes.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/euctrl-pru/daio/HEAD/daio_2025.csv",
+  "https://raw.githubusercontent.com/euctrl-pru/daio/HEAD/daio_2026.csv",
+  "https://raw.githubusercontent.com/euctrl-pru/daio/HEAD/README.md",
+  "https://raw.githubusercontent.com/euctrl-pru/daio/HEAD/update_data.sh",
+  "https://api.github.com/repos/euctrl-pru/daio/contents/"
+ ],
+ "pulled_at": "2026-09-14"
+}

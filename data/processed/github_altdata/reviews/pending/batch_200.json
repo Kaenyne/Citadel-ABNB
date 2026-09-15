@@ -1,0 +1,125 @@
+[
+ {
+  "key": "github:issacchan26/opentablereviewsscraping",
+  "url": "https://github.com/issacchan26/OpenTableReviewsScraping",
+  "name": "issacchan26/OpenTableReviewsScraping",
+  "category": "other",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small web-scraping script to collect OpenTable restaurant reviews (last commit Oct 2023). No committed dataset visible, no clear geography stated, low star/maintenance signal.",
+  "why_useful": "Only OpenTable-adjacent GitHub repo found under the 'opentable' topic; does not touch OpenTable's actual 'State of the Industry' seated-diners index (that specific dataset/API does not appear to have any GitHub mirror, scraper, or topic \u2014 searched directly, topic pages for opentable-scraper and opentable-state-of-industry are both unused). Low confidence this repo is still functional or maintained.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2023-10-11",
+  "geography": "unspecified",
+  "time_coverage": "n/a (scraper)",
+  "size_hint": "n/a",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "Only OpenTable-adjacent GitHub repo found under the 'opentable' topic; does not touch OpenTable's actual 'State of the Industry' seated-diners index (that specific dataset/API does not appear to have any GitHub mirror, scraper, or topic \u2014 searched directly, topic pages for opentable-scraper and opentable-state-of-industry are both unused). Low confidence this repo is still functional or maintained."
+  ]
+ },
+ {
+  "key": "github:kterdal/local-law-18-vs-short-term-rentals",
+  "url": "https://github.com/kterdal/Local-law-18-vs-Short-term-rentals",
+  "name": "Local-law-18-vs-Short-term-rentals",
+  "category": "other",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Single-commit repo containing only 'Poster code.R' and 'poster.pdf' (an academic poster on NYC Local Law 18's effect on STRs). No committed data files, no README, no license.",
+  "why_useful": "No usable data of its own; flagged only because it surfaced under Local Law 18 search terms. Not worth pursuing further.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "unknown",
+  "size_hint": "2 files, no data",
+  "license": "none",
+  "last_activity": "May 2025",
+  "duplicate_of_holding": "likely reuses Inside Airbnb NYC data we already hold",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "No usable data of its own; flagged only because it surfaced under Local Law 18 search terms. Not worth pursuing further."
+  ]
+ },
+ {
+  "key": "github:tharfeed/price-of-staying-in-the-big-apple",
+  "url": "https://github.com/tharfeed/Price-of-Staying-in-the-Big-Apple",
+  "name": "Price-of-Staying-in-the-Big-Apple",
+  "category": "other",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Jupyter-notebook analysis of NYC Airbnb listings/reviews exploring the impact of Local Law 18 via unsupervised methods; per the description it works from listing/review data, almost certainly Inside Airbnb NYC dumps re-packaged rather than a new source. Last updated Oct 2025.",
+  "why_useful": "Likely duplicates Inside Airbnb NYC data already held; only worth a line because it is a LL18-focused analysis (possible source of a derived pre/post-LL18 supply metric) rather than new raw data.",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "unclear, likely 2023-2025 Inside Airbnb vintages",
+  "size_hint": "unknown, notebook-based",
+  "license": "unknown",
+  "last_activity": "Oct 2025",
+  "duplicate_of_holding": "Inside Airbnb 13-city panel (NYC) already held",
+  "gap_targets": [
+   1
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing-policy and STR-ban datasets: HOA/condo STR bans, NYC OSE enforcement data, Barcelona/Amsterdam/Paris enforcement, Spanish 2025 platform registration numbers"
+  ],
+  "why_all": [
+   "Likely duplicates Inside Airbnb NYC data already held; only worth a line because it is a LL18-focused analysis (possible source of a derived pre/post-LL18 supply metric) rather than new raw data."
+  ]
+ },
+ {
+  "key": "github:engamrali/egypt-tourism-chatbot",
+  "url": "https://github.com/EngAmrAli/Egypt-Tourism-chatbot",
+  "name": "Egypt-Tourism-chatbot",
+  "category": "other",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Multimodal chatbot/image-generation app fine-tuned on a 'handmade Egypt tourism dataset' about landmarks (Qwen2.5 LoRA + Conditional GAN); this is landmark/cultural content, not visitor-arrival statistics.",
+  "why_useful": "Not a fit for Egypt inbound-tourism volume data (no arrivals/receipts figures) -- flagged only to record that no committed Egypt tourism *statistics* dataset was found; the 'handmade dataset' is landmark-description text, unrelated to KPI forecasting.",
+  "potential": "low",
+  "geography": "Egypt",
+  "time_coverage": "n/a",
+  "size_hint": "unknown",
+  "license": "MIT",
+  "last_activity": "2026-08-11",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Not a fit for Egypt inbound-tourism volume data (no arrivals/receipts figures) -- flagged only to record that no committed Egypt tourism *statistics* dataset was found; the 'handmade dataset' is landmark-description text, unrelated to KPI forecasting."
+  ]
+ },
+ {
+  "key": "github:padm-23/apayo",
+  "url": "https://github.com/PADM-23/APAYO",
+  "name": "PADM-23/APAYO",
+  "category": "other",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Hackathon (Junction Asia 2026) iOS medical-intake app for migrant seasonal farm workers in Gyeongsangbuk-do, South Korea. Bundles ~3,415 clinic and 1,141 pharmacy locations from Korea's Health Insurance Review and Assessment Service open data, used only for facility lookup inside the app \u2014 no worker counts, arrival dates, or travel-demand data.",
+  "why_useful": "Checked because it combines 'medical' and 'seasonal migrant worker' in scope; contains no time series or volume data relevant to travel demand, only a static facility list for a single Korean province. Included for completeness/negative result.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "Gyeongsangbuk-do, South Korea",
+  "time_coverage": "n/a",
+  "size_hint": "small app repo, 0 stars, MIT license",
+  "license": "MIT",
+  "last_activity": "2026-08-23",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "Checked because it combines 'medical' and 'seasonal migrant worker' in scope; contains no time series or volume data relevant to travel demand, only a static facility list for a single Korean province. Included for completeness/negative result."
+  ]
+ }
+]

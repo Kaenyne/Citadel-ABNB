@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:qunish/getyourguide-api-based-scraper",
+  "url": "https://github.com/Qunish/getyourguide-api-based-scraper",
+  "name": "getyourguide-api-based-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "API-based (not HTML) scraper targeting GetYourGuide; last commit 2023-08-07, 0 stars, no description retrieved beyond name.",
+  "why_useful": "If it hits GetYourGuide's own JSON API rather than scraping HTML it may be more durable than a DOM scraper; unverified content.",
+  "potential": "low",
+  "geography": "unknown",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "unclear",
+  "last_activity": "2023-08-07",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "If it hits GetYourGuide's own JSON API rather than scraping HTML it may be more durable than a DOM scraper; unverified content."
+  ]
+ },
+ {
+  "key": "github:dot1258/klook-scraper",
+  "url": "https://github.com/dot1258/klook-scraper",
+  "name": "klook-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Klook activity scraper, last commit 2022-01-12, 0 stars, no description or committed data visible.",
+  "why_useful": "Only Klook-specific repo surfaced; Klook is a major APAC tours/activities marketplace relevant to Airbnb Experiences and APAC travel demand (gap #7 region), but repo is stale (2022) and unverified.",
+  "potential": "low",
+  "geography": "APAC-weighted (Klook's core markets)",
+  "time_coverage": "unknown, no history stored",
+  "size_hint": "unknown",
+  "license": "unclear",
+  "last_activity": "2022-01-12",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Only Klook-specific repo surfaced; Klook is a major APAC tours/activities marketplace relevant to Airbnb Experiences and APAC travel demand (gap #7 region), but repo is stale (2022) and unverified."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/viator",
+  "url": "https://github.com/api-evangelist/viator",
+  "name": "viator (API Evangelist profile)",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Independent third-party documentation of Viator's public API surface (Viator is owned by Tripadvisor; largest tours/activities/experiences marketplace) \u2014 OpenAPI/AsyncAPI specs, auth, error codes, changelog, LLM/MCP tool defs. No data, no code beyond machine-readable API descriptors. Points to Viator's own official API docs as the real source.",
+  "why_useful": "Confirms Viator exposes a documented OCTO-standard REST API (auth required, presumably needs a partner key) \u2014 useful as a map for anyone building a legitimate, TOS-compliant pull of Viator activity/pricing data rather than scraping.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (API surface doc, not data)",
+  "size_hint": "small (spec files only)",
+  "license": "unclear (API Evangelist's own repos are typically CC/MIT for the meta-docs; underlying API is Viator's own)",
+  "last_activity": "unknown, org active into Sep 2026",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Confirms Viator exposes a documented OCTO-standard REST API (auth required, presumably needs a partner key) \u2014 useful as a map for anyone building a legitimate, TOS-compliant pull of Viator activity/pricing data rather than scraping."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/getyourguide",
+  "url": "https://github.com/api-evangelist/getyourguide",
+  "name": "getyourguide (API Evangelist profile)",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Same API Evangelist format as the Viator entry, profiling GetYourGuide's public API surface for tours/activities/attraction tickets booking (Berlin-based OTA). Spec files and metadata only, no data.",
+  "why_useful": "Maps GetYourGuide's official API as an alternative to scraping for a legitimate activity-pricing/availability pull; low value on its own.",
+  "potential": "low",
+  "geography": "Europe-weighted, global",
+  "time_coverage": "n/a",
+  "size_hint": "small",
+  "license": "unclear",
+  "last_activity": "unknown",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Maps GetYourGuide's official API as an alternative to scraping for a legitimate activity-pricing/availability pull; low value on its own."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/klook",
+  "url": "https://github.com/api-evangelist/klook",
+  "name": "klook (API Evangelist profile)",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "API Evangelist third-party profile of Klook's public API surface (OCTO 1.0 standard tour/activity API): OpenAPI/AsyncAPI specs, auth, error codes, changelog (stale since Feb 2025), provenance metadata. No data or SDK.",
+  "why_useful": "Confirms Klook (APAC things-to-do platform) exposes an OCTO-standard partner API; a map toward legitimate APAC activity-market data rather than a data source itself.",
+  "potential": "low",
+  "geography": "APAC-weighted",
+  "time_coverage": "n/a",
+  "size_hint": "small",
+  "license": "unclear",
+  "last_activity": "changelog frozen since Feb 2025",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb Experiences, Services and hotel-on-Airbnb listing data; Viator / GetYourGuide / Klook tour and activity datasets"
+  ],
+  "why_all": [
+   "Confirms Klook (APAC things-to-do platform) exposes an OCTO-standard partner API; a map toward legitimate APAC activity-market data rather than a data source itself."
+  ]
+ }
+]

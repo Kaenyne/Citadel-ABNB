@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:mradex77/google-play-scraper",
+  "url": "https://github.com/MrAdex77/google-play-scraper",
+  "name": "MrAdex77/google-play-scraper",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js/TypeScript Google Play scraper explicitly listing 'top charts' among its supported endpoints, alongside app details, search, reviews, permissions, and data-safety info.",
+  "why_useful": "One of the few scrapers that explicitly names top-charts retrieval, which is the closest proxy to a rank signal for Android; still a live-only client with no stored history, would need to be run on a schedule to build a series.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "current only",
+  "license": "not individually confirmed (typically MIT for this genre)",
+  "last_activity": "not confirmed",
+  "size_hint": "code only",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "One of the few scrapers that explicitly names top-charts retrieval, which is the closest proxy to a rank signal for Android; still a live-only client with no stored history, would need to be run on a schedule to build a series."
+  ]
+ },
+ {
+  "key": "github:distrinet/tranco-python-package",
+  "url": "https://github.com/DistriNet/tranco-python-package",
+  "name": "tranco (Python package)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Python client for tranco-list.eu: `Tranco().list(date='YYYY-MM-DD')` fetches the archived daily list for that exact date and `.rank('airbnb.com')` looks up a domain's rank within it, plus creation of custom-window aggregated lists.",
+  "why_useful": "Makes the Tranco point-in-time archive (daily since 2018) machine-pullable in a couple of lines \u2014 lets the team reconstruct airbnb.com's, and competitors', domain-popularity rank on any historical date without re-scraping, which is the point-in-time property gap #4/#5 asks for.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   5
+  ],
+  "size_hint": "package only",
+  "time_coverage": "2018-present via API",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-01-06",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank",
+   "wildcard: a computational social scientist who works with Reddit dumps",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Makes the Tranco point-in-time archive (daily since 2018) machine-pullable in a couple of lines \u2014 lets the team reconstruct airbnb.com's, and competitors', domain-popularity rank on any historical date without re-scraping, which is the point-in-time property gap #4/#5 asks for.",
+   "Tranco explicitly publishes a dated list ID for every ranking pull, i.e. it is point-in-time by construction (unlike ad hoc Similarweb scrapes) -- lets the team track airbnb.com's and competitors' (vrbo.com, booking.com, expedia.com) domain-rank trend over time as a rough directional web-traffic-share proxy called for in gap #5/#19.",
+   "Machine-pullable companion to the Tranco ranking generator above; lets a script reconstruct airbnb.com's rank on any specific historical date for a point-in-time engagement series."
+  ]
+ },
+ {
+  "key": "github:wchan757/similarweb_scraper",
+  "url": "https://github.com/wchan757/similarweb_scraper",
+  "name": "similarweb_scraper (wchan757)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python + pywinauto scraper that drives a real Windows browser session against similarweb.com to pull a site's estimated visits, rank, engagement metrics (bounce rate, pages/visit, avg visit duration) for a given domain list. No data committed \u2014 code only.",
+  "why_useful": "Similarweb's modeled traffic-and-engagement estimate for airbnb.com/vrbo.com/booking.com is the closest free proxy to actual web-visit volume gap #5 asks for; this is the most-starred (22) of several near-identical Similarweb scrapers found. Per the rules, cataloguing only \u2014 not run (non-Airbnb site, so lower ToS sensitivity than scraping airbnb.com itself, but still a scrape of a commercial site's paywalled data and should be a human call before running).",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "script only",
+  "time_coverage": "n/a (live scrape)",
+  "geography": "n/a",
+  "license": "MIT",
+  "last_activity": "2026-01-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Similarweb's modeled traffic-and-engagement estimate for airbnb.com/vrbo.com/booking.com is the closest free proxy to actual web-visit volume gap #5 asks for; this is the most-starred (22) of several near-identical Similarweb scrapers found. Per the rules, cataloguing only \u2014 not run (non-Airbnb site, so lower ToS sensitivity than scraping airbnb.com itself, but still a scrape of a commercial site's paywalled data and should be a human call before running)."
+  ]
+ },
+ {
+  "key": "github:radeance/similarweb-scraper-public",
+  "url": "https://github.com/Radeance/similarweb-scraper-public",
+  "name": "similarweb-scraper-public",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify-actor-based Similarweb scraper extracting website traffic, global rank, country rank, bounce rate, and visit-duration/traffic-source breakdown for any domain.",
+  "why_useful": "Same Similarweb-estimate use case as above but with country-level rank/traffic split, which could approximate airbnb.com's regional (NA/EMEA/LatAm/APAC) engagement mix the team already forecasts.",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "actor/script only",
+  "time_coverage": "n/a (live scrape)",
+  "geography": "country-level splits available",
+  "license": "unspecified",
+  "last_activity": "2026-05-29",
+  "duplicate_of_holding": "wchan757/similarweb_scraper (same target site, different implementation)",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Same Similarweb-estimate use case as above but with country-level rank/traffic split, which could approximate airbnb.com's regional (NA/EMEA/LatAm/APAC) engagement mix the team already forecasts."
+  ]
+ },
+ {
+  "key": "github:lonetis/crux-cache",
+  "url": "https://github.com/lonetis/crux-cache",
+  "name": "crux-cache",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Cached CrUX data for 'all ~18M origins tracked by CrUX' with popularity rank buckets, as CSV files chunked to 25MB for GitHub, refreshed monthly by automation. MIT-licensed repo code; underlying data under CrUX Dataset Terms.",
+  "why_useful": "Broader origin coverage than crux-top-lists (18M vs 1M origins) \u2014 could catch smaller competitor/adjacent sites (Sonder, Vacasa, Hipcamp) not in the top-1M cut, still keyed to airbnb.com rank history for engagement trend (gap #5).",
+  "potential": "medium",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "monthly, ongoing (35 commits at time of check)",
+  "size_hint": "multiple 25MB CSV chunks",
+  "license": "MIT (repo code); CrUX Dataset Terms (data)",
+  "last_activity": "actively maintained (monthly automation)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Broader origin coverage than crux-top-lists (18M vs 1M origins) \u2014 could catch smaller competitor/adjacent sites (Sonder, Vacasa, Hipcamp) not in the top-1M cut, still keyed to airbnb.com rank history for engagement trend (gap #5)."
+  ]
+ }
+]

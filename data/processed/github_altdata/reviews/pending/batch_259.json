@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:robswei/vrbo_prices",
+  "url": "https://github.com/robswei/vrbo_prices",
+  "name": "vrbo_prices",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tool to pull Vrbo listings and their relative rental prices; small personal repo, no evidence of a committed dataset from the search metadata alone.",
+  "why_useful": "Another Vrbo price-pulling method touching gap #2 (realised/asked pricing for STRs) if usable; needs inspection to confirm any data files are actually committed.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2020-03-22",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Another Vrbo price-pulling method touching gap #2 (realised/asked pricing for STRs) if usable; needs inspection to confirm any data files are actually committed."
+  ]
+ },
+ {
+  "key": "github:homeaway/homeaway_api_ruby",
+  "url": "https://github.com/homeaway/homeaway_api_ruby",
+  "name": "homeaway_api_ruby",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official (now-archived, org name still 'homeaway') Ruby SDK for the HomeAway Partner/API \u2014 auth and endpoint wrappers for listings/reservations, not a dataset. The underlying HomeAway public API is defunct post Vrbo/Expedia consolidation, so the client likely no longer resolves against a live endpoint.",
+  "why_useful": "Historical evidence of what an official HomeAway API surface looked like (listing/reservation objects); of essentially no practical pull value today since HomeAway's own API has been retired, but documents the data schema HomeAway once exposed.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "N/A",
+  "time_coverage": "pre-2022 API era",
+  "size_hint": "code only",
+  "license": "other",
+  "last_activity": "2022-08-25",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Historical evidence of what an official HomeAway API surface looked like (listing/reservation objects); of essentially no practical pull value today since HomeAway's own API has been retired, but documents the data schema HomeAway once exposed."
+  ]
+ },
+ {
+  "key": "github:greasysock/bnbcalendar",
+  "url": "https://github.com/greasysock/bnbCalendar",
+  "name": "bnbCalendar",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small tool that syncs Airbnb and Vrbo iCal calendar feeds together for a host managing both platforms (team scheduling use case), not a dataset or scraper of public listings.",
+  "why_useful": "Confirms iCal feeds are the standard cross-platform availability format hosts use between Airbnb and Vrbo; marginal \u2014 it is a host-side ops tool, not a data source, but shows the iCal route into per-listing occupancy exists for both platforms.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "code only",
+  "license": "none declared",
+  "last_activity": "2025-03-14",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Confirms iCal feeds are the standard cross-platform availability format hosts use between Airbnb and Vrbo; marginal \u2014 it is a host-side ops tool, not a data source, but shows the iCal route into per-listing occupancy exists for both platforms."
+  ]
+ },
+ {
+  "key": "github:megaz/vrbo-listings-api",
+  "url": "https://github.com/megaz/vrbo-listings-api",
+  "name": "vrbo-listings-api",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Repo named as a Vrbo listings API wrapper/client; no description or stars, contents unverified beyond the name from search metadata.",
+  "why_useful": "Possible additional Vrbo access method; flagged for completeness but unverified \u2014 needs a README check before relying on it.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2025-09-16",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Possible additional Vrbo access method; flagged for completeness but unverified \u2014 needs a README check before relying on it."
+  ]
+ },
+ {
+  "key": "github:hassan141998/signal-str-listing-matcher",
+  "url": "https://github.com/Hassan141998/SIGNAL-STR-Listing-Matcher",
+  "name": "SIGNAL-STR-Listing-Matcher",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Flask app that resolves a physical address + unit number to its live Airbnb/Vrbo listing, tested across three commercial STR data platforms (Apify, AirROI, RapidAPI) using a direct-lookup-first, geocode-and-filter-fallback strategy. No data committed; it is a matcher/orchestrator that calls paid third-party STR data APIs (Apify, AirROI, RapidAPI), not a free data source itself.",
+  "why_useful": "Useful map of which commercial vendors (AirROI, Apify STR scrapers, RapidAPI STR listing endpoints) exist for address-to-listing matching across Airbnb+Vrbo \u2014 worth knowing as a paid-vendor landscape reference even though it delivers no free data itself and would require paid keys we are told not to use.",
+  "potential": "low",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "geography": "N/A (address-level, any US market)",
+  "time_coverage": "N/A",
+  "size_hint": "code only",
+  "license": "none declared",
+  "last_activity": "2026-07-16",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Useful map of which commercial vendors (AirROI, Apify STR scrapers, RapidAPI STR listing endpoints) exist for address-to-listing matching across Airbnb+Vrbo \u2014 worth knowing as a paid-vendor landscape reference even though it delivers no free data itself and would require paid keys we are told not to use."
+  ]
+ }
+]
