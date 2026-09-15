@@ -1,0 +1,17 @@
+object,spec_id,scenario,fy,ebitda_musd,revenue_musd,margin_pct,street_ebitda,street_margin,basis
+street_plus_bias,rw_hl4,base,FY26,5247.538454308783,14268.1433,36.77800498617633,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+street_plus_bias,rw_hl4,base,FY27,6042.035121486544,15828.6066,38.17161721289191,5766.09917,36.44968403876268,"4 x 2027 quarters, Street leg allocated from the FY27 consensus with PIT seasonal shares (spec _fyalloc)"
+street_plus_bias,rw_hl4_med,base,FY26,5225.225926161421,14268.1433,36.62162494654382,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+street_plus_bias,rw_hl4_med,base,FY27,6013.9257937215725,15828.6066,37.9940316017556,5766.09917,36.44968403876268,"4 x 2027 quarters, Street leg allocated from the FY27 consensus with PIT seasonal shares (spec _fyalloc)"
+street_plus_flowthrough,rw_hl4,base,FY26,5105.716472946216,14268.1433,35.78402855644305,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+street_plus_flowthrough,rw_hl4,base,FY27,5764.358775883238,15828.6066,36.417348169378585,5766.09917,36.44968403876268,"4 x 2027 quarters, Street leg allocated from the FY27 consensus with PIT seasonal shares (spec _fyalloc)"
+street_plus_flowthrough,rw_hl4,bear,FY26,5054.500573843435,14164.807,35.68351177565239,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+street_plus_flowthrough,rw_hl4,bull,FY26,5166.145968147285,14391.9366,35.89611399585574,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+street_plus_flowthrough,rw_hl4_med,base,FY26,5098.1100870298105,14268.1433,35.73071828504702,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+street_plus_flowthrough,rw_hl4_med,base,FY27,5741.540031277051,15828.6066,36.27318674580649,5766.09917,36.44968403876268,"4 x 2027 quarters, Street leg allocated from the FY27 consensus with PIT seasonal shares (spec _fyalloc)"
+street_plus_flowthrough,rw_hl4_med,bear,FY26,5046.894187927029,14164.807,35.62981259064828,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+street_plus_flowthrough,rw_hl4_med,bull,FY26,5158.539582230879,14391.9366,35.843262276675674,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+dispersion_conditioned,rw_hl4,base,FY26,5157.7145816086395,14268.1433,36.14846356083794,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+dispersion_conditioned,rw_hl4,base,FY27,5944.093676758408,15828.6066,37.55285494781587,5766.09917,36.44968403876268,"4 x 2027 quarters, Street leg allocated from the FY27 consensus with PIT seasonal shares (spec _fyalloc)"
+dispersion_conditioned,rw_hl4_med,base,FY26,5145.912211229365,14268.1433,36.065745227196906,5053.72214,35.61578506074649,1H26 actual + 3Q26 (h=0) + 4Q26 (h=1) forecasts
+dispersion_conditioned,rw_hl4_med,base,FY27,5925.961548980632,15828.6066,37.43830204852417,5766.09917,36.44968403876268,"4 x 2027 quarters, Street leg allocated from the FY27 consensus with PIT seasonal shares (spec _fyalloc)"

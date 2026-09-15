@@ -1,0 +1,1033 @@
+
+====================================================================================================
+check_01_registry_pit_rules.py  --  mechanical PIT rules over every registry file
+====================================================================================================
+                                       file  n_rows  specs  A_knowable_after_vintage  B_street_as_of_after_vintage  C_quarter_already_printed  D_horizon_mismatch  E_window_vintage  F_quantiles_non_monotone  G_duplicate_keys  H_single_replay_groups
+               alt-augmented__lines_aug.csv    6020      7                         0                             0                          0                   0                 0                         0                 0                       0
+              alt-augmented__margin_aug.csv    3612      7                         0                             0                          0                   0                 0                         0                 0                       0
+        baselines-margin__guide_implied.csv     220     12                         0                             0                          0                   0                 0                         0                 0                      12
+        baselines-margin__pct_rev_last4.csv    1560    120                         0                             0                          0                   0                 0                         0                 0                     120
+      baselines-margin__q_guide_implied.csv     112      8                         0                             0                          0                   0                 0                         0                 0                       8
+       baselines-margin__seasonal_naive.csv    6216    336                         0                             0                          0                   0                 0                         0                 0                     336
+ baselines-margin__seasonal_naive_drift.csv    6216    336                         0                             0                          0                   0                 0                         0                 0                     336
+               baselines-margin__street.csv     700     28                         0                             0                          0                   0                 0                         0                 0                      28
+            baselines-margin__trailing4.csv    2964    228                         0                             0                          0                   0                 0                         0                 0                     228
+                       below-ebitda__da.csv     624      4                         0                             0                          0                   0                 0                         0                 0                       0
+                      below-ebitda__eps.csv    2880      4                         0                             0                          0                   0                 0                         0                 0                       0
+                      below-ebitda__fcf.csv    3648     12                         0                             0                          0                   0                 0                         0                 0                       0
+          below-ebitda__interest_income.csv     312      2                         0                             0                          0                   0                 0                         0                 0                       0
+                      below-ebitda__sbc.csv     936      4                         0                             0                          0                   0                 0                         0                 0                       0
+              below-ebitda__share_count.csv     624      4                         0                             0                          0                   0                 0                         0                 0                       0
+                      below-ebitda__tax.csv     624      4                         0                             0                          0                   0                 0                         0                 0                       0
+                 cycle-flex__flex_lines.csv    3120      4                         0                             0                          0                   0                 0                         0                 0                       0
+                cycle-flex__flex_margin.csv    1872      4                         0                             0                          0                   0                 0                         0                 0                       0
+                 driver-lines__lines_v2.csv    6020      7                         0                             0                          0                   0                 0                         0                 0                       0
+                driver-lines__margin_v2.csv    3612      7                         0                             0                          0                   0                 0                         0                 0                       0
+guide-policy-margin__actual_given_guide.csv    2808      9                         0                             0                          0                   0                 0                         0                 0                       0
+        guide-policy-margin__q4_implied.csv      20      1                         0                             0                          0                   0                 0                         0                 0                       0
+             margin-ts__ensemble_simple.csv     624      2                         0                             0                          0                   0                 0                         0                 0                       0
+          margin-ts__incremental_margin.csv    1824      6                         0                             0                          0                   0                 0                         0                 0                       0
+            margin-ts__pct_rev_seasonal.csv   11424      5                         0                             0                          0                   0                 0                         0                 0                       0
+          margin-ts__per_night_seasonal.csv   10644      5                         0                             0                          0                   0                 0                         0                 0                       0
+        margin-ts__q_sentence_direction.csv     448      4                         0                             0                          0                   0                 0                         0                 0                       0
+               margin-ts__sarima_margin.csv    2496      2                         0                             0                          0                   0                 0                         0                 0                       0
+           margin-ts__yoy_margin_change.csv    1560      5                         0                             0                          0                   0                 0                         0                 0                       0
+    street-bias__dispersion_conditioned.csv    1296     12                         0                             0                          0                   0                 0                         0                 0                       0
+          street-bias__street_plus_bias.csv    1296     12                         0                             0                          0                   0                 0                         0                 0                       0
+   street-bias__street_plus_flowthrough.csv    1296     12                         0                             0                          0                   0                 0                         0                 0                       0
+
+files with at least one violation: 7 of 32
+
+
+====================================================================================================
+check_02_skill_significance.py  --  paired-loss significance of every margin survivor
+====================================================================================================
+margin PIT cells scored (method,object,spec,h): 201
+cells with both survive flags: 30  (14.9% of cells)
+
+             method                  object          spec  h window  n  mean_d_pp  nw_se       t  p_two_sided quarters_better  p_sign_test  boot_q05  boot_q95  p_boot_no_gain
+        street-bias  dispersion_conditioned    rw_hl4_med  0     W1 14    -1.0138 0.5946 -1.7051       0.0882           10/14       0.0898   -2.0167   -0.0420          0.0427
+        street-bias  dispersion_conditioned    rw_hl4_med  0     W2 10    -1.1719 0.4860 -2.4114       0.0159            8/10       0.0547   -1.9065   -0.4115          0.0066
+        street-bias  dispersion_conditioned        rw_hl4  0     W1 14    -0.9073 0.6898 -1.3153       0.1884           10/14       0.0898   -2.0527    0.2303          0.0984
+        street-bias  dispersion_conditioned        rw_hl4  0     W2 10    -1.2154 0.4760 -2.5532       0.0107            8/10       0.0547   -1.9670   -0.4474          0.0043
+        street-bias  dispersion_conditioned    rw_hl4_usd  0     W1 14    -0.9073 0.6898 -1.3153       0.1884           10/14       0.0898   -2.0300    0.2236          0.0977
+        street-bias  dispersion_conditioned    rw_hl4_usd  0     W2 10    -1.2154 0.4760 -2.5532       0.0107            8/10       0.0547   -1.9611   -0.4552          0.0037
+        street-bias street_plus_flowthrough    rw_hl4_med  0     W1 14    -0.6886 0.8082 -0.8519       0.3942            9/14       0.2120   -2.0136    0.6237          0.1971
+        street-bias street_plus_flowthrough    rw_hl4_med  0     W2 10    -0.9369 0.4340 -2.1590       0.0309            7/10       0.1719   -1.7034   -0.2560          0.0098
+        street-bias        street_plus_bias        rw_hl4  0     W1 14    -0.6376 0.8152 -0.7822       0.4341           10/14       0.0898   -1.9554    0.7167          0.2226
+        street-bias        street_plus_bias        rw_hl4  0     W2 10    -0.7703 0.4640 -1.6602       0.0969            8/10       0.0547   -1.4916    0.1343          0.0619
+        street-bias        street_plus_bias    rw_hl4_usd  0     W1 14    -0.6376 0.8152 -0.7822       0.4341           10/14       0.0898   -2.0041    0.6883          0.2123
+        street-bias        street_plus_bias    rw_hl4_usd  0     W2 10    -0.7703 0.4640 -1.6602       0.0969            8/10       0.0547   -1.4747    0.1028          0.0604
+        street-bias        street_plus_bias    rw_hl4_med  0     W1 14    -0.6234 0.6918 -0.9012       0.3675           10/14       0.0898   -1.7646    0.4816          0.1827
+        street-bias        street_plus_bias    rw_hl4_med  0     W2 10    -0.5890 0.4930 -1.1946       0.2322            8/10       0.0547   -1.3264    0.3312          0.1226
+        street-bias street_plus_flowthrough        rw_hl4  0     W1 14    -0.5763 0.7706 -0.7479       0.4545            9/14       0.2120   -1.7899    0.6998          0.2162
+        street-bias street_plus_flowthrough        rw_hl4  0     W2 10    -0.9717 0.3815 -2.5468       0.0109            7/10       0.1719   -1.6486   -0.3546          0.0016
+        street-bias street_plus_flowthrough    rw_hl4_usd  0     W1 14    -0.5763 0.7706 -0.7479       0.4545            9/14       0.2120   -1.7800    0.6999          0.2167
+        street-bias street_plus_flowthrough    rw_hl4_usd  0     W2 10    -0.9717 0.3815 -2.5468       0.0109            7/10       0.1719   -1.6425   -0.3377          0.0013
+        street-bias  dispersion_conditioned            ew  0     W1 14    -0.4506 0.7536 -0.5980       0.5499            9/14       0.2120   -1.6662    0.7343          0.2752
+        street-bias  dispersion_conditioned            ew  0     W2 10    -0.5557 0.4500 -1.2348       0.2169            7/10       0.1719   -1.3054    0.2447          0.1180
+        street-bias  dispersion_conditioned        ew_usd  0     W1 14    -0.4506 0.7536 -0.5980       0.5499            9/14       0.2120   -1.7070    0.7850          0.2739
+        street-bias  dispersion_conditioned        ew_usd  0     W2 10    -0.5557 0.4500 -1.2348       0.2169            7/10       0.1719   -1.2863    0.2331          0.1153
+        street-bias street_plus_flowthrough rw_hl4_from21  0     W1 14    -0.3790 0.9054 -0.4186       0.6755            9/14       0.2120   -1.7690    1.1862          0.3275
+        street-bias street_plus_flowthrough rw_hl4_from21  0     W2 10    -0.8735 0.4186 -2.0865       0.0369            7/10       0.1719   -1.5972   -0.2196          0.0090
+        street-bias street_plus_flowthrough            ew  0     W1 14    -0.3781 0.8649 -0.4371       0.6620            9/14       0.2120   -1.8024    1.0827          0.3224
+        street-bias street_plus_flowthrough            ew  0     W2 10    -0.6816 0.4735 -1.4395       0.1500            7/10       0.1719   -1.3772    0.0280          0.0603
+        street-bias street_plus_flowthrough        ew_usd  0     W1 14    -0.3781 0.8649 -0.4371       0.6620            9/14       0.2120   -1.8032    1.0420          0.3184
+        street-bias street_plus_flowthrough        ew_usd  0     W2 10    -0.6816 0.4735 -1.4395       0.1500            7/10       0.1719   -1.3971    0.0415          0.0614
+       driver-lines               margin_v2 e_revknown_rw  0     W1 14    -0.2773 0.3347 -0.8284       0.4075            8/14       0.3953   -0.8412    0.2305          0.2010
+       driver-lines               margin_v2 e_revknown_rw  0     W2 10    -0.5098 0.3536 -1.4415       0.1494            7/10       0.1719   -1.1441    0.0875          0.0873
+          margin-ts           sarima_margin    lines_aicc  0     W1 14    -0.1988 0.2817 -0.7058       0.4803            8/14       0.3953   -0.6572    0.2421          0.2495
+          margin-ts           sarima_margin    lines_aicc  0     W2 10    -0.4718 0.3716 -1.2696       0.2042            6/10       0.3770   -1.1200    0.1197          0.1024
+          margin-ts    q_sentence_direction  k_fit_median  0     W1 14    -0.1890 0.5366 -0.3522       0.7247            8/14       0.3953   -1.0687    0.7075          0.3705
+          margin-ts    q_sentence_direction  k_fit_median  0     W2 10    -0.4201 0.5082 -0.8265       0.4085            6/10       0.3770   -1.2084    0.4324          0.2047
+          margin-ts    q_sentence_direction      k_fit_rw  0     W1 14    -0.1698 0.7843 -0.2165       0.8286            7/14       0.6047   -1.4500    1.1453          0.4143
+          margin-ts    q_sentence_direction      k_fit_rw  0     W2 10    -0.3157 0.5913 -0.5339       0.5934            5/10       0.6230   -1.2539    0.6700          0.2966
+      alt-augmented              margin_aug  ridge_all_eq  0     W1 14    -0.0545 0.2671 -0.2041       0.8383            7/14       0.6047   -0.4565    0.3572          0.4095
+      alt-augmented              margin_aug  ridge_all_eq  0     W2 10    -0.1560 0.3008 -0.5185       0.6041            5/10       0.6230   -0.6940    0.3782          0.3211
+guide-policy-margin      actual_given_guide    rw_hl4_pin  0     W1 14    -0.0539 0.5561 -0.0969       0.9228            4/14       0.9713   -0.8931    0.9068          0.4357
+guide-policy-margin      actual_given_guide    rw_hl4_pin  0     W2 10    -0.5165 0.2423 -2.1314       0.0331            3/10       0.9453   -0.9775   -0.1004          0.0293
+         cycle-flex             flex_margin   revknown_rw  0     W1 14    -0.0432 0.3520 -0.1228       0.9023            8/14       0.3953   -0.6317    0.4829          0.4639
+         cycle-flex             flex_margin   revknown_rw  0     W2 10    -0.1990 0.3458 -0.5755       0.5649            6/10       0.3770   -0.8391    0.4000          0.3177
+         cycle-flex             flex_margin         l0_rw  0     W1 14    -0.0365 0.3695 -0.0987       0.9214            7/14       0.6047   -0.6029    0.5387          0.4583
+         cycle-flex             flex_margin         l0_rw  0     W2 10    -0.1857 0.3591 -0.5170       0.6051            5/10       0.6230   -0.8280    0.4475          0.3145
+guide-policy-margin      actual_given_guide      last_pin  0     W1 14    -0.0277 0.5169 -0.0536       0.9572            8/14       0.3953   -0.7556    0.9121          0.4466
+guide-policy-margin      actual_given_guide      last_pin  0     W2 10    -0.4798 0.1756 -2.7321       0.0063            7/10       0.1719   -0.8015   -0.2220          0.0000
+      alt-augmented              margin_aug       none_eq  0     W1 14    -0.0226 0.2508 -0.0903       0.9281            7/14       0.6047   -0.4006    0.3603          0.4532
+      alt-augmented              margin_aug       none_eq  0     W2 10    -0.1165 0.2701 -0.4314       0.6662            5/10       0.6230   -0.5876    0.3450          0.3384
+       driver-lines               margin_v2  b_elastic_eq  0     W1 14    -0.0226 0.2508 -0.0903       0.9281            7/14       0.6047   -0.3956    0.3640          0.4604
+       driver-lines               margin_v2  b_elastic_eq  0     W2 10    -0.1165 0.2701 -0.4314       0.6662            5/10       0.6230   -0.5856    0.3431          0.3443
+guide-policy-margin              q4_implied     guide_mid  0     W1  3    -1.0147 0.7232 -1.4029       0.1606             2/3       0.5000   -2.6288    0.5995          0.2249
+        street-bias street_plus_flowthrough        rw_hl4  1     W1 13    -0.5785 0.8117 -0.7127       0.4760            9/13       0.1334   -1.9677    0.6260          0.2349
+        street-bias street_plus_flowthrough        rw_hl4  1     W2  9    -0.0113 0.6167 -0.0183       0.9854             6/9       0.2539   -0.8568    1.0008          0.4643
+        street-bias street_plus_flowthrough    rw_hl4_usd  1     W1 13    -0.5785 0.8117 -0.7127       0.4760            9/13       0.1334   -1.9490    0.6687          0.2454
+        street-bias street_plus_flowthrough    rw_hl4_usd  1     W2  9    -0.0113 0.6167 -0.0183       0.9854             6/9       0.2539   -0.8559    1.0064          0.4651
+       driver-lines               margin_v2 e_revknown_rw  2     W1 12    -0.2795 0.1727 -1.6185       0.1055            7/12       0.3872   -0.5962    0.0192          0.0634
+       driver-lines               margin_v2 e_revknown_rw  2     W2  8    -0.3486 0.1988 -1.7538       0.0795             5/8       0.3633   -0.6479   -0.0324          0.0401
+         cycle-flex             flex_margin   revknown_rw  2     W1 12    -0.1943 0.2298 -0.8457       0.3977            7/12       0.3872   -0.6097    0.2173          0.2235
+         cycle-flex             flex_margin   revknown_rw  2     W2  8    -0.1205 0.2745 -0.4391       0.6606             4/8       0.6367   -0.5022    0.3312          0.3003
+
+cells whose paired gain is significant at p<0.05 (two-sided, NW1): 9 of 59
+cells whose gain is significant at p<0.10: 13 of 59
+
+
+====================================================================================================
+check_03_sentence_rule_information.py  --  information in M2's sentence rule; where M3's pin win comes from
+====================================================================================================
+=== Part 1: the sentence, quarter by quarter (W1 target quarters) ===
+quarter guide_date guide_type  direction  level_pct  margin  margin_lag4  yoy_pp sign_agrees  in_W2
+ 2023Q1 2023-02-14    ceiling         -1      15.18   14.41        15.18   -0.76        True  False
+ 2023Q2 2023-05-09    ceiling         -1      33.79   32.97        33.79   -0.82        True  False
+ 2023Q3 2023-08-03      floor          1      50.51   53.99        50.51    3.48        True  False
+ 2023Q4 2023-11-01      floor          1      26.60   33.27        26.60    6.67        True  False
+ 2024Q1 2024-02-13      floor          1      14.41   19.79        14.41    5.38        True   True
+ 2024Q2 2024-05-08    ceiling         -1      32.97   32.53        32.97   -0.44        True   True
+ 2024Q3 2024-08-06    ceiling         -1      53.99   52.47        53.99   -1.52        True   True
+ 2024Q4 2024-11-07    ceiling         -1      33.27   30.85        33.27   -2.43        True   True
+ 2025Q1 2025-02-13    ceiling         -1      19.79   18.35        19.79   -1.44        True   True
+ 2025Q2 2025-05-01    ceiling         -1      32.53   33.69        32.53    1.16       False   True
+ 2025Q3 2025-08-06    ceiling         -1      52.47   50.09        52.47   -2.38        True   True
+ 2025Q4 2025-11-06    ceiling         -1      30.85   28.29        30.85   -2.55        True   True
+ 2026Q1 2026-02-12      point          0      18.35   19.38        18.35    1.03        None   True
+ 2026Q2 2026-05-07      floor          1      33.69   34.95        33.69    1.26        True   True
+
+W1: n=14; sentences with a non-zero direction 13; directions -1/+1 = 9/4; sign agrees 12/13; number of sign FLIPS along the sequence = 3
+   if the rule were 'always -k' it would agree 8/13 times
+
+W2: n=10; sentences with a non-zero direction 9; directions -1/+1 = 7/2; sign agrees 8/9; number of sign FLIPS along the sequence = 2
+   if the rule were 'always -k' it would agree 6/9 times
+
+=== Part 2: where the guide-policy pin win comes from ===
+rw_hl4_pin   W1: n=14 mean d=-0.054pp, quarters better 4/14; biggest single-quarter gain -3.18pp in 2023Q4; mean d EXCLUDING that quarter +0.186pp
+rw_hl4_pin   W2: n=10 mean d=-0.517pp, quarters better 3/10; biggest single-quarter gain -2.30pp in 2024Q1; mean d EXCLUDING that quarter -0.318pp
+last_pin     W1: n=14 mean d=-0.028pp, quarters better 8/14; biggest single-quarter gain -3.18pp in 2023Q4; mean d EXCLUDING that quarter +0.215pp
+last_pin     W2: n=10 mean d=-0.480pp, quarters better 7/10; biggest single-quarter gain -1.86pp in 2024Q4; mean d EXCLUDING that quarter -0.327pp
+rw_hl4       W1: n=14 mean d=+1.594pp, quarters better 6/14; biggest single-quarter gain -3.18pp in 2023Q4; mean d EXCLUDING that quarter +1.961pp
+rw_hl4       W2: n=10 mean d=+0.009pp, quarters better 5/10; biggest single-quarter gain -2.30pp in 2024Q1; mean d EXCLUDING that quarter +0.267pp
+
+
+====================================================================================================
+check_04_killlist_and_licence.py  --  kill-list phrases, banned language, licensed-data exposure
+====================================================================================================
+[KILL] analysis\src\margin_build\01_input_census\run.py:451  '+4.05% fee uplift' as measured
+        ..., prior_evidence="fee-takerate.md and VERIFY r1/r2 notes; kill list: '+4.05% fee uplift as measured'.",   suggested_method="M1 driver") R("R17_rev...
+[KILL] analysis\src\margin_build\01_input_census\run.py:474  'half of ADR growth is bigger units'
+        ...ted r 0.96-0.99 vs Hawaii DBEDT.", prior_evidence="party-size notes; 'half of ADR growth is bigger units' is on the kill list (it is +0.46-0.8pp).",   suggest...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:24  the -3.4pp Q4 FX step
+        ...cessed" / "margin_build"  KILL = [     (r"-?3\.4\s*pp.{0,40}FX", "the -3.4pp Q4 FX step"),     (r"82\s*%.{0,40}(FX|determined)", "'82% of Q4 FX already ...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:25  '82% of Q4 FX already determined'
+        ...X", "the -3.4pp Q4 FX step"),     (r"82\s*%.{0,40}(FX|determined)", "'82% of Q4 FX already determined'"),     (r"\+?4\.05\s*%", "'+4.05% fee uplift' as measured"),     (r"...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:26  '+4.05% fee uplift' as measured
+        ...ined)", "'82% of Q4 FX already determined'"),     (r"\+?4\.05\s*%", "'+4.05% fee uplift' as measured"),     (r"9\s*/\s*9.{0,60}(drift|below[- ]Str...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:27  the 9/9 guide-below-Street drift rule
+        ... as measured"),     (r"9\s*/\s*9.{0,60}(drift|below[- ]Street)", "the 9/9 guide-below-Street drift rule"),     (r"half of ADR growth", "'half of ADR growth is bigger un...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:28  'half of ADR growth is bigger units'
+        ...t|below[- ]Street)", "the 9/9 guide-below-Street drift rule"),     (r"half of ADR growth", "'half of ADR growth is bigger units'"),     (r"nothing beats guide...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:28  'half of ADR growth is bigger units'
+        ...he 9/9 guide-below-Street drift rule"),     (r"half of ADR growth", "'half of ADR growth is bigger units'"),     (r"nothing beats guide\s*[x×*]\s*cushion", "'...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:29  'nothing beats guide x cushion'
+        ... is bigger units'"),     (r"nothing beats guide\s*[x×*]\s*cushion", "'nothing beats guide x cushion'"),     (r"hierarchical cushion", "M5's hierarchical cushion model"),...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:30  M5's hierarchical cushion model
+        ... guide\s*[x×*]\s*cushion", "'nothing beats guide x cushion'"),     (r"hierarchical cushion", "M5's hierarchical cushion model"),     (r"120[- ]market panel", "t...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:30  M5's hierarchical cushion model
+        ...nothing beats guide x cushion'"),     (r"hierarchical cushion", "M5's hierarchical cushion model"),     (r"120[- ]market panel", "the 120-market panel as a nigh...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:31  the 120-market panel as a nights measurement
+        ..."M5's hierarchical cushion model"),     (r"120[- ]market panel", "the 120-market panel as a nights measurement"),     (r"1\.71\s*M quote panel.{0,40}fee[- ]...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:32  the 1.71M quote panel as fee-inclusive
+        ...urement"),     (r"1\.71\s*M quote panel.{0,40}fee[- ]inclusive", "the 1.71M quote panel as fee-inclusive"),     (r"Stan state space", "the Stan state space for the prelim"), ...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:33  the Stan state space for the prelim
+        ...}fee[- ]inclusive", "the 1.71M quote panel as fee-inclusive"),     (r"Stan state space", "the Stan state space for the prelim"), ] BANNED_LANGUAGE = [     (...
+[KILL] analysis\src\margin_build\21_red_team\checks\check_04_killlist_and_licence.py:33  the Stan state space for the prelim
+        ... 1.71M quote panel as fee-inclusive"),     (r"Stan state space", "the Stan state space for the prelim"), ] BANNED_LANGUAGE = [     (r"close to known", "a qu...
+[LANGUAGE] docs\margin-build\00_BRIEF.md:100  a quarter described as 'close to known'
+        ...ide a method explicitly built around it (M5). - Never call a quarter "close to known". Forecast every quarter independently. - Distinguish: forecasts the ...
+[LANGUAGE] docs\margin-build\notes\21_red_team.md:298  a quarter described as 'close to known'
+        ...ior evidence not to use, and   this audit's own pattern list. - **No "close to known" language** outside the brief and the WS21 prompt quoting the rule. -...
+[LANGUAGE] docs\margin-build\prompts\21_red_team.md:16  a quarter described as 'close to known'
+        ...< 10. 3. **Kill list and quoting.** Any kill-list number quoted; any "close to known" quarter; any consensus value used as an input outside M5; any    lic...
+[LICENCE] docs\margin-build\00_BRIEF.md:56  Bloomberg extract filename
+        ...o_onedrive/AIRBNB DATA/raw_expansion_licensed/v2_2026-09-05/bloomberg/bbg_extracted_long.csv`   (sheet `1_Consensus_TS`: BEST_SALES / BEST_EBITDA / BEST_EPS f...
+[LICENCE] docs\margin-build\00_BRIEF.md:57  Bloomberg BEST_* field
+        ...26-09-05/bloomberg/bbg_extracted_long.csv`   (sheet `1_Consensus_TS`: BEST_SALES / BEST_EBITDA / BEST_EPS for 1FQ, 2FQ, 1FY, 2FY by obs_date; ABNB, BK...
+[LICENCE] docs\margin-build\00_BRIEF.md:57  Bloomberg BEST_* field
+        ...mberg/bbg_extracted_long.csv`   (sheet `1_Consensus_TS`: BEST_SALES / BEST_EBITDA / BEST_EPS for 1FQ, 2FQ, 1FY, 2FY by obs_date; ABNB, BKNG, EXPE, MAR,...
+[LICENCE] docs\margin-build\00_BRIEF.md:57  Bloomberg BEST_* field
+        ...acted_long.csv`   (sheet `1_Consensus_TS`: BEST_SALES / BEST_EBITDA / BEST_EPS for 1FQ, 2FQ, 1FY, 2FY by obs_date; ABNB, BKNG, EXPE, MAR, HLT, H, IH...
+[LICENCE] docs\margin-build\notes\01_input_census.md:39  Bloomberg BEST_* field
+        ...12,454 weekly rows tested only against nights, M09/GAP15); Bloomberg `BEST_EBITDA`    revision history (L01) for M5; the adj. EBITDA definition's **add...
+[LICENCE] docs\margin-build\notes\01_input_census.md:237  Third Bridge
+        ...hon`). - Theo's OneDrive `processed/` and `metadata/` folders and the Third Bridge digests were not enumerated (revenue-side content;   the licensed ite...
+[LICENCE] docs\margin-build\notes\01_input_census.md:76  FactSet
+        ...h (FRED cache, Google Trends, 10-Qs), 4 licensed_local (Bloomberg ×2, FactSet, LSEG bodies), 1 candidate_pull (Similarweb template). Gap rows: 26, ...
+[LICENCE] docs\margin-build\notes\05_mgmt_statements_v2.md:69  FactSet
+        ...led) contain no cost or margin statement and yield 0 rows. **pre-2023 FactSet transcripts** (Theo's OneDrive): read locally where 31a had not, noth...
+[LICENCE] docs\margin-build\notes\21_red_team.md:304  FactSet
+        ...nore:28`); no `data/raw/margin_build` file is tracked; no   Bloomberg/FactSet/LSEG raw rows in any committed file. The committed consensus files ar...
+[LICENCE] docs\margin-build\prompts\03_consensus_pit.md:24  Bloomberg extract filename
+        ...ugh.  Bloomberg (read-only from `data/raw/theo_onedrive/.../bloomberg/bbg_extracted_long.csv`, sheet `1_Consensus_TS`): BEST_EBITDA, BEST_SALES, BEST_EPS for ...
+[LICENCE] docs\margin-build\prompts\03_consensus_pit.md:24  Bloomberg BEST_* field
+        ...drive/.../bloomberg/bbg_extracted_long.csv`, sheet `1_Consensus_TS`): BEST_EBITDA, BEST_SALES, BEST_EPS for 1FQ/2FQ/1FY/2FY by obs_date. Establish whet...
+[LICENCE] docs\margin-build\prompts\03_consensus_pit.md:24  Bloomberg BEST_* field
+        ...omberg/bbg_extracted_long.csv`, sheet `1_Consensus_TS`): BEST_EBITDA, BEST_SALES, BEST_EPS for 1FQ/2FQ/1FY/2FY by obs_date. Establish whether obs_date...
+[LICENCE] docs\margin-build\prompts\03_consensus_pit.md:25  Bloomberg BEST_* field
+        ...xtracted_long.csv`, sheet `1_Consensus_TS`): BEST_EBITDA, BEST_SALES, BEST_EPS for 1FQ/2FQ/1FY/2FY by obs_date. Establish whether obs_date is a true...
+[LICENCE] docs\margin-build\prompts\05_mgmt_statements_v2.md:14  FactSet
+        ...onedrive/AIRBNB DATA/raw_expansion_licensed/v2_2026-09-05/transcripts_factset/` (pre-2023 FactSet transcripts; licensed,   read locally, never copy...
+[LICENCE] docs\margin-build\prompts\05_mgmt_statements_v2.md:14  FactSet
+        .../raw_expansion_licensed/v2_2026-09-05/transcripts_factset/` (pre-2023 FactSet transcripts; licensed,   read locally, never copy), `data/processed/o...
+[LICENCE] docs\margin-build\prompts\21_red_team.md:17  FactSet
+        ...data copied into `data/processed` or a note (Bloomberg/LSEG raw rows, FactSet text beyond short verbatims). 4. **Reproducibility.** `run.py` exit c...
+[LICENCE] docs\margin-build\RUN_STATE.md:19  FactSet
+        ...--cached --stat`; no `data/raw`,    nothing matching `*bloomberg*`, `*factset*`, `lseg`). Do not push until stage 4 is done. 5. Stage 4 (Codex audi...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:119  Bloomberg extract filename
+        ...o_onedrive/AIRBNB DATA/raw_expansion_licensed/v2_2026-09-05/bloomberg/bbg_extracted_long.csv,,daily,2020-12,2026-09,6365,0,margin_total;guide,Consensus EBITDA...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:119  Bloomberg BEST_* field
+        ... export (6,365 rows): PX_LAST, 30d vol, comps, target/rating history, BEST_SALES / BEST_EBITDA / BEST_EPS for 1FQ, 2FQ, 1FY, 2FY by obs_date for ABNB,...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:119  Bloomberg BEST_* field
+        ...5 rows): PX_LAST, 30d vol, comps, target/rating history, BEST_SALES / BEST_EBITDA / BEST_EPS for 1FQ, 2FQ, 1FY, 2FY by obs_date for ABNB, BKNG, EXPE, M...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:119  Bloomberg BEST_* field
+        ...ST, 30d vol, comps, target/rating history, BEST_SALES / BEST_EBITDA / BEST_EPS for 1FQ, 2FQ, 1FY, 2FY by obs_date for ABNB, BKNG, EXPE, MAR, HLT, H,...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:115  FactSet
+        ...ows tagged -sa (audio-aligned).,available,M3 guide X06_ir_transcripts_factset,FactSet-corrected IR transcripts 1Q23-2Q26 (PDF + JSON) under data/ra...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:115  FactSet
+        ...ed -sa (audio-aligned).,available,M3 guide X06_ir_transcripts_factset,FactSet-corrected IR transcripts 1Q23-2Q26 (PDF + JSON) under data/raw/regula...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:121  FactSet
+        ...6 implied 10.0% vs realised 33.7%.,licensed_local,M7 below-EBITDA L03_factset_transcripts,"FactSet transcripts Q4 2020, Q4 2021, Q4 2022, Q3 23, Q2...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:121  FactSet
+        ...alised 33.7%.,licensed_local,M7 below-EBITDA L03_factset_transcripts,"FactSet transcripts Q4 2020, Q4 2021, Q4 2022, Q3 23, Q2 24, Q2 25 (OneDrive,...
+[LICENCE] data\processed\margin_build\01_input_census\01_input_census.csv:121  FactSet
+        ...onedrive/AIRBNB DATA/raw_expansion_licensed/v2_2026-09-05/transcripts_factset,,event,4Q20,2Q25,6,0,guide,Corrected wording for the pre-2023 -sa row...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:2  Bloomberg BEST_* field
+        ...,fperiod,n,n_rolling,mape_rolling,n_fixed,mape_fixed,median_abs_fixed BEST_EBITDA,1FQ,23,23,766.8957500636561,4,0.2758957580058452,0.2818693808870121 B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:3  Bloomberg BEST_* field
+        ...A,1FQ,23,23,766.8957500636561,4,0.2758957580058452,0.2818693808870121 BEST_EBITDA,1FY,23,23,238.68535550116098,11,0.5381169573391964,0.1683524205311481...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:4  Bloomberg BEST_* field
+        ...FY,23,23,238.68535550116098,11,0.5381169573391964,0.16835242053114818 BEST_EPS,1FQ,23,23,893.3106916619004,4,1.1583084449927923,0.9418681157563558 B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:5  Bloomberg BEST_* field
+        ...S,1FQ,23,23,893.3106916619004,4,1.1583084449927923,0.9418681157563558 BEST_EPS,1FY,23,23,142.14789455382058,11,1.099170889323239,0.7846052850126295 ...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:6  Bloomberg BEST_* field
+        ...,1FY,23,23,142.14789455382058,11,1.099170889323239,0.7846052850126295 BEST_SALES,1FQ,23,23,118.2177495912075,4,0.07388778202780943,0.01438161047636055...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:7  Bloomberg BEST_* field
+        ...FQ,23,23,118.2177495912075,4,0.07388778202780943,0.014381610476360551 BEST_SALES,1FY,23,23,59.891450522657024,11,0.21541814890641098,0.129458502433688...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:8  Bloomberg BEST_* field
+        ...Y,23,23,59.891450522657024,11,0.21541814890641098,0.12945850243368806 BEST_SALES,2FQ,23,23,49.67659510712335,3,0.16788014435450416,0.1449304935343454 ...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test.csv:9  Bloomberg BEST_* field
+        ...,2FQ,23,23,49.67659510712335,3,0.16788014435450416,0.1449304935343454 BEST_SALES,2FY,23,23,57.545030474620546,7,0.2075234524985481,0.11128101564727988...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:2  Bloomberg BEST_* field
+        ...ed_period,lseg_fixed_value,pct_diff_rolling,pct_diff_fixed 2021-03-31,BEST_SALES,1FQ,4537.0,2021Q1,695.99481,2026Q3,,551.8726770390716, 2021-06-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:3  Bloomberg BEST_* field
+        ...LES,1FQ,4537.0,2021Q1,695.99481,2026Q3,,551.8726770390716, 2021-06-30,BEST_SALES,1FQ,4537.0,2021Q2,1231.57433,2026Q3,,268.3902700375381, 2021-09-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:4  Bloomberg BEST_* field
+        ...ES,1FQ,4537.0,2021Q2,1231.57433,2026Q3,,268.3902700375381, 2021-09-30,BEST_SALES,1FQ,4537.0,2021Q3,2035.61266,2026Q3,,122.88130198600751, 2021-12-31,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:5  Bloomberg BEST_* field
+        ...S,1FQ,4537.0,2021Q3,2035.61266,2026Q3,,122.88130198600751, 2021-12-31,BEST_SALES,1FQ,4546.0,2021Q4,1461.444,2026Q3,,211.062209704922, 2022-03-31,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:6  Bloomberg BEST_* field
+        ...SALES,1FQ,4546.0,2021Q4,1461.444,2026Q3,,211.062209704922, 2022-03-31,BEST_SALES,1FQ,4563.0,2022Q1,1453.08758,2026Q3,,214.02098970524546, 2022-06-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:7  Bloomberg BEST_* field
+        ...S,1FQ,4563.0,2022Q1,1453.08758,2026Q3,,214.02098970524546, 2022-06-30,BEST_SALES,1FQ,4673.0,2022Q2,2097.79053,2026Q3,,122.75817976926416, 2022-09-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:8  Bloomberg BEST_* field
+        ...S,1FQ,4673.0,2022Q2,2097.79053,2026Q3,,122.75817976926416, 2022-09-30,BEST_SALES,1FQ,4283.0,2022Q3,2841.54413,2026Q3,,50.72790722416125, 2022-12-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:9  Bloomberg BEST_* field
+        ...ES,1FQ,4283.0,2022Q3,2841.54413,2026Q3,,50.72790722416125, 2022-12-30,BEST_SALES,1FQ,4410.0,2022Q4,1851.95767,2026Q3,,138.1263930292748, 2023-03-31,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:10  Bloomberg BEST_* field
+        ...ES,1FQ,4410.0,2022Q4,1851.95767,2026Q3,,138.1263930292748, 2023-03-31,BEST_SALES,1FQ,4580.0,2023Q1,1793.45436,2026Q3,,155.37310021092478, 2023-06-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:11  Bloomberg BEST_* field
+        ...S,1FQ,4580.0,2023Q1,1793.45436,2026Q3,,155.37310021092478, 2023-06-30,BEST_SALES,1FQ,4320.0,2023Q2,2413.4922,2026Q3,,78.9937419312977, 2023-09-29,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:12  Bloomberg BEST_* field
+        ...ALES,1FQ,4320.0,2023Q2,2413.4922,2026Q3,,78.9937419312977, 2023-09-29,BEST_SALES,1FQ,4707.0,2023Q3,3365.33586,2026Q3,,39.867169156780676, 2023-12-29,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:13  Bloomberg BEST_* field
+        ...S,1FQ,4707.0,2023Q3,3365.33586,2026Q3,,39.867169156780676, 2023-12-29,BEST_SALES,1FQ,4920.5,2023Q4,2158.5839,2026Q3,,127.9503706110288, 2024-03-28,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:14  Bloomberg BEST_* field
+        ...LES,1FQ,4920.5,2023Q4,2158.5839,2026Q3,,127.9503706110288, 2024-03-28,BEST_SALES,1FQ,4754.444,2024Q1,2058.03534,2026Q3,,131.01857910758716, 2024-06-28...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:15  Bloomberg BEST_* field
+        ...1FQ,4754.444,2024Q1,2058.03534,2026Q3,,131.01857910758716, 2024-06-28,BEST_SALES,1FQ,4760.5,2024Q2,2729.942,2026Q3,,74.38099417496782, 2024-09-30,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:16  Bloomberg BEST_* field
+        ...ALES,1FQ,4760.5,2024Q2,2729.942,2026Q3,,74.38099417496782, 2024-09-30,BEST_SALES,1FQ,4415.375,2024Q3,3714.4018,2026Q3,,18.871765569357635, 2024-12-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:17  Bloomberg BEST_* field
+        ...,1FQ,4415.375,2024Q3,3714.4018,2026Q3,,18.871765569357635, 2024-12-31,BEST_SALES,1FQ,4551.25,2024Q4,2424.01671,2026Q3,,87.75654397200918, 2025-03-31,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:18  Bloomberg BEST_* field
+        ...S,1FQ,4551.25,2024Q4,2424.01671,2026Q3,,87.75654397200918, 2025-03-31,BEST_SALES,1FQ,4559.25,2025Q1,2263.13585,2026Q3,,101.45719489176929, 2025-06-30,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:19  Bloomberg BEST_* field
+        ...,1FQ,4559.25,2025Q1,2263.13585,2026Q3,,101.45719489176929, 2025-06-30,BEST_SALES,1FQ,4415.947,2025Q2,3031.19222,2026Q3,,45.68350271102241, 2025-09-30,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:20  Bloomberg BEST_* field
+        ...,1FQ,4415.947,2025Q2,3031.19222,2026Q3,,45.68350271102241, 2025-09-30,BEST_SALES,1FQ,4442.458,2025Q3,4073.86322,2026Q3,,9.047794687618381, 2025-12-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:21  Bloomberg BEST_* field
+        ...,1FQ,4442.458,2025Q3,4073.86322,2026Q3,,9.047794687618381, 2025-12-31,BEST_SALES,1FQ,4486.241,2025Q4,2710.71624,2026Q3,4486.40696,65.50020742857245,-0...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:22  Bloomberg BEST_* field
+        ...,2026Q3,4486.40696,65.50020742857245,-0.003699174004501149 2026-03-31,BEST_SALES,1FQ,4554.784,2026Q1,2614.22566,2026Q3,4542.83232,74.23071273808854,0....
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:23  Bloomberg BEST_* field
+        ...566,2026Q3,4542.83232,74.23071273808854,0.2630887331540155 2026-06-30,BEST_SALES,1FQ,4608.629,2026Q2,3571.90422,2026Q3,4609.39216,29.024428320197227,-...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:24  Bloomberg BEST_* field
+        ...2026Q3,4609.39216,29.024428320197227,-0.016556629887620744 2026-09-30,BEST_SALES,1FQ,4743.743,2026Q3,4744.32212,2026Q3,4744.32212,-0.01220659106510035...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:25  Bloomberg BEST_* field
+        ...6Q3,4744.32212,-0.012206591065100358,-0.012206591065100358 2021-03-31,BEST_SALES,2FQ,3231.0,2021Q2,968.709,2026Q4,,233.53669677890883, 2021-06-30,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:26  Bloomberg BEST_* field
+        ...ALES,2FQ,3231.0,2021Q2,968.709,2026Q4,,233.53669677890883, 2021-06-30,BEST_SALES,2FQ,3231.0,2021Q3,1888.51144,2026Q4,,71.08712881294488, 2021-09-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:27  Bloomberg BEST_* field
+        ...ES,2FQ,3231.0,2021Q3,1888.51144,2026Q4,,71.08712881294488, 2021-09-30,BEST_SALES,2FQ,3231.0,2021Q4,1441.02579,2026Q4,,124.21527931155212, 2021-12-31,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:28  Bloomberg BEST_* field
+        ...S,2FQ,3231.0,2021Q4,1441.02579,2026Q4,,124.21527931155212, 2021-12-31,BEST_SALES,2FQ,3236.0,2022Q1,1252.08396,2026Q4,,158.44912189434964, 2022-03-31,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:29  Bloomberg BEST_* field
+        ...S,2FQ,3236.0,2022Q1,1252.08396,2026Q4,,158.44912189434964, 2022-03-31,BEST_SALES,2FQ,3254.0,2022Q2,1962.52703,2026Q4,,65.80663350150138, 2022-06-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:30  Bloomberg BEST_* field
+        ...ES,2FQ,3254.0,2022Q2,1962.52703,2026Q4,,65.80663350150138, 2022-06-30,BEST_SALES,2FQ,3318.0,2022Q3,2790.2725,2026Q4,,18.91311690883237, 2022-09-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:31  Bloomberg BEST_* field
+        ...LES,2FQ,3318.0,2022Q3,2790.2725,2026Q4,,18.91311690883237, 2022-09-30,BEST_SALES,2FQ,2957.0,2022Q4,1848.1427,2026Q4,,59.998467650793394, 2022-12-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:32  Bloomberg BEST_* field
+        ...ES,2FQ,2957.0,2022Q4,1848.1427,2026Q4,,59.998467650793394, 2022-12-30,BEST_SALES,2FQ,3156.5,2023Q1,1678.15796,2026Q4,,88.09313993302514, 2023-03-31,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:33  Bloomberg BEST_* field
+        ...ES,2FQ,3156.5,2023Q1,1678.15796,2026Q4,,88.09313993302514, 2023-03-31,BEST_SALES,2FQ,3126.5,2023Q2,2421.45677,2026Q4,,29.116490483536506, 2023-06-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:34  Bloomberg BEST_* field
+        ...S,2FQ,3126.5,2023Q2,2421.45677,2026Q4,,29.116490483536506, 2023-06-30,BEST_SALES,2FQ,3057.5,2023Q3,3199.12758,2026Q4,,-4.427068832309589, 2023-09-29,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:35  Bloomberg BEST_* field
+        ...S,2FQ,3057.5,2023Q3,3199.12758,2026Q4,,-4.427068832309589, 2023-09-29,BEST_SALES,2FQ,3321.0,2023Q4,2191.06707,2026Q4,,51.56998366097483, 2023-12-29,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:36  Bloomberg BEST_* field
+        ...ES,2FQ,3321.0,2023Q4,2191.06707,2026Q4,,51.56998366097483, 2023-12-29,BEST_SALES,2FQ,3140.5,2024Q1,2027.6327,2026Q4,,54.88505388574567, 2024-03-28,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:37  Bloomberg BEST_* field
+        ...LES,2FQ,3140.5,2024Q1,2027.6327,2026Q4,,54.88505388574567, 2024-03-28,BEST_SALES,2FQ,3129.667,2024Q2,2733.84574,2026Q4,,14.478551375762683, 2024-06-28...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:38  Bloomberg BEST_* field
+        ...2FQ,3129.667,2024Q2,2733.84574,2026Q4,,14.478551375762683, 2024-06-28,BEST_SALES,2FQ,3121.5,2024Q3,3826.5813,2026Q4,,-18.425880563415696, 2024-09-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:39  Bloomberg BEST_* field
+        ...S,2FQ,3121.5,2024Q3,3826.5813,2026Q4,,-18.425880563415696, 2024-09-30,BEST_SALES,2FQ,2941.222,2024Q4,2424.23549,2026Q4,,21.32575453715515, 2024-12-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:40  Bloomberg BEST_* field
+        ...,2FQ,2941.222,2024Q4,2424.23549,2026Q4,,21.32575453715515, 2024-12-31,BEST_SALES,2FQ,3004.25,2025Q1,2307.50689,2026Q4,,30.194627501198923, 2025-03-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:41  Bloomberg BEST_* field
+        ...,2FQ,3004.25,2025Q1,2307.50689,2026Q4,,30.194627501198923, 2025-03-31,BEST_SALES,2FQ,3060.2,2025Q2,3056.15149,2026Q4,,0.13247085470882158, 2025-06-30,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:42  Bloomberg BEST_* field
+        ...,2FQ,3060.2,2025Q2,3056.15149,2026Q4,,0.13247085470882158, 2025-06-30,BEST_SALES,2FQ,2958.368,2025Q3,4028.77247,2026Q4,,-26.568997826774766, 2025-09-3...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:43  Bloomberg BEST_* field
+        ...FQ,2958.368,2025Q3,4028.77247,2026Q4,,-26.568997826774766, 2025-09-30,BEST_SALES,2FQ,2933.542,2025Q4,2676.055,2026Q4,,9.62188744252268, 2025-12-31,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:44  Bloomberg BEST_* field
+        ...LES,2FQ,2933.542,2025Q4,2676.055,2026Q4,,9.62188744252268, 2025-12-31,BEST_SALES,2FQ,2973.593,2026Q1,2521.873,2026Q4,,17.91208359818277, 2026-03-31,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:45  Bloomberg BEST_* field
+        ...ES,2FQ,2973.593,2026Q1,2521.873,2026Q4,,17.91208359818277, 2026-03-31,BEST_SALES,2FQ,3066.865,2026Q2,3454.33597,2026Q4,3062.42661,-11.21694511955652,0...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:46  Bloomberg BEST_* field
+        ...97,2026Q4,3062.42661,-11.21694511955652,0.1449304935343454 2026-06-30,BEST_SALES,2FQ,3118.714,2026Q3,4609.39216,2026Q4,3122.22397,-32.3400159555962,-0...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:47  Bloomberg BEST_* field
+        ...16,2026Q4,3122.22397,-32.3400159555962,-0.1124189050409452 2026-09-30,BEST_SALES,2FQ,3154.029,2026Q4,3161.81627,2026Q4,3161.81627,-0.24629103448822187...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:48  Bloomberg BEST_* field
+        ...026Q4,3161.81627,-0.24629103448822187,-0.24629103448822187 2021-03-31,BEST_SALES,1FY,14402.0,FY2021,4741.84519,FY2026,,203.7214295897332, 2021-06-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:49  Bloomberg BEST_* field
+        ...S,1FY,14402.0,FY2021,4741.84519,FY2026,,203.7214295897332, 2021-06-30,BEST_SALES,1FY,14550.8,FY2021,5391.45809,FY2026,,169.8861747064049, 2021-09-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:50  Bloomberg BEST_* field
+        ...S,1FY,14550.8,FY2021,5391.45809,FY2026,,169.8861747064049, 2021-09-30,BEST_SALES,1FY,14711.545,FY2021,5679.33775,FY2026,,159.03627584043582, 2021-12-3...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:51  Bloomberg BEST_* field
+        ...FY,14711.545,FY2021,5679.33775,FY2026,,159.03627584043582, 2021-12-31,BEST_SALES,1FY,15564.0,FY2021,5898.13249,FY2026,,163.88013538841344, 2022-03-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:52  Bloomberg BEST_* field
+        ...,1FY,15564.0,FY2021,5898.13249,FY2026,,163.88013538841344, 2022-03-31,BEST_SALES,1FY,16422.429,FY2022,7866.31592,FY2026,,108.76899894455296, 2022-06-3...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:53  Bloomberg BEST_* field
+        ...FY,16422.429,FY2022,7866.31592,FY2026,,108.76899894455296, 2022-06-30,BEST_SALES,1FY,16346.643,FY2022,8207.06265,FY2026,,99.17775332201224, 2022-09-30...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:54  Bloomberg BEST_* field
+        ...1FY,16346.643,FY2022,8207.06265,FY2026,,99.17775332201224, 2022-09-30,BEST_SALES,1FY,15440.333,FY2022,8271.75235,FY2026,,86.66338578185308, 2022-12-30...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:55  Bloomberg BEST_* field
+        ...1FY,15440.333,FY2022,8271.75235,FY2026,,86.66338578185308, 2022-12-30,BEST_SALES,1FY,14600.063,FY2022,8348.53576,FY2026,,74.8817208156751, 2023-03-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:56  Bloomberg BEST_* field
+        ...,1FY,14600.063,FY2022,8348.53576,FY2026,,74.8817208156751, 2023-03-31,BEST_SALES,1FY,14569.688,FY2023,9609.54604,FY2026,,51.61681872747448, 2023-06-30...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:57  Bloomberg BEST_* field
+        ...1FY,14569.688,FY2023,9609.54604,FY2026,,51.61681872747448, 2023-06-30,BEST_SALES,1FY,13886.353,FY2023,9506.60146,FY2026,,46.07063374254461, 2023-09-29...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:58  Bloomberg BEST_* field
+        ...1FY,13886.353,FY2023,9506.60146,FY2026,,46.07063374254461, 2023-09-29,BEST_SALES,1FY,14191.714,FY2023,9854.6383,FY2026,,44.01050112615496, 2023-12-29,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:59  Bloomberg BEST_* field
+        ...,1FY,14191.714,FY2023,9854.6383,FY2026,,44.01050112615496, 2023-12-29,BEST_SALES,1FY,13638.167,FY2023,9848.96252,FY2026,,38.47313331028901, 2024-03-28...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:60  Bloomberg BEST_* field
+        ...1FY,13638.167,FY2023,9848.96252,FY2026,,38.47313331028901, 2024-03-28,BEST_SALES,1FY,13799.231,FY2024,11081.01684,FY2026,13911.93885,24.53036755785671...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:61  Bloomberg BEST_* field
+        ...,FY2026,13911.93885,24.530367557856714,-0.8101519940191593 2024-06-28,BEST_SALES,1FY,13907.107,FY2024,11179.29958,FY2026,13906.72235,24.40052170066273...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:62  Bloomberg BEST_* field
+        ...FY2026,13906.72235,24.400521700662736,0.002765928522330263 2024-09-30,BEST_SALES,1FY,13342.065,FY2024,11020.46918,FY2026,13428.11014,21.06621580334569...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:63  Bloomberg BEST_* field
+        ...18,FY2026,13428.11014,21.06621580334569,-0.640783692588931 2024-12-31,BEST_SALES,1FY,13428.714,FY2024,11041.35495,FY2026,13477.81442,21.62197538989541...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:64  Bloomberg BEST_* field
+        ...5,FY2026,13477.81442,21.62197538989541,-0.3643055058477396 2025-03-31,BEST_SALES,1FY,13502.405,FY2025,12189.3818,FY2026,13519.90767,10.771860472858453...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:65  Bloomberg BEST_* field
+        ...FY2026,13519.90767,10.771860472858453,-0.12945850243368806 2025-06-30,BEST_SALES,1FY,13156.244,FY2025,12021.98354,FY2026,13176.10771,9.434886150243393...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:66  Bloomberg BEST_* field
+        ...4,FY2026,13176.10771,9.434886150243393,-0.1507555223226098 2025-09-30,BEST_SALES,1FY,13264.591,FY2025,12120.75343,FY2026,13270.12813,9.437017068335818...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:67  Bloomberg BEST_* field
+        ...FY2026,13270.12813,9.437017068335818,-0.041726273821585114 2025-12-31,BEST_SALES,1FY,13370.756,FY2025,12173.07426,FY2026,13372.745,9.838777899642913,-...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:68  Bloomberg BEST_* field
+        ...6,FY2026,13372.745,9.838777899642913,-0.014873535687709438 2026-03-31,BEST_SALES,1FY,13702.949,FY2026,13700.5097,FY2026,13700.5097,0.01780444708563422...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:69  Bloomberg BEST_* field
+        ...Y2026,13700.5097,0.017804447085634223,0.017804447085634223 2026-06-30,BEST_SALES,1FY,13964.634,FY2026,13964.39513,FY2026,13964.39513,0.001710564602164...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:70  Bloomberg BEST_* field
+        ...2026,13964.39513,0.001710564602164233,0.001710564602164233 2026-09-30,BEST_SALES,1FY,14161.85,FY2026,14189.55705,FY2026,14189.55705,-0.195263671038969...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:71  Bloomberg BEST_* field
+        ...FY2026,14189.55705,-0.1952636710389699,-0.1952636710389699 2021-03-31,BEST_SALES,2FY,18220.167,FY2022,6353.59229,FY2027,,186.76953396391136, 2021-06-3...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:72  Bloomberg BEST_* field
+        ...FY,18220.167,FY2022,6353.59229,FY2027,,186.76953396391136, 2021-06-30,BEST_SALES,2FY,17755.25,FY2022,6900.43852,FY2027,,157.30611103249132, 2021-09-30...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:73  Bloomberg BEST_* field
+        ...2FY,17755.25,FY2022,6900.43852,FY2027,,157.30611103249132, 2021-09-30,BEST_SALES,2FY,17965.0,FY2022,7107.99117,FY2027,,152.74370170608975, 2021-12-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:74  Bloomberg BEST_* field
+        ...,2FY,17965.0,FY2022,7107.99117,FY2027,,152.74370170608975, 2021-12-31,BEST_SALES,2FY,18699.0,FY2022,7330.24738,FY2027,,155.09371008431097, 2022-03-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:75  Bloomberg BEST_* field
+        ...,2FY,18699.0,FY2022,7330.24738,FY2027,,155.09371008431097, 2022-03-31,BEST_SALES,2FY,19702.0,FY2023,9515.87714,FY2027,,107.04344654874349, 2022-06-30,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:76  Bloomberg BEST_* field
+        ...,2FY,19702.0,FY2023,9515.87714,FY2027,,107.04344654874349, 2022-06-30,BEST_SALES,2FY,19161.3,FY2023,9788.82029,FY2027,,95.74677471170531, 2022-09-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:77  Bloomberg BEST_* field
+        ...S,2FY,19161.3,FY2023,9788.82029,FY2027,,95.74677471170531, 2022-09-30,BEST_SALES,2FY,17967.0,FY2023,9531.69743,FY2027,,88.49738078603697, 2022-12-30,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:78  Bloomberg BEST_* field
+        ...S,2FY,17967.0,FY2023,9531.69743,FY2027,,88.49738078603697, 2022-12-30,BEST_SALES,2FY,16576.727,FY2023,9369.79395,FY2027,,76.91666528056362, 2023-03-31...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:79  Bloomberg BEST_* field
+        ...2FY,16576.727,FY2023,9369.79395,FY2027,,76.91666528056362, 2023-03-31,BEST_SALES,2FY,16171.692,FY2024,11059.90836,FY2027,,46.219041547284576, 2023-06-...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:80  Bloomberg BEST_* field
+        ...Y,16171.692,FY2024,11059.90836,FY2027,,46.219041547284576, 2023-06-30,BEST_SALES,2FY,15659.533,FY2024,10785.33543,FY2027,,45.19282317768396, 2023-09-2...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:81  Bloomberg BEST_* field
+        ...FY,15659.533,FY2024,10785.33543,FY2027,,45.19282317768396, 2023-09-29,BEST_SALES,2FY,15901.167,FY2024,11167.69946,FY2027,,42.3853413762981, 2023-12-29...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:82  Bloomberg BEST_* field
+        ...2FY,15901.167,FY2024,11167.69946,FY2027,,42.3853413762981, 2023-12-29,BEST_SALES,2FY,15217.429,FY2024,10993.76876,FY2027,,38.41867454377854, 2024-03-2...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:83  Bloomberg BEST_* field
+        ...FY,15217.429,FY2024,10993.76876,FY2027,,38.41867454377854, 2024-03-28,BEST_SALES,2FY,15247.0,FY2025,12386.45124,FY2027,,23.094175277276598, 2024-06-28...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:84  Bloomberg BEST_* field
+        ...2FY,15247.0,FY2025,12386.45124,FY2027,,23.094175277276598, 2024-06-28,BEST_SALES,2FY,15485.941,FY2025,12481.73055,FY2027,,24.068861589068668, 2024-09-...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:85  Bloomberg BEST_* field
+        ...Y,15485.941,FY2025,12481.73055,FY2027,,24.068861589068668, 2024-09-30,BEST_SALES,2FY,14755.833,FY2025,12119.01373,FY2027,,21.75770511318662, 2024-12-3...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:86  Bloomberg BEST_* field
+        ...FY,14755.833,FY2025,12119.01373,FY2027,,21.75770511318662, 2024-12-31,BEST_SALES,2FY,14932.95,FY2025,12215.42867,FY2027,,22.246630907632326, 2025-03-3...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:87  Bloomberg BEST_* field
+        ...FY,14932.95,FY2025,12215.42867,FY2027,,22.246630907632326, 2025-03-31,BEST_SALES,2FY,14929.179,FY2026,13519.90767,FY2027,14869.46605,10.42367569659592...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:88  Bloomberg BEST_* field
+        ...7,FY2027,14869.46605,10.423675696595925,0.4015809969181827 2025-06-30,BEST_SALES,2FY,14439.115,FY2026,13176.10771,FY2027,14454.2145,9.585587168822563,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:89  Bloomberg BEST_* field
+        ...1,FY2027,14454.2145,9.585587168822563,-0.10446434152475703 2025-09-30,BEST_SALES,2FY,14586.194,FY2026,13270.12813,FY2027,14638.85268,9.917506877908355...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:90  Bloomberg BEST_* field
+        ...,FY2027,14638.85268,9.917506877908355,-0.35971862789454523 2025-12-31,BEST_SALES,2FY,14660.906,FY2026,13372.745,FY2027,14644.60933,9.63273434137868,0....
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:91  Bloomberg BEST_* field
+        ...45,FY2027,14644.60933,9.63273434137868,0.11128101564727988 2026-03-31,BEST_SALES,2FY,15073.795,FY2027,15069.37564,FY2027,15069.37564,0.029326762472292...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:92  Bloomberg BEST_* field
+        ...4,FY2027,15069.37564,0.0293267624722926,0.0293267624722926 2026-06-30,BEST_SALES,2FY,15430.9,FY2027,15442.08795,FY2027,15442.08795,-0.0724510185165727...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:93  Bloomberg BEST_* field
+        ...2027,15442.08795,-0.07245101851657276,-0.07245101851657276 2026-09-30,BEST_SALES,2FY,15760.2,FY2027,15819.33924,FY2027,15819.33924,-0.3738414045162064...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:94  Bloomberg BEST_* field
+        ...FY2027,15819.33924,-0.3738414045162064,-0.3738414045162064 2021-03-31,BEST_EBITDA,1FQ,2015.0,2021Q1,-366.7382,2026Q3,,-649.4382641350151, 2021-06-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:95  Bloomberg BEST_* field
+        ...DA,1FQ,2015.0,2021Q1,-366.7382,2026Q3,,-649.4382641350151, 2021-06-30,BEST_EBITDA,1FQ,2090.0,2021Q2,24.69829,2026Q3,,8362.124300913141, 2021-09-30,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:96  Bloomberg BEST_* field
+        ...ITDA,1FQ,2090.0,2021Q2,24.69829,2026Q3,,8362.124300913141, 2021-09-30,BEST_EBITDA,1FQ,2088.0,2021Q3,783.35064,2026Q3,,166.54730249534234, 2021-12-31,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:97  Bloomberg BEST_* field
+        ...DA,1FQ,2088.0,2021Q3,783.35064,2026Q3,,166.54730249534234, 2021-12-31,BEST_EBITDA,1FQ,2280.0,2021Q4,279.52593,2026Q3,,715.6667254447557, 2022-03-31,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:98  Bloomberg BEST_* field
+        ...TDA,1FQ,2280.0,2021Q4,279.52593,2026Q3,,715.6667254447557, 2022-03-31,BEST_EBITDA,1FQ,2339.0,2022Q1,76.53659,2026Q3,,2956.0546269437923, 2022-06-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:99  Bloomberg BEST_* field
+        ...TDA,1FQ,2339.0,2022Q1,76.53659,2026Q3,,2956.0546269437923, 2022-06-30,BEST_EBITDA,1FQ,2397.0,2022Q2,589.14435,2026Q3,,306.8612386760562, 2022-09-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:100  Bloomberg BEST_* field
+        ...TDA,1FQ,2397.0,2022Q2,589.14435,2026Q3,,306.8612386760562, 2022-09-30,BEST_EBITDA,1FQ,2197.0,2022Q3,1382.78803,2026Q3,,58.88190759071006, 2022-12-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:101  Bloomberg BEST_* field
+        ...DA,1FQ,2197.0,2022Q3,1382.78803,2026Q3,,58.88190759071006, 2022-12-30,BEST_EBITDA,1FQ,2367.0,2022Q4,426.1279,2026Q3,,455.4670323158845, 2023-03-31,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:102  Bloomberg BEST_* field
+        ...ITDA,1FQ,2367.0,2022Q4,426.1279,2026Q3,,455.4670323158845, 2023-03-31,BEST_EBITDA,1FQ,2416.5,2023Q1,260.37807,2026Q3,,828.0735508946665, 2023-06-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:103  Bloomberg BEST_* field
+        ...TDA,1FQ,2416.5,2023Q1,260.37807,2026Q3,,828.0735508946665, 2023-06-30,BEST_EBITDA,1FQ,2207.5,2023Q2,723.55631,2026Q3,,205.09028385088644, 2023-09-29,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:104  Bloomberg BEST_* field
+        ...DA,1FQ,2207.5,2023Q2,723.55631,2026Q3,,205.09028385088644, 2023-09-29,BEST_EBITDA,1FQ,2491.0,2023Q3,1745.29727,2026Q3,,42.7264021332022, 2023-12-29,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:105  Bloomberg BEST_* field
+        ...TDA,1FQ,2491.0,2023Q3,1745.29727,2026Q3,,42.7264021332022, 2023-12-29,BEST_EBITDA,1FQ,2825.0,2023Q4,643.46314,2026Q3,,339.03058689577773, 2024-03-28,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:106  Bloomberg BEST_* field
+        ...DA,1FQ,2825.0,2023Q4,643.46314,2026Q3,,339.03058689577773, 2024-03-28,BEST_EBITDA,1FQ,2631.889,2024Q1,324.74587,2026Q3,,710.4457186784238, 2024-06-28,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:107  Bloomberg BEST_* field
+        ...A,1FQ,2631.889,2024Q1,324.74587,2026Q3,,710.4457186784238, 2024-06-28,BEST_EBITDA,1FQ,2606.5,2024Q2,857.60375,2026Q3,,203.9282419182519, 2024-09-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:108  Bloomberg BEST_* field
+        ...TDA,1FQ,2606.5,2024Q2,857.60375,2026Q3,,203.9282419182519, 2024-09-30,BEST_EBITDA,1FQ,2237.333,2024Q3,1861.62521,2026Q3,,20.181709400035473, 2024-12-31...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:109  Bloomberg BEST_* field
+        ...1FQ,2237.333,2024Q3,1861.62521,2026Q3,,20.181709400035473, 2024-12-31,BEST_EBITDA,1FQ,2364.083,2024Q4,653.71991,2026Q3,,261.63545944317343, 2025-03-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:110  Bloomberg BEST_* field
+        ...,1FQ,2364.083,2024Q4,653.71991,2026Q3,,261.63545944317343, 2025-03-31,BEST_EBITDA,1FQ,2355.824,2025Q1,360.44,2026Q3,,553.5967151259572, 2025-06-30,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:111  Bloomberg BEST_* field
+        ...ITDA,1FQ,2355.824,2025Q1,360.44,2026Q3,,553.5967151259572, 2025-06-30,BEST_EBITDA,1FQ,2232.688,2025Q2,964.89123,2026Q3,,131.39271356005588, 2025-09-30,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:112  Bloomberg BEST_* field
+        ...,1FQ,2232.688,2025Q2,964.89123,2026Q3,,131.39271356005588, 2025-09-30,BEST_EBITDA,1FQ,2254.0,2025Q3,2031.79747,2026Q3,,10.936253897392634, 2025-12-31,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:113  Bloomberg BEST_* field
+        ...A,1FQ,2254.0,2025Q3,2031.79747,2026Q3,,10.936253897392634, 2025-12-31,BEST_EBITDA,1FQ,2261.276,2025Q4,760.166,2026Q3,2250.63265,197.47134178587302,0.47...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:114  Bloomberg BEST_* field
+        ...6,2026Q3,2250.63265,197.47134178587302,0.47290480745489916 2026-03-31,BEST_EBITDA,1FQ,2290.639,2026Q1,483.65258,2026Q3,2281.85468,373.6124843994423,0.3...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:115  Bloomberg BEST_* field
+        ...5258,2026Q3,2281.85468,373.6124843994423,0.384964041619007 2026-06-30,BEST_EBITDA,1FQ,2325.059,2026Q2,1227.77045,2026Q3,2320.9098,89.37245150345493,0.1...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:116  Bloomberg BEST_* field
+        ...045,2026Q3,2320.9098,89.37245150345493,0.17877472015501716 2026-09-30,BEST_EBITDA,1FQ,2359.941,2026Q3,2361.52179,2026Q3,2361.52179,-0.0669394627944575,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:117  Bloomberg BEST_* field
+        ...,2026Q3,2361.52179,-0.0669394627944575,-0.0669394627944575 2021-03-31,BEST_EBITDA,1FY,4393.143,FY2021,123.12043,FY2026,,3468.1673626383536, 2021-06-30,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:118  Bloomberg BEST_* field
+        ...,1FY,4393.143,FY2021,123.12043,FY2026,,3468.1673626383536, 2021-06-30,BEST_EBITDA,1FY,4518.3,FY2021,716.52997,FY2026,,530.5807417936754, 2021-09-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:119  Bloomberg BEST_* field
+        ...TDA,1FY,4518.3,FY2021,716.52997,FY2026,,530.5807417936754, 2021-09-30,BEST_EBITDA,1FY,4752.077,FY2021,1172.0719,FY2026,,305.4424476860166, 2021-12-31,B...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:120  Bloomberg BEST_* field
+        ...A,1FY,4752.077,FY2021,1172.0719,FY2026,,305.4424476860166, 2021-12-31,BEST_EBITDA,1FY,5516.0,FY2021,1503.94194,FY2026,,266.7694778164109, 2022-03-31,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:121  Bloomberg BEST_* field
+        ...DA,1FY,5516.0,FY2021,1503.94194,FY2026,,266.7694778164109, 2022-03-31,BEST_EBITDA,1FY,5767.333,FY2022,2116.72219,FY2026,,172.46527802498255, 2022-06-30...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:122  Bloomberg BEST_* field
+        ...1FY,5767.333,FY2022,2116.72219,FY2026,,172.46527802498255, 2022-06-30,BEST_EBITDA,1FY,5893.267,FY2022,2438.27468,FY2026,,141.69824049520128, 2022-09-30...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:123  Bloomberg BEST_* field
+        ...1FY,5893.267,FY2022,2438.27468,FY2026,,141.69824049520128, 2022-09-30,BEST_EBITDA,1FY,5741.625,FY2022,2694.64717,FY2026,,113.07520568639045, 2022-12-30...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:124  Bloomberg BEST_* field
+        ...1FY,5741.625,FY2022,2694.64717,FY2026,,113.07520568639045, 2022-12-30,BEST_EBITDA,1FY,5628.294,FY2022,2820.42431,FY2026,,99.55486768584831, 2023-03-31,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:125  Bloomberg BEST_* field
+        ...,1FY,5628.294,FY2022,2820.42431,FY2026,,99.55486768584831, 2023-03-31,BEST_EBITDA,1FY,5700.5,FY2023,3348.29365,FY2026,,70.25089779685243, 2023-06-30,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:126  Bloomberg BEST_* field
+        ...DA,1FY,5700.5,FY2023,3348.29365,FY2026,,70.25089779685243, 2023-06-30,BEST_EBITDA,1FY,5258.529,FY2023,3241.53376,FY2026,,62.223483984322314, 2023-09-29...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:127  Bloomberg BEST_* field
+        ...1FY,5258.529,FY2023,3241.53376,FY2026,,62.223483984322314, 2023-09-29,BEST_EBITDA,1FY,5500.786,FY2023,3472.54278,FY2026,,58.40801247090754, 2023-12-29,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:128  Bloomberg BEST_* field
+        ...,1FY,5500.786,FY2023,3472.54278,FY2026,,58.40801247090754, 2023-12-29,BEST_EBITDA,1FY,5198.5,FY2023,3554.00051,FY2026,,46.27178542526433, 2024-03-28,BE...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:129  Bloomberg BEST_* field
+        ...DA,1FY,5198.5,FY2023,3554.00051,FY2026,,46.27178542526433, 2024-03-28,BEST_EBITDA,1FY,5176.808,FY2024,4029.34295,FY2026,5290.35437,28.4777211629504,-2....
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:130  Bloomberg BEST_* field
+        ...295,FY2026,5290.35437,28.4777211629504,-2.1462904383851344 2024-06-28,BEST_EBITDA,1FY,5349.269,FY2024,4052.02313,FY2026,5292.29683,32.01476961954066,1....
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:131  Bloomberg BEST_* field
+        ...313,FY2026,5292.29683,32.01476961954066,1.0765112356708073 2024-09-30,BEST_EBITDA,1FY,4902.074,FY2024,3903.50608,FY2026,4972.19159,25.581308176161443,-...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:132  Bloomberg BEST_* field
+        ...8,FY2026,4972.19159,25.581308176161443,-1.4101948553434718 2024-12-31,BEST_EBITDA,1FY,4769.5,FY2024,3928.62718,FY2026,4792.15147,21.40373167198828,-0.4...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:133  Bloomberg BEST_* field
+        ...8,FY2026,4792.15147,21.40373167198828,-0.47267850654979515 2025-03-31,BEST_EBITDA,1FY,4839.486,FY2025,4257.78218,FY2026,4827.13053,13.66213195997734,0....
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:134  Bloomberg BEST_* field
+        ...218,FY2026,4827.13053,13.66213195997734,0.2559588957292913 2025-06-30,BEST_EBITDA,1FY,4683.474,FY2025,4188.1208,FY2026,4675.60251,11.827576702181087,0....
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:135  Bloomberg BEST_* field
+        ...8,FY2026,4675.60251,11.827576702181087,0.16835242053114818 2025-09-30,BEST_EBITDA,1FY,4698.154,FY2025,4241.10169,FY2026,4695.82751,10.776735466581089,0...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:136  Bloomberg BEST_* field
+        ...9,FY2026,4695.82751,10.776735466581089,0.04954377040140567 2025-12-31,BEST_EBITDA,1FY,4736.972,FY2025,4273.94106,FY2026,4734.02872,10.833816692830101,0...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:137  Bloomberg BEST_* field
+        ...6,FY2026,4734.02872,10.833816692830101,0.06217283785299177 2026-03-31,BEST_EBITDA,1FY,4819.289,FY2026,4814.34947,FY2026,4814.34947,0.10260015461651673,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:138  Bloomberg BEST_* field
+        ...,FY2026,4814.34947,0.10260015461651673,0.10260015461651673 2026-06-30,BEST_EBITDA,1FY,4952.0,FY2026,4950.08114,FY2026,4950.08114,0.038764213064990116,0...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:139  Bloomberg BEST_* field
+        ...Y2026,4950.08114,0.038764213064990116,0.038764213064990116 2026-09-30,BEST_EBITDA,1FY,5046.838,FY2026,5053.72214,FY2026,5053.72214,-0.13621920258560793...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:140  Bloomberg BEST_* field
+        ...Y2026,5053.72214,-0.13621920258560793,-0.13621920258560793 2021-03-31,BEST_EPS,1FQ,2.34,2021Q1,-1.14742,2026Q3,,-303.93578637290614, 2021-06-30,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:141  Bloomberg BEST_* field
+        ..._EPS,1FQ,2.34,2021Q1,-1.14742,2026Q3,,-303.93578637290614, 2021-06-30,BEST_EPS,1FQ,2.46,2021Q2,-0.47796,2026Q3,,-614.6874215415517, 2021-09-30,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:142  Bloomberg BEST_* field
+        ...T_EPS,1FQ,2.46,2021Q2,-0.47796,2026Q3,,-614.6874215415517, 2021-09-30,BEST_EPS,1FQ,2.46,2021Q3,0.71896,2026Q3,,242.1608990764437, 2021-12-31,BEST_EP...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:143  Bloomberg BEST_* field
+        ...EST_EPS,1FQ,2.46,2021Q3,0.71896,2026Q3,,242.1608990764437, 2021-12-31,BEST_EPS,1FQ,2.73,2021Q4,0.03176,2026Q3,,8495.717884130983, 2022-03-31,BEST_EP...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:144  Bloomberg BEST_* field
+        ...EST_EPS,1FQ,2.73,2021Q4,0.03176,2026Q3,,8495.717884130983, 2022-03-31,BEST_EPS,1FQ,2.84,2022Q1,-0.28679,2026Q3,,-1090.2716273231285, 2022-06-30,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:145  Bloomberg BEST_* field
+        ..._EPS,1FQ,2.84,2022Q1,-0.28679,2026Q3,,-1090.2716273231285, 2022-06-30,BEST_EPS,1FQ,2.73,2022Q2,0.41619,2026Q3,,555.9504072659122, 2022-09-30,BEST_EP...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:146  Bloomberg BEST_* field
+        ...EST_EPS,1FQ,2.73,2022Q2,0.41619,2026Q3,,555.9504072659122, 2022-09-30,BEST_EPS,1FQ,2.63,2022Q3,1.4456,2026Q3,,81.93137797454344, 2022-12-30,BEST_EPS...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:147  Bloomberg BEST_* field
+        ...BEST_EPS,1FQ,2.63,2022Q3,1.4456,2026Q3,,81.93137797454344, 2022-12-30,BEST_EPS,1FQ,2.705,2022Q4,0.2416,2026Q3,,1019.6192052980132, 2023-03-31,BEST_E...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:148  Bloomberg BEST_* field
+        ...ST_EPS,1FQ,2.705,2022Q4,0.2416,2026Q3,,1019.6192052980132, 2023-03-31,BEST_EPS,1FQ,2.85,2023Q1,0.0913,2026Q3,,3021.5772179627597, 2023-06-30,BEST_EP...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:149  Bloomberg BEST_* field
+        ...EST_EPS,1FQ,2.85,2023Q1,0.0913,2026Q3,,3021.5772179627597, 2023-06-30,BEST_EPS,1FQ,2.66,2023Q2,0.752,2026Q3,,253.7234042553192, 2023-09-29,BEST_EPS,...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:150  Bloomberg BEST_* field
+        ...,BEST_EPS,1FQ,2.66,2023Q2,0.752,2026Q3,,253.7234042553192, 2023-09-29,BEST_EPS,1FQ,2.94,2023Q3,2.06667,2026Q3,,42.25783506800798, 2023-12-29,BEST_EP...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:151  Bloomberg BEST_* field
+        ...EST_EPS,1FQ,2.94,2023Q3,2.06667,2026Q3,,42.25783506800798, 2023-12-29,BEST_EPS,1FQ,3.66,2023Q4,0.67364,2026Q3,,443.31690517190185, 2024-03-28,BEST_E...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:152  Bloomberg BEST_* field
+        ...ST_EPS,1FQ,3.66,2023Q4,0.67364,2026Q3,,443.31690517190185, 2024-03-28,BEST_EPS,1FQ,3.216,2024Q1,0.24667,2026Q3,,1203.7661653220903, 2024-06-28,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:153  Bloomberg BEST_* field
+        ...T_EPS,1FQ,3.216,2024Q1,0.24667,2026Q3,,1203.7661653220903, 2024-06-28,BEST_EPS,1FQ,3.303,2024Q2,0.9025,2026Q3,,265.98337950138506, 2024-09-30,BEST_E...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:154  Bloomberg BEST_* field
+        ...ST_EPS,1FQ,3.303,2024Q2,0.9025,2026Q3,,265.98337950138506, 2024-09-30,BEST_EPS,1FQ,2.707,2024Q3,2.162,2026Q3,,25.208140610545794, 2024-12-31,BEST_EP...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:155  Bloomberg BEST_* field
+        ...EST_EPS,1FQ,2.707,2024Q3,2.162,2026Q3,,25.208140610545794, 2024-12-31,BEST_EPS,1FQ,2.726,2024Q4,0.57679,2026Q3,,372.6156833509596, 2025-03-31,BEST_E...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:156  Bloomberg BEST_* field
+        ...ST_EPS,1FQ,2.726,2024Q4,0.57679,2026Q3,,372.6156833509596, 2025-03-31,BEST_EPS,1FQ,2.701,2025Q1,0.23154,2026Q3,,1066.5370994212662, 2025-06-30,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:157  Bloomberg BEST_* field
+        ...T_EPS,1FQ,2.701,2025Q1,0.23154,2026Q3,,1066.5370994212662, 2025-06-30,BEST_EPS,1FQ,2.584,2025Q2,0.92889,2026Q3,,178.18148542884518, 2025-09-30,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:158  Bloomberg BEST_* field
+        ...T_EPS,1FQ,2.584,2025Q2,0.92889,2026Q3,,178.18148542884518, 2025-09-30,BEST_EPS,1FQ,2.618,2025Q3,2.33714,2026Q3,,12.017251854831112, 2025-12-31,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:159  Bloomberg BEST_* field
+        ...T_EPS,1FQ,2.618,2025Q3,2.33714,2026Q3,,12.017251854831112, 2025-12-31,BEST_EPS,1FQ,2.663,2025Q4,0.655,2026Q3,2.60118,306.56488549618314,2.3766136907...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:160  Bloomberg BEST_* field
+        ...,0.655,2026Q3,2.60118,306.56488549618314,2.376613690709606 2026-03-31,BEST_EPS,1FQ,2.716,2026Q1,0.29036,2026Q3,2.6824,835.390549662488,1.25260960334...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:161  Bloomberg BEST_* field
+        ...,0.29036,2026Q3,2.6824,835.390549662488,1.2526096033403045 2026-06-30,BEST_EPS,1FQ,2.738,2026Q2,1.2773,2026Q3,2.75539,114.35841227589445,-0.63112662...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:162  Bloomberg BEST_* field
+        ...2773,2026Q3,2.75539,114.35841227589445,-0.6311266281724071 2026-09-30,BEST_EPS,1FQ,2.856,2026Q3,2.84539,2026Q3,2.84539,0.37288385774885136,0.3728838...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:163  Bloomberg BEST_* field
+        ...539,2026Q3,2.84539,0.37288385774885136,0.37288385774885136 2021-03-31,BEST_EPS,1FY,5.532,FY2021,-1.62976,FY2026,,-439.4364814451207, 2021-06-30,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:164  Bloomberg BEST_* field
+        ..._EPS,1FY,5.532,FY2021,-1.62976,FY2026,,-439.4364814451207, 2021-06-30,BEST_EPS,1FY,3.863,FY2021,-2.02013,FY2026,,-291.22531718255755, 2021-09-30,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:165  Bloomberg BEST_* field
+        ...EPS,1FY,3.863,FY2021,-2.02013,FY2026,,-291.22531718255755, 2021-09-30,BEST_EPS,1FY,4.415,FY2021,-1.38015,FY2026,,-419.89276527913637, 2021-12-31,BES...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:166  Bloomberg BEST_* field
+        ...EPS,1FY,4.415,FY2021,-1.38015,FY2026,,-419.89276527913637, 2021-12-31,BEST_EPS,1FY,5.449,FY2021,-0.66346,FY2026,,-921.3004551894611, 2022-03-31,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:167  Bloomberg BEST_* field
+        ..._EPS,1FY,5.449,FY2021,-0.66346,FY2026,,-921.3004551894611, 2022-03-31,BEST_EPS,1FY,5.391,FY2022,1.28404,FY2026,,319.84673374661224, 2022-06-30,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:168  Bloomberg BEST_* field
+        ...T_EPS,1FY,5.391,FY2022,1.28404,FY2026,,319.84673374661224, 2022-06-30,BEST_EPS,1FY,5.362,FY2022,1.83326,FY2026,,192.48442664979328, 2022-09-30,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:169  Bloomberg BEST_* field
+        ...T_EPS,1FY,5.362,FY2022,1.83326,FY2026,,192.48442664979328, 2022-09-30,BEST_EPS,1FY,5.326,FY2022,2.22554,FY2026,,139.31270612974825, 2022-12-30,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:170  Bloomberg BEST_* field
+        ...T_EPS,1FY,5.326,FY2022,2.22554,FY2026,,139.31270612974825, 2022-12-30,BEST_EPS,1FY,5.353,FY2022,2.57754,FY2026,,107.67863932276511, 2023-03-31,BEST_...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:171  Bloomberg BEST_* field
+        ...T_EPS,1FY,5.353,FY2022,2.57754,FY2026,,107.67863932276511, 2023-03-31,BEST_EPS,1FY,5.981,FY2023,3.31107,FY2026,,80.63647098974047, 2023-06-30,BEST_E...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:172  Bloomberg BEST_* field
+        ...ST_EPS,1FY,5.981,FY2023,3.31107,FY2026,,80.63647098974047, 2023-06-30,BEST_EPS,1FY,5.936,FY2023,3.45522,FY2026,,71.79803312090112, 2023-09-29,BEST_E...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:173  Bloomberg BEST_* field
+        ...ST_EPS,1FY,5.936,FY2023,3.45522,FY2026,,71.79803312090112, 2023-09-29,BEST_EPS,1FY,6.129,FY2023,3.81192,FY2026,,60.78511616193411, 2023-12-29,BEST_E...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:174  Bloomberg BEST_* field
+        ...ST_EPS,1FY,6.129,FY2023,3.81192,FY2026,,60.78511616193411, 2023-12-29,BEST_EPS,1FY,5.748,FY2023,8.10242,FY2026,,-29.058231985011883, 2024-03-28,BEST...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:175  Bloomberg BEST_* field
+        ..._EPS,1FY,5.748,FY2023,8.10242,FY2026,,-29.058231985011883, 2024-03-28,BEST_EPS,1FY,5.871,FY2024,4.37245,FY2026,5.8062,34.27254742764356,1.1160483620...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:176  Bloomberg BEST_* field
+        ...4.37245,FY2026,5.8062,34.27254742764356,1.1160483620957118 2024-06-28,BEST_EPS,1FY,6.068,FY2024,4.523,FY2026,5.96,34.15874419632987,1.81208053691275...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:177  Bloomberg BEST_* field
+        ...024,4.523,FY2026,5.96,34.15874419632987,1.8120805369127524 2024-09-30,BEST_EPS,1FY,5.606,FY2024,4.11929,FY2026,5.40874,36.09141381160343,3.647060128...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:178  Bloomberg BEST_* field
+        ....11929,FY2026,5.40874,36.09141381160343,3.6470601286066717 2024-12-31,BEST_EPS,1FY,5.097,FY2024,3.97063,FY2026,5.05732,28.367538652556412,0.78460528...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:179  Bloomberg BEST_* field
+        ...97063,FY2026,5.05732,28.367538652556412,0.7846052850126295 2025-03-31,BEST_EPS,1FY,5.029,FY2025,4.34865,FY2026,5.02758,15.645085256343915,0.02824420...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:180  Bloomberg BEST_* field
+        ...865,FY2026,5.02758,15.645085256343915,0.028244204965410802 2025-06-30,BEST_EPS,1FY,4.866,FY2025,4.20488,FY2026,4.80373,15.722684119404118,1.29628434...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:181  Bloomberg BEST_* field
+        ...20488,FY2026,4.80373,15.722684119404118,1.2962843457063444 2025-09-30,BEST_EPS,1FY,4.789,FY2025,4.23877,FY2026,4.75636,12.980888323735428,0.68623905...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:182  Bloomberg BEST_* field
+        ....23877,FY2026,4.75636,12.980888323735428,0.686239056757687 2025-12-31,BEST_EPS,1FY,4.826,FY2025,4.14869,FY2026,4.8097,16.32587636097176,0.3388984759...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:183  Bloomberg BEST_* field
+        ....14869,FY2026,4.8097,16.32587636097176,0.33889847599641865 2026-03-31,BEST_EPS,1FY,5.028,FY2026,4.93931,FY2026,4.93931,1.7955949312758124,1.79559493...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:184  Bloomberg BEST_* field
+        ...93931,FY2026,4.93931,1.7955949312758124,1.7955949312758124 2026-06-30,BEST_EPS,1FY,5.085,FY2026,5.09222,FY2026,5.09222,-0.1417849189548015,-0.141784...
+[LICENCE] data\processed\margin_build\03_consensus_pit\03_bloomberg_anchoring_test_rows.csv:185  Bloomberg BEST_* field
+        ...222,FY2026,5.09222,-0.1417849189548015,-0.1417849189548015 2026-09-30,BEST_EPS,1FY,5.289,FY2026,5.31259,FY2026,5.31259,-0.44403953627139003,-0.44403...
+
+--- data/raw exposure ---
+tracked files under data/raw: 102
+    data/raw/.gitkeep
+    data/raw/bea/bea_pce_travel_monthly_2015_2026.csv
+    data/raw/fred/CPIAUCSL.csv
+    data/raw/fred/CUSR0000SEHB.csv
+    data/raw/fred/CUSR0000SETG01.csv
+    data/raw/fred/DEXUSEU.csv
+    data/raw/fred/DTWEXBGS.csv
+    data/raw/regulatory/documents/REG-S07.html
+    data/raw/regulatory/documents/REG-S10.html
+    data/raw/regulatory/documents/REG-S11.html
+    data/raw/regulatory/documents/REG-S21.html
+    data/raw/regulatory/phase2/barcelona_datastore.json
+    data/raw/regulatory/phase2/barcelona_metadata.json
+    data/raw/regulatory/phase2/barcelona_registry_current.csv
+    data/raw/regulatory/phase2/download_manifest.json
+    data/raw/regulatory/phase2/hawaii_2025-01.xlsx
+    data/raw/regulatory/phase2/hawaii_2025-02.xlsx
+    data/raw/regulatory/phase2/hawaii_2025-03.xlsx
+    data/raw/regulatory/phase2/hawaii_2025-04.xlsx
+    data/raw/regulatory/phase2/hawaii_2025-05.xlsx
+check-ignore on an M7 raw pull: .gitignore:28:data/raw/*	data/raw/margin_build/M7_below_ebitda/fred_DTB3.csv
+uncommitted margin_build paths: 9
+
+
+====================================================================================================
+check_05_live_coherence.py  --  economic sense of the LIVE margin paths
+====================================================================================================
+LIVE margin % by method (vintage 2026-09-11, PIT, base path), and the implied FY26:
+             method               object         spec  2026Q3  2026Q4  2027Q1  2027Q2  2027Q3  2027Q4  fy26
+      alt-augmented           margin_aug      none_rw   51.57   28.47   19.46   34.38   50.58   26.33 36.18
+         cycle-flex          flex_margin        l0_rw   51.23   28.05   18.86   33.65   49.82   25.27 35.97
+       driver-lines            margin_v2 b_elastic_rw   51.57   28.47   19.46   34.38   50.58   26.33 36.18
+guide-policy-margin   actual_given_guide   rw_hl4_pin   50.09   34.51   19.17   34.74   49.87   34.30 37.03
+          margin-ts q_sentence_direction     k_fit_rw   48.06     NaN     NaN     NaN     NaN     NaN   NaN
+          margin-ts    yoy_margin_change        k4_rw   49.74   27.95   19.03   34.60   49.39   27.60 35.45
+
+FY26 floor in force (2Q26 letter 2026-08-06): at least 35.5%
+             method               object  fy26  fy26_vs_floor_pp
+      alt-augmented           margin_aug 36.18              0.68
+         cycle-flex          flex_margin 35.97              0.47
+       driver-lines            margin_v2 36.18              0.68
+guide-policy-margin   actual_given_guide 37.03              1.53
+          margin-ts q_sentence_direction   NaN               NaN
+          margin-ts    yoy_margin_change 35.45             -0.05
+
+methods BELOW the floor: 1 of 6
+
+--- 3Q26 dispersion (the quarter that prints on 5 Nov) ---
+n=6  min 48.06  median 50.66  max 51.57  range 3.52 pp
+3Q25 actual 50.09%  (the 3Q26 sentence is a CEILING: 'roughly flat to slightly down y/y' -> a forecast above 50.09% contradicts the sentence)
+methods forecasting 3Q26 ABOVE the 3Q25 ceiling: 3 -> alt-augmented/margin_aug, cycle-flex/flex_margin, driver-lines/margin_v2
+
+--- seasonal shape of each method's 2027 path vs the 2022-26 historical range ---
+historical quarter-of-year margin range 2022-26: Q1 14.4-19.8, Q2 32.5-35.0, Q3 50.1-54.0, Q4 26.6-33.3
+alt-augmented/margin_aug: 2027 Q1-Q4 = ['19.5', '34.4', '50.6', '26.3']  trough=Q1 & peak=Q3: True; outside hist range +/-3pp: none
+cycle-flex/flex_margin: 2027 Q1-Q4 = ['18.9', '33.6', '49.8', '25.3']  trough=Q1 & peak=Q3: True; outside hist range +/-3pp: none
+driver-lines/margin_v2: 2027 Q1-Q4 = ['19.5', '34.4', '50.6', '26.3']  trough=Q1 & peak=Q3: True; outside hist range +/-3pp: none
+guide-policy-margin/actual_given_guide: 2027 Q1-Q4 = ['19.2', '34.7', '49.9', '34.3']  trough=Q1 & peak=Q3: True; outside hist range +/-3pp: none
+margin-ts/yoy_margin_change: 2027 Q1-Q4 = ['19.0', '34.6', '49.4', '27.6']  trough=Q1 & peak=Q3: True; outside hist range +/-3pp: none
+
+
+====================================================================================================
+check_06_lines_vs_margin_and_coverage.py  --  line claims re-scored on the margin; interval calibration
+====================================================================================================
+=== (a) line improvement vs margin improvement, same method/spec, h=0, PIT ===
+       method                                spec window  n_lines  lines_mean_ratio  lines_beating_naive  margin_ratio  lines_better_margin_worse
+alt-augmented                            best1_eq     W1        5             0.537                    5         1.093                       True
+alt-augmented                            best1_eq     W2        5             0.591                    4         1.085                       True
+alt-augmented                            best1_rw     W1        5             0.508                    5         1.087                       True
+alt-augmented                            best1_rw     W2        5             0.549                    5         1.101                       True
+alt-augmented                             none_eq     W1        5             0.568                    5         0.990                      False
+alt-augmented                             none_eq     W2        5             0.645                    3         0.941                      False
+alt-augmented                             none_rw     W1        5             0.532                    5         1.010                       True
+alt-augmented                             none_rw     W2        5             0.593                    4         0.975                      False
+alt-augmented                        ridge_all_eq     W1        5             0.558                    5         0.976                      False
+alt-augmented                        ridge_all_eq     W2        5             0.635                    3         0.920                      False
+alt-augmented                        ridge_all_rw     W1        5             0.528                    5         1.005                       True
+alt-augmented                        ridge_all_rw     W2        5             0.590                    4         0.972                      False
+alt-augmented surv_emp_computer_systems_design_rw     W1        5             0.516                    5         1.004                       True
+alt-augmented surv_emp_computer_systems_design_rw     W2        5             0.574                    4         0.974                      False
+   cycle-flex                               dl_rw     W1        5             0.727                    4         1.214                       True
+   cycle-flex                               dl_rw     W2        5             0.781                    3         1.330                       True
+   cycle-flex                               l0_eq     W1        5             0.566                    5         1.003                       True
+   cycle-flex                               l0_eq     W2        5             0.638                    4         0.922                      False
+   cycle-flex                               l0_rw     W1        5             0.533                    5         0.984                      False
+   cycle-flex                               l0_rw     W2        5             0.588                    4         0.905                      False
+   cycle-flex                         revknown_rw     W1        5             0.533                    5         0.981                      False
+   cycle-flex                         revknown_rw     W2        5             0.587                    4         0.898                      False
+ driver-lines                           a_unit_eq     W1        5             0.527                    5         1.020                       True
+ driver-lines                           a_unit_eq     W2        5             0.596                    4         0.971                      False
+ driver-lines                           a_unit_rw     W1        5             0.523                    5         1.029                       True
+ driver-lines                           a_unit_rw     W2        5             0.592                    4         0.984                      False
+ driver-lines                        b_elastic_eq     W1        5             0.568                    5         0.990                      False
+ driver-lines                        b_elastic_eq     W2        5             0.645                    3         0.941                      False
+ driver-lines                        b_elastic_rw     W1        5             0.532                    5         1.010                       True
+ driver-lines                        b_elastic_rw     W2        5             0.593                    4         0.975                      False
+ driver-lines                            c_mix_rw     W1        5             0.536                    5         1.001                       True
+ driver-lines                            c_mix_rw     W2        5             0.601                    4         0.961                      False
+ driver-lines                          d_steps_rw     W1        5             0.552                    5         1.142                       True
+ driver-lines                          d_steps_rw     W2        5             0.606                    4         0.974                      False
+ driver-lines                       e_revknown_rw     W1        5             0.517                    5         0.876                      False
+ driver-lines                       e_revknown_rw     W2        5             0.568                    5         0.740                      False
+    margin-ts                         drift_k4_ew     W1        5             0.734                    4         1.796                       True
+    margin-ts                         drift_k4_ew     W2        5             0.731                    4         1.465                       True
+    margin-ts                         drift_k4_rw     W1        5             0.705                    4         1.690                       True
+    margin-ts                         drift_k4_rw     W2        5             0.720                    4         1.406                       True
+    margin-ts                drift_k4_rw_revknown     W1        5             0.722                    4         1.690                       True
+    margin-ts                drift_k4_rw_revknown     W2        5             0.741                    4         1.406                       True
+    margin-ts                         drift_k8_rw     W1        5             1.101                    2         2.655                      False
+    margin-ts                         drift_k8_rw     W2        5             0.716                    3         1.412                       True
+    margin-ts                             g_k4_ew     W1        5             0.556                    5         1.135                       True
+    margin-ts                             g_k4_ew     W2        5             0.614                    4         1.123                       True
+    margin-ts                             g_k4_rw     W1        5             0.539                    5         1.080                       True
+    margin-ts                             g_k4_rw     W2        5             0.598                    5         1.049                       True
+    margin-ts                 g_k4_rw_nightsknown     W1        5             0.559                    5         1.014                       True
+    margin-ts                 g_k4_rw_nightsknown     W2        5             0.593                    4         0.670                      False
+    margin-ts                             g_k8_rw     W1        5             0.608                    5         1.186                       True
+    margin-ts                             g_k8_rw     W2        5             0.603                    5         0.986                      False
+    margin-ts                          lines_aicc     W1        5             0.595                    5         0.911                      False
+    margin-ts                          lines_aicc     W2        5             0.666                    3         0.759                      False
+    margin-ts                             nodrift     W1        5             0.680                    4         1.000                       True
+    margin-ts                             nodrift     W2        5             0.757                    3         1.000                      False
+    margin-ts                            nogrowth     W1        5             0.589                    5         1.213                       True
+    margin-ts                            nogrowth     W2        5             0.693                    4         1.550                       True
+
+spec/window cells where the LINES beat naive on average but the MARGIN does not: 31 of 58
+       method                                spec window  lines_mean_ratio  margin_ratio
+alt-augmented                            best1_eq     W1             0.537         1.093
+alt-augmented                            best1_eq     W2             0.591         1.085
+alt-augmented                            best1_rw     W1             0.508         1.087
+alt-augmented                            best1_rw     W2             0.549         1.101
+alt-augmented                             none_rw     W1             0.532         1.010
+alt-augmented                        ridge_all_rw     W1             0.528         1.005
+alt-augmented surv_emp_computer_systems_design_rw     W1             0.516         1.004
+   cycle-flex                               dl_rw     W1             0.727         1.214
+   cycle-flex                               dl_rw     W2             0.781         1.330
+   cycle-flex                               l0_eq     W1             0.566         1.003
+ driver-lines                           a_unit_eq     W1             0.527         1.020
+ driver-lines                           a_unit_rw     W1             0.523         1.029
+ driver-lines                        b_elastic_rw     W1             0.532         1.010
+ driver-lines                            c_mix_rw     W1             0.536         1.001
+ driver-lines                          d_steps_rw     W1             0.552         1.142
+    margin-ts                         drift_k4_ew     W1             0.734         1.796
+    margin-ts                         drift_k4_ew     W2             0.731         1.465
+    margin-ts                         drift_k4_rw     W1             0.705         1.690
+    margin-ts                         drift_k4_rw     W2             0.720         1.406
+    margin-ts                drift_k4_rw_revknown     W1             0.722         1.690
+    margin-ts                drift_k4_rw_revknown     W2             0.741         1.406
+    margin-ts                         drift_k8_rw     W2             0.716         1.412
+    margin-ts                             g_k4_ew     W1             0.556         1.135
+    margin-ts                             g_k4_ew     W2             0.614         1.123
+    margin-ts                             g_k4_rw     W1             0.539         1.080
+    margin-ts                             g_k4_rw     W2             0.598         1.049
+    margin-ts                 g_k4_rw_nightsknown     W1             0.559         1.014
+    margin-ts                             g_k8_rw     W1             0.608         1.186
+    margin-ts                             nodrift     W1             0.680         1.000
+    margin-ts                            nogrowth     W1             0.589         1.213
+    margin-ts                            nogrowth     W2             0.693         1.550
+
+correlation across cells between mean line ratio and margin ratio: 0.780  (a low or negative value means line-level tuning does not transmit to the margin)
+
+=== (b) interval calibration at h=0, PIT, adj_ebitda_margin_pct ===
+verdict
+ok      123
+over     39
+
+under-covering cells (the ones that matter for a 5 Nov band):
+Empty DataFrame
+Columns: [method, object, spec, window, n, cov80, band80, verdict, cov90, pit_mean, n_params]
+Index: []
+
+over-covering cells (intervals too wide to be a trade): 39
+
+=== (c) every target's coverage, all objects, h=0 PIT, W1 ===
+                          n_cells  mean_cov80  min_cov80  mean_cov90
+target                                                              
+capex_musd                      4       0.643      0.571       0.750
+tax_provision_musd              6       0.762      0.714       0.762
+sm_cash_per_night               8       0.768      0.357       0.812
+cor_cash_per_night              8       0.777      0.571       0.902
+gbv_musd                        2       0.786      0.643       0.821
+tax_rate_pct                    7       0.796      0.714       0.878
+pd_cash_musd                   32       0.801      0.143       0.866
+ga_cash_ex_reserves_musd       32       0.810      0.500       0.842
+revenue_musd                    3       0.810      0.714       0.905
+ops_cash_musd                  32       0.815      0.643       0.944
+da_musd                         7       0.816      0.571       0.867
+revenue_per_night               3       0.833      0.643       0.929
+ops_cash_per_night              8       0.839      0.714       0.946
+cor_cash_musd                  32       0.857      0.571       0.906
+nights_m                        2       0.857      0.714       0.893
+ga_cash_pct_rev                 9       0.881      0.714       0.897
+sm_cash_musd                   32       0.888      0.357       0.975
+ga_cash_per_night               8       0.893      0.714       0.893
+sm_cash_pct_rev                 9       0.897      0.786       0.937
+cor_cash_pct_rev                9       0.897      0.643       0.984
+cfo_musd                        8       0.902      0.786       0.982
+adj_ebitda_per_night            3       0.905      0.714       0.952
+fcf_musd                       13       0.907      0.714       0.984
+ga_cash_musd                   14       0.908      0.857       0.934
+total_cash_costs_musd          32       0.915      0.357       0.953
+net_income_musd                 7       0.918      0.714       0.949
+pd_cash_per_night               8       0.920      0.857       1.000
+ops_cash_pct_rev                9       0.921      0.857       0.952
+sbc_musd                        7       0.929      0.571       0.949
+pd_cash_pct_rev                 9       0.929      0.714       0.960
+total_cash_costs_pct_rev        8       0.929      0.786       0.964
+adj_ebitda_musd                81       0.939      0.333       0.952
+adj_ebitda_margin_pct          81       0.946      0.667       0.975
+diluted_shares_m                6       0.964      0.786       0.988
+fcf_margin_pct                  9       0.968      0.786       0.976
+eps_diluted                     7       0.969      0.857       0.990
+adj_ebitda_margin_yoy_pp        3       0.976      0.929       1.000
+interest_income_musd            4       0.982      0.929       0.982
+sbc_pct_rev                     5       0.986      0.929       1.000
+op_income_musd                  7       0.990      0.929       0.990
+pretax_income_musd              6       1.000      1.000       1.000
+op_margin_pct                   3       1.000      1.000       1.000
+
+
+====================================================================================================
+check_07_survivor_placebo.py  --  sign-flip null for survives_both_windows
+====================================================================================================
+margin h=0 PIT cells with both windows: 74
+observed survivors (both windows, both weightings): 25
+    alt-augmented/margin_aug/none_eq
+    alt-augmented/margin_aug/ridge_all_eq
+    cycle-flex/flex_margin/l0_rw
+    cycle-flex/flex_margin/revknown_rw
+    driver-lines/margin_v2/b_elastic_eq
+    driver-lines/margin_v2/e_revknown_rw
+    guide-policy-margin/actual_given_guide/last_pin
+    guide-policy-margin/actual_given_guide/rw_hl4_pin
+    margin-ts/q_sentence_direction/k_fit_median
+    margin-ts/q_sentence_direction/k_fit_rw
+    margin-ts/sarima_margin/lines_aicc
+    street-bias/dispersion_conditioned/ew
+    street-bias/dispersion_conditioned/ew_usd
+    street-bias/dispersion_conditioned/rw_hl4
+    street-bias/dispersion_conditioned/rw_hl4_med
+    street-bias/dispersion_conditioned/rw_hl4_usd
+    street-bias/street_plus_bias/rw_hl4
+    street-bias/street_plus_bias/rw_hl4_med
+    street-bias/street_plus_bias/rw_hl4_usd
+    street-bias/street_plus_flowthrough/ew
+    street-bias/street_plus_flowthrough/ew_usd
+    street-bias/street_plus_flowthrough/rw_hl4
+    street-bias/street_plus_flowthrough/rw_hl4_from21
+    street-bias/street_plus_flowthrough/rw_hl4_med
+    street-bias/street_plus_flowthrough/rw_hl4_usd
+
+null distribution of the survivor count over 2000 sign-flip draws:
+   mean 22.1, median 16, 5-95 pct [1, 61], max 72
+   P(null survivor count >= observed 25) = 0.391
+   per-cell null survival probability = 0.298  (observed rate 0.338)
+
+survivors that are NOT oracle (revenue/nights-known) specs: 23 of 25
+    alt-augmented/margin_aug/none_eq
+    alt-augmented/margin_aug/ridge_all_eq
+    cycle-flex/flex_margin/l0_rw
+    driver-lines/margin_v2/b_elastic_eq
+    guide-policy-margin/actual_given_guide/last_pin
+    guide-policy-margin/actual_given_guide/rw_hl4_pin
+    margin-ts/q_sentence_direction/k_fit_median
+    margin-ts/q_sentence_direction/k_fit_rw
+    margin-ts/sarima_margin/lines_aicc
+    street-bias/dispersion_conditioned/ew
+    street-bias/dispersion_conditioned/ew_usd
+    street-bias/dispersion_conditioned/rw_hl4
+    street-bias/dispersion_conditioned/rw_hl4_med
+    street-bias/dispersion_conditioned/rw_hl4_usd
+    street-bias/street_plus_bias/rw_hl4
+    street-bias/street_plus_bias/rw_hl4_med
+    street-bias/street_plus_bias/rw_hl4_usd
+    street-bias/street_plus_flowthrough/ew
+    street-bias/street_plus_flowthrough/ew_usd
+    street-bias/street_plus_flowthrough/rw_hl4
+    street-bias/street_plus_flowthrough/rw_hl4_from21
+    street-bias/street_plus_flowthrough/rw_hl4_med
+    street-bias/street_plus_flowthrough/rw_hl4_usd
+
+
+====================================================================================================
+check_08_reproducibility_inputs.py  --  can each run.py rebuild from a clean checkout
+====================================================================================================
+package                      raw(gitignored) inputs  manifest?   repull?  files
+01_input_census                                   0         NO        NO  -
+02_financial_panel                                0        yes        NO  -
+03_consensus_pit                                  2        yes        NO  data/raw/margin_build/03_consensus_pit, data/raw/theo_onedrive/AIRBNB DATA/raw_expansion_licensed/v2_2026-09-05/bloomberg/bbg_extracted_long.csv
+04_alt_signals                                    0        yes       yes  -
+05_mgmt_statements_v2                             0        yes        NO  -
+06_fy27_path_v2                                   0        yes        NO  -
+06v_fy27_path_check                               0         NO        NO  -
+10_harness_margin                                 0         NO        NO  -
+21_red_team                                       0         NO        NO  -
+M1_driver_lines                                   0         NO        NO  -
+M2_margin_ts                                      0         NO        NO  -
+M3_guide_policy_margin                            0         NO        NO  -
+M4_alt_augmented                                  0         NO        NO  -
+M5_street_bias                                    0         NO        NO  -
+M6_cycle_flex                                     2         NO        NO  data/raw/margin_build/04_alt_signals/misc/lseg_peer_opex_quarterly.csv, data/raw/margin_build/04_alt_signals/misc/lseg_peer_sm_quarterly.csv
+M7_below_ebitda                                   1        yes        NO  data/raw/margin_build/M7_below_ebitda
+
+A package with gitignored inputs and no re-pull fallback cannot run `run.py` from a clean checkout: it raises FileNotFoundError before writing anything. The manifest makes it recoverable by hand, but the brief's 'run.py rebuilds the package end to end, exit 0' does not hold for those packages on another machine.
+
+
+====================================================================================================
+check_09_m1_step_dummy_leak.py  --  M1 d_steps_rw step dummies are not gated by knowable_from
+====================================================================================================
+WS04 step columns M1 uses, first quarter ON vs the date they became knowable:
+  event_E02_cor_cash       first ON 2022Q2   knowable_from 2022-04-01   
+  event_E05_ops_cash       first ON 2025Q2   knowable_from 2025-04-01   
+  event_E09_cor_cash       first ON 2025Q1   knowable_from 2026-02-12   <-- HINDSIGHT DATING
+  event_E10_pd_cash        first ON 2023Q1   knowable_from 2023-03-01   <-- HINDSIGHT DATING
+
+Fit/forecast observations that use a step value not yet knowable at the vintage:
+vintage_date             signal knowable_from  n_quarters_with_step  first   last windows
+  2023-02-14  event_E10_pd_cash    2023-03-01                     3 2023Q1 2023Q3      W1
+  2024-08-06 event_E09_cor_cash    2026-02-12                     1 2025Q1 2025Q1   W1/W2
+  2024-11-07 event_E05_ops_cash    2025-04-01                     1 2025Q2 2025Q2   W1/W2
+  2024-11-07 event_E09_cor_cash    2026-02-12                     2 2025Q1 2025Q2   W1/W2
+  2025-02-13 event_E05_ops_cash    2025-04-01                     2 2025Q2 2025Q3   W1/W2
+  2025-02-13 event_E09_cor_cash    2026-02-12                     3 2025Q1 2025Q3   W1/W2
+  2025-05-01 event_E09_cor_cash    2026-02-12                     4 2025Q1 2025Q4   W1/W2
+  2025-08-06 event_E09_cor_cash    2026-02-12                     5 2025Q1 2026Q1   W1/W2
+  2025-11-06 event_E09_cor_cash    2026-02-12                     6 2025Q1 2026Q2   W1/W2
+
+AFFECTED VINTAGES: 7 of 14 W1 guide dates (6 of 10 W2). Spec `d_steps_rw` (and only that spec) is affected; `a_unit`, `b_elastic`, `c_mix`, `e_revknown` do not use the step columns.
+
+
+====================================================================================================
+check_10_m5_street_bias.py  --  M5: is the Street beat distinguishable, and what drives the LIVE call
+====================================================================================================
+street-bias scoreboard cells (PIT): 144
+
+h=0 cells, rw_hl4 family, vs the RAW STREET baseline:
+                 object                target          spec  h window  n  mae_own  mae_street  ratio   mean_d       t      p better  p_sign
+ dispersion_conditioned adj_ebitda_margin_pct    rw_hl4_med  0     W1 14   1.2232      1.5921 0.7683  -0.3689 -0.9789 0.3276   9/14  0.2120
+ dispersion_conditioned adj_ebitda_margin_pct        rw_hl4  0     W1 14   1.3298      1.5921 0.8353  -0.2623 -0.5711 0.5679   9/14  0.2120
+ dispersion_conditioned adj_ebitda_margin_pct    rw_hl4_usd  0     W1 14   1.3298      1.5921 0.8353  -0.2623 -0.5711 0.5679   9/14  0.2120
+street_plus_flowthrough adj_ebitda_margin_pct    rw_hl4_med  0     W1 14   1.5485      1.5921 0.9726  -0.0436 -0.0726 0.9421   7/14  0.6047
+       street_plus_bias adj_ebitda_margin_pct        rw_hl4  0     W1 14   1.5995      1.5921 1.0046   0.0074  0.0118 0.9906   8/14  0.3953
+       street_plus_bias adj_ebitda_margin_pct    rw_hl4_usd  0     W1 14   1.5995      1.5921 1.0046   0.0074  0.0118 0.9906   8/14  0.3953
+       street_plus_bias adj_ebitda_margin_pct    rw_hl4_med  0     W1 14   1.6136      1.5921 1.0135   0.0216  0.0420 0.9665   7/14  0.6047
+street_plus_flowthrough adj_ebitda_margin_pct        rw_hl4  0     W1 14   1.6608      1.5921 1.0432   0.0687  0.1211 0.9036   8/14  0.3953
+street_plus_flowthrough adj_ebitda_margin_pct    rw_hl4_usd  0     W1 14   1.6608      1.5921 1.0432   0.0687  0.1211 0.9036   8/14  0.3953
+street_plus_flowthrough adj_ebitda_margin_pct rw_hl4_from21  0     W1 14   1.8581      1.5921 1.1671   0.2660  0.3711 0.7105   8/14  0.3953
+ dispersion_conditioned adj_ebitda_margin_pct rw_hl4_from21  0     W1 14   2.2552      1.5921 1.4165   0.6631  0.8431 0.3992   7/14  0.6047
+       street_plus_bias adj_ebitda_margin_pct rw_hl4_from21  0     W1 14   3.0182      1.5921 1.8958   1.4261  1.3541 0.1757   5/14  0.9102
+ dispersion_conditioned adj_ebitda_margin_pct        rw_hl4  0     W2 10   0.7434      1.3112 0.5670  -0.5677 -1.4580 0.1448   7/10  0.1719
+ dispersion_conditioned adj_ebitda_margin_pct    rw_hl4_usd  0     W2 10   0.7434      1.3112 0.5670  -0.5677 -1.4580 0.1448   7/10  0.1719
+ dispersion_conditioned adj_ebitda_margin_pct    rw_hl4_med  0     W2 10   0.7869      1.3112 0.6002  -0.5242 -1.2539 0.2099   7/10  0.1719
+street_plus_flowthrough adj_ebitda_margin_pct        rw_hl4  0     W2 10   0.9872      1.3112 0.7529  -0.3240 -0.8950 0.3708   6/10  0.3770
+street_plus_flowthrough adj_ebitda_margin_pct    rw_hl4_usd  0     W2 10   0.9872      1.3112 0.7529  -0.3240 -0.8950 0.3708   6/10  0.3770
+street_plus_flowthrough adj_ebitda_margin_pct    rw_hl4_med  0     W2 10   1.0219      1.3112 0.7794  -0.2892 -0.6821 0.4951   5/10  0.6230
+street_plus_flowthrough adj_ebitda_margin_pct rw_hl4_from21  0     W2 10   1.0854      1.3112 0.8278  -0.2258 -0.5220 0.6017   6/10  0.3770
+       street_plus_bias adj_ebitda_margin_pct        rw_hl4  0     W2 10   1.1885      1.3112 0.9064  -0.1227 -0.2400 0.8103   6/10  0.3770
+       street_plus_bias adj_ebitda_margin_pct    rw_hl4_usd  0     W2 10   1.1885      1.3112 0.9064  -0.1227 -0.2400 0.8103   6/10  0.3770
+       street_plus_bias adj_ebitda_margin_pct    rw_hl4_med  0     W2 10   1.3699      1.3112 1.0448   0.0587  0.1145 0.9089   5/10  0.6230
+ dispersion_conditioned adj_ebitda_margin_pct rw_hl4_from21  0     W2 10   1.5966      1.3112 1.2177   0.2854  0.7767 0.4373   5/10  0.6230
+       street_plus_bias adj_ebitda_margin_pct rw_hl4_from21  0     W2 10   1.8636      1.3112 1.4213   0.5525  0.7196 0.4718   4/10  0.8281
+street_plus_flowthrough       adj_ebitda_musd    rw_hl4_med  0     W1 14  42.8325     65.2767 0.6562 -22.4442 -1.3730 0.1698  10/14  0.0898
+street_plus_flowthrough       adj_ebitda_musd        rw_hl4  0     W1 14  43.0624     65.2767 0.6597 -22.2142 -1.3888 0.1649  11/14  0.0287
+street_plus_flowthrough       adj_ebitda_musd    rw_hl4_usd  0     W1 14  43.0624     65.2767 0.6597 -22.2142 -1.3888 0.1649  11/14  0.0287
+       street_plus_bias       adj_ebitda_musd    rw_hl4_usd  0     W1 14  48.5305     65.2767 0.7435 -16.7462 -0.9915 0.3214  10/14  0.0898
+ dispersion_conditioned       adj_ebitda_musd    rw_hl4_med  0     W1 14  50.9535     65.2767 0.7806 -14.3231 -1.1134 0.2655  11/14  0.0287
+street_plus_flowthrough       adj_ebitda_musd rw_hl4_from21  0     W1 14  51.7991     65.2767 0.7935 -13.4775 -0.8187 0.4129  10/14  0.0898
+ dispersion_conditioned       adj_ebitda_musd        rw_hl4  0     W1 14  52.8952     65.2767 0.8103 -12.3814 -0.9288 0.3530  11/14  0.0287
+ dispersion_conditioned       adj_ebitda_musd rw_hl4_from21  0     W1 14  53.0443     65.2767 0.8126 -12.2324 -0.7283 0.4665  11/14  0.0287
+ dispersion_conditioned       adj_ebitda_musd    rw_hl4_usd  0     W1 14  55.3576     65.2767 0.8480  -9.9191 -0.9742 0.3300  10/14  0.0898
+       street_plus_bias       adj_ebitda_musd    rw_hl4_med  0     W1 14  58.8291     65.2767 0.9012  -6.4476 -0.2580 0.7964  10/14  0.0898
+       street_plus_bias       adj_ebitda_musd        rw_hl4  0     W1 14  61.3418     65.2767 0.9397  -3.9349 -0.1511 0.8799  10/14  0.0898
+       street_plus_bias       adj_ebitda_musd rw_hl4_from21  0     W1 14  74.3963     65.2767 1.1397   9.1196  0.3046 0.7607  10/14  0.0898
+street_plus_flowthrough       adj_ebitda_musd        rw_hl4  0     W2 10  33.7584     58.1177 0.5809 -24.3593 -2.7052 0.0068   9/10  0.0107
+street_plus_flowthrough       adj_ebitda_musd    rw_hl4_usd  0     W2 10  33.7584     58.1177 0.5809 -24.3593 -2.7052 0.0068   9/10  0.0107
+street_plus_flowthrough       adj_ebitda_musd    rw_hl4_med  0     W2 10  34.8559     58.1177 0.5997 -23.2619 -2.1301 0.0332   8/10  0.0547
+street_plus_flowthrough       adj_ebitda_musd rw_hl4_from21  0     W2 10  36.6409     58.1177 0.6305 -21.4768 -2.4290 0.0151   8/10  0.0547
+       street_plus_bias       adj_ebitda_musd    rw_hl4_usd  0     W2 10  36.7385     58.1177 0.6321 -21.3792 -1.3169 0.1879   8/10  0.0547
+ dispersion_conditioned       adj_ebitda_musd    rw_hl4_usd  0     W2 10  43.4587     58.1177 0.7478 -14.6591 -1.5448 0.1224   8/10  0.0547
+ dispersion_conditioned       adj_ebitda_musd    rw_hl4_med  0     W2 10  48.7626     58.1177 0.8390  -9.3552 -0.5831 0.5598   8/10  0.0547
+ dispersion_conditioned       adj_ebitda_musd        rw_hl4  0     W2 10  50.2840     58.1177 0.8652  -7.8338 -0.4779 0.6327   8/10  0.0547
+ dispersion_conditioned       adj_ebitda_musd rw_hl4_from21  0     W2 10  52.0832     58.1177 0.8962  -6.0345 -0.3203 0.7487   8/10  0.0547
+       street_plus_bias       adj_ebitda_musd    rw_hl4_med  0     W2 10  67.5524     58.1177 1.1623   9.4346  0.3292 0.7420   7/10  0.1719
+       street_plus_bias       adj_ebitda_musd        rw_hl4  0     W2 10  68.2025     58.1177 1.1735  10.0847  0.3362 0.7367   7/10  0.1719
+       street_plus_bias       adj_ebitda_musd rw_hl4_from21  0     W2 10  75.2866     58.1177 1.2954  17.1689  0.4785 0.6323   7/10  0.1719
+
+cells beating Street with p<0.05 (NW1, two-sided): 4 of 144
+                 object          target          spec  h window  n  ratio       t      p better
+street_plus_flowthrough adj_ebitda_musd        rw_hl4  0     W2 10 0.5809 -2.7052 0.0068   9/10
+street_plus_flowthrough adj_ebitda_musd    rw_hl4_usd  0     W2 10 0.5809 -2.7052 0.0068   9/10
+street_plus_flowthrough adj_ebitda_musd    rw_hl4_med  0     W2 10 0.5997 -2.1301 0.0332   8/10
+street_plus_flowthrough adj_ebitda_musd rw_hl4_from21  0     W2 10 0.6305 -2.4290 0.0151   8/10
+
+--- what the LIVE 3Q26 call rests on ---
+dispersion-regression entries in M5_secondary_tests.json:
+   dispersion_signed: {'slope': 28.341049117245962, 'intercept': -0.022672294279602934, 'r2': 0.3788989867060979, 'p': 0.005022500854281074, 'se': 8.800571162040603, 'n': 19}
+   dispersion_abs: {'slope': 26.59984040218211, 'intercept': 0.4445918959335087, 'r2': 0.3708665702234052, 'p': 0.005649909049552573, 'se': 8.402666126220861, 'n': 19}
+   dispersion_signed_from22: {'slope': 17.100759689400874, 'intercept': 0.5779049909981038, 'r2': 0.22959722186435588, 'p': 0.051643705718250325, 'se': 8.088078919695096, 'n': 17}
+
+dispersion columns ['disp', 'disp_ref', 'disp_ratio']; LIVE rows:
+vintage_date  horizon_q   disp  disp_ref  disp_ratio
+  2026-09-11          0 0.0085    0.0497      0.5000
+  2026-09-11          1 0.0290    0.0450      0.6451
+  2026-09-11          0 0.0085    0.1010      0.5000
+  2026-09-11          1 0.0290    0.0986      0.5000
+   disp: backtest range 0.0162 - 0.2517 (n 210); LIVE [0.0084871120329573, 0.0290296902250261, 0.0084871120329573, 0.0290296902250261, 0.0084871120329573, 0.0290296902250261, 0.0084871120329573, 0.0290296902250261, 0.0084871120329573, 0.0290296902250261, 0.0084871120329573, 0.0290296902250261]
+   disp_ref: backtest range 0.0524 - 0.2872 (n 210); LIVE [0.0497075593913111, 0.0450032719519521, 0.1010431272389746, 0.0985600983063185, 0.0497075593913111, 0.0450032719519521, 0.1010431272389746, 0.0985600983063185, 0.0497075593913111, 0.0450032719519521, 0.0497075593913111, 0.0450032719519521]
+   disp_ratio: backtest range 0.5000 - 1.9307 (n 264); LIVE [0.5, 0.6450573250767143, 0.5, 0.5, 0.5, 0.6450573250767143, 0.5, 0.5, 0.5, 0.6450573250767143, 0.5, 0.6450573250767143]

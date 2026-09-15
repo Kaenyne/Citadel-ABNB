@@ -1,0 +1,76 @@
+series,family,target_line,status,source,coverage,n_quarters,unit,licence,knowable_rule,note
+rate_tbill3m,rates,interest_income,pulled,"FRED DTB3: 3-month T-bill secondary market, daily",1954Q1..2026Q3 (n=291),291,pct,public,quarter end + 1d,
+rate_ust1y,rates,interest_income,pulled,"FRED DGS1: 1-year Treasury constant maturity, daily",1962Q1..2026Q3 (n=259),259,pct,public,quarter end + 1d,
+rate_fedfunds,rates,interest_income,pulled,"FRED FEDFUNDS: Effective fed funds, monthly",1954Q3..2026Q3 (n=289),289,pct,public,quarter end + 7d,
+rate_sofr,rates,interest_income,pulled,"FRED SOFR: SOFR, daily",2018Q2..2026Q3 (n=34),34,pct,public,quarter end + 1d,
+rate_ecb_deposit,rates,interest_income,pulled,"FRED ECBDFR: ECB deposit facility rate, daily",1999Q1..2026Q3 (n=111),111,pct,public,quarter end + 1d,
+emp_software_publishers,labour,pd_cash,pulled,"FRED CES5051200001: Employment, software publishers (thousands), monthly",1990Q1..2026Q3 (n=147),147,thousands,public,quarter end + 7d,"BLS CES employment, software publishers (NAICS 5112)"
+emp_computer_systems_design,labour,pd_cash,pulled,"FRED CES6054150001: Employment, computer systems design and related, monthly",1990Q1..2026Q3 (n=147),147,thousands,public,quarter end + 7d,
+ahe_information,labour,pd_cash,pulled,"FRED CES5000000003: Avg hourly earnings, information sector, monthly",2006Q1..2026Q3 (n=83),83,USD/h,public,quarter end + 7d,"avg hourly earnings, information sector"
+eci_wages_private,labour,pd_cash,pulled,"FRED ECIWAG: Employment cost index wages and salaries private, quarterly",2001Q1..2026Q2 (n=102),102,index,public,quarter end + 30d,
+cpi_sf_bay,labour,ga_cash,pulled,FRED CUURA422SA0: ,1914Q4..2026Q3 (n=410),410,index,public,quarter end + 14d,"CPI-U San Francisco-Oakland-Hayward, bimonthly"
+emp_business_support_services,labour,ops_cash,pulled,FRED CES6056140001: ,1990Q1..2026Q3 (n=147),147,thousands,public,quarter end + 7d,"BLS CES employment, business support services (NAICS 5614, call centres)"
+initial_claims,macro,macro,pulled,FRED ICSA: ,1967Q1..2026Q3 (n=239),239,persons,public,quarter end + 7d,
+unemployment_rate,macro,macro,pulled,"FRED UNRATE: US unemployment rate, monthly",1948Q1..2026Q3 (n=315),315,pct,public,quarter end + 7d,
+ppi_data_hosting,prices,cor_cash,pulled,FRED PCU518210518210: ,2000Q4..2026Q3 (n=104),104,index,public,quarter end + 14d,"PPI computing infrastructure, data processing, hosting (NAICS 518210)"
+ppi_hosting_related,prices,cor_cash,pulled,"FRED PCU5182105182105: PPI data processing, hosting and related services",2006Q4..2026Q3 (n=80),80,index,public,quarter end + 14d,
+ppi_insurance_brokerage,prices,ops_cash,pulled,FRED PCU5242105242101: PPI insurance agencies and brokerages,2002Q4..2026Q3 (n=96),96,index,public,quarter end + 14d,PPI insurance agencies and brokerages (host liability insurance premium proxy)
+umich_sentiment,macro,macro,pulled,"FRED UMCSENT: UMich consumer sentiment, monthly",1952Q4..2026Q3 (n=287),287,index,public,quarter end + 0d,
+real_disposable_income,macro,macro,pulled,"FRED DSPIC96: Real disposable personal income, monthly",1959Q1..2026Q3 (n=271),271,USD bn,public,quarter end + 30d,
+real_pce,macro,macro,pulled,"FRED PCEC96: Real PCE, monthly",2007Q1..2026Q3 (n=79),79,USD bn,public,quarter end + 30d,
+cpi_all,macro,macro,pulled,"FRED CPIAUCSL: CPI-U all items, monthly",1947Q1..2026Q3 (n=319),319,index,public,quarter end + 14d,
+emp_accommodation,macro,macro,pulled,"FRED CES7072100001: Employment, accommodation (thousands), monthly",1972Q1..2026Q3 (n=219),219,thousands,public,quarter end + 7d,
+fx_usd_per_eur,fx,cor_cash,pulled,"FRED DEXUSEU: USD per EUR, daily",1999Q1..2026Q3 (n=111),111,USD/EUR,public,quarter end + 1d,
+fx_broad_dollar,fx,cor_cash,pulled,"FRED DTWEXBGS: Broad dollar index, daily",2006Q1..2026Q3 (n=83),83,index,public,quarter end + 1d,
+fred_CES5051200003,labour,pd_cash/ops_cash,unreachable,FRED CES5051200003,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_CES6054150003,labour,pd_cash/ops_cash,unreachable,FRED CES6054150003,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_JTS5100JOL,labour,pd_cash/ops_cash,unreachable,FRED JTS5100JOL,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_JTS5100LDL,labour,pd_cash/ops_cash,unreachable,FRED JTS5100LDL,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_PCU561422561422,labour,pd_cash/ops_cash,unreachable,FRED PCU561422561422,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_PCU5614205614201,labour,pd_cash/ops_cash,unreachable,FRED PCU5614205614201,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_CES6056142001,labour,pd_cash/ops_cash,unreachable,FRED CES6056142001,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_CES6056142003,labour,pd_cash/ops_cash,unreachable,FRED CES6056142003,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+fred_PCU54151054151011,labour,pd_cash/ops_cash,unreachable,FRED PCU54151054151011,none,0,,,,"404 from fredgraph.csv (id not on FRED or renamed after NAICS 2022 revision); 24 alternative ids tried, see pull log"
+tsa_throughput,macro,macro,pulled,https://www.tsa.gov/travel/passenger-volumes/{year},2019Q1..2026Q3 (n=31),31,passengers/quarter,public,quarter end + 1d,
+trends_airbnb_ww,marketing,sm_cash,pulled,"Google Trends via pytrends, repo data/processed/overnight/08_trends_weekly.csv (pulled 6 Sep 2026)",2019Q1..2026Q3 (n=31),31,index,public,quarter end + 1d,
+trends_airbnb_share_ww,marketing,sm_cash,pulled,"same; airbnb / (airbnb+booking.com+expedia+vrbo), same-payload stitched values",2019Q1..2026Q3 (n=31),31,pct,public,quarter end + 1d,
+trends_airbnb_us,marketing,sm_cash,pulled,"Google Trends via pytrends, repo data/processed/overnight/08_trends_weekly.csv (pulled 6 Sep 2026)",2019Q1..2026Q3 (n=31),31,index,public,quarter end + 1d,
+trends_airbnb_share_us,marketing,sm_cash,pulled,"same; airbnb / (airbnb+booking.com+expedia+vrbo), same-payload stitched values",2019Q1..2026Q3 (n=31),31,pct,public,quarter end + 1d,
+careers_open_roles,labour,pd_cash,partial,"Wayback captures of careers.airbnb.com (home 'N roles' 2019-2023, 'N Open Positions' 2024-26; positions page 'N open jobs' fills gaps)",2019Q1..2026Q1 (n=19),19,open roles,public,per observation,capture nearest quarter end; 2020Q2 = 7 roles (hiring freeze)
+appstore_new_ratings_per_day,support,ops_cash,pulled,Wayback captures of apps.apple.com/us/app/airbnb/id401626263 (schema.org reviewCount),2019Q3..2025Q4 (n=22),22,ratings/day,public,per observation,cumulative US rating count differenced between consecutive quarterly captures
+appstore_travel_rank,marketing,sm_cash,pulled,"same (#N in Travel, US)",2019Q2..2025Q3 (n=23),23,rank,public,per observation,
+glassdoor_reviews_cum,labour,pd_cash,partial,Wayback captures of glassdoor.com Airbnb overview (schema.org reviewCount),2019Q1..2023Q3 (n=10),10,reviews,public,per observation,captures after 2023Q3 are bot-wall pages without counts
+trustpilot_reviews_new_per_day,support,ops_cash,partial,Wayback captures of trustpilot Airbnb page,2020Q4..2023Q3 (n=5),5,reviews/day,public,per observation,
+sitejabber_reviews_new_per_day,support,ops_cash,partial,Wayback captures of sitejabber Airbnb page,2019Q2..2021Q1 (n=2),2,reviews/day,public,per observation,
+playstore_ratings_new_per_day,support,ops_cash,pulled,Wayback captures of playstore Airbnb page,2019Q3..2025Q1 (n=21),21,ratings/day,public,per observation,
+linkedin_employees_on_linkedin,labour,pd_cash,partial,Wayback www.linkedin.com/company/airbnb,none,0,,,,"11 captures 2023Q3-2026Q2; only 2024Q4 (44,959) and 2025Q2 (55,686) rendered a count, and it is LinkedIn member self-reports (includes hosts/contractors), not headcount; not usable"
+bbb_complaints,support,ops_cash,unreachable,Wayback bbb.org Airbnb profile,none,0,,,,CDX returned no 200 captures for the BBB profile URL pattern
+downdetector_reports,support,ops_cash,out_of_rules,Wayback downdetector.com/status/airbnb,none,0,,,,captures exist (2018+) but the page shows only a live 24h chart image; no time series recoverable
+meta_ad_library_spend,marketing,sm_cash,unreachable,https://www.facebook.com/ads/library/report/,none,0,,,,fetch hung up (socket); report is JS-rendered and only covers political/issue ads in the US anyway
+google_ads_transparency,marketing,sm_cash,unreachable,https://adstransparency.google.com/,none,0,,,,JS-rendered SPA; no spend figures in static HTML; no archive
+layoffs_fyi_airbnb,labour,pd_cash,partial,Wayback layoffs.fyi,none,0,,,,"captures exist; Airbnb rows are the May 2020 cut (1,900) and Mar 2023 recruiting cut only; used as events E10, no series"
+peer_bkng_opex_ex_cor_yoy,peers,sm_cash,pulled,"LSEG TR.TotalOperatingExpense - TR.CostOfRevenueTotal, BKNG.O, pulled 2026-09-13T05:00:45+00:00",2019Q4..2026Q2 (n=27),27,y/y pct,LSEG (derived y/y only),quarter end + 40d,
+peer_bkng_sga_yoy,peers,sm_cash,pulled,"LSEG TR.SGAExpenseTotal BKNG.O, pulled 2026-09-13T05:00:45+00:00",2019Q4..2026Q2 (n=27),27,y/y pct,LSEG (derived y/y only),quarter end + 40d,
+peer_bkng_advertising_yoy,peers,sm_cash,pulled,"LSEG TR.AdvertisingExpense BKNG.O, pulled 2026-09-13T05:00:45+00:00",2019Q4..2026Q2 (n=27),27,y/y pct,LSEG (derived y/y only),quarter end + 40d,
+peer_bkng_fte_yoy,peers,pd_cash,partial,LSEG TR.F.EmpFTEEquivPrdEnd,none,0,,,,0 non-null quarters; annual only
+peer_expe_opex_ex_cor_yoy,peers,sm_cash,pulled,"LSEG TR.TotalOperatingExpense - TR.CostOfRevenueTotal, EXPE.O, pulled 2026-09-13T05:00:45+00:00",2019Q4..2026Q2 (n=27),27,y/y pct,LSEG (derived y/y only),quarter end + 40d,
+peer_expe_sga_yoy,peers,sm_cash,pulled,"LSEG TR.SGAExpenseTotal EXPE.O, pulled 2026-09-13T05:00:45+00:00",2019Q4..2026Q2 (n=27),27,y/y pct,LSEG (derived y/y only),quarter end + 40d,
+peer_expe_fte_yoy,peers,pd_cash,partial,LSEG TR.F.EmpFTEEquivPrdEnd,none,0,,,,0 non-null quarters; annual only
+hotel_mar_revpar_yoy,macro,macro,pulled,repo data/processed/predictive/02_peer_prints.csv (MAR/HLT prints),2021Q1..2026Q2 (n=22),22,y/y pct,public,quarter end + 35d,
+hotel_hlt_revpar_yoy,macro,macro,pulled,repo data/processed/predictive/02_peer_prints.csv (MAR/HLT prints),2021Q1..2026Q2 (n=22),22,y/y pct,public,quarter end + 35d,
+ia_listings_yoy_median_city,supply,sm_cash,partial,"repo data/processed/overnight/08_ia_dump_metrics.csv (Inside Airbnb, CC-BY 4.0), median city y/y, >=3 cities",2025Q2..2026Q3 (n=5),5,y/y pct,public,quarter end + 45d,composition changes by quarter; see note 08
+funds_held_musd,balance_sheet,interest_income,pulled,SEC XBRL FundsHeldForClients (data/raw/xbrl/ABNB_companyfacts.json),2021Q1..2026Q2 (n=22),22,USD m,public,quarter end + 40d,
+tenk_employees_year_end,labour,pd_cash,pulled,"10-K text extraction (data/raw/filings/abnb_10k_FY*.htm), table data/raw/margin_build/04_alt_signals/misc/tenk_annual_drivers.csv",2020Q4..2025Q4 (n=6),6,annual,public,per observation,annual; placed on Q4 of the fiscal year; n too small for the quarterly test
+tenk_contingent_support_workers,support,ops_cash,pulled,"10-K text extraction (data/raw/filings/abnb_10k_FY*.htm), table data/raw/margin_build/04_alt_signals/misc/tenk_annual_drivers.csv",2022Q4..2025Q4 (n=3),3,annual,public,per observation,annual; placed on Q4 of the fiscal year; n too small for the quarterly test
+tenk_chargeback_expense_musd,payments,cor_cash,pulled,"10-K text extraction (data/raw/filings/abnb_10k_FY*.htm), table data/raw/margin_build/04_alt_signals/misc/tenk_annual_drivers.csv",2020Q4..2025Q4 (n=6),6,annual,public,per observation,annual; placed on Q4 of the fiscal year; n too small for the quarterly test
+tenk_hosting_commitment_remaining_musd,hosting,cor_cash,pulled,"10-K text extraction (data/raw/filings/abnb_10k_FY*.htm), table data/raw/margin_build/04_alt_signals/misc/tenk_annual_drivers.csv",2020Q4..2025Q4 (n=5),5,annual,public,per observation,annual; placed on Q4 of the fiscal year; n too small for the quarterly test
+event_E01_sm_cash,events,sm_cash,pulled,data/processed/overnight/06_fee_timeline.csv,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,Host-only fee mandatory for software-connected hosts outside the Americas (fee-panel timeline)
+event_E02_cor_cash,events,cor_cash,pulled,https://blog.monerepay.com/blog/new-interchange-rates-2022; https://corepay.net/articles/mastercard-visa-to-delay-merchant-fee-increase-to-2022/,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,Visa/Mastercard April 2022 interchange schedule: higher rates on non-tokenised card-not-present transactions after two pandemic deferrals
+event_E03_cor_cash,events,cor_cash,pulled,https://www.doit.com/blog/aws-public-ipv4-price-increase-the-complete-guide,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,AWS begins charging $0.005/h per public IPv4 address (announced Jul 2023)
+event_E04_cor_cash,events,cor_cash,pulled,https://merchantcostconsulting.com/lower-credit-card-processing-fees/visa-interchange-rates/,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,Visa/Mastercard US merchant settlement: planned April 2024 interchange increases withdrawn; five-year rate cap; Visa adds 0.0075% Digital Commerce Service Fee on CNP
+event_E05_ops_cash,events,ops_cash,pulled,https://www.customerexperiencedive.com/news/airbnb-brings-ai-customer-service-agent-to-half-of-us-customers/747163/,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,Airbnb AI customer-service agent launched to US users (announced 4Q24 call as summer release; live April 2025; 15% fewer human contacts by May 2025)
+event_E06_cor_cash,events,cor_cash,pulled,https://www.pump.co/blog/aws-ec2-pricing-update/,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,AWS cuts on-demand GPU instance prices up to 45% (P4/P5 families)
+event_E07_ops_cash,events,ops_cash,pulled,https://techcrunch.com/2026/02/13/airbnb-says-a-third-of-its-customer-support-is-now-handled-by-ai-in-the-u-s-and-canada/,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,Airbnb: roughly one third of North American support tickets resolved by AI without a human agent (4Q25 letter/call)
+event_E08_ops_cash,events,ops_cash,pulled,https://www.customerexperiencedive.com/news/airbnb-ai-assistant-resolves-customer-inquiries/819734/,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,Airbnb: AI assistant resolves over 40% of customer inquiries (1Q26 print)
+event_E09_cor_cash,events,cor_cash,pulled,data/raw/filings/abnb_10k_FY2025.htm,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,FY2025 10-K: data hosting commitment re-cut to at least $1.7bn through 2031 (from $672m through 2027)
+event_E10_pd_cash,events,pd_cash,pulled,https://www.linkedin.com/news/story/airbnb-confirms-layoffs-5572340/,2021Q1..2026Q2 (n=22),22,0/1,public,per observation,Airbnb cuts ~30% of recruiting staff amid hiring slowdown

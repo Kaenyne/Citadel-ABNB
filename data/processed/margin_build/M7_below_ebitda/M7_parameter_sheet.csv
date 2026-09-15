@@ -1,0 +1,29 @@
+name,value,unit,source
+interest_income_beta,0.8764975067193741,ratio of realised yield to 3m T-bill,"recency-weighted mean of the last 8 quarters with DTB3 >= 0.5% (WS02 panel, FRED DTB3); WS04 equal-weight 0.86"
+interest_income_rule,beta x DTB3 x avg(cash + STI + funds held)/4,USD m per quarter,WS04 04_interest_income_yield_diagnostic.csv; this note
+tbill_3m_spot_2026-09-10,3.86,% (spot held constant beyond the vintage),"FRED DTB3, raw file data/raw/margin_build/M7_below_ebitda/fred_DTB3.csv"
+tbill_3m_3q26_hat,3.762380952380953,% quarter average (realised to 10 Sep + spot),same
+ust_1y_spot_2026-09-10,4.28,"% (market-implied 12m path proxy, sensitivity only)",FRED DGS1
+cash_plus_sti_2q26,12069.0,"USD m, held flat",WS02 panel 2Q26
+funds_held_2q26,12224.0,USD m; forward = same quarter last year x (1 + GBV y/y from the adopted path),WS02 panel; WS06 path
+interest_income_rate_sensitivity,+/-100bp = +/- ~$55m per quarter on a ~$22bn base,USD m,"rule arithmetic (0.86 x 1% x 22,000/4 = 47; with base growth ~55)"
+sbc_yoy_growth,0.13177740767185675,"fraction, applied to SBC[q-4]","recency-weighted mean of the last 4 y/y rates (1Q26 +14.5%, 2Q26 +14.9%, 4Q25 +11.7%, 3Q25 +10.2%; WS02 sbc_total_is)"
+sbc_by_line_shares_ttm,"{""ops"": 0.064, ""pd"": 0.626, ""sm"": 0.139, ""ga"": 0.17}","share of total SBC, trailing 4 quarters",WS02 sbc_ops/pd/sm/ga
+da_musd_q,20.633970599907517,USD m per quarter (recency-weighted last-4 mean),"WS02 da; FY2025 D&A $91m, capex $33m (10-K)"
+interest_expense_musd_q,37.0,"USD m per quarter, 3Q26-4Q28",2Q26 10-Q: $37m printed; $2.5bn notes 4.40/4.65/5.25% = $119m/yr coupon + issuance-cost amortisation + swap carry ($1.7bn swapped to SOFR; +/-100bp = +/-$17m/yr)
+other_income_musd_q,3.707412112603224,USD m per quarter (recency-weighted mean of last 8),"WS02 other_income_expense (FX and other, excludes interest expense)"
+other_addbacks_expected,0.0,"USD m (lodging-tax reserves, acquisition marks, IPO settlement)",expected value 0; FY2025 realised $83m in 4Q25 (WS02)
+etr_fy26,18.0,% (1H26 printed 17.1%),"WS05 S157 'high teens' (1Q26 letter, 7 May 2026)"
+etr_fy27_fy28,17.5,%,"WS05 S148 long-term mid-to-high teens (OBBBA), 4Q25 letter; range 16-19"
+buyback_musd_q,1027.75,"USD m per quarter (trailing-4 mean: 3Q25 877, 4Q25 1,095, 1Q26 1,088, 2Q26 1,051)","WS02 buybacks_cash; 2Q26 10-Q: $3.4bn authorisation left at 30 Jun 2026 -> exhausted ~1Q27 at this pace; base assumes renewal (Aug 2022, Feb 2024, Aug 2025 all renewed before exhaustion)"
+share_price_used,181.94,"USD (last close <= vintage in data/processed/abnb_daily_close.csv, 4 Sep 2026)",abnb_daily_close.csv
+award_issuance_m_q,0.3246536589199398,m shares per quarter (net RSU/option issuance implied by the diluted count and buybacks),"WS02 shares_diluted_m, buybacks_cash, quarter-average close"
+diluted_shares_delta_m_q,-5.324186618094461,m per quarter = -buyback/price + issuance,this note
+diluted_shares_2q26,597.0,m weighted-average diluted (basic 592; A+B outstanding 589.6m at 15 Jul 2026; 9.2m Class H excluded),2Q26 10-Q cover and EPS note
+wc_rule,change in unearned fees and in funds payable = same quarter last year x (1 + GBV y/y from the path),USD m,this note (0 fitted parameters)
+other_cf_musd_q,21.048581978392797,USD m per quarter (recency-weighted mean of last 8 residuals: CFO - NI - D&A - SBC - dUF; funds payable nets against funds receivable),WS02 cash-flow lines
+other_cf_seasonal_3q26,406.29029534055906,"USD m (same-quarter residual, recency-weighted mean of the last 3 years; variant)",WS02 cash-flow lines
+capex_musd_q,8.929320995781959,USD m per quarter (recency-weighted last-4 mean),WS02 capex
+adj_ebitda_source_live,driver-lines/margin_v2 spec a_unit_rw vintage 2026-09-11,USD m by quarter,registry
+fy28_ebitda_rule,"FY28 adj EBITDA = FY27 margin of the same source x FY28 base revenue (flat margin, labelled)",,this note
+revenue_gbv_path,"06_revenue_path_3q26_4q27_v2b.csv (checker) for 3Q26-4Q27, wide file for 1Q28+","3Q26/4Q26 bridge v3, 1Q27-4Q27 WS06 v2, FY28 WS06 base",WS06

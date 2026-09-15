@@ -1,0 +1,89 @@
+{
+  "package": "23_final_model",
+  "method": "final-margin",
+  "object": "combined",
+  "written_before_any_result": true,
+  "written_at_local": "2026-09-14T05:20",
+  "author": "WS23 triangulation agent",
+  "inputs_frozen_at": "post-WS22 registry and scorer (significance columns present, oracle specs marked)",
+
+  "members_margin": {
+    "h0": [
+      "street-bias|dispersion_conditioned|rw_hl4_med",
+      "street-bias|street_plus_flowthrough|rw_hl4",
+      "baselines-margin|street",
+      "guide-policy-margin|actual_given_guide|nov_sentence_pin",
+      "margin-ts|q_sentence_direction|k_fit_median",
+      "FAMILY_A"
+    ],
+    "h1": [
+      "street-bias|street_plus_flowthrough|rw_hl4",
+      "baselines-margin|street",
+      "guide-policy-margin|actual_given_guide|nov_sentence_pin",
+      "FAMILY_A"
+    ],
+    "h2": [
+      "guide-policy-margin|actual_given_guide|nov_sentence_pin",
+      "margin-ts|incremental_margin|k8_median",
+      "FAMILY_A"
+    ]
+  },
+  "members_dollars": {
+    "h0": [
+      "street-bias|street_plus_flowthrough|rw_hl4",
+      "baselines-margin|street",
+      "guide-policy-margin|actual_given_guide|nov_sentence_pin",
+      "FAMILY_A"
+    ],
+    "h1": [
+      "street-bias|street_plus_flowthrough|rw_hl4",
+      "baselines-margin|street",
+      "guide-policy-margin|actual_given_guide|nov_sentence_pin",
+      "FAMILY_A"
+    ],
+    "h2": [
+      "guide-policy-margin|actual_given_guide|nov_sentence_pin",
+      "margin-ts|incremental_margin|k8_median",
+      "FAMILY_A"
+    ]
+  },
+  "FAMILY_A_definition": "equal-weighted mean of driver-lines|margin_v2|b_elastic_rw, cycle-flex|flex_margin|l0_rw, margin-ts|sarima_margin|lines_aicc (WS22 group A amendment: the pre-named M1 spec, not the grid-picked b_elastic_eq; M4 ridge_all dropped at 37 parameters)",
+  "excluded_a_priori": {
+    "alt-augmented|* (M4)": "WS22 group A weight 0; 15-37 parameters, worse than none on the margin",
+    "street-bias|street_plus_bias|*": "WS22 group C weight 0; fails W2 in dollars",
+    "margin-ts ratio objects (pct_rev_seasonal, per_night_seasonal, yoy_margin_change, ensemble_simple)": "WS22 group B weight 0",
+    "guide-policy-margin|actual_given_guide|rw_hl4_pin / rw_hl4 / equal / last_pin / nocushion_pin": "WS21 R12 + R05/R06",
+    "guide-policy-margin|q4_implied": "n=3",
+    "any spec_id containing revknown / nightsknown / ebitda_known": "oracle",
+    "driver-lines|margin_v2|d_steps_rw": "WS21 R04 kill list"
+  },
+
+  "weight_rule": "At target quarter t, vintage v: prior = matched quarters q < t in the same window and horizon for which every member has a PIT point. raw_i = 1 / MAE_prior_i (equal-weighted over the prior quarters). w_inv = raw / sum(raw). w = (1 - lambda) * w_inv + lambda * (1/K). lambda = 0.5, fixed a priori, never tuned. Fewer than MIN_PRIOR=4 prior quarters -> equal weights. No weight is ever fitted on the quarter being forecast or on any later quarter.",
+  "full_sample_replay": "identical machinery but MAE computed on every matched quarter in the window (including the target quarter and later ones). This is the hindsight measure, not a forecast.",
+
+  "guide_clip": "If a QUARTERLY adj-EBITDA-margin guide is in force at vintage v for quarter t (guides_margin.csv, is_fy = False, guide_date <= v, target_period = t, latest wins): level = y[t-4] + value for metric adj_ebitda_margin_yoy_pts, or value for metric adj_ebitda_margin_pct. guide_type 'ceiling' -> point = min(point, level); 'floor' -> point = max(point, level); 'point' -> unchanged. Zero estimated parameters; the sentence is inside the h=0 information set (WS21 R17).",
+
+  "specs_registered": {
+    "stack_clip": "PRIMARY. lambda = 0.5, guide clip on.",
+    "stack": "lambda = 0.5, no clip.",
+    "stack_lam25_clip": "lambda = 0.25, clip on (sensitivity).",
+    "stack_ew_clip": "lambda = 1.0 (equal weights), clip on (sensitivity)."
+  },
+  "n_params_declared": 2,
+  "n_params_note": "1 shrinkage constant lambda (fixed a priori) + 1 fitted residual scale for the conformal band. The MEMBERS carry their own parameters: M5-disp 5, M5-flow 6, street 1, M3 1, M2-sent 2, FAMILY_A 10+12+15=37 -> 52 inherited. Stated in the note; the combination adds 2.",
+
+  "interval_rule": "Split conformal on the combination's own PIT absolute errors at quarters that printed strictly before the vintage (so the band is point-in-time too). k = ceil((n+1)*(1-alpha)); qhat = k-th smallest |error|; if k > n, fall back to max|error| * (n+1)/n; if n < 4, fall back to 3.0 pp additive (margin) / 10% relative (dollars) and label it. Registry quantiles from WS20's methods are NOT used (cov80 0.91-1.00 against a nominal 0.80).",
+
+  "pass_line": {
+    "primary": "final-margin|combined|stack_clip beats the seasonal_naive baseline on adj_ebitda_margin_pct MAE at h=0 AND h=1, in BOTH windows (W1, W2) and BOTH weightings (equal, recency).",
+    "secondary": "stack_clip is not worse than the best single non-oracle object at the same target/horizon/window by more than 10% in either window. If it is, quote the best single object and say the combination does not help.",
+    "reporting": "Every ratio is reported with the NW(1) p-value, the quarters-better count and the exact sign test against seasonal_naive and against street (WS21 kill-list item 2). 'Survives both windows' is never quoted on its own.",
+    "failure_policy": "A failed test is written up in the note with its numbers, not deleted."
+  },
+
+  "revenue_leg": {
+    "backtest": "frozen harness revenue_forecast_pit (guide-cushion / naive). Unchanged.",
+    "live": "bridge v3 / WS06 v2b, data/processed/margin_build/06_fy27_path_v2/06_revenue_path_3q26_4q27_v2b.csv and 06_annual_fy26_fy28_v2b.csv, base/bear/bull. LIVE-only, endorsed by WS22 group C."
+  },
+  "test_count_planned": 4
+}

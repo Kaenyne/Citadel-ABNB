@@ -1,0 +1,579 @@
+<title>The ABNB Margin Model</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,500;100,700;100,800;125,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#e9edf1;
+  --ink:#141a22; --ink-2:#3e4956; --muted:#66717d; --rule:#d5dbe2; --rule-2:#c2cad3;
+  --accent:#2a78d6; --accent-ink:#1b5aa6; --violet:#8a7fe0;
+  --pass:#1a9e6f; --scen:#8a7fe0; --fail:#e0475b; --street:#66717d;
+  --pass-bg:#dff5ea; --scen-bg:#ebe8fb; --fail-bg:#fde3e6; --street-bg:#e4e8ec;
+  --grid:#e3e8ed;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#10141a; --surface:#181e26; --surface-2:#212934;
+    --ink:#eef2f5; --ink-2:#c4ccd4; --muted:#98a3ae; --rule:#2c3541; --rule-2:#3a4552;
+    --accent:#4a90e2; --accent-ink:#7fb3f0; --violet:#9a90ec;
+    --pass:#22b07e; --scen:#9a90ec; --fail:#ef5f70; --street:#98a3ae;
+    --pass-bg:#123b2e; --scen-bg:#2a2650; --fail-bg:#4a1f26; --street-bg:#272f3a;
+    --grid:#28313c;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#10141a; --surface:#181e26; --surface-2:#212934;
+  --ink:#eef2f5; --ink-2:#c4ccd4; --muted:#98a3ae; --rule:#2c3541; --rule-2:#3a4552;
+  --accent:#4a90e2; --accent-ink:#7fb3f0; --violet:#9a90ec;
+  --pass:#22b07e; --scen:#9a90ec; --fail:#ef5f70; --street:#98a3ae;
+  --pass-bg:#123b2e; --scen-bg:#2a2650; --fail-bg:#4a1f26; --street-bg:#272f3a;
+  --grid:#28313c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15.5px;line-height:1.55;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+.num{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:"Archivo","Public Sans",system-ui,sans-serif;text-wrap:balance;margin:0}
+p{margin:0 0 12px;max-width:70ch}
+a{color:var(--accent-ink)}
+.wrap{max-width:1040px;margin:0 auto}
+header{padding-block:44px 28px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:600}
+header h1{font-size:clamp(30px,4.6vw,50px);font-weight:800;font-stretch:125%;line-height:1.02;letter-spacing:-.01em;max-width:19ch}
+header .sub{font-size:17px;color:var(--ink-2);max-width:64ch;margin-top:14px}
+header .meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:12.5px;color:var(--muted);margin-top:14px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;padding-block:14px;border-bottom:1px solid var(--rule)}
+nav.toc a{text-decoration:none;color:var(--ink-2)}
+nav.toc a:hover{color:var(--accent-ink)}
+section{padding-block:34px 8px}
+section h2{font-size:clamp(21px,2.6vw,28px);font-weight:800;line-height:1.15;margin-bottom:10px;max-width:32ch}
+section .lede{font-size:16.5px;color:var(--ink-2);max-width:68ch;margin-bottom:18px}
+h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.grid.w{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+@media (max-width:820px){ .grid,.grid.w{grid-template-columns:1fr} }
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px}
+.callout{border-left:3px solid var(--accent);padding:6px 0 6px 16px;margin:8px 0 18px;max-width:70ch}
+.callout p{margin-bottom:6px}
+.callout.warn{border-left-color:var(--fail)}
+ul.tight,ol.tight{margin:0 0 12px;padding-left:20px;max-width:70ch}
+ul.tight li,ol.tight li{margin-bottom:7px}
+li b{font-weight:600}
+.chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border-radius:3px;padding:1px 6px;vertical-align:middle;line-height:1.5;white-space:nowrap}
+.chip.p{background:var(--pass-bg);color:var(--pass)}
+.chip.s{background:var(--scen-bg);color:var(--scen)}
+.chip.f{background:var(--fail-bg);color:var(--fail)}
+.chip.d{background:var(--surface-2);color:var(--ink-2)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;border-bottom:1px solid var(--rule-2)}
+td.r,th.r{text-align:right}
+td.n{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hl td{background:var(--surface-2)}
+tr.hl td{font-weight:600}
+.note{display:block;color:var(--muted);font-size:12.5px;margin-top:8px;max-width:78ch}
+.src{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:var(--muted)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:6px 0 10px}
+@media (max-width:820px){ .steps{grid-template-columns:1fr} }
+.steps .st{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;position:relative;padding-left:44px}
+.steps .st::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:12px;font-family:"JetBrains Mono",monospace;font-weight:600;color:var(--accent-ink)}
+.steps .st b{display:block;font-weight:600;margin-bottom:3px}
+.steps .st span{font-size:13.5px;color:var(--ink-2)}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:14px 14px 10px;margin-bottom:6px}
+.fig svg{width:100%;height:auto;display:block;font-family:"Public Sans",system-ui,sans-serif;overflow:visible}
+.fig text{fill:var(--ink-2);font-size:11px}
+.fig text.lab{font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;fill:var(--ink)}
+.fig text.mut{fill:var(--muted)}
+.fig .cap{font-size:12.5px;color:var(--muted);margin-top:8px;max-width:80ch}
+.legend{display:flex;gap:16px;font-size:12.5px;color:var(--ink-2);margin-bottom:8px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.legend i.sq{border-radius:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:6px 0 14px}
+@media (max-width:820px){ .kpis{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:460px){ .kpis{grid-template-columns:1fr} }
+.kpi{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:12px 14px}
+.kpi .k{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
+.kpi .v{font-family:"Archivo","Public Sans",sans-serif;font-weight:800;font-size:26px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:12.5px;color:var(--ink-2);margin-top:4px}
+.foot{font-size:12.5px;color:var(--muted);max-width:84ch;padding-top:20px;border-top:1px solid var(--rule);margin-top:30px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">ABNB research · margin build, 13–14 September 2026</div>
+  <h1>How Airbnb's margin is modelled, and what it says for 5 November</h1>
+  <p class="sub">Twenty-two workstreams built and tested a forecast of Airbnb's adjusted EBITDA margin, its six cost lines, the bridge down to EPS, and the margin sentence management will put in the November letter. An external auditor then took the whole thing apart. This page is the plain-words version: what the model does, what it forecasts, what it could not forecast, and how much of it is actually evidence.</p>
+  <div class="meta"><span>Vintage 11 September 2026</span><span>Memo 2 October · finals 22–24 October · print 5 November</span><span>Branch <span class="num">krish/margin-build</span></span></div>
+</header>
+
+<nav class="toc" aria-label="Contents">
+  <a href="#answer">The answer</a><a href="#how">How it works</a><a href="#forecast">The forecast</a><a href="#seasonal">Seasonality</a><a href="#costs">The cost stack</a><a href="#evidence">Does it work?</a><a href="#cycle">The cycle</a><a href="#consensus">The consensus gap</a><a href="#linebuild">The line build</a><a href="#card">The 5 Nov card</a><a href="#failed">What failed</a><a href="#audit">The audit</a>
+</nav>
+
+<section id="answer">
+  <h2>The answer in four numbers and three sentences</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="k">3Q26 adj EBITDA</div><div class="v">$2,399M</div><div class="s">Street $2,361.5M · band $2,337–2,462M · P(beat) 0.78</div></div>
+    <div class="kpi"><div class="k">3Q26 margin</div><div class="v">49.94%</div><div class="s">Street 49.78% · guidance ceiling 50.09%</div></div>
+    <div class="kpi"><div class="k">FY26 margin</div><div class="v">35.73%</div><div class="s">Guide floor 35.5% · Street 35.62%</div></div>
+    <div class="kpi"><div class="k">FY27 margin <span class="chip s">scenario</span></div><div class="v">34.64%</div><div class="s">Street 36.45% · −$283M of EBITDA</div></div>
+  </div>
+  <div class="callout">
+    <p><b>The third quarter is a small beat, and it is a revenue beat wearing a margin costume.</b> The model puts adjusted EBITDA $38M above consensus, but at the Street's own revenue the margin view is worth only about $8M. The probability that our <i>margin</i> beats their margin is 0.54 — a coin flip. The probability that our <i>dollars</i> beat their dollars is 0.78, and that is because our revenue line is $60M higher, not because we have a better view of costs.</p>
+    <p><b>The fourth quarter is where we have no edge and say so.</b> Every object in the build loses to the raw analyst consensus one quarter out, by 20–28%, so 4Q26 is quoted from the Street. That matters, because the trade into the November print is structurally a fourth-quarter position: the full-year sentence management gives lands on Q4 with a 4.5x amplifier.</p>
+    <p><b>2027 is the disagreement worth having.</b> Our path says adjusted EBITDA of $5,483M against a Street of $5,766M — an incremental margin of 24.7% against the Street's implied 43.7%. The entire gap is one line, sales and marketing, at 23.5% of revenue against 19.4% two years earlier. It is labelled a spending scenario rather than a forecast, because the model fails its own test that far out. But nothing in the build supports the Street's number.</p>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How the model works</h2>
+  <p class="lede">It is a committee, not a theory. Six independent views of next quarter's margin are averaged, then capped by whatever management has already said about that quarter. Everything is refit at each historical guide date using only what was public on that day.</p>
+  <div class="steps">
+    <div class="st"><b>Six members</b><span>The Street's own consensus; the Street plus its recency-weighted historical bias; the Street plus 0.464 times our revenue surprise; the full-year guide treated as a budget and allocated across quarters; last year's margin plus a coefficient on the direction of management's quarterly sentence; and a cost-stack family that builds margin up from five driver-based cash cost lines.</span></div>
+    <div class="st"><b>Weights that barely matter</b><span>Each member is weighted by the inverse of its mean absolute error over quarters that had <i>already printed</i> on that vintage date, then shrunk halfway toward equal weights. The weights land between 0.146 and 0.201 at every vintage, and equal weighting scores the same. This is a pool result, not a weighting result.</span></div>
+    <div class="st"><b>A clip, not an override</b><span>If management has a live sentence about the quarter ("margin down slightly versus Q3 2025"), the point is capped or floored at last year's level plus that sentence. Zero estimated parameters — the sentence is already public when the forecast is made. It binds in 2 of 14 backtest quarters and helps both times. It does not bind today.</span></div>
+    <div class="st"><b>Dollars and bands</b><span>Dollars are the margin times the revenue path (the H2 bridge v3 today; the frozen harness leg in the backtest). The interval is split-conformal on the object's own point-in-time errors, not the model's own quantiles — those over-cover everywhere in this build.</span></div>
+    <div class="st"><b>Below EBITDA</b><span>A separate bridge supplies stock compensation, depreciation, interest income, tax rate and share count down to GAAP diluted EPS. Interest income is the one genuinely good object below the line: it is modelled as the earning cash base times the 3-month Treasury bill, and it beats the hardest baseline available.</span></div>
+    <div class="st"><b>Two parameters, fifty-two inherited</b><span>The wrapper adds two (the shrinkage constant, fixed before any result, and a fitted residual scale). The members bring 52. The registry publishes 54. Free-parameter counts are published because this is a fourteen-observation problem.</span></div>
+  </div>
+  <p class="note">Every historical test uses fourteen guide dates from 1Q23 (window W1) and the ten from 1Q24 (window W2). A claim has to survive both windows and both weightings before anyone quotes it. Source: <span class="src">analysis/src/margin_build/23_final_model/</span>, pre-registration in <span class="src">prereg.json</span>.</p>
+</section>
+
+<section id="forecast">
+  <h2>The forecast</h2>
+  <p class="lede">Six quarters and three years. Which object supplies which quarter is not a stylistic choice — it was fixed by a pre-registered rule before the results were read.</p>
+
+  <div class="tbl panel">
+    <h3>Quarterly, base case · <span class="src">23_forecast_quarterly.csv</span>, <span class="src">23_lines_quarterly.csv</span></h3>
+    <table>
+      <tr><th>USD m unless %</th><th class="r">3Q26</th><th class="r">4Q26</th><th class="r">1Q27</th><th class="r">2Q27</th><th class="r">3Q27</th><th class="r">4Q27</th></tr>
+      <tr><td>Revenue</td><td class="r n">4,804</td><td class="r n">3,178</td><td class="r n">3,053</td><td class="r n">4,029</td><td class="r n">5,281</td><td class="r n">3,466</td></tr>
+      <tr><td>Cost of revenue</td><td class="r n">617</td><td class="r n">544</td><td class="r n">644</td><td class="r n">688</td><td class="r n">672</td><td class="r n">587</td></tr>
+      <tr><td>Operations &amp; support</td><td class="r n">365</td><td class="r n">318</td><td class="r n">316</td><td class="r n">334</td><td class="r n">378</td><td class="r n">329</td></tr>
+      <tr><td>Product development</td><td class="r n">381</td><td class="r n">376</td><td class="r n">422</td><td class="r n">422</td><td class="r n">432</td><td class="r n">419</td></tr>
+      <tr><td>Sales &amp; marketing</td><td class="r n">781</td><td class="r n">771</td><td class="r n">858</td><td class="r n">993</td><td class="r n">967</td><td class="r n">902</td></tr>
+      <tr><td>G&amp;A</td><td class="r n">281</td><td class="r n">272</td><td class="r n">239</td><td class="r n">241</td><td class="r n">302</td><td class="r n">282</td></tr>
+      <tr><td>Total cash costs</td><td class="r n">2,405</td><td class="r n">2,260</td><td class="r n">2,459</td><td class="r n">2,658</td><td class="r n">2,730</td><td class="r n">2,499</td></tr>
+      <tr class="hl"><td>Adj EBITDA</td><td class="r n">2,399</td><td class="r n">918</td><td class="r n">594</td><td class="r n">1,371</td><td class="r n">2,551</td><td class="r n">967</td></tr>
+      <tr class="hl"><td>Adj EBITDA margin %</td><td class="r n">49.94</td><td class="r n">28.90</td><td class="r n">19.47</td><td class="r n">34.04</td><td class="r n">48.30</td><td class="r n">27.90</td></tr>
+      <tr><td>80% band, adj EBITDA</td><td class="r n">2,337–2,462</td><td class="r n">800–1,037</td><td class="r n">445–744</td><td class="r n">1,222–1,521</td><td class="r n">2,401–2,700</td><td class="r n">817–1,116</td></tr>
+      <tr><td>GAAP operating income</td><td class="r n">1,927</td><td class="r n">433</td><td class="r n">110</td><td class="r n">799</td><td class="r n">2,019</td><td class="r n">420</td></tr>
+      <tr><td>Diluted shares (m)</td><td class="r n">591.7</td><td class="r n">586.4</td><td class="r n">581.0</td><td class="r n">575.7</td><td class="r n">570.4</td><td class="r n">565.1</td></tr>
+      <tr class="hl"><td>EPS, diluted</td><td class="r n">2.88</td><td class="r n">0.80</td><td class="r n">0.37</td><td class="r n">1.40</td><td class="r n">3.16</td><td class="r n">0.82</td></tr>
+      <tr><td>EPS 80% band (joint)</td><td class="r n">2.70–3.05</td><td class="r n">0.64–0.95</td><td class="r n">0.18–0.56</td><td class="r n">1.16–1.63</td><td class="r n">2.86–3.45</td><td class="r n">0.61–1.03</td></tr>
+      <tr><td>Source object</td><td><span class="chip p">combination</span></td><td><span class="chip d">Street</span></td><td><span class="chip s">scenario</span></td><td><span class="chip s">scenario</span></td><td><span class="chip s">scenario</span></td><td><span class="chip s">scenario</span></td></tr>
+    </table>
+    <span class="note">3Q26 comes from the combination because it passes both windows and both weightings against the naive <i>and</i> the Street. 4Q26 comes from the Street because the combination loses to it one quarter out — that consequence was pre-registered. 2027 is labelled a scenario because the test fails two quarters out. The EPS band is joint: the EBITDA term and the measured below-EBITDA bridge error, in quadrature. Quarterly free cash flow is <b>not</b> forecast — that object failed its test and its columns are marked diagnostic.</span>
+  </div>
+
+  <div class="tbl panel" style="margin-top:18px">
+    <h3>Annual · <span class="src">23_forecast_annual.csv</span></h3>
+    <table>
+      <tr><th></th><th class="r">FY26</th><th class="r">FY27 <span class="chip s">scen</span></th><th class="r">FY28 <span class="chip d">roll-forward</span></th></tr>
+      <tr><td>Revenue</td><td class="r n">14,268</td><td class="r n">15,829</td><td class="r n">17,137</td></tr>
+      <tr class="hl"><td>Adj EBITDA</td><td class="r n">5,098</td><td class="r n">5,483</td><td class="r n">5,937</td></tr>
+      <tr class="hl"><td>Adj EBITDA margin %</td><td class="r n">35.73</td><td class="r n">34.64</td><td class="r n">34.64</td></tr>
+      <tr><td>bear / bull margin %</td><td class="r n">35.42 / 36.10</td><td class="r n">32.15 / 36.53</td><td class="r n">32.15 / 36.53</td></tr>
+      <tr><td>Stock-based compensation</td><td class="r n">1,814</td><td class="r n">2,053</td><td class="r n">2,323</td></tr>
+      <tr><td>GAAP operating income</td><td class="r n">3,204</td><td class="r n">3,348</td><td class="r n">3,531</td></tr>
+      <tr><td>Net income</td><td class="r n">3,146</td><td class="r n">3,284</td><td class="r n">3,459</td></tr>
+      <tr class="hl"><td>EPS, diluted</td><td class="r n">5.28</td><td class="r n">5.73</td><td class="r n">6.27</td></tr>
+      <tr><td>Free cash flow, mid</td><td class="r n">4,844</td><td class="r n">5,297</td><td class="r n">5,731</td></tr>
+      <tr><td>Free cash flow, bias-adjusted</td><td class="r n">4,445</td><td class="r n">4,898</td><td class="r n">5,332</td></tr>
+    </table>
+    <span class="note">FY28 is the FY27 margin rolled flat onto FY28 revenue — an extrapolation with a label, not a forecast. The bear and bull rows carry the fitted cost response (total cash costs flex at 0.364 of a revenue move), which is why FY27 spreads 32.15–36.53%. Free cash flow is annual only and is a range: the rule beat the prior-year naive in 3 of 4 years but with a +$399M mean high bias, so the bias-adjusted row is the low end. FY26 free cash flow $4.4–4.8bn against a Street $4.92bn.</span>
+  </div>
+</section>
+
+<section id="seasonal">
+  <h2>The shape of the year, and why Q1 is a 19% margin</h2>
+  <p class="lede">Airbnb's margin swings thirty points across a calendar year. Almost none of that is a cost decision.</p>
+
+  <div class="fig">
+    <h3 style="margin-bottom:4px">Adjusted EBITDA margin by quarter, 2022–2027</h3>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Reported</span><span><i style="background:var(--scen)"></i>Forecast / scenario</span><span><i class="sq" style="background:var(--street)"></i>Street, 3Q26 and 4Q26</span></div>
+    <svg viewBox="0 0 760 260" role="img" aria-label="Quarterly adjusted EBITDA margin from 2022 to 2027, showing a sawtooth that peaks near 50 percent in the third quarter and troughs near 19 percent in the first">
+      <line x1="42" y1="226.0" x2="746" y2="226.0" class="gridl" stroke="var(--grid)"/>
+      <line x1="42" y1="179.9" x2="746" y2="179.9" class="gridl" stroke="var(--grid)"/>
+      <line x1="42" y1="133.8" x2="746" y2="133.8" class="gridl" stroke="var(--grid)"/>
+      <line x1="42" y1="87.7" x2="746" y2="87.7" class="gridl" stroke="var(--grid)"/>
+      <line x1="42" y1="41.7" x2="746" y2="41.7" class="gridl" stroke="var(--grid)"/>
+      <text x="36" y="229.5" text-anchor="end" class="lab">10</text>
+      <text x="36" y="183.4" text-anchor="end" class="lab">20</text>
+      <text x="36" y="137.3" text-anchor="end" class="lab">30</text>
+      <text x="36" y="91.2" text-anchor="end" class="lab">40</text>
+      <text x="36" y="45.2" text-anchor="end" class="lab">50</text>
+      <line x1="562.3" y1="14" x2="562.3" y2="226" stroke="var(--rule-2)" stroke-dasharray="3 3"/>
+      <text x="567" y="24" class="mut">forecast from 3Q26</text>
+      <path d="M42.0,202.1 L72.6,116.4 L103.2,39.3 L133.8,149.5 L164.4,205.7 L195.0,120.1 L225.7,23.3 L256.3,118.7 L286.9,180.9 L317.5,122.2 L348.1,30.3 L378.7,129.9 L409.3,187.5 L439.9,116.8 L470.5,41.3 L501.1,141.7 L531.7,182.8 L562.3,111.0" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <path d="M562.3,111.0 L593.0,41.9 L623.6,138.9 L654.2,182.4 L684.8,115.2 L715.4,49.5 L746.0,143.5" fill="none" stroke="var(--scen)" stroke-width="2" stroke-dasharray="5 4"/>
+      <circle cx="103.2" cy="39.3" r="3" fill="var(--accent)"/>
+      <circle cx="225.7" cy="23.3" r="3" fill="var(--accent)"/>
+      <circle cx="348.1" cy="30.3" r="3" fill="var(--accent)"/>
+      <circle cx="470.5" cy="41.3" r="3" fill="var(--accent)"/>
+      <circle cx="593.0" cy="41.9" r="4.5" fill="var(--scen)"/>
+      <circle cx="623.6" cy="138.9" r="4.5" fill="var(--scen)"/>
+      <rect x="589.6" y="42.6" width="6.8" height="6.8" fill="var(--street)"/>
+      <rect x="620.2" y="135.5" width="6.8" height="6.8" fill="var(--street)"/>
+      <text x="593.0" y="34" text-anchor="middle" class="lab">49.94</text>
+      <text x="629" y="132" class="lab">28.90</text>
+      <text x="470.5" y="34" text-anchor="middle" class="lab">50.09</text>
+      <text x="225.7" y="16" text-anchor="middle" class="lab">53.99</text>
+      <text x="42.0" y="246" text-anchor="middle" class="mut">2022</text>
+      <text x="164.4" y="246" text-anchor="middle" class="mut">2023</text>
+      <text x="286.9" y="246" text-anchor="middle" class="mut">2024</text>
+      <text x="409.3" y="246" text-anchor="middle" class="mut">2025</text>
+      <text x="531.7" y="246" text-anchor="middle" class="mut">2026</text>
+      <text x="654.2" y="246" text-anchor="middle" class="mut">2027</text>
+    </svg>
+    <div class="cap">Reported margins 1Q22–2Q26 and the forecast path 3Q26–4Q27. The Street's 3Q26 (49.78%) and 4Q26 (28.90%) sit as grey squares; on 4Q26 the Street <i>is</i> our number. Source: <span class="src">23_seasonality.csv</span>, <span class="src">23_vs_consensus.csv</span>.</div>
+  </div>
+
+  <div class="grid w">
+    <div>
+      <p><b>The seasonality is a revenue phenomenon, not a cost one.</b> The two mechanical cost lines — cost of revenue and operations &amp; support — move from 20.4% of revenue in Q3 to 31.5% in Q1 almost entirely because the denominator halves. In dollars they barely move at all: across the six forecast quarters cost of revenue runs $544–688M and operations $316–378M, ranges of 27% and 20%, against revenue's range of 73%.</p>
+      <p><b>The discretionary block is the only thing that could smooth the year, and it does not.</b> Product development, sales and marketing and G&amp;A together run $1,418–1,701M <i>every quarter</i> regardless of season. That is the whole explanation for a 19.5% first quarter: $1,519M of discretionary spend meets $3,053M of revenue.</p>
+      <p><b>And 3Q26 at 49.94% is one standard deviation below its own seasonal mean</b> of 51.76% (2022–26, sd 1.81pp). That gap is the marketing ramp, not a demand problem.</p>
+    </div>
+    <div class="tbl panel">
+      <h3>Where the cost sits, by quarter · <span class="src">23_seasonality.csv</span></h3>
+      <table>
+        <tr><th>Quarter</th><th class="r">Revenue share</th><th class="r">Our margin</th><th class="r">Hist. mean (sd)</th><th class="r">Mechanical % rev</th><th class="r">Discretionary % rev</th></tr>
+        <tr><td>Q1</td><td class="r n">19.4%</td><td class="r n">19.47</td><td class="r n">17.42 (2.47)</td><td class="r n">31.5</td><td class="r n">49.8</td></tr>
+        <tr><td>Q2</td><td class="r n">26.1%</td><td class="r n">34.04</td><td class="r n">33.59 (0.92)</td><td class="r n">25.4</td><td class="r n">41.1</td></tr>
+        <tr class="hl"><td>Q3</td><td class="r n">32.8%</td><td class="r n">49.94</td><td class="r n">51.76 (1.81)</td><td class="r n">20.5</td><td class="r n">30.0</td></tr>
+        <tr><td>Q4</td><td class="r n">21.8%</td><td class="r n">28.90</td><td class="r n">29.75 (2.92)</td><td class="r n">27.1</td><td class="r n">44.6</td></tr>
+      </table>
+      <span class="note">"Mechanical" is cost of revenue plus operations and support; "discretionary" is product development, sales and marketing and G&amp;A. Historical means are 2022–26.</span>
+    </div>
+  </div>
+</section>
+
+<section id="costs">
+  <h2>One line carries the quarter</h2>
+  <p class="lede">On a $2,405M cash cost stack for 3Q26, five lines grow between 6% and 14% — and one grows 34%.</p>
+
+  <div class="grid">
+    <div class="fig">
+      <h3 style="margin-bottom:8px">3Q26 cash cost lines, year-over-year growth</h3>
+      <svg viewBox="0 0 620 220" role="img" aria-label="Bar chart of 3Q26 cost line growth: sales and marketing 33.5 percent, far above every other line">
+        <line x1="160" y1="10" x2="160" y2="196" stroke="var(--rule-2)"/>
+        <rect x="160" y="16" width="149.5" height="18" rx="2" fill="var(--accent)" opacity="0.75"/>
+        <text x="154" y="29" text-anchor="end">Cost of revenue</text><text x="315.5" y="29" class="lab">+12.5%</text>
+        <rect x="160" y="46" width="76.3" height="18" rx="2" fill="var(--accent)" opacity="0.75"/>
+        <text x="154" y="59" text-anchor="end">Operations &amp; support</text><text x="242.3" y="59" class="lab">+6.4%</text>
+        <rect x="160" y="76" width="173.0" height="18" rx="2" fill="var(--accent)" opacity="0.75"/>
+        <text x="154" y="89" text-anchor="end">Product development</text><text x="339" y="89" class="lab">+14.4%</text>
+        <rect x="160" y="106" width="402.4" height="18" rx="2" fill="var(--fail)"/>
+        <text x="154" y="119" text-anchor="end">Sales &amp; marketing</text><text x="568.4" y="119" class="lab">+33.5%</text>
+        <rect x="160" y="136" width="112.8" height="18" rx="2" fill="var(--accent)" opacity="0.75"/>
+        <text x="154" y="149" text-anchor="end">G&amp;A</text><text x="278.8" y="149" class="lab">+9.4%</text>
+        <rect x="160" y="166" width="211.9" height="18" rx="2" fill="var(--street)" opacity="0.55"/>
+        <text x="154" y="179" text-anchor="end">Total cash costs</text><text x="377.9" y="179" class="lab">+17.7%</text>
+        <text x="160" y="212" class="mut">0%</text><text x="460" y="212" text-anchor="middle" class="mut">25%</text>
+      </svg>
+      <div class="cap">3Q26 forecast lines against reported 3Q25. Sales and marketing is $781M against $585M. Source: <span class="src">23_lines_quarterly.csv</span>, base and actual rows.</div>
+    </div>
+    <div class="fig">
+      <h3 style="margin-bottom:8px">Sales &amp; marketing as a share of revenue</h3>
+      <svg viewBox="0 0 620 220" role="img" aria-label="Sales and marketing rising from 19.4 percent of revenue in FY25 to 23.5 percent in FY27">
+        <line x1="120" y1="10" x2="120" y2="176" stroke="var(--rule-2)"/>
+        <rect x="120" y="30" width="325.9" height="30" rx="2" fill="var(--accent)" opacity="0.55"/>
+        <text x="114" y="50" text-anchor="end">FY25 <tspan class="mut">actual</tspan></text><text x="452" y="50" class="lab">19.4%</text>
+        <rect x="120" y="75" width="359.5" height="30" rx="2" fill="var(--accent)"/>
+        <text x="114" y="95" text-anchor="end">FY26</text><text x="485" y="95" class="lab">21.4%</text>
+        <rect x="120" y="120" width="394.8" height="30" rx="2" fill="var(--scen)"/>
+        <text x="114" y="140" text-anchor="end">FY27 <tspan class="mut">scenario</tspan></text><text x="521" y="140" class="lab">23.5%</text>
+        <text x="120" y="194" class="mut">0%</text><text x="414" y="194" text-anchor="middle" class="mut">17.5%</text>
+        <text x="120" y="212" class="mut">FY27 sales &amp; marketing is $3,721M on $15,829M of revenue.</text>
+      </svg>
+      <div class="cap">Bars start at zero; the axis label marks 17.5% for scale. FY25 $2,376M on $12,241M; FY26 $3,056M on $14,268M; FY27 $3,721M on $15,829M. Source: <span class="src">23_lines_quarterly.csv</span>.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><b>This is the whole 2027 argument.</b> Our FY27 incremental margin is 24.7%; the Street's implied incremental margin is 43.7%. Airbnb has given no full-year 2027 margin guidance and a search of every letter and call found no hint of one. The Street's number requires the marketing ramp to stop. Ours requires it to continue at roughly the rate of the last six quarters. Both are spending assumptions; only one of them is labelled as such.</p>
+    <p><b>The weakest number in our own stack</b> is G&amp;A at +9.4% for 3Q26, when the first half of 2026 actually ran −5.4% year over year. The line stack allocates its reconciliation residual mechanically — 76.6% into sales and marketing, 9.4% into product development, 14.0% into G&amp;A, by point-in-time error variance. A judgement version would push more into marketing, which makes the marketing call larger, not smaller.</p>
+  </div>
+</section>
+
+<section id="evidence">
+  <h2>Does it actually work?</h2>
+  <p class="lede">At the horizon that matters on 5 November — the quarter being guided — yes, decisively, and against the hardest baseline available. One quarter further out, no. Two quarters out, no.</p>
+
+  <div class="fig">
+    <h3 style="margin-bottom:8px">Mean absolute error on the margin, quarter being guided (h=0)</h3>
+    <div class="legend"><span><i class="sq" style="background:var(--pass)"></i>Combination</span><span><i class="sq" style="background:var(--street)"></i>Analyst consensus</span><span><i class="sq" style="background:var(--fail)"></i>Last year's same quarter</span></div>
+    <svg viewBox="0 0 620 230" role="img" aria-label="Error bars: the combination has a mean absolute error of 1.13 points against the Street's 1.59 and the naive's 2.24 in window one, and 0.79 against 1.31 and 1.96 in window two">
+      <text x="6" y="20" class="mut">W1 · 14 quarters from 1Q23</text>
+      <line x1="160" y1="26" x2="160" y2="206" stroke="var(--rule-2)"/>
+      <rect x="160" y="28" width="205.6" height="20" rx="2" fill="var(--pass)"/>
+      <text x="154" y="42" text-anchor="end">Combination</text><text x="371.6" y="42" class="lab">1.13 pp</text>
+      <rect x="160" y="54" width="290.7" height="20" rx="2" fill="var(--street)"/>
+      <text x="154" y="68" text-anchor="end">Street</text><text x="456.7" y="68" class="lab">1.59 pp</text>
+      <rect x="160" y="80" width="408.5" height="20" rx="2" fill="var(--fail)" opacity="0.8"/>
+      <text x="154" y="94" text-anchor="end">Seasonal naive</text><text x="574.5" y="94" class="lab">2.24 pp</text>
+      <text x="6" y="130" class="mut">W2 · 10 quarters from 1Q24</text>
+      <rect x="160" y="136" width="143.9" height="20" rx="2" fill="var(--pass)"/>
+      <text x="154" y="150" text-anchor="end">Combination</text><text x="309.9" y="150" class="lab">0.79 pp</text>
+      <rect x="160" y="162" width="239.4" height="20" rx="2" fill="var(--street)"/>
+      <text x="154" y="176" text-anchor="end">Street</text><text x="405.4" y="176" class="lab">1.31 pp</text>
+      <rect x="160" y="188" width="357.7" height="20" rx="2" fill="var(--fail)" opacity="0.8"/>
+      <text x="154" y="202" text-anchor="end">Seasonal naive</text><text x="523.7" y="202" class="lab">1.96 pp</text>
+      <text x="160" y="224" class="mut">0</text><text x="525" y="224" text-anchor="middle" class="mut">2.0 pp</text>
+    </svg>
+    <div class="cap">Lower is better. "Seasonal naive" is last year's same-quarter margin, which is also the level management's sentence refers to. Source: <span class="src">data/processed/margin_build/10_harness_margin/scoreboard_margin.csv</span>, method <span class="src">final-margin</span>, spec <span class="src">stack_clip</span>, point-in-time replay.</div>
+  </div>
+
+  <div class="tbl panel">
+    <h3>The full scoreboard · <span class="src">scoreboard_margin.csv</span></h3>
+    <table>
+      <tr><th>Object</th><th>Win</th><th class="r">h</th><th class="r">n</th><th class="r">MAE</th><th class="r">vs naive</th><th class="r">vs Street</th><th class="r">p vs naive</th><th class="r">better than Street</th><th></th></tr>
+      <tr class="hl"><td>margin %</td><td>W1</td><td class="r n">0</td><td class="r n">14</td><td class="r n">1.126 pp</td><td class="r n">0.504</td><td class="r n">0.708</td><td class="r n">0.0003</td><td class="r n">11 / 14</td><td><span class="chip p">pass</span></td></tr>
+      <tr class="hl"><td>margin %</td><td>W2</td><td class="r n">0</td><td class="r n">10</td><td class="r n">0.788 pp</td><td class="r n">0.402</td><td class="r n">0.601</td><td class="r n">0.0001</td><td class="r n">8 / 10</td><td><span class="chip p">pass</span></td></tr>
+      <tr><td>margin %</td><td>W1</td><td class="r n">1</td><td class="r n">13</td><td class="r n">1.952</td><td class="r n">0.831</td><td class="r n">1.189</td><td class="r n">0.28</td><td class="r n">4 / 13</td><td><span class="chip f">loses to Street</span></td></tr>
+      <tr><td>margin %</td><td>W2</td><td class="r n">1</td><td class="r n">9</td><td class="r n">1.269</td><td class="r n">0.804</td><td class="r n">1.278</td><td class="r n">0.45</td><td class="r n">2 / 9</td><td><span class="chip f">loses to Street</span></td></tr>
+      <tr><td>margin %</td><td>W2</td><td class="r n">2</td><td class="r n">8</td><td class="r n">1.766</td><td class="r n">1.026</td><td class="r n">—</td><td class="r n">0.89</td><td class="r n">—</td><td><span class="chip f">fails</span></td></tr>
+      <tr class="hl"><td>adj EBITDA $</td><td>W1</td><td class="r n">0</td><td class="r n">14</td><td class="r n">$30.7M</td><td class="r n">0.248</td><td class="r n">0.470</td><td class="r n">0.0004</td><td class="r n">14 / 14</td><td><span class="chip p">pass</span></td></tr>
+      <tr class="hl"><td>adj EBITDA $</td><td>W2</td><td class="r n">0</td><td class="r n">10</td><td class="r n">$25.8M</td><td class="r n">0.264</td><td class="r n">0.445</td><td class="r n">0.0004</td><td class="r n">10 / 10</td><td><span class="chip p">pass</span></td></tr>
+      <tr><td>adj EBITDA $</td><td>W1</td><td class="r n">1</td><td class="r n">13</td><td class="r n">$78.3M</td><td class="r n">0.600</td><td class="r n">1.195</td><td class="r n">0.094</td><td class="r n">6 / 13</td><td><span class="chip f">loses to Street</span></td></tr>
+    </table>
+    <span class="note">Ratios below 1.0 beat the baseline. "p vs naive" is a Newey–West paired test on the error difference. The dollar object — the margin combination times the revenue path — is the best dollar object in the build: it beat the Street in <b>every one</b> of the fourteen and the ten backtest quarters, sign-test p 0.00006 and 0.00098.</span>
+  </div>
+
+  <div class="grid w" style="margin-top:18px">
+    <div class="tbl panel">
+      <h3>Where the accuracy comes from · <span class="src">23_diag_leave_one_out.csv</span></h3>
+      <table>
+        <tr><th>Drop one member</th><th class="r">W1 MAE</th><th class="r">Δ</th><th class="r">W2 MAE</th><th class="r">Δ</th></tr>
+        <tr class="hl"><td>All six + clip</td><td class="r n">1.126</td><td class="r n">—</td><td class="r n">0.788</td><td class="r n">—</td></tr>
+        <tr><td>drop Street-bias (dispersion)</td><td class="r n">1.221</td><td class="r n">+0.094</td><td class="r n">0.871</td><td class="r n">+0.083</td></tr>
+        <tr><td>drop Street-bias (flow-through)</td><td class="r n">1.163</td><td class="r n">+0.037</td><td class="r n">0.869</td><td class="r n">+0.082</td></tr>
+        <tr><td>drop the raw Street</td><td class="r n">1.099</td><td class="r n">−0.028</td><td class="r n">0.753</td><td class="r n">−0.034</td></tr>
+        <tr><td>drop the guide-budget member</td><td class="r n">1.107</td><td class="r n">−0.020</td><td class="r n">0.775</td><td class="r n">−0.012</td></tr>
+        <tr><td>drop the cost-stack family</td><td class="r n">1.087</td><td class="r n">−0.040</td><td class="r n">0.814</td><td class="r n">+0.026</td></tr>
+        <tr><td>no sentence clip</td><td class="r n">1.195</td><td class="r n">+0.068</td><td class="r n">0.788</td><td class="r n">0.000</td></tr>
+        <tr class="hl"><td>Street-independent only</td><td class="r n">1.419</td><td class="r n">+0.293</td><td class="r n">1.202</td><td class="r n">+0.415</td></tr>
+      </table>
+      <span class="note">The two consensus-correction members are the accuracy; the raw Street, the guide member and the cost stack are insurance, and they cost 0.02–0.04pp of error for it. The cost-stack family is kept because it is the only member that can say <i>why</i> the margin moves.</span>
+    </div>
+    <div>
+      <p><b>There is a version that never touches consensus.</b> Strip out every Street-anchored member and the same machinery prints <b>49.88%</b> for 3Q26 — within 0.06pp of the full combination — and still runs at 0.61–0.63x the naive. That is the version to quote if anyone objects that a pitch claiming to be above consensus cannot use consensus as an input.</p>
+      <p><b>It survives the hard quarters.</b> In the 1H23 regime break the combination errs 0.79pp against the Street's 1.34. Over the last four quarters it errs 0.45pp against the Street's 0.69 and the naive's 1.81. The one bad stretch is 2H23, which was hard for everything.</p>
+      <div class="callout warn">
+        <p><b>The caveat that is not in the p-values.</b> The six-member pool was selected after looking at the scoreboard, and there is no untouched evaluation set anywhere in this build. Every ratio and probability on this page is <b>retrospective and conditional on that pool</b>. Small differences between the point-in-time and full-sample replays, and the stability of the leave-one-out table, are <i>not</i> evidence against selection bias — they are consistent with a pool chosen on the same fourteen quarters. The model is frozen at this vintage; 5 November is the first genuinely out-of-sample observation, and it is one observation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <h2>The cycle: what happens if revenue disappoints</h2>
+  <p class="lede">Costs respond to revenue — but slowly, asymmetrically, and by an amount we cannot pin down precisely. The honest answer is a band, and it is wide enough to matter for the full-year guide.</p>
+
+  <div class="grid w">
+    <div class="fig">
+      <h3 style="margin-bottom:8px">Margin lost per 1 point of revenue shortfall</h3>
+      <div class="legend"><span><i class="sq" style="background:var(--fail)"></i>Costs held</span><span><i class="sq" style="background:var(--accent)"></i>Costs flex at 0.364</span><span><i class="sq" style="background:var(--pass)"></i>Costs flex one-for-one</span></div>
+      <svg viewBox="0 0 560 220" role="img" aria-label="Margin sensitivity: 0.59 points per point of revenue in second-half 2026 if costs are held, 0.38 if they flex">
+        <line x1="72" y1="10" x2="72" y2="186" stroke="var(--rule-2)"/>
+        <text x="66" y="30" text-anchor="end">2H26</text>
+        <rect x="72" y="18" width="354.2" height="13" rx="2" fill="var(--fail)"/><text x="432" y="29" class="lab">0.59</text>
+        <rect x="72" y="33" width="225.2" height="13" rx="2" fill="var(--accent)"/><text x="303" y="44" class="lab">0.38</text>
+        <rect x="72" y="48" width="1.5" height="13" rx="1" fill="var(--pass)"/><text x="80" y="59" class="lab">0.00</text>
+        <text x="66" y="88" text-anchor="end">FY26</text>
+        <rect x="72" y="76" width="217.0" height="13" rx="2" fill="var(--fail)"/><text x="295" y="87" class="lab">0.36</text>
+        <rect x="72" y="91" width="145.1" height="13" rx="2" fill="var(--accent)"/><text x="223" y="102" class="lab">0.24</text>
+        <rect x="72" y="106" width="19.7" height="13" rx="2" fill="var(--pass)"/><text x="97" y="117" class="lab">0.03</text>
+        <text x="66" y="146" text-anchor="end">FY27</text>
+        <rect x="72" y="134" width="396.1" height="13" rx="2" fill="var(--fail)"/><text x="474" y="145" class="lab">0.66</text>
+        <rect x="72" y="149" width="251.9" height="13" rx="2" fill="var(--accent)"/><text x="330" y="160" class="lab">0.42</text>
+        <rect x="72" y="164" width="1.5" height="13" rx="1" fill="var(--pass)"/><text x="80" y="175" class="lab">0.00</text>
+        <text x="72" y="204" class="mut">0</text><text x="372" y="204" text-anchor="middle" class="mut">0.50 pp</text>
+      </svg>
+      <div class="cap">Points of adjusted EBITDA margin lost per 1% shortfall in revenue, at three cost responses. The honest default sits between "held" and "flex". Source: <span class="src">23_macro_sensitivity.csv</span>.</div>
+    </div>
+    <div>
+      <p><b>We cannot measure a cost dial at Airbnb — but that is imprecision, not proof of rigidity.</b> Regressing total operating expense on revenue across the peer set gives Airbnb an elasticity of <span class="num">0.14</span> with a t-statistic of <span class="num">0.47</span> on 18 quarters: a standard error near 0.30 and a 95% interval of roughly <span class="num">−0.44 to +0.72</span>. That interval does not exclude flexibility as large as Booking's 0.61, TripAdvisor's 0.63 or Expedia's 0.44. An earlier draft of this work said "Airbnb has no cost dial"; that sentence has been withdrawn.</p>
+      <p><b>What the model actually uses</b> is a different, better-identified quantity: total <i>cash</i> costs flex at <span class="num">0.364</span> of a revenue move (t 6.58, n 18). Cost of revenue is the one cost line anywhere in this build that beats a drift baseline — elasticity 0.56, better in 13 of 14 and 9 of 10 quarters.</p>
+      <p><b>And the response is asymmetric.</b> Costs fall more slowly than they rise for operations (p 0.0002), sales and marketing (p 0.0030) and total cash costs (p 0.018). Flexing recovers only 30–40% of a revenue miss. Use 0.35–0.6 points of FY27 margin per point of revenue.</p>
+    </div>
+  </div>
+
+  <div class="tbl panel" style="margin-top:14px">
+    <h3>The FY26 floor break-even · <span class="src">23_fy26_floor_breakeven.csv</span></h3>
+    <table>
+      <tr><th>Cost response</th><th class="r">FY26 margin</th><th class="r">Cushion over the 35.5% floor</th><th class="r">2H26 revenue shortfall that breaks it</th></tr>
+      <tr class="hl"><td>Held</td><td class="r n">35.73%</td><td class="r n">+0.23 pp</td><td class="r n">0.63% · $50M</td></tr>
+      <tr class="hl"><td>Flex at 0.364</td><td class="r n">35.73%</td><td class="r n">+0.23 pp</td><td class="r n">0.94% · $75M</td></tr>
+      <tr><td>One-for-one (never observed)</td><td class="r n">35.73%</td><td class="r n">+0.23 pp</td><td class="r n">6.68% · $533M</td></tr>
+    </table>
+    <span class="note">There is less than one point of revenue between the guide and a miss. That is materially tighter than the 1.9–2.5% an earlier pass of this work published, and the earlier figure is on the do-not-quote list. Note what the floor <i>is</i>, though: at our third quarter, holding the year at exactly 35.5% requires a fourth quarter of only 27.6%, and every path in the build clears that.</span>
+  </div>
+</section>
+
+<section id="consensus">
+  <h2>The consensus gap</h2>
+  <p class="lede">We are marginally above the Street this year and materially below it next year. Both halves of that are the same statement about marketing spend.</p>
+  <div class="tbl panel">
+    <h3>Model versus LSEG consensus, 11 September 2026 · <span class="src">23_vs_consensus.csv</span></h3>
+    <table>
+      <tr><th>Period</th><th class="r">Model EBITDA</th><th class="r">LSEG</th><th class="r">Gap $</th><th class="r">Model margin</th><th class="r">LSEG margin</th><th class="r">Gap pp</th><th class="r">n / EBITDA sd</th></tr>
+      <tr class="hl"><td>3Q26</td><td class="r n">2,399</td><td class="r n">2,361.5</td><td class="r n">+38</td><td class="r n">49.94</td><td class="r n">49.78</td><td class="r n">+0.16</td><td class="r n">36 / $20.0M</td></tr>
+      <tr><td>4Q26</td><td class="r n">918</td><td class="r n">913.7</td><td class="r n">+5</td><td class="r n">28.90</td><td class="r n">28.90</td><td class="r n">0.00</td><td class="r n">36 / $26.5M</td></tr>
+      <tr><td>1Q27</td><td class="r n">594</td><td class="r n">610.7</td><td class="r n">−16</td><td class="r n">19.47</td><td class="r n">20.29</td><td class="r n">−0.82</td><td class="r n">19</td></tr>
+      <tr><td>2Q27</td><td class="r n">1,371</td><td class="r n">1,451.7</td><td class="r n">−80</td><td class="r n">34.04</td><td class="r n">35.96</td><td class="r n">−1.92</td><td class="r n">19</td></tr>
+      <tr><td>3Q27</td><td class="r n">2,551</td><td class="r n">2,695.6</td><td class="r n">−145</td><td class="r n">48.30</td><td class="r n">51.15</td><td class="r n">−2.85</td><td class="r n">17</td></tr>
+      <tr><td>4Q27</td><td class="r n">967</td><td class="r n">1,068.4</td><td class="r n">−102</td><td class="r n">27.90</td><td class="r n">30.28</td><td class="r n">−2.38</td><td class="r n">17</td></tr>
+      <tr class="hl"><td>FY26</td><td class="r n">5,098</td><td class="r n">5,053.7</td><td class="r n">+44</td><td class="r n">35.73</td><td class="r n">35.62</td><td class="r n">+0.11</td><td class="r n">44 / $40.2M</td></tr>
+      <tr class="hl"><td>FY27</td><td class="r n">5,483</td><td class="r n">5,766.1</td><td class="r n">−283</td><td class="r n">34.64</td><td class="r n">36.45</td><td class="r n">−1.81</td><td class="r n">44 / $154.2M</td></tr>
+      <tr><td>FY28</td><td class="r n">5,937</td><td class="r n">6,602.7</td><td class="r n">−666</td><td class="r n">34.64</td><td class="r n">37.65</td><td class="r n">−3.01</td><td class="r n">26 / $271.9M</td></tr>
+    </table>
+    <span class="note">Bloomberg's consensus (5 September pull, not point-in-time) reads 3Q26 $2,359.9M and FY26 $5,046.8M — inside $7M of LSEG on both. Incremental margin: FY26 model 39.5% against a Street-implied 38.8% (agreement); FY27 model 24.7% against a Street-implied 43.7% (a 19-point disagreement).</span>
+  </div>
+</section>
+
+<section id="linebuild">
+  <h2>The line build: each cost item on its own drivers</h2>
+  <p class="lede">The combination above is calibrated, not explained. A second build, written after the run, constructs every cost line from its components and a sourced parameter, reconciles the result to what management has said, and then runs the short case: what the lap of the bundle and the World Cup plus RNPL cancellations do to margins when the cost base is already budgeted.</p>
+  <div class="tbl panel">
+    <h3>What each line is made of · <span class="src">40_line_build/40_params.csv</span>, <span class="src">40_annual.csv</span></h3>
+    <table>
+      <tr><th>Line</th><th class="r">FY25A</th><th class="r">FY26E</th><th class="r">FY27E</th><th>Formula and the evidence behind it</th></tr>
+      <tr><td>Cost of revenue</td><td class="r n">17.0%</td><td class="r n">17.0%</td><td class="r n">17.4%</td><td>Merchant fees at 1.70% of GBV with the quarterly pattern, chargebacks at $0.72 a booking (up from $0.47 after 1H26's +$25M), hosting from $224M to about $450M as the $1.7bn commitment and the AI step land, other at $0.36 a night. The one line that backcasts: FY25 predicted from FY24 rates within 1%.</td></tr>
+      <tr><td>Operations &amp; support</td><td class="r n">10.1%</td><td class="r n">9.1%</td><td class="r n">8.7%</td><td>Last year's cost per booking moved by two parts: the fifth of the line that behaves like management's "support cost per booking" (down 14% then 10% with AI) and the four fifths that is payroll, customer relations and insurance (up 8%). The share is calibrated on 1H26, when the line fell 5% per booking while the AI metric fell 10 to 16%.</td></tr>
+      <tr><td>Product development</td><td class="r n">10.9%</td><td class="r n">10.4%</td><td class="r n">10.3%</td><td>Payroll on headcount: +9% in 2H26 and +8% in FY27 plus $30M of AI tooling. 1H26 grew 10 to 12%, all payroll, and management says headcount growth is below 2025's 12%.</td></tr>
+      <tr><td>Sales &amp; marketing</td><td class="r n">19.4%</td><td class="r n">21.3%</td><td class="r n">21.9%</td><td>Brand and performance marketing from the 10-K split ($1,595M in FY25; +32% reported in 1H26, +25% assumed in 2H26 plus a Q3 step, +15% in FY27) plus field operations and policy cash ($781M; +18%, +11%). The Street-implied FY27 needs this ramp to stop; the run's allocation had it at 23.5% of revenue.</td></tr>
+      <tr><td>G&amp;A ex reserves</td><td class="r n">8.1%</td><td class="r n">7.0%</td><td class="r n">6.6%</td><td>+5% a year on payroll; 1H26 fell 5% only because non-income taxes dropped $38M.</td></tr>
+    </table>
+    <span class="note">Cash lines, ex stock compensation. Sources for every parameter are in the CSV; the 1H26 component deltas come from the 10-Q MD&amp;A, the S&amp;M split and hosting commitments from the 10-Ks.</span>
+  </div>
+  <div class="grid w" style="margin-top:18px">
+    <div>
+      <p><b>Built from the evidence alone, the third quarter does not decline.</b> Costs grow 11.4% against revenue of +17%, which puts 3Q26 at 52.4%, three points above management's "down slightly". Landing the sentence at the guide midpoint needs about $97M more cost in the quarter than the filings support, and the only lines management has flagged for a step are marketing and AI hosting. The base case takes management at its word: $67M into 3Q26 marketing as a timing step and $29M a quarter into hosting as a run-rate step. That gives <b>3Q26 $2,420M at 50.4%</b>, a revenue beat on management's own cost budget, within $21M of the combination.</p>
+      <p><b>The step cannot recur in Q4.</b> Carrying the same cost into 4Q26 would put the full year below the 35.5% floor at guide revenue, and the floor has been beaten every year. So 4Q26 is 28.3% and FY26 lands at 35.7%, the same number the combination reached by a different route.</p>
+      <p><b>2027 is one point higher than the combination, all of it marketing.</b> With the 10-K split and management's stated deceleration, FY27 S&amp;M is 21.9% of revenue rather than the allocated 23.5%, and FY27 margin is <b>35.7% ($5,644M)</b> against the combination's 34.6% and the Street's 36.5%. The incremental margin is 34.8%, between the run's 24.7% and the Street's 43.7%.</p>
+    </div>
+    <div class="tbl panel">
+      <h3>Line build versus the combination and the Street</h3>
+      <table>
+        <tr><th></th><th class="r">Line build</th><th class="r">Combination</th><th class="r">Street</th></tr>
+        <tr class="hl"><td>3Q26 adj EBITDA</td><td class="r n">2,420</td><td class="r n">2,399</td><td class="r n">2,362</td></tr>
+        <tr><td>3Q26 margin</td><td class="r n">50.4%</td><td class="r n">49.9%</td><td class="r n">49.8%</td></tr>
+        <tr><td>3Q26 S&amp;M growth</td><td class="r n">+33%</td><td class="r n">+34%</td><td class="r n">n/a</td></tr>
+        <tr><td>4Q26 margin</td><td class="r n">28.3%</td><td class="r n">28.9%</td><td class="r n">28.9%</td></tr>
+        <tr class="hl"><td>FY26 margin</td><td class="r n">35.7%</td><td class="r n">35.7%</td><td class="r n">35.6%</td></tr>
+        <tr class="hl"><td>FY27 adj EBITDA</td><td class="r n">5,644</td><td class="r n">5,483</td><td class="r n">5,766</td></tr>
+        <tr><td>FY27 margin</td><td class="r n">35.7%</td><td class="r n">34.6%</td><td class="r n">36.5%</td></tr>
+        <tr><td>FY27 S&amp;M % revenue</td><td class="r n">21.9%</td><td class="r n">23.5%</td><td class="r n">n/a</td></tr>
+        <tr><td>FY27 EPS</td><td class="r n">5.93</td><td class="r n">5.73</td><td class="r n">6.23</td></tr>
+      </table>
+      <span class="note">Largest FY27 levers: marketing growth (+5pts = −0.67pp), the merchant fee rate (+10bp of GBV = −0.39pp), FY27 hosting (+$50M = −0.32pp). Source: <span class="src">40_sensitivities.csv</span>. The line build was checked read-only by the same auditor (seven findings, all fixed); it has no backtest of its own beyond cost of revenue, so the beat probability still comes from the combination.</span>
+    </div>
+  </div>
+
+  <div class="tbl panel" style="margin-top:18px">
+    <h3>The short case: the lap plus RNPL on a budgeted cost base · <span class="src">40_short_case_summary.csv</span></h3>
+    <table>
+      <tr><th></th><th class="r">Short, costs at budget</th><th class="r">Short, Q4 marketing cut</th><th class="r">Base</th><th class="r">Street</th></tr>
+      <tr><td>3Q26 adj EBITDA / margin</td><td class="r n">2,290 / 48.9%</td><td class="r n">same</td><td class="r n">2,420 / 50.4%</td><td class="r n">2,362 / 49.8%</td></tr>
+      <tr><td>4Q26 adj EBITDA / margin</td><td class="r n">700 / 23.6%</td><td class="r n">876 / 29.6%</td><td class="r n">899 / 28.3%</td><td class="r n">914 / 28.9%</td></tr>
+      <tr class="hl"><td>FY26 margin</td><td class="r n">34.2% (floor broken)</td><td class="r n">35.5% ($177M cut)</td><td class="r n">35.7%</td><td class="r n">35.6%</td></tr>
+      <tr class="hl"><td>FY27 adj EBITDA / margin</td><td class="r n">4,761 / 31.9%</td><td class="r n">same</td><td class="r n">5,644 / 35.7%</td><td class="r n">5,766 / 36.5%</td></tr>
+      <tr><td>FY27 EPS</td><td class="r n">4.58</td><td class="r n">same</td><td class="r n">5.93</td><td class="r n">6.23</td></tr>
+    </table>
+    <span class="note">Nights +8.5% in 3Q26 (guide low, World Cup still in July) then +5 / +4 / +2 / +3 / +4% through 4Q27; ADR ex-FX flat from Q4; FX on the kernel path; RNPL overlays on support per booking (+4%), chargebacks (+$0.15) and funds held (−10%). Costs at management's budget. The margin gap to base is 1.5 points in 3Q26, 4.7 in 4Q26 and 5.5 in 1Q27, almost all revenue on fixed cost. The 5 Nov sequence: a Q3 print near the sentence, a Q4 guide ~6% below the Street, and either a visible marketing cut or the floor at risk. Not separately audited.</span>
+  </div>
+</section>
+
+<section id="card">
+  <h2>The 5 November card</h2>
+  <p class="lede">Two legs, pointing the same way: a small dollar beat on the quarter, and a full-year sentence that asks the Street to raise the fourth quarter.</p>
+  <div class="grid w">
+    <div class="tbl panel">
+      <h3>What to have on the desk · <span class="src">23_card_5nov.csv</span></h3>
+      <table>
+        <tr><th>Item</th><th class="r">Number</th><th>Comparison</th></tr>
+        <tr class="hl"><td>3Q26 adj EBITDA</td><td class="r n">$2,399M</td><td>band $2,337–2,462M; Street $2,361.5M</td></tr>
+        <tr class="hl"><td>P(beat, dollars)</td><td class="r n">0.78</td><td>same object as the band</td></tr>
+        <tr><td>P(beat, margin)</td><td class="r n">0.54</td><td>a coin flip</td></tr>
+        <tr class="hl"><td>3Q26 margin</td><td class="r n">49.94%</td><td>Street 49.78%; ceiling 50.09%</td></tr>
+        <tr><td>3Q26 EPS</td><td class="r n">$2.88</td><td>band $2.70–3.05; Street $2.845</td></tr>
+        <tr><td>4Q26 margin</td><td class="r n">28.90%</td><td>quote a range, 28.9–29.9%</td></tr>
+        <tr class="hl"><td>FY26 margin</td><td class="r n">35.73%</td><td>floor 35.5%; Street 35.62%</td></tr>
+        <tr class="hl"><td>The FY26 sentence</td><td class="r n">"approximately 36%"</td><td>floor + 50bp; exact 2 of 2</td></tr>
+        <tr class="hl"><td>4Q26 implied by it</td><td class="r n">30.12%</td><td>against a Street 28.90%</td></tr>
+      </table>
+    </div>
+    <div>
+      <p><b>The budget identity is how to trade the guide.</b> With the first half actual and full-year revenue of $14,268M, <b>1 point of the FY26 margin sentence equals 4.49 points of fourth-quarter margin</b>, and 1 point of the third quarter equals −1.51 points of the fourth. So a sentence of "approximately 36%" at our third quarter requires a fourth quarter of 30.1% against a Street of 28.9% — a 1.2-point, roughly $39M gap, and the single most contestable number in the guide.</p>
+      <p><b>Read the floor case as an inequality.</b> If management simply leaves the sentence at "at least 35.5%", the arithmetic says only that the fourth quarter must be <b>at least about 27.6%</b>. Our own 28.90% already satisfies it, as does the Street's, as does the guide path's 29.90%. An unchanged floor is <b>the absence of a raise, not a guide-down</b> — and whether the absence of a raise is a sell is a price-reaction question this build did not test.</p>
+      <p><b>What the print settles.</b> First, the 10-Q's split of sales and marketing into brand and performance — our $781M is the whole call, and the split says whether the ramp is a fixed commitment or a dial. Second, whether "down slightly" was a ceiling or a floor: the quarterly sentence has been <i>missed</i> slightly more often than beaten (mean −0.19pp, above in 4 of 10), which is why the model clips rather than overrides. Third, the full-year sentence itself, amplified 4.49 times into the fourth quarter.</p>
+    </div>
+  </div>
+</section>
+
+<section id="failed">
+  <h2>What was tried and failed</h2>
+  <p class="lede">Seven methods, four pre-registered tests in the final model, two of them failed and are reported. A build this size with no failures would be a build that never tested anything.</p>
+  <div class="grid">
+    <div class="panel">
+      <h3>Inside the final model</h3>
+      <ul class="tight">
+        <li><b>One quarter out, it loses to the raw Street</b> by 19–28%. The pre-registered consequence was applied: 4Q26 is quoted from consensus.</li>
+        <li><b>Two quarters out it fails outright</b> in the short window (1.026x the naive). 2027 is a labelled scenario.</li>
+        <li><b>The weights do almost nothing.</b> Equal weighting scores 1.123 / 0.802 against the fitted 1.126 / 0.788.</li>
+        <li><b>The intervals still over-cover</b> — 93% and 100% against a nominal 80% — even as conformal bands. At ten to fourteen observations an interval cannot be tuned finer than the rank grid.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>The seven methods</h3>
+      <ul class="tight">
+        <li><b>Driver-based cost lines:</b> both pass lines failed. Building margin from the cost stack is a tie with last year's margin. Only cost of revenue survives against a drift baseline.</li>
+        <li><b>Time series on Airbnb's own history:</b> nothing beats last year's margin by a distinguishable amount. The best object has t = −0.22.</li>
+        <li><b>Guide policy:</b> the main spec failed; the full-year cushion over-predicts by 1.2–3.2 points and cannot be estimated on more than four fiscal years. What survives is the <i>allocation</i> rule and the budget identity.</li>
+        <li><b>Alt data:</b> 50 pre-registered tests, one survivor, and its own placebo says that pass line fires on noise 5.5–22.5% of the time. See below.</li>
+        <li><b>Street bias:</b> the margin claim is withdrawn; the dollar flow-through survives and is the single strongest object in the run.</li>
+        <li><b>Cycle flex:</b> the forecaster is a tie and fails beyond h=0. What survives is the measurement — the elasticities and the peer table.</li>
+        <li><b>Below EBITDA:</b> quarterly free cash flow fails and is not quoted. Interest income is the one genuine edge below the line.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">
+    <p><b>The alt-data verdict, in one line: there is no external dataset within our reach that improves the margin call.</b> Fifty-eight series over 1,146 screening tests produced two candidates — short rates against interest income, and a search-category share against marketing per night. Only the first survives a strict "was this knowable at the time" gate. Fifty pre-registered point-in-time tests then produced one survivor, and across fifty tests the null expects exactly one.</p>
+    <p><b>Two by-products are worth more than any of the signals.</b> A calibrated false-positive rate for this name — a line-level pass line of the kind used here fires on pure noise 2.5% to 22.5% of the time, and 18 of 50 real tests beat the baseline in both windows, which is 36%, the coin-flip rate. And a mechanism worth putting in the memo: <b>good cost lines do not make a good margin.</b> The object with the best cash lines in the build is one of the worst on margin, because marketing errors are negatively correlated with the rest of the stack, so "improving" marketing in isolation removes a hedge.</p>
+  </div>
+</section>
+
+<section id="audit">
+  <h2>The audit</h2>
+  <p class="lede">When the model was finished it was handed, read-only, to a separate auditor with no stake in the result. It came back with eighteen findings and a verdict of "not ready to quote".</p>
+  <div class="grid w">
+    <div class="tbl panel">
+      <h3>Findings and disposition</h3>
+      <table>
+        <tr><th>Severity</th><th class="r">Found</th><th class="r">Fixed</th><th class="r">Rewritten</th><th class="r">Deferred</th><th class="r">Rejected</th></tr>
+        <tr><td>Critical</td><td class="r n">1</td><td class="r n">1</td><td class="r n">—</td><td class="r n">—</td><td class="r n">0</td></tr>
+        <tr><td>Major</td><td class="r n">12</td><td class="r n">8</td><td class="r n">4</td><td class="r n">—</td><td class="r n">0</td></tr>
+        <tr><td>Minor</td><td class="r n">5</td><td class="r n">4</td><td class="r n">—</td><td class="r n">1 (half)</td><td class="r n">0</td></tr>
+        <tr class="hl"><td>Total</td><td class="r n">18</td><td class="r n">13</td><td class="r n">4</td><td class="r n">1</td><td class="r n">0</td></tr>
+      </table>
+      <span class="note">Source: <span class="src">docs/margin-build/audit/CODEX_ASTRA_AUDIT.md</span> and <span class="src">audit/AUDIT_RESPONSE.md</span>. Every number that moved is listed in <span class="src">SYNTHESIS.md</span> §11.</span>
+    </div>
+    <div>
+      <p><b>The critical finding was a timing leak, and it is fixed.</b> The calibration pools that set the weights and the interval were selecting earlier quarters by <i>quarter order</i> rather than by publication date, so a forecast made on 9 May was being weighted on a quarter that did not report until 3 August. Both pools are now gated on the print date. The quarter-being-guided results cannot be affected by this and did not move at all; the one- and two-quarter-out numbers moved by up to a quarter of a point. <b>Every pass/fail verdict survived the correction.</b></p>
+      <p><b>Three numbers on the card changed and the old ones are withdrawn.</b> The 3Q26 dollar band is $2,337–2,462M (it was $2,299–2,499M); the beat probability is 0.78 (the published 0.77 mixed a band from one object with a standard deviation from another); and 3Q26 marketing is $781M / +33.5% (it was $790M / +35%) once one add-back schedule was imposed on both the cost stack and the GAAP bridge.</p>
+      <p><b>Four claims were rewritten rather than recomputed:</b> the results are retrospective and conditional on a post-hoc pool; "attained coverage 82–91%" was never a coverage measurement and is withdrawn; the full-year floor is an inequality, not a point forecast or a sell signal; and "Airbnb has no cost dial" confused imprecision with zero.</p>
+      <p><b>Nothing was rejected.</b> One half of one minor finding is deferred: making the workbook a live input-driven model rather than a frozen report is a rebuild, not an audit fix. The build now asserts eight accounting identities and exits with an error if any of them breaks, and a no-write verification mode lets the next auditor replay everything without touching the outputs.</p>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <p><b>Provenance.</b> Every number on this page is read from a CSV under <span class="src">data/processed/margin_build/</span>, named beside the table that uses it. The model rebuilds end to end with <span class="src">py -3.13 analysis/src/margin_build/23_final_model/run.py</span> (exit 0). Consensus is LSEG at 11 September 2026 with Bloomberg BEST at 5 September as a cross-check; the revenue path is the H2 bridge v3. Registry objects: <span class="src">final-margin__combined</span> and <span class="src">final-margin__combined_dollar_from_margin</span>.</p>
+  <p><b>What this page deliberately does not contain.</b> Several numbers produced during this build were withdrawn and must not be quoted anywhere: the 77% beat probability and the $2,299–2,499M band; "attained coverage 82–91%"; "Airbnb has no cost dial"; the earlier claim that the FY26 floor survives a 1.9–2.5% revenue shortfall; any quarterly free-cash-flow forecast; any reading of an unchanged "at least 35.5%" as implying a 27.6% fourth quarter or an automatic sell; and any margin error ratio quoted without its p-value and its quarters-better count. The full list is in <span class="src">SYNTHESIS.md</span> §9.</p>
+  <p>Written 14 September 2026 · branch <span class="src">krish/margin-build</span> · companion documents <span class="src">docs/margin-build/MORNING_REPORT.md</span> and <span class="src">docs/margin-build/SYNTHESIS.md</span>.</p>
+</div>
+</div>

@@ -1,0 +1,8 @@
+source,fy27_revenue_musd,fy27_growth_pct,fy27_nights_yoy,note
+06v independent base,15796.974861532095,10.714999654335555,6.564950134407166,kernel route
+WS29 base,15804.0,11.55,9.2,29_fy27_bridge.csv
+B3 w=2/3 computed,15837.566097578316,11.52282099464208,9.46,band 9.18-11.52 across w
+B3 w=0.33 computed,15720.25516342507,9.17945550566328,9.46,
+LSEG consensus 2026-09-11 (comparison only),15819.33924,11.485786231783756,,"n 44, obs 2026-09-08; vendor's own FY26 14190"
+"PR #32 base, ex-NA lap",,,6.42,nights_quarterly_total.csv
+"PR #32 base, NA lap only",,,8.17,

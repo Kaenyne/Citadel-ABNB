@@ -1,0 +1,15 @@
+quarter,scenario,line,old,new,reason
+3Q26,bear,revenue_musd,4804.0355,4755.0,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bear,revenue_yoy_pct,17.3147,16.1172,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bear,take_rate_printed_pct,18.9502,18.7567,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bear,take_rate_change_pts,1.0681,0.8767,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bear,revenue_conversion_lo_musd,4777.8744,,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bear,revenue_conversion_hi_musd,4846.2321,,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bull,revenue_musd,4804.0355,4878.0,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bull,revenue_yoy_pct,17.3147,19.1209,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bull,take_rate_printed_pct,18.0269,18.3044,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bull,take_rate_change_pts,0.1448,0.4244,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bull,revenue_conversion_lo_musd,4777.8744,,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+3Q26,bull,revenue_conversion_hi_musd,4846.2321,,3Q26 revenue was identical across scenarios (kernel reads printed GBV only); replaced with the pre-registration card's INT-01 80% band so a bear/bull margin case does not run on base revenue
+FY26,bear,revenue_musd,14213.8425,14164.807,FY26 sum follows the 3Q26 change; FY27 growth re-based on it
+FY26,bull,revenue_musd,14317.9721,14391.9366,FY26 sum follows the 3Q26 change; FY27 growth re-based on it

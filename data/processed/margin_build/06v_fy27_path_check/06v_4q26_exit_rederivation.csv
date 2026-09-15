@@ -1,0 +1,5 @@
+variant,value_pct,note
+PR #32 base 4Q26 (NA lap only),8.899,WS10 9.94 + (3.31-7.0) x 0.282
+"minus ex-NA fee/cancel lap, WS-D sizing (bundle at s=0.266, 45%)",8.111,= N memo 2 case B point; bridge v3 adopts 8.12 (131.8mm)
+"minus ex-NA fee/cancel lap, bundle re-sized at the 4Q26 NA share 0.282",8.145,alternative sizing; 0.03pp apart
+bridge v3 adopted,8.12,h2_bridge_v3_rebased_lines.csv
