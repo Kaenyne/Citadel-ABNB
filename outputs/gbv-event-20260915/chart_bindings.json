@@ -1,0 +1,97 @@
+[
+  {
+    "sheet": "Decision",
+    "title": "Four-quarter path | Q3 guide observed",
+    "type": "line",
+    "series": [
+      {
+        "values": "'Decision'!$C$10:$C$13",
+        "categories": "'Decision'!$B$10:$B$13"
+      },
+      {
+        "values": "'Decision'!$D$10:$D$13",
+        "categories": "'Decision'!$B$10:$B$13"
+      }
+    ]
+  },
+  {
+    "sheet": "Conversion",
+    "title": "Conditional revenue and implied guide",
+    "type": "bar",
+    "series": [
+      {
+        "values": "'Conversion'!$I$6:$I$9",
+        "categories": "'Conversion'!$H$6:$H$9"
+      },
+      {
+        "values": "'Conversion'!$J$6:$J$9",
+        "categories": "'Conversion'!$H$6:$H$9"
+      }
+    ]
+  },
+  {
+    "sheet": "Forecast audit",
+    "title": "Guide error | lower is better",
+    "type": "bar",
+    "series": [
+      {
+        "values": "'Forecast audit'!$C$6:$C$8",
+        "categories": "'Forecast audit'!$B$6:$B$8"
+      },
+      {
+        "values": "'Forecast audit'!$D$6:$D$8",
+        "categories": "'Forecast audit'!$B$6:$B$8"
+      }
+    ]
+  },
+  {
+    "sheet": "Forecast audit",
+    "title": "Correlated errors partly offset",
+    "type": "bar",
+    "series": [
+      {
+        "values": "'Forecast audit'!$C$16:$C$19",
+        "categories": "'Forecast audit'!$B$16:$B$19"
+      },
+      {
+        "values": "'Forecast audit'!$D$16:$D$19",
+        "categories": "'Forecast audit'!$B$16:$B$19"
+      }
+    ]
+  },
+  {
+    "sheet": "Event study",
+    "title": "Published guide proxy vs excess gap",
+    "type": "scatter",
+    "series": [
+      {
+        "values": "'Event study'!$J$6:$J$21"
+      }
+    ]
+  },
+  {
+    "sheet": "Event study",
+    "title": "Same proxy vs next-session leg",
+    "type": "scatter",
+    "series": [
+      {
+        "values": "'Event study'!$K$6:$K$21"
+      }
+    ]
+  },
+  {
+    "sheet": "Event study",
+    "title": "Full earnings universe | daily legs",
+    "type": "bar",
+    "series": [
+      {
+        "values": "'Event study'!$C$49:$C$71",
+        "categories": "'Event study'!$B$49:$B$71"
+      },
+      {
+        "values": "'Event study'!$D$49:$D$71",
+        "categories": "'Event study'!$B$49:$B$71"
+      }
+    ]
+  }
+]

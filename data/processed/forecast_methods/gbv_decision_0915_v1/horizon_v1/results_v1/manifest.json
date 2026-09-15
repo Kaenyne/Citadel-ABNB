@@ -1,0 +1,34 @@
+{
+  "source_hashes": {
+    "kpi": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "calendar": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "accepted_core": "6f395b2956762f179701e78f4c6743ba523da55e45cb7c9f742a2151aa2495af",
+    "decision_spec": "079f1230398b02baebea9e542cadd48a53ceb0021ffcecb943eb86737ff30055"
+  },
+  "source_paths": {
+    "kpi": "data\\processed\\overnight\\02_kpi_panel_quarterly.csv",
+    "calendar": "data\\processed\\forecast_methods\\harness\\calendar.csv",
+    "accepted_core": "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\quant_v1\\run.py",
+    "decision_spec": "docs\\revenue-forecast-strategy\\WORKBOARD_GBV_DECISION_0915_v1.md"
+  },
+  "code_sha256": "dd3346f7c19505bebe0555b3e09566e6af8461c3261507713e32b7a4ee6c7005",
+  "outputs": {
+    "baseline_source_anchors.csv": "3e8cd2b7223cd0c2b1c4301f1aff46b20e9fcd7e3558e334ac4920640b986c5a",
+    "common_predictions.csv": "c1353a9673d7478e7e045c7396394bb42dc84f0baf5331a9e8a5efb9926f9e8d",
+    "coverage.csv": "d45f4869ed7649f6bd834b72978331c27db1d54929803087cc29f48b7341e540",
+    "error_variance_decomposition.csv": "eabb5daf846160e48f2d1625eb7d86520feef250712615ecda7b3b155b63a81f",
+    "exposure_summary.csv": "4cd346901b673accc2411cba50c0ca8495f1e222b64dd6676a3abfbb056114d8",
+    "gbv_contributions.csv": "1da7ff2d727f574cb843542beea7d0c5ab6a7ecebeef03d394c8745e579e313d",
+    "gbv_inputs.csv": "402bd915df6319a12e8dda04a9519db4d9d8ef8b8c6594d8d2e8470f9574c1fe",
+    "origin_fits.csv": "a9afef1aaf20f3c20b01fae696c597d2248b33230738ceb3a7df8b4c438fa6d3",
+    "paired_comparisons.csv": "ff72ea994dc507f583a05c06ffed89c5593f75ef493681959e6497c1608512ff",
+    "predictions.csv": "63d3fdaa630c47b6aaa50d77c437e94ec8c39edf1ff7d0c5abc4fae57833fa47",
+    "promotion_gates.csv": "3588e3da98d3a7b9277b9d418ecb558d270e2352eeafbb38a54da955542f711c",
+    "score_deletions.csv": "c0443d355933cd1b4789aa4282e3d1754b6828e791069d31a077377fa3c0df8b",
+    "scores_all_available.csv": "0e670f773c53f566f0ceb2df5ce3a7735b7e7b25dd97afd65b003f8fe6b2a68d",
+    "scores_common.csv": "77ae97854b3e1007205f3e657434363d3b4a73658ddbf258e16676d871a256f8",
+    "skipped_predictions.csv": "a07d5006a3383baed9b3288a08d8e4da2d07f620a53a54ba74379c586f038cf8",
+    "summary.json": "c58a43d05482ddf1009605430f7b34dcc92f384ed8ebbfa4536924445ac5c378",
+    "wide_predictions.csv": "812adce261bc34b9f7d7db2261ed1f54d7dd4a37df281bdb8e94710ab2059273"
+  }
+}

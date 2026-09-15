@@ -1,0 +1,41 @@
+{
+  "code_sha256": "b131253adbbd0f2276cc45477f5b460ee26bf3c376fa7633fac3b796bd8abcff",
+  "inputs": {
+    "scores": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v2\\scores_common.csv",
+      "sha256": "77ae97854b3e1007205f3e657434363d3b4a73658ddbf258e16676d871a256f8"
+    },
+    "points": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v2\\predictions.csv",
+      "sha256": "2b1dbd095a38daf2738c9f2bcd04716917059e94e54128d4b85ae9cea10d0b3d"
+    },
+    "eligibility": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\eligibility_audit_v1\\comparisons.csv",
+      "sha256": "4287813d8359ddceb3443cb596cf32ce7978d3aa1129183a1159b6aac4b1f97d"
+    },
+    "street": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\street_v1\\common_v1\\common_model_metrics.csv",
+      "sha256": "fbe5e28af05f49600b5250cf04ca5541e4aa7ad88c3e360db2f04cee22a7ff4d"
+    },
+    "flights": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\calendar_flights_v1\\results_v1\\scores.csv",
+      "sha256": "03311836a670d401ee57182862770f92e182b04f1e8ff6431d6e06ab940ced34"
+    }
+  },
+  "figures": [
+    "01_model_explained",
+    "02_guide_accuracy_and_coverage",
+    "03_street_and_guide_are_different_tests",
+    "04_forward_strip_and_known_inputs",
+    "05_gap_diagnostic_and_failed_remedy"
+  ],
+  "source_status": "reviewed reconstructed research; no promotion",
+  "outputs": {
+    "01_model_explained.png": "a7f0708717bc33f2f9bdeca6b905436a02a2f6feec2f5ccf36923fe099066ba8",
+    "02_guide_accuracy_and_coverage.png": "06fd7e151e5d45bfce143f8af6e498660dafb6c8a2e2ac92521e30f9995f0969",
+    "03_street_and_guide_are_different_tests.png": "cbae0f81f59790ff67c42ec780bfae4c584367abec44e5f3625bd8e916b1c31f",
+    "04_forward_strip_and_known_inputs.png": "40467ece66bebf43ef65f104ea60c38ddda917ab792276c57adad65cd9f3d81e",
+    "05_gap_diagnostic_and_failed_remedy.png": "ae8e68d2c809e3f4c9c3dba3e4ae67f4cb105a9def3b994710033610787b4d38",
+    "GBV_decision_visuals.pdf": "6958ef4b01fd29f2754153cc8096cc63441184daed62ffe381c41c23a90efa24"
+  }
+}

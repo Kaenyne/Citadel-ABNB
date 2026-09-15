@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "mode": "register",
+  "method": "gbv-event-v1",
+  "registry_rows": 7,
+  "revenue_rows": 4,
+  "future_guide_rows": 3,
+  "vintage": "2026-09-15",
+  "parameter_cutoff": "2026-09-13",
+  "format_version": "1.1",
+  "parameter_count_path": 5,
+  "n_train_definition": "Seasonal lambda observations5/6; cushion uses8 separately; not independent total sample",
+  "point_only": true,
+  "calibrated_probability": false,
+  "forecast_promoted": false,
+  "historical_score_changes": 0,
+  "scorer_exit_codes": {
+    "format_1_0": {
+      "before": 0,
+      "after": 0
+    },
+    "format_1_1": {
+      "before": 0,
+      "after": 0
+    }
+  },
+  "historical_rows": {
+    "format_1_0": 288,
+    "format_1_1": 288
+  },
+  "preexisting_drift_cells": 36,
+  "protected_files_unchanged": 120,
+  "registry_files": {
+    "data/processed/forecast_methods/registry/gbv-event-v1__four-quarter-revenue.csv": "edbc66f687d1509b327f50f7e335c0806910d34ba218b470e2b10f78c2538adb",
+    "data/processed/forecast_methods/registry/gbv-event-v1__forward-guide.csv": "a63bac08c5306d260ddcb57d19f630e31f6c8a34faf2077e23e82c0a7b9c9055"
+  },
+  "model_sha256": "91f8eb92d4a94ba52750e5aefb8a74f6a03fa50f5b548cbd1101c22f46b1e349",
+  "wrapper_sha256": "5ae94ce3f2e49d33aab100f68e19788acdb2c928114739aa06635f43669023d0",
+  "notes": [
+    "Unchanged main functions executed with only runtime output paths redirected",
+    "Checked-in scoreboard drift is measured before adding LIVE rows and not repaired here",
+    "No Q3 guide forecast is registered because guidance is already issued",
+    "No historical forecast replay or empirical probabilities added"
+  ]
+}

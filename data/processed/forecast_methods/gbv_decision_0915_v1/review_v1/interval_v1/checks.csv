@@ -1,0 +1,6168 @@
+check,passed
+input hash horizon_predictions,True
+input hash flight_predictions,True
+input hash common_pairs,True
+input hash common_gates,True
+input hash eligible_pairs,True
+input hash eligible_gates,True
+input hash flight_pairs,True
+input hash flight_gates,True
+input hash harness_v1,True
+input hash harness_v1_1,True
+input hash prereg,True
+output hash comparisons.csv,True
+output hash deletions.csv,True
+output hash gate_changes.csv,True
+output hash gates.csv,True
+output hash receipt.json,True
+output hash scores.csv,True
+code hash,True
+sample targets 0,True
+score 0n,True
+score 0n_year_clusters,True
+score 0rmse_musd,True
+score 0mae_musd,True
+score 0signed_distance_bias_musd,True
+inside rounding count 0,True
+sample targets 1,True
+score 1n,True
+score 1n_year_clusters,True
+score 1rmse_musd,True
+score 1mae_musd,True
+score 1signed_distance_bias_musd,True
+inside rounding count 1,True
+sample targets 2,True
+score 2n,True
+score 2n_year_clusters,True
+score 2rmse_musd,True
+score 2mae_musd,True
+score 2signed_distance_bias_musd,True
+inside rounding count 2,True
+sample targets 3,True
+score 3n,True
+score 3n_year_clusters,True
+score 3rmse_musd,True
+score 3mae_musd,True
+score 3signed_distance_bias_musd,True
+inside rounding count 3,True
+sample targets 4,True
+score 4n,True
+score 4n_year_clusters,True
+score 4rmse_musd,True
+score 4mae_musd,True
+score 4signed_distance_bias_musd,True
+inside rounding count 4,True
+sample targets 5,True
+score 5n,True
+score 5n_year_clusters,True
+score 5rmse_musd,True
+score 5mae_musd,True
+score 5signed_distance_bias_musd,True
+inside rounding count 5,True
+sample targets 6,True
+score 6n,True
+score 6n_year_clusters,True
+score 6rmse_musd,True
+score 6mae_musd,True
+score 6signed_distance_bias_musd,True
+inside rounding count 6,True
+sample targets 7,True
+score 7n,True
+score 7n_year_clusters,True
+score 7rmse_musd,True
+score 7mae_musd,True
+score 7signed_distance_bias_musd,True
+inside rounding count 7,True
+sample targets 8,True
+score 8n,True
+score 8n_year_clusters,True
+score 8rmse_musd,True
+score 8mae_musd,True
+score 8signed_distance_bias_musd,True
+inside rounding count 8,True
+sample targets 9,True
+score 9n,True
+score 9n_year_clusters,True
+score 9rmse_musd,True
+score 9mae_musd,True
+score 9signed_distance_bias_musd,True
+inside rounding count 9,True
+sample targets 10,True
+score 10n,True
+score 10n_year_clusters,True
+score 10rmse_musd,True
+score 10mae_musd,True
+score 10signed_distance_bias_musd,True
+inside rounding count 10,True
+sample targets 11,True
+score 11n,True
+score 11n_year_clusters,True
+score 11rmse_musd,True
+score 11mae_musd,True
+score 11signed_distance_bias_musd,True
+inside rounding count 11,True
+sample targets 12,True
+score 12n,True
+score 12n_year_clusters,True
+score 12rmse_musd,True
+score 12mae_musd,True
+score 12signed_distance_bias_musd,True
+inside rounding count 12,True
+sample targets 13,True
+score 13n,True
+score 13n_year_clusters,True
+score 13rmse_musd,True
+score 13mae_musd,True
+score 13signed_distance_bias_musd,True
+inside rounding count 13,True
+sample targets 14,True
+score 14n,True
+score 14n_year_clusters,True
+score 14rmse_musd,True
+score 14mae_musd,True
+score 14signed_distance_bias_musd,True
+inside rounding count 14,True
+sample targets 15,True
+score 15n,True
+score 15n_year_clusters,True
+score 15rmse_musd,True
+score 15mae_musd,True
+score 15signed_distance_bias_musd,True
+inside rounding count 15,True
+sample targets 16,True
+score 16n,True
+score 16n_year_clusters,True
+score 16rmse_musd,True
+score 16mae_musd,True
+score 16signed_distance_bias_musd,True
+inside rounding count 16,True
+sample targets 17,True
+score 17n,True
+score 17n_year_clusters,True
+score 17rmse_musd,True
+score 17mae_musd,True
+score 17signed_distance_bias_musd,True
+inside rounding count 17,True
+sample targets 18,True
+score 18n,True
+score 18n_year_clusters,True
+score 18rmse_musd,True
+score 18mae_musd,True
+score 18signed_distance_bias_musd,True
+inside rounding count 18,True
+sample targets 19,True
+score 19n,True
+score 19n_year_clusters,True
+score 19rmse_musd,True
+score 19mae_musd,True
+score 19signed_distance_bias_musd,True
+inside rounding count 19,True
+sample targets 20,True
+score 20n,True
+score 20n_year_clusters,True
+score 20rmse_musd,True
+score 20mae_musd,True
+score 20signed_distance_bias_musd,True
+inside rounding count 20,True
+sample targets 21,True
+score 21n,True
+score 21n_year_clusters,True
+score 21rmse_musd,True
+score 21mae_musd,True
+score 21signed_distance_bias_musd,True
+inside rounding count 21,True
+sample targets 22,True
+score 22n,True
+score 22n_year_clusters,True
+score 22rmse_musd,True
+score 22mae_musd,True
+score 22signed_distance_bias_musd,True
+inside rounding count 22,True
+sample targets 23,True
+score 23n,True
+score 23n_year_clusters,True
+score 23rmse_musd,True
+score 23mae_musd,True
+score 23signed_distance_bias_musd,True
+inside rounding count 23,True
+sample targets 24,True
+score 24n,True
+score 24n_year_clusters,True
+score 24rmse_musd,True
+score 24mae_musd,True
+score 24signed_distance_bias_musd,True
+inside rounding count 24,True
+sample targets 25,True
+score 25n,True
+score 25n_year_clusters,True
+score 25rmse_musd,True
+score 25mae_musd,True
+score 25signed_distance_bias_musd,True
+inside rounding count 25,True
+sample targets 26,True
+score 26n,True
+score 26n_year_clusters,True
+score 26rmse_musd,True
+score 26mae_musd,True
+score 26signed_distance_bias_musd,True
+inside rounding count 26,True
+sample targets 27,True
+score 27n,True
+score 27n_year_clusters,True
+score 27rmse_musd,True
+score 27mae_musd,True
+score 27signed_distance_bias_musd,True
+inside rounding count 27,True
+sample targets 28,True
+score 28n,True
+score 28n_year_clusters,True
+score 28rmse_musd,True
+score 28mae_musd,True
+score 28signed_distance_bias_musd,True
+inside rounding count 28,True
+sample targets 29,True
+score 29n,True
+score 29n_year_clusters,True
+score 29rmse_musd,True
+score 29mae_musd,True
+score 29signed_distance_bias_musd,True
+inside rounding count 29,True
+sample targets 30,True
+score 30n,True
+score 30n_year_clusters,True
+score 30rmse_musd,True
+score 30mae_musd,True
+score 30signed_distance_bias_musd,True
+inside rounding count 30,True
+sample targets 31,True
+score 31n,True
+score 31n_year_clusters,True
+score 31rmse_musd,True
+score 31mae_musd,True
+score 31signed_distance_bias_musd,True
+inside rounding count 31,True
+sample targets 32,True
+score 32n,True
+score 32n_year_clusters,True
+score 32rmse_musd,True
+score 32mae_musd,True
+score 32signed_distance_bias_musd,True
+inside rounding count 32,True
+sample targets 33,True
+score 33n,True
+score 33n_year_clusters,True
+score 33rmse_musd,True
+score 33mae_musd,True
+score 33signed_distance_bias_musd,True
+inside rounding count 33,True
+sample targets 34,True
+score 34n,True
+score 34n_year_clusters,True
+score 34rmse_musd,True
+score 34mae_musd,True
+score 34signed_distance_bias_musd,True
+inside rounding count 34,True
+sample targets 35,True
+score 35n,True
+score 35n_year_clusters,True
+score 35rmse_musd,True
+score 35mae_musd,True
+score 35signed_distance_bias_musd,True
+inside rounding count 35,True
+sample targets 36,True
+score 36n,True
+score 36n_year_clusters,True
+score 36rmse_musd,True
+score 36mae_musd,True
+score 36signed_distance_bias_musd,True
+inside rounding count 36,True
+sample targets 37,True
+score 37n,True
+score 37n_year_clusters,True
+score 37rmse_musd,True
+score 37mae_musd,True
+score 37signed_distance_bias_musd,True
+inside rounding count 37,True
+sample targets 38,True
+score 38n,True
+score 38n_year_clusters,True
+score 38rmse_musd,True
+score 38mae_musd,True
+score 38signed_distance_bias_musd,True
+inside rounding count 38,True
+sample targets 39,True
+score 39n,True
+score 39n_year_clusters,True
+score 39rmse_musd,True
+score 39mae_musd,True
+score 39signed_distance_bias_musd,True
+inside rounding count 39,True
+sample targets 40,True
+score 40n,True
+score 40n_year_clusters,True
+score 40rmse_musd,True
+score 40mae_musd,True
+score 40signed_distance_bias_musd,True
+inside rounding count 40,True
+sample targets 41,True
+score 41n,True
+score 41n_year_clusters,True
+score 41rmse_musd,True
+score 41mae_musd,True
+score 41signed_distance_bias_musd,True
+inside rounding count 41,True
+sample targets 42,True
+score 42n,True
+score 42n_year_clusters,True
+score 42rmse_musd,True
+score 42mae_musd,True
+score 42signed_distance_bias_musd,True
+inside rounding count 42,True
+sample targets 43,True
+score 43n,True
+score 43n_year_clusters,True
+score 43rmse_musd,True
+score 43mae_musd,True
+score 43signed_distance_bias_musd,True
+inside rounding count 43,True
+sample targets 44,True
+score 44n,True
+score 44n_year_clusters,True
+score 44rmse_musd,True
+score 44mae_musd,True
+score 44signed_distance_bias_musd,True
+inside rounding count 44,True
+sample targets 45,True
+score 45n,True
+score 45n_year_clusters,True
+score 45rmse_musd,True
+score 45mae_musd,True
+score 45signed_distance_bias_musd,True
+inside rounding count 45,True
+sample targets 46,True
+score 46n,True
+score 46n_year_clusters,True
+score 46rmse_musd,True
+score 46mae_musd,True
+score 46signed_distance_bias_musd,True
+inside rounding count 46,True
+sample targets 47,True
+score 47n,True
+score 47n_year_clusters,True
+score 47rmse_musd,True
+score 47mae_musd,True
+score 47signed_distance_bias_musd,True
+inside rounding count 47,True
+sample targets 48,True
+score 48n,True
+score 48n_year_clusters,True
+score 48rmse_musd,True
+score 48mae_musd,True
+score 48signed_distance_bias_musd,True
+inside rounding count 48,True
+sample targets 49,True
+score 49n,True
+score 49n_year_clusters,True
+score 49rmse_musd,True
+score 49mae_musd,True
+score 49signed_distance_bias_musd,True
+inside rounding count 49,True
+sample targets 50,True
+score 50n,True
+score 50n_year_clusters,True
+score 50rmse_musd,True
+score 50mae_musd,True
+score 50signed_distance_bias_musd,True
+inside rounding count 50,True
+sample targets 51,True
+score 51n,True
+score 51n_year_clusters,True
+score 51rmse_musd,True
+score 51mae_musd,True
+score 51signed_distance_bias_musd,True
+inside rounding count 51,True
+sample targets 52,True
+score 52n,True
+score 52n_year_clusters,True
+score 52rmse_musd,True
+score 52mae_musd,True
+score 52signed_distance_bias_musd,True
+inside rounding count 52,True
+sample targets 53,True
+score 53n,True
+score 53n_year_clusters,True
+score 53rmse_musd,True
+score 53mae_musd,True
+score 53signed_distance_bias_musd,True
+inside rounding count 53,True
+sample targets 54,True
+score 54n,True
+score 54n_year_clusters,True
+score 54rmse_musd,True
+score 54mae_musd,True
+score 54signed_distance_bias_musd,True
+inside rounding count 54,True
+sample targets 55,True
+score 55n,True
+score 55n_year_clusters,True
+score 55rmse_musd,True
+score 55mae_musd,True
+score 55signed_distance_bias_musd,True
+inside rounding count 55,True
+sample targets 56,True
+score 56n,True
+score 56n_year_clusters,True
+score 56rmse_musd,True
+score 56mae_musd,True
+score 56signed_distance_bias_musd,True
+inside rounding count 56,True
+sample targets 57,True
+score 57n,True
+score 57n_year_clusters,True
+score 57rmse_musd,True
+score 57mae_musd,True
+score 57signed_distance_bias_musd,True
+inside rounding count 57,True
+sample targets 58,True
+score 58n,True
+score 58n_year_clusters,True
+score 58rmse_musd,True
+score 58mae_musd,True
+score 58signed_distance_bias_musd,True
+inside rounding count 58,True
+sample targets 59,True
+score 59n,True
+score 59n_year_clusters,True
+score 59rmse_musd,True
+score 59mae_musd,True
+score 59signed_distance_bias_musd,True
+inside rounding count 59,True
+sample targets 60,True
+score 60n,True
+score 60n_year_clusters,True
+score 60rmse_musd,True
+score 60mae_musd,True
+score 60signed_distance_bias_musd,True
+inside rounding count 60,True
+sample targets 61,True
+score 61n,True
+score 61n_year_clusters,True
+score 61rmse_musd,True
+score 61mae_musd,True
+score 61signed_distance_bias_musd,True
+inside rounding count 61,True
+sample targets 62,True
+score 62n,True
+score 62n_year_clusters,True
+score 62rmse_musd,True
+score 62mae_musd,True
+score 62signed_distance_bias_musd,True
+inside rounding count 62,True
+sample targets 63,True
+score 63n,True
+score 63n_year_clusters,True
+score 63rmse_musd,True
+score 63mae_musd,True
+score 63signed_distance_bias_musd,True
+inside rounding count 63,True
+sample targets 64,True
+score 64n,True
+score 64n_year_clusters,True
+score 64rmse_musd,True
+score 64mae_musd,True
+score 64signed_distance_bias_musd,True
+inside rounding count 64,True
+sample targets 65,True
+score 65n,True
+score 65n_year_clusters,True
+score 65rmse_musd,True
+score 65mae_musd,True
+score 65signed_distance_bias_musd,True
+inside rounding count 65,True
+sample targets 66,True
+score 66n,True
+score 66n_year_clusters,True
+score 66rmse_musd,True
+score 66mae_musd,True
+score 66signed_distance_bias_musd,True
+inside rounding count 66,True
+sample targets 67,True
+score 67n,True
+score 67n_year_clusters,True
+score 67rmse_musd,True
+score 67mae_musd,True
+score 67signed_distance_bias_musd,True
+inside rounding count 67,True
+sample targets 68,True
+score 68n,True
+score 68n_year_clusters,True
+score 68rmse_musd,True
+score 68mae_musd,True
+score 68signed_distance_bias_musd,True
+inside rounding count 68,True
+sample targets 69,True
+score 69n,True
+score 69n_year_clusters,True
+score 69rmse_musd,True
+score 69mae_musd,True
+score 69signed_distance_bias_musd,True
+inside rounding count 69,True
+sample targets 70,True
+score 70n,True
+score 70n_year_clusters,True
+score 70rmse_musd,True
+score 70mae_musd,True
+score 70signed_distance_bias_musd,True
+inside rounding count 70,True
+sample targets 71,True
+score 71n,True
+score 71n_year_clusters,True
+score 71rmse_musd,True
+score 71mae_musd,True
+score 71signed_distance_bias_musd,True
+inside rounding count 71,True
+sample targets 72,True
+score 72n,True
+score 72n_year_clusters,True
+score 72rmse_musd,True
+score 72mae_musd,True
+score 72signed_distance_bias_musd,True
+inside rounding count 72,True
+sample targets 73,True
+score 73n,True
+score 73n_year_clusters,True
+score 73rmse_musd,True
+score 73mae_musd,True
+score 73signed_distance_bias_musd,True
+inside rounding count 73,True
+sample targets 74,True
+score 74n,True
+score 74n_year_clusters,True
+score 74rmse_musd,True
+score 74mae_musd,True
+score 74signed_distance_bias_musd,True
+inside rounding count 74,True
+sample targets 75,True
+score 75n,True
+score 75n_year_clusters,True
+score 75rmse_musd,True
+score 75mae_musd,True
+score 75signed_distance_bias_musd,True
+inside rounding count 75,True
+sample targets 76,True
+score 76n,True
+score 76n_year_clusters,True
+score 76rmse_musd,True
+score 76mae_musd,True
+score 76signed_distance_bias_musd,True
+inside rounding count 76,True
+sample targets 77,True
+score 77n,True
+score 77n_year_clusters,True
+score 77rmse_musd,True
+score 77mae_musd,True
+score 77signed_distance_bias_musd,True
+inside rounding count 77,True
+sample targets 78,True
+score 78n,True
+score 78n_year_clusters,True
+score 78rmse_musd,True
+score 78mae_musd,True
+score 78signed_distance_bias_musd,True
+inside rounding count 78,True
+sample targets 79,True
+score 79n,True
+score 79n_year_clusters,True
+score 79rmse_musd,True
+score 79mae_musd,True
+score 79signed_distance_bias_musd,True
+inside rounding count 79,True
+sample targets 80,True
+score 80n,True
+score 80n_year_clusters,True
+score 80rmse_musd,True
+score 80mae_musd,True
+score 80signed_distance_bias_musd,True
+inside rounding count 80,True
+sample targets 81,True
+score 81n,True
+score 81n_year_clusters,True
+score 81rmse_musd,True
+score 81mae_musd,True
+score 81signed_distance_bias_musd,True
+inside rounding count 81,True
+sample targets 82,True
+score 82n,True
+score 82n_year_clusters,True
+score 82rmse_musd,True
+score 82mae_musd,True
+score 82signed_distance_bias_musd,True
+inside rounding count 82,True
+sample targets 83,True
+score 83n,True
+score 83n_year_clusters,True
+score 83rmse_musd,True
+score 83mae_musd,True
+score 83signed_distance_bias_musd,True
+inside rounding count 83,True
+sample targets 84,True
+score 84n,True
+score 84n_year_clusters,True
+score 84rmse_musd,True
+score 84mae_musd,True
+score 84signed_distance_bias_musd,True
+inside rounding count 84,True
+sample targets 85,True
+score 85n,True
+score 85n_year_clusters,True
+score 85rmse_musd,True
+score 85mae_musd,True
+score 85signed_distance_bias_musd,True
+inside rounding count 85,True
+sample targets 86,True
+score 86n,True
+score 86n_year_clusters,True
+score 86rmse_musd,True
+score 86mae_musd,True
+score 86signed_distance_bias_musd,True
+inside rounding count 86,True
+sample targets 87,True
+score 87n,True
+score 87n_year_clusters,True
+score 87rmse_musd,True
+score 87mae_musd,True
+score 87signed_distance_bias_musd,True
+inside rounding count 87,True
+sample targets 88,True
+score 88n,True
+score 88n_year_clusters,True
+score 88rmse_musd,True
+score 88mae_musd,True
+score 88signed_distance_bias_musd,True
+inside rounding count 88,True
+sample targets 89,True
+score 89n,True
+score 89n_year_clusters,True
+score 89rmse_musd,True
+score 89mae_musd,True
+score 89signed_distance_bias_musd,True
+inside rounding count 89,True
+sample targets 90,True
+score 90n,True
+score 90n_year_clusters,True
+score 90rmse_musd,True
+score 90mae_musd,True
+score 90signed_distance_bias_musd,True
+inside rounding count 90,True
+sample targets 91,True
+score 91n,True
+score 91n_year_clusters,True
+score 91rmse_musd,True
+score 91mae_musd,True
+score 91signed_distance_bias_musd,True
+inside rounding count 91,True
+sample targets 92,True
+score 92n,True
+score 92n_year_clusters,True
+score 92rmse_musd,True
+score 92mae_musd,True
+score 92signed_distance_bias_musd,True
+inside rounding count 92,True
+sample targets 93,True
+score 93n,True
+score 93n_year_clusters,True
+score 93rmse_musd,True
+score 93mae_musd,True
+score 93signed_distance_bias_musd,True
+inside rounding count 93,True
+sample targets 94,True
+score 94n,True
+score 94n_year_clusters,True
+score 94rmse_musd,True
+score 94mae_musd,True
+score 94signed_distance_bias_musd,True
+inside rounding count 94,True
+sample targets 95,True
+score 95n,True
+score 95n_year_clusters,True
+score 95rmse_musd,True
+score 95mae_musd,True
+score 95signed_distance_bias_musd,True
+inside rounding count 95,True
+sample targets 96,True
+score 96n,True
+score 96n_year_clusters,True
+score 96rmse_musd,True
+score 96mae_musd,True
+score 96signed_distance_bias_musd,True
+inside rounding count 96,True
+sample targets 97,True
+score 97n,True
+score 97n_year_clusters,True
+score 97rmse_musd,True
+score 97mae_musd,True
+score 97signed_distance_bias_musd,True
+inside rounding count 97,True
+sample targets 98,True
+score 98n,True
+score 98n_year_clusters,True
+score 98rmse_musd,True
+score 98mae_musd,True
+score 98signed_distance_bias_musd,True
+inside rounding count 98,True
+sample targets 99,True
+score 99n,True
+score 99n_year_clusters,True
+score 99rmse_musd,True
+score 99mae_musd,True
+score 99signed_distance_bias_musd,True
+inside rounding count 99,True
+sample targets 100,True
+score 100n,True
+score 100n_year_clusters,True
+score 100rmse_musd,True
+score 100mae_musd,True
+score 100signed_distance_bias_musd,True
+inside rounding count 100,True
+sample targets 101,True
+score 101n,True
+score 101n_year_clusters,True
+score 101rmse_musd,True
+score 101mae_musd,True
+score 101signed_distance_bias_musd,True
+inside rounding count 101,True
+sample targets 102,True
+score 102n,True
+score 102n_year_clusters,True
+score 102rmse_musd,True
+score 102mae_musd,True
+score 102signed_distance_bias_musd,True
+inside rounding count 102,True
+sample targets 103,True
+score 103n,True
+score 103n_year_clusters,True
+score 103rmse_musd,True
+score 103mae_musd,True
+score 103signed_distance_bias_musd,True
+inside rounding count 103,True
+sample targets 104,True
+score 104n,True
+score 104n_year_clusters,True
+score 104rmse_musd,True
+score 104mae_musd,True
+score 104signed_distance_bias_musd,True
+inside rounding count 104,True
+sample targets 105,True
+score 105n,True
+score 105n_year_clusters,True
+score 105rmse_musd,True
+score 105mae_musd,True
+score 105signed_distance_bias_musd,True
+inside rounding count 105,True
+sample targets 106,True
+score 106n,True
+score 106n_year_clusters,True
+score 106rmse_musd,True
+score 106mae_musd,True
+score 106signed_distance_bias_musd,True
+inside rounding count 106,True
+sample targets 107,True
+score 107n,True
+score 107n_year_clusters,True
+score 107rmse_musd,True
+score 107mae_musd,True
+score 107signed_distance_bias_musd,True
+inside rounding count 107,True
+sample targets 108,True
+score 108n,True
+score 108n_year_clusters,True
+score 108rmse_musd,True
+score 108mae_musd,True
+score 108signed_distance_bias_musd,True
+inside rounding count 108,True
+sample targets 109,True
+score 109n,True
+score 109n_year_clusters,True
+score 109rmse_musd,True
+score 109mae_musd,True
+score 109signed_distance_bias_musd,True
+inside rounding count 109,True
+sample targets 110,True
+score 110n,True
+score 110n_year_clusters,True
+score 110rmse_musd,True
+score 110mae_musd,True
+score 110signed_distance_bias_musd,True
+inside rounding count 110,True
+sample targets 111,True
+score 111n,True
+score 111n_year_clusters,True
+score 111rmse_musd,True
+score 111mae_musd,True
+score 111signed_distance_bias_musd,True
+inside rounding count 111,True
+sample targets 112,True
+score 112n,True
+score 112n_year_clusters,True
+score 112rmse_musd,True
+score 112mae_musd,True
+score 112signed_distance_bias_musd,True
+inside rounding count 112,True
+sample targets 113,True
+score 113n,True
+score 113n_year_clusters,True
+score 113rmse_musd,True
+score 113mae_musd,True
+score 113signed_distance_bias_musd,True
+inside rounding count 113,True
+sample targets 114,True
+score 114n,True
+score 114n_year_clusters,True
+score 114rmse_musd,True
+score 114mae_musd,True
+score 114signed_distance_bias_musd,True
+inside rounding count 114,True
+sample targets 115,True
+score 115n,True
+score 115n_year_clusters,True
+score 115rmse_musd,True
+score 115mae_musd,True
+score 115signed_distance_bias_musd,True
+inside rounding count 115,True
+sample targets 116,True
+score 116n,True
+score 116n_year_clusters,True
+score 116rmse_musd,True
+score 116mae_musd,True
+score 116signed_distance_bias_musd,True
+inside rounding count 116,True
+sample targets 117,True
+score 117n,True
+score 117n_year_clusters,True
+score 117rmse_musd,True
+score 117mae_musd,True
+score 117signed_distance_bias_musd,True
+inside rounding count 117,True
+sample targets 118,True
+score 118n,True
+score 118n_year_clusters,True
+score 118rmse_musd,True
+score 118mae_musd,True
+score 118signed_distance_bias_musd,True
+inside rounding count 118,True
+sample targets 119,True
+score 119n,True
+score 119n_year_clusters,True
+score 119rmse_musd,True
+score 119mae_musd,True
+score 119signed_distance_bias_musd,True
+inside rounding count 119,True
+sample targets 120,True
+score 120n,True
+score 120n_year_clusters,True
+score 120rmse_musd,True
+score 120mae_musd,True
+score 120signed_distance_bias_musd,True
+inside rounding count 120,True
+sample targets 121,True
+score 121n,True
+score 121n_year_clusters,True
+score 121rmse_musd,True
+score 121mae_musd,True
+score 121signed_distance_bias_musd,True
+inside rounding count 121,True
+sample targets 122,True
+score 122n,True
+score 122n_year_clusters,True
+score 122rmse_musd,True
+score 122mae_musd,True
+score 122signed_distance_bias_musd,True
+inside rounding count 122,True
+sample targets 123,True
+score 123n,True
+score 123n_year_clusters,True
+score 123rmse_musd,True
+score 123mae_musd,True
+score 123signed_distance_bias_musd,True
+inside rounding count 123,True
+sample targets 124,True
+score 124n,True
+score 124n_year_clusters,True
+score 124rmse_musd,True
+score 124mae_musd,True
+score 124signed_distance_bias_musd,True
+inside rounding count 124,True
+sample targets 125,True
+score 125n,True
+score 125n_year_clusters,True
+score 125rmse_musd,True
+score 125mae_musd,True
+score 125signed_distance_bias_musd,True
+inside rounding count 125,True
+sample targets 126,True
+score 126n,True
+score 126n_year_clusters,True
+score 126rmse_musd,True
+score 126mae_musd,True
+score 126signed_distance_bias_musd,True
+inside rounding count 126,True
+sample targets 127,True
+score 127n,True
+score 127n_year_clusters,True
+score 127rmse_musd,True
+score 127mae_musd,True
+score 127signed_distance_bias_musd,True
+inside rounding count 127,True
+sample targets 128,True
+score 128n,True
+score 128n_year_clusters,True
+score 128rmse_musd,True
+score 128mae_musd,True
+score 128signed_distance_bias_musd,True
+inside rounding count 128,True
+sample targets 129,True
+score 129n,True
+score 129n_year_clusters,True
+score 129rmse_musd,True
+score 129mae_musd,True
+score 129signed_distance_bias_musd,True
+inside rounding count 129,True
+sample targets 130,True
+score 130n,True
+score 130n_year_clusters,True
+score 130rmse_musd,True
+score 130mae_musd,True
+score 130signed_distance_bias_musd,True
+inside rounding count 130,True
+sample targets 131,True
+score 131n,True
+score 131n_year_clusters,True
+score 131rmse_musd,True
+score 131mae_musd,True
+score 131signed_distance_bias_musd,True
+inside rounding count 131,True
+sample targets 132,True
+score 132n,True
+score 132n_year_clusters,True
+score 132rmse_musd,True
+score 132mae_musd,True
+score 132signed_distance_bias_musd,True
+inside rounding count 132,True
+sample targets 133,True
+score 133n,True
+score 133n_year_clusters,True
+score 133rmse_musd,True
+score 133mae_musd,True
+score 133signed_distance_bias_musd,True
+inside rounding count 133,True
+sample targets 134,True
+score 134n,True
+score 134n_year_clusters,True
+score 134rmse_musd,True
+score 134mae_musd,True
+score 134signed_distance_bias_musd,True
+inside rounding count 134,True
+sample targets 135,True
+score 135n,True
+score 135n_year_clusters,True
+score 135rmse_musd,True
+score 135mae_musd,True
+score 135signed_distance_bias_musd,True
+inside rounding count 135,True
+sample targets 136,True
+score 136n,True
+score 136n_year_clusters,True
+score 136rmse_musd,True
+score 136mae_musd,True
+score 136signed_distance_bias_musd,True
+inside rounding count 136,True
+sample targets 137,True
+score 137n,True
+score 137n_year_clusters,True
+score 137rmse_musd,True
+score 137mae_musd,True
+score 137signed_distance_bias_musd,True
+inside rounding count 137,True
+sample targets 138,True
+score 138n,True
+score 138n_year_clusters,True
+score 138rmse_musd,True
+score 138mae_musd,True
+score 138signed_distance_bias_musd,True
+inside rounding count 138,True
+sample targets 139,True
+score 139n,True
+score 139n_year_clusters,True
+score 139rmse_musd,True
+score 139mae_musd,True
+score 139signed_distance_bias_musd,True
+inside rounding count 139,True
+sample targets 140,True
+score 140n,True
+score 140n_year_clusters,True
+score 140rmse_musd,True
+score 140mae_musd,True
+score 140signed_distance_bias_musd,True
+inside rounding count 140,True
+sample targets 141,True
+score 141n,True
+score 141n_year_clusters,True
+score 141rmse_musd,True
+score 141mae_musd,True
+score 141signed_distance_bias_musd,True
+inside rounding count 141,True
+sample targets 142,True
+score 142n,True
+score 142n_year_clusters,True
+score 142rmse_musd,True
+score 142mae_musd,True
+score 142signed_distance_bias_musd,True
+inside rounding count 142,True
+sample targets 143,True
+score 143n,True
+score 143n_year_clusters,True
+score 143rmse_musd,True
+score 143mae_musd,True
+score 143signed_distance_bias_musd,True
+inside rounding count 143,True
+sample targets 144,True
+score 144n,True
+score 144n_year_clusters,True
+score 144rmse_musd,True
+score 144mae_musd,True
+score 144signed_distance_bias_musd,True
+inside rounding count 144,True
+sample targets 145,True
+score 145n,True
+score 145n_year_clusters,True
+score 145rmse_musd,True
+score 145mae_musd,True
+score 145signed_distance_bias_musd,True
+inside rounding count 145,True
+sample targets 146,True
+score 146n,True
+score 146n_year_clusters,True
+score 146rmse_musd,True
+score 146mae_musd,True
+score 146signed_distance_bias_musd,True
+inside rounding count 146,True
+sample targets 147,True
+score 147n,True
+score 147n_year_clusters,True
+score 147rmse_musd,True
+score 147mae_musd,True
+score 147signed_distance_bias_musd,True
+inside rounding count 147,True
+sample targets 148,True
+score 148n,True
+score 148n_year_clusters,True
+score 148rmse_musd,True
+score 148mae_musd,True
+score 148signed_distance_bias_musd,True
+inside rounding count 148,True
+sample targets 149,True
+score 149n,True
+score 149n_year_clusters,True
+score 149rmse_musd,True
+score 149mae_musd,True
+score 149signed_distance_bias_musd,True
+inside rounding count 149,True
+sample targets 150,True
+score 150n,True
+score 150n_year_clusters,True
+score 150rmse_musd,True
+score 150mae_musd,True
+score 150signed_distance_bias_musd,True
+inside rounding count 150,True
+sample targets 151,True
+score 151n,True
+score 151n_year_clusters,True
+score 151rmse_musd,True
+score 151mae_musd,True
+score 151signed_distance_bias_musd,True
+inside rounding count 151,True
+sample targets 152,True
+score 152n,True
+score 152n_year_clusters,True
+score 152rmse_musd,True
+score 152mae_musd,True
+score 152signed_distance_bias_musd,True
+inside rounding count 152,True
+sample targets 153,True
+score 153n,True
+score 153n_year_clusters,True
+score 153rmse_musd,True
+score 153mae_musd,True
+score 153signed_distance_bias_musd,True
+inside rounding count 153,True
+sample targets 154,True
+score 154n,True
+score 154n_year_clusters,True
+score 154rmse_musd,True
+score 154mae_musd,True
+score 154signed_distance_bias_musd,True
+inside rounding count 154,True
+sample targets 155,True
+score 155n,True
+score 155n_year_clusters,True
+score 155rmse_musd,True
+score 155mae_musd,True
+score 155signed_distance_bias_musd,True
+inside rounding count 155,True
+sample targets 156,True
+score 156n,True
+score 156n_year_clusters,True
+score 156rmse_musd,True
+score 156mae_musd,True
+score 156signed_distance_bias_musd,True
+inside rounding count 156,True
+sample targets 157,True
+score 157n,True
+score 157n_year_clusters,True
+score 157rmse_musd,True
+score 157mae_musd,True
+score 157signed_distance_bias_musd,True
+inside rounding count 157,True
+sample targets 158,True
+score 158n,True
+score 158n_year_clusters,True
+score 158rmse_musd,True
+score 158mae_musd,True
+score 158signed_distance_bias_musd,True
+inside rounding count 158,True
+sample targets 159,True
+score 159n,True
+score 159n_year_clusters,True
+score 159rmse_musd,True
+score 159mae_musd,True
+score 159signed_distance_bias_musd,True
+inside rounding count 159,True
+sample targets 160,True
+score 160n,True
+score 160n_year_clusters,True
+score 160rmse_musd,True
+score 160mae_musd,True
+score 160signed_distance_bias_musd,True
+inside rounding count 160,True
+sample targets 161,True
+score 161n,True
+score 161n_year_clusters,True
+score 161rmse_musd,True
+score 161mae_musd,True
+score 161signed_distance_bias_musd,True
+inside rounding count 161,True
+sample targets 162,True
+score 162n,True
+score 162n_year_clusters,True
+score 162rmse_musd,True
+score 162mae_musd,True
+score 162signed_distance_bias_musd,True
+inside rounding count 162,True
+sample targets 163,True
+score 163n,True
+score 163n_year_clusters,True
+score 163rmse_musd,True
+score 163mae_musd,True
+score 163signed_distance_bias_musd,True
+inside rounding count 163,True
+sample targets 164,True
+score 164n,True
+score 164n_year_clusters,True
+score 164rmse_musd,True
+score 164mae_musd,True
+score 164signed_distance_bias_musd,True
+inside rounding count 164,True
+sample targets 165,True
+score 165n,True
+score 165n_year_clusters,True
+score 165rmse_musd,True
+score 165mae_musd,True
+score 165signed_distance_bias_musd,True
+inside rounding count 165,True
+sample targets 166,True
+score 166n,True
+score 166n_year_clusters,True
+score 166rmse_musd,True
+score 166mae_musd,True
+score 166signed_distance_bias_musd,True
+inside rounding count 166,True
+sample targets 167,True
+score 167n,True
+score 167n_year_clusters,True
+score 167rmse_musd,True
+score 167mae_musd,True
+score 167signed_distance_bias_musd,True
+inside rounding count 167,True
+sample targets 168,True
+score 168n,True
+score 168n_year_clusters,True
+score 168rmse_musd,True
+score 168mae_musd,True
+score 168signed_distance_bias_musd,True
+inside rounding count 168,True
+sample targets 169,True
+score 169n,True
+score 169n_year_clusters,True
+score 169rmse_musd,True
+score 169mae_musd,True
+score 169signed_distance_bias_musd,True
+inside rounding count 169,True
+sample targets 170,True
+score 170n,True
+score 170n_year_clusters,True
+score 170rmse_musd,True
+score 170mae_musd,True
+score 170signed_distance_bias_musd,True
+inside rounding count 170,True
+sample targets 171,True
+score 171n,True
+score 171n_year_clusters,True
+score 171rmse_musd,True
+score 171mae_musd,True
+score 171signed_distance_bias_musd,True
+inside rounding count 171,True
+sample targets 172,True
+score 172n,True
+score 172n_year_clusters,True
+score 172rmse_musd,True
+score 172mae_musd,True
+score 172signed_distance_bias_musd,True
+inside rounding count 172,True
+sample targets 173,True
+score 173n,True
+score 173n_year_clusters,True
+score 173rmse_musd,True
+score 173mae_musd,True
+score 173signed_distance_bias_musd,True
+inside rounding count 173,True
+sample targets 174,True
+score 174n,True
+score 174n_year_clusters,True
+score 174rmse_musd,True
+score 174mae_musd,True
+score 174signed_distance_bias_musd,True
+inside rounding count 174,True
+sample targets 175,True
+score 175n,True
+score 175n_year_clusters,True
+score 175rmse_musd,True
+score 175mae_musd,True
+score 175signed_distance_bias_musd,True
+inside rounding count 175,True
+sample targets 176,True
+score 176n,True
+score 176n_year_clusters,True
+score 176rmse_musd,True
+score 176mae_musd,True
+score 176signed_distance_bias_musd,True
+inside rounding count 176,True
+sample targets 177,True
+score 177n,True
+score 177n_year_clusters,True
+score 177rmse_musd,True
+score 177mae_musd,True
+score 177signed_distance_bias_musd,True
+inside rounding count 177,True
+sample targets 178,True
+score 178n,True
+score 178n_year_clusters,True
+score 178rmse_musd,True
+score 178mae_musd,True
+score 178signed_distance_bias_musd,True
+inside rounding count 178,True
+sample targets 179,True
+score 179n,True
+score 179n_year_clusters,True
+score 179rmse_musd,True
+score 179mae_musd,True
+score 179signed_distance_bias_musd,True
+inside rounding count 179,True
+sample targets 180,True
+score 180n,True
+score 180n_year_clusters,True
+score 180rmse_musd,True
+score 180mae_musd,True
+score 180signed_distance_bias_musd,True
+inside rounding count 180,True
+sample targets 181,True
+score 181n,True
+score 181n_year_clusters,True
+score 181rmse_musd,True
+score 181mae_musd,True
+score 181signed_distance_bias_musd,True
+inside rounding count 181,True
+sample targets 182,True
+score 182n,True
+score 182n_year_clusters,True
+score 182rmse_musd,True
+score 182mae_musd,True
+score 182signed_distance_bias_musd,True
+inside rounding count 182,True
+sample targets 183,True
+score 183n,True
+score 183n_year_clusters,True
+score 183rmse_musd,True
+score 183mae_musd,True
+score 183signed_distance_bias_musd,True
+inside rounding count 183,True
+sample targets 184,True
+score 184n,True
+score 184n_year_clusters,True
+score 184rmse_musd,True
+score 184mae_musd,True
+score 184signed_distance_bias_musd,True
+inside rounding count 184,True
+sample targets 185,True
+score 185n,True
+score 185n_year_clusters,True
+score 185rmse_musd,True
+score 185mae_musd,True
+score 185signed_distance_bias_musd,True
+inside rounding count 185,True
+sample targets 186,True
+score 186n,True
+score 186n_year_clusters,True
+score 186rmse_musd,True
+score 186mae_musd,True
+score 186signed_distance_bias_musd,True
+inside rounding count 186,True
+sample targets 187,True
+score 187n,True
+score 187n_year_clusters,True
+score 187rmse_musd,True
+score 187mae_musd,True
+score 187signed_distance_bias_musd,True
+inside rounding count 187,True
+sample targets 188,True
+score 188n,True
+score 188n_year_clusters,True
+score 188rmse_musd,True
+score 188mae_musd,True
+score 188signed_distance_bias_musd,True
+inside rounding count 188,True
+sample targets 189,True
+score 189n,True
+score 189n_year_clusters,True
+score 189rmse_musd,True
+score 189mae_musd,True
+score 189signed_distance_bias_musd,True
+inside rounding count 189,True
+sample targets 190,True
+score 190n,True
+score 190n_year_clusters,True
+score 190rmse_musd,True
+score 190mae_musd,True
+score 190signed_distance_bias_musd,True
+inside rounding count 190,True
+sample targets 191,True
+score 191n,True
+score 191n_year_clusters,True
+score 191rmse_musd,True
+score 191mae_musd,True
+score 191signed_distance_bias_musd,True
+inside rounding count 191,True
+comparison 0n,True
+comparison 0candidate_rmse_musd,True
+comparison 0reference_rmse_musd,True
+comparison 0rmse_ratio,True
+comparison 0ratio_p05,True
+comparison 0ratio_p95,True
+one original raw comparison 0,True
+original raw match 0rmse_ratio,True
+original raw match 0ratio_p05,True
+original raw match 0ratio_p95,True
+comparison 1n,True
+comparison 1candidate_rmse_musd,True
+comparison 1reference_rmse_musd,True
+comparison 1rmse_ratio,True
+comparison 1ratio_p05,True
+comparison 1ratio_p95,True
+comparison 2n,True
+comparison 2candidate_rmse_musd,True
+comparison 2reference_rmse_musd,True
+comparison 2rmse_ratio,True
+comparison 2ratio_p05,True
+comparison 2ratio_p95,True
+one original raw comparison 2,True
+original raw match 2rmse_ratio,True
+original raw match 2ratio_p05,True
+original raw match 2ratio_p95,True
+comparison 3n,True
+comparison 3candidate_rmse_musd,True
+comparison 3reference_rmse_musd,True
+comparison 3rmse_ratio,True
+comparison 3ratio_p05,True
+comparison 3ratio_p95,True
+comparison 4n,True
+comparison 4candidate_rmse_musd,True
+comparison 4reference_rmse_musd,True
+comparison 4rmse_ratio,True
+comparison 4ratio_p05,True
+comparison 4ratio_p95,True
+one original raw comparison 4,True
+original raw match 4rmse_ratio,True
+original raw match 4ratio_p05,True
+original raw match 4ratio_p95,True
+comparison 5n,True
+comparison 5candidate_rmse_musd,True
+comparison 5reference_rmse_musd,True
+comparison 5rmse_ratio,True
+comparison 5ratio_p05,True
+comparison 5ratio_p95,True
+comparison 6n,True
+comparison 6candidate_rmse_musd,True
+comparison 6reference_rmse_musd,True
+comparison 6rmse_ratio,True
+comparison 6ratio_p05,True
+comparison 6ratio_p95,True
+one original raw comparison 6,True
+original raw match 6rmse_ratio,True
+original raw match 6ratio_p05,True
+original raw match 6ratio_p95,True
+comparison 7n,True
+comparison 7candidate_rmse_musd,True
+comparison 7reference_rmse_musd,True
+comparison 7rmse_ratio,True
+comparison 7ratio_p05,True
+comparison 7ratio_p95,True
+comparison 8n,True
+comparison 8candidate_rmse_musd,True
+comparison 8reference_rmse_musd,True
+comparison 8rmse_ratio,True
+comparison 8ratio_p05,True
+comparison 8ratio_p95,True
+one original raw comparison 8,True
+original raw match 8rmse_ratio,True
+original raw match 8ratio_p05,True
+original raw match 8ratio_p95,True
+comparison 9n,True
+comparison 9candidate_rmse_musd,True
+comparison 9reference_rmse_musd,True
+comparison 9rmse_ratio,True
+comparison 9ratio_p05,True
+comparison 9ratio_p95,True
+comparison 10n,True
+comparison 10candidate_rmse_musd,True
+comparison 10reference_rmse_musd,True
+comparison 10rmse_ratio,True
+comparison 10ratio_p05,True
+comparison 10ratio_p95,True
+one original raw comparison 10,True
+original raw match 10rmse_ratio,True
+original raw match 10ratio_p05,True
+original raw match 10ratio_p95,True
+comparison 11n,True
+comparison 11candidate_rmse_musd,True
+comparison 11reference_rmse_musd,True
+comparison 11rmse_ratio,True
+comparison 11ratio_p05,True
+comparison 11ratio_p95,True
+comparison 12n,True
+comparison 12candidate_rmse_musd,True
+comparison 12reference_rmse_musd,True
+comparison 12rmse_ratio,True
+comparison 12ratio_p05,True
+comparison 12ratio_p95,True
+one original raw comparison 12,True
+original raw match 12rmse_ratio,True
+original raw match 12ratio_p05,True
+original raw match 12ratio_p95,True
+comparison 13n,True
+comparison 13candidate_rmse_musd,True
+comparison 13reference_rmse_musd,True
+comparison 13rmse_ratio,True
+comparison 13ratio_p05,True
+comparison 13ratio_p95,True
+comparison 14n,True
+comparison 14candidate_rmse_musd,True
+comparison 14reference_rmse_musd,True
+comparison 14rmse_ratio,True
+comparison 14ratio_p05,True
+comparison 14ratio_p95,True
+one original raw comparison 14,True
+original raw match 14rmse_ratio,True
+original raw match 14ratio_p05,True
+original raw match 14ratio_p95,True
+comparison 15n,True
+comparison 15candidate_rmse_musd,True
+comparison 15reference_rmse_musd,True
+comparison 15rmse_ratio,True
+comparison 15ratio_p05,True
+comparison 15ratio_p95,True
+comparison 16n,True
+comparison 16candidate_rmse_musd,True
+comparison 16reference_rmse_musd,True
+comparison 16rmse_ratio,True
+comparison 16ratio_p05,True
+comparison 16ratio_p95,True
+one original raw comparison 16,True
+original raw match 16rmse_ratio,True
+original raw match 16ratio_p05,True
+original raw match 16ratio_p95,True
+comparison 17n,True
+comparison 17candidate_rmse_musd,True
+comparison 17reference_rmse_musd,True
+comparison 17rmse_ratio,True
+comparison 17ratio_p05,True
+comparison 17ratio_p95,True
+comparison 18n,True
+comparison 18candidate_rmse_musd,True
+comparison 18reference_rmse_musd,True
+comparison 18rmse_ratio,True
+comparison 18ratio_p05,True
+comparison 18ratio_p95,True
+one original raw comparison 18,True
+original raw match 18rmse_ratio,True
+original raw match 18ratio_p05,True
+original raw match 18ratio_p95,True
+comparison 19n,True
+comparison 19candidate_rmse_musd,True
+comparison 19reference_rmse_musd,True
+comparison 19rmse_ratio,True
+comparison 19ratio_p05,True
+comparison 19ratio_p95,True
+comparison 20n,True
+comparison 20candidate_rmse_musd,True
+comparison 20reference_rmse_musd,True
+comparison 20rmse_ratio,True
+comparison 20ratio_p05,True
+comparison 20ratio_p95,True
+one original raw comparison 20,True
+original raw match 20rmse_ratio,True
+original raw match 20ratio_p05,True
+original raw match 20ratio_p95,True
+comparison 21n,True
+comparison 21candidate_rmse_musd,True
+comparison 21reference_rmse_musd,True
+comparison 21rmse_ratio,True
+comparison 21ratio_p05,True
+comparison 21ratio_p95,True
+comparison 22n,True
+comparison 22candidate_rmse_musd,True
+comparison 22reference_rmse_musd,True
+comparison 22rmse_ratio,True
+comparison 22ratio_p05,True
+comparison 22ratio_p95,True
+one original raw comparison 22,True
+original raw match 22rmse_ratio,True
+original raw match 22ratio_p05,True
+original raw match 22ratio_p95,True
+comparison 23n,True
+comparison 23candidate_rmse_musd,True
+comparison 23reference_rmse_musd,True
+comparison 23rmse_ratio,True
+comparison 23ratio_p05,True
+comparison 23ratio_p95,True
+comparison 24n,True
+comparison 24candidate_rmse_musd,True
+comparison 24reference_rmse_musd,True
+comparison 24rmse_ratio,True
+comparison 24ratio_p05,True
+comparison 24ratio_p95,True
+one original raw comparison 24,True
+original raw match 24rmse_ratio,True
+original raw match 24ratio_p05,True
+original raw match 24ratio_p95,True
+comparison 25n,True
+comparison 25candidate_rmse_musd,True
+comparison 25reference_rmse_musd,True
+comparison 25rmse_ratio,True
+comparison 25ratio_p05,True
+comparison 25ratio_p95,True
+comparison 26n,True
+comparison 26candidate_rmse_musd,True
+comparison 26reference_rmse_musd,True
+comparison 26rmse_ratio,True
+comparison 26ratio_p05,True
+comparison 26ratio_p95,True
+one original raw comparison 26,True
+original raw match 26rmse_ratio,True
+original raw match 26ratio_p05,True
+original raw match 26ratio_p95,True
+comparison 27n,True
+comparison 27candidate_rmse_musd,True
+comparison 27reference_rmse_musd,True
+comparison 27rmse_ratio,True
+comparison 27ratio_p05,True
+comparison 27ratio_p95,True
+comparison 28n,True
+comparison 28candidate_rmse_musd,True
+comparison 28reference_rmse_musd,True
+comparison 28rmse_ratio,True
+comparison 28ratio_p05,True
+comparison 28ratio_p95,True
+one original raw comparison 28,True
+original raw match 28rmse_ratio,True
+original raw match 28ratio_p05,True
+original raw match 28ratio_p95,True
+comparison 29n,True
+comparison 29candidate_rmse_musd,True
+comparison 29reference_rmse_musd,True
+comparison 29rmse_ratio,True
+comparison 29ratio_p05,True
+comparison 29ratio_p95,True
+comparison 30n,True
+comparison 30candidate_rmse_musd,True
+comparison 30reference_rmse_musd,True
+comparison 30rmse_ratio,True
+comparison 30ratio_p05,True
+comparison 30ratio_p95,True
+one original raw comparison 30,True
+original raw match 30rmse_ratio,True
+original raw match 30ratio_p05,True
+original raw match 30ratio_p95,True
+comparison 31n,True
+comparison 31candidate_rmse_musd,True
+comparison 31reference_rmse_musd,True
+comparison 31rmse_ratio,True
+comparison 31ratio_p05,True
+comparison 31ratio_p95,True
+comparison 32n,True
+comparison 32candidate_rmse_musd,True
+comparison 32reference_rmse_musd,True
+comparison 32rmse_ratio,True
+comparison 32ratio_p05,True
+comparison 32ratio_p95,True
+one original raw comparison 32,True
+original raw match 32rmse_ratio,True
+original raw match 32ratio_p05,True
+original raw match 32ratio_p95,True
+comparison 33n,True
+comparison 33candidate_rmse_musd,True
+comparison 33reference_rmse_musd,True
+comparison 33rmse_ratio,True
+comparison 33ratio_p05,True
+comparison 33ratio_p95,True
+comparison 34n,True
+comparison 34candidate_rmse_musd,True
+comparison 34reference_rmse_musd,True
+comparison 34rmse_ratio,True
+comparison 34ratio_p05,True
+comparison 34ratio_p95,True
+one original raw comparison 34,True
+original raw match 34rmse_ratio,True
+original raw match 34ratio_p05,True
+original raw match 34ratio_p95,True
+comparison 35n,True
+comparison 35candidate_rmse_musd,True
+comparison 35reference_rmse_musd,True
+comparison 35rmse_ratio,True
+comparison 35ratio_p05,True
+comparison 35ratio_p95,True
+comparison 36n,True
+comparison 36candidate_rmse_musd,True
+comparison 36reference_rmse_musd,True
+comparison 36rmse_ratio,True
+comparison 36ratio_p05,True
+comparison 36ratio_p95,True
+one original raw comparison 36,True
+original raw match 36rmse_ratio,True
+original raw match 36ratio_p05,True
+original raw match 36ratio_p95,True
+comparison 37n,True
+comparison 37candidate_rmse_musd,True
+comparison 37reference_rmse_musd,True
+comparison 37rmse_ratio,True
+comparison 37ratio_p05,True
+comparison 37ratio_p95,True
+comparison 38n,True
+comparison 38candidate_rmse_musd,True
+comparison 38reference_rmse_musd,True
+comparison 38rmse_ratio,True
+comparison 38ratio_p05,True
+comparison 38ratio_p95,True
+one original raw comparison 38,True
+original raw match 38rmse_ratio,True
+original raw match 38ratio_p05,True
+original raw match 38ratio_p95,True
+comparison 39n,True
+comparison 39candidate_rmse_musd,True
+comparison 39reference_rmse_musd,True
+comparison 39rmse_ratio,True
+comparison 39ratio_p05,True
+comparison 39ratio_p95,True
+comparison 40n,True
+comparison 40candidate_rmse_musd,True
+comparison 40reference_rmse_musd,True
+comparison 40rmse_ratio,True
+comparison 40ratio_p05,True
+comparison 40ratio_p95,True
+one original raw comparison 40,True
+original raw match 40rmse_ratio,True
+original raw match 40ratio_p05,True
+original raw match 40ratio_p95,True
+comparison 41n,True
+comparison 41candidate_rmse_musd,True
+comparison 41reference_rmse_musd,True
+comparison 41rmse_ratio,True
+comparison 41ratio_p05,True
+comparison 41ratio_p95,True
+comparison 42n,True
+comparison 42candidate_rmse_musd,True
+comparison 42reference_rmse_musd,True
+comparison 42rmse_ratio,True
+comparison 42ratio_p05,True
+comparison 42ratio_p95,True
+one original raw comparison 42,True
+original raw match 42rmse_ratio,True
+original raw match 42ratio_p05,True
+original raw match 42ratio_p95,True
+comparison 43n,True
+comparison 43candidate_rmse_musd,True
+comparison 43reference_rmse_musd,True
+comparison 43rmse_ratio,True
+comparison 43ratio_p05,True
+comparison 43ratio_p95,True
+comparison 44n,True
+comparison 44candidate_rmse_musd,True
+comparison 44reference_rmse_musd,True
+comparison 44rmse_ratio,True
+comparison 44ratio_p05,True
+comparison 44ratio_p95,True
+one original raw comparison 44,True
+original raw match 44rmse_ratio,True
+original raw match 44ratio_p05,True
+original raw match 44ratio_p95,True
+comparison 45n,True
+comparison 45candidate_rmse_musd,True
+comparison 45reference_rmse_musd,True
+comparison 45rmse_ratio,True
+comparison 45ratio_p05,True
+comparison 45ratio_p95,True
+comparison 46n,True
+comparison 46candidate_rmse_musd,True
+comparison 46reference_rmse_musd,True
+comparison 46rmse_ratio,True
+comparison 46ratio_p05,True
+comparison 46ratio_p95,True
+one original raw comparison 46,True
+original raw match 46rmse_ratio,True
+original raw match 46ratio_p05,True
+original raw match 46ratio_p95,True
+comparison 47n,True
+comparison 47candidate_rmse_musd,True
+comparison 47reference_rmse_musd,True
+comparison 47rmse_ratio,True
+comparison 47ratio_p05,True
+comparison 47ratio_p95,True
+comparison 48n,True
+comparison 48candidate_rmse_musd,True
+comparison 48reference_rmse_musd,True
+comparison 48rmse_ratio,True
+comparison 48ratio_p05,True
+comparison 48ratio_p95,True
+one original raw comparison 48,True
+original raw match 48rmse_ratio,True
+original raw match 48ratio_p05,True
+original raw match 48ratio_p95,True
+comparison 49n,True
+comparison 49candidate_rmse_musd,True
+comparison 49reference_rmse_musd,True
+comparison 49rmse_ratio,True
+comparison 49ratio_p05,True
+comparison 49ratio_p95,True
+comparison 50n,True
+comparison 50candidate_rmse_musd,True
+comparison 50reference_rmse_musd,True
+comparison 50rmse_ratio,True
+comparison 50ratio_p05,True
+comparison 50ratio_p95,True
+one original raw comparison 50,True
+original raw match 50rmse_ratio,True
+original raw match 50ratio_p05,True
+original raw match 50ratio_p95,True
+comparison 51n,True
+comparison 51candidate_rmse_musd,True
+comparison 51reference_rmse_musd,True
+comparison 51rmse_ratio,True
+comparison 51ratio_p05,True
+comparison 51ratio_p95,True
+comparison 52n,True
+comparison 52candidate_rmse_musd,True
+comparison 52reference_rmse_musd,True
+comparison 52rmse_ratio,True
+comparison 52ratio_p05,True
+comparison 52ratio_p95,True
+one original raw comparison 52,True
+original raw match 52rmse_ratio,True
+original raw match 52ratio_p05,True
+original raw match 52ratio_p95,True
+comparison 53n,True
+comparison 53candidate_rmse_musd,True
+comparison 53reference_rmse_musd,True
+comparison 53rmse_ratio,True
+comparison 53ratio_p05,True
+comparison 53ratio_p95,True
+comparison 54n,True
+comparison 54candidate_rmse_musd,True
+comparison 54reference_rmse_musd,True
+comparison 54rmse_ratio,True
+comparison 54ratio_p05,True
+comparison 54ratio_p95,True
+one original raw comparison 54,True
+original raw match 54rmse_ratio,True
+original raw match 54ratio_p05,True
+original raw match 54ratio_p95,True
+comparison 55n,True
+comparison 55candidate_rmse_musd,True
+comparison 55reference_rmse_musd,True
+comparison 55rmse_ratio,True
+comparison 55ratio_p05,True
+comparison 55ratio_p95,True
+comparison 56n,True
+comparison 56candidate_rmse_musd,True
+comparison 56reference_rmse_musd,True
+comparison 56rmse_ratio,True
+comparison 56ratio_p05,True
+comparison 56ratio_p95,True
+one original raw comparison 56,True
+original raw match 56rmse_ratio,True
+original raw match 56ratio_p05,True
+original raw match 56ratio_p95,True
+comparison 57n,True
+comparison 57candidate_rmse_musd,True
+comparison 57reference_rmse_musd,True
+comparison 57rmse_ratio,True
+comparison 57ratio_p05,True
+comparison 57ratio_p95,True
+comparison 58n,True
+comparison 58candidate_rmse_musd,True
+comparison 58reference_rmse_musd,True
+comparison 58rmse_ratio,True
+comparison 58ratio_p05,True
+comparison 58ratio_p95,True
+one original raw comparison 58,True
+original raw match 58rmse_ratio,True
+original raw match 58ratio_p05,True
+original raw match 58ratio_p95,True
+comparison 59n,True
+comparison 59candidate_rmse_musd,True
+comparison 59reference_rmse_musd,True
+comparison 59rmse_ratio,True
+comparison 59ratio_p05,True
+comparison 59ratio_p95,True
+comparison 60n,True
+comparison 60candidate_rmse_musd,True
+comparison 60reference_rmse_musd,True
+comparison 60rmse_ratio,True
+comparison 60ratio_p05,True
+comparison 60ratio_p95,True
+one original raw comparison 60,True
+original raw match 60rmse_ratio,True
+original raw match 60ratio_p05,True
+original raw match 60ratio_p95,True
+comparison 61n,True
+comparison 61candidate_rmse_musd,True
+comparison 61reference_rmse_musd,True
+comparison 61rmse_ratio,True
+comparison 61ratio_p05,True
+comparison 61ratio_p95,True
+comparison 62n,True
+comparison 62candidate_rmse_musd,True
+comparison 62reference_rmse_musd,True
+comparison 62rmse_ratio,True
+comparison 62ratio_p05,True
+comparison 62ratio_p95,True
+one original raw comparison 62,True
+original raw match 62rmse_ratio,True
+original raw match 62ratio_p05,True
+original raw match 62ratio_p95,True
+comparison 63n,True
+comparison 63candidate_rmse_musd,True
+comparison 63reference_rmse_musd,True
+comparison 63rmse_ratio,True
+comparison 63ratio_p05,True
+comparison 63ratio_p95,True
+comparison 64n,True
+comparison 64candidate_rmse_musd,True
+comparison 64reference_rmse_musd,True
+comparison 64rmse_ratio,True
+comparison 64ratio_p05,True
+comparison 64ratio_p95,True
+one original raw comparison 64,True
+original raw match 64rmse_ratio,True
+original raw match 64ratio_p05,True
+original raw match 64ratio_p95,True
+comparison 65n,True
+comparison 65candidate_rmse_musd,True
+comparison 65reference_rmse_musd,True
+comparison 65rmse_ratio,True
+comparison 65ratio_p05,True
+comparison 65ratio_p95,True
+comparison 66n,True
+comparison 66candidate_rmse_musd,True
+comparison 66reference_rmse_musd,True
+comparison 66rmse_ratio,True
+comparison 66ratio_p05,True
+comparison 66ratio_p95,True
+one original raw comparison 66,True
+original raw match 66rmse_ratio,True
+original raw match 66ratio_p05,True
+original raw match 66ratio_p95,True
+comparison 67n,True
+comparison 67candidate_rmse_musd,True
+comparison 67reference_rmse_musd,True
+comparison 67rmse_ratio,True
+comparison 67ratio_p05,True
+comparison 67ratio_p95,True
+comparison 68n,True
+comparison 68candidate_rmse_musd,True
+comparison 68reference_rmse_musd,True
+comparison 68rmse_ratio,True
+comparison 68ratio_p05,True
+comparison 68ratio_p95,True
+one original raw comparison 68,True
+original raw match 68rmse_ratio,True
+original raw match 68ratio_p05,True
+original raw match 68ratio_p95,True
+comparison 69n,True
+comparison 69candidate_rmse_musd,True
+comparison 69reference_rmse_musd,True
+comparison 69rmse_ratio,True
+comparison 69ratio_p05,True
+comparison 69ratio_p95,True
+comparison 70n,True
+comparison 70candidate_rmse_musd,True
+comparison 70reference_rmse_musd,True
+comparison 70rmse_ratio,True
+comparison 70ratio_p05,True
+comparison 70ratio_p95,True
+one original raw comparison 70,True
+original raw match 70rmse_ratio,True
+original raw match 70ratio_p05,True
+original raw match 70ratio_p95,True
+comparison 71n,True
+comparison 71candidate_rmse_musd,True
+comparison 71reference_rmse_musd,True
+comparison 71rmse_ratio,True
+comparison 71ratio_p05,True
+comparison 71ratio_p95,True
+comparison 72n,True
+comparison 72candidate_rmse_musd,True
+comparison 72reference_rmse_musd,True
+comparison 72rmse_ratio,True
+comparison 72ratio_p05,True
+comparison 72ratio_p95,True
+one original raw comparison 72,True
+original raw match 72rmse_ratio,True
+original raw match 72ratio_p05,True
+original raw match 72ratio_p95,True
+comparison 73n,True
+comparison 73candidate_rmse_musd,True
+comparison 73reference_rmse_musd,True
+comparison 73rmse_ratio,True
+comparison 73ratio_p05,True
+comparison 73ratio_p95,True
+comparison 74n,True
+comparison 74candidate_rmse_musd,True
+comparison 74reference_rmse_musd,True
+comparison 74rmse_ratio,True
+comparison 74ratio_p05,True
+comparison 74ratio_p95,True
+one original raw comparison 74,True
+original raw match 74rmse_ratio,True
+original raw match 74ratio_p05,True
+original raw match 74ratio_p95,True
+comparison 75n,True
+comparison 75candidate_rmse_musd,True
+comparison 75reference_rmse_musd,True
+comparison 75rmse_ratio,True
+comparison 75ratio_p05,True
+comparison 75ratio_p95,True
+comparison 76n,True
+comparison 76candidate_rmse_musd,True
+comparison 76reference_rmse_musd,True
+comparison 76rmse_ratio,True
+comparison 76ratio_p05,True
+comparison 76ratio_p95,True
+one original raw comparison 76,True
+original raw match 76rmse_ratio,True
+original raw match 76ratio_p05,True
+original raw match 76ratio_p95,True
+comparison 77n,True
+comparison 77candidate_rmse_musd,True
+comparison 77reference_rmse_musd,True
+comparison 77rmse_ratio,True
+comparison 77ratio_p05,True
+comparison 77ratio_p95,True
+comparison 78n,True
+comparison 78candidate_rmse_musd,True
+comparison 78reference_rmse_musd,True
+comparison 78rmse_ratio,True
+comparison 78ratio_p05,True
+comparison 78ratio_p95,True
+one original raw comparison 78,True
+original raw match 78rmse_ratio,True
+original raw match 78ratio_p05,True
+original raw match 78ratio_p95,True
+comparison 79n,True
+comparison 79candidate_rmse_musd,True
+comparison 79reference_rmse_musd,True
+comparison 79rmse_ratio,True
+comparison 79ratio_p05,True
+comparison 79ratio_p95,True
+comparison 80n,True
+comparison 80candidate_rmse_musd,True
+comparison 80reference_rmse_musd,True
+comparison 80rmse_ratio,True
+comparison 80ratio_p05,True
+comparison 80ratio_p95,True
+one original raw comparison 80,True
+original raw match 80rmse_ratio,True
+original raw match 80ratio_p05,True
+original raw match 80ratio_p95,True
+comparison 81n,True
+comparison 81candidate_rmse_musd,True
+comparison 81reference_rmse_musd,True
+comparison 81rmse_ratio,True
+comparison 81ratio_p05,True
+comparison 81ratio_p95,True
+comparison 82n,True
+comparison 82candidate_rmse_musd,True
+comparison 82reference_rmse_musd,True
+comparison 82rmse_ratio,True
+comparison 82ratio_p05,True
+comparison 82ratio_p95,True
+one original raw comparison 82,True
+original raw match 82rmse_ratio,True
+original raw match 82ratio_p05,True
+original raw match 82ratio_p95,True
+comparison 83n,True
+comparison 83candidate_rmse_musd,True
+comparison 83reference_rmse_musd,True
+comparison 83rmse_ratio,True
+comparison 83ratio_p05,True
+comparison 83ratio_p95,True
+comparison 84n,True
+comparison 84candidate_rmse_musd,True
+comparison 84reference_rmse_musd,True
+comparison 84rmse_ratio,True
+comparison 84ratio_p05,True
+comparison 84ratio_p95,True
+one original raw comparison 84,True
+original raw match 84rmse_ratio,True
+original raw match 84ratio_p05,True
+original raw match 84ratio_p95,True
+comparison 85n,True
+comparison 85candidate_rmse_musd,True
+comparison 85reference_rmse_musd,True
+comparison 85rmse_ratio,True
+comparison 85ratio_p05,True
+comparison 85ratio_p95,True
+comparison 86n,True
+comparison 86candidate_rmse_musd,True
+comparison 86reference_rmse_musd,True
+comparison 86rmse_ratio,True
+comparison 86ratio_p05,True
+comparison 86ratio_p95,True
+one original raw comparison 86,True
+original raw match 86rmse_ratio,True
+original raw match 86ratio_p05,True
+original raw match 86ratio_p95,True
+comparison 87n,True
+comparison 87candidate_rmse_musd,True
+comparison 87reference_rmse_musd,True
+comparison 87rmse_ratio,True
+comparison 87ratio_p05,True
+comparison 87ratio_p95,True
+comparison 88n,True
+comparison 88candidate_rmse_musd,True
+comparison 88reference_rmse_musd,True
+comparison 88rmse_ratio,True
+comparison 88ratio_p05,True
+comparison 88ratio_p95,True
+one original raw comparison 88,True
+original raw match 88rmse_ratio,True
+original raw match 88ratio_p05,True
+original raw match 88ratio_p95,True
+comparison 89n,True
+comparison 89candidate_rmse_musd,True
+comparison 89reference_rmse_musd,True
+comparison 89rmse_ratio,True
+comparison 89ratio_p05,True
+comparison 89ratio_p95,True
+comparison 90n,True
+comparison 90candidate_rmse_musd,True
+comparison 90reference_rmse_musd,True
+comparison 90rmse_ratio,True
+comparison 90ratio_p05,True
+comparison 90ratio_p95,True
+one original raw comparison 90,True
+original raw match 90rmse_ratio,True
+original raw match 90ratio_p05,True
+original raw match 90ratio_p95,True
+comparison 91n,True
+comparison 91candidate_rmse_musd,True
+comparison 91reference_rmse_musd,True
+comparison 91rmse_ratio,True
+comparison 91ratio_p05,True
+comparison 91ratio_p95,True
+comparison 92n,True
+comparison 92candidate_rmse_musd,True
+comparison 92reference_rmse_musd,True
+comparison 92rmse_ratio,True
+comparison 92ratio_p05,True
+comparison 92ratio_p95,True
+one original raw comparison 92,True
+original raw match 92rmse_ratio,True
+original raw match 92ratio_p05,True
+original raw match 92ratio_p95,True
+comparison 93n,True
+comparison 93candidate_rmse_musd,True
+comparison 93reference_rmse_musd,True
+comparison 93rmse_ratio,True
+comparison 93ratio_p05,True
+comparison 93ratio_p95,True
+comparison 94n,True
+comparison 94candidate_rmse_musd,True
+comparison 94reference_rmse_musd,True
+comparison 94rmse_ratio,True
+comparison 94ratio_p05,True
+comparison 94ratio_p95,True
+one original raw comparison 94,True
+original raw match 94rmse_ratio,True
+original raw match 94ratio_p05,True
+original raw match 94ratio_p95,True
+comparison 95n,True
+comparison 95candidate_rmse_musd,True
+comparison 95reference_rmse_musd,True
+comparison 95rmse_ratio,True
+comparison 95ratio_p05,True
+comparison 95ratio_p95,True
+comparison 96n,True
+comparison 96candidate_rmse_musd,True
+comparison 96reference_rmse_musd,True
+comparison 96rmse_ratio,True
+comparison 96ratio_p05,True
+comparison 96ratio_p95,True
+one original raw comparison 96,True
+original raw match 96rmse_ratio,True
+original raw match 96ratio_p05,True
+original raw match 96ratio_p95,True
+comparison 97n,True
+comparison 97candidate_rmse_musd,True
+comparison 97reference_rmse_musd,True
+comparison 97rmse_ratio,True
+comparison 97ratio_p05,True
+comparison 97ratio_p95,True
+comparison 98n,True
+comparison 98candidate_rmse_musd,True
+comparison 98reference_rmse_musd,True
+comparison 98rmse_ratio,True
+comparison 98ratio_p05,True
+comparison 98ratio_p95,True
+one original raw comparison 98,True
+original raw match 98rmse_ratio,True
+original raw match 98ratio_p05,True
+original raw match 98ratio_p95,True
+comparison 99n,True
+comparison 99candidate_rmse_musd,True
+comparison 99reference_rmse_musd,True
+comparison 99rmse_ratio,True
+comparison 99ratio_p05,True
+comparison 99ratio_p95,True
+comparison 100n,True
+comparison 100candidate_rmse_musd,True
+comparison 100reference_rmse_musd,True
+comparison 100rmse_ratio,True
+comparison 100ratio_p05,True
+comparison 100ratio_p95,True
+one original raw comparison 100,True
+original raw match 100rmse_ratio,True
+original raw match 100ratio_p05,True
+original raw match 100ratio_p95,True
+comparison 101n,True
+comparison 101candidate_rmse_musd,True
+comparison 101reference_rmse_musd,True
+comparison 101rmse_ratio,True
+comparison 101ratio_p05,True
+comparison 101ratio_p95,True
+comparison 102n,True
+comparison 102candidate_rmse_musd,True
+comparison 102reference_rmse_musd,True
+comparison 102rmse_ratio,True
+comparison 102ratio_p05,True
+comparison 102ratio_p95,True
+one original raw comparison 102,True
+original raw match 102rmse_ratio,True
+original raw match 102ratio_p05,True
+original raw match 102ratio_p95,True
+comparison 103n,True
+comparison 103candidate_rmse_musd,True
+comparison 103reference_rmse_musd,True
+comparison 103rmse_ratio,True
+comparison 103ratio_p05,True
+comparison 103ratio_p95,True
+comparison 104n,True
+comparison 104candidate_rmse_musd,True
+comparison 104reference_rmse_musd,True
+comparison 104rmse_ratio,True
+comparison 104ratio_p05,True
+comparison 104ratio_p95,True
+one original raw comparison 104,True
+original raw match 104rmse_ratio,True
+original raw match 104ratio_p05,True
+original raw match 104ratio_p95,True
+comparison 105n,True
+comparison 105candidate_rmse_musd,True
+comparison 105reference_rmse_musd,True
+comparison 105rmse_ratio,True
+comparison 105ratio_p05,True
+comparison 105ratio_p95,True
+comparison 106n,True
+comparison 106candidate_rmse_musd,True
+comparison 106reference_rmse_musd,True
+comparison 106rmse_ratio,True
+comparison 106ratio_p05,True
+comparison 106ratio_p95,True
+one original raw comparison 106,True
+original raw match 106rmse_ratio,True
+original raw match 106ratio_p05,True
+original raw match 106ratio_p95,True
+comparison 107n,True
+comparison 107candidate_rmse_musd,True
+comparison 107reference_rmse_musd,True
+comparison 107rmse_ratio,True
+comparison 107ratio_p05,True
+comparison 107ratio_p95,True
+comparison 108n,True
+comparison 108candidate_rmse_musd,True
+comparison 108reference_rmse_musd,True
+comparison 108rmse_ratio,True
+comparison 108ratio_p05,True
+comparison 108ratio_p95,True
+one original raw comparison 108,True
+original raw match 108rmse_ratio,True
+original raw match 108ratio_p05,True
+original raw match 108ratio_p95,True
+comparison 109n,True
+comparison 109candidate_rmse_musd,True
+comparison 109reference_rmse_musd,True
+comparison 109rmse_ratio,True
+comparison 109ratio_p05,True
+comparison 109ratio_p95,True
+comparison 110n,True
+comparison 110candidate_rmse_musd,True
+comparison 110reference_rmse_musd,True
+comparison 110rmse_ratio,True
+comparison 110ratio_p05,True
+comparison 110ratio_p95,True
+one original raw comparison 110,True
+original raw match 110rmse_ratio,True
+original raw match 110ratio_p05,True
+original raw match 110ratio_p95,True
+comparison 111n,True
+comparison 111candidate_rmse_musd,True
+comparison 111reference_rmse_musd,True
+comparison 111rmse_ratio,True
+comparison 111ratio_p05,True
+comparison 111ratio_p95,True
+comparison 112n,True
+comparison 112candidate_rmse_musd,True
+comparison 112reference_rmse_musd,True
+comparison 112rmse_ratio,True
+comparison 112ratio_p05,True
+comparison 112ratio_p95,True
+one original raw comparison 112,True
+original raw match 112rmse_ratio,True
+original raw match 112ratio_p05,True
+original raw match 112ratio_p95,True
+comparison 113n,True
+comparison 113candidate_rmse_musd,True
+comparison 113reference_rmse_musd,True
+comparison 113rmse_ratio,True
+comparison 113ratio_p05,True
+comparison 113ratio_p95,True
+comparison 114n,True
+comparison 114candidate_rmse_musd,True
+comparison 114reference_rmse_musd,True
+comparison 114rmse_ratio,True
+comparison 114ratio_p05,True
+comparison 114ratio_p95,True
+one original raw comparison 114,True
+original raw match 114rmse_ratio,True
+original raw match 114ratio_p05,True
+original raw match 114ratio_p95,True
+comparison 115n,True
+comparison 115candidate_rmse_musd,True
+comparison 115reference_rmse_musd,True
+comparison 115rmse_ratio,True
+comparison 115ratio_p05,True
+comparison 115ratio_p95,True
+comparison 116n,True
+comparison 116candidate_rmse_musd,True
+comparison 116reference_rmse_musd,True
+comparison 116rmse_ratio,True
+comparison 116ratio_p05,True
+comparison 116ratio_p95,True
+one original raw comparison 116,True
+original raw match 116rmse_ratio,True
+original raw match 116ratio_p05,True
+original raw match 116ratio_p95,True
+comparison 117n,True
+comparison 117candidate_rmse_musd,True
+comparison 117reference_rmse_musd,True
+comparison 117rmse_ratio,True
+comparison 117ratio_p05,True
+comparison 117ratio_p95,True
+comparison 118n,True
+comparison 118candidate_rmse_musd,True
+comparison 118reference_rmse_musd,True
+comparison 118rmse_ratio,True
+comparison 118ratio_p05,True
+comparison 118ratio_p95,True
+one original raw comparison 118,True
+original raw match 118rmse_ratio,True
+original raw match 118ratio_p05,True
+original raw match 118ratio_p95,True
+comparison 119n,True
+comparison 119candidate_rmse_musd,True
+comparison 119reference_rmse_musd,True
+comparison 119rmse_ratio,True
+comparison 119ratio_p05,True
+comparison 119ratio_p95,True
+comparison 120n,True
+comparison 120candidate_rmse_musd,True
+comparison 120reference_rmse_musd,True
+comparison 120rmse_ratio,True
+comparison 120ratio_p05,True
+comparison 120ratio_p95,True
+one original raw comparison 120,True
+original raw match 120rmse_ratio,True
+original raw match 120ratio_p05,True
+original raw match 120ratio_p95,True
+comparison 121n,True
+comparison 121candidate_rmse_musd,True
+comparison 121reference_rmse_musd,True
+comparison 121rmse_ratio,True
+comparison 121ratio_p05,True
+comparison 121ratio_p95,True
+comparison 122n,True
+comparison 122candidate_rmse_musd,True
+comparison 122reference_rmse_musd,True
+comparison 122rmse_ratio,True
+comparison 122ratio_p05,True
+comparison 122ratio_p95,True
+one original raw comparison 122,True
+original raw match 122rmse_ratio,True
+original raw match 122ratio_p05,True
+original raw match 122ratio_p95,True
+comparison 123n,True
+comparison 123candidate_rmse_musd,True
+comparison 123reference_rmse_musd,True
+comparison 123rmse_ratio,True
+comparison 123ratio_p05,True
+comparison 123ratio_p95,True
+comparison 124n,True
+comparison 124candidate_rmse_musd,True
+comparison 124reference_rmse_musd,True
+comparison 124rmse_ratio,True
+comparison 124ratio_p05,True
+comparison 124ratio_p95,True
+one original raw comparison 124,True
+original raw match 124rmse_ratio,True
+original raw match 124ratio_p05,True
+original raw match 124ratio_p95,True
+comparison 125n,True
+comparison 125candidate_rmse_musd,True
+comparison 125reference_rmse_musd,True
+comparison 125rmse_ratio,True
+comparison 125ratio_p05,True
+comparison 125ratio_p95,True
+comparison 126n,True
+comparison 126candidate_rmse_musd,True
+comparison 126reference_rmse_musd,True
+comparison 126rmse_ratio,True
+comparison 126ratio_p05,True
+comparison 126ratio_p95,True
+one original raw comparison 126,True
+original raw match 126rmse_ratio,True
+original raw match 126ratio_p05,True
+original raw match 126ratio_p95,True
+comparison 127n,True
+comparison 127candidate_rmse_musd,True
+comparison 127reference_rmse_musd,True
+comparison 127rmse_ratio,True
+comparison 127ratio_p05,True
+comparison 127ratio_p95,True
+comparison 128n,True
+comparison 128candidate_rmse_musd,True
+comparison 128reference_rmse_musd,True
+comparison 128rmse_ratio,True
+comparison 128ratio_p05,True
+comparison 128ratio_p95,True
+one original raw comparison 128,True
+original raw match 128rmse_ratio,True
+original raw match 128ratio_p05,True
+original raw match 128ratio_p95,True
+comparison 129n,True
+comparison 129candidate_rmse_musd,True
+comparison 129reference_rmse_musd,True
+comparison 129rmse_ratio,True
+comparison 129ratio_p05,True
+comparison 129ratio_p95,True
+comparison 130n,True
+comparison 130candidate_rmse_musd,True
+comparison 130reference_rmse_musd,True
+comparison 130rmse_ratio,True
+comparison 130ratio_p05,True
+comparison 130ratio_p95,True
+one original raw comparison 130,True
+original raw match 130rmse_ratio,True
+original raw match 130ratio_p05,True
+original raw match 130ratio_p95,True
+comparison 131n,True
+comparison 131candidate_rmse_musd,True
+comparison 131reference_rmse_musd,True
+comparison 131rmse_ratio,True
+comparison 131ratio_p05,True
+comparison 131ratio_p95,True
+deletion 0,True
+deletion n 0,True
+deletion 1,True
+deletion n 1,True
+deletion 2,True
+deletion n 2,True
+deletion 3,True
+deletion n 3,True
+deletion 4,True
+deletion n 4,True
+deletion 5,True
+deletion n 5,True
+deletion 6,True
+deletion n 6,True
+deletion 7,True
+deletion n 7,True
+deletion 8,True
+deletion n 8,True
+deletion 9,True
+deletion n 9,True
+deletion 10,True
+deletion n 10,True
+deletion 11,True
+deletion n 11,True
+deletion 12,True
+deletion n 12,True
+deletion 13,True
+deletion n 13,True
+deletion 14,True
+deletion n 14,True
+deletion 15,True
+deletion n 15,True
+deletion 16,True
+deletion n 16,True
+deletion 17,True
+deletion n 17,True
+deletion 18,True
+deletion n 18,True
+deletion 19,True
+deletion n 19,True
+deletion 20,True
+deletion n 20,True
+deletion 21,True
+deletion n 21,True
+deletion 22,True
+deletion n 22,True
+deletion 23,True
+deletion n 23,True
+deletion 24,True
+deletion n 24,True
+deletion 25,True
+deletion n 25,True
+deletion 26,True
+deletion n 26,True
+deletion 27,True
+deletion n 27,True
+deletion 28,True
+deletion n 28,True
+deletion 29,True
+deletion n 29,True
+deletion 30,True
+deletion n 30,True
+deletion 31,True
+deletion n 31,True
+deletion 32,True
+deletion n 32,True
+deletion 33,True
+deletion n 33,True
+deletion 34,True
+deletion n 34,True
+deletion 35,True
+deletion n 35,True
+deletion 36,True
+deletion n 36,True
+deletion 37,True
+deletion n 37,True
+deletion 38,True
+deletion n 38,True
+deletion 39,True
+deletion n 39,True
+deletion 40,True
+deletion n 40,True
+deletion 41,True
+deletion n 41,True
+deletion 42,True
+deletion n 42,True
+deletion 43,True
+deletion n 43,True
+deletion 44,True
+deletion n 44,True
+deletion 45,True
+deletion n 45,True
+deletion 46,True
+deletion n 46,True
+deletion 47,True
+deletion n 47,True
+deletion 48,True
+deletion n 48,True
+deletion 49,True
+deletion n 49,True
+deletion 50,True
+deletion n 50,True
+deletion 51,True
+deletion n 51,True
+deletion 52,True
+deletion n 52,True
+deletion 53,True
+deletion n 53,True
+deletion 54,True
+deletion n 54,True
+deletion 55,True
+deletion n 55,True
+deletion 56,True
+deletion n 56,True
+deletion 57,True
+deletion n 57,True
+deletion 58,True
+deletion n 58,True
+deletion 59,True
+deletion n 59,True
+deletion 60,True
+deletion n 60,True
+deletion 61,True
+deletion n 61,True
+deletion 62,True
+deletion n 62,True
+deletion 63,True
+deletion n 63,True
+deletion 64,True
+deletion n 64,True
+deletion 65,True
+deletion n 65,True
+deletion 66,True
+deletion n 66,True
+deletion 67,True
+deletion n 67,True
+deletion 68,True
+deletion n 68,True
+deletion 69,True
+deletion n 69,True
+deletion 70,True
+deletion n 70,True
+deletion 71,True
+deletion n 71,True
+deletion 72,True
+deletion n 72,True
+deletion 73,True
+deletion n 73,True
+deletion 74,True
+deletion n 74,True
+deletion 75,True
+deletion n 75,True
+deletion 76,True
+deletion n 76,True
+deletion 77,True
+deletion n 77,True
+deletion 78,True
+deletion n 78,True
+deletion 79,True
+deletion n 79,True
+deletion 80,True
+deletion n 80,True
+deletion 81,True
+deletion n 81,True
+deletion 82,True
+deletion n 82,True
+deletion 83,True
+deletion n 83,True
+deletion 84,True
+deletion n 84,True
+deletion 85,True
+deletion n 85,True
+deletion 86,True
+deletion n 86,True
+deletion 87,True
+deletion n 87,True
+deletion 88,True
+deletion n 88,True
+deletion 89,True
+deletion n 89,True
+deletion 90,True
+deletion n 90,True
+deletion 91,True
+deletion n 91,True
+deletion 92,True
+deletion n 92,True
+deletion 93,True
+deletion n 93,True
+deletion 94,True
+deletion n 94,True
+deletion 95,True
+deletion n 95,True
+deletion 96,True
+deletion n 96,True
+deletion 97,True
+deletion n 97,True
+deletion 98,True
+deletion n 98,True
+deletion 99,True
+deletion n 99,True
+deletion 100,True
+deletion n 100,True
+deletion 101,True
+deletion n 101,True
+deletion 102,True
+deletion n 102,True
+deletion 103,True
+deletion n 103,True
+deletion 104,True
+deletion n 104,True
+deletion 105,True
+deletion n 105,True
+deletion 106,True
+deletion n 106,True
+deletion 107,True
+deletion n 107,True
+deletion 108,True
+deletion n 108,True
+deletion 109,True
+deletion n 109,True
+deletion 110,True
+deletion n 110,True
+deletion 111,True
+deletion n 111,True
+deletion 112,True
+deletion n 112,True
+deletion 113,True
+deletion n 113,True
+deletion 114,True
+deletion n 114,True
+deletion 115,True
+deletion n 115,True
+deletion 116,True
+deletion n 116,True
+deletion 117,True
+deletion n 117,True
+deletion 118,True
+deletion n 118,True
+deletion 119,True
+deletion n 119,True
+deletion 120,True
+deletion n 120,True
+deletion 121,True
+deletion n 121,True
+deletion 122,True
+deletion n 122,True
+deletion 123,True
+deletion n 123,True
+deletion 124,True
+deletion n 124,True
+deletion 125,True
+deletion n 125,True
+deletion 126,True
+deletion n 126,True
+deletion 127,True
+deletion n 127,True
+deletion 128,True
+deletion n 128,True
+deletion 129,True
+deletion n 129,True
+deletion 130,True
+deletion n 130,True
+deletion 131,True
+deletion n 131,True
+deletion 132,True
+deletion n 132,True
+deletion 133,True
+deletion n 133,True
+deletion 134,True
+deletion n 134,True
+deletion 135,True
+deletion n 135,True
+deletion 136,True
+deletion n 136,True
+deletion 137,True
+deletion n 137,True
+deletion 138,True
+deletion n 138,True
+deletion 139,True
+deletion n 139,True
+deletion 140,True
+deletion n 140,True
+deletion 141,True
+deletion n 141,True
+deletion 142,True
+deletion n 142,True
+deletion 143,True
+deletion n 143,True
+deletion 144,True
+deletion n 144,True
+deletion 145,True
+deletion n 145,True
+deletion 146,True
+deletion n 146,True
+deletion 147,True
+deletion n 147,True
+deletion 148,True
+deletion n 148,True
+deletion 149,True
+deletion n 149,True
+deletion 150,True
+deletion n 150,True
+deletion 151,True
+deletion n 151,True
+deletion 152,True
+deletion n 152,True
+deletion 153,True
+deletion n 153,True
+deletion 154,True
+deletion n 154,True
+deletion 155,True
+deletion n 155,True
+deletion 156,True
+deletion n 156,True
+deletion 157,True
+deletion n 157,True
+deletion 158,True
+deletion n 158,True
+deletion 159,True
+deletion n 159,True
+deletion 160,True
+deletion n 160,True
+deletion 161,True
+deletion n 161,True
+deletion 162,True
+deletion n 162,True
+deletion 163,True
+deletion n 163,True
+deletion 164,True
+deletion n 164,True
+deletion 165,True
+deletion n 165,True
+deletion 166,True
+deletion n 166,True
+deletion 167,True
+deletion n 167,True
+deletion 168,True
+deletion n 168,True
+deletion 169,True
+deletion n 169,True
+deletion 170,True
+deletion n 170,True
+deletion 171,True
+deletion n 171,True
+deletion 172,True
+deletion n 172,True
+deletion 173,True
+deletion n 173,True
+deletion 174,True
+deletion n 174,True
+deletion 175,True
+deletion n 175,True
+deletion 176,True
+deletion n 176,True
+deletion 177,True
+deletion n 177,True
+deletion 178,True
+deletion n 178,True
+deletion 179,True
+deletion n 179,True
+deletion 180,True
+deletion n 180,True
+deletion 181,True
+deletion n 181,True
+deletion 182,True
+deletion n 182,True
+deletion 183,True
+deletion n 183,True
+deletion 184,True
+deletion n 184,True
+deletion 185,True
+deletion n 185,True
+deletion 186,True
+deletion n 186,True
+deletion 187,True
+deletion n 187,True
+deletion 188,True
+deletion n 188,True
+deletion 189,True
+deletion n 189,True
+deletion 190,True
+deletion n 190,True
+deletion 191,True
+deletion n 191,True
+deletion 192,True
+deletion n 192,True
+deletion 193,True
+deletion n 193,True
+deletion 194,True
+deletion n 194,True
+deletion 195,True
+deletion n 195,True
+deletion 196,True
+deletion n 196,True
+deletion 197,True
+deletion n 197,True
+deletion 198,True
+deletion n 198,True
+deletion 199,True
+deletion n 199,True
+deletion 200,True
+deletion n 200,True
+deletion 201,True
+deletion n 201,True
+deletion 202,True
+deletion n 202,True
+deletion 203,True
+deletion n 203,True
+deletion 204,True
+deletion n 204,True
+deletion 205,True
+deletion n 205,True
+deletion 206,True
+deletion n 206,True
+deletion 207,True
+deletion n 207,True
+deletion 208,True
+deletion n 208,True
+deletion 209,True
+deletion n 209,True
+deletion 210,True
+deletion n 210,True
+deletion 211,True
+deletion n 211,True
+deletion 212,True
+deletion n 212,True
+deletion 213,True
+deletion n 213,True
+deletion 214,True
+deletion n 214,True
+deletion 215,True
+deletion n 215,True
+deletion 216,True
+deletion n 216,True
+deletion 217,True
+deletion n 217,True
+deletion 218,True
+deletion n 218,True
+deletion 219,True
+deletion n 219,True
+deletion 220,True
+deletion n 220,True
+deletion 221,True
+deletion n 221,True
+deletion 222,True
+deletion n 222,True
+deletion 223,True
+deletion n 223,True
+deletion 224,True
+deletion n 224,True
+deletion 225,True
+deletion n 225,True
+deletion 226,True
+deletion n 226,True
+deletion 227,True
+deletion n 227,True
+deletion 228,True
+deletion n 228,True
+deletion 229,True
+deletion n 229,True
+deletion 230,True
+deletion n 230,True
+deletion 231,True
+deletion n 231,True
+deletion 232,True
+deletion n 232,True
+deletion 233,True
+deletion n 233,True
+deletion 234,True
+deletion n 234,True
+deletion 235,True
+deletion n 235,True
+deletion 236,True
+deletion n 236,True
+deletion 237,True
+deletion n 237,True
+deletion 238,True
+deletion n 238,True
+deletion 239,True
+deletion n 239,True
+deletion 240,True
+deletion n 240,True
+deletion 241,True
+deletion n 241,True
+deletion 242,True
+deletion n 242,True
+deletion 243,True
+deletion n 243,True
+deletion 244,True
+deletion n 244,True
+deletion 245,True
+deletion n 245,True
+deletion 246,True
+deletion n 246,True
+deletion 247,True
+deletion n 247,True
+deletion 248,True
+deletion n 248,True
+deletion 249,True
+deletion n 249,True
+deletion 250,True
+deletion n 250,True
+deletion 251,True
+deletion n 251,True
+deletion 252,True
+deletion n 252,True
+deletion 253,True
+deletion n 253,True
+deletion 254,True
+deletion n 254,True
+deletion 255,True
+deletion n 255,True
+deletion 256,True
+deletion n 256,True
+deletion 257,True
+deletion n 257,True
+deletion 258,True
+deletion n 258,True
+deletion 259,True
+deletion n 259,True
+deletion 260,True
+deletion n 260,True
+deletion 261,True
+deletion n 261,True
+deletion 262,True
+deletion n 262,True
+deletion 263,True
+deletion n 263,True
+deletion 264,True
+deletion n 264,True
+deletion 265,True
+deletion n 265,True
+deletion 266,True
+deletion n 266,True
+deletion 267,True
+deletion n 267,True
+deletion 268,True
+deletion n 268,True
+deletion 269,True
+deletion n 269,True
+deletion 270,True
+deletion n 270,True
+deletion 271,True
+deletion n 271,True
+deletion 272,True
+deletion n 272,True
+deletion 273,True
+deletion n 273,True
+deletion 274,True
+deletion n 274,True
+deletion 275,True
+deletion n 275,True
+deletion 276,True
+deletion n 276,True
+deletion 277,True
+deletion n 277,True
+deletion 278,True
+deletion n 278,True
+deletion 279,True
+deletion n 279,True
+deletion 280,True
+deletion n 280,True
+deletion 281,True
+deletion n 281,True
+deletion 282,True
+deletion n 282,True
+deletion 283,True
+deletion n 283,True
+deletion 284,True
+deletion n 284,True
+deletion 285,True
+deletion n 285,True
+deletion 286,True
+deletion n 286,True
+deletion 287,True
+deletion n 287,True
+deletion 288,True
+deletion n 288,True
+deletion 289,True
+deletion n 289,True
+deletion 290,True
+deletion n 290,True
+deletion 291,True
+deletion n 291,True
+deletion 292,True
+deletion n 292,True
+deletion 293,True
+deletion n 293,True
+deletion 294,True
+deletion n 294,True
+deletion 295,True
+deletion n 295,True
+deletion 296,True
+deletion n 296,True
+deletion 297,True
+deletion n 297,True
+deletion 298,True
+deletion n 298,True
+deletion 299,True
+deletion n 299,True
+deletion 300,True
+deletion n 300,True
+deletion 301,True
+deletion n 301,True
+deletion 302,True
+deletion n 302,True
+deletion 303,True
+deletion n 303,True
+deletion 304,True
+deletion n 304,True
+deletion 305,True
+deletion n 305,True
+deletion 306,True
+deletion n 306,True
+deletion 307,True
+deletion n 307,True
+deletion 308,True
+deletion n 308,True
+deletion 309,True
+deletion n 309,True
+deletion 310,True
+deletion n 310,True
+deletion 311,True
+deletion n 311,True
+deletion 312,True
+deletion n 312,True
+deletion 313,True
+deletion n 313,True
+deletion 314,True
+deletion n 314,True
+deletion 315,True
+deletion n 315,True
+deletion 316,True
+deletion n 316,True
+deletion 317,True
+deletion n 317,True
+deletion 318,True
+deletion n 318,True
+deletion 319,True
+deletion n 319,True
+deletion 320,True
+deletion n 320,True
+deletion 321,True
+deletion n 321,True
+deletion 322,True
+deletion n 322,True
+deletion 323,True
+deletion n 323,True
+deletion 324,True
+deletion n 324,True
+deletion 325,True
+deletion n 325,True
+deletion 326,True
+deletion n 326,True
+deletion 327,True
+deletion n 327,True
+deletion 328,True
+deletion n 328,True
+deletion 329,True
+deletion n 329,True
+deletion 330,True
+deletion n 330,True
+deletion 331,True
+deletion n 331,True
+deletion 332,True
+deletion n 332,True
+deletion 333,True
+deletion n 333,True
+deletion 334,True
+deletion n 334,True
+deletion 335,True
+deletion n 335,True
+deletion 336,True
+deletion n 336,True
+deletion 337,True
+deletion n 337,True
+deletion 338,True
+deletion n 338,True
+deletion 339,True
+deletion n 339,True
+deletion 340,True
+deletion n 340,True
+deletion 341,True
+deletion n 341,True
+deletion 342,True
+deletion n 342,True
+deletion 343,True
+deletion n 343,True
+deletion 344,True
+deletion n 344,True
+deletion 345,True
+deletion n 345,True
+deletion 346,True
+deletion n 346,True
+deletion 347,True
+deletion n 347,True
+deletion 348,True
+deletion n 348,True
+deletion 349,True
+deletion n 349,True
+deletion 350,True
+deletion n 350,True
+deletion 351,True
+deletion n 351,True
+deletion 352,True
+deletion n 352,True
+deletion 353,True
+deletion n 353,True
+deletion 354,True
+deletion n 354,True
+deletion 355,True
+deletion n 355,True
+deletion 356,True
+deletion n 356,True
+deletion 357,True
+deletion n 357,True
+deletion 358,True
+deletion n 358,True
+deletion 359,True
+deletion n 359,True
+deletion 360,True
+deletion n 360,True
+deletion 361,True
+deletion n 361,True
+deletion 362,True
+deletion n 362,True
+deletion 363,True
+deletion n 363,True
+deletion 364,True
+deletion n 364,True
+deletion 365,True
+deletion n 365,True
+deletion 366,True
+deletion n 366,True
+deletion 367,True
+deletion n 367,True
+deletion 368,True
+deletion n 368,True
+deletion 369,True
+deletion n 369,True
+deletion 370,True
+deletion n 370,True
+deletion 371,True
+deletion n 371,True
+deletion 372,True
+deletion n 372,True
+deletion 373,True
+deletion n 373,True
+deletion 374,True
+deletion n 374,True
+deletion 375,True
+deletion n 375,True
+deletion 376,True
+deletion n 376,True
+deletion 377,True
+deletion n 377,True
+deletion 378,True
+deletion n 378,True
+deletion 379,True
+deletion n 379,True
+deletion 380,True
+deletion n 380,True
+deletion 381,True
+deletion n 381,True
+deletion 382,True
+deletion n 382,True
+deletion 383,True
+deletion n 383,True
+deletion 384,True
+deletion n 384,True
+deletion 385,True
+deletion n 385,True
+deletion 386,True
+deletion n 386,True
+deletion 387,True
+deletion n 387,True
+deletion 388,True
+deletion n 388,True
+deletion 389,True
+deletion n 389,True
+deletion 390,True
+deletion n 390,True
+deletion 391,True
+deletion n 391,True
+deletion 392,True
+deletion n 392,True
+deletion 393,True
+deletion n 393,True
+deletion 394,True
+deletion n 394,True
+deletion 395,True
+deletion n 395,True
+deletion 396,True
+deletion n 396,True
+deletion 397,True
+deletion n 397,True
+deletion 398,True
+deletion n 398,True
+deletion 399,True
+deletion n 399,True
+deletion 400,True
+deletion n 400,True
+deletion 401,True
+deletion n 401,True
+deletion 402,True
+deletion n 402,True
+deletion 403,True
+deletion n 403,True
+deletion 404,True
+deletion n 404,True
+deletion 405,True
+deletion n 405,True
+deletion 406,True
+deletion n 406,True
+deletion 407,True
+deletion n 407,True
+deletion 408,True
+deletion n 408,True
+deletion 409,True
+deletion n 409,True
+deletion 410,True
+deletion n 410,True
+deletion 411,True
+deletion n 411,True
+deletion 412,True
+deletion n 412,True
+deletion 413,True
+deletion n 413,True
+deletion 414,True
+deletion n 414,True
+deletion 415,True
+deletion n 415,True
+deletion 416,True
+deletion n 416,True
+deletion 417,True
+deletion n 417,True
+deletion 418,True
+deletion n 418,True
+deletion 419,True
+deletion n 419,True
+deletion 420,True
+deletion n 420,True
+deletion 421,True
+deletion n 421,True
+deletion 422,True
+deletion n 422,True
+deletion 423,True
+deletion n 423,True
+deletion 424,True
+deletion n 424,True
+deletion 425,True
+deletion n 425,True
+deletion 426,True
+deletion n 426,True
+deletion 427,True
+deletion n 427,True
+deletion 428,True
+deletion n 428,True
+deletion 429,True
+deletion n 429,True
+deletion 430,True
+deletion n 430,True
+deletion 431,True
+deletion n 431,True
+deletion 432,True
+deletion n 432,True
+deletion 433,True
+deletion n 433,True
+deletion 434,True
+deletion n 434,True
+deletion 435,True
+deletion n 435,True
+deletion 436,True
+deletion n 436,True
+deletion 437,True
+deletion n 437,True
+deletion 438,True
+deletion n 438,True
+deletion 439,True
+deletion n 439,True
+deletion 440,True
+deletion n 440,True
+deletion 441,True
+deletion n 441,True
+deletion 442,True
+deletion n 442,True
+deletion 443,True
+deletion n 443,True
+deletion 444,True
+deletion n 444,True
+deletion 445,True
+deletion n 445,True
+deletion 446,True
+deletion n 446,True
+deletion 447,True
+deletion n 447,True
+deletion 448,True
+deletion n 448,True
+deletion 449,True
+deletion n 449,True
+deletion 450,True
+deletion n 450,True
+deletion 451,True
+deletion n 451,True
+deletion 452,True
+deletion n 452,True
+deletion 453,True
+deletion n 453,True
+deletion 454,True
+deletion n 454,True
+deletion 455,True
+deletion n 455,True
+deletion 456,True
+deletion n 456,True
+deletion 457,True
+deletion n 457,True
+deletion 458,True
+deletion n 458,True
+deletion 459,True
+deletion n 459,True
+deletion 460,True
+deletion n 460,True
+deletion 461,True
+deletion n 461,True
+deletion 462,True
+deletion n 462,True
+deletion 463,True
+deletion n 463,True
+deletion 464,True
+deletion n 464,True
+deletion 465,True
+deletion n 465,True
+deletion 466,True
+deletion n 466,True
+deletion 467,True
+deletion n 467,True
+deletion 468,True
+deletion n 468,True
+deletion 469,True
+deletion n 469,True
+deletion 470,True
+deletion n 470,True
+deletion 471,True
+deletion n 471,True
+deletion 472,True
+deletion n 472,True
+deletion 473,True
+deletion n 473,True
+deletion 474,True
+deletion n 474,True
+deletion 475,True
+deletion n 475,True
+deletion 476,True
+deletion n 476,True
+deletion 477,True
+deletion n 477,True
+deletion 478,True
+deletion n 478,True
+deletion 479,True
+deletion n 479,True
+deletion 480,True
+deletion n 480,True
+deletion 481,True
+deletion n 481,True
+deletion 482,True
+deletion n 482,True
+deletion 483,True
+deletion n 483,True
+deletion 484,True
+deletion n 484,True
+deletion 485,True
+deletion n 485,True
+deletion 486,True
+deletion n 486,True
+deletion 487,True
+deletion n 487,True
+deletion 488,True
+deletion n 488,True
+deletion 489,True
+deletion n 489,True
+deletion 490,True
+deletion n 490,True
+deletion 491,True
+deletion n 491,True
+deletion 492,True
+deletion n 492,True
+deletion 493,True
+deletion n 493,True
+deletion 494,True
+deletion n 494,True
+deletion 495,True
+deletion n 495,True
+deletion 496,True
+deletion n 496,True
+deletion 497,True
+deletion n 497,True
+deletion 498,True
+deletion n 498,True
+deletion 499,True
+deletion n 499,True
+deletion 500,True
+deletion n 500,True
+deletion 501,True
+deletion n 501,True
+deletion 502,True
+deletion n 502,True
+deletion 503,True
+deletion n 503,True
+deletion 504,True
+deletion n 504,True
+deletion 505,True
+deletion n 505,True
+deletion 506,True
+deletion n 506,True
+deletion 507,True
+deletion n 507,True
+deletion 508,True
+deletion n 508,True
+deletion 509,True
+deletion n 509,True
+deletion 510,True
+deletion n 510,True
+deletion 511,True
+deletion n 511,True
+deletion 512,True
+deletion n 512,True
+deletion 513,True
+deletion n 513,True
+deletion 514,True
+deletion n 514,True
+deletion 515,True
+deletion n 515,True
+deletion 516,True
+deletion n 516,True
+deletion 517,True
+deletion n 517,True
+deletion 518,True
+deletion n 518,True
+deletion 519,True
+deletion n 519,True
+deletion 520,True
+deletion n 520,True
+deletion 521,True
+deletion n 521,True
+deletion 522,True
+deletion n 522,True
+deletion 523,True
+deletion n 523,True
+deletion 524,True
+deletion n 524,True
+deletion 525,True
+deletion n 525,True
+deletion 526,True
+deletion n 526,True
+deletion 527,True
+deletion n 527,True
+deletion 528,True
+deletion n 528,True
+deletion 529,True
+deletion n 529,True
+deletion 530,True
+deletion n 530,True
+deletion 531,True
+deletion n 531,True
+deletion 532,True
+deletion n 532,True
+deletion 533,True
+deletion n 533,True
+deletion 534,True
+deletion n 534,True
+deletion 535,True
+deletion n 535,True
+deletion 536,True
+deletion n 536,True
+deletion 537,True
+deletion n 537,True
+deletion 538,True
+deletion n 538,True
+deletion 539,True
+deletion n 539,True
+deletion 540,True
+deletion n 540,True
+deletion 541,True
+deletion n 541,True
+deletion 542,True
+deletion n 542,True
+deletion 543,True
+deletion n 543,True
+deletion 544,True
+deletion n 544,True
+deletion 545,True
+deletion n 545,True
+deletion 546,True
+deletion n 546,True
+deletion 547,True
+deletion n 547,True
+deletion 548,True
+deletion n 548,True
+deletion 549,True
+deletion n 549,True
+deletion 550,True
+deletion n 550,True
+deletion 551,True
+deletion n 551,True
+deletion 552,True
+deletion n 552,True
+deletion 553,True
+deletion n 553,True
+deletion 554,True
+deletion n 554,True
+deletion 555,True
+deletion n 555,True
+deletion 556,True
+deletion n 556,True
+deletion 557,True
+deletion n 557,True
+deletion 558,True
+deletion n 558,True
+deletion 559,True
+deletion n 559,True
+deletion 560,True
+deletion n 560,True
+deletion 561,True
+deletion n 561,True
+deletion 562,True
+deletion n 562,True
+deletion 563,True
+deletion n 563,True
+deletion 564,True
+deletion n 564,True
+deletion 565,True
+deletion n 565,True
+deletion 566,True
+deletion n 566,True
+deletion 567,True
+deletion n 567,True
+deletion 568,True
+deletion n 568,True
+deletion 569,True
+deletion n 569,True
+deletion 570,True
+deletion n 570,True
+deletion 571,True
+deletion n 571,True
+deletion 572,True
+deletion n 572,True
+deletion 573,True
+deletion n 573,True
+deletion 574,True
+deletion n 574,True
+deletion 575,True
+deletion n 575,True
+deletion 576,True
+deletion n 576,True
+deletion 577,True
+deletion n 577,True
+deletion 578,True
+deletion n 578,True
+deletion 579,True
+deletion n 579,True
+deletion 580,True
+deletion n 580,True
+deletion 581,True
+deletion n 581,True
+deletion 582,True
+deletion n 582,True
+deletion 583,True
+deletion n 583,True
+deletion 584,True
+deletion n 584,True
+deletion 585,True
+deletion n 585,True
+deletion 586,True
+deletion n 586,True
+deletion 587,True
+deletion n 587,True
+deletion 588,True
+deletion n 588,True
+deletion 589,True
+deletion n 589,True
+deletion 590,True
+deletion n 590,True
+deletion 591,True
+deletion n 591,True
+deletion 592,True
+deletion n 592,True
+deletion 593,True
+deletion n 593,True
+deletion 594,True
+deletion n 594,True
+deletion 595,True
+deletion n 595,True
+deletion 596,True
+deletion n 596,True
+deletion 597,True
+deletion n 597,True
+deletion 598,True
+deletion n 598,True
+deletion 599,True
+deletion n 599,True
+deletion 600,True
+deletion n 600,True
+deletion 601,True
+deletion n 601,True
+deletion 602,True
+deletion n 602,True
+deletion 603,True
+deletion n 603,True
+deletion 604,True
+deletion n 604,True
+deletion 605,True
+deletion n 605,True
+deletion 606,True
+deletion n 606,True
+deletion 607,True
+deletion n 607,True
+deletion 608,True
+deletion n 608,True
+deletion 609,True
+deletion n 609,True
+deletion 610,True
+deletion n 610,True
+deletion 611,True
+deletion n 611,True
+deletion 612,True
+deletion n 612,True
+deletion 613,True
+deletion n 613,True
+deletion 614,True
+deletion n 614,True
+deletion 615,True
+deletion n 615,True
+deletion 616,True
+deletion n 616,True
+deletion 617,True
+deletion n 617,True
+deletion 618,True
+deletion n 618,True
+deletion 619,True
+deletion n 619,True
+deletion 620,True
+deletion n 620,True
+deletion 621,True
+deletion n 621,True
+deletion 622,True
+deletion n 622,True
+deletion 623,True
+deletion n 623,True
+deletion 624,True
+deletion n 624,True
+deletion 625,True
+deletion n 625,True
+deletion 626,True
+deletion n 626,True
+deletion 627,True
+deletion n 627,True
+deletion 628,True
+deletion n 628,True
+deletion 629,True
+deletion n 629,True
+deletion 630,True
+deletion n 630,True
+deletion 631,True
+deletion n 631,True
+deletion 632,True
+deletion n 632,True
+deletion 633,True
+deletion n 633,True
+deletion 634,True
+deletion n 634,True
+deletion 635,True
+deletion n 635,True
+deletion 636,True
+deletion n 636,True
+deletion 637,True
+deletion n 637,True
+deletion 638,True
+deletion n 638,True
+deletion 639,True
+deletion n 639,True
+deletion 640,True
+deletion n 640,True
+deletion 641,True
+deletion n 641,True
+deletion 642,True
+deletion n 642,True
+deletion 643,True
+deletion n 643,True
+deletion 644,True
+deletion n 644,True
+deletion 645,True
+deletion n 645,True
+deletion 646,True
+deletion n 646,True
+deletion 647,True
+deletion n 647,True
+deletion 648,True
+deletion n 648,True
+deletion 649,True
+deletion n 649,True
+deletion 650,True
+deletion n 650,True
+deletion 651,True
+deletion n 651,True
+deletion 652,True
+deletion n 652,True
+deletion 653,True
+deletion n 653,True
+deletion 654,True
+deletion n 654,True
+deletion 655,True
+deletion n 655,True
+deletion 656,True
+deletion n 656,True
+deletion 657,True
+deletion n 657,True
+deletion 658,True
+deletion n 658,True
+deletion 659,True
+deletion n 659,True
+deletion 660,True
+deletion n 660,True
+deletion 661,True
+deletion n 661,True
+deletion 662,True
+deletion n 662,True
+deletion 663,True
+deletion n 663,True
+deletion 664,True
+deletion n 664,True
+deletion 665,True
+deletion n 665,True
+deletion 666,True
+deletion n 666,True
+deletion 667,True
+deletion n 667,True
+deletion 668,True
+deletion n 668,True
+deletion 669,True
+deletion n 669,True
+deletion 670,True
+deletion n 670,True
+deletion 671,True
+deletion n 671,True
+deletion 672,True
+deletion n 672,True
+deletion 673,True
+deletion n 673,True
+deletion 674,True
+deletion n 674,True
+deletion 675,True
+deletion n 675,True
+deletion 676,True
+deletion n 676,True
+deletion 677,True
+deletion n 677,True
+deletion 678,True
+deletion n 678,True
+deletion 679,True
+deletion n 679,True
+deletion 680,True
+deletion n 680,True
+deletion 681,True
+deletion n 681,True
+deletion 682,True
+deletion n 682,True
+deletion 683,True
+deletion n 683,True
+deletion 684,True
+deletion n 684,True
+deletion 685,True
+deletion n 685,True
+deletion 686,True
+deletion n 686,True
+deletion 687,True
+deletion n 687,True
+deletion 688,True
+deletion n 688,True
+deletion 689,True
+deletion n 689,True
+deletion 690,True
+deletion n 690,True
+deletion 691,True
+deletion n 691,True
+deletion 692,True
+deletion n 692,True
+deletion 693,True
+deletion n 693,True
+deletion 694,True
+deletion n 694,True
+deletion 695,True
+deletion n 695,True
+deletion 696,True
+deletion n 696,True
+deletion 697,True
+deletion n 697,True
+deletion 698,True
+deletion n 698,True
+deletion 699,True
+deletion n 699,True
+deletion 700,True
+deletion n 700,True
+deletion 701,True
+deletion n 701,True
+deletion 702,True
+deletion n 702,True
+deletion 703,True
+deletion n 703,True
+deletion 704,True
+deletion n 704,True
+deletion 705,True
+deletion n 705,True
+deletion 706,True
+deletion n 706,True
+deletion 707,True
+deletion n 707,True
+deletion 708,True
+deletion n 708,True
+deletion 709,True
+deletion n 709,True
+deletion 710,True
+deletion n 710,True
+deletion 711,True
+deletion n 711,True
+deletion 712,True
+deletion n 712,True
+deletion 713,True
+deletion n 713,True
+deletion 714,True
+deletion n 714,True
+deletion 715,True
+deletion n 715,True
+deletion 716,True
+deletion n 716,True
+deletion 717,True
+deletion n 717,True
+deletion 718,True
+deletion n 718,True
+deletion 719,True
+deletion n 719,True
+deletion 720,True
+deletion n 720,True
+deletion 721,True
+deletion n 721,True
+deletion 722,True
+deletion n 722,True
+deletion 723,True
+deletion n 723,True
+deletion 724,True
+deletion n 724,True
+deletion 725,True
+deletion n 725,True
+deletion 726,True
+deletion n 726,True
+deletion 727,True
+deletion n 727,True
+deletion 728,True
+deletion n 728,True
+deletion 729,True
+deletion n 729,True
+deletion 730,True
+deletion n 730,True
+deletion 731,True
+deletion n 731,True
+deletion 732,True
+deletion n 732,True
+deletion 733,True
+deletion n 733,True
+deletion 734,True
+deletion n 734,True
+deletion 735,True
+deletion n 735,True
+deletion 736,True
+deletion n 736,True
+deletion 737,True
+deletion n 737,True
+deletion 738,True
+deletion n 738,True
+deletion 739,True
+deletion n 739,True
+deletion 740,True
+deletion n 740,True
+deletion 741,True
+deletion n 741,True
+deletion 742,True
+deletion n 742,True
+deletion 743,True
+deletion n 743,True
+deletion 744,True
+deletion n 744,True
+deletion 745,True
+deletion n 745,True
+deletion 746,True
+deletion n 746,True
+deletion 747,True
+deletion n 747,True
+deletion 748,True
+deletion n 748,True
+deletion 749,True
+deletion n 749,True
+deletion 750,True
+deletion n 750,True
+deletion 751,True
+deletion n 751,True
+deletion 752,True
+deletion n 752,True
+deletion 753,True
+deletion n 753,True
+deletion 754,True
+deletion n 754,True
+deletion 755,True
+deletion n 755,True
+deletion 756,True
+deletion n 756,True
+deletion 757,True
+deletion n 757,True
+deletion 758,True
+deletion n 758,True
+deletion 759,True
+deletion n 759,True
+deletion 760,True
+deletion n 760,True
+deletion 761,True
+deletion n 761,True
+deletion 762,True
+deletion n 762,True
+deletion 763,True
+deletion n 763,True
+deletion 764,True
+deletion n 764,True
+deletion 765,True
+deletion n 765,True
+deletion 766,True
+deletion n 766,True
+deletion 767,True
+deletion n 767,True
+deletion 768,True
+deletion n 768,True
+deletion 769,True
+deletion n 769,True
+deletion 770,True
+deletion n 770,True
+deletion 771,True
+deletion n 771,True
+deletion 772,True
+deletion n 772,True
+deletion 773,True
+deletion n 773,True
+deletion 774,True
+deletion n 774,True
+deletion 775,True
+deletion n 775,True
+deletion 776,True
+deletion n 776,True
+deletion 777,True
+deletion n 777,True
+deletion 778,True
+deletion n 778,True
+deletion 779,True
+deletion n 779,True
+deletion 780,True
+deletion n 780,True
+deletion 781,True
+deletion n 781,True
+deletion 782,True
+deletion n 782,True
+deletion 783,True
+deletion n 783,True
+deletion 784,True
+deletion n 784,True
+deletion 785,True
+deletion n 785,True
+deletion 786,True
+deletion n 786,True
+deletion 787,True
+deletion n 787,True
+deletion 788,True
+deletion n 788,True
+deletion 789,True
+deletion n 789,True
+deletion 790,True
+deletion n 790,True
+deletion 791,True
+deletion n 791,True
+deletion 792,True
+deletion n 792,True
+deletion 793,True
+deletion n 793,True
+deletion 794,True
+deletion n 794,True
+deletion 795,True
+deletion n 795,True
+deletion 796,True
+deletion n 796,True
+deletion 797,True
+deletion n 797,True
+deletion 798,True
+deletion n 798,True
+deletion 799,True
+deletion n 799,True
+deletion 800,True
+deletion n 800,True
+deletion 801,True
+deletion n 801,True
+deletion 802,True
+deletion n 802,True
+deletion 803,True
+deletion n 803,True
+deletion 804,True
+deletion n 804,True
+deletion 805,True
+deletion n 805,True
+deletion 806,True
+deletion n 806,True
+deletion 807,True
+deletion n 807,True
+deletion 808,True
+deletion n 808,True
+deletion 809,True
+deletion n 809,True
+deletion 810,True
+deletion n 810,True
+deletion 811,True
+deletion n 811,True
+deletion 812,True
+deletion n 812,True
+deletion 813,True
+deletion n 813,True
+deletion 814,True
+deletion n 814,True
+deletion 815,True
+deletion n 815,True
+deletion 816,True
+deletion n 816,True
+deletion 817,True
+deletion n 817,True
+deletion 818,True
+deletion n 818,True
+deletion 819,True
+deletion n 819,True
+deletion 820,True
+deletion n 820,True
+deletion 821,True
+deletion n 821,True
+deletion 822,True
+deletion n 822,True
+deletion 823,True
+deletion n 823,True
+deletion 824,True
+deletion n 824,True
+deletion 825,True
+deletion n 825,True
+deletion 826,True
+deletion n 826,True
+deletion 827,True
+deletion n 827,True
+deletion 828,True
+deletion n 828,True
+deletion 829,True
+deletion n 829,True
+deletion 830,True
+deletion n 830,True
+deletion 831,True
+deletion n 831,True
+deletion 832,True
+deletion n 832,True
+deletion 833,True
+deletion n 833,True
+deletion 834,True
+deletion n 834,True
+deletion 835,True
+deletion n 835,True
+deletion 836,True
+deletion n 836,True
+deletion 837,True
+deletion n 837,True
+deletion 838,True
+deletion n 838,True
+deletion 839,True
+deletion n 839,True
+deletion 840,True
+deletion n 840,True
+deletion 841,True
+deletion n 841,True
+deletion 842,True
+deletion n 842,True
+deletion 843,True
+deletion n 843,True
+deletion 844,True
+deletion n 844,True
+deletion 845,True
+deletion n 845,True
+deletion 846,True
+deletion n 846,True
+deletion 847,True
+deletion n 847,True
+deletion 848,True
+deletion n 848,True
+deletion 849,True
+deletion n 849,True
+deletion 850,True
+deletion n 850,True
+deletion 851,True
+deletion n 851,True
+deletion 852,True
+deletion n 852,True
+deletion 853,True
+deletion n 853,True
+deletion 854,True
+deletion n 854,True
+deletion 855,True
+deletion n 855,True
+deletion 856,True
+deletion n 856,True
+deletion 857,True
+deletion n 857,True
+deletion 858,True
+deletion n 858,True
+deletion 859,True
+deletion n 859,True
+deletion 860,True
+deletion n 860,True
+deletion 861,True
+deletion n 861,True
+deletion 862,True
+deletion n 862,True
+deletion 863,True
+deletion n 863,True
+deletion 864,True
+deletion n 864,True
+deletion 865,True
+deletion n 865,True
+deletion 866,True
+deletion n 866,True
+deletion 867,True
+deletion n 867,True
+deletion 868,True
+deletion n 868,True
+deletion 869,True
+deletion n 869,True
+deletion 870,True
+deletion n 870,True
+deletion 871,True
+deletion n 871,True
+deletion 872,True
+deletion n 872,True
+deletion 873,True
+deletion n 873,True
+deletion 874,True
+deletion n 874,True
+deletion 875,True
+deletion n 875,True
+deletion 876,True
+deletion n 876,True
+deletion 877,True
+deletion n 877,True
+deletion 878,True
+deletion n 878,True
+deletion 879,True
+deletion n 879,True
+deletion 880,True
+deletion n 880,True
+deletion 881,True
+deletion n 881,True
+deletion 882,True
+deletion n 882,True
+deletion 883,True
+deletion n 883,True
+deletion 884,True
+deletion n 884,True
+deletion 885,True
+deletion n 885,True
+deletion 886,True
+deletion n 886,True
+deletion 887,True
+deletion n 887,True
+deletion 888,True
+deletion n 888,True
+deletion 889,True
+deletion n 889,True
+deletion 890,True
+deletion n 890,True
+deletion 891,True
+deletion n 891,True
+deletion 892,True
+deletion n 892,True
+deletion 893,True
+deletion n 893,True
+deletion 894,True
+deletion n 894,True
+deletion 895,True
+deletion n 895,True
+deletion 896,True
+deletion n 896,True
+deletion 897,True
+deletion n 897,True
+deletion 898,True
+deletion n 898,True
+deletion 899,True
+deletion n 899,True
+deletion 900,True
+deletion n 900,True
+deletion 901,True
+deletion n 901,True
+deletion 902,True
+deletion n 902,True
+deletion 903,True
+deletion n 903,True
+deletion 904,True
+deletion n 904,True
+deletion 905,True
+deletion n 905,True
+deletion 906,True
+deletion n 906,True
+deletion 907,True
+deletion n 907,True
+deletion 908,True
+deletion n 908,True
+deletion 909,True
+deletion n 909,True
+deletion 910,True
+deletion n 910,True
+deletion 911,True
+deletion n 911,True
+deletion 912,True
+deletion n 912,True
+deletion 913,True
+deletion n 913,True
+deletion 914,True
+deletion n 914,True
+deletion 915,True
+deletion n 915,True
+deletion 916,True
+deletion n 916,True
+deletion 917,True
+deletion n 917,True
+deletion 918,True
+deletion n 918,True
+deletion 919,True
+deletion n 919,True
+deletion 920,True
+deletion n 920,True
+deletion 921,True
+deletion n 921,True
+deletion 922,True
+deletion n 922,True
+deletion 923,True
+deletion n 923,True
+deletion 924,True
+deletion n 924,True
+deletion 925,True
+deletion n 925,True
+deletion 926,True
+deletion n 926,True
+deletion 927,True
+deletion n 927,True
+deletion 928,True
+deletion n 928,True
+deletion 929,True
+deletion n 929,True
+deletion 930,True
+deletion n 930,True
+deletion 931,True
+deletion n 931,True
+deletion 932,True
+deletion n 932,True
+deletion 933,True
+deletion n 933,True
+deletion 934,True
+deletion n 934,True
+deletion 935,True
+deletion n 935,True
+deletion 936,True
+deletion n 936,True
+deletion 937,True
+deletion n 937,True
+deletion 938,True
+deletion n 938,True
+deletion 939,True
+deletion n 939,True
+deletion 940,True
+deletion n 940,True
+deletion 941,True
+deletion n 941,True
+deletion 942,True
+deletion n 942,True
+deletion 943,True
+deletion n 943,True
+deletion 944,True
+deletion n 944,True
+deletion 945,True
+deletion n 945,True
+deletion 946,True
+deletion n 946,True
+deletion 947,True
+deletion n 947,True
+deletion 948,True
+deletion n 948,True
+deletion 949,True
+deletion n 949,True
+deletion 950,True
+deletion n 950,True
+deletion 951,True
+deletion n 951,True
+deletion 952,True
+deletion n 952,True
+deletion 953,True
+deletion n 953,True
+deletion 954,True
+deletion n 954,True
+deletion 955,True
+deletion n 955,True
+deletion 956,True
+deletion n 956,True
+deletion 957,True
+deletion n 957,True
+deletion 958,True
+deletion n 958,True
+deletion 959,True
+deletion n 959,True
+deletion 960,True
+deletion n 960,True
+deletion 961,True
+deletion n 961,True
+deletion 962,True
+deletion n 962,True
+deletion 963,True
+deletion n 963,True
+deletion 964,True
+deletion n 964,True
+deletion 965,True
+deletion n 965,True
+deletion 966,True
+deletion n 966,True
+deletion 967,True
+deletion n 967,True
+deletion 968,True
+deletion n 968,True
+deletion 969,True
+deletion n 969,True
+deletion 970,True
+deletion n 970,True
+deletion 971,True
+deletion n 971,True
+deletion 972,True
+deletion n 972,True
+deletion 973,True
+deletion n 973,True
+deletion 974,True
+deletion n 974,True
+deletion 975,True
+deletion n 975,True
+deletion 976,True
+deletion n 976,True
+deletion 977,True
+deletion n 977,True
+deletion 978,True
+deletion n 978,True
+deletion 979,True
+deletion n 979,True
+deletion 980,True
+deletion n 980,True
+deletion 981,True
+deletion n 981,True
+deletion 982,True
+deletion n 982,True
+deletion 983,True
+deletion n 983,True
+deletion 984,True
+deletion n 984,True
+deletion 985,True
+deletion n 985,True
+deletion 986,True
+deletion n 986,True
+deletion 987,True
+deletion n 987,True
+deletion 988,True
+deletion n 988,True
+deletion 989,True
+deletion n 989,True
+deletion 990,True
+deletion n 990,True
+deletion 991,True
+deletion n 991,True
+deletion 992,True
+deletion n 992,True
+deletion 993,True
+deletion n 993,True
+deletion 994,True
+deletion n 994,True
+deletion 995,True
+deletion n 995,True
+deletion 996,True
+deletion n 996,True
+deletion 997,True
+deletion n 997,True
+deletion 998,True
+deletion n 998,True
+deletion 999,True
+deletion n 999,True
+deletion 1000,True
+deletion n 1000,True
+deletion 1001,True
+deletion n 1001,True
+deletion 1002,True
+deletion n 1002,True
+deletion 1003,True
+deletion n 1003,True
+deletion 1004,True
+deletion n 1004,True
+deletion 1005,True
+deletion n 1005,True
+deletion 1006,True
+deletion n 1006,True
+deletion 1007,True
+deletion n 1007,True
+deletion 1008,True
+deletion n 1008,True
+deletion 1009,True
+deletion n 1009,True
+deletion 1010,True
+deletion n 1010,True
+deletion 1011,True
+deletion n 1011,True
+deletion 1012,True
+deletion n 1012,True
+deletion 1013,True
+deletion n 1013,True
+deletion 1014,True
+deletion n 1014,True
+deletion 1015,True
+deletion n 1015,True
+deletion 1016,True
+deletion n 1016,True
+deletion 1017,True
+deletion n 1017,True
+deletion 1018,True
+deletion n 1018,True
+deletion 1019,True
+deletion n 1019,True
+deletion 1020,True
+deletion n 1020,True
+deletion 1021,True
+deletion n 1021,True
+deletion 1022,True
+deletion n 1022,True
+deletion 1023,True
+deletion n 1023,True
+deletion 1024,True
+deletion n 1024,True
+deletion 1025,True
+deletion n 1025,True
+deletion 1026,True
+deletion n 1026,True
+deletion 1027,True
+deletion n 1027,True
+deletion 1028,True
+deletion n 1028,True
+deletion 1029,True
+deletion n 1029,True
+deletion 1030,True
+deletion n 1030,True
+deletion 1031,True
+deletion n 1031,True
+deletion 1032,True
+deletion n 1032,True
+deletion 1033,True
+deletion n 1033,True
+deletion 1034,True
+deletion n 1034,True
+deletion 1035,True
+deletion n 1035,True
+deletion 1036,True
+deletion n 1036,True
+deletion 1037,True
+deletion n 1037,True
+deletion 1038,True
+deletion n 1038,True
+deletion 1039,True
+deletion n 1039,True
+deletion 1040,True
+deletion n 1040,True
+deletion 1041,True
+deletion n 1041,True
+deletion 1042,True
+deletion n 1042,True
+deletion 1043,True
+deletion n 1043,True
+deletion 1044,True
+deletion n 1044,True
+deletion 1045,True
+deletion n 1045,True
+deletion 1046,True
+deletion n 1046,True
+deletion 1047,True
+deletion n 1047,True
+deletion 1048,True
+deletion n 1048,True
+deletion 1049,True
+deletion n 1049,True
+deletion 1050,True
+deletion n 1050,True
+deletion 1051,True
+deletion n 1051,True
+deletion 1052,True
+deletion n 1052,True
+deletion 1053,True
+deletion n 1053,True
+deletion 1054,True
+deletion n 1054,True
+deletion 1055,True
+deletion n 1055,True
+deletion 1056,True
+deletion n 1056,True
+deletion 1057,True
+deletion n 1057,True
+deletion 1058,True
+deletion n 1058,True
+deletion 1059,True
+deletion n 1059,True
+deletion 1060,True
+deletion n 1060,True
+deletion 1061,True
+deletion n 1061,True
+deletion 1062,True
+deletion n 1062,True
+deletion 1063,True
+deletion n 1063,True
+deletion 1064,True
+deletion n 1064,True
+deletion 1065,True
+deletion n 1065,True
+deletion 1066,True
+deletion n 1066,True
+deletion 1067,True
+deletion n 1067,True
+deletion 1068,True
+deletion n 1068,True
+deletion 1069,True
+deletion n 1069,True
+deletion 1070,True
+deletion n 1070,True
+deletion 1071,True
+deletion n 1071,True
+deletion 1072,True
+deletion n 1072,True
+deletion 1073,True
+deletion n 1073,True
+deletion 1074,True
+deletion n 1074,True
+deletion 1075,True
+deletion n 1075,True
+deletion 1076,True
+deletion n 1076,True
+deletion 1077,True
+deletion n 1077,True
+deletion 1078,True
+deletion n 1078,True
+deletion 1079,True
+deletion n 1079,True
+deletion 1080,True
+deletion n 1080,True
+deletion 1081,True
+deletion n 1081,True
+deletion 1082,True
+deletion n 1082,True
+deletion 1083,True
+deletion n 1083,True
+deletion 1084,True
+deletion n 1084,True
+deletion 1085,True
+deletion n 1085,True
+deletion 1086,True
+deletion n 1086,True
+deletion 1087,True
+deletion n 1087,True
+deletion 1088,True
+deletion n 1088,True
+deletion 1089,True
+deletion n 1089,True
+deletion 1090,True
+deletion n 1090,True
+deletion 1091,True
+deletion n 1091,True
+deletion 1092,True
+deletion n 1092,True
+deletion 1093,True
+deletion n 1093,True
+deletion 1094,True
+deletion n 1094,True
+deletion 1095,True
+deletion n 1095,True
+deletion 1096,True
+deletion n 1096,True
+deletion 1097,True
+deletion n 1097,True
+deletion 1098,True
+deletion n 1098,True
+deletion 1099,True
+deletion n 1099,True
+deletion 1100,True
+deletion n 1100,True
+deletion 1101,True
+deletion n 1101,True
+deletion 1102,True
+deletion n 1102,True
+deletion 1103,True
+deletion n 1103,True
+deletion 1104,True
+deletion n 1104,True
+deletion 1105,True
+deletion n 1105,True
+deletion 1106,True
+deletion n 1106,True
+deletion 1107,True
+deletion n 1107,True
+deletion 1108,True
+deletion n 1108,True
+deletion 1109,True
+deletion n 1109,True
+deletion 1110,True
+deletion n 1110,True
+deletion 1111,True
+deletion n 1111,True
+deletion 1112,True
+deletion n 1112,True
+deletion 1113,True
+deletion n 1113,True
+deletion 1114,True
+deletion n 1114,True
+deletion 1115,True
+deletion n 1115,True
+deletion 1116,True
+deletion n 1116,True
+deletion 1117,True
+deletion n 1117,True
+deletion 1118,True
+deletion n 1118,True
+deletion 1119,True
+deletion n 1119,True
+deletion 1120,True
+deletion n 1120,True
+deletion 1121,True
+deletion n 1121,True
+deletion 1122,True
+deletion n 1122,True
+deletion 1123,True
+deletion n 1123,True
+deletion 1124,True
+deletion n 1124,True
+deletion 1125,True
+deletion n 1125,True
+deletion 1126,True
+deletion n 1126,True
+deletion 1127,True
+deletion n 1127,True
+deletion 1128,True
+deletion n 1128,True
+deletion 1129,True
+deletion n 1129,True
+deletion 1130,True
+deletion n 1130,True
+deletion 1131,True
+deletion n 1131,True
+deletion 1132,True
+deletion n 1132,True
+deletion 1133,True
+deletion n 1133,True
+deletion 1134,True
+deletion n 1134,True
+deletion 1135,True
+deletion n 1135,True
+deletion 1136,True
+deletion n 1136,True
+deletion 1137,True
+deletion n 1137,True
+deletion 1138,True
+deletion n 1138,True
+deletion 1139,True
+deletion n 1139,True
+deletion 1140,True
+deletion n 1140,True
+deletion 1141,True
+deletion n 1141,True
+deletion 1142,True
+deletion n 1142,True
+deletion 1143,True
+deletion n 1143,True
+deletion 1144,True
+deletion n 1144,True
+deletion 1145,True
+deletion n 1145,True
+deletion 1146,True
+deletion n 1146,True
+deletion 1147,True
+deletion n 1147,True
+deletion 1148,True
+deletion n 1148,True
+deletion 1149,True
+deletion n 1149,True
+deletion 1150,True
+deletion n 1150,True
+deletion 1151,True
+deletion n 1151,True
+deletion 1152,True
+deletion n 1152,True
+deletion 1153,True
+deletion n 1153,True
+deletion 1154,True
+deletion n 1154,True
+deletion 1155,True
+deletion n 1155,True
+deletion 1156,True
+deletion n 1156,True
+deletion 1157,True
+deletion n 1157,True
+deletion 1158,True
+deletion n 1158,True
+deletion 1159,True
+deletion n 1159,True
+deletion 1160,True
+deletion n 1160,True
+deletion 1161,True
+deletion n 1161,True
+deletion 1162,True
+deletion n 1162,True
+deletion 1163,True
+deletion n 1163,True
+deletion 1164,True
+deletion n 1164,True
+deletion 1165,True
+deletion n 1165,True
+deletion 1166,True
+deletion n 1166,True
+deletion 1167,True
+deletion n 1167,True
+deletion 1168,True
+deletion n 1168,True
+deletion 1169,True
+deletion n 1169,True
+deletion 1170,True
+deletion n 1170,True
+deletion 1171,True
+deletion n 1171,True
+deletion 1172,True
+deletion n 1172,True
+deletion 1173,True
+deletion n 1173,True
+deletion 1174,True
+deletion n 1174,True
+deletion 1175,True
+deletion n 1175,True
+deletion 1176,True
+deletion n 1176,True
+deletion 1177,True
+deletion n 1177,True
+deletion 1178,True
+deletion n 1178,True
+deletion 1179,True
+deletion n 1179,True
+deletion 1180,True
+deletion n 1180,True
+deletion 1181,True
+deletion n 1181,True
+deletion 1182,True
+deletion n 1182,True
+deletion 1183,True
+deletion n 1183,True
+deletion 1184,True
+deletion n 1184,True
+deletion 1185,True
+deletion n 1185,True
+deletion 1186,True
+deletion n 1186,True
+deletion 1187,True
+deletion n 1187,True
+deletion 1188,True
+deletion n 1188,True
+deletion 1189,True
+deletion n 1189,True
+deletion 1190,True
+deletion n 1190,True
+deletion 1191,True
+deletion n 1191,True
+deletion 1192,True
+deletion n 1192,True
+deletion 1193,True
+deletion n 1193,True
+deletion 1194,True
+deletion n 1194,True
+deletion 1195,True
+deletion n 1195,True
+deletion 1196,True
+deletion n 1196,True
+deletion 1197,True
+deletion n 1197,True
+deletion 1198,True
+deletion n 1198,True
+deletion 1199,True
+deletion n 1199,True
+deletion 1200,True
+deletion n 1200,True
+deletion 1201,True
+deletion n 1201,True
+deletion 1202,True
+deletion n 1202,True
+deletion 1203,True
+deletion n 1203,True
+deletion 1204,True
+deletion n 1204,True
+deletion 1205,True
+deletion n 1205,True
+deletion 1206,True
+deletion n 1206,True
+deletion 1207,True
+deletion n 1207,True
+deletion 1208,True
+deletion n 1208,True
+deletion 1209,True
+deletion n 1209,True
+deletion 1210,True
+deletion n 1210,True
+deletion 1211,True
+deletion n 1211,True
+deletion 1212,True
+deletion n 1212,True
+deletion 1213,True
+deletion n 1213,True
+deletion 1214,True
+deletion n 1214,True
+deletion 1215,True
+deletion n 1215,True
+deletion 1216,True
+deletion n 1216,True
+deletion 1217,True
+deletion n 1217,True
+deletion 1218,True
+deletion n 1218,True
+deletion 1219,True
+deletion n 1219,True
+deletion 1220,True
+deletion n 1220,True
+deletion 1221,True
+deletion n 1221,True
+deletion 1222,True
+deletion n 1222,True
+deletion 1223,True
+deletion n 1223,True
+deletion 1224,True
+deletion n 1224,True
+deletion 1225,True
+deletion n 1225,True
+deletion 1226,True
+deletion n 1226,True
+deletion 1227,True
+deletion n 1227,True
+deletion 1228,True
+deletion n 1228,True
+deletion 1229,True
+deletion n 1229,True
+deletion 1230,True
+deletion n 1230,True
+deletion 1231,True
+deletion n 1231,True
+deletion 1232,True
+deletion n 1232,True
+deletion 1233,True
+deletion n 1233,True
+deletion 1234,True
+deletion n 1234,True
+deletion 1235,True
+deletion n 1235,True
+deletion 1236,True
+deletion n 1236,True
+deletion 1237,True
+deletion n 1237,True
+deletion 1238,True
+deletion n 1238,True
+deletion 1239,True
+deletion n 1239,True
+deletion 1240,True
+deletion n 1240,True
+deletion 1241,True
+deletion n 1241,True
+deletion 1242,True
+deletion n 1242,True
+deletion 1243,True
+deletion n 1243,True
+deletion 1244,True
+deletion n 1244,True
+deletion 1245,True
+deletion n 1245,True
+deletion 1246,True
+deletion n 1246,True
+deletion 1247,True
+deletion n 1247,True
+deletion 1248,True
+deletion n 1248,True
+deletion 1249,True
+deletion n 1249,True
+deletion 1250,True
+deletion n 1250,True
+deletion 1251,True
+deletion n 1251,True
+deletion 1252,True
+deletion n 1252,True
+deletion 1253,True
+deletion n 1253,True
+deletion 1254,True
+deletion n 1254,True
+deletion 1255,True
+deletion n 1255,True
+deletion 1256,True
+deletion n 1256,True
+deletion 1257,True
+deletion n 1257,True
+deletion 1258,True
+deletion n 1258,True
+deletion 1259,True
+deletion n 1259,True
+deletion 1260,True
+deletion n 1260,True
+deletion 1261,True
+deletion n 1261,True
+deletion 1262,True
+deletion n 1262,True
+deletion 1263,True
+deletion n 1263,True
+deletion 1264,True
+deletion n 1264,True
+deletion 1265,True
+deletion n 1265,True
+deletion 1266,True
+deletion n 1266,True
+deletion 1267,True
+deletion n 1267,True
+deletion 1268,True
+deletion n 1268,True
+deletion 1269,True
+deletion n 1269,True
+deletion 1270,True
+deletion n 1270,True
+deletion 1271,True
+deletion n 1271,True
+deletion 1272,True
+deletion n 1272,True
+deletion 1273,True
+deletion n 1273,True
+deletion 1274,True
+deletion n 1274,True
+deletion 1275,True
+deletion n 1275,True
+deletion 1276,True
+deletion n 1276,True
+deletion 1277,True
+deletion n 1277,True
+deletion 1278,True
+deletion n 1278,True
+deletion 1279,True
+deletion n 1279,True
+deletion 1280,True
+deletion n 1280,True
+deletion 1281,True
+deletion n 1281,True
+deletion 1282,True
+deletion n 1282,True
+deletion 1283,True
+deletion n 1283,True
+deletion 1284,True
+deletion n 1284,True
+deletion 1285,True
+deletion n 1285,True
+deletion 1286,True
+deletion n 1286,True
+deletion 1287,True
+deletion n 1287,True
+deletion 1288,True
+deletion n 1288,True
+deletion 1289,True
+deletion n 1289,True
+deletion 1290,True
+deletion n 1290,True
+deletion 1291,True
+deletion n 1291,True
+deletion 1292,True
+deletion n 1292,True
+deletion 1293,True
+deletion n 1293,True
+deletion 1294,True
+deletion n 1294,True
+deletion 1295,True
+deletion n 1295,True
+deletion 1296,True
+deletion n 1296,True
+deletion 1297,True
+deletion n 1297,True
+deletion 1298,True
+deletion n 1298,True
+deletion 1299,True
+deletion n 1299,True
+deletion 1300,True
+deletion n 1300,True
+deletion 1301,True
+deletion n 1301,True
+deletion 1302,True
+deletion n 1302,True
+deletion 1303,True
+deletion n 1303,True
+deletion 1304,True
+deletion n 1304,True
+deletion 1305,True
+deletion n 1305,True
+deletion 1306,True
+deletion n 1306,True
+deletion 1307,True
+deletion n 1307,True
+deletion 1308,True
+deletion n 1308,True
+deletion 1309,True
+deletion n 1309,True
+deletion 1310,True
+deletion n 1310,True
+deletion 1311,True
+deletion n 1311,True
+deletion 1312,True
+deletion n 1312,True
+deletion 1313,True
+deletion n 1313,True
+deletion 1314,True
+deletion n 1314,True
+deletion 1315,True
+deletion n 1315,True
+deletion 1316,True
+deletion n 1316,True
+deletion 1317,True
+deletion n 1317,True
+deletion 1318,True
+deletion n 1318,True
+deletion 1319,True
+deletion n 1319,True
+deletion 1320,True
+deletion n 1320,True
+deletion 1321,True
+deletion n 1321,True
+deletion 1322,True
+deletion n 1322,True
+deletion 1323,True
+deletion n 1323,True
+deletion 1324,True
+deletion n 1324,True
+deletion 1325,True
+deletion n 1325,True
+deletion 1326,True
+deletion n 1326,True
+deletion 1327,True
+deletion n 1327,True
+deletion 1328,True
+deletion n 1328,True
+deletion 1329,True
+deletion n 1329,True
+deletion 1330,True
+deletion n 1330,True
+deletion 1331,True
+deletion n 1331,True
+deletion 1332,True
+deletion n 1332,True
+deletion 1333,True
+deletion n 1333,True
+deletion 1334,True
+deletion n 1334,True
+deletion 1335,True
+deletion n 1335,True
+deletion 1336,True
+deletion n 1336,True
+deletion 1337,True
+deletion n 1337,True
+deletion 1338,True
+deletion n 1338,True
+deletion 1339,True
+deletion n 1339,True
+deletion 1340,True
+deletion n 1340,True
+deletion 1341,True
+deletion n 1341,True
+deletion 1342,True
+deletion n 1342,True
+deletion 1343,True
+deletion n 1343,True
+deletion 1344,True
+deletion n 1344,True
+deletion 1345,True
+deletion n 1345,True
+deletion 1346,True
+deletion n 1346,True
+deletion 1347,True
+deletion n 1347,True
+deletion 1348,True
+deletion n 1348,True
+deletion 1349,True
+deletion n 1349,True
+deletion 1350,True
+deletion n 1350,True
+deletion 1351,True
+deletion n 1351,True
+deletion 1352,True
+deletion n 1352,True
+deletion 1353,True
+deletion n 1353,True
+deletion 1354,True
+deletion n 1354,True
+deletion 1355,True
+deletion n 1355,True
+deletion 1356,True
+deletion n 1356,True
+deletion 1357,True
+deletion n 1357,True
+deletion 1358,True
+deletion n 1358,True
+deletion 1359,True
+deletion n 1359,True
+deletion 1360,True
+deletion n 1360,True
+deletion 1361,True
+deletion n 1361,True
+deletion 1362,True
+deletion n 1362,True
+deletion 1363,True
+deletion n 1363,True
+deletion 1364,True
+deletion n 1364,True
+deletion 1365,True
+deletion n 1365,True
+deletion 1366,True
+deletion n 1366,True
+deletion 1367,True
+deletion n 1367,True
+deletion 1368,True
+deletion n 1368,True
+deletion 1369,True
+deletion n 1369,True
+deletion 1370,True
+deletion n 1370,True
+deletion 1371,True
+deletion n 1371,True
+deletion 1372,True
+deletion n 1372,True
+deletion 1373,True
+deletion n 1373,True
+deletion 1374,True
+deletion n 1374,True
+deletion 1375,True
+deletion n 1375,True
+deletion 1376,True
+deletion n 1376,True
+deletion 1377,True
+deletion n 1377,True
+deletion 1378,True
+deletion n 1378,True
+deletion 1379,True
+deletion n 1379,True
+deletion 1380,True
+deletion n 1380,True
+deletion 1381,True
+deletion n 1381,True
+deletion 1382,True
+deletion n 1382,True
+deletion 1383,True
+deletion n 1383,True
+deletion 1384,True
+deletion n 1384,True
+deletion 1385,True
+deletion n 1385,True
+deletion 1386,True
+deletion n 1386,True
+deletion 1387,True
+deletion n 1387,True
+deletion 1388,True
+deletion n 1388,True
+deletion 1389,True
+deletion n 1389,True
+deletion 1390,True
+deletion n 1390,True
+deletion 1391,True
+deletion n 1391,True
+deletion 1392,True
+deletion n 1392,True
+deletion 1393,True
+deletion n 1393,True
+deletion 1394,True
+deletion n 1394,True
+deletion 1395,True
+deletion n 1395,True
+deletion 1396,True
+deletion n 1396,True
+deletion 1397,True
+deletion n 1397,True
+deletion 1398,True
+deletion n 1398,True
+deletion 1399,True
+deletion n 1399,True
+deletion 1400,True
+deletion n 1400,True
+deletion 1401,True
+deletion n 1401,True
+deletion 1402,True
+deletion n 1402,True
+deletion 1403,True
+deletion n 1403,True
+deletion 1404,True
+deletion n 1404,True
+deletion 1405,True
+deletion n 1405,True
+deletion 1406,True
+deletion n 1406,True
+deletion 1407,True
+deletion n 1407,True
+deletion 1408,True
+deletion n 1408,True
+deletion 1409,True
+deletion n 1409,True
+deletion 1410,True
+deletion n 1410,True
+deletion 1411,True
+deletion n 1411,True
+deletion 1412,True
+deletion n 1412,True
+deletion 1413,True
+deletion n 1413,True
+deletion 1414,True
+deletion n 1414,True
+deletion 1415,True
+deletion n 1415,True
+deletion 1416,True
+deletion n 1416,True
+deletion 1417,True
+deletion n 1417,True
+deletion 1418,True
+deletion n 1418,True
+deletion 1419,True
+deletion n 1419,True
+deletion 1420,True
+deletion n 1420,True
+deletion 1421,True
+deletion n 1421,True
+deletion 1422,True
+deletion n 1422,True
+deletion 1423,True
+deletion n 1423,True
+deletion 1424,True
+deletion n 1424,True
+deletion 1425,True
+deletion n 1425,True
+deletion 1426,True
+deletion n 1426,True
+deletion 1427,True
+deletion n 1427,True
+deletion 1428,True
+deletion n 1428,True
+deletion 1429,True
+deletion n 1429,True
+deletion 1430,True
+deletion n 1430,True
+deletion 1431,True
+deletion n 1431,True
+deletion 1432,True
+deletion n 1432,True
+deletion 1433,True
+deletion n 1433,True
+deletion 1434,True
+deletion n 1434,True
+deletion 1435,True
+deletion n 1435,True
+deletion 1436,True
+deletion n 1436,True
+deletion 1437,True
+deletion n 1437,True
+deletion 1438,True
+deletion n 1438,True
+deletion 1439,True
+deletion n 1439,True
+deletion 1440,True
+deletion n 1440,True
+deletion 1441,True
+deletion n 1441,True
+deletion 1442,True
+deletion n 1442,True
+deletion 1443,True
+deletion n 1443,True
+deletion 1444,True
+deletion n 1444,True
+deletion 1445,True
+deletion n 1445,True
+deletion 1446,True
+deletion n 1446,True
+deletion 1447,True
+deletion n 1447,True
+deletion 1448,True
+deletion n 1448,True
+deletion 1449,True
+deletion n 1449,True
+deletion 1450,True
+deletion n 1450,True
+deletion 1451,True
+deletion n 1451,True
+deletion 1452,True
+deletion n 1452,True
+deletion 1453,True
+deletion n 1453,True
+deletion 1454,True
+deletion n 1454,True
+deletion 1455,True
+deletion n 1455,True
+deletion 1456,True
+deletion n 1456,True
+deletion 1457,True
+deletion n 1457,True
+deletion 1458,True
+deletion n 1458,True
+deletion 1459,True
+deletion n 1459,True
+deletion 1460,True
+deletion n 1460,True
+deletion 1461,True
+deletion n 1461,True
+deletion 1462,True
+deletion n 1462,True
+deletion 1463,True
+deletion n 1463,True
+deletion 1464,True
+deletion n 1464,True
+deletion 1465,True
+deletion n 1465,True
+deletion 1466,True
+deletion n 1466,True
+deletion 1467,True
+deletion n 1467,True
+deletion 1468,True
+deletion n 1468,True
+deletion 1469,True
+deletion n 1469,True
+deletion 1470,True
+deletion n 1470,True
+deletion 1471,True
+deletion n 1471,True
+deletion 1472,True
+deletion n 1472,True
+deletion 1473,True
+deletion n 1473,True
+deletion 1474,True
+deletion n 1474,True
+deletion 1475,True
+deletion n 1475,True
+deletion 1476,True
+deletion n 1476,True
+deletion 1477,True
+deletion n 1477,True
+deletion 1478,True
+deletion n 1478,True
+deletion 1479,True
+deletion n 1479,True
+deletion 1480,True
+deletion n 1480,True
+deletion 1481,True
+deletion n 1481,True
+deletion 1482,True
+deletion n 1482,True
+deletion 1483,True
+deletion n 1483,True
+deletion 1484,True
+deletion n 1484,True
+deletion 1485,True
+deletion n 1485,True
+deletion 1486,True
+deletion n 1486,True
+deletion 1487,True
+deletion n 1487,True
+deletion 1488,True
+deletion n 1488,True
+deletion 1489,True
+deletion n 1489,True
+deletion 1490,True
+deletion n 1490,True
+deletion 1491,True
+deletion n 1491,True
+deletion 1492,True
+deletion n 1492,True
+deletion 1493,True
+deletion n 1493,True
+deletion 1494,True
+deletion n 1494,True
+deletion 1495,True
+deletion n 1495,True
+deletion 1496,True
+deletion n 1496,True
+deletion 1497,True
+deletion n 1497,True
+deletion 1498,True
+deletion n 1498,True
+deletion 1499,True
+deletion n 1499,True
+deletion 1500,True
+deletion n 1500,True
+deletion 1501,True
+deletion n 1501,True
+deletion 1502,True
+deletion n 1502,True
+deletion 1503,True
+deletion n 1503,True
+deletion 1504,True
+deletion n 1504,True
+deletion 1505,True
+deletion n 1505,True
+deletion 1506,True
+deletion n 1506,True
+deletion 1507,True
+deletion n 1507,True
+deletion 1508,True
+deletion n 1508,True
+deletion 1509,True
+deletion n 1509,True
+deletion 1510,True
+deletion n 1510,True
+deletion 1511,True
+deletion n 1511,True
+deletion 1512,True
+deletion n 1512,True
+deletion 1513,True
+deletion n 1513,True
+deletion 1514,True
+deletion n 1514,True
+deletion 1515,True
+deletion n 1515,True
+deletion 1516,True
+deletion n 1516,True
+deletion 1517,True
+deletion n 1517,True
+deletion 1518,True
+deletion n 1518,True
+deletion 1519,True
+deletion n 1519,True
+deletion 1520,True
+deletion n 1520,True
+deletion 1521,True
+deletion n 1521,True
+deletion 1522,True
+deletion n 1522,True
+deletion 1523,True
+deletion n 1523,True
+deletion 1524,True
+deletion n 1524,True
+deletion 1525,True
+deletion n 1525,True
+deletion 1526,True
+deletion n 1526,True
+deletion 1527,True
+deletion n 1527,True
+deletion 1528,True
+deletion n 1528,True
+deletion 1529,True
+deletion n 1529,True
+deletion 1530,True
+deletion n 1530,True
+deletion 1531,True
+deletion n 1531,True
+deletion 1532,True
+deletion n 1532,True
+deletion 1533,True
+deletion n 1533,True
+deletion 1534,True
+deletion n 1534,True
+deletion 1535,True
+deletion n 1535,True
+deletion 1536,True
+deletion n 1536,True
+deletion 1537,True
+deletion n 1537,True
+deletion 1538,True
+deletion n 1538,True
+deletion 1539,True
+deletion n 1539,True
+deletion 1540,True
+deletion n 1540,True
+deletion 1541,True
+deletion n 1541,True
+deletion 1542,True
+deletion n 1542,True
+deletion 1543,True
+deletion n 1543,True
+deletion 1544,True
+deletion n 1544,True
+deletion 1545,True
+deletion n 1545,True
+deletion 1546,True
+deletion n 1546,True
+deletion 1547,True
+deletion n 1547,True
+deletion 1548,True
+deletion n 1548,True
+deletion 1549,True
+deletion n 1549,True
+deletion 1550,True
+deletion n 1550,True
+deletion 1551,True
+deletion n 1551,True
+deletion 1552,True
+deletion n 1552,True
+deletion 1553,True
+deletion n 1553,True
+deletion 1554,True
+deletion n 1554,True
+deletion 1555,True
+deletion n 1555,True
+deletion 1556,True
+deletion n 1556,True
+deletion 1557,True
+deletion n 1557,True
+deletion 1558,True
+deletion n 1558,True
+deletion 1559,True
+deletion n 1559,True
+deletion 1560,True
+deletion n 1560,True
+deletion 1561,True
+deletion n 1561,True
+deletion 1562,True
+deletion n 1562,True
+deletion 1563,True
+deletion n 1563,True
+deletion 1564,True
+deletion n 1564,True
+deletion 1565,True
+deletion n 1565,True
+deletion 1566,True
+deletion n 1566,True
+deletion 1567,True
+deletion n 1567,True
+deletion 1568,True
+deletion n 1568,True
+deletion 1569,True
+deletion n 1569,True
+deletion 1570,True
+deletion n 1570,True
+deletion 1571,True
+deletion n 1571,True
+deletion 1572,True
+deletion n 1572,True
+deletion 1573,True
+deletion n 1573,True
+deletion 1574,True
+deletion n 1574,True
+deletion 1575,True
+deletion n 1575,True
+deletion 1576,True
+deletion n 1576,True
+deletion 1577,True
+deletion n 1577,True
+deletion 1578,True
+deletion n 1578,True
+deletion 1579,True
+deletion n 1579,True
+deletion 1580,True
+deletion n 1580,True
+deletion 1581,True
+deletion n 1581,True
+deletion 1582,True
+deletion n 1582,True
+deletion 1583,True
+deletion n 1583,True
+deletion 1584,True
+deletion n 1584,True
+deletion 1585,True
+deletion n 1585,True
+deletion 1586,True
+deletion n 1586,True
+deletion 1587,True
+deletion n 1587,True
+deletion 1588,True
+deletion n 1588,True
+deletion 1589,True
+deletion n 1589,True
+deletion 1590,True
+deletion n 1590,True
+deletion 1591,True
+deletion n 1591,True
+deletion 1592,True
+deletion n 1592,True
+deletion 1593,True
+deletion n 1593,True
+deletion 1594,True
+deletion n 1594,True
+deletion 1595,True
+deletion n 1595,True
+deletion 1596,True
+deletion n 1596,True
+deletion 1597,True
+deletion n 1597,True
+deletion 1598,True
+deletion n 1598,True
+deletion 1599,True
+deletion n 1599,True
+deletion 1600,True
+deletion n 1600,True
+deletion 1601,True
+deletion n 1601,True
+deletion 1602,True
+deletion n 1602,True
+deletion 1603,True
+deletion n 1603,True
+deletion 1604,True
+deletion n 1604,True
+deletion 1605,True
+deletion n 1605,True
+deletion 1606,True
+deletion n 1606,True
+deletion 1607,True
+deletion n 1607,True
+deletion 1608,True
+deletion n 1608,True
+deletion 1609,True
+deletion n 1609,True
+deletion 1610,True
+deletion n 1610,True
+deletion 1611,True
+deletion n 1611,True
+deletion 1612,True
+deletion n 1612,True
+deletion 1613,True
+deletion n 1613,True
+deletion 1614,True
+deletion n 1614,True
+deletion 1615,True
+deletion n 1615,True
+deletion 1616,True
+deletion n 1616,True
+deletion 1617,True
+deletion n 1617,True
+deletion 1618,True
+deletion n 1618,True
+deletion 1619,True
+deletion n 1619,True
+deletion 1620,True
+deletion n 1620,True
+deletion 1621,True
+deletion n 1621,True
+deletion 1622,True
+deletion n 1622,True
+deletion 1623,True
+deletion n 1623,True
+deletion 1624,True
+deletion n 1624,True
+deletion 1625,True
+deletion n 1625,True
+deletion 1626,True
+deletion n 1626,True
+deletion 1627,True
+deletion n 1627,True
+deletion 1628,True
+deletion n 1628,True
+deletion 1629,True
+deletion n 1629,True
+deletion 1630,True
+deletion n 1630,True
+deletion 1631,True
+deletion n 1631,True
+deletion 1632,True
+deletion n 1632,True
+deletion 1633,True
+deletion n 1633,True
+deletion 1634,True
+deletion n 1634,True
+deletion 1635,True
+deletion n 1635,True
+deletion 1636,True
+deletion n 1636,True
+deletion 1637,True
+deletion n 1637,True
+deletion 1638,True
+deletion n 1638,True
+deletion 1639,True
+deletion n 1639,True
+deletion 1640,True
+deletion n 1640,True
+deletion 1641,True
+deletion n 1641,True
+deletion 1642,True
+deletion n 1642,True
+deletion 1643,True
+deletion n 1643,True
+deletion 1644,True
+deletion n 1644,True
+deletion 1645,True
+deletion n 1645,True
+deletion 1646,True
+deletion n 1646,True
+deletion 1647,True
+deletion n 1647,True
+deletion 1648,True
+deletion n 1648,True
+deletion 1649,True
+deletion n 1649,True
+deletion 1650,True
+deletion n 1650,True
+deletion 1651,True
+deletion n 1651,True
+deletion 1652,True
+deletion n 1652,True
+deletion 1653,True
+deletion n 1653,True
+deletion 1654,True
+deletion n 1654,True
+deletion 1655,True
+deletion n 1655,True
+deletion 1656,True
+deletion n 1656,True
+deletion 1657,True
+deletion n 1657,True
+deletion 1658,True
+deletion n 1658,True
+deletion 1659,True
+deletion n 1659,True
+deletion 1660,True
+deletion n 1660,True
+deletion 1661,True
+deletion n 1661,True
+deletion 1662,True
+deletion n 1662,True
+deletion 1663,True
+deletion n 1663,True
+deletion 1664,True
+deletion n 1664,True
+deletion 1665,True
+deletion n 1665,True
+deletion 1666,True
+deletion n 1666,True
+deletion 1667,True
+deletion n 1667,True
+deletion 1668,True
+deletion n 1668,True
+deletion 1669,True
+deletion n 1669,True
+deletion 1670,True
+deletion n 1670,True
+deletion 1671,True
+deletion n 1671,True
+deletion 1672,True
+deletion n 1672,True
+deletion 1673,True
+deletion n 1673,True
+deletion 1674,True
+deletion n 1674,True
+deletion 1675,True
+deletion n 1675,True
+deletion 1676,True
+deletion n 1676,True
+deletion 1677,True
+deletion n 1677,True
+deletion 1678,True
+deletion n 1678,True
+deletion 1679,True
+deletion n 1679,True
+deletion 1680,True
+deletion n 1680,True
+deletion 1681,True
+deletion n 1681,True
+deletion 1682,True
+deletion n 1682,True
+deletion 1683,True
+deletion n 1683,True
+deletion 1684,True
+deletion n 1684,True
+deletion 1685,True
+deletion n 1685,True
+deletion 1686,True
+deletion n 1686,True
+deletion 1687,True
+deletion n 1687,True
+deletion 1688,True
+deletion n 1688,True
+deletion 1689,True
+deletion n 1689,True
+deletion 1690,True
+deletion n 1690,True
+deletion 1691,True
+deletion n 1691,True
+deletion 1692,True
+deletion n 1692,True
+deletion 1693,True
+deletion n 1693,True
+deletion 1694,True
+deletion n 1694,True
+deletion 1695,True
+deletion n 1695,True
+deletion 1696,True
+deletion n 1696,True
+deletion 1697,True
+deletion n 1697,True
+deletion 1698,True
+deletion n 1698,True
+deletion 1699,True
+deletion n 1699,True
+deletion 1700,True
+deletion n 1700,True
+deletion 1701,True
+deletion n 1701,True
+deletion 1702,True
+deletion n 1702,True
+deletion 1703,True
+deletion n 1703,True
+deletion 1704,True
+deletion n 1704,True
+deletion 1705,True
+deletion n 1705,True
+deletion 1706,True
+deletion n 1706,True
+deletion 1707,True
+deletion n 1707,True
+deletion 1708,True
+deletion n 1708,True
+deletion 1709,True
+deletion n 1709,True
+deletion 1710,True
+deletion n 1710,True
+deletion 1711,True
+deletion n 1711,True
+deletion 1712,True
+deletion n 1712,True
+deletion 1713,True
+deletion n 1713,True
+deletion 1714,True
+deletion n 1714,True
+deletion 1715,True
+deletion n 1715,True
+deletion 1716,True
+deletion n 1716,True
+deletion 1717,True
+deletion n 1717,True
+deletion 1718,True
+deletion n 1718,True
+deletion 1719,True
+deletion n 1719,True
+deletion 1720,True
+deletion n 1720,True
+deletion 1721,True
+deletion n 1721,True
+deletion 1722,True
+deletion n 1722,True
+deletion 1723,True
+deletion n 1723,True
+deletion 1724,True
+deletion n 1724,True
+deletion 1725,True
+deletion n 1725,True
+deletion 1726,True
+deletion n 1726,True
+deletion 1727,True
+deletion n 1727,True
+deletion 1728,True
+deletion n 1728,True
+deletion 1729,True
+deletion n 1729,True
+deletion 1730,True
+deletion n 1730,True
+deletion 1731,True
+deletion n 1731,True
+deletion 1732,True
+deletion n 1732,True
+deletion 1733,True
+deletion n 1733,True
+deletion 1734,True
+deletion n 1734,True
+deletion 1735,True
+deletion n 1735,True
+deletion 1736,True
+deletion n 1736,True
+deletion 1737,True
+deletion n 1737,True
+deletion 1738,True
+deletion n 1738,True
+deletion 1739,True
+deletion n 1739,True
+gate 0coverage_pass,True
+gate 0magnitude_pass,True
+gate 0deletion_pass,True
+gate 0direct_guidegrowth_pass,True
+gate 0promotion_pass,True
+gate 1coverage_pass,True
+gate 1magnitude_pass,True
+gate 1deletion_pass,True
+gate 1direct_guidegrowth_pass,True
+gate 1promotion_pass,True
+gate 2coverage_pass,True
+gate 2magnitude_pass,True
+gate 2deletion_pass,True
+gate 2direct_guidegrowth_pass,True
+gate 2promotion_pass,True
+gate 3coverage_pass,True
+gate 3magnitude_pass,True
+gate 3deletion_pass,True
+gate 3direct_guidegrowth_pass,True
+gate 3promotion_pass,True
+gate 4coverage_pass,True
+gate 4magnitude_pass,True
+gate 4deletion_pass,True
+gate 4direct_guidegrowth_pass,True
+gate 4promotion_pass,True
+gate 5coverage_pass,True
+gate 5magnitude_pass,True
+gate 5deletion_pass,True
+gate 5direct_guidegrowth_pass,True
+gate 5promotion_pass,True
+gate 6coverage_pass,True
+gate 6magnitude_pass,True
+gate 6deletion_pass,True
+gate 6direct_guidegrowth_pass,True
+gate 6promotion_pass,True
+gate 7coverage_pass,True
+gate 7magnitude_pass,True
+gate 7deletion_pass,True
+gate 7direct_guidegrowth_pass,True
+gate 7promotion_pass,True
+gate 8coverage_pass,True
+gate 8magnitude_pass,True
+gate 8deletion_pass,True
+gate 8paired_guidegrowth_interval_pass,True
+gate 8promotion_pass,True
+gate 9coverage_pass,True
+gate 9magnitude_pass,True
+gate 9deletion_pass,True
+gate 9paired_guidegrowth_interval_pass,True
+gate 9promotion_pass,True
+gate 10coverage_pass,True
+gate 10magnitude_pass,True
+gate 10deletion_pass,True
+gate 10paired_guidegrowth_interval_pass,True
+gate 10promotion_pass,True
+gate 11coverage_pass,True
+gate 11magnitude_pass,True
+gate 11deletion_pass,True
+gate 11paired_guidegrowth_interval_pass,True
+gate 11promotion_pass,True
+gate 12coverage_pass,True
+gate 12magnitude_pass,True
+gate 12deletion_pass,True
+gate 12paired_guidegrowth_interval_pass,True
+gate 12promotion_pass,True
+gate 13coverage_pass,True
+gate 13magnitude_pass,True
+gate 13deletion_pass,True
+gate 13paired_guidegrowth_interval_pass,True
+gate 13promotion_pass,True
+gate 14coverage_pass,True
+gate 14magnitude_pass,True
+gate 14deletion_pass,True
+gate 14paired_guidegrowth_interval_pass,True
+gate 14promotion_pass,True
+gate 15coverage_pass,True
+gate 15magnitude_pass,True
+gate 15deletion_pass,True
+gate 15paired_guidegrowth_interval_pass,True
+gate 15promotion_pass,True
+gate 16coverage_pass,True
+gate 16magnitude_pass,True
+gate 16deletion_pass,True
+gate 16paired_guidegrowth_interval_pass,True
+gate 16promotion_pass,True
+gate 17coverage_pass,True
+gate 17magnitude_pass,True
+gate 17deletion_pass,True
+gate 17paired_guidegrowth_interval_pass,True
+gate 17promotion_pass,True
+gate 18coverage_pass,True
+gate 18magnitude_pass,True
+gate 18deletion_pass,True
+gate 18paired_guidegrowth_interval_pass,True
+gate 18promotion_pass,True
+gate 19coverage_pass,True
+gate 19magnitude_pass,True
+gate 19deletion_pass,True
+gate 19paired_guidegrowth_interval_pass,True
+gate 19promotion_pass,True
+gate 20coverage_pass,True
+gate 20magnitude_pass,True
+gate 20deletion_pass,True
+gate 20paired_guidegrowth_interval_pass,True
+gate 20promotion_pass,True
+gate 21coverage_pass,True
+gate 21magnitude_pass,True
+gate 21deletion_pass,True
+gate 21paired_guidegrowth_interval_pass,True
+gate 21promotion_pass,True
+gate 22coverage_pass,True
+gate 22magnitude_pass,True
+gate 22deletion_pass,True
+gate 22paired_guidegrowth_interval_pass,True
+gate 22promotion_pass,True
+gate 23coverage_pass,True
+gate 23magnitude_pass,True
+gate 23deletion_pass,True
+gate 23paired_guidegrowth_interval_pass,True
+gate 23promotion_pass,True
+gate 24coverage_pass,True
+gate 24magnitude_pass,True
+gate 24deletion_pass,True
+gate 24paired_guidegrowth_interval_pass,True
+gate 24promotion_pass,True
+gate 25coverage_pass,True
+gate 25magnitude_pass,True
+gate 25deletion_pass,True
+gate 25paired_guidegrowth_interval_pass,True
+gate 25promotion_pass,True
+gate 26coverage_pass,True
+gate 26magnitude_pass,True
+gate 26deletion_pass,True
+gate 26paired_guidegrowth_interval_pass,True
+gate 26promotion_pass,True
+gate 27coverage_pass,True
+gate 27magnitude_pass,True
+gate 27deletion_pass,True
+gate 27paired_guidegrowth_interval_pass,True
+gate 27promotion_pass,True
+gate 28coverage_pass,True
+gate 28magnitude_pass,True
+gate 28deletion_pass,True
+gate 28paired_guidegrowth_interval_pass,True
+gate 28promotion_pass,True
+gate 29coverage_pass,True
+gate 29magnitude_pass,True
+gate 29deletion_pass,True
+gate 29paired_guidegrowth_interval_pass,True
+gate 29promotion_pass,True
+gate 30coverage_pass,True
+gate 30magnitude_pass,True
+gate 30deletion_pass,True
+gate 30paired_guidegrowth_interval_pass,True
+gate 30promotion_pass,True
+gate 31coverage_pass,True
+gate 31magnitude_pass,True
+gate 31deletion_pass,True
+gate 31paired_guidegrowth_interval_pass,True
+gate 31promotion_pass,True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W1')coverage_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W1')magnitude_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W1')deletion_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W1')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W1')direct_guidegrowth_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W1')promotion_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W2')coverage_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W2')magnitude_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W2')deletion_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W2')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W2')direct_guidegrowth_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'fixed_flight', 'W2')promotion_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W1')coverage_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W1')magnitude_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W1')deletion_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W1')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W1')direct_guidegrowth_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W1')promotion_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W2')coverage_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W2')magnitude_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W2')deletion_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W2')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W2')direct_guidegrowth_pass",True
+"raw interval unchanged ('calendar_flight', 2, 'joint_flight', 'W2')promotion_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'fixed', 'both')coverage_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'fixed', 'both')magnitude_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'fixed', 'both')deletion_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'fixed', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'fixed', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'fixed', 'both')promotion_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'joint', 'both')coverage_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'joint', 'both')magnitude_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'joint', 'both')deletion_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'joint', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'joint', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('candidate_specific', 2, 'joint', 'both')promotion_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'fixed', 'both')coverage_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'fixed', 'both')magnitude_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'fixed', 'both')deletion_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'fixed', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'fixed', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'fixed', 'both')promotion_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'joint', 'both')coverage_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'joint', 'both')magnitude_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'joint', 'both')deletion_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'joint', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'joint', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('candidate_specific', 3, 'joint', 'both')promotion_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'fixed', 'both')coverage_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'fixed', 'both')magnitude_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'fixed', 'both')deletion_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'fixed', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'fixed', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'fixed', 'both')promotion_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'joint', 'both')coverage_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'joint', 'both')magnitude_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'joint', 'both')deletion_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'joint', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'joint', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('candidate_specific', 4, 'joint', 'both')promotion_pass",True
+"raw interval unchanged ('common4', 2, 'fixed', 'both')coverage_pass",True
+"raw interval unchanged ('common4', 2, 'fixed', 'both')magnitude_pass",True
+"raw interval unchanged ('common4', 2, 'fixed', 'both')deletion_pass",True
+"raw interval unchanged ('common4', 2, 'fixed', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('common4', 2, 'fixed', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('common4', 2, 'fixed', 'both')promotion_pass",True
+"raw interval unchanged ('common4', 2, 'joint', 'both')coverage_pass",True
+"raw interval unchanged ('common4', 2, 'joint', 'both')magnitude_pass",True
+"raw interval unchanged ('common4', 2, 'joint', 'both')deletion_pass",True
+"raw interval unchanged ('common4', 2, 'joint', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('common4', 2, 'joint', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('common4', 2, 'joint', 'both')promotion_pass",True
+"raw interval unchanged ('common4', 3, 'fixed', 'both')coverage_pass",True
+"raw interval unchanged ('common4', 3, 'fixed', 'both')magnitude_pass",True
+"raw interval unchanged ('common4', 3, 'fixed', 'both')deletion_pass",True
+"raw interval unchanged ('common4', 3, 'fixed', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('common4', 3, 'fixed', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('common4', 3, 'fixed', 'both')promotion_pass",True
+"raw interval unchanged ('common4', 3, 'joint', 'both')coverage_pass",True
+"raw interval unchanged ('common4', 3, 'joint', 'both')magnitude_pass",True
+"raw interval unchanged ('common4', 3, 'joint', 'both')deletion_pass",True
+"raw interval unchanged ('common4', 3, 'joint', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('common4', 3, 'joint', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('common4', 3, 'joint', 'both')promotion_pass",True
+"raw interval unchanged ('common4', 4, 'fixed', 'both')coverage_pass",True
+"raw interval unchanged ('common4', 4, 'fixed', 'both')magnitude_pass",True
+"raw interval unchanged ('common4', 4, 'fixed', 'both')deletion_pass",True
+"raw interval unchanged ('common4', 4, 'fixed', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('common4', 4, 'fixed', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('common4', 4, 'fixed', 'both')promotion_pass",True
+"raw interval unchanged ('common4', 4, 'joint', 'both')coverage_pass",True
+"raw interval unchanged ('common4', 4, 'joint', 'both')magnitude_pass",True
+"raw interval unchanged ('common4', 4, 'joint', 'both')deletion_pass",True
+"raw interval unchanged ('common4', 4, 'joint', 'both')paired_guidegrowth_interval_pass",True
+"raw interval unchanged ('common4', 4, 'joint', 'both')direct_guidegrowth_pass",True
+"raw interval unchanged ('common4', 4, 'joint', 'both')promotion_pass",True
+actual code interval edge -2,True
+actual code interval edge -0.500001,True
+actual code interval edge -0.5,True
+actual code interval edge -0.2,True
+actual code interval edge 0,True
+actual code interval edge 0.2,True
+actual code interval edge 0.5,True
+actual code interval edge 0.500001,True
+actual code interval edge 2,True
+zero width raw identity,True
+invalid interval input [1]-1,True
+invalid interval input [nan]0.5,True
+invalid interval input [1]inf,True

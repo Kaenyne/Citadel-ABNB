@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "independent_arithmetic_checks": 6143,
+  "source_manifest_sha256": "c631affb255e6e6655b73af2b260190a690da4836395931cd31217ade4df17ac",
+  "horizon_path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v2",
+  "review_code_sha256": "1f25e3471b1bb128432551166e07674fbca503e24c0f1f86891b5e3774bcfbd3",
+  "imports_author_code": false,
+  "no_new_fit": true,
+  "limitations": [
+    "fitted shape coefficients audited conditional on saved fit; boundary tests are separate",
+    "reused history; nested and sometimes identical windows",
+    "raw guide-midpoint errors, distinct from interval harness scores"
+  ]
+}

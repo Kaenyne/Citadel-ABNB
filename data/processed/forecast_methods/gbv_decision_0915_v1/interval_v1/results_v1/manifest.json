@@ -1,0 +1,57 @@
+{
+  "code_sha256": "52f182382585770300ab69df6e9ce232b699b3a479cd7ebf5ad72f41d39a4d98",
+  "inputs": {
+    "horizon_predictions": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v2\\predictions.csv",
+      "sha256": "2b1dbd095a38daf2738c9f2bcd04716917059e94e54128d4b85ae9cea10d0b3d"
+    },
+    "flight_predictions": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\calendar_flights_v1\\results_v1\\predictions.csv",
+      "sha256": "ae979ac2c624b26964fdccb509bfb7a3ab14164382ccfc7a07624e39d249afc8"
+    },
+    "common_pairs": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v2\\paired_comparisons.csv",
+      "sha256": "ff72ea994dc507f583a05c06ffed89c5593f75ef493681959e6497c1608512ff"
+    },
+    "common_gates": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v2\\promotion_gates.csv",
+      "sha256": "3588e3da98d3a7b9277b9d418ecb558d270e2352eeafbb38a54da955542f711c"
+    },
+    "eligible_pairs": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\eligibility_audit_v1\\comparisons.csv",
+      "sha256": "4287813d8359ddceb3443cb596cf32ce7978d3aa1129183a1159b6aac4b1f97d"
+    },
+    "eligible_gates": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\eligibility_audit_v1\\promotion_gates.csv",
+      "sha256": "f1a61687ba9dbf6c9c5680b3e65802d4d87b4468ebef820208260368452edcc2"
+    },
+    "flight_pairs": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\calendar_flights_v1\\results_v1\\paired_comparisons.csv",
+      "sha256": "a78011c2a2c2a0a21f29e92de6fbb67da59aecfeafd61ba77c7170f61d975051"
+    },
+    "flight_gates": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\calendar_flights_v1\\results_v1\\remedy_gates.csv",
+      "sha256": "1a30419b9873353a80097ef12a0afa989b84b1dd7e7c48b403a001b2b2872233"
+    },
+    "harness_v1": {
+      "path": "analysis\\src\\forecast_methods\\harness\\score.py",
+      "sha256": "56ea6d6d50363868e76c053ad42c60ffbf5eca49aaf994799b43af2080c6d461"
+    },
+    "harness_v1_1": {
+      "path": "analysis\\src\\forecast_methods\\harness_v1_1\\score.py",
+      "sha256": "557cec05a467c2dc6e16c3a68a2b37620e39a99468ace460eec3a27c968e7390"
+    },
+    "prereg": {
+      "path": "docs\\revenue-forecast-strategy\\05_backtests\\GD_GUIDE_INTERVAL_PREREG_v1.md",
+      "sha256": "52b298bd3083f1b1b1cc1fb64c9419bc373e618f683824e1ca53cb1a01baf023"
+    }
+  },
+  "outputs": {
+    "comparisons.csv": "526193c8deec810151125b60181715a5d63e3312d3693df207f8e04fe6d3ba0e",
+    "deletions.csv": "810d04a267e20c843553bd99c0f600e3ac3d794a769672295012d07f9f4cf405",
+    "gate_changes.csv": "6c56a924b1d86bf8c81626eb5d3f41f6b245cfa8eb181b62aa2b57f9b7b04be4",
+    "gates.csv": "946fe115eca7d0f967874395dc3e7707fd29be2560083210409329de3e70cc33",
+    "receipt.json": "d6ac54a2354f73f08a9891abbffa9bdff2ef85f9714dc2358db07fdc4ba0f9b9",
+    "scores.csv": "00d200fabca04b6d167f8b32d851437a0b06f365004ad9f495b9c1ff84628a57"
+  }
+}

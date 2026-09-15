@@ -1,0 +1,19 @@
+{
+  "self_tests_passed": 8,
+  "raw_replication_numeric_and_gate_checks": 394,
+  "sources_unchanged": true,
+  "new_parameter_count": 0,
+  "bootstrap_draws_per_pair": 2000,
+  "interval_halfwidth_musd": 0.5,
+  "changed_promotion_outcomes": 0,
+  "changed_gate_components": 0,
+  "live_forecasts_changed": false,
+  "harness_changed": false,
+  "registered_scores_changed": false,
+  "limitations": [
+    "Rounding sensitivity only; no predictive interval",
+    "Few independent years; W1/W2 overlap",
+    "Scoring accepted reused-history results; no new holdout",
+    "Frozen harness still uses raw midpoint loss"
+  ]
+}

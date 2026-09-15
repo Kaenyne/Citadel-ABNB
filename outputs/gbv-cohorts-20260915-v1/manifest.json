@@ -1,0 +1,31 @@
+{
+  "as_of": "2026-09-15",
+  "purpose": "descriptive cohort feasibility; no fitted model or forecasts",
+  "source_sha256": {
+    "kpi": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "lambda_history": "6d28604e9230524cf993187345f8be7476616c3c5f022cb869f485ec17e82573",
+    "k2_prior": "70c399a4df899bc00f9cb97a947b90b7fb10e0222de06aadc1dd2319285e8705"
+  },
+  "input_files": {
+    "kpi": "data\\processed\\overnight\\02_kpi_panel_quarterly.csv",
+    "lambda_history": "data\\processed\\forecast_methods\\gbv_event_v1\\integration_v2\\lambda_history.csv",
+    "k2_prior": "data\\processed\\forecast_methods\\kernel_leadtime_v2\\K2_recommended_prior.csv"
+  },
+  "checks": [
+    "14 W1 quarters",
+    "10 W2 quarters",
+    "all 14 ratios reconcile to source KPIs",
+    "4 proxy cohorts including tail sum to 100%",
+    "268110 source reservations",
+    "input hashes unchanged"
+  ],
+  "outputs": {
+    "01_aggregate_conversion.png": "bf6c4aed7c621347963392384a6085f237fd0b8863630c21ad8132b71066b3a8",
+    "01_aggregate_conversion.svg": "3366af5b2b478947c20f9ba3d3f33fe830ca744cdb6af4cf3cf19a6fd244da9d",
+    "02_melbourne_cohort_proxy.png": "b4b91099046bd155f4911e37fb81c9824cdde8f41470a47457bf532db11acc74",
+    "02_melbourne_cohort_proxy.svg": "d46339176304b0725b45fbb2337186180364645d3fb6fdc2ab5d1c92223973a5",
+    "aggregate_conversion_history.csv": "c1969912adeb193c61ab29628bbf4c1320c189566e3ca60ed746035bac874f53",
+    "aggregate_conversion_variance.csv": "04827391f56ac44adc9314f8881d0c5e27838a0b57936e80879b15532e6a43d1",
+    "melbourne_proxy_cohorts.csv": "6cc40586184d272ee4cd97b65c95110f2ac017c784c633732d1a4f35881cd6dc"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "checks": 314,
+  "passed": 314,
+  "max_abs_error": 3.637978807091713e-12,
+  "event_n": 23,
+  "earlier_origin_rows": 21,
+  "imports_candidate_functions": false,
+  "scope": "Arithmetic and source joins only; no new fit, statistical retest, or strategy claim",
+  "source_hashes": {
+    "data/processed/forecast_methods/gbv_event_v1/integration_v2/model.json": "91f8eb92d4a94ba52750e5aefb8a74f6a03fa50f5b548cbd1101c22f46b1e349",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/event_panel.csv": "6327bc888826bf2d9cbef8bb0207c9a4a3cd350afbb6cf7aaa81da3ae13aae0b",
+    "data/processed/forecast_methods/gbv_event_v1/events_v1/run_v3/pre_event_forecast_join.csv": "d9163addfdd10240894ef4bc7532d75ba09bd9001cc28dcd4f8bb302d3d9cf4e",
+    "data/processed/forecast_methods/returns_v1/ohlc_daily.csv": "a94c35e2c70f5bc9ce4b5bd85343fed199ac1e941b94d287bb3ee7780b799286",
+    "data/processed/forecast_methods/harness/calendar.csv": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "data/processed/overnight/02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "data/processed/forecast_methods/L0/L0_vintage_register.csv": "3a5bf0a4848e30b3e5ecce380de0ebafcce8f5bb27add4d8b38ddcefd624fc00"
+  }
+}

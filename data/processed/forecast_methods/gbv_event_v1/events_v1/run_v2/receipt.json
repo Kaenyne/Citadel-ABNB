@@ -1,0 +1,46 @@
+{
+  "status": "completed_descriptive_audit_no_strategy_promotion",
+  "event_n": 23,
+  "numeric_guide_n": 20,
+  "primary_proxy_n": 16,
+  "adjusted_proxy_n": 15,
+  "primary_family_n": 12,
+  "permutations": 19999,
+  "seed": 20260915,
+  "return_tieout_n": 115,
+  "max_compounding_error_pp": 4.3076653355456074e-14,
+  "known_before_release": false,
+  "actual_guide_expectations_available": false,
+  "source_hashes": {
+    "data/processed/forecast_methods/harness/calendar.csv": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "data/processed/forecast_methods/returns_v1/ohlc_daily.csv": "a94c35e2c70f5bc9ce4b5bd85343fed199ac1e941b94d287bb3ee7780b799286",
+    "data/processed/forecast_methods/returns_v1/earnings_reactions_open_v1.csv": "11347775f5190c3496a7533d65f55ad8738e43df94ed9494b77697589a149c02",
+    "data/processed/forecast_methods/L0/L0_vintage_register.csv": "3a5bf0a4848e30b3e5ecce380de0ebafcce8f5bb27add4d8b38ddcefd624fc00",
+    "data/processed/overnight/02_kpi_panel_quarterly.csv": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "data/processed/overnight/02_guidance_ledger.csv": "c1a2b34330dc6655c549cbe7cab66adabcaaffcffc4441c833c726714d8267f2",
+    "data/processed/forecast_methods/gbv_event_v1/forecast_v1/results_v1/pre_event_forecasts.csv": "cf9e8fca5eb03272b06ac10747b2bca2c1f68983fa9dc72d58aff0570159f53c"
+  },
+  "outputs": {
+    "associations.csv": "11af6979ecc86c89d59a48e96a1f2e25cd4b4ff35f57fe45bd41f102f5ce0f0f",
+    "chart_data.json": "81dd72fa6881c13b747e4f532d9b574af5361543e7733b6789cff308574ba706",
+    "current_print_control.csv": "c02758e8dc0bfddc8f1653e42dc1f6a095851370d35879962e87a1db88d37336",
+    "cushion_training.csv": "3d41b64b55102c21e1b6daaa8c5f0db4e9241341b320ba753cb3b7afc48dbba8",
+    "event_panel.csv": "2d667fd52d260d638d2412da21d008bdf74d112755df661f1257bb74cd0cdfe5",
+    "guide_tieout.csv": "0f1fdac13bb8a722425bb6c06a3645a8f6ee7adfcc095af945817cfbf9598288",
+    "influence.csv": "573ca0f60b54a4f36f7a121a15b9cccfbb93aab8aea8184a01fb74ebca2f5307",
+    "pre_event_forecast_join.csv": "d9163addfdd10240894ef4bc7532d75ba09bd9001cc28dcd4f8bb302d3d9cf4e",
+    "pre_event_signal_associations.csv": "e088cc0a7182a991f70c9a2839ca4355b654088ffb671bd041be1ccc2ac09da0",
+    "return_tieout.csv": "80439bcc2be9cc3a291aa6c5d718450e0aa042b76874c4c015aeb372b3bce41e",
+    "sign_groups.csv": "b73f879a5f5cc035d8e3efe9d10df560bf6799ef3a11b99a366dfddd43cc9dc2",
+    "vendor_sensitivity.csv": "8cc807e953420109a6785ddc111afe63e57dd91c7c3fa721b16a75f39abc68ed"
+  },
+  "limits": [
+    "Historical events previously examined; not fresh confirmation",
+    "Same-day consensus follows recorded morning convention",
+    "Cushion prior actual publications strictly before event",
+    "Different-object and hypothetical expectation proxies",
+    "No timestamped intraday prices or causal call-leg attribution",
+    "Small nested samples; approximate intervals and exchangeability assumption",
+    "No pre-event strategy or cost-adjusted performance inferred from published guide"
+  ]
+}

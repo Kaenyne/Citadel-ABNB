@@ -1,0 +1,161 @@
+{
+  "vendor": "DoltHub post-no-preference/earnings",
+  "abnb_rows": 1160,
+  "snapshots": 290,
+  "quarterly_rows": 580,
+  "eligible_quarterly_rows": 579,
+  "raw_processed_reconciliation": true,
+  "asof_verified_snapshots": 3,
+  "asof_verified_rows": 12,
+  "all_snapshot_immutability_established": false,
+  "all_snapshot_publication_time_established": false,
+  "timezone_of_raw_sql_commit_datetime": "unspecified",
+  "origin_rows": 84,
+  "coverage": [
+    {
+      "arm": "calendar_minus16",
+      "horizon_quarters": 2,
+      "window": "W1",
+      "n_origins": 14,
+      "n_street": 14,
+      "n_row_specific_proof": 0,
+      "n_years": 4,
+      "min_age_days": 1.0,
+      "max_age_days": 7.0
+    },
+    {
+      "arm": "calendar_minus16",
+      "horizon_quarters": 2,
+      "window": "W2",
+      "n_origins": 10,
+      "n_street": 10,
+      "n_row_specific_proof": 0,
+      "n_years": 3,
+      "min_age_days": 1.0,
+      "max_age_days": 7.0
+    },
+    {
+      "arm": "calendar_minus16",
+      "horizon_quarters": 3,
+      "window": "W1",
+      "n_origins": 14,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 4,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "calendar_minus16",
+      "horizon_quarters": 3,
+      "window": "W2",
+      "n_origins": 10,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 3,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "calendar_minus16",
+      "horizon_quarters": 4,
+      "window": "W1",
+      "n_origins": 14,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 4,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "calendar_minus16",
+      "horizon_quarters": 4,
+      "window": "W2",
+      "n_origins": 10,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 3,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "release_day",
+      "horizon_quarters": 2,
+      "window": "W1",
+      "n_origins": 14,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 4,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "release_day",
+      "horizon_quarters": 2,
+      "window": "W2",
+      "n_origins": 10,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 3,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "release_day",
+      "horizon_quarters": 3,
+      "window": "W1",
+      "n_origins": 14,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 4,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "release_day",
+      "horizon_quarters": 3,
+      "window": "W2",
+      "n_origins": 10,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 3,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "release_day",
+      "horizon_quarters": 4,
+      "window": "W1",
+      "n_origins": 14,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 4,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    },
+    {
+      "arm": "release_day",
+      "horizon_quarters": 4,
+      "window": "W2",
+      "n_origins": 10,
+      "n_street": 0,
+      "n_row_specific_proof": 0,
+      "n_years": 3,
+      "min_age_days": NaN,
+      "max_age_days": NaN
+    }
+  ],
+  "model_compared": true,
+  "metric_rows": 144,
+  "interval_label": "paired target-year-cluster bootstrap on reused small historical sample; not live predictive intervals",
+  "input_sha256": {
+    "data/processed/github_altdata/samples/dolthub-post-no-preference-earnings-consensus-vintages/sales_estimate_ABNB_BKNG_EXPE.csv": "17ed04905571c30f2fb26050002feaf981793abe2807609f8ca032e53361b6e9",
+    "data/processed/forecast_methods/L0_dolthub_v2/dolthub_weekly_panel.csv": "5df98534e31f667e2a30686067b0d50fe279d854562905ec917b530d3d962a5c",
+    "data/processed/forecast_methods/harness/calendar.csv": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "data/processed/forecast_methods/L0_dolthub_v2/t0_provenance_attempt2.json": "940927177ba86fdee653343eebd960a8e6faa9c912a4382e4bd8dccb9dfcc892",
+    "data/processed/forecast_methods/L0_dolthub_v2/t0_provenance.json": "86516897955c6ac84b2304312011ff7a97c4b5e051a17d8ec81af6a91514b65c",
+    "docs/revenue-forecast-strategy/WORKBOARD_GBV_DECISION_0915_v1.md": "079f1230398b02baebea9e542cadd48a53ceb0021ffcecb943eb86737ff30055",
+    "docs/revenue-forecast-strategy/05_backtests/GD_CALENDAR_ORIGIN_ADDENDUM_v1.md": "70d49059d030782f25ac5971f22738aa4665320c639336bdf8f6f8f41274b765",
+    "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\submission-readiness-v1\\data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v1\\predictions.csv": "63d3fdaa630c47b6aaa50d77c437e94ec8c39edf1ff7d0c5abc4fae57833fa47"
+  }
+}
