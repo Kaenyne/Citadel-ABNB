@@ -1,0 +1,29 @@
+{
+  "R_bundle": "interface audited; synthetic inputs and historical coefficients not deployed",
+  "accounting_sources": [
+    "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000004/abnb-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000027/abnb-20260630.htm"
+  ],
+  "cohort_rnpl_inputs": "unidentified sensitivities, not stock percentages or disclosed booking flow",
+  "currency_inputs": "hypothetical currency mix; 0.56 nonUSD only annual company anchor",
+  "hedge_policy": "none_added; absolute reference basis not certified prehedge",
+  "historical_W1_n": 0,
+  "historical_W2_n": 0,
+  "implementation_status": "complete_subject_to_test_receipt",
+  "information_date": "2026-09-13",
+  "inherited_lambda": "K0 public PIT API; no changed weights or fit policy",
+  "new_fitted_parameters": 0,
+  "package": "cohort_fx_v1",
+  "rate_cutoff_by_currency": {
+    "AUD": "2026-09-04",
+    "BRL": "2026-09-04",
+    "CAD": "2026-09-04",
+    "EUR": "2026-09-04",
+    "GBP": "2026-09-04",
+    "MXN": "2026-09-04"
+  },
+  "reference_basis": "fixed_2025_daily_average_usd_per_unit",
+  "research_status": "PARTIAL",
+  "scenario_n": 180,
+  "scope": "L3 research inputs only; no forecast registration or investment adoption"
+}

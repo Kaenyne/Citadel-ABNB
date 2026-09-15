@@ -1,0 +1,108 @@
+{
+  "timestamp_utc": "2026-09-14T04:37:45.530969+00:00",
+  "commands": [
+    {
+      "name": "tests",
+      "command": [
+        "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "pytest",
+        "analysis/src/forecast_methods/l3_source_contract_v1/consumption/test_consumption.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6f6e22235592cac582f7e37ae6512acd79059c09096bc73ce15bcc23b4debf94"
+    },
+    {
+      "name": "canonical",
+      "command": [
+        "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "analysis/src/forecast_methods/l3_source_contract_v1/consumption/run.py",
+        "--out",
+        "data\\processed\\forecast_methods\\l3_source_contract_v1\\consumption\\results_v1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4c172900cfa049332f812f60ced6210c66b438223b37b30e3106a34a94970371"
+    },
+    {
+      "name": "rebuild",
+      "command": [
+        "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "analysis/src/forecast_methods/l3_source_contract_v1/consumption/run.py",
+        "--out",
+        "data\\processed\\forecast_methods\\l3_source_contract_v1\\consumption\\results_verify_v1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4c172900cfa049332f812f60ced6210c66b438223b37b30e3106a34a94970371"
+    }
+  ],
+  "rebuild_checks": [
+    {
+      "path": "consumption_matrix.csv",
+      "sha256": "d7594ee26157c76bce7571ffab70ed481535201e5e689951661673b067085705",
+      "byte_identical": true
+    },
+    {
+      "path": "existing_data_inventory.csv",
+      "sha256": "76656e0ac0a5011d1e382cffbd3e868aa11d61336be3f2492e468498c12ebf2f",
+      "byte_identical": true
+    },
+    {
+      "path": "guide_basis_audit.csv",
+      "sha256": "a99fe11a8bfeb12cae54999b09596f4f84f4290ffb6b7e5ee7719b7af5ce8585",
+      "byte_identical": true
+    },
+    {
+      "path": "information_gaps.csv",
+      "sha256": "5f429acebda37ed22bc06112c7f83f53015d2d2e4292cc8849d0a7dce9b306e4",
+      "byte_identical": true
+    },
+    {
+      "path": "interface_audit.csv",
+      "sha256": "db9f1126c7b974fe30fa9558d10f7c89c14d4dc1f2ebc9dd821eee258df84fd2",
+      "byte_identical": true
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "94129f3130120478e9ae3f541a9f39f2e00f0714d9267e1d832f3c397011da36",
+      "byte_identical": true
+    },
+    {
+      "path": "source_manifest.csv",
+      "sha256": "885db7f8c3935cd7b21bbe4b872bd9600b2bca60624c20f5f764e473c0640d5a",
+      "byte_identical": true
+    },
+    {
+      "path": "summary.json",
+      "sha256": "1794a00244eec81eeafcfb2ef486d9e26fb52bc9c8e875966bcfee9c5877bbfc",
+      "byte_identical": true
+    }
+  ],
+  "code": [
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\freeze_evidence.py",
+      "sha256": "f69cb5e7b11aef548ae3894a365d261b36c5cc8eb02cc86d212b2722b412ec87"
+    },
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\README.md",
+      "sha256": "9d1f5a0d60bb7a4b26da24d06b16e916195d14992d3711dfec38216e922f3242"
+    },
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\run.py",
+      "sha256": "7c684e2859337ec847d67e8d8bbe81743a492157e7f50e2ea1ab8372eaeb616f"
+    },
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\consumption\\test_consumption.py",
+      "sha256": "75e0d58305ea04ff289435dd6f0a06f22aac30b0c8de76a7282cc26bd32f6a74"
+    }
+  ]
+}

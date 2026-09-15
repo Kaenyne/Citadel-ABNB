@@ -1,0 +1,36 @@
+{
+  "method": "Independent direct five-parameter least_squares, five starts; author uses scalar profile.",
+  "full22": {
+    "n": 22,
+    "w": 0.7864784708032744,
+    "lambda_Q1": 0.12931911123851558,
+    "lambda_Q2": 0.13224232520999285,
+    "lambda_Q3": 0.17302744061438113,
+    "lambda_Q4": 0.12111558312146714,
+    "sse": 43998.91352654034,
+    "optimizer_starts": 5,
+    "max_start_sse_gap": 1.382431946694851e-10
+  },
+  "exclude2021": {
+    "n": 18,
+    "w": 0.5387305534863976,
+    "lambda_Q1": 0.12491320734454708,
+    "lambda_Q2": 0.1437355169575866,
+    "lambda_Q3": 0.17056205125965213,
+    "lambda_Q4": 0.11929148340616579,
+    "sse": 20441.909768058176,
+    "optimizer_starts": 5,
+    "max_start_sse_gap": 2.7284841053187847e-10
+  },
+  "since2023": {
+    "n": 14,
+    "w": 0.3569629639027751,
+    "lambda_Q1": 0.12135373428052601,
+    "lambda_Q2": 0.15354366723252638,
+    "lambda_Q3": 0.16908141492459916,
+    "lambda_Q4": 0.11888779126557174,
+    "sse": 11093.048247421022,
+    "optimizer_starts": 5,
+    "max_start_sse_gap": 5.4569682106375694e-11
+  }
+}

@@ -1,0 +1,15 @@
+check,passed,n,detail
+ADR P1 reproduction,True,16,max absolute delta 2.22e-16
+J3 reproduction,True,32,max delta 8.88e-16
+independent path scoring,True,16,max delta 3.33e-16
+historical residual identity,True,14,8.881784197001252e-16
+K historical imposed mechanics,True,10,6.245004513516506e-16
+failed additions remain failed,True,5,"Regional primary 0/4; new-listing primary 2/4 improvements, criterion false"
+K live chain 3Q26,True,1,share delta=24.5; point=0.1715
+K live chain 4Q26,True,1,share delta=53.5; point=0.3745
+live card arithmetic,True,126,failed=0
+hotel monitor reproduction cpi_lodging_yoy_pct,True,42,max rounding delta=0.04925999369299294
+hotel monitor reproduction bea_hotels_price_yoy_pct,True,43,max rounding delta=0.04946266260390536
+hotel coverage reproduction,True,13,"{""markets"": 13, ""markets_with_page_captures"": 4, ""existing_page_observations"": 113, ""existing_property_clusters"": 111, ""accepted_registered_room_matches"": 26, ""registered_rooms"": 1060.0, ""markets_with_absolute_airbnb_hotel_nights"": 0, ""markets_with_absolute_airbnb_hotel_revenue"": 0, ""markets_with_current_verified_independent_rooms"": 0, ""capacity_total"": null, ""reason"": ""Mixed room/license/property units, vintages and geographies; no defensible sum. Hotel onboarding demand unidentified.""}"
+L4 adapter contract,True,86,Alternates not additive; no revenue forecast; dates and FX fields verified
+source files unchanged,True,29,SHA-256 before/after
