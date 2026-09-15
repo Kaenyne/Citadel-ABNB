@@ -1,0 +1,10 @@
+{
+ "slug": "sec-cik-mapper-cik-ticker-crosswalk",
+ "url": "https://github.com/jadchaar/sec-cik-mapper",
+ "category": "company_filings_estimates",
+ "data_kind": "both",
+ "one_line": "MIT, archived Apr 2025 (last push 28 Feb 2025, 75 stars): Python package plus committed mapping files under mappings/stocks/ (mappings.csv 443 KB, ticker_to_cik.json 214 KB, cik_to_tickers.json 200 KB, cik_to_company_name.json 306 KB, exchange maps) and a parallel mappings/mutual_funds/ tree; also served over jsDelivr; US SEC registrants, frozen at the archive date.",
+ "abnb_use": "Gap 15 (SEC EDGAR tooling): a ready CIK/ticker/exchange crosswalk to join ABNB, BKNG, EXPE, MAR, HLT, VCSA, SOND and any peer against XBRL frames, EDGAR full-text search and the financial-statement datasets without hand-deriving CIKs; mutual-fund series/class maps also support 13F/holder work.",
+ "sample_plan": "curl -sL -o mappings_stocks.csv https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/mappings.csv (443 KB) and curl -sL -o ticker_to_cik.json https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/ticker_to_cik.json (214 KB); also grab README.md. Total < 1 MB. Skip the mutual_funds tree unless 13F work needs it.",
+ "tos_or_license_flag": false
+}

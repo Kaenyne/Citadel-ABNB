@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:receiptedit/us-sales-tax-2026",
+  "url": "https://github.com/receiptedit/us-sales-tax-2026",
+  "name": "us-sales-tax-2026",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "MIT-licensed 2026 US tax reference: us-sales-tax-2026.json/csv (state + local combined sales tax rates), us-lodging-taxes-2026.csv (state-level TOT/occupancy/tourism-assessment rates only, no city breakdown, no revenue/collections time series), STATES_TABLE.md summary, plus a free REST API and embeddable calculator. Reviewed 17 Jun 2026, annual-update cadence.",
+  "why_useful": "Could be a reference table for state-level lodging tax rate levels (Nevada/Florida/Texas/California/NY/Hawaii rates) but has no historical collections series or occupancy figures, so it doesn't fill the gap #8 need for actual occupancy/RevPAR/tax-collection time series.",
+  "potential": "low",
+  "geography": "US, all 50 states",
+  "time_coverage": "2026 snapshot only",
+  "size_hint": "small rates table + API code",
+  "license": "MIT",
+  "last_activity": "2026-08-26",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)"
+  ],
+  "why_all": [
+   "Could be a reference table for state-level lodging tax rate levels (Nevada/Florida/Texas/California/NY/Hawaii rates) but has no historical collections series or occupancy figures, so it doesn't fill the gap #8 need for actual occupancy/RevPAR/tax-collection time series.",
+   "Gives current statutory lodging-tax rates by state (including NV, FL, TX, CA, HI) as a reference/cross-check, but explicitly contains no collections or occupancy volume history, so it does not address the tax-collections-as-demand-proxy angle the theme is really after."
+  ]
+ },
+ {
+  "key": "github:ayhamalghoul/2025-bexar-county-proposition-b-results-by-precinct",
+  "url": "https://github.com/AyhamAlghoul/2025-Bexar-County-Proposition-B-Results-by-Precinct",
+  "name": "2025-Bexar-County-Proposition-B-Results-by-Precinct",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Interactive precinct-level map/dataset of the 2025 Bexar County (San Antonio, TX) Proposition B vote \u2014 a referendum on county funding for a new stadium tied to a hotel-occupancy-tax increase. Election results by precinct, not tax collections figures.",
+  "why_useful": "Documents a concrete Texas hotel-occupancy-tax policy event (rate increase tied to stadium financing) that a regulatory-event tracker could log, but the payload is voting geography, not lodging-tax revenue or occupancy data.",
+  "potential": "low",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Bexar County, TX",
+  "time_coverage": "2025 single election",
+  "size_hint": "precinct-level shapefile/csv, small",
+  "license": "not stated",
+  "last_activity": "2025-12-29",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)",
+   "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform"
+  ],
+  "why_all": [
+   "Documents a concrete Texas hotel-occupancy-tax policy event (rate increase tied to stadium financing) that a regulatory-event tracker could log, but the payload is voting geography, not lodging-tax revenue or occupancy data.",
+   "Only tangentially related: shows local political appetite for raising hotel/occupancy taxes in one US county, not a national or ABNB-relevant collections series. Flagging for completeness only."
+  ]
+ },
+ {
+  "key": "github:benstaydev/japan-stay-tax",
+  "url": "https://github.com/benstaydev/japan-stay-tax",
+  "name": "japan-stay-tax",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Zero-dependency TypeScript/JS library computing Japan's municipal accommodation tax (\u5bbf\u6cca\u7a0e) rate schedules for Tokyo, Osaka, Kyoto, Niseko and 20+ other municipalities. Rate tables only, no collections/occupancy time series. Last updated 24 Aug 2026 (a near-duplicate fork/rewrite exists at Capricious-storage478/japan-stay-tax, updated 12 Sep 2026).",
+  "why_useful": "Tangential to the theme's US-state focus, but a real, current lodging-tax rate-schedule dataset for a major APAC tourism market (gap #7 regional travel volume outside US/EU is APAC-focused); rates only, no demand signal.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan (Tokyo, Osaka, Kyoto, Niseko, 20+ municipalities)",
+  "time_coverage": "current rates only",
+  "size_hint": "small rate-table library",
+  "license": "not confirmed",
+  "last_activity": "2026-09-12 (fork) / 2026-08-24 (original)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)",
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Tangential to the theme's US-state focus, but a real, current lodging-tax rate-schedule dataset for a major APAC tourism market (gap #7 regional travel volume outside US/EU is APAC-focused); rates only, no demand signal.",
+   "A structured, versioned dataset of Japanese municipal lodging-tax rates and changes (a regulatory-cost input on STR/hotel unit economics in Japan, and a changelog that is quasi-point-in-time for rate changes) rather than free text."
+  ]
+ },
+ {
+  "key": "github:smitkiri/schengen-visa",
+  "url": "https://github.com/smitkiri/schengen-visa",
+  "name": "smitkiri/schengen-visa",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Schengen visa statistics by consulate: 2017-consulates-schengen-visa-stats.xlsx (638KB) and 2017-data-for-consulates.csv (156KB), plus 2018 xlsx. Consulate-level visa application/issuance/refusal counts sourced from the EU Schengen visa statistics releases. Only 2017-2018 vintages present; 0 stars, last updated 2020, no explicit license.",
+  "why_useful": "Schengen visa issuance by consulate/nationality is a proxy for EU-bound inbound long-haul travel demand (EMEA region mix, gap area not directly listed but adjacent to gap #7/#10 travel volume series); dataset is old (2017-18) so mainly useful as a template for pulling the current EU Schengen visa statistics release (published annually by the European Commission) rather than as current data.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2020-07-04",
+  "size_hint": "~800KB across two Excel/CSV files",
+  "time_coverage": "2017-2018 only",
+  "geography": "Schengen area (by consulate/issuing country)",
+  "gap_targets": [
+   7,
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Schengen visa issuance by consulate/nationality is a proxy for EU-bound inbound long-haul travel demand (EMEA region mix, gap area not directly listed but adjacent to gap #7/#10 travel volume series); dataset is old (2017-18) so mainly useful as a template for pulling the current EU Schengen visa statistics release (published annually by the European Commission) rather than as current data."
+  ]
+ },
+ {
+  "key": "github:jacobkap/borderpatrol",
+  "url": "https://github.com/jacobkap/borderpatrol",
+  "name": "borderpatrol (R package)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "early-stage R package (5 commits, unfinished README, 0 stars) tagged border-patrol/cbp/customs-and-border-protection/illegal-immigration/immigration; package skeleton has data/ and R/ dirs but contents not confirmed via fetch; MIT license",
+  "why_useful": "Possible CBP-data R package, but too undeveloped to confirm contents (README description is cut off, no visible data description); flagging only so it isn't missed if it matures, not because it currently demonstrates value.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "unconfirmed, minimal (5 commits)",
+  "geography": "US border (unclear which agency data)",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, package skeleton only",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Possible CBP-data R package, but too undeveloped to confirm contents (README description is cut off, no visible data description); flagging only so it isn't missed if it matures, not because it currently demonstrates value."
+  ]
+ }
+]

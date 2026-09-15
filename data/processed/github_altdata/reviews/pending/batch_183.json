@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:oduwsdl/memgator",
+  "url": "https://github.com/oduwsdl/memgator",
+  "name": "MemGator",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go-based Memento aggregator (2.2k-star family topic listing shows it at 80 stars under a related search) that queries multiple web archives at once (Internet Archive, archive.today, UK Web Archive, etc.) via the Memento protocol (RFC 7089) to find all known archived copies of a URL.",
+  "why_useful": "Cross-archive discovery (not just the Internet Archive) for old AirDNA/Mashvisor/Inside-Airbnb pages that might have been captured only by a national web archive rather than archive.org.",
+  "potential": "low",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "unspecified in fetched content",
+  "last_activity": "unspecified",
+  "geography": "global (queries multiple national/institutional web archives)",
+  "time_coverage": "varies by archive",
+  "size_hint": "tool only",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Cross-archive discovery (not just the Internet Archive) for old AirDNA/Mashvisor/Inside-Airbnb pages that might have been captured only by a national web archive rather than archive.org."
+  ]
+ },
+ {
+  "key": "github:machawk1/awesome-memento",
+  "url": "https://github.com/machawk1/awesome-memento",
+  "name": "awesome-memento",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Curated list (122 stars) of Memento-protocol / web-archiving software and literature: py-memento-client, mcurl, memento-cli, MemGator, and academic papers on temporal web archiving.",
+  "why_useful": "One-stop index to find additional Wayback/Memento clients beyond what a keyword search surfaces directly; useful as a jumping-off point for a deeper follow-up pass on this theme, not itself a data source.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "license": "unspecified (awesome-list, typically CC0)",
+  "last_activity": "unspecified",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "curated link list",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "One-stop index to find additional Wayback/Memento clients beyond what a keyword search surfaces directly; useful as a jumping-off point for a deeper follow-up pass on this theme, not itself a data source."
+  ]
+ },
+ {
+  "key": "github:archivebox/archivebox",
+  "url": "https://github.com/ArchiveBox/ArchiveBox",
+  "name": "ArchiveBox",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Large (28.4k stars) self-hosted web-archiving tool that takes a list of URLs/browser history/bookmarks and saves full-fidelity local copies (HTML, JS, PDFs, media, screenshots, WARC) going forward; not a Wayback Machine retrieval tool per se but a self-hosted archive-creation tool that can also import existing Wayback snapshots.",
+  "why_useful": "Could be pointed at a watch-list of AirDNA/Mashvisor/Airbnb newsroom URLs to start building our OWN point-in-time archive from today forward (complements the retroactive Wayback-retrieval tools above); large, actively maintained, well-documented.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "license": "MIT (per repo convention)",
+  "last_activity": "unspecified, very active (28.4k stars)",
+  "geography": "global",
+  "time_coverage": "prospective (from whenever deployed)",
+  "size_hint": "self-hosted tool, storage scales with what you archive",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Could be pointed at a watch-list of AirDNA/Mashvisor/Airbnb newsroom URLs to start building our OWN point-in-time archive from today forward (complements the retroactive Wayback-retrieval tools above); large, actively maintained, well-documented."
+  ]
+ },
+ {
+  "key": "github:webrecorder/warcio.js",
+  "url": "https://github.com/webrecorder/warcio.js",
+  "name": "warcio.js",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "JavaScript/Node port of warcio for streaming WARC IO in browser or Node contexts. 55 stars, MIT, updated 4 Sep 2026.",
+  "why_useful": "Alternative WARC-reading tool if any pipeline work moves to a JS/browser context (e.g. a Wayback-viewer style tool for archived AirDNA or STR-platform pages).",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "MIT",
+  "last_activity": "2026-09-04",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "library",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Alternative WARC-reading tool if any pipeline work moves to a JS/browser context (e.g. a Wayback-viewer style tool for archived AirDNA or STR-platform pages)."
+  ]
+ },
+ {
+  "key": "github:internetarchive/scrapy-warcio",
+  "url": "https://github.com/internetarchive/scrapy-warcio",
+  "name": "scrapy-warcio",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Internet Archive extension adding WARC-writing support to the Scrapy crawling framework. 24 stars, updated 15 Dec 2025.",
+  "why_useful": "Would let a future (human-approved) scrape of a non-Airbnb STR/travel site be captured in standard WARC format so it becomes point-in-time archivable, consistent with how Common Crawl stores pages.",
+  "potential": "low",
+  "gap_targets": [
+   9,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "unspecified",
+  "last_activity": "2025-12-15",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "library",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Would let a future (human-approved) scrape of a non-Airbnb STR/travel site be captured in standard WARC format so it becomes point-in-time archivable, consistent with how Common Crawl stores pages."
+  ]
+ }
+]

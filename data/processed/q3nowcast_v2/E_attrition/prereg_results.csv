@@ -1,0 +1,4 @@
+line,n_pairs,n_reviews_archive,value,lo,hi,passed,detail,verdict
+L1,40,17054093,31.234792554777012,10.0,20.0,False,"review-weighted annual attrition, pct, montera34 pairs with early dump 2017-2019, gap 11-13 months, review months 1-36 before the early dump",FAIL
+L2,30,1016010,0.13917973248294802,0.09687440434072259,0.2968744043407226,True,"review-weighted 2014-month survival, 2015 ChicagoBooth vintage -> held latest vintage; equal-weighted mean 0.151, median 0.155",PASS
+L3,1,168319,0.06527486498850398,0.03917973248294801,0.23917973248294802,True,"NYC 2014-month survival, JoeyDeJager 2015-01-01 vintage -> held NYC latest vintage, vs the L2 pooled value",PASS

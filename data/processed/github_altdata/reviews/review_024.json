@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/Qunish/getyourguide-api-based-scraper",
+  "slug": "qunish-getyourguide-selenium-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "one_line": "Two Jupyter notebooks (29 KB + 13 KB) driving Selenium against getyourguide.com for Dubai activity listings (category, name, duration, price, rating) and product pages (overview, details, review summaries); output goes to the user's own MongoDB, no data committed; repo 15 KB, 0 stars, no licence, last push 2023-08-08.",
+  "abnb_use": "Tours-and-activities pricing/inventory reads on the Experiences & Services side of ABNB and on competitor OTA breadth (gap 9), but it is Dubai-only, DOM-dependent and three years stale.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified via gh contents: only README plus two notebooks, zero stored data, no licence file. It is a Selenium scraper of a third-party commercial site, so running it is a terms-of-service decision for a human, not an agent. Single-city, 2023-vintage DOM scraping makes it a weak method note rather than a source."
+ },
+ {
+  "url": "https://github.com/dot1258/klook-scraper",
+  "slug": "dot1258-klook-airflow-etl-scraper",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "one_line": "Airflow/Docker ETL that calls Klook's internal JSON endpoints for activity lists and the review endpoint (activity id, reviewer id, text, star rating, timestamp; 100 per page, zh-TW/NTD locale) and lands them in MongoDB Atlas with CSV export; dags/ + docker-compose only, no data committed, 63 KB, 0 stars, no licence, last push 2022-01-05.",
+  "abnb_use": "Documents which Klook JSON endpoints return dated, ratable review records — the same review-count-as-demand construction we already use for the Inside Airbnb stays index, but for an APAC things-to-do marketplace (gaps 7 and 9); a competitor/regional demand proxy method rather than data.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "gh contents confirms code only (dags, Dockerfile, docker-compose, requirements) with no committed dataset and no licence. The value is the endpoint map — dated reviews are the one Klook field that could be turned into an APAC activity-demand index — but hitting a third-party site's private JSON API is a ToS call for a human, and the README itself warns about IP bans. Catalog the method, do not run it."
+ },
+ {
+  "url": "https://github.com/api-evangelist/viator",
+  "slug": "apievangelist-viator-api-profile",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "API Evangelist third-party profile of Viator (Tripadvisor; ~300k products, ~2,500 destinations): 20 machine-readable OpenAPI specs totalling ~9 MB (partner-api-v2 2.2 MB, merchant-api-v1 1.0 MB, availability, products, bookings, payments, taxonomy) plus apis.yml, review.yml, changelog, MCP/LLM tool defs; no data rows, no licence file, actively regenerated (last push 12 Sep 2026, 1 star, 1.9 MB repo).",
+  "abnb_use": "A map of the largest experiences marketplace's official API surface (availability, products, taxonomy) if anyone wanted a TOS-compliant pull reading on ABNB Experiences/Services and tours demand (gap 9) — but every endpoint is behind a partner key, so it carries no numbers of its own.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "gh contents confirms the specs are real and substantial, but they are API descriptors, not observations — the repo contains zero travel data. Using the documented endpoints requires a Viator partner credential, which this run forbids, so it can only be catalogued as a pointer. Fetching 9 MB of OpenAPI YAML would buy us nothing a one-line note does not."
+ },
+ {
+  "url": "https://github.com/api-evangelist/getyourguide",
+  "slug": "apievangelist-getyourguide-api-profile",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "API Evangelist profile of GetYourGuide's supplier/partner API: 8 OpenAPI specs (~194 KB total — tours 64 KB, carts, bookings, options, reviews 11 KB, categories, suppliers, configuration) plus apis.yml, provenance.yml, arazzo workflows and MCP/LLM defs; no data, no licence, repo 239 KB, 0 stars, last push 12 Sep 2026.",
+  "abnb_use": "Names a reviews endpoint and a tours/options endpoint for the Berlin-based activities OTA — a possible legitimate route to European activity pricing and review volume (gap 9) — but holds no observations itself.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified as spec files only; the useful content is the existence of a reviews API, not any data. Access needs a GetYourGuide supplier/partner agreement and key, which puts it out of reach for this run. Catalogue as a pointer; nothing to sample."
+ },
+ {
+  "url": "https://github.com/api-evangelist/klook",
+  "slug": "apievangelist-klook-api-profile",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "one_line": "API Evangelist profile of Klook's OCTO-standard partner API: 4 OpenAPI specs (~733 KB — bookings 652 KB, products 52 KB, availability 24 KB, supplier 5 KB) plus apis.yml, provenance.yml, changelog, capabilities and MCP defs; no data, no licence, repo 407 KB, 0 stars, last push 12 Sep 2026.",
+  "abnb_use": "Maps the official APAC things-to-do platform's availability/products surface, the sanctioned alternative to the dot1258 scraper for an APAC activity-demand read (gaps 7 and 9); no numbers stored.",
+  "sample_plan": "",
+  "tos_or_license_flag": true,
+  "reasoning": "gh contents confirms four genuine OpenAPI documents and nothing resembling a dataset. The Klook partner API requires a supplier credential, so no keyless pull exists and the repo is a reference only. Worth one catalogue line beside the Klook scraper entry so a human can see the legitimate route."
+ }
+]

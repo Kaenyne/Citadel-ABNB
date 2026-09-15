@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:alejandrocuestar/indicadores-economicos-mexico",
+  "url": "https://github.com/AlejandroCuestaR/indicadores-economicos-mexico",
+  "name": "indicadores-economicos-mexico",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Full pipeline: Banxico API -> Python/pandas -> SQL Server -> FastAPI (JWT) -> Power BI/Excel, for Mexican economic indicators. 0 stars, updated Jul 2026.",
+  "why_useful": "Shows a more production-grade ETL pattern around the Banxico API if the team wants a database-backed refresh rather than ad hoc scripts.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Mexico",
+  "time_coverage": "Banxico series history",
+  "size_hint": "medium (multi-service pipeline)",
+  "license": "none stated",
+  "last_activity": "2026-07-16",
+  "duplicate_of_holding": "duplicate use case of sie_banxico",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Shows a more production-grade ETL pattern around the Banxico API if the team wants a database-backed refresh rather than ad hoc scripts."
+  ]
+ },
+ {
+  "key": "github:baighafsa/student-affordability-calculator",
+  "url": "https://github.com/baighafsa/student-affordability-calculator",
+  "name": "student-affordability-calculator",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Streamlit app combining live Numbeo cost-of-living data with European Central Bank FX rates to compute affordability across 326 cities in 107 countries for international students. No stored dataset \u2014 live-pull method combining two APIs.",
+  "why_useful": "Demonstrates a working method for merging crowdsourced cost-of-living data with ECB FX rates into a single affordability score across 326 cities \u2014 a reusable pattern (not data) for an ABNB cross-market affordability index that already accounts for currency.",
+  "potential": "low",
+  "size_hint": "small streamlit app",
+  "time_coverage": "live/current only",
+  "geography": "326 cities, 107 countries",
+  "license": "unspecified",
+  "last_activity": "2026-08-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "Demonstrates a working method for merging crowdsourced cost-of-living data with ECB FX rates into a single affordability score across 326 cities \u2014 a reusable pattern (not data) for an ABNB cross-market affordability index that already accounts for currency."
+  ]
+ },
+ {
+  "key": "github:lobosprint/hackpr-challenge",
+  "url": "https://github.com/lobosprint/hackpr-challenge",
+  "name": "hackpr-challenge (Puerto Rico COLI calculator)",
+  "category": "fx_rates",
+  "data_kind": "both",
+  "what_it_holds": "Hackathon challenge repo built around official Puerto Rico Institute of Statistics Cost-of-Living Index (COLI) data: 'COLI 2014Q3-2015Q3.xls' (quarterly index values, ~57 priced products, San Juan Metro vs ~300 C2ER regions) plus a 'Puerto Rico Index Compiler 2014Q3-2015Q3.xls' showing the aggregation formulas. Government-sourced, not crowdsourced, but a genuine point-in-time quarterly cost index with underlying category weights.",
+  "why_useful": "Marginal: shows how an official regional cost-of-living index (C2ER-style, same family as ACCRA/COLI that Numbeo/Expatistan approximate) is constructed quarter by quarter with full category weights - useful as a methodology reference for building a point-in-time affordability index, even though geography (Puerto Rico only) and vintage (2014-15) are narrow.",
+  "potential": "low",
+  "gap_targets": [
+   4,
+   6
+  ],
+  "duplicate_of_holding": "",
+  "geography": "Puerto Rico (San Juan Metro) vs ~300 US/Canada C2ER regions",
+  "time_coverage": "2014 Q3 - 2015 Q3, quarterly",
+  "license": "none stated",
+  "size_hint": "2 xls workbooks",
+  "last_activity": "2024-11-09",
+  "hits": 1,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "Marginal: shows how an official regional cost-of-living index (C2ER-style, same family as ACCRA/COLI that Numbeo/Expatistan approximate) is constructed quarter by quarter with full category weights - useful as a methodology reference for building a point-in-time affordability index, even though geography (Puerto Rico only) and vintage (2014-15) are narrow."
+  ]
+ },
+ {
+  "key": "github:open-data-kazakhstan/city-cost-of-living-index",
+  "url": "https://github.com/open-data-kazakhstan/city-cost-of-living-index",
+  "name": "city-cost-of-living-index (Kazakhstan)",
+  "category": "fx_rates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSVs (data/cost_piv.csv housing costs, data/spend_piv.csv monthly household expenditure) built from Kazakhstan's official stat.gov.kz economic-dynamics tables, plus a datapackage.json and processing scripts (cost.py, spend.py, datapack.py). Public-domain (ODC-PDDL) license. Government-sourced, not Numbeo/crowdsourced.",
+  "why_useful": "A genuine committed cost-of-living dataset with a clear government source and reproducible build scripts, but narrow geography (Kazakhstan cities only) limits direct relevance to ABNB's core markets.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "geography": "Kazakhstan cities",
+  "time_coverage": "unspecified (recent, per stat.gov.kz tables)",
+  "license": "Open Data Commons Public Domain Dedication (ODC-PDDL)",
+  "size_hint": "2 CSV pivot tables",
+  "last_activity": "2024-08-28",
+  "hits": 1,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "A genuine committed cost-of-living dataset with a clear government source and reproducible build scripts, but narrow geography (Kazakhstan cities only) limits direct relevance to ABNB's core markets."
+  ]
+ },
+ {
+  "key": "github:mudit-r/india-cost-of-living-index",
+  "url": "https://github.com/Mudit-R/india-cost-of-living-index",
+  "name": "india-cost-of-living-index",
+  "category": "fx_rates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed JSON dataset (public/data/cities.json) covering 50 Indian cities across 8 expense categories (housing, grocery, transport, healthcare, education, electricity, restaurant, movies), described as aggregated from 'multi-source data' (>50,000 data points), indexed to Delhi=100. Source methodology not fully documented in the visible README.",
+  "why_useful": "A committed, structured cost-of-living panel for 50 Indian cities could be a useful India-specific affordability proxy for APAC regional splits (gap #7), though the undocumented sourcing and recency make it lower confidence than an official statistics series.",
+  "potential": "low",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "geography": "India, 50 cities",
+  "time_coverage": "unspecified",
+  "license": "unspecified",
+  "size_hint": "single cities.json, >50,000 data points claimed",
+  "last_activity": "2026-08-25",
+  "hits": 1,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "A committed, structured cost-of-living panel for 50 Indian cities could be a useful India-specific affordability proxy for APAC regional splits (gap #7), though the undocumented sourcing and recency make it lower confidence than an official statistics series."
+  ]
+ }
+]

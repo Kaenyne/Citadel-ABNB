@@ -1,0 +1,19 @@
+# L3 conversion validation — implementation failures and repairs retained
+
+2026-09-13 · `adr_hotel`. These development/audit findings are retained rather than omitted from the successful result. Initial completed `results_v1` remains unchanged; reviewed presentation output is emitted to NEW `results_v2`.
+
+1. **Inherited K0 policy abstention initially raised an exception.** The first attempted runner stopped before creating an output directory when the unchanged K0 engine raised `DataUnavailable` for 2023Q1. The engine's default eligible same-season policy also abstains in 2023Q2. Repair records both as missing forecast rows and inherited abstention evidence; the final K0 score has n12 in W1 and n10 in W2. Its comparator ratios use those same available cells. The primary free/fixed models retain all14/10 origins. No fallback or retrospective policy adjustment was introduced.
+
+2. **Symmetric interval width and error denominator initially disagreed.** Lead review caught the development code storing `(point−actual)/actual` while using `point × (1±width)` bounds. Before any completed output, the calibration score was changed to `(actual−point)/point`, whose absolute value matches the symmetric bands. Regression: a historical forecast120 and actual100 has absolute calibration error1/6; future point120 gets bounds100–140, not96–144. Only previously printed historical errors are available. The original preregistered symmetric-relative-band rule is unchanged; its denominator is now explicit. No point forecast or headline score changed.
+
+3. **Generic Python imports collided in the combined package suite.** The conversion tests initially used `import run`; the joint process had already cached another package's `run`, causing five `AttributeError` failures despite standalone tests passing. Repair loads conversion runner/model/charts with unique package module names through explicit local paths, with no frozen package edits. All21 conversion tests then pass. Integration additionally isolates package suites, as documented by the independent integration reviewer.
+
+4. **Initial presentation visually compared unequal W1 coverage.** Figure03 originally displayed K0's n12 W1 raw RMSE next to full14-cell bars, even though the bar label stated n12. Lead and peer review correctly required matched coverage for the visual ranking. Final Figure03 uses the already-scored existing last3 excluding2021 fixed registry method, which has all14/10 cells, and asserts identical displayed counts. K0 stays in the tables with explicit abstentions and available-intersection ratios. Figure01's title now says “one shared weight,” because the model contains two GBV lags.
+
+5. **Metadata and claim presentation clarified.** Seasonal L4 values are percent coefficient levels; their units now read `percent_of_weighted_lagged_GBV_coefficient_level`, rather than wording that could be mistaken for a growth-rate adjustment. Values are unchanged. Quantitative allowed claims are generated from the fitted/scored tables. The original JSON's pending-review status is superseded only by a separate acceptance receipt after an independent reviewer actually closes review; production adoption stays pending.
+
+The new-source files were still uncommitted during these repairs. Original completed output files are preserved. Frozen input hashes remain checked on every run. `L3_CONVERSION_RESULTS_v1.md` carries all numerical evidence and the failed promotion decision; the closure note records final reproduction and independent acceptance.
+
+## RESUME
+
+Read the result and independently closed review alongside the final acceptance receipt. Do not revive the unequal-coverage chart or the original ambiguous interval normalization. Retain chronological14/10 comparisons and the K0's two genuine abstentions; copy all subsequent work into a new output version.

@@ -1,0 +1,26 @@
+{
+ "slug": "pixelcrash-sync-rentals-ical-merger",
+ "url": "https://github.com/pixelcrash/Sync-Rentals-Calendar",
+ "sampled": true,
+ "total_bytes": 9058,
+ "files": [
+  "allservices.ics",
+  "allservices_events.csv",
+  "icalmerger.php"
+ ],
+ "rows": "allservices.ics: 13 VEVENTs; allservices_events.csv: 13 rows (one per VEVENT); icalmerger.php: n/a (code)",
+ "columns": "allservices_events.csv: uid, channel (SUMMARY), dtstart, dtend, nights, dtstamp. ics VEVENT fields: UID, DTSTART, DTEND, SUMMARY, SEQUENCE, TRANSP, CLASS, DTSTAMP",
+ "date_range": "DTSTART min 2019-01-15, DTEND max 2019-06-05; all DTSTAMP 2019-01-15T22:48:18Z (single generation run)",
+ "how_pulled": "curl -sL https://raw.githubusercontent.com/pixelcrash/Sync-Rentals-Calendar/HEAD/ics/allservices.ics -o allservices.ics; curl -sL https://raw.githubusercontent.com/pixelcrash/Sync-Rentals-Calendar/HEAD/icalmerger.php -o icalmerger.php; gh api repos/pixelcrash/Sync-Rentals-Calendar (metadata + tree); python (re + pandas) to parse VEVENTs into allservices_events.csv",
+ "full_dataset_size": "This IS the full dataset: the repo holds one 2.9 KB ics (13 events, one Austrian listing, Jan-Jun 2019) plus 5 KB PHP and a vendored eluceo/ical library (repo size 31 KB). No larger data exists upstream; the tool only produces more data when run against a host's own private feed URLs.",
+ "description": "A tiny self-hosted PHP script (icalmerger.php, eluceo/ical) that unions a vacation-rental host's Airbnb / Booking.com / Atraveo iCal availability feeds into one calendar, plus one committed output file ics/allservices.ics for a single Austrian rental (kuenstlerzimmer.at). Grain is one VEVENT per blocked date range (DTSTART/DTEND, all-day) with the source channel in SUMMARY; 13 events covering Jan-Jun 2019, 59 blocked nights, but only 4 events carry a channel label (ATRAVEO) and the other 9 have SUMMARY set to their own start date and overlap the first four, so the file reads as a test/demo output of the merge rather than a clean booking record. For ABNB it is a worked example of the per-listing channel-tagged occupancy record (channel mix, length of stay) that a host-side iCal panel would produce, and documents the iCal-feed mechanism as a non-scraping route to Booking/Vrbo/Atraveo availability data (gaps 2 and 9); it carries no signal on its own.",
+ "issues": "No licence file (all rights reserved by default) - reuse of the code or the ics needs a human decision; the ics is a real host's (kuenstlerzimmer.at) calendar, so treat as personal data even though it is public. Data is a single listing, 13 events, 2019 only, and 9 of 13 events have malformed SUMMARY (a date string, not a channel) and duplicate/overlap the labelled events - not a usable time series. The tool was NOT run (needs private feed URLs). Last push Jan 2020, effectively abandoned.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/pixelcrash/Sync-Rentals-Calendar/HEAD/ics/allservices.ics",
+  "https://raw.githubusercontent.com/pixelcrash/Sync-Rentals-Calendar/HEAD/icalmerger.php",
+  "https://api.github.com/repos/pixelcrash/Sync-Rentals-Calendar",
+  "https://api.github.com/repos/pixelcrash/Sync-Rentals-Calendar/contents/",
+  "https://api.github.com/repos/pixelcrash/Sync-Rentals-Calendar/contents/ics"
+ ],
+ "pulled_at": "2026-09-14"
+}

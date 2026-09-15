@@ -1,0 +1,73 @@
+{
+  "theme": "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains",
+  "modality": "gh",
+  "candidates": [
+    {
+      "url": "https://github.com/datamerry/Data-Analysis-on-AirBnb-Florida-Tableau",
+      "name": "Data-Analysis-on-AirBnb-Florida-Tableau",
+      "category": "str_airbnb_direct",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "A single static Airbnb-Florida listings CSV plus a Tableau workbook (bookings, prices, reviews, listing type). No stated vintage or row count in description; last updated 2019-08-19, 0 stars, no license. Looks like one-time coursework, not a maintained scrape or a mirrored city panel.",
+      "why_useful": "Only marginal: a static, undated Florida Airbnb listings snapshot that could be cross-checked against Inside Airbnb Florida coverage, but far too old/thin to fill any numbered gap.",
+      "potential": "low",
+      "geography": "Florida (statewide, unspecified cities)",
+      "time_coverage": "unknown, repo dated 2019",
+      "size_hint": "single CSV + Tableau workbook, size unstated",
+      "last_activity": "2019-08-19",
+      "license": "none stated",
+      "duplicate_of_holding": "overlaps generically with existing Inside Airbnb Florida-adjacent coverage; not clearly better/longer/older",
+      "gap_targets": []
+    },
+    {
+      "url": "https://github.com/reenapinto/-Airbnb-Texas-Price-Prediction",
+      "name": "-Airbnb-Texas-Price-Prediction",
+      "category": "str_airbnb_direct",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "End-to-end ML project (EDA + XGBoost) predicting nightly Airbnb prices for Texas listings; MIT licensed, updated Feb 2026 (recent), 0 stars. Data file(s) presumably a static Texas listings extract (not confirmed via directory listing).",
+      "why_useful": "Marginal — a static, single-vintage Texas listings file at best; the project is a pricing-model tutorial, not a supply/pricing time series. Borderline against the 'generic ML boilerplate' exclusion but flagged since it's Texas-specific and recently updated.",
+      "potential": "low",
+      "geography": "Texas (statewide, cities unspecified)",
+      "time_coverage": "unknown vintage, repo updated 2026-02",
+      "size_hint": "unknown, not confirmed",
+      "last_activity": "2026-02-11",
+      "license": "MIT",
+      "duplicate_of_holding": "",
+      "gap_targets": [2]
+    },
+    {
+      "url": "https://github.com/shefalitakshak/Airbnb-Texas-Tableau-Dashboard",
+      "name": "Airbnb-Texas-Tableau-Dashboard",
+      "category": "str_airbnb_direct",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Tableau dashboard project on Texas Airbnb listings; no description, no license, updated Jan 2024, 0 stars. Underlying data file not confirmed.",
+      "why_useful": "Marginal at best; a dashboard wrapper around what is likely a single-vintage Texas listings extract, no clear time series or new source.",
+      "potential": "low",
+      "geography": "Texas",
+      "time_coverage": "unknown",
+      "size_hint": "unknown",
+      "last_activity": "2024-01-12",
+      "license": "none stated",
+      "duplicate_of_holding": "",
+      "gap_targets": []
+    }
+  ],
+  "queries_run": [
+    "gh search repos: florida airbnb dataset",
+    "gh search repos: gatlinburg airbnb",
+    "gh search repos: scottsdale short term rental OR sedona airbnb",
+    "gh search repos: breckenridge airbnb",
+    "gh search repos: orlando short term rental",
+    "gh search repos: colorado short-term rental data",
+    "gh search repos: airbnb data (sanity check)",
+    "gh search repos: airbnb florida",
+    "gh search repos: smoky mountains rental",
+    "gh search repos: airbnb texas",
+    "gh search repos: vacation rental dataset",
+    "gh search code: gatlinburg (one-time code search)",
+    "WebSearch: site:github.com florida short term rental dataset denver colorado STR data csv (blocked, session web-search budget exhausted)",
+    "WebSearch: site:github.com gatlinburg OR smoky mountains cabin rental data repository (blocked, session web-search budget exhausted)",
+    "WebFetch: github.com/search?q=colorado+short+term+rental+data (HTTP 429)",
+    "WebFetch: github.com/search?q=florida+STR+dataset (HTTP 429)"
+  ],
+  "notes": "This theme came back nearly empty on GitHub's repo-search API. City/state-specific STR queries (Gatlinburg, Scottsdale, Sedona, Breckenridge, Smoky Mountains, Denver, Orlando) returned zero repos in every case; only generic 'airbnb florida' / 'airbnb texas' queries surfaced anything, and those three hits are all small single-vintage coursework/ML-tutorial repos (Tableau dashboards, an XGBoost price-prediction notebook) with no confirmed committed multi-file dataset, no stars, and thin descriptions -- exactly the kind of generic-boilerplate result the brief says to treat skeptically, so all three are rated low potential and none is confirmed to fill a numbered gap. I hit the 6-call hard limit on `gh search repos` before exhausting query variations (never tried topic-based `--topic=` searches, nor state-specific abbreviations like 'FL STR' or 'CO vacation rental', nor city names combined with 'occupancy tax' or 'lodging tax' which per gap #8 might have been more productive). A one-time `gh search code` for 'gatlinburg' returned only unrelated word-list/dictionary repos, not data files. WebSearch was already at its session-wide 200/200 budget before I could run any query for this theme (a shared budget across the concurrent scout swarm), and the two WebFetch attempts at github.com/search HTML pages both hit HTTP 429 (rate limited), so I could not substitute web search for the missing gh search calls. Net: this US sunbelt/mountain STR theme is very likely under-scouted relative to its actual GitHub footprint -- a rerun with fresh `gh search` and `WebSearch` budgets, and queries built around gap #8 (lodging/bed tax collections by city: Florida county tourist development tax, Colorado county sales/lodging tax open-data portals, Nevada/Clark County occupancy, Hawaii-style state tourism offices) and gap #12 (STR ordinance/registration trackers for Scottsdale, Sedona, Breckenridge/Summit County, Gatlinburg/Sevier County, and Florida's 2024 state preemption fight) would likely be far more productive than plain '<city> airbnb dataset' phrasing, since STR platforms rarely commit raw city-level data to GitHub but municipal open-data portals and academic STR-regulation trackers sometimes do."
+}

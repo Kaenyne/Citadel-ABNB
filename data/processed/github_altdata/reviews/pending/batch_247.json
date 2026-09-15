@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:yumilin92/tokyo-airbnb-nlp",
+  "url": "https://github.com/yumilin92/tokyo-airbnb-nlp",
+  "name": "yumilin92/tokyo-airbnb-nlp",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Multilingual sentiment analysis over 400K+ Tokyo Airbnb reviews (English via TextBlob, Japanese via BERT) \u2014 implies a large committed or pulled Tokyo reviews corpus (400k+ reviews), larger than typical single-city Inside Airbnb reviews dumps.",
+  "why_useful": "If the 400k+ review corpus is committed (unverified), it is a substantial Japanese-language review text asset for Tokyo \u2014 useful for a reviews-based stays-index style approach or sentiment tracking in a market where our 123-market reviews index may have thinner Japanese-language coverage.",
+  "potential": "medium",
+  "geography": "Tokyo, Japan",
+  "time_coverage": "unverified (repo updated 2026-03)",
+  "size_hint": "400,000+ reviews claimed",
+  "license": "unknown",
+  "last_activity": "2026-03-22",
+  "gap_targets": [
+   1,
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "If the 400k+ review corpus is committed (unverified), it is a substantial Japanese-language review text asset for Tokyo \u2014 useful for a reviews-based stays-index style approach or sentiment tracking in a market where our 123-market reviews index may have thinner Japanese-language coverage."
+  ]
+ },
+ {
+  "key": "github:jmjung950312-cmd/seoul-airbnb-revpar-optimization",
+  "url": "https://github.com/jmjung950312-cmd/seoul-airbnb-revpar-optimization",
+  "name": "jmjung950312-cmd/seoul-airbnb-revpar-optimization",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "32,061 Seoul Airbnb listings across all 25 districts, explicitly sourced from Inside Airbnb (Seoul), covering Oct 2024-Sep 2025; repo has a data/ directory with raw + processed files and notebooks 00-06 (EDA through LightGBM ADR/occupancy prediction and K-Means clustering into 4 market segments). 11 commits, no license stated, low stars.",
+  "why_useful": "Seoul is an APAC market outside our current Inside Airbnb 13-city + 120-market panels; a 32k-listing Seoul dataset with RevPAR fields would be a real gap-filler if it holds a genuine listings+calendar extract (needs directory check).",
+  "potential": "medium",
+  "geography": "Seoul, South Korea",
+  "time_coverage": "unverified",
+  "size_hint": "32,061 listings claimed",
+  "license": "unknown",
+  "last_activity": "2026-03-23",
+  "gap_targets": [
+   1,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Seoul is an APAC market outside our current Inside Airbnb 13-city + 120-market panels; a 32k-listing Seoul dataset with RevPAR fields would be a real gap-filler if it holds a genuine listings+calendar extract (needs directory check).",
+   "Seoul is not in our held 13-city Inside Airbnb panel; this is a recent (2024-25) committed snapshot with ADR/occupancy fields for an APAC market outside our current coverage, useful if the live Inside Airbnb Seoul dump has already rolled off the ~1-year CDN retention window."
+  ]
+ },
+ {
+  "key": "github:crystalvf/florida-airbnb",
+  "url": "https://github.com/CrystalVF/Florida-Airbnb",
+  "name": "Florida-Airbnb (CrystalVF)",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Capstone project analyzing Broward County (Fort Lauderdale, used as a South Florida / Miami-area proxy) Inside Airbnb data, snapshot dated 2025-06-24. data/raw/ has listings.csv.gz and calendar.csv.gz committed directly to the repo (plus a DATA_SOURCE_LINKS.md); data/clean/ is empty placeholders. README frames it around ADR, occupancy rate, RevPAL as KPIs. R/SQL/scripts folders for the analysis pipeline.",
+  "why_useful": "A committed, single-date Inside Airbnb snapshot for a Florida sunbelt market (Broward/South Florida) we do not explicitly hold in our 13-city or 120-market cohorts; could extend geographic coverage for gap-relevant Florida ADR/occupancy checks, though it is only one snapshot date and duplicates our existing Inside Airbnb methodology rather than adding a new data type.",
+  "potential": "medium",
+  "geography": "Broward County / South Florida, USA",
+  "time_coverage": "single snapshot, 2025-06-24",
+  "size_hint": "repo ~16MB; two gzipped CSVs (listings, calendar)",
+  "license": "none declared",
+  "last_activity": "2025-10-07",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "Same Inside Airbnb source/methodology we already hold for other cities, but this specific Florida market and date are not in our current panel",
+  "hits": 1,
+  "themes": [
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "A committed, single-date Inside Airbnb snapshot for a Florida sunbelt market (Broward/South Florida) we do not explicitly hold in our 13-city or 120-market cohorts; could extend geographic coverage for gap-relevant Florida ADR/occupancy checks, though it is only one snapshot date and duplicates our existing Inside Airbnb methodology rather than adding a new data type."
+  ]
+ },
+ {
+  "key": "github:junheecho/crawl-inside-airbnb",
+  "url": "https://github.com/junheecho/crawl-inside-airbnb",
+  "name": "junheecho/crawl-inside-airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small script to download all files listed on insideairbnb.com/get-the-data.html (i.e., automates a full bulk pull of every city/vintage currently exposed on the Inside Airbnb CDN in one run).",
+  "why_useful": "Not new data, but a ready one-command method to snapshot the entire current Inside Airbnb catalogue at once (all cities, not just our 13); useful for scheduling a fuller point-in-time capture going forward, and to check for markets/vintages we don't currently pull.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2019-05-25",
+  "geography": "global (whatever get-the-data.html currently lists)",
+  "time_coverage": "current CDN snapshot only, not historical",
+  "size_hint": "n/a (tool only)",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "overlaps our own Inside Airbnb pull tooling; only useful if it broadens city coverage beyond our 13-city/120-market panel",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)"
+  ],
+  "why_all": [
+   "Not new data, but a ready one-command method to snapshot the entire current Inside Airbnb catalogue at once (all cities, not just our 13); useful for scheduling a fuller point-in-time capture going forward, and to check for markets/vintages we don't currently pull."
+  ]
+ },
+ {
+  "key": "github:yassineeng/web-scraping-and-dataset-download-inside-airbnb",
+  "url": "https://github.com/YassineEng/Web-scraping-and-dataset-download-Inside-Airbnb",
+  "name": "YassineEng/Web-scraping-and-dataset-download-Inside-Airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper + dataset-download tooling targeting the Inside Airbnb website (method, not a stored historical archive per description).",
+  "why_useful": "Possible alternate acquisition path for Inside Airbnb data; marginal since it likely just re-pulls current CDN files like our own pipeline.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2025-10-28",
+  "geography": "unspecified",
+  "time_coverage": "current snapshot only (unconfirmed)",
+  "size_hint": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "likely duplicates our existing Inside Airbnb capture pipeline",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)"
+  ],
+  "why_all": [
+   "Possible alternate acquisition path for Inside Airbnb data; marginal since it likely just re-pulls current CDN files like our own pipeline."
+  ]
+ }
+]

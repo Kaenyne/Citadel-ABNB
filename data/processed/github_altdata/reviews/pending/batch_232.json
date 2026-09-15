@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:vinicius-teixeirac/gdeltforge",
+  "url": "https://github.com/Vinicius-Teixeirac/GdeltForge",
+  "name": "GdeltForge",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0, recently updated (11 Sep 2026) tool that forges raw GDELT archives (Events, GKG, Mentions) into cleaned, reproducibly-sampled, cross-referenced Parquet files for downstream analysis.",
+  "why_useful": "Could shortcut building a clean, joined Events+GKG+Mentions Parquet pipeline instead of writing one from scratch; useful plumbing for a GDELT-based travel/regulatory news nowcast.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "depends on GDELT archive range pulled",
+  "size_hint": "no committed data; ETL tool",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-11",
+  "gap_targets": [
+   14,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Could shortcut building a clean, joined Events+GKG+Mentions Parquet pipeline instead of writing one from scratch; useful plumbing for a GDELT-based travel/regulatory news nowcast."
+  ]
+ },
+ {
+  "key": "github:panchicore/es-gdelt",
+  "url": "https://github.com/panchicore/es-gdelt",
+  "name": "es-gdelt",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Indexes the entire GDELT events database (including the 15-minute real-time feed) into Elasticsearch for query/aggregation.",
+  "why_useful": "An alternative ingestion path if a searchable/aggregatable store of GDELT events is wanted instead of flat files; niche but functional (14 stars, still starred/updated recently for a 2025 repo).",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "GDELT full history + real-time",
+  "size_hint": "no committed data; ETL/indexing tool",
+  "license": "unspecified",
+  "last_activity": "2025-09-09",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "An alternative ingestion path if a searchable/aggregatable store of GDELT events is wanted instead of flat files; niche but functional (14 stars, still starred/updated recently for a 2025 repo)."
+  ]
+ },
+ {
+  "key": "github:mohith-akash/global-news-intel-platform",
+  "url": "https://github.com/Mohith-akash/Global-News-Intel-Platform",
+  "name": "Global-News-Intel-Platform",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed, actively updated (7 Sep 2026) end-to-end pipeline ingesting 100K+ daily GDELT events into MotherDuck/DuckDB with Dagster orchestration and a text-to-SQL chat interface, built to run at $0/month on free tiers.",
+  "why_useful": "A ready-made low-cost orchestration pattern for standing up a continuously-updating GDELT store filtered to Airbnb/travel/STR-regulation keywords, if the team wants an ongoing news-event nowcast feed rather than one-off pulls.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "ongoing (ingests daily going forward)",
+  "size_hint": "100K+ events/day ingested, no historical backfill dataset committed",
+  "license": "MIT",
+  "last_activity": "2026-09-07",
+  "gap_targets": [
+   14,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "A ready-made low-cost orchestration pattern for standing up a continuously-updating GDELT store filtered to Airbnb/travel/STR-regulation keywords, if the team wants an ongoing news-event nowcast feed rather than one-off pulls."
+  ]
+ },
+ {
+  "key": "github:mehdi-jahani/gdelt-downloader",
+  "url": "https://github.com/mehdi-jahani/gdelt-downloader",
+  "name": "gdelt-downloader",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script to bulk-download GDELT GKG data with proxy rotation, weekday/hour filtering, resume capability, and file validation -- built for large/robust historical backfills.",
+  "why_useful": "Practical for pulling a long historical GKG backfill (rather than the live Doc API's shorter-window queries) if a multi-year Airbnb/travel-news tone series is wanted; robustness features (resume, validation) matter for a multi-day bulk pull.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "GDELT GKG history (2015-present)",
+  "size_hint": "no committed data; downloader utility",
+  "license": "unspecified",
+  "last_activity": "2025-10-24",
+  "gap_targets": [
+   14,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Practical for pulling a long historical GKG backfill (rather than the live Doc API's shorter-window queries) if a multi-year Airbnb/travel-news tone series is wanted; robustness features (resume, validation) matter for a multi-day bulk pull."
+  ]
+ },
+ {
+  "key": "github:iceloof/googlenews",
+  "url": "https://github.com/Iceloof/GoogleNews",
+  "name": "GoogleNews (Iceloof)",
+  "category": "social_text_news",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper of Google News search results: title, media source, date, description, link per query; filter by language, region, custom date range. MIT, 135 commits. No bundled data.",
+  "why_useful": "Could build a point-in-time news-volume proxy for Airbnb / STR-regulation / travel-demand keyword mentions by date, filterable to specific windows around guide dates -- cheap alternative to paid news APIs. Fragile to Google blocking at scale.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "unknown exact date; 135 commits",
+  "geography": "region-filterable",
+  "time_coverage": "current + custom date ranges (not a fixed historical archive)",
+  "size_hint": "acquisition method",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers"
+  ],
+  "why_all": [
+   "Could build a point-in-time news-volume proxy for Airbnb / STR-regulation / travel-demand keyword mentions by date, filterable to specific windows around guide dates -- cheap alternative to paid news APIs. Fragile to Google blocking at scale."
+  ]
+ }
+]

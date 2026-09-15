@@ -1,0 +1,147 @@
+[
+ {
+  "key": "github:facundoolano/app-store-scraper",
+  "url": "https://github.com/facundoolano/app-store-scraper",
+  "name": "app-store-scraper (facundoolano)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js library (MIT, 1422 stars, updated 12 Sep 2026) that hits Apple's public iTunes/App Store lookup and search endpoints with no auth/API key. Returns per-app fields including current category rank, rating count (proxy for cumulative review count), rating average, price, and version history for any app id -- e.g. Airbnb's iOS app id 401626263, plus Vrbo, Booking.com, Expedia. No data committed; a scheduled run would need to be built to accumulate a rank/review-count time series.",
+  "why_useful": "Same rationale as the Google Play scraper above but for iOS -- lets us build an Airbnb iOS app review-count/rating time series as an engagement proxy (gap #5) without touching airbnb.com.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "license": "not independently confirmed (commonly MIT)",
+  "last_activity": "not confirmed",
+  "geography": "global (App Store)",
+  "time_coverage": "live",
+  "size_hint": "n/a (library)",
+  "duplicate_of_holding": "",
+  "hits": 7,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series",
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)",
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Same rationale as the Google Play scraper above but for iOS -- lets us build an Airbnb iOS app review-count/rating time series as an engagement proxy (gap #5) without touching airbnb.com.",
+   "Fills gap #5 (engagement: app downloads/rankings) and gap #14 (app-store review scrapers) as a zero-cost, no-login method to build our own point-in-time panel of Airbnb's and competitors' App Store rank and review-count going forward from whenever we start running it; does not backfill history.",
+   "Addresses gap 5 (engagement: app rankings/reviews) and gap 14 (app-store review scrapers) as a acquisition method for point-in-time snapshots of ABNB's App Store standing; would need to be run repeatedly by us to build a time series, and per repo rules that scraping decision is left to a human.",
+   "Could be run periodically going forward to build an Airbnb-app category-ranking / rating-count time series as a downloads/engagement proxy (gap 5); does not backfill history (no historical dataset committed), only forward point-in-time snapshots.",
+   "Directly answers the 'app release-notes scraper' theme: `versionHistory` gives Airbnb's iOS release cadence and changelog text, which can be timestamped to flag feature launches (e.g. new product lines, RNPL rollout, regional expansion mentions) ahead of earnings commentary -- a genuinely point-in-time-able series since Apple's version-history is itself dated.",
+   "CONTEXT gap #5 wants app download/ranking history as an engagement proxy for Airbnb's own app; this tool can pull Airbnb's current App Store rank/rating/review volume on a schedule to build a point-in-time series going forward (does not recover history retroactively), and the review text stream is a free sentiment/complaint source (e.g. cancellation/RNPL friction mentions).",
+   "Same engagement-proxy use case as gplay-scraper but for iOS App Store rankings/reviews -- category-level 'Travel' chart position is a genuinely non-Airbnb-branded engagement series that could be tracked for Airbnb, Vrbo, Booking, Expedia together."
+  ]
+ },
+ {
+  "key": "other:https://wfhresearch.com/data",
+  "url": "https://wfhresearch.com/data/",
+  "name": "WFH Research SWAA data portal",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Direct Excel and JSON downloads of the Survey of Working Arrangements and Attitudes (SWAA), Bloom/Davis/Barrero's monthly US survey on work-from-home share, days-WFH, and related attitudes since May 2020; also an application process for anonymized respondent-level microdata. No GitHub mirror found \u2014 data lives on the project's own site, not a repo.",
+  "why_useful": "This IS the WFH Research SWAA dataset named in gap 16 (remote-work / long-stay demand proxy for ABNB's long-stay and 'live anywhere' nights mix). Point-in-time monthly releases could be vintage-tracked.",
+  "potential": "high",
+  "gap_targets": [
+   16
+  ],
+  "geography": "US (national + some metro splits)",
+  "time_coverage": "May 2020 - present, monthly",
+  "size_hint": "Excel/JSON summary tables; microdata via application",
+  "license": "unclear \u2014 check site terms before quoting",
+  "last_activity": "actively maintained (monthly updates per site)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "This IS the WFH Research SWAA dataset named in gap 16 (remote-work / long-stay demand proxy for ABNB's long-stay and 'live anywhere' nights mix). Point-in-time monthly releases could be vintage-tracked."
+  ]
+ },
+ {
+  "key": "github:facundoolano/google-play-scraper",
+  "url": "https://github.com/facundoolano/google-play-scraper",
+  "name": "google-play-scraper",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js scraper (MIT, 2963 stars, updated 13 Sep 2026) for Google Play store pages: install-count buckets (e.g. \"100M+\"), rating count, rating average, category chart rank (top-free/top-grossing lists), and reviews text, for any Android package id including com.airbnb.android and competitors (com.booking, com.tripadvisor, com.expedia.bookings). No auth needed, no data committed.",
+  "why_useful": "Same as the iOS counterpart -- free, no-key method to build a going-forward Android download/rank/review-count time series for Airbnb vs. Booking/Expedia/Vrbo; the most-starred, most actively maintained project in this space, with a whole family of derivative wrappers (see google-play-api, JoMingyu port).",
+  "potential": "high",
+  "geography": "global (per-country param)",
+  "time_coverage": "current snapshot only; no historical archive",
+  "size_hint": "library, no dataset",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5,
+   14
+  ],
+  "hits": 3,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series",
+   "Search/SEO and referral data: Bing/Google keyword volume tools, SERP scrapers, Common Crawl web graph, backlink datasets, AI-bot crawler traffic stats (Cloudflare, Vercel)"
+  ],
+  "why_all": [
+   "Same as the iOS counterpart -- free, no-key method to build a going-forward Android download/rank/review-count time series for Airbnb vs. Booking/Expedia/Vrbo; the most-starred, most actively maintained project in this space, with a whole family of derivative wrappers (see google-play-api, JoMingyu port).",
+   "Same use case as app-store-scraper but for Android: could snapshot Airbnb's Play Store install-count band, rating, and review volume as an engagement proxy (gap 5). No rank-chart data directly.",
+   "Same use case as app-store-scraper but for Android/Google Play \u2014 Airbnb app ranking and review-volume snapshots as an engagement proxy (gap 5); again forward-only, no historical archive, and author states it's no longer actively maintained beyond community PRs."
+  ]
+ },
+ {
+  "key": "github:appstorecat/appstorecat",
+  "url": "https://github.com/appstorecat/appstorecat",
+  "name": "appstorecat",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-hosted, open-source (MIT) 'app intelligence toolkit' with a Docker/MySQL/Redis stack. Explicitly does per-app 'App rankings' with 'per-app pivot across countries x collections x categories' and 'daily snapshots of top free/paid/grossing' for both App Store and Google Play, plus keyword density and locale-change tracking. 227 commits, 39 stars. No data committed to the repo itself \u2014 you self-host and it accumulates history in your own DB going forward.",
+  "why_useful": "Closest thing found to a genuine rank-HISTORY tool: if stood up now it would start building a daily top-charts + per-app rank time series for Airbnb's travel-category rank on both stores, directly targeting gap 5's 'app downloads/rankings history'. It only starts collecting once deployed \u2014 no backfill of past ranks.",
+  "potential": "high",
+  "geography": "global (multi-country collections)",
+  "time_coverage": "prospective only from time of deployment; no historical backfill",
+  "license": "MIT",
+  "last_activity": "recent (227 commits, small but apparently active project)",
+  "size_hint": "application code, self-hosted DB not included",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "App download and ranking histories: App Store / Google Play rank scrapers, app-store-scraper, google-play-scraper, AppFigures/Sensor Tower/data.ai open samples, app review-count time series"
+  ],
+  "why_all": [
+   "Closest thing found to a genuine rank-HISTORY tool: if stood up now it would start building a daily top-charts + per-app rank time series for Airbnb's travel-category rank on both stores, directly targeting gap 5's 'app downloads/rankings history'. It only starts collecting once deployed \u2014 no backfill of past ranks."
+  ]
+ },
+ {
+  "key": "github:crissyfield/crux-dumps",
+  "url": "https://github.com/crissyfield/crux-dumps",
+  "name": "crux-dumps",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Monthly Chrome UX Report (CrUX) popularity-rank dumps as .txt.xz files, one per rank threshold (top 1k/5k/10k/...), covering Feb 2021 - Aug 2026 monthly. Each row is origin + numeric popularity rank (real Chrome-browser usage based, not a modeled estimate). Recent monthly files ~17-19M entries, 85-97 MiB compressed. Free mirror of data that otherwise needs a BigQuery export.",
+  "why_useful": "Gives a monthly, real-user popularity-rank time series for airbnb.com (and vrbo.com, booking.com, expedia.com, vacasa.com etc.) back to 2021 with no API key or BigQuery bill \u2014 directly fills gap #5 (web-traffic/engagement proxy) and is genuinely point-in-time (dated monthly snapshots, not a pulled-today number), unlike Google Trends which the team already found unusable because it isn't point-in-time.",
+  "potential": "high",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "85-97 MiB per monthly compressed dump, ~66 months",
+  "time_coverage": "2021-02 to 2026-08, monthly",
+  "geography": "global (per-origin, not geo-split)",
+  "license": "unspecified/unknown (check repo)",
+  "last_activity": "2026-09-09",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Gives a monthly, real-user popularity-rank time series for airbnb.com (and vrbo.com, booking.com, expedia.com, vacasa.com etc.) back to 2021 with no API key or BigQuery bill \u2014 directly fills gap #5 (web-traffic/engagement proxy) and is genuinely point-in-time (dated monthly snapshots, not a pulled-today number), unlike Google Trends which the team already found unusable because it isn't point-in-time."
+  ]
+ }
+]

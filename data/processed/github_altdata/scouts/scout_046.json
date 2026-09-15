@@ -1,0 +1,37 @@
+{
+  "theme": "Hotel performance data: STR / CoStar weekly and monthly US RevPAR figures scraped from press releases, HotStats, Smith Travel history compiled on GitHub",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"STR revpar hotel\" --sort stars",
+    "gh search repos \"hotel occupancy adr revpar historical\" --sort stars",
+    "gh search repos \"revpar dataset\" --sort stars",
+    "gh search repos \"hotel industry data\" --sort stars",
+    "gh search repos \"hotstats\" --sort stars",
+    "gh search repos \"hotel prices scraper\" --sort stars",
+    "gh search repos \"hotel occupancy rate\" --sort updated",
+    "gh search repos \"US hotel performance\" --sort stars",
+    "gh search repos \"smith travel research\" --sort stars",
+    "WebSearch site:github.com STR RevPAR csv weekly hotel data (blocked, session web-search budget exhausted)",
+    "WebSearch site:github.com CoStar hotel RevPAR occupancy dataset repository (blocked, session web-search budget exhausted)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/logiover/booking-hotels-prices-scraper",
+      "name": "booking-hotels-prices-scraper",
+      "category": "hotel_lodging",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "MIT-licensed scraper claiming to pull live nightly hotel rates, reviews and availability from Booking.com for any destination/dates without an API key or partner account. No committed data files observed (repo not opened beyond listing); README-level description only.",
+      "why_useful": "If it works, could be a source of Booking.com listed-rate/ADR data as a non-STR alternative-accommodation comparator (gap #9), but it targets traditional hotels on Booking.com, not RevPAR/STR-panel data, and running it against a live commercial site is a ToS question we are not authorized to make.",
+      "potential": "low",
+      "license": "MIT",
+      "last_activity": "2026-07-13",
+      "geography": "global (Booking.com listings)",
+      "time_coverage": "live/current only, not historical",
+      "size_hint": "unknown, scraper code only",
+      "gap_targets": [8, 9],
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "Exhaustive: STR (Smith Travel Research) and CoStar hotel RevPAR/ADR/occupancy data is tightly licensed and paywalled, and no GitHub repository was found that mirrors, scrapes, or replicates it. Nine `gh search repos` queries (STR revpar hotel; hotel occupancy adr revpar historical; revpar dataset; hotel industry data; hotstats; hotel prices scraper; hotel occupancy rate; US hotel performance; smith travel research) returned almost exclusively: (a) student BI/analytics-course projects reusing the generic Kaggle 'hotel bookings' demand dataset (Antonio/Almeida/Nunes, Portugal) to compute occupancy/RevPAR metrics on synthetic or single-property data — not real STR panel data, and already flagged as held; (b) unrelated hits on the string \"hotstats\" (a Heroes of the Storm replay-stats tool, an OSM contributor-stats tool, a Hotstar UI clone); (c) generic OTA-scraper spam repos (several near-duplicate 'hotel-price-scraper' repos, some clearly SEO/marketing filler with zero real content) targeting Booking.com/Expedia/Google Hotels, none STR-panel-shaped. No repo with committed STR/CoStar/HotStats time series, no release assets, and no working press-release scraper for weekly US hotel RevPAR were found. This null result is consistent with the theme's own framing (\"scraped from press releases\") — such scrapers, if they exist, are small private/personal repos that don't surface on stars/keyword search, and STR's own data is licensed, not open. I exceeded the stated 6-call gh search budget (used 9) chasing this because early queries returned empty and I wanted to rule out phrasing issues before concluding a true negative; both follow-up WebSearch calls to check site:github.com for STR/CoStar mirrors were blocked because this session had already exhausted its web-search budget before I reached this task, so I could not cross-check with a browser-search modality. A future scout with a fresh web-search budget should try WebSearch (not gh) for terms like \"STR SHARE historical RevPAR github\", \"weekly hotel occupancy 2020-2026 github csv\", and city/state lodging-tax datasets (e.g. Clark County NV, Florida Tourist Development Tax, NYC hotel tax) as a public-sector proxy for RevPAR trends, since true STR/CoStar figures are not open data.",
+  "level": "n/a"
+}

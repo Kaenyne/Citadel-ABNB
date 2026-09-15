@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:fivethirtyeight/uber-tlc-foil-response",
+  "url": "https://github.com/fivethirtyeight/uber-tlc-foil-response",
+  "name": "uber-tlc-foil-response",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "FiveThirtyEight's classic FOIL-request dataset from NYC TLC: uber-raw-data-apr14.csv through sep14.csv (6 monthly files, ~4.5M Uber pickups Apr-Sep 2014, lat/lon/base), uber-raw-data-janjune-15.csv.zip (14.3M Uber pickups Jan-Jun 2015 with dispatching/affiliated base + location ID), Uber-Jan-Feb-FOIL.csv (aggregated daily Uber stats Jan-Feb 2015), and other-FHV-data/ covering 10 other NYC for-hire-vehicle companies plus other-FHV-data-jan-aug-2015.csv (daily pickups, 329 FHV companies, Jan-Aug 2015). NYC only, CC-BY-4.0 (parent fivethirtyeight/data repo), 735 stars, last updated Aug 2026 (repo itself, not the data vintage which is 2014-15).",
+  "why_useful": "Point-in-time historical rideshare-volume snapshot for NYC predating most modern coverage; static and fully committed so it is trivially reproducible without a live pull, useful as an older baseline/backtest period for a ground-travel demand proxy (gap #10).",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "New York City",
+  "time_coverage": "2014-2015",
+  "size_hint": "~19M Uber pickup rows + company-level FHV aggregates",
+  "license": "Public FOIL-released data; repo unlicensed/MIT-like",
+  "last_activity": "static since ~2015, still hosted",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi",
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data",
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Point-in-time historical rideshare-volume snapshot for NYC predating most modern coverage; static and fully committed so it is trivially reproducible without a live pull, useful as an older baseline/backtest period for a ground-travel demand proxy (gap #10).",
+   "A city-level ground-transport activity proxy of the kind gap 10 asks for (airport/ground transport capacity and traffic); mainly useful as a worked example of NYC TLC/FHV data structure rather than current data (2014-15 vintage) - would need the live TLC portal for present quarters.",
+   "A real committed multi-company platform-trip dataset with a genuine method (FOIL request) for pulling non-Airbnb platform volumes; useful as a template for how a cross-platform gig-economy volume series could be constructed, and as a very old baseline for Uber's early growth curve. Data itself is a decade stale so it does not directly nowcast anything in gap list; value is methodological (FOIL-request approach to force disclosure of platform-level trip volumes) rather than current data."
+  ]
+ },
+ {
+  "key": "github:piebro/deutsche-bahn-data",
+  "url": "https://github.com/piebro/deutsche-bahn-data",
+  "name": "deutsche-bahn-data",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Historical Deutsche Bahn train schedule, delay (minutes late), cancellation (arrival/departure separately), and station data. Raw API responses (parquet-wrapped XML/JSON) and monthly processed parquet files (20 columns: station, train ID, planned/actual times, delay, cancellation flag) for ~100 largest stations Jul 2024-Nov 2025, then all German stations Nov 2025-present (with a known 2025-11 to 2026-07 API-outage gap). Repo git history was rewritten to drop large files; full data now published on Hugging Face. CC BY 4.0 (DB) data licence.",
+  "why_useful": "German/European rail punctuality and cancellation-rate time series at near-daily granularity \u2014 a EU ground-travel supply/demand and disruption proxy (gap #10) and a possible cancellation-rate methodology analogue for the RNPL/cancellation thesis (gap #3), even though the underlying business (rail) differs from STR bookings.",
+  "potential": "medium",
+  "gap_targets": [
+   10,
+   3
+  ],
+  "geography": "Germany (national rail network)",
+  "time_coverage": "Jul 2024-present (with a documented outage gap)",
+  "size_hint": "Monthly parquet files, ~100-all stations x daily train movements",
+  "license": "MIT (code); CC BY 4.0 Deutsche Bahn (data)",
+  "last_activity": "active as of the 2026 README reference",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "German/European rail punctuality and cancellation-rate time series at near-daily granularity \u2014 a EU ground-travel supply/demand and disruption proxy (gap #10) and a possible cancellation-rate methodology analogue for the RNPL/cancellation thesis (gap #3), even though the underlying business (rail) differs from STR bookings."
+  ]
+ },
+ {
+  "key": "github:joy-pyne/border_crossing_entry_data",
+  "url": "https://github.com/Joy-Pyne/Border_Crossing_Entry_Data",
+  "name": "Joy-Pyne/Border_Crossing_Entry_Data",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "14-star notebook (Joy main.ipynb, 1.2MB) analysing the BTS/data.gov 'Border Crossing Entry Data' dataset (monthly US land-border crossings by port, state, measure -- pedestrians, personal vehicles, trucks, buses, trains -- for the US-Canada and US-Mexico borders, back to 1996, at data.bts.gov/Research-and-Statistics/Border-Crossing-Entry-Data/keg4-3bc2). Repo itself is a notebook, not a raw data mirror; the underlying dataset lives at the BTS/data.gov URL.",
+  "why_useful": "Points directly to the official BTS Border Crossing Entry Data API/download (monthly, 1996-present, all US land ports, mode-level detail), which is a genuine and currently free national-level cross-border volume series relevant to gap #10; better to pull straight from data.bts.gov than via this notebook, but this and ~15 nearly-identical student repos (jiy15, GauravSingh7400, dipankar9794, TejPotu, etc. -- all re-analyzing the same data.gov dataset) confirm the source and its stable Socrata endpoint id (keg4-3bc2).",
+  "potential": "medium",
+  "license": "none stated",
+  "last_activity": "2025-04-22",
+  "size_hint": "source dataset is a multi-hundred-thousand-row Socrata table; this repo just has a notebook",
+  "time_coverage": "1996-present (monthly) per the underlying BTS dataset",
+  "geography": "US land border ports (Canada and Mexico borders)",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Points directly to the official BTS Border Crossing Entry Data API/download (monthly, 1996-present, all US land ports, mode-level detail), which is a genuine and currently free national-level cross-border volume series relevant to gap #10; better to pull straight from data.bts.gov than via this notebook, but this and ~15 nearly-identical student repos (jiy15, GauravSingh7400, dipankar9794, TejPotu, etc. -- all re-analyzing the same data.gov dataset) confirm the source and its stable Socrata endpoint id (keg4-3bc2)."
+  ]
+ },
+ {
+  "key": "github:pontouamringab68/thailand-statistics-analyzer",
+  "url": "https://github.com/pontouamringab68/thailand-statistics-analyzer",
+  "name": "thailand-statistics-analyzer",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "a one-command Python tool pulling Thailand's official national-statistics SDMX API across sectors, with an explicit worked example pulling 'International tourist arrivals to Thailand' with time-based filtering/historical comparison; no data files committed; no license stated; 1 commit",
+  "why_useful": "Fills part of gap 7 (APAC regional travel volume \u2014 Thailand named explicitly) as a ready-made SDMX puller for Thailand visitor arrivals, which we don't currently have a method for.",
+  "potential": "medium",
+  "license": "none stated",
+  "last_activity": "single commit, date not confirmed",
+  "geography": "Thailand",
+  "time_coverage": "whatever the SDMX API exposes historically",
+  "size_hint": "method only, no data committed",
+  "hits": 2,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Fills part of gap 7 (APAC regional travel volume \u2014 Thailand named explicitly) as a ready-made SDMX puller for Thailand visitor arrivals, which we don't currently have a method for.",
+   "Concrete route into Thailand's national tourism-arrivals data (APAC volume, gap #7) without hand-rolling an SDMX query against NSO Thailand; very low maturity (0 stars, 1 commit) so treat as a starting point/proof of API existence rather than a finished pipeline."
+  ]
+ },
+ {
+  "key": "github:firstof9/py-gasbuddy",
+  "url": "https://github.com/firstof9/py-gasbuddy",
+  "name": "py-gasbuddy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (18 stars, updated 7 Sep 2026, MIT) that queries GasBuddy's GraphQL API for station-level fuel prices by station ID, zip, or city; returns current regular/mid/premium/diesel price and station metadata. No historical data committed \u2014 a live pull method only.",
+  "why_useful": "GasBuddy crowd-sourced gas prices are a leading, high-frequency (sub-daily) proxy for road-trip cost, which is the key substitute-cost driver for domestic drive-to leisure travel (gap #10, road/fuel theme); pairing weekly national averages with holiday-driving forecasts could feed a NA leisure-demand nowcast alongside TSA and nights data. Would need a scheduled pull to build a point-in-time series from today forward; no backfill.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-07",
+  "geography": "US",
+  "time_coverage": "live/current only, no history",
+  "size_hint": "small library, no data files",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "GasBuddy crowd-sourced gas prices are a leading, high-frequency (sub-daily) proxy for road-trip cost, which is the key substitute-cost driver for domestic drive-to leisure travel (gap #10, road/fuel theme); pairing weekly national averages with holiday-driving forecasts could feed a NA leisure-demand nowcast alongside TSA and nights data. Would need a scheduled pull to build a point-in-time series from today forward; no backfill."
+  ]
+ }
+]

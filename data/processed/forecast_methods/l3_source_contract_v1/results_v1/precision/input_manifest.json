@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-09-14",
+  "files": {
+    "audit_facts.json": {
+      "original_path": "Manual bounded primary SEC audit, 2026-09-14",
+      "sha256": "b16bcb125f08598449920fea98b73b79e1c033f9239db878fc0b0049b026d1da",
+      "transform": "compact numeric facts and paraphrased provenance; no raw HTML/archive hash claim"
+    },
+    "calendar.csv": {
+      "original_path": "data/processed/forecast_methods/harness/calendar.csv",
+      "original_sha256": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+      "sha256": "6e762434634853174e60368d21b8fde2298d48d4358bbd11e8be13d95fb3a63f",
+      "transform": "column/row projection only; original values preserved"
+    },
+    "frozen_panel.csv": {
+      "original_path": "data/processed/overnight/02_kpi_panel_quarterly.csv",
+      "original_sha256": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+      "sha256": "a836cdf5fa3f48151bbc9d116171a8268e9aefba721504cb9da656883372796f",
+      "transform": "column/row projection only; original values preserved"
+    },
+    "lambda_basis.csv": {
+      "original_path": "data/processed/forecast_methods/cohort_fx_v2/results_v2/kernel_inputs.csv",
+      "original_sha256": "cc33a6bb9567787e0de851b0c03420ecab412ec3ed62c21769beb4f9bd636114",
+      "sha256": "259e63619db93cc9c4066eda1e1a4c19f56f27d3ab31468cc83c009a070bd255",
+      "transform": "column/row projection only; original values preserved"
+    }
+  }
+}

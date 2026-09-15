@@ -1,0 +1,63 @@
+{
+  "theme": "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"hotel booking demand dataset\" --sort stars",
+    "gh search repos \"revenue management hotel dataset cancellation lead time\" --sort stars",
+    "gh search repos \"hotel PMS dataset open\" --sort stars",
+    "gh search repos \"hotel occupancy dataset\" --sort stars",
+    "gh search repos \"hotel reservations dataset\" --sort stars",
+    "gh search repos \"expedia hotel recommendations dataset\" --sort stars",
+    "gh search repos \"open source PMS hotel management system\" --sort stars",
+    "gh search repos \"airline booking curve lead time\" --sort stars",
+    "gh search repos \"H1 H2 hotel Antonio Almeida Nunes\" --sort stars"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/samd22/Hotel-Booking-Demand-Dataset",
+      "name": "Hotel-Booking-Demand-Dataset (samd22)",
+      "category": "hotel_lodging",
+      "data_kind": "both",
+      "what_it_holds": "Committed copy of the Antonio/Almeida/Nunes (2019, Data in Brief) Portugal H1/H2 hotel booking demand CSVs (Lisbon resort + Algarve city hotel, ~119k reservations 2015-2017, with lead_time, is_canceled, adr, stays_in_week/weekend_nights, arrival_date, country, market_segment, deposit_type, previous_cancellations) plus a cancellation-prediction notebook.",
+      "why_useful": "This is the exact dataset the team already holds per CONTEXT.md; flagged only as a mirror/backup copy with the raw CSV committed to the repo (useful if the original Kaggle/ScienceDirect source becomes unavailable). No new years or markets beyond what is already held.",
+      "potential": "low",
+      "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held per CONTEXT.md line 28",
+      "geography": "Portugal (Lisbon, Algarve)",
+      "time_coverage": "2015-07 to 2017-08",
+      "size_hint": "~119,390 rows, 2 CSVs (H1 resort hotel, H2 city hotel)",
+      "license": "unspecified",
+      "last_activity": "2024-06-06"
+    },
+    {
+      "url": "https://github.com/Shelly74/Hotel-booking-cancellation-",
+      "name": "Hotel-booking-cancellation- (Shelly74)",
+      "category": "hotel_lodging",
+      "data_kind": "both",
+      "what_it_holds": "Another committed copy of the same Antonio/Almeida/Nunes H1/H2 CSVs plus cancellation-prediction modeling code, MIT licensed, actively updated (Jul 2026).",
+      "why_useful": "Alternate mirror of the same dataset with an explicit open license (MIT) and recent activity, in case a clean licensed copy is wanted instead of the Kaggle download.",
+      "potential": "low",
+      "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held",
+      "geography": "Portugal",
+      "time_coverage": "2015-2017",
+      "size_hint": "~119k rows",
+      "license": "MIT",
+      "last_activity": "2026-07-14"
+    },
+    {
+      "url": "https://github.com/RitvikRRy/Algorithmic-learning-Project",
+      "name": "Algorithmic-learning-Project (Expedia recommendations)",
+      "category": "competitor_ota",
+      "data_kind": "pointer_to_external_host",
+      "what_it_holds": "Code applying the 2013 Kaggle 'Expedia Hotel Recommendations' dataset (~37M click/booking search-result rows with search date, check-in/out dates, destination, price bucket, is_booking flag) via the Kaggle API; no data files committed to the repo itself.",
+      "why_useful": "The underlying Expedia dataset (external, on Kaggle) has real booking-vs-click records with implicit lead time (date_time of search vs. srch_ci check-in date) that could proxy OTA booking-window/lead-time distributions for gap #3, but this repo itself is just a thin ML exercise with no committed data and no method for point-in-time refresh.",
+      "potential": "low",
+      "geography": "global (US-heavy OTA searches)",
+      "time_coverage": "2013 (single Kaggle snapshot, not point-in-time)",
+      "size_hint": "not committed; external Kaggle dataset is ~37M rows / ~4GB",
+      "license": "unspecified",
+      "last_activity": "2026-01-24"
+    }
+  ],
+  "notes": "This theme returned an unusually thin field. The overwhelming majority of GitHub results for 'hotel booking demand dataset', 'hotel reservations dataset', and 'hotel occupancy dataset' are one-off student EDA/ML notebooks that all re-package the SAME single Kaggle CSV (which is itself just the Antonio/Almeida/Nunes 2019 Portugal H1/H2 dataset the team already holds per CONTEXT.md) — dozens of near-identical repos with zero new data, all excluded per the scouting rules against re-analyses of a single well-known file. No genuine hotel PMS (property-management-system) open dataset, no revenue-management dataset with real cancellation/lead-time distributions beyond the Antonio dataset, and no successor/extension of that dataset (e.g. more hotels, more years, other countries) turned up in gh search. Searches for 'hotel PMS dataset', 'open source PMS hotel management system', and 'airline booking curve lead time' (as a book-ahead analogue for gap #3/#18) returned zero repos. Did not find an Expedia-Kaggle mirror with data actually committed (repos only reference the Kaggle download via API, so they are pointer-only and low value). Given the hard 6-gh-search-call budget was reached without turning a productive corner, I stopped rather than burn more of the shared rate limit; a next pass on this theme should try WebSearch for 'site:github.com hotel revenue management dataset lead time cancellation -kaggle-hotel-booking-demand' and specifically search for open-source PMS projects (e.g. QloApps, Cloudbeds sample data, HotelDruid) and academic RM simulation repos (e.g. EURO/INFORMS revenue-management benchmark instances), plus the original Nuno Antonio GitHub account directly, none of which this pass reached before the budget ran out.",
+  "gap_targets": [2, 3, 8]
+}

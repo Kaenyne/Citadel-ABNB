@@ -1,0 +1,693 @@
+[
+ {
+  "key": "github:ankit-peshin/airbnb",
+  "url": "https://github.com/Ankit-Peshin/airbnb",
+  "name": "Ankit-Peshin/airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Course/capstone project that runs NLP (bag-of-words, word2vec/embeddings) over a large Airbnb reviews corpus, reporting a resulting bag-of-words of 20M+ words after sampling ~30% of the full reviews dataset (implying an underlying corpus in the tens of millions of review tokens, likely Inside-Airbnb-derived, multi-city). Code (Airbnb_final_knit.rmd and related) shows the preprocessing/sampling pipeline rather than shipping a standalone dataset file.",
+  "why_useful": "A reusable, already-tested large-scale NLP preprocessing pipeline for a multi-city reviews corpus at a scale close to what we would need to extend our 123-market reviews-based stays index or to mine review text for demand-adjacent signals (e.g., complaint/cancellation language, sentiment shifts) rather than just review counts.",
+  "size_hint": ">20M-word bag-of-words from a 30% sample of the full review set (underlying corpus likely tens of millions of tokens / hundreds of thousands of reviews)",
+  "time_coverage": "not specified",
+  "geography": "not specified (appears multi-city, likely US)",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "A reusable, already-tested large-scale NLP preprocessing pipeline for a multi-city reviews corpus at a scale close to what we would need to extend our 123-market reviews-based stays index or to mine review text for demand-adjacent signals (e.g., complaint/cancellation language, sentiment shifts) rather than just review counts."
+  ]
+ },
+ {
+  "key": "github:giselesilva-datascience/nlp-text-mining-cultural-differences-between-lisbon-and-rio-de-janeiro-in-airbnb-portuguese-reviews",
+  "url": "https://github.com/giselesilva-datascience/NLP-Text-Mining-Cultural-differences-between-Lisbon-and-Rio-de-Janeiro-in-Airbnb-Portuguese-reviews",
+  "name": "NLP-Text-Mining-Cultural-differences-between-Lisbon-and-Rio-de-Janeiro-in-Airbnb-Portuguese-reviews",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Master's thesis repo (42 commits) with a Datasets/ folder plus Sentiment_Analysis, Topic_Modeling, and Topic_Inference_by_Sentiment folders. Abstract states the study analyzed 200,000 reviews published between 2010 and 2025 for Lisbon (Sep 21 2025 snapshot) and Rio de Janeiro (Sep 26 2025 snapshot), sourced from Inside Airbnb -- i.e. a very recent (weeks-old at time of this scout) full review-date corpus for two cities not in our current 13-city + 123-market panels' most recent vintage.",
+  "why_useful": "A recent (2025-vintage) non-English, cross-market Airbnb reviews dataset+methodology; useful if the team wants a LatAm (Rio) reviews-text vintage newer than what we currently hold (our 123-market panel; Rio not in our named 13-city list), and a working non-English NLP pipeline that could be repointed at other Portuguese/Spanish-speaking markets for the LatAm gap (#7).",
+  "size_hint": "Two city-level Inside Airbnb reviews.csv snapshots (row counts not confirmed)",
+  "time_coverage": "Sep 2025 (Lisbon), similar-era (Rio)",
+  "geography": "Lisbon, Portugal; Rio de Janeiro, Brazil",
+  "license": "not confirmed",
+  "last_activity": "recent (2025/2026 snapshot dates referenced)",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "A recent (2025-vintage) non-English, cross-market Airbnb reviews dataset+methodology; useful if the team wants a LatAm (Rio) reviews-text vintage newer than what we currently hold (our 123-market panel; Rio not in our named 13-city list), and a working non-English NLP pipeline that could be repointed at other Portuguese/Spanish-speaking markets for the LatAm gap (#7).",
+   "A committed, very recent (Sep 2025) Inside-Airbnb-derived review corpus with full 2010-2025 date range for Lisbon and Rio -- both cities outside our current panel -- directly usable as a review-count-over-time stays proxy and possibly a fresher vintage than what we hold for these markets."
+  ]
+ },
+ {
+  "key": "github:danieldacosta/airbnb-analysis",
+  "url": "https://github.com/DanielDaCosta/airbnb-analysis",
+  "name": "Airbnb website history analysis - Rio de Janeiro",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "CSV/listings.zip (28.0MB) and CSV/reviews.zip (40.8MB) committed in-repo: detailed Airbnb listings and reviews data for Rio de Janeiro, Brazil, spanning January 2010 to January 2020 per the README (an Inside-Airbnb-style detailed export, not just a single-month snapshot). Jupyter notebook Data_Analysis.ipynb walks through geographic pricing, host response rate vs. score, YoY growth, and price vs. accommodates. MIT-unspecified license (none declared), last commit 2022-04-08, 5 stars.",
+  "why_useful": "A committed, city-specific long review-date panel (2010-2020) for Rio de Janeiro, a market not in our current 13-city Inside Airbnb panel -- usable as a stays-proxy time series and a cross-check against the giselesilva 2025-vintage Rio snapshot above.",
+  "potential": "medium",
+  "gap_targets": [
+   1,
+   20
+  ],
+  "license": "MIT (code); data license not stated",
+  "last_activity": "February 2023",
+  "geography": "Rio de Janeiro, Brazil",
+  "time_coverage": "Jan 2010 - Jan 2020",
+  "size_hint": "reported ~330,000 reviews",
+  "duplicate_of_holding": "adds a market (Rio) not in our panel, but coverage stops 2020, so mainly useful as a historical baseline",
+  "hits": 2,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Latin America STR datasets: Mexico City, Cancun, Rio, Sao Paulo, Buenos Aires, Bogota, Medellin, Lima, Santiago Airbnb data and regulation"
+  ],
+  "why_all": [
+   "A committed, city-specific long review-date panel (2010-2020) for Rio de Janeiro, a market not in our current 13-city Inside Airbnb panel -- usable as a stays-proxy time series and a cross-check against the giselesilva 2025-vintage Rio snapshot above.",
+   "Rio de Janeiro is not in our current 13-city Inside Airbnb panel, and this vintage (2010-2020) predates anything reachable off today's Inside Airbnb CDN \u2014 directly matches gap #1 (historical/archived Inside Airbnb-style dumps) for a LatAm market, and could support gap #2 (realised occupancy/ADR) if the detailed listings file carries price/review-based occupancy proxies over a full decade."
+  ]
+ },
+ {
+  "key": "github:tule2236/airbnb-dynamic-pricing-optimization",
+  "url": "https://github.com/tule2236/Airbnb-Dynamic-Pricing-Optimization",
+  "name": "Airbnb-Dynamic-Pricing-Optimization",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "San-Francisco-only project (Bayview, Chinatown, etc.) that clusters Inside Airbnb listings within a 3-mile radius and fits regression (poly/linear) demand curves relating price to occupancy; explicitly assumes review rate = 0.5 as the constant to convert reviews to estimated bookings (same 'SF model' family as edmondodriscoll's repo). Also pulls SF police incident (crime) data as a covariate. Uses InsideAirbnb as the listings source; no confirmation of large committed CSVs beyond notebooks.",
+  "why_useful": "A second independent implementation of the same review-rate occupancy-estimation convention, with a neighborhood-cluster demand-curve method (price vs. occupancy) that could be repurposed as a cross-check method for nights/occupancy estimation on our Inside Airbnb panel; the SF crime-data-as-demand-covariate angle is a minor bonus but not central to ABNB forecasting.",
+  "potential": "medium",
+  "gap_targets": [
+   2
+  ],
+  "geography": "San Francisco",
+  "time_coverage": "unspecified Inside Airbnb vintage",
+  "size_hint": "small, notebook-based",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)"
+  ],
+  "why_all": [
+   "A second independent implementation of the same review-rate occupancy-estimation convention, with a neighborhood-cluster demand-curve method (price vs. occupancy) that could be repurposed as a cross-check method for nights/occupancy estimation on our Inside Airbnb panel; the SF crime-data-as-demand-covariate angle is a minor bonus but not central to ABNB forecasting.",
+   "Illustrative of how a PriceLabs/Wheelhouse-style comp-set method is built, but it does not add data beyond what we already hold (Inside Airbnb-style single-market listing snapshot), so it is cataloguing value only as a method reference."
+  ]
+ },
+ {
+  "key": "github:jayesh2278/airdnascraper",
+  "url": "https://github.com/jayesh2278/airdnascraper",
+  "name": "airdnascraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapy-based scraper (airdna.py, scrapy.cfg) with a committed output file airdna.csv: title, room_type, property_type, bedrooms, accommodates, bathrooms, reviews, rating, days_available, occ, revenue for a small set of listings in the NJ lake region (Hopatcong/Cranberry Lake/Sparta/Newton area). occ and revenue columns are blank/'permission_denied' in the sample rows shown, so the financially useful fields are not actually populated.",
+  "why_useful": "A scraper of AirDNA's public market pages (rather than a paid-API client) would be the most direct route to realised ADR/occupancy proxies (gap #2) if AirDNA's site still exposes free market-level stats; scraping AirDNA (a non-Airbnb site) is explicitly in scope per our rules as a catalogued, unrun method.",
+  "potential": "medium",
+  "license": "unspecified",
+  "last_activity": "2026-01-27 (star event; commit date unconfirmed)",
+  "geography": "unspecified",
+  "time_coverage": "unspecified",
+  "size_hint": "not inspected in depth",
+  "gap_targets": [
+   2,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks",
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)"
+  ],
+  "why_all": [
+   "A scraper of AirDNA's public market pages (rather than a paid-API client) would be the most direct route to realised ADR/occupancy proxies (gap #2) if AirDNA's site still exposes free market-level stats; scraping AirDNA (a non-Airbnb site) is explicitly in scope per our rules as a catalogued, unrun method.",
+   "Demonstrates a scraping method aimed at AirDNA-hosted market pages (gap #2: realised ADR/occupancy for STRs), but the committed sample data is tiny, single-region, and missing exactly the occupancy/revenue fields that would matter; only the method (and its failure mode) is worth noting.",
+   "Same rationale as other AirDNA scrapers \u2014 potential route to a free occupancy/ADR proxy (gap #2) if a human clears the ToS question.",
+   "Second independent working AirDNA scraper/method, same rationale as hoffmanap/AIR for gap #2 (realised STR occupancy/ADR proxies); redundant with it but confirms the approach is reproducible."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/canada-analysis",
+  "url": "https://github.com/UPGo-McGill/canada-analysis",
+  "name": "UPGo-McGill/canada-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed R analysis code for Combs et al. 2019 ('Short-term cities: Airbnb's impact on Canadian housing markets'), the group's peer-reviewed study built on a 143-million-datapoint proprietary AirDNA-derived panel of daily Airbnb activity across Canadian cities (Montreal, Toronto, Vancouver and others) roughly 2016-2019. Repo structure shows an R/ directory, LICENSE, README; underlying raw AirDNA data itself is NOT committed (proprietary), only the analysis code.",
+  "why_useful": "Full, citable, peer-reviewed replication code for a large-scale AirDNA-based STR study; documents exactly how commercial-operator share and revenue concentration were computed from AirDNA data, which is directly on-point for gap #2, even though the raw data underneath is not open.",
+  "potential": "medium",
+  "geography": "Canada (Montreal, Toronto, Vancouver region focus)",
+  "time_coverage": "~2016-2019 (per published UPGo reports referencing this code)",
+  "size_hint": "R analysis scripts, MIT license, 20 commits",
+  "license": "MIT",
+  "last_activity": "unknown",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Full, citable, peer-reviewed replication code for a large-scale AirDNA-based STR study; documents exactly how commercial-operator share and revenue concentration were computed from AirDNA data, which is directly on-point for gap #2, even though the raw data underneath is not open.",
+   "Academic replication package for a published Airbnb-supply study; useful for methodology/benchmarks on Canadian STR growth even without the underlying proprietary data.",
+   "An academic replication package for a peer-reviewed Airbnb-Canada study gives a methodology and possibly underlying panel data for STR supply/pricing in a non-US market not covered by our current 13-city Inside Airbnb panel.",
+   "Points to a published academic study quantifying Canadian Airbnb growth/impact by city; methodology repo only, but confirms the study exists and how UPGo processes national STR panels -- relevant if the memo wants a Canada-wide STR growth benchmark.",
+   "An academic replication package tied to a named, citable paper on Airbnb activity in Canada \u2014 worth flagging as a possible source of methodology or (if the underlying data is linked in the README) a multi-city Canadian Airbnb panel predating our own Inside Airbnb coverage."
+  ]
+ },
+ {
+  "key": "other:https://www.airroi.com/data-portal",
+  "url": "https://www.airroi.com/data-portal/",
+  "name": "AirROI Data Portal",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Non-GitHub commercial data portal claiming 20M+ listings across 190+ countries and 100,000+ markets, daily-refreshed, with free occupancy rates, revenue estimates, pricing trends, and downloadable CSV/JSON/Parquet exports; also referenced as having a GitHub-hosted Claude-Code tool that generates instant STR income reports from an Airbnb listing URL. No confirmation of a committed open dataset on GitHub -- the free tier appears to be a hosted web tool, not a repo.",
+  "why_useful": "If AirROI's 'free' occupancy/revenue-estimate tier is genuinely queryable without payment, it would be a broader (and more current) analogue to AirDNA for gap #2 (190+ countries vs AirDNA's already-covered patch); flagging for a human to check the actual free-tier terms and whether a GitHub client exists, since scraping it is out of scope for this pass.",
+  "potential": "medium",
+  "geography": "global, 190+ countries claimed",
+  "time_coverage": "current/daily, not point-in-time archived",
+  "size_hint": "unknown, hosted commercial platform",
+  "license": "unknown / commercial ToS applies",
+  "last_activity": "n/a (not a repo)",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub"
+  ],
+  "why_all": [
+   "If AirROI's 'free' occupancy/revenue-estimate tier is genuinely queryable without payment, it would be a broader (and more current) analogue to AirDNA for gap #2 (190+ countries vs AirDNA's already-covered patch); flagging for a human to check the actual free-tier terms and whether a GitHub client exists, since scraping it is out of scope for this pass."
+  ]
+ },
+ {
+  "key": "github:ericnost/nola-str",
+  "url": "https://github.com/ericnost/NOLA-STR",
+  "name": "ericnost/NOLA-STR",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "New Orleans official short-term-rental license data (Temporary, Accessory, and Commercial permit categories) current as of March 2018, joined to 2016 ACS 5-year block-group demographics (race/ethnicity, rent, income); includes an R script for parsing/joining. Exact row counts not stated in README.",
+  "why_useful": "Addresses gap #12 (city STR registration datasets) directly for New Orleans, one of our named target cities, and is a point-in-time (March 2018) municipal licence snapshot rather than an Airbnb-scraped listing count.",
+  "potential": "medium",
+  "geography": "New Orleans, LA",
+  "time_coverage": "single snapshot, ~March 2018",
+  "size_hint": "unspecified row count; single license file + ACS join",
+  "license": "unknown",
+  "last_activity": "unknown (not fetched)",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "Addresses gap #12 (city STR registration datasets) directly for New Orleans, one of our named target cities, and is a point-in-time (March 2018) municipal licence snapshot rather than an Airbnb-scraped listing count.",
+   "A committed historical (2018) snapshot of New Orleans STR licenses that predates our current New Orleans regulatory holdings \u2014 useful as an older vintage point for a longer STR-supply time series in that market, and the mapping code is reusable."
+  ]
+ },
+ {
+  "key": "github:neshitov/airbnb",
+  "url": "https://github.com/neshitov/airbnb",
+  "name": "neshitov/airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "listings.csv (~40,000 rows) from Inside Airbnb Los Angeles, vintage 2018-12-06, plus a neighbourhoods.geojson for mapping; host/property/location/price fields.",
+  "why_useful": "Another pre-2023 archived Inside Airbnb vintage (LA, Dec 2018) filling gap #1; older than anything currently on the live CDN.",
+  "potential": "medium",
+  "geography": "Los Angeles, CA",
+  "time_coverage": "single snapshot, 2018-12-06",
+  "size_hint": "~40k row CSV + geojson",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "Another pre-2023 archived Inside Airbnb vintage (LA, Dec 2018) filling gap #1; older than anything currently on the live CDN."
+  ]
+ },
+ {
+  "key": "other:https://zenodo.org/api/records?q=%22host%20concentration%22%20airbnb (search result: institutional mediation of str seasonality, pescador peredo/torres luque/torres-luque, 2026)",
+  "url": "https://zenodo.org/api/records?q=%22host%20concentration%22%20airbnb (search result: Institutional Mediation of STR Seasonality, Pescador Peredo/Torres Luque/Torres-Luque, 2026)",
+  "name": "Institutional Mediation of STR Seasonality: A Comparative Analysis of Santiago de Chile and Mexico City",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Zenodo record described as a 'dataset examining seasonality patterns in short-term rental markets' for Santiago de Chile and Mexico City; file contents not yet confirmed (record page only summarized, files list not fetched in this pass).",
+  "why_useful": "LatAm STR seasonality is a named gap (#7 regional volume, and general LatAm STR supply data); Mexico City overlaps our existing 13-city panel but Santiago de Chile does not -- worth a follow-up fetch of the record's actual files.",
+  "potential": "medium",
+  "geography": "Santiago de Chile, Mexico City",
+  "time_coverage": "not confirmed",
+  "size_hint": "unconfirmed - needs direct Zenodo record file-list check",
+  "license": "unconfirmed",
+  "last_activity": "2026",
+  "duplicate_of_holding": "partial overlap with Mexico City in our Inside Airbnb 13-city panel; Santiago de Chile is new",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats"
+  ],
+  "why_all": [
+   "LatAm STR seasonality is a named gap (#7 regional volume, and general LatAm STR supply data); Mexico City overlaps our existing 13-city panel but Santiago de Chile does not -- worth a follow-up fetch of the record's actual files."
+  ]
+ },
+ {
+  "key": "github:surfnterd/pricelabs-tracker",
+  "url": "https://github.com/surfnterd/pricelabs-tracker",
+  "name": "surfnterd/pricelabs-tracker",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/FastAPI/SQLite tool that, given a user's own PriceLabs API key, takes daily snapshots for a listing: recommended/base price and min-max cap flags, >20% price-change history, YoY booking pace (occupancy and revenue vs. same days-out last year, alerts at >10pp lag), 'neighborhood market comp' snapshots daily, 3 years of backfilled reservation history, and Airbnb/Booking.com channel-mix split. MIT licensed, 1 commit, 0 stars (low adoption/no track record). No sample data committed; requires the operator's own paid PriceLabs account to run.",
+  "why_useful": "Shows the shape of PriceLabs' own-listing pace/YoY export (relevant to gap #2 style booking-pace concepts) but is single-listing telemetry, not a market panel, and needs a paid PriceLabs subscription to run.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "geography": "single unspecified listing",
+  "time_coverage": "live/current, no history committed",
+  "size_hint": "code only, snapshots kept locally by the operator, not in the repo",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)"
+  ],
+  "why_all": [
+   "Shows the shape of PriceLabs' own-listing pace/YoY export (relevant to gap #2 style booking-pace concepts) but is single-listing telemetry, not a market panel, and needs a paid PriceLabs subscription to run.",
+   "This is the most direct hit on the theme: a working, open-source method for pulling PriceLabs' own market-comp and pacing data (the exact quantity gap #2 wants \u2014 realised/ comp occupancy and ADR for STRs from a market-data vendor) rather than another NYC-2019 rehash. Would need a team member's/partner's PriceLabs subscription to actually run."
+  ]
+ },
+ {
+  "key": "github:everythingscraper/airbnb-scraper",
+  "url": "https://github.com/everythingscraper/airbnb-scraper",
+  "name": "airbnb-scraper (everythingscraper)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Very small repo (0 stars, 2 commits) wrapping an Apify Actor that explicitly computes occupancy rate, ADR and RevPAR per listing from Airbnb's forward-looking 12-month calendar, plus day-by-day booking status/pricing for the full 12 months, listing amenities/images/coordinates/review counts, and optional full review text/host portfolio. README shows a worked sample row (Paris listing: 78% occupancy, EUR142.50 ADR, EUR111.15 RevPAR). No committed dataset; output goes to JSON via Apify (paid).",
+  "why_useful": "A working method to derive occupancy/ADR/RevPAR comps directly from Airbnb calendars at scale (gap #2/#8-style comp data), but it operates by scraping airbnb.com itself \u2014 squarely the class of tool CONTEXT flags as a terms-of-service decision for a human, so this should be catalogued as method-only and NOT run.",
+  "potential": "medium",
+  "gap_targets": [
+   2
+  ],
+  "geography": "global, wherever Airbnb operates",
+  "time_coverage": "live/forward-looking only",
+  "size_hint": "n/a, pay-per-call",
+  "license": "not confirmed",
+  "last_activity": "Apr 27, 2026",
+  "duplicate_of_holding": "",
+  "hits": 7,
+  "themes": [
+   "Airbnb pricing tools and dynamic-pricing repos that embed market data (PriceLabs, Beyond, Wheelhouse style; open-source STR pricing with comps)",
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose",
+   "Hotel performance data: STR / CoStar weekly and monthly US RevPAR figures scraped from press releases, HotStats, Smith Travel history compiled on GitHub",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers",
+   "Hotel and STR supply from CoStar/CBRE/JLL/Cushman public reports scraped; real-estate broker STR reports with data"
+  ],
+  "why_all": [
+   "A working method to derive occupancy/ADR/RevPAR comps directly from Airbnb calendars at scale (gap #2/#8-style comp data), but it operates by scraping airbnb.com itself \u2014 squarely the class of tool CONTEXT flags as a terms-of-service decision for a human, so this should be catalogued as method-only and NOT run.",
+   "Rare case of a client whose stated purpose is exactly gap #2 (realised ADR/occupancy for STRs) rather than generic listing scraping -- worth reviewing the field schema even though it proxies through a paid Apify actor.",
+   "Directly targets gap #2 (realised ADR/occupancy for STRs) by name and design \u2014 this is the first repo in the sweep whose stated purpose is computing ADR/occupancy/RevPAR from Airbnb calendar data rather than just listing fields, even though (a) it uses FORWARD calendar/asking-price data, not realised bookings, so it inherits the same asking-vs-realised-price gap the project already knows about, and (b) it is unrun/uncatalogued elsewhere and has essentially no traction (0 stars).",
+   "If it works as advertised it would give realised ADR/occupancy/RevPAR at the listing level for STRs (our gap #2), which none of our current sources provide. But it scrapes airbnb.com directly, which our repo rules classify as a ToS decision for a human, not something to run \u2014 catalogued as method only, left unrun.",
+   "If it worked, this is exactly the realised-ADR/occupancy-for-STRs gap (#2), but it scrapes airbnb.com directly, which our rules flag as a terms-of-service decision for a human, not something to run. Catalogued as a method only, left un-run.",
+   "If ever run (a human ToS call, not for this pass), this is one of the only tools that claims to expose something close to realized ADR/occupancy per market \u2014 directly on gap #2. Catalogued as method only per repo rules; not run.",
+   "Not on-theme (it scrapes Airbnb itself, not CBRE/JLL/CoStar broker reports) and explicitly touches airbnb.com, which CLAUDE.md flags as a terms-of-service decision for a human, not something to run. Catalogued only as a method that exists; do not execute."
+  ]
+ },
+ {
+  "key": "github:johnbalvin/gobnb",
+  "url": "https://github.com/johnbalvin/gobnb",
+  "name": "gobnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go-language port of the same author's Airbnb scraper (39 stars, 22 commits, MIT, updated Jul 2025). Extracts room-level listing data (price, check-in/out, images), and search results by geographic coordinates/zoom level, optimized for airbnb.com/rooms/[roomID] URLs.",
+  "why_useful": "Same method family as pyairbnb; only useful if the desk ever needs a non-Python runtime. Not a new data source.",
+  "license": "MIT",
+  "last_activity": "2026-01-07",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [],
+  "duplicate_of_holding": "duplicates pyairbnb field coverage",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Same method family as pyairbnb; only useful if the desk ever needs a non-Python runtime. Not a new data source.",
+   "Same field coverage as pyairbnb but in Go for higher-throughput pulls if a human authorizes scraping; useful if Python client breaks against a schema change since it's independently maintained."
+  ]
+ },
+ {
+  "key": "github:digital-engineering/airbnb-scraper",
+  "url": "https://github.com/digital-engineering/airbnb-scraper",
+  "name": "airbnb-scraper (digital-engineering, Scrapy)",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GPL-3.0 Scrapy spider (210 stars, updated Aug 2026, the highest-starred repo in this theme) for Airbnb search results. Exports via AirbnbScraperItem/FIELDS_TO_EXPORT (customizable in settings.py) to CSV/XLSX/Elasticsearch; README confirms name, description, review text and property ID fields at minimum, plus filterable search params (min/max price, checkin/checkout dates, neighborhoods, room types, weekly/monthly discount %). Author notes the project is 'no longer maintained' and exploring a simpler approach -- no committed sample data.",
+  "why_useful": "Longest-running, most-starred open Airbnb search scraper; documents a discount-percentage field (weekly/monthly) that could proxy price elasticity/promotional intensity if ever run. Catalogue as method only.",
+  "license": "GPL-3.0",
+  "last_activity": "2026-08-04",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo, no data files",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Longest-running, most-starred open Airbnb search scraper; documents a discount-percentage field (weekly/monthly) that could proxy price elasticity/promotional intensity if ever run. Catalogue as method only.",
+   "Second-highest-star pure scraper found; explicit note that Airbnb broke Scrapy-based requests is itself useful signal about how brittle these clients are (all of them are catalogue-only per the run's rules regardless)."
+  ]
+ },
+ {
+  "key": "github:nderkach/airbnb-python",
+  "url": "https://github.com/nderkach/airbnb-python",
+  "name": "airbnb-python",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "WTFPL Python wrapper (203 stars, updated May 2026) around Airbnb's unofficial API -- one of the oldest and most-starred wrappers, historically used as the base for many derivative scrapers. Exposes search, listing detail, calendar/pricing, and user/host endpoints similar to pyairbnb.",
+  "why_useful": "Long-lived, widely-forked reference implementation; useful mainly to compare field coverage/endpoint stability over time against pyairbnb (API has shifted several times since this was written, so it also documents which fields Airbnb has deprecated).",
+  "license": "WTFPL",
+  "last_activity": "2026-05-10",
+  "geography": "global",
+  "time_coverage": "live only",
+  "size_hint": "code repo",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Long-lived, widely-forked reference implementation; useful mainly to compare field coverage/endpoint stability over time against pyairbnb (API has shifted several times since this was written, so it also documents which fields Airbnb has deprecated).",
+   "Long-standing, widely-forked reference for calendar+review+search fields; useful as a fallback/second implementation to cross-check pyairbnb's field names, though the underlying API it targets is likely partly deprecated (Airbnb closed most of its public partner API years ago) so it may need patching before any human decides to run it."
+  ]
+ },
+ {
+  "key": "github:blackfalcondata-org/airbnb-scraper",
+  "url": "https://github.com/BlackFalconData-org/airbnb-scraper",
+  "name": "BlackFalconData-org/airbnb-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Recently updated (Sep 2026) scraper claiming full-city coverage past Airbnb's 280-result search cap, with incremental NEW/UPDATED/EXPIRED listing tracking -- i.e. it is built to construct a longitudinal panel of listing turnover, not just a snapshot.",
+  "why_useful": "The NEW/UPDATED/EXPIRED tracking design is the closest thing found in this sweep to a method for measuring STR supply churn/new-listing formation over time, relevant to the new-listing/ADR residual work referenced in memory (ADR v3 run).",
+  "license": "not specified",
+  "last_activity": "2026-09-04",
+  "geography": "global (per-city)",
+  "time_coverage": "live, incremental panel if run repeatedly",
+  "size_hint": "code repo",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "The NEW/UPDATED/EXPIRED tracking design is the closest thing found in this sweep to a method for measuring STR supply churn/new-listing formation over time, relevant to the new-listing/ADR residual work referenced in memory (ADR v3 run)."
+  ]
+ },
+ {
+  "key": "github:scrapfly/scrapfly-scrapers",
+  "url": "https://github.com/scrapfly/scrapfly-scrapers/tree/main/airbnb-scraper",
+  "name": "scrapfly-scrapers: airbnb-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "One folder inside the large multi-site scrapfly-scrapers monorepo (Python 3.10, scrapfly-sdk, 1,028 commits repo-wide). Extracts search results by location, full listing detail (title, description, room type, amenities, images), host info + geo-coordinates, pricing/ratings/review counts, and guest review text. Includes a `./results` directory with committed example output (format unconfirmed \u2014 likely JSON) plus `airbnb.py`, `run.py`, `test.py`.",
+  "why_useful": "Only repo in this sweep with an actual committed example-output folder (not just README samples) alongside the scraper code, and it is part of a monorepo that ALSO contains scrapers for Booking.com and other non-Airbnb travel sites (see companion candidate below) \u2014 useful as a template if the team later builds its own point-in-time Airbnb capture and wants a maintained anti-bot approach (relies on paid Scrapfly proxy/rendering, though).",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "live/point-of-scrape only; committed results are illustrative examples, not a time series",
+  "size_hint": "small example-results folder only",
+  "license": "check repo (LICENSE file present, terms not confirmed)",
+  "last_activity": "actively maintained monorepo (1,028 commits total)",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose"
+  ],
+  "why_all": [
+   "Only repo in this sweep with an actual committed example-output folder (not just README samples) alongside the scraper code, and it is part of a monorepo that ALSO contains scrapers for Booking.com and other non-Airbnb travel sites (see companion candidate below) \u2014 useful as a template if the team later builds its own point-in-time Airbnb capture and wants a maintained anti-bot approach (relies on paid Scrapfly proxy/rendering, though).",
+   "A single maintained repo covering both Airbnb and at least one direct competitor (Booking.com) with a consistent scraper pattern and example outputs; worth a deeper look by whichever agent owns the competitor-OTA theme, since it lowers the engineering cost of building a comparable non-Airbnb capture (gap #9) using the same toolkit already catalogued for Airbnb."
+  ]
+ },
+ {
+  "key": "github:biganomaly/airdna-scraper",
+  "url": "https://github.com/BigAnomaly/airdna-scraper",
+  "name": "BigAnomaly/airdna-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An Apify actor (README only, no code visible in the default branch listing beyond README) that enriches a list of Airbnb listing URLs with AirDNA revenue, occupancy, ADR, and revenue-potential figures. Requires an existing AirDNA account and a bearer token copied from the browser session (app.airdna.co), plus an AirDNA market ID for revenue/occupancy fields. Outputs one record per listing with listing_id, market, listing_type, bedrooms/bathrooms/accommodates, rating, and the AirDNA metrics.",
+  "why_useful": "AirDNA is explicitly gap #2 (realised ADR/occupancy for STRs from a free proxy). This is a method that could produce a market-level occupancy/ADR series if run, though it targets a licensed data vendor's site and is a terms-of-service question, not ours to run.",
+  "potential": "medium",
+  "gap_targets": [
+   2
+  ],
+  "geography": "global (whatever AirDNA market pages cover)",
+  "time_coverage": "current snapshot only, no history",
+  "size_hint": "actor config, no data file",
+  "license": "unknown",
+  "last_activity": "2026-06-02",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks",
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "AirDNA is explicitly gap #2 (realised ADR/occupancy for STRs from a free proxy). This is a method that could produce a market-level occupancy/ADR series if run, though it targets a licensed data vendor's site and is a terms-of-service question, not ours to run.",
+   "Directly targets gap #2 (realised ADR/occupancy for STRs from AirDNA-type sources) at the listing level, which is exactly the metric class we are missing; however it requires an authenticated AirDNA account (paid product) and manually harvested bearer token, so it is a method pointer, not a free dataset, and running it would be a terms-of-service question for a human."
+  ]
+ },
+ {
+  "key": "github:satrancci/web-crawler-with-proxies",
+  "url": "https://github.com/satrancci/web-crawler-with-proxies",
+  "name": "web-crawler-with-proxies",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Vrbo.com crawler (105 commits) using Crawlera API + Hotspot Shield VPN proxy rotation against vrbo.com/search/keywords:<LOCATION>/page:<PAGE_NUM> to pull city-level listing routes/IDs and prices, writing city-price pairs to parsed_data.txt plus CDF price-distribution plots per city. No committed data files (locations_to_crawl.txt is an empty template); requires paid proxy/VPN services to run.",
+  "why_useful": "Confirms feasibility (and the anti-bot difficulty) of building a Vrbo listing crawler; would need real infrastructure and is explicitly a ToS decision to run \u2014 catalogued as a method, not usable off the shelf.",
+  "potential": "medium",
+  "gap_targets": [
+   9
+  ],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "code only",
+  "license": "mit",
+  "last_activity": "2026-02-01",
+  "hits": 2,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Confirms feasibility (and the anti-bot difficulty) of building a Vrbo listing crawler; would need real infrastructure and is explicitly a ToS decision to run \u2014 catalogued as a method, not usable off the shelf.",
+   "A second working method for pulling Vrbo prices by city (gap #9, and adjacent to gap #2 realised ADR-type data), with more mature crawling infra (105 commits) than most Vrbo scrapers found, though it needs paid proxies and produces no historical snapshot on its own."
+  ]
+ },
+ {
+  "key": "github:hoffmanap/air",
+  "url": "https://github.com/hoffmanap/AIR",
+  "name": "AIR",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Jupyter-notebook scraper ('Airdna webscraper.ipynb') for active Airbnb/VRBO listings on AirDNA's public market pages, defaulted to El Paso, TX but configurable to other markets; includes a committed sample output file ep_str_data (1).xlsx. 2 commits, no license.",
+  "why_useful": "A working method to pull AirDNA market-level STR listing/occupancy-style data for any US city on demand \u2014 directly targets gap #2 (realised ADR/occupancy for STRs from AirDNA-class sources), including Nevada/Florida/Texas/Hawaii/California/NYC markets if repointed. Catalogued as method only; not run per rules on scraping non-Airbnb sites needing a human ToS call.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   8
+  ],
+  "geography": "El Paso TX default, configurable to any AirDNA market",
+  "time_coverage": "snapshot/current at run time, not historical",
+  "size_hint": "one small sample xlsx + notebook",
+  "license": "none stated",
+  "last_activity": "unknown (2 commits, exact date not surfaced)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)"
+  ],
+  "why_all": [
+   "A working method to pull AirDNA market-level STR listing/occupancy-style data for any US city on demand \u2014 directly targets gap #2 (realised ADR/occupancy for STRs from AirDNA-class sources), including Nevada/Florida/Texas/Hawaii/California/NYC markets if repointed. Catalogued as method only; not run per rules on scraping non-Airbnb sites needing a human ToS call."
+  ]
+ },
+ {
+  "key": "github:evgeniimatveev/layoffs-tracker",
+  "url": "https://github.com/evgeniimatveev/layoffs-tracker",
+  "name": "layoffs-tracker",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "DuckDB (layoffs.duckdb) + Streamlit dashboard built by ingesting the layoffs.fyi dataset via Kaggle API (ingest.py). 2,412 layoff events, 1,713 companies, 49 countries, 2020-2025. Weekly refresh via GitHub Actions, so re-pulling gives a point-in-time-ish snapshot each week even though layoffs.fyi itself is not versioned upstream. Airbnb had multiple disclosed layoff rounds (2020, 2023) that would appear as rows if still in the source.",
+  "why_useful": "Headcount-proxy signal for gap #14/#15 (Airbnb hiring/layoffs as headcount proxy, corporate-structure signals) with a working, re-runnable pull script rather than a static file; weekly GH Actions refresh gives a crude vintage trail going forward from whenever this repo is queried.",
+  "potential": "medium",
+  "license": "not specified",
+  "last_activity": "2026-09-07",
+  "geography": "global, 49 countries",
+  "time_coverage": "2020-2025",
+  "size_hint": "2,412 rows",
+  "gap_targets": [
+   14,
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Headcount-proxy signal for gap #14/#15 (Airbnb hiring/layoffs as headcount proxy, corporate-structure signals) with a working, re-runnable pull script rather than a static file; weekly GH Actions refresh gives a crude vintage trail going forward from whenever this repo is queried.",
+   "A committed, queryable (DuckDB) mirror of the canonical layoffs.fyi tech-layoffs tracker \u2014 the actual source most 'layoffs data' searches point back to. Should contain Airbnb's 2020 layoff event (company, date, count, % of workforce) as one row, giving a directly comparable cross-company layoff-severity metric."
+  ]
+ },
+ {
+  "key": "github:dishu296/global-layoffs-data-cleaning-project",
+  "url": "https://github.com/Dishu296/Global-Layoffs-Data-Cleaning-Project",
+  "name": "Global-Layoffs-Data-Cleaning-Project",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed layoffs.csv (not just a pointer) covering global tech workforce reductions March 2020-April 2025, compiled from Bloomberg, San Francisco Business Times, TechCrunch, and NYT reporting (i.e. a layoffs.fyi-style compilation, possibly the layoffs.fyi export itself). Includes a SQL cleaning script.",
+  "why_useful": "A frozen, committed CSV snapshot (as opposed to a live scrape) is exactly the kind of point-in-time artifact useful for a headcount/layoffs vintage register \u2014 the commit date anchors when this vintage of the data existed, unlike the live layoffs.fyi site.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-04-20",
+  "geography": "global",
+  "time_coverage": "2020-03 to 2025-04",
+  "size_hint": "single CSV, row count not confirmed",
+  "gap_targets": [
+   14,
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "A frozen, committed CSV snapshot (as opposed to a live scrape) is exactly the kind of point-in-time artifact useful for a headcount/layoffs vintage register \u2014 the commit date anchors when this vintage of the data existed, unlike the live layoffs.fyi site."
+  ]
+ },
+ {
+  "key": "github:miloy-ajmera/layoff-insights-unveiling-trends-and-opportunities-in-the-tech-industry",
+  "url": "https://github.com/miloy-ajmera/Layoff-Insights-Unveiling-Trends-and-Opportunities-in-the-Tech-Industry",
+  "name": "Layoff-Insights-Unveiling-Trends-and-Opportunities-in-the-Tech-Industry",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Combines Layoffs.fyi data with WARN Act (Worker Adjustment and Retraining Notification) layoff filings to analyze trends/causes/effects by industry and company type.",
+  "why_useful": "WARN Act filings are a distinct, legally-mandated US federal/state data source for company-level layoff notices (separate from the layoffs.fyi crowd-sourced tracker) \u2014 a genuinely different headcount data lineage worth a human's follow-up, since state WARN databases are public and could show Airbnb-specific filings if any occurred.",
+  "potential": "medium",
+  "license": "not specified",
+  "last_activity": "2023-06-09",
+  "geography": "US (WARN is state-level)",
+  "time_coverage": "not specified, aligned to layoffs.fyi era",
+  "size_hint": "not specified",
+  "gap_targets": [
+   14,
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "WARN Act filings are a distinct, legally-mandated US federal/state data source for company-level layoff notices (separate from the layoffs.fyi crowd-sourced tracker) \u2014 a genuinely different headcount data lineage worth a human's follow-up, since state WARN databases are public and could show Airbnb-specific filings if any occurred."
+  ]
+ },
+ {
+  "key": "github:kadoa-org/layoffs-tracker",
+  "url": "https://github.com/kadoa-org/layoffs-tracker",
+  "name": "layoffs-tracker (kadoa)",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Open-source dataset + interactive dashboard (Vite/React/sql.js) of ~42,000 mass-layoff and plant-closure notices aggregated from 45 state labor departments, normalized via kadoa.com's parsing pipeline. Ships a lazily-loaded full SQLite database plus a JSON summary file for the overview. MIT licensed, 137 commits.",
+  "why_useful": "A second, independently-sourced/normalized WARN-notice dataset (different coverage/parsing than APVentureEngine's) \u2014 cross-checking two independent WARN aggregations reduces normalization risk before trusting any Airbnb-specific layoff date/count pulled from either.",
+  "potential": "medium",
+  "geography": "US, 45 states",
+  "time_coverage": "not stated precisely; WARN-era coverage, recent",
+  "size_hint": "~42,000 notices, SQLite db + JSON",
+  "license": "MIT",
+  "last_activity": "not stated (137 commits total)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "A second, independently-sourced/normalized WARN-notice dataset (different coverage/parsing than APVentureEngine's) \u2014 cross-checking two independent WARN aggregations reduces normalization risk before trusting any Airbnb-specific layoff date/count pulled from either."
+  ]
+ },
+ {
+  "key": "github:matthewchatham/glassdoor-review-scraper",
+  "url": "https://github.com/MatthewChatham/glassdoor-review-scraper",
+  "name": "glassdoor-review-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python + Selenium/Chromedriver scraper that logs into Glassdoor and exports a target company's employee reviews (ratings, text, dates) to CSV, with date-range filtering; ~1.5s/review throughput. BSD-2-Clause, 23 commits. README explicitly notes Glassdoor's ToS prohibits scraping and accounts risk bans.",
+  "why_useful": "A working, well-known method for pulling Airbnb's own Glassdoor review history (rating trend, review volume, text) as an employee-sentiment / attrition-risk proxy that correlates with headcount and culture stress \u2014 but requires login credentials and violates Glassdoor ToS, so per repo rules this is catalogued as method only and NOT to be run without a human ToS decision.",
+  "potential": "medium",
+  "geography": "n/a (any company on Glassdoor)",
+  "time_coverage": "n/a \u2014 scrapes current site state",
+  "size_hint": "n/a, per-run output",
+  "license": "BSD-2-Clause",
+  "last_activity": "not stated (23 commits)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "A working, well-known method for pulling Airbnb's own Glassdoor review history (rating trend, review volume, text) as an employee-sentiment / attrition-risk proxy that correlates with headcount and culture stress \u2014 but requires login credentials and violates Glassdoor ToS, so per repo rules this is catalogued as method only and NOT to be run without a human ToS decision."
+  ]
+ }
+]

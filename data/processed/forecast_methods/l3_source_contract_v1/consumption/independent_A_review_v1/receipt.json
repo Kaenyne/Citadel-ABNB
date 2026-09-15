@@ -1,0 +1,85 @@
+{
+  "timestamp_utc": "2026-09-14T04:46:13.161133+00:00",
+  "attacks": [
+    {
+      "case": "future_lambda_basis",
+      "accepted": true,
+      "details": {
+        "current_delta": 4.658820541731
+      }
+    },
+    {
+      "case": "nan_frozen_revenue",
+      "accepted": true,
+      "details": {
+        "current_delta": 4.658820541731,
+        "nonfinite_ledger_cells": [
+          {
+            "quarter": "2020Q4",
+            "metric": "revenue_musd",
+            "frozen_value": "nan",
+            "best_minus_frozen": "nan"
+          }
+        ]
+      }
+    },
+    {
+      "case": "source_access_unavailable",
+      "accepted": true,
+      "details": {
+        "current_delta": 4.658820541731,
+        "incorrectly_checked": [
+          "nights_m",
+          "gbv_musd",
+          "adr_usd",
+          "revenue_musd"
+        ]
+      }
+    },
+    {
+      "case": "overflow_unit_conversion",
+      "accepted": true,
+      "details": {
+        "current_delta": 4.658820541731,
+        "original_normalized_value": "inf"
+      }
+    },
+    {
+      "case": "boolean_observation",
+      "accepted": true,
+      "details": {
+        "current_delta": 4.658820541731
+      }
+    }
+  ],
+  "reviewed_hashes": [
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\precision\\run.py",
+      "sha256": "73b1e52d02b795f57d8bebe71d1ce3254cc306478d9f7421445a04d96309f5cc"
+    },
+    {
+      "path": "analysis\\src\\forecast_methods\\l3_source_contract_v1\\precision\\test_precision.py",
+      "sha256": "bf9b6f2cfe5997c857a313e510fb240bdb73660366b016cd4042318c5d004172"
+    },
+    {
+      "path": "data\\processed\\forecast_methods\\l3_source_contract_v1\\precision\\inputs_v1\\input_manifest.json",
+      "sha256": "af137faedf8df00513234e500b265b6809b1a595d6c4a87329f245614f4e5a80"
+    },
+    {
+      "path": "data\\processed\\forecast_methods\\l3_source_contract_v1\\precision\\results_v1\\output_manifest.json",
+      "sha256": "abdf39efbffb97a93e8896de4247859aebc4dd92d3c8cab68a539dc3d102829a"
+    }
+  ],
+  "test_command": [
+    "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe",
+    "-X",
+    "utf8",
+    "-B",
+    "-m",
+    "pytest",
+    "analysis\\src\\forecast_methods\\l3_source_contract_v1\\precision\\test_precision.py",
+    "-q"
+  ],
+  "test_exit": 0,
+  "test_stdout_sha256": "6261682d2b24da172d20b3f2c1e920986412fba441ada0f7bfa396ac53b05f22"
+}

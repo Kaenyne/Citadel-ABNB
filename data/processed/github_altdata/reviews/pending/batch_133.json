@@ -1,0 +1,140 @@
+[
+ {
+  "key": "other:https://huggingface.co/datasets/sii-wangzj/polymarket_data",
+  "url": "https://huggingface.co/datasets/SII-WANGZJ/Polymarket_data",
+  "name": "Polymarket_data (Hugging Face)",
+  "category": "markets_options_positioning",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Very large Hugging Face dataset of Polymarket data: 5.41B rows, 20.3k downloads, 82 citations (used in published research). Row-level detail and exact schema/date range not confirmed from the search snippet; not GitHub-hosted, so flagged as a pointer only.",
+  "why_useful": "If the schema includes market question text/category and timestamped odds, this is large enough to mine for any ABNB-adjacent, travel, or macro-earnings contracts across Polymarket's full history; the citation count suggests it has already been used academically, which could point to a companion GitHub replication repo worth chasing.",
+  "geography": "Global",
+  "time_coverage": "not confirmed",
+  "size_hint": "5.41B rows",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "If the schema includes market question text/category and timestamped odds, this is large enough to mine for any ABNB-adjacent, travel, or macro-earnings contracts across Polymarket's full history; the citation count suggests it has already been used academically, which could point to a companion GitHub replication repo worth chasing."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/timeseventeen/polymarket-v1",
+  "url": "https://huggingface.co/datasets/TimeSeventeen/Polymarket-v1",
+  "name": "Polymarket-v1 (Hugging Face)",
+  "category": "markets_options_positioning",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Large Hugging Face dataset of Polymarket data, 2.79B rows, 9.64k downloads. Contents/schema/date range not confirmed beyond size; appears to skew toward crypto/price-prediction markets based on adjacent dataset naming patterns seen in the same search.",
+  "why_useful": "Same rationale as SII-WANGZJ/Polymarket_data: a large full-history Polymarket mirror that could be filtered for non-crypto (earnings/travel/regulation) markets if the schema supports it; lower confidence than the GitHub-native candidates above since content was not directly inspected.",
+  "geography": "Global",
+  "time_coverage": "not confirmed",
+  "size_hint": "2.79B rows",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Same rationale as SII-WANGZJ/Polymarket_data: a large full-history Polymarket mirror that could be filtered for non-crypto (earnings/travel/regulation) markets if the schema supports it; lower confidence than the GitHub-native candidates above since content was not directly inspected."
+  ]
+ },
+ {
+  "key": "github:martinshkreli/13f",
+  "url": "https://github.com/martinshkreli/13F",
+  "name": "martinshkreli/13F",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small 13F analyzer (88 stars) that strips options-only holdings out of raw filings to isolate a fund's actual equity/stock positions, as opposed to option overlays that can distort raw 13F position counts.",
+  "why_useful": "A narrower, complementary parser for cleaning 13F data before building any ABNB/peer ownership-concentration series -- useful check against sec-13f-filings output.",
+  "potential": "low",
+  "gap_targets": [
+   15
+  ],
+  "geography": "US filers",
+  "time_coverage": "n/a (parses whatever filings are fed in)",
+  "license": "unspecified",
+  "size_hint": "small script repo",
+  "last_activity": "2026-08-26",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "A narrower, complementary parser for cleaning 13F data before building any ABNB/peer ownership-concentration series -- useful check against sec-13f-filings output."
+  ]
+ },
+ {
+  "key": "github:yangwang-glasgow/airbnb-processing-daily-booking-calendars",
+  "url": "https://github.com/YangWang-Glasgow/Airbnb-Processing-Daily-Booking-Calendars",
+  "name": "Airbnb-Processing-Daily-Booking-Calendars",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Companion repo to the UBDC PLOS ONE paper: a 5-step Python pipeline (stp1-stp5) that turns consecutive daily Airbnb calendar scrapes into booking/cancellation events, focused on 'cancellation trend in Edinburgh during first lockdown'; includes a committed AggregatedFigures.xlsx with the paper's summary statistics.",
+  "why_useful": "A concrete, working method for converting raw calendar snapshots into occupancy AND cancellation-rate time series \u2014 usable on our own Inside Airbnb calendar vintages to build a non-review-based occupancy estimator, and directly on-topic for the RNPL/cancellation thesis (gap #3).",
+  "potential": "high",
+  "license": "not stated in README",
+  "last_activity": "unknown (not dated in fetch)",
+  "geography": "Edinburgh, UK",
+  "time_coverage": "first COVID lockdown period (2020)",
+  "size_hint": "small: 5 scripts + 1 xlsx summary file",
+  "gap_targets": [
+   2,
+   3
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)"
+  ],
+  "why_all": [
+   "A concrete, working method for converting raw calendar snapshots into occupancy AND cancellation-rate time series \u2014 usable on our own Inside Airbnb calendar vintages to build a non-review-based occupancy estimator, and directly on-topic for the RNPL/cancellation thesis (gap #3)."
+  ]
+ },
+ {
+  "key": "github:openskynetwork/opensky-api",
+  "url": "https://github.com/openskynetwork/opensky-api",
+  "name": "opensky-api",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Python/Java client for the OpenSky Network REST API: pulls current and historical ADS-B state vectors (aircraft position, altitude, velocity, callsign) and, via the OpenSky historical database (separate access tier), full flight tracks and airport arrival/departure counts back to ~2019. GPL-3.0, actively maintained (OAuth2 support added March 2026, 175 commits).",
+  "why_useful": "The standard client for live OpenSky queries; only useful in combination with the historical Impala/Trino access (see xoolive/traffic) or the pre-built COVID-19 CSV dumps for anything backward-looking, since the live API alone gives only current snapshots.",
+  "potential": "high",
+  "gap_targets": [
+   10
+  ],
+  "size_hint": "client library only",
+  "time_coverage": "live/current only via this client",
+  "geography": "global",
+  "license": "GPL-3.0",
+  "last_activity": "175 commits, actively maintained (auth changed Mar 2026)",
+  "hits": 5,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route",
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo",
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa",
+   "wildcard: an airline network planner who knows capacity, schedule, far",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "The standard client for live OpenSky queries; only useful in combination with the historical Impala/Trino access (see xoolive/traffic) or the pre-built COVID-19 CSV dumps for anything backward-looking, since the live API alone gives only current snapshots.",
+   "Directly matches CONTEXT gap #10 ('Airline/rail/road capacity and traffic: ... OpenSky/ADS-B'); flight volumes by route/region are a real-time proxy for cross-border and long-haul leisure travel intensity feeding into nights/regional mix, and OpenSky additionally has a historical Impala/Trino research database (not in this repo, but reachable via the same client) for point-in-time flight counts.",
+   "CONTEXT gap #10 (airline/rail capacity) names OpenSky/ADS-B directly; flight volumes by route/region are a leading indicator of cross-border travel demand and could proxy inbound tourism intensity for APAC/LatAm/EMEA mix ahead of official aviation stats.",
+   "Airport-level arrival/departure counts and general-aviation vs commercial traffic mix are a free, granular substitute for OAG/Cirium schedule data \u2014 a leading indicator of point-to-point leisure air capacity into Airbnb-heavy destination markets (addresses gap #10, airline capacity/traffic).",
+   "Directly serves gap #10 (airline/rail/road capacity and traffic) -- flight-count/route-frequency series into leisure-heavy airports (Cancun, Honolulu, Lisbon, Bali) can proxy inbound-travel volume and seasonality feeding Airbnb nights, independent of BTS T-100's US-only, lagged scope."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:datatango/warc-stat",
+  "url": "https://github.com/datatango/warc-stat",
+  "name": "warc-stat",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small CLI that summarizes a WARC file's contents as JSON: record types, hosts, HTTP status codes, MIME types, failed captures. 0 stars, updated 30 Jul 2026, no committed data.",
+  "why_useful": "Quick QA/inventory tool for auditing our existing 3,000 WARC renders (coverage by host/status code) before deeper parsing work.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "unspecified",
+  "last_activity": "2026-07-30",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "tiny CLI",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Quick QA/inventory tool for auditing our existing 3,000 WARC renders (coverage by host/status code) before deeper parsing work."
+  ]
+ },
+ {
+  "key": "github:watussi-cyber/get-common-crawl",
+  "url": "https://github.com/watussi-cyber/get-common-crawl",
+  "name": "get-common-crawl",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small French-language script that downloads the Common Crawl web-graph archive and produces a 3-column file (PageRank rank, domain, subdomain count). 0 stars, no license, last updated 2 Mar 2023.",
+  "why_useful": "A simpler/older alternative method to build the same kind of host-rank series as common-crawl-ranks-cache, useful as a fallback if that repo's cache format changes.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "license": "unspecified",
+  "last_activity": "2023-03-02",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "single script, no bundled data",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "A simpler/older alternative method to build the same kind of host-rank series as common-crawl-ranks-cache, useful as a fallback if that repo's cache format changes."
+  ]
+ },
+ {
+  "key": "github:dainiusjocas/time-travelling-web-search-monster",
+  "url": "https://github.com/dainiusjocas/time-travelling-web-search-monster",
+  "name": "time-travelling-web-search-monster",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Old (last updated 2019) Clojure tool to search for phrases across Common Crawl's web archive. 1 star, Apache-2.0.",
+  "why_useful": "Marginal: a phrase-search-over-CC-archive method that could in principle scan historical crawls for mentions of STR platforms/regulation terms, but stale and unmaintained.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "Apache-2.0",
+  "last_activity": "2019-10-13",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "small tool, no data",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Marginal: a phrase-search-over-CC-archive method that could in principle scan historical crawls for mentions of STR platforms/regulation terms, but stale and unmaintained."
+  ]
+ },
+ {
+  "key": "github:sdcote/cdxlab",
+  "url": "https://github.com/sdcote/cdxlab",
+  "name": "cdxlab",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Stated as 'Training for the CDX toolkit' \u2014 0 stars, no license, last updated 2021. Likely a tutorial/practice repo rather than a working pipeline.",
+  "why_useful": "Very low value; flagged only for completeness since it surfaced under the cdx-toolkit search term.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "unspecified",
+  "last_activity": "2021-12-17",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "unknown, likely tiny",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Very low value; flagged only for completeness since it surfaced under the cdx-toolkit search term."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cc-index-server",
+  "url": "https://github.com/commoncrawl/cc-index-server",
+  "name": "cc-index-server",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Deployable pywb-based CDX Server + replay index server for Common Crawl collections; installable via pip or Docker with `install-collections.sh` to stand up a local CDX Server API (e.g. `/CC-MAIN-2015-06-index?url=...`) against S3-hosted crawl indices.",
+  "why_useful": "Self-hosted alternative to hitting the public CC CDX API when doing larger point-in-time pulls for airbnb.com or competitor domains across many crawls, avoiding public rate limits during a repeated vintage-register build.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "time_coverage": "n/a (tooling)",
+  "geography": "n/a",
+  "size_hint": "tool",
+  "license": "unspecified in fetched content (likely Apache-2.0, forked from pywb)",
+  "last_activity": "50 commits, some open issues -- lower activity than core CC repos",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Self-hosted alternative to hitting the public CC CDX API when doing larger point-in-time pulls for airbnb.com or competitor domains across many crawls, avoiding public rate limits during a repeated vintage-register build."
+  ]
+ }
+]

@@ -1,0 +1,65 @@
+{
+  "theme": "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys",
+  "modality": "gh",
+  "queries_run": [
+    "gh search repos \"tourism satellite account\" --sort stars",
+    "gh search repos \"WTTC OR world travel and tourism council\" --sort stars",
+    "gh search repos \"BEA travel tourism satellite account\" --sort updated",
+    "gh search repos \"UNWTO tourism statistics\" --sort stars",
+    "gh search repos \"tourism expenditure survey\" --sort stars",
+    "gh search repos \"tourism satellite account\" --sort updated",
+    "WebSearch site:github.com \"tourism satellite account\" data csv api (blocked: session WebSearch budget exhausted)",
+    "WebSearch site:github.com BEA \"travel and tourism\" API python package (blocked: session WebSearch budget exhausted)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/rendell/TES_merging",
+      "name": "TES_merging",
+      "category": "travel_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Small repo (README.md, a 'code' file ~68KB, a 'tables' file ~18KB) that merges multiple national Tourism Expenditure Surveys (TES) into one panel. No commit-date/license metadata surfaced; likely academic/personal project, country/scope not confirmed from directory listing alone (would need to read the code file to identify which country's TES).",
+      "why_useful": "Directly on-theme (gap area: national tourism expenditure surveys under gap #6/#7 consumer/tourism spend panels) but small and unverified scope; worth a closer read if someone wants a template for stitching TES vintages into one series.",
+      "potential": "low",
+      "gap_targets": [6, 7],
+      "duplicate_of_holding": "",
+      "geography": "unclear (needs code inspection)",
+      "time_coverage": "unknown",
+      "size_hint": "code file ~68KB, tables file ~18KB",
+      "license": "none declared",
+      "last_activity": "unknown (not in listing metadata returned)"
+    },
+    {
+      "url": "https://github.com/ryokiti0104/tourism-satellite-account-analysis-of-Japan-2023",
+      "name": "tourism-satellite-account-analysis-of-Japan-2023",
+      "category": "tourism_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Repo only contains .gitignore and LICENSE (MIT) at the root as of inspection — no data files, notebooks, or scripts committed yet. Presumably a student project analysing Japan's official Tourism Satellite Account for CY2023 but the analysis/data itself is not yet pushed.",
+      "why_useful": "On-theme title (Japan TSA, APAC regional travel volume is gap #7) but effectively empty right now; flagging only in case content gets pushed later.",
+      "potential": "low",
+      "gap_targets": [7],
+      "duplicate_of_holding": "",
+      "geography": "Japan",
+      "time_coverage": "CY2023 (nominal)",
+      "size_hint": "near-empty (2 files: .gitignore, LICENSE)",
+      "license": "MIT",
+      "last_activity": "2026-04-17"
+    },
+    {
+      "url": "https://github.com/RyoKawada/Tourism-Satellite-Account-Analysis-of-Japan-CY2023-",
+      "name": "Tourism-Satellite-Account-Analysis-of-Japan-CY2023-",
+      "category": "tourism_volume_transport",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Same situation as the sibling repo above (likely a fork or parallel submission of the same coursework) — root contains only .gitignore and LICENSE (MIT), no data or code files visible in the listing. Description: 'How tourism consumption connects to industry structure, employment, and capital formation in Japan' (i.e., a TSA read-through of Japan's CY2023 national accounts).",
+      "why_useful": "Same as above — likely near-duplicate of ryokiti0104's repo (same .gitignore blob hash, near-identical name); on-theme but no committed data at inspection time.",
+      "potential": "low",
+      "gap_targets": [7],
+      "duplicate_of_holding": "likely duplicate/fork of ryokiti0104/tourism-satellite-account-analysis-of-Japan-2023 (identical .gitignore hash)",
+      "geography": "Japan",
+      "time_coverage": "CY2023 (nominal)",
+      "size_hint": "near-empty (2 files: .gitignore, LICENSE)",
+      "license": "MIT",
+      "last_activity": "2026-04-03"
+    }
+  ],
+  "notes": "This theme is a poor fit for GitHub search: WTTC, UNWTO, and BEA travel/tourism satellite account data are published almost exclusively as PDF reports and Excel/PDF tables on the organizations' own sites, and are rarely mirrored or wrapped by open-source tooling on GitHub — searches for 'WTTC', 'UNWTO tourism statistics', and 'BEA travel tourism satellite account' returned zero repos. The only hits across six gh search queries were three small/near-empty student repos (two are near-duplicate near-empty Japan TSA coursework repos with no data committed, one is a small national Tourism-Expenditure-Survey merging script of unconfirmed country scope). No repo found holds a genuine multi-year WTTC/UNWTO/BEA-TSA dataset, release asset, or a working API client for bea.gov's TSA tables. WebSearch could not be used to broaden the sweep because the session's web-search budget (200/200) was already exhausted by other concurrent agents before this scout could run any queries — recommend a follow-up scout on this theme later with a fresh WebSearch budget, focusing on: (a) bea.gov TSA API wrapper packages (BEA has a public data API covering the Travel and Tourism Satellite Account tables), (b) unwto.org/wttc.org data-portal scraper/client repos, (c) national-statistics-office TSA publications (Australia ABS TSA, Canada StatCan TSA, UK ONS TSA) which sometimes get mirrored by open-data enthusiasts more than the WTTC/UNWTO aggregates do. Also worth trying gh search with --topic=tourism-statistics or --topic=satellite-account, and code-search (once budget resets) for 'bea.gov' + 'travel and tourism' or 'TTSA' identifiers, and for national statistical office TSA release schedules (Australia, Canada, UK) which are more commonly represented in open government-data client repos than WTTC/UNWTO aggregates."
+}

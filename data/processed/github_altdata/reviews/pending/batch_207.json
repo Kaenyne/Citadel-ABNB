@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:josegaspard/indice-movilidad-visamundial",
+  "url": "https://github.com/josegaspard/indice-movilidad-visamundial",
+  "name": "indice-movilidad-visamundial (IMV)",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "ranking-imv.csv (199 passports, IMV mobility scores + category breakdown of visa-free/on-arrival/eTA/e-visa/required/denied), matriz-tidy.csv (39,402 passport-to-destination pairs, 3 columns), indice-movilidad.json; version 2026.2 (6 Aug 2026), quarterly-reviewed, cross-verified 3,714/3,852 pairs against US State Dept/Canada IRCC/EU Commission/national foreign ministries, corrected 108 misclassifications versus the base matrix; base matrix sourced from imorte/passport-index-data; CC-BY 4.0",
+  "why_useful": "A currently-maintained (Aug 2026), independently verified global visa-mobility index with an explicit methodology note distinguishing visa-free/eTA/e-visa access \u2014 more rigorous than a raw passport-index mirror and usable as a cross-border ease-of-travel covariate by origin-destination pair, relevant to gap 20 (cross-border share proxies) and regional mix work.",
+  "potential": "medium",
+  "license": "CC-BY 4.0",
+  "last_activity": "2026-08-06 (version 2026.2)",
+  "geography": "global, 199x199",
+  "time_coverage": "current snapshot, versioned quarterly since some earlier date",
+  "size_hint": "39,402 rows tidy matrix",
+  "hits": 2,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "A currently-maintained (Aug 2026), independently verified global visa-mobility index with an explicit methodology note distinguishing visa-free/eTA/e-visa access \u2014 more rigorous than a raw passport-index mirror and usable as a cross-border ease-of-travel covariate by origin-destination pair, relevant to gap 20 (cross-border share proxies) and regional mix work.",
+   "More recently updated (Aug 2026, vs. the archived Jan 2025 ilyankou set) and LatAm-focused visa dataset -- directly useful for the LatAm regional-mix forecast (Mexico, Brazil, Colombia, Argentina inbound/outbound visa-policy shifts named in gap #7) and freely licensed (CC-BY) unlike most competitors."
+  ]
+ },
+ {
+  "key": "github:genesysc/open-nomad-visa-data",
+  "url": "https://github.com/genesysc/open-nomad-visa-data",
+  "name": "open-nomad-visa-data",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Machine-readable JSON dataset (visa-data.json + schema.json) of digital-nomad/remote-work visas for 11 countries: income thresholds, currency, processing-time ranges, dependant allowances, path-to-residency flags, tax notes. CC-BY-4.0, has a lastUpdated meta field.",
+  "why_useful": "Small but structured, machine-readable digital-nomad-visa dataset for gap 16; thinner than the two above (only 11 countries) but has an explicit last-updated field useful for point-in-time tracking of visa rule changes.",
+  "potential": "medium",
+  "gap_targets": [
+   16
+  ],
+  "geography": "11 countries",
+  "time_coverage": "current snapshot with per-record lastUpdated field",
+  "size_hint": "single JSON file, 11 records",
+  "license": "CC-BY-4.0 (data), MIT (code)",
+  "last_activity": "unclear, recently created",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Small but structured, machine-readable digital-nomad-visa dataset for gap 16; thinner than the two above (only 11 countries) but has an explicit last-updated field useful for point-in-time tracking of visa rule changes.",
+   "A small but clean, structured cross-country panel for the remote-work/long-stay demand gap (#16) \u2014 income-threshold changes and new visa launches are a leading indicator for Airbnb's long-stay (28+ night) mix in APAC/EMEA regional splits."
+  ]
+ },
+ {
+  "key": "github:pratikshpandita/consumer-complaint-root-cause-analytics",
+  "url": "https://github.com/PratikshPandita/consumer-complaint-root-cause-analytics",
+  "name": "PratikshPandita/consumer-complaint-root-cause-analytics",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "SQL/Python analytics repo built on the public CFPB consumer-complaints dataset, using BigQuery for root-cause trend analysis plus a validation framework for a text-classification model's output. Updated 13 Sep 2026 (same day as this scout run), 0 stars, no license listed.",
+  "why_useful": "Shows a working BigQuery-based ingestion/query pattern against the full CFPB complaints public dataset (which is queryable by company name, so 'Airbnb' complaints could be isolated); useful as a template method even though it ships no committed Airbnb-specific extract.",
+  "potential": "medium",
+  "license": "none listed",
+  "last_activity": "2026-09-13",
+  "geography": "US",
+  "time_coverage": "whatever the CFPB complaints dataset covers (2011-present)",
+  "size_hint": "code only, queries live BigQuery public dataset",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Shows a working BigQuery-based ingestion/query pattern against the full CFPB complaints public dataset (which is queryable by company name, so 'Airbnb' complaints could be isolated); useful as a template method even though it ships no committed Airbnb-specific extract."
+  ]
+ },
+ {
+  "key": "github:datadesk/cfpb-complaints-database",
+  "url": "https://github.com/datadesk/cfpb-complaints-database",
+  "name": "cfpb-complaints-database",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "LA Times Data Desk's committed copy of the full CFPB Consumer Complaints Database as downloaded 25 April 2018 - a frozen point-in-time snapshot (not a live API pull) of what was at the time ~1M+ consumer financial complaints across all products/companies nationwide.",
+  "why_useful": "This is exactly the kind of point-in-time vintage the brief wants (gap #4): a dated, immutable complaint-database snapshot from 2018 that can be diffed against a fresh 2026 CFPB pull to see how Airbnb-BNPL-adjacent (Affirm/Klarna) complaint volume and travel/lodging-merchant complaint mentions have grown, without any lookback bias.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "snapshot as of 2018-04-25 (covers complaints filed up to that date, likely back to ~2011-2012 database inception)",
+  "size_hint": "full national complaint DB (hundreds of MB typically at that vintage)",
+  "license": "unspecified/public-domain-source (verify repo LICENSE before use)",
+  "last_activity": "2018-04-25",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "This is exactly the kind of point-in-time vintage the brief wants (gap #4): a dated, immutable complaint-database snapshot from 2018 that can be diffed against a fresh 2026 CFPB pull to see how Airbnb-BNPL-adjacent (Affirm/Klarna) complaint volume and travel/lodging-merchant complaint mentions have grown, without any lookback bias."
+  ]
+ },
+ {
+  "key": "github:fatemekhanipour11/cfpb_complaint_analysis",
+  "url": "https://github.com/fatemekhanipour11/CFPB_Complaint_Analysis",
+  "name": "CFPB_Complaint_Analysis",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Analysis notebook plus derived extracts working over the full CFPB Consumer Complaint Database described as 11M+ records, with NLP performed on consumer complaint narratives and breakdowns by company/product/response time.",
+  "why_useful": "Full-size recent pull of the national complaint corpus with narrative text already parsed; a 'Money transfer, virtual currency, or money service' / prepaid-card / BNPL-lender filter over the narratives could surface Airbnb-refund-via-Affirm/Klarna complaint language for a qualitative RNPL-friction read.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "recent pull (repo active late 2025), full CFPB history to date",
+  "size_hint": "11M+ complaint records",
+  "license": "unspecified",
+  "last_activity": "2025-11-30",
+  "gap_targets": [
+   3,
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Full-size recent pull of the national complaint corpus with narrative text already parsed; a 'Money transfer, virtual currency, or money service' / prepaid-card / BNPL-lender filter over the narratives could surface Airbnb-refund-via-Affirm/Klarna complaint language for a qualitative RNPL-friction read."
+  ]
+ }
+]

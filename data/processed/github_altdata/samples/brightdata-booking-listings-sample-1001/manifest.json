@@ -1,0 +1,17 @@
+{
+  "slug": "brightdata-booking-listings-sample-1001",
+  "url": "https://github.com/luminati-io/Booking-dataset-sample",
+  "sampled": true,
+  "total_bytes": 814588,
+  "files": ["brightdata_booking_1001.csv"],
+  "rows": "brightdata_booking_1001.csv: 1000 data rows (+ header)",
+  "columns": "url, location, check_in, check_out, adults, children, rooms, id, title, address, city, review_score, review_count, image, final_price, original_price, currency, tax_description, nb_livingrooms, nb_kitchens, nb_bedrooms, nb_all_beds, full_location (JSON), no_prepayment, free_cancellation, property_sustainability (JSON)",
+  "date_range": "check_in 2025-01-01 / check_out 2025-01-10 for every row (single fixed 9-night stay window); capture ~Dec 2024 (repo last push 2024-12-16)",
+  "how_pulled": "curl -sL -o brightdata_booking_1001.csv 'https://raw.githubusercontent.com/luminati-io/Booking-dataset-sample/HEAD/Booking-dataset-sample%20Listings.csv'; gh api repos/luminati-io/Booking-dataset-sample/contents/ (to confirm tree); python/pandas to describe",
+  "full_dataset_size": "This IS the whole free dataset: one CSV, 814,588 bytes, 1,000 rows. The marketing README advertises a paid Bright Data product of ~30.4K Booking.com records; not obtainable without a Bright Data account/purchase.",
+  "description": "Bright Data promotional sample of Booking.com property search results: one row per property quote for a single fixed search (1 adult, 1 room, check-in 2025-01-01, check-out 2025-01-10), with USD final/original price for the 9-night stay, review score/count, bed/bedroom/kitchen counts, free_cancellation and no_prepayment flags, and geo/distance JSON. Three metro areas only: Melbourne/Southbank/Docklands (~380 rows), Vienna/Wien (~262), Orlando/Kissimmee area (~340). Grain is property x one search snapshot, captured ~Dec 2024. For ABNB it is a one-off comparator for quoted Booking.com nightly rates (price/9) and for prepay-vs-free-cancellation mix (56% free cancellation, 15% no prepayment) in three cities, and a schema template for a Booking quoted-price panel; it has no time dimension so it cannot feed a forecast directly.",
+  "issues": "No LICENSE file in the repo (tos_or_license_flag=true): this is Bright Data promotional content scraped from Booking.com, and redistribution/usage rights are unstated; a human must decide before using it in any deliverable. Row count is 1,000 not 1,001 (job card counted the header). Single snapshot, single stay window, three cities, no timestamps beyond the stay dates; children and tax_description columns are entirely empty. The larger 30.4K product is paid and was not touched. Booking-datasets.png (627 KB marketing image) deliberately not pulled.",
+  "geography": "Melbourne (AU), Vienna (AT), Orlando/Kissimmee (US-FL)",
+  "source_urls": ["https://raw.githubusercontent.com/luminati-io/Booking-dataset-sample/HEAD/Booking-dataset-sample%20Listings.csv", "https://api.github.com/repos/luminati-io/Booking-dataset-sample/contents/"],
+  "pulled_at": "2026-09-14"
+}

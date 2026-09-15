@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:statistikat/statcuber",
+  "url": "https://github.com/statistikat/STATcubeR",
+  "name": "statistikat/STATcubeR",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R interface to Austria's STATcube REST API and data.statistik.gv.at (Statistics Austria's open-data portal), found via the sdmx topic cluster.",
+  "why_useful": "Austria isn't in our explicit gap list but is a Eurostat-reporting EU tourism market (Vienna short-term-rental regulation is already tracked); this gives a programmatic route to Austrian accommodation-statistics tables if the regional model is extended.",
+  "potential": "low",
+  "geography": "Austria",
+  "time_coverage": "current STATcube catalogue",
+  "size_hint": "R package",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "Austria isn't in our explicit gap list but is a Eurostat-reporting EU tourism market (Vienna short-term-rental regulation is already tracked); this gives a programmatic route to Austrian accommodation-statistics tables if the regional model is extended."
+  ]
+ },
+ {
+  "key": "github:jimmy-nguyen-data-science/monthly-amtrak-ridership-forecasting",
+  "url": "https://github.com/jimmy-nguyen-data-science/Monthly-Amtrak-Ridership-Forecasting",
+  "name": "Monthly-Amtrak-Ridership-Forecasting",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed monthly Amtrak system-wide ridership series, Jan 1991 - May 2013 (the classic Hyndman/forecasting-textbook Amtrak series), used for R time-series forecasting (ARIMA/exp smoothing). ~269 monthly obs.",
+  "why_useful": "Long back-history (22+ years) of a national ground-travel demand series; useful only as a macro travel-demand backdrop / seasonality reference for gap #10 (rail/road capacity), not point-in-time and stops in 2013 so not current.",
+  "potential": "low",
+  "geography": "USA (national)",
+  "time_coverage": "1991-01 to 2013-05, monthly",
+  "size_hint": "single CSV, ~270 rows",
+  "license": "none declared",
+  "last_activity": "2021-12-22",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Long back-history (22+ years) of a national ground-travel demand series; useful only as a macro travel-demand backdrop / seasonality reference for gap #10 (rail/road capacity), not point-in-time and stops in 2013 so not current."
+  ]
+ },
+ {
+  "key": "github:workap9/amtrak-ridership-forecasting",
+  "url": "https://github.com/workap9/AMTRAK-Ridership-Forecasting",
+  "name": "AMTRAK-Ridership-Forecasting",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Same classic 1991-2013 monthly Amtrak ridership dataset as jimmy-nguyen-data-science's repo, re-hosted for a separate forecasting exercise.",
+  "why_useful": "Duplicate of the above; only worth a one-line note since identical series appears in multiple student repos (confirms it's a stable, easy-to-find historical series).",
+  "potential": "low",
+  "geography": "USA (national)",
+  "time_coverage": "1991-01 to 2013-05, monthly",
+  "size_hint": "single CSV, ~270 rows",
+  "license": "none declared",
+  "last_activity": "2023-07-25",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "jimmy-nguyen-data-science/Monthly-Amtrak-Ridership-Forecasting (same underlying series)",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Duplicate of the above; only worth a one-line note since identical series appears in multiple student repos (confirms it's a stable, easy-to-find historical series)."
+  ]
+ },
+ {
+  "key": "github:richardboulet/amtrak_ridership_crawl",
+  "url": "https://github.com/RichardBoulet/Amtrak_Ridership_Crawl",
+  "name": "Amtrak_Ridership_Crawl",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium crawler that scrapes Amtrak's own site for annual ridership by individual station (station-level annual counts, not a national monthly aggregate).",
+  "why_useful": "A working method to get station-level Amtrak ridership (finer grain than the national monthly series above); could be adapted to pull current-year station data for a ground-travel cross-check, though it is a scraper of Amtrak.com and would need to be re-run rather than used as-is (no committed data, last updated 2020).",
+  "potential": "low",
+  "geography": "USA (station level)",
+  "time_coverage": "annual, vintage unclear (crawl-time dependent), repo from 2020",
+  "size_hint": "scraper only, no committed data file",
+  "license": "none declared",
+  "last_activity": "2020-07-11",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "A working method to get station-level Amtrak ridership (finer grain than the national monthly series above); could be adapted to pull current-year station data for a ground-travel cross-check, though it is a scraper of Amtrak.com and would need to be re-run rather than used as-is (no committed data, last updated 2020)."
+  ]
+ },
+ {
+  "key": "github:catenarytransit/amtrak-gtfs-rt",
+  "url": "https://github.com/catenarytransit/amtrak-gtfs-rt",
+  "name": "amtrak-gtfs-rt",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A GTFS-Realtime feed generator/parser for Amtrak (live train positions/schedule adherence), actively updated (Apr 2026). No historical ridership counts -- this is train-position/frequency data, not passenger counts.",
+  "why_useful": "Could be used to build a service-frequency/capacity proxy for Amtrak corridors going forward (gap #10 capacity angle), but has no historical archive and does not measure ridership or dollars -- weak fit for the ABNB nights/ADR forecast.",
+  "potential": "low",
+  "geography": "USA (Amtrak network)",
+  "time_coverage": "real-time only, no history",
+  "size_hint": "code only, no dataset",
+  "license": "none declared",
+  "last_activity": "2026-04-29",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Could be used to build a service-frequency/capacity proxy for Amtrak corridors going forward (gap #10 capacity angle), but has no historical archive and does not measure ridership or dollars -- weak fit for the ABNB nights/ADR forecast."
+  ]
+ }
+]

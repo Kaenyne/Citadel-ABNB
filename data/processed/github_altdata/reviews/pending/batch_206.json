@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:cadiz-resiste/openrta-tools",
+  "url": "https://github.com/cadiz-resiste/openrta-tools",
+  "name": "cadiz-resiste/openrta-tools",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Python tooling (rta2map.py) plus committed JSON snapshots (rta_cadiz.json, rta_bahia.json, rta_elpuerto.json) of the Junta de Andaluc\u00eda tourism registry (OpenRTA / VUT \u2014 viviendas de uso tur\u00edstico) for C\u00e1diz city, the Bay of C\u00e1diz, and El Puerto de Santa Mar\u00eda; renders to HTML maps distinguishing tourist housing vs tourist apartments. 7 commits, small.",
+  "why_useful": "Companion/earlier version of the OpenRTA pipeline above; committed JSON snapshots give a point-in-time cut of the same Andaluc\u00eda STR registry usable without re-querying the API.",
+  "potential": "medium",
+  "geography": "C\u00e1diz city, Bah\u00eda de C\u00e1diz, El Puerto de Santa Mar\u00eda (Andaluc\u00eda, Spain)",
+  "time_coverage": "single/few snapshots, undated in visible metadata",
+  "size_hint": "three small JSON files (city-level)",
+  "license": "not stated",
+  "last_activity": "2025-01-10",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "overlaps Inquilinato-Cadiz/mapa (same OpenRTA source, narrower geography, older snapshot)",
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "Companion/earlier version of the OpenRTA pipeline above; committed JSON snapshots give a point-in-time cut of the same Andaluc\u00eda STR registry usable without re-querying the API."
+  ]
+ },
+ {
+  "key": "github:newtral-datos/mapa_vivienda_turistica_temporada",
+  "url": "https://github.com/Newtral-datos/mapa_vivienda_turistica_temporada",
+  "name": "Newtral-datos/mapa_vivienda_turistica_temporada",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Spanish data-journalism outlet Newtral's interactive map of seasonal/tourist housing in Spain; ships a vector-tile file mapa_rua.pmtiles plus config.js/index.html; 14 commits; no stated license or description on the repo page (source dataset behind the map not confirmed from README alone).",
+  "why_useful": "A committed geospatial vector-tile dataset of Spanish tourist-housing distribution from a national newsroom's data team \u2014 worth a closer look to confirm the underlying registry source (likely INE/regional cadastro) and whether the pmtiles file can be queried offline for counts by municipality.",
+  "potential": "medium",
+  "geography": "Spain (national, per repo name 'mapa' + 'temporada')",
+  "time_coverage": "unspecified",
+  "size_hint": "one pmtiles vector-tile file, size unknown",
+  "license": "not stated",
+  "last_activity": "2026-01-20",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "A committed geospatial vector-tile dataset of Spanish tourist-housing distribution from a national newsroom's data team \u2014 worth a closer look to confirm the underlying registry source (likely INE/regional cadastro) and whether the pmtiles file can be queried offline for counts by municipality."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/citq-rapport-2024",
+  "url": "https://github.com/UPGo-McGill/citq-rapport-2024",
+  "name": "citq-rapport-2024",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R-code repo (MIT licensed) for a 2024 report analyzing Quebec's CITQ (Corporation de l'industrie touristique du Qu\u00e9bec) tourist-accommodation registration data; repo structure shows an R/ folder and LICENSE only \u2014 README/data contents not readable via unauthenticated fetch, so exact CITQ fields/row counts/date range could not be confirmed in this pass.",
+  "why_useful": "Only GitHub hit found that references CITQ by name and builds analysis directly on Quebec's short-term-rental registry, named explicitly in gap #12 (Montreal/Quebec CITQ); worth a follow-up authenticated read (raw README, or `gh repo view`) to confirm whether registry-level counts/tables are included or only derived statistics.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Quebec, Canada",
+  "time_coverage": "2024 report vintage; underlying CITQ registry period unconfirmed",
+  "size_hint": "small code repo, no large data files apparent",
+  "license": "MIT",
+  "last_activity": "2024",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Only GitHub hit found that references CITQ by name and builds analysis directly on Quebec's short-term-rental registry, named explicitly in gap #12 (Montreal/Quebec CITQ); worth a follow-up authenticated read (raw README, or `gh repo view`) to confirm whether registry-level counts/tables are included or only derived statistics.",
+   "Confirms UPGo actively works with Quebec's CITQ STR registration data (a regulatory registry gap-relevant to item 12); code shows how to process CITQ data even though no dataset is committed here \u2014 worth pulling the underlying CITQ open registry directly rather than via this repo."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/bc-report-2024",
+  "url": "https://github.com/UPGo-McGill/bc-report-2024",
+  "name": "bc-report-2024",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R/ and output/ folders for the lab's 2024 British Columbia STR report (province-wide, following BC's short-term rental legislation). No data/ folder visible in the top-level tree (likely pulls from a private DB), so this is analysis code, not a committed dataset. Sibling repos bc-report-2022 and bc-report-2023-summer are the same report series in earlier years.",
+  "why_useful": "One of very few GitHub repos referencing a BC-wide STR analysis, relevant to gap #12 (Vancouver/BC STR registry); worth an authenticated follow-up read to see if it ingests the BC provincial short-term rental registry launched under the Short-Term Rental Accommodations Act.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "geography": "British Columbia, Canada (incl. Vancouver)",
+  "time_coverage": "2024 report vintage",
+  "size_hint": "small code repo",
+  "license": "MIT",
+  "last_activity": "2024",
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "One of very few GitHub repos referencing a BC-wide STR analysis, relevant to gap #12 (Vancouver/BC STR registry); worth an authenticated follow-up read to see if it ingests the BC provincial short-term rental registry launched under the Short-Term Rental Accommodations Act.",
+   "Point-in-time provincial STR supply/growth report (BC has had aggressive 2024 STR legislation); figures alone give visual time series but no machine-readable numbers were found committed.",
+   "Recency is notable (2024 report on BC's new province-wide STR law) -- relevant to gap #12 (STR ordinance tracker) as a pointer to a fresh regulatory-impact study, though no data is committed.",
+   "Shows the lab publishes an annual province-wide BC STR report; the code/methodology could be reused even without the underlying (likely proprietary AirDNA-sourced) data, and any published PDF/output linked from it may contain BC-wide STR volume estimates useful as an external benchmark.",
+   "BC's 2024 STR law was one of the most aggressive North American regulatory shocks to STR supply; this is a direct, academically-produced measurement of its effect, useful for the Canada component of NA regional mix and as an analogue for how other jurisdictions' registration laws might bite."
+  ]
+ },
+ {
+  "key": "github:imorte/passport-index-data",
+  "url": "https://github.com/imorte/passport-index-data",
+  "name": "passport-index-data",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "7 files (1 JSON + 6 CSV: matrix/tidy x name/ISO2/ISO3) of visa requirements for 199 countries x 199 destinations (visa-free days, visa-free, visa-on-arrival, eTA, e-visa, visa-required, no-admission); actively maintained, most recent data dated 17 Feb 2026; MIT licensed; 83 stars, 4 commits; explicitly the maintained continuation of ilyankou/passport-index-dataset which is now archived (last updated 12 Jan 2025)",
+  "why_useful": "Currency of a passport/visa-openness index is a proxy for ease of cross-border travel by nationality pair; can be joined with regional nights mix (gap 7/20) to test whether visa-liberalization events move bilateral travel flows into ABNB's regional splits. This is the live successor to the widely-cited but now-archived ilyankou repo.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-02-17 data snapshot",
+  "geography": "global, 199x199 country pairs",
+  "time_coverage": "current snapshot only (no historical panel in this repo)",
+  "size_hint": "~40k tidy rows (199x199 minus self-pairs)",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Currency of a passport/visa-openness index is a proxy for ease of cross-border travel by nationality pair; can be joined with regional nights mix (gap 7/20) to test whether visa-liberalization events move bilateral travel flows into ABNB's regional splits. This is the live successor to the widely-cited but now-archived ilyankou repo."
+  ]
+ }
+]

@@ -1,0 +1,139 @@
+[
+ {
+  "key": "github:anguyen1210/insideairbnb",
+  "url": "https://github.com/anguyen1210/insideairbnb",
+  "name": "anguyen1210/insideairbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small (3-commit, 1-star) Python tool with two scrape scripts (scrape_insideairbnb_01.py, scrape_insideairbnb_02.py) that pull specified files from the live Inside Airbnb site into a local SQLite database, plus an email-alert helper. No data committed.",
+  "why_useful": "Could be adapted to alert on new Inside Airbnb vintages dropping off the CDN before we lose them (mitigates the '~1 year retention' gap noted in memory), but unverified/low activity (last updated 2022, 1 star).",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2022-06-08",
+  "geography": "unspecified",
+  "time_coverage": "n/a (tool)",
+  "size_hint": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)"
+  ],
+  "why_all": [
+   "Could be adapted to alert on new Inside Airbnb vintages dropping off the CDN before we lose them (mitigates the '~1 year retention' gap noted in memory), but unverified/low activity (last updated 2022, 1 star).",
+   "A minimal one-command puller for Inside Airbnb's currently-live archive into a queryable local DB; marginal since it only reaches the live CDN (same ~1-year window we already have), not older vintages."
+  ]
+ },
+ {
+  "key": "github:jiaazhaoo/gdssa-inside-airbnb-data-collecter",
+  "url": "https://github.com/jiaazhaoo/GDSSA-Inside-Airbnb-Data-Collecter",
+  "name": "jiaazhaoo/GDSSA-Inside-Airbnb-Data-Collecter",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Recently updated (Sep 2026) Inside Airbnb data collector tool; contents/scope not confirmed beyond name.",
+  "why_useful": "Very recent activity could mean it tracks a broader city set than our panel or automates archival before CDN rotation; worth a directory-listing follow-up.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2026-09-02",
+  "geography": "unconfirmed",
+  "time_coverage": "unconfirmed",
+  "size_hint": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)"
+  ],
+  "why_all": [
+   "Very recent activity could mean it tracks a broader city set than our panel or automates archival before CDN rotation; worth a directory-listing follow-up."
+  ]
+ },
+ {
+  "key": "github:deaneeth/airbnb-market-intelligence-pipeline",
+  "url": "https://github.com/deaneeth/airbnb-market-intelligence-pipeline",
+  "name": "deaneeth/airbnb-market-intelligence-pipeline",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reproducible, config-driven pipeline that pulls Inside Airbnb's public detailed-listings/calendar/reviews/neighbourhood files (currently configured for Amsterdam, snapshot 2026-06-15) and turns them into typed Parquet, a DuckDB star schema, SQL summaries, ML benchmarks, and a Streamlit dashboard. Explicitly excludes raw/staged/processed data files from version control (pull-only, no committed data). Adding a new city is a one-line configs/cities.yml change, no code change. 69 commits, active as of July 2026.",
+  "why_useful": "Could be repurposed as our own DuckDB/Parquet ingestion layer for Inside Airbnb pulls (we already query raw stores via DuckDB per CLAUDE.md), marginal net-new data value.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2026-07-19",
+  "geography": "current Inside Airbnb catalogue",
+  "time_coverage": "current snapshot",
+  "size_hint": "unknown",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "overlaps our own Inside Airbnb capture/query tooling",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Could be repurposed as our own DuckDB/Parquet ingestion layer for Inside Airbnb pulls (we already query raw stores via DuckDB per CLAUDE.md), marginal net-new data value.",
+   "Duplicates what we already hold (Inside Airbnb panel) in substance, but the config-driven multi-city harness pattern is a clean reference for turning a raw Inside Airbnb pull into an analysis-ready store fast, if we ever want to add a market beyond our current 13/34/120-market panels."
+  ]
+ },
+ {
+  "key": "github:luminati-io/airbnb-dataset-samples",
+  "url": "https://github.com/luminati-io/Airbnb-dataset-samples",
+  "name": "luminati-io/Airbnb-dataset-samples",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "airbnb-properties-information.csv with 1,001 sample rows drawn from a larger Bright Data commercial dataset described as covering 'more than 11,000,000' Airbnb-adjacent records; fields include property id/name/url, price, location/coordinates, guest capacity, host info, amenities, availability dates, ratings/reviews. Full dataset obtainable (paid) via Bright Data API on a custom refresh cadence (once/daily/weekly/monthly/quarterly).",
+  "why_useful": "Not historical, small sample, and points at a paid commercial scraping API rather than free/committed bulk data; flagged only because it demonstrates a live commercial Airbnb-listings API exists (out of scope per CLAUDE.md's 'no scraping airbnb.com beyond sanctioned sources' rule, and this is a vendor sample, not usable directly), so treat as informational only, not actionable.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "unknown",
+  "geography": "unspecified, current listings",
+  "time_coverage": "current only",
+  "size_hint": "~1000+ listings sample",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Not historical, small sample, and points at a paid commercial scraping API rather than free/committed bulk data; flagged only because it demonstrates a live commercial Airbnb-listings API exists (out of scope per CLAUDE.md's 'no scraping airbnb.com beyond sanctioned sources' rule, and this is a vendor sample, not usable directly), so treat as informational only, not actionable.",
+   "A commercially-scraped, apparently current, very large-scale Airbnb listings dataset (11M+ full size) exists behind Bright Data's paid API; the free sample is small (1,001 rows, no stated cities/years) but flags that a paid, current, global Airbnb listing feed is available if the team ever wants pricing/availability at a scale beyond Inside Airbnb. Scraping airbnb.com \u2014 per our rules this is a human ToS decision, not something to run ourselves.",
+   "A committed, free sample of a large third-party Airbnb listing/price/availability dataset (not AirDNA, but a comparable commercial 'sample export' in scope for this theme); available_dates field could feed a lightweight occupancy proxy for whatever cities appear in the 1,001 rows. Small and not point-in-time, so low standalone value, but worth noting as a template for what Bright Data (and similar vendors) will give away.",
+   "Only a small free sample is committed; the substantive data sits behind Bright Data's paid product. Marginal value as a one-time cross-check of listing counts/prices in a handful of markets, not a real time series."
+  ]
+ },
+ {
+  "key": "github:mcamin/berlin-airbnb-19-20",
+  "url": "https://github.com/Mcamin/Berlin-Airbnb-19-20",
+  "name": "Mcamin/Berlin-Airbnb-19-20",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Berlin Airbnb dataset for 2019-2020 (sourced from a Kaggle mirror of insideairbnb.com) including a calendar.csv with listing availability and price, plus a listings file, used for descriptive analysis.",
+  "why_useful": "Fills a Berlin 2019-2020 vintage we do not explicitly hold in the 13-city / 34-market panels; useful as a cross-check city and pre-COVID/COVID-transition calendar with price, relevant to gap #1 and #2 (realised pricing).",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Berlin",
+  "time_coverage": "2019-2020",
+  "size_hint": "unspecified, single-city CSVs",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)"
+  ],
+  "why_all": [
+   "Fills a Berlin 2019-2020 vintage we do not explicitly hold in the 13-city / 34-market panels; useful as a cross-check city and pre-COVID/COVID-transition calendar with price, relevant to gap #1 and #2 (realised pricing)."
+  ]
+ }
+]

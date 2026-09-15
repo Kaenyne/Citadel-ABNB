@@ -1,0 +1,54 @@
+{
+  "IPO_calendar_gap": {
+    "both_dates_before_all_W1_origins": true,
+    "earliest_W1_guide_origin": "2023-02-14",
+    "effect": "No refit performed; one-day date correction alone precedes all W1 origins; original value availability remains unverified",
+    "frozen_approximate_date": "2020-11-15",
+    "same_day_availability_validated": false,
+    "verified_index_filed_date": "2020-11-16"
+  },
+  "as_of": "2026-09-14",
+  "classification_counts": {
+    "definition_difference": 2,
+    "exact": 67,
+    "later_precision": 4,
+    "rounding": 18,
+    "unresolved": 5
+  },
+  "current_Q3_arithmetic_delta_revenue_musd": 4.658820541731,
+  "current_Q3_held_fixed_lambda_decimal": 0.172548908953,
+  "current_Q3_weighted_input_delta_musd": 27.0,
+  "current_illustration_n": 1,
+  "fitted_parameters": 0,
+  "gbv_quarters_with_finer_or_later_corroboration": 18,
+  "limitations": [
+    "All other wide-panel columns out of scope.",
+    "Currently served original SEC URLs do not prove historical archived bytes.",
+    "Earliest in checked evidence is not proof no earlier release existed; date-only availability makes no intraday claim.",
+    "No original S-1 text retrieved; no original 2020Q3 value is claimed.",
+    "No positive evidence of revisions or transcription is asserted.",
+    "Nights and Experiences Booked through 2025Q1 counts stay nights plus experience participant seats, not pure hotel room nights. From 2025Q2 Nights and Seats Booked also includes service seats. ADR denominator is aggregate booked units; label change/expansion is retained.",
+    "No model refit, revised forecast series, forecast registration, or production policy change.",
+    "Revenue precision can affect historical outcomes or fitted coefficients; such refit effects are deliberately not quantified by the held-lambda GBV derivative.",
+    "2025Q2 GBV primary presentation conflict and 2022Q2 later rounded history discrepancy remain unresolved.",
+    "No exact SEC acceptance time recovered for Q2 2026. Date-only filing basis is inherited; no intraday claim."
+  ],
+  "metric_cells": 96,
+  "operational_policy": "Retain inherited fixed 2/3-1/3 seasonal estimation policy; free-w promotion FAIL unchanged",
+  "original_checked_cells": 92,
+  "original_unavailable_cells": 4,
+  "other_wide_panel_columns": "out_of_scope",
+  "primary_scope": [
+    "gbv_musd",
+    "revenue_musd",
+    "nights_m",
+    "adr_usd"
+  ],
+  "primary_source_texts_checked": 46,
+  "quarters": 24,
+  "revised_forecasts": 0,
+  "sources": 47,
+  "unavailable_source_texts": [
+    "2020Q3_filing"
+  ]
+}

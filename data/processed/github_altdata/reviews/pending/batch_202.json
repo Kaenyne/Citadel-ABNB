@@ -1,0 +1,147 @@
+[
+ {
+  "key": "other:https://github.com/upgo-mcgill",
+  "url": "https://github.com/UPGo-McGill",
+  "name": "UPGo-McGill (org: bc-report-2024, ontario-report-2024, citq-rapport-2024, cmhc-rent-2023, cmhc-transitions-2024, mtr-paper-2023, montreal-finance-2022, mtl_landlords, herongate)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "McGill University's Urban Politics and Governance lab (David Wachsmuth) \u2014 a running program of STR regulatory-compliance research with individual repos per report: bc-report-2022/2023-summer/2024 (British Columbia provincial STR registry law), toronto-report and toronto-report-2023 ('Analysis of Toronto's STR registration system', regulatory-compliance section, data/ folder, MIT), vancouver-analysis, ottawa-2021 (OLT ordinance hearing), pec-2021 (Prince Edward County), la-report-2021, montreal-finance-2022, str-ltr-mtl-analysis (STR units returning to the long-term rental market \u2014 a direct STR<->LTR crossover dataset, gap #13), citq-rapport-2024 (Quebec's CITQ STR licence-number system), commercial-operators, deceptive_str_operations ('Max's SRP' \u2014 detecting fraudulent/deceptive STR listings), and the strr R package itself (functions strr_FREH \u2014 frequently-rented entire-home listings, strr_ghost \u2014 ghost-hostel clusters, strr_multi \u2014 commercial multi-listing operators; built for AirDNA-format inputs, not raw data).",
+  "why_useful": "If the CITQ and CMHC repos do commit data, this would be a genuine Canadian STR-registration and rent-panel dataset relevant to gap #12 (STR ordinance/registration trackers -- Quebec CITQ named explicitly there) and gap #7/#13 (Canada StatCan-adjacent, housing/rent panels). Flagging as a cluster worth a deeper look by whichever agent owns the regulatory-tracker or Canada-volume gap.",
+  "potential": "high",
+  "geography": "Canada (Quebec, BC, Ontario, Montreal)",
+  "time_coverage": "2022-2024 report vintages",
+  "license": "MIT (confirmed on citq-rapport-2024)",
+  "size_hint": "Unconfirmed -- needs a follow-up file-tree check",
+  "last_activity": "2024 (active org)",
+  "gap_targets": [
+   12,
+   7,
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews",
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "If the CITQ and CMHC repos do commit data, this would be a genuine Canadian STR-registration and rent-panel dataset relevant to gap #12 (STR ordinance/registration trackers -- Quebec CITQ named explicitly there) and gap #7/#13 (Canada StatCan-adjacent, housing/rent panels). Flagging as a cluster worth a deeper look by whichever agent owns the regulatory-tracker or Canada-volume gap.",
+   "This is the one research group publicly building analysis pipelines exactly over Quebec CITQ and BC provincial STR registration data (gap #12) and Canadian STR commercial-operator/ghost-hostel detection (relevant to gap #9 supply and #2 realized occupancy proxies); their published PDF reports (linked from repos, e.g. via CMHC/McGill) may contain registry-level counts and trends even where the raw data itself is not redistributable, and the strr R package methodology (FREH, ghost-hostel, commercial-operator classification) is reusable on any listing-level panel we already hold (e.g. Inside Airbnb Canadian coverage) as an acquisition/classification method.",
+   "This is one of very few active research groups publishing recurring, city-level commercial/multi-listing host concentration numbers -- a proxy for professional-host share of STR supply outside the US, useful context for gap #12 (STR ordinance trackers/registration data) and the multi-listing host theme generally, even without a clean data file to pull.",
+   "Confirms UPGo is a real, active (some repos updated 2025-2026) academic STR-research lab exactly matching the theme brief, but their underlying data (AirDNA) is licensed, not open, so the org's value to us is methodology and report structure (ghost-hotel detection, commercial-operator flags, CMHC housing-transition linkage) rather than a data source. Individually flagged repos above are the highest-signal subset; the rest are lower-value variants of the same code pattern.",
+   "This is a full academic pipeline for exactly the regulator/compliance lens the persona is tracking: registration-compliance rates, delisting after enforcement, commercial-operator and ghost-hostel classification, and STR<->long-term-rental crossover, across multiple Canadian and one US (LA) jurisdiction, with report-specific data/ folders and reusable R tooling. Feeds gap #12 (registration datasets, regulatory trackers) and gap #13 (STR<->LTR crossover) directly, and the strr package's FREH/ghost-hostel classifiers are a reusable method for identifying quasi-commercial (non-Airbnb-branded) STR supply that competes with or supplies Airbnb's own inventory."
+  ]
+ },
+ {
+  "key": "github:ramvasuthevan/city-of-toronto-short-term-rentals-registration",
+  "url": "https://github.com/RamVasuthevan/city-of-toronto-short-term-rentals-registration",
+  "name": "RamVasuthevan/city-of-toronto-short-term-rentals-registration",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Git-scraping repo (Simon-Willison-style) that pulls the City of Toronto open-data portal's official 'Short Term Rentals Registrations' CSV (short-term-rental-registrations-data.csv) every day at UTC midnight and commits it. Active as of 13 Sep 2026 (last updated 2026-09-13). Because it commits a fresh CSV daily, the git commit history itself is a genuine point-in-time vintage series of Toronto's STR registration list (registration IDs/status/addresses per the city schema) going back to whenever the repo started running. Has a LICENSE file (type not confirmed) and a short README describing the git-scraping method.",
+  "why_useful": "Not one of our twelve named US cities, but it is a live, actively-updated, point-in-time (dated-snapshot) municipal STR-registration mirror using the git-scraping pattern gap #17 asks for (Socrata/CKAN discovery + archive tooling); the technique is directly reusable for Austin/Denver/Seattle/etc. Socrata portals.",
+  "potential": "high",
+  "geography": "Toronto, Canada",
+  "time_coverage": "ongoing daily snapshots, current as of 13 Sep 2026",
+  "size_hint": "one dated data file per day, size unspecified",
+  "license": "other (per repo metadata)",
+  "last_activity": "2026-09-13 (updated today)",
+  "gap_targets": [
+   4,
+   12,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "Canadian and Australian STR registries and datasets (Toronto, Vancouver, Montreal, Quebec CITQ, BC registry, Sydney NSW STRA register, Melbourne)",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Not one of our twelve named US cities, but it is a live, actively-updated, point-in-time (dated-snapshot) municipal STR-registration mirror using the git-scraping pattern gap #17 asks for (Socrata/CKAN discovery + archive tooling); the technique is directly reusable for Austin/Denver/Seattle/etc. Socrata portals.",
+   "Gives a genuine day-by-day point-in-time STR registration panel for a major North American market (Toronto) via git-log archaeology \u2014 directly answers gap #4 (point-in-time vintages) and gap #12 (city STR registration datasets, Toronto named explicitly) even though Toronto isn't in our existing 25-dataset municipal STR list.",
+   "Toronto is a named target in gap #12 (city registration datasets: Toronto, Vancouver, Montreal/Quebec CITQ...). This is not just a one-time dump but a running, dated, point-in-time capture of the actual regulator's registry \u2014 directly usable to build a Toronto STR active-listing/registration count time series without needing to scrape the city ourselves (satisfies rule 2's point-in-time requirement and rule 6's sanctioned-sources constraint, since the underlying pull is of a government open-data portal, not airbnb.com).",
+   "Directly fills gap #12 (city STR registration datasets: Toronto, Vancouver, Montreal/Quebec CITQ) with a genuinely point-in-time series (each git commit = a dated snapshot of registered-listing counts), which is rare \u2014 most municipal STR registries (including our existing Austin/Barcelona/Maui/NYC/CA holdings) are single current-state pulls, not vintaged. Toronto active-registration counts are a legal-supply proxy for a top-10 ABNB market.",
+   "A daily, point-in-time count of legally registered Toronto STR units is a regulatory-supply proxy for one of Airbnb's regional mix components (Canada/NA) and directly serves CONTEXT.md gap #12 (city registration datasets) with something better than a one-shot snapshot \u2014 the git log gives vintages for free, addressing the point-in-time requirement in CLAUDE.md rule 2."
+  ]
+ },
+ {
+  "key": "github:centraldedados/alojamento_local",
+  "url": "https://github.com/centraldedados/alojamento_local",
+  "name": "centraldedados/alojamento_local",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper (fetch_rnal.py, fetch_rnal_setup.py, using Splinter/RoboBrowser) for Portugal's Registo Nacional do Alojamento Local (RNAL), the national short-term-rental licence registry. Covers all 308 Portuguese municipalities; supports selective scraping by municipality range. Includes a municipal reference table (Concelhos_CAOP2018.csv, CAOP 2018 codes). No data is pre-committed to the repo -- running the script produces one CSV per municipality (Down_<DICO>_<NOME>.csv), split into time-period parts for large cities (Lisbon, Porto). 12 commits, 3 stars, 6 watchers; license and last-commit date not visible from the README fetch.",
+  "why_useful": "Directly targets numbered gap 12 (STR registration/city registration datasets -- explicitly names Lisbon RNAL). RNAL is the closest thing to a full-market STR supply census for Portugal (active listing counts, addresses/parishes, licence dates by municipality), which is not otherwise in our municipal-registry holdings (Austin, Barcelona HUTB, Maui, NYC OSE, California TOT). A working, already-built scraper against a live government portal (not airbnb.com) means point-in-time supply counts for a full EU country could be pulled without violating the airbnb.com scraping restriction -- worth a human call on whether to actually run it.",
+  "potential": "high",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Portugal (national, all 308 municipalities, incl. Lisbon/Porto)",
+  "time_coverage": "Current registry snapshot at time of run (not historical/vintage; would need repeated runs for a time series)",
+  "size_hint": "Method only, no committed data; output size scales with RNAL registry (Lisbon/Porto require multi-part downloads implying tens of thousands of listings nationally)",
+  "license": "not visible from README fetch",
+  "last_activity": "not visible from README fetch (12 commits total)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "Directly targets numbered gap 12 (STR registration/city registration datasets -- explicitly names Lisbon RNAL). RNAL is the closest thing to a full-market STR supply census for Portugal (active listing counts, addresses/parishes, licence dates by municipality), which is not otherwise in our municipal-registry holdings (Austin, Barcelona HUTB, Maui, NYC OSE, California TOT). A working, already-built scraper against a live government portal (not airbnb.com) means point-in-time supply counts for a full EU country could be pulled without violating the airbnb.com scraping restriction -- worth a human call on whether to actually run it."
+  ]
+ },
+ {
+  "key": "github:inquilinato-cadiz/mapa",
+  "url": "https://github.com/Inquilinato-Cadiz/mapa",
+  "name": "Inquilinato-Cadiz/mapa",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Astro/Leaflet static site with committed data pulled from OpenRTA, the Andalusian regional tourism registry (Registro de Turismo de Andaluc\u00eda), CC BY 4.0, refreshed monthly via GitHub Actions. Files: public/data/municipios/<slug>.geojson (per-municipality tourist-dwelling points, filtered to 'vivienda de uso tur\u00edstico' and 'apartamento tur\u00edstico' categories, contact info stripped, reprojected EPSG:25830->WGS84), src/data/municipios.json (index), src/data/stats.json (aggregate stats), plus a cadastral large-owner layer (fincas-cadiz.geojson / fincas.json). Covers all 45 municipalities of C\u00e1diz province.",
+  "why_useful": "A live, automatically-refreshed, geolocated STR-registry dataset for a full Spanish province beyond Barcelona (which we already hold via HUTB) -- fills gap 12 with finer city coverage in Spain and demonstrates OpenRTA as a pullable regional source that could be extended to other Andalusian provinces (M\u00e1laga/Costa del Sol, Granada, Seville) for a party of the EMEA STR-supply picture.",
+  "potential": "high",
+  "gap_targets": [
+   12
+  ],
+  "geography": "Spain, C\u00e1diz province, Andalusia (45 municipalities)",
+  "time_coverage": "Monthly automated snapshots going forward from repo creation; not clear how far back history is retained in git history of the geojson files",
+  "size_hint": "45 municipality geojson files + 2 aggregate JSON files, per-listing point data with property type",
+  "license": "CC BY 4.0 for the underlying OpenRTA data; repo code license not confirmed",
+  "last_activity": "updated 2026-09-08 (recent, active monthly refresh)",
+  "duplicate_of_holding": "Adjacent to our existing Barcelona HUTB holding but a different Spanish region/registry (Andalusia OpenRTA vs Barcelona HUTB) -- not a duplicate",
+  "hits": 2,
+  "themes": [
+   "European STR registration and tourist-accommodation registries (Portugal RNAL, Spain tourist dwellings, Italy CIN, France meubl\u00e9s de tourisme, Amsterdam, Berlin, Vienna, Lisbon, Barcelona HUTB, Paris)"
+  ],
+  "why_all": [
+   "A live, automatically-refreshed, geolocated STR-registry dataset for a full Spanish province beyond Barcelona (which we already hold via HUTB) -- fills gap 12 with finer city coverage in Spain and demonstrates OpenRTA as a pullable regional source that could be extended to other Andalusian provinces (M\u00e1laga/Costa del Sol, Granada, Seville) for a party of the EMEA STR-supply picture.",
+   "A live, machine-pullable, daily-updated registry of licensed short-term rentals for an entire Spanish province (Andaluc\u00eda coastal tourism market), joined to cadastral ownership data \u2014 directly extends gap 12 (city registration datasets) beyond the Barcelona HUTB/municipal set we already hold, and the underlying OpenRTA API (Junta de Andaluc\u00eda) plausibly covers all of Andaluc\u00eda (M\u00e1laga, Sevilla, Granada, etc.), not just C\u00e1diz."
+  ]
+ },
+ {
+  "key": "github:mogenshobolth/eu-visa-policy",
+  "url": "https://github.com/mogenshobolth/eu-visa-policy",
+  "name": "eu-visa-policy",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "visitor-visa-statistics.csv: EU/Schengen short-stay visitor visa applications, issuances and refusals by member state, 2005-2022, built from the Council Document Register (2005-2008) and the EU Migration and Home Affairs Commission website (2009-2022); World Bank income/region classification joined on for country grouping; 88 commits; Python build scripts (program.py, geography.py, create-output-datasets.py); core dataset also mirrored on Kaggle",
+  "why_useful": "This is actual Schengen visa-statistics time series (applications/issued/refused by country, 2005-2022) \u2014 directly answers the theme's core ask and nothing like it is in our current holdings (gap 7/12 adjacent: cross-border demand and regulation). Could proxy inbound EU short-stay demand trend and correlate with EMEA nights.",
+  "potential": "high",
+  "license": "not stated in README (check repo root for LICENSE file before use)",
+  "last_activity": "not confirmed via fetch; 88 commits, appears mature/complete project",
+  "geography": "EU/Schengen member states",
+  "time_coverage": "2005-2022",
+  "size_hint": "one core CSV + derived aggregate CSVs; row count not confirmed",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "This is actual Schengen visa-statistics time series (applications/issued/refused by country, 2005-2022) \u2014 directly answers the theme's core ask and nothing like it is in our current holdings (gap 7/12 adjacent: cross-border demand and regulation). Could proxy inbound EU short-stay demand trend and correlate with EMEA nights."
+  ]
+ }
+]

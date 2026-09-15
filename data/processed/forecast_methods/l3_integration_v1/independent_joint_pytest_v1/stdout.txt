@@ -1,0 +1,52 @@
+........................................................................ [ 54%]
+....................................................FFFF...F          [100%]
+================================== FAILURES ===================================
+______________ test_exact_22_lag_complete_source_reconstruction _______________
+
+    def test_exact_22_lag_complete_source_reconstruction():
+>       panel,targets=r.load();d=m.lag_rows(panel)
+                      ^^^^^^
+E       AttributeError: module 'run' has no attribute 'load'
+
+analysis\src\forecast_methods\conversion_validation_v1\test_conversion.py:63: AttributeError
+____ test_same_day_letter_is_admissible_but_future_actual_and_gbv_are_not _____
+
+    def test_same_day_letter_is_admissible_but_future_actual_and_gbv_are_not():
+>       panel,_=r.load();date="2023-02-14";known=panel[panel.print_date<=pd.Timestamp(date)]
+                ^^^^^^
+E       AttributeError: module 'run' has no attribute 'load'
+
+analysis\src\forecast_methods\conversion_validation_v1\test_conversion.py:73: AttributeError
+__________ test_missing_lag_and_duplicate_or_undated_panel_rejected ___________
+
+    def test_missing_lag_and_duplicate_or_undated_panel_rejected():
+>       panel,_=r.load();date="2023-02-14";known=panel[panel.print_date<=pd.Timestamp(date)]
+                ^^^^^^
+E       AttributeError: module 'run' has no attribute 'load'
+
+analysis\src\forecast_methods\conversion_validation_v1\test_conversion.py:86: AttributeError
+____ test_known_target_outcome_is_forbidden_even_if_timestamp_manipulated _____
+
+    def test_known_target_outcome_is_forbidden_even_if_timestamp_manipulated():
+>       panel,_=r.load();known=panel[panel.quarter<="2023Q1"].copy();known.loc[known.quarter=="2023Q1","print_date"]=pd.Timestamp("2023-02-14")
+                ^^^^^^
+E       AttributeError: module 'run' has no attribute 'load'
+
+analysis\src\forecast_methods\conversion_validation_v1\test_conversion.py:97: AttributeError
+________________ test_immutable_output_guard_before_any_write _________________
+
+    def test_immutable_output_guard_before_any_write():
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)/"preserve";p.write_text("unchanged")
+>           with pytest.raises(FileExistsError):r.run(td)
+                                                ^^^^^
+E           AttributeError: module 'run' has no attribute 'run'
+
+analysis\src\forecast_methods\conversion_validation_v1\test_conversion.py:125: AttributeError
+=========================== short test summary info ===========================
+FAILED analysis/src/forecast_methods/conversion_validation_v1/test_conversion.py::test_exact_22_lag_complete_source_reconstruction
+FAILED analysis/src/forecast_methods/conversion_validation_v1/test_conversion.py::test_same_day_letter_is_admissible_but_future_actual_and_gbv_are_not
+FAILED analysis/src/forecast_methods/conversion_validation_v1/test_conversion.py::test_missing_lag_and_duplicate_or_undated_panel_rejected
+FAILED analysis/src/forecast_methods/conversion_validation_v1/test_conversion.py::test_known_target_outcome_is_forbidden_even_if_timestamp_manipulated
+FAILED analysis/src/forecast_methods/conversion_validation_v1/test_conversion.py::test_immutable_output_guard_before_any_write
+5 failed, 127 passed, 3 subtests passed in 11.88s

@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:kyleyhw/prediction_markets",
+  "url": "https://github.com/kyleyhw/prediction_markets",
+  "name": "prediction_markets (kyleyhw)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts analyzing Polymarket/Kalshi market microstructure (bid-ask spreads, arbitrage detection) and explicitly verifying historical data integrity via CLOB and Gamma APIs.",
+  "why_useful": "The data-integrity verification code is a useful template for point-in-time correctness checks (rule 2 of our own project) when pulling prediction-market vintages, even though the repo itself stores no dataset.",
+  "potential": "low",
+  "size_hint": "small analysis scripts",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "The data-integrity verification code is a useful template for point-in-time correctness checks (rule 2 of our own project) when pulling prediction-market vintages, even though the repo itself stores no dataset."
+  ]
+ },
+ {
+  "key": "github:sharifioni/futuur-kalshi-polymarket-api-data-automation",
+  "url": "https://github.com/sharifioni/Futuur-Kalshi-Polymarket-API-data-Automation",
+  "name": "Futuur-Kalshi-Polymarket-API-data-Automation",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Client-commissioned project retrieving ongoing-event data from Futuur, Kalshi, and Polymarket APIs and matching equivalent markets across platforms by title.",
+  "why_useful": "Same cross-platform matching value as futuur/prediction_markets; a second independent implementation to sanity-check the matching approach if we ever build an event-probability panel.",
+  "potential": "low",
+  "size_hint": "small automation scripts",
+  "time_coverage": "live pull only",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-03-17",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "futuur/prediction_markets (same three-platform coverage)",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Same cross-platform matching value as futuur/prediction_markets; a second independent implementation to sanity-check the matching approach if we ever build an event-probability panel."
+  ]
+ },
+ {
+  "key": "github:azazelitto21/prediction-markets-skill",
+  "url": "https://github.com/azazelitto21/prediction-markets-skill",
+  "name": "prediction-markets-skill",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A 'Claude skill' packaging read-only Kalshi + Polymarket market-data retrieval with zero dependencies and no API keys required, meant to stop AI agents from hallucinating prediction-market API calls.",
+  "why_useful": "Directly reusable as a no-key, no-dependency method for our own agents to pull live Kalshi/Polymarket prices on any ABNB-earnings, FIFA World Cup, or regulation-outcome market if we decide to build a live panel.",
+  "potential": "low",
+  "size_hint": "small skill package",
+  "time_coverage": "live only",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-08-13",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Directly reusable as a no-key, no-dependency method for our own agents to pull live Kalshi/Polymarket prices on any ABNB-earnings, FIFA World Cup, or regulation-outcome market if we decide to build a live panel."
+  ]
+ },
+ {
+  "key": "github:livetennisapi/polymarket-tennis",
+  "url": "https://github.com/livetennisapi/polymarket-tennis",
+  "name": "polymarket-tennis",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT, observe-only toolkit that discovers Polymarket sports markets via the Gamma API and matches them to live match data to watch market price vs. live score/server/break-point in real time.",
+  "why_useful": "Not travel/ABNB-relevant directly, but it is the most-starred (317) worked example of pattern-matching a specific event-market category on Polymarket's Gamma API by topic \u2014 a reusable template if we later want to isolate ABNB-earnings or World-Cup-timing markets the same way.",
+  "potential": "low",
+  "size_hint": "small toolkit, no bundled data",
+  "time_coverage": "live only",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Not travel/ABNB-relevant directly, but it is the most-starred (317) worked example of pattern-matching a specific event-market category on Polymarket's Gamma API by topic \u2014 a reusable template if we later want to isolate ABNB-earnings or World-Cup-timing markets the same way."
+  ]
+ },
+ {
+  "key": "github:machina-sports/sports-skills",
+  "url": "https://github.com/machina-sports/sports-skills",
+  "name": "sports-skills",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source agent skills (SKILL.md format) for live sports data and prediction markets covering football, F1, Kalshi, and Polymarket, with zero API keys required.",
+  "why_useful": "Marginal for ABNB directly (sports-focused), but demonstrates a no-key pattern for pulling Kalshi/Polymarket data that could be adapted to non-sports event categories (regulation, macro) relevant to gap 11/12.",
+  "potential": "low",
+  "size_hint": "skill package, no bundled dataset",
+  "time_coverage": "live only",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Marginal for ABNB directly (sports-focused), but demonstrates a no-key pattern for pulling Kalshi/Polymarket data that could be adapted to non-sports event categories (regulation, macro) relevant to gap 11/12."
+  ]
+ }
+]

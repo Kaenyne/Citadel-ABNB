@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:andrewmulert/light_tiles",
+  "url": "https://github.com/AndrewMulert/light_tiles",
+  "name": "light_tiles",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Per repo description: \"All of the light pollution data from the 2025 Earth Observations Group VIIRS Nighttime Lights Study\" stored in JSON, described as being for \"easy Web Access\" \u2014 implying a global tile-based mirror of the EOG VNL product converted to JSON. Could not confirm file listing or exact size (README fetch 404'd on both main and master branches at time of scouting; needs a directory-listing check before relying on it).",
+  "why_useful": "If genuine, a committed global nightlights dataset (not just an API client) would remove the NASA Earthdata token / API-pull step needed by blackmarblepy/blackmarbler above, making a global tourism-destination nightlights index buildable offline. Flagged for a follow-up directory-listing check (gh api repos/AndrewMulert/light_tiles/contents) rather than confirmed.",
+  "potential": "low",
+  "geography": "global (claimed)",
+  "time_coverage": "2025 VNL study vintage",
+  "size_hint": "unconfirmed \u2014 JSON tiles",
+  "license": "none stated",
+  "last_activity": "2026-03-17",
+  "gap_targets": [
+   2,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "If genuine, a committed global nightlights dataset (not just an API client) would remove the NASA Earthdata token / API-pull step needed by blackmarblepy/blackmarbler above, making a global tourism-destination nightlights index buildable offline. Flagged for a follow-up directory-listing check (gh api repos/AndrewMulert/light_tiles/contents) rather than confirmed."
+  ]
+ },
+ {
+  "key": "github:ruiduobao/viirs-nightlights-download",
+  "url": "https://github.com/ruiduobao/viirs-nightlights-download",
+  "name": "viirs-nightlights-download",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small MIT-licensed downloader script/tool for pulling VIIRS nighttime-light composites directly from NOAA EOG (no committed data). Sibling repo 'geoskill-viirs-nightlights-download' by the same author is essentially the same tool packaged as a 'skill'.",
+  "why_useful": "Lightweight alternative acquisition method for VIIRS composites if blackmarbler's NASA-token workflow is inconvenient; low differentiation and unclear activity/maintenance quality versus blackmarbler.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2026-07-27",
+  "geography": "global",
+  "time_coverage": "VIIRS era, 2012-present",
+  "size_hint": "small script repo, no data",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "worldbank/blackmarbler (same underlying data, less mature tool)",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Lightweight alternative acquisition method for VIIRS composites if blackmarbler's NASA-token workflow is inconvenient; low differentiation and unclear activity/maintenance quality versus blackmarbler."
+  ]
+ },
+ {
+  "key": "other:https://gdo152.llnl.gov/cowc",
+  "url": "https://gdo152.llnl.gov/cowc/",
+  "name": "COWC - Cars Overhead With Context",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Lawrence Livermore National Laboratory dataset: ~32,000 labeled car bounding boxes across 0.15m-resolution aerial imagery from 6 cities (hosted at gdo152.llnl.gov/cowc/, released 2016). Widely referenced in computer-vision repos (object-detection benchmarks) as the standard overhead car-counting dataset; a GitHub-native mirror/loader was not confirmed but many detector repos (e.g. YOLO/Faster-RCNN car-counting projects) reference it as a data dependency.",
+  "why_useful": "Generic reference dataset for training/validating a parking-lot / car-counting-from-overhead-imagery pipeline, which is the closest open, labeled analogue to a satellite-based hotel/retail parking-lot occupancy proxy the team could build for any of its 13/123 Airbnb markets. Not tourism-specific and not on GitHub directly, so only a foundational/methods asset, not an ABNB-ready dataset.",
+  "potential": "low",
+  "license": "research use (LLNL)",
+  "last_activity": "2016 (dataset release; still commonly cited)",
+  "geography": "6 US/foreign cities (per original paper: Toronto, Selwyn NZ, Potsdam, Vaihingen, Columbus OH, Utah)",
+  "time_coverage": "2016 snapshot imagery",
+  "size_hint": "~32k labeled car instances",
+  "gap_targets": [
+   2,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Generic reference dataset for training/validating a parking-lot / car-counting-from-overhead-imagery pipeline, which is the closest open, labeled analogue to a satellite-based hotel/retail parking-lot occupancy proxy the team could build for any of its 13/123 Airbnb markets. Not tourism-specific and not on GitHub directly, so only a foundational/methods asset, not an ABNB-ready dataset."
+  ]
+ },
+ {
+  "key": "github:sustainlab-group/sustainbench",
+  "url": "https://github.com/sustainlab-group/sustainbench",
+  "name": "SustainBench",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Stanford Sustain Lab benchmark suite: 15 ML tasks across 7 UN SDGs (poverty/economic development prediction from satellite imagery, cropland/crop-type/yield mapping, health, water/sanitation, brick-kiln land-cover classification). Raw and processed data hosted on Google Drive (external, CC-BY-SA 4.0), with PyTorch dataloaders and preprocessing code in-repo; nightlights use for the poverty-prediction task is implied by the literature this benchmark is built on but not explicitly confirmed in the fetched README excerpt.",
+  "why_useful": "Its economic-development-from-satellite-imagery task (poverty prediction using daytime + nighttime imagery, a well-known approach in the development-economics literature) is a transferable methodology for building an activity/wealth proxy per market, though it is not tourism-specific and the nightlights component needs independent confirmation before use.",
+  "potential": "low",
+  "license": "CC-BY-SA 4.0",
+  "last_activity": "not confirmed from excerpt",
+  "geography": "global, multiple countries per task",
+  "time_coverage": "varies by task",
+  "size_hint": "large (external Google Drive hosting)",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Occupancy/demand estimation from satellite, nightlights, or imagery; parking-lot counts; Sentinel-based tourism activity"
+  ],
+  "why_all": [
+   "Its economic-development-from-satellite-imagery task (poverty prediction using daytime + nighttime imagery, a well-known approach in the development-economics literature) is a transferable methodology for building an activity/wealth proxy per market, though it is not tourism-specific and the nightlights component needs independent confirmation before use."
+  ]
+ },
+ {
+  "key": "github:firmanaf/mobivista",
+  "url": "https://github.com/firmanaf/MobiVista",
+  "name": "firmanaf/MobiVista",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "QGIS Processing plugin (MIT, 3 stars, released Oct 2025) that ingests Meta 'Data for Good' Movement Map CSVs (region IDs, distance-band bins, dates) and produces spatially aggregated layers, visual analytics, and synthetic origin-destination flows. Ships only the plugin code, not Meta's underlying mobility CSVs.",
+  "why_useful": "If Meta's Data for Good mobility program still issues movement-range data (access has been narrowing), this is a ready pipeline to turn it into regional travel-intensity indices for the NA/EMEA/LatAm/APAC mix question; worth a follow-up to check current Meta program access status before building on it.",
+  "geography": "wherever Meta issues Movement Maps (historically global, now restricted)",
+  "time_coverage": "depends on Meta program access, not in repo",
+  "size_hint": "single Python file",
+  "license": "MIT",
+  "last_activity": "2026-04-24",
+  "gap_targets": [
+   5,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "If Meta's Data for Good mobility program still issues movement-range data (access has been narrowing), this is a ready pipeline to turn it into regional travel-intensity indices for the NA/EMEA/LatAm/APAC mix question; worth a follow-up to check current Meta program access status before building on it."
+  ]
+ }
+]

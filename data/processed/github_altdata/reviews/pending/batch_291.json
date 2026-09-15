@@ -1,0 +1,137 @@
+[
+ {
+  "key": "github:peer-problem/eden-api",
+  "url": "https://github.com/peer-problem/eden-api",
+  "name": "eden-api",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Live public FastAPI service (no API key required, https://api.edenapi.org/v1) aggregating Korean inbound-tourism data: regional visitor insights/timeseries, inbound market comparisons by origin country (Japan, China, Taiwan, US, Philippines), travel-trend/visitor forecasts, destination recommendations, official government alerts, weather context, YouTube travel-keyword data. Python 3.12/FastAPI/MariaDB stack, 60 commits, no license stated in visible content.",
+  "why_useful": "Fills part of gap #7 (APAC regional travel volume outside US/EU) with a ready-made, no-key public API for Korea inbound visitor timeseries and market-comparison endpoints that could substitute for or supplement JNTO/KTO scraping.",
+  "potential": "medium",
+  "geography": "South Korea (inbound)",
+  "time_coverage": "not stated; live/current data",
+  "size_hint": "8 endpoints, live service",
+  "license": "not stated",
+  "last_activity": "60 commits, recent (2026-09-11 per gh metadata)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Fills part of gap #7 (APAC regional travel volume outside US/EU) with a ready-made, no-key public API for Korea inbound visitor timeseries and market-comparison endpoints that could substitute for or supplement JNTO/KTO scraping."
+  ]
+ },
+ {
+  "key": "github:juftin/camply",
+  "url": "https://github.com/juftin/camply",
+  "name": "juftin/camply",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python CLI/TUI (651 stars, MIT, actively maintained, 257 commits) that polls Recreation.gov, ReserveCalifornia, Yellowstone Lodges, and GoingToCamp-platform state park systems for campsite cancellations/availability at sold-out campgrounds and pushes notifications (email/Slack/SMS/Telegram/webhook). No bundled historical data; it is a live-polling method.",
+  "why_useful": "Outdoor-recreation booking pace is a competing-travel-dollar signal and a clean analogue for the RNPL/cancellation-monitoring thesis (watching for cancellations at capacity-constrained inventory) \u2014 same mechanic as the STR cancellation/lead-time question (gap #3), just on a different asset class; also a template for point-in-time capacity-utilization capture.",
+  "geography": "US, Canada (GoingToCamp)",
+  "time_coverage": "live/real-time only, no history",
+  "size_hint": "code only, no data files",
+  "license": "MIT",
+  "last_activity": "actively maintained (2026)",
+  "gap_targets": [
+   3,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo",
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Outdoor-recreation booking pace is a competing-travel-dollar signal and a clean analogue for the RNPL/cancellation-monitoring thesis (watching for cancellations at capacity-constrained inventory) \u2014 same mechanic as the STR cancellation/lead-time question (gap #3), just on a different asset class; also a template for point-in-time capacity-utilization capture.",
+   "A maintained, multi-country client for public outdoor-lodging availability data; could be adapted (not run per rules) to build a live occupancy/scarcity proxy for camping/outdoor short-term stays as a substitute-supply signal alongside STR registries."
+  ]
+ },
+ {
+  "key": "github:usdot-jpo-codehub/rec-gov-analysis",
+  "url": "https://github.com/usdot-jpo-codehub/rec-gov-analysis",
+  "name": "usdot-jpo-codehub/rec-gov-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "US DOT Volpe Center tooling (not a live scraper of Airbnb) for analyzing recreation.gov's own historical reservation exports from the RIDB portal (ridb.recreation.gov data-download page) across national forests/federal campgrounds, built for transportation-planning demand analysis. No data committed; points to a real point-in-time reservation-history download.",
+  "why_useful": "Outdoor-recreation/camping booking curves are a public, government-hosted 'book-ahead' kernel analogue (like NCLH advance sales, item 18) with real reservation lead times and cancellation behavior; a cross-check on how far ahead US leisure travelers commit, useful context for the RNPL/booking-lead-time thesis and travel-volume seasonality even though it never touches Airbnb.",
+  "potential": "medium",
+  "license": "unknown (not stated in fetched content)",
+  "last_activity": "2023-08-25",
+  "geography": "US (national forests / federal recreation lands)",
+  "time_coverage": "historical RIDB reservation exports, span not specified on page",
+  "size_hint": "tooling repo only; data lives on ridb.recreation.gov",
+  "gap_targets": [
+   18
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Outdoor-recreation/camping booking curves are a public, government-hosted 'book-ahead' kernel analogue (like NCLH advance sales, item 18) with real reservation lead times and cancellation behavior; a cross-check on how far ahead US leisure travelers commit, useful context for the RNPL/booking-lead-time thesis and travel-volume seasonality even though it never touches Airbnb."
+  ]
+ },
+ {
+  "key": "github:vincentarelbundock/wdi",
+  "url": "https://github.com/vincentarelbundock/WDI",
+  "name": "vincentarelbundock/WDI",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (252 stars) to pull any World Bank World Development Indicators series by code, including ST.INT.ARVL (international tourist arrivals), ST.INT.RCPT (international tourism receipts, current US$), and BX.TRF.PWKR (personal remittances received) by country and year.",
+  "why_useful": "Country x year tourism-arrivals and tourism-receipts series give a cross-border demand backdrop for LatAm/APAC regional mix (gap #7) that is broader in country coverage than our current Eurostat/BEA/NTTO holdings, even if annual and lagged.",
+  "potential": "medium",
+  "geography": "global, ~200 countries",
+  "time_coverage": "annual, 1960s-present (varies by indicator)",
+  "size_hint": "n/a (API wrapper; full pull is tens of MB)",
+  "license": "unspecified on repo page",
+  "last_activity": "2026-08-19",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Country x year tourism-arrivals and tourism-receipts series give a cross-border demand backdrop for LatAm/APAC regional mix (gap #7) that is broader in country coverage than our current Eurostat/BEA/NTTO holdings, even if annual and lagged."
+  ]
+ },
+ {
+  "key": "github:achintyaashok/kayak-scraper",
+  "url": "https://github.com/AchintyaAshok/Kayak-Scraper",
+  "name": "Kayak-Scraper (flight data library)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "9-star Python scraping library that pulls flight search results (route, date, price, airline) directly from kayak.com; no data committed, method only.",
+  "why_useful": "A maintained (updated 2026-04-30) general-purpose Kayak flight-data puller; same rationale as the flight-price-prediction repo for gap 10 travel-demand proxies, but purely a method with no stored data and scraping Kayak is outside sanctioned sources \u2014 flag only, do not run.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "license": "not stated",
+  "geography": "global (Kayak coverage)",
+  "time_coverage": "n/a (live scrape only)",
+  "size_hint": "code library, no data files",
+  "last_activity": "2026-04-30",
+  "hits": 2,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers",
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels"
+  ],
+  "why_all": [
+   "A maintained (updated 2026-04-30) general-purpose Kayak flight-data puller; same rationale as the flight-price-prediction repo for gap 10 travel-demand proxies, but purely a method with no stored data and scraping Kayak is outside sanctioned sources \u2014 flag only, do not run.",
+   "Second-most-starred hit in the whole sweep; again flights not hotels, but Kayak is a metasearch competitor to Google Travel and this is a maintained-enough client if the team ever wanted a non-Google metasearch price source."
+  ]
+ }
+]

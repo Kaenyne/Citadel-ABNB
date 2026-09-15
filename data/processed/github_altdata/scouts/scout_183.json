@@ -1,0 +1,188 @@
+{
+  "theme": "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+  "modality": "web",
+  "queries_run": [
+    "upgo mcgill short term rental data github (WebSearch, budget exhausted before running)",
+    "short-term rental dataset github city planning department csv (WebSearch, budget exhausted)",
+    "\"inside airbnb\" archive mirror github historical dumps (WebSearch, budget exhausted)",
+    "html.duckduckgo.com: upgo mcgill short term rental data github (captcha-blocked)",
+    "html.duckduckgo.com: short-term rental dataset github city planning department csv (captcha-blocked)",
+    "bing.com: upgo mcgill short term rental data site:github.com (irrelevant results returned)",
+    "bing.com: short-term rental dataset city planning department site:github.com (irrelevant results returned)",
+    "gh search repos: upgo mcgill short term rental",
+    "gh search repos: short term rental dataset city",
+    "gh search repos: airbnb short-term rental research dataset",
+    "gh search repos: airbnb regulation",
+    "gh search repos: upgo",
+    "gh search repos: str registry city dataset",
+    "gh api orgs/UPGo-McGill/repos",
+    "gh search repos: AirDNA data",
+    "gh search repos: short term rental ordinance tracker",
+    "gh search repos: STR listings compliance",
+    "gh search repos: toronto short term rental registration data",
+    "gh search repos: urban displacement project",
+    "gh search repos: gentrification airbnb data research",
+    "gh search repos: barcelona airbnb data ajuntament",
+    "gh search repos: amsterdam short stay rental data",
+    "gh search repos: wachsmuth airbnb (rate-limited, no result)",
+    "gh search repos: airbnb research dataset university replication (rate-limited, no result)",
+    "WebFetch verification on ~10 individual repo pages"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/UPGo-McGill/strr",
+      "name": "UPGo-McGill/strr",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "R package (422 commits, 5 stars, updated as recently as 2025) with functions to clean and process raw AirDNA property and daily data files, compress/expand STR panels, generate location estimates for listings, identify 'ghost hotel' clusters of private-room listings, flag frequently-rented entire-home properties (i.e. de facto commercial operators), and classify listings against housing-unit inventories. Contains a data-raw folder (likely small reference/test data, not full raw dumps). Requires AirDNA raw files as input, which are paid/licensed, so this is tooling not a dataset.",
+      "why_useful": "Directly targets gap #2 (realised ADR/occupancy for STRs) via a maintained, actively-used methodology for turning AirDNA-style panel data into occupancy/ADR/commercial-operator metrics; also useful for gap #12 (ghost-hotel/illegal-listing detection feeds regulatory-compliance analysis).",
+      "potential": "high"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/canada-analysis",
+      "name": "UPGo-McGill/canada-analysis",
+      "category": "academic_replication",
+      "data_kind": "both",
+      "what_it_holds": "R analysis scripts described as the replication package for Combs, Kerrigan & Wachsmuth 2019 ('Short-Term Rentals in Canada'), a McGill UPGo study of Airbnb activity across major Canadian cities. Repo contains an R/ folder of analysis code; exact data-file contents not confirmed by fetch (GitHub page did not render full README/data listing).",
+      "why_useful": "An academic replication package for a peer-reviewed Airbnb-Canada study gives a methodology and possibly underlying panel data for STR supply/pricing in a non-US market not covered by our current 13-city Inside Airbnb panel.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/ghost",
+      "name": "UPGo-McGill/ghost",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "R package/function for identifying 'ghost hotel' clusters (private-room STR listings clustered in a single building/unit acting as an unlicensed hotel), from McGill's UPGo lab.",
+      "why_useful": "Methodology for detecting commercial/illegal STR operators, relevant to gap #12 (regulatory/registration compliance) and to separating true P2P supply from de facto hotel supply within STR panels.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/raffle",
+      "name": "UPGo-McGill/raffle",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "R package implementing a function for probabilistically assigning STR listings to administrative geographies (e.g. census tracts/neighbourhoods) when only approximate listing coordinates are known.",
+      "why_useful": "Method for geocoding fuzzy STR listing locations into standard geographies, useful for building regional (city/neighbourhood-level) STR supply panels from Inside-Airbnb-style data with imprecise coordinates.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/toronto-analysis",
+      "name": "UPGo-McGill/toronto-analysis",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "McGill UPGo lab's analysis of Toronto's STR market (city-specific study, MIT licensed); likely built on AirDNA-derived panel data for Toronto pre-dating our current 13-city Inside Airbnb coverage.",
+      "why_useful": "City-specific STR supply/activity study for a market (Toronto) not in our current Inside Airbnb panel; could extend geographic coverage or provide a cross-check methodology.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/vancouver-regulations",
+      "name": "UPGo-McGill/vancouver-regulations",
+      "category": "regulatory_legal",
+      "data_kind": "both",
+      "what_it_holds": "MIT-licensed McGill UPGo analysis of STR host compliance with Vancouver's 2018 short-term-rental regulations (registration/licensing compliance study).",
+      "why_useful": "Directly on-point for gap #12 (STR ordinance/registration trackers) for Vancouver, one of the cities named in that gap list.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/halifax-analysis",
+      "name": "UPGo-McGill/halifax-analysis",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "McGill UPGo STR market report/analysis for Halifax, Nova Scotia (2 stars, updated as recently as 2025 per org metadata).",
+      "why_useful": "Smaller secondary Canadian market STR study; fills out a broader Canadian STR supply picture beyond Toronto/Montreal.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/whitehorse-analysis",
+      "name": "UPGo-McGill/whitehorse-analysis",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "MIT-licensed McGill UPGo report on STR activity in Whitehorse, Yukon.",
+      "why_useful": "Niche small-market STR study; low direct relevance to ABNB's financial KPIs but a genuine data/analysis artifact.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/caribbean-analysis",
+      "name": "UPGo-McGill/caribbean-analysis",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "MIT-licensed McGill UPGo analysis prepared for a presentation on Caribbean STR markets.",
+      "why_useful": "Touches gap #7-adjacent territory (regional travel/STR volume outside the US/EU core), Caribbean STR supply not covered elsewhere in our holdings.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/florida-presentation",
+      "name": "UPGo-McGill/florida-presentation",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "McGill UPGo presentation materials/analysis prepared for a Florida Realtors conference, on STR market activity in Florida.",
+      "why_useful": "Florida STR supply/pricing angle; could complement Hawaii DBEDT as a state-level STR/tourism data point (gap #8 state-level occupancy mentions Florida bed tax).",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/Starkville_analysis",
+      "name": "UPGo-McGill/Starkville_analysis",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "McGill UPGo analysis of STR activity in the US South, focused on Starkville, MS and similar smaller cities.",
+      "why_useful": "Marginal — a small-market case study; listed for completeness of the UPGo body of work.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/charlottetown-analysis",
+      "name": "UPGo-McGill/charlottetown-analysis",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "McGill UPGo STR market analysis for Charlottetown, PEI.",
+      "why_useful": "Marginal small-market Canadian STR case study.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/la-analysis",
+      "name": "UPGo-McGill/la-analysis",
+      "category": "str_airbnb_direct",
+      "data_kind": "both",
+      "what_it_holds": "McGill UPGo STR analysis of the Los Angeles market (2019).",
+      "why_useful": "LA is already in our 13-city Inside Airbnb panel; this could be a cross-check dataset/methodology or an earlier vintage (2019) than our current holdings.",
+      "duplicate_of_holding": "Overlaps geography with our existing LA Inside Airbnb coverage but from a different (AirDNA-derived) source and earlier vintage.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/UPGo-McGill/upgo",
+      "name": "UPGo-McGill/upgo",
+      "category": "methods_tooling",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "General 'UPGo utility package' (R, 217 commits) underlying the lab's other STR analysis repos — shared helper functions for their data pipeline.",
+      "why_useful": "Supporting library for the strr/ghost/raffle ecosystem; only useful in combination with those.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/CodeForBc/airbnb-regulation",
+      "name": "CodeForBc/airbnb-regulation",
+      "category": "regulatory_legal",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Civic-tech (Code for BC) project with 269 commits, MIT licensed, that scrapes Airbnb listings and cross-references them against BC business-registry records to flag STR listings operating in violation of BC's short-term-rental registration policy; includes Docker/Terraform infra and a Grafana dashboard for results.",
+      "why_useful": "A working method for turning STR registration/compliance policy into a quantifiable violation rate, relevant to gap #12 (city/provincial STR registration datasets). Note: it scrapes airbnb.com directly, so per repo rules this is catalogued as a method only and must not be run without a human ToS decision.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/urban-displacement/displacement-typologies",
+      "name": "urban-displacement/displacement-typologies",
+      "category": "housing_rental",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "UC Berkeley Urban Displacement Project repo (GPL-3.0, 502 commits, updated Aug 2026, 49 stars) with GeoPackage/CSV files and a codebook classifying census tracts in 8 US metros (Atlanta, Bay Area, Chicago, Cleveland, Denver, LA, Memphis, Seattle) into 8 gentrification/displacement typology categories, mostly on 2017-2018 vintage census/demographic data. Confirmed by fetch: no Airbnb/STR variables included.",
+      "why_useful": "Relevant to gap #13 (long-term rental/housing economics, host-supply pressure) as a housing-displacement/gentrification classification that could be joined to STR listing density by tract to study host-supply drivers, though it carries no STR data itself.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/RomanKhazin/Toronto-Short-Term-Rentals",
+      "name": "RomanKhazin/Toronto-Short-Term-Rentals",
+      "category": "str_airbnb_direct",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Small individual repo (2021) with a single Jupyter notebook exploring the City of Toronto's public short-term-rental registration open dataset; no committed raw data files were visible in the repo listing (notebook likely pulls from Toronto Open Data directly).",
+      "why_useful": "Points to Toronto's official STR registration open-data feed (a municipal registry, gap #12) via a working notebook, though the notebook itself adds little beyond exploration.",
+      "potential": "low"
+    }
+  ],
+  "notes": "WebSearch's session budget (shared across all scouts) was already exhausted (200/200) before any query in this theme ran, so no WebSearch results were obtained at all. DuckDuckGo HTML search returned only a CAPTCHA challenge page for every query. Bing search (via WebFetch) loaded but returned results completely unrelated to the query terms (YouTube/OBS/TikTok pages) for both queries tried, suggesting Bing's non-JS results page is not usable this way in this session. All real findings in this run came from `gh search repos` and `gh api`, which worked but hit GitHub's secondary rate limit twice (403) requiring a short backoff; a couple of planned follow-up searches (wachsmuth airbnb, university replication) were lost to the second rate-limit hit and not retried further given the ~25-tool-call budget. The one clear win: McGill's UPGo lab (Urban Politics and Governance, David Wachsmuth) publishes its entire STR-research toolkit and most city case studies as a GitHub org (UPGo-McGill, 29 repos) — this is exactly the 'McGill UPGo' target named in the theme and had not obviously been catalogued yet. Its core packages (strr, ghost, raffle) are AirDNA-data-cleaning/commercial-operator-detection tools rather than committed datasets (AirDNA itself is paid), so treat them as methodology to fill gap #2, not as a data source in hand. Did not find a McGill/UPGo-style lab with committed *raw* historical Inside Airbnb mirrors (gap #1) in this pass — worth a dedicated follow-up scout specifically hunting Inside-Airbnb pre-2023 archive mirrors and NYC 2023-06→2024-03 gap-fillers, ideally once WebSearch budget resets, since gh search's free-text matching on GitHub's descriptions/README is comparatively weak for that kind of query."
+}

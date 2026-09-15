@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:samwyse/concur",
+  "url": "https://github.com/samwyse/concur",
+  "name": "samwyse/concur",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Older, smaller Python API client for SAP Concur (v3 API). No data; same access limitation as above (needs a corporate Concur tenant/credentials).",
+  "why_useful": "Second confirmation there's no public Concur data mirror on GitHub; low value beyond that negative signal.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "Small",
+  "license": "Unspecified",
+  "last_activity": "2022-01-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets"
+  ],
+  "why_all": [
+   "Second confirmation there's no public Concur data mirror on GitHub; low value beyond that negative signal."
+  ]
+ },
+ {
+  "key": "github:rucilab/uber-movement-data-scraping",
+  "url": "https://github.com/RUCILab/Uber-Movement-Data-Scraping",
+  "name": "RUCILab/Uber-Movement-Data-Scraping",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts for scraping data via the Uber Movement Data Toolkit for academic (RUCI Lab) research; no data files committed, method only.",
+  "why_useful": "Same Uber Movement mobility angle as above; academic-grade scraper structure could guide re-implementation against any surviving archived Movement mirrors (e.g. Wayback captures).",
+  "potential": "low",
+  "geography": "Cities covered by Uber Movement",
+  "time_coverage": "Unspecified",
+  "size_hint": "N/A, code only",
+  "last_activity": "2021-06-27",
+  "license": "GPL-3.0",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Same Uber Movement mobility angle as above; academic-grade scraper structure could guide re-implementation against any surviving archived Movement mirrors (e.g. Wayback captures)."
+  ]
+ },
+ {
+  "key": "github:alex-drake/ubermovements",
+  "url": "https://github.com/alex-drake/ubermovements",
+  "name": "alex-drake/ubermovements",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Joins Uber Movement travel-time exports with OpenStreetMap geometry; a processing pipeline rather than a stored dataset.",
+  "why_useful": "Marginal: same discontinued-source caveat, only useful if a raw Movement export is sourced elsewhere first.",
+  "potential": "low",
+  "geography": "Variable (per-city Movement coverage)",
+  "time_coverage": "Unspecified",
+  "size_hint": "N/A, code only",
+  "last_activity": "2025-10-12",
+  "license": "none stated",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Marginal: same discontinued-source caveat, only useful if a raw Movement export is sourced elsewhere first."
+  ]
+ },
+ {
+  "key": "github:kawsarlog/travel-apis",
+  "url": "https://github.com/kawsarlog/travel-apis",
+  "name": "travel-apis",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Sibling directory repo from the same author listing '2,000+ Travel APIs for flights, hotels, prices, and destination data' \u2014 again a link aggregator with no committed data or code of substance.",
+  "why_useful": "Same caveat as commerce-apis: a discovery index only, could point to a niche flight/hotel price API worth a human follow-up, but nothing here is directly usable data.",
+  "potential": "low",
+  "gap_targets": [
+   10,
+   9
+  ],
+  "size_hint": "N/A - link directory",
+  "time_coverage": "N/A",
+  "geography": "N/A",
+  "license": "none declared",
+  "last_activity": "2026-07-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Same caveat as commerce-apis: a discovery index only, could point to a niche flight/hotel price API worth a human follow-up, but nothing here is directly usable data."
+  ]
+ },
+ {
+  "key": "github:jayaniekanayaka2001-stack/tourism-forecasting-",
+  "url": "https://github.com/jayaniekanayaka2001-stack/Tourism-forecasting-",
+  "name": "Tourism-forecasting-",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Described as using 'actual Sri Lankan tourism data (2014-2025)' with ARIMA seasonality modelling; student project, data provenance (likely Sri Lanka Tourism Development Authority) not independently verified.",
+  "why_useful": "A recent (through 2025) national tourist-arrivals series for an APAC tourism-dependent market not otherwise covered; low confidence the repo has more than a small CSV, but fills gap 7 partially if genuine.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Sri Lanka",
+  "time_coverage": "2014-2025 (claimed)",
+  "size_hint": "unknown, likely small student CSV",
+  "license": "unspecified",
+  "last_activity": "2026-03-02",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "A recent (through 2025) national tourist-arrivals series for an APAC tourism-dependent market not otherwise covered; low confidence the repo has more than a small CSV, but fills gap 7 partially if genuine."
+  ]
+ }
+]

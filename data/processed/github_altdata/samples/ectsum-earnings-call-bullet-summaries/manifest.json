@@ -1,0 +1,36 @@
+{
+ "slug": "ectsum-earnings-call-bullet-summaries",
+ "url": "https://github.com/rajdeep345/ECTSum",
+ "sampled": true,
+ "total_bytes": 317389,
+ "files": [
+  "test_gt_summaries/ (495 gold bullet-summary .txt files, full test split)",
+  "test_ects_10/ (10 transcript .txt files: HLT_q4_2020 + 9 alphabetically first)",
+  "test_index.csv",
+  "ects_sample_index.csv",
+  "manifest.json",
+  "README.md"
+ ],
+ "rows": "test_index.csv 495 rows (one per test-split call; 354 tickers; 1,982 bullets total, 1-14 per call); ects_sample_index.csv 10 rows; text files n/a",
+ "columns": "test_index.csv: file, ticker, fiscal_quarter, year, quarter, n_bullets, bytes, split, has_transcript_sample. ects_sample_index.csv: file, bytes, n_lines. Text files: one sentence per line (transcript) / one Reuters-style bullet per line (summary)",
+ "date_range": "fiscal quarters 2019Q3 to 2022Q4 (from filenames; mode 2021Q3=98, 2021Q2=93; calls held roughly Nov 2019 to early 2023). No call-date column; year in filename is the fiscal period, not the call date",
+ "how_pulled": "git clone --depth 1 --filter=blob:none --sparse https://github.com/rajdeep345/ECTSum ectsum; git sparse-checkout set data/final/test/gt_summaries; for n in HLT_q4_2020 A_q4_2021 AA_q3_2021 AAN_q3_2021 AAN_q4_2020 AAP_q4_2020 AAT_q1_2021 AAT_q4_2020 ABM_q3_2021 ACC_q3_2020: curl -sL -o ects/$n.txt https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/$n.txt; gh api repos/rajdeep345/ECTSum/git/trees/main?recursive=1 for split counts; python build.py to copy and index",
+ "full_dataset_size": "2,425 transcript/summary pairs in-repo: train 1,681, val 249, test 495 (data/final/{train,val,test}/{ects,gt_summaries}); repo ~22 MB on GitHub (git size 22,244 KB); transcripts ~10-25 KB each so ~40 MB of text plus codes/ (model code). One sparse checkout of data/final gets all of it",
+ "description": "ECTSum (EMNLP 2022) is a supervised summarisation corpus: 2,425 US earnings-call transcripts (one sentence per line, prepared remarks only in the samples seen) paired with short Reuters-wire-style bullet summaries (1-14 bullets, e.g. 'q4 adjusted loss per share $0.10', 'system-wide comparable revpar decreased 59.2 percent'). Grain is one call (ticker x fiscal quarter), fiscal 2019Q3-2022Q4, 354 tickers in the test split alone, mostly mid/large-cap US names, no ABNB but HLT, H, DRH, MTN present. Source is the authors' repo (transcripts originally from The Motley Fool, summaries from Reuters). For ABNB an analyst would use it as a labelled train/eval set for a guide-item and KPI extractor over ABNB and peer (BKNG/EXPE/HLT/MAR) calls, or to benchmark an LLM summariser against wire-style gold before running it on the 5 Nov call.",
+ "issues": "Licence: repo is GPL-3.0 (code), but the underlying transcripts are Motley Fool text and the summaries are Reuters wire text, redistributed by the authors without an explicit data licence; treat as research-use only and do not commit derived text into the pitch repo. Sample plan expected 132 KB for the 495 summaries; actual is ~150 KB (fine). 505 files were pulled because the plan sanctioned the whole 132 KB summary directory; transcripts limited to 10. No ABNB calls; only 4 lodging-adjacent tickers in test. Last push 22 May 2024 (job card said Mar 2023). Filenames give fiscal period only, no call date or CIK, so joining to prices needs a ticker/quarter-to-date map.",
+ "source_urls": [
+  "https://github.com/rajdeep345/ECTSum",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/HLT_q4_2020.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/A_q4_2021.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/AA_q3_2021.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/AAN_q3_2021.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/AAN_q4_2020.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/AAP_q4_2020.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/AAT_q1_2021.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/AAT_q4_2020.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/ABM_q3_2021.txt",
+  "https://raw.githubusercontent.com/rajdeep345/ECTSum/main/data/final/test/ects/ACC_q3_2020.txt",
+  "https://api.github.com/repos/rajdeep345/ECTSum/git/trees/main?recursive=1"
+ ],
+ "pulled_at": "2026-09-14"
+}

@@ -1,0 +1,10 @@
+{
+ "slug": "secfsdstools-sec-financial-statement-datasets",
+ "url": "https://github.com/HansjoergW/sec-fincancial-statement-data-set",
+ "category": "company_filings_estimates",
+ "data_kind": "acquisition_method",
+ "one_line": "secfsdstools (Apache-2.0, 84 stars, last push 2025-09-20, 654 commits, code only): downloads the SEC's official quarterly Financial Statement Data Sets (sub/num/pre/tag .txt inside per-quarter zips, 2009q1-present, 500k+ filings, ~2 GB total; 2010q1.zip = 5.3 MB, 2025q2.zip = 79 MB - verified by HTTP HEAD) into local parquet, with standardisers that make balance-sheet/income/cash-flow lines comparable across companies and years; no API key, sec.gov only wants a user-agent email.",
+ "abnb_use": "Builds an as-filed (not restated) quarterly line-item panel for ABNB and every peer filer since 2009 in one pull - gap 4 point-in-time financials and gap 15 XBRL tooling; also the cheapest route to cruise-line deferred revenue / customer deposits (NCLH, CCL, RCL) as the book-ahead analogue in gap 18, and to peer revenue/margin history for the margin model.",
+ "sample_plan": "Pull one small upstream quarter directly, no library install needed: curl -A \"citadel-abnb research ksurapaneni@ufl.edu\" -o 2010q1.zip https://www.sec.gov/files/dera/data/financial-statement-data-sets/2010q1.zip (5.31 MB, Content-Length verified) and unzip sub.txt/tag.txt only; then for a modern quarter take a header sample instead of the full 79 MB file: curl -A \"...\" -r 0-2000000 -o 2025q2_head.zip .../2025q2.zip is NOT usable (partial zip), so instead record the URL pattern and stop. Also git clone --depth 1 https://github.com/HansjoergW/sec-fincancial-statement-data-set for the standardiser code (~10 MB; repo is 408 MB on GitHub's count so use --filter=blob:none --sparse and sparse-checkout set src secfsdstools if the shallow clone is large). Total <= 20 MB.",
+ "tos_or_license_flag": false
+}

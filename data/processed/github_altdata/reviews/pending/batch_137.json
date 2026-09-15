@@ -1,0 +1,151 @@
+[
+ {
+  "key": "github:cocrawler/cdx_toolkit",
+  "url": "https://github.com/cocrawler/cdx_toolkit",
+  "name": "cdx_toolkit",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library + `cdxt` CLI that unifies querying Common Crawl's per-crawl CDX indices AND the Internet Archive Wayback Machine CDX API behind one interface. Can iterate captures across all Common Crawl monthly crawls for a URL/domain pattern, do size estimation, and pull matching WARC records to local WARC/JSONL/CSV. Apache-2.0, 287 commits, actively maintained.",
+  "why_useful": "We already hold a Common Crawl CDX index over airbnb.com (2.08M rows); this tool would let us extend the same CDX-query workflow to the Wayback Machine's own (larger, longer-history) CDX index for airbnb.com, AirDNA, Mashvisor or insideairbnb.com without hand-rolling API calls, and pull matching WARC pages for gaps #1/#2.",
+  "potential": "high",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "unspecified, beta but actively maintained per README",
+  "geography": "global",
+  "time_coverage": "Common Crawl (2008-present) + full Wayback CDX depth",
+  "size_hint": "library only",
+  "duplicate_of_holding": "extends our existing Common Crawl CDX holding to the Wayback Machine index",
+  "hits": 2,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "We already hold a Common Crawl CDX index over airbnb.com (2.08M rows); this tool would let us extend the same CDX-query workflow to the Wayback Machine's own (larger, longer-history) CDX index for airbnb.com, AirDNA, Mashvisor or insideairbnb.com without hand-rolling API calls, and pull matching WARC pages for gaps #1/#2.",
+   "This is the direct successor/complement to the CDX capture already in hand (2.08M rows over airbnb.com, 50 crawls). Using cdx_toolkit against the Wayback CDX API (not just CC) would let us pull historical archived airbnb.com and AirDNA market pages point-in-time (gap 17, and supports gap 1/2 by finding old cached listing/price pages) without any new scraping infrastructure -- it is a public, ToS-neutral archive read, not a live site scrape."
+  ]
+ },
+ {
+  "key": "github:andreabozzo/ceres",
+  "url": "https://github.com/AndreaBozzo/Ceres",
+  "name": "Ceres",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Rust 'harvest-first' toolkit that syncs metadata from 300+ open-data portals (CKAN e.g. dati.comune.milano.it, DCAT/udata e.g. data.gouv.fr, DCAT-SPARQL e.g. data.europa.eu, Socrata e.g. data.cityofnewyork.us, OpenDataSoft e.g. opendata.paris.fr, ArcGIS Hub e.g. opendata.dc.gov, OGC/CSW, STAC, SDMX) into a normalized PostgreSQL catalog (2M+ datasets indexed), with reproducible Parquet snapshots published to Hugging Face (dataset AndreaBozzo/ceres-open-data-index, ~8.24MB, updated ~26 days ago) and optional semantic search via pgvector/Ollama/Gemini/OpenAI. Apache-2.0, 13 stars/4 forks/280 commits, actively developed Sep 2026.",
+  "why_useful": "Directly answers the theme's core need \u2014 a working cross-portal discovery layer spanning exactly the Socrata/CKAN/OpenDataSoft/ArcGIS/DCAT universe named in CONTEXT.md gap #17 (Socrata/CKAN open-data discovery clients to find STR datasets across cities) and gap #12 (STR ordinance/registration datasets across many named cities). Its own metadata index (or the HF Parquet snapshot) could be queried offline to locate STR registries, tourism-board portals, or municipal lodging-tax data for the 20+ specific cities/countries in gaps 7, 8, 9, 12 without hitting live portals one at a time.",
+  "potential": "high",
+  "gap_targets": [
+   17,
+   12,
+   7,
+   8
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "active, Sep 2026 (280 commits)",
+  "geography": "global (300+ portals: US, EU, Italy, France, etc.)",
+  "time_coverage": "current metadata snapshot, incremental sync",
+  "size_hint": "2M+ datasets indexed; HF Parquet snapshot ~8.24MB",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "Directly answers the theme's core need \u2014 a working cross-portal discovery layer spanning exactly the Socrata/CKAN/OpenDataSoft/ArcGIS/DCAT universe named in CONTEXT.md gap #17 (Socrata/CKAN open-data discovery clients to find STR datasets across cities) and gap #12 (STR ordinance/registration datasets across many named cities). Its own metadata index (or the HF Parquet snapshot) could be queried offline to locate STR registries, tourism-board portals, or municipal lodging-tax data for the 20+ specific cities/countries in gaps 7, 8, 9, 12 without hitting live portals one at a time."
+  ]
+ },
+ {
+  "key": "github:ellisp/tcomp-r-package",
+  "url": "https://github.com/ellisp/Tcomp-r-package",
+  "name": "Tcomp-r-package",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R package (`Tcomp`, installable via devtools::install_github) that ships the full dataset from the 2011 Tourism Forecasting Competition (Athanasopoulos, Hyndman, Song & Wu, Int'l J. Forecasting 2011): 1,311 time series of tourism-related indicators (visitor numbers, occupancy-adjacent series) across yearly, quarterly ($M1..$M...) and monthly ($M4 etc.) frequencies, stored as R Mcomp/Mdata objects (list `tourism`) rather than CSV. GPL-3.0, 6 stars, last updated 2025-03-20 (actively maintained wrapper around a fixed historical competition dataset).",
+  "why_useful": "This is the canonical academic tourism-forecasting benchmark dataset (real submitted tourism arrivals/demand series across many countries) \u2014 directly answers the theme's core ask. Useful less as an ABNB predictor and more as a methods testbed: it is the standard corpus for validating hierarchical/reconciliation and ensemble forecasting techniques (gap 17, methods) that the team could apply to nights/ADR quarterly forecasting.",
+  "potential": "high",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Global (many countries, unspecified per-series in metadata)",
+  "time_coverage": "Pre-2010 tourism series (submitted for the 2010 competition), multiple frequencies",
+  "size_hint": "1,311 series, small (R package, likely a few MB)",
+  "license": "GPL-3.0",
+  "last_activity": "2025-03-20",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "This is the canonical academic tourism-forecasting benchmark dataset (real submitted tourism arrivals/demand series across many countries) \u2014 directly answers the theme's core ask. Useful less as an ABNB predictor and more as a methods testbed: it is the standard corpus for validating hierarchical/reconciliation and ensemble forecasting techniques (gap 17, methods) that the team could apply to nights/ADR quarterly forecasting.",
+   "This is the actual academic tourism-forecasting benchmark (not the well-known Kaggle Airbnb NYC file) with 1,311 real tourism series and both training/holdout splits used for point forecast accuracy competitions \u2014 directly on-theme for evaluating our own nights/ADR forecasting methodology against an established out-of-sample discipline (gap #17, methods: nowcasting/backtesting rigor), though the series themselves are generic tourism (arrivals/occupancy), not ABNB-specific."
+  ]
+ },
+ {
+  "key": "github:jsvine/waybackpack",
+  "url": "https://github.com/jsvine/waybackpack",
+  "name": "jsvine/waybackpack",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pure-Python (single dependency: requests) CLI to bulk-download every Wayback Machine snapshot of a given URL/URL pattern within a date range into timestamped local directories. MIT, 3.2k stars, 114 commits, 213 forks.",
+  "why_useful": "Directly implements the 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' method named in gap #17; could be pointed at archived insideairbnb.com/get-the-data pages or historical AirDNA market-report pages to recover CSVs/snapshots the CDN no longer serves.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   1
+  ],
+  "geography": "n/a (generic tool)",
+  "time_coverage": "n/a",
+  "size_hint": "n/a (tool, not data)",
+  "license": "MIT (typical for jsvine repos; not independently re-verified)",
+  "last_activity": "maintained utility, widely used",
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Directly implements the 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' method named in gap #17; could be pointed at archived insideairbnb.com/get-the-data pages or historical AirDNA market-report pages to recover CSVs/snapshots the CDN no longer serves.",
+   "Complementary bulk-download tool to waybackpy for reconstructing full historical capture sets of Airbnb help-center/app pages or competitor product pages (Vrbo, Booking) for a diff-based product-launch/policy-change timeline.",
+   "Bulk-download tool for reconstructing a time series of archived pages (e.g. an Inside Airbnb city page, an AirDNA market-stats page, or an Airbnb press/newsroom page) rather than one snapshot at a time; complements waybackpy for gaps #1/#2/#17.",
+   "Simplest available tool to pull the full history of specific archived pages -- e.g. an AirDNA city market page, an Airbnb newsroom/press page, or a competitor pricing page -- as a time series of snapshots, directly serving gap 17 (Wayback Machine tooling for archived AirDNA/airbnb.com pages).",
+   "General-purpose Wayback tooling named explicitly in gap #17 ('Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)'). Could pull archived newsroom.airbnb.com press-release pages or archived AirDNA/STR market pages for point-in-time text/price snapshots, subject to the Wayback Machine's own airbnb.com exclusions noted by other search results."
+  ]
+ },
+ {
+  "key": "github:hartator/wayback-machine-downloader",
+  "url": "https://github.com/hartator/wayback-machine-downloader",
+  "name": "hartator/wayback-machine-downloader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby gem (5.9k stars, 293 commits, MIT) that downloads an entire archived website (all pages, all timestamps or a filtered range) from the Wayback Machine, rebuilding the original directory/URL structure rather than IA's rewritten links.",
+  "why_useful": "Alternative implementation of the same Wayback-mirroring method as waybackpack (gap #17); could recover archived insideairbnb.com data pages or AirDNA market pages.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "actively maintained community tool",
+  "duplicate_of_holding": "Overlaps jsvine/waybackpack functionally",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Alternative implementation of the same Wayback-mirroring method as waybackpack (gap #17); could recover archived insideairbnb.com data pages or AirDNA market pages.",
+   "Could mirror an entire historical insideairbnb.com or a competitor's market-data microsite (AirDNA blog/market reports, Mashvisor city pages) as it existed at past dates, filling the pre-2023 Inside Airbnb gap (#1) or reconstructing STR occupancy claims (#2)."
+  ]
+ }
+]

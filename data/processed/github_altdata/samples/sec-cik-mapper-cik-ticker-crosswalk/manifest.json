@@ -1,0 +1,24 @@
+{
+ "slug": "sec-cik-mapper-cik-ticker-crosswalk",
+ "url": "https://github.com/jadchaar/sec-cik-mapper",
+ "sampled": true,
+ "total_bytes": 672102,
+ "files": [
+  "mappings_stocks.csv",
+  "ticker_to_cik.json",
+  "README_upstream.md"
+ ],
+ "rows": "mappings_stocks.csv: 9,713 rows (7,605 unique CIKs, 9,712 unique tickers); ticker_to_cik.json: 9,713 keys; README_upstream.md: n/a",
+ "columns": "CIK (10-digit zero-padded), Ticker, Name, Exchange (Nasdaq 4064 / NYSE 3267 / OTC 2189 / CBOE 25 / blank 168); JSON is {ticker: CIK}",
+ "date_range": "no date column; snapshot frozen at repo archive (last push 28 Feb 2025, HEAD 7883b83)",
+ "how_pulled": "curl -sL -o mappings_stocks.csv https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/mappings.csv; curl -sL -o ticker_to_cik.json https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/ticker_to_cik.json; curl -sL -o README.md https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/README.md (renamed README_upstream.md); described with pandas",
+ "full_dataset_size": "Whole mappings/ tree ~1.5 MB: stocks/ (mappings.csv 443 KB, ticker_to_cik.json 214 KB, cik_to_tickers.json ~200 KB, cik_to_company_name.json ~306 KB, exchange maps) plus mutual_funds/ (series/class/CIK maps, similar size); ~9.7k stock rows, single snapshot, no history",
+ "description": "A static CIK <-> ticker <-> company name <-> exchange crosswalk for US SEC stock registrants (one row per ticker, 9,713 rows) built from SEC's company_tickers JSON by the sec-cik-mapper Python package, plus the package README. Grain is one ticker per row; the source is the SEC EDGAR company tickers endpoint as of the last package refresh (Feb 2025). An analyst would use it to resolve ABNB (CIK 0001559720), BKNG, EXPE, MAR, HLT, TRIP, SOND, VCSA and other peers to CIKs before hitting XBRL frames, full-text search or the financial-statement datasets, avoiding hand lookups.",
+ "issues": "Repo is archived (Apr 2025) so the crosswalk is frozen at Feb 2025: tickers changed/added since (e.g. new listings, VCSA taken private 2025) are stale; the live SEC endpoint https://www.sec.gov/files/company_tickers.json (needs a User-Agent header) supersedes it. MIT licence, no restrictions. Peer CIKs verified present: ABNB, BKNG, EXPE, MAR, HLT, H, TRIP, SOND, VCSA. Note: the samples directory is gitignored in this worktree (git check-ignore), so files here will not be committed unless the ignore rule is changed.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/mappings.csv",
+  "https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/mappings/stocks/ticker_to_cik.json",
+  "https://raw.githubusercontent.com/jadchaar/sec-cik-mapper/HEAD/README.md"
+ ],
+ "pulled_at": "2026-09-14"
+}

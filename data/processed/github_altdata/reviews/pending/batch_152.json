@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:mcompetitions/m4-methods",
+  "url": "https://github.com/Mcompetitions/M4-methods",
+  "name": "M4-methods",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official M4 forecasting competition data and benchmark methods, ~100,000 time series across 6 frequencies (yearly/quarterly/monthly/weekly/daily/hourly) and multiple domains including a 'Tourism' domain (a large subset of quarterly/monthly/yearly tourism-related series, distinct from and larger than the smaller Tcomp 2010 set). Full train/test CSVs plus R/Python benchmark implementations (naive, ETS, ARIMA, Theta, ML hybrids).",
+  "why_useful": "The Tourism-domain subset of M4 is a large, real, multi-frequency tourism time-series corpus usable for validating forecasting methodology (seasonal decomposition, reconciliation, ensembling) before applying to ABNB KPIs; also the general M4 corpus is the standard cross-domain forecasting-method benchmark referenced in the industry.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Global, mixed",
+  "time_coverage": "Series lengths vary by frequency; competition run 2018",
+  "size_hint": "~100k series total, Tourism subset a few thousand; full repo is tens of MB",
+  "license": "unspecified (public research release)",
+  "last_activity": "active org, exact date not checked",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "The Tourism-domain subset of M4 is a large, real, multi-frequency tourism time-series corpus usable for validating forecasting methodology (seasonal decomposition, reconciliation, ensembling) before applying to ABNB KPIs; also the general M4 corpus is the standard cross-domain forecasting-method benchmark referenced in the industry."
+  ]
+ },
+ {
+  "key": "other:https://zenodo.org/record/4656103",
+  "url": "https://zenodo.org/record/4656103",
+  "name": "Monash Tourism Yearly Dataset (Zenodo, linked from TSForecasting archive)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Zenodo record (DOI 10.5281/zenodo.4656103): 518 yearly tourism time series, CC-BY-4.0, ~36.7kB zip, same underlying 2010 Kaggle/2011 IJF Tourism Forecasting Competition data (compiled by Monash University / University of Sydney researchers) reformatted into the Monash Time Series Forecasting Archive's .tsf format. Companion quarterly (zenodo.org/record/4656093) and monthly (zenodo.org/record/4656096) releases exist for the same underlying competition.",
+  "why_useful": "The Monash Time Series Forecasting Archive (github.com/rakshitha123/TSForecasting is the code/loader repo, data lives on Zenodo) is the standard reference tourism benchmark used across the forecasting-ML literature; CC-BY-4.0 licensed and machine-loadable via the .tsf reader in the GitHub repo, useful if the team wants a clean point-forecast-accuracy backtesting harness comparable to published tourism-forecasting baselines (gap #17).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Global (per original 2011 competition sources)",
+  "time_coverage": "Historical yearly/quarterly/monthly series ending prior to 2010 competition; exact start years not stated on the page",
+  "size_hint": "518 yearly series (companion sets: quarterly + monthly, similar total ~1,311 combined)",
+  "license": "CC-BY-4.0",
+  "last_activity": "Zenodo record created circa 2021 (archive still live)",
+  "duplicate_of_holding": "Same underlying competition data as ellisp/Tcomp-r-package, in a different (.tsf/Zenodo) format with an explicit permissive CC-BY-4.0 license",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "The Monash Time Series Forecasting Archive (github.com/rakshitha123/TSForecasting is the code/loader repo, data lives on Zenodo) is the standard reference tourism benchmark used across the forecasting-ML literature; CC-BY-4.0 licensed and machine-loadable via the .tsf reader in the GitHub repo, useful if the team wants a clean point-forecast-accuracy backtesting harness comparable to published tourism-forecasting baselines (gap #17)."
+  ]
+ },
+ {
+  "key": "github:odot-pts/gtfs-ride",
+  "url": "https://github.com/ODOT-PTS/GTFS-ride",
+  "name": "GTFS-ride",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "52-star, Apache-2.0 open standard/spec (with reference tooling) for storing and sharing fixed-route transit ridership data alongside GTFS static/realtime feeds; maintained by Oregon DOT's Public Transit Section.",
+  "why_useful": "A standardized schema/tooling layer that many US transit agencies (and some international) increasingly publish ridership in; useful as a discovery/normalization method for pulling ridership from agencies beyond MTA/TfL/RATP without bespoke parsers.",
+  "potential": "medium",
+  "geography": "US (Oregon DOT-led standard), applicable nationally",
+  "time_coverage": "spec/standard, not a fixed dataset",
+  "size_hint": "spec + reference code",
+  "license": "Apache-2.0",
+  "last_activity": "2025-12-04",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "A standardized schema/tooling layer that many US transit agencies (and some international) increasingly publish ridership in; useful as a discovery/normalization method for pulling ridership from agencies beyond MTA/TfL/RATP without bespoke parsers."
+  ]
+ },
+ {
+  "key": "github:volpeusdot/gtfs-measures",
+  "url": "https://github.com/VolpeUSDOT/gtfs-measures",
+  "name": "gtfs-measures",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "US DOT Volpe Center code (CC0) for estimating segment-level transit ridership and other service measures directly from GTFS static feeds, without needing agency-published ridership counts.",
+  "why_useful": "A method to derive ridership/frequency proxies for any transit agency (including airport rail links) purely from public GTFS schedule data, which is far more universally available than published ridership counts \u2014 could extend coverage to JR East, RATP or other systems that don't publish granular open ridership.",
+  "potential": "medium",
+  "geography": "generic/US-focused example, method is transferable",
+  "time_coverage": "n/a (method)",
+  "size_hint": "code only",
+  "license": "CC0-1.0",
+  "last_activity": "2021-10-12",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "A method to derive ridership/frequency proxies for any transit agency (including airport rail links) purely from public GTFS schedule data, which is far more universally available than published ridership counts \u2014 could extend coverage to JR East, RATP or other systems that don't publish granular open ridership."
+  ]
+ },
+ {
+  "key": "github:hak-1m/orbital-telemetry-and-economic-reality",
+  "url": "https://github.com/hak-1m/Orbital-Telemetry-and-Economic-Reality",
+  "name": "Orbital-Telemetry-and-Economic-Reality",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Satellite-based macro-nowcasting framework combining VIIRS-DNB (2012-2024) and DMSP-OLS (1990-2012) nighttime-lights radiance with World Bank macro data in a global country-year panel fixed-effects model, used to nowcast GDP and detect economic-activity shocks ahead of official statistics. MIT-licensed code, .RData panel, Quarto/PDF writeup.",
+  "why_useful": "A ready-made pipeline for pulling and processing VIIRS nighttime-lights radiance \u2014 a resort/urban tourism-intensity proxy for LatAm/APAC markets where GDP or hospitality-employment data lags (gap #7); not Airbnb-specific but the extraction code is directly reusable at sub-national/city grid-cell resolution around known STR-dense districts.",
+  "potential": "medium",
+  "geography": "global, country-level (grid-cell capable)",
+  "time_coverage": "1990-2024",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "A ready-made pipeline for pulling and processing VIIRS nighttime-lights radiance \u2014 a resort/urban tourism-intensity proxy for LatAm/APAC markets where GDP or hospitality-employment data lags (gap #7); not Airbnb-specific but the extraction code is directly reusable at sub-national/city grid-cell resolution around known STR-dense districts."
+  ]
+ }
+]

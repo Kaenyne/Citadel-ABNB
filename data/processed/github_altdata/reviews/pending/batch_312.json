@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:sarahdavis121/market-reports-on-china",
+  "url": "https://github.com/SarahDavis121/Market-Reports-on-China",
+  "name": "Market-Reports-on-China",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Repo (0 stars, last updated Feb 2019) described as analysis covering the market situation and future outlook for Chinese tourism traveling abroad, 2019-2025 period \u2014 likely a report/slide compilation rather than raw structured data; not inspected further given very low signal (0 stars, single description line, stale).",
+  "why_useful": "Possible secondary-source outbound-tourism market outlook narrative for China 2019-2025, marginal value as it's likely qualitative/report-style rather than a dataset.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "China (outbound)",
+  "time_coverage": "2019-2025 (forward-looking as of 2019)",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "2019-02-05",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Possible secondary-source outbound-tourism market outlook narrative for China 2019-2025, marginal value as it's likely qualitative/report-style rather than a dataset."
+  ]
+ },
+ {
+  "key": "github:mshi-so/python-chunyun-dataviz",
+  "url": "https://github.com/mshi-so/python-chunyun-dataviz",
+  "name": "python-chunyun-dataviz",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A /data folder plus main.py building visualizations of 'ChunYun' (Lunar New Year travel rush) trends in China, referencing China population as a baseline. Exact files, years, and original data source not confirmed from the README/tree view alone.",
+  "why_useful": "Another Spring Festival domestic-travel-volume angle (mass migration data) that could proxy Chinese holiday travel intensity feeding APAC/China-linked nights seasonality; unverified depth so flagged for a closer look rather than treated as confirmed.",
+  "potential": "low",
+  "geography": "China",
+  "time_coverage": "unclear (Spring Festival periods)",
+  "size_hint": "unknown, small personal-project repo",
+  "license": "not stated",
+  "last_activity": "2026-02-13",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Another Spring Festival domestic-travel-volume angle (mass migration data) that could proxy Chinese holiday travel intensity feeding APAC/China-linked nights seasonality; unverified depth so flagged for a closer look rather than treated as confirmed."
+  ]
+ },
+ {
+  "key": "github:zzzqc123/ctrip-dataanalysis",
+  "url": "https://github.com/zzzqc123/Ctrip-DataAnalysis",
+  "name": "Ctrip-DataAnalysis (\u643a\u7a0b\u7f51\u666f\u70b9\u6570\u636e\u5206\u6790)",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Ctrip.csv \u2014 scraped Chinese-travel-platform (Ctrip/Trip.com) attraction-page data, plus a Jupyter notebook (Ctrip.ipynb) documenting the scraping/preprocessing/visualization pipeline and a rendered chart image. Exact fields, row count, and scrape date not confirmed from the README.",
+  "why_useful": "A worked example of scraping Ctrip (China's dominant OTA and an Airbnb-adjacent demand proxy for Chinese travel/attraction interest) plus an actual small scraped snapshot; more useful as a reusable method (gap area: competitor/adjacent supply and China travel demand, gap #9) than as a ready panel given its small, single-snapshot scope.",
+  "potential": "low",
+  "geography": "China (Ctrip attraction listings)",
+  "time_coverage": "single scrape snapshot, date unconfirmed",
+  "size_hint": "one CSV, size unknown",
+  "license": "not stated",
+  "last_activity": "2024-12-31",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "A worked example of scraping Ctrip (China's dominant OTA and an Airbnb-adjacent demand proxy for Chinese travel/attraction interest) plus an actual small scraped snapshot; more useful as a reusable method (gap area: competitor/adjacent supply and China travel demand, gap #9) than as a ready panel given its small, single-snapshot scope."
+  ]
+ },
+ {
+  "key": "github:gourav-attri-18/india-tourism-data-analysis-dashboard",
+  "url": "https://github.com/Gourav-Attri-18/India-tourism-data-analysis-dashboard",
+  "name": "India-tourism-data-analysis-dashboard",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Power BI dashboard (Tourism_Dashboard.pbix, 9.3MB -- likely has an embedded data model with India tourism data 2014-2020), SQL script, empty notebook. No standalone CSV visible in repo root; data appears embedded in the .pbix file only.",
+  "why_useful": "Possible India FTA/domestic-tourism panel for 2014-2020 (longer span than the single-year repo above) if the .pbix's embedded dataset can be extracted, but the underlying rows are not committed as a plain data file, so usefulness is lower confidence.",
+  "potential": "low",
+  "geography": "India",
+  "time_coverage": "2014-2020 per repo description",
+  "size_hint": "9.3MB .pbix (data locked inside Power BI format)",
+  "license": "none declared",
+  "last_activity": "2026-04-14",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Possible India FTA/domestic-tourism panel for 2014-2020 (longer span than the single-year repo above) if the .pbix's embedded dataset can be extracted, but the underlying rows are not committed as a plain data file, so usefulness is lower confidence."
+  ]
+ },
+ {
+  "key": "github:astorblaze/indian-tourism-data-analyzer",
+  "url": "https://github.com/astorblaze/Indian-Tourism-Data-Analyzer",
+  "name": "Indian-Tourism-Data-Analyzer",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R program described as analyzing 'domestic and foreign tourist visits across Indian states with visualization and summary export' -- an analysis/method repo; not independently confirmed to carry raw source data files beyond what the R script ingests.",
+  "why_useful": "Possible pointer to an India state-level domestic+foreign tourist visits dataset (India tourism statistics are published by state by the Ministry of Tourism); worth a follow-up look at the actual input CSV the R script reads, which was not inspected here.",
+  "potential": "low",
+  "geography": "India (state-level)",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown -- not enumerated",
+  "license": "none declared",
+  "last_activity": "2026-09-04",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Possible pointer to an India state-level domestic+foreign tourist visits dataset (India tourism statistics are published by state by the Ministry of Tourism); worth a follow-up look at the actual input CSV the R script reads, which was not inspected here."
+  ]
+ }
+]

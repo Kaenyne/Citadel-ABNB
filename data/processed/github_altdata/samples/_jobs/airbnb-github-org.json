@@ -1,0 +1,10 @@
+{
+ "slug": "airbnb-github-org",
+ "url": "https://github.com/airbnb",
+ "category": "web_app_engagement",
+ "data_kind": "pointer_to_external_host",
+ "one_line": "Airbnb's own verified GitHub organisation (confirmed via gh api orgs/airbnb: 204 public repos, 5,716 followers, created 30 Mar 2011, San Francisco); not a dataset but a live public source whose repo-level metadata (created_at, pushed_at, language, stars, archived flag) is pullable keylessly from the GitHub REST API, with GH Archive / OpenDigger available for full event history.",
+ "abnb_use": "Gap #15 (company-structure signals / own GitHub org activity): new-repo creation and push cadence by year is a free, high-frequency proxy for engineering headcount and where R&D is going (chronon/viaduct data-platform and GraphQL work vs. dormant mobile OSS), which reads on the opex side of the adj. EBITDA-margin forecast; also a crude timestamp of the 2023 layoff/hiring-freeze period for a headcount narrative check.",
+ "sample_plan": "Public GitHub REST, no key beyond gh's public read: `gh api \"orgs/airbnb/repos?per_page=100&sort=pushed&direction=desc\" --paginate > airbnb_org_repos.json` (204 records, ~1.5 MB raw JSON, well under the 5 MB cap), then reduce to a CSV of name, created_at, pushed_at, updated_at, language, stargazers_count, archived, fork. Optionally add one keyless commit-cadence sample for the two active flagships only: `gh api \"repos/airbnb/chronon/commits?per_page=100&since=2024-01-01T00:00:00Z\" --paginate --jq '.[].commit.author.date'` and the same for repos/airbnb/viaduct (each a few hundred KB). Do NOT clone any repo source and do NOT touch airbnb.com; total cap 25 MB.",
+ "tos_or_license_flag": false
+}

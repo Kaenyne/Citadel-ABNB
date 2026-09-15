@@ -1,0 +1,10 @@
+{
+ "slug": "abhi2303shek-oyo-mumbai-price-snapshot",
+ "url": "https://github.com/Abhi2303shek/OYO",
+ "category": "competitor_ota",
+ "data_kind": "stored_dataset",
+ "one_line": "MIT, 40 KB: committed oyo.csv (73.8 KB, columns id/hotel/location/price/discount/rating \u2014 rows inspected are Mumbai OYO, Capital O and Collection O properties with INR nightly price, % discount and review count) plus oyo.sql (7.8 KB), Cleaning.ipynb (34 KB) and Insights.txt; single undated snapshot, last push 2026-02-27, 0 stars.",
+ "abnb_use": "Budget-lodging price and discount structure in one Indian metro \u2014 a thin read on the price-sensitive APAC segment Airbnb competes with (gap #9); the discount column is the only public 'list vs realised price' wedge we have seen for that segment, though with no vintage it cannot be used point-in-time.",
+ "sample_plan": "curl -sL -o oyo.csv https://raw.githubusercontent.com/Abhi2303shek/OYO/HEAD/oyo.csv (73.8 KB, whole file) and curl -sL -o Insights.txt https://raw.githubusercontent.com/Abhi2303shek/OYO/HEAD/Insights.txt (3 KB). Skip Cleaning.ipynb and oyo.sql. Total < 0.1 MB.",
+ "tos_or_license_flag": false
+}

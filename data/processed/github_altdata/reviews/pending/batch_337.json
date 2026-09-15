@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:ashermanwmf/pageviewapi",
+  "url": "https://github.com/ashermanwmf/pageviewapi",
+  "name": "ashermanwmf/pageviewapi",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small client/wrapper for Wikimedia's official Pageviews API, returning per-article, per-day pageview counts back to mid-2015.",
+  "why_useful": "Matches CONTEXT gap #5 ('Wikipedia pageviews tooling') directly; Wikipedia pageviews for 'Airbnb', 'short-term rental', competitor articles, or destination-city articles are a free, long-history, point-in-time-clean (pageviews are immutable once logged) engagement/interest proxy that has not been tested by the team yet.",
+  "geography": "global, per-article and per-project(language) granularity",
+  "time_coverage": "mid-2015 to present, daily/monthly",
+  "size_hint": "client only, API pull required for data",
+  "license": "check repo",
+  "last_activity": "check repo (appears stale; the canonical/actively-maintained alternative is Wikimedia's own `wikimedia/mediawiki-services-pageview-api` or the `mwviews`/`pageviewapi` PyPI package \u2014 flag for a follow-up scout to find the best-maintained client)",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "wildcard: a hedge-fund alternative-data buyer who has seen every vendo"
+  ],
+  "why_all": [
+   "Matches CONTEXT gap #5 ('Wikipedia pageviews tooling') directly; Wikipedia pageviews for 'Airbnb', 'short-term rental', competitor articles, or destination-city articles are a free, long-history, point-in-time-clean (pageviews are immutable once logged) engagement/interest proxy that has not been tested by the team yet."
+  ]
+ },
+ {
+  "key": "github:rohitgodbole/wikipageviews",
+  "url": "https://github.com/rohitgodbole/WikiPageviews",
+  "name": "rohitgodbole/WikiPageviews",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A thin wrapper (0 stars) around the official Wikimedia Pageviews API, updated as recently as 26 Apr 2026.",
+  "why_useful": "CONTEXT gap #5 flags 'Wikipedia pageviews tooling' explicitly; pageviews for 'Airbnb', 'Vrbo', destination-city pages, or 'short-term rental' articles are free, dated-by-day, genuinely point-in-time (the API returns historical daily counts as originally recorded) and could proxy search/engagement interest as an alternative to non-point-in-time Google Trends. The official Wikimedia REST pageviews API itself (no wrapper needed) is the more load-bearing artifact here; this repo is just one thin client example.",
+  "potential": "medium",
+  "geography": "global, per-language-edition",
+  "time_coverage": "Wikimedia pageviews API covers July 2015-present daily/hourly, official and point-in-time",
+  "size_hint": "API client only",
+  "license": "not stated in repo",
+  "last_activity": "2026-04-26",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: a quant building a KPI nowcast for a consumer-internet compa"
+  ],
+  "why_all": [
+   "CONTEXT gap #5 flags 'Wikipedia pageviews tooling' explicitly; pageviews for 'Airbnb', 'Vrbo', destination-city pages, or 'short-term rental' articles are free, dated-by-day, genuinely point-in-time (the API returns historical daily counts as originally recorded) and could proxy search/engagement interest as an alternative to non-point-in-time Google Trends. The official Wikimedia REST pageviews API itself (no wrapper needed) is the more load-bearing artifact here; this repo is just one thin client example."
+  ]
+ },
+ {
+  "key": "github:andreaponti5/revscrap",
+  "url": "https://github.com/andreaponti5/revscrap",
+  "name": "andreaponti5/revscrap",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Python Dash web app that scrapes reviews for both the Google Play Store and the Apple App Store for any given app, not Airbnb-specific.",
+  "why_useful": "Generic, reusable method to build an Airbnb-mobile-app review-volume/rating-over-time series (a public engagement/download proxy) addressing gap #5 (app rankings/engagement history), which is otherwise hard to get free historical data for; would need to be pointed at the Airbnb app IDs on each store.",
+  "size_hint": "n/a (tool, not a dataset)",
+  "time_coverage": "n/a",
+  "geography": "n/a (any app)",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "Generic, reusable method to build an Airbnb-mobile-app review-volume/rating-over-time series (a public engagement/download proxy) addressing gap #5 (app rankings/engagement history), which is otherwise hard to get free historical data for; would need to be pointed at the Airbnb app IDs on each store."
+  ]
+ },
+ {
+  "key": "github:katacek/google-play-reviews",
+  "url": "https://github.com/katacek/google-play-reviews",
+  "name": "katacek/google-play-reviews",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Generic scraper that pulls Google Play Store app user reviews (name, date, text) into a dataset given an app URL/ID; not Airbnb-specific, no data committed.",
+  "why_useful": "Same use case as revscrap above: could be re-pointed at Airbnb's own Play Store listing to build a review-count/date-stamped engagement time series as a demand-adjacent signal (gap #5).",
+  "size_hint": "n/a (tool, not a dataset)",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "not confirmed",
+  "last_activity": "not confirmed",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)"
+  ],
+  "why_all": [
+   "Same use case as revscrap above: could be re-pointed at Airbnb's own Play Store listing to build a review-count/date-stamped engagement time series as a demand-adjacent signal (gap #5)."
+  ]
+ },
+ {
+  "key": "github:r4stin/reviews-dashboard",
+  "url": "https://github.com/r4stin/reviews-dashboard",
+  "name": "reviews-dashboard",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Full-stack dashboard aggregating reviews across Airbnb/Hostaway and Google for a property manager's own listings. Requires the operator's own API keys/business accounts; no public dataset.",
+  "why_useful": "Not directly usable (needs a manager's own accounts), but demonstrates that Hostaway exposes normalized cross-platform review data, which is the kind of thing a cooperating STR manager could export if the team found one willing to share.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "app code only",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Not directly usable (needs a manager's own accounts), but demonstrates that Hostaway exposes normalized cross-platform review data, which is the kind of thing a cooperating STR manager could export if the team found one willing to share."
+  ]
+ }
+]

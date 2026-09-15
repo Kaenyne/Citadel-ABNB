@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:dhopp1/nowcastdfm",
+  "url": "https://github.com/dhopp1/nowcastDFM",
+  "name": "nowcastDFM",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package implementing the Bok et al. (2017, NY Fed) dynamic factor model methodology: dfm() (EM estimation with missing data), predict_dfm(), and gen_news() which quantifies how each new data release/revision moves the nowcast -- a direct 'news decomposition' tool. On CRAN.",
+  "why_useful": "Alternative DFM toolkit to FRBNY's MATLAB code, in R, with an explicit feature for decomposing how each new weekly data point moves the nowcast -- useful if building a homegrown weekly ABNB-demand tracker (gap #17).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "license": "unknown (check repo)",
+  "last_activity": "unknown",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "small library",
+  "hits": 2,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Alternative DFM toolkit to FRBNY's MATLAB code, in R, with an explicit feature for decomposing how each new weekly data point moves the nowcast -- useful if building a homegrown weekly ABNB-demand tracker (gap #17).",
+   "gen_news() is the specific mechanism for attributing a KPI-nowcast change to which input series moved -- useful for building an auditable ABNB nights/GBV nowcast that can explain revisions between alt-data updates, matching the pitch's point-in-time discipline."
+  ]
+ },
+ {
+  "key": "github:mattcocci/fredfetch",
+  "url": "https://github.com/MattCocci/FredFetch",
+  "name": "FredFetch",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MATLAB package with fred.latest(series) and fred.vint(series, vintage_date) for pulling FRED/ALFRED data at a specific vintage date, including a 'pseudo-vintage' mode that simulates publication lag for series without full ALFRED vintage history, plus parallelized bulk downloads across many series/vintage dates.",
+  "why_useful": "Same ALFRED vintage capability as fredapi but for MATLAB users, and notably adds simulated publication-delay handling for series that lack full vintage archives -- useful if the team needs point-in-time treatment of a FRED series ALFRED doesn't fully vintage.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "license": "none declared",
+  "last_activity": "2025-10-31",
+  "geography": "US (FRED)",
+  "time_coverage": "Per-series ALFRED vintage span",
+  "size_hint": "small MATLAB package, 5 stars",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Same ALFRED vintage capability as fredapi but for MATLAB users, and notably adds simulated publication-delay handling for series that lack full vintage archives -- useful if the team needs point-in-time treatment of a FRED series ALFRED doesn't fully vintage."
+  ]
+ },
+ {
+  "key": "github:jgjy926/macro-dashboard",
+  "url": "https://github.com/jgjy926/macro-dashboard",
+  "name": "macro-dashboard (zero-cost US macro forecasting engine)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Vintage-true backtesting harness pulling 84 FRED series + full ALFRED vintages (~3,800 API calls for a full backtest) + BLS CPI/employment + Yahoo Finance gold, with release-date filtering, real ALFRED vintages, and expanding (not full-sample) z-scores to close look-ahead leak channels; validated over 147 quarterly as-of dates since 1990, 695 scored points, 0 leaks. No data files are committed -- everything is pulled live via tools/backfill.py.",
+  "why_useful": "This is close to a working template for exactly the 'vintage-aware backtest' methodology gap #17/#4 calls for -- release-date filtering + real vintages + expanding-window normalization is the standard fix for the leakage problems the repo's own backtests must avoid. Worth reading as a reference implementation, not as a data source (no committed data).",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "none declared",
+  "last_activity": "2026-09-06",
+  "geography": "US (FRED/ALFRED/BLS)",
+  "time_coverage": "1990-2026 (147 quarterly as-of dates)",
+  "size_hint": "small repo, code only, 0 stars",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "This is close to a working template for exactly the 'vintage-aware backtest' methodology gap #17/#4 calls for -- release-date filtering + real vintages + expanding-window normalization is the standard fix for the leakage problems the repo's own backtests must avoid. Worth reading as a reference implementation, not as a data source (no committed data)."
+  ]
+ },
+ {
+  "key": "github:gweissman86/cfpb_data_downloader",
+  "url": "https://github.com/gweissman86/cfpb_data_downloader",
+  "name": "cfpb_data_downloader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python tool that calls the CFPB's public Consumer Complaints Database Trends API and downloads complaint-trend data (by product, company, issue, date range) to local files - a one-command pull, no auth needed.",
+  "why_useful": "Turns the live CFPB complaint database into a repeatable, scriptable pull we can run at each guide date going forward, so we can build our own point-in-time vintage register of BNPL/travel-refund complaint counts (mentions of Airbnb, Affirm, Klarna, Afterpay) rather than relying on someone else's stale snapshot.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "whatever the live CFPB API currently serves (2011-present)",
+  "size_hint": "tool only, no committed data",
+  "license": "unspecified",
+  "last_activity": "2021-03-09",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Turns the live CFPB complaint database into a repeatable, scriptable pull we can run at each guide date going forward, so we can build our own point-in-time vintage register of BNPL/travel-refund complaint counts (mentions of Airbnb, Affirm, Klarna, Afterpay) rather than relying on someone else's stale snapshot."
+  ]
+ },
+ {
+  "key": "github:saketlab/nesstarr",
+  "url": "https://github.com/saketlab/nesstarR",
+  "name": "nesstarR",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package to parse NESSTAR binary survey data containers (.Nesstar files), specifically noted for use with MoSPI India survey microdata and other national statistical offices' legacy formats. 1 star, updated Jun 2026.",
+  "why_useful": "Unlocks reading India's MoSPI legacy survey microdata files (household consumption/expenditure surveys) that are otherwise in an opaque binary format \u2014 relevant to gap #7's India MOSPI target and broadly to any NESSTAR-format national stats office archive.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "India (and other NESSTAR-using statistical offices)",
+  "time_coverage": "depends on archived survey vintage",
+  "size_hint": "small parsing library",
+  "license": "other",
+  "last_activity": "2026-06-03",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Unlocks reading India's MoSPI legacy survey microdata files (household consumption/expenditure surveys) that are otherwise in an opaque binary format \u2014 relevant to gap #7's India MOSPI target and broadly to any NESSTAR-format national stats office archive."
+  ]
+ }
+]

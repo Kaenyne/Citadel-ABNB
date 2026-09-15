@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:bright-cn/etsy-dataset-sample",
+  "url": "https://github.com/bright-cn/Etsy-dataset-sample",
+  "name": "bright-cn/Etsy-dataset-sample",
+  "category": "gig_economy_not_in_taxonomy",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A 1,001-row sample of Etsy product listings (price, title, category fields) extracted via the commercial Bright Data (formerly Luminati) scraping API, published as a marketing sample across several Bright Data locale repos (Chinese, Korean, Japanese, German, English variants of the same repo).",
+  "why_useful": "Demonstrates a working commercial scraping method for marketplace listing/pricing data (Etsy as a discretionary small-ticket consumer-spend proxy); the committed sample itself is too small (1,001 rows, single pull, no dates) to be a time series, so only the method is worth noting.",
+  "potential": "low",
+  "geography": "Not specified (likely US-heavy Etsy sellers)",
+  "time_coverage": "Single snapshot, no date given",
+  "size_hint": "1,001 product rows",
+  "last_activity": "2026-01-27 (most recently updated mirror, bright-data-de)",
+  "license": "none stated",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Demonstrates a working commercial scraping method for marketplace listing/pricing data (Etsy as a discretionary small-ticket consumer-spend proxy); the committed sample itself is too small (1,001 rows, single pull, no dates) to be a time series, so only the method is worth noting.",
+   "Demonstrates that Etsy listing-level data (price points, category mix) is scrapeable via a commercial vendor API and gives a small live sample, but the committed sample is tiny (1,001 rows, one-time pull) and the real product is a paid API, not an open dataset \u2014 marginal value as a pointer to a possible paid acquisition method for Etsy seller/price data as a small-business consumer-spend proxy."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/fiverr",
+  "url": "https://github.com/api-evangelist/fiverr",
+  "name": "api-evangelist/fiverr",
+  "category": "gig_economy_not_in_taxonomy",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A written third-party profile/description of Fiverr's public API surface (no data files, no committed dataset, no working scraper) \u2014 part of a large 'API Evangelist' series profiling gig/marketplace companies (also found: taskrabbit, instawork, helpling, zego, work-market, syft, shiftsmart, zolvers, zehitomo, stride-health, and dozens more under the gig-economy topic).",
+  "why_useful": "Marginal at best: no data or method, just descriptive text about each platform's API. Listed only because the series maps which gig platforms expose any public API surface at all, which could point a future scout toward an actual client/SDK repo if one exists for a given platform.",
+  "potential": "low",
+  "geography": "Global (per-platform)",
+  "time_coverage": "N/A",
+  "size_hint": "N/A, text profile only",
+  "last_activity": "2026-09-13",
+  "license": "none stated",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Marginal at best: no data or method, just descriptive text about each platform's API. Listed only because the series maps which gig platforms expose any public API surface at all, which could point a future scout toward an actual client/SDK repo if one exists for a given platform."
+  ]
+ },
+ {
+  "key": "github:celisa/uber-trip-data",
+  "url": "https://github.com/celisa/uber-trip-data",
+  "name": "uber-trip-data",
+  "category": "gig_economy_platform",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "CC0-licensed repo hosting Uber 2015 NYC trip data plus derived files: uber-data-2015.csv, uber-data-cleaned.csv, uber_merged.csv, aggregated_uber_pickup_borough.csv (borough-level daily aggregates), city_total_data.csv, weather_dict.csv (merged weather covariates), and a collision/casualty aggregate file, analysed in a Final Report.Rmd.",
+  "why_useful": "Borough-level daily Uber pickup aggregates merged with weather is a usable template for a mobility-vs-weather cross-check, but the underlying trip data is the same stale 2015 NYC vintage as the FiveThirtyEight release, just pre-aggregated and CC0-licensed (easier reuse than the original TLC data).",
+  "potential": "low",
+  "geography": "New York City",
+  "time_coverage": "2015",
+  "size_hint": "unspecified, small aggregated CSVs",
+  "license": "CC0-1.0",
+  "last_activity": "2022-11-28",
+  "gap_targets": [],
+  "duplicate_of_holding": "duplicate of fivethirtyeight/uber-tlc-foil-response underlying data, aggregated",
+  "hits": 1,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "Borough-level daily Uber pickup aggregates merged with weather is a usable template for a mobility-vs-weather cross-check, but the underlying trip data is the same stale 2015 NYC vintage as the FiveThirtyEight release, just pre-aggregated and CC0-licensed (easier reuse than the original TLC data)."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/c/instacart-market-basket-analysis",
+  "url": "https://www.kaggle.com/c/instacart-market-basket-analysis",
+  "name": "Instacart Market Basket Analysis dataset (many GitHub mirrors/analyses, e.g. tstreamDOTh/Instacart-Market-Basket-Analysis, TheArc21/Instacart-market-basket-analysis)",
+  "category": "gig_economy_platform",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Instacart's public release (hosted on Kaggle, mirrored/discussed in dozens of GitHub repos) of 3M+ grocery orders from 200K+ users: order sequences, product/aisle/department info, order-day-of-week and hour-of-day timing, reorder flags. Original release circa 2017, static (no ongoing refresh).",
+  "why_useful": "A large, real gig/on-demand-grocery order-timing dataset that could serve as a methodological analogue for modeling booking-time-of-day / day-of-week seasonality patterns relevant to STR booking behavior, and as a general on-demand-platform consumer-behavior reference; not Airbnb-specific and not time-extendable past ~2017.",
+  "potential": "low",
+  "geography": "US (unspecified metro mix)",
+  "time_coverage": "circa 2015-2017 static snapshot",
+  "size_hint": "3M+ orders, 200K+ users",
+  "license": "Instacart's own Kaggle competition terms (non-commercial research use)",
+  "last_activity": "static since original release; GitHub mirrors updated through 2026 (re-analyses only, not new data)",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Gig-economy and platform-economy datasets (Uber/DoorDash/Etsy/Upwork public data) used as cross-platform consumer-behaviour reads"
+  ],
+  "why_all": [
+   "A large, real gig/on-demand-grocery order-timing dataset that could serve as a methodological analogue for modeling booking-time-of-day / day-of-week seasonality patterns relevant to STR booking behavior, and as a general on-demand-platform consumer-behavior reference; not Airbnb-specific and not time-extendable past ~2017."
+  ]
+ },
+ {
+  "key": "github:diego999/hotelrec",
+  "url": "https://github.com/Diego999/HotelRec",
+  "name": "HotelRec",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "~50 million TripAdvisor hotel reviews (largest public hotel-review dataset per the authors, vs 0.9M in prior academic sets). Each review has hotel URL, reviewer username, date, overall rating, title, text, and sub-ratings (sleep quality, value, rooms, service, cleanliness, location). International coverage (sample shows Italian hotels; likely global given TripAdvisor's footprint). Actual data is not committed to the repo -- hosted on a SWITCHdrive link, restricted to academic research use only. Cites Antognini & Faltings, LREC 2020. Repo itself: 17 commits, README + download pointer.",
+  "why_useful": "By far the largest and longest-running TripAdvisor review corpus found. A review-velocity / sub-rating time series built from this (filtered to years with real dates, cross-referenced to ABNB peer-set cities) could proxy hotel demand momentum and sentiment ahead of MAR/HLT RevPAR releases -- addresses gap #8 (hotel supply/demand) indirectly via review flow as a leading indicator, and gap #20 partially (party-size/length-of-stay not present but trip-type sub-ratings sometimes are). Academic-only license limits direct commercial reuse but fine for an internal model.",
+  "license": "Academic research only (non-commercial); no open-source license stated for the download itself",
+  "last_activity": "Repo shows 17 commits; paper is 2020 (LREC)",
+  "geography": "Global (TripAdvisor hotel universe)",
+  "time_coverage": "Reviews with dates as early as ~2010 in samples shown; full range not confirmed",
+  "size_hint": "~50,000,000 reviews",
+  "gap_targets": [
+   8,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "potential": "high",
+  "hits": 2,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "By far the largest and longest-running TripAdvisor review corpus found. A review-velocity / sub-rating time series built from this (filtered to years with real dates, cross-referenced to ABNB peer-set cities) could proxy hotel demand momentum and sentiment ahead of MAR/HLT RevPAR releases -- addresses gap #8 (hotel supply/demand) indirectly via review flow as a leading indicator, and gap #20 partially (party-size/length-of-stay not present but trip-type sub-ratings sometimes are). Academic-only license limits direct commercial reuse but fine for an internal model.",
+   "TripAdvisor review-volume-and-rating time series across a huge global hotel panel is a competitor/adjacent-supply engagement proxy (gap #9, and loosely gap #5 engagement signals) analogous to how Inside Airbnb reviews are used as a stays-index kernel for ABNB nights; review dates could be aggregated into a monthly hotel-demand pulse by market if the gated download is obtained."
+  ]
+ }
+]

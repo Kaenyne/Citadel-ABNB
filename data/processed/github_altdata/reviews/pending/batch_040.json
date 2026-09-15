@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:annachant/capstone-disney-world-date-and-attendance-predictor",
+  "url": "https://github.com/annachant/Capstone-Disney-World-Date-and-Attendance-Predictor",
+  "name": "Capstone-Disney-World-Date-and-Attendance-Predictor",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "12 CSVs of daily average ride wait times (resampled from 5-10 minute readings) for rides across all four Walt Disney World parks (Magic Kingdom x3, Epcot x2, Hollywood Studios x3, Animal Kingdom x4), covering Jan 2015-Dec 2021 (analysis window 2015-2019). Original data pulled from touringplans.com's public crowd-calendar dataset.",
+  "why_useful": "Ride wait times are a well-established public proxy for theme-park crowd levels/attendance (touringplans.com dataset used in academic tourism-demand papers); gives a long, daily, US leisure-travel demand series independent of Airbnb, useful as a domestic discretionary-travel cross-check alongside TSA and NPS series.",
+  "potential": "medium",
+  "geography": "US (Orlando, FL - Walt Disney World)",
+  "time_coverage": "daily, 2015-2021",
+  "size_hint": "12 CSV files, multi-year daily series per ride",
+  "license": "not stated; underlying source touringplans.com is a known open dataset",
+  "last_activity": "2026-04-02",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Ride wait times are a well-established public proxy for theme-park crowd levels/attendance (touringplans.com dataset used in academic tourism-demand papers); gives a long, daily, US leisure-travel demand series independent of Airbnb, useful as a domestic discretionary-travel cross-check alongside TSA and NPS series."
+  ]
+ },
+ {
+  "key": "github:topics/ticketmaster",
+  "url": "https://github.com/topics/ticketmaster",
+  "name": "ticketpy (Ticketmaster Discovery API Python wrapper)",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python SDK/wrapper (29 stars) for the Ticketmaster Discovery API, which exposes event listings (concerts, sports, festivals) with venue, date, and location metadata across the US and internationally where Ticketmaster operates.",
+  "why_useful": "A ready client for pulling event density by city/date as an events/shocks proxy (gap #11: FIFA World Cup 2026, concerts, conferences) that could feed a city-level event calendar to explain short-term nights/ADR spikes; requires a free Ticketmaster Discovery API key, no scraping of a login-walled site.",
+  "potential": "medium",
+  "license": "unspecified (check repo)",
+  "last_activity": "unspecified, low star count suggests light maintenance",
+  "geography": "US-heavy, some international (Ticketmaster footprint)",
+  "time_coverage": "forward-looking event calendar, not historical panel",
+  "size_hint": "n/a (API client)",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "A ready client for pulling event density by city/date as an events/shocks proxy (gap #11: FIFA World Cup 2026, concerts, conferences) that could feed a city-level event calendar to explain short-term nights/ADR spikes; requires a free Ticketmaster Discovery API key, no scraping of a login-walled site.",
+   "Same events-calendar use case as ticketpy above (gap #11) if the official API's coverage or rate limits are insufficient; runs on Apify's platform rather than being a self-contained repo."
+  ]
+ },
+ {
+  "key": "github:italobel/world-cup-2026-calendar",
+  "url": "https://github.com/italobel/world-cup-2026-calendar",
+  "name": "world-cup-2026-calendar",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed FIFA_World_Cup_2026.ics file (~40KB), all 104 matches numbered WC2026 #1-#104, group letters A-L, kickoff times in US Eastern, venue and host city for every match (Estadio Azteca, MetLife Stadium, BMO Field, AT&T Stadium, etc.) across US/Canada/Mexico, Jun 11-Jul 19 2026. MIT license, 6 stars, updated 23 Jul 2026.",
+  "why_useful": "Same schedule/host-city gap as above but as a clean, single-file calendar (easy to parse to a date x host-metro table) rather than a relational dataset -- a cheap cross-check/alternate source for the World Cup demand-shock calendar feeding 3Q26 forecasts.",
+  "potential": "medium",
+  "geography": "US, Canada, Mexico",
+  "time_coverage": "Jun 11 - Jul 19 2026",
+  "size_hint": "1 ICS file, ~40KB, 104 events",
+  "license": "MIT",
+  "last_activity": "2026-07-23",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Same schedule/host-city gap as above but as a clean, single-file calendar (easy to parse to a date x host-metro table) rather than a relational dataset -- a cheap cross-check/alternate source for the World Cup demand-shock calendar feeding 3Q26 forecasts."
+  ]
+ },
+ {
+  "key": "github:predicthq/phq-data-science-docs",
+  "url": "https://github.com/predicthq/phq-data-science-docs",
+  "name": "phq-data-science-docs",
+  "category": "events_weather_shocks",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "PredictHQ's data-science documentation repo (MIT, 17 stars) with articles and linked downloadable Jupyter notebooks demonstrating how to build demand-forecasting features from event data (attendance impact, event density nowcasting). No committed CSV/parquet in the repo itself -- notebooks are linked externally.",
+  "why_useful": "Could contain worked examples of turning event calendars into demand features (analogous to what we'd want for World Cup / conferences / holidays feeding nights forecasts) even without a full data export.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "n/a (docs)",
+  "size_hint": "docs/notebooks",
+  "license": "MIT",
+  "last_activity": "2026-08-27",
+  "gap_targets": [
+   11
+  ],
+  "hits": 4,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "Corporate travel and business-travel data (GBTA, Concur/SAP, Navan public indices, conference calendars), MICE datasets",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Could contain worked examples of turning event calendars into demand features (analogous to what we'd want for World Cup / conferences / holidays feeding nights forecasts) even without a full data export.",
+   "Shows worked examples of how an events-impact feed could be joined to demand series (methodological reference for building our own event-shock feature even if we don't buy PredictHQ), but supplies no standalone data.",
+   "Worked methodology for turning an event calendar (including MICE/conference events) into a demand-nowcasting feature -- relevant to gap #17 (nowcasting methods) if the team ever builds an event-density regressor for business-travel markets.",
+   "Companion methods doc to sdk-py; useful as a template for building an events-based demand feature set for ABNB nights/ADR nowcasting without re-deriving the feature engineering from scratch."
+  ]
+ },
+ {
+  "key": "github:predicthq/streamlit-accommodation-demo",
+  "url": "https://github.com/predicthq/streamlit-accommodation-demo",
+  "name": "streamlit-accommodation-demo",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Streamlit demo app pulling PredictHQ event data specifically for accommodation-demand forecasting (per the repo purpose: 'Streamlit Accommodation Demo App'). No committed dataset (needs API key), but the method -- event calendar -> accommodation demand -- is exactly the ABNB use case.",
+  "why_useful": "A worked reference implementation for turning an event calendar (concerts/conferences/sports) into an accommodation-demand signal, i.e. a template method for the World Cup/holiday/conference demand-shock work, even though it requires a paid/free-tier PredictHQ key to run.",
+  "potential": "medium",
+  "geography": "global (demo, location configurable)",
+  "time_coverage": "n/a (live API demo)",
+  "size_hint": "small Streamlit app",
+  "license": "unknown",
+  "last_activity": "2024-08-15",
+  "gap_targets": [
+   11
+  ],
+  "hits": 2,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "A worked reference implementation for turning an event calendar (concerts/conferences/sports) into an accommodation-demand signal, i.e. a template method for the World Cup/holiday/conference demand-shock work, even though it requires a paid/free-tier PredictHQ key to run.",
+   "Confirms PredictHQ explicitly markets an accommodation-demand use case (i.e. this is exactly what STR pricing tools ingest) and gives a runnable reference implementation for pulling an events-based demand index by market \u2014 useful scaffolding rather than a dataset."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:abhithappa/auckland-airbnb-data-analytics-project",
+  "url": "https://github.com/AbhiThappa/Auckland-Airbnb-Data-Analytics-Project",
+  "name": "AbhiThappa/Auckland-Airbnb-Data-Analytics-Project",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "End-to-end Excel/SQL/Power BI analytics project on Auckland Airbnb listings (Excel/SQL data files implied by the pipeline description; vintage and row count unverified).",
+  "why_useful": "New Zealand/Auckland has no presence in our current Inside Airbnb holdings; a committed Auckland extract, even from a student project, adds an APAC/Oceania market we lack entirely.",
+  "potential": "low",
+  "geography": "Auckland, New Zealand",
+  "time_coverage": "unverified",
+  "size_hint": "unverified",
+  "license": "unknown",
+  "last_activity": "2026-07-01",
+  "gap_targets": [
+   1,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "New Zealand/Auckland has no presence in our current Inside Airbnb holdings; a committed Auckland extract, even from a student project, adds an APAC/Oceania market we lack entirely."
+  ]
+ },
+ {
+  "key": "github:mrseandoyle12-stack/seandoyle-airbnb-price-analysis",
+  "url": "https://github.com/mrseandoyle12-stack/SeanDoyle-Airbnb-Price-Analysis",
+  "name": "mrseandoyle12-stack/SeanDoyle-Airbnb-Price-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "EDA/feature-engineering/regression project on Auckland Airbnb listing data to identify price drivers (likely an Inside Airbnb Auckland snapshot; unverified vintage).",
+  "why_useful": "Second independent Auckland listings source; cross-check against AbhiThappa's repo for vintage/completeness if pursuing NZ coverage.",
+  "potential": "low",
+  "geography": "Auckland, New Zealand",
+  "time_coverage": "unverified",
+  "size_hint": "unverified",
+  "license": "mit",
+  "last_activity": "2026-02-14",
+  "gap_targets": [
+   1,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Second independent Auckland listings source; cross-check against AbhiThappa's repo for vintage/completeness if pursuing NZ coverage."
+  ]
+ },
+ {
+  "key": "github:ikballaktass/hong-kong-airbnb-analysis",
+  "url": "https://github.com/ikballaktass/hong-kong-airbnb-analysis",
+  "name": "ikballaktass/hong-kong-airbnb-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "EDA of Hong Kong Airbnb listings, explicitly sourced from Inside Airbnb per its description; likely a recent single snapshot (vintage unverified, MIT licensed).",
+  "why_useful": "Backup/cross-check source for HK listings if the 2019/2020 vintages above need validation against a current snapshot; low incremental value on its own.",
+  "potential": "low",
+  "geography": "Hong Kong",
+  "time_coverage": "unverified (repo updated 2026-06)",
+  "size_hint": "unverified",
+  "license": "mit",
+  "last_activity": "2026-06-29",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "Likely a standard current Inside Airbnb HK pull.",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Backup/cross-check source for HK listings if the 2019/2020 vintages above need validation against a current snapshot; low incremental value on its own."
+  ]
+ },
+ {
+  "key": "github:datamerry/data-analysis-on-airbnb-florida-tableau",
+  "url": "https://github.com/datamerry/Data-Analysis-on-AirBnb-Florida-Tableau",
+  "name": "Data-Analysis-on-AirBnb-Florida-Tableau",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A single static Airbnb-Florida listings CSV plus a Tableau workbook (bookings, prices, reviews, listing type). No stated vintage or row count in description; last updated 2019-08-19, 0 stars, no license. Looks like one-time coursework, not a maintained scrape or a mirrored city panel.",
+  "why_useful": "Only marginal: a static, undated Florida Airbnb listings snapshot that could be cross-checked against Inside Airbnb Florida coverage, but far too old/thin to fill any numbered gap.",
+  "potential": "low",
+  "geography": "Florida (statewide, unspecified cities)",
+  "time_coverage": "unknown, repo dated 2019",
+  "size_hint": "single CSV + Tableau workbook, size unstated",
+  "last_activity": "2019-08-19",
+  "license": "none stated",
+  "duplicate_of_holding": "overlaps generically with existing Inside Airbnb Florida-adjacent coverage; not clearly better/longer/older",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "Only marginal: a static, undated Florida Airbnb listings snapshot that could be cross-checked against Inside Airbnb Florida coverage, but far too old/thin to fill any numbered gap."
+  ]
+ },
+ {
+  "key": "github:reenapinto/-airbnb-texas-price-prediction",
+  "url": "https://github.com/reenapinto/-Airbnb-Texas-Price-Prediction",
+  "name": "-Airbnb-Texas-Price-Prediction",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "End-to-end ML project (EDA + XGBoost) predicting nightly Airbnb prices for Texas listings; MIT licensed, updated Feb 2026 (recent), 0 stars. Data file(s) presumably a static Texas listings extract (not confirmed via directory listing).",
+  "why_useful": "Marginal \u2014 a static, single-vintage Texas listings file at best; the project is a pricing-model tutorial, not a supply/pricing time series. Borderline against the 'generic ML boilerplate' exclusion but flagged since it's Texas-specific and recently updated.",
+  "potential": "low",
+  "geography": "Texas (statewide, cities unspecified)",
+  "time_coverage": "unknown vintage, repo updated 2026-02",
+  "size_hint": "unknown, not confirmed",
+  "last_activity": "2026-02-11",
+  "license": "MIT",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   2
+  ],
+  "hits": 1,
+  "themes": [
+   "US sunbelt and mountain STR markets datasets: Florida (Orlando, Miami, Tampa), Arizona (Scottsdale, Sedona), Texas, Colorado (Breckenridge, Denver), Tennessee (Gatlinburg), Great Smoky Mountains"
+  ],
+  "why_all": [
+   "Marginal \u2014 a static, single-vintage Texas listings file at best; the project is a pricing-model tutorial, not a supply/pricing time series. Borderline against the 'generic ML boilerplate' exclusion but flagged since it's Texas-specific and recently updated."
+  ]
+ }
+]

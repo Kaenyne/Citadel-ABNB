@@ -1,0 +1,10 @@
+{
+ "slug": "sumaksharikaa-earnings-call-finbert-sentiment",
+ "url": "https://github.com/sumaksharikaa/earnings-call-nlp",
+ "category": "company_filings_estimates",
+ "data_kind": "pointer_to_external_host",
+ "one_line": "Tiny student FinBERT/Streamlit project (3 commits, last 2026-06-25, NO licence file) that commits exactly one data file - data/sentiment_results.csv, 719 KB, sentence-level FinBERT scores for 514 transcripts / 30 companies / 8 sectors; the underlying corpus is NOT committed and is the Kaggle-hosted Motley Fool scrape (18,755 transcripts, 2,876 tickers, 2017-2022), which needs a Kaggle login.",
+ "abnb_use": "Only marginal: the Kaggle pointer is the interesting part - a uniform 2017-2022 multi-ticker transcript scrape would give BKNG/EXPE/MAR/HLT peer calls on one basis for peer-readthrough and tone work (gap #4 context, and our peer-readthrough study). We already hold all ABNB transcripts since IPO, so the committed CSV is at best a check on whether travel names are covered and a sanity template for sentence-level tone scoring.",
+ "sample_plan": "Pull the single committed file only: `curl -s -o sumaksharikaa_sentiment_results.csv https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/main/data/sentiment_results.csv` (719 KB, verified size via the contents API), plus `curl -s -o sumaksharikaa_README.md https://raw.githubusercontent.com/sumaksharikaa/earnings-call-nlp/HEAD/README.md`. Then check whether ABNB/BKNG/EXPE/MAR/HLT appear in the ticker column and record the exact Kaggle dataset slug the README names. Total < 1 MB. Do NOT attempt the Kaggle download (login required).",
+ "tos_or_license_flag": true
+}

@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:apventureengine/warn-act-notices",
+  "url": "https://github.com/APVentureEngine/warn-act-notices",
+  "name": "warn-act-notices",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Normalized US WARN Act mass-layoff/plant-closure notice archive, 1988-present, 61,309+ records as of 13 Sep 2026, covering 48 states (excludes AR, NH, WY which don't publish company-level notices). CSV and JSON, per-state files under data/by-state/, plus monthly/yearly time-series, employer rollups, RSS/ics calendar exports. Fields: employer name, canonical normalized employer name, location, employees affected, notice date, effective date, notice type (layoff/closure), state. Auto-updated daily (15 consecutive daily commits Aug30-Sep13 2026 observed). Built on Apache-2.0 biglocalnews/warn-scraper (Stanford Big Local News) as the underlying collector; this repo's own data is CC BY 4.0.",
+  "why_useful": "Direct, company-name-searchable, point-in-time-stamped (daily commits) layoff-notice history that should contain Airbnb's California WARN filings from the 2020 mass layoff (~1,900 employees) and any later reductions \u2014 a real, dated headcount-shock signal (gap #14, corporate footprint) rather than a scraped estimate. Also usable as a macro/consumer-labor-market cross-check independent of ABNB.",
+  "potential": "high",
+  "geography": "US, 48 states",
+  "time_coverage": "1988-present, updated daily",
+  "size_hint": "61,309+ notices, multiple CSV/JSON files",
+  "license": "CC BY 4.0 (data), Apache-2.0 (underlying scraper it builds on)",
+  "last_activity": "13 Sep 2026 (daily automated commits)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Direct, company-name-searchable, point-in-time-stamped (daily commits) layoff-notice history that should contain Airbnb's California WARN filings from the 2020 mass layoff (~1,900 employees) and any later reductions \u2014 a real, dated headcount-shock signal (gap #14, corporate footprint) rather than a scraped estimate. Also usable as a macro/consumer-labor-market cross-check independent of ABNB."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/vancouver-analysis",
+  "url": "https://github.com/UPGo-McGill/vancouver-analysis",
+  "name": "vancouver-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Full bookdown report repo (00-executive_summary.Rmd ... 05-references.Rmd) plus a committed data/ folder: data/cmhc/ has CMHC annual rental-market-survey workbooks (annual_avg_rent_2015-2019.xlsx, annual_units_2015-2019.xlsx ~1.1MB each, annual_vacancy_2015-2019.xlsx ~1.5MB each, plus condensed van_avg_rent.csv, van_units.csv, van_vacancy.csv) by Vancouver neighbourhood; data/shapefiles/ has CMHC_NBHD_2016 neighbourhood boundary shapefile (16MB .shp), a Vancouver business-licences shapefile (85MB .dbf \u2014 city business licence registry, likely including STR operator licences), a local-area-boundary shapefile, and a rapid-transit-station point shapefile; plus a van_scrape.Rdata (Airbnb/STR scrape snapshot). Covers 'regulatory impacts' and 'COVID returning listings' analysis, 2015-2020ish.",
+  "why_useful": "Committed CMHC rental vacancy/rent/unit-count tables by Vancouver neighbourhood (2015-2019) are exactly the free, public LTR housing-economics panel named in gap #13 (STR<->LTR crossover), and the business-licence shapefile is a real municipal STR-adjacent registry (gap #12) with geographic boundaries attached.",
+  "potential": "high",
+  "gap_targets": [
+   12,
+   13
+  ],
+  "time_coverage": "2015-2020 (CMHC tables); business licence shapefile vintage unclear",
+  "geography": "Vancouver, BC, Canada (city + neighbourhood level)",
+  "size_hint": "~227 MB repo (dominated by the 85MB business-licences.dbf and 16MB neighbourhood shapefile)",
+  "license": "mit",
+  "last_activity": "2021-04-23",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Committed CMHC rental vacancy/rent/unit-count tables by Vancouver neighbourhood (2015-2019) are exactly the free, public LTR housing-economics panel named in gap #13 (STR<->LTR crossover), and the business-licence shapefile is a real municipal STR-adjacent registry (gap #12) with geographic boundaries attached."
+  ]
+ },
+ {
+  "key": "github:asunamasuda/tokyo_airbnb",
+  "url": "https://github.com/AsunaMasuda/Tokyo_Airbnb",
+  "name": "AsunaMasuda/Tokyo_Airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Three committed CSV files of Inside Airbnb Tokyo data covering Sep 2019-Aug 2020 (listings/calendar/reviews vintage, per README), plus an ipynb doing random-forest price prediction. Exact row counts not stated in README.",
+  "why_useful": "Pre-2023 Inside Airbnb Tokyo vintage \u2014 our held Inside Airbnb panel only goes back to Dec 2022 and the 120-market Jun-2026 cohort is current-only. This is a genuine historical archive for a market we don't otherwise have pre-2023 for.",
+  "potential": "high",
+  "geography": "Tokyo, Japan",
+  "time_coverage": "Sep 2019 - Aug 2020",
+  "size_hint": "3 CSV files (listings/calendar/reviews scale)",
+  "license": "unknown",
+  "last_activity": "2021-05-02",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Pre-2023 Inside Airbnb Tokyo vintage \u2014 our held Inside Airbnb panel only goes back to Dec 2022 and the 120-market Jun-2026 cohort is current-only. This is a genuine historical archive for a market we don't otherwise have pre-2023 for."
+  ]
+ },
+ {
+  "key": "github:jacksonium/hongkongairbnb",
+  "url": "https://github.com/jacksonium/hongkongairbnb",
+  "name": "jacksonium/hongkongairbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Six committed CSV files: Inside Airbnb calendar, listings, and reviews data for Hong Kong, snapshotted Nov 2019 and Nov 2020 (two full vintages).",
+  "why_useful": "Pre-2023 Hong Kong Inside Airbnb vintage, a market and time window we don't currently hold; useful as a historical anchor for HK STR supply/pricing before regulation tightened.",
+  "potential": "high",
+  "geography": "Hong Kong",
+  "time_coverage": "Nov 2019, Nov 2020",
+  "size_hint": "6 CSV files across two snapshot dates",
+  "license": "unknown",
+  "last_activity": "2021-02-01",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "APAC STR datasets: Tokyo/Kyoto minpaku registration data, Seoul, Bangkok, Bali, Sydney/Melbourne, Auckland, Singapore, Hong Kong Airbnb data and regulation"
+  ],
+  "why_all": [
+   "Pre-2023 Hong Kong Inside Airbnb vintage, a market and time window we don't currently hold; useful as a historical anchor for HK STR supply/pricing before regulation tightened."
+  ]
+ },
+ {
+  "key": "github:zhitaow/airbnb-data-analysis",
+  "url": "https://github.com/Zhitaow/Airbnb-Data-Analysis",
+  "name": "Zhitaow/Airbnb-Data-Analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Inside Airbnb extracts for Seattle and Boston, 2015-2016: listings.csv, calendar.csv, reviews.csv for each city (row counts not stated in README, but calendar.csv implies day-level availability/price panels).",
+  "why_useful": "Two additional cities (Seattle, Boston) not in our 13-city panel, with calendar-level (daily price/availability) data from 2015-2016 \u2014 genuinely older than our Dec-2022 start and includes a price-bearing calendar file, which is exactly the kind of pre-2023 vintage flagged as high value.",
+  "potential": "medium",
+  "license": "not stated",
+  "last_activity": "unknown (older analysis repo)",
+  "geography": "Seattle, Boston",
+  "time_coverage": "2015-2016",
+  "size_hint": "small, 2 cities x 3 files",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)"
+  ],
+  "why_all": [
+   "Two additional cities (Seattle, Boston) not in our 13-city panel, with calendar-level (daily price/availability) data from 2015-2016 \u2014 genuinely older than our Dec-2022 start and includes a price-bearing calendar file, which is exactly the kind of pre-2023 vintage flagged as high value."
+  ]
+ }
+]

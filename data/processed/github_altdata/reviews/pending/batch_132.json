@@ -1,0 +1,126 @@
+[
+ {
+  "key": "github:adityaawe8/pead-trading-system",
+  "url": "https://github.com/AdityaAwe8/pead-trading-system",
+  "name": "pead-trading-system",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PEAD research/backtest/ML-signal system described as using \"point-in-time data\" and risk controls; not verified whether raw earnings-surprise or consensus data is committed vs pulled live from a paid vendor.",
+  "why_useful": "Point-in-time discipline is exactly our rule #2; if it genuinely stores point-in-time consensus/earnings-surprise snapshots (rather than just point-in-time prices) it would be relevant to gap #4. Flagging for a closer look, not confirmed.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "size_hint": "unverified",
+  "time_coverage": "unknown",
+  "geography": "unknown",
+  "license": "unspecified",
+  "last_activity": "2026-07-31",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Point-in-time discipline is exactly our rule #2; if it genuinely stores point-in-time consensus/earnings-surprise snapshots (rather than just point-in-time prices) it would be relevant to gap #4. Flagging for a closer look, not confirmed."
+  ]
+ },
+ {
+  "key": "github:fkempf92/factordata",
+  "url": "https://github.com/fkempf92/FactorData",
+  "name": "FactorData",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Calculates 103 firm characteristics (factor zoo) directly from CRSP + Compustat in Python, avoiding the WRDS SAS cloud; no data committed, still requires paid WRDS access.",
+  "why_useful": "Useful methodology reference for factor construction, but gated by paid data access we don't have; low direct value for the ABNB pitch.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "size_hint": "code only",
+  "time_coverage": "n/a",
+  "geography": "US",
+  "license": "MIT",
+  "last_activity": "2026-08-14",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Useful methodology reference for factor construction, but gated by paid data access we don't have; low direct value for the ABNB pitch."
+  ]
+ },
+ {
+  "key": "github:vcorp-dev/kalshi-price-data",
+  "url": "https://github.com/vcorp-dev/kalshi-price-data",
+  "name": "kalshi-price-data",
+  "category": "markets_options_positioning",
+  "data_kind": "both",
+  "what_it_holds": "Advertises Kalshi historical data and a price API: live yes/no prices, full order-book depth, WebSocket streaming, and a Python client (DepthFeed) \u2014 appears to be a hosted product with a thin open client rather than committed historical files; needs directory listing to confirm any bundled data vs. pure API wrapper.",
+  "why_useful": "Kalshi is CFTC-regulated and carries economic-data and event contracts (e.g. CPI, Fed, government shutdown, possibly travel/tourism-adjacent) that are more likely to be well-formed probability series than crypto-native Polymarket; order-book depth would give more than just last price.",
+  "potential": "low",
+  "size_hint": "unclear, likely hosted service not bundled files",
+  "time_coverage": "unspecified",
+  "geography": "US-regulated exchange",
+  "license": "MIT",
+  "last_activity": "2026-07-26",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Kalshi is CFTC-regulated and carries economic-data and event contracts (e.g. CPI, Fed, government shutdown, possibly travel/tourism-adjacent) that are more likely to be well-formed probability series than crypto-native Polymarket; order-book depth would give more than just last price."
+  ]
+ },
+ {
+  "key": "github:zook8/kalshi-dune-community-data",
+  "url": "https://github.com/zook8/kalshi-dune-community-data",
+  "name": "kalshi-dune-community-data",
+  "category": "markets_options_positioning",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Script that fetches Kalshi market data via API and stores it into a public Dune Analytics table (community dataset), rather than committing files to the repo.",
+  "why_useful": "If the Dune table is public and queryable, it could serve as a continuously-updated free Kalshi archive without needing to run the scraper ourselves \u2014 worth checking the Dune table directly (external host).",
+  "potential": "low",
+  "size_hint": "external Dune table, size unknown",
+  "time_coverage": "unspecified, ongoing",
+  "geography": "US",
+  "license": "MIT",
+  "last_activity": "2026-03-17",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "If the Dune table is public and queryable, it could serve as a continuously-updated free Kalshi archive without needing to run the scraper ourselves \u2014 worth checking the Dune table directly (external host)."
+  ]
+ },
+ {
+  "key": "github:cherry8177/manifold_prediction",
+  "url": "https://github.com/cherry8177/manifold_prediction",
+  "name": "manifold_prediction",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Described as 'research, datasets, evaluation tooling, and trained baselines for Manifold prediction-market quality and engagement' \u2014 unclear from description alone whether real market-outcome data is committed or this is a quality/engagement-scoring research repo; would need a contents listing to confirm.",
+  "why_useful": "If it holds Manifold market outcome/calibration data, it could support point-in-time calibration checks for any Manifold-hosted ABNB or travel-event questions we later use.",
+  "potential": "low",
+  "size_hint": "unknown, 0 stars, unverified",
+  "time_coverage": "unspecified",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-08-09",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "If it holds Manifold market outcome/calibration data, it could support point-in-time calibration checks for any Manifold-hosted ABNB or travel-event questions we later use."
+  ]
+ }
+]

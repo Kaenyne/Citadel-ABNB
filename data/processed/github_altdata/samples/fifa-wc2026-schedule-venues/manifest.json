@@ -1,0 +1,24 @@
+{
+ "slug": "fifa-wc2026-schedule-venues",
+ "url": "https://github.com/mominullptr/FIFA-World-Cup-2026-Dataset",
+ "sampled": true,
+ "total_bytes": 33507,
+ "files": ["venues.csv", "matches.csv", "teams.csv", "matches_detailed.csv", "tournament_stages.csv"],
+ "rows": "venues 16; matches 104; teams 48; matches_detailed 104; tournament_stages 7",
+ "columns": "venues: venue_id, stadium_name, city, country, capacity, lat, lon, elevation_m | matches: match_id, date, kickoff_time_utc, stage_id, venue_id, home/away_team_id, scores, penalty scores, status, result_type, home/away_xg, referee_id, potm_id | matches_detailed: same plus stage_name, stadium_name, city, country, team names/codes, goalkeepers, referee_name | teams: team_id, team_name, fifa_code, group_letter, confederation, fifa_ranking_pre_tournament, elo_rating, manager_name | tournament_stages: stage_id, stage_name, is_knockout",
+ "date_range": "2026-06-11 to 2026-07-19 (match dates)",
+ "how_pulled": "gh api repos/mominullptr/FIFA-World-Cup-2026-Dataset/contents/ ; for f in venues.csv matches.csv teams.csv matches_detailed.csv tournament_stages.csv; do curl -sSL -o $f https://raw.githubusercontent.com/mominullptr/FIFA-World-Cup-2026-Dataset/HEAD/$f; done ; python/pandas to profile",
+ "full_dataset_size": "Whole repo is ~1.4 MB: 12 CSVs (largest match_lineups.csv 125 KB, player_stats.csv 99 KB, squads_and_players.csv 92 KB, match_prediction_features 49 KB), real_match_details.json 52 KB, sqlite_fifa_world_cup_2026.db 578 KB, plus generator/validator scripts. ~1,248 player rows, 104 matches, thousands of event/lineup rows. git clone --depth 1 pulls it all.",
+ "description": "Complete FIFA World Cup 2026 (48-team, US/Canada/Mexico, 11 Jun-19 Jul 2026) relational dataset: 16 venues with host city, country, capacity and lat/lon; 104 matches at one row per match with date, UTC kickoff, stage, venue and (per the README) real results and xG; 48 teams with group, confederation, FIFA rank and Elo. Grain is match-level for the tournament calendar and venue-level for host cities. Source is the GitHub repo (also on Kaggle), stated as compiled from FIFA.com and verified providers, CC0-1.0. For ABNB an analyst would join venue city x match date to build a daily host-market event-intensity calendar (matches per city per day, cumulative capacity, knockout weighting) across 11 US, 2 Canadian and 3 Mexican metros, and use it as the 3Q26 nights/ADR shock regressor against Inside Airbnb calendar/reviews data and the North America regional split.",
+ "issues": "No pull failures. Licence is CC0-1.0 (LICENSE file confirmed), no ToS concern. Caveats: repo carries generate_dataset.py / generate_player_stats.py scripts and README acknowledges player market values are partly 'rank-calibrated heuristic estimates'; README claims match results/events are authentic, but a human should spot-check a few scores and kickoff times against FIFA.com before relying on results (the schedule/venue fields are the part ABNB needs and are the least likely to be wrong). Last push 17 Aug 2026, after the tournament ended. venues.csv has no host-city-to-metro mapping (e.g. Arlington -> Dallas, Inglewood -> Los Angeles, Foxborough -> Boston, Santa Clara -> Bay Area, Guadalupe -> Monterrey, Zapopan -> Guadalajara); the analyst must add it. Files skipped by design: player/lineup/event/stats CSVs, sqlite db, JSON.",
+ "source_urls": [
+  "https://github.com/mominullptr/FIFA-World-Cup-2026-Dataset",
+  "https://raw.githubusercontent.com/mominullptr/FIFA-World-Cup-2026-Dataset/HEAD/venues.csv",
+  "https://raw.githubusercontent.com/mominullptr/FIFA-World-Cup-2026-Dataset/HEAD/matches.csv",
+  "https://raw.githubusercontent.com/mominullptr/FIFA-World-Cup-2026-Dataset/HEAD/teams.csv",
+  "https://raw.githubusercontent.com/mominullptr/FIFA-World-Cup-2026-Dataset/HEAD/matches_detailed.csv",
+  "https://raw.githubusercontent.com/mominullptr/FIFA-World-Cup-2026-Dataset/HEAD/tournament_stages.csv",
+  "https://raw.githubusercontent.com/mominullptr/FIFA-World-Cup-2026-Dataset/HEAD/README.md"
+ ],
+ "pulled_at": "2026-09-14"
+}

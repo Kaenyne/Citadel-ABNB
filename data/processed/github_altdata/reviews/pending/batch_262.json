@@ -1,0 +1,123 @@
+[
+ {
+  "key": "other:https://huggingface.co/michaelmallari",
+  "url": "https://huggingface.co/michaelmallari",
+  "name": "michaelmallari/airbnb-* (US/Canada city series)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "A family of per-city Airbnb listing datasets (Denver, Asheville, Austin, Bozeman, Nashville, New York, Portland, San Diego, Twin Cities, Washington DC, Toronto, Vancouver, and more), updated January 2024, mirroring Inside Airbnb-style listing exports per market.",
+  "why_useful": "Adds cities outside our 13-city panel (Denver, Asheville, Bozeman, Twin Cities, DC, Toronto, Vancouver) at a Jan 2024 vintage; could extend the US/Canada cross-section, though vintage overlaps what Inside Airbnb itself would have had at that date (not older/rarer).",
+  "potential": "low",
+  "geography": "US and Canada, ~15 cities",
+  "time_coverage": "January 2024 snapshot",
+  "size_hint": "unknown per-dataset row counts",
+  "license": "unknown",
+  "last_activity": "January 2024",
+  "gap_targets": [],
+  "duplicate_of_holding": "likely re-hosts Inside Airbnb source data we can already pull directly for cities we care about; only the extra cities (Denver, Asheville, Bozeman, Twin Cities, DC, Toronto, Vancouver) are new",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "Adds cities outside our 13-city panel (Denver, Asheville, Bozeman, Twin Cities, DC, Toronto, Vancouver) at a Jan 2024 vintage; could extend the US/Canada cross-section, though vintage overlaps what Inside Airbnb itself would have had at that date (not older/rarer)."
+  ]
+ },
+ {
+  "key": "other:https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings",
+  "url": "https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings",
+  "name": "Airbnb New User Bookings (Kaggle competition data itself, not a repo)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "train_users_2.csv / test_users.csv (~275k Airbnb user signups 2010-2014 with device, marketing channel, demographics, and first-booking destination country), sessions.csv (~10M web/app action-type events for a subset of users, 2014), age_gender_bkts.csv, countries.csv. Checked ~10 GitHub mirrors of solutions (Samer-Haddad/COMP9417-Project, pc90/Airbnb-New-User-Bookings---Kaggle-Competition, karthikhegde05/Airbnb-new-user-booking-competition, MadhumitaRoy/AirbnbNewUserBookings_Kaggle_Multi-Classification, ahmedsaeedsaid/Airbnb-New-User-Bookings-kaggle, rtlatimer/Airbnb-New-User-Bookings-Kaggle, Maram-Elsayed/Airbnb-New-User-Bookings-Kaggle, markrofail/airbnb-new-user-bookings-kaggle-, chriszeng8/Airbnb-New-User-Bookings-Kaggle-2016, RyanKopa/Airbnb-New-User-Bookings-Kaggle-Competition) via gh api contents listings on 4 of them plus repo browsing on the rest: NONE commit the raw CSVs, all contain only notebooks/scripts/submission images that assume the Kaggle data is downloaded separately (which requires a Kaggle login, out of scope per the sanctioned-sources rule).",
+  "why_useful": "If the raw files existed in a repo they would be a pre-account-freeze (2010-2014) global user-acquisition and session-behavior panel for Airbnb itself -- interesting for host/guest engagement history (gap 15/company-structure adjacent, gap 5 engagement) -- but the data is 10+ years stale (pre-2015, well before the forecast window) and every mirror checked is a solutions notebook with no committed data, so this fails the cataloguing bar as a GitHub asset. Flagging only so nobody re-searches this exact query expecting a hit.",
+  "potential": "low",
+  "geography": "Global (destination countries), user base skews US signups",
+  "time_coverage": "Account creation 2010-2014; session log ~2014 only",
+  "size_hint": "~275k users, ~10M session rows (on Kaggle, not on GitHub)",
+  "license": "Kaggle competition rules (non-commercial); no data license attached in any mirror",
+  "last_activity": "Most mirrors 2016-2023, all now stale",
+  "data_kind_detail": "",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)"
+  ],
+  "why_all": [
+   "If the raw files existed in a repo they would be a pre-account-freeze (2010-2014) global user-acquisition and session-behavior panel for Airbnb itself -- interesting for host/guest engagement history (gap 15/company-structure adjacent, gap 5 engagement) -- but the data is 10+ years stale (pre-2015, well before the forecast window) and every mirror checked is a solutions notebook with no committed data, so this fails the cataloguing bar as a GitHub asset. Flagging only so nobody re-searches this exact query expecting a hit."
+  ]
+ },
+ {
+  "key": "github:ishmeet13/airbnb-kpi-pipeline",
+  "url": "https://github.com/Ishmeet13/airbnb-kpi-pipeline",
+  "name": "airbnb-kpi-pipeline",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Snowflake/dbt/BI pipeline described as modeling occupancy, pricing, and revenue trends for a 'hospitality revenue optimization case study'. No commit history/star count details visible beyond the description; almost certainly built on the standard Kaggle NYC-2019 or Inside Airbnb listings file rather than any new source (not confirmed from README, description alone). No release assets mentioned.",
+  "why_useful": "If it ingests a listings/calendar dataset we don't already hold, it would be a KPI-pipeline pattern reusable on our own Inside Airbnb data, but does not appear to contain company-reported quarterly KPIs, consensus, or genuinely new data.",
+  "potential": "low",
+  "duplicate_of_holding": "Likely duplicates our existing Inside Airbnb 13-city panel / listing-level KPI work; not company-reported KPIs",
+  "gap_targets": [],
+  "license": "none listed",
+  "last_activity": "2025-11-23",
+  "geography": "unspecified (listing-level, likely single-city Kaggle/Inside Airbnb source)",
+  "time_coverage": "unknown",
+  "size_hint": "unknown, pipeline repo not a data dump",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "If it ingests a listings/calendar dataset we don't already hold, it would be a KPI-pipeline pattern reusable on our own Inside Airbnb data, but does not appear to contain company-reported quarterly KPIs, consensus, or genuinely new data."
+  ]
+ },
+ {
+  "key": "github:fabiansegurondo/data-visualization---kpi",
+  "url": "https://github.com/FabianSegurondo/DATA-VISUALIZATION---KPI",
+  "name": "DATA-VISUALIZATION---KPI",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Tableau workbook described as 'AirBnB KPI with Tableau' \u2014 almost certainly the standard Kaggle NYC listings file re-visualized, no new data.",
+  "why_useful": "None beyond confirming this is the same well-known dataset already excluded by the brief's rules.",
+  "potential": "low",
+  "duplicate_of_holding": "Duplicate of the well-known Kaggle NYC-2019 Airbnb file, explicitly excluded by brief",
+  "gap_targets": [],
+  "license": "none listed",
+  "last_activity": "2022-04-18",
+  "geography": "NYC (assumed)",
+  "time_coverage": "unknown",
+  "size_hint": "single Tableau workbook",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "None beyond confirming this is the same well-known dataset already excluded by the brief's rules."
+  ]
+ },
+ {
+  "key": "github:khush7349/airbnb-stock-price-prediction",
+  "url": "https://github.com/Khush7349/AIRBnB-STOCK-PRICE-PREDICTION",
+  "name": "AIRBnB-STOCK-PRICE-PREDICTION",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Time-series project pulling ABNB daily stock prices (via yfinance or similar) and finding a naive random-walk forecast beats ML models. Only market price data, no KPI/fundamental data, no consensus panel.",
+  "why_useful": "Confirms naive random-walk baseline on ABNB price series but holds no new fundamental/alt-data; we already have daily prices.",
+  "potential": "low",
+  "duplicate_of_holding": "We already hold daily ABNB prices",
+  "gap_targets": [],
+  "license": "none listed",
+  "last_activity": "2025-10-31",
+  "geography": "n/a",
+  "time_coverage": "unknown (likely IPO-to-present daily closes)",
+  "size_hint": "small CSV of daily OHLC, not committed KPI data",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Confirms naive random-walk baseline on ABNB price series but holds no new fundamental/alt-data; we already have daily prices."
+  ]
+ }
+]

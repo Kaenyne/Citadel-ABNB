@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:chengxdadp/tsa-passenger-volume",
+  "url": "https://github.com/chengxdadp/tsa-passenger-volume",
+  "name": "chengxdadp/tsa-passenger-volume",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Daily-updated pull of TSA daily checkpoint passenger-screening totals from tsa.gov/travel/passenger-volumes, complete annual series 2019-2025 plus YTD 2026 (through ~3 Sep 2026). Python scripts auto-refresh; ships time-series CSVs by year, YoY comparison charts, 7-day moving average, monthly seasonality.",
+  "why_useful": "Duplicates the TSA throughput series we already hold, but this one is actively maintained through Sep 2026 (past our 2024 cutoff where our own TSA construction failed) and ships a ready one-command daily-pull script rather than a one-off snapshot \u2014 useful for a fresher nowcast attempt even though our prior TSA-since-2024 test failed on our own construction (gap 10).",
+  "potential": "medium",
+  "duplicate_of_holding": "We already hold TSA throughput; this is a longer/fresher/actively-updated vintage with a reusable scraper",
+  "gap_targets": [
+   10
+  ],
+  "geography": "US (national + likely per-checkpoint)",
+  "time_coverage": "2019-01-01 to 2026-09-03 (daily), actively updated",
+  "size_hint": "small (daily counts, ~2700 rows/checkpoint-level unknown)",
+  "license": "unknown",
+  "last_activity": "2026-09-07",
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "Duplicates the TSA throughput series we already hold, but this one is actively maintained through Sep 2026 (past our 2024 cutoff where our own TSA construction failed) and ships a ready one-command daily-pull script rather than a one-off snapshot \u2014 useful for a fresher nowcast attempt even though our prior TSA-since-2024 test failed on our own construction (gap 10)."
+  ]
+ },
+ {
+  "key": "github:kw468/tsathroughput",
+  "url": "https://github.com/kw468/tsathroughput",
+  "name": "kw468/tsathroughput",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Hourly TSA checkpoint throughput totals from 2014 onward (per repo description \"hourly tsa checkpoint totals, 2014-\"); at least one visible file tsa_totals_2020_2021.csv. Hourly granularity is finer than the daily series we hold, and 2014 start is far older than typical TSA archive availability.",
+  "why_useful": "If the hourly, 2014-onward file set is genuinely committed, this is materially finer-grained and longer than our existing daily TSA panel \u2014 worth a look even though our own TSA-since-2024 construction failed, since gap rules say catalogue longer/older/finer-grained versions regardless (gap 10).",
+  "potential": "medium",
+  "duplicate_of_holding": "We hold TSA throughput; this claims hourly granularity back to 2014, unverified beyond the visible 2020-2021 file",
+  "gap_targets": [
+   10
+  ],
+  "geography": "US, national and/or per-checkpoint",
+  "time_coverage": "2014-2021+ (hourly)",
+  "size_hint": "unknown, likely multiple CSVs by year",
+  "license": "unknown",
+  "last_activity": "2021-05-04",
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "If the hourly, 2014-onward file set is genuinely committed, this is materially finer-grained and longer than our existing daily TSA panel \u2014 worth a look even though our own TSA-since-2024 construction failed, since gap rules say catalogue longer/older/finer-grained versions regardless (gap 10)."
+  ]
+ },
+ {
+  "key": "github:vijaychamakuri/hub-delay-audit",
+  "url": "https://github.com/VijayChamakuri/hub-delay-audit",
+  "name": "VijayChamakuri/hub-delay-audit",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Auditing minimum-connection-time standards at 15 major US hub airports (SFO, EWR, LGA, ORD, BOS, JFK, LAX, MSP, SLC, SEA, PHX, CLT, DEN, DFW, ATL) using BTS On-Time Performance (Jan 2019, ~584k rows) and DB1B Coupon Survey (Q1 2019, ~9.8M rows) data; analysis.py computes carrier-hub pair statistics across 69 carrier-hub pairs / 5 major carriers (AA, DL, UA, WN, AS), ~91.5% of sample volume. Raw data not committed (download instructions only); single-commit repo.",
+  "why_useful": "This is the only repo found that actually demonstrates a working BTS T-100/On-Time + DB1B join pipeline end-to-end (download, clean, join, hub-level delay-buffer analysis) \u2014 a template for building a fresh, current-quarter T-100/DB1B pull for air-travel-demand cross-checks on ABNB nights (gap 10), even though the committed sample data is limited to Q1 2019.",
+  "potential": "medium",
+  "duplicate_of_holding": "None; we hold no BTS T-100/DB1B pipeline",
+  "gap_targets": [
+   10
+  ],
+  "geography": "US, 15 major hub airports",
+  "time_coverage": "Q1 2019 only (Jan 2019 On-Time Performance, Q1 2019 DB1B)",
+  "size_hint": "251MB OTP + 1.9GB DB1B sample (per repo description; whether these large files are actually committed vs. downloaded by script is unconfirmed)",
+  "license": "unknown",
+  "last_activity": "2026-06-19",
+  "hits": 3,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers",
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "This is the only repo found that actually demonstrates a working BTS T-100/On-Time + DB1B join pipeline end-to-end (download, clean, join, hub-level delay-buffer analysis) \u2014 a template for building a fresh, current-quarter T-100/DB1B pull for air-travel-demand cross-checks on ABNB nights (gap 10), even though the committed sample data is limited to Q1 2019.",
+   "A working, documented example of pulling and joining BTS On-Time Performance with DB1B at hub-airport granularity \u2014 reusable as a template even though the specific window (Jan-Mar 2019) is stale and would need re-pointing at current quarters for a live air-travel-demand proxy.",
+   "Concretely documents the BTS DB1B/On-Time pull method named in gap #10 (airline capacity/traffic); a working reference pipeline for grabbing DB1B itinerary-level data even though the raw files themselves aren't committed."
+  ]
+ },
+ {
+  "key": "github:simonpcouch/anyflights",
+  "url": "https://github.com/simonpcouch/anyflights",
+  "name": "simonpcouch/anyflights",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CRAN-published R package (317 commits) generalizing nycflights13 to any FAA airport/year: get_flights(), get_weather(), get_airports(), get_airlines(), get_planes() pull flight-level departure records (built on underlying FAA/BTS on-time data feeds), hourly weather, and airport/airline/aircraft metadata for a user-specified station+year+month; can bundle results into a data-only R package. Notes FAA usually posts full-year data in Feb/March of the following year (i.e., a lag to be aware of for nowcasting).",
+  "why_useful": "General-purpose, maintained client for pulling flight-level US air-travel data (a step toward T-100/OTP-style capacity and delay series) by any airport and year, which could be pointed at major leisure gateway airports (MCO, LAS, HNL, MIA) as a demand-kernel proxy alongside TSA throughput; also documents the FAA data-release lag relevant to point-in-time discipline.",
+  "potential": "medium",
+  "geography": "Any US airport (FAA-scope)",
+  "time_coverage": "Any year/month FAA has published (with ~1 year publication lag noted)",
+  "size_hint": "Method only; flight-level, so volume scales with airport size",
+  "license": "CRAN package, MIT-typical (not confirmed in fetch)",
+  "last_activity": "active, 317 commits (date not shown)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "General-purpose, maintained client for pulling flight-level US air-travel data (a step toward T-100/OTP-style capacity and delay series) by any airport and year, which could be pointed at major leisure gateway airports (MCO, LAS, HNL, MIA) as a demand-kernel proxy alongside TSA throughput; also documents the FAA data-release lag relevant to point-in-time discipline."
+  ]
+ },
+ {
+  "key": "github:henriklied/adsb-tools",
+  "url": "https://github.com/henriklied/adsb-tools",
+  "name": "adsb-tools",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scripts to download and filter ADS-B Exchange's daily flight dumps (their public bulk JSON feed of aircraft state vectors). Apache-2.0, 11 stars.",
+  "why_useful": "A clean, small, working client for pulling ADS-B Exchange's daily global flight-position dumps -- the raw material needed to build airport-level departure/arrival counts as a travel-capacity proxy (gap #10), without needing a paid FlightRadar24/aviationstack key.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "geography": "Global (whatever ADS-B Exchange covers)",
+  "time_coverage": "Daily dumps as available from ADS-B Exchange (pull-time only, not historical archive)",
+  "size_hint": "Script only, no committed data (each daily dump is large raw JSON)",
+  "license": "Apache-2.0",
+  "last_activity": "2024-08-15",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "A clean, small, working client for pulling ADS-B Exchange's daily global flight-position dumps -- the raw material needed to build airport-level departure/arrival counts as a travel-capacity proxy (gap #10), without needing a paid FlightRadar24/aviationstack key."
+  ]
+ }
+]

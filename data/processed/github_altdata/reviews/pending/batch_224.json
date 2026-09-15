@@ -1,0 +1,121 @@
+[
+ {
+  "key": "github:fracabu/tassa_soggiorno_app",
+  "url": "https://github.com/fracabu/tassa_soggiorno_app",
+  "name": "fracabu/tassa_soggiorno_app",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Streamlit app that calculates Rome's imposta di soggiorno (tourist occupancy tax) based on booking details per local regulations. Calculation logic only; no committed historical collections data found.",
+  "why_useful": "Encodes current Rome tourist-tax rate rules/brackets in code, which could be reused to compute implied tax revenue from Rome nights/ADR estimates, but holds no dataset itself.",
+  "potential": "low",
+  "gap_targets": [],
+  "size_hint": "small app repo",
+  "time_coverage": "current rules only",
+  "geography": "Rome, Italy",
+  "license": "MIT",
+  "last_activity": "2025-12-22",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform"
+  ],
+  "why_all": [
+   "Encodes current Rome tourist-tax rate rules/brackets in code, which could be reused to compute implied tax revenue from Rome nights/ADR estimates, but holds no dataset itself."
+  ]
+ },
+ {
+  "key": "github:kenneth-rakentine/30_night_occupancy_tax_calculator",
+  "url": "https://github.com/Kenneth-Rakentine/30_Night_Occupancy_Tax_Calculator",
+  "name": "Kenneth-Rakentine/30_Night_Occupancy_Tax_Calculator",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tool that parses uploaded hotel/STR folios to determine 30-night reimbursement eligibility and calculate occupancy-tax reimbursement totals (US, likely North Carolina style long-stay exemption).",
+  "why_useful": "Marginal utility: a folio-parsing calculator, not a public dataset; only useful as a template if we ever process our own folio-style data.",
+  "potential": "low",
+  "gap_targets": [],
+  "size_hint": "small utility repo",
+  "time_coverage": "n/a",
+  "geography": "US, unspecified jurisdiction",
+  "license": "none declared",
+  "last_activity": "2026-02-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform"
+  ],
+  "why_all": [
+   "Marginal utility: a folio-parsing calculator, not a public dataset; only useful as a template if we ever process our own folio-style data."
+  ]
+ },
+ {
+  "key": "github:tidclibya/tourism-indicators-and-forecasts-",
+  "url": "https://github.com/tidclibya/Tourism-Indicators-and-Forecasts-",
+  "name": "Tourism-Indicators-and-Forecasts-",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "\"Libyan Tourism Indicators and Forecasts: Tourism Economy and Balance of Payments\" \u2014 appears to be a Central Bank of Libya tourism/BOP indicators page or report mirror; 0 stars, HTML, last updated 27 Sep 2025.",
+  "why_useful": "A single-country (Libya) tourism balance-of-payments indicator set \u2014 Libya is not a material ABNB market, so relevance is marginal, but it is a real, recently-touched repo tying tourism receipts directly to BOP framing, which is the theme's core concept; flagged for completeness rather than expected use.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "Libya",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "not confirmed",
+  "last_activity": "2025-09-27",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "A single-country (Libya) tourism balance-of-payments indicator set \u2014 Libya is not a material ABNB market, so relevance is marginal, but it is a real, recently-touched repo tying tourism receipts directly to BOP framing, which is the theme's core concept; flagged for completeness rather than expected use."
+  ]
+ },
+ {
+  "key": "github:mounicmadiraju/scrape",
+  "url": "https://github.com/mounicmadiraju/scrape",
+  "name": "scrape (Numbeo cost-of-living scraper)",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper pulling Numbeo cost-of-living components by country/location. Apache-2.0, 13 stars, updated Apr 2026. No committed CSV output in repo description.",
+  "why_useful": "A ready scraper skeleton for the sanctioned-if-approved case of building a point-in-time Numbeo cost-of-living panel across ABNB markets (would need a human ToS decision per repo rules before running).",
+  "potential": "low",
+  "size_hint": "small scraper script",
+  "time_coverage": "n/a",
+  "geography": "Numbeo-covered countries/cities",
+  "license": "Apache-2.0",
+  "last_activity": "2026-04-29",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "A ready scraper skeleton for the sanctioned-if-approved case of building a point-in-time Numbeo cost-of-living panel across ABNB markets (would need a human ToS decision per repo rules before running).",
+   "One more maintained Numbeo scraper option if the team wants to build its own point-in-time affordability panel."
+  ]
+ },
+ {
+  "key": "github:sinanazem/web-crawling-numbeo",
+  "url": "https://github.com/sinanazem/web-crawling-numbeo",
+  "name": "web-crawling-numbeo",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper that pulls Numbeo cost-of-living data into a PostgreSQL database, dockerized. No data committed, method only. MIT license.",
+  "why_useful": "Same class as above \u2014 a containerized pipeline for building a recurring Numbeo cost-of-living panel if a human authorizes scraping Numbeo.",
+  "potential": "low",
+  "size_hint": "small repo, docker-compose + scraper",
+  "time_coverage": "n/a",
+  "geography": "global (Numbeo cities)",
+  "license": "MIT",
+  "last_activity": "2026-02-15",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "Same class as above \u2014 a containerized pipeline for building a recurring Numbeo cost-of-living panel if a human authorizes scraping Numbeo."
+  ]
+ }
+]

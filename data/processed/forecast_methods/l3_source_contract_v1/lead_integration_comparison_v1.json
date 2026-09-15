@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "canonical_versions": {
+    "precision": "results_v2",
+    "accounting": "results_v4",
+    "consumption": "results_v2"
+  },
+  "files_byte_identical": {
+    "precision": 9,
+    "accounting": 8,
+    "consumption": 8
+  },
+  "canonical_output_sha256": {
+    "precision": {
+      "derived_values.csv": "0f7aa8be904476eb52780238b11f26dafb1273bfa704580dec064187da5638ec",
+      "discrepancy_ledger.csv": "0f0560f1340dc8198f469e4b50363f4d45345f8b49e69180cddc224100b1e25d",
+      "input_manifest.json": "e6f1102430a3ea425669b9f711090a463d19a8fed9aa6be5d45ef3463f6148b1",
+      "kernel_sensitivity.csv": "fef483d17581156d9d00d013bda577f64e9be9047f0f439192ae3bb8127cff43",
+      "output_manifest.json": "c805076609dd5975061cfb0ab9a36b853e6b7426e3a7c2f997e3c5ef7c4323e5",
+      "quarter_coverage.csv": "dfaca120ae2001e0c527d12829c475d8656b27dda1a78e39b7e41cf90ead9975",
+      "source_manifest.csv": "39369699bca192e1695ce6da197c7e6051e974303b4967fe8256326b76bf094f",
+      "summary.json": "587faa571654e77a58114f3a3ec3569bb55604a69484a58bb04132daaf8386f0",
+      "supplemental_observations.csv": "f063ac30beedb84bdd3d16bb35d472a90ce2e844324bd2dd292d04113cf68228"
+    },
+    "accounting": {
+      "accounting_contract.csv": "e4738571b2e3dfe7b031cdeac5e9dcf2a3a8be039a51cb44cfa0f5768aad9ee2",
+      "definition_contract.csv": "e8da83695b725aced23ec208fe723eabe760cdefab3feaecbd1a362d3ec65561",
+      "primary_facts.csv": "33b40cea239a73a2c00df303ad7d9478f230ce2d03f530d3d69949c102bb4a28",
+      "run_inputs.csv": "72d2586ced62bc0701a7d00bcf25bd0d7c175053f6f987d2dbe3091911647de0",
+      "SHA256SUMS.json": "d03ca7a1f56c6f2db3af78ec5696a9492a9d8e396b3e0244cf27e49c0fd4bede",
+      "source_manifest.csv": "a72db19f588a0ba6de1b62f912573e01c570ea0b5722686392a5fa6f7aa5f331",
+      "summary.json": "6ff6d10f2988cb9fb2e1922f7834b85c52e16c74d667c7313a09dd3a0d39c8d2",
+      "timing_contract.csv": "4688515ff8aaa42acebb56427b74addc582e2d1cb25165c833eebb5a267d86fe"
+    },
+    "consumption": {
+      "consumption_matrix.csv": "89d9066af75b091f59b5475dc26336de072215312720993ca6750b85bd684a90",
+      "existing_data_inventory.csv": "76656e0ac0a5011d1e382cffbd3e868aa11d61336be3f2492e468498c12ebf2f",
+      "guide_basis_audit.csv": "a99fe11a8bfeb12cae54999b09596f4f84f4290ffb6b7e5ee7719b7af5ce8585",
+      "information_gaps.csv": "eeba42a86559660cd25022083a4035581bb049ff03dbe085c18e223679c6d04d",
+      "interface_audit.csv": "db9f1126c7b974fe30fa9558d10f7c89c14d4dc1f2ebc9dd821eee258df84fd2",
+      "manifest.json": "9e11725fff4a79889d4006931d9c38d9030f2e34a871c14dea3bbc166e033389",
+      "source_manifest.csv": "885db7f8c3935cd7b21bbe4b872bd9600b2bca60624c20f5f764e473c0640d5a",
+      "summary.json": "1794a00244eec81eeafcfb2ef486d9e26fb52bc9c8e875966bcfee9c5877bbfc"
+    }
+  },
+  "source_code_at_integration_sha256": {
+    "analysis/src/forecast_methods/l3_source_contract_v1/.gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "analysis/src/forecast_methods/l3_source_contract_v1/pack.py": "030026d09f53ac6da9a48a83fdb2d9d5f19298c2dc399d7aa7447257c5280986",
+    "analysis/src/forecast_methods/l3_source_contract_v1/preserve.py": "8380d190abc3463c384fad41a0bf64ad11c5e5cd7d8d4670595319f2c2349b88",
+    "analysis/src/forecast_methods/l3_source_contract_v1/quality.py": "811098cac2db6e0b7e164ba6b23672acbfd6af057b5c68cd468cebaad1281003",
+    "analysis/src/forecast_methods/l3_source_contract_v1/README.md": "d0ec1c58741e596b807b12e12f662687ddc85bbdbe6af105d6f70be8a8b4ba28",
+    "analysis/src/forecast_methods/l3_source_contract_v1/run.py": "a55665d5973393f40e048290ef12618400e1faaba1b4fd1ae494f538e16f7cee",
+    "analysis/src/forecast_methods/l3_source_contract_v1/test_pack.py": "4da2dd9cf74a336b7333def9321d70867d6b471bde728328a05fa7099a3ab8cc",
+    "analysis/src/forecast_methods/l3_source_contract_v1/test_quality.py": "5c369ab728ff01b678adbc3ec46cc278cd01a909284f759505e231eb12bcd1c0",
+    "analysis/src/forecast_methods/l3_source_contract_v1/accounting/README.md": "3e9d89c7fd2ae513d8a2df31c40a54badf14f8e04fe73699925c46de51d67002",
+    "analysis/src/forecast_methods/l3_source_contract_v1/accounting/run.py": "a66257d5484b178e9c8cecfba391391dc3b6bf611014cf1b29d5fbd6db0d6e79",
+    "analysis/src/forecast_methods/l3_source_contract_v1/accounting/source_contract.json": "2b4bfa3547cf53d13e4055c0a894c312007ea6c1f59b604b4ff643f22b1b21db",
+    "analysis/src/forecast_methods/l3_source_contract_v1/accounting/test_accounting.py": "93319197efc5fcd4ddea87d736ab56c73f224ff41650070a410b8ed5cedbcdf1",
+    "analysis/src/forecast_methods/l3_source_contract_v1/consumption/freeze_evidence.py": "f69cb5e7b11aef548ae3894a365d261b36c5cc8eb02cc86d212b2722b412ec87",
+    "analysis/src/forecast_methods/l3_source_contract_v1/consumption/README.md": "a085f8631623d20dc0b5017c9bd601863456865d52afc0359c41e511d2b77eb5",
+    "analysis/src/forecast_methods/l3_source_contract_v1/consumption/run.py": "a23279e377e50ba3e65c3c230f89c81d3e28173cc71306fd60da9ce1a80f67ba",
+    "analysis/src/forecast_methods/l3_source_contract_v1/consumption/test_consumption.py": "ae821cd20bd2eb3a3e6894b84b0a7cc8f04908d1f3c08e18c009db42119ff521",
+    "analysis/src/forecast_methods/l3_source_contract_v1/precision/.gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "analysis/src/forecast_methods/l3_source_contract_v1/precision/README.md": "055939480a061699113783f12ab61ded28db9e7b239d5492a89083358a94938e",
+    "analysis/src/forecast_methods/l3_source_contract_v1/precision/run.py": "f82b66018b7a3cdd337b1c479307460c712ff2f219d95e7d02024f031dcfb2a5",
+    "analysis/src/forecast_methods/l3_source_contract_v1/precision/test_precision.py": "f5d574d7c6721313237dfe456f5c5234f7e777eb64cb5180e3a2a8637297cb53"
+  },
+  "tests": {
+    "integration": 15,
+    "precision": 31,
+    "accounting": 33,
+    "consumption": 24,
+    "total": 103
+  },
+  "fitted_parameters_in_followup": 0
+}

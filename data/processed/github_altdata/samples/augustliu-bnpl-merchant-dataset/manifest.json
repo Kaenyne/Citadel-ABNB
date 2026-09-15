@@ -1,0 +1,39 @@
+{
+  "slug": "augustliu-bnpl-merchant-dataset",
+  "url": "https://github.com/AugustLiu0415/BNPL_Merchant_Dataset",
+  "sampled": true,
+  "total_bytes": 8606615,
+  "files": [
+    "BNPL_Merchant_List.csv",
+    "BNPL_Merchant_Categories.csv",
+    "BNPL_Merchant_Adoption_Date.csv",
+    "BNPL_Merchant_First_BNPL.csv",
+    "BNPL_Adoption_Date_Methodology.md",
+    "public_company_panel_data_2015-2026.csv",
+    "public_company_crosswalk.csv",
+    "public_company_panel_variable_definitions.csv",
+    "SOURCE_README.md",
+    "extract_travel_merchants.csv"
+  ],
+  "rows": "BNPL_Merchant_List.csv 9,434 (merchant x provider); BNPL_Merchant_Categories.csv 14,627 (merchant x category x provider); BNPL_Merchant_Adoption_Date.csv 278 (merchant x provider, public-parent merchants only); BNPL_Merchant_First_BNPL.csv 144; public_company_panel_data_2015-2026.csv 4,675 firm-quarters over 124 tickers (ABNB 22 rows 1Q21-2Q26; BKNG/EXPE/MAR 46 rows 1Q15-2Q26); public_company_crosswalk.csv 127; public_company_panel_variable_definitions.csv 9; extract_travel_merchants.csv 190 (our filter: Travel/Hotels/Flights categories)",
+  "columns": "merchant lists: merchant_name, categories/category, bnpl_provider (affirm/klarna/afterpay/zip/sezzle), source_urls, merchant_urls. adoption: merchant_id, merchant_name, public_parent_company, ticker, CIK, provider, currently_listed_with_provider, announcement_date, last_confirmed_no_bnpl_date, first_confirmed_bnpl_date, adoption_date_best, date_precision, confidence, primary_evidence_type, wayback_url, evidence_summary. panel: company_id, CIK, ticker, fiscal_period, period_start/end, calendar_year/quarter, revenue, gross_profit, cogs, operating_income, net_income, margins, revenue_growth_yoy/qoq, total_assets, total_debt, sga_expense, diluted_eps, capital_expenditures, xbrl tag/source flags, form, filing_date, accession_number, retrieved_at",
+  "date_range": "adoption first_confirmed_bnpl_date 2020-11-29 to 2026-02-26 (167 non-null of 278; Wayback CDX first capture of provider directory pages, NOT true adoption dates); SEC panel period_end 2015-01-03 to 2026-07-04, filing_date 2015-02-20 to 2026-08-07, retrieved_at 2026-08-09; merchant directories are a single scrape snapshot (repo last commit 2026-08-10)",
+  "how_pulled": "Sparse shallow clone (git clone --depth 1 --filter=blob:none --sparse https://github.com/AugustLiu0415/BNPL_Merchant_Dataset.git; git sparse-checkout set --no-cone data/merchant_list_raw_data data/adoption_date_data ...) stalled because data/adoption_date_data/cache holds 3,033 Wayback JSON files and the tree is 2.1 GB; aborted and fell back to: for p in README.md data/merchant_list_raw_data/BNPL_Merchant_List.csv data/merchant_list_raw_data/BNPL_Merchant_Categories.csv data/public_company_panel_data/public_company_panel_data_2015-2026.csv data/public_company_panel_data/public_company_crosswalk.csv data/public_company_panel_data/public_company_panel_variable_definitions.csv data/adoption_date_data/BNPL_Merchant_Adoption_Date.csv data/adoption_date_data/BNPL_Merchant_First_BNPL.csv data/adoption_date_data/BNPL_Adoption_Date_Methodology.md; do curl -sSL -o dl/$(basename $p) https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/$p; done. Tree and licence listed with: gh api repos/AugustLiu0415/BNPL_Merchant_Dataset/git/trees/HEAD?recursive=1 and gh api repos/AugustLiu0415/BNPL_Merchant_Dataset --jq '.license'. Files profiled with pandas; extract_travel_merchants.csv built by filtering BNPL_Merchant_Categories.csv on category ~ Travel|Hotels|Flights. bnpl_scraper.py NOT run.",
+  "full_dataset_size": "Repo tree 3,135 blobs, 2.13 GB total, of which 3,033 files are the Wayback CDX JSON cache under data/adoption_date_data/cache/. Committed CSV/JSON tables excluding cache and previews: ~50 MB (largest: controls_group_panel_source_audit.csv 18.1 MB, public_company_panel_source_audit.csv 14.8 MB, merchant_ownership_rows.json 9.0 MB, controls_group_panel_data_2015_2026.csv 3.8 MB). The sample holds all substantive merchant, adoption and firm-quarter tables (~8.6 MB); the rest is audit logs, xlsx twins, PNG previews, control-group matching outputs and the CDX cache.",
+  "description": "Cross-provider directory of ~8.5k US merchants listed on the Affirm, Klarna, Afterpay, Zip and Sezzle shop directories (one scrape, Aug 2026), with categories, a 278-row merchant-by-provider adoption-dating table for merchants owned by 124 public companies (dated via Internet Archive CDX first capture of the provider directory page), and a 2015-2026 SEC XBRL firm-quarter financial panel for those parents. Grain: merchant x provider for the lists and adoption table; firm x fiscal quarter for the panel. Source: provider directory pages scraped by the author's bnpl_scraper.py plus SEC CompanyFacts. For ABNB an analyst would use it as a map of which travel brands offer pay-later (Airbnb appears only under Zip; Vrbo, Expedia, Booking.com, Priceline, Hotels.com, Agoda, Trip.com, Marriott, Hilton, Royal Caribbean and Delta appear under Affirm/Afterpay/Zip) and as a template for a BNPL-adoption event study; it is not a volume or spend series and cannot measure RNPL usage.",
+  "issues": "NO licence file in the repo (gh api reports license null): redistribution rights undetermined, treat as view-only research data. Adoption dates are Wayback first-capture of provider DIRECTORY pages, so Affirm rows cluster at 2020-11-29 and Zip at 2021-09-21 or 2022-06-25; date_precision is 'unknown' and confidence 'UNKNOWN' for all 278 rows and adoption_date_best is empty for every row, so the adoption table is not usable as an event date without manual work. Airbnb appears only in the Zip directory (Klarna's Airbnb partnership since 2023 is not captured because Klarna's directory was scraped by product category pages). The merchant directories are a single point-in-time snapshot with no history. bnpl_scraper.py scrapes affirm.com/klarna.com/afterpay.com/zip.co/sezzle.com and was not run; a human should decide on ToS before re-running. The sparse clone stalls on the 3,033-file CDX cache; use raw curls. Panel data is SEC XBRL-derived and duplicates what we already hold for ABNB/BKNG/EXPE/MAR.",
+  "source_urls": [
+    "https://github.com/AugustLiu0415/BNPL_Merchant_Dataset",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/README.md",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/merchant_list_raw_data/BNPL_Merchant_List.csv",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/merchant_list_raw_data/BNPL_Merchant_Categories.csv",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/public_company_panel_data/public_company_panel_data_2015-2026.csv",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/public_company_panel_data/public_company_crosswalk.csv",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/public_company_panel_data/public_company_panel_variable_definitions.csv",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/adoption_date_data/BNPL_Merchant_Adoption_Date.csv",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/adoption_date_data/BNPL_Merchant_First_BNPL.csv",
+    "https://raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/data/adoption_date_data/BNPL_Adoption_Date_Methodology.md",
+    "https://api.github.com/repos/AugustLiu0415/BNPL_Merchant_Dataset/git/trees/HEAD?recursive=1"
+  ],
+  "pulled_at": "2026-09-14"
+}

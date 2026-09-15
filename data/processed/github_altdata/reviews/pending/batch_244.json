@@ -1,0 +1,136 @@
+[
+ {
+  "key": "github:matthewchatham/glassdoor-review-scraper",
+  "url": "https://github.com/MatthewChatham/glassdoor-review-scraper",
+  "name": "glassdoor-review-scraper",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python + Selenium/Chromedriver scraper that logs into Glassdoor and exports a target company's employee reviews (ratings, text, dates) to CSV, with date-range filtering; ~1.5s/review throughput. BSD-2-Clause, 23 commits. README explicitly notes Glassdoor's ToS prohibits scraping and accounts risk bans.",
+  "why_useful": "A working, well-known method for pulling Airbnb's own Glassdoor review history (rating trend, review volume, text) as an employee-sentiment / attrition-risk proxy that correlates with headcount and culture stress \u2014 but requires login credentials and violates Glassdoor ToS, so per repo rules this is catalogued as method only and NOT to be run without a human ToS decision.",
+  "potential": "medium",
+  "geography": "n/a (any company on Glassdoor)",
+  "time_coverage": "n/a \u2014 scrapes current site state",
+  "size_hint": "n/a, per-run output",
+  "license": "BSD-2-Clause",
+  "last_activity": "not stated (23 commits)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "A working, well-known method for pulling Airbnb's own Glassdoor review history (rating trend, review volume, text) as an employee-sentiment / attrition-risk proxy that correlates with headcount and culture stress \u2014 but requires login credentials and violates Glassdoor ToS, so per repo rules this is catalogued as method only and NOT to be run without a human ToS decision."
+  ]
+ },
+ {
+  "key": "github:speedyapply/jobspy",
+  "url": "https://github.com/speedyapply/JobSpy",
+  "name": "JobSpy",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python job-scraping library aggregating listings concurrently from LinkedIn, Indeed, Glassdoor, Google, ZipRecruiter, Bayt, Naukri, Bdjobs. Returns title, company, location (country/city/state), remote status, description, employment type, salary min/max/currency, posting date, plus site-specific fields (e.g. LinkedIn job level). MIT, 4.3k stars, 842 forks, 353 commits. No documented direct company-name filter parameter, but company field is returned so results can be filtered client-side.",
+  "why_useful": "One tool that could pull Airbnb's live open-roles count/mix across five+ job boards simultaneously as a hiring-pace / headcount-growth proxy (careers/Greenhouse angle) \u2014 more general and more actively maintained than a single-ATS Greenhouse scraper. Method only; not run.",
+  "potential": "medium",
+  "geography": "n/a (global job boards)",
+  "time_coverage": "n/a \u2014 live snapshot only, no historical archive",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "not stated (353 commits, 4.3k stars \u2014 actively used project)",
+  "gap_targets": [
+   14
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "One tool that could pull Airbnb's live open-roles count/mix across five+ job boards simultaneously as a hiring-pace / headcount-growth proxy (careers/Greenhouse angle) \u2014 more general and more actively maintained than a single-ATS Greenhouse scraper. Method only; not run.",
+   "Direct method for the 'Airbnb hiring as headcount proxy' idea already named in CONTEXT gap #15 -- can be pointed at Airbnb job postings, and just as easily at Booking/Expedia/Vrbo-parent postings for competitor headcount-momentum comparisons; company-agnostic so it is the general-purpose tool gap #15 was asking for."
+  ]
+ },
+ {
+  "key": "github:muhammadyasin79/berlin-airbnb-tableau-dashboard",
+  "url": "https://github.com/muhammadyasin79/berlin-airbnb-tableau-dashboard",
+  "name": "berlin-airbnb-tableau-dashboard",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Tableau packaged workbook Berlin_Airbnb_Dashboard.twbx (6.68MB, contains an embedded data extract) plus a PNG dashboard image. Described as '14,274 Berlin Airbnb listings ... across 12 districts using real 2026 data'. Berlin is not in our 13-city Inside Airbnb panel.",
+  "why_useful": "A committed, recent (2026) Berlin listings snapshot outside our current 13-city panel; Berlin STR data also matters for the regulation gap (#12, Berlin has active STR registration rules). Extraction requires Tableau or a .twbx unpacker (it's a zip of a data extract + XML), not a plain CSV.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-05-26",
+  "geography": "Berlin, Germany",
+  "time_coverage": "2026 snapshot",
+  "size_hint": "14,274 listings; 6.68MB .twbx",
+  "gap_targets": [
+   1,
+   12
+  ],
+  "duplicate_of_holding": "Overlaps in kind with our existing Inside Airbnb panel but different city (Berlin not held)",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "A committed, recent (2026) Berlin listings snapshot outside our current 13-city panel; Berlin STR data also matters for the regulation gap (#12, Berlin has active STR registration rules). Extraction requires Tableau or a .twbx unpacker (it's a zip of a data extract + XML), not a plain CSV."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/alujjdnd/airbnb-mar-2022-2023",
+  "url": "https://huggingface.co/datasets/alujjdnd/Airbnb-Mar-2022-2023",
+  "name": "alujjdnd/Airbnb-Mar-2022-2023",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "16,548,869 rows of Airbnb reviews (listing_id, id, date, reviewer_id, reviewer_name, comments) for Buenos Aires, Argentina, spanning 2011 through early 2023, 9.48GB, CSV + auto-converted Parquet, MIT licence. Despite the repo name (Mar 2022-2023) the review dates go back to 2011.",
+  "why_useful": "Buenos Aires is a LatAm market not in our 13-city Inside Airbnb panel, and the review history predates our earliest Inside Airbnb dumps (Dec 2022). Reviews-based volume proxies (our 123-market stays index approach) could be extended to this market/period, and it is a genuine multi-year historical review archive of the kind gap #1 asks for (older-than-2023 data), just for a market we don't currently cover.",
+  "potential": "medium",
+  "geography": "Buenos Aires, Argentina",
+  "time_coverage": "2011-2023 (reviews)",
+  "size_hint": "16.5M rows, 9.48GB",
+  "license": "MIT",
+  "last_activity": "",
+  "gap_targets": [
+   1,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "Buenos Aires is a LatAm market not in our 13-city Inside Airbnb panel, and the review history predates our earliest Inside Airbnb dumps (Dec 2022). Reviews-based volume proxies (our 123-market stays index approach) could be extended to this market/period, and it is a genuine multi-year historical review archive of the kind gap #1 asks for (older-than-2023 data), just for a market we don't currently cover."
+  ]
+ },
+ {
+  "key": "github:nadaalay/airbnb_data_science",
+  "url": "https://github.com/nadaalay/Airbnb_Data_Science",
+  "name": "nadaalay/Airbnb_Data_Science",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Two folders (Boston, Seattle) each with Listings.csv, Calendar.csv, and Reviews.csv committed directly to the repo -- the classic 2016-vintage Kaggle 'Boston Airbnb Open Data' and 'Seattle Airbnb Open Data' releases (themselves early Inside Airbnb scrapes). CRISP-DM style EDA notebook/HTML on top.",
+  "why_useful": "A pre-2023 historical Inside Airbnb-style vintage for two US cities the team does not currently hold (Boston, Seattle), with data files actually committed rather than gitignored -- directly responsive to gap #1 (historical/archived Inside Airbnb dumps, pre-2023), even though it predates the team's Dec-2022 start point by several years and is single-snapshot rather than a time series.",
+  "potential": "medium",
+  "geography": "Boston, Seattle (US)",
+  "time_coverage": "~2016 single-snapshot vintage",
+  "size_hint": "3 CSVs x 2 cities, listing-file scale (thousands of rows per city, exact count not confirmed)",
+  "license": "Not stated in repo (source data originally CC0-style Kaggle release)",
+  "last_activity": "Not confirmed (older student project)",
+  "gap_targets": [
+   1
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)"
+  ],
+  "why_all": [
+   "A pre-2023 historical Inside Airbnb-style vintage for two US cities the team does not currently hold (Boston, Seattle), with data files actually committed rather than gitignored -- directly responsive to gap #1 (historical/archived Inside Airbnb dumps, pre-2023), even though it predates the team's Dec-2022 start point by several years and is single-snapshot rather than a time series."
+  ]
+ }
+]

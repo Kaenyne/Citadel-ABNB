@@ -1,0 +1,123 @@
+[
+ {
+  "key": "github:kesar/thailand-housing-prices",
+  "url": "https://github.com/kesar/thailand-housing-prices",
+  "name": "thailand-housing-prices",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Clean, committed Thailand and Bangkok residential property price indexes per the awesome-public-datasets Economics entry (kesar/thailand-housing-prices). Regional (Thailand/Bangkok) housing price time series.",
+  "why_useful": "Marginal APAC housing-supply-economics data point relevant to gap 13 (long-term rental/housing crossover) and gap 7 (APAC regional travel/housing) but Thailand is not one of Airbnb's largest markets for ABNB KPI forecasting; low direct relevance, flagged for completeness.",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   13
+  ],
+  "geography": "Thailand (Bangkok)",
+  "time_coverage": "unspecified, appears current as of README",
+  "size_hint": "unspecified, single housing-price index series",
+  "license": "unspecified",
+  "last_activity": "2026 (per awesome-public-datasets listing)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Marginal APAC housing-supply-economics data point relevant to gap 13 (long-term rental/housing crossover) and gap 7 (APAC regional travel/housing) but Thailand is not one of Airbnb's largest markets for ABNB KPI forecasting; low direct relevance, flagged for completeness."
+  ]
+ },
+ {
+  "key": "github:urban-displacement/displacement-typologies",
+  "url": "https://github.com/urban-displacement/displacement-typologies",
+  "name": "urban-displacement/displacement-typologies",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "UC Berkeley Urban Displacement Project repo (GPL-3.0, 502 commits, updated Aug 2026, 49 stars) with GeoPackage/CSV files and a codebook classifying census tracts in 8 US metros (Atlanta, Bay Area, Chicago, Cleveland, Denver, LA, Memphis, Seattle) into 8 gentrification/displacement typology categories, mostly on 2017-2018 vintage census/demographic data. Confirmed by fetch: no Airbnb/STR variables included.",
+  "why_useful": "Relevant to gap #13 (long-term rental/housing economics, host-supply pressure) as a housing-displacement/gentrification classification that could be joined to STR listing density by tract to study host-supply drivers, though it carries no STR data itself.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "Relevant to gap #13 (long-term rental/housing economics, host-supply pressure) as a housing-displacement/gentrification classification that could be joined to STR listing density by tract to study host-supply drivers, though it carries no STR data itself."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/montreal-finance-2022",
+  "url": "https://github.com/UPGo-McGill/montreal-finance-2022",
+  "name": "montreal-finance-2022",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code for the paper 'High rises and housing stress: A spatial big-data analysis of rental housing financialization' \u2014 includes R/, latex/, stan/ (Bayesian spatial model) and output/ folders. An academic paper replication package on rental-housing financialization and displacement in Montreal.",
+  "why_useful": "Housing-financialization angle on host supply economics; tangential to gap #13 but a genuine published methodology, not just an Airbnb rehash.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "license": "MIT",
+  "last_activity": "2026-01-28",
+  "geography": "Montreal, Canada",
+  "time_coverage": "through 2022 study period",
+  "size_hint": "small, code only",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Housing-financialization angle on host supply economics; tangential to gap #13 but a genuine published methodology, not just an Airbnb rehash.",
+   "A named academic paper's full replication package (including Stan model code) on rental-market financial stress \u2014 tangential to Airbnb directly but relevant to the STR<->LTR housing-supply-economics angle (gap #13) in a major Canadian market Airbnb operates in."
+  ]
+ },
+ {
+  "key": "github:chopina04/ressecfrance2015",
+  "url": "https://github.com/chopina04/ResSecFrance2015",
+  "name": "ResSecFrance2015 (Les r\u00e9sidences secondaires en France en 2015)",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single-year (2015) French second-home (r\u00e9sidence secondaire) dataset by geography, per repo title; not further verified beyond listing metadata.",
+  "why_useful": "Directly on-theme (European second-home/holiday-home counts) though only one year and one country; could anchor a France-specific holiday-home base rate if verified.",
+  "potential": "low",
+  "license": "unspecified",
+  "last_activity": "2018-09-02",
+  "geography": "France",
+  "time_coverage": "2015 only",
+  "size_hint": "small, single cross-section, unverified contents",
+  "gap_targets": [
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Population, migration and second-home data (IRS migration, Census CPS, USPS change of address, second-home counts, holiday-home shares Europe)"
+  ],
+  "why_all": [
+   "Directly on-theme (European second-home/holiday-home counts) though only one year and one country; could anchor a France-specific holiday-home base rate if verified."
+  ]
+ },
+ {
+  "key": "github:cdmerchant13/anchorpoint",
+  "url": "https://github.com/cdmerchant13/anchorpoint",
+  "name": "cdmerchant13/anchorpoint",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A prototype community/social app for U.S. military spouses coping with Permanent Change of Station (PCS) moves. No dataset of PCS move volumes, dates, or bases is committed; it is an application, not a data source.",
+  "why_useful": "Confirms the military-moves search surface is thin on GitHub in the app form we found; flagged only to record that it exists and was checked and rejected (no data).",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "United States (military bases)",
+  "time_coverage": "n/a",
+  "size_hint": "small app repo, 0 stars",
+  "license": "none declared",
+  "last_activity": "2025-09-21",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "Confirms the military-moves search surface is thin on GitHub in the app form we found; flagged only to record that it exists and was checked and rejected (no data)."
+  ]
+ }
+]

@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:darenar/easy-event-study",
+  "url": "https://github.com/Darenar/easy-event-study",
+  "name": "easy-event-study",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python package (3 stars, last updated Oct 2025) billed as 'Financial Event Study made easy' -- a lighter-weight alternative to the LemaireJean-Baptiste eventstudy package for computing abnormal/cumulative-abnormal returns.",
+  "why_useful": "Actively maintained (2025) alternative event-study implementation; worth a fallback if the older eventstudy package proves unmaintained/incompatible with current pandas.",
+  "potential": "low",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "small library",
+  "license": "unspecified",
+  "last_activity": "Oct 10, 2025",
+  "duplicate_of_holding": "Overlaps functionally with LemaireJean-Baptiste/eventstudy above.",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Actively maintained (2025) alternative event-study implementation; worth a fallback if the older eventstudy package proves unmaintained/incompatible with current pandas."
+  ]
+ },
+ {
+  "key": "github:quantopian/alphalens",
+  "url": "https://github.com/quantopian/alphalens",
+  "name": "alphalens",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Quantopian's Python library for performance analysis of predictive (alpha) factors -- factor return/IC analysis, quantile spread returns, turnover. Archived (Quantopian shut down) but widely mirrored/forked; the maintained continuation is stefan-jansen/alphalens-reloaded.",
+  "why_useful": "General factor-analysis tooling that could be applied to any ABNB-related signal (e.g., nights-nowcast residuals, ADR card) to test for factor-style predictive decay/IC the way a systematic desk would, complementing the harness's backtest scoring.",
+  "potential": "low",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "library",
+  "license": "Apache 2.0",
+  "last_activity": "archived (unmaintained); use stefan-jansen/alphalens-reloaded for current fork",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "General factor-analysis tooling that could be applied to any ABNB-related signal (e.g., nights-nowcast residuals, ADR card) to test for factor-style predictive decay/IC the way a systematic desk would, complementing the harness's backtest scoring."
+  ]
+ },
+ {
+  "key": "github:stefan-jansen/alphalens-reloaded",
+  "url": "https://github.com/stefan-jansen/alphalens-reloaded",
+  "name": "alphalens-reloaded",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained fork/continuation of Quantopian's alphalens for predictive-factor performance analysis (IC, quantile returns, turnover), compatible with current pandas.",
+  "why_useful": "Same use case as alphalens above but maintained -- preferred choice if the team ever wants formal factor-IC analysis on any ABNB signal.",
+  "potential": "low",
+  "geography": "N/A",
+  "time_coverage": "N/A",
+  "size_hint": "library",
+  "license": "Apache 2.0",
+  "last_activity": "actively maintained",
+  "duplicate_of_holding": "Same functional role as quantopian/alphalens above.",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Same use case as alphalens above but maintained -- preferred choice if the team ever wants formal factor-IC analysis on any ABNB signal."
+  ]
+ },
+ {
+  "key": "github:marcussy34/awesome-prediction-markets",
+  "url": "https://github.com/Marcussy34/awesome-prediction-markets",
+  "name": "awesome-prediction-markets",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated list of prediction-market analytics tools, APIs, trading bots, dashboards, arbitrage tools and data feeds covering Polymarket, Kalshi, Hyperliquid, Limitless.",
+  "why_useful": "Secondary discovery list; overlaps with Ong-pogs's list but CC0-licensed, useful cross-check for acquisition methods on event/earnings contracts.",
+  "potential": "low",
+  "size_hint": "markdown list, small",
+  "time_coverage": "n/a",
+  "geography": "n/a",
+  "license": "CC0-1.0",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "Ong-pogs/awesome-prediction-market-apis (same genre of curated list)",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Secondary discovery list; overlaps with Ong-pogs's list but CC0-licensed, useful cross-check for acquisition methods on event/earnings contracts."
+  ]
+ },
+ {
+  "key": "github:elsantos305/predmarket",
+  "url": "https://github.com/elsantos305/predmarket",
+  "name": "predmarket",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library 'predmarket' unifying Kalshi and Polymarket API access into one interface for market/price retrieval.",
+  "why_useful": "Lower-friction acquisition method if we want to pull Kalshi's regulated CFTC event contracts (economic/regulatory, e.g. Fed decisions, government actions) alongside Polymarket without writing two separate clients.",
+  "potential": "low",
+  "size_hint": "small library",
+  "time_coverage": "live pull only",
+  "geography": "global",
+  "license": "none declared",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Lower-friction acquisition method if we want to pull Kalshi's regulated CFTC event contracts (economic/regulatory, e.g. Fed decisions, government actions) alongside Polymarket without writing two separate clients."
+  ]
+ }
+]

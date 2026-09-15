@@ -1,0 +1,695 @@
+[
+ {
+  "key": "github:jsvine/waybackpack",
+  "url": "https://github.com/jsvine/waybackpack",
+  "name": "jsvine/waybackpack",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pure-Python (single dependency: requests) CLI to bulk-download every Wayback Machine snapshot of a given URL/URL pattern within a date range into timestamped local directories. MIT, 3.2k stars, 114 commits, 213 forks.",
+  "why_useful": "Directly implements the 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' method named in gap #17; could be pointed at archived insideairbnb.com/get-the-data pages or historical AirDNA market-report pages to recover CSVs/snapshots the CDN no longer serves.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   1
+  ],
+  "geography": "n/a (generic tool)",
+  "time_coverage": "n/a",
+  "size_hint": "n/a (tool, not data)",
+  "license": "MIT (typical for jsvine repos; not independently re-verified)",
+  "last_activity": "maintained utility, widely used",
+  "duplicate_of_holding": "",
+  "hits": 5,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Directly implements the 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' method named in gap #17; could be pointed at archived insideairbnb.com/get-the-data pages or historical AirDNA market-report pages to recover CSVs/snapshots the CDN no longer serves.",
+   "Complementary bulk-download tool to waybackpy for reconstructing full historical capture sets of Airbnb help-center/app pages or competitor product pages (Vrbo, Booking) for a diff-based product-launch/policy-change timeline.",
+   "Bulk-download tool for reconstructing a time series of archived pages (e.g. an Inside Airbnb city page, an AirDNA market-stats page, or an Airbnb press/newsroom page) rather than one snapshot at a time; complements waybackpy for gaps #1/#2/#17.",
+   "Simplest available tool to pull the full history of specific archived pages -- e.g. an AirDNA city market page, an Airbnb newsroom/press page, or a competitor pricing page -- as a time series of snapshots, directly serving gap 17 (Wayback Machine tooling for archived AirDNA/airbnb.com pages).",
+   "General-purpose Wayback tooling named explicitly in gap #17 ('Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)'). Could pull archived newsroom.airbnb.com press-release pages or archived AirDNA/STR market pages for point-in-time text/price snapshots, subject to the Wayback Machine's own airbnb.com exclusions noted by other search results."
+  ]
+ },
+ {
+  "key": "github:hartator/wayback-machine-downloader",
+  "url": "https://github.com/hartator/wayback-machine-downloader",
+  "name": "hartator/wayback-machine-downloader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Ruby gem (5.9k stars, 293 commits, MIT) that downloads an entire archived website (all pages, all timestamps or a filtered range) from the Wayback Machine, rebuilding the original directory/URL structure rather than IA's rewritten links.",
+  "why_useful": "Alternative implementation of the same Wayback-mirroring method as waybackpack (gap #17); could recover archived insideairbnb.com data pages or AirDNA market pages.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "license": "MIT",
+  "last_activity": "actively maintained community tool",
+  "duplicate_of_holding": "Overlaps jsvine/waybackpack functionally",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Alternative implementation of the same Wayback-mirroring method as waybackpack (gap #17); could recover archived insideairbnb.com data pages or AirDNA market pages.",
+   "Could mirror an entire historical insideairbnb.com or a competitor's market-data microsite (AirDNA blog/market reports, Mashvisor city pages) as it existed at past dates, filling the pre-2023 Inside Airbnb gap (#1) or reconstructing STR occupancy claims (#2)."
+  ]
+ },
+ {
+  "key": "github:sangaline/wayback-machine-scraper",
+  "url": "https://github.com/sangaline/wayback-machine-scraper",
+  "name": "sangaline/wayback-machine-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Generic command-line Scrapy-based utility (and a maintained fork jan-kwiatkowski/wayback-machine-scraper) for crawling a domain's historical snapshots on the Internet Archive Wayback Machine and saving them to disk, by URL pattern and date range.",
+  "why_useful": "Could, in principle, be pointed at archive.org's captures of insideairbnb.com/get-the-data.html or of the NYC OSE registration-law pages to recover download links/snapshots that predate the Inside Airbnb CDN's ~1-year retention window, filling the pre-2023 / LL18-window archive gap (#1) without touching airbnb.com itself. Not Airbnb-specific and not run by us in this pass -- pure tooling.",
+  "potential": "medium",
+  "gap_targets": [
+   1,
+   17
+  ],
+  "geography": "n/a (generic tool)",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "license": "check repo (commonly MIT/BSD for these forks)",
+  "last_activity": "actively forked; check individual fork dates",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)"
+  ],
+  "why_all": [
+   "Could, in principle, be pointed at archive.org's captures of insideairbnb.com/get-the-data.html or of the NYC OSE registration-law pages to recover download links/snapshots that predate the Inside Airbnb CDN's ~1-year retention window, filling the pre-2023 / LL18-window archive gap (#1) without touching airbnb.com itself. Not Airbnb-specific and not run by us in this pass -- pure tooling.",
+   "More configurable than wayback-machine-downloader for a targeted crawl (e.g. only AirDNA's 'market data' subpages, or Inside Airbnb's per-city summary pages) across many dates at once \u2014 useful for gaps #1 and #2."
+  ]
+ },
+ {
+  "key": "github:dtrungtin/actor-airbnb-scraper",
+  "url": "https://github.com/dtrungtin/actor-airbnb-scraper",
+  "name": "dtrungtin/actor-airbnb-scraper (Apify actor)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "30-star, 24-fork JavaScript Apify Actor (92 commits) with two modes: destination search (listing URL, name, star rating, guest capacity, address, review summary) and per-listing detail (full reviews with author/timestamp/rating, multi-currency pricing, host info, availability calendar). Runs on the Apify platform (paid credits, ~$1 per 1,000 results); source is open on GitHub.",
+  "why_useful": "A maintained, currently-listed (GitHub topics surfaced it with April-2026-era activity referenced) scraper-as-a-service for Airbnb \u2014 same category as Bright Data: a live scraper of airbnb.com, which is explicitly a ToS decision for a human under our rules, not something to run. Catalogued as method only, unrun.",
+  "potential": "medium",
+  "geography": "configurable, any area",
+  "time_coverage": "current/live",
+  "size_hint": "n/a",
+  "license": "not verified",
+  "last_activity": "topic page suggests recent (2026) activity in this space",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 4,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "Airbnb API wrappers and search-page clients (catalogue only, never run): pyairbnb, airbnb-scraper, airbnb search results parsers; note what fields they expose",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "A maintained, currently-listed (GitHub topics surfaced it with April-2026-era activity referenced) scraper-as-a-service for Airbnb \u2014 same category as Bright Data: a live scraper of airbnb.com, which is explicitly a ToS decision for a human under our rules, not something to run. Catalogued as method only, unrun.",
+   "Widely-used hosted-scraper template; the open-source actor code documents the full listing field schema Apify exposes commercially (price, availability, amenities, host, reviews, coordinates) without needing to reverse-engineer Airbnb's API from scratch.",
+   "One of the most field-complete Airbnb search+detail scrapers found, and unlike most of the others it explicitly returns an availability calendar alongside multi-currency price \u2014 relevant to any future realised-ADR/occupancy reconstruction (gap #2) if a human authorizes running a hosted scraper.",
+   "Same class as everythingscraper above \u2014 a method for pulling calendar/price data per listing/market that could speak to realized ADR/occupancy (gap #2) or booking lead-time/cancellation patterns (gap #3) if the calendar payload includes booked-vs-available state history. Not run; ToS decision for a human."
+  ]
+ },
+ {
+  "key": "github:chicago/rsocrata",
+  "url": "https://github.com/Chicago/RSocrata",
+  "name": "Chicago/RSocrata",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official R client (maintained under the City of Chicago GitHub org) for querying any Socrata Open Data portal (SoDA API), handling throttling/pagination and returning an R dataframe. Generic, not STR-specific.",
+  "why_useful": "General-purpose, well-maintained Socrata client that would let us pull Chicago's (or Denver's, Seattle's, Nashville's, San Diego's) STR licence/registration Socrata datasets programmatically and point-in-time if we snapshot pulls with dates, addressing gap #17's \"Socrata/CKAN open-data discovery clients\" ask.",
+  "potential": "medium",
+  "geography": "generic (any Socrata city portal, maintained by City of Chicago)",
+  "time_coverage": "n/a, tooling",
+  "size_hint": "R package, no bundled data",
+  "license": "see repo (city-maintained OSS)",
+  "last_activity": "unknown",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code"
+  ],
+  "why_all": [
+   "General-purpose, well-maintained Socrata client that would let us pull Chicago's (or Denver's, Seattle's, Nashville's, San Diego's) STR licence/registration Socrata datasets programmatically and point-in-time if we snapshot pulls with dates, addressing gap #17's \"Socrata/CKAN open-data discovery clients\" ask."
+  ]
+ },
+ {
+  "key": "github:xoolive/traffic",
+  "url": "https://github.com/xoolive/traffic",
+  "name": "traffic",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Mature Python library (1,605 commits, 512 stars, published in JOSS) for pulling and analysing ADS-B/air-traffic trajectory data directly from the OpenSky Network historical database (via Impala/Trino) and Eurocontrol DDR files, with built-in airspace and airport datasets, trajectory cleaning, and visualization (Cartopy, ipyleaflet, altair, CesiumJS). No large committed dataset, but a well-documented, actively used client that dramatically eases historical OpenSky state-vector pulls.",
+  "why_useful": "If the team wants to nowcast global or route-level flight volumes from OpenSky's historical Impala database (deeper history and finer grain than the pre-built COVID-19 CSV dumps), this is the standard tool academics use to do it -- lowers the acquisition cost for gap #10.",
+  "potential": "medium",
+  "gap_targets": [
+   10,
+   17
+  ],
+  "size_hint": "library only; pulls are as large as the user's OpenSky query",
+  "time_coverage": "OpenSky historical DB back to ~2015 (via Impala access, requires a free research account)",
+  "geography": "global",
+  "license": "MIT",
+  "last_activity": "1,605 commits, actively maintained, JOSS-published",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "If the team wants to nowcast global or route-level flight volumes from OpenSky's historical Impala database (deeper history and finer grain than the pre-built COVID-19 CSV dumps), this is the standard tool academics use to do it -- lowers the acquisition cost for gap #10."
+  ]
+ },
+ {
+  "key": "github:khaeru/sdmx",
+  "url": "https://github.com/khaeru/sdmx",
+  "name": "khaeru/sdmx (sdmx1, fork of pandaSDMX)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Mature Python implementation of SDMX 2.1/3.0 standard (2,570 commits, 47 stars, Apache-2.0), supporting World Bank, IMF, Eurostat, OECD, UN REST services; converts to pandas. This is the successor/fork lineage of the well-known pandaSDMX project.",
+  "why_useful": "General-purpose but production-grade SDMX client; can hit Eurostat tour_occ/tour_ce and OECD tourism tables, with pandas-native output for a nowcasting pipeline (MIDAS/DFM per gap 17). More actively maintained than the original pandaSDMX.",
+  "potential": "medium",
+  "geography": "Global agencies incl. Eurostat/OECD",
+  "time_coverage": "current live",
+  "size_hint": "library only",
+  "license": "Apache-2.0",
+  "last_activity": "active, large commit history",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "General-purpose but production-grade SDMX client; can hit Eurostat tour_occ/tour_ce and OECD tourism tables, with pandas-native output for a nowcasting pipeline (MIDAS/DFM per gap 17). More actively maintained than the original pandaSDMX.",
+   "Same rationale as rsdmx but Python-native, fits our pandas/DuckDB pipeline directly; could be the harness for pulling non-US/EU national tourism arrivals series at scale (gap #7)."
+  ]
+ },
+ {
+  "key": "github:mobilitydata/mobility-database-catalogs",
+  "url": "https://github.com/MobilityData/mobility-database-catalogs",
+  "name": "mobility-database-catalogs",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A global catalog (JSON files per feed + a consolidated CSV at files.mobilitydatabase.org/feeds_v2.csv, plus a Python API) of public GTFS Schedule and GTFS Realtime feeds worldwide, filterable by country/subdivision/bounding box/status. Not rail-company-specific but a discovery layer for whichever rail/bus GTFS feeds (SNCF TER/Intercit\u00e9s, Trenitalia, FlixBus, regional EU operators) are publicly published.",
+  "why_useful": "Matches gap #17 (Socrata/CKAN-style open-data discovery client) applied to transit: a single machine-readable index to find and pull SNCF/DB/Trenitalia/FlixBus schedule (capacity/frequency) feeds without hand-hunting each operator's portal.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   10
+  ],
+  "geography": "global",
+  "time_coverage": "live/current feeds only (schedules, not historical ridership)",
+  "size_hint": "thousands of catalogued feeds",
+  "license": "repo MIT/Apache-style; underlying feeds vary by operator",
+  "last_activity": "actively maintained (official MobilityData project)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Matches gap #17 (Socrata/CKAN-style open-data discovery client) applied to transit: a single machine-readable index to find and pull SNCF/DB/Trenitalia/FlixBus schedule (capacity/frequency) feeds without hand-hunting each operator's portal."
+  ]
+ },
+ {
+  "key": "github:georgekhananaev/google-reviews-scraper-pro",
+  "url": "https://github.com/georgekhananaev/google-reviews-scraper-pro",
+  "name": "georgekhananaev/google-reviews-scraper-pro",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained (updated Sep 2026) Python scraper for Google Maps/Google Business reviews: multi-language review extraction with review dates, images, MongoDB storage, incremental re-scraping (so it can build a review-velocity time series per business/location over repeated runs), and anti-detection handling. 329 stars, MIT licence. No data committed \u2014 a tool only.",
+  "why_useful": "A working, actively-maintained method to build a time series of review volume/ratings for restaurants, attractions, and short-term-rental-adjacent leisure businesses in specific markets (proxy for local leisure/tourism activity levels feeding nights/ADR by region); scrapes Google, not Airbnb, so it is a methods-only flag per the run rules, not to be executed here.",
+  "geography": "global (any Google Maps listing)",
+  "time_coverage": "point-in-time scrape, no historical archive",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "A working, actively-maintained method to build a time series of review volume/ratings for restaurants, attractions, and short-term-rental-adjacent leisure businesses in specific markets (proxy for local leisure/tourism activity levels feeding nights/ADR by region); scrapes Google, not Airbnb, so it is a methods-only flag per the run rules, not to be executed here.",
+   "Could be pointed at hotel/short-term-rental listings on Google Maps to build a review-count-by-date velocity series as a demand nowcast for specific markets, complementing the existing Inside Airbnb reviews-based stays index with an independent (non-Airbnb) hotel-sector read. Running it against any specific site is a ToS decision for a human per repo rules; catalogued as method only."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/google-maps-reviews-scraper",
+  "url": "https://github.com/omkarcloud/google-maps-reviews-scraper",
+  "name": "omkarcloud/google-maps-reviews-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Extracts Google Maps reviews with content, ratings, timestamps, original language + translation, and keyword-filterable review search. MIT license, 31 commits, no sample data committed.",
+  "why_useful": "Same class of tool as above \u2014 could be pointed at restaurants/attractions/hotels in ABNB-relevant markets to build a leisure-activity/engagement proxy series; no data committed, method only.",
+  "geography": "global",
+  "time_coverage": "point-in-time scrape",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "2026-09-09",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "near-duplicate of georgekhananaev/google-reviews-scraper-pro",
+  "potential": "medium",
+  "hits": 4,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Same class of tool as above \u2014 could be pointed at restaurants/attractions/hotels in ABNB-relevant markets to build a leisure-activity/engagement proxy series; no data committed, method only.",
+   "Could build a review-volume-over-time series (a nowcast proxy for foot traffic/leisure activity at specific venues or markets) similar to the team's existing Inside Airbnb reviews-based stays index methodology.",
+   "Same use case as georgekhananaev's tool above (review-velocity nowcast building block for hotels/STRs on Google Maps); a second, differently-built option in case one is blocked or deprecated.",
+   "Timestamped Google review pulls are the cleanest 'review velocity' signal available (Google reviews are the largest and most current review pool for lodging businesses) -- directly on-theme for a review-count nowcast built per city/market to compare against Inside Airbnb's own review-based stays index."
+  ]
+ },
+ {
+  "key": "github:gosom/google-maps-scraper",
+  "url": "https://github.com/gosom/google-maps-scraper",
+  "name": "gosom/google-maps-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go/Playwright based scraper extracting 36+ fields per Google Maps business listing (name, address, GPS, rating, review count, reviews with timestamps/ratings, hours, price range, categories). CLI/Web UI/REST API/self-hosted SaaS modes, Docker/Kubernetes support. MIT license, ~5,800 stars, 333 commits, actively maintained.",
+  "why_useful": "A working, well-maintained method to pull rating/review-volume time series for restaurants and leisure venues by city as a local leisure/tourism-activity proxy, and potentially for competitor STR listings' Google Maps presence; usable within the fee-panel style sanctioned scraping decision (a human call per rules).",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "actively maintained 2026",
+  "geography": "global (any Google Maps market)",
+  "time_coverage": "point-in-time snapshot tool, not historical",
+  "size_hint": "n/a (scraper, not a dataset)",
+  "gap_targets": [
+   6,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "A working, well-maintained method to pull rating/review-volume time series for restaurants and leisure venues by city as a local leisure/tourism-activity proxy, and potentially for competitor STR listings' Google Maps presence; usable within the fee-panel style sanctioned scraping decision (a human call per rules)."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/google-maps-scraper",
+  "url": "https://github.com/omkarcloud/google-maps-scraper",
+  "name": "omkarcloud/google-maps-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python Google Maps business scraper, 50+ fields (name, address, phone, website, emails, socials, ratings, reviews), CLI + Python/Node API, free tier 200 searches/month. MIT license, ~3.5k stars, 209 commits.",
+  "why_useful": "Alternative/competing Google Maps scraping method to gosom's for leisure/restaurant/venue density and rating trends by market; same leisure-proxy rationale.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "active 2026",
+  "geography": "global",
+  "time_coverage": "point-in-time",
+  "size_hint": "n/a",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "same purpose as gosom/google-maps-scraper",
+  "hits": 2,
+  "themes": [
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Alternative/competing Google Maps scraping method to gosom's for leisure/restaurant/venue density and rating trends by market; same leisure-proxy rationale.",
+   "Widely used, high-star general-purpose method to pull Google Maps ratings/review-count per business (hotels, STR-adjacent venues) as a demand proxy; also usable for gap #9 (competitor supply counts) by querying hotel/vacation-rental categories by city."
+  ]
+ },
+ {
+  "key": "github:walkerke/tidycensus",
+  "url": "https://github.com/walkerke/tidycensus",
+  "name": "walkerke/tidycensus",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package/client wrapping the Census Bureau's Decennial Census and ACS 1-/5-year APIs, returning tidyverse data frames with optional tract/block-group/county geometry (sf). Pulls any ACS table including rental vacancy rate (DP04/B25004), gross rent as % of income / rent burden (B25070/B25071), tenure, and housing-unit counts needed to compute an STR-share-of-housing-stock denominator by tract. 768+ commits, actively maintained, requires free Census API key.",
+  "why_useful": "This is the standard, well-maintained tool for building the denominator (occupied/vacant housing units, rent burden distribution) that any STR-share-of-housing-stock or rent-burden-vs-STR-density study needs at tract level, nationwide, for any of our 13 Inside Airbnb cities.",
+  "potential": "medium",
+  "geography": "USA, tract/block-group/county/state, any ACS-covered geography",
+  "time_coverage": "ACS 1-year (2005-present) and 5-year (2009-present) vintages, decennial 2000/2010/2020",
+  "size_hint": "N/A - library, not a fixed dataset; pulls arbitrary ACS tables on demand",
+  "license": "MIT (per repo LICENSE file)",
+  "last_activity": "active, 768 commits, 22 open issues, 4 open PRs at fetch time",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "This is the standard, well-maintained tool for building the denominator (occupied/vacant housing units, rent burden distribution) that any STR-share-of-housing-stock or rent-burden-vs-STR-density study needs at tract level, nationwide, for any of our 13 Inside Airbnb cities."
+  ]
+ },
+ {
+  "key": "github:xmunoz/sodapy",
+  "url": "https://github.com/xmunoz/sodapy",
+  "name": "xmunoz/sodapy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client for the Socrata Open Data API. NYC Open Data (data.cityofnewyork.us), LA (data.lacity.org / MyLA311), and San Francisco (datasf.org) all run on Socrata, so this client is the direct mechanism for pulling the NYC 311 Service Requests dataset (Socrata id erm2-nwe9, filterable to complaint types like 'Illegal Vacation Rental Unit', 'Short-Term Rental', 'Illegal Conversion / Illegal Hotel Rental'), LA's MyLA311 service request dataset, and SF 311 Cases, on a point-in-time basis (SoQL supports as_of-style filtering by created_date). No data committed in the repo itself \u2014 it is the pull mechanism, not a mirror.",
+  "why_useful": "Many of the STR housing-stock, rent-burden, and vacancy datasets we still need (municipal housing-court, rent-registry, or vacancy survey tables) live on Socrata portals per city; this is the general-purpose discovery/pull client called out as a gap-#17 method target rather than a one-off scraper.",
+  "potential": "medium",
+  "geography": "Global (client works against any Socrata-hosted portal)",
+  "time_coverage": "N/A - tooling",
+  "size_hint": "N/A - library",
+  "license": "MIT",
+  "last_activity": "active; maintainer transfer March 2025",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17
+  ],
+  "hits": 3,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract",
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets",
+   "Short-term-rental insurance/incident, noise complaint and 311 datasets mentioning Airbnb (NYC 311, LA MyLA311, SF 311) as enforcement/activity proxies"
+  ],
+  "why_all": [
+   "Many of the STR housing-stock, rent-burden, and vacancy datasets we still need (municipal housing-court, rent-registry, or vacancy survey tables) live on Socrata portals per city; this is the general-purpose discovery/pull client called out as a gap-#17 method target rather than a one-off scraper.",
+   "Baseline tooling needed to pull STR registration datasets from any Socrata-hosted city portal named across gaps 8 and 12 (e.g. NYC OSE, Austin licences already held; extend to LA, Toronto-equivalent US cities, lodging-tax collections). Generic \u2014 value is in what it's pointed at, not the client itself.",
+   "Directly addresses gap #17 (Socrata/CKAN open-data discovery/pull clients) and is the concrete tool to build the exact 311-Airbnb-mention enforcement/activity proxy this theme is scoped around \u2014 NYC, LA and SF 311 STR/illegal-hotel complaint volume as a monthly panel, refreshable and point-in-time by created_date."
+  ]
+ },
+ {
+  "key": "github:cran/nomadlist",
+  "url": "https://github.com/cran/nomadlist",
+  "name": "nomadlist (CRAN mirror)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Read-only GitHub mirror of an R package (from CRAN) providing an interface to the Nomad List API \u2014 programmatic R client for city cost/quality-of-life metrics Nomad List tracks. Single commit, archival mirror only, no committed data.",
+  "why_useful": "A ready-made API client for Nomad List (gap 16), lower engineering lift than a scraper if the underlying API still responds.",
+  "potential": "medium",
+  "gap_targets": [
+   16
+  ],
+  "geography": "global (Nomad List cities)",
+  "time_coverage": "n/a (live API client)",
+  "size_hint": "R package, no data files",
+  "license": "unspecified on mirror; check original CRAN package",
+  "last_activity": "static archival mirror",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "A ready-made API client for Nomad List (gap 16), lower engineering lift than a scraper if the underlying API still responds."
+  ]
+ },
+ {
+  "key": "github:dbnomics/rdbnomics",
+  "url": "https://github.com/dbnomics/rdbnomics",
+  "name": "dbnomics/rdbnomics",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client (also has Python/other-language siblings) for the DBnomics API (api.db.nomics.world), which aggregates time series from ~90+ national and international statistical providers (Eurostat, IMF, World Bank, ECB, and many national statistical offices/central banks) into one queryable API via rdb(), rdb_datasets(), rdb_providers(). On CRAN and GitHub, 36 stars, 104 commits, mirrored from git.nomics.world. Does not itself contain UK ONS / Banco de Portugal / Norges Bank card-spending series as committed files, but DBnomics as a platform is a single point to check whether those agencies' series (including any card/payment statistics they publish) are mirrored and pullable programmatically.",
+  "why_useful": "A one-API acquisition method to probe for point-in-time-style pulls of European national-statistics series (potential CHAPS/SIBS/Norges Bank-adjacent series if those agencies publish to DBnomics), relevant to gaps #4 and #6; needs a follow-up check of rdb_providers() output to confirm ONS/BdP/Norges Bank coverage before relying on it.",
+  "geography": "Global (provider list includes many European national statistical offices/central banks per DBnomics' own description)",
+  "time_coverage": "Varies by underlying provider/series",
+  "size_hint": "N/A - API client, not a static dataset",
+  "license": "Not confirmed on the fetched page (CRAN package; DBnomics platform itself is open data / AGPL-family per its own site, not independently verified here)",
+  "last_activity": "Active CRAN package; exact last-commit date not shown on fetched page",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4,
+   6
+  ],
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "A one-API acquisition method to probe for point-in-time-style pulls of European national-statistics series (potential CHAPS/SIBS/Norges Bank-adjacent series if those agencies publish to DBnomics), relevant to gaps #4 and #6; needs a follow-up check of rdb_providers() output to confirm ONS/BdP/Norges Bank coverage before relying on it."
+  ]
+ },
+ {
+  "key": "github:dhopp1/nowcast_lstm",
+  "url": "https://github.com/dhopp1/nowcast_lstm",
+  "name": "nowcast_lstm",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "PyTorch LSTM library purpose-built for economic nowcasting (targets growth rates of stationary/seasonally-adjusted series), with automatic hyperparameter tuning/variable selection, uncertainty intervals via synthetic vintage generation, permutation-importance feature contributions, and ARMA-based ragged-edge handling. No datasets committed but ships an example notebook+data zip. 90 commits, MIT, v0.2.6, sibling R/Julia/MATLAB wrappers exist (nowcastLSTM, NowcastLSTM.jl, nowcast_lstm_matlab). Built by a UNCTAD staffer for official nowcasting use.",
+  "why_useful": "Same use case as FRBNY Nowcasting but a modern, maintained, easier-to-use alternative for mixed-frequency nowcasting of a weekly/quarterly ABNB demand series from assorted alt-data inputs (gap #17).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "license": "MIT",
+  "last_activity": "actively maintained, recent versioned releases",
+  "geography": "n/a (generic tool)",
+  "time_coverage": "n/a",
+  "size_hint": "small library + example zip",
+  "hits": 4,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Same use case as FRBNY Nowcasting but a modern, maintained, easier-to-use alternative for mixed-frequency nowcasting of a weekly/quarterly ABNB demand series from assorted alt-data inputs (gap #17).",
+   "Alternative/competitor method to MIDAS and DFM for the KPI-nowcasting problem in gap #17; benchmarked as best single method in dhopp1/nowcasting_benchmark below \u2014 a candidate engine for nowcasting ABNB nights/ADR from ragged alt-data releases (Trends, TSA, calendar-derived indices) ahead of quarter close.",
+   "An alt-data-friendly nowcasting engine already designed for irregular/ragged mixed-frequency inputs and synthetic-vintage uncertainty bands -- could take ABNB's weekly calendar-pace/reviews-index/Trends series directly as inputs to nowcast quarterly nights without hand-built bridge equations.",
+   "A ready-made mixed-frequency nowcasting method (alternative to MIDAS/DFM) that could ingest a review-velocity series alongside macro series to nowcast nights/ADR -- directly on-theme for gap #17 (nowcasting methods with mixed-frequency data)."
+  ]
+ },
+ {
+  "key": "github:dhopp1/nowcastdfm",
+  "url": "https://github.com/dhopp1/nowcastDFM",
+  "name": "nowcastDFM",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package implementing the Bok et al. (2017, NY Fed) dynamic factor model methodology: dfm() (EM estimation with missing data), predict_dfm(), and gen_news() which quantifies how each new data release/revision moves the nowcast -- a direct 'news decomposition' tool. On CRAN.",
+  "why_useful": "Alternative DFM toolkit to FRBNY's MATLAB code, in R, with an explicit feature for decomposing how each new weekly data point moves the nowcast -- useful if building a homegrown weekly ABNB-demand tracker (gap #17).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "license": "unknown (check repo)",
+  "last_activity": "unknown",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "small library",
+  "hits": 2,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index",
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Alternative DFM toolkit to FRBNY's MATLAB code, in R, with an explicit feature for decomposing how each new weekly data point moves the nowcast -- useful if building a homegrown weekly ABNB-demand tracker (gap #17).",
+   "gen_news() is the specific mechanism for attributing a KPI-nowcast change to which input series moved -- useful for building an auditable ABNB nights/GBV nowcast that can explain revisions between alt-data updates, matching the pitch's point-in-time discipline."
+  ]
+ },
+ {
+  "key": "github:mattcocci/fredfetch",
+  "url": "https://github.com/MattCocci/FredFetch",
+  "name": "FredFetch",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MATLAB package with fred.latest(series) and fred.vint(series, vintage_date) for pulling FRED/ALFRED data at a specific vintage date, including a 'pseudo-vintage' mode that simulates publication lag for series without full ALFRED vintage history, plus parallelized bulk downloads across many series/vintage dates.",
+  "why_useful": "Same ALFRED vintage capability as fredapi but for MATLAB users, and notably adds simulated publication-delay handling for series that lack full vintage archives -- useful if the team needs point-in-time treatment of a FRED series ALFRED doesn't fully vintage.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "license": "none declared",
+  "last_activity": "2025-10-31",
+  "geography": "US (FRED)",
+  "time_coverage": "Per-series ALFRED vintage span",
+  "size_hint": "small MATLAB package, 5 stars",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Same ALFRED vintage capability as fredapi but for MATLAB users, and notably adds simulated publication-delay handling for series that lack full vintage archives -- useful if the team needs point-in-time treatment of a FRED series ALFRED doesn't fully vintage."
+  ]
+ },
+ {
+  "key": "github:jgjy926/macro-dashboard",
+  "url": "https://github.com/jgjy926/macro-dashboard",
+  "name": "macro-dashboard (zero-cost US macro forecasting engine)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Vintage-true backtesting harness pulling 84 FRED series + full ALFRED vintages (~3,800 API calls for a full backtest) + BLS CPI/employment + Yahoo Finance gold, with release-date filtering, real ALFRED vintages, and expanding (not full-sample) z-scores to close look-ahead leak channels; validated over 147 quarterly as-of dates since 1990, 695 scored points, 0 leaks. No data files are committed -- everything is pulled live via tools/backfill.py.",
+  "why_useful": "This is close to a working template for exactly the 'vintage-aware backtest' methodology gap #17/#4 calls for -- release-date filtering + real vintages + expanding-window normalization is the standard fix for the leakage problems the repo's own backtests must avoid. Worth reading as a reference implementation, not as a data source (no committed data).",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "none declared",
+  "last_activity": "2026-09-06",
+  "geography": "US (FRED/ALFRED/BLS)",
+  "time_coverage": "1990-2026 (147 quarterly as-of dates)",
+  "size_hint": "small repo, code only, 0 stars",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "This is close to a working template for exactly the 'vintage-aware backtest' methodology gap #17/#4 calls for -- release-date filtering + real vintages + expanding-window normalization is the standard fix for the leakage problems the repo's own backtests must avoid. Worth reading as a reference implementation, not as a data source (no committed data)."
+  ]
+ },
+ {
+  "key": "github:gweissman86/cfpb_data_downloader",
+  "url": "https://github.com/gweissman86/cfpb_data_downloader",
+  "name": "cfpb_data_downloader",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python tool that calls the CFPB's public Consumer Complaints Database Trends API and downloads complaint-trend data (by product, company, issue, date range) to local files - a one-command pull, no auth needed.",
+  "why_useful": "Turns the live CFPB complaint database into a repeatable, scriptable pull we can run at each guide date going forward, so we can build our own point-in-time vintage register of BNPL/travel-refund complaint counts (mentions of Airbnb, Affirm, Klarna, Afterpay) rather than relying on someone else's stale snapshot.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "whatever the live CFPB API currently serves (2011-present)",
+  "size_hint": "tool only, no committed data",
+  "license": "unspecified",
+  "last_activity": "2021-03-09",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Consumer credit and BNPL: Klarna/Affirm public stats, Fed G.19, credit card delinquency, CFPB complaints dataset (Airbnb refund complaints), BBB complaint scrapers"
+  ],
+  "why_all": [
+   "Turns the live CFPB complaint database into a repeatable, scriptable pull we can run at each guide date going forward, so we can build our own point-in-time vintage register of BNPL/travel-refund complaint counts (mentions of Airbnb, Affirm, Klarna, Afterpay) rather than relying on someone else's stale snapshot."
+  ]
+ },
+ {
+  "key": "github:saketlab/nesstarr",
+  "url": "https://github.com/saketlab/nesstarR",
+  "name": "nesstarR",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package to parse NESSTAR binary survey data containers (.Nesstar files), specifically noted for use with MoSPI India survey microdata and other national statistical offices' legacy formats. 1 star, updated Jun 2026.",
+  "why_useful": "Unlocks reading India's MoSPI legacy survey microdata files (household consumption/expenditure surveys) that are otherwise in an opaque binary format \u2014 relevant to gap #7's India MOSPI target and broadly to any NESSTAR-format national stats office archive.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "India (and other NESSTAR-using statistical offices)",
+  "time_coverage": "depends on archived survey vintage",
+  "size_hint": "small parsing library",
+  "license": "other",
+  "last_activity": "2026-06-03",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Unlocks reading India's MoSPI legacy survey microdata files (household consumption/expenditure surveys) that are otherwise in an opaque binary format \u2014 relevant to gap #7's India MOSPI target and broadly to any NESSTAR-format national stats office archive."
+  ]
+ },
+ {
+  "key": "github:cran/hicp",
+  "url": "https://github.com/cran/hicp",
+  "name": "hicp (CRAN mirror)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Read-only GitHub mirror of the CRAN R package 'hicp' \u2014 tools to access and compute Harmonised Index of Consumer Prices data (price indices and weights) from Eurostat's public database, implementing methodology from Eurostat's 2024 HICP Methodological Manual. Built on data.table; ships functions (documented in the package vignette, not fully visible here) for aggregating/decomposing HICP series.",
+  "why_useful": "An official-methodology R toolkit for pulling and re-aggregating Eurostat HICP series (including the accommodation-services / restaurants-hotels COICOP branch) with correct chain-linking, better than ad hoc pulls of the published index \u2014 useful if the team wants a defensible, reproducible EMEA accommodation-price series.",
+  "potential": "medium",
+  "license": "R package license (CRAN, likely GPL \u2014 not confirmed)",
+  "last_activity": "package current as of CRAN mirror sync, references 2024 manual",
+  "geography": "EU/EA",
+  "time_coverage": "whatever Eurostat HICP history covers (HICP monthly since 1996 varies by country)",
+  "size_hint": "R package source, no large committed data",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "An official-methodology R toolkit for pulling and re-aggregating Eurostat HICP series (including the accommodation-services / restaurants-hotels COICOP branch) with correct chain-linking, better than ad hoc pulls of the published index \u2014 useful if the team wants a defensible, reproducible EMEA accommodation-price series."
+  ]
+ },
+ {
+  "key": "github:jasonliaiagent/attention-flow",
+  "url": "https://github.com/jasonliaiagent/attention-flow",
+  "name": "attention-flow",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Active research repo (MIT, 73 commits, daily CI) using daily Wikipedia pageviews as a free 'market attention' proxy for ~34 entities/39 edges across four 2020-2026 economic-narrative graphs (AI buildout, GLP-1, EV/battery, COVID). Caches raw pageview pulls under data/raw/, trains a GRU+graph-attention network to forecast one-week-ahead 'attention shocks', and publishes live graded forecast-accuracy JSON (data.json, track.json) via a running demo.",
+  "why_useful": "Not itself a tourism dataset, but a live, working, actively-updated methodological template for exactly the technique Gap 5/17 wants: turning free Wikipedia pageviews into a leading demand-attention signal with a public accuracy scoreboard and a graph/GNN structure that could be re-pointed at Airbnb/BKNG/EXPE/hotel-chain and destination-city Wikipedia pages instead of AI/pharma/EV entities.",
+  "potential": "medium",
+  "gap_targets": [
+   5,
+   17
+  ],
+  "geography": "not geographic (entity/company graph, not destinations)",
+  "time_coverage": "2020-2026, daily, live-updating",
+  "size_hint": "~34 entities x daily pageviews since 2020, plus trained GNN checkpoints",
+  "license": "MIT",
+  "last_activity": "actively updated (daily CI as of query date)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Not itself a tourism dataset, but a live, working, actively-updated methodological template for exactly the technique Gap 5/17 wants: turning free Wikipedia pageviews into a leading demand-attention signal with a public accuracy scoreboard and a graph/GNN structure that could be re-pointed at Airbnb/BKNG/EXPE/hotel-chain and destination-city Wikipedia pages instead of AI/pharma/EV entities."
+  ]
+ },
+ {
+  "key": "github:mikedbjones/longtrends",
+  "url": "https://github.com/mikedbjones/longtrends",
+  "name": "longtrends",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed Python package (16 stars, updated 5 Jun 2026) specifically built to download and stitch together LONG-TERM Google Trends series \u2014 overlapping-window rescaling to overcome Google's short per-request lookback and resampling instability, producing one continuous multi-year daily/weekly index per keyword.",
+  "why_useful": "Same problem class as gtab (comparability of Trends magnitudes over long windows) but via overlapping-window rescaling rather than anchor-bank calibration; a second, independent method to try for gap #4/#17 if gtab's anchor approach has issues, and useful for reconstructing a longer historical Trends series for travel/Airbnb-adjacent terms than our current 9-term pull.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "as long as Google Trends itself goes back (2004+), reconstructed",
+  "size_hint": "library",
+  "license": "MIT",
+  "last_activity": "2026-06-05",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Same problem class as gtab (comparability of Trends magnitudes over long windows) but via overlapping-window rescaling rather than anchor-bank calibration; a second, independent method to try for gap #4/#17 if gtab's anchor approach has issues, and useful for reconstructing a longer historical Trends series for travel/Airbnb-adjacent terms than our current 9-term pull.",
+   "Cheap, minimal-dependency way to get a longer, internally-consistent history for any travel/ABNB-adjacent search term (gap #4: historical/point-in-time trends), complementary to gtab (which calibrates absolute level rather than just stitching length)."
+  ]
+ }
+]

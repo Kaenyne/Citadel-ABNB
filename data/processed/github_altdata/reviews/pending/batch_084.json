@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:zarco-ai/harris-cbp-2023-audit",
+  "url": "https://github.com/Zarco-ai/Harris-CBP-2023-Audit",
+  "name": "Zarco-ai/Harris-CBP-2023-Audit",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Cleaned, row-by-row-verified Census County Business Patterns 2023 extract for Harris County, TX (Houston), with an audit trail correcting a size-class double-count bug in an AI-generated pipeline; includes the corrected CBP-2023 dataset by NAICS code for that county (would include 721 Accommodation rows).",
+  "why_useful": "A single-county, single-year worked/QA'd CBP 2023 extract \u2014 useful mainly as a sanity-check reference for how to correctly parse CBP size-class fields (a known gotcha) rather than as broad coverage; Houston is not a top ABNB market.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "Harris County, TX, USA",
+  "time_coverage": "2023 only",
+  "size_hint": "Single-county CSV, small",
+  "license": "MIT",
+  "last_activity": "2026-08-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "A single-county, single-year worked/QA'd CBP 2023 extract \u2014 useful mainly as a sanity-check reference for how to correctly parse CBP size-class fields (a known gotcha) rather than as broad coverage; Houston is not a top ABNB market."
+  ]
+ },
+ {
+  "key": "github:henryspatialanalysis/openpois",
+  "url": "https://github.com/henryspatialanalysis/OpenPOIs",
+  "name": "henryspatialanalysis/OpenPOIs",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "31-star toolkit for comparing and conflating points-of-interest across major open geospatial POI datasets (explicitly including Overture Maps, and typically OSM/Foursquare-style sources) to reduce double-counting and improve category harmonisation.",
+  "why_useful": "If the team pulls hotel POIs from more than one source (Overture + OSM + Foursquare), this tool addresses the exact problem of matching/deduplicating the same physical hotel across datasets before counting supply.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "global (source-dependent)",
+  "time_coverage": "current",
+  "size_hint": "n/a (tool)",
+  "license": "check repo",
+  "last_activity": "unclear",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "If the team pulls hotel POIs from more than one source (Overture + OSM + Foursquare), this tool addresses the exact problem of matching/deduplicating the same physical hotel across datasets before counting supply."
+  ]
+ },
+ {
+  "key": "github:datamade/census",
+  "url": "https://github.com/datamade/census",
+  "name": "datamade/census",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python wrapper (682 stars) for the US Census Bureau API \u2014 ACS 1/3/5-year, ACS profiles/subject tables, 2010 SF1, and 2000/2010/2020 redistricting (PL) data. README as fetched does not mention CBP or QSS/NAICS support specifically, so its usefulness for NAICS 721 lodging counts is unconfirmed and may require the generic/undocumented Census API passthrough.",
+  "why_useful": "Popular, well-maintained generic Census API client; worth checking directly (not via this fetch) whether its generic query path reaches CBP/QSS series for NAICS 721 lodging establishment counts by county, as a lower-effort alternative to hrecht/censusapi.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "US",
+  "time_coverage": "current ACS/decennial vintages",
+  "size_hint": "n/a (tool)",
+  "license": "BSD-3-Clause",
+  "last_activity": "active, 262 commits",
+  "duplicate_of_holding": "overlaps hrecht/censusapi above as a generic Census API client",
+  "hits": 2,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling",
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Popular, well-maintained generic Census API client; worth checking directly (not via this fetch) whether its generic query path reaches CBP/QSS series for NAICS 721 lodging establishment counts by county, as a lower-effort alternative to hrecht/censusapi.",
+   "Turnkey client for pulling ACS demographic/housing/income data by metro, which underlies household-formation and travel-propensity proxies and could support regional consumer-strength or long-term-rental (housing) cross-checks."
+  ]
+ },
+ {
+  "key": "github:sakera023/us-small-business-capital-access-atlas",
+  "url": "https://github.com/sakera023/us-small-business-capital-access-atlas",
+  "name": "sakera023/us-small-business-capital-access-atlas",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Streamlit/Python geospatial platform analyzing small-business capital access, financing gaps and entrepreneurial opportunity across US states/communities, built on Census and SBA public data; the only repo found tagged 'county-business-patterns' on GitHub, implying it ingests CBP data by NAICS sector (accommodation/721 would be one of many sectors covered, not a dedicated focus).",
+  "why_useful": "Marginal: if it has a working CBP ingestion pipeline, that pipeline (not the small-business-finance framing) could be repurposed to pull NAICS 721 accommodation establishment/employment counts by county; not verified beyond the topic tag and description.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "US, state/county",
+  "time_coverage": "current CBP vintage",
+  "size_hint": "unknown",
+  "license": "unknown",
+  "last_activity": "September 3, 2026 (recently updated)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "Marginal: if it has a working CBP ingestion pipeline, that pipeline (not the small-business-finance framing) could be repurposed to pull NAICS 721 accommodation establishment/employment counts by county; not verified beyond the topic tag and description."
+  ]
+ },
+ {
+  "key": "github:nickpappas02/bls-lodging-dashboard",
+  "url": "https://github.com/nickpappas02/bls-lodging-dashboard",
+  "name": "bls-lodging-dashboard",
+  "category": "hotel_lodging",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Two-commit personal repo containing a single static `BLS_Hotel_Dashboard.html` file and a README; no description, no releases, zero stars/forks. Presumably renders some BLS hotel/lodging CPI or PPI series but the underlying data pull and series IDs are not documented and the repo is effectively a one-off HTML artifact, not a pipeline or dataset.",
+  "why_useful": "Marginal \u2014 worth a line only because the name is on-theme; there is no visible committed dataset or reusable method beyond a static HTML file.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2026-03-24",
+  "geography": "US",
+  "time_coverage": "unknown",
+  "size_hint": "tiny (2 commits, one HTML file)",
+  "gap_targets": [],
+  "duplicate_of_holding": "We already hold BLS CPI via FRED",
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Marginal \u2014 worth a line only because the name is on-theme; there is no visible committed dataset or reusable method beyond a static HTML file."
+  ]
+ }
+]

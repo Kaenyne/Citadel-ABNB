@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:johannesjanuary/dcf_transcripts",
+  "url": "https://github.com/JohannesJanuary/dcf_transcripts",
+  "name": "JohannesJanuary/dcf_transcripts",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python toolkit described as scrapers + CSV builders + summary statistics + preprocessing utilities for 'company-quarter speaker-level transcript data' to support downstream NLP analysis of corporate communication. No stars, unlicensed, not inspected in depth (README/contents not fetched due to search-call budget).",
+  "why_useful": "Speaker-level (management vs. analyst) transcript parsing is more granular than a flat transcript dump and could be reused to separate ABNB's prepared remarks from Q&A tone, or applied to peer transcripts.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "geography": "unspecified",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown, code-only likely",
+  "license": "none declared",
+  "last_activity": "2026-05-31",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Speaker-level (management vs. analyst) transcript parsing is more granular than a flat transcript dump and could be reused to separate ABNB's prepared remarks from Q&A tone, or applied to peer transcripts."
+  ]
+ },
+ {
+  "key": "github:cdubiel08/earnings-calls-nlp",
+  "url": "https://github.com/cdubiel08/Earnings-Calls-NLP",
+  "name": "cdubiel08/Earnings-Calls-NLP",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "75-star MIT repo: logistic-regression buy/sell/hold classifier trained on earnings-call transcript text NLP features. Highest-starred repo found in this theme; not fetched in depth but is the most-referenced 'classic' earnings-call NLP baseline on GitHub.",
+  "why_useful": "A well-tested reference implementation for turning transcript text into a tone/sentiment feature set and a return-direction label; useful as a methods citation even though CONTEXT.md already found management-tone constructions not to work for ABNB specifically.",
+  "potential": "low",
+  "duplicate_of_holding": "Management tone as a signal already tested and found not to work (per CONTEXT.md); this is a differently-built construction so still worth a citation, not a re-test.",
+  "geography": "unspecified (likely S&P names)",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown",
+  "license": "MIT",
+  "last_activity": "2026-08-18",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A well-tested reference implementation for turning transcript text into a tone/sentiment feature set and a return-direction label; useful as a methods citation even though CONTEXT.md already found management-tone constructions not to work for ABNB specifically."
+  ]
+ },
+ {
+  "key": "github:alali3030/earnings_calls_nlp",
+  "url": "https://github.com/alali3030/earnings_calls_NLP",
+  "name": "alali3030/earnings_calls_NLP",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "34-star MIT repo extracting 'digital transformation strategy' of Fortune 500 companies from earnings-call transcripts \u2014 a topic-extraction/classification method over a Fortune 500 transcript set (source/years not confirmed).",
+  "why_useful": "A topic-extraction methodology (not just sentiment) that could be repointed at ABNB/peer transcripts for strategy-shift signals (e.g. RNPL rollout, international mix commentary) rather than raw tone.",
+  "potential": "low",
+  "duplicate_of_holding": "",
+  "geography": "US Fortune 500",
+  "time_coverage": "unspecified",
+  "size_hint": "unknown",
+  "license": "MIT",
+  "last_activity": "2026-06-05",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A topic-extraction methodology (not just sentiment) that could be repointed at ABNB/peer transcripts for strategy-shift signals (e.g. RNPL rollout, international mix commentary) rather than raw tone."
+  ]
+ },
+ {
+  "key": "github:ahdithanu/earnings-call-nlp-risk-signals",
+  "url": "https://github.com/ahdithanu/earnings-call-nlp-risk-signals",
+  "name": "ahdithanu/earnings-call-nlp-risk-signals",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT repo applying the Loughran-McDonald uncertainty/hedging dictionary to NVIDIA and Microsoft transcripts, correlating hedging-language frequency with revenue performance.",
+  "why_useful": "Reusable, well-cited Loughran-McDonald word-list application pattern for a hedging/uncertainty score, which is a differently-constructed management-tone metric than what CONTEXT.md says already failed (composite sentiment/tone indexes); could be re-tried on ABNB transcripts using this dictionary-count approach specifically.",
+  "potential": "low",
+  "duplicate_of_holding": "Management tone already tested and found not to work on our constructions; this is a specific dictionary-based construction, still just a method citation, not a new dataset.",
+  "geography": "n/a (method)",
+  "time_coverage": "n/a",
+  "size_hint": "2 tickers, method-only",
+  "license": "MIT",
+  "last_activity": "2026-09-05",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Reusable, well-cited Loughran-McDonald word-list application pattern for a hedging/uncertainty score, which is a differently-constructed management-tone metric than what CONTEXT.md says already failed (composite sentiment/tone indexes); could be re-tried on ABNB transcripts using this dictionary-count approach specifically."
+  ]
+ },
+ {
+  "key": "github:cubiczan/earnings-call-nlp-lab",
+  "url": "https://github.com/Cubiczan/earnings-call-nlp-lab",
+  "name": "Cubiczan/earnings-call-nlp-lab",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT 'Earnings Call NLP Lab': management tone, confidence, evasiveness scoring, and longitudinal (multi-quarter) transcript tracking for a single company across calls. A near-identical fork/parallel repo exists at icohangar-ops/earnings-call-nlp-lab (updated 13 Sep 2026, one day before this scout ran).",
+  "why_useful": "Evasiveness/confidence scoring across a longitudinal (quarter-over-quarter) series is a more specific construction than plain sentiment; could be applied to ABNB's own transcript history (which we already hold) to build a QoQ tone-drift feature distinct from the tried-and-failed composite index.",
+  "potential": "low",
+  "duplicate_of_holding": "Tone/composite index already tested and found not predictive; flagging only because the longitudinal evasiveness construction is specifically different from what was tried.",
+  "geography": "n/a (method, single-company template)",
+  "time_coverage": "n/a",
+  "size_hint": "code-only, lightweight",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Evasiveness/confidence scoring across a longitudinal (quarter-over-quarter) series is a more specific construction than plain sentiment; could be applied to ABNB's own transcript history (which we already hold) to build a QoQ tone-drift feature distinct from the tried-and-failed composite index."
+  ]
+ }
+]

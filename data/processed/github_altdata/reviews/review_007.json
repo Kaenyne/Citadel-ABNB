@@ -1,0 +1,72 @@
+[
+ {
+  "url": "https://github.com/lamini-ai/lamini-earnings-calls",
+  "slug": "lamini-earnings-calls-transcripts-2018-2023",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "one_line": "Archived (13 Jun 2024, read-only) Lamini repo with two committed JSONL data files: data/earnings-transcripts.jsonl (49.3 MB, full earnings-call transcripts with ticker/date/exchange/quarter fields) and data/answers.jsonl (25.1 MB, generated QA pairs); verified head-of-file sample covers 99 tickers incl. peer HLT over 2018-Q4 to 2023-Q1; transcript text formatted like Motley Fool call pages; no LICENSE file in repo (HF mirror lamini/earnings-calls-qa is CC-BY-4.0), 43 stars.",
+  "abnb_use": "Gap 17 (methods) and the management-tone line of work: a ready multi-ticker, multi-quarter transcript corpus (HLT present, other travel/consumer names possible in the untested remainder) to build a cross-sectional tone/QA baseline against which ABNB's own call language can be scored, plus a reusable transcript-to-QA extraction pipeline for the ABNB/peer transcripts we already hold.",
+  "sample_plan": "Range-request the head of each data file, no clone: curl -s -r 0-5000000 https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/data/earnings-transcripts.jsonl -o earnings-transcripts.head.jsonl and curl -s -r 0-3000000 https://raw.githubusercontent.com/lamini-ai/lamini-earnings-calls/main/data/answers.jsonl -o answers.head.jsonl (drop the final truncated line of each). Also curl the two small pipeline scripts for the method record. Cap ~8 MB total; do NOT pull the full 74 MB.",
+  "tos_or_license_flag": true,
+  "reasoning": "Verified via gh api that both JSONL files are really committed (49.3 MB and 25.1 MB) and a 5 MB head decodes to 99 distinct tickers across 2018-Q4 to 2023-Q1, so this is stored data, not just code. The repo carries no licence of its own and the transcript text looks lifted from Motley Fool call pages, so redistribution is a human call — sample for inspection only. Value to us is a peer/cross-sectional tone corpus plus a reproducible transcript-to-QA pipeline, not ABNB data per se."
+ },
+ {
+  "url": "https://github.com/lefterisloukas/edgar-crawler",
+  "slug": "edgar-crawler-item-section-extractor",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "one_line": "GPL-3.0 toolkit (545 stars, WWW 2025 paper, last push 18 Jul 2025 — not Sep 2026 as the scout claimed) that downloads 10-K/10-Q/8-K from SEC EDGAR keylessly via config.json and segments them into per-Item JSON (Item 1A risk factors, Item 7 MD&A); the only committed data is datasets/companies_info.json (7.8 MB CIK/ticker/SIC metadata).",
+  "abnb_use": "Gap 15 / methods: gives a repeatable way to cut ABNB and peer (BKNG, EXPE, MAR, HLT) MD&A and risk-factor sections out of filings as clean text with filing dates attached, which is the point-in-time-safe input a re-tried text/tone construction would need; the CIK-SIC table also helps assemble a lodging/OTA peer universe.",
+  "sample_plan": "Sparse code-only checkout plus a head of the one data file: git clone --depth 1 --filter=blob:none --sparse https://github.com/lefterisloukas/edgar-crawler.git && cd edgar-crawler && git sparse-checkout set edgar_crawler config.json README.md; then curl -s -r 0-2000000 https://raw.githubusercontent.com/lefterisloukas/edgar-crawler/main/datasets/companies_info.json -o companies_info.head.json. Cap ~5 MB. Do not run a full EDGAR crawl.",
+  "tos_or_license_flag": true,
+  "reasoning": "Confirmed GPL-3.0, 545 stars, 95 commits, last push 2025-07-18, and that datasets/ holds exactly one 7.8 MB companies_info.json rather than extracted filings. It hits SEC EDGAR directly with a user-agent and needs no key, so the acquisition path is public and keyless; the flag is for GPL-3.0 copyleft on any code we derive from it, not a data restriction. Worth sampling the code and the CIK table; the extracted corpora themselves must be generated."
+ },
+ {
+  "url": "https://github.com/sec-edgar/sec-edgar",
+  "slug": "sec-edgar-python-filing-downloader",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "catalog_only",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "one_line": "Mature Apache-2.0 Python package `secedgar` (1,415 stars, 766 commits, last push 9 Dec 2025 — not Sep 2026) for bulk-downloading EDGAR filings by ticker, CIK, filing type or daily date range; source code, docs and CI only, zero committed data.",
+  "abnb_use": "Alternative keyless bulk-download client for building a point-in-time archive of ABNB/BKNG/EXPE/MAR/HLT 8-Ks and 10-Qs with filing timestamps — a fallback acquisition route for the guide-date vintage rule, not new information.",
+  "sample_plan": "Nothing to sample — pure library with no committed data and it duplicates an acquisition path we already have for filings we already hold. Record the pip name (`secedgar`), licence and the daily-filings-by-date feature in the catalogue; a human can pip-install it if the existing pipeline breaks.",
+  "tos_or_license_flag": false,
+  "reasoning": "Verified Apache-2.0, 1.4k stars and last push 2025-12-09; the tree is .py sources, docs and workflows with no dataset committed. We already hold every ABNB letter, transcript and XBRL filing since IPO, so this is a redundant method rather than new coverage. Catalogue the library name and move on — pulling it would consume a Fable slot for nothing."
+ },
+ {
+  "url": "https://github.com/baimmm6767/sec-data",
+  "slug": "sec-data-xbrl-quarterly-segment-builder",
+  "exists_and_has_content": true,
+  "usefulness": "possibly_useful",
+  "verdict": "sample",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "one_line": "Very new, low-adoption Apache-2.0 engine (2 stars, 130 commits, last push 12 Sep 2026) that turns EDGAR XBRL into modelling-ready CSV/Excel financials with discrete-quarter reconstruction from YTD values, business/geographic segment extraction and accounting-identity repairs; ships output-examples/ with 7 real CSVs (AAPL, AMZN, GOOGL, HOOD, MA, PLTR, UBER; 49-124 KB each, ~640 KB total).",
+  "abnb_use": "Gap 15 and the peer/regional work: the Q4 = FY minus 9M derivation and the geographic-segment extractor are exactly the mechanics needed to rebuild quarterly and by-region financials for BKNG/EXPE/MAR/HLT from XBRL; the committed UBER/HOOD example CSVs show the output schema (line items, segments, per-quarter columns) without running anything.",
+  "sample_plan": "Sparse checkout of the examples and the core module: git clone --depth 1 --filter=blob:none --sparse https://github.com/baimmm6767/sec-data.git && cd sec-data && git sparse-checkout set output-examples README.md (add the extraction package dir if the tree names one). ~1 MB total; the 7 example CSVs are the deliverable, do not run the crawler.",
+  "tos_or_license_flag": false,
+  "reasoning": "Confirmed via gh api contents that output-examples/ holds seven genuine per-ticker financial CSVs (115 KB AAPL, 78 KB UBER, etc.), so there is inspectable stored output, and the repo is Apache-2.0 with a push on 12 Sep 2026. The engine is brand new with 2 stars and is therefore unvetted — its accounting repairs must not be trusted without checking against filings we hold. Cheap to sample because the examples are under 1 MB in total."
+ },
+ {
+  "url": "https://github.com/cpackard/fundholdings",
+  "slug": "fundholdings-13f-nq-scraper-stale-2020",
+  "exists_and_has_content": true,
+  "usefulness": "unlikely",
+  "verdict": "catalog_only",
+  "category": "markets_options_positioning",
+  "data_kind": "acquisition_method",
+  "one_line": "Small MIT Python scraper (36 stars, 21 commits) that parses EDGAR 13F-HR and N-Q filings into tab-delimited CIK_SERIESID_DATE.txt holdings reports; last push 13 Sep 2020 — the scout's 23 Aug 2026 date is wrong — and N-Q was retired in favour of N-PORT in 2019, with the README itself conceding it cannot parse multi-line or image-based holdings.",
+  "abnb_use": "Nominally gap 15 (13F holdings parsers, ownership-concentration history as a positioning proxy alongside options and short interest), but the code predates the current EDGAR 13F XML/information-table format and the N-PORT switch, so it would need rewriting rather than running.",
+  "sample_plan": "Do not pull — 289 KB of 2020-era code, no committed holdings data, and the parsers target filing formats EDGAR no longer produces. Catalogue it as a dead-end pointer for gap 15 and note that a current 13F route (EDGAR information-table XML or the SEC's own 13F structured data sets) is the thing to look for instead.",
+  "tos_or_license_flag": false,
+  "reasoning": "gh api shows the last push was 2020-09-13 and the repo is only 289 KB with a /resources test dir and no committed holdings output. Its N-Q path targets a form type the SEC replaced with N-PORT in 2019, and the README admits it fails on multi-line and image-based tables, so running it against today's EDGAR is very likely to break. Keep one catalogue line pointing at the gap it was meant to fill; a Fable pull would return nothing usable."
+ }
+]

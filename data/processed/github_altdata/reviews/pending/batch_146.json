@@ -1,0 +1,129 @@
+[
+ {
+  "key": "github:pmxt-dev/pmxt",
+  "url": "https://github.com/pmxt-dev/pmxt",
+  "name": "pmxt",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "\"CCXT for prediction markets\": a unified Python/TypeScript SDK, hosted API, self-hostable server, CLI, and MCP integration that normalizes access across Polymarket, Polymarket US, Kalshi, Limitless, Probable, Baozi, Myriad, Opinion, Metaculus, Smarkets, Hyperliquid, Gemini Titan, SuiBets, Rain, and Hunch. MIT licensed, 2.1k stars/269 forks, 1,687 commits, actively developed.",
+  "why_useful": "One client library to pull current AND (via each venue's own history endpoints) historical market data across a dozen-plus prediction-market venues including Metaculus, rather than writing bespoke API clients per platform \u2014 useful if the team wants to pull ABNB-earnings or travel/regulation contracts across multiple venues with one interface.",
+  "geography": "Global",
+  "time_coverage": "N/A (live API wrapper; historical depth depends on underlying venue APIs)",
+  "size_hint": "N/A - library, no committed data",
+  "license": "MIT",
+  "last_activity": "1,687 commits, actively maintained as of fetch",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "One client library to pull current AND (via each venue's own history endpoints) historical market data across a dozen-plus prediction-market venues including Metaculus, rather than writing bespoke API clients per platform \u2014 useful if the team wants to pull ABNB-earnings or travel/regulation contracts across multiple venues with one interface."
+  ]
+ },
+ {
+  "key": "github:aarora4/awesome-prediction-market-tools",
+  "url": "https://github.com/aarora4/Awesome-Prediction-Market-Tools",
+  "name": "Awesome-Prediction-Market-Tools",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated awesome-list (25+ categories: AI Agents, Analytics, Arbitrage, Dashboards, Data, News, APIs, Aggregators, Trading Bots, Portfolio Tracking, DeFi, Education, Infrastructure) linking to third-party data services such as Probalytics (REST/ClickHouse, 200-500M orderbook updates/day, Parquet/S3 bulk export), Marketlens (tick-level historical Polymarket order-book/trade data via Python SDK + backtest REST API), Dune Analytics community dashboards (on-chain Polymarket visualizations, price-bucket accuracy analysis), and TREMOR (SQL terminal over 140K+ active markets). 741 stars.",
+  "why_useful": "A map of where deeper historical/tick-level Polymarket and Kalshi data can be pulled from (Probalytics, Marketlens, Dune) beyond what any single GitHub repo commits directly; several of the linked services offer bulk Parquet/S3 exports that could be queried for ABNB-earnings or travel-shock contracts.",
+  "geography": "Global",
+  "time_coverage": "Varies by linked service",
+  "size_hint": "N/A (list); linked services claim 100M+ to 500M/day order-book updates",
+  "license": "unspecified (awesome-list, likely CC0/MIT)",
+  "last_activity": "not confirmed",
+  "potential": "medium",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "A map of where deeper historical/tick-level Polymarket and Kalshi data can be pulled from (Probalytics, Marketlens, Dune) beyond what any single GitHub repo commits directly; several of the linked services offer bulk Parquet/S3 exports that could be queried for ABNB-earnings or travel-shock contracts."
+  ]
+ },
+ {
+  "key": "github:safegraphinc/safegraph_py",
+  "url": "https://github.com/SafeGraphInc/safegraph_py",
+  "name": "safegraph_py",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official SafeGraph Python library (203 commits) for wrangling SafeGraph 'Patterns' (weekly/monthly visit-frequency), 'Core' (place/POI reference), 'Geo' and 'Social Distancing' mobility files, plus 2016-2019 Census/CBG demographic joins. No data files committed -- it is a client for SafeGraph's (largely paywalled now, some free/academic tiers) place-visit data. Foot-traffic-by-POI is a plausible STR/hospitality demand proxy (hotel/lodging POIs, restaurant/attraction visits near lodging markets) if any free tier or academic snapshot is still reachable.",
+  "why_useful": "If the team ever obtains SafeGraph/Advan/Dewey foot-traffic samples (e.g. via academic access), this is the standard toolkit to normalize POI-level visit counts into a usable travel/leisure foot-traffic index (hotels, tourist attractions, airports) as an ABNB demand proxy.",
+  "potential": "medium",
+  "geography": "US-centric POI categories (SafeGraph's core panel), extensible",
+  "time_coverage": "N/A (tooling, not data)",
+  "size_hint": "Library, no data files",
+  "license": "Apache-2.0",
+  "last_activity": "2025-06-05",
+  "gap_targets": [
+   5
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city",
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "If the team ever obtains SafeGraph/Advan/Dewey foot-traffic samples (e.g. via academic access), this is the standard toolkit to normalize POI-level visit counts into a usable travel/leisure foot-traffic index (hotels, tourist attractions, airports) as an ABNB demand proxy.",
+   "Addresses gap #6 (consumer/foot-traffic panels) and gap #8 (hotel/lodging demand proxies) if a free SafeGraph sample or academic dataset can still be pulled; also a template for point-of-interest visit-pattern ingestion generally."
+  ]
+ },
+ {
+  "key": "github:mocnik-science/osm-python-tools",
+  "url": "https://github.com/mocnik-science/osm-python-tools",
+  "name": "OSMPythonTools",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (GPL-3.0, 487 stars, 177 commits) wrapping the Overpass API, Nominatim, and OSM API. Supports tag-based queries (e.g. `tourism=hotel`), reverse geocoding, GeoJSON export, and can track how a specific OSM object's tags changed over time (useful for a rough time series on individual hotel/venue records, though not scalable to full-city historical censuses since Overpass itself has no full history by default).",
+  "why_useful": "Lower-effort alternative to pyrosm for smaller, per-city, live Overpass pulls of tourism=hotel/guest_house/apartment POIs when a full Geofabrik PBF isn't needed; the per-object history feature is a rare free way to see an individual venue's tag history.",
+  "potential": "medium",
+  "geography": "Global (via Overpass)",
+  "time_coverage": "Live/current; per-object edit history available",
+  "license": "GPL-3.0",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Maintained (noted activity 2017-2022 window in fetch, likely with intermittent updates since)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Lower-effort alternative to pyrosm for smaller, per-city, live Overpass pulls of tourism=hotel/guest_house/apartment POIs when a full Geofabrik PBF isn't needed; the per-object history feature is a rare free way to see an individual venue's tag history."
+  ]
+ },
+ {
+  "key": "github:gboeing/osmnx",
+  "url": "https://github.com/gboeing/osmnx",
+  "name": "OSMnx",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Widely used Python package for downloading/modeling/analyzing OSM street networks, building footprints, transit, and 'urban amenities/points of interest' by place name or polygon.",
+  "why_useful": "General-purpose alternative for pulling POI/amenity layers (including tourism/lodging tags) by named city or custom polygon, complementing pyrosm for smaller ad hoc pulls.",
+  "potential": "medium",
+  "geography": "Global",
+  "time_coverage": "Current OSM snapshot at pull time",
+  "license": "MIT (standard for this package)",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Very active, long-running project",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "General-purpose alternative for pulling POI/amenity layers (including tourism/lodging tags) by named city or custom polygon, complementing pyrosm for smaller ad hoc pulls."
+  ]
+ }
+]

@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:mebauer/fema-disaster-information",
+  "url": "https://github.com/mebauer/fema-disaster-information",
+  "name": "fema-disaster-information",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis repo combining FEMA Disaster Declarations and Public Assistance data, with committed extracts/notebooks (per repo description: 'FEMA Disaster Declarations and Public Assistance Data Analysis').",
+  "why_useful": "Reasonably popular, MIT-licensed reference implementation for pulling/analysing OpenFEMA declarations and public-assistance grant data, another route into gap 11 with more community traction than the rearc-data pipeline repo.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "license": "MIT",
+  "last_activity": "2025-07-09",
+  "size_hint": "unverified data-file presence; analysis-scale repo",
+  "geography": "US",
+  "time_coverage": "unspecified",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Reasonably popular, MIT-licensed reference implementation for pulling/analysing OpenFEMA declarations and public-assistance grant data, another route into gap 11 with more community traction than the rearc-data pipeline repo.",
+   "Secondary/smaller alternative to the rearc-data mirror; worth a quick look if that one's AWS Data Exchange dependency is inconvenient, since Public Assistance $ amounts by disaster give a rough severity/dollar-cost proxy per event."
+  ]
+ },
+ {
+  "key": "github:cran/emdatr",
+  "url": "https://github.com/cran/emdatr",
+  "name": "emdatr",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (CRAN mirror) 'Global disaster losses from the EM-DAT database' -- functions to load/process EM-DAT (CRED Universit\u00e9 catholique de Louvain) global natural-disaster loss records (deaths, affected population, damage estimates) by country/year/disaster-type.",
+  "why_useful": "Direct EM-DAT tooling named in the theme's own keyword hints; EM-DAT itself is licensed/registration-gated at source (no full open GitHub mirror was found), so this is the closest thing to a reusable open client, though the package itself is old (2015) and would need a fresh EM-DAT export to be useful today.",
+  "potential": "low",
+  "geography": "Global, by country",
+  "time_coverage": "EM-DAT coverage as of package's last CRAN sync (~2015); underlying EM-DAT goes back to 1900",
+  "size_hint": "R package, small",
+  "license": "GPL (CRAN default)",
+  "duplicate_of_holding": "none held; EM-DAT itself not otherwise in our holdings",
+  "last_activity": "2015-05-04 (stale)",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Direct EM-DAT tooling named in the theme's own keyword hints; EM-DAT itself is licensed/registration-gated at source (no full open GitHub mirror was found), so this is the closest thing to a reusable open client, though the package itself is old (2015) and would need a fresh EM-DAT export to be useful today."
+  ]
+ },
+ {
+  "key": "github:dzole0311/wildfire-perimeters",
+  "url": "https://github.com/dzole0311/wildfire-perimeters",
+  "name": "wildfire-perimeters",
+  "category": "events_weather_shocks",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Showcase app exploring STAC (SpatioTemporal Asset Catalog) fire-event data hosted by NASA's VEDA (Visualization, Exploration, and Data Analysis) platform -- points to VEDA's own fire-event STAC collections rather than committing data itself.",
+  "why_useful": "Points to NASA VEDA's STAC fire-event catalog, a modern queryable geospatial index of US fire events that could be pulled directly (via STAC API) for perimeter + date without needing firedpy's local MODIS processing.",
+  "potential": "low",
+  "geography": "US (VEDA STAC fire-event collections)",
+  "time_coverage": "per VEDA's own fire-event STAC catalog coverage",
+  "size_hint": "showcase app; data lives on NASA VEDA (https://openveda.cloud)",
+  "license": "not stated",
+  "last_activity": "2024-12-02",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Weather, hurricanes, wildfires, disasters: NOAA/NHC tracks, EM-DAT, FEMA declarations, wildfire perimeters (Maui, LA fires), heatwaves; tourism-shock datasets"
+  ],
+  "why_all": [
+   "Points to NASA VEDA's STAC fire-event catalog, a modern queryable geospatial index of US fire events that could be pulled directly (via STAC API) for perimeter + date without needing firedpy's local MODIS processing."
+  ]
+ },
+ {
+  "key": "github:itssuryanshu/traveladvisoryscraper",
+  "url": "https://github.com/itsSuryanshu/TravelAdvisoryScraper",
+  "name": "TravelAdvisoryScraper",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Python scraper (BeautifulSoup4/Requests/Pandas) that pulls Canada's official government travel advisory website and writes a CSV of current advisory levels by destination country. No data is committed to the repo (gitignored output); includes an AWS Lambda branch for scheduled cloud runs.",
+  "why_useful": "A second-country (Canada) travel-advisory data source, complementary to the US State Dept feed, giving a different vantage point on the same demand-shock signal -- low marginal value alone but a working method that could be scheduled to build a point-in-time series if run going forward (not run per the sanctioned-sources rule).",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "license": "none stated",
+  "last_activity": "2025-06-25",
+  "geography": "Global, Canadian government advisory perspective",
+  "time_coverage": "current snapshot only, no historical data committed",
+  "size_hint": "tiny (scraper code only, no data)",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "A second-country (Canada) travel-advisory data source, complementary to the US State Dept feed, giving a different vantage point on the same demand-shock signal -- low marginal value alone but a working method that could be scheduled to build a point-in-time series if run going forward (not run per the sanctioned-sources rule)."
+  ]
+ },
+ {
+  "key": "github:loewenj700/global_peace",
+  "url": "https://github.com/loewenj700/global_peace",
+  "name": "global_peace",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Global Peace Index dataset (country-level peace/safety scores) plus Python data-viz scripts. Small repo (2 stars), scope and exact year range not confirmed beyond the description; appears to be a static snapshot of GPI country rankings rather than a time series.",
+  "why_useful": "Global Peace Index is a country-level annual safety/instability score that could serve as a coarse macro control for destination-country risk in the same demand-shock family as travel advisories, though it is annual and static rather than point-in-time dated, and is a weaker signal than the State Dept advisory feed above.",
+  "potential": "low",
+  "gap_targets": [
+   11
+  ],
+  "license": "none stated",
+  "last_activity": "2026-02-26",
+  "geography": "Global (country-level)",
+  "time_coverage": "unclear, likely a single/few-year snapshot",
+  "size_hint": "small",
+  "hits": 2,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "Global Peace Index is a country-level annual safety/instability score that could serve as a coarse macro control for destination-country risk in the same demand-shock family as travel advisories, though it is annual and static rather than point-in-time dated, and is a weaker signal than the State Dept advisory feed above.",
+   "A slower-moving, annual country-level safety/risk index that could serve as a control variable or cross-check against the higher-frequency advisory-level series above when assessing regional demand risk (e.g., LatAm/APAC safety perception shifts)."
+  ]
+ }
+]

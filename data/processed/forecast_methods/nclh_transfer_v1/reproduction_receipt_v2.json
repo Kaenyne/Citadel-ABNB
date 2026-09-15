@@ -1,0 +1,26 @@
+{
+  "canonical": "results_v4",
+  "rebuild": "results_verify_v2",
+  "byte_identity": {
+    "coefficients.csv": true,
+    "exclusions.csv": true,
+    "l4_evidence.csv": true,
+    "lambda_comparison.png": true,
+    "lambda_values.csv": true,
+    "panel.csv": true,
+    "predictions.csv": true,
+    "run_manifest.json": true,
+    "scores.csv": true,
+    "stability.csv": true,
+    "verdict.json": true
+  },
+  "research_output_identity_vs_v3": {
+    "scores.csv": true,
+    "predictions.csv": true,
+    "coefficients.csv": true,
+    "stability.csv": true,
+    "lambda_values.csv": true,
+    "verdict.json": true
+  },
+  "l4_sha256": "3df1014ea3ff677a3b821591d3951b8a322e397e73fa95e4ca1b7650e9eb7f52"
+}

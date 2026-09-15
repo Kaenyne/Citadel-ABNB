@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:ni22aad/electricity-load-forecasting-with-the-low-carbon-london-smartmeter-dataset",
+  "url": "https://github.com/ni22aad/Electricity-load-forecasting-with-the-Low-Carbon-London-SmartMeter-dataset",
+  "name": "Electricity-load-forecasting-with-the-Low-Carbon-London-SmartMeter-dataset",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Forecasting notebook/code built on the UK Power Networks 'Low Carbon London' smart-meter dataset (~5,567 London households, half-hourly electricity, Nov 2011-Feb 2014; publicly hosted by UK Power Networks / mirrored on Kaggle). No new data committed here, but confirms the underlying public dataset's continued accessibility.",
+  "why_useful": "London residential electricity at half-hourly granularity over ~2.5 years is a real, large, free panel; could be tested as a general occupancy/activity baseline against London's Inside Airbnb calendar, though it is whole-household residential, not STR-specific.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "London, UK",
+  "time_coverage": "Nov 2011 - Feb 2014 (underlying Low Carbon London panel)",
+  "size_hint": "~5,567 households, half-hourly (external dataset; this repo is code only)",
+  "license": "not stated in this repo (underlying dataset UK Power Networks open licence)",
+  "last_activity": "2024-08-17",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "London residential electricity at half-hourly granularity over ~2.5 years is a real, large, free panel; could be tested as a general occupancy/activity baseline against London's Inside Airbnb calendar, though it is whole-household residential, not STR-specific."
+  ]
+ },
+ {
+  "key": "github:takodata/tako-mcp",
+  "url": "https://github.com/TakoData/tako-mcp",
+  "name": "tako-mcp",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "MCP server (hosted, free tier, no key required to start) exposing 'licensed data the open web does not have': company financials, macro indicators, web and app traffic, sports, US government spending. Wraps TakoData's hosted API at tako.so (external host) rather than committing files.",
+  "why_useful": "Potential machine-pullable route to web/app traffic estimates (gap #5) alongside financials, if the free tier actually covers ABNB/BKNG/EXPE domains \u2014 worth a human look at the hosted API's coverage and terms before use, since it is a third-party paid-data reseller behind a free tier, not raw open data.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "size_hint": "N/A - hosted API pointer",
+  "time_coverage": "unknown, external service",
+  "geography": "unknown",
+  "license": "MIT (code wrapper only; underlying data is licensed per repo description)",
+  "last_activity": "2026-09-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Potential machine-pullable route to web/app traffic estimates (gap #5) alongside financials, if the free tier actually covers ABNB/BKNG/EXPE domains \u2014 worth a human look at the hosted API's coverage and terms before use, since it is a third-party paid-data reseller behind a free tier, not raw open data."
+  ]
+ },
+ {
+  "key": "github:comparedge/price-watch-mcp",
+  "url": "https://github.com/comparedge/price-watch-mcp",
+  "name": "price-watch-mcp",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "MCP server exposing 'verified SaaS price-change history' and a watch-log, backed by ComparEdge's hosted data (external host, not committed to repo).",
+  "why_useful": "Not travel/consumer-retail relevant (SaaS pricing only); flagged only as a structural template for point-in-time price-change history capture, which is conceptually close to gap #4 (vintage/point-in-time series) methodology.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "size_hint": "N/A - hosted pointer",
+  "time_coverage": "unknown",
+  "geography": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-07-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Not travel/consumer-retail relevant (SaaS pricing only); flagged only as a structural template for point-in-time price-change history capture, which is conceptually close to gap #4 (vintage/point-in-time series) methodology."
+  ]
+ },
+ {
+  "key": "github:kawsarlog/commerce-apis",
+  "url": "https://github.com/kawsarlog/commerce-apis",
+  "name": "commerce-apis",
+  "category": "web_app_engagement",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Directory/index repo listing '15,000+ E-commerce and real estate APIs' for product data, pricing, reviews, property listings, market research \u2014 a link aggregator, not a dataset itself.",
+  "why_useful": "Could be useful purely as a discovery index to find a specific retail/real-estate price API later, but it is a link list with no data or working code of its own; low confidence any individual linked API is free or point-in-time.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "size_hint": "N/A - link directory",
+  "time_coverage": "N/A",
+  "geography": "N/A",
+  "license": "none declared",
+  "last_activity": "2026-07-25",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "Could be useful purely as a discovery index to find a specific retail/real-estate price API later, but it is a link list with no data or working code of its own; low confidence any individual linked API is free or point-in-time."
+  ]
+ },
+ {
+  "key": "github:shihs/similarweb",
+  "url": "https://github.com/shihs/similarweb",
+  "name": "shihs/similarweb",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Similarweb crawler (21 stars) for pulling site engagement/traffic metrics, an alternative implementation to DaWe35's.",
+  "why_useful": "Backup method for the same web-traffic engagement proxy as above (gap #5) if the free-API endpoint changes.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global (per-domain)",
+  "time_coverage": "current snapshot",
+  "license": "unspecified",
+  "size_hint": "small script",
+  "last_activity": "2026-05-15",
+  "duplicate_of_holding": "DaWe35/Similarweb-free-API",
+  "hits": 1,
+  "themes": [
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "Backup method for the same web-traffic engagement proxy as above (gap #5) if the free-API endpoint changes."
+  ]
+ }
+]

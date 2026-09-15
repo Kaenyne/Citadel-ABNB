@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:mrinmayeekulkarni/mobility-patterns-in-china-during-covid-19-pandemic",
+  "url": "https://github.com/MrinmayeeKulkarni/Mobility-Patterns-in-China-During-Covid-19-Pandemic",
+  "name": "Mobility-Patterns-in-China-During-Covid-19-Pandemic",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Origin-destination mobility data for long-distance Spring Festival (Chunyun) travel among 356 Chinese prefectural cities, comparing 2019 (normal) vs 2020 (COVID lockdown) travel patterns; fields include city name/ID/province/lat-lon for both origin and destination, with weekly mobility trend breakdowns by province. Likely derived from a Baidu-migration-style mobility index (source not stated in README).",
+  "why_useful": "A methods template plus an actual historical domestic-China holiday-travel-volume dataset (356-city granularity) relevant to gap #7 (regional travel volume) and useful as an analogue/base-rate for Chinese Golden Week / Spring Festival travel intensity that could inform APAC nights seasonality.",
+  "potential": "medium",
+  "geography": "China, 356 prefectural cities",
+  "time_coverage": "Spring Festival periods, 2019 and 2020",
+  "size_hint": "city-pair OD dataset across 356 cities, size unspecified",
+  "license": "not stated",
+  "last_activity": "2022-04-05",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "A methods template plus an actual historical domestic-China holiday-travel-volume dataset (356-city granularity) relevant to gap #7 (regional travel volume) and useful as an analogue/base-rate for Chinese Golden Week / Spring Festival travel intensity that could inform APAC nights seasonality."
+  ]
+ },
+ {
+  "key": "github:arorabhavya92115/india_tourism_data_analysis_project",
+  "url": "https://github.com/arorabhavya92115/India_Tourism_data_analysis_project",
+  "name": "India_Tourism_data_analysis_project",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed official Ministry of Tourism India table 'India-Tourism-Statistics-2022-Table-2.1.4' as both .csv (6.8KB) and .xlsx (15.5KB) -- foreign tourist arrivals by nationality/country for 2021, plus a Tableau workbook (Project_Dashboard.twb), a PDF report, and a dashboard PNG. MIT licensed. Last updated 2025-08-19.",
+  "why_useful": "Addresses gap #7 (regional travel volume outside US/EU -- India foreign tourist arrivals). Small (single year/table) but is a machine-readable extraction of an official India Tourism Statistics table that is otherwise only in government PDFs; a template for pulling the full multi-year India Tourism Statistics series (published annually by the Ministry of Tourism, Government of India).",
+  "potential": "medium",
+  "geography": "India",
+  "time_coverage": "2021 (single year snapshot in Table 2.1.4)",
+  "size_hint": "~23KB of data files (csv+xlsx)",
+  "license": "MIT",
+  "last_activity": "2025-08-19",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Addresses gap #7 (regional travel volume outside US/EU -- India foreign tourist arrivals). Small (single year/table) but is a machine-readable extraction of an official India Tourism Statistics table that is otherwise only in government PDFs; a template for pulling the full multi-year India Tourism Statistics series (published annually by the Ministry of Tourism, Government of India)."
+  ]
+ },
+ {
+  "key": "github:alikhalill/saudi-tourism-data-analysis",
+  "url": "https://github.com/alikhalill/saudi-tourism-data-analysis",
+  "name": "saudi-tourism-data-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repo has dedicated data/ and kaggle_data/ directories (confirmed present via contents API, though sizes not resolvable at directory level) plus src/ processing code and a 5.9KB README describing 'Saudi tourism trends and KPIs (2015-2024)'. Likely re-exports a Kaggle Saudi tourism dataset.",
+  "why_useful": "If the kaggle_data folder holds a genuine 2015-2024 Saudi tourism KPI panel (visitor counts, spend), it would be one of the only GitHub-hosted Gulf-state tourism series; Saudi Arabia is a named target geography for this theme (Vision 2030 tourism push, competitor destination to UAE/inbound MENA travel).",
+  "potential": "medium",
+  "geography": "Saudi Arabia",
+  "time_coverage": "2015-2024 (per README)",
+  "size_hint": "unresolved -- data/ and kaggle_data/ subfolders present but contents not enumerated",
+  "license": "none declared",
+  "last_activity": "2026-09-08",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "If the kaggle_data folder holds a genuine 2015-2024 Saudi tourism KPI panel (visitor counts, spend), it would be one of the only GitHub-hosted Gulf-state tourism series; Saudi Arabia is a named target geography for this theme (Vision 2030 tourism push, competitor destination to UAE/inbound MENA travel)."
+  ]
+ },
+ {
+  "key": "github:nandhini-rasala/tourism_analytics_project",
+  "url": "https://github.com/Nandhini-rasala/Tourism_Analytics_project",
+  "name": "Tourism_Analytics_project",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'India Foreign Tourist Arrivals Analysis (2017-2021)' using Python/SQL/Power BI/Excel; contents not enumerated in this pass but description implies a multi-year (2017-2021) FTA panel, longer than the single-year table found in arorabhavya92115's repo.",
+  "why_useful": "If the underlying 2017-2021 FTA table is committed as a plain file, it is a longer India FTA time series than the other India candidates found and directly fills gap #7.",
+  "potential": "medium",
+  "geography": "India",
+  "time_coverage": "2017-2021 (per description)",
+  "size_hint": "unknown -- not enumerated (not one of the 8 contents-API calls used)",
+  "license": "none declared",
+  "last_activity": "2026-08-23",
+  "gap_targets": [
+   7
+  ],
+  "hits": 2,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "If the underlying 2017-2021 FTA table is committed as a plain file, it is a longer India FTA time series than the other India candidates found and directly fills gap #7.",
+   "Another India FTA compilation covering 2017-2021, a period gap (post-2020 recovery years) that could complement the 2012-2020 Morocco-style series found elsewhere; needs verification for whether raw data is committed vs. only a BI dashboard."
+  ]
+ },
+ {
+  "key": "github:uzayeryilmaz/nowcasting-turkeys-tourist-arrivals-and-tourism-income",
+  "url": "https://github.com/uzayeryilmaz/Nowcasting-Turkeys-tourist-arrivals-and-tourism-income",
+  "name": "Nowcasting-Turkeys-tourist-arrivals-and-tourism-income",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R thesis code (main.R, 3 commits) for nowcasting Turkey's tourist arrivals and tourism income; no data files visible in the top-level listing, likely pulls from TUIK/Turkish Ministry of Culture and Tourism series or Google Trends inside the script.",
+  "why_useful": "A working nowcasting-with-mixed-frequency-data method (gap #17, MIDAS/DFM-style) applied to a comparable travel-demand series; could be adapted or at least cite the underlying Turkish series/APIs it pulls.",
+  "potential": "medium",
+  "geography": "Turkey",
+  "time_coverage": "unknown (thesis-era, repo dated 2022)",
+  "size_hint": "single R script",
+  "license": "none stated",
+  "last_activity": "2022-10-09",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "A working nowcasting-with-mixed-frequency-data method (gap #17, MIDAS/DFM-style) applied to a comparable travel-demand series; could be adapted or at least cite the underlying Turkish series/APIs it pulls."
+  ]
+ }
+]

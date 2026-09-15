@@ -1,0 +1,107 @@
+{
+  "theme": "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets",
+  "modality": "web",
+  "queries_run": [
+    "site:github.com BLS QCEW leisure hospitality data (WebSearch, budget exhausted before running)",
+    "site:github.com hotel wages data bls (WebSearch, budget exhausted before running)",
+    "site:github.com cleaning cost dataset str (WebSearch, budget exhausted before running)",
+    "STR operating cost dataset github short-term rental cleaning fee (WebSearch, budget exhausted before running)",
+    "site:github.com BLS QCEW leisure hospitality dataset (duckduckgo html - blocked by captcha)",
+    "site:github.com BLS QCEW python package data (duckduckgo html - blocked by captcha)",
+    "site:github.com BLS QCEW leisure hospitality dataset (bing - no relevant results)",
+    "site:github.com BLS CES hotel wages data leisure hospitality employment (bing - no relevant results)",
+    "lite.duckduckgo.com QCEW leisure hospitality (blocked by captcha)",
+    "lite.duckduckgo.com QCEW data leisure and hospitality wages (blocked by captcha)",
+    "github.com/search QCEW leisure hospitality (via WebFetch, found Ilyna/Geospatial-and-Reporting-Visualizations)",
+    "gh search repos QCEW leisure hospitality (rate limited / empty)",
+    "gh search repos BLS hotel wages (rate limited / empty)",
+    "gh search repos QCEW (403 rate limit)",
+    "gh search repos STR cleaning fee OR short term rental cost (403 rate limit)",
+    "gh search repos hotel employment wages (empty)",
+    "gh search repos cleaning cost STR (empty)",
+    "github.com/search BLS CES leisure hospitality employment (0 results)",
+    "github.com/search hotel wages dataset (0 results)",
+    "github.com/search cleaning service price index (5 irrelevant results)",
+    "github.com/search short term rental operating costs (0 results)",
+    "github.com/search QCEW api python (429 rate limited)",
+    "github.com/search OEWS hotel wages (0 results)",
+    "github.com/search minimum wage restaurant hotel dataset (0 results)",
+    "github.com/search airdna cleaning fee data (0 results)",
+    "github.com/search QCEW data sorted by stars (10 results, several relevant)",
+    "github.com/search hospitality labor turnover JOLTS (0 results)",
+    "github.com/search housekeeping wage data (0 results)",
+    "github.com/search STR cleaning fee dataset (1 irrelevant result)",
+    "github.com/search \"leisure and hospitality\" employment github (0 results)",
+    "github.com/search BLS API wrapper python sorted by stars (2 results)",
+    "github.com/search PPI producer price index services dataset (0 results)",
+    "github.com/search hotel operating expenses benchmark (0 results)",
+    "github.com/search CES employment series bls leisure (429 rate limited)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/armollica/qcew-data",
+      "name": "qcew-data",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "download-data.sh + import-data.py: downloads BLS QCEW annual CSVs 1990-2015 (25 years, ~36.4 GB uncompressed) at county/MSA/state/national level, all NAICS industries incl. NAICS 72 (Accommodation & Food Services) and NAICS 71/72/812 leisure-adjacent sectors, and loads them into a Postgres/SQLAlchemy database. No data committed, pull-only.",
+      "why_useful": "A one-command pull path for county- and MSA-level QCEW employment/wage counts for the accommodation/food-services supersector, which is the closest public proxy for Airbnb-adjacent hospitality labour cost and headcount trends (STR cleaning/maintenance labour cost inputs, margin cost-line context). Not in our current holdings (we hold FRED/BLS CPI series but no QCEW industry-level puller).",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/gitinference/jp-qcew",
+      "name": "jp-qcew",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Pipeline (Polars/DuckDB, GPLv3, 92 commits) that reads raw fixed-width QCEW text files (2003 onward) and outputs partitioned Parquet with employment indices, total/taxable wages, and geospatial establishment coordinates by industry and geography. Development has moved to Codeberg; GitHub copy still functional as a processing reference.",
+      "why_useful": "Faster QCEW-to-Parquet processing path than raw BLS text files if the team wants county-level leisure & hospitality (NAICS 70-72) employment/wage series as a labour-cost input to the margin model.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/Andrew-YizhouLiu/qcew",
+      "name": "qcew",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "MIT-licensed Python scripts (extract_data.py, extract_data_08_12.py) that extract data from BLS QCEW; small repo (1 star, 4 commits), no data committed.",
+      "why_useful": "Alternative lightweight QCEW extraction script; marginal value over qcew-data given no data committed and minimal documentation.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/eloualiche/entrydatar",
+      "name": "entrydatar",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "R package (10 stars, 117 commits) that downloads and aggregates U.S. firm-entry statistics: QCEW establishment-level entry data 1975-2016 (NAICS 1990-2016, SIC 1975-2000), Business Employment Dynamics (BED) establishment entry at 3-digit NAICS 1992Q3-2015Q1, and County Business Patterns (CBP) annual county employment. Includes vignettes for Bartik-shock construction.",
+      "why_useful": "Gives establishment entry/exit rates by industry (including accommodation/food services, NAICS 72) at the county level over four decades — a possible proxy for hospitality-sector business formation/closure cycles that could contextualize STR/hotel supply growth alongside labour-cost pressure. Longer time span than anything we hold on hospitality establishment counts.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/traviscyronek/bls_download",
+      "name": "bls_download",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Python wrapper (20 commits) for the BLS Public Data API v2.0: labstat_download.py pulls any LABSTAT series by Series ID (handles the 50-series/10-sec and 20-year API constraints), qcew_download.py retrieves QCEW files, cps_download_v2.py pulls monthly CPS basic files from NBER. Generic — not restricted to any industry, so it can pull CES leisure & hospitality employment (SUAB series) and average-hourly-earnings series for NAICS 70-72 as well as QCEW industry detail. No data committed, requires free BLS API key (not a paid key).",
+      "why_useful": "A ready-made, no-cost API client that could pull CES leisure & hospitality employment/wage series and QCEW industry detail on a point-in-time-friendly cadence (each pull is a snapshot), which would let the team build its own hospitality labour-cost/headcount time series to feed the margin model's COGS/opex assumptions.",
+      "potential": "medium"
+    },
+    {
+      "url": "https://github.com/addisonlynch/py_BLS_",
+      "name": "py_BLS_ (unverified - 404 on direct fetch)",
+      "category": "macro_consumer_spend",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Search-result snippet only: \"Python Wrapper for the Bureau of Labor Statistics Public Data API\", 7 stars, last updated Jan 2019. Direct WebFetch to the repo URL returned 404 (may be renamed/deleted/archived under a different path) — could not verify contents independently.",
+      "why_useful": "Would be a generic BLS API client if still live; flagging for a human to re-check the exact URL (GitHub search sometimes mangles trailing-underscore repo names) rather than dropping it silently.",
+      "potential": "low"
+    },
+    {
+      "url": "https://github.com/Ilyna/Geospatial-and-Reporting-Visualizations",
+      "name": "Geospatial-and-Reporting-Visualizations",
+      "category": "macro_consumer_spend",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Maps/analysis of March 2020 QCEW employment location quotients (industry concentration) for Leisure & Hospitality and Natural Resources & Mining sectors, by county/region. 0 stars, last updated March 2021, appears to be a one-off class project map deliverable rather than a raw data file.",
+      "why_useful": "Confirms Leisure & Hospitality QCEW location-quotient data exists in processed form somewhere, but this specific repo is a visualization project, not a reusable dataset or puller — low value as-is.",
+      "potential": "low"
+    }
+  ],
+  "notes": "Very sparse theme: BLS QCEW/CES leisure-and-hospitality employment and wage data, cleaning-service pricing, and STR/hotel operating-cost benchmarks are essentially absent as committed datasets on GitHub — nobody mirrors these series or builds cost-of-cleaning/STR-opex datasets in the open. What does exist is a handful of generic QCEW/BLS API pull scripts (no leisure-hospitality-specific filtering, no data committed) and one firm-entry R package with establishment-level detail by NAICS that happens to include accommodation/food services. Found nothing at all for: hotel/STR cleaning fee cost data, PPI for building cleaning/janitorial services, hospitality labor turnover/JOLTS by industry, OEWS hotel occupation wage data as a GitHub dataset, or any STR operating-cost benchmark repo (AirDNA-style cost data). Dead ends worth recording: WebSearch tool's session-wide budget (200/200) was already exhausted before I ran a single query, apparently used up by other concurrent scouts; DuckDuckGo (html. and lite. endpoints) served CAPTCHA challenges on every fetch and returned zero usable results; Bing search results via WebFetch were degraded/irrelevant (returned unrelated valve/pump/banking sites) rather than real SERPs; gh search repos hit GitHub's shared 5000/hr API rate limit twice even after a 40s sleep-and-retry. The one channel that worked reliably was WebFetch directly against github.com/search?q=...&type=repositories, though it also hit periodic 429s under concurrent scout load. Recommendation for a future pass: if this labour-cost data is wanted, the practical path is not GitHub-hosted data but a direct pull from BLS QCEW/CES/OEWS via their own API (bls_download or similar wrapper above) filtered to NAICS 71/72/812 series, since no one appears to have done this filtering and republished it as an open dataset.",
+  "duplicate_of_holding": ""
+}

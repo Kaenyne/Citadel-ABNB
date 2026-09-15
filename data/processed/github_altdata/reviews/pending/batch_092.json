@@ -1,0 +1,126 @@
+[
+ {
+  "key": "github:asyed723/zoning-and-rent-burdens",
+  "url": "https://github.com/Asyed723/Zoning-and-Rent-Burdens",
+  "name": "Zoning-and-Rent-Burdens",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/R pipeline combining Census ACS data (via API), 2021 TIGER/Line shapefiles (CBSA + state boundaries), HUD Fair Market Rent + CHAS data (via HUD API), and the Wharton Residential Land Use Regulatory Index (WRLURI, dated 2020-01-15) to study how metro zoning stringency affects rent burden. No large data files committed (pulls live via API keys stored in apitext.txt/hudapitext.txt); generates merged CSVs at run time via census_data.py / hud_data.py / cleaning_data.py.",
+  "why_useful": "WRLURI + ACS rent-burden combination is a genuinely distinct angle (housing-supply elasticity by metro) that could help explain why some ABNB markets see faster STR-to-LTR conversion pressure than others; more research-package than raw feed but the WRLURI linkage is uncommon in this space.",
+  "potential": "medium",
+  "geography": "US metros (WRLURI + ACS coverage)",
+  "time_coverage": "WRLURI vintage (2018 index) + ACS multi-year estimates",
+  "size_hint": "unknown, not inspected",
+  "license": "unknown",
+  "last_activity": "2026-04-20",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "WRLURI + ACS rent-burden combination is a genuinely distinct angle (housing-supply elasticity by metro) that could help explain why some ABNB markets see faster STR-to-LTR conversion pressure than others; more research-package than raw feed but the WRLURI linkage is uncommon in this space.",
+   "Links zoning/regulatory restrictiveness to rent burden \u2014 a possible proxy for STR-adjacent housing-supply constraint by metro, tangential to gap 13 and gap 12 (regulation).",
+   "Working, reusable example of pulling HUD FMR + CHAS + WRLURI + Census ACS together at metro/county level -- a template for the host-supply-economics / STR<->LTR crossover gap (#13). Confirms HUD API + WRLURI are machine-pullable; not itself a new dataset."
+  ]
+ },
+ {
+  "key": "github:viknim/rental_analysis",
+  "url": "https://github.com/VikNim/rental_analysis",
+  "name": "rental_analysis",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Self-described 'national, county-level rent-affordability dataset that refuses to lie about what it doesn't know, plus an agent that answers questions against it'. 979 KB repo, no committed language flag (mostly data), created 10 Sep 2026, pushed 13 Sep 2026 (very fresh, active). Likely built on HUD FMR / Census ACS given phrasing; exact source files not confirmed (page did not expose file tree to WebFetch).",
+  "why_useful": "Directly targets gap 13 (long-term rental economics) with an explicit affordability/uncertainty framing; worth a manual clone-and-inspect given how recent and active it is.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "license": "none listed",
+  "last_activity": "2026-09-13",
+  "geography": "US, county-level",
+  "time_coverage": "unknown (not yet confirmed)",
+  "size_hint": "979 KB",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "Directly targets gap 13 (long-term rental economics) with an explicit affordability/uncertainty framing; worth a manual clone-and-inspect given how recent and active it is."
+  ]
+ },
+ {
+  "key": "github:haksanlulz/mcp-fairrent",
+  "url": "https://github.com/haksanlulz/mcp-fairrent",
+  "name": "mcp-fairrent",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server wrapping HUD housing data APIs: Fair Market Rents (FMR), Section 8 income limits, and a USPS ZIP-to-jurisdiction crosswalk. TypeScript, 0 stars, last updated 12 Sep 2026 (2 days before this scout).",
+  "why_useful": "A structured, queryable client for HUD FMR/income-limit data that an agent (or our pipeline) could call directly instead of hand-parsing HUD CSVs; very fresh.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "license": "unknown",
+  "last_activity": "2026-09-12",
+  "geography": "US",
+  "time_coverage": "current HUD FMR vintage",
+  "hits": 2,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like",
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "A structured, queryable client for HUD FMR/income-limit data that an agent (or our pipeline) could call directly instead of hand-parsing HUD CSVs; very fresh.",
+   "Directly matches CONTEXT.md gap 13's explicit call-out of 'HUD FMR' -- a live, current, one-call method to pull official US fair-market-rent benchmarks by ZIP/jurisdiction, useful for host-supply-economics and regional cost-of-living cross-checks. Government source (HUD), not scraped -- no ToS concern."
+  ]
+ },
+ {
+  "key": "github:nikvb/fmr8-mcp-server",
+  "url": "https://github.com/nikvb/fmr8-mcp-server",
+  "name": "fmr8-mcp-server",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Another MCP server, described as providing Section 8 Fair Market Rent lookups AND historical trends (implying some vintage/time-series access, not just current year). Pushed 20 Apr 2026.",
+  "why_useful": "If the 'historical trends' claim holds, this is a rare pointer to point-in-time/historical HUD FMR access (relevant to gap 4's vintage-series ask), not just the latest cross-section.",
+  "potential": "medium",
+  "gap_targets": [
+   13,
+   4
+  ],
+  "last_activity": "2026-04-20",
+  "geography": "US",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "If the 'historical trends' claim holds, this is a rare pointer to point-in-time/historical HUD FMR access (relevant to gap 4's vintage-series ask), not just the latest cross-section."
+  ]
+ },
+ {
+  "key": "github:apiverve/mortgagerate-api",
+  "url": "https://github.com/apiverve/mortgagerate-api",
+  "name": "mortgagerate-api",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Client/wrapper for retrieving current and historical US 30-year and 15-year fixed mortgage rates from Freddie Mac's Primary Mortgage Market Survey (weekly averages). Pushed 16 Jul 2026.",
+  "why_useful": "Mortgage rates are a lever on host supply economics (buy-vs-rent-out decision, refinancing pressure on STR hosts) named explicitly in gap 13; this is a clean historical weekly series access method.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2026-07-16",
+  "geography": "US national",
+  "time_coverage": "PMMS weekly series, historical + current",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "Mortgage rates are a lever on host supply economics (buy-vs-rent-out decision, refinancing pressure on STR hosts) named explicitly in gap 13; this is a clean historical weekly series access method."
+  ]
+ }
+]

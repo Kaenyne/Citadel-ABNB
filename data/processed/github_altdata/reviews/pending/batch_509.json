@@ -1,0 +1,653 @@
+[
+ {
+  "key": "github:david-carrasco/scrapy-idealista",
+  "url": "https://github.com/David-Carrasco/Scrapy-Idealista",
+  "name": "Scrapy-Idealista",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapy-based scraper for idealista.com real estate site (sale + rental listings), 185 stars, actively updated Aug 2026, GPL-2.0.",
+  "why_useful": "Most-starred, actively maintained Idealista scraper; a working method to pull LTR pricing for Spain if the team ever wants a live long-term-rental comparator series.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Spain",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "GPL-2.0",
+  "last_activity": "2026-08-28",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Most-starred, actively maintained Idealista scraper; a working method to pull LTR pricing for Spain if the team ever wants a live long-term-rental comparator series."
+  ]
+ },
+ {
+  "key": "github:martapanc/idealista-immobiliare-scraper",
+  "url": "https://github.com/martapanc/Idealista-Immobiliare-Scraper",
+  "name": "Idealista-Immobiliare-Scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper covering both Idealista (Spain/Italy/Portugal) and Immobiliare.it (Italy) for-sale/rental listings.",
+  "why_useful": "One of the few repos bridging two of the requested sites (Idealista + Immobiliare); extends the acquisition-method coverage to Italy.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Spain, Italy, Portugal",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "none declared",
+  "last_activity": "2026-08-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "One of the few repos bridging two of the requested sites (Idealista + Immobiliare); extends the acquisition-method coverage to Italy."
+  ]
+ },
+ {
+  "key": "github:toby-p/rightmove_webscraper.py",
+  "url": "https://github.com/toby-p/rightmove_webscraper.py",
+  "name": "rightmove_webscraper.py",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python class returning up to 1,050 live Rightmove.co.uk listings (price, property type, address, bedrooms, postcode, agent) per search as a pandas DataFrame. No committed dataset. MIT license, 282 stars, 119 forks, 83 commits. Repo itself flags that Rightmove's ToS prohibits scraping.",
+  "why_useful": "Turnkey method for pulling UK long-term-rental/for-sale asking prices by postcode/region \u2014 useful as a UK housing-cost comparator or host-economics proxy.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "United Kingdom",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-08-30",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Turnkey method for pulling UK long-term-rental/for-sale asking prices by postcode/region \u2014 useful as a UK housing-cost comparator or host-economics proxy.",
+   "Simple one-command live pull of UK asking rents/sale prices by postcode/region for LTR supply-economics work (gap 13); ToS caveat means any use is a human terms-of-service call per repo CLAUDE.md rule 6."
+  ]
+ },
+ {
+  "key": "github:alexandergirardet/london_rightmove",
+  "url": "https://github.com/alexandergirardet/london_rightmove",
+  "name": "london_rightmove",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "'Production ML rental prediction system' built on Rightmove London rental listings; likely includes a scraped dataset plus pipeline code.",
+  "why_useful": "London-specific rental panel/pipeline; could give a London LTR price series to compare against London STR (Inside Airbnb already covers London).",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "London, UK",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-06-20",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "London-specific rental panel/pipeline; could give a London LTR price series to compare against London STR (Inside Airbnb already covers London)."
+  ]
+ },
+ {
+  "key": "github:abracadabra50/open-properties",
+  "url": "https://github.com/abracadabra50/open-properties",
+  "name": "open-properties",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "CLI/MCP-server/AI-agent-skill tool normalizing live queries across 9 providers in 9 countries: Rightmove/Zoopla/ESPC (UK), Daft.ie (Ireland), ImmoScout24 (Germany), RentCast (US), REALTOR.ca DDF (Canada), Domain (Australia), Idealista (Spain/Italy/Portugal). Queries live APIs, does not persist a dataset; some providers need API keys, three (Rightmove, Daft.ie, ImmoScout24) work anonymously. MIT license, 27 commits.",
+  "why_useful": "Single tool spanning most of the theme's target sites at once (incl. Australia and Germany); could be the fastest path to a standardized multi-country LTR pull if the team ever needs one comparable panel.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "UK, Ireland, US, Canada, Germany, Australia, Spain, Italy, Portugal",
+  "time_coverage": "N/A (live tool)",
+  "size_hint": "N/A",
+  "license": "MIT",
+  "last_activity": "2026-08-27",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Single tool spanning most of the theme's target sites at once (incl. Australia and Germany); could be the fastest path to a standardized multi-country LTR pull if the team ever needs one comparable panel.",
+   "Broadest single multi-country LTR aggregation tool found; could be scheduled to build a point-in-time cross-country asking-rent panel (gap 13) without maintaining separate scrapers per country."
+  ]
+ },
+ {
+  "key": "github:asmaier/immospider",
+  "url": "https://github.com/asmaier/ImmoSpider",
+  "name": "ImmoSpider",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Crawler (215 stars, active Aug 2026) for the Immoscout24.de website, Germany's largest property portal (sale + rental).",
+  "why_useful": "Established, actively maintained German rental/property scraper; feeds a Germany LTR proxy.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany",
+  "time_coverage": "N/A (live scraper)",
+  "size_hint": "N/A",
+  "license": "none declared",
+  "last_activity": "2026-08-14",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Established, actively maintained German rental/property scraper; feeds a Germany LTR proxy."
+  ]
+ },
+ {
+  "key": "github:eyayaw/cleaning-rwi-geo-red",
+  "url": "https://github.com/eyayaw/cleaning-RWI-GEO-RED",
+  "name": "cleaning-RWI-GEO-RED",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "R scripts to clean and construct hedonic price/rent indices from RWI-GEO-RED \u2014 the Research Data Center Ruhr's (FDZ Ruhr, RWI Essen) academic microdata product built from ImmoScout24 real-estate listings (sale + rental, apartments and houses) at German district / labor-market-region level, panel back to 2007-2021 in the repo's example config. Raw data itself is restricted-access, obtained directly from FDZ Ruhr (https://www.rwi-essen.de/en/research-advice/further/research-data-center-ruhr-fdz), not committed to the repo; only cleaning/index-construction code is here.",
+  "why_useful": "Points to the most rigorous, longest-running (2007+) academic German rental/housing microdata panel available, built from ImmoScout24 \u2014 a much longer, quality-adjusted hedonic-rent-index construction than any raw scraper gives, and a genuine academic-replication-package angle. Restricted access (registration/approval needed via FDZ Ruhr), so flagged as a pointer, not an immediate pull.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany (district / labor-market-region level)",
+  "time_coverage": "2007\u20132021 (configurable; RWI-GEO-RED itself extends further)",
+  "size_hint": "national German ImmoScout24 microdata panel (millions of listings, per FDZ Ruhr documentation); this repo is code-only",
+  "license": "none declared (code); underlying RWI-GEO-RED data is restricted/academic-access",
+  "last_activity": "2025-06-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Points to the most rigorous, longest-running (2007+) academic German rental/housing microdata panel available, built from ImmoScout24 \u2014 a much longer, quality-adjusted hedonic-rent-index construction than any raw scraper gives, and a genuine academic-replication-package angle. Restricted access (registration/approval needed via FDZ Ruhr), so flagged as a pointer, not an immediate pull."
+  ]
+ },
+ {
+  "key": "github:jjchern/zillowdata",
+  "url": "https://github.com/jjchern/zillowdata",
+  "name": "zillowdata",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed zip-code-level Zillow datasets including Zip_Zri_MultiFamilyResidenceRental \u2014 i.e. a stored extract of the Zillow Rent Index (ZORI/ZRI) at zip-code granularity, monthly, with example series shown for Chicago zips (60606, 60657, 60614).",
+  "why_useful": "Zillow's own rent index (ZORI/ZRI) is named explicitly in gap #13 (Zillow ZORI/Redfin/Apartment List/Realtor.com); this repo has an actual committed zip-level extract rather than just a link to Zillow Research, though it is a small/old snapshot repo and Zillow Research's live data page is a better primary source going forward.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "United States (zip-code level, example: Chicago)",
+  "time_coverage": "monthly, exact range unconfirmed (repo dated 2020, so likely covers Zillow's ZRI history up to ~2019-2020)",
+  "size_hint": "zip-code x month panel, national but repo last touched 2020",
+  "license": "none declared",
+  "last_activity": "2020-03-11",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Zillow's own rent index (ZORI/ZRI) is named explicitly in gap #13 (Zillow ZORI/Redfin/Apartment List/Realtor.com); this repo has an actual committed zip-level extract rather than just a link to Zillow Research, though it is a small/old snapshot repo and Zillow Research's live data page is a better primary source going forward."
+  ]
+ },
+ {
+  "key": "github:orangecoding/fredy",
+  "url": "https://github.com/orangecoding/fredy",
+  "name": "fredy",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Multi-platform (ImmoScout24, Immowelt, eBay Kleinanzeigen) European apartment/house search-and-notify tool, 1,495 stars, very actively maintained.",
+  "why_useful": "Most popular repo found in this theme; a working, well-maintained multi-source German/European rental listing monitor, though built for personal notification rather than dataset export \u2014 would need adaptation to accumulate a panel.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany / Europe (ImmoScout24, Immowelt, eBay Kleinanzeigen)",
+  "time_coverage": "N/A (live monitor)",
+  "size_hint": "N/A",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Most popular repo found in this theme; a working, well-maintained multi-source German/European rental listing monitor, though built for personal notification rather than dataset export \u2014 would need adaptation to accumulate a panel."
+  ]
+ },
+ {
+  "key": "github:flathunters/flathunter",
+  "url": "https://github.com/flathunters/flathunter",
+  "name": "flathunter",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/Docker bot that scrapes live listings from ImmoScout24, Immowelt, WG-Gesucht, Kleinanzeigen (Germany), Idealista, Immobiliare, Subito (Italy/Spain) and pushes new-listing alerts via Telegram/Slack/Mattermost/Apprise. No historical data committed; keeps only a processed_ids.db to dedupe. AGPL-3.0, 1,100+ stars, 1,183 commits, actively maintained.",
+  "why_useful": "A single maintained multi-platform LTR scraper covering DE/IT/ES markets could be run periodically (by a human, terms-of-service permitting) to build a point-in-time LTR-asking-rent panel for host-supply-economics analysis (gap 13). Not itself a dataset.",
+  "potential": "medium",
+  "size_hint": "code only, no data files",
+  "time_coverage": "N/A (live scrape tool)",
+  "geography": "Germany, Italy, Spain",
+  "license": "AGPL-3.0",
+  "last_activity": "actively maintained (commit count high, recent forks/stars growth noted)",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "A single maintained multi-platform LTR scraper covering DE/IT/ES markets could be run periodically (by a human, terms-of-service permitting) to build a point-in-time LTR-asking-rent panel for host-supply-economics analysis (gap 13). Not itself a dataset."
+  ]
+ },
+ {
+  "key": "github:zacharyhampton/homeharvest",
+  "url": "https://github.com/ZacharyHampton/HomeHarvest",
+  "name": "HomeHarvest",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (MIT, 739 stars, 288 commits) that scrapes Realtor.com (not actually Zillow/Redfin despite topic tagging) for MLS-style listing data: address, MLS ID, listing status, beds/baths/sqft, list/sold price, price-per-sqft, HOA fees, list/sold/last-update dates, coordinates, county, nearby schools, agent/broker info, tax history and assessment values. Outputs to CSV/Excel/Pandas/JSON.",
+  "why_useful": "One-command pull of current US rental asking-price listings by metro from Realtor.com; usable to build a point-in-time LTR panel for host-supply-economics / STR<->LTR crossover work (gap 13). No historical data bundled -- would need to be run repeatedly going forward, so cannot backfill.",
+  "potential": "medium",
+  "size_hint": "code only, no data files",
+  "time_coverage": "N/A (live scrape, current only)",
+  "geography": "United States",
+  "license": "MIT",
+  "last_activity": "2026 (active)",
+  "gap_targets": [
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)",
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "One-command pull of current US rental asking-price listings by metro from Realtor.com; usable to build a point-in-time LTR panel for host-supply-economics / STR<->LTR crossover work (gap 13). No historical data bundled -- would need to be run repeatedly going forward, so cannot backfill.",
+   "A maintained, no-API-key scraper for current/historical-by-repeated-pull residential listing and sold-price data at the county level, usable to build a for-sale housing supply/price series as an LTR<->STR crossover input; no dedicated investor-purchase field but sold-price + tax-assessment history could support an investor-activity proxy (repeat-buyer / fast-flip detection) if pulled longitudinally."
+  ]
+ },
+ {
+  "key": "github:topics/rental-prices",
+  "url": "https://github.com/topics/rental-prices (multiple small repos: Bali Rental Market Data, Dublin Rent Predictor)",
+  "name": "Bali Rental Market Data / Dublin Rent Predictor (topic-page finds, not directly verified)",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Bali Rental Market Data: described on GitHub topic page as an open 'monthly dataset of median rents and villa sale prices per Bali area,' CC BY 4.0 licensed. Dublin Rent Predictor: uses official Irish RTB (Residential Tenancies Board) government rent data, claims 74% prediction accuracy. Neither repo's exact owner/path was confirmed by direct fetch in this pass (404s on my two owner guesses) -- follow-up scout should resolve exact URLs via search, which was unavailable to me.",
+  "why_useful": "Bali is a top ABNB APAC leisure market; a committed monthly median-rent/villa-price series there is a rare non-US/EU LTR data point that could proxy local housing-cost/STR-conversion pressure (gap 13, touches gap 7 APAC). Dublin Rent Predictor repackages Ireland's official RTB rent index, a point-in-time government series (gap 13/4).",
+  "potential": "medium",
+  "size_hint": "unknown row counts; described only via topic-page summary",
+  "time_coverage": "Bali: unspecified monthly window; Dublin: current RTB vintage",
+  "geography": "Bali, Indonesia; Dublin/Ireland",
+  "license": "Bali: CC BY 4.0; Dublin: unspecified",
+  "last_activity": "unverified -- not directly fetched",
+  "gap_targets": [
+   7,
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Bali is a top ABNB APAC leisure market; a committed monthly median-rent/villa-price series there is a rare non-US/EU LTR data point that could proxy local housing-cost/STR-conversion pressure (gap 13, touches gap 7 APAC). Dublin Rent Predictor repackages Ireland's official RTB rent index, a point-in-time government series (gap 13/4)."
+  ]
+ },
+ {
+  "key": "github:zhichensha/craigslist_rental_listing_scraper",
+  "url": "https://github.com/zhichensha/craigslist_rental_listing_scraper",
+  "name": "craigslist_rental_listing_scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium/BeautifulSoup scraper suite pulling long-term rental listings from Craigslist across the top 100 US MSAs, with weekly CSV batches, proxy management, multiprocessing, and Census-based geocoding/zipcode assignment. Scraper only \u2014 no committed listing data (local_data/ is gitignored).",
+  "why_useful": "Rental-specific (not generic classifieds) Craigslist scraper -- most direct match to the theme's Craigslist keyword hint, but stale and undocumented beyond the topic-page description; would need direct repo verification (not done this pass) before relying on its output schema.",
+  "potential": "medium",
+  "size_hint": "code only",
+  "time_coverage": "N/A (live)",
+  "geography": "United States (unspecified metro(s))",
+  "license": "unspecified",
+  "last_activity": "16 Apr 2024",
+  "gap_targets": [
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)",
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Rental-specific (not generic classifieds) Craigslist scraper -- most direct match to the theme's Craigslist keyword hint, but stale and undocumented beyond the topic-page description; would need direct repo verification (not done this pass) before relying on its output schema.",
+   "A ready-made, non-Airbnb acquisition method for a long-term-rental price panel across 100 MSAs \u2014 the natural denominator for the STR<->LTR host-supply-economics question (gap #13) and a free alternative to Zillow ZORI at finer geography if run ourselves (would need a scrape-policy decision, but Craigslist is not Airbnb)."
+  ]
+ },
+ {
+  "key": "github:talos/acris-bigquery",
+  "url": "https://github.com/talos/acris-bigquery",
+  "name": "talos/acris-bigquery",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts to pull the same NYC ACRIS dataset from NYC Open Data and load it into BigQuery for faster querying (no rows committed to repo).",
+  "why_useful": "Same ACRIS/LLC-ownership use case as acris-download but at BigQuery scale, useful if the team wants to run entity-name matching (LLC clustering) across the full ACRIS history without local DB setup.",
+  "potential": "medium",
+  "size_hint": "code only",
+  "time_coverage": "1966-present",
+  "geography": "New York City",
+  "license": "unlicensed",
+  "last_activity": "2023-10-23",
+  "duplicate_of_holding": "same underlying NYC ACRIS source as fitnr/acris-download",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Same ACRIS/LLC-ownership use case as acris-download but at BigQuery scale, useful if the team wants to run entity-name matching (LLC clustering) across the full ACRIS history without local DB setup."
+  ]
+ },
+ {
+  "key": "github:clhenrick/nyc-property-extractor",
+  "url": "https://github.com/clhenrick/nyc-property-extractor",
+  "name": "clhenrick/nyc-property-extractor",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js app providing a map-based interface to query NYC's MapPLUTO (parcel/zoning/building attributes) and ACRIS (transaction) datasets together.",
+  "why_useful": "Combines the two datasets the theme keyword hints named explicitly (PLUTO + ACRIS); useful as a reference implementation for joining parcel characteristics to ownership-transfer records for STR-supply analysis in NYC.",
+  "potential": "medium",
+  "size_hint": "app code, queries live NYC Open Data/Socrata endpoints, no bulk data committed",
+  "time_coverage": "current PLUTO/ACRIS vintages as of last update (2020)",
+  "geography": "New York City",
+  "license": "BSD-3-Clause",
+  "last_activity": "2020-03-12",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Combines the two datasets the theme keyword hints named explicitly (PLUTO + ACRIS); useful as a reference implementation for joining parcel characteristics to ownership-transfer records for STR-supply analysis in NYC."
+  ]
+ },
+ {
+  "key": "github:ryansherby/redfinscraper",
+  "url": "https://github.com/ryansherby/RedfinScraper",
+  "name": "ryansherby/RedfinScraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Actively maintained (100 stars, updated 2 Sep 2026) Python library that calls Redfin's unofficial 'Stingray' API to bulk-pull for-sale listings and sold-home records (configurable 1mo-5yr sold windows) by zip code. No data committed; requires user-supplied zip list. README explicitly warns of Redfin IP-ban risk for misuse.",
+  "why_useful": "Most substantial Redfin access tool found; could be adapted to build a for-sale/sold-inventory and price time series (a housing-supply proxy for STR host economics) in markets Airbnb over-indexes on, though it does not natively flag investor/LLC buyers.",
+  "potential": "medium",
+  "size_hint": "code only; scrape volume limited by Redfin's own rate limits",
+  "time_coverage": "current + trailing 1mo-5yr sold windows at scrape time (not historical archive)",
+  "geography": "US, any Redfin-covered zip code",
+  "license": "MIT",
+  "last_activity": "2026-09-02",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Most substantial Redfin access tool found; could be adapted to build a for-sale/sold-inventory and price time series (a housing-supply proxy for STR host economics) in markets Airbnb over-indexes on, though it does not natively flag investor/LLC buyers."
+  ]
+ },
+ {
+  "key": "github:cfpb/hmda-platform",
+  "url": "https://github.com/cfpb/hmda-platform",
+  "name": "cfpb/hmda-platform",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "CFPB's official regulatory-technology platform for Home Mortgage Disclosure Act (HMDA) filings: parses/validates pipe-delimited Transmission (TS) and Loan Application Register (LAR) files, and exposes filing APIs, a data browser, analytics dashboards and a rate-spread calculator with documented REST endpoints for pulling loan-level mortgage origination data (loan amount, rate spread, applicant/property geography, action taken) nationwide. 11,916 commits, CC0-1.0 (public domain).",
+  "why_useful": "HMDA is the authoritative, free, loan-level US mortgage-origination dataset (rates, loan amounts, geography, applicant/property type) back to the 1970s at aggregate level and ~2007+ at loan level via the modern platform \u2014 a genuine free mortgage-rate/lending-volume source for the housing-supply/investor-purchase thread (mortgage rates + county-level lending activity), reachable via the linked Data Browser/S3 dumps rather than this repo's own commits.",
+  "potential": "medium",
+  "size_hint": "platform source code only in this repo; external HMDA public LAR datasets run into tens of millions of loan records per year",
+  "time_coverage": "modern HMDA platform ~2017-present; HMDA aggregate data back to 1975 via Data Browser",
+  "geography": "United States, county/tract level",
+  "license": "CC0-1.0 (per CFPB open-source policy)",
+  "last_activity": "recent (actively maintained CFPB repo)",
+  "gap_targets": [
+   13
+  ],
+  "hits": 2,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "HMDA is the authoritative, free, loan-level US mortgage-origination dataset (rates, loan amounts, geography, applicant/property type) back to the 1970s at aggregate level and ~2007+ at loan level via the modern platform \u2014 a genuine free mortgage-rate/lending-volume source for the housing-supply/investor-purchase thread (mortgage rates + county-level lending activity), reachable via the linked Data Browser/S3 dumps rather than this repo's own commits.",
+   "Provides a maintained, documented method to pull nationwide loan-level mortgage rate/origination data by county/tract and year -- directly useful for a mortgage-rate and housing-finance-conditions series feeding the host-supply-economics work in gap 13; CC0 licensing removes any reuse friction."
+  ]
+ },
+ {
+  "key": "github:leoyrh/mcp-atlas",
+  "url": "https://github.com/LEOyrh/mcp-atlas",
+  "name": "mcp-atlas",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server (npm package @urbankitstudio/mcp-atlas) providing a uniform query interface over ~137-155 US county parcel ArcGIS REST endpoints; tools for owner/taxpayer name lookup (case-insensitive partial match, useful for identifying LLC-named owners), APN lookup, and site/mailing address retrieval. MIT license, 13 commits, 2026 copyright.",
+  "why_useful": "A ready-made client for pulling county assessor/parcel-owner records (including LLC-style owner names) across a large multi-state county set without hand-building per-county ArcGIS queries -- directly on-theme for 'county assessor/parcel data' and 'LLC ownership'.",
+  "potential": "medium",
+  "geography": "137-155 US counties, multi-state",
+  "time_coverage": "current parcel-roll snapshot (live query, not historical)",
+  "license": "MIT",
+  "last_activity": "2026 (recent, per repo copyright)",
+  "size_hint": "13 commits, thin wrapper -- no committed dataset, live API pass-through",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "A ready-made client for pulling county assessor/parcel-owner records (including LLC-style owner names) across a large multi-state county set without hand-building per-county ArcGIS queries -- directly on-theme for 'county assessor/parcel data' and 'LLC ownership'."
+  ]
+ },
+ {
+  "key": "github:openaddresses/openaddresses",
+  "url": "https://github.com/openaddresses/openaddresses",
+  "name": "openaddresses",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Global collection (14,515+ commits) of source manifests (CC0 JSON metadata) for address, cadastral parcel, building footprint and street-centerline datasets, with a `us-data/` tree covering many US counties/states; processed outputs downloadable from openaddresses.io. Source metadata CC0-1.0; repo code BSD-3; underlying data retains original licenses.",
+  "why_useful": "A discovery/aggregation layer over hundreds of county and municipal parcel/cadastral data sources (many of which include building footprints and, indirectly, parcel counts usable as a housing-stock/permit-adjacent proxy) -- fills the 'county assessor/parcel data' item at national/international scale rather than one county at a time.",
+  "potential": "medium",
+  "geography": "US (most states) plus international",
+  "time_coverage": "snapshot of current source data, updated periodically since project inception (~2014)",
+  "license": "CC0-1.0 (source metadata); BSD-3 (code); original licenses for underlying data",
+  "last_activity": "active, large commit history",
+  "size_hint": "hundreds of per-county/city source definitions",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS",
+   "recovered from journal"
+  ],
+  "why_all": [
+   "A discovery/aggregation layer over hundreds of county and municipal parcel/cadastral data sources (many of which include building footprints and, indirectly, parcel counts usable as a housing-stock/permit-adjacent proxy) -- fills the 'county assessor/parcel data' item at national/international scale rather than one county at a time.",
+   "Fastest index of county/city parcel and address datasets, for cross-referencing STR registry addresses against county parcel/ownership records (absentee-owner / investment-property share by market)."
+  ]
+ },
+ {
+  "key": "github:topics/building-permits",
+  "url": "https://github.com/topics/building-permits",
+  "name": "GitHub topic: building-permits (index page, not a single repo)",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Index of 18 repos tagged building-permits, notably: OpenPermitFees (machine-readable US building-permit fee schedules with sourcing), Shovels API client/profile repos (claims 130M+ building permits across 1,800+ US jurisdictions, 2.3M+ contractor profiles -- paid API, not a free dataset), a Vancouver building-permits Dash exploration tool, a San Diego renovation-permit analytics repo, and a BuildData Canadian construction/real-estate API sample.",
+  "why_useful": "Surfaces the closest thing to a national building-permit aggregator on GitHub (Shovels), and machine-readable permit-fee schedules (OpenPermitFees) that proxy local construction-cost/regulatory friction feeding into new STR/LTR unit supply -- worth flagging even though most are thin wrappers over paid APIs.",
+  "potential": "medium",
+  "geography": "primarily US, city/county level; one Canadian, one Vancouver-specific",
+  "time_coverage": "varies; Shovels claims broad historical jurisdiction coverage (unverified, paid API)",
+  "license": "varies by repo",
+  "last_activity": "mixed, several recent (2026) per description tone",
+  "size_hint": "Shovels claims 130M+ permit records nationally (behind paid API, not verified directly)",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Surfaces the closest thing to a national building-permit aggregator on GitHub (Shovels), and machine-readable permit-fee schedules (OpenPermitFees) that proxy local construction-cost/regulatory friction feeding into new STR/LTR unit supply -- worth flagging even though most are thin wrappers over paid APIs."
+  ]
+ },
+ {
+  "key": "github:topics/parcel-data",
+  "url": "https://github.com/topics/parcel-data",
+  "name": "GitHub topic: parcel-data (index page)",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Index of 7 repos: CityOfDetroit/rental_map (registered-rental-property map for Detroit, Leaflet/ESRI), joshvern/citylens-web (NYC parcel intelligence + aerial/3D site analysis), Center-for-Land-Economics/civicmapper (land-value/improvement maps across 35+ cities, Python), property-boundary/property-boundary (PostGIS/GeoPandas cadastral ETL pipeline framework), pdiegel/NC-Parcel-Search (North Carolina parcel search webapp).",
+  "why_useful": "CityOfDetroit/rental_map is a committed, city-published registered-rental-property dataset (STR/LTR host-supply proxy for a mid-size US market outside our current 13-city Inside Airbnb panel); civicmapper aggregates land-value data across 35+ cities and could be a cross-check for county assessor coverage.",
+  "potential": "medium",
+  "geography": "Detroit; multi-city (35+, civicmapper); North Carolina",
+  "time_coverage": "current registry snapshots",
+  "license": "varies by repo",
+  "last_activity": "not verified individually",
+  "size_hint": "Detroit rental registry: city-wide; civicmapper: 35+ cities",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "CityOfDetroit/rental_map is a committed, city-published registered-rental-property dataset (STR/LTR host-supply proxy for a mid-size US market outside our current 13-city Inside Airbnb panel); civicmapper aggregates land-value data across 35+ cities and could be a cross-check for county assessor coverage."
+  ]
+ },
+ {
+  "key": "github:topics/hmda",
+  "url": "https://github.com/topics/hmda",
+  "name": "GitHub topic: hmda (index page)",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Index of HMDA-related repos, notably a described 'hmda_database' project (harmonized DuckDB build of 40+ years of HMDA mortgage data, 685M rows, one-command build) plus several fair-lending/disparity analysis repos (hmda-racial-disparities, CATE-HMDA-Heterogeneous-Effects, hmda-analyzer, fair-lending-screener, fairlens) built on public HMDA loan-level data.",
+  "why_useful": "If the 'hmda_database' project (or an equivalent) is real and reproducible, a 685M-row, 40-year harmonized mortgage-origination panel in DuckDB would be a very strong national mortgage-rate/lending-volume time series for the housing-supply-economics gap; flagged as unverified since a direct repo fetch under the described owner/name 404'd and the exact URL could not be confirmed within budget.",
+  "potential": "medium",
+  "geography": "United States, national with geographic (state/county/tract) breakdowns",
+  "time_coverage": "described as 40+ years (roughly 1980s/1990s-present, matching HMDA history)",
+  "license": "unverified (HMDA source data is public domain)",
+  "last_activity": "unverified",
+  "size_hint": "685M rows (as described in topic listing; not independently confirmed)",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "If the 'hmda_database' project (or an equivalent) is real and reproducible, a 685M-row, 40-year harmonized mortgage-origination panel in DuckDB would be a very strong national mortgage-rate/lending-volume time series for the housing-supply-economics gap; flagged as unverified since a direct repo fetch under the described owner/name 404'd and the exact URL could not be confirmed within budget."
+  ]
+ },
+ {
+  "key": "github:cdcoonce/housing-commute-analysis",
+  "url": "https://github.com/cdcoonce/housing-commute-analysis",
+  "name": "housing-commute-analysis",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reproducible pipeline integrating ACS socioeconomic/commute data, Zillow ZORI rent estimates, and OpenStreetMap transit features at the ZCTA level for Phoenix, Memphis, Dallas-Fort Worth, and Los Angeles, modeling rent burden and spatial equity.",
+  "why_useful": "ZCTA-level rent-burden construction (ACS + ZORI) for 4 major US metros including two Inside-Airbnb-adjacent markets is a usable template for a tract/ZCTA rent-burden panel, addressing gap #13's host-economics angle in metros we already track supply for.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Phoenix, Memphis, Dallas-Fort Worth, Los Angeles (ZCTA level)",
+  "time_coverage": "unspecified; ACS + current ZORI vintages",
+  "size_hint": "small repo (2 stars), reproducible pipeline not a bulk static dump",
+  "license": "unknown",
+  "last_activity": "2026-09-05",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "ZCTA-level rent-burden construction (ACS + ZORI) for 4 major US metros including two Inside-Airbnb-adjacent markets is a usable template for a tract/ZCTA rent-burden panel, addressing gap #13's host-economics angle in metros we already track supply for."
+  ]
+ },
+ {
+  "key": "github:housing-data-coalition/oca",
+  "url": "https://github.com/Housing-Data-Coalition/oca",
+  "name": "Housing-Data-Coalition/oca",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "ETL pipeline (Python) that produces 11 deidentified CSV tables from NYS Office of Court Administration NYC Housing Court filings: oca_index, oca_causes (nonpayment vs. holdover etc.), oca_addresses, oca_parties, oca_events, oca_appearances/outcomes, oca_motions, oca_decisions, oca_judgments, oca_warrants (eviction warrants). Covers all NYC landlord-tenant cases, addresses geocoded for tract-level aggregation.",
+  "why_useful": "Nonpayment eviction-filing rate by address/tract is a direct, high-frequency rent-burden/housing-distress signal that can be paired with Inside Airbnb NYC listing density to test STR-driven displacement or affordability pressure claims (gap #13/#14 adjacent).",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "Not stated precisely in fetched page; OCA records span recent years (court filings ongoing)",
+  "size_hint": "11 CSV tables, city-wide court-filing volume (likely hundreds of thousands of rows across tables)",
+  "license": "CC BY-NC-SA 4.0 (attribution to OCA, Right to Counsel Coalition, BetaNYC)",
+  "last_activity": "not surfaced precisely; org (Housing Data Coalition) appears active with recent repos",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "Nonpayment eviction-filing rate by address/tract is a direct, high-frequency rent-burden/housing-distress signal that can be paired with Inside Airbnb NYC listing density to test STR-driven displacement or affordability pressure claims (gap #13/#14 adjacent)."
+  ]
+ },
+ {
+  "key": "github:amangang3/justlanded",
+  "url": "https://github.com/amangang3/Justlanded",
+  "name": "Justlanded",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Python/Playwright scraper targeting Blueground's listing API (despite the repo description also naming Furnished Finder, only Blueground is implemented), with committed sample Excel outputs (listings.xlsx, sf-listings.xlsx) containing beds/baths/sqft/price-per-month/move-in/min-stay/address/city/state/lat/lon/source/link columns. Built as an MIT-course (15.573) group project; 10 commits.",
+  "why_useful": "A working, verified acquisition method plus sample committed data for Blueground furnished/corporate-housing pricing \u2014 directly on-theme (coliving/corporate housing) and a possible template for pulling comparable mid-term-rental pricing to compare against ABNB long-stay ADR.",
+  "potential": "medium",
+  "gap_targets": [],
+  "geography": "at least San Francisco (sf-listings.xlsx); scraper is general",
+  "time_coverage": "point-in-time snapshot, one-off project",
+  "size_hint": "two small Excel sample files + scraper code",
+  "license": "not stated",
+  "last_activity": "10 commits, course project, dated activity unclear",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)"
+  ],
+  "why_all": [
+   "A working, verified acquisition method plus sample committed data for Blueground furnished/corporate-housing pricing \u2014 directly on-theme (coliving/corporate housing) and a possible template for pulling comparable mid-term-rental pricing to compare against ABNB long-stay ADR."
+  ]
+ }
+]

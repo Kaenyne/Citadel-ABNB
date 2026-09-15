@@ -1,0 +1,140 @@
+[
+ {
+  "key": "github:rendell/tes_merging",
+  "url": "https://github.com/rendell/TES_merging",
+  "name": "TES_merging",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small repo (README.md, a 'code' file ~68KB, a 'tables' file ~18KB) that merges multiple national Tourism Expenditure Surveys (TES) into one panel. No commit-date/license metadata surfaced; likely academic/personal project, country/scope not confirmed from directory listing alone (would need to read the code file to identify which country's TES).",
+  "why_useful": "Directly on-theme (gap area: national tourism expenditure surveys under gap #6/#7 consumer/tourism spend panels) but small and unverified scope; worth a closer read if someone wants a template for stitching TES vintages into one series.",
+  "potential": "low",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "geography": "unclear (needs code inspection)",
+  "time_coverage": "unknown",
+  "size_hint": "code file ~68KB, tables file ~18KB",
+  "license": "none declared",
+  "last_activity": "unknown (not in listing metadata returned)",
+  "hits": 1,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "Directly on-theme (gap area: national tourism expenditure surveys under gap #6/#7 consumer/tourism spend panels) but small and unverified scope; worth a closer read if someone wants a template for stitching TES vintages into one series."
+  ]
+ },
+ {
+  "key": "github:marouane-daaghi/global-tourism-analytics-hayya-morocco",
+  "url": "https://github.com/marouane-daaghi/global-tourism-analytics-hayya-morocco",
+  "name": "global-tourism-analytics-hayya-morocco",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed UN Tourism / UNWTO outbound-departures Excel file (UN_Tourism_outbound_departures_12_2025.xlsx, dated Dec 2025) covering 1995-2030 (historical + UNWTO forecast horizon), plus a forecasting notebook (_Hayya_Morocco_tourism_Analytics.ipynb) built for the 2030 Hayya Morocco / 2030 World Cup tourism-demand context. MIT licence, updated 16 Apr 2026.",
+  "why_useful": "A relatively fresh (Dec 2025 vintage) global outbound-tourism-departures snapshot with a forward path to 2030; could serve as an independent global travel-demand cross-check, and the forecasting methodology (applied to a global mega-event) is a loose analogue for the FIFA World Cup 2026 gap (#11).",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   11
+  ],
+  "duplicate_of_holding": "",
+  "license": "MIT",
+  "last_activity": "2026-04-16",
+  "geography": "Global outbound (per-country departures)",
+  "time_coverage": "1995-2030 (2030 is UNWTO projection)",
+  "size_hint": "1 xlsx file, unspecified rows",
+  "hits": 2,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys",
+   "Payments and merchant data: Visa/Mastercard SpendingPulse releases, Stripe/Adyen indexes, remittance and cross-border card data, tourism receipts from balance of payments"
+  ],
+  "why_all": [
+   "A relatively fresh (Dec 2025 vintage) global outbound-tourism-departures snapshot with a forward path to 2030; could serve as an independent global travel-demand cross-check, and the forecasting methodology (applied to a global mega-event) is a loose analogue for the FIFA World Cup 2026 gap (#11).",
+   "A dated (Dec-2025) UNWTO outbound-departures snapshot; the specific pull date makes it usable as a vintage point-in-time reference for global outbound travel volumes, relevant to gap #4 (vintage series) and gap #7 (regional travel volume) even though the country/geography breakdown isn't confirmed from the README alone."
+  ]
+ },
+ {
+  "key": "github:chelsea-haddad/tourism_dashboard_powerbi",
+  "url": "https://github.com/chelsea-haddad/Tourism_Dashboard_PowerBI",
+  "name": "Tourism_Dashboard_PowerBI",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Power BI dashboard project drawing on UNWTO, World Bank, OECD, and Kaggle tourism data; likely includes an underlying data extract feeding the .pbix file (not independently verified beyond the description).",
+  "why_useful": "Possible multi-source tourism panel (UNWTO+World Bank+OECD) bundled for BI use; low confidence without inspecting the .pbix data model.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "license": "none declared",
+  "last_activity": "2023-11-09",
+  "geography": "unspecified (likely global/regional)",
+  "time_coverage": "unknown",
+  "size_hint": "Power BI file, data extract size unknown",
+  "hits": 1,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys"
+  ],
+  "why_all": [
+   "Possible multi-source tourism panel (UNWTO+World Bank+OECD) bundled for BI use; low confidence without inspecting the .pbix data model."
+  ]
+ },
+ {
+  "key": "github:emilbert/tourvis",
+  "url": "https://github.com/EmilBert/TourVis",
+  "name": "TourVis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "A course-project visualization of the UNWTO (UN World Tourism Organization) basic tourism statistics database, with a committed data.geojson file. Coverage is global (UNWTO country-level tourism flow data), not China-specific, so China/HK/Macau arrivals would only be a subset if present in the geojson; years/metrics not confirmed from the listing.",
+  "why_useful": "If it contains bilateral tourist-flow matrices (origin-destination), that is a finer-grained dataset than aggregate arrivals counts and could support cross-border-share proxies (gap #20), but it is old (2022) and small.",
+  "potential": "low",
+  "gap_targets": [
+   20,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "license": "none declared",
+  "last_activity": "2022-02-11",
+  "geography": "global (UNWTO flow data)",
+  "time_coverage": "unknown, pre-2022",
+  "size_hint": "small student project",
+  "hits": 2,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys",
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "If it contains bilateral tourist-flow matrices (origin-destination), that is a finer-grained dataset than aggregate arrivals counts and could support cross-border-share proxies (gap #20), but it is old (2022) and small.",
+   "A committed, geocoded UNWTO tourism-flow snapshot could give a free cross-check on inbound/outbound arrivals for China, Hong Kong, and Macau if the geojson includes country-level UNWTO arrivals figures \u2014 worth a closer file-level check since UNWTO country data is otherwise paywalled/hard to bulk-pull."
+  ]
+ },
+ {
+  "key": "github:chenmo1212/baidu_qx",
+  "url": "https://github.com/Chenmo1212/baidu_qx",
+  "name": "baidu_qx",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper (13 stars, last updated June 2023) for Baidu migration data at city/province/country granularity \u2014 alternative/older client for the same Baidu Qianxi mobility index as _baiduqianxi_ above.",
+  "why_useful": "Secondary/backup implementation of the Baidu migration-index pull; useful if the primary client repo goes stale, same rationale as above (China domestic mobility proxy).",
+  "potential": "low",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "geography": "China",
+  "time_coverage": "through mid-2023 (repo activity), index itself ongoing",
+  "size_hint": "scraper only",
+  "license": "unknown",
+  "last_activity": "2023-06",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Secondary/backup implementation of the Baidu migration-index pull; useful if the primary client repo goes stale, same rationale as above (China domestic mobility proxy)."
+  ]
+ }
+]

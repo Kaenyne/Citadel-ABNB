@@ -1,0 +1,142 @@
+[
+ {
+  "key": "github:oludolapoanalyst/airbnb",
+  "url": "https://github.com/OludolapoAnalyst/AirBnB",
+  "name": "OludolapoAnalyst/AirBnB",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "The well-known 'Airbnb Prices in European Cities' collection: 10 European cities (Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, London, Paris, Rome, Vienna), each with a *_weekdays.csv and *_weekends.csv file (20 CSVs total). Fields include price, room type, superhost status, amenity counts, distance to center, attraction/restaurant indices. Original source scrape circa 2018-19, CC0 licensed. This repo re-hosts/re-packages it for a SQL+PowerBI project.",
+  "why_useful": "Multi-city European snapshot with a weekday/weekend price split not present in our Inside Airbnb panel (which has no Rome/Paris/London day-of-week price granularity for that vintage); useful as an older cross-section comparator for European ADR levels/gap 1 (older archived data) and gap 20 (day-of-week demand pattern proxy).",
+  "potential": "medium",
+  "gap_targets": [
+   1
+  ],
+  "geography": "10 EU cities",
+  "time_coverage": "circa 2018-2019 single cross-section (per weekday/weekend split)",
+  "size_hint": "20 CSV files, city-level listing counts (hundreds-thousands/city typical of this Kaggle dataset)",
+  "license": "CC0 1.0 (public domain)",
+  "last_activity": "unknown, repo appears smaller/hobby project",
+  "duplicate_of_holding": "Same underlying source data as widely-mirrored 'Airbnb Prices in European Cities' Kaggle set; not identical to our held 13-city Inside Airbnb panel (different cities: Athens, Budapest, Vienna, Berlin not all in our panel) or vintage (pre-Dec-2022).",
+  "hits": 2,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Multi-city European snapshot with a weekday/weekend price split not present in our Inside Airbnb panel (which has no Rome/Paris/London day-of-week price granularity for that vintage); useful as an older cross-section comparator for European ADR levels/gap 1 (older archived data) and gap 20 (day-of-week demand pattern proxy).",
+   "Yet another mirror of the same 10-EU-city dataset family; low incremental value beyond the primary kraina/HF and Zenodo copies but confirms the dataset is widely re-hosted and stable."
+  ]
+ },
+ {
+  "key": "github:dsbb1234/airbnb-seattle-and-boston",
+  "url": "https://github.com/dsbb1234/AirBnB-Seattle-and-Boston",
+  "name": "dsbb1234/AirBnB-Seattle-and-Boston",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "The classic 2016 Airbnb-published Seattle + Boston open dataset (listings, calendar, reviews for both cities), used to compare host vs superhost behavior.",
+  "why_useful": "Two US cities (Seattle, Boston) not in our current 13-city Inside Airbnb panel, from a 2016 vintage -- older than anything we hold and a different original source (Airbnb's own 2016 Kaggle release, not Inside Airbnb), directly relevant to gap 1 (older archived dumps).",
+  "potential": "medium",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Seattle, Boston",
+  "time_coverage": "2016",
+  "size_hint": "listings/calendar/reviews CSVs per city, Kaggle-scale (few thousand listings each)",
+  "license": "not stated",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "New cities and an older (2016) vintage than anything in our current panel; this is the commonly-mirrored 2016 Airbnb Seattle/Boston Kaggle set, so many equivalent mirrors exist on GitHub.",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Two US cities (Seattle, Boston) not in our current 13-city Inside Airbnb panel, from a 2016 vintage -- older than anything we hold and a different original source (Airbnb's own 2016 Kaggle release, not Inside Airbnb), directly relevant to gap 1 (older archived dumps)."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/kraina/airbnb",
+  "url": "https://huggingface.co/datasets/kraina/airbnb",
+  "name": "kraina/airbnb (mirror of Gy\u00f3di & Nawaro EU-cities dataset)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "51.7k row Parquet dataset (25.5k weekday + 26.2k weekend offers) across 10 European cities (Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, London, Paris, Rome, Vienna), originally the supplementary data for Gy\u00f3di & Nawaro (2021) 'Determinants of Airbnb prices in European cities: A spatial econometrics approach', mirrored from Zenodo (10.5281/zenodo.4446043) onto Hugging Face by the Kraina geospatial research group. Fields include price, room type, host status (superhost), ratings/review count, capacity, bedrooms, distance to center, and a TripAdvisor-based attractiveness index. CC-BY-4.0.",
+  "why_useful": "A cross-sectional but multi-city (10 EU cities), academically-vetted realised-price dataset with weekday/weekend price splits \u2014 useful as an independent check on ADR/seasonality mix assumptions for EMEA, and the underlying Zenodo record + paper's methodology (spatial regression on price determinants) is a candidate replication package for the ADR decomposition workstream. Not new geography beyond what we hold (Paris, Barcelona, Rome overlap our 13-city panel) but adds Athens, Budapest, Lisbon, Vienna and a peer-reviewed price-driver framework.",
+  "potential": "medium",
+  "geography": "10 EU cities (Amsterdam, Athens, Barcelona, Berlin, Budapest, Lisbon, London, Paris, Rome, Vienna)",
+  "time_coverage": "single cross-sectional pull (~2018-2020 per paper vintage; exact scrape date not stated on HF page)",
+  "size_hint": "51.7k rows, Parquet",
+  "license": "CC-BY-4.0",
+  "last_activity": "Zenodo record published 2021; HF mirror undated",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "Partial overlap in geography with our 13-city Inside Airbnb panel (Paris, Barcelona, Rome) but different data source/vintage and includes weekday/weekend price split we do not have",
+  "hits": 4,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "Data-hosting mirrors pointed at from GitHub: Zenodo, Figshare, Harvard Dataverse, HuggingFace, Kaggle, Mendeley Data collections on Airbnb, STR, hotels, tourism"
+  ],
+  "why_all": [
+   "A cross-sectional but multi-city (10 EU cities), academically-vetted realised-price dataset with weekday/weekend price splits \u2014 useful as an independent check on ADR/seasonality mix assumptions for EMEA, and the underlying Zenodo record + paper's methodology (spatial regression on price determinants) is a candidate replication package for the ADR decomposition workstream. Not new geography beyond what we hold (Paris, Barcelona, Rome overlap our 13-city panel) but adds Athens, Budapest, Lisbon, Vienna and a peer-reviewed price-driver framework.",
+   "An academically-curated, ready-to-load 10-European-city Airbnb dataset outside our current 13-city panel; the Kraina AI GitHub org (https://github.com/kraina-ai) also hosts the geospatial processing tooling used to build it, so it is GitHub-adjacent even though the data itself sits on HF.",
+   "Possible additional/older European-city cross-section beyond our current 13-city panel, worth a size/date check, but appears to be a single cross-sectional snapshot rather than a calendar/occupancy time series.",
+   "A static but clean 10-city European cross-section (price vs. distance/amenity structure) that is not in our current 13-city Inside Airbnb panel composition; useful as an ADR-structure cross-check for EMEA pricing work, though it is a single-period snapshot, not a time series."
+  ]
+ },
+ {
+  "key": "github:tranthienmy22/airbnb-listings-analysis-5-asian-cities",
+  "url": "https://github.com/tranthienmy22/airbnb-listings-analysis-5-asian-cities",
+  "name": "tranthienmy22/airbnb-listings-analysis-5-asian-cities",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Five committed Inside Airbnb CSVs (Bangkok, Tokyo, Taipei, Hong Kong, Singapore) dated June 2023, plus a Power BI dashboard. Explicit host-professionalisation analysis: host listing-count distributions per city (e.g. ~2/3 of Bangkok hosts single-listing; ~1/3 of Hong Kong hosts have 100+ listings; top-10 hosts hold 6.7% of all listings), and discussion of how Japan's 2018 registration law and Singapore's minimum-stay rules reshaped host composition.",
+  "why_useful": "APAC-city Inside Airbnb snapshots (Bangkok, Tokyo, Taipei, Hong Kong, Singapore) that are NOT in our current 13-city / 120-market panel roster as far as this scout can tell from CONTEXT.md's named cities \u2014 worth checking whether these fill APAC geography gaps (gap #7 adjacent) even though the underlying source is Inside Airbnb (so any value is in already-committed vintage/geography we may not have captured, not a new data source).",
+  "potential": "medium",
+  "geography": "Bangkok, Tokyo, Taipei, Hong Kong, Singapore",
+  "time_coverage": "single snapshot, date unconfirmed (not fetched in depth)",
+  "size_hint": "5 city-level CSVs",
+  "license": "not verified",
+  "last_activity": "not verified",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "Source is Inside Airbnb (which we hold for other cities); these 5 APAC cities may or may not overlap our 120-market Jun-2026 cohort \u2014 needs a direct check against that cohort's city list",
+  "hits": 2,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "STR listing-level histories compiled by researchers (listing survival, churn, professionalisation, multi-year listing IDs across cities)"
+  ],
+  "why_all": [
+   "APAC-city Inside Airbnb snapshots (Bangkok, Tokyo, Taipei, Hong Kong, Singapore) that are NOT in our current 13-city / 120-market panel roster as far as this scout can tell from CONTEXT.md's named cities \u2014 worth checking whether these fill APAC geography gaps (gap #7 adjacent) even though the underlying source is Inside Airbnb (so any value is in already-committed vintage/geography we may not have captured, not a new data source).",
+   "Gives a committed, ready APAC multi-listing / professionalisation cross-section (5 cities) at a single June-2023 vintage \u2014 useful as a professionalisation benchmark for APAC markets where our current 123-market reviews panel may have thinner host-level detail; also a template for a professionalisation metric (listings-per-host) we could apply directly."
+  ]
+ },
+ {
+  "key": "other:https://zenodo.org/records/4446043",
+  "url": "https://zenodo.org/records/4446043",
+  "name": "Zenodo: Determinants of Airbnb prices in European cities (supplementary data)",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Original Zenodo record (DOI 10.5281/zenodo.4446043) for the Gy\u00f3di & Nawaro paper: per-city weekday/weekend CSVs for 10 EU cities plus the Python spatial-econometrics replication scripts (not just the flat data \u2014 includes the modeling code).",
+  "why_useful": "This is the authoritative source behind the kraina/HF and multiple GitHub mirrors above; unlike the mirrors, it also ships the actual spatial-regression replication code, which is a genuine academic replication package (methods) for price-determinant modeling, relevant to the ADR decomposition workstream (methods gap #17 adjacent).",
+  "potential": "medium",
+  "geography": "10 EU cities",
+  "time_coverage": "single cross-section, ~2018-2019 vintage",
+  "size_hint": "per-city weekday/weekend CSVs + Python scripts",
+  "license": "not explicitly stated on page (paper is Elsevier; supplementary data typically CC-BY)",
+  "last_activity": "record published circa 2021",
+  "gap_targets": [
+   2,
+   17
+  ],
+  "duplicate_of_holding": "Source dataset for kraina/airbnb, BercinErsoz, and OludolapoAnalyst GitHub mirrors above",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "This is the authoritative source behind the kraina/HF and multiple GitHub mirrors above; unlike the mirrors, it also ships the actual spatial-regression replication code, which is a genuine academic replication package (methods) for price-determinant modeling, relevant to the ADR decomposition workstream (methods gap #17 adjacent)."
+  ]
+ }
+]

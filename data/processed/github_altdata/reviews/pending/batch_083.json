@@ -1,0 +1,122 @@
+[
+ {
+  "key": "github:samd22/hotel-booking-demand-dataset",
+  "url": "https://github.com/samd22/Hotel-Booking-Demand-Dataset",
+  "name": "Hotel-Booking-Demand-Dataset (samd22)",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Committed copy of the Antonio/Almeida/Nunes (2019, Data in Brief) Portugal H1/H2 hotel booking demand CSVs (Lisbon resort + Algarve city hotel, ~119k reservations 2015-2017, with lead_time, is_canceled, adr, stays_in_week/weekend_nights, arrival_date, country, market_segment, deposit_type, previous_cancellations) plus a cancellation-prediction notebook.",
+  "why_useful": "This is the exact dataset the team already holds per CONTEXT.md; flagged only as a mirror/backup copy with the raw CSV committed to the repo (useful if the original Kaggle/ScienceDirect source becomes unavailable). No new years or markets beyond what is already held.",
+  "potential": "low",
+  "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held per CONTEXT.md line 28",
+  "geography": "Portugal (Lisbon, Algarve)",
+  "time_coverage": "2015-07 to 2017-08",
+  "size_hint": "~119,390 rows, 2 CSVs (H1 resort hotel, H2 city hotel)",
+  "license": "unspecified",
+  "last_activity": "2024-06-06",
+  "hits": 1,
+  "themes": [
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "This is the exact dataset the team already holds per CONTEXT.md; flagged only as a mirror/backup copy with the raw CSV committed to the repo (useful if the original Kaggle/ScienceDirect source becomes unavailable). No new years or markets beyond what is already held."
+  ]
+ },
+ {
+  "key": "github:shelly74/hotel-booking-cancellation-",
+  "url": "https://github.com/Shelly74/Hotel-booking-cancellation-",
+  "name": "Hotel-booking-cancellation- (Shelly74)",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Another committed copy of the same Antonio/Almeida/Nunes H1/H2 CSVs plus cancellation-prediction modeling code, MIT licensed, actively updated (Jul 2026).",
+  "why_useful": "Alternate mirror of the same dataset with an explicit open license (MIT) and recent activity, in case a clean licensed copy is wanted instead of the Kaggle download.",
+  "potential": "low",
+  "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) already held",
+  "geography": "Portugal",
+  "time_coverage": "2015-2017",
+  "size_hint": "~119k rows",
+  "license": "MIT",
+  "last_activity": "2026-07-14",
+  "hits": 1,
+  "themes": [
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "Alternate mirror of the same dataset with an explicit open license (MIT) and recent activity, in case a clean licensed copy is wanted instead of the Kaggle download."
+  ]
+ },
+ {
+  "key": "github:rfordatascience/tidytuesday",
+  "url": "https://github.com/rfordatascience/tidytuesday/tree/master/data/2020/2020-02-11",
+  "name": "TidyTuesday Hotel Bookings (2020-02-11)",
+  "category": "hotel_lodging",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSVs (hotels.csv combined, plus H1.csv resort / H2.csv city variants in some mirrors) \u2014 the Antonio, Almeida & Nunes (2019, Data in Brief) Portugal hotel-booking dataset, ~119,390 rows total across a resort hotel (H1, Algarve) and a city hotel (H2, Lisbon), Jul 2015\u2013Aug 2017, 32 columns incl. lead time, cancellation flag, ADR, deposit type, market segment, booking channel, special requests.",
+  "why_useful": "Well-packaged, clean, well-documented mirror of the exact dataset CONTEXT.md already lists as held (Antonio/Almeida/Nunes) \u2014 not new, but flagged per instructions as a duplicate worth one line since it is a clean canonical copy with column dictionary and is the base every other 'successor' repo in this space re-uses.",
+  "potential": "low",
+  "size_hint": "119,390 rows, ~17MB",
+  "time_coverage": "Jul 2015 \u2013 Aug 2017",
+  "geography": "Portugal (Algarve resort hotel + Lisbon city hotel)",
+  "license": "CC0 (tidytuesday convention) / original CC-BY 4.0 from Data in Brief",
+  "last_activity": "Static historical tidytuesday week, repo itself active",
+  "duplicate_of_holding": "Portugal hotel-booking demand dataset (Antonio/Almeida/Nunes) \u2014 already held per CONTEXT.md",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "Well-packaged, clean, well-documented mirror of the exact dataset CONTEXT.md already lists as held (Antonio/Almeida/Nunes) \u2014 not new, but flagged per instructions as a duplicate worth one line since it is a clean canonical copy with column dictionary and is the base every other 'successor' repo in this space re-uses."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/mindweave/hotel-reservations",
+  "url": "https://huggingface.co/datasets/mindweave/hotel-reservations",
+  "name": "Mindweave Synthetic Hotel PMS Dataset",
+  "category": "hotel_lodging",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Synthetic, relationally-consistent PMS dataset generated by Mindweave Technologies: 4 tables (guests, properties, rooms, reservations). Free sample 2,180 rows; full dataset 21,808 rows (8,000 guests, 3 properties, 177 rooms, 13,628 reservations) sold via Gumroad, CC-BY-NC-4.0. Includes seasonal pricing that fluctuates with demand, lead time and cancellation patterns with 'realistic' distributions, and injected anomalies (a March conference booking surge, a November facility closure). Available as CSV/Parquet/SQLite. Not on GitHub; no linked source repo.",
+  "why_useful": "A structurally realistic multi-table PMS schema (guests/rooms/properties/reservations) that could serve as a template for what a real STR/hotel PMS export looks like, useful mainly as a methods reference rather than as ABNB-relevant real data; low direct value since it is synthetic and partly paywalled.",
+  "potential": "low",
+  "size_hint": "21,808 reservation rows across 4 tables (2,180-row free sample)",
+  "time_coverage": "Synthetic, arbitrary calendar year",
+  "geography": "Synthetic, unspecified",
+  "license": "CC-BY-NC-4.0 (free sample); full dataset commercial via Gumroad",
+  "last_activity": "Active HF dataset card, recent",
+  "duplicate_of_holding": "",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "A structurally realistic multi-table PMS schema (guests/rooms/properties/reservations) that could serve as a template for what a real STR/hotel PMS export looks like, useful mainly as a methods reference rather than as ABNB-relevant real data; low direct value since it is synthetic and partly paywalled."
+  ]
+ },
+ {
+  "key": "github:dvrpc/economic-subsectors",
+  "url": "https://github.com/dvrpc/economic-subsectors",
+  "name": "dvrpc/economic-subsectors",
+  "category": "hotel_lodging",
+  "data_kind": "both",
+  "what_it_holds": "Analyzes 3-digit NAICS subsectors (industries incl. accommodation) at the county/regional level using County Business Patterns (CBP), Quarterly Census of Employment and Wages (QCEW), and Current Population Survey (CPS) data for the Delaware Valley (Philadelphia) region; committed processing code plus regional extracts.",
+  "why_useful": "A worked example of joining CBP + QCEW for a NAICS subsector, showing how to build a regional hotel-establishment/employment series; useful as a code template even though the region (Philadelphia metro) is narrow.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "geography": "Delaware Valley (Philadelphia metro), USA",
+  "time_coverage": "Not specified in listing, recent CBP/QCEW vintages",
+  "size_hint": "Small regional dataset + scripts",
+  "license": "unspecified",
+  "last_activity": "2021-07-02",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel supply data: Overture/OSM hotel POI counts, hotel pipeline datasets, lodging census (Census QSS NAICS 721), county business patterns tooling"
+  ],
+  "why_all": [
+   "A worked example of joining CBP + QCEW for a NAICS subsector, showing how to build a regional hotel-establishment/employment series; useful as a code template even though the region (Philadelphia metro) is narrow."
+  ]
+ }
+]

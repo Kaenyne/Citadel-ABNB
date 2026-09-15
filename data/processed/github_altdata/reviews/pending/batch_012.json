@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:hamid-vakilzadeh/motley-fool-scraper",
+  "url": "https://github.com/hamid-vakilzadeh/motley-fool-scraper",
+  "name": "motley-fool-scraper",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium/webdriver-manager Python scraper (Python 3.7+) for Motley Fool earnings transcripts, built as a 2022 FAU web-scraping workshop exercise. BSD-2-Clause license, 10 commits, last updated Dec 2022. No committed sample data. README explicitly notes fool.com's Terms of Use prohibit scraping and warns not to abuse it.",
+  "why_useful": "A minimal, permissively-licensed reference scraper pattern for Motley Fool transcripts; useful only as a documented method, not to be run, since fool.com ToS forbids scraping (a human ToS call per project rule 6).",
+  "potential": "low",
+  "geography": "US, broad tickers",
+  "time_coverage": "n/a (scraper, not stored data)",
+  "size_hint": "n/a",
+  "license": "BSD-2-Clause",
+  "last_activity": "Dec 2022, 10 commits",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A minimal, permissively-licensed reference scraper pattern for Motley Fool transcripts; useful only as a documented method, not to be run, since fool.com ToS forbids scraping (a human ToS call per project rule 6)."
+  ]
+ },
+ {
+  "key": "github:andrenagano/earnings-calls-transcript-scraper",
+  "url": "https://github.com/AndreNagano/Earnings-Calls-Transcript-Scraper",
+  "name": "Earnings-Calls-Transcript-Scraper",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Selenium+BeautifulSoup Python scraper that takes a ticker, finds Motley Fool transcript links, and returns a dict of {date, url, transcript text}. Includes a demo Jupyter notebook, no committed transcript data, 5 commits, last updated Sept 2025, no stated license.",
+  "why_useful": "A recently-touched (Sept 2025) Motley Fool scraper pattern, more current than the 2022/2023 alternatives, but again a fool.com scrape \u2014 method only, ToS decision deferred to a human per project rule 6.",
+  "potential": "low",
+  "geography": "US, broad tickers",
+  "time_coverage": "n/a (scraper, not stored data)",
+  "size_hint": "n/a",
+  "license": "not stated",
+  "last_activity": "Sept 2025, 5 commits",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A recently-touched (Sept 2025) Motley Fool scraper pattern, more current than the 2022/2023 alternatives, but again a fool.com scrape \u2014 method only, ToS decision deferred to a human per project rule 6."
+  ]
+ },
+ {
+  "key": "github:twyb/motley-fool-transcript-extractor",
+  "url": "https://github.com/twyb/Motley-Fool-Transcript-Extractor",
+  "name": "Motley-Fool-Transcript-Extractor",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "HTML-based personal project to extract Motley Fool articles/transcripts; 0 stars, last updated Feb 2020, no stated license.",
+  "why_useful": "Old, low-activity fool.com scraper; catalogued for completeness only, low marginal value versus the other three fool.com scraper hits.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "license": "not stated",
+  "last_activity": "Feb 2020",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Old, low-activity fool.com scraper; catalogued for completeness only, low marginal value versus the other three fool.com scraper hits."
+  ]
+ },
+ {
+  "key": "other:https://apify.com/store (bondvit/seeking-alpha-scraper-examples on github)",
+  "url": "https://apify.com/store (bondvit/seeking-alpha-scraper-examples on GitHub)",
+  "name": "seeking-alpha-scraper-examples",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "github.com/bondvit/seeking-alpha-scraper-examples: runnable Python/JS example calls against a paid Apify 'Seeking Alpha Scraper' actor (valuation, quant ratings, analyst ratings, stock data). 0 stars, last updated 12 Jun 2026. No transcript data committed; requires the paid Apify actor.",
+  "why_useful": "Confirms Seeking Alpha transcript/data access is effectively paywalled behind a commercial scraping service (Apify) rather than freely available on GitHub; useful mainly as a negative result for the theme.",
+  "potential": "low",
+  "geography": "US, broad tickers",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "license": "not stated",
+  "last_activity": "12 Jun 2026",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Confirms Seeking Alpha transcript/data access is effectively paywalled behind a commercial scraping service (Apify) rather than freely available on GitHub; useful mainly as a negative result for the theme."
+  ]
+ },
+ {
+  "key": "github:sec-api-io/sec-api-node",
+  "url": "https://github.com/SEC-API-io/sec-api-node",
+  "name": "sec-api-node",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Node.js SDK (310 stars, updated 3 Sep 2026) wrapping the commercial sec-api.io service: full-text search, XBRL-to-JSON, 13F holdings, insider (Form 4) trades, financial statements, exec comp, material contracts, registration statements, bond/credit agreements, proxy voting, enforcement actions, real-time filing streaming. Requires a paid API key for most endpoints beyond a free tier.",
+  "why_useful": "Reference for what fields a commercial full-text-search/XBRL API exposes (13F concentration history is gap 15); the wrapper itself is free but the underlying API needs a paid key, so only usable within the free-tier limits \u2014 flag as a method reference, not a free data source.",
+  "potential": "low",
+  "geography": "US (SEC registrants)",
+  "time_coverage": "20M+ filings, multi-decade",
+  "size_hint": "SDK only; backing API is commercial/paid",
+  "license": "none declared",
+  "last_activity": "2026-09-03",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Reference for what fields a commercial full-text-search/XBRL API exposes (13F concentration history is gap 15); the wrapper itself is free but the underlying API needs a paid key, so only usable within the free-tier limits \u2014 flag as a method reference, not a free data source."
+  ]
+ }
+]

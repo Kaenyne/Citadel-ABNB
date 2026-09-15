@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:patmyron/forecasting",
+  "url": "https://github.com/PatMyron/forecasting",
+  "name": "forecasting",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Git-scraping repo (GitHub Actions workflows commit periodic snapshots) tracking forecasting/prediction-market state over time across at least five platforms with per-platform folders: Kalshi, Manifold Markets, Metaculus, Polymarket, ForecastEx. Small repo (8 stars, 1 fork, 54 commits); no license or description text was visible.",
+  "why_useful": "Because it is git-scraped, each commit is a genuine point-in-time snapshot recoverable via `git log`/`git show` on the tracked files \u2014 directly matches the point-in-time/vintage-series gap (#4) for prediction-market-implied probabilities on earnings, elections, or macro releases, without needing to run a scraper against a live API. Could plausibly include ABNB-relevant contracts (earnings surprise markets, CPI, Fed decisions used as macro backdrop) as of each snapshot date.",
+  "geography": "Global (platform-dependent)",
+  "time_coverage": "Since first workflow run; span not confirmed from fetched content (54 total commits, so likely a shorter/thinner history)",
+  "size_hint": "Small repo; likely markdown/JSON/CSV snapshot files per run",
+  "license": "unknown (not shown)",
+  "last_activity": "54 commits on main; date not shown",
+  "potential": "high",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Because it is git-scraped, each commit is a genuine point-in-time snapshot recoverable via `git log`/`git show` on the tracked files \u2014 directly matches the point-in-time/vintage-series gap (#4) for prediction-market-implied probabilities on earnings, elections, or macro releases, without needing to run a scraper against a live API. Could plausibly include ABNB-relevant contracts (earnings surprise markets, CPI, Fed decisions used as macro backdrop) as of each snapshot date."
+  ]
+ },
+ {
+  "key": "github:htenkanen/pyrosm",
+  "url": "https://github.com/HTenkanen/pyrosm",
+  "name": "pyrosm",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (MIT, 438 stars, ~1,065 commits, Cython-accelerated) that parses OSM .osm.pbf extracts (e.g. Geofabrik regional dumps) directly into GeoPandas GeoDataFrames. Supports custom tag filters (including Overpass-style filters, so `tourism=hotel`/`tourism=guest_house` etc.) plus roads, buildings, land use, and boundaries. v0.10+ adds an out-of-core streaming engine for continental-scale files.",
+  "why_useful": "Fastest available method to bulk-extract tourism/hotel POIs from Geofabrik country/region extracts for many cities at once, rather than one-by-one Overpass queries \u2014 directly serves the 'counting STR/hotel supply from maps' half of this theme.",
+  "potential": "high",
+  "geography": "Global (wherever Geofabrik/OSM extracts exist)",
+  "time_coverage": "Current OSM snapshot at pull time (historical PBF snapshots available separately from Geofabrik's internal history server, not this tool)",
+  "license": "MIT",
+  "size_hint": "N/A (library, not data)",
+  "last_activity": "Active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Fastest available method to bulk-extract tourism/hotel POIs from Geofabrik country/region extracts for many cities at once, rather than one-by-one Overpass queries \u2014 directly serves the 'counting STR/hotel supply from maps' half of this theme."
+  ]
+ },
+ {
+  "key": "github:dhopp1/nowcasting_benchmark",
+  "url": "https://github.com/dhopp1/nowcasting_benchmark",
+  "name": "nowcasting_benchmark",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Replication code (R and Python notebooks) for 17 nowcasting/forecasting methods run head-to-head: ARMA, Bayesian VAR, DFM, MIDAS, MF-VAR, midasml (econometric); decision trees, elastic net, gradient boost, LSTM, MLP, OLS, RF, ridge/lasso, XGBoost, DeepVAR (ML). Uses FRED-sourced US macro series to nowcast quarterly US GDP, Q1 2002-Q3 2022 (shortened 2005-2010 demo notebooks for runtime). 35 commits, MIT license.",
+  "why_useful": "A ready reference implementation and honest performance comparison across every mixed-frequency method named in gap #17 (MIDAS, DFM, bridge-style MF-VAR, midasml) \u2014 useful to pick and validate the estimation approach for an ABNB KPI nowcast before committing engineering time to one method.",
+  "potential": "high",
+  "gap_targets": [
+   17
+  ],
+  "geography": "US (methodology demo)",
+  "time_coverage": "2002-2022 (FRED demo series)",
+  "size_hint": "64 stars, notebooks",
+  "license": "MIT",
+  "last_activity": "2026-08-05",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "A ready reference implementation and honest performance comparison across every mixed-frequency method named in gap #17 (MIDAS, DFM, bridge-style MF-VAR, midasml) \u2014 useful to pick and validate the estimation approach for an ABNB KPI nowcast before committing engineering time to one method.",
+   "Directly on-theme: gives runnable code (not just theory) for MIDAS, DFM, MF-VAR, bridge-style comparisons against ML baselines on a mixed-frequency macro target -- a template that could be repointed at ABNB KPI mixed-frequency nowcasting (nights/GBV target with monthly/weekly high-frequency indicators), addressing gap #17."
+  ]
+ },
+ {
+  "key": "github:sermetpekin/nowcasting-dfm",
+  "url": "https://github.com/SermetPekin/nowcasting-dfm",
+  "name": "nowcasting-dfm",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "Python DFM nowcasting package extending the FRBNY (New York Fed) DFM framework, with a 'Pseudo-Real-Time Synthesizer' (sp_vintage_generator.py) that reconstructs historical ragged-edge/vintage data matrices and maps real release-calendar timing (e.g. 'first Friday of month') to avoid look-ahead bias in backtests; Numba acceleration, Kalman news decomposition, Plotly dashboards. Ships FRED-sourced US macro example series and two spec files (Spec_US_example.xls, Spec_FredMD_2026-07.xlsx). 115 commits, BSD-3-Clause.",
+  "why_useful": "The vintage/ragged-edge synthesizer is exactly the point-in-time machinery gap #4 asks for (reconstructing what was known as-of a date) and directly usable as a harness for mixed-frequency KPI nowcasting with correct release timing -- more mechanically relevant than most MIDAS/DFM repos found.",
+  "potential": "high",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "size_hint": "115 commits, includes FRED-MD spec file dated 2026-07",
+  "time_coverage": "uses current FRED-MD vintages (spec file dated Jul 2026)",
+  "geography": "US (FRED-MD)",
+  "license": "BSD-3-Clause",
+  "last_activity": "spec file dated 2026-07 suggests recent activity",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "The vintage/ragged-edge synthesizer is exactly the point-in-time machinery gap #4 asks for (reconstructing what was known as-of a date) and directly usable as a harness for mixed-frequency KPI nowcasting with correct release timing -- more mechanically relevant than most MIDAS/DFM repos found."
+  ]
+ },
+ {
+  "key": "github:marcburri/bridgr",
+  "url": "https://github.com/marcburri/bridgr",
+  "name": "bridgr",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "R package explicitly for classical bridge-equation and MIDAS-style nowcasting: automated frequency alignment (seconds to years), indicator forecasting/aggregation (expalmon, beta weighting), prediction intervals. Ships two example datasets: gdp (quarterly GDP) and baro (monthly business-barometer indicator). 189 commits, MIT license, actively maintained (last update Aug 2026 per topic listing).",
+  "why_useful": "Purpose-built, current (2026) implementation of bridge equations -- the exact method named in the theme -- with a working monthly-indicator-to-quarterly-target example (barometer survey to GDP) structurally identical to a monthly alt-data indicator bridging to ABNB's quarterly nights/GBV.",
+  "potential": "high",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "189 commits, 2 bundled example datasets",
+  "time_coverage": "n/a (package, not a fixed dataset)",
+  "geography": "generic/methodological (Swiss author, barometer example likely European)",
+  "license": "MIT",
+  "last_activity": "2026-08-22",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Purpose-built, current (2026) implementation of bridge equations -- the exact method named in the theme -- with a working monthly-indicator-to-quarterly-target example (barometer survey to GDP) structurally identical to a monthly alt-data indicator bridging to ABNB's quarterly nights/GBV."
+  ]
+ }
+]

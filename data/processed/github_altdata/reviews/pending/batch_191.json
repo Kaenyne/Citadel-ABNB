@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:ilmaruduste/synthmpdgenerator",
+  "url": "https://github.com/ilmaruduste/SynthMPDGenerator",
+  "name": "SynthMPDGenerator",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A program for generating synthetic mobile positioning data (MPD), from the same Estonian/Tartu mobile-positioning research cluster as popFlowEstonia and MPDSamplingStatistics. No real data; generates synthetic test data for MPD-based methods.",
+  "why_useful": "Marginal utility \u2014 could help validate an MPD-occupancy-proxy pipeline before real data is sourced, but produces no real signal itself.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (synthetic)",
+  "time_coverage": "n/a",
+  "size_hint": "code only",
+  "license": "unlicensed",
+  "last_activity": "2021-12-13",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Marginal utility \u2014 could help validate an MPD-occupancy-proxy pipeline before real data is sourced, but produces no real signal itself.",
+   "Useful only for testing an MNO-tourism-proxy pipeline before real data is available; not itself a data source."
+  ]
+ },
+ {
+  "key": "github:prakharsdev/positium-data-platform",
+  "url": "https://github.com/prakharsdev/Positium-Data-Platform",
+  "name": "Positium-Data-Platform",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A modular, Dockerized pipeline (Spark for compression, PostGIS for spatial joins, Flask REST API) for processing 'mobile event data' into hourly-event counts, user-movement, and population-distribution outputs \u2014 an independent reimplementation of the Positium-style MNO data pipeline (Positium is Eurostat's MNO tourism-statistics pilot contractor). No data committed; needs a raw mobile-event feed to run.",
+  "why_useful": "Gives working, inspectable code for exactly the kind of MNO event-to-population-distribution pipeline Eurostat's experimental tourism series is built on, useful if the team ever gets access to any roaming/CDR feed (even a small national one) to nowcast visitor presence.",
+  "potential": "low",
+  "geography": "n/a (generic pipeline)",
+  "time_coverage": "n/a",
+  "size_hint": "codebase only",
+  "license": "none specified",
+  "last_activity": "2025-05-08",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "Gives working, inspectable code for exactly the kind of MNO event-to-population-distribution pipeline Eurostat's experimental tourism series is built on, useful if the team ever gets access to any roaming/CDR feed (even a small national one) to nowcast visitor presence."
+  ]
+ },
+ {
+  "key": "github:eurostat/statistics-coded",
+  "url": "https://github.com/eurostat/statistics-coded",
+  "name": "eurostat/statistics-coded",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Eurostat-org catalogue (41 stars) of R/Python/SQL/SAS/Stata code snippets that reproduce the charts/tables behind Eurostat 'Statistics Explained' articles -- some of these articles cover tourism, the collaborative economy, and short-stay accommodation.",
+  "why_useful": "If any Statistics Explained article on platform/collaborative-economy tourism has reproducible code here, it gives a documented, exact recipe for rebuilding the Eurostat-Airbnb data-sharing-agreement output tables (tour_ce_omr and siblings) rather than reverse-engineering the API from scratch.",
+  "potential": "low",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "points to the same tour_ce_omr family already held",
+  "geography": "EU/EEA",
+  "time_coverage": "varies by article",
+  "size_hint": "code snippets only",
+  "last_activity": "2025-03-20",
+  "license": "none listed",
+  "hits": 1,
+  "themes": [
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "If any Statistics Explained article on platform/collaborative-economy tourism has reproducible code here, it gives a documented, exact recipe for rebuilding the Eurostat-Airbnb data-sharing-agreement output tables (tour_ce_omr and siblings) rather than reverse-engineering the API from scratch."
+  ]
+ },
+ {
+  "key": "github:expersso/oecd",
+  "url": "https://github.com/expersso/OECD",
+  "name": "expersso/OECD",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (145 stars, 66 commits) wrapping the OECD Data Explorer / SDMX API for programmatic, reproducible retrieval of any OECD dataset via get_dataset()/get_data_structure(); not tourism-specific out of the box but works against OECD's full catalogue including tourism and consumer-confidence series.",
+  "why_useful": "Generic, scriptable path to OECD tourism/platform-economy tables (e.g. any OECD Tourism Trends & Policies or Digital Economy Outlook series) beyond whatever static OECD consumer-confidence panel we already hold.",
+  "potential": "low",
+  "size_hint": "package source only",
+  "geography": "OECD member countries",
+  "time_coverage": "N/A (live API client)",
+  "license": "not confirmed from fetched page",
+  "last_activity": "not confirmed (66 commits total, unclear recency)",
+  "gap_targets": [],
+  "duplicate_of_holding": "We already hold an OECD consumer confidence panel; this is a generic access method for other OECD tables, not the same data.",
+  "hits": 1,
+  "themes": [
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Generic, scriptable path to OECD tourism/platform-economy tables (e.g. any OECD Tourism Trends & Policies or Digital Economy Outlook series) beyond whatever static OECD consumer-confidence panel we already hold."
+  ]
+ },
+ {
+  "key": "github:arikanatakan/revmng-mcp",
+  "url": "https://github.com/arikanatakan/revmng-mcp",
+  "name": "revmng-mcp",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server wrapper around the revmng library exposing the same RM decision functions (seat protection, overbooking, pricing, group/LOS, bid prices, charts) as tools for an AI agent. No data, same author/content as revmng.",
+  "why_useful": "Same methodology value as revmng; only worth separate note because it packages the calculators as callable tools, which could be scripted into a pace/pickup sanity-check pipeline.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2026-07-05",
+  "size_hint": "small, no data files",
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "Same author's revmng repo (methodology duplicate)",
+  "hits": 1,
+  "themes": [
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves"
+  ],
+  "why_all": [
+   "Same methodology value as revmng; only worth separate note because it packages the calculators as callable tools, which could be scripted into a pace/pickup sanity-check pipeline."
+  ]
+ }
+]

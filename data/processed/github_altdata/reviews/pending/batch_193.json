@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:mcompetitions/m5-methods",
+  "url": "https://github.com/Mcompetitions/M5-methods",
+  "name": "M5-methods",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official M5 competition (Walmart retail sales) data and benchmark methods notebooks.",
+  "why_useful": "Not tourism-specific (retail, not travel) but same forecasting-competition family and reconciliation methodology used for hierarchical demand forecasting \u2014 marginal use as a methods reference only.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "US (Walmart stores)",
+  "time_coverage": "2011-2016 daily sales",
+  "size_hint": "large (retail POS panel)",
+  "license": "unspecified",
+  "last_activity": "active org",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "Not tourism-specific (retail, not travel) but same forecasting-competition family and reconciliation methodology used for hierarchical demand forecasting \u2014 marginal use as a methods reference only."
+  ]
+ },
+ {
+  "key": "github:mcompetitions/m6-methods",
+  "url": "https://github.com/Mcompetitions/M6-methods",
+  "name": "M6-methods",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official M6 competition data/methods for financial forecasting (stock and portfolio return prediction), not tourism.",
+  "why_useful": "Off-theme (financial markets, not travel demand) but flagged for completeness since it is the third M-competition repo; essentially no tourism relevance.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "Global equities",
+  "time_coverage": "2022 competition",
+  "size_hint": "moderate",
+  "license": "unspecified",
+  "last_activity": "active org",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "Off-theme (financial markets, not travel demand) but flagged for completeness since it is the third M-competition repo; essentially no tourism relevance."
+  ]
+ },
+ {
+  "key": "github:l460701723/code_-secondary-decomposition",
+  "url": "https://github.com/l460701723/Code_-secondary-decomposition",
+  "name": "Code_-secondary-decomposition",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code for 'a new secondary decomposition ensemble approach for tourism demand forecasting' (academic paper replication); likely includes the paper's tourist-arrivals dataset (probably Chinese destination, not confirmed) alongside decomposition-ensemble forecasting code (e.g. CEEMDAN + ML).",
+  "why_useful": "A decomposition-ensemble method specifically built for tourism demand series \u2014 could be tested against our own nights/ADR series as an alternative to the ETS/ARIMA baselines already tried and found wanting; data provenance unconfirmed so flagged as method more than dataset.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "unconfirmed (likely China)",
+  "time_coverage": "unconfirmed",
+  "size_hint": "small, code-focused",
+  "license": "unspecified",
+  "last_activity": "2024-01-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "A decomposition-ensemble method specifically built for tourism demand series \u2014 could be tested against our own nights/ADR series as an alternative to the ETS/ARIMA baselines already tried and found wanting; data provenance unconfirmed so flagged as method more than dataset."
+  ]
+ },
+ {
+  "key": "github:zhiqin1998/tourism-forecasting",
+  "url": "https://github.com/zhiqin1998/tourism-forecasting",
+  "name": "tourism-forecasting (post-pandemic ensemble RNN)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code repository accompanying 'Post-pandemic tourism forecasting with ensemble RNN' published in Annals of Tourism Research. README fetch 404'd (branch/path mismatch), so contents not directly confirmed in this pass \u2014 likely contains a published paper's tourism dataset plus RNN ensemble code given the paper citation in the repo description.",
+  "why_useful": "A peer-reviewed academic replication package explicitly targeting COVID/post-pandemic tourism demand recovery patterns (relevant to gap 11 shock modelling and gap 17 methods) \u2014 worth a follow-up repo browse by whichever agent picks this up, since the description is credible even though the README fetch failed.",
+  "potential": "low",
+  "gap_targets": [
+   11,
+   17
+  ],
+  "geography": "unconfirmed",
+  "time_coverage": "unconfirmed (post-pandemic period implied)",
+  "size_hint": "unconfirmed",
+  "license": "unspecified",
+  "last_activity": "2026-05-08",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "A peer-reviewed academic replication package explicitly targeting COVID/post-pandemic tourism demand recovery patterns (relevant to gap 11 shock modelling and gap 17 methods) \u2014 worth a follow-up repo browse by whichever agent picks this up, since the description is credible even though the README fetch failed."
+  ]
+ },
+ {
+  "key": "github:rakshitha123/tsforecasting",
+  "url": "https://github.com/rakshitha123/TSForecasting",
+  "name": "TSForecasting (Monash Time Series Forecasting Archive)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code/experiment framework (R) for the Monash Time Series Forecasting Archive: loaders for `.tsf` files, forecasting model implementations, evaluation scripts. Datasets themselves are not committed in-repo but pulled one-command from the Zenodo community at zenodo.org/communities/forecasting (which includes the Tourism yearly/quarterly/monthly sets above, plus dozens of other domains: electricity, tourism, traffic, weather, etc.).",
+  "why_useful": "Gives a ready-made, citable evaluation harness (train/test splits, standard error metrics) for benchmarking any of our own nowcasting methods against a large, standardized multi-domain time-series archive \u2014 useful for the point-in-time / backtesting discipline the project already enforces (gap #17), and as a one-command puller for the tourism .tsf files rather than hand-downloading Zenodo zips.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Global, multi-domain",
+  "time_coverage": "Varies by dataset",
+  "size_hint": "Framework repo; datasets pulled externally",
+  "license": "Not stated on fetched page (check repo LICENSE)",
+  "last_activity": "Not captured (active as of Monash archive's ongoing use)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "Gives a ready-made, citable evaluation harness (train/test splits, standard error metrics) for benchmarking any of our own nowcasting methods against a large, standardized multi-domain time-series archive \u2014 useful for the point-in-time / backtesting discipline the project already enforces (gap #17), and as a one-command puller for the tourism .tsf files rather than hand-downloading Zenodo zips."
+  ]
+ }
+]

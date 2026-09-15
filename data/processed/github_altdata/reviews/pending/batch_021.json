@@ -1,0 +1,147 @@
+[
+ {
+  "key": "github:logicai-io/recsys2019",
+  "url": "https://github.com/logicai-io/recsys2019",
+  "name": "logicai-io/recsys2019",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "1st-place winning solution to RecSys Challenge 2019 (trivago). cpp/ feature extraction, data/ dir, publications/, src/ Python pipelines; ships a download_data.sh script rather than committing the raw data itself; 37 LightGBM ranker models with ensemble blending. Apache-2.0, 94 stars, 15 forks, 238 commits.",
+  "why_useful": "A working, documented one-command pull-and-featurize pipeline for the trivago click-out dataset (once obtained from the official host) plus a full feature-engineering reference for turning OTA session logs into demand/price-sensitivity features -- reusable methodology for gap #17 (nowcasting methods) even if the raw data pull itself needs a ToS decision.",
+  "potential": "medium",
+  "size_hint": "n/a (code + download script only)",
+  "time_coverage": "2018 challenge window",
+  "geography": "EU-weighted trivago traffic",
+  "license": "Apache-2.0",
+  "last_activity": "unspecified; static since 2019 challenge, last seen with 238 commits",
+  "gap_targets": [
+   9,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers"
+  ],
+  "why_all": [
+   "A working, documented one-command pull-and-featurize pipeline for the trivago click-out dataset (once obtained from the official host) plus a full feature-engineering reference for turning OTA session logs into demand/price-sensitivity features -- reusable methodology for gap #17 (nowcasting methods) even if the raw data pull itself needs a ToS decision."
+  ]
+ },
+ {
+  "key": "github:factden/expedia-hotel-reviews-scraper",
+  "url": "https://github.com/factden/expedia-hotel-reviews-scraper",
+  "name": "factden/expedia-hotel-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify actor (JavaScript) scraping Expedia Group brands (Expedia, Hotels.com, Orbitz, Travelocity, Wotif, CheapTickets, ebookers) for guest ratings, category sub-ratings, review text, and owner responses; outputs CSV/JSON via Apify's platform API. Updated Sep 7 2026 (active/maintained).",
+  "why_useful": "Live acquisition path for competitor hotel review volume/sentiment across all 7 Expedia Group brands at once -- a broader, actively maintained alternative to the Booking.com 515k-review Kaggle set already held; review-count trend could serve as a rough competitor demand/engagement proxy (gap #9). Requires running against a live commercial site, so per project rules this is catalogued as method only and left unrun.",
+  "potential": "medium",
+  "size_hint": "n/a (scraper, no committed data; pulls arbitrary volume per run)",
+  "time_coverage": "live/current",
+  "geography": "global (wherever Expedia Group brands operate)",
+  "license": "unspecified",
+  "last_activity": "2026-09-07",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Expedia and Hotels.com datasets (Expedia hotel recommendation Kaggle, personalized ranking ICDM 2013, Expedia scrapers), Trivago RecSys 2019, Kayak/Skyscanner scrapers",
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Live acquisition path for competitor hotel review volume/sentiment across all 7 Expedia Group brands at once -- a broader, actively maintained alternative to the Booking.com 515k-review Kaggle set already held; review-count trend could serve as a rough competitor demand/engagement proxy (gap #9). Requires running against a live commercial site, so per project rules this is catalogued as method only and left unrun.",
+   "Covers Vrbo indirectly as an Expedia-Group brand -- one of the named competitor gaps (#9). No committed data seen; method only.",
+   "Method to build a review-velocity series for an Expedia-listed competitor supply set, complementing our BKNG/EXPE/MAR/HLT peer KPI panel with review-count-based demand timing (gap #9)."
+  ]
+ },
+ {
+  "key": "github:omkarcloud/tripadvisor-scraper",
+  "url": "https://github.com/omkarcloud/tripadvisor-scraper",
+  "name": "omkarcloud/tripadvisor-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "212-star MIT-licensed scraper/API wrapper extracting hotel, restaurant, attraction and cruise data from TripAdvisor: names, ratings, review counts, pricing, coordinates, amenities, award badges, rankings. JSON via REST endpoints; also crawls property websites for emails/phones/social/tech stack. 45+ locales, 145+ currencies. Free tier 200 requests/month. No dataset files committed, only JSON response examples in docs.",
+  "why_useful": "Could be used to build a hotel-review-velocity / rating-trend panel for the hotel comp set (MAR/HLT/hospitality demand read-through) as a non-Airbnb travel-demand proxy; catalogued as method only, not run.",
+  "potential": "medium",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "size_hint": "no data committed; tool only",
+  "time_coverage": "n/a (live scrape)",
+  "geography": "global (TripAdvisor coverage)",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "hits": 3,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Restaurant and leisure proxies: OpenTable state of the industry CSV, Yelp dataset, Google Maps reviews scrapers, event ticket data"
+  ],
+  "why_all": [
+   "Could be used to build a hotel-review-velocity / rating-trend panel for the hotel comp set (MAR/HLT/hospitality demand read-through) as a non-Airbnb travel-demand proxy; catalogued as method only, not run.",
+   "Highest-starred, actively maintained general-purpose TripAdvisor extraction tool; could be pointed at hotel markets that overlap the Inside Airbnb 13/34/120-market panels to build a competing-supply review/price signal. Method only, no data.",
+   "TripAdvisor review volume/ratings for hotels and restaurants by market is another leisure/travel-demand proxy, and could give a competitor/adjacent-lodging read (hotel review volume as an occupancy proxy) alongside the existing hotel RevPAR data."
+  ]
+ },
+ {
+  "key": "github:factden/booking-com-scraper",
+  "url": "https://github.com/factden/booking-com-scraper",
+  "name": "factden/booking-com-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify-platform scraper for Booking.com: pulls hotel names, star ratings, guest scores, review counts, per-night/gross/net pricing, room availability, per-room rate breakdowns, review text with stay dates/room type/traveler type/owner responses, and forward-looking daily availability + minimum-price calendars. Ships hotels.sample.json and reviews.sample.json examples. MIT licensed, 6 commits.",
+  "why_useful": "Directly extends the Booking.com data already held (515k Kaggle reviews, RecTour24) with a live pricing/availability puller -- closest thing found to a free realised-ADR/occupancy proxy for gap #2, if run against a fixed hotel panel over time to build a price time series.",
+  "license": "MIT (consistent with sibling repos; not independently confirmed)",
+  "last_activity": "not dated in fetch",
+  "geography": "global",
+  "time_coverage": "current/live only",
+  "size_hint": "not confirmed",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "duplicate_of_holding": "Adjacent to existing Booking.com Kaggle/RecTour24 holdings but adds live pricing capability they lack",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Directly extends the Booking.com data already held (515k Kaggle reviews, RecTour24) with a live pricing/availability puller -- closest thing found to a free realised-ADR/occupancy proxy for gap #2, if run against a fixed hotel panel over time to build a price time series.",
+   "A working method to pull Booking.com review velocity AND forward availability calendars with realized stay dates -- directly usable for a Booking.com-side review-count demand index and a competitor occupancy/ADR proxy (gaps #2, #9). Left unrun per rules (ToS decision)."
+  ]
+ },
+ {
+  "key": "github:factden/ctrip-trip-reviews-scraper",
+  "url": "https://github.com/factden/ctrip-trip-reviews-scraper",
+  "name": "factden/ctrip-trip-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify-actor extracting Trip.com and Ctrip (\u643a\u7a0b) hotel reviews, both international and Chinese-language, with sub-ratings, owner responses, and reviewer geography.",
+  "why_useful": "One of the only leads found on this whole sweep touching Chinese OTA data (gap #9 names Tujia/Xiaozhu specifically; Ctrip/Trip.com is the dominant Chinese OTA and a reasonable proxy for Chinese outbound travel demand, relevant to ABNB's APAC push).",
+  "license": "not independently confirmed",
+  "last_activity": "not dated in fetch",
+  "geography": "China + international (Trip.com)",
+  "time_coverage": "current/live only",
+  "size_hint": "not confirmed",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "potential": "medium",
+  "hits": 3,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos",
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "One of the only leads found on this whole sweep touching Chinese OTA data (gap #9 names Tujia/Xiaozhu specifically; Ctrip/Trip.com is the dominant Chinese OTA and a reasonable proxy for Chinese outbound travel demand, relevant to ABNB's APAC push).",
+   "Could support a review-based 'stays index' analogue for Chinese/APAC outbound travel, similar to the team's existing Inside Airbnb reviews-index method (gap #9).",
+   "Only method found touching a Chinese travel platform's review stream -- relevant to APAC demand read-through (gap #7) since ABNB APAC and Chinese outbound travel are otherwise dark to us."
+  ]
+ }
+]

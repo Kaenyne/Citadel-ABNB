@@ -1,0 +1,57 @@
+# 🏨 Pricing & Revenue Insights
+
+1. What is the average, minimum, and maximum hotel price overall?
+2. What is the average price of hotels in each location?
+3. Which top 5 locations have the highest average hotel prices?
+4. Which top 5 locations have the lowest average hotel prices?
+5. What is the distribution of hotels across price segments (Budget, Mid-range, Premium)?
+6. What is the average discount percentage offered overall?
+7. Which locations offer the highest average discount?
+8. Which hotels provide the highest absolute discount (price × discount%)?
+9. Do higher-priced hotels offer higher discount percentages?
+10. What is the final effective price after discount by location?
+
+---
+
+# 👥 Popularity & Demand Insights (Using ratings as count)
+
+11. Which hotels have the highest number of ratings (most popular)?
+12. Which locations have the highest total ratings?
+13. What is the average ratings count per hotel by location?
+14. Do lower-priced hotels receive more ratings?
+15. Do higher discounts result in higher ratings count?
+16. What percentage of hotels have ratings above the dataset average?
+17. Which hotels are “hidden demand winners” (low price + high ratings)?
+18. Which hotels are overpriced but still popular?
+19. Is there a relationship between price and popularity?
+20. Which locations have the most consistently popular hotels?
+
+---
+
+# 📊 Competition & Market Structure
+
+21. Which location has the highest number of hotels (highest competition)?
+22. Which location generates the highest total potential revenue (avg price × hotel count)?
+23. Do locations with more hotels have lower average prices?
+24. Which locations have the highest pricing spread (max − min price)?
+25. Which hotels have very low ratings count (low visibility risk)?
+26. Which location has the highest average ratings per hotel?
+27. Which price segment attracts the highest total ratings?
+28. What percentage of hotels fall into each popularity band (Low, Medium, High)?
+29. Which hotels combine high discount + high popularity?
+30. Which locations offer the best value in terms of low price but high ratings count?
+
+---
+
+# 🧠 Advanced Business-Level Insights (Recruiter Impressers)
+
+31. Can hotels be segmented into Budget, Mid-range, and Premium categories based on price?
+32. Which segment attracts the highest average ratings count?
+33. Which segment offers the highest average discount?
+34. Are premium hotels less dependent on discounts for popularity?
+35. Which 10 hotels have the highest “popularity efficiency” (ratings ÷ price)?
+36. Which locations are overpriced relative to their popularity?
+37. Which locations show strong demand despite low discounts?
+38. Is there evidence of psychological pricing (price clustering patterns)?
+39. Do heavily discounted hotels actually gain popularity advantage?
+40. Which location appears most competitive based on price variation and popularity concentration?

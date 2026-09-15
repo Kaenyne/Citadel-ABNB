@@ -1,0 +1,12 @@
+{
+  "theme": "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform",
+  "modality": "web",
+  "candidates": [],
+  "queries_run": [
+    "taxe de sejour donnees site:github.com",
+    "imposta di soggiorno dati github csv",
+    "tourist tax collections dataset airbnb github",
+    "toeristenbelasting Amsterdam dataset github"
+  ],
+  "notes": "BLOCKED: this session's WebSearch tool returned 'this session has used its web search budget (200 of 200 WebSearch calls)' on the very first query and on every subsequent query attempted. This appears to be a session-wide (cross-agent) budget shared across the scout sweep that was already exhausted by other scouts before this agent ran any searches. Zero searches actually executed; zero results returned. No WebFetch verification was attempted since no candidate URLs were ever found. This scout could not perform its assigned modality (web search) at all. RECOMMENDATION: re-run this theme (tourist/city tax datasets - Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance/occupancy-tax-by-platform reports - relates to numbered gap 8 (lodging-tax collections / transient occupancy tax by city) and gap 12 (regulation trackers) in CONTEXT.md) in a fresh session once WebSearch quota resets, or reassign to a scout using gh search / direct GitHub browsing modality instead."
+}

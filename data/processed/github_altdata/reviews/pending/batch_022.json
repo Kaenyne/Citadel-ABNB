@@ -1,0 +1,138 @@
+[
+ {
+  "key": "github:scraperhub/agoda-property-listing-scraper",
+  "name": "ScraperHub/agoda-property-listing-scraper",
+  "url": "https://github.com/ScraperHub/agoda-property-listing-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python scraper for Agoda.com property listings; handles JS rendering, pagination, CAPTCHAs. No committed dataset, method only. Last updated Aug 13, 2026.",
+  "why_useful": "Could be a one-command pull for Agoda listing counts/prices in APAC markets as a competitor-supply proxy (gap #9), if run against a public source and consistent with ToS.",
+  "potential": "medium",
+  "geography": "Agoda global (APAC-heavy)",
+  "time_coverage": "current snapshot only, not point-in-time",
+  "license": "unspecified",
+  "last_activity": "2026-08-13",
+  "size_hint": "code only, no data files",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Could be a one-command pull for Agoda listing counts/prices in APAC markets as a competitor-supply proxy (gap #9), if run against a public source and consistent with ToS."
+  ]
+ },
+ {
+  "key": "github:everythingscraper/trip-hotel-scraper",
+  "name": "everythingscraper/trip-hotel-scraper",
+  "url": "https://github.com/everythingscraper/trip-hotel-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Global hotel data feed method pulling Trip.com prices, ratings, and availability across 51 countries. No committed historical dataset found; a live-pull tool.",
+  "why_useful": "Trip.com/Ctrip is the dominant APAC OTA; a working price/availability puller could be adapted for a point-in-time APAC hotel-rate panel not otherwise available (gaps #2, #9).",
+  "potential": "medium",
+  "geography": "51 countries, Trip.com (APAC-weighted)",
+  "time_coverage": "live snapshot only",
+  "license": "unspecified",
+  "last_activity": "unknown (2026 era repo)",
+  "size_hint": "code only",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "Trip.com/Ctrip is the dominant APAC OTA; a working price/availability puller could be adapted for a point-in-time APAC hotel-rate panel not otherwise available (gaps #2, #9)."
+  ]
+ },
+ {
+  "key": "github:factden/makemytrip-scraper",
+  "name": "factden/makemytrip-scraper",
+  "url": "https://github.com/factden/makemytrip-scraper",
+  "category": "competitor_ota",
+  "data_kind": "both",
+  "what_it_holds": "Apify actor scraping MakeMyTrip and Goibibo (India) hotel reviews and hotel details (star class, coordinates, sub-ratings: Location/Cleanliness/Facilities/Food/Room/Value/Child-friendliness). Repo includes an examples/ folder with committed real sample review data for docs. MIT license, 10 commits.",
+  "why_useful": "India is a fast-growing APAC short-term-lodging market with no coverage in the team's current holdings; hotel sub-ratings and review velocity could proxy Indian travel demand.",
+  "potential": "medium",
+  "geography": "India (MakeMyTrip, Goibibo)",
+  "time_coverage": "current sample, no historical archive",
+  "license": "MIT",
+  "last_activity": "unknown, active 2026",
+  "size_hint": "small example dataset + code",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "hits": 2,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)",
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "India is a fast-growing APAC short-term-lodging market with no coverage in the team's current holdings; hotel sub-ratings and review velocity could proxy Indian travel demand.",
+   "Only India-specific OTA review scraper found; useful for APAC/India regional travel-demand proxy work (gap #7)."
+  ]
+ },
+ {
+  "key": "github:abhi2303shek/oyo",
+  "name": "Abhi2303shek/OYO",
+  "url": "https://github.com/Abhi2303shek/OYO",
+  "category": "competitor_ota",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed oyo.csv dataset plus oyo.sql and Cleaning.ipynb, analyzing OYO (India-based budget-hotel chain, also present in SE Asia) pricing structure, ratings/popularity, discount effectiveness, and location-based insights. Segments hotels into Budget/Mid-range/Premium. MIT license, only 3 commits (small, likely a class project scrape, exact row count and city coverage not disclosed in README).",
+  "why_useful": "OYO is a large budget-STR chain across India/SE Asia that competes with Airbnb for price-sensitive travelers; a real (if small, uncertain vintage) pricing dataset is rare for this segment.",
+  "potential": "medium",
+  "geography": "OYO hotels, likely India",
+  "time_coverage": "unknown, single snapshot (not point-in-time)",
+  "license": "MIT",
+  "last_activity": "unknown",
+  "size_hint": "oyo.csv, exact rows unknown; small (3 commits)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   9
+  ],
+  "hits": 1,
+  "themes": [
+   "Agoda, Trip.com, Tujia, Xiaozhu, Meituan, MakeMyTrip, OYO, Traveloka datasets and scrapers (APAC OTA and STR platforms)"
+  ],
+  "why_all": [
+   "OYO is a large budget-STR chain across India/SE Asia that competes with Airbnb for price-sensitive travelers; a real (if small, uncertain vintage) pricing dataset is rare for this segment."
+  ]
+ },
+ {
+  "key": "github:ridiculous/vrbo-calendar-scraper",
+  "url": "https://github.com/ridiculous/vrbo-calendar-scraper",
+  "name": "vrbo-calendar-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python (mechanize-based) scraper that pulls a single VRBO listing's calendar and returns a list of available dates. No committed dataset, no bulk-market capability as-is, minimal/no recent maintenance signal.",
+  "why_useful": "Points at a feasible route to VRBO/HomeAway (Expedia Group) calendar availability, which would be a genuinely new competitor-supply data source (gap #9) not covered by anything we currently hold \u2014 but it is a single-listing tool that would need to be built out into a market-level crawler, and scraping vrbo.com is the same terms-of-service question as scraping airbnb.com.",
+  "potential": "low",
+  "license": "not stated",
+  "last_activity": "unknown, appears old/minimal",
+  "geography": "n/a (per-listing tool)",
+  "time_coverage": "live/current only",
+  "size_hint": "single script",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Airbnb calendar / availability / blocked-night datasets and occupancy-estimation code (San Francisco model, review-to-booking ratios)",
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Points at a feasible route to VRBO/HomeAway (Expedia Group) calendar availability, which would be a genuinely new competitor-supply data source (gap #9) not covered by anything we currently hold \u2014 but it is a single-listing tool that would need to be built out into a market-level crawler, and scraping vrbo.com is the same terms-of-service question as scraping airbnb.com.",
+   "Method for pulling Vrbo per-listing calendar availability, which is the raw ingredient behind occupancy/booking-lead-time metrics (gap #2/#3) analogous to Inside Airbnb calendar dumps, but scoped to one listing at a time with no aggregation or committed panel."
+  ]
+ }
+]

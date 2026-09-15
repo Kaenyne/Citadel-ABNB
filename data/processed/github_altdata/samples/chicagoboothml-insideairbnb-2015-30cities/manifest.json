@@ -1,0 +1,35 @@
+{
+ "slug": "chicagoboothml-insideairbnb-2015-30cities",
+ "url": "https://github.com/ChicagoBoothML/DATA___InsideAirBnB",
+ "sampled": true,
+ "total_bytes": 8426682,
+ "files": [
+  "nyc_listings.csv",
+  "nyc_neighbourhoods.csv",
+  "nyc_calendar_head.csv",
+  "bcn_listings.csv",
+  "bcn_neighbourhoods.csv",
+  "README.md",
+  "manifest.json"
+ ],
+ "rows": "nyc_listings.csv 30,483; bcn_listings.csv 14,539; nyc_neighbourhoods.csv 230; bcn_neighbourhoods.csv 73; nyc_calendar_head.csv 50,000 (137 listings, head of ~11M-row calendar)",
+ "columns": "listings: id, name, host_id, host_name, neighbourhood_group, neighbourhood, lat, lon, room_type, price, minimum_nights, number_of_reviews, last_review, reviews_per_month, calculated_host_listings_count, availability_365. calendar: listing_id, date, available (t/f), price ($ string). neighbourhoods: neighbourhood_group, neighbourhood",
+ "date_range": "NYC scrape 2015-09-01 (last_review 2010-06-15..2015-09-02; calendar 2015-09-01..2016-08-30); Barcelona scrape 2015-10-02 (last_review 2011-02-19..2015-10-02); other cities Jun-Nov 2015 per commit message",
+ "how_pulled": "gh api repos/ChicagoBoothML/DATA___InsideAirBnB/contents/ ; gh api 'repos/.../contents/New%20York%20City' ; gh api 'repos/.../commits?per_page=100' (scrape dates) ; B=https://raw.githubusercontent.com/ChicagoBoothML/DATA___InsideAirBnB/master ; curl -sL -o nyc_listings.csv \"$B/New%20York%20City/listings.csv\" ; curl -sL -o nyc_neighbourhoods.csv \"$B/New%20York%20City/neighbourhoods.csv\" ; curl -sL -o bcn_listings.csv \"$B/Barcelona/listings.csv\" ; curl -sL -o bcn_neighbourhoods.csv \"$B/Barcelona/neighbourhoods.csv\" ; curl -sL -r 0-1999999 -o nyc_calendar_head.csv.gz \"$B/New%20York%20City/calendar.csv.gz\" ; python zlib partial decompress -> first 50,000 lines",
+ "full_dataset_size": "~840 MB repo (GitHub size 840,131 KB), 30 cities x 7 files (listings.csv, listings.csv.gz full-scope, calendar.csv.gz, reviews.csv, reviews.csv.gz, neighbourhoods.csv, neighbourhoods.geojson). NYC alone: calendar.csv.gz 29.6 MB (~11M rows, 365 days x ~30k listings), reviews.csv.gz 62 MB, listings.csv.gz 24 MB. Roughly 400k listings and 150M calendar rows across all cities.",
+ "description": "A frozen mirror of Inside Airbnb city dumps as they stood in Jun-Nov 2015 for 30 cities (Amsterdam, Antwerp, Athens, Austin, Barcelona, Berlin, Boston, Brussels, Chicago, London, Los Angeles, Madrid, Melbourne, Montreal, Nashville, New Orleans, NYC, Oakland, Paris, Portland, San Diego, San Francisco, Santa Cruz County, Seattle, Sydney, Toronto, Trentino, Venice, Vienna, Washington DC), committed by Chicago Booth's ML course. Grain is one row per listing (summary and full-scope listings), one row per listing-day for the 12-month forward calendar with quoted price and availability, and one row per review. It fills gap #1 (pre-2023 vintages) for 11 of the 13 panel cities plus 8 others, with a calendar price column that current dumps lack. An analyst would use it as a 2015 supply/price/review baseline to extend the 13-city panel back a decade, compute 2015 to 2026 listing growth, price levels, and review-rate (stays proxy) by city, and as a pre-regulation snapshot for NYC, Barcelona, Amsterdam, Berlin, Paris, and SF.",
+ "issues": "No LICENSE file in the repo; underlying data is Inside Airbnb (CC BY 4.0 per Inside Airbnb, but the mirror itself states no terms) - tos_or_license_flag remains true for a human to decide. Single vintage only (one dump per city, 2015), no time series within the repo. Directory names contain spaces (URL-encode as %20). Full-scope listings.csv.gz, calendar.csv.gz and reviews.csv.gz were not pulled (cap); only a 2 MB byte-range head of the NYC calendar was decoded. Repo is unmaintained since 3 Dec 2015.",
+ "source_urls": [
+  "https://github.com/ChicagoBoothML/DATA___InsideAirBnB",
+  "https://api.github.com/repos/ChicagoBoothML/DATA___InsideAirBnB/contents/",
+  "https://api.github.com/repos/ChicagoBoothML/DATA___InsideAirBnB/contents/New%20York%20City",
+  "https://api.github.com/repos/ChicagoBoothML/DATA___InsideAirBnB/contents/Barcelona",
+  "https://api.github.com/repos/ChicagoBoothML/DATA___InsideAirBnB/commits?per_page=100",
+  "https://raw.githubusercontent.com/ChicagoBoothML/DATA___InsideAirBnB/master/New%20York%20City/listings.csv",
+  "https://raw.githubusercontent.com/ChicagoBoothML/DATA___InsideAirBnB/master/New%20York%20City/neighbourhoods.csv",
+  "https://raw.githubusercontent.com/ChicagoBoothML/DATA___InsideAirBnB/master/New%20York%20City/calendar.csv.gz",
+  "https://raw.githubusercontent.com/ChicagoBoothML/DATA___InsideAirBnB/master/Barcelona/listings.csv",
+  "https://raw.githubusercontent.com/ChicagoBoothML/DATA___InsideAirBnB/master/Barcelona/neighbourhoods.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

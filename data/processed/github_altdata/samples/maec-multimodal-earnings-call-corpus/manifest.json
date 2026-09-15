@@ -1,0 +1,42 @@
+{
+  "slug": "maec-multimodal-earnings-call-corpus",
+  "url": "https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction",
+  "sampled": true,
+  "total_bytes": 594393,
+  "files": [
+    "REPO_README.md",
+    "LICENSE",
+    "code/alignmentCore.py",
+    "maec_call_index.csv",
+    "maec_person_label_index.csv",
+    "calls/20160504_BKNG/text.txt",
+    "calls/20160504_BKNG/features.csv",
+    "calls/20160510_NCLH/text.txt",
+    "calls/20160510_NCLH/features.csv",
+    "calls/20160728_EXPE/text.txt",
+    "calls/20160728_EXPE/features.csv",
+    "calls/20160728_EXPE/person_label_text.csv",
+    "calls/20160728_MAR/text.txt",
+    "calls/20160728_MAR/features.csv",
+    "calls/20161026_HLT/text.txt",
+    "calls/20161026_HLT/features.csv",
+    "calls/20171107_TRIP/text.txt",
+    "calls/20171107_TRIP/features.csv"
+  ],
+  "rows": "maec_call_index.csv 3,443 call folders (1,213 tickers); maec_person_label_index.csv 2,388 folders; features.csv per call: BKNG 59, NCLH 171, EXPE 71, MAR 117, HLT 116, TRIP 172 rows (one row per sentence, 29 cols); text.txt same count of lines; 20160728_EXPE person_label_text.csv 71 rows",
+  "columns": "call index: folder, date, ticker, type, sha | features.csv: Mean/SD/Min/Max pitch, Mean/Min/Max intensity, pulses, periods, mean period, SD period, fraction unvoiced, voice breaks, degree voice breaks, jitter (local, abs, rap, ppq5, ddp), shimmer (local, dB, apq3, apq5, apq11, dda), mean autocorrelation, mean NHR, mean HNR, Audio Length | text.txt: one sentence per line | person label text.csv: Person, Sentence",
+  "date_range": "2015-02-25 to 2018-06-21 (call dates in folder names); sampled calls 2016-05-04 to 2017-11-07",
+  "how_pulled": "gh api repos/Earnings-Call-Dataset/MAEC-.../git/trees/HEAD (then the MAEC_Dataset, MAEC_Dataset_Person_Label and 'Iterative Forced Alignment' subtrees) to build the full folder index without downloading bodies; git clone --depth 1 --filter=blob:none --sparse <url> repo; git sparse-checkout set --no-cone README.md LICENSE 'Iterative Forced Alignment' MAEC_Dataset/20160728_EXPE MAEC_Dataset/20160728_MAR MAEC_Dataset/20161026_HLT MAEC_Dataset/20160504_BKNG MAEC_Dataset/20171107_TRIP MAEC_Dataset/20160510_NCLH MAEC_Dataset_Person_Label/20160728_EXPE; copied the checked-out files into the sample folder",
+  "full_dataset_size": "In-repo: MAEC_Dataset 3,443 call folders (text.txt + features.csv, ~147.7 MB per README) plus MAEC_Dataset_Person_Label 2,388 folders (speaker-labelled text.csv), one git clone; off-repo: 59 GB of MFCC .npy high-level audio features on a Google Drive link (not pulled)",
+  "description": "MAEC (CIKM 2020, Li/Yang/Smyth/Dong, UCD) is a text-audio aligned earnings-call corpus for S&P 1500 companies, Feb 2015 to Jun 2018, one folder per call (YYYYMMDD_TICKER) with a sentence-per-line transcript and a Praat-style low-level audio feature row (pitch, intensity, jitter, shimmer, HNR, audio length) per sentence; a parallel Person_Label tree tags each sentence with an anonymised speaker id. The sampled transcripts are short (8-22 minutes of aligned audio, 59-172 sentences) and read like Q&A excerpts rather than whole calls, so it is a delivery/tone benchmark rather than a full transcript archive. For ABNB it is a licensed (CC BY-SA 4.0) pre-IPO calibration corpus for a management-tone or vocal-delivery measure on travel peers (BKNG/PCLN, EXPE, MAR, HLT, TRIP, NCLH, RCL, CCL, airlines, timeshare) and a worked forced-alignment pipeline (aeneas/pydub) if the team ever aligns ABNB call audio to its own transcripts; the 3,443-row call index lists every ticker/date available.",
+  "issues": "No ABNB coverage (corpus ends Jun 2018, pre-IPO); transcripts appear to be excerpts (Q&A segments) not full calls, and text has no timestamps or question/answer markers; speaker labels are anonymised Person0/1/2 with no names or roles; low-level feature units are undocumented (Praat defaults assumed); the 59 GB MFCC archive is a Google Drive link that may lapse; CC BY-SA 4.0 share-alike would apply to any derived dataset published; repo last commit 2022-01-11 (unmaintained); source audio/transcript provenance (likely Seeking Alpha / earningscast) is not stated in the README, so redistribution rights of the underlying text rest on the authors' licence claim.",
+  "geography": "United States (S&P 1500 constituents); global peers only via US-listed tickers",
+  "source_urls": [
+    "https://api.github.com/repos/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction/git/trees/HEAD",
+    "https://api.github.com/repos/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction/git/trees/66dc53e5",
+    "https://api.github.com/repos/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction/git/trees/cc4b9f65",
+    "https://api.github.com/repos/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction/git/trees/78522f43",
+    "https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction.git"
+  ],
+  "pulled_at": "2026-09-14"
+}

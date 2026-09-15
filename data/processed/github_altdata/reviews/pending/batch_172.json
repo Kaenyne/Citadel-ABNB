@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:cutemarkets/cutemarkets-cookbook",
+  "url": "https://github.com/cutemarkets/cutemarkets-cookbook",
+  "name": "cutemarkets-cookbook",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Runnable Python/TypeScript recipes for the CuteMarkets commercial options-data API, organized by workflow: options-chain scanners, historical contract reconstruction, an explicit 'earnings-implied-move' recipe, and quote-quality checks. VERIFIED via README: requires signup and a paid API key at cutemarkets.com; no data or precomputed results are committed in the repo itself \u2014 it is documentation for calling a paid live API.",
+  "why_useful": "The earnings-implied-move recipe (straddle-based) is a directly reusable formula/method for building our own ABNB 5-Nov implied-move calculator once fed our existing Yahoo/Bloomberg options chain, even without the paid API subscription.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a (US equities generally)",
+  "time_coverage": "n/a (live API, not historical archive)",
+  "size_hint": "small code repo, no data",
+  "license": "MIT",
+  "last_activity": "2026-08-17",
+  "duplicate_of_holding": "we already hold current Yahoo options chains + a licensed Bloomberg options workbook; this only supplies a formula, not new data",
+  "hits": 2,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets",
+   "wildcard: a sell-side analyst covering online travel who assembles con"
+  ],
+  "why_all": [
+   "The earnings-implied-move recipe (straddle-based) is a directly reusable formula/method for building our own ABNB 5-Nov implied-move calculator once fed our existing Yahoo/Bloomberg options chain, even without the paid API subscription.",
+   "Gives a ready-made implied-move calculation recipe (straddle-based) that could be pointed at ABNB's own option chain around the 5 Nov print instead of hand-rolling one from the Yahoo chain already held -- but note CuteMarkets itself is a commercial data vendor, so free access may be limited (check ToS/pricing before relying on it)."
+  ]
+ },
+ {
+  "key": "github:cutemarkets/cutemarkets-typescript",
+  "url": "https://github.com/cutemarkets/cutemarkets-typescript",
+  "name": "cutemarkets-typescript",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "TypeScript SDK for CuteMarkets' real-time and historical options data API (chains, contracts, quotes, trades, aggregates), with example scanners and earnings workflows. 79 stars.",
+  "why_useful": "Same family as the cookbook above; a typed client if the team ever pays for the underlying commercial feed. On its own, no committed data.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "SDK code only",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Same family as the cookbook above; a typed client if the team ever pays for the underlying commercial feed. On its own, no committed data."
+  ]
+ },
+ {
+  "key": "github:pratham-1230/earnings-implied-move-analysis",
+  "url": "https://github.com/pratham-1230/Earnings-implied-move-analysis",
+  "name": "Earnings-implied-move-analysis",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python analysis comparing options-implied vs actual realized earnings moves for Nifty 50 (Indian) stocks. 0 stars, updated 16 Mar 2026.",
+  "why_useful": "Same implied-vs-realized-move methodology as above, applicable in principle to ABNB once fed US options chain + earnings-date realized moves, but built and tested only on Indian large caps so the code likely needs adaptation (different exchange conventions, expiry cycles).",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "India (NSE Nifty 50)",
+  "time_coverage": "unknown, not inspected",
+  "size_hint": "small",
+  "license": "unknown",
+  "last_activity": "2026-03-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Same implied-vs-realized-move methodology as above, applicable in principle to ABNB once fed US options chain + earnings-date realized moves, but built and tested only on Indian large caps so the code likely needs adaptation (different exchange conventions, expiry cycles)."
+  ]
+ },
+ {
+  "key": "github:adamgetbags/polygondata",
+  "url": "https://github.com/AdamGetbags/polygonData",
+  "name": "polygonData",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts issuing historical-options-data requests against the Polygon.io API. 27 stars, updated 30 Mar 2026. Polygon.io's historical options endpoints require a paid tier; no data files committed, this is a client only.",
+  "why_useful": "A ready-made query pattern if the team later pays for Polygon's options history to build an ABNB IV/skew time series around past prints; not usable free.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a (live paid API)",
+  "size_hint": "small script repo",
+  "license": "none stated",
+  "last_activity": "2026-03-30",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "A ready-made query pattern if the team later pays for Polygon's options history to build an ABNB IV/skew time series around past prints; not usable free."
+  ]
+ },
+ {
+  "key": "github:alt-rahul/option-data-collector",
+  "url": "https://github.com/alt-rahul/option-data-collector",
+  "name": "option-data-collector",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Queries for downloading historical option data from OptionMetrics and CBOE. 5 stars, updated 30 Mar 2026. OptionMetrics is a paid academic/institutional dataset (like WRDS); CBOE side may include some free sample endpoints.",
+  "why_useful": "Only useful if the team or a partnering university library has OptionMetrics/WRDS access; otherwise not free. Worth flagging in case UF library provides WRDS/OptionMetrics access for the options-implied-move work.",
+  "potential": "low",
+  "gap_targets": [
+   17
+  ],
+  "geography": "n/a",
+  "time_coverage": "unknown",
+  "size_hint": "small",
+  "license": "none stated",
+  "last_activity": "2026-03-30",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Options and event-move tooling: historical option chains (CBOE samples, ORATS-like), earnings implied-move calculators, IV term-structure datasets, earnings-drift datasets"
+  ],
+  "why_all": [
+   "Only useful if the team or a partnering university library has OptionMetrics/WRDS access; otherwise not free. Worth flagging in case UF library provides WRDS/OptionMetrics access for the options-implied-move work."
+  ]
+ }
+]

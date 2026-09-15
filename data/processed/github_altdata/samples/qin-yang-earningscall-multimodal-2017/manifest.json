@@ -1,0 +1,28 @@
+{
+  "slug": "qin-yang-earningscall-multimodal-2017",
+  "url": "https://github.com/GeminiLn/EarningsCall_Dataset",
+  "sampled": true,
+  "total_bytes": 105955,
+  "files": [
+    "3M_Company_20170425_Text.txt",
+    "Amazon.com_Inc_20170202_Text.txt",
+    "Twitter_Inc_20170209_Text.txt",
+    "ceo_sentences.csv",
+    "README_upstream.md"
+  ],
+  "rows": "ceo_sentences.csv: 349 rows (3M 179, Amazon 57, Twitter 113); the three Text.txt files are one CEO/CFO sentence per line (179 / 57 / 113 lines); README_upstream.md n/a",
+  "columns": "ceo_sentences.csv: company, call_date, sentence_idx, sentence. Text.txt: no header, one sentence per line, time-ordered, aligned 1:1 with Audio/<Speaker>_<para>_<sent>.mp3 (audio not pulled)",
+  "date_range": "2017-02-02 to 2017-04-25 (call dates of the three example folders; full corpus covers S&P 500 calls in 2017)",
+  "how_pulled": "git clone --depth 1 --filter=blob:none --sparse https://github.com/GeminiLn/EarningsCall_Dataset.git; git sparse-checkout set --no-cone '3M Company_20170425/Text.txt' 'Amazon.com Inc._20170202/Text.txt' 'Twitter, Inc._20170209/Text.txt' README.md; cp the four files into the sample dir (renamed without spaces); python/pandas built ceo_sentences.csv from the three Text.txt files. Audio/*.mp3 (351 blobs in tree) deliberately not fetched.",
+  "full_dataset_size": "GitHub repo: 4 text files (~50 KB) + 351 sentence-level mp3 clips for the 3 example calls (size not measured; blob:none filter). Full corpus: 559 S&P 500 earnings calls from 2017, text + segmented audio, distributed as a 5-part split zip (ACL19_Release.zip) on Google Drive folder 1BKCANORbcmUJKkOkBOghw6uNHPqS_az1; size unstated in README (audio-dominated, plausibly several GB). Not downloaded.",
+  "description": "Replication release for Qin & Yang (ACL 2019), 'What You Say and How You Say It Matters', a multimodal (text + vocal) regression model that predicts post-call stock volatility. Grain is one sentence of the most-spoken executive per call, with each sentence aligned to a segmented audio clip; the repo holds three 2017 example calls (3M, Amazon, Twitter) and the 559-call corpus lives on Google Drive. Source is the authors' processing of public earnings-call recordings and transcripts. For ABNB the value is purely methodological: a documented sentence-aligned text/audio schema and a published volatility benchmark that an analyst could mirror for ABNB call-tone or earnings-implied-move work (Gap #17); the 2017 vintage predates the ABNB IPO and includes no travel names, so it supplies no observations for the model.",
+  "issues": "No LICENSE file in the repo and none stated for the Google Drive corpus (tos_or_license_flag=true) - the underlying transcripts/audio are derived from third-party call recordings, so redistribution rights are unclear; a human should decide before pulling the Drive zips. Repo is dormant (last commit 2022-08-04). Google Drive link not fetched (unstated size, no licence). git ls-tree -l against the blob:none clone hung fetching blob sizes and was killed - audio size therefore unmeasured. Sentence splitting in Text.txt is naive (e.g. 'U.S' breaks lines), so downstream text work needs re-joining.",
+  "source_urls": [
+    "https://github.com/GeminiLn/EarningsCall_Dataset.git",
+    "https://github.com/GeminiLn/EarningsCall_Dataset/blob/HEAD/README.md",
+    "https://github.com/GeminiLn/EarningsCall_Dataset/blob/HEAD/3M%20Company_20170425/Text.txt",
+    "https://github.com/GeminiLn/EarningsCall_Dataset/blob/HEAD/Amazon.com%20Inc._20170202/Text.txt",
+    "https://github.com/GeminiLn/EarningsCall_Dataset/blob/HEAD/Twitter,%20Inc._20170209/Text.txt"
+  ],
+  "pulled_at": "2026-09-14"
+}

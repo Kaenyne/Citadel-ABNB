@@ -1,0 +1,10 @@
+{
+ "slug": "factden-ctrip-trip-reviews-scraper",
+ "url": "https://github.com/factden/ctrip-trip-reviews-scraper",
+ "category": "competitor_ota",
+ "data_kind": "both",
+ "one_line": "MIT-licensed Apify actor for Trip.com / Ctrip hotel reviews (78 KB repo, 4 stars, last push 2026-09-07) with a committed 92 KB reviews-sample.csv of real 2026 reviews carrying reviewId, hotelId, submittedAt, checkInMonth, travelType, roomName, language, overallRating, sub-ratings and bilingual zh/en review text plus owner responses.",
+ "abnb_use": "The only lead in this batch touching a Chinese platform: checkInMonth + submittedAt gives the exact review-velocity-by-stay-month structure our Inside Airbnb stays index uses, so it is a template for an APAC/Chinese-outbound demand proxy (gaps #7, #9) where we are otherwise dark on ABNB's APAC region.",
+ "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/factden/ctrip-trip-reviews-scraper.git && cd ctrip-trip-reviews-scraper && git sparse-checkout set examples FIELDS.md README.md HOWTO.md  \u2014 under 1 MB total (reviews-sample.csv 92 KB, reviews-output.sample.json 10 KB). Do NOT run the actor against Trip.com/Ctrip; Apify account and ToS decision required.",
+ "tos_or_license_flag": true
+}

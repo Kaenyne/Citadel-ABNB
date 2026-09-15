@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:igrigorik/gharchive.org",
+  "url": "https://github.com/igrigorik/gharchive.org",
+  "name": "gharchive.org",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Source code for the GH Archive project itself (gharchive.org): crawling scripts, BigQuery integration/queries, and site content that together record and make queryable all public GitHub events (pushes, PRs, issues, stars, etc.) since 2011. MIT (code), CC-BY-4.0 (site content). 3.1k stars, 230 forks, 30 open issues, 146 commits. The event archive/data itself is hosted externally (BigQuery public dataset, gharchive.org hourly JSON.gz files), not committed to this repo.",
+  "why_useful": "The canonical entry point for pulling Airbnb's own public-GitHub-org activity (commit/PR/star velocity across its 200+ public repos) as an engineering-investment / indirect headcount-growth proxy \u2014 gap #15. Method/pointer, not a committed dataset in the repo itself.",
+  "potential": "medium",
+  "geography": "global (all public GitHub)",
+  "time_coverage": "2011-present, hourly archives",
+  "size_hint": "external: full GH event archive (BigQuery / gharchive.org gz files), TBs",
+  "license": "MIT (code) / CC-BY-4.0 (site)",
+  "last_activity": "actively maintained, 146 commits",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "The canonical entry point for pulling Airbnb's own public-GitHub-org activity (commit/PR/star velocity across its 200+ public repos) as an engineering-investment / indirect headcount-growth proxy \u2014 gap #15. Method/pointer, not a committed dataset in the repo itself."
+  ]
+ },
+ {
+  "key": "github:x-lab2017/open-digger",
+  "url": "https://github.com/X-lab2017/open-digger",
+  "name": "OpenDigger",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Open-source analytics platform (X-lab) that processes GH Archive data into precomputed per-repo/per-org monthly metrics (OpenRank, commit counts, contributor counts, star/fork trends, activity indices), served as JSON files plus sample data directories and Jupyter notebooks; TS/Node primary implementation with Python variants. Apache-2.0, 1,083 commits, 17 open issues, 4 open PRs, actively developed.",
+  "why_useful": "Directly usable to build a monthly time series of Airbnb's public-GitHub-org engineering activity (its ~200 public repos) without writing GH Archive/BigQuery queries from scratch \u2014 a ready-made input for the 'own GitHub org activity' engagement gap (#15) and, as an aside, a template for scoring any competitor's or partner's OSS output.",
+  "potential": "medium",
+  "geography": "global (any GitHub org/repo)",
+  "time_coverage": "GH Archive era, 2011-present, monthly granularity",
+  "size_hint": "precomputed JSON metric files, per-repo",
+  "license": "Apache-2.0",
+  "last_activity": "actively maintained (1,083 commits)",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Airbnb corporate footprint signals: careers/Greenhouse job-posting scrapers, LinkedIn headcount trackers, layoffs.fyi data, Glassdoor/Indeed review datasets, GitHub org activity (GH Archive)"
+  ],
+  "why_all": [
+   "Directly usable to build a monthly time series of Airbnb's public-GitHub-org engineering activity (its ~200 public repos) without writing GH Archive/BigQuery queries from scratch \u2014 a ready-made input for the 'own GitHub org activity' engagement gap (#15) and, as an aside, a template for scoring any competitor's or partner's OSS output."
+  ]
+ },
+ {
+  "key": "github:sumaksharikaa/earnings-call-nlp",
+  "url": "https://github.com/sumaksharikaa/earnings-call-nlp",
+  "name": "sumaksharikaa/earnings-call-nlp",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Streamlit FinBERT sentiment app; README states the underlying source is 'Motley Fool scraped earnings call transcripts (2017-2022), 18,755 transcripts across 2,876 tickers' (a well-known Kaggle-hosted Motley Fool dump), of which the repo itself analyzes 514 transcripts across 30 companies/8 sectors. Does not commit the full 18,755-transcript set.",
+  "why_useful": "Points to a broad multi-year, multi-thousand-ticker Motley Fool transcript corpus (2017-2022) that would include ABNB's 2021-2022 prints plus BKNG/EXPE/MAR/HLT/other travel peers over the same window \u2014 a candidate historical peer-transcript source if the Kaggle host is located.",
+  "potential": "medium",
+  "duplicate_of_holding": "ABNB transcripts already held since IPO; the incremental value is the peer/competitor coverage (BKNG/EXPE/MAR/HLT/Vrbo-adjacent names) in one uniform multi-year scrape.",
+  "geography": "US-listed companies (2,876 tickers)",
+  "time_coverage": "2017-2022",
+  "size_hint": "18,755 transcripts (external), 514 committed/analyzed in-repo",
+  "license": "unspecified",
+  "last_activity": "2026-06-25",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Points to a broad multi-year, multi-thousand-ticker Motley Fool transcript corpus (2017-2022) that would include ABNB's 2021-2022 prints plus BKNG/EXPE/MAR/HLT/other travel peers over the same window \u2014 a candidate historical peer-transcript source if the Kaggle host is located."
+  ]
+ },
+ {
+  "key": "github:sonith-bingi/earnings-call-intelligence",
+  "url": "https://github.com/Sonith-Bingi/earnings-call-intelligence",
+  "name": "Sonith-Bingi/earnings-call-intelligence",
+  "category": "company_filings_estimates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "43 NLP signals + 4 LLM agents cross-checking SEC filings, XGBoost/LightGBM overlay 'validated on 46K calls' (walk-forward AUC 0.643). Sources are external: Motley Fool transcripts via Kaggle (credentials required), SEC EDGAR 10-K/10-Q, yfinance prices. Coverage 4,386 tickers, Jan 2018-Dec 2025. Data is reconstructed at runtime via a pipeline script, not committed.",
+  "why_useful": "Broader and more recent (through Dec 2025) version of the same Motley Fool Kaggle transcript corpus referenced above, plus a working SEC-filing-date-matching pipeline that is itself reusable tooling (gap 15, SEC EDGAR full-text tooling).",
+  "potential": "medium",
+  "duplicate_of_holding": "Same caveat as above \u2014 ABNB transcripts already held; value is in peer coverage and the reusable EDGAR-matching pipeline.",
+  "geography": "US-listed, 4,386 tickers",
+  "time_coverage": "2018-2025",
+  "size_hint": "46,209 calls (external, not committed)",
+  "license": "unspecified",
+  "last_activity": "2026-07-10",
+  "gap_targets": [
+   4,
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Broader and more recent (through Dec 2025) version of the same Motley Fool Kaggle transcript corpus referenced above, plus a working SEC-filing-date-matching pipeline that is itself reusable tooling (gap 15, SEC EDGAR full-text tooling)."
+  ]
+ },
+ {
+  "key": "github:geminiln/earningscall_dataset",
+  "url": "https://github.com/GeminiLn/EarningsCall_Dataset",
+  "name": "EarningsCall_Dataset (Qin & Yang, ACL 2019)",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Segmented earnings-call text + aligned audio for S&P 500 companies, ~2017 (e.g. 3M, Amazon, Twitter, Feb-Apr 2017). Folders named CompanyName_Date; text files hold CEO statements split sentence-by-sentence, audio files named Speaker_Paragraph_Sentence. Repo has a handful of example folders + a link to the full set as 5 split zip files on Google Drive (too large for GitHub). 24 commits, no explicit license. Built for the ACL 2019 volatility-prediction paper.",
+  "why_useful": "Multimodal (text+audio) earnings-call corpus with a documented sentence-level structure; a template for building/verifying a similar ABNB-specific tone corpus and a source of peer (S&P 500) call data for cross-sectional tone/volatility benchmarking.",
+  "potential": "medium",
+  "geography": "US (S&P 500)",
+  "time_coverage": "2017 (sample folders); full set scope not independently confirmed",
+  "size_hint": "few example folders in-repo; full corpus in 5 Google Drive zips (size unstated)",
+  "license": "not stated",
+  "last_activity": "24 commits on master, exact date not surfaced",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "Multimodal (text+audio) earnings-call corpus with a documented sentence-level structure; a template for building/verifying a similar ABNB-specific tone corpus and a source of peer (S&P 500) call data for cross-sectional tone/volatility benchmarking."
+  ]
+ }
+]

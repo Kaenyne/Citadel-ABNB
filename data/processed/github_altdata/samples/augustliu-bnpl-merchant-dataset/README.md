@@ -1,0 +1,8 @@
+# augustliu-bnpl-merchant-dataset — sample (pulled 2026-09-14)
+
+Source: https://github.com/AugustLiu0415/BNPL_Merchant_Dataset (last commit 2026-08-10, **no licence file**).
+What it is: a one-shot Aug-2026 scrape of the Affirm / Klarna / Afterpay / Zip / Sezzle merchant directories (9,434 merchant x provider rows, 14,627 merchant x category rows), a 278-row adoption-dating table for merchants owned by 124 public parents (dated by Wayback CDX first capture of the directory page; every row has precision `unknown`), and a 2015-2026 SEC XBRL firm-quarter panel (4,675 rows; ABNB, BKNG, EXPE, MAR included).
+How pulled: the sparse shallow clone stalled on the 3,033-file Wayback cache (repo is 2.1 GB), so the nine named files were fetched with `curl -L` from raw.githubusercontent.com; `bnpl_scraper.py` was NOT run. The repo's own README is saved as `SOURCE_README.md`.
+Caps: 8.6 MB total, 10 files, no scraper executed, no login, no API key. Excluded: `public_company_panel_source_audit.csv` (14.8 MB), xlsx twins, logs, PNG previews, `data/merchant_ownership`, `data_processing/` control-group panel (18 MB audit), CDX cache.
+Extra: `extract_travel_merchants.csv` (190 rows) filters the category table to Travel / Hotels / Flights. Airbnb appears only under Zip (first seen 2022-06-25); Vrbo, Expedia, Booking.com, Priceline, Hotels.com, Agoda, Trip.com, Marriott, Hilton, Royal Caribbean, Delta appear under Affirm / Afterpay / Zip.
+Full dataset: `git clone --depth 1 --filter=blob:none https://github.com/AugustLiu0415/BNPL_Merchant_Dataset` (expect a long fetch), or curl individual paths from `raw.githubusercontent.com/AugustLiu0415/BNPL_Merchant_Dataset/HEAD/<path>`. See manifest.json for row counts, columns, date ranges and issues.

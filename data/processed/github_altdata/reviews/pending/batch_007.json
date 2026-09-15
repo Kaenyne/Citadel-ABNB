@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:lamini-ai/lamini-earnings-calls",
+  "url": "https://github.com/lamini-ai/lamini-earnings-calls",
+  "name": "lamini-earnings-calls",
+  "category": "company_filings_estimates",
+  "data_kind": "both",
+  "what_it_holds": "Archived (13 Jun 2024, read-only) repo with earnings-call transcripts in JSONL (examples include Bilibili/BILI, GFF, at least Q2-Q3 2020), plus the full open-source pipeline used to generate an 860,164-row question-answer dataset from those transcripts (mirrored at huggingface.co/datasets/lamini/earnings-calls-qa, cc-by-4.0). 43 stars, 3 forks, 13 commits, license not stated in-repo but the derived HF dataset is CC-BY-4.0.",
+  "why_useful": "A working, reproducible transcript-to-QA generation pipeline plus committed sample transcript JSONL across a range of tickers (semiconductor/tech-heavy in the QA set) \u2014 directly reusable code for turning any newly-sourced ABNB/peer transcripts into a structured QA/tone dataset.",
+  "potential": "medium",
+  "geography": "mixed (examples include non-US e.g. Bilibili; QA dataset skews semiconductor/tech: TSMC, Qualcomm, Marvell, Coherent)",
+  "time_coverage": "at least 2020 onward per examples",
+  "size_hint": "derived QA set: 860,164 rows; raw JSONL transcript sample size not stated",
+  "license": "not stated in repo; derived HF dataset CC-BY-4.0",
+  "last_activity": "archived 13 Jun 2024",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Earnings-call transcript datasets and NLP tooling (ECT datasets, Motley Fool scrapers, Seeking Alpha parsers), management-tone corpora"
+  ],
+  "why_all": [
+   "A working, reproducible transcript-to-QA generation pipeline plus committed sample transcript JSONL across a range of tickers (semiconductor/tech-heavy in the QA set) \u2014 directly reusable code for turning any newly-sourced ABNB/peer transcripts into a structured QA/tone dataset."
+  ]
+ },
+ {
+  "key": "github:lefterisloukas/edgar-crawler",
+  "url": "https://github.com/lefterisloukas/edgar-crawler",
+  "name": "edgar-crawler",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Open-source toolkit (545 stars, GPL-3.0, WWW 2025 paper) that downloads SEC EDGAR 10-K/10-Q/8-K filings and extracts specific Item sections (e.g. Item 7 MD&A, Item 1A Risk Factors) into structured JSON. No data committed by default but ships extraction/segmentation code end-to-end.",
+  "why_useful": "Directly matches the WP hint 'edgar-crawler'; would let the team build a repeatable MD&A/risk-factor text corpus for ABNB and peers (BKNG/EXPE/MAR/HLT) across quarters \u2014 useful for management-tone or text-based nowcast work already explored (context notes management tone tested and failed on current construction; a cleaner extracted corpus could be worth retrying with a different construction).",
+  "potential": "medium",
+  "geography": "US (SEC registrants)",
+  "time_coverage": "full EDGAR history",
+  "size_hint": "library/toolkit; output size depends on run",
+  "license": "GPL-3.0",
+  "last_activity": "2026-09-03",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Directly matches the WP hint 'edgar-crawler'; would let the team build a repeatable MD&A/risk-factor text corpus for ABNB and peers (BKNG/EXPE/MAR/HLT) across quarters \u2014 useful for management-tone or text-based nowcast work already explored (context notes management tone tested and failed on current construction; a cleaner extracted corpus could be worth retrying with a different construction)."
+  ]
+ },
+ {
+  "key": "github:sec-edgar/sec-edgar",
+  "url": "https://github.com/sec-edgar/sec-edgar",
+  "name": "sec-edgar",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package (module name `secedgar`) for downloading corporate filings from EDGAR by ticker(s), including daily filings by date range and 10-Q batch pulls; Apache-2.0, 1.4k stars, 332 forks, 766 commits, active CI.",
+  "why_useful": "Simple, well-maintained bulk-download alternative to edgartools for pulling every ABNB/BKNG/EXPE/MAR/HLT 8-K/10-Q filing text for a point-in-time archive (guide-date PDFs/txt), which the team needs for the pre-registration/point-in-time rule.",
+  "potential": "medium",
+  "geography": "US (SEC registrants)",
+  "time_coverage": "full EDGAR history",
+  "size_hint": "library, not a dataset",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-13",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "overlaps existing 'all letters/transcripts/XBRL since IPO' holding as an alternate acquisition method, not new data",
+  "hits": 2,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Simple, well-maintained bulk-download alternative to edgartools for pulling every ABNB/BKNG/EXPE/MAR/HLT 8-K/10-Q filing text for a point-in-time archive (guide-date PDFs/txt), which the team needs for the pre-registration/point-in-time rule.",
+   "Well-adopted alternative EDGAR bulk-download client (higher star count than most alternatives here) for the peer-print pipeline; good fallback if edgartools/datamule hit issues."
+  ]
+ },
+ {
+  "key": "github:baimmm6767/sec-data",
+  "url": "https://github.com/baimmm6767/sec-data",
+  "name": "sec-data",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "New (updated 12 Sep 2026) open-source Python engine turning SEC filings into modelling-ready CSV/Excel financials: quarterly statements, segment reporting, filing-aware XBRL mapping, accounting-standard repairs, Q4-derivation (Q4 = FY \u2212 9mo), caching. Low star count (2) so unproven/unreviewed.",
+  "why_useful": "The 'Q4 derivation' and 'segment reporting' features are exactly the mechanics the team needs to build peer segment/quarterly financials for BKNG/EXPE/MAR/HLT from annual+9-month XBRL filings, but code is brand-new and unvetted.",
+  "potential": "medium",
+  "geography": "US (SEC registrants)",
+  "time_coverage": "depends on XBRL availability, ~2009+",
+  "size_hint": "library, not a dataset",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "The 'Q4 derivation' and 'segment reporting' features are exactly the mechanics the team needs to build peer segment/quarterly financials for BKNG/EXPE/MAR/HLT from annual+9-month XBRL filings, but code is brand-new and unvetted."
+  ]
+ },
+ {
+  "key": "github:cpackard/fundholdings",
+  "url": "https://github.com/cpackard/fundholdings",
+  "name": "fundholdings",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python crawler (36 stars, MIT, updated 23 Aug 2026) that pulls mutual/hedge fund holdings (13F-style) from SEC EDGAR by fund and ticker.",
+  "why_useful": "Directly matches gap 15 ('13F holdings parsers, concentration history') \u2014 could be pointed at ABNB's CIK to build an institutional-ownership-concentration time series as a positioning proxy, complementing the existing options/short-interest holdings.",
+  "potential": "medium",
+  "geography": "US (SEC 13F filers)",
+  "time_coverage": "depends on filer history, quarterly 13F cadence back to filer inception",
+  "size_hint": "library, not a dataset",
+  "license": "MIT",
+  "last_activity": "2026-08-23",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "SEC EDGAR tooling: full-text search, 8-K/10-Q parsers, XBRL frames, financial statement datasets, edgar-crawler; peer print scrapers (BKNG EXPE MAR HLT)"
+  ],
+  "why_all": [
+   "Directly matches gap 15 ('13F holdings parsers, concentration history') \u2014 could be pointed at ABNB's CIK to build an institutional-ownership-concentration time series as a positioning proxy, complementing the existing options/short-interest holdings."
+  ]
+ }
+]

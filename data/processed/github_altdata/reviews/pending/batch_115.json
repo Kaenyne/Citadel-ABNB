@@ -1,0 +1,130 @@
+[
+ {
+  "key": "github:well-living/jpy-datareader",
+  "url": "https://github.com/well-living/jpy-datareader",
+  "name": "jpy-datareader",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python package (MIT, 26 stars, requires Python >=3.12) providing pandas-DataReader-style remote access to Japan's e-Stat portal: keyword search across statistics tables, metadata retrieval, automatic pagination past 100k rows, filtering by region/time/classification. Covers population/households, labor/wages, agriculture-forestry-fisheries fields explicitly in docs; e-Stat itself also hosts Japan Tourism Statistics / Survey of Overnight Travel Statistics tables reachable the same way. No data committed, code only.",
+  "why_useful": "Gap #7 (APAC regional travel volume -- Japan named explicitly). e-Stat is the underlying source for Japan overnight-stay/accommodation survey data (a JNTO-adjacent official series); this client makes it machine-pullable instead of manual portal downloads.",
+  "potential": "medium",
+  "geography": "Japan",
+  "time_coverage": "varies by e-Stat table",
+  "license": "MIT",
+  "last_activity": "current (requires Python 3.12+, recently built)",
+  "size_hint": "code only, no data files",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Gap #7 (APAC regional travel volume -- Japan named explicitly). e-Stat is the underlying source for Japan overnight-stay/accommodation survey data (a JNTO-adjacent official series); this client makes it machine-pullable instead of manual portal downloads."
+  ]
+ },
+ {
+  "key": "github:eurostat/hicp",
+  "url": "https://github.com/eurostat/hicp",
+  "name": "eurostat/hicp",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Eurostat R package (data.table-based, ~84 commits, 3 stars) providing functions to pull HICP price indices AND item weights from Eurostat's public database at any COICOP level, including the accommodation/restaurants-and-hotels aggregates and the finer 'accommodation services' class. Not a static dataset \u2014 a live API client maintained by Eurostat itself, so country x COICOP x month panels are one function call away.",
+  "why_useful": "We already hold euro-area HICP accommodation, but this is the maintained official tool (vs. a one-off pull) \u2014 lets the team refresh/extend country-level HICP accommodation and restaurants/hotels series easily, including point-in-time re-pulls (gap #4). Duplicate of what we hold in substance but materially better tooling.",
+  "potential": "medium",
+  "duplicate_of_holding": "euro-area HICP accommodation (already held), but this is the maintained upstream access method rather than a static pull",
+  "geography": "EU/EA, country-level",
+  "time_coverage": "Full Eurostat HICP history via API (typically 1996/2000-present depending on country)",
+  "size_hint": "N/A (API client, not stored data)",
+  "license": "unspecified in fetched README (Eurostat GitHub org)",
+  "last_activity": "actively maintained (84 commits; recent per repo page)",
+  "gap_targets": [
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "We already hold euro-area HICP accommodation, but this is the maintained official tool (vs. a one-off pull) \u2014 lets the team refresh/extend country-level HICP accommodation and restaurants/hotels series easily, including point-in-time re-pulls (gap #4). Duplicate of what we hold in substance but materially better tooling."
+  ]
+ },
+ {
+  "key": "github:sabers13/eurostat-hicp",
+  "url": "https://github.com/sabers13/Eurostat-HICP",
+  "name": "sabers13/Eurostat-HICP",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Repo explicitly described as 'Inflation trends (EU, country, COICOP) with YoY/MoM, weights, drilldowns' \u2014 i.e. a build that ingests Eurostat HICP by COICOP category (which includes accommodation services / restaurants-hotels) with weights and country drilldowns.",
+  "why_useful": "If it commits the COICOP-level output (not just code), it's a ready-made country x category HICP panel that could isolate accommodation services inflation by country, finer than the aggregate euro-area series we hold.",
+  "potential": "medium",
+  "duplicate_of_holding": "possibly duplicates euro-area HICP accommodation holding at coarser level; finer COICOP/country drilldown would be new",
+  "geography": "EU, country-level",
+  "time_coverage": "not confirmed (need repo inspection)",
+  "size_hint": "unknown; 0 stars, small project",
+  "license": "unspecified",
+  "last_activity": "2025-10-16",
+  "gap_targets": [],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "If it commits the COICOP-level output (not just code), it's a ready-made country x category HICP panel that could isolate accommodation services inflation by country, finer than the aggregate euro-area series we hold."
+  ]
+ },
+ {
+  "key": "github:paluigi-moltis/hicp-weights-downloader",
+  "url": "https://github.com/paluigi-moltis/hicp-weights-downloader",
+  "name": "paluigi-moltis/hicp-weights-downloader",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python script pulling Eurostat's HICP item-weight tables (dataset prc_hicp_inw or similar) via the Eurostat API into a Parquet file `hicp_weights.parquet`, plus a committed `coicop18.csv` ECOICOP v2 classification mapping. Covers EU + EA aggregates and all 27 EU member states, annual weights from the total index down to the most granular published level (e.g. CP0111A), including the accommodation-services / restaurants-and-hotels branch. No pre-downloaded weight data is committed; the classification CSV is.",
+  "why_useful": "Useful complement if the team needs accommodation-services expenditure weights by country/year to weight or decompose HICP moves \u2014 a narrow but concrete gap-filler for point-in-time HICP construction (gap #4).",
+  "potential": "medium",
+  "duplicate_of_holding": "no direct duplicate; weights are a different quantity than the HICP accommodation index we hold",
+  "geography": "EU/EA, country-level",
+  "time_coverage": "annual, full Eurostat HICP weights history",
+  "size_hint": "small parquet output (not yet confirmed committed to repo)",
+  "license": "unspecified",
+  "last_activity": "2026-04-13",
+  "gap_targets": [
+   4
+  ],
+  "hits": 2,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Useful complement if the team needs accommodation-services expenditure weights by country/year to weight or decompose HICP moves \u2014 a narrow but concrete gap-filler for point-in-time HICP construction (gap #4).",
+   "Gives the exact COICOP weight of 'accommodation services' inside each country's HICP basket, letting the team re-weight or decompose Eurostat HICP-accommodation moves by country rather than treating the euro-area print as one number \u2014 useful for the EMEA regional ADR/pricing bridge and for understanding why HICP-accommodation swings differ from Airbnb's EMEA mix."
+  ]
+ },
+ {
+  "key": "github:agscott/australiancpi",
+  "url": "https://github.com/agscott/AustralianCPI",
+  "name": "agscott/AustralianCPI",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "R project (CC0-1.0 licensed) that pulls the quarterly Australian CPI via the ABS API (script `1 ReadABS_API.R`), stores a processed `CPI.RData`, and renders an RMarkdown report (example output `Australian CPI 2023-Q2.html`). ABS CPI publishes a 'Domestic holiday travel and accommodation' expenditure class, so this pipeline is a plausible one-command route to that subcomponent, though the specific breakdown committed in CPI.RData was not confirmed by README alone.",
+  "why_useful": "Directly targets the theme's 'Australia CPI accommodation' ask; CC0 license and a working ABS-API pull script make it easy to adapt/re-run for the accommodation/domestic-travel expenditure class specifically, which we do not otherwise hold.",
+  "potential": "medium",
+  "duplicate_of_holding": "no \u2014 we hold no Australia CPI series currently",
+  "geography": "Australia (national, ABS)",
+  "time_coverage": "at least through 2023-Q2 per the committed HTML report; API pull could extend further",
+  "size_hint": "single CPI.RData file + one HTML report; small",
+  "license": "CC0-1.0",
+  "last_activity": "2023-08-23 (last commit)",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation"
+  ],
+  "why_all": [
+   "Directly targets the theme's 'Australia CPI accommodation' ask; CC0 license and a working ABS-API pull script make it easy to adapt/re-run for the accommodation/domestic-travel expenditure class specifically, which we do not otherwise hold."
+  ]
+ }
+]

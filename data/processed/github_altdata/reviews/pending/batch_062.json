@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:descarteslabs/dl-covid-19",
+  "url": "https://github.com/descarteslabs/DL-COVID-19",
+  "name": "DL-COVID-19 (Descartes Labs mobility index)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Descartes Labs' mobility statistic (m50: median max-distance moved per day by a typical device; m50_index: percent of Feb-Mar 2020 baseline) at US state (admin1) and county (admin2) level with FIPS codes, provided in NDJSON, long-format CSV, and wide-format CSV (dates as columns). Starts 2020-03-24, CC BY 4.0 licensed, 400+ commits with regular releases.",
+  "why_useful": "An independent, non-SafeGraph, non-Google mobility index at daily county granularity with a clean, well-documented, actively-maintained-looking commit history \u2014 useful as a cross-check series against the SafeGraph/Google flow data above, and as another distance-moved proxy for gap #5/#11 travel-shock studies.",
+  "geography": "United States, state and county (FIPS-coded)",
+  "time_coverage": "2020-03-24 onward",
+  "size_hint": "Daily CSV/NDJSON per state+county, hundreds of rows per day, multi-year",
+  "license": "CC BY 4.0",
+  "last_activity": "404 commits, multiple data-release commits",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   5,
+   11
+  ],
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "An independent, non-SafeGraph, non-Google mobility index at daily county granularity with a clean, well-documented, actively-maintained-looking commit history \u2014 useful as a cross-check series against the SafeGraph/Google flow data above, and as another distance-moved proxy for gap #5/#11 travel-shock studies."
+  ]
+ },
+ {
+  "key": "github:covidexposureindices/covidexposureindices",
+  "url": "https://github.com/COVIDExposureIndices/COVIDExposureIndices",
+  "name": "COVIDExposureIndices (PlaceIQ Location Exposure/Device Exposure Index)",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "PlaceIQ-sourced smartphone movement exposure indices: Location Exposure Index (LEX, cross-geography device co-visitation share) and Device Exposure Index (DEX, commercial-venue co-visitation, with income/education/race-quartile splits), published twice weekly (Wed/Sat) as compressed CSVs at state (51), county (~2,000), and CBSA level, 2020-01-20 through 2021-08-24 (discontinued). Underlies Couture/Dingel/Green/Handbury/Williams, Journal of Urban Economics 2021; IRB-approved (UC Berkeley / U Chicago).",
+  "why_useful": "A third independent commercial-mobility provider (PlaceIQ, a SafeGraph/Advan/Cuebiq peer) with CBSA-level granularity and demographic splits not present in the Google/Apple/SafeGraph series above \u2014 useful for city-level (CBSA) foot-traffic/visitation cross-checks and as a template for how commercial location-data vendors structure exposure/visitation indices, relevant to gap #2 (realized occupancy proxies) and #5/#11.",
+  "geography": "United States: state, county (~2,000), CBSA",
+  "time_coverage": "2020-01-20 through 2021-08-24",
+  "size_hint": "154 stars, 335 commits; twice-weekly compressed CSVs across the full date range",
+  "license": "Academic use with citation requirement (Journal of Urban Economics 2021 paper)",
+  "last_activity": "discontinued Sep 2021, repo static since",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   2,
+   5,
+   11
+  ],
+  "potential": "medium",
+  "hits": 1,
+  "themes": [
+   "Public-health and mobility indices: Google/Apple mobility archives, Cuebiq, SafeGraph/Advan/Dewey samples, Placer.ai-like foot traffic, mobility datasets by city"
+  ],
+  "why_all": [
+   "A third independent commercial-mobility provider (PlaceIQ, a SafeGraph/Advan/Cuebiq peer) with CBSA-level granularity and demographic splits not present in the Google/Apple/SafeGraph series above \u2014 useful for city-level (CBSA) foot-traffic/visitation cross-checks and as a template for how commercial location-data vendors structure exposure/visitation indices, relevant to gap #2 (realized occupancy proxies) and #5/#11."
+  ]
+ },
+ {
+  "key": "github:worldbank/overturelink-data-pipeline",
+  "url": "https://github.com/worldbank/OvertureLink-Data-Pipeline",
+  "name": "worldbank/OvertureLink-Data-Pipeline",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "World Bank-authored (MPL-2.0) ETL pipeline to query/extract Overture Maps data (roads, buildings, and by extension places) into ArcGIS Online, common GIS file formats, or local dumps for repeated use.",
+  "why_useful": "Institutional-grade, maintained pipeline for pulling Overture POI/building data repeatedly -- useful as tooling for a recurring hotel/lodging-supply count if the team wants a maintained World Bank pipeline instead of a one-off script.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "current Overture releases",
+  "size_hint": "pipeline code only",
+  "license": "MPL-2.0",
+  "last_activity": "2026-06-15",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Institutional-grade, maintained pipeline for pulling Overture POI/building data repeatedly -- useful as tooling for a recurring hotel/lodging-supply count if the team wants a maintained World Bank pipeline instead of a one-off script."
+  ]
+ },
+ {
+  "key": "github:mikeqfu/pydriosm",
+  "url": "https://github.com/mikeqfu/pydriosm",
+  "name": "mikeqfu/pydriosm",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "GPL-3.0 Python package (48 stars) for downloading, reading, and PostgreSQL-based I/O of OpenStreetMap data (Geofabrik and BBBike sources), analogous to osmextract but in Python.",
+  "why_useful": "Python-native alternative to osmextract for the same OSM tourism=* tag extraction workflow, useful if the team's pipeline is Python/DuckDB-based rather than R.",
+  "potential": "medium",
+  "geography": "global",
+  "time_coverage": "current OSM snapshot at run time",
+  "size_hint": "package code; extracts vary by region",
+  "license": "GPL-3.0",
+  "last_activity": "2026-05-12",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "functional duplicate of ropensci/osmextract in Python",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Python-native alternative to osmextract for the same OSM tourism=* tag extraction workflow, useful if the team's pipeline is Python/DuckDB-based rather than R."
+  ]
+ },
+ {
+  "key": "github:gsueur/osm-geoparquet",
+  "url": "https://github.com/gsueur/osm-geoparquet",
+  "name": "gsueur/osm-geoparquet",
+  "category": "geospatial_poi_mobility",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pipeline (10 stars, updated 23 Jul 2026) converting Geofabrik OSM PBFs into state-partitioned, theme-filtered GeoParquet extracts.",
+  "why_useful": "Converts Geofabrik PBFs into an analysis-ready, queryable columnar format (GeoParquet), which materially lowers the effort of filtering to tourism=hotel/guest_house/apartment tags at scale (e.g. all US states) for a supply-count series.",
+  "potential": "medium",
+  "geography": "appears US state-partitioned; method is generalizable",
+  "time_coverage": "current OSM snapshot at run time",
+  "size_hint": "pipeline code; GeoParquet outputs vary by state",
+  "license": "custom/other",
+  "last_activity": "2026-07-23",
+  "gap_targets": [
+   8
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "POI and place data: Overture Maps places, OSM extracts (tourism=*), Foursquare open places, Geofabrik tooling; counting STR/hotel supply from maps"
+  ],
+  "why_all": [
+   "Converts Geofabrik PBFs into an analysis-ready, queryable columnar format (GeoParquet), which materially lowers the effort of filtering to tourism=hotel/guest_house/apartment tags at scale (e.g. all US states) for a supply-count series."
+  ]
+ }
+]

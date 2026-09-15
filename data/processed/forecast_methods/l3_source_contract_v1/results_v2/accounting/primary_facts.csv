@@ -1,0 +1,17 @@
+id,source_id,section,paraphrase,value,units,period,status,source_date
+K01,SEC_K25,Note 2 / Revenue Recognition,Accommodation fees are recognized when the facilitation obligation is satisfied at check-in.,,,policy_in_reviewed_document,observed_disclosure,2026-02-12
+K02,SEC_K25,"Note 2 / Revenue Recognition, long-term stays","Stays of at least 28 nights have monthly contracts: first-month revenue at check-in, later months at monthly anniversaries.",28,nights_threshold,policy_in_reviewed_document,observed_disclosure,2026-02-12
+K03,SEC_K25,Note 2 / Revenue Recognition,Revenue is net service fees; cleaning fees and taxes are excluded.,,,policy_in_reviewed_document,observed_disclosure,2026-02-12
+K04,SEC_K25,Note 2 / Revenue Recognition,Collected pre-check-in service fees are refundable unearned fees; host disbursement follows check-in.,,,policy_in_reviewed_document,observed_disclosure,2026-02-12
+K05,SEC_K25,Note 2 / Foreign Currency,Non-USD-functional subsidiaries translate income at period averages and balance sheets at closing rates.,,,policy_in_reviewed_document,observed_disclosure,2026-02-12
+K06,SEC_K25,Note 2 / Foreign Currency,Monetary remeasurement uses closing rates; nonmonetary remeasurement uses historical rates; remeasurement gains and losses enter other income/expense.,,,policy_in_reviewed_document,observed_disclosure,2026-02-12
+K07,SEC_K25,Item 7A / Foreign Currency Exchange Risk,"Guest and host currencies can differ; payment timing creates currency exposure, including confirmed unbilled payment-program bookings.",,,policy_in_reviewed_document,observed_disclosure,2026-02-12
+K08,SEC_K25,Risk Factors / foreign currencies,Non-USD revenue represented 56% of 2025 revenue.,0.56,fraction_of_annual_revenue,FY2025,observed_disclosure,2026-02-12
+Q01,SEC_Q226,MD&A / Key Business Metrics / GBV,"GBV includes host earnings, fees, cleaning and taxes; cancellations and alterations reduce their processing period.",,,policy_in_reviewed_document,observed_disclosure,2026-08-06
+Q02,SEC_Q226,MD&A / Key Business Metrics / GBV,"Entire booking value enters GBV when booked, irrespective of payment; RNPL requires no booking payment and has higher historical cancellations.",,,policy_in_reviewed_document,observed_disclosure,2026-08-06
+Q03,SEC_Q226,MD&A / Free Cash Flow,RNPL delays collection toward the stay; customer funds do not affect FCF except their interest.,,,policy_in_reviewed_document,observed_disclosure,2026-08-06
+Q04,SEC_Q226,MD&A / Non-GAAP / Constant Currency,Constant-currency growth translates current foreign-currency revenue using comparative-period exchange rates.,,,policy_in_reviewed_document,observed_disclosure,2026-08-06
+Q05,SEC_Q226,Note 6 / cash-flow hedge reclassifications,Revenue hedge losses were $19M in Q2 and $34M in H1 2026.,19;34,USD_millions_loss,2026Q2;2026H1,observed_disclosure,2026-08-06
+Q06,SEC_Q226,Note 6 / Cash Flow Hedges,About $26M of deferred losses were expected in revenue over the next twelve months; actual reclassification depends on exchange rates.,26,USD_millions_loss_expected_next_12_months,as_of_2026-06-30,observed_disclosure,2026-08-06
+Q07,SEC_Q226,Note 6 / Cash Flow Hedges,"Outstanding designated FX hedge notional was $3.4B at June 30, 2026.",3400,USD_millions_notional,2026-06-30,observed_disclosure,2026-08-06
+Q08,SEC_Q226,MD&A / Key Business Metrics / Nights and Seats Booked,Seats count participants in experiences/services; bookings are net of cancellations and alterations.,,,policy_in_reviewed_document,observed_disclosure,2026-08-06

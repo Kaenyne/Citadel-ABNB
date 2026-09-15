@@ -147,27 +147,27 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | calibration-rail | ref_naive | W1 | PIT | 14 | 2.1 | 2.9 | 0.7 |  | 1.7 | 0.800 | 0.714 | 0.875 | 1 | 0.071 | False |
 | optimal-mix | mix_nights_yoy_all | W1 | PIT | 14 | 2.4 | 3.5 | 1.8 |  | 2.0 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
 | optimal-mix | mix_nights_yoy_parsimonious | W1 | PIT | 14 | 2.4 | 3.5 | 1.8 |  | 2.0 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
-| tracker-backlog | nights_yoy_next_q | W1 | PIT | 112 | 3.7 | 5.0 | 1.6 |  | 2.7 | 0.800 | 0.964 | 0.868 | 2 | 0.018 | False |
+| tracker-backlog | nights_yoy_next_q | W1 | PIT | 112 | 3.7 | 5.0 | 1.6 |  | 2.7 | 0.800 | 0.964 | 0.887 | 2 | 0.018 | False |
 | calibration-rail | ref_trailing4 | W1 | PIT | 14 | 3.8 | 5.3 | 3.0 |  | 3.2 | 0.800 | 0.786 | 1.000 | 2 | 0.143 | False |
 | calibration-rail | ref_ar1 | W1 | PIT | 14 | 4.9 | 6.7 | 4.8 |  | 4.1 | 0.800 | 0.500 | 1.000 | 3 | 0.214 | False |
 | optimal-mix | mix_nights_yoy_all | W1 | full_sample | 14 | 1.7 | 2.3 | 1.1 |  | 1.5 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
 | optimal-mix | mix_nights_yoy_parsimonious | W1 | full_sample | 14 | 1.7 | 2.3 | 1.1 |  | 1.5 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
 | calibration-rail | ref_ar1 | W1 | full_sample | 14 | 2.1 | 2.8 | 1.6 |  | 1.5 | 0.800 | 0.786 | 0.875 | 3 | 0.214 | False |
 | calibration-rail | ref_naive | W1 | full_sample | 14 | 2.1 | 2.9 | 0.7 |  | 1.5 | 0.800 | 0.786 | 0.875 | 1 | 0.071 | False |
-| tracker-backlog | nights_yoy_next_q | W1 | full_sample | 112 | 2.8 | 3.9 | 1.0 |  | 2.1 | 0.800 | 0.955 | 0.783 | 2 | 0.018 | False |
+| tracker-backlog | nights_yoy_next_q | W1 | full_sample | 112 | 2.8 | 3.9 | 1.0 |  | 2.1 | 0.800 | 0.955 | 0.755 | 2 | 0.018 | False |
 | calibration-rail | ref_trailing4 | W1 | full_sample | 14 | 3.8 | 5.3 | 3.0 |  | 2.9 | 0.800 | 0.643 | 1.000 | 2 | 0.143 | False |
 | optimal-mix | mix_nights_yoy_all | W2 | PIT | 10 | 1.5 | 2.1 | 0.6 |  | 1.5 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
 | optimal-mix | mix_nights_yoy_parsimonious | W2 | PIT | 10 | 1.5 | 2.1 | 0.6 |  | 1.5 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
 | calibration-rail | ref_naive | W2 | PIT | 10 | 1.7 | 2.2 | 0.2 |  | 1.3 | 0.800 | 0.900 | 1.000 | 1 | 0.100 | False |
 | calibration-rail | ref_trailing4 | W2 | PIT | 10 | 1.9 | 2.2 | 0.8 |  | 1.5 | 0.800 | 1.000 | 1.000 | 2 | 0.200 | False |
 | calibration-rail | ref_ar1 | W2 | PIT | 10 | 2.9 | 3.6 | 2.7 |  | 2.0 | 0.800 | 0.700 | 1.000 | 3 | 0.300 | False |
-| tracker-backlog | nights_yoy_next_q | W2 | PIT | 80 | 3.4 | 4.8 | 0.7 |  | 2.5 | 0.800 | 0.950 | 0.851 | 2 | 0.025 | False |
+| tracker-backlog | nights_yoy_next_q | W2 | PIT | 80 | 3.4 | 4.8 | 0.7 |  | 2.5 | 0.800 | 0.950 | 0.892 | 2 | 0.025 | False |
 | optimal-mix | mix_nights_yoy_all | W2 | full_sample | 10 | 1.4 | 1.9 | 0.6 |  | 1.3 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
 | optimal-mix | mix_nights_yoy_parsimonious | W2 | full_sample | 10 | 1.4 | 1.9 | 0.6 |  | 1.3 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | False |
 | calibration-rail | ref_naive | W2 | full_sample | 10 | 1.7 | 2.2 | 0.2 |  | 1.2 | 0.800 | 0.800 | 1.000 | 1 | 0.100 | False |
 | calibration-rail | ref_trailing4 | W2 | full_sample | 10 | 1.9 | 2.2 | 0.8 |  | 1.3 | 0.800 | 0.900 | 1.000 | 2 | 0.200 | False |
 | calibration-rail | ref_ar1 | W2 | full_sample | 10 | 2.0 | 2.4 | 1.5 |  | 1.4 | 0.800 | 0.800 | 1.000 | 3 | 0.300 | False |
-| tracker-backlog | nights_yoy_next_q | W2 | full_sample | 80 | 2.9 | 4.1 | 0.8 |  | 2.1 | 0.800 | 0.950 | 0.743 | 2 | 0.025 | False |
+| tracker-backlog | nights_yoy_next_q | W2 | full_sample | 80 | 2.9 | 4.1 | 0.8 |  | 2.1 | 0.800 | 0.950 | 0.824 | 2 | 0.025 | False |
 
 ## target: `revenue_musd`
 
@@ -188,6 +188,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | calibration-rail | gbm_revenue | W1 | PIT | 10 | 73.6 | 100.5 | 37.0 | 0.927 | 60.1 | 0.800 | 0.600 | 1.000 | 4 | 0.400 | True |
 | baselines | street | W1 | PIT | 14 | 87.7 | 100.9 | -68.3 | 1.073 | 58.4 | 0.800 | 0.786 | 0.875 | 0 | 0.000 | False |
 | baselines | ar1 | W1 | PIT | 14 | 90.1 | 103.5 | -48.8 | 1.101 | 68.8 | 0.800 | 0.286 | 0.875 | 3 | 0.214 | False |
+| l0-dolthub-v2 | street_dolthub | W1 | PIT | 14 | 92.3 | 107.8 | -69.7 | 1.146 | 60.9 | 0.800 | 0.857 | 0.875 | 0 | 0.000 | False |
 | kernel-lambda | revenue_level_h1 | W1 | PIT | 14 | 88.3 | 109.9 | 70.2 | 1.169 | 63.0 | 0.800 | 0.857 | 1.000 | 5 | 0.357 | False |
 | kernel-lambda | revenue_level_next_q_w038 | W1 | PIT | 14 | 109.5 | 134.8 | 98.7 | 1.433 | 73.1 | 0.800 | 0.929 | 0.750 | 5 | 0.357 | False |
 | kernel-lambda | revenue_level_next_q_w033 | W1 | PIT | 14 | 120.1 | 148.9 | 106.9 | 1.584 | 80.1 | 0.800 | 0.929 | 0.875 | 5 | 0.357 | False |
@@ -212,6 +213,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | kernel-lambda | revenue_level_next_q_w033 | W1 | full_sample | 14 | 68.0 | 85.5 | 58.4 | 0.909 | 50.1 | 0.800 | 1.000 | 0.750 | 5 | 0.357 | True |
 | baselines | naive | W1 | full_sample | 14 | 75.1 | 94.0 | 12.8 | 1.000 | 52.8 | 0.800 | 0.714 | 0.875 | 1 | 0.071 | False |
 | baselines | street | W1 | full_sample | 14 | 87.7 | 100.9 | -68.3 | 1.073 | 60.1 | 0.800 | 0.929 | 0.875 | 0 | 0.000 | False |
+| l0-dolthub-v2 | street_dolthub | W1 | full_sample | 14 | 92.3 | 107.8 | -69.7 | 1.146 | 61.8 | 0.800 | 0.786 | 0.875 | 0 | 0.000 | False |
 | baselines | trailing4 | W1 | full_sample | 14 | 134.8 | 169.8 | 75.3 | 1.806 | 97.5 | 0.800 | 0.643 | 1.000 | 2 | 0.143 | False |
 | baselines | naive_seasonal | W1 | full_sample | 14 | 340.0 | 352.9 | -340.0 | 3.754 | 285.0 | 0.800 | 0.000 | 0.500 | 1 | 0.071 | False |
 | l1-reconciliation | revenue_contemporaneous | W1 | full_sample | 14 | 1,003.7 | 1,027.4 | -12.3 | 10.927 | 616.2 | 0.800 | 0.643 | 0.875 | 68 | 4.857 | False |
@@ -227,6 +229,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | kernel-lambda | revenue_level_next_q_last3 | W2 | PIT | 10 | 49.1 | 70.2 | 27.5 | 0.647 | 40.9 | 0.800 | 0.800 | 1.000 | 5 | 0.500 | True |
 | kernel-lambda | revenue_level_next_q | W2 | PIT | 10 | 60.8 | 78.8 | 57.9 | 0.727 | 45.9 | 0.800 | 0.800 | 1.000 | 5 | 0.500 | True |
 | baselines | street | W2 | PIT | 10 | 82.1 | 94.5 | -54.9 | 0.871 | 54.7 | 0.800 | 0.700 | 0.750 | 0 | 0.000 | False |
+| l0-dolthub-v2 | street_dolthub | W2 | PIT | 10 | 83.5 | 95.5 | -51.9 | 0.881 | 55.8 | 0.800 | 0.800 | 0.750 | 0 | 0.000 | False |
 | kernel-lambda | revenue_level_h1 | W2 | PIT | 10 | 72.7 | 96.0 | 54.4 | 0.886 | 55.3 | 0.800 | 0.900 | 1.000 | 5 | 0.500 | False |
 | calibration-rail | gbm_revenue | W2 | PIT | 10 | 73.6 | 100.5 | 37.0 | 0.927 | 60.1 | 0.800 | 0.600 | 1.000 | 4 | 0.400 | True |
 | baselines | naive | W2 | PIT | 10 | 91.5 | 108.4 | 4.2 | 1.000 | 64.4 | 0.800 | 0.900 | 1.000 | 1 | 0.100 | False |
@@ -251,6 +254,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | kernel-lambda | revenue_level_h1 | W2 | full_sample | 10 | 57.3 | 76.3 | 34.4 | 0.703 | 46.0 | 0.800 | 0.900 | 1.000 | 5 | 0.500 | True |
 | kernel-lambda | revenue_level_next_q_w038 | W2 | full_sample | 10 | 74.9 | 88.0 | 62.4 | 0.812 | 51.7 | 0.800 | 1.000 | 0.750 | 5 | 0.500 | True |
 | baselines | street | W2 | full_sample | 10 | 82.1 | 94.5 | -54.9 | 0.871 | 58.0 | 0.800 | 1.000 | 0.750 | 0 | 0.000 | False |
+| l0-dolthub-v2 | street_dolthub | W2 | full_sample | 10 | 83.5 | 95.5 | -51.9 | 0.881 | 56.3 | 0.800 | 0.900 | 0.750 | 0 | 0.000 | False |
 | kernel-lambda | revenue_level_next_q_w033 | W2 | full_sample | 10 | 81.0 | 96.2 | 67.5 | 0.887 | 55.7 | 0.800 | 1.000 | 0.750 | 5 | 0.500 | True |
 | baselines | ar1 | W2 | full_sample | 10 | 82.8 | 99.3 | -7.6 | 0.916 | 57.0 | 0.800 | 0.600 | 1.000 | 3 | 0.300 | True |
 | baselines | naive | W2 | full_sample | 10 | 91.5 | 108.4 | 4.2 | 1.000 | 62.3 | 0.800 | 0.600 | 1.000 | 1 | 0.100 | False |
@@ -267,7 +271,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | optimal-mix | mix_revenue_yoy_parsimonious | W1 | PIT | 14 | 2.6 | 3.6 | 1.5 | 0.937 | 2.1 | 0.800 | 1.000 | 0.875 | 0 | 0.000 | True |
 | baselines | naive | W1 | PIT | 14 | 3.1 | 3.8 | 0.5 | 1.000 | 2.3 | 0.800 | 0.571 | 1.000 | 1 | 0.071 | False |
 | baselines | ar1 | W1 | PIT | 14 | 3.8 | 4.4 | -2.2 | 1.138 | 3.0 | 0.800 | 0.286 | 0.875 | 3 | 0.214 | False |
-| tracker-backlog | revenue_yoy_next_q | W1 | PIT | 112 | 4.4 | 6.2 | 1.7 | 1.630 | 3.1 | 0.800 | 0.768 | 0.868 | 2 | 0.018 | False |
+| tracker-backlog | revenue_yoy_next_q | W1 | PIT | 112 | 4.4 | 6.2 | 1.7 | 1.630 | 3.1 | 0.800 | 0.768 | 0.887 | 2 | 0.018 | False |
 | baselines | trailing4 | W1 | PIT | 14 | 6.2 | 8.8 | 3.8 | 2.297 | 5.3 | 0.800 | 0.786 | 0.875 | 2 | 0.143 | False |
 | baselines | naive_seasonal | W1 | PIT | 14 | 14.1 | 14.7 | -14.1 | 3.849 | 12.5 | 0.800 | 0.000 | 0.875 | 1 | 0.071 | False |
 | kernel-lambda | revenue_yoy_next_q | W1 | full_sample | 14 | 1.6 | 2.1 | 1.3 | 0.551 | 1.3 | 0.800 | 0.929 | 0.875 | 5 | 0.357 | True |
@@ -275,7 +279,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | optimal-mix | mix_revenue_yoy_parsimonious | W1 | full_sample | 14 | 2.2 | 2.8 | 1.3 | 0.725 | 1.9 | 0.800 | 1.000 | 0.875 | 0 | 0.000 | True |
 | baselines | ar1 | W1 | full_sample | 14 | 2.6 | 3.4 | -0.2 | 0.896 | 1.9 | 0.800 | 0.714 | 0.750 | 3 | 0.214 | True |
 | baselines | naive | W1 | full_sample | 14 | 3.1 | 3.8 | 0.5 | 1.000 | 2.1 | 0.800 | 0.714 | 1.000 | 1 | 0.071 | False |
-| tracker-backlog | revenue_yoy_next_q | W1 | full_sample | 112 | 3.4 | 4.7 | 1.3 | 1.231 | 2.3 | 0.800 | 0.857 | 0.840 | 2 | 0.018 | False |
+| tracker-backlog | revenue_yoy_next_q | W1 | full_sample | 112 | 3.4 | 4.7 | 1.3 | 1.231 | 2.3 | 0.800 | 0.857 | 0.774 | 2 | 0.018 | False |
 | baselines | trailing4 | W1 | full_sample | 14 | 6.2 | 8.8 | 3.8 | 2.297 | 4.7 | 0.800 | 0.643 | 0.875 | 2 | 0.143 | False |
 | baselines | naive_seasonal | W1 | full_sample | 14 | 14.1 | 14.7 | -14.1 | 3.849 | 11.9 | 0.800 | 0.000 | 0.875 | 1 | 0.071 | False |
 | optimal-mix | mix_revenue_yoy_all | W2 | PIT | 10 | 1.6 | 2.2 | 0.3 | 0.505 | 1.7 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | True |
@@ -284,7 +288,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | baselines | naive | W2 | PIT | 10 | 3.6 | 4.3 | 0.0 | 1.000 | 2.6 | 0.800 | 0.600 | 1.000 | 1 | 0.100 | False |
 | baselines | ar1 | W2 | PIT | 10 | 3.8 | 4.4 | -1.5 | 1.034 | 2.9 | 0.800 | 0.400 | 1.000 | 3 | 0.300 | False |
 | baselines | trailing4 | W2 | PIT | 10 | 3.8 | 4.6 | 0.6 | 1.077 | 2.8 | 0.800 | 1.000 | 0.750 | 2 | 0.200 | False |
-| tracker-backlog | revenue_yoy_next_q | W2 | PIT | 80 | 3.8 | 5.7 | 0.2 | 1.331 | 2.8 | 0.800 | 0.775 | 0.824 | 2 | 0.025 | False |
+| tracker-backlog | revenue_yoy_next_q | W2 | PIT | 80 | 3.8 | 5.7 | 0.2 | 1.331 | 2.8 | 0.800 | 0.775 | 0.865 | 2 | 0.025 | False |
 | baselines | naive_seasonal | W2 | PIT | 10 | 12.5 | 13.0 | -12.5 | 3.036 | 10.4 | 0.800 | 0.000 | 0.750 | 1 | 0.100 | False |
 | optimal-mix | mix_revenue_yoy_all | W2 | full_sample | 10 | 1.6 | 2.1 | 0.6 | 0.495 | 1.6 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | True |
 | optimal-mix | mix_revenue_yoy_parsimonious | W2 | full_sample | 10 | 1.7 | 2.2 | 0.5 | 0.510 | 1.7 | 0.800 | 1.000 | 1.000 | 0 | 0.000 | True |
@@ -292,7 +296,7 @@ Format v1.0. Built 2026-09-11. LIVE rows are excluded by construction: the 2026-
 | baselines | ar1 | W2 | full_sample | 10 | 3.3 | 4.0 | -0.5 | 0.935 | 2.3 | 0.800 | 0.600 | 0.750 | 3 | 0.300 | True |
 | baselines | naive | W2 | full_sample | 10 | 3.6 | 4.3 | 0.0 | 1.000 | 2.4 | 0.800 | 0.600 | 1.000 | 1 | 0.100 | False |
 | baselines | trailing4 | W2 | full_sample | 10 | 3.8 | 4.6 | 0.6 | 1.077 | 2.6 | 0.800 | 0.700 | 0.750 | 2 | 0.200 | False |
-| tracker-backlog | revenue_yoy_next_q | W2 | full_sample | 80 | 3.3 | 4.8 | 0.7 | 1.127 | 2.4 | 0.800 | 0.850 | 0.797 | 2 | 0.025 | False |
+| tracker-backlog | revenue_yoy_next_q | W2 | full_sample | 80 | 3.3 | 4.8 | 0.7 | 1.127 | 2.4 | 0.800 | 0.850 | 0.770 | 2 | 0.025 | False |
 | baselines | naive_seasonal | W2 | full_sample | 10 | 12.5 | 13.0 | -12.5 | 3.036 | 10.3 | 0.800 | 0.000 | 0.750 | 1 | 0.100 | False |
 
 ## target: `take_rate_pct`

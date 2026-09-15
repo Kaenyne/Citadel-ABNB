@@ -1,0 +1,64 @@
+{
+  "theme": "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks",
+  "modality": "gh",
+  "candidates": [
+    {
+      "url": "https://github.com/helios1014/US_State_Department_Travel_Advisories",
+      "name": "US_State_Department_Travel_Advisories",
+      "category": "events_weather_shocks",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "Ongoing daily archive of US State Dept Travel Advisories, built by a script (feed_test.py) that pulls the official State Dept RSS feed once per day at 12:00 UTC and writes it into an archive format; generates a map visualization of advisory levels by country. Actively updated (last push 25 Aug 2026). No stated start date for the archive's history (appears to have begun recently, so backfill before its start date is not available), but going forward this gives a point-in-time, dated series of advisory level changes (Level 1-4) by country -- directly fills gap #11 (events/shocks) as a leading indicator for cross-border and destination-specific ABNB demand shocks (e.g. advisory upgrades in Mexico/LatAm/Europe markets).",
+      "why_useful": "A dated, per-country US travel advisory level series is a clean, free, point-in-time demand-shock proxy for cross-border travel to/from specific ABNB regional markets (LatAm, EMEA) -- addresses gap #11 (events and shocks) and could pair with the regulatory event database already held. Advisory level changes are discrete, dated events unlike sentiment indices that failed before.",
+      "potential": "medium",
+      "gap_targets": [11],
+      "license": "BSD-3-Clause",
+      "last_activity": "2026-08-25",
+      "geography": "Global (by country, US State Dept perspective)",
+      "time_coverage": "Ongoing daily since repo creation (exact start unclear, likely 2025-2026); no historical backfill of past advisory levels apparent",
+      "size_hint": "small (RSS-derived daily snapshots)"
+    },
+    {
+      "url": "https://github.com/itsSuryanshu/TravelAdvisoryScraper",
+      "name": "TravelAdvisoryScraper",
+      "category": "events_weather_shocks",
+      "data_kind": "acquisition_method",
+      "what_it_holds": "A Python scraper (BeautifulSoup4/Requests/Pandas) that pulls Canada's official government travel advisory website and writes a CSV of current advisory levels by destination country. No data is committed to the repo (gitignored output); includes an AWS Lambda branch for scheduled cloud runs.",
+      "why_useful": "A second-country (Canada) travel-advisory data source, complementary to the US State Dept feed, giving a different vantage point on the same demand-shock signal -- low marginal value alone but a working method that could be scheduled to build a point-in-time series if run going forward (not run per the sanctioned-sources rule).",
+      "potential": "low",
+      "gap_targets": [11],
+      "license": "none stated",
+      "last_activity": "2025-06-25",
+      "geography": "Global, Canadian government advisory perspective",
+      "time_coverage": "current snapshot only, no historical data committed",
+      "size_hint": "tiny (scraper code only, no data)"
+    },
+    {
+      "url": "https://github.com/loewenj700/global_peace",
+      "name": "global_peace",
+      "category": "events_weather_shocks",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Committed Global Peace Index dataset (country-level peace/safety scores) plus Python data-viz scripts. Small repo (2 stars), scope and exact year range not confirmed beyond the description; appears to be a static snapshot of GPI country rankings rather than a time series.",
+      "why_useful": "Global Peace Index is a country-level annual safety/instability score that could serve as a coarse macro control for destination-country risk in the same demand-shock family as travel advisories, though it is annual and static rather than point-in-time dated, and is a weaker signal than the State Dept advisory feed above.",
+      "potential": "low",
+      "gap_targets": [11],
+      "license": "none stated",
+      "last_activity": "2026-02-26",
+      "geography": "Global (country-level)",
+      "time_coverage": "unclear, likely a single/few-year snapshot",
+      "size_hint": "small"
+    }
+  ],
+  "queries_run": [
+    "gh search repos: state department travel advisory",
+    "gh search repos: crime data by city",
+    "gh search repos: travel insurance claims dataset",
+    "gh search repos: numbeo crime index",
+    "gh search repos: global peace index dataset",
+    "gh search repos: travel advisory scraper",
+    "gh search repos: osac crime and safety report",
+    "WebFetch: helios1014/US_State_Department_Travel_Advisories README",
+    "WebFetch: itsSuryanshu/TravelAdvisoryScraper repo page"
+  ],
+  "notes": "This theme is thin on GitHub: no repos found for 'travel insurance claims' (0 results), no useful 'crime data by city' repos beyond generic BI-dashboard tutorials with no committed multi-city data (excluded per instructions -- these are single-purpose dashboard projects with no reusable data), no Numbeo mirror or OSAC (Overseas Security Advisory Council) scraper found. The two travel-advisory repos found are small/low-star but functionally on-target: they are the only concrete GitHub artifacts touching 'insurance, safety, travel advisories as demand shocks'. Dead end: travel insurance claims data appears to not exist on GitHub as open data (likely proprietary/insurer-held); crime-by-city GitHub content is dominated by generic dashboard-portfolio projects (Chicago/US crime Kaggle re-hashes) with no multi-city panel suitable for cataloguing, so none included. Worth a future scout trying broader terms: 'FBI UCR crime API', 'Vera institute incarceration', 'destination safety index', or searching for Numbeo-scraper repos directly by topic tag rather than free text, and checking Kaggle/Zenodo directly (outside gh's reach) for travel-insurance-claims datasets referenced by academic papers.",
+  "gap_note": "Only gap #11 (events and shocks) is meaningfully addressed by this theme's results; no repo found for insurance claims or systematic city-level crime panels."
+}

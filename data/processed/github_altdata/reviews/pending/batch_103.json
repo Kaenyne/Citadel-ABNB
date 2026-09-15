@@ -1,0 +1,124 @@
+[
+ {
+  "key": "github:kangaseric4152-max/bls-census-housing-analysis",
+  "url": "https://github.com/kangaseric4152-max/bls-census-housing-analysis",
+  "name": "bls-census-housing-analysis",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end pipeline ingesting BLS QCEW (employment) and Census building permits, normalizing into analytical views with reproducible metrics. Pushed 20 Mar 2026.",
+  "why_useful": "Combines labor-market and permit data at a reproducible-pipeline level; permits piece overlaps gap 13 (housing supply) and could be adapted rather than built from scratch.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2026-03-20",
+  "geography": "US",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "Combines labor-market and permit data at a reproducible-pipeline level; permits piece overlaps gap 13 (housing supply) and could be adapted rather than built from scratch."
+  ]
+ },
+ {
+  "key": "github:wahuizhenli/massachusettsrealestateinvestmentanalysis",
+  "url": "https://github.com/wahuizhenli/MassachusettsRealEstateInvestmentAnalysis",
+  "name": "MassachusettsRealEstateInvestmentAnalysis",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "AWS cloud pipeline analyzing Massachusetts real estate using Zillow ZHVI & ZORI data with a Streamlit dashboard. Pushed 28 Apr 2026.",
+  "why_useful": "State-scoped joint ZHVI/ZORI pull; narrow geography limits usefulness beyond a single-state cross-check.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "last_activity": "2026-04-28",
+  "geography": "Massachusetts",
+  "hits": 1,
+  "themes": [
+   "Long-term rent indices: Zillow ZORI/ZHVI downloaders, Apartment List, Redfin data center, Realtor.com, HUD Fair Market Rents, Census ACS rent, CoStar-like"
+  ],
+  "why_all": [
+   "State-scoped joint ZHVI/ZORI pull; narrow geography limits usefulness beyond a single-state cross-check."
+  ]
+ },
+ {
+  "key": "github:migue1neto/idealista",
+  "url": "https://github.com/migue1neto/Idealista",
+  "name": "Idealista (Portugal)",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Web scraping and data analysis of all Idealista listings in Portugal.",
+  "why_useful": "Portugal LTR coverage is thinner than Spain in most catalogues; worth a look for a Lisbon/Porto rental panel adjacent to the team's existing Portugal hotel-demand dataset.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Portugal",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-07-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Portugal LTR coverage is thinner than Spain in most catalogues; worth a look for a Lisbon/Porto rental panel adjacent to the team's existing Portugal hotel-demand dataset."
+  ]
+ },
+ {
+  "key": "github:balzer82/immoscraper",
+  "url": "https://github.com/balzer82/immoscraper",
+  "name": "immoscraper",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Immoscout24.de scraper plus data analytics/notebooks \u2014 likely includes example pulled datasets alongside the scraping code.",
+  "why_useful": "Combines acquisition with ready analysis of German rental/sale listings; check notebooks for any committed historical CSV snapshots.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Germany",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-05-31",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Combines acquisition with ready analysis of German rental/sale listings; check notebooks for any committed historical CSV snapshots."
+  ]
+ },
+ {
+  "key": "github:hamedrazavi/rental_analysis_switzerland_immoscout24",
+  "url": "https://github.com/hamedrazavi/rental_analysis_switzerland_immoscout24",
+  "name": "rental_analysis_switzerland_immoscout24",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Python scripts to download apartment rental listings from immoscout24.ch (Switzerland) and convert to a pandas DataFrame, plus downstream price-prediction modeling.",
+  "why_useful": "Swiss LTR rental listing pull method; smaller, niche market but adds a country not otherwise covered.",
+  "potential": "low",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Switzerland",
+  "time_coverage": "unknown",
+  "size_hint": "unknown",
+  "license": "none declared",
+  "last_activity": "2026-03-07",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Swiss LTR rental listing pull method; smaller, niche market but adds a country not otherwise covered."
+  ]
+ }
+]

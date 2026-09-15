@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:tsilo13/opentable-scraper",
+  "url": "https://github.com/Tsilo13/opentable-scraper",
+  "name": "Tsilo13/opentable-scraper",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An update/adaptation of the classic OpenTable seated-diners scraper originally popularized in Stefan Jansen's 'Machine Learning for Trading' alternative-data chapter. Sibling scraper repos exist (Litigator98765/opentable-scraper, Abdullah-Shaheer/opentable-scraper \u2014 top-100-restaurants only, navshar1999/opentable_scraper) plus an Apify-hosted commercial version (bondvit/opentable-crawler-examples). Checked stefan-jansen/machine-learning-for-trading directly: current version of that repo's own alt-data chapter no longer includes an OpenTable module (cut in a later edition), so these smaller forks are now the only GitHub trace of that method.",
+  "why_useful": "OpenTable year-over-year seated-diner counts by city/state are a well-known local-economic-activity/leisure-spend proxy; a working scraper (unrun, per rules) could extend or refresh what we already hold conceptually (item 6, consumer spend panels) with a city-level dining-out signal correlated with tourism intensity, distinct from card-spend panels.",
+  "potential": "low",
+  "license": "none stated on the small forks",
+  "last_activity": "2024-12-10 (Tsilo13); 2026-06-15 (Apify example)",
+  "geography": "US metros covered by OpenTable",
+  "time_coverage": "real-time scrape only, no historical file",
+  "size_hint": "code only",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "conceptually adjacent to OpenTable seated-diners panel already noted as held/known",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "OpenTable year-over-year seated-diner counts by city/state are a well-known local-economic-activity/leisure-spend proxy; a working scraper (unrun, per rules) could extend or refresh what we already hold conceptually (item 6, consumer spend panels) with a city-level dining-out signal correlated with tourism intensity, distinct from card-spend panels."
+  ]
+ },
+ {
+  "key": "github:erictao947/earnings-vol-study",
+  "url": "https://github.com/erictao947/earnings-vol-study",
+  "name": "earnings-vol-study",
+  "category": "markets_options_positioning",
+  "data_kind": "both",
+  "what_it_holds": "Python event study of 639 earnings announcements across 54 large-cap US stocks, 2023-2026, built on free DoltHub options/price data. Committed CSVs in /data/: universe.csv (54 tickers), events.csv (earnings dates), event_panel.csv (full implied-vol/price/straddle panel, ~500-639 rows), events_enriched.csv, plus JSON result files (rq1/rq2/rq3, multiple-testing correction). Findings: IV rises ~7.6 vol pts pre-announcement and crushes ~7.3 pts post; implied move (~4.6% median) exceeds realized move (~3.7%), premium ratio 1.22x (p=0.041); pre-event IV is dominant crush-magnitude driver (R2=0.50). Includes data-quality audits, out-of-sample splits, placebo tests, unit tests.",
+  "why_useful": "Directly on-theme: a recent (through 2026), reproducible earnings-implied-move / IV-crush dataset and methodology built entirely on free data (DoltHub). If ABNB is among the 54 tickers this gives a ready calibration for the 5 Nov 2026 options-implied move; even if not, the method + DoltHub data source is directly replicable for ABNB. Also flags DoltHub as a free options-data source worth checking separately (fills gap #17 earnings-implied-move estimators, complements the existing reverse-DCF market-implied-move work).",
+  "potential": "high",
+  "geography": "US large-caps, 8 sectors",
+  "time_coverage": "2023-2026",
+  "size_hint": "~600-row event panel + several supporting CSVs/JSON, 12 commits",
+  "license": "unspecified (check repo)",
+  "last_activity": "recent (repo references 2026 data)",
+  "duplicate_of_holding": "Complements, does not duplicate, our existing Bloomberg options workbook and reverse-DCF market-implied model (those are ABNB-specific and licensed/pull-date-anchored; this is free, cross-sectional, and gives an independent method).",
+  "gap_targets": [
+   17,
+   4
+  ],
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Directly on-theme: a recent (through 2026), reproducible earnings-implied-move / IV-crush dataset and methodology built entirely on free data (DoltHub). If ABNB is among the 54 tickers this gives a ready calibration for the 5 Nov 2026 options-implied move; even if not, the method + DoltHub data source is directly replicable for ABNB. Also flags DoltHub as a free options-data source worth checking separately (fills gap #17 earnings-implied-move estimators, complements the existing reverse-DCF market-implied-move work)."
+  ]
+ },
+ {
+  "key": "github:jon-becker/prediction-market-analysis",
+  "url": "https://github.com/Jon-Becker/prediction-market-analysis",
+  "name": "prediction-market-analysis",
+  "category": "markets_options_positioning",
+  "data_kind": "both",
+  "what_it_holds": "Framework + released dataset described as 'the largest publicly available dataset of Polymarket and Kalshi market and trade data'. Parquet-based storage: Kalshi/{markets,trades}, Polymarket/{blocks,markets,trades}. A pre-collected 36GB compressed archive (data.tar.zst) is offered via Cloudflare R2 download. MIT licensed, 3.8k stars/541 forks, 30 commits on main. Not filtered to any single event category \u2014 covers all Polymarket/Kalshi markets and trades, so earnings, macro, travel and regulation contracts (e.g. any 'will ABNB report X', CPI/travel-demand-adjacent markets, hurricane/weather markets) would be included wherever they were listed on either venue.",
+  "why_useful": "Point-in-time market/trade-level data (order-level, timestamped) is exactly the kind of vintage series gap #4 calls for; could be filtered for ABNB-earnings contracts, travel-shock markets (hurricanes, World Cup 2026), or regulatory-event contracts (STR ordinances, FTC/DOJ actions) if such markets existed on Kalshi/Polymarket historically. Also usable as a general market-implied-probability cross-check for event studies (gap #11, #12).",
+  "geography": "Global (US-regulated Kalshi + global Polymarket)",
+  "time_coverage": "Full available Polymarket/Kalshi trade history up to repo's collection date (exact start not confirmed from README excerpt)",
+  "size_hint": "36GB compressed (data.tar.zst); Parquet files, additional CSV/JSON/PNG/PDF analysis outputs",
+  "license": "MIT",
+  "last_activity": "30 commits on main, exact date not shown in fetched excerpt",
+  "potential": "high",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   4,
+   11,
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "Prediction markets and betting data: Polymarket/Kalshi/Manifold APIs and datasets on earnings and travel/regulation events"
+  ],
+  "why_all": [
+   "Point-in-time market/trade-level data (order-level, timestamped) is exactly the kind of vintage series gap #4 calls for; could be filtered for ABNB-earnings contracts, travel-shock markets (hurricanes, World Cup 2026), or regulatory-event contracts (STR ordinances, FTC/DOJ actions) if such markets existed on Kalshi/Polymarket historically. Also usable as a general market-implied-probability cross-check for event studies (gap #11, #12)."
+  ]
+ },
+ {
+  "key": "github:kovagent/shortkit",
+  "url": "https://github.com/kovagent/shortkit",
+  "name": "kovagent/shortkit",
+  "category": "markets_options_positioning",
+  "data_kind": "both",
+  "what_it_holds": "Rust crate/tool bundling US short-sale volume and FINRA short-interest data as parquet files, with a nightly-refresh mechanism and no API keys required (per description). Repo is small (has CHANGELOG.md, .github workflow) so likely thin, but the described data product is exactly FINRA short interest by ticker over time.",
+  "why_useful": "If the bundled parquet actually carries multi-year FINRA short-interest history for ABNB and comparable tickers, it would give a free, non-licensed, point-in-time-able short-interest series to complement the options/short-interest data we already hold in-house (check whether it's finer-grained/free vs. what we already pay for).",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "nightly refresh going forward; historical depth unclear without deeper inspection",
+  "size_hint": "small repo + parquet artifacts (size unconfirmed)",
+  "license": "other/custom",
+  "last_activity": "2026-09-11",
+  "duplicate_of_holding": "partially duplicates existing short-interest data already held, but may be free/finer-grained/more current",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "If the bundled parquet actually carries multi-year FINRA short-interest history for ABNB and comparable tickers, it would give a free, non-licensed, point-in-time-able short-interest series to complement the options/short-interest data we already hold in-house (check whether it's finer-grained/free vs. what we already pay for)."
+  ]
+ },
+ {
+  "key": "github:jarod-wingfield/fama-french-and-hou-xue-zhang-factors-replication",
+  "url": "https://github.com/Jarod-Wingfield/Fama-French-and-Hou-Xue-Zhang-Factors-Replication",
+  "name": "Fama-French and Hou-Xue-Zhang Factors Replication",
+  "category": "markets_options_positioning",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed Factors_monthly.csv and Factor_sharpe_ratios.csv in /master: replicated Fama-French 6-factor and Hou-Xue-Zhang q-factor monthly series, 1971-2024 (per repo README, though authors note earlier years constrained by missing accounting data for q-factors). Built from CRSP/Compustat/CCM (WRDS) but output CSVs are committed and usable without WRDS access; also includes benchmark comparison files vs Ken French library and global-q.org.",
+  "why_useful": "Extends what we already hold (plain Ken French 3/5-factor series) with q-factor model loadings and a longer monthly panel; useful as an alternative risk model for an ABNB earnings-day event study / CAR calculation, and a free cross-check against the Ken French numbers we already pull. Not a numbered gap but directly on-theme (Ken French factor loader + broader factor set).",
+  "potential": "medium",
+  "duplicate_of_holding": "Overlaps our existing Ken French factors holding but adds q-factors and a committed CSV rather than a live pull",
+  "size_hint": "2 CSV files, monthly, 1971-2024 (~650 rows)",
+  "time_coverage": "1971-2024",
+  "geography": "US equities",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "hits": 1,
+  "themes": [
+   "Event-study and factor packages; earnings-surprise datasets; post-earnings-drift replication; Ken French factor loaders"
+  ],
+  "why_all": [
+   "Extends what we already hold (plain Ken French 3/5-factor series) with q-factor model loadings and a longer monthly panel; useful as an alternative risk model for an ABNB earnings-day event study / CAR calculation, and a free cross-check against the Ken French numbers we already pull. Not a numbered gap but directly on-theme (Ken French factor loader + broader factor set)."
+  ]
+ }
+]

@@ -1,0 +1,28 @@
+{
+  "slug": "upgo-vancouver-str-compliance",
+  "url": "https://github.com/UPGo-McGill/vancouver-regulations",
+  "sampled": true,
+  "total_bytes": 1670152,
+  "files": [
+    "raffle_head50k.csv",
+    "raffle_winner_DA_counts.csv",
+    "02_first_time_data.R",
+    "README_repo.md"
+  ],
+  "rows": "raffle.csv (full, not saved): 370,590 rows; raffle_head50k.csv: 50,000 rows; raffle_winner_DA_counts.csv: 38,377 rows; R script / README: n/a",
+  "columns": "raffle.csv: Property_ID (ab-<AirbnbID> or ha-<HomeAwayID>; 342,988 ab-, 27,602 ha-), winner (8-digit StatCan 2016 dissemination-area ID, 308 NA). Counts file: winner_DA, n_listings",
+  "date_range": "No date column. Snapshot corresponds to the AirDNA extract dated 2019-05-28 referenced in the R code; repo last pushed 2019-06-23",
+  "how_pulled": "gh api repos/UPGo-McGill/vancouver-regulations/contents/{,data,R}; curl -sL -o raffle.csv https://raw.githubusercontent.com/UPGo-McGill/vancouver-regulations/HEAD/data/raffle.csv; curl for README.md, R/02_first_time_data.R, .gitignore; python/pandas: df.head(50000).to_csv(...); df.winner.value_counts() -> raffle_winner_DA_counts.csv",
+  "full_dataset_size": "Committed data is one file, data/raffle.csv, 7.69 MB, 370,590 rows, 2 columns. The underlying AirDNA daily and property files (ca_Daily_Match_2019-05-28.csv, ca_Property_Match_2019-05-28.csv) are gitignored and not in the repo.",
+  "description": "This is NOT a compliance or licence dataset. raffle.csv is a lookup table produced by UPGo's 'raffle' geocoding routine that assigns each Canadian Airbnb/HomeAway listing (AirDNA property ID, 2019-05-28 extract) to a single Statistics Canada 2016 dissemination area, resolving Airbnb's location jitter. Grain is one row per listing, Canada-wide (top census divisions by count: Montreal 2466, Toronto 3520, Greater Vancouver 5915 with 46,227 listings). The actual daily calendar, price and status data the compliance analysis runs on comes from licensed AirDNA files that are gitignored, and the repo contains no licence-matching or compliance output. For ABNB an analyst could at most use it as a May-2019 Canada-wide listing-count-by-neighbourhood cross-section (e.g. to weight Vancouver DAs by STR density before the 2018 rules bit), or join the ab- IDs to old Inside Airbnb Vancouver dumps.",
+  "issues": "Job card overstates the content: the committed file is a listing-to-dissemination-area assignment, not compliance/licensing data; no dates, prices, licence numbers or status. Analysis code is incomplete (only helper functions and a data-import script, no compliance analysis). Source data is AirDNA (licensed) and excluded from the repo, so the analysis cannot be reproduced. Repo licence is MIT but the listing IDs derive from AirDNA; treat as research-use only. Full raffle.csv was downloaded to scratch but only a 50k-row head plus a DA-count aggregate were saved to respect the 5 MB preference.",
+  "geography": "Canada-wide (all provinces, 38,377 dissemination areas); Vancouver census division holds ~12.5% of rows",
+  "source_urls": [
+    "https://github.com/UPGo-McGill/vancouver-regulations",
+    "https://raw.githubusercontent.com/UPGo-McGill/vancouver-regulations/HEAD/data/raffle.csv",
+    "https://raw.githubusercontent.com/UPGo-McGill/vancouver-regulations/HEAD/README.md",
+    "https://raw.githubusercontent.com/UPGo-McGill/vancouver-regulations/HEAD/R/02_first_time_data.R",
+    "https://raw.githubusercontent.com/UPGo-McGill/vancouver-regulations/HEAD/.gitignore"
+  ],
+  "pulled_at": "2026-09-14"
+}

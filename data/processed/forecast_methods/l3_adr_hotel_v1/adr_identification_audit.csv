@@ -1,0 +1,10 @@
+item,finding,evidence_status,source_reference
+quarter_t_mix,realised current-quarter components used in historical score,descriptive_upper_bound_not_PIT,analysis/src/adrv3/S1_scoring.py:v2_components
+FX_euro,"fixed intercept -0.5687, slope 0.4512 from ex21 n17 calibration reused backward",retrospective_fixed_fit_not_walk_forward,analysis/src/overnight2/B4_application_3q26_4q26.py:ADR_FX_EUR
+FX_baskets,FY2025 regional GBV shares and fixed regional pass-through reused backward,retrospective_weights_not_historical_vintages,analysis/src/overnight2/B4_application_3q26_4q26.py:GBV_SHARE_2025
+K_fit,coefficient 0.114073790333; 16.2962557619 times imposed central mechanics; n=14,rejected_as_fee_mechanism,data/processed/adrv3/K/K3_residual_fit.csv
+K_path,Call-calibrated listing shares converted using assumed nights-per-listing and geography; not measured nights cohorts,assumption_not_identified_pass_through,research/notes/adrv3/K_residual-decomposition-fee-migration.md
+half_point_history,3Q23/4Q23 ex-FX are 0.5; 1Q24 naive is 0.5; score preserves frozen values,not_all_history_is_integer,data/processed/q3nowcast/H/adr_history_components.csv
+fx_identity,max reported-minus-exFX-minus-FX identity gap 0.042239836359 pp; tight identity partly constructed,not_independent_FX_measurement,research/notes/adrv3/S_scoring-harness-and-v3-preregistration.md
+selection,"last_q selected after seeing J3 sensitivity table, then preregistered for v3",post_hoc_rule_selection_disclosed,docs/adrv3/SYNTHESIS.md
+bands,RSS of component half-ranges around point; no fitted joint error distribution or probabilities,scenario_band_not_confidence_interval,analysis/src/adrv3/P1_card_v3.py

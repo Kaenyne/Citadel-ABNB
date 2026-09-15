@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:thuquant/awesome-quant",
+  "url": "https://github.com/thuquant/awesome-quant",
+  "name": "awesome-quant (thuquant, Chinese)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "5,623-star Chinese-language index of quant resources, updated same-day; not inspected section-by-section in this pass.",
+  "why_useful": "Possible route to Chinese short-term-rental/travel platform data clients (Tujia, Xiaozhu -- gap 9) or China-specific macro/travel statistics; unconfirmed, flagged for a future Chinese-language-capable pass.",
+  "potential": "low",
+  "size_hint": "README index",
+  "geography": "China-focused",
+  "time_coverage": "n/a (index)",
+  "last_activity": "2026-09-14",
+  "license": "MIT",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Possible route to Chinese short-term-rental/travel platform data clients (Tujia, Xiaozhu -- gap 9) or China-specific macro/travel statistics; unconfirmed, flagged for a future Chinese-language-capable pass."
+  ]
+ },
+ {
+  "key": "github:cutr-at-usf/awesome-transit",
+  "url": "https://github.com/CUTR-at-USF/awesome-transit",
+  "name": "awesome-transit",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated list of transit-data resources: Mobility Database, Transitland, National Transit Database (US), transport.data.gouv.fr (France), sample-gtfs-feed test data, CapMetrics (Austin historical transit vehicle positions, github.com/scascketta/CapMetrics), Bus Observatory real-time vehicle-movement archive API, mfdz/gtfs-hub, Citylines.co.",
+  "why_useful": "Discovery index for ground-transport capacity/ridership data (gap 10); CapMetrics specifically gives an Austin-specific historical transit archive, a market already in our Inside Airbnb 13-city panel, so could be a local travel-activity cross-check for that city.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "geography": "global, with US/France emphasis",
+  "time_coverage": "ongoing",
+  "size_hint": "list of ~10-15 resources",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Discovery index for ground-transport capacity/ridership data (gap 10); CapMetrics specifically gives an Austin-specific historical transit archive, a market already in our Inside Airbnb 13-city panel, so could be a local travel-activity cross-check for that city."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/quiver",
+  "name": "api-evangelist/quiver",
+  "url": "https://github.com/api-evangelist/quiver",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "API Evangelist's third-party documentation/profile of the Quiver Quantitative API surface (endpoints for congress trading, insider trading, gov contracts, lobbying, WSB, etc.) \u2014 descriptive markdown, not a client or data.",
+  "why_useful": "Useful only as a map of what QuiverQuant's paid API exposes; none of the covered datasets (congressional trading, lobbying, WSB sentiment) touch travel demand or STR supply directly.",
+  "potential": "low",
+  "size_hint": "markdown docs only",
+  "time_coverage": "n/a",
+  "geography": "US",
+  "license": "none declared",
+  "last_activity": "2026-09-12",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Useful only as a map of what QuiverQuant's paid API exposes; none of the covered datasets (congressional trading, lobbying, WSB sentiment) touch travel demand or STR supply directly."
+  ]
+ },
+ {
+  "key": "github:jsconiers/quiver-quant-mcp",
+  "name": "jsconiers/quiver-quant-mcp",
+  "url": "https://github.com/jsconiers/quiver-quant-mcp",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP (Model Context Protocol) server wrapping the Quiver Quantitative API \u2014 16 tools covering congressional/insider trades, gov contracts, lobbying, WallStreetBets, dark-pool short volume, 13F. Requires a paid QuiverQuant API key; no data committed.",
+  "why_useful": "13F/insider-trade tooling touches gap 15 (company-structure signals: 13F holdings parsers) but is a generic multi-ticker wrapper, not Airbnb-specific, and needs a paid key.",
+  "potential": "low",
+  "size_hint": "code only, no data",
+  "time_coverage": "n/a",
+  "geography": "US",
+  "license": "Other (custom)",
+  "last_activity": "2026-07-23",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "13F/insider-trade tooling touches gap 15 (company-structure signals: 13F holdings parsers) but is a generic multi-ticker wrapper, not Airbnb-specific, and needs a paid key."
+  ]
+ },
+ {
+  "key": "github:parithosh/quiverfeed",
+  "name": "parithosh/quiverfeed",
+  "url": "https://github.com/parithosh/quiverfeed",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small Python library to interact with Quiver Quantitative datasets for analysis. No data committed; needs a paid API key for most endpoints (WSB sentiment has historically had a limited free tier).",
+  "why_useful": "Marginal \u2014 same limitation as other QuiverQuant wrappers; WallStreetBets mention-count/sentiment for ABNB could theoretically be a retail-sentiment proxy but is speculative and not in any numbered gap.",
+  "potential": "low",
+  "size_hint": "code only, no data",
+  "time_coverage": "n/a",
+  "geography": "US",
+  "license": "MIT",
+  "last_activity": "2026-07-01",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)"
+  ],
+  "why_all": [
+   "Marginal \u2014 same limitation as other QuiverQuant wrappers; WallStreetBets mention-count/sentiment for ABNB could theoretically be a retail-sentiment proxy but is speculative and not in any numbered gap."
+  ]
+ }
+]

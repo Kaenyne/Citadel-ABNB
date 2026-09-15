@@ -1,0 +1,656 @@
+[
+ {
+  "key": "github:happyendpointhq/awesome-alternative-data",
+  "url": "https://github.com/happyendpointhq/awesome-alternative-data",
+  "name": "awesome-alternative-data",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Curated alt-data list for investment research (updated 7 Sep 2026) with sections Property/Real Estate, Consumer Spending & Transactions, Web Traffic & Engagement, Macroeconomic Data. Concrete free entries: HM Land Registry Price Paid (every England/Wales residential sale since 1995, free, point-in-time by construction), Dubai Pulse DLD transaction history (free); paid entries: Earnest Analytics, Consumer Edge, Second Measure/Bloomberg, Fable Data (card/transaction panels), Similarweb & Semrush (web traffic/engagement APIs).",
+  "why_useful": "HM Land Registry and Dubai Pulse are free, long-run, point-in-time housing-transaction feeds relevant to STR-vs-LTR host economics (gap 13); the Similarweb/Semrush and card-panel entries map directly to gaps 5 (engagement) and 6 (consumer spend) even though most require paid access, useful as a sourcing map.",
+  "potential": "medium",
+  "size_hint": "README link list, ~15 entries",
+  "geography": "UK, UAE, US, Europe, global",
+  "time_coverage": "HM Land Registry: 1995-present",
+  "last_activity": "2026-09-07",
+  "license": "other (custom)",
+  "gap_targets": [
+   5,
+   6,
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "HM Land Registry and Dubai Pulse are free, long-run, point-in-time housing-transaction feeds relevant to STR-vs-LTR host economics (gap 13); the Similarweb/Semrush and card-panel entries map directly to gaps 5 (engagement) and 6 (consumer spend) even though most require paid access, useful as a sourcing map."
+  ]
+ },
+ {
+  "key": "github:etewiah/awesome-real-estate",
+  "url": "https://github.com/etewiah/awesome-real-estate",
+  "name": "awesome-real-estate",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "369-star curated real-estate resource list (CC0), regularly updated (8 Sep 2026), with regional sections. Notable concrete data entries: BailleurVerif (MIT, open dataset of non-compliant French rental listings across 7 cities, ~210 listings/wave), Staying API (commercial real-time Airbnb/STR listing data by listing ID/address/dates/price, REST+MCP, free tier), Cost Segregation Benchmarks 2026 (CC-BY-4.0 CSV, 260 US studies), Phuket condo asking-price snapshot (CC BY 4.0, 391 listings CSV/JSON), Bangkok off-plan housing pipeline (CC BY 4.0, refreshed every 2 days), Japan Neighborhoods (free API, crime/safety/price for 5,078 Tokyo neighborhoods).",
+  "why_useful": "'Staying API' is a live, queryable Airbnb/STR pricing source with a free tier -- directly on-point for gap 2 (realised ADR/occupancy for STRs) if the free tier covers enough listings to sample; the small CC-BY regional snapshots (Phuket, Bangkok) are APAC/SE-Asia STR-adjacent supply signals not in our current holdings.",
+  "potential": "medium",
+  "size_hint": "README link list; individual linked datasets are small (hundreds of rows)",
+  "geography": "France, US, Thailand, Thailand/Bangkok, Japan, global",
+  "time_coverage": "current/live for most entries",
+  "last_activity": "2026-09-08",
+  "license": "CC0-1.0",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "'Staying API' is a live, queryable Airbnb/STR pricing source with a free tier -- directly on-point for gap 2 (realised ADR/occupancy for STRs) if the free tier covers enough listings to sample; the small CC-BY regional snapshots (Phuket, Bangkok) are APAC/SE-Asia STR-adjacent supply signals not in our current holdings."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/cmhcr",
+  "url": "https://github.com/UPGo-McGill/cmhcr",
+  "name": "cmhcr",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package to 'Import and Clean CMHC Data Tables' -- CMHC (Canada Mortgage and Housing Corporation) is Canada's federal housing agency publishing rental market survey vacancy rates, average rents, starts/completions by CMA. Package is an import/clean client, not a bundled dataset.",
+  "why_useful": "Fills the Canada leg of gap #13 (long-term rental/housing economics, host supply side) with a ready-made client for CMHC's official rental market data, useful for STR<->LTR crossover analysis in Canadian markets (Toronto, Vancouver, Montreal) where UPGo/strr's other repos already do STR-side work.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "license": "MIT",
+  "last_activity": "2020-08-03",
+  "geography": "Canada (CMA-level)",
+  "time_coverage": "whatever CMHC's public tables cover (multi-year, updated annually by CMHC)",
+  "size_hint": "small package, no bundled CSVs found",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Fills the Canada leg of gap #13 (long-term rental/housing economics, host supply side) with a ready-made client for CMHC's official rental market data, useful for STR<->LTR crossover analysis in Canadian markets (Toronto, Vancouver, Montreal) where UPGo/strr's other repos already do STR-side work.",
+   "A ready-made client for a public, national (Canada-wide) rental-market data source \u2014 could pull CMHC vacancy/rent series for any Canadian metro, feeding STR<->LTR crossover and housing-supply-economics angles (gap #13) without re-scraping CMHC by hand."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/str-ltr-mtl-analysis",
+  "url": "https://github.com/UPGo-McGill/str-ltr-mtl-analysis",
+  "name": "str-ltr-mtl-analysis",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code for a report on short-term rentals 'returning to the long-term market' in Montreal -- the STR-to-LTR conversion question directly. R/ and output/ and photos/ dirs; no committed raw dataset (licensed AirDNA input assumed, gitignored).",
+  "why_useful": "Directly on-point for gap #13's STR<->LTR crossover question, with a concrete Montreal case study methodology, even though no data ships with the repo.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "license": "none declared",
+  "last_activity": "2023-11-24",
+  "geography": "Montreal, Canada",
+  "time_coverage": "COVID-era return-to-LTR window (~2020-2023)",
+  "size_hint": "small, code + report outputs only",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "Directly on-point for gap #13's STR<->LTR crossover question, with a concrete Montreal case study methodology, even though no data ships with the repo.",
+   "Directly addresses CONTEXT.md gap #13 (STR<->LTR crossover / host-supply economics) with an actual measured event (regulation-driven delisting into the LTR market) rather than a proxy."
+  ]
+ },
+ {
+  "key": "github:g0v/tw-rental-house-data",
+  "url": "https://github.com/g0v/tw-rental-house-data",
+  "name": "g0v/tw-rental-house-data",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed civic-tech (g0v) pipeline collecting publicly available Taiwan long-term rental listing data (rental websites + branded apartment operators). Four sub-components: scrapy-tw-rental-house (Scrapy scraper, DB-independent), twrh-dataset (full scrape->store->export->publish pipeline), csv-aggregator (dedupes and rolls monthly captures into quarterly/yearly CSVs), ui-next (web UI at rentalhouse.g0v.ddio.io). 713 commits, 174 stars, 45 watchers, 36 forks, 11 open issues -- actively maintained. Also published as a PyPI package.",
+  "why_useful": "Non-Airbnb long-term-rental data source and a working, non-trivial scraper/pipeline for an APAC market (gap #13: LTR/housing crossover data, and gap #7 APAC regional coverage). Could be adapted as a template for STR<->LTR crossover economics or as a live check on Taiwan rent trends feeding into host-supply economics.",
+  "potential": "medium",
+  "gap_targets": [
+   13,
+   7
+  ],
+  "geography": "Taiwan (nationwide, multiple rental sites/brands)",
+  "time_coverage": "Ongoing scrape, aggregated to monthly/quarterly/yearly; exact start date not stated in README summary",
+  "size_hint": "Multi-repo pipeline, 713 commits; dataset size not stated (published via PyPI + web UI, not a single flat file)",
+  "license": "MIT",
+  "last_activity": "Active as of search (174 stars/45 watchers/36 forks, open issues/PRs)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Non-Airbnb long-term-rental data source and a working, non-trivial scraper/pipeline for an APAC market (gap #13: LTR/housing crossover data, and gap #7 APAC regional coverage). Could be adapted as a template for STR<->LTR crossover economics or as a live check on Taiwan rent trends feeding into host-supply economics."
+  ]
+ },
+ {
+  "key": "github:thomasthinks/poland-rent-data",
+  "url": "https://github.com/thomasthinks/poland-rent-data",
+  "name": "thomasthinks/poland-rent-data",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Nightly-updated Polish long-term rental market medians: a current-snapshot CSV (470 rows, city x district x room-count combinations with median rent in PLN, dispersion stat, sample size, snapshot date), a JSON version with provenance metadata, and a CSV history file of monthly city-level trends. Aggregates and deduplicates listings across three portals (Otodom, OLX, Morizon) across all 16 Polish voivodeships, 49 cities, 96 districts, 1-4 room flats. CC-BY-4.0, archived with a Zenodo DOI (10.5281/zenodo.21892638).",
+  "why_useful": "A committed, licensed, cross-source-deduplicated asking-rent nowcast dataset for an EU market not otherwise in the held set (gap #13: Idealista/Rightmove/Immoscout-style EU rent scrapes) -- could proxy EU housing-cost/consumer-strength pressure feeding into EMEA nights/ADR context.",
+  "potential": "medium",
+  "gap_targets": [
+   13,
+   6
+  ],
+  "geography": "Poland, 49 cities / 96 districts / 16 voivodeships",
+  "time_coverage": "Monthly history from approx. June 2026; current snapshot dated 13 Sep 2026; history is forward-only (cannot be backfilled)",
+  "size_hint": "470-row current snapshot; monthly history file since mid-2026; small, no visible star count",
+  "license": "CC-BY-4.0",
+  "last_activity": "13 Sep 2026 (actively updated nightly per description)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "A committed, licensed, cross-source-deduplicated asking-rent nowcast dataset for an EU market not otherwise in the held set (gap #13: Idealista/Rightmove/Immoscout-style EU rent scrapes) -- could proxy EU housing-cost/consumer-strength pressure feeding into EMEA nights/ADR context."
+  ]
+ },
+ {
+  "key": "github:sieger1010/h2a",
+  "url": "https://github.com/sieger1010/h2a",
+  "name": "sieger1010/h2a",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Standardized U.S. Department of Labor H-2A agricultural seasonal-worker employment disclosure data, FY2008 through FY2025 Q3 (17+ years). Processed exports in processed_exports/ as CSV, Pickle, Feather, Parquet, and a SQLite DB. Fields include employer name (with known aliasing issues, e.g. North Carolina Growers Association), wage data, work-site location, employment start/end dates, worker certification counts, and DOL case numbers (some duplicated). README notes reported fields change across years so YoY comparisons need care; Python cleaning scripts are in-repo.",
+  "why_useful": "H-2A is a seasonal-migrant-worker visa program tied to harvest calendars in specific U.S. counties/states; a point-in-time, multi-year, county-level labor inflow series is a proxy for seasonal rural/agricultural-region short-term-rental and worker-housing demand (relevant to niche STR demand pockets and to broader seasonal-labor-market strength as a consumer-spending input) rather than a direct ABNB KPI driver, but it is a genuinely large, long, well-processed public dataset with no equivalent already held.",
+  "potential": "medium",
+  "gap_targets": [
+   6
+  ],
+  "geography": "United States (county/employer level)",
+  "time_coverage": "FY2008-FY2025 Q3",
+  "size_hint": "17+ years of DOL H-2A disclosure records; multi-format exports (CSV/Parquet/SQLite)",
+  "license": "unspecified in search result",
+  "last_activity": "unspecified (repo found via gh search, not dated in this pass)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "H-2A is a seasonal-migrant-worker visa program tied to harvest calendars in specific U.S. counties/states; a point-in-time, multi-year, county-level labor inflow series is a proxy for seasonal rural/agricultural-region short-term-rental and worker-housing demand (relevant to niche STR demand pockets and to broader seasonal-labor-market strength as a consumer-spending input) rather than a direct ABNB KPI driver, but it is a genuinely large, long, well-processed public dataset with no equivalent already held."
+  ]
+ },
+ {
+  "key": "github:eobodoechine/apartment-rental-scraper",
+  "url": "https://github.com/Eobodoechine/apartment-rental-scraper",
+  "name": "apartment-rental-scraper",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Configurable multi-platform rental-hunting tool (a \"Claude Code skill\") that queries Zillow, Zumper, Redfin, Craigslist, Apartments.com and HotPads for long-term rental listings.",
+  "why_useful": "Broadest free multi-source LTR acquisition method found (gap #13); recent (Aug 2026) so likely still works against current site structures, useful if the team wants a apples-to-apples LTR price series to pair against STR/Airbnb ADR by metro.",
+  "potential": "medium",
+  "geography": "US, multi-platform (whatever each site covers)",
+  "last_activity": "2026-08-16",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "wildcard: an urban economist studying platform housing effects who kno"
+  ],
+  "why_all": [
+   "Broadest free multi-source LTR acquisition method found (gap #13); recent (Aug 2026) so likely still works against current site structures, useful if the team wants a apples-to-apples LTR price series to pair against STR/Airbnb ADR by metro."
+  ]
+ },
+ {
+  "key": "github:cubxxw/remoteai-nomads",
+  "url": "https://github.com/cubxxw/RemoteAI-Nomads",
+  "name": "cubxxw/RemoteAI-Nomads",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "70-star, actively updated (14 Sep 2026) MIT repo: a global digital-nomad guide with a visa matrix comparing 12+ countries, cost-of-living tables for 25+ China-based nomad hubs, remote-work-platform lists, and cross-border payment/insurance notes. Bilingual (Chinese/English) markdown tables, not a clean CSV, but structured comparative data.",
+  "why_useful": "Directly targets gap #16 (remote-work/long-stay demand, digital-nomad visas) with an actually-maintained comparison table across visa programs rather than a single-country page; could seed a digital-nomad-visa-count time series (a long-stay demand proxy for Airbnb's higher-ADR, longer-LOS segment) if someone builds a scraper/tracker off the underlying visa-policy pages it cites.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-09-14",
+  "geography": "global (visa matrix), China-heavy for cost-of-living detail",
+  "time_coverage": "current snapshot, no history",
+  "size_hint": "markdown repo, no data files",
+  "gap_targets": [
+   16
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Directly targets gap #16 (remote-work/long-stay demand, digital-nomad visas) with an actually-maintained comparison table across visa programs rather than a single-country page; could seed a digital-nomad-visa-count time series (a long-stay demand proxy for Airbnb's higher-ADR, longer-LOS segment) if someone builds a scraper/tracker off the underlying visa-policy pages it cites."
+  ]
+ },
+ {
+  "key": "github:mbruns13/redfin_housing_data",
+  "url": "https://github.com/mbruns13/redfin_housing_data",
+  "name": "mbruns13/redfin_housing_data",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Kaggle '2012-2021 Redfin Dataset' -- monthly market-summary aggregates (median sale price, inventory, new listings, property mix) by US state/county -- joined to Census 2010-2021 population.",
+  "why_useful": "Committed county/state monthly housing price and inventory panel 2012-2021; second-home purchase intensity and housing-cost backdrop for STR host economics.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "US, state/county",
+  "time_coverage": "2012-2021 monthly",
+  "license": "MIT",
+  "last_activity": "2026-05-29",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Committed county/state monthly housing price and inventory panel 2012-2021; second-home purchase intensity and housing-cost backdrop for STR host economics."
+  ]
+ },
+ {
+  "key": "github:sirmist/hmda-mortgage-disclosure-data",
+  "url": "https://github.com/SirMist/hmda-mortgage-disclosure-data",
+  "name": "SirMist/hmda-mortgage-disclosure-data",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify actor pulling HMDA loan-level mortgage origination records -- purpose, occupancy type (primary/second-home/investment), loan amount, census-tract geography.",
+  "why_useful": "Isolates second-home and investment-property mortgage origination volume/geography as a loan-level financing-capacity leading indicator for new STR host supply, finer than existing FRED holdings.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "US, census-tract level",
+  "last_activity": "2026-06-25",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Isolates second-home and investment-property mortgage origination volume/geography as a loan-level financing-capacity leading indicator for new STR host supply, finer than existing FRED holdings."
+  ]
+ },
+ {
+  "key": "github:microsoft/globalmlbuildingfootprints",
+  "url": "https://github.com/microsoft/GlobalMLBuildingFootprints",
+  "name": "microsoft/GlobalMLBuildingFootprints",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Worldwide building-footprint polygons (>1.5B buildings) derived from satellite/aerial imagery via ML segmentation, released per-country as downloadable GeoJSON/quantized-mesh tiles on Azure Blob, with multiple vintages (2018 vs 2023 refresh in many countries) enabling before/after change detection.",
+  "why_useful": "Comparing two building-footprint vintages in a tourism submarket gives a genuine satellite-based new-construction signal \u2014 a proxy for new STR/short-term-rental housing supply growth (CONTEXT gap #13 crossover) independent of any registry or Airbnb listing count; large, high-star, actively maintained.",
+  "potential": "medium",
+  "geography": "Global, per-country files",
+  "time_coverage": "2018 and ~2023 vintages (varies by country)",
+  "size_hint": "Very large (GBs per country)",
+  "license": "Other (ODbL-based)",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "recovered from journal"
+  ],
+  "why_all": [
+   "Comparing two building-footprint vintages in a tourism submarket gives a genuine satellite-based new-construction signal \u2014 a proxy for new STR/short-term-rental housing supply growth (CONTEXT gap #13 crossover) independent of any registry or Airbnb listing count; large, high-star, actively maintained."
+  ]
+ },
+ {
+  "key": "github:hanlulong/openecon-data",
+  "url": "https://github.com/hanlulong/openecon-data",
+  "name": "hanlulong/openecon-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server / web UI indexing 330K+ economic indicators across 11 providers in one query surface: FRED, World Bank, IMF, Eurostat, UN Comtrade, BIS, Statistics Canada, OECD, ExchangeRate-API, CoinGecko, ChinaMacro. Not a vintage/point-in-time store -- pulls current values on request.",
+  "why_useful": "A single tool to pull Eurostat tourism series alongside IMF/World Bank macro series for cross-checking European consumer strength and travel demand context; broader than tourism-specific but reaches the same Eurostat tour_occ/tour_ce codes plus IMF/World Bank travel-services trade data.",
+  "potential": "medium",
+  "gap_targets": [
+   6,
+   7
+  ],
+  "license": "unspecified (marked Other)",
+  "last_activity": "2026-09-13",
+  "geography": "Global, incl. Eurostat/EU",
+  "time_coverage": "as published by underlying sources",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "A single tool to pull Eurostat tourism series alongside IMF/World Bank macro series for cross-checking European consumer strength and travel demand context; broader than tourism-specific but reaches the same Eurostat tour_occ/tour_ce codes plus IMF/World Bank travel-services trade data.",
+   "One integration point that reaches IMF's tourism/travel-services balance-of-payments series and Eurostat tables together -- could shortcut building separate IMF and Eurostat pulls for the country-level travel-demand and platform-tourism gaps (7, 6).",
+   "One-stop discovery layer to quickly check whether a BIS REER series, an IMF BOP travel line, or a UN Comtrade cross-border series exists before writing a bespoke puller for each source; useful for triage even though it is not point-in-time."
+  ]
+ },
+ {
+  "key": "github:inseefrlab/pynsee",
+  "url": "https://github.com/InseeFrLab/pynsee",
+  "name": "InseeFrLab/pynsee",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official INSEE lab Python package (1,900 commits, MIT) with 'quick access to more than 150,000 macroeconomic series' plus local data and SIRENE company registry, from INSEE and IGN APIs. No tourism-specific dataset called out in the README, but INSEE's macro series catalogue includes hotel/tourist-accommodation occupancy ('fr\u00e9quentation touristique') series reachable through the same generic series-code interface.",
+  "why_useful": "If France-specific tourist accommodation occupancy or consumer-spend-adjacent series are wanted for the EMEA regional split, this is the maintained, official client rather than scraping insee.fr; also usable for the France leg of gap 6 (consumer spend panels).",
+  "potential": "medium",
+  "geography": "France",
+  "time_coverage": "current INSEE catalogue depth",
+  "size_hint": "library only",
+  "license": "MIT",
+  "last_activity": "active (1,900 commits)",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "If France-specific tourist accommodation occupancy or consumer-spend-adjacent series are wanted for the EMEA regional split, this is the maintained, official client rather than scraping insee.fr; also usable for the France leg of gap 6 (consumer spend panels)."
+  ]
+ },
+ {
+  "key": "github:aeturrell/real-time-data",
+  "url": "https://github.com/aeturrell/real-time-data",
+  "name": "aeturrell/real-time-data",
+  "category": "macro_consumer_spend",
+  "data_kind": "both",
+  "what_it_holds": "Repo that scrapes/aggregates real-time UK ONS datasets AND their revision histories ('revision triangles') into tidy Parquet files, config-driven (config.toml lists included series), GitHub-Actions-automated weekly updates. MIT license, 14 commits so far. Exact series list/time coverage not visible from README alone \u2014 needs a config.toml check.",
+  "why_useful": "This is exactly the ALFRED-style point-in-time vintage tooling gap 4 calls out, but for UK data instead of US: if ONS travel/tourism or consumer-card-spend series are in its config, it gives ready-made vintage (as-first-published vs revised) series for the EMEA regional model without building vintage capture from scratch.",
+  "potential": "medium",
+  "geography": "UK (ONS)",
+  "time_coverage": "ongoing weekly capture, historical depth per ONS series",
+  "size_hint": "Parquet files, config-driven, small repo (14 commits)",
+  "license": "MIT",
+  "last_activity": "active, weekly automation implied",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "European tourism statistics tooling: Eurostat tour_occ / tour_ce clients, INE Spain Frontur Egatur EOAT tourist-apartment tables, ISTAT, INSEE, Destatis, ONS travel, Portugal INE"
+  ],
+  "why_all": [
+   "This is exactly the ALFRED-style point-in-time vintage tooling gap 4 calls out, but for UK data instead of US: if ONS travel/tourism or consumer-card-spend series are in its config, it gives ready-made vintage (as-first-published vs revised) series for the EMEA regional model without building vintage capture from scratch."
+  ]
+ },
+ {
+  "key": "github:datasets/oil-prices",
+  "url": "https://github.com/datasets/oil-prices",
+  "name": "oil-prices (Frictionless Data / datasets org)",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Data package + pipeline script (oil_prices_flow.py, dataflows library) that rebuilds Brent (from 20 May 1987) and WTI Cushing OK (from 2 Jan 1986) spot crude prices at annual/monthly/weekly/daily frequency, sourced from the EIA API. Long-running, well-maintained 'datasets' GitHub org, public domain.",
+  "why_useful": "Crude oil price is the upstream driver of retail gasoline/diesel prices and airfare fuel surcharges; a long, clean, well-documented daily/weekly crude series is a useful macro input for a driving-cost or airfare-cost proxy even though it is one step removed from pump prices.",
+  "potential": "medium",
+  "geography": "global benchmark (Brent, WTI)",
+  "time_coverage": "1986/1987 - present, daily/weekly/monthly/annual",
+  "size_hint": "small CSVs, thousands of daily rows over ~39 years",
+  "license": "Public domain (US govt data) / PDDL for the wrapper",
+  "last_activity": "long-running frictionlessdata/datasets org repo, periodically updated",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "distinct from what we hold (we have FRED CPI/airfares, not this raw Brent/WTI spot series)",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Crude oil price is the upstream driver of retail gasoline/diesel prices and airfare fuel surcharges; a long, clean, well-documented daily/weekly crude series is a useful macro input for a driving-cost or airfare-cost proxy even though it is one step removed from pump prices."
+  ]
+ },
+ {
+  "key": "github:jimoholayinka01/revolut-spending",
+  "url": "https://github.com/jimoholayinka01/Revolut-Spending",
+  "name": "jimoholayinka01/Revolut-Spending",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "End-to-end time series analysis/forecasting project on Revolut debit-card spending data in the UK, examining transaction trends by age demographic and seasonality. Not confirmed whether the underlying dataset is real Revolut transaction data, a public Revolut aggregate release, or a synthetic/Kaggle stand-in \u2014 needs a directory-listing check before relying on it.",
+  "why_useful": "If the underlying data is genuine (even anonymized/aggregated) UK fintech card-spend data with seasonality, it is a private-sector analogue to ONS card spending (gap #6) for UK consumer strength, which reads on EMEA nights/ADR. Unverified provenance keeps this at medium-low until checked.",
+  "potential": "medium",
+  "geography": "United Kingdom",
+  "time_coverage": "unclear (needs directory check)",
+  "size_hint": "unknown, 0 stars",
+  "license": "unspecified",
+  "last_activity": "2025-08-16",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public consumer-spend panels: Opportunity Insights Economic Tracker (Affinity card spend), ONS card spending, Bank of England CHAPS, BBVA/CaixaBank research open data, Banco de Portugal SIBS, Norges Bank card data"
+  ],
+  "why_all": [
+   "If the underlying data is genuine (even anonymized/aggregated) UK fintech card-spend data with seasonality, it is a private-sector analogue to ONS card spending (gap #6) for UK consumer strength, which reads on EMEA nights/ADR. Unverified provenance keeps this at medium-low until checked."
+  ]
+ },
+ {
+  "key": "github:m-muecke/bbk",
+  "url": "https://github.com/m-muecke/bbk",
+  "name": "bbk",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client package for German/European central bank APIs; `bbk_data()` pulls arbitrary Bundesbank statistics-API series by flow ID + data key (example shown is a daily yield curve). Pure API wrapper, no committed data files, but actively maintained (updated 12 Sep 2026).",
+  "why_useful": "One-command programmatic access to any Bundesbank series, including (if the flow ID is supplied) the Bundesbank weekly activity index named in this theme, plus other German high-frequency series (retail, trade, FX) relevant to EMEA consumer strength regional splits.",
+  "potential": "medium",
+  "gap_targets": [
+   6
+  ],
+  "duplicate_of_holding": "",
+  "size_hint": "small (R package code only)",
+  "time_coverage": "n/a (live API client)",
+  "geography": "Germany / euro area",
+  "license": "other (custom, check terms)",
+  "last_activity": "2026-09-12",
+  "hits": 1,
+  "themes": [
+   "Real-time and weekly economic indicators: OECD Weekly Tracker (Google Trends based), NY Fed WEI, ONS faster indicators, Dallas Fed mobility, Bundesbank weekly activity index"
+  ],
+  "why_all": [
+   "One-command programmatic access to any Bundesbank series, including (if the flow ID is supplied) the Bundesbank weekly activity index named in this theme, plus other German high-frequency series (retail, trade, FX) relevant to EMEA consumer strength regional splits."
+  ]
+ },
+ {
+  "key": "github:sboysel/fredr",
+  "url": "https://github.com/sboysel/fredr",
+  "name": "fredr",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R bindings to the FRED API; example calls return realtime_start/realtime_end columns confirming ALFRED vintage support. 101 stars, 242 commits, MIT-style license, active (recent examples dated 2021+, CI enabled).",
+  "why_useful": "Another mature, well-maintained R client covering the same point-in-time macro-vintage need as fredapi/alfred (gap #4); wider adoption (101 stars) than onnokleen/alfred so likely more battle-tested for edge cases.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "overlaps with onnokleen/alfred and fredapi in function",
+  "license": "MIT (LICENSE file present)",
+  "last_activity": "active, CI passing",
+  "geography": "US (FRED/ALFRED)",
+  "time_coverage": "series-dependent",
+  "size_hint": "library only",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Another mature, well-maintained R client covering the same point-in-time macro-vintage need as fredapi/alfred (gap #4); wider adoption (101 stars) than onnokleen/alfred so likely more battle-tested for edge cases."
+  ]
+ },
+ {
+  "key": "github:nikhilxsunder/fedfred",
+  "url": "https://github.com/nikhilxsunder/fedfred",
+  "name": "fedfred",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Feature-rich Python package covering FRED, GeoFRED, ALFRED, and FRASER APIs; native Pandas/Polars/Dask support, async requests, local caching, rate limiting. MIT licensed, 359 commits, v3.0.0, 9 stars.",
+  "why_useful": "Newer/broader alternative to fredapi with explicit ALFRED support plus GeoFRED (regional/state series, useful for the STR-regulation and regional-macro gaps) and caching for repeated point-in-time backtests.",
+  "potential": "medium",
+  "gap_targets": [
+   4
+  ],
+  "duplicate_of_holding": "overlaps with fredapi",
+  "license": "MIT",
+  "last_activity": "actively maintained, v3.0.0, 359 commits",
+  "geography": "US (FRED/ALFRED/GeoFRED)",
+  "time_coverage": "series-dependent",
+  "size_hint": "library only",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "Newer/broader alternative to fredapi with explicit ALFRED support plus GeoFRED (regional/state series, useful for the STR-regulation and regional-macro gaps) and caching for repeated point-in-time backtests."
+  ]
+ },
+ {
+  "key": "github:jasonjosuecruz/peruvian_gdp_revisions",
+  "url": "https://github.com/JasonJosueCruz/peruvian_gdp_revisions",
+  "name": "peruvian_gdp_revisions (Peru Real-Time GDP dataset pipeline)",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Python pipeline (scrape -> OCR for pre-2013 scans -> clean -> vintage-format / releases-format output) that reconstructs a real-time GDP vintage dataset for Peru from BCRP Weekly Reports, 1994-2025 (monthly and quarterly/annual). Actual processed vintage CSV/Parquet outputs are hosted on Zenodo (DOI 10.5281/zenodo.18099975); GitHub repo (MIT, 1,289 commits, 1 star) holds only the code. Includes OCR for scanned pre-2013 PDFs.",
+  "why_useful": "A genuine, working real-time/vintage GDP dataset construction for a LatAm economy (gap #7 regional travel/macro outside US/EU is adjacent; more directly this is a template + actual vintage dataset for point-in-time macro data outside the US ALFRED system, filling the 'ONS revisions, Eurostat vintages... elsewhere' spirit of this theme for a market ABNB reports LatAm revenue in).",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "active, 1,289 commits, recent",
+  "geography": "Peru",
+  "time_coverage": "1994-2025",
+  "size_hint": "dataset hosted externally on Zenodo; pipeline code in repo",
+  "hits": 1,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests"
+  ],
+  "why_all": [
+   "A genuine, working real-time/vintage GDP dataset construction for a LatAm economy (gap #7 regional travel/macro outside US/EU is adjacent; more directly this is a template + actual vintage dataset for point-in-time macro data outside the US ALFRED system, filling the 'ONS revisions, Eurostat vintages... elsewhere' spirit of this theme for a market ABNB reports LatAm revenue in)."
+  ]
+ },
+ {
+  "key": "github:dr-leo/pandasdmx",
+  "url": "https://github.com/dr-leo/pandaSDMX",
+  "name": "pandaSDMX",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python SDMX 2.1 client (Apache 2.0, 134 stars, 928 commits) that queries and parses SDMX-ML/SDMX-JSON from any SDMX-compliant statistical agency (documented providers include World Bank, ILO, BIS, ECB, Eurostat, OECD, UNICEF, UN) and returns pandas objects. Several LatAm/APAC national statistical offices (e.g. DANE Colombia, some ABS Australia collections, and OECD's country tourism tables which include Mexico, Chile, Korea, Japan, Australia, India as OECD/G20 members) expose SDMX endpoints reachable through this same client, though not all are pre-registered as named 'agencies' in the library -- would need per-agency endpoint config.",
+  "why_useful": "General-purpose acquisition method for Eurostat/ONS series beyond what's already held (tour_ce_omr platform nights); does not itself expose vintages/revisions explicitly, but is the standard way to programmatically pull ONS/Eurostat series (including revision-relevant series like GDP, consumer spend, tourism) for building our own vintage archive going forward by re-pulling on a schedule.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   6
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "active, 928 commits, 134 stars",
+  "geography": "EU/UK/global (SDMX providers)",
+  "time_coverage": "provider-dependent",
+  "size_hint": "library only",
+  "hits": 5,
+  "themes": [
+   "Point-in-time macro vintages: ALFRED tooling, Philly Fed real-time dataset, ONS revisions, Eurostat vintages; packages for vintage-aware backtests",
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients",
+   "Inflation and price indices for accommodation: BLS CPI lodging, Eurostat HICP accommodation, national CPI hotel components, Japan CPI, Australia CPI accommodation",
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "General-purpose acquisition method for Eurostat/ONS series beyond what's already held (tour_ce_omr platform nights); does not itself expose vintages/revisions explicitly, but is the standard way to programmatically pull ONS/Eurostat series (including revision-relevant series like GDP, consumer spend, tourism) for building our own vintage archive going forward by re-pulling on a schedule.",
+   "General-purpose acquisition method spanning several numbered-gap countries (7) at once via OECD's SDMX tourism/consumer tables (which include non-EU OECD members: Mexico, Chile, Colombia, Korea, Japan, Australia) rather than one country-specific client each.",
+   "A maintained, general SDMX client is the most reliable free way to programmatically pull point-in-time-labeled Eurostat HICP-accommodation series (and OECD/ECB price series) rather than scraping the Eurostat web UI; supports building a proper vendor+timestamp vintage register per repo rule #2.",
+   "One client can pull Eurostat platform-tourism tables, ECB series (FX, rates, sentiment), and OECD tourism/consumer-confidence tables through a single, scriptable SDMX interface \u2014 useful as generic tooling for the OECD/ECB/Eurostat legs of this theme rather than a dataset itself.",
+   "A generic, well-maintained path to BIS effective exchange rates, IMF BOP travel-services credits, and OECD/Eurostat series that are otherwise only reachable one-off; could be the backbone for building a point-in-time macro-vintage puller (our gap #4) rather than relying on pull-date-anchored snapshots."
+  ]
+ },
+ {
+  "key": "github:us-bea/beaapi",
+  "url": "https://github.com/us-bea/beaapi",
+  "name": "us-bea/beaapi",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official BEA-maintained Python package (69 stars, CC0-1.0, updated 10 Sep 2026) for pulling BEA API tables (NIPA, including PCE by category \u2014 e.g. PCE: Foreign travel, PCE: Air transportation, PCE: Accommodations \u2014 and regional/state personal income). No data committed; live pull, requires free BEA API key (not paid).",
+  "why_useful": "Official client for the BEA PCE travel/accommodation subcomponents CONTEXT.md already lists holding a 'BEA PCE travel panel' \u2014 this is likely the underlying tool or an equivalent, useful to confirm/replace an ad hoc BEA pull and to get PCE line items at finer granularity (e.g. state personal income by quarter) than a generic panel.",
+  "potential": "medium",
+  "gap_targets": [
+   6
+  ],
+  "geography": "US national + state/regional (BEA regional accounts)",
+  "time_coverage": "BEA NIPA history, generally 1929-present annual, 1947-present quarterly for national accounts",
+  "size_hint": "n/a (API client)",
+  "license": "CC0-1.0",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "Overlaps with existing BEA PCE travel panel; flagged because it is the maintainer-official client and adds state/regional PCE granularity not confirmed in current holding",
+  "hits": 2,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Official client for the BEA PCE travel/accommodation subcomponents CONTEXT.md already lists holding a 'BEA PCE travel panel' \u2014 this is likely the underlying tool or an equivalent, useful to confirm/replace an ad hoc BEA pull and to get PCE line items at finer granularity (e.g. state personal income by quarter) than a generic panel.",
+   "Official, well-throttled client for pulling PCE services / travel-related NIPA line items programmatically and repeatably for the PCE travel panel already held; useful for extending or re-verifying that panel with fresh vintages."
+  ]
+ },
+ {
+  "key": "github:pegeler/unemployment",
+  "url": "https://github.com/pegeler/unemployment",
+  "name": "pegeler/unemployment (LAUS annual averages)",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "R package bundling BLS Local Area Unemployment Statistics (LAUS) annual averages 1990-2017 as a data.frame: 90,088 rows x 9 columns (LAUS code, state/county FIPS, county name, year, labor force, employment, unemployment level, unemployment rate) at county/metro-area level.",
+  "why_useful": "Fills the 'unemployment by metro' curated-panel ask directly: county-level history back to 1990 committed as data, no API key needed, usable as a regional consumer-strength control for NA nights/ADR.",
+  "potential": "medium",
+  "geography": "US counties/metro areas",
+  "time_coverage": "1990-2017 annual",
+  "license": "unspecified (BLS public data)",
+  "last_activity": "8 commits, small/mature repo",
+  "size_hint": "90k rows",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "Fills the 'unemployment by metro' curated-panel ask directly: county-level history back to 1990 committed as data, no API key needed, usable as a regional consumer-strength control for NA nights/ADR."
+  ]
+ },
+ {
+  "key": "github:keberwein/blscraper",
+  "url": "https://github.com/keberwein/blscrapeR",
+  "name": "blscrapeR",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package/API client wrapping the BLS API: state- and metro-area unemployment (LAUS) via county_fips()/quick_unemp_rate(), CPI/inflation adjustment functions using CPI data from 1947 onward (inflation_adjust()), quick_employed_level(), quick_laborForce_rate(); CRAN package, 381 commits, actively maintained.",
+  "why_useful": "One-command pull for metro unemployment and long-run CPI (1947+) matching the theme's 'unemployment by metro' and 'CPI' asks; more turnkey than raw BLS API for regional consumer-strength splits (NA/EMEA proxy via US metro cuts).",
+  "potential": "medium",
+  "geography": "US national/state/metro",
+  "time_coverage": "CPI from 1947; unemployment current + historical via API",
+  "license": "present in repo (not itemized)",
+  "last_activity": "381 commits, marked Active",
+  "size_hint": "N/A (API client)",
+  "gap_targets": [],
+  "duplicate_of_holding": "overlaps our existing BLS CPI holding; adds LAUS metro convenience layer",
+  "hits": 1,
+  "themes": [
+   "FRED / BEA / BLS / Census API clients and curated macro panels (consumer sentiment, PCE services, CPI lodging, airfares, unemployment by metro)"
+  ],
+  "why_all": [
+   "One-command pull for metro unemployment and long-run CPI (1947+) matching the theme's 'unemployment by metro' and 'CPI' asks; more turnkey than raw BLS API for regional consumer-strength splits (NA/EMEA proxy via US metro cuts)."
+  ]
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "key": "github:airsim/rmol",
+  "url": "https://github.com/airsim/rmol",
+  "name": "RMOL (Revenue Management Open Library)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "C++ open-source revenue-management simulation library (part of the airsim/travel-market-simulator suite alongside stdair, airinv, tvlsim). Implements classic RM optimisation (EMSR, nesting, forecasting of booking curves) originally built for airline seat inventory but generically applicable to any capacity/date-based booking-curve RM problem, including hotel rooms. No committed real-world hotel data; it is a simulator/library, not a dataset.",
+  "why_useful": "Could be used to synthesize realistic booking-curve / lead-time / cancellation-and-no-show test data under controllable demand assumptions as a kernel analogue for RNPL/booking-pace modeling (gap #17 methods, gap #18 book-ahead analogues), though it requires nontrivial setup and produces simulated, not observed, data.",
+  "potential": "low",
+  "size_hint": "Library/codebase, no data files",
+  "time_coverage": "N/A (simulation tool)",
+  "geography": "N/A",
+  "license": "Open source (LGPL per airsim project convention)",
+  "last_activity": "Low-activity legacy academic project (airsim org, 14 stars)",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   17,
+   18
+  ],
+  "hits": 1,
+  "themes": [
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "Could be used to synthesize realistic booking-curve / lead-time / cancellation-and-no-show test data under controllable demand assumptions as a kernel analogue for RNPL/booking-pace modeling (gap #17 methods, gap #18 book-ahead analogues), though it requires nontrivial setup and produces simulated, not observed, data."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/opentravel-alliance",
+  "url": "https://github.com/api-evangelist/opentravel-alliance",
+  "name": "opentravel-alliance (API Evangelist profile)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Profile of the OpenTravel Alliance standards body covering air/hospitality/car-rental/cruise/rail/GDS message specifications. Contains 8 harvested Swagger/OpenAPI docs and points to the upstream mirror github.com/OpenTravel/OpenTravel-Specifications, which the profile says holds 543 JSON Schema files (public OTA 1.0 tree stops at release 2017B; website offers releases through 2024A). No license file on this profiling repo. Last commit 2026-07-28 (creation); upstream mirror last updated 2024-11-26.",
+  "why_useful": "Points to a real, larger upstream repo (OpenTravel/OpenTravel-Specifications) that defines the standard XML/JSON message formats used for cruise GDS booking/availability messages \u2014 a methods reference for anyone building a cruise-booking-API client, though not itself a dataset.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "OTA 1.0 through 2017B (public mirror); commercial releases through 2024A not mirrored",
+  "geography": "global (travel-distribution standard)",
+  "size_hint": "543 JSON Schema files (upstream mirror)",
+  "license": "royalty-free per OpenTravel Alliance (this profile repo has no LICENSE)",
+  "last_activity": "2026-07-28 (profile); 2024-11-26 (upstream mirror)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Points to a real, larger upstream repo (OpenTravel/OpenTravel-Specifications) that defines the standard XML/JSON message formats used for cruise GDS booking/availability messages \u2014 a methods reference for anyone building a cruise-booking-API client, though not itself a dataset."
+  ]
+ },
+ {
+  "key": "github:m0r13n/pyais",
+  "url": "https://github.com/M0r13n/pyais",
+  "name": "pyais",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (254 stars) decoding AIS message formats (AIVDM/AIVDO) into vessel identification and position data. A decoder/parser only, no committed vessel data.",
+  "why_useful": "Baseline tooling if the team ever wanted to build its own cruise-ship-position/port-call tracker from a raw AIS feed (e.g. AISHub free feed) rather than relying on a commercial API; general infrastructure only, several steps removed from any ABNB-relevant series today.",
+  "potential": "low",
+  "gap_targets": [
+   18
+  ],
+  "time_coverage": "n/a",
+  "geography": "global",
+  "size_hint": "n/a \u2014 decoder library",
+  "license": "MIT (typical for pyais)",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cruise line data: NCLH / Carnival / Royal Caribbean advance ticket sales, capacity, occupancy, cruise schedules and port calls"
+  ],
+  "why_all": [
+   "Baseline tooling if the team ever wanted to build its own cruise-ship-position/port-call tracker from a raw AIS feed (e.g. AISHub free feed) rather than relying on a commercial API; general infrastructure only, several steps removed from any ABNB-relevant series today."
+  ]
+ },
+ {
+  "key": "github:onthebay98/tsa-forecast",
+  "url": "https://github.com/onthebay98/tsa-forecast",
+  "name": "onthebay98/tsa-forecast",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "SARIMAX state-space probabilistic forecasting method for TSA checkpoint volumes; backtest window 2024-01-01 to 2026-02-22 (112+ weeks). NOTE: raw source code and data have been stripped from the public repo (\"documentation only... actively deployed in production\"); only ACF/forecast-error plot images remain in /data.",
+  "why_useful": "Method-only reference (a public backtest window and SARIMAX framing for TSA nowcasting) but no runnable code or data \u2014 low value, flag mainly to avoid re-discovery.",
+  "potential": "low",
+  "duplicate_of_holding": "Our own TSA-since-2024 nowcast attempt already failed; this is an independent method with no reusable artifact",
+  "gap_targets": [
+   10,
+   17
+  ],
+  "geography": "US",
+  "time_coverage": "2019-2026 (backtest 2024-2026)",
+  "size_hint": "documentation only, no data",
+  "license": "unknown",
+  "last_activity": "2026-03-18",
+  "hits": 1,
+  "themes": [
+   "US air travel: BTS T-100 segment, DB1B fares, Form 41, on-time performance; repos that download and tidy them; TSA throughput scrapers"
+  ],
+  "why_all": [
+   "Method-only reference (a public backtest window and SARIMAX framing for TSA nowcasting) but no runnable code or data \u2014 low value, flag mainly to avoid re-discovery."
+  ]
+ },
+ {
+  "key": "github:siddharth271101/covid-19-and-aviation-industry",
+  "url": "https://github.com/siddharth271101/Covid-19-and-Aviation-Industry",
+  "name": "Covid-19-and-Aviation-Industry",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Spark/Airflow/AWS EMR pipeline (MIT, 29 commits) that pulls the OpenSky Network's post-2019-01-01 global flight dataset (2,500+ ADS-B receivers), joins it to JHU CSSE COVID-19 case time series, airport-code and country/continent mapping tables, and Indian state ISO codes, loading incrementally to S3.",
+  "why_useful": "A concrete, working example of how to acquire and process the OpenSky COVID-19 global flight dataset at scale (see the top OpenSky COVID-19 entry above) -- useful as a reference implementation rather than a data source in itself.",
+  "potential": "low",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "companion method for the OpenSky COVID-19 dataset entry above",
+  "size_hint": "pipeline code only",
+  "time_coverage": "2019-01-01 to whenever last run",
+  "geography": "global, with an India-specific join table",
+  "license": "MIT",
+  "last_activity": "29 commits, exact date not surfaced",
+  "hits": 1,
+  "themes": [
+   "Flight tracking and schedules: OpenSky, ADS-B Exchange, FlightRadar scrapers, aviationstack samples, airline seat capacity by route"
+  ],
+  "why_all": [
+   "A concrete, working example of how to acquire and process the OpenSky COVID-19 global flight dataset at scale (see the top OpenSky COVID-19 entry above) -- useful as a reference implementation rather than a data source in itself."
+  ]
+ }
+]

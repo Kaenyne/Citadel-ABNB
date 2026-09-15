@@ -1,0 +1,28 @@
+{
+ "slug": "efebiskin-sec-form4-parser",
+ "url": "https://github.com/efebiskin/sec-form4-parser",
+ "sampled": true,
+ "total_bytes": 87889,
+ "files": [
+  "abnb_form4_filings_index.csv",
+  "abnb_form4_latest.xml",
+  "fixture_sample_form4_purchase.xml",
+  "models.py",
+  "parsed_transactions_sample.csv",
+  "parser.py",
+  "repo_README.md"
+ ],
+ "rows": "abnb_form4_filings_index.csv: 491 (Form 4 + 4/A rows out of 1,001 recent ABNB filings); parsed_transactions_sample.csv: 6 (3 from the live ABNB filing, 3 from repo fixtures); XML/py/md files n/a",
+ "columns": "index: accessionNumber, filingDate, reportDate, acceptanceDateTime, form, primaryDocument, size, ...; parsed: source, security_title, transaction_date, transaction_code, shares, price_per_share, acquired_disposed, shares_owned_following, ownership, is_derivative",
+ "date_range": "Form 4 index filingDate 2023-05-01 to 2026-09-03 (reportDate 2023-04-19 to 2026-09-01); parsed transactions 2024-03-15 (fixture) to 2026-09-01 (live ABNB)",
+ "how_pulled": "git clone --depth 1 --filter=blob:none https://github.com/efebiskin/sec-form4-parser; curl -s -L -H 'User-Agent: UF student ksurapaneni@ufl.edu' https://data.sec.gov/submissions/CIK0001559720.json -o abnb_submissions.json; python build.py (pandas filter form in {4, 4/A} -> abnb_form4_filings_index.csv; urllib GET https://www.sec.gov/Archives/edgar/data/1559720/000119312526382108/ownership.xml with same UA; sec_form4_parser.parse() on that XML and the two test fixtures -> parsed_transactions_sample.csv)",
+ "full_dataset_size": "Repo itself ~14 KB source, no data. Full ABNB Form 4 history: ~491 filings since May 2023 in the recent submissions JSON plus the older shard CIK0001559720-submissions-001.json (452 filings 2012-10-24 to 2023-04-29, most Form 4s post-IPO Dec 2020); each Form 4 XML is ~3-10 KB, so the complete ABNB insider panel is roughly 700-900 XML files, under 10 MB, pullable keyless at 10 req/s with a UA header.",
+ "description": "A small MIT-licensed Python library that parses SEC Form 4 (insider transaction) XML into typed objects (issuer, reporters, non-derivative and derivative transactions with code, shares, price, post-transaction holdings) and ships an optional rate-limited EDGAR fetcher and CLI; the repo holds code and two fixture filings only, no data. The sample pairs it with a keyless pull of Airbnb's EDGAR submissions index (CIK 1559720) filtered to Form 4/4A, one live ABNB Form 4 XML, and the parser's output over it, confirming the parser works on a current filing. Grain is one row per transaction per filing, sourced from data.sec.gov / sec.gov Archives. An analyst would loop the index to fetch every ABNB Form 4 and build an insider buy/sell and 10b5-1 sale panel alongside the guidance ledger for context around the 5 Nov print; it is not a KPI input.",
+ "issues": "None blocking. Parser exports parse() not parse_form4() (job card guess). Repo has 0 stars and a single push (2026-04-17), so maintenance is uncertain; EDGAR Form 4 XML schema is stable, so low risk. The older submissions shard was not pulled (kept to one index fetch + one filing). SEC requires a declared User-Agent; no key or login.",
+ "source_urls": [
+  "https://github.com/efebiskin/sec-form4-parser",
+  "https://data.sec.gov/submissions/CIK0001559720.json",
+  "https://www.sec.gov/Archives/edgar/data/1559720/000119312526382108/ownership.xml"
+ ],
+ "pulled_at": "2026-09-14"
+}

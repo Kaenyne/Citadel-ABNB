@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:efebiskin/sec-form4-parser",
+  "url": "https://github.com/efebiskin/sec-form4-parser",
+  "name": "efebiskin/sec-form4-parser",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Pip-installable, dependency-free, typed Python parser for SEC Form 4 insider-trading XML filings (converts EDGAR Form 4 XML into structured transaction records: insider name, role, transaction date, shares, price). No data bundled \u2014 a parsing library only, to be pointed at EDGAR full-text/XBRL Form 4 filings.",
+  "why_useful": "A clean building block for constructing an ABNB insider-transaction history (Form 4s already public on EDGAR) without hand-rolling XML parsing; could feed an insider-buying/selling signal panel alongside the existing guidance ledger.",
+  "potential": "low",
+  "geography": "US (SEC EDGAR)",
+  "time_coverage": "method only; covers whatever EDGAR range is queried (EDGAR Form 4 history back to ~1996 in XML from ~2003)",
+  "size_hint": "small library, MIT licensed",
+  "license": "MIT",
+  "last_activity": "2026-04-17",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "A clean building block for constructing an ABNB insider-transaction history (Form 4s already public on EDGAR) without hand-rolling XML parsing; could feed an insider-buying/selling signal panel alongside the existing guidance ledger."
+  ]
+ },
+ {
+  "key": "github:lucabol/followtheguru",
+  "url": "https://github.com/lucabol/FollowTheGuru",
+  "name": "lucabol/FollowTheGuru",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "13F parsing and visualization tool for investor portfolios identified by CIK (pulls EDGAR 13F-HR filings, parses XML holdings tables, visualizes by manager). Very low activity (1 star, last updated 2021), no bundled dataset.",
+  "why_useful": "A minimal reference implementation for parsing 13F-HR XML by CIK; could be adapted to build an institutional-ownership-concentration time series for ABNB (gap 15) but would need real rework given its age/inactivity.",
+  "potential": "low",
+  "geography": "US (SEC EDGAR)",
+  "time_coverage": "method only, whatever EDGAR range queried (13F-HR filings since ABNB's 4Q20 IPO quarter onward)",
+  "size_hint": "small repo",
+  "license": "none declared",
+  "last_activity": "2021-12-28",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "A minimal reference implementation for parsing 13F-HR XML by CIK; could be adapted to build an institutional-ownership-concentration time series for ABNB (gap 15) but would need real rework given its age/inactivity."
+  ]
+ },
+ {
+  "key": "github:mileshenrichs/openholdings",
+  "url": "https://github.com/mileshenrichs/openholdings",
+  "name": "mileshenrichs/openholdings",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apache-2.0 Python package to \"retrieve full ETF holdings lists with a single Python function\" \u2014 a thin client presumably wrapping fund-provider holdings pages/APIs into one call. No bundled data.",
+  "why_useful": "Lower-friction alternative to the iShares/SPDR-specific scrapers above if it covers multiple fund families in one interface; would need inspection to confirm ABNB-holding ETFs (consumer discretionary, travel, growth funds) are covered.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "point-in-time pulls only, no history bundled",
+  "size_hint": "small package",
+  "license": "Apache-2.0",
+  "last_activity": "2026-06-22",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Lower-friction alternative to the iShares/SPDR-specific scrapers above if it covers multiple fund families in one interface; would need inspection to confirm ABNB-holding ETFs (consumer discretionary, travel, growth funds) are covered."
+  ]
+ },
+ {
+  "key": "github:bdi2357/ishares_etf_holdings_downloader",
+  "url": "https://github.com/bdi2357/iShares_ETF_holdings_downloader",
+  "name": "bdi2357/iShares_ETF_holdings_downloader",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small MIT-licensed script for downloading iShares ETF holdings (simpler alternative to talsan/ishares, no AWS integration, 3 stars).",
+  "why_useful": "Lightweight fallback method to the more complete talsan/ishares tool for the same purpose (pulling ABNB's weight in iShares consumer/growth funds).",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "point-in-time pulls only",
+  "size_hint": "small script",
+  "license": "MIT",
+  "last_activity": "2023-12-07",
+  "duplicate_of_holding": "duplicates talsan/ishares functionality, simpler/less maintained",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "Lightweight fallback method to the more complete talsan/ishares tool for the same purpose (pulling ABNB's weight in iShares consumer/growth funds)."
+  ]
+ },
+ {
+  "key": "github:tarikceric/price-trends-for-ark-investments",
+  "url": "https://github.com/tarikceric/Price-Trends-for-ARK-investments",
+  "name": "tarikceric/Price-Trends-for-ARK-investments",
+  "category": "company_filings_estimates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tracks ARKK/ARKX (Cathie Wood ARK Invest) daily holdings-disclosure files (ARK publishes daily CSV holdings) with analysis in pandas and export to PostgreSQL. ARK's own daily-published CSVs are a genuine free historical daily-holdings source going back to ARK fund inception (~2014) if the repo or ARK's site is used directly.",
+  "why_useful": "ARK funds are known to have held/traded growth-consumer names; a working daily-ARK-holdings puller/archiver is a real historical-frequency institutional-ownership proxy source (higher frequency than 13F) for whichever names it covers, worth checking if ABNB ever appeared in ARKK/ARKX baskets.",
+  "potential": "low",
+  "geography": "US",
+  "time_coverage": "method only; ARK publishes daily CSVs historically back to fund inception if pulled/archived",
+  "size_hint": "small repo",
+  "license": "none declared",
+  "last_activity": "2022-05-21",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   15
+  ],
+  "hits": 1,
+  "themes": [
+   "13F holdings parsers and institutional-ownership history, short-interest datasets, insider-transaction parsers (Form 4), ETF holdings trackers"
+  ],
+  "why_all": [
+   "ARK funds are known to have held/traded growth-consumer names; a working daily-ARK-holdings puller/archiver is a real historical-frequency institutional-ownership proxy source (higher frequency than 13F) for whichever names it covers, worth checking if ABNB ever appeared in ARKK/ARKX baskets."
+  ]
+ }
+]

@@ -1,0 +1,10 @@
+{
+ "slug": "defeatbeta-api-yahoo-finance-hf",
+ "url": "https://github.com/defeat-beta/defeatbeta-api",
+ "category": "company_filings_estimates",
+ "data_kind": "both",
+ "one_line": "Apache-2.0 Python/DuckDB client (747 stars, last push 2026-08-06) over the PUBLIC Hugging Face dataset defeatbeta/yahoo-finance-data (ODC-BY, 4.1 GB, refreshed 2026-09-14): stock_earning_call_transcripts.parquet (2.27 GB, speaker-attributed, TSLA example runs 2011Q2-2026Q1), stock_revenue_breakdown.parquet (1.3 MB, segment + geographic revenue), exchange_rate.parquet (3.3 MB), stock_earning_calendar.parquet, stock_statement.parquet (118 MB), stock_prices.parquet (467 MB), stock_sec_filing.parquet (91 MB); no API key, files fetchable by plain HTTPS/range from huggingface.co.",
+ "abnb_use": "One keyless command gives machine-readable earnings-call transcripts for ABNB and the peer set (BKNG/EXPE/MAR/HLT/NCLH) for management-tone and guidance-language work, plus a segment/geographic revenue table for the regional-split model, an FX table for the ex-FX ADR decomposition, and an earnings calendar for print-date alignment; gap 4 (peer history in one place) and gap 17/18 (peer and book-ahead analogue text at scale).",
+ "sample_plan": "1) Small whole files by direct HTTPS (no key, ~6 MB total): curl -L -o revenue_breakdown.parquet https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/stock_revenue_breakdown.parquet ; same for data/exchange_rate.parquet (3.3 MB), data/stock_earning_calendar.parquet (0.2 MB), data/company_tickers.json (1.4 MB), spec.json. 2) For the 2.27 GB transcript table do NOT download it; run a DuckDB range-scan and write only the ABNB rows: python -c \"import duckdb;duckdb.sql(\\\"INSTALL httpfs;LOAD httpfs;COPY (SELECT * FROM read_parquet('https://huggingface.co/datasets/defeatbeta/yahoo-finance-data/resolve/main/data/stock_earning_call_transcripts.parquet') WHERE symbol IN ('ABNB','BKNG','EXPE') LIMIT 40) TO 'abnb_transcripts_sample.parquet'\\\")\" and cap the output at 15 MB (drop LIMIT lower if bigger). Total <= 25 MB, preferred <= 8 MB.",
+ "tos_or_license_flag": true
+}

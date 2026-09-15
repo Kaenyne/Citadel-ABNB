@@ -1,0 +1,2393 @@
+{
+  "as_of": "2026-09-14",
+  "scope": [
+    "gbv_musd",
+    "revenue_musd",
+    "nights_m",
+    "adr_usd"
+  ],
+  "quarters": [
+    "2020Q3",
+    "2020Q4",
+    "2021Q1",
+    "2021Q2",
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "facts": [
+    {
+      "quarter": "2020Q3",
+      "metric": "nights_m",
+      "original": null,
+      "original_source_id": "2020Q3_filing",
+      "fine": {
+        "value": 61.8,
+        "unit": "million_bookings",
+        "source_id": "2020Q4_letter",
+        "section": "Quarterly summary: historical Q3 2020",
+        "precision_step": 0.1,
+        "first_known_date": "2021-02-25"
+      },
+      "notes": "Original IPO body unavailable after bounded primary retrieval. Later corroboration does not establish original printed value."
+    },
+    {
+      "quarter": "2020Q3",
+      "metric": "gbv_musd",
+      "original": null,
+      "original_source_id": "2020Q3_filing",
+      "fine": {
+        "value": 8029.3,
+        "unit": "USD_million",
+        "source_id": "2021Q3_letter",
+        "section": "Key business metrics: comparative Q3 2020 GBV",
+        "precision_step": 0.1,
+        "first_known_date": "2021-11-04"
+      },
+      "notes": "Later corroboration; earliest in checked evidence, not proof of original S-1 precision."
+    },
+    {
+      "quarter": "2020Q3",
+      "metric": "adr_usd",
+      "original": null,
+      "original_source_id": "2020Q3_filing",
+      "fine": {
+        "value": 129.95,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2020Q4_letter",
+        "section": "Quarterly summary: historical Q3 2020 ADR",
+        "precision_step": 0.01,
+        "first_known_date": "2021-02-25"
+      },
+      "notes": "Frozen ADR calculated as round(8029.3/61.8,2)=129.92 by 02_kpi_panel.py; directly reported historical ADR 129.95 uses underlying precision. Not a demonstrated transcription/revision."
+    },
+    {
+      "quarter": "2020Q3",
+      "metric": "revenue_musd",
+      "original": null,
+      "original_source_id": "2020Q3_filing",
+      "fine": {
+        "value": 1342331,
+        "unit": "USD_thousand",
+        "source_id": "2020Q4_filing",
+        "section": "Selected quarterly financial data: Q3 2020 GAAP revenue",
+        "precision_step": 1,
+        "first_known_date": "2021-02-26"
+      },
+      "notes": "Original IPO body unavailable after bounded primary retrieval. Later corroboration does not establish original printed value."
+    },
+    {
+      "quarter": "2020Q4",
+      "metric": "nights_m",
+      "original": {
+        "value": 46.3,
+        "unit": "million_bookings",
+        "source_id": "2020Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-02-25"
+      },
+      "original_source_id": "2020Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2020Q4",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 5.9,
+        "unit": "USD_billion",
+        "source_id": "2020Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-02-25"
+      },
+      "original_source_id": "2020Q4_letter",
+      "fine": {
+        "value": 5905.7,
+        "unit": "USD_million",
+        "source_id": "2020Q4_letter",
+        "section": "Key business metrics: GBV (millions)",
+        "precision_step": 0.1,
+        "first_known_date": "2021-02-25"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2020Q4",
+      "metric": "adr_usd",
+      "original": {
+        "value": 127.56,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2020Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2021-02-25"
+      },
+      "original_source_id": "2020Q4_letter",
+      "fine": null,
+      "notes": "Frozen ADR calculated as round(5905.7/46.3,2)=127.55 by 02_kpi_panel.py; original direct ADR 127.56. Ratio of rounded components differs from direct disclosure."
+    },
+    {
+      "quarter": "2020Q4",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 859,
+        "unit": "USD_million",
+        "source_id": "2020Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2021-02-25"
+      },
+      "original_source_id": "2020Q4_letter",
+      "fine": {
+        "value": 859264,
+        "unit": "USD_thousand",
+        "source_id": "2020Q4_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2021-02-25"
+      },
+      "notes": "Frozen 859.1 is not compatible with original GAAP 859.264 rounded to 0.1m; source pipeline costlines supplied 859.1, no revision evidence. Outcome/refit effect not quantified."
+    },
+    {
+      "quarter": "2021Q1",
+      "metric": "nights_m",
+      "original": {
+        "value": 64.4,
+        "unit": "million_bookings",
+        "source_id": "2021Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-05-13"
+      },
+      "original_source_id": "2021Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q1",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 10.3,
+        "unit": "USD_billion",
+        "source_id": "2021Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-05-13"
+      },
+      "original_source_id": "2021Q1_letter",
+      "fine": {
+        "value": 10289.7,
+        "unit": "USD_million",
+        "source_id": "2021Q1_letter",
+        "section": "Key business metrics: GBV (millions)",
+        "precision_step": 0.1,
+        "first_known_date": "2021-05-13"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q1",
+      "metric": "adr_usd",
+      "original": {
+        "value": 159.82,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2021Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2021-05-13"
+      },
+      "original_source_id": "2021Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q1",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 887,
+        "unit": "USD_million",
+        "source_id": "2021Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2021-05-13"
+      },
+      "original_source_id": "2021Q1_letter",
+      "fine": {
+        "value": 886936,
+        "unit": "USD_thousand",
+        "source_id": "2021Q1_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2021-05-13"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q2",
+      "metric": "nights_m",
+      "original": {
+        "value": 83.1,
+        "unit": "million_bookings",
+        "source_id": "2021Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-08-12"
+      },
+      "original_source_id": "2021Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q2",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 13.4,
+        "unit": "USD_billion",
+        "source_id": "2021Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-08-12"
+      },
+      "original_source_id": "2021Q2_letter",
+      "fine": {
+        "value": 13421.4,
+        "unit": "USD_million",
+        "source_id": "2021Q2_letter",
+        "section": "Key business metrics: GBV (millions)",
+        "precision_step": 0.1,
+        "first_known_date": "2021-08-12"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q2",
+      "metric": "adr_usd",
+      "original": {
+        "value": 161.45,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2021Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2021-08-12"
+      },
+      "original_source_id": "2021Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q2",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 1335,
+        "unit": "USD_million",
+        "source_id": "2021Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2021-08-12"
+      },
+      "original_source_id": "2021Q2_letter",
+      "fine": {
+        "value": 1335196,
+        "unit": "USD_thousand",
+        "source_id": "2021Q2_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2021-08-12"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q3",
+      "metric": "nights_m",
+      "original": {
+        "value": 79.7,
+        "unit": "million_bookings",
+        "source_id": "2021Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-11-04"
+      },
+      "original_source_id": "2021Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q3",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 11.9,
+        "unit": "USD_billion",
+        "source_id": "2021Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2021-11-04"
+      },
+      "original_source_id": "2021Q3_letter",
+      "fine": {
+        "value": 11891.6,
+        "unit": "USD_million",
+        "source_id": "2021Q3_letter",
+        "section": "Key business metrics: GBV (millions)",
+        "precision_step": 0.1,
+        "first_known_date": "2021-11-04"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q3",
+      "metric": "adr_usd",
+      "original": {
+        "value": 149.15,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2021Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2021-11-04"
+      },
+      "original_source_id": "2021Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q3",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2237,
+        "unit": "USD_million",
+        "source_id": "2021Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2021-11-04"
+      },
+      "original_source_id": "2021Q3_letter",
+      "fine": {
+        "value": 2237432,
+        "unit": "USD_thousand",
+        "source_id": "2021Q3_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2021-11-04"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q4",
+      "metric": "nights_m",
+      "original": {
+        "value": 73.4,
+        "unit": "million_bookings",
+        "source_id": "2021Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-02-15"
+      },
+      "original_source_id": "2021Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q4",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 11.3,
+        "unit": "USD_billion",
+        "source_id": "2021Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-02-15"
+      },
+      "original_source_id": "2021Q4_letter",
+      "fine": {
+        "value": 11273.8,
+        "unit": "USD_million",
+        "source_id": "2021Q4_letter",
+        "section": "Key business metrics: GBV (millions)",
+        "precision_step": 0.1,
+        "first_known_date": "2022-02-15"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q4",
+      "metric": "adr_usd",
+      "original": {
+        "value": 153.61,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2021Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2022-02-15"
+      },
+      "original_source_id": "2021Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2021Q4",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 1532,
+        "unit": "USD_million",
+        "source_id": "2021Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2022-02-15"
+      },
+      "original_source_id": "2021Q4_letter",
+      "fine": {
+        "value": 1532196,
+        "unit": "USD_thousand",
+        "source_id": "2021Q4_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2022-02-15"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q1",
+      "metric": "nights_m",
+      "original": {
+        "value": 102.1,
+        "unit": "million_bookings",
+        "source_id": "2022Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-05-03"
+      },
+      "original_source_id": "2022Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q1",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 17.2,
+        "unit": "USD_billion",
+        "source_id": "2022Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-05-03"
+      },
+      "original_source_id": "2022Q1_letter",
+      "fine": {
+        "value": 17164.8,
+        "unit": "USD_million",
+        "source_id": "2022Q1_letter",
+        "section": "Key business metrics: GBV (millions)",
+        "precision_step": 0.1,
+        "first_known_date": "2022-05-03"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q1",
+      "metric": "adr_usd",
+      "original": {
+        "value": 168.07,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2022Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2022-05-03"
+      },
+      "original_source_id": "2022Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q1",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 1509,
+        "unit": "USD_million",
+        "source_id": "2022Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2022-05-03"
+      },
+      "original_source_id": "2022Q1_letter",
+      "fine": {
+        "value": 1508937,
+        "unit": "USD_thousand",
+        "source_id": "2022Q1_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2022-05-03"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q2",
+      "metric": "nights_m",
+      "original": {
+        "value": 103.7,
+        "unit": "million_bookings",
+        "source_id": "2022Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-08-02"
+      },
+      "original_source_id": "2022Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q2",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 17,
+        "unit": "USD_billion",
+        "source_id": "2022Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-08-02"
+      },
+      "original_source_id": "2022Q2_letter",
+      "fine": {
+        "value": 16980.6,
+        "unit": "USD_million",
+        "source_id": "2022Q2_letter",
+        "section": "Key business metrics: GBV (millions)",
+        "precision_step": 0.1,
+        "first_known_date": "2022-08-02"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q2",
+      "metric": "adr_usd",
+      "original": {
+        "value": 163.74,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2022Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2022-08-02"
+      },
+      "original_source_id": "2022Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q2",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2104,
+        "unit": "USD_million",
+        "source_id": "2022Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2022-08-02"
+      },
+      "original_source_id": "2022Q2_letter",
+      "fine": {
+        "value": 2104107,
+        "unit": "USD_thousand",
+        "source_id": "2022Q2_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2022-08-02"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q3",
+      "metric": "nights_m",
+      "original": {
+        "value": 99.7,
+        "unit": "million_bookings",
+        "source_id": "2022Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-11-01"
+      },
+      "original_source_id": "2022Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q3",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 15.6,
+        "unit": "USD_billion",
+        "source_id": "2022Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2022-11-01"
+      },
+      "original_source_id": "2022Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q3",
+      "metric": "adr_usd",
+      "original": {
+        "value": 156.44,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2022Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2022-11-01"
+      },
+      "original_source_id": "2022Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q3",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2884,
+        "unit": "USD_million",
+        "source_id": "2022Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2022-11-01"
+      },
+      "original_source_id": "2022Q3_letter",
+      "fine": {
+        "value": 2884410,
+        "unit": "USD_thousand",
+        "source_id": "2022Q3_letter",
+        "section": "Consolidated statements of operations: GAAP revenue (thousands)",
+        "precision_step": 1,
+        "first_known_date": "2022-11-01"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q4",
+      "metric": "nights_m",
+      "original": {
+        "value": 88.2,
+        "unit": "million_bookings",
+        "source_id": "2022Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-02-14"
+      },
+      "original_source_id": "2022Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q4",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 13.5,
+        "unit": "USD_billion",
+        "source_id": "2022Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-02-14"
+      },
+      "original_source_id": "2022Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q4",
+      "metric": "adr_usd",
+      "original": {
+        "value": 152.81,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2022Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2023-02-14"
+      },
+      "original_source_id": "2022Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2022Q4",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 1902,
+        "unit": "USD_million",
+        "source_id": "2022Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2023-02-14"
+      },
+      "original_source_id": "2022Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q1",
+      "metric": "nights_m",
+      "original": {
+        "value": 121.1,
+        "unit": "million_bookings",
+        "source_id": "2023Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-05-09"
+      },
+      "original_source_id": "2023Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q1",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 20.4,
+        "unit": "USD_billion",
+        "source_id": "2023Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-05-09"
+      },
+      "original_source_id": "2023Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q1",
+      "metric": "adr_usd",
+      "original": {
+        "value": 168.43,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2023Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2023-05-09"
+      },
+      "original_source_id": "2023Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q1",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 1818,
+        "unit": "USD_million",
+        "source_id": "2023Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2023-05-09"
+      },
+      "original_source_id": "2023Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q2",
+      "metric": "nights_m",
+      "original": {
+        "value": 115.1,
+        "unit": "million_bookings",
+        "source_id": "2023Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-08-03"
+      },
+      "original_source_id": "2023Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q2",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 19.1,
+        "unit": "USD_billion",
+        "source_id": "2023Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-08-03"
+      },
+      "original_source_id": "2023Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q2",
+      "metric": "adr_usd",
+      "original": {
+        "value": 166.01,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2023Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2023-08-03"
+      },
+      "original_source_id": "2023Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q2",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2484,
+        "unit": "USD_million",
+        "source_id": "2023Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2023-08-03"
+      },
+      "original_source_id": "2023Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q3",
+      "metric": "nights_m",
+      "original": {
+        "value": 113.2,
+        "unit": "million_bookings",
+        "source_id": "2023Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-11-01"
+      },
+      "original_source_id": "2023Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q3",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 18.3,
+        "unit": "USD_billion",
+        "source_id": "2023Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2023-11-01"
+      },
+      "original_source_id": "2023Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q3",
+      "metric": "adr_usd",
+      "original": {
+        "value": 161.38,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2023Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2023-11-01"
+      },
+      "original_source_id": "2023Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q3",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 3397,
+        "unit": "USD_million",
+        "source_id": "2023Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2023-11-01"
+      },
+      "original_source_id": "2023Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q4",
+      "metric": "nights_m",
+      "original": {
+        "value": 98.8,
+        "unit": "million_bookings",
+        "source_id": "2023Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-02-13"
+      },
+      "original_source_id": "2023Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q4",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 15.5,
+        "unit": "USD_billion",
+        "source_id": "2023Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-02-13"
+      },
+      "original_source_id": "2023Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q4",
+      "metric": "adr_usd",
+      "original": {
+        "value": 156.73,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2023Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2024-02-13"
+      },
+      "original_source_id": "2023Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2023Q4",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2218,
+        "unit": "USD_million",
+        "source_id": "2023Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2024-02-13"
+      },
+      "original_source_id": "2023Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q1",
+      "metric": "nights_m",
+      "original": {
+        "value": 132.6,
+        "unit": "million_bookings",
+        "source_id": "2024Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-05-08"
+      },
+      "original_source_id": "2024Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q1",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 22.9,
+        "unit": "USD_billion",
+        "source_id": "2024Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-05-08"
+      },
+      "original_source_id": "2024Q1_letter",
+      "fine": {
+        "value": 22925,
+        "unit": "USD_million",
+        "source_id": "2025Q1_filing",
+        "section": "Key business metrics: 2024Q1 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2025-05-01"
+      },
+      "notes": "Later comparative precision; unavailable in original quarter's reviewed filing at this precision."
+    },
+    {
+      "quarter": "2024Q1",
+      "metric": "adr_usd",
+      "original": {
+        "value": 172.88,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2024Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2024-05-08"
+      },
+      "original_source_id": "2024Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q1",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2142,
+        "unit": "USD_million",
+        "source_id": "2024Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2024-05-08"
+      },
+      "original_source_id": "2024Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q2",
+      "metric": "nights_m",
+      "original": {
+        "value": 125.1,
+        "unit": "million_bookings",
+        "source_id": "2024Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-08-06"
+      },
+      "original_source_id": "2024Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q2",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 21.2,
+        "unit": "USD_billion",
+        "source_id": "2024Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-08-06"
+      },
+      "original_source_id": "2024Q2_letter",
+      "fine": {
+        "value": 21213,
+        "unit": "USD_million",
+        "source_id": "2025Q2_filing",
+        "section": "Key business metrics: 2024Q2 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2025-08-06"
+      },
+      "notes": "Later comparative precision; unavailable in original quarter's reviewed filing at this precision."
+    },
+    {
+      "quarter": "2024Q2",
+      "metric": "adr_usd",
+      "original": {
+        "value": 169.53,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2024Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2024-08-06"
+      },
+      "original_source_id": "2024Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q2",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2748,
+        "unit": "USD_million",
+        "source_id": "2024Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2024-08-06"
+      },
+      "original_source_id": "2024Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q3",
+      "metric": "nights_m",
+      "original": {
+        "value": 122.8,
+        "unit": "million_bookings",
+        "source_id": "2024Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-11-07"
+      },
+      "original_source_id": "2024Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q3",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 20.1,
+        "unit": "USD_billion",
+        "source_id": "2024Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2024-11-07"
+      },
+      "original_source_id": "2024Q3_letter",
+      "fine": {
+        "value": 20085,
+        "unit": "USD_million",
+        "source_id": "2025Q3_filing",
+        "section": "Key business metrics: 2024Q3 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2025-11-06"
+      },
+      "notes": "Later comparative precision; unavailable in original quarter's reviewed filing at this precision."
+    },
+    {
+      "quarter": "2024Q3",
+      "metric": "adr_usd",
+      "original": {
+        "value": 163.64,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2024Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2024-11-07"
+      },
+      "original_source_id": "2024Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q3",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 3732,
+        "unit": "USD_million",
+        "source_id": "2024Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2024-11-07"
+      },
+      "original_source_id": "2024Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q4",
+      "metric": "nights_m",
+      "original": {
+        "value": 111,
+        "unit": "million_bookings",
+        "source_id": "2024Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-02-13"
+      },
+      "original_source_id": "2024Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q4",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 17.6,
+        "unit": "USD_billion",
+        "source_id": "2024Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-02-13"
+      },
+      "original_source_id": "2024Q4_letter",
+      "fine": {
+        "value": 17561,
+        "unit": "USD_million",
+        "source_id": "2025Q3_filing",
+        "section": "Derived FY GBV minus reported nine-month GBV",
+        "precision_step": 2,
+        "first_known_date": "2025-11-06",
+        "derivation": {
+          "operation": "subtract",
+          "terms": [
+            {
+              "value": 81784,
+              "unit": "USD_million",
+              "source_id": "2024Q4_filing",
+              "section": "Annual key business metrics: FY GBV",
+              "precision_step": 1
+            },
+            {
+              "value": 64223,
+              "unit": "USD_million",
+              "source_id": "2025Q3_filing",
+              "section": "Key business metrics: comparative 2024 nine-month GBV",
+              "precision_step": 1
+            }
+          ]
+        }
+      },
+      "notes": "Calculated from separately rounded million-dollar aggregates; error bound ±1m, not dollar-exact. First known is later of both sources. 2025 standalone Q1–Q3 sum 70854 differs from stated nine-month 70855 by 1m; use stated aggregate."
+    },
+    {
+      "quarter": "2024Q4",
+      "metric": "adr_usd",
+      "original": {
+        "value": 158.13,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2024Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2025-02-13"
+      },
+      "original_source_id": "2024Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2024Q4",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2480,
+        "unit": "USD_million",
+        "source_id": "2024Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2025-02-13"
+      },
+      "original_source_id": "2024Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q1",
+      "metric": "nights_m",
+      "original": {
+        "value": 143.1,
+        "unit": "million_bookings",
+        "source_id": "2025Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-05-01"
+      },
+      "original_source_id": "2025Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q1",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 24.5,
+        "unit": "USD_billion",
+        "source_id": "2025Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-05-01"
+      },
+      "original_source_id": "2025Q1_letter",
+      "fine": {
+        "value": 24515,
+        "unit": "USD_million",
+        "source_id": "2025Q1_filing",
+        "section": "Key business metrics: 2025Q1 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2025-05-01"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q1",
+      "metric": "adr_usd",
+      "original": {
+        "value": 171.34,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2025Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2025-05-01"
+      },
+      "original_source_id": "2025Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q1",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2272,
+        "unit": "USD_million",
+        "source_id": "2025Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2025-05-01"
+      },
+      "original_source_id": "2025Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q2",
+      "metric": "nights_m",
+      "original": {
+        "value": 134.4,
+        "unit": "million_bookings",
+        "source_id": "2025Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-08-06"
+      },
+      "original_source_id": "2025Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q2",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 23.5,
+        "unit": "USD_billion",
+        "source_id": "2025Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-08-06"
+      },
+      "original_source_id": "2025Q2_letter",
+      "fine": {
+        "value": 23447,
+        "unit": "USD_million",
+        "source_id": "2025Q2_filing",
+        "section": "Key business metrics: 2025Q2 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2025-08-06"
+      },
+      "notes": "Original letter 23.5B versus original 10-Q 23447m is 53m apart, beyond a 50m headline rounding half-step. Unresolved primary presentation inconsistency; no revision asserted."
+    },
+    {
+      "quarter": "2025Q2",
+      "metric": "adr_usd",
+      "original": {
+        "value": 174.48,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2025Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2025-08-06"
+      },
+      "original_source_id": "2025Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q2",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 3096,
+        "unit": "USD_million",
+        "source_id": "2025Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2025-08-06"
+      },
+      "original_source_id": "2025Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q3",
+      "metric": "nights_m",
+      "original": {
+        "value": 133.6,
+        "unit": "million_bookings",
+        "source_id": "2025Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-11-06"
+      },
+      "original_source_id": "2025Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q3",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 22.9,
+        "unit": "USD_billion",
+        "source_id": "2025Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2025-11-06"
+      },
+      "original_source_id": "2025Q3_letter",
+      "fine": {
+        "value": 22892,
+        "unit": "USD_million",
+        "source_id": "2025Q3_filing",
+        "section": "Key business metrics: 2025Q3 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2025-11-06"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q3",
+      "metric": "adr_usd",
+      "original": {
+        "value": 171.29,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2025Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2025-11-06"
+      },
+      "original_source_id": "2025Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q3",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 4095,
+        "unit": "USD_million",
+        "source_id": "2025Q3_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2025-11-06"
+      },
+      "original_source_id": "2025Q3_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q4",
+      "metric": "nights_m",
+      "original": {
+        "value": 121.9,
+        "unit": "million_bookings",
+        "source_id": "2025Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2026-02-12"
+      },
+      "original_source_id": "2025Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q4",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 20.4,
+        "unit": "USD_billion",
+        "source_id": "2025Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2026-02-12"
+      },
+      "original_source_id": "2025Q4_letter",
+      "fine": {
+        "value": 20418,
+        "unit": "USD_million",
+        "source_id": "2025Q4_filing",
+        "section": "Derived FY GBV minus reported nine-month GBV",
+        "precision_step": 2,
+        "first_known_date": "2026-02-12",
+        "derivation": {
+          "operation": "subtract",
+          "terms": [
+            {
+              "value": 91273,
+              "unit": "USD_million",
+              "source_id": "2025Q4_filing",
+              "section": "Annual key business metrics: FY GBV",
+              "precision_step": 1
+            },
+            {
+              "value": 70855,
+              "unit": "USD_million",
+              "source_id": "2025Q3_filing",
+              "section": "Key business metrics: 2025 nine-month GBV",
+              "precision_step": 1
+            }
+          ]
+        }
+      },
+      "notes": "Calculated from separately rounded million-dollar aggregates; error bound ±1m, not dollar-exact. First known is later of both sources. 2025 standalone Q1–Q3 sum 70854 differs from stated nine-month 70855 by 1m; use stated aggregate."
+    },
+    {
+      "quarter": "2025Q4",
+      "metric": "adr_usd",
+      "original": {
+        "value": 167.51,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2025Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2026-02-12"
+      },
+      "original_source_id": "2025Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2025Q4",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2778,
+        "unit": "USD_million",
+        "source_id": "2025Q4_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2026-02-12"
+      },
+      "original_source_id": "2025Q4_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2026Q1",
+      "metric": "nights_m",
+      "original": {
+        "value": 156.2,
+        "unit": "million_bookings",
+        "source_id": "2026Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2026-05-07"
+      },
+      "original_source_id": "2026Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2026Q1",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 29.2,
+        "unit": "USD_billion",
+        "source_id": "2026Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2026-05-07"
+      },
+      "original_source_id": "2026Q1_letter",
+      "fine": {
+        "value": 29187,
+        "unit": "USD_million",
+        "source_id": "2026Q1_filing",
+        "section": "Key business metrics: 2026Q1 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2026-05-07"
+      },
+      "notes": "29187m is already in original Q1 2026 10-Q on May 7; Q2 H1 subtraction is later corroboration, not first availability."
+    },
+    {
+      "quarter": "2026Q1",
+      "metric": "adr_usd",
+      "original": {
+        "value": 186.82,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2026Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2026-05-07"
+      },
+      "original_source_id": "2026Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2026Q1",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 2678,
+        "unit": "USD_million",
+        "source_id": "2026Q1_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2026-05-07"
+      },
+      "original_source_id": "2026Q1_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2026Q2",
+      "metric": "nights_m",
+      "original": {
+        "value": 148.3,
+        "unit": "million_bookings",
+        "source_id": "2026Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2026-08-06"
+      },
+      "original_source_id": "2026Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2026Q2",
+      "metric": "gbv_musd",
+      "original": {
+        "value": 27.2,
+        "unit": "USD_billion",
+        "source_id": "2026Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.1,
+        "first_known_date": "2026-08-06"
+      },
+      "original_source_id": "2026Q2_letter",
+      "fine": {
+        "value": 27247,
+        "unit": "USD_million",
+        "source_id": "2026Q2_filing",
+        "section": "Key business metrics: 2026Q2 GBV (millions)",
+        "precision_step": 1,
+        "first_known_date": "2026-08-06"
+      },
+      "notes": ""
+    },
+    {
+      "quarter": "2026Q2",
+      "metric": "adr_usd",
+      "original": {
+        "value": 183.73,
+        "unit": "USD_per_aggregate_booking",
+        "source_id": "2026Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 0.01,
+        "first_known_date": "2026-08-06"
+      },
+      "original_source_id": "2026Q2_letter",
+      "fine": null,
+      "notes": ""
+    },
+    {
+      "quarter": "2026Q2",
+      "metric": "revenue_musd",
+      "original": {
+        "value": 3608,
+        "unit": "USD_million",
+        "source_id": "2026Q2_letter",
+        "section": "Quarterly summary",
+        "precision_step": 1,
+        "first_known_date": "2026-08-06"
+      },
+      "original_source_id": "2026Q2_letter",
+      "fine": null,
+      "notes": ""
+    }
+  ],
+  "supplements": [
+    {
+      "quarter": "2022Q2",
+      "metric": "gbv_musd",
+      "classification": "unresolved",
+      "observation": {
+        "value": 16.9,
+        "unit": "USD_billion",
+        "source_id": "2023Q4_letter",
+        "section": "Quarterly summary: historical Q2 2022",
+        "precision_step": 0.1,
+        "first_known_date": "2024-02-13"
+      },
+      "note": "Original Q2 2022 letter 17.0B and appendix 16980.6m; later history displays 16.9B without explanation. No revision inferred."
+    },
+    {
+      "quarter": "2026Q1",
+      "metric": "gbv_musd",
+      "classification": "later_precision_corroboration",
+      "observation": {
+        "value": 29187,
+        "unit": "USD_million",
+        "source_id": "2026Q2_filing",
+        "section": "Derived H1 2026 56434 minus Q2 27247",
+        "precision_step": 2,
+        "first_known_date": "2026-08-06",
+        "derivation": {
+          "operation": "subtract",
+          "terms": [
+            {
+              "value": 56434,
+              "unit": "USD_million",
+              "source_id": "2026Q2_filing",
+              "section": "H1 2026 GBV",
+              "precision_step": 1
+            },
+            {
+              "value": 27247,
+              "unit": "USD_million",
+              "source_id": "2026Q2_filing",
+              "section": "Q2 2026 GBV",
+              "precision_step": 1
+            }
+          ]
+        }
+      },
+      "note": "Available in August only; May original Q1 filing already provides 29187m. Do not replace May first-known date with August nor date August subtraction to May."
+    },
+    {
+      "quarter": "2026Q1",
+      "metric": "nights_m",
+      "classification": "coarser_not_precision",
+      "observation": {
+        "value": 156,
+        "unit": "million_bookings",
+        "source_id": "2026Q1_filing",
+        "section": "Key business metrics: Nights and Seats Booked (millions)",
+        "precision_step": 1,
+        "first_known_date": "2026-05-07"
+      },
+      "note": "Coarser than original 156.2m; do not select as finer data."
+    },
+    {
+      "quarter": "2026Q2",
+      "metric": "nights_m",
+      "classification": "coarser_not_precision",
+      "observation": {
+        "value": 148,
+        "unit": "million_bookings",
+        "source_id": "2026Q2_filing",
+        "section": "Key business metrics: Nights and Seats Booked (millions)",
+        "precision_step": 1,
+        "first_known_date": "2026-08-06"
+      },
+      "note": "Coarser than original 148.3m. H1 305 less Q2 148 does not establish Q1 157 with original 156.2 precision."
+    }
+  ],
+  "sources": [
+    {
+      "id": "2020Q4_letter",
+      "quarter": "2020Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312521056952/d147144dex991.htm",
+      "document": "Airbnb 2020Q4 shareholder letter",
+      "publication_date": "2021-02-25",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2021-02-25T22:00:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2021Q1_letter",
+      "quarter": "2021Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312521160458/d476842dex991.htm",
+      "document": "Airbnb 2021Q1 shareholder letter",
+      "publication_date": "2021-05-13",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2021-05-13T21:00:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2021Q2_letter",
+      "quarter": "2021Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312521244643/d212971dex991.htm",
+      "document": "Airbnb 2021Q2 shareholder letter",
+      "publication_date": "2021-08-12",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2021-08-12T21:00:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2021Q3_letter",
+      "quarter": "2021Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312521320113/d245727dex991.htm",
+      "document": "Airbnb 2021Q3 shareholder letter",
+      "publication_date": "2021-11-04",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2021-11-04T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2021Q4_letter",
+      "quarter": "2021Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312522043371/d251410dex991.htm",
+      "document": "Airbnb 2021Q4 shareholder letter",
+      "publication_date": "2022-02-15",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2022-02-15T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2022Q1_letter",
+      "quarter": "2022Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312522138654/d711122dex991.htm",
+      "document": "Airbnb 2022Q1 shareholder letter",
+      "publication_date": "2022-05-03",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2022-05-03T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2022Q2_letter",
+      "quarter": "2022Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312522210001/d353427dex991.htm",
+      "document": "Airbnb 2022Q2 shareholder letter",
+      "publication_date": "2022-08-02",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2022-08-02T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2022Q3_letter",
+      "quarter": "2022Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312522274904/d408297dex991.htm",
+      "document": "Airbnb 2022Q3 shareholder letter",
+      "publication_date": "2022-11-01",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2022-11-01T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2022Q4_letter",
+      "quarter": "2022Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312523039008/d451233dex991.htm",
+      "document": "Airbnb 2022Q4 shareholder letter",
+      "publication_date": "2023-02-14",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2023-02-14T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2023Q1_letter",
+      "quarter": "2023Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312523139392/d453262dex991.htm",
+      "document": "Airbnb 2023Q1 shareholder letter",
+      "publication_date": "2023-05-09",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2023-05-09T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2023Q2_letter",
+      "quarter": "2023Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312523202832/d446942dex991.htm",
+      "document": "Airbnb 2023Q2 shareholder letter",
+      "publication_date": "2023-08-03",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2023-08-03T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2023Q3_letter",
+      "quarter": "2023Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312523268164/d481318dex991.htm",
+      "document": "Airbnb 2023Q3 shareholder letter",
+      "publication_date": "2023-11-01",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2023-11-01T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2023Q4_letter",
+      "quarter": "2023Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312524033706/d646462dex991.htm",
+      "document": "Airbnb 2023Q4 shareholder letter",
+      "publication_date": "2024-02-13",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2024-02-13T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2024Q1_letter",
+      "quarter": "2024Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312524134183/d813800dex991.htm",
+      "document": "Airbnb 2024Q1 shareholder letter",
+      "publication_date": "2024-05-08",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2024-05-08T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2024Q2_letter",
+      "quarter": "2024Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312524194849/d831385dex991.htm",
+      "document": "Airbnb 2024Q2 shareholder letter",
+      "publication_date": "2024-08-06",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2024-08-06T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2024Q3_letter",
+      "quarter": "2024Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312524253103/d886752dex991.htm",
+      "document": "Airbnb 2024Q3 shareholder letter",
+      "publication_date": "2024-11-07",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2024-11-07T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2024Q4_letter",
+      "quarter": "2024Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312525026054/d915198dex991.htm",
+      "document": "Airbnb 2024Q4 shareholder letter",
+      "publication_date": "2025-02-13",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2025-02-13T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2025Q1_letter",
+      "quarter": "2025Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312525109934/d40594dex991.htm",
+      "document": "Airbnb 2025Q1 shareholder letter",
+      "publication_date": "2025-05-01",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2025-05-01T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2025Q2_letter",
+      "quarter": "2025Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312525174438/d17531dex991.htm",
+      "document": "Airbnb 2025Q2 shareholder letter",
+      "publication_date": "2025-08-06",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2025-08-06T20:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2025Q3_letter",
+      "quarter": "2025Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312525269432/d40503dex991.htm",
+      "document": "Airbnb 2025Q3 shareholder letter",
+      "publication_date": "2025-11-06",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2025-11-06T21:30:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2025Q4_letter",
+      "quarter": "2025Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526048670/d58192dex991.htm",
+      "document": "Airbnb 2025Q4 shareholder letter",
+      "publication_date": "2026-02-12",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2026-02-12T22:00:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2026Q1_letter",
+      "quarter": "2026Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526211816/d23351dex991.htm",
+      "document": "Airbnb 2026Q1 shareholder letter",
+      "publication_date": "2026-05-07",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2026-05-07T21:00:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2026Q2_letter",
+      "quarter": "2026Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526337928/d70413dex991.htm",
+      "document": "Airbnb 2026Q2 shareholder letter",
+      "publication_date": "2026-08-06",
+      "publication_date_basis": "Original SEC earnings exhibit; date corroborated by inherited source manifest/calendar; currently served URL not archived historical bytes",
+      "time_value": "2026-08-06T21:00:00Z",
+      "time_basis": "Inherited webcast start; conservative certainly-public-by proxy, NOT exact release/filing time",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "No original historical byte archive asserted"
+    },
+    {
+      "id": "2026Q1_filing",
+      "quarter": "2026Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000014/abnb-20260331.htm",
+      "document": "Airbnb 2026Q1 10-Q",
+      "publication_date": "2026-05-07",
+      "publication_date_basis": "SEC filing index filed date independently observed",
+      "time_value": "2026-05-07 16:02:26",
+      "time_basis": "SEC index displayed acceptance clock; timezone not printed; do not assign UTC/ET",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000014/0001559720-26-000014-index.html"
+    },
+    {
+      "id": "2025Q2_filing",
+      "quarter": "2025Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972025000025/abnb-20250630.htm",
+      "document": "Airbnb 2025Q2 10-Q",
+      "publication_date": "2025-08-06",
+      "publication_date_basis": "SEC filing index filed date independently observed",
+      "time_value": "2025-08-06 16:09:27",
+      "time_basis": "SEC index displayed acceptance clock; timezone not printed; do not assign UTC/ET",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972025000025/0001559720-25-000025-index.html"
+    },
+    {
+      "id": "2025Q1_filing",
+      "quarter": "2025Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972025000017/abnb-20250331.htm",
+      "document": "Airbnb 2025Q1 10-Q",
+      "publication_date": "2025-05-01",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2024Q2_filing",
+      "quarter": "2024Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972024000024/abnb-20240630.htm",
+      "document": "Airbnb 2024Q2 10-Q",
+      "publication_date": "2024-08-06",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2024Q1_filing",
+      "quarter": "2024Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972024000017/abnb-20240331.htm",
+      "document": "Airbnb 2024Q1 10-Q",
+      "publication_date": "2024-05-08",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2024Q3_filing",
+      "quarter": "2024Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972024000032/abnb-20240930.htm",
+      "document": "Airbnb 2024Q3 10-Q",
+      "publication_date": "2024-11-07",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2023Q1_filing",
+      "quarter": "2023Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972023000010/abnb-20230331.htm",
+      "document": "Airbnb 2023Q1 10-Q",
+      "publication_date": "2023-05-09",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2023Q2_filing",
+      "quarter": "2023Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972023000015/abnb-20230630.htm",
+      "document": "Airbnb 2023Q2 10-Q",
+      "publication_date": "2023-08-03",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2023Q3_filing",
+      "quarter": "2023Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972023000020/abnb-20230930.htm",
+      "document": "Airbnb 2023Q3 10-Q",
+      "publication_date": "2023-11-01",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2025Q3_filing",
+      "quarter": "2025Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972025000030/abnb-20250930.htm",
+      "document": "Airbnb 2025Q3 10-Q",
+      "publication_date": "2025-11-06",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2021Q1_filing",
+      "quarter": "2021Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000162828021010389/abnb-20210331.htm",
+      "document": "Airbnb 2021Q1 10-Q",
+      "publication_date": "2021-05-14",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2021Q2_filing",
+      "quarter": "2021Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000162828021016979/abnb-20210630.htm",
+      "document": "Airbnb 2021Q2 10-Q",
+      "publication_date": "2021-08-13",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2021Q3_filing",
+      "quarter": "2021Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972021000017/abnb-20210930.htm",
+      "document": "Airbnb 2021Q3 10-Q",
+      "publication_date": "2021-11-05",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2022Q1_filing",
+      "quarter": "2022Q1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972022000009/abnb-20220331.htm",
+      "document": "Airbnb 2022Q1 10-Q",
+      "publication_date": "2022-05-09",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2022Q2_filing",
+      "quarter": "2022Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972022000012/abnb-20220630.htm",
+      "document": "Airbnb 2022Q2 10-Q",
+      "publication_date": "2022-08-03",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2022Q3_filing",
+      "quarter": "2022Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972022000019/abnb-20220930.htm",
+      "document": "Airbnb 2022Q3 10-Q",
+      "publication_date": "2022-11-03",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2020Q4_filing",
+      "quarter": "2020Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972021000010/airbnb-10k.htm",
+      "document": "Airbnb 2020Q4 10-K",
+      "publication_date": "2021-02-26",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2021Q4_filing",
+      "quarter": "2021Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972022000006/abnb-20211231.htm",
+      "document": "Airbnb 2021Q4 10-K",
+      "publication_date": "2022-02-25",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2022Q4_filing",
+      "quarter": "2022Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972023000003/abnb-20221231.htm",
+      "document": "Airbnb 2022Q4 10-K",
+      "publication_date": "2023-02-17",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2023Q4_filing",
+      "quarter": "2023Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972024000006/abnb-20231231.htm",
+      "document": "Airbnb 2023Q4 10-K",
+      "publication_date": "2024-02-16",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2024Q4_filing",
+      "quarter": "2024Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972025000010/abnb-20241231.htm",
+      "document": "Airbnb 2024Q4 10-K",
+      "publication_date": "2025-02-13",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2025Q4_filing",
+      "quarter": "2025Q4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000004/abnb-20251231.htm",
+      "document": "Airbnb 2025Q4 10-K",
+      "publication_date": "2026-02-12",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "Date only; exact acceptance time unavailable; no intraday eligibility claim",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted"
+    },
+    {
+      "id": "2020Q3_filing",
+      "quarter": "2020Q3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312520294801/d81668ds1.htm",
+      "document": "Airbnb 2020Q3 S-1",
+      "publication_date": "2020-11-16",
+      "publication_date_basis": "SEC filing index filed date independently observed",
+      "time_value": "2020-11-16 16:23:52",
+      "time_basis": "SEC index displayed acceptance clock; timezone not printed; do not assign UTC/ET",
+      "access_status": "unavailable_text_index_checked",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312520294801/0001193125-20-294801-index.html"
+    },
+    {
+      "id": "2026Q2_filing",
+      "quarter": "2026Q2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000027/abnb-20260630.htm",
+      "document": "Airbnb 2026Q2 10-Q",
+      "publication_date": "2026-08-06",
+      "publication_date_basis": "Inherited filing calendar / filing metadata; exact SEC index not independently checked unless stated",
+      "time_value": "",
+      "time_basis": "SEC index retrieval failed; inherited filing date only; signature/cover date is not acceptance proof",
+      "access_status": "checked_primary_text",
+      "retrieved_date": "2026-09-14",
+      "byte_archive_status": "Current primary URL reviewed; no historical byte archive asserted",
+      "index_url": "https://www.sec.gov/Archives/edgar/data/1559720/000155972026000027/0001559720-26-000027-index.html"
+    }
+  ],
+  "limitations": [
+    "All other wide-panel columns out of scope.",
+    "Currently served original SEC URLs do not prove historical archived bytes.",
+    "Earliest in checked evidence is not proof no earlier release existed; date-only availability makes no intraday claim.",
+    "No original S-1 text retrieved; no original 2020Q3 value is claimed.",
+    "No positive evidence of revisions or transcription is asserted.",
+    "Nights and Experiences Booked through 2025Q1 counts stay nights plus experience participant seats, not pure hotel room nights. From 2025Q2 Nights and Seats Booked also includes service seats. ADR denominator is aggregate booked units; label change/expansion is retained.",
+    "No model refit, revised forecast series, forecast registration, or production policy change."
+  ]
+}

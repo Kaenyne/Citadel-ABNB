@@ -1,0 +1,674 @@
+[
+ {
+  "key": "github:jstriaukas/midasmlpy",
+  "url": "https://github.com/jstriaukas/midasmlpy",
+  "name": "midasmlpy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python port of the midasml approach: regularized MIDAS regression using orthogonal-polynomial (Legendre) weighting plus sparse-group LASSO, fast proximal block-coordinate-descent solver, tools for high-dimensional mixed-frequency panel data. Sibling implementations exist in R, Julia, MATLAB. 151 commits, GPL-2.0, last updated 2025-05-15 (33 stars).",
+  "why_useful": "High-dimensional MIDAS with regularization is well suited to nowcasting a quarterly ABNB KPI from many weekly/daily alt-data series (Trends, calendar pace, reviews index, FX) without manual factor selection.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "151 commits",
+  "time_coverage": "n/a (package)",
+  "geography": "generic",
+  "license": "GPL-2.0",
+  "last_activity": "2025-05-15",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "High-dimensional MIDAS with regularization is well suited to nowcasting a quarterly ABNB KPI from many weekly/daily alt-data series (Trends, calendar pace, reviews index, FX) without manual factor selection."
+  ]
+ },
+ {
+  "key": "github:mpiktas/midasr",
+  "url": "https://github.com/mpiktas/midasr",
+  "name": "midasr",
+  "category": "methods_tooling",
+  "data_kind": "both",
+  "what_it_holds": "The original/reference R MIDAS package (documented in a Journal of Statistical Software article): midas_r (NLS estimation), midas_nlpr, midas_sp (semi-parametric), midas_qr (quantile MIDAS), robust SE and forecast utilities. Includes a /data folder with bundled example mixed-frequency datasets. 522 commits.",
+  "why_useful": "Most mature, citable MIDAS implementation (basis for many derivative packages found this pass); quantile-MIDAS (midas_qr) is a route to nowcasting a distribution/range for ABNB nights or ADR rather than a point estimate.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "522 commits, bundled example data",
+  "time_coverage": "n/a (package)",
+  "geography": "generic",
+  "license": "unspecified in fetch (repo has a LICENCE file)",
+  "last_activity": "not dated in fetch",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Most mature, citable MIDAS implementation (basis for many derivative packages found this pass); quantile-MIDAS (midas_qr) is a route to nowcasting a distribution/range for ABNB nights or ADR rather than a point estimate."
+  ]
+ },
+ {
+  "key": "github:rjdverse/rjd3nowcasting",
+  "url": "https://github.com/rjdverse/rjd3nowcasting",
+  "name": "rjd3nowcasting",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R interface to the JDemetra+ v3 (official EU statistical software) nowcasting engine: DFM specification/estimation and news-analysis functionality, GUI-inspired API from the JDemetra+ V2 nowcasting add-in used by some EU statistical agencies. Published by the rjdverse org (successor to EU/Bank of Belgium seasonal-adjustment tooling). EUPL-1.2 licensed, 152 commits, requires Java 21+.",
+  "why_useful": "Production-grade DFM/news-analysis tooling used in official European statistics context; could be applied to Eurostat tour_ce_omr or EU consumer-confidence panels we already hold, to build a proper EU nights nowcast with news decomposition rather than ad hoc constructions.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "size_hint": "152 commits, 3 stars/7 forks",
+  "time_coverage": "n/a (package)",
+  "geography": "EU (official statistics tooling)",
+  "license": "EUPL-1.2",
+  "last_activity": "not dated in fetch",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Nowcasting methods and packages: MIDAS, dynamic factor models, bridge equations, nowcasting with Google Trends, KPI nowcasting for companies"
+  ],
+  "why_all": [
+   "Production-grade DFM/news-analysis tooling used in official European statistics context; could be applied to Eurostat tour_ce_omr or EU consumer-confidence panels we already hold, to build a proper EU nights nowcast with news decomposition rather than ad hoc constructions."
+  ]
+ },
+ {
+  "key": "github:edgi-govdata-archiving/wayback",
+  "url": "https://github.com/edgi-govdata-archiving/wayback",
+  "name": "wayback (EDGI)",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client library (977 commits, BSD-3-Clause) from the Environmental Data & Governance Initiative for finding/loading historical Wayback Machine captures of specific URLs; built for their environmental-page monitoring work but generic.",
+  "why_useful": "Well-maintained alternative to waybackpy with a more research-oriented API (used in academic replication pipelines); same use case for gaps #1, #2, #17.",
+  "potential": "medium",
+  "gap_targets": [
+   1,
+   2,
+   17
+  ],
+  "license": "BSD-3-Clause",
+  "last_activity": "unspecified, actively developed by an established org (EDGI)",
+  "geography": "global",
+  "time_coverage": "full Wayback Machine depth",
+  "size_hint": "library only",
+  "duplicate_of_holding": "functionally duplicates waybackpy/waybackpack above",
+  "hits": 2,
+  "themes": [
+   "Wayback Machine / Internet Archive tooling and archived-page datasets (archived airbnb.com pages, archived AirDNA/Mashvisor market pages, archived Inside Airbnb site)",
+   "Airbnb corporate open source (airbnb org) and public data pipelines built on Airbnb-internal-style data; Airbnb Data Science blog notebooks; Airbnb Newsroom scrapers"
+  ],
+  "why_all": [
+   "Well-maintained alternative to waybackpy with a more research-oriented API (used in academic replication pipelines); same use case for gaps #1, #2, #17.",
+   "Same class as waybackpack above, more actively maintained (EDGI is a live project) \u2014 usable for pulling dated snapshots of newsroom.airbnb.com, ir.airbnb.com guidance pages, or third-party STR-data-vendor market pages (AirDNA, Key Data, etc.) for point-in-time reconstruction, directly serving gap #17."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cdx_toolkit",
+  "url": "https://github.com/commoncrawl/cdx_toolkit",
+  "name": "cdx_toolkit",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Common Crawl org's Python toolkit for querying CDX indices (Common Crawl and Internet Archive Wayback). Pulls index rows and fetches WARC records by offset/length; no committed dataset, purely a client library/CLI. 211 stars, Apache-2.0, updated 7 Sep 2026 (actively maintained).",
+  "why_useful": "This is almost certainly the tool underlying our existing Common Crawl CDX index over airbnb.com (2.08M rows, 50 crawls) and the 3,000 WARC renders we already hold; documents how to re-pull or extend that index to more crawls, other domains (Vrbo, Booking.com, Expedia, competitor STR platforms), or historical date ranges for the same host \u2014 directly extends gap targets 9 (competitor supply) and 17 (methods).",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   17
+  ],
+  "duplicate_of_holding": "We already hold a CC CDX index over airbnb.com and WARC renders; this is the generating tool, not new data",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-07",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "library, no bundled dataset",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "This is almost certainly the tool underlying our existing Common Crawl CDX index over airbnb.com (2.08M rows, 50 crawls) and the 3,000 WARC renders we already hold; documents how to re-pull or extend that index to more crawls, other domains (Vrbo, Booking.com, Expedia, competitor STR platforms), or historical date ranges for the same host \u2014 directly extends gap targets 9 (competitor supply) and 17 (methods)."
+  ]
+ },
+ {
+  "key": "github:webrecorder/warcio",
+  "url": "https://github.com/webrecorder/warcio",
+  "name": "warcio",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Streaming WARC/ARC record reader/writer library (Python), used to parse the WARC files that cdx_toolkit or direct CC fetches return. 472 stars, Apache-2.0, updated 8 Sep 2026, actively maintained by the Webrecorder/Internet Archive-adjacent team.",
+  "why_useful": "Needed to actually read the 3,000 WARC renders we already captured, or any new WARC pulls for competitor sites (Vrbo, Sonder, Vacasa, Hipcamp listing pages) to extract page text/prices/counts at a point in time.",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-08",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "library",
+  "hits": 2,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Needed to actually read the 3,000 WARC renders we already captured, or any new WARC pulls for competitor sites (Vrbo, Sonder, Vacasa, Hipcamp listing pages) to extract page text/prices/counts at a point in time.",
+   "Needed to actually open/parse the 3,000 WARC renders we already captured (or any new ones pulled via cdx_toolkit) without standing up Spark; low-friction way to extract page text/HTML from archived Airbnb, AirDNA, or competitor pages for point-in-time price/availability text mining."
+  ]
+ },
+ {
+  "key": "github:mojomast/arrhivescrape",
+  "url": "https://github.com/mojomast/arrhivescrape",
+  "name": "arrhivescrape",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reusable Wayback Machine / CDX-based static-site recovery toolkit with a CLI and local web UI, for reconstructing archived versions of a site from CDX index entries. 0 stars, no license, updated 26 Jun 2026.",
+  "why_useful": "Matches gap 17's 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' \u2014 could be pointed (with human sign-off, not run by an agent) at archived AirDNA market pages or historical airbnb.com pages already indexed by CDX to reconstruct point-in-time snapshots.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "license": "unspecified",
+  "last_activity": "2026-06-26",
+  "geography": "",
+  "time_coverage": "",
+  "size_hint": "CLI tool, no bundled dataset",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Matches gap 17's 'Wayback Machine tooling (archived airbnb.com pages, archived AirDNA market pages)' \u2014 could be pointed (with human sign-off, not run by an agent) at archived AirDNA market pages or historical airbnb.com pages already indexed by CDX to reconstruct point-in-time snapshots."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cc-index-table",
+  "url": "https://github.com/commoncrawl/cc-index-table",
+  "name": "cc-index-table",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official tooling to build/query the Common Crawl columnar (Parquet/ORC) URL index. Includes CCIndex2Table, CCIndexExport, CCIndexWarcExport (Java), Docker support, and example SQL for AWS Athena / SparkSQL / Hive covering domain, language, MIME-type and content queries across the full crawl archive (not just one host). Apache-2.0.",
+  "why_useful": "Lets us re-run the airbnb.com CDX capture at much larger scale/lower cost via serverless Athena SQL instead of the raw CDX API, and could be pointed at competitor domains (booking.com, vrbo.com, expedia.com, vacasa.com) to build comparable historical URL-presence panels for gap 9 (competitor supply) cheaply.",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   1
+  ],
+  "time_coverage": "2008-present (whichever monthly crawls indexed)",
+  "geography": "global",
+  "size_hint": "tool; underlying columnar index is multi-TB on S3 (public, requester-pays for compute only)",
+  "license": "Apache-2.0",
+  "last_activity": "active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Lets us re-run the airbnb.com CDX capture at much larger scale/lower cost via serverless Athena SQL instead of the raw CDX API, and could be pointed at competitor domains (booking.com, vrbo.com, expedia.com, vacasa.com) to build comparable historical URL-presence panels for gap 9 (competitor supply) cheaply."
+  ]
+ },
+ {
+  "key": "github:commoncrawl/cc-pyspark",
+  "url": "https://github.com/commoncrawl/cc-pyspark",
+  "name": "cc-pyspark",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Example PySpark jobs to process CC WARC/WAT/WET at scale: HTML tag frequency, server identification, IP extraction, word/doc frequency, link extraction and web-graph construction, plus SQL querying of the columnar index. MIT license, 157 commits, Python 3.9+/Spark 3.2+.",
+  "why_useful": "Base framework for any large-scale reprocessing of Common Crawl WARC data touching travel sites (e.g., extracting hotel/listing counts, price mentions, or link graphs to competitor sites) beyond the single-host capture we already have.",
+  "potential": "medium",
+  "gap_targets": [
+   9,
+   5
+  ],
+  "time_coverage": "n/a (tooling)",
+  "geography": "n/a",
+  "size_hint": "tool",
+  "license": "MIT",
+  "last_activity": "active",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Common Crawl tooling: cdx-toolkit, warcio, host-level indexes, columnar index queries; datasets derived from Common Crawl for travel sites"
+  ],
+  "why_all": [
+   "Base framework for any large-scale reprocessing of Common Crawl WARC data touching travel sites (e.g., extracting hotel/listing counts, price mentions, or link graphs to competitor sites) beyond the single-host capture we already have."
+  ]
+ },
+ {
+  "key": "github:afeld/sodapy",
+  "url": "https://github.com/afeld/sodapy",
+  "name": "sodapy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The canonical Python client for the Socrata Open Data API (430 stars, MIT, updated Aug 2026). No data of its own, but is the standard method for pulling any Socrata-hosted portal programmatically \u2014 this is the underlying transport for NYC Open Data, LA GeoHub/data.lacity.org, Austin's open data portal, Chicago data portal, SF DataSF, Seattle, and many state portals, most of which carry STR registration/licence datasets.",
+  "why_useful": "Directly the tool named in CONTEXT.md gap 17 (\"Socrata/CKAN open-data discovery clients to find STR datasets across cities\"). Enables systematic re-pulls / longer-history queries against the municipal STR registries the team already holds (Austin, NYC OSE, etc.) and could reach additional Socrata cities not yet scraped.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   12
+  ],
+  "duplicate_of_holding": "we already hold Austin/Barcelona/Maui/NYC OSE/California TOT STR registries; sodapy is the acquisition method that could extend or refresh those, not new data itself",
+  "geography": "US city/state portals generally",
+  "time_coverage": "n/a (live API client)",
+  "size_hint": "library only, no bundled data",
+  "license": "MIT",
+  "last_activity": "2026-08-17",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "Directly the tool named in CONTEXT.md gap 17 (\"Socrata/CKAN open-data discovery clients to find STR datasets across cities\"). Enables systematic re-pulls / longer-history queries against the municipal STR registries the team already holds (Austin, NYC OSE, etc.) and could reach additional Socrata cities not yet scraped."
+  ]
+ },
+ {
+  "key": "other:https://huggingface.co/datasets/andreabozzo/ceres-open-data-index",
+  "url": "https://huggingface.co/datasets/AndreaBozzo/ceres-open-data-index",
+  "name": "ceres-open-data-index (Ceres companion dataset)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Parquet snapshot(s) of the Ceres harvester's normalized metadata index across 300+ open-data portals (see Ceres repo above); hosted on Hugging Face, ~8.24MB, last updated ~26 days before 14 Sep 2026 (i.e. mid-Aug 2026).",
+  "why_useful": "A ready-made, already-harvested index (no need to run the crawler) that can be filtered offline for dataset titles/tags matching STR, short-term rental, tourism, lodging-tax, or vacation-rental across many jurisdictions \u2014 a shortcut to gaps 8, 9, 12.",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   8,
+   9
+  ],
+  "license": "see HF dataset card (not confirmed)",
+  "last_activity": "~mid-Aug 2026",
+  "geography": "global",
+  "time_coverage": "current snapshot only, not vintaged",
+  "size_hint": "~8.24MB",
+  "duplicate_of_holding": "companion artifact of the Ceres GitHub repo above",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A ready-made, already-harvested index (no need to run the crawler) that can be filtered offline for dataset titles/tags matching STR, short-term rental, tourism, lodging-tax, or vacation-rental across many jurisdictions \u2014 a shortcut to gaps 8, 9, 12."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-opendatasoft",
+  "url": "https://github.com/pipeworx-io/mcp-opendatasoft",
+  "name": "mcp-opendatasoft",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server / generic client for the ~3,000 public OpenDataSoft portal instances (e.g. public.opendatasoft.com, data.paris.fr, data.economie.gouv.fr). Tools for dataset search, metadata retrieval, SQL-style record queries, and facet exploration. MIT license, small (6 commits).",
+  "why_useful": "OpenDataSoft powers many European city and tourism-board portals; a generic query client makes it tractable to pull STR/tourism datasets from EU cities named in gaps 7 and 12 (Amsterdam, Berlin, Vienna, Lisbon, France) without hand-building per-city API calls.",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   7
+  ],
+  "license": "MIT",
+  "last_activity": "recent (repo young, 6 commits)",
+  "geography": "Europe-heavy (France govt, plus ~3000 global instances)",
+  "time_coverage": "n/a (live query tool)",
+  "size_hint": "n/a (client code only)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "OpenDataSoft powers many European city and tourism-board portals; a generic query client makes it tractable to pull STR/tourism datasets from EU cities named in gaps 7 and 12 (Amsterdam, Berlin, Vienna, Lisbon, France) without hand-building per-city API calls."
+  ]
+ },
+ {
+  "key": "github:pipeworx-io/mcp-data-europa",
+  "url": "https://github.com/pipeworx-io/mcp-data-europa",
+  "name": "mcp-data-europa",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server providing a client for data.europa.eu, the official EU open-data hub (~1.6M datasets). TypeScript. Last updated 13 Sep 2026 (one day before this scout ran).",
+  "why_useful": "A maintained, current client for the EU's central data catalogue (DCAT-based) \u2014 useful for finding EU member-state tourism, mobility, or STR-regulation datasets referenced in gaps 7 and 12 (EU DAC7 platform reporting, national tourism-board series) without manual portal-by-portal search.",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   7
+  ],
+  "license": "not confirmed in fetch",
+  "last_activity": "2026-09-13",
+  "geography": "EU-wide",
+  "time_coverage": "n/a (live query tool)",
+  "size_hint": "n/a (client code only)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A maintained, current client for the EU's central data catalogue (DCAT-based) \u2014 useful for finding EU member-state tourism, mobility, or STR-regulation datasets referenced in gaps 7 and 12 (EU DAC7 platform reporting, national tourism-board series) without manual portal-by-portal search."
+  ]
+ },
+ {
+  "key": "github:vida-nyu/auctus",
+  "url": "https://github.com/VIDA-NYU/auctus",
+  "name": "Auctus",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "NYU academic dataset-search engine and crawler (mirror of gitlab.com/ViDA-NYU/auctus); indexes and profiles datasets from Socrata and Zenodo (among other plugins) into an Elasticsearch-backed catalog with a public API (auctus.vida-nyu.org) and React UI for join/union-based data augmentation. Apache-2.0, 2,771 commits.",
+  "why_useful": "A live, hosted, general-purpose dataset search engine spanning Socrata portals plus Zenodo \u2014 could surface STR/tourism/lodging datasets across many US cities' Socrata instances that a manual per-city search would miss; also directly matches the theme's 'dataset search tools' remit.",
+  "potential": "medium",
+  "gap_targets": [
+   17,
+   12
+  ],
+  "license": "Apache-2.0",
+  "last_activity": "mature, long-running academic project (2,771 commits)",
+  "geography": "global (Socrata + Zenodo coverage)",
+  "time_coverage": "n/a (live search/crawl tool)",
+  "size_hint": "n/a (service + crawler code)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Open-data portal discovery: Socrata/CKAN/data.gov/EU data portal clients, dataset search tools, Google Dataset Search scrapers; city portals with STR datasets"
+  ],
+  "why_all": [
+   "A live, hosted, general-purpose dataset search engine spanning Socrata portals plus Zenodo \u2014 could surface STR/tourism/lodging datasets across many US cities' Socrata instances that a manual per-city search would miss; also directly matches the theme's 'dataset search tools' remit."
+  ]
+ },
+ {
+  "key": "github:awesomedata/awesome-public-datasets",
+  "url": "https://github.com/awesomedata/awesome-public-datasets",
+  "name": "awesome-public-datasets",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "The master curated catalogue itself (auto-generated from awesomedata/apd-core YAML metadata files), organized into ~35 sections (Agriculture, Economics, Finance, GIS, Government, SocialNetworks, SocialSciences, Transportation, etc.), each with dozens to hundreds of dataset links, mostly to external hosts (many recently-added entries are small commercial SEO-style 'open dataset' pages rather than research-grade data - the catalogue quality has degraded with many low-value submissions circa 2026, alongside legitimate long-standing entries like OpenFlights, RITA/BTS TranStat, Skytrax reviews, and Uber TLC data).",
+  "why_useful": "Fastest way to sweep for a free source we have not seen yet on gaps 6-13 (regional travel volume, hotel supply, housing/rental, consumer spend); worth a targeted re-read of its Transportation/Economics/Real-Estate sections rather than a full dataset in itself.",
+  "potential": "medium",
+  "size_hint": "README index only, no data files in this repo",
+  "geography": "global",
+  "time_coverage": "n/a (index)",
+  "last_activity": "2026-09-14",
+  "license": "MIT",
+  "gap_targets": [
+   6,
+   7,
+   8,
+   9,
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Fastest way to sweep for a free source we have not seen yet on gaps 6-13 (regional travel volume, hotel supply, housing/rental, consumer spend); worth a targeted re-read of its Transportation/Economics/Real-Estate sections rather than a full dataset in itself.",
+   "Serves as a standing discovery index worth periodic re-scanning (per gap 17's spirit of open-data discovery tooling), but as of this pass it surfaced no committed Airbnb/STR/tourism-specific datasets beyond what is separately flagged; most new entries are unrelated commercial price-index microsites."
+  ]
+ },
+ {
+  "key": "github:wilsonfreitas/awesome-quant",
+  "url": "https://github.com/wilsonfreitas/awesome-quant",
+  "name": "awesome-quant",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "29.5k-star flagship quant-finance resource list, updated same-day. Confirmed sections: Alternative Data & Sentiment (news/social sentiment tools), Economic & Macro Data (OmniOracle: 500+ series from FRED/World Bank/EIA/NOAA; pystlouisfed and fedfred: Python clients for FRED, ALFRED, GeoFRED and FRASER -- i.e. vintage/point-in-time macro data; treasurydirect, treasury-fiscaldata, newyorkfed, commitments-of-traders TypeScript API clients; estat-mcp for Japanese e-Stat data), Point-in-Time & Vintage Data Tools (ashare-data-immunity, pit-adjuster -- China A-share point-in-time adjustment, not US-relevant), and Institutional/Corporate Filings (edgartools, SECfinAPI, edinetdb/edinet-mcp for Japanese XBRL filings).",
+  "why_useful": "pystlouisfed / fedfred give a maintained Python client to FRED's ALFRED (archival vintage) service, which is exactly the 'ALFRED-style macro vintages' asked for in gap 4; estat-mcp is a ready client for Japanese government statistics (GDP/CPI/trade) relevant to gap 7 APAC volume.",
+  "potential": "medium",
+  "size_hint": "README index; linked clients are small pip/npm packages",
+  "geography": "US (FRED/ALFRED/Treasury), Japan (e-Stat), global",
+  "time_coverage": "ALFRED vintages: multi-decade; e-Stat: current",
+  "last_activity": "2026-09-14",
+  "license": "unspecified (index)",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "duplicate_of_holding": "FRED is already held (non-vintage); ALFRED vintages via pystlouisfed/fedfred would be new",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "pystlouisfed / fedfred give a maintained Python client to FRED's ALFRED (archival vintage) service, which is exactly the 'ALFRED-style macro vintages' asked for in gap 4; estat-mcp is a ready client for Japanese government statistics (GDP/CPI/trade) relevant to gap 7 APAC volume."
+  ]
+ },
+ {
+  "key": "github:stefan-jansen/machine-learning-for-trading",
+  "url": "https://github.com/stefan-jansen/machine-learning-for-trading",
+  "name": "machine-learning-for-trading",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Companion code repo for the \"Machine Learning for Algorithmic Trading\" book. Chapter 4 (\"Fundamental and Alternative Data\") documents point-in-time SEC EDGAR pipelines, entity resolution across identifier systems, macro/commodity fundamentals, and alternative-data evaluation frameworks (including newer additions like on-chain/prediction-market data). Earlier editions of this repo are widely known to include an OpenTable scraping chapter and other alt-data acquisition notebooks (Twitter/SEC filings/Seeking Alpha) though the current README summary did not enumerate a travel-specific scraper by name.",
+  "why_useful": "General-purpose, well-maintained reference implementation for gap #17 (point-in-time SEC EDGAR tooling, alt-data evaluation methodology) that we could adapt directly rather than build from scratch.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "geography": "N/A (methods)",
+  "time_coverage": "N/A",
+  "size_hint": "Large multi-chapter repo",
+  "license": "unconfirmed (book companion, check for reuse terms)",
+  "last_activity": "actively maintained per description",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "General-purpose, well-maintained reference implementation for gap #17 (point-in-time SEC EDGAR tooling, alt-data evaluation methodology) that we could adapt directly rather than build from scratch."
+  ]
+ },
+ {
+  "key": "github:lowmason/alt-nfp",
+  "url": "https://github.com/lowmason/alt-nfp",
+  "name": "alt-nfp",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Bayesian state-space nowcasting system for US nonfarm payrolls combining CES survey prints, QCEW administrative anchors, private payroll-provider microdata, and cyclical indicators, with 'strict as-of censoring' so backtests only see what was knowable on the day (true real-time/ALFRED-style vintage reconstruction). Pipeline stages: lookups -> download -> ingest -> vintages; model layer in JAX/NumPyro; data persisted to S3-compatible storage with local fallback. MIT-licensed.",
+  "why_useful": "A working point-in-time vintage-reconstruction pipeline for BLS employment series (CES+QCEW) -- directly on-point for CONTEXT.md gap #4 (ALFRED-style macro vintages) and gap #17 (nowcasting methods/mixed-frequency). Could be adapted to isolate the leisure & hospitality CES/QCEW sub-series as a vintage-correct labor-cost/employment input.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   17
+  ],
+  "license": "MIT",
+  "geography": "US, national (industry detail depends on config)",
+  "time_coverage": "not stated explicitly; built for real-time vintage backtesting",
+  "size_hint": "codebase + pipeline, no flat data files committed",
+  "last_activity": "2026-08-04",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A working point-in-time vintage-reconstruction pipeline for BLS employment series (CES+QCEW) -- directly on-point for CONTEXT.md gap #4 (ALFRED-style macro vintages) and gap #17 (nowcasting methods/mixed-frequency). Could be adapted to isolate the leisure & hospitality CES/QCEW sub-series as a vintage-correct labor-cost/employment input."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/ghost",
+  "url": "https://github.com/UPGo-McGill/ghost",
+  "name": "UPGo-McGill/ghost",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Standalone R package (spun out of strr) implementing the 'ghost hotel/hostel' detector: identifies clusters of private-room STR listings that are actually being run as a single commercial operation out of one building/unit.",
+  "why_useful": "A concrete, published algorithm for flagging commercial/illegal operators in an Inside Airbnb-style panel \u2014 could be run against our own 13-city or 120-market Inside Airbnb cohort to build a professional-host / supply-quality signal.",
+  "potential": "medium",
+  "license": "none declared",
+  "last_activity": "2019-04-24",
+  "geography": "generic method",
+  "time_coverage": "n/a",
+  "size_hint": "tiny, code only",
+  "gap_targets": [
+   2
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "A concrete, published algorithm for flagging commercial/illegal operators in an Inside Airbnb-style panel \u2014 could be run against our own 13-city or 120-market Inside Airbnb cohort to build a professional-host / supply-quality signal.",
+   "Methodology for detecting commercial/illegal STR operators, relevant to gap #12 (regulatory/registration compliance) and to separating true P2P supply from de facto hotel supply within STR panels.",
+   "Could be applied to our Inside Airbnb panel to estimate the commercial/multi-listing share of supply, a proxy for professionalised vs. casual host mix that feeds nights/ADR interpretation."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/raffle",
+  "url": "https://github.com/UPGo-McGill/raffle",
+  "name": "UPGo-McGill/raffle",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Standalone R package implementing the 'raffle' method: probabilistically assigns STR listings (given only an approximate/obfuscated map point, as Airbnb/AirDNA show) to administrative geography (city, neighbourhood, census tract) by weighted random assignment matching known listing-density priors.",
+  "why_useful": "Method for geocoding fuzzy STR listing locations into standard geographies, useful for building regional (city/neighbourhood-level) STR supply panels from Inside-Airbnb-style data with imprecise coordinates.",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Method for geocoding fuzzy STR listing locations into standard geographies, useful for building regional (city/neighbourhood-level) STR supply panels from Inside-Airbnb-style data with imprecise coordinates.",
+   "Reusable geocoding method for our own Inside Airbnb 123-market panel, where Airbnb's public listing lat/long is deliberately jittered \u2014 could sharpen neighbourhood-level assignment for regional/city splits."
+  ]
+ },
+ {
+  "key": "github:flowminder/flowkit",
+  "url": "https://github.com/Flowminder/FlowKit",
+  "name": "FlowKit",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Flowminder's open-source CDR (call detail record) analytics toolkit: a full pipeline (Spark backend, FlowAPI, FlowClient Python/R clients, FlowAuth) for turning raw mobile operator CDRs into mobility indicators (flows, residential/relocation, subscriber density, event counts) at scale. No data committed (operates on an operator's own CDR store) but a mature, actively maintained (98 stars, updated Aug 2026), MPL-2.0-licensed method for exactly the kind of MNO-derived mobility indicator Eurostat's experimental tourism statistics use.",
+  "why_useful": "This is the reference open-source implementation of the MNO-mobility-indicator pipeline (used in real national statistics offices for humanitarian/mobility work); documents the exact indicator definitions (home location, trips, subscriber density) that a from-scratch MNO tourism proxy would need, even though we would still need our own CDR/roaming source to run it.",
+  "potential": "medium",
+  "geography": "global (framework, not tied to one country)",
+  "time_coverage": "n/a (toolkit)",
+  "size_hint": "large codebase, no data",
+  "license": "MPL-2.0",
+  "last_activity": "2026-08-10",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Electricity, water and waste data as occupancy proxies (smart-meter open data, tourist-area utility consumption), and mobile-phone tourism statistics (Eurostat MNO experimental)"
+  ],
+  "why_all": [
+   "This is the reference open-source implementation of the MNO-mobility-indicator pipeline (used in real national statistics offices for humanitarian/mobility work); documents the exact indicator definitions (home location, trips, subscriber density) that a from-scratch MNO tourism proxy would need, even though we would still need our own CDR/roaming source to run it."
+  ]
+ },
+ {
+  "key": "github:arikanatakan/revmng",
+  "url": "https://github.com/arikanatakan/revmng",
+  "name": "revmng",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library for hotel/airline revenue management: single-leg seat/room protection (Littlewood rule, EMSR-a/b, exact dynamic programming), overbooking, pricing, group displacement, length-of-stay controls, network bid prices. No committed booking-pace data, but validated against published worked examples (textbook RM cases) and could be used to build a synthetic OTB/pickup forward-curve model from disclosed occupancy/ADR to sanity-check pace assumptions.",
+  "why_useful": "Directly relevant to gap 17 (methods: nowcasting/RM methodology) and to the booking-curve/forward-curve theme even though it carries no proprietary data itself \u2014 useful for structuring a pickup model against the ~60%-booked-before-quarter-start framing in CONTEXT.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "2026-07-05",
+  "size_hint": "small library, no data files",
+  "geography": "generic/global (methodology only)",
+  "time_coverage": "n/a",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Booking-curve / pace / pickup datasets for hotels and STRs (on-the-books, forward bookings), Key Data / Transparent / Lighthouse (OTA Insight) samples, revenue-management forward curves",
+   "Hotel and STR supply from CoStar/CBRE/JLL/Cushman public reports scraped; real-estate broker STR reports with data"
+  ],
+  "why_all": [
+   "Directly relevant to gap 17 (methods: nowcasting/RM methodology) and to the booking-curve/forward-curve theme even though it carries no proprietary data itself \u2014 useful for structuring a pickup model against the ~60%-booked-before-quarter-start framing in CONTEXT.",
+   "Could supply a validated RM/bid-price modeling framework for thinking about ADR/occupancy trade-offs and length-of-stay dynamics (methods for gap #17 nowcasting/analogue kernels), not a data source itself.",
+   "Pure methods tooling (no data) that implements the RevPAR/ADR-pricing mechanics hotels and STR operators use; could inform how to model ADR/occupancy trade-offs mechanically, but contributes nothing toward the CoStar/CBRE/JLL data gap directly."
+  ]
+ },
+ {
+  "key": "github:mcompetitions/m4-methods",
+  "url": "https://github.com/Mcompetitions/M4-methods",
+  "name": "M4-methods",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official M4 forecasting competition data and benchmark methods, ~100,000 time series across 6 frequencies (yearly/quarterly/monthly/weekly/daily/hourly) and multiple domains including a 'Tourism' domain (a large subset of quarterly/monthly/yearly tourism-related series, distinct from and larger than the smaller Tcomp 2010 set). Full train/test CSVs plus R/Python benchmark implementations (naive, ETS, ARIMA, Theta, ML hybrids).",
+  "why_useful": "The Tourism-domain subset of M4 is a large, real, multi-frequency tourism time-series corpus usable for validating forecasting methodology (seasonal decomposition, reconciliation, ensembling) before applying to ABNB KPIs; also the general M4 corpus is the standard cross-domain forecasting-method benchmark referenced in the industry.",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Global, mixed",
+  "time_coverage": "Series lengths vary by frequency; competition run 2018",
+  "size_hint": "~100k series total, Tourism subset a few thousand; full repo is tens of MB",
+  "license": "unspecified (public research release)",
+  "last_activity": "active org, exact date not checked",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "The Tourism-domain subset of M4 is a large, real, multi-frequency tourism time-series corpus usable for validating forecasting methodology (seasonal decomposition, reconciliation, ensembling) before applying to ABNB KPIs; also the general M4 corpus is the standard cross-domain forecasting-method benchmark referenced in the industry."
+  ]
+ },
+ {
+  "key": "other:https://zenodo.org/record/4656103",
+  "url": "https://zenodo.org/record/4656103",
+  "name": "Monash Tourism Yearly Dataset (Zenodo, linked from TSForecasting archive)",
+  "category": "methods_tooling",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Zenodo record (DOI 10.5281/zenodo.4656103): 518 yearly tourism time series, CC-BY-4.0, ~36.7kB zip, same underlying 2010 Kaggle/2011 IJF Tourism Forecasting Competition data (compiled by Monash University / University of Sydney researchers) reformatted into the Monash Time Series Forecasting Archive's .tsf format. Companion quarterly (zenodo.org/record/4656093) and monthly (zenodo.org/record/4656096) releases exist for the same underlying competition.",
+  "why_useful": "The Monash Time Series Forecasting Archive (github.com/rakshitha123/TSForecasting is the code/loader repo, data lives on Zenodo) is the standard reference tourism benchmark used across the forecasting-ML literature; CC-BY-4.0 licensed and machine-loadable via the .tsf reader in the GitHub repo, useful if the team wants a clean point-forecast-accuracy backtesting harness comparable to published tourism-forecasting baselines (gap #17).",
+  "potential": "medium",
+  "gap_targets": [
+   17
+  ],
+  "geography": "Global (per original 2011 competition sources)",
+  "time_coverage": "Historical yearly/quarterly/monthly series ending prior to 2010 competition; exact start years not stated on the page",
+  "size_hint": "518 yearly series (companion sets: quarterly + monthly, similar total ~1,311 combined)",
+  "license": "CC-BY-4.0",
+  "last_activity": "Zenodo record created circa 2021 (archive still live)",
+  "duplicate_of_holding": "Same underlying competition data as ellisp/Tcomp-r-package, in a different (.tsf/Zenodo) format with an explicit permissive CC-BY-4.0 license",
+  "hits": 1,
+  "themes": [
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "The Monash Time Series Forecasting Archive (github.com/rakshitha123/TSForecasting is the code/loader repo, data lives on Zenodo) is the standard reference tourism benchmark used across the forecasting-ML literature; CC-BY-4.0 licensed and machine-loadable via the .tsf reader in the GitHub repo, useful if the team wants a clean point-forecast-accuracy backtesting harness comparable to published tourism-forecasting baselines (gap #17)."
+  ]
+ },
+ {
+  "key": "github:odot-pts/gtfs-ride",
+  "url": "https://github.com/ODOT-PTS/GTFS-ride",
+  "name": "GTFS-ride",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "52-star, Apache-2.0 open standard/spec (with reference tooling) for storing and sharing fixed-route transit ridership data alongside GTFS static/realtime feeds; maintained by Oregon DOT's Public Transit Section.",
+  "why_useful": "A standardized schema/tooling layer that many US transit agencies (and some international) increasingly publish ridership in; useful as a discovery/normalization method for pulling ridership from agencies beyond MTA/TfL/RATP without bespoke parsers.",
+  "potential": "medium",
+  "geography": "US (Oregon DOT-led standard), applicable nationally",
+  "time_coverage": "spec/standard, not a fixed dataset",
+  "size_hint": "spec + reference code",
+  "license": "Apache-2.0",
+  "last_activity": "2025-12-04",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Public transit ridership and airport rail links (MTA, TfL, RATP, JR) as visitor proxies; ridership open data"
+  ],
+  "why_all": [
+   "A standardized schema/tooling layer that many US transit agencies (and some international) increasingly publish ridership in; useful as a discovery/normalization method for pulling ridership from agencies beyond MTA/TfL/RATP without bespoke parsers."
+  ]
+ }
+]

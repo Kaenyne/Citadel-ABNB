@@ -1,0 +1,131 @@
+[
+ {
+  "key": "github:boulderbridget/strresearch",
+  "url": "https://github.com/boulderbridget/STRresearch",
+  "name": "STRresearch",
+  "category": "str_airbnb_direct",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Small independent (non-UPGo) repo described only as 'STR Research for AirDNA'. Contents not retrievable via WebFetch (README not rendered); found via GitHub code search on 'airdna'. Unverified \u2014 flagged for a future scout to open directly with an authenticated GitHub view.",
+  "why_useful": "Possible small AirDNA-adjacent dataset or analysis; low confidence given inability to verify contents in this pass.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "time_coverage": "unknown",
+  "geography": "unknown",
+  "size_hint": "unknown",
+  "license": "unspecified",
+  "last_activity": "2022-08-28",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Possible small AirDNA-adjacent dataset or analysis; low confidence given inability to verify contents in this pass."
+  ]
+ },
+ {
+  "key": "github:hansikagunasekara/travel-insurance-claims-analysis",
+  "url": "https://github.com/HansikaGunasekara/travel-insurance-claims-analysis",
+  "name": "travel-insurance-claims-analysis",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Commits travel_insurance.csv, the well-known Kaggle 'Travel Insurance' dataset from a Singapore-based third-party travel insurance servicer: >63,000 records, 11 columns (Claim Status, Agency, Agency Type, Distribution Channel, Product Name, Duration, Destination, Net Sales, Commission, Gender, Age). Cross-sectional (not a time series with dates), and the analysis flags serious data-quality problems (ages 0-118, ~44K missing gender, negative sales/duration, >35K zero-commission rows). Updated 2025-11-07.",
+  "why_useful": "This is the single, widely-recirculated Kaggle travel-insurance dataset -- at least 6 near-identical repos on GitHub reanalyze it (KushalS25, adibhattar95, mek9wm, Ivan-R-Septian, S-CHAN11 all found via the same gh search). It is cross-sectional with no dates, so it cannot support the RNPL/cancellation-rate time-series work in gap #3; flagging once for completeness, not as a genuine new find.",
+  "potential": "low",
+  "time_coverage": "cross-sectional snapshot, no date field confirmed",
+  "geography": "Singapore-based agency, destinations global (categorical field, not geocoded)",
+  "size_hint": ">63,000 rows x 11 columns",
+  "license": "unstated",
+  "last_activity": "2025-11-07",
+  "gap_targets": [
+   3
+  ],
+  "duplicate_of_holding": "one of >=6 near-identical repos reanalyzing the same Kaggle 'Travel Insurance' CSV; do not re-flag the others (KushalS25/CART-RANDOM-FOREST-ANN-CLASSIFIERS, adibhattar95/Fraud-Claim-Detection-in-Travel-Insurance, mek9wm/travel-insurance_decision-tree_random-forest, Ivan-R-Septian/Travel-Insurance-Claim-Prediction-and-Risk-Optimization, S-CHAN11/Insurance-Claim-Prediction)",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "This is the single, widely-recirculated Kaggle travel-insurance dataset -- at least 6 near-identical repos on GitHub reanalyze it (KushalS25, adibhattar95, mek9wm, Ivan-R-Septian, S-CHAN11 all found via the same gh search). It is cross-sectional with no dates, so it cannot support the RNPL/cancellation-rate time-series work in gap #3; flagging once for completeness, not as a genuine new find."
+  ]
+ },
+ {
+  "key": "github:nextlevelmanagementadvisors/turno-mcp",
+  "url": "https://github.com/NextLevelManagementAdvisors/turno-mcp",
+  "name": "turno-mcp",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Multi-tenant MCP server wrapping the Turno (formerly TurnoverBnB) v2 REST API: 49 tools covering properties, bookings, projects, cleaners, webhooks. No committed data \u2014 it is a live client that requires an authenticated Turno account/API key to pull anything (turnaround-time bookings, cleaner assignments, project status per property). AGPL-3.0, updated 10 Sep 2026, 0 stars.",
+  "why_useful": "Confirms Turno exposes a documented v2 API (properties/bookings/cleaners) that could in principle be queried for turnover cadence / cleaner-marketplace activity as a nights-proxy, but there is no public dataset and no free sample; would need our own paid Turno account to pull anything, which is outside a cataloguing pass.",
+  "potential": "low",
+  "license": "AGPL-3.0",
+  "last_activity": "2026-09-10",
+  "geography": "not geography-specific (per-account)",
+  "time_coverage": "live/current only, no history",
+  "size_hint": "code only, no data files",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets",
+   "wildcard: an Airbnb superhost / small property manager who uses open-s"
+  ],
+  "why_all": [
+   "Confirms Turno exposes a documented v2 API (properties/bookings/cleaners) that could in principle be queried for turnover cadence / cleaner-marketplace activity as a nights-proxy, but there is no public dataset and no free sample; would need our own paid Turno account to pull anything, which is outside a cataloguing pass.",
+   "Only a live method for pulling per-property Turno turnover/cleaning-schedule data (a real STR-supply signal), but requires the requester's own paid Turno account credentials \u2014 no aggregate/public data accessible. Could theoretically expose booking-adjacent scheduling cadence (a nights/turnover proxy) if the team or a contact already runs Turno for properties, but not a market-wide dataset.",
+   "Turno is the dominant STR cleaning-scheduler; its 'bookings'/'blocked dates' objects are effectively a real-time occupancy calendar per managed property. Documents exactly what fields a professional property manager's turnover system tracks (checkout->clean->next-checkin cadence), which is the ground-truth structure any nights/turnover proxy would need to reconstruct if a cooperating host/PM ever shared exports."
+  ]
+ },
+ {
+  "key": "github:paso-robles-vacation-rentals/breezeway-python",
+  "url": "https://github.com/Paso-Robles-Vacation-Rentals/breezeway-python",
+  "name": "breezeway-python",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client library for Breezeway.io (a property-operations / cleaning-and-maintenance platform for STRs), handling auth and API calls. No committed data; requires a Breezeway account to retrieve anything (task/turnover schedules, inspections, supply orders per property). MIT license, updated 21 Dec 2025.",
+  "why_useful": "Same pattern as turno-mcp: proves Breezeway has an API surface that could carry STR-turnover-cadence signal, but nothing here is public data \u2014 it's a bring-your-own-account client.",
+  "potential": "low",
+  "license": "MIT",
+  "last_activity": "2025-12-21",
+  "geography": "not geography-specific",
+  "time_coverage": "live/current only",
+  "size_hint": "code only, no data files",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Same pattern as turno-mcp: proves Breezeway has an API surface that could carry STR-turnover-cadence signal, but nothing here is public data \u2014 it's a bring-your-own-account client.",
+   "Method only; Breezeway is a cleaning/maintenance coordination platform for STR operators, but this client needs a paid Breezeway account and returns only that account's properties \u2014 not a public dataset."
+  ]
+ },
+ {
+  "key": "github:talodeveloper/breezeway-supply-report",
+  "url": "https://github.com/talodeveloper/breezeway-supply-report",
+  "name": "breezeway-supply-report",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Client-side reporting tool that reformats Breezeway vacation-rental-cleaning CSV/data exports (supply usage, task completion) into reports. Operates on a user's own exported files, not on any bundled public dataset. Updated 7 Sep 2026, 0 stars, no visible license.",
+  "why_useful": "Only useful if one already has Breezeway account exports; no data shipped with the repo, so it does not by itself give us anything to pull.",
+  "potential": "low",
+  "license": "",
+  "last_activity": "2026-09-07",
+  "geography": "not specified",
+  "time_coverage": "n/a (depends on user's own exports)",
+  "size_hint": "code only",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Vacation rental damage/turnover/cleaning marketplaces (Turno, TurnoverBnB), STR supply services (Airbnb photographer, key exchange) datasets"
+  ],
+  "why_all": [
+   "Only useful if one already has Breezeway account exports; no data shipped with the repo, so it does not by itself give us anything to pull.",
+   "Marginal \u2014 a report generator over a user's own Breezeway export, not a source of new data."
+  ]
+ }
+]

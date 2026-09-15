@@ -1,0 +1,130 @@
+[
+ {
+  "key": "other:https://github.com/tc-viz (husophia/tc-viz)",
+  "url": "https://github.com/TC-Viz (HuSophia/TC-Viz)",
+  "name": "TC-Viz",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Tropical cyclone track visualization tool built on IBTrACS (International Best Track Archive for Climate Stewardship) global storm-track data -- the worldwide counterpart to HURDAT2, covering all ocean basins (Atlantic, Pacific, Indian Ocean).",
+  "why_useful": "IBTrACS is the global (not just Atlantic) best-track archive, so a working client extends the hurricane/typhoon shock analysis to APAC markets (Japan, Philippines, Southeast Asia) named in the regional gap list, where HURDAT2 has no coverage.",
+  "potential": "low",
+  "size_hint": "small visualization tool, pulls public IBTrACS files",
+  "geography": "global, all basins",
+  "time_coverage": "IBTrACS spans 1841-present depending on basin",
+  "license": "unspecified",
+  "last_activity": "not specified",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "IBTrACS is the global (not just Atlantic) best-track archive, so a working client extends the hurricane/typhoon shock analysis to APAC markets (Japan, Philippines, Southeast Asia) named in the regional gap list, where HURDAT2 has no coverage."
+  ]
+ },
+ {
+  "key": "github:feashliaa/severe-weather-event-reporter",
+  "url": "https://github.com/Feashliaa/severe-weather-event-reporter",
+  "name": "Severe Weather Event Reporter",
+  "category": "events_weather_shocks",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Automated severe-weather event analysis tool generating post-event reports (radar imagery, meteorological analysis, damage assessments) by integrating eight federal data sources including NOAA and NWS, tagged for NOAA's Storm Events Database.",
+  "why_useful": "Storm Events Database (tornadoes, severe thunderstorms, floods, winter storms -- broader than just hurricanes) by county/date is a finer-grained US weather-shock source than HURDAT2 alone; this tool's multi-source integration could shortcut assembling a county-level severe-weather panel for market-level demand shocks.",
+  "potential": "low",
+  "size_hint": "small, 3 stars",
+  "geography": "United States",
+  "time_coverage": "not specified",
+  "license": "unspecified",
+  "last_activity": "not specified",
+  "gap_targets": [
+   11
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Storm Events Database (tornadoes, severe thunderstorms, floods, winter storms -- broader than just hurricanes) by county/date is a finer-grained US weather-shock source than HURDAT2 alone; this tool's multi-source integration could shortcut assembling a county-level severe-weather panel for market-level demand shocks."
+  ]
+ },
+ {
+  "key": "github:theeconomist/big-mac-data",
+  "url": "https://github.com/TheEconomist/big-mac-data",
+  "name": "TheEconomist/big-mac-data",
+  "category": "fx_rates",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Official Economist Big Mac Index source data and methodology, MIT licensed, 1748 stars, updated same day as our search (13 Sep 2026, actively maintained). Three committed files: big-mac-raw-index.csv, big-mac-adjusted-index.csv (GDP-adjusted), big-mac-full-index.csv, each carrying underlying local prices, exchange rates and implied-vs-actual PPP by country. Biannual since ~2000, ~70 countries incl. all ABNB's major regions (EU, UK, Japan, Australia, Mexico, Brazil, India). July 2022 methodology change archived in Releases so old vintage is recoverable.",
+  "why_useful": "Direct, long-running, free PPP/affordability series by country -> usable as a cross-check on real (purchasing-power-adjusted) ADR moves and as an affordability proxy for inbound/outbound travel demand by region (gap #6 consumer spend / broader macro-consumer-spend theme, and general FX/PPP gap not separately numbered but explicitly requested by this theme). Also a clean point-in-time-able series since each release is dated and archived.",
+  "potential": "high",
+  "geography": "Global, ~70 countries",
+  "time_coverage": "~2000-present, semiannual (Jan/Jul), with July 2022 methodology break archived separately",
+  "size_hint": "3 CSVs, small (~tens of KB), full history",
+  "license": "MIT",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "",
+  "hits": 3,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling",
+   "wildcard: an FX and macro strategist who models translation effects an"
+  ],
+  "why_all": [
+   "Direct, long-running, free PPP/affordability series by country -> usable as a cross-check on real (purchasing-power-adjusted) ADR moves and as an affordability proxy for inbound/outbound travel demand by region (gap #6 consumer spend / broader macro-consumer-spend theme, and general FX/PPP gap not separately numbered but explicitly requested by this theme). Also a clean point-in-time-able series since each release is dated and archived.",
+   "Direct PPP/affordability cross-country series -- a standard proxy for real currency over/undervaluation that could feed a cross-border demand/affordability adjustment for ABNB's international nights and ADR mix (gap area: PPP/Big Mac in theme, tangential to gap 6/7 consumer strength by country).",
+   "A ready, standing measure of currency over/undervaluation by country -- a cheap cross-border 'purchasing power' signal that could feed into ADR-ex-FX translation checks and outbound-demand direction by region (does a currency look cheap enough to pull travelers in/out)."
+  ]
+ },
+ {
+  "key": "github:aykutsp/world-infrastructure-data-hub",
+  "url": "https://github.com/aykutsp/world-infrastructure-data-hub",
+  "name": "world-infrastructure-data-hub",
+  "category": "fx_rates",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Daily-refreshed, GitHub-Actions-built static JSON API (countries.json, per-country files) covering retail gasoline/diesel/LPG prices (USD/L) for ~130 countries from the EU Weekly Oil Bulletin and World Bank Global Fuel Prices DB, plus household electricity price, CO2/capita, and 8 World Bank socioeconomic indicators (GDP/capita, inflation, unemployment, Gini, etc.) for 167-170 countries. Live endpoint: https://aykutsp.github.io/world-infrastructure-data-hub/api/v1/countries.json. v1.1 adds 15-year historical time series with sparklines for CO2 and World Bank indicators.",
+  "why_useful": "A global (not just US) retail gasoline price panel by country is directly relevant to ABNB's EMEA/LatAm/APAC regional consumer-fuel-cost proxies and could feed a cross-region driving-cost index alongside FX and inflation, touching both gap #7 (regional travel volume/consumer strength) and the road-travel theme; free, no-key, machine-readable JSON API refreshed daily.",
+  "potential": "medium",
+  "geography": "global, ~130-170 countries",
+  "time_coverage": "current snapshot daily; v1.1 adds historical time series (up to 15 years) for CO2/World Bank fields (fuel price history not stated as historized)",
+  "size_hint": "single JSON ~470KB (countries.json) + per-country files ~2KB each",
+  "license": "MIT (code) / CC BY 4.0 and ODbL for underlying data sources",
+  "last_activity": "active, v1.1.0 release, daily cron",
+  "gap_targets": [
+   7,
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "A global (not just US) retail gasoline price panel by country is directly relevant to ABNB's EMEA/LatAm/APAC regional consumer-fuel-cost proxies and could feed a cross-region driving-cost index alongside FX and inflation, touching both gap #7 (regional travel volume/consumer strength) and the road-travel theme; free, no-key, machine-readable JSON API refreshed daily."
+  ]
+ },
+ {
+  "key": "github:allrates-today/ecb-exchange-rate",
+  "url": "https://github.com/AllRates-Today/ecb-exchange-rate",
+  "name": "AllRates-Today/ecb-exchange-rate",
+  "category": "fx_rates",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Zero-dependency Node.js/TypeScript client wrapping the ECB's official daily reference-rate feed: ~41 currencies vs EUR, full history back to 1999 (ECB's own published range). No data files committed beyond the client code; it re-fetches from ECB's public XML feed on demand.",
+  "why_useful": "One-command pull for daily EUR cross-rates since 1999 covering all of ABNB's EMEA-relevant currencies (GBP, and via cross-rates most others); useful for building our own point-in-time FX vintage register (rule #2 in our own CLAUDE.md) since ECB rates are date-stamped at source.",
+  "potential": "medium",
+  "geography": "Eurozone reference rates vs ~41 currencies",
+  "time_coverage": "1999-present, daily",
+  "size_hint": "code only, pulls live",
+  "license": "MIT",
+  "last_activity": "2026-09-09",
+  "duplicate_of_holding": "We already hold FX schedules per CONTEXT.md; this is a possibly-longer/cleaner daily-since-1999 acquisition method worth flagging per the 'better/longer/older' rule.",
+  "hits": 1,
+  "themes": [
+   "FX and purchasing power: exchange-rate history (ECB, BIS, FRED), broad-dollar indices, PPP/Big Mac, tourist affordability indices, company FX-exposure tooling"
+  ],
+  "why_all": [
+   "One-command pull for daily EUR cross-rates since 1999 covering all of ABNB's EMEA-relevant currencies (GBP, and via cross-rates most others); useful for building our own point-in-time FX vintage register (rule #2 in our own CLAUDE.md) since ECB rates are date-stamped at source."
+  ]
+ }
+]

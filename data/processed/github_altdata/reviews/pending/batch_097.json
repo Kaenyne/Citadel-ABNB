@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:openaddresses/openaddresses",
+  "url": "https://github.com/openaddresses/openaddresses",
+  "name": "openaddresses",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Global collection (14,515+ commits) of source manifests (CC0 JSON metadata) for address, cadastral parcel, building footprint and street-centerline datasets, with a `us-data/` tree covering many US counties/states; processed outputs downloadable from openaddresses.io. Source metadata CC0-1.0; repo code BSD-3; underlying data retains original licenses.",
+  "why_useful": "A discovery/aggregation layer over hundreds of county and municipal parcel/cadastral data sources (many of which include building footprints and, indirectly, parcel counts usable as a housing-stock/permit-adjacent proxy) -- fills the 'county assessor/parcel data' item at national/international scale rather than one county at a time.",
+  "potential": "medium",
+  "geography": "US (most states) plus international",
+  "time_coverage": "snapshot of current source data, updated periodically since project inception (~2014)",
+  "license": "CC0-1.0 (source metadata); BSD-3 (code); original licenses for underlying data",
+  "last_activity": "active, large commit history",
+  "size_hint": "hundreds of per-county/city source definitions",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "A discovery/aggregation layer over hundreds of county and municipal parcel/cadastral data sources (many of which include building footprints and, indirectly, parcel counts usable as a housing-stock/permit-adjacent proxy) -- fills the 'county assessor/parcel data' item at national/international scale rather than one county at a time."
+  ]
+ },
+ {
+  "key": "github:topics/building-permits",
+  "url": "https://github.com/topics/building-permits",
+  "name": "GitHub topic: building-permits (index page, not a single repo)",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Index of 18 repos tagged building-permits, notably: OpenPermitFees (machine-readable US building-permit fee schedules with sourcing), Shovels API client/profile repos (claims 130M+ building permits across 1,800+ US jurisdictions, 2.3M+ contractor profiles -- paid API, not a free dataset), a Vancouver building-permits Dash exploration tool, a San Diego renovation-permit analytics repo, and a BuildData Canadian construction/real-estate API sample.",
+  "why_useful": "Surfaces the closest thing to a national building-permit aggregator on GitHub (Shovels), and machine-readable permit-fee schedules (OpenPermitFees) that proxy local construction-cost/regulatory friction feeding into new STR/LTR unit supply -- worth flagging even though most are thin wrappers over paid APIs.",
+  "potential": "medium",
+  "geography": "primarily US, city/county level; one Canadian, one Vancouver-specific",
+  "time_coverage": "varies; Shovels claims broad historical jurisdiction coverage (unverified, paid API)",
+  "license": "varies by repo",
+  "last_activity": "mixed, several recent (2026) per description tone",
+  "size_hint": "Shovels claims 130M+ permit records nationally (behind paid API, not verified directly)",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Surfaces the closest thing to a national building-permit aggregator on GitHub (Shovels), and machine-readable permit-fee schedules (OpenPermitFees) that proxy local construction-cost/regulatory friction feeding into new STR/LTR unit supply -- worth flagging even though most are thin wrappers over paid APIs."
+  ]
+ },
+ {
+  "key": "github:topics/parcel-data",
+  "url": "https://github.com/topics/parcel-data",
+  "name": "GitHub topic: parcel-data (index page)",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Index of 7 repos: CityOfDetroit/rental_map (registered-rental-property map for Detroit, Leaflet/ESRI), joshvern/citylens-web (NYC parcel intelligence + aerial/3D site analysis), Center-for-Land-Economics/civicmapper (land-value/improvement maps across 35+ cities, Python), property-boundary/property-boundary (PostGIS/GeoPandas cadastral ETL pipeline framework), pdiegel/NC-Parcel-Search (North Carolina parcel search webapp).",
+  "why_useful": "CityOfDetroit/rental_map is a committed, city-published registered-rental-property dataset (STR/LTR host-supply proxy for a mid-size US market outside our current 13-city Inside Airbnb panel); civicmapper aggregates land-value data across 35+ cities and could be a cross-check for county assessor coverage.",
+  "potential": "medium",
+  "geography": "Detroit; multi-city (35+, civicmapper); North Carolina",
+  "time_coverage": "current registry snapshots",
+  "license": "varies by repo",
+  "last_activity": "not verified individually",
+  "size_hint": "Detroit rental registry: city-wide; civicmapper: 35+ cities",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "CityOfDetroit/rental_map is a committed, city-published registered-rental-property dataset (STR/LTR host-supply proxy for a mid-size US market outside our current 13-city Inside Airbnb panel); civicmapper aggregates land-value data across 35+ cities and could be a cross-check for county assessor coverage."
+  ]
+ },
+ {
+  "key": "github:topics/hmda",
+  "url": "https://github.com/topics/hmda",
+  "name": "GitHub topic: hmda (index page)",
+  "category": "housing_rental",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Index of HMDA-related repos, notably a described 'hmda_database' project (harmonized DuckDB build of 40+ years of HMDA mortgage data, 685M rows, one-command build) plus several fair-lending/disparity analysis repos (hmda-racial-disparities, CATE-HMDA-Heterogeneous-Effects, hmda-analyzer, fair-lending-screener, fairlens) built on public HMDA loan-level data.",
+  "why_useful": "If the 'hmda_database' project (or an equivalent) is real and reproducible, a 685M-row, 40-year harmonized mortgage-origination panel in DuckDB would be a very strong national mortgage-rate/lending-volume time series for the housing-supply-economics gap; flagged as unverified since a direct repo fetch under the described owner/name 404'd and the exact URL could not be confirmed within budget.",
+  "potential": "medium",
+  "geography": "United States, national with geographic (state/county/tract) breakdowns",
+  "time_coverage": "described as 40+ years (roughly 1980s/1990s-present, matching HMDA history)",
+  "license": "unverified (HMDA source data is public domain)",
+  "last_activity": "unverified",
+  "size_hint": "685M rows (as described in topic listing; not independently confirmed)",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "If the 'hmda_database' project (or an equivalent) is real and reproducible, a 685M-row, 40-year harmonized mortgage-origination panel in DuckDB would be a very strong national mortgage-rate/lending-volume time series for the housing-supply-economics gap; flagged as unverified since a direct repo fetch under the described owner/name 404'd and the exact URL could not be confirmed within budget."
+  ]
+ },
+ {
+  "key": "github:cdcoonce/housing-commute-analysis",
+  "url": "https://github.com/cdcoonce/housing-commute-analysis",
+  "name": "housing-commute-analysis",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Reproducible pipeline integrating ACS socioeconomic/commute data, Zillow ZORI rent estimates, and OpenStreetMap transit features at the ZCTA level for Phoenix, Memphis, Dallas-Fort Worth, and Los Angeles, modeling rent burden and spatial equity.",
+  "why_useful": "ZCTA-level rent-burden construction (ACS + ZORI) for 4 major US metros including two Inside-Airbnb-adjacent markets is a usable template for a tract/ZCTA rent-burden panel, addressing gap #13's host-economics angle in metros we already track supply for.",
+  "potential": "medium",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Phoenix, Memphis, Dallas-Fort Worth, Los Angeles (ZCTA level)",
+  "time_coverage": "unspecified; ACS + current ZORI vintages",
+  "size_hint": "small repo (2 stars), reproducible pipeline not a bulk static dump",
+  "license": "unknown",
+  "last_activity": "2026-09-05",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing affordability and STR-housing studies data: rent-burden, vacancy, STR share of housing stock by tract"
+  ],
+  "why_all": [
+   "ZCTA-level rent-burden construction (ACS + ZORI) for 4 major US metros including two Inside-Airbnb-adjacent markets is a usable template for a tract/ZCTA rent-burden panel, addressing gap #13's host-economics angle in metros we already track supply for."
+  ]
+ }
+]

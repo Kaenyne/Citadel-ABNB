@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:shigaichi/top-sites-ranking-api",
+  "url": "https://github.com/shigaichi/top-sites-ranking-api",
+  "name": "top-sites-ranking-api",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Go-based API service (MIT licensed, 31 commits) tagged 'tranco', apparently serving/normalizing top-site ranking data (likely wrapping Tranco's list) behind a small API; README content was not retrievable in the fetch, so exact source coverage is unconfirmed.",
+  "why_useful": "Potential lightweight self-hosted wrapper for querying Tranco rank of airbnb.com and peers programmatically, but unverified scope \u2014 flagged for a follow-up direct README read before relying on it.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "unclear",
+  "time_coverage": "unclear",
+  "size_hint": "small Go service",
+  "license": "MIT",
+  "last_activity": "unspecified",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Potential lightweight self-hosted wrapper for querying Tranco rank of airbnb.com and peers programmatically, but unverified scope \u2014 flagged for a follow-up direct README read before relying on it."
+  ]
+ },
+ {
+  "key": "github:pucilpet/crawlgraph-datasets",
+  "url": "https://github.com/pucilpet/crawlgraph-datasets",
+  "name": "crawlgraph-datasets",
+  "category": "web_app_engagement",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "CSV/JSON datasets of domains linking into specific competitor-tool categories (SEO tools 9,687 domains, CRMs 9,910, AI agent frameworks 7,508, fintech apps 12,106), each row carrying a 'CrawlGraph authority score' (0-100) derived from Common Crawl's open hyperlink graph (~120M domains, 4.4B links, refreshed quarterly, queried via DuckDB). Free to reuse with attribution; 4 commits.",
+  "why_useful": "Demonstrates a working, quarterly-refreshed Common Crawl host-graph authority-score pipeline (queryable via DuckDB, which the team already uses) that could be re-pointed at travel/OTA domains (airbnb.com, booking.com, vrbo.com, expedia.com) to build a backlink-authority proxy for site prominence \u2014 marginal fit since the shipped categories are unrelated (SEO/CRM/fintech/AI tools), but the method and data source are directly reusable.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "current snapshot, source refreshed quarterly",
+  "size_hint": "4 CSV/JSON files, several thousand rows each",
+  "license": "free with attribution (CrawlGraph); underlying data Common Crawl open data",
+  "last_activity": "4 commits, recent (Common Crawl quarterly refresh cadence implies 2025-2026 activity)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Demonstrates a working, quarterly-refreshed Common Crawl host-graph authority-score pipeline (queryable via DuckDB, which the team already uses) that could be re-pointed at travel/OTA domains (airbnb.com, booking.com, vrbo.com, expedia.com) to build a backlink-authority proxy for site prominence \u2014 marginal fit since the shipped categories are unrelated (SEO/CRM/fintech/AI tools), but the method and data source are directly reusable."
+  ]
+ },
+ {
+  "key": "other:https://github.com/similarweb-scraper-public",
+  "url": "https://github.com/similarweb-scraper-public",
+  "name": "similarweb-scraper-public (name approximate, via Apify)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Listed on GitHub's 'similarweb' topic as extracting website traffic and ranking data via the Apify scraping platform (i.e., an Apify actor wrapper). Method-only, no committed Similarweb dataset for airbnb.com; relies on Apify's hosted scraper for the live pull.",
+  "why_useful": "One of several small scrapers indicating Similarweb visit-estimate data (visits, bounce rate, traffic-source mix, top competitors) can be pulled for airbnb.com/booking.com/vrbo.com without a paid Similarweb subscription, feeding gap #5 web-traffic estimates \u2014 but per repo rules this is a method to catalogue and NOT run against Similarweb's own terms without a human sign-off (scraping a third-party site, not airbnb.com itself, so lower ToS sensitivity than scraping airbnb.com directly, but still worth a human check).",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global (per queried domain)",
+  "time_coverage": "live pull only, no history",
+  "size_hint": "small scraper script",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "One of several small scrapers indicating Similarweb visit-estimate data (visits, bounce rate, traffic-source mix, top competitors) can be pulled for airbnb.com/booking.com/vrbo.com without a paid Similarweb subscription, feeding gap #5 web-traffic estimates \u2014 but per repo rules this is a method to catalogue and NOT run against Similarweb's own terms without a human sign-off (scraping a third-party site, not airbnb.com itself, so lower ToS sensitivity than scraping airbnb.com directly, but still worth a human check)."
+  ]
+ },
+ {
+  "key": "other:https://github.com/similarweb-traffic-data-python",
+  "url": "https://github.com/similarweb-traffic-data-python",
+  "name": "similarweb-traffic-data-python (name approximate)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Listed on the 'similarweb' GitHub topic as a 'Python scraper for traffic data without subscription' \u2014 a method-only repo scraping Similarweb's free public site-overview pages for visit-count estimates, engagement metrics, and top-competitor lists.",
+  "why_useful": "Same class of value as similarweb-scraper-public: a free-tier method to get Similarweb's visit-estimate/rank numbers for airbnb.com and OTA peers programmatically for gap #5. Multiple independent repos of this shape suggest the free Similarweb overview page is a stable, scrapeable source, though individual repos churn/break often (Similarweb changes its page structure) \u2014 verify freshness before relying on any one.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global (per queried domain)",
+  "time_coverage": "live pull only",
+  "size_hint": "small script",
+  "license": "unspecified",
+  "last_activity": "unspecified",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Web-traffic estimates and domain ranks: Similarweb scrapers or samples, Cloudflare Radar API, Chrome UX Report popularity rank, Tranco, Majestic Million, Common Crawl host-graph rank"
+  ],
+  "why_all": [
+   "Same class of value as similarweb-scraper-public: a free-tier method to get Similarweb's visit-estimate/rank numbers for airbnb.com and OTA peers programmatically for gap #5. Multiple independent repos of this shape suggest the free Similarweb overview page is a stable, scrapeable source, though individual repos churn/break often (Similarweb changes its page structure) \u2014 verify freshness before relying on any one."
+  ]
+ },
+ {
+  "key": "github:ironholds/pageviews",
+  "url": "https://github.com/Ironholds/pageviews",
+  "name": "pageviews (Ironholds)",
+  "category": "web_app_engagement",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client library (24 stars) for the Wikimedia pageview API, from a long-time Wikimedia data engineer; wraps the same REST API as Commonists' Python client but for R users.",
+  "why_useful": "Alternative-language (R) tooling for the same pageviews-as-proxy approach; useful if the team's stats work is in R rather than Python. Same use case as Commonists/pageview-api.",
+  "potential": "low",
+  "gap_targets": [
+   5
+  ],
+  "geography": "global",
+  "time_coverage": "~2015-present",
+  "size_hint": "small library",
+  "license": "other (permissive, unspecified type)",
+  "last_activity": "2025-01-20",
+  "duplicate_of_holding": "Commonists/pageview-api (same functional purpose, different language)",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Alternative-language (R) tooling for the same pageviews-as-proxy approach; useful if the team's stats work is in R rather than Python. Same use case as Commonists/pageview-api."
+  ]
+ }
+]

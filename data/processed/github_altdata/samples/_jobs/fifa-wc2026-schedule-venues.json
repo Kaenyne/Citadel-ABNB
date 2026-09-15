@@ -1,0 +1,10 @@
+{
+ "slug": "fifa-wc2026-schedule-venues",
+ "url": "https://github.com/mominullptr/FIFA-World-Cup-2026-Dataset",
+ "category": "events_weather_shocks",
+ "data_kind": "stored_dataset",
+ "one_line": "CC0-1.0, 12 CSVs: 16 venues with city/country/capacity/lat-lon, 104 matches with dates and kickoff times, teams and squads; Jun 11-Jul 19 2026.",
+ "abnb_use": "Fills gap 11 directly: a host-city x match-date intensity calendar for the 3Q26 nights and ADR shock across US/Canada/Mexico markets, the single biggest identifiable 3Q26 event.",
+ "sample_plan": "Raw-fetch venues.csv, matches.csv and teams.csv from the default branch (<1 MB); skip player/event/stats files.",
+ "tos_or_license_flag": false
+}

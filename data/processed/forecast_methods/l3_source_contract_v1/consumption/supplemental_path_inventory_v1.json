@@ -1,0 +1,38 @@
+{
+  "audit_timestamp_utc": "2026-09-14T04:35:15.823023+00:00",
+  "scopes": [
+    {
+      "root": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data",
+      "exists": true,
+      "enumerated_paths": 2297,
+      "matching_paths": [
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\raw\\regulatory\\quantification\\abnb_2026q2_10q.html",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\processed\\forecast_methods\\fee_panels\\sample_ids.csv",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\processed\\forecast_methods\\fee_panels\\sample_audit.csv",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\processed\\forecast_methods\\fee_panels\\runs\\launchd.out.log",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\processed\\forecast_methods\\fee_panels\\runs\\launchd.err.log",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\processed\\forecast_methods\\fee_panels\\dryrun_new-orleans_2026-09-11.csv",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data\\processed\\forecast_methods\\consensus_stamp_v2\\capture_20260913T152058Z\\yfinance_earnings_estimate.csv"
+      ],
+      "command": [
+        "rg",
+        "--files",
+        "--hidden",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\data"
+      ]
+    },
+    {
+      "root": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\research",
+      "exists": true,
+      "enumerated_paths": 203,
+      "matching_paths": [],
+      "command": [
+        "rg",
+        "--files",
+        "--hidden",
+        "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\research"
+      ]
+    }
+  ],
+  "interpretation": "Filename-only supplemental inventory; excludes ignored stores by rg default. No alternate sanctioned fee capture directory or newly dated ABNB disclosure found among matches. No contents of licensed sources were read."
+}

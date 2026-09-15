@@ -1,0 +1,32 @@
+{
+ "slug": "bookingcom-rectour24-accommodation-reviews",
+ "url": "https://huggingface.co/datasets/Booking-com/accommodation-reviews",
+ "sampled": true,
+ "total_bytes": 12373619,
+ "files": [
+  "bkng_acc_README.md",
+  "bkng_acc_train_head.csv",
+  "bkng_acc_val_head.csv",
+  "rectour24_train_users_head.csv",
+  "rectour24_train_reviews_head.csv",
+  "rectour24_train_matches_head.csv"
+ ],
+ "rows": "bkng_acc_train_head 14,203; bkng_acc_val_head 5,861; rectour24_train_users_head 19,330; rectour24_train_reviews_head 5,896; rectour24_train_matches_head 11,768 (all are ranged-byte heads with the trailing partial record dropped)",
+ "columns": "train/val: review_title, review_positive, review_negative, review_score, review_helpful_votes, guest_type, guest_country(anonymised), room_nights, month, accommodation_id, accommodation_type, accommodation_country, accommodation_score, accommodation_star_rating, location_is_ski/beach/city_center. rectour24 users: user_id + same stay/accommodation fields; reviews: review_id, accommodation_id, title/pos/neg text, score, helpful_votes; matches: accommodation_id, review_id, user_id",
+ "date_range": "check-in month 1-12 of 2023 (month integer only; no year column, README says reviews published in 2023)",
+ "how_pulled": "curl -sL https://huggingface.co/api/datasets/Booking-com/accommodation-reviews/tree/main (and /tree/main/rectour24) to confirm paths; curl -sL README.md; curl -sL -r 0-4999999 .../resolve/main/train.csv; curl -sL -r 0-1999999 .../resolve/main/val.csv; curl -sL -r 0-1999999 .../resolve/main/rectour24/train_users.csv; curl -sL -r 0-1999999 .../resolve/main/rectour24/train_reviews.csv; curl -sL -r 0-999999 .../resolve/main/rectour24/train_matches.csv; then pandas read_csv(engine=python), drop last (truncated) record, re-save as CSV",
+ "full_dataset_size": "11 files, 1.71 GB on Hugging Face: train.csv 584 MB (~1.6M reviews), val.csv 73 MB, rectour24/ train_reviews 554 MB, train_users 168 MB, train_matches 138 MB, val_reviews 69 MB, val_users 21 MB, val_matches 17 MB, test_reviews 67 MB, test_users 21 MB; README says ~1.6M reviews from ~40k accommodations",
+ "description": "Booking.com's public accommodation-review dataset (RecTour 2024 challenge): one row per moderated English guest review published in 2023, with the stay's guest_type (solo/couple/group/family), room_nights, check-in month, anonymised guest country and the property's country, type, star rating and beach/ski/city flags; the rectour24 folder splits the same data into users, reviews and user-review matches for the review-ranking task. Source is Booking.com itself via Hugging Face (ungated). For ABNB it is the only competitor-side table we would hold with party composition, length of stay and guest-country x property-country on the same row, usable as a 2023 cross-section comparator for party size (Hawaii DBEDT), LOS assumptions in the ADR decomposition, cross-border share and apartment-vs-hotel mix by country; it is a single-year cross-section with no year column, so it is not a time series.",
+ "issues": "Licence: README says 'published under the following non-commercial license' but links CC BY-SA 4.0 (which is not non-commercial) and the card tag is 'cc' - contradictory; treat as research/non-commercial use only and a human should decide before anything derived is quoted in the pitch. Sampling caveat: guest_country is anonymised (codes like 'Zuc'), the sample is 2023 only, reviews were filtered to 'informative' ones with >=3 topics and only tens of thousands of properties, so shares are not population estimates. Heads are the first N bytes of each file, not random samples. Files were re-saved via pandas (CRLF line endings on Windows). The job-card URL (ceur-ws.org challenge PDF) was not fetched; data URL is the Hugging Face repo.",
+ "source_urls": [
+  "https://huggingface.co/api/datasets/Booking-com/accommodation-reviews/tree/main",
+  "https://huggingface.co/api/datasets/Booking-com/accommodation-reviews/tree/main/rectour24",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/README.md",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/train.csv",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/val.csv",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_users.csv",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_reviews.csv",
+  "https://huggingface.co/datasets/Booking-com/accommodation-reviews/resolve/main/rectour24/train_matches.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

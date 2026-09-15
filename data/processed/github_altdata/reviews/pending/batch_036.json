@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:jchow2/python-expedia-hotel-booking-searches",
+  "url": "https://github.com/Jchow2/python-expedia-hotel-booking-searches",
+  "name": "python-expedia-hotel-booking-searches",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Analysis of the classic Kaggle \"Expedia Hotel Recommendations\" competition search-log dataset (user aggregate purchase history and hotel prices vs. nights-stay outcomes, fields like srch_saturday_night_bool). This is search-intent/click data from ~2013-2014, not company-level KPI data.",
+  "why_useful": "Marginal: it is old, user-level search-log data rather than an OTA volume/KPI series, but the underlying Kaggle dataset (Expedia, 37M+ rows) is a genuine large historical travel-search dataset that in principle could be mined for seasonality/demand patterns as a very rough competitor-OTA demand proxy.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "geography": "Unspecified (Expedia search logs, likely US-heavy)",
+  "time_coverage": "~2013-2014",
+  "size_hint": "Kaggle source dataset is tens of millions of rows",
+  "license": "Kaggle competition terms",
+  "last_activity": "unconfirmed",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Marginal: it is old, user-level search-log data rather than an OTA volume/KPI series, but the underlying Kaggle dataset (Expedia, 37M+ rows) is a genuine large historical travel-search dataset that in principle could be mined for seasonality/demand patterns as a very rough competitor-OTA demand proxy."
+  ]
+ },
+ {
+  "key": "github:factden/traveloka-hotel-reviews-scraper",
+  "url": "https://github.com/factden/traveloka-hotel-reviews-scraper",
+  "name": "traveloka-hotel-reviews-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Extracts Traveloka (Southeast Asia OTA) hotel and activity review data.",
+  "why_useful": "Southeast Asia-specific OTA review source, relevant to APAC regional split (gap #7).",
+  "potential": "low",
+  "geography": "Southeast Asia",
+  "time_coverage": "Live pull only",
+  "size_hint": "N/A (method only)",
+  "license": "unspecified",
+  "last_activity": "unknown, active account",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hotel and STR reviews as demand: review velocity datasets (Google, TripAdvisor, Booking) with dates; review-based nowcasting repos"
+  ],
+  "why_all": [
+   "Southeast Asia-specific OTA review source, relevant to APAC regional split (gap #7)."
+  ]
+ },
+ {
+  "key": "github:sirmist/hostelworld-scraper",
+  "url": "https://github.com/SirMist/hostelworld-scraper",
+  "name": "SirMist/hostelworld-scraper",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An Apify-style actor scraping Hostelworld (budget-hostel OTA) listing/price data. Multiple near-duplicate unstarred repos exist (elmouuuuuu, praveencs87, cpastenesdev, MoMa3, pulsedev2gwencd \u2014 all 'hostelworld-scraper'), none maintained or carrying committed data.",
+  "why_useful": "Hostelworld is named explicitly in our own gap list (item 9, competitor/adjacent supply) as a target; this cluster confirms scraping method exists on GitHub but nothing here is data-rich, maintained, or has stars \u2014 worth one line as 'method exists, low quality' so nobody re-searches this exact query later.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2026-08-11 (most recent fork)",
+  "geography": "global (Hostelworld's own hostel inventory, Europe/LatAm/Asia heavy)",
+  "time_coverage": "real-time scrape only",
+  "size_hint": "code only",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "wildcard: a data journalist at a travel-industry outlet who has scrape"
+  ],
+  "why_all": [
+   "Hostelworld is named explicitly in our own gap list (item 9, competitor/adjacent supply) as a target; this cluster confirms scraping method exists on GitHub but nothing here is data-rich, maintained, or has stars \u2014 worth one line as 'method exists, low quality' so nobody re-searches this exact query later."
+  ]
+ },
+ {
+  "key": "github:ilyankou/passport-index-dataset",
+  "url": "https://github.com/ilyankou/passport-index-dataset",
+  "name": "ilyankou/passport-index-dataset",
+  "category": "cross_border_visa",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "313-star, actively maintained (updated 29 Aug 2026) repo with CSVs of visa requirements for 199 countries, 2019-2025 vintages, MIT licensed. Includes a passport-index-matrix.csv (bilateral visa-requirement matrix: visa-free / visa-on-arrival / e-visa / visa-required codes between every pair of countries) and passport-index-tidy.csv, refreshed periodically from the Passport Index / Henley-style source.",
+  "why_useful": "A time-stamped, versioned visa-requirement matrix lets you build a cross-border 'ease of travel' index by origin country, useful as a slow-moving control variable for APAC/LatAm inbound demand shifts (gap #7) and as a covariate in any cross-border share model (gap #20); MIT license and multi-year vintages (2019-2025) make it usable point-in-time if commit history is walked.",
+  "potential": "high",
+  "license": "MIT",
+  "last_activity": "2026-08-29",
+  "size_hint": "multiple CSVs, low MB, 199x199 country matrix per year",
+  "time_coverage": "2019-2025 (annual snapshots)",
+  "geography": "global, 199 countries",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "A time-stamped, versioned visa-requirement matrix lets you build a cross-border 'ease of travel' index by origin country, useful as a slow-moving control variable for APAC/LatAm inbound demand shifts (gap #7) and as a covariate in any cross-border share model (gap #20); MIT license and multi-year vintages (2019-2025) make it usable point-in-time if commit history is walked.",
+   "A time-stamped (near point-in-time, annual snapshots 2019-2025) global visa-policy panel is exactly the \"visa changes\" shock category in the brief -- lets the team flag bilateral visa-requirement changes (e.g., a source country gaining/losing visa-free access to a destination) that would shift cross-border nights and regional mix, and is structured for a difference-in-differences design around policy-change dates."
+  ]
+ },
+ {
+  "key": "github:eliseocab/brownsville-wait-times",
+  "url": "https://github.com/EliseoCab/brownsville-wait-times",
+  "name": "EliseoCab/brownsville-wait-times",
+  "category": "cross_border_visa",
+  "data_kind": "both",
+  "what_it_holds": "Very fresh repo (last push 14 Sep 2026, same day as this scout) with committed XML snapshots of CBP Brownsville, TX Port of Entry wait times: data/bwt-all.xml (181KB, appears to be an accumulating historical log) and data/bwt.xml (3.3KB, latest snapshot), pulled from the public CBP Border Wait Times feed (bwt.cbp.gov).",
+  "why_useful": "A single-port but actually time-stamped, accumulating CBP wait-time archive -- if bwt-all.xml is a running log it could give a real point-in-time series of land-border congestion (US-Mexico), a genuine proxy for cross-border travel volume (gap #10); worth checking XML contents/date range before relying on it, single port limits usefulness for a national picture.",
+  "potential": "medium",
+  "license": "none stated",
+  "last_activity": "2026-09-14",
+  "size_hint": "181KB accumulating XML log + 3.3KB current snapshot",
+  "time_coverage": "unclear -- appears to be actively growing as of Sep 2026",
+  "geography": "Brownsville, TX (US-Mexico border) only",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "A single-port but actually time-stamped, accumulating CBP wait-time archive -- if bwt-all.xml is a running log it could give a real point-in-time series of land-border congestion (US-Mexico), a genuine proxy for cross-border travel volume (gap #10); worth checking XML contents/date range before relying on it, single port limits usefulness for a national picture."
+  ]
+ }
+]

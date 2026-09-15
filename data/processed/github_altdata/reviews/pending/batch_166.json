@@ -1,0 +1,133 @@
+[
+ {
+  "key": "github:clintonboys/trendy-scraper",
+  "url": "https://github.com/clintonboys/trendy-scraper",
+  "name": "trendy-scraper",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scrapes Google Trends data over long timescales and stitches together for daily data (75 stars, updated 10 Aug 2026) \u2014 another overlapping-window daily reconstruction tool.",
+  "why_useful": "Same class as above; actively updated in 2026 which matters given Google periodically breaks the unofficial endpoints pytrends relies on.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "daily, multi-year reconstruction",
+  "size_hint": "library",
+  "license": "unspecified",
+  "last_activity": "2026-08-10",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Same class as above; actively updated in 2026 which matters given Google periodically breaks the unofficial endpoints pytrends relies on."
+  ]
+ },
+ {
+  "key": "github:pmassicotte/gtrendsr",
+  "url": "https://github.com/PMassicotte/gtrendsR",
+  "name": "gtrendsR",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package providing functions to query and display Google Trends data (interest over time/region/related). This is the R-ecosystem equivalent of pytrends and is the dependency trendecon builds on top of.",
+  "why_useful": "Only relevant if the team wants an R-native Trends client (e.g. to pair with R-based nowcasting repos like adaptive-nowcasting or the Jordan BSTS repo found above); otherwise redundant with pytrends.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (client)",
+  "size_hint": "library",
+  "license": "unspecified in listing",
+  "last_activity": "2026-08-11",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "functional duplicate of pytrends in a different language",
+  "hits": 2,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Only relevant if the team wants an R-native Trends client (e.g. to pair with R-based nowcasting repos like adaptive-nowcasting or the Jordan BSTS repo found above); otherwise redundant with pytrends.",
+   "Only useful if the team wants an R-based pull path (e.g. to reuse trendecon directly); otherwise duplicative of pytrends-family tools already available in Python."
+  ]
+ },
+ {
+  "key": "github:sdil87/trendspy",
+  "url": "https://github.com/sdil87/trendspy",
+  "name": "trendspy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT, 120 stars, updated 10 Sep 2026, another actively-maintained Python Google Trends client positioned as a pytrends alternative.",
+  "why_useful": "Same rationale as trendspyg above \u2014 maintenance/resilience fallback, not new data.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (client)",
+  "size_hint": "library",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "functional duplicate of pytrends",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Same rationale as trendspyg above \u2014 maintenance/resilience fallback, not new data."
+  ]
+ },
+ {
+  "key": "github:guilherme-salome/pytrendsdaily",
+  "url": "https://github.com/guilherme-salome/pytrendsdaily",
+  "name": "pytrendsdaily",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT, 12 stars \u2014 small script specifically for fetching DAILY (not weekly) Google Trends data, built on pytrends.",
+  "why_useful": "Minor/low-effort alternative for daily-granularity pulls; lower quality signal than the more-starred longtrends/GoogleTrends-Scraper repos but worth noting as another implementation of the same idea.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "daily",
+  "size_hint": "small script",
+  "license": "MIT",
+  "last_activity": "2025-11-08",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Minor/low-effort alternative for daily-granularity pulls; lower quality signal than the more-starred longtrends/GoogleTrends-Scraper repos but worth noting as another implementation of the same idea."
+  ]
+ },
+ {
+  "key": "github:suryasev/unofficial-google-trends-api",
+  "url": "https://github.com/suryasev/unofficial-google-trends-api",
+  "name": "unofficial-google-trends-api",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "221 stars, updated 13 Aug 2026 \u2014 Python-based API using the raw HTTP Trends endpoint directly (predates/parallels pytrends).",
+  "why_useful": "Another maintained fallback client if pytrends breaks; no new data.",
+  "potential": "low",
+  "geography": "global",
+  "time_coverage": "n/a (client)",
+  "size_hint": "library",
+  "license": "unspecified",
+  "last_activity": "2026-08-13",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "functional duplicate of pytrends",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Another maintained fallback client if pytrends breaks; no new data."
+  ]
+ }
+]

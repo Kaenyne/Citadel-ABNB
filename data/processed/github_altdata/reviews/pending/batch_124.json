@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:antontarasenko/awesome-economics",
+  "url": "https://github.com/antontarasenko/awesome-economics",
+  "name": "awesome-economics",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "1,732-star curated collection of links for economists (data, journals, blogs, tools), actively updated (12 Sep 2026).",
+  "why_useful": "Broad economist-curated index worth mining for regional/international statistical-agency links (LatAm/APAC volume, gap 7) and macro vintage sources (gap 4) not yet in our FRED/Eurostat/BEA holdings; needs a section-by-section read to confirm specifics.",
+  "potential": "low",
+  "size_hint": "README link list",
+  "geography": "global",
+  "time_coverage": "n/a (index)",
+  "last_activity": "2026-09-12",
+  "license": "unspecified",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Broad economist-curated index worth mining for regional/international statistical-agency links (LatAm/APAC volume, gap 7) and macro vintage sources (gap 4) not yet in our FRED/Eurostat/BEA holdings; needs a section-by-section read to confirm specifics."
+  ]
+ },
+ {
+  "key": "github:brandonhimpfen/awesome-economics",
+  "url": "https://github.com/brandonhimpfen/awesome-economics",
+  "name": "awesome-economics (brandonhimpfen)",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Smaller (15-star) curated list explicitly of datasets, tools, models, and institutions for economics, updated 6 Sep 2026.",
+  "why_useful": "Second independent economics-data index to cross-check against gap 4 (vintage/ALFRED-style data) and gap 6 (consumer spend panels); not yet inspected section-by-section.",
+  "potential": "low",
+  "size_hint": "README link list",
+  "geography": "global",
+  "time_coverage": "n/a (index)",
+  "last_activity": "2026-09-06",
+  "license": "unspecified",
+  "gap_targets": [
+   4,
+   6
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Second independent economics-data index to cross-check against gap 4 (vintage/ALFRED-style data) and gap 6 (consumer spend panels); not yet inspected section-by-section."
+  ]
+ },
+ {
+  "key": "github:manuelarod/restaurant-industry-amidst-covid19",
+  "url": "https://github.com/manuelarod/restaurant-industry-amidst-covid19",
+  "name": "restaurant-industry-amidst-covid19",
+  "category": "macro_consumer_spend",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "YoY_Seated_Diner_Data.csv and YoY_Reopened_Seated_Diner_Data.csv \u2014 OpenTable's year-over-year seated-diners series, downloaded from the OpenTable website 21 Jul 2020, plus a NYT us-states.csv COVID case-count file pulled 26 Jul 2020. US state-level coverage, single point-in-time pull (mid-2020 only).",
+  "why_useful": "Matches gap #6 (OpenTable seated-diners as a public consumer-spend/dining-out proxy); useful mainly as a worked example of scraping/parsing OpenTable's public State-of-the-Industry page and as a one-time historical anchor point, not an ongoing feed.",
+  "potential": "low",
+  "gap_targets": [
+   6
+  ],
+  "geography": "United States (subset of states)",
+  "time_coverage": "Single snapshot, July 2020",
+  "size_hint": "2 small CSVs",
+  "license": "unconfirmed",
+  "last_activity": "2020 (dated)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Company KPI and alt-data backtest repos for ABNB or OTAs: anyone who already assembled Airbnb quarterly KPI datasets, consensus, or alt-data panels"
+  ],
+  "why_all": [
+   "Matches gap #6 (OpenTable seated-diners as a public consumer-spend/dining-out proxy); useful mainly as a worked example of scraping/parsing OpenTable's public State-of-the-Industry page and as a one-time historical anchor point, not an ongoing feed."
+  ]
+ },
+ {
+  "key": "github:mbenitezzz33/where-has-the-money-gone-u.s-industry-pay",
+  "url": "https://github.com/Mbenitezzz33/where-has-the-money-gone-U.S-Industry-Pay",
+  "name": "where-has-the-money-gone-U.S-Industry-Pay (AEDR)",
+  "category": "macro_consumer_spend",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Long-run BLS QCEW analysis, 1990-2025, 2-digit NAICS sectors nationally, part of an 'American Economic Data Repository' (AEDR) series. Analytical Parquet datasets are hosted on Kaggle (pulled programmatically by the notebook, not committed to the git repo). Findings flag 'Accommodation & Food Services' as one of the sectors with the largest employment-share vs wage-share divergence, though the sector isn't broken out into its own file.",
+  "why_useful": "Long national QCEW time series (35 years) with a Kaggle-hosted Parquet mirror; the accommodation & food services divergence finding is a relevant labor-cost/margin signal, though the raw sector cut would need to be re-derived from the underlying QCEW data rather than taken pre-cut from this repo.",
+  "potential": "low",
+  "gap_targets": [
+   8
+  ],
+  "license": "MIT",
+  "geography": "US, national",
+  "time_coverage": "1990-2025",
+  "size_hint": "Kaggle-hosted Parquet, size unknown",
+  "last_activity": "2026-08-13",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "Long national QCEW time series (35 years) with a Kaggle-hosted Parquet mirror; the accommodation & food services divergence finding is a relevant labor-cost/margin signal, though the raw sector cut would need to be re-derived from the underlying QCEW data rather than taken pre-cut from this repo."
+  ]
+ },
+ {
+  "key": "github:data4thepeople/nfp_treemap",
+  "url": "https://github.com/Data4ThePeople/NFP_Treemap",
+  "name": "NFP_Treemap",
+  "category": "macro_consumer_spend",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Self-contained single-file HTML tool built on the BLS API v2 (CES) rendering a drill-down treemap of nonfarm payroll employment by Census NAICS definitions, with anomaly scoring.",
+  "why_useful": "A quick way to isolate and visualize the CES leisure & hospitality supersector and its NAICS sub-industries (e.g. accommodation, food services) month by month; more a browsing tool than a dataset, but a fast BLS API v2 client pattern.",
+  "potential": "low",
+  "gap_targets": [],
+  "license": "unknown",
+  "geography": "US, national (CES)",
+  "time_coverage": "current BLS API v2 series, historical depth per BLS API limits",
+  "size_hint": "single HTML file",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "overlaps our existing ~40-series FRED CPI/CES pull, but adds an interactive NAICS drill-down view",
+  "hits": 1,
+  "themes": [
+   "Hospitality labour and cost data: BLS QCEW/CES leisure and hospitality, hotel wages, cleaning-service prices, STR operating cost datasets"
+  ],
+  "why_all": [
+   "A quick way to isolate and visualize the CES leisure & hospitality supersector and its NAICS sub-industries (e.g. accommodation, food services) month by month; more a browsing tool than a dataset, but a fast BLS API v2 client pattern."
+  ]
+ }
+]

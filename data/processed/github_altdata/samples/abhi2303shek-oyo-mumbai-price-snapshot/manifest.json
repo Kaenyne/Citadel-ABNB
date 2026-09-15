@@ -1,0 +1,24 @@
+{
+ "slug": "abhi2303shek-oyo-mumbai-price-snapshot",
+ "url": "https://github.com/Abhi2303shek/OYO",
+ "sampled": true,
+ "total_bytes": 76756,
+ "files": [
+  "oyo.csv",
+  "Insights.txt"
+ ],
+ "rows": "oyo.csv: 791 rows (id populated on 460, NaN on 331); Insights.txt: n/a (text, list of 30 analysis questions)",
+ "columns": "id, hotel, location, price (INR nightly), discount (%), rating (review count)",
+ "date_range": "none - no date column; single undated snapshot, repo last pushed 2026-02-27",
+ "how_pulled": "curl -sL -o oyo.csv https://raw.githubusercontent.com/Abhi2303shek/OYO/HEAD/oyo.csv; curl -sL -o Insights.txt https://raw.githubusercontent.com/Abhi2303shek/OYO/HEAD/Insights.txt; gh api repos/Abhi2303shek/OYO (metadata); python/pandas to describe",
+ "full_dataset_size": "This is the whole dataset: 7 files, ~120 KB (oyo.csv 73.8 KB, oyo.sql 7.8 KB, Cleaning.ipynb 34 KB, Insights.txt 3 KB, README, LICENSE, .gitignore); 791 rows",
+ "description": "A single undated scrape of OYO (Indian budget-hotel aggregator) listing cards: one row per property with hotel name (Oyo/Flagship/Collection O/Super/Capital O brand tiers), locality string, INR nightly list price, headline discount percent and review count. Despite the job-card slug, the sample is not Mumbai-only: the location suffix is Bangalore (149), Delhi/New Delhi (~140), Kolkata (102), Mumbai (20) plus locality-only strings (Karol Bagh, Paharganj, Mahipalpur), so it is a four-metro cross-section; median price INR 1,599, median discount 65%, max review count 7,398. Source is the author's own scrape (Cleaning.ipynb), MIT licence, 0 stars. For ABNB an analyst could use it only as a static reference for the Indian budget-lodging price and discount structure (list-vs-effective price wedge ~65%) that Airbnb's APAC supply competes against; no time dimension, so no nowcast or point-in-time use.",
+ "issues": "Slug/one_line mislabel: dataset covers Bangalore, Delhi, Kolkata and Mumbai, not Mumbai alone. No date or scrape timestamp anywhere (repo push 2026-02-27 is the only bound). id column NaN for 331 rows (concatenated scrapes). rating is a review count, not a star rating. OYO's terms of service may not permit scraping; the data was scraped by the repo author, not by us, and we did not run any scraper. Very small, no vintage, no ABNB relevance beyond a static competitor price reference.",
+ "source_urls": [
+  "https://raw.githubusercontent.com/Abhi2303shek/OYO/HEAD/oyo.csv",
+  "https://raw.githubusercontent.com/Abhi2303shek/OYO/HEAD/Insights.txt",
+  "https://api.github.com/repos/Abhi2303shek/OYO",
+  "https://api.github.com/repos/Abhi2303shek/OYO/contents"
+ ],
+ "pulled_at": "2026-09-14"
+}

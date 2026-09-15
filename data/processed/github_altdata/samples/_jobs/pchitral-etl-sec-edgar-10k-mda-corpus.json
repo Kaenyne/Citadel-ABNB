@@ -1,0 +1,10 @@
+{
+ "slug": "pchitral-etl-sec-edgar-10k-mda-corpus",
+ "url": "https://github.com/pChitral/ETL-SEC-EDGAR-10-k-Filings",
+ "category": "company_filings_estimates",
+ "data_kind": "both",
+ "one_line": "Committed MD&A text corpus: ticker_data/ holds 135 per-ticker .parquet files (repo ~210 MB) with columns CIK, ticker, report year and extracted 10-K MD&A text, built with sec_edgar_downloader + BeautifulSoup; includes BKNG.parquet (849 KB), MAR.parquet (940 KB) and UBER.parquet (179 KB) but NOT ABNB, EXPE or HLT; plus processing_status.csv (471 KB) and run logs; licence is a custom but MIT-equivalent permissive text (GitHub reports NOASSERTION); 17 stars, last push 11 Feb 2024.",
+ "abnb_use": "Gap 15 / management-tone work: gives a ready cross-sectional MD&A panel for two direct lodging/OTA comparables (BKNG, MAR) plus 133 large caps, so peer 'tone' or topic scores can be benchmarked against a market-wide distribution rather than read in isolation \u2014 our earlier management-tone test failed on our own construction, and a cross-sectional baseline is exactly the missing ingredient. Annual 10-K cadence only, so it reads on narrative, not on quarterly nights/ADR.",
+ "sample_plan": "git clone --depth 1 --filter=blob:none --sparse https://github.com/pChitral/ETL-SEC-EDGAR-10-k-Filings.git && cd ETL-SEC-EDGAR-10-k-Filings && git sparse-checkout set ticker_data/BKNG.parquet ticker_data/MAR.parquet ticker_data/UBER.parquet processing_status.csv README.md LICENSE  \u2014 total ~2.5 MB. Do NOT check out the rest of ticker_data (~200 MB) or the *.out logs (19 MB + 2 MB). Then report each parquet's schema, row count and min/max report year (python: pandas.read_parquet).",
+ "tos_or_license_flag": false
+}

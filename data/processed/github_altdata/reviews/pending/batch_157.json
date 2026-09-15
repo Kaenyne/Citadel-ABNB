@@ -1,0 +1,124 @@
+[
+ {
+  "key": "github:villa-paraiso-vacation-rentals/guesty-cli",
+  "url": "https://github.com/Villa-Paraiso-Vacation-Rentals/guesty-cli",
+  "name": "guesty-cli",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Independent Python CLI wrapping the Guesty PMS API with local sync of a connected account's listings/reservations to local files. No committed sample data; requires the operator's own Guesty credentials.",
+  "why_useful": "Only relevant if the team can get read access to a real vacation-rental manager's Guesty account (e.g. through a contact) \u2014 would then give a clean local occupancy/ADR export mechanism.",
+  "potential": "low",
+  "gap_targets": [
+   2
+  ],
+  "geography": "n/a",
+  "time_coverage": "n/a",
+  "size_hint": "CLI code only",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Property-management / channel-manager / PMS public data (Guesty, Hostaway, Lodgify, OwnerRez, Hostfully, Smoobu, Beds24, iCal feeds) and vacation-rental manager benchmarks"
+  ],
+  "why_all": [
+   "Only relevant if the team can get read access to a real vacation-rental manager's Guesty account (e.g. through a contact) \u2014 would then give a clean local occupancy/ADR export mechanism."
+  ]
+ },
+ {
+  "key": "github:rimiti/property-occupancy",
+  "url": "https://github.com/rimiti/property-occupancy",
+  "name": "property-occupancy",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MIT-licensed TypeScript/npm package (11 commits, 3 stars) computing daily/monthly occupancy-rate percentages from a caller-supplied array of reservation {check-in, check-out} objects; mentions Airbnb/Booking.com/VRBO as target platforms but does not itself pull or integrate any listing/reservation data.",
+  "why_useful": "Pure calculation utility, not a data source - would only be useful if paired with an actual VRBO reservation feed, which the team does not have. Cataloguing for completeness only.",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "Vrbo / HomeAway datasets and scrapers, Vrbo listing snapshots, Expedia Group vacation rental supply data"
+  ],
+  "why_all": [
+   "Pure calculation utility, not a data source - would only be useful if paired with an actual VRBO reservation feed, which the team does not have. Cataloguing for completeness only."
+  ]
+ },
+ {
+  "key": "github:zunda-pixel/tripadvisor-swift",
+  "url": "https://github.com/zunda-pixel/tripadvisor-swift",
+  "name": "zunda-pixel/tripadvisor-swift",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Swift library wrapping the official TripAdvisor Content API (requires an official API key); updated 2026-09-12.",
+  "why_useful": "Confirms the official TripAdvisor Content API is still actively wrapped/maintained by third parties as a legitimate (non-scraping) data-acquisition path, though it needs an API key the team does not have.",
+  "potential": "low",
+  "gap_targets": [
+   9
+  ],
+  "size_hint": "tool only, needs official API key",
+  "time_coverage": "n/a",
+  "geography": "global",
+  "license": "apache-2.0",
+  "last_activity": "2026-09-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Confirms the official TripAdvisor Content API is still actively wrapped/maintained by third parties as a legitimate (non-scraping) data-acquisition path, though it needs an API key the team does not have."
+  ]
+ },
+ {
+  "key": "github:michigannlp/multilingual_reviews_deception",
+  "url": "https://github.com/MichiganNLP/multilingual_reviews_deception",
+  "name": "MichiganNLP/multilingual_reviews_deception",
+  "category": "methods_tooling",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "NAACL 2025 Findings paper repo, 'Multilingual Deception Detection of GPT-generated Hotel Reviews'. Committed `all_data.csv` labels real vs. GPT-4-generated hotel reviews (label 0 = real, 1 = fake/LLM-generated); generation code in LLM_generation.py; XLM-RoBERTa multilingual modeling. Source platform of the 'real' reviews not confirmed as TripAdvisor specifically in the fetched content. MIT licensed.",
+  "why_useful": "Marginal for KPI forecasting, but relevant to a review-authenticity/fake-review-detection angle if the team ever wants to sanity-check whether a review-velocity signal (ours or a competitor's) is contaminated by synthetic reviews. Low priority for now.",
+  "license": "MIT",
+  "last_activity": "paper published April 2025 (NAACL 2025 Findings)",
+  "geography": "multilingual, unspecified countries",
+  "time_coverage": "not specified",
+  "size_hint": "row count not confirmed",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "potential": "low",
+  "hits": 1,
+  "themes": [
+   "TripAdvisor datasets: hotel/vacation-rental reviews, review velocity, TripAdvisor rentals, scraper repos"
+  ],
+  "why_all": [
+   "Marginal for KPI forecasting, but relevant to a review-authenticity/fake-review-detection angle if the team ever wants to sanity-check whether a review-velocity signal (ours or a competitor's) is contaminated by synthetic reviews. Low priority for now."
+  ]
+ },
+ {
+  "key": "github:csabasidor/occupancy_tax_payers_identifier",
+  "url": "https://github.com/csabasidor/occupancy_tax_payers_identifier",
+  "name": "occupancy_tax_payers_identifier",
+  "category": "methods_tooling",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python + PostgreSQL toolkit (12 numbered scripts) to identify lodging providers with an occupancy-tax obligation within an administrative boundary by cross-referencing Facebook Place Search API, Google Places API, Foursquare Places API, Booking.com, TripAdvisor, and Airbnb.com, plus Eurostat tourism-data integration. No committed output dataset; author states proof-of-concept, no explicit license, scientific-use-only disclaimer. 23 commits.",
+  "why_useful": "A method for cross-platform host/property identification tied to municipal occupancy-tax enforcement (gap #8/#9 supply enumeration); one of its six sources is airbnb.com directly, so running it is a terms-of-service decision per repo policy and is only catalogued, not run.",
+  "potential": "low",
+  "gap_targets": [
+   8,
+   9
+  ],
+  "geography": "generalizable, no specific cities in repo",
+  "time_coverage": "unknown",
+  "size_hint": "code only, no committed data",
+  "license": "none stated, non-commercial disclaimer",
+  "last_activity": "2024-11-09 (per API commit metadata)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "State and city hotel occupancy and lodging-tax datasets (Nevada, Florida tourist development tax, Texas hotel occupancy tax, California TOT, NYC hotel occupancy tax, Hawaii TAT)",
+   "Tourist tax and city-tax datasets: Paris taxe de sejour, Amsterdam toeristenbelasting, Italian imposta di soggiorno, Airbnb remittance reports, occupancy-tax remittance by platform"
+  ],
+  "why_all": [
+   "A method for cross-platform host/property identification tied to municipal occupancy-tax enforcement (gap #8/#9 supply enumeration); one of its six sources is airbnb.com directly, so running it is a terms-of-service decision per repo policy and is only catalogued, not run.",
+   "A working method (not sanctioned for us to run, per repo rules on non-Airbnb scraping decisions) for cross-checking STR supply density against tax-registration compliance in a given city; template for a compliance/coverage cross-check on municipal STR registries we already hold."
+  ]
+ }
+]

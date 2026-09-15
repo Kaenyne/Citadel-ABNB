@@ -1,0 +1,651 @@
+[
+ {
+  "key": "github:piebro/deutsche-bahn-data",
+  "url": "https://github.com/piebro/deutsche-bahn-data",
+  "name": "deutsche-bahn-data",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Historical Deutsche Bahn train schedule, delay (minutes late), cancellation (arrival/departure separately), and station data. Raw API responses (parquet-wrapped XML/JSON) and monthly processed parquet files (20 columns: station, train ID, planned/actual times, delay, cancellation flag) for ~100 largest stations Jul 2024-Nov 2025, then all German stations Nov 2025-present (with a known 2025-11 to 2026-07 API-outage gap). Repo git history was rewritten to drop large files; full data now published on Hugging Face. CC BY 4.0 (DB) data licence.",
+  "why_useful": "German/European rail punctuality and cancellation-rate time series at near-daily granularity \u2014 a EU ground-travel supply/demand and disruption proxy (gap #10) and a possible cancellation-rate methodology analogue for the RNPL/cancellation thesis (gap #3), even though the underlying business (rail) differs from STR bookings.",
+  "potential": "medium",
+  "gap_targets": [
+   10,
+   3
+  ],
+  "geography": "Germany (national rail network)",
+  "time_coverage": "Jul 2024-present (with a documented outage gap)",
+  "size_hint": "Monthly parquet files, ~100-all stations x daily train movements",
+  "license": "MIT (code); CC BY 4.0 Deutsche Bahn (data)",
+  "last_activity": "active as of the 2026 README reference",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "German/European rail punctuality and cancellation-rate time series at near-daily granularity \u2014 a EU ground-travel supply/demand and disruption proxy (gap #10) and a possible cancellation-rate methodology analogue for the RNPL/cancellation thesis (gap #3), even though the underlying business (rail) differs from STR bookings."
+  ]
+ },
+ {
+  "key": "github:joy-pyne/border_crossing_entry_data",
+  "url": "https://github.com/Joy-Pyne/Border_Crossing_Entry_Data",
+  "name": "Joy-Pyne/Border_Crossing_Entry_Data",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "14-star notebook (Joy main.ipynb, 1.2MB) analysing the BTS/data.gov 'Border Crossing Entry Data' dataset (monthly US land-border crossings by port, state, measure -- pedestrians, personal vehicles, trucks, buses, trains -- for the US-Canada and US-Mexico borders, back to 1996, at data.bts.gov/Research-and-Statistics/Border-Crossing-Entry-Data/keg4-3bc2). Repo itself is a notebook, not a raw data mirror; the underlying dataset lives at the BTS/data.gov URL.",
+  "why_useful": "Points directly to the official BTS Border Crossing Entry Data API/download (monthly, 1996-present, all US land ports, mode-level detail), which is a genuine and currently free national-level cross-border volume series relevant to gap #10; better to pull straight from data.bts.gov than via this notebook, but this and ~15 nearly-identical student repos (jiy15, GauravSingh7400, dipankar9794, TejPotu, etc. -- all re-analyzing the same data.gov dataset) confirm the source and its stable Socrata endpoint id (keg4-3bc2).",
+  "potential": "medium",
+  "license": "none stated",
+  "last_activity": "2025-04-22",
+  "size_hint": "source dataset is a multi-hundred-thousand-row Socrata table; this repo just has a notebook",
+  "time_coverage": "1996-present (monthly) per the underlying BTS dataset",
+  "geography": "US land border ports (Canada and Mexico borders)",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Points directly to the official BTS Border Crossing Entry Data API/download (monthly, 1996-present, all US land ports, mode-level detail), which is a genuine and currently free national-level cross-border volume series relevant to gap #10; better to pull straight from data.bts.gov than via this notebook, but this and ~15 nearly-identical student repos (jiy15, GauravSingh7400, dipankar9794, TejPotu, etc. -- all re-analyzing the same data.gov dataset) confirm the source and its stable Socrata endpoint id (keg4-3bc2)."
+  ]
+ },
+ {
+  "key": "github:pontouamringab68/thailand-statistics-analyzer",
+  "url": "https://github.com/pontouamringab68/thailand-statistics-analyzer",
+  "name": "thailand-statistics-analyzer",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "a one-command Python tool pulling Thailand's official national-statistics SDMX API across sectors, with an explicit worked example pulling 'International tourist arrivals to Thailand' with time-based filtering/historical comparison; no data files committed; no license stated; 1 commit",
+  "why_useful": "Fills part of gap 7 (APAC regional travel volume \u2014 Thailand named explicitly) as a ready-made SDMX puller for Thailand visitor arrivals, which we don't currently have a method for.",
+  "potential": "medium",
+  "license": "none stated",
+  "last_activity": "single commit, date not confirmed",
+  "geography": "Thailand",
+  "time_coverage": "whatever the SDMX API exposes historically",
+  "size_hint": "method only, no data committed",
+  "hits": 2,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS",
+   "wildcard: a national tourism-statistics official who knows which agenc"
+  ],
+  "why_all": [
+   "Fills part of gap 7 (APAC regional travel volume \u2014 Thailand named explicitly) as a ready-made SDMX puller for Thailand visitor arrivals, which we don't currently have a method for.",
+   "Concrete route into Thailand's national tourism-arrivals data (APAC volume, gap #7) without hand-rolling an SDMX query against NSO Thailand; very low maturity (0 stars, 1 commit) so treat as a starting point/proof of API existence rather than a finished pipeline."
+  ]
+ },
+ {
+  "key": "github:firstof9/py-gasbuddy",
+  "url": "https://github.com/firstof9/py-gasbuddy",
+  "name": "py-gasbuddy",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python library (18 stars, updated 7 Sep 2026, MIT) that queries GasBuddy's GraphQL API for station-level fuel prices by station ID, zip, or city; returns current regular/mid/premium/diesel price and station metadata. No historical data committed \u2014 a live pull method only.",
+  "why_useful": "GasBuddy crowd-sourced gas prices are a leading, high-frequency (sub-daily) proxy for road-trip cost, which is the key substitute-cost driver for domestic drive-to leisure travel (gap #10, road/fuel theme); pairing weekly national averages with holiday-driving forecasts could feed a NA leisure-demand nowcast alongside TSA and nights data. Would need a scheduled pull to build a point-in-time series from today forward; no backfill.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "license": "MIT",
+  "last_activity": "2026-09-07",
+  "geography": "US",
+  "time_coverage": "live/current only, no history",
+  "size_hint": "small library, no data files",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "GasBuddy crowd-sourced gas prices are a leading, high-frequency (sub-daily) proxy for road-trip cost, which is the key substitute-cost driver for domestic drive-to leisure travel (gap #10, road/fuel theme); pairing weekly national averages with holiday-driving forecasts could feed a NA leisure-demand nowcast alongside TSA and nights data. Would need a scheduled pull to build a point-in-time series from today forward; no backfill."
+  ]
+ },
+ {
+  "key": "github:trendct-data/vehicle-miles-traveled-by-state",
+  "url": "https://github.com/trendct-data/Vehicle-miles-traveled-by-state",
+  "name": "Vehicle-miles-traveled-by-state",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed dataset stitching together FHWA (Federal Highway Administration) Traffic Volume Trends monthly state-level VMT spreadsheets into one file, built by a data journalism shop (TrendCT); one row/file per state per month, sourced directly from FHWA's monthly reports.",
+  "why_useful": "State-level monthly VMT is a direct measure of US road-travel volume and a plausible complement to TSA throughput (already held, flagged as not working post-2024) for the domestic drive-market share of leisure travel; state granularity could support a NA-region driving-vs-flying mix proxy for gap #10.",
+  "potential": "medium",
+  "gap_targets": [
+   10
+  ],
+  "license": "none declared",
+  "last_activity": "2021-07-21",
+  "geography": "US, state-level",
+  "time_coverage": "FHWA monthly VMT series through ~2021 (repo stale since)",
+  "size_hint": "small, stitched CSV(s) from monthly FHWA spreadsheets",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "State-level monthly VMT is a direct measure of US road-travel volume and a plausible complement to TSA throughput (already held, flagged as not working post-2024) for the domestic drive-market share of leisure travel; state granularity could support a NA-region driving-vs-flying mix proxy for gap #10."
+  ]
+ },
+ {
+  "key": "github:lykmapipo/us-gas-prices",
+  "url": "https://github.com/lykmapipo/US-Gas-Prices",
+  "name": "US-Gas-Prices",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Python (Selenium) scrapers that pull daily average gas prices from gasprices.aaa.com at state level (scrape_state_daily_averages.py) and metro/457-city level (scrape_metro_daily_averages.py), saving one CSV per day under data/state-daily-averages/ and data/metro-daily-averages/. Repo currently only has one committed snapshot (2026-09-13.csv) at check time -- it is a live/ongoing scrape, not a backfilled history -- but the method is a clean one-command pull of AAA's full state+metro daily average retail gas price panel.",
+  "why_useful": "AAA state/metro daily gas price panel is a real-time, high-frequency road-travel cost proxy that speaks to gap #10 (road capacity/traffic) and to consumer discretionary travel spend generally -- higher pump prices are a classic drag on US domestic driving vacations (a chunk of ABNB North America nights). MIT licensed, active as of Sep 2026.",
+  "potential": "medium",
+  "geography": "US (state + 457 metro areas)",
+  "time_coverage": "live-only, started ~Sep 2026 at time of check (grows daily going forward)",
+  "size_hint": "1 CSV/day, ~50 rows (states) or ~457 rows (metros) per file",
+  "license": "MIT",
+  "last_activity": "2026-09-13 (data commit)",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "AAA state/metro daily gas price panel is a real-time, high-frequency road-travel cost proxy that speaks to gap #10 (road capacity/traffic) and to consumer discretionary travel spend generally -- higher pump prices are a classic drag on US domestic driving vacations (a chunk of ABNB North America nights). MIT licensed, active as of Sep 2026."
+  ]
+ },
+ {
+  "key": "github:gueyenono/scrapeusgasprices",
+  "url": "https://github.com/gueyenono/ScrapeUSGasPrices",
+  "name": "ScrapeUSGasPrices",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python crawler that scrapes daily average gas prices for 457 US cities from the AAA Gas Prices website (gasprices.aaa.com), started ~2019-2022 vintage per repo notes (references a March 2022 outage). Method only in the README snippet seen; check repo tree for any committed historical CSVs.",
+  "why_useful": "Another independent AAA city-level gas price scraper, potentially with a longer running history (mentions issues from 2022) than lykmapipo's repo -- worth checking for a multi-year backfill of city-level pump prices.",
+  "potential": "medium",
+  "geography": "US, 457 cities",
+  "time_coverage": "unclear from README snippet; scraper referenced issues as far back as March 2022, suggesting it may have run since ~2019-2022",
+  "size_hint": "unknown, need to check data/ folder",
+  "license": "unknown",
+  "last_activity": "unknown",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Another independent AAA city-level gas price scraper, potentially with a longer running history (mentions issues from 2022) than lykmapipo's repo -- worth checking for a multi-year backfill of city-level pump prices."
+  ]
+ },
+ {
+  "key": "github:byu-transpolab/nhts2017",
+  "url": "https://github.com/byu-transpolab/nhts2017",
+  "name": "nhtsr",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package producing eight tidy tibbles (households, persons, vehicles, trips) from the National Household Travel Survey (NHTS) 2017 and 2022 waves, properly typed and labeled from the raw ORNL SPSS files. Lets you compute trip counts, trip length, VMT-adjacent stats by metro size, day of week, etc.",
+  "why_useful": "NHTS is the authoritative US household travel behavior survey (trip counts, purpose, length, mode, vehicle ownership) -- useful for road-trip/leisure-travel share of total US travel and for cross-referencing vacation driving behavior against ABNB's North America nights, addressing gap #10 (road travel capacity/behavior) from a demand side rather than price side.",
+  "potential": "medium",
+  "geography": "US (national survey)",
+  "time_coverage": "2017 and 2022 survey waves (2022 file distributed by ORNL 2022-2024)",
+  "size_hint": "microdata, tens of thousands of household/trip records per wave",
+  "license": "unspecified in README; underlying NHTS data is public (ORNL/FHWA)",
+  "last_activity": "unknown, package supports up to 2022 wave",
+  "gap_targets": [
+   10,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "NHTS is the authoritative US household travel behavior survey (trip counts, purpose, length, mode, vehicle ownership) -- useful for road-trip/leisure-travel share of total US travel and for cross-referencing vacation driving behavior against ABNB's North America nights, addressing gap #10 (road travel capacity/behavior) from a demand side rather than price side."
+  ]
+ },
+ {
+  "key": "github:api-evangelist/bureau-of-transportation-statistics",
+  "url": "https://github.com/api-evangelist/bureau-of-transportation-statistics",
+  "name": "bureau-of-transportation-statistics (API Evangelist profile)",
+  "category": "travel_volume_transport",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Third-party API profile (apis.yml/apis.json plus Postman/OpenAPI collections) pointing to the US Bureau of Transportation Statistics's public API surface: the BTS Open Data Socrata (SODA) portal (data.bts.gov), TranStats (airline on-time performance, carrier/airport snapshots, fuel consumption -- this is BTS T-100/DB1B territory, already a named gap #10 target), and the Freight Analysis Framework (FAF) for domestic/international freight flow volume and value by mode.",
+  "why_useful": "Not itself a road/fuel dataset, but a ready-made, machine-readable index (Postman + OpenAPI collections) of every BTS API surface -- aviation (T-100/DB1B), freight (FAF), and general transportation economics -- directly matching gap #10's 'BTS T-100/DB1B' and freight/road capacity ask, and could shortcut discovery of a BTS 'Highway Statistics'/VMT-adjacent Socrata dataset via data.bts.gov.",
+  "potential": "medium",
+  "geography": "US (national + state)",
+  "time_coverage": "n/a (API index, not a data snapshot)",
+  "size_hint": "small YAML/Postman collection files",
+  "license": "unclear for the profile repo itself (informational); underlying BTS data is public govt data",
+  "last_activity": "modified 2026-04-23",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Not itself a road/fuel dataset, but a ready-made, machine-readable index (Postman + OpenAPI collections) of every BTS API surface -- aviation (T-100/DB1B), freight (FAF), and general transportation economics -- directly matching gap #10's 'BTS T-100/DB1B' and freight/road capacity ask, and could shortcut discovery of a BTS 'Highway Statistics'/VMT-adjacent Socrata dataset via data.bts.gov."
+  ]
+ },
+ {
+  "key": "github:kevinsoo/npvisits",
+  "url": "https://github.com/kevinsoo/npVisits",
+  "name": "npVisits",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed CSV 'All National Parks Visitation 1904-2016.csv' plus 'parks.csv' and 'parks_area.csv' (park metadata) and an R .Rda cache (parkVisits.Rda). Long annual NPS visitation series per park, 1904-2016, sourced originally from NPS IRMA stats system. R analysis script clean_data.R included.",
+  "why_useful": "US domestic leisure-travel demand proxy going back over a century; useful as a long macro backdrop series for national-park-driven road-trip/leisure demand even though NPS's own API/IRMA portal (irma.nps.gov/STATS) is the live, current-vintage source. Not a numbered gap explicitly but supports category 6/regional travel-volume framing (gap 7 analog for domestic).",
+  "potential": "medium",
+  "geography": "USA, per-park",
+  "time_coverage": "1904-2016 (annual)",
+  "size_hint": "single CSV, hundreds of parks x ~113 years",
+  "license": "none declared",
+  "last_activity": "2022-06-03",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "US domestic leisure-travel demand proxy going back over a century; useful as a long macro backdrop series for national-park-driven road-trip/leisure demand even though NPS's own API/IRMA portal (irma.nps.gov/STATS) is the live, current-vintage source. Not a numbered gap explicitly but supports category 6/regional travel-volume framing (gap 7 analog for domestic)."
+  ]
+ },
+ {
+  "key": "github:emmyoop/texas-state-parks",
+  "url": "https://github.com/emmyoop/texas-state-parks",
+  "name": "texas-state-parks",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Data/ directory with 5 committed Texas Parks & Wildlife monthly visitation Excel workbooks covering FY17 (Sep 2016-Aug 2017) through FY21 (Sep 2020-Jan 2021), 'all parks' monthly attendance reformatted from TPWD source releases. Includes a Jupyter notebook 'State Park Data Cleanup.ipynb'.",
+  "why_useful": "State-level monthly park attendance panel spanning pre-COVID through pandemic reopening; a regional US leisure/staycation demand proxy that could triangulate with STR nights in Texas markets (Austin is in our Inside Airbnb panel).",
+  "potential": "medium",
+  "geography": "Texas, USA (all TPWD state parks)",
+  "time_coverage": "Sep 2016 - Jan 2021 monthly",
+  "size_hint": "5 Excel workbooks, all-parks x month",
+  "license": "GPL-3.0",
+  "last_activity": "2021-03-16",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "State-level monthly park attendance panel spanning pre-COVID through pandemic reopening; a regional US leisure/staycation demand proxy that could triangulate with STR nights in Texas markets (Austin is in our Inside Airbnb panel)."
+  ]
+ },
+ {
+  "key": "github:cat-grep/us-national-park-visit",
+  "url": "https://github.com/cat-grep/us-national-park-visit",
+  "name": "us-national-park-visit",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Data visualization web app described as covering '44 years (1979-2023) of U.S. National Park visitation data' with interactive charts, maps and rankings; likely ships a processed CSV/JSON of annual visitation by park for that span (unverified exact file).",
+  "why_useful": "If the underlying dataset is genuinely 1979-2023, it is a longer and more current NPS visitation panel than either kevinsoo/npVisits (ends 2016) or aliu82's 2012-2022 set, giving the most complete free domestic park-visitation backdrop found in this sweep.",
+  "potential": "medium",
+  "geography": "USA national parks",
+  "time_coverage": "1979-2023 (claimed, annual)",
+  "size_hint": "unverified, repo updated May 2026",
+  "license": "none declared",
+  "last_activity": "2026-05-08",
+  "duplicate_of_holding": "overlaps kevinsoo/npVisits (1904-2016) but more current",
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "If the underlying dataset is genuinely 1979-2023, it is a longer and more current NPS visitation panel than either kevinsoo/npVisits (ends 2016) or aliu82's 2012-2022 set, giving the most complete free domestic park-visitation backdrop found in this sweep."
+  ]
+ },
+ {
+  "key": "github:mahsaashouri/aus-wiki-binder",
+  "url": "https://github.com/mahsaashouri/AUS-Wiki-Binder",
+  "name": "AUS-Wiki-Binder",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R scripts (Fixed-origin-Wiki.R 28KB, Fixed-origin-tourism.R 36KB, OLSmodel_se.R) implementing 'fast forecast reconciliation using linear models' that pairs Australian official tourism statistics with Wikipedia pageviews as a covariate/predictor, wrapped for Binder/RStudio interactive use. No raw data files committed (scripts pull tourism + Wikipedia series at run time); academic methodology repo (mahsaashouri appears to be a forecast-reconciliation researcher, likely tied to a published paper).",
+  "why_useful": "Directly on-theme: a working academic method that uses Wikipedia pageviews to nowcast/forecast a country's tourism demand, with real code (not just a notebook). Fills part of gap #5 (Wikipedia pageviews tooling) and is a template method for using pageviews as an APAC travel-demand proxy (gap #7, Australia). Worth reading the underlying paper for the reconciliation approach even though it targets AUS not US/EMEA.",
+  "potential": "medium",
+  "gap_targets": [
+   5,
+   7
+  ],
+  "geography": "Australia",
+  "time_coverage": "unspecified (README/short; scripts likely span whatever the source tourism series covers)",
+  "size_hint": "~65KB of R scripts, no data files",
+  "license": "none declared",
+  "last_activity": "unspecified (repo appears stable/older; not a 2026 update per search metadata ordering)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)"
+  ],
+  "why_all": [
+   "Directly on-theme: a working academic method that uses Wikipedia pageviews to nowcast/forecast a country's tourism demand, with real code (not just a notebook). Fills part of gap #5 (Wikipedia pageviews tooling) and is a template method for using pageviews as an APAC travel-demand proxy (gap #7, Australia). Worth reading the underlying paper for the reconciliation approach even though it targets AUS not US/EMEA."
+  ]
+ },
+ {
+  "key": "github:kenchch/nz-attraction-pageviews",
+  "url": "https://github.com/Kenchch/nz-attraction-pageviews",
+  "name": "nz-attraction-pageviews",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/DuckDB pipeline that incrementally ingests DAILY Wikipedia pageviews (Wikimedia Analytics API, per-article all-access user pageviews, CC0) for eight named New Zealand tourist-attraction Wikipedia articles (e.g. Milford Sound) into a local warehouse.duckdb, with retry/backfill logic, watermark tracking, and a venues CSV listing the monitored attractions. No raw pageview data or database file is committed to the repo itself \u2014 it is a one-command pull tool, not a dataset.",
+  "why_useful": "A clean, small, working example of exactly the tooling class named in gap #5 ('Wikipedia pageviews tooling') and gap #20 (destination/attraction proxies) \u2014 could be forked/adapted in under a day to pull daily pageviews for Airbnb-relevant destination Wikipedia pages (e.g. specific cities/neighborhoods, FIFA World Cup host-city pages for gap #11) as a free, near-real-time tourism-interest proxy, unlike Google Trends which the team already found not point-in-time/renormalized and failing (per CONTEXT.md 'ideas tested and found not to work').",
+  "potential": "medium",
+  "gap_targets": [
+   5,
+   20
+  ],
+  "geography": "New Zealand (8 named attractions)",
+  "time_coverage": "daily ingestion; demo shows 90-day backfill default, live example spans 7 days at time of README",
+  "size_hint": "small codebase; DuckDB warehouse built at runtime, not committed",
+  "license": "MIT",
+  "last_activity": "2026-09-08",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Wikipedia pageviews tooling and destination-demand datasets (pageviews for cities/attractions as tourism proxies)",
+   "Airport and city tourism dashboards scraped to CSV (NYC Tourism, Visit Florida, Las Vegas LVCVA, Orlando, Hawaii DBEDT, Destination DC, Visit California)"
+  ],
+  "why_all": [
+   "A clean, small, working example of exactly the tooling class named in gap #5 ('Wikipedia pageviews tooling') and gap #20 (destination/attraction proxies) \u2014 could be forked/adapted in under a day to pull daily pageviews for Airbnb-relevant destination Wikipedia pages (e.g. specific cities/neighborhoods, FIFA World Cup host-city pages for gap #11) as a free, near-real-time tourism-interest proxy, unlike Google Trends which the team already found not point-in-time/renormalized and failing (per CONTEXT.md 'ideas tested and found not to work').",
+   "Matches numbered gap 5 (Wikipedia pageviews tooling as an engagement/attention proxy) with a concrete, currently-maintained (updated 6-8 Sep 2026) API client design \u2014 could be repointed at Airbnb-relevant destination or competitor Wikipedia pages, or at ABNB's own page, for a page-view engagement series."
+  ]
+ },
+ {
+  "key": "github:jonathanyang7/adaptive-nowcasting",
+  "url": "https://github.com/jonathanyang7/adaptive-nowcasting",
+  "name": "adaptive-nowcasting (tourism)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R repository implementing 'Adaptive Nowcasting of Tourism Statistics using Google Trends' \u2014 a method paper/code specifically for tourism-statistics nowcasting from Trends data (not consumption or GDP generically).",
+  "why_useful": "Directly on-theme: a tourism-specific (not generic macro) Google-Trends nowcasting method, addressing gap #17 (mixed-frequency/nowcasting methods) with a travel-demand application closer to Airbnb nights than the generic GDP/consumption nowcasting repos below. Worth reading the method even though our own generic Trends nowcast failed \u2014 this uses an adaptive/rolling weighting scheme we have not tried.",
+  "potential": "medium",
+  "geography": "unspecified (method paper, likely a national tourism board case study)",
+  "time_coverage": "unspecified",
+  "size_hint": "small research repo",
+  "license": "unspecified",
+  "last_activity": "2024-08-24",
+  "gap_targets": [
+   17
+  ],
+  "duplicate_of_holding": "overlaps failed 'Google Trends as pulled' test but is a different (adaptive) method, not yet tried",
+  "hits": 1,
+  "themes": [
+   "Google Trends tooling and datasets: pytrends, gtab anchored trends, historical trends archives, trends nowcasting repos"
+  ],
+  "why_all": [
+   "Directly on-theme: a tourism-specific (not generic macro) Google-Trends nowcasting method, addressing gap #17 (mixed-frequency/nowcasting methods) with a travel-demand application closer to Airbnb nights than the generic GDP/consumption nowcasting repos below. Worth reading the method even though our own generic Trends nowcast failed \u2014 this uses an adaptive/rolling weighting scheme we have not tried."
+  ]
+ },
+ {
+  "key": "github:chenchends/tourism-data-analysis",
+  "url": "https://github.com/ChenChenDS/Tourism-data-analysis",
+  "name": "Tourism-data-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed file `travel_data.xls` used to analyze top tourist-sending and top tourist-receiving countries and trend of the international travel & tourism sector. Exact source, years, and country list not confirmed from the fetched page (needs opening the xls to verify).",
+  "why_useful": "One of the few repos directly citing a WTTC report as its data source; worth checking for a committed WTTC economic-impact extract (GDP/employment contribution by country), which would plug directly into the WTTC gap in this theme, though the repo is stale (2019) so any data would be pre-2019 vintage only.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "license": "none declared",
+  "last_activity": "2019-05-13",
+  "geography": "unspecified, likely global",
+  "time_coverage": "pre-2019",
+  "size_hint": "unverified, 29 stars",
+  "hits": 2,
+  "themes": [
+   "Tourism satellite accounts and tourism spending data: WTTC, UNWTO, BEA travel and tourism satellite account, national tourism expenditure surveys",
+   "Time-series datasets curated for tourism forecasting research (Monash, M-competitions tourism, Kaggle tourism forecasting), tourism demand models with data"
+  ],
+  "why_all": [
+   "One of the few repos directly citing a WTTC report as its data source; worth checking for a committed WTTC economic-impact extract (GDP/employment contribution by country), which would plug directly into the WTTC gap in this theme, though the repo is stale (2019) so any data would be pre-2019 vintage only.",
+   "Possible bilateral/country-level international-tourist-flow panel (sending vs receiving countries), which would be relevant to cross-border travel-flow proxies (gap #20) if the underlying data turns out to be UNWTO/World Bank sourced and multi-year \u2014 but unverified beyond the filename, so flagged as marginal until someone opens the actual .xls."
+  ]
+ },
+ {
+  "key": "github:namchylka-ux/china-tourism-dataset",
+  "url": "https://github.com/namchylka-ux/china-tourism-dataset",
+  "name": "china-tourism-dataset",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Single committed CSV `china_tourism_2015_2023.csv` (12.6KB), 31 Chinese provinces/regions x 9 years (2015-2023): columns year, province, domestic_tourists_mln, inbound_tourists_mln, tourism_revenue_billion, gdp_billion, population_mln. E.g. Beijing 2015: domestic 199.75mn, inbound 9.168mn, tourism revenue RMB190.63bn. Appears compiled from official (NBS/provincial statistical yearbook) tourism figures; no source citation or code, just the flat file. No commit history/stars visible beyond the single file; unclear licence.",
+  "why_useful": "Directly addresses gap #7 (regional travel volume outside US/EU, China domestic+inbound) with province-level granularity and a longer 9-year run; could be cross-checked/extended for a China domestic-travel base rate, though ABNB's China exposure is minor so relevance is mostly as a macro-context comparator, not a KPI driver.",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "China, 31 provinces",
+  "time_coverage": "2015-2023, annual",
+  "size_hint": "12.6KB single CSV",
+  "license": "none stated",
+  "last_activity": "2025-10-12",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Directly addresses gap #7 (regional travel volume outside US/EU, China domestic+inbound) with province-level granularity and a longer 9-year run; could be cross-checked/extended for a China domestic-travel base rate, though ABNB's China exposure is minor so relevance is mostly as a macro-context comparator, not a KPI driver."
+  ]
+ },
+ {
+  "key": "github:baisebaoma/_baiduqianxi_",
+  "url": "https://github.com/baisebaoma/_baiduqianxi_",
+  "name": "_baiduqianxi_ (Baidu Migration Platform API client)",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (87 stars, updated ~13 days ago per search snapshot) for Baidu Qianxi (\"Baidu Migration\"/\u6167\u773c) \u2014 China's near-real-time population-flow index built from Baidu Maps location data, giving city-to-city and intra-city movement intensity indices, historically used by researchers/media to track Chunyun (Spring Festival travel rush) and holiday travel surges since ~2015.",
+  "why_useful": "Baidu Qianxi is the closest thing to a real-time China domestic-travel-intensity proxy (used academically for COVID mobility and holiday-travel studies); a pull method for it would let the team build a China domestic travel-intensity index analogous to TSA throughput, addressing gap #7/#20-style mobility proxies, though it requires validating against any China revenue-relevant KPI (currently unclear if worth building given ABNB's small China footprint).",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "geography": "China, city/province/national",
+  "time_coverage": "~2015-present, daily/near-real-time",
+  "size_hint": "scraper/client, no bundled data",
+  "license": "unknown",
+  "last_activity": "recent (within ~2 weeks of scan)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Baidu Qianxi is the closest thing to a real-time China domestic-travel-intensity proxy (used academically for COVID mobility and holiday-travel studies); a pull method for it would let the team build a China domestic travel-intensity index analogous to TSA throughput, addressing gap #7/#20-style mobility proxies, though it requires validating against any China revenue-relevant KPI (currently unclear if worth building given ABNB's small China footprint)."
+  ]
+ },
+ {
+  "key": "github:sunnyuxuan/china_outbound_tourism",
+  "url": "https://github.com/sunnyuxuan/China_Outbound_Tourism",
+  "name": "China_Outbound_Tourism",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "data/ folder with 9 committed CSVs: Age.csv, Consumption.csv, Income.csv, Marriage.csv, Outbound_travelers_by_province.csv, Spending.csv, TopPlace.csv, TourismExpenditure1995_2013.csv, population.csv, plus a china.json map. A student data-viz project profiling Chinese outbound tourist demographics and spending; TourismExpenditure1995_2013.csv gives a long (18-year) historical outbound-expenditure series and Outbound_travelers_by_province.csv gives province-level outbound traveler counts. No license stated; last activity ~2017 (repo old, data itself covers 1995-2013).",
+  "why_useful": "Fills gap #7 (regional travel volume outside US/EU) and gap #9 context (Chinese outbound demand, relevant to APAC mix and Chinese-traveler share of ABNB bookings) with genuinely historical (pre-2013) province-level and time-series data not covered by anything we hold.",
+  "potential": "medium",
+  "geography": "China (outbound, by province)",
+  "time_coverage": "~1995-2013 (TourismExpenditure series); other files single-snapshot demographic breakdowns, era unclear",
+  "size_hint": "9 small CSVs, unknown row counts (not row-counted, file listing only)",
+  "license": "none stated",
+  "last_activity": "~2017 (repo inactive)",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "Fills gap #7 (regional travel volume outside US/EU) and gap #9 context (Chinese outbound demand, relevant to APAC mix and Chinese-traveler share of ABNB bookings) with genuinely historical (pre-2013) province-level and time-series data not covered by anything we hold."
+  ]
+ },
+ {
+  "key": "github:mrinmayeekulkarni/mobility-patterns-in-china-during-covid-19-pandemic",
+  "url": "https://github.com/MrinmayeeKulkarni/Mobility-Patterns-in-China-During-Covid-19-Pandemic",
+  "name": "Mobility-Patterns-in-China-During-Covid-19-Pandemic",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Origin-destination mobility data for long-distance Spring Festival (Chunyun) travel among 356 Chinese prefectural cities, comparing 2019 (normal) vs 2020 (COVID lockdown) travel patterns; fields include city name/ID/province/lat-lon for both origin and destination, with weekly mobility trend breakdowns by province. Likely derived from a Baidu-migration-style mobility index (source not stated in README).",
+  "why_useful": "A methods template plus an actual historical domestic-China holiday-travel-volume dataset (356-city granularity) relevant to gap #7 (regional travel volume) and useful as an analogue/base-rate for Chinese Golden Week / Spring Festival travel intensity that could inform APAC nights seasonality.",
+  "potential": "medium",
+  "geography": "China, 356 prefectural cities",
+  "time_coverage": "Spring Festival periods, 2019 and 2020",
+  "size_hint": "city-pair OD dataset across 356 cities, size unspecified",
+  "license": "not stated",
+  "last_activity": "2022-04-05",
+  "gap_targets": [
+   7,
+   20
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "China outbound and domestic travel data: CNTA/Ministry stats, Ctrip reports, Chinese holiday travel datasets, Hong Kong/Macau arrivals"
+  ],
+  "why_all": [
+   "A methods template plus an actual historical domestic-China holiday-travel-volume dataset (356-city granularity) relevant to gap #7 (regional travel volume) and useful as an analogue/base-rate for Chinese Golden Week / Spring Festival travel intensity that could inform APAC nights seasonality."
+  ]
+ },
+ {
+  "key": "github:arorabhavya92115/india_tourism_data_analysis_project",
+  "url": "https://github.com/arorabhavya92115/India_Tourism_data_analysis_project",
+  "name": "India_Tourism_data_analysis_project",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed official Ministry of Tourism India table 'India-Tourism-Statistics-2022-Table-2.1.4' as both .csv (6.8KB) and .xlsx (15.5KB) -- foreign tourist arrivals by nationality/country for 2021, plus a Tableau workbook (Project_Dashboard.twb), a PDF report, and a dashboard PNG. MIT licensed. Last updated 2025-08-19.",
+  "why_useful": "Addresses gap #7 (regional travel volume outside US/EU -- India foreign tourist arrivals). Small (single year/table) but is a machine-readable extraction of an official India Tourism Statistics table that is otherwise only in government PDFs; a template for pulling the full multi-year India Tourism Statistics series (published annually by the Ministry of Tourism, Government of India).",
+  "potential": "medium",
+  "geography": "India",
+  "time_coverage": "2021 (single year snapshot in Table 2.1.4)",
+  "size_hint": "~23KB of data files (csv+xlsx)",
+  "license": "MIT",
+  "last_activity": "2025-08-19",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Addresses gap #7 (regional travel volume outside US/EU -- India foreign tourist arrivals). Small (single year/table) but is a machine-readable extraction of an official India Tourism Statistics table that is otherwise only in government PDFs; a template for pulling the full multi-year India Tourism Statistics series (published annually by the Ministry of Tourism, Government of India)."
+  ]
+ },
+ {
+  "key": "github:alikhalill/saudi-tourism-data-analysis",
+  "url": "https://github.com/alikhalill/saudi-tourism-data-analysis",
+  "name": "saudi-tourism-data-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Repo has dedicated data/ and kaggle_data/ directories (confirmed present via contents API, though sizes not resolvable at directory level) plus src/ processing code and a 5.9KB README describing 'Saudi tourism trends and KPIs (2015-2024)'. Likely re-exports a Kaggle Saudi tourism dataset.",
+  "why_useful": "If the kaggle_data folder holds a genuine 2015-2024 Saudi tourism KPI panel (visitor counts, spend), it would be one of the only GitHub-hosted Gulf-state tourism series; Saudi Arabia is a named target geography for this theme (Vision 2030 tourism push, competitor destination to UAE/inbound MENA travel).",
+  "potential": "medium",
+  "geography": "Saudi Arabia",
+  "time_coverage": "2015-2024 (per README)",
+  "size_hint": "unresolved -- data/ and kaggle_data/ subfolders present but contents not enumerated",
+  "license": "none declared",
+  "last_activity": "2026-09-08",
+  "gap_targets": [
+   7
+  ],
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "If the kaggle_data folder holds a genuine 2015-2024 Saudi tourism KPI panel (visitor counts, spend), it would be one of the only GitHub-hosted Gulf-state tourism series; Saudi Arabia is a named target geography for this theme (Vision 2030 tourism push, competitor destination to UAE/inbound MENA travel)."
+  ]
+ },
+ {
+  "key": "github:nandhini-rasala/tourism_analytics_project",
+  "url": "https://github.com/Nandhini-rasala/Tourism_Analytics_project",
+  "name": "Tourism_Analytics_project",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "'India Foreign Tourist Arrivals Analysis (2017-2021)' using Python/SQL/Power BI/Excel; contents not enumerated in this pass but description implies a multi-year (2017-2021) FTA panel, longer than the single-year table found in arorabhavya92115's repo.",
+  "why_useful": "If the underlying 2017-2021 FTA table is committed as a plain file, it is a longer India FTA time series than the other India candidates found and directly fills gap #7.",
+  "potential": "medium",
+  "geography": "India",
+  "time_coverage": "2017-2021 (per description)",
+  "size_hint": "unknown -- not enumerated (not one of the 8 contents-API calls used)",
+  "license": "none declared",
+  "last_activity": "2026-08-23",
+  "gap_targets": [
+   7
+  ],
+  "hits": 2,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "If the underlying 2017-2021 FTA table is committed as a plain file, it is a longer India FTA time series than the other India candidates found and directly fills gap #7.",
+   "Another India FTA compilation covering 2017-2021, a period gap (post-2020 recovery years) that could complement the 2012-2020 Morocco-style series found elsewhere; needs verification for whether raw data is committed vs. only a BI dashboard."
+  ]
+ },
+ {
+  "key": "github:uzayeryilmaz/nowcasting-turkeys-tourist-arrivals-and-tourism-income",
+  "url": "https://github.com/uzayeryilmaz/Nowcasting-Turkeys-tourist-arrivals-and-tourism-income",
+  "name": "Nowcasting-Turkeys-tourist-arrivals-and-tourism-income",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R thesis code (main.R, 3 commits) for nowcasting Turkey's tourist arrivals and tourism income; no data files visible in the top-level listing, likely pulls from TUIK/Turkish Ministry of Culture and Tourism series or Google Trends inside the script.",
+  "why_useful": "A working nowcasting-with-mixed-frequency-data method (gap #17, MIDAS/DFM-style) applied to a comparable travel-demand series; could be adapted or at least cite the underlying Turkish series/APIs it pulls.",
+  "potential": "medium",
+  "geography": "Turkey",
+  "time_coverage": "unknown (thesis-era, repo dated 2022)",
+  "size_hint": "single R script",
+  "license": "none stated",
+  "last_activity": "2022-10-09",
+  "gap_targets": [
+   7,
+   17
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "A working nowcasting-with-mixed-frequency-data method (gap #17, MIDAS/DFM-style) applied to a comparable travel-demand series; could be adapted or at least cite the underlying Turkish series/APIs it pulls."
+  ]
+ },
+ {
+  "key": "github:chaimaebouyarmane/afc_analysis_of_tourist_arrivals_in_morocco",
+  "url": "https://github.com/chaimaebouyarmane/AFC_Analysis_of_Tourist_Arrivals_in_Morocco",
+  "name": "AFC_Analysis_of_Tourist_Arrivals_in_Morocco",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Touristes.csv: tourist arrivals to Morocco by nationality (France, Germany, China, US, Belgium, UK, Spain, Scandinavia, plus Moroccans-living-abroad/MRE), 2012-2020, sourced explicitly from Morocco's Ministry of Tourism, Crafts, and Social and Solidarity Economy dataset published on data.gov.ma (14 Apr 2022).",
+  "why_useful": "Traceable to an official Moroccan government open-data source (data.gov.ma) with nationality breakdown -- fills gap #7 (regional travel volume outside US/EU) for North Africa, a market not otherwise covered; also a pointer worth following back to data.gov.ma directly for a longer/more current pull.",
+  "potential": "medium",
+  "geography": "Morocco",
+  "time_coverage": "2012-2020, annual by nationality",
+  "size_hint": "1 CSV, single dataset (row count not stated)",
+  "license": "unknown; underlying source is Moroccan open government data (data.gov.ma)",
+  "last_activity": "2023 (repo), source dataset published 2022-04-14",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Middle East, Africa and India travel data: UAE/Dubai DET stats, Saudi, Turkey MoT, Morocco, Egypt, South Africa StatsSA, India foreign tourist arrivals"
+  ],
+  "why_all": [
+   "Traceable to an official Moroccan government open-data source (data.gov.ma) with nationality breakdown -- fills gap #7 (regional travel volume outside US/EU) for North Africa, a market not otherwise covered; also a pointer worth following back to data.gov.ma directly for a longer/more current pull."
+  ]
+ }
+]

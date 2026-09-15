@@ -1,0 +1,647 @@
+[
+ {
+  "key": "github:ajtgjmdjp/estat-mcp",
+  "url": "https://github.com/ajtgjmdjp/estat-mcp",
+  "name": "estat-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "e-Stat API client plus an MCP server wrapper for Japanese government statistics. 10 stars, Apache-2.0, updated 13 Sep 2026 (very fresh).",
+  "why_useful": "Actively maintained alternative Japan macro-stats client; MCP wrapper means it could be plugged into an agent workflow for repeated e-Stat pulls (tourism/consumption nowcasting for APAC gap #7).",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Japan",
+  "time_coverage": "e-Stat catalogue",
+  "size_hint": "small",
+  "license": "Apache-2.0",
+  "last_activity": "2026-09-13",
+  "duplicate_of_holding": "duplicate use case of estatapi",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Actively maintained alternative Japan macro-stats client; MCP wrapper means it could be plugged into an agent workflow for repeated e-Stat pulls (tourism/consumption nowcasting for APAC gap #7)."
+  ]
+ },
+ {
+  "key": "github:dayoooun/korea-stats-mcp",
+  "url": "https://github.com/Dayoooun/korea-stats-mcp",
+  "name": "korea-stats-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server for querying Korea's KOSIS (Korean Statistical Information Service) national statistics in natural language; published as npm package @kimdayoun/korea-stats-mcp. 16 stars, MIT, updated 10 Sep 2026.",
+  "why_useful": "Most-starred, freshest KOSIS client found; gives programmatic access to Korean tourism/consumption/employment/housing series for APAC regional macro (gap #7).",
+  "potential": "medium",
+  "gap_targets": [
+   7
+  ],
+  "geography": "South Korea",
+  "time_coverage": "full KOSIS catalogue",
+  "size_hint": "small MCP server",
+  "license": "MIT",
+  "last_activity": "2026-09-10",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Regional macro for LatAm and APAC: Mexico INEGI/Banxico, Brazil IBGE/BCB, Argentina INDEC, Colombia DANE, Chile, Japan e-Stat, Korea KOSIS, Australia ABS, India MOSPI clients"
+  ],
+  "why_all": [
+   "Most-starred, freshest KOSIS client found; gives programmatic access to Korean tourism/consumption/employment/housing series for APAC regional macro (gap #7)."
+  ]
+ },
+ {
+  "key": "github:ropensci/patentsview",
+  "url": "https://github.com/ropensci/patentsview",
+  "name": "ropensci/patentsview",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R client (ropensci-vetted, 39 stars, active as of Jul 2026) to the free PatentsView API (USPTO bulk patent data). No data committed; wraps query/fieldsets/subscore endpoints for patent search, assignees, inventors, CPC classes. Could pull Airbnb's own patent filings (assignee='Airbnb') and counts over time as a product-development-pace proxy.",
+  "why_useful": "Addresses gap #15 (patents/trademarks as company-structure/product-launch signal) \u2014 patent filing counts/timing can be a lagging proxy for feature roadmap and M&A-adjacent R&D. Free API, no key required in most PatentsView modes.",
+  "potential": "medium",
+  "geography": "US (USPTO)",
+  "time_coverage": "USPTO patents 1976-present (varies by endpoint)",
+  "size_hint": "API client, no local dataset",
+  "license": "Other (ropensci standard, effectively open)",
+  "last_activity": "2026-07-16",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Addresses gap #15 (patents/trademarks as company-structure/product-launch signal) \u2014 patent filing counts/timing can be a lagging proxy for feature roadmap and M&A-adjacent R&D. Free API, no key required in most PatentsView modes.",
+   "Could pull Airbnb's (assignee-disambiguated) patent grant history and technology-category tags over time as a slow-moving product-roadmap signal (gap #15) -- R rather than Python, but PatentsView's disambiguated assignee IDs are the main value-add over raw USPTO bulk data."
+  ]
+ },
+ {
+  "key": "github:ethan3600/uspto-trademark-api",
+  "url": "https://github.com/Ethan3600/USPTO-Trademark-API",
+  "name": "Ethan3600/USPTO-Trademark-API",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Small client (GPL-3.0, 6 stars, updated Feb 2026) that pulls trademark status data from USPTO's TSDR (Trademark Status & Document Retrieval) system \u2014 i.e., a scriptable way to check a company's live trademark filings/status by serial or registration number.",
+  "why_useful": "Directly on-theme for the trademark half of gap #15 \u2014 could be pointed at Airbnb's trademark filings (new brand names/features, e.g. product or program launches often get trademarked ahead of announcement) as an early product-signal proxy.",
+  "potential": "medium",
+  "geography": "US",
+  "time_coverage": "current TSDR records, no historical archive",
+  "size_hint": "small script/client, no committed data",
+  "license": "GPL-3.0",
+  "last_activity": "2026-02-18",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "Directly on-theme for the trademark half of gap #15 \u2014 could be pointed at Airbnb's trademark filings (new brand names/features, e.g. product or program launches often get trademarked ahead of announcement) as an early product-signal proxy."
+  ]
+ },
+ {
+  "key": "github:parkerhancock/patent_client",
+  "url": "https://github.com/parkerhancock/patent_client",
+  "name": "patent_client",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Archived (April 2026) Python ORM-style unified client covering USPTO Patent Examination Data, Open Data Portal, Global Dossier, Patent Assignments, PTAB, Patent Public Search, Bulk Data Storage, plus EPO Inpadoc. Pandas-integrated, Pydantic v2 models. 632 commits, 128 stars, Apache 2.0. Note: archived/read-only, successor is an AI-agent-focused rewrite not evaluated here.",
+  "why_useful": "One client covers multiple USPTO patent/assignment endpoints, so it could pull Airbnb's (and Vacasa/Sonder/Booking's) patent filing and assignment history as a very-low-frequency but genuine leading indicator of product roadmap (gap #15). Being archived means it may need patching for current USPTO API changes.",
+  "potential": "medium",
+  "gap_targets": [
+   15
+  ],
+  "duplicate_of_holding": "",
+  "geography": "US (+ partial EPO)",
+  "time_coverage": "however far USPTO bulk/API data goes",
+  "size_hint": "library only, archived repo",
+  "license": "Apache 2.0",
+  "last_activity": "archived 24 Apr 2026, 632 commits",
+  "hits": 1,
+  "themes": [
+   "Product-launch monitors: certificate transparency (crt.sh) tooling, app release-notes scrapers, Wayback diff tools, help-center change monitors, trademark/patent (USPTO, PatentsView) clients"
+  ],
+  "why_all": [
+   "One client covers multiple USPTO patent/assignment endpoints, so it could pull Airbnb's (and Vacasa/Sonder/Booking's) patent filing and assignment history as a very-low-frequency but genuine leading indicator of product roadmap (gap #15). Being archived means it may need patching for current USPTO API changes."
+  ]
+ },
+ {
+  "key": "github:poliquin/pylegiscan",
+  "url": "https://github.com/poliquin/pylegiscan",
+  "name": "pylegiscan",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client wrapping the LegiScan API, which covers bill text, status, votes, and sponsors for all 50 US state legislatures plus Congress. Not STR-specific and holds no committed dataset, but is a working, well-starred (23 stars) way to programmatically pull STR-related bills (keyword search e.g. 'short-term rental', 'vacation rental') across every state legislature in one client.",
+  "why_useful": "Directly matches gap #12's 'Legistar/LegiScan tooling' call-out -- a keyword search for 'short-term rental' across state legislatures could feed a US STR-ordinance/bill tracker; requires a free LegiScan API key.",
+  "potential": "medium",
+  "license": "MIT",
+  "last_activity": "small repo, 7 commits, no visible recent activity",
+  "geography": "US states",
+  "time_coverage": "current LegiScan bill data (not a static historical file)",
+  "size_hint": "acquisition method, API-key gated (free tier)",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "News and event databases: GDELT tooling, Google News scrapers, travel-industry news datasets (Skift, PhocusWire), regulatory news trackers",
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Directly matches gap #12's 'Legistar/LegiScan tooling' call-out -- a keyword search for 'short-term rental' across state legislatures could feed a US STR-ordinance/bill tracker; requires a free LegiScan API key.",
+   "Turns gap #12 (STR ordinance/registration trackers) into a pullable, nationwide bill-tracking method rather than a one-city hand-built database \u2014 could build a state-by-state STR-restriction bill count/status series as a regulatory-intensity index."
+  ]
+ },
+ {
+  "key": "github:codeforbc/airbnb-regulation",
+  "url": "https://github.com/CodeForBc/airbnb-regulation",
+  "name": "CodeForBc/airbnb-regulation",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Code for BC civic-tech project building a pipeline to flag Airbnb listings in British Columbia that violate provincial short-term-rental rules: a scraping/data-ingestion module plus a rules-based compliance classifier, output to a Grafana dashboard. No committed regulation text or listing dataset in the repo itself \u2014 it is a live scrape+rules method, not a stored dataset.",
+  "why_useful": "A working method for detecting non-compliant STR listings against a specific regulatory regime (BC's 2024 provincial STR restrictions); could be adapted as a template for measuring de-facto STR supply compression under new rules elsewhere, but requires running a scraper against Airbnb (a ToS decision, not to be run).",
+  "potential": "medium",
+  "geography": "British Columbia, Canada",
+  "time_coverage": "unclear / current rules only",
+  "size_hint": "no data files committed",
+  "license": "MIT",
+  "last_activity": "2025-07-27",
+  "duplicate_of_holding": "",
+  "gap_targets": [
+   12
+  ],
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "A working method for detecting non-compliant STR listings against a specific regulatory regime (BC's 2024 provincial STR restrictions); could be adapted as a template for measuring de-facto STR supply compression under new rules elsewhere, but requires running a scraper against Airbnb (a ToS decision, not to be run).",
+   "A working method for turning STR registration/compliance policy into a quantifiable violation rate, relevant to gap #12 (city/provincial STR registration datasets). Note: it scrapes airbnb.com directly, so per repo rules this is catalogued as a method only and must not be run without a human ToS decision."
+  ]
+ },
+ {
+  "key": "github:sh-patterson/legiscan-mcp",
+  "url": "https://github.com/sh-patterson/legiscan-mcp",
+  "name": "sh-patterson/legiscan-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server wrapping the LegiScan API for bill search, full text, votes, legislator lookup, and change monitoring across all 50 states and Congress. Method only, no committed data.",
+  "why_useful": "Same value as pylegiscan but agent-native (MCP) \u2014 could be pointed at STR/vacation-rental keyword bills for an ongoing regulatory-tracking feed.",
+  "potential": "medium",
+  "geography": "USA (all states + Congress)",
+  "time_coverage": "current LegiScan coverage",
+  "size_hint": "API client only",
+  "license": "MIT",
+  "last_activity": "2026-09-12",
+  "gap_targets": [
+   12
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Same value as pylegiscan but agent-native (MCP) \u2014 could be pointed at STR/vacation-rental keyword bills for an ongoing regulatory-tracking feed."
+  ]
+ },
+ {
+  "key": "github:betanyc/nyc-council-mcp",
+  "url": "https://github.com/BetaNYC/nyc-council-mcp",
+  "name": "BetaNYC/nyc-council-mcp",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "MCP server for NYC Council legislative data pulled live via the Legistar API (bills, committee votes, hearing calendars). No stored dataset, but a working, current (updated July 2026) client scoped to exactly the council whose Local Law 18 (STR registration) most affects our NYC gap.",
+  "why_useful": "Could pull the full NYC Council legislative history/amendments around Local Law 18 and any follow-on STR bills, useful context for interpreting the NYC Inside Airbnb dump gap (2023-06 to 2024-03) that gap #1 flags.",
+  "potential": "medium",
+  "geography": "New York City",
+  "time_coverage": "current NYC Council Legistar coverage",
+  "size_hint": "API client only",
+  "license": "MIT",
+  "last_activity": "2026-07-27",
+  "gap_targets": [
+   12,
+   1
+  ],
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Could pull the full NYC Council legislative history/amendments around Local Law 18 and any follow-on STR bills, useful context for interpreting the NYC Inside Airbnb dump gap (2023-06 to 2024-03) that gap #1 flags."
+  ]
+ },
+ {
+  "key": "github:timmkal01/city-council-watch",
+  "url": "https://github.com/timmKal01/city-council-watch",
+  "name": "timmKal01/city-council-watch",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Apify actor (3 commits) that fetches newly filed ordinances/resolutions and upcoming council/committee agendas from any city's Legistar Web API given a city code as a parameter; no hardcoded city list or committed data, source/config/Dockerfile only.",
+  "why_useful": "A generic, running scraper/method that could be filtered for STR-ordinance keywords across many US cities at once (LA, SF, Austin, Nashville, New Orleans, San Diego are all candidate Legistar cities in our Inside Airbnb panel), turning a one-off ordinance database into an always-on feed.",
+  "potential": "medium",
+  "geography": "multi-city, USA (any Legistar-hosted council)",
+  "time_coverage": "live/current only",
+  "size_hint": "no stored data, Apify actor",
+  "license": "none declared",
+  "last_activity": "2026-08-13",
+  "gap_targets": [
+   12
+  ],
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "A generic, running scraper/method that could be filtered for STR-ordinance keywords across many US cities at once (LA, SF, Austin, Nashville, New Orleans, San Diego are all candidate Legistar cities in our Inside Airbnb panel), turning a one-off ordinance database into an always-on feed.",
+   "A generic, parameterizable way to monitor new STR-ordinance filings in near-real time across any Legistar city, which could catch new caps/bans as they are introduced ahead of the pitch deadline (gap #12); marginal given its small size and lack of committed data."
+  ]
+ },
+ {
+  "key": "github:howtheyvote/data",
+  "url": "https://github.com/HowTheyVote/data",
+  "name": "HowTheyVote/data",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Weekly-updated CSV.gz exports (votes.csv.gz, plus MEP and political-group tables) of every roll-call vote in the European Parliament, collected by howtheyvote.eu; downloadable via GitHub releases as a single export.zip, with pandas-ready examples in the README. 121 commits, actively maintained (weekly cadence).",
+  "why_useful": "Machine-readable, point-in-time (weekly snapshot) EU Parliament vote history could locate/timestamp any EU-level short-term-rental or platform-economy (DAC7-adjacent) votes relevant to gap #12 (EU regulation trackers) and is a clean template for a point-in-time EU political-risk series (gap #4 vintage angle).",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   4
+  ],
+  "time_coverage": "rolling, updated weekly (start year not confirmed from fetch)",
+  "geography": "European Union / European Parliament",
+  "size_hint": "csv.gz export + full export.zip, row counts not confirmed",
+  "license": "custom 'our data license', see howtheyvote.eu/about",
+  "last_activity": "actively maintained, weekly updates per README",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Machine-readable, point-in-time (weekly snapshot) EU Parliament vote history could locate/timestamp any EU-level short-term-rental or platform-economy (DAC7-adjacent) votes relevant to gap #12 (EU regulation trackers) and is a clean template for a point-in-time EU political-risk series (gap #4 vintage angle)."
+  ]
+ },
+ {
+  "key": "github:opencivicdata/python-legistar-scraper",
+  "url": "https://github.com/opencivicdata/python-legistar-scraper",
+  "name": "opencivicdata/python-legistar-scraper",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Python library (BSD-3, 52 stars, updated Aug 2026 \u2014 actively maintained) that scrapes any municipal Legistar site: agendas, bill/legislation text, votes, committee actions, meeting calendars. Legistar/Granicus is used by hundreds of US city councils.",
+  "why_useful": "The core reusable client needed to pull city-council STR ordinance histories (hearing dates, vote counts, bill text links) for any of the ~40+ US cities that run Legistar (LA, SF, Boston, Chicago, Nashville, New Orleans, Austin, Denver, etc.) named in gap #12; complements the municipal registries we already hold with the legislative *process* record (when caps/bans were debated and passed).",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "as far back as each city's Legistar instance retains records (often 2000s-present)",
+  "geography": "any US city using Legistar",
+  "size_hint": "library only, no committed data",
+  "license": "not confirmed from fetch",
+  "last_activity": "not confirmed (has CI badge, 707 commits)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "The core reusable client needed to pull city-council STR ordinance histories (hearing dates, vote counts, bill text links) for any of the ~40+ US cities that run Legistar (LA, SF, Boston, Chicago, Nashville, New Orleans, Austin, Denver, etc.) named in gap #12; complements the municipal registries we already hold with the legislative *process* record (when caps/bans were debated and passed).",
+   "A generic tool to build an STR-ordinance tracker across many US cities at once (introduction of registration caps, licence-fee hikes, short-term-rental bans/votes) \u2014 feeds CONTEXT.md gap #12 (STR ordinance trackers) and gap #17 (Socrata/CKAN-style open-data discovery is the analogue for civic legislative data). Method only, no data committed."
+  ]
+ },
+ {
+  "key": "github:datamade/scrapers-us-municipal",
+  "url": "https://github.com/datamade/scrapers-us-municipal",
+  "name": "datamade/scrapers-us-municipal",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "DataMade's fork/production deployment (1,680 commits, MIT license) of the Legistar-based municipal scraper covering Chicago, Cook County, Ferguson, LA Metro, Miami-Dade, New York City, Pittsburgh, Sacramento, and St. Louis city councils, feeding ocd.datamade.us.",
+  "why_useful": "Ready-configured scrapers for several cities already in our STR panel (NYC, LA-area via LA Metro, Chicago) to pull the underlying council legislative record (ordinance introduction/vote dates) around STR regulation, useful as a companion to the registry data we already hold.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "not confirmed, ongoing",
+  "geography": "Chicago, Cook County, Ferguson MO, LA Metro, Miami-Dade, NYC, Pittsburgh, Sacramento, St. Louis",
+  "size_hint": "code only",
+  "license": "MIT",
+  "last_activity": "not confirmed from fetch",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Ready-configured scrapers for several cities already in our STR panel (NYC, LA-area via LA Metro, Chicago) to pull the underlying council legislative record (ordinance introduction/vote dates) around STR regulation, useful as a companion to the registry data we already hold."
+  ]
+ },
+ {
+  "key": "github:freelawproject/courtlistener",
+  "url": "https://github.com/freelawproject/courtlistener",
+  "name": "freelawproject/courtlistener",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "The full open-source codebase (25,363 commits, AGPL license) behind CourtListener.com, Free Law Project's searchable archive of federal/state court opinions, oral arguments, judges, and (via RECAP) federal docket filings; the live site and its API/bulk-data exports (not directly confirmed in this fetch, but documented at wiki.free.law) can be queried for Airbnb Inc. litigation (e.g. host/guest class actions, city-vs-Airbnb regulatory suits, IP/antitrust cases) with case metadata and filing dates.",
+  "why_useful": "The best free method to build a point-in-time litigation docket for Airbnb (host lawsuits, city STR-ordinance enforcement suits, DOJ/FTC matters) that could carry event-study/regulatory-risk signal for gap #12 and the events/shocks gap (#11); the codebase itself is not a dataset but confirms the underlying API/bulk data exist to query.",
+  "potential": "medium",
+  "gap_targets": [
+   12,
+   11
+  ],
+  "time_coverage": "federal courts back to ~1600s for some opinions per site; RECAP dockets from ~2009-present",
+  "geography": "US federal and state courts",
+  "size_hint": "9M+ opinions per topic-page description; codebase itself large (25k+ commits)",
+  "license": "AGPL (code); underlying data separately licensed/public",
+  "last_activity": "actively maintained (937 open issues, ongoing commits)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "The best free method to build a point-in-time litigation docket for Airbnb (host lawsuits, city STR-ordinance enforcement suits, DOJ/FTC matters) that could carry event-study/regulatory-risk signal for gap #12 and the events/shocks gap (#11); the codebase itself is not a dataset but confirms the underlying API/bulk data exist to query."
+  ]
+ },
+ {
+  "key": "other:https://github.com/councildataproject",
+  "url": "https://github.com/CouncilDataProject",
+  "name": "CouncilDataProject (org: cdp-backend, cdp-scrapers, speakerbox, and per-city repos)",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "A 'search engine for local government' spanning 18+ US municipalities (Seattle, Denver, Oakland, Charlotte, Milwaukee, Boston, Pittsburgh, Atlanta, others), combining city-council meeting video/audio transcription (speakerbox), a scraping pipeline (cdp-scrapers), and a searchable backend (cdp-backend, MPL-2.0) that stores meeting minutes, agenda items, and vote records per city, each in its own per-city GitHub/cloud-hosted deployment.",
+  "why_useful": "Deeper than plain Legistar scraping: full-text-searchable council meeting transcripts could surface STR-ordinance debates, votes, and public comment in cities we already track (Seattle, Boston, Pittsburgh) or add new ones, feeding gap #12 with qualitative/timestamped regulatory-process detail rather than just bill metadata.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "time_coverage": "varies by city deployment",
+  "geography": "18+ US cities (Seattle, Denver, Oakland, Charlotte, Milwaukee, Boston, Pittsburgh, Atlanta, others)",
+  "size_hint": "distributed across per-city cloud-hosted databases + GitHub org repos; not a single flat file",
+  "license": "MPL-2.0",
+  "last_activity": "not confirmed, org appears active with multiple maintained sub-repos",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "STR regulation trackers and ordinance datasets: city STR law databases, Legistar/LegiScan clients, EU parliament open data, court records (CourtListener/RECAP) on Airbnb litigation"
+  ],
+  "why_all": [
+   "Deeper than plain Legistar scraping: full-text-searchable council meeting transcripts could surface STR-ordinance debates, votes, and public comment in cities we already track (Seattle, Boston, Pittsburgh) or add new ones, feeding gap #12 with qualitative/timestamped regulatory-process detail rather than just bill metadata."
+  ]
+ },
+ {
+  "key": "other:https://www.data.gouv.fr/fr/datasets/annonces-de-location-francaises-non-conformes-observatoire-bailleurverif",
+  "url": "https://www.data.gouv.fr/fr/datasets/annonces-de-location-francaises-non-conformes-observatoire-bailleurverif/",
+  "name": "BailleurVerif - French Non-Compliant Rental Listings Observatory",
+  "category": "regulatory_legal",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Time-stamped, longitudinal dataset on data.gouv.fr (French government open-data portal) tracking short-term rental listings in France found non-compliant with local registration/regulation rules (an 'observatory' feed maintained by BailleurVerif). Cataloged in awesomedata/awesome-public-datasets under Government (BailleurVerif.yml).",
+  "why_useful": "Directly on-point for gap 12 (STR ordinance trackers / city registration datasets) for France, which the CONTEXT gap list names as a target geography (France STR registration) but we don't yet hold a France-specific compliance/registration series; a longitudinal non-compliance count could proxy enforcement intensity and registered-listing counts over time.",
+  "potential": "medium",
+  "gap_targets": [
+   12
+  ],
+  "geography": "France",
+  "time_coverage": "ongoing, dated snapshots (exact start unclear from listing)",
+  "size_hint": "unknown row count; time-stamped longitudinal series",
+  "license": "French open-data licence (Licence Ouverte, per data.gouv.fr defaults)",
+  "last_activity": "2026 (recently added to awesome-public-datasets)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Awesome lists and curated catalogues: awesome-public-datasets, awesome-alternative-data, awesome-quant data, awesome-economics, awesome-tourism, awesome-real-estate, awesome-transportation-data"
+  ],
+  "why_all": [
+   "Directly on-point for gap 12 (STR ordinance trackers / city registration datasets) for France, which the CONTEXT gap list names as a target geography (France STR registration) but we don't yet hold a France-specific compliance/registration series; a longitudinal non-compliance count could proxy enforcement intensity and registered-listing counts over time."
+  ]
+ },
+ {
+  "key": "github:drader/numbeopy",
+  "url": "https://github.com/drader/numbeopy",
+  "name": "numbeopy",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python client (rate-limited, dependency-light) that pulls Numbeo's public cost-of-living pages via pandas.read_html: country-aggregate prices, per-city indices (50-70 price items per country incl. rent, restaurants, utilities, salaries), and country-level indices (6 cost-of-living sub-indices) plus category rankings (quality of life, property investment, crime, health care, pollution, traffic). No data committed; live pull only. CC BY-NC 4.0 license (non-commercial, attribution required, bulk redistribution discouraged). Last activity ~Jul 2026.",
+  "why_useful": "Numbeo's cost-of-living and rent indices per city are a live, low-cost way to track relative travel/rent affordability across ABNB's top international markets, which could feed a cross-market affordability adjustment for ADR/nights forecasts.",
+  "potential": "medium",
+  "size_hint": "client library, ~few hundred lines",
+  "time_coverage": "current snapshot only (no history stored)",
+  "geography": "global cities Numbeo covers",
+  "license": "CC BY-NC 4.0 (Numbeo data terms, per repo description)",
+  "last_activity": "2026-07-12",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "Numbeo's cost-of-living and rent indices per city are a live, low-cost way to track relative travel/rent affordability across ABNB's top international markets, which could feed a cross-market affordability adjustment for ADR/nights forecasts.",
+   "Cleanest available Numbeo client for a repeatable, dateable pull of a global affordability/cost-of-living index across many cities - could be stamped and reused as a point-in-time consumer-affordability proxy (ties to gap #6, consumer spend panels) with minimal engineering; no committed history exists yet so it would need to be run and vintage-stamped by the team."
+  ]
+ },
+ {
+  "key": "github:numbeo/numbeo-sql-importer",
+  "url": "https://github.com/numbeo/numbeo-sql-importer",
+  "name": "numbeo-sql-importer",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Official Numbeo org repo ('Numbeo API Example \u2013 Retrieve Cost of Living for a City'); importer that loads Numbeo API responses into SQL. No bulk dataset committed \u2014 requires a paid Numbeo API key to pull data.",
+  "why_useful": "This is the official/authorized path into Numbeo's data (via their paid API, not scraping), which sidesteps the ToS concern the repo rules flag for direct scraping of crowdsourced travel sites \u2014 worth flagging to a human as the 'ask for budget' option instead of an ad hoc scraper.",
+  "potential": "medium",
+  "size_hint": "small importer script",
+  "time_coverage": "n/a (live API)",
+  "geography": "global, Numbeo's ~9000+ city coverage",
+  "license": "unspecified",
+  "last_activity": "2026-07-22",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Currency and travel affordability crowdsourced data: Numbeo, Expatistan, hotel price indices (Hotels.com HPI archives), Trivago Hotel Price Index, Kayak price trackers"
+  ],
+  "why_all": [
+   "This is the official/authorized path into Numbeo's data (via their paid API, not scraping), which sidesteps the ToS concern the repo rules flag for direct scraping of crowdsourced travel sites \u2014 worth flagging to a human as the 'ask for budget' option instead of an ad hoc scraper.",
+   "Confirms Numbeo has an official (paid) API path with structured city cost-of-living data; relevant if the team ever licenses Numbeo data directly rather than scraping."
+  ]
+ },
+ {
+  "key": "github:garyscorner/neworleansstr",
+  "url": "https://github.com/GarysCorner/NewORleansSTR",
+  "name": "GarysCorner/NewORleansSTR",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Jupyter notebook (STRMaps.ipynb) that pulls New Orleans's 'Short-Term Rental Licenses' dataset from the city's open-data portal (data.nola.gov) and renders it as an interactive folium/Leaflet map of active STR license status. No historical snapshots committed \u2014 reads the live current portal export. 3 stars, updated 5 Aug 2026 (active).",
+  "why_useful": "New Orleans is not in our current municipal-registry list (Austin, Barcelona, Maui, NYC, California TOT cities); this notebook is a working, recently-updated method for pulling that city's STR license registry directly from its Socrata-style open-data portal \u2014 cheap to adapt into our own point-in-time puller.",
+  "potential": "medium",
+  "license": "none declared",
+  "last_activity": "2026-08-05",
+  "geography": "New Orleans, LA",
+  "time_coverage": "current snapshot only (no history committed)",
+  "size_hint": "notebook + generated HTML map, no bulk data file",
+  "gap_targets": [
+   12
+  ],
+  "duplicate_of_holding": "Municipal STR registries panel (Austin/Barcelona/Maui/NYC/California) \u2014 adds a new city, not a duplicate",
+  "hits": 1,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)"
+  ],
+  "why_all": [
+   "New Orleans is not in our current municipal-registry list (Austin, Barcelona, Maui, NYC, California TOT cities); this notebook is a working, recently-updated method for pulling that city's STR license registry directly from its Socrata-style open-data portal \u2014 cheap to adapt into our own point-in-time puller."
+  ]
+ },
+ {
+  "key": "github:upgo-mcgill/vancouver-regulations",
+  "url": "https://github.com/UPGo-McGill/vancouver-regulations",
+  "name": "UPGo-McGill/vancouver-regulations",
+  "category": "regulatory_legal",
+  "data_kind": "both",
+  "what_it_holds": "Analysis of STR host compliance with Vancouver's 2018 STR licensing regulations. Committed data/raffle.csv (~7.7 MB) \u2014 appears to be the output of the raffle geocoding method applied to Vancouver STR listings, i.e. a listing-level (or listing-day-level) dataset with assigned neighbourhood/geography and likely licence-compliance flags.",
+  "why_useful": "Directly on-point for gap #12 (STR ordinance/registration trackers) for Vancouver, one of the cities named in that gap list.",
+  "potential": "medium",
+  "hits": 2,
+  "themes": [
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities"
+  ],
+  "why_all": [
+   "Directly on-point for gap #12 (STR ordinance/registration trackers) for Vancouver, one of the cities named in that gap list.",
+   "A concrete point-in-time compliance dataset for a real STR ordinance (Vancouver 2018) \u2014 useful as a case study or calibration set for regulatory-impact modelling (gap #12), and shows what a raffle-processed listing file looks like in practice."
+  ]
+ },
+ {
+  "key": "github:pirshtuk/fbi",
+  "url": "https://github.com/Pirshtuk/fbi",
+  "name": "fbi",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A client library for the FBI's Crime Data Explorer API, exposing UCR (Uniform Crime Reporting) and NIBRS (National Incident-Based Reporting System) crime data by agency/city/state. Last updated 2024-03-11.",
+  "why_useful": "A one-command pull method for US city-level crime statistics, which is one of this theme's three named data types (crime by city). Crime trends by city could be tested as a local demand-shock proxy for STR bookings in specific US metros (Austin, New Orleans, Chicago -- all in our 13-city panel).",
+  "potential": "medium",
+  "time_coverage": "pulls whatever history the FBI Crime Data Explorer API exposes (UCR historically back to 1960 at state level, NIBRS more recent and more granular by agency)",
+  "geography": "US, by FBI-reporting agency/city/state",
+  "size_hint": "small client library, no committed data",
+  "license": "unstated",
+  "last_activity": "2024-03-11",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "A one-command pull method for US city-level crime statistics, which is one of this theme's three named data types (crime by city). Crime trends by city could be tested as a local demand-shock proxy for STR bookings in specific US metros (Austin, New Orleans, Chicago -- all in our 13-city panel)."
+  ]
+ },
+ {
+  "key": "github:cyanheads/fbi-crime-mcp-server",
+  "url": "https://github.com/cyanheads/fbi-crime-mcp-server",
+  "name": "fbi-crime-mcp-server",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "An MCP server wrapping the FBI Crime Data Explorer API -- UCR crime estimates, NIBRS incident breakdowns, hate crimes, arrests, human trafficking stats. 1 star, updated 2026-08-21 (actively maintained, most recent of the FBI-API clients found).",
+  "why_useful": "Same underlying source as the Pirshtuk/fbi client (US city/agency-level crime data) but more recently maintained and packaged as an MCP tool, which could be plugged directly into an agent pipeline for pulling city crime series without writing scraper code.",
+  "potential": "medium",
+  "time_coverage": "whatever the FBI Crime Data Explorer API exposes",
+  "geography": "US, by FBI-reporting agency/city/state",
+  "size_hint": "small, no committed data (live API wrapper)",
+  "license": "unstated",
+  "last_activity": "2026-08-21",
+  "gap_targets": [],
+  "duplicate_of_holding": "same underlying FBI CDE API as Pirshtuk/fbi",
+  "hits": 1,
+  "themes": [
+   "Insurance, safety and travel advisories datasets (State Dept advisories history, travel insurance claims, crime by city) as demand shocks"
+  ],
+  "why_all": [
+   "Same underlying source as the Pirshtuk/fbi client (US city/agency-level crime data) but more recently maintained and packaged as an MCP tool, which could be plugged directly into an agent pipeline for pulling city crime series without writing scraper code."
+  ]
+ },
+ {
+  "key": "github:ahuarte47/duckdb-eurostat",
+  "url": "https://github.com/ahuarte47/duckdb-eurostat",
+  "name": "ahuarte47/duckdb-eurostat",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "DuckDB extension (35 stars, MIT, updated 9 Sep 2026) that exposes the Eurostat database as SQL tables directly inside DuckDB, so any Eurostat dataset (including tour_ce_omr and related tourism/accommodation tables) can be queried with plain SQL.",
+  "why_useful": "Repo's own environment already uses DuckDB for large-store queries; this extension would let the team pull/refresh Eurostat platform-tourism tables in the same DuckDB workflow used for Inside Airbnb, with no separate Python/R dependency.",
+  "potential": "medium",
+  "gap_targets": [
+   4,
+   7
+  ],
+  "duplicate_of_holding": "same Eurostat tables already held via other means",
+  "geography": "EU/EEA",
+  "time_coverage": "current Eurostat catalogue",
+  "size_hint": "extension binary + SQL macros, no bundled data",
+  "last_activity": "2026-09-09",
+  "license": "MIT",
+  "hits": 1,
+  "themes": [
+   "Country-level Airbnb studies with shared data: OECD/EU/UN reports with data appendices on platform tourism, Eurostat-Airbnb data-sharing agreement outputs, ECB/IMF papers"
+  ],
+  "why_all": [
+   "Repo's own environment already uses DuckDB for large-store queries; this extension would let the team pull/refresh Eurostat platform-tourism tables in the same DuckDB workflow used for Inside Airbnb, with no separate Python/R dependency."
+  ]
+ },
+ {
+  "key": "github:v-rathod/us-immigration-datasets",
+  "url": "https://github.com/v-rathod/us-immigration-datasets",
+  "name": "us-immigration-datasets",
+  "category": "regulatory_legal",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scraper/orchestration tool (fetch_latest.py, 2,475 lines; sources.yaml defining 20+ US government sources) that pulls Visa Bulletin PDFs (FY2011-2026), Visa Statistics PDFs (2017-2025), Visa Annual Reports (FY2015-2024), LCA/H-1B and PERM labor-certification Excel files (FY2008-2026), USCIS employment forms (1991-2026), and NIV (non-immigrant visa) statistics (2021-2024) -- ~4.9GB across 1,033+ files when run. No data committed to the repo itself; public-domain/CC0 sources. Last snapshot noted 2026-03-10.",
+  "why_useful": "A one-command puller for long-run US work/seasonal-visa volumes (H-1B, H-2B via LCA/PERM lineage, NIV stats) and visa-bulletin backlogs -- a proxy for foreign-worker and long-stay travel volume into the US that could feed a labor-mobility/long-stay-rental demand variable (gaps 16 and 2/3 adjacent); the NIV and Visa Bulletin PDFs may also carry seasonal (H-2B/H-2A) visa issuance figures worth extracting.",
+  "potential": "medium",
+  "gap_targets": [
+   16
+  ],
+  "geography": "United States (inbound)",
+  "time_coverage": "1991-2026 depending on source series",
+  "size_hint": "~4.9GB / 1,033+ files once pulled; repo itself is code-only",
+  "license": "Public domain / CC0 for the tool; underlying US government sources are public domain",
+  "last_activity": "2026-03-10 (per README snapshot note)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Student, seasonal-worker, medical and other niche travel-demand datasets; university calendars; military moves"
+  ],
+  "why_all": [
+   "A one-command puller for long-run US work/seasonal-visa volumes (H-1B, H-2B via LCA/PERM lineage, NIV stats) and visa-bulletin backlogs -- a proxy for foreign-worker and long-stay travel volume into the US that could feed a labor-mobility/long-stay-rental demand variable (gaps 16 and 2/3 adjacent); the NIV and Visa Bulletin PDFs may also carry seasonal (H-2B/H-2A) visa issuance figures worth extracting."
+  ]
+ },
+ {
+  "key": "github:olist/work-at-olist-data",
+  "url": "https://github.com/olist/work-at-olist-data",
+  "name": "Olist Brazilian E-Commerce public dataset (source repo)",
+  "category": "regulatory_legal",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "MIT-licensed repo (the original source behind the well-known Kaggle \"Brazilian E-Commerce Public Dataset by Olist\") holding sample relational tables extracted from Olist's real marketplace: orders, order items/prices, freight value, products, sellers (9,000+), customers, and reviews, covering hundreds of thousands of orders across Brazil; includes an ER-diagram schema.",
+  "why_useful": "A real (not synthetic) multi-table ecommerce marketplace transaction dataset with prices, freight/shipping cost, seller counts, delivery times and customer reviews by Brazilian region \u2014 useful as a structural template for how a two-sided marketplace's take-rate/logistics-cost/review data can be organized, and as a LatAm regional ecommerce-activity dataset in its own right (LatAm demand is gap #7).",
+  "potential": "medium",
+  "gap_targets": [
+   7,
+   9
+  ],
+  "time_coverage": "2016-2018 order history (per the well-known Kaggle companion release; exact span not restated on this page)",
+  "geography": "Brazil",
+  "license": "MIT (repo); Kaggle release under CC BY-NC-SA",
+  "last_activity": "not shown; used as a stable hiring-assessment reference dataset",
+  "size_hint": "hundreds of thousands of orders, 950,000+ products, 9,000+ sellers per repo description",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Retail and ecommerce alt-data open samples (web-scraped prices, Amazon rank), as templates for platform KPI nowcasting"
+  ],
+  "why_all": [
+   "A real (not synthetic) multi-table ecommerce marketplace transaction dataset with prices, freight/shipping cost, seller counts, delivery times and customer reviews by Brazilian region \u2014 useful as a structural template for how a two-sided marketplace's take-rate/logistics-cost/review data can be organized, and as a LatAm regional ecommerce-activity dataset in its own right (LatAm demand is gap #7)."
+  ]
+ }
+]

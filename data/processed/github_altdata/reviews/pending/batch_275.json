@@ -1,0 +1,128 @@
+[
+ {
+  "key": "github:toddwschneider/nyc-taxi-data",
+  "url": "https://github.com/toddwschneider/nyc-taxi-data",
+  "name": "nyc-taxi-data",
+  "category": "travel_volume_transport",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Scripts (R + shell) to download and load 3+ billion NYC taxi and for-hire-vehicle (Uber, Lyft) trip records since 2009 into PostgreSQL or ClickHouse, sourced from official NYC TLC trip-record parquet files (CSV pre-May 2022). TLC records carry pickup/dropoff LocationID fields that include JFK and LaGuardia airport zones, so airport-trip volumes can be isolated. Data not committed to the repo itself (70GB+); pulled via download_raw_data.sh.",
+  "why_useful": "Directly addresses gap #10 (rail/road/airport ground-travel capacity and traffic) via airport-connection taxi/rideshare volume as a proxy for air-travel demand into NYC, and general rideshare volume as a consumer-travel-strength read.",
+  "potential": "high",
+  "gap_targets": [
+   10
+  ],
+  "geography": "New York City (JFK, LGA, EWR-adjacent)",
+  "time_coverage": "2009-present, monthly TLC releases",
+  "size_hint": "3B+ trip rows (external); repo itself is code only",
+  "license": "MIT (code); data is public NYC TLC records",
+  "last_activity": "actively maintained (2.1k stars)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Directly addresses gap #10 (rail/road/airport ground-travel capacity and traffic) via airport-connection taxi/rideshare volume as a proxy for air-travel demand into NYC, and general rideshare volume as a consumer-travel-strength read."
+  ]
+ },
+ {
+  "key": "github:piemadd/amtrak-data",
+  "url": "https://github.com/piemadd/amtrak-data",
+  "name": "amtrak-data",
+  "category": "travel_volume_transport",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Amtrak's monthly performance reports extracted (via Tabula from the published PDFs) into JSON/CSV/XML, organized by year and month, covering five tables per month: Operating Results, Capital Results, Key Performance Indicators, Sources and Uses of Cash, and Route-Level Results. Coverage August 2021 to present (maintainer flags update currency as uncertain); raw PDFs and unprocessed tabula extracts kept under /reports.",
+  "why_useful": "Directly fills gap #10 (Amtrak/rail traffic) with route-level Amtrak operating and ridership-adjacent metrics at monthly frequency since mid-2021 \u2014 the most granular free Amtrak dataset found; useful as a US intercity-rail demand cross-check against ABNB's domestic leisure-travel exposure.",
+  "potential": "high",
+  "gap_targets": [
+   10
+  ],
+  "geography": "United States (national + route-level)",
+  "time_coverage": "Aug 2021-present, monthly",
+  "size_hint": "5 tables x ~50 months, small (KB-MB scale)",
+  "license": "not stated in fetch; derived from Amtrak public PDF reports",
+  "last_activity": "recently updated per repo notes",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rail and ground travel: Amtrak ridership, SNCF/DB/Trenitalia open data, Eurostar, bus (FlixBus), rideshare datasets (Uber Movement), NYC TLC airport trips, Chicago taxi"
+  ],
+  "why_all": [
+   "Directly fills gap #10 (Amtrak/rail traffic) with route-level Amtrak operating and ridership-adjacent metrics at monthly frequency since mid-2021 \u2014 the most granular free Amtrak dataset found; useful as a US intercity-rail demand cross-check against ABNB's domestic leisure-travel exposure."
+  ]
+ },
+ {
+  "key": "github:alexbogden/canadian-border-crossings-analysis",
+  "url": "https://github.com/AlexBogden/canadian-border-crossings-analysis",
+  "name": "canadian-border-crossings-analysis",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "data/ folder with BTS monthly inbound US-Canada land-border crossing counts by port (1996-present), a Border Policy Research Institute passenger-vehicle intercept survey at Whatcom County crossings (31,208 individual responses across 4 waves: Summer 2018, Winter 2019, Summer 2025, Winter 2026), and NTTO air-passenger arrivals data Jan 2019-Jul 2026; scripts/ for the analysis; figures/; MIT license; 15 commits, active through 2026",
+  "why_useful": "Direct hit on gap 10 (BTS border-crossing data) with committed BTS series plus something we don't hold at all: a point-in-time individual-level cross-border traveler survey (2018-2026, 4 waves) and NTTO air arrivals extending into 2026 \u2014 could sharpen the US-Canada leisure travel read for the North America regional split.",
+  "potential": "high",
+  "license": "MIT",
+  "last_activity": "2026 (active, 15 commits)",
+  "geography": "US-Canada land border, multiple states/provinces (Vermont, North Dakota, New York, Washington)",
+  "time_coverage": "1996-2026 (BTS), 2018-2026 (survey), 2019-2026 (NTTO air)",
+  "size_hint": "not confirmed row-by-row; survey n=31,208",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Direct hit on gap 10 (BTS border-crossing data) with committed BTS series plus something we don't hold at all: a point-in-time individual-level cross-border traveler survey (2018-2026, 4 waves) and NTTO air arrivals extending into 2026 \u2014 could sharpen the US-Canada leisure travel read for the North America regional split."
+  ]
+ },
+ {
+  "key": "github:jgreathouse9/aaagas",
+  "url": "https://github.com/jgreathouse9/AAAGas",
+  "name": "AAAGas",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "Python scraper pulling AAA gas prices at metro and state level; metro scrape begins 2024-11-17, state scrape begins the day before (2024-11-16). Includes example plots (Atlanta vs Detroit regular gas). Presumably committed CSVs building daily since Nov 2024, i.e. roughly 2 years of daily state/metro gas price history by the pitch date.",
+  "why_useful": "Longest-running AAA scrape found (since Nov 2024) -- if the data files are actually committed and current, this is close to a 2-year daily state+metro gas price panel, useful as a proxy for road-trip cost of US domestic travel and regional consumer strength divergence.",
+  "potential": "high",
+  "geography": "US (state + metro)",
+  "time_coverage": "Nov 2024 - present (~22 months as of Sep 2026)",
+  "size_hint": "unknown -- need to check data folder size/row count",
+  "license": "unknown",
+  "last_activity": "active (README mentions live data through 2024-2026)",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Road travel and fuel: gas prices (EIA, AAA), vehicle miles travelled, holiday driving, toll data"
+  ],
+  "why_all": [
+   "Longest-running AAA scrape found (since Nov 2024) -- if the data files are actually committed and current, this is close to a 2-year daily state+metro gas price panel, useful as a proxy for road-trip cost of US domestic travel and regional consumer strength divergence."
+  ]
+ },
+ {
+  "key": "github:gabosm1507/proyecto_final_programacionii",
+  "url": "https://github.com/GaboSM1507/Proyecto_Final_ProgramacionII",
+  "name": "Proyecto_Final_ProgramacionII (Costa Rica ICT tourism forecasting)",
+  "category": "travel_volume_transport",
+  "data_kind": "both",
+  "what_it_holds": "data/processed/turismo.csv: cleaned dataset of international tourist arrivals to Costa Rica by country of origin and month, 2019-2025, parsed from data/raw/informes_ict/ (original PDF semi-annual reports from Instituto Costarricense de Turismo, ICT). Uses pdfplumber to extract 'Table 1' (international arrivals by country/month) from each ICT PDF; author states annual totals were validated against ICT's official statistical yearbooks and matched exactly. Also pulls Open-Meteo historical daily temperature for Costa Rica as a weather covariate, aggregated monthly. Includes a trained ML model (not committed, file-size excluded). Course project (BD-143 Programaci\u00f3n II), last updated 17 Aug 2026.",
+  "why_useful": "Direct, verified LatAm regional travel-volume data (gap #7) with a repeatable, source-checked extraction method (ICT PDF -> table) an agent could re-run on newer ICT reports; monthly, by-origin-country granularity is finer than most public Costa Rica tourism series and could proxy US-outbound leisure travel strength relevant to ABNB's LatAm segment.",
+  "geography": "Costa Rica",
+  "time_coverage": "2019-2025, monthly",
+  "size_hint": "small CSV + raw PDF folder",
+  "license": "none stated",
+  "last_activity": "2026-08-17",
+  "potential": "high",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Caribbean, Central America and island tourism stats (CTO, Costa Rica ICT, Dominican Republic BCRD, Bahamas, Puerto Rico) and Hawaii-like party-size / length-of-stay surveys"
+  ],
+  "why_all": [
+   "Direct, verified LatAm regional travel-volume data (gap #7) with a repeatable, source-checked extraction method (ICT PDF -> table) an agent could re-run on newer ICT reports; monthly, by-origin-country granularity is finer than most public Costa Rica tourism series and could proxy US-outbound leisure travel strength relevant to ABNB's LatAm segment."
+  ]
+ }
+]

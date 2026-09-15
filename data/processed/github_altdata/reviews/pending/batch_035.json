@@ -1,0 +1,126 @@
+[
+ {
+  "key": "github:clementreiffers/hotel-scraping",
+  "url": "https://github.com/clementreiffers/hotel-scraping",
+  "name": "clementreiffers/hotel-scraping",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python/Selenium bots scraping four hotel sites \u2014 hotels.com, booking.com, trivago.fr, kayak.fr \u2014 for name, address, price, star rating, GPS, capacity, room count, one CSV per site. No data committed to the repo; the tool must be run to produce data. French-locale focus (trivago.fr, kayak.fr).",
+  "why_useful": "A working, non-Airbnb scraper that explicitly covers two metasearch engines (trivago, Kayak) alongside two OTAs, so if a human decides scraping non-Airbnb metasearch pages is in-bounds, this is a ready template for building a hotel-price comparator panel.",
+  "potential": "low",
+  "geography": "France-focused by default (site TLDs .fr), configurable",
+  "time_coverage": "n/a (live scrape only)",
+  "size_hint": "n/a",
+  "license": "unspecified",
+  "last_activity": "unknown, small hobby repo",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels"
+  ],
+  "why_all": [
+   "A working, non-Airbnb scraper that explicitly covers two metasearch engines (trivago, Kayak) alongside two OTAs, so if a human decides scraping non-Airbnb metasearch pages is in-bounds, this is a ready template for building a hotel-price comparator panel."
+  ]
+ },
+ {
+  "key": "github:seanbabalala/hotelrate-crawl",
+  "url": "https://github.com/seanbabalala/hotelrate-crawl",
+  "name": "seanbabalala/hotelrate-crawl (hotelrate-mcp)",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A Model Context Protocol (MCP) server for live, on-demand hotel price comparison across Trip.com, Booking.com, Agoda, and Google Hotels (Playwright-based real-time crawling with session persistence for the first three; Google Hotels support is real-time-only). No data committed; ships a demo mode returning synthetic data and a live mode that scrapes. README explicitly notes 20-40% price variance for the same room across OTAs.",
+  "why_useful": "One of very few repos that names 'Google Hotels' explicitly as a live price source alongside major OTAs; could in principle be adapted (by a human, not run by an agent) into a repeated snapshot panel of Google Hotels-displayed rates for named markets/dates as an ex-Airbnb ADR cross-check.",
+  "potential": "low",
+  "geography": "global (query-driven, no fixed panel)",
+  "time_coverage": "n/a (live queries only, no history)",
+  "size_hint": "n/a",
+  "license": "unspecified",
+  "last_activity": "recent (MCP-server pattern, 2025/2026-era tooling)",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels"
+  ],
+  "why_all": [
+   "One of very few repos that names 'Google Hotels' explicitly as a live price source alongside major OTAs; could in principle be adapted (by a human, not run by an agent) into a repeated snapshot panel of Google Hotels-displayed rates for named markets/dates as an ex-Airbnb ADR cross-check."
+  ]
+ },
+ {
+  "key": "github:topics/hotel-prices",
+  "url": "https://github.com/topics/hotel-prices",
+  "name": "hotel-prices GitHub topic (Apify-actor cluster: traveloka-hotel-scraper, trip-hotel-scraper, agoda-scraper-examples, booking-hotels-prices-scraper, google-hotels-scraper, google-hotels-search, etc., all by SEO/marketplace accounts, 0 stars each)",
+  "category": "competitor_ota",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "A cluster of near-identical, zero-star 'Apify actor example' repos advertising live scrapers for Trip.com (51 countries), Traveloka (SE Asia), Agoda, Booking.com, and Google Hotels; none commit any data files, all are thin marketing wrappers around paid Apify actors.",
+  "why_useful": "Confirms there is no substantive committed Google Hotels/metasearch price dataset currently sitting on GitHub under this topic \u2014 flagged for completeness/negative-result value, not because any single repo is worth pursuing.",
+  "potential": "low",
+  "geography": "varies by repo (SE Asia, global, Bangladesh, etc.)",
+  "time_coverage": "n/a",
+  "size_hint": "n/a",
+  "license": "unspecified",
+  "last_activity": "2025-2026 (recently created marketplace listings)",
+  "gap_targets": [],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Google Hotel Ads / Google Travel price datasets and scrapers; hotel metasearch price panels"
+  ],
+  "why_all": [
+   "Confirms there is no substantive committed Google Hotels/metasearch price dataset currently sitting on GitHub under this topic \u2014 flagged for completeness/negative-result value, not because any single repo is worth pursuing."
+  ]
+ },
+ {
+  "key": "github:ritvikrry/algorithmic-learning-project",
+  "url": "https://github.com/RitvikRRy/Algorithmic-learning-Project",
+  "name": "Algorithmic-learning-Project (Expedia recommendations)",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Code applying the 2013 Kaggle 'Expedia Hotel Recommendations' dataset (~37M click/booking search-result rows with search date, check-in/out dates, destination, price bucket, is_booking flag) via the Kaggle API; no data files committed to the repo itself.",
+  "why_useful": "The underlying Expedia dataset (external, on Kaggle) has real booking-vs-click records with implicit lead time (date_time of search vs. srch_ci check-in date) that could proxy OTA booking-window/lead-time distributions for gap #3, but this repo itself is just a thin ML exercise with no committed data and no method for point-in-time refresh.",
+  "potential": "low",
+  "geography": "global (US-heavy OTA searches)",
+  "time_coverage": "2013 (single Kaggle snapshot, not point-in-time)",
+  "size_hint": "not committed; external Kaggle dataset is ~37M rows / ~4GB",
+  "license": "unspecified",
+  "last_activity": "2026-01-24",
+  "hits": 1,
+  "themes": [
+   "Hotel booking demand datasets (Antonio Almeida Nunes and successors), hotel PMS datasets, revenue-management datasets with cancellations and lead times"
+  ],
+  "why_all": [
+   "The underlying Expedia dataset (external, on Kaggle) has real booking-vs-click records with implicit lead time (date_time of search vs. srch_ci check-in date) that could proxy OTA booking-window/lead-time distributions for gap #3, but this repo itself is just a thin ML exercise with no committed data and no method for point-in-time refresh."
+  ]
+ },
+ {
+  "key": "github:shrican/expedia-bigdata-analysis",
+  "url": "https://github.com/shrican/expedia-bigdata-analysis",
+  "name": "shrican/expedia-bigdata-analysis",
+  "category": "competitor_ota",
+  "data_kind": "pointer_to_external_host",
+  "what_it_holds": "Hadoop/MapReduce big-data analysis project built on the Kaggle 'Expedia Hotel Recommendations' (ICDM 2013 / 2016 competition) dataset -- user search sessions, destination clusters, and click/booking events across ~37M training rows in the original Kaggle release. Dataset is referenced/pulled from Kaggle, not committed (too large for git); repo holds the Hadoop jobs/analysis code only.",
+  "why_useful": "Expedia search-and-book session data is a large real dataset on a directly competing OTA's demand patterns (destination popularity, booking-vs-click conversion, seasonality) -- usable as a competitor-volume proxy or as a methodology template for building an Airbnb-analogous demand model, responsive to gap #9.",
+  "potential": "low",
+  "geography": "Primarily US-origin Expedia searches",
+  "time_coverage": "~2013-2014 (dataset vintage)",
+  "size_hint": "~37M rows (Kaggle original, external, not committed)",
+  "license": "Not stated; code repo appears unlicensed",
+  "last_activity": "Not confirmed",
+  "gap_targets": [
+   9
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Kaggle competitions and datasets on travel demand forecasting mirrored on GitHub (Expedia, Trivago, Booking, Airbnb new-user bookings, hotel demand)"
+  ],
+  "why_all": [
+   "Expedia search-and-book session data is a large real dataset on a directly competing OTA's demand patterns (destination popularity, booking-vs-click conversion, seasonality) -- usable as a competitor-volume proxy or as a methodology template for building an Airbnb-analogous demand model, responsive to gap #9."
+  ]
+ }
+]

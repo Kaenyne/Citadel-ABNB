@@ -1,0 +1,132 @@
+[
+ {
+  "key": "github:alsonpr/henley-passport-index-dataset",
+  "url": "https://github.com/alsonpr/Henley-Passport-Index-Dataset",
+  "name": "alsonpr/Henley-Passport-Index-Dataset",
+  "category": "cross_border_visa",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Python scraper + structured CSV output built from the Henley Passport Index API (18 stars, updated 13 Jul 2026); converts Henley's ranking/visa-free-count data per country into CSV.",
+  "why_useful": "Henley Passport Index ranks countries by visa-free destination count; as a time series (if run repeatedly) it is a slow macro proxy for outbound travel friction by nationality, marginal relevance to cross-border demand splits (gap #7).",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2026-07-13",
+  "size_hint": "small CSV + scraper script",
+  "time_coverage": "current snapshot only unless re-run",
+  "geography": "global",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "overlaps ilyankou/passport-index-dataset conceptually but different source/format",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Henley Passport Index ranks countries by visa-free destination count; as a time series (if run repeatedly) it is a slow macro proxy for outbound travel friction by nationality, marginal relevance to cross-border demand splits (gap #7)."
+  ]
+ },
+ {
+  "key": "github:alsonpr/passport-index-dataset",
+  "url": "https://github.com/alsonpr/Passport-Index-Dataset",
+  "name": "alsonpr/Passport-Index-Dataset",
+  "category": "cross_border_visa",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "8-star repo scraping visa requirement data from 'Passport Power Index' into structured format (country pairs, visa status).",
+  "why_useful": "Alternate-source passport/visa requirement dataset; redundant with ilyankou's more popular repo but confirms multiple independent sources exist for this data type.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2025-03-19",
+  "size_hint": "small",
+  "time_coverage": "unclear, likely single snapshot",
+  "geography": "global",
+  "gap_targets": [
+   7
+  ],
+  "duplicate_of_holding": "duplicate of ilyankou/passport-index-dataset concept",
+  "hits": 2,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS",
+   "wildcard: an events and shocks analyst (World Cup 2026, hurricanes, wi"
+  ],
+  "why_all": [
+   "Alternate-source passport/visa requirement dataset; redundant with ilyankou's more popular repo but confirms multiple independent sources exist for this data type.",
+   "Alternative/cross-check source for the same visa-requirement panel as ilyankou's dataset, useful if vintages or coverage differ."
+  ]
+ },
+ {
+  "key": "github:hardikgw/cbp-wait-times",
+  "url": "https://github.com/hardikgw/cbp-wait-times",
+  "name": "hardikgw/cbp-wait-times",
+  "category": "cross_border_visa",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Old (last commit 2016) app/pipeline that indexes CBP (US Customs and Border Protection) land-port and airport wait times into Elasticsearch. Contains app/ and conf/ directories (pipeline code), not a static committed dataset -- CBP publishes live wait times via bwt.cbp.gov XML feed which this scrapes/indexes.",
+  "why_useful": "Demonstrates a working method to pull CBP border wait-time data (a real-time congestion/traffic proxy for land-border crossing volume, relevant to gap #10 border crossings), but the code is stale (2016) and would need rewriting against the current CBP feed; no historical data is stored in the repo itself.",
+  "potential": "low",
+  "license": "none stated",
+  "last_activity": "2016-10-26",
+  "size_hint": "small codebase, no data files",
+  "time_coverage": "n/a (live feed only)",
+  "geography": "US land ports and airports",
+  "gap_targets": [
+   10
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Cross-border and visa data: Schengen visa statistics, ESTA, ETIAS, CBP wait times, passport index, border crossings BTS"
+  ],
+  "why_all": [
+   "Demonstrates a working method to pull CBP border wait-time data (a real-time congestion/traffic proxy for land-border crossing volume, relevant to gap #10 border crossings), but the code is stale (2016) and would need rewriting against the current CBP feed; no historical data is stored in the repo itself."
+  ]
+ },
+ {
+  "key": "github:justinperry1511-hash/national-parks-bi",
+  "url": "https://github.com/justinperry1511-hash/national-parks-bi",
+  "name": "national-parks-bi",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "national_parks_clean.csv with 18,851 monthly visitation records across 63 US National Parks, Jan 2000-Dec 2024 (300 months), star-schema with parks/dates dimension tables and a monthly visitation fact table, backed by a SQLite DB with ETL staging layer. Source stated as NPS Public Use Statistics Office (irma.nps.gov/Stats).",
+  "why_useful": "Long, clean, monthly, government-sourced NPS visitation series across 63 parks (24 years) is a ready-made national-scale US leisure-travel/destination-demand proxy that could nowcast domestic NA nights alongside TSA throughput; addresses destination-demand gap adjacent to gap 10 (travel volume) and general consumer/travel strength gaps.",
+  "potential": "high",
+  "geography": "US, 63 National Park units",
+  "time_coverage": "monthly, 2000-2024",
+  "size_hint": "18,851 rows, one CSV + SQLite DB",
+  "license": "not stated in README",
+  "last_activity": "2026-04-08",
+  "gap_targets": [
+   10
+  ],
+  "hits": 1,
+  "themes": [
+   "Destination demand proxies: US National Park Service visitation stats API, state park attendance, museum/theme-park attendance, ski resort data, beach visitation"
+  ],
+  "why_all": [
+   "Long, clean, monthly, government-sourced NPS visitation series across 63 parks (24 years) is a ready-made national-scale US leisure-travel/destination-demand proxy that could nowcast domestic NA nights alongside TSA throughput; addresses destination-demand gap adjacent to gap 10 (travel volume) and general consumer/travel strength gaps."
+  ]
+ },
+ {
+  "key": "github:mominullptr/fifa-world-cup-2026-dataset",
+  "url": "https://github.com/mominullptr/FIFA-World-Cup-2026-Dataset",
+  "name": "FIFA-World-Cup-2026-Dataset",
+  "category": "events_weather_shocks",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "12 committed CSVs: venues.csv (16 stadiums, city/country/capacity/lat-lon across US/Canada/Mexico), matches.csv + matches_detailed.csv (104 matches, date, kickoff_time_utc, stage, venue_id, teams, scores, xG), teams.csv (48 teams, group, FIFA rank/Elo), squads_and_players.csv (1,248 players), plus match_events, match_team_stats, match_lineups, player_stats, match_prediction_features (65 ML features). Actively updated during the tournament (Jun 11-Jul 19 2026). CC0-1.0 license, 63 stars, updated 30 Aug 2026.",
+  "why_useful": "Directly fills gap #11 (World Cup 2026 host-city/schedule data): venue city + exact match date lets us build a host-city demand-shock calendar for 3Q26 nights/ADR (World Cup falls entirely inside 3Q26). Capacity and lat/lon support a per-market intensity weight (e.g. more matches/bigger stadium in a metro = larger STR demand pulse) for NA markets in the Inside Airbnb panel.",
+  "potential": "high",
+  "geography": "US, Canada, Mexico (16 host cities)",
+  "time_coverage": "Jun 11 - Jul 19 2026 (all inside 3Q26)",
+  "size_hint": "12 CSV files, largest ~1,248 rows (players); matches.csv 104 rows",
+  "license": "CC0-1.0",
+  "last_activity": "2026-08-30",
+  "gap_targets": [
+   11
+  ],
+  "hits": 1,
+  "themes": [
+   "Event calendars: FIFA World Cup 2026 schedule and host-city data, Olympics, concerts (Setlist.fm, Songkick, Ticketmaster API), conferences, PredictHQ samples, holiday calendars by country"
+  ],
+  "why_all": [
+   "Directly fills gap #11 (World Cup 2026 host-city/schedule data): venue city + exact match date lets us build a host-city demand-shock calendar for 3Q26 nights/ADR (World Cup falls entirely inside 3Q26). Capacity and lat/lon support a per-market intensity weight (e.g. more matches/bigger stadium in a metro = larger STR demand pulse) for NA markets in the Inside Airbnb panel."
+  ]
+ }
+]

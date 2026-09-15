@@ -1,0 +1,153 @@
+[
+ {
+  "key": "github:upgo-mcgill/strr",
+  "url": "https://github.com/UPGo-McGill/strr",
+  "name": "strr (UPGo McGill)",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "R package (from David Wachsmuth's UPGo Lab at McGill, the group behind the Airbnb-and-the-rent-gap / gentrification literature adjacent to this theme) providing functions to clean/compress/expand raw AirDNA property and daily files, detect multi-listing commercial operators (strr_multi), frequently-rented entire-home listings (strr_FREH), 'ghost hostel' clusters of private rooms in one building (strr_ghost), classify listings as real housing units (strr_housing), and estimate true listing locations from fuzzy map pins (strr_raffle). No large datasets committed; this is a processing/analysis toolkit meant to be pointed at AirDNA or Inside-Airbnb-shaped inputs. Actively developed (400+ commits).",
+  "why_useful": "A maintained, published toolkit for exactly the realised-occupancy/commercial-operator questions in gap #2 (AirDNA-style exports) and for classifying professional vs. casual hosts \u2014 useful if the team ever obtains an AirDNA sample or Inside Airbnb calendar data and wants a vetted commercial-listing / ghost-hostel detector rather than building one from scratch; academically used by McGill's Urban Politics and Governance lab in several STR housing-impact papers, including work touching NYC-style regulation questions.",
+  "potential": "high",
+  "gap_targets": [
+   2,
+   9
+  ],
+  "geography": "generic (used in Montreal, Toronto, Los Angeles, New York studies by the same lab)",
+  "time_coverage": "N/A (processing toolkit, not a stored dataset)",
+  "size_hint": "N/A",
+  "license": "unknown",
+  "last_activity": "unknown (422 commits, 12 open issues)",
+  "duplicate_of_holding": "",
+  "hits": 12,
+  "themes": [
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos",
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews",
+   "AirDNA / Mashvisor / AllTheRooms / Transparent / Key Data / Rabbu / Awning sample exports or scraped market pages committed to GitHub",
+   "Municipal short-term-rental licence and registration datasets (Austin, LA HSO, SF OSTR, Denver, New Orleans, Nashville, Seattle, Portland, Boston, Chicago, San Diego, Honolulu) mirrored or pulled by code",
+   "Airbnb host-side datasets: superhost/multi-listing/professional host panels, host earnings, DAC7 platform-reporting statistics, IRS/tax authority STR income stats",
+   "Alternative-data vendor sample repos: vendors publishing free samples on GitHub (Advan, Similarweb, Apptopia, Yipit-like, Consumer Edge, Earnest, M Science, Quiver Quant, Thinknum)",
+   "University and municipal research datasets on STRs published on GitHub (city planning departments, urban labs, McGill UPGo, Inside Airbnb collaborators)",
+   "UPGo (McGill) and strr R package: STR research tooling and datasets for Canada/US cities",
+   "wildcard: a regulator/compliance analyst tracking STR ordinances, regi"
+  ],
+  "why_all": [
+   "A maintained, published toolkit for exactly the realised-occupancy/commercial-operator questions in gap #2 (AirDNA-style exports) and for classifying professional vs. casual hosts \u2014 useful if the team ever obtains an AirDNA sample or Inside Airbnb calendar data and wants a vetted commercial-listing / ghost-hostel detector rather than building one from scratch; academically used by McGill's Urban Politics and Governance lab in several STR housing-impact papers, including work touching NYC-style regulation questions.",
+   "Directly implements the STR housing/commercial-operator/ghost-hostel detection methodology used across the Wachsmuth/Barron-Kung-Proserpio-adjacent housing literature named in this theme; could be run over our own Inside Airbnb 13-city or 120-market panels to derive commercial-host-share and ghost-listing metrics as supply-quality proxies, relevant to gap #2 (occupancy/pricing realism) and general supply-side signal construction.",
+   "A vetted, published-research-grade processing pipeline for AirDNA-style listing/calendar data (used in the group's peer-reviewed Canadian STR studies); if the team or a licensed partner ever obtains any AirDNA extract, this is the standard method to turn it into occupancy/ADR/commercial-operator classifications. Also signals what an academic AirDNA-based methodology looks like for gap #2.",
+   "Academic-grade tooling for STR data cleaning and cross-platform matching (Airbnb/Vrbo dedup, regulatory compliance flags) that could be applied to any city's registry data we pull; worth flagging as a methods repo even though it holds no US city data itself.",
+   "Directly targets gap #2 (realised ADR/occupancy for STRs from AirDNA-style sources) \u2014 an academically vetted, reusable toolkit for processing any AirDNA sample export we might obtain, including commercial-operator and ghost-hostel classification that could feed a supply/professionalization signal.",
+   "Directly relevant to gap #2 (realized ADR/occupancy) and the multi-listing/professional-host panel theme: an open, tested method for separating commercial hosts from casual hosts that our team could apply to any listing panel (including Inside Airbnb) rather than building from scratch.",
+   "UPGo has separately published Canadian city STR panels (Montreal, Toronto, Vancouver) used in academic STR research; this tooling repo is the entry point to find their companion data repos, relevant to gap #12 (Montreal/Quebec CITQ) and gap #9 (STR competitor supply in Canada). Needs a follow-up crawl of the UPGo-McGill GitHub org for the actual data repos (this one is code only).",
+   "This is the flagship UPGo (McGill) STR-research toolkit \u2014 the exact 'academic STR lab' the theme targets. The methodology (ghost-hotel detection, commercial-operator flags) could be re-applied to our own Inside Airbnb panel even though the underlying AirDNA feed is paid; also a pointer to the wider UPGo-McGill GitHub org (29 repos, see notes).",
+   "Directly targets gap #2 (realised ADR/occupancy for STRs) via a maintained, actively-used methodology for turning AirDNA-style panel data into occupancy/ADR/commercial-operator metrics; also useful for gap #12 (ghost-hotel/illegal-listing detection feeds regulatory-compliance analysis).",
+   "Directly named in the theme; is the canonical open-source method for turning raw AirDNA property/daily files into realised-occupancy/ADR-style STR metrics -- exactly gap #2 (realised ADR/occupancy for STRs). We would still need our own AirDNA-equivalent extract to run it, but the cleaning/classification logic (ghost hostels, commercial-operator flags) is reusable on any STR daily-calendar data including our own Inside Airbnb captures.",
+   "This is the canonical open-source method for turning raw STR panel data (AirDNA-style property/daily records) into occupancy, ADR, commercial-operator share, and housing-unit-linkage metrics \u2014 directly useful as a methodology reference for gap #2 (realised ADR/occupancy) and #8/#9 (STR supply classification) if we ever obtain any AirDNA-like sample, and its raffle/ghost-hotel logic is reusable on our own Inside Airbnb panel.",
+   "A reusable, tested method (not raw scraped data) for separating 'professional/commercial' STR supply from casual hosts \u2014 relevant to Airbnb's own host-mix disclosures and to regional-mix/regulatory-exposure analysis; complements the Inside Airbnb panel already held by giving a peer-reviewed classification method rather than raw listing counts."
+  ]
+ },
+ {
+  "key": "github:paezha/idealista18",
+  "url": "https://github.com/paezha/idealista18",
+  "name": "idealista18",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Committed open real-estate-listing dataset scraped from Idealista.com for three major Spanish cities (Madrid, Barcelona, Valencia) for the year 2018, published as a companion to a peer-reviewed paper (DOI 10.1177/23998083241242844). Includes for-sale and likely rental listing records with price, location, size fields under ODbL-1.0 licence.",
+  "why_useful": "Long-term-rental pricing panel for major EU cities (2018 vintage) is a real, licensed-for-reuse, committed dataset \u2014 directly fills gap #13 (LTR data for STR\u2194LTR crossover / host supply economics) and is old enough to be a useful historical anchor Inside Airbnb itself lacks.",
+  "potential": "high",
+  "gap_targets": [
+   13
+  ],
+  "geography": "Spain (Madrid, Barcelona, Valencia)",
+  "time_coverage": "2018 (single year snapshot)",
+  "size_hint": "city-level listings dataset, exact row count not confirmed from search metadata; academic paper companion",
+  "license": "ODbL-1.0",
+  "last_activity": "2026-06-27 (repo updated; underlying data is 2018 vintage)",
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Rental listing scrapers and datasets (Craigslist, Zillow rentals, Apartments.com, Idealista, Rightmove, Zoopla, Immoscout24, SeLoger, Immobiliare, Domain, realestate.com.au)"
+  ],
+  "why_all": [
+   "Long-term-rental pricing panel for major EU cities (2018 vintage) is a real, licensed-for-reuse, committed dataset \u2014 directly fills gap #13 (LTR data for STR\u2194LTR crossover / host supply economics) and is old enough to be a useful historical anchor Inside Airbnb itself lacks."
+  ]
+ },
+ {
+  "key": "github:fitnr/acris-download",
+  "url": "https://github.com/fitnr/acris-download",
+  "name": "fitnr/acris-download",
+  "category": "housing_rental",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "Python tool + SQL schema (mysql.sql, postgres.sql, sqlite.sql) that downloads NYC's ACRIS real-estate transaction records (deeds, mortgages, liens, party names/entities on every recorded document) from the NYC Open Data portal and loads them into a database. No data files committed, but the schema is ready-made for parsing entity/LLC names on deed and mortgage documents. 69 stars, updated 30 Jul 2026 (active).",
+  "why_useful": "Directly targets gap 13 (housing supply/LLC ownership) and the theme's ACRIS ask: ACRIS party names are the standard way to identify LLC-shell buyers of NYC real estate, a proxy for investor purchase activity and STR-conversion housing supply in the largest ABNB market for domestic urban nights.",
+  "potential": "high",
+  "size_hint": "code + SQL schema only, no committed data rows; pulls from full ACRIS history (1966-present) via NYC Open Data API",
+  "time_coverage": "1966-present (ACRIS coverage)",
+  "geography": "New York City (5 boroughs)",
+  "license": "GPL-3.0",
+  "last_activity": "2026-07-30",
+  "gap_targets": [
+   13
+  ],
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Directly targets gap 13 (housing supply/LLC ownership) and the theme's ACRIS ask: ACRIS party names are the standard way to identify LLC-shell buyers of NYC real estate, a proxy for investor purchase activity and STR-conversion housing supply in the largest ABNB market for domestic urban nights."
+  ]
+ },
+ {
+  "key": "github:justfixnyc/who-owns-what",
+  "url": "https://github.com/JustFixNYC/who-owns-what",
+  "name": "who-owns-what (JustFix.nyc)",
+  "category": "housing_rental",
+  "data_kind": "both",
+  "what_it_holds": "Django/PostgreSQL + React app and backend SQL functions that map NYC landlord portfolios and shell-company/LLC ownership networks using HPD Registration (~160k properties), PLUTO, and ACRIS deed/ownership records; identifies buildings a given owner network controls and flags financially distressed buildings. 1,172 commits, GPLv3, ~39 open issues, ongoing maintenance.",
+  "why_useful": "Purpose-built LLC-ownership-network tool over NYC PLUTO/ACRIS/HPD data -- exactly the 'LLC ownership' and 'NYC PLUTO/ACRIS' items named in the theme; usable to identify institutional/investor-controlled rental portfolios in NYC as a host-supply-concentration proxy (gap 13).",
+  "potential": "high",
+  "geography": "New York City",
+  "time_coverage": "HPD registrations current + historical filings, ongoing",
+  "license": "GPLv3",
+  "last_activity": "active (open issues/PRs as of fetch)",
+  "size_hint": "~160k properties in primary registration table",
+  "gap_targets": [
+   13
+  ],
+  "duplicate_of_holding": "",
+  "hits": 1,
+  "themes": [
+   "Housing supply and investor activity: building permits, Redfin investor purchases, mortgage rates, county assessor/parcel data, LLC ownership, NYC PLUTO/ACRIS"
+  ],
+  "why_all": [
+   "Purpose-built LLC-ownership-network tool over NYC PLUTO/ACRIS/HPD data -- exactly the 'LLC ownership' and 'NYC PLUTO/ACRIS' items named in the theme; usable to identify institutional/investor-controlled rental portfolios in NYC as a host-supply-concentration proxy (gap 13)."
+  ]
+ },
+ {
+  "key": "github:mseutin/digital-nomad-visa-data",
+  "url": "https://github.com/MSeutin/digital-nomad-visa-data",
+  "name": "digital-nomad-visa-data (GlobeNomad Visa Dataset)",
+  "category": "housing_rental",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "data/visas.json: 53 digital-nomad-visa programmes across 46 countries (Thailand alone has 4 pathways), one record per programme with fields documented in SCHEMA.md; CHANGELOG.md shows a schema restructure 2026-08-27 (one row per programme instead of per country); each record cites an official government source page and a verification timestamp. CC-BY-4.0. Small (~single JSON file) but structured and maintained.",
+  "why_useful": "Directly fills gap #16 (digital-nomad visa datasets) with a maintained, sourced, timestamped panel of nomad-visa program existence/terms across 46 countries \u2014 usable as a proxy for long-stay/remote-work demand geography that could interact with ABNB's long-stay mix and regional nights growth (LatAm/APAC visa launches).",
+  "potential": "high",
+  "gap_targets": [
+   16
+  ],
+  "geography": "46 countries, global",
+  "time_coverage": "live/current snapshot, versioned via CHANGELOG since at least 2026; not a historical time series",
+  "size_hint": "single JSON file, 53 records",
+  "license": "CC-BY-4.0",
+  "last_activity": "2026-09-09 (per gh search updatedAt)",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Coliving, corporate housing, furnished mid-term rental data (Blueground, Landing, Furnished Finder, Zeus), remote-work and digital-nomad data (WFH Research SWAA, Nomad List, nomad visas)",
+   "wildcard: a computational social scientist who works with Reddit dumps"
+  ],
+  "why_all": [
+   "Directly fills gap #16 (digital-nomad visa datasets) with a maintained, sourced, timestamped panel of nomad-visa program existence/terms across 46 countries \u2014 usable as a proxy for long-stay/remote-work demand geography that could interact with ABNB's long-stay mix and regional nights growth (LatAm/APAC visa launches).",
+   "A launch-date panel of digital-nomad visa programs is a crude but concrete proxy for the long-stay / remote-work demand growth Airbnb has cited as a tailwind (gap #16); very small n and not time-series (it is a policy-catalogue snapshot, not a flow), so this is a weak hit worth a five-minute look, not a workstream on its own."
+  ]
+ }
+]

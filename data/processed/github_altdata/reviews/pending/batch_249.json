@@ -1,0 +1,135 @@
+[
+ {
+  "key": "github:dingluo1205/airbnbdatapipeline",
+  "url": "https://github.com/dingluo1205/AirbnbDataPipeline",
+  "name": "dingluo1205/AirbnbDataPipeline",
+  "category": "str_airbnb_direct",
+  "data_kind": "acquisition_method",
+  "what_it_holds": "End-to-end pipeline (Airflow, S3, Spark/EMR, Redshift/Athena) that pulls Inside Airbnb review and listing CSVs, partitioning outputs by month and city in S3. No data committed to the repo itself; infrastructure/orchestration code only.",
+  "why_useful": "A reusable, more production-grade version of the 'pull Inside Airbnb into cloud storage on a schedule' pattern; could be adapted to build our own point-in-time vintage store of Inside Airbnb dumps going forward, but does not itself unlock any historical (pre-2023) data.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "n/a (whatever cities configured)",
+  "time_coverage": "current live Inside Airbnb archive only",
+  "size_hint": "n/a (tool)",
+  "license": "unspecified",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "",
+  "hits": 2,
+  "themes": [
+   "Inside Airbnb historical dump mirrors and archives (pre-2023 listings/calendar/reviews CSVs committed or released; archive.org mirrors referenced from GitHub)",
+   "Inside Airbnb New York City snapshots around Local Law 18 (2023-06 to 2024-03) stored in repos"
+  ],
+  "why_all": [
+   "A reusable, more production-grade version of the 'pull Inside Airbnb into cloud storage on a schedule' pattern; could be adapted to build our own point-in-time vintage store of Inside Airbnb dumps going forward, but does not itself unlock any historical (pre-2023) data.",
+   "Another reusable pipeline pattern specifically naming New York among its target cities; low value on its own since it holds no data and depends on Inside Airbnb's live (non-archival) CDN."
+  ]
+ },
+ {
+  "key": "github:airbert-vln/bnb-dataset",
+  "url": "https://github.com/airbert-vln/bnb-dataset",
+  "name": "airbert-vln/bnb-dataset",
+  "category": "str_airbnb_direct",
+  "data_kind": "both",
+  "what_it_holds": "Scripts + two committed TSV files (airbnb-train-indoor-filtered.tsv, airbnb-test-indoor-filtered.tsv) of Airbnb listing photo-caption pairs (listing ID, photo ID, image URL, caption) scraped from Airbnb.com as of a 'Christmas 2019' snapshot, filtered to indoor images only, used to pretrain a vision-and-language-navigation model (the 'Airbert' CVPR 2021 paper by Guillaume Bono et al., not one of the named target authors but the closest thing to a large committed Airbnb scrape found on GitHub). Pipeline continues to LMDB visual features and JSON path-instruction pairs for robot navigation training, not economics.",
+  "why_useful": "Marginal for KPI forecasting -- it is an image/caption dataset for ML vision research, not pricing/occupancy/nights data. Listed for completeness since it is a real, non-trivial airbnb.com-derived academic dataset with committed files, but it doesn't bear on any numbered gap directly.",
+  "potential": "low",
+  "gap_targets": [],
+  "geography": "cities drawn from Wikipedia place listings, global, unspecified count",
+  "time_coverage": "circa Christmas 2019 snapshot",
+  "size_hint": "pre-computed TSVs committed; scale not stated in README",
+  "license": "MIT",
+  "last_activity": "22 commits, no explicit date seen",
+  "duplicate_of_holding": "No overlap with anything we hold; distinct modality (images/captions, not price/occupancy).",
+  "hits": 4,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections",
+   "Airbnb reviews text corpora and review-date datasets on GitHub (review counts over time as a stays proxy)",
+   "Academic replication packages using Airbnb data: Zervas Proserpio Byers (hotel impact), Barron Kung Proserpio (housing), Farronato Fradkin, Horn Merante, Garcia-Lopez Barcelona, Koster Los Angeles, Edelman discrimination, Fradkin reviews"
+  ],
+  "why_all": [
+   "Marginal for KPI forecasting -- it is an image/caption dataset for ML vision research, not pricing/occupancy/nights data. Listed for completeness since it is a real, non-trivial airbnb.com-derived academic dataset with committed files, but it doesn't bear on any numbered gap directly.",
+   "Not directly useful for KPI forecasting (image/caption data, not price or nights) but documents a working, non-trivial Airbnb-listing scraper built for an academic paper (used for indoor-scene research) \u2014 low relevance to ABNB thesis, flagged mainly to rule out as a source.",
+   "A ready-made, dozens-of-cities global Airbnb scraper/downloader (listings + reviews + captions) built and tested by an academic NLP/vision group, usable as a method reference for what fields are obtainable and how, though it scrapes airbnb.com directly (ToS question per repo rule 6) and ships no data itself.",
+   "Large-scale (listing-level) captioned photo dataset from real Airbnb listings worldwide at a single point in time (Dec 2019) -- could in principle be repurposed as a cross-market listing snapshot/description corpus (amenity mix, room-type text) predating most of what the team holds, though it is aimed at computer vision, not KPIs, and the authors note images are no longer guaranteed available. Also a working example of a non-airbnb-owned method for turning Airbnb.com into a TSV/image corpus -- flag as method only, not to be run (touches airbnb.com directly, a ToS decision per repo rules)."
+  ]
+ },
+ {
+  "key": "github:msr-ds3/airbnb",
+  "url": "https://github.com/msr-ds3/airbnb",
+  "name": "msr-ds3/airbnb",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Academic (Data Science Summer School / MSR-DS3) project titled 'Airbnb: Predicting Loyalty' with a committed raw_data folder, load_historical_data.R, and exploration/historical_exploration scripts (e.g. lou_listings_history_amenities.R, suggesting a Louisville, KY panel) analyzing host/guest return behavior over time using Inside Airbnb history; 280 commits.",
+  "why_useful": "Possible longitudinal (multi-snapshot-over-time) Inside Airbnb panel for a city (Louisville) outside our current 13-city set, with host/guest repeat-booking features that could proxy loyalty/retention dynamics; needs a directory listing to confirm exact vintages/row counts before treating as more than a lead.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Louisville, KY (inferred from file naming) plus possibly other cities",
+  "time_coverage": "unspecified, described as 'historical_exploration'",
+  "size_hint": "raw_data folder present; size unconfirmed",
+  "license": "not stated",
+  "last_activity": "unknown (280 commits, academic project, likely dated ~2018-2019 DS3 cohort)",
+  "duplicate_of_holding": "Possibly a new city (Louisville) not in our panel; unconfirmed overlap otherwise.",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Possible longitudinal (multi-snapshot-over-time) Inside Airbnb panel for a city (Louisville) outside our current 13-city set, with host/guest repeat-booking features that could proxy loyalty/retention dynamics; needs a directory listing to confirm exact vintages/row counts before treating as more than a lead."
+  ]
+ },
+ {
+  "key": "github:isammitr/airbnb-amsterdam",
+  "url": "https://github.com/isammitr/airbnb-amsterdam",
+  "name": "isammitr/airbnb-amsterdam",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Amsterdam-specific Inside Airbnb export: listings.csv, calendar.csv, reviews.csv used for price prediction and peak-season analysis.",
+  "why_useful": "Single-city, single-vintage Amsterdam snapshot; only useful if its vintage predates our current CDN-limited coverage (Amsterdam is outside our 13-city panel entirely), so it is a new geography at minimum.",
+  "potential": "low",
+  "gap_targets": [
+   1
+  ],
+  "geography": "Amsterdam",
+  "time_coverage": "unspecified single snapshot",
+  "size_hint": "3 CSVs, city-scale (thousands of listings)",
+  "license": "not stated",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "Amsterdam is not in our held 13-city Inside Airbnb panel, so this is a new geography even as a single snapshot.",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "Single-city, single-vintage Amsterdam snapshot; only useful if its vintage predates our current CDN-limited coverage (Amsterdam is outside our 13-city panel entirely), so it is a new geography at minimum."
+  ]
+ },
+ {
+  "key": "github:harshadagrawal/rio-de-janeiro-airbnb-open-data",
+  "url": "https://github.com/harshadagrawal/Rio-de-janeiro-Airbnb-open-data",
+  "name": "harshadagrawal/Rio-de-janeiro-Airbnb-open-data",
+  "category": "str_airbnb_direct",
+  "data_kind": "stored_dataset",
+  "what_it_holds": "Rio de Janeiro Inside Airbnb open-data export used for an analysis notebook; single city, likely single vintage.",
+  "why_useful": "LatAm geography (Rio) not in our 13-city panel (we hold Mexico City only for LatAm); worth a quick check for vintage/fields, could add a second LatAm data point relevant to gap 7 (regional travel volume outside US/EU) indirectly via STR supply.",
+  "potential": "low",
+  "gap_targets": [
+   7
+  ],
+  "geography": "Rio de Janeiro, Brazil",
+  "time_coverage": "unspecified",
+  "size_hint": "unconfirmed, single-city Inside Airbnb scale",
+  "license": "not stated",
+  "last_activity": "unknown",
+  "duplicate_of_holding": "New LatAm city (Rio) beyond our held Mexico City coverage.",
+  "hits": 1,
+  "themes": [
+   "Kaggle-style Airbnb listing snapshot datasets committed to GitHub (any city, any year), especially multi-year or multi-city collections"
+  ],
+  "why_all": [
+   "LatAm geography (Rio) not in our 13-city panel (we hold Mexico City only for LatAm); worth a quick check for vintage/fields, could add a second LatAm data point relevant to gap 7 (regional travel volume outside US/EU) indirectly via STR supply."
+  ]
+ }
+]

@@ -1,0 +1,40 @@
+{
+ "slug": "databnb-10city-zillow-panel",
+ "url": "https://github.com/estherkim99/cs1951a-final",
+ "sampled": true,
+ "total_bytes": 8149561,
+ "files": [
+  "README.md",
+  "Zip_Zhvi_AllHomes_head.csv",
+  "Zip_Zri_AllHomesPlusMultifamily_head.csv",
+  "airbnb_asheville-2018-04-1_head.csv",
+  "airbnb_sanfrancisco-2015-05_head.csv",
+  "database_samples.txt",
+  "dropbox_links.txt",
+  "manifest.json",
+  "preprocess_airbnb.py",
+  "preprocess_zillow.py",
+  "repo_README.md"
+ ],
+ "rows": "Zip_Zri_AllHomesPlusMultifamily_head.csv 4,969 rows (head of ~13k zip rows, 7.5 MB full); Zip_Zhvi_AllHomes_head.csv 1,512 rows (head of ~30k zip rows, 48.8 MB full); airbnb_asheville-2018-04-1_head.csv 361 listing rows (first 2 MB of 7.8 MB); airbnb_sanfrancisco-2015-05_head.csv 675 listing rows (first 2 MB of 15.7 MB); database_samples.txt = 40-row samples of the 3 SQLite tables (airbnb, zillow_zhvi, zillow_zri); housing.db (51.7 MB, ~347k airbnb rows) NOT pulled",
+ "columns": "Zillow (wide, one row per ZIP): RegionID, RegionName(zip), City, State, Metro, CountyName, SizeRank, then monthly columns YYYY-MM (ZHVI 1996-04..2020-01, 286 cols; ZRI 2010-09..2020-01, 113 cols). Inside Airbnb listings.csv (per dump, ~95 raw cols; sample trimmed to 34-36): id, last_scraped, name, host_id, host_since, street, neighbourhood_cleansed, city, state, zipcode, lat, lon, property_type, room_type, accommodates, bathrooms, bedrooms, beds, price, weekly_price, monthly_price, security_deposit, cleaning_fee, minimum_nights, maximum_nights, calendar_updated, availability_30/60/90/365, number_of_reviews, first_review, last_review, review_scores_rating, calculated_host_listings_count, reviews_per_month. housing.db airbnb table: index, id, cityname, last_scraped, street, neighbourhood_cleansed, city, state, zipcode, lat, lon, accommodates, bathrooms, bedrooms, beds, price, weekly_price, monthly_price, security_deposit, cleaning_fee, minimum_nights, maximum_nights, calendar_updated, availability_30/60/90",
+ "date_range": "Zillow ZHVI 1996-04 to 2020-01; ZRI 2010-09 to 2020-01. Inside Airbnb dumps: last_scraped 2015-05 (San Francisco) to 2020-02; sampled dumps last_scraped 2015-05-04/05 and 2018-04-18; review dates back to 2009-07",
+ "how_pulled": "gh api repos/estherkim99/cs1951a-final/git/trees/HEAD?recursive=1 (file inventory + sizes); curl -sL -o <f> https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/{README.md,data/database_samples.txt,data/dropbox_links.txt,preprocess_airbnb.py,preprocess_zillow.py}; curl -sL -r 0-2999999 -o ... data/zillow/Zip_Zri_AllHomesPlusMultifamily.csv and data/zillow/Zip_Zhvi_AllHomes.csv; curl -sL -r 0-1999999 -o ... data/airbnb/asheville-2018-04-1.csv and data/airbnb/sanfrancisco-2015-05.csv; python/pandas to trim the partial last line, subset airbnb columns, and rewrite as CSV heads",
+ "full_dataset_size": "Repo is ~5.3 GB across ~250 committed files (git packed size 416,629 KB): 244 raw Inside Airbnb listings.csv dumps (data/airbnb/, 3.7-50 MB each) for 8 cities committed in-repo: Asheville (23 dumps 2018-04..2020-02), Austin (25 files austin0-24, undated filenames), Boston (25, 2015-10..2020-02), Chicago (24, 2015-10..2020-02), Denver (23, 2016-05..2020-01), Nashville (26, 2015-06..2020-02), San Francisco (56, 2015-05..2020-02), Seattle (24, seattle0-23 undated); plus 96 Dropbox links for NYC (60) and LA (36) dumps (not tested); housing.db SQLite 51.7 MB (~347k listing rows x 25 cols + 2 zillow tables, 10 cities, 2015-01..2020-01 months); Zillow ZHVI 48.8 MB (~30k ZIPs x 286 months) and ZRI 7.5 MB (~13k ZIPs x 113 months). No releases; a plain depth-1 clone pulls the full ~5 GB",
+ "description": "A Brown CS1951A (spring 2020) class project that committed the raw Inside Airbnb listings.csv files for 8 US cities across every monthly dump from 2015-2020 (244 files, ~5 GB), plus Dropbox links for NYC and LA, and joined them by ZIP code to Zillow ZHVI (home value) and ZRI (rent) ZIP-month indices in a SQLite database. Grain is one row per listing per scrape (listed price, fees, minimum nights, availability_30/60/90, review counts) and one row per ZIP per month for Zillow. Source is Inside Airbnb (CC BY 4.0) and Zillow Research public downloads. For ABNB this is a GitHub archive of pre-2023 Inside Airbnb dumps no longer on the Inside Airbnb CDN (gap #1: 2015-2020 supply, listed-price and availability history for SF, Boston, Chicago, Nashville, Denver, Austin, Seattle, Asheville) and a ready STR-vs-long-term-rent join for host-supply economics (gap #13): an analyst would rebuild city-month listing counts, median listed price and availability_30 from the raw dumps and relate them to ZRI rent levels to see how host supply responds to long-term-rental yields.",
+ "issues": "Job card understated the repo: it says ~347k rows in SQLite with NYC/LA excluded, but the repo actually commits ~5 GB of raw Inside Airbnb CSVs for 8 cities (LA/NYC are the ones on Dropbox). Repo has NO licence file (license: null); underlying data are Inside Airbnb (CC BY 4.0, attribution required) and Zillow Research (free download, non-commercial, Zillow terms apply), so this is the students' unlicensed redistribution: a human should decide whether to rely on it or cite the originals. Austin and Seattle files are numbered (austin0..24, seattle0..23), not dated; scrape date must be read from last_scraped inside each file. Inside Airbnb price is the listed nightly rate, not realised ADR; availability_* is calendar availability, not occupancy. Dropbox links (NYC/LA, 96 files) were not tested and may be dead (repo last pushed 2020-06-30). Zillow files are the 2020-vintage ZIP-level ZHVI/ZRI that Zillow has since replaced (ZRI discontinued, ZORI is the successor). housing.db (51.7 MB) exceeds the sample cap so only the 40-row samples in database_samples.txt were taken. SQLite zipcodes were cast to int, dropping leading zeros for Boston 02xxx ZIPs. No API keys, logins, or scrapers used; airbnb.com not touched.",
+ "source_urls": [
+  "https://github.com/estherkim99/cs1951a-final",
+  "https://api.github.com/repos/estherkim99/cs1951a-final/git/trees/HEAD?recursive=1",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/README.md",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/data/database_samples.txt",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/data/dropbox_links.txt",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/preprocess_airbnb.py",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/preprocess_zillow.py",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/data/zillow/Zip_Zri_AllHomesPlusMultifamily.csv",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/data/zillow/Zip_Zhvi_AllHomes.csv",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/data/airbnb/asheville-2018-04-1.csv",
+  "https://raw.githubusercontent.com/estherkim99/cs1951a-final/HEAD/data/airbnb/sanfrancisco-2015-05.csv"
+ ],
+ "pulled_at": "2026-09-14"
+}

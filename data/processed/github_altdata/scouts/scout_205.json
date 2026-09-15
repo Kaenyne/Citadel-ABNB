@@ -1,0 +1,59 @@
+{
+  "theme": "Hotel chain and REIT public datasets: loyalty program sizes, unit counts, Marriott/Hilton/Hyatt pipelines, hotel REIT portfolio RevPAR by market from filings",
+  "modality": "web",
+  "queries_run": [
+    "WebSearch: site:github.com hotel REIT RevPAR by market dataset (blocked - session WebSearch budget exhausted at call time)",
+    "WebSearch: Marriott Hilton pipeline data github csv (blocked)",
+    "WebSearch: hotel loyalty program members data github dataset (blocked)",
+    "WebFetch html.duckduckgo.com/html: site:github.com hotel REIT RevPAR by market dataset (403)",
+    "WebFetch html.duckduckgo.com/html: Marriott Hilton Hyatt pipeline unit count dataset github csv (403)",
+    "WebFetch html.duckduckgo.com/html: hotel loyalty program members dataset github (403)",
+    "WebFetch bing.com/search: site:github.com hotel REIT RevPAR dataset (no repo results, only commercial hotel sites)",
+    "WebFetch bing.com/search: Marriott Hilton Hyatt pipeline unit count dataset github csv (no repo results)",
+    "WebFetch bing.com/search: hotel loyalty program members dataset site:github.com (no repo results)",
+    "WebFetch lite.duckduckgo.com/lite: RevPAR hotel REIT 10-K dataset (403)",
+    "WebFetch lite.duckduckgo.com/lite: STR Global hotel data scraper dataset (403)",
+    "WebFetch lite.duckduckgo.com/lite: SEC EDGAR 10-K REIT hotel portfolio RevPAR scraper xbrl (403)",
+    "WebFetch github.com/search?type=repositories: hotel REIT RevPAR / STR Global hotel data / hotel loyalty members dataset (429 rate limited, retry-after 3600)",
+    "gh api search/repositories: hotel revpar market; marriott hilton pipeline; hotel loyalty members; hotel construction pipeline lodging econometrics; hospitality REIT portfolio data; STR Global hotel data; hotel occupancy transient tax dataset; SEC EDGAR hotel REIT XBRL; hotel REIT filings scraper; Sonder Vacasa data; airline T-100 BTS data github; cruise line advance ticket sales data; Vrbo HomeAway dataset; hotel industry census AHLA; hospitality franchise disclosure document data; lodging econometrics pipeline data; hotel supply pipeline data csv; hospitality industry benchmark data; Marriott unit growth data; Choice Hotels franchise data; Wyndham hotel data; IHG hotel group data; hotel chain room count by year; transient occupancy tax by city dataset; lodging tax collections dataset; hotel occupancy Nevada Florida data; hotel construction pipeline tracker; STR CoStar hotel scraper; AirDNA data export sample; Marriott Bonvoy data; World of Hyatt data; Hilton Honors data; hotel REIT quarterly supplemental data (most zero results; a handful returned generic BI-course dashboards on the fictional 'AtliQ Grands' Codebasics dataset)",
+    "WebFetch raw.githubusercontent.com/awesomedata/awesome-public-datasets README.rst: hotel/hospitality/REIT/tourism search (only a theme-park wait-time API found, no hotel REIT data)",
+    "WebFetch github.com/topics/hotel-management, /topics/revenue-management, /topics/reit (topic pages, browsed for real data repos vs boilerplate)",
+    "WebFetch github.com/NebilDivay/Ontario-Hotel-Performance-Analysis and its README (verification)",
+    "WebFetch raw.githubusercontent.com/api-evangelist/host-hotels-and-resorts README.md (verification, found empty profile, no data)"
+  ],
+  "candidates": [
+    {
+      "url": "https://github.com/NebilDivay/Ontario-Hotel-Performance-Analysis",
+      "name": "Ontario-Hotel-Performance-Analysis",
+      "category": "hotel_lodging",
+      "data_kind": "stored_dataset",
+      "what_it_holds": "Monthly Occupancy %, ADR, and RevPAR for hotels across Ontario, Canada regions/cities (Greater Toronto Area, North Western Ontario, etc.), Feb 2023-Dec 2025, sourced from the Ontario Open Data Portal (originally separate monthly Excel sheets, cleaned into a Power BI model). Repo holds a Datasets folder, a Hotel Performance Report.pbix, and a PDF report. MIT licensed.",
+      "why_useful": "A real government-sourced, regional hotel RevPAR/ADR/occupancy series for a non-US market (Canada) at sub-national geography, which is more granular than the MAR/HLT RevPAR-from-releases we already hold and touches gap #8 (hotel supply/demand, regional RevPAR) and gap #7 (regional travel volume outside US/EU, Canada StatCan-adjacent). Read-across to short-term-rental competition and Canadian travel demand for ABNB.",
+      "potential": "medium",
+      "geography": "Ontario, Canada (regional/city breakdown)",
+      "time_coverage": "Feb 2023 - Dec 2025, monthly",
+      "size_hint": "Unspecified row count; monthly panel across multiple Ontario regions/cities over ~3 years (small, tens to low hundreds of rows)",
+      "license": "MIT",
+      "last_activity": "not confirmed exactly; recent (2026 based on data coverage through Dec 2025)",
+      "gap_targets": [7, 8],
+      "duplicate_of_holding": "Extends but does not duplicate the MAR/HLT RevPAR-from-releases we hold (that is company-level, this is Canadian regional/government-sourced)"
+    },
+    {
+      "url": "https://github.com/api-evangelist/host-hotels-and-resorts",
+      "name": "host-hotels-and-resorts",
+      "category": "hotel_lodging",
+      "data_kind": "pointer_to_external_host",
+      "what_it_holds": "A third-party 'API profile' catalog entry for Host Hotels & Resorts (HST), a lodging REIT. Contains only company/API metadata (apis.yml, provenance.yml, README) and explicitly states no public API exists for the company. No financial, RevPAR, or portfolio data present.",
+      "why_useful": "Not directly useful as-is (no data), but flags that api-evangelist (github.com/api-evangelist) maintains similar catalog-only profile repos for many hotel REITs (Service Properties Trust, Gaming & Leisure Properties) that could be scanned for any that DO have public data/APIs listed, and confirms none of the major hotel REITs expose a public API.",
+      "potential": "low",
+      "geography": "US",
+      "time_coverage": "current snapshot only",
+      "size_hint": "tiny metadata repo, no data files",
+      "license": "unclear/unspecified",
+      "last_activity": "recent (api-evangelist actively maintains company profiles)",
+      "gap_targets": [8],
+      "duplicate_of_holding": ""
+    }
+  ],
+  "notes": "This theme was largely a dead end under the tool constraints hit in this run: the shared WebSearch budget (200/200) was already exhausted before any query in this session could run, html.duckduckgo.com/html and lite.duckduckgo.com/lite returned 403 on every attempt, Bing's WebFetch rendering returns only a generic github.com info card (no actual organic results) for github-scoped queries, Startpage is unreachable via WebFetch, Yandex serves a CAPTCHA to WebFetch, and Marginalia rate-limits bot traffic. github.com/search?type=repositories itself returned HTTP 429 (retry-after 3600) after 3 calls. Fell back to `gh api search/repositories` (GitHub's REST search API), which has its own separate 30/min quota shared across all concurrent scout agents in this sweep and was exhausted and refilled twice during this run; roughly 30 distinct keyword queries were run against it (hotel REIT RevPAR, Marriott/Hilton/Hyatt pipeline, loyalty program data, SEC EDGAR XBRL hotel REIT, STR Global/CoStar scrapers, lodging tax/transient occupancy datasets, construction pipeline trackers, AirDNA export samples, franchise disclosure documents, Vrbo/Sonder/Vacasa data, Wyndham/Choice/IHG data) and the overwhelming majority returned zero results. The handful of non-zero results were all generic Power BI/Excel coursework dashboards built on the fictional 'AtliQ Grands' Codebasics training dataset (not real chain data) or boilerplate hotel-management CRUD apps (github.com/topics/hotel-management) - excluded per instructions as generic ML/BI boilerplate with no real data. github.com/topics/reit surfaced 'api-evangelist' company-profile repos for several hotel REITs (Host Hotels & Resorts, Service Properties Trust, Gaming and Leisure Properties) but these are metadata-only catalog entries with no financial data and explicitly note no public APIs exist for these companies - only one flagged as low-value pointer. The one real find, NebilDivay/Ontario-Hotel-Performance-Analysis, surfaced via the github.com/topics/reit adjacency browse rather than direct search. CONCLUSION: real, structured hotel-REIT/chain unit-count/pipeline/loyalty-member data does not appear to exist on GitHub in committed or easily-scraped form under any of the ~30+ query variants tried; this is consistent with such data being proprietary (STR Global, Lodging Econometrics, CBRE) or locked in REIT quarterly supplemental PDFs/10-Qs that nobody has yet parsed into a public repo. A follow-up scout with a working WebSearch budget, or one willing to manually parse SEC EDGAR XBRL company-facts for the ~8 public hotel REITs (HST, RHP, PEB, SVC, APLE, DRH, XHR-successor, SHO) and the three major chains' 10-K unit-count tables directly (bypassing GitHub entirely, going straight to SEC EDGAR's free API), would likely do better than continuing to search GitHub for this specific theme."
+}

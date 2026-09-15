@@ -1,0 +1,9 @@
+# (14 Sep 2026) Every sample file is tracked EXCEPT data extracts from sources whose licence forbids redistribution
+# (repo is public; CLAUDE.md rule 5): Booking.com WSDM 2021 trips (CC BY-NC-ND), RecTour24 / accommodation-reviews
+# (card says non-commercial), Bright Data snapshots (vendor MSA). Their manifest.json and README.md stay tracked and
+# carry the exact pull commands. LARGE_FILES_NOT_COMMITTED.txt is now a size reference only.
+/bookingcom-multi-destination-trip-wsdm2021/*.csv
+/bookingcom-rectour24-accommodation-reviews/*.csv
+/brightdata-booking-listings-hf/*.csv
+/brightdata-booking-listings-sample-1001/*.csv
+/hf-bookingcom-accommodation-reviews/*.csv

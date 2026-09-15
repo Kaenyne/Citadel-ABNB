@@ -1,0 +1,28 @@
+{
+ "slug": "hf-buenosaires-airbnb-reviews",
+ "url": "https://huggingface.co/datasets/alujjdnd/Airbnb-Mar-2022-2023",
+ "sampled": true,
+ "total_bytes": 6434124,
+ "files": [
+  "buenos_aires_reviews_head_2023-03_dump.csv",
+  "nyc_reviews_head_2023-03_dump.csv",
+  "hf_raw_dl_file_index.csv"
+ ],
+ "rows": "buenos_aires_reviews_head: 8,000 (75 listings); nyc_reviews_head: 8,000 (70 listings); hf_raw_dl_file_index: 116 files",
+ "columns": "reviews: listing_id, id, date, reviewer_id, reviewer_name, comments (Inside Airbnb reviews.csv.gz schema); index: path, bytes_gz, dump_date",
+ "date_range": "review dates 2009-04-13 to 2023-03-28 in the two heads; dump dates 2023-03-06 to 2023-05-18 across the 116 files",
+ "how_pulled": "curl -sL https://huggingface.co/api/datasets/alujjdnd/Airbnb-Mar-2022-2023 (and /tree/main, /tree/main/natural_compressed, /tree/main/raw_dl) for the file listing; curl -sL -r 0-1999999 'https://huggingface.co/datasets/alujjdnd/Airbnb-Mar-2022-2023/resolve/main/natural_compressed/argentina%20ciudad.csv.gz' -o arg_head.gz and the same for 'united%20states%20ny%20new.csv.gz'; Python zlib.decompressobj(16+MAX_WBITS) partial decompress of the 2 MB range, pandas.read_csv on complete lines, .head(8000).to_csv; file index built from the /tree/main/raw_dl JSON.",
+ "full_dataset_size": "116 Inside Airbnb reviews.csv.gz files under raw_dl/ (4.88 GB gzipped; natural_compressed/ is a 107-file renamed duplicate, 4.60 GB), one dump per market dated Mar-May 2023; the job card's '16.5M rows / 9.48 GB' is the HF auto-count over everything, not Buenos Aires alone (Buenos Aires file is 55 MB gz, roughly 1.5-2M reviews). Uncompressed roughly 20-25 GB.",
+ "description": "This is NOT a Buenos Aires-only dataset: it is a HuggingFace mirror (uploader alujjdnd, MIT licence on the card, last modified 5 Jun 2023) of the Inside Airbnb reviews.csv.gz file for ~116 markets worldwide, each the Mar-May 2023 dump (Buenos Aires 2023-03-29, NYC 2023-03-06, London 2023-03-14, Paris 2023-03-13, plus Rio, Mexico City, Santiago, Tokyo, Bangkok, Cape Town, Sydney, Melbourne, Hawaii, Florida etc.). Grain is one row per review (listing_id, review id, date, reviewer id/name, free text), with review history back to 2009-2010 per market. For ABNB it fills gap #1 (Inside Airbnb dumps older than the CDN's one-year window; a pre-Local-Law-18 NYC vintage from 6 Mar 2023) and lets the reviews-based stays index be extended back to 2010 and out to ~100 extra markets including LatAm/APAC regional reads. An analyst would download the raw_dl files for wanted markets, count reviews by month per market as a stays proxy, and splice them onto the existing 123-market index; no prices, calendars or listings files are in this mirror, so it adds nights/mix signal only.",
+ "issues": "Job card mis-describes the dataset (says Buenos Aires only, 2011-2023, 9.48 GB CSV/Parquet); it is actually ~116 markets of Inside Airbnb reviews gz files. Licence on the HF card is MIT but the underlying data is Inside Airbnb (CC BY 4.0 with attribution to Inside Airbnb); the MIT tag is the uploader's, not the origin's, so cite Inside Airbnb. Two files (Beijing, Shanghai) are 75-byte empties. natural_compressed/ file names are mangled/duplicated (e.g. 'united states la new.csv.gz' = New Orleans, 'stockholm.csv.gz' duplicated); use raw_dl/ which keeps the original Inside Airbnb names and dump dates. No listings/calendar files, so no supply or price data. Files are git-LFS on HF; no auth needed. Only 2 MB gz heads sampled, so each head covers only ~70-75 listings (sorted by listing_id), not a random sample.",
+ "source_urls": [
+  "https://huggingface.co/api/datasets/alujjdnd/Airbnb-Mar-2022-2023",
+  "https://huggingface.co/api/datasets/alujjdnd/Airbnb-Mar-2022-2023/tree/main",
+  "https://huggingface.co/api/datasets/alujjdnd/Airbnb-Mar-2022-2023/tree/main/natural_compressed",
+  "https://huggingface.co/api/datasets/alujjdnd/Airbnb-Mar-2022-2023/tree/main/raw_dl",
+  "https://huggingface.co/datasets/alujjdnd/Airbnb-Mar-2022-2023/raw/main/README.md",
+  "https://huggingface.co/datasets/alujjdnd/Airbnb-Mar-2022-2023/resolve/main/natural_compressed/argentina%20ciudad.csv.gz",
+  "https://huggingface.co/datasets/alujjdnd/Airbnb-Mar-2022-2023/resolve/main/natural_compressed/united%20states%20ny%20new.csv.gz"
+ ],
+ "pulled_at": "2026-09-14"
+}

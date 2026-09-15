@@ -1,0 +1,30 @@
+{
+  "slug": "trade-copier-13f-berkshire-panel",
+  "url": "https://github.com/tsushanth/trade-copier-13f",
+  "sampled": true,
+  "total_bytes": 410108,
+  "files": [
+    "holdings_panel.csv",
+    "data/holdings_2022-09-30.json .. data/holdings_2026-06-30.json (16 files)",
+    "data/cusip_ticker.json",
+    "data/snapshots_index.json",
+    "data/infotable_000095012322012275.xml",
+    "results/backtest_result.json",
+    "results/backtest_equity_curve.csv",
+    "src/*.py (10 files: edgar_client, parse_13f, diff, cusip_map, sizing, risk_gates, executor, backtest, alpaca_adapter, config)",
+    "README_upstream.md",
+    ".env.example",
+    "requirements.txt"
+  ],
+  "rows": "holdings_panel.csv 658 rows (16 quarters, 29-49 positions each); backtest_equity_curve.csv 993 daily rows; cusip_ticker.json 82 CUSIPs (10 unmapped null); snapshots_index.json 16 entries; infotable XML exemplar 179 infoTable entries (3Q22, pre-aggregation)",
+  "columns": "holdings_panel: report_date, filing_date, accession, cusip, issuer, title_of_class, shares, value_usd, is_share; equity_curve: date, mirror, spy; snapshots_index: report_date, filing_date, accession, num_positions, total_value_usd",
+  "date_range": "report_date 2022-09-30 to 2026-06-30 (filing_date 2022-11-14 to 2026-08-14); equity curve 2022-11-14 to 2026-09-02",
+  "how_pulled": "git clone --depth 1 --filter=blob:none --sparse https://github.com/tsushanth/trade-copier-13f.git; git sparse-checkout set data results src; cp selected files (all 16 holdings_*.json, cusip_ticker.json, snapshots_index.json, one infotable XML, results JSON+CSV, src/*.py, README); python/pandas flattened the holdings JSONs into holdings_panel.csv. Commit 383c5adcb85ebf3c1be022e7c9deea261e9a089c (2026-09-02).",
+  "full_dataset_size": "Whole repo is ~1.5 MB / ~50 files at HEAD: adds 15 more infotable XMLs (46-93 KB each), two EDGAR submissions JSONs for CIK 0001067983 (178 KB + 252 KB) and a 113 KB PNG. Only one filer (Berkshire). Regenerating for another CIK is one run of src/edgar_client.py against the free EDGAR API (User-Agent header only, no key).",
+  "description": "Quarterly 13F-HR holdings of Berkshire Hathaway (CIK 0001067983), one row per CUSIP per report quarter, parsed from EDGAR infotable XML by a small Python puller that also records the filing date (~45 days after quarter end) and diffs consecutive quarters to produce mirror trades; plus a daily mirror-vs-SPY equity curve from a dry-run backtest. Source is SEC EDGAR (public domain data); the repo was created and pushed 3 Sep 2026 by a single author. For ABNB the holdings themselves are irrelevant (Berkshire holds no ABNB); the value is the point-in-time convention (report_date vs filing_date carried on every row) and the reusable edgar_client/parse_13f/diff code, which an analyst would re-point at ABNB's own 13F holder universe (or at any filer) to build a holder-concentration and turnover series aligned to filing dates rather than quarter ends.",
+  "issues": "No LICENSE file in the repo (code reuse is a human decision; the underlying 13F data is SEC public domain so the data itself is unencumbered). Job card said 17 holdings files; the repo has 16 (2022-09-30 to 2026-06-30). Sample exceeded the ~10-file guideline because the plan explicitly asked for all 16 quarterly JSONs (each 6-10 KB); total is still 0.4 MB. cusip_ticker.json has 10 of 82 CUSIPs unmapped (null). Backtest touches Alpaca paper trading (.env.example lists API keys) - not run, nothing was logged into. Single filer only; nothing ABNB-specific.",
+  "source_urls": [
+    "https://github.com/tsushanth/trade-copier-13f.git"
+  ],
+  "pulled_at": "2026-09-14"
+}
