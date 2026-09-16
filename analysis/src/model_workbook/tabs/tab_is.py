@@ -40,7 +40,7 @@ def build(wb):
     # scenario selector
     ws["A3"] = "Scenario shown in the forecast columns  →"
     ws["A3"].font = S.f_label(bold=True)
-    ws["B3"] = "Base (team model)"
+    ws["B3"] = "Short case: costs at budget (PITCH)"
     ws["B3"].font = S.f_input(bold=True)
     ws["B3"].fill = S.FILL_KEY
     ws.merge_cells("B3:F3")

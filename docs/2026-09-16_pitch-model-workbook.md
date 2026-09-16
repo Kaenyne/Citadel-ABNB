@@ -25,7 +25,7 @@ bear/bull; both bear/bull.
 
 ## Decisions taken
 
-1. **Base and Short both run through the workbook.** The 15 Sep short case is the pitch; the base is the team model
+1. **Base and Short both run through the workbook.** The 15 Sep short case is the pitch and is the dropdown default (changed 16 Sep at Krish's request); the base is the team model
    it is measured against. Consensus is a comparison column only, per the rule. The management-delivered case appears
    on the 5 Nov & Street tab for FY26/FY27.
 2. **Consensus and the guidance expectation live inside the Revenue Model and Margins tabs** (as Krish suggested), with
@@ -68,8 +68,7 @@ ADR. Regional nights exist for 2026 only. The stock chart is a matplotlib PNG (`
 
 ## RESUME
 
-Done: workbook built and checked. Next agent: (1) if the team adopts the short case as the pitch, consider making it the
-dropdown default and adding a short-case FY27 revenue decomposition (nights/ADR/FX/take by quarter) to the Revenue
+Done: workbook built and checked. Next agent: (1) the short case is now the dropdown default; consider adding a short-case FY27 revenue decomposition (nights/ADR/FX/take by quarter) to the Revenue
 Model, which today is a scaling of the team path; (2) re-run `build.py` after the September Inside Airbnb dumps
 narrow the 3Q26 nights band (T trigger) and after any bridge/line-build re-run; (3) if the reverse-DCF run is refreshed
 in late September (options re-pull), the 5 Nov & Street tab picks up the new CSVs automatically, but the short-case

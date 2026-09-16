@@ -37,7 +37,7 @@ def build(wb):
         c = ws.cell(row=row, column=2, value=lab); c.fill = fill; c.font = S.f_label()
         ws.cell(row=row, column=3, value=desc).font = S.f_label(); row += 1
     row = S.bullets(ws, row, [
-        "The Income Statement tab has a scenario dropdown in cell B3 (Base, the two Short cases, evidence-only costs, revenue/cost bear and bull). The forecast columns on the Income Statement, Margins and "
+        "The Income Statement tab has a scenario dropdown in cell B3, set to the Short case (the pitch) by default; the other options are Base (team model), the Short case with the 4Q26 marketing cut, evidence-only costs, and revenue/cost bear and bull. The forecast columns on the Income Statement, Margins and "
         "Operating Schedules tabs re-flow to the chosen scenario; the Revenue Model and 5 Nov & Street tabs always show Base, Short and Street side by side.",
         "Units are USD millions unless a row says otherwise; nights in millions; GBV in $bn; percentages are y/y unless labelled '% of revenue'. Quarters are labelled 1Q23A ... 4Q27E.",
         "Forecast vs scenario: 3Q26 is a tested forecast (the calibrated margin combination beat the Street 14/14 and 10/10 at h=0 in the two backtest windows; the revenue bridge and nights index were scored through the harness). "
