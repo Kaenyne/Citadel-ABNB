@@ -2,106 +2,178 @@
   "question_id": "X01",
   "slug": "scenario-probabilities",
   "type": "multiple_choice",
-  "revision": 1,
+  "revision": 2,
   "run_date": "2026-09-17",
+  "revised": "2026-09-17",
   "agent": "fable",
+  "responds_to_audit": "docs/pitch-forecasts/audits/A19-research-audit.md",
+  "audit_response": "docs/pitch-forecasts/audits/A19-audit-response.md",
   "final": {
     "vector": {
       "thesis breaker": 0.14,
-      "base": 0.22,
+      "base": 0.17,
       "short case": 0.55,
-      "none of the above": 0.09
+      "none of the above": 0.14
     },
-    "mc_vector": {"thesis breaker": 0.1394, "base": 0.2231, "short case": 0.5547, "none of the above": 0.0828},
+    "mc_vector": {"thesis breaker": 0.1394, "base": 0.1717, "short case": 0.5547, "none of the above": 0.1342},
+    "quadrature_check": {"thesis breaker": 0.1398, "base": 0.1720, "short case": 0.5540, "none of the above": 0.1343,
+      "source": "docs/pitch-forecasts/audits/A19-reproduce.py, stdlib grid quadrature, no Monte Carlo; every cell within 0.0007"},
+    "reading": "literal (option-level C02/C04 legs), decelerating base gate, breaker-first precedence; the memo must name the reading in its table header",
     "definitions": {
       "thesis breaker": "printed 3Q26 nights >= 10.6% (latent >= 10.5913, R02's 147.75m) AND C02 = (a)",
-      "short case": "printed 3Q26 nights <= 8.5% (latent < 8.55) OR C02 = (d) OR C04 = (d); literal reading per the A19 brief",
-      "base": "print < 10.6% AND (C02 in {b, c} OR C01 = Yes) AND not short case",
-      "none of the above": "everything else (accelerating print with a non-(a) descriptor and no short gate 0.065; flat/decel print with C02 (a) or (e) and guide at/above 0.018)",
-      "precedence": "thesis breaker > short case > base > none; breaker-and-short overlap (C04 (d) on a breaker print) 0.033 goes to the breaker"
+      "short case": "printed 3Q26 nights <= 8.5% (latent < 8.55) OR C02 = (d) OR C04 = (d); literal reading defended from the QUESTIONS.md X01 text in the log's convention 3 (A19-02)",
+      "base": "DECELERATING print (latent < 10.09, S01 rev-2's dead-band line on 2Q26's 10.34%) AND (C02 in {b, c} OR C01 = Yes) AND not short case; revision 1's gate was 'print < 10.6%', which is the breaker threshold (A19-01)",
+      "none of the above": "everything else: accelerating print with a non-(a) descriptor and no short gate 0.065; in-line print 10.09-10.59 with no short gate 0.059; decel print with C02 (a)/(e) and the guide at/above 0.011",
+      "precedence": "thesis breaker > short case > base > none. NOT settled by the question text or any repo document (A19-07): a stated convention. Breaker-and-short overlap (C04 (d) on a breaker print) 0.0326 goes to the breaker; short-first is published beside it"
     },
-    "alternative_material_reading": {
-      "definition": "short-case C02 leg = explicit mid-single-or-lower bucket only (0.39 of C02's (d), its published sub-split), not the directional 'moderate' sentence",
-      "vector": {"thesis breaker": 0.14, "base": 0.26, "short case": 0.49, "none of the above": 0.11},
-      "with_c04_d_0_20": {"thesis breaker": 0.14, "base": 0.29, "short case": 0.45, "none of the above": 0.12},
-      "memo_conjunctive_short_case_mass": 0.050,
-      "note": "the memo must state which reading it quotes; the QUESTIONS.md text says 'bucket', the brief says option (d)"
+    "alt_readings": {
+      "material": {
+        "definition": "short-case C02 leg = an explicit mid-single-or-lower BUCKET only, not the directional 'moderate' sentence; the explicit-bucket share of C02 (d) is branch-varying, 0.492 (<9) / 0.348 (9-10) / 0.208 (>=10), derived from C02 rev 2's own conditioning block (A19-10), not a constant 0.387",
+        "vector": {"thesis breaker": 0.14, "base": 0.20, "short case": 0.48, "none of the above": 0.18},
+        "mc_vector": {"thesis breaker": 0.1394, "base": 0.2038, "short case": 0.4783, "none of the above": 0.1784},
+        "with_revision_1_constant_share": {"thesis breaker": 0.1394, "base": 0.2039, "short case": 0.4862, "none of the above": 0.1705}
+      },
+      "short_first_precedence": {
+        "vector": {"thesis breaker": 0.11, "base": 0.17, "short case": 0.59, "none of the above": 0.13},
+        "mc_vector": {"thesis breaker": 0.1068, "base": 0.1717, "short case": 0.5873, "none of the above": 0.1342},
+        "note": "use this split if the memo keeps its own breaker column, which requires an FY sentence at 'approximately 36%' (C04 (b)) and therefore does not own the overlap draw"
+      },
+      "base_gate_variants": {
+        "revision_1_published_lt_10_6": {"thesis breaker": 0.1394, "base": 0.2231, "short case": 0.5547, "none of the above": 0.0828},
+        "strict_decel_lt_10_34": {"thesis breaker": 0.1394, "base": 0.1985, "short case": 0.5547, "none of the above": 0.1074},
+        "decel_or_flat_with_guide_below": {"thesis breaker": 0.1394, "base": 0.2074, "short case": 0.5547, "none of the above": 0.0985}
+      },
+      "headline_range_if_only_one_number_is_carried": "P(short case) 0.48-0.55, reading-dependent"
     },
-    "note": "pending-decision structure (every gate is a 5 Nov disclosure); the short case is the modal cell under the literal definition both in the joint and in the reaction panel (W2 0.50); no option below 0.09"
+    "note": "pending-decision structure (every gate is a 5 Nov disclosure); the short case is the modal option on every reading, precedence and gate tested (0.44-0.59); no option below 0.13. Two of its three legs are language events with weak or no precedent (FY floor 0 of 16 softened, 3 of 3 Novembers raised; explicit mid-single bucket 1 of 17 descriptors): 0.55 is a wording bet and should be described as one."
+  },
+  "print_partition_table": {
+    "what_it_is": "the 12-month scenario object, gated on the printed 3Q26 nights rate alone under the adopted N(9.5, 1.70). THIS is what the memo's 25/45/30 row is (A19-04); X01's vector above is the 5 Nov disclosure-gate object. The memo must label which table is which; neither replaces the other.",
+    "probabilities": {"thesis breaker (>=10.6%)": 0.26, "base (8.5-10.6%)": 0.45, "short case (<=8.5%)": 0.29},
+    "analytic": {"p_le_8_5": 0.2881, "p_8_5_to_10_6": 0.4514, "p_ge_10_6": 0.2605},
+    "memo_current": {"thesis breaker": 0.25, "base": 0.45, "short case": 0.30},
+    "conditionals": {
+      "thesis breaker (>=10.6%)": {"p": 0.2606, "day1_median_pct": 2.09, "day1_mean_pct": 2.42, "day1_p_le_m8": 0.123, "day1_p_ge_5": 0.365, "dec15_median_usd": 175.0, "dec15_mean_usd": 177.6, "dec15_p25": 155.9, "dec15_p75": 196.5, "dec15_p_le_150": 0.184, "dec15_p_ge_180": 0.434, "nights_mean": 11.62, "p_c01_below": 0.567},
+      "base (8.5-10.6%)": {"p": 0.4508, "day1_median_pct": -3.79, "day1_mean_pct": -3.42, "day1_p_le_m8": 0.322, "day1_p_ge_5": 0.169, "dec15_median_usd": 162.2, "dec15_mean_usd": 164.6, "dec15_p25": 144.3, "dec15_p75": 182.3, "dec15_p_le_150": 0.327, "dec15_p_ge_180": 0.274, "nights_mean": 9.56, "p_c01_below": 0.728},
+      "short case (<=8.5%)": {"p": 0.2886, "day1_median_pct": -4.84, "day1_mean_pct": -4.33, "day1_p_le_m8": 0.364, "day1_p_ge_5": 0.148, "dec15_median_usd": 159.6, "dec15_mean_usd": 162.0, "dec15_p25": 142.1, "dec15_p75": 179.3, "dec15_p_le_150": 0.358, "dec15_p_ge_180": 0.243, "nights_mean": 7.49, "p_c01_below": 0.849}
+    },
+    "note": "the conditionals are monotone, which the disclosure-gate table's are not; this is the table a 12-month scenario column should carry. The memo's $115-130 short-case price is a 12-month fundamental target (FY27 31.9% margin, +4.5% growth) and must be labelled as such: nothing in this run produces it for 15 Dec."
+  },
+  "memo_conjunctive_short_mass": {
+    "p_nights_le_8_5_and_c02_d_and_c04_d": 0.0462,
+    "revision_1_published": 0.050,
+    "mc_se": 0.0002,
+    "companion_p_le_8_5_and_c02d_or_c04d": 0.1937,
+    "memo_conjunctive_breaker_mass": 0.0496,
+    "memo_breaker_definition": ">=10.6% AND C02 (a) AND FY sentence 'approximately 36%' (C04 (b))",
+    "note": "both of the memo's scenario columns, read conjunctively as their column headers are written, are about 0.05. A judge shown 0.55 against a column headed '<=8.5%, guide implies <=7.5%, no bundle figure, floor at risk' will assume the memo believes P(that conjunction) = 0.55; it is 0.046."
   },
   "scenario_table": {
-    "columns": "P; day-1 return from the S01 rev-2 cells (median %, P(<= -8%), P(>= +5%)); 15 Dec close from the S02 rev-2 branches rescaled to S02's final median (conditional median USD, p25-p75, P(<=150), P(>=180)); E[nights]; P(C01 below)",
-    "thesis breaker": {"p": 0.14, "day1_median_pct": 2.2, "day1_mean_pct": 2.5, "day1_p_le_m8": 0.12, "day1_p_ge_5": 0.37, "day1_p_lt_0": 0.40, "dec15_median_usd": 175, "dec15_p25_p75": [156, 197], "dec15_p_le_150": 0.18, "dec15_p_ge_180": 0.44, "nights_mean": 12.0, "p_c01_below": 0.50},
-    "base": {"p": 0.22, "day1_median_pct": -3.8, "day1_mean_pct": -3.4, "day1_p_le_m8": 0.32, "day1_p_ge_5": 0.17, "day1_p_lt_0": 0.66, "dec15_median_usd": 162, "dec15_p25_p75": [144, 182], "dec15_p_le_150": 0.33, "dec15_p_ge_180": 0.28, "nights_mean": 9.6, "p_c01_below": 0.72},
-    "short case": {"p": 0.55, "day1_median_pct": -3.8, "day1_mean_pct": -3.4, "day1_p_le_m8": 0.33, "day1_p_ge_5": 0.18, "day1_p_lt_0": 0.66, "dec15_median_usd": 162, "dec15_p25_p75": [144, 182], "dec15_p_le_150": 0.33, "dec15_p_ge_180": 0.27, "nights_mean": 8.6, "p_c01_below": 0.82},
-    "none of the above": {"p": 0.09, "day1_median_pct": 1.2, "day1_mean_pct": 1.5, "day1_p_le_m8": 0.15, "day1_p_ge_5": 0.33, "day1_p_lt_0": 0.45, "dec15_median_usd": 173, "dec15_p25_p75": [154, 195], "dec15_p_le_150": 0.20, "dec15_p_ge_180": 0.41, "nights_mean": 10.9, "p_c01_below": 0.45},
-    "pw_dec15_close_usd": 164.8,
-    "unconditional_dec15_median_usd": 164.7,
-    "unconditional_dec15_mean_usd": 167.3,
-    "unconditional_day1_median_pct": -2.4,
-    "unconditional_day1_p_le_m8": 0.28,
-    "unconditional_day1_p_ge_5": 0.21,
-    "read": "base and short case carry the same day-1 and 15 Dec distributions: S01 prices the print state and the guide-vs-Street sign, not the descriptor wording or the margin sentence, and the panel shows no steeper day-1 on deeper decelerations; the memo's $115-130 short-case price is a 12-month fundamental target, not a reaction-function output. The memo's 25/45/30 table should be replaced by this table with a 'none' row."
+    "columns": "P; day-1 return from the S01 rev-2 cells (median %, mean %, P(<= -8%), P(>= +5%), P(<0)); 15 Dec close from the S02 rev-2 branches rescaled to S02's final median (conditional median and mean USD, p25-p75, P(<=150), P(>=180)); E[nights]; P(C01 below). CORRECTED to the decelerating base gate (A19-03).",
+    "thesis breaker": {"p": 0.1394, "day1_median_pct": 2.19, "day1_mean_pct": 2.54, "day1_p_le_m8": 0.121, "day1_p_ge_5": 0.370, "day1_p_lt_0": 0.397, "dec15_median_usd": 175.1, "dec15_mean_usd": 177.7, "dec15_p25_p75": [156.0, 196.6], "dec15_p_le_150": 0.183, "dec15_p_ge_180": 0.436, "nights_mean": 11.96, "p_c01_below": 0.499},
+    "base": {"p": 0.1717, "day1_median_pct": -4.66, "day1_mean_pct": -4.18, "day1_p_le_m8": 0.356, "day1_p_ge_5": 0.151, "day1_p_lt_0": 0.695, "dec15_median_usd": 160.6, "dec15_mean_usd": 163.0, "dec15_p25_p75": [143.0, 180.4], "dec15_p_le_150": 0.346, "dec15_p_ge_180": 0.254, "nights_mean": 9.35, "p_c01_below": 0.722},
+    "short case": {"p": 0.5547, "day1_median_pct": -3.80, "day1_mean_pct": -3.39, "day1_p_le_m8": 0.327, "day1_p_ge_5": 0.175, "day1_p_lt_0": 0.659, "dec15_median_usd": 161.9, "dec15_mean_usd": 164.4, "dec15_p25_p75": [143.9, 182.1], "dec15_p_le_150": 0.331, "dec15_p_ge_180": 0.271, "nights_mean": 8.63, "p_c01_below": 0.820},
+    "none of the above": {"p": 0.1342, "day1_median_pct": 0.32, "day1_mean_pct": 0.63, "day1_p_le_m8": 0.171, "day1_p_ge_5": 0.294, "day1_p_lt_0": 0.485, "dec15_median_usd": 171.2, "dec15_mean_usd": 173.8, "dec15_p25_p75": [152.4, 192.4], "dec15_p_le_150": 0.222, "dec15_p_ge_180": 0.386, "nights_mean": 10.69, "p_c01_below": 0.541},
+    "revision_1_published_on_the_wrong_gate": {"base": {"day1_median_pct": -3.76, "dec15_median_usd": 162.3, "day1_p_le_m8": 0.320}, "none of the above": {"day1_median_pct": 1.20, "dec15_median_usd": 173.1}},
+    "read": "Under the corrected gate base and short are NOT the same trade and the ordering reverses: base is worse on the day (-4.7% vs -3.8%) and at 15 Dec ($160.6 vs $161.9), P(<=-8%) 0.356 vs 0.327. The reason is compositional: a corrected base cell is 100% decelerating prints, while the option labelled 'short case' is not the bad-print option - 0.342 of its mass is a directional 'moderate' word with no number, 0.102 of its draws are in S01's accelerating state and 0.199 of them (0.110 of total probability) sit on a print >= 10.0% nights. The run's reaction function prices the print state and the guide-vs-Street sign, not the descriptor wording or the margin sentence, so the memo cannot put a lower 5 Nov price on the short-case row than on the base row. Supporting evidence is the two-window regression (W1 n 9 slope -1.24 corr -0.620; W2 n 6 slope -1.62 corr -0.586: within decelerating prints, deeper decelerations sold LESS hard), not revision 1's four-observation +1.8% mean, which is carried by 4Q22, outside both windows (A19-06).",
+    "none_cell_warning": "'none of the above' is not 'nothing happens': 0.48 of it is an accelerating print, 0.44 an in-line print (10.09-10.59), P(C01 below | none) = 0.54, day-1 median +0.3%."
+  },
+  "pw_15dec": {
+    "mean_convention_usd": 167.3,
+    "mean_convention_exact": 167.28,
+    "median_of_branches_usd": 164.8,
+    "median_of_branches_exact": 164.76,
+    "unconditional_median_usd": 164.66,
+    "unconditional_mean_usd": 167.24,
+    "memo_should_use": "mean_convention_usd (167.3)",
+    "why": "medians do not mix, so sum(P x conditional median) is not a probability-weighted close (A19-08); and the memo's own probability-weighted price (~$146) is built from scenario RANGE MIDPOINTS, a mean-type convention. If the memo prefers 164.8 it must be labelled pw_dec15_median_of_branches. One convention per document."
   },
   "joint_option_x_print": {
     "<=8.5": {"thesis breaker": 0.0, "base": 0.0, "short case": 0.2886, "none of the above": 0.0},
     "8.5-10.0": {"thesis breaker": 0.0, "base": 0.1608, "short case": 0.1559, "none of the above": 0.0093},
-    "10.0-10.6": {"thesis breaker": 0.0, "base": 0.0623, "short case": 0.0536, "none of the above": 0.0089},
-    ">=10.6": {"thesis breaker": 0.1394, "base": 0.0, "short case": 0.0567, "none of the above": 0.0646}
+    "10.0-10.6": {"thesis breaker": 0.0, "base": 0.0110, "short case": 0.0536, "none of the above": 0.0603},
+    ">=10.6": {"thesis breaker": 0.1394, "base": 0.0, "short case": 0.0567, "none of the above": 0.0646},
+    "note": "the 10.0-10.6 row is where the gate correction lands: the dead band 10.09-10.59 (mass 0.1034) splits 0.428 short / 0.572 none under the corrected gate, against 0.497 base / 0.428 short / 0.075 none under revision 1's. Total probability reclassified base -> none: 0.0514."
   },
   "marginal_checks": {
     "print_states": {"lt_10_0": 0.6146, "10_0_to_10_6": 0.1248, "ge_10_6": 0.2606, "le_8_5": 0.2886, "published": [0.614, 0.126, 0.260]},
     "s01_states": {"decel": 0.636, "flat": 0.103, "accel": 0.261, "published": [0.636, 0.104, 0.261]},
-    "c01_p_below": {"joint": 0.7208, "published": 0.72, "given_le_8_5": 0.849, "given_s01_decel": 0.792, "given_s01_flat": 0.673, "given_ge_10_6": 0.567},
+    "c01_p_below": {"joint": 0.7208, "published": 0.72, "given_le_8_5": 0.849, "given_s01_decel": 0.792, "given_s01_flat": 0.673, "given_ge_10_6": 0.567,
+      "validation": "C01's own monitoring[6] reads 0.78 at printed GBV $25.9bn and 0.55 at $26.6bn; the joint gives 0.795 given x < 10.0 and 0.567 given x >= 10.6 (E[x] 11.96 -> GBV ~ $26.5bn). This is why C01's 0.66%/1% of GBV slope is used and S01's 0.32 is the sensitivity (A19-15)."},
     "c02_vector": {"joint": [0.1795, 0.1695, 0.3004, 0.3104, 0.0401], "published": [0.18, 0.17, 0.30, 0.31, 0.04], "p_ge_10_0_given_a": 0.887, "p_lt_9_given_d": 0.607},
     "c02_given_s01_state": {"decel": [0.036, 0.182, 0.344, 0.397, 0.042], "flat": [0.169, 0.222, 0.338, 0.225, 0.046], "accel": [0.535, 0.118, 0.181, 0.132, 0.034]},
     "c04_vector": {"joint": [0.3347, 0.2972, 0.0473, 0.2713, 0.0496], "published": [0.3366, 0.2953, 0.0458, 0.2727, 0.0496], "d_given_below": 0.317, "d_given_not_below": 0.152},
     "s01_cells": {"base_case_decel_below_cd": 0.392, "breaker_accel_at_or_above": 0.113, "published_on_rev1_states": [0.358, 0.112]},
-    "unconditional_day1": {"median": -2.4, "p_le_m8": 0.28, "p_ge_5": 0.21, "s01_published": [-2.1, 0.27, 0.22]},
-    "unconditional_dec15_median": {"joint": 164.7, "s02_published": 165.6, "adopted_file_predicted_rebasing": -0.7}
+    "unconditional_day1": {"median": -2.50, "mean": -2.16, "p_le_m8": 0.282, "p_ge_5": 0.214, "s01_published_on_rev1_states": [-2.1, 0.27, 0.22],
+      "note": "X01's day-1 is S01 REBASED onto the adopted print states; S01's published numbers are not. Revision 1 printed -2.4 for the median; the model's own output file says -2.50 (A19-16, extended). SYNTHESIS must name which object it carries and the memo must quote one."},
+    "dec15_percentiles": {"x01": [123.3, 131.4, 146.2, 164.7, 185.4, 206.4, 220.0], "s02_published": [120.5, 129.4, 145.5, 165.6, 186.0, 206.5, 221.0],
+      "p_le_150": {"x01": 0.298, "s02": 0.30}, "p_le_143": {"x01": 0.212, "s02": 0.22},
+      "note": "the 0.65/0.35 options blend applied as a location rescale is adequate across the whole distribution, not only at the median (A19-11 check). Unconditional mean 167.2 (revision 1 printed 167.3)."}
   },
   "joint_structure": {
-    "script": "docs/pitch-forecasts/questions/scenario-probabilities/datasets/x01_joint.py (numpy + stdlib, seed 20260917, n 1,000,000)",
+    "script": "docs/pitch-forecasts/questions/scenario-probabilities/datasets/x01_joint.py (numpy + stdlib, seed 20260917, n 1,000,000) - UNCHANGED in revision 2; classification and tables in datasets/x01_reclassify_v2.py (writes x01_v2_summary.json)",
     "print": "latent 3Q26 nights y/y ~ N(9.5, 1.70) [adopted_print_states_v2.json, R01/R02 rev 2]",
-    "c01": "gap ~ N(g0 + 0.66 (nights - 9.5), 3.1), g0 = -1.923 solved for P(gap < 0) = 0.72; slope from C01's own guide structure (2/3 weight on 3Q26 GBV); S01's 0.32 is a sensitivity (no option moves)",
-    "c02": "log-odds piecewise-linear in nights through C02 rev 2's three branch conditionals (anchored at 7.86 / 9.52 / 11.24), per-option factors fitted so the marginal under N(9.5, 1.70) equals C02's final vector; (c or d) block split by C01 at odds ratio 2 (S01)",
+    "c01": "gap ~ N(g0 + 0.66 (nights - 9.5), 3.1), g0 = -1.923 solved for P(gap < 0) = 0.72. The 0.66 is % of guide per 1% of 3Q26 GBV; per POINT of nights growth it is 0.60 (A19-15 unit correction)",
+    "c02": "log-odds piecewise-linear in nights through C02 rev 2's three branch conditionals (anchored at 7.86 / 9.51 / 11.24), per-option factors IPF-fitted so the marginal under N(9.5, 1.70) equals C02's final vector; the (c or d) block split by C01 at odds ratio 2 (S01)",
     "c04": "C04 rev 2's published conditionals on C01 (below / not below); independent of the print given C01",
     "day1": "S01 rev 2 twelve-cell tables (state x C01 x C02 c/d), inverse-CDF sampling of the published percentile/threshold points",
-    "dec15": "S02 rev 2 branch medians (172.3 / 165.5 / 163.0 / 156.1) x 1.0156, within-branch log-sd 0.172",
-    "correlations_assumed": "C02 depends on the print (its own tree) and on C01 (OR 2); C04 depends on C01 only; the day-1 return depends on the S01 state and C01 and not on C02 wording or C04; no other links"
+    "dec15": "S02 rev 2 branch medians (172.3 / 165.5 / 163.0 / 156.1) x 1.0156, within-branch log-sd 0.171 = sqrt((0.30 x sqrt(62/252))^2 + 0.0845^2). 62 sessions = S02's 36 pre-print + 26 post-print, which is the right count for a branch-conditional spread (knowing the branch does not resolve pre-print diffusion); revision 1's PROSE said 26, the code always said 62 (A19-11)",
+    "correlations_assumed": "C02 depends on the print (its own tree) and on C01 (OR 2); C04 depends on C01 only; the day-1 return depends on the S01 state and C01 and not on C02 wording or C04; no other links",
+    "dependence_not_modelled": "given the branch, the day-1 return and the 15 Dec close are drawn from INDEPENDENT uniforms. Measured corr(day-1, log 15 Dec) = 0.063 unconditionally and 0.003 / -0.000 / -0.001 within the decel / flat / accel states: all of the dependence in this file is branch mixing. Per-option marginals are sound; no day-1 x 15 Dec joint statement ('if 5 Nov is -8%, where is 15 Dec') may be taken from this file (A19-12)."
   },
-  "short_case_composition": {"nights_le_8_5_only": 0.095, "c02_d_only": 0.112, "c04_d_only": 0.111, "two_or_more_gates": 0.237, "directional_moderate_share_of_short": 0.34, "short_with_print_ge_10_0": 0.110, "breaker_and_short_overlap": 0.033},
+  "short_case_composition": {"nights_le_8_5_only": 0.0949, "c02_d_only": 0.1120, "c04_d_only": 0.1110, "two_or_more_gates": 0.2368,
+    "directional_moderate_share_of_short": 0.342, "accel_state_share_of_short": 0.102,
+    "print_ge_10_0_share_of_short": 0.199, "print_ge_10_0_mass": 0.1102, "breaker_and_short_overlap": 0.0326,
+    "note": "revision 1 wrote '0.110 of the short case has a print >= 10.0%' and the audit repeated it as 'a tenth'; 0.110 is unconditional MASS, and conditional on the short case it is 0.199 - one draw in five."},
+  "none_composition": {"accel_print_not_a": 0.0646, "in_line_print_10_09_to_10_59": 0.0592, "decel_with_c02_a_or_e_and_guide_at_or_above": 0.0105,
+    "p_c01_below_given_none": 0.541, "day1_median_pct": 0.32},
   "estimates": {
-    "base_rate": {"thesis breaker": 0.10, "base": 0.20, "short case": 0.50, "none of the above": 0.20},
-    "base_rate_detail": {"all_16_3Q22plus": [0.062, 0.125, 0.688, 0.125], "W1_1Q23plus_n14": [0.071, 0.143, 0.643, 0.143], "W2_1Q24plus_n10": [0.10, 0.20, 0.50, 0.20], "bucket_era_n4": [0.25, 0.0, 0.50, 0.25], "material_reading_W1": [0.071, 0.286, 0.286, 0.357], "material_reading_W2": [0.10, 0.30, 0.30, 0.30], "source": "datasets/x01_base_rate_panel.csv (C_print_panel.csv x C02 descriptor dataset x FY-margin ledger)"},
-    "decomposition": {"thesis breaker": 0.139, "base": 0.223, "short case": 0.555, "none of the above": 0.083},
-    "anchor": {"thesis breaker": 0.25, "base": 0.45, "short case": 0.30, "none of the above": 0.0},
-    "anchor_source": "deck/drafts/memo_v2_short_2026-09-16.md scenario table (25/45/30, no 'none' row), 2026-09-16; no market prices this object; the memo's short case is its conjunctive fundamental scenario (mass 0.05 here), not the question's disjunction",
-    "final_minus_anchor": {"thesis breaker": -0.11, "base": -0.23, "short case": 0.25, "none of the above": 0.09},
-    "independence_note": "final = the joint of six audited marginals; the anchor is the un-audited table they replace. The base rate (W2) and the joint agree on breaker (0.10 vs 0.14) and short (0.50 vs 0.55) and differ on none (0.20 vs 0.08, n 2 of 10); 'none' rounded up to 0.09."
+    "base_rate": {"thesis breaker": 0.10, "base": 0.10, "short case": 0.50, "none of the above": 0.30},
+    "base_rate_detail": {
+      "window": "W2 (1Q24+, n 10), literal reading, CORRECTED (decelerating) base gate",
+      "corrected_gate_literal": {"all_16_3Q22plus": [0.062, 0.062, 0.688, 0.188], "W1_1Q23plus_n14": [0.071, 0.071, 0.643, 0.214], "W2_1Q24plus_n10": [0.10, 0.10, 0.50, 0.30]},
+      "corrected_gate_material": {"W1_1Q23plus_n14": [0.071, 0.214, 0.286, 0.429], "W2_1Q24plus_n10": [0.10, 0.20, 0.30, 0.40]},
+      "level_gate_analogue_W2": {"literal": [0.10, 0.10, 0.60, 0.20], "material": [0.10, 0.20, 0.40, 0.30]},
+      "published_range": "short 0.50-0.60 literal, 0.30-0.40 material across the two nights-gate analogues (A19-13); the rank order - short modal under the literal reading, not under the material one - is what survives",
+      "gate_analogues": "the panel's nights gate is a SEQUENTIAL analogue (accel_pts <= -1.84) of a LEVEL gate (<=8.5%), and so is the breaker gate (accel_pts >= 0.25 for '>=10.6%')",
+      "revision_1_published": {"W2_1Q24plus_n10": [0.10, 0.20, 0.50, 0.20], "note": "computed on the wrong base gate"},
+      "source": "datasets/x01_base_rate_panel.csv; recomputed in docs/pitch-forecasts/audits/A19-reproduce.py section 5"
+    },
+    "decomposition": {"thesis breaker": 0.139, "base": 0.172, "short case": 0.555, "none of the above": 0.134},
+    "anchor": null,
+    "anchor_flag": "NO_EXTERNAL_ANCHOR",
+    "anchor_source": null,
+    "anchor_note": "revision 1 put the memo's own scenario table (25/45/30) in the anchor slot and reported |final - anchor|. Withdrawn (A19-05, A19-18): the memo is the team's un-audited prior and is the document this run was commissioned to replace; no market prices this object; |final - anchor| measured nothing (A12-22 precedent). SYNTHESIS must carry no |final - anchor| row for X01. The memo table stays in the claims ledger as a labelled internal comparison. The only external object pricing any leg is the Kalshi KXABNB nights ladder, which prices the print leg only and is already inside R01's adopted distribution, so quoting it would double-count.",
+    "final_minus_anchor": null,
+    "independence_note": "NOT_INDEPENDENTLY_DERIVED for the base-rate / decomposition pair: the W2 panel's short cell is driven by the (d) descriptor frequency (8 of 17), which is also ~30% of the weight inside C02's own final vector that the joint is IPF-fitted to reproduce exactly. Revision 1's 'the base rate and the joint agree on short (0.50 vs 0.55)' counted the same evidence twice and is withdrawn; the agreement is arithmetic, not corroboration.",
+    "rounding_note": "raw joint 0.1394 / 0.1717 / 0.5547 / 0.1342; 'none' rounded up to 0.14 at the short case's expense rather than by largest remainder, because the W2 panel puts none at 0.30 under this gate and the resolution-criteria audit concedes another 0.02-0.03 would move to none under a broader reading of 'in-line print with in-line guide'."
   },
   "sensitivity": [
-    {"assumption": "print centre 9.5; if 9.0 / 9.2 / 9.9 / 10.0", "moves_to": {"thesis breaker": [0.11, 0.12, 0.16, 0.16], "short case": [0.61, 0.58, 0.52, 0.52], "none of the above": [0.06, 0.07, 0.11, 0.11]}},
-    {"assumption": "print sd 1.70; if 1.475 / 2.159", "moves_to": {"thesis breaker": [0.12, 0.16], "base": [0.25, 0.19]}},
-    {"assumption": "C01 slope 0.66%/pt; if 0.32 (S01) or 1.0", "moves_to": "no option moves by more than 0.001"},
-    {"assumption": "C01 P(below) 0.72; if 0.62 / 0.82", "moves_to": {"short case": [0.55, 0.56], "none of the above": [0.09, 0.07]}},
-    {"assumption": "C02 (d) 0.31; if 0.23 / 0.36 (mass traded with (c))", "moves_to": {"short case": [0.52, 0.58], "base": [0.25, 0.21]}},
-    {"assumption": "C02 (a) 0.18; if 0.13 / 0.24", "moves_to": {"thesis breaker": [0.11, 0.17]}},
-    {"assumption": "C04 (d) 0.27; if 0.20 / 0.35", "moves_to": {"short case": [0.53, 0.59], "base": [0.25, 0.20]}},
-    {"assumption": "C02-C01 odds ratio 2; if 1 / 4", "moves_to": {"base": [0.23, 0.22], "none of the above": [0.08, 0.09]}},
-    {"assumption": "precedence breaker > short; if short > breaker", "moves_to": {"thesis breaker": 0.11, "short case": 0.59}},
-    {"assumption": "literal short case (C02 (d) whole); if the explicit mid-single bucket only", "moves_to": {"thesis breaker": 0.14, "base": 0.26, "short case": 0.49, "none of the above": 0.11}},
-    {"assumption": "short nights gate 8.5%; if 8.0 / 9.0", "moves_to": {"short case": [0.52, 0.61], "base": [0.26, 0.17]}},
-    {"assumption": "breaker gate 10.6%; if 10.0 (R01)", "moves_to": {"thesis breaker": 0.16, "base": 0.16, "none of the above": 0.13}},
-    {"assumption": "Monte Carlo seed", "moves_to": "+/- 0.001 per option"}
+    {"assumption": "base-option gate: decelerating (<10.09, adopted); if <10.6 (revision 1) / <10.34 / decel-or-flat-with-below-Street-guide", "moves_to": {"base": [0.22, 0.20, 0.21], "none of the above": [0.08, 0.11, 0.10], "thesis breaker": 0.14, "short case": 0.55}},
+    {"assumption": "short-case reading: literal (adopted); if material (branch-varying share) / material with the rev-1 constant share", "moves_to": {"thesis breaker": [0.14, 0.14], "base": [0.20, 0.20], "short case": [0.48, 0.49], "none of the above": [0.18, 0.17]}},
+    {"assumption": "precedence breaker-first (adopted); if short-first", "moves_to": {"thesis breaker": 0.11, "short case": 0.59}},
+    {"assumption": "print centre 9.5; if 9.0 / 9.2 / 9.9 / 10.0", "moves_to": {"thesis breaker": [0.11, 0.12, 0.16, 0.16], "base": [0.18, 0.18, 0.16, 0.15], "short case": [0.61, 0.58, 0.52, 0.52], "none of the above": [0.11, 0.12, 0.16, 0.17]}},
+    {"assumption": "print sd 1.70; if 1.475 / 2.159", "moves_to": {"thesis breaker": [0.12, 0.16], "base": [0.19, 0.14], "short case": [0.55, 0.56], "none of the above": [0.13, 0.14]}},
+    {"assumption": "C01 slope 0.66%/1% of GBV (0.60%/pt of nights); if 0.32 (S01) or 1.0", "moves_to": "no option moves by more than 0.001"},
+    {"assumption": "C01 P(below) 0.72; if 0.62 (Astra) / 0.82", "moves_to": {"short case": [0.55, 0.56], "none of the above": [0.14, 0.13], "base": [0.17, 0.17]}},
+    {"assumption": "C02-C01 odds ratio 2; if 1 / 4", "moves_to": {"base": [0.17, 0.17], "none of the above": [0.13, 0.14]}},
+    {"assumption": "C02 (d) 0.31; if 0.23 / 0.36 (mass traded with (c))", "moves_to": {"short case": [0.52, 0.58], "base": [0.19, 0.16], "none of the above": [0.15, 0.13]}},
+    {"assumption": "C02 (a) 0.18; if 0.13 / 0.24", "moves_to": {"thesis breaker": [0.11, 0.17], "short case": [0.56, 0.54], "none of the above": [0.15, 0.12]}},
+    {"assumption": "C04 (d) 0.27; if 0.20 / 0.35", "moves_to": {"short case": [0.53, 0.59], "base": [0.19, 0.15], "none of the above": [0.15, 0.12]}},
+    {"assumption": "C04 leg removed entirely (its historical rate is 0 of 16, and 3 of 3 Novembers raised)", "moves_to": {"thesis breaker": 0.14, "base": 0.24, "short case": 0.44, "none of the above": 0.18}},
+    {"assumption": "C04 (d) odds x2 when the print is <= 8.5", "moves_to": "unchanged (those draws are already short)"},
+    {"assumption": "short nights gate 8.5%; if 8.0 / 9.0", "moves_to": {"short case": [0.52, 0.61], "base": [0.21, 0.12], "none of the above": [0.14, 0.13]}},
+    {"assumption": "Monte Carlo seed 20260918", "moves_to": {"thesis breaker": 0.140, "base": 0.172, "short case": 0.554, "none of the above": 0.134}},
+    {"assumption": "independent stdlib quadrature (audit, no Monte Carlo)", "moves_to": {"thesis breaker": 0.1398, "base": 0.1720, "short case": 0.5540, "none of the above": 0.1343}}
   ],
   "monitoring": [
-    {"date": "2026-09-18/2026-09-30", "event": "September Inside Airbnb dumps; adopted_print_states_v2.json re-set", "action": "re-run x01_joint.py; +0.5pt centre ~ +0.02 breaker, -0.04 short, +0.03 none"},
-    {"date": "2026-10-02", "event": "prelim memo freeze", "action": "quote 0.14 / 0.22 / 0.55 / 0.09 (literal) or 0.14 / 0.26 / 0.49 / 0.11 (material), state which; replace 25/45/30; add a 'none' row; carry the scenario table with base = short on the day"},
+    {"date": "2026-09-18/2026-09-30", "event": "September Inside Airbnb dumps; adopted_print_states_v2.json re-set", "action": "re-run x01_joint.py then x01_reclassify_v2.py; +0.5pt centre ~ +0.02 breaker, -0.04 short, +0.03 none; the print partition moves too (P(<=8.5) 0.29 -> 0.22 at a 10.0 centre)"},
+    {"date": "2026-10-02", "event": "prelim memo freeze", "action": "carry TWO labelled tables: the 12-month print partition 0.26 / 0.45 / 0.29 (which is the memo's 25/45/30 - keep it, relabel it) and the 5 Nov disclosure table 0.14 / 0.17 / 0.55 / 0.14 with the reading named in the header (material 0.14 / 0.20 / 0.48 / 0.18) and the composition footnote. Drop 'base = short on the day'. Use the mean convention for any probability-weighted price ($167.3)"},
     {"date": "2026-10-13", "event": "EEA/CH single-fee migration deadline (C01 fee weights)", "action": "C01 0.72 -> 0.64-0.67 if confirmed; X01 moves < 0.01"},
-    {"date": "2026-10-15/2026-11-03", "event": "sell-side previews, Street 4Q26 mean, management QTD remarks, EXPE/BKNG prints", "action": "re-run if C01 or C02 moves >= 0.03; C02 (a) +0.03 ~ breaker +0.02"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side previews, Street 4Q26 mean, management QTD remarks, EXPE/BKNG prints", "action": "re-run if C01 or C02 moves >= 0.03; C02 (a) +0.03 ~ breaker +0.02. A Kalshi KXABNB re-price updates R01, not X01's anchor slot, which stays null"},
     {"date": "2026-11-04", "event": "record the LSEG-family 4Q26 revenue mean", "action": "fix the C01 gate value"},
-    {"date": "2026-11-05", "event": "3Q26 letter: printed nights, 4Q26 descriptor, 4Q26 revenue midpoint, FY26 margin sentence", "action": "resolve mechanically under the log's conventions 1-7 and the precedence rule; record which gates tripped"}
+    {"date": "2026-11-05", "event": "3Q26 letter: printed nights, 4Q26 descriptor, 4Q26 revenue midpoint, FY26 margin sentence", "action": "resolve mechanically under the log's conventions 1-8 and the precedence rule; record which gates tripped and which reading the memo quoted"},
+    {"date": "2026-11-06/2026-12-15", "event": "reaction close; 15 Dec close", "action": "score the S01/S02 objects, not X01; do not score any day-1 x 15 Dec joint statement against this file"}
   ],
   "log": "docs/pitch-forecasts/questions/scenario-probabilities/research-log.md"
 }

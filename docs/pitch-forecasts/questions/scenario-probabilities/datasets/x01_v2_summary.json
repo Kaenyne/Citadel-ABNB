@@ -1,0 +1,222 @@
+{
+ "explicit_bucket_share_of_c02_d_by_branch": {
+  "lt9": 0.492,
+  "9to10": 0.348,
+  "ge10": 0.208
+ },
+ "vectors": {
+  "revision_2_headline (literal, decelerating base gate, breaker-first)": {
+   "thesis breaker": 0.1394,
+   "base": 0.1717,
+   "short case": 0.5547,
+   "none of the above": 0.1342
+  },
+  "revision_1_published (base gate 10.6)": {
+   "thesis breaker": 0.1394,
+   "base": 0.2231,
+   "short case": 0.5547,
+   "none of the above": 0.0828
+  },
+  "strict decel (<10.34, 2Q26's rate)": {
+   "thesis breaker": 0.1394,
+   "base": 0.1985,
+   "short case": 0.5547,
+   "none of the above": 0.1074
+  },
+  "lenient (decel OR flat-with-guide-below-Street)": {
+   "thesis breaker": 0.1394,
+   "base": 0.2074,
+   "short case": 0.5547,
+   "none of the above": 0.0985
+  },
+  "short-first precedence": {
+   "thesis breaker": 0.1068,
+   "base": 0.1717,
+   "short case": 0.5873,
+   "none of the above": 0.1342
+  },
+  "material reading (branch-varying share)": {
+   "thesis breaker": 0.1394,
+   "base": 0.2038,
+   "short case": 0.4783,
+   "none of the above": 0.1784
+  },
+  "material reading (constant 0.387 share, revision 1)": {
+   "thesis breaker": 0.1394,
+   "base": 0.2039,
+   "short case": 0.4862,
+   "none of the above": 0.1705
+  },
+  "no C04 leg": {
+   "thesis breaker": 0.1394,
+   "base": 0.2378,
+   "short case": 0.4437,
+   "none of the above": 0.1792
+  },
+  "short nights gate 8.0 / 9.0": [
+   {
+    "thesis breaker": 0.1394,
+    "base": 0.2082,
+    "short case": 0.5168,
+    "none of the above": 0.1356
+   },
+   {
+    "thesis breaker": 0.1394,
+    "base": 0.1227,
+    "short case": 0.6059,
+    "none of the above": 0.132
+   }
+  ]
+ },
+ "scenario_table_revision_2": {
+  "thesis breaker": {
+   "p": 0.1394,
+   "day1_median": 2.19,
+   "day1_mean": 2.54,
+   "day1_p_le_m8": 0.121,
+   "day1_p_ge_5": 0.37,
+   "day1_p_lt_0": 0.397,
+   "dec15_median": 175.1,
+   "dec15_mean": 177.7,
+   "dec15_p25": 156.0,
+   "dec15_p75": 196.6,
+   "dec15_p_le_150": 0.183,
+   "dec15_p_ge_180": 0.436,
+   "nights_mean": 11.96,
+   "p_c01_below": 0.499
+  },
+  "base": {
+   "p": 0.1717,
+   "day1_median": -4.66,
+   "day1_mean": -4.18,
+   "day1_p_le_m8": 0.356,
+   "day1_p_ge_5": 0.151,
+   "day1_p_lt_0": 0.695,
+   "dec15_median": 160.6,
+   "dec15_mean": 163.0,
+   "dec15_p25": 143.0,
+   "dec15_p75": 180.4,
+   "dec15_p_le_150": 0.346,
+   "dec15_p_ge_180": 0.254,
+   "nights_mean": 9.35,
+   "p_c01_below": 0.722
+  },
+  "short case": {
+   "p": 0.5547,
+   "day1_median": -3.8,
+   "day1_mean": -3.39,
+   "day1_p_le_m8": 0.327,
+   "day1_p_ge_5": 0.175,
+   "day1_p_lt_0": 0.659,
+   "dec15_median": 161.9,
+   "dec15_mean": 164.4,
+   "dec15_p25": 143.9,
+   "dec15_p75": 182.1,
+   "dec15_p_le_150": 0.331,
+   "dec15_p_ge_180": 0.271,
+   "nights_mean": 8.63,
+   "p_c01_below": 0.82
+  },
+  "none of the above": {
+   "p": 0.1342,
+   "day1_median": 0.32,
+   "day1_mean": 0.63,
+   "day1_p_le_m8": 0.171,
+   "day1_p_ge_5": 0.294,
+   "day1_p_lt_0": 0.485,
+   "dec15_median": 171.2,
+   "dec15_mean": 173.8,
+   "dec15_p25": 152.4,
+   "dec15_p75": 192.4,
+   "dec15_p_le_150": 0.222,
+   "dec15_p_ge_180": 0.386,
+   "nights_mean": 10.69,
+   "p_c01_below": 0.541
+  }
+ },
+ "pw_dec15": {
+  "mean_convention": 167.28,
+  "median_of_branches": 164.76,
+  "unconditional_median": 164.66,
+  "unconditional_mean": 167.24
+ },
+ "print_partition_table": {
+  "short (<=8.5%)": {
+   "p": 0.2886,
+   "day1_median": -4.84,
+   "day1_mean": -4.33,
+   "day1_p_le_m8": 0.364,
+   "day1_p_ge_5": 0.148,
+   "day1_p_lt_0": 0.7,
+   "dec15_median": 159.6,
+   "dec15_mean": 162.0,
+   "dec15_p25": 142.1,
+   "dec15_p75": 179.3,
+   "dec15_p_le_150": 0.358,
+   "dec15_p_ge_180": 0.243,
+   "nights_mean": 7.49,
+   "p_c01_below": 0.849
+  },
+  "base (8.5-10.6%)": {
+   "p": 0.4508,
+   "day1_median": -3.79,
+   "day1_mean": -3.42,
+   "day1_p_le_m8": 0.322,
+   "day1_p_ge_5": 0.169,
+   "day1_p_lt_0": 0.662,
+   "dec15_median": 162.2,
+   "dec15_mean": 164.6,
+   "dec15_p25": 144.3,
+   "dec15_p75": 182.3,
+   "dec15_p_le_150": 0.327,
+   "dec15_p_ge_180": 0.274,
+   "nights_mean": 9.56,
+   "p_c01_below": 0.728
+  },
+  "breaker (>=10.6%)": {
+   "p": 0.2606,
+   "day1_median": 2.09,
+   "day1_mean": 2.42,
+   "day1_p_le_m8": 0.123,
+   "day1_p_ge_5": 0.365,
+   "day1_p_lt_0": 0.402,
+   "dec15_median": 175.0,
+   "dec15_mean": 177.6,
+   "dec15_p25": 155.9,
+   "dec15_p75": 196.5,
+   "dec15_p_le_150": 0.184,
+   "dec15_p_ge_180": 0.434,
+   "nights_mean": 11.62,
+   "p_c01_below": 0.567
+  }
+ },
+ "memo_conjunctions": {
+  "short_le8_5_and_c02d_and_c04d": 0.0462,
+  "short_le8_5_and_c02d_or_c04d": 0.1937,
+  "breaker_ge10_6_and_c02a_and_c04b": 0.0496
+ },
+ "compositions": {
+  "short_directional_share": 0.342,
+  "short_accel_state_share": 0.102,
+  "short_print_ge_10_0_share": 0.199,
+  "short_print_ge_10_0_mass": 0.1102,
+  "none_dead_band_share": 0.441,
+  "none_accel_share": 0.481,
+  "none_p_c01_below": 0.541,
+  "base_to_none_reclassified_by_the_gate_fix": 0.0514
+ },
+ "day1_dec15_dependence": {
+  "corr_overall": 0.0627,
+  "corr_within_state": {
+   "decel": 0.0033,
+   "flat": -0.0002,
+   "accel": -0.0006
+  }
+ },
+ "unconditional": {
+  "day1_median": -2.5,
+  "day1_mean": -2.16,
+  "day1_p_le_m8": 0.282,
+  "day1_p_ge_5": 0.214
+ }
+}

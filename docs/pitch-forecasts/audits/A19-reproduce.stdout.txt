@@ -1,0 +1,51 @@
+print partition  P(<=8.5) 0.2881  P(8.5-10.6) 0.4514  P(>=10.6) 0.2605
+C02 anchors [7.86, 9.505, 11.243]
+explicit-bucket share of (d) by branch {'lt9': 0.492, '9to10': 0.348, 'ge10': 0.208}   directional-moderate total 0.1878
+C02 IPF factors [0.001, 0.009, 0.023, -0.062, 0.325]  target [0.18, 0.17, 0.3, 0.31, 0.04]
+C01 g0 -1.9227  implied P(below) 0.7200
+C01 slope check: 2/3 weight on GBV = 0.6555  per point of nights growth = 0.599
+published gates             {'breaker': 0.1398, 'base': 0.2238, 'short': 0.554, 'none': 0.0825}
+decelerating base gate      {'breaker': 0.1398, 'base': 0.172, 'short': 0.554, 'none': 0.1343}
+strict decel (<10.34)       {'breaker': 0.1398, 'base': 0.199, 'short': 0.554, 'none': 0.1072}
+short-first precedence      {'breaker': 0.107, 'base': 0.2238, 'short': 0.5867, 'none': 0.0825}
+material (branch shares)    {'breaker': 0.1398, 'base': 0.2651, 'short': 0.4781, 'none': 0.1171}
+material + decel gate       {'breaker': 0.1398, 'base': 0.204, 'short': 0.4781, 'none': 0.1782}
+no C04 leg                  {'breaker': 0.1398, 'base': 0.3094, 'short': 0.443, 'none': 0.1078}
+C04 (d) at 0.20             {'breaker': 0.1398, 'base': 0.246, 'short': 0.5252, 'none': 0.089}
+published base gate literal sequential-gate all16 n 16 {'breaker': 0.062, 'base': 0.125, 'short': 0.688, 'none': 0.125}
+published base gate literal sequential-gate W1 n 14 {'breaker': 0.071, 'base': 0.143, 'short': 0.643, 'none': 0.143}
+published base gate literal sequential-gate W2 n 10 {'breaker': 0.1, 'base': 0.2, 'short': 0.5, 'none': 0.2}
+published base gate literal level-gate all16 n 16 {'breaker': 0.062, 'base': 0.062, 'short': 0.625, 'none': 0.25}
+published base gate literal level-gate W1 n 14 {'breaker': 0.071, 'base': 0.071, 'short': 0.643, 'none': 0.214}
+published base gate literal level-gate W2 n 10 {'breaker': 0.1, 'base': 0.1, 'short': 0.6, 'none': 0.2}
+published base gate material sequential-gate all16 n 16 {'breaker': 0.062, 'base': 0.25, 'short': 0.312, 'none': 0.375}
+published base gate material sequential-gate W1 n 14 {'breaker': 0.071, 'base': 0.286, 'short': 0.286, 'none': 0.357}
+published base gate material sequential-gate W2 n 10 {'breaker': 0.1, 'base': 0.3, 'short': 0.3, 'none': 0.3}
+published base gate material level-gate all16 n 16 {'breaker': 0.062, 'base': 0.188, 'short': 0.25, 'none': 0.5}
+published base gate material level-gate W1 n 14 {'breaker': 0.071, 'base': 0.214, 'short': 0.286, 'none': 0.429}
+published base gate material level-gate W2 n 10 {'breaker': 0.1, 'base': 0.2, 'short': 0.4, 'none': 0.3}
+decelerating base gate literal sequential-gate all16 n 16 {'breaker': 0.062, 'base': 0.062, 'short': 0.688, 'none': 0.188}
+decelerating base gate literal sequential-gate W1 n 14 {'breaker': 0.071, 'base': 0.071, 'short': 0.643, 'none': 0.214}
+decelerating base gate literal sequential-gate W2 n 10 {'breaker': 0.1, 'base': 0.1, 'short': 0.5, 'none': 0.3}
+decelerating base gate literal level-gate all16 n 16 {'breaker': 0.062, 'base': 0.062, 'short': 0.625, 'none': 0.25}
+decelerating base gate literal level-gate W1 n 14 {'breaker': 0.071, 'base': 0.071, 'short': 0.643, 'none': 0.214}
+decelerating base gate literal level-gate W2 n 10 {'breaker': 0.1, 'base': 0.1, 'short': 0.6, 'none': 0.2}
+decelerating base gate material sequential-gate all16 n 16 {'breaker': 0.062, 'base': 0.188, 'short': 0.312, 'none': 0.438}
+decelerating base gate material sequential-gate W1 n 14 {'breaker': 0.071, 'base': 0.214, 'short': 0.286, 'none': 0.429}
+decelerating base gate material sequential-gate W2 n 10 {'breaker': 0.1, 'base': 0.2, 'short': 0.3, 'none': 0.4}
+decelerating base gate material level-gate all16 n 16 {'breaker': 0.062, 'base': 0.188, 'short': 0.25, 'none': 0.5}
+decelerating base gate material level-gate W1 n 14 {'breaker': 0.071, 'base': 0.214, 'short': 0.286, 'none': 0.429}
+decelerating base gate material level-gate W2 n 10 {'breaker': 0.1, 'base': 0.2, 'short': 0.4, 'none': 0.3}
+FY margin actions, November prints [('3Q22', 'none'), ('3Q23', 'raised'), ('3Q24', 'raised'), ('3Q25', 'raised')]
+descriptor options: (d) count 8  of which explicit buckets 1
+deep decelerations n 4 mean raw 1.75 [('4Q22', 13.4), ('2Q23', -0.5), ('1Q24', -6.9), ('1Q25', 1.0)]
+  in W1 only: n 3 mean raw -2.13
+all16 all prints  n 16 slope 0.33 corr 0.106
+all16 decelerators n 10 slope -1.94 intercept -8.89 corr -0.636
+W1 all prints  n 14 slope 1.01 corr 0.337
+W1 decelerators n 9 slope -1.24 intercept -8.67 corr -0.620
+W2 all prints  n 10 slope 2.49 corr 0.587
+W2 decelerators n 6 slope -1.62 intercept -8.89 corr -0.586
+PW 15 Dec by conditional median 164.8 (published 164.8)
+PW 15 Dec by conditional mean   167.3 (= the joint's unconditional mean)
+memo breaker 0.25 needs P(a | >=10.6) = 0.960 against the joint's 0.535
