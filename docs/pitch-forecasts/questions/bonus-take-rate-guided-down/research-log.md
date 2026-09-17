@@ -98,7 +98,7 @@ Airbnb, Ellie Mertz, Brian Chesky, implied take rate, customer incentives, new b
 
 ## 6. Final Numbers
 **Binary.** P(a qualifying take-rate-lower statement at the 5 Nov print) = **0.41**, credible interval **0.28–0.55**. (Revision 1: 0.42, 0.28–0.56. The headline barely moves; **the impact table is what this revision changes**.)
-Route split of the Yes mass (from the model): incentives / new-business / pilot named as reducing a qualifying period's take rate ≈ **0.79**; the letter's Q4 sentence reading "lower" ≈ **0.25** (overlapping); an explicit FY27 lower statement ≈ **0.12**.
+Route split of the Yes mass (from the model): incentives / new-business / pilot named as reducing qualifying period take rate approx 0.82; the letter's Q4 sentence reading "lower" ≈ **0.25** (overlapping); an explicit FY27 lower statement ≈ **0.12**.
 Under the strict convention (only statements naming 4Q26 or FY27 count) the number is **0.31** (rev 1: 0.33; the strict multiplier is now 0.50, derived rather than asserted).
 Under the net-only reading (convention (5) reversed: the take rate must be *said* to fall) the number is **~0.25** (blend; union 0.23). Revision 1 published ~0.22, a union-level figure. That reading belongs in §7 and nowhere else — the question's own parenthetical is "or that incentives/new businesses **will reduce it**".
 Extreme-probability gate: not triggered.
@@ -128,7 +128,7 @@ Pre-mortem ("it is 5 Nov and this resolved No"): (1) the letter said "relatively
 | 2026-11-05 (same print) | **Coherence read with C11 and R04** | if the 3Q26 take rate prints above +22bp (C11 0.76) *and* the FY sentence drops the incentives clause, this question resolves No and R04 more likely resolves Yes — the two are mirrors, not duplicates |
 
 ## 9. Impact
-Revision 1 priced the **modal** Yes as news. Route (b) is ~0.79 of the Yes mass and its modal form is the CFO restating a sentence she gave on **6 August 2026** — a sentence the Street has had for six weeks and which is already inside the LSEG 4Q26 revenue mean this log uses ($3,162M) and inside FY27 estimates. Marking that at −13bp on 4Q26 and −15bp on FY27 books a re-rating for a restatement. R04 revision 2 made exactly this correction on the mirror question (A10-01: "the event is a statement, not a delivered take-rate step") and split its Yes mass by form; revision 2 adopts the same structure here, so the two impact tables are mirrors (**+$2.2 and −$2.5** expected stock, EV **+$1.1 and −$1.0**) instead of one borderline and one "material at −$6".
+Revision 1 priced the **modal** Yes as news. Route (b) is ~0.82 of the Yes mass and its modal form is the CFO restating a sentence she gave on **6 August 2026** — a sentence the Street has had for six weeks and which is already inside the LSEG 4Q26 revenue mean this log uses ($3,162M) and inside FY27 estimates. Marking that at −13bp on 4Q26 and −15bp on FY27 books a re-rating for a restatement. R04 revision 2 made exactly this correction on the mirror question (A10-01: "the event is a statement, not a delivered take-rate step") and split its Yes mass by form; revision 2 adopts the same structure here, so the two impact tables are mirrors (**+$2.2 and −$2.5** expected stock, EV **+$1.1 and −$1.0**) instead of one borderline and one "material at −$6".
 
 | Form of Yes | Share of Yes | 4Q26 revenue ($M) | FY27 revenue ($M) | Stock ($/sh) |
 |---|---:|---:|---:|---:|

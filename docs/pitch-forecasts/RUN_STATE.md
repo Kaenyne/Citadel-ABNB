@@ -84,3 +84,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 11:53 A15 response done (B04 0.21, B05 0.62, B06 0.32, B07 0.63; none material; A15 DONE). A18 audit launched on Opus (audit-only afterwards). Running: A12, A16 responses; A17, A18 audits (all Opus).
 - 11:57 heartbeat: no change; running A12, A16 responses and A17, A18 audits (all Opus).
 - 12:06 A12 response done (R10 0.10, R11 0.26, R15 0.18, R16 0.31 EV $3.4 material; A12 DONE). ADOPTED OBJECTS: adopted_q4_states_v2.json (mean 8.61, sd 2.28, P>=134.0m 0.307, P<=131.0m 0.309) and r11_v2_joint_object.json (RevPAR mean +2.60, P>=4 0.259, P<=1 0.232). SYNTHESIS must re-base F01/F02 (0.29/0.27 object), B13 (0.31 not 0.26) and B15 (0.23 not 0.10) to them. Running: A16 response; A17, A18 audits.
+- 12:06 A17 audit (Opus) marker found on disk; A17 response launched on Opus. Running: A16, A17 responses; A18 audit.
