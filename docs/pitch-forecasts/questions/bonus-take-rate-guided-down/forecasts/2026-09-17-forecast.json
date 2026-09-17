@@ -1,0 +1,56 @@
+{
+  "question_id": "B17",
+  "slug": "bonus-take-rate-guided-down",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.42, "ci": [0.28, 0.56]},
+  "companion": {"p_strict_convention_4q26_fy27_only": 0.33, "route_letter_q4_lower": 0.12, "route_incentives_named": 0.40, "route_fy27_lower": 0.06, "tr_4q26_team_pct": 13.83, "tr_4q26_street_pct": 13.75, "tr_4q25_pct": 13.62, "source": "datasets/b17_model.py"},
+  "estimates": {
+    "base_rate": 0.29,
+    "decomposition": 0.48,
+    "anchor": 0.50,
+    "anchor_source": "No market or consensus prices the statement (Kalshi KXABNB nights ladder, Polymarket price ladders only, 2026-09-17T08:21:21Z). Anchor = the skill's pending-decision flat prior (0.50) for a discretionary management statement. Base rate: a qualifying statement (down y/y, or incentives/new businesses named as reducing the take rate) in 1 of 5 prints of the new-business regime (2Q26 call only), Laplace 0.29; all-letters class 2 of 13 (0.20). Decomposition: union of the letter-lower route (0.12), the incentives-named route (topic 0.80 x qualifies 0.50) and the FY27 route (0.06), Gaussian copula rho 0.5.",
+    "final_minus_anchor": -0.08,
+    "not_independently_derived_flag": true,
+    "independence_note": "final = 0.5 x 0.48 + 0.3 x 0.29 + 0.2 x 0.50 = 0.43 -> 0.42; built from the letter record and the 2Q26 call form, not from the prior"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/bonus-take-rate-guided-down/datasets/b17_model.py",
+    "structure": "three correlated Bernoulli routes (Gaussian copula rho 0.5): (a) letter Q4 sentence 'lower' 0.12; (b) take rate a topic 0.80 x answer names incentives/new businesses/pilot as reducing a qualifying period's take rate 0.50; (c) explicit FY27 lower 0.06; YES = a | b | c = 0.48; strict convention (FY26 wording excluded, 0.55 of route b survives) = 0.33",
+    "conventions": "statement must be forward-looking at 5 Nov with a period including 4Q26 or FY27 (an FY26 statement on 5 Nov qualifies; 3Q26 realised does not); leg (a) requires 'lower/down/decline' y/y (flat/in-line do not count alone); leg (b) requires incentives, new businesses or the host-fee/direct-link pilot named as reducing the forward take rate (the 2Q26 call form counts; RNPL timing alone counts only under (a)); letter, prepared remarks and Q&A all count"
+  },
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": -30,
+    "rev_fy27_musd": -170,
+    "margin_fy26_pp": -0.2,
+    "margin_fy27_pp": -1.0,
+    "eps_fy27_usd": -0.21,
+    "stock_usd_per_share": -6,
+    "ev_stock_usd_per_share": -2.5,
+    "material": true,
+    "note": "If Yes the market marks 4Q26 take rate -13bp (the Street's +13bp becomes flat: -$30M on $23.0bn GBV) and FY27 -15bp (-$170M on ~$114bn GBV, ~-1.1pt of FY27 revenue growth; the mirror of R04's +20bp); ~90% flow-through gives FY26 -0.2pp, FY27 -1.0pp, FY27 EPS -$0.21. Stock -$6 = -1.1pt x 0.40-0.48 turns x $9-10 (~-$4.6) plus the FY27 EBITDA level effect (~-$4), haircut because the modal form is the 2Q26 'flat, with incentives' sentence. EV 0.42 x -6 = -$2.5/share: material; carry as a named bonus line and pre-write the reply to R04."
+  },
+  "sensitivity": [
+    {"assumption": "convention: only statements naming 4Q26 or FY27 count (FY26 wording excluded)", "moves_to": 0.33},
+    {"assumption": "convention: 'flat, with incentives offsetting gains' does not count (net-only reading)", "moves_to": 0.22},
+    {"assumption": "P(letter Q4 sentence 'lower') 0.12 -> 0.20", "moves_to": 0.45},
+    {"assumption": "P(letter Q4 sentence 'lower') 0.12 -> 0.06", "moves_to": 0.40},
+    {"assumption": "P(take rate is a topic on the call) 0.80 -> 0.60", "moves_to": 0.37},
+    {"assumption": "P(answer qualifies | topic) 0.50 -> 0.65", "moves_to": 0.50},
+    {"assumption": "P(answer qualifies | topic) 0.50 -> 0.35", "moves_to": 0.37},
+    {"assumption": "blend all on the decomposition / all on the base rate", "moves_to": 0.48}
+  ],
+  "monitoring": [
+    {"date": "2026-09-17/2026-10-02", "event": "direct-link pilot coverage; management conference remarks on take rate or incentives", "action": "pilot expanded nationally -> +0.05; a 2Q26-form remark -> +0.08; a 1Q26 'no negative impact' form -> -0.05"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.42 (0.28-0.56) with the strict 0.33; note the 2Q26 call already said it for FY26"},
+    {"date": "2026-10-13", "event": "EEA/CH single-fee deadline", "action": "+0.02 (raises the odds of a fee/take-rate question)"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side previews of the Q4 take rate (MODL 13.76)", "action": "previews below 13.62 -> +0.05"},
+    {"date": "2026-11-05", "event": "3Q26 letter Q4/FY take-rate sentences; call prepared remarks and Q&A", "action": "letter 'lower' -> Yes; else read the call for the incentives clause; none -> No"}
+  ],
+  "log": "docs/pitch-forecasts/questions/bonus-take-rate-guided-down/research-log.md"
+}
