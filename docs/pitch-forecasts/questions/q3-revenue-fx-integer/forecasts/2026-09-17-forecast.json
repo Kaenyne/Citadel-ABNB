@@ -1,0 +1,50 @@
+{
+  "question_id": "C08",
+  "slug": "q3-revenue-fx-integer",
+  "type": "multiple_choice",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"vector": {"a_ge_plus3": 0.50, "b_plus2": 0.30, "c_le_plus1": 0.18, "d_not_stated": 0.02}},
+  "within_option": {"p_ge_plus4": 0.13, "p_le_0": 0.10, "p_negative": 0.02},
+  "estimates": {
+    "base_rate": {"a": 0.77, "b": 0.22, "c": 0.01},
+    "decomposition": {"a": 0.36, "b": 0.35, "c": 0.27},
+    "anchor": {"a": 0.28, "b": 0.49, "c": 0.24},
+    "anchor_source": "No market prices this. Designated anchor: the programme's registered live FX object, fx-lag-v2 H2 (Phi on disclosed ADR-FX) PIT point +1.85 for 3Q26 at the 6 Aug 2026 guide date, with the Phi x 0.653 shape-scale +2.2; the 1.85-2.2 cluster at +-0.7pp through the letter-rounding kernel.",
+    "final_minus_anchor_on_a": 0.22,
+    "not_independently_derived_flag": false,
+    "divergence_justification": "management's guided FX integer printed at or above the guided figure in 9 of 10 pairs (both 'approximately three' guides printed 3 and 4); the registered spec under-forecast the last two prints by ~1pp; the lag-loaded kernel at the free fit's scale reproduces the guide (+2.9) on the basket refreshed to 11 Sep"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/q3-revenue-fx-integer/datasets/c08_model.py",
+    "structure": "mixture of after-hedge revenue-FX constructions, each ~N(centre, sd), mapped to the letter integer by round(g+f) - round(g) with g the ex-FX growth (fractional part uniform); x 0.98, plus 0.02 not stated",
+    "components": [
+      {"name": "management guide ~3 (6 Aug letter)", "centre": 3.0, "sd": 0.6, "weight": 0.38, "p_ge3": 0.772, "p_eq2": 0.216, "p_le1": 0.012},
+      {"name": "Phi x 0.851 on the basket / H2b PIT (2.9-3.0)", "centre": 2.9, "sd": 0.6, "weight": 0.20, "p_ge3": 0.722, "p_eq2": 0.260, "p_le1": 0.018},
+      {"name": "Phi x 0.653 / WS05 lagged fit / H2 PIT on ADR-FX (1.85-2.2)", "centre": 2.05, "sd": 0.7, "weight": 0.27, "p_ge3": 0.277, "p_eq2": 0.487, "p_le1": 0.236},
+      {"name": "Object-A free fit, stated weights on the spot-held basket", "centre": 1.26, "sd": 0.7, "weight": 0.12, "p_ge3": 0.051, "p_eq2": 0.325, "p_le1": 0.625},
+      {"name": "contemporaneous x 0.56 less hedge", "centre": 0.13, "sd": 0.7, "weight": 0.03, "p_ge3": 0.001, "p_eq2": 0.034, "p_le1": 0.966}
+    ],
+    "basket_rebuild_fred_through": "2026-09-11",
+    "basket_3q26_qtd_pct": 0.483, "basket_3q26_spot_held_pct": 0.600, "basket_2q26_pct": 2.266, "basket_1q26_pct": 5.675, "phi_driver_pct": 3.40
+  },
+  "sensitivity": [
+    {"assumption": "management weight 0.38; if 0.50", "moves_to": {"a": 0.56, "b": 0.28, "c": 0.14}},
+    {"assumption": "management weight 0.38; if 0.15", "moves_to": {"a": 0.42, "b": 0.33, "c": 0.23}},
+    {"assumption": "management weight 0.38; if 0 (model-only mixture)", "moves_to": {"a": 0.36, "b": 0.35, "c": 0.27}},
+    {"assumption": "kernel view only (management + Phi x 0.851)", "moves_to": {"a": 0.74, "b": 0.23, "c": 0.01}},
+    {"assumption": "short-lag view only (free fit 0.6, contemporaneous 0.4)", "moves_to": {"a": 0.03, "b": 0.20, "c": 0.75}},
+    {"assumption": "component sds doubled", "moves_to": {"a": 0.49, "b": 0.24, "c": 0.25}},
+    {"assumption": "P(not stated) 0.05", "moves_to": {"a": 0.49, "b": 0.29, "c": 0.17, "d": 0.05}},
+    {"assumption": "dollar -5% for the rest of the quarter", "moves_to": {"a": 0.51, "b": 0.29, "c": 0.23}}
+  ],
+  "monitoring": [
+    {"date": "weekly to 2026-10-05", "event": "FRED H.10 release; refresh sources/ and re-run c08_model.py", "action": "hold unless the 3Q26 QTD basket crosses +-1.5%"},
+    {"date": "2026-09-18/2026-10-02", "event": "any management conference remark on 3Q26 FX", "action": "'approximately three' restated -> management weight 0.50 (a 0.56); 'closer to two' -> management centre 2.0 (a ~0.30)"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.50 / 0.30 / 0.18 / 0.02 with the B4 decision rule"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side 3Q26 previews with an FX line", "action": "no change unless a preview cites a management update"},
+    {"date": "2026-11-05", "event": "3Q26 letter: Key Financial Measures box and prose FX points", "action": "resolve; record the integer against the B4 rule (>=3 kernel, 0/+1 short lag, +2 ambiguous)"}
+  ],
+  "log": "docs/pitch-forecasts/questions/q3-revenue-fx-integer/research-log.md"
+}

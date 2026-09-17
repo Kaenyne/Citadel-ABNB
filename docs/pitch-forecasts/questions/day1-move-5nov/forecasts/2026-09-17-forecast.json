@@ -1,0 +1,90 @@
+{
+  "question_id": "S01",
+  "slug": "day1-move-5nov",
+  "type": "continuous",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {
+    "object": "ABNB close-to-close return (%) on the first trading session after the 3Q26 print: close on 6 Nov 2026 / close on 5 Nov 2026 - 1",
+    "percentiles": {"5": -17.4, "10": -14.3, "25": -9.2, "50": -2.9, "75": 3.3, "90": 9.9, "95": 14.0},
+    "range": [-40, 40],
+    "below_lower": 0.001,
+    "above_upper": 0.001,
+    "unit": "percent",
+    "mean": -2.7,
+    "sd": 9.5,
+    "rms": 9.9,
+    "modes": "unimodal but left-shifted: a decelerating-print component (weight ~0.64) centred near -6 to -9 and an accelerating-print component (weight ~0.24) centred near +2 to +5; the density peak sits at about -4 with a long right shoulder"
+  },
+  "threshold_probs": {
+    "p_le_minus8": 0.29,
+    "p_le_minus5": 0.41,
+    "p_lt_0": 0.62,
+    "p_ge_plus5": 0.20,
+    "p_ge_plus10": 0.10,
+    "p_abs_ge_7": 0.48,
+    "p_abs_ge_10": 0.32,
+    "p_ge_plus17_squeeze_repeat": 0.023
+  },
+  "conditional_base_case": {
+    "definition": "3Q26 nights print decelerates (< 10.09% y/y under the 0.25pt dead band on 2Q26's 10.34%), the 4Q26 revenue guide midpoint is below the LSEG-family Street mean (C01 = Yes), and the 4Q26 nights descriptor is downgraded from 'low double digits' (C02 options c or d)",
+    "p_of_this_cell_unconditional": 0.50,
+    "percentiles": {"5": -20.2, "10": -17.3, "25": -13.2, "50": -8.6, "75": -3.6, "90": 1.3, "95": 4.2},
+    "mean": -8.3,
+    "sd": 7.7,
+    "p_le_minus8": 0.53,
+    "p_le_minus5": 0.69,
+    "p_lt_0": 0.87,
+    "p_ge_plus5": 0.04,
+    "p_ge_plus10": 0.011,
+    "panel_cell": "decel & guide below Street & nights guide down-or-stable: n 4 (1Q23 -10.9, 1Q24 -6.9, 2Q24 -13.4, 1Q25 +1.0), mean -7.6 raw, median -8.9; direction-down only n 3 mean -7.8; brief's 'guide below AND nights lower' n 5 mean -8.0 median -10.9 includes two accelerating prints (3Q22, 3Q23)",
+    "blend": "0.7 model draws conditioned on the cell / 0.3 empirical n-4 cell smoothed with a 4pt Gaussian kernel"
+  },
+  "conditional_thesis_breaker": {
+    "definition": "accelerating print (>= 10.59%) and 4Q26 guide at or above Street",
+    "p_of_cell": 0.08,
+    "percentiles": {"5": -7.7, "10": -4.5, "25": 0.2, "50": 5.0, "75": 9.7, "90": 14.5, "95": 17.7},
+    "mean": 5.0,
+    "p_ge_plus5": 0.50,
+    "p_ge_plus10": 0.24,
+    "panel_cell": "accel & guide at/above: n 3 (3Q25 +0.3, 4Q25 +4.6, 2Q26 +17.4), mean +7.4"
+  },
+  "print_state_probabilities": {
+    "p_accelerating_ge_10.59": 0.24,
+    "p_flat_10.09_to_10.59": 0.12,
+    "p_decelerating_lt_10.09": 0.64,
+    "p_guide_below_street": 0.75,
+    "p_guide_below_given_decel": 0.78,
+    "p_guide_below_given_accel": 0.68,
+    "source": "nights ~ N(9.55, 1.48) from the team nowcast band (+9.5, band 8.5-10.0, model path 9.9; reviews index walk-forward RMSE 1.48pp); guide gap ~ N(-1.93 + 0.32 x (nights - 9.55), 2.8) from C01 (median $3,100M vs Street $3,161M)"
+  },
+  "estimates": {
+    "base_rate": {"p50": -0.3, "p5": -13.8, "p95": 16.9, "p_le_minus8": 0.21, "p_ge_plus5": 0.27, "derivation": "23 raw day-1 prints, post-2022 prints weighted 2x, Gaussian kernel bw 3pt"},
+    "decomposition": {"p50": -5.0, "p5": -19.2, "p95": 10.7, "p_le_minus8": 0.36, "p_ge_plus5": 0.14, "mean": -4.7, "sd": 9.4, "derivation": "team nowcast band -> P(decel) 0.64; C01 guide-gap distribution; 0.6 S1 sign rule + 0.4 S2 sign+guide-vs-Street; -1.0 positioning term on decel; t5 residual sd 7.5; QQQ N(0,1.3)"},
+    "anchor": {"p50": -1.5, "p5": -17.1, "p95": 12.6, "p_le_minus8": 0.24, "p_ge_plus5": 0.23, "sd": 9.0, "derivation": "options-implied event sd, fresh chain 2026-09-17T03:09Z: 16 Oct/20 Nov pair 9.1%, 30 Oct/20 Nov pair 8.0% (thin leg, OI 112), LS one-print 8.2% (LOO 7.9-8.5); B note 12 Sep central 9.5%; two-piece normal, mode -0.3, downside sd x1.10 (25d RR -3.5 vol pts)"},
+    "anchor_source": "yfinance ABNB chain pulled 2026-09-17T03:09:19Z (16 Sep close $167.51), sources/yfinance_abnb_chain_20260917T030919Z.csv; 20 Nov $170 straddle 13.0% of spot (bid 12.0 / ask 14.1), 16 Oct $170 straddle 7.4%; no 6 Nov weekly listed yet (30 Oct weekly now listed)",
+    "anchor_value": "event sd 9.0% (range 8.0-9.5), risk-neutral median about -0.3 to -1.5%",
+    "final_minus_anchor": "median -2.9 vs -1.5 (-1.4pt); sd 9.5 vs 9.0 (+0.5pt); P(<=-8) 0.29 vs 0.24 (+5pt); P(>=+5) 0.20 vs 0.23 (-3pt)",
+    "independence_note": "The location (median -2.9, P(<0) 0.62) comes from the repo reaction panel and the team nowcast band and is independent of the options market, which prices no direction; the dispersion is deliberately anchored on the options sd because the 23-print rms (8.9) and the implied sd (9.0-9.5) agree. NOT_INDEPENDENTLY_DERIVED applies to the width, not the location.",
+    "mixture_weights": {"decomposition": 0.50, "base_rate": 0.25, "options_anchor": 0.25}
+  },
+  "sensitivity": [
+    {"assumption": "nights nowcast N(9.55, 1.48) (team band)", "moves_to": "median -0.1, P(<=-8) 0.19, P(>=+5) 0.27 if centred on the Street bar 11.1 (sd 0.85); median -3.6 / P(<=-8) 0.32 at centre 9.0; median -2.1 / 0.27 at centre 10.1"},
+    {"assumption": "0.6 S1 sign rule / 0.4 S2 guide-vs-Street blend", "moves_to": "S1 only: median -2.1, P(<=-8) 0.25; S2 only: median -4.0, P(<=-8) 0.35"},
+    {"assumption": "positioning term -1.0 on decelerating prints (unobserved accelerating-bar cell)", "moves_to": "0: median -2.6, P(<=-8) 0.28; -2.5: median -3.4, P(<=-8) 0.32"},
+    {"assumption": "residual sd 7.5, t5", "moves_to": "6.5: p5 -16.7 / p95 13.6; 8.8: p5 -18.3 / p95 14.5"},
+    {"assumption": "guide gap mean -1.93% (C01)", "moves_to": "gap at Street: median -2.3, P(<=-8) 0.27; gap -3.5%: median -3.5, P(<=-8) 0.32"},
+    {"assumption": "mixture weights 0.50 / 0.25 / 0.25", "moves_to": "decomposition only: median -5.0, P(<=-8) 0.36, P(>=+5) 0.14; equal thirds: median -2.2, P(<=-8) 0.27; base-rate + options only (no repo signal): median -0.9, P(<=-8) 0.22, P(>=+5) 0.25"},
+    {"assumption": "options anchor sd 9.0", "moves_to": "9.5 (B note): p5 -17.6 / p95 14.2; 8.0 (thin 30 Oct leg): p5 -17.0 / p95 13.7"}
+  ],
+  "monitoring": [
+    {"date": "2026-09-22 to 2026-10-02", "event": "6 Nov weekly expiry should list (weeklies list ~6 weeks ahead); September Inside Airbnb dumps refresh the nights band", "action": "re-run datasets/pull_options.py and options_event_sd.py for a clean print-only straddle; re-set nowcast centre/sd (each +0.5pt of centre moves the median about +0.4 and P(<=-8) about -0.02)"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote the unconditional table and the base-case conditional separately; never quote the conditional as the forecast"},
+    {"date": "2026-10-13 to 2026-10-20", "event": "Airbnb fixes the Q3 call date (not yet on the IR events page as of 2026-09-17T03:13Z)", "action": "fix the resolution session; if the date moves, the same event on its actual date"},
+    {"date": "2026-10-28 to 2026-10-30", "event": "EXPE and BKNG Q3 prints (EXPE reads through)", "action": "EXPE day-1 move of |5%|+ on a Q4 guide: shift the nights centre by 0.25pt in the same direction; re-run"},
+    {"date": "2026-11-04 (close)", "event": "record pre-print close, LSEG-family 4Q26 mean, 20 Nov and 6 Nov straddles", "action": "re-run with the day-before implied sd; the pre-print run-up carries no information (predictive 04), so no directional update from price"},
+    {"date": "2026-11-05 (after close)", "event": "3Q26 letter: nights print, 4Q26 guide, bucket", "action": "read the cell: decel + guide below + bucket down -> conditional table (median -8.6); accel + guide at/above -> breaker table (median +5.0); record the raw close-to-close on 6 Nov and resolve"}
+  ],
+  "log": "docs/pitch-forecasts/questions/day1-move-5nov/research-log.md"
+}

@@ -98,11 +98,11 @@ def integer_probs(centre, sd, n=400_000, seed=1):
 
 # mixture over constructions: weights are the log's judgement (section 5 of the research log)
 mix = [
-    ("management guide ~3 (booking-ledger information; 2/2 numeric guides printed >= the guided integer)", 3.0, 0.60, 0.30),
+    ("management guide ~3 (booking-ledger information; 9/10 guided integers printed >= guided, 2/2 numeric)", 3.0, 0.60, 0.38),
     ("Phi x 0.851 / H2b basket (2.9-3.0)", 0.851 * phi, 0.60, 0.20),
-    ("Phi x 0.653 / WS05 lagged / H2 PIT on ADR-FX (1.85-2.2)", 2.05, 0.70, 0.30),
-    ("free fit, stated (1.3)", 0.45 * b0 + 0.36 * b1 + 0.03 * b2, 0.70, 0.15),
-    ("contemporaneous x 0.56 (0.1)", 0.56 * b0 - 0.21, 0.70, 0.05),
+    ("Phi x 0.653 / WS05 lagged / H2 PIT on ADR-FX (1.85-2.2)", 2.05, 0.70, 0.27),
+    ("free fit, stated (1.3)", 0.45 * b0 + 0.36 * b1 + 0.03 * b2, 0.70, 0.12),
+    ("contemporaneous x 0.56 (0.1)", 0.56 * b0 - 0.21, 0.70, 0.03),
 ]
 P_NOT_STATED = 0.02
 acc = dict(p_ge3=0, p_eq2=0, p_le1=0, p_ge4=0); out = []
@@ -134,8 +134,10 @@ add("middle cluster only (Phi x 0.653 / H2 PIT 1.85-2.2)", [mix[2][:3] + (1.0,)]
 add("all component sds doubled", [(m[0], m[1], m[2] * 2, m[3]) for m in mix])
 add("all component sds halved", [(m[0], m[1], m[2] / 2, m[3]) for m in mix])
 add("management centre 3.5 (2Q26-style +1 overshoot repeats)", [("mgmt", 3.5, 0.6, 0.30)] + [m[:3] + (m[3],) for m in mix[1:]])
-add("management weight 0.50, others rescaled", [("mgmt", 3.0, 0.6, 0.50)] + [(m[0], m[1], m[2], m[3] * 0.50 / 0.70) for m in mix[1:]])
-add("management weight 0.15, others rescaled", [("mgmt", 3.0, 0.6, 0.15)] + [(m[0], m[1], m[2], m[3] * 0.85 / 0.70) for m in mix[1:]])
+add("equal-weight model-only (no management component): Phi 0.29, middle 0.43, free 0.21, contemp 0.07", [(m[0], m[1], m[2], m[3] / 0.62) for m in mix[1:]])
+add("management weight 0.50, others rescaled", [("mgmt", 3.0, 0.6, 0.50)] + [(m[0], m[1], m[2], m[3] * 0.50 / 0.62) for m in mix[1:]])
+add("management weight 0.15, others rescaled", [("mgmt", 3.0, 0.6, 0.15)] + [(m[0], m[1], m[2], m[3] * 0.85 / 0.62) for m in mix[1:]])
+add("management weight 0.30 (round-1 weights 0.30/0.20/0.30/0.15/0.05)", [("mgmt", 3.0, 0.6, 0.30), (mix[1][0], mix[1][1], 0.6, 0.20), (mix[2][0], 2.05, 0.7, 0.30), (mix[3][0], mix[3][1], 0.7, 0.15), (mix[4][0], mix[4][1], 0.7, 0.05)])
 add("not-stated 5%", mix, pns=0.05)
 add("dollar -5% for the rest of the quarter (basket lag-0 term only; Phi specs unchanged)",
     [mix[0], mix[1], mix[2], ("free fit", 0.45 * (b0 - 0.8) + 0.36 * b1 + 0.03 * b2, 0.7, 0.15), ("contemp", 0.56 * (b0 - 0.8) - 0.21, 0.7, 0.05)])

@@ -57,7 +57,7 @@ pre = ts_df[ts_df.expiry < "2026-11-05"].dropna(subset=["atm_iv"]); pre = pre[pr
 ev = {}
 for post_e in ("2026-11-20", "2026-12-18", "2027-01-15"):
     post = ts_df[ts_df.expiry == post_e].iloc[0]
-    E = post.T*((post.atm_iv/100)**2 - (pre.atm_iv/100)**2)
+    E = float(post["T"])*((float(post["atm_iv"])/100)**2 - (float(pre["atm_iv"])/100)**2)
     ev[post_e] = math.sqrt(max(E, 0))*100
 print("pre leg", pre.expiry, pre.atm_iv, "event sd by post leg", ev)
 # lognormal + smile distributions at target dates

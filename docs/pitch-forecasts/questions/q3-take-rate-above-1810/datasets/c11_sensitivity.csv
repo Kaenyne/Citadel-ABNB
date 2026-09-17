@@ -1,0 +1,23 @@
+assumption,p_yes,take_q50,take_sd,gbv_mean,rev_mean
+"BASE: nights 9.5+-1.6, ADR 3.3+-1.3, cushion 1.1%+-0.5% rho 0.5, P(miss) 3%",0.871,18.467,0.33,25884,4779
+"GBV = Kalshi-implied N(26,260, 600)",0.604,18.202,0.387,26260,4779
+"GBV = Bloomberg MODL N(26,375, 600)",0.524,18.122,0.383,26375,4779
+"GBV = management 'mid teens' midpoint N(26,317, 550)",0.571,18.163,0.352,26317,4779
+"GBV = programme stacked N(26,550, 853) (B1 input)",0.429,18.003,0.547,26549,4779
+"B1 REPLICATION: GBV N(26,550,853), revenue N(4,816,48), rho 0.76",0.536,18.141,0.463,26549,4816
+nights at top of band 10.0,0.81,18.383,0.327,26002,4779
+nights at bottom of band 8.5,0.948,18.637,0.335,25648,4779
+"nights 11.0 (Kalshi median), ADR 3.4",0.623,18.2,0.322,26264,4779
+ADR +2.0 (B02 case),0.964,18.703,0.336,25559,4779
+ADR +4.4 (R07 case),0.705,18.273,0.325,26160,4779
+cushion = Q3 2024-25 mean 0.86%,0.843,18.424,0.327,25884,4768
+cushion = 3Q23 1.40%,0.9,18.521,0.333,25884,4793
+cushion = trailing-8 all-quarter 1.86%,0.934,18.604,0.338,25884,4814
+cushion = 0 (print at guide midpoint),0.697,18.27,0.332,25884,4728
+cushion sd 1.0%,0.879,18.467,0.318,25884,4779
+rho 0 (revenue beat independent of GBV),0.839,18.466,0.375,25884,4779
+rho 0.8,0.894,18.468,0.3,25884,4779
+P(guide miss) 0,0.884,18.476,0.321,25884,4782
+P(guide miss) 10%,0.842,18.445,0.347,25884,4771
+"bull GBV: nights 11.0, ADR 4.4, cushion 0.86",0.355,17.984,0.316,26518,4768
+"bear GBV: nights 8.5, ADR 2.0, cushion 1.4",0.991,18.93,0.344,25325,4793
