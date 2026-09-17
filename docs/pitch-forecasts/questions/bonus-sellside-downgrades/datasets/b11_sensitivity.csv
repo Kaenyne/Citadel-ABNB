@@ -1,0 +1,22 @@
+case,p_yes,mean_downgrades,p_ge2,p_yes_decel_below,p_yes_accel
+base,0.154,1.169,0.299,0.227,0.039
+pre-print mean 0.20 (trailing-12m: zero downgrades),0.131,1.023,0.26,0.2,0.023
+pre-print mean 0.55 (2021+ all-window rate),0.188,1.359,0.353,0.267,0.064
+post-print means halved,0.077,0.751,0.185,0.108,0.028
+post-print means x1.5,0.235,1.586,0.397,0.351,0.049
+"post-print means flat 0.74 (all-print mean, no branch)",0.145,1.153,0.3,0.146,0.145
+no day-1 modulation,0.136,1.085,0.284,0.2,0.036
+day-1 modulation 0.12,0.196,1.463,0.331,0.285,0.047
+no price-path modulation (k_pre = k_post = 0),0.122,0.996,0.255,0.179,0.031
+price-path modulation doubled,0.2,1.422,0.351,0.294,0.051
+Poisson counts,0.135,1.167,0.311,0.215,0.016
+overdispersion 2.5 (Nov-2023-style clustering),0.162,1.166,0.278,0.229,0.054
+feed capture 1.0,0.194,1.376,0.349,0.283,0.052
+feed capture 0.70,0.113,0.962,0.245,0.17,0.026
+"pool scale 1.25 (22 Buys, Buy share at a series high)",0.21,1.462,0.373,0.308,0.054
+P(accel) 0.40 (Street-like),0.126,1.007,0.254,0.226,0.038
+P(accel) 0.13 (nowcast centre 9.75),0.172,1.274,0.329,0.227,0.039
+"day-1 means unshrunk (accel +6, decel-below -8)",0.154,1.169,0.299,0.227,0.039
+day-1 means market-neutral (all 0),0.154,1.169,0.299,0.227,0.039
+"joint bear-for-stock: accel 0.13, post x1.5, pool 1.25, capture 1.0, overdisp 2.5",0.383,2.573,0.528,0.482,0.109
+"joint bull-for-stock: accel 0.40, post halved, pre 0.20, capture 0.7",0.033,0.434,0.097,0.059,0.01

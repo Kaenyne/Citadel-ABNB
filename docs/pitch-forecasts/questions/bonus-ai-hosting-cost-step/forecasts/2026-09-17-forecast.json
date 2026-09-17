@@ -1,0 +1,57 @@
+{
+  "question_id": "B08",
+  "slug": "bonus-ai-hosting-cost-step",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.38, "ci": [0.25, 0.52]},
+  "companion": {"p_leg2_4q26_cor_ge_575": 0.26, "p_leg1_quantified_fy27_step_ge_50m": 0.24, "p_both": 0.10, "cor_4q26_median_musd": 559, "cor_4q26_p10_p90": [530, 591], "source": "datasets/b08_model.py"},
+  "estimates": {
+    "base_rate": 0.31,
+    "decomposition": 0.39,
+    "anchor": 0.63,
+    "anchor_source": "No market (Kalshi KXABNB nights ladder, Polymarket price ladders only, 2026-09-17T08:21:21Z). Anchor = the repo's adopted line-build path (docs/margin-build/notes/40_line_build.md, 15 Sep 2026): reconciled 4Q26 cost of revenue $578M (+18.7%) above the $575M threshold -> P(leg 2) ~0.57 under its hosting mix, plus leg 1 -> 0.63. Base rate: cost-of-revenue/GBV ratio up >= +4.7% y/y in 1 of 10 quarters (0.20 with the hosting shift) unioned with a 0.13 chance of an AI/hosting dollar figure (0 of 5 February letters). Decomposition: line-build formula Monte Carlo with a hosting-step mixture.",
+    "final_minus_anchor": -0.25,
+    "not_independently_derived_flag": false,
+    "independence_note": "the anchor takes the line build's reconciliation step (30% of a $97M inferred gap) as a run-rate fact; this log weights it 0.20 because the contracted hosting step is a 2027 event (FY25 10-K: $219M in 2026 vs ~$465M/yr in 2027-28)"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/bonus-ai-hosting-cost-step/datasets/b08_model.py",
+    "structure": "leg2: CoR = GBV N(22990,650) x rate N(1.756,0.04)/100 + chargebacks N(26,4) + hosting 56 + step{0.45 N(15,5), 0.35 N(30,8), 0.20 N(45,10)} + other N(47.8,3) + N(0,12); YES2 <=> CoR >= 575. leg1: P(quantify | YES2) 0.40, P(quantify | NO2) 0.18. P(YES) = P2 + (1-P2) x 0.18",
+    "conventions": "leg 2 on the income-statement cost-of-revenue line (FY26 less 9M where needed); leg 1 needs a management statement (letter, call, 10-K MD&A) with a dollar or convertible percentage >= $50M of incremental FY27 AI/hosting/infrastructure spend; the 10-K purchase-obligations table alone does not count; statements at the 5 Nov print count"
+  },
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": 0,
+    "rev_fy27_musd": 0,
+    "margin_fy26_pp": -0.1,
+    "margin_fy27_pp": -0.6,
+    "eps_fy27_usd": -0.14,
+    "stock_usd_per_share": -4,
+    "ev_stock_usd_per_share": -1.5,
+    "material": true,
+    "note": "Conditional mean if Yes: 4Q26 cost of revenue ~$590M (+$12M vs the line build's $578M; 4Q26 margin -0.4pp, FY26 -0.1pp) and FY27 hosting/AI ~+$100M vs the line build's $330M (-0.32pp per $50M -> -0.6pp; -$0.14 EPS at $0.0014/$M). Against the Street, which carries no step, the FY27 gap is ~-0.9pp. Stock -$4 = level effect (-$100M x ~16x / 620m ~ -$2.6) plus the investment-year read (~-$1.5). EV 0.38 x -4 = -$1.5/share: material at the margin; carry as a bonus line keyed to the 5 Nov cost-of-revenue print."
+  },
+  "sensitivity": [
+    {"assumption": "hosting-step mixture -> evidence-only (no AI step)", "moves_to": 0.26},
+    {"assumption": "hosting-step mixture -> line-build full reconciliation step", "moves_to": 0.65},
+    {"assumption": "4Q26 GBV centre -> Street high $23,565M", "moves_to": 0.52},
+    {"assumption": "4Q26 GBV centre -> $22,400M", "moves_to": 0.30},
+    {"assumption": "merchant-fee rate 1.756 -> 1.818 (FY25 rate)", "moves_to": 0.57},
+    {"assumption": "merchant-fee rate 1.756 -> 1.735 (rebates persist)", "moves_to": 0.34},
+    {"assumption": "P(quantify | leg 2 No) 0.18 -> 0.10", "moves_to": 0.33},
+    {"assumption": "P(quantify | leg 2 No) 0.18 -> 0.30", "moves_to": 0.48},
+    {"assumption": "convention: 10-K commitments table counts as a quantification", "moves_to": 0.85}
+  ],
+  "monitoring": [
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.38 (0.25-0.52); leg 2 median $559M vs $575M"},
+    {"date": "2026-11-05", "event": "3Q26 release: cost of revenue line; call Q&A on AI spend", "action": ">= $635M -> 0.55; <= $615M -> 0.25; any 2027 AI/hosting dollar figure >= $50M -> resolve Yes"},
+    {"date": "2026-11-06", "event": "3Q26 10-Q MD&A server-cost sentence", "action": "server costs +$20M y/y or more -> +0.08; +$10M or less -> -0.05"},
+    {"date": "2026-11-06/2027-02-10", "event": "conference remarks, sell-side FY27 cost notes", "action": "a sized AI/hosting remark >= $50M -> resolve Yes; repeated 'not in the P&L' framing -> -0.03"},
+    {"date": "2027-02-11", "event": "4Q26 release, call, FY26 10-K", "action": "resolve on the 4Q26 line and any quantified FY27 step"}
+  ],
+  "log": "docs/pitch-forecasts/questions/bonus-ai-hosting-cost-step/research-log.md"
+}

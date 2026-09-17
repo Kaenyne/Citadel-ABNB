@@ -1,0 +1,15 @@
+case,p_literal,p_material,p_t2_as_flat,p_T5,f03_d
+base,0.517,0.388,0.299,0.1,0.386
+FY26 actual centred 35.6,0.516,0.397,0.299,0.1,0.41
+FY26 actual centred 36.1,0.517,0.382,0.299,0.1,0.362
+FY26 actual centred 36.4,0.517,0.378,0.299,0.1,0.331
+"haircut regime dominant (T1 0.40, T3 0.15)",0.718,0.601,0.52,0.12,0.582
+"flat regime dominant (T3 0.45, T1 0.10)",0.396,0.269,0.18,0.08,0.282
+investment-year 0.25,0.627,0.522,0.449,0.25,0.517
+investment-year 0.04 (never said down for a full year),0.496,0.356,0.259,0.04,0.353
+expand 0.20 (bull),0.447,0.319,0.23,0.08,0.316
+no floor defence (p_defend 0.5),0.517,0.384,0.299,0.1,0.488
+haircut 1.5-2.0 only,0.517,0.388,0.299,0.1,0.391
+T2 haircut 0-50bp (floor rounded down from a wider band),0.518,0.441,0.299,0.1,0.416
+material threshold 100bp,0.517,0.299,0.299,0.1,0.386
+"numeric-floor regimes 0.55 (T1 0.28, T2 0.27), flat 0.20",0.646,0.489,0.379,0.1,0.47

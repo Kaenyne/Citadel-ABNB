@@ -1,0 +1,12 @@
+branch,component,low_pts,high_pts,in_3Q26_yoy_window,status,source_note
+bundle,NA cancellation redesign + single fee tranche 1 (Oct-Dec 2025),0.66,0.66,yes,PR #32 fitted allocation of the management net figure,D note s2.2: 2.29 NA-points = 0.66 total
+bundle,Ex-NA fee/cancellation leg (40-50% of the 1.75-pt ex-NA bundle),0.7,0.88,yes,fitted allocation,D note s2.5; PAIRED with the next row: the two legs sum to 1.75 at either endpoint
+bundle,"Ex-NA RNPL leg (the complement, 60-50% of 1.75)",1.05,0.87,yes,fitted allocation,"rev-1 summed 0.70+0.87 and 0.88+1.05 (1.57-1.93), which is wrong; the paired sum is 1.75 always"
+bundle,Partial-quarter US RNPL residual,0.3,0.35,yes,assumption from launch-date ambiguity,docs/rnpl-short-audit/00_SYNTHESIS.md point 2
+bundle,July 2026 eligibility expansion,0.1,0.3,yes (fresh),"assumption, deliberately small",D044 unquantified; research/notes/2026-09-11_rnpl-balance-sheet-and-q3-bridge.md s2.4
+bundle,Gross legs in window (paired),2.81,3.06,,computed,0.66+1.75+0.30+0.10 to 0.66+1.75+0.35+0.30
+bundle,"Cancellation-propensity drag, y/y-differenced (scenario slice, not a bound)",-0.93,-0.15,yes,"scenario; part may already sit inside the fitted net baseline (D033 is net of cancellation), so the subtraction is an upper bound on the drag",D note s2.3 central column; full grid to -1.37
+bundle,"Net bundle contribution, scenario-implied under these assumptions",1.88,2.91,,computed: 2.81-0.93 to 3.06-0.15; central 2.4-2.6,straddles the (a)/(b) boundary; NOT what management could truthfully state (its figure is its own attribution)
+rnpl_only,"Ex-NA RNPL leg + US residual + July expansion, gross",1.27,1.7,yes,computed: 0.87+0.30+0.10 to 1.05+0.35+0.30,an RNPL-ALONE figure for 3Q26 lands in (c) or low (b) before any drag
+rnpl_only,Net of the same drag slice,0.34,1.55,,computed,a stated RNPL-alone number would most likely resolve (c); only the three-feature bundle reaches (a)
+gbv_mapping,GBV contribution ran about 1 point above nights in both disclosures (300 vs >200 bp; ~4 vs ~3 pts),,,,descriptive,"D014, D032; the option thresholds (3.5/2.0 GBV vs 2.5/1.5 nights) are consistent with that gap"
