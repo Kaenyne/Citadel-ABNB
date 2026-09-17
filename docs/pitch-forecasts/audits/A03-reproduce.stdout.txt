@@ -1,0 +1,45 @@
+FY EBITDA-margin rows: 20
+Copied rows / FCF rows: 22 2
+Exact next-quarter sentences: 20 {'down': 9, 'up': 7, 'flat_to_down': 2, 'flat_to_up': 1, 'flat': 1}
+All print opportunities: 21 {'down': 11, 'flat': 1, 'up': 8, 'none': 1}
+No quarterly sentence: ['4Q21']
+Since 2Q24: 9 {'down': 7, 'flat': 1, 'up': 1, 'none': 0}
+Novembers: 5 {'down': 2, 'flat': 0, 'up': 3, 'none': 0}
+Target window 1Q23 through 2Q26: 14 {'down': 9, 'flat': 1, 'up': 4, 'none': 0}
+Target window 1Q24 through 2Q26: 10 {'down': 7, 'flat': 1, 'up': 2, 'none': 0}
+Midyear actions: [{'quarter': '1Q22', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '2Q22', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '1Q23', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '2Q23', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '1Q24', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '2Q24', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '1Q25', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '2Q25', 'fy_margin_action': 'reiterated', 'fy_margin_raised': 0.0}, {'quarter': '1Q26', 'fy_margin_action': 'first', 'fy_margin_raised': 0.0}, {'quarter': '2Q26', 'fy_margin_action': 'raised', 'fy_margin_raised': 1.0}]
+Pre-2026 coded raises: 0 / 8
+Numeric-floor November rule: [{'print': '3Q24', 'predicted': np.float64(35.5), 'stated': 35.5, 'exact': np.True_}, {'print': '3Q25', 'predicted': np.float64(35.0), 'stated': 35.0, 'exact': np.True_}]
+Exact matches: 2 / 2
+Ledger November cushions: [0.77, 0.8999999999999986, 0.10000000000000142]
+Mean ledger November cushion: 0.59
+FY2022 pre-November guide: ['We continue to forecast delivering Adjusted EBITDA margin expansion for the full-year 2022 relative to 2021']
+November type hits: 4 / 5
+Cushions by bucket: {'AUG': {'count': 4, 'mean': 3.0614505170827844}, 'FEB': {'count': 4, 'mean': 3.0614505170827844}, 'MAY': {'count': 4, 'mean': 3.0614505170827844}, 'NOV': {'count': 3, 'mean': 0.5920515247256048}}
+Realised window 2023Q1 n 14 guide met 13 yoy mean/median/positive 0.47264285714285703 -0.601 6
+Realised window 2024Q1 n 10 guide met 9 yoy mean/median/positive -0.19360000000000002 -0.9395 4
+Stored slightly: 3 1.4912408456978614
+Margin-only slightly: 2 0.9603424223125563
+Historical identity maximum error: 0.0
+Q4 actual minus November-implied: 3 2.86838034238736
+Pre-November Street: [{'quarter': '2023Q4', 'street_q4_margin_pct': 29.518654021988883, 'seasonal_naive_q4_margin_pct': 26.603575184016822}, {'quarter': '2024Q4', 'street_q4_margin_pct': 29.934987030644805, 'seasonal_naive_q4_margin_pct': 33.27321911632101}, {'quarter': '2025Q4', 'street_q4_margin_pct': 27.98961055592747, 'seasonal_naive_q4_margin_pct': 30.846774193548388}]
+Street direction matches: 3 / 3
+2022-25 Q4 mean/sample SD: 29.754326248741535 2.9232746597182495
+Current LSEG fields: {'as_of_row_date': '2026-09-11', 'ebitda_obs_date': '2026-09-07', 'revenue_obs_date': '2026-09-07', 'ebitda_mean': 913.68388, 'revenue_mean': 3161.81627, 'ebitda_n': 36.0, 'revenue_n': 37.0, 'implied_margin_pct': 28.897437484563262, 'lseg_margin_mean_pct': 28.05833}
+Ratio margin: 28.897437484563266
+EBITDA dispersion / fixed revenue: 0.8388836584739314
+Live identity multipliers: 4.489508862512732 -1.5116024162512356
+FY36/Q4 28.3 requires Q3 margin: 51.147146683883115
+Bridge implied Q4 guide: 3059.4030114230018
+Final sums: 1.0 1.0
+C04 b implied by published conditionals: 0.376
+C09 implied by published conditionals: {'a': 0.296, 'b': 0.254, 'c': 0.39999999999999997, 'd': 0.05}
+Raw joint reweighted to final C04: {'a': 0.2600464532978016, 'b': 0.21767360477611017, 'c': 0.4719277190720954, 'd': 0.05035222285399289}
+Polymarket pagination: {'hasMore': True, 'totalResults': 190}
+Kalshi saved liquidity: {'ticker': 'KXABNB-26NOVNEB-148000000', 'volume': None, 'volume_fp': '428.14', 'yes_bid_dollars': '0.5000', 'yes_ask_dollars': '0.5500'}
+Kalshi saved liquidity: {'ticker': 'KXABNB-26NOVNEB-146000000', 'volume': None, 'volume_fp': '998.66', 'yes_bid_dollars': '0.6300', 'yes_ask_dollars': '0.6600'}
+Expected log cost, nats: 0.0027453289379102113
+Expected log cost, nats: 0.005167100238181647
+Independent C04 affordability blend: 0.3876505701970903
+Independent C09 before rounding: [0.2933487775272504, 0.2447918991993794, 0.41185932327337016, 0.05]
+No files written.
