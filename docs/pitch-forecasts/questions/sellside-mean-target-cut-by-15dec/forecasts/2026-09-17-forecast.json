@@ -1,0 +1,51 @@
+{
+  "question_id": "S04",
+  "slug": "sellside-mean-target-cut-by-15dec",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.29, "ci": [0.20, 0.40]},
+  "estimates": {
+    "base_rate": 0.22,
+    "decomposition": 0.30,
+    "anchor": 0.50,
+    "anchor_source": "Repo prior: research/notes/reverse_dcf/D_sell-side-dispersion.md section 5 JUDGEMENT (12 Sep 2026): 'base case is a cut of roughly 3-4% in the mean target ($5-7, to about $175-177) over the next two to three months'; no Kalshi/Polymarket market on ABNB targets or the December price (searched 2026-09-17T03:10Z)",
+    "final_minus_anchor": -0.21,
+    "divergence_reasons": ["D omitted the +2.1% lag-2 term of the August +20.6% rally, which offsets the -1.6% from the September fall", "Morgan Stanley re-initiated at $170 from $125 on 16 Sep: base $181.81 -> $183.22, required cut 2.75% -> 3.5%", "no cut since 7 Aug; three raises into the 8-10 Sep fall", "63-session and print-centred base rates 0.18-0.27"],
+    "base_rate_detail": {"63s_all": 0.26, "63s_2023plus": 0.18, "63s_2024plus": 0.17, "print_windows_all": 0.27, "print_windows_2023plus": 0.23}
+  },
+  "resolution_inputs": {
+    "threshold": 176.8,
+    "base_12sep_feed": 181.81, "n_firms": 32,
+    "base_16sep_with_morgan_stanley_170": 183.22,
+    "yfinance_targetMeanPrice_16sep": 182.975, "yfinance_n": 40,
+    "required_cut_pct_from_183_22": -3.5
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/close-15dec-2026/datasets/abnb_path_mixture.py (S04 block) via datasets/run.py; datasets/target_base_rates.py",
+    "structure": "dlnT = +0.65% known lags + 0.305 p1 + 0.205 p2pre + 0.40 day1 + 0.14 post + 0.5% stale refresh + N(0, 3.5%); T = 183.22 exp(dlnT)",
+    "outputs": {"P_base_183_22": 0.295, "P_base_181_81": 0.341, "mean_dlnT_pct": -0.4, "sd_dlnT_pct": 5.9,
+                "T_percentiles": {"5": 165, "10": 169, "25": 175, "50": 183, "75": 190, "95": 201}, "P(T>=190)": 0.25,
+                "by_branch": {"accel": 0.15, "flat": 0.24, "decel_guide_ok": 0.27, "decel_guide_below": 0.38}}
+  },
+  "sensitivity": [
+    {"assumption": "print chase 0.40", "moves_to": 0.36, "note": "chase 0.60; chase 0.20 -> 0.23"},
+    {"assumption": "base 183.22 (MS in the feed)", "moves_to": 0.34, "note": "feed as-is 181.81"},
+    {"assumption": "known lag terms +0.65%", "moves_to": 0.33, "note": "set to zero"},
+    {"assumption": "stale-target refresh +0.5%", "moves_to": 0.33, "note": "none"},
+    {"assumption": "P(accelerating 5 Nov print) 0.24", "moves_to": 0.26, "note": "0.40; 0.13 -> 0.31"},
+    {"assumption": "day-1 conditional means shrunk", "moves_to": 0.23, "note": "market-neutral print; unshrunk -> 0.32"},
+    {"assumption": "full-sample tape betas (sum 0.30)", "moves_to": 0.33, "note": "2023+ betas, sum 0.44"}
+  ],
+  "monitoring": [
+    {"date": "2026-09-19", "event": "feed refresh", "action": "confirm Morgan Stanley $170 in the feed (base 183.22); if absent, 0.34"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.29 (0.20-0.40)"},
+    {"date": "2026-10-14", "event": "end of block 1", "action": "price <= $155 -> ~0.40; >= $180 -> ~0.20"},
+    {"date": "2026-10-15/2026-11-04", "event": "Q3 previews", "action": "each net cut >= $10 moves the mean -$0.3; three previews to <= $165 -> ~0.40"},
+    {"date": "2026-11-06", "event": "reaction day", "action": "day-1 <= -8%: 0.55-0.65; within +/-5%: ~0.20; >= +5%: ~0.05"},
+    {"date": "2026-11-25", "event": "+13 sessions", "action": "mean <= $179 -> >= 0.6; >= $185 -> <= 0.1"},
+    {"date": "2026-12-15", "event": "resolution", "action": "recompute the D-convention mean from the feed after the close"}
+  ],
+  "log": "docs/pitch-forecasts/questions/sellside-mean-target-cut-by-15dec/research-log.md"
+}

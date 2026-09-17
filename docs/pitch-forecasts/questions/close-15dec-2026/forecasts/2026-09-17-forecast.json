@@ -26,7 +26,7 @@
     "named_asymmetry": "team 3Q26 nights nowcast (RMSE 1.48pp) below all 28 Street estimates; Street bar implies acceleration for only the fourth time in 16 prints; decelerating prints sold 8 of 9 since 3Q22 on excess; options price the print symmetric"
   },
   "day1_mixture_used": {
-    "note": "S01 forecast JSON did not exist at synthesis time; built from the same panel here",
+    "note": "S01 forecast JSON did not exist at synthesis time; built from the same panel here. S01 revision 1 (committed during the run) reads mean -2.7, median -2.9, sd 9.5, P(<=-8) 0.29, P(<=-5) 0.41, P(>=+5) 0.20, P(>=+10) 0.10: same location, ~1pt wider; the 'event sd 9.0%' sensitivity reproduces it (P(<=150) +0.01), so no re-parameterisation",
     "branches": {
       "accel (3Q26 nights >= 10.6%)": {"p": 0.24, "day1_mean_pct": 4.0, "sd_pct": 7.5, "drift_to_15dec_pct": -2.0},
       "flat (10.1-10.6%)": {"p": 0.14, "day1_mean_pct": -1.0, "sd_pct": 7.5, "drift_to_15dec_pct": -1.0},
