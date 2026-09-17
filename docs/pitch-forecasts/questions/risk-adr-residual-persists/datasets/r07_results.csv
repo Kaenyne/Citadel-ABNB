@@ -1,0 +1,26 @@
+item,value
+quarters 1Q23-2Q26 n,14
+reported >= 4.4,4
+reported >= 4.4 with FX <= 0,0
+ex-FX (disclosed integer) - 0.43 >= 4.4,0
+max residual,4.84932637648649
+"v3+K walk-forward midpoint: RMSE, bias (model-actual)","0.927, -0.308"
+"v3+K walk-forward eur: RMSE, bias (model-actual)","1.093, -0.377"
+"v3+K walk-forward baskets: RMSE, bias (model-actual)","0.829, -0.239"
+"P(>=4.4) N(card midpoint 3.43, sd 0.93)",0.14780668558645949
+"P(>=4.4) N(card midpoint bias-corrected 3.74, sd 0.93)",0.23762366308929628
+"P(>=4.4) N(card eur 2.74, sd 1.09)",0.0643860085466007
+"P(>=4.4) N(card eur bias-corrected 3.12, sd 1.09)",0.12012306696163377
+"P(>=4.4) N(card baskets 4.12, sd 0.83)",0.367703362789101
+"P(>=4.4) N(card baskets bias-corrected 4.36, sd 0.83)",0.4803080339696375
+structural MC P(>=4.4),0.1076025
+structural MC median,3.115903910783611
+structural MC P(<=2.0) [B02],0.1723775
+MC residual all persistence 4.85,0.1036275
+MC residual all momentum 5.35,0.2419025
+MC residual all mean-rev 3.6,0.0085425
+MC FX all midpoint,0.072435
+MC FX all baskets,0.269315
+MC FX all eur,0.0161925
+MC mix centre -0.98 (H fills),0.1424025
+MC mix centre -1.45 (geo drag at band low),0.0617775
