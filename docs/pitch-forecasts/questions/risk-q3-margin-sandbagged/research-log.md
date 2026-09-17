@@ -84,7 +84,7 @@ Airbnb, Ellie Mertz, 3Q26 adjusted EBITDA margin, "down slightly", timing of inv
 
 ## 6. Final Numbers
 **Binary.** P(3Q26 adj. EBITDA margin ≥ 51.5%) = **0.17**, credible interval **0.10–0.27**.
-Companion probabilities from the same model: P(print above the 50.085% ceiling, i.e. the sentence missed to the upside) ≈ 0.54 (the card says 0.54 for a margin beat vs Street and the bias-corrected point sits on the ceiling); P(≥ 51.0%) ≈ 0.27; P(≥ 52.0%) ≈ 0.10; P(≤ 49.0%) ≈ 0.20.
+Companion probabilities from the same model: P(print above the 50.085% ceiling, i.e. the sentence missed to the upside) ≈ 0.54 (the card says 0.54 for a margin beat vs Street and the bias-corrected point sits on the ceiling); P(≥ 51.0%) ≈ 0.30; P(≥ 52.0%) ≈ 0.11; P(≤ 49.0%) ≈ 0.19 (all from the cost-stack Monte Carlo, `datasets/r05_results.csv`, whose unconditional 0.19 is the decomposition estimate; the final 0.17 is that number less the two exact "down" prints of 2025).
 Extreme-probability gate: not triggered.
 
 ## 7. Sensitivity

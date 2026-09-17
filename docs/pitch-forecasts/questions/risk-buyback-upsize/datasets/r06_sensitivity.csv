@@ -1,0 +1,13 @@
+scenario,p_yes,p_ann_by_feb,p_legA,p_legB,mean_rem_dec_usd_bn,mean_r_dec_q
+base,0.544,0.655,0.511,0.077,1.28,1.25
+"pace 0.90/q (RNPL cash drag, slower buyback)",0.349,0.392,0.306,0.067,1.6,1.84
+pace 1.20/q (step-up),0.668,0.817,0.638,0.097,1.0,0.86
+"trigger rule steeper, centred 1.2q (wait until nearly exhausted)",0.429,0.501,0.391,0.065,1.28,1.25
+"trigger rule centred 1.8q (announce earlier, 2Q25 style)",0.649,0.797,0.62,0.085,1.28,1.25
+early-regime rule: announce only when exhausted (r50=0.5),0.163,0.14,0.109,0.061,1.28,1.25
+size >= $5bn | announce = 0.60,0.436,0.655,0.393,0.076,1.28,1.25
+size >= $5bn | announce = 0.90,0.616,0.655,0.59,0.076,1.28,1.25
+leg B hazards doubled (0.12 / 0.28),0.577,0.655,0.511,0.151,1.28,1.25
+leg B hazards zero (mechanical only),0.513,0.656,0.513,0.0,1.28,1.25
+"joint bear (pace 0.9, r50 0.5, size 0.6, legB 0)",0.024,0.041,0.024,0.0,1.6,1.84
+"joint bull (pace 1.2, r50 1.8, size 0.9, legB x2)",0.851,0.913,0.821,0.204,1.0,0.86

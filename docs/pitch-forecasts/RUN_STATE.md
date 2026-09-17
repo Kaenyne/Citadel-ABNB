@@ -44,3 +44,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 23:38 Codex audit A02 finished (exit 0, 23:35, 31 KB); Codex audit A03 launched. A02 response queued for a free slot.
 - 23:41 A09 forecast done on Fable (R01 P 0.42 CI 0.30-0.55, EV $8.0/sh material; R02 P 0.32, EV $7.2/sh material subset; R03 P 0.07, EV $1.6/sh marginal). A02 response agent launched on Fable. Running: A10, A11 forecasts; A01, A02 responses; Codex audit A03.
 - 23:44 A01 response done (C01 0.75 -> 0.72 CI 0.60-0.82; 11 accepted, 2 in part, 0 rejected; A01 DONE). A12 forecast (R10,R11,R15,R16) launched on Fable. Running: A10, A11, A12 forecasts; A02 response; Codex audit A03.
+- 23:48 A10 forecast done on Fable (R04 P 0.58 EV $4.1/sh material; R05 P 0.17 EV $0.5 immaterial; R07 P 0.17 EV $1.2 marginal). A13 forecast (R12,R13,R14) launched on Fable. Running: A11, A12, A13 forecasts; A02 response; Codex audit A03.
