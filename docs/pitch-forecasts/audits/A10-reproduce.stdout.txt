@@ -1,0 +1,119 @@
+
+======== R05  ceiling base rate ========
+ceilings n: 10  exceeded by >=1.4pp: 1  exceeded at all: 2  Laplace: 0.16666666666666666
+rows in the source with target 4Q25 (2Q25 and 3Q25 prints): 2 - drop_duplicates keeps the h=2 sentence, not the h=1 analogue
+print_quarter target_period  value_high  actual  excess
+         2Q22          3Q22       -0.22     1.3    1.52
+         4Q22          1Q23        0.00    -0.8   -0.80
+         1Q23          2Q23        0.00    -0.8   -0.80
+         1Q24          2Q24        0.00    -0.5   -0.50
+         2Q24          3Q24        0.00    -1.5   -1.50
+         3Q24          4Q24        0.00    -2.5   -2.50
+         4Q24          1Q25        0.00    -1.4   -1.40
+         1Q25          2Q25        0.00     1.2    1.20
+         2Q25          3Q25        0.00    -2.4   -2.40
+         2Q25          4Q25        0.00    -2.5   -2.50
+
+======== R05  line build: is D&A inside total_cash_costs? ========
+sum of cash lines: 2405.027  total_cash_costs: 2405.027
+revenue - cash costs       : 2399.009
+revenue - cash costs + D&A : 2419.642  == 40_lines adj_ebitda 2419.642
+op_income check rev-cash-SBC: 1947.429  == op_income 1947.429
+line-build 3Q26 margin: 50.3669  vs R05 MC centre (rev-cost, no add-back): 49.9374  -> D&A is worth 0.4295 pp
+3Q25 identity: cash costs ex-SBC 2071.0  revenue-cash 2024.0  printed adj EBITDA 2051  implied D&A 27.0
+3Q25 printed S&M: 639.0  line-build S&M base implied by 40_lines: 585.0
+
+======== R05  cost-stack Monte Carlo, as published and with the D&A add-back ========
+as published                     P(>=51.5)=0.1914  median=50.234  sd=1.421  P(>=50.085)=0.5421
+with line-build D&A add-back     P(>=51.5)=0.2806  median=50.663  sd=1.420  P(>=50.085)=0.6609
+
+======== R05  Gaussian routes on the card, and what the card's own band says ========
+      calibration  n   qhat80  gaussian_from_mae_80  gaussian_sd_from_qhat80      mae      bias  bias_last5
+       W1_all_n14 14 2.203943              1.809296                 1.719681 1.126425 -0.669316   -0.271274
+recent_2024Q1plus 10 2.080265              1.297069                 1.623178 0.807524 -0.484542   -0.271274
+card raw, W1 sd                mu=49.940 sd=1.720 P(>=51.5)=0.1822 P(>=50.085)=0.4664 P(>Street 49.776)=0.5380
+card raw, W2 sd                mu=49.940 sd=1.623 P(>=51.5)=0.1682 P(>=50.085)=0.4644 P(>Street 49.776)=0.5403
+bias-corrected (last5), W2 sd  mu=50.211 sd=1.623 P(>=51.5)=0.2136 P(>=50.085)=0.5310 P(>Street 49.776)=0.6058
+gaussian_from_mae_80 (1.297) is an 80% HALF-WIDTH; r05_model uses 1.30 as an sd.  as sd: 0.1145  as half-width: 0.0616
+C04 rev-2 draws 3Q26 margin ~ N(49.95, 1.0) -> P(>=51.5) = 0.0606 (R05 publishes 0.17)
+
+======== R05  revenue leg: cash costs and S&M implied by a 51.5% print ========
+rev   4744.3 published: costs<= 2301.0 S&M<=   674 (+15.3% y/y) | with D&A: costs<= 2321.6 S&M<=   695 (+18.8% y/y)
+rev   4770.0 published: costs<= 2313.4 S&M<=   687 (+17.4% y/y) | with D&A: costs<= 2334.1 S&M<=   707 (+20.9% y/y)
+rev   4804.0 published: costs<= 2330.0 S&M<=   703 (+20.2% y/y) | with D&A: costs<= 2350.6 S&M<=   724 (+23.7% y/y)
+rev   4850.0 published: costs<= 2352.2 S&M<=   726 (+24.0% y/y) | with D&A: costs<= 2372.9 S&M<=   746 (+27.6% y/y)
+1H26 printed S&M growth: 1Q26 33.4 %  2Q26 26.6 %
+
+======== R05  Street and the M5 anchor ========
+LSEG 3Q26 EBITDA 2361.52 margin 49.7757 n 36.0 EBITDA sd 20.0425
+sd implied by M5 composite 50.19 and P(margin beat) 0.62: 1.356 -> P(>=51.5) = 0.167
+raw Street at its own EBITDA sd: P(EBITDA >= 0.515 x 4804) = 0.0
+
+======== R07  ADR history and base rates ========
+quarter  adr_yoy_reported_pp  fx_effect_pp  adr_exfx_yoy_pp  residual_pricing_pp
+   1Q23             0.214196          -2.8              3.0             3.476560
+   2Q23             1.386344          -0.6              2.0             2.472040
+   3Q23             3.157760           2.7              0.5             1.005194
+   4Q23             2.565277           2.1              0.5             0.833963
+   1Q24             2.642047           0.6              2.0             2.255775
+   2Q24             2.120354          -0.9              3.0             3.234376
+   3Q24             1.400421          -0.6              2.0             2.083189
+   4Q24             0.893256          -1.1              2.0             2.760245
+   1Q25            -0.890791          -1.9              1.0             2.231374
+   2Q25             2.919837           1.9              1.0             1.905623
+   3Q25             4.674896           2.7              2.0             2.822291
+   4Q25             5.931828           2.9              3.0             3.698813
+   1Q26             9.034668           5.0              4.0             4.380589
+   2Q26             5.301467           1.3              4.0             4.849326
+n: 14  reported >= 4.4: 4  quarters with FX <= 0: 6 (the log says 7)  reported>=4.4 with FX<=0: 0  ex-FX-0.43 >= 4.4: 0
+residual quarterly changes: [-1.0, -1.47, -0.17, 1.42, 0.98, -1.15, 0.68, -0.53, -0.33, 0.92, 0.88, 0.68, 0.47]
+  mean 0.106  sd 0.898  |change| >= 1.26 in 2 of 13
+
+======== R07  card v3: what the mix term actually is ========
+v3_without_K   eur_fit   fx=-1.12 resid=4.85 exfx=3.69 reported=2.57 usd=175.69 mix(exfx-resid)=-1.160
+v3_without_K   baskets   fx=+0.26 resid=4.85 exfx=3.69 reported=3.95 usd=178.06 mix(exfx-resid)=-1.160
+v3_without_K   midpoint  fx=-0.43 resid=4.85 exfx=3.69 reported=3.26 usd=176.88 mix(exfx-resid)=-1.160
+v3_with_K      eur_fit   fx=-1.12 resid=5.02 exfx=3.86 reported=2.74 usd=175.99 mix(exfx-resid)=-1.160
+v3_with_K      baskets   fx=+0.26 resid=5.02 exfx=3.86 reported=4.12 usd=178.35 mix(exfx-resid)=-1.160
+v3_with_K      midpoint  fx=-0.43 resid=5.02 exfx=3.86 reported=3.43 usd=177.17 mix(exfx-resid)=-1.160
+=> the card's mix term is -1.16, so r07_model's -1.15 IS the card's mix and its
+   'mix -0.98 (H fills)' row is the same thing with the K line moved out of the
+   residual. The MC's persistence branch reproduces the WITHOUT-K card (+3.26).
+
+======== R07  walk-forward errors and Gaussian routes ========
+midpoint  n=10 RMSE=0.927 bias=-0.308 P(>=4.4) raw=0.1478 bias-corrected=0.2376
+eur       n=10 RMSE=1.093 bias=-0.377 P(>=4.4) raw=0.0644 bias-corrected=0.1201
+baskets   n=10 RMSE=0.829 bias=-0.239 P(>=4.4) raw=0.3677 bias-corrected=0.4803
+
+======== R07 / B02  one distribution or two? ========
+r07_model mixture: P(>=4.4)=0.1076 P(<=2.0)=0.1728 median=3.120 sd=1.121
+published pair: R07 0.17 (model 0.11, lifted ~1.5x); B02 0.18 (model 0.176, no lift)
+the Normal that would carry BOTH published tails: N(3.18, 1.28)
+  its centre is below the card without K (3.26) and with K (3.43); its sd is 38%
+  above the card's own walk-forward RMSE (0.93)
+  coherent alternative N(3.43, 0.93): R07 0.148  B02 0.062
+  coherent alternative N(3.5, 1.05): R07 0.196  B02 0.077
+  coherent alternative N(3.74, 0.93): R07 0.239  B02 0.031
+
+======== R07  MODL anchor ========
+MODL n 26 low/mean/high growth 1.413 3.369 4.571  range/4 = 0.789  P(>=4.4) = 0.0958
+threshold 178.83 sits at 94.6 % of the analyst range (the log says the 96th percentile)
+
+======== R04  driver-attribution table and route arithmetic ========
+letters/calls n: 13  driver named: 9  positive monetization driver: 5  conditional: 1
+letter 0.225 call 0.315  independence-intersection 0.070875  rho-blended intersection 0.147937  union 0.392063 (file: 0.3921)
+total with the Feb conditional: 0.574444 (file: 0.5744 )
+  per-print base 0.375 -> two prints, independent: 0.6094
+  per-print base 0.25 -> two prints, independent: 0.4375
+  per-print base 0.5 -> two prints, independent: 0.7500
+the two-print base rate assumes the prints are independent; management's framing
+is persistent, so 0.61 is an upper bound on that class.
+r04_statement_record.csv DOES NOT PARSE: ParserError Error tokenizing data. C error: Expected 8 fields in line 4, saw 9
+
+
+======== R04  impact arithmetic ========
+FY27 model revenue 15828.6 EBITDA 5483.3 margin 34.642%
+  log's arithmetic  d_EBITDA / OLD revenue = 1.308 pp (the published +1.3pp)
+  correct           new margin 35.435% -> +0.793 pp
+  brief's rule      1.453% of revenue x 0.66 = +0.959 pp
+share count: the card uses 591.7m; the R04/R05/R07 impact tables use 620m (205M of EBITDA at 16x: $5.54 vs $5.29 per share)
