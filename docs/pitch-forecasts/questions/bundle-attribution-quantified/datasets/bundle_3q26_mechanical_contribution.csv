@@ -1,0 +1,10 @@
+component,points_of_total_nights_low,points_of_total_nights_high,in_3Q26_yoy_window,source,note
+US RNPL level uplift (live from beginning of 3Q25),0.69,0.69,no (lapped; partial-quarter residual +0.30 to +0.35 per rnpl-short-audit note 01),research/notes/overnight2/D_rnpl-statement-ledger-and-cohort-scenarios.md section 2.2 (PR #32 fitted NA 2.40 NA-points = 0.69 total),lapped from 3Q26
+NA cancellation redesign + single fee tranche 1 (Oct-Dec 2025),0.66,0.66,yes,same section 2.2 (jointly 2.29 NA-points = 0.66 total),laps from 4Q26
+Ex-NA cancellation redesign + fee tranche 1,0.70,0.88,yes,same section 2.5 (40-50% split pinned by the 4Q25 disclosure),laps from 4Q26
+Ex-NA RNPL (live 17 Feb-4 Mar 2026),0.87,1.05,yes,same section 2.2,laps 1Q27 partial / 2Q27 full
+July 2026 eligibility expansion,0.10,0.30,yes (fresh treatment),research/notes/2026-09-11_rnpl-balance-sheet-and-q3-bridge.md section 2.4 (assumed; deliberately small),unquantified by management (ledger D044)
+Partial-quarter US residual,0.30,0.35,yes,docs/rnpl-short-audit/00_SYNTHESIS.md point 2,launch 'beginning of Q3' vs August announcement
+Sum of gross legs still in the y/y window,2.63,3.24,,computed here,before the y/y cancellation-propensity drag
+Cancellation-propensity drag (y/y-differenced),-0.93,-0.15,yes,D note section 2.3 central cell (+1 to +6 points propensity),management nets cancellations in its own figure (ledger D033)
+Net bundle contribution management could truthfully state for 3Q26,1.7,3.1,,computed: 2.63-0.93 to 3.24-0.15,central about 2.3-2.5; straddles the (a)/(b) boundary of the question

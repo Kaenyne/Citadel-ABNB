@@ -1,0 +1,28 @@
+assumption,p_yes,p_surprise,q50,q05,q95,gbv3,print_mean
+"BASE: nights 9.5±1.6, ADR 3.3±1.3, eps -0.5%±2.0%, fee 45/40/15, cushion 2.4±1.0, drift 0±0.6%",0.8,0.56,3090,2960,3225,25884,3163
+cushion = trailing-8 all-quarter 1.86% (B2 convention),0.741,0.482,3105,2975,3240,25884,3163
+cushion = Q4-only 2023-25 mean 3.04%,0.858,0.65,3070,2940,3200,25884,3163
+cushion = all-Q4 2021-25 mean 3.85% (bridge v3 convention),0.911,0.75,3045,2915,3175,25884,3163
+"GBV_3Q26 = programme stacked object N(26,550, 853) (B2 input)",0.577,0.347,3140,2980,3305,26549,3216
+"GBV_3Q26 = management 'mid teens' midpoint N(26,317, 550) (+15%)",0.669,0.403,3120,2990,3260,26317,3197
+"GBV_3Q26 = Kalshi-implied nights median 148.3m x ADR +3.4% ($177.1) => N(26,260, 600)",0.683,0.425,3120,2980,3260,26260,3193
+"B2 REPLICATION: GBV N(26,550,853), cushion 1.86, eps 0/2.86, fee half certain",0.439,0.259,3180,2985,3375,26549,3238
+"B2 REPLICATION no fee: GBV N(26,550,853), cushion 1.86, eps 0/2.86",0.497,0.308,3160,2970,3355,26549,3220
+"GBV_3Q26 = Bloomberg MODL mean N(26,375, 600)",0.646,0.385,3125,2990,3270,26375,3202
+nights nowcast at top of band 10.0,0.769,0.517,3100,2965,3230,26002,3172
+nights nowcast at bottom of band 8.5,0.856,0.646,3070,2940,3205,25648,3144
+nights model path 9.9 (bridge v3 baseline),0.775,0.526,3095,2965,3230,25979,3171
+"kernel residual unbiased, sd 2.86% (registered W1 PIT RMSE)",0.7,0.488,3105,2935,3275,25884,3179
+"kernel residual unbiased, sd 0.7% (Q4 within-season dispersion only)",0.823,0.482,3105,3015,3195,25884,3179
+"kernel residual -1.4% (top of K1 RNPL leakage range), sd 2.0%",0.878,0.687,3060,2930,3195,25884,3134
+no fee step at all,0.84,0.618,3075,2950,3210,25884,3151
+full primitives fee step certain (+1.11%),0.721,0.455,3110,2980,3245,25884,3186
+architect full fee step +2.5% certain,0.53,0.266,3155,3020,3290,25884,3230
+Street drifts up 1% by 4 Nov (sell-side previews raise Q4),0.885,0.699,3090,2960,3225,25884,3163
+Street drifts down 1% by 4 Nov,0.683,0.413,3090,2960,3225,25884,3163
+"Street = Zacks 3,200 (thin panel; NOT the resolution source)",0.9,0.728,3090,2960,3225,25884,3163
+"Street = MODL 3,157",0.787,0.542,3090,2960,3225,25884,3163
+"all tight: eps sd 0.7, nights sd 1.0, ADR sd 0.9, cushion sd 0.5",0.942,0.617,3090,3025,3155,25885,3163
+"all wide: eps sd 2.86, nights sd 2.2, ADR sd 1.8, cushion sd 1.5, drift sd 1.0",0.722,0.542,3090,2905,3280,25884,3163
+"bull print: nights 10.6, ADR 4.0, fee full, cushion 1.86",0.491,0.234,3160,3030,3300,26321,3221
+"bear print: nights 8.5, ADR 2.5, no fee, cushion 3.04",0.945,0.827,3025,2900,3155,25449,3116

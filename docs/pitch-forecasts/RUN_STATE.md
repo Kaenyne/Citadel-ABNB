@@ -31,3 +31,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 22:40 branch created; memo drafts committed (4e8e6e7). Brief, question registry (54 questions, 19 batches), prompts,
   state script, audit launcher, examples written.
 - 22:52 heartbeat cron created (every 30 min at :13/:43). Forecast agents launched on Fable: A01 (C01), A02 (C02,C03), A03 (C04,C09), A04 (C05,C06,C07). Audit prompts pre-generated for all 19 batches under prompts/audit_<batch>.md.
+- 23:20 A01 forecast done on Fable (C01: P 0.75, CI 0.62-0.85; midpoint p50 $3,100M; guide-surprise object 0.51). Codex audit A01 launched (run_audit.sh). A05 forecast launched on Fable.

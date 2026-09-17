@@ -1,0 +1,55 @@
+{
+  "question_id": "C02",
+  "slug": "q4-nights-bucket",
+  "type": "multiple_choice",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {
+    "vector": {
+      "(a) low double digits / language implying >=10%": 0.21,
+      "(b) around 10% / high single to low double digits / similar to Q3 when Q3 <10%": 0.19,
+      "(c) high single digits": 0.39,
+      "(d) mid single digits or lower, or moderate/decelerate without a bucket": 0.17,
+      "(e) no 4Q26 nights descriptor": 0.04
+    },
+    "leading_option": "(c) high single digits",
+    "leading_option_ci": [0.30, 0.48]
+  },
+  "estimates": {
+    "base_rate": 0.37,
+    "decomposition": 0.40,
+    "anchor": 0.45,
+    "anchor_source": "Bloomberg MODL Standard Consensus 4Q26 nights 134.0m (+9.9%, n 28), screenshot 2026-09-12 (data/processed/reverse_dcf/E/E_street_distribution_vs_team.csv), less the 1-3 point bucket cushion -> 'high single digits'; no tradable market (Kalshi KXABNB ladder has zero liquidity, fetched 2026-09-17T02:50Z)",
+    "base_rate_vector": {"a": 0.24, "b": 0.19, "c": 0.37, "d": 0.18, "e": 0.02},
+    "decomposition_vector": {"a": 0.21, "b": 0.19, "c": 0.40, "d": 0.17, "e": 0.03},
+    "anchor_vector": {"a": 0.12, "b": 0.25, "c": 0.45, "d": 0.15, "e": 0.03},
+    "final_minus_anchor_leading": -0.06,
+    "independence_flag": "NOT_INDEPENDENTLY_DERIVED by the 10-point rule; base rate and decomposition are built from the letters and the team 4Q26 baselines without the Street number and land at 0.37-0.40 on their own (research-log.md section 5)"
+  },
+  "conditioning": {
+    "p_3q26_print_ge_10pct": 0.38,
+    "p_3q26_print_9_to_10": 0.42,
+    "p_3q26_print_lt_9": 0.20,
+    "team_4q26_baseline_pct": 8.1,
+    "team_4q26_band_pct": [8.0, 8.9],
+    "rnpl_module_4q26_pct": 7.61,
+    "comp_4q25_pct": 9.82,
+    "street_4q26_bar_pct": 9.9
+  },
+  "sensitivity": [
+    {"assumption": "P(3Q26 print >= 10.0%) = 0.38 (team band)", "moves_to": 0.36, "note": "leading option (c) at P(>=10)=0.60 (Street/Kalshi view); (a) rises to 0.29"},
+    {"assumption": "P(3Q26 print >= 10.0%) = 0.38 (team band)", "moves_to": 0.41, "note": "leading option (c) at P(>=10)=0.25; (d) rises to 0.21"},
+    {"assumption": "management keeps the bucket format (P(directional-only) ~0.25)", "moves_to": 0.31, "note": "(c) if directional-only rises to 0.45; (d) becomes 0.26"},
+    {"assumption": "4Q26 baseline 8.1 with 8.9 as the top", "moves_to": 0.34, "note": "(c) if case A 8.9 is the point and management guides at the Street bar less one point; (b) 0.28"},
+    {"assumption": "comp discipline (1pt harder comp -> ~1pt lower bucket)", "moves_to": 0.34, "note": "(c) if management ignores the comp on a strong October and Q3 prints >=10; (a) 0.28"}
+  ],
+  "monitoring": [
+    {"date": "2026-09-30", "event": "September Inside Airbnb dumps; re-run reviews stays index for the full 3Q26 stay window", "action": "re-set P(3Q26>=10); each 0.5pp move in the index centre moves (a) by ~0.04 and (c) by ~0.03 the other way"},
+    {"date": "2026-10-02", "event": "team memo freeze", "action": "carry this vector; (a)/(c) is the memo's breaker-vs-base fork"},
+    {"date": "2026-10-15", "event": "Airbnb announces the Q3 call date (expected 3-4 weeks ahead)", "action": "fix the resolution date; no probability change"},
+    {"date": "2026-10-30", "event": "EXPE and BKNG Q3 prints (EXPE reads through to ABNB)", "action": "EXPE Q4 room-night guide at or above its Q3 rate: +0.03 to (a)/(b); a >=2pt deceleration guide: +0.03 to (c)/(d)"},
+    {"date": "2026-11-05", "event": "3Q26 shareholder letter", "action": "resolve by the section 0b conventions; if the letter is silent on nights read the call before resolving (e)"}
+  ],
+  "log": "docs/pitch-forecasts/questions/q4-nights-bucket/research-log.md"
+}

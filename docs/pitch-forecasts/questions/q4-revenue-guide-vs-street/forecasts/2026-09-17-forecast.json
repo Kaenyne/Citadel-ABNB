@@ -1,0 +1,67 @@
+{
+  "question_id": "C01",
+  "slug": "q4-revenue-guide-vs-street",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.75, "ci": [0.62, 0.85]},
+  "continuous": {
+    "object": "4Q26 revenue guidance midpoint given in the 3Q26 shareholder letter, 5 Nov 2026",
+    "percentiles": {"5": 2960, "10": 2990, "25": 3040, "50": 3100, "75": 3160, "90": 3215, "95": 3250},
+    "range": [2900, 3400],
+    "below_lower": 0.008,
+    "above_upper": 0.001,
+    "p_no_dollar_guide": 0.01,
+    "unit": "USD m",
+    "mean": 3101,
+    "sd": 87,
+    "p_below_3050": 0.27,
+    "p_below_3100": 0.49,
+    "p_below_3161": 0.77,
+    "p_below_3200": 0.87,
+    "implied_yoy_growth_pct_on_2778": {"5": 6.6, "50": 11.6, "95": 17.0}
+  },
+  "guide_surprise": {
+    "definition": "P(midpoint < LSEG-family mean on 4 Nov x (1 - 0.01857 trailing-8 cushion)), i.e. below the Street's implied guide (~$3,102M at today's mean)",
+    "p": 0.51,
+    "note": "fine-print object, separate from the headline, which resolves on the raw mean"
+  },
+  "estimates": {
+    "base_rate": 0.55,
+    "decomposition": 0.80,
+    "anchor": 0.68,
+    "anchor_source": "Kalshi KXABNB Q3 2026 nights ladder mid prices at 2026-09-17T02:53Z (median 148.3m, +11.0%) pushed through the team kernel/cushion; no market prices the guide itself. Prior published team number: B2 exhibit 0.49 vs LSEG (2026-09-11, stacked-baseline GBV $26.55bn).",
+    "final_minus_anchor": 0.07,
+    "not_independently_derived_flag": true,
+    "street_mean_used": {"value_musd": 3161.02, "vendor": "LSEG family via yfinance revenue_estimate +1q", "n": 36, "captured_utc": "2026-09-17T02:52:39Z"}
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/q4-revenue-guide-vs-street/datasets/c01_model.py",
+    "structure": "guide = round5( 12.03% x (1+eps) x [2/3 GBV_3Q26 + 1/3 27,200] x (1+fee) / (1+cushion) ); GBV_3Q26 = 133.6m x (1+N(9.5,1.6)%) x $171.29 x (1+N(3.3,1.3)%); eps ~ N(-0.5%, 2.0%); fee in {0, +0.55%, +1.11%} at 45/40/15; cushion ~ N(2.4%, 1.0%); Street_4Nov = 3,161 x (1+N(0, 0.6%)); 1% no-guide -> No",
+    "final_mixture": {"team_band_decomposition": [0.60, 0.800], "market_implied_gbv_route": [0.25, 0.683], "wide_structural": [0.15, 0.722]},
+    "b2_replication": {"no_fee": [0.497, 0.492], "half_fee": [0.439, 0.433], "note": "[this model, B2 published] under B2's inputs"}
+  },
+  "sensitivity": [
+    {"assumption": "GBV_3Q26 centred on the team nowcast $25.9bn; if the programme's stacked object $26.55bn (B2 input) is used instead", "moves_to": 0.58},
+    {"assumption": "GBV_3Q26 at the Kalshi-implied / management mid-teens / Bloomberg MODL centre ($26.26-26.38bn)", "moves_to": 0.67},
+    {"assumption": "cushion blend 2.4%; if the trailing-8 all-quarter 1.86% is used", "moves_to": 0.74},
+    {"assumption": "cushion blend 2.4%; if the Q4-only 2023-25 mean 3.04% is used", "moves_to": 0.86},
+    {"assumption": "kernel residual N(-0.5%, 2.0%); if unbiased with the registered 2.86% walk-forward RMSE", "moves_to": 0.70},
+    {"assumption": "fee step 45/40/15 over 0/+0.55/+1.11%; if the architect's +2.5% full step is certain", "moves_to": 0.53},
+    {"assumption": "Street mean drifts 0 +/- 0.6% to 4 Nov; if it drifts -1%", "moves_to": 0.68},
+    {"assumption": "Street mean drifts 0 +/- 0.6% to 4 Nov; if it drifts +1%", "moves_to": 0.885},
+    {"assumption": "joint bull print (nights 10.6, ADR 4.0, full fee step, cushion 1.86)", "moves_to": 0.49},
+    {"assumption": "joint bear print (nights 8.5, ADR 2.5, no fee step, cushion 3.04)", "moves_to": 0.945}
+  ],
+  "monitoring": [
+    {"date": "2026-09-17/2026-10-02", "event": "September Inside Airbnb dumps; nights band refreshed", "action": "re-centre GBV_3Q26; each +0.5pt nights ~ -0.03 on P, +$10M on the median"},
+    {"date": "weekly to 2026-11-01", "event": "yfinance/DoltHub capture of the LSEG-family 4Q26 mean", "action": "re-run with street_now; +1% -> 0.885, -1% -> 0.68"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.75 (0.62-0.85), median $3,100M; guide-surprise 0.51 separately"},
+    {"date": "2026-10-13", "event": "EEA/CH single-fee migration deadline", "action": "migration confirmed complete -> fee weights toward full step (P -0.04); delay -> toward none (P +0.04)"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side 3Q26 previews; October STR RevPAR; any management quarter-to-date remark", "action": "re-capture the mean; below $3,130M -> P toward 0.65; re-centre nights on any QTD comment"},
+    {"date": "2026-11-04", "event": "record the resolution Street value (LSEG-family mean, n) after the close", "action": "recompute P at the recorded mean; register the capture"},
+    {"date": "2026-11-05", "event": "3Q26 letter: 4Q26 revenue range, 3Q26 GBV, FX integer", "action": "resolve; audit read: printed GBV <= $25.9bn implied pre-print P ~0.85, $26.3bn ~0.67, >= $26.6bn ~0.55"}
+  ],
+  "log": "docs/pitch-forecasts/questions/q4-revenue-guide-vs-street/research-log.md"
+}
