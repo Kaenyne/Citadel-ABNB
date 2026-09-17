@@ -1,0 +1,56 @@
+{
+  "question_id": "B10",
+  "slug": "bonus-interest-income-falls",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.05, "ci": [0.02, 0.10]},
+  "companion": {"threshold_musd": 145.8, "base_4q25_musd": 162, "ii_4q26_median_musd": 177, "ii_4q26_p10_p90": [158, 196], "p_any_yoy_decline": 0.13, "p_ge_190": 0.20, "source": "datasets/b10_model.py"},
+  "estimates": {
+    "base_rate": 0.10,
+    "decomposition": 0.04,
+    "anchor": 0.11,
+    "anchor_source": "No market on the line. Anchor = the repo's registered M7 below-EBITDA LIVE quantile for 4Q26 interest income (vintage 2026-09-11, point $170M, q10 $144M, T-bill 3.86 held flat, before the 16 Sep hike) -> P(<= 145.8) ~0.11. Adjacent markets: Kalshi KXFEDDECISION/KXFED 2026-09-17T08:21:21Z (Dec 2026 hike 25bp 0.69/0.70, cut <= 0.02; Dec upper bound > 4.00% 0.82/0.83); Polymarket 'Fed rate cut by January 2027' 0.14. Base rate: interest income fell >= 10% y/y in 0 of 6 quarters with the T-bill flat or up y/y (2Q23-2Q24). Decomposition: M7 rule Monte Carlo on the post-hike rate path with buyback-upsize and emergency-cut tails.",
+    "final_minus_anchor": -0.06,
+    "not_independently_derived_flag": true,
+    "independence_note": "M7's band is the h=2 Gaussian pool with cov80 = 1.00 (over-covering) and pre-dates the +25bp hike (~+$11M on the point); the decomposition re-centres on the post-hike path"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/bonus-interest-income-falls/datasets/b10_model.py",
+    "structure": "II = beta N(0.88,0.045) x r N(4.10,0.15)/100 x avg base/4 x (1 + N(0,5%)); base = cash N(12,100/12,000, 500) + funds held (7,209 / 6,959) x (1 + N(12.7%,3%)) x (1 - U(0,10%)); YES <=> II <= 145.8. Mixture: base 0.88 (0.014) / cash -$1.5bn 0.07 (0.10) / cash -$3bn 0.03 (0.38) / T-bill 3.25 0.02 (0.67) = 0.043",
+    "conventions": "object = income-statement 'Interest income', three months ended 31 Dec 2026, from the release table (else FY26 less 9M); 4Q25 base $162M as printed (FY25 $705M less 9M $543M); gross of interest expense"
+  },
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": 0,
+    "rev_fy27_musd": 0,
+    "margin_fy26_pp": 0,
+    "margin_fy27_pp": 0,
+    "eps_fy27_usd": -0.13,
+    "stock_usd_per_share": -2,
+    "ev_stock_usd_per_share": -0.1,
+    "material": false,
+    "note": "Below adjusted EBITDA: no margin effect. At $145M vs the team path's $165M (-$20M; FY27 run-rate -$90M vs M7's $765M): 4Q26 EPS -$0.03, FY27 EPS -$0.13 (line-build sensitivity +/-100bp = +/-$0.28); stock -$2 at a cash-yield multiple. EV 0.05 x -2 = -$0.1/share: immaterial; rates are now a tailwind to this line, so the RNPL cash-timing point belongs on unearned fees (C12), not here."
+  },
+  "sensitivity": [
+    {"assumption": "4Q26 T-bill 4.10 -> 3.97 held (no further hikes)", "moves_to": 0.05},
+    {"assumption": "4Q26 T-bill -> 3.25 (emergency cuts as the base case)", "moves_to": 0.60},
+    {"assumption": "realised yield beta 0.88 -> 0.83", "moves_to": 0.09},
+    {"assumption": "funds held flat y/y", "moves_to": 0.07},
+    {"assumption": "cash + STI -$1.5bn (moderate buyback upsize)", "moves_to": 0.12},
+    {"assumption": "cash + STI -$3bn (large buyback upsize)", "moves_to": 0.35},
+    {"assumption": "tail weights doubled / zero", "moves_to": 0.08},
+    {"assumption": "residual sd 5% -> 10%", "moves_to": 0.09}
+  ],
+  "monitoring": [
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.05 (0.02-0.10); immaterial"},
+    {"date": "2026-10-28", "event": "FOMC", "action": "hike -> 0.04; hold -> 0.05; cut -> 0.15"},
+    {"date": "2026-11-05", "event": "3Q26 release: interest income ($184M rule), cash, funds held, buybacks, authorisation", "action": "<= $165M -> 0.10; funds held y/y <= +5% -> +0.02; new >= $6bn authorisation with accelerated pace -> +0.05"},
+    {"date": "2026-12-09", "event": "FOMC with SEP", "action": "second hike -> 0.03; cut -> 0.20"},
+    {"date": "2027-02-11", "event": "4Q26 release", "action": "resolve"}
+  ],
+  "log": "docs/pitch-forecasts/questions/bonus-interest-income-falls/research-log.md"
+}
