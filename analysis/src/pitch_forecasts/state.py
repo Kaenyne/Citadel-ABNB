@@ -5,7 +5,8 @@ Usage: py -3.13 analysis/src/pitch_forecasts/state.py [--json]
 For each batch in docs/pitch-forecasts/batches.json, reports which stage is complete based on files present:
   forecast : every question in the batch has questions/<slug>/research-log.md and forecasts/2026-09-17-forecast.json
   audit    : docs/pitch-forecasts/audits/<batch>-research-audit.md exists and audits/<batch>.done exists
-  response : every question's research-log.md contains "revision: 2" (or "Revision 2") and
+  response : every question's research-log.md contains "revision: 2" (or audits/<batch>.audit_only exists: the auditor's
+             numbers are adopted in SYNTHESIS without a third pass) (or "Revision 2") and
              docs/pitch-forecasts/audits/<batch>-audit-response.md exists
 Prints the next pending stage per batch. Never writes.
 """
@@ -51,7 +52,8 @@ def main():
         done = PF / "audits" / f"{batch}.done"
         resp = PF / "audits" / f"{batch}-audit-response.md"
         audit_ok = audit.exists() and done.exists() and audit.stat().st_size > 500
-        resp_ok = resp.exists() and rev2_ok
+        audit_only = (PF / "audits" / f"{batch}.audit_only").exists()
+        resp_ok = (resp.exists() and rev2_ok) or (audit_ok and audit_only)
         if not fc_ok:
             stage = "forecast"
         elif not audit_ok:

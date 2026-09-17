@@ -1,0 +1,5 @@
+AUDIT-ONLY (decision 17 Sep 11:45, Krish's usage constraint). No third pass for B01, B02, B03.
+B02 was already reconciled to revision 2 inside the A10 response (one ADR distribution with R07); the A14 audit's
+independent B02 0.09 / R07 0.19 are recorded in SYNTHESIS as the auditor's view beside the rev-2 0.12 / 0.17.
+B01 (0.34 vs auditor 0.33) is a base-case marker, not a memo line. B03 (0.18 vs auditor 0.21) is immaterial.
+SYNTHESIS adopts the auditor's numbers where they differ and flags the logs as revision 1 + audit.
