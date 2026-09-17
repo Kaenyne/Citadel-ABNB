@@ -98,7 +98,7 @@ Airbnb, Ellie Mertz, Brian Chesky, implied take rate, customer incentives, new b
 
 ## 6. Final Numbers
 **Binary.** P(a qualifying take-rate-lower statement at the 5 Nov print) = **0.41**, credible interval **0.28–0.55**. (Revision 1: 0.42, 0.28–0.56. The headline barely moves; **the impact table is what this revision changes**.)
-Route split of the Yes mass (from the model): incentives / new-business / pilot named as reducing qualifying period take rate approx 0.82; the letter's Q4 sentence reading "lower" ≈ **0.25** (overlapping); an explicit FY27 lower statement ≈ **0.12**.
+Route split of the Yes mass (from the model): incentives / new-business / pilot named as reducing a qualifying period’s take rate ≈ **0.82**; the letter's Q4 sentence reading "lower" ≈ **0.25** (overlapping); an explicit FY27 lower statement ≈ **0.12**.
 Under the strict convention (only statements naming 4Q26 or FY27 count) the number is **0.31** (rev 1: 0.33; the strict multiplier is now 0.50, derived rather than asserted).
 Under the net-only reading (convention (5) reversed: the take rate must be *said* to fall) the number is **~0.25** (blend; union 0.23). Revision 1 published ~0.22, a union-level figure. That reading belongs in §7 and nowhere else — the question's own parenthetical is "or that incentives/new businesses **will reduce it**".
 Extreme-probability gate: not triggered.
