@@ -88,3 +88,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 12:11 A16 response done (B08 0.44 EV -$1.4 material; B09 0.08; B10 0.04; B17 0.41 EV -$1.0 borderline; A16 DONE). DATA NOTE for SYNTHESIS: 02_guidance_ledger.csv sbc_yoy_pct actuals derive from the wrong driver-history SBC series (printed FY23 +20.4 / FY24 +25.6 / FY25 +13.2). Open human decisions: B08 convention on the 10-K purchase-obligation table; the 4Q26 hosting line ($100M line build vs $85M B08). Running: A17 response; A18 audit.
 - 12:12 A19 (X01 scenario MC) forecast launched on Fable. Running: A17 response, A18 audit (Opus); A19 forecast (Fable).
 - 12:19 A18 audit (Opus) done, audit-only marker written (adopt B14 0.09, B15 0.23, B16 0.89; all immaterial; A18 DONE). Running: A17 response (Opus); A19 forecast (Fable).
+- 12:26 heartbeat: no change; running A17 response (Opus), A19 forecast (Fable).
