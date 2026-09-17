@@ -53,3 +53,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 04:15 A13 forecast done (R12 P 0.42 EV $0.6 immaterial; R13 P 0.03 immaterial; R14 P 0.30 EV $5.3 material; corrected Q4 day-1 record 5/6 positive, 3/6 >=+5%). Codex audit A04 finished 04:04 (29 KB); A04 response launched on Fable; Codex audit A05 launched. Running: A12, A14, A15 forecasts; A04 response; Codex A05.
 - 04:17 A12 forecast done (R10 P 0.09 immaterial; R11 P 0.38 immaterial; R15 P 0.14 immaterial; R16 P 0.27 EV $2.7 material). A16 forecast (B08,B09,B10,B17) launched on Fable. Running: A14, A15, A16 forecasts; A04 response; Codex audit A05.
 - 04:19 A14 forecast done (B01 P 0.34 = base-case marker; B02 P 0.18 EV -$2.2 material; B03 P 0.18 immaterial). A17 forecast (B11,B12,B13) launched on Fable. Running: A15, A16, A17 forecasts; A04 response; Codex audit A05.
+- 04:27 heartbeat: no change; running A15, A16, A17 forecasts, A04 response; Codex audit A05 (20 min in).
