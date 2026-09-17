@@ -1,0 +1,20 @@
+item,value
+p_4q26_or_fy26_take_rate_sentence_up,0.45
+p_fee_named_given_up,0.5
+letter_route_5nov,0.225
+p_call_question,0.75
+p_call_answer_names_fee_positive,0.4
+call_route_5nov,0.30000000000000004
+overlap_rho,0.5
+blending_rule,"intersection = L*C + rho*(min(L,C) - L*C); union = L + C - intersection"
+independence_intersection,0.0675
+blended_intersection,0.14625
+p_yes_5nov,0.37875
+p_yes_feb_given_no_nov,0.3
+p_yes_total_decomposition,0.565125
+"per_print_base_rate_since_migration (1 of 4, 2Q26 No)",0.25
+per_print_laplace (1+1)/(4+2),0.3333
+two_print_base_perfectly_correlated,0.25
+two_print_base_independent,0.4375
+two_print_base_at_rho_0.5 (midpoint),0.3438
+rev1_two_print_base_independent_on_0.375,0.6094

@@ -1,0 +1,37 @@
+item,value
+ceiling rows before de-dup (4Q25 guided at both the 2Q25 h=2 and 3Q25 h=1 prints),11
+"keep h=2 (2Q25 print) sentence for 4Q25 [rev 1 choice]: n, >=1.4pp, >0, Laplace","10, 1, 2, 0.1667"
+"keep h=1 (3Q25 print) sentence for 4Q25 [true analogue of 3Q26]: n, >=1.4pp, >0, Laplace","10, 1, 2, 0.1667"
+"40_lines 3Q26 base: revenue, total_cash_costs, da, adj_ebitda, margin","4804.035, 2405.027, 20.634, 2419.642, 50.3669"
+identity check revenue - cash + da == adj_ebitda,True
+rev-1 MC centre (no add-back) vs line build,49.9374 vs 50.3669; D&A worth 0.4295 pp
+"card N(49.94, 1.72 W1 qhat80): P(>=51.5), P(>=50.085), P(>Street)","0.1821, 0.4664, 0.5380"
+"card N(49.94, 1.62 W2 qhat80): P(>=51.5), P(>=50.085), P(>Street)","0.1682, 0.4644, 0.5403"
+"card N(49.94, 1.01 = MAE-gaussian 80% half-width 1.297 / 1.2816) [rev 1 used 1.30 as sd]: P(>=51.5), P(>=50.085), P(>Street)","0.0616, 0.4430, 0.5644"
+"card bias-corrected last5 N(50.21, 1.62): P(>=51.5), P(>=50.085), P(>Street)","0.2136, 0.5310, 0.6058"
+"M5 composite N(50.19, 1.356): P(>=51.5), P(>=50.085), P(>Street)","0.1670, 0.5309, 0.6200"
+"Street + raw h0 bias N(50.9, 1.41): P(>=51.5), P(>=50.085), P(>Street)","0.3378, 0.7208, 0.7894"
+"line build base N(50.37, 1.62): P(>=51.5), P(>=50.085), P(>Street)","0.2426, 0.5690, 0.6422"
+"MC as published (no add-back) [rev 1]: P(>=51.5), median, sd, P(>=50.085), P(>=51.0), P(>=52.0), P(<=49.0)","0.1904, 50.236, 1.422, 0.5428, 0.2967, 0.1130, 0.1871"
+"MC corrected (+D&A 20.634): P(>=51.5), median, sd, P(>=50.085), P(>=51.0), P(>=52.0), P(<=49.0)","0.2800, 50.666, 1.421, 0.6600, 0.4071, 0.1776, 0.1144"
+"MC corrected, cost sd 72 (total sd ~ conformal 1.62) [A10-19]: P(>=51.5), median, sd, P(>=50.085), P(>=51.0), P(>=52.0), P(<=49.0)","0.3086, 50.673, 1.645, 0.6402, 0.4217, 0.2122, 0.1510"
+"MC corrected, slip 0: P(>=51.5)",0.1886
+"MC corrected, slip 0.5: P(>=51.5)",0.3715
+"MC corrected, cost sd 40: P(>=51.5)",0.2180
+"MC corrected, cost sd 80: P(>=51.5)",0.3243
+"MC corrected, revenue 4744: P(>=51.5)",0.2040
+"MC corrected, revenue 4770: P(>=51.5)",0.2356
+"MC corrected, revenue 4850: P(>=51.5)",0.3468
+"MC corrected, D&A 27 (3Q25 implied add-back): P(>=51.5)",0.3117
+"51.5% at revenue 4744.3: cash costs allowed, gap vs budget, S&M if whole gap is S&M, y/y","2321.6, -83.4, 695, +18.8%"
+"51.5% at revenue 4770.0: cash costs allowed, gap vs budget, S&M if whole gap is S&M, y/y","2334.1, -70.9, 707, +20.9%"
+"51.5% at revenue 4804.0: cash costs allowed, gap vs budget, S&M if whole gap is S&M, y/y","2350.6, -54.5, 724, +23.7%"
+"51.5% at revenue 4850.0: cash costs allowed, gap vs budget, S&M if whole gap is S&M, y/y","2372.9, -32.1, 746, +27.6%"
+"S&M budget (line build sm_cash), 3Q25 cash S&M base, budget y/y","778.3, 585.0, +33.0%"
+"1H26 printed S&M y/y: 1Q26, 2Q26","33.4%, 26.6%"
+"route card bias-corrected N(50.21,1.62): weight, P","0.35, 0.2136"
+"route corrected cost stack, sd 72: weight, P","0.25, 0.3086"
+"route M5 composite (anchor): weight, P","0.20, 0.1670"
+"route ceiling base rate Laplace: weight, P","0.20, 0.1667"
+revision-2 blend P(>=51.5),0.2186
+auditor blend 0.40/0.25/0.20/0.15 on 0.2136/0.2806/0.167/0.167,0.214
