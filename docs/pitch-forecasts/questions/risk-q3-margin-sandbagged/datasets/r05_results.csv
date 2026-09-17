@@ -1,0 +1,30 @@
+item,value
+ceiling sentences n,10
+exceeded ceiling by >=1.4pp,1
+exceeded ceiling at all,2
+base rate Laplace (k14+1)/(n+2),0.16666666666666666
+"combination N(49.94, 1.72 from qhat80 W1) P(>=51.5)",0.18217124917887062
+"combination N(49.94, 1.62 from qhat80 2024Q1+) P(>=51.5)",0.16822580819972688
+"combination N(49.94, 1.30 gaussian-from-MAE) P(>=51.5)",0.115069670221708
+"bias-corrected N(50.21, 1.62) P(>=51.5)",0.21335782794082592
+"M5 composite N(50.19, 1.34) P(>=51.5)",0.16413314478426178
+"Street+h0 bias N(50.9, 1.41) P(>=51.5)",0.33781282678517743
+"line build base N(50.4, 1.5) P(>=51.5)",0.231677574634798
+cost-stack MC P(>=51.5),0.1905175
+cost-stack MC median margin,50.236980433414836
+"cost-stack MC P(>=50.09, i.e. sentence missed to the upside)",0.5429925
+MC P(slip)=0.0,0.1115275
+MC P(slip)=0.5,0.2711025
+MC cost sd=40,0.128585
+MC cost sd=80,0.2440325
+MC revenue centre 4744,0.13218
+MC revenue centre 4770,0.1571425
+MC revenue centre 4850,0.24535
+costs allowed at 51.5% on revenue 4744.3,2301.0
+  implied S&M if the whole gap is S&M (3Q25 585),"677M, +15.7% y/y vs budget +33.5%"
+costs allowed at 51.5% on revenue 4770,2313.4
+  implied S&M if the whole gap is S&M (3Q25 585),"689M, +17.9% y/y vs budget +33.5%"
+costs allowed at 51.5% on revenue 4804,2329.9
+  implied S&M if the whole gap is S&M (3Q25 585),"706M, +20.7% y/y vs budget +33.5%"
+costs allowed at 51.5% on revenue 4850,2352.2
+  implied S&M if the whole gap is S&M (3Q25 585),"728M, +24.5% y/y vs budget +33.5%"

@@ -1,0 +1,11 @@
+step,p_yes,p_surprise,guide_mean,guide_sd,print_mean,q50
+"B2 replication no fee: GBV N(26,550, 853), cushion 1.86, eps N(0, 2.86), no leak, 1% no-guide",0.4973,0.3082,3161.3,116.9,3219.7,3160
+"+ team GBV: nights N(9.5, 1.8), ADR N(3.3, 1.3)",0.6838,0.4719,3109.1,103.1,3166.6,3110
++ fee mixture 45/40/15 over 0 / +0.55 / +1.11%,0.6421,0.4273,3121.2,104.3,3178.9,3120
++ three-way gate 0.985 / 0.010 / 0.005,0.6455,0.4296,3121.2,104.3,3178.9,3120
+"+ eps sd 2.86 -> 2.05 (ex-COVID PIT RMSE, validated)",0.6776,0.414,3121.2,83.6,3178.9,3120
+"+ eps mean 0 -> -0.19% (ex-COVID PIT bias, validated)",0.7013,0.4407,3115.3,83.6,3172.8,3115
++ RNPL leakage branch Bernoulli(0.40) x -0.84% (judgment),0.7397,0.4895,3104.8,84.4,3162.2,3105
+"+ cushion 1.86 -> 2.4 (Q4-season blend, judgment) = component A",0.7976,0.5654,3088.3,83.9,3162.2,3085
+B2 replication half fee certain (B2 published 0.433),0.4391,0.2595,3178.9,117.6,3237.6,3180
+"Astra conventions in this model: team GBV (nights sd 1.6), cushion 1.86, eps N(0, 2.86), half fee certain, 1% no-guide (Astra analytic 0.624)",0.626,0.4067,3126.4,102.5,3184.1,3125

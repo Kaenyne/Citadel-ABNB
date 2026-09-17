@@ -1,0 +1,30 @@
+assumption,mix_p_yes,mix_p_surprise,mix_q50,mix_q05,mix_q95,comp_A,comp_B,comp_C,A_alone_p_yes,A_alone_q50
+BASE (revision 2),0.733,0.513,3100,2945,3265,0.798,0.675,0.635,0.798,3085
+cushion = trailing-8 all-quarter 1.86% in every component,0.69,0.459,3110,2960,3275,0.741,0.618,0.635,0.74,3105
+cushion = Q4-only 2023-25 mean 3.04% in every component,0.804,0.605,3075,2925,3240,0.855,0.736,0.746,0.854,3070
+cushion = all-Q4 2021-25 mean 3.85% (bridge v3 convention),0.863,0.697,3050,2900,3215,0.909,0.804,0.809,0.908,3045
+nights nowcast at top of band 10.0 (team components),0.708,0.481,3105,2955,3270,0.767,0.675,0.604,0.766,3095
+nights nowcast at bottom of band 8.5 (team components),0.777,0.574,3085,2930,3250,0.852,0.675,0.695,0.852,3070
+nights model path 9.9 (bridge v3 baseline),0.713,0.488,3105,2950,3270,0.773,0.675,0.61,0.773,3095
+nights 11.5 = Bloomberg MODL 149.0m (team components re-centred on the Street),0.624,0.389,3130,2975,3295,0.659,0.675,0.508,0.658,3125
+nights sd 1.6 (revision-1 width),0.736,0.512,3100,2950,3260,0.802,0.675,0.639,0.801,3090
+no RNPL leakage branch (p_leak 0),0.708,0.479,3105,2955,3270,0.765,0.641,0.635,0.764,3100
+RNPL leakage certain at the K1 central cell -0.84%,0.79,0.586,3080,2930,3245,0.847,0.726,0.717,0.847,3070
+RNPL leakage certain at the K1 top cell -1.39%,0.835,0.654,3065,2915,3225,0.888,0.776,0.765,0.888,3055
+"kernel residual unbiased, sd 2.86% (registered last3 W1 PIT RMSE), no leak",0.666,0.463,3110,2935,3295,0.702,0.604,0.635,0.701,3105
+"kernel residual unbiased, sd 0.7% (Q4 within-season dispersion only), no leak",0.756,0.444,3110,3005,3225,0.82,0.645,0.702,0.82,3105
+no fee step at all,0.772,0.562,3085,2935,3250,0.837,0.715,0.674,0.837,3075
+"half primitives fee step certain (+0.55%, B2 convention)",0.717,0.491,3105,2955,3270,0.783,0.658,0.619,0.783,3095
+full primitives fee step certain (+1.11%),0.656,0.421,3120,2970,3290,0.72,0.598,0.56,0.72,3110
+architect full fee step +2.5% certain,0.486,0.26,3165,3010,3335,0.536,0.442,0.411,0.536,3153
+Street drifts up 1% by 4 Nov,0.822,0.636,3100,2945,3265,0.882,0.77,0.731,0.882,3085
+Street drifts down 1% by 4 Nov,0.621,0.386,3100,2945,3265,0.683,0.565,0.529,0.682,3085
+"Street = Zacks 3,200 (thin panel; NOT the resolution source)",0.839,0.663,3100,2945,3265,0.897,0.789,0.752,0.897,3085
+"Street = Bloomberg MODL 3,157",0.719,0.496,3100,2945,3265,0.785,0.662,0.622,0.785,3085
+"Street = 3,130 (previews trim Q4 by 1%)",0.623,0.388,3100,2945,3265,0.686,0.567,0.531,0.685,3085
+no revenue guidance 5% (gate stress),0.699,0.489,3100,2945,3265,0.762,0.644,0.606,0.761,3085
+"growth-only guidance 10% (gate stress; converts on 2,778)",0.732,0.513,3100,2945,3265,0.798,0.675,0.635,0.798,3085
+"all tight: eps sd 0.7, nights sd 1.0, ADR sd 0.9, cushion sd 0.5",0.859,0.521,3100,3020,3185,0.941,0.727,0.783,0.941,3090
+"all wide: eps sd 2.86, nights sd 2.2, ADR sd 1.8, cushion sd 1.5, drift sd 1.0",0.686,0.505,3100,2910,3300,0.728,0.642,0.629,0.727,3085
+"bull print: nights 10.6, ADR 4.0, fee full, cushion 1.86, no leak",0.446,0.227,3175,3020,3335,0.449,0.448,0.44,0.448,3170
+"bear print: nights 8.5, ADR 2.5, no fee, cushion 3.04, leak certain",0.925,0.813,3015,2870,3175,0.962,0.851,0.903,0.962,3010
