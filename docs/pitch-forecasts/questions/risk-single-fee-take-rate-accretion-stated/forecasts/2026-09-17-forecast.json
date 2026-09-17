@@ -1,0 +1,61 @@
+{
+  "question_id": "R04",
+  "slug": "risk-single-fee-take-rate-accretion-stated",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.58, "ci": [0.42, 0.72]},
+  "split": {"p_yes_at_5nov": 0.39, "p_yes_first_at_feb": 0.19, "p_quantified_figure": 0.10, "route_share_of_yes": {"call_qa": 0.55, "letter_outlook": 0.35, "prepared_remarks": 0.10}},
+  "estimates": {
+    "base_rate": 0.61,
+    "decomposition": 0.57,
+    "anchor": 0.50,
+    "anchor_source": "No market or consensus prices the statement (Kalshi KXABNB/KXABNBA nights ladders and Polymarket price ladders only, 2026-09-17T03:34:27Z); anchor = the skill's pending-decision flat prior for a discretionary management statement. Base rate: 1.5 of the 4 prints since the migration began carried a qualifying attribution (1Q26 explicit, 2Q26 conditional at half), compounded over two prints. Decomposition: datasets/r04_decomposition.csv.",
+    "final_minus_anchor": 0.08,
+    "not_independently_derived_flag": true,
+    "independence_note": "flag raised by |final - anchor| < 10; the number is built from the letters/calls (base rate 0.61, decomposition 0.57) and lands near a flat prior by coincidence; pending-decision caution keeps it below the two-print base rate"
+  },
+  "conventions": [
+    "the fee migration must be named in the same print (in the accretion sentence or as an enumerated monetization initiative); bare 'monetization initiatives' with the fee unnamed resolves No",
+    "a gross or conditional attribution ('absent incentives ... higher, driven by the single fee') counts",
+    "4Q26 or FY27 includes 1Q27 guidance at the Feb print",
+    "the call counts even if the letter is silent (resolution text says letter or call)",
+    "host pricing competitiveness / conversion / nights framing does not count"
+  ],
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": 30,
+    "rev_fy27_musd": 230,
+    "margin_fy26_pp": 0.1,
+    "margin_fy27_pp": 1.3,
+    "eps_fy27_usd": 0.29,
+    "stock_usd_per_share": 7,
+    "ev_stock_usd_per_share": 4.1,
+    "material": true,
+    "note": "If stated, the market marks the fee leg from the bridge's half step to a full step (+$17M 4Q26) and adds ~+20bp of net FY27 take rate on ~$114bn GBV (+$230M revenue, ~90% flow-through, +$205M EBITDA); stock +$7 = ~1.5pt of forward growth x 0.40-0.48 turns x $9-10 plus the EBITDA level effect, haircut for a direction-only statement. EV 0.58 x 7 = $4.1/share: material; the memo should pre-write the reply that gross accretion is consistent with a flat net take rate (2Q26 call)."
+  },
+  "sensitivity": [
+    {"assumption": "conditional/gross attribution counts (convention 2)", "moves_to": 0.42},
+    {"assumption": "'monetization initiatives' counts without the fee being named (convention 1 relaxed)", "moves_to": 0.68},
+    {"assumption": "fee must be named in the accretion sentence itself", "moves_to": 0.48},
+    {"assumption": "P(4Q26 take-rate sentence reads up) 0.45 -> 0.30", "moves_to": 0.53},
+    {"assumption": "P(4Q26 take-rate sentence reads up) 0.45 -> 0.60", "moves_to": 0.62},
+    {"assumption": "P(call answer names a positive fee effect | asked) 0.45 -> 0.30", "moves_to": 0.50},
+    {"assumption": "P(call answer names a positive fee effect | asked) 0.45 -> 0.60", "moves_to": 0.65},
+    {"assumption": "Feb conditional 0.30 -> 0.15", "moves_to": 0.48},
+    {"assumption": "Feb conditional 0.30 -> 0.45", "moves_to": 0.66},
+    {"assumption": "2Q26 print counted as No in the base rate", "moves_to": 0.52}
+  ],
+  "monitoring": [
+    {"date": "2026-09-15/2026-10-13", "event": "non-EEA and EEA/CH fee deadlines; completion statements", "action": "delay past year-end -> -0.05"},
+    {"date": "2026-09-17/2026-11-04", "event": "host backlash coverage; management conference remarks on take rate", "action": "backlash -> -0.05; 1Q26-style remark -> +0.10"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.58 (0.42-0.72)"},
+    {"date": "2026-11-05", "event": "3Q26 letter take-rate sentence and call Q&A", "action": "fee named as lifting Q4/FY take rate -> resolve Yes; otherwise move to 0.30 (Feb route only)"},
+    {"date": "2026-11-06/2027-02-10", "event": "10-Q MD&A; sell-side FY27 take-rate notes", "action": "10-Q attribution -> +0.05 on the Feb route"},
+    {"date": "2027-02-11", "event": "4Q26 letter and call: 1Q27 / FY27 take-rate sentence", "action": "resolve"}
+  ],
+  "log": "docs/pitch-forecasts/questions/risk-single-fee-take-rate-accretion-stated/research-log.md"
+}

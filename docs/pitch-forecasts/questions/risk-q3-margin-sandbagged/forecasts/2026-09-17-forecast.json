@@ -1,0 +1,57 @@
+{
+  "question_id": "R05",
+  "slug": "risk-q3-margin-sandbagged",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.17, "ci": [0.10, 0.27]},
+  "companion": {"p_above_ceiling_50.085": 0.54, "p_ge_51.0": 0.27, "p_ge_52.0": 0.10, "p_le_49.0": 0.20},
+  "estimates": {
+    "base_rate": 0.17,
+    "decomposition": 0.19,
+    "anchor": 0.16,
+    "anchor_source": "No market prices 3Q26 margin (Kalshi KXABNB nights ladder and Polymarket price ladders only, 2026-09-17T03:34:27Z). Anchor = M5 dispersion-conditioned Street composite 50.19% (LSEG 11 Sep 2026 49.78%, n 36, plus shrunken bias), sd 1.34pp from its P(margin beat) 0.62 -> P(>=51.5) 0.16. Base rate: quarterly ceiling sentences exceeded by >=1.4pp, 0-1 of 10 (Laplace 0.17). Decomposition: cost-stack Monte Carlo datasets/r05_model.py.",
+    "final_minus_anchor": 0.01,
+    "not_independently_derived_flag": true,
+    "independence_note": "three objects (sentence record, cost stack, Street plus bias) all land at 0.16-0.19; agreement, not deference"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/risk-q3-margin-sandbagged/datasets/r05_model.py",
+    "structure": "revenue N(4804, 50); cash costs = 2405 + N(0, 60) + 0.20 x (revenue - 4804) - slip x U(30, 97) with P(slip) 0.25; margin = 100 x (revenue - costs) / revenue; YES <=> margin >= 51.5",
+    "revenue_leg": "51.5% needs cash costs <= $2,330M at $4,804M (-$75M vs budget), <= $2,301M at the Street's $4,744M; if all in S&M: S&M <= $706M = +20.7% y/y vs the budget's +33.5% and 1H26's +26-34%"
+  },
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": 0,
+    "rev_fy27_musd": 0,
+    "margin_fy26_pp": 0.5,
+    "margin_fy27_pp": 0.4,
+    "eps_fy27_usd": 0.09,
+    "stock_usd_per_share": 3,
+    "ev_stock_usd_per_share": 0.5,
+    "material": false,
+    "note": "At 51.5% vs the card's 49.94%: +$75M of 3Q26 EBITDA, FY26 +0.5pp, FY27 +0.4pp (half-weight timing vs run-rate), FY27 EPS +$0.09; stock +$3 (EBITDA surprises carry no day-1 information; level effect ~+$1.6 plus a higher chance of the 'approximately 36%' FY26 sentence). EV 0.17 x 3 = $0.5/share: immaterial; drop as a stock risk, keep the S&M arithmetic as the reply to 'the sentence is sandbagged'."
+  },
+  "sensitivity": [
+    {"assumption": "P(flagged Q3 step slips out of the quarter) 0.25 -> 0", "moves_to": 0.11},
+    {"assumption": "P(slip) 0.25 -> 0.50", "moves_to": 0.27},
+    {"assumption": "cost sd $60M -> $40M", "moves_to": 0.13},
+    {"assumption": "cost sd $60M -> $80M", "moves_to": 0.24},
+    {"assumption": "revenue centre $4,804M -> Street $4,744M", "moves_to": 0.13},
+    {"assumption": "revenue centre -> $4,850M", "moves_to": 0.25},
+    {"assumption": "centre = evidence-only build 52.4% (sentence fully sandbagged)", "moves_to": 0.70},
+    {"assumption": "anchor = Street + unshrunken h=0 bias (50.9, sd 1.41)", "moves_to": 0.34},
+    {"assumption": "base-rate class = printed above the sentence at all, 2026 regime 2 of 2", "moves_to": 0.25}
+  ],
+  "monitoring": [
+    {"date": "2026-09-17/2026-10-02", "event": "September dumps; nights band; Kalshi ladder", "action": "each +$50M of 3Q26 revenue ~ +0.03"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.17 (0.10-0.27) with the S&M arithmetic"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side previews; BKNG/EXPE prints; management remarks on Q3 spend", "action": "'spend shifted to Q4' -> 0.25; confirmed Q3 campaign -> 0.12"},
+    {"date": "2026-11-04", "event": "LSEG 3Q26 EBITDA mean re-capture", "action": "Street >= 50.3% -> 0.20"},
+    {"date": "2026-11-05", "event": "3Q26 release: adjusted EBITDA, revenue, S&M", "action": "resolve; audit read: S&M <= $710M with revenue >= $4,800M implied pre-print P ~0.35; S&M >= $770M ~0.08"}
+  ],
+  "log": "docs/pitch-forecasts/questions/risk-q3-margin-sandbagged/research-log.md"
+}

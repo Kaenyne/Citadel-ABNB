@@ -1,0 +1,178 @@
+
+Original-letter quote checks
+20
+
+Corrected descriptor classes
+print_quarter  guide_type            direction  printed_growth  class
+         2Q22 directional               stable          24.789 stable
+         3Q22 directional                below          25.094   down
+         4Q22 directional               approx          20.163 stable
+         1Q23 directional below_revenue_growth          18.609   down
+         2Q23 directional                above          10.993     up
+         3Q23 directional                below          13.541   down
+         4Q23 directional                below          12.018   down
+         1Q24 directional               stable           9.496 stable
+         2Q24 directional                below           8.688   down
+         3Q24 directional                above           8.481     up
+         4Q24 directional               stable          12.348   down
+         1Q25 directional                below           7.919   down
+         2Q25 directional               stable           7.434 stable
+         3Q25      bucket                  NaN           8.795   down
+         4Q25      bucket                  NaN           9.820   down
+         1Q26 directional                below           9.154   down
+         2Q26      bucket                  NaN          10.342     up
+
+all observable guides
+{'n': 17, 'down': 10, 'stable': 4, 'up': 3}
+
+resolved target quarters only
+{'n': 16, 'down': 10, 'stable': 4, 'up': 2}
+
+W1: print quarter 1Q23+
+{'n': 14, 'down': 9, 'up': 3, 'stable': 2}
+
+W2: print quarter 1Q24+
+{'n': 10, 'down': 6, 'stable': 2, 'up': 2}
+
+direct-comparison-only sensitivity
+{'n': 15, 'down': 8, 'stable': 4, 'up': 3}
+
+Format counts, all 17
+{'directional': 14, 'bucket': 3}
+
+Format counts, print before 2025
+{'directional': 11}
+
+November nights classes
+{'down': 3, 'up': 1}
+
+Reaction-panel direction counts
+{-1.0: 8, nan: 6, 0.0: 6, 1.0: 3}
+
+Resolved volume buckets
+print_quarter         metric  actual  beat_mid_pp  beat_top_pp
+         3Q25    gbv_yoy_pct   15.91         4.91         3.91
+         3Q25 nights_yoy_pct    9.82         4.82         3.82
+         4Q25    gbv_yoy_pct   19.18         6.18         5.18
+         4Q25 nights_yoy_pct    9.15         1.15         0.15
+         1Q26    gbv_yoy_pct   15.74         4.74         3.74
+
+Volume sample dependence
+{'rows': 5, 'print_events': 3, 'above_top': 5, 'nights_rows': 2}
+
+Revenue beats all
+{'n': 19, 'above_mid': 19, 'above_top': 15}
+
+Revenue beats W1 target 1Q23+
+{'n': 14, 'above_mid': 14, 'above_top': 11}
+
+Revenue beats W2 target 1Q24+
+{'n': 10, 'above_mid': 10, 'above_top': 9}
+
+Trailing-eight cushion mean/median/sample SD
+(np.float64(1.8567430632975808), np.float64(1.7904910308494282), np.float64(1.0047995786447292))
+
+Q4 cushions
+target_period  cushion_pct
+         4Q21     6.759582
+         4Q22     3.369565
+         4Q23     3.162791
+         4Q24     2.691511
+         4Q25     3.271375
+
+Q4 mean/median/last-three mean
+(np.float64(3.8509649296892823), np.float64(3.271375464684012), np.float64(3.041892516507335))
+
+FY revenue guide updates
+print_quarter target_period  value_mid  change
+         4Q25        FY2026       11.0     NaN
+         1Q26        FY2026       14.0     3.0
+         2Q26        FY2026       15.0     1.0
+
+Revenue raises/updates
+(2, 2)
+
+All November margin sentences
+print fy_sentence_type  actual_minus_guide_bp  q4_actual_minus_implied_pts
+ 3Q21             none                    NaN                        12.27
+ 3Q22             none                    NaN                         4.60
+ 3Q23       approx_yoy                   77.0                         3.65
+ 3Q24           approx                   90.0                         4.26
+ 3Q25           approx                   10.0                         0.69
+
+November point beats: n/mean bp
+(3, np.float64(59.0))
+
+November letters with an existing same-year FY guide
+{'n': 4, 'approx_point': 3, 'omitted': 1}
+
+L0 quarterly kappa: n/mean/sample SD/trailing-eight mean
+(12, np.float64(0.6039538075130505), np.float64(0.30013804644373737), np.float64(0.5156727823105556))
+
+Actual consensus provenance
+period as_of_row_date revenue_obs_date  revenue_mean  revenue_n  revenue_sd  revenue_high
+  3Q26     2026-09-11       2026-09-07    4744.32212       37.0    24.27626        4792.0
+  4Q26     2026-09-11       2026-09-07    3161.81627       37.0    48.55902        3223.0
+  FY26     2026-09-11       2026-09-07   14189.55705       44.0    59.21929       14296.0
+
+log: deflate entire FY
+{'musd': np.float64(14104.927485089462), 'growth_pct': np.float64(15.226921698304574)}
+
+illustrative: deflate only Q4
+{'musd': np.float64(14170.69929888668), 'growth_pct': np.float64(15.764229220543102)}
+
+quarter-sum version
+{'musd': np.float64(14173.280638886681), 'growth_pct': np.float64(15.785316876780332)}
+
+Bridge range is fixed-GBV conversion extrema
+(np.float64(3156.00796755095), np.float64(3201.2165536755674))
+
+Bridge points
+quarter  revenue_musd
+   3Q26   4804.035503
+   4Q26   3178.107848
+
+C02 original decomposition
+{'a': 0.2116, 'b': 0.1884, 'c': 0.3964, 'd': 0.1734, 'e': 0.0302}
+
+C02 normal bins 9.5
+[0.36774269705599305, 0.2645146058880139, 0.36774269705599305]
+
+C02 repaired-bin tree 9.5
+{'a': 0.199291, 'b': 0.168516, 'c': 0.382322, 'd': 0.216194, 'e': 0.033677}
+
+C02 normal bins 9.6
+[0.39347616771494187, 0.2639340631210201, 0.34258976916403805]
+
+C02 repaired-bin tree 9.6
+{'a': 0.208783, 'b': 0.17102, 'c': 0.379176, 'd': 0.208104, 'e': 0.032917}
+
+Maximum one-point interval mass under SD 1.48
+0.2645146058880139
+
+Original P(Q3 >=10 | C02=a)
+0.7542533081285443
+
+Reviews error sample: n/RMSE/naive RMSE/mean/sample SD
+(10, 1.4801155663934527, 2.1591433023308118, np.float64(-0.46450310902658065), np.float64(1.4813578424258271))
+
+C03 original
+{'fy_mean': np.float64(14166.0), 'growth_pct': np.float64(15.72583939220651), 'sd_pp': np.float64(0.7306814729188105), 'p_ge16': 0.35375132635326134, 'vector': {'a': 0.3679, 'b': 0.168284, 'c': 0.273015, 'd': 0.090801, 'e': 0.1}}
+
+C03 Street-centred
+{'fy_mean': np.float64(14115.0), 'growth_pct': np.float64(15.30920676415326), 'sd_pp': np.float64(0.6979824969624647), 'p_ge16': 0.16116040200265225, 'vector': {'a': 0.254215, 'b': 0.168284, 'c': 0.320627, 'd': 0.156873, 'e': 0.1}}
+
+C03 B2 guide
+{'fy_mean': np.float64(14242.0), 'growth_pct': np.float64(16.346703700678056), 'sd_pp': np.float64(1.0101192378810127), 'p_ge16': 0.634287458118026, 'vector': {'a': 0.491438, 'b': 0.168284, 'c': 0.171579, 'd': 0.068698, 'e': 0.1}}
+
+C03 positive-correlation sensitivity
+{'fy_mean': np.float64(14166.0), 'growth_pct': np.float64(15.72583939220651), 'sd_pp': np.float64(0.8645539779640848), 'p_ge16': 0.37557923671557414, 'vector': {'a': 0.368843, 'b': 0.168284, 'c': 0.252735, 'd': 0.110137, 'e': 0.1}}
+
+Kalshi stored fields
+{'volume': None, 'volume_fp': '428.14', 'open_interest': None, 'open_interest_fp': '423.14', 'liquidity_dollars': '0.0000', 'yes_bid_dollars': '0.5000', 'yes_ask_dollars': '0.5500'}
+
+Audit C02 unrounded
+{'a': 0.171484, 'b': 0.178516, 'c': 0.3, 'd': 0.3, 'e': 0.05}
+
+Audit C03 unrounded
+{'mean_musd': np.float64(14174.322650860277), 'vector': {'a': 0.346856, 'b': 0.1925, 'c': 0.209775, 'd': 0.100869, 'e': 0.15}}
