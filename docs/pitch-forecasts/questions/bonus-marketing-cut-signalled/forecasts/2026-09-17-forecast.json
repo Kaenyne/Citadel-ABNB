@@ -1,0 +1,52 @@
+{
+  "question_id": "B03",
+  "slug": "bonus-marketing-cut-signalled",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.18, "ci": [0.10, 0.30]},
+  "companion": {"path_split": {"q4_margin_up_attributed_to_slower_marketing": 0.09, "fy27_leverage_remark_qa": 0.05, "stated_q4_cut_to_hold_floor": 0.02, "resolver_loose_efficient_phrase": 0.02},
+                "p_given_c09": {"up": 0.30, "down": 0.07}, "p_given_c04": {"a_hold": 0.25, "b_approx_36": 0.20, "d_softer": 0.10},
+                "p_strict_reading": 0.15, "p_loose_reading_any_efficient_phrase": 0.45},
+  "estimates": {
+    "base_rate": 0.09,
+    "decomposition": 0.26,
+    "anchor": 0.20,
+    "anchor_source": "No external market (Polymarket/Kalshi scans 2026-09-17T08:03:45Z). Internal anchor: the line build's 5 Nov sequence (40_line_build.md short case: FY sentence held with a visible $177M Q4 marketing cut, or the floor at risk) read through C04 (a) 0.26 and (b) 0.42 with P(stated) 0.5 / 0.25, shaded to 0.20 for the 2026 habit of not naming cost lines. Base rate: forward slower-than-revenue / reduction marketing statements in 4 of 23 prints since 4Q20, 1 of 18 since 1Q22, 0 of 10 since 1Q24, 0 of 5 Novembers. Decomposition: union of four paths (C09 P(up) 0.40 x 0.30 marketing named; 2027 leverage Q&A 0.08; stated cut 0.05; resolver 0.04).",
+    "final_minus_anchor": -0.02,
+    "not_independently_derived_flag": true,
+    "independence_note": "anchor and decomposition share C04/C09 and the line build; the base rate (0 of 10 since 1Q24) is the independent leg and pulls the final below both"
+  },
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": -0.3,
+    "adr_pts": 0,
+    "rev_4q26_musd": -9,
+    "rev_fy27_musd": -50,
+    "margin_fy26_pp": 1.2,
+    "margin_fy27_pp": 1.1,
+    "eps_fy27_usd": 0.27,
+    "stock_usd_per_share": -3,
+    "ev_stock_usd_per_share": -0.5,
+    "material": false,
+    "note": "Direct cost-side deltas at the line build's short-case cut ($177M of 4Q26 marketing = +1.24pp FY26; FY27 marketing +5% instead of +15% = +1.34pp, +$0.30 EPS) less a judgement demand effect (-0.3pt 4Q26 nights, -$50M FY27 revenue; no repo elasticity). Vs the memo base case the FY26 margin is ~-0.2pp because the signal arrives with the short-case revenue path (35.5% held vs 35.7%). Stock -3 (range -8 to +5): no cost term in the reaction function; read as growth capitulation alongside the weak Q4 guide. EV -0.5/share: immaterial as a stock line; carry as the tell that the floor is being defended with the growth budget."
+  },
+  "sensitivity": [
+    {"assumption": "P(marketing named as slower | Q4 sentence up) 0.30 -> 0.15 / 0.50", "moves_to": "0.13 / 0.25"},
+    {"assumption": "C09 P(up) 0.40 -> 0.25 / 0.55", "moves_to": "0.14 / 0.22"},
+    {"assumption": "P(2027 leverage remark in Q&A) 0.08 -> 0.03 / 0.15", "moves_to": "0.14 / 0.24"},
+    {"assumption": "resolver counts generic 'efficient marketing' phrases", "moves_to": 0.45},
+    {"assumption": "base-rate window all 23 prints (4/23) instead of 1Q24+ (0/10)", "moves_to": 0.21},
+    {"assumption": "3Q26 margin prints >= 51.5% (Q3 step slipped into Q4)", "moves_to": 0.10},
+    {"assumption": "2027 launch slate pre-announced before 5 Nov", "moves_to": 0.12}
+  ],
+  "monitoring": [
+    {"date": "2026-09-17/2026-10-02", "event": "any Airbnb conference appearance or 8-K (none scheduled; CFO absent since 6 Aug)", "action": "Mertz on 2H26 marketing front-loaded into Q3 -> 0.25; on 2027 launch spend -> 0.12"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.18 (0.10-0.30) as a tell inside the short case; state strict/loose readings 0.15/0.45"},
+    {"date": "2026-10-20/2026-10-30", "event": "LSEG 4Q26 margin consensus refresh; BKNG/EXPE Q3 prints", "action": "Street 4Q26 margin >= 29.5% -> +0.02; peer marketing pull-back framed as efficiency -> +0.02"},
+    {"date": "2026-11-05", "event": "3Q26 letter, prepared remarks, Q&A; 10-Q S&M line", "action": "resolve by conventions 1-5; S&M print <= $710M means the Q3 step never came (No more likely)"},
+    {"date": "2027-02-11", "event": "4Q26 letter (FY27 guide)", "action": "out of scope; F03/F04 carry FY27 marketing"}
+  ],
+  "log": "docs/pitch-forecasts/questions/bonus-marketing-cut-signalled/research-log.md"
+}
