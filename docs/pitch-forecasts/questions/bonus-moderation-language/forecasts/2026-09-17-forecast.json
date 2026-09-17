@@ -1,0 +1,56 @@
+{
+  "question_id": "B01",
+  "slug": "bonus-moderation-language",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.34, "ci": [0.24, 0.46]},
+  "companion": {"p_strict_list_only": 0.30, "p_synonyms_generous": 0.40,
+                "p_yes_and_c02_d": 0.21, "p_yes_and_c02_not_d": 0.12,
+                "p_yes_given_c02": {"a": 0.06, "b": 0.13, "c": 0.25, "d": 0.67, "e": 0.30},
+                "p_yes_given_q3_branch": {"ge_10": 0.24, "9_to_10": 0.32, "lt_9": 0.43},
+                "p_q3_lt_9_given_yes": 0.46,
+                "historical_day1_excess_given_language_pct": {"strict_n6": -5.4, "synonyms_n8": -6.6, "no_language": 1.2}},
+  "estimates": {
+    "base_rate": 0.35,
+    "decomposition": 0.33,
+    "anchor": 0.31,
+    "anchor_source": "No external market (Polymarket/Kalshi scans 2026-09-17T08:03:45Z). Internal anchor: C02 q4-nights-bucket revision 2 option (d) = 0.31 (2026-09-17), the language block this question overlaps. Base rate: strict listed phrases applied to forward demand in 6 of 16 letters 3Q22-2Q26 (W1 5/14, W2 3/10, November 2/4, bucket era 1/4); with synonyms 8/16. Decomposition: C02's tree x P(language | sentence type), datasets/b01_decomposition.py.",
+    "final_minus_anchor": 0.03,
+    "not_independently_derived_flag": true,
+    "independence_note": "anchor and decomposition share C02's tree; the base rate is the independent leg (16 letters classified by hand); all three agree within 4 points"
+  },
+  "impact": {
+    "nights_3q26_pts": -0.6,
+    "nights_4q26_pts": -0.4,
+    "adr_pts": 0,
+    "rev_4q26_musd": -22,
+    "rev_fy27_musd": -38,
+    "margin_fy26_pp": -0.2,
+    "margin_fy27_pp": -0.15,
+    "eps_fy27_usd": -0.04,
+    "stock_usd_per_share": -4,
+    "ev_stock_usd_per_share": -1.4,
+    "material": false,
+    "note": "Stock -4 is vs the S01 unconditional (conditional day-1 mean -5.4% for strict-word prints, n 6, vs -2.9% median); vs the memo base case the increment is ~0 because the base-case cell already conditions on the deceleration and guide the word accompanies. EV -1.4/share vs unconditional; ~0 incremental. Verdict: not a separate memo line; quote as the language marker of the base case (P 0.34; 4 of 8 such prints fell >= 8% day 1). P(Yes and C02 = d) = 0.21 is the same event as C02's directional 'moderate'."
+  },
+  "sensitivity": [
+    {"assumption": "P(word | directional moderate/decelerate sentence) 0.85 -> 0.70", "moves_to": 0.30},
+    {"assumption": "P(softening phrase | high-single bucket) 0.25 -> 0.10 / 0.40", "moves_to": "0.28 / 0.37"},
+    {"assumption": "P(softening phrase | mid-single bucket) 0.40 -> 0.20 / 0.60", "moves_to": "0.30 / 0.35"},
+    {"assumption": "3Q26 branches: Street/Kalshi N(11.0,1.7) / external stack N(9.2,1.7) / team N(9.9,1.48)", "moves_to": "0.28 / 0.34 / 0.31"},
+    {"assumption": "C02 P(directional) 0.20 / 0.40 everywhere", "moves_to": "0.29 / 0.38"},
+    {"assumption": "strict listed stems only (no synonyms)", "moves_to": 0.30},
+    {"assumption": "a named macro/geopolitical shock before 5 Nov (1Q26 template)", "moves_to": 0.44}
+  ],
+  "monitoring": [
+    {"date": "2026-09-18/2026-09-30", "event": "September Inside Airbnb dumps; R01/C02 re-centre", "action": "re-run b01_decomposition.py; each 0.1 of mass from >=10 to <9 adds ~+0.02"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.34 (0.24-0.46) as the base case's language marker; do not add its EV"},
+    {"date": "2026-10-13/2026-10-15", "event": "September lodging CPI; NTTO September arrivals", "action": "a named demand shock -> +0.10 via the macro-uncertainty channel"},
+    {"date": "2026-10-28/2026-10-30", "event": "BKNG/EXPE Q3 prints", "action": "EXPE Q4 deceleration >= 2pts with softening language -> +0.03; accelerating -> -0.03"},
+    {"date": "2026-11-05", "event": "3Q26 letter then prepared remarks", "action": "resolve on the stems applied to forward demand; ADR/cost/FX uses excluded; record the resolving sentence"},
+    {"date": "2026-11-06", "event": "day-1 close", "action": "feed S01/X01; if Yes read against the base-case cell, not additive"}
+  ],
+  "log": "docs/pitch-forecasts/questions/bonus-moderation-language/research-log.md"
+}

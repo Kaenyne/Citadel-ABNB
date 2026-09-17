@@ -8,3 +8,5 @@ What FY26 adjusted EBITDA margin sentence Airbnb gives at the 3Q26 print (5 Nov 
 - `sources/` — Polymarket and Kalshi API snapshots (2026-09-17T02:52–02:54Z; no margin market exists) and `web_search_log.md` (4 WebSearch calls shared with C09, two fetches, one stale source discarded).
 
 Reproduce: `py -3.13 datasets/mc_sentence_model.py` from the `datasets/` folder (seed 20260917, 400,000 draws, ~10 s).
+
+**Revision 2 (2026-09-17, audit response A03).** Final vector a 0.33 / b 0.30 / c 0.05 / d 0.27 / e 0.05 (leading option now (a); Astra 0.30 / 0.39 / 0.06 / 0.22 / 0.03). Model `datasets/mc_sentence_model_v2.py` (reads C01's `c01_v2_final_mixture_hist.csv`; `py -3.13 -B` from this folder, ~40 s) → `mc_sentence_results_v2.json`, `mc_joint_and_conditionals_v2.json` (the one C04×C09 joint and every conditional), `mc_run_log_v2.txt`; ledgers `fy_margin_guide_ledger_v2.csv`, `quarterly_margin_sentence_ledger_v2.csv`. Revision-1 files kept as the audit trail. Response: `docs/pitch-forecasts/audits/A03-audit-response.md`.

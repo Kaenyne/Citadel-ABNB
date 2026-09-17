@@ -1,0 +1,57 @@
+item,value
+quarters 1Q23-2Q26 n,14
+reported <= 2.0,5
+reported <= 2.0 with FX >= -0.5,0
+reported <= 2.0 with residual >= 3.5,0
+min one-quarter residual change,-1.4668461030408286
+sd of one-quarter residual change (n13),0.9348274015752396
+"AR(1) const, rho","0.750, 0.747"
+AR(1) innovation sd,0.9391733837532262
+AR(1) 3Q26 residual point,4.373896036629099
+"v3+K walk-forward midpoint: RMSE, bias (model-actual)","0.927, -0.308"
+"v3+K walk-forward eur: RMSE, bias (model-actual)","1.093, -0.377"
+"v3+K walk-forward baskets: RMSE, bias (model-actual)","0.829, -0.239"
+"decel quarters (actual < prior): n, mean err, rmse","5, +0.07, 0.89"
+"accel quarters: n, mean err, rmse","5, -0.69, 0.96"
+"P(<=2.0) N(card midpoint 3.43, sd 0.93)",0.061552092335350916
+"P(<=2.0) N(card midpoint bias-corrected 3.74, sd 0.93)",0.030479456606597566
+"P(<=2.0) N(card midpoint 3.43, decel-quarter rmse 1.25)",0.12631181849965734
+"P(<=2.0) N(card eur 2.74, sd 1.09)",0.24916246230806877
+"P(<=2.0) N(card eur bias-corrected 3.12, sd 1.09)",0.1534571736974264
+"P(<=2.0) N(card eur 2.74, decel-quarter rmse 1.25)",0.27692529419708356
+"P(<=2.0) N(card baskets 4.12, sd 0.83)",0.005253136258036306
+"P(<=2.0) N(card baskets bias-corrected 4.36, sd 0.83)",0.002204816976588697
+"P(<=2.0) N(card baskets 4.12, decel-quarter rmse 1.25)",0.04494294003133997
+R07 structural MC P(<=2.0) [reproduction],0.1723775
+R07 MC median,3.115903910783611
+R07 MC E[reported | <=2.0],1.3177137578274438
+B02 MC P(<=2.0),0.17592
+B02 MC median,3.085620093570948
+B02 MC P(>=4.4) [R07 check],0.1062875
+B02 MC E[reported | <=2.0],1.3288693705956898
+B02 MC E[reported | >2.0],3.403957953515626
+B02 MC P(<=2.5),0.3027975
+B02 MC P(<=1.0),0.0415325
+B02 MC P(<=0),0.005635
+"B02 MC P(<=2.0 | fx<=-1.0), mass","0.434, 0.17"
+"B02 MC P(<=2.0 | fx in (-1.0,-0.2)), mass","0.171, 0.49"
+"B02 MC P(<=2.0 | fx>=-0.2), mass","0.055, 0.34"
+"B02 MC P(<=2.0 | resid<=3.6), mass","0.724, 0.13"
+"B02 MC P(<=2.0 | resid 3.6-4.5), mass","0.237, 0.27"
+"B02 MC P(<=2.0 | resid>4.5), mass","0.028, 0.60"
+B02 MC residual all persistence,0.0799325
+B02 MC residual all momentum,0.02575
+B02 MC residual all AR(1),0.250015
+B02 MC residual all mean-rev 3.6,0.490215
+B02 MC R07 weights (0.55/0.20/0/0.25),0.172175
+B02 MC reversion-heavy (0.30/0.10/0.35/0.25),0.2366775
+B02 MC FX all midpoint,0.1494775
+B02 MC FX all baskets,0.05575
+B02 MC FX all euro,0.3497875
+B02 MC mix centre -0.98 (H fills),0.1420925
+B02 MC mix centre -1.45 (geo drag band low),0.247095
+B02 MC mix centre -1.75 (LatAm +27.5% mapped at the low end),0.3331525
+B02 MC mix sd 0.6,0.195705
+"modest/moderate-increase ADR guides resolved: n, printed <=2.0","5, 2"
+sequential route 3Q26 reported under 2023/24/25 Q2->Q3 ex-FX steps,"2.07, 2.57, 4.57"
+"sequential route P(<=2.0), N(5.30+dFX+mean dex, sd 1.3)",0.20523212550126496

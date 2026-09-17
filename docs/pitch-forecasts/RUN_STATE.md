@@ -49,3 +49,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 03:52 resumed. Launched: A02 response finisher, A03 response, A12 forecast, A13 forecast (all Fable); Codex audit A04.
 - 03:57 heartbeat: no change since 03:52 relaunch; running A02 response finisher, A03 response, A12, A13 forecasts; Codex audit A04.
 - 03:57 A02 response done (C02 rev2 0.18/0.17/0.30/0.31/0.04; C03 rev2 0.36/0.16/0.28/0.08/0.12; 16 findings accepted; A02 DONE). A14 forecast (B01-B03) launched on Fable. Running: A03 response; A12, A13, A14 forecasts; Codex audit A04.
+- 04:15 A03 response done (C04 rev2 0.33/0.30/0.05/0.27/0.05; C09 rev2 0.22/0.26/0.47/0.05; 17 accepted, 3 in part; A03 DONE). A15 forecast (B04-B07) launched on Fable. Running: A12, A13, A14, A15 forecasts; Codex audit A04.
