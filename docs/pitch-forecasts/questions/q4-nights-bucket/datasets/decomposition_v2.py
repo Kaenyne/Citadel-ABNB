@@ -113,12 +113,12 @@ anchor = {o: anchor_fmt['bucket'] * anchor_bucket[o] for o in 'abcd'}
 anchor['d'] += anchor_fmt['directional'] * .60; anchor['a'] += anchor_fmt['directional'] * .40; anchor['e'] = anchor_fmt['none']
 print('== anchor (Street level -> language, dependent construction)', fmt(anchor))
 
-# ---- 4. Final: stated blend 0.5 decomposition + 0.3 base rate + 0.2 anchor, (e) set to 0.04 by the section-6
-#         resolution audit (the 0.01 comes from (c)); rounded to 2dp; sums to 1.
+# ---- 4. Final: stated blend 0.5 decomposition + 0.3 base rate + 0.2 anchor, rounded to 2dp, then (e) set to
+#         0.04 by the section-6 resolution audit (the 0.01 comes from (d), the largest option); sums to 1.
 w = dict(dec=.5, base=.3, anchor=.2)
 blend = {o: w['dec'] * dec[o] + w['base'] * base[o] + w['anchor'] * anchor[o] for o in opts}
 print('== blend (0.5/0.3/0.2)', fmt(blend))
-final = dict(a=.19, b=.18, c=.30, d=.29, e=.04)
+final = dict(a=.18, b=.17, c=.30, d=.31, e=.04)
 for name, v in [('base', base), ('decomposition', dec), ('anchor', anchor), ('final', final)]:
     assert abs(sum(v.values()) - 1) < 1e-6, (name, sum(v.values()))
 print('== final', fmt(final))
