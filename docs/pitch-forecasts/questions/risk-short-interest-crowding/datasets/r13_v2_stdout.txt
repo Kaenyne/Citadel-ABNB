@@ -1,0 +1,51 @@
+rev1_ar1_full_pool                                         P(>=5) 0.0051  P(>=4) 0.0682  P(>=3.5) 0.1746  p50 2.90  p90 3.81  p99 4.75
+rev1_ar1_full_pool_jump                                    P(>=5) 0.0176  P(>=4) 0.1287  P(>=3.5) 0.2720  p50 3.02  p90 4.14  p99 5.26
+rev1_ar1_full_pool_jump_overlay_0.70_p0.41                 P(>=5) 0.0307  P(>=4) 0.1845  P(>=3.5) 0.3695  p50 3.24  p90 4.37  p99 5.51
+clean_pool_no_jump                                         P(>=5) 0.0000  P(>=4) 0.0042  P(>=3.5) 0.0567  p50 2.80  p90 3.36  p99 3.86
+clean_pool_jump                                            P(>=5) 0.0040  P(>=4) 0.0589  P(>=3.5) 0.1672  p50 2.90  p90 3.76  p99 4.68
+BASE_clean_pool_jump_overlay_0.35_p0.38                    P(>=5) 0.0054  P(>=4) 0.0733  P(>=3.5) 0.2000  p50 2.98  p90 3.85  p99 4.78
+clean_pool_jump_overlay_0.35_p0.41                         P(>=5) 0.0060  P(>=4) 0.0761  P(>=3.5) 0.2055  p50 2.98  p90 3.87  p99 4.81
+clean_pool_jump_overlay_0.70_p0.38                         P(>=5) 0.0093  P(>=4) 0.1013  P(>=3.5) 0.2634  p50 3.08  p90 4.01  p99 4.97
+clean_pool_jump_overlay_1.5_p0.38                          P(>=5) 0.0359  P(>=4) 0.2474  P(>=3.5) 0.4316  p50 3.32  p90 4.51  p99 5.54
+clean_pool_jump_x2_overlay_0.35                            P(>=5) 0.0187  P(>=4) 0.1419  P(>=3.5) 0.3033  p50 3.11  p90 4.19  p99 5.27
+clean_pool_jump_bigger_U(1.5,2.5)_overlay_0.35             P(>=5) 0.0440  P(>=4) 0.1534  P(>=3.5) 0.2405  p50 2.99  p90 4.47  p99 5.85
+clean_pool_jump_overlay_0.35_start_3.0                     P(>=5) 0.0136  P(>=4) 0.1440  P(>=3.5) 0.3672  p50 3.32  p90 4.19  p99 5.11
+clean_pool_jump_overlay_0.35_start_2.0                     P(>=5) 0.0033  P(>=4) 0.0456  P(>=3.5) 0.1353  p50 2.76  p90 3.64  p99 4.60
+clean_pool_jump_overlay_0.35_conditional_down_print        P(>=5) 0.0081  P(>=4) 0.0972  P(>=3.5) 0.2597  p50 3.11  p90 3.99  p99 4.93
+clean_pool_jump_no_overlay_conditional_up_print            P(>=5) 0.0042  P(>=4) 0.0596  P(>=3.5) 0.1669  p50 2.90  p90 3.76  p99 4.69
+{
+ "n_settlements": 100,
+ "latest_pct_592m": 2.403470777027027,
+ "latest_pct_598_8m": 2.376233672200599,
+ "threshold_shares_m_592m": 29.6,
+ "threshold_shares_m_598_8m": 29.9392841,
+ "rise_needed_pts_592m": 2.596529222972973,
+ "overlay_p_s01_rev2": 0.38,
+ "down5_rises": {
+  "n": 6,
+  "values": [
+   0.68,
+   0.7,
+   -0.32,
+   0.51,
+   0.06,
+   0.44
+  ],
+  "mean": 0.345,
+  "median": 0.475,
+  "max": 0.7
+ },
+ "ar1": {
+  "slope": 0.9056835658201824,
+  "intercept": 0.2621230925635323,
+  "long_run_mean": 2.7791878991500605,
+  "resid_sd_full": 0.30715355541686384,
+  "resid_sd_clean": 0.24881912572165257,
+  "n_full": 99,
+  "n_clean": 97,
+  "removed_residuals": [
+   0.966,
+   1.518
+  ]
+ }
+}

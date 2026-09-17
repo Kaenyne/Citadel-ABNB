@@ -1,5 +1,76 @@
-  File "C:\Users\krish\citadel-abnb\docs\pitch-forecasts\audits\A13-reproduce.py", line 315
-    ```
-    ^
-SyntaxError: invalid syntax
-exit 1
+
+========== R14  day-1 record and the S1 Q4 residual ==========
+Q4 day-1 raw: {'2020Q4': 13.3, '2021Q4': 3.6, '2022Q4': 13.4, '2023Q4': -1.7, '2024Q4': 14.4, '2025Q4': 4.6}
+Q4: positive 5/6, >=5% 3/6, >=3.5% 5/6, mean 7.933, median 8.95
+  all 23           n 23  >=+5% 6  rate 0.261  Laplace 0.280
+  3Q22+ (16)       n 16  >=+5% 3  rate 0.188  Laplace 0.222
+  post-2022 (14)   n 14  >=+5% 2  rate 0.143  Laplace 0.188
+  log/JSON claim post-2022 '3 of 14 (0.21)' -> the file gives 2 of 14
+S1 residual: Q4 mean 7.720 (sd 7.537, n 4), non-Q4 -2.567, gap 10.288, Welch t 2.379
+
+========== R14  the Q4 uplift is already inside the S01 cells ==========
+  cell aa  full   7.43 (n3)   ex-Q4   8.85 (n2)
+  cell ab  full  -0.77 (n3)   ex-Q4  -8.35 (n2)
+  cell fl  full  -8.70 (n1)   ex-Q4  -8.70 (n1)
+  cell da  full   0.78 (n5)   ex-Q4  -2.60 (n3)
+  cell db  full  -7.55 (n4)   ex-Q4  -7.55 (n4)
+  Q4 deviations from ex-Q4 cell means: [('4Q25', -4.25), ('4Q24', 22.75), ('4Q22', 16.0), ('4Q23', 0.9)] -> leave-one-out premium 8.85 (the log uses the S1 gap 10.29)
+
+========== R14  Feb event sd from the Jan / Mar 2027 expiries ==========
+  background 29.00% -> event sd 11.154%
+  background 32.30% -> event sd 9.460%
+  background 33.85% -> event sd 8.473%
+  background 36.00% -> event sd 6.773%
+  anchor at sd 8.5: P(>=+5%) 0.2626 at mode -0.4, 0.2782 at mean 0
+  anchor at sd 9.0: P(>=+5%) 0.2743 at mode -0.4, 0.2893 at mean 0
+  anchor at sd 9.5: P(>=+5%) 0.2849 at mode -0.4, 0.2993 at mean 0
+
+========== R14  published mixture, and the two corrections ==========
+published (full cells, uplift 3.0, p_guide 0.33): {"p_ge5": 0.2571, "p_le_m5": 0.2717, "p_lt0": 0.5126, "mean": -0.1666, "sd": 9.0558, "E_up": 10.7651, "E_dn": -10.6946, "pctiles": {"5": -14.32, "25": -5.54, "50": -0.24, "75": 5.18, "95": 14.15}}
+  the file's numpy run: p_ge5 0.2574, mean -0.13, sd 9.09, E[r|>=5] +10.84, E[r|<=-5] -10.66
+F02 revision 2 (p_guide 0.45)                   : p_ge5 0.2837
+ex-Q4 cells + leave-one-out uplift 8.85 x 0.3   : p_ge5 0.2027
+both corrections (auditor mixture)              : {"p_ge5": 0.2212, "p_le_m5": 0.3021, "p_lt0": 0.5566, "mean": -0.9627, "sd": 8.9726, "E_up": 10.7471, "E_dn": -10.724, "pctiles": {"5": -14.91, "25": -6.24, "50": -1.08, "75": 4.22, "95": 13.44}}
+  up-tail EV +2.77 pts vs down-tail EV -2.91 pts: they net to the mean (A13-02)
+
+========== R12  feed, live targets, D panel ==========
+feed 'up' rows since 2021: 26, to Buy-equivalent: 21
+to-Buy by year: {'2021': 5, '2022': 1, '2023': 1, '2024': 2, '2025': 4, '2026': 8}
+live targets n 32  mean 181.8125  median 182.5  buckets {'Buy': 22, 'Hold': 8, 'Sell': 2}
+Morgan Stanley is in the feed at $125 -> replacing with $170 gives base 183.21875; $190 needs +3.70%
+panel n_targets>=10: 1429 rows, 2021-01-04 to 2026-09-11; threshold +3.700%
+  63s all n 1366 P(end) 0.3719 P(max) 0.4407 ratio 1.185 | 2023+ n  863 0.4403 / 0.4902 ratio 1.113
+      no print in window n   27 P(end) 0.0741 mean -1.072% sd 3.134% | with print n 1339 P(end) 0.3779
+  35s all n 1394 P(end) 0.2181 P(max) 0.2396 ratio 1.099 | 2023+ n  891 0.2604 / 0.2649 ratio 1.017
+      no print in window n  577 P(end) 0.0191 mean -0.258% sd 2.083% | with print n  817 P(end) 0.3586
+  claim 5 reports the 35s 'with prints inside' as 0.22 / 0.26: those are the ALL-window figures
+
+========== R12  published parameters vs the revision-2 parameters of S02 and S04 ==========
+  published (S02/S04 revision 1)               P 0.4288 | up 0.2443  T 0.2846 (15 Dec 0.2475) | E[Dec|Yes] 175.6 vs 161.1
+  S02 rev2 weights + post drifts               P 0.4632 | up 0.2693  T 0.3132 (15 Dec 0.2723) | E[Dec|Yes] 177.6 vs 163.8
+  S04 rev2 tape residual sd 5.0%               P 0.4614 | up 0.2443  T 0.3225 (15 Dec 0.2804) | E[Dec|Yes] 173.4 vs 161.1
+  all revision-2 parameters                    P 0.5050 | up 0.2730  T 0.3648 (15 Dec 0.3172) | E[Dec|Yes] 178.5 vs 165.5
+  revision-2 + B11 feed capture 0.85           P 0.4766 | up 0.2222  T 0.3640 (15 Dec 0.3165) | E[Dec|Yes] 179.7 vs 165.5
+  revision-2 + capture + empirical post means  P 0.4612 | up 0.1870  T 0.3665 (15 Dec 0.3187) | E[Dec|Yes] 180.3 vs 165.5
+  the file's numpy run: P 0.4314, up 0.2454, T 0.2861 (15 Dec 0.2488), E[Dec|Yes] 175.7 vs 161.1
+  S04 revision 2 publishes P(mean target >= 190 on 15 Dec) = 0.32: the rebuild lands on it
+
+========== R13  series, windows, AR(1), and the jump double count ==========
+Nasdaq latest settlement 08/31/2026: 14228547 shares
+  on 592.000m shares: 2.4035% of shares; 5% needs 29.600m shares (x2.080 of the latest)
+  on 598.786m shares: 2.3762% of shares; 5% needs 29.939m shares (x2.104 of the latest)
+MarketBeat reconstruction vs the repo series: n 65, ratio mean 0.9999 sd 0.0009
+series n 100, mean 2.764, median 2.605, max 5.438, min 1.477, latest at the 34th percentile
+  8-settlement windows all                n 92  P(max>=5) 0.0870  P(max>=4) 0.1848  largest rise 2.34pt
+  8-settlement windows prior level < 3.0  n 61  P(max>=5) 0.0000  P(max>=4) 0.0492  largest rise 2.03pt
+  8-settlement windows prior level < 2.5  n 42  P(max>=5) 0.0000  P(max>=4) 0.0238  largest rise 2.03pt
+  the rise now required is 2.60pt: no window in the series delivers it
+  per-step sd 0.3147, 99 steps, rises >= 0.9pt: [0.94, 1.4] (both the Sep 2023 S&P 500 inclusion)
+  AR(1) slope 0.9057, intercept 0.2621, long-run mean 2.7792, residual sd 0.3072 (clean pool n 97 sd 0.2488)
+  AR(1) only                                     P(max>=5) 0.0055  P(max>=4) 0.0667
+  AR(1) + jump 2/99                              P(max>=5) 0.0181  P(max>=4) 0.1278
+  AR(1) + jump + down-print overlay (published)  P(max>=5) 0.0316  P(max>=4) 0.1847
+  episode shocks removed from the pool, + jump   P(max>=5) 0.0041  P(max>=4) 0.0601
+  episode shocks removed, + jump + overlay       P(max>=5) 0.0095  P(max>=4) 0.1044
+  the file's numpy run: 0.0051 / 0.0176 / 0.0307 for the first three
+exit 0

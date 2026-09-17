@@ -312,4 +312,3 @@ for name, pool, jq, op in [("AR(1) only", res, 0.0, 0.0),
     p5, p4 = ar1(pool, jq=jq, op=op)
     print("  %-46s P(max>=5) %.4f  P(max>=4) %.4f" % (name, p5, p4))
 print("  the file's numpy run: 0.0051 / 0.0176 / 0.0307 for the first three")
-```
