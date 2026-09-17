@@ -96,3 +96,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 12:56 heartbeat: no change; running A19 response (Opus).
 - 13:27 heartbeat: A19 response in progress (reproduce script run 13:01; response doc pending). No launch.
 - 13:29 A19 response done (X01 rev2 literal 0.14/0.17/0.55/0.14; material 0.14/0.20/0.48/0.18; print partition 0.26/0.45/0.29; per-option day-1 +2.2/-4.7/-3.8/+0.3; PW 15 Dec mean $167.3 / median $164.8; A19 DONE). ALL 19 BATCHES DONE. forecast_table.csv regenerated. Synthesis + memo v3 agent launched on Fable (prompts/synthesis_agent.md).
+- 13:50 SYNTHESIS.md, MEMO_CHANGES.md, memo v3 (md/html/pdf, 3 pages) written. RUN COMPLETE. Heartbeat cron deleted. Fable weekly limit hit on account 1 at ~10:45; account 2 used for A19 + synthesis. Codex credits return 19 Sep 7:05 PM.
