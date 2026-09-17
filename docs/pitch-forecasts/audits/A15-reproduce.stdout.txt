@@ -118,12 +118,12 @@ B04 decomposition replay: 0.1775 | without the convention-1 branch: 0.1475 | wit
 B04 EV as booked: -0.96 | conditioned on the churn-bearing half: -0.48
 
 ============ Cross-question coherence and JSON checks ============
-B04 bonus-host-churn-cited rev 1 p 0.15 [0.08, 0.26]
-B05 bonus-eu-regulation-hit rev 1 p 0.68 [0.5, 0.82]
-B06 bonus-geopolitical-headwind-cited rev 1 p 0.35 [0.22, 0.48]
-B07 bonus-us-inbound-falls rev 1 p 0.58 [0.42, 0.72]
+B04 bonus-host-churn-cited rev 2 p 0.21 [0.12, 0.33]
+B05 bonus-eu-regulation-hit rev 2 p 0.62 [0.42, 0.78]
+B06 bonus-geopolitical-headwind-cited rev 2 p 0.32 [0.2, 0.45]
+B07 bonus-us-inbound-falls rev 2 p 0.63 [0.47, 0.77]
 C02 q4-nights-bucket rev 2 sum 1.0 | P(bucket <= high single digits) = 0.61
 C07 rnpl-negative-effect-acknowledged rev 2 p 0.27 [0.15, 0.4]
-B01 bonus-moderation-language rev 1 p 0.34 [0.24, 0.46]
+B01 bonus-moderation-language rev 2 p 0.33 [0.23, 0.45]
 R04 risk-single-fee-take-rate-accretion-stated rev 2 p 0.52 [0.38, 0.66]
 B04 quotes C07 at 0.20; C07 revision 2 is 0.27 -> stale analogue

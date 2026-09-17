@@ -1,12 +1,12 @@
-view,centre_or_mean,sd,p_ge_4,p_le_1
-FY-implied Q4 at FY 4.4 (mean over Q3 cases),2.693,,,
-"AR(1) one step from Q3 avg 5.5 (phi .6, lr 2.25)",4.2,,,
-AR(1) one step from mid-Aug exit 4.4,3.54,,,
-"calendar adjustment (election -0.5, CR -0.2, comp credit 0)",-0.7,,,
-"decomposition (FY-implied + AR two-start, -0.7 calendar, no comp credit)",2.582,1.81,0.2166,0.1873
-"anchor: CoStar/TE FY26 +4.4 implied Q4, unadjusted",2.693,1.823,0.2373,0.1727
-base rate: reconstructed quarters 2023Q3-2026Q2 (Laplace),1.679,2.243,0.1786,0.3929
-blend 0.5/0.3/0.2,,,0.2152,0.224
-published joint object (mixture matched to the blend),2.574,1.81,0.2152,0.1883
-"rev-1 normal N(3.517, 1.676)",3.517,1.676,0.3866,0.0666
-rev-1 with the comp credit removed (audit A12-04),2.717,1.676,0.222,0.1528
+view,centre_or_mean,sd,p_ge_4,p_le_1,note
+FY-implied 4Q26 at FY26 +4.4 (mean over the three Q3 cases),2.693,,,,"measured Q1 3.53, Q2 5.60; weights [np.float64(0.23), np.float64(0.26), np.float64(0.27), np.float64(0.24)]"
+AR(1) one step from the Q3 average +5.5,4.2,,,,"phi 0.6, long run 2.25"
+AR(1) one step from the mid-Aug exit rate +4.4,3.54,,,,
+calendar + comp adjustment,-0.4,,,,"election -0.4, CR -0.2, comp credit +0.40 on the AR leg only (=+0.20 on the blend)"
+decomposition (weight 0.5),2.882,1.929,0.2837,0.1626,
+"anchor: CoStar/TE FY26 +4.4 implied Q4, unadjusted (weight 0.3)",2.693,1.907,0.2479,0.185,
+base rate: parsed quarters 2023Q3-2026Q2 (weight 0.2),1.383,2.399,0.2159,0.4773,"1 of 9 >=4, 4 of 9 <=1; Laplace, averaged with the complete-quarter subset"
+blend 0.5/0.3/0.2,,,0.2594,0.2323,
+PUBLISHED joint object (mixture matched to the blend),2.755,1.914,0.2594,0.1773,"trend centre 2.972 sd 1.8, shock 0.10 at N(0.8, 1.8)"
+"rev-1 normal N(3.517, 1.676)",3.517,1.676,0.3866,0.0666,WITHDRAWN
+audit A12 independent number,3.0,1.8,0.289,0.16,"N(3.0,1.8) + B15 shock branch"

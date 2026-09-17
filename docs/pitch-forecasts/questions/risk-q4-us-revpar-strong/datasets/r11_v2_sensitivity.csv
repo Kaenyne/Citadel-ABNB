@@ -1,24 +1,28 @@
-case,mixture_mean,p_ge_4,p_le_1,final_ge4_if_decomp_moves,final_le1_if_decomp_moves
-base,2.582,0.2166,0.1873,0.2152,0.224
-comp credit +0.8 restored (rev 1),3.382,0.3842,0.1068,0.299,0.1838
-comp credit +0.4 on the AR leg only,2.782,0.2545,0.162,0.2341,0.2114
-no calendar drag,3.282,0.3613,0.114,0.2876,0.1874
-December shutdown realised (adj -1.5),1.782,0.1004,0.3246,0.1571,0.2927
-AR from Q3 average only (no exit-rate start),2.747,0.2476,0.1661,0.2307,0.2134
-AR from the exit rate only,2.417,0.1878,0.2109,0.2008,0.2358
-AR phi 0.8,2.852,0.2685,0.154,0.2412,0.2074
-AR phi 0.4,2.312,0.1708,0.2273,0.1923,0.244
-AR long run 2.0 (TE FY27 as is),2.532,0.2076,0.1942,0.2107,0.2275
-AR long run 3.0,2.732,0.2447,0.1679,0.2293,0.2143
-FY26 forecast cut to 4.0 in November,1.748,0.0968,0.3314,0.1553,0.2961
-FY26 forecast raised to 4.8,3.415,0.3919,0.1046,0.3028,0.1827
-"Q3 prints 6.5 (Sep holds +6), FY held",2.409,0.1865,0.2121,0.2002,0.2364
-Q3 prints 4.5 (Sep fades to +2),2.784,0.2549,0.1617,0.2344,0.2112
-audit's centre 3.0,3.0,0.2993,0.1385,0.2566,0.1996
-"joint bull (Q3 6.5, FY 4.8, no drag, phi .8, lr 3)",4.417,0.6203,0.0655,0.4171,0.1631
-"joint bear (Q3 4.5, FY 4.0, shutdown)",1.151,0.048,0.4644,0.1309,0.3626
-trend sd 1.2,2.582,0.1429,0.1166,0.1784,0.1887
-trend sd 2.2,2.582,0.2644,0.2428,0.2391,0.2518
-shock weight 0.05,2.582,0.2089,0.1813,0.2114,0.221
-shock weight 0.20,2.582,0.2344,0.2021,0.2241,0.2314
-shock centre 0.0,2.582,0.2289,0.1933,0.2213,0.227
+case,mixture_mean,p_ge_4,p_le_1,blended_final_ge4,blended_final_le1
+base (published),2.882,0.2837,0.1626,0.2594,0.2323
+rev-1 comp credit +0.8 on the whole blend restored,3.482,0.4099,0.1096,0.3225,0.2057
+no comp credit at all (the audit's route),2.682,0.2457,0.1865,0.2404,0.2442
+"no calendar drag (no election, no CR)",3.482,0.4099,0.1096,0.3225,0.2057
+December shutdown realised (CR row -1.0 instead of -0.2),2.082,0.1495,0.2778,0.1923,0.2899
+election drag -0.7 (the audit's figure),2.582,0.2278,0.1997,0.2314,0.2508
+AR from the Q3 average only,3.047,0.3169,0.1453,0.276,0.2236
+AR from the exit rate only,2.717,0.2522,0.1821,0.2437,0.242
+AR phi 0.8,3.152,0.3387,0.1355,0.2869,0.2187
+AR phi 0.4,2.612,0.2331,0.1957,0.2341,0.2488
+AR long run 2.1 (TE FY27 as published),2.852,0.2779,0.166,0.2565,0.234
+AR long run 3.0,3.032,0.3138,0.1468,0.2745,0.2244
+FY26 cut to +4.0 in November,2.048,0.145,0.2838,0.19,0.2928
+FY26 raised to +4.8,3.715,0.4615,0.0955,0.3483,0.1987
+"Q3 prints +6.5 (September holds +6), FY held",2.709,0.2508,0.183,0.2429,0.2425
+Q3 prints +4.5 (September fades to +2),3.084,0.3246,0.1417,0.2799,0.2218
+the audit's centre +3.0,3.0,0.3074,0.15,0.2712,0.226
+"joint bull (Q3 6.5, FY 4.8, no drag, phi .8, lr 3.0)",4.617,0.6505,0.0656,0.4428,0.1837
+"joint bear (Q3 4.5, FY 4.0, shutdown)",1.451,0.0797,0.4016,0.1574,0.3517
+trend sd 1.4,2.882,0.2406,0.1135,0.2379,0.2077
+trend sd 2.2,2.882,0.3128,0.206,0.274,0.254
+shock weight 0.05,2.882,0.2751,0.1548,0.2551,0.2284
+shock weight 0.20,2.882,0.3034,0.1817,0.2693,0.2418
+shock centre 0.0,2.882,0.2972,0.1706,0.2661,0.2363
+weights 0.6/0.3/0.1,,,,0.2662,0.2008
+weights 0.4/0.3/0.3,,,,0.2526,0.2637
+base rate dropped (0.6/0.4/0),,,,0.2694,0.1716
