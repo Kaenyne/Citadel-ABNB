@@ -72,3 +72,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 09:19 A08 response done (F01 0.28; F02 p50 +10.5%, P(<10) 0.45; F03 literal convention a 0.02/b 0.04/c 0.10/d 0.36/e 0.48; F04 0.55; A08 DONE). A13 audit launched on Opus. Running: A10, A11 responses; A12, A13 audits.
 - 09:27 heartbeat: no change; running A10, A11 responses (Fable); A12, A13 audits (Opus).
 - 09:38 A11 response done (R06 0.46; R08 0.13; R09 0.25; all immaterial; A11 DONE). A14 audit launched on Opus. Running: A10 response; A12, A13, A14 audits.
+- 09:42 A10 response done (R04 0.52 EV $1.1 borderline; R05 0.22 immaterial; R07 0.17 EV $1.7; B02 0.12 EV -$1.4; A10 DONE). SYNTHESIS NOTES: C11 should read ~0.73 on the joint ADR model (mean +3.35 vs +3.04); C04's 3Q26 margin sd 1.0 is an outlier vs the card's conformal 1.62; C04/C11 quote R01 0.42 (now 0.39). A15 audit launched on Opus. Running: A12, A13, A14, A15 audits.
