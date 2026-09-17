@@ -1,0 +1,19 @@
+{"question_id": "C06", "slug": "rnpl-gbv-share-disclosed", "type": "multiple_choice",
+ "revision": 1, "run_date": "2026-09-17", "agent": "fable",
+ "final": {"vector": {"a_ge_25pct": 0.15, "b_21_to_24pct": 0.24, "c_over_20_repeated_or_le_20": 0.31, "d_not_disclosed": 0.30}},
+ "estimates": {"base_rate": {"a": 0.16, "b": 0.28, "c": 0.38, "d": 0.18}, "decomposition": {"a": 0.14, "b": 0.24, "c": 0.32, "d": 0.30}, "anchor": null,
+               "anchor_source": "none: no market or consensus on the disclosure; Kalshi KXABNB-26NOVNEB nights ladder (2026-09-17T02:53:51Z) adjacent only"},
+ "p_disclosed": 0.70,
+ "true_share_model": {"p_ge_25": 0.216, "p_21_24": 0.769, "p_le_20": 0.015, "file": "datasets/share_ramp_model_2026-09-17.csv"},
+ "sensitivity": [
+   {"assumption": "share treated as a standing KPI (P(disclosed) 0.90)", "moves_to": {"a": 0.18, "b": 0.31, "c": 0.41, "d": 0.10}},
+   {"assumption": "reframing removes RNPL numbers (P(disclosed) 0.50)", "moves_to": {"a": 0.10, "b": 0.17, "c": 0.23, "d": 0.50}},
+   {"assumption": "July expansion large (Exp mean +4 pts of GBV share)", "moves_to": {"a": 0.35, "b": 0.14, "c": 0.21, "d": 0.30}},
+   {"assumption": "no Q3 lead-time seasonal drag", "moves_to": {"a": 0.25, "b": 0.19, "c": 0.26, "d": 0.30}},
+   {"assumption": "management states a precise figure when the share moves (21-24 true -> b 0.65)", "moves_to": {"a": 0.14, "b": 0.35, "c": 0.21, "d": 0.30}},
+   {"assumption": "nights print >= 10.6% (P(disclosed) 0.80)", "moves_to": {"a": 0.16, "b": 0.28, "c": 0.37, "d": 0.20}}],
+ "monitoring": [
+   {"date": "2026-10-31", "event": "newsroom/help-centre RNPL eligibility changes", "action": "expansion: +10 pts to (a); restriction: (a) <= 0.08"},
+   {"date": "2026-11-04", "event": "sell-side previews", "action": "+3 pts to (a) if any preview models >=25%"},
+   {"date": "2026-11-05", "event": "3Q26 letter, call, 10-Q", "action": "resolve per conventions 1-3; letter governs"}],
+ "log": "docs/pitch-forecasts/questions/rnpl-gbv-share-disclosed/research-log.md"}

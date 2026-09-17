@@ -1,0 +1,16 @@
+spec,event_var,event_sd_pct,background_vol_pct
+pair 2026-10-16 vs 2026-11-20,0.008317720547945212,9.12,
+pair 2026-10-16 vs 2026-12-18,0.008986144109589044,9.48,
+pair 2026-10-30 vs 2026-11-20,0.006345679315068496,7.97,
+pair 2026-10-30 vs 2026-12-18,0.006164608191780819,7.85,
+"LS one-print-max on ['2026-10-02', '2026-10-16', '2026-10-30', '2026-11-20', '2026-12-18', '2027-01-15']",0.006776010554820002,8.23,33.85
+LS one-print-max LOO range,,7.85..8.51,
+pair 30Oct/20Nov leg sensitivity dpre -1 dpost -1,0.006171514931506849,7.86,
+pair 30Oct/20Nov leg sensitivity dpre -1 dpost 0,0.007538473835616441,8.68,
+pair 30Oct/20Nov leg sensitivity dpre -1 dpost 1,0.008941049178082193,9.46,
+pair 30Oct/20Nov leg sensitivity dpre 0 dpost -1,0.004978720410958905,7.06,
+pair 30Oct/20Nov leg sensitivity dpre 0 dpost 0,0.006345679315068496,7.97,
+pair 30Oct/20Nov leg sensitivity dpre 0 dpost 1,0.007748254657534249,8.8,
+pair 30Oct/20Nov leg sensitivity dpre 1 dpost -1,0.0037503094520547928,6.12,
+pair 30Oct/20Nov leg sensitivity dpre 1 dpost 0,0.005117268356164385,7.15,
+pair 30Oct/20Nov leg sensitivity dpre 1 dpost 1,0.006519843698630136,8.07,

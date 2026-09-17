@@ -1,0 +1,19 @@
+{"question_id": "C07", "slug": "rnpl-negative-effect-acknowledged", "type": "binary",
+ "revision": 1, "run_date": "2026-09-17", "agent": "fable",
+ "final": {"p": 0.20, "ci": [0.12, 0.32]},
+ "estimates": {"base_rate": 0.17, "decomposition": 0.21, "anchor": null,
+               "anchor_source": "none: no market on any management statement; Kalshi KXABNB-26NOVNEB P(3Q26 nights<=146m)~0.355 (2026-09-17T02:53:51Z) used only inside P(S)"},
+ "conventions": ["repeated unearned-fee/FCF/take-rate timing sentences from the 1Q26-2Q26 letters resolve No", "lap/comparison statements resolve No", "a cancellation-rate figure alone resolves No unless tied to a listed metric or to tested expectations", "3Q26 10-Q counts; same-day filing expected"],
+ "sensitivity": [
+   {"assumption": "resolver counts repeated 'absent RNPL, unearned fees would have grown' as Yes", "moves_to": 0.60},
+   {"assumption": "quantified lap counts as Yes", "moves_to": 0.27},
+   {"assumption": "nights print <= 8.5% with GBV-nights gap > 7 pts (P(S) 0.55)", "moves_to": 0.42},
+   {"assumption": "nights print >= 10.6% (P(S) 0.05)", "moves_to": 0.11},
+   {"assumption": "management holds the net-positive line even in a bad quarter (P(Yes|S) 0.40)", "moves_to": 0.16},
+   {"assumption": "10-Q adds a routine clause linking cancellations to Nights and Seats Booked (0.15)", "moves_to": 0.29},
+   {"assumption": "RNPL terms tightened before 5 Nov", "moves_to": 0.70}],
+ "monitoring": [
+   {"date": "2026-11-04", "event": "newsroom/help-centre RNPL terms; sell-side previews; final nowcast band", "action": "terms tightening -> >=0.70; recompute P(S)"},
+   {"date": "2026-11-05", "event": "3Q26 letter, 10-Q, call", "action": "diff the 10-Q RNPL paragraph vs 2Q26; classify per conventions 1-4"},
+   {"date": "2026-11-06", "event": "10-Q not filed on print day", "action": "hold resolution until filing"}],
+ "log": "docs/pitch-forecasts/questions/rnpl-negative-effect-acknowledged/research-log.md"}
