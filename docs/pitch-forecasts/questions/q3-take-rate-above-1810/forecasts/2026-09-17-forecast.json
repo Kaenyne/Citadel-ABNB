@@ -1,0 +1,60 @@
+{
+  "question_id": "C11",
+  "slug": "q3-take-rate-above-1810",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.55, "ci": [0.40, 0.70]},
+  "conditional_on_gbv": {
+    "definition": "P(take rate >= 18.10 | printed 3Q26 GBV band), from the final mixture in datasets/c11_by_gbv_band.csv; revenue = guide midpoint 4,730 x (1 + Q3 cushion N(1.1%, 0.5%)), rho 0.5 to the GBV shock, P(guide miss) 3%",
+    "bands": [
+      {"gbv_musd": "< 25,600", "gbv_yoy_pct": "< 11.9", "mass": 0.24, "p_yes": 1.00, "take_median": 18.82},
+      {"gbv_musd": "25,600-25,900", "gbv_yoy_pct": "11.9-13.2", "mass": 0.19, "p_yes": 0.99, "take_median": 18.54},
+      {"gbv_musd": "25,900-26,200", "gbv_yoy_pct": "13.2-14.5", "mass": 0.20, "p_yes": 0.97, "take_median": 18.36},
+      {"gbv_musd": "26,200-26,500", "gbv_yoy_pct": "14.5-15.8", "mass": 0.17, "p_yes": 0.76, "take_median": 18.18},
+      {"gbv_musd": "26,500-26,800", "gbv_yoy_pct": "15.8-17.1", "mass": 0.11, "p_yes": 0.17, "take_median": 18.00},
+      {"gbv_musd": ">= 26,800", "gbv_yoy_pct": ">= 17.1", "mass": 0.10, "p_yes": 0.00, "take_median": 17.74}
+    ],
+    "point_gbv": {"25900": 0.98, "26185": 0.94, "26300": 0.80, "26410": 0.52, "26550": 0.15, "26800": 0.00},
+    "breakeven_gbv_musd_at_1pct_beat": 26410,
+    "p_le_1788": 0.12
+  },
+  "estimates": {
+    "base_rate": 0.18,
+    "decomposition": 0.77,
+    "anchor": 0.45,
+    "anchor_source": "No market prices the ratio. Street-implied take rate 17.99% = LSEG-family 3Q26 revenue mean 4,744.9 (n 36, 2026-09-13T15:20Z) / Bloomberg MODL GBV 26,375 (12 Sep) at the model sd 0.39pp -> 0.39; Kalshi KXABNB nights median 148.2m (2026-09-17T03:10:10Z) x ADR +3.4% -> GBV 26.26bn -> 0.60; B1 published 0.53 (2026-09-11, stacked GBV 26,550).",
+    "final_minus_anchor": 0.10,
+    "not_independently_derived_flag": false,
+    "blend": {"decomposition": [0.45, 0.77], "management_language": [0.25, 0.18], "street_means": [0.30, 0.45], "weighted": 0.53, "rounded_to": 0.55, "reason_for_rounding_up": "the 3Q26 revenue-minus-GBV FX wedge (+3 vs ~0) is worth ~+50bp and is not in the management-language record"}
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/q3-take-rate-above-1810/datasets/c11_model.py",
+    "structure": "GBV_3Q26 = 22,884 x (1+N(9.5,1.6)%) x (1+N(3.3,1.3)%); revenue = 4,730 x (1 + N(1.1%, 0.5%) with rho 0.5 to the GBV shock), 3% guide miss at 4,690; take = 100 x revenue / GBV; YES <=> take >= 18.10",
+    "final_mixture": {"team_band": [0.50, 0.871], "kalshi_implied_gbv_N(26260,600)": [0.30, 0.604], "wide_nights_10_sd_2.2": [0.20, 0.71], "mixture_p": 0.765, "take_median": 18.38, "take_sd": 0.39},
+    "b1_replication": {"this_model": 0.536, "b1_published": 0.534, "inputs": "GBV N(26,550, 853), revenue N(4,816, 48), rho 0.76"}
+  },
+  "sensitivity": [
+    {"assumption": "GBV centred on the team nowcast $25.9bn; if the Kalshi-implied $26.26bn", "moves_to": 0.60},
+    {"assumption": "GBV = Bloomberg MODL $26.38bn", "moves_to": 0.52},
+    {"assumption": "GBV = B1 stacked $26.55bn", "moves_to": 0.43},
+    {"assumption": "nights 11.0 (Kalshi median), ADR 3.4", "moves_to": 0.62},
+    {"assumption": "nights 8.5 (bottom of band)", "moves_to": 0.95},
+    {"assumption": "ADR +4.4 (R07 case)", "moves_to": 0.71},
+    {"assumption": "Q3 cushion 0 (print at the guide midpoint)", "moves_to": 0.70},
+    {"assumption": "Q3 cushion 1.86% (trailing-8)", "moves_to": 0.93},
+    {"assumption": "joint bull GBV: nights 11.0, ADR 4.4, cushion 0.86", "moves_to": 0.36},
+    {"assumption": "final blend all on management language", "moves_to": 0.18},
+    {"assumption": "final blend all on the decomposition", "moves_to": 0.77}
+  ],
+  "monitoring": [
+    {"date": "2026-09-17/2026-10-02", "event": "September Inside Airbnb dumps; nights band refreshed", "action": "each +0.5pt nights ~ -0.04 on the final; band centred >= 10.5 -> ~0.45"},
+    {"date": "weekly to 2026-11-04", "event": "Kalshi KXABNB median; LSEG revenue mean; MODL GBV", "action": "Kalshi median >= 149.5m -> ~0.48; <= 147m -> ~0.60"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.55 (0.40-0.70) with the GBV-conditional table"},
+    {"date": "2026-10-13", "event": "EEA/CH single-fee deadline", "action": "no change (fee effect <= 10bp)"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side previews; management conference remarks", "action": "'slightly higher' or quantified fee lift +0.05; GBV 'high teens' -0.10"},
+    {"date": "2026-11-05", "event": "3Q26 release: revenue, GBV", "action": "resolve; audit read: GBV <= 26.2bn implied pre-print P ~0.95, 26.3-26.5bn ~0.75, >= 26.6bn ~0.15"}
+  ],
+  "log": "docs/pitch-forecasts/questions/q3-take-rate-above-1810/research-log.md"
+}

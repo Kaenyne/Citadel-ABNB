@@ -1,0 +1,60 @@
+{
+  "question_id": "C12",
+  "slug": "q3-unearned-fees-yoy",
+  "type": "binary",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.55, "ci": [0.40, 0.70]},
+  "distribution": {
+    "object": "unearned fees at 30 Sep 2026, y/y vs $1,820M; threshold -3% = $1,765.4M",
+    "median_yoy_pct": -3.6, "median_musd": 1755, "q10_yoy_pct": -8.4, "q90_yoy_pct": 1.9,
+    "p_ge_plus6_pct": 0.015, "p_inconclusive_minus3_to_plus6": 0.43
+  },
+  "decomposition_central_path_yoy_points": {
+    "gbv_growth": 13.2, "deferral": -16.8, "deferral_note": "-k x (u_3Q26 - u_3Q25) = -1.16 x (18.0 - 3.5); u = unpaid RNPL share of the fee-bearing backlog",
+    "migration": 1.0, "migration_note": "host-only 15.5% fee is collected at booking and sits in unearned fees (10-K Note 2); +1.8% to +4% per migrated booking on a 50-70% migrated share; sign opposite to the superseded note",
+    "fx": 0.0, "fx_note": "balance reconciles to the cash-flow 'Unearned fees' line within $3-8M in every period checked",
+    "total": -2.6
+  },
+  "estimates": {
+    "base_rate": 0.46,
+    "decomposition": 0.59,
+    "anchor": 0.45,
+    "anchor_source": "No market. Programme's own deferral-only table (docs/rnpl-short-audit/04_balance-sheet-verification.md, 2026-09-11): -1.7% at the 2Q26 solved unpaid share of 15%, -3% at u ~16%; evaluated with the 1H26 trend of +2 points of u per quarter.",
+    "final_minus_anchor": 0.10,
+    "not_independently_derived_flag": true,
+    "flag_note": "the anchor is an internal table on the same balance-sheet series; the +10 comes from the July eligibility expansion / international ramp (u 18 vs 15-16) and from the 3Q25 base carrying only six weeks of US RNPL"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/q3-unearned-fees-yoy/datasets/c12_model.py",
+    "routes": {
+      "A_yoy_gap": {"p": 0.455, "median_pct": -2.46, "weight": 0.45, "spec": "GBV N(13.2,1.9) - k N(1.16,0.15) x (u26 N(18,3) - u25 N(3.5,1)) + migration N(1.0,0.7) + FX N(0,0.5)"},
+      "B_sequential": {"p": 0.681, "median_pct": -4.18, "weight": 0.30, "spec": "2,831 x (1 + N(-36.9,0.6)% + deepening N(-1.5,1.5)%)"},
+      "C_level_norm": {"p": 0.594, "median_pct": -3.98, "weight": 0.25, "spec": "0.661 x 4Q26 revenue N(3,178,60) x (1 - u N(18,3)%) x (1 + migration N(1.5,1.0)%) x (1 + FX)"},
+      "mixture": {"p": 0.558, "median_pct": -3.55}
+    }
+  },
+  "sensitivity": [
+    {"assumption": "Route A GBV +13.2 (team); if Street +15.2", "moves_to": 0.30},
+    {"assumption": "Route A GBV +11.0", "moves_to": 0.64},
+    {"assumption": "unpaid share u_3Q26 18%; if flat at 15%", "moves_to": 0.20},
+    {"assumption": "u_3Q26 20% (July expansion + international ramp)", "moves_to": 0.64},
+    {"assumption": "u_3Q25 base 5% instead of 3.5%", "moves_to": 0.32},
+    {"assumption": "migration term 0 (migration-neutral)", "moves_to": 0.54},
+    {"assumption": "migration term +2", "moves_to": 0.37},
+    {"assumption": "Route B no 2026 deepening", "moves_to": 0.26},
+    {"assumption": "Route B deepening -3 (1Q26-style)", "moves_to": 0.92},
+    {"assumption": "Route C 4Q26 revenue 3,130", "moves_to": 0.72},
+    {"assumption": "joint bear-for-YES: GBV 11, u 20, migration 0", "moves_to": 0.86},
+    {"assumption": "joint bull-for-NO: GBV 15.2, u 15, migration 2", "moves_to": 0.07}
+  ],
+  "monitoring": [
+    {"date": "2026-09-17/2026-10-02", "event": "September Inside Airbnb dumps; GBV band refreshed", "action": "each +1pt of GBV growth ~ -0.04 on the final"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.55 (0.40-0.70), median $1,755M, with the deferral/migration/FX decomposition"},
+    {"date": "2026-10-13", "event": "EEA/CH single-fee deadline", "action": "migration term to top of range if completion confirmed (-0.03)"},
+    {"date": "2026-10-15/2026-11-03", "event": "management remark on RNPL GBV share or eligibility", "action": "share >= 25% -> ~0.65; flat ~20% -> ~0.35"},
+    {"date": "2026-11-05", "event": "3Q26 10-Q balance sheet 'Unearned fees'", "action": "resolve; score the corrected rule (UF y/y - GBV y/y); re-solve u"}
+  ],
+  "log": "docs/pitch-forecasts/questions/q3-unearned-fees-yoy/research-log.md"
+}
