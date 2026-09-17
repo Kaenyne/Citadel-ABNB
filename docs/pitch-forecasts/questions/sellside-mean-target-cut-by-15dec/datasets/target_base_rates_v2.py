@@ -18,7 +18,7 @@ lt = np.log(p.mean_target); lp = np.log(p.close)
 rx = pd.read_csv(root / "data/processed/abnb_earnings_reactions.csv", parse_dates=["reaction_date"])
 out = {}
 # (a) exact thresholds
-f = sorted(glob.glob(str(here / "sources" / "yfinance_upgrades_downgrades_*.csv")))[-1]
+f = sorted(glob.glob(str(here.parent / "sources" / "yfinance_upgrades_downgrades_*.csv")))[-1]
 ud = pd.read_csv(f, parse_dates=["GradeDate"]); asof = pd.Timestamp("2026-09-16")
 u = ud[(ud.GradeDate >= asof - pd.Timedelta(days=365)) & (ud.GradeDate <= asof + pd.Timedelta(days=1)) & (ud.currentPriceTarget > 0)]
 live = u.sort_values("GradeDate").groupby("Firm").tail(1)

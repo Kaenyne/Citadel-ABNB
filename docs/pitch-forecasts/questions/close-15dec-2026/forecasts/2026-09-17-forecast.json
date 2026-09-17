@@ -2,59 +2,67 @@
   "question_id": "S02",
   "slug": "close-15dec-2026",
   "type": "continuous",
-  "revision": 1,
+  "revision": 2,
+  "revised": "2026-09-17",
   "run_date": "2026-09-17",
   "agent": "fable",
   "final": {
-    "percentiles": {"5": 121, "10": 129, "25": 144, "50": 162, "75": 183, "90": 204, "95": 217},
-    "below_lower": 0.003,
-    "above_upper": 0.004,
+    "percentiles": {"5": 121, "10": 129, "25": 146, "50": 166, "75": 186, "90": 207, "95": 221},
+    "below_lower": 0.005,
+    "above_upper": 0.007,
     "range": [100, 260],
     "unit": "USD",
-    "mean": 164,
-    "median_return_pct_from_167_51": -3.3,
-    "log_sd_pct": 17
+    "mean": 167,
+    "median_return_pct_from_167_51": -1.1,
+    "log_sd_pct": 18.5
   },
-  "threshold_probs": {"P(<=150)": 0.33, "P(<=143)": 0.24, "P(>=180)": 0.28, "P(<=125)": 0.07, "P(>=200)": 0.12},
+  "threshold_probs": {"P(<=150)": 0.30, "P(<=143)": 0.22, "P(>=180)": 0.32, "P(<=125)": 0.07, "P(>=200)": 0.13},
+  "revision_1": {"percentiles": {"5": 121, "10": 129, "25": 144, "50": 162, "75": 183, "90": 204, "95": 217}, "threshold_probs": {"P(<=150)": 0.33, "P(<=143)": 0.24, "P(>=180)": 0.28}},
+  "audit_comparison_astra_A07": {"median": 163, "P(<=150)": 0.32, "P(<=143)": 0.23, "P(>=180)": 0.29},
   "estimates": {
-    "base_rate": {"median": 168.7, "P(<=150)": 0.25, "P(<=143)": 0.18, "P(>=180)": 0.36, "note": "all-history 63-session return distribution (median +0.7%, sd 17.1) on $167.51; 2023+ window median 171.7, 0.16/0.08/0.38"},
-    "decomposition": {"median": 158.9, "P(<=150)": 0.37, "P(<=143)": 0.27, "P(>=180)": 0.23, "percentiles": {"5": 120, "10": 128, "25": 142, "50": 159, "75": 178, "90": 197, "95": 210}},
-    "anchor": {"median": 167.3, "P(<=150)": 0.28, "P(<=143)": 0.21, "P(>=180)": 0.34, "median_real_world_shifted": 168.6},
-    "anchor_source": "Options-implied smile risk-neutral density for 15 Dec from the 18 Dec 2026 expiry at the 16 Sep close (own Black-76 IVs, ATM 37.3%, forward $169.16), yfinance chain captured 2026-09-17T03:12Z; no Polymarket/Kalshi market on the December price (searched 2026-09-17T03:10Z)",
-    "final_minus_anchor": {"median_usd": -6.5, "P(<=150)": 0.05, "P(<=143)": 0.03, "P(>=180)": -0.06},
-    "blend": {"decomposition_weight": 0.65, "anchor_weight": 0.35, "method": "CDF mixture, research-log.md section 5"},
-    "named_asymmetry": "team 3Q26 nights nowcast (RMSE 1.48pp) below all 28 Street estimates; Street bar implies acceleration for only the fourth time in 16 prints; decelerating prints sold 8 of 9 since 3Q22 on excess; options price the print symmetric"
+    "base_rate": {"median": 168.6, "P(<=150)": 0.25, "P(<=143)": 0.18, "P(>=180)": 0.36, "note": "all-history 63-session return distribution (median +0.66%, sd 17.1, overlapping n 1,384, effective ~22) on $167.51; 2023+ window median 171.7, 0.16/0.08/0.38"},
+    "decomposition": {"median": 163.1, "P(<=150)": 0.32, "P(<=143)": 0.23, "P(>=180)": 0.29, "percentiles": {"5": 121, "10": 130, "25": 145, "50": 163, "75": 184, "90": 204, "95": 218}, "log_sd_pct": 17.8},
+    "anchor": {"median": 169.3, "P(<=150)": 0.28, "P(<=143)": 0.21, "P(>=180)": 0.35, "median_real_world_shifted": 170.6, "real_world_thresholds": {"P(<=150)": 0.27, "P(<=143)": 0.21, "P(>=180)": 0.37}, "log_sd_pct": 19.5, "P(<100)": 0.008},
+    "anchor_source": "Options-implied two-lognormal mixture risk-neutral density for 15 Dec from the 18 Dec 2026 expiry at the 16 Sep close (forward-constrained WLS fit to 15 OTM mids, rmse $0.16; arbitrage-free, replacing the revision-1 quadratic smile which carried 1.54% negative density), yfinance chain captured 2026-09-17T03:12Z; real-world shift +3% premium over the cash rate in the forward; no Polymarket/Kalshi market on the December price (searched 2026-09-17T03:10Z)",
+    "final_minus_anchor": {"median_usd": -5.0, "median_usd_vs_risk_neutral": -3.7, "P(<=150)": 0.03, "P(<=143)": 0.02, "P(>=180)": -0.05},
+    "blend": {"decomposition_weight": 0.65, "anchor_weight": 0.35, "method": "CDF mixture on a $0.25 grid; the anchor CDF is the mixture RND itself (anchor_cdf_v2.csv), research-log.md section 5"},
+    "named_asymmetry": "adopted print-state weights (R01 0.42 / R02 0.32) put 0.58 on a decelerating 3Q26 nights print against a Street bar (MODL low 147m = +10.0%) that implies acceleration for only the fourth time in 16 prints; decelerating prints sold 8 of 9 since 3Q22 on excess; options price the print symmetric. The reviews-index edge is weaker than revision 1 claimed (0.757-0.841 vs naive after re-vintaging), so the asymmetry is carried at ~3% on the median, not 4%"
   },
   "day1_mixture_used": {
-    "note": "S01 forecast JSON did not exist at synthesis time; built from the same panel here. S01 revision 1 (committed during the run) reads mean -2.7, median -2.9, sd 9.5, P(<=-8) 0.29, P(<=-5) 0.41, P(>=+5) 0.20, P(>=+10) 0.10: same location, ~1pt wider; the 'event sd 9.0%' sensitivity reproduces it (P(<=150) +0.01), so no re-parameterisation",
+    "note": "Built from the same panel as S01 with the print-state weights adopted after S01 revision 1 (R01/R02/S01 P(guide below | decel) 0.78); within-branch sd 8.45% solved so the unconditional sd equals S01's 9.5% (variance identity, A07-17). S01 revision 1 reads mean -2.7, median -2.9, P(<=-8) 0.29, P(>=+5) 0.20 with P(accel) 0.24; the difference here is entirely the R02 weight",
     "branches": {
-      "accel (3Q26 nights >= 10.6%)": {"p": 0.24, "day1_mean_pct": 4.0, "sd_pct": 7.5, "drift_to_15dec_pct": -2.0},
-      "flat (10.1-10.6%)": {"p": 0.14, "day1_mean_pct": -1.0, "sd_pct": 7.5, "drift_to_15dec_pct": -1.0},
-      "decel, 4Q26 guide at/above Street": {"p": 0.10, "day1_mean_pct": -2.5, "sd_pct": 7.5, "drift_to_15dec_pct": -1.0},
-      "decel, 4Q26 guide below Street": {"p": 0.52, "day1_mean_pct": -6.0, "sd_pct": 7.5, "drift_to_15dec_pct": -2.5}
+      "accel (3Q26 nights >= 10.6%)": {"p": 0.32, "day1_mean_pct": 4.0, "drift_to_15dec_pct": -1.5},
+      "flat (10.0-10.6%)": {"p": 0.10, "day1_mean_pct": -1.0, "drift_to_15dec_pct": -0.5},
+      "decel, 4Q26 guide at/above Street": {"p": 0.13, "day1_mean_pct": -2.5, "drift_to_15dec_pct": -0.5},
+      "decel, 4Q26 guide below Street": {"p": 0.45, "day1_mean_pct": -6.0, "drift_to_15dec_pct": -1.0}
     },
-    "unconditional": {"mean_pct": -2.5, "sd_pct": 8.6, "P(<=-8%)": 0.27, "P(<=-5%)": 0.39, "P(>=+5%)": 0.19, "P(>=+10%)": 0.07},
+    "within_branch_sd_pct": 8.45,
+    "unconditional": {"mean_pct": -1.8, "sd_pct": 9.5, "P(<=-8%)": 0.26, "P(<=-5%)": 0.37, "P(>=+5%)": 0.24, "P(>=+10%)": 0.11},
     "options_implied_event_sd_pct": 9.1,
-    "team_base_case_conditional": {"mean_pct": -6.0, "sd_pct": 7.5, "P(<=-8%)": 0.39, "P(<=-5%)": 0.55}
+    "team_base_case_conditional": {"mean_pct": -6.0, "sd_pct": 8.45, "P(<=-8%)": 0.41, "P(<=-5%)": 0.55, "P(>=+5%)": 0.10, "note": "S01's narrower cell (also conditions on the nights descriptor) is mean -8.3"}
   },
-  "by_branch_15dec_median": {"accel": 170, "flat": 163, "decel_guide_ok": 161, "decel_guide_below": 152},
+  "by_branch_15dec_median": {"accel": 172, "flat": 165, "decel_guide_ok": 163, "decel_guide_below": 156},
   "model": {
-    "script": "docs/pitch-forecasts/questions/close-15dec-2026/datasets/abnb_path_mixture.py (seed 20260917, n 400000); implied_dist.py; final_blend.py",
-    "structure": "ln P = ln 167.51 + diffusion(35 sessions, 29% vol, 3% drift) + day-1 mixture + branch drift + diffusion(27 sessions); final = 0.65 x decomposition CDF + 0.35 x drift-shifted smile RND CDF"
+    "script": "docs/pitch-forecasts/questions/close-15dec-2026/datasets/abnb_path_mixture_v2.py (seed 20260917, n 400000); implied_dist_v2.py; final_blend_v2.py (revision-1 scripts and outputs retained untouched)",
+    "structure": "ln P = ln 167.51 + diffusion(36 sessions, 30% vol, 6.97% total drift) + day-1 mixture + branch drift + diffusion(26 sessions); final = 0.65 x decomposition CDF + 0.35 x real-world mixture-RND CDF",
+    "judgment_settings": 22,
+    "sessions": {"pre": 36, "reaction": 1, "post": 26, "total": 63}
   },
+  "tails": {"P(<100)": 0.005, "P(>260)": 0.007, "evidence": "18 of 1,384 overlapping 63-session windows <= -40.3%, all one 2022 episode; none since 2023 (worst -29.3%); no window >= +55% (max +54.9% IPO week, +43.7% since 2023)"},
   "sensitivity": [
-    {"assumption": "P(accelerating print) 0.24", "moves_to": "0.40 -> decomposition median 161.6, P(<=150) 0.33; 0.13 -> 157.6, 0.39"},
-    {"assumption": "day-1 conditional means shrunk 30-40% toward zero", "moves_to": "unshrunk -> median 157.6, P(<=150) 0.39; market-neutral print -> 163.2, 0.30"},
-    {"assumption": "post-print drift half strength", "moves_to": "none -> 162.2 / 0.32; doubled -> 155.6 / 0.42"},
-    {"assumption": "background vol 29%", "moves_to": "33% -> P(<=150) 0.39, P(>=180) 0.25; 25% -> 0.35 / 0.21"},
-    {"assumption": "anchor weight 0.35", "moves_to": "0 -> median 159, 0.37/0.27/0.23; 1 -> 168.6, 0.28/0.21/0.34"}
+    {"assumption": "print-state weights 0.32/0.10/0.13/0.45 (R01/R02/S01)", "moves_to": "revision-1 weights (accel 0.24) -> decomposition median 161.9, P(<=150) 0.33; P(accel) 0.40 -> 164.2, 0.31; P(accel) 0.22 -> 161.6, 0.34"},
+    {"assumption": "day-1 conditional means shrunk 30-40% toward zero", "moves_to": "unshrunk -> median 162.2, P(<=150) 0.33; market-neutral print -> 166.1, 0.28"},
+    {"assumption": "post-print drift -1.5/-0.5/-0.5/-1.0 (weighted -1.1%)", "moves_to": "none (Astra) -> 164.8 / 0.30; revision-1 drifts -> 161.5 / 0.34; doubled -> 161.4 / 0.34"},
+    {"assumption": "background vol 30%", "moves_to": "33% -> P(<=150) 0.34, P(>=180) 0.30; 26% -> 0.30 / 0.28"},
+    {"assumption": "total drift 6.97% (cash + 3% premium)", "moves_to": "3% -> 161.5 / 0.34; 0 -> 160.3 / 0.36"},
+    {"assumption": "anchor weight 0.35", "moves_to": "0 -> median 163, 0.32/0.23/0.29; 1 -> 170.6, 0.27/0.21/0.37"}
   ],
   "monitoring": [
-    {"date": "2026-09-25/2026-10-02", "event": "6 Nov weekly options list; September Inside Airbnb dumps", "action": "re-pull chains for a clean print straddle; re-set P(accel) from the nowcast (+0.5pp index centre ~ +0.06 P(accel), +$1.5 median)"},
-    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote median $162, P(<=150) 0.33, P(<=143) 0.24, P(>=180) 0.28; $143 is the 24th percentile on 15 Dec, not the base case"},
+    {"date": "2026-09-25/2026-10-02", "event": "6 Nov weekly options list; September Inside Airbnb dumps", "action": "re-pull chains for a clean print straddle; re-set the print-state weights from R01/R02 (+0.5pp index centre ~ +0.07 P(accel), +$1.2 median)"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote median $166, P(<=150) 0.30, P(<=143) 0.22, P(>=180) 0.32; $143 is the 22nd percentile on 15 Dec, not the base case"},
     {"date": "2026-10-30", "event": "EXPE/BKNG 3Q prints", "action": "EXPE Q4 room-night guide at/above Q3 rate: +0.03 to accel; >=2pt decel guide: reverse"},
-    {"date": "2026-11-04", "event": "record Street 4Q26 mean and 5 Nov close; 6 Nov straddle", "action": "re-centre; rescale within-branch sd if implied event sd outside 8-11%"},
-    {"date": "2026-11-06", "event": "reaction session close", "action": "collapse the mixture to the realised close: $150 -> median ~148, P(<=150) ~0.55; $160 -> 158, 0.34; $175 -> 173, 0.15"},
+    {"date": "2026-11-04", "event": "record Street 4Q26 mean and 5 Nov close; 6 Nov straddle", "action": "re-centre; rescale within-branch sd by the variance identity if implied event sd outside 8-11%"},
+    {"date": "2026-11-06", "event": "reaction session close", "action": "collapse the mixture to the realised close: $150 -> median ~149, P(<=150) ~0.53; $160 -> 159, 0.28; $175 -> 174, 0.06"},
     {"date": "2026-12-15", "event": "resolution", "action": "resolve on the Nasdaq close"}
   ],
   "log": "docs/pitch-forecasts/questions/close-15dec-2026/research-log.md"

@@ -1,23 +1,26 @@
-"""S01 day1-move-5nov, revision 2: ONE joint distribution over (print state, C01, C02, day-1 return).
+"""S01 day1-move-5nov, revision 2: ONE joint distribution over (print state, C01, C02, latent signal flag, day-1 return).
 Every unconditional and conditional number in the revision-2 log derives from the same draws (A06-01, A06-02).
 Deterministic (seed 20260917, n 600,000). Inputs: repo panel files only. Run from the repo root:
   py -3.13 docs/pitch-forecasts/questions/day1-move-5nov/datasets/s01_joint_v2.py
 Outputs (this folder, all prefixed s01_v2_): windows.csv, cells.csv, estimates.csv, percentiles.csv, thresholds.csv,
   conditionals.csv, sensitivity.csv, slider.csv, components.json. Revision-1 files (s01_mixture.py, s01_*.csv) are untouched.
 
-Structure
+Structure (one joint draw per row)
   1. print state S in {decel (<10.09), flat (10.09-10.59), accel (>=10.59)} with the run's adopted masses
      (R01: P(>=10.0) = 0.42, R02: P(>=10.59) = 0.32 -> decel 0.595 / flat 0.085 / accel 0.32); nights | S from
      N(9.67, 1.70) (R01's calibrated normal) truncated to the state's band.
   2. C01: gap = guide midpoint / Street - 1 (%) ~ N(g0 + 0.32 (nights - 9.67), 3.1); g0 solved so P(gap < 0) = 0.72 (C01 rev 2).
   3. C02: P(c or d | S) = decel 0.76 / flat 0.45 / accel 0.37 (from C02 rev 2's branch table; unconditional 0.61), with a
      within-state odds ratio OR_C02 (default 2) between guide-below and guide-at/above draws.
-  4. return = m0 + kappa * (mu(S, gap) - m0) + coef_err + resid + qqq, where
+  4. model return r_model = mu(S, gap, cd) + coef_err + resid + qqq, where
      mu = w1 * S1[S] + (1 - w1) * (c + b_sign * sign + b_gvs * gap) + pos * 1[decel] + c02_effect * 1[c or d]
      (S1/S2 = mean of the n16 and W1 fits, excess-return scale; C02 has no measured day-1 coefficient so c02_effect = 0),
-     kappa = credibility of the panel's directional signal (default 0.6), m0 = 0 (the directionless location),
-     coef_err ~ N(0, 2.4), resid ~ 0.93 N(0, 7.0) + 0.07 N(0, 14) (sd 7.7; tail calibrated to history + options), qqq ~ N(0, 1.4).
-  5. explicit bound mass 0.001 each side (draw replaced by U(-60,-40) / U(40,60)); every summary is of the final draws.
+     coef_err ~ N(0, 2.4), resid ~ 0.93 N(0, 6.9) + 0.07 N(0, 14), qqq ~ N(0, 1.4).
+  5. latent Z ~ Bernoulli(kappa), independent of (S, C01, C02): the panel's directional signal holds. r = r_model if Z,
+     else a directionless draw: with prob 0.5 the 23-print history (post-2022 x2, Gaussian kernel bw 3) and with prob 0.5
+     N(0, 9.0) (the options-implied event sd, symmetric). kappa = 0.6. Because Z is independent of the cell, every
+     conditional table is kappa x (model | cell) + (1 - kappa) x directionless, from the same draws.
+  6. explicit bound mass 0.001 each side (draw replaced by U(-60,-40) / U(40,60)); every summary is of the final draws.
 """
 import json, pathlib
 import numpy as np, pandas as pd
@@ -57,7 +60,8 @@ for wn, d in wins.items():
                       S1_decel=round(b1[0] - b1[1], 2), S1_flat=round(b1[0], 2), S1_accel=round(b1[0] + b1[1], 2),
                       S2_c=round(b2[0], 2), S2_b_sign=round(b2[1], 2), S2_b_gvs=round(b2[2], 2), S2_resid_sd=round(s2, 2), S2_loo_r2=round(l2, 3),
                       decel_n=int((d.nights_accel_sign == -1).sum()), decel_mean_raw=round(d[d.nights_accel_sign == -1].ret_1d_cc_raw_pct.mean(), 2),
-                      decel_pos_excess=int((d[d.nights_accel_sign == -1].ret_1d_cc_excess_pct > 0).sum())))
+                      decel_pos_excess=int((d[d.nights_accel_sign == -1].ret_1d_cc_excess_pct > 0).sum()),
+                      accel_n=int((d.nights_accel_sign == 1).sum()), accel_mean_raw=round(d[d.nights_accel_sign == 1].ret_1d_cc_raw_pct.mean(), 2)))
 windows = pd.DataFrame(wrows)
 windows.to_csv(HERE / "s01_v2_windows.csv", index=False)
 print(windows.to_string(index=False))
@@ -75,10 +79,11 @@ P = dict(
     w_S1=0.75,                    # was 0.6: the guide term fails W2 (A06-06)
     positioning_decel=-1.0,       # JUDGEMENT: accelerating Street bar meets a decelerating print (unobserved cell)
     c02_effect=0.0,               # no measured day-1 coefficient on the bucket direction (claim 6)
-    kappa=0.6, m0=0.0,            # credibility of the directional signal; directionless location
-    coef_sd=2.4, resid_sd_core=7.0, resid_sd_wide=14.0, resid_p_wide=0.07, qqq_sd=1.4,
+    coef_sd=2.4, resid_sd_core=6.9, resid_sd_wide=14.0, resid_p_wide=0.07, qqq_sd=1.4,
+    kappa=0.6,                    # P(the panel's directional signal holds); 1 - kappa = directionless
+    dirless_hist_share=0.5,       # directionless branch: share from the 23-print history, remainder options N(0, options_sd)
+    kde_bw=3.0, post2022_weight=2.0, options_sd=9.0,
     bound=40.0, bound_mass=0.001,
-    options_sd=9.0,
 )
 
 
@@ -141,17 +146,26 @@ def simulate(p, n=N, seed=SEED, kappa=None, S1=None):
         splits[s] = dict(p_below_given_state=round(float(pbelow), 3), p_cd_given_below=round(pb, 3), p_cd_given_above=round(pa, 3))
         u = rng.random(m.sum())
         cd[m] = np.where(below[m], u < pb, u < pa)
+    # model branch
     s1 = np.select([sign == 1, sign == 0], [S1["accel"], S1["flat"]], S1["decel"])
     s2 = p["S2"]["c"] + p["S2"]["b_sign"] * sign + p["S2"]["b_gvs"] * gap
     mu = p["w_S1"] * s1 + (1 - p["w_S1"]) * s2 + np.where(sign == -1, p["positioning_decel"], 0.0) + p["c02_effect"] * cd
-    mean_x = p["m0"] + kappa * (mu - p["m0"]) + rng.normal(0, p["coef_sd"], n)
     wide = rng.random(n) < p["resid_p_wide"]
     resid = np.where(wide, rng.normal(0, p["resid_sd_wide"], n), rng.normal(0, p["resid_sd_core"], n))
-    r = mean_x + resid + rng.normal(0, p["qqq_sd"], n)
+    r_model = mu + rng.normal(0, p["coef_sd"], n) + resid + rng.normal(0, p["qqq_sd"], n)
+    # directionless branch: history KDE and symmetric options normal
+    x = rx.abnb_1d_pct.values
+    w = np.where(rx.quarter >= "2023Q1", p["post2022_weight"], 1.0); w = w / w.sum()
+    r_hist = x[rng.choice(len(x), n, p=w)] + rng.normal(0, p["kde_bw"], n)
+    r_opt = rng.normal(0, p["options_sd"], n)
+    r_dirless = np.where(rng.random(n) < p["dirless_hist_share"], r_hist, r_opt)
+    z = rng.random(n) < kappa
+    r = np.where(z, r_model, r_dirless)
     # explicit bound mass, one distribution (A06-15)
     u = rng.random(n)
     r = np.where(u < p["bound_mass"], rng.uniform(-60, -40, n), np.where(u > 1 - p["bound_mass"], rng.uniform(40, 60, n), r))
-    return dict(r=r, st=st, sign=sign, nights=nights, gap=gap, below=below, cd=cd, mu=mu, g0=g0, splits=splits)
+    return dict(r=r, r_model=r_model, r_hist=r_hist, r_opt=r_opt, st=st, sign=sign, nights=nights, gap=gap, below=below, cd=cd, mu=mu, z=z,
+                g0=g0, splits=splits)
 
 
 def summ(r):
@@ -160,50 +174,47 @@ def summ(r):
              p_le_m8=round(float((r <= -8).mean()), 3), p_le_m5=round(float((r <= -5).mean()), 3), p_lt_0=round(float((r < 0).mean()), 3),
              p_ge_5=round(float((r >= 5).mean()), 3), p_ge_10=round(float((r >= 10).mean()), 3), p_abs_ge_7=round(float((np.abs(r) >= 7).mean()), 3),
              p_abs_ge_10=round(float((np.abs(r) >= 10).mean()), 3), p_abs_ge_15=round(float((np.abs(r) >= 15).mean()), 4),
-             p_lt_m25=round(float((r < -25).mean()), 4), p_ge_17=round(float((r >= 17).mean()), 4),
+             p_lt_m15=round(float((r < -15).mean()), 4), p_lt_m25=round(float((r < -25).mean()), 4), p_ge_17=round(float((r >= 17).mean()), 4),
              below_m40=round(float((r < -40).mean()), 4), above_p40=round(float((r > 40).mean()), 4), n=int(len(r)))
     return d
 
 
-# ---------- 2. the three estimates and the final ----------
-rng0 = np.random.default_rng(SEED)
-x = rx.abnb_1d_pct.values
-w = np.where(rx.quarter >= "2023Q1", 2.0, 1.0); w = w / w.sum()
-r_base = x[rng0.choice(len(x), N, p=w)] + rng0.normal(0, 3.0, N)               # base rate: 23 prints, post-2022 x2, kernel 3
-r_anchor = rng0.normal(0, P["options_sd"], N)                                    # anchor: options-implied sd, symmetric (A06-03)
-sdd, sdu = P["options_sd"] * 1.10, P["options_sd"] * 0.90                        # rev-1 two-piece, kept as a labelled judgement
-z = np.abs(rng0.normal(0, 1, N)); side = rng0.random(N) < sdd / (sdd + sdu)
-r_anchor_skew = -0.3 + np.where(side, -z * sdd, z * sdu)
-J_decomp = simulate(P, kappa=1.0)                                                # decomposition: the unshrunk repo signal
-J = simulate(P)                                                                  # FINAL: the joint model at kappa 0.6
-est = {"base_rate": summ(r_base), "decomposition_kappa1": summ(J_decomp["r"]), "anchor_options_symmetric": summ(r_anchor),
-       "anchor_two_piece_rev1_judgement": summ(r_anchor_skew), "FINAL_joint_kappa0.6": summ(J["r"])}
+# ---------- 2. the three estimates and the final, from one draw ----------
+J = simulate(P)
+rng0 = np.random.default_rng(SEED + 7)
+sdd, sdu = P["options_sd"] * 1.10, P["options_sd"] * 0.90        # rev-1 two-piece, kept as a labelled judgement
+zz = np.abs(rng0.normal(0, 1, N)); side = rng0.random(N) < sdd / (sdd + sdu)
+r_anchor_skew = -0.3 + np.where(side, -zz * sdd, zz * sdu)
+est = {"base_rate_history_kde": summ(J["r_hist"]), "decomposition_model_branch": summ(J["r_model"]), "anchor_options_symmetric": summ(J["r_opt"]),
+       "anchor_two_piece_rev1_judgement": summ(r_anchor_skew), "FINAL_joint": summ(J["r"])}
 est_df = pd.DataFrame(est).T
 est_df.to_csv(HERE / "s01_v2_estimates.csv")
 print(est_df.to_string())
-fin = est["FINAL_joint_kappa0.6"]
+fin = est["FINAL_joint"]
 print("g0 (gap mean at nights centre):", round(J["g0"], 3), "C02 splits:", J["splits"])
 
 # ---------- 3. cells and conditionals, all from the FINAL draws ----------
-r, st, below, cd, sign = J["r"], J["st"], J["below"], J["cd"], J["sign"]
+r, st, below, cd, sign, z = J["r"], J["st"], J["below"], J["cd"], J["sign"], J["z"]
 names = {0: "decel", 1: "flat", 2: "accel"}
 cells = []
 for i in range(3):
     for b in (True, False):
         for c in (True, False):
             m = (st == i) & (below == b) & (cd == c)
-            cells.append(dict(state=names[i], c01_below=b, c02_cd=c, prob=round(float(m.mean()), 4), **summ(r[m])))
+            cells.append(dict(state=names[i], c01_below=b, c02_cd=c, prob=round(float(m.mean()), 4), model_mean=round(float(J["r_model"][m].mean()), 2), **summ(r[m])))
 cells_df = pd.DataFrame(cells)
 cells_df.to_csv(HERE / "s01_v2_cells.csv", index=False)
-print(cells_df[["state", "c01_below", "c02_cd", "prob", "mean", "p50", "p_lt_0", "p_le_m8", "p_ge_5"]].to_string(index=False))
+print(cells_df[["state", "c01_below", "c02_cd", "prob", "model_mean", "mean", "p50", "p_lt_0", "p_le_m8", "p_ge_5"]].to_string(index=False))
 cond = {}
 masks = {
     "base case: decel & C01 below & C02 c/d (three gates)": (st == 0) & below & cd,
+    "base case, model branch only (Z = 1)": (st == 0) & below & cd & z,
     "two gates: decel & C01 below": (st == 0) & below,
     "decel (any)": st == 0,
     "flat (any)": st == 1,
     "accel (any)": st == 2,
     "thesis breaker: accel & C01 at/above": (st == 2) & ~below,
+    "thesis breaker, model branch only (Z = 1)": (st == 2) & ~below & z,
     "accel & C01 below": (st == 2) & below,
     "decel & C01 at/above": (st == 0) & ~below,
     "C01 below (any print)": below,
@@ -224,7 +235,7 @@ states = dict(p_decel=round(float((st == 0).mean()), 3), p_flat=round(float((st 
               p_c02_cd=round(float(cd.mean()), 3), p_cd_given_decel=round(float(cd[st == 0].mean()), 3),
               p_cd_given_decel_below=round(float(cd[(st == 0) & below].mean()), 3),
               p_base_case=round(float(((st == 0) & below & cd).mean()), 3), p_two_gate=round(float(((st == 0) & below).mean()), 3),
-              p_breaker=round(float(((st == 2) & ~below).mean()), 3))
+              p_breaker=round(float(((st == 2) & ~below).mean()), 3), p_z=round(float(z.mean()), 3))
 print(states)
 
 # ---------- 4. sensitivities: single-assumption reruns of the FINAL joint model ----------
@@ -244,6 +255,8 @@ def variant(name, **kw):
     mb = (Jv["st"] == 0) & Jv["below"] & Jv["cd"]
     d["base_case_prob"] = round(float(mb.mean()), 3); d["base_case_p50"] = round(float(np.median(Jv["r"][mb])), 2)
     d["base_case_p_le_m8"] = round(float((Jv["r"][mb] <= -8).mean()), 3); d["base_case_p_lt_0"] = round(float((Jv["r"][mb] < 0).mean()), 3)
+    mk = (Jv["st"] == 2) & ~Jv["below"]
+    d["breaker_prob"] = round(float(mk.mean()), 3); d["breaker_p50"] = round(float(np.median(Jv["r"][mk])), 2); d["breaker_p_ge_5"] = round(float((Jv["r"][mk] >= 5).mean()), 3)
     sens.append(d)
     return d
 
@@ -252,10 +265,16 @@ variant("base (revision 2)")
 variant("print states rev-1 N(9.55,1.48): decel .642 / flat .116 / accel .241", p_state={"decel": 0.642, "flat": 0.116, "accel": 0.241}, nights_centre=9.55, nights_sd=1.48)
 variant("print states Street/Kalshi N(11.0,1.7): decel .30 / flat .10 / accel .60", p_state={"decel": 0.30, "flat": 0.10, "accel": 0.60}, nights_centre=11.0)
 variant("print states R01 normal N(9.67,1.70) untouched: decel .598 / flat .108 / accel .294", p_state={"decel": 0.598, "flat": 0.108, "accel": 0.294})
+variant("print states team-low centre 9.0 sd 1.70: decel .74 / flat .09 / accel .17", p_state={"decel": 0.74, "flat": 0.09, "accel": 0.17}, nights_centre=9.0)
 variant("kappa 0.4", kappa=0.4)
-variant("kappa 0.5 (rev-1 effective weight)", kappa=0.5)
+variant("kappa 0.5 (rev-1 mixture weight)", kappa=0.5)
 variant("kappa 0.8", kappa=0.8)
-variant("kappa 1.0 (decomposition, no shrinkage)", kappa=1.0)
+variant("kappa 1.0 (model branch only, no shrinkage)", kappa=1.0)
+variant("kappa 0 (directionless only: history + options)", kappa=0.0)
+variant("directionless branch = options N(0,9) only", dirless_hist_share=0.0)
+variant("directionless branch = history KDE only", dirless_hist_share=1.0)
+variant("history KDE bandwidth 2 (thinner smoothed tail)", kde_bw=2.0)
+variant("history KDE unweighted (no post-2022 x2)", post2022_weight=1.0)
 variant("S1 from W2 alone (decel -6.89 / flat +0.40 / accel +7.69)", S1={"accel": 7.69, "flat": 0.40, "decel": -6.89})
 variant("S1 from n16 alone (decel -4.02 / flat -0.67 / accel +2.69)", S1={"accel": 2.69, "flat": -0.67, "decel": -4.02})
 variant("guide term weight 0 (S1 only)", w_S1=1.0)
@@ -266,19 +285,22 @@ variant("C02 return effect -1.0 on c/d", c02_effect=-1.0)
 variant("C02 return effect -2.0 on c/d", c02_effect=-2.0)
 variant("C02 independent of C01 within state (OR 1)", or_c02=1.0)
 variant("C02 odds ratio 4 within state", or_c02=4.0)
+variant("C02 (c+d) 0.50 overall (decel .65 / flat .35 / accel .28)", p_cd={"decel": 0.65, "flat": 0.35, "accel": 0.28})
 variant("C01 P(below) 0.62 (Astra / C01 low)", p_c01=0.62)
 variant("C01 P(below) 0.82 (C01 high)", p_c01=0.82)
 variant("C01 gap sd 2.8 (rev 1)", gap_sd=2.8)
 variant("residual core sd 6.5", resid_sd_core=6.5)
-variant("residual core sd 7.5", resid_sd_core=7.5)
+variant("residual core sd 7.5 (rev 1)", resid_sd_core=7.5)
 variant("wide component 0 (pure normal core 7.4)", resid_p_wide=0.0, resid_sd_core=7.4)
 variant("wide component 0.12", resid_p_wide=0.12)
+variant("options sd 8.0 (thin 30 Oct leg)", options_sd=8.0)
+variant("options sd 9.5 (B note)", options_sd=9.5)
 variant("QQQ sd 2.0 (macro day)", qqq_sd=2.0)
-variant("m0 = -0.9 (n16 mean) instead of 0", m0=-0.9)
-variant("m0 = +1.2 (23-print mean) instead of 0", m0=1.2)
+variant("coefficient sampling sd 3.5", coef_sd=3.5)
 sens_df = pd.DataFrame(sens).set_index("variant")
 sens_df.to_csv(HERE / "s01_v2_sensitivity.csv")
-print(sens_df[["p5", "p25", "p50", "p75", "p95", "sd", "p_le_m8", "p_le_m5", "p_lt_0", "p_ge_5", "p_ge_10", "p_abs_ge_15", "base_case_prob", "base_case_p50", "base_case_p_le_m8", "base_case_p_lt_0"]].to_string())
+print(sens_df[["p5", "p25", "p50", "p75", "p95", "sd", "p_le_m8", "p_le_m5", "p_lt_0", "p_ge_5", "p_ge_10", "p_abs_ge_10", "p_abs_ge_15",
+               "base_case_prob", "base_case_p50", "base_case_p_le_m8", "base_case_p_lt_0", "breaker_prob", "breaker_p50", "breaker_p_ge_5"]].to_string())
 
 # ---------- 5. Astra's independent construction, replayed for the comparison table ----------
 Phi = norm.cdf
@@ -299,10 +321,12 @@ def aq(cdf, pr):
         lo, hi = (mid, hi) if cdf(mid) < pr else (lo, mid)
     return (lo + hi) / 2
 astra = {f"p{p}": round(aq(acdf, p / 100), 2) for p in PCT}
-astra.update(p_le_m8=round(acdf(-8), 3), p_le_m5=round(acdf(-5), 3), p_ge_5=round(1 - acdf(5), 3), p_ge_10=round(1 - acdf(10), 3),
-             p_abs_ge_10=round(acdf(-10) + 1 - acdf(10), 3), p_abs_ge_15=round(acdf(-15) + 1 - acdf(15), 4),
+astra.update(p_le_m8=round(float(acdf(-8)), 3), p_le_m5=round(float(acdf(-5)), 3), p_lt_0=round(float(acdf(0)), 3), p_ge_5=round(float(1 - acdf(5)), 3),
+             p_ge_10=round(float(1 - acdf(10)), 3), p_abs_ge_7=round(float(acdf(-7) + 1 - acdf(7)), 3), p_abs_ge_10=round(float(acdf(-10) + 1 - acdf(10)), 3),
+             p_abs_ge_15=round(float(acdf(-15) + 1 - acdf(15)), 4), p_lt_m25=round(float(acdf(-25)), 4),
              base_prob=round(st_a[-1] * .77 * .80, 3), base_p50=round(aq(lambda v: acdf(v, [(1.0, acells[0][1])]), .5), 2),
-             base_p_le_m8=round(acdf(-8, [(1.0, acells[0][1])]), 3), base_p_lt_0=round(acdf(0, [(1.0, acells[0][1])]), 3))
+             base_p_le_m8=round(float(acdf(-8, [(1.0, acells[0][1])])), 3), base_p_lt_0=round(float(acdf(0, [(1.0, acells[0][1])])), 3),
+             cell_means_shrunk={f"sign{sg}_below{isb}": round(mu, 2) for (sg, isb), (wt, mu) in zip([(s, b) for s in (-1, 0, 1) for b in (True, False)], acells)})
 print("Astra replay:", astra)
 
 # ---------- 6. slider approximation (3 Gaussians fitted to the FINAL draws; max CDF error reported) ----------
@@ -318,13 +342,21 @@ slider["max_abs_cdf_error"] = round(float(np.abs(emp - gcdf).max()), 4)
 slider.to_csv(HERE / "s01_v2_slider.csv", index=False)
 print(slider.to_string(index=False))
 
-# ---------- 7. outputs ----------
+# ---------- 7. history coverage of the final 5-95 interval ----------
+xall = rx.abnb_1d_pct.values
+cov_all = int(((xall >= fin["p5"]) & (xall <= fin["p95"])).sum())
+xex = ex.ret_1d_cc_raw_pct.values
+cov_ex = int(((xex >= fin["p5"]) & (xex <= fin["p95"])).sum())
+print(f"5-95 interval [{fin['p5']}, {fin['p95']}] covers {cov_all}/23 all prints, {cov_ex}/16 ex-reopening; outside:",
+      sorted([float(v) for v in xall if v < fin["p5"] or v > fin["p95"]]))
+
+# ---------- 8. outputs ----------
 pd.DataFrame([{"percentile": p, "return_pct": fin[f"p{p}"]} for p in PCT]).to_csv(HERE / "s01_v2_percentiles.csv", index=False)
 pd.DataFrame([dict(threshold=k, p=v) for k, v in [("P(<= -8%)", fin["p_le_m8"]), ("P(<= -5%)", fin["p_le_m5"]), ("P(< 0)", fin["p_lt_0"]),
               ("P(>= +5%)", fin["p_ge_5"]), ("P(>= +10%)", fin["p_ge_10"]), ("P(|r| >= 7%)", fin["p_abs_ge_7"]), ("P(|r| >= 10%)", fin["p_abs_ge_10"]),
-              ("P(|r| >= 15%)", fin["p_abs_ge_15"]), ("P(< -25%)", fin["p_lt_m25"]), ("P(>= +17%)", fin["p_ge_17"]),
+              ("P(|r| >= 15%)", fin["p_abs_ge_15"]), ("P(< -15%)", fin["p_lt_m15"]), ("P(< -25%)", fin["p_lt_m25"]), ("P(>= +17%)", fin["p_ge_17"]),
               ("P(< -40)", fin["below_m40"]), ("P(> +40)", fin["above_p40"])]]).to_csv(HERE / "s01_v2_thresholds.csv", index=False)
 json.dump(dict(params=P, g0=J["g0"], c02_splits=J["splits"], states=states, estimates=est, conditionals=cond, cells=cells, astra_replay=astra,
-               slider=slider.to_dict("records"), windows=wrows, seed=SEED, n=N),
+               slider=slider.to_dict("records"), windows=wrows, coverage={"all23": cov_all, "ex16": cov_ex}, seed=SEED, n=N),
           open(HERE / "s01_v2_components.json", "w"), indent=2, default=float)
 print("done")
