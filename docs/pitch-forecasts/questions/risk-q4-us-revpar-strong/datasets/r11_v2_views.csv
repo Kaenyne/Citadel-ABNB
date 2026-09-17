@@ -1,0 +1,12 @@
+view,centre_or_mean,sd,p_ge_4,p_le_1
+FY-implied Q4 at FY 4.4 (mean over Q3 cases),2.693,,,
+"AR(1) one step from Q3 avg 5.5 (phi .6, lr 2.25)",4.2,,,
+AR(1) one step from mid-Aug exit 4.4,3.54,,,
+"calendar adjustment (election -0.5, CR -0.2, comp credit 0)",-0.7,,,
+"decomposition (FY-implied + AR two-start, -0.7 calendar, no comp credit)",2.582,1.81,0.2166,0.1873
+"anchor: CoStar/TE FY26 +4.4 implied Q4, unadjusted",2.693,1.823,0.2373,0.1727
+base rate: reconstructed quarters 2023Q3-2026Q2 (Laplace),1.679,2.243,0.1786,0.3929
+blend 0.5/0.3/0.2,,,0.2152,0.224
+published joint object (mixture matched to the blend),2.574,1.81,0.2152,0.1883
+"rev-1 normal N(3.517, 1.676)",3.517,1.676,0.3866,0.0666
+rev-1 with the comp credit removed (audit A12-04),2.717,1.676,0.222,0.1528

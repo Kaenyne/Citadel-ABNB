@@ -1,0 +1,118 @@
+
+======== B01  letter base rates and the day-1 classes ========
+n 16  strict 6  synonyms 8 | W1 5/14  W2 3/10 | November 2/4 | bucket era 0/3 ['3Q25', '4Q25', '2Q26']
+  (the log's Sec 5 says the bucket era is 1/4; 1Q26 is not a bucket letter)
+strict n6  mean -5.38  MEDIAN -3.95  P(<=-8) 2/6
+synonym n8 mean -6.59  P(<=-8) 4/8 | no-language(strict) mean +1.16
+day-1 values disagreeing with abnb_earnings_reactions.csv: none
+
+======== B01  tree: published, and with the three corrections ========
+R01 rev-2 N(9.5,1.70) masses {'>=10': 0.384, '9-10': 0.231, '<9': 0.384} | B01/C02 still use N(9.67,1.70) {'>=10': 0.423, '9-10': 0.23, '<9': 0.347}
+  published                  P(Yes)=0.3254  P(Yes|d)=0.67  P(Yes&d)=0.209  share of Yes 0.64  branches 0.24 / 0.32 / 0.43
+  R01 rev-2 masses only      P(Yes)=0.3320  P(Yes|d)=0.67  P(Yes&d)=0.216  share of Yes 0.65  branches 0.24 / 0.32 / 0.43
+  dir_mod .95 only           P(Yes)=0.3442  P(Yes|d)=0.73  P(Yes&d)=0.228  share of Yes 0.66  branches 0.26 / 0.34 / 0.45
+  bucket c/d .20/.35 only    P(Yes)=0.3047  P(Yes|d)=0.65  P(Yes&d)=0.203  share of Yes 0.67  branches 0.23 / 0.30 / 0.40
+  AUDITOR (all three)        P(Yes)=0.3300  P(Yes|d)=0.71  P(Yes&d)=0.229  share of Yes 0.69  branches 0.24 / 0.32 / 0.43
+
+======== B01  impact: the 9.90-vs-9.67 baseline and the kernel double count ========
+E[nights|Yes] 9.31 ; tree's own unconditional 9.67 -> delta -0.36 (the log uses 9.90 and publishes -0.59)
+corrected: d3 -0.35 pt | 3Q26 rev -16.6 | 4Q26 rev -6.2 (kernel term dropped; published -22) | FY27 rev -21.9 (published -38)
+           FY26 margin -0.10 pp (published -0.2) | FY27 margin -0.09 pp | EPS -0.020
+
+======== B01  every quoted letter fragment, checked against data/raw/letters ========
+letter fragments checked 30 ; not found: none
+
+======== B01  do any 'no language' letters in fact carry a forward softening phrase? ========
+  1Q24 | (none)
+  2Q23 | Given the continued macroeconomic uncertainty and elevated ADR, we believe that Airbnb Rooms is an important o || • As expected, in Q2 2023, EMEA faced a hard year-over-year comparison resulting in a deceleration in Nights a || This was the largest driver of the deceleration in global nights growth in Q2 2023.
+  3Q24 | Nights and Experiences Booked accelerated throughout the quarter and into Q4, despite a softer start due to sh || Global lead times also normalized throughout the quarter. || We are seeing strong demand trends in Q4 2024 across core and expansion markets for both long and short lead t
+  4Q24 | (none)
+  4Q22 | In Q4 2022, we had our highest number of active bookers yet, demonstrating guests' excitement to travel on Air || And heading into 2023, we see a strong backlog for Q1 with longer lead times for bookings in Q4 2022 compared 
+  3Q25 | Specifically, we are seeing strength in longer lead time bookings, in part driven by our Reserve Now, Pay Late || Average lead times were up slightly on a year-over-year basis, particularly in North America in part driven by || ¦ North America: In North America, we saw mid-single digit growth of Nights and Seats Booked during Q3 2025 co
+  4Q25 | ¦ We expect GBV to increase in the low teens year-over-year, driven by high-single-digit growth in Nights and  || In Q4 2025, we observed relatively consistent year-over-year trends in terms of market type and travel corrido || 7 ¦ North America: In North America, we saw mid-single digit growth of Nights and Seats Booked during Q4 2025 
+  2Q26 | GBV grew 16% year-over-year to $27.2 billion, driven by continued strong demand as well as a moderate increase || ¦ We expect year-over-year GBV growth to be in the mid teens, driven by low double-digit growth in Nights and  || 12 Q2 2026 $3.6B $816M $1.3B Revenue Net Income Adjusted EBITDA 17% Y/Y 23% Margin 35% Margin 13% Y/Y (ex-FX) 
+
+======== B03  cross-question inputs: what is actually on disk ========
+C04 rev2 (a) 0.33 (b) 0.30   [B03 quotes 0.26 / 0.42]
+C09 rev2 (c) up 0.47          [B03 quotes 0.40]
+R05 rev2 p 0.22                [B03 quotes 0.17; R05's RESUME kills its rev-1 S&M <= $706M / +20.7% threshold]
+  B03 as published                 A 0.120 B 0.080 C 0.052 D 0.040 -> union 0.263
+  rev-2 inputs, same conditionals  A 0.141 B 0.080 C 0.066 D 0.040 -> union 0.291
+  AUDITOR (.27/.09/.20/.07)        A 0.127 B 0.090 C 0.066 D 0.070 -> union 0.310
+anchor: 0.5*C04(a)+0.25*C04(b) = 0.240 on rev 2 (published used rev 1 -> 0.235)
+stock line: EPS +0.254 x 27x = $6.9 ; the run's 16x EV/EBITDA on +$179M = $4.84 ; published -$3
+
+======== B03  S&M history and the 'eight consecutive quarters' claim ========
+  3Q23 S&M   +4.9%  revenue  +17.8%  slower (run 0)
+  4Q23 S&M   +3.9%  revenue  +16.6%  slower (run 0)
+  1Q24 S&M  +14.2%  revenue  +17.8%  slower (run 0)
+  2Q24 S&M  +17.9%  revenue  +10.6%  FASTER (run 1)
+  3Q24 S&M  +27.5%  revenue   +9.9%  FASTER (run 2)
+  4Q24 S&M  +29.0%  revenue  +11.8%  FASTER (run 3)
+  1Q25 S&M   +9.5%  revenue   +6.1%  FASTER (run 4)
+  2Q25 S&M  +20.6%  revenue  +12.7%  FASTER (run 5)
+  3Q25 S&M  +24.3%  revenue   +9.7%  FASTER (run 6)
+  4Q25 S&M  +27.1%  revenue  +12.0%  FASTER (run 7)
+  1Q26 S&M  +33.4%  revenue  +17.9%  FASTER (run 8)
+  2Q26 S&M  +26.6%  revenue  +16.5%  FASTER (run 9)
+  -> the streak is 9 quarters, not the eight claim 3 states
+
+======== B03  every forward ADR/marketing guide sentence, from the raw letters ========
+  1Q24 | We expect the year-over-year growth rate of nights booked in Q2 2024 to be relatively stable to that of Q1 2024 and estimate that ADR for the quarter will be modestly up compared to Q2 2023 
+  1Q25 | In Q2 2025, we expect ADR to be approximately flat year-over-year.
+  1Q26 | ¦ In Q2 2026, we expect GBV to increase in the low double digits year-over-year, driven by growth in Nights and Seats Booked and a moderate increase in ADR.
+  1Q26 | We expect the FX tailwind to ADR to be significantly lower in Q2 2026 than in Q1.
+  2Q24 | Lastly, we expect ADR to increase modestly on a year-over- year basis in Q3 2024.
+  2Q25 | In Q3 2025, we expect ADR to increase modestly on a year-over-year basis, primarily driven by FX.
+  2Q26 | ¦ We expect year-over-year GBV growth to be in the mid teens, driven by low double-digit growth in Nights and Seats Booked and a moderate increase in ADR due to mix shift and price appreciat
+  3Q24 | In Q4 2024, we expect ADR to increase modestly on a year-over-year basis, driven by continued demand for larger and higher priced listings, as well as a small benefit from foreign exchange.
+  3Q25 | We anticipate our GBV to benefit from a modest increase in ADR, primarily due to price appreciation and FX, as well as continued growth in Nights and Seats Booked.
+  4Q24 | In Q1 2025, we expect ADR to decline slightly on a year-over-year basis, largely driven by FX headwinds.
+  4Q25 | ¦ We expect GBV to increase in the low teens year-over-year, driven by high-single-digit growth in Nights and Seats Booked and a moderate increase in ADR due to price appreciation and FX.
+
+======== B02  AR(1) on the residual, and its small-sample bias ========
+OLS      const 0.750 rho 0.747 innov 0.939 -> 3Q26 point 4.374  (log: 0.750/0.747/0.94/4.37)
+Kendall  rho 0.979 -> 3Q26 point 4.809  (the branch's mean reversion is mostly small-sample bias)
+residual one-quarter changes: mean +0.106 sd 0.935 min -1.467 n 13
+
+======== B02  joint model reproduction and the branches that matter ========
+  published joint model (target .119/.172)     P(<=2.0)=0.1194  P(>=4.4)=0.1723  med=3.398  sd=1.125
+  Kendall-corrected AR(1) branch               P(<=2.0)=0.1002  P(>=4.4)=0.1963  med=3.497  sd=1.117
+  mix sd 0.60 (claim 7's own mapping RMSE)     P(<=2.0)=0.1370  P(>=4.4)=0.1947  med=3.388  sd=1.226
+  bias -0.07 (log's ex-POST decel split)       P(<=2.0)=0.1580  P(>=4.4)=0.1235  med=3.178  sd=1.125
+  bias +0.58 (implementable ex-ANTE split)     P(<=2.0)=0.0650  P(>=4.4)=0.2972  med=3.828  sd=1.125
+  FX weights .76/.12/.12 (empirical rate)      P(<=2.0)=0.1073  P(>=4.4)=0.1533  med=3.405  sd=1.056
+  AUDITOR structural (A14-05, -11, -12 repaired) P(<=2.0)=0.1121  P(>=4.4)=0.1882  med=3.447  sd=1.140
+  gaussian N(3.43, 0.927): P(<=2.0)=0.0615  P(>=4.4)=0.1477
+  gaussian N(3.50, 1.000): P(<=2.0)=0.0668  P(>=4.4)=0.1841
+  gaussian N(3.58, 0.927): P(<=2.0)=0.0442  P(>=4.4)=0.1882
+  gaussian N(3.50, 1.050): P(<=2.0)=0.0766  P(>=4.4)=0.1957
+AUDITOR blend 0.55 structural + 0.45 N(3.50,1.00): B02 0.092  R07 0.186
+
+======== B02  the direction split: ex-post (used) vs ex-ante (implementable) ========
+  EX-POST decel  n 5  mean +0.070  rmse 0.894  SE 0.446  ['2Q24', '3Q24', '4Q24', '1Q25', '2Q26']
+  EX-POST accel  n 5  mean -0.685  rmse 0.960  SE 0.336  ['1Q24', '2Q25', '3Q25', '4Q25', '1Q26']
+  EX-ANTE decel  n 5  mean -0.579  rmse 0.889  SE 0.337  ['1Q24', '2Q24', '4Q24', '1Q25', '2Q26']
+  EX-ANTE accel  n 5  mean -0.036  rmse 0.965  SE 0.482  ['3Q24', '2Q25', '3Q25', '4Q25', '1Q26']
+  pooled bias -0.308 ; 3Q26 is an ex-ante decel quarter (model 3.4 vs 2Q26 actual 5.30)
+
+======== B02  reference classes, re-counted ========
+reported <= 2.0: 5 of 14
+FX >= -0.5: 8 quarters (log says 7); of those <= 2.0: 0
+residual >= 3.50: 3 quarters -> <= 2.0 in 0
+residual >= 3.45 (1Q23 rounded in, as the log's parenthesis does): 4 -> <= 2.0 in 1
+
+======== B02  is the FX branch calibrated? (17 quarters of disclosed FX) ========
+euro-baskets spread: mean 0.471 max 1.110 (2Q26) ; 3Q26's 1.38 is outside the range
+midpoint |err| mean 0.337 max 1.000 ; corr(|err|, spread) = -0.390 (the error does NOT widen when the estimators disagree)
+a disclosed FX <= -1.0 needs err >= +0.69pp: that happened in 1 of 17 = 0.059 (Laplace 0.105) ; the mixture puts 0.171 there
+disclosed outside the eur-baskets interval (|err| >= spread/2): 10 of 17 ; signed >= +spread/2: 7 of 17
+
+======== B02 / R07  impact: a level shift is not a growth shift ========
+  B02 Yes: FY27 growth 10.94% -> 9.94% (delta -1.00 pt; the log assumes 1.9 / 1.65)
+     multiple $4.18 + level $8.17 = $12.34 ; x0.70 = $8.64  (published $12)
+  R07 Yes: FY27 growth 10.94% -> 11.78% (delta +0.84 pt; the log assumes 1.9 / 1.65)
+     multiple $3.52 + level $7.03 = $10.55 ; x0.70 = $7.39  (published $10)
+
+======== B02  MODL anchor ========
+n 26 low/mean/high 1.413 / 3.369 / 4.571 ; range/4 sd 0.789 -> P(<=2.0) 0.0415 ; at RMSE 0.927 0.0699 ; 174.72 at 18.7% of range

@@ -1,0 +1,19 @@
+quarter,revpar_yoy_mean_pct,n_months_saved,note
+2023Q3,1.15,2,
+2023Q4,2.4,1,
+2024Q1,0.9,1,n = 1: January 2024 alone (Feb/Mar 2024 not saved; Easter shift)
+2024Q2,2.5,3,
+2024Q3,0.87,3,
+2024Q4,4.4,1,"n = 1: December 2024 alone, boosted by the New Year calendar shift; the quarter is probably +2.5 to +3 (FY2024 about +1.8 per CoStar, annual release not saved): counted as uncertain"
+2025Q1,2.4,3,
+2025Q2,-0.4,3,
+2025Q3,-1.4,3,
+2025Q4,-1.8,2,Dec 2025 implied from FY2025 -0.3 (annual release) and the three reconstructed quarters; 
+2026Q1,3.53,3,
+2026Q2,5.6,3,
+2026Q3,8.2,1,"current quarter, July only: excluded from the base rate"
+quarters 2023Q3-2026Q2 reconstructed,12,,"all three months saved for 2024Q2, 2024Q3, 2025Q1, 2025Q2, 2025Q3, 2026Q1, 2026Q2; the rest are 1-2 months"
+share >= +4 (as reconstructed),0.167,2 of 12,Laplace 0.214; 2024Q4 (n 1) is the uncertain count
+share >= +4 (2024Q4 counted below 4),0.083,1 of 12,Laplace 0.143
+"share <= +1 (B15 mirror, as reconstructed)",0.417,5 of 12,Laplace 0.429; 2024Q1 (n 1) is the uncertain count; rev-1 B15 claimed 6 of 13
+rev-1 hand list (r11_model.py:36) 2023Q2-2026Q2,,1 of 13 >= 4; 6 of 13 <= 1,withdrawn (A12-03)

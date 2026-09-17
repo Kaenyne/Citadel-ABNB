@@ -1,0 +1,122 @@
+{
+ "object": "Adopted 4Q26 US hotel RevPAR y/y distribution (R11 revision 2, 2026-09-17). R11 and B15 read this file; the rev-1 normal N(3.517, 1.676) and B15's rev-1 mixture (0.9 N(3.7,1.6) + 0.1 N(0.8,1.8)) are withdrawn.",
+ "provenance": "questions/risk-q4-us-revpar-strong/datasets/r11_model_v2.py; audit A12 findings 03/04/10/11/17; response audits/A12-audit-response.md",
+ "parametric": {
+  "form": "0.90 x N(trend_centre, 1.7) + 0.10 x N(0.8, 1.8) on 4Q26 US RevPAR y/y (%), the mean of the three CoStar monthly y/y figures (convention 1)",
+  "trend_centre": 2.771,
+  "trend_sd": 1.7,
+  "shock_weight": 0.1,
+  "shock_centre": 0.8,
+  "shock_sd": 1.8,
+  "mean": 2.574,
+  "sd": 1.81,
+  "how_set": "the decomposition mixture (FY-implied 4Q26 2.69 and the two-start AR leg 3.87 averaged, -0.7 calendar, no comp credit) re-centred so that P(>= 4) equals the 0.5/0.3/0.2 blend of decomposition 0.217, anchor 0.237 and base rate 0.179"
+ },
+ "events": {
+  "R11_ge_4_0": 0.2152,
+  "B15_le_1_0": 0.1883,
+  "between_1_and_4": 0.5965,
+  "le_0": 0.0792
+ },
+ "conditional_means_pct": {
+  "given_ge_4": 4.99,
+  "given_le_1": -0.062
+ },
+ "inputs": {
+  "q1_2026_actual_months": [
+   0.4,
+   4.3,
+   5.9
+  ],
+  "q2_2026_actual_months": [
+   4.4,
+   4.0,
+   8.4
+  ],
+  "q3_2026_assumed": "5.0-6.0 (Jul 8.2 actual; Aug ~5.5 from the weekly tape; Sep ~3)",
+  "fy26_forecast": 4.4,
+  "fy_implied_q4_at_4_4": 2.693,
+  "ar_from_q3_avg": 4.2,
+  "ar_from_exit_rate": 3.54,
+  "calendar_adj": -0.7,
+  "comp_credit": 0.0,
+  "base_rate_quarters": [
+   [
+    "2023Q3",
+    1.15,
+    2
+   ],
+   [
+    "2023Q4",
+    2.4,
+    1
+   ],
+   [
+    "2024Q1",
+    0.9,
+    1
+   ],
+   [
+    "2024Q2",
+    2.5,
+    3
+   ],
+   [
+    "2024Q3",
+    0.87,
+    3
+   ],
+   [
+    "2024Q4",
+    4.4,
+    1
+   ],
+   [
+    "2025Q1",
+    2.4,
+    3
+   ],
+   [
+    "2025Q2",
+    -0.4,
+    3
+   ],
+   [
+    "2025Q3",
+    -1.4,
+    3
+   ],
+   [
+    "2025Q4",
+    -1.8,
+    2
+   ],
+   [
+    "2026Q1",
+    3.53,
+    3
+   ],
+   [
+    "2026Q2",
+    5.6,
+    3
+   ],
+   [
+    "2026Q3",
+    8.2,
+    1
+   ]
+  ],
+  "base_rate_ge4_laplace": 0.1786,
+  "base_rate_le1_laplace": 0.3929
+ },
+ "must_adopt": [
+  "R11 (this log, revision 2)",
+  "B15 bonus-q4-us-revpar-soft (batch A18): P(<= 1.0) = 0.188 (rev 1: 0.10); base-rate row '6 of 13' -> '5 of 12'"
+ ],
+ "superseded": {
+  "R11_rev1": 0.38,
+  "B15_rev1": 0.1,
+  "rev1_p_le1_in_R11_log": 0.07
+ }
+}
