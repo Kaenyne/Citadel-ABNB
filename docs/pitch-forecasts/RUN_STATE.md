@@ -47,3 +47,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 23:48 A10 forecast done on Fable (R04 P 0.58 EV $4.1/sh material; R05 P 0.17 EV $0.5 immaterial; R07 P 0.17 EV $1.2 marginal). A13 forecast (R12,R13,R14) launched on Fable. Running: A11, A12, A13 forecasts; A02 response; Codex audit A03.
 - 00:05-03:50 SESSION LIMIT OUTAGE (5-hour window; reset 3:50am). Killed mid-work: A11 forecast (files complete on disk: R06/R08/R09 logs+JSONs), A12 and A13 forecasts (nothing on disk), A02 response (both logs and JSONs at revision 2; A02-audit-response.md not written). Codex audit A03 completed 23:54 during the outage (exit 0, 31 KB).
 - 03:52 resumed. Launched: A02 response finisher, A03 response, A12 forecast, A13 forecast (all Fable); Codex audit A04.
+- 03:57 heartbeat: no change since 03:52 relaunch; running A02 response finisher, A03 response, A12, A13 forecasts; Codex audit A04.
