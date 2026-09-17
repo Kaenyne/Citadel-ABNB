@@ -14,7 +14,7 @@
       "(e) no 4Q26 nights descriptor": 0.04
     },
     "leading_option": "(c) high single digits",
-    "leading_option_ci": [0.30, 0.48]
+    "leading_option_ci": [0.29, 0.42]
   },
   "estimates": {
     "base_rate": 0.37,
@@ -38,11 +38,11 @@
     "street_4q26_bar_pct": 9.9
   },
   "sensitivity": [
-    {"assumption": "P(3Q26 print >= 10.0%) = 0.38 (team band)", "moves_to": 0.36, "note": "leading option (c) at P(>=10)=0.60 (Street/Kalshi view); (a) rises to 0.29"},
-    {"assumption": "P(3Q26 print >= 10.0%) = 0.38 (team band)", "moves_to": 0.41, "note": "leading option (c) at P(>=10)=0.25; (d) rises to 0.21"},
-    {"assumption": "management keeps the bucket format (P(directional-only) ~0.25)", "moves_to": 0.31, "note": "(c) if directional-only rises to 0.45; (d) becomes 0.26"},
-    {"assumption": "4Q26 baseline 8.1 with 8.9 as the top", "moves_to": 0.34, "note": "(c) if case A 8.9 is the point and management guides at the Street bar less one point; (b) 0.28"},
-    {"assumption": "comp discipline (1pt harder comp -> ~1pt lower bucket)", "moves_to": 0.34, "note": "(c) if management ignores the comp on a strong October and Q3 prints >=10; (a) 0.28"}
+    {"assumption": "P(3Q26 print >= 10.0%) = 0.38 (team band)", "moves_to": 0.36, "note": "leading option (c) at P(>=10)=0.60 (Street/Kalshi view); (a) rises to 0.29, (d) 0.14"},
+    {"assumption": "P(3Q26 print >= 10.0%) = 0.38 (team band)", "moves_to": 0.42, "note": "leading option (c) at P(>=10)=0.25; (d) rises to 0.21, (a) 0.17"},
+    {"assumption": "management keeps the bucket format (P(directional-only) ~0.25)", "moves_to": 0.29, "note": "(c) if directional-only rises to 0.45; (d) becomes 0.29, (b) 0.20, (a) 0.18"},
+    {"assumption": "4Q26 baseline 8.1 with 8.9 as the top", "moves_to": 0.37, "note": "(c) if case A 8.9 is the point and management guides at the Street bar less one point; (b) 0.24, (a) 0.22, (d) 0.14"},
+    {"assumption": "comp discipline (1pt harder comp -> ~1pt lower bucket)", "moves_to": 0.35, "note": "(c) if management ignores the comp on a strong October and Q3 prints >=10; (a) 0.28, (d) 0.15"}
   ],
   "monitoring": [
     {"date": "2026-09-30", "event": "September Inside Airbnb dumps; re-run reviews stays index for the full 3Q26 stay window", "action": "re-set P(3Q26>=10); each 0.5pp move in the index centre moves (a) by ~0.04 and (c) by ~0.03 the other way"},

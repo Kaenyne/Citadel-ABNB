@@ -44,3 +44,17 @@ print('descriptor classes n=%d down=%.3f stable=%.3f up=%.3f' % (n,down,stable,u
 for name,v in [('base_rate',base),('decomposition',dec),('anchor',anchor),('final',final)]:
     print(name, {o: round(v[o],3) for o in opts})
 print('written', out)
+
+# ---- 5. Sensitivities (research-log.md section 7)
+def tree(p, c=cond):
+    return {o: round(sum(p[s]*c[s][o] for s in p),3) for o in opts}
+print('S1 P(Q3>=10)=0.60 (Street/Kalshi view):', tree({'ge10':.60,'9to10':.28,'lt9':.12}))
+print('S1 P(Q3>=10)=0.25 (team-low view):     ', tree({'ge10':.25,'9to10':.45,'lt9':.30}))
+g = dict(final); tot = g['a']+g['b']+g['c']
+for k in 'abc': g[k] -= 0.20*final[k]/tot
+g['d'] += 0.12; g['b'] += 0.06; g['a'] += 0.02
+print('S2 directional-only 0.25 -> 0.45:      ', {k: round(v,3) for k,v in g.items()})
+c3 = dict(cond); c3['9to10'] = dict(a=.12,b=.32,c=.42,d=.11,e=.03); c3['lt9'] = dict(a=.05,b=.15,c=.42,d=.33,e=.05)
+print('S3 case A 8.9 as the point:            ', tree(pQ3, c3))
+c4 = dict(cond); c4['ge10'] = dict(a=.60,b=.20,c=.15,d=.03,e=.02)
+print('S4 comp ignored on a strong October:   ', tree(pQ3, c4))

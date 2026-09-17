@@ -44,3 +44,20 @@ with open(out,'w',newline='') as f:
 for name,v in [('base_rate',base),('decomposition',dec),('anchor',anchor),('final',final)]:
     print(name, {o: round(v[o],3) for o in opts})
 print('written', out)
+
+# ---- Sensitivities (research-log.md section 7)
+def sensitivities(q3m=4795, q3s=40, q4m=3085, q4s=80, p_num=0.55, p_descr=0.35, p_none=0.10, rounddown_w=0.5):
+    fy = H1+q3m+q4m; sd = math.hypot(q3s,q4s); g = (fy/FY25-1)*100; gs = sd/FY25*100
+    Pr = lambda lo,hi: Phi((hi-g)/gs)-Phi((lo-g)/gs)
+    near = dict(a=1-Phi((15.5-g)/gs), c=Pr(14.5,15.5), d=Phi((14.5-g)/gs))
+    rd = dict(a=1-Phi((16-g)/gs), c=Pr(15,16), d=Phi((15-g)/gs))
+    nm = {k: (1-rounddown_w)*near[k]+rounddown_w*rd[k] for k in 'acd'}; nm['b'] = 0.02; s = sum(nm.values()); nm = {k: v/s for k,v in nm.items()}
+    fin = {o: p_num*nm.get(o,0)+p_descr*descr.get(o,0) for o in 'abcd'}; fin['e'] = p_none; s = sum(fin.values())
+    return round(g,2), round(gs,2), {k: round(v,3) for k,v in nm.items()}, {k: round(v/s,3) for k,v in fin.items()}
+print('S0 base                        ', sensitivities())
+print('S1 B2 kernel Q4 mid N(3161,117)', sensitivities(q4m=3161, q4s=117))
+print('S2 Street-centred Q3 N(4744,30)', sensitivities(q3m=4744, q3s=30))
+print('S3 P(numeric)=0.75             ', sensitivities(p_num=.75, p_descr=.15))
+print('S3 P(numeric)=0.35             ', sensitivities(p_num=.35, p_descr=.55))
+print('S4 round-down only             ', sensitivities(rounddown_w=1.0))
+print('S5 P(e)=0.25                   ', sensitivities(p_num=.45, p_descr=.30, p_none=.25))

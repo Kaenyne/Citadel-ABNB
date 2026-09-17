@@ -110,7 +110,7 @@ Airbnb, Ellie Mertz, Brian Chesky, Nights and Seats Booked, "high single digits"
 | (c) "high single digits" | 0.39 |
 | (d) "mid single digits" or lower, or "moderate/decelerate" without a bucket | 0.17 |
 | (e) no 4Q26 nights descriptor | 0.04 |
-Sum 1.00. Credible range on the leading option: 0.30–0.48 (moves with P(3Q26 ≥10) between 0.25 and 0.55, see §7).
+Sum 1.00. Credible range on the leading option: 0.29–0.42 (the span of the §7 rows; the format-risk row is the low end, the team-low print view the high end).
 
 Coherence notes for X01: P(bucket ≥ "around 10", a+b) = 0.40; P(descriptor at or below "high single digits", c+d) = 0.56. Joint structure used: the same 3Q26-print tree as R01/R02 (P(≥10.0) = 0.38 on the team band); (a) is 80% concentrated in the ≥10 branch, (d) is 47% concentrated in the <9 branch.
 
@@ -119,11 +119,13 @@ Extreme-probability gate (any option ≤2%): not triggered at the final vector; 
 ## 7. Sensitivity
 | Assumption | If reversed, number moves to |
 |------------|------------------------------|
-| P(3Q26 print ≥10.0%) = 0.38 (team band centre 9.5–9.6, sd 1.48) | Street/Kalshi view, P(≥10) = 0.60 (9–10: 0.28, <9: 0.12): (a) 0.29, (b) 0.20, (c) 0.36, (d) 0.12, (e) 0.03. Team-low view, P(≥10) = 0.25 (9–10: 0.45, <9: 0.30): (a) 0.17, (b) 0.18, (c) 0.41, (d) 0.21, (e) 0.04 |
-| Management keeps the bucket format (P(directional-only) ≈ 0.25) | Directional-only at 0.45 with "moderate" the default down-word: (d) 0.26, (c) 0.31, (b) 0.19, (a) 0.20, (e) 0.04 |
-| 4Q26 team baseline 8.1 (case B) with 8.9 as the top | Case A (8.9) as the point and management guiding at the Street's 9.9 less a 1-point cushion: (b) 0.28, (c) 0.34, (a) 0.23, (d) 0.12, (e) 0.03 |
-| Comp discipline: 1 point harder comp → ~1 point lower bucket (3Q25 template) | Management ignores the comp when October is strong (2Q26 template) and Q3 prints ≥10: (a | ≥10) 0.60 → (a) 0.28, (c) 0.34, (b) 0.19, (d) 0.16, (e) 0.03 |
-| Bundle-contribution disclosure returns at ≥2.5 pts (lap not biting) | Would be inside the same letter; if the bundle is still adding, (a)+(b) rise to ≈0.50 jointly with a Q3 print ≥10 |
+| P(3Q26 print ≥10.0%) = 0.38 (team band centre 9.5–9.6, sd 1.48) | Street/Kalshi view, P(≥10) = 0.60 (9–10: 0.28, <9: 0.12): (a) 0.29, (b) 0.19, (c) 0.36, (d) 0.14, (e) 0.03. Team-low view, P(≥10) = 0.25 (9–10: 0.45, <9: 0.30): (a) 0.17, (b) 0.18, (c) 0.42, (d) 0.21, (e) 0.03 |
+| Management keeps the bucket format (P(directional-only) ≈ 0.25) | Directional-only at 0.45: the extra 0.20 of would-be buckets is taken from (a)/(b)/(c) pro rata and lands 0.6 in (d) ("moderate"), 0.3 in (b) ("similar/stable"), 0.1 in (a): (a) 0.18, (b) 0.20, (c) 0.29, (d) 0.29, (e) 0.04 |
+| 4Q26 team baseline 8.1 (case B) with 8.9 as the top | Case A (8.9) as the point and management guiding at the Street's 9.9 less a 1-point cushion (conditionals in the 9–10 branch a .12 b .32 c .42 d .11; <9 branch a .05 b .15 c .42 d .33): (a) 0.22, (b) 0.24, (c) 0.37, (d) 0.14, (e) 0.03 |
+| Comp discipline: 1 point harder comp → ~1 point lower bucket (3Q25 template) | Management ignores the comp when October is strong (2Q26 template) and Q3 prints ≥10: (a | ≥10) 0.60, (c | ≥10) 0.15 → (a) 0.28, (b) 0.19, (c) 0.35, (d) 0.15, (e) 0.03 |
+| Bundle-contribution disclosure returns at ≥2.5 pts (lap not biting) | Would be inside the same letter; if the bundle is still adding, (a)+(b) rise to ≈0.50 jointly with a Q3 print ≥10 (judgement row, not computed) |
+
+The first four rows are recomputed by section 5 of `datasets/decomposition.py` (S1–S4); the base tree reproduces §5's decomposition (a) 0.212, (b) 0.188, (c) 0.396, (d) 0.173, (e) 0.030 before the 0.01 moved from (c) to (e) in §6.
 
 ## 8. Monitoring Calendar
 | Date | Event / checkpoint | Expected action |

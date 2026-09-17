@@ -1,0 +1,61 @@
+{
+  "question_id": "C03",
+  "slug": "fy26-revenue-guide-language",
+  "type": "multiple_choice",
+  "revision": 1,
+  "run_date": "2026-09-17",
+  "agent": "fable",
+  "final": {
+    "vector": {
+      "(a) raised: point or range midpoint >=16% (e.g. approximately 16%, at least 16%, high teens)": 0.37,
+      "(b) reiterated: at least mid teens or equivalent unchanged": 0.18,
+      "(c) narrowed to a point at ~15% (approximately 15%, mid teens, 15% to 16%)": 0.28,
+      "(d) lowered or softened (<15% implied or floor removed)": 0.08,
+      "(e) no FY26 revenue guidance": 0.09
+    },
+    "leading_option": "(a) raised",
+    "leading_option_ci": [0.25, 0.49]
+  },
+  "estimates": {
+    "base_rate": 0.45,
+    "decomposition": 0.37,
+    "anchor": 0.30,
+    "anchor_source": "LSEG FY26 revenue consensus $14,189.6M (+15.9%, n 44, 2026-09-11; data/processed/margin_build/23_final_model/23_vs_consensus.csv) deflated by kappa 0.6% to a Street-implied guide of $14,105M (+15.2%); no tradable market on Airbnb guidance (Polymarket, Kalshi fetched 2026-09-17T02:50Z)",
+    "base_rate_vector": {"a": 0.45, "b": 0.12, "c": 0.30, "d": 0.03, "e": 0.10},
+    "decomposition_vector": {"a": 0.37, "b": 0.17, "c": 0.27, "d": 0.09, "e": 0.10},
+    "anchor_vector": {"a": 0.30, "b": 0.18, "c": 0.35, "d": 0.07, "e": 0.10},
+    "final_minus_anchor_leading": 0.07,
+    "independence_flag": "NOT_INDEPENDENTLY_DERIVED by the 10-point rule; divergence named in research-log.md section 5 (team Q3 above the Street's highest estimate; November floor-to-point conversions 3 of 3)"
+  },
+  "arithmetic": {
+    "fy25_revenue_musd": 12241,
+    "h1_2026_revenue_musd": 6286,
+    "q3_print_assumed_musd": {"mean": 4795, "sd": 40},
+    "q4_guide_mid_assumed_musd": {"mean": 3085, "sd": 80},
+    "fy26_implied_musd": 14166,
+    "fy26_implied_growth_pct": 15.73,
+    "fy26_implied_growth_sd_pp": 0.73,
+    "p_implied_ge_16": 0.35,
+    "p_implied_15_to_16": 0.49,
+    "p_implied_lt_15": 0.16,
+    "p_numeric_sentence": 0.55,
+    "p_descriptive_sentence": 0.35,
+    "p_no_sentence": 0.10
+  },
+  "sensitivity": [
+    {"assumption": "Q4 guide midpoint N(3085, 80) (Q4-cushion convention on bridge v3)", "moves_to": 0.49, "note": "(a) under B2's kernel guide distribution N(3161, 117), implied FY 16.35%; (c) falls to 0.17"},
+    {"assumption": "Q3 print N(4795, 40) team-centred", "moves_to": 0.25, "note": "(a) if Street-centred N(4744, 30), implied FY 15.31%; (c) rises to 0.32 and leads, (d) 0.16"},
+    {"assumption": "P(numeric sentence) = 0.55", "moves_to": 0.40, "note": "(a) at 0.75 (b 0.08); at 0.35 (a) 0.33 and (b) 0.25"},
+    {"assumption": "rounding 50/50 round-down vs nearest integer", "moves_to": 0.30, "note": "(a) under round-down only; (c) 0.32 leads, (d) 0.12"},
+    {"assumption": "FY revenue bullet retained (P(e) 0.09)", "moves_to": 0.31, "note": "(a) if the bullet is dropped as redundant with the Q4 range (P(e) 0.25)"}
+  ],
+  "monitoring": [
+    {"date": "2026-09-30", "event": "September Inside Airbnb dumps and FX refresh re-set the team 3Q26 revenue and 4Q26 FX line", "action": "re-run datasets/decomposition.py; each $40M on 9M + Q4-mid moves implied FY by 0.33pp and (a) by ~0.05"},
+    {"date": "2026-10-02", "event": "team memo freeze", "action": "carry this vector; quote (b) reiteration at 0.18, not as the base case"},
+    {"date": "2026-10-15", "event": "Airbnb announces the Q3 call date", "action": "fix the resolution date"},
+    {"date": "2026-10-30", "event": "EXPE/BKNG Q3 prints", "action": "demand read-through only; (d) +/-0.02 on a >=3pt EXPE Q4 deceleration guide"},
+    {"date": "2026-11-04", "event": "register the pre-print LSEG FY26 and 4Q26 consensus vintage in sources/", "action": "recompute the anchor; no change unless consensus moves >= $60M"},
+    {"date": "2026-11-05", "event": "3Q26 letter Full-Year 2026 bullet and 4Q26 range", "action": "resolve by section 0b conventions; convert dollars on $12,241M; read the call before resolving (e)"}
+  ],
+  "log": "docs/pitch-forecasts/questions/fy26-revenue-guide-language/research-log.md"
+}
