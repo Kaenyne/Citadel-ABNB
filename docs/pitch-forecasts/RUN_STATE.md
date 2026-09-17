@@ -89,3 +89,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 12:12 A19 (X01 scenario MC) forecast launched on Fable. Running: A17 response, A18 audit (Opus); A19 forecast (Fable).
 - 12:19 A18 audit (Opus) done, audit-only marker written (adopt B14 0.09, B15 0.23, B16 0.89; all immaterial; A18 DONE). Running: A17 response (Opus); A19 forecast (Fable).
 - 12:26 heartbeat: no change; running A17 response (Opus), A19 forecast (Fable).
+- 12:31 A19 forecast done (X01 literal: breaker 0.14 / base 0.22 / short 0.55 / none 0.09; material reading 0.14/0.26/0.49/0.11; base and short identical on day-1 (-3.8%) and 15 Dec ($162); PW 15 Dec $165). A19 audit launched on Opus. Running: A17 response, A19 audit (Opus).
