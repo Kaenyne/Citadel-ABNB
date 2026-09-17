@@ -1,0 +1,116 @@
+========================================================================
+R06 / 1. letters vs the capital-return series
+quarter | letter $M | XBRL cash $M | diff
+  1Q23        500          493      -7
+  2Q23        500          507       7
+  3Q23        500          500       0
+  4Q23        750          752       2
+  2Q24        749          749       0
+  3Q24       1100         1093      -7
+  4Q24        838          838       0
+  1Q25        807          807       0
+  2Q25       1000         1010      10
+  3Q25        857          877      20
+  4Q25       1100         1095      -5
+  1Q26       1100         1088     -12
+  2Q26       1100         1051     -49
+letter-stated remaining authorization (USD bn): {'3Q24': 4.2, '4Q24': 3.3, '1Q25': 2.5, '2Q25': 1.5, '3Q25': 6.6, '4Q25': 5.6, '1Q26': 4.5, '2Q26': 3.4}
+print  buyback_in_quarter_usd_bn  cash_bn  letter_bn  remaining_after_quarter_usd_bn  remaining_over_pace_q new_authorization_announced
+ 3Q22                       1.00    1.000        NaN                            1.00                    1.0                          no
+ 4Q22                       0.50    0.500        NaN                            0.50                    0.7                          no
+ 1Q23                       0.49    0.493      0.500                            0.00                    0.0                yes ($2.5bn)
+ 2Q23                       0.51    0.507      0.500                            2.00                    4.0                          no
+ 3Q23                       0.50    0.500      0.500                            1.50                    3.0                          no
+ 4Q23                       0.75    0.752      0.750                            0.75                    1.2                  yes ($6bn)
+ 1Q24                       0.75    0.750        NaN                            6.00                    8.0                          no
+ 2Q24                       0.75    0.749      0.749                            5.25                    7.0                          no
+ 3Q24                       1.09    1.093      1.100                            4.20                    4.9                          no
+ 4Q24                       0.84    0.838      0.838                            3.30                    3.7                          no
+ 1Q25                       0.81    0.807      0.807                            2.50                    2.7                          no
+ 2Q25                       1.01    1.010      1.000                            1.50                    1.6       yes ($6bn additional)
+ 3Q25                       0.86    0.877      0.857                            6.60                    7.1                          no
+ 4Q25                       1.10    1.095      1.100                            5.60                    6.0                          no
+ 1Q26                       1.09    1.088      1.100                            4.50                    4.5                          no
+ 2Q26                       1.05    1.051      1.100                            3.40                    3.3                          no
+NOTE 3Q25: panel 0.86 = letter basis; log claim 5 quotes 877 = XBRL cash basis.
+capital-allocation boilerplate, every letter that carries it:
+    1Q24 -> strategic acquisitions where relevant
+    1Q25 -> strategic acquisitions where relevant
+    1Q26 -> strategic acquisitions or partnerships
+    2Q22 -> strategic acquisitions where relevant
+    2Q24 -> strategic acquisitions where relevant
+    2Q25 -> strategic acquisitions or partnerships
+    2Q26 -> strategic acquisitions or partnerships
+    3Q24 -> strategic acquisitions where relevant
+    3Q25 -> strategic acquisitions or partnerships
+    4Q23 -> strategic acquisitions where relevant
+    4Q24 -> strategic acquisitions where relevant
+    4Q25 -> strategic acquisitions or partnerships
+========================================================================
+R06 / 2. trigger rule: author's logistic vs the MLE on the same panel
+panel (r, announced): [(1.0, 0), (0.7, 0), (0.0, 1), (4.0, 0), (3.0, 0), (1.2, 1), (8.0, 0), (7.0, 0), (4.9, 0), (3.7, 0), (2.7, 0), (1.6, 1), (7.1, 0), (6.0, 0), (4.5, 0), (3.3, 0)]
+r<=1.6: 3/5 | 1.6<r<2.7: 0/0 (UNOBSERVED) | r>=2.7: 0/11, Laplace 0.0769
+third-quarter prints: 0/4 announcements
+MLE logit = 1.5308 -1.4234*r -> k=1.423, r50=1.075, nll=4.11072
+author k=2.0, r50=1.45 -> nll=4.49245 (NOT the MLE)
+   r=0.00  MLE=0.8221  author=0.9478
+   r=1.00  MLE=0.5268  author=0.7109
+   r=1.20  MLE=0.4558  author=0.6225
+   r=1.60  MLE=0.3216  author=0.4256
+   r=2.20  MLE=0.1679  author=0.1824
+   r=2.35  MLE=0.1401  author=0.1419
+   r=2.70  MLE=0.0901  author=0.0759
+program sizes (USD bn): [2.0, 2.5, 6.0, 6.0] -> P(>=5bn) historical = 0.50 | Laplace = 0.500 | log uses 0.78
+========================================================================
+R06 / 3. Monte Carlo replay (stdlib random; the saved model uses numpy)
+saved r06_summary.csv: {'p_ann_nov': 0.1911, 'p_ann_feb_given_not_nov': 0.5736, 'p_ann_by_feb': 0.6551, 'p_legA': 0.5106, 'p_legB': 0.0768, 'p_yes': 0.544, 'mean_rem_sep': 2.3401, 'mean_rem_dec': 1.2802, 'mean_r_dec': 1.249, 'p_q4_ge_1p5_mechanical': 0.0004}
+  author parameters                        {'nov': 0.1917, 'by_feb': 0.6571, 'legA': 0.5123, 'legB': 0.0754, 'yes': 0.545}
+  MLE trigger                              {'nov': 0.1702, 'by_feb': 0.5307, 'legA': 0.4145, 'legB': 0.0743, 'yes': 0.4532}
+  MLE trigger + size 0.50 (historical)     {'nov': 0.1702, 'by_feb': 0.5307, 'legA': 0.2654, 'legB': 0.0743, 'yes': 0.3168}
+  auditor: Nov 0.08, MLE Feb, size 0.78    {'nov': 0.0799, 'by_feb': 0.4884, 'legA': 0.3808, 'legB': 0.0665, 'yes': 0.4198}
+  leg B threshold 1.45 (letters round)     {'nov': 0.1917, 'by_feb': 0.6571, 'legA': 0.5123, 'legB': 0.0763, 'yes': 0.5452}
+R06 impact arithmetic:
+   0.45bn/165 = 2.727m shares; /586 = 0.00465; x FY27 EPS 5.73 = 0.0267
+   P(legB|yes) = 0.1412 -> weighted stock = 1.212 (log says 1.3); EV 0.55x1.3 = 0.715
+========================================================================
+R08 / tree replay and impact arithmetic
+saved: [{'metric': 'p_yes_base', 'value': 0.1509}]
+replay base = 0.1509 | lenient = 0.2388
+base rate 0/23 prints, Laplace 1/25 = 0.0400 -> two prints 0.0784
+forward-statement rows: 10 | counting under the R08 convention: 0
+auditor tree: Nov 0.03, Feb 0.10 -> 0.1270
+   FY27 base margin 34.639%
+   launch opex $  0M -> margin 34.712% (delta +0.073pp), EPS delta +0.093
+   launch opex $ 60M -> margin 34.336% (delta -0.303pp), EPS delta +0.009
+   launch opex $100M -> margin 34.086% (delta -0.553pp), EPS delta -0.047
+   launch opex $112M -> margin 34.011% (delta -0.628pp), EPS delta -0.064
+   launch opex $125M -> margin 33.930% (delta -0.709pp), EPS delta -0.082
+   log states -0.3pp and EPS 0.00; its own stated cost (half of $200-250M) gives -0.63pp and -$0.06
+   1pt of FY27 growth on the FY26 base = 142.7M (the brief's $158M is 1% of FY27 revenue)
+   EV = 0.15 x 4.90 = 0.735
+========================================================================
+R09 / route replay, descriptor base rate, disclosure-initiation cross-check
+saved: [{'metric': 'p_yes', 'value': 0.2599}, {'metric': 'p_hotel_share_disclosed', 'value': 0.2784}, {'metric': 'p_hotel_route_yes', 'value': 0.181}, {'metric': 'p_other_routes', 'value': 0.0964}]
+replay base (p_yes, disc, hotelYes, other) = (0.2599, 0.2784, 0.181, 0.0964)
+auditor (Nov 0.10, true 0.55, aggregation 0.025) = (0.2459, 0.262, 0.1441, 0.119)
+disclosure-history rows: 8 | conference or 10-K rows: 2
+independent upgrade opportunities: seats descriptor set 2Q25 -> 4 later prints; hotels descriptor set 1Q26 -> 1 later print = 5, not 8
+   n=5: Laplace/print 0.1429, two prints 0.2653, x0.65 = 0.1724
+   n=8: Laplace/print 0.1000, two prints 0.1900, x0.65 = 0.1235
+C05 rev-2 matrix: (16, 23) | seed cohort quarter: 1Q21 (6 metrics) | new quantified metrics initiated later: 10 over 22 prints -> 0.4545 per print
+                          matrix          window  continued  eligible  continuation  returned  gaps  return_rate
+                   rev1_as_coded             All         91       111        0.8198         5    19       0.2632
+                   rev1_as_coded W1 target>=1Q23         58        76        0.7632         5    17       0.2941
+                   rev1_as_coded W2 target>=1Q24         38        54        0.7037         5    16       0.3125
+               v2_partial_recode             All         93       113        0.8230         4    18       0.2222
+               v2_partial_recode W1 target>=1Q23         60        78        0.7692         4    16       0.2500
+               v2_partial_recode W2 target>=1Q24         40        56        0.7143         4    15       0.2667
+v2_excl_GF_cancel_ME_sensitivity             All         81        94        0.8617         3    12       0.2500
+v2_excl_GF_cancel_ME_sensitivity W1 target>=1Q23         52        64        0.8125         3    11       0.2727
+v2_excl_GF_cancel_ME_sensitivity W2 target>=1Q24         32        43        0.7442         3    11       0.2727
+10-K filing dates: ['2026-02-12', '2025-02-13', '2024-02-16'] | February 2.02 8-K dates: ['2026-02-12', '2025-02-13', '2024-02-13']
+=> FY2024 and FY2025 10-Ks filed the SAME DAY as the print; R09 claim 4 dates the FY2025 10-K 2026-02-13 and the log discards the 10-K route as 'typically files after the print'
+R06 p = 0.55 ci [0.4, 0.68] | stock 1.3 EV 0.7 | EV check 0.715 | material False
+R08 p = 0.15 ci [0.08, 0.27] | stock 4.9 EV 0.7 | EV check 0.735 | material False
+R09 p = 0.25 ci [0.14, 0.38] | stock 2.0 EV 0.5 | EV check 0.5 | material False
+C05 revision 2 p_any_quantification = 0.28 -> R08 and R09 both anchor on the stale 0.27
