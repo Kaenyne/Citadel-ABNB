@@ -38,3 +38,4 @@ every ~30 min resumes from disk (`py -3.13 analysis/src/pitch_forecasts/state.py
 - 23:19 A06 forecast done on Fable (S01: unconditional p50 -2.9%, P(<=-8) 0.29, P(<=-5) 0.41, P(>=+5) 0.20; base-case cell p50 -8.6%, P(<=-8) 0.53; event sd 9.0-9.5). A09 forecast (R01-R03) launched on Fable. Running: A05, A07, A08, A09; Codex audit A01 (since 23:03).
 - 23:22 Codex audit A01 finished (exit 0, 23:14, 22 KB). Codex audit A02 launched. A01 response agent waits for a free slot (4 forecast agents running: A05, A07, A08, A09).
 - 23:30 A05 forecast done on Fable (C08: a 0.50 / b 0.30 / c 0.18 / d 0.02; C11: P 0.55 CI 0.40-0.70; C12: P 0.55 CI 0.40-0.70). A01 audit-response agent launched on Fable. Running: A07, A08, A09 forecasts; A01 response; Codex audit A02.
+- 23:27 heartbeat: no change; running A07, A08, A09 forecasts, A01 response, Codex audit A02. No slot free.
