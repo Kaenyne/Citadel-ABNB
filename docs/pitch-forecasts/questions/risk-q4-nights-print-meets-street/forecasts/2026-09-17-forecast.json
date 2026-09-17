@@ -2,7 +2,7 @@
  "revision": 2, "run_date": "2026-09-17", "revised": "2026-09-17", "agent": "fable",
  "final": {"p": 0.31, "ci": [0.19, 0.44]},
  "estimates": {"base_rate": 0.38, "decomposition": 0.18, "anchor": 0.51,
-               "anchor_source": "Bloomberg MODL 4Q26 nights mean 134.0m (28 estimates, +9.9%, screenshot 2026-09-12; data/processed/reverse_dcf/E/E_street_distribution_vs_team.csv) = the bar under test, taken as N(134.0m, 1.5m): P 0.50 by construction, 0.51 with the one-decimal rounding; no tradable market (Kalshi KXABNBA FY26 ladder 2026-09-17T07:55:03Z: populated but every updated_time is 2026-08-04, two days before the 6 Aug print that reset the bar; zero weight)",
+               "anchor_source": "Bloomberg MODL 4Q26 nights mean 134.0m (28 estimates, +9.9%, screenshot 2026-09-12; data/processed/reverse_dcf/E/E_street_distribution_vs_team.csv) = the bar under test, taken as N(134.0m, 1.5m): P 0.50 by construction, 0.51 with the one-decimal rounding; no tradable market (Kalshi KXABNBA FY26 ladder 2026-09-17T07:55:03Z: volume_fp and open_interest_fp are populated, but volume_24h_fp is 0.00, the spreads run to 80 cents (>570m bid 0.63 / ask 0.99), and the last prices imply a 4Q26 of 120-123m that no participant holds; zero weight. The updated_time field is series metadata, not a quote timestamp - A16-18 found it frozen at 2026-04-09 across 131 Kalshi Fed markets carrying 298,901 contracts of 24h volume - so the audit's 'last trade pre-dates the 6 Aug print' reason is not adopted)",
                "final_minus_anchor": -0.19,
                "audit_independent": 0.30, "final_minus_audit": 0.01,
                "blend_weights": {"V1_decomposition": 0.5, "V2_guide_route": 0.3, "V3_street_bar": 0.2},

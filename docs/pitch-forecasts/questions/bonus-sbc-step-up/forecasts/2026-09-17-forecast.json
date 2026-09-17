@@ -2,24 +2,45 @@
   "question_id": "B09",
   "slug": "bonus-sbc-step-up",
   "type": "binary",
-  "revision": 1,
+  "revision": 2,
   "run_date": "2026-09-17",
+  "revised": "2026-09-17",
   "agent": "fable",
-  "final": {"p": 0.10, "ci": [0.05, 0.20]},
-  "companion": {"sbc_4q26_median_musd": 468, "p_ge_480": 0.30, "p_le_450": 0.25, "base_4q25_printed_musd": 411, "needed_yoy_pct": 21.7, "needed_q4_over_q2": 1.027, "source": "datasets/b09_model.py"},
+  "final": {"p": 0.08, "ci": [0.04, 0.14]},
+  "companion": {
+    "sbc_4q26_median_musd": 466,
+    "sbc_4q26_p10_p90": [432, 495],
+    "p_ge_480": 0.27,
+    "p_le_450": 0.26,
+    "companion_basis": "sampled from the published 0.45/0.45/0.10 blend (rev 1 published the seasonal route's quantiles: 468 / 0.30 / 0.25)",
+    "base_4q25_printed_musd": 411,
+    "needed_yoy_pct": 21.65,
+    "needed_q4_over_q2": 1.027,
+    "source": "datasets/b09_model.py (rev-1 routes, untouched) re-run at rev-2 calibration; audits/A16-reproduce.py block B09/3"
+  },
   "estimates": {
     "base_rate": 0.08,
-    "decomposition": 0.11,
-    "anchor": 0.16,
-    "anchor_source": "No market or consensus on SBC (Kalshi KXABNB nights ladder, Polymarket price ladders only, 2026-09-17T08:21:21Z; LSEG EPS is GAAP so SBC is inside it). Anchor = the repo's registered M7 below-EBITDA rule (vintage 2026-09-11): 4Q26 SBC $465M with its h=2 walk-forward error pool (MAE $25-31M, Gaussian sd ~$35M) -> P(>=500) ~0.16. Base rate: Q4/Q2 seasonal ratio on 2Q26 $487M (2023-25 mean 0.962; >= 1.027 in 1 of 4 years). Decomposition: y/y rule on the printed 4Q25 $411M blended with the seasonal route and the FY26 'lower than 2025' sentence route.",
-    "final_minus_anchor": -0.06,
+    "decomposition": 0.081,
+    "anchor": null,
+    "anchor_source": "NO_EXTERNAL_ANCHOR (A16-13). No market or consensus prices SBC (Kalshi KXABNB is a nights ladder, Polymarket price ladders only, 2026-09-17T08:21:21Z; LSEG's EPS field is GAAP so SBC sits inside the EPS estimate). Revision 1 reported 0.16 against the repo's own M7 rule, which is the same y/y rule route B uses at the error scale of a residual pool containing the 2024 double-trigger step; it is now a labelled internal comparison and final_minus_anchor is not reported.",
+    "internal_comparison": 0.16,
+    "internal_comparison_source": "M7 below-ebitda LIVE rule, vintage 2026-09-11: 4Q26 point $465M with its h=2 walk-forward error pool (MAE $25-31M, Gaussian sd ~$35M) -> P(>=500) ~0.16.",
+    "final_minus_internal_comparison": -0.08,
+    "audit_independent": 0.08,
+    "final_minus_audit": 0.00,
     "not_independently_derived_flag": true,
-    "independence_note": "the anchor is the same y/y rule at the error scale of a pool that includes the 2024 step regime; the seasonal and FY26-sentence routes are separate objects and land at 0.05-0.10"
+    "independence_note": "route B and the internal comparison are the same y/y rule at different error scales; routes A (0.048) and C (0.127) are separate objects, so the final sits below the comparison on evidence, not deference"
   },
   "model": {
     "script": "docs/pitch-forecasts/questions/bonus-sbc-step-up/datasets/b09_model.py",
-    "structure": "Route A: 487 x N(0.962, 0.035) + N(0, 8); Route B: 411 x (1 + N(13.2, 6)/100); Route C: FY26 = 1592 x (1 + (13.1 + g)/100) with g ~ 0.2 N(6,3) + 0.8 N(-1.5,2.5), 4Q26 = FY26 - 897 - 452 + N(0,10); blend 0.4/0.4/0.2 = 0.09, +0.02 for the unmodelled discrete-grant tail",
-    "conventions": "object = 'Stock-based compensation expense' in the 4Q26 release reconciliation (three months); 4Q25 printed $411M (registry's $400M is the driver-history error); threshold fixed at $500M"
+    "structure": "Route A: 487 x N(0.9622, 0.035) + N(0, 8) = 0.048; Route B: 411 x (1 + N(13.2, 6)/100) = 0.078; Route C (overlay): FY26 = 1592 x (1 + (13.15 + g)/100) with g ~ 0.15 N(+4,3) + 0.85 N(-1.5,2.5), 4Q26 = FY26 - 897 - 452 + N(0,10) = 0.127; blend 0.45/0.45/0.10 = 0.069, +0.012 for the unmodelled discrete-grant tail = 0.081",
+    "revision_2_changes": "route C recalibrated on the CORRECTED guide record (A16-04: printed-release FY23 +20.43 met, FY24 +25.63 -> the 1Q24 '~20%' guide missed by 5.6 not 10.8 and the 3Q24 '~25%' guide was met) from P(miss) 0.20 x N(+6,3) to 0.15 x N(+4,3); route C weight 0.20 -> 0.10 (A16-15, it is an overlay on route B, not a third estimate); tail 0.02 -> 0.012; section 7 rewritten as a computed blend loop (A16-05); companion quantiles sampled from the blend (A16-16)",
+    "conventions": "object = 'Stock-based compensation expense' in the 4Q26 release reconciliation (three months); 4Q25 printed $411M (the registry's $400M is the driver-history error); threshold fixed at $500M; a restatement does not move the threshold"
+  },
+  "data_defect_flag": {
+    "files": ["data/processed/abnb_driver_history_quarterly.csv", "data/processed/overnight/02_guidance_ledger.csv"],
+    "detail": "driver history prints 4Q23 270 / 4Q24 400 / 4Q25 400 where the releases print 290 / 368 / 411 (FY25 $1,592M reconciles only with 411). The guidance ledger's sbc_yoy_pct actuals (FY23 18.28, FY24 30.82, FY25 9.87) reproduce only from the erroneous series; the printed basis is 20.43 / 25.63 / 13.15.",
+    "action": "neither file may be edited from this run (CLAUDE.md rule 1); flagged to SYNTHESIS.md for anyone using sbc_yoy_pct as a base rate (B08 claim 8 cites the same metric)"
   },
   "impact": {
     "nights_3q26_pts": 0,
@@ -31,25 +52,30 @@
     "margin_fy27_pp": 0,
     "eps_fy27_usd": -0.20,
     "stock_usd_per_share": -3,
-    "ev_stock_usd_per_share": -0.3,
+    "ev_stock_usd_per_share": -0.24,
     "material": false,
-    "note": "SBC is below adjusted EBITDA: no margin effect. At $500M vs the team path's $465M (+$35M; FY27 run-rate +$140M vs M7's $2,053M) GAAP EPS (the Street basis) is -$0.05 in 4Q26 and -$0.20 in FY27; a full P/E mark would be -$5.4 at 26.9x, half-weighted to -$3 because SBC-driven misses are discounted by EBITDA/FCF holders. EV 0.10 x -3 = -$0.3/share: immaterial; drop from the memo."
+    "materiality_note": "immaterial (EV -$0.24/share, further below the $1 line than at revision 1's -$0.30)",
+    "note": "SBC is below adjusted EBITDA: no margin effect. At $500M vs the team path's $465M (+$35M; FY27 run-rate +$140M vs M7's $2,053M) GAAP EPS (the Street basis) is -$0.05 in 4Q26 and -$0.202 in FY27 (+$140M x (1-0.175) / 573m shares, the run convention for FY27 rows); a full P/E mark would be -$5.4 at 26.9x, half-weighted to -$3 because SBC-driven misses are discounted by EBITDA/FCF holders. EV 0.08 x -3 = -$0.24/share: immaterial; drop from the memo. What the memo should carry from this log is the $411M / $368M release correction, not the probability."
   },
   "sensitivity": [
-    {"assumption": "Q4/Q2 regime = all four years incl. 2022 (0.979, sd 0.034)", "moves_to": 0.13},
-    {"assumption": "Q4/Q2 sd 0.035 -> 0.02", "moves_to": 0.05},
-    {"assumption": "y/y regime = last 8 quarters incl. the 2024 step (17.1 +/- 6.9)", "moves_to": 0.22},
-    {"assumption": "y/y regime = 1H26 rate 14.7 +/- 4", "moves_to": 0.06},
-    {"assumption": "P(FY26 sentence missed by ~6 pts) 0.20 -> 0.35", "moves_to": 0.14},
-    {"assumption": "P(FY26 sentence missed) 0.20 -> 0.10", "moves_to": 0.08},
-    {"assumption": "a discrete Q4 grant event adds $30M", "moves_to": 0.25}
+    {"assumption": "Q4/Q2 regime = all four years incl. 2022 (0.979, sd 0.034)", "moves_to": 0.105},
+    {"assumption": "Q4/Q2 sd 0.035 -> 0.02", "moves_to": 0.063},
+    {"assumption": "y/y regime = last 8 quarters incl. the 2024 step (17.1 +/- 6.9)", "moves_to": 0.161},
+    {"assumption": "y/y regime = 1H26 rate 14.7 +/- 4", "moves_to": 0.065},
+    {"assumption": "P(FY26 sentence missed) 0.15 -> 0.25", "moves_to": 0.087},
+    {"assumption": "P(FY26 sentence missed) 0.15 -> 0.08", "moves_to": 0.077},
+    {"assumption": "route C weight 0.10 -> 0.20 (rev-1 weight, corrected calibration)", "moves_to": 0.088},
+    {"assumption": "route C weight 0.10 -> 0.15", "moves_to": 0.085},
+    {"assumption": "a discrete Q4 grant event adds $30M with certainty", "moves_to": 0.25}
   ],
   "monitoring": [
-    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.10 (0.05-0.20); immaterial"},
-    {"date": "2026-11-05", "event": "3Q26 release: SBC line (M7 rule $452M, q10-q90 433-483)", "action": ">= $475M -> 0.30; $455-475M -> 0.14; <= $455M -> 0.06"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.08 (0.04-0.14); immaterial, drop from the body; carry the $411M correction instead"},
+    {"date": "2026-11-05", "event": "3Q26 release: SBC line (M7 rule $452M, q10-q90 433-483)", "action": ">= $475M -> 0.26; $455-475M -> 0.12; <= $455M -> 0.05"},
     {"date": "2026-11-06", "event": "3Q26 10-Q Note 8", "action": "a new executive/performance award programme -> +0.10"},
     {"date": "2026-11-06/2027-02-10", "event": "Form 4 filings; headcount remarks", "action": "large one-off grant or a stated headcount re-acceleration -> +0.03 to +0.10"},
     {"date": "2027-02-11", "event": "4Q26 release reconciliation table", "action": "resolve"}
   ],
+  "audit": {"file": "docs/pitch-forecasts/audits/A16-research-audit.md", "response": "docs/pitch-forecasts/audits/A16-audit-response.md",
+            "findings_b09": 5, "accepted": 5, "accepted_in_part": 0, "rejected": 0},
   "log": "docs/pitch-forecasts/questions/bonus-sbc-step-up/research-log.md"
 }

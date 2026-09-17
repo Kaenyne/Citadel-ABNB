@@ -178,15 +178,21 @@ WV = dict(decomposition=0.5, anchor=0.3, base_rate=0.2)
 final_ge4 = WV["decomposition"] * dec["p_ge4"] + WV["anchor"] * anchor["p_ge4"] + WV["base_rate"] * base_rate_ge4
 final_le1 = WV["decomposition"] * dec["p_le1"] + WV["anchor"] * anchor["p_le1"] + WV["base_rate"] * base_rate_le1
 
-# one published distribution: the mixture re-centred so its P(>=4) equals the blend
-lo, hi = -3.0, 7.0
-for _ in range(80):
-    mid = (lo + hi) / 2
-    if mixture(mid)["p_ge4"] > final_ge4:
-        hi = mid
-    else:
-        lo = mid
-joint = mixture((lo + hi) / 2)
+# ONE published distribution for R11 and B15. The blend of three views is matched on BOTH tails, not
+# just on R11's own: the two free parameters of the trend branch (centre and sd) are solved so that
+# P(>= 4) = the blended 0.5/0.3/0.2 upper tail and P(<= 1) = the blended lower tail. Matching only the
+# upper tail (revision 1's habit, and what a single re-centring does) would hand B15 a number the blend
+# does not imply. The solved sd is the dispersion the disagreement between the three views implies.
+def tails(c1, s1):
+    p4 = (1 - W_SHOCK) * (1 - norm.cdf((4.0 - c1) / s1)) + W_SHOCK * (1 - norm.cdf((4.0 - C_SHOCK) / S_SHOCK))
+    p1 = (1 - W_SHOCK) * norm.cdf((1.0 - c1) / s1) + W_SHOCK * norm.cdf((1.0 - C_SHOCK) / S_SHOCK)
+    return p4, p1
+
+from scipy.optimize import fsolve
+SOL = fsolve(lambda x: [tails(x[0], x[1])[0] - final_ge4, tails(x[0], x[1])[1] - final_le1],
+             [centre, S_TREND])
+TREND_C, TREND_SD = float(SOL[0]), float(SOL[1])
+joint = mixture((1 - W_SHOCK) * TREND_C + W_SHOCK * C_SHOCK, s1=TREND_SD)
 
 with open("r11_v2_views.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f)
@@ -207,7 +213,7 @@ with open("r11_v2_views.csv", "w", newline="", encoding="utf-8") as f:
     w.writerow(["blend %.1f/%.1f/%.1f" % tuple(WV.values()), "", "", round(final_ge4, 4), round(final_le1, 4), ""])
     w.writerow(["PUBLISHED joint object (mixture matched to the blend)", round(joint["mean"], 3), round(joint["sd"], 3),
                 round(joint["p_ge4"], 4), round(joint["p_le1"], 4),
-                "trend centre %.3f sd %.1f, shock %.2f at N(%.1f, %.1f)" % (joint["trend_centre"], S_TREND, W_SHOCK, C_SHOCK, S_SHOCK)])
+                "trend centre %.3f sd %.3f, shock %.2f at N(%.1f, %.1f); both tails matched to the blend" % (TREND_C, TREND_SD, W_SHOCK, C_SHOCK, S_SHOCK)])
     w.writerow(["rev-1 normal N(3.517, 1.676)", 3.517, 1.676, round(1 - norm.cdf((4 - 3.517) / 1.676), 4),
                 round(norm.cdf((1 - 3.517) / 1.676), 4), "WITHDRAWN"])
     w.writerow(["audit A12 independent number", 3.0, 1.8, 0.289, 0.16, "N(3.0,1.8) + B15 shock branch"])
@@ -259,13 +265,16 @@ obj = {
  "object": "Adopted 4Q26 US hotel RevPAR y/y distribution (R11 revision 2, 2026-09-17). R11 and B15 read this file; R11's revision-1 normal N(3.517, 1.676) and B15's revision-1 mixture 0.90 N(3.7,1.6) + 0.10 N(0.8,1.8) are withdrawn.",
  "provenance": "questions/risk-q4-us-revpar-strong/datasets/r11_model_v2.py, over us_revpar_monthly_yoy_measured.csv (r11_extract_lodging_monthly.py parses ../sources/lodging_monthly/*.html); audit A12 findings 03/04/10/11/17; response audits/A12-audit-response.md",
  "parametric": {
-   "form": "0.90 x N(trend_centre, 1.8) + 0.10 x N(0.8, 1.8) on 4Q26 US RevPAR y/y (%), resolved as the mean of the three CoStar monthly y/y figures (convention 1)",
-   "trend_centre": round(joint["trend_centre"], 3), "trend_sd": S_TREND,
+   "form": "0.90 x N(trend_centre, trend_sd) + 0.10 x N(0.8, 1.8) on 4Q26 US RevPAR y/y (%), resolved as the mean of the three CoStar monthly y/y figures (convention 1); the two trend parameters are solved so that both tails equal the three-view blend",
+   "trend_centre": round(joint["trend_centre"], 3), "trend_sd": round(TREND_SD, 3),
    "shock_weight": W_SHOCK, "shock_centre": C_SHOCK, "shock_sd": S_SHOCK,
    "mean": round(joint["mean"], 3), "sd": round(joint["sd"], 3),
    "how_set": ("the decomposition mixture (FY-implied 4Q26 %.2f and the two-start AR leg %.2f averaged, "
-               "%+.2f calendar and comp) re-centred so that P(>=4) equals the 0.5/0.3/0.2 blend of "
-               "decomposition %.3f, anchor %.3f and base rate %.3f" % (c_fy, c_ar, ADJ, dec["p_ge4"], anchor["p_ge4"], base_rate_ge4))},
+               "%+.2f calendar and comp) has its trend centre AND trend sd solved so that BOTH tails equal "
+               "the 0.5/0.3/0.2 blend: upper from decomposition %.3f, anchor %.3f, base rate %.3f = %.4f; "
+               "lower from %.3f / %.3f / %.3f = %.4f"
+               % (c_fy, c_ar, ADJ, dec["p_ge4"], anchor["p_ge4"], base_rate_ge4, final_ge4,
+                  dec["p_le1"], anchor["p_le1"], base_rate_le1, final_le1))},
  "events": {"R11_ge_4_0": round(joint["p_ge4"], 4), "B15_le_1_0": round(joint["p_le1"], 4),
             "between_1_and_4": round(1 - joint["p_ge4"] - joint["p_le1"], 4), "le_0": round(joint["p_le0"], 4)},
  "conditional_means_pct": {"given_ge_4": round(joint["e_ge4"], 3), "given_le_1": round(joint["e_le1"], 3)},

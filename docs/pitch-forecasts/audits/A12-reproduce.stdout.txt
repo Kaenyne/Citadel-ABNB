@@ -62,7 +62,7 @@ R11 / 2. the claim-10 base rate is a hand-entered list, not a repo series
 2026Q2              3.4              3.9
 2026Q3              NaN              NaN
 R11 / 3. sources
-  R11 sources/ contents: []
+  R11 sources/ contents: ['hoteldive_costar_te_forecast_jun2026_20260917T140129Z.html', 'hoteldive_costar_te_raise_outlook_aug2026_20260917T140129Z.html', 'hoteldive_fy2025_us_hotel_performance_20260917T135000Z.html', 'hotelnewsresource_costar_forecast_10aug2026_20260917T134945Z.html', 'lodging_costar_fy2023_annual.html', 'lodging_monthly', 'str_wayback']
   B15 sources/ raw html bytes: {'hoteldive_perf_20260917.html': 285764, 'hotelnewsresource_front_20260917.html': 79739, 'lodging_search_costar_20260917.html': 167063}
 R11 / 4. mirror-question coherence with B15
   B15 mixture 0.9*N(3.7,1.6)+0.1*N(0.8,1.8): P(>=4) 0.3868 P(<=1) 0.0956 mean 3.41
@@ -100,10 +100,10 @@ R16 / impact arithmetic
   the log publishes +1.05pp and +0.23, where 0.23 = 250 x 0.66 x 0.0014
 ==============================================================================
 Cross-question register
-  R10       rev 1  final 0.09 | stock 5.0 EV 0.5 material False | EV check 0.450
+  R10       rev 2  final 0.1 | stock 5.0 EV 0.5 material False | EV check 0.500
   R11       rev 1  final 0.38 | stock 1.5 EV 0.6 material False | EV check 0.570
   R15       rev 1  final 0.14 | stock 1.0 EV 0.15 material False | EV check 0.140
-  R16       rev 1  final 0.27 | stock 10.0 EV 2.7 material True | EV check 2.700
+  R16       rev 2  final 0.31 | stock 11.0 EV 3.4 material True | EV check 3.410
   B13       rev 1  final 0.26 | stock -10.0 EV -2.6 material True | EV check -2.600
   B15       rev 1  final 0.1 | stock -2.5 EV -0.25 material False | EV check -0.250
   F01       rev 2  final 0.28

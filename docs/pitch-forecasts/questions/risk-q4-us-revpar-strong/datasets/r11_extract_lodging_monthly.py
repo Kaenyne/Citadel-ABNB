@@ -1,7 +1,7 @@
 """R11 revision 2 (A12-03 fix): build the US monthly hotel RevPAR y/y series BY PARSING the saved
 Lodging Magazine reprints of CoStar's monthly US release, instead of typing a list into the model.
 
-Input : ../sources/lodging_monthly/*.html   (57 snapshots, fetched 2026-09-17, each carrying its own
+Input : ../sources/lodging_monthly/*.html   (58 snapshots, fetched 2026-09-17, each carrying its own
         publication date and CoStar's "U.S. Hotel Performance <Month> <Year>" block)
 Output: us_revpar_monthly_yoy_measured.csv  (one row per month actually found, with the file it came from)
         r11_extract_report.txt             (every file, what was found, and why a file was rejected)
