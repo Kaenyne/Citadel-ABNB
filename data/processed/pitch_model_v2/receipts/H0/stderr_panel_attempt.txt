@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/theomachado/Citadel-ABNB/analysis/src/margin_build/02_financial_panel/run.py", line 64, in <module>
+    F = Facts(ROOT / "data/raw/xbrl/ABNB_companyfacts.json")
+  File "/Users/theomachado/Citadel-ABNB/analysis/src/margin_build/02_financial_panel/panel_lib.py", line 142, in __init__
+    self.us = json.load(open(path))["facts"]["us-gaap"]
+                        ~~~~^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/theomachado/Citadel-ABNB/data/raw/xbrl/ABNB_companyfacts.json'

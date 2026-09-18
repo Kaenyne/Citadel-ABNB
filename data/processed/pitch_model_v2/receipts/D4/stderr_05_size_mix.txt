@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/theomachado/Citadel-ABNB/analysis/src/adr/05_size_mix.py", line 914, in <module>
+    main()
+    ~~~~^^
+  File "/Users/theomachado/Citadel-ABNB/analysis/src/adr/05_size_mix.py", line 558, in main
+    p = build_panel()
+  File "/Users/theomachado/Citadel-ABNB/analysis/src/adr/05_size_mix.py", line 275, in build_panel
+    p["dump_date"] = pd.to_datetime(p.dump_date)
+                                    ^^^^^^^^^^^
+  File "/Users/theomachado/Library/Python/3.13/lib/python/site-packages/pandas/core/generic.py", line 6206, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'dump_date'. Did you mean: 'update'?

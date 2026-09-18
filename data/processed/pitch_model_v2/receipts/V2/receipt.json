@@ -1,0 +1,83 @@
+{
+  "id": "V2",
+  "commit": "e39d9e44f505db978acb31849ac2c54e991a2fe6",
+  "cmd": "python3 analysis/src/forecast_methods/valuation_v1/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T07:13:18+00:00",
+  "exit_code": 0,
+  "wall_s": 1.2,
+  "watch": [
+    "analysis/src/forecast_methods/valuation_v1",
+    "data/processed/forecast_methods/valuation_v1",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "csv",
+      "max_abs_diff": 2.842170943040401e-14,
+      "rows_head": 3,
+      "rows_new": 3,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/valuation_v1/growth_multiple_price_bridge.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.7497114868092467e-13,
+      "rows_head": 24,
+      "rows_new": 24,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/valuation_v1/guide_date_refits.csv"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/valuation_v1/input_manifest.json"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.9979851106910473e-13,
+      "rows_head": 6,
+      "rows_new": 6,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/valuation_v1/regression_reproduction.csv"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/valuation_v1/run_summary.json"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/valuation_v1/valuation_page.pdf"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/valuation_v1/valuation_page.png"
+    }
+  ],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

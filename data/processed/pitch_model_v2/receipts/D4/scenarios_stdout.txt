@@ -1,0 +1,23 @@
+scenario period  residual_pp  k_line_pp  geographic_mix_pp  unit_size_party_pp  length_of_stay_mix_pp  new_business_seats_pp  interaction_pp  adr_exfx_yoy_pct  fx_pp  adr_reported_yoy_pct  adr_usd
+    base   3Q26       4.8493     0.1715            -1.4284              0.7967                 0.0563                -0.4826            -0.1             3.863  -0.43                 3.433   177.17
+   short   3Q26       2.3980     0.1715            -1.4284              0.7967                 0.0563                -0.4826            -0.1             1.411  -0.43                 0.981   172.97
+ breaker   3Q26       4.8493     0.9310            -1.4284              0.7967                 0.0563                -0.4826            -0.1             4.622  -0.43                 4.192   178.47
+    base   4Q26       4.8493     0.3745            -1.4284              0.7967                 0.0563                -0.4826            -0.1             4.066   0.15                 4.216   174.57
+   short   4Q26       3.0560     0.3745            -1.4284              0.7967                 0.0563                -0.4826            -0.1             2.272   0.15                 2.422   171.57
+ breaker   4Q26       4.8493     2.0330            -1.4284              0.7967                 0.0563                -0.4826            -0.1             5.724   0.15                 5.874   177.35
+
+cross-checks vs adr_card_v3.csv (with_K, midpoint):
+  3Q26 base: exfx 3.863 vs card 3.86 | reported 3.433 vs card 3.43 | usd 177.17 vs card 177.17
+  4Q26 base: exfx 4.066 vs card 4.07 | reported 4.216 vs card 4.22 | usd 174.57 vs card 174.57
+
+SYNTHESIS s4.2 check: 3Q26 short reported 0.981% / $172.97 (note says about +1.0% / $173.0)
+SYNTHESIS s3 check: 4Q26 lap-only without K = 2.048% / $170.94 (note says +2.1% / $170.9)
+
+3Q26 measured mix (geo+size+LOS) = -0.575 pp; assumed fills (seats+interaction) = -0.583 pp (SYNTHESIS s4.1 says -0.57 and -0.58)
+
+gates: R07 risk-adr-residual-persists needs reported >= +4.4%; B02 bonus-adr-residual-reverts needs reported <= +2.0%
+  3Q26 base: 3.433%  R07 no  B02 no
+  3Q26 short: 0.981%  R07 no  B02 YES
+  3Q26 breaker: 4.192%  R07 no  B02 no
+
+written: /Users/theomachado/Citadel-ABNB/data/processed/pitch_model_v2/receipts/D4/D4_scenarios.csv

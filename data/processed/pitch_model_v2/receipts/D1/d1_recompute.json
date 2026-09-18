@@ -1,0 +1,128 @@
+{
+  "base_3q25_nights_m": 133.6,
+  "naive_2q26_yoy_pct": 10.342,
+  "index_row": "GLOBAL|yoy_all|w_reviews",
+  "index_raw_implied_yoy_pct": 10.041,
+  "index_band_lo_hi": [
+    8.5641,
+    11.5179
+  ],
+  "wf_ratio_vs_naive_W2": 0.683209,
+  "wf_bias_pp": {
+    "W2_2023Q1+": 0.5185,
+    "W1_2022Q1+": 1.6318
+  },
+  "wf_n": {
+    "W2_2023Q1+": 10,
+    "W1_2022Q1+": 14
+  },
+  "bias_corrected_yoy_pct": {
+    "W2": 9.5226,
+    "W1": 8.4092
+  },
+  "bias_corrected_nights_m": {
+    "W2": 146.32,
+    "W1": 144.83
+  },
+  "committed_base_nights_m": 146.3,
+  "committed_base_yoy_pct": 9.5,
+  "match_base_level_abs_diff": 0.02,
+  "seven_rows_implied": [
+    10.041,
+    9.1834,
+    9.2033,
+    9.3349,
+    9.1846,
+    8.5765,
+    8.692
+  ],
+  "external_stack": {
+    "n": 12,
+    "median_yoy_pct": 9.2324,
+    "min": 6.753,
+    "max": 11.9605
+  },
+  "street": {
+    "mean_m": 148.9,
+    "low_m": 147.0,
+    "high_m": 151.0,
+    "n_estimates": 28,
+    "source": "Bloomberg MODL aggregate, 12 Sep 2026 (quoted from memo v3; licensed, not in repo)",
+    "mean_yoy_pct": 11.45,
+    "low_yoy_pct": 10.03,
+    "high_yoy_pct": 13.02
+  },
+  "adopted_print_object": {
+    "form": "N(9.5, 1.70) on latent 3Q26 nights y/y over the 133.6m base",
+    "p10_yoy_pct": 7.3214,
+    "p10_nights_m": 143.38,
+    "p90_yoy_pct": 11.6786,
+    "p90_nights_m": 149.2,
+    "source": "docs/pitch-forecasts/questions/risk-q3-nights-meets-guide/datasets/adopted_print_states_v2.json (A09 rev 2, 17 Sep 2026); read only"
+  },
+  "scenarios": [
+    {
+      "scenario": "base",
+      "cell": "point",
+      "yoy_pct": 9.5,
+      "nights_m": 146.29,
+      "nights_m_1dp": 146.3
+    },
+    {
+      "scenario": "base",
+      "cell": "low",
+      "yoy_pct": 8.5,
+      "nights_m": 144.96,
+      "nights_m_1dp": 145.0
+    },
+    {
+      "scenario": "base",
+      "cell": "high",
+      "yoy_pct": 10.0,
+      "nights_m": 146.96,
+      "nights_m_1dp": 147.0
+    },
+    {
+      "scenario": "short",
+      "cell": "point",
+      "yoy_pct": 8.5,
+      "nights_m": 144.96,
+      "nights_m_1dp": 145.0
+    },
+    {
+      "scenario": "short",
+      "cell": "low",
+      "yoy_pct": 7.3214,
+      "nights_m": 143.38,
+      "nights_m_1dp": 143.4
+    },
+    {
+      "scenario": "short",
+      "cell": "high",
+      "yoy_pct": 9.5,
+      "nights_m": 146.29,
+      "nights_m_1dp": 146.3
+    },
+    {
+      "scenario": "breaker",
+      "cell": "point",
+      "yoy_pct": 10.0,
+      "nights_m": 146.96,
+      "nights_m_1dp": 147.0
+    },
+    {
+      "scenario": "breaker",
+      "cell": "low",
+      "yoy_pct": 10.0,
+      "nights_m": 146.96,
+      "nights_m_1dp": 147.0
+    },
+    {
+      "scenario": "breaker",
+      "cell": "high",
+      "yoy_pct": 11.6786,
+      "nights_m": 149.2,
+      "nights_m_1dp": 149.2
+    }
+  ]
+}

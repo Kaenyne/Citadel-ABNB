@@ -1,0 +1,64 @@
+{
+  "id": "D1",
+  "commit": "e39d9e44f505db978acb31849ac2c54e991a2fe6",
+  "cmd": "python3 data/processed/pitch_model_v2/receipts/D1/run_krish_script.py analysis/src/q3nowcast/G2_external_backtests.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T07:10:36+00:00",
+  "exit_code": 0,
+  "wall_s": 4.2,
+  "watch": [
+    "data/processed/q3nowcast",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "csv",
+      "max_abs_diff": 8.881784197001252e-16,
+      "rows_head": 14,
+      "rows_new": 14,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/q3nowcast/G/G_backtest_scoreboard.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.1102230246251565e-15,
+      "rows_head": 56,
+      "rows_new": 56,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/q3nowcast/G/G_backtest_survivors.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 2.4868995751603507e-14,
+      "rows_head": 288,
+      "rows_new": 288,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/q3nowcast/G/G_backtests_all.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 8.881784197001252e-15,
+      "rows_head": 56,
+      "rows_new": 56,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/q3nowcast/G/G_nowcast_3q26.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 8.881784197001252e-15,
+      "rows_head": 14,
+      "rows_new": 14,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/q3nowcast/G/G_nowcast_3q26_observable.csv"
+    }
+  ],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

@@ -1,0 +1,217 @@
+{
+  "id": "R1",
+  "commit": "e39d9e44f505db978acb31849ac2c54e991a2fe6",
+  "cmd": "python3 analysis/src/forecast_methods/kernel_phi_v2/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T07:14:26+00:00",
+  "exit_code": 0,
+  "wall_s": 31.0,
+  "watch": [
+    "data/processed/forecast_methods/kernel_phi_v2",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.002796400079489003,
+      "rows_head": 27,
+      "rows_new": 27,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A1_phi_estimates.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.014933397281289063,
+      "rows_head": 30,
+      "rows_new": 30,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A2_phi_bootstrap_ci.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.002796400079489003,
+      "rows_head": 15,
+      "rows_new": 15,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A3_loo_comparison.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 7.604320906295925e-06,
+      "rows_head": 18,
+      "rows_new": 18,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A4_rolling_windows.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 113.34302199870172,
+      "rows_head": 45,
+      "rows_new": 45,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A5_dollar_map_2q26_gbv.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.038220682296014274,
+      "rows_head": 9,
+      "rows_new": 9,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A5b_lifetime_take_rate_check.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.0337503623413874,
+      "rows_head": 6,
+      "rows_new": 6,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A6_identification.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 2.6122928096228293e-06,
+      "rows_head": 21,
+      "rows_new": 21,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/A7_phi1_phi2_split_profile.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.005153755756509781,
+      "rows_head": 24,
+      "rows_new": 24,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/B1_paid_backlog_panel.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.1657167489076414e-06,
+      "rows_head": 36,
+      "rows_new": 36,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/B2_coverage_norms.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.00010381183237484493,
+      "rows_head": 168,
+      "rows_new": 168,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/B3_coverage_deviations.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.1022683699124514e-06,
+      "rows_head": 1,
+      "rows_new": 1,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/B4_live_2q26_ledger.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.1212991534170769e-06,
+      "rows_head": 5,
+      "rows_new": 5,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/B5_three_way_decomposition.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.009198708371741304,
+      "rows_head": 20,
+      "rows_new": 20,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D0_carried_and_residual_panel.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 7.704871916125455e-05,
+      "rows_head": 8,
+      "rows_new": 8,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D1_residual_R_by_season.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.4388353033467638e-06,
+      "rows_head": 16,
+      "rows_new": 16,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D2_residual_R_explainers.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.3322676295501878e-14,
+      "rows_head": 63,
+      "rows_new": 63,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D3_carried_weight_pit_sweep.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.3822183120293374e-07,
+      "rows_head": 21,
+      "rows_new": 21,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D4_R_model_pit_race.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 3.246326650696574e-05,
+      "rows_head": 12,
+      "rows_new": 12,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D5_R_model_pit_replay.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.009397886981787451,
+      "rows_head": 2,
+      "rows_new": 2,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D6_live_3q26_conditional.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 0.008427623998159106,
+      "rows_head": 26,
+      "rows_new": 26,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/D7_live_4q26_grid.csv"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/kernel_phi_v2/F1_phi_by_season.png"
+    }
+  ],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

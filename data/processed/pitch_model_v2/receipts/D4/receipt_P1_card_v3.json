@@ -1,0 +1,55 @@
+{
+  "id": "D4",
+  "commit": "e39d9e44f505db978acb31849ac2c54e991a2fe6",
+  "cmd": "python3 analysis/src/adrv3/P1_card_v3.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T07:09:45+00:00",
+  "exit_code": 0,
+  "wall_s": 0.5,
+  "watch": [
+    "data/processed/adrv3",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "csv",
+      "max_abs_diff": 5.551115123125783e-16,
+      "rows_head": 40,
+      "rows_new": 40,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/adrv3/P/P1_card_v3_backtest.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.7763568394002505e-15,
+      "rows_head": 40,
+      "rows_new": 40,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/adrv3/P/P1_card_v3_backtest_paths.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 3.3306690738754696e-16,
+      "rows_head": 16,
+      "rows_new": 16,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/adrv3/P/P1_card_v3_pass_table.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 4.440892098500626e-16,
+      "rows_head": 48,
+      "rows_new": 48,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/adrv3/P/P1_card_v3_terms.csv"
+    }
+  ],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

@@ -1,0 +1,174 @@
+[shim] G2_external_backtests.py: repointed MAIN -> /Users/theomachado/Citadel-ABNB
+panel (35, 40), features 36
+288 tests written
+
+evaluable (wf_n>=6): 288; beat naive: 56; beat by >=20%: 12
+
+--- beat naive ---
+                      feature               target         window  n  wf_n  pearson_r  perm_p  wf_ratio_vs_naive  wf_ratio_vs_ar1  wf_sign_acc                                    knowable_before_print
+              hlt_revpar_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.878814   0.000           0.665269         0.631595     0.600000                          yes (HLT reports late Oct 2026)
+              mar_revpar_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.878000   0.000           0.690894         0.655924     0.700000                            yes (MAR reports ~4 Nov 2026)
+          cpi_lodging_sa_full     nights_m_yoy_pct 2023Q1..2026Q2 13     9   0.829349   0.000           0.715782         0.672394     0.777778                                yes (Sep CPI 13 Oct 2026)
+              ntto_total_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.783448   0.000           0.719868         0.683430     0.700000                            yes (Sep prelim mid-Oct 2026)
+             ntto_total_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.795568   0.000           0.723860         0.687221     0.600000                            yes (Sep prelim mid-Oct 2026)
+         cpi_lodging_nsa_full     nights_m_yoy_pct 2023Q1..2026Q2 13     9   0.832258   0.001           0.733087         0.688651     0.666667                                yes (Sep CPI 13 Oct 2026)
+          ntto_overseas_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.794055   0.000           0.742926         0.705322     0.600000                            yes (Sep prelim mid-Oct 2026)
+             bkng_nights_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.895105   0.000           0.744390         0.706712     0.600000                          yes (BKNG reports ~28 Oct 2026)
+              mar_revpar_full     nights_m_yoy_pct 2022Q1..2026Q2 18    14   0.936659   0.000           0.755186         0.546762     0.642857                            yes (MAR reports ~4 Nov 2026)
+              ntto_total_full     nights_m_yoy_pct 2022Q1..2026Q2 15    11   0.875809   0.000           0.760291         0.514423     0.727273                            yes (Sep prelim mid-Oct 2026)
+           ntto_weurope_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.750646   0.002           0.780746         0.741227     0.700000                            yes (Sep prelim mid-Oct 2026)
+           ntto_overseas_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.736375   0.004           0.798138         0.757739     0.600000                            yes (Sep prelim mid-Oct 2026)
+es_hotel_nights_foreign_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.828574   0.010           0.838878         0.796417     0.500000                      tight (INE Sep release ~3 Nov 2026)
+           ntto_overseas_full     nights_m_yoy_pct 2022Q1..2026Q2 15    11   0.844224   0.000           0.839910         0.568294     0.636364                            yes (Sep prelim mid-Oct 2026)
+             bkng_nights_full     nights_m_yoy_pct 2022Q1..2026Q2 18    14   0.966160   0.000           0.843076         0.610396     0.642857                          yes (BKNG reports ~28 Oct 2026)
+            ntto_weurope_full     nights_m_yoy_pct 2022Q1..2026Q2 15    11   0.865372   0.002           0.845655         0.572181     0.727273                            yes (Sep prelim mid-Oct 2026)
+            ntto_weurope_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.753344   0.018           0.849527         0.806528     0.700000                            yes (Sep prelim mid-Oct 2026)
+    es_frontur_tourists_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.831440   0.006           0.858868         0.815395     0.600000                      tight (INE Sep release ~3 Nov 2026)
+     es_frontur_tourists_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.830850   0.003           0.877146         0.832748     0.500000                      tight (INE Sep release ~3 Nov 2026)
+    es_hotel_travellers_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.801589   0.017           0.877457         0.833044     0.500000                      tight (INE Sep release ~3 Nov 2026)
+        es_hotel_nights_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.806223   0.017           0.884375         0.839611     0.500000                      tight (INE Sep release ~3 Nov 2026)
+     es_hotel_travellers_full revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.701804   0.005           0.901406         0.885597     0.900000                      tight (INE Sep release ~3 Nov 2026)
+    es_frontur_visitors_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.801825   0.011           0.902455         0.856776     0.500000                      tight (INE Sep release ~3 Nov 2026)
+          ntto_overseas_qtd1m     nights_m_yoy_pct 2022Q1..2026Q2 15    11   0.890200   0.000           0.902524         0.610659     0.636364                            yes (Sep prelim mid-Oct 2026)
+     es_hotel_travellers_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.799367   0.008           0.911056         0.864942     0.400000                      tight (INE Sep release ~3 Nov 2026)
+     es_frontur_visitors_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.810409   0.003           0.920818         0.874210     0.500000                      tight (INE Sep release ~3 Nov 2026)
+                    tsa_qtd72     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.848655   0.000           0.923575         0.876827     0.600000                                    yes (daily, zero lag)
+         es_hotel_nights_full revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.675246   0.006           0.928534         0.912250     0.900000                      tight (INE Sep release ~3 Nov 2026)
+      eu_platform_nights_full revenue_musd_yoy_pct 2023Q1..2026Q2 13     9   0.676944   0.012           0.931520         0.913458     0.777778                      no (Eurostat runs ~5 months behind)
+             expe_nights_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.816809   0.006           0.935852         0.888483     0.600000 yes (EXPE reports ~6 Nov, AFTER the print in some years)
+ es_hotel_nights_foreign_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.794071   0.009           0.939475         0.891922     0.500000                      tight (INE Sep release ~3 Nov 2026)
+              hlt_revpar_full     nights_m_yoy_pct 2022Q1..2026Q2 18    14   0.945903   0.000           0.942213         0.682171     0.714286                          yes (HLT reports late Oct 2026)
+           cpi_lodging_sa_qtd     nights_m_yoy_pct 2023Q1..2026Q2 13     9   0.776789   0.001           0.955779         0.897844     0.777778                                yes (Sep CPI 13 Oct 2026)
+ es_hotel_nights_foreign_full revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.646394   0.010           0.957817         0.941018     0.900000                      tight (INE Sep release ~3 Nov 2026)
+         cpi_lodging_nsa_full     gbv_musd_yoy_pct 2023Q1..2026Q2 13     9   0.551439   0.047           0.974741         0.882426     0.666667                                yes (Sep CPI 13 Oct 2026)
+          cpi_lodging_nsa_qtd     nights_m_yoy_pct 2023Q1..2026Q2 13     9   0.775841   0.001           0.975995         0.916835     0.777778                                yes (Sep CPI 13 Oct 2026)
+          cpi_lodging_sa_full     gbv_musd_yoy_pct 2023Q1..2026Q2 13     9   0.547716   0.048           0.976005         0.883570     0.666667                                yes (Sep CPI 13 Oct 2026)
+                     tsa_full     nights_m_yoy_pct 2022Q1..2026Q2 18    14   0.971769   0.000           0.976161         0.706750     0.500000                                    yes (daily, zero lag)
+              hlt_revpar_lag1     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.640962   0.028           0.976515         0.927088     0.600000                      yes (prior quarter already printed)
+              ntto_total_full revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.631369   0.007           0.978325         0.961167     0.600000                            yes (Sep prelim mid-Oct 2026)
+           ntto_overseas_full revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.628607   0.006           0.980282         0.963090     0.600000                            yes (Sep prelim mid-Oct 2026)
+              ntto_total_full revenue_musd_yoy_pct 2022Q1..2026Q2 15    11   0.738958   0.000           0.980901         1.074079     0.727273                            yes (Sep prelim mid-Oct 2026)
+              mar_revpar_lag1     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.638004   0.029           0.980942         0.931290     0.600000                      yes (prior quarter already printed)
+                     tsa_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.828434   0.000           0.984696         0.934854     0.700000                                    yes (daily, zero lag)
+         es_hotel_nights_full     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.771699   0.010           0.985144         0.935280     0.400000                      tight (INE Sep release ~3 Nov 2026)
+              hlt_revpar_full revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.608922   0.012           0.986662         0.969358     0.700000                          yes (HLT reports late Oct 2026)
+             bkng_nights_lag1     nights_m_yoy_pct 2023Q1..2026Q2 14    10   0.636791   0.033           0.986894         0.936941     0.600000                      yes (prior quarter already printed)
+         cpi_lodging_nsa_full revenue_musd_yoy_pct 2023Q1..2026Q2 13     9   0.632095   0.018           0.988839         0.962479     0.666667                                yes (Sep CPI 13 Oct 2026)
+          cpi_lodging_sa_full revenue_musd_yoy_pct 2023Q1..2026Q2 13     9   0.626026   0.020           0.992612         0.966152     0.666667                                yes (Sep CPI 13 Oct 2026)
+     es_frontur_tourists_full revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.614238   0.012           0.994067         0.976633     0.700000                      tight (INE Sep release ~3 Nov 2026)
+          ntto_overseas_qtd1m revenue_musd_yoy_pct 2022Q1..2026Q2 15    11   0.733867   0.000           0.995036         1.089557     0.636364                            yes (Sep prelim mid-Oct 2026)
+              hlt_revpar_lag1 revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.604709   0.008           0.995619         0.978158     0.700000                      yes (prior quarter already printed)
+             ntto_total_qtd1m revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.610137   0.016           0.996028         0.978560     0.600000                            yes (Sep prelim mid-Oct 2026)
+                    tsa_qtd72     nights_m_yoy_pct 2022Q1..2026Q2 18    14   0.966047   0.000           0.996059         0.721157     0.500000                                    yes (daily, zero lag)
+                    tsa_qtd72 revenue_musd_yoy_pct 2023Q1..2026Q2 14    10   0.620591   0.016           0.997419         0.979926     0.700000                                    yes (daily, zero lag)
+           ntto_overseas_full revenue_musd_yoy_pct 2022Q1..2026Q2 15    11   0.721086   0.000           0.999001         1.093898     0.727273                            yes (Sep prelim mid-Oct 2026)
+
+--- scoreboard ---
+            family         window  tests  flagged  evaluable_wf  beat_naive  beat_20pct  best_ratio
+     BLS CPI price 2022Q1..2026Q2     24       12            24           0           0    1.318291
+     BLS CPI price 2023Q1..2026Q2     24        8            24           8           2    0.715782
+ Eurostat platform 2022Q1..2026Q2     12        6            12           0           0    1.027400
+ Eurostat platform 2023Q1..2026Q2     12        4            12           1           0    0.931520
+      Hotel RevPAR 2022Q1..2026Q2     16       12            16           2           1    0.755186
+      Hotel RevPAR 2023Q1..2026Q2     16        8            16           6           2    0.665269
+   NTTO US inbound 2022Q1..2026Q2     24       16            24           7           1    0.760291
+   NTTO US inbound 2023Q1..2026Q2     24       12            24           9           5    0.719868
+   OTA room nights 2022Q1..2026Q2     16       12            16           1           0    0.843076
+   OTA room nights 2023Q1..2026Q2     16        3            16           3           1    0.744390
+         Spain INE 2022Q1..2026Q2     40       23            40           0           0    1.003288
+         Spain INE 2023Q1..2026Q2     40       20            40          14           0    0.838878
+TSA air throughput 2022Q1..2026Q2     12        9            12           2           0    0.976161
+TSA air throughput 2023Q1..2026Q2     12        6            12           3           0    0.923575
+
+--- 3Q26 nowcast from survivors ---
+                      feature               target         window     x_3q26  pred_3q26  naive_3q26                              note  insample_resid_sd  wf_ratio_vs_naive  wf_n                            knowable
+              hlt_revpar_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              mar_revpar_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+          cpi_lodging_sa_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              ntto_total_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+             ntto_total_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+         cpi_lodging_nsa_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+          ntto_overseas_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2  -7.022403   9.172850      10.342      in-sample fit on full window           1.845131           0.742926  10.0       yes (Sep prelim mid-Oct 2026)
+             bkng_nights_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              mar_revpar_full     nights_m_yoy_pct 2022Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              ntto_total_full     nights_m_yoy_pct 2022Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+           ntto_weurope_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 -10.472843   9.404084      10.342      in-sample fit on full window           2.005583           0.780746  10.0       yes (Sep prelim mid-Oct 2026)
+           ntto_overseas_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+es_hotel_nights_foreign_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   1.063164   9.137846      10.342      in-sample fit on full window           1.699527           0.838878  10.0 tight (INE Sep release ~3 Nov 2026)
+           ntto_overseas_full     nights_m_yoy_pct 2022Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+             bkng_nights_full     nights_m_yoy_pct 2022Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+            ntto_weurope_full     nights_m_yoy_pct 2022Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+            ntto_weurope_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+    es_frontur_tourists_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   4.644326   9.334166      10.342      in-sample fit on full window           1.686578           0.858868  10.0 tight (INE Sep release ~3 Nov 2026)
+     es_frontur_tourists_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+    es_hotel_travellers_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   1.318419   9.489736      10.342      in-sample fit on full window           1.814864           0.877457  10.0 tight (INE Sep release ~3 Nov 2026)
+        es_hotel_nights_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   0.333193   9.283632      10.342      in-sample fit on full window           1.795850           0.884375  10.0 tight (INE Sep release ~3 Nov 2026)
+     es_hotel_travellers_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+    es_frontur_visitors_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   1.960844   8.690625      10.342      in-sample fit on full window           1.813903           0.902455  10.0 tight (INE Sep release ~3 Nov 2026)
+          ntto_overseas_qtd1m     nights_m_yoy_pct 2022Q1..2026Q2  -7.022403   9.181183      10.342      in-sample fit on full window           1.772995           0.902524  11.0       yes (Sep prelim mid-Oct 2026)
+     es_hotel_travellers_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+     es_frontur_visitors_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+                    tsa_qtd72     nights_m_yoy_pct 2023Q1..2026Q2  -2.650588   7.454975      10.342      in-sample fit on full window           1.605630           0.923575  10.0               yes (daily, zero lag)
+         es_hotel_nights_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+      eu_platform_nights_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+             expe_nights_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+ es_hotel_nights_foreign_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              hlt_revpar_full     nights_m_yoy_pct 2022Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+           cpi_lodging_sa_qtd     nights_m_yoy_pct 2023Q1..2026Q2   3.002894  11.908708      10.342      in-sample fit on full window           1.991530           0.955779   9.0           yes (Sep CPI 13 Oct 2026)
+ es_hotel_nights_foreign_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+         cpi_lodging_nsa_full     gbv_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      15.745 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+          cpi_lodging_nsa_qtd     nights_m_yoy_pct 2023Q1..2026Q2   3.111520  11.960548      10.342      in-sample fit on full window           1.995222           0.975995   9.0           yes (Sep CPI 13 Oct 2026)
+          cpi_lodging_sa_full     gbv_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      15.745 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+                     tsa_full     nights_m_yoy_pct 2022Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              hlt_revpar_lag1     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              ntto_total_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+           ntto_overseas_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              ntto_total_full revenue_musd_yoy_pct 2022Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              mar_revpar_lag1     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+                     tsa_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+         es_hotel_nights_full     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+              hlt_revpar_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+             bkng_nights_lag1     nights_m_yoy_pct 2023Q1..2026Q2        NaN        NaN      10.342 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+         cpi_lodging_nsa_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+          cpi_lodging_sa_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+     es_frontur_tourists_full revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+          ntto_overseas_qtd1m revenue_musd_yoy_pct 2022Q1..2026Q2  -7.022403  12.669072      16.537      in-sample fit on full window           3.417783           0.995036  11.0       yes (Sep prelim mid-Oct 2026)
+              hlt_revpar_lag1 revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+             ntto_total_qtd1m revenue_musd_yoy_pct 2023Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+                    tsa_qtd72     nights_m_yoy_pct 2022Q1..2026Q2  -2.650588   6.753003      10.342      in-sample fit on full window           3.233664           0.996059  14.0               yes (daily, zero lag)
+                    tsa_qtd72 revenue_musd_yoy_pct 2023Q1..2026Q2  -2.650588  10.840532      16.537      in-sample fit on full window           3.473995           0.997419  10.0               yes (daily, zero lag)
+           ntto_overseas_full revenue_musd_yoy_pct 2022Q1..2026Q2        NaN        NaN      16.537 feature not observable for 2026Q3                NaN                NaN   NaN                                 NaN
+
+--- observable-today 3Q26 nowcast (survivors with a 2026Q3 reading) ---
+                      feature               target         window     x_3q26  pred_3q26  naive_3q26                         note  insample_resid_sd  wf_ratio_vs_naive  wf_n                            knowable
+          ntto_overseas_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2  -7.022403   9.172850      10.342 in-sample fit on full window           1.845131           0.742926  10.0       yes (Sep prelim mid-Oct 2026)
+           ntto_weurope_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2 -10.472843   9.404084      10.342 in-sample fit on full window           2.005583           0.780746  10.0       yes (Sep prelim mid-Oct 2026)
+es_hotel_nights_foreign_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   1.063164   9.137846      10.342 in-sample fit on full window           1.699527           0.838878  10.0 tight (INE Sep release ~3 Nov 2026)
+    es_frontur_tourists_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   4.644326   9.334166      10.342 in-sample fit on full window           1.686578           0.858868  10.0 tight (INE Sep release ~3 Nov 2026)
+    es_hotel_travellers_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   1.318419   9.489736      10.342 in-sample fit on full window           1.814864           0.877457  10.0 tight (INE Sep release ~3 Nov 2026)
+        es_hotel_nights_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   0.333193   9.283632      10.342 in-sample fit on full window           1.795850           0.884375  10.0 tight (INE Sep release ~3 Nov 2026)
+    es_frontur_visitors_qtd1m     nights_m_yoy_pct 2023Q1..2026Q2   1.960844   8.690625      10.342 in-sample fit on full window           1.813903           0.902455  10.0 tight (INE Sep release ~3 Nov 2026)
+          ntto_overseas_qtd1m     nights_m_yoy_pct 2022Q1..2026Q2  -7.022403   9.181183      10.342 in-sample fit on full window           1.772995           0.902524  11.0       yes (Sep prelim mid-Oct 2026)
+                    tsa_qtd72     nights_m_yoy_pct 2023Q1..2026Q2  -2.650588   7.454975      10.342 in-sample fit on full window           1.605630           0.923575  10.0               yes (daily, zero lag)
+           cpi_lodging_sa_qtd     nights_m_yoy_pct 2023Q1..2026Q2   3.002894  11.908708      10.342 in-sample fit on full window           1.991530           0.955779   9.0           yes (Sep CPI 13 Oct 2026)
+          cpi_lodging_nsa_qtd     nights_m_yoy_pct 2023Q1..2026Q2   3.111520  11.960548      10.342 in-sample fit on full window           1.995222           0.975995   9.0           yes (Sep CPI 13 Oct 2026)
+          ntto_overseas_qtd1m revenue_musd_yoy_pct 2022Q1..2026Q2  -7.022403  12.669072      16.537 in-sample fit on full window           3.417783           0.995036  11.0       yes (Sep prelim mid-Oct 2026)
+                    tsa_qtd72     nights_m_yoy_pct 2022Q1..2026Q2  -2.650588   6.753003      10.342 in-sample fit on full window           3.233664           0.996059  14.0               yes (daily, zero lag)
+                    tsa_qtd72 revenue_musd_yoy_pct 2023Q1..2026Q2  -2.650588  10.840532      16.537 in-sample fit on full window           3.473995           0.997419  10.0               yes (daily, zero lag)
+  nights_m_yoy_pct: n=12 median 9.23, range 6.75 to 11.96, naive 10.34
+  revenue_musd_yoy_pct: n=2 median 11.75, range 10.84 to 12.67, naive 16.54
+
+--- feature readings, 2026Q2 vs 2026Q3 (y/y %) ---
+                      feature                            knowable  value_2026Q2  value_2026Q3  delta_pp
+                    tsa_qtd72               yes (daily, zero lag)     -0.394743     -2.650588 -2.255845
+                tsa_full_lag1               yes (daily, zero lag)      1.489850     -0.664001 -2.153850
+          cpi_lodging_nsa_qtd           yes (Sep CPI 13 Oct 2026)      4.890590      3.111520 -1.779070
+           cpi_lodging_sa_qtd           yes (Sep CPI 13 Oct 2026)      4.730362      3.002894 -1.727468
+              cpi_airfare_qtd           yes (Sep CPI 13 Oct 2026)     23.672085     24.454236  0.782152
+          ntto_overseas_qtd1m       yes (Sep prelim mid-Oct 2026)    -14.120601     -7.022403  7.098198
+           ntto_weurope_qtd1m       yes (Sep prelim mid-Oct 2026)    -20.074271    -10.472843  9.601428
+    es_frontur_tourists_qtd1m tight (INE Sep release ~3 Nov 2026)      5.235355      4.644326 -0.591029
+    es_frontur_visitors_qtd1m tight (INE Sep release ~3 Nov 2026)      3.540041      1.960844 -1.579197
+        es_hotel_nights_qtd1m tight (INE Sep release ~3 Nov 2026)      1.131859      0.333193 -0.798666
+es_hotel_nights_foreign_qtd1m tight (INE Sep release ~3 Nov 2026)      1.259462      1.063164 -0.196298
+    es_hotel_travellers_qtd1m tight (INE Sep release ~3 Nov 2026)      1.604196      1.318419 -0.285777
