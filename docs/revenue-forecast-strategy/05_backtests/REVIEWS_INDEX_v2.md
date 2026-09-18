@@ -500,6 +500,18 @@ Street on bookings that will not all convert — the alpha is not "the print mis
 when I turns negative on top of the filed laps, and the balance sheet shows it first. Base carries the laps; the
 I < 0 drag is the short.
 
+### 3.7 One line, with ranges, against Airbnb's own guidance (added 18 Sep evening)
+
+Airbnb guides nights qualitatively; the ledger (`overnight/02_guidance_ledger.csv`) carries the buckets. **3Q26: "low
+double-digit" = 10–12% → 147.0–149.6m** (2Q26 letter, 6 Aug). The company beat its nights guide three quarters running:
+4Q25 guided 4–6, printed 9.8; 1Q26 guided 7–9, printed 9.2; 2Q26 guided "slightly decelerate from 9.1", printed 10.3. So
+the three objects line up as: **the guide 10–12, the Street 149.0 at the top of the guide, the business 9.35 ± 1.9 below
+the guide's floor** — and the print range (stays + written options, 9.35–10.94) overlaps the guide only in its bottom
+point. Management guides off the booked backlog; in the writing phase that backlog carries the options. The guide-beat
+streak is the pattern the option term predicts and the one that ends when access stops growing.
+
+![fig9](figures/reviews_index_v2/fig9_view_guidance_street.png)
+
 Files added: `view.py`, `stage_e_view_vs_street.csv`, `stage_e_rnpl_evidence.csv`, `figures/fig6_view_vs_street.png`,
 `figures/fig7_rnpl_evidence.png`; §4: `final_model.py`, `final_model_paths.csv`, `final_model_landing.csv`, `final_model_meta.json`,
 `figures/fig8_final_model.png`, `figures/fig0_model_overview.png`; package `README.md`.
