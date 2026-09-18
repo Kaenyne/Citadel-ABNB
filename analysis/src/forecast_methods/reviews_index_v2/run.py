@@ -51,9 +51,10 @@ def stage_a(my):
 def stage_b(my):
     import stages as T
     idx = T.build_index(my); idx.to_csv(C.OUT / "index_quarterly_v2.csv", index=False)
+    import mix as MX; wcsv = MX.seasonal_weights(); wcsv.to_csv(C.OUT / "mix_weights_stay_quarter.csv")
     kpi = D.load_kpi(); res, paths = T.run_stage_b(idx, kpi)
     res.to_csv(C.OUT / "stage_b_walkforward.csv", index=False); paths.to_csv(C.OUT / "stage_b_paths.csv", index=False)
-    loco = T.loco_slopes(idx.set_index("qi").yoy_vmatch, kpi.set_index("qi").nights_m_yoy_pct); loco.to_csv(C.OUT / "stage_b_loco_slopes.csv", index=False)
+    loco = T.loco_slopes(idx.set_index("qi")[C.PRIMARY], kpi.set_index("qi").nights_m_yoy_pct); loco.to_csv(C.OUT / "stage_b_loco_slopes.csv", index=False)
     log(f"Stage B B1 {'PASS' if res.attrs['B1_passed'] else 'FAIL'}\n" + res[["measure","window","subset","target","wf_n","wf_ratio_vs_naive","ratio_lo90","ratio_hi90","dm_p","mean_err","passed"]].to_string(index=False))
     return res.attrs["B1_passed"]
 

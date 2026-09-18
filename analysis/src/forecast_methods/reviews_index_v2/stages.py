@@ -5,16 +5,19 @@ import config as C, index as I, kernel as K, scoring as S
 
 
 def build_index(my):
-    cols = {}
+    """Two aggregations of every measure: FY25 annual weights (v2, suffix none) and stay-quarter mix weights (v2.1, suffix _mix)."""
+    import mix as MX
+    w = MX.seasonal_weights(); cols = {}
     for meas in I.MEASURES:
-        g, _ = I.global_quarterly(my, meas); cols[meas] = g * 100.0
+        g, reg = I.global_quarterly(my, meas); cols[meas] = g * 100.0
+        cols[meas + "_mix"] = MX.global_from_regional(reg * 100.0, w)
     return pd.DataFrame(cols).rename_axis("qi").reset_index()
 
 
 def run_stage_b(idx, kpi):
     y = kpi.set_index("qi").nights_m_yoy_pct
     rows, paths = [], []
-    for meas in ["yoy_vmatch", "yoy_all", "yoy_mature"]:
+    for meas in [C.PRIMARY, "yoy_vmatch", "yoy_all", "yoy_mature", "yoy_all_mix"]:
         x = idx.set_index("qi")[meas]
         for wname, (ws, ss) in C.WINDOWS.items():
             for sub, end in [("full", None), ("pre_rnpl", C.FREEZE_QI)]:
@@ -34,7 +37,7 @@ def run_stage_b(idx, kpi):
                                                     ratio_lo90=np.nan, ratio_hi90=np.nan, dm_stat=np.nan, dm_p=np.nan, passed=np.nan))
     res = pd.DataFrame(rows)
     # B1 verdict on the primary
-    prim = res[(res.measure == "yoy_vmatch") & (res.subset == "full") & (res.target == "level")]
+    prim = res[(res.measure == C.PRIMARY) & (res.subset == "full") & (res.target == "level")]
     res.attrs["B1_passed"] = bool((prim.wf_ratio_vs_naive <= C.PREREG["B1_ratio_max"]).all() and len(prim) == 2)
     return res, pd.concat(paths, ignore_index=True)
 
@@ -78,8 +81,8 @@ def cohort_index(my, M):
 def run_stage_c(idx, kpi, my, M):
     y = kpi.set_index("qi").nights_m_yoy_pct
     rows, gaps = [], []
-    # primary: same-quarter vmatch
-    x = idx.set_index("qi").yoy_vmatch
+    # primary: same-quarter vmatch under the primary aggregation (v2.1 stay-quarter mix)
+    x = idx.set_index("qi")[C.PRIMARY]
     a, b, n = frozen_mapping(x, y)
     band_res = S.score_window(x, y, *C.WINDOWS["W2"], score_end=C.FREEZE_QI)
     band = float(band_res["wf_rmse"]) if band_res else np.nan
@@ -129,7 +132,11 @@ def stage_c3_3q26(a, b, band):
     r = q[(q.measure == "yoy_vmatch") & (q.weighting == "w_reviews") & (q.region == "GLOBAL")].iloc[0]
     vm = pd.read_csv(C.E / "vintage_matched_nowcast.csv")
     reg = vm[(vm.period == "3q26_to_date") & (vm.region.isin(C.FY25_NIGHTS_SHARE))].set_index("region").vmatch_cw
-    w = pd.Series(C.FY25_NIGHTS_SHARE).reindex(reg.index)
+    if C.PRIMARY.endswith("_mix"):
+        import mix as MX
+        w = MX.seasonal_weights().loc[C.qi(2026, 3)].reindex(reg.index)          # v2.1: 3Q26 stay-quarter mix
+    else:
+        w = pd.Series(C.FY25_NIGHTS_SHARE).reindex(reg.index)                    # v2: FY25 annual shares
     partial_v2 = float((reg * w).sum() / w.sum() * 100)
     gap = float(r.gap_mean_pp); gsd = float(r.gap_sd_pp) if np.isfinite(r.gap_sd_pp) else 0.0
     full_v2 = partial_v2 + gap; pt = a + b * full_v2
@@ -137,6 +144,6 @@ def stage_c3_3q26(a, b, band):
     full_e6 = float(r.full_index_3q26_pct)
     return dict(index_3q26_partial_pct=partial_v2, partial_to_full_gap_pp=gap, index_3q26_full_pct=full_v2,
                 implied_nights_yoy=float(pt), band_pp=sd, lo=float(pt - sd), hi=float(pt + sd),
-                regional_partial_pct={k: float(v * 100) for k, v in reg.items()},
+                regional_partial_pct={k: float(v * 100) for k, v in reg.items()}, weights_used={k: float(v) for k, v in w.items()}, primary=C.PRIMARY,
                 sensitivity_e6_global_cw=dict(index_full_pct=full_e6, implied_nights_yoy=float(a + b * full_e6)),
                 note="primary uses E6 per-region vmatch_cw x FY25 shares (v2 construction); sensitivity is E6's GLOBAL w_reviews cell")
