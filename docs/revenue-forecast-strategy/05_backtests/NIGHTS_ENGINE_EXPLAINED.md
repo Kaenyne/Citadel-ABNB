@@ -1,5 +1,13 @@
 # The nights engine, explained three ways
 
+> **Corrections, 18 Sep 2026 (audit, see `NIGHTS_ENGINE_REVIEW_RESPONSE.md`).** (1) Wherever this file attributes "~1 growth point"
+> of nights cost to RNPL: that figure is the Middle East conflict cancellation effect in the 1Q26 letter (ledger D042), not RNPL —
+> withdrawn. The RNPL cancellation disclosures are the 2Q26 10-Q ("higher cancellation rates than historic bookings") and the
+> 4Q25 call's 16% → 17% (mirror transcript). (2) Any sentence implying a cancelled booking stays in the reported KPI: the KPI is
+> "net of cancellations and alterations that occurred in that period" (2Q26 10-Q) — a cancellation is subtracted in the quarter it
+> occurs. (3) "Stays-implied" means review-implied *reported*-night growth under the pre-launch relation; the post-launch residual
+> is a bound (16% power against 1 pp), not a test; the walk-forward predictor is reconstructed from 2025/26 files, not point-in-time.
+> The size of any RNPL conversion effect is a team assumption anchored on disclosures, not a measurement of this engine.
 Part 1 is for anyone. Part 2 is for the person who wants to rebuild it. Part 3 is for the statistician who wants to break it.
 This document is about the **method** and its evidence; the current-quarter readings, the forward path and the Street
 comparison live in `REVIEWS_INDEX_v2.md` (§3–5) and `REVIEWS_INDEX_v2_RATIONALE.md`. Every number here is read from
