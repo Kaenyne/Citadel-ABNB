@@ -39,7 +39,93 @@ def test_rejects_missing_scenario_value(tmp_path):
         spec.load(p, check_paths=False)
 
 def test_rejects_shift_out_of_range(tmp_path):
-    bad = FIX.read_text().replace('periods: [3Q26, 4Q26]\n    expr: "LAM', 'periods: [1Q26]\n    expr: "LAM')
+    bad = """
+meta:
+  periods: [1Q26, 2Q26]
+  scenarios: [base]
+lines:
+  - id: D1
+    label: Driver
+    unit: m
+    block: drivers
+    kind: input
+    periods: [1Q26, 2Q26]
+    values:
+      base: {1Q26: 1.0, 2Q26: 2.0}
+    provenance: {dossier: d.md, receipt: r.json, grade: A, decision: DEC-0001, tolerance: 0.1}
+  - id: F
+    label: Formula
+    unit: m
+    block: drivers
+    kind: formula
+    periods: [1Q26]
+    expr: "D1[-1]"
+"""
     p = tmp_path / "bad.yaml"; p.write_text(bad)
-    with pytest.raises(spec.SpecError, match="R2"):
+    with pytest.raises(spec.SpecError, match="falls outside the period list"):
         spec.load(p, check_paths=False)
+
+def test_rejects_duplicate_id(tmp_path):
+    d1_block = (
+        "  - id: D1\n"
+        "    label: Nights (m)\n"
+        "    unit: m\n"
+        "    block: drivers\n"
+        "    kind: input\n"
+        "    periods: [1Q26, 2Q26, 3Q26, 4Q26]\n"
+        "    values:\n"
+        "      base:  {1Q26: 143.1, 2Q26: 134.4, 3Q26: 146.3, 4Q26: 133.2}\n"
+        "      short: {1Q26: 143.1, 2Q26: 134.4, 3Q26: 145.0, 4Q26: 131.0}\n"
+        "    provenance: {dossier: docs/pitch-model-v2/dossiers/D1_nights.md, receipt: data/processed/pitch_model_v2/receipts/D1/receipt.json, grade: A, decision: DEC-0001, tolerance: 0.1}\n"
+    )
+    bad = FIX.read_text().replace("  - id: D4T", d1_block + "  - id: D4T", 1)
+    p = tmp_path / "bad.yaml"; p.write_text(bad)
+    with pytest.raises(spec.SpecError, match="duplicate id D1"):
+        spec.load(p, check_paths=False)
+
+def test_rejects_cycle(tmp_path):
+    bad = """
+meta:
+  periods: [1Q26]
+  scenarios: []
+lines:
+  - id: A
+    label: A
+    unit: m
+    block: drivers
+    kind: formula
+    periods: [1Q26]
+    expr: "B"
+  - id: B
+    label: B
+    unit: m
+    block: drivers
+    kind: formula
+    periods: [1Q26]
+    expr: "A"
+"""
+    p = tmp_path / "bad.yaml"; p.write_text(bad)
+    with pytest.raises(spec.SpecError, match="cycle through"):
+        spec.load(p, check_paths=False)
+
+def test_check_paths_true_requires_provenance_files(tmp_path):
+    spec_dir = tmp_path / "model" / "pitch_model_v2" / "spec"
+    spec_dir.mkdir(parents=True)
+    p = spec_dir / "lines.yaml"
+    p.write_text(FIX.read_text())
+    with pytest.raises(spec.SpecError, match="not found"):
+        spec.load(p)
+    for rel in (
+        "docs/pitch-model-v2/dossiers/D1_nights.md",
+        "data/processed/pitch_model_v2/receipts/D1/receipt.json",
+        "docs/pitch-model-v2/dossiers/D4_adr.md",
+        "data/processed/pitch_model_v2/receipts/D4/receipt.json",
+        "docs/pitch-model-v2/dossiers/R1_kernel.md",
+        "data/processed/pitch_model_v2/receipts/R1/receipt.json",
+    ):
+        full = tmp_path / rel
+        full.parent.mkdir(parents=True, exist_ok=True)
+        full.touch()
+    s_checked = spec.load(p)
+    s_unchecked = spec.load(p, check_paths=False)
+    assert s_checked.order == s_unchecked.order

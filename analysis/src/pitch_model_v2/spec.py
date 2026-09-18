@@ -88,7 +88,6 @@ def _line(d: dict) -> Line:
                 d.get("values", {}), d.get("expr", ""), d.get("provenance", {}))
 
 def load(path: str | Path, check_paths: bool = True) -> Spec:
-    root = Path(path).resolve().parents[3]   # <repo>/model/pitch_model_v2/spec/lines.yaml
     raw = yaml.safe_load(Path(path).read_text())
     meta = raw["meta"]; periods = list(meta["periods"]); scenarios = list(meta["scenarios"])
     lines: dict[str, Line] = {}
@@ -109,6 +108,7 @@ def load(path: str | Path, check_paths: bool = True) -> Spec:
                 if k not in prov:
                     raise SpecError(f"{ln.id}: provenance missing {k}")
             if check_paths:
+                root = Path(path).resolve().parents[3]   # <repo>/model/pitch_model_v2/spec/lines.yaml
                 for k in ("dossier", "receipt"):
                     if not (root / prov[k]).exists():
                         raise SpecError(f"{ln.id}: {k} not found at {prov[k]}")
