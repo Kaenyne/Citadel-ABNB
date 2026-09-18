@@ -108,6 +108,81 @@ lines:
     with pytest.raises(spec.SpecError, match="cycle through"):
         spec.load(p, check_paths=False)
 
+def test_to_excel_functions():
+    periods = ["2Q26", "3Q26", "4Q26"]
+    expr = "EXP(SEASQ4 + BETA * LN(0.4*D6 + 0.4*D6[-1] + 0.2*D6[-2]))"
+    out = spec.to_excel(expr, "4Q26", periods)
+    assert out == "EXP(SEASQ4_4Q26+BETA_4Q26*LN(0.4*D6_4Q26+0.4*D6_3Q26+0.2*D6_2Q26))"
+
+def test_rejects_function_without_paren():
+    with pytest.raises(spec.SpecError, match="EXP"):
+        spec.parse_expr("EXP + D1")
+
+def test_load_formula_with_functions(tmp_path):
+    y = """
+meta:
+  periods: [2Q26, 3Q26, 4Q26]
+  scenarios: [base]
+lines:
+  - id: D6
+    label: GBV
+    unit: musd
+    block: drivers
+    kind: input
+    periods: [2Q26, 3Q26, 4Q26]
+    values:
+      base: {2Q26: 100.0, 3Q26: 110.0, 4Q26: 120.0}
+    provenance: {dossier: d.md, receipt: r.json, grade: A, decision: DEC-0001, tolerance: 0.1}
+  - id: SEASQ4
+    label: Seasonal Q4 term
+    unit: pct
+    block: revenue
+    kind: input
+    periods: [4Q26]
+    values:
+      base: {4Q26: 0.1}
+    provenance: {dossier: d.md, receipt: r.json, grade: A, decision: DEC-0002, tolerance: 0.01}
+  - id: BETA
+    label: Beta coefficient
+    unit: x
+    block: revenue
+    kind: input
+    periods: [4Q26]
+    values:
+      base: {4Q26: 1.2}
+    provenance: {dossier: d.md, receipt: r.json, grade: A, decision: DEC-0003, tolerance: 0.01}
+  - id: R4
+    label: Log-linear guide
+    unit: musd
+    block: revenue
+    kind: formula
+    periods: [4Q26]
+    expr: "EXP(SEASQ4 + BETA * LN(0.4*D6 + 0.4*D6[-1] + 0.2*D6[-2]))"
+"""
+    p = tmp_path / "ok.yaml"; p.write_text(y)
+    s = spec.load(p, check_paths=False)
+    assert s.order[-1] == "R4"
+
+def test_rejects_id_equal_to_function_name(tmp_path):
+    y = """
+meta:
+  periods: [1Q26]
+  scenarios: [base]
+lines:
+  - id: LN
+    label: Bad id
+    unit: m
+    block: drivers
+    kind: input
+    periods: [1Q26]
+    values:
+      base: {1Q26: 1.0}
+    provenance: {dossier: d.md, receipt: r.json, grade: A, decision: DEC-0001, tolerance: 0.1}
+"""
+    p = tmp_path / "bad.yaml"; p.write_text(y)
+    with pytest.raises(spec.SpecError, match="LN"):
+        spec.load(p, check_paths=False)
+
 def test_check_paths_true_requires_provenance_files(tmp_path):
     spec_dir = tmp_path / "model" / "pitch_model_v2" / "spec"
     spec_dir.mkdir(parents=True)

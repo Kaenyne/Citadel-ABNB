@@ -3,7 +3,8 @@
 A line is either an input (values per scenario and period, provenance with grade A/B)
 or a formula (an expression in other line ids). Expressions: ids, ids with a relative
 period shift `ID[-n]`, ids with an absolute period `ID@PERIOD`, numbers, + - * / and
-parentheses. Nothing else, so every cell in the workbook is traceable by name.
+parentheses, and the whitelisted functions EXP(...) and LN(...). Nothing else, so every
+cell in the workbook is traceable by name.
 """
 from __future__ import annotations
 import re
@@ -13,13 +14,14 @@ import yaml
 
 ID_RE = re.compile(r"^[A-Z][A-Z0-9_]*$")
 TOKEN_RE = re.compile(r"\s*(?:(?P<num>\d+\.?\d*)|(?P<id>[A-Z][A-Z0-9_]*)(?:\[(?P<shift>-\d+)\]|@(?P<abs>[0-9A-Z]+))?|(?P<op>[-+*/()]))")
+FUNCTIONS = ("EXP", "LN")
 
 class SpecError(ValueError):
     pass
 
 @dataclass
 class Token:
-    kind: str            # "num" | "id" | "op"
+    kind: str            # "num" | "id" | "op" | "func"
     text: str
     shift: int = 0
     abs_period: str | None = None
@@ -52,7 +54,16 @@ def parse_expr(expr: str) -> list[Token]:
         if m.group("num"):
             out.append(Token("num", m.group("num")))
         elif m.group("id"):
-            out.append(Token("id", m.group("id"), int(m.group("shift") or 0), m.group("abs")))
+            text = m.group("id")
+            if text in FUNCTIONS:
+                if m.group("shift") or m.group("abs"):
+                    raise SpecError(f"{text} is a function and cannot take a period reference")
+                if pos < len(expr) and expr[pos] == "(":
+                    out.append(Token("func", text))
+                else:
+                    raise SpecError(f"{text} must be immediately followed by ( to be used as a function")
+            else:
+                out.append(Token("id", text, int(m.group("shift") or 0), m.group("abs")))
         else:
             out.append(Token("op", m.group("op")))
     return out
@@ -82,6 +93,8 @@ def _line(d: dict) -> Line:
             raise SpecError(f"line {d.get('id','?')}: missing {k}")
     if not ID_RE.match(d["id"]):
         raise SpecError(f"bad id {d['id']!r}")
+    if d["id"] in FUNCTIONS:
+        raise SpecError(f"line id {d['id']!r} collides with a whitelisted function name")
     if d["kind"] not in ("input", "formula"):
         raise SpecError(f"{d['id']}: kind must be input or formula")
     return Line(d["id"], d["label"], d["unit"], d["block"], d["kind"], list(d["periods"]),

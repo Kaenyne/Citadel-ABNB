@@ -7,7 +7,7 @@ from . import spec as specmod
 
 ERR = ("#REF!", "#NAME?", "#DIV/0!", "#VALUE!", "#N/A", "#NUM!", "#NULL!")
 NAME_RE = re.compile(r"\b([A-Z][A-Z0-9_]*_[0-9A-Z]+)\b")
-BUILTIN = {"INDEX", "MATCH", "SUM", "MIN", "MAX", "IF", "ABS"}
+BUILTIN = {"INDEX", "MATCH", "SUM", "MIN", "MAX", "IF", "ABS", "EXP", "LN"}
 LICENSED = re.compile(r"(BEST_|BDH\(|BDP\(|=BDS|LSEG Workspace export|Third Bridge)", re.I)
 ROW_RE = re.compile(r"^\|\s*(\w+)\s*\|\s*([0-9A-Z]+)\s*\|\s*([-+]?\d*\.?\d+)")
 

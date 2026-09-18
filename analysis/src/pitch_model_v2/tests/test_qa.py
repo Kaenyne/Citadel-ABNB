@@ -44,3 +44,10 @@ def test_qa_flags_unresolved_name(tmp_path):
     out = build.build(FIX, tmp_path / "m.xlsx", check_paths=False)
     wb = load_workbook(out); wb["Drivers"]["Z3"] = "=NOPE_3Q26*2"; wb.save(out)
     assert any("NOPE_3Q26" in m for m in qa.check(out, FIX, root=tmp_path, allow_uncalculated=True))
+
+def test_qa_allows_exp_ln_functions(tmp_path):
+    _dossiers(tmp_path)
+    out = build.build(FIX, tmp_path / "m.xlsx", check_paths=False)
+    wb = load_workbook(out); wb["Drivers"]["Z4"] = "=EXP(D1_3Q26)"; wb.save(out)
+    msgs = qa.check(out, FIX, root=tmp_path, allow_uncalculated=True)
+    assert not any("unresolved name" in m for m in msgs)
