@@ -24,7 +24,7 @@ The OneDrive checkout cannot host this programme. The disk was at 4 GB free on 1
 
 Python: `python3` is 3.13 with pandas 3.0, openpyxl 3.1.5, statsmodels 0.14.6, scipy 1.17, duckdb 1.5.5, and, installed 18 Sep, pyarrow 25, pymc 6.3, arviz 1.3, scikit-learn 1.9, lightgbm 4.7, linearmodels 7.0. Diggers run scripts with `python3` from the clone root.
 
-Untracked work that exists only in the OneDrive checkout (10 `forecast_methods` packages with their `data/processed` outputs, 24 notes under `05_backtests/`, `START_HERE_2026-09-15.md`) is copied into the clone on its own branch `theo/local-untracked-2026-09-15` so diggers can read it. It is not merged into `theo/pitch-model-v2`.
+Untracked work that exists only in the OneDrive checkout (10 `forecast_methods` packages with their `data/processed` outputs, 24 notes under `05_backtests/`, `START_HERE_2026-09-15.md`) is committed on its own branch `theo/local-untracked-2026-09-15` and checked out as a git worktree at `~/Citadel-ABNB-untracked/`, so diggers read it as plain files at a stable path. It is not merged into `theo/pitch-model-v2`.
 
 ## 4. The unit of work: a line
 
