@@ -1,0 +1,33 @@
+{
+  "physical_cohort_evidence_gate": "FAIL_no_current_direct_booking_recognition_fee_cancellation_panel",
+  "headline_current_corporate_cohort_shares_eligible": false,
+  "forecast_promotion_pass": false,
+  "n_primary_candidate_parameters": 7,
+  "flexible_main_parameters": 36,
+  "bootstrap_draws": 200,
+  "seed": 20260915,
+  "share_policy_max_width_pp": 10,
+  "share_policy_max_deletion_pp": 5,
+  "unobserved": "gross booking survival, RNPL causality, tail beyond finite support, fee-cohort representativeness",
+  "forecast_policy": "guide RMSE<=.90 baseline both windows,n>=8,no deletion ratio>=1",
+  "parsimonious_summary": [
+    {
+      "window": "W1",
+      "n": 14,
+      "n_nearfit": 219,
+      "greedy_10pp_separated_shapes": 39,
+      "max_share_width_pp": 60.83958226725194,
+      "max_bootstrap_share_width_pp": 75.926112717177,
+      "max_year_deletion_shift_pp": 26.57826499034559
+    },
+    {
+      "window": "W2",
+      "n": 10,
+      "n_nearfit": 103,
+      "greedy_10pp_separated_shapes": 21,
+      "max_share_width_pp": 52.254287138944505,
+      "max_bootstrap_share_width_pp": 97.18602624165243,
+      "max_year_deletion_shift_pp": 50.326600313221746
+    }
+  ]
+}

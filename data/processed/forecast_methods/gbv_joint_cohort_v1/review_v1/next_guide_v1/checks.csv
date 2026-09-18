@@ -1,0 +1,118 @@
+check,passed,max_abs_error
+source hash:kpi,True,0.0
+source hash:calendar,True,0.0
+source hash:accepted_core,True,0.0
+source hash:frozen_spec,True,0.0
+output hash:contributions.csv,True,0.0
+output hash:cushion_history.csv,True,0.0
+output hash:gbv_inputs.csv,True,0.0
+output hash:model.json,True,0.0
+output hash:points.csv,True,0.0
+output hash:training_rows.csv,True,0.0
+new adapter code hash,True,0.0
+accepted frozen fit code hash,True,0.0
+same cutoff and actual publication,True,0.0
+"all eligible prior history, not W1 subset",True,0.0
+training counts,True,0.0
+simplex,True,0.0
+nonnegative weights,True,0.0
+training revenue:2021Q3,True,0.0
+training exposure:2021Q3,True,0.0
+training publication:2021Q3,True,0.0
+training revenue:2021Q4,True,0.0
+training exposure:2021Q4,True,0.0
+training publication:2021Q4,True,0.0
+training revenue:2022Q1,True,0.0
+training exposure:2022Q1,True,0.0
+training publication:2022Q1,True,0.0
+training revenue:2022Q2,True,0.0
+training exposure:2022Q2,True,0.0
+training publication:2022Q2,True,0.0
+training revenue:2022Q3,True,0.0
+training exposure:2022Q3,True,0.0
+training publication:2022Q3,True,0.0
+training revenue:2022Q4,True,0.0
+training exposure:2022Q4,True,0.0
+training publication:2022Q4,True,0.0
+training revenue:2023Q1,True,0.0
+training exposure:2023Q1,True,0.0
+training publication:2023Q1,True,0.0
+training revenue:2023Q2,True,0.0
+training exposure:2023Q2,True,0.0
+training publication:2023Q2,True,0.0
+training revenue:2023Q3,True,0.0
+training exposure:2023Q3,True,0.0
+training publication:2023Q3,True,0.0
+training revenue:2023Q4,True,0.0
+training exposure:2023Q4,True,0.0
+training publication:2023Q4,True,0.0
+training revenue:2024Q1,True,0.0
+training exposure:2024Q1,True,0.0
+training publication:2024Q1,True,0.0
+training revenue:2024Q2,True,0.0
+training exposure:2024Q2,True,0.0
+training publication:2024Q2,True,0.0
+training revenue:2024Q3,True,0.0
+training exposure:2024Q3,True,0.0
+training publication:2024Q3,True,0.0
+training revenue:2024Q4,True,0.0
+training exposure:2024Q4,True,0.0
+training publication:2024Q4,True,0.0
+training revenue:2025Q1,True,0.0
+training exposure:2025Q1,True,0.0
+training publication:2025Q1,True,0.0
+training revenue:2025Q2,True,0.0
+training exposure:2025Q2,True,0.0
+training publication:2025Q2,True,0.0
+training revenue:2025Q3,True,0.0
+training exposure:2025Q3,True,0.0
+training publication:2025Q3,True,0.0
+training revenue:2025Q4,True,0.0
+training exposure:2025Q4,True,0.0
+training publication:2025Q4,True,0.0
+training revenue:2026Q1,True,0.0
+training exposure:2026Q1,True,0.0
+training publication:2026Q1,True,0.0
+training revenue:2026Q2,True,0.0
+training exposure:2026Q2,True,0.0
+training publication:2026Q2,True,0.0
+full-history seasonal scale Q1,True,0.0
+full-history seasonal scale Q2,True,0.0
+full-history seasonal scale Q3,True,0.0
+full-history seasonal scale Q4,True,3.552713678800501e-15
+five common GBV inputs,True,3.637978807091713e-12
+GBV statuses,True,0.0
+forecast growth rule,True,0.0
+cushion quarters,True,0.0
+cushion arithmetic:2024Q3,True,0.0
+cushion guide/actual availability:2024Q3,True,0.0
+cushion arithmetic:2024Q4,True,0.0
+cushion guide/actual availability:2024Q4,True,0.0
+cushion arithmetic:2025Q1,True,1.1102230246251565e-16
+cushion guide/actual availability:2025Q1,True,0.0
+cushion arithmetic:2025Q2,True,0.0
+cushion guide/actual availability:2025Q2,True,0.0
+cushion arithmetic:2025Q3,True,0.0
+cushion guide/actual availability:2025Q3,True,0.0
+cushion arithmetic:2025Q4,True,0.0
+cushion guide/actual availability:2025Q4,True,0.0
+cushion arithmetic:2026Q1,True,0.0
+cushion guide/actual availability:2026Q1,True,0.0
+cushion arithmetic:2026Q2,True,2.220446049250313e-16
+cushion guide/actual availability:2026Q2,True,0.0
+same mean cushion,True,0.0
+joint point arithmetic,True,9.094947017729282e-13
+joint contributions,True,2.2737367544323206e-13
+joint guide contributions,True,2.2737367544323206e-13
+joint backward conditional shares,True,5.551115123125783e-17
+joint effective forward rates,True,1.0061396160665481e-16
+joint same GBV,True,3.637978807091713e-12
+fixed point arithmetic,True,4.547473508864641e-13
+fixed contributions,True,0.0
+fixed guide contributions,True,0.0
+fixed backward conditional shares,True,5.551115123125783e-17
+fixed effective forward rates,True,2.7755575615628914e-17
+fixed same GBV,True,3.637978807091713e-12
+no predictive interval fabricated,True,0.0
+no re-promotion,True,0.0
+physical cohort status unchanged,True,0.0

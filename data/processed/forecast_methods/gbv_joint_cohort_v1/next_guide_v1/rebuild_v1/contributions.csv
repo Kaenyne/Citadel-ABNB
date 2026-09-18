@@ -1,0 +1,11 @@
+model,target,booking_quarter,lag,gbv_musd,gbv_status,exposure_weight,seasonal_lambda_pct,effective_fee_per_reported_gbv,revenue_contribution_musd,guide_contribution_musd,conditional_allocation_share,basis,beyond_lag4
+joint,2026Q4,2026Q4,0,23611.91489361702,forecast,0.3589564469509622,12.681513343028172,0.04552110971574611,1074.8405684712002,1055.247336745545,0.3312921123282106,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+joint,2026Q4,2026Q3,1,26505.531914893614,forecast,0.4729102395749613,12.681513343028172,0.05997217513224522,1589.5944019733147,1560.6177403350523,0.489951814829502,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+joint,2026Q4,2026Q2,2,27200.0,reported,0.1681333134740765,12.681513343028172,0.021321848582290397,579.9542814382988,569.3823148045227,0.1787560728422875,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+joint,2026Q4,2026Q1,3,29200.0,reported,0.0,12.681513343028172,0.0,0.0,0.0,0.0,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+joint,2026Q4,2025Q4,4,20400.0,reported,0.0,12.681513343028172,0.0,0.0,0.0,0.0,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+fixed,2026Q4,2026Q4,0,23611.91489361702,forecast,0.0,12.040366938470584,0.0,0.0,0.0,0.0,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+fixed,2026Q4,2026Q3,1,26505.531914893614,forecast,0.6666666666666666,12.040366938470584,0.08026911292313722,2127.575534364413,2088.7920331816017,0.6608946608946609,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+fixed,2026Q4,2026Q2,2,27200.0,reported,0.3333333333333333,12.040366938470584,0.04013455646156861,1091.6599357546663,1071.760104361739,0.3391053391053392,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+fixed,2026Q4,2026Q1,3,29200.0,reported,0.0,12.040366938470584,0.0,0.0,0.0,0.0,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption
+fixed,2026Q4,2025Q4,4,20400.0,reported,0.0,12.040366938470584,0.0,0.0,0.0,0.0,model_contribution_not_observed_reservation_cohort,unobserved_finite_support_assumption

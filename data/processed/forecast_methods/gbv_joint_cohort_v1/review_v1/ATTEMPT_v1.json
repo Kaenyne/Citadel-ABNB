@@ -1,0 +1,9 @@
+{
+  "stage": "independent adversarial quant tests",
+  "exit_code": 1,
+  "tests_passed": 7,
+  "tests_failed": 1,
+  "failure": "Reviewer test used exact equality for a floating-point tail sum: observed2.0000000000000004 versus expected2. No model arithmetic defect.",
+  "repair": "Use tight approximate equality for the synthetic dollar tail and residual assertions; retain independent allclose checks of every matrix share/rate.",
+  "model_changed": false
+}

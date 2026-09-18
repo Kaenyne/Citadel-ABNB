@@ -1,0 +1,17 @@
+{
+  "status": "engineering_audit_complete",
+  "forecast_promotion": "FAIL",
+  "canonical_results": "results_v1",
+  "reproduction_exit_code": 0,
+  "original_csv_files_exact": 20,
+  "original_tests_passed": 13,
+  "new_tests_passed": 10,
+  "new_test_command": "C:/Users/wille/Desktop/Citadel - ABNB/.venv/Scripts/python.exe -B -X utf8 analysis/src/forecast_methods/gbv_event_v1/forecast/test_forecast.py",
+  "new_test_exit_code": 0,
+  "all_origin_future_value_poisoning": 21,
+  "strict_used_date_checks": 617,
+  "new_fitted_parameters": 0,
+  "historical_windows": "W1 n12; W2 n10 nested",
+  "registration": "none",
+  "ownership": "Author completion receipt; independent parent or rotated reviewer acceptance remains separate"
+}

@@ -1,0 +1,21 @@
+{
+  "mode": "registered",
+  "method": "gbv-joint-cohort-v1",
+  "source": "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\submission-readiness-v1\\data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\quant_v1\\results_v1\\pit_predictions.csv",
+  "source_sha256": "6162f05f32fdc434b895b101c5dee26f43d9f3ac35a142e2de272fd0deebe48b",
+  "script_sha256": "9806bba8c83a8fc7f0d5ded69d745df32f53ad75e8620dd95e015d79ee73a430",
+  "rows": 42,
+  "rows_by_object_window": {
+    "primary-guide/W1": 11,
+    "primary-guide/W2": 10,
+    "primary-revenue/W1": 11,
+    "primary-revenue/W2": 10
+  },
+  "staged_sha256": {
+    "gbv-joint-cohort-v1__primary-guide.csv": "aa8959c6724dacc739d5ffc408e78dfda8d19710c561866f7906caaf40534980",
+    "gbv-joint-cohort-v1__primary-revenue.csv": "99c982f8e86e209738899116705742737cc3ab7025f0b2a78a1abfd6e0b9c5f9"
+  },
+  "forecast_promoted": false,
+  "predictive_intervals": false,
+  "scorer_baseline_vintage_limitation": true
+}

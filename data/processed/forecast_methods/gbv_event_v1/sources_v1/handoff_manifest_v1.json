@@ -1,0 +1,121 @@
+{
+  "created_at_utc": "2026-09-15T18:49:46.690615+00:00",
+  "scope": "GE-SOURCE inventory and independent arithmetic review; additive repairs by owning agents still require version closure",
+  "artifacts": [
+    {
+      "path": "analysis/src/forecast_methods/gbv_event_v1/sources/README.md",
+      "bytes": 1087,
+      "sha256": "a7eee664529a0534bba41310418219e2677c411ddfa75bea0b1b0af0c4df54e4"
+    },
+    {
+      "path": "analysis/src/forecast_methods/gbv_event_v1/sources/review.py",
+      "bytes": 6884,
+      "sha256": "c3b0a3ef8744fea47bd5dabf4909cda55f4550616d60702436adffc0b748865d"
+    },
+    {
+      "path": "analysis/src/forecast_methods/gbv_event_v1/sources/run.py",
+      "bytes": 9551,
+      "sha256": "cce3d2ce632a4ecd5ffe904d2b6859288125e4140a0ff99b1add27df4cdb125a"
+    },
+    {
+      "path": "analysis/src/forecast_methods/gbv_event_v1/sources/run_v2.py",
+      "bytes": 9737,
+      "sha256": "31d5365a21091d93134b8edbc46bb3468ed71b36137a8cbcdcb3232619720dc2"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/primary_web_checks.json",
+      "bytes": 3050,
+      "sha256": "716a5973d28eb2b8a0c7be748d11331f668844759b290b61fa4ce5a16c57f453"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/review_v1/checks.csv",
+      "bytes": 25017,
+      "sha256": "0d3a5b9da892b067da4160abf3416ceb12cfac421731e2dcb195e33397f0e882"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/review_v1/receipt.json",
+      "bytes": 1290,
+      "sha256": "bec6269ede87104fba89b426a4d64ac62457637a33f1f25013ef199bced63624"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v1/catalogue_intraday_candidates.csv",
+      "bytes": 2165,
+      "sha256": "9564f5252c4549a7c08a7b093f1797f87e16e43789020ccdcf57c9d5c99d8a54"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v1/dated_current_expectation_inventory.csv",
+      "bytes": 8629,
+      "sha256": "ab36d4a7ac977f1e0f509119b628e82e30ca485b867869ff8f776e08552a3196"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v1/event_timing_inventory.csv",
+      "bytes": 3549,
+      "sha256": "e9360720064c2a2824efdfd374c6fd795ef8eb3737d2421296f63e3df1abfe6f"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v1/held_price_inventory.csv",
+      "bytes": 1501,
+      "sha256": "6da837864ce6810c11a053b174e015be3feaa7f1d4c434817bf479c74d668fc3"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v1/historical_primary_expectation_inventory.csv",
+      "bytes": 5963,
+      "sha256": "77876d50bc040b7eded6cba3deb94e884b3b924af470233b1793a2063cb4754e"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v1/input_manifest.csv",
+      "bytes": 2277,
+      "sha256": "f35f37601caf2c3c0b11c856d769b7043e88ffbed4e262c6c082b76239c7ca34"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v1/receipt.json",
+      "bytes": 1274,
+      "sha256": "77fd541d2c0fb98a141e8705088d0ec48aeba905649aa0ad909bec437735b626"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v2/catalogue_intraday_candidates.csv",
+      "bytes": 2165,
+      "sha256": "9564f5252c4549a7c08a7b093f1797f87e16e43789020ccdcf57c9d5c99d8a54"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v2/dated_current_expectation_inventory.csv",
+      "bytes": 8629,
+      "sha256": "ab36d4a7ac977f1e0f509119b628e82e30ca485b867869ff8f776e08552a3196"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v2/event_timing_inventory.csv",
+      "bytes": 3412,
+      "sha256": "4796bf16d8e64bdc98c33a77f5d09a5530064ecf5d9a32af5abaed8e5ae09121"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v2/held_price_inventory.csv",
+      "bytes": 1521,
+      "sha256": "b8fd43c5153fec0c868982c34233bff5f125eae3234fc4ef388388b2b6a5390c"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v2/historical_primary_expectation_inventory.csv",
+      "bytes": 5963,
+      "sha256": "77876d50bc040b7eded6cba3deb94e884b3b924af470233b1793a2063cb4754e"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v2/input_manifest.csv",
+      "bytes": 2277,
+      "sha256": "f35f37601caf2c3c0b11c856d769b7043e88ffbed4e262c6c082b76239c7ca34"
+    },
+    {
+      "path": "data/processed/forecast_methods/gbv_event_v1/sources_v1/run_v2/receipt.json",
+      "bytes": 1192,
+      "sha256": "1f558eeecd1d039e31d7cb923df51eb8017401b3828e806ccb502caede13a5be"
+    },
+    {
+      "path": "docs/revenue-forecast-strategy/05_backtests/GE_SOURCE_RESULTS_v1.md",
+      "bytes": 10194,
+      "sha256": "5963528858e3981da2b030c4880578a8212ac6a290f5c446147d62926136e4ac"
+    },
+    {
+      "path": "docs/revenue-forecast-strategy/05_backtests/GE_SOURCE_RESULTS_v2.md",
+      "bytes": 7481,
+      "sha256": "de49f08fd21d01a9c8550d7b38d21688a612d35d04ab1d133a0708558f2167f5"
+    }
+  ]
+}

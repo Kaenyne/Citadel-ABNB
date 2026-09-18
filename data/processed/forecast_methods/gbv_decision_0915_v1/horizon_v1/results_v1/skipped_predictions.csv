@@ -1,0 +1,16 @@
+origin_date,last_reported_quarter,last_company_publication,target,quarter,year,horizon_quarters,guide_announcements_ahead,is_live,guide_event_date,actual_revenue_musd,actual_guide_mid_musd,cushion_pct,cushion_divisor,n_cushion,knowable_from,predictive_interval,model,n_train,reason
+2022-11-01,2022Q3,2022-11-01,2023Q1,2023Q1,2023,2,1,False,2023-02-14,1818.0,1785.0,3.5626552469511132,1.0356265524695112,4,2022-11-01,not_calculated,joint,5,requires >=8 complete rows and all4 seasons
+2023-02-14,2022Q4,2023-02-14,2023Q2,2023Q2,2023,2,1,False,2023-05-09,2484.0,2400.0,3.5240372410391534,1.0352403724103916,5,2023-02-14,not_calculated,joint,6,requires >=8 complete rows and all4 seasons
+2023-05-09,2023Q1,2023-05-09,2023Q3,2023Q3,2023,2,1,False,2023-08-03,3397.0,3350.0,3.2448209501656797,1.0324482095016567,6,2023-05-09,not_calculated,joint,7,requires >=8 complete rows and all4 seasons
+2022-08-02,2022Q2,2022-08-02,2023Q1,2023Q1,2023,3,2,False,2023-02-14,1818.0,1785.0,4.114164593107961,1.0411416459310796,3,2022-08-02,not_calculated,joint,4,requires >=8 complete rows and all4 seasons
+2022-08-02,2022Q2,2022-08-02,2023Q1,2023Q1,2023,3,2,False,2023-02-14,1818.0,1785.0,4.114164593107961,1.0411416459310796,3,2022-08-02,not_calculated,guide_growth,0,Missing already-issued guide growth/base anchor
+2022-11-01,2022Q3,2022-11-01,2023Q2,2023Q2,2023,3,2,False,2023-05-09,2484.0,2400.0,3.5626552469511132,1.0356265524695112,4,2022-11-01,not_calculated,joint,5,requires >=8 complete rows and all4 seasons
+2023-02-14,2022Q4,2023-02-14,2023Q3,2023Q3,2023,3,2,False,2023-08-03,3397.0,3350.0,3.5240372410391534,1.0352403724103916,5,2023-02-14,not_calculated,joint,6,requires >=8 complete rows and all4 seasons
+2023-05-09,2023Q1,2023-05-09,2023Q4,2023Q4,2023,3,2,False,2023-11-01,2218.0,2150.0,3.2448209501656797,1.0324482095016567,6,2023-05-09,not_calculated,joint,7,requires >=8 complete rows and all4 seasons
+2022-05-03,2022Q1,2022-05-03,2023Q1,2023Q1,2023,4,3,False,2023-02-14,1818.0,1785.0,5.594323812738866,1.0559432381273886,2,2022-05-03,not_calculated,joint,3,requires >=8 complete rows and all4 seasons
+2022-05-03,2022Q1,2022-05-03,2023Q1,2023Q1,2023,4,3,False,2023-02-14,1818.0,1785.0,5.594323812738866,1.0559432381273886,2,2022-05-03,not_calculated,guide_growth,0,Missing already-issued guide growth/base anchor
+2022-08-02,2022Q2,2022-08-02,2023Q2,2023Q2,2023,4,3,False,2023-05-09,2484.0,2400.0,4.114164593107961,1.0411416459310796,3,2022-08-02,not_calculated,joint,4,requires >=8 complete rows and all4 seasons
+2022-08-02,2022Q2,2022-08-02,2023Q2,2023Q2,2023,4,3,False,2023-05-09,2484.0,2400.0,4.114164593107961,1.0411416459310796,3,2022-08-02,not_calculated,guide_growth,0,Missing already-issued guide growth/base anchor
+2022-11-01,2022Q3,2022-11-01,2023Q3,2023Q3,2023,4,3,False,2023-08-03,3397.0,3350.0,3.5626552469511132,1.0356265524695112,4,2022-11-01,not_calculated,joint,5,requires >=8 complete rows and all4 seasons
+2023-02-14,2022Q4,2023-02-14,2023Q4,2023Q4,2023,4,3,False,2023-11-01,2218.0,2150.0,3.5240372410391534,1.0352403724103916,5,2023-02-14,not_calculated,joint,6,requires >=8 complete rows and all4 seasons
+2023-05-09,2023Q1,2023-05-09,2024Q1,2024Q1,2024,4,3,False,2024-02-13,2142.0,2050.0,3.2448209501656797,1.0324482095016567,6,2023-05-09,not_calculated,joint,7,requires >=8 complete rows and all4 seasons

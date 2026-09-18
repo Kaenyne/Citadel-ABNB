@@ -1,0 +1,18 @@
+{
+  "n_unique_targets": 9,
+  "skipped": 2,
+  "current_quarter_feature_count": 2,
+  "slope_min": 0.16381565821919317,
+  "slope_max": 0.2505509160886735,
+  "promoted": {
+    "fixed_flight": false,
+    "joint_flight": false
+  },
+  "limitations": [
+    "few independent years and overlapping windows",
+    "inherited flight commit lineage; raw mirror not recertified",
+    "reused historical validation sample",
+    "historical calendar origins unsupported by frozen harness",
+    "no live guide forecast"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "checks": 117,
+  "passed": 117,
+  "status": "PASS_bounded_same_cutoff_snapshot",
+  "imports_candidate_functions": false,
+  "new_optimization_or_predictive_race": false,
+  "values": {
+    "joint": {
+      "revenue_musd": 3244.3892518828143,
+      "guide_mid_musd": 3185.2473918851206,
+      "lambda_pct": 12.681513343028175
+    },
+    "fixed": {
+      "revenue_musd": 3219.2354701190798,
+      "guide_mid_musd": 3160.5521375433405,
+      "lambda_pct": 12.040366938470584
+    }
+  },
+  "guide_difference_musd": 24.695254341780128,
+  "guide_difference_pct": 0.7813588660168458,
+  "sha256": {
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\next_guide_v1\\results_v1\\manifest.json": "3a6682753c2a14de6dde51c2f84386c4759a6fa3cfb5e8998f463d35235e8b18",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\next_guide_v1\\run.py": "213a65ab80e4297e0d9508a37793cacbd928ebac754592c2484f6d517ceb3efe",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\next_guide_check.py": "24c79ced6ed946f04a143038650ed93c8335799927c99d923542df234b7e687d"
+  }
+}

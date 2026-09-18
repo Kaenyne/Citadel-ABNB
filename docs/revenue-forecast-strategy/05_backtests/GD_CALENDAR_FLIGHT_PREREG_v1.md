@@ -1,0 +1,17 @@
+# GD calendar-timed flight ablation — before execution
+
+15 September 2026. Parent-owned bounded gap-solving test in new `gbv_decision_0915_v1/calendar_flights_v1/`. This follows the independent source inventory and the separate calendar-origin addendum. No performance result for this new ablation has been calculated.
+
+The prior PR 60 one-slope flight ablation failed at earnings-release origins. At the actual 15 September information date, the Q3 day-75 flight vintage is available (committed 14 September 06:56:53 UTC); at some historical analogous dates current-quarter day-75 was not yet available. This provides a distinct testable information-timing hypothesis, not permission to choose a favorable date or pretend all day-75 readings were available immediately.
+
+## Frozen test
+
+Only next-guide targets p+2. Origin is exactly start(p+2) minus16 calendar days. Use the same joint/fixed revenue rules and guidance cushion as the main horizon package. Forecast unknown GBV growth with the previous ablation's one-slope rule: latest company GBV growth plus beta times the gap between eligible EU40 flight growth and that company growth. Fit beta through the origin, constrain it to[-2,2], require six completed training pairs and nondegenerate predictor variation. No extra regressors or parameter search.
+
+The sole substantive change from the earlier flight experiment is the predefined information date for each training and evaluation case. At each earlier unknown-GBV target r, the training feature date is start(r+1) minus16 calendar days; its GBV outcome must have been published before the evaluation origin. Select the latest source quarter with actual stored commit UTC no later than origin UTC midnight, >=75 days present, finite growth and no more than two quarters older than the last reported company quarter. A published current-quarter feature is permitted. Preserve all stale-quarter fallbacks and skipped rows. Unknown future GBV uses the adjusted growth recursively, as in the existing one-feature rule.
+
+Report W1/W2 target windows and identical paired rows for flight versus no-flight joint, flight versus no-flight fixed, direct guide-growth and revenue-growth/cushion. The principal remedy gate is >=10% guide RMSE reduction versus its own no-flight predictor in both windows with n>=8, no year/quarter reversal, plus improvement over direct guide-growth on those same rows. Report paired year-bootstrap uncertainty (2,000 draws), coefficient signs, source ages and count of genuinely current-quarter features. No promotion follows from a narrow source lineage or a few repeated observations. Any larger forecasting/Street claim remains subject to the broader decision contract.
+
+Do not emit a new LIVE guide forecast from this ablation unless it passes review and the user later adopts it. The current eligible feature may be documented without turning it into a live prediction. Historical non-earnings origins cannot pass the frozen W1/W2 registry-date validator; retain exact dates in an explicit unregistered research table and file a harness change request rather than backdate them. All prior failures remain unchanged.
+
+Raw flight blobs and full daily state completeness remain unrecertified; stored historical commit lineage is a qualified inherited input. This one timing ablation does not search the larger alternative-data catalogue or identify booking cohorts/RNPL effects.

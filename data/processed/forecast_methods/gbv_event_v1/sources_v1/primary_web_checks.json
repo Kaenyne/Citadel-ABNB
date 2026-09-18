@@ -1,0 +1,51 @@
+{
+  "audit_date": "2026-09-15",
+  "method": "Bounded primary-source and provider-documentation reads through web.run; no Airbnb site scraper, login, paid API, or credential use.",
+  "checks": [
+    {
+      "id": "Q226_GUIDE_CALL",
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526337928/d70413dex991.htm",
+      "status": "primary_checked",
+      "source_date": "2026-08-06",
+      "facts": "Q3 2026 revenue guidance USD4690-4770m; Nights and Seats Booked low double-digit growth. Q2 results webcast scheduled August6 at17:00 America/New_York. Exact release and call-end clocks not established.",
+      "limitations": "Management guidance, not a market expectation. Current original URL is not an original historical byte archive."
+    },
+    {
+      "id": "Q126_CALL",
+      "url": "https://s26.q4cdn.com/656283129/files/doc_financials/2026/q1/Airbnb_Q1-2026-Shareholder-Letter.pdf",
+      "status": "primary_checked",
+      "source_date": "2026-05-07",
+      "facts": "Q1 results webcast scheduled May7 at17:00 America/New_York.",
+      "limitations": "Scheduled call start is not first-public-release time or observed call end."
+    },
+    {
+      "id": "Q325_CALL_CORRECTION",
+      "url": "https://investors.airbnb.com/press-releases/news-details/2025/Airbnb-to-Announce-Third-Quarter-2025-Results/default.aspx",
+      "status": "primary_search_result_checked",
+      "source_date": "2025-10-08",
+      "facts": "November6 2025 results after market close; webcast17:00 ET, which is22:00Z. This differs from the inherited L3 source-manifest webcast proxy21:30Z.",
+      "limitations": "No frozen source altered. The proxy must not determine intraday call boundaries."
+    },
+    {
+      "id": "Q326_FUTURE_EVENT",
+      "url": "",
+      "status": "official_announcement_not_found_in_bounded_search",
+      "facts": "November5 2026 is retained as project expected/planning date. Held Zacks September expectation also says11/5/26.",
+      "limitations": "Not certified as company-announced here. No call clock assigned. Search failure is not proof that no announcement exists."
+    },
+    {
+      "id": "YFINANCE_5MIN",
+      "url": "https://ranaroussi.github.io/yfinance/reference/yfinance.functions.html",
+      "status": "maintainer_documentation_checked",
+      "facts": "Documents intraday intervals and a last60-day history limit, with prepost support. A recent five-minute sample cannot supply the full earnings history.",
+      "limitations": "Maintainer documentation, not a Yahoo service guarantee. Public probe attempt and HTTP429 retained separately."
+    },
+    {
+      "id": "ALPHAVANTAGE_INTRADAY",
+      "url": "https://www.alphavantage.co/documentation/#intraday",
+      "status": "provider_documentation_checked",
+      "facts": "Historical month-specific raw intraday OHLCV and extended hours are supported, but endpoint is marked Premium and requires an API key.",
+      "limitations": "No purchase, credential lookup, or request made. Capability is not an available dataset in this audit."
+    }
+  ]
+}

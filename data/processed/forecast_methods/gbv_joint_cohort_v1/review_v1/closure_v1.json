@@ -1,0 +1,50 @@
+{
+  "status": "PASS_bounded_engineering_review",
+  "forecast_promotion": "FAIL_preregistered_deletion_robustness",
+  "cohort_share_precision": "FAIL_preregistered_width_and_stability",
+  "physical_current_corporate_cohort_measurement": "UNAVAILABLE",
+  "independent_test_suite": {
+    "passed": 24,
+    "economic_contract": 13,
+    "actual_implementation_attacks": 11
+  },
+  "separate_review_suites_do_not_sum": {
+    "source": {
+      "checks": 143,
+      "passed": 143,
+      "receipt": "source_v1/receipt.json"
+    },
+    "saved_outputs": {
+      "checks": 2128,
+      "passed": 2128,
+      "receipt": "numerical_v2/receipt.json"
+    },
+    "diagnostics": {
+      "checks": 317,
+      "passed": 317,
+      "receipt": "diagnostics_v1/receipt.json"
+    },
+    "registry_stage": {
+      "checks": 260,
+      "passed": 260,
+      "receipt": "stage_v1/receipt.json"
+    }
+  },
+  "sha256": {
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\quant_v1\\results_v1\\manifest.json": "9867d8c9822132f4f07a057083fd053f1fc3ff96c7cd6fd8cd6b7a4e9cdc44fb",
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\quant_v1\\diagnostics_v1\\manifest.json": "ff09fd82faed0a3052cb6b0a448e9146fd4d4c010f9d99736eb2126c7f7a8b1d",
+    "docs\\revenue-forecast-strategy\\05_backtests\\JOINT_COHORT_REVIEW_v2.md": "39f2898d53f3b15b6c7f52346d79444bfbe7cee8a435b19030416eeb891e5b5e",
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\adversarial_v3.xml": "c32191012031de257e8514b988a559dc4dd501fc0487895d22c50196bd3cf5ba",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\audit_outputs.py": "5a1237b51c4d3977984c9d0bed4e4e1ee328a53a8498af3539685bd568b42912",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\diagnostic_checks.py": "3930b6d5c6ec33f1a147f146408c896c0120dcffe0f78b0ca48ed6a03368f0fd",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\economic_contract.py": "8133fc2d1afc47e971064ecd223d8e891e55ae24c1b420f2469a68a39297e309",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\source_checks.py": "09ba4047c572e6294f1b4395e483b61f5201b97de17fa5c05dbf104ff790b756",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\stage_checks.py": "a88f041543dea3594c1c9be04f830b246bc38bb5f315df930a4d8da3428eba31",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\test_economic_contract.py": "0d9820be550fd4f899a14476eacd49302d8b342a0041bddc723190bcb989c793",
+    "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\test_quant_adversarial.py": "f1080e6edea8cdd59d7a82f85daef94d64f19c2b45a571920f804941bc36b909",
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\source_v1\\receipt.json": "74e77ea0f34d44b79274525d0b2fca0f58db54b4de61eb400b500156d10ea088",
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\numerical_v2\\receipt.json": "fd25d9c63881547f0b9737e63d9f66656529e184dfb67c037e128900a300e9d4",
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\diagnostics_v1\\receipt.json": "be0f9a353887fa2d3682af8ac8e7d59d522497883b353b9ecfac5fa07a745065",
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\review_v1\\stage_v1\\receipt.json": "81035cc45e44df787cd25a79ba30fb122e993cf2ac4032e45a229a1207849a1f"
+  }
+}

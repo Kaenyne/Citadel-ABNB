@@ -1,0 +1,19 @@
+{
+  "calendar_comparison_rows_verified": 153,
+  "company_origin_groups_verified": 17,
+  "all_reused_points_numerically_equal": true,
+  "models": [
+    "fixed",
+    "joint",
+    "guide_growth",
+    "revenue_growth"
+  ],
+  "common_metric_rows": 30,
+  "input_sha256": {
+    "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\street_v1\\results_v3\\paired_rows.csv": "436f70c8da70e46290ed07ef9cfd7191e8d048a07382839431523e79f30365ec",
+    "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\calendar_arm_v1\\predictions.csv": "3a241a25e7b9d1873c344dc1be0ba01b7176088e188c35469c0eee79c0f41a0b",
+    "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\calendar_arm_v1\\information_equivalence_checks.csv": "74cc85f66f1e382a1f923f6886b4e9d58f105b2965000fcf20a06fb020ae407d",
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\next_guide_v1\\results_v1\\points.csv": "73ab12f4e035c5636b7562af25ef9a1f8e86b7110faf5537ffc577f4dea51b77",
+    "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\street_v1\\results_v3\\live_quarter_coverage.csv": "5d67c7ea12fb05ea79d502f35dd17d99b3c8f0968f2c2e3603ea1aa6bd9296d0"
+  }
+}

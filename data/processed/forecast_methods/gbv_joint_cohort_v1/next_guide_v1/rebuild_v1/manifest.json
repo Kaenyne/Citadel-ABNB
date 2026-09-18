@@ -1,0 +1,23 @@
+{
+  "source_hashes": {
+    "kpi": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "calendar": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "accepted_core": "6f395b2956762f179701e78f4c6743ba523da55e45cb7c9f742a2151aa2495af",
+    "frozen_spec": "e1490dbdef3c6ffec5d259405630da651f2740b3e052380fbe0769b835526054"
+  },
+  "source_paths": {
+    "kpi": "data\\processed\\overnight\\02_kpi_panel_quarterly.csv",
+    "calendar": "data\\processed\\forecast_methods\\harness\\calendar.csv",
+    "accepted_core": "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\quant_v1\\run.py",
+    "frozen_spec": "docs\\revenue-forecast-strategy\\WORKBOARD_JOINT_COHORT_NEXT_GUIDE_v1.md"
+  },
+  "code_sha256": "213a65ab80e4297e0d9508a37793cacbd928ebac754592c2484f6d517ceb3efe",
+  "outputs": {
+    "contributions.csv": "db6d927892374e21073226ea9750a109f4880ae543252c584b4292d862a51249",
+    "cushion_history.csv": "789cbe8d0d6b93dd2b4cd48e99206fc73ec84babf325c72beab77a504a60e1c8",
+    "gbv_inputs.csv": "a27aa5399d5360eb53f9b82f5b8c93922561ccd276199b7c19bf4fd60b8cc76f",
+    "model.json": "1b45788ef571535f6f03c441ad8725bd937469ccf8ebe2f00d0928c88d27be3c",
+    "points.csv": "73ab12f4e035c5636b7562af25ef9a1f8e86b7110faf5537ffc577f4dea51b77",
+    "training_rows.csv": "9f279ade18aada733749df848a652fc5f72893be57bbdfa12ad9c6c956f667a8"
+  }
+}

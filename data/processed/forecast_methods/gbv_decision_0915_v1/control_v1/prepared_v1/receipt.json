@@ -1,0 +1,37 @@
+{
+  "mode": "prepared_only",
+  "rows": 421,
+  "objects": 18,
+  "rows_by_window": {
+    "LIVE": 18,
+    "W1": 225,
+    "W2": 178
+  },
+  "source_sha256": "2b1dbd095a38daf2738c9f2bcd04716917059e94e54128d4b85ae9cea10d0b3d",
+  "code_sha256": "e7752c56dd90dcf7296474d588e994a44108ddf236e53e61caeaa0c0d8dfdb4f",
+  "staged_sha256": {
+    "gbv-decision-0915-v1__fixed-p2-guide.csv": "ff60662d6d5283f6bd02f7f600996a5791f88c4950a3c02bd24b67da683a2e8d",
+    "gbv-decision-0915-v1__fixed-p2-revenue.csv": "e3ef661f137d596570db41acc6a53938beee5061ec44f60b3fcef7be49d95c7c",
+    "gbv-decision-0915-v1__fixed-p3-guide.csv": "20dc8937687908809a2effc966fb1ba29ff9243d5e49277ec875a62551d2bd04",
+    "gbv-decision-0915-v1__fixed-p3-revenue.csv": "39cde043cc0ede5a9953d69d4380853c1382767b66ab0dbb6523a57e300d1bc5",
+    "gbv-decision-0915-v1__fixed-p4-guide.csv": "a4b56903ae0f6d729fc5d84dd80385afbdd2a0780e23b9202a9beb7668743f25",
+    "gbv-decision-0915-v1__fixed-p4-revenue.csv": "dd0ad05d26710930403944acbd0567b98a41ff49056172a4b4ab70add4004713",
+    "gbv-decision-0915-v1__guide_growth-p2-guide.csv": "6d8b80211f53b0ec21780fc600b3b713153d33a657f3697327a2e86a672857ef",
+    "gbv-decision-0915-v1__guide_growth-p3-guide.csv": "2faee84b56013156ecabf2b86bcbbd732e5adf3691856228b4aa68d13b536f70",
+    "gbv-decision-0915-v1__guide_growth-p4-guide.csv": "2e58c421978c28854f6bc382d66939b0bd64b1d7d3b9e21ecc9582017a564860",
+    "gbv-decision-0915-v1__joint-p2-guide.csv": "25d23299d150cb708c17407d867680dae1790e7afd853ed35c5687b1208be0ee",
+    "gbv-decision-0915-v1__joint-p2-revenue.csv": "d542665f51cd5c976557722f626e363286c90f24a22ad857ec35b1b1758c5942",
+    "gbv-decision-0915-v1__joint-p3-guide.csv": "9b0aa4a0cd4722d7f782cfaebe1917692bcaebd64a84c6f59eac9d88841184c3",
+    "gbv-decision-0915-v1__joint-p3-revenue.csv": "30e18849acdb0ebf2d06475ee90209bbedfdf777efd342262bf60eb0a7e6afb1",
+    "gbv-decision-0915-v1__joint-p4-guide.csv": "84cf86de3d3d0685793a0170ba4b7fda2a8cb67863d6a7274bd80583dd6ab4cf",
+    "gbv-decision-0915-v1__joint-p4-revenue.csv": "384abc638904193d4fd0d914ed56d44b0befe9563c2bfdc7c2f29869639c629d",
+    "gbv-decision-0915-v1__revenue_growth-p2-guide.csv": "bea7555f7b8356a29195f1d82f0bbec7ed0daf2e17208416d565cfd064a28594",
+    "gbv-decision-0915-v1__revenue_growth-p3-guide.csv": "6f124f3ded3eb6c69106abbd24bcdb8bc29d61db600a35e50d01686b9d44570e",
+    "gbv-decision-0915-v1__revenue_growth-p4-guide.csv": "6d73793f42d0448847c9dba2283635bd80abe5dfac31b2464737930e9da4bd11"
+  },
+  "oracle_rows_registered": 0,
+  "non_earnings_historical_rows_registered": 0,
+  "promotion": false,
+  "predictive_intervals": false,
+  "caveat": "PIT reconstruction on reused historical data with inherited input vintages; not independently certified live archive"
+}

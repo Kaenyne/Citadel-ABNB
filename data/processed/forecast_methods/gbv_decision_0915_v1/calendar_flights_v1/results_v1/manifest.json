@@ -1,0 +1,54 @@
+{
+  "code_sha256": "59372fbbfec5c24651f6356b38ec045dfab55dbdece9c1c395d3376531e34533",
+  "inputs": {
+    "prereg": {
+      "path": "docs\\revenue-forecast-strategy\\05_backtests\\GD_CALENDAR_FLIGHT_PREREG_v1.md",
+      "sha256": "44585cde0479a2432b6bd9a6fc14f73f28feb3b01a2faf28c54d59bc6fc0c9f0"
+    },
+    "core": {
+      "path": "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\quant_v1\\run.py",
+      "sha256": "6f395b2956762f179701e78f4c6743ba523da55e45cb7c9f742a2151aa2495af"
+    },
+    "prior_diagnostics": {
+      "path": "analysis\\src\\forecast_methods\\gbv_joint_cohort_v1\\quant_v1\\diagnostics.py",
+      "sha256": "39c3514848d78453e01424d194d42232b11d1395f079265afca42bfc9d1436e8"
+    },
+    "calendar_points": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\calendar_arm_v1\\predictions.csv",
+      "sha256": "3a241a25e7b9d1873c344dc1be0ba01b7176088e188c35469c0eee79c0f41a0b"
+    },
+    "fits": {
+      "path": "data\\processed\\forecast_methods\\gbv_decision_0915_v1\\horizon_v1\\results_v2\\origin_fits.csv",
+      "sha256": "a9afef1aaf20f3c20b01fae696c597d2248b33230738ceb3a7df8b4c438fa6d3"
+    },
+    "flights": {
+      "path": "data\\processed\\govdata_v2\\qtd75_pit.csv",
+      "sha256": "7af9d132b762c5ead5a5abf4261b5cae24a07c48d61bd3d9d819d149c3d31f6d"
+    },
+    "flight_lineage": {
+      "path": "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\data_audit_v1\\flight_lineage_v1\\flight_vintage_checks.csv",
+      "sha256": "cc58165d6e042e7a07cbea77590ec59102920be93a9c6280df720aa71b279d97"
+    },
+    "panel": {
+      "path": "data\\processed\\overnight\\02_kpi_panel_quarterly.csv",
+      "sha256": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac"
+    },
+    "company_calendar": {
+      "path": "data\\processed\\forecast_methods\\harness\\calendar.csv",
+      "sha256": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2"
+    }
+  },
+  "outputs": {
+    "checks.csv": "1cf036598d81ab04552286a55896cecbea82dc7f464776f05c032e00917297be",
+    "current_feature_only.csv": "e630c5beaa4931dbd2dba1142063636b91e6d280e9dd30a725e1e1b159c91ef6",
+    "deletions.csv": "e238e9f6378627c75ffbd5a89b6a2df8051747f0dfc6256ed81c55f478d7424b",
+    "features.csv": "64be8017c0081d706d39f5e3a25ef7b1ae4fea542b1797b7f83455158c51ff41",
+    "paired_comparisons.csv": "a78011c2a2c2a0a21f29e92de6fbb67da59aecfeafd61ba77c7170f61d975051",
+    "predictions.csv": "ae979ac2c624b26964fdccb509bfb7a3ab14164382ccfc7a07624e39d249afc8",
+    "remedy_gates.csv": "1a30419b9873353a80097ef12a0afa989b84b1dd7e7c48b403a001b2b2872233",
+    "scores.csv": "03311836a670d401ee57182862770f92e182b04f1e8ff6431d6e06ab940ced34",
+    "skipped.csv": "c30f1d4705af318ab14e97599f9bdcbe51a56381bd8ba22b5c50f20df191c7e5",
+    "summary.json": "a6db78549a7e715bd1109ea5ffb4b30bebebc10bf054c5b8239bb8cf1efd9477",
+    "training_pairs.csv": "d64378e530f287ab569e81a554cf87730168277eb9a3aa47339fe5ffa4350ff9"
+  }
+}

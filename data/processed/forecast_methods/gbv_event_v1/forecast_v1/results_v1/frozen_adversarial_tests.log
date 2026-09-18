@@ -1,0 +1,18 @@
+test_all_three_matching_preserves_pair_only_cell (__main__.InformationSetTests.test_all_three_matching_preserves_pair_only_cell) ... ok
+test_already_issued_target_guide_rejected (__main__.InformationSetTests.test_already_issued_target_guide_rejected) ... ok
+test_calibration_excludes_unpublished_future_guide_error (__main__.InformationSetTests.test_calibration_excludes_unpublished_future_guide_error) ... ok
+test_existing_output_directory_refused_before_loading (__main__.InformationSetTests.test_existing_output_directory_refused_before_loading) ... ok
+test_first_guide_survives_later_revision (__main__.InformationSetTests.test_first_guide_survives_later_revision) ... ok
+test_live_missing_target_remains_missing_error (__main__.InformationSetTests.test_live_missing_target_remains_missing_error) ... ok
+test_missing_and_duplicate_publication_metadata_fail (__main__.InformationSetTests.test_missing_and_duplicate_publication_metadata_fail) ... ok
+test_nominal_guide_uses_project_midpoint_interval_not_full_range (__main__.InformationSetTests.test_nominal_guide_uses_project_midpoint_interval_not_full_range) ... ok
+test_poison_future_gbv_revenue_guides_and_cushion (__main__.InformationSetTests.test_poison_future_gbv_revenue_guides_and_cushion) ... ok
+test_same_day_observation_refused (__main__.InformationSetTests.test_same_day_observation_refused) ... ok
+test_seasonal_gbv_missing_abstains_without_zero_growth_fallback (__main__.InformationSetTests.test_seasonal_gbv_missing_abstains_without_zero_growth_fallback) ... ok
+test_session_cutoff_weekend_and_stale_calendar (__main__.InformationSetTests.test_session_cutoff_weekend_and_stale_calendar) ... ok
+test_unknown_current_lag_is_forecast_never_training_row (__main__.InformationSetTests.test_unknown_current_lag_is_forecast_never_training_row) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.134s
+
+OK

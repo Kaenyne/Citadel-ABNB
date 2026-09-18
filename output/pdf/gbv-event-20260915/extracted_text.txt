@@ -1,0 +1,162 @@
+ABNB  /  GUIDANCE RESEARCH
+15 SEP 2026  |  Q3 2026 - Q2 2027
+Conditional operating model | independently checked arithmetic; method not promoted
+1 / 2
+The guide, the gap, and the evidence
+Four-quarter GBV conversion gives an auditable guidance path. The current evidence supports scenario analysis; it
+does not establish a short or predict a share-price move.
+Q4 IMPLIED GUIDE
+$3,123.4m
++$18m / +0.58% versus a like-for-like Yahoo/LSEG implied-guide proxy. A lower
+guide than Street revenue is not itself a bearish surprise. [1, 2]
+01  |  Translate booked value into the first guide
+Target
+Weighted GBV
+Conversion
+Revenue
+Implied guide
+Guide status
+2026Q3
+27,866.7
+17.255%
+4,808.4
+4,723.8
+Issued: diagnostic
+2026Q4
+26,405.7
+12.040%
+3,179.3
+3,123.4
+Conditional
+2027Q1
+24,008.4
+12.728%
+3,055.7
+3,001.9
+Conditional
+2027Q2
+29,285.7
+13.824%
+4,048.4
+3,977.2
+Conditional
+USD millions. Q3'26 actual issued guide: $4,690-4,770m; midpoint $4,730m [1]. Its modeled guide is a diagnostic, not an unknown forecast.
+Quarterly Q1/Q2'27 Street revenue and all direct guide-expectation panels are unavailable in the reviewed register.
+R = conversion x (2/3 x prior-quarter GBV + 1/3 x two-quarter-prior GBV); G = R / (1 + cushion). Conversion is same-season EWM, two-year
+half-life; cutoff 13 Sep, n=5/5/6/6. Cushion is the prior eight observations' median, 1.7905%. Q3/Q4 GBV assumptions were
+component-derived; Q1'27 GBV is inherited and unvalidated. No second RNPL haircut. [2]
+Q4 comparison changes with the panel
+USDm; each Street revenue / same 1.017905
+Our scenario
+3,123.4
+Yahoo/LSEG
+3,105.4
+S&P
+3,104.4
+Zacks
+3,143.7
+3100
+3120
+3140
+Yahoo 13 Sep: revenue $3,161.0m, n=36; S&P; 10 Sep: $3,160m; Zacks
+11 Sep: $3,200m. DoltHub mirrors Zacks; Yahoo/Alpha Vantage share
+the LSEG family. The sign is panel-sensitive. [2]
+Guide test fails the promotion hurdle
+RMSE, USDm; matched first-issued-guide targets
+0
+40
+80
+63.4
+74.3
+W1  n=12
+63.7
+60.8
+W2  n=10
+GBV candidate
+Guide-growth B1
+W1: 2023Q1-2026Q2; W2: 2024Q1-2026Q2, nested. Midpoint +/-$0.5m
+convention; raw RMSE $63.9m/$64.1m. Audit candidate uses ex-COVID
+conversion: different variant/origin from this EWM path. [3]
+Errors move together. W2 Shapley component variances sum to 7,759.7; covariance contributes -3,662.7, leaving total variance 4,097.0 (USDm
+squared). Raw ex-post actual-GBV oracle RMSE is $36.4m/$38.7m (W1/W2); it is unavailable before release. Attribution is accounting, not
+causality. [3]
+Short boundary, not a trade trigger: fixing the chosen panel and other inputs, Q4 conversion below 11.971% (base 12.040%) or Q3 GBV below
+$25,780.3m (base $26,008.6m) puts our guide below the proxy. A trade still needs robust expectations, uncertainty and executable returns.
+
+
+ABNB  /  GUIDANCE RESEARCH
+15 SEP 2026  |  Q3 2026 - Q2 2027
+Daily event evidence | no true call bars, fitted price target, or established trading edge
+2 / 2
+The overnight leg is not the call leg
+Large earnings moves are real, but daily OHLC cannot reveal their intraday order or cause. All 23 ledger events are
+shown, including events with missing usable consensus; no large-move subsample is selected. [4]
+02  |  Earnings price legs across the full held event history
+ABNB less QQQ simple return, percentage points
+Preclose to next open
+Open to close
+-20
+-10
+0
++10
++20
+20Q4
+21Q1
+21Q2
+21Q3
+21Q4
+22Q1
+22Q2
+22Q3
+22Q4
+23Q1
+23Q2
+23Q3
+23Q4
+24Q1
+24Q2
+24Q3
+24Q4
+25Q1
+25Q2
+25Q3
+25Q4
+26Q1
+26Q2
+Labels identify the reported quarter, not the forward guide target.
+23 events; 20 numeric first guides; 16 usable original revenue-consensus comparisons; 15 with a prior-data cushion. Across 12 primary
+tests (two expectation proxies x two daily legs x all/W1/W2 print windows), every Holm-adjusted p-value is 1.00. This neither proves zero
+effect nor establishes a tradeable guide-surprise rule. W1/W2 event proxy n=13/9. [4]
+03  |  Three entries require three different information sets
+BEFORE THE RELEASE
+Use only the frozen early-origin prediction
+and contemporaneous expectations. Bear
+the entire origin-to-event return.
+Reconstruction is not an archived live
+signal.
+AT THE NEXT OPEN
+The guide and call are public; the
+overnight gap is already gone. Test only
+returns available after entry, with costs
+and a rule fixed before evaluation.
+DURING THE CALL
+Requires timestamped bars and exact
+publication, call start/end clocks. Held
+daily data cannot certify fills, wick order,
+stop execution or a call-only move.
+What would strengthen a short? A dated, direct guide-expectation
+panel; a GBV or conversion downside that survives credible
+vendor/cushion choices; and a preregistered, net-of-cost entry test.
+RNPL cancellation/timing risk needs matched evidence before a
+numerical haircut.
+What would falsify it? Net realized growth and conversion holding up
+through rollout laps; a guide consistent with the market's actual
+expectations; or a negative guide surprise that fails to predict returns
+available after the chosen entry. The present $18m Q4 gap is not a
+calibrated probability.
+Immediate work: refresh the named expectation panel at the decision time; validate the conditional future GBV inputs; obtain ABNB+QQQ
+timestamped intraday history only if a call-entry trade is pursued. November 5 is a project expected date, not an official future schedule verified
+here. Daily gaps include the release, call, overnight and premarket.
+Sources / version trail. [1] SEC Q2 2026 shareholder letter, 6 Aug (Q3 guide; scheduled 17:00 NY call). [2] integration_v2/model.json; GE_SOURCE_RESULTS_v2.md;
+dated L0 Yahoo/LSEG 13 Sep 15:20:58Z, S&P 10 Sep, Zacks 11 Sep. [3] forecast_v1/results_v1 (matched scores, Shapley covariance, oracle); GE frozen protocol. [4]
+events_v1/run_v3; 2,895 held ticker-days, 115 return tieouts; sources_v1/review_v2: 314 checks. Exact hashes and editable prose accompany this memo.

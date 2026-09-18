@@ -1,0 +1,92 @@
+{
+  "status": "PASS_prepared_research_registration",
+  "checks": 20,
+  "passed": 20,
+  "rows": 2,
+  "promotion": false,
+  "check_details": [
+    {
+      "check": "prepared only two rows",
+      "passed": true
+    },
+    {
+      "check": "exact source hash",
+      "passed": true
+    },
+    {
+      "check": "stage hash gbv-joint-next-guide-v1__fixed-guide.csv",
+      "passed": true
+    },
+    {
+      "check": "one row gbv-joint-next-guide-v1__fixed-guide.csv",
+      "passed": true
+    },
+    {
+      "check": "fixed point",
+      "passed": true
+    },
+    {
+      "check": "fixed dates",
+      "passed": true
+    },
+    {
+      "check": "fixed scope",
+      "passed": true
+    },
+    {
+      "check": "fixed counts",
+      "passed": true
+    },
+    {
+      "check": "fixed training basis",
+      "passed": true
+    },
+    {
+      "check": "fixed no fabricated intervals",
+      "passed": true
+    },
+    {
+      "check": "fixed labels",
+      "passed": true
+    },
+    {
+      "check": "stage hash gbv-joint-next-guide-v1__joint-guide.csv",
+      "passed": true
+    },
+    {
+      "check": "one row gbv-joint-next-guide-v1__joint-guide.csv",
+      "passed": true
+    },
+    {
+      "check": "joint point",
+      "passed": true
+    },
+    {
+      "check": "joint dates",
+      "passed": true
+    },
+    {
+      "check": "joint scope",
+      "passed": true
+    },
+    {
+      "check": "joint counts",
+      "passed": true
+    },
+    {
+      "check": "joint training basis",
+      "passed": true
+    },
+    {
+      "check": "joint no fabricated intervals",
+      "passed": true
+    },
+    {
+      "check": "joint labels",
+      "passed": true
+    }
+  ],
+  "sha256": {
+    "data\\processed\\forecast_methods\\gbv_joint_cohort_v1\\control_v1\\next_guide_prepare_v1\\receipt.json": "459e9418fa4ab0ce9769361f66a0b4c63cc8840e0d4abc528c1a7aa3b0074223"
+  }
+}

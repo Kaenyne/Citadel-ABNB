@@ -1,0 +1,62 @@
+{
+  "asof": "2026-09-15",
+  "target": "2026Q4",
+  "last_company_publication": "2026-08-06",
+  "core_sha256": "6f395b2956762f179701e78f4c6743ba523da55e45cb7c9f742a2151aa2495af",
+  "n_train": 20,
+  "training_quarters": [
+    "2021Q3",
+    "2021Q4",
+    "2022Q1",
+    "2022Q2",
+    "2022Q3",
+    "2022Q4",
+    "2023Q1",
+    "2023Q2",
+    "2023Q3",
+    "2023Q4",
+    "2024Q1",
+    "2024Q2",
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "joint_weight_groups": [
+    0.3589564469509622,
+    0.4729102395749613,
+    0.1681333134740765,
+    0.0
+  ],
+  "joint_seasonal_lambda_pct": [
+    11.201040777019395,
+    13.290258847386088,
+    17.646171047782534,
+    12.681513343028172
+  ],
+  "successful_optimizer_starts": 3,
+  "n_cushion": 8,
+  "cushion_quarters": [
+    "2024Q3",
+    "2024Q4",
+    "2025Q1",
+    "2025Q2",
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "cushion_pct": 1.8567430632975808,
+  "all_complete_published_history": true,
+  "comparison": "same GBV growth carry rule and same cushion",
+  "prior_forecast_promotion": "FAIL_unchanged",
+  "physical_cohort_measurement": "UNAVAILABLE_unchanged",
+  "new_predictive_test": false,
+  "predictive_interval": null,
+  "fixed_parameter_count_basis": "four seasonal scales across model; target uses one; plus shared cushion for guide",
+  "limits": "No new market data, Street comparison, physical survival or causal RNPL estimate"
+}

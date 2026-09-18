@@ -1,0 +1,23 @@
+{
+  "publication_date": "2026-09-15",
+  "branch": "codex/submission-readiness-v1",
+  "synced_main": "a3af33ee",
+  "test_suites": {
+    "event": 12,
+    "forecast": 10,
+    "integration": 4,
+    "registry_scoring": 5,
+    "joint_quant": 11,
+    "economic_contract": 13,
+    "quant_adversarial": 11
+  },
+  "tests_passed": 66,
+  "tests_failed": 0,
+  "test_warning": "Local pytest cache directory permission; analytical tests passed",
+  "scorers": {"exit_codes": [0, 0], "formats_equal": true, "score_rows": 328, "prior_score_rows_unchanged": 328, "prior_protected_files_unchanged": 144},
+  "publication_scope_review": "No prohibited licensed export, raw reservation/review store or credential pattern identified",
+  "pre_receipt_staged_byte_audit": {"new_files": 781, "exact_blob_matches": 781, "bytes": 23666421, "normalization_mismatches": 0},
+  "whitespace_check": "PASS; scoped Matplotlib SVG coordinate whitespace retained",
+  "scientific_model_changed_during_delivery": false,
+  "new_margin_package_reaudited": false
+}
