@@ -37,7 +37,13 @@ Low/high = the Object-A 95% confidence-set weight vectors pushed through the sam
 a predictive band. The package also carries an 80% predictive band (σ = 1.03pp) not reproduced here for
 space; see `23_forecast_4q26_v2.csv` columns `band80_lo_pp`/`band80_hi_pp`.
 
-### 2b. ADR-FX contribution (pp of y/y ADR growth), same Φ construction applied to the disclosed-ADR-FX-on-basket fit (slope 0.872, intercept −0.076, r 0.962, n=14)
+### 2b. `point_phi_adrfx_pp` — NOT ADR FX (relabelled `revenue_fx_phi_lagged_pp` per DEC-0027/X1; see correction in §7)
+
+Same Φ construction applied to the disclosed-ADR-FX-on-basket fit (slope 0.872, intercept −0.076, r
+0.962, n=14) — despite its column name in the code, X1 found this scores as a **revenue-FX**
+construction (it equals `revenue_fx_pp` to two decimals at 3Q26, and RMSE 2.2pp against Airbnb's
+disclosed ADR-FX series vs 0.42pp for the ADR card's contemporaneous term). **The model's ADR-FX
+input is D4's N midpoint (−0.43pp 3Q26, +0.15pp 4Q26), not this table.**
 
 | scenario | period | point | low | high | unit | vintage |
 |---|---|---|---|---|---|---|
@@ -54,14 +60,15 @@ space; see `23_forecast_4q26_v2.csv` columns `band80_lo_pp`/`band80_hi_pp`.
 | breaker (usd_weak_+1sd) | 1Q27 | 2.87 | n/a | n/a | pp | fx_lag_v2, FX through 2026-09-04 |
 | breaker (usd_weak_+1sd) | 2Q27 | 3.16 | n/a | n/a | pp | fx_lag_v2, FX through 2026-09-04 |
 
-The package does not publish a separate confidence set for the ADR-FX line: `23_forecast_4q26_v2.csv`'s
-`cs_interval_*` columns are the revenue-FX Object-A confidence set, not an ADR-FX-specific one. "n/a" is
-therefore honest, not a placeholder for a number I didn't look for.
+The package does not publish a separate confidence set for this construction: `23_forecast_4q26_v2.csv`'s
+`cs_interval_*` columns are the revenue-FX Object-A confidence set, shared with `revenue_fx_pp` above,
+not an ADR-FX-specific one. "n/a" is therefore honest, not a placeholder for a number I didn't look for.
 
 ### 2a. Model inputs (machine-readable)
 
 Per DEC-0010: this mapping (base = spot held, short = USD one sigma stronger, breaker = USD one sigma
-weaker) is adopted.
+weaker) is adopted. Per DEC-0027 (X1 reconciliation): the item below is `revenue_fx_phi_lagged_pp`, not
+`adr_fx_pp` — see the correction at the top of §7.
 
 | item | scenario | period | point | unit | note |
 |---|---|---|---|---|---|
@@ -77,18 +84,18 @@ weaker) is adopted.
 | revenue_fx_pp | breaker | 4Q26 | 1.45 | pp | same, usd_weak_+1sd |
 | revenue_fx_pp | breaker | 1Q27 | 2.88 | pp | same, usd_weak_+1sd |
 | revenue_fx_pp | breaker | 2Q27 | 3.16 | pp | same, usd_weak_+1sd |
-| adr_fx_pp | base | 3Q26 | 2.89 | pp | Φ on ADR-FX-on-basket contemporaneous fit, spot held |
-| adr_fx_pp | base | 4Q26 | 0.93 | pp | same, spot held |
-| adr_fx_pp | base | 1Q27 | 0.88 | pp | same, spot held |
-| adr_fx_pp | base | 2Q27 | 0.56 | pp | same, spot held |
-| adr_fx_pp | short | 3Q26 | 2.89 | pp | same, usd_strong_-1sd |
-| adr_fx_pp | short | 4Q26 | 0.45 | pp | same, usd_strong_-1sd |
-| adr_fx_pp | short | 1Q27 | -1.11 | pp | same, usd_strong_-1sd |
-| adr_fx_pp | short | 2Q27 | -2.05 | pp | same, usd_strong_-1sd |
-| adr_fx_pp | breaker | 3Q26 | 2.89 | pp | same, usd_weak_+1sd |
-| adr_fx_pp | breaker | 4Q26 | 1.40 | pp | same, usd_weak_+1sd |
-| adr_fx_pp | breaker | 1Q27 | 2.87 | pp | same, usd_weak_+1sd |
-| adr_fx_pp | breaker | 2Q27 | 3.16 | pp | same, usd_weak_+1sd |
+| revenue_fx_phi_lagged_pp | base | 3Q26 | 2.89 | pp | relabelled per DEC-0027/X1 (was `adr_fx_pp`): Φ on ADR-FX-on-basket fit — a revenue-FX construction, not ADR FX (RMSE 2.2pp vs disclosed ADR FX; equals revenue_fx_pp to 2dp at 3Q26); spot held |
+| revenue_fx_phi_lagged_pp | base | 4Q26 | 0.93 | pp | same, spot held |
+| revenue_fx_phi_lagged_pp | base | 1Q27 | 0.88 | pp | same, spot held |
+| revenue_fx_phi_lagged_pp | base | 2Q27 | 0.56 | pp | same, spot held |
+| revenue_fx_phi_lagged_pp | short | 3Q26 | 2.89 | pp | same, usd_strong_-1sd |
+| revenue_fx_phi_lagged_pp | short | 4Q26 | 0.45 | pp | same, usd_strong_-1sd |
+| revenue_fx_phi_lagged_pp | short | 1Q27 | -1.11 | pp | same, usd_strong_-1sd |
+| revenue_fx_phi_lagged_pp | short | 2Q27 | -2.05 | pp | same, usd_strong_-1sd |
+| revenue_fx_phi_lagged_pp | breaker | 3Q26 | 2.89 | pp | same, usd_weak_+1sd |
+| revenue_fx_phi_lagged_pp | breaker | 4Q26 | 1.40 | pp | same, usd_weak_+1sd |
+| revenue_fx_phi_lagged_pp | breaker | 1Q27 | 2.87 | pp | same, usd_weak_+1sd |
+| revenue_fx_phi_lagged_pp | breaker | 2Q27 | 3.16 | pp | same, usd_weak_+1sd |
 | revenue_fx_pp_low | base | 3Q26 | 0.33 | pp | Object-A 95% confidence-set low, base scenario |
 | revenue_fx_pp_low | base | 4Q26 | 0.31 | pp | Object-A 95% confidence-set low, base scenario |
 | revenue_fx_pp_low | base | 1Q27 | 0.22 | pp | Object-A 95% confidence-set low, base scenario |
@@ -144,6 +151,15 @@ a best-in-class, partial-coverage result, not a scored, baseline-beating pass, a
 itself states H2 is "not quotable as a W1 winner."**
 
 ## 7. Kill list and consistency
+
+**Correction (2026-09-18, DEC-0027, citing `docs/pitch-model-v2/dossiers/X1_x1_adr_fx_reconciliation.md`):**
+the quantity §2's machine-readable block originally called `adr_fx_pp` is fx_lag_v2's
+`point_phi_adrfx_pp`, the Φ(0, ⅔, ⅓) kernel applied to the ADR-FX-on-basket fit at lags 1 and 2 — a
+**revenue-FX construction**, not ADR FX: it equals this dossier's own `revenue_fx_pp` to two decimals
+at 3Q26 and scores RMSE 2.2pp against Airbnb's disclosed ADR-FX series, versus 0.42pp for the ADR
+card's contemporaneous term (X1). It has been renamed `revenue_fx_phi_lagged_pp` throughout §2. **The
+ADR-FX object for the model is D4's N midpoint: −0.43pp (3Q26), +0.15pp (4Q26).**
+
 - Kill-list check: **the −3.4pp Q4 FX step and "82% of Q4 FX already determined" are both on the kill
   list and neither is used or quoted as ours anywhere in this dossier.** The −3.4pp step is reproduced
   only inside `24_four_way_4q26.csv` as a labelled, REJECTED comparison row, with the double-subtraction
