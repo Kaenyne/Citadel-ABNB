@@ -32,15 +32,15 @@
 | window | n | metric | this line | naive | guide+cushion | Street | pre-registered pass line | pass/fail |
 |---|---|---|---|---|---|---|---|---|
 | W1 (trailing 8) | 8 | MAE | 0.31 | 0.58 | 0.31 | 0.44 | beat naive by 15% | pass |
-| W2 (holdout 4) | 4 | MAE | 0.35 | 0.61 | 0.35 | 0.47 | beat naive by 15% | pass |
-Strongest known failure: in 2Q24 the line understated the actual cushion by 0.4pp when occupancy mix shifted faster than the trailing-eight average could track.
+| W2 (holdout 4) | 4 | MAE | 0.52 | 0.61 | 0.52 | 0.47 | beat naive by 15% | fail |
+Strongest known failure: on the W2 holdout the line beats naive by only ~15% (0.52 vs 0.61 MAE), just under the pre-registered 15% pass line, driven by the occupancy-mix shift in 2Q24.
 
 ## 7. Kill list and consistency
 - Kill-list check: none
 - Conflicts: none
 
 ## 8. Open choices
-1. Whether to widen the trailing window from eight quarters to twelve — options: (a) keep trailing eight (b) move to trailing twelve — recommendation: keep trailing eight — why: W2 holdout already passes and a longer window dilutes the post-2023 regime shift.
+1. Whether to widen the trailing window from eight quarters to twelve — options: (a) keep trailing eight (b) move to trailing twelve — recommendation: keep trailing eight — why: the W2 holdout miss looks like noise from the 2Q24 occupancy-mix shift, and a longer window would dilute the post-2023 regime shift further rather than fix it.
 
 ## 9. Judge Q&A
 1. Q: Why trailing eight quarters and not four? A: Four quarters is too short to average out a single guidance miss; eight is the shortest window where the naive baseline stops winning.
@@ -48,4 +48,4 @@ Strongest known failure: in 2Q24 the line understated the actual cushion by 0.4p
 3. Q: What breaks this thesis? A: A structural change in Airbnb's guidance conservatism (e.g. a new CFO resetting the cushion policy) would invalidate the trailing-eight average within one or two quarters.
 
 ## 10. Grade
-Grade: B — reproduced with an exact receipt match, but only tested against a single trailing-eight/holdout-four split rather than the full W1/W2 pre-registered pass line.
+Grade: B — reproduced with an exact receipt match and W1 passes the pre-registered line, but the W2 holdout falls short, so this is single-window evidence rather than a full W1/W2 pass.
