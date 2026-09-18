@@ -1166,3 +1166,15 @@ Paths are relative to `/Users/theomachado/Citadel-ABNB`.
 | 85 | adopted 1Q27 base **169.0178m / +8.206%** sits on the pre-registered module falsifier **≥ +8.2% / 169.0m** | `06_revenue_path_3q26_4q27_v2b.csv` rows `1Q27,base,nights_mm` and `nights_yoy_pct`; D2 §2a breaker rows and §6 last row | comparison made in this file | `receipts/D3/`, `receipts/D2/` | open — flagged here, not resolved |
 | 86 | 2Q27 step −2.272pt decomposes to −0.544 (RNPL phase) + −1.500 (event swing) + −0.227 (ex-NA contribution) | `06_nights_build.csv`, 1Q27 and 2Q27 base rows | arithmetic done in this file | `receipts/D3/` | — |
 | 87 | historical y/y 1Q24–2Q26 (+9.50 … +10.34) | computed in this file from the printed levels in row #1 | derived | — | DEC-0003 |
+
+## 9. Figures (added 18 Sep, discussion with Theo)
+
+All three drawn from the committed files by `docs/pitch-model-v2/lines/figures/` scripts run in-session; the regression was refit from the unrounded nights levels in `data/processed/abnb_driver_history_quarterly.csv` and matches the published coefficients (slope 0.322153 vs 0.322138, intercept 1.525410 vs 1.525819, r 0.86184 vs 0.86182; 3Q26 implied 10.0410 in both). The 14 fitted pairs are in `figures/nights_regression_points.csv`.
+
+- `figures/nights_regression.png` — the 14 quarterly points (index y/y on x, printed nights y/y on y), the OLS line, the 3Q26 index read of +26.4% projected to +10.04% (147.0m), and the W2 bias correction down to +9.52% (146.3m).
+- `figures/nights_walkforward_errors.png` — the walk-forward errors on both windows against the naive baseline; the dashed line is the mean error, +1.63pp on W1 and +0.52pp on W2, which is the bias subtracted in §3.6.
+- `figures/nights_rnpl_path.png` — the base nights y/y from 2Q26 printed through 4Q27, decomposed into the pre-lap path, the fee/cancellation lap, the RNPL lap, and the event terms; RNPL appears as no separate term in 3Q26 and as an explicit lap from 4Q26 onward (§6.1).
+
+![regression](figures/nights_regression.png)
+![walk-forward](figures/nights_walkforward_errors.png)
+![rnpl path](figures/nights_rnpl_path.png)
