@@ -1,0 +1,69 @@
+{
+ "object": "Adopted 4Q26 US hotel RevPAR y/y distribution (R11 revision 2, 2026-09-17). R11 and B15 read this file; R11's revision-1 normal N(3.517, 1.676) and B15's revision-1 mixture 0.90 N(3.7,1.6) + 0.10 N(0.8,1.8) are withdrawn.",
+ "provenance": "questions/risk-q4-us-revpar-strong/datasets/r11_model_v2.py, over us_revpar_monthly_yoy_measured.csv (r11_extract_lodging_monthly.py parses ../sources/lodging_monthly/*.html); audit A12 findings 03/04/10/11/17; response audits/A12-audit-response.md",
+ "parametric": {
+  "form": "0.90 x N(trend_centre, trend_sd) + 0.10 x N(0.8, 1.8) on 4Q26 US RevPAR y/y (%), resolved as the mean of the three CoStar monthly y/y figures (convention 1); the two trend parameters are solved so that both tails equal the three-view blend",
+  "trend_centre": 2.795,
+  "trend_sd": 2.111,
+  "shock_weight": 0.1,
+  "shock_centre": 0.8,
+  "shock_sd": 1.8,
+  "mean": 2.595,
+  "sd": 2.166,
+  "how_set": "the decomposition mixture (FY-implied 4Q26 2.69 and the two-start AR leg 3.87 averaged, -0.40 calendar and comp) has its trend centre AND trend sd solved so that BOTH tails equal the 0.5/0.3/0.2 blend: upper from decomposition 0.284, anchor 0.248, base rate 0.216 = 0.2594; lower from 0.163 / 0.185 / 0.477 = 0.2323"
+ },
+ "events": {
+  "R11_ge_4_0": 0.2594,
+  "B15_le_1_0": 0.2323,
+  "between_1_and_4": 0.5083,
+  "le_0": 0.1163
+ },
+ "conditional_means_pct": {
+  "given_ge_4": 5.305,
+  "given_le_1": -0.253
+ },
+ "inputs": {
+  "monthly_months_parsed": 28,
+  "q1_2026": [
+   3.533,
+   "Jan +0.4, Feb +4.3, Mar +5.9 (March from the repo note, not snapshotted)"
+  ],
+  "q2_2026": [
+   5.6,
+   "Apr +4.4, May +4.0, Jun +8.4, all snapshotted"
+  ],
+  "q3_2026_assumed": "5.0-6.0 (Jul +8.2 measured; Aug ~5.5 from the weekly tape; Sep ~3)",
+  "fy26_forecast": 4.4,
+  "fy_implied_q4_at_4_4": 2.693,
+  "ar_from_q3_avg": 4.2,
+  "ar_from_exit_rate": 3.54,
+  "calendar_adj": {
+   "election_week": -0.4,
+   "cr_expiry": -0.2,
+   "comp_credit_ar_leg_only": 0.4,
+   "comp_credit_on_blend": 0.2,
+   "total": -0.4
+  },
+  "quarterly_base_rate": {
+   "window": "2023Q3-2026Q2, quarters with >=2 saved months",
+   "n": 9,
+   "ge4": "1 of 9",
+   "le1": "4 of 9",
+   "complete_quarters": "1 of 6 >=4, 3 of 6 <=1",
+   "p_ge4_used": 0.2159,
+   "p_le1_used": 0.4773
+  },
+  "sd_of_sequential_change_in_yoy": 2.565
+ },
+ "must_adopt": [
+  "R11 (this log, revision 2): P(>= +4.0) = 0.259",
+  "B15 bonus-q4-us-revpar-soft (batch A18): P(<= +1.0) = 0.232 (revision 1: 0.10); and its base-rate row '6 of 13 <= +1' must become '4 of 9' on the parsed quarters",
+  "X01 scenario MC"
+ ],
+ "superseded": {
+  "R11_rev1": 0.38,
+  "B15_rev1": 0.1,
+  "rev1_p_le1_quoted_inside_R11": 0.07,
+  "rev1_base_rate_hand_list": "1 of 13 >= +4, 6 of 13 <= +1 (r11_model.py:36)"
+ }
+}

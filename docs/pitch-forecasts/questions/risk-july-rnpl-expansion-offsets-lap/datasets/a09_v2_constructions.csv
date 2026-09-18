@@ -1,0 +1,17 @@
+construction,p_r01,p_r02,form,note
+"ADOPTED: normal, centre 9.5, sd 1.70",0.3860172592084473,0.2604523723451536,parametric,fine-print object: nowcast centre + index error sd; thresholds 146.95m/147.75m
+"normal, centre 9.5, sd 1.475 (published W2 RMSE, stale 1Q23 vintage)",0.3692368357006949,0.2297098662458963,parametric,brief's quoted 1.48
+"normal, centre 9.5, sd 1.634 (honest re-vintage)",0.381519971677833,0.2520521477687494,parametric,WPK variant b
+"normal, centre 9.5, sd 1.816 (literal re-vintage)",0.3931075992370161,0.2739233664884738,parametric,WPK variant a
+"normal, centre 9.5, sd 2.159 (index no better than naive)",0.4097816607994097,0.3066249192758723,parametric,naive last-quarter RMSE
+"normal, centre 9.5, sd 1.712 (1.70 + partial-to-full gap sd 0.2 in quadrature)",0.38677659037799084,0.2618818896478643,parametric,E_aug gap sd
+"empirical plug-in, W2 headline row, 10 errors, demeaned, centre 9.5",0.3,0.2,empirical,actual = 9.5 - (err - mean err); 0.1 granularity
+"empirical kernel bw 0.5, W2 headline row, 10 errors, demeaned, centre 9.5",0.305135,0.1943675,empirical,"resampled demeaned errors + N(0,0.5)"
+"empirical kernel, W2 headline row, 10 errors, demeaned, errors x1.107 (STRESS: uniform re-vintage scaling, not refitted residuals)",0.310975,0.208295,empirical-stress,A09-05: labelled stress test
+"empirical plug-in, W1 headline row, 14 errors, demeaned, centre 9.5",0.35714285714285715,0.21428571428571427,empirical,actual = 9.5 - (err - mean err); 0.1 granularity
+"empirical kernel bw 0.5, W1 headline row, 14 errors, demeaned, centre 9.5",0.3417775,0.2565375,empirical,"resampled demeaned errors + N(0,0.5)"
+"empirical kernel, W1 headline row, 14 errors, demeaned, errors x1.107 (STRESS: uniform re-vintage scaling, not refitted residuals)",0.3457075,0.267025,empirical-stress,A09-05: labelled stress test
+"empirical kernel, W1 headline row, NOT demeaned (carries the 2023 normalisation over-prediction bias +1.64)",0.147455,0.0884125,empirical-stress,"reported, not used: the bias is the 2023 normalisation"
+"seven-row kernel mixture, W2, each row at its own implied level minus its own errors (= bias-corrected centres, mean 9.43)",0.25732135982039733,0.15626484397265958,empirical,"mixture mean 9.43, sd 1.57; reported, not adopted: the rows are the ingredients of the 9.5 call"
+"six-row kernel mixture, W1, each row minus its own W1 errors (W1 bias +0.7 to +1.6 is the 2023 normalisation; centres fall to ~8.0)",0.16990169901699018,0.11291612916129161,empirical-stress,"mixture mean 8.03, sd 1.94; reported, not used (A09-05 both-window sensitivity)"
+"revision-1 alt-data leg (mean of seven-row kernel x1.107 at raw centres and N(9.55,1.70)), thresholds 10.0/10.6",0.3321,0.2179,rev-1,from a09_final.json (rev 1); Astra's 'alt-only 33.2%'

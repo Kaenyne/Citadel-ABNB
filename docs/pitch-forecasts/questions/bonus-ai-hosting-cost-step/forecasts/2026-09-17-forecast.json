@@ -1,0 +1,89 @@
+{
+  "question_id": "B08",
+  "slug": "bonus-ai-hosting-cost-step",
+  "type": "binary",
+  "revision": 2,
+  "run_date": "2026-09-17",
+  "revised": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.44, "ci": [0.31, 0.57]},
+  "companion": {
+    "p_leg2_4q26_cor_ge_575": 0.316,
+    "p_leg2_at_yoy_18pct_reading_574_66": 0.320,
+    "p_leg1_quantified_fy27_step_ge_50m": 0.256,
+    "p_both": 0.126,
+    "p_leg2_only": 0.190,
+    "p_leg1_only": 0.130,
+    "cor_4q26_median_musd": 562,
+    "cor_4q26_p10_p90": [529, 597],
+    "line_build_4q26_cor_base_musd": 578.0,
+    "line_build_scenarios_at_or_above_575": "6 of 8",
+    "source": "datasets/b08_model.py (rev-1 grid, untouched) re-run at rev-2 parameters; audits/A16-reproduce.py block B08/2"
+  },
+  "estimates": {
+    "base_rate": 0.34,
+    "decomposition": 0.446,
+    "anchor": null,
+    "anchor_source": "NO_EXTERNAL_ANCHOR (A16-13). No Kalshi or Polymarket market prices 4Q26 cost of revenue, AI spend or February guidance language; the three ABNB pulls shared across this batch are byte-identical copies of one fetch of the KXABNB-26NOVNEB nights ladder (sha256 b0c7ad4da6d8...). Revision 1 reported 0.63 against the team's own line build, which is the same formula this decomposition uses with one parameter changed; it is now carried as a labelled internal comparison and final_minus_anchor is not reported.",
+    "internal_comparison": 0.63,
+    "internal_comparison_source": "docs/margin-build/notes/40_line_build.md (15 Sep 2026): reconciled 4Q26 cost of revenue $578M (+18.7%) above the $575M threshold -> P(leg 2) ~0.57 under its hosting mix, plus leg 1 at 0.18 given leg 2 No.",
+    "final_minus_internal_comparison": -0.19,
+    "audit_independent": 0.45,
+    "final_minus_audit": -0.01,
+    "not_independently_derived_flag": true,
+    "independence_note": "flag raised (rev 1 set it false, wrongly): the comparison object is this log's own model with the hosting mixture set to the build's reconciliation weights. The final sits 0.9 of the way from the base rate (0.34) to the decomposition (0.446), the same weighting revision 1 used; the one-point gap to the audit's 0.45 is that weighting."
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/bonus-ai-hosting-cost-step/datasets/b08_model.py",
+    "structure": "leg2: CoR = GBV N(22990,800) x rate N(1.756,0.05)/100 + chargebacks N(26,4) + hosting 56 + step{0.35 N(15,5), 0.37 N(30,8), 0.28 N(45,10)} + other N(47.8,3) + N(0,12); YES2 <=> CoR >= 575 -> 0.316. leg1: P(quantify | YES2) 0.40, P(quantify | NO2) 0.19. P(YES) = P2 + (1-P2) x 0.19 = 0.446; published 0.44 after the base-rate blend.",
+    "revision_2_changes": "hosting mixture 0.45/0.35/0.20 -> 0.35/0.37/0.28 (A16-11, accepted in part); spreads moved from analyst dispersion to outcome scale, gbv_sd 650 -> 800 and rate_sd 0.04 -> 0.05 (A16-12); leg1|no2 0.18 -> 0.19.",
+    "conventions": "leg 2 on the income-statement cost-of-revenue line (FY26 less 9M where needed) against the $575M dollar threshold (the >= +18% reading is $574.66M and gives 0.320); leg 1 needs a management statement (letter, call, 10-K MD&A) with a dollar or convertible percentage >= $50M of incremental FY27 AI/hosting/infrastructure spend; the 10-K purchase-obligations table alone does not count (if it did the question is ~0.96); statements at the 5 Nov print count"
+  },
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": 0,
+    "rev_fy27_musd": 0,
+    "margin_fy26_pp": -0.06,
+    "margin_fy27_pp": -0.5,
+    "eps_fy27_usd": -0.11,
+    "stock_usd_per_share": -3.2,
+    "ev_stock_usd_per_share": -1.4,
+    "material": true,
+    "materiality_note": "material (EV -$1.4/share, above the $1 line; rev 1: -$1.5 on an over-counted table)",
+    "split_by_leg": {
+      "leg2_only": {"share_of_yes": 0.425, "cor_4q26_musd": 590, "margin_fy26_pp": -0.08, "margin_fy27_pp": -0.30, "eps_fy27_usd": -0.07, "stock_usd_per_share": -1.5},
+      "both_legs": {"share_of_yes": 0.283, "cor_4q26_musd": 590, "margin_fy26_pp": -0.08, "margin_fy27_pp": -0.63, "eps_fy27_usd": -0.14, "stock_usd_per_share": -4.5},
+      "leg1_only": {"share_of_yes": 0.292, "cor_4q26_musd": null, "margin_fy26_pp": 0, "margin_fy27_pp": -0.63, "eps_fy27_usd": -0.14, "stock_usd_per_share": -4.3}
+    },
+    "note": "Revision 1 applied BOTH legs' consequences to every Yes; only ~28% of the Yes mass is both legs, so the top-level rows are now the expectation across the three forms above (the full-mark rows sit inside split_by_leg). Full mark: +$100M of FY27 cost = (5,483-100)/15,829 = 34.007% vs 34.639% = -0.63pp, and the same $100M on the Street's $15,819M is also -0.63pp - revision 1's '~-0.9pp on the Street' is withdrawn (A16-20); what widens is the team-vs-Street FY27 margin GAP, 1.81pp -> 2.44pp. Level effect -$100M x ~16x / 573m shares = -$2.79 (rev 1 used 620m; the run convention is 591.7m for 3Q26-dated rows and 573m for FY27 rows). EV 0.44 x -3.2 = -$1.4/share. Coherence: 40_lines_quarterly.csv puts 4Q26 cost of revenue at $578.0M in base and at or above $575M in 6 of 8 scenarios, so on the team's OWN adopted path this question resolves Yes; the memo must say which hosting path it quotes (A16-01)."
+  },
+  "sensitivity": [
+    {"assumption": "convention (2): the 10-K commitments table counts as a quantification (largest lever)", "moves_to": 0.96},
+    {"assumption": "hosting-step mixture -> evidence-only certain (no AI step)", "moves_to": 0.29},
+    {"assumption": "hosting-step mixture -> line-build full reconciliation certain", "moves_to": 0.64},
+    {"assumption": "hosting-step mixture -> revision-1 weights 0.45/0.35/0.20 at rev-2 spreads", "moves_to": 0.41},
+    {"assumption": "hosting-step mixture -> the audit's 0.33/0.37/0.30", "moves_to": 0.45},
+    {"assumption": "revision-1 analyst-dispersion spreads (gbv_sd 650, rate_sd 0.04)", "moves_to": 0.43},
+    {"assumption": "4Q26 GBV centre -> Street high $23,565M", "moves_to": 0.56},
+    {"assumption": "4Q26 GBV centre -> $22,400M", "moves_to": 0.35},
+    {"assumption": "merchant-fee rate 1.756 -> 1.818 (FY25 rate)", "moves_to": 0.61},
+    {"assumption": "merchant-fee rate 1.756 -> 1.735 (rebates persist)", "moves_to": 0.40},
+    {"assumption": "P(quantify | leg 2 No) 0.19 -> 0.10", "moves_to": 0.38},
+    {"assumption": "P(quantify | leg 2 No) 0.19 -> 0.30", "moves_to": 0.52},
+    {"assumption": "residual cost noise sd $12M -> $20M", "moves_to": 0.47},
+    {"assumption": "threshold read as >= +18% y/y ($574.66M)", "moves_to": 0.45}
+  ],
+  "monitoring": [
+    {"date": "before 2026-10-02", "event": "settle convention (2) with Krish and settle the 4Q26 hosting line against 40_line_build", "action": "table counts -> ~0.96 and the item stops being a forecast; build's $100.2M stands -> quote the build and say leg 2 is the base case"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.44 (0.31-0.57); leg-2 median $562M vs $575M; say the team's own 4Q26 path is $578M"},
+    {"date": "2026-11-05", "event": "3Q26 release: cost of revenue line; call Q&A on AI spend", "action": ">= $635M -> 0.60; <= $615M -> 0.30; any 2027 AI/hosting dollar figure >= $50M -> resolve Yes"},
+    {"date": "2026-11-06", "event": "3Q26 10-Q MD&A server-cost sentence and the internal-use-software amortisation offset", "action": "server costs +$20M y/y or more -> +0.08; +$10M or less -> -0.05; a shrinking offset at flat gross hosting -> +0.03"},
+    {"date": "2026-11-06/2027-02-10", "event": "conference remarks, sell-side FY27 cost notes", "action": "a sized AI/hosting remark >= $50M -> resolve Yes; repeated 'not in the P&L' framing -> -0.03"},
+    {"date": "2027-02-11", "event": "4Q26 release, call, FY26 10-K", "action": "resolve on the 4Q26 line and any quantified FY27 step"}
+  ],
+  "audit": {"file": "docs/pitch-forecasts/audits/A16-research-audit.md", "response": "docs/pitch-forecasts/audits/A16-audit-response.md",
+            "findings_b08": 8, "accepted": 7, "accepted_in_part": 1, "rejected": 0},
+  "log": "docs/pitch-forecasts/questions/bonus-ai-hosting-cost-step/research-log.md"
+}

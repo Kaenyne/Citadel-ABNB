@@ -1,0 +1,30 @@
+case,p_yes,mean_downgrades,rate_per_year,p_ge2,p_yes_decel_below,p_yes_accel
+"base (rev 2: S02 v2, recentred, pre 0.26, post .085/.525/.625/.965, capture 0.85)",0.0785,0.726,2.98,0.178,0.127,0.017
+bridge: revision-1 parameter set exactly (b11_model.py),0.1539,1.169,4.79,0.299,0.227,0.039
+"S02 v2 only, otherwise revision 1 (no recentring)",0.1409,1.094,4.49,0.277,0.226,0.038
+no recentring (revision-1 level error left in),0.111,0.909,3.73,0.229,0.18,0.022
+feed capture 1.0 (the rates are already feed counts: the calibration-coherent reading),0.1021,0.854,3.5,0.212,0.163,0.024
+feed capture 0.70,0.056,0.598,2.45,0.142,0.092,0.012
+"entry-state lift x1.2 on the pre block (spot -8% over 21 sessions), capture 0.85",0.0845,0.769,3.15,0.191,0.134,0.022
+"entry-state lift x1.2 on the pre block, capture 1.0",0.1097,0.904,3.71,0.227,0.171,0.029
+"entry-state lift x1.35 (the measured <= -10% lift), capture 1.0",0.1155,0.942,3.86,0.237,0.178,0.033
+post means = the feed's print-window means exactly (.02/.55/.55/.83),0.0664,0.65,2.67,0.158,0.105,0.013
+post means = revision-1 judgement (.15/.5/.7/1.1),0.0911,0.802,3.29,0.199,0.148,0.023
+post means halved,0.0386,0.473,1.94,0.107,0.058,0.014
+post means x1.5,0.1239,0.976,4.0,0.245,0.204,0.02
+pre-print mean 0.20 (trailing-12m drought),0.0717,0.674,2.76,0.165,0.118,0.013
+pre-print mean 0.35 (revision-1 judgement),0.0886,0.8,3.28,0.199,0.138,0.025
+pre-print mean 0.47 (2023+ ALL-window 49-day rate),0.1045,0.903,3.7,0.228,0.158,0.034
+no day-1 modulation,0.0747,0.726,2.98,0.18,0.12,0.017
+day-1 modulation 0.12,0.0814,0.724,2.97,0.167,0.129,0.018
+no price-path modulation (k_pre = k_post = 0),0.0778,0.725,2.97,0.179,0.125,0.017
+"k_post applied to r_day1 + r_post, the window it was measured on (A17-18)",0.0799,0.723,2.97,0.172,0.128,0.017
+price-path modulation doubled,0.0797,0.725,2.97,0.177,0.128,0.018
+Poisson counts,0.057,0.725,2.97,0.172,0.102,0.004
+overdispersion 2.5 (Nov-2023-style clustering),0.0921,0.726,2.98,0.174,0.141,0.029
+"pool scale 1.25 (22 Buys, Buy share at a series high)",0.1083,0.903,3.71,0.228,0.173,0.024
+A09 rev-2 print states (accel .26 / flat .10 / ok .15 / below .48),0.0838,0.763,3.13,0.19,0.127,0.017
+P(accel) 0.40 (Street-like),0.0694,0.666,2.73,0.162,0.125,0.017
+P(accel) 0.13,0.0977,0.856,3.51,0.214,0.126,0.018
+"joint bear-for-stock: accel 0.13, post x1.5, pool 1.25, capture 1.0, overdisp 2.5",0.2526,1.723,7.07,0.384,0.318,0.055
+"joint bull-for-stock: accel 0.40, post halved, pre 0.20, capture 0.70",0.0204,0.324,1.33,0.066,0.035,0.007

@@ -1,0 +1,92 @@
+Guidance outcomes: {'met': 13, 'above_range': 2, 'not_met': 1, 'pending': 1}
+Resolved guides meeting/exceeding coded guidance: 15 / 16
+All 3Q22-2Q26 n = 16 [(-0.34, 7, 0.4375), (0.26, 6, 0.375)]
+  members: [('3Q22', 0.48999999999999844), ('4Q22', -4.93), ('1Q23', -1.5500000000000007), ('2Q23', -7.619999999999999), ('3Q23', 2.549999999999999), ('4Q23', -1.5199999999999996), ('1Q24', -2.5199999999999996), ('2Q24', -0.8100000000000005), ('3Q24', -0.20999999999999908), ('4Q24', 3.869999999999999), ('1Q25', -4.43), ('2Q25', -0.4900000000000002), ('3Q25', 1.3599999999999994), ('4Q25', 1.0300000000000011), ('1Q26', -0.6699999999999999), ('2Q26', 1.1899999999999995)]
+W1 target 1Q23+ n = 14 [(-0.34, 6, 0.428571), (0.26, 5, 0.357143)]
+  members: [('1Q23', -1.5500000000000007), ('2Q23', -7.619999999999999), ('3Q23', 2.549999999999999), ('4Q23', -1.5199999999999996), ('1Q24', -2.5199999999999996), ('2Q24', -0.8100000000000005), ('3Q24', -0.20999999999999908), ('4Q24', 3.869999999999999), ('1Q25', -4.43), ('2Q25', -0.4900000000000002), ('3Q25', 1.3599999999999994), ('4Q25', 1.0300000000000011), ('1Q26', -0.6699999999999999), ('2Q26', 1.1899999999999995)]
+W2 target 1Q24+ n = 10 [(-0.34, 5, 0.5), (0.26, 4, 0.4)]
+  members: [('1Q24', -2.5199999999999996), ('2Q24', -0.8100000000000005), ('3Q24', -0.20999999999999908), ('4Q24', 3.869999999999999), ('1Q25', -4.43), ('2Q25', -0.4900000000000002), ('3Q25', 1.3599999999999994), ('4Q25', 1.0300000000000011), ('1Q26', -0.6699999999999999), ('2Q26', 1.1899999999999995)]
+Q2-to-Q3 n = 4 [(-0.34, 4, 1.0), (0.26, 3, 0.75)]
+  members: [('3Q22', 0.48999999999999844), ('3Q23', 2.549999999999999), ('3Q24', -0.20999999999999908), ('3Q25', 1.3599999999999994)]
+Stable/approximate comparators:
+target_period  comparator_value  actual  distance_from_mid                                                                                                                                            quote
+         3Q22              24.6   25.09               0.49                 In Q3 2022, we expect Nights and Experienced Booked year-over-year growth to be stable with the year-over-year growth in Q2 2022
+         1Q23              20.2   18.61              -1.59                                      In Q1 2023, we expect Nights and Experiences Booked year-over-year growth to be nearly as strong as Q4 2022
+         2Q24               9.5    8.69              -0.81                                  We expect the year-over-year growth rate of nights booked in Q2 2024 to be relatively stable to that of Q1 2024
+         1Q25               8.5    7.92              -0.58 We expect year-over-year growth of Nights and Experiences Booked in Q1 2025 to be relatively stable compared to Q1 2024 after excluding Leap Day
+         3Q25               7.4    8.79               1.39                               In Q3 2025, we expect year-over-year growth of Nights and Seats Booked to be relatively stable compared to Q2 2025
+Revintage inputs:                                                                                 variant  wf_n  wf_rmse  wf_ratio_vs_naive
+                                                          v1 (single 2025/2026 vintage)    10 1.475147           0.683209
+a: literal, 2023-vintage 4Q22 (114 mkts) and 1Q23 (3 complete months: 7 late-dump mkts)    10 1.815866           0.841012
+                    b: 2023-vintage 4Q22 (114 mkts) and 1Q23 as Jan-Feb 2023 (103 mkts)    10 1.633596           0.756595
+                     c: v1 1Q23 rescaled by the pooled T1 wedge factor 1.055 (estimate)    10 1.538458           0.712532
+ERROR WINDOW 2023Q1+
+GLOBAL|yoy_all|w_reviews n 10 bias 0.5283152584559011 sample_sd 1.4468363409154628 rmse 1.4707545240357434 overpredictions 7 plugin [0.3, 0.2, 0.2] scaled_kernel [0.302660641813185, 0.20181035172212905, 0.1975095356569806]
+GLOBAL|yoy_all|w_equal n 10 bias -0.46101523459867266 sample_sd 1.4799420395544727 rmse 1.4777485046274472 overpredictions 4 plugin [0.2, 0.1, 0.1] scaled_kernel [0.26829193699393605, 0.1485999984888107, 0.14524180921023358]
+GLOBAL|yoy_all|w_median n 10 bias 0.023696376575518957 sample_sd 1.596283864444946 rmse 1.5145532267178232 overpredictions 4 plugin [0.2, 0.1, 0.1] scaled_kernel [0.2349477051554028, 0.1303533075933808, 0.12764181298012092]
+GLOBAL_NW|yoy_all|w_equal n 10 bias -0.48129177098720316 sample_sd 1.5667558289700907 rmse 1.5623358197489357 overpredictions 4 plugin [0.2, 0.2, 0.2] scaled_kernel [0.3314461653491587, 0.1898360819580356, 0.18534952044068057]
+GLOBAL|yoy_vmatch|w_reviews n 10 bias -0.04867179580837661 sample_sd 1.5324192069888534 rmse 1.4545950319799403 overpredictions 6 plugin [0.2, 0.2, 0.2] scaled_kernel [0.2572367230969715, 0.18751305691606457, 0.18475644001879488]
+GLOBAL|yoy_vmatch|w_equal n 10 bias -0.7056172352384713 sample_sd 1.5143254911859825 rmse 1.6005496576475484 overpredictions 3 plugin [0.2, 0.1, 0.1] scaled_kernel [0.22303652637516763, 0.14605336943517933, 0.14337942521390784]
+GLOBAL_NW|yoy_vmatch|w_equal n 10 bias -0.6958111534495224 sample_sd 1.6753476677526105 rmse 1.7350112357919918 overpredictions 3 plugin [0.2, 0.1, 0.1] scaled_kernel [0.2611169415965448, 0.16604455746665972, 0.1626979029185138]
+Equal-model kernel mixture: [0.2683909486257666, 0.16717296051146568, 0.16379663520560458] models 7
+All models underpredicted: ['2024Q4', '2025Q3', '2026Q2']
+Minimum pairwise error correlation: 0.7990719750374622
+ERROR WINDOW 2022Q1+
+GLOBAL|yoy_all|w_reviews n 14 bias 1.6374233736254056 sample_sd 1.8318177770843136 rmse 2.4077020320610805 overpredictions 11 plugin [0.21428571428571427, 0.14285714285714285, 0.14285714285714285] scaled_kernel [0.2024313644482263, 0.14649771021446753, 0.14371498913364475]
+GLOBAL|yoy_all|w_equal n 14 bias 1.2834158675410656 sample_sd 1.896504406857987 rmse 2.233153833143987 overpredictions 11 plugin [0.14285714285714285, 0.07142857142857142, 0.07142857142857142] scaled_kernel [0.1546497274339758, 0.11089747992833424, 0.10871960170886227]
+  MISSING: GLOBAL|yoy_all|w_median
+GLOBAL_NW|yoy_all|w_equal n 14 bias 1.0142261305735816 sample_sd 1.92178850659765 rmse 2.111426208045784 overpredictions 10 plugin [0.14285714285714285, 0.14285714285714285, 0.14285714285714285] scaled_kernel [0.20621841285712655, 0.1529129903299827, 0.1513374102938868]
+GLOBAL|yoy_vmatch|w_reviews n 14 bias 1.0603072332789174 sample_sd 1.973030944555092 rmse 2.1769340237303236 overpredictions 10 plugin [0.21428571428571427, 0.07142857142857142, 0.07142857142857142] scaled_kernel [0.1867572782845417, 0.11830646808571067, 0.11519628483359058]
+GLOBAL|yoy_vmatch|w_equal n 14 bias 1.0273806902921385 sample_sd 1.948370831447021 rmse 2.1402117855454725 overpredictions 9 plugin [0.07142857142857142, 0.07142857142857142, 0.07142857142857142] scaled_kernel [0.12446524999578795, 0.07177605622741975, 0.06967869620783249]
+GLOBAL_NW|yoy_vmatch|w_equal n 14 bias 0.6917601320781134 sample_sd 1.979082082202591 rmse 2.0286766564490413 overpredictions 9 plugin [0.14285714285714285, 0.14285714285714285, 0.14285714285714285] scaled_kernel [0.18510968640681466, 0.14060109659798062, 0.13890065868682125]
+Equal-model kernel mixture: [0.17660528657107882, 0.12349863356398258, 0.12125794014410636] models 6
+Analytic alt-only blend at original thresholds: [0.33200448572208496, 0.21778848450098826]
+Kalshi 150.0 mid 0.33999999999999997 last 0.3000 volume 590.96 OI 413.21 24h 0.00 updated 2026-08-04T18:47:36.451419Z
+Kalshi 148.0 mid 0.525 last 0.5300 volume 428.14 OI 423.14 24h 0.00 updated 2026-08-04T18:47:36.451419Z
+Kalshi 146.0 mid 0.645 last 0.6000 volume 998.66 OI 689.51 24h 0.00 updated 2026-08-04T18:47:36.451419Z
+Kalshi 144.0 mid 0.7949999999999999 last 0.8300 volume 347.64 OI 36.06 24h 0.00 updated 2026-08-04T18:47:36.451419Z
+Kalshi 142.0 mid 0.88 last 0.8400 volume 49.86 OI 38.35 24h 0.00 updated 2026-08-04T18:47:36.451419Z
+Kalshi 140.0 mid 0.925 last 0.9000 volume 409.93 OI 272.19 24h 0.00 updated 2026-08-04T18:47:36.451419Z
+Kalshi 138.0 mid 0.955 last 0.8800 volume 412.02 OI 306.00 24h 0.00 updated 2026-08-04T18:47:36.451419Z
+Market interpolation, printed thresholds: 0.585 0.5369999999999994
+Market interpolation, original script: 0.5873999999999996 0.5393039999999991
+Original blend r01 0.4236515384106209 saved 0.4236515384106209 remove market and renormalize 0.40545726490068995
+Original blend r02 0.31593242397572463 saved 0.31593242397572463 remove market and renormalize 0.29111335997302745
+Impact normal P(R02): 0.29270421759956716
+Current C06 revision/vector: 2 {'a_ge_25pct': 0.25, 'b_21_to_24pct': 0.2, 'c_over_20_repeated_or_le_20': 0.26, 'd_not_disclosed': 0.29}
+Current C06 times old conditional: 0.12851840932345954
+R03 base-rate formula with stated lift: 0.10685714285714287 with unexplained .7: 0.0616
+Disclosure continuation metric_persistence_matrix_4Q20-2Q26.csv 4Q20 91 111 0.8198198198198198
+Disclosure continuation metric_persistence_matrix_4Q20-2Q26.csv 1Q23 58 76 0.7631578947368421
+Disclosure continuation metric_persistence_matrix_4Q20-2Q26.csv 1Q24 38 54 0.7037037037037037
+Disclosure continuation metric_persistence_matrix_v2_4Q20-2Q26.csv 4Q20 93 113 0.8230088495575221
+Disclosure continuation metric_persistence_matrix_v2_4Q20-2Q26.csv 1Q23 60 78 0.7692307692307693
+Disclosure continuation metric_persistence_matrix_v2_4Q20-2Q26.csv 1Q24 40 56 0.7142857142857143
+Reaction W1 -1.0 n 8 mean -5.588947777331796 positive 0
+Reaction W1 0.0 n 1 mean -8.775318433663216 positive 0
+Reaction W1 1.0 n 5 mean 6.037882624109332 positive 4
+Reaction W2 -1.0 n 5 mean -5.967518868542712 positive 0
+Reaction W2 0.0 n 1 mean -8.775318433663216 positive 0
+Reaction W2 1.0 n 4 mean 8.831939159724794 positive 4
+Accelerating Street bars: [{'print': '4Q21', 'day1_excess_pct': 3.7}, {'print': '3Q23', 'day1_excess_pct': -5.1}, {'print': '4Q24', 'day1_excess_pct': 14.0}] mean 4.2
+Accelerating Q3 to Q4: 22 25.09 20.16
+Accelerating Q3 to Q4: 23 13.54 12.02
+Accelerating Q3 to Q4: 25 8.79 9.82
+Impact R01 held-cost margin changes {'FY26': np.float64(0.5138959905753526), 'FY27': np.float64(0.34909990963218895)} held-cost EPS27 0.119 EV from displayed p/stock 7.896
+Impact R02 held-cost margin changes {'FY26': np.float64(0.6686719690363552), 'FY27': np.float64(0.5730076791858663)} held-cost EPS27 0.196 EV from displayed p/stock 7.296
+Impact R03 held-cost margin changes {'FY26': np.float64(0.5670468272028828), 'FY27': np.float64(0.859781649096869)} held-cost EPS27 0.2954 EV from displayed p/stock 1.554
+S01 mean of chosen cells: 1.302702702702703
+S01 omitted 10.00-10.09 mass: 0.022937213751480057
+Auditor normal probabilities: 0.3776230600383244 0.25335597689272554
+Auditor sd sensitivity: 1.0 0.2980767242704563 0.12950323441664013
+Auditor sd sensitivity: 1.48 0.36014634442610804 0.22283194407050055
+Auditor sd sensitivity: 1.633596 0.37281724440714825 0.24479668135121524
+Auditor sd sensitivity: 1.7 0.3776230600383244 0.25335597689272554
+Auditor sd sensitivity: 1.815866 0.38520494620073553 0.2671024225929743
+Auditor sd sensitivity: 2.159143 0.40305786913654695 0.30056597821960845
+Auditor sd sensitivity: 2.5 0.41606286035213225 0.32581569121582865
+C06-v2 true high share / disclosed-a: 0.3891 0.24805125
+Auditor joint sensitivity k 0 nights marginal 0.3776230600383244 P(R01|a) 0.3776230600383244 joint at current C06 0.0944057650095811
+Auditor joint sensitivity k 0.1 nights marginal 0.3774859658831216 P(R01|a) 0.4117654283268918 joint at current C06 0.10294135708172295
+Auditor joint sensitivity k 0.14285714285714288 nights marginal 0.3772162207862205 P(R01|a) 0.42651959048920024 joint at current C06 0.10662989762230006
+Auditor joint sensitivity k 0.2142857142857143 nights marginal 0.3762077698311193 P(R01|a) 0.45087762927437086 joint at current C06 0.11271940731859272

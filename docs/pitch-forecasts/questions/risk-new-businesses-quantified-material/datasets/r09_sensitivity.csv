@@ -1,0 +1,9 @@
+scenario,p_yes,p_hotel_share_disclosed,p_hotel_route_yes,p_other_routes
+base,0.26,0.278,0.181,0.096
+hotel disclosure hazards halved (0.06 / 0.09),0.181,0.145,0.094,0.096
+hotel disclosure hazards doubled (0.24 / 0.36),0.398,0.514,0.334,0.096
+true hotel share >= 3 with P 0.40 (hotels ~2-3% of nights),0.197,0.278,0.111,0.096
+true hotel share >= 3 with P 0.85 (hotels ~4-6%),0.31,0.278,0.237,0.096
+Feb letter gives a combined new-business share (p_combined 0.10),0.313,0.278,0.181,0.162
+"joint bull (0.20/0.35, true 0.85, combined 0.10, rev 0.06)",0.519,0.48,0.408,0.188
+"joint bear (0.06/0.09, true 0.40, others 0.01)",0.095,0.145,0.058,0.039

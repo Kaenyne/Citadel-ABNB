@@ -1,0 +1,878 @@
+{
+ "vector": {
+  "thesis breaker": 0.139357,
+  "base": 0.223114,
+  "short case": 0.554713,
+  "none of the above": 0.082816
+ },
+ "scenario_table": {
+  "thesis breaker": {
+   "p": 0.1394,
+   "day1_median": 2.19,
+   "day1_mean": 2.54,
+   "day1_p_le_m8": 0.121,
+   "day1_p_ge_5": 0.37,
+   "day1_p_lt_0": 0.397,
+   "day1_p10": -9.11,
+   "day1_p90": 13.72,
+   "dec15_median": 175.1,
+   "dec15_mean": 177.7,
+   "dec15_p25": 156.0,
+   "dec15_p75": 196.6,
+   "dec15_p_le_150": 0.183,
+   "dec15_p_ge_180": 0.436,
+   "nights_mean": 11.96,
+   "p_c01_below": 0.499,
+   "c02": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "c04": [
+    0.289,
+    0.356,
+    0.073,
+    0.234,
+    0.048
+   ]
+  },
+  "base": {
+   "p": 0.2231,
+   "day1_median": -3.76,
+   "day1_mean": -3.38,
+   "day1_p_le_m8": 0.32,
+   "day1_p_ge_5": 0.171,
+   "day1_p_lt_0": 0.661,
+   "day1_p10": -14.91,
+   "day1_p90": 8.9,
+   "dec15_median": 162.3,
+   "dec15_mean": 164.8,
+   "dec15_p25": 144.4,
+   "dec15_p75": 182.5,
+   "dec15_p_le_150": 0.325,
+   "dec15_p_ge_180": 0.275,
+   "nights_mean": 9.58,
+   "p_c01_below": 0.715,
+   "c02": [
+    0.07,
+    0.348,
+    0.544,
+    0.0,
+    0.038
+   ],
+   "c04": [
+    0.474,
+    0.397,
+    0.06,
+    0.0,
+    0.07
+   ]
+  },
+  "short case": {
+   "p": 0.5547,
+   "day1_median": -3.8,
+   "day1_mean": -3.39,
+   "day1_p_le_m8": 0.327,
+   "day1_p_ge_5": 0.175,
+   "day1_p_lt_0": 0.659,
+   "day1_p10": -15.14,
+   "day1_p90": 9.16,
+   "dec15_median": 161.9,
+   "dec15_mean": 164.4,
+   "dec15_p25": 143.9,
+   "dec15_p75": 182.1,
+   "dec15_p_le_150": 0.331,
+   "dec15_p_ge_180": 0.271,
+   "nights_mean": 8.63,
+   "p_c01_below": 0.82,
+   "c02": [
+    0.023,
+    0.123,
+    0.261,
+    0.56,
+    0.034
+   ],
+   "c04": [
+    0.284,
+    0.218,
+    0.028,
+    0.43,
+    0.04
+   ]
+  },
+  "none of the above": {
+   "p": 0.0828,
+   "day1_median": 1.2,
+   "day1_mean": 1.46,
+   "day1_p_le_m8": 0.152,
+   "day1_p_ge_5": 0.33,
+   "day1_p_lt_0": 0.445,
+   "day1_p10": -10.45,
+   "day1_p90": 13.03,
+   "dec15_median": 173.1,
+   "dec15_mean": 175.7,
+   "dec15_p25": 154.0,
+   "dec15_p75": 194.5,
+   "dec15_p_le_150": 0.203,
+   "dec15_p_ge_180": 0.41,
+   "nights_mean": 10.92,
+   "p_c01_below": 0.445,
+   "c02": [
+    0.146,
+    0.282,
+    0.415,
+    0.0,
+    0.157
+   ],
+   "c04": [
+    0.377,
+    0.463,
+    0.097,
+    0.0,
+    0.064
+   ]
+  }
+ },
+ "pw_dec15_close_of_conditional_medians": 164.8,
+ "dec15_unconditional_median": 164.7,
+ "dec15_unconditional_mean": 167.2,
+ "day1_unconditional_median": -2.5,
+ "day1_unconditional_p_le_m8": 0.282,
+ "day1_unconditional_p_ge_5": 0.214,
+ "marginal_checks": {
+  "print_p_lt_10_0": 0.6146,
+  "print_p_10_0_to_10_6": 0.1248,
+  "print_p_ge_10_6": 0.2606,
+  "print_p_le_8_5": 0.2886,
+  "s01_states": {
+   "decel": 0.6361,
+   "flat": 0.1031,
+   "accel": 0.2608
+  },
+  "c01_p_below": 0.7208,
+  "c01_p_below_given": {
+   "le_8_5": 0.849,
+   "lt_10_0": 0.795,
+   "s01_decel": 0.792,
+   "s01_flat": 0.673,
+   "s01_accel": 0.567,
+   "ge_10_6": 0.567
+  },
+  "c02_vector": {
+   "a": 0.1795,
+   "b": 0.1695,
+   "c": 0.3004,
+   "d": 0.3104,
+   "e": 0.0401
+  },
+  "c02_given_state": {
+   "decel": {
+    "a": 0.036,
+    "b": 0.182,
+    "c": 0.344,
+    "d": 0.397,
+    "e": 0.042
+   },
+   "flat": {
+    "a": 0.169,
+    "b": 0.222,
+    "c": 0.338,
+    "d": 0.225,
+    "e": 0.046
+   },
+   "accel": {
+    "a": 0.535,
+    "b": 0.118,
+    "c": 0.181,
+    "d": 0.132,
+    "e": 0.034
+   }
+  },
+  "c02_p_ge_10_0_given_a": 0.887,
+  "c02_p_lt_9_given_d": 0.607,
+  "c02_cd_given_below": 0.682,
+  "c02_cd_given_not_below": 0.427,
+  "c04_vector": {
+   "a": 0.3347,
+   "b": 0.2972,
+   "c": 0.0473,
+   "d": 0.2713,
+   "e": 0.0496
+  },
+  "c04_d_given_below": 0.317,
+  "c04_d_given_not_below": 0.152,
+  "s01_base_case_cell": 0.3916,
+  "s01_breaker_cell": 0.1129,
+  "c01_g0": -1.923,
+  "c02_factors": [
+   0.001,
+   0.009,
+   0.023,
+   -0.062,
+   0.325
+  ]
+ },
+ "short_case_composition": {
+  "p": 0.5547,
+  "nights_le_8_5_only": 0.0949,
+  "c02_d_only": 0.112,
+  "c04_d_only": 0.111,
+  "two_or_more_gates": 0.2368,
+  "c02_d_directional_moderate_share_of_short": 0.342,
+  "breaker_and_short_overlap": 0.0326,
+  "short_with_print_ge_10_0": 0.1102
+ },
+ "none_composition": {
+  "p": 0.0828,
+  "accel_print_not_a": 0.0646,
+  "flat_or_decel_c02_a_c01_not_below": 0.0121,
+  "flat_or_decel_c02_e_c01_not_below": 0.0062
+ },
+ "joint_option_x_print": {
+  "<=8.5": {
+   "thesis breaker": 0.0,
+   "base": 0.0,
+   "short case": 0.2886,
+   "none of the above": 0.0
+  },
+  "8.5-10.0": {
+   "thesis breaker": 0.0,
+   "base": 0.1608,
+   "short case": 0.1559,
+   "none of the above": 0.0093
+  },
+  "10.0-10.6": {
+   "thesis breaker": 0.0,
+   "base": 0.0623,
+   "short case": 0.0536,
+   "none of the above": 0.0089
+  },
+  ">=10.6": {
+   "thesis breaker": 0.1394,
+   "base": 0.0,
+   "short case": 0.0567,
+   "none of the above": 0.0646
+  }
+ },
+ "joint_option_x_c02": {
+  "a": {
+   "thesis breaker": 0.1394,
+   "base": 0.0156,
+   "short case": 0.0126,
+   "none of the above": 0.0121
+  },
+  "b": {
+   "thesis breaker": 0.0,
+   "base": 0.0777,
+   "short case": 0.0685,
+   "none of the above": 0.0234
+  },
+  "c": {
+   "thesis breaker": 0.0,
+   "base": 0.1214,
+   "short case": 0.1446,
+   "none of the above": 0.0344
+  },
+  "d": {
+   "thesis breaker": 0.0,
+   "base": 0.0,
+   "short case": 0.3104,
+   "none of the above": 0.0
+  },
+  "e": {
+   "thesis breaker": 0.0,
+   "base": 0.0085,
+   "short case": 0.0186,
+   "none of the above": 0.013
+  }
+ },
+ "joint_option_x_c01": {
+  "below": {
+   "thesis breaker": 0.0696,
+   "base": 0.1596,
+   "short case": 0.4547,
+   "none of the above": 0.0369
+  },
+  "not_below": {
+   "thesis breaker": 0.0698,
+   "base": 0.0635,
+   "short case": 0.1,
+   "none of the above": 0.0459
+  }
+ },
+ "joint_option_x_c04": {
+  "a": {
+   "thesis breaker": 0.0402,
+   "base": 0.1057,
+   "short case": 0.1575,
+   "none of the above": 0.0312
+  },
+  "b": {
+   "thesis breaker": 0.0496,
+   "base": 0.0885,
+   "short case": 0.1207,
+   "none of the above": 0.0383
+  },
+  "c": {
+   "thesis breaker": 0.0102,
+   "base": 0.0133,
+   "short case": 0.0158,
+   "none of the above": 0.008
+  },
+  "d": {
+   "thesis breaker": 0.0326,
+   "base": 0.0,
+   "short case": 0.2387,
+   "none of the above": 0.0
+  },
+  "e": {
+   "thesis breaker": 0.0067,
+   "base": 0.0156,
+   "short case": 0.022,
+   "none of the above": 0.0053
+  }
+ },
+ "params": {
+  "centre": 9.5,
+  "sd": 1.7,
+  "p_c01": 0.72,
+  "gap_sd": 3.1,
+  "tilt": 0.66,
+  "or_c02": 2.0,
+  "c02_target": [
+   0.18,
+   0.17,
+   0.3,
+   0.31,
+   0.04
+  ],
+  "c04_below": [
+   0.3937,
+   0.2245,
+   0.0149,
+   0.3171,
+   0.0498
+  ],
+  "c04_not": [
+   0.1818,
+   0.4874,
+   0.1294,
+   0.1524,
+   0.049
+  ],
+  "c04_d_or_short_print": 1.0,
+  "short_reading": "literal",
+  "precedence": "breaker_first",
+  "short_thr": 8.55,
+  "breaker_thr": 10.59131736526946
+ },
+ "inputs": {
+  "print": {
+   "centre": 9.5,
+   "sd": 1.7,
+   "thr_r01": 9.992514970059885,
+   "thr_r02": 10.59131736526946,
+   "short_thr": 8.55
+  },
+  "c01": 0.72,
+  "c02_final": [
+   0.18,
+   0.17,
+   0.3,
+   0.31,
+   0.04
+  ],
+  "c02_anchors": [
+   [
+    7.86,
+    [
+     0.0124,
+     0.1309,
+     0.3101,
+     0.5169,
+     0.03
+    ]
+   ],
+   [
+    9.505,
+    [
+     0.0552,
+     0.2637,
+     0.3931,
+     0.2576,
+     0.03
+    ]
+   ],
+   [
+    11.243,
+    [
+     0.4366,
+     0.144,
+     0.2161,
+     0.1735,
+     0.03
+    ]
+   ]
+  ],
+  "c04_given_below": [
+   0.3937,
+   0.2245,
+   0.0149,
+   0.3171,
+   0.0498
+  ],
+  "c04_given_not": [
+   0.1818,
+   0.4874,
+   0.1294,
+   0.1524,
+   0.049
+  ],
+  "s02_branch_medians": {
+   "accel": 172.2794408856358,
+   "flat": 165.4946121233005,
+   "decel_ok": 163.0277451778553,
+   "decel_below": 156.11757225094723
+  },
+  "s02_scale": 1.0156,
+  "s02_within_logsd": 0.1711
+ },
+ "base_rate": {
+  "all_16_3Q22plus": {
+   "n": 16,
+   "literal": {
+    "thesis breaker": 0.062,
+    "base": 0.125,
+    "short case": 0.688,
+    "none of the above": 0.125
+   },
+   "material": {
+    "thesis breaker": 0.062,
+    "base": 0.25,
+    "short case": 0.312,
+    "none of the above": 0.375
+   },
+   "day1_raw_mean_by_literal_cell": {
+    "thesis breaker": 17.4,
+    "base": -8.35,
+    "short case": -3.15,
+    "none of the above": 9.5
+   },
+   "day1_raw_mean_by_material_cell": {
+    "thesis breaker": 17.4,
+    "base": -10.25,
+    "short case": 1.46,
+    "none of the above": 0.22
+   }
+  },
+  "W1_1Q23plus": {
+   "n": 14,
+   "literal": {
+    "thesis breaker": 0.071,
+    "base": 0.143,
+    "short case": 0.643,
+    "none of the above": 0.143
+   },
+   "material": {
+    "thesis breaker": 0.071,
+    "base": 0.286,
+    "short case": 0.286,
+    "none of the above": 0.357
+   },
+   "day1_raw_mean_by_literal_cell": {
+    "thesis breaker": 17.4,
+    "base": -8.35,
+    "short case": -3.86,
+    "none of the above": 9.5
+   },
+   "day1_raw_mean_by_material_cell": {
+    "thesis breaker": 17.4,
+    "base": -10.25,
+    "short case": -1.53,
+    "none of the above": 2.94
+   }
+  },
+  "W2_1Q24plus": {
+   "n": 10,
+   "literal": {
+    "thesis breaker": 0.1,
+    "base": 0.2,
+    "short case": 0.5,
+    "none of the above": 0.2
+   },
+   "material": {
+    "thesis breaker": 0.1,
+    "base": 0.3,
+    "short case": 0.3,
+    "none of the above": 0.3
+   },
+   "day1_raw_mean_by_literal_cell": {
+    "thesis breaker": 17.4,
+    "base": -8.35,
+    "short case": -3.66,
+    "none of the above": 9.5
+   },
+   "day1_raw_mean_by_material_cell": {
+    "thesis breaker": 17.4,
+    "base": -10.03,
+    "short case": -1.87,
+    "none of the above": 6.57
+   }
+  },
+  "bucket_era_3Q25plus": {
+   "n": 4,
+   "literal": {
+    "thesis breaker": 0.25,
+    "base": 0.0,
+    "short case": 0.5,
+    "none of the above": 0.25
+   },
+   "material": {
+    "thesis breaker": 0.25,
+    "base": 0.0,
+    "short case": 0.25,
+    "none of the above": 0.5
+   },
+   "day1_raw_mean_by_literal_cell": {
+    "thesis breaker": 17.4,
+    "base": null,
+    "short case": 0.5,
+    "none of the above": 4.6
+   },
+   "day1_raw_mean_by_material_cell": {
+    "thesis breaker": 17.4,
+    "base": null,
+    "short case": 0.3,
+    "none of the above": 2.65
+   }
+  },
+  "november_prints": {
+   "n": 4,
+   "literal": {
+    "thesis breaker": 0.0,
+    "base": 0.25,
+    "short case": 0.75,
+    "none of the above": 0.0
+   },
+   "material": {
+    "thesis breaker": 0.0,
+    "base": 0.25,
+    "short case": 0.25,
+    "none of the above": 0.5
+   },
+   "day1_raw_mean_by_literal_cell": {
+    "thesis breaker": null,
+    "base": -8.7,
+    "short case": -5.47,
+    "none of the above": null
+   },
+   "day1_raw_mean_by_material_cell": {
+    "thesis breaker": null,
+    "base": -8.7,
+    "short case": 0.3,
+    "none of the above": -8.35
+   }
+  }
+ },
+ "sensitivity": [
+  {
+   "variant": "BASE (revision 1)",
+   "thesis breaker": 0.1394,
+   "base": 0.2231,
+   "short case": 0.5547,
+   "none of the above": 0.0828,
+   "pw_dec15": 164.8,
+   "short_day1_median": -3.8,
+   "base_day1_median": -3.76,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "seed 20260918 (Monte Carlo error)",
+   "thesis breaker": 0.1397,
+   "base": 0.2239,
+   "short case": 0.5541,
+   "none of the above": 0.0823,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.78,
+   "base_day1_median": -3.7,
+   "breaker_day1_median": 2.21
+  },
+  {
+   "variant": "print centre 9.0 (sd 1.70)",
+   "thesis breaker": 0.1123,
+   "base": 0.2197,
+   "short case": 0.6062,
+   "none of the above": 0.0618,
+   "pw_dec15": 163.4,
+   "short_day1_median": -4.28,
+   "base_day1_median": -3.87,
+   "breaker_day1_median": 2.21
+  },
+  {
+   "variant": "print centre 9.2 (sd 1.70)",
+   "thesis breaker": 0.124,
+   "base": 0.2234,
+   "short case": 0.5839,
+   "none of the above": 0.0686,
+   "pw_dec15": 163.9,
+   "short_day1_median": -4.11,
+   "base_day1_median": -3.82,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "print centre 9.9 (sd 1.70)",
+   "thesis breaker": 0.1555,
+   "base": 0.2136,
+   "short case": 0.5233,
+   "none of the above": 0.1076,
+   "pw_dec15": 165.9,
+   "short_day1_median": -3.24,
+   "base_day1_median": -3.68,
+   "breaker_day1_median": 2.18
+  },
+  {
+   "variant": "print centre 10.0 (sd 1.70)",
+   "thesis breaker": 0.1587,
+   "base": 0.2099,
+   "short case": 0.5167,
+   "none of the above": 0.1148,
+   "pw_dec15": 166.3,
+   "short_day1_median": -3.08,
+   "base_day1_median": -3.65,
+   "breaker_day1_median": 2.17
+  },
+  {
+   "variant": "print sd 1.475",
+   "thesis breaker": 0.1246,
+   "base": 0.2465,
+   "short case": 0.5505,
+   "none of the above": 0.0785,
+   "pw_dec15": 164.4,
+   "short_day1_median": -3.83,
+   "base_day1_median": -3.79,
+   "breaker_day1_median": 2.17
+  },
+  {
+   "variant": "print sd 2.159",
+   "thesis breaker": 0.159,
+   "base": 0.1869,
+   "short case": 0.5619,
+   "none of the above": 0.0921,
+   "pw_dec15": 165.2,
+   "short_day1_median": -3.77,
+   "base_day1_median": -3.75,
+   "breaker_day1_median": 2.24
+  },
+  {
+   "variant": "C01 tilt 0.32 %/pt (S01 rev-2 value)",
+   "thesis breaker": 0.1393,
+   "base": 0.2235,
+   "short case": 0.5553,
+   "none of the above": 0.0818,
+   "pw_dec15": 164.9,
+   "short_day1_median": -3.74,
+   "base_day1_median": -3.75,
+   "breaker_day1_median": 2.05
+  },
+  {
+   "variant": "C01 tilt 1.0 %/pt (steeper)",
+   "thesis breaker": 0.1393,
+   "base": 0.2227,
+   "short case": 0.5546,
+   "none of the above": 0.0834,
+   "pw_dec15": 164.6,
+   "short_day1_median": -3.85,
+   "base_day1_median": -3.78,
+   "breaker_day1_median": 2.32
+  },
+  {
+   "variant": "C01 P(below) 0.62 (Astra)",
+   "thesis breaker": 0.1394,
+   "base": 0.2233,
+   "short case": 0.547,
+   "none of the above": 0.0903,
+   "pw_dec15": 165.1,
+   "short_day1_median": -3.7,
+   "base_day1_median": -3.62,
+   "breaker_day1_median": 2.37
+  },
+  {
+   "variant": "C01 P(below) 0.82",
+   "thesis breaker": 0.1394,
+   "base": 0.2234,
+   "short case": 0.5624,
+   "none of the above": 0.0748,
+   "pw_dec15": 164.3,
+   "short_day1_median": -3.88,
+   "base_day1_median": -3.91,
+   "breaker_day1_median": 1.99
+  },
+  {
+   "variant": "C02 OR 1 (independent of C01 within print)",
+   "thesis breaker": 0.1397,
+   "base": 0.2264,
+   "short case": 0.5552,
+   "none of the above": 0.0787,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.79,
+   "base_day1_median": -3.76,
+   "breaker_day1_median": 2.14
+  },
+  {
+   "variant": "C02 OR 4",
+   "thesis breaker": 0.1394,
+   "base": 0.2198,
+   "short case": 0.5541,
+   "none of the above": 0.0866,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.82,
+   "base_day1_median": -3.76,
+   "breaker_day1_median": 2.25
+  },
+  {
+   "variant": "C02 (d) 0.23, (c) 0.38 (C02 low end)",
+   "thesis breaker": 0.1395,
+   "base": 0.2492,
+   "short case": 0.5212,
+   "none of the above": 0.0901,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.88,
+   "base_day1_median": -3.77,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "C02 (d) 0.36, (c) 0.25 (C02 high end)",
+   "thesis breaker": 0.1394,
+   "base": 0.2055,
+   "short case": 0.5772,
+   "none of the above": 0.0779,
+   "pw_dec15": 164.8,
+   "short_day1_median": -3.75,
+   "base_day1_median": -3.74,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "C02 (a) 0.13, (b) 0.22 (base-rate (a))",
+   "thesis breaker": 0.1076,
+   "base": 0.2311,
+   "short case": 0.5649,
+   "none of the above": 0.0964,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.66,
+   "base_day1_median": -3.73,
+   "breaker_day1_median": 2.21
+  },
+  {
+   "variant": "C02 (a) 0.24, (b) 0.11 (breaker language likelier)",
+   "thesis breaker": 0.1712,
+   "base": 0.2126,
+   "short case": 0.5437,
+   "none of the above": 0.0725,
+   "pw_dec15": 164.8,
+   "short_day1_median": -3.95,
+   "base_day1_median": -3.81,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "C04 (d) 0.20",
+   "thesis breaker": 0.1394,
+   "base": 0.2451,
+   "short case": 0.5261,
+   "none of the above": 0.0895,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.86,
+   "base_day1_median": -3.78,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "C04 (d) 0.35",
+   "thesis breaker": 0.1394,
+   "base": 0.1977,
+   "short case": 0.5877,
+   "none of the above": 0.0753,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.74,
+   "base_day1_median": -3.73,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "C04 (d) odds x2 when the print is <= 8.5",
+   "thesis breaker": 0.1394,
+   "base": 0.2231,
+   "short case": 0.5547,
+   "none of the above": 0.0828,
+   "pw_dec15": 164.8,
+   "short_day1_median": -3.8,
+   "base_day1_median": -3.76,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "short case beats thesis breaker (precedence)",
+   "thesis breaker": 0.1068,
+   "base": 0.2231,
+   "short case": 0.5873,
+   "none of the above": 0.0828,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.47,
+   "base_day1_median": -3.76,
+   "breaker_day1_median": 2.27
+  },
+  {
+   "variant": "MATERIAL short case: explicit mid-single bucket only (C02 d x 0.39) OR nights <= 8.5 OR C04 (d)",
+   "thesis breaker": 0.1394,
+   "base": 0.2625,
+   "short case": 0.4862,
+   "none of the above": 0.1119,
+   "pw_dec15": 164.8,
+   "short_day1_median": -3.97,
+   "base_day1_median": -3.85,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "MATERIAL short case AND C04 (d) 0.20",
+   "thesis breaker": 0.1394,
+   "base": 0.2893,
+   "short case": 0.4508,
+   "none of the above": 0.1206,
+   "pw_dec15": 164.8,
+   "short_day1_median": -4.07,
+   "base_day1_median": -3.86,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "short nights gate 8.0 (latent < 8.05)",
+   "thesis breaker": 0.1394,
+   "base": 0.2596,
+   "short case": 0.5168,
+   "none of the above": 0.0843,
+   "pw_dec15": 164.8,
+   "short_day1_median": -3.74,
+   "base_day1_median": -3.88,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "short nights gate 9.0 (latent < 9.05)",
+   "thesis breaker": 0.1394,
+   "base": 0.1741,
+   "short case": 0.6059,
+   "none of the above": 0.0806,
+   "pw_dec15": 164.8,
+   "short_day1_median": -3.88,
+   "base_day1_median": -3.48,
+   "breaker_day1_median": 2.19
+  },
+  {
+   "variant": "breaker gate 10.0 (R01) instead of 10.6",
+   "thesis breaker": 0.1593,
+   "base": 0.1608,
+   "short case": 0.5497,
+   "none of the above": 0.1302,
+   "pw_dec15": 164.7,
+   "short_day1_median": -3.82,
+   "base_day1_median": -4.66,
+   "breaker_day1_median": 1.77
+  }
+ ]
+}

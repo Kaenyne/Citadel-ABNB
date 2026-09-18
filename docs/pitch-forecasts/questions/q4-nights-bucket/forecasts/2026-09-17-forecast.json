@@ -1,0 +1,77 @@
+{
+  "question_id": "C02",
+  "slug": "q4-nights-bucket",
+  "type": "multiple_choice",
+  "revision": 2,
+  "run_date": "2026-09-17",
+  "revised": "2026-09-17",
+  "agent": "fable",
+  "final": {
+    "vector": {
+      "(a) low double digits / language implying >=10%": 0.18,
+      "(b) around 10% / high single to low double digits / similar to Q3 when Q3 <10%": 0.17,
+      "(c) high single digits": 0.30,
+      "(d) mid single digits or lower, or moderate/decelerate without a bucket": 0.31,
+      "(e) no 4Q26 nights descriptor": 0.04
+    },
+    "leading_option": "(d) mid single digits or lower, or moderate/decelerate without a bucket",
+    "leading_option_sensitivity_range": [0.23, 0.36],
+    "second_option": "(c) high single digits",
+    "second_option_sensitivity_range": [0.25, 0.33],
+    "note": "(c) and (d) are a coin flip on whether the letter names a bucket or writes 'moderate'; quote (c)+(d) = 0.61 as the deceleration-language block. Ranges are spans of the section-7 sensitivity rows, not posterior intervals.",
+    "unions": {"a_or_b": 0.35, "c_or_d": 0.61},
+    "subsplits": {"d_directional_moderate": 0.19, "d_explicit_mid_single": 0.12, "b_directional_similar": 0.06, "b_around_10_or_hyphenated_bucket": 0.11}
+  },
+  "estimates": {
+    "base_rate": 0.31,
+    "decomposition": 0.29,
+    "anchor": 0.32,
+    "anchor_option": "(c)",
+    "anchor_source": "Bloomberg MODL Standard Consensus 4Q26 nights 134.0m (+9.9%, n 28; 3Q26 149.0m +11.5%), screenshot 2026-09-12 (data/processed/reverse_dcf/E/E_street_distribution_vs_team.csv), mapped to language through a stated bucket/directional split (dependent construction, not a market price); Kalshi KXABNB ladder is thin but traded (volume_fp 50-999 per rung, volume_24h 0, fetched 2026-09-17T02:50Z) and enters through R01's blend",
+    "base_rate_vector": {"a": 0.13, "b": 0.15, "c": 0.31, "d": 0.39, "e": 0.03},
+    "base_rate_unconditional_on_question_labels": {"all_17": {"a": 0.24, "b": 0.18, "c": 0.12, "d": 0.47, "e": 0.0}, "W1_n14": {"a": 0.14, "b": 0.21, "c": 0.14, "d": 0.50, "e": 0.0}, "W2_n10": {"a": 0.10, "b": 0.30, "c": 0.20, "d": 0.40, "e": 0.0}},
+    "decomposition_vector": {"a": 0.20, "b": 0.17, "c": 0.29, "d": 0.31, "e": 0.03},
+    "anchor_vector": {"a": 0.19, "b": 0.23, "c": 0.32, "d": 0.23, "e": 0.03},
+    "blend_weights": {"decomposition": 0.5, "base_rate": 0.3, "anchor": 0.2},
+    "final_minus_anchor_leading": 0.08,
+    "final_minus_anchor_on_c": -0.02,
+    "independence_flag": "NOT_INDEPENDENTLY_DERIVED: the three vectors share the letters, the team baselines and the same level-to-language mapping; the anchor vector is hand-assigned from the Street's level (research-log.md section 5). The +0.08 on (d) versus the anchor is the base rate: 8 of 17 historical descriptors resolve (d) on the question's labels"
+  },
+  "conditioning": {
+    "q3_print_distribution": "N(9.67, 1.70) from R01 revision 1 (P(>=10.0) = 0.42 blend of alt data 0.6, outside view 0.3, Kalshi 0.1); R02 P(>=10.6) = 0.32",
+    "p_3q26_print_ge_10pct": 0.423,
+    "p_3q26_print_ge_10_6pct": 0.29,
+    "p_3q26_print_9_to_10": 0.230,
+    "p_3q26_print_lt_9": 0.347,
+    "p_directional_by_branch": {"ge10": 0.25, "9to10": 0.28, "lt9": 0.35},
+    "p_moderate_given_directional_by_branch": {"ge10": 0.55, "9to10": 0.60, "lt9": 0.75},
+    "joint_branch_x_option": {
+      "ge10": {"mass": 0.423, "a": 0.184, "b": 0.061, "c": 0.091, "d": 0.074, "e": 0.013},
+      "9to10": {"mass": 0.230, "a": 0.013, "b": 0.061, "c": 0.090, "d": 0.059, "e": 0.007},
+      "lt9": {"mass": 0.347, "a": 0.004, "b": 0.045, "c": 0.108, "d": 0.179, "e": 0.010}
+    },
+    "p_q3_ge10_given_a": 0.92,
+    "team_4q26_baseline_pct": 8.1,
+    "team_4q26_band_pct": [8.0, 8.9],
+    "rnpl_module_4q26_pct": 7.61,
+    "comp_4q25_pct": 9.82,
+    "street_4q26_bar_pct": 9.9
+  },
+  "sensitivity": [
+    {"assumption": "3Q26 print ~ N(9.67, 1.70) from R01", "moves_to": 0.23, "note": "(d) under the Street/Kalshi view N(11.0, 1.7), P(>=10) 0.72; (a) rises to 0.33 and leads; external stack N(9.2, 1.7) takes (d) to 0.35"},
+    {"assumption": "P(directional-only sentence) 0.25/0.28/0.35 by branch", "moves_to": 0.28, "note": "(d) at 0.20 in every branch, (c) 0.33 leads by 6; at 0.40 (d) 0.36 leads by 12 - this assumption decides the leading option"},
+    {"assumption": "P(moderate | directional) 0.55/0.60/0.75", "moves_to": 0.28, "note": "(d) at 0.45/0.50/0.65; at 0.65/0.70/0.85 (d) 0.34"},
+    {"assumption": "4Q26 baseline 8.1 with 8.9 as the top", "moves_to": 0.29, "note": "(d) if case A 8.9 is the point and management guides at the Street bar less 1pt; (c) 0.28, (a) 0.21"},
+    {"assumption": "comp discipline (1pt harder comp -> ~1pt lower bucket)", "moves_to": 0.31, "note": "(d) unchanged if management ignores the comp on a strong October; (a) 0.25, (c) 0.26"},
+    {"assumption": "mid-single bucket reachable in the <9 branch (bucket d 0.41)", "moves_to": 0.28, "note": "(d) if no mid-single bucket unless Q3 < 8; (c) 0.32 leads by 4"}
+  ],
+  "monitoring": [
+    {"date": "2026-09-30", "event": "September Inside Airbnb dumps; re-run reviews stays index and R01 for the full 3Q26 stay window", "action": "re-set the branch masses from R01's updated N(mu, 1.70); each 0.5pp on the centre moves P(>=10) by ~0.11, (a) by ~0.04 and (d) by ~0.03 the other way"},
+    {"date": "2026-10-02", "event": "team memo freeze", "action": "carry this vector; quote (c)+(d) = 0.61 as the deceleration-language block and (a) 0.18 as the breaker; do not present (c) alone as the base case"},
+    {"date": "2026-10-15", "event": "Airbnb announces the Q3 call date (expected 3-4 weeks ahead)", "action": "fix the resolution date; no probability change"},
+    {"date": "2026-10-30", "event": "EXPE and BKNG Q3 prints (EXPE reads through to ABNB)", "action": "EXPE Q4 room-night guide at or above its Q3 rate: +0.03 to (a)/(b); a >=2pt deceleration guide: +0.03 to (c)/(d)"},
+    {"date": "2026-11-05", "event": "3Q26 shareholder letter", "action": "resolve by the section 0b conventions (incl. convention 4 for non-adjacent comparators); if the letter is silent on nights read the call before resolving (e)"}
+  ],
+  "audit": {"audit": "docs/pitch-forecasts/audits/A02-research-audit.md", "response": "docs/pitch-forecasts/audits/A02-audit-response.md", "astra_comparison_vector": {"a": 0.17, "b": 0.18, "c": 0.30, "d": 0.30, "e": 0.05}, "revision_1_vector": {"a": 0.21, "b": 0.19, "c": 0.39, "d": 0.17, "e": 0.04}},
+  "log": "docs/pitch-forecasts/questions/q4-nights-bucket/research-log.md"
+}

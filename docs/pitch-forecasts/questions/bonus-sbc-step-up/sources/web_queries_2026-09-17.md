@@ -1,0 +1,14 @@
+# Web queries, batch A16 (B08, B09, B10, B17), 2026-09-17
+
+Budget: at most 5 WebSearch calls per question. Used: one neutral recency query shared by the four questions plus one specific query per question (each question 2 of 5). WebFetch: 1 (Skift, B17). FRED CSV pulls, Kalshi and Polymarket API pulls do not count.
+
+| # | tool | query (verbatim) | for | result (summary) |
+|---|---|---|---|---|
+| 1 | WebSearch | `Airbnb news` | shared neutral / 72-hour recency pass | Newsroom, Yahoo, CBS tags; items: $250M Housing Accelerator, 2026 Summer Release (AI tools, FIFA World Cup access), boutique hotels, 60,000 fake listings removed, 2Q26 print recap. Nothing on hosting costs, SBC, interest income or take-rate guidance in the last 72 hours. |
+| 2 | WebSearch | `Airbnb AI infrastructure spending 2027 Mertz "material increase" hosting costs` | B08 | Only the 6 Aug 2026 call language ("assumes a material increase in AI spend ... expanding margins while absorbing that cost"); trade pieces on cloud-price inflation (365i, 27 Feb 2026) and Airbnb engineering productivity (TechTimes, 7 Aug 2026); no sizing of Airbnb's AI/hosting spend by the company or the sell side. |
+| 3 | WebSearch | `Airbnb stock-based compensation 2026 headcount growth RSU grants` | B09 | Confirms the 4Q25 letter sentence (FY25 SBC +13%, "In 2026, we anticipate that the year-over-year growth rate of SBC and headcount will be lower than 2025"); RSU vesting is 4 years with a one-year cliff then quarterly (salaryscript); Form 4 grants to the CFO/CAO (stocktitan; not fetched). No 2026 SBC figure beyond the 10-Qs. |
+| 4 | WebSearch | `fed funds futures December 2026 meeting probability after September hike CME FedWatch` | B10 | Snippets: CME FedWatch priced a 63.7% probability of a second 25bp hike in December after the September hike (fxstreet-style aggregator; undated snippet, zero weight); Kiplinger live blog of the 16 Sep meeting. The live Fed path used in the log is the Kalshi KXFEDDECISION / KXFED fetch (2026-09-17T08:21:21Z), not these snippets. |
+| 5 | WebSearch | `Airbnb direct booking link host service fee pilot 6% 10% take rate` | B17 | Bloomberg 31 Aug 2026 "Airbnb Rolls Out Pilot Program in US to Lower Fees Paid by Hosts to 6% or 10%"; Skift 29 Aug 2026; host-industry explainers (smoobu, rentalscaleup, houfy, tabivista). |
+| 6 | WebFetch | https://skift.com/2026/08/29/airbnb-is-testing-lower-fees-for-hosts-who-bring-their-own-guests/ | B17 | Published 2026-08-29/30: pilot fees "6% to 10%" vs the standard 15.5%, "quietly piloting", "currently a limited test"; no Airbnb statement on revenue or take-rate effect, scale or timing; the only take-rate number is Bernstein's estimate that the 15.5% model lifts the take rate to 15.5% from 15.1% (external). |
+
+Final 72-hour recency check = query 1 (nothing new on any of the four objects).

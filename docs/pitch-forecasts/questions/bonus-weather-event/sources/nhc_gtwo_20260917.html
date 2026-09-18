@@ -1,0 +1,2799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Graphical Tropical Weather Outlook</title>
+  <meta charset="utf-8">
+  <script async="" src="/assets/js/uswds-init.min.js"></script>
+  <link rel="preload" as="style" href="/assets/css/uswds-styles-22f6e7a4a2.min.css" />
+  <link rel="stylesheet" href="/assets/css/uswds-styles-22f6e7a4a2.min.css" type="text/css" />
+  
+<link rel="alternate" type="application/rss+xml" title="NHC Graphical Outlooks" href="/gtwo.xml">  </head>
+  <body>
+    <div class="skipheader">
+      <a href="#contents"><img height="1" alt="Skip Navigation Links" src="/css/images/skipgraphic.gif" width="1" border="0"></a>
+    </div>
+    
+    <!-- Top Menu Navigation Section -->
+<div class="altformatcenter">
+  <div class="altformatcontent">
+    <script src="https://www.weather.gov/source/nws/govshutdown.js" defer></script>
+    <div class="altformat">
+      <div class="format-type">
+        <a href="/index.shtml">Home</a>
+      </div>
+      <div class="format-type">
+        <a href="/mobile">Mobile Site</a>
+      </div>
+      <div class="format-type">
+        <a href="?text">Text Version</a>
+      </div>
+      <div class="format-type">
+        <a href="/aboutrss.shtml">RSS</a>
+      </div>
+
+      <div class="local-forecast">
+        <form name="getForecast" id="getForecast" action="https://forecast.weather.gov/zipcity.php" method="get">
+    <!--    <label for="inputstring">Local forecast by "City, St" or ZIP code</label> -->
+        <input id="inputstring" name="inputstring" type="text" size="8" value="Enter City,St or ZIP code" onclick="this.value=''">
+        <input name="btnSearch" id="btnSearch" type="submit" value="Go">
+        </form>
+      </div>
+      <div class="forecast-description">
+        <a href="https://www.weather.gov">Local Forecast</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+<!-- Header Section -->
+<div class="header">
+  <div class="header-content">
+    <a href="http://www.noaa.gov"><img class="header-noaa-icon" src="/assets/images/NOAA_noText_logo.svg" alt="National Oceanic and Atmospheric Administration logo" role="img" style="height: 68px; margin-top: 5px;"></a>
+    <a href="http://www.weather.gov"><img class="header-nws-icon" src="/assets/images/NWS_logo.svg" alt="National Weather Service logo" role="img" style="height: 68px; margin-top: 5px;"></a>
+    <a href="http://www.commerce.gov" class="header-doc"><img src="/assets/images/DOC_logo.svg" alt="United States Department of Commerce" role="img" style="height: 68px; margin-top: 5px; margin-right: 6px;"></a>
+    <div class="header-center-text"><a class="header-center-text" href="/index.php" style="height:auto;">NATIONAL HURRICANE CENTER and<br>CENTRAL PACIFIC HURRICANE CENTER</a></div>
+    <div class="header-noaa-text"><a class="header-noaa-text">National Oceanic and Atmospheric Administration</a></div>
+  </div>
+</div>
+<div class="header-shadow"><div class="header-shadow-content"></div></div>
+
+    <div class="center">
+      <div class="content">
+    <div class="usa-overlay"></div>
+<header class="usa-header nhc-header">
+  <div class="usa-nav-container">
+    <nav id="nhc-main-nav" aria-label="Primary navigation" class="usa-nav bg-white border-bottom-1px border-base-lighter">      
+      <ul class="usa-nav__primary usa-accordion margin-0 padding-0 display-flex flex-wrap">
+
+        <!-- Forecast Links -->
+        <li class="usa-nav__primary-item">
+          <button
+            type="button"
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="nav-forecast-menu"
+          >
+            <span>Analysis & Forecasts</span>
+          </button>
+          <ul id="nav-forecast-menu" class="usa-nav__submenu bg-white" hidden>
+            <li><a class="usa-link" href="/cyclones">Tropical Cyclone Products</a></li>
+            <li><a class="usa-link" href="/gtwo.php">Tropical Weather Outlooks</a></li>
+            <li><a class="usa-link" href="/marine">Marine Products</a></li>
+            <li><a class="usa-link" href="/rip-currents/map.html">Rip Currents Map</a></li>
+            <li><a class="usa-link" href="/aboutrss.shtml">RSS Feeds</a></li>
+            <li><a class="usa-link" href="/gis/">GIS Products</a></li>
+            <li><a class="usa-link" href="/aboutalternate.shtml">Alternate Formats</a></li>
+            <li><a class="usa-link" href="/aboutnhcprod.shtml">Tropical Cyclone Product Descriptions</a></li>
+            <li><a class="usa-link" href="/productexamples/">Tropical Cyclone Product Examples</a></li>
+            <li><a class="usa-link" href="/abouttafbprod.shtml">Marine Product Descriptions</a></li>
+          </ul>
+        </li>
+        
+        <!-- Data & Tools -->
+        <li class="usa-nav__primary-item">
+          <button
+            type="button"
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="nav-data-menu"
+          >
+            <span>Data & Tools</span>
+          </button>
+          <ul id="nav-data-menu" class="usa-nav__submenu bg-white" hidden>
+            <li><a class="usa-link" href="/satellite.php">Satellite Imagery</a></li>
+            <li><a class="usa-link" href="/radar.php">Radar Imagery</a></li>
+            <li><a class="usa-link" href="/recon.php">Aircraft Reconnaissance</a></li>
+            <li><a class="usa-link" href="/analysis_tools.php">Tropical Analysis Tools</a></li>
+            <li><a class="usa-link" href="/experimental/">Experimental Products</a></li>
+            <li><a class="usa-link" href="/gccalc.shtml">Lat/Lon Distance Calculator</a></li>
+            <li><a class="usa-link" href="/tracking_charts.shtml">Blank Tracking Maps</a></li>
+          </ul>
+        </li>
+
+        <!-- Outreach & Education-->
+        <li class="usa-nav__primary-item">
+          <button
+            type="button"
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="nav-education-menu"
+          >
+            <span>Educational Resources</span>
+          </button>
+          <ul id="nav-education-menu" class="usa-nav__submenu bg-white" hidden>
+            <li>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.weather.gov/wrn/hurricane-preparedness"
+                target="_blank"
+              >
+                Be Prepared!<br>NWS Hurricane Prep Week
+              </a>
+            </li>
+            <li><a class="usa-link" href="/outreach">Outreach Documents</a></li>
+            <li><a class="usa-link" href="/TCvideos.shtml">TC Videos</a></li>
+            <li><a class="usa-link" href="/rip-currents/">Rip Currents</a></li>
+            <li><a class="usa-link" href="/surge/">Storm Surge</a></li>
+            <li><a class="usa-link" href="/breakpoints/">Watch/Warning Breakpoints</a></li>
+            <li><a class="usa-link" href="/climo/">Climatology</a></li>
+            <li><a class="usa-link" href="/aboutnames.shtml">Tropical Cyclone Names</a></li>
+            <li><a class="usa-link" href="/aboutsshws.php">Wind Scale</a></li>
+            <li><a class="usa-link" href="/dcmi.shtml">Records and Facts</a></li>
+            <li><a class="usa-link" href="/outreach/history">Historical Hurricane Summaries</a></li>
+            <li><a class="usa-link" href="/modelsummary.shtml">Forecast Models</a></li>
+            <li><a class="usa-link" href="/aboutpubs.shtml">NHC Publications</a></li>
+            <li><a class="usa-link" href="/aboutgloss.shtml">NHC Glossary</a></li>
+            <li><a class="usa-link" href="/acronyms.shtml">Acronyms</a></li>
+            <li><a class="usa-link" href="/faq.shtml">Frequent Questions</a></li>
+          </ul>
+        </li>
+
+        <!-- Archives -->
+        <li class="usa-nav__primary-item">
+          <button
+            type="button"
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="nav-archive-menu"
+          >
+            <span>Archives</span>
+          </button>
+          <ul id="nav-archive-menu" class="usa-nav__submenu bg-white" hidden>
+            <li><a class="usa-link" href="/archive/2026/">Tropical Cyclone Advisories</a></li>
+            <li><a class="usa-link" href="/archive/xgtwo/gtwo_archive.php">Tropical Weather Outlooks</a></li>
+            <li><a class="usa-link" href="/data/tcr/index.php">Tropical Cyclone Reports and Season Summaries</a></li>
+            <li><a class="usa-link" href="/verification/">Tropical Cyclone Forecast Verification</a></li> 
+            <li><a class="usa-link" href="/newsarchive.shtml">NHC News Archive</a></li>
+            <li><a class="usa-link" href="/data/">Other Archives: HURDAT, Track Maps, Marine Products, and more</a></li>
+          </ul>
+        </li>
+
+        <!-- About NHC/CPHC -->
+        <li class="usa-nav__primary-item">
+          <button
+            type="button"
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="nav-about-menu"
+          >
+            <span>About</span>
+          </button>
+          <ul id="nav-about-menu" class="usa-nav__submenu bg-white" hidden>
+            <li><a class="usa-link" href="/aboutintro.shtml">National Hurricane Center</a></li>
+            <li><a class="usa-link" href="/aboutcphc.php">Central Pacific Hurricane Center</a></li>
+            <li><a class="usa-link" href="/aboutlibrary.php">Library</a></li>
+            <li><a class="usa-link" href="/contact.shtml">Contact Us</a></li>
+          </ul>
+        </li>
+
+        <!-- Search -->
+        <li class="usa-nav__primary-item">
+          <button
+            type="button"
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="nav-search-menu"
+          >
+            <span>Search</span>
+          </button>
+          <ul id="nav-search-menu" class="usa-nav__submenu bg-white" hidden>
+            <li>
+              <form id="search-form" method="get" action="https://search.usa.gov/search" class="usa-search usa-search--small padding-1" role="search">
+                <fieldset class="usa-fieldset">
+                  <legend class="usa-legend usa-legend">Search for</legend>
+                  <input type="hidden" name="v:project" value="firstgov">
+                  <input type="hidden" name="affiliate" value="nws.noaa.gov">
+                  <label class="usa-sr-only" for="search-field-en-small">Search</label>
+                  <input
+                    class="usa-input width-auto"
+                    id="search-field-en-small"
+                    type="search"
+                    name="query"
+                  />
+                  <button class="usa-button" type="submit">
+                    <img
+                      src="/assets/img/usa-icons-bg/search--white.svg"
+                      class="usa-search__submit-icon"
+                      alt="Search"
+                    />
+                  </button>
+                </fieldset>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+  
+    </nav>
+  </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find the sub-menu that contains the search form
+  const searchMenuContainer = document.querySelector('#nav-search-menu');
+
+  if (searchMenuContainer) {
+    // Prevent the 'click' event from bubbling up to the document.
+    // This stops the USWDS script from closing the menu when you
+    // interact with the form inside it.
+    searchMenuContainer.addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+  }
+});
+</script>
+
+    <!-- BEGIN Google Analytics code -->
+<!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+<script src="//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&amp;subagency=NOAA" id="_fed_an_ua_tag"></script>
+<!-- END Google Analytics code -->
+
+    <a name="contents" id="contents"></a><br>
+    <!-- START OF CONTENT -->
+    <h2 align="center" style="width: 100%;">Graphical Tropical Weather Outlook</h2>
+    <hr width="100%" align="left">
+<!-- This page created by nhcWeb -->
+<div class="grid-container padding-x-05 tablet:padding-x-4">
+  <div class="display-flex flex-align-center flex-justify padding-1">
+    <div>
+      <a href="/archive/xgtwo/gtwo_archive.php?basin=atl&amp;fdays=7&amp;current_issuance=latest">Archived Outlooks</a>
+    </div>
+    <div>
+      <a href="/xgtwo/gtwo_shapefiles.zip">GIS Shapefiles</a>
+    </div>
+  </div>
+  
+<div>
+
+<style>
+
+/*
+.bg-gtwo-nearzero {
+  background-color: #e6e6e6;
+}
+.bg-gtwo-low {
+  background-color: #ffff00;
+}
+.bg-gtwo-medium {
+  background-color: #fd7f08;
+}
+.bg-gtwo-high {
+  background-color: #e80000;
+}
+*/
+
+/* 1. Define the background colors and store them in a local variable */
+.bg-gtwo-nearzero { 
+  --badge-bg: #e6e6e6; 
+  background-color: var(--badge-bg); 
+}
+.bg-gtwo-low { 
+  --badge-bg: #ffff00; /* #ffff00 */
+  background-color: var(--badge-bg); 
+}
+.bg-gtwo-medium { 
+  --badge-bg: #fd7f08; 
+  background-color: var(--badge-bg); 
+}
+.bg-gtwo-high { 
+  --badge-bg: #e80000; 
+  background-color: var(--badge-bg); 
+}
+.bg-gtwo-storm { 
+  --badge-bg: #ff0000; 
+  background-color: var(--badge-bg); 
+}
+
+.text-on-gtwo-nearzero {
+  --badge-text: #000000;
+  color: var(--badge-text);
+}
+.text-on-gtwo-low {
+  --badge-text: #000000;
+  color: var(--badge-text);
+}
+.text-on-gtwo-medium {
+  --badge-text: #ffffff;
+  color: var(--badge-text);
+}
+.text-on-gtwo-high {
+  --badge-text: #ffffff;
+  color: var(--badge-text);
+}
+
+.usa-button--unstyled[class*="bg-gtwo-"]:hover {
+  background-color: var(--badge-bg) !important;
+  color: var(--badge-text) !important;
+  filter: brightness(0.88); /* Subtly darkens the badge on hover so it feels like a real button */
+  cursor: pointer;
+}
+
+.text-gtwo-nearzero {
+  color: #e6e6e6;
+}
+.text-gtwo-low {
+  color: #ffff00; /* #ffff00 */
+}
+.text-gtwo-medium {
+  color: #f17c18; /* #fd7f08 */
+}
+.text-gtwo-high {
+  color: #f45d79; /* #e80000 */
+}
+
+/* Dynamic Risk Borders for Mobile Scroll Container */
+.border-gtwo-nearzero { border-color: #e6e6e6 !important; }
+.border-gtwo-low      { border-color: #ffff00 !important; }
+.border-gtwo-medium   { border-color: #fd7f08 !important; }
+.border-gtwo-high     { border-color: #e80000 !important; }
+.border-gtwo-storm    { border-color: #ff0000 !important; }
+
+/* storm colors */
+
+.bg-gtwo-storm {
+  background-color: #ff0000;
+}
+.text-on-gtwo-storm {
+  color: #ffffff;
+}
+
+/* Desktop State (Default): It's absolute and follows mouse */
+#storm-tooltip {
+  position: absolute;
+  width: 500px;
+  pointer-events: none; /* Let mouse pass through on desktop so it doesn't flicker */
+}
+
+/* Mobile/Active State: It becomes a fixed card */
+#storm-tooltip.is-active-card {
+  position: fixed;   /* Sticks to screen */
+  bottom: 0;         /* slide up from bottom */
+  left: 0;
+  width: 100%;       /* Full width */
+  border-radius: 0;  /* Square corners */
+  pointer-events: auto; /* Needs to be clickable now */
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Ensure the popper arrow is above the panel */
+
+/* 1. Base Arrow Styles */
+#tooltip-arrow,
+#tooltip-arrow::before {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: inherit; /* Automatically matches the tooltip's white background */
+}
+
+/* 2. Hide the main box, show the pseudo-element (this prevents weird rendering) */
+#tooltip-arrow {
+  visibility: hidden;
+}
+
+/* 3. The actual visible rotated square */
+#tooltip-arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+  /* Match this to your USWDS border color (#565c65 is base) */
+  border: 1px solid #565c65; 
+}
+
+/* 4. Positioning based on Popper's dynamic placement */
+/* Popper automatically adds data-popper-placement to the tooltip */
+#storm-tooltip[data-popper-placement^='top'] > #tooltip-arrow {
+  bottom: -5px; /* Pulls it down so it pokes out the bottom */
+}
+#storm-tooltip[data-popper-placement^='top'] > #tooltip-arrow::before {
+  /* Hide the top/left borders so it blends into the tooltip box */
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+#storm-tooltip[data-popper-placement^='bottom'] > #tooltip-arrow {
+  top: -5px;
+}
+#storm-tooltip[data-popper-placement^='bottom'] > #tooltip-arrow::before {
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+#storm-tooltip[data-popper-placement^='left'] > #tooltip-arrow {
+  right: -5px;
+}
+#storm-tooltip[data-popper-placement^='left'] > #tooltip-arrow::before {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+#storm-tooltip[data-popper-placement^='right'] > #tooltip-arrow {
+  left: -5px;
+}
+#storm-tooltip[data-popper-placement^='right'] > #tooltip-arrow::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+/* Disable the hover tooltip on touch screens */
+@media (pointer: coarse) {
+  #storm-tooltip {
+    display: none !important;
+  }
+}
+
+/* DEFAULT STATE: Assume No JS or Old JS */
+/* Hide the interactive map */
+#map-section-inner {
+  display: none;
+}
+/* Ensure fallback is visible */
+#gtwo-fallback-container {
+  display: block; 
+}
+
+/* MODERN BROWSER STATE: The script ran successfully and added the class */
+.gtwo-is-modern #map-section-inner {
+  display: block; /* Shows the map */
+}
+.gtwo-is-modern #gtwo-fallback-container {
+  display: none; /* Hides the fallback links */
+}
+
+#storm-bottom-sheet {
+  max-height: 50vh;          /* Caps the sheet height to exactly half the screen viewport */
+  flex-direction: column;    /* Stack header and text details vertically */
+  box-sizing: border-box;
+}
+
+#sheet-scroll-container {
+  overflow-y: auto;          /* Enables smooth vertical scrolling for everything inside */
+  flex-grow: 1;              /* Allows this area to fill the remaining drawer footprint */
+  -webkit-overflow-scrolling: touch; /* Ensures smooth physics scrolling on iOS devices */
+  padding-right: 0.5rem;     /* Prevents text from jamming right into the scrollbar track */
+  display: flex;
+  flex-direction: column;
+}
+
+/* CLEANUP: Remove scroll constraints from the body so it flows naturally */
+#sheet-body {
+  margin-bottom: 1rem;
+}
+
+</style>
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  // We use old ES5 syntax here (var, function) so IE11 doesn't crash reading it
+  (function() {
+    var isModern = false;
+    try {
+      // We test if the browser understands modern ES6 syntax (arrow functions and const)
+      new Function('const test = () => {};');
+      // You can also check for specific APIs your main script relies on
+      if (window.Promise) {
+        isModern = true;
+      }
+    } catch(err) {
+      // Browser is old and threw a syntax error. isModern stays false.
+    }
+
+    // If the browser is modern, add a flag class to the <html> tag
+    if (isModern) {
+      document.documentElement.className += ' gtwo-is-modern';
+    }
+  })();
+</script>
+
+<div id="gtwo-fallback-container" class="gtwo-widget padding-4 bg-primary-lighter radius-lg border border-primary-light margin-top-2">
+  <h3 class="margin-top-0 font-sans-md text-bold text-center">Graphical Tropical Weather Outlook (Static Images)</h3>
+  <p class="font-sans-sm margin-bottom-2">
+    JavaScript is currently disabled in your browser or you are using an older browser that is incompatible with this map. To view the interactive map, please enable JavaScript or update your browser if possible. Direct links to the latest high-resolution forecast images are provided below:
+  </p>
+  <ul class="usa-list">
+          <li class="margin-bottom-1">
+            <a href="/xgtwo/resize/xgtwo_atl_2d0_w1920.png" class="usa-link" target="_blank" rel="noopener">
+              View Atlantic 2-Day Outlook
+            </a>
+          </li>
+          <li class="margin-bottom-1">
+            <a href="/xgtwo/resize/xgtwo_atl_7d0_w1920.png" class="usa-link" target="_blank" rel="noopener">
+              View Atlantic 7-Day Outlook
+            </a>
+          </li>
+          <li class="margin-bottom-1">
+            <a href="/xgtwo/resize/xgtwo_pac_2d0_w1920.png" class="usa-link" target="_blank" rel="noopener">
+              View Eastern Pacific 2-Day Outlook
+            </a>
+          </li>
+          <li class="margin-bottom-1">
+            <a href="/xgtwo/resize/xgtwo_pac_7d0_w1920.png" class="usa-link" target="_blank" rel="noopener">
+              View Eastern Pacific 7-Day Outlook
+            </a>
+          </li>
+          <li class="margin-bottom-1">
+            <a href="/xgtwo/resize/xgtwo_cpac_2d0_w1920.png" class="usa-link" target="_blank" rel="noopener">
+              View Central Pacific 2-Day Outlook
+            </a>
+          </li>
+          <li class="margin-bottom-1">
+            <a href="/xgtwo/resize/xgtwo_cpac_7d0_w1920.png" class="usa-link" target="_blank" rel="noopener">
+              View Central Pacific 7-Day Outlook
+            </a>
+          </li></ul>
+</div>
+
+<div id="map-section-inner" data-responsive="false" class="gtwo-widget padding-0  bg-primary-lighter radius-lg border border-primary-light">
+
+  <div id="map-section-header" class="bg-primary-lighter display-flex flex-justify-center flex-column tablet:flex-row margin-top-2">
+    <!-- Basin Toggle Buttons -->
+    <div class="display-flex flex-justify-center tablet:padding-x-3">
+      <ul class="usa-button-group usa-button-group--segmented">
+        <li class="usa-button-group__item">
+          <button id="basin-toggle-cpac" class="usa-button usa-button--outline hover:bg-primary-lighter" data-value="cpac" aria-pressed="false" onclick="switchBasin('cpac')">Central Pacific</button>
+        </li>
+        <li class="usa-button-group__item">
+          <button id="basin-toggle-pac" class="usa-button usa-button--outline hover:bg-primary-lighter" data-value="pac" aria-pressed="false" onclick="switchBasin('pac')">Pacific</button>
+        </li>
+        <li class="usa-button-group__item margin-right-05">
+          <button id="basin-toggle-atl" class="usa-button usa-button--active hover:bg-primary-lighter" data-value="atl" aria-pressed="true" onclick="switchBasin('atl')">Atlantic</button>
+        </li>
+      </ul>
+    </div>
+    <!-- Forecast Toggle Buttons -->
+    <div class="display-flex flex-justify-center tablet:padding-x-3">
+      <ul class="usa-button-group usa-button-group--segmented">
+        <li class="usa-button-group__item">
+          <button id="forecast-toggle-2-day" class="usa-button usa-button--outline hover:bg-primary-lighter" data-value="2d0" aria-pressed="false" onclick="switchForecast('2d')">2-Day Forecast</button>
+        </li>
+        <li class="usa-button-group__item">
+          <button id="forecast-toggle-7-day" class="usa-button usa-button--active hover:bg-primary-lighter" data-value="7d0" aria-pressed="true" onclick="switchForecast('7d')">7-Day Forecast</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="padding-x-05 tablet:padding-x-2 padding-top-05">
+
+    <!-- 1. Stripped height-4/overflow-hidden and added inline grid settings -->
+    <div id="gtwo-menu-container" class="width-full bg-primary-lighter" style="display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr;">
+      
+      <div id="menu-atl-2d0" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-atl-2d1" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-atl-7d0" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-atl-7d1" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-2d0" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-2d1" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-2d," class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-2d2" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-7d0" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-7d1" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-7d," class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-pac-7d2" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-high text-on-gtwo-high "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-2"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('2')"
+          >
+            2
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-cpac-2d0" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-cpac-2d1" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-low text-on-gtwo-low text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-cpac-7d0" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="menu-cpac-7d1" class="gtwo-menu width-full pointer-events-none opacity-0 z-0" style="grid-column: 1; grid-row: 1;">
+        
+        <div class="display-flex flex-column tablet:flex-row flex-align-center flex-justify-center padding-y-05 font-sans-sm">
+          <span class="text-bold tablet:margin-right-1 margin-bottom-1">Disturbances:</span>
+          <div class="display-flex flex-wrap flex-justify-center margin-bottom-1 tablet:margin-bottom-0">
+            
+              
+              
+              
+            
+          <button
+            id="dist-btn-0"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium "
+            
+            onclick="switchDisturbance('0')"
+          >
+            ALL
+          </button>
+            
+              
+              
+              
+              
+            
+          <button
+            id="dist-btn-1"
+            class="usa-button usa-button--unstyled margin-right-1 margin-bottom-1 text-no-underline padding-x-1 padding-y-05 radius-md border-1px border-gray-50 bg-gtwo-medium text-on-gtwo-medium text-bold border-gray-90"
+            style="box-shadow: 1px 2px 2px black;"
+            onclick="switchDisturbance('1')"
+          >
+            1
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="gtwo-container" class="position-relative width-full bg-primary-lighter" style="aspect-ratio: 1920 / 1449;">
+
+      <div id="view-atl-2d0" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_atl_2d0_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_atl_2d0_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_atl_2d0_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_atl_2d0_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_atl_2d0_w768.png 768w,
+            /xgtwo/resize/xgtwo_atl_2d0_w640.png 640w,
+            /xgtwo/resize/xgtwo_atl_2d0_w400.png 400w,
+            /xgtwo/resize/xgtwo_atl_2d0_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_atl_2d0_w1024.png" 
+          alt="2 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+
+          
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Pacific Outlook" 
+    onclick="switchBasin('pac')">
+    <polygon points="0,898,21,909,26,911,28,917,43,926,62,928,72,939,77,939,85,945,100,951,107,955,117,955,132,962,145,968,150,970,162,974,177,976,207,963,215,965,222,969,228,972,235,976,241,983,249,994,269,1008,277,1012,292,1012,301,1016,309,1020,318,1020,324,1024,333,1026,343,1028,350,1022,352,1022,354,1026,354,1037,367,1048,371,1054,386,1067,388,1075,386,1086,386,1090,399,1099,405,1095,409,1095,409,1101,416,1101,422,1105,431,1111,431,1118,448,1126,467,1128,474,1137,484,1139,484,1147,491,1152,510,1143,506,1135,499,1128,503,1126,510,1122,512,1116,518,1112,527,1111,533,1119,538,1124,535,1131,542,1139,546,1145,552,1156,557,1165,552,1167,559,1175,555,1179,557,1184,557,1203,555,1209,559,1216,557,1224,553,1228,548,1239,538,1239,531,1243,531,1254,525,1254,521,1260,527,1262,521,1269,0,1269" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+
+          
+
+          
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 40% Chance of Cyclone Formation in 48 Hours"
+    data-risk="medium"
+    data-prob="40"
+    data-details="
+  
+  <b>As of 2:00 AM EDT Thu Sep 17 2026...</b><br>Central Subtropical Atlantic (AL98):<br>Showers and thunderstorms have become a little better organized over the past day in association with a small area of low pressure located a few hundred miles east of Bermuda.  Environmental conditions could support some additional gradual development over the next few days while the system moves slowly westward today, and then possibly turns southward on Friday over the subtropical Atlantic.<br>* Formation chance through 48 hours...medium...40 percent.. <br>* Formation chance through 7 days...medium...40 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="943" cy="595" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+   
+        </svg>
+          
+      </div>
+
+      <div id="view-atl-2d1" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_atl_2d1_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_atl_2d1_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_atl_2d1_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_atl_2d1_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_atl_2d1_w768.png 768w,
+            /xgtwo/resize/xgtwo_atl_2d1_w640.png 640w,
+            /xgtwo/resize/xgtwo_atl_2d1_w400.png 400w,
+            /xgtwo/resize/xgtwo_atl_2d1_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_atl_2d1_w1024.png" 
+          alt="2 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="1135" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+
+          
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 40% Chance of Cyclone Formation in 48 Hours"
+    data-risk="medium"
+    data-prob="40"
+    data-details="
+  
+  <b>As of 2:00 AM EDT Thu Sep 17 2026...</b><br>Central Subtropical Atlantic (AL98):<br>Showers and thunderstorms have become a little better organized over the past day in association with a small area of low pressure located a few hundred miles east of Bermuda.  Environmental conditions could support some additional gradual development over the next few days while the system moves slowly westward today, and then possibly turns southward on Friday over the subtropical Atlantic.<br>* Formation chance through 48 hours...medium...40 percent.. <br>* Formation chance through 7 days...medium...40 percent..<br>
+"
+    data-action="switchDisturbance:0">
+  
+    <circle cx="965" cy="723" r="50" fill="transparent" pointer-events="all" />
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+
+      <div id="view-atl-7d0" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_atl_7d0_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_atl_7d0_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_atl_7d0_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_atl_7d0_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_atl_7d0_w768.png 768w,
+            /xgtwo/resize/xgtwo_atl_7d0_w640.png 640w,
+            /xgtwo/resize/xgtwo_atl_7d0_w400.png 400w,
+            /xgtwo/resize/xgtwo_atl_7d0_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_atl_7d0_w1024.png" 
+          alt="7 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+
+          
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Pacific Outlook" 
+    onclick="switchBasin('pac')">
+    <polygon points="0,898,21,909,26,911,28,917,43,926,62,928,72,939,77,939,85,945,100,951,107,955,117,955,132,962,145,968,150,970,162,974,177,976,207,963,215,965,222,969,228,972,235,976,241,983,249,994,269,1008,277,1012,292,1012,301,1016,309,1020,318,1020,324,1024,333,1026,343,1028,350,1022,352,1022,354,1026,354,1037,367,1048,371,1054,386,1067,388,1075,386,1086,386,1090,399,1099,405,1095,409,1095,409,1101,416,1101,422,1105,431,1111,431,1118,448,1126,467,1128,474,1137,484,1139,484,1147,491,1152,510,1143,506,1135,499,1128,503,1126,510,1122,512,1116,518,1112,527,1111,533,1119,538,1124,535,1131,542,1139,546,1145,552,1156,557,1165,552,1167,559,1175,555,1179,557,1184,557,1203,555,1209,559,1216,557,1224,553,1228,548,1239,538,1239,531,1243,531,1254,525,1254,521,1260,527,1262,521,1269,0,1269" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+
+          
+
+          
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 40% Chance of Cyclone Formation in 7 Days"
+    data-risk="medium"
+    data-prob="40"
+    data-details="
+  
+  <b>As of 2:00 AM EDT Thu Sep 17 2026...</b><br>Central Subtropical Atlantic (AL98):<br>Showers and thunderstorms have become a little better organized over the past day in association with a small area of low pressure located a few hundred miles east of Bermuda.  Environmental conditions could support some additional gradual development over the next few days while the system moves slowly westward today, and then possibly turns southward on Friday over the subtropical Atlantic.<br>* Formation chance through 48 hours...medium...40 percent.. <br>* Formation chance through 7 days...medium...40 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="943" cy="595" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="1032,622,1033,625,1034,627,1035,629,1036,631,1037,634,1038,636,1039,638,1040,641,1042,643,1043,645,1044,648,1045,650,1045,653,1046,655,1047,658,1048,660,1049,663,1050,665,1051,668,1051,670,1052,673,1053,676,1053,678,1054,681,1054,683,1055,686,1055,689,1056,691,1056,694,1056,697,1057,699,1057,702,1057,705,1057,707,1057,710,1057,712,1057,715,1057,718,1057,720,1057,723,1056,725,1056,728,1055,730,1055,733,1054,735,1054,738,1053,740,1052,743,1052,745,1051,748,1050,750,1049,752,1048,755,1046,757,1045,759,1044,761,1043,764,1041,766,1040,768,1038,770,1037,772,1035,774,1033,776,1031,778,1029,779,1028,781,1026,783,1023,785,1021,786,1019,788,1017,789,1014,791,1012,792,1009,793,1007,795,1004,796,1001,797,999,798,996,799,993,800,990,801,987,802,984,803,981,803,978,804,975,805,971,805,968,806,965,806,962,806,958,807,955,807,952,807,948,807,945,807,942,807,939,807,935,807,932,807,929,807,926,807,922,806,919,806,916,806,913,805,910,805,907,804,904,804,901,803,898,802,895,802,892,801,890,800,887,799,884,798,882,797,879,796,877,795,875,794,873,793,870,792,868,791,866,789,864,788,862,787,860,785,859,784,857,782,855,781,854,779,852,777,850,775,849,774,848,772,846,770,845,768,844,766,843,764,842,762,841,760,840,758,839,756,838,753,837,751,837,749,836,746,835,744,835,741,834,739,834,736,834,733,833,731,833,728,833,725,833,722,833,719,833,716,833,713,833,710,833,707,833,704,833,701,833,698,834,695,834,692,834,689,835,686,835,683,836,679,836,676,837,673,838,670,838,667,839,664,840,661,840,658,841,655,842,652,843,649,843,646,844,643,845,640,846,637,847,635,848,632,849,629,850,627,851,624,852,621,853,619,854,617,855,614,856,612,857,610,858,608,860,605,861,603,862,601,863,599,864,597,866,596,867,594,868,592,869,590,871,589,872,587,874,586,875,584,876,583,878,581,879,580,881,578,882,577,884,576,885,575,887,574,889,573,890,572,892,571,894,570,895,569,897,568,899,567,901,566,903,566,905,565,907,564,909,564,910,563,912,562,914,562,917,562,919,561,921,561,923,560,925,560,927,560,929,560,931,560,933,559,935,559,937,559,940,559,942,559,944,560,946,560,948,560,950,560,952,560,954,561,957,561,959,561,961,562,963,562,965,563,967,563,969,564,971,564,973,565,975,566,977,566,978,567,980,568,982,569,984,570,986,571,987,572,989,573,991,574,992,575,994,576,995,577,997,578,999,580,1000,581,1002,582,1003,584,1005,585,1006,586,1007,588,1009,589,1010,591,1012,592,1013,594,1014,596,1016,597,1017,599,1018,601,1019,603,1021,605,1022,606,1023,608,1024,610,1026,612,1027,614,1028,616,1029,618,1030,620,1032,622" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+   
+        </svg>
+          
+      </div>
+
+      <div id="view-atl-7d1" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_atl_7d1_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_atl_7d1_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_atl_7d1_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_atl_7d1_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_atl_7d1_w768.png 768w,
+            /xgtwo/resize/xgtwo_atl_7d1_w640.png 640w,
+            /xgtwo/resize/xgtwo_atl_7d1_w400.png 400w,
+            /xgtwo/resize/xgtwo_atl_7d1_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_atl_7d1_w1024.png" 
+          alt="7 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="1135" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Pacific Outlook" 
+    onclick="switchBasin('pac')">
+    <polygon points="0,898,21,909,26,911,28,917,43,926,62,928,72,939,77,939,85,945,100,951,107,955,117,955,132,962,145,968,150,970,162,974,177,976,207,963,215,965,222,969,228,972,235,976,241,983,249,994,269,1008,277,1012,292,1012,301,1016,309,1020,318,1020,324,1024,333,1026,343,1028,350,1022,352,1022,354,1026,354,1037,367,1048,371,1054,386,1067,388,1075,386,1086,386,1090,399,1099,405,1095,409,1095,409,1101,416,1101,422,1105,431,1111,431,1118,448,1126,467,1128,474,1137,484,1139,484,1147,491,1152,510,1143,506,1135,499,1128,503,1126,510,1122,512,1116,518,1112,527,1111,533,1119,538,1124,535,1131,542,1139,546,1145,552,1156,557,1165,552,1167,559,1175,555,1179,557,1184,557,1203,555,1209,559,1216,557,1224,553,1228,548,1239,538,1239,531,1243,531,1254,525,1254,521,1260,527,1262,521,1269,0,1269" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+
+          
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 40% Chance of Cyclone Formation in 7 Days"
+    data-risk="medium"
+    data-prob="40"
+    data-details="
+  
+  <b>As of 2:00 AM EDT Thu Sep 17 2026...</b><br>Central Subtropical Atlantic (AL98):<br>Showers and thunderstorms have become a little better organized over the past day in association with a small area of low pressure located a few hundred miles east of Bermuda.  Environmental conditions could support some additional gradual development over the next few days while the system moves slowly westward today, and then possibly turns southward on Friday over the subtropical Atlantic.<br>* Formation chance through 48 hours...medium...40 percent.. <br>* Formation chance through 7 days...medium...40 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="943" cy="595" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="1032,622,1033,625,1034,627,1035,629,1036,631,1037,634,1038,636,1039,638,1040,641,1042,643,1043,645,1044,648,1045,650,1045,653,1046,655,1047,658,1048,660,1049,663,1050,665,1051,668,1051,670,1052,673,1053,676,1053,678,1054,681,1054,683,1055,686,1055,689,1056,691,1056,694,1056,697,1057,699,1057,702,1057,705,1057,707,1057,710,1057,712,1057,715,1057,718,1057,720,1057,723,1056,725,1056,728,1055,730,1055,733,1054,735,1054,738,1053,740,1052,743,1052,745,1051,748,1050,750,1049,752,1048,755,1046,757,1045,759,1044,761,1043,764,1041,766,1040,768,1038,770,1037,772,1035,774,1033,776,1031,778,1029,779,1028,781,1026,783,1023,785,1021,786,1019,788,1017,789,1014,791,1012,792,1009,793,1007,795,1004,796,1001,797,999,798,996,799,993,800,990,801,987,802,984,803,981,803,978,804,975,805,971,805,968,806,965,806,962,806,958,807,955,807,952,807,948,807,945,807,942,807,939,807,935,807,932,807,929,807,926,807,922,806,919,806,916,806,913,805,910,805,907,804,904,804,901,803,898,802,895,802,892,801,890,800,887,799,884,798,882,797,879,796,877,795,875,794,873,793,870,792,868,791,866,789,864,788,862,787,860,785,859,784,857,782,855,781,854,779,852,777,850,775,849,774,848,772,846,770,845,768,844,766,843,764,842,762,841,760,840,758,839,756,838,753,837,751,837,749,836,746,835,744,835,741,834,739,834,736,834,733,833,731,833,728,833,725,833,722,833,719,833,716,833,713,833,710,833,707,833,704,833,701,833,698,834,695,834,692,834,689,835,686,835,683,836,679,836,676,837,673,838,670,838,667,839,664,840,661,840,658,841,655,842,652,843,649,843,646,844,643,845,640,846,637,847,635,848,632,849,629,850,627,851,624,852,621,853,619,854,617,855,614,856,612,857,610,858,608,860,605,861,603,862,601,863,599,864,597,866,596,867,594,868,592,869,590,871,589,872,587,874,586,875,584,876,583,878,581,879,580,881,578,882,577,884,576,885,575,887,574,889,573,890,572,892,571,894,570,895,569,897,568,899,567,901,566,903,566,905,565,907,564,909,564,910,563,912,562,914,562,917,562,919,561,921,561,923,560,925,560,927,560,929,560,931,560,933,559,935,559,937,559,940,559,942,559,944,560,946,560,948,560,950,560,952,560,954,561,957,561,959,561,961,562,963,562,965,563,967,563,969,564,971,564,973,565,975,566,977,566,978,567,980,568,982,569,984,570,986,571,987,572,989,573,991,574,992,575,994,576,995,577,997,578,999,580,1000,581,1002,582,1003,584,1005,585,1006,586,1007,588,1009,589,1010,591,1012,592,1013,594,1014,596,1016,597,1017,599,1018,601,1019,603,1021,605,1022,606,1023,608,1024,610,1026,612,1027,614,1028,616,1029,618,1030,620,1032,622" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+
+      <div id="view-pac-2d0" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_pac_2d0_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_pac_2d0_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_pac_2d0_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_pac_2d0_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_pac_2d0_w768.png 768w,
+            /xgtwo/resize/xgtwo_pac_2d0_w640.png 640w,
+            /xgtwo/resize/xgtwo_pac_2d0_w400.png 400w,
+            /xgtwo/resize/xgtwo_pac_2d0_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_pac_2d0_w1024.png" 
+          alt="2 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1166" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+
+          
+
+          
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Atlantic Outlook" 
+    onclick="switchBasin('atl')">
+    <polygon points="1916,218,1903,228,1884,239,1875,254,1856,264,1847,283,1841,300,1849,328,1858,347,1867,368,1864,391,1864,417,1843,415,1837,402,1828,381,1819,355,1815,336,1807,321,1785,321,1771,319,1751,311,1726,313,1704,317,1698,330,1672,336,1657,330,1636,326,1611,326,1593,336,1576,345,1566,360,1566,381,1564,400,1553,419,1549,446,1555,472,1564,499,1578,516,1596,537,1617,544,1636,544,1657,535,1672,518,1675,495,1694,489,1711,480,1730,480,1749,493,1745,510,1738,527,1734,544,1728,565,1721,584,1711,594,1736,594,1751,590,1775,590,1794,599,1811,607,1817,624,1809,637,1805,656,1805,679,1809,698,1828,713,1843,726,1860,720,1884,711,1901,711,1918,724" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 2: 10% Chance of Cyclone Formation in 48 Hours"
+    data-risk="low"
+    data-prob="10"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms well to the south-southwest of the southern tip of the Baja California Peninsula.  Environmental conditions appear conducive for gradual development, and a tropical depression could form this weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.. <br>* Formation chance through 7 days...medium...60 percent..<br>
+"
+    data-action="switchDisturbance:2">
+  
+    
+      
+    <circle cx="1270" cy="665" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 0% Chance of Cyclone Formation in 48 Hours"
+    data-risk="low"
+    data-prob="0"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Southwest of Southwestern Mexico:<br>A tropical wave is producing disorganized showers and thunderstorms several hundred miles south of southwestern Mexico.  Environmental conditions appear conducive for gradual development, and a tropical depression is likely to form late this weekend or early next week while it moves north-northwestward or northward at 5 to 10 mph.<br>* Formation chance through 48 hours...low...near 0 percent.. <br>* Formation chance through 7 days...high...70 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="1483" cy="758" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+   
+        </svg>
+          
+      </div>
+
+      <div id="view-pac-2d1" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_pac_2d1_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_pac_2d1_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_pac_2d1_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_pac_2d1_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_pac_2d1_w768.png 768w,
+            /xgtwo/resize/xgtwo_pac_2d1_w640.png 640w,
+            /xgtwo/resize/xgtwo_pac_2d1_w400.png 400w,
+            /xgtwo/resize/xgtwo_pac_2d1_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_pac_2d1_w1024.png" 
+          alt="2 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1166" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="852" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+
+          
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 0% Chance of Cyclone Formation in 48 Hours"
+    data-risk="low"
+    data-prob="0"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Southwest of Southwestern Mexico:<br>A tropical wave is producing disorganized showers and thunderstorms several hundred miles south of southwestern Mexico.  Environmental conditions appear conducive for gradual development, and a tropical depression is likely to form late this weekend or early next week while it moves north-northwestward or northward at 5 to 10 mph.<br>* Formation chance through 48 hours...low...near 0 percent.. <br>* Formation chance through 7 days...high...70 percent..<br>
+"
+    data-action="switchDisturbance:0">
+  
+    <circle cx="965" cy="582" r="50" fill="transparent" pointer-events="all" />
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+
+      <div id="view-pac-2d2" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_pac_2d2_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_pac_2d2_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_pac_2d2_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_pac_2d2_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_pac_2d2_w768.png 768w,
+            /xgtwo/resize/xgtwo_pac_2d2_w640.png 640w,
+            /xgtwo/resize/xgtwo_pac_2d2_w400.png 400w,
+            /xgtwo/resize/xgtwo_pac_2d2_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_pac_2d2_w1024.png" 
+          alt="2 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1166" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="852" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+
+          
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 0% Chance of Cyclone Formation in 48 Hours"
+    data-risk="low"
+    data-prob="0"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Southwest of Southwestern Mexico:<br>A tropical wave is producing disorganized showers and thunderstorms several hundred miles south of southwestern Mexico.  Environmental conditions appear conducive for gradual development, and a tropical depression is likely to form late this weekend or early next week while it moves north-northwestward or northward at 5 to 10 mph.<br>* Formation chance through 48 hours...low...near 0 percent.. <br>* Formation chance through 7 days...high...70 percent..<br>
+"
+    data-action="switchDisturbance:0">
+  
+    <circle cx="965" cy="582" r="50" fill="transparent" pointer-events="all" />
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+
+      <div id="view-pac-7d0" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_pac_7d0_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_pac_7d0_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_pac_7d0_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_pac_7d0_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_pac_7d0_w768.png 768w,
+            /xgtwo/resize/xgtwo_pac_7d0_w640.png 640w,
+            /xgtwo/resize/xgtwo_pac_7d0_w400.png 400w,
+            /xgtwo/resize/xgtwo_pac_7d0_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_pac_7d0_w1024.png" 
+          alt="7 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1166" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+
+          
+
+          
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Atlantic Outlook" 
+    onclick="switchBasin('atl')">
+    <polygon points="1916,218,1903,228,1884,239,1875,254,1856,264,1847,283,1841,300,1849,328,1858,347,1867,368,1864,391,1864,417,1843,415,1837,402,1828,381,1819,355,1815,336,1807,321,1785,321,1771,319,1751,311,1726,313,1704,317,1698,330,1672,336,1657,330,1636,326,1611,326,1593,336,1576,345,1566,360,1566,381,1564,400,1553,419,1549,446,1555,472,1564,499,1578,516,1596,537,1617,544,1636,544,1657,535,1672,518,1675,495,1694,489,1711,480,1730,480,1749,493,1745,510,1738,527,1734,544,1728,565,1721,584,1711,594,1736,594,1751,590,1775,590,1794,599,1811,607,1817,624,1809,637,1805,656,1805,679,1809,698,1828,713,1843,726,1860,720,1884,711,1901,711,1918,724" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 2: 60% Chance of Cyclone Formation in 7 Days"
+    data-risk="medium"
+    data-prob="60"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms well to the south-southwest of the southern tip of the Baja California Peninsula.  Environmental conditions appear conducive for gradual development, and a tropical depression could form this weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.. <br>* Formation chance through 7 days...medium...60 percent..<br>
+"
+    data-action="switchDisturbance:2">
+  
+    
+      
+    <circle cx="1270" cy="665" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="998,733,994,733,989,732,985,732,980,731,976,731,971,730,967,730,963,729,958,729,954,729,950,728,946,728,942,727,938,727,934,726,930,726,926,725,922,725,918,724,914,724,910,723,906,722,903,722,899,721,896,720,892,720,889,719,885,718,882,717,879,716,876,715,873,714,869,713,867,712,864,711,861,709,858,708,855,707,853,705,850,704,848,702,845,700,843,698,841,697,839,695,837,693,835,691,833,688,831,686,829,684,828,682,826,679,825,677,823,674,822,672,821,669,819,667,818,664,817,662,816,659,815,656,815,654,814,651,813,648,813,645,812,643,812,640,811,637,811,634,811,632,811,629,810,626,810,624,810,621,811,618,811,616,811,613,811,611,812,608,812,606,813,604,813,601,814,599,815,597,815,595,816,593,817,591,818,589,819,587,820,585,821,583,822,582,824,580,825,579,826,577,828,576,829,574,831,573,832,572,834,571,836,570,838,569,839,568,841,567,843,566,845,565,847,564,850,563,852,562,854,562,856,561,859,561,861,560,863,560,866,559,869,559,871,558,874,558,876,558,879,557,882,557,885,557,888,557,891,557,894,556,897,556,900,556,903,556,906,556,910,556,913,556,916,556,920,556,923,557,926,557,930,557,933,557,937,557,941,557,944,558,948,558,952,558,955,559,959,559,963,559,967,560,971,560,974,560,978,561,982,561,986,562,990,562,994,563,998,563,1002,564,1006,565,1010,565,1014,566,1018,566,1022,567,1026,568,1030,568,1034,569,1038,570,1042,571,1046,571,1050,572,1054,573,1058,574,1062,575,1066,576,1070,576,1074,577,1078,578,1082,579,1086,580,1089,581,1093,582,1097,583,1101,584,1105,585,1108,586,1112,588,1116,589,1120,590,1123,591,1127,592,1130,594,1134,595,1137,596,1140,598,1144,599,1147,600,1150,602,1153,603,1156,605,1159,606,1162,608,1165,610,1168,611,1171,613,1173,615,1176,617,1179,619,1181,621,1183,622,1186,624,1188,627,1190,629,1192,631,1194,633,1196,635,1197,637,1199,640,1201,642,1202,645,1203,647,1205,650,1206,652,1207,655,1208,657,1208,660,1209,663,1210,665,1210,668,1211,671,1211,673,1211,676,1211,679,1211,681,1211,684,1211,687,1211,689,1211,692,1210,694,1209,697,1209,700,1208,702,1207,705,1206,707,1205,709,1204,712,1202,714,1201,716,1199,718,1198,720,1196,723,1194,725,1192,726,1190,728,1188,730,1186,732,1183,733,1181,735,1178,736,1176,737,1173,738,1170,740,1167,741,1164,741,1160,742,1157,743,1154,744,1150,744,1147,745,1143,745,1139,745,1136,745,1132,746,1128,746,1124,746,1120,746,1116,746,1112,746,1107,745,1103,745,1099,745,1094,745,1090,744,1086,744,1081,743,1077,743,1072,742,1067,742,1063,741,1058,741,1054,740,1049,740,1044,739,1040,738,1035,738,1031,737,1026,737,1021,736,1017,735,1012,735,1007,734,1003,734,998,733" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 70% Chance of Cyclone Formation in 7 Days"
+    data-risk="high"
+    data-prob="70"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Southwest of Southwestern Mexico:<br>A tropical wave is producing disorganized showers and thunderstorms several hundred miles south of southwestern Mexico.  Environmental conditions appear conducive for gradual development, and a tropical depression is likely to form late this weekend or early next week while it moves north-northwestward or northward at 5 to 10 mph.<br>* Formation chance through 48 hours...low...near 0 percent.. <br>* Formation chance through 7 days...high...70 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="1483" cy="758" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="1462,711,1463,708,1463,706,1464,703,1465,700,1465,698,1466,695,1466,692,1467,689,1467,686,1467,683,1468,680,1468,677,1468,674,1468,671,1468,668,1468,665,1468,662,1468,658,1468,655,1468,652,1467,649,1467,646,1467,642,1466,639,1466,636,1465,633,1465,630,1464,627,1464,623,1463,620,1462,617,1462,614,1461,611,1460,609,1459,606,1458,603,1457,600,1456,597,1455,595,1454,592,1453,590,1452,587,1451,585,1450,582,1449,580,1447,578,1446,576,1445,574,1443,571,1442,569,1441,567,1439,565,1438,564,1436,562,1435,560,1433,558,1432,557,1430,555,1429,553,1427,552,1426,550,1424,549,1422,547,1421,546,1419,544,1417,543,1416,542,1414,541,1412,539,1411,538,1409,537,1407,536,1405,535,1404,534,1402,533,1400,532,1398,531,1396,530,1395,529,1393,528,1391,528,1389,527,1388,526,1386,525,1384,525,1382,524,1380,523,1379,523,1377,522,1375,522,1373,521,1372,521,1370,520,1368,520,1367,519,1365,519,1363,519,1361,518,1360,518,1358,518,1356,518,1355,518,1353,517,1352,517,1350,517,1349,517,1347,517,1345,517,1344,517,1342,517,1341,518,1340,518,1338,518,1337,518,1335,518,1334,519,1333,519,1331,519,1330,520,1329,520,1328,521,1326,521,1325,522,1324,522,1323,523,1322,523,1321,524,1320,525,1319,525,1318,526,1317,527,1316,528,1315,529,1314,530,1313,531,1312,532,1311,533,1310,534,1309,535,1308,536,1307,537,1307,539,1306,540,1305,541,1304,543,1303,544,1303,545,1302,547,1301,548,1301,550,1300,552,1299,553,1299,555,1298,557,1297,559,1297,560,1296,562,1296,564,1295,566,1295,568,1294,570,1294,572,1293,574,1293,577,1292,579,1292,581,1292,583,1291,586,1291,588,1291,590,1290,593,1290,595,1290,597,1290,600,1290,602,1289,605,1289,608,1289,610,1289,613,1289,615,1289,618,1289,621,1289,624,1289,626,1289,629,1289,632,1289,635,1289,638,1289,641,1290,644,1290,646,1290,649,1290,652,1291,655,1291,658,1291,661,1292,664,1292,667,1293,670,1293,673,1294,676,1294,679,1295,682,1296,685,1296,688,1297,690,1298,693,1299,696,1299,699,1300,701,1301,704,1302,707,1303,709,1304,712,1306,714,1307,717,1308,719,1309,721,1311,724,1312,726,1313,728,1315,730,1316,732,1318,734,1320,736,1321,738,1323,739,1325,741,1327,742,1329,744,1330,745,1332,747,1334,748,1336,749,1339,750,1341,751,1343,752,1345,753,1347,754,1349,755,1352,756,1354,756,1356,757,1358,757,1361,758,1363,758,1365,759,1368,759,1370,759,1372,760,1375,760,1377,760,1380,760,1382,760,1384,760,1387,760,1389,760,1391,760,1394,759,1396,759,1398,759,1401,759,1403,758,1405,758,1407,757,1409,757,1412,756,1414,756,1416,755,1418,754,1420,754,1422,753,1424,752,1426,751,1428,750,1430,749,1432,748,1434,747,1435,746,1437,745,1439,744,1440,742,1442,741,1444,740,1445,738,1447,736,1448,735,1450,733,1451,731,1452,730,1454,728,1455,726,1456,724,1457,722,1458,720,1459,718,1460,715,1461,713,1462,711" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+   
+        </svg>
+          
+      </div>
+
+      <div id="view-pac-7d1" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_pac_7d1_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_pac_7d1_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_pac_7d1_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_pac_7d1_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_pac_7d1_w768.png 768w,
+            /xgtwo/resize/xgtwo_pac_7d1_w640.png 640w,
+            /xgtwo/resize/xgtwo_pac_7d1_w400.png 400w,
+            /xgtwo/resize/xgtwo_pac_7d1_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_pac_7d1_w1024.png" 
+          alt="7 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1166" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="852" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+
+          
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Atlantic Outlook" 
+    onclick="switchBasin('atl')">
+    <polygon points="1916,218,1903,228,1884,239,1875,254,1856,264,1847,283,1841,300,1849,328,1858,347,1867,368,1864,391,1864,417,1843,415,1837,402,1828,381,1819,355,1815,336,1807,321,1785,321,1771,319,1751,311,1726,313,1704,317,1698,330,1672,336,1657,330,1636,326,1611,326,1593,336,1576,345,1566,360,1566,381,1564,400,1553,419,1549,446,1555,472,1564,499,1578,516,1596,537,1617,544,1636,544,1657,535,1672,518,1675,495,1694,489,1711,480,1730,480,1749,493,1745,510,1738,527,1734,544,1728,565,1721,584,1711,594,1736,594,1751,590,1775,590,1794,599,1811,607,1817,624,1809,637,1805,656,1805,679,1809,698,1828,713,1843,726,1860,720,1884,711,1901,711,1918,724" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 70% Chance of Cyclone Formation in 7 Days"
+    data-risk="high"
+    data-prob="70"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Southwest of Southwestern Mexico:<br>A tropical wave is producing disorganized showers and thunderstorms several hundred miles south of southwestern Mexico.  Environmental conditions appear conducive for gradual development, and a tropical depression is likely to form late this weekend or early next week while it moves north-northwestward or northward at 5 to 10 mph.<br>* Formation chance through 48 hours...low...near 0 percent.. <br>* Formation chance through 7 days...high...70 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="1483" cy="758" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="1462,711,1463,708,1463,706,1464,703,1465,700,1465,698,1466,695,1466,692,1467,689,1467,686,1467,683,1468,680,1468,677,1468,674,1468,671,1468,668,1468,665,1468,662,1468,658,1468,655,1468,652,1467,649,1467,646,1467,642,1466,639,1466,636,1465,633,1465,630,1464,627,1464,623,1463,620,1462,617,1462,614,1461,611,1460,609,1459,606,1458,603,1457,600,1456,597,1455,595,1454,592,1453,590,1452,587,1451,585,1450,582,1449,580,1447,578,1446,576,1445,574,1443,571,1442,569,1441,567,1439,565,1438,564,1436,562,1435,560,1433,558,1432,557,1430,555,1429,553,1427,552,1426,550,1424,549,1422,547,1421,546,1419,544,1417,543,1416,542,1414,541,1412,539,1411,538,1409,537,1407,536,1405,535,1404,534,1402,533,1400,532,1398,531,1396,530,1395,529,1393,528,1391,528,1389,527,1388,526,1386,525,1384,525,1382,524,1380,523,1379,523,1377,522,1375,522,1373,521,1372,521,1370,520,1368,520,1367,519,1365,519,1363,519,1361,518,1360,518,1358,518,1356,518,1355,518,1353,517,1352,517,1350,517,1349,517,1347,517,1345,517,1344,517,1342,517,1341,518,1340,518,1338,518,1337,518,1335,518,1334,519,1333,519,1331,519,1330,520,1329,520,1328,521,1326,521,1325,522,1324,522,1323,523,1322,523,1321,524,1320,525,1319,525,1318,526,1317,527,1316,528,1315,529,1314,530,1313,531,1312,532,1311,533,1310,534,1309,535,1308,536,1307,537,1307,539,1306,540,1305,541,1304,543,1303,544,1303,545,1302,547,1301,548,1301,550,1300,552,1299,553,1299,555,1298,557,1297,559,1297,560,1296,562,1296,564,1295,566,1295,568,1294,570,1294,572,1293,574,1293,577,1292,579,1292,581,1292,583,1291,586,1291,588,1291,590,1290,593,1290,595,1290,597,1290,600,1290,602,1289,605,1289,608,1289,610,1289,613,1289,615,1289,618,1289,621,1289,624,1289,626,1289,629,1289,632,1289,635,1289,638,1289,641,1290,644,1290,646,1290,649,1290,652,1291,655,1291,658,1291,661,1292,664,1292,667,1293,670,1293,673,1294,676,1294,679,1295,682,1296,685,1296,688,1297,690,1298,693,1299,696,1299,699,1300,701,1301,704,1302,707,1303,709,1304,712,1306,714,1307,717,1308,719,1309,721,1311,724,1312,726,1313,728,1315,730,1316,732,1318,734,1320,736,1321,738,1323,739,1325,741,1327,742,1329,744,1330,745,1332,747,1334,748,1336,749,1339,750,1341,751,1343,752,1345,753,1347,754,1349,755,1352,756,1354,756,1356,757,1358,757,1361,758,1363,758,1365,759,1368,759,1370,759,1372,760,1375,760,1377,760,1380,760,1382,760,1384,760,1387,760,1389,760,1391,760,1394,759,1396,759,1398,759,1401,759,1403,758,1405,758,1407,757,1409,757,1412,756,1414,756,1416,755,1418,754,1420,754,1422,753,1424,752,1426,751,1428,750,1430,749,1432,748,1434,747,1435,746,1437,745,1439,744,1440,742,1442,741,1444,740,1445,738,1447,736,1448,735,1450,733,1451,731,1452,730,1454,728,1455,726,1456,724,1457,722,1458,720,1459,718,1460,715,1461,713,1462,711" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+
+      <div id="view-pac-7d2" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_pac_7d2_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_pac_7d2_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_pac_7d2_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_pac_7d2_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_pac_7d2_w768.png 768w,
+            /xgtwo/resize/xgtwo_pac_7d2_w640.png 640w,
+            /xgtwo/resize/xgtwo_pac_7d2_w400.png 400w,
+            /xgtwo/resize/xgtwo_pac_7d2_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_pac_7d2_w1024.png" 
+          alt="7 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1166" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="852" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+
+          
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Atlantic Outlook" 
+    onclick="switchBasin('atl')">
+    <polygon points="1916,218,1903,228,1884,239,1875,254,1856,264,1847,283,1841,300,1849,328,1858,347,1867,368,1864,391,1864,417,1843,415,1837,402,1828,381,1819,355,1815,336,1807,321,1785,321,1771,319,1751,311,1726,313,1704,317,1698,330,1672,336,1657,330,1636,326,1611,326,1593,336,1576,345,1566,360,1566,381,1564,400,1553,419,1549,446,1555,472,1564,499,1578,516,1596,537,1617,544,1636,544,1657,535,1672,518,1675,495,1694,489,1711,480,1730,480,1749,493,1745,510,1738,527,1734,544,1728,565,1721,584,1711,594,1736,594,1751,590,1775,590,1794,599,1811,607,1817,624,1809,637,1805,656,1805,679,1809,698,1828,713,1843,726,1860,720,1884,711,1901,711,1918,724" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 70% Chance of Cyclone Formation in 7 Days"
+    data-risk="high"
+    data-prob="70"
+    data-details="
+  
+  <b>As of 11:00 PM PDT Wed Sep 16 2026...</b><br>Southwest of Southwestern Mexico:<br>A tropical wave is producing disorganized showers and thunderstorms several hundred miles south of southwestern Mexico.  Environmental conditions appear conducive for gradual development, and a tropical depression is likely to form late this weekend or early next week while it moves north-northwestward or northward at 5 to 10 mph.<br>* Formation chance through 48 hours...low...near 0 percent.. <br>* Formation chance through 7 days...high...70 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="1483" cy="758" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="1462,711,1463,708,1463,706,1464,703,1465,700,1465,698,1466,695,1466,692,1467,689,1467,686,1467,683,1468,680,1468,677,1468,674,1468,671,1468,668,1468,665,1468,662,1468,658,1468,655,1468,652,1467,649,1467,646,1467,642,1466,639,1466,636,1465,633,1465,630,1464,627,1464,623,1463,620,1462,617,1462,614,1461,611,1460,609,1459,606,1458,603,1457,600,1456,597,1455,595,1454,592,1453,590,1452,587,1451,585,1450,582,1449,580,1447,578,1446,576,1445,574,1443,571,1442,569,1441,567,1439,565,1438,564,1436,562,1435,560,1433,558,1432,557,1430,555,1429,553,1427,552,1426,550,1424,549,1422,547,1421,546,1419,544,1417,543,1416,542,1414,541,1412,539,1411,538,1409,537,1407,536,1405,535,1404,534,1402,533,1400,532,1398,531,1396,530,1395,529,1393,528,1391,528,1389,527,1388,526,1386,525,1384,525,1382,524,1380,523,1379,523,1377,522,1375,522,1373,521,1372,521,1370,520,1368,520,1367,519,1365,519,1363,519,1361,518,1360,518,1358,518,1356,518,1355,518,1353,517,1352,517,1350,517,1349,517,1347,517,1345,517,1344,517,1342,517,1341,518,1340,518,1338,518,1337,518,1335,518,1334,519,1333,519,1331,519,1330,520,1329,520,1328,521,1326,521,1325,522,1324,522,1323,523,1322,523,1321,524,1320,525,1319,525,1318,526,1317,527,1316,528,1315,529,1314,530,1313,531,1312,532,1311,533,1310,534,1309,535,1308,536,1307,537,1307,539,1306,540,1305,541,1304,543,1303,544,1303,545,1302,547,1301,548,1301,550,1300,552,1299,553,1299,555,1298,557,1297,559,1297,560,1296,562,1296,564,1295,566,1295,568,1294,570,1294,572,1293,574,1293,577,1292,579,1292,581,1292,583,1291,586,1291,588,1291,590,1290,593,1290,595,1290,597,1290,600,1290,602,1289,605,1289,608,1289,610,1289,613,1289,615,1289,618,1289,621,1289,624,1289,626,1289,629,1289,632,1289,635,1289,638,1289,641,1290,644,1290,646,1290,649,1290,652,1291,655,1291,658,1291,661,1292,664,1292,667,1293,670,1293,673,1294,676,1294,679,1295,682,1296,685,1296,688,1297,690,1298,693,1299,696,1299,699,1300,701,1301,704,1302,707,1303,709,1304,712,1306,714,1307,717,1308,719,1309,721,1311,724,1312,726,1313,728,1315,730,1316,732,1318,734,1320,736,1321,738,1323,739,1325,741,1327,742,1329,744,1330,745,1332,747,1334,748,1336,749,1339,750,1341,751,1343,752,1345,753,1347,754,1349,755,1352,756,1354,756,1356,757,1358,757,1361,758,1363,758,1365,759,1368,759,1370,759,1372,760,1375,760,1377,760,1380,760,1382,760,1384,760,1387,760,1389,760,1391,760,1394,759,1396,759,1398,759,1401,759,1403,758,1405,758,1407,757,1409,757,1412,756,1414,756,1416,755,1418,754,1420,754,1422,753,1424,752,1426,751,1428,750,1430,749,1432,748,1434,747,1435,746,1437,745,1439,744,1440,742,1442,741,1444,740,1445,738,1447,736,1448,735,1450,733,1451,731,1452,730,1454,728,1455,726,1456,724,1457,722,1458,720,1459,718,1460,715,1461,713,1462,711" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+
+      <div id="view-cpac-2d0" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_cpac_2d0_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_cpac_2d0_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_cpac_2d0_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_cpac_2d0_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_cpac_2d0_w768.png 768w,
+            /xgtwo/resize/xgtwo_cpac_2d0_w640.png 640w,
+            /xgtwo/resize/xgtwo_cpac_2d0_w400.png 400w,
+            /xgtwo/resize/xgtwo_cpac_2d0_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_cpac_2d0_w1024.png" 
+          alt="2 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+
+          
+
+          
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Eastern Pacific Outlook" 
+    onclick="switchBasin('pac')">
+    <polygon points="1920,137,1920,1246,1370,1246,1370,137,1920,137" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+
+          
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 10% Chance of Cyclone Formation in 48 Hours"
+    data-risk="low"
+    data-prob="10"
+    data-details="
+  
+  <b>As of 8:00 PM HST Wed Sep 16 2026...</b><br>Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms well to the south-southwest of the southern tip of the Baja California Peninsula.  Environmental conditions appear conducive for gradual development, and a tropical depression could form this weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.. <br>* Formation chance through 7 days...medium...60 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="2097" cy="932" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+   
+        </svg>
+          
+      </div>
+
+      <div id="view-cpac-2d1" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_cpac_2d1_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_cpac_2d1_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_cpac_2d1_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_cpac_2d1_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_cpac_2d1_w768.png 768w,
+            /xgtwo/resize/xgtwo_cpac_2d1_w640.png 640w,
+            /xgtwo/resize/xgtwo_cpac_2d1_w400.png 400w,
+            /xgtwo/resize/xgtwo_cpac_2d1_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_cpac_2d1_w1024.png" 
+          alt="2 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="1135" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+
+          
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 10% Chance of Cyclone Formation in 48 Hours"
+    data-risk="low"
+    data-prob="10"
+    data-details="
+  
+  <b>As of 8:00 PM HST Wed Sep 16 2026...</b><br>Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms well to the south-southwest of the southern tip of the Baja California Peninsula.  Environmental conditions appear conducive for gradual development, and a tropical depression could form this weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.. <br>* Formation chance through 7 days...medium...60 percent..<br>
+"
+    data-action="switchDisturbance:0">
+  
+    <circle cx="965" cy="723" r="50" fill="transparent" pointer-events="all" />
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+
+      <div id="view-cpac-7d0" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_cpac_7d0_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_cpac_7d0_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_cpac_7d0_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_cpac_7d0_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_cpac_7d0_w768.png 768w,
+            /xgtwo/resize/xgtwo_cpac_7d0_w640.png 640w,
+            /xgtwo/resize/xgtwo_cpac_7d0_w400.png 400w,
+            /xgtwo/resize/xgtwo_cpac_7d0_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_cpac_7d0_w1024.png" 
+          alt="7 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+
+          
+
+          
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Eastern Pacific Outlook" 
+    onclick="switchBasin('pac')">
+    <polygon points="1920,137,1920,1246,1370,1246,1370,137,1920,137" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+
+          
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 60% Chance of Cyclone Formation in 7 Days"
+    data-risk="medium"
+    data-prob="60"
+    data-details="
+  
+  <b>As of 8:00 PM HST Wed Sep 16 2026...</b><br>Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms well to the south-southwest of the southern tip of the Baja California Peninsula.  Environmental conditions appear conducive for gradual development, and a tropical depression could form this weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.. <br>* Formation chance through 7 days...medium...60 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="2097" cy="932" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="1678,1034,1671,1034,1664,1033,1657,1032,1650,1031,1643,1031,1636,1030,1629,1029,1623,1029,1616,1028,1610,1027,1603,1027,1597,1026,1590,1025,1584,1025,1578,1024,1571,1023,1565,1022,1559,1022,1553,1021,1547,1020,1542,1019,1536,1018,1530,1017,1525,1016,1519,1015,1514,1014,1509,1013,1503,1012,1498,1010,1493,1009,1488,1007,1484,1006,1479,1004,1474,1003,1470,1001,1465,999,1461,997,1457,995,1453,993,1449,990,1445,988,1442,985,1438,983,1435,980,1431,977,1428,974,1425,971,1422,968,1419,965,1417,961,1414,958,1412,954,1410,951,1407,947,1405,943,1403,940,1402,936,1400,932,1398,928,1397,924,1395,920,1394,916,1393,912,1392,908,1391,904,1390,900,1390,896,1389,892,1388,888,1388,884,1388,880,1388,876,1388,872,1388,868,1388,864,1388,860,1389,856,1389,852,1390,849,1390,845,1391,842,1392,838,1393,835,1394,832,1395,829,1396,825,1398,823,1399,820,1401,817,1403,814,1404,812,1406,809,1408,807,1410,805,1412,802,1414,800,1417,798,1419,796,1422,795,1424,793,1427,791,1430,790,1433,788,1435,787,1439,785,1442,784,1445,783,1448,782,1451,781,1455,780,1458,779,1462,778,1466,777,1470,776,1473,776,1477,775,1481,774,1485,774,1490,773,1494,773,1498,773,1503,772,1507,772,1512,772,1516,772,1521,771,1526,771,1531,771,1536,771,1541,771,1546,771,1551,771,1556,772,1561,772,1567,772,1572,772,1578,772,1583,773,1589,773,1594,773,1600,774,1606,774,1611,775,1617,775,1623,776,1629,776,1635,777,1641,777,1647,778,1653,779,1659,780,1665,780,1671,781,1677,782,1683,783,1689,784,1695,785,1702,785,1708,786,1714,787,1720,788,1726,789,1733,790,1739,792,1745,793,1751,794,1757,795,1763,796,1770,797,1776,799,1782,800,1788,801,1794,803,1800,804,1806,805,1812,807,1818,808,1824,810,1830,811,1836,813,1842,814,1848,816,1853,818,1859,819,1865,821,1870,823,1876,825,1881,827,1886,829,1892,831,1897,833,1902,835,1907,837,1912,839,1917,841,1921,844,1926,846,1931,848,1935,851,1939,853,1944,856,1948,859,1952,861,1956,864,1959,867,1963,870,1967,873,1970,876,1973,879,1976,882,1979,885,1982,889,1985,892,1987,895,1990,899,1992,903,1994,906,1996,910,1998,914,1999,918,2001,921,2002,925,2003,929,2004,933,2005,937,2005,941,2006,945,2006,949,2006,953,2006,957,2006,961,2006,965,2006,969,2005,973,2004,977,2003,981,2002,984,2001,988,2000,992,1998,995,1996,999,1994,1002,1992,1006,1990,1009,1988,1012,1985,1015,1983,1018,1980,1021,1977,1024,1974,1027,1970,1029,1967,1032,1963,1034,1959,1036,1955,1039,1951,1040,1947,1042,1942,1044,1938,1045,1933,1047,1928,1048,1923,1049,1918,1050,1912,1051,1907,1051,1901,1052,1895,1052,1889,1053,1884,1053,1877,1053,1871,1053,1865,1053,1859,1053,1852,1053,1846,1052,1839,1052,1833,1052,1826,1051,1819,1051,1812,1050,1805,1049,1798,1049,1791,1048,1784,1047,1777,1046,1770,1046,1763,1045,1756,1044,1749,1043,1742,1042,1734,1041,1727,1040,1720,1039,1713,1039,1706,1038,1699,1037,1692,1036,1685,1035,1678,1034" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+   
+        </svg>
+          
+      </div>
+
+      <div id="view-cpac-7d1" class="gtwo-layer position-absolute top-0 left-0 width-full height-full pointer-events-none opacity-0 z-0">
+        <img 
+          srcset="
+            /xgtwo/resize/xgtwo_cpac_7d1_w1920.png 1920w,
+            /xgtwo/resize/xgtwo_cpac_7d1_w1600.png 1600w,
+            /xgtwo/resize/xgtwo_cpac_7d1_w1366.png 1366w,
+            /xgtwo/resize/xgtwo_cpac_7d1_w1024.png 1024w,
+            /xgtwo/resize/xgtwo_cpac_7d1_w768.png 768w,
+            /xgtwo/resize/xgtwo_cpac_7d1_w640.png 640w,
+            /xgtwo/resize/xgtwo_cpac_7d1_w400.png 400w,
+            /xgtwo/resize/xgtwo_cpac_7d1_w320.png 320w
+          "
+          sizes="
+            (width <= 320px) 320px,
+            (width <= 400px) 400px,
+            (width <= 640px) 640px,
+            (width <= 768px) 768px,
+            (width <= 1024px) 1024px,
+            (width <= 1366px) 1366px,
+            (width <= 1600px) 1600px,
+            (width <= 1920px) 1920px,
+            1024px"
+          src="/xgtwo/resize/xgtwo_cpac_7d1_w1024.png" 
+          alt="7 Day Background" 
+          class="width-full height-full"
+        >
+        <svg viewBox="0 0 1920 1449" preserveAspectRatio="none" class="layer-svg position-absolute top-0 left-0 width-full height-full z-200">
+
+          
+            
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="Return to All Disturbances" 
+    onclick="switchDisturbance('0')">
+    <rect x="0" y="136" width="1920" height="1135" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+          
+
+          
+
+          
+  <g class="nav-system cursor-pointer" 
+    data-nav-title="View Eastern Pacific Outlook" 
+    onclick="switchBasin('pac')">
+    <polygon points="1920,137,1920,1246,1370,1246,1370,137,1920,137" stroke="none" fill="transparent" pointer-events="all" />
+  </g>
+
+
+           
+            
+            
+              
+                
+  <g class="storm-system cursor-pointer" 
+    data-name="Disturbance 1: 60% Chance of Cyclone Formation in 7 Days"
+    data-risk="medium"
+    data-prob="60"
+    data-details="
+  
+  <b>As of 8:00 PM HST Wed Sep 16 2026...</b><br>Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms well to the south-southwest of the southern tip of the Baja California Peninsula.  Environmental conditions appear conducive for gradual development, and a tropical depression could form this weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.. <br>* Formation chance through 7 days...medium...60 percent..<br>
+"
+    data-action="switchDisturbance:1">
+  
+    
+      
+    <circle cx="2097" cy="932" r="24" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+      
+    <polygon points="1678,1034,1671,1034,1664,1033,1657,1032,1650,1031,1643,1031,1636,1030,1629,1029,1623,1029,1616,1028,1610,1027,1603,1027,1597,1026,1590,1025,1584,1025,1578,1024,1571,1023,1565,1022,1559,1022,1553,1021,1547,1020,1542,1019,1536,1018,1530,1017,1525,1016,1519,1015,1514,1014,1509,1013,1503,1012,1498,1010,1493,1009,1488,1007,1484,1006,1479,1004,1474,1003,1470,1001,1465,999,1461,997,1457,995,1453,993,1449,990,1445,988,1442,985,1438,983,1435,980,1431,977,1428,974,1425,971,1422,968,1419,965,1417,961,1414,958,1412,954,1410,951,1407,947,1405,943,1403,940,1402,936,1400,932,1398,928,1397,924,1395,920,1394,916,1393,912,1392,908,1391,904,1390,900,1390,896,1389,892,1388,888,1388,884,1388,880,1388,876,1388,872,1388,868,1388,864,1388,860,1389,856,1389,852,1390,849,1390,845,1391,842,1392,838,1393,835,1394,832,1395,829,1396,825,1398,823,1399,820,1401,817,1403,814,1404,812,1406,809,1408,807,1410,805,1412,802,1414,800,1417,798,1419,796,1422,795,1424,793,1427,791,1430,790,1433,788,1435,787,1439,785,1442,784,1445,783,1448,782,1451,781,1455,780,1458,779,1462,778,1466,777,1470,776,1473,776,1477,775,1481,774,1485,774,1490,773,1494,773,1498,773,1503,772,1507,772,1512,772,1516,772,1521,771,1526,771,1531,771,1536,771,1541,771,1546,771,1551,771,1556,772,1561,772,1567,772,1572,772,1578,772,1583,773,1589,773,1594,773,1600,774,1606,774,1611,775,1617,775,1623,776,1629,776,1635,777,1641,777,1647,778,1653,779,1659,780,1665,780,1671,781,1677,782,1683,783,1689,784,1695,785,1702,785,1708,786,1714,787,1720,788,1726,789,1733,790,1739,792,1745,793,1751,794,1757,795,1763,796,1770,797,1776,799,1782,800,1788,801,1794,803,1800,804,1806,805,1812,807,1818,808,1824,810,1830,811,1836,813,1842,814,1848,816,1853,818,1859,819,1865,821,1870,823,1876,825,1881,827,1886,829,1892,831,1897,833,1902,835,1907,837,1912,839,1917,841,1921,844,1926,846,1931,848,1935,851,1939,853,1944,856,1948,859,1952,861,1956,864,1959,867,1963,870,1967,873,1970,876,1973,879,1976,882,1979,885,1982,889,1985,892,1987,895,1990,899,1992,903,1994,906,1996,910,1998,914,1999,918,2001,921,2002,925,2003,929,2004,933,2005,937,2005,941,2006,945,2006,949,2006,953,2006,957,2006,961,2006,965,2006,969,2005,973,2004,977,2003,981,2002,984,2001,988,2000,992,1998,995,1996,999,1994,1002,1992,1006,1990,1009,1988,1012,1985,1015,1983,1018,1980,1021,1977,1024,1974,1027,1970,1029,1967,1032,1963,1034,1959,1036,1955,1039,1951,1040,1947,1042,1942,1044,1938,1045,1933,1047,1928,1048,1923,1049,1918,1050,1912,1051,1907,1051,1901,1052,1895,1052,1889,1053,1884,1053,1877,1053,1871,1053,1865,1053,1859,1053,1852,1053,1846,1052,1839,1052,1833,1052,1826,1051,1819,1051,1812,1050,1805,1049,1798,1049,1791,1048,1784,1047,1777,1046,1770,1046,1763,1045,1756,1044,1749,1043,1742,1042,1734,1041,1727,1040,1720,1039,1713,1039,1706,1038,1699,1037,1692,1036,1685,1035,1678,1034" stroke="none" fill="transparent" pointer-events="all" />
+      
+    
+  
+  </g>
+
+              
+            
+             
+        </svg>
+          
+      </div>
+    </div>
+  </div>
+  
+  <div id="map-section-footer" class="minh-2"></div>
+  
+</div>
+
+<div id="storm-tooltip" class="display-none width-auto maxw-mobile-lg position-absolute z-300 border-1px border-base radius-md shadow-2" style="isolation: isolate;" role="tooltip">
+  <div class="margin-05 radius-sm bg-white position-relative z-300">
+    <div id="tooltip-header" class="font-sans-xs text-bold padding-x-105 padding-top-05 padding-bottom-05"></div>
+    <div id="tooltip-body" class="line-height-sans-4 font-sans-2xs padding-x-105 padding-y-05"></div>
+  </div>
+  <div id="tooltip-arrow" data-popper-arrow></div>
+</div>
+
+<div id="nav-mini-tooltip" class="display-none position-absolute z-300 bg-ink text-white font-sans-2xs padding-x-1 padding-y-05 radius-md text-no-wrap pointer-events-none" role="tooltip">
+</div>
+
+<div id="storm-bottom-sheet" class="display-none position-fixed bottom-0 left-0 width-full z-top bg-white border-top-1px border-base padding-3 shadow-5" style="animation: slideUp 0.3s ease-out;" role="dialog" aria-modal="true">
+  <div class="display-flex flex-justify-end margin-bottom-1">
+     <button id="sheet-close" class="usa-button usa-button--unstyled">Close (X)</button>
+  </div>
+  <div id="sheet-scroll-container" class="padding-0 radius-md">
+    <div id="sheet-header" class="text-bold margin-bottom-1 text-lg padding-y-1 padding-x-105"></div>
+    <div id="sheet-body" class="font-sans-sm margin-bottom-2 margin-1 margin-top-0"></div>
+  </div>
+  <a id="sheet-link" href="" class="usa-button width-full display-none margin-top-1">View Storm Details</a>
+</div>
+
+</div>
+
+<div class="padding-y-2">
+
+<div id="two-section-inner" class="gtwo-widget padding-0 radius-lg border border-primary-light">
+
+  <h2 class="text-center padding-top-2 margin-0 text-balance">Tropical Weather Outlook Text</h2>
+
+  <div id="two-section-header" class="display-flex flex-align-center flex-justify-center flex-column tablet:flex-row margin-top-2">
+    <div class="display-flex flex-justify-center tablet:padding-x-3">
+      <ul class="usa-button-group usa-button-group--segmented">
+        <li class="usa-button-group__item">
+          <button id="two-basin-toggle-cpac" class="usa-button usa-button--outline hover:bg-primary-lighter" aria-pressed="false" onclick="switchBasin('cpac')">Central Pacific</button>
+        </li>
+        <li class="usa-button-group__item">
+          <button id="two-basin-toggle-pac" class="usa-button usa-button--outline hover:bg-primary-lighter" aria-pressed="false" onclick="switchBasin('pac')">Pacific</button>
+        </li>
+        <li class="usa-button-group__item margin-right-05">
+          <button id="two-basin-toggle-atl" class="usa-button usa-button--active hover:bg-primary-lighter" aria-pressed="true" onclick="switchBasin('atl')">Atlantic</button>
+        </li>
+      </ul>
+    </div>
+    <div class="display-flex flex-align-center flex-justify-center tablet:flex-justify-end margin-top-1 tablet:margin-top-0">
+      <label class="margin-right-2">Select Language</label>
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        <select id="language-select-cpac" class="usa-select width-card margin-top-0 basin-lang-select display-none" onchange="switchLanguage(this.value)">
+          
+            
+              <option value="en" selected>English</option>
+            
+          
+            
+              <option value="es" >Español</option>
+            
+          
+        </select>
+      
+        
+        
+        
+        
+        
+        
+        
+        <select id="language-select-pac" class="usa-select width-card margin-top-0 basin-lang-select display-none" onchange="switchLanguage(this.value)">
+          
+            
+              <option value="en" selected>English</option>
+            
+          
+            
+              <option value="es" >Español</option>
+            
+          
+        </select>
+      
+        
+        
+        
+        
+        
+        
+        
+        <select id="language-select-atl" class="usa-select width-card margin-top-0 basin-lang-select " onchange="switchLanguage(this.value)">
+          
+            
+              <option value="en" selected>English</option>
+            
+          
+            
+              <option value="es" >Español</option>
+            
+          
+        </select>
+      
+    </div>
+  </div>
+
+  <div id="two-content" class="padding-y-2 padding-x-2px tablet:padding-x-4">
+    
+      
+        
+    <div id="two-cpac-en" class="two-layer display-none">
+      <div class="teletype-scroller">
+        <pre class="teletype-content border-2px border-base-light padding-2 font-mono-3xs tablet:font-mono-sm" aria-live="polite">ZCZC HFOTWOCP ALL<br>TTAA00 PHFO DDHHMM<br><br>Tropical Weather Outlook<br>NWS Central Pacific Hurricane Center Honolulu HI<br>Issued by NWS National Hurricane Center Miami FL<br>800 PM HST Wed Sep 16 2026<br><br>For the central North Pacific...between 140W and 180W:<br><br>1. Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms<br>well to the south-southwest of the southern tip of the Baja<br>California Peninsula.  Environmental conditions appear conducive for<br>gradual development, and a tropical depression could form this<br>weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.<br>* Formation chance through 7 days...medium...60 percent.<br>
+<br><br>Forecaster Hagen<br><br></pre>
+      </div>
+          
+    </div>
+        
+    <div id="two-cpac-es" class="two-layer display-none">
+      <div class="teletype-scroller">
+        <pre class="teletype-content border-2px border-base-light padding-2 font-mono-3xs tablet:font-mono-sm" aria-live="polite">431 <br />ACPN51 PHFO 170512<br />TWOSCP<br /><br />Perspectiva de tiempo tropical<br />Centro de Huracanes del Pacífico Central del SNM Honolulu HI<br />Emitido por el Centro Nacional de Huracanes del SNM Miami FL<br />800 PM HST miércoles 16 de septiembre de 2026<br /><br />Para el Pacífico Norte central…entre 140 y 180 longitud oeste<br /><br />Oeste del Pacífico Oriental: Una onda tropical está produciendo<br />aguaceros y tormentas desorganizadas en el sur-suroeste del extremo<br />sur de la Península de Baja California. Las condiciones ambientales<br />parecen propicias para un desarrollo gradual, y podría formarse una<br />depresión tropical este fin de semana a medida que el sistema se<br />mueve hacia el oeste a alrededor de 10 mph.<br />* Probabilidad de formación hasta 48 horas...baja...10 por ciento.<br />* Probabilidad de formación en 7 días...mediana...60 por ciento.<br /><br />$$<br />Pronosticador Hagen <br /><br /><br /><br /><br /><br />*** Este producto ha sido procesado automáticamente utilizando un<br />programa de traducción y puede contener omisiones y errores. El<br />Servicio Nacional de Meteorología no puede garantizar la precisión<br />del texto convertido. De haber alguna duda, el texto en inglés es<br />siempre la versión autorizada. ***</pre>
+      </div>
+          
+    </div>
+        
+      
+    
+      
+        
+    <div id="two-pac-en" class="two-layer display-none">
+      <div class="teletype-scroller">
+        <pre class="teletype-content border-2px border-base-light padding-2 font-mono-3xs tablet:font-mono-sm" aria-live="polite">ZCZC MIATWOEP ALL<br>TTAA00 KNHC DDHHMM<br><br>Tropical Weather Outlook<br>NWS National Hurricane Center Miami FL<br>1100 PM PDT Wed Sep 16 2026<br><br>For the eastern and central North Pacific east of 180 longitude:<br><br>1. Southwest of Southwestern Mexico:<br>A tropical wave is producing disorganized showers and thunderstorms <br>several hundred miles south of southwestern Mexico.  Environmental <br>conditions appear conducive for gradual development, and a tropical <br>depression is likely to form late this weekend or early next week <br>while it moves north-northwestward or northward at 5 to 10 mph.<br>* Formation chance through 48 hours...low...near 0 percent.<br>* Formation chance through 7 days...high...70 percent.<br>
+2. Western East Pacific:<br>A tropical wave is producing disorganized showers and thunderstorms <br>well to the south-southwest of the southern tip of the Baja <br>California Peninsula.  Environmental conditions appear conducive for <br>gradual development, and a tropical depression could form this <br>weekend as the system moves westward at around 10 mph.<br>* Formation chance through 48 hours...low...10 percent.<br>* Formation chance through 7 days...medium...60 percent.<br>
+<br><br>Forecaster Hagen<br><br></pre>
+      </div>
+          
+            
+      <div id="action-buttons" class="display-flex flex-justify-center flex-wrap margin-top-1">
+        <a href="/text/MIATWDEP.shtml" id="TWDEP" class="usa-button usa-button--secondary margin-x-1 margin-top-05 padding-1 padding-x-205 display-flex flex-align-center">
+          <svg class="usa-icon" aria-hidden="true" role="img"><use xlink:href="/assets/img/sprite.svg#bookmark"></use></svg>
+          <span class="margin-left-05 font-mono-sm text-normal">Tropical Weather Discussion</span>
+        </a>
+      </div>
+          
+    </div>
+        
+    <div id="two-pac-es" class="two-layer display-none">
+      <div class="teletype-scroller">
+        <pre class="teletype-content border-2px border-base-light padding-2 font-mono-3xs tablet:font-mono-sm" aria-live="polite">432 <br />ABPZ21 KNHC 170512<br />TWOSEP<br /><br />Perspectiva de tiempo tropical<br />Centro Nacional de Huracanes del SNM Miami FL<br />1100 PM PDT miércoles 16 de septiembre de 2026<br /><br />Para el Pacífico Norte oriental y central al este de 180 longitud<br /><br />Suroeste del suroeste de México: Una onda tropical está produciendo<br />aguaceros y tormentas desorganizadas a varios cientos de millas al<br />sur del suroeste de México. Las condiciones ambientales parecen<br />propicias para un desarrollo gradual, y es probable que se forme una<br />depresión tropical a finales de este fin de semana o a principios de<br />la próxima semana, mientras que se desplazará hacia el noroeste o<br />hacia el norte a una velocidad de 5 a 10 mph.<br />* Probabilidad de formación hasta 48 horas...baja...cerca del 0 por<br />ciento.<br />* Probabilidad de formación hasta 7 días...alta...70 por ciento.<br /><br />Oeste del Pacífico Oriental: Una onda tropical está produciendo<br />aguaceros y tormentas desorganizadas en el sur-suroeste del extremo<br />sur de la Península de Baja California. Las condiciones ambientales<br />parecen propicias para un desarrollo gradual, y podría formarse una<br />depresión tropical este fin de semana a medida que el sistema se<br />mueve hacia el oeste a alrededor de 10 mph.<br />* Probabilidad de formación hasta 48 horas...baja...10 por ciento.<br />* Probabilidad de formación en 7 días...mediana...60 por ciento.<br /><br />$$<br />Pronosticador Hagen<br /><br /><br /><br /><br />*** Este producto ha sido procesado automáticamente utilizando un<br />programa de traducción y puede contener omisiones y errores. El<br />Servicio Nacional de Meteorología no puede garantizar la precisión<br />del texto convertido. De haber alguna duda, el texto en inglés es<br />siempre la versión autorizada. ***</pre>
+      </div>
+          
+            
+      <div id="action-buttons" class="display-flex flex-justify-center flex-wrap margin-top-1">
+        <a href="/text/MIATWDEP.shtml" id="TWDEP" class="usa-button usa-button--secondary margin-x-1 margin-top-05 padding-1 padding-x-205 display-flex flex-align-center">
+          <svg class="usa-icon" aria-hidden="true" role="img"><use xlink:href="/assets/img/sprite.svg#bookmark"></use></svg>
+          <span class="margin-left-05 font-mono-sm text-normal">Tropical Weather Discussion</span>
+        </a>
+      </div>
+          
+    </div>
+        
+      
+    
+      
+        
+    <div id="two-atl-en" class="two-layer display-none">
+      <div class="teletype-scroller">
+        <pre class="teletype-content border-2px border-base-light padding-2 font-mono-3xs tablet:font-mono-sm" aria-live="polite">ZCZC MIATWOAT ALL<br>TTAA00 KNHC DDHHMM<br><br>Tropical Weather Outlook<br>NWS National Hurricane Center Miami FL<br>200 AM EDT Thu Sep 17 2026<br><br>For the North Atlantic...Caribbean Sea and the Gulf of America:<br><br>1. Central Subtropical Atlantic (AL98):<br>Showers and thunderstorms have become a little better organized over <br>the past day in association with a small area of low pressure <br>located a few hundred miles east of Bermuda.  Environmental <br>conditions could support some additional gradual development over <br>the next few days while the system moves slowly westward today, and <br>then possibly turns southward on Friday over the subtropical <br>Atlantic.<br>* Formation chance through 48 hours...medium...40 percent.<br>* Formation chance through 7 days...medium...40 percent.<br>
+<br><br>Forecaster Hagen<br><br></pre>
+      </div>
+          
+            
+      <div id="action-buttons" class="display-flex flex-justify-center flex-wrap margin-top-1">
+        <a href="/text/MIATWDAT.shtml" id="TWDAT" class="usa-button usa-button--secondary margin-x-1 margin-top-05 padding-1 padding-x-205 display-flex flex-align-center">
+          <svg class="usa-icon" aria-hidden="true" role="img"><use xlink:href="/assets/img/sprite.svg#bookmark"></use></svg>
+          <span class="margin-left-05 font-mono-sm text-normal">Tropical Weather Discussion</span>
+        </a>
+      </div>
+          
+    </div>
+        
+    <div id="two-atl-es" class="two-layer display-none">
+      <div class="teletype-scroller">
+        <pre class="teletype-content border-2px border-base-light padding-2 font-mono-3xs tablet:font-mono-sm" aria-live="polite">337 <br />ACCA62 KNHC 170503<br />TWOSAT<br /><br />Perspectiva de tiempo tropical<br />Centro Nacional de Huracanes del SNM Miami FL<br />200 AM EDT jueves, 17 de septiembre de 2026<br /><br />Para el Atlántico Norte...Mar Caribe y el Golfo de América<br /><br />Atlántico Subtropical Central (AL98): Los aguaceros y las tormentas<br />eléctricas se han organizado un poco mejor en el último día, con una<br />pequeña área de baja presión ubicada a unos cientos de millas al<br />este de las Bermudas. Las condiciones ambientales podrían permitir<br />algún desarrollo gradual adicional en los próximos días, a medida<br />que el sistema se mueve lentamente hacia el oeste hoy y posiblemente<br />gire hacia el sur el viernes sobre el Atlántico subtropical.<br />* Probabilidad de formación hasta 48 horas...media...40 por ciento.<br />* Probabilidad de formación hasta 7 días...medio...40 por ciento.<br /><br />$$<br />Pronosticador Hagen<br /><br /><br /><br /><br />*** Este producto ha sido procesado automáticamente utilizando un<br />programa de traducción y puede contener omisiones y errores. El<br />Servicio Nacional de Meteorología no puede garantizar la precisión<br />del texto convertido. De haber alguna duda, el texto en inglés es<br />siempre la versión autorizada. ***</pre>
+      </div>
+          
+            
+      <div id="action-buttons" class="display-flex flex-justify-center flex-wrap margin-top-1">
+        <a href="/text/MIATWDAT.shtml" id="TWDAT" class="usa-button usa-button--secondary margin-x-1 margin-top-05 padding-1 padding-x-205 display-flex flex-align-center">
+          <svg class="usa-icon" aria-hidden="true" role="img"><use xlink:href="/assets/img/sprite.svg#bookmark"></use></svg>
+          <span class="margin-left-05 font-mono-sm text-normal">Tropical Weather Discussion</span>
+        </a>
+      </div>
+          
+    </div>
+        
+      
+    
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<!-- End content -->
+            <br><br>
+        <div class="footer">
+          <div class="footer-content">
+            <div class='footer-header'>
+               Quick Links and Additional Resources<br>
+            </div>
+            <div class='footer-column'>
+              <a class='footer-column-head' href='/cyclones/'>Tropical Cyclone Forecasts</a><br>
+              <a class="usa-link" href='/cyclones'>Tropical Cyclone Advisories</a><br>
+              <a class="usa-link" href='/gtwo.php'>Tropical Weather Outlook</a><br>
+              <a class="usa-link" href='/audio'>Audio/Podcasts</a><br>
+              <a class="usa-link" href='/aboutnhcprod.shtml'>About Advisories</a><br>
+              <br>
+              <a class='footer-column-head' href='/marine'>Marine Forecasts</a><br>
+              <a class="usa-link" href='/marine/offshores.php'>Offshore Waters Forecasts</a><br>
+              <a class="usa-link" href='/marine/grids.php'>Gridded Forecasts</a><br>
+              <a class="usa-link" href='/marine/graphicast.php'>Graphicast</a><br>
+              <a class="usa-link" href='/abouttafbprod.shtml'>About Marine</a><br>
+            </div>
+            <div class='footer-column'>
+              <a class='footer-column-head' href='/socialmedia'>Social Media</a><br>
+              <a 
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=http://www.facebook.com/NWSNHC"
+              >
+                <img src="/css/images/f_logo.png" alt="Follow the National Hurricane Center on Facebook" width="15" height="15"> &nbsp; NHC on Facebook
+              </a><br>
+              <a 
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/x.php"
+              >
+                <img src="/css/images/x-logo.png" alt="Follow the National Hurricane Center on X" height="13" width="15"> &nbsp; NHC on X
+              </a><br>
+              <a 
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=http://www.youtube.com/user/NWSNHC"
+              >
+                <img src="/css/images/youtube_logo.png" alt="Subscribe the National Hurricane Center on YouTube" height="12" width="15"> &nbsp; NHC on YouTube
+              </a><br>
+              <a 
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=http://noaanhc.wordpress.com/"
+              >
+                <img src="/css/images/w_logo.png" alt="Read the National Hurricane Center Inside the Eye blog on WordPress" height="15" width="15"> &nbsp; NHC Blog:<br>&nbsp; &nbsp; &nbsp; "Inside the Eye"
+              </a><br>
+              <br>
+              <a class='footer-column-head' href="/prepare">Hurricane Preparedness</a><br>
+              <a 
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="https://www.weather.gov/safety/hurricane-plan"
+              >
+                Preparedness Guide
+              </a><br>
+              <a class="usa-link" href="/prepare/hazards.php">Hurricane Hazards</a><br>
+              <a
+                class="usa-link usa-link--external" 
+                rel="noreferrer"
+                href="https://www.weather.gov/safety/hurricane-ww"
+              >
+                Watches and Warnings
+              </a><br>
+              <a class="usa-link" href="/prepare/marine.php">Marine Safety</a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.ready.gov/hurricanes"
+              >
+                Ready.gov Hurricanes
+              </a><br>
+              <a class="usa-link" href="https://www.weather.gov/wrn/force">Weather-Ready Nation</a><br>
+              <a 
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.fema.gov/emergency-management-agencies"
+              >
+                Emergency Management Offices
+              </a><br>
+            </div>
+            <div class='footer-column'>
+              <a class='footer-column-head' href='/aboutresearch.shtml'>Research and Development</a><br>
+              <a 
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.aoml.noaa.gov/hrd/"
+              >
+                NOAA Hurricane Research Division
+              </a><br>
+              <a class="usa-link" href="/hot/">Hurricane and Ocean Testbed</a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=http://www.hfip.org"
+              >
+                Hurricane Forecast Improvement Program
+              </a><br>
+              <br>
+              <a class='footer-column-head' href='/aboutintro.shtml'>Other Resources</a><br>
+              <a class="usa-link" href="/qa/">Q & A with NHC</a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.aoml.noaa.gov/general/lib/lib1/nhclib/"
+              >
+                NHC/AOML Library Branch
+              </a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.aoml.noaa.gov/hrd/tcfaq/tcfaqHED.html"
+              >
+                NOAA: Hurricane FAQs
+              </a><br>
+              <a class="usa-link" href="/nhop">National Hurricane Operations Plan</a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=http://www.wx4nhc.org"
+              >
+                WX4NHC Amateur Radio
+              </a><br>
+            </div>
+            <div class='footer-column'>
+              <a class='footer-column-head' href="http://www.ncep.noaa.gov">NWS Forecast Offices</a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.wpc.ncep.noaa.gov"
+              >
+                Weather Prediction Center
+              </a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.spc.noaa.gov"
+              >
+                Storm Prediction Center
+              </a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="https://ocean.weather.gov"
+              >
+                Ocean Prediction Center
+              </a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="http://www.weather.gov"
+              >
+                Local Forecast Offices
+              </a><br>
+              <br>
+              <a class='footer-column-head' href="/aboutrsmc.shtml">Worldwide Tropical Cyclone Centers</a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=https://www.canada.ca/hurricanes"
+              >
+                Canadian Hurricane Centre
+              </a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=https://www.metoc.navy.mil/jtwc/jtwc.html"
+              >
+                Joint Typhoon Warning Center
+              </a><br>
+              <a class="usa-link" href="/aboutrsmc.shtml">Other Tropical Cyclone Centers</a><br>
+              <a
+                class="usa-link usa-link--external"
+                rel="noreferrer"
+                href="/nhcexit.php?outurl=http://severe.worldweather.org"
+              >
+                WMO Severe Weather Info Centre
+              </a>
+            </div>
+          </div>
+        </div>
+        
+
+    <!-- legal footer area -->
+<div class="footer-legal">
+  <div class="footer-legal-content">
+    <div class="footer-legal-gov">
+      <a href="http://www.usa.gov"><img src="/css/images/usa_gov.png" alt="usa.gov" width="110" height="30"></a>
+    </div> 
+    <div class="footer-legal-column" style="width:200px;">
+      <p> 
+          <a 
+            class="usa-link usa-link--external"
+            rel="noreferrer"
+            href="http://www.commerce.gov"
+          >
+            US Dept of Commerce
+          </a><br>
+          <a 
+            class="usa-link usa-link--external"
+            rel="noreferrer"
+            href="http://www.noaa.gov"
+          >
+            National Oceanic and Atmospheric Administration
+          </a><br>
+          National Hurricane Center<br>
+          11691 SW 17th Street<br>
+          Miami, FL, 33165<br>
+          <a href='mailto:nhcwebmaster@noaa.gov'>nhcwebmaster@noaa.gov</a>
+      </p>
+    </div>
+
+    <div class="footer-legal-column" style="width:200px;">
+      <p>
+          Central Pacific Hurricane Center<br>
+          2525 Correa Rd<br>
+          Suite 250<br>
+          Honolulu, HI 96822<br>
+          <a href='mailto:W-HFO.webmaster@noaa.gov'>W-HFO.webmaster@noaa.gov</a>
+      </p>
+    </div>
+
+    <div class="footer-legal-column2">
+      <p>
+        <a href="http://www.weather.gov/disclaimer">Disclaimer</a><br>
+        <a href="http://www.cio.noaa.gov/Policy_Programs/info_quality.html">Information Quality</a><br>
+        <a href="http://www.weather.gov/help">Help</a><br>
+        <a href="http://www.weather.gov/glossary">Glossary</a>
+      </p>
+    </div>
+
+    <div class="footer-legal-column3">
+      <p>
+        <a href="http://www.weather.gov/privacy">Privacy Policy</a><br>
+        <a href="http://www.rdc.noaa.gov/~foia">Freedom of Information Act (FOIA)</a><br>
+        <a href="http://www.weather.gov/about">About Us</a><br>
+        <a href="http://www.weather.gov/careers">Career Opportunities</a>
+      </p>
+    </div>
+  </div>
+</div><!-- end of <div class="footer-legal"> -->
+      </div><!-- End of content div -->
+    </div><!-- End of center div -->
+    <div id="wrap"> </div>
+        <script src="/assets/js/gtwo.js"></script>
+        <script async src="/assets/js/uswds.min.js"></script>
+    
+  </body>
+</html>

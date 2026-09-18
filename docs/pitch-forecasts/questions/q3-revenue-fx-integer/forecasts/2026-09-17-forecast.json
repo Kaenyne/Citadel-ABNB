@@ -1,0 +1,66 @@
+{
+  "question_id": "C08",
+  "slug": "q3-revenue-fx-integer",
+  "type": "multiple_choice",
+  "revision": 2,
+  "run_date": "2026-09-17",
+  "revised": "2026-09-17",
+  "agent": "fable",
+  "final": {"vector": {"a_ge_plus3": 0.49, "b_plus2": 0.28, "c_le_plus1": 0.21, "d_not_stated": 0.02}},
+  "within_option": {"p_ge_plus4": 0.20, "p_le_0": 0.07, "p_negative": 0.03, "note": "from the same model (A05-15); rev-1 0.13 / 0.10 / 0.02 withdrawn"},
+  "estimates": {
+    "base_rate": {"a": 0.68, "b": 0.24, "c": 0.07},
+    "decomposition": {"a": 0.37, "b": 0.32, "c": 0.29},
+    "anchor": {"a": 0.22, "b": 0.44, "c": 0.34},
+    "anchor_source": "No market prices this. Designated anchor: the programme's registered live FX object, fx-lag-v2 H2 (Phi on disclosed ADR-FX) PIT point +1.8527 for 3Q26 at the 6 Aug 2026 guide date, through the letter-rounding kernel at the rev-2 component sd 0.80 (at H2's own sigma 0.99: 0.27 / 0.37 / 0.37). NOT_INDEPENDENTLY_DERIVED: the object is a member of the decomposition's middle cluster (A05-06).",
+    "audit_independent": {"a": 0.56, "b": 0.26, "c": 0.16, "d": 0.02},
+    "final_minus_anchor_on_a": 0.27,
+    "final_minus_audit_on_a": -0.07,
+    "not_independently_derived_flag": true,
+    "divergence_justification": "management has quantified the quarter with its booking-date ledger in hand and its explicit numeric guide record is two-sided with mean error 0.0 (n 4: -2/+1/0/+1); the registered spec under-forecast the last two prints by ~1pp; the lag-loaded kernel at the free fit's scale reproduces the guide (+2.9) on the basket refreshed to 11 Sep; the short-lag family is kept at 0.15 because it is the in-sample winner on n 14"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/q3-revenue-fx-integer/datasets/c08_model_v2.py",
+    "structure": "mixture of after-hedge revenue-FX constructions, each ~N(centre, sd), mapped to the letter integer by round(g+f) - round(g) with g the ex-FX growth (fractional part uniform; analytic triangular kernel, MC check within 0.001); x 0.98, plus 0.02 not stated. Component sd = midpoint of the spec's own PIT point RMSE and interval RMSE (the kernel adds the +-0.5 rounding itself); management sd 1.0 from the numeric-guide record (rev-1 RESUME pre-registration)",
+    "components": [
+      {"name": "management guide ~3 (6 Aug letter); numeric-pair record n 4", "centre": 3.0, "sd": 1.00, "weight": 0.38, "p_ge3": 0.684, "p_eq2": 0.241, "p_le1": 0.075},
+      {"name": "Phi x 0.851 / H2b on the basket (H2b W2 RMSE 1.32, interval 0.99)", "centre": 2.895, "sd": 1.15, "weight": 0.20, "p_ge3": 0.631, "p_eq2": 0.250, "p_le1": 0.120},
+      {"name": "H2 on disclosed ADR-FX (registered, 1.85) / Phi x 0.653 (2.2) / WS05 (1.98) (H2 RMSE 0.99, interval 0.58)", "centre": 2.05, "sd": 0.80, "weight": 0.27, "p_ge3": 0.299, "p_eq2": 0.442, "p_le1": 0.259},
+      {"name": "Object-A free fit, stated weights on the spot-held basket (H3 W2 RMSE 1.82, interval 1.43)", "centre": 1.256, "sd": 1.60, "weight": 0.12, "p_ge3": 0.222, "p_eq2": 0.218, "p_le1": 0.560},
+      {"name": "contemporaneous x 0.56 less hedge (H0 W2 RMSE 1.97, interval 1.54)", "centre": 0.126, "sd": 1.75, "weight": 0.03, "p_ge3": 0.090, "p_eq2": 0.129, "p_le1": 0.781}
+    ],
+    "exact_mixture": {"a": 0.486, "b": 0.285, "c": 0.209, "d": 0.020},
+    "track_record": {"numeric_guides": {"n": 4, "errors_printed_minus_guided": [-2, 1, 0, 1], "mean": 0.0, "sd": 1.41, "sd_net_of_rounding": 1.35, "printed_ge_guided": "3/4 W1, 3/3 W2"},
+                     "qualitative_coded": {"n": 5, "errors": [1.5, 0.5, -0.5, 0.0, 0.5], "mean": 0.4, "sd": 0.74},
+                     "dropped_as_ambiguous": ["3Q23 letter for 4Q23 (rev 1 coded +2)", "1Q24 letter for 2Q24 (rev 1 coded -0.5)"],
+                     "rev1_claim_withdrawn": "9 of 10 printed >= guided; never more than 0.5 below"},
+    "basket_rebuild_fred_through": "2026-09-11",
+    "basket_3q26_qtd_pct": 0.483, "basket_3q26_spot_held_pct": 0.600, "basket_2q26_pct": 2.266, "basket_1q26_pct": 5.675, "phi_driver_pct": 3.40, "quarter_days_observed_pct": 79
+  },
+  "sensitivity": [
+    {"assumption": "management sd 1.0; if 0.6 (rev 1)", "moves_to": {"a": 0.52, "b": 0.28, "c": 0.19}},
+    {"assumption": "management sd 1.0; if 1.35 (numeric-pair sd net of rounding)", "moves_to": {"a": 0.47, "b": 0.28, "c": 0.23}},
+    {"assumption": "management centre 3.0; if 3.5 (2Q26-style overshoot), weights fixed", "moves_to": {"a": 0.54, "b": 0.25, "c": 0.19}},
+    {"assumption": "management centre 3.0; if 2.6, weights fixed", "moves_to": {"a": 0.43, "b": 0.31, "c": 0.24}},
+    {"assumption": "management weight 0.38; if 0.50", "moves_to": {"a": 0.52, "b": 0.28, "c": 0.18}},
+    {"assumption": "management weight 0.38; if 0.15", "moves_to": {"a": 0.42, "b": 0.30, "c": 0.26}},
+    {"assumption": "management weight 0.38; if 0 (model-only mixture)", "moves_to": {"a": 0.37, "b": 0.32, "c": 0.29}},
+    {"assumption": "rev-1 component sds restored (0.6/0.6/0.7/0.7/0.7)", "moves_to": {"a": 0.51, "b": 0.30, "c": 0.17}},
+    {"assumption": "kernel view only (management 0.6 + Phi x 0.851 0.4)", "moves_to": {"a": 0.65, "b": 0.24, "c": 0.09}},
+    {"assumption": "short-lag view only (free fit 0.6, contemporaneous 0.4)", "moves_to": {"a": 0.17, "b": 0.18, "c": 0.64}},
+    {"assumption": "all component sds x 1.5 / x 0.75", "moves_to": {"x1.5": {"a": 0.49, "b": 0.22, "c": 0.27}, "x0.75": {"a": 0.49, "b": 0.32, "c": 0.17}}},
+    {"assumption": "P(not stated) 0.05", "moves_to": {"a": 0.47, "b": 0.28, "c": 0.20, "d": 0.05}},
+    {"assumption": "dollar -5% (weaker) for the rest of the quarter: basket +1.05pp on lag-0 terms only", "moves_to": {"a": 0.50, "b": 0.29, "c": 0.19}},
+    {"assumption": "dollar +5% (stronger) for the rest of the quarter", "moves_to": {"a": 0.48, "b": 0.28, "c": 0.22}},
+    {"assumption": "hedge reclassification surprise -0.6pp on every component", "moves_to": {"a": 0.30, "b": 0.31, "c": 0.37}},
+    {"assumption": "Astra's construction (management 0.50 / H2 0.25 / H2b 0.25 at their own sigmas)", "moves_to": {"a": 0.56, "b": 0.26, "c": 0.16}}
+  ],
+  "monitoring": [
+    {"date": "weekly to 2026-10-05", "event": "FRED H.10 release; refresh sources/, re-run c08_model.py then c08_model_v2.py", "action": "hold unless the 3Q26 QTD basket crosses +-1.5%; a +-5% dollar move for the rest of the quarter shifts (a) by <= 0.015"},
+    {"date": "2026-09-18/2026-10-02", "event": "any management conference remark on 3Q26 FX", "action": "'approximately three' restated -> management weight 0.50 (a 0.52); 'closer to two' -> management centre 2.0 (a ~0.33)"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.49 / 0.28 / 0.21 / 0.02 with the B4 decision rule"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side 3Q26 previews with an FX line", "action": "no change unless a preview cites a management update"},
+    {"date": "2026-11-05", "event": "3Q26 letter: Key Financial Measures box and prose FX points; 10-Q hedge reclassification", "action": "resolve; record the integer against the B4 rule (>=3 kernel, 0/+1 short lag, +2 ambiguous); add (guided 3, printed k) to the numeric record"}
+  ],
+  "log": "docs/pitch-forecasts/questions/q3-revenue-fx-integer/research-log.md"
+}

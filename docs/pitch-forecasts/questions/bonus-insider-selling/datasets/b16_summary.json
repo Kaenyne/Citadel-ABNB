@@ -1,0 +1,83 @@
+{
+ "history": {
+  "windows_n": 1219,
+  "p_ge150_all": 0.9499589827727646,
+  "p_ge150_exGebbia": 0.3978671041837572,
+  "median_all": 333.6947067536,
+  "median_exGebbia": 119.81728208659999
+ },
+ "seasonal_windows": {
+  "2023-09-17..2024-01-31": {
+   "all": 464.44594043250004,
+   "ex_gebbia": 309.99333109
+  },
+  "2024-09-17..2025-01-31": {
+   "all": 291.9755012561,
+   "ex_gebbia": 112.1269195536
+  },
+  "2025-09-17..2026-01-31": {
+   "all": 242.21611351779998,
+   "ex_gebbia": 61.4899011932
+  }
+ },
+ "p_legA_sales_ge150": 0.780205,
+ "p_legB_new_ceo_plan": 0.7,
+ "p_legA_given_no_new_ceo_plan": 0.7162757211981181,
+ "p_yes": 0.91527,
+ "total_musd_percentiles": {
+  "5": 93.02013410470829,
+  "10": 116.9475732398324,
+  "25": 156.99094475556842,
+  "50": 208.3359169305192,
+  "75": 267.2287367847907,
+  "90": 336.86911618606473,
+  "95": 394.4985847451063
+ },
+ "remaining_capacity_shares": {
+  "blecharczyk": 596491,
+  "chesky": 525000
+ },
+ "price_used": 167.51,
+ "sensitivity": {
+  "pC 0.5": {
+   "p_legA": 0.761745,
+   "p_yes": 0.85793
+  },
+  "pC 0.85": {
+   "p_legA": 0.793325,
+   "p_yes": 0.95807
+  },
+  "pD 0.5": {
+   "p_legA": 0.69654,
+   "p_yes": 0.88525
+  },
+  "pD 0.9": {
+   "p_legA": 0.82962,
+   "p_yes": 0.933805
+  },
+  "Blecharczyk full execution": {
+   "p_legA": 0.89913,
+   "p_yes": 0.955295
+  },
+  "Blecharczyk sells nothing more": {
+   "p_legA": 0.397585,
+   "p_yes": 0.794785
+  },
+  "Chesky rest fully sold": {
+   "p_legA": 0.93369,
+   "p_yes": 0.97014
+  },
+  "Chesky sells nothing more": {
+   "p_legA": 0.51792,
+   "p_yes": 0.828225
+  },
+  "Gebbia new-plan median 30": {
+   "p_legA": 0.703075,
+   "p_yes": 0.88586
+  },
+  "Gebbia new-plan median 120": {
+   "p_legA": 0.83922,
+   "p_yes": 0.93889
+  }
+ }
+}

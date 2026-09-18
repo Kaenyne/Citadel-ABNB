@@ -1,0 +1,71 @@
+{
+  "question_id": "R05",
+  "slug": "risk-q3-margin-sandbagged",
+  "type": "binary",
+  "revision": 2,
+  "run_date": "2026-09-17",
+  "revised": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.22, "ci": [0.13, 0.32]},
+  "companion": {
+    "p_above_ceiling_50.085": {"blend": 0.55, "card_raw": 0.46, "card_bias_corrected": 0.53, "m5": 0.53, "cost_stack_corrected": 0.64, "note": "the card's published 0.54 is P(margin > Street 49.776), not P(above the ceiling) (A10-08)"},
+    "p_ge_51.0": 0.32, "p_ge_52.0": 0.14, "p_le_49.0": 0.21,
+    "source": "route values from datasets/r05_results_v2.csv and the card Gaussians, blended at the headline weights"
+  },
+  "estimates": {
+    "base_rate": 0.17,
+    "decomposition": 0.31,
+    "anchor": 0.17,
+    "anchor_source": "No market prices 3Q26 margin (Kalshi KXABNB nights ladder and Polymarket price ladders only, 2026-09-17T03:34:27Z). Anchor = M5 dispersion-conditioned Street composite 50.19% (LSEG 11 Sep 2026 49.78%, n 36, plus shrunken bias), sd 1.356pp from its P(margin beat) 0.62 -> P(>=51.5) 0.167. Base rate: quarterly ceiling sentences exceeded by >=1.4pp, 0-1 of 10 (Laplace 0.167). Decomposition: cost-stack Monte Carlo on the corrected identity (margin = (revenue - cash costs + D&A) / revenue), datasets/r05_model_v2.py, cost sd 72 -> 0.309 (0.280 at the rev-1 sd 60). Audit's independent comparison: 0.21 (0.13-0.32).",
+    "audit_independent": 0.21,
+    "final_minus_anchor": 0.05,
+    "final_minus_audit": 0.01,
+    "not_independently_derived_flag": true,
+    "independence_note": "three estimates disagree by 14 points (0.17 / 0.31 / 0.17); the disagreement is the centre (management's budget 50.37 / median 50.67 vs the card 49.94 / bias-corrected 50.21); final = 0.35 x card-bc 0.214 + 0.25 x cost stack 0.309 + 0.20 x M5 0.167 + 0.20 x base rate 0.167 = 0.219"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/risk-q3-margin-sandbagged/datasets/r05_model_v2.py",
+    "structure": "revenue N(4804, 50); cash costs = 2405.03 + N(0, 72) + 0.20 x (revenue - 4804) - slip x U(30, 97) with P(slip) 0.25; margin = 100 x (revenue - costs + 20.634) / revenue; YES <=> margin >= 51.5. Identity: 40_lines_quarterly adj_ebitda = revenue - total_cash_costs + da (D&A sits inside the cash lines); rev-1 omitted the add-back (0.43pp)",
+    "mc_corrected": {"p_ge_51.5_sd60": 0.280, "p_ge_51.5_sd72": 0.309, "median": 50.67, "sd_sd72": 1.65, "p_above_ceiling": 0.64, "rev1_no_addback": 0.190},
+    "routes": {"card_bias_corrected_N(50.21,1.62)": [0.35, 0.214], "cost_stack_corrected_sd72": [0.25, 0.309], "m5_composite_N(50.19,1.356)": [0.20, 0.167], "ceiling_base_rate_laplace": [0.20, 0.167], "blend": 0.219},
+    "revenue_leg": "51.5% needs cash costs <= $2,351M at $4,804M (-$55M vs budget), <= $2,322M at the Street's $4,744M; if all in S&M: cash S&M <= $724M = +23.7% y/y vs the budget's +33.0% and 1H26's +33.4% / +26.6% (rev 1: $706M / +20.7%, $18M too tight, A10-21)"
+  },
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": 0,
+    "rev_fy27_musd": 0,
+    "margin_fy26_pp": 0.5,
+    "margin_fy27_pp": 0.4,
+    "eps_fy27_usd": 0.09,
+    "stock_usd_per_share": 3.5,
+    "ev_stock_usd_per_share": 0.8,
+    "material": false,
+    "note": "At 51.5% vs the card's 49.94%: +$75M of 3Q26 EBITDA, FY26 +0.5pp, FY27 +0.4pp (half-weight timing vs run-rate), FY27 EPS +$0.09; stock +$3.5 = level +$1.7 (591.7m shares) plus the C04 channel on revision 2 ((b) 0.30 -> ~0.43, (c) 0.05 -> ~0.20 at a 51.5% Q3; A10-11). EV 0.22 x 3.5 = $0.8/share: immaterial; drop as a stock risk, keep the corrected S&M arithmetic (<= $724M, +23.7% y/y: a ~3-point deceleration from 2Q26, not a halving) as the reply to 'the sentence is sandbagged'."
+  },
+  "sensitivity": [
+    {"assumption": "cost stack only (line-build object) / card bias-corrected only / card raw only", "moves_to": "0.31 / 0.21 / 0.17"},
+    {"assumption": "P(flagged Q3 step slips out of the quarter) 0.25 -> 0 (cost stack 0.19)", "moves_to": 0.19},
+    {"assumption": "P(slip) 0.25 -> 0.50 (cost stack 0.37)", "moves_to": 0.23},
+    {"assumption": "cost sd $72M -> $40M / $60M (rev 1) / $80M", "moves_to": "0.20 / 0.21 / 0.22"},
+    {"assumption": "revenue centre $4,804M -> Street $4,744M / $4,770M / $4,850M", "moves_to": "0.19 / 0.20 / 0.23"},
+    {"assumption": "D&A add-back $27M (3Q25 identity) instead of $20.6M", "moves_to": 0.22},
+    {"assumption": "centre = evidence-only build 52.4% (sentence fully sandbagged)", "moves_to": 0.70},
+    {"assumption": "anchor = Street + unshrunken h=0 bias (50.9, sd 1.41)", "moves_to": 0.25},
+    {"assumption": "base-rate class = printed above the sentence at all, 2026 regime 2 of 2", "moves_to": 0.23},
+    {"assumption": "card sd = C04's 1.0 instead of the conformal 1.62", "moves_to": 0.18}
+  ],
+  "monitoring": [
+    {"date": "2026-09-17/2026-10-02", "event": "September dumps; nights band; Kalshi ladder", "action": "each +$50M of 3Q26 revenue ~ +0.01 on the blend; band >= 10.5 -> 0.24"},
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.22 (0.13-0.32) with the corrected S&M arithmetic (<= $724M, +23.7% y/y)"},
+    {"date": "2026-10-15/2026-11-03", "event": "sell-side previews; BKNG/EXPE prints; management remarks on Q3 spend", "action": "'spend shifted to Q4' -> 0.30; confirmed Q3 campaign -> 0.15"},
+    {"date": "2026-11-04", "event": "LSEG 3Q26 EBITDA mean re-capture", "action": "Street >= 50.3% -> 0.25"},
+    {"date": "2026-11-05", "event": "3Q26 release: adjusted EBITDA, revenue, S&M", "action": "resolve; audit read on the corrected identity: cash S&M <= $724M with revenue >= $4,800M implied pre-print P ~0.40; S&M >= $780M ~0.08"}
+  ],
+  "cross_question": {"c04_rev2_q3_draw": "N(49.95, 1.0) -> P(>=51.5) 0.06; the card's conformal sd 1.62 gives 0.17-0.21; C04's sd is the outlier (A10-10), flagged for X01, not edited"},
+  "audit": {"file": "docs/pitch-forecasts/audits/A10-research-audit.md", "response": "docs/pitch-forecasts/audits/A10-audit-response.md",
+            "findings_r05": 9, "accepted": 8, "accepted_in_part": 1, "rejected": 0},
+  "datasets": ["datasets/r05_model_v2.py", "datasets/r05_results_v2.csv"],
+  "log": "docs/pitch-forecasts/questions/risk-q3-margin-sandbagged/research-log.md"
+}

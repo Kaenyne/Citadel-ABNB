@@ -1,0 +1,20 @@
+quarter,revpar_yoy_mean_pct,n_months_used,n_months_from_snapshot,note
+2023Q3,1.15,2,2,
+2023Q4,2.4,1,1,fewer than two saved months: excluded from the base rate
+2024Q1,0.9,1,1,fewer than two saved months: excluded from the base rate
+2024Q2,2.5,3,3,
+2024Q3,0.87,3,3,
+2024Q4,4.4,1,1,fewer than two saved months: excluded from the base rate
+2025Q1,2.4,3,3,
+2025Q2,-0.4,3,3,
+2025Q3,-1.4,3,3,
+2025Q4,-1.8,3,2,"December 2025 implied from FY2025 -0.3% (-2.20), not a saved snapshot"
+2026Q1,3.53,3,2,"March 2026 from the repo note, not a saved snapshot"
+2026Q2,5.6,3,3,
+2026Q3,8.2,1,1,"current quarter, July only: excluded from the base rate; fewer than two saved months: excluded from the base rate"
+
+base-rate window,"2023Q3-2026Q2, quarters with >=2 saved months",9,,"['2023Q3', '2024Q2', '2024Q3', '2025Q1', '2025Q2', '2025Q3', '2025Q4', '2026Q1', '2026Q2']"
+>= +4.0,1 of 9,0.111,0.182,raw; Laplace
+<= +1.0 (B15 mirror),4 of 9,0.444,0.455,raw; Laplace
+complete quarters only (3 saved months),1 of 6 >=4; 3 of 6 <=1,0.167,0.25,"['2024Q2', '2024Q3', '2025Q1', '2025Q2', '2025Q3', '2026Q2']"
+rev-1 hand list (r11_model.py:36),1 of 13 >=4; 6 of 13 <=1,,,"WITHDRAWN (A12-03): not a series, not sourced"

@@ -1,0 +1,129 @@
+
+============ B07 NTTO overseas: the cache and the claims ledger ============
+2026 monthly y/y: {'2026-01': -4.21, '2026-02': 0.79, '2026-03': 3.56, '2026-04': -14.12, '2026-05': -6.54, '2026-06': -1.85, '2026-07': -7.02}
+2025 monthly y/y: {'2025-07': -3.09, '2025-08': -2.85, '2025-09': -7.69, '2025-10': -3.12, '2025-11': -3.47, '2025-12': -1.28}
+  -> Sep 2025 is the WEAKEST month of 3Q25, i.e. the easiest 3Q26 comp
+3Q25 y/y %: -4.4
+4Q25 y/y %: -2.552
+1Q26 y/y %: -0.051
+2Q26 y/y %: -7.668
+4Q25 two-year stack %: 3.224 | 4Q24 y/y %: 5.926
+Jan-Jul 2026 vs 2025 (m): 18.328 19.24 y/y %: -4.741
+2026 two-year stacks: {'2026-01': 0.93, '2026-02': -1.68, '2026-03': -8.49, '2026-04': -7.24, '2026-05': -9.11, '2026-06': -5.18, '2026-07': -9.89}
+cache vs published: Jan 2026 -4.21 (pub -4.2)
+cache vs published: Jan-May 2026 -4.78 (pub -4.8)
+cache vs published: FY2025 overseas level (m) 34.29 (pub 34.3)
+cache vs published: FY2025 total international y/y % -5.55 (pub -5.5)
+
+============ B07 persistence table (claim 5) and the saved dataset ============
+max abs diff vs saved dataset: 0.0
+d_q4_q3 n 18 mean -0.49 sd 4.04 MAD 2.42
+d_q4_jul n 18 mean -1.0 sd 6.34 MAD 3.38
+d_q4_q2 n 18 mean -2.25 sd 7.43 MAD 2.76
+
+============ B07 recomputed centres and probabilities ============
+July 2026 stack %: -9.89
+3Q26 at a held stack %: -5.75 (log uses -6.5, which needs a stack of about -11.0)
+4Q26 at a held stack %: -7.53 (log's persist scenario: -5.6)
+4Q25 regional shares %: {'WESTERN EUROPE': 36.27, 'ASIA': 23.94, 'SOUTH AMERICA': 17.18, 'CENTRAL AMERICA': 6.2, 'CARIBBEAN': 5.48, 'OCEANIA': 3.24, 'EASTERN EUROPE': 3.2, 'MIDDLE EAST': 3.14, 'AFRICA': 1.36}
+Jul 2026 regional y/y %: {'WESTERN EUROPE': -10.47, 'ASIA': -7.8, 'SOUTH AMERICA': 2.34, 'CENTRAL AMERICA': -13.09, 'CARIBBEAN': -7.5, 'OCEANIA': -7.67, 'EASTERN EUROPE': 1.29, 'MIDDLE EAST': 3.53, 'AFRICA': -18.36}
+4Q25-share-weighted Jul y/y %: -6.83
+regional constant-stack 4Q26 y/y %: -7.08
+log base-rate branches: [0.6915, 0.7107] 0.7257 0.5
+log decomposition mixture: 0.5496
+  auditor centre -6.24 sd 4.04 -> P(<=-5) 0.621
+  auditor centre -6.8 sd 4.2 -> P(<=-5) 0.666
+  auditor centre -7.08 sd 4.2 -> P(<=-5) 0.690
+  auditor centre -7.53 sd 4.2 -> P(<=-5) 0.727
+
+============ B06 geopolitical base rate: dataset, letters, reaction ============
+prints: 23 | active-conflict prints: 8 | coded Yes: ['1Q22', '3Q23', '1Q26']
+log coding 3/8 -> Laplace 0.4 | strict 1/8 (1Q26 only) -> 0.2 | convention-2 coding 2/8 (3Q23,1Q26) -> 0.3 | unconditional 3/23 -> 0.13
+  1Q22: ...Risks to nights booked in Q2 2022 and the remainder of the year include additional COVID outbreaks, any impact to travel from the conflict in Ukraine,...
+  1Q26: ...roughly 100bps headwind related to the conflict in the Middle East. ¦ We expect Adjusted EBITDA and Adjusted EBITDA Margin to be up year-over-year in ...
+  3Q23: ...closely monitoring macroeconomic trends and geopolitical conflicts that may impact travel demand. We currently expect our nights booked growth in Q4 2...
+letters with any geopolitical hit: {'1Q22': 14, '1Q26': 14, '2Q22': 1, '2Q26': 2, '3Q22': 1, '3Q23': 2, '3Q24': 1, '4Q22': 1}
+1Q26 print: raw 1d 0.7 | QQQ 1d 2.3 | EXCESS 1d -1.6 <- sign flips on the excess convention
+B06 decomposition replay: 0.33
+B06 FY26 margin row: 0.7*0.59*0.25 = 0.103 | two-quarter weight = 0.206 | log prints -0.15
+B06 EV: -0.525
+
+============ B05 regulation: gate, event count, decomposition ============
+rows: 15 | qualifying (clear+marginal): 6
+                                                                     measure                                     date                     qualifies_under_B05_convention
+                        Paris 90-night principal-residence cap (Le Meur law) 2024-11-07 enacted; 2025-01-01 effective                                                yes
+ Greece: Athens districts 1-3 freeze on new STR registrations (national law)  late 2024 enacted; 2025-01-01 effective yes (national instrument) / no (city-only reading)
+                            Italy CIN national identification code mandatory                               2025-01-01            marginal (registration without removal)
+      Spain Horizontal Property Law: neighbour approval for new tourist lets                               2025-04-03                                                yes
+Spain national registry (RD 1312/2024) + consumer removal order (65,935 ads)    2025-05-19 order; 2025-07-01 registry                                                yes
+              Canary Islands Law 6/2025 (sustainable tourist use of housing)               2025-12-10 enacted; phased                                                yes
+events by calendar year: {2024: 2, 2025: 8, 2026: 5}
+qualifying by year: {2024: 2, 2025: 4} <- none dated 2026
+window months: 4.8296
+  24m, 6 events (log): lambda 1.207 -> P(>=1) 0.701
+  24m, strict 4: lambda 0.805 -> P(>=1) 0.553
+  24m, lenient 13: lambda 2.616 -> P(>=1) 0.927
+  trailing 18m, 3 events: lambda 0.805 -> P(>=1) 0.553
+  trailing 12m, 1 event: lambda 0.402 -> P(>=1) 0.331
+decomposition complement: 0.28783 -> P 0.71217 | log states complement 0.273 -> 0.73
+claim 5 p27 check: True
+register event bars (B05 needs mere enactment):
+    ES-REMOVE -> A further Spanish mass removal order or platform-verified registry takes at least 25,000 more A
+    IE-REG -> Ireland's register launches (Dec 2026) and planning-compliance enforcement removes more than 20
+    UK-ENG -> England's registration scheme goes live and councils use it to remove or cap supply in at least
+    IT-NAT -> Italy adds national or art-city restrictions beyond CIN and the 3-property business threshold (
+IT-NAT gates mention the 2026 budget law: True | present in the trailing-24m table: False
+EMEA shares (scaled): FR ES IT DE EL PT PL HR AT NL IE = [17.87, 15.93, 11.66, 5.74, 4.38, 4.16, 3.73, 3.53, 2.09, 1.0, 0.7]
+  listings Paris 77679
+  listings London 92799
+  listings Madrid 22835
+  listings Athens 14342
+  listings Barcelona 15406
+  listings Lisbon municipality 17098
+  listings Florence 13508
+  listings Amsterdam 10465
+Canaries / Spain INE: 14.18 %
+2Q26 EMEA nights share %: 39.6 | EMEA revenue share %: 39.5
+gate is GBV-based: Paris 1.0/0.40 = 2.5 % of EMEA GBV; at a 1.4-1.5x city ADR premium that is 1.72 % of EMEA NIGHTS; Rome 1.5/1.45 = 1.03 % -> borderline
+moves >=7%: 41 {'Macro/market': 20, 'Earnings': 11, 'Company/other': 9, 'Competitor/industry': 1}
+2027 median regulatory drag % of revenue: 0.4499 | $/share: 2.7837
+B05 EV level: -1.7 | EV on the surprise (1-P): -0.8
+
+============ B04 host churn: listings disclosure, RNPL precedent, churn panel ============
+1Q23 -> active listings grew 18% compared to the same prior year period, up from 16% in Q4 2022
+2Q23 -> active listings grew 19% year-over-year, with strong growth across all regions, market types and price points
+3Q23 -> Active listings grew 19% in Q3 2023 relative to Q3 2022, and we continued to see double-digit supply growth ac
+4Q23 -> active listings grew by 18% compared to Q4 2022
+1Q24 -> active listings excluding experiences grew 17% year-over-year with sustained double-digit supply growth across
+2Q24 -> active listings, driven by continued growth across all regions and market types
+3Q24 -> active listings, with growth seen across all regions and market types during Q3 2024
+4Q24 -> NO growth/level sentence
+1Q25 -> active listings continued to grow at a healthy pace in Q1 2025, with supply growing approximately in-line with
+2Q25 -> NO growth/level sentence
+3Q25 -> active listings growing approximately in-line with Nights and Seats Booked
+4Q25 -> active listings grew relatively in-line with the year-over-year increase of Nights and Seats Booked
+1Q26 -> active listings grew relatively in-line with the year-over-year increase of Nights and Seats Booked
+2Q26 -> NO growth/level sentence
+D006 2025-11-06 Ellie Mertz | Yes, there are increased cancellations, but we're highly confident that the net impact of the product is a lift to net bookings.
+D009 2025-11-06 Airbnb (shareholder letter) | While we expect some cancellations closer to the date of stay, which may or may not occur in the same booking quarter, we expect a net benefit to over
+D017 2026-02-12 Ellie Mertz | I think one piece of perspective is that in terms of the aggregate nominal increase in cancellations rate, it's approximately 1%.
+D018 2026-02-12 Ellie Mertz | So, you know, an average of maybe 16% cancellation rate historically going to 17% is obviously higher within the cohorts that chooses that product, bu
+-> 'management has never attributed a negative to its own product (0/23)' is false; at least 2 prints (3Q25, 4Q25) do, and 4Q25 quantifies it
+13-market reviewed-home disappearance: [3.32, 4.2] (the >=6% trigger is set against the 4.20 reading)
+London (migrated 22 Jun): ndon is particularly relevant because UK-resident hosts had a June 22 transition. London all-ID disappearance is 4,747/92,638 = 5.12% for June?July and 4,556/91,965 = 4.95% for July?August; reviewed-home rates are 5.63% and 6.38%. June London data st
+migrated listing share: 3Q26 0.62 | 4Q26 0.94
+scenario grid (50% exposure, 50% recapture, no take-rate offset): [(0.02, -0.5, -18.0), (0.05, -1.25, -45.1), (0.1, -2.5, -90.2)]
+B04 base rate as written: 0.0784 | with 3 opportunities: 0.1153 | at 2/23 (Laplace 3/25) over 2 prints: 0.2256
+B04 decomposition replay: 0.1775 | without the convention-1 branch: 0.1475 | with P(churn)=0.35: 0.1825
+B04 EV as booked: -0.96 | conditioned on the churn-bearing half: -0.48
+
+============ Cross-question coherence and JSON checks ============
+B04 bonus-host-churn-cited rev 2 p 0.21 [0.12, 0.33]
+B05 bonus-eu-regulation-hit rev 2 p 0.62 [0.42, 0.78]
+B06 bonus-geopolitical-headwind-cited rev 2 p 0.32 [0.2, 0.45]
+B07 bonus-us-inbound-falls rev 2 p 0.63 [0.47, 0.77]
+C02 q4-nights-bucket rev 2 sum 1.0 | P(bucket <= high single digits) = 0.61
+C07 rnpl-negative-effect-acknowledged rev 2 p 0.27 [0.15, 0.4]
+B01 bonus-moderation-language rev 2 p 0.33 [0.23, 0.45]
+R04 risk-single-fee-take-rate-accretion-stated rev 2 p 0.52 [0.38, 0.66]
+B04 quotes C07 at 0.20; C07 revision 2 is 0.27 -> stale analogue

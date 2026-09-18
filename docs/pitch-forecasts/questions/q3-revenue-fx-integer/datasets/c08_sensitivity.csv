@@ -1,0 +1,14 @@
+assumption,a_ge3,b_eq2,c_le1,d_not_stated
+BASE mixture,0.509,0.299,0.172,0.02
+management + Phi x 0.851 only (kernel view),0.738,0.228,0.014,0.02
+"short-lag view only (free fit 0.6, contemporaneous 0.4)",0.03,0.204,0.746,0.02
+middle cluster only (Phi x 0.653 / H2 PIT 1.85-2.2),0.272,0.478,0.23,0.02
+all component sds doubled,0.491,0.238,0.251,0.02
+all component sds halved,0.533,0.304,0.142,0.02
+management centre 3.5 (2Q26-style +1 overshoot repeats),0.495,0.238,0.168,0.02
+"equal-weight model-only (no management component): Phi 0.29, middle 0.43, free 0.21, contemp 0.07",0.356,0.354,0.27,0.02
+"management weight 0.50, others rescaled",0.557,0.282,0.141,0.02
+"management weight 0.15, others rescaled",0.416,0.332,0.231,0.02
+management weight 0.30 (round-1 weights 0.30/0.20/0.30/0.15/0.05),0.458,0.307,0.215,0.02
+not-stated 5%,0.493,0.29,0.167,0.05
+dollar -5% for the rest of the quarter (basket lag-0 term only; Phi specs unchanged),0.505,0.289,0.234,0.02

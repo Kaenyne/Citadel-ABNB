@@ -1,0 +1,167 @@
+{
+ "object": "Adopted 3Q26 Nights and Seats Booked print-state distribution (A09 revision 2, 2026-09-17). Read this, not the rev-1 N(9.67,1.70).",
+ "provenance": "questions/risk-q3-nights-meets-guide/datasets/a09_v2_print_distribution.py (seed 20260917); audit A09 and response audits/A09-audit-response.md",
+ "parametric": {
+  "form": "normal on latent 3Q26 nights y/y growth (%) over the fixed 133.6m base",
+  "centre": 9.5,
+  "sd": 1.7,
+  "centre_source": "team nowcast +9.5% (brief rule 6; reviews index 9.5-10.0 bias-corrected 9.52; external stack 9.2; module 9.49)",
+  "sd_source": "reviews-index walk-forward RMSE, fresh-vintage W2 range 1.634-1.816 (published 1.475; naive 2.159); partial-to-full gap sd 0.2 adds 0.01",
+  "rounding": "printed millions = round(latent, 1); an event 'printed >= X.Ym' is latent >= X.Ym - 0.05m"
+ },
+ "events": {
+  "R01_printed_ge_147_0m": {
+   "threshold_pct": 9.992514970059885,
+   "p": 0.3860172592084473
+  },
+  "R02_printed_ge_147_8m": {
+   "threshold_pct": 10.59131736526946,
+   "p": 0.2604523723451536
+  },
+  "R03_R01_and_C06a": {
+   "p": 0.1107675,
+   "p_r01_given_a": 0.445135428387719,
+   "c06_p_a": 0.24884
+  }
+ },
+ "print_states_r01_r02": {
+  "p_lt_10_0": 0.6139827407915527,
+  "p_10_0_to_10_6": 0.1255648868632937,
+  "p_ge_10_6": 0.2604523723451536,
+  "note": "R01/R02 thresholds 146.95m / 147.75m"
+ },
+ "print_states_s01": {
+  "decelerating_lt_10_09": 0.6357264364397375,
+  "flat_10_09_to_10_59": 0.10356954603618607,
+  "accelerating_ge_10_59": 0.26070401752407646,
+  "note": "S01 revision 2 dead band on 2Q26's 10.34; the 9.9925-10.09 sliver (R01 Yes but S01 decelerating) has mass 0.0217"
+ },
+ "conditional_means_pct": {
+  "given_r01": 11.18471366076422,
+  "given_r02": 11.619063380970653,
+  "given_not_r01": 8.440803207202821,
+  "given_flat": 10.2837658091695
+ },
+ "sd_sensitivity": [
+  {
+   "sd": 1.0,
+   "p_r01": 0.3111776708937326,
+   "p_r02": 0.13756662962338062,
+   "s01_accel": 0.1378565720320355,
+   "s01_decel": 0.7224046752465351
+  },
+  {
+   "sd": 1.25,
+   "p_r01": 0.34678609868891763,
+   "p_r02": 0.19131685190805858,
+   "s01_accel": 0.1916041887754737,
+   "s01_decel": 0.6815366057053156
+  },
+  {
+   "sd": 1.475,
+   "p_r01": 0.3692368357006949,
+   "p_r02": 0.2297098662458963,
+   "s01_accel": 0.22998093415151977,
+   "s01_decel": 0.6554071078446465
+  },
+  {
+   "sd": 1.634,
+   "p_r01": 0.381519971677833,
+   "p_r02": 0.2520521477687494,
+   "s01_accel": 0.2523095894278764,
+   "s01_decel": 0.6410124418620676
+  },
+  {
+   "sd": 1.7,
+   "p_r01": 0.3860172592084473,
+   "p_r02": 0.2604523723451536,
+   "s01_accel": 0.26070401752407646,
+   "s01_decel": 0.6357264364397375
+  },
+  {
+   "sd": 1.816,
+   "p_r01": 0.3931075992370161,
+   "p_r02": 0.2739233664884738,
+   "s01_accel": 0.27416502152295286,
+   "s01_decel": 0.6273768270948878
+  },
+  {
+   "sd": 1.9,
+   "p_r01": 0.39773336547823845,
+   "p_r02": 0.2828561671000078,
+   "s01_accel": 0.28309075746168355,
+   "s01_decel": 0.6219196246222405
+  },
+  {
+   "sd": 2.159,
+   "p_r01": 0.4097816607994097,
+   "p_r02": 0.3066249192758723,
+   "s01_accel": 0.306839172434469,
+   "s01_decel": 0.6076719847628873
+  },
+  {
+   "sd": 2.5,
+   "p_r01": 0.42191142592470576,
+   "p_r02": 0.3312272265656613,
+   "s01_accel": 0.3314183647853287,
+   "s01_decel": 0.5932836649127312
+  }
+ ],
+ "centre_sensitivity": [
+  {
+   "centre": 9.0,
+   "p_r01": 0.2796665604885955,
+   "p_r02": 0.17461882150552932,
+   "s01_accel": 0.17481837297947433,
+   "s01_decel": 0.7392959824759235
+  },
+  {
+   "centre": 9.2,
+   "p_r01": 0.3205414436645939,
+   "p_r02": 0.20655813773239917,
+   "s01_accel": 0.20677937417000958,
+   "s01_decel": 0.699697055485954
+  },
+  {
+   "centre": 9.5,
+   "p_r01": 0.3860172592084473,
+   "p_r02": 0.2604523723451536,
+   "s01_accel": 0.26070401752407646,
+   "s01_decel": 0.6357264364397375
+  },
+  {
+   "centre": 9.9,
+   "p_r01": 0.4783000450753694,
+   "p_r02": 0.3421298627466256,
+   "s01_accel": 0.34241452250224813,
+   "s01_decel": 0.5444950136166175
+  },
+  {
+   "centre": 10.0,
+   "p_r01": 0.5017565207441853,
+   "p_r02": 0.3639825229689325,
+   "s01_accel": 0.3642735635602625,
+   "s01_decel": 0.5211106118495211
+  },
+  {
+   "centre": 10.3,
+   "p_r01": 0.5717665836093386,
+   "p_r02": 0.43196911171854246,
+   "s01_accel": 0.432273774600456,
+   "s01_decel": 0.4508439427119748
+  }
+ ],
+ "rebasing": {
+  "S01": "YES: print states 0.595/0.085/0.32 -> 0.636/0.104/0.261 and within-band N(9.67,1.70) -> N(9.5,1.70); a one-parameter re-run of s01_joint_v2.py (its rev-1-states sensitivity row already shows the direction: median about -0.3, base-case cell +0.02, breaker cell -0.02)",
+  "S02": "YES for coherence, immaterial: accel 0.32 -> 0.26, flat 0.10 -> 0.13; decomposition median moves about -$0.7, P(<=150) +0.01 (inside its noise floor)",
+  "C02": "NO re-run needed: P(>=10.0) 0.423 -> 0.386 moves (a) by about -0.01 and (d) by +0.01, below its 2-3 point noise floor; note the input change at X01 time",
+  "C04": "NO: R01 is recorded there as an input the log calls immaterial to its 3Q26 revenue draw ($8M on an $80M sd)",
+  "X01": "reads this file; must not use the rev-1 0.42/0.32 or N(9.67,1.70)"
+ },
+ "superseded": {
+  "rev1_r01": 0.4237,
+  "rev1_r02": 0.3159,
+  "rev1_r03": 0.0741,
+  "rev1_distribution": "N(9.67,1.70) calibrated to a 0.60/0.30/0.10 blend of alt data, outside view and Kalshi (withdrawn: A09-01)"
+ }
+}

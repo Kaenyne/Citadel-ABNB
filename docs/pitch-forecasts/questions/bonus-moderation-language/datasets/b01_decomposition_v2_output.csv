@@ -1,0 +1,60 @@
+item,value
+letters n / strict / with synonyms,16 / 6 (0.375) / 8 (0.500)
+W1 (1Q23+) strict / syn / n,5 / 7 / 14
+W2 (1Q24+) strict / syn / n,3 / 4 / 10
+November letters strict / n,2 / 4
+"bucket-era letters (bucket descriptor) strict / n [A14-10: 0/3, not 1/4; 1Q26 is directional]","0 / 3 ['3Q25', '4Q25', '2Q26']"
+P(strict word | down-class descriptor),6/8 = 0.750 (with synonyms 7/8)
+P(word | non-down descriptor) strict / with synonyms,0/8 / 1/8
+P(word | C02 (d)-directional class) strict / with synonyms / Laplace(syn),6/7 / 7/7 / 0.89
+"base rate (unconditional, mean of W1 0.357 and W2 0.300)",0.329
+base rate (conditional route: P(down-class) 0.40 x 6/8 + 0.60 x 0.08),0.348
+"branch masses from the adopted N(9.5, 1.70) [rev 1: 0.423/0.230/0.347 from N(9.67, 1.70)]",0.384 / 0.231 / 0.384
+tree P(Yes) before the resolver path,0.3204
+decomposition P(Yes) incl. resolver path 0.025 x P(No),0.3374
+P(Yes | 3Q26 print >=10) [tree],0.238
+P(Yes | 3Q26 print 9-10) [tree],0.307
+P(Yes | 3Q26 print <9) [tree],0.412
+P(Yes and C02=a) / P(C02=a) [tree],0.011 / 0.185 -> P(Yes|a) 0.06
+P(Yes and C02=b) / P(C02=b) [tree],0.022 / 0.166 -> P(Yes|b) 0.13
+P(Yes and C02=c) / P(C02=c) [tree],0.059 / 0.293 -> P(Yes|c) 0.20
+P(Yes and C02=d) / P(C02=d) [tree],0.219 / 0.325 -> P(Yes|d) 0.68
+P(Yes and C02=e) / P(C02=e) [tree],0.009 / 0.030 -> P(Yes|e) 0.30
+P(Yes and C02=d) [tree] / share of the Yes mass [A14-17],0.219 / 0.68
+P(branch | Yes) >=10 / 9-10 / <9,0.285 / 0.221 / 0.494
+P(3Q26 < 9 | Yes),0.494
+"sens tree: rev-1 published (N(9.67,1.70), .85, .25/.40) (tree / with resolver)",0.325 / 0.342
+"sens tree: auditor (.95, .20/.35, adopted masses) (tree / with resolver)",0.330 / 0.347
+sens tree: dir_mod 0.85 (tree / with resolver),0.311 / 0.328
+sens tree: dir_mod 0.95 (tree / with resolver),0.330 / 0.347
+sens tree: dir_mod 0.70 (tree / with resolver),0.282 / 0.300
+sens tree: bucket_c/d 0.25/0.40 (rev 1) (tree / with resolver),0.342 / 0.358
+sens tree: bucket_c/d 0.10/0.20 (literalism) (tree / with resolver),0.271 / 0.290
+sens tree: bucket_c/d 0.30/0.50 (tree / with resolver),0.370 / 0.385
+sens tree: b/a/dir_other at the non-down synonym rate 0.125 (tree / with resolver),0.331 / 0.348
+"sens masses: Street/Kalshi N(11.0,1.7) (tree / with resolver)",0.269 / 0.288
+"sens masses: external stack N(9.2,1.7) (tree / with resolver)",0.332 / 0.349
+"sens masses: team baseline N(9.9,1.48) (tree / with resolver)",0.303 / 0.320
+"sens masses: rev-1 R01 N(9.67,1.70) (tree / with resolver)",0.314 / 0.331
+sens masses: adopted sd 1.0 (tree / with resolver),0.318 / 0.335
+sens masses: adopted sd 2.16 (naive RMSE) (tree / with resolver),0.322 / 0.339
+sens: C02 P(directional) 0.20 everywhere (tree / with resolver),0.280 / 0.298
+sens: C02 P(directional) 0.40 everywhere (tree / with resolver),0.363 / 0.379
+sens: resolver path 0,0.32
+sens: resolver path 0.05,0.354
+blend 0.5 x decomposition + 0.3 x base rate (unconditional) + 0.2 x anchor C02 (d) 0.31,0.3293
+blend with the conditional base-rate route instead,0.3351
+FINAL (rounded),0.33
+P(Yes and C02=d) scaled to the final / P(Yes and C02!=d),0.226 / 0.104
+"day-1 excess, strict class n 6: values, mean, median, P(<=-8)","[-12.3, -10.0, -5.1, -2.8, -1.6, -0.5], -5.38, -3.95, 2/6"
+"day-1 excess, synonym class n 8: mean, median, P(<=-8)","-6.59, -6.75, 4/8"
+"day-1 excess, no strict word n 10: mean, median; all 16: mean, median","+1.16, +0.30; -1.29, -2.20"
+"E[3Q26 nights | Yes] vs the tree's unconditional (adopted N(9.5,1.70)) [rev 1 measured from the 9.90 team path]",9.15 vs 9.49 -> -0.34pt
+impact: 3Q26 nights pts / 4Q26 nights pts (0.6 persistence),-0.34 / -0.21
+"impact: 3Q26 revenue $M (x48) / 4Q26 revenue $M (x30; kernel-lag term dropped, A14-02) / FY27 revenue $M (0.4 x 158)",-17 / -6 / -22
+impact: FY26 margin pp (costs held) / FY27 margin pp (0.66) / FY27 EPS $,-0.10 / -0.09 / -0.020
+"stock route 1: strict-class median -3.95 vs S01 rev-2 unconditional median -2.1 -> pt, $/share","-1.85, -3.10"
+"stock route 2: strict-class mean vs the 16-print mean, shrunk x0.6 (S01 kappa) -> pt, $/share","-2.45, -4.11"
+"stock vs the S01 rev-2 base case (median -5.1): strict-class median -3.95 -> pt, $/share","+1.15, +1.93"
+EV at P 0.33: route 1 / route 2 ($/share vs the unconditional); incremental to the base case,-1.02 / -1.36; ~0 (positive on the median route)
+prepared-remarks scan: transcripts scanned / Q&A marker found / with >=1 stem hit in prepared remarks,18 / 17 / 11 -> b01_prepared_remarks_scan.csv

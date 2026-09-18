@@ -1,0 +1,12 @@
+view,centre_or_mean,sd,p_ge_4,p_le_1,note
+FY-implied 4Q26 at FY26 +4.4 (mean over the three Q3 cases),2.693,,,,"measured Q1 3.53, Q2 5.60; weights [np.float64(0.23), np.float64(0.26), np.float64(0.27), np.float64(0.24)]"
+AR(1) one step from the Q3 average +5.5,4.2,,,,"phi 0.6, long run 2.25"
+AR(1) one step from the mid-Aug exit rate +4.4,3.54,,,,
+calendar + comp adjustment,-0.4,,,,"election -0.4, CR -0.2, comp credit +0.40 on the AR leg only (=+0.20 on the blend)"
+decomposition (weight 0.5),2.882,1.929,0.2837,0.1626,
+"anchor: CoStar/TE FY26 +4.4 implied Q4, unadjusted (weight 0.3)",2.693,1.907,0.2479,0.185,
+base rate: parsed quarters 2023Q3-2026Q2 (weight 0.2),1.383,2.399,0.2159,0.4773,"1 of 9 >=4, 4 of 9 <=1; Laplace, averaged with the complete-quarter subset"
+blend 0.5/0.3/0.2,,,0.2594,0.2323,
+PUBLISHED joint object (mixture matched to the blend),2.595,2.166,0.2594,0.2323,"trend centre 2.795 sd 2.111, shock 0.10 at N(0.8, 1.8); both tails matched to the blend"
+"rev-1 normal N(3.517, 1.676)",3.517,1.676,0.3866,0.0666,WITHDRAWN
+audit A12 independent number,3.0,1.8,0.289,0.16,"N(3.0,1.8) + B15 shock branch"

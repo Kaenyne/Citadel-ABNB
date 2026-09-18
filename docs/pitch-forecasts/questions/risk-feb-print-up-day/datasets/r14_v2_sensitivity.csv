@@ -1,0 +1,25 @@
+case,p_ge5,p_lt0,p_le_m5,mean,sd,p_accel
+base (revision 2),0.2249,0.553,0.3009,-0.87,9.04,0.142
+"bridge: revision 1 (full cells, uplift 3.0, p_guide 0.33, N(9.55,1.48) x N(8.1,1.6) corr 0.5)",0.2579,0.5108,0.27,-0.11,9.08,0.121
+"bridge: rev-1 cells/uplift, p_guide 0.45 only",0.2881,0.4747,0.2457,0.57,9.15,0.142
+"bridge: ex-Q4 cells + LOO uplift 2.66, p_guide 0.33",0.2051,0.5792,0.3207,-1.37,8.96,0.142
+"bridge: full cells + uplift 1.7 (auditor's equivalent), p_guide 0.45",0.2377,0.5395,0.299,-0.73,9.15,0.142
+no Q4 uplift,0.1463,0.6821,0.4307,-3.53,9.04,0.142
+Q4 uplift at 50% of LOO (+4.4),0.2932,0.461,0.2271,0.9,9.04,0.142
+Q4 uplift at the full LOO premium (+8.85),0.5094,0.2498,0.1018,5.32,9.04,0.142
+Q4 uplift 30% of the S1 gap (+3.1) on ex-Q4 cells,0.2404,0.5307,0.2819,-0.44,9.04,0.142
+cell means unshrunk,0.1943,0.6239,0.3842,-2.24,9.63,0.142
+cell means market-neutral (shrink 0),0.3198,0.4074,0.1833,1.67,8.59,0.142
+"4Q26 nights centred on the Street 9.9 sd 1.2, no tail, corr 0.5 with 3Q26",0.2889,0.5071,0.2824,0.23,9.75,0.539
+"4Q26 at the RNPL module 7.6 (base 7.6, same slope)",0.217,0.558,0.3024,-1.0,8.93,0.087
+"3Q26 at the Street 11.1 (sd 0.85), 4Q26 9.9 sd 1.2, no tail",0.2144,0.5628,0.3063,-1.09,8.94,0.087
+"3Q26 N(9.67,1.70) (R01 rev 2 centre)",0.2218,0.555,0.3015,-0.92,9.0,0.121
+P(1Q27 guide >= Street) 0.60,0.2501,0.5203,0.2763,-0.26,9.1,0.142
+P(1Q27 guide >= Street) 0.30,0.1999,0.5855,0.3255,-1.49,8.94,0.142
+residual sd 8.0 (t5),0.2142,0.5564,0.2918,-0.88,8.58,0.142
+residual sd 9.5 (t5),0.2449,0.5474,0.3172,-0.87,9.99,0.142
+normal residual,0.2553,0.5436,0.3271,-0.89,9.05,0.142
+unconditional centre -2.6 (post-2022 excess mean),0.2059,0.5811,0.3268,-1.43,9.04,0.142
+unconditional centre +1.2 (all-print raw mean),0.2532,0.5132,0.2674,-0.1,9.04,0.142
+"joint bull: Street nights, guide>=Street 0.6, uplift 4.4",0.4074,0.3781,0.1871,3.07,9.88,0.539
+"joint bear: module nights, guide>=Street 0.30, no uplift",0.1233,0.7159,0.4621,-4.22,8.85,0.087

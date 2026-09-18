@@ -1,0 +1,16 @@
+# R08 risk-new-2027-growth-lever — web and API log (2026-09-17)
+
+Budget: 5 WebSearch per question. Used: 4 (one shared recency query). Fetches (WebFetch/curl) do not count.
+
+| # | Time (UTC) | Tool | Query / URL | Result |
+|---|---|---|---|---|
+| 1 | 2026-09-17T03:41:48Z | curl | Polymarket public-search `airbnb`; Kalshi events series KXABNB | copies of the JSON in this folder. No market on Airbnb product announcements, guidance content or 2027 levers. |
+| 2 | 2026-09-17T03:44Z | WebFetch | https://news.airbnb.com/ | Newsroom to 14 Sep 2026: no Winter Release announcement, no new product, no Q3 results date. |
+| 3 | 2026-09-17T03:46Z | curl HEAD | https://www.airbnb.com/release/2025-winter, /2026-winter, /2024-winter, /2026-summer | 404, 404, 200, 404. A 2024 Winter Release page exists; no 2025 or 2026 Winter Release page. (The 2026 Summer Release lives on the newsroom, not under /release.) |
+| 4 | 2026-09-17T03:45Z | WebSearch | `Airbnb Winter Release 2026` | Hits: iTWire "Airbnb 2026 Winter Release" (the Australian-winter naming of the 20 May 2026 release: car rentals, groceries, hotels, World Cup Experiences), rentalscaleup/Hostaway/Hostex on the May 2026 Summer Release, airbnb.com/release/2024-winter, autorank on a "2025 Winter Release". No October/November 2026 release announced. |
+| 5 | 2026-09-17T03:49Z | WebSearch | `Chesky "major announcements" next year Airbnb 2027` | Hits: Investing.com Goldman transcript summary (8 Sep 2026), Time CEO profile, Skift 10 Sep 2025, CNBC 20 May 2026 (hotels, car rentals, "Amazon for services"), StockTwits "next chapter" tease (5 Mar 2026), Inc. Nothing quantifying a 2027 lever. |
+| 6 | 2026-09-17T03:49Z | WebSearch | `Airbnb AI pricing tool hosts 2026` | Hits: third-party pricing-tool listicles (StayFi, Lodgify, PriceLabs, Beyond, Wheelhouse), rentalscaleup "Airbnb AI pricing model". Nothing from Airbnb quantifying the new pricing model's contribution. |
+| 7 | 2026-09-17T03:52Z | WebFetch | https://www.investing.com/news/transcripts/airbnb-at-goldman-sachs-conference-chesky-sees-wider-runway-93CH-4892583 | Published 8 Sep 2026. Verbatim: "We're going to have some major announcements next year. I can't share too much except to say that I think I want to shift Airbnb from a marketplace to much more of a community."; "That is a pretty easy straight shot to $1 billion incremental high margin revenue, based on what other brands have done."; "It took us a year and a half to develop service and experiences. It took us 8 months to develop car rentals."; sponsored listings named as the obvious host service. |
+| 8 | 2026-09-17T03:52Z | WebFetch | https://stocktwits.com/news-articles/markets/equity/airbnb-ceo-brian-chesky-drops-cryptic-next-chapter-tease/chi8gaoRbZ7 | Published 5 Mar 2026: Chesky on X, "Tomorrow we're unveiling Airbnb's next chapter" (reveal 5 Mar 2026). Content of that reveal not verified here; not load-bearing. |
+| 9 | 2026-09-17T03:52Z | WebFetch | https://www.cnbc.com/2026/05/20/airbnb-hotels-car-rentals-ai-rentals.html | HTTP 403. Not retrieved. |
+| 10 | 2026-09-17T03:50Z | WebSearch (shared recency) | `Airbnb news this week` | Chesky CNBC at Goldman (AI, 80% more software), Icons, $250M Housing Accelerator, Q2 recap. No product announcement with a number in the last 72 hours. |

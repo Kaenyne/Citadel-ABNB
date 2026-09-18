@@ -1,0 +1,33 @@
+case,p_yes,p_upgrades_leg,p_target_leg,p_target_leg_dec15_only,mean_upgrades
+base (revision 2),0.4685,0.2046,0.3643,0.3168,1.446
+"bridge: revision-1 parameters, capture 1.0, rev-1 post means",0.4309,0.245,0.2867,0.2493,1.666
+"bridge: rev-2 S02/S04 parameters only (capture 1.0, rev-1 post means)",0.5044,0.273,0.3643,0.3168,1.823
+bridge: rev-2 parameters + capture 0.85 (rev-1 post means),0.4777,0.224,0.3643,0.3168,1.552
+auditor: rev-2 parameters + capture 0.85 + empirical post means 1.67/0.9/0.5/0.2,0.4594,0.1879,0.3643,0.3168,1.349
+capture 1.0,0.4936,0.2511,0.3643,0.3168,1.697
+capture 0.70,0.4435,0.1582,0.3643,0.3168,1.192
+pre-print mean 0.35 (2023-25 off-print rate),0.4363,0.1529,0.3643,0.3168,1.147
+"pre-print mean 1.2 (trailing-12m rate, no pool limit)",0.5191,0.2861,0.3643,0.3168,1.872
+post-print means halved,0.4303,0.1239,0.3643,0.3168,1.02
+post-print means x1.5,0.5061,0.2796,0.3643,0.3168,1.873
+"post-print means flat 0.93 (2023+ print-window mean, no branch)",0.4832,0.2131,0.3643,0.3168,1.494
+no within-branch day-1 modulation,0.4729,0.1871,0.3643,0.3168,1.343
+day-1 modulation 0.12,0.4767,0.2441,0.3643,0.3168,1.849
+Poisson counts,0.4536,0.1893,0.3643,0.3168,1.447
+overdispersion 2.5,0.4728,0.2068,0.3643,0.3168,1.446
+target leg on 15 Dec only (no any-day reading),0.4316,0.2046,0.3168,0.3168,1.446
+"any-day ratio 1.185 (all-history, corrected)",0.4772,0.2046,0.3754,0.3168,1.446
+any-day ratio 1.11 (2023+),0.4586,0.2046,0.3516,0.3168,1.446
+target threshold 192 (feed as-is base: 181.81 needs +4.5%),0.4344,0.2046,0.3204,0.2786,1.446
+A09 rev-2 adopted print states 0.26/0.10/0.15/0.48,0.452,0.1903,0.353,0.307,1.371
+P(accel) 0.40 (Street-like),0.4917,0.2257,0.3808,0.3311,1.551
+P(accel) 0.22 (R02 alt-data leg only),0.4372,0.1776,0.3428,0.2981,1.312
+print chase 0.60,0.4667,0.2046,0.3726,0.324,1.446
+print chase 0.20,0.4814,0.2046,0.3658,0.3181,1.446
+tape residual sd 3.5% (revision 1),0.4415,0.2046,0.3353,0.2915,1.446
+tape residual sd 6.68% (Astra two-regressor),0.4953,0.2046,0.3931,0.3418,1.446
+"day-1 means unshrunk (accel +6, decel-ok -4, decel-below -8)",0.4559,0.2012,0.353,0.307,1.419
+day-1 means market-neutral (all 0),0.5132,0.2086,0.4081,0.3548,1.477
+within-branch day-1 sd 7.5 (revision 1),0.4656,0.2011,0.3602,0.3132,1.423
+"joint bull: accel 0.40, post x1.5, pre 1.2, chase 0.6, capture 1.0",0.6197,0.4576,0.3947,0.3432,2.896
+"joint bear: accel 0.22, post halved, pre 0.35, chase 0.2, capture 0.7, 15 Dec only",0.3394,0.0507,0.308,0.308,0.54

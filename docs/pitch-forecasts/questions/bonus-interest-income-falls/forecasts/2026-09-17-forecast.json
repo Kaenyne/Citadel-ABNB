@@ -1,0 +1,88 @@
+{
+  "question_id": "B10",
+  "slug": "bonus-interest-income-falls",
+  "type": "binary",
+  "revision": 2,
+  "run_date": "2026-09-17",
+  "revised": "2026-09-17",
+  "agent": "fable",
+  "final": {"p": 0.04, "ci": [0.015, 0.08]},
+  "companion": {
+    "threshold_musd": 145.8,
+    "base_4q25_musd": 162,
+    "ii_4q26_median_musd": 177,
+    "ii_4q26_p10_p90": [158, 196],
+    "p_any_yoy_decline_base_regime": 0.15,
+    "p_any_yoy_decline_mixture": 0.19,
+    "p_ge_190": 0.19,
+    "companion_note": "revision 1 published 'P(<=162) ~0.13', which was below its own base regime (0.154); the mixture value is 0.187 (A16-07). The memo sentence this supports is 'interest income more likely than not RISES y/y'.",
+    "avg_base_needed_at_410_and_beta088_busd": 16.2,
+    "rate_needed_at_expected_base_pct": 3.37,
+    "source": "datasets/b10_model.py (rev-1 grid, untouched) re-run at rev-2 parameters; audits/A16-reproduce.py block B10/2"
+  },
+  "estimates": {
+    "base_rate": 0.10,
+    "decomposition": 0.036,
+    "anchor": null,
+    "anchor_source": "NO_EXTERNAL_ANCHOR (A16-13). No market prices Airbnb's interest income; revision 1's 0.11 was M7's own LIVE quantile, i.e. the same rule the decomposition runs, at a pre-hike vintage. The adjacent Kalshi Fed ladders are a genuine external input and set the rate path (claim 6), but they price the Fed, not this line, so they are not an anchor for the question.",
+    "internal_comparison": 0.11,
+    "internal_comparison_source": "M7 below-ebitda LIVE 4Q26 q10-q90 144-196, vintage 2026-09-11, T-bill 3.86 held flat, before the 16 Sep hike -> P(<=145.8) ~0.11.",
+    "final_minus_internal_comparison": -0.07,
+    "audit_independent": 0.04,
+    "final_minus_audit": 0.00,
+    "not_independently_derived_flag": true,
+    "independence_note": "M7's band is the h=2 Gaussian pool with cov80 = 1.00 (over-covering by its own note) and its point pre-dates +25bp (~+$11M); the decomposition re-centres on the post-hike path and on ramped rather than instantaneous cash draws"
+  },
+  "model": {
+    "script": "docs/pitch-forecasts/questions/bonus-interest-income-falls/datasets/b10_model.py",
+    "structure": "II = beta N(0.88,0.045) x r N(4.10,0.15)/100 x avg base/4 x (1 + N(0,5%)); base = cash N(12,100/12,000, 500) + funds held (7,209 / 6,959) x (1 + N(12.7%,3%)) x (1 - U(0,10%)); YES <=> II <= 145.8. Mixture: base 0.885 (0.0133) / ramped upsize $1.5bn 0.07 (0.062) / ramped upsize $3bn 0.03 (0.207) / T-bill 3.25 0.005 (0.665) + 0.010 unmodelled cash-draw and presentation tails = 0.036",
+    "revision_2_changes": "buyback-upsize branches now RAMP the incremental draw (750/1,500 and 1,500/3,000 rather than the full amount at both quarter-ends, since the earning base is the average of the two quarter-ends): conditionals 0.096/0.381 -> 0.062/0.207 (A16-06). Emergency-easing branch 0.02 -> 0.005 (A16-18: the Kalshi ladders are deep and live and price a single December cut at 0.01-0.02, while that branch needs about three). Section 7 recomputed at mixture level (A16-19).",
+    "conventions": "object = income-statement 'Interest income', three months ended 31 Dec 2026, from the release table (else FY26 less 9M); 4Q25 base $162M as printed (FY25 $705M less 9M $543M); gross of interest expense"
+  },
+  "extreme_probability_gate": {
+    "triggered": true,
+    "published_at": 0.04,
+    "residuals": {"restated_or_re_presented_4q25": 0.005, "funds_held_moved_to_a_payment_partner": 0.005, "emergency_easing": 0.0033, "ramped_upsize_1_5bn": 0.0043, "ramped_upsize_3bn": 0.0062, "unmodelled_large_cash_draw": 0.006, "base_regime": 0.0118},
+    "note": "sum ~0.036. Confirmed at 0.04 not 0.03 because the buyback branch is correlated with the memo's own thesis and the cash-draw tail is unmodelled; not 0.05 because the ramp correction is arithmetic, not judgement. The one force pushing below 0.04 is Q4 seasonality in beta (see beta_q4_note)."
+  },
+  "beta_q4_note": "Claim 4 records that both Q4 realisations of the yield ratio are high (0.966 in 4Q24, 0.942 in 4Q25) against the rule's 0.876 and a non-Q4 mean of 0.842, and revision 1 then centred a Q4 question on the non-Q4 parameter. At a Q4-appropriate centre of 0.90 the base regime falls 0.0133 -> 0.0064 and the mixture to ~0.030. M7's registered 0.88 is kept (n = 2 is a thin seasonal) but the bias is one-sided and toward No.",
+  "impact": {
+    "nights_3q26_pts": 0,
+    "nights_4q26_pts": 0,
+    "adr_pts": 0,
+    "rev_4q26_musd": 0,
+    "rev_fy27_musd": 0,
+    "margin_fy26_pp": 0,
+    "margin_fy27_pp": 0,
+    "eps_fy27_usd": -0.13,
+    "stock_usd_per_share": -2,
+    "ev_stock_usd_per_share": -0.08,
+    "material": false,
+    "materiality_note": "immaterial (EV -$0.08/share)",
+    "note": "Below adjusted EBITDA: no margin effect. At $145M vs the team path's $165M (-$20M; FY27 run-rate -$90M vs M7's $765M): 4Q26 EPS -$0.03, FY27 EPS -$0.130 = -$90M x (1-0.175) / 573m shares (run convention for FY27 rows; cross-check, the line-build sensitivity +/-100bp = +/-$0.28); stock -$2 at a cash-yield multiple. EV 0.04 x -2 = -$0.08/share: immaterial. Rates are now a tailwind to this line, so the RNPL cash-timing point belongs on unearned fees (C12), not here."
+  },
+  "sensitivity": [
+    {"assumption": "4Q26 T-bill 4.10 -> 3.97 held (no further hikes)", "moves_to": 0.053},
+    {"assumption": "4Q26 T-bill 4.10 -> 4.30", "moves_to": 0.020},
+    {"assumption": "4Q26 T-bill -> 3.25 (emergency cuts as the base case)", "moves_to": 0.60},
+    {"assumption": "realised yield beta 0.88 -> 0.83", "moves_to": 0.098},
+    {"assumption": "realised yield beta 0.88 -> 0.94 (the 4Q25 realised)", "moves_to": 0.015},
+    {"assumption": "realised yield beta 0.88 -> 0.90 (a Q4-appropriate centre)", "moves_to": 0.030},
+    {"assumption": "funds held flat y/y", "moves_to": 0.076},
+    {"assumption": "RNPL overlay 0-20% rather than 0-10%", "moves_to": 0.054},
+    {"assumption": "buyback draw applied in full at both quarter-ends (revision 1)", "moves_to": 0.043},
+    {"assumption": "tail weights doubled / zero", "moves_to": "0.06 / 0.023"},
+    {"assumption": "residual sd 5% -> 10%", "moves_to": 0.091}
+  ],
+  "monitoring": [
+    {"date": "2026-10-02", "event": "prelim memo due", "action": "quote 0.04 (0.015-0.08); immaterial; note the sign - rates are a tailwind; companion 'any y/y decline' 0.19 on the mixture"},
+    {"date": "2026-10-28", "event": "FOMC", "action": "hike -> 0.03; hold -> 0.04; cut -> 0.13"},
+    {"date": "2026-11-05", "event": "3Q26 release: interest income ($184M rule), cash, funds held, buybacks, authorisation", "action": "<= $165M -> 0.09; funds held y/y <= +5% -> +0.02; new >= $6bn authorisation with an accelerated pace -> +0.04"},
+    {"date": "2026-12-09", "event": "FOMC with SEP", "action": "second hike -> 0.025; cut -> 0.17"},
+    {"date": "2027-01-27", "event": "FOMC", "action": "last catalyst inside the window"},
+    {"date": "2027-02-11", "event": "4Q26 release", "action": "resolve"}
+  ],
+  "audit": {"file": "docs/pitch-forecasts/audits/A16-research-audit.md", "response": "docs/pitch-forecasts/audits/A16-audit-response.md",
+            "findings_b10": 6, "accepted": 6, "accepted_in_part": 0, "rejected": 0},
+  "log": "docs/pitch-forecasts/questions/bonus-interest-income-falls/research-log.md"
+}

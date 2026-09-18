@@ -1,0 +1,104 @@
+{
+ "p": 0.468525,
+ "p_up": 0.20462,
+ "p_T": 0.3642725,
+ "p_T_dec15_only": 0.3167575,
+ "p_both": 0.1003675,
+ "thr_lower": 188.25046805371167,
+ "day1_sd_within_pct": 8.4511256646674,
+ "by_branch": {
+  "accel": 0.6525857834537927,
+  "flat": 0.4944032635192279,
+  "decel_ok": 0.43924381968007753,
+  "decel_below": 0.33995688026494186
+ },
+ "by_branch_up": {
+  "accel": 0.378024154250384,
+  "flat": 0.20513904780856673,
+  "decel_ok": 0.14885118759088706,
+  "decel_below": 0.09690271387610855
+ },
+ "by_branch_T": {
+  "accel": 0.4890572981233286,
+  "flat": 0.38408536888712,
+  "decel_ok": 0.3535821619001454,
+  "decel_below": 0.2739770176257474
+ },
+ "by_branch_T_dec15": {
+  "accel": 0.43467514950217917,
+  "flat": 0.33577931446196707,
+  "decel_ok": 0.306388754241396,
+  "decel_below": 0.23144073259096265
+ },
+ "mean_upgrades": 1.445985,
+ "P_upgrades": {
+  "0": 0.37632,
+  "1": 0.26059,
+  "2": 0.15847,
+  "3": 0.0910275,
+  "4": 0.0505325,
+  "5": 0.02799
+ },
+ "P_upgrades_ge": {
+  "1": 0.62368,
+  "2": 0.36309,
+  "3": 0.20462,
+  "4": 0.1135925,
+  "5": 0.06306
+ },
+ "T_dec_pct": {
+  "5": 163.0423799488921,
+  "10": 167.43005046002787,
+  "25": 174.98241612006728,
+  "50": 183.66255893514182,
+  "75": 192.67457845443803,
+  "90": 201.09703050712088,
+  "95": 206.28536009890735
+ },
+ "S04_check_P_T_le_176_8": 0.2978975,
+ "E_price_dec15_given_yes": 179.9161705829803,
+ "E_price_dec15_uncond": 165.46067661952105,
+ "median_price_dec15_given_yes": 178.08727925241737,
+ "median_price_dec15_uncond": 163.06635823892486,
+ "P_branch_given_yes": {
+  "accel": 0.446614374899952,
+  "flat": 0.1060562403286911,
+  "decel_ok": 0.12087935542393682,
+  "decel_below": 0.32645002934742007
+ },
+ "P_yes_given_day1_ge5": 0.7827534613196215,
+ "P_yes_given_day1_le_m5": 0.23630031684068395,
+ "P_yes_given_day1_mid": 0.5001607799758186
+}
+base (revision 2)                                                                    0.4685  up 0.2046  T 0.3643 (15 Dec only 0.3168)  mean n 1.45
+bridge: revision-1 parameters, capture 1.0, rev-1 post means                         0.4309  up 0.2450  T 0.2867 (15 Dec only 0.2493)  mean n 1.67
+bridge: rev-2 S02/S04 parameters only (capture 1.0, rev-1 post means)                0.5044  up 0.2730  T 0.3643 (15 Dec only 0.3168)  mean n 1.82
+bridge: rev-2 parameters + capture 0.85 (rev-1 post means)                           0.4777  up 0.2240  T 0.3643 (15 Dec only 0.3168)  mean n 1.55
+auditor: rev-2 parameters + capture 0.85 + empirical post means 1.67/0.9/0.5/0.2     0.4594  up 0.1879  T 0.3643 (15 Dec only 0.3168)  mean n 1.35
+capture 1.0                                                                          0.4936  up 0.2511  T 0.3643 (15 Dec only 0.3168)  mean n 1.70
+capture 0.70                                                                         0.4435  up 0.1582  T 0.3643 (15 Dec only 0.3168)  mean n 1.19
+pre-print mean 0.35 (2023-25 off-print rate)                                         0.4363  up 0.1529  T 0.3643 (15 Dec only 0.3168)  mean n 1.15
+pre-print mean 1.2 (trailing-12m rate, no pool limit)                                0.5191  up 0.2861  T 0.3643 (15 Dec only 0.3168)  mean n 1.87
+post-print means halved                                                              0.4303  up 0.1239  T 0.3643 (15 Dec only 0.3168)  mean n 1.02
+post-print means x1.5                                                                0.5061  up 0.2796  T 0.3643 (15 Dec only 0.3168)  mean n 1.87
+post-print means flat 0.93 (2023+ print-window mean, no branch)                      0.4832  up 0.2131  T 0.3643 (15 Dec only 0.3168)  mean n 1.49
+no within-branch day-1 modulation                                                    0.4729  up 0.1871  T 0.3643 (15 Dec only 0.3168)  mean n 1.34
+day-1 modulation 0.12                                                                0.4767  up 0.2441  T 0.3643 (15 Dec only 0.3168)  mean n 1.85
+Poisson counts                                                                       0.4536  up 0.1893  T 0.3643 (15 Dec only 0.3168)  mean n 1.45
+overdispersion 2.5                                                                   0.4728  up 0.2068  T 0.3643 (15 Dec only 0.3168)  mean n 1.45
+target leg on 15 Dec only (no any-day reading)                                       0.4316  up 0.2046  T 0.3168 (15 Dec only 0.3168)  mean n 1.45
+any-day ratio 1.185 (all-history, corrected)                                         0.4772  up 0.2046  T 0.3754 (15 Dec only 0.3168)  mean n 1.45
+any-day ratio 1.11 (2023+)                                                           0.4586  up 0.2046  T 0.3516 (15 Dec only 0.3168)  mean n 1.45
+target threshold 192 (feed as-is base: 181.81 needs +4.5%)                           0.4344  up 0.2046  T 0.3204 (15 Dec only 0.2786)  mean n 1.45
+A09 rev-2 adopted print states 0.26/0.10/0.15/0.48                                   0.4520  up 0.1903  T 0.3530 (15 Dec only 0.3070)  mean n 1.37
+P(accel) 0.40 (Street-like)                                                          0.4917  up 0.2257  T 0.3808 (15 Dec only 0.3311)  mean n 1.55
+P(accel) 0.22 (R02 alt-data leg only)                                                0.4372  up 0.1776  T 0.3428 (15 Dec only 0.2981)  mean n 1.31
+print chase 0.60                                                                     0.4667  up 0.2046  T 0.3726 (15 Dec only 0.3240)  mean n 1.45
+print chase 0.20                                                                     0.4814  up 0.2046  T 0.3658 (15 Dec only 0.3181)  mean n 1.45
+tape residual sd 3.5% (revision 1)                                                   0.4415  up 0.2046  T 0.3353 (15 Dec only 0.2915)  mean n 1.45
+tape residual sd 6.68% (Astra two-regressor)                                         0.4953  up 0.2046  T 0.3931 (15 Dec only 0.3418)  mean n 1.45
+day-1 means unshrunk (accel +6, decel-ok -4, decel-below -8)                         0.4559  up 0.2012  T 0.3530 (15 Dec only 0.3070)  mean n 1.42
+day-1 means market-neutral (all 0)                                                   0.5132  up 0.2086  T 0.4081 (15 Dec only 0.3548)  mean n 1.48
+within-branch day-1 sd 7.5 (revision 1)                                              0.4656  up 0.2011  T 0.3602 (15 Dec only 0.3132)  mean n 1.42
+joint bull: accel 0.40, post x1.5, pre 1.2, chase 0.6, capture 1.0                   0.6197  up 0.4576  T 0.3947 (15 Dec only 0.3432)  mean n 2.90
+joint bear: accel 0.22, post halved, pre 0.35, chase 0.2, capture 0.7, 15 Dec only   0.3394  up 0.0507  T 0.3080 (15 Dec only 0.3080)  mean n 0.54

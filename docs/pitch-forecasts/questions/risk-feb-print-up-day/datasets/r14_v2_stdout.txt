@@ -1,0 +1,70 @@
+{
+ "p_ge5": 0.224945,
+ "p_lt0": 0.5529975,
+ "p_ge10": 0.0973875,
+ "p_le_m5": 0.3009125,
+ "p_le_m8": 0.18394,
+ "p_3_to_5": 0.0779025,
+ "mean": -0.8747415618260445,
+ "sd": 9.042351527413977,
+ "mu_sd": 2.832696160957154,
+ "p_accel": 0.1417925,
+ "p_flat": 0.07625,
+ "p_decel": 0.7819575,
+ "p_ge5_by_state": {
+  "accel": 0.37464957596487825,
+  "flat": 0.13708196721311475,
+  "decel": 0.20636671430352674
+ },
+ "p_ge5_given_guide_ge": 0.316378557806184,
+ "p_ge5_given_guide_below": 0.15024824096407433,
+ "E_r_given_ge5": 10.864957781780094,
+ "E_r_given_le_m5": -10.707664257078708,
+ "up_tail_pts": 2.4440179282225234,
+ "down_tail_pts": -3.222070020758197,
+ "E_x4_given_ge5": 7.924356845571024,
+ "E_x4": 7.788550264021915,
+ "P_x4_ge_9_9_given_ge5": 0.1412789793060526,
+ "P_x4_ge_9_9": 0.1203475,
+ "P_guide_ge_given_ge5": 0.6323879170463891,
+ "P_guide_ge_given_le_m5": 0.31595563494371287,
+ "pct": {
+  "5": -14.884145693354851,
+  "10": -11.295230030733011,
+  "25": -6.189698826190718,
+  "50": -1.0167570809887125,
+  "75": 4.315400323786873,
+  "90": 9.852884553661468,
+  "95": 13.640431225539075
+ }
+}
+base (revision 2)                                                                            p>=5 0.2249  p<0 0.553  p<=-5 0.301  mean -0.87  sd 9.04  P(accel) 0.142
+bridge: revision 1 (full cells, uplift 3.0, p_guide 0.33, N(9.55,1.48) x N(8.1,1.6) corr 0.5) p>=5 0.2579  p<0 0.511  p<=-5 0.270  mean -0.11  sd 9.08  P(accel) 0.121
+bridge: rev-1 cells/uplift, p_guide 0.45 only                                                p>=5 0.2881  p<0 0.475  p<=-5 0.246  mean +0.57  sd 9.15  P(accel) 0.142
+bridge: ex-Q4 cells + LOO uplift 2.66, p_guide 0.33                                          p>=5 0.2051  p<0 0.579  p<=-5 0.321  mean -1.37  sd 8.96  P(accel) 0.142
+bridge: full cells + uplift 1.7 (auditor's equivalent), p_guide 0.45                         p>=5 0.2377  p<0 0.540  p<=-5 0.299  mean -0.73  sd 9.15  P(accel) 0.142
+no Q4 uplift                                                                                 p>=5 0.1463  p<0 0.682  p<=-5 0.431  mean -3.53  sd 9.04  P(accel) 0.142
+Q4 uplift at 50% of LOO (+4.4)                                                               p>=5 0.2932  p<0 0.461  p<=-5 0.227  mean +0.90  sd 9.04  P(accel) 0.142
+Q4 uplift at the full LOO premium (+8.85)                                                    p>=5 0.5094  p<0 0.250  p<=-5 0.102  mean +5.32  sd 9.04  P(accel) 0.142
+Q4 uplift 30% of the S1 gap (+3.1) on ex-Q4 cells                                            p>=5 0.2404  p<0 0.531  p<=-5 0.282  mean -0.44  sd 9.04  P(accel) 0.142
+cell means unshrunk                                                                          p>=5 0.1943  p<0 0.624  p<=-5 0.384  mean -2.24  sd 9.63  P(accel) 0.142
+cell means market-neutral (shrink 0)                                                         p>=5 0.3198  p<0 0.407  p<=-5 0.183  mean +1.67  sd 8.59  P(accel) 0.142
+4Q26 nights centred on the Street 9.9 sd 1.2, no tail, corr 0.5 with 3Q26                    p>=5 0.2889  p<0 0.507  p<=-5 0.282  mean +0.23  sd 9.75  P(accel) 0.539
+4Q26 at the RNPL module 7.6 (base 7.6, same slope)                                           p>=5 0.2170  p<0 0.558  p<=-5 0.302  mean -1.00  sd 8.93  P(accel) 0.087
+3Q26 at the Street 11.1 (sd 0.85), 4Q26 9.9 sd 1.2, no tail                                  p>=5 0.2144  p<0 0.563  p<=-5 0.306  mean -1.09  sd 8.94  P(accel) 0.087
+3Q26 N(9.67,1.70) (R01 rev 2 centre)                                                         p>=5 0.2218  p<0 0.555  p<=-5 0.301  mean -0.92  sd 9.00  P(accel) 0.121
+P(1Q27 guide >= Street) 0.60                                                                 p>=5 0.2501  p<0 0.520  p<=-5 0.276  mean -0.26  sd 9.10  P(accel) 0.142
+P(1Q27 guide >= Street) 0.30                                                                 p>=5 0.1999  p<0 0.586  p<=-5 0.325  mean -1.49  sd 8.94  P(accel) 0.142
+residual sd 8.0 (t5)                                                                         p>=5 0.2142  p<0 0.556  p<=-5 0.292  mean -0.88  sd 8.58  P(accel) 0.142
+residual sd 9.5 (t5)                                                                         p>=5 0.2449  p<0 0.547  p<=-5 0.317  mean -0.87  sd 9.99  P(accel) 0.142
+normal residual                                                                              p>=5 0.2553  p<0 0.544  p<=-5 0.327  mean -0.89  sd 9.05  P(accel) 0.142
+unconditional centre -2.6 (post-2022 excess mean)                                            p>=5 0.2059  p<0 0.581  p<=-5 0.327  mean -1.43  sd 9.04  P(accel) 0.142
+unconditional centre +1.2 (all-print raw mean)                                               p>=5 0.2532  p<0 0.513  p<=-5 0.267  mean -0.10  sd 9.04  P(accel) 0.142
+joint bull: Street nights, guide>=Street 0.6, uplift 4.4                                     p>=5 0.4074  p<0 0.378  p<=-5 0.187  mean +3.07  sd 9.88  P(accel) 0.539
+joint bear: module nights, guide>=Street 0.30, no uplift                                     p>=5 0.1233  p<0 0.716  p<=-5 0.462  mean -4.22  sd 8.85  P(accel) 0.087
+anchor sd 8.0: P(>=5) 0.2498 (mode -0.4)  0.2660 (mean 0)
+anchor sd 8.5: P(>=5) 0.2626 (mode -0.4)  0.2782 (mean 0)
+anchor sd 9.0: P(>=5) 0.2743 (mode -0.4)  0.2893 (mean 0)
+anchor sd 9.5: P(>=5) 0.2849 (mode -0.4)  0.2993 (mean 0)
+base rate: Q4 Laplace 0.500; all-print 0.261; post-2022 Laplace 0.188; blend 0.5*Q4 + 0.5*mean(all, post-2022) = 0.362; auditor 0.5*Q4 + 0.5*0.19 = 0.345
+exit 0

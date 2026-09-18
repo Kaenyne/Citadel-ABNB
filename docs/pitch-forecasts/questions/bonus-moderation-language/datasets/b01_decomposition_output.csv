@@ -1,0 +1,44 @@
+item,value
+letters 3Q22-2Q26 n,16
+strict yes / share,6 / 0.375
+with synonyms yes / share,8 / 0.500
+W1 (1Q23+) strict / syn / n,5 / 7 / 14
+W2 (1Q24+) strict / syn / n,3 / 4 / 10
+P(strict word | down-class descriptor),6/8 = 0.750
+P(strict word | non-down descriptor),0/8; with synonyms 1/8
+decomposition P(Yes),0.3254
+P(Yes | 3Q26 print >=10),0.243
+P(Yes | 3Q26 print 9-10),0.323
+P(Yes | 3Q26 print <9),0.427
+P(Yes and C02=a) / P(C02=a) [tree],0.012 / 0.202 -> P(Yes|a) 0.06
+P(Yes and C02=b) / P(C02=b) [tree],0.022 / 0.167 -> P(Yes|b) 0.13
+P(Yes and C02=c) / P(C02=c) [tree],0.072 / 0.289 -> P(Yes|c) 0.25
+P(Yes and C02=d) / P(C02=d) [tree],0.209 / 0.312 -> P(Yes|d) 0.67
+P(Yes and C02=e) / P(C02=e) [tree],0.009 / 0.030 -> P(Yes|e) 0.30
+P(Yes and C02=d) [tree],0.209
+P(Yes and C02!=d) [tree],0.116
+decomposition on C02 final marginals,0.331
+sens: dir_mod 0.70 (Laplace 7/10),0.297
+sens: dir_mod 0.95,0.344
+sens: bucket_c 0.10,0.282
+sens: bucket_c 0.40,0.369
+sens: bucket_d 0.20,0.301
+sens: bucket_d 0.60,0.35
+sens: b/a at the non-down synonym rate 0.125,0.337
+"sens: Street/Kalshi N(11.0,1.7): .72/.16/.12",0.278
+"sens: external stack N(9.2,1.7): .32/.24/.44",0.343
+"sens: team baseline N(9.9,1.48): .47/.26/.27",0.314
+P(branch | Yes) >=10 / 9-10 / <9,0.316 / 0.228 / 0.456
+E[3Q26 nights y/y | Yes] vs unconditional vs team baseline 9.9,9.31 vs 9.67 vs 9.90
+impact: 3Q26 nights pts vs baseline,-0.59
+impact: 4Q26 nights pts (0.6 persistence),-0.36
+impact: 3Q26 GBV $M,-141.0
+impact: 4Q26 revenue $M (kernel 2/3 x 12.03% + 4Q26 nights x $30M),-22.0
+impact: FY27 revenue $M (0.4 persistence x $158M),-38.0
+"impact: FY26 margin pp (0.59 held, half-year weight)",-0.19
+impact: FY27 margin pp (0.66 held),-0.16
+impact: FY27 EPS $ (0.66 flow x $0.0014),-0.035
+"impact: stock $/share vs S01 unconditional (-2.9), strict-word prints (n 6)",-4.15
+"impact: stock $/share vs S01 base case (-8.6), strict-word prints (n 6)",5.39
+"impact: stock $/share vs S01 unconditional (-2.9), synonym prints (n 8)",-6.18
+"impact: stock $/share vs S01 base case (-8.6), synonym prints (n 8)",3.37

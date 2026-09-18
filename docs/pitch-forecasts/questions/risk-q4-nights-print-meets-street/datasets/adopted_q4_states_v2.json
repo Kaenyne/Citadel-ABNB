@@ -1,0 +1,121 @@
+{
+ "object": "Adopted 4Q26 Nights and Seats Booked print distribution (A12 revision 2, 2026-09-17). R16, B13, F01, F02 and X01 read this file; the revision-1 R16/B13 parameters (Q3 N(9.67,1.70), residual 1.4, C02 rev 1, hand-cut V2) are withdrawn.",
+ "provenance": "questions/risk-q4-nights-print-meets-street/datasets/r16_model_v2.py (seed 20260917, 1,000,000 draws); audit A12 findings 01/07/12/16; response audits/A12-audit-response.md",
+ "parametric": {
+  "form": "three-component mixture on latent 4Q26 nights y/y growth (%) over the fixed 121.9m base; printed millions = round(latent, 1); 134.0m resolves R16 Yes (latent >= 9.926 - 0.041), 131.0m resolves B13 Yes (latent <= 7.465 + 0.041)",
+  "V1_decomposition": {
+   "weight": 0.5,
+   "q3_print": "N(9.5, 1.70) = R01 revision 2 adopted_print_states_v2.json",
+   "q4": "8.1 + 0.5*(Q3 - 9.5) + N(0, 2.0); 12% short tail 5.5 +/- 1.5",
+   "q4_centre_source": "team case B global lap 8.1 (h2_bridge_v3 rebased lines; N memo 2)",
+   "residual_sd_source": "A12-12: Q3->Q4 sequential-change sd 3.74 (n 4) roughly halved for the known-comp structure; a mechanism estimate, not a fitted effect"
+  },
+  "V2_guide_route": {
+   "weight": 0.3,
+   "bucket_vector": "C02 revision 2 (a 0.18, b 0.17, c 0.30, d 0.31, e 0.04)",
+   "print": "bucket midpoint (10.75 / 9.75 / 8.0 / 6.0) + cushion N(1.0, 1.3); no descriptor -> V1 draw",
+   "cushion_source": "judgement between the directional-era record (mean -0.2, sd 1.3 on five stable guides) and the two bucket-era beats (+4.8, +1.15); rev-1 code used 1.2 and the log hand-cut to the equivalent of 0.78; F01 rev 2 used 0.9; one value now"
+  },
+  "V3_street_bar": {
+   "weight": 0.2,
+   "print": "N(9.926, 1.23) = Bloomberg MODL 134.0m +/- 1.5m (n 28, 2026-09-12)"
+  },
+  "mean": 8.6122,
+  "sd": 2.2782,
+  "median": 8.7546,
+  "percentiles": {
+   "5": 4.698,
+   "10": 5.564,
+   "25": 7.06,
+   "50": 8.755,
+   "75": 10.236,
+   "90": 11.44,
+   "95": 12.14
+  }
+ },
+ "events": {
+  "R16_printed_ge_134_0m": {
+   "threshold_pct": 9.926168990976203,
+   "p": 0.307
+  },
+  "B13_printed_le_131_0m": {
+   "threshold_pct": 7.465135356849872,
+   "p": 0.3089
+  },
+  "middle_131_1_to_133_9m": {
+   "p": 0.3841
+  }
+ },
+ "conditional_means_pct": {
+  "given_ge_134_0m": 11.158,
+  "given_le_131_0m": 5.925,
+  "given_not_ge_134_0m": 7.485,
+  "given_middle": 8.739,
+  "q3_given_ge_134_0m": 9.782,
+  "q3_given_le_131_0m": 9.091,
+  "corr_q3_q4": 0.192
+ },
+ "views": {
+  "V1": {
+   "p_ge_134": 0.1813,
+   "p_le_131": 0.4514,
+   "p_mid": 0.3672,
+   "mean": 7.7834,
+   "sd": 2.2872,
+   "median": 7.7921,
+   "e_given_ge_134": 11.1047,
+   "e_given_le_131": 5.7649,
+   "e_given_not_ge_134": 7.0477,
+   "e_given_mid": 8.6246
+  },
+  "V2": {
+   "p_ge_134": 0.3791,
+   "p_le_131": 0.2585,
+   "p_mid": 0.3623,
+   "mean": 9.1258,
+   "sd": 2.2341,
+   "median": 9.0849,
+   "e_given_ge_134": 11.4489,
+   "e_given_le_131": 6.3208,
+   "e_given_not_ge_134": 7.7072,
+   "e_given_mid": 8.6965
+  },
+  "V3": {
+   "p_ge_134": 0.5136,
+   "p_le_131": 0.0248,
+   "p_mid": 0.4616,
+   "mean": 9.9266,
+   "sd": 1.2311,
+   "median": 9.927,
+   "e_given_ge_134": 10.8821,
+   "e_given_le_131": 7.0407,
+   "e_given_not_ge_134": 8.9176,
+   "e_given_mid": 9.0184
+  },
+  "blend_weights": [
+   0.5,
+   0.3,
+   0.2
+  ]
+ },
+ "must_adopt": [
+  "R16 (this log, revision 2)",
+  "B13 bonus-q4-nights-print-weak (batch A17): P(<=131.0m) = 0.309, not 0.26",
+  "F01 q1-27-nights-guide-above-82 and F02: replace the F01 rev-2 object (mean 8.70, sd 2.05, 0.29/0.27) with this one",
+  "X01 scenario MC"
+ ],
+ "superseded": {
+  "R16_rev1": 0.27,
+  "B13_rev1": 0.26,
+  "F01_rev2_object": {
+   "p_ge_134": 0.2897,
+   "p_le_131": 0.272,
+   "mean": 8.7046,
+   "sd": 2.0512
+  },
+  "rev1_model_blend_rows": {
+   "r16_views": 0.3032,
+   "b13_views": 0.2622
+  }
+ }
+}
