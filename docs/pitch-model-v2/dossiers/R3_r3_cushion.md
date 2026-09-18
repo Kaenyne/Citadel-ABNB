@@ -30,6 +30,20 @@ only mildly right-skewed (mean 1.857 vs median 1.790, sd 1.005pp), so the mean i
 an outlier. The median (1.790%) is a defensible, slightly more robust alternative with negligible
 practical difference — see §8.
 
+### 2a. Model inputs (machine-readable)
+
+Decision DEC-0001: the trailing-8 mean 1.857% is the model's cushion.
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| cushion_mean_pct | base | all | 1.857 | % | trailing-8 mean, DEC-0001 cushion |
+| cushion_median_pct | base | all | 1.790 | % | trailing-8 median, alternative |
+| cushion_sd_pp | base | all | 1.005 | pp | trailing-8 sd |
+| cushion_mean_low_pct | base | all | 1.762 | % | bootstrap 2.5th pct of the mean |
+| cushion_mean_high_pct | base | all | 2.314 | % | bootstrap 97.5th pct of the mean |
+| beats_of_19 | base | all | 19 | count | prints beating guide midpoint, of 19 scoreable |
+| beats_top_of_19 | base | all | 15 | count | prints beating top of guide range, of 19 scoreable |
+
 ## 3. Derivation chain
 1. `data/processed/abnb_revenue_guidance_vs_actual.csv` and `data/processed/overnight/02_guidance_ledger.csv` (raw guide ranges + realised actuals, source of truth for the ledger) →
 2. `analysis/src/forecast_methods/guidance_policy/run.py::section_a` rebuilds `data/processed/forecast_methods/guidance_policy/01_guide_history.csv` (20 rows: 19 scoreable 2021Q4..2026Q2 + 1 pending 2026Q3 LIVE) and computes cushion = actual/mid − 1 per quarter →

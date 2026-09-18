@@ -206,6 +206,207 @@
 | actual | 2Q26 | da_musd | 17 | 17 | 17 | $M | 2026-08-06 (10-Q) |
 | actual | 2Q26 | diluted_shares_m | 597.0 | 597.0 | 597.0 | m | 2026-08-06 (10-Q) |
 
+### 2a. Model inputs (machine-readable)
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| nights_m | actual | 1Q23 | 121.1 | m | letter/10-Q KPI box |
+| adr_usd | actual | 1Q23 | 168.43 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 1Q23 | 20400 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 1Q23 | 1818 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 1Q23 | 8.912 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 1Q23 | 262 | $M | letter reconciliation |
+| cor_musd | actual | 1Q23 | 428 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 1Q23 | 267 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 1Q23 | 271 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 1Q23 | 422 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 1Q23 | 191 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 1Q23 | 240 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 1Q23 | 11 | $M | cash-flow statement D&A |
+| shares_m | actual | 1Q23 | 670.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 2Q23 | 115.1 | m | letter/10-Q KPI box |
+| adr_usd | actual | 2Q23 | 166.01 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 2Q23 | 19100 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 2Q23 | 2484 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 2Q23 | 13.005 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 2Q23 | 819 | $M | letter reconciliation |
+| cor_musd | actual | 2Q23 | 432 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 2Q23 | 298 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 2Q23 | 260 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 2Q23 | 450 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 2Q23 | 219 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 2Q23 | 304 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 2Q23 | 9 | $M | cash-flow statement D&A |
+| shares_m | actual | 2Q23 | 665.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 3Q23 | 113.2 | m | letter/10-Q KPI box |
+| adr_usd | actual | 3Q23 | 161.38 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 3Q23 | 18300 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 3Q23 | 3397 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 3Q23 | 18.563 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 3Q23 | 1834 | $M | letter reconciliation |
+| cor_musd | actual | 3Q23 | 459 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 3Q23 | 299 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 3Q23 | 244 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 3Q23 | 370 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 3Q23 | 202 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 3Q23 | 286 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 3Q23 | 8 | $M | cash-flow statement D&A |
+| shares_m | actual | 3Q23 | 660.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 4Q23 | 98.8 | m | letter/10-Q KPI box |
+| adr_usd | actual | 4Q23 | 156.73 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 4Q23 | 15500 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 4Q23 | 2218 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 4Q23 | 14.310 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 4Q23 | 738 | $M | letter reconciliation |
+| cor_musd | actual | 4Q23 | 384 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 4Q23 | 254 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 4Q23 | 253 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 4Q23 | 391 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 4Q23 | 211 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 4Q23 | 290 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 4Q23 | 16 | $M | cash-flow statement D&A |
+| shares_m | actual | 4Q23 | 640.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 1Q24 | 132.6 | m | letter/10-Q KPI box |
+| adr_usd | actual | 1Q24 | 172.88 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 1Q24 | 22900 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 1Q24 | 2142 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 1Q24 | 9.354 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 1Q24 | 424 | $M | letter reconciliation |
+| cor_musd | actual | 1Q24 | 480 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 1Q24 | 266 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 1Q24 | 290 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 1Q24 | 479 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 1Q24 | 223 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 1Q24 | 295 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 1Q24 | 14 | $M | cash-flow statement D&A |
+| shares_m | actual | 1Q24 | 654.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 2Q24 | 125.1 | m | letter/10-Q KPI box |
+| adr_usd | actual | 2Q24 | 169.53 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 2Q24 | 21200 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 2Q24 | 2748 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 2Q24 | 12.962 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 2Q24 | 894 | $M | letter reconciliation |
+| cor_musd | actual | 2Q24 | 506 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 2Q24 | 314 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 2Q24 | 280 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 2Q24 | 527 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 2Q24 | 242 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 2Q24 | 382 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 2Q24 | 14 | $M | cash-flow statement D&A |
+| shares_m | actual | 2Q24 | 649.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 3Q24 | 122.8 | m | letter/10-Q KPI box |
+| adr_usd | actual | 3Q24 | 163.64 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 3Q24 | 20100 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 3Q24 | 3732 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 3Q24 | 18.567 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 3Q24 | 1958 | $M | letter reconciliation |
+| cor_musd | actual | 3Q24 | 465 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 3Q24 | 347 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 3Q24 | 294 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 3Q24 | 471 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 3Q24 | 210 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 3Q24 | 362 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 3Q24 | 15 | $M | cash-flow statement D&A |
+| shares_m | actual | 3Q24 | 642.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 4Q24 | 111.0 | m | letter/10-Q KPI box |
+| adr_usd | actual | 4Q24 | 158.13 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 4Q24 | 17600 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 4Q24 | 2480 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 4Q24 | 14.091 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 4Q24 | 765 | $M | letter reconciliation |
+| cor_musd | actual | 4Q24 | 427 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 4Q24 | 265 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 4Q24 | 306 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 4Q24 | 501 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 4Q24 | 226 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 4Q24 | 368 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 4Q24 | 22 | $M | cash-flow statement D&A |
+| shares_m | actual | 4Q24 | 636.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 1Q25 | 143.1 | m | letter/10-Q KPI box |
+| adr_usd | actual | 1Q25 | 171.34 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 1Q25 | 24500 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 1Q25 | 2272 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 1Q25 | 9.273 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 1Q25 | 417 | $M | letter reconciliation |
+| cor_musd | actual | 1Q25 | 506 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 1Q25 | 282 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 1Q25 | 338 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 1Q25 | 519 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 1Q25 | 235 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 1Q25 | 358 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 1Q25 | 25 | $M | cash-flow statement D&A |
+| shares_m | actual | 1Q25 | 632.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 2Q25 | 134.4 | m | letter/10-Q KPI box |
+| adr_usd | actual | 2Q25 | 174.48 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 2Q25 | 23500 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 2Q25 | 3096 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 2Q25 | 13.174 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 2Q25 | 1043 | $M | letter reconciliation |
+| cor_musd | actual | 2Q25 | 544 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 2Q25 | 309 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 2Q25 | 331 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 2Q25 | 639 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 2Q25 | 244 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 2Q25 | 424 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 2Q25 | 21 | $M | cash-flow statement D&A |
+| shares_m | actual | 2Q25 | 626.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 3Q25 | 133.6 | m | letter/10-Q KPI box |
+| adr_usd | actual | 3Q25 | 171.29 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 3Q25 | 22900 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 3Q25 | 4095 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 3Q25 | 17.882 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 3Q25 | 2051 | $M | letter reconciliation |
+| cor_musd | actual | 3Q25 | 549 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 3Q25 | 343 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 3Q25 | 333 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 3Q25 | 585 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 3Q25 | 257 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 3Q25 | 399 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 3Q25 | 22 | $M | cash-flow statement D&A |
+| shares_m | actual | 3Q25 | 621.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 4Q25 | 121.9 | m | letter/10-Q KPI box |
+| adr_usd | actual | 4Q25 | 167.51 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 4Q25 | 20400 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 4Q25 | 2778 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 4Q25 | 13.618 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 4Q25 | 786 | $M | letter reconciliation |
+| cor_musd | actual | 4Q25 | 487 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 4Q25 | 303 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 4Q25 | 335 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 4Q25 | 633 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 4Q25 | 259 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 4Q25 | 411 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 4Q25 | 23 | $M | cash-flow statement D&A |
+| shares_m | actual | 4Q25 | 614.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 1Q26 | 156.2 | m | letter/10-Q KPI box |
+| adr_usd | actual | 1Q26 | 186.82 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 1Q26 | 29200 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 1Q26 | 2678 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 1Q26 | 9.171 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 1Q26 | 519 | $M | letter reconciliation |
+| cor_musd | actual | 1Q26 | 581 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 1Q26 | 301 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 1Q26 | 375 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 1Q26 | 696 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 1Q26 | 226 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 1Q26 | 410 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 1Q26 | 22 | $M | cash-flow statement D&A |
+| shares_m | actual | 1Q26 | 608.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+| nights_m | actual | 2Q26 | 148.3 | m | letter/10-Q KPI box |
+| adr_usd | actual | 2Q26 | 183.73 | $ | letter/10-Q KPI box |
+| gbv_musd | actual | 2Q26 | 27200 | $M | letter/10-Q KPI box, nearest $0.1bn |
+| revenue_musd | actual | 2Q26 | 3608 | $M | GAAP, XBRL RevenueFromContractWithCustomerExcludingAssessedTax |
+| take_rate_pct | actual | 2Q26 | 13.265 | % | revenue / GBV |
+| adj_ebitda_musd | actual | 2Q26 | 1261 | $M | letter reconciliation |
+| cor_musd | actual | 2Q26 | 633 | $M | GAAP cost of revenue less SBC (cash basis) |
+| ops_musd | actual | 2Q26 | 323 | $M | GAAP ops & support less SBC (cash basis) |
+| pd_musd | actual | 2Q26 | 374 | $M | GAAP product development less SBC (cash basis) |
+| sm_musd | actual | 2Q26 | 808 | $M | GAAP sales & marketing less SBC (cash basis) |
+| ga_musd | actual | 2Q26 | 227 | $M | GAAP G&A less SBC, ex lodging/withholding/transactional-tax reserve (DEC-0003) |
+| sbc_musd | actual | 2Q26 | 487 | $M | letter/10-K reconciliation; DEC-0003 at 4Q23/4Q25 |
+| da_musd | actual | 2Q26 | 17 | $M | cash-flow statement D&A |
+| shares_m | actual | 2Q26 | 597.0 | m | letter statement of operations; DEC-0003 at 4Q23/4Q25 |
+
 ## 3. Derivation chain
 1. SEC EDGAR XBRL company facts (`https://data.sec.gov/api/xbrl/companyfacts/CIK0001559720.json`, public, fetched fresh today) + Airbnb quarterly shareholder letters (8-K Ex. 99.1 KPI box) + 10-Q/10-K MD&A "Key Business Metrics" tables →
 2. `data/processed/abnb_quarterly_costlines.csv` (GAAP revenue, five GAAP cost lines, SBC total, op income — reproduced today, exit 0, exact match) and `data/processed/margin_build/02_financial_panel/02_panel_quarterly.csv` (superset: nights, GBV, ADR, take rate, cash-basis cost lines, SBC by function, D&A, diluted shares — already committed; its generating script did **not** reproduce today, see §5) →

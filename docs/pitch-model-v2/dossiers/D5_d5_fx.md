@@ -58,6 +58,46 @@ The package does not publish a separate confidence set for the ADR-FX line: `23_
 `cs_interval_*` columns are the revenue-FX Object-A confidence set, not an ADR-FX-specific one. "n/a" is
 therefore honest, not a placeholder for a number I didn't look for.
 
+### 2a. Model inputs (machine-readable)
+
+Per DEC-0010: this mapping (base = spot held, short = USD one sigma stronger, breaker = USD one sigma
+weaker) is adopted.
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| revenue_fx_pp | base | 3Q26 | 2.89 | pp | Φ(0,2/3,1/3)×0.851 kernel on basket, spot held from 2026-09-04 |
+| revenue_fx_pp | base | 4Q26 | 0.98 | pp | same, spot held |
+| revenue_fx_pp | base | 1Q27 | 0.93 | pp | same, spot held |
+| revenue_fx_pp | base | 2Q27 | 0.62 | pp | same, spot held |
+| revenue_fx_pp | short | 3Q26 | 2.89 | pp | same, usd_strong_-1sd (-5% parallel shift) |
+| revenue_fx_pp | short | 4Q26 | 0.52 | pp | same, usd_strong_-1sd |
+| revenue_fx_pp | short | 1Q27 | -1.01 | pp | same, usd_strong_-1sd |
+| revenue_fx_pp | short | 2Q27 | -1.92 | pp | same, usd_strong_-1sd |
+| revenue_fx_pp | breaker | 3Q26 | 2.89 | pp | same, usd_weak_+1sd (+5% parallel shift) |
+| revenue_fx_pp | breaker | 4Q26 | 1.45 | pp | same, usd_weak_+1sd |
+| revenue_fx_pp | breaker | 1Q27 | 2.88 | pp | same, usd_weak_+1sd |
+| revenue_fx_pp | breaker | 2Q27 | 3.16 | pp | same, usd_weak_+1sd |
+| adr_fx_pp | base | 3Q26 | 2.89 | pp | Φ on ADR-FX-on-basket contemporaneous fit, spot held |
+| adr_fx_pp | base | 4Q26 | 0.93 | pp | same, spot held |
+| adr_fx_pp | base | 1Q27 | 0.88 | pp | same, spot held |
+| adr_fx_pp | base | 2Q27 | 0.56 | pp | same, spot held |
+| adr_fx_pp | short | 3Q26 | 2.89 | pp | same, usd_strong_-1sd |
+| adr_fx_pp | short | 4Q26 | 0.45 | pp | same, usd_strong_-1sd |
+| adr_fx_pp | short | 1Q27 | -1.11 | pp | same, usd_strong_-1sd |
+| adr_fx_pp | short | 2Q27 | -2.05 | pp | same, usd_strong_-1sd |
+| adr_fx_pp | breaker | 3Q26 | 2.89 | pp | same, usd_weak_+1sd |
+| adr_fx_pp | breaker | 4Q26 | 1.40 | pp | same, usd_weak_+1sd |
+| adr_fx_pp | breaker | 1Q27 | 2.87 | pp | same, usd_weak_+1sd |
+| adr_fx_pp | breaker | 2Q27 | 3.16 | pp | same, usd_weak_+1sd |
+| revenue_fx_pp_low | base | 3Q26 | 0.33 | pp | Object-A 95% confidence-set low, base scenario |
+| revenue_fx_pp_low | base | 4Q26 | 0.31 | pp | Object-A 95% confidence-set low, base scenario |
+| revenue_fx_pp_low | base | 1Q27 | 0.22 | pp | Object-A 95% confidence-set low, base scenario |
+| revenue_fx_pp_low | base | 2Q27 | 0.17 | pp | Object-A 95% confidence-set low, base scenario |
+| revenue_fx_pp_high | base | 3Q26 | 3.49 | pp | Object-A 95% confidence-set high, base scenario |
+| revenue_fx_pp_high | base | 4Q26 | 2.16 | pp | Object-A 95% confidence-set high, base scenario |
+| revenue_fx_pp_high | base | 1Q27 | 1.21 | pp | Object-A 95% confidence-set high, base scenario |
+| revenue_fx_pp_high | base | 2Q27 | 0.95 | pp | Object-A 95% confidence-set high, base scenario |
+
 **Management's own reference point (not this package's output):** the 6 Aug 2026 letter guided 3Q26
 revenue FX at "approximately three percentage points... after factoring in our hedging program" (stated,
 after-hedge). The adopted Φ×0.851 construction gives +2.89pp for the same quarter — within 0.11pp.

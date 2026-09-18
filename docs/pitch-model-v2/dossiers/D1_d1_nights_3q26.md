@@ -25,6 +25,26 @@ All six levels are **recomputed here** from the printed 3Q25 base of 133.6m (`da
 - **Reproduced (exit 0, this machine, this commit):** the 133.6m base and the 2Q26 naive +10.342%; the index's raw read +10.041% and its 8.56–11.52 band; its W2 ratio 0.6832 and W1 ratio 0.8371; its walk-forward bias +0.5185pp (W2, n 10) and +1.6318pp (W1, n 14); the bias-corrected **+9.5226% → 146.32m** that the committed 146.3m is; the re-vintaged W2 ratios 0.757 / 0.841; the external stack (n 12, median +9.23%, range 6.75–11.96); every nights level in the table above from its growth rate.
 - **Inherited (not reproduced here):** the *choice* of +9.5% as the point (no script in my packages emits 9.5 or 146.3 — it is a judgement selection that the recompute now shows is exactly the W2 bias correction); the band widths +8.5/+10.0 (memo v3) and the adopted N(9.5, 1.70) that gives the outer low/high; the +8.5% short and the "low double digits" breaker floor; the RNPL module's independent +9.49% / 146.3m (D2's package, out of my lane); the Bloomberg MODL aggregate (28 estimates, 147.0 / 148.9 / 151.0m, 12 Sep 2026) — licensed, never in the repo as raw.
 
+### 2a. Model inputs (machine-readable)
+
+Per DEC-0004 (base 146.3m / +9.5%; band 8.5–11.0 for pre-registration, P10–P90 of N(9.5, 1.70) for workbook scenarios) and DEC-0005 (Street bar 149.0m). One item per row, same values as the §2 table.
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| nights_m | base | 3Q26 | 146.3 | m nights | bias-corrected index read, 133.6m x 1.0952 |
+| nights_m | short | 3Q26 | 145.0 | m nights | print lands at the low end |
+| nights_m | breaker | 3Q26 | 147.0 | m nights | management delivers "low double digits" |
+| nights_yoy_pct | base | 3Q26 | 9.5 | pct | on the fixed 133.6m 3Q25 base |
+| nights_yoy_pct | short | 3Q26 | 8.5 | pct | on the fixed 133.6m 3Q25 base |
+| nights_yoy_pct | breaker | 3Q26 | 10.0 | pct | guide floor |
+| nights_m_low | base | 3Q26 | 145.0 | m nights | +8.5% |
+| nights_m_low | short | 3Q26 | 143.4 | m nights | P10 of N(9.5, 1.70), +7.3% |
+| nights_m_low | breaker | 3Q26 | 147.0 | m nights | +10.0%, the guide floor is the floor |
+| nights_m_high | base | 3Q26 | 147.0 | m nights | +10.0% |
+| nights_m_high | short | 3Q26 | 146.3 | m nights | +9.5% |
+| nights_m_high | breaker | 3Q26 | 149.2 | m nights | P90 of N(9.5, 1.70), +11.7% |
+| street_nights_m | street | 3Q26 | 149.0 | m nights | Bloomberg MODL 12 Sep, n 28 (DEC-0005) |
+
 ## 3. Derivation chain
 1. Inside Airbnb review dumps, 363 market-vintages across 123 markets, review dates 2018 to 17 Aug 2026 → **raw not on this machine** (Krish's `abnb_ia_capture`); the counted layer is committed →
 2. `data/processed/q3nowcast/E/market_vintage_daily.csv` (697,888 rows, 123 markets, 363 vintages), `market_vintage_monthly.csv`, `market_geo.csv` →

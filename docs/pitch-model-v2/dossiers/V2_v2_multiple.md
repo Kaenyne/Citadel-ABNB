@@ -31,6 +31,27 @@ blended on a growth vintage the final model has since replaced.
 | base | FY27E modelled diluted shares | 574.5982 | 571.3972 (bull) | 580.4293 (bear) | m | `13_model_annual.csv` `shares_end`, FY27 rows; roll-forward from the 597.0M anchor after the 7 Sep 1H26 double-count fix |
 | — | spot-basis diluted shares | 597.0 | — | — | m | 2Q26 **diluted weighted-average** shares (SEC XBRL), used as a *proxy* for a 30 Jun 2026 period-end fully diluted count — `model/assumptions.md` line 28 and "Model conventions" §2 |
 
+### 2a. Model inputs (machine-readable)
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| exit_multiple_x | bear | FY27 | 13.5 | x | WS12 blend 13.361 rounded to the nearest half turn, fit on the 5 Sep scenario growth 4.269%; `12_exit_multiple_recommendation.csv` |
+| exit_multiple_x | base | FY27 | 16.5 | x | WS12 blend 16.554 rounded to the nearest half turn, fit on the 5 Sep scenario growth 12.269%; `12_exit_multiple_recommendation.csv` |
+| exit_multiple_x | bull | FY27 | 18.5 | x | WS12 blend 18.737 rounded to the nearest half turn, fit on the 5 Sep scenario growth 15.270%; `12_exit_multiple_recommendation.csv` |
+| exit_multiple_x | bear_slope | FY27 | 12.29 | x | 13.5 + 0.4860 x (1.7772 − 4.269); slope-corrected to the final 6–7 Sep model growth; `receipts/V2/growth_vintage_reanchoring.csv` |
+| exit_multiple_x | base_slope | FY27 | 16.03 | x | 16.5 + 0.4860 x (11.3086 − 12.269); slope-corrected to the final 6–7 Sep model growth; `receipts/V2/growth_vintage_reanchoring.csv` |
+| exit_multiple_x | bull_slope | FY27 | 20.76 | x | 18.5 + 0.4860 x (19.9224 − 15.270); slope-corrected to the final 6–7 Sep model growth; `receipts/V2/growth_vintage_reanchoring.csv` |
+| slope_turns_per_pt | base | all | 0.4860 | x per pp | descriptive regression: Δ12 EV/LTM adj. EBITDA on Δ12 forward-growth proxy, controls 10y yield + NDX fwd P/E, Newey–West 12 lags, 4 params, n = 35, R² 0.451; `valuation_v1/regression_reproduction.csv` |
+| slope_ci_low | base | all | 0.3172 | x per pp | HAC 95% lower bound, same fit |
+| slope_ci_high | base | all | 0.6548 | x per pp | HAC 95% upper bound, same fit |
+| spot_usd | base | all | 167.51 | USD | 16 Sep 2026 close, memo v3 |
+| net_cash_ex_float_musd | base | all | 9569 | $M | 30 Jun 2026: cash $6.8bn + short-term investments $5.2bn − notes $2.5bn, funds held for clients $12,224M excluded; SEC XBRL 10-Q via `data/processed/abnb_multiples_today.csv` (`model/assumptions.md` line 27 says $9,593M — a $24M disagreement) |
+| diluted_shares_m | base | all | 597.0 | m | 2Q26 diluted weighted-average shares (SEC XBRL), used as a proxy for a 30 Jun 2026 period-end fully diluted count; `data/processed/abnb_multiples_today.csv`, `model/assumptions.md` line 28 |
+
+The last three rows are the **spot basis** memo v3 prices on. The FY27-exit basis the football field uses is
+different — net cash $10,116.0M and 574.5982m shares (`13_model_annual.csv`, base FY27) — and at one price
+the two bases differ by about 1.5 turns. Do not mix them in a row.
+
 **Which of these are regressions and which are judgements.**
 
 - **Descriptive regressions (fitted, with intervals):** the +0.4860 turns-per-point slope and its W1/W2/levels

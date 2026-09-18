@@ -64,6 +64,29 @@ Notes that must travel with the table:
   the pooled chart is 2.3× wider, so a print between $4,608M and $4,761M is a signal on one chart
   and noise on the other. Quote both.
 
+### 2a. Model inputs (machine-readable)
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| lambda_q1_pct | base | all | 12.66 | pct | fixed kernel, 3-cell same-season mean (1Q24-1Q26); DEC-0006 window last3_ex_covid |
+| lambda_q2_pct | base | all | 13.71 | pct | fixed kernel, 3-cell same-season mean (2Q24-2Q26); DEC-0006 window last3_ex_covid |
+| lambda_q3_pct | base | all | 17.24 | pct | fixed kernel, 3-cell same-season mean (3Q23-3Q25); DEC-0006 window last3_ex_covid |
+| lambda_q4_pct | base | all | 12.03 | pct | fixed kernel, 3-cell same-season mean (4Q23-4Q25); DEC-0006 window last3_ex_covid |
+| w1 | base | all | 0.6667 | weight | fixed rule, GBV[q-1]; PIT-optimal band 0.65-0.75 on W1 and W2 |
+| w2 | base | all | 0.3333 | weight | fixed rule, GBV[q-2]; complement of w1 |
+| joint_w0 | base | all | 0.3590 | weight | joint rule GBV[t], labelled sensitivity only (DEC-0006); GD audit origin 2026-09-15 |
+| joint_w1 | base | all | 0.4729 | weight | joint rule GBV[t-1], labelled sensitivity only (DEC-0006); GD audit origin 2026-09-15 |
+| joint_w2 | base | all | 0.1681 | weight | joint rule GBV[t-2], labelled sensitivity only (DEC-0006); GD audit origin 2026-09-15 |
+| joint_w3 | base | all | 0.0 | weight | joint rule mean(GBV[t-3],GBV[t-4]), labelled sensitivity only (DEC-0006) |
+| lambda_q3_centre_pct | base | all | 17.239 | pct | 5 Nov control chart centre; 3Q26 identity at base 27866.7 musd = 4804 musd |
+| lambda_q3_warn_pct | base | all | 17.086 | pct | warning, 1 sigma on Q3's own sd (n=3) = 4761 musd |
+| lambda_q3_escalate_pct | base | all | 16.934 | pct | escalate, 2 sigma on Q3's own sd (n=3) = 4719 musd |
+
+Scope after DEC-0006 / DEC-0007: these inputs drive **forward revenue only**. The kernel no longer
+produces the guide - the guide mechanism is Theo's C1 log model - so the guide-midpoint figures
+elsewhere in this dossier (for example 3,141 musd at GBV_3Q26 = 26,300) are retained as the
+historical record of what this package computed, not as the model's guide.
+
 ## 3. Derivation chain
 
 1. Printed 10-Q / 10-K revenue and GBV, 2020Q3–2026Q2 (24 quarters). Filing basis: *"The entire

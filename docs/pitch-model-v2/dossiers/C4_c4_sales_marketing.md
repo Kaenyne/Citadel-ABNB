@@ -51,6 +51,51 @@
 
 **The number that answers the judge.** At $4,804M of 3Q26 revenue, **$48.0M of S&M is 1.0pp of margin**; at $15,829M of FY27 revenue, **$158.3M is 1.0pp**. The FY27 spread between the calibrated run and the Street-implied residual is $393M = **2.48pp of FY27 margin**; between the line build and the Street it is $132M = **0.83pp**. The FY27 adj. EBITDA gap being argued about is $283M (CC $5,483M vs Street $5,766M).
 
+### 2a. Model inputs (machine-readable)
+
+Per DEC-0011: the workbook's cost stack is the line build (`40_line_build`), management's 3Q26 sentence is treated as a budget (base 3Q26 S&M $778M), the calibrated combination's dollar object is reserved for the 5 Nov card, and the evidence-only $710M case is carried as the upside risk. `sm_pct_rev` is S&M over each scenario's own revenue path; `sm_yoy_pct` is against the prior-year actual (3Q25 585, 4Q25 633, FY25 cash S&M 2,376) and, for FY27, against that scenario's own FY26.
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| sm_musd | base (line build) | 3Q26 | 778.3 | USD m | 40_lines_quarterly.csv sm_cash, scenario base |
+| sm_musd | base (line build) | 4Q26 | 758.1 | USD m | 40_lines_quarterly.csv sm_cash, scenario base |
+| sm_musd | base (line build) | FY26 | 3040.4 | USD m | 40_annual.csv sm_cash, FY26 base |
+| sm_musd | base (line build) | FY27 | 3459.6 | USD m | 40_annual.csv sm_cash, FY27 base |
+| sm_musd | short | 3Q26 | 778.3 | USD m | 40_short_case_quarterly.csv, costs at budget |
+| sm_musd | short | 4Q26 | 758.1 | USD m | 40_short_case_quarterly.csv, costs at budget |
+| sm_musd | short | FY26 | 3040.4 | USD m | 1H26 actual 1504 plus 2H26 short |
+| sm_musd | short | FY27 | 3459.6 | USD m | dollars equal base by construction |
+| sm_musd | breaker (ramp pauses) | 3Q26 | 785.4 | USD m | 40_lines_quarterly.csv sm_cash, scenario cost_bull |
+| sm_musd | breaker (ramp pauses) | 4Q26 | 713.7 | USD m | 40_lines_quarterly.csv sm_cash, scenario cost_bull |
+| sm_musd | breaker (ramp pauses) | FY26 | 3003.1 | USD m | 40_annual.csv sm_cash, FY26 cost_bull |
+| sm_musd | breaker (ramp pauses) | FY27 | 3285.6 | USD m | 40_annual.csv sm_cash, FY27 cost_bull |
+| sm_pct_rev | base (line build) | 3Q26 | 16.20 | pct | on revenue 4804.0 |
+| sm_pct_rev | base (line build) | 4Q26 | 23.85 | pct | on revenue 3178.1 |
+| sm_pct_rev | base (line build) | FY26 | 21.31 | pct | on revenue 14268.1 |
+| sm_pct_rev | base (line build) | FY27 | 21.86 | pct | on revenue 15828.6 |
+| sm_pct_rev | short | 3Q26 | 16.63 | pct | on revenue 4680.9 |
+| sm_pct_rev | short | 4Q26 | 25.56 | pct | on revenue 2965.9 |
+| sm_pct_rev | short | FY26 | 21.82 | pct | on revenue 13932.8 |
+| sm_pct_rev | short | FY27 | 23.20 | pct | on revenue 14913.5 |
+| sm_pct_rev | breaker (ramp pauses) | 3Q26 | 16.35 | pct | base revenue path 4804.0 |
+| sm_pct_rev | breaker (ramp pauses) | 4Q26 | 22.46 | pct | base revenue path 3178.1 |
+| sm_pct_rev | breaker (ramp pauses) | FY26 | 21.05 | pct | base revenue path 14268.1 |
+| sm_pct_rev | breaker (ramp pauses) | FY27 | 20.76 | pct | base revenue path 15828.6 |
+| sm_yoy_pct | base (line build) | 3Q26 | 33.05 | pct | vs 3Q25 585 |
+| sm_yoy_pct | base (line build) | 4Q26 | 19.76 | pct | vs 4Q25 633 |
+| sm_yoy_pct | base (line build) | FY26 | 27.96 | pct | vs FY25 2376 |
+| sm_yoy_pct | base (line build) | FY27 | 13.79 | pct | vs FY26 3040.4 |
+| sm_yoy_pct | short | 3Q26 | 33.05 | pct | vs 3Q25 585 |
+| sm_yoy_pct | short | 4Q26 | 19.76 | pct | vs 4Q25 633 |
+| sm_yoy_pct | short | FY26 | 27.96 | pct | vs FY25 2376 |
+| sm_yoy_pct | short | FY27 | 13.79 | pct | vs FY26 3040.4 |
+| sm_yoy_pct | breaker (ramp pauses) | 3Q26 | 34.26 | pct | vs 3Q25 585 |
+| sm_yoy_pct | breaker (ramp pauses) | 4Q26 | 12.75 | pct | vs 4Q25 633 |
+| sm_yoy_pct | breaker (ramp pauses) | FY26 | 26.39 | pct | vs FY25 2376 |
+| sm_yoy_pct | breaker (ramp pauses) | FY27 | 9.41 | pct | vs FY26 3003.1 |
+| card_sm_musd | base | 3Q26 | 781.1 | USD m | calibrated combination 23_lines_quarterly.csv sm_cash_musd; 5 Nov card only |
+| sm_evidence_only_musd | alt_floor | 3Q26 | 710.2 | USD m | 40_lines_quarterly.csv sm_cash, scenario evidence_only; upside risk |
+
 ## 3. Derivation chain
 1. Filing facts → FY25 10-K S&M split (brand & performance marketing $1,595M; field operations & policy $993M, cash $781M after $212M of S&M SBC); 1Q26/2Q26 10-Q marketing +$126M / +$132M ("paid growth initiatives in emerging markets and partnerships"); 2Q26 call "some incremental investment … in sales and marketing" in 2H; 6 Aug 2026 guide $4,690–4,770M and "adjusted EBITDA margin down slightly vs 3Q25". All quoted with their source in `data/processed/margin_build/40_line_build/40_params.csv` (rows `sm|*`, `recon|*`).
 2. `data/processed/margin_build/02_financial_panel/02_panel_quarterly.csv` → `sm_cash` = GAAP S&M less S&M SBC (3Q25 585, 4Q25 633, 1Q26 696, 2Q26 808) ; `data/processed/abnb_quarterly_costlines.csv` ties FY25 GAAP S&M to $2,588M on $12,241M.

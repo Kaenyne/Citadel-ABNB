@@ -31,6 +31,31 @@ vendor is "the" Street.
 | street | 4Q26 | nights bar | 134.0 | 130.0 | 136.0 | m | 2026-09-12 | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=28. Clean: matches the brief's figure exactly, mean growth +9.93% on the 121.9m 4Q25 base. No free vendor page carries this metric. |
 | street | 3Q26 | nights bar | 148.9 | 147.0 | 151.0 | m | 2026-09-12 (label) / 2026-09-04 (level) | Duplicate of the nights row above, listed again because the brief names it as its own object. Same conflict applies. |
 
+### 2a. Model inputs (machine-readable)
+
+Per DEC-0005 (coordinator decision): the 3Q26 Street nights bar is **149.0m**, the value in the
+12-Sep MODL capture cited above, not the 148.9m the memo currently prints (§4/§7 unresolved-conflict
+note above is left as written — it is the investigative record; this table reflects the decision).
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| street_revenue_musd | street | 3Q26 | 4744 | musd | LSEG-family: LSEG desktop pull as-of 2026-09-11 (pulled 13 Sep) $4744.3M n=37; Yahoo 13 Sep 2026 15:20 UTC $4744.9M n=36; Alpha Vantage 11 Sep 2026 $4737.5M n=36 |
+| street_revenue_musd | street | 4Q26 | 3161 | musd | LSEG-family: LSEG desktop pull as-of 2026-09-11 (pulled 13 Sep) $3161.8M n=37; Yahoo 13 Sep 2026 15:20 UTC $3161.0M n=36 |
+| street_revenue_musd | street | FY26 | 14160 | musd | LSEG-family: LSEG desktop pull as-of 2026-09-11 (pulled 13 Sep) $14189.6M n=44; Yahoo 13 Sep 2026 15:20 UTC $14164.6M n=43 |
+| street_revenue_musd | street | FY27 | 15798 | musd | LSEG-family: Yahoo 13 Sep 2026 15:20 UTC $15798.2M n=43; LSEG desktop pull as-of 2026-09-11 (pulled 13 Sep) $15819.3M n=44 |
+| street_nights_m | street | 3Q26 | 149.0 | m | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=28, per DEC-0005 |
+| street_nights_m | street | 4Q26 | 134.0 | m | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=28 |
+| street_adr_usd | street | 3Q26 | 177.06 | usd | Bloomberg MODL, screenshot 12 Sep 2026 (Krish), n=26 |
+| street_ebitda_musd | street | 3Q26 | 2362 | musd | LSEG desktop pull, as-of trading day 2026-09-11 (pulled 13 Sep 2026), mean $2361.5M, n=36 |
+| street_ebitda_musd | street | FY27 | 5766 | musd | LSEG desktop pull, as-of trading day 2026-09-11 (pulled 13 Sep 2026), mean $5766.1M, n=44 |
+| street_eps_usd | street | 3Q26 | 2.85 | usd | LSEG desktop pull, as-of trading day 2026-09-11 (pulled 13 Sep 2026), mean $2.8454, n=34 |
+| street_eps_usd | street | FY27 | 6.23 | usd | LSEG desktop pull, as-of trading day 2026-09-11 (pulled 13 Sep 2026), mean $6.2275, n=43 |
+| street_margin_pct | street | FY27 | 36.45 | pct | Implied basis (mean adj. EBITDA ÷ mean revenue), LSEG desktop pull as-of 2026-09-11, pulled 13 Sep 2026 |
+| street_margin_field_pct | street | FY27 | 35.06 | pct | LSEG's own separately-averaged EBITDA-margin-mean field, a different basis from street_margin_pct; LSEG desktop pull as-of 2026-09-11, pulled 13 Sep 2026 |
+| street_revenue_musd | street_zacks | 4Q26 | 3200 | musd | Zacks, 11 Sep 2026 15:44 ET, n=10, unchanged since the 4 Sep 2026 vintage |
+| street_revenue_musd | street_zacks | FY26 | 14100 | musd | Zacks, 11 Sep 2026 15:44 ET, n=8, unchanged since the 4 Sep 2026 vintage |
+| street_revenue_musd | street_zacks | FY27 | 15740 | musd | Zacks, 11 Sep 2026 15:44 ET, n=13, drifted +$10M from the 4 Sep 2026 vintage |
+
 ## 3. Derivation chain
 1. Vendor pages / terminal screens — Zacks detailed-estimates page, Yahoo Finance analysis tab,
    Alpha Vantage `EARNINGS_ESTIMATES` (MCP), StockAnalysis/S&P Global MI forecast page, LSEG/Refinitiv

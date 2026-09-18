@@ -97,6 +97,37 @@ Headline, restated compactly (midpoint FX, `v3_with_K`):
 
 Comparators, never inputs: 3Q26 Bloomberg MODL ADR mean $177.06 / +3.4% (12 Sep, memo v3); Zacks 3Q26 revenue at our nights and take rate implies $180.59 / +5.43%; the naive the harness scores against is the last disclosed ex-FX, +4% (2Q26 letter, whole points). The pre-registered `without_K` variant, which is what memo v3 quotes, is 3Q26 $176.88 / +3.26% and 4Q26 $173.94 / +3.84%.
 
+### 2a. Model inputs (machine-readable)
+
+Authoritative for the model. **DEC-0008** makes the card **without** the fee-migration term K the base ($176.88 at 3Q26), with the `with_K` card carried as a labelled sensitivity (scenario `alt_with_k`). **DEC-0009** carries the residual at 4.849pp in base and breaker and uses **lap-only 3.056pp** as the short scenario. Where this differs from the table above — which was written before the decisions, on a `with_K` base and on K4's 3Q26 floor of 2.398pp (mean reversion) — **this block governs.** Both `base` totals are committed cells of `data/processed/adrv3/P/adr_card_v3.csv` (`variant=v3_without_K`, `fx_estimator=midpoint`), so the 4Q26 without-K total is read, not derived. `short` and `breaker` are derived from the same card terms by the arithmetic in §3 step 7 (mix −1.158pp, FX −0.43 / +0.15), holding every measured and assumed mix term at its card point. One consequence of DEC-0009 worth stating: applying the 4Q26 lap-only residual to 3Q26 gives a short case of $173.80 / +1.47% reported, which is **milder** than K4's own 3Q26 floor (mean reversion to the 2023–25 mean of 2.398pp → $172.97 / +0.98%, the figure SYNTHESIS §4.2 quotes); the deeper downside is not represented in this block.
+
+| item | scenario | period | point | unit | note |
+|---|---|---|---|---|---|
+| adr_total_usd | base | 3Q26 | 176.88 | USD | committed cell adr_card_v3.csv, variant v3_without_K, fx_estimator midpoint; DEC-0008 base excludes the K line |
+| adr_exfx_yoy_pct | base | 3Q26 | 3.69 | pct | committed cell adr_card_v3.csv, variant v3_without_K, fx_estimator midpoint; DEC-0008 base excludes the K line |
+| adr_total_usd | short | 3Q26 | 173.80 | USD | DEC-0009 lap-only residual 3.056pp, no K line; derived from the card terms (mix -1.158, FX -0.43) |
+| adr_exfx_yoy_pct | short | 3Q26 | 1.90 | pct | DEC-0009 lap-only residual 3.056pp, no K line |
+| adr_total_usd | breaker | 3Q26 | 178.47 | USD | DEC-0009 residual 4.849pp plus the K line at K2's pre-stated coefficient ceiling (0.931pp) |
+| adr_exfx_yoy_pct | breaker | 3Q26 | 4.62 | pct | DEC-0009 residual 4.849pp plus K at its ceiling (0.931pp) |
+| adr_total_usd | alt_with_k | 3Q26 | 177.17 | USD | labelled sensitivity per DEC-0008: committed cell, variant v3_with_K, midpoint FX; K line +0.172pp |
+| adr_exfx_yoy_pct | alt_with_k | 3Q26 | 3.86 | pct | labelled sensitivity per DEC-0008: committed cell, variant v3_with_K, midpoint FX |
+| adr_total_usd | base | 4Q26 | 173.94 | USD | committed cell adr_card_v3.csv, variant v3_without_K, fx_estimator midpoint; DEC-0008 base excludes the K line |
+| adr_exfx_yoy_pct | base | 4Q26 | 3.69 | pct | committed cell adr_card_v3.csv, variant v3_without_K, fx_estimator midpoint; DEC-0008 base excludes the K line |
+| adr_total_usd | short | 4Q26 | 170.94 | USD | DEC-0009 lap-only residual 3.056pp, no K line; derived from the card terms (mix -1.158, FX +0.15) |
+| adr_exfx_yoy_pct | short | 4Q26 | 1.90 | pct | DEC-0009 lap-only residual 3.056pp, no K line |
+| adr_total_usd | breaker | 4Q26 | 177.35 | USD | DEC-0009 residual 4.849pp plus the K line at K2's pre-stated coefficient ceiling (2.033pp) |
+| adr_exfx_yoy_pct | breaker | 4Q26 | 5.72 | pct | DEC-0009 residual 4.849pp plus K at its ceiling (2.033pp) |
+| adr_total_usd | alt_with_k | 4Q26 | 174.57 | USD | labelled sensitivity per DEC-0008: committed cell, variant v3_with_K, midpoint FX; K line +0.374pp |
+| adr_exfx_yoy_pct | alt_with_k | 4Q26 | 4.07 | pct | labelled sensitivity per DEC-0008: committed cell, variant v3_with_K, midpoint FX |
+| geo_mix_pp | base | 3Q26 | -1.428 | pp | measured, unvalidated mapping (E_aug regional stays split x the 07/H method) |
+| unit_size_pp | base | 3Q26 | 0.797 | pp | measured level term, not validated as a timing signal (booked capacity per reviewed stay, 119 markets, x 0.592) |
+| los_pp | base | 3Q26 | 0.056 | pp | measured but unvalidated (28+ share of blocked runs, 30 markets) |
+| seats_pp | base | 3Q26 | -0.483 | pp | assumed (15_seats_dilution_quarterly base case, as J3) |
+| interaction_pp | base | 3Q26 | -0.100 | pp | descriptive (07 interaction, as J3) |
+| fee_k_pp | base | 3Q26 | 0.000 | pp | zero in base by DEC-0008; the labelled sensitivity is +0.172pp (K's imposed coefficient 0.007 x +24.5pp of migrated share; K2 range 0.000 to 0.931) |
+| residual_pp | base | 3Q26 | 4.849 | pp | UNOBSERVED like-for-like pricing residual, DEC-0009: the v3 last_q rule carries the 2Q26 value; unidentified, not measured |
+| fx_pp | base | 3Q26 | -0.430 | pp | assumed ADR-FX estimator, N's midpoint of the euro fit -1.12 and the regional baskets +0.26; D5 owns FX |
+
 ## 3. Derivation chain
 1. Filings → 2Q26 shareholder letter (8-K exh. 99.1, filed 6 Aug 2026): ADR $184, +5% y/y, **+4% ex-FX**, Nights and Seats Booked +10%, Bedroom Nights Booked "**over 12%**", ADR "due to price appreciation and mix" (no split given). 10-K Geographic Mix tables → regional nights/GBV/ADR 2020–2025.
 2. `data/processed/q3nowcast/H/adr_history_components.csv` — the disclosed quarterly identity 1Q23–2Q26: `adr_usd`, `adr_yoy_reported_pp`, `fx_effect_pp`, `adr_exfx_yoy_pp`, `geo_mix_pp`, `unit_size_pp`, `los_mix_pp`, `new_business_pp`, `interaction_pp`, **`residual_pricing_pp`** (2Q26 = 4.849326, the number the base case carries forward).
