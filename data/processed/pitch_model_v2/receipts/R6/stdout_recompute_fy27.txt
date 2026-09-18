@@ -1,0 +1,49 @@
+========================================================================================
+1. FY27 recomputed as the SUM of the four committed 2027 quarters (06 v2b)
+========================================================================================
+base  FY26 sum 14268.1433 (published 14268.1434, d -0.0001) | FY27 sum 15828.6066 (published 15828.6067, d -0.0001) | y/y own-base 10.9367% (published 10.9367%, d -0.0000pp)
+bear  FY26 sum 14164.8070 (published 14164.8070, d +0.0000) | FY27 sum 14948.3339 (published 14948.3339, d +0.0000) | y/y own-base  5.5315% (published  5.5315%, d +0.0000pp)
+bull  FY26 sum 14391.9366 (published 14391.9366, d +0.0000) | FY27 sum 16570.7436 (published 16570.7437, d -0.0001) | y/y own-base 15.1391% (published 15.1391%, d -0.0000pp)
+
+quarterly revenue_yoy_pct as the path carries them:
+scenario     base     bear     bull
+quarter                            
+3Q26      17.3147  16.1172  19.1209
+4Q26      14.4027  12.4481  16.1964
+1Q27      14.0078  11.8433  16.5025
+2Q27      11.6680   5.4247  16.1282
+3Q27       9.9228   2.7581  15.7349
+4Q27       9.0512   2.8524  14.6538
+
+========================================================================================
+2. Short case (40_line_build) — FY27 sum and the two possible y/y bases
+========================================================================================
+short FY27 sum      14913.5115  (40_short_case_summary fy27_revenue 14913.5115, d +0.0000)
+short FY26 sum      13932.7677  (40_short_case_summary fy26_revenue 13932.7677, d +0.0000)
+y/y on the SHORT's OWN FY26   :  7.0391%
+y/y on the BASE FY26 14268.1434 :  4.5231%   <-- this is the published '+4.5%'
+gap between the two bases     :  2.5160pp
+
+short-case quarterly y/y, each quarter on the SHORT's own prior-year quarter:
+  1Q27  2835.5346  on 2678.0000  ->  5.8825%
+  2Q27  3762.9716  on 3608.0000  ->  4.2952%
+  3Q27  4988.1742  on 4680.9000  ->  6.5644%
+  4Q27  3326.8311  on 2965.8677  -> 12.1706%
+
+========================================================================================
+3. B3 / l1-reconciliation-v2 kernel-weight band (the pre-registered band)
+========================================================================================
+ kernel_w  fy26_revenue_musd  fy27_revenue_musd  fy27_growth_pct  gbv_growth_pct  kappa_pct  sd_growth_pp
+   0.3300         14398.5470         15720.2552           9.1795         11.5111    -2.0909        3.6759
+   0.5000         14298.8907         15779.4914          10.3547         11.5111    -1.0371        3.6952
+   0.6667         14201.1886         15837.5661          11.5228         11.5111     0.0105        3.7144
+band: 9.1795% to 11.5228%  (span 2.3434pp)
+
+========================================================================================
+4. Later audit (docs/rnpl-short-audit 02): lambda re-fit, and the lap-aware band
+========================================================================================
+  lambda_REFIT_at_this_w (B3 caveat 1)          span 11.4803% .. 11.5228%  = 0.0425pp
+  lambda_fixed_at_w=2/3 (B3 convention)         span  9.1795% .. 11.5228%  = 2.3434pp
+  B3 at w=2/3 + RNPL lap band: 8.4094% .. 10.2432%  = 1.8338pp
+
+wrote /Users/theomachado/Citadel-ABNB/data/processed/pitch_model_v2/receipts/R6/recompute_fy27.csv  (35 rows)

@@ -1,0 +1,55 @@
+{
+  "id": "D2",
+  "commit": "e6d98321b58f0f226ba1225408462d22edbb4a3f",
+  "cmd": ".venv/bin/python analysis/src/forecast_methods/rnpl_v2/run.py --as-of 2026-09-13",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T15:51:35+00:00",
+  "exit_code": 0,
+  "wall_s": 1.9,
+  "watch": [
+    "data/processed/forecast_methods/rnpl_v2",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/rnpl_v2/filing_evidence.json"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 2026.0,
+      "rows_head": 7,
+      "rows_new": 7,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/rnpl_v2/input_manifest.csv"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/rnpl_v2/lambda_control_chart.png"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 9.8879238130678e-17,
+      "rows_head": 28,
+      "rows_new": 28,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/rnpl_v2/seasonal_norms.csv"
+    }
+  ],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

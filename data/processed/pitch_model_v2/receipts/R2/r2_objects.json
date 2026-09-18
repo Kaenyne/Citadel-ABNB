@@ -1,0 +1,62 @@
+{
+  "printed_gbv_used_musd": {
+    "1Q26": 29200.0,
+    "2Q26": 27200.0
+  },
+  "kernel_base_musd": 27866.666666666664,
+  "lambda_q3_cells_pct": {
+    "2023Q3": 17.390784982935156,
+    "2024Q3": 17.145482388973967,
+    "2025Q3": 17.18181818181818
+  },
+  "lambda_q3_mean_pct": 17.239361851242435,
+  "kernel_at_DEC0006_lambda_1724": 4804.213333333333,
+  "kernel_at_package_lambda": 4804.035502546224,
+  "guide": {
+    "low": 4690.0,
+    "high": 4770.0,
+    "mid": 4730.0
+  },
+  "cushion_pct": {
+    "mean_full": 1.8567430632975808,
+    "mean_DEC0001": 1.857,
+    "median": 1.7904910308494282
+  },
+  "guide_cushion_at_DEC0001": 4817.8360999999995,
+  "guide_cushion_at_full_precision": 4817.8239468939755,
+  "guide_cushion_at_median": 4814.690225759178,
+  "bridge": {
+    "revenue_musd": 4804.035502546225,
+    "lagged_gbv_musd": 27866.666666666668,
+    "conversion_mean": 0.1723936185124243,
+    "low": 4777.874425727413,
+    "high": 4846.232081911263,
+    "nights_m": 146.81304,
+    "adr_usd": 177.165247,
+    "gbv_musd": 26027.962982999998,
+    "implied_take_rate_pct": 18.457208909064267
+  },
+  "bridge_equals_kernel": {
+    "lagged_gbv_diff_musd": 3.637978807091713e-12,
+    "lambda_diff_pp": -2.7755575615628914e-15,
+    "revenue_diff_musd": 9.094947017729282e-13
+  },
+  "street_musd": 4744.0,
+  "live_block_v2_revenue_musd": 4816.1,
+  "scenario_gbv_musd": {
+    "base": 25877.544,
+    "short": 25201.0,
+    "breaker": 26235.09
+  },
+  "implied_take_rate_pct_tying_base_to_kernel": 18.564495543109594,
+  "card_musd": {
+    "base": 4804.035502546224,
+    "short": 4678.438521819049,
+    "breaker": 4870.412113780791
+  },
+  "revenue_if_take_rate_held_at_live_block_1814": {
+    "base": 4694.186481600001,
+    "short": 4571.4614,
+    "breaker": 4759.045326
+  }
+}

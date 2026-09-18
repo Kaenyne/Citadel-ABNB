@@ -1,0 +1,208 @@
+{
+  "id": "D6",
+  "commit": "e6d98321b58f0f226ba1225408462d22edbb4a3f",
+  "cmd": "python3 analysis/src/forecast_methods/regional_kernel_v1/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T16:04:06+00:00",
+  "exit_code": 0,
+  "wall_s": 2.4,
+  "watch": [
+    "data/processed/forecast_methods/regional_kernel_v1",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "csv",
+      "max_abs_diff": 8.215650382226158e-15,
+      "rows_head": 24,
+      "rows_new": 24,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/adr_passthrough_sensitivity.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 5.4569682106375694e-12,
+      "rows_head": 24,
+      "rows_new": 24,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/demand_channel_scenario.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.1102230246251565e-16,
+      "rows_head": 960,
+      "rows_new": 960,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/exposure.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.4432899320127035e-14,
+      "rows_head": 6,
+      "rows_new": 6,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/fx_consolidated_recompute.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 6.821210263296962e-13,
+      "rows_head": 24,
+      "rows_new": 24,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/fx_regional_recompute.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 5.4569682106375694e-12,
+      "rows_head": 96,
+      "rows_new": 96,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/gbv_with_conditional_horizons.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.7407984720385627e-08,
+      "rows_head": 12,
+      "rows_new": 12,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/gross_scale_fits.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 6.766344151643011e-09,
+      "rows_head": 1236,
+      "rows_new": 1236,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/gross_scale_profile.csv"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/k0_handoff_check.json"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 2.842170943040401e-14,
+      "rows_head": 24,
+      "rows_new": 24,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/lambda_annual.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.8189894035458565e-12,
+      "rows_head": 72,
+      "rows_new": 72,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/lambda_regional.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.3600232051658168e-14,
+      "rows_head": 2,
+      "rows_new": 2,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/mix_variance_decomposition.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.2730063114752e-08,
+      "rows_head": 27,
+      "rows_new": 27,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/observed_share_triple.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 2.1316282072803006e-14,
+      "rows_head": 384,
+      "rows_new": 384,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/od_nights_matrix.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.4210854715202004e-14,
+      "rows_head": 15,
+      "rows_new": 15,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/q4_step_sensitivity.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.4901161193847656e-08,
+      "rows_head": 8,
+      "rows_new": 8,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/r_engine_handoff.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 3.6637359812630166e-15,
+      "rows_head": 16,
+      "rows_new": 16,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/regional_drift.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 1.9073486328125e-06,
+      "rows_head": 88,
+      "rows_new": 88,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/regional_gbv_k0.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 5.4569682106375694e-12,
+      "rows_head": 88,
+      "rows_new": 88,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/regional_gbv_reconstruction.csv"
+    },
+    {
+      "kind": "csv",
+      "max_abs_diff": 5.329070518200751e-15,
+      "rows_head": 16,
+      "rows_new": 16,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/regional_lambdas_k0.csv"
+    },
+    {
+      "kind": "binary_or_text",
+      "max_abs_diff": null,
+      "rows_head": null,
+      "rows_new": null,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/regional_kernel_v1/summary.json"
+    }
+  ],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

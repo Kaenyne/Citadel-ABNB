@@ -1,0 +1,19 @@
+{
+  "id": "R6",
+  "commit": "e6d98321b58f0f226ba1225408462d22edbb4a3f",
+  "cmd": "python3 data/processed/pitch_model_v2/receipts/R6/recompute_fy27.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T15:53:16+00:00",
+  "exit_code": 0,
+  "wall_s": 0.2,
+  "watch": [
+    "data/processed/margin_build/06_fy27_path_v2",
+    "data/processed/margin_build/40_line_build",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [],
+  "new_files": [],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

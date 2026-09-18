@@ -1,0 +1,20 @@
+scenario               cell           
+base                   eps                0.000000e+00
+                       interest_income    0.000000e+00
+                       net_income         0.000000e+00
+breaker_cost_bull      eps                0.000000e+00
+                       interest_income    0.000000e+00
+                       net_income         0.000000e+00
+short_costs_at_budget  eps                5.551115e-17
+                       interest_income    0.000000e+00
+                       net_income         2.273737e-13
+
+Max abs diff across all scenario/quarter/cell recomputations: 2.273737e-13
+
+=== Annual (FY26) ===
+             scenario period  net_income  diluted_shares_m  eps_recomputed  eps_committed  net_income_committed
+                 base   FY26 3143.219737         595.75686        5.276011       5.276011           3143.219737
+    breaker_cost_bull   FY26 3221.711620         595.75686        5.407763       5.407763           3221.711620
+short_costs_at_budget   FY26 2858.182055         595.75686        4.797565            NaN                   NaN
+
+PASS: all recomputed cells match committed 40_line_build / 40_short_case cells within 0.01

@@ -1,0 +1,6 @@
+/Users/theomachado/Citadel-ABNB/analysis/src/h1_to_h2_bridge_v3.py:89: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel['year'] = panel.quarter.str[-2:].astype(int) + 2000
+/Users/theomachado/Citadel-ABNB/analysis/src/h1_to_h2_bridge_v3.py:90: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel['q'] = panel.quarter.str[0].astype(int)
+/Users/theomachado/Citadel-ABNB/analysis/src/h1_to_h2_bridge_v3.py:98: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  panel['unearned_cover_next_q_pct'] = np.nan

@@ -1,0 +1,21 @@
+scenario,period,adj_ebitda_musd,adj_ebitda_margin_pct,revenue_musd,da_musd,source
+base (line build),3Q26,2419.6,50.367,4804.0,20.634,40_line_build scenario base
+breaker (ramp pauses),3Q26,2443.3,50.859,4804.0,20.634,40_line_build scenario cost_bull
+short,3Q26,2289.8,48.918,4680.9,20.634,40_line_build scenario short_costs_at_budget
+base (line build),4Q26,898.9,28.283,3178.1,20.634,40_line_build scenario base
+breaker (ramp pauses),4Q26,970.9,30.551,3178.1,20.634,40_line_build scenario cost_bull
+short,4Q26,699.6,23.589,2965.9,20.634,40_line_build scenario short_costs_at_budget
+base (line build),FY26,5098.5,35.734,14268.1,80.268,40_line_build scenario base
+breaker (ramp pauses),FY26,5194.2,36.404,14268.1,80.268,40_line_build scenario cost_bull
+short,FY26,4769.4,34.232,13932.8,80.268,40_line_build scenario short_costs_at_budget
+base (line build),FY27,5644.2,35.658,15828.6,82.536,40_line_build scenario base
+breaker (ramp pauses),FY27,6023.5,38.054,15828.6,82.536,40_line_build scenario cost_bull
+short,FY27,4761.4,31.927,14913.5,82.536,40_line_build scenario short_costs_at_budget
+alt_combination (5 Nov card),3Q26,2399.1,49.94,4804.0,20.634,23_final_model stack_clip
+alt_combination (5 Nov card),4Q26,918.4,28.897,3178.1,20.634,23_final_model stack_clip
+alt_combination (5 Nov card),FY26,5097.5,35.727,14268.1,80.268,23_forecast_annual
+alt_combination (5 Nov card),FY27,5483.3,34.642,15828.6,82.536,23_forecast_annual (SCENARIO: h>=2 fails)
+street (LSEG),3Q26,2361.5,49.776,4744.3,,23_vs_consensus n=36
+street (LSEG),4Q26,913.7,28.897,3161.8,,23_vs_consensus n=36
+street (LSEG),FY26,5053.7,35.616,14189.6,,23_vs_consensus n=44
+street (LSEG),FY27,5766.1,36.45,15819.3,,23_vs_consensus n=44

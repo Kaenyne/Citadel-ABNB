@@ -1,0 +1,21 @@
+[live-block-v2] W1/PIT n=14  corr(rev,gbv)=0.7595  corr(rev,nights)=0.6753  corr(gbv,nights)=0.8775
+[live-block-v2] reconciled take rate 18.1399% sd 0.4628pp  P(>= 18.1) = 0.5345
+[live-block-v2] wrote /Users/theomachado/Citadel-ABNB/data/processed/forecast_methods/live_block_v2/LIVE_3Q26_CARD.csv
+registered    2 rows -> live-block-v2__revenue.csv
+[live-block-v2] registered live-block-v2__revenue.csv (revenue_musd)
+registered    2 rows -> live-block-v2__gbv.csv
+[live-block-v2] registered live-block-v2__gbv.csv (gbv_musd)
+registered    2 rows -> live-block-v2__nights.csv
+[live-block-v2] registered live-block-v2__nights.csv (nights_m)
+registered    2 rows -> live-block-v2__adr.csv
+[live-block-v2] registered live-block-v2__adr.csv (adr_usd)
+registered    2 rows -> live-block-v2__take_rate.csv
+[live-block-v2] registered live-block-v2__take_rate.csv (take_rate_pct)
+[live-block-v2] wrote /Users/theomachado/Citadel-ABNB/data/processed/forecast_methods/live_block_v2/live_block_v2_objects.json
+
+==============================================================================
+ONE NUMBER : 3Q26 printed take rate 18.140%  (sd 0.463pp)
+             q10 17.573  q50 18.140  q90 18.756
+ONE PROB   : P(take rate >= 18.10%) = 0.534
+             P(take rate <= 17.88%) = 0.283
+==============================================================================

@@ -1,0 +1,283 @@
+=== TRANSITIONS
+                   metric                                    label  year    q1    q2  h1_mean    q3    q4     t3     t4  q4_minus_q3
+           nights_yoy_pct                   Nights & seats y/y (%)  2022 58.54 24.79    41.66 25.09 20.16 -16.57 -21.50        -4.93
+           nights_yoy_pct                   Nights & seats y/y (%)  2023 18.61 10.99    14.80 13.54 12.02  -1.26  -2.78        -1.52
+           nights_yoy_pct                   Nights & seats y/y (%)  2024  9.50  8.69     9.09  8.48 12.35  -0.61   3.26         3.87
+           nights_yoy_pct                   Nights & seats y/y (%)  2025  7.92  7.43     7.67  8.79  9.82   1.11   2.15         1.03
+           nights_yoy_pct                   Nights & seats y/y (%)  2026  9.15 10.34     9.75   NaN   NaN    NaN    NaN          NaN
+         adr_yoy_exfx_pct                        ADR y/y ex-FX (%)  2022   NaN  7.00     7.00 12.00  5.00   5.00  -2.00        -7.00
+         adr_yoy_exfx_pct                        ADR y/y ex-FX (%)  2023  3.00  2.00     2.50  0.50  0.50  -2.00  -2.00         0.00
+         adr_yoy_exfx_pct                        ADR y/y ex-FX (%)  2024  2.00  3.00     2.50  2.00  2.00  -0.50  -0.50         0.00
+         adr_yoy_exfx_pct                        ADR y/y ex-FX (%)  2025  1.00  1.00     1.00  2.00  3.00   1.00   2.00         1.00
+         adr_yoy_exfx_pct                        ADR y/y ex-FX (%)  2026  4.00  4.00     4.00   NaN   NaN    NaN    NaN          NaN
+               fx_pts_adr         FX contribution to ADR y/y (pts)  2022   NaN -5.60    -5.60 -7.10 -5.50  -1.50   0.10         1.60
+               fx_pts_adr         FX contribution to ADR y/y (pts)  2023 -2.80 -0.60    -1.70  2.70  2.10   4.40   3.80        -0.60
+               fx_pts_adr         FX contribution to ADR y/y (pts)  2024  0.60 -0.90    -0.15 -0.60 -1.10  -0.45  -0.95        -0.50
+               fx_pts_adr         FX contribution to ADR y/y (pts)  2025 -1.90  1.90     0.00  2.70  2.90   2.70   2.90         0.20
+               fx_pts_adr         FX contribution to ADR y/y (pts)  2026  5.00  1.30     3.15   NaN   NaN    NaN    NaN          NaN
+     revenue_yoy_exfx_pct                    Revenue y/y ex-FX (%)  2022 74.00 64.00    69.00 36.00 31.00 -33.00 -38.00        -5.00
+     revenue_yoy_exfx_pct                    Revenue y/y ex-FX (%)  2023 24.00 19.00    21.50 14.00 14.00  -7.50  -7.50         0.00
+     revenue_yoy_exfx_pct                    Revenue y/y ex-FX (%)  2024 18.00 11.00    14.50 10.00 12.00  -4.50  -2.50         2.00
+     revenue_yoy_exfx_pct                    Revenue y/y ex-FX (%)  2025  8.00 13.00    10.50 10.00 11.00  -0.50   0.50         1.00
+     revenue_yoy_exfx_pct                    Revenue y/y ex-FX (%)  2026 15.00 13.00    14.00   NaN   NaN    NaN    NaN          NaN
+           fx_pts_revenue     FX contribution to revenue y/y (pts)  2022 -4.00 -6.00    -5.00 -7.00 -7.00  -2.00  -2.00         0.00
+           fx_pts_revenue     FX contribution to revenue y/y (pts)  2023 -4.00 -1.00    -2.50  4.00  3.00   6.50   5.50        -1.00
+           fx_pts_revenue     FX contribution to revenue y/y (pts)  2024  0.00  0.00     0.00  0.00  0.00   0.00   0.00         0.00
+           fx_pts_revenue     FX contribution to revenue y/y (pts)  2025 -2.00  0.00    -1.00  0.00  1.00   1.00   2.00         1.00
+           fx_pts_revenue     FX contribution to revenue y/y (pts)  2026  3.00  4.00     3.50   NaN   NaN    NaN    NaN          NaN
+            take_rate_pct             Implied take rate (level, %)  2022  8.77 12.38    10.57 18.49 14.09   7.91   3.52        -4.40
+            take_rate_pct             Implied take rate (level, %)  2023  8.91 13.01    10.96 18.56 14.31   7.60   3.35        -4.25
+            take_rate_pct             Implied take rate (level, %)  2024  9.35 12.96    11.16 18.57 14.09   7.41   2.93        -4.48
+            take_rate_pct             Implied take rate (level, %)  2025  9.27 13.17    11.22 17.88 13.62   6.66   2.40        -4.26
+            take_rate_pct             Implied take rate (level, %)  2026  9.17 13.26    11.21   NaN   NaN    NaN    NaN          NaN
+        nights_yoy_na_pct                        NA nights y/y (%)  2025  2.00  2.00     2.00  5.00  5.00   3.00   3.00         0.00
+        nights_yoy_na_pct                        NA nights y/y (%)  2026  8.00  8.00     8.00   NaN   NaN    NaN    NaN          NaN
+      nights_yoy_emea_pct                      EMEA nights y/y (%)  2025  5.00  5.00     5.00  5.00  8.00   0.00   3.00         3.00
+      nights_yoy_emea_pct                      EMEA nights y/y (%)  2026  5.00  8.00     6.50   NaN   NaN    NaN    NaN          NaN
+unearned_cover_next_q_pct Unearned fees / next-quarter revenue (%)  2022 83.07 68.69    75.88 64.16 65.02 -11.72 -10.86         0.86
+unearned_cover_next_q_pct Unearned fees / next-quarter revenue (%)  2023 87.44 69.09    78.26 66.14 66.62 -12.12 -11.65         0.48
+unearned_cover_next_q_pct Unearned fees / next-quarter revenue (%)  2024 88.57 70.23    79.40 66.81 71.13 -12.59  -8.28         4.31
+unearned_cover_next_q_pct Unearned fees / next-quarter revenue (%)  2025 87.95 69.77    78.86 65.51 65.09 -13.35 -13.77        -0.43
+unearned_cover_next_q_pct Unearned fees / next-quarter revenue (%)  2026 75.75   NaN    75.75   NaN   NaN    NaN    NaN          NaN
+    adj_ebitda_margin_pct            Adj. EBITDA margin (level, %)  2022 15.20 33.80    24.50 50.50 26.60  26.00   2.10       -23.90
+    adj_ebitda_margin_pct            Adj. EBITDA margin (level, %)  2023 14.40 33.00    23.70 54.00 33.30  30.30   9.60       -20.70
+    adj_ebitda_margin_pct            Adj. EBITDA margin (level, %)  2024 19.80 32.50    26.15 52.50 30.80  26.35   4.65       -21.70
+    adj_ebitda_margin_pct            Adj. EBITDA margin (level, %)  2025 18.40 33.70    26.05 50.10 28.30  24.05   2.25       -21.80
+    adj_ebitda_margin_pct            Adj. EBITDA margin (level, %)  2026 19.40 35.00    27.20   NaN   NaN    NaN    NaN          NaN
+
+=== BASE RATES
+                   metric                                       label  n_years  t3_mean  t3_min  t3_max  t3_sd  t4_mean  t4_min  t4_max  t4_sd  t3_2022  t4_2022
+           nights_yoy_pct                      Nights & seats y/y (%)        3    -0.25   -1.26    1.11   1.00     0.87   -2.78    3.26   2.62   -16.57   -21.50
+         adr_yoy_exfx_pct                           ADR y/y ex-FX (%)        3    -0.50   -2.00    1.00   1.22    -0.17   -2.00    2.00   1.65     5.00    -2.00
+               fx_pts_adr            FX contribution to ADR y/y (pts)        3     2.22   -0.45    4.40   2.01     1.92   -0.95    3.80   2.06    -1.50     0.10
+     adr_yoy_reported_pct                        ADR y/y reported (%)        3     1.72   -0.95    3.70   1.96     1.75   -1.45    4.90   2.59     1.60    -3.80
+         gbv_yoy_exfx_pct                           GBV y/y ex-FX (%)        3    -0.83   -3.50    3.00   2.78     0.83   -4.50    4.00   3.79   -12.50   -26.50
+     gbv_yoy_reported_pct                        GBV y/y reported (%)        3     1.67   -1.00    5.00   2.49     2.67   -1.00    7.00   3.30   -16.00   -27.00
+     revenue_yoy_exfx_pct                       Revenue y/y ex-FX (%)        3    -4.17   -7.50   -0.50   2.87    -3.17   -7.50    0.50   3.30   -33.00   -38.00
+           fx_pts_revenue        FX contribution to revenue y/y (pts)        3     2.50    0.00    6.50   2.86     2.50    0.00    5.50   2.27    -2.00    -2.00
+ revenue_yoy_reported_pct                    Revenue y/y reported (%)        3    -1.67   -4.50    0.50   2.09    -0.67   -2.50    2.50   2.25   -35.00   -40.00
+            take_rate_pct                Implied take rate (level, %)        3     7.22    6.66    7.60   0.41     2.89    2.40    3.35   0.39     7.91     3.52
+        nights_yoy_na_pct                           NA nights y/y (%)        1     3.00    3.00    3.00   0.00     3.00    3.00    3.00   0.00      NaN      NaN
+      nights_yoy_emea_pct                         EMEA nights y/y (%)        1     0.00    0.00    0.00   0.00     3.00    3.00    3.00   0.00      NaN      NaN
+     nights_yoy_latam_pct                        LatAm nights y/y (%)        3     0.33   -3.00    2.00   2.36     0.67   -2.00    4.00   2.49      NaN      NaN
+      nights_yoy_apac_pct                         APAC nights y/y (%)        3    -3.33   -9.00    0.00   4.03    -4.00  -14.00    2.00   7.12      NaN      NaN
+           adr_yoy_na_pct                              NA ADR y/y (%)        3     0.67   -0.50    2.50   1.31     1.00   -0.50    2.50   1.22      NaN      NaN
+             size_term_pp Party-size / listing-size term in ADR (pts)        3     0.02   -0.00    0.05   0.02    -0.05   -0.16    0.12   0.13    -0.28    -0.37
+    unearned_fees_yoy_pct                       Unearned fees y/y (%)        3    -0.22   -1.16    1.08   0.95    -0.62   -2.57    1.38   1.61   -22.36   -28.35
+unearned_cover_next_q_pct    Unearned fees / next-quarter revenue (%)        3   -12.69  -13.35  -12.12   0.50   -11.23  -13.77   -8.28   2.26   -11.72   -10.86
+    adj_ebitda_margin_pct               Adj. EBITDA margin (level, %)        3    26.90   24.05   30.30   2.58     5.50    2.25    9.60   3.06    26.00     2.10
+
+=== FLAGGED DEVIATIONS
+quarter                                label  h1_mean  implied_by_pattern  actual  deviation_pts                                                                            events_in_quarter
+   4Q22        Adj. EBITDA margin (level, %)    24.50               30.00   26.60          -3.40                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22                    ADR y/y ex-FX (%)     7.00                6.50   12.00           5.50                                                                USD surge (DXY peak Sep 2022)
+   4Q22                    ADR y/y ex-FX (%)     7.00                6.83    5.00          -1.83                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   4Q22                 ADR y/y reported (%)     3.30                5.05   -0.50          -5.55                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22     FX contribution to ADR y/y (pts)    -5.60               -3.38   -7.10          -3.72                                                                USD surge (DXY peak Sep 2022)
+   4Q22     FX contribution to ADR y/y (pts)    -5.60               -3.68   -5.50          -1.82                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22 FX contribution to revenue y/y (pts)    -5.00               -2.50   -7.00          -4.50                                                                USD surge (DXY peak Sep 2022)
+   4Q22 FX contribution to revenue y/y (pts)    -5.00               -2.50   -7.00          -4.50                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22                    GBV y/y ex-FX (%)    52.50               51.67   40.00         -11.67                                                                USD surge (DXY peak Sep 2022)
+   4Q22                    GBV y/y ex-FX (%)    52.50               53.33   26.00         -27.33                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22                 GBV y/y reported (%)    47.00               48.67   31.00         -17.67                                                                USD surge (DXY peak Sep 2022)
+   4Q22                 GBV y/y reported (%)    47.00               49.67   20.00         -29.67                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22               Nights & seats y/y (%)    41.66               41.41   25.09         -16.32                                                                USD surge (DXY peak Sep 2022)
+   4Q22               Nights & seats y/y (%)    41.66               42.54   20.16         -22.38                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22                Revenue y/y ex-FX (%)    69.00               64.83   36.00         -28.83                                                                USD surge (DXY peak Sep 2022)
+   4Q22                Revenue y/y ex-FX (%)    69.00               65.83   31.00         -34.83                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22             Revenue y/y reported (%)    64.00               62.33   29.00         -33.33                                                                USD surge (DXY peak Sep 2022)
+   4Q22             Revenue y/y reported (%)    64.00               63.33   24.00         -39.33                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q22                Unearned fees y/y (%)    59.10               58.88   36.74         -22.14                                                                USD surge (DXY peak Sep 2022)
+   4Q22                Unearned fees y/y (%)    59.10               58.48   30.75         -27.73                                  USD strength persists; Q4 nights guide cut to ~20% from 25%
+   3Q23        Adj. EBITDA margin (level, %)    23.70               48.90   54.00           5.10          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23        Adj. EBITDA margin (level, %)    23.70               27.15   33.30           6.15                                                                                             
+   3Q23                    ADR y/y ex-FX (%)     2.50                2.75    0.50          -2.25          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23                    ADR y/y ex-FX (%)     2.50                3.25    0.50          -2.75                                                                                             
+   3Q23                       NA ADR y/y (%)    -1.00                0.00   -1.00          -1.00          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   3Q23                 ADR y/y reported (%)     0.80                2.17    3.20           1.03          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   3Q23     FX contribution to ADR y/y (pts)    -1.70               -0.57    2.70           3.28          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23     FX contribution to ADR y/y (pts)    -1.70               -0.73    2.10           2.83                                                                                             
+   3Q23 FX contribution to revenue y/y (pts)    -2.50               -2.00    4.00           6.00          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23 FX contribution to revenue y/y (pts)    -2.50               -1.50    3.00           4.50                                                                                             
+   3Q23                    GBV y/y ex-FX (%)    17.50               18.00   14.00          -4.00          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23                    GBV y/y ex-FX (%)    17.50               21.00   13.00          -8.00                                                                                             
+   4Q23                 GBV y/y reported (%)    16.00               20.50   15.00          -5.50                                                                                             
+   3Q23                  APAC nights y/y (%)    36.00               35.50   27.00          -8.50          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23                  APAC nights y/y (%)    36.00               37.00   22.00         -15.00                                                                                             
+   3Q23                 LatAm nights y/y (%)    22.00               21.50   24.00           2.50          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23               Nights & seats y/y (%)    14.80               17.50   12.02          -5.48                                                                                             
+   3Q23                Revenue y/y ex-FX (%)    21.50               19.00   14.00          -5.00          NYC Local Law 18 in force (5 Sep 2023) | Israel-Gaza war (7 Oct, after quarter end)
+   4Q23                Revenue y/y ex-FX (%)    21.50               20.50   14.00          -6.50                                                                                             
+   4Q23             Revenue y/y reported (%)    19.00               19.00   17.00          -2.00                                                                                             
+   3Q24                       NA ADR y/y (%)     3.50                4.75    3.00          -1.75        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   4Q24                       NA ADR y/y (%)     3.50                5.25    3.00          -2.25                            US election week (5 Nov) softness, then nights accelerate to +12%
+   3Q24                 ADR y/y reported (%)     2.35                5.40    1.40          -4.00        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   4Q24                 ADR y/y reported (%)     2.35                5.70    0.90          -4.80                            US election week (5 Nov) softness, then nights accelerate to +12%
+   3Q24     FX contribution to ADR y/y (pts)    -0.15                3.40   -0.60          -4.00        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   4Q24     FX contribution to ADR y/y (pts)    -0.15                3.20   -1.10          -4.30                            US election week (5 Nov) softness, then nights accelerate to +12%
+   3Q24 FX contribution to revenue y/y (pts)     0.00                3.75    0.00          -3.75        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   4Q24 FX contribution to revenue y/y (pts)     0.00                3.75    0.00          -3.75                            US election week (5 Nov) softness, then nights accelerate to +12%
+   4Q24                    GBV y/y ex-FX (%)    12.00               11.75   15.00           3.25                            US election week (5 Nov) softness, then nights accelerate to +12%
+   3Q24                 GBV y/y reported (%)    11.00               14.00   10.00          -4.00        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   3Q24                  APAC nights y/y (%)    20.00               15.50   19.00           3.50        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   4Q24                  APAC nights y/y (%)    20.00               13.00   22.00           9.00                            US election week (5 Nov) softness, then nights accelerate to +12%
+   3Q24                 LatAm nights y/y (%)    18.00               20.00   15.00          -5.00        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   4Q24                 LatAm nights y/y (%)    18.00               17.00   22.00           5.00                            US election week (5 Nov) softness, then nights accelerate to +12%
+   4Q24               Nights & seats y/y (%)     9.09                8.78   12.35           3.57                            US election week (5 Nov) softness, then nights accelerate to +12%
+   3Q24             Revenue y/y reported (%)    14.50               14.25   10.00          -4.25        Paris Summer Olympics (26 Jul-11 Aug) | Hurricanes Helene (26 Sep) and Milton (9 Oct)
+   4Q24             Revenue y/y reported (%)    14.50               14.75   12.00          -2.75                            US election week (5 Nov) softness, then nights accelerate to +12%
+   4Q24                Unearned fees y/y (%)    11.87               10.25   13.24           2.99                            US election week (5 Nov) softness, then nights accelerate to +12%
+   3Q25        Adj. EBITDA margin (level, %)    26.05               54.38   50.10          -4.28                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25        Adj. EBITDA margin (level, %)    26.05               33.17   28.30          -4.88 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25                    ADR y/y ex-FX (%)     1.00               -0.25    2.00           2.25                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                    ADR y/y ex-FX (%)     1.00               -0.25    3.00           3.25 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25                       NA ADR y/y (%)     2.50                2.25    5.00           2.75                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                       NA ADR y/y (%)     2.50                2.75    5.00           2.25 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25                 ADR y/y reported (%)     1.00                1.73    4.70           2.98                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                 ADR y/y reported (%)     1.00                1.18    5.90           4.73 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   4Q25     FX contribution to ADR y/y (pts)     0.00                1.42    2.90           1.48 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25 FX contribution to revenue y/y (pts)    -1.00                2.25    0.00          -2.25                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   3Q25                    GBV y/y ex-FX (%)     9.00                6.25   12.00           5.75                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                    GBV y/y ex-FX (%)     9.00                8.25   13.00           4.75 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25                 GBV y/y reported (%)     9.00                9.00   14.00           5.00                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                 GBV y/y reported (%)     9.00                9.50   16.00           6.50 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25                  APAC nights y/y (%)    15.00               10.00   15.00           5.00                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                  APAC nights y/y (%)    15.00                9.00   15.00           6.00 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25                 LatAm nights y/y (%)    20.00               19.50   22.00           2.50                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                 LatAm nights y/y (%)    20.00               22.00   18.00          -4.00 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25               Nights & seats y/y (%)     7.67                6.74    8.79           2.05                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   3Q25                Revenue y/y ex-FX (%)    10.50                4.50   10.00           5.50                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25                Revenue y/y ex-FX (%)    10.50                5.50   11.00           5.50 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   3Q25             Revenue y/y reported (%)     9.50                6.75   10.00           3.25                              Paris Olympics lap in EMEA; RNPL launch lengthens NA lead times
+   4Q25             Revenue y/y reported (%)     9.50                7.25   12.00           4.75 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+   4Q25                Unearned fees y/y (%)    10.43               10.80    7.86          -2.94 US federal shutdown (1 Oct-12 Nov 2025) and FAA flight cuts; new cancellation policies (Oct)
+
+=== FX
+quarter  usd_broad_avg  usd_broad_yoy_pct  eurusd_avg  eurusd_yoy_pct  obs_days  filled_days_flat  fx_pts_adr_usd_broad_fit_v1  fx_pts_adr_disclosed  fx_pts_adr_eur_fit  fx_pts_adr_baskets  fx_pts_adr_midpoint  fx_pts_adr_adopted                                                       fx_pts_adr_adopted_source fx_data_through
+   1Q26         119.07              -6.72        1.17           11.11        61                 0                         5.34                  5.00                4.45                5.06                 4.75                4.75 ADR v3 midpoint of EUR fit and regional baskets (adrv3/N/N1_fx_choice_card.csv)      2026-09-04
+   2Q26         119.30              -2.54        1.16            2.56        63                 0                         2.33                  1.30                0.59                1.70                 1.14                1.14 ADR v3 midpoint of EUR fit and regional baskets (adrv3/N/N1_fx_choice_card.csv)      2026-09-04
+   3Q26         119.20              -0.87        1.15           -1.22        47                18                         1.12                   NaN               -1.12                0.26                -0.43               -0.43 ADR v3 midpoint of EUR fit and regional baskets (adrv3/N/N1_fx_choice_card.csv)      2026-09-04
+   4Q26         118.07              -2.22        1.16           -0.20         0                84                         2.10                   NaN               -0.66                0.97                 0.15                0.15 ADR v3 midpoint of EUR fit and regional baskets (adrv3/N/N1_fx_choice_card.csv)      2026-09-04
+
+=== OVERLAYS
+          metric quarter                                                                                                                                                                                         adjustment   pts
+  nights_yoy_pct    3Q26                  v3: replace pattern with the team baseline 9.89% (146.8mm); team baseline (PR #32 base, nights_baseline_reconciliation.csv); band = reviews stays index 8.5 to 11.0 (q3nowcast E)  0.40
+  nights_yoy_pct    4Q26 v3: replace pattern with the team baseline 8.12% (131.8mm); ADR v3 N memo case B (WS-D global lap, 45% ex-NA split), adopted baseline; lo = case B range 8.0; hi = case A 8.9 (PR #32 NA-only lap) -2.50
+  nights_yoy_pct    3Q26                                                  RETIRED in v3 (comparison only; v1/v2 applied -1.5): RNPL US lap, half assumed to lap in Q3 -- unfitted, and the baseline already carries the lap  0.00
+  nights_yoy_pct    4Q26                                                            RETIRED in v3 (comparison only; v1/v2 applied -2.5): RNPL US lap, fuller -- unfitted; the case B global lap in the baseline replaces it  0.00
+  nights_yoy_pct    3Q26                                                                                 RETIRED in v3 (comparison only; v1/v2 applied +0.5): World Cup residual -- WS10 says no lift to 3Q26 booked nights  0.00
+  nights_yoy_pct    3Q26                                                                                                                   Middle East cancellation drag (was -1 in 1Q26, not cited in 2Q26): assumed faded  0.00
+      fx_pts_adr    3Q26                                                               replace pattern with the ADR v3 midpoint FX estimator (mean of EUR fit and regional baskets; FX through 2026-09-04, flat spot after) -5.80
+      fx_pts_adr    4Q26                                                               replace pattern with the ADR v3 midpoint FX estimator (mean of EUR fit and regional baskets; FX through 2026-09-04, flat spot after) -4.92
+adr_yoy_exfx_pct    3Q26                                                                          v3: replace pattern with the ADR v3 card ex-FX (v3_with_K, midpoint FX) +3.86, central +2.46 to +5.27; v3_without_K +3.69  0.36
+adr_yoy_exfx_pct    4Q26                                                                          v3: replace pattern with the ADR v3 card ex-FX (v3_with_K, midpoint FX) +4.07, central +2.62 to +5.51; v3_without_K +3.69  0.24
+adr_yoy_exfx_pct    3Q26                                                            RETIRED in v3 (comparison only; v1/v2 applied -0.49): seats/hotel dilution -- already inside the card ex-FX as new_business_seats -0.48  0.00
+adr_yoy_exfx_pct    4Q26                                                            RETIRED in v3 (comparison only; v1/v2 applied -0.49): seats/hotel dilution -- already inside the card ex-FX as new_business_seats -0.48  0.00
+  fx_pts_revenue    3Q26                                                                                       management: ~3 pts FX in the Q3 revenue guide (after hedging); fx_lag_v2 kernel gives +2.9 on the same basis -3.00
+  fx_pts_revenue    4Q26                                 fx_lag_v2 kernel output: Phi (0, 2/3, 1/3) x 0.851 on the revenue-weighted basket, spot held from 2026-09-04; CS +0.3 to +2.2; replaces v1 assumed 2.0 (range 1-3) -5.02
+
+=== 2026 PROJECTION
+                               label  q1_2026  q2_2026  q3_pattern  q3_low  q3_high  q3_adjusted           q3_guide_text  q4_pattern  q4_low  q4_high  q4_adjusted
+              Nights & seats y/y (%)     9.15    10.34        9.49    8.48    10.86         9.89       low double digits       10.62    6.96    13.00         8.12
+                   ADR y/y ex-FX (%)     4.00     4.00        3.50    2.00     5.00         3.86                                3.83    2.00     6.00         4.07
+    FX contribution to ADR y/y (pts)     5.00     1.30        5.37    2.70     7.55        -0.43                                5.07    2.20     6.95         0.15
+                ADR y/y reported (%)     9.00     5.30        8.87    6.20    10.85         3.43                                8.90    5.70    12.05         4.22
+                GBV y/y reported (%)    19.00    16.00       19.17   16.50    22.50        13.66               mid teens       20.17   16.50    24.50        12.68
+               Revenue y/y ex-FX (%)    15.00    13.00        9.83    6.50    13.50         9.83                               10.83    6.50    14.50        10.83
+FX contribution to revenue y/y (pts)     3.00     4.00        6.00    3.50    10.00         3.00                      ~3        6.00    3.50     9.00         0.98
+            Revenue y/y reported (%)    18.00    17.00       15.83   13.00    18.00        12.83   15-17% incl ~3 pts FX       16.83   15.00    20.00        11.81
+        Implied take rate (level, %)     9.17    13.26       17.88   17.88    17.88        17.88 in line y/y (3Q25 17.9)       13.62   13.62    13.62        13.62
+                   NA nights y/y (%)     8.00     8.00       11.00   11.00    11.00        11.00                               11.00   11.00    11.00        11.00
+                 EMEA nights y/y (%)     5.00     8.00        6.50    6.50     6.50         6.50                                9.50    9.50     9.50         9.50
+                LatAm nights y/y (%)    18.00    20.00       19.33   16.00    21.00        19.33                               19.67   17.00    23.00        19.67
+                 APAC nights y/y (%)    18.00    18.00       14.67    9.00    18.00        14.67                               14.00    4.00    20.00        14.00
+       Adj. EBITDA margin (level, %)    19.40    35.00       54.10   51.25    57.50        54.10   down slightly vs 50.1       32.70   29.45    36.80        32.70
+
+=== REVENUE DOLLARS
+quarter  lagged_gbv_busd  conversion_mean  conversion_min  conversion_max  revenue_musd  revenue_low  revenue_high  yoy_pct  guide_low  guide_high  consensus  hist_actual_vs_guide_mid_pct  implied_guide_mid_if_cushion_holds  gbv_3q26_assumed_busd
+   3Q26            27.87             0.17            0.17            0.17      4,804.04     4,777.87      4,846.23    17.31   4,690.00    4,770.00   4,740.00                          1.28                                 NaN                    NaN
+   4Q26            26.42             0.12            0.12            0.12      3,178.11     3,156.01      3,201.22    14.40        NaN         NaN   3,200.00                          3.88                            3,059.40                  26.03
+
+=== v2 FX LINE
+quarter           line  adopted_pp                                                                                                                                                 adopted_source  v1_value_pp                                                             v1_source  cmp_eur_fit_pp  cmp_baskets_pp  cmp_usd_broad_fit_pp  cmp_eur_only_schedule_pp  cmp_guide_anchored_pp  cmp_free_fit_pp  cmp_kernel_alt_scale_0653_pp  cmp_phi_on_adr_v3_midpoint_pp  cs_lo_pp  cs_hi_pp  band80_lo_pp  band80_hi_pp  management fx_data_through                                                                                                                                                                                                                       note
+   3Q26     fx_pts_adr       -0.43                                           ADR v3 midpoint (N1 card): mean of EUR fit and regional baskets; RMSE 0.33pp on 1Q24-2Q26 vs 0.46 EUR / 0.42 baskets         1.12 broad-USD single-factor fit 0.5 - 0.72 x USD y/y (predictive note 03)           -1.12            0.26                  1.12                       NaN                    NaN              NaN                           NaN                            NaN       NaN       NaN           NaN           NaN         NaN      2026-09-04                                                                                               enters GBV y/y through reported ADR and is carried to revenue through the 2/3-1/3 GBV lag; never added to revenue separately
+   3Q26 fx_pts_revenue        3.00                                                                                       management stated ~3 after hedging (6 Aug letter); kernel agrees at +2.9         3.00                                                         management ~3             NaN             NaN                   NaN                      2.19                   3.00             1.26                          2.22                           2.53      0.33      3.49          0.90          3.54        3.00      2026-09-04                                                                                        kernel point for 3Q26 is +2.89; the letter-stated pp is already after hedges, so the 28_fx_hedge_forward line is never added on top
+   4Q26     fx_pts_adr        0.15                                           ADR v3 midpoint (N1 card): mean of EUR fit and regional baskets; RMSE 0.33pp on 1Q24-2Q26 vs 0.46 EUR / 0.42 baskets         2.10 broad-USD single-factor fit 0.5 - 0.72 x USD y/y (predictive note 03)           -0.66            0.97                  2.10                       NaN                    NaN              NaN                           NaN                            NaN       NaN       NaN           NaN           NaN         NaN      2026-09-04                                                                                               enters GBV y/y through reported ADR and is carried to revenue through the 2/3-1/3 GBV lag; never added to revenue separately
+   4Q26 fx_pts_revenue        0.98 fx_lag_v2 kernel-implied: Phi (0, 2/3, 1/3) x 0.851 on the revenue-weighted basket, spot held (B4_FX_EXHIBIT.md; registry fx-lag-v2__fx_pts_revenue_2026q4_v2)         2.00                                               assumed 2.0 (range 1-3)             NaN             NaN                   NaN                     -0.43                   2.60             0.89                          0.75                           0.15      0.31      2.16         -0.56          2.07         NaN      2026-09-04 v1 formula (2/3 x ADR-FX 3Q26 + 1/3 x ADR-FX 2Q26 on the broad-USD fit) would have given +1.18; the EUR-only 05_fx_schedule fit and the guide-anchored carry are REJECTED constructions kept for comparison (B4 section 5)
+
+=== v2 vs v1 DELTA
+                                 object           unit       v1       v2  delta
+                 fx_pts_adr q3_adjusted     pct or pts     1.12    -0.43  -1.55
+                 fx_pts_adr q4_adjusted     pct or pts     2.10     0.15  -1.95
+       adr_yoy_reported_pct q3_adjusted     pct or pts     4.14     3.43  -0.71
+       adr_yoy_reported_pct q4_adjusted     pct or pts     5.44     4.22  -1.22
+       gbv_yoy_reported_pct q3_adjusted     pct or pts    12.98    13.66   0.68
+       gbv_yoy_reported_pct q4_adjusted     pct or pts    14.00    12.68  -1.32
+             fx_pts_revenue q3_adjusted     pct or pts     3.00     3.00   0.00
+             fx_pts_revenue q4_adjusted     pct or pts     2.00     0.98  -1.02
+   revenue_yoy_reported_pct q3_adjusted     pct or pts    12.83    12.83   0.00
+   revenue_yoy_reported_pct q4_adjusted     pct or pts    12.83    11.81  -1.02
+                   lagged_gbv_busd 3Q26 $bn / $m / pct    27.87    27.87   0.00
+                      revenue_musd 3Q26 $bn / $m / pct 4,804.04 4,804.04   0.00
+                       revenue_low 3Q26 $bn / $m / pct 4,777.87 4,777.87   0.00
+                      revenue_high 3Q26 $bn / $m / pct 4,846.23 4,846.23   0.00
+                           yoy_pct 3Q26 $bn / $m / pct    17.31    17.31   0.00
+implied_guide_mid_if_cushion_holds 3Q26 $bn / $m / pct      NaN      NaN    NaN
+             gbv_3q26_assumed_busd 3Q26 $bn / $m / pct      NaN      NaN    NaN
+                   lagged_gbv_busd 4Q26 $bn / $m / pct    26.32    26.42   0.10
+                      revenue_musd 4Q26 $bn / $m / pct 3,165.64 3,178.11  12.47
+                       revenue_low 4Q26 $bn / $m / pct 3,143.63 3,156.01  12.38
+                      revenue_high 4Q26 $bn / $m / pct 3,188.66 3,201.22  12.56
+                           yoy_pct 4Q26 $bn / $m / pct    13.95    14.40   0.45
+implied_guide_mid_if_cushion_holds 4Q26 $bn / $m / pct 3,047.40 3,059.40  12.00
+             gbv_3q26_assumed_busd 4Q26 $bn / $m / pct    25.87    26.03   0.16
+
+=== v3 REBASED LINES
+quarter             line  adopted  adopted_mm  band_lo  band_hi                                                                                                                         adopted_source  v2_value                                                                                       v2_source  pattern_only  comparison_other_variant
+   3Q26   nights_yoy_pct     9.89      146.80     8.50    11.00                  team baseline (PR #32 base, nights_baseline_reconciliation.csv); band = reviews stays index 8.5 to 11.0 (q3nowcast E)      8.49 pattern (H1 mean + 2023-25 transition) + unfitted overlays (RNPL lap -1.5/-2.5, World Cup +0.5)          9.49                       NaN
+   3Q26 adr_yoy_exfx_pct     3.86         NaN     2.46     5.27                                ADR v3 card (v3_with_K, midpoint FX): last_q residual + measured mix + assumed fills + K mechanics line      3.01                                         pattern (H1 mean + transition) + seats dilution overlay          3.50                      3.69
+   4Q26   nights_yoy_pct     8.12      131.80     8.00     8.86 ADR v3 N memo case B (WS-D global lap, 45% ex-NA split), adopted baseline; lo = case B range 8.0; hi = case A 8.9 (PR #32 NA-only lap)      8.12 pattern (H1 mean + 2023-25 transition) + unfitted overlays (RNPL lap -1.5/-2.5, World Cup +0.5)         10.62                       NaN
+   4Q26 adr_yoy_exfx_pct     4.07         NaN     2.62     5.51                                ADR v3 card (v3_with_K, midpoint FX): last_q residual + measured mix + assumed fills + K mechanics line      3.35                                         pattern (H1 mean + transition) + seats dilution overlay          3.83                      3.69
+
+=== v3 CARD CHECK
+quarter              object  bridge   card  diff                                                                                                                       note
+   3Q26 ADR reported y/y, %    3.43   3.43  0.00 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+   3Q26               ADR $  177.17 177.17 -0.00 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+   3Q26          nights, mm  146.81 146.80  0.01 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+   3Q26            GBV, $bn   26.03  26.01  0.02 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+   4Q26 ADR reported y/y, %    4.22   4.22  0.00 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+   4Q26               ADR $  174.58 174.57  0.01 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+   4Q26          nights, mm  131.80 131.80 -0.00 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+   4Q26            GBV, $bn   22.99  23.01 -0.02 card GBV uses its own ADR $ x nights; bridge GBV compounds y/y rates on the 2025 base -- agreement to rounding is the test
+
+=== v3 vs v2 DELTA
+                                 object           unit       v2       v3  delta
+             nights_yoy_pct q3_adjusted     pct or pts     8.49     9.89   1.40
+             nights_yoy_pct q4_adjusted     pct or pts     8.12     8.12   0.00
+           adr_yoy_exfx_pct q3_adjusted     pct or pts     3.01     3.86   0.85
+           adr_yoy_exfx_pct q4_adjusted     pct or pts     3.35     4.07   0.72
+                 fx_pts_adr q3_adjusted     pct or pts    -0.43    -0.43   0.00
+                 fx_pts_adr q4_adjusted     pct or pts     0.15     0.15   0.00
+       adr_yoy_reported_pct q3_adjusted     pct or pts     2.58     3.43   0.85
+       adr_yoy_reported_pct q4_adjusted     pct or pts     3.50     4.22   0.72
+       gbv_yoy_reported_pct q3_adjusted     pct or pts    11.29    13.66   2.36
+       gbv_yoy_reported_pct q4_adjusted     pct or pts    11.90    12.68   0.78
+             fx_pts_revenue q3_adjusted     pct or pts     3.00     3.00   0.00
+             fx_pts_revenue q4_adjusted     pct or pts     0.98     0.98   0.00
+   revenue_yoy_reported_pct q3_adjusted     pct or pts    12.83    12.83   0.00
+   revenue_yoy_reported_pct q4_adjusted     pct or pts    11.81    11.81   0.00
+                   lagged_gbv_busd 3Q26 $bn / $m / pct    27.87    27.87   0.00
+                      revenue_musd 3Q26 $bn / $m / pct 4,804.04 4,804.04   0.00
+                       revenue_low 3Q26 $bn / $m / pct 4,777.87 4,777.87   0.00
+                      revenue_high 3Q26 $bn / $m / pct 4,846.23 4,846.23   0.00
+                           yoy_pct 3Q26 $bn / $m / pct    17.31    17.31   0.00
+implied_guide_mid_if_cushion_holds 3Q26 $bn / $m / pct      NaN      NaN    NaN
+             gbv_3q26_assumed_busd 3Q26 $bn / $m / pct      NaN      NaN    NaN
+                   lagged_gbv_busd 4Q26 $bn / $m / pct    26.06    26.42   0.36
+                      revenue_musd 4Q26 $bn / $m / pct 3,134.68 3,178.11  43.43
+                       revenue_low 4Q26 $bn / $m / pct 3,112.88 3,156.01  43.12
+                      revenue_high 4Q26 $bn / $m / pct 3,157.47 3,201.22  43.74
+                           yoy_pct 4Q26 $bn / $m / pct    12.84    14.40   1.56
+implied_guide_mid_if_cushion_holds 4Q26 $bn / $m / pct 3,017.60 3,059.40  41.80
+             gbv_3q26_assumed_busd 4Q26 $bn / $m / pct    25.49    26.03   0.54
+{'3Q23': np.float64(0.1739), '3Q24': np.float64(0.1715), '3Q25': np.float64(0.1718), '4Q23': np.float64(0.1195), '4Q24': np.float64(0.1212), '4Q25': np.float64(0.1203)}

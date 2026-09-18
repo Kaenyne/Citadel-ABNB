@@ -1,0 +1,32 @@
+{
+  "id": "D7",
+  "commit": "e6d98321b58f0f226ba1225408462d22edbb4a3f",
+  "cmd": "PYTHONPATH=analysis/src python3 analysis/src/forecast_methods/fee_takerate/run.py",
+  "cwd": "/Users/theomachado/Citadel-ABNB",
+  "started": "2026-09-18T15:51:41+00:00",
+  "exit_code": 0,
+  "wall_s": 1.2,
+  "watch": [
+    "data/processed/forecast_methods/fee_takerate",
+    "analysis/src/forecast_methods/fee_takerate",
+    "data/processed/forecast_methods/registry",
+    "data/processed/margin_build/10_harness_margin"
+  ],
+  "changed": [
+    {
+      "kind": "csv",
+      "max_abs_diff": 5.684341886080802e-14,
+      "rows_head": 1,
+      "rows_new": 1,
+      "cols_added": [],
+      "cols_removed": [],
+      "path": "data/processed/forecast_methods/fee_takerate/04b_takerate_regression.csv"
+    }
+  ],
+  "new_files": [
+    "analysis/src/forecast_methods/fee_takerate/__pycache__/__init__.cpython-313.pyc",
+    "analysis/src/forecast_methods/fee_takerate/__pycache__/fee_schedule.cpython-313.pyc"
+  ],
+  "restored": true,
+  "interpreter": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
+}

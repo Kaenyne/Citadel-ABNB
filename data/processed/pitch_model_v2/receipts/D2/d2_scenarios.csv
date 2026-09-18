@@ -1,0 +1,10 @@
+scenario,period,yoy_pct,nights_mm,lo_pct,lo_mm,hi_pct,hi_mm,source
+base,4Q26,8.12,131.8,8.04,131.7,8.86,132.7,"N memo 2 case B, global lap at the pinned 45% split; hi = case A (PR #32 NA-only lap)"
+short,4Q26,7.61,131.2,6.58,129.9,8.35,132.1,unified RNPL module base; band = module bear/bull (lap + pull-forward + deferral + propensity)
+breaker,4Q26,10.0,134.1,10.0,134.1,11.44,135.8,management repeats 'low double digits' (>=10.0); hi = P90 of the adopted 4Q26 print object
+base,1Q27,6.97,167.1,6.85,166.9,7.1,167.3,exna_lap=False reference + ledger-dated ex-NA lap (note 01 s2.4); D-11 safe
+short,1Q27,6.47,166.3,5.28,164.4,7.34,167.7,unified RNPL module base; band = module bear/bull
+breaker,1Q27,8.17,169.0,8.17,169.0,8.17,169.0,the pre-registered February falsifier: the ex-NA lap is absent (PR #32 reference)
+base,2Q27,6.42,157.8,6.24,157.6,6.6,158.1,exna_lap=False reference + ledger-dated ex-NA lap (note 01 s2.4); D-11 safe
+short,2Q27,6.44,157.9,5.74,156.8,6.87,158.5,unified RNPL module base; band = module bear/bull
+breaker,2Q27,8.17,160.4,8.17,160.4,8.17,160.4,the pre-registered February falsifier: the ex-NA lap is absent (PR #32 reference)

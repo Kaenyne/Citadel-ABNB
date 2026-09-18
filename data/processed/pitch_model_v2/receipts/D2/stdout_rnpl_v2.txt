@@ -1,0 +1,37 @@
+{
+  "excess_reproduction": false,
+  "excess_values": [
+    {
+      "quarter": "2025Q4",
+      "excess_unpaid_pp": 1.9691138259797292
+    },
+    {
+      "quarter": "2026Q1",
+      "excess_unpaid_pp": 8.047784019288606
+    },
+    {
+      "quarter": "2026Q2",
+      "excess_unpaid_pp": 9.705898803719615
+    }
+  ],
+  "scenario_rows": 6,
+  "registry_rows": 12,
+  "historical_registry_rows": 0,
+  "source_date": "2026-09-11",
+  "as_of": "2026-09-13",
+  "verdict": "PARTIAL: +8.1 headline rounding not reproduced; original joint identification rejected; UF line-specific historical-rate classification not expressly disclosed"
+}
+nights_variant quarter  pure_kernel_revenue_musd  D1_stress_revenue_musd  registered_revenue_musd
+          team  2026Q3               4808.362929             4766.049428              4766.049428
+          team  2026Q4               3214.775751             3185.195735              3185.195735
+          theo  2026Q3               4808.362929             4766.049428              4766.049428
+          theo  2026Q4               3203.184582             3173.711219              3203.184582
+          exna  2026Q3               4808.362929             4766.049428              4766.049428
+          exna  2026Q4               3214.775751             3185.195735              3185.195735
+     window                                       rule                                         sample  n  alarms     rate
+         W1            K0 chronological plus/minus 2sd                 pre_RNPL_empirical_false_alarm  2       1 0.500000
+         W1            K0 chronological plus/minus 2sd              all_history_alarm_not_known_false  6       1 0.166667
+         W2            K0 chronological plus/minus 2sd                 pre_RNPL_empirical_false_alarm  2       1 0.500000
+         W2            K0 chronological plus/minus 2sd              all_history_alarm_not_known_false  6       1 0.166667
+descriptive fixed Q3 card warn_or_escalate below 17.09 retrospective_same_cells_helped_set_thresholds  3       0 0.000000
+descriptive         fixed Q3 card escalate below 16.93 retrospective_same_cells_helped_set_thresholds  3       0 0.000000
