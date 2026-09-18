@@ -1,0 +1,46 @@
+{
+  "id": "X3",
+  "exit_code": 0,
+  "cmd": "manual EDGAR provenance search",
+  "changed": [],
+  "restored": true,
+  "commit": "5d6c577",
+  "note": "No script exists for this line; this is a manual SEC EDGAR provenance search, not a reproducible package run. exit_code 0 records that the search completed and produced a determinate verdict (mirror only), not that a number was reproduced.",
+  "fetches": [
+    {
+      "n": 1,
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001559720&type=8-K&dateb=20260301&owner=include&count=10",
+      "date": "2026-09-18",
+      "purpose": "locate the 8-K accession for the 4Q25 print (found 0001193125-26-048670, filed 2026-02-12)"
+    },
+    {
+      "n": 2,
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001559720&type=8-K&dateb=&owner=include&count=10",
+      "date": "2026-09-18",
+      "purpose": "locate the 8-K accession for the 1Q26 print (found 0001193125-26-211816, filed 2026-05-07) and confirm the 2Q26 8-K accession (0001193125-26-337928)"
+    },
+    {
+      "n": 3,
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526048670/",
+      "date": "2026-09-18",
+      "purpose": "list every exhibit filed under the 4Q25 8-K; confirms only Exhibit 99.1 (d58192dex991.htm, the shareholder letter) plus JPG page images -- no separate transcript or prepared-remarks exhibit"
+    },
+    {
+      "n": 4,
+      "url": "https://www.sec.gov/Archives/edgar/data/1559720/000119312526211816/",
+      "date": "2026-09-18",
+      "purpose": "list every exhibit filed under the 1Q26 8-K; confirms only Exhibit 99.1 (d23351dex991.htm, the shareholder letter) plus JPG page images -- no separate transcript or prepared-remarks exhibit"
+    },
+    {
+      "n": 5,
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001559720&type=10-Q&dateb=&owner=include&count=10",
+      "date": "2026-09-18",
+      "purpose": "locate the 1Q26 10-Q accession (0001559720-26-000014, filed 2026-05-07) for a follow-up MD&A check; accession identified but the document itself was not fetched -- fetch budget (5) was exhausted at this point"
+    }
+  ],
+  "local_sources_checked_not_web_fetches": [
+    "data/raw/regulatory/quantification/abnb_2025_10k.json (FY2025 10-K, official, already on disk) -- no 'basis point' hit tied to the bundle; GBV/Nights MD&A driver language is qualitative only",
+    "data/raw/regulatory/quantification/abnb_2026q2_10q.html (2Q26 10-Q, official, already on disk) -- MD&A GBV section is qualitative only, no points figure, RNPL mentioned only for cancellation-rate and FCF-timing risk language",
+    "/Users/theomachado/Citadel-ABNB-untracked/docs/pitch-forecasts/questions/bundle-attribution-quantified/sources/letters_calls_3Q25-2Q26_rnpl_passages.txt -- full-text RNPL-keyword extraction of the 4Q25 and 1Q26 shareholder letters (the same Ex 99.1 files confirmed present above), all hits (12 and 24 respectively) shown, none containing 'basis points' or 'points of ... growth'"
+  ]
+}
