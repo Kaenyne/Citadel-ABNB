@@ -1,0 +1,96 @@
+model  n  p  gbv_beta   gbv_se   gbv_pvalue  gbv_ci95_lower  gbv_ci95_upper  r_squared  adjusted_r_squared  joint_pvalue  standardized_condition_number
+   C1 19  5  1.043263 0.015912 7.971608e-19        1.009134        1.077392   0.999076            0.998812  2.492357e-22                       4.704304
+   C2 19  6  1.144196 0.044722 1.665959e-12        1.047581        1.240811   0.999166            0.998845  2.183772e-24                      15.542729
+   C3 15  2  1.123771 0.053207 1.906970e-11        1.008825        1.238718   0.918253            0.911964  1.906970e-11                       1.000000
+                model  n      beta  hac3_holm6_p  adjusted_r_squared
+                   C1 19  1.043263  4.782965e-18            0.998812
+                   C2 19  1.144196  8.329796e-12            0.998845
+                   C3 15  1.123771  7.627879e-11            0.911964
+        P1_season_gbv 17  0.947647  5.802811e-02            0.727793
+  P2_season_trend_gbv 17 -0.017443  6.807589e-01            0.995354
+P3_growth_incremental 13  0.154496  6.807589e-01           -0.015836
+data/processed/forecast_methods/gbv_guidance_inference_v1/integrated_v2
+=== R4C fresh-refit vs committed comparison ===
+coefficients.csv: shape (156, 19) -> (156, 19) same=True max_abs_diff=2.457e-09 (col=t_statistic)
+model_statistics.csv: shape (36, 36) -> (36, 36) same=True max_abs_diff=4.639e-08 (col=joint_f_statistic)
+leave_one_year_out.csv: shape (76, 18) -> (76, 18) same=True max_abs_diff=1.729e-11 (col=gbv_ci95_upper)
+diagnostics.csv: shape (204, 22) -> (204, 22) same=True max_abs_diff=2.869e-11 (col=f_statistic)
+primary_claims.csv: shape (3, 36) -> (3, 36) same=True max_abs_diff=9.204e-09 (col=joint_f_statistic)
+conditional_scenarios.csv: shape (6, 15) -> (6, 15) same=True max_abs_diff=8.004e-11 (col=guide_point_musd)
+prepared_mature_rows.csv: shape (38, 24) -> (38, 24) same=True max_abs_diff=0.000e+00 (col=None)
+influence.csv: shape (250, 14) -> (250, 14) same=True max_abs_diff=1.012e-11 (col=studentized_external)
+vif.csv: shape (60, 7) -> (60, 7) same=True max_abs_diff=3.553e-15 (col=vif)
+
+=== C1 canonical coefficients: committed vs fresh ===
+window covariance      term  estimate_v1  estimate_v2     abs_diff  standard_error_v1  standard_error_v2  se_abs_diff  n_v1  n_v2
+  full        OLS season_Q1     6.947388     6.947388 7.993606e-15           0.009193           0.009193 0.000000e+00    19    19
+  full        OLS season_Q2     7.150749     7.150749 9.769963e-15           0.010347           0.010347 1.006140e-16    19    19
+  full        OLS season_Q3     7.432047     7.432047 2.664535e-15           0.010187           0.010187 0.000000e+00    19    19
+  full        OLS season_Q4     7.089819     7.089819 5.329071e-15           0.008066           0.008066 0.000000e+00    19    19
+  full        OLS  gbv_beta     1.043263     1.043263 1.354472e-14           0.012853           0.012853 0.000000e+00    19    19
+  full       HAC3 season_Q1     6.947388     6.947388 7.993606e-15           0.009103           0.009103 1.994932e-16    19    19
+  full       HAC3 season_Q2     7.150749     7.150749 9.769963e-15           0.013180           0.013180 2.199629e-15    19    19
+  full       HAC3 season_Q3     7.432047     7.432047 2.664535e-15           0.009907           0.009907 2.012279e-16    19    19
+  full       HAC3 season_Q4     7.089819     7.089819 5.329071e-15           0.006865           0.006865 1.399922e-15    19    19
+  full       HAC3  gbv_beta     1.043263     1.043263 1.354472e-14           0.015912           0.015912 3.202300e-15    19    19
+    W1        OLS season_Q1     6.969284     6.969284 3.552714e-15           0.018335           0.018335 0.000000e+00    14    14
+    W1        OLS season_Q2     7.173056     7.173056 8.881784e-16           0.020513           0.020513 0.000000e+00    14    14
+    W1        OLS season_Q3     7.455695     7.455695 1.776357e-15           0.019849           0.019849 0.000000e+00    14    14
+    W1        OLS season_Q4     7.111246     7.111246 8.881784e-16           0.017923           0.017923 0.000000e+00    14    14
+    W1        OLS  gbv_beta     1.013953     1.013953 2.664535e-15           0.025099           0.025099 0.000000e+00    14    14
+    W1       HAC3 season_Q1     6.969284     6.969284 3.552714e-15           0.015060           0.015060 3.301179e-15    14    14
+    W1       HAC3 season_Q2     7.173056     7.173056 8.881784e-16           0.020861           0.020861 7.199102e-15    14    14
+    W1       HAC3 season_Q3     7.455695     7.455695 1.776357e-15           0.013399           0.013399 3.601286e-15    14    14
+    W1       HAC3 season_Q4     7.111246     7.111246 8.881784e-16           0.012453           0.012453 2.000136e-15    14    14
+    W1       HAC3  gbv_beta     1.013953     1.013953 2.664535e-15           0.021982           0.021982 6.900730e-15    14    14
+    W2        OLS season_Q1     6.983012     6.983012 8.881784e-16           0.033525           0.033525 7.008283e-16    10    10
+    W2        OLS season_Q2     7.192558     7.192558 3.552714e-15           0.037190           0.037190 7.979728e-16    10    10
+    W2        OLS season_Q3     7.465849     7.465849 1.776357e-15           0.035681           0.035681 7.008283e-16    10    10
+    W2        OLS season_Q4     7.122163     7.122163 6.217249e-15           0.032506           0.032506 6.036838e-16    10    10
+    W2        OLS  gbv_beta     0.996204     0.996204 7.438494e-15           0.043313           0.043313 7.979728e-16    10    10
+    W2       HAC3 season_Q1     6.983012     6.983012 8.881784e-16           0.026444           0.026444 2.400857e-15    10    10
+    W2       HAC3 season_Q2     7.192558     7.192558 3.552714e-15           0.032758           0.032758 1.330186e-14    10    10
+    W2       HAC3 season_Q3     7.465849     7.465849 1.776357e-15           0.025388           0.025388 5.797446e-15    10    10
+    W2       HAC3 season_Q4     7.122163     7.122163 6.217249e-15           0.026039           0.026039 7.400330e-15    10    10
+    W2       HAC3  gbv_beta     0.996204     0.996204 7.438494e-15           0.034790           0.034790 2.699230e-15    10    10
+
+max |estimate diff| over all C1 canonical rows: 1.354472090042691e-14
+max |SE diff| over all C1 canonical rows: 1.3301859613790157e-14
+
+=== Independent re-fit of C1 from prepared_mature_rows.csv (statsmodels, my own code) ===
+max |driver_musd - my 0.4/0.4/0.2 driver| = 0.0
+max |log_x - mine| = 1.1102230246251565e-16
+max |log_guide - mine| = 8.881784197001252e-16
+
+-- window full (n=19, 2021Q4..2026Q2) --
+   season_Q1  OLS est 6.947387695122972  OLS SE 0.0091933535  HAC3 SE 0.0091028822
+   season_Q2  OLS est 7.150748541143691  OLS SE 0.0103472000  HAC3 SE 0.0131795138
+   season_Q3  OLS est 7.432046851026030  OLS SE 0.0101874613  HAC3 SE 0.0099069560
+   season_Q4  OLS est 7.089819228122647  OLS SE 0.0080656795  HAC3 SE 0.0068653967
+   gbv_beta   OLS est 1.043263214906334  OLS SE 0.0128527691  HAC3 SE 0.0159124125
+   OLS beta p=4.040297e-20  HAC3 beta p=7.971608e-19
+   R2=0.99907632  adjR2=0.99881241
+   vs committed OLS: max|est diff|=1.377e-14  max|SE diff|=5.898e-17
+   vs committed HAC3: max|est diff|=1.377e-14  max|SE diff|=3.286e-15
+
+-- window W1 (n=14, 2023Q1..2026Q2) --
+   season_Q1  OLS est 6.969284210494584  OLS SE 0.0183345009  HAC3 SE 0.0150598300
+   season_Q2  OLS est 7.173055547685149  OLS SE 0.0205127865  HAC3 SE 0.0208608197
+   season_Q3  OLS est 7.455694503273707  OLS SE 0.0198492482  HAC3 SE 0.0133985017
+   season_Q4  OLS est 7.111246082009240  OLS SE 0.0179233940  HAC3 SE 0.0124531791
+   gbv_beta   OLS est 1.013953123485588  OLS SE 0.0250994742  HAC3 SE 0.0219820293
+   OLS beta p=1.737481e-11  HAC3 beta p=5.294443e-12
+   R2=0.99852269  adjR2=0.99786611
+   vs committed OLS: max|est diff|=3.553e-15  max|SE diff|=9.021e-17
+   vs committed HAC3: max|est diff|=3.553e-15  max|SE diff|=7.144e-15
+
+-- window W2 (n=10, 2024Q1..2026Q2) --
+   season_Q1  OLS est 6.983011856697511  OLS SE 0.0335249610  HAC3 SE 0.0264441800
+   season_Q2  OLS est 7.192557651057943  OLS SE 0.0371901542  HAC3 SE 0.0327580837
+   season_Q3  OLS est 7.465849195240324  OLS SE 0.0356806059  HAC3 SE 0.0253884205
+   season_Q4  OLS est 7.122162975996499  OLS SE 0.0325056174  HAC3 SE 0.0260394369
+   gbv_beta   OLS est 0.996203740077934  OLS SE 0.0433127328  HAC3 SE 0.0347901280
+   OLS beta p=2.889915e-06  HAC3 beta p=9.731614e-07
+   R2=0.99837974  adjR2=0.99708352
+   vs committed OLS: max|est diff|=7.438e-15  max|SE diff|=7.980e-16
+   vs committed HAC3: max|est diff|=7.438e-15  max|SE diff|=1.331e-14

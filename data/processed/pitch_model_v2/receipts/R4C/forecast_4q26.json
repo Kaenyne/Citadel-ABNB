@@ -1,0 +1,19 @@
+{
+  "model": "C1",
+  "coefficient_as_of": "2026-09-16",
+  "target_quarter": "2026Q4",
+  "inputs_musd": {
+    "gbv_current_musd": 22987.263456,
+    "gbv_lag1_musd": 26027.962983,
+    "gbv_lag2_musd": 27200.0
+  },
+  "weighted_gbv_musd": 25046.0905756,
+  "guide_point_musd": 3126.5119091764896,
+  "quarter_multiplier_musd": 1199.690910629476,
+  "gbv_elasticity": 1.0432632149063203,
+  "estimated_coefficients": 5,
+  "training_observations": 19,
+  "formula": "quarter_multiplier * (weighted_GBV_musd / 10000) ** gbv_elasticity",
+  "interpretation": "Conditional geometric center given supplied GBV; median only under symmetric log errors. No calibrated forecast interval or GBV uncertainty included.",
+  "guide_required_at_prediction": false
+}
