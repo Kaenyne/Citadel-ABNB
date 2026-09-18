@@ -22,7 +22,7 @@ def write(spec_path, targets_csv, decisions_path, out_md, check_paths: bool = Tr
             tv = float(row["value"])
             if sv is None:
                 lines.append(f"| {lid} | {p} | {sc} | (formula or absent) | {tv} | | | {row['source']} | see workbook |"); continue
-            diff = round(sv - tv, 4); pct = round(100 * diff / tv, 2) if tv else 0.0
+            diff = round(sv - tv, 4); pct = round(100 * diff / tv, 2) if tv else "n/a"
             expl = ", ".join(by_key.get((lid, p, sc), [])) if abs(diff) > 1e-9 else "match"
             if expl == "":
                 expl = "UNEXPLAINED"; unexplained += 1
