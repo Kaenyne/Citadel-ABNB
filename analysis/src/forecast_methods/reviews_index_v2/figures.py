@@ -60,13 +60,13 @@ def fig1_panel():
 def fig2_walkforward():
     paths = pd.read_csv(C.OUT / "stage_b_paths.csv"); res = pd.read_csv(C.OUT / "stage_b_walkforward.csv")
     c3 = json.loads((C.OUT / "stage_c3_3q26.json").read_text())
-    p = paths[(paths.measure == "yoy_vmatch") & (paths.window == "W1") & (paths.subset == "full")].sort_values("t")
-    r = res[(res.measure == "yoy_vmatch") & (res.subset == "full") & (res.target == "level")].set_index("window")
+    p = paths[(paths.measure == C.PRIMARY) & (paths.window == "W1") & (paths.subset == "full")].sort_values("t")
+    r = res[(res.measure == C.PRIMARY) & (res.subset == "full") & (res.target == "level")].set_index("window")
     fig, (ax, bx) = plt.subplots(2, 1, figsize=(11, 6.4), sharex=True, gridspec_kw=dict(height_ratios=[2.2, 1]))
     x = np.arange(len(p)); labels = [qlabel(q) for q in p.t]
     naive = (p.actual + p.err_naive).to_numpy()          # err_naive = y[t-1] - y[t], so y[t-1] = actual + err
     ax.plot(x, p.actual, color=S1, lw=2, marker="o", ms=8, mec=SURF, mew=2, label="printed nights y/y")
-    ax.plot(x, p.pred, color=S2, lw=2, marker="o", ms=8, mec=SURF, mew=2, label="v2 index, walk-forward (refit before each quarter)")
+    ax.plot(x, p.pred, color=S2, lw=2, marker="o", ms=8, mec=SURF, mew=2, label="v2.1 index, walk-forward (refit before each quarter)")
     ax.plot(x, naive, color=MUTED, lw=1.5, ls=(0, (3, 2)), label="naive: last quarter's y/y")
     x3 = len(p); ax.errorbar([x3], [c3["implied_nights_yoy"]], yerr=[c3["band_pp"]], fmt="o", ms=9, mfc=SURF, mec=S2, mew=2, ecolor=S2, elinewidth=1.5, capsize=4)
     ax.text(x3, c3["hi"] + 0.25, f"3Q26 read\n{c3['implied_nights_yoy']:.1f}% +/- {c3['band_pp']:.1f}", ha="center", va="bottom", color=INK2, fontsize=9)
@@ -75,7 +75,7 @@ def fig2_walkforward():
     _title(ax, "The record's yardstick: expanding-window walk-forward, W1 scored 1Q23 to 2Q26",
            f"RMSE ratio vs naive  W1 {r.loc['W1','wf_ratio_vs_naive']:.3f} [{r.loc['W1','ratio_lo90']:.2f}, {r.loc['W1','ratio_hi90']:.2f}]   W2 {r.loc['W2','wf_ratio_vs_naive']:.3f} [{r.loc['W2','ratio_lo90']:.2f}, {r.loc['W2','ratio_hi90']:.2f}]   pass line 0.75 on both;  DM p {r.loc['W1','dm_p']:.2f} / {r.loc['W2','dm_p']:.2f}")
     wdt = 0.36
-    bx.bar(x - wdt / 2, p.err_feature.abs(), width=wdt, color=S2, label="|error| v2 index")
+    bx.bar(x - wdt / 2, p.err_feature.abs(), width=wdt, color=S2, label="|error| v2.1 index")
     bx.bar(x + wdt / 2, p.err_naive.abs(), width=wdt, color=MUTED, label="|error| naive")
     bx.set_ylabel("abs. error, pp"); bx.legend(loc="upper right", ncol=2); bx.grid(axis="x", visible=False)
     bx.set_xticks(list(x) + [x3]); bx.set_xticklabels(labels + ["3Q26"])
@@ -86,7 +86,7 @@ def fig3_gap():
     g = pd.read_csv(C.OUT / "stage_c_gap.csv"); g = g[g.variant == "primary"].sort_values("qi")
     t = pd.read_csv(C.OUT / "stage_c_tests.csv").set_index("test").loc["C1_primary_gap"]
     paths = pd.read_csv(C.OUT / "stage_b_paths.csv")
-    cal = paths[(paths.measure == "yoy_vmatch") & (paths.window == "W2") & (paths.subset == "pre_rnpl")].sort_values("t")
+    cal = paths[(paths.measure == C.PRIMARY) & (paths.window == "W2") & (paths.subset == "pre_rnpl")].sort_values("t")
     band = float(t.band_pp)
     fig, ax = plt.subplots(figsize=(11, 4.8))
     xs_cal = np.arange(len(cal)); xs_post = np.arange(len(cal), len(cal) + len(g))
@@ -102,7 +102,7 @@ def fig3_gap():
     ax.set_xlim(-0.6, xs_post[-1] + 1.6)
     ax.legend(loc="upper left")
     verdict = "pre-registered C1: FAIL - " + t.reading if not bool(t.passed) else "pre-registered C1: PASS - " + t.reading
-    _title(ax, "The post-RNPL gap is positive in three of four quarters, and inside the band", verdict)
+    _title(ax, "The post-RNPL gap: positive in three of four quarters, inside the band", verdict)
     fig.tight_layout(); fig.savefig(C.FIG / "fig3_post_rnpl_gap.png", dpi=160); plt.close(fig)
 
 
@@ -172,7 +172,7 @@ def fig6_view_vs_street():
     ax.set_xticks(list(xs_h) + list(xs_f)); ax.set_xticklabels(labels, fontsize=8.5); ax.set_ylabel("nights y/y, %"); ax.set_ylim(3.2, 19.8); ax.set_xlim(-0.6, xs_f[-1] + 0.8)
     ax.text(len(hist) - 0.35, 3.35, "forward", color=INK2, fontsize=9, va="bottom")
     ax.legend(loc="upper right")
-    _title(ax, "Our nights view against the Street", "3Q26 base 146.8m (+9.9%); v2 read +9.3% +/- 1.9; Street 149.0m (+11.5%) is 1.2 bands above the read. 4Q26 base 131.8m vs Street 134.0m.")
+    _title(ax, "Our nights view against the Street", f"3Q26 base 146.8m (+9.9%); v2.1 read +{r3.v2_read_yoy:.2f} +/- {r3.v2_band_pp:.2f}; Street 149.0m (+11.5%) is {r3.street_z_vs_v2:.1f} bands above the read. 4Q26 base 131.8m vs Street 134.0m.")
     fig.tight_layout(); fig.savefig(C.FIG / "fig6_view_vs_street.png", dpi=160); plt.close(fig)
 
 
@@ -205,8 +205,8 @@ def fig0_model_overview():
     """One picture of the model: measurement (fig1) -> calibration (fig2) -> RNPL gap (fig3) -> the view (fig6)."""
     import matplotlib.image as mpimg
     panels = [("fig1_panel_measurement.png", "1. Measurement: reviews measure stays (n 702 country-months, beta 0.49)"),
-              ("fig2_walkforward.png", "2. Calibration: walk-forward on the record's windows (0.68 / 0.72 vs naive)"),
-              ("fig3_post_rnpl_gap.png", "3. RNPL phase: printed minus stays-implied, frozen mapping (+0.72 pp, inside band)"),
+              ("fig2_walkforward.png", "2. Calibration: walk-forward on the record's windows (v2.1: 0.72 / 0.72 vs naive)"),
+              ("fig3_post_rnpl_gap.png", "3. RNPL phase: printed minus stays-implied, frozen mapping (v2.1: +0.49 pp, inside band)"),
               ("fig8_final_model.png", "4. The final model: stays vs print vs Street; the RNPL hit lands 4Q26 (level) and 2Q27 (y/y)")]
     fig, axes = plt.subplots(2, 2, figsize=(22, 13))
     for ax, (f, t) in zip(axes.ravel(), panels):
@@ -257,7 +257,7 @@ def fig8_final_model():
         ax.text(x_f[i] + dx, fwd.print_yoy.iloc[i] + dy, f"{lvl:.1f}m", ha=ha, va="top", color=INK2, fontsize=8.5)
     ax.set_ylabel("nights y/y, %"); ax.set_ylim(4.6, 13.2); ax.legend(loc="lower left", fontsize=8.5, ncol=2)
     _title(ax, "Final nights model: the business (stays), the print (stays + written options), and the Street",
-           f"3Q26: stays +{meta['stays_3q26']:.2f} +/- {meta['band']:.2f}, print 9.3-10.9, Street +11.5. The RNPL hit lands when access stops growing: 2Q27 (-1.6 lapped, base +5.9%). A European launch would defer it.")
+           f"3Q26: stays +{meta['stays_3q26']:.2f} +/- {meta['band']:.2f}, print {meta['stays_3q26']:.1f}-{meta['stays_3q26'] + meta['I_3q26']['wave']:.1f}, Street +11.5. The RNPL hit lands when access stops growing: 2Q27 (-1.6 lapped, base +5.9%). A European launch would defer it.")
     # bottom: the option term in y/y form (what the KPI laps)
     bx.axhline(0, color=AXIS, lw=1)
     bx.bar(x_obs, obs.I_pp, width=0.55, color=S2, label="observed gap: print minus stays-implied")
@@ -293,7 +293,7 @@ def fig9_one_line():
     fig, ax = plt.subplots(figsize=(12.5, 6))
     ax.axvspan(n_h - 0.5, x_f[-1] + 0.6, color=NEUTRAL, lw=0, zorder=0)
     ax.fill_between(x_f, lo, hi, color=S1, alpha=0.13, lw=0, label="our range (3Q26: stays read +/- band; 2027: parameter envelope)")
-    ax.fill_between([x_f[0] - 0.18, x_f[0] + 0.18], [meta["stays_3q26"]] * 2, [meta["stays_3q26"] + meta["I_3q26"]["wave"]] * 2, color=S1, alpha=0.35, lw=0, label="3Q26 print range: stays + written options (9.3-10.9)")
+    ax.fill_between([x_f[0] - 0.18, x_f[0] + 0.18], [meta["stays_3q26"]] * 2, [meta["stays_3q26"] + meta["I_3q26"]["wave"]] * 2, color=S1, alpha=0.35, lw=0, label=f"3Q26 print range: stays + written options ({meta['stays_3q26']:.1f}-{meta['stays_3q26'] + meta['I_3q26']['wave']:.1f})")
     ax.plot(x_h, hist.nights_m_yoy_pct, color=S1, lw=2.2, marker="o", ms=8, mec=SURF, mew=2, label="printed nights y/y")
     ax.plot(np.r_[x_h[-1], x_f], np.r_[hist.nights_m_yoy_pct.iloc[-1], fwd.print_yoy], color=S1, lw=2.2, ls=(0, (4, 2)), marker="o", ms=8, mec=SURF, mew=2, label="our view (base print path)")
     ax.scatter([x_f[1]], [meta["short_4q26_print"]], marker="v", s=70, color=RED, edgecolor=SURF, linewidth=1.5, zorder=6, label="4Q26 short (cancellation drag)")
@@ -316,6 +316,6 @@ def fig9_one_line():
     ax.set_xticks(list(x_h) + list(x_f)); ax.set_xticklabels(labels, fontsize=9); ax.set_ylabel("nights y/y, %"); ax.set_ylim(2.8, 13.6)
     ax.legend(loc="upper left", fontsize=8.5, ncol=2)
     _title(ax, "Our view, Airbnb's guidance, and the Street",
-           "3Q26: guided 10-12% (147.0-149.6m), Street 149.0m at the top of it, the business 9.35 +/- 1.9 below its floor. Airbnb beat its nights guide three quarters running.")
+           f"3Q26: guided 10-12% (147.0-149.6m), Street 149.0m at the top of it, the business {meta['stays_3q26']:.2f} +/- {meta['band']:.1f} below its floor. Airbnb beat its nights guide three quarters running.")
     fig.tight_layout(); fig.savefig(C.FIG / "fig9_view_guidance_street.png", dpi=160); plt.close(fig)
     g[g.target_period.isin(labels)][["print_quarter", "print_date", "target_period", "guide_type", "value_low", "value_high", "direction", "comparator_value", "actual", "outcome", "quote"]].to_csv(C.OUT / "stage_e_guidance.csv", index=False)

@@ -4,7 +4,7 @@ Session OLS.V2, 18 September 2026. Lane: `analysis/src/forecast_methods/reviews_
 `data/processed/forecast_methods/reviews_index_v2/` (outputs), this note. Copy-never-overwrite: reads
 `q3nowcast/E`, `q3nowcast_v2/E`, `kernel_leadtime_v2`, the Eurostat and KPI files; writes only inside the lane.
 
-Status (18 Sep 2026, 17:15): **FINAL.** Frozen, run, reviewed with Theo, corrected twice (imported-β test; option term
+Status (18 Sep 2026, 18:40): **FINAL, v2.1 primary** (§5: stay-quarter regional mix; 3Q26 stays read 8.92 ± 1.85 → 145.5m; Street ≈ 8% tail). Earlier text quotes v2's 9.35 / 146.1 / 12% where written before §5. Frozen, run, reviewed with Theo, corrected twice (imported-β test; option term
 read year over year with the kernel-timed landing channel). Verdicts A PASS · B PASS · C FAIL · D/E/F reported.
 
 **The model in ten lines.** Review counts measure stays (β 0.49 on 702 country-months vs observed nights, p .001,
@@ -596,3 +596,53 @@ Matches the filed laps in the base path (−0.78, −1.11 + 1.0, −1.65).
 neither. Parameters stated: the ceiling (no further RNPL access growth after the July 2026 eligibility expansion; Europe not in the rollout list) and the
 long-lead share (3–6% of any cohort). Risks that move the timing: a European launch (new writing wave, defers the
 2Q27 hit), a rising exercise rate (level drag, untimed, the short).
+
+---
+
+## 5. v2.1 — the geographic mix (18 Sep evening, Theo's correction)
+
+**What was wrong.** v2 weighted the four regions by Airbnb's FY25 annual nights shares (28.3 / 41.6 / 17.9 / 12.3) — one
+snapshot for every quarter. The record already held the right object: `overnight/10_regional_panel_quarterly.csv`
+(regional revenue by quarter, check-in basis, 1Q22–2Q26; the regional ADR index NA 1.42 / EMEA 0.97 / LatAm 0.68 / APAC 0.59;
+the trailing-4Q nights shares; the disclosed regional growth buckets; FY27 regional paths; the drift rule). Regional revenue
+is check-in-dated, so quarterly revenue ÷ ADR index is the **stay-quarter mix** — the right weight for a stays index — and
+it swings: EMEA is ~51% of stays in Q3 and ~27% in Q1; LatAm 9% in Q3 and 24% in Q1. A Q3 read weighted with annual shares
+gave five LatAm cities at +27.5% nearly twice their Q3 weight and Europe at +0.9% four-fifths of its.
+
+**What v2.1 does** (`mix.py`, `mix_weights_stay_quarter.csv`): w_r,t = regional revenue_r,t ÷ ADR index_r, renormalised, for
+1Q22–2Q26; forward = same quarter of the prior year rolled by the record's share-drift rule (NA −0.55 pp/qtr, EMEA +0.10,
+LatAm +0.33, APAC +0.10). Nothing fitted. Pass lines unchanged; v2 kept beside it.
+
+| stay-quarter mix, % | NA | EMEA | LatAm | APAC |
+|---|---:|---:|---:|---:|
+| 3Q24 | 30.9 | 49.7 | 8.2 | 11.1 |
+| 4Q24 | 31.1 | 32.6 | 16.3 | 20.0 |
+| 1Q25 | 31.8 | 26.4 | 21.6 | 20.2 |
+| 2Q25 | 32.2 | 42.2 | 11.3 | 14.3 |
+| 3Q25 | 28.7 | 51.0 | 8.7 | 11.6 |
+| 4Q25 | 28.1 | 33.3 | 17.9 | 20.7 |
+| 1Q26 | 28.5 | 27.4 | 23.6 | 20.6 |
+| 2Q26 | 31.8 | 41.7 | 12.1 | 14.3 |
+| 3Q26 | 26.5 | 51.5 | 10.0 | 12.0 |
+| 4Q26 | 25.3 | 33.9 | 19.6 | 21.2 |
+
+**Results, v2.1 beside v2 (same frozen pass lines):**
+
+| | v2 (FY25 annual) | **v2.1 (stay-quarter mix)** |
+|---|---|---|
+| B1 walk-forward W1 / W2 | 0.682 / 0.720 | **0.723 / 0.723** — clears both; intervals [0.61, 1.08] / [0.58, 0.97] |
+| `yoy_all` under the same weights | 0.749 / 0.684 | 0.823 / 0.749 — **fails W1**: the seasonal mix helps only the vintage-matched construction |
+| C1 gaps 3Q25–2Q26 (pp) | +0.66 / +0.71 / −0.07 / +1.59, mean +0.72 | +0.86 / +0.34 / -0.80 / +1.55, mean **+0.49** (0.26 bands) — same reading |
+| frozen mapping (1Q23–2Q25) | 6.517 + 0.345 × index | 6.825 + 0.350 × index; band ±1.85 |
+| 3Q26 composite → read | 8.21 → 9.35% ± 1.88 → 146.1m [143.6, 148.6] | 5.90 + 0.09 → **8.92% ± 1.85 → 145.5m [143.0, 148.0]** (3Q26 weights NA 0.265 / EMEA 0.515 / LatAm 0.100 / APAC 0.120) |
+| Street 149.0 on the read | 1.16 bands, P 12% | **1.41 bands, P 8%** |
+
+**Also found, for v2.2.** Our regional sample tracks the disclosed regional buckets well in EMEA (corr 0.93) and APAC (0.96),
+weakly in NAM (0.51) and LatAm (0.67, flat slope — five cities against a Brazil/Mexico-driven region). 2Q26 is stark: our EMEA
++1.5 vs a disclosed high-single-digit bucket, our APAC +2.3 vs high-teens (our APAC is Australia; the growth is India and
+Japan). A per-region mapping is the next construction, on 8–14 quarters per region; the web-usage data Theo is sending is the
+booking side of the identity and becomes v2.2 with it.
+
+**v2.1 is the primary from here** (`config.PRIMARY = "yoy_vmatch_mix"`); every downstream stage (E, F, figures) reads it.
+The final model's stays read is 8.92; the print range 8.92–10.51; the mechanism base 9.886 now sits
++0.97 above the stays read (v2: +0.54).

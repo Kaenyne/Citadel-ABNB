@@ -5,6 +5,15 @@ main session's `docs/pitch-model-v2/lines/final_nights.md` (the mechanism base a
 DEC-0026 asks for: every number with the reason it stands, the data and code behind it, every alternative considered with
 its own number, and how each thesis catalyst enters. The final picture is `figures/reviews_index_v2/fig8_final_model.png`.
 
+
+> **v2.1 (18 Sep evening).** After this rationale was written, Theo pointed at the regional-mix data already in the record and the
+> weights were corrected from Airbnb's FY25 annual nights shares to the **stay-quarter mix** (quarterly regional revenue ÷ the
+> regional ADR index; EMEA ~51% of stays in Q3, LatAm ~9%). Same frozen pass lines: walk-forward 0.723 / 0.723 (still clears
+> both), gap mean +0.49 inside the band (same reading), **3Q26 stays read 8.92% ± 1.85 → 145.5m
+> [143.0, 148.0]**, Street 149.0 at 1.41 bands (P ≈ 8%). Every 9.35 / 146.1 / 12% below is the v2 number; v2.1 is the primary
+> in the engine and the note's §5 carries both side by side. The logic of every section is unchanged; §2.3's weights are the
+> one construction choice that changed, and §7's timing is unaffected.
+
 ---
 
 ## 0. The claim, in one sentence, and the numbers

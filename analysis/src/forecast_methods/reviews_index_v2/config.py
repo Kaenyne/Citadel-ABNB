@@ -29,6 +29,7 @@ EU_CODE = {"austria": "AT", "belgium": "BE", "czech-republic": "CZ", "denmark": 
            "the-netherlands": "NL", "switzerland": "CH", "norway": "NO"}
 
 LAG_TRIM_MONTHS = 2            # months up to and including the dump month dropped for posting lag
+PRIMARY = "yoy_vmatch_mix"     # v2.1 (18 Sep, Theo): stay-quarter regional mix weights; "yoy_vmatch" = v2 with FY25 annual weights
 VMATCH_DAYS = (300, 430)       # prior vintage must be this many days older than the latest (E4 rule)
 
 
