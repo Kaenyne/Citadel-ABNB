@@ -52,6 +52,7 @@ def stage_b(my):
     import stages as T
     idx = T.build_index(my); idx.to_csv(C.OUT / "index_quarterly_v2.csv", index=False)
     import mix as MX; wcsv = MX.seasonal_weights(); wcsv.to_csv(C.OUT / "mix_weights_stay_quarter.csv")
+    _, reg = I.global_quarterly(my, "yoy_vmatch"); (reg * 100.0).rename_axis("qi").to_csv(C.OUT / "index_regional_vmatch_pct.csv")
     kpi = D.load_kpi(); res, paths = T.run_stage_b(idx, kpi)
     res.to_csv(C.OUT / "stage_b_walkforward.csv", index=False); paths.to_csv(C.OUT / "stage_b_paths.csv", index=False)
     loco = T.loco_slopes(idx.set_index("qi")[C.PRIMARY], kpi.set_index("qi").nights_m_yoy_pct); loco.to_csv(C.OUT / "stage_b_loco_slopes.csv", index=False)
