@@ -1,0 +1,61 @@
+parameter,quarter,base_pts,lo_pts,hi_pts,swing_lo_pp,swing_hi_pp,source
+na_3q25_bucket,3Q26,9.887,9.599,10.175,-0.288,0.288,3Q25 letter bucket mid-single digit; WS10 lo 4.0 / hi 6.0
+na_3q25_bucket,4Q26,8.157,8.157,8.157,0.0,0.0,3Q25 letter bucket mid-single digit; WS10 lo 4.0 / hi 6.0
+na_3q25_bucket,1Q27,8.206,8.206,8.206,0.0,0.0,3Q25 letter bucket mid-single digit; WS10 lo 4.0 / hi 6.0
+na_3q25_bucket,2Q27,5.934,5.934,5.934,0.0,0.0,3Q25 letter bucket mid-single digit; WS10 lo 4.0 / hi 6.0
+na_3q25_bucket,3Q27,6.229,6.229,6.229,0.0,0.0,3Q25 letter bucket mid-single digit; WS10 lo 4.0 / hi 6.0
+na_3q25_bucket,4Q27,6.045,6.045,6.045,0.0,0.0,3Q25 letter bucket mid-single digit; WS10 lo 4.0 / hi 6.0
+na_1q26_bucket,3Q26,9.887,9.599,10.175,-0.288,0.288,1Q26 letter bucket high-single digit; WS10 lo 7.0 / hi 9.0
+na_1q26_bucket,4Q26,8.157,8.028,8.287,-0.13,0.13,1Q26 letter bucket high-single digit; WS10 lo 7.0 / hi 9.0
+na_1q26_bucket,1Q27,8.206,8.013,8.399,-0.193,0.193,1Q26 letter bucket high-single digit; WS10 lo 7.0 / hi 9.0
+na_1q26_bucket,2Q27,5.934,5.646,6.222,-0.288,0.288,1Q26 letter bucket high-single digit; WS10 lo 7.0 / hi 9.0
+na_1q26_bucket,3Q27,6.229,5.941,6.517,-0.288,0.288,1Q26 letter bucket high-single digit; WS10 lo 7.0 / hi 9.0
+na_1q26_bucket,4Q27,6.045,5.757,6.333,-0.288,0.288,1Q26 letter bucket high-single digit; WS10 lo 7.0 / hi 9.0
+global_bundle_pts,3Q26,9.887,9.887,9.887,0.0,0.0,D032 approximately three points (1Q26); D014 over 200bp (4Q25)
+global_bundle_pts,4Q26,8.157,8.157,8.607,0.0,0.45,D032 approximately three points (1Q26); D014 over 200bp (4Q25)
+global_bundle_pts,1Q27,8.206,8.206,8.876,0.0,0.67,D032 approximately three points (1Q26); D014 over 200bp (4Q25)
+global_bundle_pts,2Q27,5.934,5.934,6.934,0.0,1.0,D032 approximately three points (1Q26); D014 over 200bp (4Q25)
+global_bundle_pts,3Q27,6.229,6.229,7.229,0.0,1.0,D032 approximately three points (1Q26); D014 over 200bp (4Q25)
+global_bundle_pts,4Q27,6.045,6.045,7.045,0.0,1.0,D032 approximately three points (1Q26); D014 over 200bp (4Q25)
+fee_split,3Q26,9.887,9.887,9.887,0.0,0.0,D1_exna_4q26_gap.csv: 40-50% pinned by the 4Q25 over-200bp disclosure
+fee_split,4Q26,8.157,8.075,8.24,-0.082,0.082,D1_exna_4q26_gap.csv: 40-50% pinned by the 4Q25 over-200bp disclosure
+fee_split,1Q27,8.206,8.156,8.255,-0.049,0.049,D1_exna_4q26_gap.csv: 40-50% pinned by the 4Q25 over-200bp disclosure
+fee_split,2Q27,5.934,5.934,5.934,0.0,0.0,D1_exna_4q26_gap.csv: 40-50% pinned by the 4Q25 over-200bp disclosure
+fee_split,3Q27,6.229,6.229,6.229,0.0,0.0,D1_exna_4q26_gap.csv: 40-50% pinned by the 4Q25 over-200bp disclosure
+fee_split,4Q27,6.045,6.045,6.045,-0.0,0.0,D1_exna_4q26_gap.csv: 40-50% pinned by the 4Q25 over-200bp disclosure
+phase_1q27,3Q26,9.887,9.887,9.887,0.0,0.0,"ex-NA RNPL live 17 Feb-4 Mar 2026; 0.40 is judgement, +/-0.10 carried"
+phase_1q27,4Q26,8.157,8.157,8.157,0.0,0.0,"ex-NA RNPL live 17 Feb-4 Mar 2026; 0.40 is judgement, +/-0.10 carried"
+phase_1q27,1Q27,8.206,8.115,8.296,-0.091,0.091,"ex-NA RNPL live 17 Feb-4 Mar 2026; 0.40 is judgement, +/-0.10 carried"
+phase_1q27,2Q27,5.934,5.934,5.934,0.0,0.0,"ex-NA RNPL live 17 Feb-4 Mar 2026; 0.40 is judgement, +/-0.10 carried"
+phase_1q27,3Q27,6.229,6.229,6.229,0.0,0.0,"ex-NA RNPL live 17 Feb-4 Mar 2026; 0.40 is judgement, +/-0.10 carried"
+phase_1q27,4Q27,6.045,6.045,6.045,0.0,0.0,"ex-NA RNPL live 17 Feb-4 Mar 2026; 0.40 is judgement, +/-0.10 carried"
+us_lap_partiality,3Q26,9.887,9.887,10.206,0.0,0.319,letter says August 2025 launch (about 6 of 13 weeks); call says beginning of Q3
+us_lap_partiality,4Q26,8.157,8.157,8.157,0.0,0.0,letter says August 2025 launch (about 6 of 13 weeks); call says beginning of Q3
+us_lap_partiality,1Q27,8.206,8.206,8.206,0.0,0.0,letter says August 2025 launch (about 6 of 13 weeks); call says beginning of Q3
+us_lap_partiality,2Q27,5.934,5.934,5.934,0.0,0.0,letter says August 2025 launch (about 6 of 13 weeks); call says beginning of Q3
+us_lap_partiality,3Q27,6.229,6.229,6.229,0.0,0.0,letter says August 2025 launch (about 6 of 13 weeks); call says beginning of Q3
+us_lap_partiality,4Q27,6.045,6.045,6.045,0.0,0.0,letter says August 2025 launch (about 6 of 13 weeks); call says beginning of Q3
+july_expansion,3Q26,9.887,9.887,10.187,0.0,0.3,"ledger D044, unsized; module carries +0.1 to +0.3 pts"
+july_expansion,4Q26,8.157,8.157,8.457,0.0,0.3,"ledger D044, unsized; module carries +0.1 to +0.3 pts"
+july_expansion,1Q27,8.206,8.206,8.506,0.0,0.3,"ledger D044, unsized; module carries +0.1 to +0.3 pts"
+july_expansion,2Q27,5.934,5.934,6.234,0.0,0.3,"ledger D044, unsized; module carries +0.1 to +0.3 pts"
+july_expansion,3Q27,6.229,6.229,6.229,0.0,0.0,"ledger D044, unsized; module carries +0.1 to +0.3 pts"
+july_expansion,4Q27,6.045,6.045,6.045,0.0,0.0,"ledger D044, unsized; module carries +0.1 to +0.3 pts"
+events,3Q26,9.887,9.887,9.887,0.0,0.0,1Q26 letter ~100bp Middle East; World Cup never sized (06_assumptions bear/bull)
+events,4Q26,8.157,8.157,8.157,0.0,0.0,1Q26 letter ~100bp Middle East; World Cup never sized (06_assumptions bear/bull)
+events,1Q27,8.206,7.206,8.206,-1.0,0.0,1Q26 letter ~100bp Middle East; World Cup never sized (06_assumptions bear/bull)
+events,2Q27,5.934,5.684,6.434,-0.25,0.5,1Q26 letter ~100bp Middle East; World Cup never sized (06_assumptions bear/bull)
+events,3Q27,6.229,6.229,6.229,0.0,0.0,1Q26 letter ~100bp Middle East; World Cup never sized (06_assumptions bear/bull)
+events,4Q27,6.045,6.045,6.045,0.0,0.0,1Q26 letter ~100bp Middle East; World Cup never sized (06_assumptions bear/bull)
+ENVELOPE_all_parameters,3Q26,9.887,9.311,10.949,-0.576,1.062,all eight parameters moved together
+ENVELOPE_levels_m,3Q26,146.81,146.04,148.23,-0.77,1.41,"levels, m"
+ENVELOPE_all_parameters,4Q26,8.157,7.931,9.055,-0.226,0.898,all eight parameters moved together
+ENVELOPE_levels_m,4Q26,131.8,131.57,132.94,-0.23,1.14,"levels, m"
+ENVELOPE_all_parameters,1Q27,8.206,6.858,9.401,-1.348,1.195,all eight parameters moved together
+ENVELOPE_levels_m,1Q27,169.02,166.91,170.88,-2.11,1.87,"levels, m"
+ENVELOPE_all_parameters,2Q27,5.934,5.396,8.022,-0.538,2.088,all eight parameters moved together
+ENVELOPE_levels_m,2Q27,157.1,156.3,160.2,-0.8,3.1,"levels, m"
+ENVELOPE_all_parameters,3Q27,6.229,5.941,7.517,-0.288,1.288,all eight parameters moved together
+ENVELOPE_levels_m,3Q27,155.96,154.72,159.37,-1.24,3.41,"levels, m"
+ENVELOPE_all_parameters,4Q27,6.045,5.757,7.333,-0.288,1.288,all eight parameters moved together
+ENVELOPE_levels_m,4Q27,139.77,139.14,142.69,-0.62,2.92,"levels, m"
