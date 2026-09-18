@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-14",
+  "adjudicator": "/root",
+  "status": "PASS_COMPLETED_BOUNDED_RESEARCH_AND_INDEPENDENT_DELIVERY",
+  "active_goal_objective": "Determine which parts of the ABNB bookings-to-revenue-to-management-guide investment thesis are defensible using information available at the relevant decision date. Verify source and accounting foundations, reproduce the accepted evidence, execute a bounded preregistered validation program, propagate material uncertainty through earnings, cash and valuation, and deliver the strongest supported presentation argument with measurable falsifiers and an immutable handoff.",
+  "analytical_commit": "965166c4572fe7c6300c7281e77afc5877411820",
+  "handoff_commit_identity": "The local Git commit containing this new acceptance receipt; analytical commit above is the immutable research payload.",
+  "gate_status": {
+    "G1": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS",
+    "G2": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS",
+    "G3": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS",
+    "G4": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS",
+    "G5": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS",
+    "G6": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS",
+    "G7": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS",
+    "G8": "PASS_RESEARCH_COMPLETION_WITH_DOCUMENTED_CLAIM_LIMITS"
+  },
+  "required_deliverables_completed": 10,
+  "forecast_promotion": "FAIL",
+  "investment_evidence": "INSUFFICIENT_FOR_DIRECTION_TARGET_OR_PROBABILITY_ADOPTION",
+  "retained_operational_method": "Existing fixed 2/3 kernel with its inherited lambda estimator; no replacement",
+  "unknowns": [
+    "Current global physical recognition allocations",
+    "RNPL incremental demand, cancellation behavior and revenue-flow causal magnitude",
+    "Future compatible FX fixing/recognition/hedge split",
+    "Fee theta at the frozen snapshot",
+    "Explicit management-guide expectations",
+    "Persistent marginal economics and executable trading edge"
+  ],
+  "independent_final_review": {
+    "path": "data/processed/forecast_methods/quant_thesis_validation_v1/final_contract_review_v1/postseal_v1/receipt.json",
+    "sha256": "a00a87ee6f366f4cc09e2b89b817329da192d8b603d524e7ebdd55339e1e7c85",
+    "status": "PASS_G8_RESEARCH_DELIVERY_IDENTITY"
+  },
+  "analytical_files_verified": 623,
+  "protected_files_verified": 4444,
+  "external_files_verified": 36,
+  "validation": {
+    "root_stages_exit_zero": 17,
+    "exact_canonical_table_pairs": 59,
+    "prospective_adversarial_tests": 13,
+    "economic_adversarial_tests": 7,
+    "independent_prospective_numeric_checks": 793,
+    "independent_economic_checks": 567,
+    "independent_uncertainty_checks": 246,
+    "independent_accounting_checks": 335,
+    "one_page_pdf_visually_reviewed": true,
+    "two_figures_visually_reviewed": true
+  },
+  "reproducibility_limit": "Full exact rerun verified in preserved worktree/runtime. Legacy CRLF representations and absolute provenance paths require separately reviewed handling on relocation; no automatic cross-machine guarantee.",
+  "registrations": 0,
+  "production_changes": 0,
+  "public_publications": 0,
+  "outreach_actions": 0,
+  "automations_created": 0,
+  "investment_adoptions": 0,
+  "resume": "All research and independent reviews complete. This final acceptance supersedes pre-seal G8 checkpoints. Consume exact analytical commit and canonical claims. Parent records a local handoff commit and verifies a clean worktree before marking the goal complete; no further empirical search is required."
+}

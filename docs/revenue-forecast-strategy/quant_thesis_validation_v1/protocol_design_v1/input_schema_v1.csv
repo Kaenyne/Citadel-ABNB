@@ -1,0 +1,62 @@
+table,field,type,definition,required
+source_manifest,source_id,string,Stable evidence identity,yes
+source_manifest,path_and_commit,string,Authoritative immutable file and commit,yes
+source_manifest,sha256,string,Exact raw source bytes hash,yes
+source_manifest,metric,string,Revenue GBV nights-growth or guide endpoint,yes
+source_manifest,quarter,string,Canonical YYYYQn period,yes
+source_manifest,value_usdm,number,Unmodified frozen level in USD millions,for dollar metrics
+source_manifest,source_unit,string,Original unit and display precision where available,yes
+source_manifest,available_at,timestamp,Conservative earliest admissible timestamp with timezone,yes
+source_manifest,availability_basis,string,Issuer timestamp or date-only conservative end-of-day or comparative-publication correction,yes
+source_manifest,value_status,string,Observed calculated estimated or unavailable,yes
+origins,target_quarter,string,Quarter whose first management revenue guide is being forecast,yes
+origins,anchor_date,date,Target-quarter start minus18 calendar days,yes
+origins,origin_close,timestamp,Latest US trading session close at or before anchor,yes
+origins,guide_issued_at,timestamp,First-guide release availability used only for exclusion and evaluation,yes
+origins,lead_calendar_days,integer,Guide release date minus origin date,yes
+origins,calendar_source_hash,string,Frozen session-date evidence,yes
+inputs,input_role,string,Lambda training lagged GBV observed growth seasonal anchor or cushion,yes
+inputs,source_id,string,Join to immutable source manifest,yes
+inputs,input_quarter,string,Quarter actually used,yes
+inputs,available_at,timestamp,Must be no later than origin; date-only releases strictly earlier day,yes
+inputs,value,number,Observed source value unchanged,yes
+inputs,is_forecast,boolean,True only for explicit reconstructed lag forecast never lambda training,yes
+paths,method,string,Candidate direct-guide naive or revenue-naive-common-cushion,yes
+paths,window,string,W1 W2 or unscored reconstructed live reference,yes
+paths,status,string,Forecast or abstention,yes
+paths,exclusion_reason,string,Machine-readable missingness or chronology reason,for abstentions
+paths,lambda_pct,number,Exact K0 operational selected estimate,for candidate
+paths,lambda_variant,string,Exact K0 selected variant,for candidate
+paths,lambda_training_quarters,json,All accepted seasonal observations,for candidate
+paths,lambda_n,integer,K0 same-season training count,for candidate
+paths,gbv_rule,string,Reconstructed latest-observed actual YoY persistence,for candidate
+paths,gbv_latest_actual_quarter,string,Latest actual and never a generated forecast,for candidate
+paths,gbv_lag1_usdm,number,Observed or explicit forecast of q-1,for candidate
+paths,gbv_lag2_usdm,number,Observed or explicit forecast of q-2,for candidate
+paths,gbv_lag1_status,string,Observed versus reconstructed,for candidate
+paths,gbv_lag2_status,string,Observed versus reconstructed,for candidate
+paths,cushion_quarters,json,At most8 ratios whose actuals were known,for candidate and B2
+paths,cushion_ratios,json,Accepted K0 source actual divided by first guide midpoint,for candidate and B2
+paths,cushion_n,integer,At least3 and at most8,for candidate and B2
+paths,divisor,number,One plus cushion equal median ratio,for candidate and B2
+paths,revenue_forecast_usdm,number,Revenue point before guide transformation,for candidate and B2
+paths,guide_forecast_usdm,number,Primary forecast object,for non-abstentions
+paths,max_input_available_at,timestamp,Latest public input timestamp across all dependencies,for non-abstentions
+paths,protocol_sha256,string,Parent-frozen complete preregistration identity,yes
+outcomes,guide_mid_usdm,number,First issued guide arithmetic midpoint,yes
+outcomes,target_mid_lo,number,Midpoint minus0.5 USDm under administrative convention,yes
+outcomes,target_mid_hi,number,Midpoint plus0.5 USDm under administrative convention,yes
+outcomes,rounding_basis,string,Administrative project convention not measurement uncertainty,yes
+outcomes,revenue_actual_usdm,number,Eventual frozen revenue only for ex-post attribution,yes
+outcomes,gbv_lag1_actual_usdm,number,Eventual frozen q-1 GBV only for ex-post attribution,yes
+errors,raw_error_usdm,number,Forecast minus exact issued midpoint,yes
+errors,interval_fair_error_usdm,number,Forecast minus its projection to midpoint interval,yes
+errors,matched_all_three,boolean,Membership in primary intersection,yes
+errors,paired_sq_loss_delta,number,Candidate squared interval-fair error less comparator squared error,for each pair
+intervals,calibration_quarters,json,Prior same-method guide forecasts whose guides were known,where eligible
+intervals,calibration_available_at,json,First-guide publication timestamps before current origin,where eligible
+intervals,n_cal,integer,6to8 or missing bounds,yes
+intervals,rank_k,integer,Ceiling of0.8times mplus1,where eligible
+intervals,lo_hi_usdm,json,Descriptive prediction band endpoints,where eligible
+attribution,U_C_P_UC_UP_CP_UCP_ROUND,json,Eight exact contributions defined in protocol,for scored candidate rows
+attribution,cross_moments,json,All pair twice-mean-products with population-denominator covariance,for matched window tables

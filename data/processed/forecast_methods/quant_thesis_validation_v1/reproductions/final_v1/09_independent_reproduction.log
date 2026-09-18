@@ -1,0 +1,157 @@
+{
+  "l3_commit": "8821961853e4068febbfe2712f9a4e1036c9e629",
+  "research_commit": "7fb6fe0f248d5492b899672b9b70545da62d63ee",
+  "external_l4_commit": "29b2d9ae2d66da5f1f5086ba7dc36e4c2d96ab70",
+  "manifest_sha256": "9a8563fff0142d51fd3537699899f032165a69a6c1db9cad6c4b24d450952970",
+  "bundle_files": 108,
+  "bundle_git_pass": 108,
+  "bundle_disk_pass": 108,
+  "panel_quarters": 24,
+  "lag_complete_quarters": 22,
+  "material_cells": 180,
+  "unavailable_material_cells": 10,
+  "historical_guide_ranges": 20,
+  "W1_max_n": 14,
+  "W2_max_n": 10,
+  "source_contract_in_baseline": false,
+  "archived_source_letter_files_in_baseline": 0,
+  "result": "identity PASS; availability and precision PARTIAL with explicit limits",
+  "estimated_parameters": 0,
+  "source_precision_delta_Q3_revenue_musd": 4.658820541734537,
+  "operational_Q3_lambda_pct": 17.2548908953131,
+  "source_dates_corrected_in_new_map_only": [
+    "2020Q3"
+  ],
+  "network_required_for_rebuild": false
+}
+{
+  "verdict": "FAIL",
+  "protocol_sha256": "dd010ed6d158f1003b9ec55147e16a3f9464010c571b20fe25dad254202cb8ec",
+  "forecast_freeze_sha256": "f305a65ad356a06c6f73f433347aa84f78b302c00905fc51de2416efe1d52823",
+  "method_identity": "quant-thesis-validation-v1__preannouncement_guide_diagnostic",
+  "W1_n": 12,
+  "W2_n": 10,
+  "candidate_system_n_params": 5,
+  "B1_n_params": 0,
+  "B2_common_statistic_n_params": 1,
+  "upstream_gbv_fitted_parameters": 0,
+  "promotion": "none; separate production decision",
+  "trading_edge": "not tested",
+  "registration": "none; incompatible historical origin semantics",
+  "source_limitation": "historical frozen-panel reconstruction; no unrevised original-vintage archive",
+  "uncertainty": "descriptive chronology only; overlapping windows and few calendar-year blocks",
+  "minimum_coverage_floors": "8 W1 / 6 W2; all seasons; at least3 years",
+  "checks": [
+    {
+      "window": "W1",
+      "baseline": "B1_guide_growth",
+      "n": 12,
+      "seasons": 4,
+      "years": 4,
+      "coverage_ok": true,
+      "rmse_candidate": 63.44467757161395,
+      "rmse_baseline": 74.3307856042955,
+      "rmse_ratio": 0.8535450965010055,
+      "mae_candidate": 52.133749430834165,
+      "mae_baseline": 64.06404799141667,
+      "rmse_lower": true,
+      "mae_no_worse": true,
+      "all_year_deletions_lower": false
+    },
+    {
+      "window": "W1",
+      "baseline": "B2_revenue_naive_cushion",
+      "n": 12,
+      "seasons": 4,
+      "years": 4,
+      "coverage_ok": true,
+      "rmse_candidate": 63.44467757161395,
+      "rmse_baseline": 117.30903382322033,
+      "rmse_ratio": 0.5408336894771664,
+      "mae_candidate": 52.133749430834165,
+      "mae_baseline": 95.51809216964584,
+      "rmse_lower": true,
+      "mae_no_worse": true,
+      "all_year_deletions_lower": true
+    },
+    {
+      "window": "W2",
+      "baseline": "B1_guide_growth",
+      "n": 10,
+      "seasons": 4,
+      "years": 3,
+      "coverage_ok": true,
+      "rmse_candidate": 63.69618947601171,
+      "rmse_baseline": 60.83444136541641,
+      "rmse_ratio": 1.0470415778687854,
+      "mae_candidate": 51.220820324887974,
+      "mae_baseline": 57.22649383995999,
+      "rmse_lower": false,
+      "mae_no_worse": true,
+      "all_year_deletions_lower": false
+    },
+    {
+      "window": "W2",
+      "baseline": "B2_revenue_naive_cushion",
+      "n": 10,
+      "seasons": 4,
+      "years": 3,
+      "coverage_ok": true,
+      "rmse_candidate": 63.69618947601171,
+      "rmse_baseline": 121.92589458959273,
+      "rmse_ratio": 0.5224172411481215,
+      "mae_candidate": 51.220820324887974,
+      "mae_baseline": 99.79003253668297,
+      "rmse_lower": true,
+      "mae_no_worse": true,
+      "all_year_deletions_lower": true
+    }
+  ]
+}
+{
+  "reviewer": "/root/uncertainty_auditor",
+  "author": "/root/source_auditor",
+  "status": "PASS_source_reproduction_with_retained_original_vintage_limits",
+  "canonical_output": "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\source_audit_v1\\results_v3",
+  "files_byte_identical": 8,
+  "guide_ranges_independently_verified": 20,
+  "availability_rows_independently_checked": 24,
+  "guide_midpoint_interval": "nominal midpoint +/-0.5 USDm administrative protocol convention",
+  "raw_letter_vintages_newly_recovered": 0,
+  "sample_extended": false,
+  "limitations": [
+    "Exact original shareholder-letter bytes/SEC acceptance clocks absent in committed store.",
+    "Frozen values may carry later precision; date-qualified reconstruction is not original unrevised vintage data.",
+    "2020Q3 comparative availability is conservative source-based date, not first-publication claim.",
+    "Early revenue precision beyond retained quote remains unresolved."
+  ]
+}
+{
+  "reviewer": "/root/uncertainty_auditor",
+  "author": "/root/source_auditor",
+  "status": "PASS_independent_reproduction_research_hurdle_FAIL_preserved",
+  "primary_n": {
+    "W1": 12,
+    "W2": 10
+  },
+  "numeric_checks": 793,
+  "tolerance": 1e-06,
+  "max_difference": 5.215952114667743e-10,
+  "files_byte_identical": 25,
+  "poisoned_origins": 21,
+  "independent_point_rule_and_dynamic_K0_reconstruction": true,
+  "author_point_functions_used_for_numerical_reconstruction": false,
+  "author_API_used_only_for_adversarial_challenges": true,
+  "empirical_new_specifications": 0
+}
+{
+  "reviewer": "/root/uncertainty_auditor",
+  "reviewed_author": "/root/source_auditor",
+  "status": "PASS_independent_reproduction; original_research_hurdle_FAIL_retained",
+  "source_files_verified": 13,
+  "fresh_author_files_byte_identical": 33,
+  "source_availability_v2_v3_byte_identical": true,
+  "semantic_finding": "CLOSED: points/input ledger frozen before scoring and target-outcome join; full source tables loaded earlier; functional filtering and adversarial checks verified",
+  "physical_blinding_claim": false,
+  "parent_adjudication_required": true
+}

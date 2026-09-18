@@ -1,0 +1,72 @@
+"""Freeze explicitly committed external inputs; never consult moving worktrees."""
+from pathlib import Path
+import hashlib
+import json
+import subprocess
+
+ROOT = Path(__file__).resolve().parents[4]
+OUT = ROOT / 'data/processed/forecast_methods/quant_thesis_validation_v1/evidence_v3'
+L3 = '8821961853e4068febbfe2712f9a4e1036c9e629'
+L4 = '29b2d9ae2d66da5f1f5086ba7dc36e4c2d96ab70'
+
+def git(*args):
+    return subprocess.check_output(['git', *args], cwd=ROOT)
+
+def main():
+    if OUT.exists():
+        raise FileExistsError(f'Refusing existing evidence directory: {OUT}')
+    if git('rev-parse', 'HEAD').decode().strip() != L3:
+        raise ValueError('Initial evidence freeze requires specified L3 HEAD')
+    OUT.mkdir(parents=True)
+    prefixes = [
+        'data/processed/forecast_methods/lane4_model_v1/snapshot_v4/',
+        'data/processed/forecast_methods/lane4_revenue_v1/snapshot_v1/',
+        'deck/drafts/lane4_v1/review_v4/',
+    ]
+    notes = ['L4_CLOSE_HANDOFF_v1.md', 'L4_REVENUE_RECONCILIATION_v1.md',
+             'L4_INDEPENDENT_REVIEW_v1.md', 'L4_MODEL_v1.md']
+    files = git('ls-tree', '-r', '--name-only', L4).decode().splitlines()
+    selected = [p for p in files if
+                (any(p.startswith(x) for x in prefixes) and Path(p).suffix in {'.csv', '.json', '.md'}
+                 and '/recapture_qa/' not in p)
+                or p in ['docs/revenue-forecast-strategy/05_backtests/' + n for n in notes]]
+    records = []
+    for p in sorted(selected):
+        blob = git('show', f'{L4}:{p}')
+        dest = OUT / 'l4' / p
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(blob)
+        records.append(dict(commit=L4, source_path=p, frozen_path=dest.relative_to(ROOT).as_posix(),
+                            git_blob=git('rev-parse', f'{L4}:{p}').decode().strip(),
+                            sha256=hashlib.sha256(blob).hexdigest(), bytes=len(blob),
+                            evidence_status='committed historical analytical artifact'))
+    original = ROOT.parents[1]
+    for name in ['QVS_VARIANCE_AND_PRESENTATION_ARGUMENTS_v1.md', 'QVS_GUIDE_BASIS_AND_DECISION_LOGIC_v1.md']:
+        p = original / 'docs/revenue-forecast-strategy/05_backtests' / name
+        blob = p.read_bytes()
+        dest = OUT / 'qvs' / name
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(blob)
+        records.append(dict(commit=None, source_path=str(p), frozen_path=dest.relative_to(ROOT).as_posix(),
+                            git_blob=None, sha256=hashlib.sha256(blob).hexdigest(), bytes=len(blob),
+                            evidence_status='user-specified uncommitted read-only support note'))
+    protected = []
+    for p in git('ls-files', '-z').decode().split('\0'):
+        if p:
+            path = Path(chr(92)*2 + '?' + chr(92) + str(ROOT / p))
+            if path.is_file():
+                protected.append(dict(path=p, sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
+            else:
+                raise FileNotFoundError(path)
+    (OUT/'external_manifest.json').write_text(json.dumps(records, indent=2)+'\n', encoding='utf-8')
+    (OUT/'protected_manifest.json').write_text(json.dumps(protected, indent=2)+'\n', encoding='utf-8')
+    (OUT/'identity.json').write_text(json.dumps(dict(l3_commit=L3, l4_commit=L4,
+        l3_research_commit='7fb6fe0f248d5492b899672b9b70545da62d63ee',
+        l4_analytical_commit='1039252935e9c3cf0cf62bdc9f07b5407d0a11ad',
+        external_files=len(records), protected_files=len(protected),
+        snapshot_date='2026-09-14', current_market_refresh=False), indent=2)+'\n', encoding='utf-8')
+    print(json.dumps(dict(external_files=len(records), protected_files=len(protected), output=str(OUT))))
+
+if __name__ == '__main__':
+    main()
+

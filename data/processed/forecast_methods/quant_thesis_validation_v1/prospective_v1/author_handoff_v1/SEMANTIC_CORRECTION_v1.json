@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-14",
+  "reviewer": "parent contract reviewer I",
+  "supersedes_field_only": "results_v1/evaluation/evaluation_receipt.json:stage",
+  "original_wording": "outcomes loaded after forecast freeze",
+  "correct_wording": "Points and input ledger frozen before scoring and target-outcome join; full frozen source tables loaded earlier. Information filtering and poisoning tests enforce functional independence.",
+  "mathematical_change": false,
+  "forecast_or_score_change": false,
+  "original_receipt_sha256": "72afa7f4ce534f2208c1f93786dec59d6a5fdacf9b1c2eff88a764825fbb9247",
+  "forecast_csv_sha256": "cf9e8fca5eb03272b06ac10747b2bca2c1f68983fa9dc72d58aff0570159f53c",
+  "preliminary_and_canonical_point_files_byte_identical": true,
+  "independent_numerical_and_information_set_review": "pending wave3 G"
+}

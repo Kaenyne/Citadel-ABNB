@@ -1,0 +1,6 @@
+case,n,frozen_musd,precise_musd,delta_musd,available_date,status,note
+Q2 2026 GBV,1,27200,27247,47,2026-08-06,observed_filing,"Same date as letter; clock unavailable, use end-of-day"
+Q1 2026 GBV via H1 minus Q2,2,29200,29187,-13,2026-08-06,calculated_later_vintage,Not admissible at Q1 release on May 7 from this cited source
+Q3 2026 weighted GBV base,2,27866.666666666668,27893.666666666668,27.0,2026-08-06,calculated_sensitivity,Retained w=2/3; no model re-estimation
+Q3 2026 revenue at exact operational lambda,2,4808.362929493917,4813.021750035652,4.658820541734537,2026-09-13,conditional_sensitivity,lambda=17.2548908953131% from immutable L4 September13 output; source precision available August6; no refit
+Q3 two-lag GBV rounding envelope,2,0,0,8.62744544765655,2026-09-13,worst_case_half_width,"Both source GBVs +/-50m at fixed exact lambda; dependent/unknown errors, not SD"

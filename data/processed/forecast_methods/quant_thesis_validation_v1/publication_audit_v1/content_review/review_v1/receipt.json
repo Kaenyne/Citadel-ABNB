@@ -1,0 +1,56 @@
+{
+  "reviewer": "/root/source_auditor",
+  "date": "2026-09-14",
+  "status": "PASS_SCOPED_PUBLICATION_CONTENT_REVIEW",
+  "analytical_commit": "965166c4572fe7c6300c7281e77afc5877411820",
+  "handoff_commit": "b1e8885a6c294e1b212f9b908a9ce5fbeb3c1ec4",
+  "baseline": "8821961853e4068febbfe2712f9a4e1036c9e629",
+  "scope": [
+    "analysis/src/forecast_methods/quant_thesis_validation_v1",
+    "data/processed/forecast_methods/quant_thesis_validation_v1",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1"
+  ],
+  "files_scanned": 631,
+  "bytes_scanned": 13835050,
+  "largest_file_bytes": 1006443,
+  "files_over_50MB": 0,
+  "credential_or_restricted_content_candidates": 0,
+  "licensed_raw_exports_identified": 0,
+  "private_record_content_identified": 0,
+  "reference_only_candidates_reviewed": 5,
+  "public_claims_reviewed": 18,
+  "prior_final_artifact_hashes_unchanged": 17,
+  "remaining_material_findings": [],
+  "permissions": "New user instruction authorizes normal Git branch publication. Earlier frozen no-publication statements describe the prior local seal and are preserved. Parent owns outgoing ancestry/destination and publication actions.",
+  "allowed_scope": "Normal publication of the reviewed quant branch research additions and their audit metadata, retaining frozen-source dates, source caveats, failed research verdicts, hypothetical sensitivities and no automatic investment or production adoption.",
+  "source_material_classification": {
+    "qvs_notes": "Two original project research notes retained as authorized research evidence; no credential/private-record content identified",
+    "l4_snapshot": "Derived analytical model and research artifacts with source provenance; no raw licensed workbooks or report PDFs identified",
+    "licensed_name_hits": "Paths and hashes in one protected manifest and four identity tables, not raw exported source bytes",
+    "binary_files": "Nine generated chart/preview PNGs and four generated decision-summary PDFs; no workbook, archive, database or private-key container"
+  },
+  "limitations": [
+    "This receipt covers the 631 quant additions at the specified commit, not the full outgoing Git ancestry; parent separately audits ancestry and destination.",
+    "Pattern-based content screening supplements artifact/type and publication-prose review; it is not a guarantee against every possible encoded secret.",
+    "No independent reapproval of own prospective numerics or new economic calculation; existing independent G/H/I receipts remain authoritative.",
+    "Intentional local paths, existing provenance and dated internal research labels remain visible."
+  ],
+  "publication_artifact_bindings_sha256": {
+    "data/processed/forecast_methods/quant_thesis_validation_v1/claims_v2/claim_ledger.csv": "cd2101f038cdf1affede9bd09c2a1d4a9949e71199816fedf43c6b1d24d3cfca",
+    "data/processed/forecast_methods/quant_thesis_validation_v1/claims_v2/claim_ledger.json": "bb084d0a384f1b099664f8df5acd6262d07395ef34a66d623c9db5c144bdc86c",
+    "data/processed/forecast_methods/quant_thesis_validation_v1/claims_v2/publication_metadata.json": "d6f63dc3a00f7e6650d5a420b8fac4ac16818ac2b6ee937b9e109f557ec2f8b6",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/PRESENTATION_DEFENSE_v2.md": "dc60c70ec92e4d572b3c24110c375524895aadc3ada181ba7796a5245b15543a",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/DECISION_SUMMARY_v3.json": "5980e1985fb3cda8134fab2040fdd5445353dd2c9de4dc248d97337a1d4ae7f4",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/delivery_v3/ABNB_decision_summary.pdf": "4bacdc75fe124fa3e166215a77502493bad0cd770aaa3755072a40b243f3f42b",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/handoff_v1/L4_HANDOFF.md": "3fb62469793577a927a8368e01e2d952d53bd57db8623c408dda64e869298cd5",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/handoff_v1/ACCEPTANCE_FINAL.json": "33eb8c665f15db9ab09ecbf9d88aaccc4aa61b3d70a12fe6b87c808bbdeb58b0",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/handoff_v1/analytical_manifest.json": "e2916691513dbafe3565c21e89205c7d9185b27045c836296902c1684052b30c",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/handoff_v1/seal_receipt.json": "b15ad2942ae5758ef65784d595210a3aed9f14f4e2559377ddeb8bb037fb41c0",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/ARTIFACT_INDEX_v1.md": "7cbee6e9daa0ddcba7d9a24e4f640249c4d98059fa21b272ac45e3d6d9f7bd20",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1/WORKBOARD_FINAL_v3.md": "b71d49ed350d34c1bd53da2ade17764fed361b380146431e64cded43f07739b9",
+    "data/processed/forecast_methods/quant_thesis_validation_v1/adversarial_review_v1/final_prose_closure_v1/receipt.json": "3205ebbcbe5a6b0b001fd913fc7a8568e5ae0fbfd114d575e0d7370206797fdd"
+  },
+  "scan_receipt_sha256": "1a8b21168a9e6ffd5f8ed580ed3c4c19f1aa97dc4ca5e634d3888248e6ccdfc3",
+  "scan_inventory_sha256": "21dfb463f50687b3e7002437cb8ff60b0d59f6855d67cd10d534d3b52d497226",
+  "scan_code_sha256": "530f66935609c9fb34ea5b2c47b12a3be10e1b40adee688f6ab83925e1ce5956"
+}

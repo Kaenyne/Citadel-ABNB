@@ -1,0 +1,42 @@
+{
+  "scan": "Committed quant payload only; heuristic screening plus separate human content review",
+  "commit": "b1e8885a6c294e1b212f9b908a9ce5fbeb3c1ec4",
+  "baseline": "8821961853e4068febbfe2712f9a4e1036c9e629",
+  "scopes": [
+    "analysis/src/forecast_methods/quant_thesis_validation_v1",
+    "data/processed/forecast_methods/quant_thesis_validation_v1",
+    "docs/revenue-forecast-strategy/quant_thesis_validation_v1"
+  ],
+  "files": 631,
+  "bytes": 13835050,
+  "max_file_bytes": 1006443,
+  "changes": {
+    "A": 631
+  },
+  "extension_counts": {
+    "(none)": 4,
+    ".md": 65,
+    ".py": 34,
+    ".csv": 356,
+    ".json": 135,
+    ".png": 9,
+    ".svg": 6,
+    ".log": 17,
+    ".pdf": 4,
+    ".txt": 1
+  },
+  "content_type_counts": {
+    "text": 618,
+    "png": 9,
+    "pdf": 4
+  },
+  "sensitive_candidates": 0,
+  "reference_candidates": 5,
+  "secret_values_emitted": false,
+  "code_sha256": "530f66935609c9fb34ea5b2c47b12a3be10e1b40adee688f6ab83925e1ce5956",
+  "outputs_sha256": {
+    "inventory.csv": "21dfb463f50687b3e7002437cb8ff60b0d59f6855d67cd10d534d3b52d497226",
+    "reference_candidates.csv": "44a8b46bf6bdbe3b27a22af55ceb534b1d30d1f550124a954e6eca850afd704d",
+    "sensitive_candidates.csv": "54f2b0ba9a75cf50f32ccefe21cc983bcfe166debd69eb465b0d09217ee41197"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "reviewer": "/root/test_designer",
+  "role": "Wave3 I contract reviewer",
+  "independently_recomputed_economic_authorship": false,
+  "status": "EARLY_CONTRACT_CHECKS_PASS_PENDING_EXACT_FINAL_ARTIFACTS",
+  "protected_count": 4444,
+  "external_count": 36,
+  "review_bindings": 21,
+  "hash_failures": [],
+  "temporal_fields_checked": 829,
+  "temporal_failures": [],
+  "target_guide_after_origin_all": true,
+  "target_method_rows": 63,
+  "rounding_is_administrative_one_usdm_width_all": true,
+  "source_v2_v3_availability_bytes_equal": true,
+  "preserved_result_verdict": "FAIL"
+}
+{
+  "reviewer": "/root/test_designer",
+  "author": "/root/uncertainty_auditor",
+  "status": "PASS_INDEPENDENT_ACCEPTED_ARITHMETIC_REVIEW",
+  "numeric_checks": 246,
+  "max_difference": 3.3334799809381366e-08,
+  "tolerance": 2e-07,
+  "failures": [],
+  "new_models": 0,
+  "new_resamples": 0,
+  "empirical_regimes_added": 0,
+  "author_functions_imported": false,
+  "own_economics_reviewed": false
+}
+{
+  "status": "PASS_REBUILT_TECHNICAL_CHECKS",
+  "new_human_claim_or_visual_signoff": false,
+  "protected_git_status_clean": true,
+  "own_economic_calculations_independently_reviewed_here": false,
+  "command": [
+    "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.venv\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1\\analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\final_contract_review_v1\\run.py",
+    "--out",
+    "C:\\Users\\wille\\Desktop\\Citadel - ABNB\\.worktrees\\quant-thesis-validation-v1\\data\\processed\\forecast_methods\\quant_thesis_validation_v1\\final_contract_review_v1\\rebuild_final_v1"
+  ],
+  "scope": "Frozen identities, admissible information dates, accepted arithmetic and existing review bindings"
+}

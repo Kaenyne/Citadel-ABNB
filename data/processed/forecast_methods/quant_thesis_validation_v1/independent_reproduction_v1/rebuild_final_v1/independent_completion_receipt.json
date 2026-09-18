@@ -1,0 +1,22 @@
+{
+  "reviewer": "/root/uncertainty_auditor",
+  "reviewed_author": "/root/source_auditor",
+  "status": "PASS_independent_reproduction; original_research_hurdle_FAIL_retained",
+  "source_files_verified": 13,
+  "fresh_author_files_byte_identical": 33,
+  "source_availability_v2_v3_byte_identical": true,
+  "semantic_finding": "CLOSED: points/input ledger frozen before scoring and target-outcome join; full source tables loaded earlier; functional filtering and adversarial checks verified",
+  "physical_blinding_claim": false,
+  "parent_adjudication_required": true,
+  "bindings": {
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\prospective_v1\\results_v1\\forecast\\input_manifest.json": "aa7abd2336f10804dd8b4d8dc28c753d15b0e1709f0abfc7c16eccb379347bbe",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\prospective_v1\\author_handoff_v1\\SEMANTIC_CORRECTION_v1.json": "28b05d6b3142d9ad620bf0507169a24542ae8d6d15e57e9c30566aa03a1fb693",
+    "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\prospective_v1\\RECEIPT_WORDING_CORRECTION_v1.md": "c85eadaf2220bcda335d2b0f505805ba0571ae6e45b80525f98d3c907535baa7",
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\prospective_review.py": "17e9e631429a39a1a65bdd3f27c3488758cade1ef18a665c4f260f11e7f9c8d4",
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\run.py": "d499c329bfc47849ccfdbf08ac65a8cbb0d6a26adbcf534efec65768b891704c",
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\run_v2.py": "bbfeb64b2a0f3e393ccf65ccf62698539977177b5da742c979876f1c39140c32",
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\source_review.py": "55cbe9a258f7522cbc32d4a980618b78a9c83ca2671eb8edf505324e3e944e60",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\rebuild_final_v1\\source_review\\source_independent_receipt.json": "c0678e2b3f76b1501f2777083facc30550a378085833abed25798a141279bfa5",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\independent_reproduction_v1\\rebuild_final_v1\\prospective_review\\prospective_independent_receipt.json": "0dd54c79188036405916c28f6086d3b4e59632d65e68af91508cd82ae7ef418f"
+  }
+}

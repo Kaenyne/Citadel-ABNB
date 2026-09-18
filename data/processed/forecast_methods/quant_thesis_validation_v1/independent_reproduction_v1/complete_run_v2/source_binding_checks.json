@@ -1,0 +1,132 @@
+[
+  {
+    "path": "docs/revenue-forecast-strategy/quant_thesis_validation_v1/FINAL_PROTOCOL_v1.md",
+    "source": "protocol_freeze",
+    "sha256": "dd010ed6d158f1003b9ec55147e16a3f9464010c571b20fe25dad254202cb8ec",
+    "local_sha256": "dd010ed6d158f1003b9ec55147e16a3f9464010c571b20fe25dad254202cb8ec",
+    "git_baseline_sha256": null,
+    "local_raw_matches_manifest": true,
+    "local_text_matches_baseline_after_CRLF_to_LF": null,
+    "verified": true
+  },
+  {
+    "path": "docs/revenue-forecast-strategy/quant_thesis_validation_v1/protocol_design_v1/PROTOCOL_PROPOSAL_v1.md",
+    "source": "protocol_freeze",
+    "sha256": "93cb753261d549512d82e11115aa53ca77ecda97f578605fe7a90197db30f4ed",
+    "local_sha256": "93cb753261d549512d82e11115aa53ca77ecda97f578605fe7a90197db30f4ed",
+    "git_baseline_sha256": null,
+    "local_raw_matches_manifest": true,
+    "local_text_matches_baseline_after_CRLF_to_LF": null,
+    "verified": true
+  },
+  {
+    "path": "data/processed/overnight/02_kpi_panel_quarterly.csv",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "fc9633aa8fb5063d5896315d51ec3e8f2fb7277b78dc5c1c6c3d251f0830b608",
+    "local_sha256": "c8a42085fb1bda12e979308257413ae877efd36c14b79152ecee558ccb8c16ac",
+    "git_baseline_sha256": "fc9633aa8fb5063d5896315d51ec3e8f2fb7277b78dc5c1c6c3d251f0830b608",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "data/processed/overnight/02_guidance_ledger.csv",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "a5cdf76325dc059bedcd914e049f366aa1d40356902009fe3be0484f0956c54c",
+    "local_sha256": "c1a2b34330dc6655c549cbe7cab66adabcaaffcffc4441c833c726714d8267f2",
+    "git_baseline_sha256": "a5cdf76325dc059bedcd914e049f366aa1d40356902009fe3be0484f0956c54c",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "data/processed/overnight/02_guidance_cushion_series.csv",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "3af6adbff7f53c8c606599910e4a0697f1e84dbeb28877e0ad87b5767234feae",
+    "local_sha256": "0140b2763604826c3b59dfde2ef90c186c8bb2c2c95de4b9e7c758eea54ce578",
+    "git_baseline_sha256": "3af6adbff7f53c8c606599910e4a0697f1e84dbeb28877e0ad87b5767234feae",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "data/processed/forecast_methods/harness/calendar.csv",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "3088c8e13bb95d733bfa6e17ffb90ad361694b846e9c0c113e21e78efb357236",
+    "local_sha256": "8433249c908b2adf1a18e9d47aa8b81a0759471ef592aa926c4050a45880efe2",
+    "git_baseline_sha256": "3088c8e13bb95d733bfa6e17ffb90ad361694b846e9c0c113e21e78efb357236",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "data/processed/forecast_methods/returns_v1/ohlc_daily.csv",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "5b03005c30b1793e2d146e6a76fc352ecee56b7fbaf0e9f737bd479652b7a253",
+    "local_sha256": "a94c35e2c70f5bc9ce4b5bd85343fed199ac1e941b94d287bb3ee7780b799286",
+    "git_baseline_sha256": "5b03005c30b1793e2d146e6a76fc352ecee56b7fbaf0e9f737bd479652b7a253",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "analysis/src/forecast_methods/kernel_engine_v2/engine.py",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "cafd956df0f389ee4f0cea57233897fdc22321dcc79110b139bf365168c9ae26",
+    "local_sha256": "328431c5f9379e6d4ae7e9c5d01212ee1bcd550b02c3c9783b85851e3e9a3279",
+    "git_baseline_sha256": "cafd956df0f389ee4f0cea57233897fdc22321dcc79110b139bf365168c9ae26",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "analysis/src/forecast_methods/harness/baselines.py",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "f99352bca778c4222f26906cd4eb4d62118f5d44a55d14d6ae32a768211fc583",
+    "local_sha256": "5b66248278175a565dc9b2c03424ef743042c0a88a21f3a6ba270bfce0d819e3",
+    "git_baseline_sha256": "f99352bca778c4222f26906cd4eb4d62118f5d44a55d14d6ae32a768211fc583",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "analysis/src/forecast_methods/harness/loaders.py",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "a6b47f4d906bab5fd78304a879e236477d6acf512cf90b808aed136700e2d440",
+    "local_sha256": "22d1056689b0661e04180c78bfa894dbf92019ec9cd9ca18de580b29df82dbba",
+    "git_baseline_sha256": "a6b47f4d906bab5fd78304a879e236477d6acf512cf90b808aed136700e2d440",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "analysis/src/forecast_methods/harness/quarters.py",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "dbbf3c431f982b226bd5f691f273d67fccbdde0021669a1dc10149c44b6e3de2",
+    "local_sha256": "27bacebf8498f61bd4cc0e802e26eb14267fe37720e26f313fb4bafd27c2c94f",
+    "git_baseline_sha256": "dbbf3c431f982b226bd5f691f273d67fccbdde0021669a1dc10149c44b6e3de2",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "data/processed/forecast_methods/harness/targets.csv",
+    "source": "8821961853e4068febbfe2712f9a4e1036c9e629",
+    "sha256": "c03a5787d211bad9e9da914e7497052d17c102864fe6d2ade2978ba1f8a7e29a",
+    "local_sha256": "6b7e98b22f1064b1b79d2899790e21f45f745aefb3ebe7a1016cfb213e4ee4d2",
+    "git_baseline_sha256": "c03a5787d211bad9e9da914e7497052d17c102864fe6d2ade2978ba1f8a7e29a",
+    "local_raw_matches_manifest": false,
+    "local_text_matches_baseline_after_CRLF_to_LF": true,
+    "verified": true
+  },
+  {
+    "path": "data/processed/forecast_methods/quant_thesis_validation_v1/source_audit_v1/results_v2/observation_availability.csv",
+    "source": "source_audit_v1/results_v2",
+    "sha256": "8d14fd3193df00508f2f3afd738cd7fa955c2472df2776c845a6e3cf8f4d8db0",
+    "local_sha256": "8d14fd3193df00508f2f3afd738cd7fa955c2472df2776c845a6e3cf8f4d8db0",
+    "git_baseline_sha256": null,
+    "local_raw_matches_manifest": true,
+    "local_text_matches_baseline_after_CRLF_to_LF": null,
+    "verified": true
+  }
+]

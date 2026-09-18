@@ -1,0 +1,28 @@
+{
+  "reviewer": "/root/uncertainty_auditor",
+  "author": "/root",
+  "status": "PASS_numerical_and_basis_review_timestamp_finding_closed",
+  "independent_of_author_implementation": true,
+  "author_functions_imported": false,
+  "source_commit": "29b2d9ae2d66da5f1f5086ba7dc36e4c2d96ab70",
+  "git_source_files_verified": 4,
+  "numeric_checks": 335,
+  "tolerance_musd": "0.000001",
+  "max_abs_difference": "8.763024000000000000000000E-12",
+  "bound_inputs_code_and_outputs_sha256": {
+    "analysis\\src\\forecast_methods\\quant_thesis_validation_v1\\expectations_bridge_v2.py": "0335d93ec0617e4ad8274ff7cfaf5e90424ca501af3bb2754e08c9a4101f52c6",
+    "docs\\revenue-forecast-strategy\\quant_thesis_validation_v1\\CHAIN_PROTOCOL_v1.md": "8b2adba16bdf3871cb5d7b93d3301c4902dbe07a25412e584ce3d0da2b9c505d",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\expectations_v2\\break_even.csv": "665fc8245be7fabe5c1c03205edf4ecc783666618b1cefddf653694b10031aae",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\expectations_v2\\cushion_policy.csv": "6898ba326626f7afd62305aae3a2448b0b077be440dc094000bd4a718fc1f199",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\expectations_v2\\receipt.json": "e3b82e92e204e7e7417465a4cf713221c90cff0379f31453d6daedcb88fd48ff",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\expectations_v2\\same_basis.csv": "9205fa4cc251e9344baa664fd0d9bfaa3fc1510765e250d4e6c0ea5a67553876",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\expectations_v2\\stress_surface.csv": "84c999d41987d17be2b69ee403c1e0d83e19a257f44a9a0a4631ca3858e55d6d",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\evidence_v3\\l4\\data\\processed\\forecast_methods\\lane4_revenue_v1\\snapshot_v1\\forecast.csv": "afba9714d56c09b72323b9a9795db28dda0aa1e2e8800457aa3adb698aa5c087",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\evidence_v3\\l4\\data\\processed\\forecast_methods\\lane4_revenue_v1\\snapshot_v1\\cohort_weights.csv": "33fdfa56eda54a9d85c7cf0808278f2c41bceca60bda3c0b38196a8e02a67009",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\evidence_v3\\l4\\data\\processed\\forecast_methods\\lane4_revenue_v1\\snapshot_v1\\consensus_selection.csv": "7f7c265b1e14f0589191d2cb7a8cfd9157d18b38baaf614d195d9ce7d6af0fa5",
+    "data\\processed\\forecast_methods\\quant_thesis_validation_v1\\evidence_v3\\l4\\data\\processed\\forecast_methods\\lane4_revenue_v1\\snapshot_v1\\cushion_inputs.csv": "a537868726c471cc727ce56263380648b1cf5644a6e5e7f294488c337e88f621"
+  },
+  "forecast_or_investment_adoption": false,
+  "v1_v2_identical_numeric_fields": 433,
+  "qualification": "Finding closed in expectations_v2: S&P and Zacks timestamps display date only with explicit missing exact time; all shared numeric fields remain identical to v1."
+}
