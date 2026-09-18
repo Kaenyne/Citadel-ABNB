@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse, sys
 from pathlib import Path
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment
+from openpyxl.styles import Font, PatternFill
 from openpyxl.utils import get_column_letter
 from openpyxl.workbook.defined_name import DefinedName
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -17,7 +17,6 @@ ORDER = ["Cover", "Drivers", "Revenue and Guide", "Costs and Earnings", "Valuati
          "5 Nov Event Card", "Street", "Evidence", "Decision Log", "Scenario Data"]
 FMT = {"pct": "0.00%", "musd": "#,##0", "usd": "0.00", "m": "0.0", "x": "0.0x", "prob": "0.00", "usd_share": "0.00"}
 INPUT_FILL = PatternFill("solid", fgColor="FFF2CC")   # yellow: an input, named, fed by Scenario Data
-FORMULA_FILL = PatternFill("solid", fgColor="FFFFFF")
 HEAD = Font(bold=True)
 
 def _name(wb: Workbook, name: str, sheet: str, col: int, row: int) -> None:
@@ -97,6 +96,7 @@ def build(spec_path: str | Path, out_path: str | Path, decisions_path: str | Pat
         for i, d in enumerate(decmod.load(decisions_path), start=2):
             for j, v in enumerate([d.id, d.line, d.period, d.scenario, d.value, d.reason, d.rejected, d.date], start=1):
                 dl.cell(row=i, column=j, value=v)
+    # openpyxl 3.1.5 has no public API to fully reorder sheets; reassign the private list.
     wb._sheets = [wb[n] for n in ORDER if n in wb.sheetnames]
     wb.active = 0
     wb.calculation.fullCalcOnLoad = True

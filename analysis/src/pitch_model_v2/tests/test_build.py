@@ -1,8 +1,16 @@
 from pathlib import Path
+import pytest
+import yaml
 from openpyxl import load_workbook
 from pitch_model_v2 import build
+from pitch_model_v2 import spec as specmod
 
 FIX = Path(__file__).parent / "fixtures" / "spec_small.yaml"
+
+def _prov(decision):
+    return {"dossier": "docs/pitch-model-v2/dossiers/x.md",
+            "receipt": "data/processed/pitch_model_v2/receipts/x/receipt.json",
+            "grade": "A", "decision": decision, "tolerance": 0.1}
 
 def test_build_names_and_formulas(tmp_path):
     out = build.build(FIX, tmp_path / "m.xlsx", check_paths=False)
@@ -25,3 +33,67 @@ def test_build_names_and_formulas(tmp_path):
     ids = [ev.cell(row=r, column=1).value for r in range(2, ev.max_row + 1)]
     assert "D1" in ids and "D6" in ids
     assert wb.calculation.fullCalcOnLoad is True
+
+
+def test_build_all_tabs_decisions_validation_and_formats(tmp_path):
+    raw = yaml.safe_load(FIX.read_text())
+    raw["lines"] += [
+        {"id": "C1", "label": "Opex ($M)", "unit": "musd", "block": "costs", "kind": "input",
+         "periods": ["3Q26"], "values": {"base": {"3Q26": 100.0}, "short": {"3Q26": 95.0}},
+         "provenance": _prov("DEC-0010")},
+        {"id": "VX1", "label": "EV/EBITDA (x)", "unit": "x", "block": "valuation", "kind": "input",
+         "periods": ["3Q26"], "values": {"base": {"3Q26": 12.5}, "short": {"3Q26": 11.0}},
+         "provenance": _prov("DEC-0011")},
+        {"id": "EV1", "label": "P(beat) (%)", "unit": "prob", "block": "event", "kind": "input",
+         "periods": ["3Q26"], "values": {"base": {"3Q26": 0.35}, "short": {"3Q26": 0.30}},
+         "provenance": _prov("DEC-0012")},
+        {"id": "ST1", "label": "Street PT ($)", "unit": "usd", "block": "street", "kind": "input",
+         "periods": ["3Q26"], "values": {"base": {"3Q26": 150.25}, "short": {"3Q26": 148.0}},
+         "provenance": _prov("DEC-0013")},
+    ]
+    spec_path = tmp_path / "spec_ext.yaml"
+    spec_path.write_text(yaml.dump(raw))
+    dec_path = tmp_path / "DECISIONS.md"
+    dec_path.write_text(
+        "# Decisions\n\n"
+        "| id | line | period | scenario | value | reason | rejected | date |\n"
+        "|---|---|---|---|---|---|---|---|\n"
+        "| DEC-0001 | D1 | 3Q26 | base | 146.3 | reason | 149.0 | 2026-09-19 |\n"
+    )
+    out = build.build(spec_path, tmp_path / "m2.xlsx", decisions_path=dec_path, check_paths=False)
+    wb = load_workbook(out)
+
+    assert wb.sheetnames == build.ORDER
+
+    dl = wb["Decision Log"]
+    assert dl.cell(row=2, column=1).value == "DEC-0001"
+    assert dl.cell(row=2, column=5).value == 146.3
+
+    dvs = list(wb["Cover"].data_validations.dataValidation)
+    assert len(dvs) == 1
+    assert dvs[0].formula1 == '"base,short"'
+    assert "B4" in dvs[0].sqref
+
+    for lid, tab in [("C1", "Costs and Earnings"), ("VX1", "Valuation and Call"),
+                     ("EV1", "5 Nov Event Card"), ("ST1", "Street")]:
+        name = f"{lid}_3Q26"
+        assert name in set(wb.defined_names.keys())
+        assert wb.defined_names[name].attr_text.startswith(f"'{tab}'!")
+
+    lam = wb.defined_names["LAM_3Q26"].attr_text.split("!")
+    assert wb[lam[0].strip("'")][lam[1].replace("$", "")].number_format == "0.00%"
+    vx1 = wb.defined_names["VX1_3Q26"].attr_text.split("!")
+    assert wb[vx1[0].strip("'")][vx1[1].replace("$", "")].number_format == "0.0x"
+
+    d1 = wb.defined_names["D1_3Q26"].attr_text.split("!")
+    cell = wb[d1[0].strip("'")][d1[1].replace("$", "")]
+    assert cell.fill.fgColor.rgb in ("00FFF2CC", "FFF2CC")
+
+
+def test_build_rejects_unknown_block(tmp_path):
+    raw = yaml.safe_load(FIX.read_text())
+    raw["lines"][0]["block"] = "nowhere"
+    spec_path = tmp_path / "spec_bad.yaml"
+    spec_path.write_text(yaml.dump(raw))
+    with pytest.raises(specmod.SpecError, match="unknown block"):
+        build.build(spec_path, tmp_path / "m3.xlsx", check_paths=False)
