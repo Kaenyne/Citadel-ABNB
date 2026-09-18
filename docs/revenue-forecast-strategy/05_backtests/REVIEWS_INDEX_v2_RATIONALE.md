@@ -1,5 +1,13 @@
 # Rationale — nights: the stays measurement, the print, the Street, and the RNPL timing
 
+> **Corrections, 18 Sep 2026 (audit, see `NIGHTS_ENGINE_REVIEW_RESPONSE.md`).** (1) Wherever this file attributes "~1 growth point"
+> of nights cost to RNPL: that figure is the Middle East conflict cancellation effect in the 1Q26 letter (ledger D042), not RNPL —
+> withdrawn. The RNPL cancellation disclosures are the 2Q26 10-Q ("higher cancellation rates than historic bookings") and the
+> 4Q25 call's 16% → 17% (mirror transcript). (2) Any sentence implying a cancelled booking stays in the reported KPI: the KPI is
+> "net of cancellations and alterations that occurred in that period" (2Q26 10-Q) — a cancellation is subtracted in the quarter it
+> occurs. (3) "Stays-implied" means review-implied *reported*-night growth under the pre-launch relation; the post-launch residual
+> is a bound (16% power against 1 pp), not a test; the walk-forward predictor is reconstructed from 2025/26 files, not point-in-time.
+> The size of any RNPL conversion effect is a team assumption anchored on disclosures, not a measurement of this engine.
 Session OLS.V2 with Theo, 18 September 2026. Companion to `REVIEWS_INDEX_v2.md` (spec, pre-registration, results) and to the
 main session's `docs/pitch-model-v2/lines/final_nights.md` (the mechanism base and the filed laps). Written in the form
 DEC-0026 asks for: every number with the reason it stands, the data and code behind it, every alternative considered with
